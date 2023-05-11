@@ -1,11 +1,14 @@
 ---
-title: Support - Cat Analytics
+title: Community
 description: This is the support page of Cat Analytics 
 ---
 
 <Hero slots="heading, text" background="rgb(19, 93, 183)"/>
 
-# Support
+# Community
+
+Feedback, bugs, (Discord links), events, blogposts, champions
+
 
 Learn where to ask questions, report bugs, make feature requests, and spark discussions.
 

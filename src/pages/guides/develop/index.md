@@ -12,11 +12,23 @@ keywords:
   - API
   - Add-on Manifest
 title: Guides
-description: This is the main guides page
+description: This is the develop main page
 contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Add-on Developer Journey
+# Using SDKs
 
+## Importing Content
 
+## Exporting Content
+
+## Authenticating with OAuth 2.0
+
+## Using Data
+
+## Drag and Drop
+
+## Theming your add-on
+
+## Locale and Localization

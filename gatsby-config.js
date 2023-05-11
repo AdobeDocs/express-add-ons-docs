@@ -11,89 +11,138 @@
  */
 
 module.exports = {
-  pathPrefix: process.env.PATH_PREFIX || '/dev-site-documentation-template/',
-  siteMetadata: {
-    versions: [
+  pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs',
+  siteMetadata: {    
+    "home": {
+      "title": "Adobe Express Add-ons",
+      "path": "/express/add-ons"
+    },
+    pages: [      
       {
-        title: 'v2.0',
-        selected: true
-      },
-      {
-        title: 'v1.4',
-        path: 'https://github.com/AdobeDocs/dev-site'
-      }
-    ],
-    pages: [
-      {
-        title: 'Cat Analytics',
-        path: '/'
+        title: 'Getting Started',
+        path: 'getting_started'
       },
       {
         title: 'Guides',
-        path: '/guides/'
+        path: 'guides'
       },
       {
         title: 'API Reference',
         menu: [
           {
-            title: 'Cat Reference v2.0',
-            description: 'Cat Reporting API',
-            path: '/api/index.md'
-          },
+            title: 'API Reference v1',
+            description: 'API Reference v1',
+            path: '/references/'
+          },          
           {
-            title: 'Cat Reference v1.4',
-            description: 'Cat API Spec',
-            path: '/api/1.4.md'
+            title: 'Manifest Schema',
+            description: 'Manifest Schema',
+            path: '/references/manifest.md'
           }
         ]
       },
       {
-        title: 'Support',
+        "title": "Samples & Resources",
+        "path": "samples"
+      },
+      {
+        title: 'Community',
         path: '/support/'
       }
     ],
-    subPages: [
+    subPages: [ 
       {
-        title: 'Get Started',
-        path: '/guides/',
-        pages: [
+        "title": "Introduction",
+        "path": "getting_started"
+      },  
+      // {
+      //   "title": "Setup",
+      //   "path": "getting_started/setup.md"
+      // },
+      {
+        "title": "Quickstart - Hello World",
+        "path": "getting_started/quickstart.md"
+      },  
+      {
+        "title": "Concepts",
+        "path": "getting_started/concepts.md"
+      },  
+      {
+        "title": "Develop",
+        "path": "guides/develop",
+        "pages": [   
           {
-            title: 'Dummy an OAuth Client',
-            path: '/guides/dummy_oauth_client/'
+            "title": "Using the Add-on SDK",
+            "path": "guides/develop/"
+          },                                             
+          {
+            "title": "Frameworks, Libraries and Bundling",
+            "path": "guides/develop/frameworks-libraries-bundling.md"
           },
           {
-            title: 'Dummy OAuth using POSTMAN',
-            path: '/guides/dummy_using_postman/'
-          }
+            "title": "Network Requests and CORS",
+            "path": "guides/develop/cors.md"
+          },
+        ]
+      },    
+      {
+        "title": "Design",
+        "path": "guides/design",
+        "pages": [
+          {
+            "title": "Design Overview",
+            "path": "guides/design/"
+          }, 
+          {
+            "title": "Spectrum Guide",
+            "path": "guides/design/spectrum.md"
+          },  
+          {
+            "title": "Best Practices",
+            "path": "guides/design/best_practices.md"
+          },          
+        ]
+      },      
+      {
+        "title": "Debug",
+        "path": "guides/debug",
+        "pages": [
+          {
+            "title": "Debugging Overview",
+            "path": "guides/debug/"
+          },  
+          {
+            "title": "VS Code Debugging",
+            "path": "guides/develop/vs-code.md"
+          },        
         ]
       },
       {
-        title: 'Cat Metrics API',
-        path: '/guides/dummy_metrics_api/'
-      },
-      {
-        title: 'Migrating',
-        path: '/guides/migrating/'
-      },
-      {
-        title: 'Overview',
-        path: '/support/',
-        header: true,
-        pages: [
+        "title": "Distribute",
+        "path": "guides/distribute",
+        "pages": [                      
           {
-            title: 'Help',
-            path: '/support/'
-          },
+            "title": "Review Guidelines",
+            "path": "guides/distribute/review_guidelines.md",
+          },           
           {
-            title: 'FAQ',
-            path: '/support/FAQ/'
-          },
+            "title": "Private Add-on Distribution",
+            "path": "guides/distribute/submit-private-dist.md"
+          },        
           {
-            title: 'How to contribute',
-            path: '/support/contribute/'
-          }
+            "title": "Public Add-on Distribution",
+            "path": "guides/distribute/submit-public-dist.md"
+          },    
+          {
+            "title": "Monetizing your Add-on",
+            "path": "guides/distribute/monetization.md"
+          }               
         ]
-      },
+      },        
+      {
+        "title": "FAQ",
+        "path": "guides/faq.md",        
+      },      
       {
         title: 'Community',
         path: '/support/community/',
