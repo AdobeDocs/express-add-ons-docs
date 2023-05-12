@@ -43,26 +43,27 @@ Changes to your add-on manifest currently require a manual reload. Use the **Ref
 The following section describes the manifest schema for **Version 2**.
 
 <div>
-<table>
-<tr>
-    <td><p><strong>Field</strong></p></td>
-    <td><p><strong>Type</strong></p></td>
-    <td><p><strong>Description</strong></p></td>
+<table class="spectrum-Table spectrum-Table--sizeM spectrum-Table--quiet">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Field</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
 </tr>
-<tr>
-    <td><p><strong>testId?</strong></p></td>
-    <td><p>string</p></td>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><strong>testId?</strong></p></td>
+    <td class="spectrum-Table-cell"><p>string</p></td>
     <td style="vertical-align: bottom;">        
         This can be used to uniquely identify an add-on among other add-ons in app during <strong>development workflows only</strong>. This is auto generated and inserted into the manifest by the CLI when an add-on is created. This is mandatory in the development workflow and ignored in add-ons submitted to the marketplace.        
     </td>
 </tr>
-<tr>
-    <td><p><strong>version</strong></p></td>
-    <td><p>string</p></td>
-    <td>Add-on version in major.minor.patch format e.g., 1.2.0</td>    
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><strong>version</strong></p></td>
+    <td class="spectrum-Table-cell"><p>string</p></td>
+    <td class="spectrum-Table-cell">Add-on version in major.minor.patch format e.g., 1.2.0</td>    
 </tr>
 
-<tr>
+<tr class="spectrum-Table-row">
     <td><p><strong>name?</strong></p></td>
     <td><p>string</p></td>
     <td>        
@@ -77,20 +78,19 @@ The following section describes the manifest schema for **Version 2**.
         </pre>                            
     </td>    
 </tr>
-<tr>
+<tr class="spectrum-Table-row">
     <td style="vertical-align: top;"><p><strong>manifestVersion</strong></p></td>
     <td style="vertical-align: top;"><p>number</p></td>
     <td style="vertical-align: top;"><p>Version of the manifest schema, 2. </p></td>    
 </tr>
-<tr>
+<tr class="spectrum-Table-row">
     <td style="vertical-align: top;"><p><strong>requirements</strong></p></td>
     <td style="vertical-align: top;"><p>object</p></td>
-    <td style="vertical-align: top;">        
-        Specifies the apps the add-on is applicable for: 
+    <td style="vertical-align: top;">         
         <table>        
             <tr><td><strong>Field</strong></td><td><strong>Type</strong></td><td><strong>Notes</strong></td></tr>        
             <tr><td>apps </td><td>object[]</td><td>            
-                Indicates the apps that the add-on is intended for.        
+                Indicates the apps that the add-on is intended for. &nbsp;&nbsp;       
                 <table>
                 <tr><td><strong>Field</strong></td><td><strong>Type</strong></td><td><strong>Notes</strong></td></tr>
                 <tr><td>name </td><td>string</td><td>Supported values: ‘Express’ </td></tr>
@@ -130,9 +130,9 @@ The following section describes the manifest schema for **Version 2**.
 
 <tr>
     <td style="vertical-align: top;"><strong>entryPoints</strong></td>
-    <td style="vertical-align: top;"><p>Object array</p></td>
+    <td style="vertical-align: top;">Object array</td>
         <td>   
-            Currently one entrypoint can be specified:
+            Currently one entrypoint can be specified:&nbsp;&nbsp;
             <table>        
             <tr><td><strong>Field</strong></td><td><strong>Type</strong></td><td><strong>Notes</strong></td></tr>
             <tr><td><strong>type</strong></td><td>string</td><td>The type of the entrypoint. Supported types: 
@@ -187,6 +187,7 @@ The following section describes the manifest schema for **Version 2**.
  <strong>Note:</strong> At least one entrypoint needs to be specified.                       
         </td>        
 </tr>
+</tbody>
 </table>
 </div>
 
