@@ -1,6 +1,6 @@
 # Code Samples
 
-You can also find inspiration and great reference examples by checking out the code samples provided in the downloadable zip from the [Express Add-ons Prerelease](https://www.adobeprerelease.com/beta/BB26C192-CE32-4AC1-F8F6-CB8CC4035F7D) site. The code samples include a set of basic examples that show how to use various APIs in the Add-on SDK, as well as more advanced examples included in the marketplace samples. A quick list of them follows, but please see the readme in each for more details.
+You can also find inspiration and great reference examples by checking out the [code samples](https://github.com/AdobeDocs/express-add-on-samples) repo. The code samples include a set of basic examples that show how to use the APIs in the Add-on SDK, as well as more advanced examples included in the marketplace samples. A quick list of them follows, but please see the README in each for more details.
 
 ## Base Samples
 
