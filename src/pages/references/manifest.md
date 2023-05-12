@@ -50,90 +50,84 @@ The following section describes the manifest schema for **Version 2**.
     <td><p><strong>Description</strong></p></td>
 </tr>
 <tr>
-    <td style="vertical-align: top;"><p><strong>testId?</strong></p></td>
-    <td style="vertical-align: top;"><p>string</p></td>
-    <td>
-        <ul>
-        <li>This can be used to uniquely identify an add-on among other add-ons in app during <strong>development workflows only</strong>. This is auto generated and inserted into the manifest by the CLI when an add-on is created. This is mandatory in the development workflow and ignored in add-ons submitted to the marketplace. </li>        
-        </ul>
+    <td><p><strong>testId?</strong></p></td>
+    <td><p>string</p></td>
+    <td style="vertical-align: bottom;">        
+        This can be used to uniquely identify an add-on among other add-ons in app during <strong>development workflows only</strong>. This is auto generated and inserted into the manifest by the CLI when an add-on is created. This is mandatory in the development workflow and ignored in add-ons submitted to the marketplace.        
     </td>
 </tr>
 <tr>
-    <td style="vertical-align: top;"><p><strong>version</strong></p></td>
-    <td style="vertical-align: top;"><p>string</p></td>
-    <td><p>Add-on version in `major.minor.patch` format e.g., 1.2.0 </p></td>    
+    <td><p><strong>version</strong></p></td>
+    <td><p>string</p></td>
+    <td>Add-on version in major.minor.patch format e.g., 1.2.0</td>    
 </tr>
 
 <tr>
-    <td style="vertical-align: top;"><p><strong>name?</strong></p></td>
-    <td style="vertical-align: top;"><p>string</p></td>
-    <td>
-        <ul style="margin-bottom: 0px;">
-        <li>Add-on name as it will appear in the UI <strong>for development workflows only</strong>.</li>
-        <li>Localizable and specified in the following format, for example:</li>     
-        </ul>
-        ```json
+    <td><p><strong>name?</strong></p></td>
+    <td><p>string</p></td>
+    <td>        
+        Add-on name as it will appear in the UI <strong>for development workflows only</strong>.
+        Localizable and specified in the following format, for example:        
+        <pre>
             "label":  [
                         "default": "Timer", 
                         "en-US": "Timer", 
                         "fr-FR": "Minuteur" 
                     ]
-        ```
-                            
+        </pre>                            
     </td>    
 </tr>
 <tr>
     <td style="vertical-align: top;"><p><strong>manifestVersion</strong></p></td>
     <td style="vertical-align: top;"><p>number</p></td>
-    <td><p>Version of the manifest schema, 2. </p></td>    
+    <td style="vertical-align: top;"><p>Version of the manifest schema, 2. </p></td>    
 </tr>
 <tr>
     <td style="vertical-align: top;"><p><strong>requirements</strong></p></td>
     <td style="vertical-align: top;"><p>object</p></td>
-    <td>        
+    <td style="vertical-align: top;">        
         Specifies the apps the add-on is applicable for: 
         <table>        
-        <tr><td><strong>Field</strong></td><td><strong>Type</strong></td><td><strong>Notes</strong></td></tr>
-        <tr><td>apps </td><td>object[]</td><td>            
-            Indicates the apps that the add-on is intended for.        
-            <table>
-            <tr><td><strong>Field</strong></td><td><strong>Type</strong></td><td><strong>Notes</strong></td></tr>
-            <tr><td>name </td><td>string</td><td>Supported values: ‘Express’ </td></tr>
-            <tr><td>apiVersion </td><td>number</td><td>API version that add-on uses. Currently supported values: 1</td></tr>            
-            <tr><td>supportedDeviceClass? </td><td>string[]</td><td>Supported platforms by the add-on. Possible values:
+            <tr><td><strong>Field</strong></td><td><strong>Type</strong></td><td><strong>Notes</strong></td></tr>        
+            <tr><td>apps </td><td>object[]</td><td>            
+                Indicates the apps that the add-on is intended for.        
                 <table>
-                    <tr><td><strong>Device Class</strong></td><td><strong>Description</strong></td></tr>
-                    <tr><td>desktop </td><td>Browser on desktop</td></tr>
-                    <tr><td>mobile </td><td>Browser on mobile and tablet devices</td></tr>
-                    <tr><td>app </td><td>Native app on mobile and tablet devices</td></tr>
+                <tr><td><strong>Field</strong></td><td><strong>Type</strong></td><td><strong>Notes</strong></td></tr>
+                <tr><td>name </td><td>string</td><td>Supported values: ‘Express’ </td></tr>
+                <tr><td>apiVersion </td><td>number</td><td>API version that add-on uses. Currently supported values: 1</td></tr>            
+                <tr><td>supportedDeviceClass? </td><td>string[]</td><td>Supported platforms by the add-on. Possible values:
+                    <table>
+                        <tr><td><strong>Device Class</strong></td><td><strong>Description</strong></td></tr>
+                        <tr><td>desktop </td><td>Browser on desktop</td></tr>
+                        <tr><td>mobile </td><td>Browser on mobile and tablet devices</td></tr>
+                        <tr><td>app </td><td>Native app on mobile and tablet devices</td></tr>                    
+                    </table>
+                    If not specified, default value assumed is: ["desktop"]. E.g.: ["desktop","mobile"]  </td></tr>          
                 </table>
-                If not specified, default value assumed is: ["desktop"]. E.g.: ["desktop","mobile"] </td> </tr>         
-            </table>
-        </td></tr>   
-        <tr><td>experimentalApis? </td><td>boolean</td><td>
-            <ul>
-                <li>Add-ons can opt to use experimental apis by specifying this flag</li>
-                <li>This flag is only allowed during development and needs to be removed during submission</li>
-            </ul>            
-        </td></tr>
-        <tr><td>supportsTouch?</td><td>boolean</td><td>Whether add-on supports touch-only devices. If not specified, default value assumed is 'false'</td></tr>        
-        </table>
-        e.g. 
-        e.g. 
-<code>
-"requirements": {}
-    "apps": [  
-    {}  
-        “name": "Express", 
-        “apiVersion”: 1,
-        "supportedDeviceClass": ["desktop", "mobile"]
-    {}, 
-    ],
-    "experimentalApis": true,
-    "supportsTouch": false
-{}} </code>
-    </td>    
+            </td></tr>   
+            <tr><td>experimentalApis? </td><td>boolean</td><td>
+                <ul>
+                    <li>Add-ons can opt to use experimental apis by specifying this flag</li>
+                    <li>This flag is only allowed during development and needs to be removed during submission</li>
+                </ul>            
+            </td></tr>
+            <tr><td>supportsTouch?</td><td>boolean</td><td>Whether add-on supports touch-only devices. If not specified, default value assumed is 'false'
+            </td></tr>
+        </table>                        
+            "requirements": [
+                "apps": [  
+                [ 
+                    "name": "Express", 
+                    "apiVersion": 1,
+                    "supportedDeviceClass": ["desktop", "mobile"]
+                ], 
+                ],
+                "experimentalApis": true,
+                "supportsTouch": false
+            ]             
+    </td>
 </tr>
+
 <tr>
     <td style="vertical-align: top;"><strong>entryPoints</strong></td>
     <td style="vertical-align: top;"><p>Object array</p></td>
@@ -172,21 +166,20 @@ The following section describes the manifest schema for **Version 2**.
                         <table>        
                             <tr><td><strong>Permission</strong></td><td><strong>Notes</strong></td></tr>
                             <tr><td><strong>allow-presentation</strong></td><td>Allows the add-on to start a <a href="https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest" target="_blank">presentation session</a>.</td></tr>                    
-                            <tr><td><strong>allow-popups</strong></td><td>Allows popups (such as <code>window.open(), target="_blank"</code>). If this keyword is not used, the popup will silently fail to open.</td></tr>
-                            <tr><td><strong>allow-downloads</strong></td><td>Allows downloading files through an <code>&lt;a&gt;</code> or <code>&lt;area&gt;</code> element with the download attribute, as well as through the navigation that leads to a download of a file.</td></tr>  
+                            <tr><td><strong>allow-popups</strong></td><td>Allows popups (such as window.open(), target="_blank"). If this keyword is not used, the popup will silently fail to open.</td></tr>
+                            <tr><td><strong>allow-downloads</strong></td><td>Allows downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute, as well as through the navigation that leads to a download of a file.</td></tr>  
                             <tr><td><strong>allow-popups-to-escape-sandbox</strong></td><td>Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them.</td></tr>                           
                         </table>
                          <strong>Note:</strong> The <strong>allow-scripts</strong> sandbox permission is supported by default.
                     </td></tr>            
                     <tr><td>oauth?</td><td>string[]</td><td>List of 3P auth server domains for which OAuth workflow may be requested.</td>
                 </tr>
-            </table>   
-            e.g.: 
+            </table>         
 <code>
-"permissions" : {} 
+"permissions" : [
     "sandbox": [" allow-popups ", "allow-same-origin ", "allow-downloads"],
     "oauth" : [“...”, “...”], 
-{} 
+]
 </code>         
             </td>
             </tr>            

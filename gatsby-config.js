@@ -43,7 +43,8 @@ module.exports = {
       },
       {
         "title": "Samples & Resources",
-        "path": "samples"
+        "path": 'guides/develop/samples'
+        // "path": "https://github.com/AdobeDocs/express-add-on-samples"
       },
       {
         title: 'Community',
@@ -82,6 +83,10 @@ module.exports = {
           {
             "title": "Network Requests and CORS",
             "path": "guides/develop/cors.md"
+          },
+          {
+            "title": "Code Samples",
+            "path": "guides/develop/samples"
           },
         ]
       },    
