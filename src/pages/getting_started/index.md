@@ -41,11 +41,11 @@ Begin your exploration by navigation through this [Getting Started](../getting_s
 
 The steps to get started include:
 
-1. Setting up your local environment.
-1. Creating a new add-on project.
-1. Logging in to Adobe Express Beta.
-1. Turning on the developer mode.
-1. Loading and running your add-on directly in Adobe Express!
+1. [Set up](quickstart/#prerequisites) your local environment.
+1. [Create a new add-on project](quickstart/#step-1-create-your-add-on-project).
+1. Log in to [Adobe Express Beta](https://new.express.adobe.com/new).
+1. Enable the [developer mode](quickstart/#step-3-load-and-run-your-add-on).
+1. [Load and run your add-on](quickstart/#step-3-load-and-run-your-add-on) directly in Adobe Express!
 
 ### In-Depth Guides
 Next, check out our [guides](../guides/) for more detailed information on designing, developing, debugging and distributing your add-ons. 

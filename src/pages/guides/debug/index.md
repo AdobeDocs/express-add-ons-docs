@@ -1,4 +1,4 @@
-# Debugging Tools
+# Debugging Add-ons
 
 ## Browser Developer Tools
 
@@ -56,41 +56,3 @@ The ToDo list sample takes advantage of the Add-on SDK's `ClientStorage` API whi
 <InlineAlert slots="text" variant="info"/>
 
 See [the Add-on SDK section](../3-WritingCode/add-on-sdk.md) for more details about storing and persisting data with your add-ons.
-
-## Debugging with Visual Studio Code 
-You can use VS Code to debug your add-ons. An example of this workflow is shown in the video below for reference:
-
-<iframe aria-label="Debugging VS Code Demo" src="https://drive.google.com/file/d/1at1jXCTIi9TZWxwFn11su0PeEQZhUGFC/preview" width="640" height="480"></iframe>
-
-
-### Steps
-The steps to debug in VS Code are also here for quick reference.
-
-- For any add-ons that were generated with the CLI, start by locating the existing `launch.json` file in the `.vscode` folder in the root of your project. Double check to ensure the URL points to `https://new.express.adobe.com/new/`. 
-
-<InlineAlert slots="text,image" variant="info"/>
-
-If it's a sample add-on that you downloaded, you will need to create one first with the "create a launch.json file" and copy in the JSON configuration included below (or copy one in from an add-on you previously generated). 
-![New launch.json file option](img/new-launch-json.png)
-
- Start your add-on from your terminal as normal with `npm run start`.
-
-- Back in VS Code, click the **Run and Debug** option from the left panel and then select the profile related to where you want to debug (note that Chrome is the first one and selected by default but you can modify your configuration in the `launch.json` to your liking).
-
-    ![launch.json file](img/vscode-debug-option.png)
-
-    ![launch profiles](img/launch-profiles.png)
-
-- Once you have your selection set from above, simply hit the green play button outlined below to start debugging.
-
-    ![start debugging](img/start-debug.png)
-
-- A new browser window will open for your debugging session directly to the Express URL you configured above. Connect to your add-on as you normally would in Express.
-
-- You can now set breakpoints as desired, and you will see the code execution stop with the line highlighted. You can also check the **DEBUG CONSOLE** window to see any console output directly in VS Code.
-
-  ![debugging screenshot](img/debugging.png)
-
-- Also note the toolbar that's added to the top of your screen in VS Code when you're in debug mode which allows you to step through your code after it's been stopped on a breakpoint. 
-
-    ![debugging tools](img/debugger-tool.png)

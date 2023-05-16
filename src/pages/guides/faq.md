@@ -21,9 +21,9 @@ contributors:
 
 1. _How do I run on a different port than the default (ie: 8080 for example)?_
 
-   
+      ```bash
          npm run start -- --port 8080
-   
+      ```
 
 2. _How do I save the state of my add-on?_
 
@@ -37,6 +37,7 @@ contributors:
 
     If you add any folders, (like images for example), to your `src`, you can update the `webpack.config.js` `CopyWebpackPlugin` section within to ensure those new resources added are copied into the `dist` folder. For instance, in the following, the 3rd line was added to ensure any `.jpg` files in the `src/images` folder get copied over:
          
+      ```js
          new CopyWebpackPlugin({
             patterns: [
                   { from: "src/*.json", to: "[name][ext]" },
@@ -44,22 +45,26 @@ contributors:
                   { from: "src/images/*.jpg", to: "images/[name][ext]" },
             ],
          });
+      ```
          
 5. _My form submission doesn't work and console shows error "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set."_
 
       You can call `preventDefault` on the submit event to prevent the browser from trying to complete the full form submission process and avoid this error, such as:
 
+      ```js
             <form onSubmit={ evt => {                  
                   evt.preventDefault();
             }}/>
+      ```
 
       NOTE:
       If the above does not work for you, you can also handle this by adding click handler to the submit button itself instead, and in that call `event.preventDefault` on the event, such as:
 
+      ```javascript
             <form onSubmit={(e) => e.preventDefault()}>
                   <input type="submit" value="Submit" onClick={(e) => e.preventDefault()}/>
             </form>
-
+      ```
 
 6. _How do I enable CORS for a service that blocks my add-on requests due to the `null` origin?_
 
@@ -76,3 +81,7 @@ contributors:
 9. _I receive a `MANIFEST_NOT_FOUND_ERROR` during the package verification when trying to upload my plugin package for distribution._
 
       Instead of zipping the folder containing the add-on files, please zip only the contents. In other words, manifest file should be at **root** level of the extracted package.
+
+10. _How can I monetize my add-on?_
+
+      At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**.

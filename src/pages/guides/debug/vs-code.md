@@ -89,4 +89,4 @@ If it's a sample add-on that you downloaded, you will need to create one first w
 
 - Also note the toolbar that's added to the top of your screen in VS Code when you're in debug mode which allows you to step through your code after it's been stopped on a breakpoint. 
 
-    ![debugging tools](img/debugger-tool.png)
+  ![debugging tools](img/debugger-tool.png)

@@ -29,10 +29,12 @@ To facilitate the development of add-ons, we have provided a command line interf
 We are currently offering a [**wait list**]() to provide access to developers interested in developing add-ons for Adobe Express. Please fill in and submit [the wait list form]() to get on the list now! -->
 
 
-### Step 1: Create your add-on
+### Step 1: Create your add-on project
 Open your terminal and run the following command:
 
-     npx @adobe/create-ccweb-add-on hello-world --template javascript     
+```bash
+npx @adobe/create-ccweb-add-on hello-world --template javascript     
+```
 
 This command will create a new add-on based on a basic `javascript` template. See the [Concepts page - Templates section](../getting_started/concepts.md/#templates) for more details on the built-in templates available with the Adobe Express Add-ons CLI. 
 
@@ -44,15 +46,18 @@ This command will create a new add-on based on a basic `javascript` template. Se
 ### Step 2: Build and start your add-on
 Next, execute the following commands to change into the newly created **hello-world** add-on folder, `build` the add-on, and `start` the add-on in a local server:
 
-     cd hello-world;
-     npm run build;
-     npm run start;
+```bash
+cd hello-world;
+npm run build;
+npm run start;
+```
 
 The `start` script will display messages like the following after it executes:
 
-    Your panel 'hello-world' can now be sideloaded
-    By enabling the Developer Mode </> from the Add-ons panel.
-
+```bash
+Your panel 'hello-world' can now be sideloaded
+By enabling the Developer Mode </> from the Add-ons panel.
+```
 
 ### Step 3: Load and run your add-on
 
@@ -65,7 +70,7 @@ The `start` script will display messages like the following after it executes:
 - Check the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
 - Your add-on should now be displayed in the add-ons panel on the right side of your Adobe Express tab running in your browser. 
 
-[Hello World add-on](img/hello-world-loaded-log-open.png)
+![Hello World add-on](img/hello-world-loaded-log-open.png)
 
 Congratulations! 👏 You've completed the quickstart and run your first add-on! 🏅 
 

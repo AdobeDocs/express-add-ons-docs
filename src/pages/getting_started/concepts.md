@@ -32,7 +32,9 @@ The table below shows the list of arguments that can be specified with the CLI c
 
 For instance, the following command would specify all possible arguments:
 
-    npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
+```bash
+npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
+```
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -50,22 +52,26 @@ The table below shows a list of arguments that can be specified with the `start`
 
 For instance, to specify a port of `8080` instead, use the following command:
 
-    npm run start -- --port 8080
+```bash
+npm run start -- --port 8080
+```
 
 To specify you want to use `webpack` AND port `8080`:
 
-    npm run start -- --use webpack --port 8080
+```bash
+npm run start -- --use webpack --port 8080
+```
 
 <InlineAlert slots="text" variant="info"/>
 
 The extra arguments are unnecessary unless you do not want to use a transpiler/bundler or use the default port of `5241`. Also, note that all of the templates other than the `javascript` template are pre-configured to use webpack by default and the `--use webpack` is automatically added when you run the `build` and `start` commands. Take a look at the `scripts` property in the `package.json` of those templates and you will see the following:
 
-```
-    "scripts": {
-        "clean": "ccweb-add-on-scripts clean",
-        "build": "ccweb-add-on-scripts build --use webpack",
-        "start": "ccweb-add-on-scripts start --use webpack"
-    }
+```json
+"scripts": {
+    "clean": "ccweb-add-on-scripts clean",
+    "build": "ccweb-add-on-scripts build --use webpack",
+    "start": "ccweb-add-on-scripts start --use webpack"
+}
 ```
 
 ## Templates
@@ -83,11 +89,15 @@ The **Add-on CLI** contains built-in, pre-configured templates to allow you to c
 
 The following syntax can be used to specify one of the above templates:
 
-    npx @adobe/create-ccweb-add-on <add-on-name> --template <template>
+```bash
+npx @adobe/create-ccweb-add-on <add-on-name> --template <template>
+```
 
 For instance, the following is an example of a command that will create an add-on based on the `react-javascript` template:
 
-    npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
+```bash
+npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
+```
 
 
 <InlineAlert slots="text" variant="success"/>

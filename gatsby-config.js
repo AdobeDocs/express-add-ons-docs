@@ -118,7 +118,7 @@ module.exports = {
           },  
           {
             "title": "VS Code Debugging",
-            "path": "guides/develop/vs-code.md"
+            "path": "guides/debug/vs-code.md"
           },        
         ]
       },
@@ -138,10 +138,10 @@ module.exports = {
             "title": "Public Add-on Distribution",
             "path": "guides/distribute/submit-public-dist.md"
           },    
-          {
-            "title": "Monetizing your Add-on",
-            "path": "guides/distribute/monetization.md"
-          }               
+          // {
+          //   "title": "Monetizing your Add-on",
+          //   "path": "guides/distribute/monetization.md"
+          // }               
         ]
       },        
       {
