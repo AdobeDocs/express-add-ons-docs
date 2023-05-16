@@ -61,7 +61,7 @@ module.exports = {
       //   "path": "getting_started/setup.md"
       // },
       {
-        "title": "Quickstart - Hello World",
+        "title": "Quickstart",
         "path": "getting_started/quickstart.md"
       },  
       {
@@ -158,25 +158,7 @@ module.exports = {
             path: '/support/community/'
           }
         ]
-      },
-      // {
-      //   title: 'Getting Started',
-      //   path: '/',                
-      //   pages: [
-      //     {
-      //       "title": "Introduction",
-      //       "path": "getting_started"
-      //     },           
-      //     {
-      //       "title": "Quickstart - Hello World",
-      //       "path": "getting_started/quickstart.md"
-      //     },  
-      //     {
-      //       "title": "Concepts",
-      //       "path": "getting_started/concepts.md"
-      //     },  
-      //   ]
-      // }
+      }      
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`]

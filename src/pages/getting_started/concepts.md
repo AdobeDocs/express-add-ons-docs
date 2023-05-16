@@ -21,8 +21,8 @@ contributors:
 
 ## CLI Usage and Arguments
 
-#### CLI Create
-The table below shows the list of arguments that can be specified with the CLI create command:
+#### Create Options
+The table below shows the list of arguments that can be specified with the CLI create command (ie: `npx @adobe/create-ccweb-add-on`):
 
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
 | ------------- | -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
