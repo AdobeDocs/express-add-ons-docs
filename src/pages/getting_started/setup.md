@@ -33,7 +33,7 @@ To facilitate the development of add-ons, we have incorporated a command line in
 
 <InlineAlert slots="text" variant="warning"/>
 
-We are currently offering a [**wait list**]() to provide access to developers interested in developing add-ons for Adobe Express. Please fill in and submit the form to get on the list now!
+We are currently offering a [**wait list**](https://airtable.com/shr3IK38z2MCNHJEm) to provide access to developers interested in developing add-ons for Adobe Express. Please fill in and submit the form to get on the list now!
   
 
 In the [next section](quickstart.md), you will learn how to create your very first add-on, a simple "hello world" add-on that outputs a string.

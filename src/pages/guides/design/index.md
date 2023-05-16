@@ -118,6 +118,42 @@ Check out the [code samples](guides/develop/samples) in the contributed folder f
             )
         }
 
+#### CAUTION: Using React Spectrum with a Slider Component
+If you're using a slider component with React Spectrum, you may notice behavior where if the user moves their mouse out of the panel and releases the mouse pointer, the slider still thinks the mouse pointer is down when the mouse is moved back inside the panel. You can fix this with the following steps:
+
+1. Wrap your slider(s) with another element. A &lt;div&gt; works fine.
+2. Add a ref that points to this div so you can refer to it later. 
+3. Add two event handlers:
+    - `onPointerDownCapture` will call `sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId)`
+    - `onPointerUp` will call `sliderContainer.current.releasePointerCapture(evt.nativeEvent.pointerId)`
+
+**Example Snippet**
+```js
+import React, {useRef} from "react";
+
+import { theme as expressTheme } from '@react-spectrum/theme-express';
+import {Slider, Provider} from '@adobe/react-spectrum'
+
+const App = ({ addOnSdk }) => {
+    const sliderContainer = useRef();
+    const startDrag = (evt) => {
+        sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId);
+    }
+    const stopDrag = (evt) => {
+        sliderContainer.current.releasePointerCapture(evt.nativeEvent.pointerId);
+    }
+    return <>
+        <Provider theme={expressTheme} colorScheme="light" scale="medium">
+            <div ref={sliderContainer} onPointerDownCapture={startDrag} onPointerUp={stopDrag}>
+                <Slider label="Cookies to buy" defaultValue={12} />
+            </div>
+        </Provider>
+    </>
+};
+
+export default App;
+```
+
 #### Default vs Express Theme
 The screenshots below are from a React Spectrum app with the theme and icons changed from the default theme, (first screenshot), to the Express theme (second screenshot), to illustrate some differences for reference. Remember the React Spectrum + Express theme is still in alpha, so not all of the components have been completely ported over yet.
 
@@ -141,10 +177,12 @@ Use the existing Express UI as an example of the types of patterns and behaviors
 #### Text Panel
 ![Express Text Panel](img/text-panel.png)
 
+
+<InlineAlert slots="text" variant="success"/>
+
+**COLOR PICKER COMPONENT TIP:**
+If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference.
+
 ## Useful Resources
 - [Adobe XD plugin that provides Spectrum UI elements](https://adobe.com/go/cc_plugins_discover_plugin?pluginId=f4771cd5&workflow=share), including the Express look.
 - [Figma plugin](https://www.figma.com/community/file/1211274196563394418/Adobe-Spectrum-Design-System) that provides Spectrum UI elements.
-
-<InlineAlert slots="text" variant="info"/>
-
-Official design guidelines coming soon!

@@ -27,10 +27,10 @@ Adobe Express add-ons allow developers to extend the Adobe Express core function
 
 ### Adobe Express Public Beta
 
-Adobe Express is currently in a gated Public Beta with access provided to users on a wait-list only basis. However, interested developers should fill out [the form]() to get added to our wait list and to gain access in the most timely manner. 
+Adobe Express is currently in a gated Public Beta with access provided to users on a wait-list only basis. However, interested developers should fill out [this form](https://airtable.com/shr3IK38z2MCNHJEm) to get added to our wait list and gain access in the most timely manner. 
 
 
-[Join our wait list!](../pages/)
+[Join our wait list!](https://airtable.com/shr3IK38z2MCNHJEm)
 
 
 <Resources slots="heading, links"/>
@@ -44,7 +44,7 @@ Adobe Express is currently in a gated Public Beta with access provided to users 
 <DiscoverBlock width="100%" slots="heading, text"/>
 
 ## Overview
-This guide covers everything you need to know to get started building add-ons for the [Adobe Express Public Beta](https://www.adobeprerelease.com/beta/06B4980B-3CE7-4E4C-F126-F622E6D91103). At a high level, add-ons refer to any feature distributed independently from the core product that a user can enable or install to extend the capabilities of the core product. Typically, add-ons will be created by 3rd party developers, however, there will also be scenarios where Adobe will be creating and distributing our own add-ons. These docs are available to provide you with all of the information you need to get set up and well on your way to developing your own add-ons for Adobe Express. Please see the [main help guides](https://helpx.adobe.com/express/using/express-overview.html) for more information and frequently asked questions about Adobe Express.
+This guide covers everything you need to know to get started building add-ons for the Adobe Express Public Beta. At a high level, add-ons refer to any feature distributed independently from the core product that a user can enable or install to extend the capabilities of the core product. Typically, add-ons will be created by 3rd party developers, however, there will also be scenarios where Adobe will be creating and distributing our own add-ons. These docs are available to provide you with all of the information you need to get set up and well on your way to developing your own add-ons for Adobe Express. Please see the [main help guides](https://helpx.adobe.com/express/using/express-overview.html) for more information and frequently asked questions about Adobe Express.
 
 ## Extensibility
 

@@ -23,11 +23,7 @@ To facilitate the development of add-ons, we have provided a command line interf
 
 <InlineAlert slots="text" variant="error"/>
 
-**IMPORTANT:** These steps require access to the Adobe Express Public Beta and CLI, which are currently offered to interested developers on a *wait-list only basis*. If you're interested, please fill in and submit [this wait list form]() to get on the list now!
-
-<!-- 
-We are currently offering a [**wait list**]() to provide access to developers interested in developing add-ons for Adobe Express. Please fill in and submit [the wait list form]() to get on the list now! -->
-
+**IMPORTANT:** These steps require access to the Adobe Express Public Beta and CLI, which are currently offered to interested developers on a *wait-list only basis*. If you're interested, please fill in and submit [this wait list form](https://airtable.com/shr3IK38z2MCNHJEm) to get on the list now!
 
 ### Step 1: Create your add-on project
 Open your terminal and run the following command:

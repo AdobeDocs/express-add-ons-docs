@@ -42,7 +42,7 @@ Changes to your add-on manifest currently require a manual reload. Use the **Ref
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><strong>version</strong></p></td>
     <td class="spectrum-Table-cell"><p>string</p></td>
-    <td class="spectrum-Table-cell"><p>Add-on version in major.minor.patch format e.g., 1.2.0</p></td>    
+    <td class="spectrum-Table-cell"><p>Add-on version in "major.minor.patch" format (e.g., "1.2.0")</p></td>    
 </tr>
 
 <tr class="spectrum-Table-row">
