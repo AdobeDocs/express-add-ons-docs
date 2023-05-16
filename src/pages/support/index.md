@@ -3,7 +3,7 @@ title: Community
 description: This is the support page of Cat Analytics 
 ---
 
-<Hero slots="heading, text" background="rgb(19, 93, 183)"/>
+<Hero slots="heading, text" background="rgb(64, 34, 138)" />
 
 # Community
 
@@ -18,8 +18,7 @@ You've got a place to start discussions.
 
 <DiscoverBlock slots="image, heading, link, text" width="25%"/>
 
-![Cat Experience Cloud](experience_cloud.png)
-
+<!-- 
 ### Developer forum
 
 [Get started](https://adobe.io)
@@ -42,12 +41,4 @@ Forum to get help and help others
 
 You've got a place to join the conversation.
 
-<DiscoverBlock slots="image, heading, link, text" width="100%"/>
-
-![Stack Overflow](stack-overflow.png)
-
-### Stack Overflow
-
-[Explore](https://adobe.io)
-
-Developer Q&A using a specific tag.
+<DiscoverBlock slots="image, heading, link, text" width="100%"/> -->

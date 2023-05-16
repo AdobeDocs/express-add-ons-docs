@@ -31,7 +31,7 @@ You should only rely on using the base [Spectrum CSS](https://opensource.adobe.c
 
 <InlineAlert slots="text" variant="success"/>
 
-Check out the [code samples](../5-TemplatesSamples/code-samples.md) for examples that use the above libraries. Currently you can refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** can be referred to for specific examples using **React Spectrum**. 
+Check out the [code samples](guides/develop/samples) for examples that use the above libraries. Currently you can refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** can be referred to for specific examples using **React Spectrum**. 
 
 ### Spectrum Express Theme
 If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. 
@@ -88,7 +88,7 @@ The [React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the code samples in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly. 
+Check out the [code samples](guides/develop/samples) in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly. 
 
 #### React Spectrum with Express Theme Steps
 [The React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in alpha stage currently, but can be used with the following steps:

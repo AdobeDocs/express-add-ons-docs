@@ -27,7 +27,7 @@ contributors:
 
 2. _How do I save the state of my add-on?_
 
-      The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](./3-WritingCode/api-reference.md) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
+      The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](.) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
 
 3. _How do I use top level `await` while using webpack?_
 
@@ -63,7 +63,7 @@ contributors:
 
 6. _How do I enable CORS for a service that blocks my add-on requests due to the `null` origin?_
 
-      If the service you're consuming is endpoint you can modify the server settings for, you can set the `Access-Control-Allow-Origin` header to `*` to allow the requests to pass. If you don't have access to change the headers on the server, you can use a CORS proxy server to bypass this issue while in development. See the [CORS Guide](./7-Troubleshooting/cors.md) for more details and specific samples of each.
+      If the service you're consuming is endpoint you can modify the server settings for, you can set the `Access-Control-Allow-Origin` header to `*` to allow the requests to pass. If you don't have access to change the headers on the server, you can use a CORS proxy server to bypass this issue while in development. See the [CORS Guide](../guides/develop/cors.md) for more details and specific samples of each.
 
 7. _The `Window.showOpenFilePicker()` API is not working from within my Add-on._ 
       

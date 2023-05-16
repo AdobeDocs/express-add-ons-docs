@@ -28,7 +28,7 @@ Note that the source directory, `src`, should contain all of your files, i.e. th
 
 ### React
 
-We have included React templates and sample add-ons in the [Templates and Code Samples](../5-TemplatesSamples/code-samples.md) section.
+We have included React templates and sample add-ons in the [code samples](guides/develop/samples).
 
 ### Other JavaScript and CSS libraries
 

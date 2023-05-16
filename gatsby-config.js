@@ -15,7 +15,7 @@ module.exports = {
   siteMetadata: {    
     "home": {
       "title": "Adobe Express Add-ons",
-      "path": "/express/add-ons"
+      "path": "/express-add-ons"
     },
     pages: [      
       {
