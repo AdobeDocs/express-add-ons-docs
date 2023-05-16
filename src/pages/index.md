@@ -30,9 +30,9 @@ Adobe Express add-ons allow developers to extend the Adobe Express core function
 
 <Resources slots="heading, links"/>
 
-#### Resources
+#### Quick Links
 
-* [Get Started](getting_started/)
+* [Getting Started](getting_started/)
 * [References](references/)
 * [Samples](https://github.com/AdobeDocs/express-add-on-samples)
   
