@@ -153,7 +153,7 @@ See the [Adobe Accessibility Page](https://www.adobe.com/accessibility.html) for
  
 ## Usability Testing
  
-1. Ensure your add-on UI blends seamlessly with Adobe Express by adhering to the Adobe Spectrum design language and incorporating commonly used patterns found in the Adobe Express UI. While it's not mandatory for add-ons to use Adobe's Spectrum libraries, it can significantly simplify the development process.
+1. Ensure your add-on UI blends seamlessly with Adobe Express by adhering to the [Adobe Spectrum](../design/#spectrum-design-system) design language and incorporating commonly used patterns found in the Adobe Express UI. While it's not mandatory for add-ons to use Adobe's Spectrum libraries, it can significantly simplify the development process.
 2. Ensure that the add-on user interface and controls are responsive, functional, and usable across different devices, screen sizes, and browsers.
 3. Verify that any error messages, warnings, or notifications displayed by the add-on are clear, informative, and helpful to the user.
 4. Check that the add-on provides proper feedback and validation for user inputs, such as displaying error messages for invalid inputs or confirmation messages for successful actions

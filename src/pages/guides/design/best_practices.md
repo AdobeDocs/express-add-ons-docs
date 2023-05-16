@@ -1,12 +1,8 @@
 ## Best Practices
 - Design responsively and remember the width and height of your add-on panel will vary by device. 
-
-    CAUTION:
-    It's important to note that the current add-ons panel width will be changing to a width of 280px (vs 320px) in the near future so it's extra important to keep responsive design in mind.
-
 - If the user needs to drill down into multiple panels, ensure you provide a way for them to navigate back.
 - If the user will be logging in to a 3rd party service, ensure you provide a way for them to log out through your add-on UI.
-- With the add-ons panel being narrow, it's best to use a vertical layout for your UI components, with full-width buttons and components and vertical scrolling for overflow.
+- With the add-ons panel being narrow (280px), it's best to use a vertical layout for your UI components, with full-width buttons and components and vertical scrolling for overflow.
 - If your add-on contains a gallery of images, a grid layout can work well.
 - Use the header to help provide context in cases where your add-on requires a multi-step workflow, and to help with navigation.
 - Use a footer if your add-on requires vertical scrolling for a primary CTA to be shown if needed.

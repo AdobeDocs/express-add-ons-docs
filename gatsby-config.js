@@ -98,10 +98,10 @@ module.exports = {
             "title": "Design Overview",
             "path": "guides/design/"
           }, 
-          {
-            "title": "Spectrum Guide",
-            "path": "guides/design/spectrum.md"
-          },  
+          // {
+          //   "title": "Spectrum Guide",
+          //   "path": "guides/design/spectrum.md"
+          // },  
           {
             "title": "Best Practices",
             "path": "guides/design/best_practices.md"

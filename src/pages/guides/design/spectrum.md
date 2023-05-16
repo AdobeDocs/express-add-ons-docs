@@ -1,37 +1,43 @@
 
 # Introduction to Spectrum 
-Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. It's also available in the following open-source implementations to cover a variety of needs. We highly recommend checking it out for use in your own add-ons.
-
-- [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) - Spectrum CSS is an open-source implementation of Spectrum, Adobe’s design system. It includes components and resources to make applications more cohesive. Spectrum CSS is designed to be used in partnership with [Spectrum’s detailed usage guidelines](https://spectrum.adobe.com/).
-
-- [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) - **PREFERRED** 
-
-The Spectrum Web Components project is an implementation of Spectrum, Adobe’s design system. It's designed to work with any web framework — or even without one. Some benefits to using Spectrum Web Components include:
-    
-    - Framework agnostic
-    - Lightweight    
-    - Accessible by default 
-    - Standards based
-
-- [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html)-  The React Spectrum project implements the Adobe's Spectrum design language into React UI components.
-
-    React Spectrum is composed of three parts:
-
-    - **react-spectrum**: a component library implementing the Adobe Spectrum design system
-    - **react-aria**: a library of React hooks implementing the patterns defined in the ARIA practices spec, including mouse, touch, and keyboard behavior, accessibility, and internationalization support
-    - **react-stately**: a library of React hooks implementing cross platform (e.g. web/native) state management for components that need it.
-
-    React Spectrum enables accessibility and common behavior to be handled out of the box. Leveraging React Spectrum in your App Builder application allows you to save front end development time, and focus on styling and other design specific features that can be built on top of the library.
-
-
-
-<InlineAlert slots="text" variant="info"/>
-
-You should only rely on using the base [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) library for simple applications that need basic things like typography, checkboxes, text fields, etc. Otherwise you should try using one of the other implementations provided like [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) and [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) since they include interactivity, event handling etc built-in over what's possible with pure CSS. The best place to start with each of these libraries is to go to the **Getting Started** page in the top of the docs for each. 
+Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. It's also available in the following open-source implementations to cover a variety of needs. There are a few different implementations of Spectrum that are listed here for reference and in order of preferred use. Leveraging Spectrum in your add-on allows you to take advantage of all of the built-in benefits it provides while saving front-end development time.
 
 <InlineAlert slots="text" variant="success"/>
 
-Check out the [code samples](guides/develop/samples) for examples that use the above libraries. Currently you can refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** can be referred to for specific examples using **React Spectrum**. 
+Check out our [code samples](guides/develop/samples) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**. 
+
+
+## Spectrum Web Components
+The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum designed to work with any web framework with a number of benefit, including:
+    
+  - Framework agnostic
+  - Lightweight    
+  - Accessible by default 
+  - Standards based
+
+### Spectrum Web Components with React
+[**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) is a collection of React wrapper components for the Spectrum Web Components (SWC) library, enabling you to use SWC in your React applications with ease.     
+
+<InlineAlert slots="text" variant="success"/>
+
+We **HIGHLY** recommend choosing to use Spectrum Web Components (or swc-react) for your add-ons since it currently offers the most comprehensive set of components and built-in benefits. 
+
+## React Spectrum
+[React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) is a project that implements the Adobe's Spectrum design language into React UI components.
+
+  React Spectrum is composed of three parts:
+
+  - **react-spectrum**: a component library implementing the Adobe Spectrum design system
+  - **react-aria**: a library of React hooks implementing the patterns defined in the ARIA practices spec, including mouse, touch, and keyboard behavior, accessibility, and internationalization support
+  - **react-stately**: a library of React hooks implementing cross platform (e.g. web/native) state management for components that need it.
+
+## Spectrum CSS
+[Spectrum CSS](https://opensource.adobe.com/spectrum-css/) is an open-source implementation of Spectrum and includes components and resources to make applications more cohesive. Spectrum CSS is designed to be used in partnership with [Spectrum’s detailed usage guidelines](https://spectrum.adobe.com/).
+
+
+<InlineAlert slots="text" variant="warning"/>
+
+You should only rely on using the base [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) library for simple applications that need basic things like typography, checkboxes, text fields, etc. Otherwise you should try using one of the other implementations provided like [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) and [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) since they include interactivity, event handling etc built-in over what's possible with pure CSS. The best place to start with each of these libraries is to go to the **Getting Started** page in the top of the docs for each. 
 
 ### Spectrum Express Theme
 If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. 
