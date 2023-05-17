@@ -2,19 +2,14 @@
 
 This quick start guide will help you create and run your first add-on, a starter add-on that outputs "hello world" when it's run in Adobe Express.
 
-<!-- If you have not completed the [Setup step](setup.md) yet, please go back and complete that step first, it will only take a minute.  -->
-
 ## Prerequisites
 
 - [NodeJS](https://nodejs.org/en/download/) (major version >= 16) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version >= 8) installed
 - Familiarity with programming in HTML, CSS and JavaScript
 - An email address associated with an Adobe ID. (If you don't have one yet, you'll be taken through steps to create one in this guide)
-- Access to the Adobe Express Public Beta - [**BETA ACCESS REQUIRED - Join our waitlist**](../)
-- Express Add-on CLI - BETA ACCESS REQUIRED [**ETA ACCESS REQUIRED - Join our waitlist**](../)
+- Access to the Adobe Express Public Beta - [**BETA ACCESS REQUIRED - Join our wait list**](https://airtable.com/shr3IK38z2MCNHJEm)
+- Express Add-on CLI - [**BETA ACCESS REQUIRED - Join our wait list**](https://airtable.com/shr3IK38z2MCNHJEm)
 
-<!-- #### Prerequisites with Beta Access Required - [**Join our waitlist**](../)
-- Access to the Adobe Express Public Beta
-- Express Add-on CLI  -->
 
 ## Add-on CLI (Command Line Interface)
 To facilitate the development of add-ons, we have provided a command line interface (CLI) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into Adobe Express Beta running in your browser. 
@@ -23,7 +18,7 @@ To facilitate the development of add-ons, we have provided a command line interf
 
 <InlineAlert slots="text" variant="error"/>
 
-**IMPORTANT:** These steps require access to the Adobe Express Public Beta and CLI, which are currently offered to interested developers on a *wait-list only basis*. If you're interested, please fill in and submit [this wait list form](https://airtable.com/shr3IK38z2MCNHJEm) to get on the list now!
+**IMPORTANT:** These steps require access to the Adobe Express Public Beta and CLI, which are currently offered to interested developers on a *wait list basis*. If you're interested, please fill in and submit [this wait list form](https://airtable.com/shr3IK38z2MCNHJEm) to get on the list now!
 
 ### Step 1: Create your add-on project
 Open your terminal and run the following command:

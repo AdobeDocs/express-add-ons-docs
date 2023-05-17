@@ -162,5 +162,6 @@ Simple sample which illustrates how to use Spectrum Web Components without React
 
 - [Application UI Theme](../3-WritingCode/api-reference.md#application-ui-theme) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
 
-CAUTION:
+<InlineAlert slots="text" variant="warning"/>
+
 Before you run any samples, you must have run the `npx @adobe-ccwebext/create-ccweb-add-on` command at least once.

@@ -137,9 +137,9 @@ The developer has the flexibility to create the add-on in any other supported la
 #### Multilingual UI Functionality 
 Ensure that the add-on user interface remains intact and functional when switched to other supported languages.
 
-IMPORTANT:
-Check that the add-on strings or text content are not truncated or cut off in any supported locale, ensuring that the complete text is displayed appropriately.
+<InlineAlert slots="text" variant="warning"/>
 
+Check that the add-on strings or text content are not truncated or cut off in any supported locale, ensuring that the complete text is displayed appropriately.
 
 ## Accessibility Testing (Optional)
  
@@ -148,7 +148,7 @@ Check that the add-on strings or text content are not truncated or cut off in an
 3. Ensure that the add-on provides proper alternative text for images, labels for form fields, and other accessibility features to assist users with visual impairments or other disabilities.
 4. Verify that the add-on colors, contrast, and fonts meet accessibility standards and are easily readable by users with visual impairments.
 
-TIP:
+<InlineAlert slots="text" variant="success"/>
 See the [Adobe Accessibility Page](https://www.adobe.com/accessibility.html) for help with your accessibility testing.
  
 ## Usability Testing
@@ -156,15 +156,13 @@ See the [Adobe Accessibility Page](https://www.adobe.com/accessibility.html) for
 1. Ensure your add-on UI blends seamlessly with Adobe Express by adhering to the [Adobe Spectrum](../design/#spectrum-design-system) design language and incorporating commonly used patterns found in the Adobe Express UI. While it's not mandatory for add-ons to use Adobe's Spectrum libraries, it can significantly simplify the development process.
 2. Ensure that the add-on user interface and controls are responsive, functional, and usable across different devices, screen sizes, and browsers.
 3. Verify that any error messages, warnings, or notifications displayed by the add-on are clear, informative, and helpful to the user.
-4. Check that the add-on provides proper feedback and validation for user inputs, such as displaying error messages for invalid inputs or confirmation messages for successful actions
- 	 
+4. Check that the add-on provides proper feedback and validation for user inputs, such as displaying error messages for invalid inputs or confirmation messages for successful actions 	 
  
 ## Performance
 
 1. Check the performance of the add-on in terms of loading time, response time, and resource utilization, and ensure that it meets acceptable standards. Keep in mind users will have varied experiences depending on things like network connection etc.  
 2. Verify that the add-on does not cause any significant slowdown or crashes in the host app during normal usage.
 3. Check that the add-on does not consume excessive system resources, such as CPU or memory, which could impact the performance of the host app or the user's system.
-
 
 ## Security
 
@@ -199,8 +197,6 @@ Ensure that the add-on does not cause any compatibility issues with other softwa
 5. Add-ons that use OAuth flows should indicate to users when a popup window has been blocked by the browser's popup blocker. This can be achieved by displaying a message on the web page or in the add-on UI. This is important to avoid confusion and frustration for users who may feel like the add-on is not responding when they try to sign in. Additionally, the API should return the error code POPUP_BLOCKED when a popup window is blocked during the OAuth flow.
 6. For any add-ons that generate assets via AI or import assets from an asset repository, include information about usage rights in the add-on's description. It is important to ensure that the usage rights provided in the description are accurate and up-to-date.
 7. Tab navigation is a common and important way for users to navigate websites and applications, particularly for users with disabilities who rely on keyboard navigation. Add-ons should not interfere or override tab navigation, as this can create barriers to accessibility for users who rely on it.
-
-
 
 ## Submission Checklist
  

@@ -54,7 +54,7 @@ Your publisher profile includes required details including:
 
 <InlineAlert slots="text" variant="info"/>
 
-**NOTE:** You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one-time thing (unless you decide you need to update it for your own reasons). **Note:** Any changes to your publisher profile will need to be submitted for approval again.
+**IMPORTANT:** You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one-time thing (unless you decide you need to update it for your own reasons). **Note:** Any changes to your publisher profile will need to be submitted for approval again.
 Frequently changing your publisher profile can confuse users and erode trust. Please be sure you've considered this before changing this information.
 
 

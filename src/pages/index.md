@@ -27,8 +27,7 @@ Adobe Express add-ons allow developers to extend the Adobe Express core function
 
 ### Adobe Express Public Beta
 
-Adobe Express is currently in a gated Public Beta with access provided to users on a wait-list only basis. However, interested developers should fill out [this form](https://airtable.com/shr3IK38z2MCNHJEm) to get added to our wait list and gain access in the most timely manner. 
-
+Adobe Express is currently in a gated Public Beta with access provided to users via a wait list. However, interested developers should fill out [this form](https://airtable.com/shr3IK38z2MCNHJEm) to get added to our wait list and gain access in the most timely manner. 
 
 [Join our wait list!](https://airtable.com/shr3IK38z2MCNHJEm)
 

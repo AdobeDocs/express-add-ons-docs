@@ -23,7 +23,8 @@ The next step is to upload your package zip. Click on the **select from your com
 
 ![Empty upload modal](./img/distrib-private-upload-pkg.png)
 
-NOTE:
+<InlineAlert slots="text" variant="info"/>
+
 This plugin package should contain the production-ready built content in the root of the zip (think in terms of content like from the `/dist` folder, but in the root of the zip and in the most production-ready form). We will not be building/compiling your source. You should try to reduce the size as much as possible. Minifying, uglifying, obfuscating, removing the sourcemaps etc are acceptable to use in producing your final bundle. 
 
 The package will go through a verification process which may take a few seconds, so please be patient. 
@@ -49,14 +50,16 @@ Now you will be prompted to choose a unique *name* for your add-on, an *icon*, a
 
 ![](./img/distrib-private-name-icon.png)
 
-TIP:
+<InlineAlert slots="text" variant="success"/>
+
 The number of characters allowed for any given field above it on the right throughout the distribution experience, and see how many are available still as you are typing into it. For instance, the name allows a max of 25 characters.
 
 Once you've entered the required fields, the **Save and create private link** button will be enabled.
 
 ![Successfully created link](./img/distrib-pr
 
-WARNING: 
+<InlineAlert slots="text" variant="warning"/>
+
 The **Save and create private link** button will only be enabled if you have entered all of the required data. Also, once yiy click he button, it may take a moment to send the package and details to the backend server to generate the link, so please be patient.
 
 ![Successfully created link](./img/distrib-private-save-create.png)
@@ -65,5 +68,6 @@ You can now click **Copy link** to copy your private link for sharing.
 
 ![Private link Details](./img/distrib-private-link-success.png)
 
-TIP: 
+<InlineAlert slots="text" variant="success"/>
+
 You can also choose to view your submission details later from the add-on launchpad by clicking **Manage** again, and then selecting any existing listing. 
