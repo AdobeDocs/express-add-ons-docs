@@ -7,8 +7,8 @@ This quick start guide will help you create and run your first add-on, a starter
 - [NodeJS](https://nodejs.org/en/download/) (major version >= 16) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version >= 8) installed
 - Familiarity with programming in HTML, CSS and JavaScript
 - An email address associated with an Adobe ID. (If you don't have one yet, you'll be taken through steps to create one in this guide)
-- Access to the Adobe Express Public Beta - [**BETA ACCESS REQUIRED - Join our wait list**](https://airtable.com/shr3IK38z2MCNHJEm)
-- Express Add-on CLI - [**BETA ACCESS REQUIRED - Join our wait list**](https://airtable.com/shr3IK38z2MCNHJEm)
+- Access to the Adobe Express Beta - [Join our wait list](https://airtable.com/shr3IK38z2MCNHJEm)
+- Express Add-on CLI - [Join our wait list](https://airtable.com/shr3IK38z2MCNHJEm)
 
 
 ## Add-on CLI (Command Line Interface)
@@ -18,7 +18,7 @@ To facilitate the development of add-ons, we have provided a command line interf
 
 <InlineAlert slots="text" variant="error"/>
 
-**IMPORTANT:** These steps require access to the Adobe Express Public Beta and CLI, which are currently offered to interested developers on a *wait list basis*. If you're interested, please fill in and submit [this wait list form](https://airtable.com/shr3IK38z2MCNHJEm) to get on the list now!
+**IMPORTANT:** These steps require access to the Adobe Express Beta and Add-on CLI, which are currently offered to interested developers on a *wait list basis*. If you're interested, please fill in and submit [this wait list form](https://airtable.com/shr3IK38z2MCNHJEm) to get on the list now!
 
 ### Step 1: Create your add-on project
 Open your terminal and run the following command:
@@ -27,7 +27,7 @@ Open your terminal and run the following command:
 npx @adobe/create-ccweb-add-on hello-world --template javascript     
 ```
 
-This command will create a new add-on based on a basic `javascript` template. See the [Concepts page - Templates section](../getting_started/concepts.md/#templates) for more details on the built-in templates available with the Adobe Express Add-ons CLI. 
+This command will create a new add-on based on a basic `javascript` template. See the [Templates section](../getting_started/dev_tooling/#templates) in the **Developer Tooling** page for more details on the built-in templates available with the Adobe Express Add-ons CLI. 
 
 <InlineAlert slots="text" variant="success"/>
 

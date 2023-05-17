@@ -48,6 +48,6 @@ The steps to get started include:
 1. [Load and run your add-on](quickstart/#step-3-load-and-run-your-add-on) directly in Adobe Express!
 
 ### In-Depth Guides
-Next, check out our [guides](../guides/) for more detailed information on designing, developing, debugging and distributing your add-ons. 
+Next, check out te rest of our [guides](../guides/) for more detailed information on [developing](../develop/), [designing](../design/), [debugging](../debug/) and [distributing](../distribute/) your add-ons. 
 
 If you run into any issues at any time throughout your development process, please refer to the [Debug Guides](../guides/debug/) and [FAQ](../guides/faq.md) for more help. You can also check out our [community section](../support/community/) for links to our forums and other helpful resources, and to interact with other developers building amazing add-ons!

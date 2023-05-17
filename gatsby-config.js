@@ -11,23 +11,23 @@
  */
 
 module.exports = {
-  pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/',
+  pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/guides',
   siteMetadata: {    
     "home": {
       "title": "Adobe Express Add-ons",
       "path": "/express-add-ons"
     },
     pages: [      
-      {
-        title: 'Getting Started',
-        path: 'getting_started'
-      },
+      // {
+      //   title: 'Getting Started',
+      //   path: 'getting_started'
+      // },
       {
         title: 'Guides',
         path: 'guides'
       },
       {
-        title: 'API Reference',
+        title: 'References',
         menu: [
           {
             title: 'API Reference v1',
@@ -53,21 +53,23 @@ module.exports = {
     ],
     subPages: [ 
       {
-        "title": "Introduction",
-        "path": "getting_started"
-      },  
-      // {
-      //   "title": "Setup",
-      //   "path": "getting_started/setup.md"
-      // },
-      {
-        "title": "Quickstart",
-        "path": "getting_started/quickstart.md"
-      },  
-      {
-        "title": "Concepts",
-        "path": "getting_started/concepts.md"
-      },  
+        "title": "Getting Started",
+        "path": "guides/getting_started",
+        "pages": [             
+          {
+            "title": "Introduction",
+            "path": "guides/getting_started"
+          },        
+          {
+            "title": "Quickstart",
+            "path": "guides/getting_started/quickstart.md"
+          },  
+          {
+            "title": "Developer Tooling",
+            "path": "guides/getting_started/dev_tooling.md"
+          }
+        ]
+      },
       {
         "title": "Develop",
         "path": "guides/develop",
@@ -95,7 +97,7 @@ module.exports = {
         "path": "guides/design",
         "pages": [
           {
-            "title": "Design Overview",
+            "title": "Add-on User Interface Guide",
             "path": "guides/design/"
           }, 
           // {
@@ -143,7 +145,23 @@ module.exports = {
           //   "path": "guides/distribute/monetization.md"
           // }               
         ]
-      },        
+      },               
+      {
+        "title": "References",
+        "path": "guides/references",      
+        pages: [
+          {
+            title: 'API Reference v1',
+            description: 'API Reference v1',
+            path: '/references/'
+          },          
+          {
+            title: 'Manifest Schema',
+            description: 'Manifest Schema',
+            path: '/references/manifest.md'
+          }
+        ]  
+      }, 
       {
         "title": "FAQ",
         "path": "guides/faq.md",        

@@ -166,3 +166,6 @@ Allows users to search for popular gifs and add them to their Express pages.
 <InlineAlert slots="text" variant="warning"/>
 
 **NOTE:** Before you run any samples, you must have run the `npx @adobe-ccwebext/create-ccweb-add-on` command at least once.
+
+## Resources
+- Typescript Typings

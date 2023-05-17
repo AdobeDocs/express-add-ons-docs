@@ -17,7 +17,7 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Overall Concepts
+# Developer Tooling
 
 ## CLI Usage and Arguments
 
