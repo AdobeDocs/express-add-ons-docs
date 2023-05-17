@@ -55,4 +55,4 @@ The ToDo list sample takes advantage of the Add-on SDK's `ClientStorage` API whi
 
 <InlineAlert slots="text" variant="info"/>
 
-See [the Add-on SDK section](../3-WritingCode/add-on-sdk.md) for more details about storing and persisting data with your add-ons.
+See [the Client Storage API](../../references/index.md#client-storage) for more details about storing and persisting data with your add-ons.
