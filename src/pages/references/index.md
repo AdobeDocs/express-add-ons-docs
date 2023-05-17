@@ -20,11 +20,11 @@ contributors:
 # API Overview
 The following APIs are currently supported for building add-ons:
 
-- [Add-on SDK - API Access](#add-on-sdk---api-access)
-- [Application UI Theme](#application-ui-theme)
-- [Language & Locale](#language-locale)
-- [Manifest Data](#add-on-manifest-data)
-- [OAuth 2.0 Auth](#authorize-using-oauth-20)
+- [AddOnSDKAPI](#AddOnSDKAPI)
+- [Theme](#ui-theme)
+- [Languages & Locale](#language-locale)
+- [Manifest](#add-on-manifest-data)
+- [OAuth 2.0](#oauth-20)
 - [ClientStorage](#client-storage)
 - [Import](#import)
 - [Drag and Drop](#drag-and-drop)
@@ -49,8 +49,13 @@ To use the SDK, simply include a link to the `sdk.js` file in a script tag withi
 </script>
 ```
 
-## Add-on SDK - API Access
-The Add-on SDK provides the following interface export for accessing all of the APIs.
+## AddOnSDKAPI
+The `AddOnSDKAPI` provides the following interface for accessing all of the APIs. It exposes several variables listed below, which allow you to know when the APIs are ready to interact with, the `apiVersion` of the SDK running, the insta access to a number of things
+
+`apiVersion`: Current version of the SDK running.
+`ready`: Allows you to know you can start accessing the APIs. 
+`instance`: the currently running add-on instance, allowing you to access the [manifest.json](#manifest) details and a [Client Storage](#client-storage) object, which allows you to locally persist to storage, per user and for this add-on.
+`app`: Provides access to the host application (Adobe Express). See the [`Application`](#Application) definition below for more details.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
@@ -98,20 +103,64 @@ AddOnSDKAPI.ready.then(() => {
 });
 ```
 
+## Application 
+The [`AddOnSDKAPI`](#AddOnSDKAPI) provides you with an `app` variable, which is of type `Application`, and allows you to access the following objects which are used throughout this reference:
 
-## Application UI Theme
-Retrieve the current theme of the host application.
+- `ui`: Provides access to the [theme](#theme), [locale and locales](language-locale).
+- `document`: Provides access to the methods needed for [adding an image or video](#import) the document and for [creating a rendition](#export) for export.
+- `oauth`: Provides access to the OAuth methods needed for use with the [OAuth API](oauth-20).
+
+```js
+/**
+ * Interface that represents the underlying Application (Adobe Express).
+ */
+export interface Application {
+    /**
+     * Represents the UI of the app (Adobe Express). Provides access to theme, locale and locales.
+     */
+    readonly ui: UI;
+
+    /**
+     * Represents the active document and provides access to the methods needed for adding an image or video the document and creating a rendition (for export).
+     */
+    readonly document: Document;
+
+    /**
+     * OAuth 2.0 middleware for handling user authorization. Provides access to the OAuth methods needed to implement OAuth 2.0.
+     */
+    readonly oauth: OAuth;
+}
+```
+
+## AddOn
+Represents the current add-on, providing references to `manifest` and `clientStorage` objects. 
+
+```js
+/**
+ * Base interface for all type of add-ons
+ */
+export interface AddOn {
+    
+    /**
+     * Add-ons Manifest details - this maps to entries in the add-ons manifest.json file.
+     */
+    readonly manifest: Record<string, unknown>;
+
+    /**
+     * Local-persisted storage per user per addon.
+     */
+    readonly clientStorage: ClientStorage;
+}
+```
+
+
+## Theme
+Retrieve the current theme of the host application, via the [`app.ui`](#application) object.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
 ### Interface
-```
-interface Application {
-    /**
-     * Represents the UI of the host application.
-     */
-    readonly ui: UI;
-}
+```js
 interface UI {
     /**
      * The theme currently used by the host application.
@@ -144,7 +193,7 @@ We have provided a sample that can be used as a reference for implementing the A
 
 
 ## Language & Locale
-Retrieve the supported languages and current locale of the host application.
+Retrieve the supported languages (via the `locales` variable) and current `locale` of the host application.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
@@ -485,9 +534,9 @@ function authorizeWithOwnRedirect(challenge) {
 We have provided two samples that can be used as a reference for implementing the OAuth APIs. Please see the **import-images-using-oauth** and **Dropbox** samples for specific details.
 
 ## Client Storage
-The ClientStorage APIs allow you to store/retrieve persistent data in the user's current browser. It's like the `Window.localStorage` API, but is asynchronous, and supports multiple datatypes, i.e., objects, arrays, strings, numbers, booleans, null, undefined and Uint8Array. Since data will be stored in the user’s current browser, user actions such as clearing the browser cache might clear all of the data storage in `ClientStorage` (similar to `localStorage`).
+The ClientStorage APIs allow you to store/retrieve/delete persistent data in the user's current browser. It's like the `Window.localStorage` API, but is asynchronous, and supports multiple datatypes, i.e., objects, arrays, strings, numbers, booleans, null, undefined and Uint8Array. Since data will be stored in the user’s current browser, user actions such as clearing the browser cache might clear all of the data storage in `ClientStorage` (similar to `localStorage`).
 
-Each add-on can store up to 10 mb of data in `ClientStorage`. Post 10 mb, any data additions will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added.
+Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Post 10 mb, any data additions will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
@@ -526,6 +575,11 @@ interface ClientStorage {
    * Use this to enumerate the full contents of the ClientStorage API.
    */
   async keys(): Promise<string[]>;
+
+   /**
+     * Delete all data present in ClientStorage for an Add-on.
+     */
+    clear(): Promise<void>;
 }
 ```
 
@@ -558,12 +612,22 @@ async function setData(key, value) {
   }
 }
 
-// Delete add-on data
+// Delete add-on data for a key
 async function deleteData(key) {
   try {
     await clientStorage.removeItem(key);
   } catch (error) {
     console.log("Failed to delete the value from the ClientStorage.");
+  }
+}
+
+// Delete ALL add-on data for this user
+async function clearData() {
+  try {
+    await clientStorage.clear();
+  }
+  catch(error) {
+    console.log("Failed to clear the data from the ClientStorage.");
   }
 }
 
@@ -947,42 +1011,6 @@ async function displayPreview() {
 <InlineAlert slots="text" variant="success"/>
 
 Please refer to the **export-sample** and **pix** add-on in the code samples for more details on how to use the Export APIs.
-
-## ClientStorage - clear
-Allows you to delete all add-on data from ClientStorage.
-
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
-
-### Interface
-```js
-interface ClientStorage {
-  /**
-   * Delete all of the data in the ClientStorage for an Add-on
-   */
-  clear(): Promise<void>;
-}
-```
-
-### Usage
-```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
-// Wait for the SDK to be ready
-await AddOnSDKAPI.ready;
- 
-// Reference to the client storage of the add-on
-const {clientStorage} = AddOnSDKAPI.instance;
- 
-// Delete all the add-on data
-async function clearData() {
-  try {
-    await clientStorage.clear();
-  }
-  catch(error) {
-    console.log("Failed to clear the data from the ClientStorage.");
-  }
-}
-```
 
 
 ## Simple Modal Dialogs
