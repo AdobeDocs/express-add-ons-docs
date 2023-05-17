@@ -43,7 +43,7 @@ The steps to get started include:
 
 1. [Set up](quickstart/#prerequisites) your local environment.
 1. [Create a new add-on project](quickstart/#step-1-create-your-add-on-project).
-1. Log in to [Adobe Express Beta](https://new.express.adobe.com/new).
+1. Log in to [the beta version of Adobe Express](https://new.express.adobe.com/new).
 1. Enable the [developer mode](quickstart/#step-3-load-and-run-your-add-on).
 1. [Load and run your add-on](quickstart/#step-3-load-and-run-your-add-on) directly in Adobe Express!
 

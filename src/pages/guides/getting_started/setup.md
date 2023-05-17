@@ -26,7 +26,7 @@ This guide will help you set up your development environment so you can get star
 - Familiarity with programming in HTML, CSS and JavaScript.
 - The Add-on CLI installed on your local machine.
 - An email address associated with an Adobe ID. If you don't have one yet, you'll be taken through steps to create one in this guide.
-- Access to the Adobe Express Beta. [**Join our wait list**](../)
+- Access to the beta version of Adobe Express. [**Join our wait list**](../)
 
 ## Add-on CLI (Command Line Interface)
 To facilitate the development of add-ons, we have incorporated a command line interface (CLI). This CLI will enable you to create and run Express add-ons directly in your local machine and load them into Adobe Express Beta in your browser. Before you can use the CLI, you must install it to your local environment.

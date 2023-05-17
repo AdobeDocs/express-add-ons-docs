@@ -11,7 +11,7 @@
  */
 
 module.exports = {
-  pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/guides',
+  pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/guides/',
   siteMetadata: {    
     "home": {
       "title": "Adobe Express Add-ons",
