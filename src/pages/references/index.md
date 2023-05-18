@@ -35,7 +35,7 @@ Also, check out the latest [Manifest Reference](../references/manifest.md) for m
 
 <InlineAlert slots="text" variant="success"/>
 
-Each API section includes the **Interface** definition as well as a **Usage** tab to show an example of how the interface can be used. Please also see the [code samples](guides/develop/samples) for more in-depth references on using the Add-on SDK APIs. 
+Each API section includes the **Interface** definition as well as a **Example** tab to show an example of how the interface can be used. Please also see the [code samples](guides/develop/samples) for more in-depth references on using the Add-on SDK APIs. 
 
 ## Introduction
 The Add-on SDK is available as an ECMAScript 2015 Module hosted in a CDN.
@@ -91,7 +91,7 @@ interface AddOnSDKAPI {
 }
 ```
 
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -171,7 +171,7 @@ interface UI {
  * "themechange" event is triggered when the UI theme is changed in the application.
  */
 ```
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -224,7 +224,7 @@ interface UI {
  */
 ```
 
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -257,7 +257,7 @@ interface AddOn {
 }
 ```
 
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -443,7 +443,7 @@ export enum AuthorizationStatus {
 }
 ```
 
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -583,7 +583,7 @@ interface ClientStorage {
 }
 ```
 
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -674,7 +674,7 @@ interface Document {
 }
 ```
 
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -802,7 +802,7 @@ interface DragEndEventData {
 }
 ```
 
-### Usage
+### Example
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -988,7 +988,7 @@ interface PageRendition extends Rendition {
 }
 ```
 
-### Usage
+### Example
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -1183,7 +1183,7 @@ export enum ButtonType {
 }
 ```
 
-### Usage
+### Example
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  

@@ -17,11 +17,17 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
+<InlineAlert slots="text" variant="info"/>
+
+These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
+
+<br/><br/>
+
 # Introduction to Adobe Express Add-ons
 
-This guide covers everything you need to know to get started building add-ons for Adobe Express. At a high level, add-ons refer to any feature distributed independently from the core product that a user can enable or install to extend the capabilities of the core product. Adobe will be providing built-in add-ons out of the box, but 3rd party developers will also able to create and distribute their own add-ons to the community by following the steps provided in this documentation.
+Here you will find everything you need to know to get started building add-ons for Adobe Express. At a high level, add-ons refer to any feature distributed independently from the core Adobe Express that a user can enable or install to extend the functionality. Adobe will be providing built-in add-ons out of the box, but 3rd party developers will also have the opportunity to create and distribute their own add-ons by following the steps provided in this documentation.
 
-## Use Cases
+## Add-on Use Cases
 Some examples of add-on use cases include:
 
 - Importing images and video

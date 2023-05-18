@@ -17,14 +17,24 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
+<InlineAlert slots="text" variant="note"/>
+
+The beta version of Adobe Express is currently accessible to users via a wait list. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
+<br/><br/>
+
+<!-- <AnnouncementBlock slots="heading, text, button" />
+
+### The Beta Version of Adobe Express
+
+The beta version of Adobe Express is currently accessible to users via a wait list. Click the button below to sign up now!
+
+[Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm) -->
+
 # Add-on Developer Journey
 
 1. Create an add-on project with our CLI. See the [Getting Started](../getting_started/) guides to help you create your first project quickly. 
 2. Use the [Add-on SDK APIs](../guides/develop/) to code all of the features you want to build into your add-on. 
 3. [Design your UI](../guides/design/) with the help of [Adobe's Spectrum Design System](../guides/design/#spectrum-design-system). 
 4. [Debug](../guides/debug/) and test your add-on with your favorite browser tools, [Visual Studio Code](../guides/debug/vs-code.md) and the add-on logging window provided in the Express UI development environment.
-5. [Distribute your add-on](../guides/distribute/) to the public. Submit your add-on for review, and once approved, it will automatically be added to the available add-ons in Adobe Express. 
+5. [Distribute your add-on](../guides/distribute/) for public or private sharing. 
 
-<InlineAlert slots="text" variant="success"/>
-
-**NOTE:** You can also choose to [distribute your add-on as a private link](../guides/distribute/submit-private-dist.md) if desired. 

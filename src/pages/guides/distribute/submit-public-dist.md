@@ -102,10 +102,10 @@ The **Submit for review** button will only be enabled if you have entered all of
 
 ![Submission complete](./img/distrib-submission-complete.png)
 
-You can click **View submission details** if desired, and you will see the following type of information for your add-on. 
+**View submission details** will display the details of your add-on submission:
 
 ![View Submission Details](./img/distrib-view-submission-details.png)
 
 <InlineAlert slots="text" variant="success"/>
 
-You can also choose to view your submission details later from the add-on launchpad by clicking **Manage** again, and then selecting any existing listing. If it's in *Draft* status, you can click the ellipsis button "..." and choose **edit** if you want to update the details.
+You can also choose to view your submission details later from the add-on launchpad by clicking **Manage** again, and then selecting any existing listing. If it's in a *Draft* status, you can click the ellipsis button "..." and choose **edit** if you want to update the details.
