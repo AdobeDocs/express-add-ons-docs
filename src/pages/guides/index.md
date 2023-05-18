@@ -17,18 +17,11 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-<InlineAlert slots="text" variant="note"/>
+<InlineAlert slots="text" variant="info"/>
 
-The beta version of Adobe Express is currently accessible to users via a wait list. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
+These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
+
 <br/><br/>
-
-<!-- <AnnouncementBlock slots="heading, text, button" />
-
-### The Beta Version of Adobe Express
-
-The beta version of Adobe Express is currently accessible to users via a wait list. Click the button below to sign up now!
-
-[Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm) -->
 
 # Add-on Developer Journey
 
