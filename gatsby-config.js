@@ -30,14 +30,14 @@ module.exports = {
         title: 'References',
         menu: [
           {
-            title: 'API Reference v1',
+            title: 'API References',
             description: 'API Reference v1',
-            path: '/references/'
+            path: 'guides/references/'         
           },          
           {
             title: 'Manifest Schema',
             description: 'Manifest Schema',
-            path: '/references/manifest.md'
+            path: 'guides/references/manifest.md'
           }
         ]
       },
@@ -51,7 +51,7 @@ module.exports = {
         path: '/support/'
       }
     ],
-    subPages: [ 
+    subPages: [       
       {
         "title": "Getting Started",
         "path": "guides/getting_started",
@@ -151,15 +151,59 @@ module.exports = {
         "path": "guides/references",      
         pages: [
           {
-            title: 'API Reference v1',
+            title: 'Add-on APIs',
             description: 'API Reference v1',
-            path: '/references/'
+            path: 'guides/references/',
+            pages: [
+              // {
+              // "title": "AddOnSdk API",
+              // "path": "guides/references/apis/addonsdk.md"
+              // },
+              {
+                "title": "Locale API",
+                "path": "guides/references/apis/locale.md"
+              },
+              {
+                "title": "Manifest API",
+                "path": "guides/references/apis/manifest.md"
+              },
+              {
+                "title": "Theme API",
+                "path": "guides/references/apis/theme.md"
+              },
+              {
+                "title": "ClientStorage API",
+                "path": "guides/references/apis/clientstorage.md"
+              },
+              {
+                "title": "OAuth API",
+                "path": "guides/references/apis/oauth.md"
+              },
+              {
+                "title": "Import API",
+                "path": "guides/references/apis/import.md"
+              },
+              {
+                "title": "Export API",
+                "path": "guides/references/apis/export.md"
+              },
+              {
+                "title": "Drag an Drop",
+                "path": "guides/references/apis/dnd.md"
+              },
+              {
+                "title": "Dialogs",
+                "path": "guides/references/apis/dialogs.md"
+              }
+
+            ],
           },          
           {
-            title: 'Manifest Schema',
+            title: 'Manifest',
             description: 'Manifest Schema',
-            path: '/references/manifest.md'
+            path: 'guides/references/manifest.md'
           }
+          
         ]  
       }, 
       {

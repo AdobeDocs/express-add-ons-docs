@@ -25,7 +25,7 @@ The next step is to upload your package zip. Click on the **select from your com
 
 <InlineAlert slots="text" variant="info"/>
 
-This plugin package should contain the production-ready built content in the root of the zip (think in terms of content like from the `/dist` folder, but in the root of the zip and in the most production-ready form). We will not be building/compiling your source. You should try to reduce the size as much as possible. Minifying, uglifying, obfuscating, removing the sourcemaps etc are acceptable to use in producing your final bundle. 
+This plugin package should contain the production-ready built content in the root of the zip (think in terms of content like from the `/dist` folder, but in the root of the zip and in the most production-ready form). We will not be building/compiling your source. You should try to reduce the size as much as possible. Minifying, uglifying, obfuscating, removing the sourcemaps etc are acceptable to use in producing your final bundle. See [this sample add-on package](./img/my-amazing-add-on-package.zip) for reference.
 
 The package will go through a verification process which may take a few seconds, so please be patient. 
 ![Verifying](./img/private-verifying.png)

@@ -20,9 +20,9 @@ contributors:
 # API Overview
 The following APIs are currently supported for building add-ons:
 
-- [AddOnSDKAPI](#AddOnSDKAPI)
+- [AddOnSdk](#AddOnSdk)
 - [Theme](#ui-theme)
-- [Languages & Locale](#language-locale)
+- [Languages & Locale](#language--locale)
 - [Manifest](#add-on-manifest-data)
 - [OAuth 2.0](#oauth-20)
 - [ClientStorage](#client-storage)
@@ -44,20 +44,20 @@ To use the SDK, simply include a link to the `sdk.js` file in a script tag withi
 
 ```js
 <script type="module">
-  import AddOnSDKAPI from
+  import AddOnSdk from
   "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 </script>
 ```
 
-## AddOnSDKAPI
-The `AddOnSDKAPI` provides the following interface for accessing all of the APIs. It exposes several variables listed below, which allow you to know when the APIs are ready to interact with, the `apiVersion` of the SDK running, the insta access to a number of things
+## AddOnSdk
+The `AddOnSdk` provides the following interface for accessing all of the APIs. It exposes several variables listed below, which allow you to know when the APIs are ready to interact with.
 
-`apiVersion`: Current version of the SDK running.
-`ready`: Allows you to know you can start accessing the APIs. 
-`instance`: the currently running add-on instance, allowing you to access the [manifest.json](#manifest) details and a [Client Storage](#client-storage) object, which allows you to locally persist to storage, per user and for this add-on.
-`app`: Provides access to the host application (Adobe Express). See the [`Application`](#Application) definition below for more details.
+- `apiVersion`: Current version of the SDK running.
+- `ready`: Allows you to know you can start accessing the APIs. 
+- `instance`: the currently running add-on instance (see [AddOn Object](#addon)), allowing you to access the [manifest.json](#manifest) details and a [Client Storage](#client-storage) object, which allows you to locally persist to storage, per user and for this add-on.
+- `app`: Provides access to the host application (Adobe Express). See the [`Application`](#application) definition below for more details.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 
 ### Interface
 
@@ -65,7 +65,7 @@ The `AddOnSDKAPI` provides the following interface for accessing all of the APIs
 /**
  * The main API Interface exposed by the SDK to the consuming Add-on code.
  */
-interface AddOnSDKAPI {
+interface AddOnSdk {
     /**
      * API version of the SDK.
      */
@@ -94,17 +94,27 @@ interface AddOnSDKAPI {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-AddOnSDKAPI.ready.then(() => {
-  console.log("API version", AddOnSDKAPI.apiVersion);
-  console.log("Add-on instance object", AddOnSDKAPI.instance);
-  console.log("Application object", AddOnSDKAPI.app);
+AddOnSdk.ready.then(() => {
+  console.log("API version", AddOnSdk.apiVersion);
+  console.log("Add-on instance object", JSON.stringify(AddOnSdk.instance));
+  console.log("Application object", JSON.stringify(AddOnSdk.app));  
 });
+
+```
+
+### Output
+```json
+API version 1
+
+Add-on instance object {"manifest":{"testId":"08f4469f-7999-458b-9ef9-b1bd043cbdca","name":"Add On Api Sampler","version":"1.0.0","manifestVersion":2,"requirements":{"apps":[{"name":"Express","apiVersion":1}]},"entryPoints":[{"type":"panel","id":"panel1","main":"https://localhost:5241/08f4469f-7999-458b-9ef9-b1bd043cbdca/index.html"}]},"clientStorage":{}}
+
+Application object {"ui":{"theme":"light","locale":"en-US","locales":["cy-GB","da-DK","de-DE","en-US","es-ES","fi-FI","fr-FR","it-IT","ja-JP","ko-KR","nb-NO","nl-NL","pt-BR","sv-SE","zh-Hans-CN","zh-Hant-TW","zz-ZZ"]},"oauth":{},"document":{}}
 ```
 
 ## Application 
-The [`AddOnSDKAPI`](#AddOnSDKAPI) provides you with an `app` variable, which is of type `Application`, and allows you to access the following objects which are used throughout this reference:
+The [`AddOnSdk`](#AddOnSdk) provides you with an `app` variable, which is of type `Application`, defined below, and allows you to access the following objects which are used throughout this reference:
 
 - `ui`: Provides access to the [theme](#theme), [locale and locales](language-locale).
 - `document`: Provides access to the methods needed for [adding an image or video](#import) the document and for [creating a rendition](#export) for export.
@@ -161,6 +171,12 @@ Retrieve the current theme of the host application, via the [`app.ui`](#applicat
 
 ### Interface
 ```js
+interface Application {
+  /**
+   * Represents the UI of the host application.
+   */
+  readonly ui: UI;
+}
 interface UI {
     /**
      * The theme currently used by the host application.
@@ -174,15 +190,15 @@ interface UI {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 function applyTheme(theme) {
   /* ... */
 }
 
-AddOnSDKAPI.ready.then(() => applyTheme(AddOnSDKAPI.app.ui.theme));
+AddOnSdk.ready.then(() => applyTheme(AddOnSdk.app.ui.theme));
 
-AddOnSDKAPI.app.on("themechange", (data) => {
+AddOnSdk.app.on("themechange", (data) => {
   applyTheme(data.theme);
 });
 ```
@@ -195,11 +211,11 @@ We have provided a sample that can be used as a reference for implementing the A
 ## Language & Locale
 Retrieve the supported languages (via the `locales` variable) and current `locale` of the host application.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 
 ### Interface
 
-```
+```js
 interface Application {
   /**
    * Represents the UI of the host application.
@@ -227,28 +243,36 @@ interface UI {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setLanguage(language) { /* ... */ }
 
-AddOnSDKAPI.ready.then(() => {
-  console.log(AddOnSDKAPI.app.ui.locales);
-  setLanguage(AddOnSDKAPI.app.ui.locale);
+AddOnSdk.ready.then(() => {
+  console.log(AddOnSdk.app.ui.locales);
+  setLanguage(AddOnSdk.app.ui.locale);
 });
 
-AddOnSDKAPI.app.on("localechange", data => {
+AddOnSdk.app.on("localechange", data => {
   setLanguage(data.locale));
 });
+```
+
+### Output
+```json
+ui: 
+  locale: "en-US"
+  locales: (17) ['cy-GB', 'da-DK', 'de-DE', 'en-US', 'es-ES', 'fi-FI', 'fr-FR', 'it-IT', 'ja-JP', 'ko-KR', 'nb-NO', 'nl-NL', 'pt-BR', 'sv-SE', 'zh-Hans-CN', 'zh-Hant-TW', 'zz-ZZ']
+  theme: "light"
 ```
 
 ## Add-on Manifest Data
 Retrieve the [manifest data](../references/manifest.md) belonging to the add-on.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 
 ### Interface
 
-```
+```js
 interface AddOn {
   /**
    * Add-ons Manifest details - this maps to entries in the add-ons manifest.json file.
@@ -260,11 +284,11 @@ interface AddOn {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 async function logManifestData() {
-  await AddOnSDKAPI.ready;
-  const manifest = AddOnSDKAPI.instance.manifest;
+  await AddOnSdk.ready;
+  const manifest = AddOnSdk.instance.manifest;
   console.log(manifest["name"]);
   console.log(manifest["id"]);
   console.log(manifest["main"]);
@@ -279,6 +303,11 @@ async function logManifestData() {
     console.log(entryPoint["label"]);    
   }
 }
+```
+
+### Output
+```json
+
 ```
 
 ## Authorize using OAuth 2.0
@@ -446,7 +475,7 @@ export enum AuthorizationStatus {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 const DROPBOX_AUTHORIZATION_URL = "https://www.dropbox.com/oauth2/authorize";
 const DROPBOX_TOKEN_URL = "https://api.dropboxapi.com/oauth2/token";
@@ -459,7 +488,7 @@ const ONEDRIVE_CLIENT_ID = "<ONEDRIVE_CLIENT_ID>";
 const ONEDRIVE_SCOPE = "<ONEDRIVE_SPACE_SEPARATED_SCOPES>";
 const OWN_REDIRECT_URI = "<OWN_REDIRECT_URI>";
  
-AddOnSDKAPI.ready.then(() => {
+AddOnSdk.ready.then(() => {
     // 'oauthUtils' is a helper javascript module (included with the OAuth template) which provides utility functions to:
     // 1. generateChallenge()     Generate the 'code_challenge' and 'code_verifier' parameters that are essential in the OAuth 2.0 workflow.
     // 2. generateAccessToken()   Generate an 'access_token' and a 'refresh_token' using the 'code' and 'redirectUri' received on successful authorization.
@@ -586,13 +615,13 @@ interface ClientStorage {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
-await AddOnSDKAPI.ready;
+await AddOnSdk.ready;
 
 // Reference to the client storage of the add-on
-const { clientStorage } = AddOnSDKAPI.instance;
+const { clientStorage } = AddOnSdk.instance;
 
 // Get add-on data
 async function getData(key) {
@@ -677,10 +706,10 @@ interface Document {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
-const { document } = AddOnSDKAPI.app;
+const { document } = AddOnSdk.app;
 
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
@@ -805,7 +834,7 @@ interface DragEndEventData {
 ### Example
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Enable drag support for an element
 function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
@@ -824,17 +853,17 @@ function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
   };
 
   try {
-    AddOnSDKAPI.app.enableDragToDocument(image, dragCallbacks);
+    AddOnSdk.app.enableDragToDocument(image, dragCallbacks);
   } catch (error) {
     console.log("Failed to enable DragToDocument:", error);
   }
 }
 
-AddOnSDKAPI.app.on("dragstart", (eventData: DragStartEventData) => {
+AddOnSdk.app.on("dragstart", (eventData: DragStartEventData) => {
   console.log("The drag event has started for", eventData.element);
 });
 
-AddOnSDKAPI.app.on("dragend", (eventData: DragEndEventData) => {
+AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
   if (!eventData.dropCancelled) {
     console.log("The drag event has ended for", eventData.element);
   } else {
@@ -990,13 +1019,13 @@ interface PageRendition extends Rendition {
 
 ### Example
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Display preview of all pages in the AddOn UI
 async function displayPreview() {
   try {
     const renditionOptions: PngRenditionOptions = {range: Range.entireDocument, format: RenditionFormat.png, backgroundColor: 0x7FAA77FF};
-    const renditions = await AddOnSDKAPI.app.document.createRenditions(renditionOptions);
+    const renditions = await AddOnSdk.app.document.createRenditions(renditionOptions);
     renditions.forEach(rendition => {
       const image = document.createElement("img");
       image.src = URL.createObjectURL(rendition.blob);
@@ -1185,15 +1214,15 @@ export enum ButtonType {
 
 ### Example
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSDKAPI.ready;
+await AddOnSdk.ready;
   
 // Get confirmation from the user to enable a feature
 async function EnableSmartFilters() {
   try {
-    const dialogResult = await AddOnSDKAPI.app.showModalDialog({
+    const dialogResult = await AddOnSdk.app.showModalDialog({
         variant: Variant.confirmation,
         title: "Enable smart Filters",
         description: "Smart filters are nondestructive and will preserve your original images.",
