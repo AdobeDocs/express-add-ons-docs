@@ -7,14 +7,12 @@ This quick start guide will help you create and run your first add-on, a starter
 - [NodeJS](https://nodejs.org/en/download/) (major version >= 16) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version >= 8) installed
 - Familiarity with programming in HTML, CSS and JavaScript
 - An email address associated with an Adobe ID. (If you don't have one yet, you'll be taken through steps to create one in this guide)
-- Access to the beta version of Adobe Express - [Join our wait list](https://airtable.com/shr3IK38z2MCNHJEm)
-- Express Add-on CLI - [Join our wait list](https://airtable.com/shr3IK38z2MCNHJEm)
-
+- Access to the beta version of Adobe Express - [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
+- Express Add-on CLI - [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
 
 ## Add-on CLI (Command Line Interface)
 To facilitate the development of add-ons, we have provided a command line interface (CLI) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 
 
-<!-- Before you can use the CLI, you must install it to your local environment. -->
 
 <InlineAlert slots="text" variant="error"/>
 

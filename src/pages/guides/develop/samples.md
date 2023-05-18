@@ -1,7 +1,6 @@
 # Code Samples
 Find inspiration and great reference examples by checking out our [code samples](https://github.com/AdobeDocs/express-add-on-samples) repo. A description of each and which APIs and technologies they use is available here for reference.
 
-
 ## [get-started](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/get-started)
 Demonstrates how to get started with add-on development with a simple app that greets a user after a name is entered.
 
@@ -167,5 +166,8 @@ Allows users to search for popular gifs and add them to their Express pages.
 
 **NOTE:** Before you run any samples, you must have run the `npx @adobe-ccwebext/create-ccweb-add-on` command at least once.
 
-## Resources
-- Typescript Typings
+<!-- ## Resources
+- Typescript Typings -->
+<InlineAlert slots="text" variant="warning"/>
+
+In addition to these code samples, you should also be sure to check out the [Templates section](../getting_started/dev_tooling/#templates) in the **Developer Tooling** page for the options available for creating a starter project based on your favorite development stack. 

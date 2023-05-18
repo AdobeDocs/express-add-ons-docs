@@ -23,7 +23,10 @@ These docs are for Adobe Express add-on APIs which are still in private beta. [J
 
 <br/><br/>
 
-# Add-on Developer Journey
+# Overview
+Adobe Express is an all-in-one content creation app that makes it fast, easy and fun to design standout flyers, TikToks, resumes, Reels, banners, logos, invitations, webpages and so much more. Add-ons are a new feature supported in the beta version of Adobe Express that allow 3rd party developers to extend the core functionality with additional capabilities for users to discover and install from the add-on marketplace.
+
+## Add-on Developer Journey
 
 1. Create an add-on project with our CLI. See the [Getting Started](../getting_started/) guides to help you create your first project quickly. 
 2. Use the [Add-on SDK APIs](../guides/develop/) to code all of the features you want to build into your add-on. 
