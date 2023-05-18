@@ -14,7 +14,7 @@ This quick start guide will help you create and run your first add-on, a starter
 To facilitate the development of add-ons, we have provided a command line interface (CLI) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 
 
 
-<InlineAlert slots="text" variant="error"/>
+<InlineAlert slots="text" variant="info"/>
 
 **IMPORTANT:** These steps require access to the beta version of Adobe Express and the Add-on CLI, which are currently offered to interested developers on a *wait list basis*. If you're interested, please fill in and submit [this wait list form](https://airtable.com/shr3IK38z2MCNHJEm) to get on the list now!
 
