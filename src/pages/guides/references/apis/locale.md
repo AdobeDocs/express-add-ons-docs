@@ -43,7 +43,7 @@ AddOnSdk.ready.then(() => {
 });
 
 AddOnSdk.app.on("localechange", data => {
-  setLanguage(data.locale));
+  setLanguage(data.locale);
 });
 ```
 

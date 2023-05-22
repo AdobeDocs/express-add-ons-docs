@@ -27,7 +27,7 @@ The next step is to upload your package zip. Click on the **select from your com
 
 <InlineAlert slots="text" variant="info"/>
 
-This add-on package should contain the **production-ready built content** in the *root* of the zip file. Compare to content you would find in the `/dist` folder, butplaced in the root of your `.zip` package, and in the most production-ready form. We will not be building or compiling your source. You should also reduce the size as much as possible. Minifying, uglifying, obfuscating or removing the sourcemaps are acceptable to use in producing your final bundle. See [this sample add-on package](./img/my-amazing-add-on-package.zip) for reference.
+This add-on package should contain the **production-ready built content** in the *root* of the zip file. Compare to content you would find in the `/dist` folder, butplaced in the root of your `.zip` package, and in the most production-ready form. We will not be building or compiling your source. You should also reduce the size as much as possible. Minifying, uglifying, obfuscating or removing the sourcemaps are acceptable to use in producing your final bundle. You can use the command `npm run package` to create a package. It will create a `dist.zip` that you can use for uploading. See [this sample add-on package](./img/my-amazing-add-on-package.zip) for reference.
 
 The package will go through a verification process which may take a few seconds, so please be patient. You will see a green checkmark and message that it's verified once it's complete. Press **Next** to go to the next step.
 
