@@ -1,5 +1,5 @@
 # Client Storage
-The ClientStorage APIs allow you to store/retrieve/delete persistent data in the user's current browser. It's like the `Window.localStorage` API, but is asynchronous, and supports multiple datatypes, i.e., objects, arrays, strings, numbers, booleans, null, undefined and Uint8Array. Since data will be stored in the user’s current browser, user actions such as clearing the browser cache might clear all of the data storage in `ClientStorage` (similar to `localStorage`).
+The ClientStorage APIs allow you to store/retrieve/delete persistent data in the user's current browser. It's similar to the `Window.localStorage` API, but is asynchronous, and supports multiple datatypes, i.e., objects, arrays, strings, numbers, booleans, null, undefined and Uint8Array. Since data will be stored in the user’s current browser, user actions such as clearing the browser cache might clear all of the data storage in `ClientStorage` (similar to `localStorage`).
 
 Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Post 10 mb, any data additions will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added.
 

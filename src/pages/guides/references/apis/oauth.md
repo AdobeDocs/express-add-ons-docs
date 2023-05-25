@@ -1,4 +1,6 @@
 # OAuth
+
+## Overview
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the [Code Exchange authorization](https://www.oauth.com/oauth2-servers/pkce/authorization-code-exchange/) workflow. Here are the steps to get started:
 
 Log in to the OAuth provider's website and create an application. This must be a web application, and if an option of SPA (Single Page Application) is listed, select it.
@@ -7,8 +9,7 @@ As an input to the **Redirect URIs** field, add: [https://new.express.adobe.com/
 Fill out other details as necessary and save the form. A **Client Id** / **Application Id** / **Application Key** (varies between different OAuth providers) gets generated.
 Next you need to add the host name of the OAuth provider's authorization URL to the `manifest.json` file.
 
-When using multiple providers, all such hostnames must be provided.
-For example, if the add-on uses two OAuth providers (such as `login.microsoftonline.com` and `www.dropbox.com`), its `manifest.json` should be updated according to this:
+When using multiple providers, all hostnames must be provided. For example, if the add-on uses two OAuth providers (such as `login.microsoftonline.com` and `www.dropbox.com`), its `manifest.json` should be updated according to this:
 
 ```json
 {

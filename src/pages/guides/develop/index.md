@@ -80,18 +80,123 @@ document.getElementById("anchor").href = downloadUrl;
 </a>
 ```
 
-<!-- 2. Next, create a blob URL and attach it to an anchor element that can be clicked when you want to trigger the download. `blob:null/00f0b4e9-bc6a-432f-a147-b963f08e34a` -->
-
-
 ## Authenticating with OAuth 2.0
 This recipe focuses on providing an authentication feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. The login makes it much easier to offer the users their assets directly after login without having to switch browser windows to login to their other service and download their asset, only to have to upload it again back in Adobe Express. 
 
+```js
+const Connection = ({ accessToken, updateAccessToken }) => {  
+  async function handleConnect() {
+        // Generate the cryptographic challenge parameters
+        // required in the OAuth 2.0 authorization workflow.
+        const challenge = await oauthUtils.generateChallenge();
 
+        // Trigger the OAuth 2.0 based authorization which opens up a sign-in window for the user
+        // and returns an authorization code which can be used to obtain an access_token.
+        const { id, code, redirectUri, result } = await addOnSdk.app.oauth.authorize({
+            authorizationUrl: AUTHORIZATION_URL,
+            clientId: CLIENT_ID,
+            scope: SCOPE,
+            codeChallenge: challenge.codeChallenge
+        });
 
-## Using Data
+        const { status, description } = result;
+        if (status !== "SUCCESS") {
+            setLoading(false);
+            console.error(`Failed to authorize. Status: ${status} | Description: ${description}`);
+            return;
+        }
 
+        // Generate the access_token which can be used to verify the identity of the user and
+        // grant them access to the requested resource.
+        await oauthUtils.generateAccessToken({
+            id,
+            clientId: CLIENT_ID,
+            codeVerifier: challenge.codeVerifier,
+            code,
+            tokenUrl: TOKEN_URL,
+            redirectUri
+        });
+
+        // Get the generated access_token.
+        const newAccessToken = await oauthUtils.getAccessToken(id);   
+        updateAccessToken(newAccessToken);
+  }
+}
+```
+Now retrieve assets with the token saved in the above:
+
+```js
+  // Use the access_token to retrieve assets
+  async function getAssets(path) {
+        const data = { path };
+        const options = {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        };
+
+        const response = await fetch(LIST_FOLDER_API_URL, options);
+        const assets = await response.json();
+        if (!response.ok) {
+            const error = assets.error
+                ? assets.error.message
+                : "Unexpected error occurred while fetching assets.";
+
+            throw new Error(error);
+        }
+
+        return assets;
+  }
+}
+```
+
+## Storing and Retrieving Client-Side Data
+If you want to be able to store and retrieve data on the client rather than send and retrieve from a server for certain instances (ie: caching images that were fetched to decrease load times etc), you can do so using the add-on `clientStorage` API. 
+
+```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+let store;
+
+AddOnSdk.ready.then(async () => {
+    store = AddOnSdk.instance.clientStorage;
+}
+/**
+ * Store item 
+ */
+async function setItem(item: string, isComplete: boolean) {
+    await store.setItem(item, isComplete);
+    todoItemInput.value = "";
+}
+/**
+ * Log all storage item values
+ */
+async function displayAllItems() {
+    const todoItems = await store.keys();
+    todoItems.forEach(async (item: string) => {
+        const itemValue = await store.getItem(item);
+        console.log("Key: " + item + " value: " + itemValue);
+    });
+}
+
+```
 ## Drag and Drop
 
-## Theming your add-on
+```js
+  // Enable drag to document for the image.
+  AddOnSdk.app.enableDragToDocument(image, {
+      previewCallback: element => {
+          return new URL(element.src);
+      },
+      completionCallback: async (element) => {
+          return [{ blob: await getBlob(element.src) }];
+      }
+  });
+```
 
-## Locale and Localization
+## Detecting and Setting Theme
+
+## Detecting Locale
