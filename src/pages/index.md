@@ -53,10 +53,6 @@ The new beta version of Adobe Express enables a new add-ons feature, which exten
 - Managing language and locale
 - Retrieving the current theme and detecting theme changes
 
-<InlineAlert slots="text" variant="info"/>
-
-The upcoming releases will incorporate more APIs, features, and components that will facilitate developers and creatives to build new experiences.
-
 <TitleBlock slots="heading, text"  />
 
 ### Featured Topics

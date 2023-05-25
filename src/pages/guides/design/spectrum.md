@@ -8,7 +8,7 @@ Check out our [code samples](guides/develop/samples) for examples of how to use 
 
 
 ## Spectrum Web Components
-The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum designed to work with any web framework with a number of benefit, including:
+The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum designed to work with any web framework with a number of benefits, including:
     
   - Framework agnostic
   - Lightweight    
@@ -20,7 +20,7 @@ The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-componen
 
 <InlineAlert slots="text" variant="success"/>
 
-We **HIGHLY** recommend choosing to use Spectrum Web Components (or swc-react) for your add-ons since it currently offers the most comprehensive set of components and built-in benefits. 
+We **highly** recommend choosing to use Spectrum Web Components (or swc-react) for your add-ons since it currently offers the most comprehensive set of components and built-in benefits. 
 
 ## React Spectrum
 [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) is a project that implements the Adobe's Spectrum design language into React UI components.

@@ -73,7 +73,10 @@ async function addVideoFromURL(url) {
 }
 ```
 
+<InlineAlert slots="text" variant="warning"/>
+
+Please note, the supported file types for imported content are currently **`png/jpg/mp4`,** and the size of the imported images must not exceed **8000 px** or **40 MB**.
+
 <InlineAlert slots="text" variant="success"/>
 
 Many of the samples we've included in the [code samples](guides/develop/samples) implement the Import APIs, so please use them as a reference. This includes the the **import-images-from-local**, **import-images-using-oauth**, **giphy**, **qrcode** and **dropbox** samples.
-

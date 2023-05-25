@@ -25,7 +25,7 @@ The next step is to upload your package zip. Click on the **select from your com
 
 <InlineAlert slots="text" variant="info"/>
 
-This plugin package should contain the production-ready built content in the root of the zip (think in terms of content like from the `/dist` folder, but in the root of the zip and in the most production-ready form). We will not be building/compiling your source. You should try to reduce the size as much as possible. Minifying, uglifying, obfuscating, removing the sourcemaps etc are acceptable to use in producing your final bundle. See [this sample add-on package](./img/my-amazing-add-on-package.zip) for reference.
+This plugin package should contain the production-ready built content in the root of the zip (think in terms of content like from the `/dist` folder, but in the root of the zip and in the most production-ready form). We will not be building/compiling your source. You should try to reduce the size as much as possible. Minifying, uglifying, obfuscating, removing the sourcemaps etc are acceptable to use in producing your final bundle. You can use the command `npm run package` to create a package. It will create a `dist.zip` that you can use for uploading. 
 
 The package will go through a verification process which may take a few seconds, so please be patient. 
 ![Verifying](./img/private-verifying.png)
@@ -34,11 +34,11 @@ If you receive an error, please check the following warning notes.
 
 <InlineAlert slots="text" variant="warning"/>
 
-- If you receive a `MANIFEST_NOT_FOUND_ERROR`, instead of zipping the folder containing the add-on files, please zip only the contents. In other words, the manifest file should be at **root** level of the extracted package.
+- If you receive a `MANIFEST_NOT_FOUND_ERROR`, instead of zipping the folder containing the add-on files, please zip only the contents. For example, manifest file would be at the **root** level of the extracted package.
 - Your add-on package file size must not exceed 50 MB.
 - In places where you are referring to paths, please ensure you are only using relative paths.
 - Hidden files should not be present in your package zip.
-You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:    `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`
+You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`
 
 Otherwise, you should see the following green check mark showing it's verified and hit **Next** to go to the next step.
 

@@ -1,8 +1,8 @@
 # CORS Guide
 
+## Overview
 Express add-ons are run in a sandboxed iframe environment with a `null` origin, and this can cause issues when dealing with fetching from services that don't have CORS enabled or support a null origin. 
 
-## Overview
 When you suspect a CORS issue, check your browser console and you will likely see a message like the following in the browser console:
 
 ```Access to fetch at '<some-url>' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.```

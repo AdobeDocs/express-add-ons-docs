@@ -38,16 +38,48 @@ Also, check out the latest [Manifest Reference](../references/manifest.md) for m
 Each API section includes the **Interface** definition as well as a **Example** tab to show an example of how the interface can be used. Please also see the [code samples](guides/develop/samples) for more in-depth references on using the Add-on SDK APIs. 
 
 ## Introduction
-The Add-on SDK is available as an ECMAScript 2015 Module hosted in a CDN.
+The Add-on SDK is available as a hosted JavaScript module on a CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of imports in the JavaScript source. However, you don't need to worry about adding the reference, assuming you created your project with the CLI, since it will already be imported for you based on the template you chose. 
 
-To use the SDK, simply include a link to the `sdk.js` file in a script tag within the `<head>` section of the page to ensure correct initialization of the add-on API environment.
+But for reference, below are some examples of how it can be imported for use.
+
+### In an HTML script tag:
+To use the SDK from an HTML file, simply include a link to it in a `<script>` tag with the `type=module` attribute on it to ensure the add-on API is initialized properly. 
 
 ```js
-<script type="module">
-  import AddOnSdk from
-  "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-</script>
+<body>
+        Hello World!
+
+        <script type="module">
+            import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+            AddOnSdk.ready.then(async () => {
+                console.log("AddOnSdk is ready for use.");
+            });
+        </script>
+</body>
 ```
+
+### In your JavaScript source
+To use it in your `.js/.jsx` source files, import it as a default module reference like the following:
+`import AddOnStore from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";`
+
+### From TypeScript
+```js
+import AddOnSdk, {
+    ClientStorage
+    // @ts-ignore Import module
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+```
+Note, if you create your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get the following type definition generated in your project for you:
+
+```ts
+declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
+    export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+    export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+}
+```
+
 
 ## AddOnSdk
 The `AddOnSdk` provides the following interface for accessing all of the APIs. It exposes several variables listed below, which allow you to know when the APIs are ready to interact with.

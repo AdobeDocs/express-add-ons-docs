@@ -77,15 +77,3 @@ As part of your submission, you will upload your add-on package. Take the follow
      Right-click > Send to > Compressed (zipped) folder
 
      **Note:** You should _not_ compress the add-on's parent folder. Instead, compress the contents of the parent folder. Failure to do so will likely cause a rejection when submitting.
-
-2. Rename the **.zip** extension to **.xdx** or **.ccx** depending on the target host app.
-
-   - Adobe XD recognizes the **.xdx** file extension as an **XD** add-on and Photoshop recognizes the **.ccx** as a **Photoshop** add-on.
-
-   - By using this file extension, your add-on automatically gets the "double-click to install" feature, meaning that if you share your add-on directly to users, all they have to do is double-click to install the add-on.
-
-3. Verify the packaging worked:
-
-   - Double-click your final add-on package file. When your OS prompts you to install the add-on, click "Install".
-
-   - Verify you see a success message upon installation and your add-on available in the host app.

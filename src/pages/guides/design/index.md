@@ -10,7 +10,7 @@ Check out our [code samples](guides/develop/samples) for examples of how to use 
 
 
 ## Spectrum Web Components
-The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum designed to work with any web framework with a number of benefit, including:
+The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum designed to work with any web framework with a number of benefits, including:
     
   - Framework agnostic
   - Lightweight    
@@ -184,5 +184,5 @@ Use the existing Express UI as an example of the types of patterns and behaviors
 If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference.
 
 ## Useful Resources
-- [Adobe XD plugin that provides Spectrum UI elements](https://adobe.com/go/cc_plugins_discover_plugin?pluginId=f4771cd5&workflow=share), including the Express look.
+<!-- - [Adobe XD plugin that provides Spectrum UI elements](https://adobe.com/go/cc_plugins_discover_plugin?pluginId=f4771cd5&workflow=share), including the Express look. -->
 - [Figma plugin](https://www.figma.com/community/file/1211274196563394418/Adobe-Spectrum-Design-System) that provides Spectrum UI elements.

@@ -31,7 +31,7 @@ function applyTheme(theme) {
 }
 
 AddOnSdk.ready.then(async () => {
-    console.log("Theme object", JSON.stringify(AddOnSdk.app.ui.theme));
+    console.log("Theme ", JSON.stringify(AddOnSdk.app.ui.theme));
     applyTheme(AddOnSdk.app.ui.theme));
 });
 
@@ -42,7 +42,7 @@ AddOnSdk.app.on("themechange", (data) => {
 
 ## Output
 ```json
-Theme object "light"
+Theme "light"
 ```
 
 <InlineAlert slots="text" variant="success"/>

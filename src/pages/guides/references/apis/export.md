@@ -1,18 +1,22 @@
 # Export
-Allows you to export a rendition of a page or document in **jpg**, **png**, **pdf** and **mp4** formats.
+Export renditions of your design in **jpg**, **png**, **pdf** and **mp4** formats. Choose to export a single page or the whole document by specifying in the rendition options, along with a variety of other export configuration options outlined below.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 
 ### Interface
+
 
 ```js
 interface Document {
   /**
-   * Create renditions
-   */
+  * Create renditions  
+  * @param renditionOptions - page rendition options
+  * @returns a promise of type array of page rendition  
+  */
   createRenditions(renditionOptions: RenditionOptions): Promise<Rendition[]>;
 }
  
+
 interface RenditionOptions {
   /**
    * Range of the document to get the rendition
@@ -140,7 +144,7 @@ interface PageRendition extends Rendition {
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-// Display preview of all pages in the AddOn UI
+// Display preview of all pages in the Add-on UI
 async function displayPreview() {
   try {
     const renditionOptions: PngRenditionOptions = {range: Range.entireDocument, format: RenditionFormat.png, backgroundColor: 0x7FAA77FF};
@@ -160,3 +164,10 @@ async function displayPreview() {
 
 Please refer to the **export-sample** and **pix** add-on in the code samples for more details on how to use the Export APIs.
 
+### Rendition Response JSON
+``json
+response:
+  blob: Blob {size: 357080, type: 'image/png'}
+  title: ""
+  type: "page"
+```

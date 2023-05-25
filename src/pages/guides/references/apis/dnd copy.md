@@ -1,3 +1,6 @@
+
+
+
 # Drag and Drop
 Allows you to drag and drop objects from your add-on into the document.
 

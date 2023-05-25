@@ -17,12 +17,14 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# API Overview
-This section covers the APIs available for developing your add-ons. Each section offers a simple example code snippet but we recommend checking out the [code samples](../develop/samples.md) for more in-depth usage. 
+## Overview
+This section covers the APIs available for developing your add-ons. It begins with an introduction to the `AddOnSdk` main object reference, along with an overview of the other core objects you will be using throughout your add-on development to access further data. In the left expanded menu you will find the list of API sub-sections listed where you can find the interface definition along with an example code snippet to illustrate the usage. However, you should also check out the [code samples](../develop/samples.md) for a more in-depth example of how to use them. 
 
-This page outlines the core objects used by the APIs and the variables you can use to access further functionality. 
 
-## AddOnSdk 
+## SDK vs API
+The terms **SDK** (software development kit) and **API** (application programming interface) can often seem to become blurry. To clarify further, an SDK can be thought of as a kit that contains everything you need to write an application (in this case add-on) for a platform. This includes not only the APIs, but also the tools and other dependencies, helpers and components involved. API's themselves, on the other hand, define the interface defintions that are used to retrieve the information needed to implement features a developer may want to offer.
+
+## AddOnSdk Object
 The first object you will need to be aware of when developing your add-ons is the **AddOnSdk** object. The Add-on SDK is available as an ECMAScript 2015 Module hosted in a CDN.
 
 To use the SDK, simply include a link to the `sdk.js` file in a script tag within the `<head>` section of the page to ensure correct initialization of the add-on API environment.
@@ -97,7 +99,7 @@ Add-on instance object {"manifest":{"testId":"08f4469f-7999-458b-9ef9-b1bd043cbd
 Application object {"ui":{"theme":"light","locale":"en-US","locales":["cy-GB","da-DK","de-DE","en-US","es-ES","fi-FI","fr-FR","it-IT","ja-JP","ko-KR","nb-NO","nl-NL","pt-BR","sv-SE","zh-Hans-CN","zh-Hant-TW","zz-ZZ"]},"oauth":{},"document":{}}
 ```
 
-## Application 
+## Application Object
 The [`AddOnSdk`](#AddOnSdk) provides you with an `app` variable, which is of type `Application`, defined below, and allows you to access the following objects which are used throughout this reference:
 
 - `ui`: Provides access to the [theme](#theme), [locale and locales](language-locale).
@@ -126,7 +128,7 @@ export interface Application {
 }
 ```
 
-## AddOn
+## AddOn Object
 Represents the current add-on, providing references to `manifest` and `clientStorage` objects. 
 
 ```js

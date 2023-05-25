@@ -75,7 +75,7 @@ module.exports = {
         "path": "guides/develop",
         "pages": [   
           {
-            "title": "Using the Add-on SDK",
+            "title": "Add-on Recipes",
             "path": "guides/develop/"
           },                                             
           {
@@ -151,7 +151,7 @@ module.exports = {
         "path": "guides/references",      
         pages: [
           {
-            title: 'Add-on APIs',
+            title: 'APIs',
             description: 'API Reference v1',
             path: 'guides/references/',
             pages: [
