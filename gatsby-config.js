@@ -160,39 +160,39 @@ module.exports = {
               // "path": "guides/references/apis/addonsdk.md"
               // },
               {
-                "title": "Locale API",
+                "title": "Locale",
                 "path": "guides/references/apis/locale.md"
               },
               {
-                "title": "Manifest API",
+                "title": "Manifest",
                 "path": "guides/references/apis/manifest.md"
               },
               {
-                "title": "Theme API",
+                "title": "Theme",
                 "path": "guides/references/apis/theme.md"
               },
               {
-                "title": "ClientStorage API",
+                "title": "ClientStorage",
                 "path": "guides/references/apis/clientstorage.md"
               },
               {
-                "title": "OAuth API",
+                "title": "OAuth",
                 "path": "guides/references/apis/oauth.md"
               },
               {
-                "title": "Import API",
+                "title": "addImage/addVideo",
                 "path": "guides/references/apis/import.md"
               },
               {
-                "title": "Export API",
+                "title": "createRendition",
                 "path": "guides/references/apis/export.md"
               },
               {
-                "title": "Drag an Drop",
+                "title": "Drag and Drop",
                 "path": "guides/references/apis/dnd.md"
               },
               {
-                "title": "Dialogs",
+                "title": "showModalDialog",
                 "path": "guides/references/apis/dialogs.md"
               }
 
