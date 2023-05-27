@@ -184,9 +184,10 @@ async function displayAllItems() {
 
 ```
 ## Drag and Drop
+If you want to allow a user to drag and drop items from your add-on to the document, you can use the methods provided for this in the add-on SDK. An example of this is shown below:
 
 ```js
-  // Enable drag to document for the image.
+  // Enable drag to document on an image
   AddOnSdk.app.enableDragToDocument(image, {
       previewCallback: element => {
           return new URL(element.src);
@@ -197,6 +198,37 @@ async function displayAllItems() {
   });
 ```
 
+## Modal Dialogs
+When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use the following code snippet to do so:
+
+
 ## Detecting and Setting Theme
+When you need to detect the theme of the environment where your add-on is running (aka: Adobe Express), or if you want to be notified if it changes, you can use the following code. Note, however, that currently Adobe Express only supports a "light" theme.
+
+`AddOnSdk.app.on.themechange`
+
+```js
+function applyTheme(theme = "light") {
+    document.querySelector("sp-theme").setAttribute("color", theme);
+}
+applyTheme(AddOnSdk.app.ui.theme);
+AddOnSdk.app.on("themechange", (data) => { applyTheme(data.theme); });
+
+addOnSdk.app.on("themechange", (data) => {
+    setTheme(data.theme == "dark" ? darkTheme : lightTheme);
+});
+```
 
 ## Detecting Locale
+If you want to handle a change in the locale, for instance if you want to set the language in your add-on, you can do so with the following code:
+
+```js
+
+AddOnSdk.app.ui.locales
+
+AddOnSdk.app.on("localechange", data => {
+  setLanguage(data.locale);
+});
+```
+
+

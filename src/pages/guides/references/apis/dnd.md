@@ -1,5 +1,5 @@
 # Drag and Drop
-Allows you to drag and drop objects from your add-on into the document.
+Thhe interfaces and methods outlined here support the add-on Drag and Drop functionality. See the example code for how to implement it in your own add-on.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 

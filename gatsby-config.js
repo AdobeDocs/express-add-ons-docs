@@ -154,48 +154,62 @@ module.exports = {
             title: 'APIs',
             description: 'API Reference v1',
             path: 'guides/references/',
-            pages: [
-              // {
-              // "title": "AddOnSdk API",
-              // "path": "guides/references/apis/addonsdk.md"
-              // },
+            // pages: [
+            //   {
+            //     "title": "Objects",
+            //     "path": "guides/references/objects",      
+            //     pages: [
+            //       {
+            //           "title": "AddOnSdk",
+            //           "path": "guides/references/apis/objects/addonsdk.md"
+            //       },
+            //     ]
+            //   }
+            // ]
+            
+            pages: [                                                     
+                                         
               {
-                "title": "Locale",
-                "path": "guides/references/apis/locale.md"
-              },
-              {
-                "title": "Manifest",
-                "path": "guides/references/apis/manifest.md"
-              },
-              {
-                "title": "Theme",
-                "path": "guides/references/apis/theme.md"
-              },
-              {
-                "title": "ClientStorage",
+                "title": "Client-Side Storage",
                 "path": "guides/references/apis/clientstorage.md"
               },
-              {
-                "title": "OAuth",
-                "path": "guides/references/apis/oauth.md"
-              },
-              {
-                "title": "addImage/addVideo",
-                "path": "guides/references/apis/import.md"
-              },
-              {
-                "title": "createRendition",
-                "path": "guides/references/apis/export.md"
-              },
+                            
               {
                 "title": "Drag and Drop",
                 "path": "guides/references/apis/dnd.md"
               },
               {
-                "title": "showModalDialog",
+                "title": "Export Content from Document",
+                "path": "guides/references/apis/export.md"
+              },
+              {
+                "title": "Import Content to Document",
+                "path": "guides/references/apis/import.md"
+              },
+              {
+                "title": "Locale Detection",
+                "path": "guides/references/apis/locale.md"
+              },
+              {
+                "title": "Manifest Properties",
+                "path": "guides/references/apis/manifest.md"
+              },
+              {
+                "title": "Modal Dialogs",
                 "path": "guides/references/apis/dialogs.md"
-              }
-
+              },
+              {
+                "title": "Authorizing with OAuth 2.0",
+                "path": "guides/references/apis/oauth.md"
+              },
+              {
+                "title": "Theme Detection",
+                "path": "guides/references/apis/theme.md"
+              },
+              // {
+              //   "title": "Object Reference",
+              //   "path": "guides/references/apis/test.md"
+              // },
             ],
           },          
           {

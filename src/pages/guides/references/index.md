@@ -20,11 +20,37 @@ contributors:
 # API Reference
 
 ## Overview
-This section covers the APIs available for developing your add-ons. It begins with an introduction to the main `AddOnSdk` core object reference, along with an overview of some other core objects you will be using throughout your add-on development. In the left expanded menu, you will find the list of API sub-sections, where you can find the interface definitions along with an example code snippet to illustrate the usage. However, you should also check out the [code samples](../develop/samples.md) for a more in-depth example of how to use them as well as the [recipes](../develop/) section for more details. 
+This section covers the APIs available for developing your add-ons. It begins with an introduction to the main `AddOnSdk` core object reference, along with an overview of the properties and methods you will use in your add-on development. In the left expanded menu, you will find a list of the core add-on capabilities named by the functionality they provide. Within each of those sections are details about the interfaces and methods needed to make up that feature, along with example usage and output where relevant. 
 
-## AddOnSdk Object
-The first object you will need to be aware of when developing your add-ons is the **AddOnSdk** object. 
-The Add-on SDK is available as a hosted JavaScript module on a CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of `import` statements in the JavaScript source. However, you don't need to worry about adding this reference if you used the CLI to create your add-on project, since it will already be imported for you, and the location it was placed will depend on the `template` you chose. 
+<InlineAlert slots="text" variant="success"/>
+
+Be sure to check out the [code samples](../develop/samples.md) for a more in-depth example of how to use them as well as the [recipes](../develop/) section for more details. 
+
+
+# [AddOnSdk](#add-on-sdk-module-import)
+<br/><br/>
+<table style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Reference</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>The core add-on SDK object. Provides access to the add-on development platform.</p>
+    </td>
+</tr>
+</tbody>
+</table>
+
+<br/><br/>
+
+
+## Add-on SDK Module Import
+The Add-on SDK is available as a hosted JavaScript module on the Adobe CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of `import` statements in the JavaScript source. However, you don't need to worry about adding this reference if you used the CLI to create your add-on project, since it will already be imported for you, and the location it was placed will depend on the `template` you chose. 
 
 But for reference, below are some examples of how it can be imported for use.
 
@@ -38,7 +64,9 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
         <script type="module">
             import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-            ...            
+            AddOnSdk.ready.then(async () => {
+                console.log("AddOnSdk is ready for use.");
+            });     
         </script>
     </body>
 ```
@@ -68,8 +96,7 @@ declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
     export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 }
 ```
-
-
+```html
 <body>
     Hello World!
 
@@ -81,123 +108,262 @@ declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
         });
     </script>
 </body>
+```
 
 
-The `AddOnSdk` provides the following interface definition and exposes several variables listed below, and is also how you can determine when the APIs are ready to interact with.
-
-- `ready`: Used to determine when you can start accessing the APIs. 
-- `apiVersion`: Current version of the SDK running.
-- `instance`: the currently running add-on instance (see [AddOn Object](#addon)), allowing you to access the [manifest.json](#manifest) details and a [Client Storage](#client-storage) object, which allows you to locally persist to storage, per user and for this add-on.
-- `app`: Provides access to the host application (Adobe Express). See the [`Application`](#application) definition below for more details.
-
-<!-- ## SDK vs API -->
-<InlineAlert slots="text" variant="success"/>
-
-The terms **SDK** (software development kit) and **API** (application programming interface) can often seem to become blurry. To clarify further, an SDK can be thought of as a kit that contains everything you need to write an application (in this case add-on) for a platform. This includes not only the APIs, but also the tools and other dependencies, helpers and components involved. API's themselves, on the other hand, define the interface defintions that are used to retrieve the information needed to implement features a developer may want to offer.
+<!-- In the left expanded menu, you will find a list of the core add-on capabilities named by the functionality they propvide. Within each of those sections are details about the interfaces and methods needed to make up that feature, along with example usage and output where relevant. which contain the interfaces and examples that make up the core features of the add-on API., where you can find the interface definitions along with an example code snippet to illustrate the usage. However, you should also check out the [code samples](../develop/samples.md) for a more in-depth example of how to use them as well as the [recipes](../develop/) section for more details.  -->
 
 
-<CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
+## AddOnSdk Properties
+<!-- <table class="spectrum-Table spectrum-Table--sizeM"> -->
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Reference</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.apiVersion</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Current version of the add-on SDK running.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Provides access to the host application (Adobe Express). </p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.constants</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>A set of constants used throughout the add-on SDK.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.instance</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>The currently running add-on instance.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.ready</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>promise</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Indicates the AddOnSdk object has been initialized and you can start accessing the APIs.</p>
+    </td>
+</tr>
+</tbody>
+</table>
 
-### Interface
 
-```js
-/**
- * The main API Interface exposed by the SDK to the consuming Add-on code.
- */
-interface AddOnSdk {
-    /**
-     * Resolves when the SDK has made a successful connection to the host app.
-     * Indicates that APIs directly interacting with the host application are ready.
-     * Register a call back with @see Promise#then or await this promise.
-     */
-    readonly ready: Promise<void>;
 
+## AddOnSdk.app Properties
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.document</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Represents the active document of the host application.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.oauth</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Represents the host UI (Adobe Express UI).</p>
+    </td>
+</tr>
+</tbody>
+</table>
+
+## AddOnSdk.app.ui Properties
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui.locale</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Retrieve the host application current locale.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui.locales</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string []</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Retrieve the host application's supported languages.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui.theme</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Retrieve the current theme of the host application.</p>
+    </td>
+</tr>
+</tbody>
+</table>
+
+## AddOnSdk.instance Properties
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.instance.clientStorage</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Reference to the client storage of the add-on.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.instance.manifest</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Add-ons manifest details. Maps to entries in the add-ons <pre>manifest.json</pre> file.
+</p>
+    </td>
+</tr>
+</tbody>
+</table>
+
+## AddOnSdk.constants Properties
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>Range</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Rendition page range.</p>
+    </td>
+</tr>
+</tbody>
+</table>
+
+
+## Methods
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Method</strong></p></td>        
+    <td class="spectrum-Table-headCell"><p><strong>Parameters</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.on()</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.on(type: string, handler: (data) => {})</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Listen for an event.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.off()</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.off(type: string, handler: (data) => {}): 
+    </pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Stop listening for an event.</p>
+    </td>
+</tr>
+</tbody>
+</table>
+
+
+## AddOnSdk Events
+The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to listen to events, and the `AddOnSdk.app.off()` method to stop listening:
+
+
+
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>localechange</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Triggered when there is a locale change at the host side.</p>
+    </td>
+</tr>
+</tbody>
+</table>
+
+## Events
+- `AddOnSdk.app.on.localechange` - Triggered when there is a locale change at the host side.
+- `AddOnSdk.app.on.themechange` - Triggered when there is a theme change at the host side.
+- `AddOnSdk.app.on.dragstart` - triggered when the user starts dragging an item for which drag behavior is enabled.
+- `AddOnSdk.app.on.dragend` - triggered when the drag operation ends.
+
+## AddOnSDK.constants
+- `Range` - Rendition page range
+    - `currentPage` - Generate rendition for the current page
+    - `entireDocument` - Generate rendition for all the pages
+
+- `RenditionFormat` - Required output format of the rendition
+    - `png` = "image/png" - PNG format
+    - `jpg` = "image/jpeg" - JPG format
+    - `mp4` = "video/mp4" - MP4 format
+    - `pdf` = "application/pdf" - PDF format
+
+- `RenditionType` - The type of rendition
+    - `page` - Rendition of the whole page
+
+- `Variant` - Types of dialog variants supported
+    - `confirmation` - Ask a user to confirm an action
+    - `information` - Share information for user to acknowledge
+    - `warning` - Share information that a user needs to consider before proceeding
+    - `destructive` - Tell a user that if they proceed with an action, it may impact their data in a negative way
+    - `error` - Communicate critical issue that a user needs to resolve before proceeding
+    - `input` - Ask a user to provide some inputs
+    - `custom` - A dialog that can render complex forms and content
+
+- `FieldType` - The type of the input field in Simple Dialog  
+    - text = "text" - One-line text input field
+- DialogResultType - The type of the dialog result
+    alert = "alert" - Alert dialog result
+    input = "input" - Input dialog result
+    custom = "custom" - Custom dialog result
+
+- `ButtonType` - Simple Dialog Button types
+    `primary` = "primary" = Primary button pressed
+    `secondary` = "secondary" = Secondary button pressed
+    `cancel` = "cancel" = cancel button pressed
+    `close` = "close" = Dialog closed via ESC or close(X) button
+
+- `RuntimeType` - The runtime type
+    `panel` = "panel" - Iframe based runtime that usually hosts the add-on main UI logic.
+    `dialog` = "dialog" - Iframe based runtime that hosts a modal dialog UI.
     
-    /**
-     * API version of the SDK.
-     */
-    readonly apiVersion: string;
-
-    /**
-     * Represents capabilities and events of the currently running Add-on Instance.
-     * The interface type depends on the type of the underlying Add-on.
-     */
-    readonly instance: AddOn;
-
-    /**
-     * Represents capabilities and events of the host application.
-     */
-    readonly app: Application;
-}
-```
-
-### Example
-
-```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-
-AddOnSdk.ready.then(() => {
-  console.log("API version", AddOnSdk.apiVersion);
-  console.log("Add-on instance object", JSON.stringify(AddOnSdk.instance));
-  console.log("Application object", JSON.stringify(AddOnSdk.app));  
-});
-```
-
-### Output
-```json
-API version 1
-
-Add-on instance object {"manifest":{"testId":"08f4469f-7999-458b-9ef9-b1bd043cbdca","name":"Add On Api Sampler","version":"1.0.0","manifestVersion":2,"requirements":{"apps":[{"name":"Express","apiVersion":1}]},"entryPoints":[{"type":"panel","id":"panel1","main":"https://localhost:5241/08f4469f-7999-458b-9ef9-b1bd043cbdca/index.html"}]},"clientStorage":{}}
-
-Application object {"ui":{"theme":"light","locale":"en-US","locales":["cy-GB","da-DK","de-DE","en-US","es-ES","fi-FI","fr-FR","it-IT","ja-JP","ko-KR","nb-NO","nl-NL","pt-BR","sv-SE","zh-Hans-CN","zh-Hant-TW","zz-ZZ"]},"oauth":{},"document":{}}
-```
-
-## Application Object
-The [`AddOnSdk`](#AddOnSdk) provides you with an `app` variable, which is of type `Application`, defined below, and allows you to access the following objects which are used throughout this reference:
-
-- `ui`: Provides access to the [theme](#theme), [locale and locales](language-locale).
-- `document`: Provides access to the methods needed for [adding an image or video](#import) the document and for [creating a rendition](#export) for export.
-- `oauth`: Provides access to the OAuth methods needed for use with the [OAuth API](oauth-20).
-
-```js
-/**
- * Interface that represents the underlying Application (Adobe Express).
- */
-export interface Application {
-    /**
-     * Represents the UI of the app (Adobe Express). Provides access to theme, locale and locales.
-     */
-    readonly ui: UI;
-
-    /**
-     * Represents the active document and provides access to the methods needed for adding an image or video the document and creating a rendition (for export).
-     */
-    readonly document: Document;
-
-    /**
-     * OAuth 2.0 middleware for handling user authorization. Provides access to the OAuth methods needed to implement OAuth 2.0.
-     */
-    readonly oauth: OAuth;
-}
-```
-
-## AddOn Object
-Represents the current add-on, providing references to `manifest` and `clientStorage` objects. 
-
-```js
-/**
- * Base interface for all type of add-ons
- */
-export interface AddOn {
-    
-    /**
-     * Add-ons Manifest details - this maps to entries in the add-ons manifest.json file.
-     */
-    readonly manifest: Record<string, unknown>;
-
-    /**
-     * Local-persisted storage per user per addon.
-     */
-    readonly clientStorage: ClientStorage;
-}
-```
