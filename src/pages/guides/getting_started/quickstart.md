@@ -1,3 +1,9 @@
+<InlineAlert slots="text" variant="info"/>
+
+These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm).
+
+<br/><br/>
+
 # Quickstart - Hello World Add-on
 
 This quick start guide will help you create and run your first add-on, a starter add-on that outputs "hello world" when it's run in Adobe Express.

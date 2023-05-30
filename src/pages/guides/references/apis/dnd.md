@@ -116,8 +116,15 @@ AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
 ```
 <InlineAlert slots="text" variant="info"/>
 
-Please note, the maximum dimension of an object dropped on to the canvas in Express is 8000x8000. 
+* Do not attach pointer event handlers that prevent default/stop propagation, since pointer event handlers are being used to perform drag operations, and adding these handlers will kill the handlers in useand cause the events to not work.
+* Do not attach click event listeners to drag enabled elements in the capture phase since the SDK attaches a click cancel event handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) does not fire and adding other handlers to this same element will cause them to be triggered on drag & drop completion
+* The maximum dimension of an object dropped on to the canvas in Express is 8000x8000. 
 
 <InlineAlert slots="text" variant="success"/>
 
+**TIP:** To check if any attached `eventListeners` are causing conflicts with Drag & Drop handlers, please inspect the drag-enabled element in chrome devTools and check handlers attached to the element and its ancestors to identify the ones causing this issue.
+
+
 Many of the samples we've included in the [code samples](guides/develop/samples) implement the Drag and Drop APIs, so please use them as a reference. This includes the the **import-images-from-local**, **import-images-using-oauth**, **giphy** and **qrcode** samples.
+
+

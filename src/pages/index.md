@@ -19,13 +19,15 @@ contributors:
 
 <Hero slots="heading, text" background="rgb(64, 34, 138)" />
 
+<InlineAlert slots="text" variant="info"/>
+
+These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm).
+
+<br/><br/>
+
 # Adobe Express Add-on Documentation
 
 Adobe Express add-ons allow developers to extend the Adobe Express core functionality, unlocking new capabilities and creative features, all while leveraging familiar web technologies like JavaScript, HTML and CSS.
-
-<InlineAlert slots="text" variant="info"/>
-
-These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
 
 <Resources slots="heading, links"/>
 
