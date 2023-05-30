@@ -1,5 +1,5 @@
 # Language & Locale
-Retrieve the supported languages (via the `locales` variable) and current `locale` of the host application.
+Retrieve the supported languages (via the `locales` variable) and the current `locale` of the host application, Adobe Express.
 
 <CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 

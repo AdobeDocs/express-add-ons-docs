@@ -1,4 +1,5 @@
 # OAuth
+Provides an OAuth 2.0 workflow to allow a user to login to a 3rd party service.
 
 ## Overview
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the [Code Exchange authorization](https://www.oauth.com/oauth2-servers/pkce/authorization-code-exchange/) workflow. Here are the steps to get started:

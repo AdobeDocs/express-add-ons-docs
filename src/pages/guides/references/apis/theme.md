@@ -1,5 +1,5 @@
 # Theme
-Retrieve the current theme of the host application, via the [`app.ui`](#application) object.
+Retrieve the current theme of the host application, Adobe Express.
 
 <CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 

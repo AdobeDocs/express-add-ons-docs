@@ -149,26 +149,12 @@ module.exports = {
       {
         "title": "References",
         "path": "guides/references",      
-        pages: [
+        "pages": [
           {
             title: 'APIs',
             description: 'API Reference v1',
-            path: 'guides/references/',
-            // pages: [
-            //   {
-            //     "title": "Objects",
-            //     "path": "guides/references/objects",      
-            //     pages: [
-            //       {
-            //           "title": "AddOnSdk",
-            //           "path": "guides/references/apis/objects/addonsdk.md"
-            //       },
-            //     ]
-            //   }
-            // ]
-            
-            pages: [                                                     
-                                         
+            path: 'guides/references/',            
+            pages: [                                                                                              
               {
                 "title": "Client-Side Storage",
                 "path": "guides/references/apis/clientstorage.md"

@@ -1,5 +1,5 @@
-# Import
-Allows you to import an image or video to your page.
+# Import Content
+Import content such as images and videos into the active document (aka: page).
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 

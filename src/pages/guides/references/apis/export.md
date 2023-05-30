@@ -1,5 +1,7 @@
 # Export Content
-Export renditions of your design in **jpg**, **png**, **pdf** and **mp4** formats. Choose to export a single page or the whole document by specifying in the rendition options, along with a variety of other export configuration options outlined below.
+Export renditions of your design in **jpg**, **png**, **pdf** and **mp4** formats. 
+
+Choose to export a single page or the whole document by specifying in the rendition options, along with a variety of other export configuration options outlined below.
 
 <CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 
