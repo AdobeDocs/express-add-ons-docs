@@ -1,6 +1,6 @@
 <InlineAlert slots="text" variant="info"/>
 
-These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm).
+These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://adobe.com/go/express-developer).
 
 <br/><br/>
 
@@ -13,8 +13,8 @@ This quick start guide will help you create and run your first add-on, a starter
 - [NodeJS](https://nodejs.org/en/download/) (major version >= 16) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version >= 8) installed
 - Familiarity with programming in HTML, CSS and JavaScript
 - An email address associated with an Adobe ID. (If you don't have one yet, you'll be taken through steps to create one in this guide)
-- Access to the beta version of Adobe Express - [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
-- Express Add-on CLI - [Join the waitlist](https://airtable.com/shr3IK38z2MCNHJEm)
+- Access to the beta version of Adobe Express - [Join the waitlist](https://adobe.com/go/express-developer)
+- Express Add-on CLI - [Join the waitlist](https://adobe.com/go/express-developer)
 
 ## Add-on CLI (Command Line Interface)
 To facilitate the development of add-ons, we have provided a command line interface (CLI) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 
@@ -22,7 +22,7 @@ To facilitate the development of add-ons, we have provided a command line interf
 
 <InlineAlert slots="text" variant="info"/>
 
-**IMPORTANT:** These steps require access to the beta version of Adobe Express and the Add-on CLI, which are currently offered to interested developers on a *wait list basis*. If you're interested, please fill in and submit [this wait list form](https://airtable.com/shr3IK38z2MCNHJEm) to get on the list now!
+**IMPORTANT:** These steps require access to the beta version of Adobe Express and the Add-on CLI, which are currently offered to interested developers on a *wait list basis*. If you're interested, please fill in and submit [this wait list form](https://adobe.com/go/express-developer) to get on the list now!
 
 ### Step 1: Create your add-on project
 Open your terminal and run the following command:

@@ -1,5 +1,5 @@
 # AddOnSdk.app.document
-Provides access to the methods needed for [adding an image or video](../../../#importing-content) to the document and for [creating a rendition](#export) for export.
+Provides access to the methods needed for [importing an image or video](../../develop/#importing-content) to the document and for [creating a rendition](../../develop/#exporting-content) for export.
 
 ## Properties
 
@@ -7,12 +7,3 @@ Provides access to the methods needed for [adding an image or video](../../../#i
 
 ### addImage()
 #### Parameters
-| Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | -----------------------|------------- |           
-
-
-### addVideo()
-
-### createRenditions()
-
-## Events
