@@ -46,10 +46,10 @@ module.exports = {
         "path": 'guides/develop/samples'
         // "path": "https://github.com/AdobeDocs/express-add-on-samples"
       },
-      {
-        title: 'Community',
-        path: '/support/'
-      }
+      // {
+      //   title: 'Community',
+      //   path: '/support/'
+      // }
     ],
     subPages: [       
       {
@@ -146,7 +146,11 @@ module.exports = {
         "title": "References",
         "path": "guides/references/addonsdk",      
         "pages": [          
-            {
+          {
+            title: 'Changelog',            
+            path: 'guides/references/changelog.md'
+          }, 
+            {              
               title: 'AddOnSdk',                
               path: 'guides/references/addonsdk/index.md',            
               pages: [                                                                                                                
@@ -188,51 +192,7 @@ module.exports = {
                 },
 
               ]          
-            },                                                                                                             
-              // {
-              //   title: 'Capabilities',                
-              //   path: 'guides/references/apis/capabilities/clientstorage.md',            
-              //   pages: [                                                                                              
-              //     {
-              //       "title": "Client Storage",
-              //       "path": "guides/references/apis/capabilities/clientstorage.md"
-              //     },  
-              //         {
-              //     "title": "Drag & Drop",
-              //     "path": "guides/references/apis/capabilities/dnd.md"
-              //   },                
-              //   {
-              //     "title": "Export Content from Document",
-              //     "path": "guides/references/apis/capabilities/export.md"
-              //   },
-              //   {
-              //     "title": "Import Content to Document",
-              //     "path": "guides/references/apis/capabilities/import.md"
-              //   },
-              //   {
-              //     "title": "Locale Detection",
-              //     "path": "guides/references/apis/capabilities/locale.md"
-              //   },
-              //   {
-              //     "title": "Manifest Properties",
-              //     "path": "guides/references/apis/capabilities/manifest.md"
-              //   },
-              //   {
-              //     "title": "Modal Dialogs",
-              //     "path": "guides/references/apis/capabilities/dialogs.md"
-              //   },
-              //   {
-              //     "title": "Authorizing with OAuth 2.0",
-              //     "path": "guides/references/apis/capabilities/oauth.md"
-              //   },
-              //   {
-              //     "title": "Theme Detection",
-              //     "path": "guides/references/apis/capabilities/theme.md"
-              //   },               
-              //   ],
-              // },               
-            //]
-          //},
+            },                                                                                                                           
           {
             title: 'Manifest',
             description: 'Manifest Schema',
@@ -241,20 +201,20 @@ module.exports = {
           ]           
       }, 
       {
-        "title": "FAQ",
+        "title": "FAQs",
         "path": "guides/faq.md"        
       },      
-      {
-        title: 'Community',
-        path: '/support/community/',
-        header: true,
-        pages: [
-          {
-            title: 'Information',
-            path: '/support/community/'
-          },
-        ]
-      },      
+      // {
+      //   title: 'Community',
+      //   path: '/support/community/',
+      //   header: true,
+      //   pages: [
+      //     {
+      //       title: 'Information',
+      //       path: '/support/community/'
+      //     },
+      //   ]
+      // },      
     ],
   },
   plugins: [`@adobe/gatsby-theme-aio`]

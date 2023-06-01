@@ -27,7 +27,7 @@ These docs are for Adobe Express add-on APIs which are still in private beta. [J
 # AddOnSdk API Reference
 
 ## Overview
-This reference is provided to outline the interfaces, functions, properties and events that support the [Add-on SDK API features](#what-can-i-do-with-the-apis). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
+This reference is provided to outline the interfaces, methods, properties and events that support the [Add-on SDK API features](#what-can-i-do-with-the-apis). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
 
 <InlineAlert slots="header, text1, text2, text3" variant="success"/>
 

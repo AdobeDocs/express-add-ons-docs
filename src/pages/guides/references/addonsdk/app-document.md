@@ -3,7 +3,7 @@ Provides access to the methods needed for [importing an image or video](../../de
 
 ## Properties
 
-## Functions
+## Methods
 
 ### addImage()
 #### Parameters

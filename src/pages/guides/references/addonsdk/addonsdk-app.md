@@ -1,7 +1,7 @@
 # AddOnSdk.app
 Provides access to the host application (Adobe Express). This object is used to access the current document to allow you to [import](../../develop/#importing-content) or [export](../../develop/#exporting-content) content, the [OAuth APIs](../../develop/#authenticating-with-oauth-20) used for OAuth 2.0 workflows, and the UI object for detecting the [current locale](../../develop/#detecting-locale) and [theme](../../develop/#detecting-theme) in use.
 
-## Functions
+## Methods
 ### showModalDialog()
 <!-- `showModalDialog(dialogOptions: DialogOptions): Promise<DialogResult>` -->
 Shows a modal dialog based on specific options passed in. 

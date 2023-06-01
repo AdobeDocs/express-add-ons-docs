@@ -27,7 +27,7 @@ These docs are for Adobe Express add-on APIs which are still in private beta. [J
 This set of recipes is provided to help you discover what's possible with our [APIs](../references/apis/) by providing some popular use cases with associated code snippets. Be sure to check out our [code samples](samples.md) as well which provide more extensive usage of each of these recipes.
 
 ## Importing Content
-Importing content into the document is one of the most popular use cases, since it allows a user to add content retrieved from a third-party service, or their local hard drive, directly into their designs quickly and easily. You can use this feature in your add-ons using one of the functions below.
+Importing content into the document is one of the most popular use cases, since it allows a user to add content retrieved from a third-party service, or their local hard drive, directly into their designs quickly and easily. You can use this feature in your add-ons using one of the function examples below.
 
 ```js
 // Reference to the active document

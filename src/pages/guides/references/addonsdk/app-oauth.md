@@ -3,6 +3,6 @@ Provides access to the OAuth methods needed for use with the [OAuth API](../../d
 
 ## Properties
 
-## Functions
+## Methods
 
 ## Events

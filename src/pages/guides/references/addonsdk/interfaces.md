@@ -65,10 +65,7 @@ To use it in your `.js/.jsx` source files, import it as a default module referen
 
 ### From TypeScript
 ```js
-import AddOnSdk, {
-    ClientStorage
-    // @ts-ignore Import module
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 ```
 Note, if you create your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get the following type definition generated in your project for you:

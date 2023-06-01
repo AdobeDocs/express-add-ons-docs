@@ -3,7 +3,7 @@ Provides access to the add-on manifest details contained in the `manifest.json` 
 
 ## Properties
 
-## Functions
+## Methods
 
 ## Events
 

@@ -20,7 +20,7 @@ contributors:
 
 These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://adobe.com/go/express-developer).
 
-# FAQ
+# FAQs
 
 1. **How do I run on a different port than the default (ie: 8080 for example)?**
 

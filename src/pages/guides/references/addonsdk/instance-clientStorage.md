@@ -7,7 +7,7 @@ Client Storage is similar to using the `Window.localStorage` API, but is asynchr
 
 Since the data is stored in the user’s current browser, user actions such as clearing the browser cache would clear all of the data storage in `ClientStorage` (similar to `localStorage`).
 
-## Functions
+## Methods
 
 ## getItem()
 **`async getItem(key: string): Promise<unknown | undefined>`**<br/>
