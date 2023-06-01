@@ -1,3 +1,22 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Adobe Express
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Add-on Manifest
+title: Guides
+description: This is the code samples page
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Code Samples
 Find inspiration and great reference examples by checking out our [code samples](https://github.com/AdobeDocs/express-add-on-samples) repo. A description of each and which APIs and technologies they use is available here for reference.
 

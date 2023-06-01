@@ -30,9 +30,9 @@ module.exports = {
         title: 'References',
         menu: [
           {
-            title: 'API References',
+            title: 'AddOnSdk API Reference',
             description: 'API Reference v1',
-            path: 'guides/references/'         
+            path: 'guides/references/addonsdk'         
           },          
           {
             title: 'Manifest Schema',
@@ -139,76 +139,110 @@ module.exports = {
           {
             "title": "Public Add-on Distribution",
             "path": "guides/distribute/submit-public-dist.md"
-          },    
-          // {
-          //   "title": "Monetizing your Add-on",
-          //   "path": "guides/distribute/monetization.md"
-          // }               
+          },                           
         ]
       },               
       {
         "title": "References",
-        "path": "guides/references",      
-        "pages": [
-          {
-            title: 'APIs',
-            description: 'API Reference v1',
-            path: 'guides/references/',            
-            pages: [                                                                                              
-              {
-                "title": "Client-Side Storage",
-                "path": "guides/references/apis/clientstorage.md"
-              },
-                            
-              {
-                "title": "Drag and Drop",
-                "path": "guides/references/apis/dnd.md"
-              },
-              {
-                "title": "Export Content from Document",
-                "path": "guides/references/apis/export.md"
-              },
-              {
-                "title": "Import Content to Document",
-                "path": "guides/references/apis/import.md"
-              },
-              {
-                "title": "Locale Detection",
-                "path": "guides/references/apis/locale.md"
-              },
-              {
-                "title": "Manifest Properties",
-                "path": "guides/references/apis/manifest.md"
-              },
-              {
-                "title": "Modal Dialogs",
-                "path": "guides/references/apis/dialogs.md"
-              },
-              {
-                "title": "Authorizing with OAuth 2.0",
-                "path": "guides/references/apis/oauth.md"
-              },
-              {
-                "title": "Theme Detection",
-                "path": "guides/references/apis/theme.md"
-              },
+        "path": "guides/references/addonsdk",      
+        "pages": [          
+            {
+              title: 'AddOnSdk',                
+              path: 'guides/references/addonsdk/index.md',            
+              pages: [                                                                                                                
+                {
+                  "title": "app",
+                  "path": "guides/references/addonsdk/addonsdk-app.md",
+                  pages: [                                                                                                                    
+                    {
+                      "title": "document",
+                      "path": "guides/references/addonsdk/app-document.md"
+                    },
+                    {
+                      "title": "oauth",
+                      "path": "guides/references/addonsdk/app-oauth.md"
+                    },
+                    {
+                      "title": "ui",
+                      "path": "guides/references/addonsdk/app-ui.md"
+                    },
+                  ]
+                },                                  
+                {
+                  "title": "instance",
+                  "path": "guides/references/addonsdk/addonsdk-instance.md",
+                  pages: [                                                                                                                    
+                    {
+                      "title": "clientStorage",
+                      "path": "guides/references/addonsdk/instance-clientStorage.md"
+                    },
+                    {
+                      "title": "manifest",
+                      "path": "guides/references/addonsdk/instance-manifest.md"
+                    },
+                  ]
+                },
+                {
+                  "title": "constants",
+                  "path": "guides/references/addonsdk/addonsdk-constants.md"
+                },
+
+              ]          
+            },                                                                                                             
               // {
-              //   "title": "Object Reference",
-              //   "path": "guides/references/apis/test.md"
-              // },
-            ],
-          },          
+              //   title: 'Capabilities',                
+              //   path: 'guides/references/apis/capabilities/clientstorage.md',            
+              //   pages: [                                                                                              
+              //     {
+              //       "title": "Client Storage",
+              //       "path": "guides/references/apis/capabilities/clientstorage.md"
+              //     },  
+              //         {
+              //     "title": "Drag & Drop",
+              //     "path": "guides/references/apis/capabilities/dnd.md"
+              //   },                
+              //   {
+              //     "title": "Export Content from Document",
+              //     "path": "guides/references/apis/capabilities/export.md"
+              //   },
+              //   {
+              //     "title": "Import Content to Document",
+              //     "path": "guides/references/apis/capabilities/import.md"
+              //   },
+              //   {
+              //     "title": "Locale Detection",
+              //     "path": "guides/references/apis/capabilities/locale.md"
+              //   },
+              //   {
+              //     "title": "Manifest Properties",
+              //     "path": "guides/references/apis/capabilities/manifest.md"
+              //   },
+              //   {
+              //     "title": "Modal Dialogs",
+              //     "path": "guides/references/apis/capabilities/dialogs.md"
+              //   },
+              //   {
+              //     "title": "Authorizing with OAuth 2.0",
+              //     "path": "guides/references/apis/capabilities/oauth.md"
+              //   },
+              //   {
+              //     "title": "Theme Detection",
+              //     "path": "guides/references/apis/capabilities/theme.md"
+              //   },               
+              //   ],
+              // },               
+            //]
+          //},
           {
             title: 'Manifest',
             description: 'Manifest Schema',
             path: 'guides/references/manifest.md'
-          }
-          
-        ]  
+          },          
+          ]           
       }, 
       {
         "title": "FAQ",
-        "path": "guides/faq.md",        
+        "path": "guides/faq.md"        
       },      
       {
         title: 'Community',
@@ -218,10 +252,10 @@ module.exports = {
           {
             title: 'Information',
             path: '/support/community/'
-          }
+          },
         ]
-      }      
-    ]
+      },      
+    ],
   },
   plugins: [`@adobe/gatsby-theme-aio`]
 };

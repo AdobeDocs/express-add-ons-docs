@@ -90,69 +90,69 @@ This recipe focuses on providing an authentication feature that allows a user to
 ```js
 const Connection = ({ accessToken, updateAccessToken }) => {  
   async function handleConnect() {
-        // Generate the cryptographic challenge parameters
-        // required in the OAuth 2.0 authorization workflow.
-        const challenge = await oauthUtils.generateChallenge();
+    // Generate the cryptographic challenge parameters
+    // required in the OAuth 2.0 authorization workflow.
+    const challenge = await oauthUtils.generateChallenge();
 
-        // Trigger the OAuth 2.0 based authorization which opens up a sign-in window for the user
-        // and returns an authorization code which can be used to obtain an access_token.
-        const { id, code, redirectUri, result } = await addOnSdk.app.oauth.authorize({
-            authorizationUrl: AUTHORIZATION_URL,
-            clientId: CLIENT_ID,
-            scope: SCOPE,
-            codeChallenge: challenge.codeChallenge
-        });
+    // Trigger the OAuth 2.0 based authorization which opens up a sign-in window for the user
+    // and returns an authorization code which can be used to obtain an access_token.
+    const { id, code, redirectUri, result } = await addOnSdk.app.oauth.authorize({
+        authorizationUrl: AUTHORIZATION_URL,
+        clientId: CLIENT_ID,
+        scope: SCOPE,
+        codeChallenge: challenge.codeChallenge
+    });
 
-        const { status, description } = result;
-        if (status !== "SUCCESS") {
-            setLoading(false);
-            console.error(`Failed to authorize. Status: ${status} | Description: ${description}`);
-            return;
-        }
+    const { status, description } = result;
+    if (status !== "SUCCESS") {
+        setLoading(false);
+        console.error(`Failed to authorize. Status: ${status} | Description: ${description}`);
+        return;
+    }
 
-        // Generate the access_token which can be used to verify the identity of the user and
-        // grant them access to the requested resource.
-        await oauthUtils.generateAccessToken({
-            id,
-            clientId: CLIENT_ID,
-            codeVerifier: challenge.codeVerifier,
-            code,
-            tokenUrl: TOKEN_URL,
-            redirectUri
-        });
+    // Generate the access_token which can be used to verify the identity of the user and
+    // grant them access to the requested resource.
+    await oauthUtils.generateAccessToken({
+        id,
+        clientId: CLIENT_ID,
+        codeVerifier: challenge.codeVerifier,
+        code,
+        tokenUrl: TOKEN_URL,
+        redirectUri
+    });
 
-        // Get the generated access_token.
-        const newAccessToken = await oauthUtils.getAccessToken(id);   
-        updateAccessToken(newAccessToken);
+    // Get the generated access_token.
+    const newAccessToken = await oauthUtils.getAccessToken(id);   
+    updateAccessToken(newAccessToken);
   }
 }
 ```
 Now retrieve assets with the token saved in the above:
 
 ```js
-  // Use the access_token to retrieve assets
-  async function getAssets(path) {
-        const data = { path };
-        const options = {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        };
+// Use the access_token to retrieve assets
+async function getAssets(path) {
+    const data = { path };
+    const options = {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    };
 
-        const response = await fetch(LIST_FOLDER_API_URL, options);
-        const assets = await response.json();
-        if (!response.ok) {
-            const error = assets.error
-                ? assets.error.message
-                : "Unexpected error occurred while fetching assets.";
+    const response = await fetch(LIST_FOLDER_API_URL, options);
+    const assets = await response.json();
+    if (!response.ok) {
+        const error = assets.error
+            ? assets.error.message
+            : "Unexpected error occurred while fetching assets.";
 
-            throw new Error(error);
-        }
+        throw new Error(error);
+    }
 
-        return assets;
+    return assets;
   }
 }
 ```
@@ -191,44 +191,161 @@ async function displayAllItems() {
 If you want to allow a user to drag and drop items from your add-on to the document, you can use the methods provided for this in the add-on SDK. An example of this is shown below:
 
 ```js
-  // Enable drag to document on an image
-  AddOnSdk.app.enableDragToDocument(image, {
-      previewCallback: element => {
-          return new URL(element.src);
-      },
-      completionCallback: async (element) => {
-          return [{ blob: await getBlob(element.src) }];
-      }
-  });
+// Enable drag support for an element
+function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
+  const image = document.getElementById(elementId);
+
+  const dragCallbacks = {
+    previewCallback: (image: HTMLElement) => {
+      return new URL(previewUrl);
+    },
+    completionCallback: async (image: HTMLElement) => {
+      const imageBlob = await fetch(image.src).then((response) =>
+        response.blob()
+      );
+      return [{ blob: imageBlob }];
+    },
+  };
+
+  try {
+    AddOnSdk.app.enableDragToDocument(image, dragCallbacks);
+  } catch (error) {
+    console.log("Failed to enable DragToDocument:", error);
+  }
+}
+
+AddOnSdk.app.on("dragstart", (eventData: DragStartEventData) => {
+  console.log("The drag event has started for", eventData.element);
+});
+
+AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
+  if (!eventData.dropCancelled) {
+    console.log("The drag event has ended for", eventData.element);
+  } else {
+    console.log("The drag event was cancelled for", eventData.element);
+  }
+});
 ```
 
 ## Modal Dialogs
-When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use the following code snippet to do so:
+When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use a simple modal dialog to do so:
+
+### Simple Modal Dialog Example
+```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+// Wait for the SDK to be ready
+await AddOnSDKAPI.ready;
+
+// Confirmation Dialog Example
+let dialogOptions = {
+    title: titleValue,
+    description: [descValue],
+    buttonLabels: {
+        primary:
+        primaryButtonTextValue != "" ? primaryButtonTextValue : undefined,
+        secondary:
+        secondaryButtonTextValue != ""
+            ? secondaryButtonTextValue
+            : undefined,
+        cancel:
+        cancelButtonTextValue != "" ? cancelButtonTextValue : undefined,
+    },
+    variant: "confirmation",
+};
+const response = await addOnSdk.app.showModalDialog(dialogOptions);
+console.log("Button type clicked " + response.buttonType)
+```
+
+There's also support for complex modal dialogs, like an input dialog or a custom dialog that allows you to supply custom content, but it's currently behind an experimental flag. However, below is an example of using an `input` dialog that accepts input that you can retrieve:
+
+### Input Modal Dialog Example
+```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+// Wait for the SDK to be ready
+await AddOnSDKAPI.ready;
+
+// Input Dialog Example 
+let inputDialogOptions = {
+    title: titleValue,
+    description: [descValue],
+    buttonLabels: {
+        primary:
+        primaryButtonTextValue != "" ? primaryButtonTextValue : undefined,
+        secondary:
+        secondaryButtonTextValue != ""
+            ? secondaryButtonTextValue
+            : undefined,
+        cancel:
+        cancelButtonTextValue != "" ? cancelButtonTextValue : undefined,
+    },
+    variant: "input",
+    field: {
+          label: labelValue,
+          placeholder: placeholderValue,
+          fieldType: "text",
+    },
+
+    const response = await addOnSdk.app.showModalDialog(inputDialogOptions);
+    console.log("Field value " + response.fieldValue); // returns the input the user entered
+}
+};
+```
+### Custom Modal Dialog Example
+```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+// Wait for the SDK to be ready
+await AddOnSDKAPI.ready;
+ 
+function useCustomDialogResult(data: unknown) {
+  // Use the dialog data
+}
+
+// Custom Dialog
+async function showCustomDialog() {
+  try {
+    const dialogResult = await AddOnSDKAPI.app.showModalDialog({
+        variant: Variant.custom,
+        title: "WiX",
+        src: "dialog.html",
+        size: { width: 600, height: 400 }
+    });
+ 
+    // Use data received from the custom dialog
+    useCustomDialogResult(dialogResult.result);
+ 
+  } catch (error) {
+    console.log("Error showing modal dialog:", error);
+  }
+}
+```
 
 
-## Detecting and Setting Theme
-When you need to detect the theme of the environment where your add-on is running (aka: Adobe Express), or if you want to be notified if it changes, you can use the following code. Note, however, that currently Adobe Express only supports a "light" theme.
+## Detecting Theme
+When you want to detect the theme of the environment where your add-on is running (aka: Adobe Express), or if you want to be notified if it changes, you can use the following example. This is useful for knowing what theme is currently set in Adobe Express so you can also use the same in your add-on UI, and to apply the theme change when the user changes their Adobe Express theme. Note, that currently Adobe Express only supports a "light" theme, though this will be changing to also support a "dark" theme in the future.
 
 `AddOnSdk.app.on.themechange`
 
 ```js
-function applyTheme(theme = "light") {
+function applyTheme(theme) {
     document.querySelector("sp-theme").setAttribute("color", theme);
 }
 applyTheme(AddOnSdk.app.ui.theme);
 AddOnSdk.app.on("themechange", (data) => { applyTheme(data.theme); });
 
 addOnSdk.app.on("themechange", (data) => {
-    setTheme(data.theme == "dark" ? darkTheme : lightTheme);
+    applyTheme(data.theme == "dark" ? darkTheme : lightTheme);
 });
 ```
 
 ## Detecting Locale
-If you want to handle a change in the locale, for instance if you want to set the language in your add-on, you can do so with the following code:
+If you want to detect the current locale, or when the locale changes, for instance to set the language in your add-on, you can do so with the following code:
 
 ```js
-
 AddOnSdk.app.ui.locales
+AddOnSdk.app.ui.locale
 
 AddOnSdk.app.on("localechange", data => {
   setLanguage(data.locale);
