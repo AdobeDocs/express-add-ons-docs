@@ -37,7 +37,7 @@ module.exports = {
           {
             title: 'Manifest Schema',
             description: 'Manifest Schema',
-            path: 'guides/references/manifest.md'
+            path: 'guides/references/manifest'
           }
         ]
       },
@@ -196,7 +196,7 @@ module.exports = {
           {
             title: 'Manifest',
             description: 'Manifest Schema',
-            path: 'guides/references/manifest.md'
+            path: 'guides/references/manifest'
           },          
           ]           
       }, 
