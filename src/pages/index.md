@@ -33,9 +33,9 @@ These docs are for Adobe Express add-on APIs which are still in private beta. [J
 
 #### Quick Links
 
-* [Getting Started](getting_started/)
-* [References](references/)
-* [Samples](https://github.com/AdobeDocs/express-add-on-samples)
+* [Getting Started](./guides/getting_started/)
+* [References](./guides/references/addonsdk/)
+* [Samples](./guides/develop/samples.md)
   
 <DiscoverBlock width="100%" slots="heading, text"/>
 
