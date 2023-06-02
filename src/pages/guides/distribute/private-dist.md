@@ -1,7 +1,7 @@
 # Create a Private Link
 
 ## Overview
-You can choose to create a private link of your add-on to share with others to use or test by following the instructions outlined in this section.
+You can choose to create a private link to share your add-on with others for use or testing by following the instructions outlined in this section.
 
 ## Step 1: Invoke the distribution modal
 A new **Manage** button should now be displayed in your add-ons launchpad, and will invoke the in-app distribution experience when clicked.

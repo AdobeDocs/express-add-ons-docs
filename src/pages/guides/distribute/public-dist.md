@@ -1,4 +1,4 @@
-# Public Add-on Distribution
+# Public add-on Distribution
 
 ## Overview
 You can create a public listing and share your add-on with the millions of Adobe Express users to discover and use through the public distribution experience outlined below.

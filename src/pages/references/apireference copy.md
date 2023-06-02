@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: API Reference
-description: This is the Add-on SDK - API Reference page
+description: This is the add-on SDK reference page
 contributors:
   - https://github.com/hollyschinsky
 ---
@@ -35,10 +35,10 @@ Also, check out the latest [Manifest Reference](../references/manifest.md) for m
 
 <InlineAlert slots="text" variant="success"/>
 
-Each API section includes the **Interface** definition as well as a **Example** tab to show an example of how the interface can be used. Please also see the [code samples](guides/develop/samples) for more in-depth references on using the Add-on SDK APIs. 
+Each API section includes the **Interface** definition as well as a **Example** tab to show an example of how the interface can be used. Please also see the [code samples](guides/develop/samples) for more in-depth references on using the add-on SDK APIs. 
 
 ## Introduction
-The Add-on SDK is available as a hosted JavaScript module on a CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of imports in the JavaScript source. However, you don't need to worry about adding the reference, assuming you created your project with the CLI, since it will already be imported for you based on the template you chose. 
+The add-on SDK is available as a hosted JavaScript module on a CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of imports in the JavaScript source. However, you don't need to worry about adding the reference, assuming you created your project with the CLI, since it will already be imported for you based on the template you chose. 
 
 But for reference, below are some examples of how it can be imported for use.
 
@@ -95,7 +95,7 @@ The `AddOnSdk` provides the following interface for accessing all of the APIs. I
 
 ```js
 /**
- * The main API Interface exposed by the SDK to the consuming Add-on code.
+ * The main API Interface exposed by the SDK to the consuming add-on code.
  */
 interface AddOnSdk {
     /**
@@ -111,8 +111,8 @@ interface AddOnSdk {
     readonly ready: Promise<void>;
 
     /**
-     * Represents capabilities and events of the currently running Add-on Instance.
-     * The interface type depends on the type of the underlying Add-on.
+     * Represents capabilities and events of the currently running add-on Instance.
+     * The interface type depends on the type of the underlying add-on.
      */
     readonly instance: AddOn;
 
@@ -1112,7 +1112,8 @@ interface DialogOptions {
   buttonLabels?: ButtonLabels;
 }
  
-interface InputDialogOptions extends DialogOptions {
+interface 
+Options extends DialogOptions {
   /**
    * Variant
    */

@@ -2,7 +2,7 @@
 Represents the currently running add-on instance. This object is used for providing access to the `clientStorage` and `manifest` objects. See the [Storing and Retrieving Client Side Data](../../develop/#storing-and-retrieving-client-side-data) Code Recipe and [Manifest](../manifest.md) reference for more details.
 
 
-## AddOnSdk.instance Objects
+## Objects
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>

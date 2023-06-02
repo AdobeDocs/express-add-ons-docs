@@ -24,7 +24,7 @@ This guide will help you set up your development environment so you can get star
 
 - [NodeJS](https://nodejs.org/en/download/) (major version >= 16) and NPM (major version >= 8) installed.
 - Familiarity with programming in HTML, CSS and JavaScript.
-- The Add-on CLI installed on your local machine.
+- The add-on CLI installed on your local machine.
 - An email address associated with an Adobe ID. If you don't have one yet, you'll be taken through steps to create one in this guide.
 - Access to the beta version of Adobe Express. [**Join our wait list**](../)
 

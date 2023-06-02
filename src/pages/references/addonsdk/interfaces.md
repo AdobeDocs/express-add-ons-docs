@@ -400,7 +400,7 @@ export interface OAuth {
 
     /**
      * Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in window.
-     * Post authorization the user is redirected to the Add-on developer provided URL.
+     * Post authorization the user is redirected to the add-on developer provided URL.
      * @param request - {@link AuthorizeWithOwnRedirectRequest} Payload with parameters to be used in the authorization workflow.
      * @returns - {@link AuthorizationResult} Authorization result.
      */

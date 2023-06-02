@@ -17,12 +17,15 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Manifest Version 2
-This guide outlines the latest manifest version 2. Each add-on bundle contains a `manifest.json` file at the root level which defines the add-on behavior.
+# Overview
+Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave.
+
+## Manifest Version 2
+This guide outlines the latest manifest version available, which is version 2.
 
 <InlineAlert slots="text" variant="warning"/>
 
-Changes to your add-on manifest currently require a manual reload. Use the **Refresh** button in the **Add-on developer tools panel** to pick up any changes.
+Changes to your add-on manifest currently require a manual reload. Use the **Refresh** button in the **Add-on Development** panel to pick up any changes.
 
 <div>
 <table class="spectrum-Table spectrum-Table--sizeM">

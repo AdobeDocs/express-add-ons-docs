@@ -12,7 +12,7 @@ The `AddOnSdk` provides the following interface for accessing all of the APIs. I
 
 ```js
 /**
- * The main API Interface exposed by the SDK to the consuming Add-on code.
+ * The main API Interface exposed by the SDK to the consuming add-on code.
  */
 interface AddOnSdk {
     /**
@@ -28,8 +28,8 @@ interface AddOnSdk {
     readonly ready: Promise<void>;
 
     /**
-     * Represents capabilities and events of the currently running Add-on Instance.
-     * The interface type depends on the type of the underlying Add-on.
+     * Represents capabilities and events of the currently running add-on Instance.
+     * The interface type depends on the type of the underlying add-on.
      */
     readonly instance: AddOn;
 

@@ -1,5 +1,5 @@
 # AddOnSdk
-The core add-on SDK object which provides access to everything needed for add-on development. This includes determining which version of API is in use, a `ready` function which you can use to determine when everything has been initialized and can be used, and some child objects that provide the specific objects and methods needed to support each API. An overview of the properties that can be accessed off this object is below, but check out the other object references for further details on each. 
+The core add-on SDK object which provides access to everything needed for add-on development. This includes determining the current version of the platform, an object to use for determining when the SDK has been initialized and ready for use, and other core objects you can use to access specific features you may want to use for building your add-on.
 
 ## AddOnSdk Objects
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">

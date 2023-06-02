@@ -18,10 +18,10 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Changelog
+# Add-on SDK Changelog
 
 ## [1.0.0] - 2023-06-08
 
 ### Added
 
-- Initial release for public beta.
+- Initial release for the beta version of Adobe Express.

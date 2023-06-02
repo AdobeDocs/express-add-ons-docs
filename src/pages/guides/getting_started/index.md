@@ -23,7 +23,7 @@ These docs are for Adobe Express add-on APIs which are still in private beta. [J
 
 <br/><br/>
 
-# Introduction to Adobe Express Add-ons
+# Introduction to Adobe Express add-ons
 Here you will find everything you need to know to get started building add-ons for Adobe Express. At a high level, add-ons refer to any feature distributed independently from the core Adobe Express that a user can enable or install to extend the functionality. Adobe will be providing built-in add-ons out of the box, but 3rd party developers will also have the opportunity to create and distribute their own add-ons by following the steps provided in this documentation.
 
 ## Add-on Use Cases

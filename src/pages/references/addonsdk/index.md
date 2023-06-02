@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: API Reference
-description: This is the Add-on SDK - API Reference page
+description: This is the add-on SDK reference page
 contributors:
   - https://github.com/hollyschinsky
 ---
@@ -27,36 +27,40 @@ These docs are for Adobe Express add-on APIs which are still in private beta. [J
 # AddOnSdk API Reference
 
 ## Overview
-This reference is provided to outline the interfaces, methods, properties and events that support the [Add-on SDK API features](#what-can-i-do-with-the-apis). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
+This reference is provided to outline the interfaces, methods, properties and events that support the [add-on SDK API features](#what-can-i-do-with-the-apis). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
 
-<InlineAlert slots="header, text1, text2, text3" variant="success"/>
+<InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
 # SDK vs API
-The lines between what should be considered an SDK (Software Development Kit) or an API (Application Programming Interface) can sometimes feel a little blurry. Some further explanation on these terms and how they should be considered for add-on development is provided here for clarification.
+The distinction between an SDK and an API can be a bit blurry and can depend on the specific context. However, here's a general overview of the differences between an SDK and an API:
 
-   - An **SDK** can be considered a kit that contains everything you need to develop for a platform. This includes not only the APIs, but also the tools, middleware, and other libraries and sub-components that support development.
+- SDK (Software Development Kit) - a collection of software development tools and libraries that developers can use to create applications for a specific platform or system. An SDK typically includes an API, documentation, code samples, and other resources that developers need to build applications. 
 
-   - **APIs** define the set of interface defintions available to use for providing the functionality that you want to build into your add-ons.
+- API (Application Programming Interface) - a set of rules and protocols that developers can use to interact with a platform. 
+
+In general, an SDK provides a more complete set of tools and resources for developers than an API alone. An SDK may include an API, but it also includes other tools and resources that can help developers build applications more easily. However, the terms SDK and API are often used interchangeably, and the specific definitions can vary depending on the context.
+
+
+
 
 **Note:** an `interface` can also be considered an `object` in terms of this reference. You can traverse the `AddOnSdk` interfaces/objects (ie: `app`,`instance`) etc in the left navigation to learn more.
 
 
-## What can I do with the APIs?
-- [Import Content](../../develop/)
-- [Export Content](../../develop/)
-- [Enable Drag and Drop](../../develop/)
-- [Authenticate with OAuth 2.0](../../develop/)
-- [Access Client-side Storage](../../develop/)
-- [Use Modal Dialogs](../../develop/)
-- [Detect Current Locale](../../develop/)
-- [Detect Current Theme](../../develop/)
-- [Access Add-on Manifest Data](../../develop/)
-
+## What features does the SDK support?
+- [Importing Content](../../develop/)
+- [Exporting Content](../../develop/)
+- [Drag & Drop Behavior](../../develop/)
+- [Authentication with OAuth 2.0](../../develop/)
+- [Client-side Storage Access](../../develop/)
+- [Modal Dialogs](../../develop/)
+- [Locale Detection](../../develop/)
+- [Theme Detection](../../develop/)
+- [Access to the Manifest](../../develop/)
 
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [Code Recipes](../../develop/) for details and examples to support the use cases of the APIs listed above.
+See the [Code Recipes](../../develop/) for details and examples of how to add the features above.
 
 
 ## AddOnSdk Objects
@@ -115,7 +119,7 @@ See the [Code Recipes](../../develop/) for details and examples to support the u
 
 
 ### Add-on SDK Module Import
-The Add-on SDK is available as a hosted JavaScript module on the Adobe CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of `import` statements in the JavaScript source. However, you don't need to worry about adding this reference if you used the CLI to create your add-on project, since **it will already be imported for you**, and the location it was placed will depend on the `template` you chose. The following sections show how it's imported into different file types for reference.
+The add-on SDK is available as a hosted JavaScript module on the Adobe CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of `import` statements in the JavaScript source. However, you don't need to worry about adding this reference if you used the CLI to create your add-on project, since **it will already be imported for you**, and the location it was placed will depend on the `template` you chose. The following sections show how it's imported into different file types for reference.
 
 #### Import into HTML file
 To use the SDK from an HTML file, simply include a link to it in a `<script>` tag with the `type=module` attribute on it to ensure everything is initialized properly. 

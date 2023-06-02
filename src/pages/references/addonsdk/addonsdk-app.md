@@ -162,7 +162,7 @@ AddOnSdk.app.enableDragToDocument(image, {
 
 
 
-## AddOnSdk.app Objects
+## Objects
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
@@ -193,8 +193,8 @@ AddOnSdk.app.enableDragToDocument(image, {
 </table>
 
 
-## AddOnSdk.app Events
-The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to listen to events, and the `AddOnSdk.app.off()` method to stop listening:
+## Events
+The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to subscribe to events, and the `AddOnSdk.app.off()` method to unsubscribe from them. See the (`on()`)[#on] method reference for more details.
 
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">

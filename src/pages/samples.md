@@ -1,7 +1,7 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on SDK
+  - Express add-on SDK
   - Express Editor
   - Adobe Express
   - Add-on SDK
@@ -29,10 +29,10 @@ Demonstrates how to get started with add-on development with a simple app that g
 - JavaScript
 - CSS
 
-**Note:** No specific Add-on SDK APIs are used in this sample, it is meant to run a simple JavaScript app that can be loaded and run in the add-ons panel.
+**Note:** No specific add-on SDK features are used in this sample, it is meant to run a simple JavaScript app that can be loaded and run in the add-ons panel.
 
 ## [import-images-from-local](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/import-images-from-local)
-Demonstrates how to use the Add-on SDK's Import and Drag and Drop APIs to add images over click and drag and drop to a document.
+Demonstrates how to use the add-on SDK's Import and Drag and Drop APIs to add images over click and drag and drop to a document.
 
 **Technologies Used:** <br/>
 
@@ -45,7 +45,7 @@ Demonstrates how to use the Add-on SDK's Import and Drag and Drop APIs to add im
 - [Drag and Drop APIs](../../references/index.md#drag-and-drop) to support dragging and dropping images to the document.
 
 ## [import-images-using-oauth](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/import-images-using-oauth)
-Demonstrates how to use the Add-on SDK's OAuth API to allow its users to connect their Dropbox account (in addition to leveraging some others listed below). 
+Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect their Dropbox account (in addition to leveraging some others listed below). 
 
 **Technologies Used:** <br/>
 
@@ -76,7 +76,7 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 - [Client Storage API](../../references/index.md#client-storage) to persist the todo items.
 
 ## [export-sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/export-sample)
-Demonstrates how to use the Add-on SDK's Export APIs to export content in various formats including jpeg, png, pdf and mp4.
+Demonstrates how to use the add-on SDK's Export APIs to export content in various formats including jpeg, png, pdf and mp4.
 
 **Technologies Used:** <br/>
 

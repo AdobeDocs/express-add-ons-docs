@@ -14,46 +14,102 @@ module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/',
   siteMetadata: {    
     "home": {
-      "title": "Adobe Express Add-ons",
+      "title": "Adobe Express add-ons",
       "path": "/express-add-ons"
     },
-    pages: [      
-      // {
-      //   title: 'Getting Started',
-      //   path: 'getting_started'
-      // },
+    pages: [                  
       {
         title: 'Guides',
         path: 'guides'
       },
       {
         title: 'References',
-        menu: [
-          {
-            title: 'AddOnSdk API Reference',
-            description: 'API Reference v1',
-            path: 'guides/references/addonsdk'         
-          },          
-          {
-            title: 'Manifest Schema',
-            description: 'Manifest Schema',
-            path: 'guides/references/manifest'
-          }
-        ]
+        path: 'references'
+        // menu: [  
+        //   {
+        //     title: 'Changelog',            
+        //     path: 'references/changelog.md'         
+        //   },          
+        //   {
+        //     title: 'AddOnSdk API Reference',
+        //     // description: 'API Reference v1',
+        //     path: 'references/addonsdk'         
+        //   },          
+        //   {
+        //     title: 'Manifest Schema',
+        //     // description: 'Manifest Schema',
+        //     path: 'references/manifest'
+        //   }
+        // ]
       },
       {
         "title": "Samples & Resources",
-        "path": 'guides/develop/samples'
-        // "path": "https://github.com/AdobeDocs/express-add-on-samples"
-      },
-      // {
-      //   title: 'Community',
-      //   path: '/support/'
-      // }
+        "path": 'samples.md'        
+      },      
     ],
-    subPages: [       
+    subPages: [  
+    {
+      title: 'Overview',
+      path: 'references/'
+    },      
+    {              
+      title: 'AddOnSdk',                
+      path: 'references/addonsdk/index.md',            
+      pages: [                                                                                                                
+        {
+          "title": "app",
+          "path": "references/addonsdk/addonsdk-app.md",
+          pages: [                                                                                                                    
+            {
+              "title": "document",
+              "path": "references/addonsdk/app-document.md"
+            },
+            {
+              "title": "oauth",
+              "path": "references/addonsdk/app-oauth.md"
+            },
+            {
+              "title": "ui",
+              "path": "references/addonsdk/app-ui.md"
+            },
+          ]
+        },                                  
+        {
+          "title": "instance",
+          "path": "references/addonsdk/addonsdk-instance.md",
+          pages: [                                                                                                                    
+            {
+              "title": "clientStorage",
+              "path": "references/addonsdk/instance-clientStorage.md"
+            },
+            {
+              "title": "manifest",
+              "path": "references/addonsdk/instance-manifest.md"
+            },
+          ]
+        },
+        {
+          "title": "constants",
+          "path": "references/addonsdk/addonsdk-constants.md"
+        },
+
+      ]          
+      },                                                                                                                           
       {
-        "title": "Getting Started",
+        title: 'Manifest',
+        description: 'Manifest schema',
+        path: 'references/manifest'
+      },  
+      {
+        title: 'Changelog',            
+        path: 'references/changelog.md'
+      },        
+      {
+        title: 'Overview',
+        path: 'guides/'
+      },  
+      {
+        "title": "Getting started",
         "path": "guides/getting_started",
         "pages": [             
           {
@@ -65,7 +121,7 @@ module.exports = {
             "path": "guides/getting_started/quickstart.md"
           },  
           {
-            "title": "Developer Tooling",
+            "title": "Developer tooling",
             "path": "guides/getting_started/dev_tooling.md"
           }
         ]
@@ -75,21 +131,17 @@ module.exports = {
         "path": "guides/develop",
         "pages": [   
           {
-            "title": "Add-on Recipes",
+            "title": "Add-on recipes",
             "path": "guides/develop/"
           },                                             
           {
-            "title": "Frameworks, Libraries and Bundling",
+            "title": "Frameworks, libraries and bundling",
             "path": "guides/develop/frameworks-libraries-bundling.md"
           },
           {
-            "title": "Network Requests and CORS",
+            "title": "Network requests and CORS",
             "path": "guides/develop/cors.md"
-          },
-          {
-            "title": "Code Samples",
-            "path": "guides/develop/samples"
-          },
+          },          
         ]
       },    
       {
@@ -97,7 +149,7 @@ module.exports = {
         "path": "guides/design",
         "pages": [
           {
-            "title": "Add-on User Interface Guide",
+            "title": "Add-on user interface guide",
             "path": "guides/design/"
           }, 
           // {
@@ -105,7 +157,7 @@ module.exports = {
           //   "path": "guides/design/spectrum.md"
           // },  
           {
-            "title": "Best Practices",
+            "title": "Best practices",
             "path": "guides/design/best_practices.md"
           },          
         ]
@@ -115,11 +167,11 @@ module.exports = {
         "path": "guides/debug",
         "pages": [
           {
-            "title": "Debugging Overview",
+            "title": "Debugging overview",
             "path": "guides/debug/"
           },  
           {
-            "title": "VS Code Debugging",
+            "title": "VS Code debugging",
             "path": "guides/debug/vs-code.md"
           },        
         ]
@@ -129,92 +181,81 @@ module.exports = {
         "path": "guides/distribute",
         "pages": [                      
           {
-            "title": "Review Guidelines",
+            "title": "Review guidelines",
             "path": "guides/distribute/review_guidelines.md",
           },           
           {
-            "title": "Private Add-on Distribution",
-            "path": "guides/distribute/submit-private-dist.md"
+            "title": "Private distribution",
+            "path": "guides/distribute/private-dist.md"
           },        
           {
-            "title": "Public Add-on Distribution",
-            "path": "guides/distribute/submit-public-dist.md"
+            "title": "Public distribution",
+            "path": "guides/distribute/public-dist.md"
           },                           
         ]
       },               
-      {
-        "title": "References",
-        "path": "guides/references/addonsdk",      
-        "pages": [          
-          {
-            title: 'Changelog',            
-            path: 'guides/references/changelog.md'
-          }, 
-            {              
-              title: 'AddOnSdk',                
-              path: 'guides/references/addonsdk/index.md',            
-              pages: [                                                                                                                
-                {
-                  "title": "app",
-                  "path": "guides/references/addonsdk/addonsdk-app.md",
-                  pages: [                                                                                                                    
-                    {
-                      "title": "document",
-                      "path": "guides/references/addonsdk/app-document.md"
-                    },
-                    {
-                      "title": "oauth",
-                      "path": "guides/references/addonsdk/app-oauth.md"
-                    },
-                    {
-                      "title": "ui",
-                      "path": "guides/references/addonsdk/app-ui.md"
-                    },
-                  ]
-                },                                  
-                {
-                  "title": "instance",
-                  "path": "guides/references/addonsdk/addonsdk-instance.md",
-                  pages: [                                                                                                                    
-                    {
-                      "title": "clientStorage",
-                      "path": "guides/references/addonsdk/instance-clientStorage.md"
-                    },
-                    {
-                      "title": "manifest",
-                      "path": "guides/references/addonsdk/instance-manifest.md"
-                    },
-                  ]
-                },
-                {
-                  "title": "constants",
-                  "path": "guides/references/addonsdk/addonsdk-constants.md"
-                },
+      // {
+      //   "title": "References",
+      //   "path": "references",      
+      //   "pages": [          
+          // {
+          //   title: 'Changelog',            
+          //   path: 'references/changelog.md'
+          // }, 
+          // {              
+          //   title: 'AddOnSdk',                
+          //   path: 'references/addonsdk/index.md',            
+          //   pages: [                                                                                                                
+          //     {
+          //       "title": "app",
+          //       "path": "references/addonsdk/addonsdk-app.md",
+          //       pages: [                                                                                                                    
+          //         {
+          //           "title": "document",
+          //           "path": "references/addonsdk/app-document.md"
+          //         },
+          //         {
+          //           "title": "oauth",
+          //           "path": "references/addonsdk/app-oauth.md"
+          //         },
+          //         {
+          //           "title": "ui",
+          //           "path": "references/addonsdk/app-ui.md"
+          //         },
+          //       ]
+          //     },                                  
+          //     {
+          //       "title": "instance",
+          //       "path": "references/addonsdk/addonsdk-instance.md",
+          //       pages: [                                                                                                                    
+          //         {
+          //           "title": "clientStorage",
+          //           "path": "references/addonsdk/instance-clientStorage.md"
+          //         },
+          //         {
+          //           "title": "manifest",
+          //           "path": "references/addonsdk/instance-manifest.md"
+          //         },
+          //       ]
+          //     },
+          //     {
+          //       "title": "constants",
+          //       "path": "references/addonsdk/addonsdk-constants.md"
+          //     },
 
-              ]          
-            },                                                                                                                           
-          {
-            title: 'Manifest',
-            description: 'Manifest Schema',
-            path: 'guides/references/manifest'
-          },          
-          ]           
-      }, 
+          //   ]          
+          // },                                                                                                                           
+          // {
+          //   title: 'Manifest',
+          //   description: 'Manifest Schema',
+          //   path: 'references/manifest'
+          // },          
+      //     ]           
+      // }, 
       {
         "title": "FAQs",
         "path": "guides/faq.md"        
-      },      
-      // {
-      //   title: 'Community',
-      //   path: '/support/community/',
-      //   header: true,
-      //   pages: [
-      //     {
-      //       title: 'Information',
-      //       path: '/support/community/'
-      //     },
-      //   ]
-      // },      
+      },              
     ],
   },
   plugins: [`@adobe/gatsby-theme-aio`]

@@ -128,6 +128,6 @@ async function getKeys() {
 
 <InlineAlert slots="text" variant="success"/>
 
-Be sure to check out the [Add-on Recipes](../develop/#storing-and-retrieving-client-side-data) page for more details around using storing and retrieving client-side data, as well as the **use-client-storage** sample for a more complete example of implementing it in an add-on.
+Be sure to check out the [add-on recipes](../develop/#storing-and-retrieving-client-side-data) page for more details around using storing and retrieving client-side data, as well as the **use-client-storage** sample for a more complete example of implementing it in an add-on.
 
 
