@@ -21,21 +21,9 @@ Using these tools, you can gain a deep understanding of how your add-on is worki
 
 
 ### Console
-When logging messages in your code, use the appropriate severity level that best describes the message. For example, an **Info** message might be used to provide general information about the application's state, while a **Warning** message might be used to alert developers about potential issues that could cause problems with the add-on. Similarly, an **Error** message might be used to indicate that an unexpected error has occurred, and a **Verbose** message might be used to provide detailed information about the add-on's internal workings.
+When logging messages in your code, use the appropriate severity level that best describes the message. For example, an **Info** message might be used to provide general information about the application's state, while a **Warning** message might be used to alert developers about potential issues that could cause problems with the add-on. Similarly, an **Error** message might be used to indicate that an unexpected error has occurred, and a **Verbose** message might be used to see more descriptive information about the internal workings of the processing occurring in your add-on. 
 
-
-<!-- You can log messages from different places in your code with certain severity levels to help you filter what you're looking for further when you're looking in the developer tools console. However, since the browser is running many other things into the same page, you will see a lot of messages in the console. A good practice is to use some identifier in your messages and filter the message that way. For instance, each `console.*` method represents severity level, such as `Info`, `Warning`, `Error`, `Verbose`. Some examples are below, and you can see [this link](https://developer.chrome.com/docs/devtools/console/api/) for more details:
-
-```
-    console.log('Info level)
-    console.warn('Warning level')
-    console.error('Error level)
-    console.debug(Verbose level)
-```
-
--->
-
- Each `console.*` method represents a severity level, such as `Info`, `Warning`, `Error`, `Verbose`. 
+ Use the `console.*` methods as shown below to represent the severity level you would like to see for debugging:
 
 ```
     console.log('Info level)
@@ -49,14 +37,12 @@ You can specifically filter which levels you want to view in the developer tools
 ![custom levels](./img/log-levels.png)
 
 
-To make it easier to filter and identify relevant messages in the console, it's also a good practice to include an identifier in your messages. This identifier could be a unique string or tag that is specific to your add-on, making it easier to distinguish your messages from other messages in the console.
-
-<!-- For example, you might usin a tag like [MyAddOn] at the beginning of each message to identify messages that are related to your add-on. This can help you quickly filter out irrelevant messages and focus on the ones that are important for debugging. -->
+To make it easier to filter and identify relevant messages in the console, it's also a good practice to include an obvious identifier as a prefix. This identifier could be a unique string or tag that is specific to your add-on, making it easier to distinguish your messages from other messages in the console. For example: `console.log([MyAddOn] - Initialization complete);`. Then you can filter on `MyAddOn` in the devtools and easily see what is relevant to your add-on.
 
 Using appropriate severity levels and including identifiers in your console messages can greatly help improve the efficiency and effectiveness of your debugging, making it easier to identify and resolve issues.
 
 ### Printing JSON Data
-A helpful console method is `.dir()`, which displays a JSON representation of an object. For example, running `console.dir(document.head)` would generate the following output:
+Another helpful console method is `.dir()`, which displays a JSON representation of an object. For example, running `console.dir(document.head)` would generate the following output:
 
 ![console.dir method](./img/dir-method.png)
 
