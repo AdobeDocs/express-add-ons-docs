@@ -1,4 +1,4 @@
-# Create a Private Link
+# Create a Private Distribution Link
 
 ## Overview
 You can choose to create a private link to share your add-on with others for use or testing by following the instructions outlined in this section.

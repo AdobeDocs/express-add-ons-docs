@@ -1,6 +1,6 @@
 <InlineAlert slots="text" variant="info"/>
 
-These docs are for Adobe Express add-on APIs which are still in private beta. [Join the waitlist](https://adobe.com/go/express-developer).
+The add-on developer documentation you are previewing is for the beta version of Adobe Express. [Join the waitlist](https://adobe.com/go/express-developer).
 
 <br/><br/>
 
@@ -16,8 +16,8 @@ This quick start guide will help you create and run your first add-on, a starter
 - Access to the beta version of Adobe Express - [Join the waitlist](https://adobe.com/go/express-developer)
 - Express add-on CLI - [Join the waitlist](https://adobe.com/go/express-developer)
 
-## Add-on CLI (Command Line Interface)
-To facilitate the development of add-ons, we have provided a command line interface (CLI) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 
+## Add-on CLI 
+To facilitate the development of add-ons, we have provided a CLI (Command Line Interface) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 
 
 
 <InlineAlert slots="text" variant="info"/>
@@ -54,10 +54,21 @@ Your panel 'hello-world' can now be sideloaded
 By enabling the Developer Mode </> from the **Add-ons** panel.
 ```
 
-### Step 3: Load and run your add-on
+### Step 3: Enable add-on development mode (first-time only)
+- Navigate to the [beta version of Adobe Express](https://new.express.adobe.com/).
+- Click on your user avatar in the top righthand corner and choose **Settings**.
 
+![Dev settings toggle on](./img/avatar-settings.png)
+
+- Click the toggle button for **Add-on Development** to enable the add-on development and distribution tools:
+
+![Dev settings toggle on](./img/dev-settings.png)
+
+
+### Step 4: Load and run your add-on
 - Navigate your browser to the [beta version of Adobe Express](https://new.express.adobe.com/new) and create a new project.
-- Click the **Add-ons** icon on the left, then enable the "developer mode" by clicking on the **Add-on testing** toggle button.
+- Click the **Add-ons** icon in the left rail.
+- Toggle on the radio **Add-on testing** toggle button.
 - Once clicked, a modal will appear where you will provide the URL of your locally hosted add-on.
 
   **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
@@ -69,4 +80,4 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
 
 Congratulations! 👏 You've completed the quickstart and run your first add-on! 🏅 
 
-Next, check out our [Concepts](../getting_started/concepts.md) page to discover more details on topics to be aware of while building add-ons, followed by our [guides section](../guides/), where you will find in-depth resources for [designing](../guides/design/), [developing](../guides/develop/), [debugging](../guides/debug/) and [distributing](../guides/distribute/) your add-ons.
+Next, check out the [Developer tooling](./dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../guides/), where you will find in-depth resources for [designing](../guides/design/), [developing](../guides/develop/), [debugging](../guides/debug/) and [distributing](../guides/distribute/) your add-ons.

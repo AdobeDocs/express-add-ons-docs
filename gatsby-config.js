@@ -127,24 +127,6 @@ module.exports = {
         ]
       },
       {
-        "title": "Develop",
-        "path": "guides/develop",
-        "pages": [   
-          {
-            "title": "Add-on recipes",
-            "path": "guides/develop/"
-          },                                             
-          {
-            "title": "Frameworks, libraries and bundling",
-            "path": "guides/develop/frameworks-libraries-bundling.md"
-          },
-          {
-            "title": "Network requests and CORS",
-            "path": "guides/develop/cors.md"
-          },          
-        ]
-      },    
-      {
         "title": "Design",
         "path": "guides/design",
         "pages": [
@@ -163,11 +145,29 @@ module.exports = {
         ]
       },      
       {
+        "title": "Develop",
+        "path": "guides/develop",
+        "pages": [   
+          {
+            "title": "Add-on recipes",
+            "path": "guides/develop/"
+          },                                             
+          {
+            "title": "Frameworks, libraries and bundling",
+            "path": "guides/develop/frameworks-libraries-bundling.md"
+          },
+          {
+            "title": "Network requests and CORS",
+            "path": "guides/develop/cors.md"
+          },          
+        ]
+      },          
+      {
         "title": "Debug",
         "path": "guides/debug",
         "pages": [
           {
-            "title": "Debugging overview",
+            "title": "Browser debugging",
             "path": "guides/debug/"
           },  
           {

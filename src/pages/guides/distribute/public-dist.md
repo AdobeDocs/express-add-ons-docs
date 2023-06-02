@@ -1,14 +1,14 @@
 # Public add-on Distribution
 
 ## Overview
-You can create a public listing and share your add-on with the millions of Adobe Express users to discover and use through the public distribution experience outlined below.
+In this section, you will learn how to create a public listing for your add-on that will be shared for the millions of Adobe Express users to discover and use by following the steps below.
 
 <InlineAlert slots="text" variant="info"/>
 
 Public distribution is subject to a quality review by our team according to the [Review Guidelines](./review_guidelines.md).
 
 
-## Step 1: Invoke the distribution modal
+## Step 1: Open the distribution modal
 A new **Manage** button should now be displayed in your add-ons launchpad, and will invoke the in-app distribution experience when clicked.
 
 ![Manage button in launchpad](./img/manage.png)
@@ -16,7 +16,7 @@ A new **Manage** button should now be displayed in your add-ons launchpad, and w
 If you haven't created any listings for your add-ons yet, you will see a modal with a list of your previous submissions:
 ![First add-on submission modal](./img/distrib-first.png)
 
-If you have existing listings, your first screen will display them:
+If you have already created existing listings, the first screen displayed will show them:
 ![First screen of submission modal with existing listings](./img/distrib-existing.png)
 
 Select **Create New** from either and continue to step 2.
@@ -51,7 +51,7 @@ You can use this command on MAC to zip your add-on and to ensure unnecessary fil
 
 
 ## Step 4: Choose your add-on name
-Now you will be prompted to choose a unique name for your add-on. Your add-on name will be validated when you tab out (or the field loses focus) before you will be allowed to move to the next step. You will know that it's verified by a green checkmark shown, or receive an error that it exists and you need to choose another. Once it's verified, click on the **Save draft and continue**. This will ensure you have a draft saved with your unique name and plugin package.
+In this step, you will be prompted to choose a unique name for your add-on. Your add-on name will be validated once you tab out, (or the field loses focus). This validation must occur before you can move to the next step. You will know that it's verified with a green checkmark (shown below). If you receive an error that it already exists, then you will need to choose another name. Once it's verified, click on the **Save draft and continue**. This will ensure you have a draft saved with your unique name and plugin package.
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -60,8 +60,8 @@ The number of characters allowed for any given field above it on the right throu
 ![](./img/pub-name2.png)
 
 
-## Step 5: Enter listing details
-You should now see a success message that your draft was saved, and be able to start filling our your listing details, starting with the three required icons:
+## Step 5: Enter the listing details
+You should now see a success message that your draft was saved, and will be able to start filling our your listing details, starting with the three required icons:
 ![](./img/distrib-draft-listing-initial.png)
 
 followed by the rest of the information you want to associate your listing. Please ensure your URLs and email addresses are properly formed to avoid any unnecessary errors.
@@ -91,17 +91,17 @@ You will see the green checkmark for **Screenshots** in the left rail once you u
 
 Sometimes it may take a moment to upload the images to the back-end server before the **Continue** button will be highlighted.
 
-## Step 7: Enter version details
+## Step 7: Enter the version details
 Next you will specify your version details. The package that you entered in the first step will be shown by default, but you can replace it if you have made an update since you originally uploaded it in this step as well. You can also enter any optional release notes at this step. You will see the green checkmark for **Version details** in the left rail and can press **Continue** to move on.
 
 ![Version Details](./img/release-notes.png)
 
-## Step 8: Enter Publisher Profile
+## Step 8: Create a publisher profile
 You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission. Fill our your publisher details and upload a 250x250 logo, then hit **Continue**.
 
 ![Publisher Profile](./img/pub-profile2.png)
 
-## Step 9: Final submit step
+## Step 9: Final submission step
 The final submission step prompts you to enter any **Notes to reviewer** and then you can choose to **Submit for review** if you've entered all of the required data and you are done making any more changes. 
 
 ![Version Details](./img/reviewer-notes.png)
