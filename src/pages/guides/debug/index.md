@@ -1,21 +1,36 @@
-# Browser Debugging
-You can use the built-in developer tools of your browser to do in-depth debugging while your add-on is loaded and running, including setting breakpoints and stepping through your code, and logging messages to the console. 
+# Overview
+During your development, it's important to be able to debug your code and troubleshoot any issues that may arise. Fortunately, most modern browsers come with built-in developer tools that can help you do just that.
 
 ## Browser Developer Tools
-To access the developer tools, you can simply right-click on the browser window and select "Inspect Element" or "Inspect" from the context menu. This will open the developer tools window, which provides a wide range of debugging and development features.
-
-Some of the key debugging features that are available in the developer tools include:
+Some of the key debugging features available in the browser developer tools include:
 
 - **Console** - The console allows you to log messages and errors from your code, as well as execute JavaScript code and interact with the page or add-on.
 - **Debugger** - The debugger allows you to set breakpoints in your code and step through it line by line, so you can see exactly what's happening at each stage of execution.
 - **Network Monitor** - The network monitor allows you to monitor the network requests made by your add-on, so you can see how it's interacting with other resources and services.
 - **Profiler** - The profiler allows you to analyze the performance of your add-on and identify areas where it may be slow or inefficient.
 
-Using these tools, you can gain a deep understanding of how your add-on is working, identify and fix bugs, and optimize its performance.
+### Debugging Steps
+To get started with debugging your add-on:
 
-<!-- You can use the built-in developer tools of your browser to do in-depth debugging while your add-on is loaded and running, including setting breakpoints and stepping through your code, and logging messages to the console. An example of debugging with the browser developer tools is shown in the video below:
+Access the developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect Element** or **Inspect** from the context menu. 
 
-<br/> -->
+![inspect](./img/inspect.png)
+
+
+<InlineAlert slots="text" variant="info"/>
+
+Make sure you right click outside of the document area or you will not see the context menu pop-up. A good place to right-click is in the header of your add-on, where the title is. But if you're debugging because your add-on isn't running due to an issue, then you can right-click in the top frame of Adobe Express.
+
+
+Next, navigate to the **Sources** tab, and from there you can locate and select the JavaScript file that contains the code you want to debug. You can locate it in the filesystem list or by using the **Search** tab. If the Search tab isn't displayed, clicking the 3 vertical dots will reveal it as shown below:
+
+
+ ![locate source](./img/find-source.png)
+
+Once you've selected your file, you can set breakpoints by clicking on the line number where you want the breakpoint to be set. This will pause the execution of your code at that breakpoint, allowing you to inspect variables and step through your code one line at a time.
+
+By leveraging these tools, you will develop a deeper understanding of how your add-on is working, be able to identify and fix bugs more quickly, and benefit from a high-performing add-on.
+
 
 <!-- <iframe aria-label="Browser Debugging Demo" src="https://drive.google.com/file/d/13FHUuRpVti9AH4nUwAMcvNcP6OzGpOc1/preview" width="640" height="480"></iframe> -->
 

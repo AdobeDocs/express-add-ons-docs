@@ -58,11 +58,11 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
 - Navigate to the [beta version of Adobe Express](https://new.express.adobe.com/).
 - Click on your user avatar in the top righthand corner and choose **Settings**.
 
-![Dev settings toggle on](./img/avatar-settings.png)
+   ![Dev settings toggle on](./img/avatar-settings.png)
 
 - Click the toggle button for **Add-on Development** to enable the add-on development and distribution tools:
 
-![Dev settings toggle on](./img/dev-settings.png)
+   ![Dev settings toggle on](./img/dev-settings.png)
 
 
 ### Step 4: Load and run your add-on
@@ -76,7 +76,7 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
 - Check the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
 - Your add-on should now be displayed in the add-ons panel on the right side of your Adobe Express tab running in your browser. 
 
-![Hello World add-on](img/hello-world-loaded-log-open.png)
+   ![Hello World add-on](img/hello-world-loaded-log-open.png)
 
 Congratulations! 👏 You've completed the quickstart and run your first add-on! 🏅 
 

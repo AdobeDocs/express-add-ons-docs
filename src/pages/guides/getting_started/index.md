@@ -23,7 +23,7 @@ The add-on developer documentation you are previewing is for the beta version of
 
 <br/><br/>
 
-# Introduction to Adobe Express add-ons
+# Introduction to Adobe Express Add-ons
 Here you will find everything you need to know to get started building add-ons for Adobe Express. At a high level, add-ons refer to any feature distributed independently from the core Adobe Express that a user can enable or install to extend the functionality. Adobe will be providing built-in add-ons out of the box, but 3rd party developers will also have the opportunity to create and distribute their own add-ons by following the steps provided in this documentation.
 
 ## Add-on Use Cases
@@ -42,7 +42,7 @@ Some examples of add-on use cases include:
 ## Navigating the Documentation
 
 ### Getting Started
-Begin your exploration by navigation through this [Getting Started](../getting_started/) section, where you will be introduced to Adobe Express add-ons and learn how to set up your environment, create, build, and run your first add-on in no time!
+Begin your exploration by navigation through this [Getting Started](../getting_started/) section, where you will be introduced to Adobe Express Add-ons and learn how to set up your environment, create, build, and run your first add-on in no time!
 
 The steps to get started include:
 
