@@ -9,10 +9,12 @@ A new **Manage** button should now be displayed in your add-ons launchpad, and w
 ![Manage button in launchpad](./img/manage.png)
 
 If you haven't created any listings for your add-ons yet, then you will see the following modal:
+
 ![First add-on submission modal](./img/distrib-first.png)
 
 If you have existing listings, your first screen will display them:
-![First screen of submission modal with existing listings](./img/distrib-existing.png)
+
+![First screen of submission modal with existing listings](./img/distrib-existing2.png)
 
 Select **Create New** from either and continue to step 2.
 
@@ -31,6 +33,7 @@ The next step is to upload your package zip. Click on the **select from your com
 This plugin package should contain the production-ready built content in the root of the zip (think in terms of content like from the `/dist` folder, but in the root of the zip and in the most production-ready form). We will not be building/compiling your source. You should try to reduce the size as much as possible. Minifying, uglifying, obfuscating, removing the sourcemaps etc are acceptable to use in producing your final bundle. You can use the command `npm run package` to create a package. It will create a `dist.zip` that you can use for uploading. 
 
 The package will go through a verification process which may take a few seconds, so please be patient. 
+
 ![Verifying](./img/private-verifying.png)
 
 If you receive an error, please review the following warning notes.

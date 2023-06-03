@@ -14,16 +14,19 @@ A new **Manage** button should now be displayed in your add-ons launchpad, and w
 ![Manage button in launchpad](./img/manage.png)
 
 If you haven't created any listings for your add-ons yet, you will see a modal with a list of your previous submissions:
+
 ![First add-on submission modal](./img/distrib-first.png)
 
 If you have already created existing listings, the first screen displayed will show them:
-![First screen of submission modal with existing listings](./img/distrib-existing.png)
+
+![First screen of submission modal with existing listings](./img/distrib-existing2.png)
 
 Select **Create New** from either and continue to step 2.
 
 ## Step 2: Create a new listing and distribution type
 Next, you will choose how you want to distribute your add-on, whether it's to share privately only, or if you want it publicly available. Select **Public listing**, and hit **Next**.
-![](./img/distrib-public.png)
+
+![Public listing choice](./img/distrib-public.png)
 
 
 ## Step 3: Upload add-on package
@@ -82,9 +85,11 @@ You can use the "Back" button throughout the distribution experience when you ne
 
 ## Step 6: Upload screenshots
 In the next screen you will be prompted to should upload 1-5 screenshots to show what your add-on is all about. **NOTE**: At least one screenshot is required.
+
 ![Upload screenshot](./img/screenshot.png) 
 
 You will see the green checkmark for **Screenshots** in the left rail once you upload at least one, and at this point you can choose to **Continue**.
+
 ![Uploaded screenshot](./img/screenshot2.png)
 
 <InlineAlert slots="text" variant="warning"/>
