@@ -13,7 +13,7 @@ Shows a modal dialog based on specific options passed in.
 
 The input dialog variant accepts an additional `field` object. See the example below for details.
 
-#### Returns 
+#### Return Value
 A `Promise` with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, otherwise an error. The input dialog variant returns the value of the field the user input text to in the `fieldValue` property.
 
 
