@@ -122,7 +122,7 @@ module.exports = {
             "path": "guides/getting_started/quickstart.md"
           },  
           {
-            "title": "Developer tooling",
+            "title": "Development tools",
             "path": "guides/getting_started/dev_tooling.md"
           }
         ]

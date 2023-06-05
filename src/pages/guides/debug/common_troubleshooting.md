@@ -3,7 +3,7 @@ keywords:
   - Adobe I/O
   - Extensibility
   - API Documentation
-  - Developer Tooling
+  - Development Tools
 ---
 
 # Common Troubleshooting

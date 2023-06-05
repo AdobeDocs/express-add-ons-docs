@@ -1,6 +1,6 @@
 <InlineAlert slots="text" variant="info"/>
 
-The add-on developer documentation you are previewing is for the beta version of Adobe Express. [Join the waitlist](https://adobe.com/go/express-developer).
+Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
 
 <br/><br/>
 
@@ -10,11 +10,11 @@ This quick start guide will help you create and run your first add-on, a starter
 
 ## Prerequisites
 
-- [NodeJS](https://nodejs.org/en/download/) (major version >= 16) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version >= 8) installed
+- [NodeJS](https://nodejs.org/en/download/) (major version of 16 or greater) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version of 8 or greater) installed
 - Familiarity with programming in HTML, CSS and JavaScript
 - An email address associated with an Adobe ID. (If you don't have one yet, you'll be taken through steps to create one in this guide)
 - Access to the beta version of Adobe Express - [Join the waitlist](https://adobe.com/go/express-developer)
-- Express add-on CLI - [Join the waitlist](https://adobe.com/go/express-developer)
+- Adobe Express add-on CLI - [Join the waitlist](https://adobe.com/go/express-developer)
 
 ## Add-on CLI 
 To facilitate the development of add-ons, we have provided a CLI (Command Line Interface) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 
@@ -31,7 +31,7 @@ Open your terminal and run the following command:
 npx @adobe/create-ccweb-add-on hello-world --template javascript     
 ```
 
-This command will create a new add-on based on a basic `javascript` template. See the [Templates section](../getting_started/dev_tooling/#templates) in the **Developer Tooling** page for more details on the built-in templates available with the Adobe Express add-ons CLI. 
+This command will create a new add-on based on a basic `javascript` template. See the [Templates section](../getting_started/dev_tooling/#templates) in the **Development Tools** page for more details on the built-in templates available with the Adobe Express add-ons CLI. 
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -80,4 +80,4 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
 
 Congratulations! 👏 You've completed the quickstart and run your first add-on! 🏅 
 
-Next, check out the [Developer tooling](./dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../guides/), where you will find in-depth resources for [designing](../guides/design/), [developing](../guides/develop/), [debugging](../guides/debug/) and [distributing](../guides/distribute/) your add-ons.
+Next, check out the [development tools](./dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../guides/), where you will find in-depth resources for [designing](../guides/design/), [developing](../guides/develop/), [debugging](../guides/debug/) and [distributing](../guides/distribute/) your add-ons. If you're ready to dive into our developer platform, we highly recommend exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.

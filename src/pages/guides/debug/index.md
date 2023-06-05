@@ -80,7 +80,7 @@ The **Refresh** and **Clear data** buttons in the add-on developer tools can als
 
 <InlineAlert slots="text" variant="success"/>
 
-The ToDo list sample takes advantage of the add-on SDK's `ClientStorage` API which stores data to an underlying IndexedDB store. You can also view this store in the browser developer tools by going into the `Application` tab and locating the IndexedDB store with your add-on ID associated with it, such as in the following:
+To make use of the add-on SDK's [ClientStorage API](../../references/addonsdk/instance-clientStorage.md) and store data in an underlying IndexedDB store, explore the ToDo list sample. You can view this store in the browser developer tools by navigating to the **Application** tab. Look for the IndexedDB store associated with your add-on ID to locate it. Here's an example:
 
 ![application tab indexed db screenshot](./img/application-indexed-db.png)
 

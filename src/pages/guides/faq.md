@@ -18,7 +18,8 @@ contributors:
 ---
 <InlineAlert slots="text" variant="info"/>
 
-The add-on developer documentation you are previewing is for the beta version of Adobe Express. [Join the waitlist](https://adobe.com/go/express-developer).
+Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
+
 
 # Frequently Asked Questions
 

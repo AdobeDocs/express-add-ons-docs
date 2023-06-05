@@ -18,7 +18,7 @@ If you have existing listings, your first screen will display them:
 
 Select **Create New** from either and continue to step 2.
 
-## Step 2: Create a private link
+## Step 2: Create a new private link
 Next, you will choose how you want to distribute your add-on, whether it's to share privately only, or if you want it publicly available. Select **Private link**, and hit **Next**.
 ![](./img/private-option.png)
 

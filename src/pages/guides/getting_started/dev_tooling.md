@@ -19,11 +19,11 @@ contributors:
 
 <InlineAlert slots="text" variant="info"/>
 
-The add-on developer documentation you are previewing is for the beta version of Adobe Express. [Join the waitlist](https://adobe.com/go/express-developer).
+Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
 
-# Developer Tooling
+# Development Tools
 
-## CLI Usage and Arguments
+## Using the CLI
 
 #### Create Options
 The table below shows the list of arguments that can be specified with the CLI create command (ie: `npx @adobe/create-ccweb-add-on`):
@@ -42,7 +42,7 @@ npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [templates](../getting_started/concepts.md#templates) section for the currently supported template values.
+See the [templates](#templates) section for the currently supported template values.
 
 #### Start Options
 The table below shows a list of arguments that can be specified with the `start` script on your add-on project, which starts up the add-on in a local server:
