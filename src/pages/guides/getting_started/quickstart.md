@@ -12,9 +12,9 @@ This quick start guide will help you create and run your first add-on, a starter
 
 - [NodeJS](https://nodejs.org/en/download/) (major version of 16 or greater) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version of 8 or greater) installed
 - Familiarity with programming in HTML, CSS and JavaScript
-- An email address associated with an Adobe ID. (If you don't have one yet, you'll be taken through steps to create one in this guide)
-- Access to the beta version of Adobe Express - [Join the waitlist](https://adobe.com/go/express-developer)
-- Adobe Express add-on CLI - [Join the waitlist](https://adobe.com/go/express-developer)
+- An Adobe Express account (use an existing Adobe ID or simply create one for free).
+- Access to the beta version of Adobe Express ([Join the waitlist](https://adobe.com/go/express-developer))
+- Adobe Express add-on CLI ([Join the waitlist](https://adobe.com/go/express-developer))
 
 ## Add-on CLI 
 To facilitate the development of add-ons, we have provided a CLI (Command Line Interface) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 

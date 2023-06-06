@@ -21,10 +21,8 @@ contributors:
 
 Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
 
-# Add-on Recipes
-
-## Overview
-This set of recipes is provided to help you discover what's possible with our [APIs](../references/apis/) by providing some popular use cases with associated code snippets. Be sure to check out our [code samples](samples.md) as well which provide more extensive usage of each of these recipes.
+# Common Use Case Examples
+This set of how to's for popular use cases will help you explore and discover the capabilities of our add-ons platform. You will find common use cases along with code snippets that you can use to quickly get started with our add-on SDK. Along with these how to's, we also provide a set of [code samples](samples.md) that provide more extensive usage for each case.
 
 ## Importing Content
 Importing content into the document is one of the most popular use cases, since it allows a user to add content retrieved from a third-party service, or their local hard drive, directly into their designs quickly and easily. You can use this feature in your add-ons using one of the function examples below.
@@ -68,7 +66,7 @@ The steps to export content:
 
 <InlineAlert slots="text" variant="info"/>
 
-Each page of your design is considered a single rendition. see the [API References](../references/apis/) for additional rendition options and values):
+Each page of your design is considered a single rendition. see the [SDK references](../../references/addonsdk/app-document.md) for additional rendition options and values):
 
 ```js
 const response = await AddOnSdk.app.document.createRenditions({

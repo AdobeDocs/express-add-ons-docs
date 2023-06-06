@@ -44,6 +44,12 @@ fetch(url).then(function (response) {
 
 `Response {type: 'cors', url: 'https://cors-anywhere.herokuapp.com/https://example.com/', redirected: false, status: 200, ok: true, …}`
 
+
+<InlineAlert slots="text" variant="success"/>
+
+Hosting your proxy server code in an online service like Cloudinary or Heroku is also a good option for handling CORS issues in your add-on development. These services provide a platform for deploying your code and can handle cross-origin requests for you. Additionally, using Cloudinary's [URL prefix feature](https://cloudinary.com/documentation/fetch_remote_images) can be a quick solution for handling CORS issues with remote images in your add-on development.
+
+
 ### Locally Hosted CORS Proxy Server
 You can also use the `cors-anywhere` node package to create and run your own proxy server locally for testing for instance, with a few easy steps. This can be useful if you want to modify the default settings or use different functions provided by the library. Follow the steps below to install and use it. Also be sure to run it on it's own port separate from where your add-on is running. Once you have it working as desired, you can modify the settings to host it externally to suit your needs.
 
@@ -89,9 +95,3 @@ cors_anywhere = createServer({
     }, 
 }); 
 ```
-
-<InlineAlert slots="text" variant="success"/>
-
-You could also consider hosting your proxy server code in an online service like cloudinary or heroku etc. Cloudinary also has a feature to [allow you to fetch remote images](https://cloudinary.com/documentation/fetch_remote_images) by prefixing the image URL with a URL that supports CORS without restrictions you can check out for a quick solution.
-
-

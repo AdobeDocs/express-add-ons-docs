@@ -1,7 +1,7 @@
 # Using Web Frameworks and Libraries
 
 ## Typescript typings package
-A typings package (`ccweb-add-on-sdk-types`) is automatically added via the `devDependencies` to `typescript` and `react-typescript` templates. To use, simply import the types needed in the `.ts` file:
+A typings package (`ccweb-add-on-sdk-types`) is automatically added via the `package.json` `devDependencies` to `typescript` and `react-typescript` templates and will provide the ability to see the suggestions for exposed properties of the `AddOnSdk` in your TypeScript files in Visual Studio Code. To use, simply import the types needed in the `.ts` file:
 
 ```ts
 import {
@@ -9,10 +9,6 @@ import {
     AuthorizationRequest
 } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 ```
-
-<InlineAlert slots="text" variant="success"/>
-
-This will also allow you to see the suggestions for exposed properties of the `AddOnSdk` in your typescript files in Visual Studio Code.
 
 <!-- ![Intellisense](./img/intellisense.mov) -->
 

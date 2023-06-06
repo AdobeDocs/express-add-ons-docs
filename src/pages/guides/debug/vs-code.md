@@ -8,9 +8,11 @@ If you are a Visual Studio Code user, you can easily debug your add-on by follow
 
 ## Steps
 1. Begin by locating the existing `launch.json` file in the `.vscode` folder in the root of your project. This file will exist if you have created your add-on with the add-on CLI. Double check to ensure the URL points to `https://new.express.adobe.com/new/`. 
+  
+   **NOTE:** If it's a sample add-on that you downloaded, you may need to create one first with the **create a launch.json file**.
 
-    **NOTE:** If it's a sample add-on that you downloaded, you will need to create one first with the **create a launch.json file**.
-    ![New launch.json file option](img/new-launch-json.png)
+    
+   ![New launch.json file option](img/new-launch-json.png)
 
  Then copy in the JSON configuration included below (or copy one in from an add-on you previously generated). 
 

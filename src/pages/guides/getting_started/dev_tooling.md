@@ -24,8 +24,15 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 # Development Tools
 
 ## Using the CLI
+The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
 
-#### Create Options
+Here are some key features of the add-on CLI:
+- **Project creation:** The add-on CLI provides a command to create a new add-on project with a basic file structure and configuration.
+- **Local development:** The add-on CLI includes a built-in server that allows you to test your add-on locally before deploying it to our platform.
+- **Live reloading:** The add-on CLI watches your project files for changes and automatically reloads the server when a change is detected.
+- **Packaging:** The add-on CLI provides a command to package your add-on for distribution, including creating a ZIP file that can be uploaded to our platform.
+
+### CLI `create` Options
 The table below shows the list of arguments that can be specified with the CLI create command (ie: `npx @adobe/create-ccweb-add-on`):
 
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
@@ -40,11 +47,11 @@ For instance, the following command would specify all possible arguments:
 npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 ```
 
-<InlineAlert slots="text" variant="success"/>
+<InlineAlert slots="text" variant="info"/>
 
 See the [templates](#templates) section for the currently supported template values.
 
-#### Start Options
+### `start` Script Options
 The table below shows a list of arguments that can be specified with the `start` script on your add-on project, which starts up the add-on in a local server:
 
 | Argument  | Optional | Default Value | Description                                                                  |
@@ -79,7 +86,7 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 ```
 
 ## Templates
-The **add-on CLI** contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently four different template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
+The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently four different template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 <br/>
 
 
@@ -110,8 +117,17 @@ npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
 
 
 ## Manifest
-A `manifest.json` file is required in every add-on project. The manifest provides details like metadata about your add-on and how it should behave. See the [manifest schema reference](../references/manifest.md) for a list of possible values available for use in your add-on's manifest. 
+A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../references/manifest.md) to ensure that your `manifest.json` file is properly formatted and includes all the necessary properties and values.
 
 
+## Add-on Development Tools Panel
+The **Add-on Development** tools panel provides useful logging details indicating the status of your add-on, as well as action buttons to allow for refreshing and clearing the data associated with your add-on. The panel is shown in the screenshots below for reference:
+
+<InlineAlert slots="text" variant="info"/>
+
+The **Refresh** button can be used to reload your add-on's code and resources, and the **Clear Storage** button allows you to clear any data stored by your add-on.
+
+![add-ons tools screenshot](./img/add-on-devtools.png)
+![manifest error screenshot](./img/manifest-error.png)
 
 

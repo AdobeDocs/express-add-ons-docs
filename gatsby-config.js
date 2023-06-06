@@ -150,7 +150,7 @@ module.exports = {
         "path": "guides/develop",
         "pages": [   
           {
-            "title": "Add-on recipes",
+            "title": "Common use case examples",
             "path": "guides/develop/"
           },                                             
           {
