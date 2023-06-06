@@ -132,7 +132,7 @@ module.exports = {
         "path": "guides/design",
         "pages": [
           {
-            "title": "Add-on user interface guide",
+            "title": "User interface guide",
             "path": "guides/design/"
           }, 
           // {

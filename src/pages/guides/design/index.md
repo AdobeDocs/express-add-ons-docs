@@ -4,44 +4,39 @@ The design of your add-on is just as important to the success of your add-on as 
 ## Spectrum Design System
 Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. Leveraging Spectrum in your add-on allows you to take advantage of all of the built-in benefits it provides while saving front-end development time. There are a few different implementations of Spectrum that are listed here for reference, and in order of preferred use. 
 
-<InlineAlert slots="text" variant="success"/>
+<InlineAlert slots="text" variant="info"/>
 
 Check out our [code samples](guides/develop/samples) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**. 
 
 ## Spectrum Express Theme
-If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. 
+If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. Each of the sections below has more details on how to use the theme with the different libraries. 
 
 <InlineAlert slots="text" variant="info"/>
-
-The [React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in an alpha state, but you can use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) with React as well. See the **Pix** code sample in the provided samples for an example of how to mix Spectrum Web Components with React. Specifically, you should note that there are some intricacies when using this combination of Spectrum Web Components and React in terms of event handling, but they can be handled by using a component that wraps the Spectrum Web Components for providing the event handling instead. In the **Pix** sample, take a look at the wrapper component called `WC.jsx` for a reference of how to do this.
-
-#### Default vs Express Theme
-The screenshots below are from a React Spectrum app with the theme and icons changed from the default theme, (first screenshot), to the Express theme (second screenshot), to illustrate some differences for reference. Remember the React Spectrum + Express theme is still in alpha, so not all of the components have been completely ported over yet.
-
-![Default theme](./img/default-theme.png)
-![Express theme](./img/express-theme.png)
-
-
-<InlineAlert slots="text" variant="success"/>
 
 Check out the variety of icons available for use in your add-ons as well from [Spectrum here](https://spectrum.adobe.com/page/icons/). There's also a set of icons for the Express theme in an alpha stage currently available. To use those, install the package with `npm i @spectrum-icons/express`. Then you can use them by importing them. See the above steps for an example of how to import and use an icon. 
 
 ## Spectrum Web Components
-The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum designed to work with any web framework with a number of benefits, including:
-    
+The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum with a set of pre-built UI components that can be easily customized and integrated into your application. These components are designed to work seamlessly together and provide a consistent user experience across different devices and platforms. ***We highly recommend Spectrum Web Components as the preferred approach for building the UI of your add-ons***, since it offers a comprehensive set of components and built-in benefits that make it easy to create consistent, accessible, and responsive user interfaces. Some additional benefits include:
+
   - Framework agnostic
-  - Lightweight    
-  - Accessible by default 
+  - Lightweight and performant
   - Standards based
 
+<!-- <InlineAlert slots="text" variant="important"/>
+
+The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components) (or [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react) are the preferred approach to use for building the UI in your add-ons since it currently offers the most comprehensive set of components and built-in benefits.  -->
+
 ### Spectrum Web Components with React
-[**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) is a collection of React wrapper components for the Spectrum Web Components (SWC) library, enabling you to use SWC in your React applications with ease.     
+[**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) is a collection of React wrapper components for the Spectrum Web Components (SWC) library, allowing you to use SWC in your React applications with ease. Currently, `swc-react` supports 62 components. To install `swc-react`, simply replace the scope name `"@spectrum-web-components"` with `"@swc-react"` in the package naming convention. The sub-package name remains identical to the original SWC component. Check out [this page](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) for more details on swc-react. 
 
-<InlineAlert slots="text" variant="success"/>
+<InlineAlert slots="text" variant="info"/>
 
-We highly recommend choosing to use Spectrum Web Components (or [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react) for your add-ons since it currently offers the most comprehensive set of components and built-in benefits. 
+We recommend using `swc-react` over [React Spectrum](#react-spectrum) in your add-ons based in React because it currently offers a more comprehensive set of components and built-in benefits. 
 
-#### Spectrum Web Components with Express Theme
+
+### Spectrum Web Components with Express Theme
+Below are the steps for using the Express theme with your Spectrum Web Components UI:
+
 - Install the `spectrum-web-components` packages you would like to use. The `theme` package is one you will always want to specify, but the others are being shown for illustration purposes. You can choose which components you will be using in your add-on and install them as needed. See the [Spectrum Web Components site](https://opensource.adobe.com/spectrum-web-components/getting-started/) for all of the components available.
 
     ```bash
@@ -72,18 +67,27 @@ We highly recommend choosing to use Spectrum Web Components (or [swc-react](http
 
 - Use a `webpack.config.js` for bundling the Spectrum Web Components and your JavaScript into a bundle. If you used the basic javascript template for your add-on, you can copy it in from a sample add-on, such as the SWC one in the contributed samples folder. Also be sure to include the webpack specific dependencies and script options in your `package.json`, which you can also copy from a sample like SWC. If you find that some files aren't being moved to `dist` after you build, you'll want to edit the file (line 31,32) to add more file types to copy. 
 
-
 - Now you can use the `scale`, `color` and `theme` selections you desire with the `<sp-theme>` component. Within those tags is where you should place all of your content that you want styled with those settings. For example:
+    ```html
+    <body>
+        <sp-theme scale="medium" color="light" theme="express">   
+            /* Everything you want styled with those settings */
+            /* goes within the <sp-theme/> tag */
+            <sp-field-label required for="txtName">Enter your full name in the field below</sp-field-label>
+            <sp-textfield multiline grows id="txtName" placeholder="Full Name"></sp-textfield>
+            <sp-button>Submit</sp-button>
+        </sp-theme>                    
+    </body>
+    ```
 
-        <body>
-                <sp-theme scale="medium" color="light" theme="express">   
-                    /* Everything you want styled with those settings goes in here */
-                    <sp-field-label required for="txtName">Enter your full name in the field below</sp-field-label>
-                    <sp-textfield multiline grows id="txtName" placeholder="Full Name"></sp-textfield>
-                    <sp-button>Submit</sp-button>
-                </sp-theme>                    
-        </body>
+#### Default vs Express Theme
+The screenshots below are from a Spectrum Web Components sample app showing some an example of how the components differ between the themes to illustrate some differences for reference. 
 
+##### Default Theme sample:
+![Default theme](./img/swc-default-theme.png)
+
+##### Express Theme sample:
+![Express theme](./img/swc-express-theme.png)
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -99,29 +103,45 @@ Check out the [code samples](guides/develop/samples) in the contributed folder f
   - **react-stately**: a library of React hooks implementing cross platform (e.g. web/native) state management for components that need it.
 
 ### React Spectrum with Express Theme
-[The React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in alpha stage currently, but can be used with the following steps:
+[The React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in an alpha stage currently, but can be used with the following steps:
 
 1. Install it in your project with:
 
     `npm install @react-spectrum/theme-express`
 
-2. Install the express themed icons (optional - if needed):
+2. Install the Express themed icons:
 
     `npm install @spectrum-icons/express`
 
 3. Import the theme and icons into your code to use them. For example, notice the following code snippet which imports and sets the Express `theme`, light `colorScheme` option and medium `scale` option on the `<Provider>` object. It also illustrates how to use the Express version of the `Delete` icon.  
     
-    
-        import { theme as expressTheme } from '@react-spectrum/theme-express';
-        import Delete from '@spectrum-icons/express/Delete';
+    ```js
+    import { theme as expressTheme } from '@react-spectrum/theme-express';
+    import Delete from '@spectrum-icons/express/Delete';
 
-        const App = ({ addOnSdk }) => {
-            return (
-                <Provider theme={expressTheme} colorScheme="light" scale="medium">
-                    <Button variant="accent"><Delete/></Button>  
-                </Provider>       
-            )
-        }
+    const App = ({ addOnSdk }) => {
+        return (
+            <Provider theme={expressTheme} colorScheme="light" scale="medium">
+                <Button variant="accent"><Delete/></Button>  
+            </Provider>       
+        )
+    }
+    ```
+
+#### React Spectrum Theme Examples
+Below is an example of some components from React Spectrum with the two themes. Please note, since the [React Spectrum with Express theme project](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in an alpha state, there will be components that haven't been completely ported over yet.
+
+##### Default theme sample:
+![Default theme](./img/default-theme.png)
+
+##### Express theme sample:
+![Express theme](./img/express-theme.png)
+
+
+
+<InlineAlert slots="text" variant="info"/>
+
+The [React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in an alpha state, but you can use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) with React as well. See the **Pix** code sample in the provided samples for an example of how to mix Spectrum Web Components with React. Specifically, you should note that there are some intricacies when using this combination of Spectrum Web Components and React in terms of event handling, but they can be handled by using a component that wraps the Spectrum Web Components for providing the event handling instead. In the **Pix** sample, take a look at the wrapper component called `WC.jsx` for a reference of how to do this.
 
 #### CAUTION: Using React Spectrum with a Slider Component
 If you're using a slider component with React Spectrum, you may notice behavior where if the user moves their mouse out of the panel and releases the mouse pointer, the slider still thinks the mouse pointer is down when the mouse is moved back inside the panel. You can fix this with the following steps:
@@ -183,7 +203,7 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 
 <InlineAlert slots="text" variant="success"/>
 
-**COLOR PICKER COMPONENT TIP:**
+**Color Picker Component Tip:**
 If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference.
 
 ## Useful Resources
