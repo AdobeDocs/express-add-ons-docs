@@ -59,19 +59,3 @@ or
     </style>
   </head>
   ```
-
-### Import with font-face
-This assumes your font is hosted on a server. 
-
-  ```css
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/fonts/OpenSans-Regular.ttf') format('truetype');
-}
-
-/* Use the font in your CSS */
-body {
-  font-family: 'Open Sans', sans-serif;
-}

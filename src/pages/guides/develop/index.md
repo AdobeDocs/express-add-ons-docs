@@ -21,11 +21,11 @@ contributors:
 
 Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
 
-# Common Use Case Examples
+# Implementing Common Use Cases
 This set of how to's for popular use cases will help you explore and discover the capabilities of our add-ons platform. You will find common use cases along with code snippets that you can use to quickly get started with our add-on SDK. Along with these how to's, we also provide a set of [code samples](samples.md) that provide more extensive usage for each case.
 
 ## Importing Content
-Importing content into the document is one of the most popular use cases, since it allows a user to add content retrieved from a third-party service, or their local hard drive, directly into their designs quickly and easily. You can use this feature in your add-ons using one of the function examples below.
+Importing content into a design is one of the most popular use cases, since it allows a user to add content retrieved from a third-party service or their local hard drive, directly into their designs quickly and easily. You can use the following examples to help you implement this feature in your add-on. The first function shows how to implement adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. 
 
 ```js
 // Reference to the active document
@@ -53,7 +53,7 @@ async function addImageFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-The supported file types for imported content are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000 px** or **40 MB**.
+The supported file types for imported content are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**.
 
 
 ## Exporting Content
@@ -66,7 +66,7 @@ The steps to export content:
 
 <InlineAlert slots="text" variant="info"/>
 
-Each page of your design is considered a single rendition. see the [SDK references](../../references/addonsdk/app-document.md) for additional rendition options and values):
+Each page of your design is considered a single rendition. See the [SDK references](../../references/addonsdk/app-document.md) for additional rendition options and values):
 
 ```js
 const response = await AddOnSdk.app.document.createRenditions({
@@ -262,7 +262,7 @@ There's also support for complex modal dialogs, like an input dialog or a custom
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSDKAPI.ready;
+await AddOnSdk.ready;
 
 // Input Dialog Example 
 let inputDialogOptions = {
@@ -295,7 +295,7 @@ let inputDialogOptions = {
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSDKAPI.ready;
+await AddOnSdk.ready;
  
 function useCustomDialogResult(data: unknown) {
   // Use the dialog data
@@ -304,10 +304,10 @@ function useCustomDialogResult(data: unknown) {
 // Custom Dialog
 async function showCustomDialog() {
   try {
-    const dialogResult = await AddOnSDKAPI.app.showModalDialog({
-        variant: Variant.custom,
-        title: "WiX",
-        src: "dialog.html",
+    const dialogResult = await AddOnSdk.app.showModalDialog({
+        variant: "custom",
+        title: "Custom Modal",
+        src: "dialog.html", // use content from this html file
         size: { width: 600, height: 400 }
     });
  

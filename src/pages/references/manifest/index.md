@@ -18,13 +18,15 @@ contributors:
 ---
 
 # Overview
-Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave. This guide outlines the latest manifest version available, which is version 2.
 
-## Example add-on manifest.json:
+## Introduction
+Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave. This guide outlines the latest manifest version available, which is version 2. 
+
+### Sample add-on manifest.json:
 ```json
 {
-    "testId": "export-sample",
-    "name": "Export Sample",
+    "testId": "addon-sample",
+    "name": "Add-on Sample",
     "version": "1.0.0",
     "manifestVersion": 2,
     "requirements": {
@@ -34,7 +36,6 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
                 "apiVersion": 1
             }
         ]
-    
     },
     "entryPoints": [
         {
@@ -43,17 +44,12 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
             "main": "index.html",
             "permissions": {
                 "sandbox": ["allow-popups", "allow-presentation", "allow-downloads"],
-                 "oauth": ["www.dropbox.com"]
+                "oauth": ["www.dropbox.com"]
             }
         }
     ]
 }
 ```
-
-
-<InlineAlert slots="text" variant="warning"/>
-
-Changes to your add-on manifest currently require a manual reload. Use the **Refresh** button in the **Add-on Development** panel to pick up any changes.
 
 <!-- 
 # Manifest Field Descriptions
@@ -233,6 +229,13 @@ Changes to your add-on manifest currently require a manual reload. Use the **Ref
 </table>
 </div>
 
+
+### Notes
+- The **?** implies the field is optional.
+- Files within the add-on bundle can refer to each other via relative paths.
+- Changes to your add-on manifest currently require a manual reload. Use the **Refresh** button in the **Add-on Development** panel to pick up any changes.
+
+<!-- 
 <InlineAlert slots="text"/>
 
 The **?** implies the field is optional.
@@ -240,3 +243,9 @@ The **?** implies the field is optional.
 <InlineAlert slots="text" variant="success"/>
 
 Files within the add-on bundle can refer to each other via relative paths.
+
+
+
+<InlineAlert slots="text" variant="warning"/>
+
+Changes to your add-on manifest currently require a manual reload. Use the **Refresh** button in the **Add-on Development** panel to pick up any changes. -->

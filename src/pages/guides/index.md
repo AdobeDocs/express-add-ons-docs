@@ -11,7 +11,7 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: Guides
+title: Adobe Express Add-ons Guides
 description: This is the main guides page
 contributors:
   - https://github.com/hollyschinsky
