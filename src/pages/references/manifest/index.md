@@ -18,17 +18,70 @@ contributors:
 ---
 
 # Overview
-Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave.
+Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave. This guide outlines the latest manifest version available, which is version 2.
 
-## Manifest Version 2
-This guide outlines the latest manifest version available, which is version 2.
+## Example add-on manifest.json:
+```json
+{
+    "testId": "export-sample",
+    "name": "Export Sample",
+    "version": "1.0.0",
+    "manifestVersion": 2,
+    "requirements": {
+        "apps": [
+            {
+                "name": "Express",
+                "apiVersion": 1
+            }
+        ]
+    
+    },
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "main": "index.html",
+            "permissions": {
+                "sandbox": ["allow-popups", "allow-presentation", "allow-downloads"],
+                 "oauth": ["www.dropbox.com"]
+            }
+        }
+    ]
+}
+```
+
 
 <InlineAlert slots="text" variant="warning"/>
 
 Changes to your add-on manifest currently require a manual reload. Use the **Refresh** button in the **Add-on Development** panel to pick up any changes.
 
-<div>
-<table class="spectrum-Table spectrum-Table--sizeM">
+<!-- 
+# Manifest Field Descriptions
+- `testId?` *string*
+    - This can be used to uniquely identify an add-on among other add-ons in app during <strong>development workflows only</strong>. This is auto generated and inserted into the manifest by the CLI when an add-on is created. This is mandatory in the development workflow and ignored in add-ons submitted to the marketplace.
+
+- `version` *string*
+    - Add-on version in "major.minor.patch" format (e.g., "1.2.0")
+
+- `name?` string
+    - Add-on name as it will appear in the UI **for development workflows only**.
+        
+        Localizable and specified in the following format, for example:        
+
+        ```
+            "label":  &#123;
+                "default": "Timer", 
+                "en-US": "Timer", 
+                "fr-FR": "Minuteur" 
+            &#125;
+        ```
+- `requirements` object
+    - Indicates the apps that the add-on is intended for.    -->
+
+
+### Manifest Field Descriptions
+<div width="800px">
+<table class="spectrum-Table spectrum-Table--sizeS" width="40%">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Field</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
@@ -73,17 +126,17 @@ Changes to your add-on manifest currently require a manual reload. Use the **Ref
     <td style="vertical-align: top;"><p><strong>requirements</strong></p></td>
     <td style="vertical-align: top;"><p>object</p></td>
     <td style="vertical-align: top;">         
-        <table class="spectrum-Table spectrum-Table--sizeM">        
+        <table class="spectrum-Table spectrum-Table--sizeS">        
             <tr><td><p><strong>Field</strong></p></td><td><p><strong>Type</strong></p></td><td><p><strong>Notes</strong></p></td></tr>        
             <tr>
                 <td><p>apps</p> </td><td><p>object[]</p></td>
                 <td><p>Indicates the apps that the add-on is intended for. &nbsp;&nbsp;</p>
-                <table class="spectrum-Table spectrum-Table--sizeM">
+                <table class="spectrum-Table spectrum-Table--sizeS">
                     <tr><td><p><strong>Field</strong></p></td><td><p><strong>Type</strong></p></td><td><p><strong>Notes</strong></p></td></tr>
                     <tr><td><p>name</p></td><td><p>string</p></td><td><p>Supported values: 'Express'</p> </td></tr>
                     <tr><td><p>apiVersion</p></td><td><p>number</p></td><td><p>API version that add-on uses. Currently supported values: 1</p></td></tr>
                     <tr><td><p>supportedDeviceClass?</p></td><td><p>string[]</p></td><td><p>Supported platforms by the add-on. Possible values:</p>
-                        <table class="spectrum-Table spectrum-Table--sizeM">
+                        <table class="spectrum-Table spectrum-Table--sizeS">
                             <tr><td><p><strong>Device Class</strong></p></td><td><p><strong>Description</strong></p></td></tr>
                             <tr><td><p>desktop</p></td><td><p>Browser on desktop</p></td></tr>
                             <tr><td><p>mobile</p></td><td><p>Browser on mobile and tablet devices</p></td></tr>
@@ -121,10 +174,10 @@ Changes to your add-on manifest currently require a manual reload. Use the **Ref
     <td class="spectrum-Table-cell" style="vertical-align: top;"><p>Object array</p></td>
         <td class="spectrum-Table-cell">   
             <p>Currently one entrypoint can be specified:&nbsp;&nbsp;</p>
-            <table class="spectrum-Table spectrum-Table--sizeM">        
+            <table class="spectrum-Table spectrum-Table--sizeS">        
             <tr><td><p><strong>Field</strong></p></td><td><p><strong>Type</strong></p></td><td><p><strong>Notes</strong></p></td></tr>
             <tr><td><p><strong>type</strong></p></td><td><p>string</p></td><td><p>The type of the entrypoint. Supported types: </p>
-            <table class="spectrum-Table spectrum-Table--sizeM">
+            <table class="spectrum-Table spectrum-Table--sizeS">
                     <tr>
                         <td><p><strong>Type</strong></p></td>
                         <td><p><strong>Description</strong></p></td>
@@ -147,11 +200,11 @@ Changes to your add-on manifest currently require a manual reload. Use the **Ref
                 <td><p><strong>main</strong></p></td><td><p>string</p></td><td><p>Main file for this entrypoint</p></td>
             </tr>
             <tr><td><p><strong>permissions?</strong></p></td><td><p>string</p></td><td>
-            <table class="spectrum-Table spectrum-Table--sizeM">       
+            <table class="spectrum-Table spectrum-Table--sizeS">       
                 <tr>
                     <td><p><strong>Field</strong></p></td><td><p><strong>Type</strong></p></td><td><p><strong>Notes</strong></p></td></tr>
                     <tr><td><p>sandbox?</p></td><td><p>string[]</p></td><td><p>List of iframe sandbox permissions. Supported values are:</p>
-                        <table class="spectrum-Table spectrum-Table--sizeM">                
+                        <table class="spectrum-Table spectrum-Table--sizeS">                
                             <tr><td><p><strong>Permission</strong></p></td><td><strong>Notes</strong></td></tr>
                             <tr><td><p><strong>allow-presentation</strong></p></td><td><p>Allows the add-on to start a <a href="https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest" target="_blank">presentation session</a>.</p></td></tr>                    
                             <tr><td><p><strong>allow-popups</strong></p></td><td><p>Allows popups - such as <pre>window.open(), target="_blank" or showModalDialog()</pre> to work. <strong style="color:red">If this keyword is not used, the popup will silently fail to open.</strong></p></td></tr>
