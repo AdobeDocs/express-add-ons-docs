@@ -22,7 +22,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 # Distribution Overview
 
-Congratulations! 👏 You've built a great add-on and you're ready to release it to the community.
+Congratulations! You've built a great add-on and you're ready to release it to the community.
 
 To publish and share your add-on, it must first go through a review process. By reviewing every add-on, Adobe aims to help you get your add-ons ready for prime time and helps to ensures your users have great experiences with the add-ons they consume. Our goal is to balance providing you with the best possible developer experience during the review process, while also ensuring the approved add-ons offer a great user experience for our mutual customers.
 

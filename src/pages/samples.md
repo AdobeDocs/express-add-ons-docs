@@ -25,7 +25,7 @@ Find inspiration and great reference examples by checking out our [code samples]
 In addition to these code samples, you should also be sure to check out the [Templates section](./guides/getting_started/dev_tooling/#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack. 
 
 ## Using the samples
-- Clone [the repo](ttps://github.com/AdobeDocs/express-add-on-samples) (or download the zip).
+- Clone [the repo](https://github.com/AdobeDocs/express-add-on-samples) (or download the zip).
 - `cd` into the folder of a sample you want to try.
 - Run `npm install` to install the dependencies.
 - Run `npm run build` to build the source.

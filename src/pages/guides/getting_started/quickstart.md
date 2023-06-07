@@ -78,6 +78,6 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
 
    ![Hello World add-on](img/hello-world-loaded-log-open.png)
 
-Congratulations! 👏 You've completed the quickstart and run your first add-on! 🏅 
+Congratulations! You've completed the quickstart and run your first add-on! 
 
 Next, check out the [development tools](./dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../guides/), where you will find in-depth resources for [designing](../guides/design/), [developing](../guides/develop/), [debugging](../guides/debug/) and [distributing](../guides/distribute/) your add-ons. If you're ready to dive into our developer platform, we highly recommend exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.

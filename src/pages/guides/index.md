@@ -27,7 +27,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 Adobe Express is an all-in-one content creation app that makes it fast, easy and fun to design standout flyers, TikToks, resumes, Reels, banners, logos, invitations, webpages and so much more. 
 
 ## Add-ons
-Add-ons are a new feature allowing 3rd party developers to extend the core functionality of [Adobe Express](https://new.express.adobe.com/), with a dedicated marketplace for them to be distributed for others to discover and enjoy.
+Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons.
 
 ### Use Cases
 Some examples of add-on use cases include:
