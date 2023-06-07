@@ -1,5 +1,5 @@
 # AddOnSdk.instance
-Represents the currently running add-on instance. This object is used for providing access to the `clientStorage` and `manifest` objects. See the [Storing and Retrieving Client Side Data](../../develop/#storing-and-retrieving-client-side-data) Code Recipe and [Manifest](../manifest.md) reference for more details.
+Represents the currently running add-on instance. This object is used for providing access to the `clientStorage` and `manifest` objects. See the [Storing and Retrieving Client Side Data](../../guides/develop/#storing-and-retrieving-client-side-data) use case implementation and [Manifest](../manifest.md) reference for more details.
 
 
 ## Objects

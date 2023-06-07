@@ -25,10 +25,10 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 <br/> <br/>
 
-# AddOnSdk API Reference
+# AddOnSdk Reference
 
 ## Overview
-This reference is provided to outline the interfaces, methods, properties and events that support the [add-on SDK API features](#what-can-i-do-with-the-apis). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
+This reference is provided to outline the interfaces, methods, properties and events that support the [add-on SDK features](#what-can-i-do-with-the-apis). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
@@ -61,7 +61,7 @@ In general, an SDK provides a more complete set of tools and resources for devel
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [Code Recipes](../../develop/) for details and examples of how to add the features above.
+See the [implementing common use cases page](../../develop/) for details and examples of how to add the features above.
 
 
 ## AddOnSdk Objects

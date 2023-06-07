@@ -22,12 +22,14 @@ contributors:
 Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
 
 # Implementing Common Use Cases
-This set of how to's for popular use cases will help you explore and discover the capabilities of our add-ons platform. You will find common use cases along with code snippets that you can use to quickly get started with our add-on SDK. Along with these how to's, we also provide a set of [code samples](samples.md) that provide more extensive usage for each case.
+If you're looking to explore and discover the capabilities of our add-ons platform, check out these common use cases and accompanying code snippets to help you get started with our add-on SDK. For more extensive usage examples, check out this set of [code samples](samples.md).
 
 ## Importing Content
-Importing content into a design is one of the most popular use cases, since it allows a user to add content retrieved from a third-party service or their local hard drive, directly into their designs quickly and easily. You can use the following examples to help you implement this feature in your add-on. The first function shows how to implement adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. 
+Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. You can use the following examples to help you implement this feature in your add-on. The first function shows how to implement adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. To implement the feature of importing content into a design in your add-on, you can use the following examples:
 
 ```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
 // Reference to the active document
 const { document } = AddOnSdk.app;
 
@@ -69,6 +71,8 @@ The steps to export content:
 Each page of your design is considered a single rendition. See the [SDK references](../../references/addonsdk/app-document.md) for additional rendition options and values):
 
 ```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
 const response = await AddOnSdk.app.document.createRenditions({
     range: "currentPage",
     format: "image/jpeg",
@@ -83,77 +87,97 @@ document.getElementById("anchor").href = downloadUrl;
 ```
 
 ## Authenticating with OAuth 2.0
-This recipe focuses on providing an authentication feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. The login makes it much easier to offer the users their assets directly after login without having to switch browser windows to login to their other service and download their asset, only to have to upload it again back in Adobe Express. 
+This recipe focuses on providing an authentication feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. 
+
+### Setup
+The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some set up steps through the provider you want to use OAuth with first. Here are the steps to get started:
+
+1. Log in to the OAuth provider's website and create an application (for example, Dropbox). This must be a web application, and if an option of SPA (Single Page Application) is listed, select it.
+2. As an input to the "Redirect URIs" field, add: https://new.express.adobe.com/static/oauth-redirect.html.
+3. Fill out other details as necessary and save the form. A client Id / application Id / application key (this differs on different OAuth providers) will be generated. Make note of it as you will need it in your add-on code.
+4. Next, update your add-on `manifest.json` file with the hostname of the OAuth provider's authorization URL. **NOTE:** When using multiple providers, all hostnames must be provided. For example, if the add-on uses two OAuth providers ("login.microsoftonline.com" and "www.dropbox.com"), the `manifest.json` should contain both of them, as shown below:
+
+```json
+{
+    "id": "<ADD_ON_ID>",
+    "name": "<ADD_ON_NAME>",
+    "version": "1.0.0",
+    "manifestVersion": 1,
+    "requirements": {
+        "apps": ["Express"]
+    },
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "label": {
+                "default": "<ADD_ON_LABEL>"
+            },
+            "main": "index.html",
+            "permissions": {
+                "oauth": ["login.microsoftonline.com", "www.dropbox.com"]
+            }
+        }
+    ]
+}
+```
+
+Once you complete the set up, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](../../samples.md) repo also contain a few different examples of using OAuth 2.0 that we highly recommend checking out. You will also find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module there, which is referenced below, and we recommend using to help with your own OAuth implementation.
 
 ```js
-const Connection = ({ accessToken, updateAccessToken }) => {  
-  async function handleConnect() {
-    // Generate the cryptographic challenge parameters
-    // required in the OAuth 2.0 authorization workflow.
-    const challenge = await oauthUtils.generateChallenge();
-
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+const DROPBOX_AUTHORIZATION_URL = "https://www.dropbox.com/oauth2/authorize";
+const DROPBOX_TOKEN_URL = "https://api.dropboxapi.com/oauth2/token";
+const DROPBOX_CLIENT_ID = "<DROPBOX_CLIENT_ID>";
+const DROPBOX_SCOPE = "<DROPBOX_SPACE_SEPARATED_SCOPES>";
+ 
+const ONEDRIVE_AUTHORIZATION_URL = "https://login.microsoftonline.com/<AZURE_AD_TENANT_ID>/oauth2/v2.0/authorize";
+const ONEDRIVE_TOKEN_URL = "https://login.microsoftonline.com/<AZURE_AD_TENANT_ID>/oauth2/v2.0/token";
+const ONEDRIVE_CLIENT_ID = "<ONEDRIVE_CLIENT_ID>";
+const ONEDRIVE_SCOPE = "<ONEDRIVE_SPACE_SEPARATED_SCOPES>";
+const OWN_REDIRECT_URI = "<OWN_REDIRECT_URI>";
+ 
+AddOnSdk.ready.then(() => {
+    // 'oauthUtils' is a helper javascript module (included with the OAuth template) which provides utility functions to:
+    // 1. generateChallenge()     Generate the 'code_challenge' and 'code_verifier' parameters that are essential in the OAuth 2.0 workflow.
+    // 2. generateAccessToken()   Generate an 'access_token' and a 'refresh_token' using the 'code' and 'redirectUri' received on successful authorization.
+    // 3. getAccessToken()        Get an always valid 'access_token'.
+     
+    const challenge = await oauthUtils.generateChallenge();     
+    await authorize(challenge);         
+});
+ 
+function authorize(challenge) {
     // Trigger the OAuth 2.0 based authorization which opens up a sign-in window for the user
     // and returns an authorization code which can be used to obtain an access_token.
-    const { id, code, redirectUri, result } = await addOnSdk.app.oauth.authorize({
-        authorizationUrl: AUTHORIZATION_URL,
-        clientId: CLIENT_ID,
-        scope: SCOPE,
+    const { id, code, redirectUri, result } = await oauth.authorize({
+        authorizationUrl: DROPBOX_AUTHORIZATION_URL,
+        clientId: DROPBOX_CLIENT_ID,
+        scope: DROPBOX_SCOPE,
         codeChallenge: challenge.codeChallenge
     });
-
+ 
     const { status, description } = result;
     if (status !== "SUCCESS") {
-        setLoading(false);
-        console.error(`Failed to authorize. Status: ${status} | Description: ${description}`);
-        return;
+        throw new Error(`Status: ${status} | Description: ${description}`);
     }
-
+ 
     // Generate the access_token which can be used to verify the identity of the user and
     // grant them access to the requested resource.
     await oauthUtils.generateAccessToken({
         id,
-        clientId: CLIENT_ID,
+        clientId: DROPBOX_CLIENT_ID,
         codeVerifier: challenge.codeVerifier,
         code,
-        tokenUrl: TOKEN_URL,
+        tokenUrl: DROPBOX_TOKEN_URL,
         redirectUri
     });
-
-    // Get the generated access_token.
-    const newAccessToken = await oauthUtils.getAccessToken(id);   
-    updateAccessToken(newAccessToken);
-  }
+ 
+    const accessToken = await oauthUtils.getAccessToken(id);
 }
 ```
-Now retrieve assets with the token saved in the above:
 
-```js
-// Use the access_token to retrieve assets
-async function getAssets(path) {
-    const data = { path };
-    const options = {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer ${accessToken}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    };
-
-    const response = await fetch(LIST_FOLDER_API_URL, options);
-    const assets = await response.json();
-    if (!response.ok) {
-        const error = assets.error
-            ? assets.error.message
-            : "Unexpected error occurred while fetching assets.";
-
-        throw new Error(error);
-    }
-
-    return assets;
-  }
-}
-```
 
 ## Storing and Retrieving Client-Side Data
 If you want to be able to store and retrieve data on the client rather than send and retrieve from a server for certain instances (ie: caching images that were fetched to decrease load times etc), you can do so using the add-on `clientStorage` API. 
@@ -233,7 +257,7 @@ When you need to pop up a dialog to show a certain message such as an informatio
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSDKAPI.ready;
+await AddOnSdk.ready;
 
 // Confirmation Dialog Example
 let dialogOptions = {
@@ -290,6 +314,7 @@ let inputDialogOptions = {
 }
 };
 ```
+
 ### Custom Modal Dialog Example
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -324,9 +349,9 @@ async function showCustomDialog() {
 ## Detecting Theme
 When you want to detect the theme of the environment where your add-on is running (aka: Adobe Express), or if you want to be notified if it changes, you can use the following example. This is useful for knowing what theme is currently set in Adobe Express so you can also use the same in your add-on UI, and to apply the theme change when the user changes their Adobe Express theme. Note, that currently Adobe Express only supports a "light" theme, though this will be changing to also support a "dark" theme in the future.
 
-`AddOnSdk.app.on.themechange`
-
 ```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
 function applyTheme(theme) {
     document.querySelector("sp-theme").setAttribute("color", theme);
 }
@@ -342,11 +367,19 @@ addOnSdk.app.on("themechange", (data) => {
 If you want to detect the current locale, or when the locale changes, for instance to set the language in your add-on, you can do so with the following code:
 
 ```js
-AddOnSdk.app.ui.locales
-AddOnSdk.app.ui.locale
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+function setLanguage(language) { 
+  /* Set the language in your UI strings based on the change detected */ 
+}
+
+AddOnSdk.ready.then(() => {
+  console.log(AddOnSdk.app.ui.locales);
+  setLanguage(AddOnSdk.app.ui.locale);
+});
 
 AddOnSdk.app.on("localechange", data => {
-  setLanguage(data.locale);
+  setLanguage(data.locale));
 });
 ```
 

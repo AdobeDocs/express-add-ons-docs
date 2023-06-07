@@ -7,6 +7,12 @@ In this section, you will learn how to create a public listing for your add-on t
 
 Public distribution is subject to a quality review by our team according to the [Review Guidelines](./review_guidelines.md).
 
+<!-- ## Preparing for submission
+This section is provided to help you prepare for your add-on submission.
+
+### Metadata -->
+
+
 
 ## Step 1: Open the distribution modal
 A new **Manage** button should now be displayed in your add-ons launchpad, and will invoke the in-app distribution experience when clicked.

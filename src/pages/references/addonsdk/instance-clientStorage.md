@@ -1,7 +1,7 @@
 # AddOnSdk.instance.clientStorage
-Reference to the `clientStorage` object for the currently running add-on. See the [Client Storage Code Recipe](../../develop/) for more details. The Client Storage API allows you to store, retrieve and delete persistent data in the user's current browser. 
+Reference to the `clientStorage` object for the currently running add-on. See the [client storage use case implementation](../../guides/develop/#storing-and-retrieving-client-side-data) for more details. The Client Storage API allows you to store, retrieve and delete persistent data in the user's current browser. 
 
-Client Storage is similar to using the `Window.localStorage` API, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, null, undefined and Uint8Array) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added.
+Client Storage is similar to using the `Window.localStorage` API, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added.
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -9,7 +9,7 @@ Since the data is stored in the user’s current browser, user actions such as c
 
 ## Methods
 
-## getItem()
+### getItem()
 **`async getItem(key: string): Promise<unknown | undefined>`**<br/>
 An asynchronous method to retrieve a value from Client Storage for a given key. If no value has been stored for that key, this function will return `undefined`.
 
@@ -33,9 +33,9 @@ async function getData(key) {
 }
 ```
 
-## setItem()
+### setItem()
 **`async setItem(key: string, value: any): Promise<void>;`**<br/>
-Store a value in Client Storage with the given key. The returned promise will resolve if storage is successful, or reject with an error message if storage failed. The value can be any of multiple data types, such as `object`, `string`, array, number, boolean, `null`, `undefined` and `Uint8Array`.
+Store a value in Client Storage with the given key. The returned promise will resolve if storage is successful, or reject with an error message if storage failed. The value can be any of multiple data types, such as `object`, `string`, array, `number`, `boolean`, `null`, `undefined` and `Uint8Array`.
 
 #### Parameters
 | Name          | Type      | Description   |
@@ -58,7 +58,7 @@ async function setData(key, value) {
 }
 ```
 
-## removeItem()
+### removeItem()
 **`async removeItem(key: string): Promise<void>`**<br/>
 Remove the stored key/value pair from Client Storage for the given key. If no such key is stored, this function will return normally, but will otherwise do nothing.
 
@@ -82,7 +82,7 @@ async function removeData(key) {
 }
 ```
 
-## clear()
+### clear()
 **`clear(): Promise<void>`**<br/>
 Delete all data present in ClientStorage for this add-on.
 
@@ -104,7 +104,7 @@ async function clearData() {
 }
 ```
 
-## keys()
+### keys()
 **`async keys(): Promise<string[]>`**<br/>
 Retrieve a list of all keys in Client Storage. Use this to enumerate the full contents of the Client Storage for the add-on.
 

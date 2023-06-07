@@ -1,5 +1,5 @@
 # AddOnSdk.app.document
-Provides access to the methods needed for [importing an image or video](../../develop/#importing-content) to the document and for [creating a rendition](../../develop/#exporting-content) for export.
+Provides access to the methods needed for [importing an image or video](../../guides/develop/#importing-content) to the document and for [creating a rendition](../../guides/develop/#exporting-content) for export.
 
 ## Methods
 ### addImage()

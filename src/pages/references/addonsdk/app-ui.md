@@ -1,17 +1,10 @@
 # AddOnSdk.app.ui
-Provides you with Application UI related values from the Adobe Express host application where the add-on is running.
-
-<!-- ## Properties and values
-locale: "en-US"
-locales: 
-    (17) ['cy-GB', 'da-DK', 'de-DE', 'en-US', 'es-ES', 'fi-FI', 'fr-FR', 'it-IT', 'ja-JP', 'ko-KR', 'nb-NO', 'nl-NL', 'pt-BR', 'sv-SE', 'zh-Hans-CN', 'zh-Hant-TW', 'zz-ZZ']
-theme : "light" -->
-
+Provides you with UI related values from the Adobe Express host application where the add-on is running so you can do things such as detect the [current locale](../../guides/develop/#detecting-locale) or [theme](../../guides/develop/#detecting-theme) in use to update your add-on user interface accordingly.
 
 ## Properties
 
 ### AddOnSdk.app.ui.theme
-**`locale: string`**<br/>
+<!-- **`theme: string`**<br/> -->
 Access the theme currently set in Adobe Express. This value is accessed via the `AddOnSdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `ready`). 
 
 #### Values
@@ -26,7 +19,7 @@ AddOnSdk.ready.then(async () => {
 
 
 ### AddOnSdk.app.ui.locale
-**`locale: string`**<br/>
+<!-- **`locale: string`**<br/> -->
 Access the locale currently set in Adobe Express. This value is accessed via the `AddOnSdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `AddOnSdk.ready`). 
 
 #### Values
@@ -43,7 +36,7 @@ AddOnSdk.ready.then(async () => {
 ```
 
 ### AddOnSdk.app.ui.locales
-**`locales: string[]`**<br/>
+<!-- **`locales: string[]`**<br/> -->
 Access the locales currently supported in Adobe Express. This value is accessed via the `AddOnSdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `AddOnSdk.ready`). 
 
 #### Values
@@ -100,7 +93,7 @@ AddOnSdk.app.on("localechange", (data) => {
 
 <InlineAlert slots="text" variant="success"/>
 
-We have provided a sample that can be used as a reference for implementing the Application UI Theme APIs. Please see the **swc** sample provided in the [code samples](guides/develop/samples) within the **contributed** folder for specific details.
+We have provided a sample that can be used as a reference for implementing the Application UI Theme APIs. Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder for specific details.
 
 
 

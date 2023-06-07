@@ -39,10 +39,10 @@ Demonstrates how to use the add-on SDK's Import and Drag and Drop APIs to add im
 - JavaScript
 - CSS
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Import API](../../references/index.md#import) to add the image to the document when the gif is clicked.
-- [Drag and Drop APIs](../../references/index.md#drag-and-drop) to support dragging and dropping images to the document.
+- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+- [Drag and Drop](./references/addonsdk/addonsdk-app/#enabledragtodocument) to support dragging and dropping images to the document.
 
 ## [import-images-using-oauth](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/import-images-using-oauth)
 Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect their Dropbox account (in addition to leveraging some others listed below). 
@@ -54,12 +54,12 @@ Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect
 - CSS
 - Webpack
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [OAuth API's](../../references/index.md#authorize-using-oauth-20) to authorize the user with the Dropbox service.
-- [Import API](../../references/index.md#import) to add images from the add-on to the document.
-- [Drag and Drop APIs](../../references/index.md#drag-and-drop) to support dragging and dropping images to the document.
-- [Client Storage API](.../../references/index.md#client-storage) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
+- [OAuth API's](./references/addonsdk/app-oauth/) to authorize the user with the Dropbox service.
+- [Import Content](./references/addonsdk/app-document) to add images from the add-on to the document.
+- [Drag and Drop](./references/addonsdk/addonsdk-app/#enabledragtodocument) to support dragging and dropping images to the document.
+- [Client Storage](./references/addonsdk/instance-clientStorage/) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
 
 
 ## [use-client-storage](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/use-client-storage)
@@ -71,12 +71,12 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 - CSS
 - Webpack
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Client Storage API](../../references/index.md#client-storage) to persist the todo items.
+- [Client Storage](./references/addonsdk/instance-clientStorage/) to persist the todo items.
 
 ## [export-sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/export-sample)
-Demonstrates how to use the add-on SDK's Export APIs to export content in various formats including jpeg, png, pdf and mp4.
+Demonstrates how to use the add-on SDK's to export renditions of content in various formats including jpeg, png, pdf and mp4.
 
 **Technologies Used:** <br/>
 
@@ -84,10 +84,10 @@ Demonstrates how to use the add-on SDK's Export APIs to export content in variou
 - Spectrum Web Components
 - Webpack
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Export API](.../../references/index.md#export) to generate renditions.
-- [Import API](../../references/index.md#import) to add the image to the document when the gif is clicked.
+- [Export Content](./references/addonsdk/app-document) to generate renditions.
+- [Import Content](./references/addonsdk/app-document) to add the image to the document when the gif is clicked.
 
 ## [dialog-add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/dialog-add-on)
 Demonstrates how to use the Modal Dialog APIs to pop-up variations of modals from your add-ons
@@ -98,9 +98,9 @@ Demonstrates how to use the Modal Dialog APIs to pop-up variations of modals fro
 - React Spectrum
 - Webpack
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Dialogs API](../../references/index.md#simple-modal-dialogs) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
+- [Modal Dialogs](./references/addonsdk-app/#showmodaldialog) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
 
 
 <!-- # Contributed Add-on Samples
@@ -116,11 +116,11 @@ A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. U
 - Spectrum Web Components
 - Webpack
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Drag and Drop APIs](../../references/index.md#drag-and-drop) to add the dragged image to the document.
-- [Export API](../../references/index.md#export-new) to generate renditions.
-- [Client Storage API](../../references/index.md#client-storage) to store the pixel art creations.
+- [Drag and Drop](./references/addonsdk/addonsdk-app/#enabledragtodocument) to add the dragged image to the document.
+- [Export Content](./references/addonsdk/app-document) to generate renditions.
+- [Client Storage](./references/addonsdk/instance-clientStorage/) to store the pixel art creations.
 
 ## [swc](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc)
 Simple sample which illustrates how to use **Spectrum Web Components** without React or any other framework.
@@ -133,9 +133,9 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 - Spectrum Web Components
 - Webpack
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Application UI Theme](../../references/index.md#application-ui-theme) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
+- [Application UI Theme](./references/addonsdk/app-ui/) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
 
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->
@@ -149,11 +149,11 @@ Allows users to connect to their Dropbox account. Once connected, they can fetch
 - React Spectrum
 - Webpack
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [OAuth API's](../../references/index.md#authorize-using-oauth-20) to authorize the user with the Dropbox service.
-- [Drag and Drop APIs](../../references/index.md#drag-and-drop) to support dragging and dropping images to the document.
-- [Import API](../../references/index.md#import) to add the image to the document when the gif is clicked.
+- [OAuth API's](./references/addonsdk/app-oauth/) to authorize the user with the Dropbox service.
+- [Drag and Drop](./references/addonsdk/addonsdk-app/#enabledragtodocument) to support dragging and dropping images to the document.
+- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 
 ## [Giphy](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/giphy)
 Allows users to search for popular gifs and add them to the document.
@@ -163,10 +163,10 @@ Allows users to search for popular gifs and add them to the document.
 - JavaScript 
 - Spectrum Web Components
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Drag and Drop APIs](../../references/index.md#drag-and-drop) to support dragging and dropping images to the document.
-- [Import API](../../references/index.md#import) to add the image to the document when the gif is clicked.
+- [Drag and Drop](./references/addonsdk/addonsdk-app/#enabledragtodocument) to support dragging and dropping images to the document.
+- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 
 ## [QR Code](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/qrcode)
 Allows users to search for popular gifs and add them to their Express pages.
@@ -176,10 +176,10 @@ Allows users to search for popular gifs and add them to their Express pages.
 - JavaScript 
 - Spectrum Web Components
 
-**APIs Leveraged:**<br/>
+**Features Leveraged:**<br/>
 
-- [Import API](.../../references/index.md#import) to add the image to the document when the gif is clicked.
-- [Drag and Drop APIs](../../references/index.md#drag-and-drop) to support dragging and dropping images to the document.
+- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+- [Drag and Drop](./references/addonsdk/addonsdk-app/#enabledragtodocument) to support dragging and dropping images to the document.
 
 <InlineAlert slots="text" variant="warning"/>
 

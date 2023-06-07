@@ -32,7 +32,7 @@ Here are some key features of the add-on CLI:
 - **Live reloading:** The add-on CLI watches your project files for changes and automatically reloads the server when a change is detected.
 - **Packaging:** The add-on CLI provides a command to package your add-on for distribution, including creating a ZIP file that can be uploaded to our platform.
 
-### CLI `create` Options
+### CLI `create` options
 The table below shows the list of arguments that can be specified with the CLI create command (ie: `npx @adobe/create-ccweb-add-on`):
 
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
@@ -51,7 +51,7 @@ npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 
 See the [templates](#templates) section for the currently supported template values.
 
-### `start` Script Options
+### `start` script options
 The table below shows a list of arguments that can be specified with the `start` script on your add-on project, which starts up the add-on in a local server:
 
 | Argument  | Optional | Default Value | Description                                                                  |

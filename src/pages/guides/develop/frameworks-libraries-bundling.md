@@ -45,7 +45,7 @@ Configurations are included in the `webpack.config.js` generated with your add-o
 
 ## React
 
-We have included React templates and sample add-ons in the [code samples](guides/develop/samples).
+We have included React templates and sample add-ons in the [code samples](../../samples.md).
 
 ## Other JavaScript and CSS libraries
 

@@ -104,7 +104,7 @@ module.exports = {
       {
         title: 'Changelog',            
         path: 'references/changelog.md'
-      },        
+      },            
       {
         title: 'Overview',
         path: 'guides/'

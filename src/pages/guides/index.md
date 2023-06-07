@@ -41,7 +41,7 @@ Some examples of add-on use cases include:
 - Retrieving the current theme and detecting theme changes
 - Exporting renditions of images in different formats
 
-See the [code recipes page](../develop/) and [code samples](../develop/) for more details on how to implement the above use cases. 
+See the [implementing common use cases page](../develop/) and [code samples](../develop/) for more details on how to implement the above use cases. 
 
 
 ## Add-on Developer Journey

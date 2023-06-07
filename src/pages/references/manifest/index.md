@@ -35,7 +35,9 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
                 "name": "Express",
                 "apiVersion": 1
             }
-        ]
+        ],
+        "experimentalApis": true,
+        "supportsTouch": false
     },
     "entryPoints": [
         {
@@ -50,30 +52,6 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
     ]
 }
 ```
-
-<!-- 
-# Manifest Field Descriptions
-- `testId?` *string*
-    - This can be used to uniquely identify an add-on among other add-ons in app during <strong>development workflows only</strong>. This is auto generated and inserted into the manifest by the CLI when an add-on is created. This is mandatory in the development workflow and ignored in add-ons submitted to the marketplace.
-
-- `version` *string*
-    - Add-on version in "major.minor.patch" format (e.g., "1.2.0")
-
-- `name?` string
-    - Add-on name as it will appear in the UI **for development workflows only**.
-        
-        Localizable and specified in the following format, for example:        
-
-        ```
-            "label":  &#123;
-                "default": "Timer", 
-                "en-US": "Timer", 
-                "fr-FR": "Minuteur" 
-            &#125;
-        ```
-- `requirements` object
-    - Indicates the apps that the add-on is intended for.    -->
-
 
 ### Manifest Field Descriptions
 <div width="800px">
@@ -101,15 +79,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
     <td><p><strong>name?</strong></p></td>
     <td><p>string</p></td>
     <td><p>
-        Add-on name as it will appear in the UI <strong>for development workflows only</strong>.
-        Localizable and specified in the following format, for example:        
-        <pre>
-            "label":  &#123;
-                "default": "Timer", 
-                "en-US": "Timer", 
-                "fr-FR": "Minuteur" 
-            &#125;
-        </pre>   
+        Add-on name <strong>for development workflow only</strong>. The name provided in UI during submission is used in all other workflows.         
         </p>                         
     </td>    
 </tr>

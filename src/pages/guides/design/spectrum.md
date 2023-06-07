@@ -4,7 +4,7 @@ Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which c
 
 <InlineAlert slots="text" variant="success"/>
 
-Check out our [code samples](guides/develop/samples) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**. 
+Check out our [code samples](../../samples.md) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**. 
 
 
 ## Spectrum Web Components
@@ -94,7 +94,7 @@ The [React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the [code samples](guides/develop/samples) in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly. 
+Check out the [code samples](../../samples.md) in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly. 
 
 #### React Spectrum with Express Theme Steps
 [The React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in alpha stage currently, but can be used with the following steps:
