@@ -1,5 +1,5 @@
 # AddOnSdk.app
-Provides access to the host application's (Adobe Express) properties and methods. This object is used to access the current `document` to allow you to [import](../../guides/develop/#importing-content) or [export](../../guides/develop/#exporting-content) content, the [OAuth APIs](../../guides/develop/#authenticating-with-oauth-20) used for OAuth 2.0 workflows, and the UI object for detecting the [current locale](../../guides/develop/#detecting-locale) and [theme](../../guides/develop/#detecting-theme) in use. It also provides access to methods to [show modal dialogs](../../guides/develop/#modal-dialogs) and [enable drag and drop](../../guides/develop/#drag-and-drop) of content. 
+Provides access to the host application's (Adobe Express) properties and methods. This object is used to access the current `document` to allow you to [import](../../guides/develop/#importing-content) or [export](../../guides/develop/#exporting-content) content, the [OAuth APIs](../../guides/develop/#authorization-with-oauth-20) used for OAuth 2.0 workflows, and the UI object for detecting the [current locale](../../guides/develop/#detecting-locale) and [theme](../../guides/develop/#detecting-theme) in use. It also provides access to methods to [show modal dialogs](../../guides/develop/#modal-dialogs) and [enable drag and drop](../../guides/develop/#drag-and-drop) of content. 
 
 ## Methods
 ### showModalDialog()
@@ -9,13 +9,12 @@ Shows a modal dialog based on specific options passed in.
 #### Parameters
 | Name              | Type         | Description   |
 | -------------     | -------------| -----------:  |
-| dialogOptions     | `object`       | Dialog options such as title, description, [Variant](./addonsdk-constants.md) etc. |
+| `dialogOptions`   | `object`     | Dialog options such as title, description, [Variant](./addonsdk-constants.md) etc. |
 
 The input dialog variant accepts an additional `field` object. See the example below for details.
 
 #### Return Value
-A `Promise` with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, otherwise an error. The input dialog variant returns the value of the field the user input text to in the `fieldValue` property.
-
+Returns a `Promise` with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, otherwise an error. When using the "input" dialog variant type, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
 
 #### Example Usage
 ```js

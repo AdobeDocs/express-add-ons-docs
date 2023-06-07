@@ -86,8 +86,8 @@ document.getElementById("anchor").href = downloadUrl;
 </a>
 ```
 
-## Authenticating with OAuth 2.0
-This recipe focuses on providing an authentication feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. 
+## Authorization with OAuth 2.0
+This use case focuses on providing an authorization feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. 
 
 ### Setup
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some set up steps through the provider you want to use OAuth with first. Here are the steps to get started:

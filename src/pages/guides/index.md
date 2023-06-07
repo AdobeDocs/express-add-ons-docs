@@ -49,7 +49,7 @@ An overview of the steps involved in creating an add-on are listed below along w
 
 1. Create an add-on project with the CLI. See the [Getting Started](../getting_started/) guides to help you create your first project quickly. 
 2. [Design your UI](../guides/design/) with the help of [Adobe's Spectrum Design System](../guides/design/#spectrum-design-system). 
-3. Use the [add-on recipes](../guides/develop/), [code samples](../samples.md) and [references](../references/) to learn how to include all of the features you want to showcase in your add-on. 
+3. Use the [common use case implementations](../guides/develop/), [code samples](../samples.md) and [references](../references/) to learn how to include all of the features you want to showcase in your add-on. 
 4. [Debug](../guides/debug/) and test your add-on with your favorite browser tools, [Visual Studio Code](../guides/debug/vs-code.md) and the add-on logging window provided in the Express UI development environment.
 5. [Distribute your add-on](../guides/distribute/) for public or private sharing. 
 

@@ -1,11 +1,14 @@
 # AddOnSdk.instance.clientStorage
-Reference to the `clientStorage` object for the currently running add-on. See the [client storage use case implementation](../../guides/develop/#storing-and-retrieving-client-side-data) for more details. The Client Storage API allows you to store, retrieve and delete persistent data in the user's current browser. 
+The `clientStorage` object provides a reference to Client Storage in the currently running add-on. Client Storage allows you to store, retrieve, and delete persistent data in the user's current browser.
 
-Client Storage is similar to using the `Window.localStorage` API, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added.
+Client Storage is similar to using `Window.localStorage`, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added. See the [client storage use case implementation](../../guides/develop/#storing-and-retrieving-client-side-data) for more details. 
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text1, text2" variant="info"/>
 
-Since the data is stored in the user’s current browser, user actions such as clearing the browser cache would clear all of the data storage in `ClientStorage` (similar to `localStorage`).
+Since the data in Client Storage is stored in the user's current browser, any actions that clear the browser cache, such as clearing browsing history or deleting cookies, will also clear all of the data stored in Client Storage. It's important to keep this in mind when designing your add-on, as any important data that needs to persist beyond a user's current browsing session should be stored elsewhere, such as on a server or in a database.
+
+Additionally, you should always provide a way for users to delete or clear any data stored in Client Storage within your add-on, in case they want to remove any sensitive or unwanted data.
+
 
 ## Methods
 
@@ -126,8 +129,8 @@ async function getKeys() {
 }
 ```
 
-<InlineAlert slots="text" variant="success"/>
+<InlineAlert slots="text" variant="info"/>
 
-Be sure to check out the [add-on recipes](../develop/#storing-and-retrieving-client-side-data) page for more details around using storing and retrieving client-side data, as well as the **use-client-storage** sample for a more complete example of implementing it in an add-on.
+Be sure to check out the [storing and retrieving client side data use case](../develop/#storing-and-retrieving-client-side-data) for more details around using Client Storage, as well as the [**use-client-storage** sample](../../samples.md) for a more complete example of implementing it in an add-on.
 
 

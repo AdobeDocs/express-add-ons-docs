@@ -28,7 +28,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 # AddOnSdk Reference
 
 ## Overview
-This reference is provided to outline the interfaces, methods, properties and events that support the [add-on SDK features](#what-can-i-do-with-the-apis). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
+This reference is provided to outline the interfaces, methods, properties and events that support the [add-on SDK features](#what-features-does-the-sdk-support). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
@@ -42,8 +42,6 @@ The distinction between an SDK and an API can be a bit blurry and can depend on 
 In general, an SDK provides a more complete set of tools and resources for developers than an API alone. An SDK may include an API, but it also includes other tools and resources that can help developers build applications more easily. However, the terms SDK and API are often used interchangeably, and the specific definitions can vary depending on the context.
 
 
-
-
 **Note:** an `interface` can also be considered an `object` in terms of this reference. You can traverse the `AddOnSdk` interfaces/objects (ie: `app`,`instance`) etc in the left navigation to learn more.
 
 
@@ -51,7 +49,7 @@ In general, an SDK provides a more complete set of tools and resources for devel
 - [Importing Content](../../guides/develop/)
 - [Exporting Content](../../guides/develop/)
 - [Drag & Drop Behavior](../../guides/develop/)
-- [Authentication with OAuth 2.0](../../guides/develop/)
+- [Authorization with OAuth 2.0](../../guides/develop/)
 - [Client-side Storage Access](../../guides/develop/)
 - [Modal Dialogs](../../guides/develop/)
 - [Locale Detection](../../guides/develop/)
