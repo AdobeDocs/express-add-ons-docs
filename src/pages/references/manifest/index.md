@@ -17,12 +17,12 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Overview
+# Manifest Schema Reference
 
 ## Introduction
 Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave. This guide outlines the latest manifest version available, which is version 2. 
 
-### Sample add-on manifest.json:
+### Sample manifest.json
 ```json
 {
     "testId": "addon-sample",

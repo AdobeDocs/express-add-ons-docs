@@ -24,7 +24,7 @@ module.exports = {
         path: 'guides'
       },
       {
-        title: 'References',
+        title: 'SDK References',
         path: 'references'
         // menu: [  
         //   {
@@ -97,7 +97,7 @@ module.exports = {
       ]          
       },                                                                                                                           
       {
-        title: 'Manifest',
+        title: 'Manifest Schema',
         description: 'Manifest schema',
         path: 'references/manifest'
       },  
