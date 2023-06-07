@@ -48,20 +48,20 @@ In general, an SDK provides a more complete set of tools and resources for devel
 
 
 ## What features does the SDK support?
-- [Importing Content](../../develop/)
-- [Exporting Content](../../develop/)
-- [Drag & Drop Behavior](../../develop/)
-- [Authentication with OAuth 2.0](../../develop/)
-- [Client-side Storage Access](../../develop/)
-- [Modal Dialogs](../../develop/)
-- [Locale Detection](../../develop/)
-- [Theme Detection](../../develop/)
-- [Access to the Manifest](../../develop/)
+- [Importing Content](../../guides/develop/)
+- [Exporting Content](../../guides/develop/)
+- [Drag & Drop Behavior](../../guides/develop/)
+- [Authentication with OAuth 2.0](../../guides/develop/)
+- [Client-side Storage Access](../../guides/develop/)
+- [Modal Dialogs](../../guides/develop/)
+- [Locale Detection](../../guides/develop/)
+- [Theme Detection](../../guides/develop/)
+- [Access to the Manifest](../../guides/develop/)
 
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [implementing common use cases page](../../develop/) for details and examples of how to add the features above.
+See the [implementing common use cases page](../../guides/develop/) for details and examples of how to add the features above.
 
 
 ## AddOnSdk Objects

@@ -18,7 +18,22 @@ contributors:
 ---
 
 # Code Samples
-Find inspiration and great reference examples by checking out our [code samples](https://github.com/AdobeDocs/express-add-on-samples) repo. A description of each and which APIs and technologies they use is available here for reference.
+Find inspiration and great reference examples by checking out our [code samples](https://github.com/AdobeDocs/express-add-on-samples) repo. A description of each sample and which features and technologies they use is available here for reference.
+
+<InlineAlert slots="text" variant="info"/>
+
+In addition to these code samples, you should also be sure to check out the [Templates section](./guides/getting_started/dev_tooling/#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack. 
+
+## Using the samples
+- Clone [the repo](ttps://github.com/AdobeDocs/express-add-on-samples) (or download the zip).
+- `cd` into the folder of a sample you want to try.
+- Run `npm install` to install the dependencies.
+- Run `npm run build` to build the source.
+- Run `npm run start` to start to start the server with your bundled sample
+- Navigate to Adobe Express and load and use the locally running sample add-on with the add-on panel developer tools just as you would with your own.
+
+**NOTE:** Before you run any samples, you must have previously run the `npx @adobe/create-ccweb-add-on` command to create your own add-on at least once to ensure the package is available and ready to use.
+
 
 ## [get-started](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/get-started)
 Demonstrates how to get started with add-on development with a simple app that greets a user after a name is entered.
@@ -180,13 +195,3 @@ Allows users to search for popular gifs and add them to their Express pages.
 
 - [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 - [Drag and Drop](./references/addonsdk/addonsdk-app/#enabledragtodocument) to support dragging and dropping images to the document.
-
-<InlineAlert slots="text" variant="warning"/>
-
-**NOTE:** Before you run any samples, you must have run the `npx @adobe-ccwebext/create-ccweb-add-on` command at least once.
-
-<!-- ## Resources
-- Typescript Typings -->
-<InlineAlert slots="text" variant="warning"/>
-
-In addition to these code samples, you should also be sure to check out the [Templates section](../getting_started/dev_tooling/#templates) in the **Developer Tooling** page for the options available for creating a starter project based on your favorite development stack. 
