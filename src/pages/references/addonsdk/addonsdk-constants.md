@@ -1,7 +1,22 @@
 # AddOnSdk.constants
-A set of constants used throughout the add-on SDK. These constants are equal to their variable name as a string value, ie: for `ButtonType`, `primary` has a value of "primary". 
+A set of constants used throughout the add-on SDK. These constants are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary". 
+<!-- 
 
-<!-- Typescript note -->
+Enum Name	Enum Values
+AuthorizationStatus	SUCCESS, POPUP_OPENED, POPUP_BLOCKED, POPUP_TIMEOUT, FAILED
+ButtonType	primary, secondary, cancel, close
+FieldType	text
+Range	currentPage, entireDocument
+RenditionFormat	png, jpg, mp4, pdf
+RenditionType	page
+Variant	confirmation, information, warning, destructive, error, input
+
+
+| Name                | Values    |
+| -------------:      | --------- |
+| AuthorizationStatus | SUCCESS, POPUP_OPENED, POPUP_BLOCKED, POPUP_TIMEOUT, FAILED |
+| ButtonType	      | primary, secondary, cancel, close                           | -->
+
 
 ## AddOnSdk.constants 
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
@@ -18,7 +33,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
         <p>Rendition page range. Options:</p>
         <ul>
           <li><strong>currentPage</strong></li> Generate rendition for the current page
-          <li><strong>entireDocument</strong></li>Generate rendition for all the pages
+          <li><strong>entireDocument</strong></li>Generate rendition for all pages
         </ul>
     </td>    
 </tr>

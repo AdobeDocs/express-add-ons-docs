@@ -35,9 +35,9 @@ This reference is provided to outline the interfaces, methods, properties and ev
 # SDK vs API
 The distinction between an SDK and an API can be a bit blurry and can depend on the specific context. However, here's a general overview of the differences between an SDK and an API:
 
-- SDK (Software Development Kit) - a collection of software development tools and libraries that developers can use to create applications for a specific platform or system. An SDK typically includes an API, documentation, code samples, and other resources that developers need to build applications. 
+   **SDK** (Software Development Kit) - a collection of software development tools and libraries that developers can use to create applications for a specific platform or system. An SDK typically includes an API, documentation, code samples, and other resources that developers need to build applications. 
 
-- API (Application Programming Interface) - a set of rules and protocols that developers can use to interact with a platform. 
+   **API** (Application Programming Interface) - a set of rules and protocols that developers can use to interact with a platform. 
 
 In general, an SDK provides a more complete set of tools and resources for developers than an API alone. An SDK may include an API, but it also includes other tools and resources that can help developers build applications more easily. However, the terms SDK and API are often used interchangeably, and the specific definitions can vary depending on the context.
 
@@ -45,7 +45,7 @@ In general, an SDK provides a more complete set of tools and resources for devel
 **Note:** an `interface` can also be considered an `object` in terms of this reference. You can traverse the `AddOnSdk` interfaces/objects (ie: `app`,`instance`) etc in the left navigation to learn more.
 
 
-## What features does the SDK support?
+## Features Supported by the SDK
 - [Importing Content](../../guides/develop/)
 - [Exporting Content](../../guides/develop/)
 - [Drag & Drop Behavior](../../guides/develop/)
@@ -87,7 +87,7 @@ See the [implementing common use cases page](../../guides/develop/) for details 
     <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>AddOnSdk.ready</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>Promise</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Indicates the AddOnSdk object has been initialized and you can start accessing the APIs. Register a call back with [Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).</p></td>
+    <td class="spectrum-Table-cell"><p>Indicates the AddOnSdk object has been initialized and you can start accessing the APIs. Register a call back with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Promise.then</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">await this promise</a>.</p></td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre></pre></p></td>

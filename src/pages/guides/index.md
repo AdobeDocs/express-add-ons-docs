@@ -62,7 +62,7 @@ The journey to developing an add-on is outlined below:
 
 1. Create an add-on project with the CLI. You can refer to the [Getting Started](./getting_started/) guides to help you create your first project quickly. 
 2. Design your UI using [Adobe's Spectrum Design System](https://spectrum.adobe.com/). This system provides guidelines and resources for designing user interfaces that follow Adobe's design language and best practices. 
-3. Use the [common use case implementations](./develop/), [code samples](../samples.md), and [references](../references/) to learn how to include all the features you want to showcase in your add-on. This can help you save time and avoid common mistakes when developing your add-on. 
+3. Use the [common use case implementations](./develop/), [code samples](../samples.md), and [references](../references/) to learn how to include all of the features you want to showcase in your add-on. This can help you save time and avoid common mistakes when developing your add-on. 
 4. [Debug and test](./debug/) your add-on using your favorite browser tools, Visual Studio Code, and the add-on logging window provided in the Adobe Express UI development environment. This will help you identify and fix any bugs or issues before distributing your add-on. 
 5. Distribute your add-on for public or private sharing. You can refer to the [add-on distribution guidelines](./distribute/) to learn how to package and distribute your add-on on the Adobe add-ons marketplace or privately to your clients. 
 

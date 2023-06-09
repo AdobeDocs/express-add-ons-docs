@@ -212,7 +212,92 @@ async function displayAllItems() {
 ## Drag and Drop
 If you want to allow a user to drag and drop items from your add-on to the document, you can use the methods provided for this in the add-on SDK. An example of this is shown below:
 
+### Example using local images
 ```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+const IMAGES = new Map([
+    ["image1.jpg", "./images/image1.jpg"],    
+    ["image2.jpg", "./images/image2.jpg"],
+    ["image3.jpg", "./images/image3.jpg"]
+]);
+
+let gallery;
+
+// Wait for the SDK to be ready before rendering elements in the DOM.
+AddOnSdk.ready.then(async () => {
+    // Create elements in the DOM.
+    gallery = document.createElement("div");
+    gallery.className = "gallery";
+
+    IMAGES.forEach((url, id) => {
+        const image = document.createElement("img");
+        image.id = id;
+        image.src = url;
+        image.addEventListener("click", addToDocument);
+
+        // Enable drag to document for the image.
+        AddOnSdk.app.enableDragToDocument(image, {
+            previewCallback: element => {
+                return new URL(element.src);
+            },
+            completionCallback: async (element) => {
+                return [{ blob: await getBlob(element.src) }];
+            }
+        });
+
+        gallery.appendChild(image);
+    });
+
+    // Register event handler for "dragstart" event
+    AddOnSdk.app.on("dragstart", startDrag);
+     // Register event handler for 'dragend' event
+    AddOnSdk.app.on("dragend", endDrag);
+
+    document.body.appendChild(gallery);
+});
+
+/**
+ * Add image to the document.
+ */
+async function addToDocument(event) {
+    const url = event.currentTarget.src;
+    const blob = await getBlob(url);
+    AddOnSdk.app.document.addImage(blob);
+}
+
+/**
+ * Handle "dragstart" event
+ */
+function startDrag(eventData) {
+    console.log("The drag event has started for", eventData.element.id);
+}
+
+/**
+ * Handle "dragend" event
+ */
+function endDrag(eventData) {
+    if (!eventData.dropCancelled) {
+        console.log("The drag event has ended for", eventData.element.id);
+    } else {
+        console.log("The drag event was cancelled for", eventData.element.id);
+    }
+}
+
+/**
+ * Get the binary object for the image.
+ */
+async function getBlob(url) {
+    return await fetch(url).then(response => response.blob());
+}
+
+```
+
+### Example using a URL
+
+```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
 // Enable drag support for an element
 function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
   const image = document.getElementById(elementId);
