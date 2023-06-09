@@ -27,34 +27,34 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 Adobe Express is an all-in-one content creation app that makes it fast, easy and fun to design standout flyers, TikToks, resumes, Reels, banners, logos, invitations, webpages and so much more. 
 
 ## Add-ons
-Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons.
+Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>
 
-To discover add-ons in [Adobe Express](https://new.express.adobe.com/new), simply follow these steps or watch the short video that follows:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RNHsCQ9TPd8" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-1. Open the Adobe Express editor.
+To discover add-ons in [Adobe Express](https://new.express.adobe.com/new):
+
+1. Open the Adobe Express editor and [create a new file](https://new.express.adobe.com/new) or open an existing one.
 2. Click on the **Add-ons** button located in the left-hand sidebar.
 3. Browse through the different categories of add-ons or use the search bar to find specific add-ons.
 4. Click on an add-on to view more information and to install it.
 
-That's it! You can now use the installed add-ons in your Adobe Express projects.<br/><br/>
+![discover add-ons image](../images/discover.png)
 
-
-<iframe width="680" height="382" src="https://www.youtube.com/embed/E2KyI8x366E" title="Find add-ons in Adobe Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+That's it! You can now use the installed add-ons in your Adobe Express projects.
 
 ### Use Cases
-Some examples of add-on use cases include:
+Ready to build your own? Check out these popular use cases supported by our add-on SDK for inspiration: 
 
 - Importing images and video
+- Exporting renditions of images in different formats
 - Connecting to external sources via OAuth 2.0
 - Storing and retrieving data
-- Supporting drag-and-drop of content to the canvas
+- Drag-and-drop support of content to the canvas
 - Retrieving manifest data
 - Managing language and locale
 - Retrieving the current theme and detecting theme changes
-- Exporting renditions of images in different formats
 
-See the [implementing common use cases page](../develop/) and [code samples](../samples.md) for more details on how to implement the above use cases. 
+See the [implementing common use cases](../develop/) page and [code samples](../samples.md) for more details on how to implement the features above. 
 
 
 ## Add-on Developer Journey
