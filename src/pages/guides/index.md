@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: Adobe Express Add-ons Guides
-description: This is the main guides page
+description: Find the most recent documentation, code samples and resources for building add-ons for Adobe Express.
 contributors:
   - https://github.com/hollyschinsky
 ---
