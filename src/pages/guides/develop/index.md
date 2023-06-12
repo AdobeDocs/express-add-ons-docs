@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: Guides
-description: This is the develop main page
+description:  Useful guides to aid in the development of Adobe Express add-ons, including common use case examples, CORS handling and other development-related resources. 
 contributors:
   - https://github.com/hollyschinsky
 ---
@@ -22,7 +22,7 @@ contributors:
 Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
 
 # Implementing Common Use Cases
-If you're looking to explore and discover the capabilities of our add-ons platform, check out these common use cases and accompanying code snippets to help you get started with our add-on SDK. For more extensive usage examples, check out the [code samples](samples.md). The [SDK references](../../references/addonsdk) are also available to help you find all of the objects, methods, properties and events supported for building add-ons. 
+If you're looking to explore and discover the capabilities of our add-ons platform, check out these common use cases and accompanying code snippets to help you get started with our add-on SDK. For more extensive usage examples, check out the [code samples](https://developer.adobe.com/express-add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/) are also available to help you find all of the objects, methods, properties and events supported for building add-ons. 
 
 ## Importing Content
 Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. You can use the following examples to help you implement this feature in your add-on. The first function shows how to implement adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. To implement the feature of importing content into a design in your add-on, you can use the following examples:
@@ -55,7 +55,7 @@ async function addImageFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-The supported file types for imported content are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**. See the [SDK references](../../references/addonsdk/app-document.md) for additional details on importing content. 
+The supported file types for imported content are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**. See the [SDK References](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/app-document/) for additional details on importing content. 
 
 
 ## Exporting Content
@@ -68,7 +68,7 @@ The steps to export content:
 
 <InlineAlert slots="text" variant="info"/>
 
-Each page of your design is considered a single rendition. See the [SDK references](../../references/addonsdk/app-document.md) for additional rendition options and values.
+Each page of your design is considered a single rendition. See the [SDK References](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/app-document/) for additional rendition options and values.
 
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -122,7 +122,7 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 }
 ```
 
-Once you complete the set up, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](../../samples.md) repo also contain a few different examples of using OAuth 2.0 that we highly recommend checking out. You will also find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module there, which is referenced below, and we recommend using to help with your own OAuth implementation. Also be sure to check out the [SDK references](../../references/addonsdk/app-oauth.md) for additional details on the OAuth workflows.
+Once you complete the set up, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](https://developer.adobe.com/express-add-ons/docs/samples/) also contain a few different examples of using OAuth 2.0 workflows that you can use for a reference. You will also find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module there, which is referenced below, and we recommend using to help with your own OAuth implementation. Also be sure to check out the [SDK References](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/app-oauth) for additional details on the OAuth workflows.
 
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -210,7 +210,7 @@ async function displayAllItems() {
 
 ```
 ## Drag and Drop
-If you want to allow a user to drag and drop items from your add-on to the document, you can use the methods provided for this in the [add-on SDK](../../references/addonsdk/). An example of this is shown below:
+If you want to allow a user to drag and drop items from your add-on to the document, you can use the methods provided for this in the [add-on SDK](/https://developer.adobe.com/express-add-ons/docs/references/addonsdk/). An example of this is shown below:
 
 ### Example using local images
 ```js
@@ -335,7 +335,7 @@ AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
 ```
 
 ## Modal Dialogs
-When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use a simple modal dialog to do so:
+When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use a simple modal dialog to do so, as shown in the following example.
 
 ### Simple Modal Dialog Example
 ```js
@@ -434,7 +434,7 @@ async function showCustomDialog() {
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the [add-on SDK](../../references/addonsdk/) for more details on using modal dialogs.
+Check out the [add-on SDK](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/) for more details on using modal dialogs.
 
 ## Detecting Theme
 When you want to detect the theme of the environment where your add-on is running (aka: Adobe Express), or if you want to be notified if it changes, you can use the following example. This is useful for knowing what theme is currently set in Adobe Express so you can also use the same in your add-on UI, and to apply the theme change when the user changes their Adobe Express theme. Note, that currently Adobe Express only supports a "light" theme, though this will be changing to also support a "dark" theme in the future.

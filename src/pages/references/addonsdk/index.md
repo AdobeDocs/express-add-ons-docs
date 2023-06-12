@@ -11,8 +11,8 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: API Reference
-description: This is the add-on SDK reference page
+title: SDK Reference
+description: The Adobe Express add-on SDK Reference. 
 contributors:
   - https://github.com/hollyschinsky
 ---
@@ -28,7 +28,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 # AddOnSdk Reference
 
 ## Overview
-This reference is provided to outline the interfaces, methods, properties and events that support the [add-on SDK features](#what-features-does-the-sdk-support). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
+This reference is provided to outline the interfaces, methods, properties and events that support the [add-on SDK features](#features-supported-by-the-sdk). It begins with an introduction to the core `AddOnSdk` module, which provides access to the add-on development platform. Import this module to use it for accessing all of the API entities.  
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
