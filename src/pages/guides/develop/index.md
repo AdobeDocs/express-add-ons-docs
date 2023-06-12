@@ -210,7 +210,7 @@ async function displayAllItems() {
 
 ```
 ## Drag and Drop
-If you want to allow a user to drag and drop items from your add-on to the document, you can use the methods provided for this in the [add-on SDK](/https://developer.adobe.com/express-add-ons/docs/references/addonsdk/). An example of this is shown below:
+If you want to allow a user to drag and drop items from your add-on to the document, you can use the methods provided for this in the [add-on SDK](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/). An example of this is shown below:
 
 ### Example using local images
 ```js
