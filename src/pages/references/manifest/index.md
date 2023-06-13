@@ -162,7 +162,7 @@ The following permission values are currently supported in the `sandbox` key.
 
 | Permission      |  Description |
 | ----------------| -------------|
-| `allow-popups`  |  Allows popups (such as `window.open()`, `target="_blank"`, or `showModalDialog()`). If this keyword is not used, the popup will silently fail to open |
+| `allow-popups`  |  Allows popups (such as `window.open()`, `target="_blank"`, or `showModalDialog()`). **Note: If this permission is not set and you're using popups, the popup will silently fail to open.** |
 | `allow-popups-to-escape-sandbox` | Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them |
 | `allow-presentation`  | Lets the add-on start a [presentation session](https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest). |
 | `allow-downloads`     | Allows downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute, as well as through the navigation that leads to a download of a file.          |
