@@ -78,6 +78,40 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
 
    ![Hello World add-on](img/hello-world-loaded-log-open.png)
 
+
+### Step 5: Edit your add-on
+Now, while your add-on is still loaded and running, open the `src/index.html` file and update the **"Hello World!"** string in the `<body>` below:
+
+![](./img/vs-code-hello-world.png)
+
+to **"My first add-on"**:
+
+![](./img/vs-code-update.png)
+
+Note the terminal where your add-on is running will display messages showing that the `src` has been rebuilt like below. This is due to the hot reload feature built into the CLI. 
+
+![hot reload](./img/hot-reload.png)
+
+Go back to your browser where your add-on is running in Adobe Express, and notice the new string is automatically shown, and the **Add-on Development** panel shows that it was auto-reloaded:
+
+![updated add-on](./img/updated-add-on.png)
+
+You can continue to update your code while your add-on is running and the add-on will automatically be rebuilt. 
+
+Note, however, any changes to your `manifest.json` will require a manual reload of your add-on. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on to **My first add-on**, for instance: 
+
+![manifest update](./img/manifest-update.png)
+
+Then, switch back to your Adobe Express window and you should see a message that changes have been detected in your manifest, such as below:
+
+<!-- ![](./img/refresh-btn.png) -->
+
+![manifest refresh reminder](./img/manifest-refresh-reminder.png)
+
+Click the **Refresh** button, then click your add-on icon to load it again, and note the updated name in the title of your add-on as outlined below:
+
+![manifest refresh complete](./img/manifest-refresh-complete.png)
+
 Congratulations! You've completed the quickstart and run your first add-on! 
 
 Next, check out the [development tools](./dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../guides/), where you will find in-depth resources for [designing](../guides/design/), [developing](../guides/develop/), [debugging](../guides/debug/) and [distributing](../guides/distribute/) your add-ons. If you're ready to dive into our developer platform, we highly recommend exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.
