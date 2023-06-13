@@ -67,7 +67,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | [`requirements`](#requirements)     | `object`     | Specify the apps the add-on is applicable for. |
 | [`entryPoints`](#entrypoints)     | `object []`     | An entry point for your add-on. **At least one is required.** |
 
-### requirements
+## requirements
 | Key               | Type         | Description   |
 | -------------------| -------------| -----------:  |
 | [`apps`](#apps)    | `object []`  | Add-on authors can specify the apps that the add-on is intended for. |
@@ -89,7 +89,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 } 
 ```
 
-### apps
+### requirements.apps
 | Key               | Type         | Description   |
 | -------------------| -------------| -----------:  |
 | `name`             | `string`       | Currently supported values: `"Express"` |
@@ -108,7 +108,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 ],
 ```
 
-### supportedDeviceClass 
+#### requirements.apps.supportedDeviceClass 
 The following platform values are currently supported in the `supportedDeviceClass` key.
 
 | Platform       | Description |
@@ -120,7 +120,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 
 **Note:** *The beta version of Adobe Express is currently not yet supported on mobile or tablet devices.*
 
-### entryPoints
+## entryPoints
 | Key         | Type         | Description   |
 | -------------| -------------| -----------:  |
 | `type`       | `string`     | The type of the entry point. Currently supported values: `"panel"`.    | 
@@ -143,7 +143,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 ]
 ```
 
-### permissions
+### entrypoints.permissions
 | Key                   | Type         | Description   |
 | -----------------------| -------------| -----------:  |
 | [`sandbox?`](#sandbox) | `string []`  | List of iframe sandbox permissions.  | 
@@ -157,7 +157,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 }
 ```
 
-### sandbox 
+#### entrypoints.permissions.sandbox 
 The following permission values are currently supported in the `sandbox` key.
 
 | Permission      |  Description |
