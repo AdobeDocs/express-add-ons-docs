@@ -87,4 +87,4 @@ To make use of the add-on SDK's [ClientStorage API](../../references/addonsdk/in
 
 <InlineAlert slots="text" variant="info"/>
 
-See [the Client Storage API](../../references/index.md#client-storage) for more details about storing and persisting data with your add-ons.
+See [the Client Storage API](../../references/addonsdk/instance-clientStorage.md) for more details about storing and persisting data with your add-ons.

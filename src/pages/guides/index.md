@@ -56,7 +56,7 @@ Ready to build your own? Check out these popular use cases supported by our add-
 - Managing language and locale
 - Retrieving the current theme and detecting theme changes
 
-See the [implementing common use cases](../develop/) page and [code samples](../samples.md) for more details on how to implement the features above. 
+See the [implementing common use cases](develop) page and [code samples](../samples.md) for more details on how to implement the features above. 
 
 
 ## Add-on Developer Journey

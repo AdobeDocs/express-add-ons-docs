@@ -31,7 +31,7 @@ Open your terminal and run the following command:
 npx @adobe/create-ccweb-add-on hello-world --template javascript     
 ```
 
-This command will create a new add-on based on a basic `javascript` template. See the [Templates section](../getting_started/dev_tooling/#templates) in the **Development Tools** page for more details on the built-in templates available with the Adobe Express add-ons CLI. 
+This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the Adobe Express add-ons CLI. 
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -114,4 +114,4 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 Congratulations! You've completed the quickstart and run your first add-on! 
 
-Next, check out the [development tools](./dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../guides/), where you will find in-depth resources for [designing](../guides/design/), [developing](../guides/develop/), [debugging](../guides/debug/) and [distributing](../guides/distribute/) your add-ons. If you're ready to dive into our developer platform, we highly recommend exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.
+Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons. If you're ready to dive into our developer platform, we highly recommend exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.

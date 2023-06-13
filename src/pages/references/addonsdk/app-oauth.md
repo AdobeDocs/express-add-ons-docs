@@ -1,5 +1,5 @@
 # AddOnSdk.app.oauth
-Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/develop/#authorization-with-oauth-20). Be sure to check out the [code samples](../../samples.md) as well for more extensive examples of using this workflow.
+Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/develop/index.md#authorization-with-oauth-20). Be sure to check out the [code samples](../../samples.md) as well for more extensive examples of using this workflow.
 
 ## Methods
 
@@ -12,7 +12,7 @@ Authorize a user using OAuth 2.0 PKCE workflow.
 ### Parameters
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `request`      | `object`       | [`AuthorizationRequest`](#authorizationrequest-object) object payload with parameters to be used in the authorization workflow. |
+| `request`      | `object`       | [`AuthorizationRequest`](#authorizationrequest) object payload with parameters to be used in the authorization workflow. |
 
 ### `AuthorizationRequest` 
 | Name                  | Type              | Description   |
@@ -25,7 +25,7 @@ Authorize a user using OAuth 2.0 PKCE workflow.
 
 
 ### Return Value
-A resolved `Promise` with the [`AuthorizationResponse`](#authorizationresponse-object) object containing a one-time authorization code which can be used to obtain an access token.
+A resolved `Promise` with the [`AuthorizationResponse`](#authorizationresponse) object containing a one-time authorization code which can be used to obtain an access token.
 
 ### `AuthorizationResponse`
 | Name          | Type         | Description   |
@@ -33,7 +33,7 @@ A resolved `Promise` with the [`AuthorizationResponse`](#authorizationresponse-o
 | `id`          |`string`      | Unique identifier for the authorization request. |
 | `code`        | `string`     | OAuth 2.0 generated authorization code which can be used once to obtain an access token and a refresh token. |
 | `redirectUri` | `string`     | URL where the user is redirected to after authorization. This is the default URL owned by Adobe and it is this URL which needs to be used to obtain access_token. |
-| `result`      |`string` or `object` | An [`AuthorizationResult`](#authorizationresult-object) payload which denotes either success or failure. In the event of a "FAILED" status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses the value of `description` is a `string`.  |
+| `result`      |`string` or `object` | An [`AuthorizationResult`](#authorizationresult) payload which denotes either success or failure. In the event of a "FAILED" status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses the value of `description` is a `string`.  |
 
 ## authorizeWithOwnRedirect()
 Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in window. After authorization, the user is redirected to the add-on developer provided URL.     
@@ -45,7 +45,7 @@ Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in w
 ### Parameters
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `request`     | `object`     | [`AuthorizeWithOwnRedirectRequest`](#authorizewithownredirectrequest-object) object payload with parameters to be used in the authorization workflow. |
+| `request`     | `object`     | [`AuthorizeWithOwnRedirectRequest`](#authorizewithownredirectrequest) object payload with parameters to be used in the authorization workflow. |
 
 ### `AuthorizeWithOwnRedirectRequest` 
 | Name                  | Type              | Description   |
@@ -59,7 +59,7 @@ Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in w
 | `state`               | `string`             | A value which is preserved in the request, and replayed back as a query string parameter in the `redirectUri`. Although the primary reason for using the state parameter is to mitigate CSRF attacks, it can also be used to encode any other information.  |
 
 ### Return Value
-A resolved `Promise` with the [`AuthorizationResult`](#authorizationresult-object) object, which contains a `status` and a `description`, which will either be a `string` or an `object`. In the event of a `FAILED` status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses, the value of `description` is a `string`.
+A resolved `Promise` with the [`AuthorizationResult`](#authorizationresult) object, which contains a `status` and a `description`, which will either be a `string` or an `object`. In the event of a `FAILED` status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses, the value of `description` is a `string`.
 
 
 ### `AuthorizationResult` 

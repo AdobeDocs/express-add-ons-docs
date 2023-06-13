@@ -1,5 +1,5 @@
 # AddOnSdk.app.document
-Provides access to the methods needed for [importing content](../../guides/develop/#importing-content) to the document and for [exporting content](../../guides/develop/#exporting-content) for export.
+Provides access to the methods needed for [importing content](../../guides/develop/index.md#importing-content) to the document and for [exporting content](../../guides/develop/index.md#exporting-content) for export.
 
 ## Methods
 ## addImage()
@@ -28,7 +28,7 @@ A resolved promise if the image was successfully added to the canvas, otherwise 
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [importing content use case example](../../guides/develop/#importing-content) and the [export-sample](../../samples.md) in the code samples for usage examples.
+Refer to the [importing content use case](../../guides/develop/index.md#importing-content) and the [import-images-from-local](../../samples/#import-images-from-local) in the code samples for usage examples.
 
 
 ## createRenditions()
@@ -80,5 +80,5 @@ A `Promise` with an array of page `Rendition` objects. It will contain one page 
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [exporting content use case example](../../guides/develop/#importing-content) and the [export-sample](../../samples.md) in the code samples for usage examples.
+Refer to the [exporting content use case example](../../guides/develop/index.md#exporting-content) and the [export-sample](../../samples/#export-sample) in the code samples for usage examples.
 

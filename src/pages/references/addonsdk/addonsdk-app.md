@@ -1,5 +1,5 @@
 # AddOnSdk.app
-Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md) and theme and locale detection with the [`ui` object](app-ui.md). It also provides access to methods to [show modal dialogs](../../guides/develop/#modal-dialogs), [enable drag and drop](../../guides/develop/#drag-and-drop) of content and subscribe and unsubscribe to events. 
+Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md) and theme and locale detection with the [`ui` object](app-ui.md). It also provides access to methods to [show modal dialogs](../../guides/develop/index.md#modal-dialogs), [enable drag and drop](../../guides/develop/index.md#drag-and-drop) of content and subscribe and unsubscribe to events. 
 
 
 ## Objects
@@ -181,7 +181,7 @@ let inputDialogOptions = {
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/develop/#custom-modal-dialog-example).
+See the use case implementations for an example of the [custom modal dialog](../../guides/develop/index.md#custom-dialog-example).
 
 
 ### enableDragToDocument()
@@ -226,7 +226,7 @@ Callback used to get the final data to be added to the document post drag & drop
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/develop/#drag-and-drop) for example usage, and the [code samples](../../samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/develop/index.md#drag-and-drop) for example usage, and the [code samples](../../samples.md) provided for reference.
 
 
 ## Events

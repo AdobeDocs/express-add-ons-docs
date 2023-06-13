@@ -117,7 +117,7 @@ npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
 
 
 ## Manifest
-A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../references/manifest.md) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
+A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
 
 
 ## Add-on Development Tools Panel

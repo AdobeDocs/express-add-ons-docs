@@ -25,27 +25,11 @@ module.exports = {
       },
       {
         title: 'SDK References',
-        path: 'references'
-        // menu: [  
-        //   {
-        //     title: 'Changelog',            
-        //     path: 'references/changelog.md'         
-        //   },          
-        //   {
-        //     title: 'AddOnSdk API Reference',
-        //     // description: 'API Reference v1',
-        //     path: 'references/addonsdk'         
-        //   },          
-        //   {
-        //     title: 'Manifest Schema',
-        //     // description: 'Manifest Schema',
-        //     path: 'references/manifest'
-        //   }
-        // ]
+        path: 'references'        
       },
       {
         "title": "Samples & Resources",
-        "path": 'samples.md'        
+        "path": 'samples'        
       },      
     ],
     subPages: [  
@@ -55,7 +39,7 @@ module.exports = {
     },      
     {              
       title: 'AddOnSdk',                
-      path: 'references/addonsdk/index.md',            
+      path: 'references/addonsdk/',            
       pages: [                                                                                                                
         {
           "title": "app",
@@ -134,11 +118,7 @@ module.exports = {
           {
             "title": "User interface guide",
             "path": "guides/design/"
-          }, 
-          // {
-          //   "title": "Spectrum Guide",
-          //   "path": "guides/design/spectrum.md"
-          // },  
+          },            
           {
             "title": "Best practices",
             "path": "guides/design/best_practices.md"
@@ -147,11 +127,11 @@ module.exports = {
       },      
       {
         "title": "Develop",
-        "path": "guides/develop",
+        "path": "guides/develop/index.md",
         "pages": [   
           {
             "title": "Implementing Common Use Cases",
-            "path": "guides/develop/"
+            "path": "guides/develop/index.md"
           },                                             
           {
             "title": "Frameworks, libraries and bundling",
@@ -194,65 +174,7 @@ module.exports = {
             "path": "guides/distribute/public-dist.md"
           },                           
         ]
-      },               
-      // {
-      //   "title": "References",
-      //   "path": "references",      
-      //   "pages": [          
-          // {
-          //   title: 'Changelog',            
-          //   path: 'references/changelog.md'
-          // }, 
-          // {              
-          //   title: 'AddOnSdk',                
-          //   path: 'references/addonsdk/index.md',            
-          //   pages: [                                                                                                                
-          //     {
-          //       "title": "app",
-          //       "path": "references/addonsdk/addonsdk-app.md",
-          //       pages: [                                                                                                                    
-          //         {
-          //           "title": "document",
-          //           "path": "references/addonsdk/app-document.md"
-          //         },
-          //         {
-          //           "title": "oauth",
-          //           "path": "references/addonsdk/app-oauth.md"
-          //         },
-          //         {
-          //           "title": "ui",
-          //           "path": "references/addonsdk/app-ui.md"
-          //         },
-          //       ]
-          //     },                                  
-          //     {
-          //       "title": "instance",
-          //       "path": "references/addonsdk/addonsdk-instance.md",
-          //       pages: [                                                                                                                    
-          //         {
-          //           "title": "clientStorage",
-          //           "path": "references/addonsdk/instance-clientStorage.md"
-          //         },
-          //         {
-          //           "title": "manifest",
-          //           "path": "references/addonsdk/instance-manifest.md"
-          //         },
-          //       ]
-          //     },
-          //     {
-          //       "title": "constants",
-          //       "path": "references/addonsdk/addonsdk-constants.md"
-          //     },
-
-          //   ]          
-          // },                                                                                                                           
-          // {
-          //   title: 'Manifest',
-          //   description: 'Manifest Schema',
-          //   path: 'references/manifest'
-          // },          
-      //     ]           
-      // }, 
+      }, 
       {
         "title": "FAQs",
         "path": "guides/faq.md"        

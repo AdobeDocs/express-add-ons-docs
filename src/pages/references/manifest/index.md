@@ -70,7 +70,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 ## requirements
 | Key               | Type         | Description   |
 | -------------------| -------------| -----------:  |
-| [`apps`](#apps)    | `object []`  | Add-on authors can specify the apps that the add-on is intended for. |
+| [`apps`](#requirementsapps)    | `object []`  | Add-on authors can specify the apps that the add-on is intended for. |
 | `experimentalApis?`| `boolean`    | Add-ons can opt to use experimental apis by specifying this flag. This flag is **only allowed during development** and needs to be removed during submission.                               |
 | `supportsTouch?`   | `boolean`    | Whether the add-on supports touch-only devices. If not specified, the default value assumed is `false`.  |
 
@@ -94,7 +94,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | -------------------| -------------| -----------:  |
 | `name`             | `string`       | Currently supported values: `"Express"` |
 | `apiVersion`         | `number`       | API version that the add-on uses. Currently supported values: 1 |
-| [`supportedDeviceClass?`](#supporteddeviceclass) | `string []`  | Supported platforms by the add-on. If not specified, the default value assumed is: `["desktop"]`. |
+| [`supportedDeviceClass?`](#requirementsappssupporteddeviceclass ) | `string []`  | Supported platforms by the add-on. If not specified, the default value assumed is: `["desktop"]`. |
 
 <!-- | `supportedDeviceClass?` | `string []`  | Supported platforms by the add-on. Possible values are <ul><li>"desktop"</li><li>"mobile</li><li>"app"</li></ul> If not specified, default value assumed is: \["desktop"\]. | -->
 **Example:**<br/>
@@ -126,7 +126,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 | `type`       | `string`     | The type of the entry point. Currently supported values: `"panel"`.    | 
 | `id`         | `string`     | Identifier for the entry point. Must be unique within the add-on.  |
 | `main`        | `string`    | Main file for this entry point when launched.   |
-| [`permissions`](#permissions) | `object`    | The permissions defined for this entry point. |
+| [`permissions`](#entrypointspermissions) | `object`    | The permissions defined for this entry point. |
 
 **Example:**<br/>
 ```json
@@ -146,7 +146,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 ### entrypoints.permissions
 | Key                   | Type         | Description   |
 | -----------------------| -------------| -----------:  |
-| [`sandbox?`](#sandbox) | `string []`  | List of iframe sandbox permissions.  | 
+| [`sandbox?`](#entrypointspermissionssandbox) | `string []`  | List of iframe sandbox permissions.  | 
 | `oauth?`               | `string []` | List of 3rd party auth server domains for which OAuth workflow may be requested. |
 
 **Example:**<br/>
