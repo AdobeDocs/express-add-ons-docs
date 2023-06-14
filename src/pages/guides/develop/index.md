@@ -338,7 +338,7 @@ AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
 ```
 
 ## Modal Dialogs
-When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use a modal dialog to do so. Below are some examples of the different types of modal dialogs supported, but also check out the [related SDK Reference section](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/addonsdk-app/#showmodaldialog) and [dialog add-on sample](https://developer.adobe.com/express-add-ons/docs/samples/#dialog-add-on) for more details.
+When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use a modal dialog to do so. Below are some examples of the different types of modal dialogs supported. Also check out the SDK references for details on how to [show](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/addonsdk-app.md#showmodaldialog) or [programmatically close a dialog](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/runtime-dialog.md#close), as well as the [dialog add-on sample](https://developer.adobe.com/express-add-ons/docs/samples/#dialog-add-on) for more details.
 
 ### Simple Modal Dialog Example
 ```js
@@ -435,9 +435,9 @@ async function showCustomDialog() {
 }
 ```
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text" variant="success"/>
 
-Check out the [add-on SDK](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/) for more details on using modal dialogs.
+Check out the [add-on SDK](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/) for more specific details on using modal dialogs, including [programmatically closing a dialog with an optional custom result](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/runtime-dialog.md#close).
 
 ## Detecting Theme
 When you want to detect the theme of the environment where your add-on is running, or if you want to be notified if it changes, you can use the following example. This is useful for knowing what theme is currently set in Adobe Express, so you can use the same in your add-on UI, or to apply a change to your UI when the user changes their Adobe Express theme. **Note:** currently Adobe Express only supports a "light" theme, though this will be changing to include support for a "dark" theme in the future. See the snippet below for an example of how to use and detect the theme, as well as the [related SDK Reference section](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/app-ui/#theme).

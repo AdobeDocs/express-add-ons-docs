@@ -133,6 +133,11 @@ Returns a `Promise` (`DialogResult`)[#dialogresult] object with the [button type
 
 #### Example Usage
 ```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+// Wait for the SDK to be ready
+await AddOnSdk.ready;
+
 // Confirmation Dialog Example
 let dialogOptions = {
     title: titleValue,

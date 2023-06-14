@@ -62,7 +62,7 @@ module.exports = {
         {
           "title": "instance",
           "path": "references/addonsdk/addonsdk-instance.md",
-          pages: [                                                                                                                    
+           pages: [                                                                                                                    
             {
               "title": "clientStorage",
               "path": "references/addonsdk/instance-clientStorage.md"
@@ -70,6 +70,16 @@ module.exports = {
             {
               "title": "manifest",
               "path": "references/addonsdk/instance-manifest.md"
+            },
+            {
+              "title": "runtime",
+              "path": "references/addonsdk/instance-runtime.md",
+               pages: [                                                                                                                    
+                {
+                  "title": "dialog",
+                  "path": "references/addonsdk/runtime-dialog.md"
+                }
+              ]
             },
           ]
         },

@@ -21,7 +21,7 @@ Adds a video to the current page.
 ### Parameters
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `imageBlog`   | `Blob`       | The video to add to the page. |
+| `imageBlob`   | `Blob`       | The video to add to the page. |
 
 ### Return Value
 A resolved promise if the image was successfully added to the canvas, otherwise will throw an error with the rejected promise.

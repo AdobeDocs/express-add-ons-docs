@@ -58,6 +58,14 @@ Variant	confirmation, information, warning, destructive, error, input
     </td>
 </tr>
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>RuntimeType</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>Runtime type of the entrypoint creating this backend object.</p>        
+    </td>
+</tr>
+
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>Variant</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">        
@@ -89,7 +97,7 @@ Variant	confirmation, information, warning, destructive, error, input
     <td class="spectrum-Table-cell"><p><pre>ButtonType</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">        
-        <p>The type of the button in a Simple Dialog.</p>   
+        <p>The type of the button pressed in a dialog.</p>   
         <ul>
           <li><strong>primary</strong></li>Primary button pressed.
           <li><strong>secondary</strong></li>Secondary button pressed.
