@@ -8,7 +8,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript. Watch this short clip showing the quickstart steps you will take to see how easy it is to get your own add-on project up and running quickly. 
 
-<iframe src="https://drive.google.com/file/d/1uknr0U4wUZCfZAAP1O7Qydju5hzofihc/preview" width="750" height="422" allow="autoplay"></iframe>
+<iframe src="https://drive.google.com/file/d/1uknr0U4wUZCfZAAP1O7Qydju5hzofihc/preview" width="750" height="422" allow="autoplay" style="border: 0"></iframe>
 
 <br/>
 
@@ -18,31 +18,27 @@ This quickstart guide will help you create and run your first add-on, a simple h
 - Familiarity with programming in HTML, CSS and JavaScript
 - An Adobe Express account (use an existing Adobe ID or simply create one for free).
 - Access to the beta version of Adobe Express ([Join the waitlist](https://adobe.com/go/express-developer))
-- Adobe Express add-on CLI ([Join the waitlist](https://adobe.com/go/express-developer))
+- Adobe Express add-on [CLI](#cli) ([Join the waitlist](https://adobe.com/go/express-developer))
 
-## Add-on CLI 
-To facilitate the development of add-ons, we have provided a CLI (Command Line Interface) that allows you to create and host Adobe Express add-ons directly from your local machine so they can be loaded into the beta version of Adobe Express running in your browser. 
+### Add-on CLI 
+The **add-on CLI (Command Line Interface) is required for add-on development**, and allows you to create and host Adobe Express add-ons directly from your local machine. Currently, however, the CLI is offered on a wait list only basis. Please fill in and submit [this wait list form](https://adobe.com/go/express-developer) if you're interested in developing add-ons.
 
 
-<InlineAlert slots="text" variant="info"/>
-
-**IMPORTANT:** These steps require access to the beta version of Adobe Express and the add-on CLI, which are currently offered to interested developers on a *wait list basis*. If you're interested, please fill in and submit [this wait list form](https://adobe.com/go/express-developer) to get on the list now!
-
-### Step 1: Create your add-on project
+## Step 1: Create your add-on project
 Open your terminal and run the following command:
 
 ```bash
 npx @adobe/create-ccweb-add-on hello-world --template javascript     
 ```
 
-This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the Adobe Express add-ons CLI. 
+This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](#cli). 
 
 <InlineAlert slots="text" variant="success"/>
 
 `npx` is an `npm` package runner that can execute packages without installing them explicitly.
 
 
-### Step 2: Build and start your add-on
+## Step 2: Build and start your add-on
 Next, execute the following commands to change into the newly created **hello-world** add-on folder, `build` the add-on, and `start` the add-on in a local server:
 
 ```bash
@@ -58,7 +54,7 @@ Your panel 'hello-world' can now be sideloaded
 By enabling the Developer Mode </> from the **Add-ons** panel.
 ```
 
-### Step 3: Enable add-on development mode (first-time only)
+## Step 3: Enable add-on development mode (first-time only)
 - Navigate to the [beta version of Adobe Express](https://new.express.adobe.com/).
 - Click on your user avatar in the top righthand corner and choose **Settings**.
 
@@ -69,7 +65,7 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
    ![Dev settings toggle on](./img/dev-settings.png)
 
 
-### Step 4: Load and run your add-on
+## Step 4: Load and run your add-on
 - Navigate your browser to the [beta version of Adobe Express](https://new.express.adobe.com/new) and create a new project.
 - Click the **Add-ons** icon in the left rail.
 - Toggle on the radio **Add-on testing** toggle button.
@@ -83,7 +79,7 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
    ![Hello World add-on](img/hello-world-loaded-log-open.png)
 
 
-### Step 5: Edit your add-on
+## Step 5: Edit your add-on
 Now, while your add-on is still loaded and running, open the `src/index.html` file and update the **"Hello World!"** string in the `<body>` below:
 
 ![](./img/vs-code-hello-world.png)
