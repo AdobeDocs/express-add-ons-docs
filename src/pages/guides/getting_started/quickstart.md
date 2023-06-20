@@ -6,7 +6,11 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 # Quickstart 
 
-This quick start guide will help you create and run your first add-on, a starter add-on that outputs "hello world" when it's run in Adobe Express.
+This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript. Watch this short clip showing the quickstart steps you will take to see how easy it is to get your own add-on project up and running quickly. 
+
+<iframe src="https://drive.google.com/file/d/1uknr0U4wUZCfZAAP1O7Qydju5hzofihc/preview" width="750" height="422" allow="autoplay"></iframe>
+
+<br/>
 
 ## Prerequisites
 
@@ -88,7 +92,7 @@ to **"My first add-on"**:
 
 ![](./img/vs-code-update.png)
 
-Note the terminal where your add-on is running will display messages showing that the `src` has been rebuilt like below. This is due to the hot reload feature built into the CLI. 
+Note the terminal where your add-on is running will display messages showing that the `src` has been rebuilt like below. This is due to the hot module reload feature built into the CLI. 
 
 ![hot reload](./img/hot-reload.png)
 

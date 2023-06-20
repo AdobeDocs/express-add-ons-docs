@@ -1,14 +1,24 @@
 # Create a Private Distribution Link
 
 ## Overview
-You can choose to create a private link to share your add-on with others for use or testing by following the instructions outlined in this section.
+You can choose to create a private link to share your add-on with others to use or test by following the instructions outlined in this section.
+
+## Prepare your add-on package
+You will be required to upload a zip of your add-on package in the process of creating a private link. The CLI contains a handy script to help with this step. Open your terminal and navigate into the root of your add-on project, then run the following command: 
+
+```bash
+npm run package
+```
+
+The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder. 
+
 
 ## Step 1: Invoke the distribution modal
-A new **Manage** button should now be displayed in your add-ons launchpad, and will invoke the in-app distribution experience when clicked.
+Locate the **Manage** button in the add-ons launchpad and click it to invoke the in-app distribution modal.
 
 ![Manage button in launchpad](./img/manage.png)
 
-If you haven't created any listings for your add-ons yet, then you will see the following modal:
+If you haven't created any listings for your add-ons yet, then you will see the following in the modal:
 
 ![First add-on submission modal](./img/distrib-first.png)
 
@@ -20,17 +30,18 @@ Select **Create New** from either, and continue to step 2.
 
 ## Step 2: Create a new private link
 Next, you will choose how you want to distribute your add-on, whether it's to share privately only, or if you want it publicly available. Select **Private link**, and hit **Next**.
+
 ![](./img/private-option.png)
 
 
-## Step 3: Upload add-on package
+## Step 3: Upload your add-on package
 The next step is to upload your package zip. Click on the **select from your computer** link and choose your add-on package zip from your file system.
-
-![Empty upload modal](./img/private-upload.png)
 
 <InlineAlert slots="text" variant="info"/>
 
-This plugin package should contain the production-ready built content in the root of the zip (think in terms of content like from the `/dist` folder, but in the root of the zip and in the most production-ready form). We will not be building/compiling your source. You should try to reduce the size as much as possible. Minifying, uglifying, obfuscating, removing the sourcemaps etc are acceptable to use in producing your final bundle. You can use the command `npm run package` to create a package. It will create a `dist.zip` that you can use for uploading. 
+In case you missed it, the [top section on preparing your add-on package](#prepare-your-add-on-package) can be used to help you create the zip file needed for this step.
+
+![Empty upload modal](./img/private-upload.png)
 
 The package will go through a verification process which may take a few seconds, so please be patient. 
 
@@ -61,7 +72,7 @@ Now you will be prompted to choose a unique *name* for your add-on, an *icon*, a
 
 <InlineAlert slots="text" variant="success"/>
 
-The number of characters allowed for any given field above it on the right throughout the distribution experience, and see how many are available still as you are typing into it. For instance, the name allows a max of 25 characters.
+The number of characters allowed for any given field is shown above it throughout the distribution experience (for instance, the name field allows a max of 25 characters), and the number will automatically update with the remaining amount as you're typing into it.
 
 Once you've entered the required fields, the **Save and create private link** button will be enabled.
 
