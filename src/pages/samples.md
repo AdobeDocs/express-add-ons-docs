@@ -184,7 +184,7 @@ Allows users to search for popular gifs and add them to the document.
 - [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 
 ## [QR Code](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/qrcode)
-Allows users to search for popular gifs and add them to their Express pages.
+Allows users to create a QR code based on a URL and add it to their document. 
 
 **Technologies Used:** <br/>
 
@@ -193,5 +193,5 @@ Allows users to search for popular gifs and add them to their Express pages.
 
 **Features Leveraged:**<br/>
 
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+- [Import Content](./references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
+- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.

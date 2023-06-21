@@ -37,7 +37,7 @@ We recommend using `swc-react` over [React Spectrum](#react-spectrum) in your ad
 ### Spectrum Web Components with Express Theme
 Below are the steps for using the Express theme with your Spectrum Web Components UI:
 
-- Install the `spectrum-web-components` packages you would like to use. The `theme` package is one you will always want to specify, but the others are being shown for illustration purposes. You can choose which components you will be using in your add-on and install them as needed. See the [Spectrum Web Components site](https://opensource.adobe.com/spectrum-web-components/getting-started/) for all of the components available.
+- Install the `spectrum-web-components` packages you would like to use. The `theme` package is one you will always want to install, but the others are included for illustration. See the [Spectrum Web Components site](https://opensource.adobe.com/spectrum-web-components/getting-started/) for all of the components available.
 
     ```bash
     npm install @spectrum-web-components/theme
@@ -54,7 +54,7 @@ Below are the steps for using the Express theme with your Spectrum Web Component
     import '@spectrum-web-components/theme/src/express/themes.js';       
     ``` 
 
-- Then import the specific components you need to use in your code, such as: 
+- Then import the specific components you want to use in your code, such as: 
     
     ```js
     import '@spectrum-web-components/button/sp-button.js';
