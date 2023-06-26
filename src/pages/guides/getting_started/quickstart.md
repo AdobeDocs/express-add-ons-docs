@@ -8,7 +8,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript. Watch this short clip showing the quickstart steps you will take to see how easy it is to get your own add-on project up and running quickly. 
 
-<iframe src="https://drive.google.com/file/d/1uknr0U4wUZCfZAAP1O7Qydju5hzofihc/preview" width="750" height="422" allow="autoplay" style="border: 0"></iframe>
+<iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="800" height="518" allow="autoplay" style="border: 0"></iframe>
 
 <br/>
 

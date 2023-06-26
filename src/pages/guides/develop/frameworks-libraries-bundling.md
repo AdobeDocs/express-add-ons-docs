@@ -1,7 +1,7 @@
 # Using Web Frameworks and Libraries
 
 ## Typescript definitions
-A TypeScript definitions package (`ccweb-add-on-sdk-types`) is automatically included in the `package.json` for the `typescript` and `react-typescript` templates, and provides auto-completion and type checking capabilities for the `AddOnSdk`. To use, simply import the types needed in your `.ts` file, such as:
+The AddOnSdk is a set of interfaces written in TypeScript, and a TypeScript definitions package (`ccweb-add-on-sdk-types`) is automatically included in the `package.json` for the `typescript` and `react-typescript` templates, and provides auto-completion and type checking capabilities you can  leverage with the intellisense features provided in IDE's such as Visual Studio Code. To use them, simply import the types needed in your `.ts` file, such as:
 
 ```ts
 import {
@@ -10,7 +10,11 @@ import {
 } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 ```
 
-<!-- ![Intellisense](./img/intellisense.mov) -->
+An example of how this works in Visual Studio Code is shown in this short clip below.<br/>
+
+<div style="display: flex; justify-content: center;">
+<iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
+</div>
 
 ## Webpack & JavaScript bundlers
 When using Node libraries or other frameworks, you'll often need to use a JavaScript bundler. All of the templates the CLI provides (other than the basic `javascript` template) are pre-configured for webpack via the `--use` option set on the `ccweb-add-on-scripts` commands. If you create a new add-on project based on a react or typescript based template for instance, you will see the following `scripts` block generated in your `package.json`, and the existence of a `webpack.config.js` in the root of your project:

@@ -229,6 +229,11 @@ Callback used to get the final data to be added to the document post drag & drop
 #### Return Value 
 `void`
 
+**\* Important Event Handling Notes**<br/>
+- Since the AddOnSdk uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
+- You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
+- TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
+
 <InlineAlert slots="text" variant="info"/>
 
 See the [Drag & Drop use case implementation](../../guides/develop/index.md#drag-and-drop) for example usage, and the [code samples](../../samples.md) provided for reference.

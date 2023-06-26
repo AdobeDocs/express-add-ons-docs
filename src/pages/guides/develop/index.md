@@ -31,6 +31,9 @@ Importing content into a design is one of the most popular use cases. For instan
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
+// Wait for the SDK to be ready
+await AddOnSdk.ready;
+
 // Reference to the active document
 const { document } = AddOnSdk.app;
 
@@ -336,6 +339,13 @@ AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
   }
 });
 ```
+
+ 
+**Important Notes:**
+- Since the AddOnSdk uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
+- You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
+- TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
+
 
 ## Modal Dialogs
 When you need to pop up a dialog to show a certain message such as an informational, warning or error message, you can use a modal dialog to do so. Below are some examples of the different types of modal dialogs supported. Also check out the SDK references for details on how to [show](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/addonsdk-app/#showmodaldialog) or [programmatically close a dialog](https://developer.adobe.com/express-add-ons/docs/references/addonsdk/runtime-dialog/#close), as well as the [dialog add-on sample](https://developer.adobe.com/express-add-ons/docs/samples/#dialog-add-on) for more details.
