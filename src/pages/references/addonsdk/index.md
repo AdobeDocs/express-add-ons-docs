@@ -139,19 +139,14 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
 
 **TIP:** Placing your `<script>` tag just before the closing `<body>` tag helps reduce the page loading time.
 
-#### Import into JavaScript file
-The SDK can be referenced in `.js/.jsx` source files by adding it to the list of imports as a default module reference, such as in the following:
+#### Import into JavaScript/TypeScript file
+The SDK can be referenced in `.js/.jsx/.ts/.tsx` source files by adding it to the list of imports as a default module reference, such as in the following:
 
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
-#### Import into TypeScript file
-```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-
-```
-Note, if you created your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get the following type definition generated in your project for you:
+**Note:** if you created your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get a types definition file named `ccweb-add-on-sdk-typings.d.ts` generated in your project `src` for you. This file contains the following exports, and allows you to take advantage of type checking and auto-completion features while developing with the AddOnSdk in your IDE.
 
 ```ts
 declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
@@ -159,3 +154,4 @@ declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
     export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 }
 ```
+See the [typescript definitions section](../../guides/develop/frameworks-libraries-bundling.md#typescript-definitions) in the developer guides as well for more details. 

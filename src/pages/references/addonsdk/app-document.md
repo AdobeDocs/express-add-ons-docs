@@ -3,8 +3,10 @@ Provides access to the methods needed for [importing content](../../guides/devel
 
 ## Methods
 ## addImage()
-<!--addImage(imageBlob: Blob): Promise<void>;-->
 Adds an image to the current page. 
+
+### Signature
+`addImage(imageBlob: Blob): Promise<void>`
 
 ### Parameters
 | Name          | Type         | Description   |
@@ -14,9 +16,15 @@ Adds an image to the current page.
 ### Return Value
 A resolved promise if the image was successfully added to the canvas, otherwise will throw an error with the rejected promise.
 
+<InlineAlert slots="text" variant="info"/>
+
+The supported file types for imported content are currently **`png/jpg/jpeg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**.
+
 ## addVideo()
-<!-- addVideo(blob: Blob): Promise<void>; -->
 Adds a video to the current page. 
+
+### Signature
+`addVideo(blob: Blob): Promise<void>`
 
 ### Parameters
 | Name          | Type         | Description   |
@@ -51,22 +59,22 @@ Create renditions of the current page or the whole document for exporting in a s
 
 <InlineAlert slots="text" variant="info"/>
 
-The following *additional* options are supported for **`jpg` `RenditionFormat` option only**.
+The following *additional* options are supported for `RenditionFormat` is `jpg`.
 
 ### JpgRenditionOptions
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `quality?`       | `string`     | The background color to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created.
-| `backgroundColor?` | `string`     |  A number between 0 and 1, indicating image quality. Default is 1.0. |
+| `backgroundColor?` | `string` | The background color to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| `quality?` | number |  A number between 0 and 1, indicating image quality. Default is 1.0. |
 
 <InlineAlert slots="text" variant="info"/>
 
-The following *additional* option is supported for **`png` `RenditionFormat` option**.
+The following *additional* option is supported when the `RenditionFormat` is `png`.
 
 ### PngRenditionOptions
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `backgroundColor?` | `string` |  A number between 0 and 1, indicating image quality. Default is 1.0. |
+| `backgroundColor?` | `string` |  The background color to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 
 ### Return Value
 A `Promise` with an array of page `Rendition` objects. It will contain one page if the current page was selected or all pages in the case of the document. Each rendition returned will contain the `type` and a `blob` of the rendition itself.

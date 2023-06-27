@@ -1,7 +1,7 @@
 # Using Web Frameworks and Libraries
 
 ## Typescript definitions
-The AddOnSdk is a set of interfaces written in TypeScript, and a TypeScript definitions package (`ccweb-add-on-sdk-types`) is automatically included in the `package.json` for the `typescript` and `react-typescript` templates, and provides auto-completion and type checking capabilities you can  leverage with the intellisense features provided in IDE's such as Visual Studio Code. To use them, simply import the types needed in your `.ts` file, such as:
+The `AddOnSdk` is a set of interfaces written in TypeScript, and a TypeScript definitions package named `ccweb-add-on-sdk-types` is automatically included in the `package.json` for the `typescript` and `react-typescript` templates. As a result, a `ccweb-add-on-sdk-typings.d.ts` file is generated in the `src` folder that exports the `AddOnSdk` types, allowing you to take advantage of auto-completion and type checking capabilities. To use the type definitions, simply import them as needed in your `.ts` file, such as:
 
 ```ts
 import {
