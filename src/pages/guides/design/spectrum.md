@@ -15,12 +15,42 @@ The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-componen
   - Accessible by default 
   - Standards based
 
+To use Spectrum Web Components (SWC), follow these steps:
+
+Install the `@spectrum-web-components` package using a package manager like `npm` or `yarn`. For example, run the following command in your project directory:
+
+`npm install --save @spectrum-web-components`
+ 
+Import the SWC components that you want to use in your web application. For example, to use the `sp-button` component, add the following import statement to your JavaScript or TypeScript file:
+
+```js
+import '@spectrum-web-components/button';  
+```
+ 
+ Use the imported SWC component in your HTML code. For example, in the case of the `sp-button` component, you can use it with the following:
+
+```html
+<sp-button variant="cta" size="large">Click me!</sp-button>  
+```
+
+This will render a button with the "Call to Action" variant and "Large" size.
+
+You can customize the SWC components by passing in attributes to the HTML tags. For instance, to change the color of a button, add the `color` attribute:
+
+```html
+<sp-button variant="cta" size="large" color="red">Click me!</sp-button>  
+```
+
+This will render a button with a red color.
+
+Continue adding components and styling with attributes as desired. See the [official documentation](https://opensource.adobe.com/spectrum-web-components/index.html) for a comprehensive list of all of the available components you can use in your add-ons.
+
 ### Spectrum Web Components with React
 [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) is a collection of React wrapper components for the Spectrum Web Components (SWC) library, enabling you to use SWC in your React applications with ease.     
 
 <InlineAlert slots="text" variant="success"/>
 
-We **highly** recommend choosing to use Spectrum Web Components (or swc-react) for your add-ons since it currently offers the most comprehensive set of components and built-in benefits. 
+We **highly** recommend choosing to use Spectrum Web Components (or [swc-react](#spectrum-web-components-with-react)) for your add-ons since it currently offers the most comprehensive set of components and built-in benefits. 
 
 ## React Spectrum
 [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) is a project that implements the Adobe's Spectrum design language into React UI components.
@@ -31,13 +61,94 @@ We **highly** recommend choosing to use Spectrum Web Components (or swc-react) f
   - **react-aria**: a library of React hooks implementing the patterns defined in the ARIA practices spec, including mouse, touch, and keyboard behavior, accessibility, and internationalization support
   - **react-stately**: a library of React hooks implementing cross platform (e.g. web/native) state management for components that need it.
 
+To use React Spectrum, follow these steps:
+
+1. Install the `@adobe/react-spectrum package` using a package manager like `npm` or `yarn`. For example, run the following command in your project directory:
+
+`npm install --save @adobe/react-spectrum`  
+ 
+2. Import the React Spectrum components you want to use in your React component. For example, to use the `Button` component, add the following import statement to your React component:
+
+`import { Button } from '@adobe/react-spectrum';`
+ 
+3. Use the imported Spectrum React component in your React component. For example, to use the `Button` component, add the following code to your React component:
+
+```js
+import React from 'react';  
+import { Button } from '@adobe/react-spectrum';  
+
+function MyButton(props) {  
+  return (  
+    <Button variant={props.variant} size={props.size}>{props.label}</Button>  
+  );  
+}  
+
+export default MyButton;  
+```
+
+This component takes in `variant`, `size`, and `label` props and renders a `Button` component with the specified props.
+
+Use the `Provider` component to wrap your application. This is required for Spectrum React to work correctly. For example:
+
+```js
+import React from 'react';  
+import { Provider, defaultTheme } from '@adobe/react-spectrum';  
+import MyButton from './MyButton';  
+
+function App() {  
+  return (  
+    <Provider theme={defaultTheme}>  
+      <MyButton variant="cta" size="L">Click me!</MyButton>  
+    </Provider>  
+  );  
+}  
+
+export default App; 
+``` 
+
+This component wraps the `MyButton` component with the `Provider` component, which provides the Spectrum React theme and other context to the component.
+
+That's it! You can now use Spectrum React to build your web application with Spectrum design. For more information on using Spectrum React, you can refer to the official documentation at https://react-spectrum.adobe.com/.
+
+
 ## Spectrum CSS
 [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) is an open-source implementation of Spectrum and includes components and resources to make applications more cohesive. Spectrum CSS is designed to be used in partnership with [Spectrum’s detailed usage guidelines](https://spectrum.adobe.com/).
-
 
 <InlineAlert slots="text" variant="warning"/>
 
 You should only rely on using the base [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) library for simple applications that need basic things like typography, checkboxes, text fields, etc. Otherwise you should try using one of the other implementations provided like [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) and [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) since they include interactivity, event handling etc built-in over what's possible with pure CSS. The best place to start with each of these libraries is to go to the **Getting Started** page in the top of the docs for each. 
+<!-- 
+To get started with Spectrum CSS, follow these steps:
+
+### 1. Include the Spectrum CSS file in your HTML file by adding the following link tag to the `head` section:
+
+```html        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@spectrum-css/spectrum-css@3.9.0/dist/spectrum.min.css"> 
+```  
+
+This will download and include the latest version of Spectrum CSS in your web page.
+
+Use the Spectrum CSS classes to style your HTML elements. For example, to style a button with the "primary" variant, add the following HTML code:
+
+```html
+    <button class="spectrum-Button spectrum-Button--primary">Click me!</button>  
+```
+
+This will render a button styled with the "primary" variant.
+
+You can also customize the Spectrum CSS styles by overriding the default CSS variables. For example, to change the color of the "primary" variant, add the following CSS code to your stylesheet:
+
+```css
+    :root {  
+    --spectrum-global-color-primary: #ff0000;  
+    }  
+```
+
+This will change the color of all elements with the "primary" variant to red.
+
+That's it! You can now use Spectrum CSS to style your web pages. For more information on using Spectrum CSS, you can refer to the official documentation at https://opensource.adobe.com/spectrum-css/. -->
+
+
 
 ### Spectrum Express Theme
 If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. 
