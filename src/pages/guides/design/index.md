@@ -1,5 +1,20 @@
+import '/src/styles.css'
+
 # Design Overview
-The design of your add-on is just as important to the success of your add-on as the features it provides. This design section is provided to help lead you through the design process with useful guidelines, tips and resources.
+The design of your add-on is just as important to the success of your add-on as the features it provides. This design section is provided to help lead you through the design process with useful guidelines, tips and resources. 
+
+<AnnouncementBlock slots="heading, text, button" className="custom-announce"/>
+
+### New UX Guidelines Available
+
+We are happy to announce that our first set of UX Guidelines have arrived! These guidelines are intended to help developers closely align the design of their add-ons with the Adobe brand, providing an improved, unified experience for the end-user.
+
+[UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
+
+<InlineAlert slots="text" variant="success"/>
+
+ We encourage all developers to review the new UX guidelines and incorporate them into your add-on design process. Doing so will provide the benefit of rapid development, increased adoption, and an overall more positive user experience. Please check back often as these guidelines will continue to be updated frequently.
+
 
 ## Spectrum Design System
 Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. Leveraging Spectrum in your add-on allows you to take advantage of all of the built-in benefits it provides while saving front-end development time. There are a few different implementations of Spectrum that are listed here for reference, and in order of preferred use. 

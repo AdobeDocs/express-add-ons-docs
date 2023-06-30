@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+h1 {
+    font-family: "adobe-clean" !important;
+}
+
+.custom-height {
+  height: 350px !important;
+}
+
+.custom-text {
+  text-align: left !important;
+  align-items: left !important;
+}
+
+.custom-announce div {
+  /* background-color: blueviolet;
+  color: rgb(43, 120, 133); */
+  padding: 4px;
+}
+
+
+  
