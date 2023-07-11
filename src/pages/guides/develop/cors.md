@@ -95,3 +95,10 @@ cors_anywhere = createServer({
     }, 
 }); 
 ```
+
+## CORS / COEP Handling
+The value of the **Cross-Origin-Embedder-Policy** (COEP) header for add-on resources is set to `require-corp`. With COEP set to `require-corp`, resources loaded from within the document need to have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions. 
+
+1. For http requests, make sure that the resource server responds with the `Cross-Origin-Resource-Policy: cross-origin` header. See [this link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy) for reference.
+
+2. If you're using the `<img>` tag and your resource is being served with CORS, add the `crossorigin` attribute to the HTML tag loading it, for example: `<img src="***" crossorigin>`. See [this link](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) for more details.

@@ -227,7 +227,7 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference.
 
 ## Using Fonts 
-The following Adobe Express fonts are injected into the add-on and can be used automatically. 
+The following `adobe-clean` fonts and weights are injected into the add-on and can be used automatically. 
 
 ```js
 {
@@ -271,26 +271,23 @@ The following Adobe Express fonts are injected into the add-on and can be used a
 
 In the near future, all of the Adobe Express fonts will be injected for use, however, at the moment these specific fonts are being injected for you to access in your add-on without having to bundle them. -->
 
-### Importing Fonts from a URL
-You can use a font with a URL by either linking to it via an import rule, via the &lt;link&gt; tag, or `font-face`.
+### Importing custom fonts
+You can use a custom font with a URL by either linking to it via the `@import` rule, the &lt;link&gt; tag, or the `@font-face` rule.
 
-<InlineAlert slots="text" variant="success"/>
+#### Via the `@import` rule:
 
-#### Import with the &lt;import&gt; tag:
-```html
+```css
 <style>
-            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-            * {
-                font-family: "Poppins", sans-serif;
-                margin: 0;
-                padding: 0;
-            }
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+    * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 </style>
 ```
 
-or 
-
-#### Import with the &lt;link&gt; tag:
+#### Via the `<link>` tag:
 
 ```html
 <head>
@@ -305,6 +302,23 @@ or
     </style>
   </head>
 ```
+
+#### Via the `@font-face` rule
+Specify a name for the font and where it can be found, then use it on the desired HTML tag with the specified name. For example:
+
+```css
+@font-face {
+  font-family: "MyWebFont";
+  src: url("https://mdn.github.io/css-examples/web-fonts/VeraSeBd.ttf");
+}
+body {
+  font-family: "MyWebFont", serif;
+}
+```
+
+<InlineAlert slots="text" variant="warning"/>
+
+Using custom fonts can be great for design, but it’s important to also understand that it can can cause a performance hit because the font must be downloaded before it’s displayed. Note that the `@font-face` `src:` supports a `local` attribute as well which will try to load the font from the users local system first, which can help mitigate the performance hit. See [this link](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) for full details.
 
 ## Useful Resources
 <!-- - [Adobe XD plugin that provides Spectrum UI elements](https://adobe.com/go/cc_plugins_discover_plugin?pluginId=f4771cd5&workflow=share), including the Express look. -->
