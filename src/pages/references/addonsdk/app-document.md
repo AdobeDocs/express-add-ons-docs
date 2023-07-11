@@ -54,27 +54,46 @@ Create renditions of the current page or the whole document for exporting in a s
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `range`       | `string`     | [`Range`](./addonsdk-constants.md) constant value. | 
-| `format`      | `string`     |  [`RenditionFormat`](./addonsdk-constants.md) constant value. | 
+| `format`      | `string`     | [`RenditionFormat`](./addonsdk-constants.md) constant value. | 
 
 
-<InlineAlert slots="text" variant="info"/>
+<!-- #### Format Specific Rendition Options -->
 
-The following *additional* options are supported for `RenditionFormat` is `jpg`.
 
 ### JpgRenditionOptions
+The following additional options are supported for `jpg` renditions:
+
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `backgroundColor?` | `string` | The background color to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
-| `quality?` | number |  A number between 0 and 1, indicating image quality. Default is 1.0. |
+| `backgroundColor?` | `number` |  Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| `quality?` | `number` |  A number between 0 and 1, indicating image quality. Default is 1.0. |
+| [`requestedSize?`](#requested-size-notes)| `{width?: number; height?: number}` | Requested size (in pixels). |
 
-<InlineAlert slots="text" variant="info"/>
 
-The following *additional* option is supported when the `RenditionFormat` is `png`.
+
 
 ### PngRenditionOptions
+The following additional options are supported for `png` renditions:
+
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `backgroundColor?` | `string` |  The background color to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| `backgroundColor?` | `number` |  Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` | Requested size (in pixels). |
+
+
+### Requested Size Notes
+- The supported size is from 1 x 1 to width x height.
+- Aspect ratio is maintained while scaling the rendition based on the requested size.
+- Up-scaling is currently not supported.
+- If the requested size is invalid, it will be ignored and the original size rendition will be created. 
+- Some examples of what the actual exported sizes will be, depending on the page size and requested size are in the table below for reference.
+
+| Page Size  | Requested Size | Exported Size |
+| ------------- | -------------| -----------:  |
+| 400 x 600       | 200 x 200      | 134 x 200       |
+| 400 x 600       | 200 x 400      | 200 x 300       |
+| 400 x 600       | 200 x -200      | 400 x 600      |
+| 400 x 600       | 800 x 1000      | 400 x 600      |
 
 ### Return Value
 A `Promise` with an array of page `Rendition` objects. It will contain one page if the current page was selected or all pages in the case of the document. Each rendition returned will contain the `type` and a `blob` of the rendition itself.

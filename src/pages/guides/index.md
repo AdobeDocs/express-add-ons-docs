@@ -16,6 +16,11 @@ description: Find the most recent documentation, code samples and resources for 
 contributors:
   - https://github.com/hollyschinsky
 ---
+<Hero slots="heading, text" background="rgb(138, 43, 226)"/>
+
+# Overview
+Adobe Express is an all-in-one content creation app that makes it fast, easy and fun to design standout flyers, TikToks, resumes, Reels, banners, logos, invitations, webpages and so much more. 
+
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -23,8 +28,6 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 <br/><br/>
 
-# Overview
-Adobe Express is an all-in-one content creation app that makes it fast, easy and fun to design standout flyers, TikToks, resumes, Reels, banners, logos, invitations, webpages and so much more. 
 
 ## Add-ons
 Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>

@@ -4,17 +4,38 @@
 The following Adobe Express fonts are injected into the add-on and can be used automatically. 
 
 ```js
- {
+{
     family: "adobe-clean",
-    source: "url('https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2'), url('https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff'), url(https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format('opentype')",
+    source: "url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff2'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('opentype')",
     weight: "400",
     style: "normal",
     display: "auto"
 },
 {
     family: "adobe-clean",
-    source: "url('https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff2'), url('https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff'), url('https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('opentype')",
+    source: "url('https://use.typekit.net/af/95bf80/00000000000000007735dacd/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=i4&v=3') format('woff2'), url('https://use.typekit.net/af/95bf80/00000000000000007735dacd/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=i4&v=3') format('woff'), url('https://use.typekit.net/af/95bf80/00000000000000007735dacd/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=i4&v=3') format('opentype')",
+    weight: "400",
+    style: "italic",
+    display: "auto"
+},
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/5c07ba/00000000000000007735dad8/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3') format('woff2'), url('https://use.typekit.net/af/5c07ba/00000000000000007735dad8/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3') format('woff'), url('https://use.typekit.net/af/5c07ba/00000000000000007735dad8/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3') format('opentype')",
     weight: "700",
+    style: "normal",
+    display: "auto"
+},
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/2dda0a/00000000000000007735dad4/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3') format('woff2'), url('https://use.typekit.net/af/2dda0a/00000000000000007735dad4/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3') format('woff'), url('https://use.typekit.net/af/2dda0a/00000000000000007735dad4/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3') format('opentype')",
+    weight: "800",
+    style: "normal",
+    display: "auto"
+},
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/bc79c1/00000000000000007735dad9/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n9&v=3') format('woff2'), url('https://use.typekit.net/af/bc79c1/00000000000000007735dad9/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n9&v=3') format('woff'), url('https://use.typekit.net/af/bc79c1/00000000000000007735dad9/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n9&v=3') format('opentype')",
+    weight: "900",
     style: "normal",
     display: "auto"
 }

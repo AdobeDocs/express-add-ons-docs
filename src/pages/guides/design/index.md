@@ -3,13 +3,14 @@ import '/src/styles.css'
 # Design Overview
 The design of your add-on is just as important to the success of your add-on as the features it provides. This design section is provided to help lead you through the design process with useful guidelines, tips and resources. 
 
-<AnnouncementBlock slots="heading, text, button" className="custom-announce"/>
 
-### New UX Guidelines Available
+<TextBlock slots="heading, text, buttons" theme="light" isCentered/>
+
+## New UX Guidelines Available
 
 We are happy to announce that our first set of UX Guidelines have arrived! These guidelines are intended to help developers closely align the design of their add-ons with the Adobe brand, providing an improved, unified experience for the end-user.
 
-[UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
+- [UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -17,18 +18,22 @@ We are happy to announce that our first set of UX Guidelines have arrived! These
 
 
 ## Spectrum Design System
-Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. Leveraging Spectrum in your add-on allows you to take advantage of all of the built-in benefits it provides while saving front-end development time. There are a few different implementations of Spectrum that are listed here for reference, and in order of preferred use. 
+
+Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. Leveraging Spectrum in your add-on allows you to take advantage of all of the built-in benefits it provides while saving front-end development time. There are a few different implementations of Spectrum that are outlined in the sections below for reference, and in order of preferred use. 
+
+<!-- 
+<iframe src="https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/"/> -->
 
 <InlineAlert slots="text" variant="info"/>
 
 Check out our [code samples](../../samples.md) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**. 
 
-## Spectrum Express Theme
+### Spectrum Express Theme
 If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. Each of the sections below has more details on how to use the theme with the different libraries. 
 
-<InlineAlert slots="text" variant="info"/>
-
-Check out the variety of icons available for use in your add-ons as well from [Spectrum here](https://spectrum.adobe.com/page/icons/). There's also a set of icons for the Express theme in an alpha stage currently available. To use those, install the package with `npm i @spectrum-icons/express`. Then you can use them by importing them. See the above steps for an example of how to import and use an icon. 
+<!-- <InlineAlert slots="text" variant="note"/> -->
+### Icons
+Check out the variety of icons available for use in your add-ons from [Spectrum here](https://spectrum.adobe.com/page/icons/) as well. Additionally, there's a set of icons specificlly for the Express theme in an alpha stage currently available. To use those, install the package with `npm i @spectrum-icons/express` and then import the ones you want to use. 
 
 ## Spectrum Web Components
 The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum with a set of pre-built UI components that can be easily customized and integrated into your application. These components are designed to work seamlessly together and provide a consistent user experience across different devices and platforms. ***We highly recommend Spectrum Web Components as the preferred approach for building the UI of your add-ons***, since it offers a comprehensive set of components and built-in benefits that make it easy to create consistent, accessible, and responsive user interfaces. Some additional benefits include:
@@ -98,10 +103,10 @@ Below are the steps for using the Express theme with your Spectrum Web Component
 #### Default vs Express Theme
 The screenshots below are from a Spectrum Web Components sample app showing some an example of how the components differ between the themes to illustrate some differences for reference. 
 
-##### Default Theme sample:
+#### Default Theme sample:
 ![Default theme](./img/swc-default-theme.png)
 
-##### Express Theme sample:
+#### Express Theme sample:
 ![Express theme](./img/swc-express-theme.png)
 
 <InlineAlert slots="text" variant="info"/>
@@ -221,6 +226,87 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 **Color Picker Component Tip:**
 If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference.
 
+## Using Fonts 
+The following Adobe Express fonts are injected into the add-on and can be used automatically. 
+
+```js
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff2'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('opentype')",
+    weight: "400",
+    style: "normal",
+    display: "auto"
+},
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/95bf80/00000000000000007735dacd/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=i4&v=3') format('woff2'), url('https://use.typekit.net/af/95bf80/00000000000000007735dacd/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=i4&v=3') format('woff'), url('https://use.typekit.net/af/95bf80/00000000000000007735dacd/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=i4&v=3') format('opentype')",
+    weight: "400",
+    style: "italic",
+    display: "auto"
+},
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/5c07ba/00000000000000007735dad8/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3') format('woff2'), url('https://use.typekit.net/af/5c07ba/00000000000000007735dad8/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3') format('woff'), url('https://use.typekit.net/af/5c07ba/00000000000000007735dad8/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3') format('opentype')",
+    weight: "700",
+    style: "normal",
+    display: "auto"
+},
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/2dda0a/00000000000000007735dad4/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3') format('woff2'), url('https://use.typekit.net/af/2dda0a/00000000000000007735dad4/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3') format('woff'), url('https://use.typekit.net/af/2dda0a/00000000000000007735dad4/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3') format('opentype')",
+    weight: "800",
+    style: "normal",
+    display: "auto"
+},
+{
+    family: "adobe-clean",
+    source: "url('https://use.typekit.net/af/bc79c1/00000000000000007735dad9/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n9&v=3') format('woff2'), url('https://use.typekit.net/af/bc79c1/00000000000000007735dad9/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n9&v=3') format('woff'), url('https://use.typekit.net/af/bc79c1/00000000000000007735dad9/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n9&v=3') format('opentype')",
+    weight: "900",
+    style: "normal",
+    display: "auto"
+}
+```
+
+<!-- <InlineAlert slots="text" variant="info"/>
+
+In the near future, all of the Adobe Express fonts will be injected for use, however, at the moment these specific fonts are being injected for you to access in your add-on without having to bundle them. -->
+
+### Importing Fonts from a URL
+You can use a font with a URL by either linking to it via an import rule, via the &lt;link&gt; tag, or `font-face`.
+
+<InlineAlert slots="text" variant="success"/>
+
+#### Import with the &lt;import&gt; tag:
+```html
+<style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+            * {
+                font-family: "Poppins", sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+</style>
+```
+
+or 
+
+#### Import with the &lt;link&gt; tag:
+
+```html
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <style>
+      body {
+        font-family: 'Tangerine', serif;
+        font-size: 48px;
+      }
+    </style>
+  </head>
+```
+
 ## Useful Resources
 <!-- - [Adobe XD plugin that provides Spectrum UI elements](https://adobe.com/go/cc_plugins_discover_plugin?pluginId=f4771cd5&workflow=share), including the Express look. -->
 - [Figma plugin](https://www.figma.com/community/file/1211274196563394418/Adobe-Spectrum-Design-System) that provides Spectrum UI elements.
+

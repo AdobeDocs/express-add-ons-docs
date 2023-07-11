@@ -148,12 +148,14 @@ The following platform values are currently supported in the `supportedDeviceCla
 | -----------------------| -------------| -----------:  |
 | [`sandbox?`](#entrypointspermissionssandbox) | `string []`  | List of iframe sandbox permissions.  | 
 | `oauth?`               | `string []` | List of 3rd party auth server domains for which OAuth workflow may be requested. |
+| `clipboard?`  | `string []` | The allowed values for the list of clipboard permissions. Currently, `clipboard-write` is supported and allows an add-on to write arbitrary data to the clipboard. |
 
 **Example:**<br/>
 ```json
 "permissions" : {
     "sandbox": [" allow-popups ", "allow-downloads"],
     "oauth" : [“...”, “...”], 
+    "clipboard": ["clipboard-write"]
 }
 ```
 
