@@ -1,56 +1,69 @@
 # AddOnSdk.app.document
 Provides access to the methods needed for [importing content](../../guides/develop/index.md#importing-content) to the document and for [exporting content](../../guides/develop/index.md#exporting-content) for export.
 
-## Methods
-## addImage()
+## Import Content Methods
+### addImage()
 Adds an image to the current page. 
 
-### Signature
+#### Signature
 `addImage(imageBlob: Blob): Promise<void>`
 
-### Parameters
+#### Parameters
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `imageBlob`   | `Blob`       | The image to add to the page. |
 
-### Return Value
+#### Return Value
 A resolved promise if the image was successfully added to the canvas, otherwise will throw an error with the rejected promise.
 
 <InlineAlert slots="text" variant="info"/>
 
 The supported file types for imported content are currently **`png/jpg/jpeg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**.
 
-## addVideo()
+### addVideo()
 Adds a video to the current page. 
 
-### Signature
+#### Signature
 `addVideo(blob: Blob): Promise<void>`
 
-### Parameters
+#### Parameters
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `imageBlob`   | `Blob`       | The video to add to the page. |
 
-### Return Value
+#### Return Value
 A resolved promise if the image was successfully added to the canvas, otherwise will throw an error with the rejected promise.
 
 <InlineAlert slots="text" variant="info"/>
 
 Refer to the [importing content use case](../../guides/develop/index.md#importing-content) and the [import-images-from-local](../../samples/#import-images-from-local) in the code samples for usage examples.
 
+### Errors
+The table below describes the possible error messages that may occur when using the import methods, with a description of the scenario that would cause them to be returned.
 
-## createRenditions()
+<br/>
+
+| Error Message                     |   Error Scenario                 |
+|-------------------------------:|-------------------------------------------------:|
+| Invalid blob.                  | Blob is invalid. | 
+| Unsupported mime type : `${blob.type}` | Mime type is invalid. |
+| Import image width or height exceed the maximum limit : `${maxSupportedDimension}` | The imported image dimensions exceed the maximum limit if any defined by Express. |
+| Import image size exceed the maximum limit: `${maxSupportedSize}MB` | The imported image size exceeds the maximum limit if any defined by Express.                    | 
+| No active page available.             | Current page doesn't exist.           |
+
+## Export Content Methods
+### createRenditions()
 Create renditions of the current page or the whole document for exporting in a specified format. 
 
-### Signature
+#### Signature
 `createRenditions(renditionOptions: RenditionOptions): Promise<Rendition[]>`
 
-### Parameters
+#### Parameters
 | Name                | Type         | Description   |
 | --------------------| -------------| -----------:  |
 | `renditionOptions`  | `Object`     | [`RenditionOptions`](#renditionoptions) object.
 
-### `RenditionOptions`
+#### `RenditionOptions`
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `range`       | `string`     | [`Range`](./addonsdk-constants.md) constant value. | 
@@ -60,7 +73,7 @@ Create renditions of the current page or the whole document for exporting in a s
 <!-- #### Format Specific Rendition Options -->
 
 
-### JpgRenditionOptions
+#### JpgRenditionOptions
 The following additional options are supported for `jpg` renditions:
 
 | Name          | Type         | Description   |
@@ -72,7 +85,7 @@ The following additional options are supported for `jpg` renditions:
 
 
 
-### PngRenditionOptions
+#### PngRenditionOptions
 The following additional options are supported for `png` renditions:
 
 | Name          | Type         | Description   |
@@ -81,7 +94,7 @@ The following additional options are supported for `png` renditions:
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` | Requested size (in pixels). |
 
 
-### Requested Size Notes
+#### Requested Size Notes
 - The supported size is from 1 x 1 to width x height.
 - Aspect ratio is maintained while scaling the rendition based on the requested size.
 - Up-scaling is currently not supported.
@@ -95,10 +108,10 @@ The following additional options are supported for `png` renditions:
 | 400 x 600       | 200 x -200      | 400 x 600      |
 | 400 x 600       | 800 x 1000      | 400 x 600      |
 
-### Return Value
+#### Return Value
 A `Promise` with an array of page `Rendition` objects. It will contain one page if the current page was selected or all pages in the case of the document. Each rendition returned will contain the `type` and a `blob` of the rendition itself.
 
-### `Rendition`
+#### `Rendition`
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `type?`       | `string`     |  Type of Rendition. Value is always "page" |
@@ -109,3 +122,16 @@ A `Promise` with an array of page `Rendition` objects. It will contain one page 
 
 Refer to the [exporting content use case example](../../guides/develop/index.md#exporting-content) and the [export-sample](../../samples/#export-sample) in the code samples for usage examples.
 
+### Errors
+The table below describes the possible error messages that may occur when using the export methods, with a description of the scenario that will return them.
+
+<br/>
+
+| Error Message                  |   Error Scenario                 |
+|-------------------------------:|-------------------------------------------------:|
+| Invalid range: `${options.range}` | Range value is invalid.             | 
+| No active page available.         | Range is `Range.currentPage` and there is no active page. |
+| Unsupported rendition format: `${options.format}` | Rendition format is unsupported.   |
+| Invalid background color: `${options.backgroundColor}` | Background color is invalid. |
+| Invalid quality parameter: `${options.quality} not in range [0,1]` | Quality property is invalid in jpeg. |
+| No video element in the specified range. | No video is present in the range when trying to export mp4. |

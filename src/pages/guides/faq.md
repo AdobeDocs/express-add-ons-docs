@@ -26,6 +26,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 ## Questions
 
 - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
+- [Is `yarn` supported with the CLI?](#is-yarn-supported-with-the-cli-or-only-npm)
 - [How do I save the state of my add-on?](#how-do-i-save-the-state-of-my-add-on)
 - [How do I use top level `await` while using webpack?](#how-do-i-use-top-level-await-while-using-webpack)
 - [How do I setup webpack to copy new files or folders into `dist`?](#how-do-i-setup-webpack-to-copy-new-files-or-folders-into-dist)
@@ -45,6 +46,9 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
   ```bash
   npm run start -- --port 8080
   ```
+
+### Is `yarn` supported with the CLI, or only `npm`?
+We recommend using `npm` for running the CLI scripts. Note that while there might be workarounds to get `yarn` working, we do not recommend it, or support any issues that may arise using `yarn`.
 
 ### How do I save the state of my add-on?
   The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](.) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.

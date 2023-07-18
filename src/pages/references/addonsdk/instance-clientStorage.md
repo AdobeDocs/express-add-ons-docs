@@ -133,4 +133,11 @@ async function getKeys() {
 
 Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/develop/index.md#storing-and-retrieving-client-side-data) for more details around using Client Storage, as well as the [**use-client-storage** sample](../../samples.md) for a more complete example of implementing it in an add-on.
 
+## Errors
+The table below describes the possible error messages that may occur when using the Client Storage API, with a description of the scenario that will return them.
 
+<br/>
+
+| Error Message                  |   Error Scenario                 |
+|-------------------------------:|-------------------------------------------------:|
+| Quota exceeded. Delete some data to store more | Returned when the quota limit is exhausted. |

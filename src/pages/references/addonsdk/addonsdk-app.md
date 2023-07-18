@@ -280,3 +280,29 @@ The table below describes the events triggered from the add-on SDK. Use the `Add
 </tbody>
 </table>
 
+## Errors
+The table below describes the possible error messages that may occur when using the core `AddOnSdk.app` methods, with a description of the scenario that will return them.
+
+<br/>
+
+| Error Message                     |   Error Scenario                 |
+|-------------------------------:|-------------------------------------------------:|
+| Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. | 
+| Incorrect return type: `PreviewCallback` must return an object of type `URL` | `previewCallback` function doesn't return URL. |
+| Incorrect return type: `CompletionCallback` should return an array of `DragCompletionData` | `completionCallback` doesn't return `DragCompletionData[]`. |
+| Dialog already open with instanceID: `${this._instanceId}` | Dialog is already open. |
+| Dialog options parameter: title is undefined | Title is undefined. |
+| Dialog options parameter: description is undefined | Description is undefined. |
+| Dialog options parameter: variant is undefined | Variant is undefined. |
+| Invalid dialog variant: `${variant}` | Invalid dialog variant. |
+| Input dialog field is undefined | Text field property is undefined for input variant. |
+| Field property is valid only for input dialog  | If text field property is present for variant other than input. |
+| Input dialog field label is undefined  | Field label is undefined for input dialog variant. |
+| Invalid dialog field type: `${field.fieldType}`| Field type is invalid for input dialog variant |
+| Custom dialog variant is an experimental API. Please add the `experimentalApis` flag to manifest to use it. | When custom dialog API is used in Production. |
+| Dialog already open with instanceID:`${this._instanceId}` | If the dialog is already open. |
+| Dialog options parameter: title is undefined | Title is undefined. |
+| Dialog options parameter: src is undefined | Source is undefined. |
+| Invalid dialog variant: `${variant}` | Invalid dialog variant. |
+
+

@@ -61,63 +61,8 @@ In general, an SDK provides a more complete set of tools and resources for devel
 
 See the [implementing common use cases page](../../guides/develop/) for details and examples of how to add the features above.
 
-
-## AddOnSdk Objects
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Provides access to the host application (Adobe Express)</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.instance</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>The currently running add-on instance.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.ready</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>Promise</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Indicates the AddOnSdk object has been initialized and you can start accessing the APIs. Register a call back with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Promise.then</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">await this promise</a>.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.constants</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>A set of constants used throughout the add-on SDK.</p></td>
-</tr>
-</tbody>
-</table>
-
-## AddOnSdk Properties
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Property</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.apiVersion</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Current version of the add-on SDK running.</p></td>
-</tr>
-</tbody>
-</table>
-
-
-### Add-on SDK Module Import
+## Importing the AddOnSdk for Use
+<!-- ## Add-on SDK Module Import -->
 The add-on SDK is available as a hosted JavaScript module on the Adobe CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of `import` statements in the JavaScript source. However, you don't need to worry about adding this reference if you used the CLI to create your add-on project, since **it will already be imported for you**, and the location it was placed will depend on the `template` you chose. The following sections show how it's imported into different file types for reference.
 
 #### Import into HTML file
@@ -155,3 +100,82 @@ declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
 }
 ```
 See the [typescript definitions section](../../guides/develop/frameworks-libraries-bundling.md#typescript-definitions) in the developer guides as well for more details. 
+
+
+## AddOnSdk Objects
+The following objects can be accessed from the `AddOnSdk` after it has been imported. 
+
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td class="spectrum-Table-cell"><p>Provides access to the host application (Adobe Express)</p></td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.instance</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td class="spectrum-Table-cell"><p>The currently running add-on instance.</p></td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.ready</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>Promise</pre></p></td>
+    <td class="spectrum-Table-cell"><p>Indicates the AddOnSdk object has been initialized and you can start accessing the APIs. Register a call back with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Promise.then</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">await this promise</a>.</p></td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.constants</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td class="spectrum-Table-cell"><p>A set of constants used throughout the add-on SDK.</p></td>
+</tr>
+</tbody>
+</table>
+
+## AddOnSdk Properties
+The following properties can be accessed from the `AddOnSdk` object after it has been imported. 
+
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Property</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+</tr>
+<tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.apiVersion</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td class="spectrum-Table-cell"><p>The current version of the add-on SDK running.</p></td>
+</tr>
+</tbody>
+</table>
+
+
+
+## AddOnSdk Errors
+The table below describes the possible error messages that may occur when using the core `AddOnSdk` object, with a description of the scenario that will return them.
+
+<br/>
+
+| Error Message                     |   Error Scenario                 |
+|-------------------------------:|-------------------------------------------------:|
+| Invalid `${propertyName}` property. SDK is not fully initialized. | When an add-on tries to use the SDK before it is fully initialized. | 
+| Failed to initialize Addon SDK. Unsupported API version: `${apiVersion}` | API version is unsupported.  |
+
+
+
+
+
+	
+
+
