@@ -9,7 +9,7 @@ This set of best practices are important to keep in mind as you develop your add
 
 - If the user will be logging in to a 3rd party service, ensure you provide a way for them to log out through your add-on UI.
 
-- With the add-ons panel being narrow (280px), it's best to use a vertical layout for your UI components, with full-width buttons and components and vertical scrolling for overflow.
+- It's best to use a vertical layout for your UI components, with full-width buttons and components and vertical scrolling for overflow.
 
 - If your add-on contains a gallery of images, a grid layout can work well.
 
