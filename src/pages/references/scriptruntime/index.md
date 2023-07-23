@@ -3,10 +3,10 @@ The script runtime is a sandboxed JavaScript execution environment based on Quic
 
 <InlineAlert slots="text" variant="warning"/>
 
-The Script Runtime references are currently **experimental only**. Please do not use these APIs in any add-ons you plan to distribute or any that you will need to re-submit with updates until they are considered stable.
+The script runtime references are currently **experimental only**, so you will need to set `experimentalApi` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or any that you will need to re-submit with updates until they are considered stable.*
 
 ## Overview
-The script runtime specifically exposes three categories of APIs, which each have their own specific references and are outlined below.
+The script runtime exposes three categories of APIs, which each have their own specific references and are outlined below.
 
 ### Communication APIs
 The [communication APIs](./communication/) allow you to communicate between the script runtime and the iframe runtime where your add-on is running via exposed APIs.  
@@ -14,21 +14,23 @@ The [communication APIs](./communication/) allow you to communicate between the 
 ### Common APIs
 The [common APIs](./common/) are objects and functions injected by the script runtime to allow you the ability to access common utility functions in your JavaScript. 
 
-### Editor 
+### Editor APIs
 The [editor APIs](./editor/) provide access to the user's document to access the structure and properties, and to make changes to it via high-level authoring APIs. 
 
 ## Script Runtime JavaScript Engine
-The Script Runtime is based on [QuickJS](https://bellard.org/quickjs/) and implements a subset of the [ES2020 specification](https://tc39.es/ecma262/). Some key concepts to note about the script runtime include:
+The script runtime is based on [QuickJS](https://bellard.org/quickjs/) and implements a subset of the [ES2020 specification](https://tc39.es/ecma262/). 
 
-- Limited access to browser APIs. Note however, you can use the communication APIs to execute browser APIs (ie: `fetch`) in the iframe runtime environment.
-- A slower execution environment.
-- No debugging capabilities (other than via the [injected `console` functions](../common/index.md#injected-objects).
-- The JavaScript code runs in the same context/thread as the host's application business logic, (e.g. the authoring worker thread in Adobe Express), and can thus interact with it via the set of injected APIs.
+Some key concepts to note about the script runtime include:
+
+- Provides limited access to browser APIs (see the [Common APIs](./common/) reference). Note however, you can use the communication APIs to execute browser APIs (ie: `fetch`) in the iframe runtime environment.
+- Runs in a slower execution environment.
+- Provides no debugging capabilities other than those provided by the [injected `console` functions](../common/index.md#injected-objects).
+- Runs in the same context/thread as the host's application business logic, (e.g. the authoring worker thread in Adobe Express), thus providing access to interact with it via the injected APIs.
 
 ## Getting Started with the APIs
 The methods defined in the [communication API reference](./communication/) are used to expose and use the API proxies between the iframe and script environments of your add-on. Start [there](./communication/) to learn more about how to expose APIs and use them from either runtime environment.
 
-### Script Entry point
+### Script entry point
 To use the script runtime in your add-on, start by defining a new `script` entry point in your `manifest.json` file with the value set to the name of the file containing the JavaScript code you're using with the script runtime functions: 
 
 ```json

@@ -3,9 +3,6 @@ This page covers a list of tips for optimizing your code to help you build high-
 
 ## JavaScript Performance Tips
 
-### Avoid excessive looping
-Avoid excessive looping by using techniques like `map`, `filter`, and `reduce`. 
-
 ### Use asynchronous programming
 Use asynchronous programming techniques like callbacks, promises, and async/await to avoid blocking the main thread and improve performance. An example of each approach is given below:
 
@@ -119,6 +116,9 @@ Use keys for lists to help React identify which items have changed and minimize 
 
 ### Use lazy loading 
 Use lazy loading to load components or resources only when they are needed, reducing the initial page load time.
+
+### Avoid excessive looping
+Avoid excessive looping by using techniques like `map`, `filter`, and `reduce`. 
 
 ### Use memoization
 Use memoization to cache the results of expensive calculations or functions and avoid unnecessary re-computation.
