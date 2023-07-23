@@ -11,11 +11,12 @@
  */
 
 module.exports = {
-  // pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/',
   pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/',
+  pathPrefix: process.env.PATH_PREFIX || '/express-add-ons/docs/',
   siteMetadata: {    
     home: {
       "title": "Adobe Express Add-ons",
+      //"path": "/express-add-ons",
       "path": "https://developer-stage.adobe.com/express/add-ons"
     },
     pages: [                  
@@ -89,7 +90,25 @@ module.exports = {
         },
 
       ]          
-      },                                                                                                                           
+      },
+      {              
+        title: 'Script Runtime',                
+        path: 'references/scriptruntime/',   
+        pages: [                                                                                                                
+          {
+            "title": "Communication APIs",
+            "path": "references/scriptruntime/communication/",  
+          },
+          {
+            "title": "Common APIs",
+            "path": "references/scriptruntime/common/",  
+          },
+          {
+            "title": "Editor APIs",            
+            "path": "references/scriptruntime/editor/",  
+          }
+        ]
+      },      
       {
         title: 'Manifest Schema',
         description: 'Manifest schema',
@@ -118,7 +137,11 @@ module.exports = {
           {
             "title": "Development tools",
             "path": "guides/getting_started/dev_tooling.md"
-          }
+          },
+          // {
+          //   "title": "Web Programming Essentials",
+          //   "path": "guides/getting_started/web-programming.md"
+          // },    
         ]
       },
       {
@@ -128,7 +151,15 @@ module.exports = {
           {
             "title": "User interface guide",
             "path": "guides/design/"
-          },            
+          }, 
+          // {
+          //   "title": "TEST",
+          //   "path": "guides/design/test.md"
+          // },  
+          // {
+          //   "title": "Spectrum usage guide",
+          //   "path": "guides/design/spectrum.md"
+          // },            
           {
             "title": "Best practices",
             "path": "guides/design/best_practices.md"
@@ -147,6 +178,10 @@ module.exports = {
             "title": "Frameworks, libraries and bundling",
             "path": "guides/develop/frameworks-libraries-bundling.md"
           },
+          {
+            "title": "Performance Tips",
+            "path": "guides/develop/performance.md"
+          },            
           {
             "title": "Network requests and CORS",
             "path": "guides/develop/cors.md"
