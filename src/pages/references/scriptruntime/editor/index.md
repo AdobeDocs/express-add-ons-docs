@@ -9,20 +9,21 @@ Some examples of what you can do with the [Editor APIs](/express-add-on-apis/doc
 These APIs are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
 
 ### Methods
-- [addTemporalArtboardContainerWithArtboard](/express-add-on-apis/docs/api/classes/Editor/#addTemporalArtboardContainerWithArtboard)
-- [createArtboard](/express-add-on-apis/docs/api/classes/Editor/#createArtboard)
-- [createBitmapImage](/express-add-on-apis/docs/api/classes/Editor/#createBitmapImage)
-- [createColorFill](/express-add-on-apis/docs/api/classes/Editor/#createColorFill)
-- [createEllipse](/express-add-on-apis/docs/api/classes/Editor/#createEllipse)
-- [createGroup](/express-add-on-apis/docs/api/classes/Editor/#createGroup)
-- [createImageContainer](/express-add-on-apis/docs/api/classes/Editor/#createImageContainer)
-- [createLine](/express-add-on-apis/docs/api/classes/Editor/#createLine)
-- [createRectangle](/express-add-on-apis/docs/api/classes/Editor/#createRectangle)
-- [createStroke](/express-add-on-apis/docs/api/classes/Editor/#createStroke)
-- [createText](/express-add-on-apis/docs/api/classes/Editor/#createText)
-- [getNodeForEntity](/express-add-on-apis/docs/api/classes/Editor/#getNodeForEntity)
-- [getNodesForEntities](/express-add-on-apis/docs/api/classes/Editor/#getNodesForEntities)
-- [loadBitmapImage](/express-add-on-apis/docs/api/classes/Editor/#loadBitmapImage)
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#addTemporalArtboardContainerWithArtboard" target="_blank">addTemporalArtboardContainerWithArtboard</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createArtboard" target="_blank">createArtboard</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createBitmapImage" target="_blank">createBitmapImage</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createColorFill" target="_blank">createColorFill</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createEllipse" target="_blank">createEllipse</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createGroup" target="_blank">createGroup</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createImageContainer" target="_blank">createImageContainer</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createLine" target="_blank">createLine</a>
+
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createRectangle" target="_blank">createRectangle</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createStroke" target="_blank">createStroke</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#createText" target="_blank">createText</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#getNodeForEntity" target="_blank">getNodeForEntity</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#getNodesForEntities" target="_blank">getNodesForEntities</a>
+- <a href="/express-add-on-apis/docs/api/classes/Editor/#loadBitmapImage" target="_blank">loadBitmapImage</a>
 
 ## Example
 The following code illustrates how to use the [Editor APIs](/express-add-on-apis/docs/api/classes/Editor) to access the document, create a rectangle, set some properties and a fill, and add it to the current document:
@@ -49,5 +50,5 @@ Check out the [full set of API documentation](/express-add-on-apis/docs/api/clas
 
 
 <!-- [t](/express-add-on-apis/docs/api/classes/Editor/) -->
-<a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">l</a>
+<!-- <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">l</a> -->
 

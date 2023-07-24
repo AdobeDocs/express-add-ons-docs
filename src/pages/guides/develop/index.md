@@ -334,8 +334,10 @@ AddOnSdk.app.on("dragstart", (eventData: DragStartEventData) => {
 AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
   if (!eventData.dropCancelled) {
     console.log("The drag event has ended for", eventData.element);
+    disableDragToDocument();
   } else {
     console.log("The drag event was cancelled for", eventData.element);
+    console.log("Cancel Reason: ", eventData.dropCancelReason);
   }
 });
 ```

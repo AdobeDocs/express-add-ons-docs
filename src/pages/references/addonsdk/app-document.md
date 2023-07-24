@@ -56,19 +56,20 @@ The table below describes the possible error messages that may occur when using 
 Create renditions of the current page or the whole document for exporting in a specified format. 
 
 #### Signature
-`createRenditions(renditionOptions: RenditionOptions): Promise<Rendition[]>`
+`createRenditions(renditionOptions: RenditionOptions, renditionIntent?: RenditionIntent): Promise<Rendition[]>`
 
 #### Parameters
 | Name                | Type         | Description   |
 | --------------------| -------------| -----------:  |
-| `renditionOptions`  | `Object`     | [`RenditionOptions`](#renditionoptions) object.
+| `renditionOptions`  | `Object`     | [`RenditionOptions`](#renditionoptions) object. |
+| `renditionIntent`   | `string`    |               |
+
 
 #### `RenditionOptions`
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `range`       | `string`     | [`Range`](./addonsdk-constants.md) constant value. | 
 | `format`      | `string`     | [`RenditionFormat`](./addonsdk-constants.md) constant value. | 
-
 
 <!-- #### Format Specific Rendition Options -->
 

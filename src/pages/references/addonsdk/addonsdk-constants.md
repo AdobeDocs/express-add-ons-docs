@@ -38,6 +38,18 @@ Variant	confirmation, information, warning, destructive, error, input
     </td>    
 </tr>
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>RenditionIntent</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">        
+        <p>The intent to set for creating the rendition. Options:</p>
+        <ul>
+          <li><strong>preview</strong></li>Intent to preview the content.
+          <li><strong>export</strong></li>Intent to export/download the content.
+        </ul>
+    </td>    
+</tr>
+
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>RenditionFormat</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">        

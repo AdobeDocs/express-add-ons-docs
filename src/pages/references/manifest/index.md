@@ -73,6 +73,9 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | [`apps`](#requirementsapps)    | `object []`  | Add-on authors can specify the apps that the add-on is intended for. |
 | `experimentalApis?`| `boolean`    | Add-ons can opt to use experimental apis by specifying this flag. This flag is **only allowed during development** and needs to be removed during submission.                               |
 | `supportsTouch?`   | `boolean`    | Whether the add-on supports touch-only devices. If not specified, the default value assumed is `false`.  |
+| `renditionPreview?` | `boolean` |	Ensure premium content preview is properly handled for free users when add-ons create renditions. |
+
+<!-- | `privilegedApis?` | `boolean` | Identify the add-on as privileged. If not specified, default value assumed is 'false'.    | -->
 
 **Example:**<br/>
 ```json

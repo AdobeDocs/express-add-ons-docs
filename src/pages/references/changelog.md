@@ -19,6 +19,14 @@ contributors:
 ---
 
 # Changelog
+
+## 2023-08-01
+
+### Added
+- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs. 
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints] section to support the new experimental [script runtime APIs](../references/scriptruntime/). 
+- Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
+
 ## 2023-07-11
 
 ### Added

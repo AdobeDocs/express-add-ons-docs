@@ -123,8 +123,6 @@ The input dialog variant accepts an [additional `field`](#input-dialog-additiona
 #### Return Value
 Returns a `Promise` (`DialogResult`)[#dialogresult] object with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
 
-
-
 #### `DialogResult`
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
@@ -188,12 +186,11 @@ let inputDialogOptions = {
 
 See the use case implementations for an example of the [custom modal dialog](../../guides/develop/index.md#custom-dialog-example).
 
-
 ### enableDragToDocument()
 Allows for drag to document functionality to be enabled on an element such as an image or video.
 
 #### Signature
-`enableDragToDocument(element: HTMLElement, dragCallbacks: DragCallbacks): void`
+`enableDragToDocument(element: HTMLElement, dragCallbacks: DragCallbacks): [DisableDragToDocument]()`
 
 #### Parameters
 | Name              | Type                                 | Description   |
@@ -209,16 +206,16 @@ Allows for drag to document functionality to be enabled on an element such as an
 
 ##### `DragPreviewCallback` Type Definition
 Callback used to get the preview image for the drag & drop action. Returns a `URL` object.
+
 ```ts
-(element: HTMLElement) => URL;
+type DragPreviewCallback = (element: HTMLElement) => URL;
 ```
 
-
 ##### `DragCompletionCallback` Type Definition
-Callback used to get the final data to be added to the document post drag & drop action. Returns [DragCompletionData](#dragcompletiondata) array.
+Callback to provide the content (image/gif/video) to be added to the document post drag & drop action. Returns [DragCompletionData](#dragcompletiondata) array.
 
 ```ts
-(element: HTMLElement) => Promise<DragCompletionData[]>;
+type DragCompletionCallback = (element: HTMLElement) => Promise<DragCompletionData[]>;
 ```
 
 ##### `DragCompletionData` 
@@ -226,6 +223,36 @@ Callback used to get the final data to be added to the document post drag & drop
 | ------------------| --------| -----------:  |
 | `blob`            | `Blob`  | Blob (image/video) to be added to the document |
 
+#### Return Value 
+`void`
+
+##### `DisableDragToDocument` Type Definition
+Callback to undo the changes made by `enableDragToDocument`. Returns `void`.
+
+```ts
+type DisableDragToDocument = () => void;
+```
+
+##### `DragStartEventData` Object
+The payload data sent to the `dragStart` event handler. 
+
+###### Properties
+| Name              | Type    | Description   |
+| ------------------| --------| -----------:  |
+| `element`         | `HTMLElement`  | Element for which the drag event started |
+
+#### Return Value 
+`void`
+
+##### `DragEndEventData` 
+The payload data sent to the App `dragEnd` event handler.
+
+| Name              | Type    | Description   |
+| ------------------| --------| -----------:  |
+| `element`         | `HTMLElement` | Element for which the drag event ended    |
+| `dropCancelled`   | `boolean`     | If drop occurred/drag ended at invalid position     |
+| `dropCancelReason?`| `string`     | Reason for drop cancellation |    
+    
 #### Return Value 
 `void`
 
@@ -240,7 +267,7 @@ See the [Drag & Drop use case implementation](../../guides/develop/index.md#drag
 
 
 ## Events
-The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to subscribe to events, and the `AddOnSdk.app.off()` method to unsubscribe from them. See the (`on()`)[#on] method reference for more details.
+The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to subscribe to events, and the `AddOnSdk.app.off()` method to unsubscribe from them. See the [`on()`](#on()) method reference for more details.
 
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
@@ -298,7 +325,7 @@ The table below describes the possible error messages that may occur when using 
 | Input dialog field is undefined | Text field property is undefined for input variant. |
 | Field property is valid only for input dialog  | If text field property is present for variant other than input. |
 | Input dialog field label is undefined  | Field label is undefined for input dialog variant. |
-| Invalid dialog field type: `${field.fieldType}`| Field type is invalid for input dialog variant |
+| Invalid dialog field type: `${field.fieldType}`| Field type is invalid for input dialog variant. |
 | Custom dialog variant is an experimental API. Please add the `experimentalApis` flag to manifest to use it. | When custom dialog API is used in Production. |
 | Dialog already open with instanceID:`${this._instanceId}` | If the dialog is already open. |
 | Dialog options parameter: title is undefined | Title is undefined. |
