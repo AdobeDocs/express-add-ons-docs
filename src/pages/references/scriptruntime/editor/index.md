@@ -26,7 +26,7 @@ These APIs are currently **experimental only**. Please do not use them in any ad
 - <a href="/express-add-on-apis/docs/api/classes/Editor/#loadBitmapImage" target="_blank">loadBitmapImage</a>
 
 ## Example
-The following code illustrates how to use the [Editor APIs](/express-add-on-apis/docs/api/classes/Editor) to access the document, create a rectangle, set some properties and a fill, and add it to the current document:
+The following code illustrates how to use the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> to access the document, create a rectangle, set some properties and a fill, and add it to the current document:
 
 ```js
 import { editor } from "express";
