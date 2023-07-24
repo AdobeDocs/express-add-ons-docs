@@ -1,8 +1,12 @@
 # Common APIs
-The common APIs are injected by the script runtime to allow you to access common utility functions. 
+The common JavaScript APIs refer to the set of APIs that are injected by the script runtime into the global context to allow you to access common JavaScript functions. 
 
 ## Overview
-The common APIs provide implementations of some common objects and functions for you to use in script code to perform things like logging to the console and setting timeouts and intervals. They are limited to a set of basic functions currently, as outlined in the next section. 
+The common APIs provide implementations of some common objects and functions for you to use in your script code to perform things like logging to the console and setting timeouts and intervals. They are limited to a set of basic functions currently, as outlined in the next section. 
+
+<InlineAlert slots="text" variant="success"/>
+
+These APIs can automatically be used in your script runtime code.
 
 ## Console Object
 A global [`console`](https://developer.mozilla.org/en-US/docs/Web/API/console) object implementation is provided with the following JavaScript method implementations for use in your script code.

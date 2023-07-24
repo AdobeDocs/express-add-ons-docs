@@ -1,5 +1,5 @@
 # Script Runtime
-The script runtime is a sandboxed JavaScript execution environment based on QuickJS to execute third-party JavaScript code securely and synchronously in another JavaScript environment.
+The script runtime is a sandboxed JavaScript execution environment based on [QuickJS](https://bellard.org/quickjs/) which allows to execute third-party JavaScript code securely and synchronously in another JavaScript environment.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -15,20 +15,20 @@ The [communication APIs](./communication/) allow you to communicate between the 
 The [common APIs](./common/) are objects and functions injected by the script runtime to allow you the ability to access common utility functions in your JavaScript. 
 
 ### Editor APIs
-The [editor APIs](./editor/) provide access to the user's document to access the structure and properties, and to make changes to it via high-level authoring APIs. 
+The [editor APIs](./editor/) provide access to the user's document structure and properties, and allow you to make changes to it via high-level authoring APIs. 
 
 ## Script Runtime JavaScript Engine
 The script runtime is based on [QuickJS](https://bellard.org/quickjs/) and implements a subset of the [ES2020 specification](https://tc39.es/ecma262/). 
 
 Some key concepts to note about the script runtime include:
 
-- Provides limited access to browser APIs (see the [Common APIs](./common/) reference). Note however, you can use the communication APIs to execute browser APIs (ie: `fetch`) in the iframe runtime environment.
+- Limited access to browser APIs (see the [Common APIs](./common/) reference). Note however, you can use the [communication APIs](./communication/) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the script runtime.
 - Runs in a slower execution environment.
 - Provides no debugging capabilities other than those provided by the [injected `console` functions](../common/index.md#injected-objects).
 - Runs in the same context/thread as the host's application business logic, (e.g. the authoring worker thread in Adobe Express), thus providing access to interact with it via the injected APIs.
 
 ## Getting Started with the APIs
-The methods defined in the [communication API reference](./communication/) are used to expose and use the API proxies between the iframe and script environments of your add-on. Start [there](./communication/) to learn more about how to expose APIs and use them from either runtime environment.
+The methods defined in the [communication API reference](./communication/) are used to expose and use the API proxies between the iframe and script environments of your add-on. Start with the [communication reference](./communication/) to learn more about how to expose APIs and use them from either  environment.
 
 ### Script entry point
 To use the script runtime in your add-on, start by defining a new `script` entry point in your `manifest.json` file with the value set to the name of the file containing the JavaScript code you're using with the script runtime functions: 
