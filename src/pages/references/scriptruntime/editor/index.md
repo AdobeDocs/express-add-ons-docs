@@ -46,6 +46,7 @@ rectangle.width = 200;
 rectangle.height = 150;
 rectangle.translateX = 10;
 rectangle.translateY = 20;
+console.log(rectangle); // for debugging purpose
 
 const rectFill = editor.createColorFill({ red: Math.random(), green: Math.random(), blue: Math.random(), alpha: Math.random() });            
 rectangle.fills.append(rectFill);

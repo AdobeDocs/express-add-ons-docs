@@ -57,3 +57,14 @@ Demonstrates how to use the [editor APIs](./editor/) to create various shapes an
 
 ### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) 
 A more comprehensive example of using the [editor APIs](./editor/) to add a page, images and shapes, as well as clear the artboard.
+
+## Debugging script based add-ons
+Currently, you can perform debugging from the script runtime (via `code.js`) using `console.log()` statements. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./editor/#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.
+
+## CLI template for script based add-on 
+The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five different template options available. To get started with script based add-on using javascript with editor APIs, you must choose the template named `javascript-with-editing-apis`. Please refer to [Using the CLI](../../guides/getting_started/dev_tooling/#using-the-cli) section to get more information on how to use the CLI and create new add-on.
+<br/>
+
+The sample script based add-on created using template named `javascript-with-editing-apis` will look as shown from [Add-on Development Tools Panel](../../guides/getting_started/dev_tooling#add-on-development-tools-panel):
+
+![script add-on sample screenshot](../img/script-add-on-sample.png)
