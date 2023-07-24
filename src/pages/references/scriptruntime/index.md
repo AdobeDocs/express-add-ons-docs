@@ -3,7 +3,7 @@ The script runtime is a sandboxed JavaScript execution environment based on Quic
 
 <InlineAlert slots="text" variant="warning"/>
 
-The script runtime references are currently **experimental only**, so you will need to set `experimentalApi` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or any that you will need to re-submit with updates until they are considered stable.*
+The script runtime references are currently **experimental only**, so you will need to set `experimentalApi` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*
 
 ## Overview
 The script runtime exposes three categories of APIs, which each have their own specific references and are outlined below.
