@@ -15,7 +15,7 @@ The [communication APIs](./communication/) allow you to communicate between the 
 The script runtime does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available in Script Runtime. For these, the developers can use iframe runtime environment and [communicate](./communication/#expose-apis-from-the-ui) the result back to the script running inside script runtime environment. Some of the commonly used [Web APIs](./common/) (with limited scope) have been provided inside script runtime environment.
 
 ### Editor APIs
-The [editor APIs](./editor/) provide access to the user's document structure and properties, and allow you to make changes to it via high-level authoring APIs. 
+The [editor APIs](./editor/) provide access to the user's document structure and properties, and allow you to make changes to it via the provided APIs.
 
 ## Script Runtime JavaScript Engine
 The script runtime is based on [QuickJS](https://bellard.org/quickjs/) and implements a subset of the [ES2020 specification](https://tc39.es/ecma262/). 
@@ -25,7 +25,7 @@ Some key concepts to note about the script runtime include:
 - Limited access to browser APIs (see the [Web APIs](./common/) reference). Note however, you can use the [communication APIs](./communication/) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the script runtime.
 - Runs in a slower execution environment.
 - Provides no debugging capabilities other than those provided by the [injected `console` functions](../common/index.md#injected-objects).
-- Runs in the same context/thread as the host's application business logic, (e.g. the authoring worker thread in Adobe Express), thus providing access to interact with it via the injected APIs.
+- Runs in the same context/thread as the host's application business logic, thus providing access to interact with it via the injected APIs.
 
 ## Getting Started with the APIs
 The methods defined in the [communication API reference](./communication/) are used to expose and use the API proxies between the iframe and script environments of your add-on. Start with the [communication reference](./communication/) to learn more about how to expose APIs and use them from either  environment.

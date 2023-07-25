@@ -1,5 +1,5 @@
 # Editor APIs
-The Editor APIs provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via authoring methods.
+The Editor APIs provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via the provided APIs.
 
 <InlineAlert slots="text" variant="warning"/>
 
