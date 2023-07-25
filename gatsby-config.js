@@ -101,7 +101,7 @@ module.exports = {
           },
           {
             "title": "Web APIs",
-            "path": "references/scriptruntime/common/",  
+            "path": "references/scriptruntime/web/",  
           },
           {
             "title": "Editor APIs",            
