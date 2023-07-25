@@ -12,7 +12,7 @@ The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint cr
 ## Experimental Methods
 The following methods allow you to communicate bidirectionally between the add-on running in the iframe and the [script runtime](../scriptruntime/) environments. 
 
-**IMPORTANT:** These methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To use these methods, you will first need to set the `experimentalApi` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. 
+**IMPORTANT:** These methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To use these methods, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. 
 
 ### exposeApi()
 Use this method to expose an API from your UI code running in the iframe to another runtime (ie: the [script runtime](../scriptruntime/) defined in your `code.js` for instance).

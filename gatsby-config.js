@@ -100,7 +100,7 @@ module.exports = {
             "path": "references/scriptruntime/communication/",  
           },
           {
-            "title": "Common APIs",
+            "title": "Web APIs",
             "path": "references/scriptruntime/common/",  
           },
           {
