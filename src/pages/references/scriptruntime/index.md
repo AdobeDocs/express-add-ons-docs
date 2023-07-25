@@ -18,8 +18,7 @@ The script runtime does NOT provide a full fledged browser’s JavaScript execut
 The [editor APIs](./editor/) provide access to the user's document structure and properties, and allow you to make changes to it via the provided APIs.
 
 ## Script Runtime JavaScript Engine
-The script runtime is based on [QuickJS](https://bellard.org/quickjs/) and implements a subset of the [ES2020 specification](https://tc39.es/ecma262/). 
-
+The script runtime is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 Some key concepts to note about the script runtime include:
 
 - Limited access to browser APIs (see the [Web APIs](./common/) reference). Note however, you can use the [communication APIs](./communication/) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the script runtime.
