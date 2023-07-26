@@ -26,7 +26,7 @@ const { runtime } = AddOnSdkApi.instance;
 
 const scriptApis = {
     performWorkOnDocument: function (data, someFlag) {
-        // call content authoring APIs
+        // call the Editor APIs
     },
     getDataFromDocument: function() {
         // get some data from document

@@ -1,5 +1,5 @@
 # Editor APIs
-The Editor APIs provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via authoring methods.
+The Editor APIs provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via the provided APIs.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -37,20 +37,22 @@ See the [example below](#example) for further usage details.
 The following code snippet illustrates how to use the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> from the script running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
-import { editor } from "express";
+import { editor, utils } from "express";
 
-artboardNode = editor.documentRoot.currentContext; // access the current document
+const insertionParent = editor.context.insertionParent; // get node to insert content into
 
 const rectangle = editor.createRectangle();
 rectangle.width = 200;
 rectangle.height = 150;
-rectangle.translateX = 10;
+rectangle.translateX = 100;
 rectangle.translateY = 20;
+console.log(rectangle); // for debugging purpose
 
-const rectFill = editor.createColorFill({ red: Math.random(), green: Math.random(), blue: Math.random(), alpha: Math.random() });            
-rectangle.fills.append(rectFill);
+const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];
+const rectangleFill = editor.createColorFill(utils.createColor(red, green, blue, alpha));            
+rectangle.fills.append(rectangleFill);
 
-artboardNode.children.append(rectangle);
+insertionParent.children.append(rectangle);
 ```
 
 ## References & Code Samples
