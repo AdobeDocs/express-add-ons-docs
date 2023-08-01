@@ -37,7 +37,7 @@ contributors:
   * If your code takes more than about 150-160ms to process, you may see warnings from the co-editing service in the console (`LECCoeditingService: Invalid sequenceNumber`). The cause for this is being researched and will be addressed in a future release. To reduce the number of times you see this error, reduce the length of time your script takes in a single editing frame — use `setTimeout` if necessary to batch your work.
 * Common pitfalls
   * If you split your work on a document over multiple frames using `setTimeout`, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release. 
-  * Executing `await runtime.apiProxy("script")` from your script runtime code will do nothing, and nothing will be logged on the console.
+  * When setting up communication between your panel UI code and your script sandbox code, calling `apiProxy()` with the wrong argument will do nothing without providing any error feedback.  If communication is not working, carefully double-check your UI code is requesting the `"script"` API proxy and your script sandbox code is requesting the `"panel"` API proxy.
   * When adding shapes to a document, you should take care to ensure that the content is at least partially visible on the page. Otherwise the user may not have a way to edit it easily in the future.
 * Unexpected behavior
   * If the user has a selection and your add-on creates new content, the selection is cleared. This will be addressed before release.
