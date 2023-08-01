@@ -89,24 +89,6 @@ module.exports = {
 
       ]          
       },
-      {              
-        title: 'Script Runtime',                
-        path: 'references/scriptruntime/',   
-        pages: [                                                                                                                
-          {
-            "title": "Communication APIs",
-            "path": "references/scriptruntime/communication/",  
-          },
-          {
-            "title": "Web APIs",
-            "path": "references/scriptruntime/web/",  
-          },
-          {
-            "title": "Editor APIs",            
-            "path": "references/scriptruntime/editor/",  
-          }
-        ]
-      },      
       {
         title: 'Manifest Schema',
         description: 'Manifest schema',

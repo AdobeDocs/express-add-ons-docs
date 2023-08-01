@@ -76,7 +76,6 @@ Variant	confirmation, information, warning, destructive, error, input
         <p>Runtime type of the entrypoint creating this backend object. 
         <ul>
           <li><strong>panel</strong></li>add-on's iframe runtime, ie: code running in <b>index.html</b>
-          <li><strong>script</strong></li>add-on's script runtime ie: code running in <b>code.js</b>
           <li><strong>dialog</strong></li>currently open dialog code
         </ul>  
         </p>        
