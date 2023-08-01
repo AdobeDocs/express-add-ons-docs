@@ -24,8 +24,8 @@ contributors:
 
 ### Added
 
-- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs. 
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints] section to support the new experimental [script runtime APIs](../references/scriptruntime/). 
+- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs.
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints] section to support the new experimental [script runtime APIs](../references/scriptruntime/).
 - Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
 
 ### Important notes on Script Runtime APIs
@@ -38,7 +38,7 @@ contributors:
   - Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the script runtime to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.
   - It's occasionally possible to run into a race condition where the communications bridge between the two contexts (panel vs script runtime) is not set up in time. If you interact with your panel UI immediately after it's reloaded, the click may appear do nothing instead of invoking your script code. We're working on a fix for this.
 - Common pitfalls
-  - If you split your work on a document over multiple frames using `setTimeout`, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release. 
+  - If you split your work on a document over multiple frames using `setTimeout`, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release.
   - When setting up communication between your panel UI code and your script sandbox code, calling `apiProxy()` with the wrong argument will do nothing without providing any error feedback.  If communication is not working, carefully double-check your UI code is requesting the `"script"` API proxy and your script sandbox code is requesting the `"panel"` API proxy.
   - When adding shapes to a document, you should take care to ensure that the content is at least partially visible on the page. Otherwise the user may not have a way to edit it easily in the future.
 - Unexpected behavior
@@ -59,7 +59,7 @@ contributors:
 
 - [UX Guidelines](../guides/design/index.md) are now available!
 - A new [`requestedSize`](../references/addonsdk/app-document/#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
-- A new [`clipboard` permission](../references/manifest/#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard. 
+- A new [`clipboard` permission](../references/manifest/#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
 - Information on [using fonts](../guides/design/index.md#using-fonts).
 - CORS / COEP header handling added to [CORS guide](../guides/develop/cors.md#cors--coep-handling).
 
