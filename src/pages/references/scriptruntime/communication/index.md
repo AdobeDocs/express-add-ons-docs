@@ -1,6 +1,10 @@
 # Communication APIs
 The communication APIs allow you to communicate between the script runtime and the iframe where your add-on is running. 
 
+<InlineAlert slots="text" variant="warning"/>
+
+The script runtime is not currently available to developers. The documentation on this page for informational purposes only.
+
 ## Overview
 The script runtime and iframe runtime are two different runtime execution environments which are present on different threads in the browser. The communication APIs are based on the [Comlink library](https://github.com/GoogleChromeLabs/comlink) and provide a mechanism to allow the JavaScript code executing in each to interact. Developers can call the apis exposed in one environment (ie: script runtime) from another environment (ie: iframe where their add-on is running) bidirectionally. 
 

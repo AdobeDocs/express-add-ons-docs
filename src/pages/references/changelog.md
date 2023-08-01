@@ -20,13 +20,11 @@ contributors:
 
 # Changelog
 
-## 2023-08-01
+## 2023-08-04
 
 ### Added
 
-- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs.
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints] section to support the new experimental [script runtime APIs](../references/scriptruntime/).
-- Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
+- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs. NOTE: these APIs will not be available for use until August 4 at the earliest.
 
 ### Important notes on Script Runtime APIs
 
@@ -51,6 +49,13 @@ contributors:
   - There is no support for `fetch` in the Script Runtime environment. You can work around this by exposing a method from your panel that your script code can call that does the work of fetching remote content. In the future we may abstract this for you automatically.
 - Typings & Typescript
   - Typings and samples showing how to use Typescript will be available in a future release.
+
+## 2023-08-01
+
+### Added
+
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [script runtime APIs](../references/scriptruntime/).
+- Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11
 
