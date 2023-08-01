@@ -11,15 +11,13 @@
  */
 
 module.exports = {
-  //pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/',
-  pathPrefix: process.env.PATH_PREFIX || '/express-add-ons/docs/',
+  pathPrefix: process.env.PATH_PREFIX || '/express/add-ons/docs/',
   siteMetadata: {    
-    home: {
-      "title": "Adobe Express Add-ons",
-      "path": "/express-add-ons",
-      //"path": "https://developer-stage.adobe.com/express/add-ons"
-    },
-    pages: [                  
+    pages: [    
+      {
+        title: 'Adobe Express Add-ons',
+        path: 'https://developer.adobe.com/express/add-ons',
+      },              
       {
         title: 'Guides',
         path: 'guides'
