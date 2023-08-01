@@ -41,7 +41,7 @@ contributors:
   * When adding shapes to a document, you should take care to ensure that the content is at least partially visible on the page. Otherwise the user may not have a way to edit it easily in the future.
 * Unexpected behavior
   * If the user has a selection and your add-on creates new content, the selection is cleared. This will be addressed before release.
-  * When you add text content to a document, font substitution is not working correctly. This means that if you use Japanese characters, the user may see square boxes instead. If the user were to type the content manually, however, they would see the correct rendering. This issue will be fixed before release.
+  * When you add text content to a document, font substitution is not working correctly. This means that if you use Asian-language characters, the user may see square boxes instead. If the user were to type the content manually, however, they would see the correct rendering. This issue will be fixed before release.
   * Setting relative rotation on a group before adding any children is considered a "no-op" since these groups don't have a defined center point. Always modify group rotation after adding children.
 * Debugging
   * If your script code has a syntax error, the console will log an unhelpful error message (similar to `Uncaught (in promise) at <adobe-internal.js:49>`). Your add-on panel UI will be visible and continue to be interactive, but it won't be able to communicate with the script runtime, resulting in what feels like non-responsive UI (e.g., clicking doesn't trigger the expected action). You'll want to configure your editor to highlight any syntax editors so that you can be sure your code is at least syntactically correct before you save.
