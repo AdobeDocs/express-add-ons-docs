@@ -24,7 +24,7 @@ contributors:
 
 ### Added
 
-- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs.
+- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs. NOTE: these APIs will not be available for use until August 4 at the earliest.
 
 ### Important notes on Script Runtime APIs
 
