@@ -21,22 +21,6 @@ import { editor } from "express"; // named import 'editor' from express module
 
 See the [example below](#example) for further usage details.
 
-## Methods
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#addTemporalArtboardContainerWithArtboard" target="_blank">addTemporalArtboardContainerWithArtboard</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createArtboard" target="_blank">createArtboard</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createBitmapImage" target="_blank">createBitmapImage</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createColorFill" target="_blank">createColorFill</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createEllipse" target="_blank">createEllipse</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createGroup" target="_blank">createGroup</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createImageContainer" target="_blank">createImageContainer</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createLine" target="_blank">createLine</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createRectangle" target="_blank">createRectangle</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createStroke" target="_blank">createStroke</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#createText" target="_blank">createText</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#getNodeForEntity" target="_blank">getNodeForEntity</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#getNodesForEntities" target="_blank">getNodesForEntities</a>
-- <a href="/express-add-on-apis/docs/api/classes/Editor/#loadBitmapImage" target="_blank">loadBitmapImage</a>
-
 ## Example Code Snippet
 The following code snippet illustrates how to use the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> from the script running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
