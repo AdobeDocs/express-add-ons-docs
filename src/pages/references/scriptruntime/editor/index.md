@@ -19,7 +19,7 @@ An exported `editor` module is provided to enable access to the Editor APIs. You
 import { editor } from "express"; // named import 'editor' from express module
 ```
 
-See the [example below](#example) for further usage details.
+See the example below for further usage details.
 
 ## Example Code Snippet
 The following code snippet illustrates how to use the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> from the script running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
