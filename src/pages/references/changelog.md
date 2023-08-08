@@ -46,10 +46,12 @@ contributors:
   - When you add text content to a document, font substitution is not working correctly. This means that if you use Asian-language characters, the user may see square boxes instead. If the user were to type the content manually, however, they would see the correct rendering. This issue will be fixed before release.
   - Setting rotation on an empty group is ignored. Always add content (children) to a group first, and then set its rotation.
   - While the API supports adding multiple strokes to elements, Express currently only supports editing the _first_ stroke added. If you want to change the stroke of an element, _remove_ the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
+
     ```
     element.strokes.clear();
     element.strokes.append(newStroke);
     ```
+
 - Likely API changes
   - Creating colors is currently done via `utils.createColor()`. We're likely to change how you assign colors to objects, so bear this in mind as you use the experimental APIs. Note that this means you cannot just pass a plain JS object of the form `{red, green, blue}` to the Editor APIs — it must be a color created using `utils.createColor`.
   - Editor API constants may be renamed or may change how they are accessed.
