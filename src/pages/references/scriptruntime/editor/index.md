@@ -12,7 +12,7 @@ These API's are currently **experimental only**. Please do not use them in any a
 
 ## Overview
 
-Some examples of what you can do with the [Editor APIs](/express-add-on-apis/docs/api/classes/Editor) are creating shapes, adding pages to the document, clearing the artboard and more. See the following sections for more details and examples of using these new APIs. 
+Some examples of what you can do with the [Editor APIs](/express-add-on-apis/docs/api/classes/Editor) are creating shapes, adding pages to the document, clearing the artboard and more. See the following sections for more details and examples of using these new APIs.
 
 ## Access to Editor APIs
 
@@ -54,4 +54,3 @@ Check out the [full set of API documentation](/express-add-on-apis/docs/api/clas
 <InlineAlert slots="text" variant="warning"/>
 
 During this experimental phase, be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption.
- 
