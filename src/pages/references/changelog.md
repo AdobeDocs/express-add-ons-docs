@@ -20,14 +20,17 @@ contributors:
 
 # Changelog
 
-## 2023-08-04
+## 2023-08-09
 
 ### Added
 
-- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs. NOTE: these APIs will not be available for use until August 4 at the earliest.
+- Added new [references section](../references/scriptruntime/) for the Script Runtime APIs.
 
 ### Important notes on Script Runtime APIs
 
+- These APIs are experimental!
+  - Do not test your add-ons on documents that you care about as these APIs are not currently considered stable.
+  - Be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Visibility of a method or property is visible via `console.log` is not an indication of whether that field is supported or documented.
 - Debugging & Console messages
   - You may see "Empty transaction not added to pendingTransaction" while running code in the script runtime. You can ignore this for now.
   - You may see "Detected a possible stutter. Excessive ECS Frame duration of ## ms" in the console. You can ignore this for now.
