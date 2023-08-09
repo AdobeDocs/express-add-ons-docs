@@ -4,10 +4,6 @@ The Editor APIs provide access to the user's document, allowing you to access th
 
 <InlineAlert slots="text" variant="warning"/>
 
-The script runtime is not currently available to developers. The documentation on this page for informational purposes only. Some of the links below will not resolve until the APIs are released.
-
-<InlineAlert slots="text" variant="warning"/>
-
 These API's are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
 
 ## Overview
