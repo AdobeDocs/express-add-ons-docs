@@ -3,10 +3,6 @@ The script runtime is a sandboxed JavaScript execution environment, which allows
 
 <InlineAlert slots="text" variant="warning"/>
 
-The script runtime is not currently available to developers. The documentation on this page for informational purposes only.
-
-<InlineAlert slots="text" variant="warning"/>
-
 The script runtime references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*
 
 ## Overview
