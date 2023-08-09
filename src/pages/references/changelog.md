@@ -47,7 +47,7 @@ contributors:
   - Setting rotation on an empty group is ignored. Always add content (children) to a group first, and then set its rotation.
   - While the API supports adding multiple strokes to elements, Express currently only supports editing the _first_ stroke added. If you want to change the stroke of an element, _remove_ the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
 
-    ```
+    ```js
     element.strokes.clear();
     element.strokes.append(newStroke);
     ```
