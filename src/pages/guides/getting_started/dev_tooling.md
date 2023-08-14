@@ -96,6 +96,8 @@ The add-on CLI contains built-in, pre-configured templates to allow you to creat
 | `typescript`       | TypeScript       |
 | `react-javascript`  | React with JavaScript |
 | `react-typescript` | React with TypeScript |
+| `javascript-with-editor-apis` | Get started with add-on development using JavaScript with Editor APIs |
+
 
 
 The following syntax can be used to specify one of the above templates:

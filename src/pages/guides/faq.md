@@ -32,8 +32,9 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 - [How do I setup webpack to copy new files or folders into `dist`?](#how-do-i-setup-webpack-to-copy-new-files-or-folders-into-dist)
 - [My form submission doesn't work and the devtools console shows the error - "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?](#my-form-submission-doesnt-work-and-the-devtools-console-shows-the-error---blocked-form-submission-to---because-the-forms-frame-is-sandboxed-and-the-allow-forms-permission-is-not-set-whats-wrong)
 - [How do I enable CORS for a service that blocks my add-on requests due to the `null` origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-null-origin)
-- [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?]()
-- [I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
+- [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
+- [I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
+- [I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.](#i-receive-this-error-when-trying-to-run-my-add-on-error-eisdir-illegal-operation-on-a-directory)
 - [I receive a `MANIFEST_NOT_FOUND_ERROR` during the package verification when trying to upload my plugin package for distribution.](#i-receive-this-error-when-trying-to-run-my-add-on-error-eisdir-illegal-operation-on-a-directory)
 - [At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**.](#how-can-i-monetize-my-add-on)
 
@@ -90,6 +91,9 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
 ### The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?
   You can open the file picker using the `input` element with a `type` set to `file` to get around this.
+
+### I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.
+  This usually indicates an issue with invalid SSL credentials. Locate the `devcert` folder which can be found at `/Users/{your_username}/Library/Application\ Support/devcert` on MAC or `C:\Users\{your_username}\AppData\Local\`, delete it, and create an add-on again. You should get the option to create an SSL certificate again when you create the new add-on, which should resolve your problem.
 
 ### I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.
   This usually indicates you do not have SSL configured correctly. You can fix it by clearing the configurations from the configuration file. In Windows you'll find this file at `C:\Users\{your_username}\AppData\Local\Adobe\CCWebAddOn\add-on-preferences.json`, and on MAC, it's at `/Users/{user}/Library/Application Support/Adobe/CCWebAddOn\add-on-preferences.json`. Once you find it, delete the two properties defined for `sslCertPath` and `sslKeyPath` there. After they've been deleted, you can run the commands to create a new add-on where you will be prompted to set up SSL again and then be sure to specify the correct paths to your certificate and key file. 
