@@ -62,7 +62,9 @@ Create renditions of the current page or the whole document for exporting in a s
 | Name                | Type         | Description   |
 | --------------------| -------------| -----------:  |
 | `renditionOptions`  | `Object`     | [`RenditionOptions`](#renditionoptions) object. |
-| `renditionIntent`   | `string`    |               |
+| `renditionIntent`   | `string`     | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
+
+**NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Refer to the [exporting content use case example](../../guides/develop/index.md#exporting-content) for more specific details on options for handling the export of premium content.
 
 
 #### `RenditionOptions`
@@ -115,7 +117,7 @@ A `Promise` with an array of page `Rendition` objects. It will contain one page 
 #### `Rendition`
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `type?`       | `string`     |  Type of Rendition. Value is always "page" |
+| `type?`       | `string`     | Type of Rendition. Value is always "page" |
 | `blob`        | `Blob`       | Blob containing the rendition |
 | `title`       | `string`     | The page title of the rendition. | 
 
@@ -136,3 +138,4 @@ The table below describes the possible error messages that may occur when using 
 | Invalid background color: `${options.backgroundColor}` | Background color is invalid. |
 | Invalid quality parameter: `${options.quality} not in range [0,1]` | Quality property is invalid in jpeg. |
 | No video element in the specified range. | No video is present in the range when trying to export mp4. |
+| USER_NOT_ENTITLED_TO_PREMIUM_CONTENT | The user is trying to export premium content but is not entitled to it. |

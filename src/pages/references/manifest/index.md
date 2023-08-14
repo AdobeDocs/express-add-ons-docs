@@ -37,7 +37,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
             }
         ],
         "experimentalApis": true,
-        "supportsTouch": false
+        "supportsTouch": false,
     },
     "entryPoints": [
         {
@@ -88,7 +88,8 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
     }, 
     {…}],
     "experimentalApis": true,
-    "supportsTouch": false
+    "supportsTouch": false,
+    "renditionPreview": true
 } 
 ```
 

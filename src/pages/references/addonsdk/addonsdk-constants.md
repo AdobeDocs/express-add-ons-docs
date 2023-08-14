@@ -44,7 +44,7 @@ Variant	confirmation, information, warning, destructive, error, input
         <p>The intent to set for creating the rendition. Options:</p>
         <ul>
           <li><strong>preview</strong></li>Intent to preview the content.
-          <li><strong>export</strong></li>Intent to export/download the content.
+          <li><strong>export</strong></li>Intent to export/download the content (default).
         </ul>
     </td>    
 </tr>

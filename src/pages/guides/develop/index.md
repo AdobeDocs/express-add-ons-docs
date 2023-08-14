@@ -63,18 +63,14 @@ The supported file types for imported content are currently **`png/jpg/mp4`,** a
 
 
 ## Exporting Content
-Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to to allow the user to save/download the current design (or range of a design) with certain export configurations to their local hard drive. An example use case is provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](https://developer.adobe.com/express/add-ons/docs/samples/#export-sample).
+Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to allow the user to save/download the current design, (or range of a design), with certain export configurations to their local hard drive. Some examples for exporting content are provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](https://developer.adobe.com/express/add-ons/docs/samples/#export-sample).
 
 The steps to export content:
 - Call `createRenditions()` to get the renditions based on your export configuration options. 
 - Convert the `blob` object returned in the response to a `string` with the `URL.createObjectURL(blob)` method.
 - Create or update an anchor `<a>` element's `href` value with the URL string from the above step.
 
-<!-- <InlineAlert slots="text" variant="info"/>
-
-Each page of your design is considered a single rendition. See the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/) for additional rendition options and values. -->
-
-### Example
+### Basic Example
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -89,6 +85,62 @@ document.getElementById("anchor").href = downloadUrl;
 <a href="#" download="download" id="anchor" style="text-decoration: none">
   <sp-button id="download-button" style="display: none">Download</sp-button>
 </a>
+```
+
+### Premium Content
+While the above is a very basic example, add-ons that call `createRenditions` to export content should ensure proper handling in the case of premium content. There are two options that can be considered for handling it:
+- Display an error message when it fails due to the user not being entitled for premium content.
+- Set a `renditionPreview` intent in the [manifest requirements](../../references/manifest/index.md#requirements), and add an extra argument to the `createRenditions` method to generate previews that can still use premium content. Note, however, that your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user).
+
+The following code snippets illustrate both of these options for reference.
+
+#### Show Premium Content Error
+```js
+const showPremiumContentError = async () => {
+  const { ButtonType } = AddOnSdk.constants;
+  const {buttonType} = await window.AddOnSdk.app.showModalDialog({
+    variant: "error",
+    title: "Export failed",
+    description: "Sorry, we were not able to export your design. Some assets are only included in the Premium plan. Try replacing with something else or upgrading Adobe Express to a Premium plan.", 
+    buttonLabels: { secondary: "Upgrade" }
+  });
+  if (buttonType === ButtonType.cancel) return;
+  if (buttonType === ButtonType.secondary) {
+    window.open("https://www.adobe.com/go/express_addons_pricing", "_blank")
+  }
+}
+
+document.querySelector("#export").onclick = async () => {
+  const { app, constants } = AddOnSdk;
+  const { Range, RenditionFormat, RenditionType, RenditionIntent } = constants;
+  /* THE FOLLOWING FLAG CAN BE USED FOR TESTING PURPOSES ONLY -- REMOVE BEFORE RELEASE */
+  app.devFlags.simulateFreeUser = true; 
+  const renditionOptions = {range: Range.currentPage, format: RenditionFormat.png};
+  try {
+    const renditions = await app.document.createRenditions(renditionOptions);
+    renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
+  } catch (err) {
+    if (err.message?.includes("USER_NOT_ENTITLED_TO_PREMIUM_CONTENT")) {
+      showPremiumContentError();
+    }
+  }
+}
+```
+
+#### Allow Preview of Premium Content
+```js
+document.querySelector("#export").onclick = async () => {
+  const { app, constants } = AddOnSdk;
+  const { Range, RenditionFormat, RenditionType, RenditionIntent } = constants;  
+  app.devFlags.simulateFreeUser = true; 
+  const renditionOptions = {range: Range.currentPage, format: RenditionFormat.png};
+  try {
+    const renditions = await app.document.createRenditions(renditionOptions,RenditionIntent.preview);
+    renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
+  } catch (err) {
+    console.log("Error " + err);
+  }
+}
 ```
 
 ## Authorization with OAuth 2.0
