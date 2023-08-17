@@ -114,3 +114,7 @@ async function callUIApis() {
     console.log("Data from UI: " + result);
 }
 ```
+
+<InlineAlert slots="text" variant="info"/>
+
+**DEBUGGING:** Since the script code runs in a separate context from your add-on UI, the only support for debugging is via the `console.*` methods.

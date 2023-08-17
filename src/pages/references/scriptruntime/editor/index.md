@@ -45,7 +45,7 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** While using the editor APIs in experimental mode, please be sure to **immediately add a fill**, or the document could be corrupted and unopenable. This will be fixed in the near future. 
+**IMPORTANT:** While using the editor APIs in experimental mode, if you add an artboard, please be sure to **immediately add a fill**, or the document could be corrupted and unopenable. This will be fixed in the near future. 
 
 ## References & Code Samples
 
