@@ -20,6 +20,21 @@ contributors:
 
 # Changelog
 
+## 2023-08-17
+
+### Bugs and Fixes
+
+- There's currently a bug where `addArtboard` could crash the application or corrupt the document if there's no `fill` specified on the artboard. *Please ensure you always add a fill in the same frame as the artboard creation until this issue is resolved*. Also note, when this bug is fixed, the `ArtboardNode` will accept a single `fill` object, rather than an `ItemList` of `fill`(s).
+
+- Currently, in the `addPage` API, a new page ic created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will 
+change the default context to the `artboard` child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.
+
+  **REMINDER:** We recommend that you ***only test the use of these experimental APIs against non-essential documents***, due to the potential for loss or corruption. 
+
+
+### Updates
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/index.md#premium-content). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+
 ## 2023-08-09
 
 ### Added

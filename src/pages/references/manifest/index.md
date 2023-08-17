@@ -75,8 +75,6 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | `supportsTouch?`   | `boolean`    | Whether the add-on supports touch-only devices. If not specified, the default value assumed is `false`.  |
 | `renditionPreview?` | `boolean` |	Ensure premium content preview is properly handled for free users when add-ons create renditions. |
 
-<!-- | `privilegedApis?` | `boolean` | Identify the add-on as privileged. If not specified, default value assumed is 'false'.    | -->
-
 **Example:**<br/>
 ```json
 "requirements": {
@@ -141,7 +139,7 @@ The following platform values are currently supported in the `supportedDeviceCla
         "id": "panel1",
         "main": "index.html",
         "permissions": {
-            "sandbox": ["allow-popups", "allow-presentation", "allow-downloads"],
+            "sandbox": ["allow-popups", "allow-popups-to-escape-sandbox", "allow-presentation", "allow-downloads"],
             "oauth": ["www.dropbox.com"]
         }
     }
@@ -179,6 +177,21 @@ The following permission values are currently supported in the `sandbox` key.
 "permissions" : {
     "sandbox": ["allow-popups ", "allow-downloads"],    
 }
+```
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** When implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the `sandbox` attribute of your `manifest.json`. This will allow the Adobe Express pricing page to properly load:
+
+```json
+    "entryPoints": [
+        {   
+            /*... other fields ...*/
+            "permissions": {
+                "sandbox": ["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]
+            }
+        }
+    ]
 ```
 
 ## Notes

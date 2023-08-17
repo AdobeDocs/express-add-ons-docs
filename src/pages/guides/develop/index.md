@@ -88,13 +88,12 @@ document.getElementById("anchor").href = downloadUrl;
 ```
 
 ### Premium Content
-While the above is a very basic example, add-ons that call `createRenditions` to export content should ensure proper handling in the case of premium content. There are two options that can be considered for handling it:
-- Display an error message when it fails due to the user not being entitled for premium content.
-- Set a `renditionPreview` intent in the [manifest requirements](../../references/manifest/index.md#requirements), and add an extra argument to the `createRenditions` method to generate previews that can still use premium content. Note, however, that your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user).
+While the above is a very basic example, add-ons that call `createRenditions` to export content should ensure proper handling in the case of premium content. There are two options that can be considered for handling it.
 
-The following code snippets illustrate both of these options for reference.
+#### Option 1: Show premium content error with "Upgrade" option
+Display an error message when export/download fails due to the user not being entitled for premium content, and include a button to allow them to upgrade. *Be sure to update your `manifest.json` as outlined in the warning below the code snippet examples to allow the pricing page to properly load.*
 
-#### Show Premium Content Error
+#### Example:
 ```js
 const showPremiumContentError = async () => {
   const { ButtonType } = AddOnSdk.constants;
@@ -127,11 +126,21 @@ document.querySelector("#export").onclick = async () => {
 }
 ```
 
-#### Allow Preview of Premium Content
+#### OPTION 2 - Allow preview of premium content
+Set a `renditionPreview` intent in the [manifest requirements](../../references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](../../references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content. 
+
+**IMPORTANT**: Your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user). To that end, be sure that users cannot: 
+- **right-click -> save as**: To prevent this, reject the `contextmenu` event
+- **drag the image off the panel**: To prevent this, you can reject the `dragstart` event
+
+**Note:** These behaviors are enabled by default if you use an `<img>` tag. If you apply the image using `background-image` CSS, these behaviors aren't added.
+
+#### Example:
 ```js
 document.querySelector("#export").onclick = async () => {
   const { app, constants } = AddOnSdk;
   const { Range, RenditionFormat, RenditionType, RenditionIntent } = constants;  
+  /* THE FOLLOWING FLAG CAN BE USED FOR TESTING PURPOSES ONLY */
   app.devFlags.simulateFreeUser = true; 
   const renditionOptions = {range: Range.currentPage, format: RenditionFormat.png};
   try {
@@ -142,6 +151,12 @@ document.querySelector("#export").onclick = async () => {
   }
 }
 ```
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** When implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to properly load: ```"permissions": { "sandbox": ["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]
+}```
+        
 
 ## Authorization with OAuth 2.0
 This use case focuses on providing an authorization feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. Here you will find instructions of how to set it up, and an example of how to implement it. But also check out the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details, as well as the  [import-images-using-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth) and [Dropbox](https://developer.adobe.com/express/add-ons/docs/samples/#dropbox) sample add-ons for more advanced usage.

@@ -64,7 +64,15 @@ Create renditions of the current page or the whole document for exporting in a s
 | `renditionOptions`  | `Object`     | [`RenditionOptions`](#renditionoptions) object. |
 | `renditionIntent`   | `string`     | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
 
-**NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Refer to the [exporting content use case example](../../guides/develop/index.md#exporting-content) for more specific details on options for handling the export of premium content.
+**NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly: 
+
+```json
+"permissions": { 
+    "sandbox": ["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]
+}
+```
+
+Refer to the [exporting content use case example](../../guides/develop/index.md#premium-content) for more specific details on options for handling the export of premium content.
 
 
 #### `RenditionOptions`

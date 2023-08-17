@@ -43,10 +43,14 @@ rectangle.fills.append(rectangleFill);
 insertionParent.children.append(rectangle);
 ```
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** While using the editor APIs in experimental mode, please be sure to **immediately add a fill**, or the document could be corrupted and unopenable. This will be fixed in the near future. 
+
 ## References & Code Samples
 
 Check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the editor APIs.
 
 <InlineAlert slots="text" variant="warning"/>
 
-During this experimental phase, be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption.
+During this experimental phase, be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Also, we recommend you ***only test the use of these experimental APIs against non-essential documents***, due to the potential for loss or corruption. 
