@@ -19,6 +19,10 @@ contributors:
 ---
 
 # Changelog
+## 2023-08-29
+- Added [`currentUser` API](../guides/develop/index.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/index.md#current-user).
+- Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
+- Added [`DevFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
 ## 2023-08-17
 
@@ -26,10 +30,10 @@ contributors:
 
 - There's currently a bug where `addArtboard` could crash the application or corrupt the document if there's no `fill` specified on the artboard. *Please ensure you always add a fill in the same frame as the artboard creation until this issue is resolved*. Also note, when this bug is fixed, the `ArtboardNode` will accept a single `fill` object, rather than an `ItemList` of `fill`(s).
 
-- Currently, in the `addPage` API, a new page ic created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will 
+- Currently, in the `addPage` API, a new page is created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will 
 change the default context to the `artboard` child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.
 
-  **REMINDER:** We recommend that you ***only test the use of these experimental APIs against non-essential documents***, due to the potential for loss or corruption. 
+  **IMPORTANT:** We recommend that you ***only test the use of these experimental Editor APIs against non-essential documents***, due to the potential for loss or corruption. 
 
 
 ### Updates
