@@ -12,7 +12,7 @@ Provides access to the currently logged in user.
 Retrieve the current user of the host application.
 
 #### Signature
-`userId(): promise<string>`
+`userId(): Promise<string>`
 
 #### Return Value
 A resolved `Promise` containing the `userId` of the current user.
