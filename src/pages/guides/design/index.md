@@ -6,9 +6,9 @@ The design of your add-on is just as important to the success of your add-on as 
 
 <TextBlock slots="heading, text, buttons" theme="light" isCentered/>
 
-## New UX Guidelines Available
+## UX Guidelines Available
 
-We are happy to announce that our first set of UX Guidelines have arrived! These guidelines are intended to help developers closely align the design of their add-ons with the Adobe brand, providing an improved, unified experience for the end-user.
+Check out our UX Guidelines, which have been created with the intention to help developers closely align the design of their add-ons with the Adobe brand, providing an improved, unified experience for the end-user.
 
 - [UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
 
