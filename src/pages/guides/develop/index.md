@@ -558,7 +558,7 @@ AddOnSdk.app.on("localechange", data => {
 ```
 
 ## Current User (for monetization flows)
-You can leverage the `currentUser` API to obtain the information for the currently logged in user, for instance if you want to use their `userId` to validate in a monetization flow. 
+You can leverage the [`currentUser`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-currentUser) API to obtain the information for the currently logged in user, for instance if you want to use their `userId` to validate in a monetization flow. 
 
 Use the example below to try this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-currentUser). Also, refer to the [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon), which shows an example of how you can utilize the hash of the user ID to integrate your add-on with licensing and payment services.
 
