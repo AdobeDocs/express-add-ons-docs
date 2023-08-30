@@ -166,6 +166,7 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 **Features Leveraged:**<br/>
 
 - [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
+- [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->

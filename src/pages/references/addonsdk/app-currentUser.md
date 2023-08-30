@@ -9,7 +9,7 @@ Provides access to the currently logged in user.
 ## Methods
 
 ### userId()
-Retrieve the current user of the host application.
+Retrieve the current user of the host application (Adobe Express).
 
 #### Signature
 `userId(): Promise<string>`
