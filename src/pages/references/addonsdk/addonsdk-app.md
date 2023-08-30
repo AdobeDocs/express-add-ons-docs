@@ -11,24 +11,37 @@ Provides access to the Adobe Express host application's properties and methods t
     <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre><a href="app-currentUser.md">currentUser</a></pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td class="spectrum-Table-cell"><p>Represents the current user accessing the host application</p></td>
+  </tr>
   <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.document</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre><a href="app-devFlags.md">devFlags</a></pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
+    <td class="spectrum-Table-cell"><p>Represents flags which can be used to simulate certain behavior during development.</p></td>
+  </tr>
+  <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre><a href="app-document.md">document</a></pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
     <td class="spectrum-Table-cell"><p>Represents the active document of the host application.</p></td>
   </tr>
   <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-     <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.oauth</pre></p></td>
+     <td class="spectrum-Table-cell"><p><pre><a href="app-oauth.md">oauth</a></pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
     <td class="spectrum-Table-cell"><p>Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization.</p></td>
   </tr>
   <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre><a href="app-ui.md">ui</a></pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
     <td class="spectrum-Table-cell"><p>Represents the host UI (Adobe Express UI).</p></td>
-  </tr>
+  </tr>  
+  
 </tbody>
 </table>
 
@@ -331,5 +344,3 @@ The table below describes the possible error messages that may occur when using 
 | Dialog options parameter: title is undefined | Title is undefined. |
 | Dialog options parameter: src is undefined | Source is undefined. |
 | Invalid dialog variant: `${variant}` | Invalid dialog variant. |
-
-

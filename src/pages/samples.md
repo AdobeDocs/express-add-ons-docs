@@ -152,6 +152,21 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 
 - [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
 
+
+## [licensed-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/licensed-addon)
+Demonstrates how to utilize the hash of the user ID to integrate an add-on with licensing and payment services and monetize effectively.
+
+**Technologies Used:** <br/>
+
+- React
+- React Spectrum
+- Webpack
+
+
+**Features Leveraged:**<br/>
+
+- [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
+
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->
 

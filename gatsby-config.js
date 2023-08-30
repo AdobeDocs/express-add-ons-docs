@@ -43,7 +43,15 @@ module.exports = {
         {
           "title": "app",
           "path": "references/addonsdk/addonsdk-app.md",
-          pages: [                                                                                                                    
+          pages: [   
+            {
+              "title": "currentUser",
+              "path": "references/addonsdk/app-currentUser.md"
+            },  
+            {
+              "title": "devFlags",
+              "path": "references/addonsdk/app-devFlags.md"
+            },                                                                                                                 
             {
               "title": "document",
               "path": "references/addonsdk/app-document.md"
