@@ -19,6 +19,12 @@ contributors:
 ---
 
 # Changelog
+
+## 2023-08-31
+- Added new code sample to demonstrate how to use SWC-React and set theme properties in add-ons called **swc-react-theme-sampler** to the [Code Samples](ttps://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler).
+- Updated the [User Interface Guide](../guides/index.md) to add more notes around the recommended use of `swc-react` over React Spectrum and to point to the new sample mentioned above.
+- Fixed [locale](./addonsdk/app-ui.md) example.
+
 ## 2023-08-29
 - Added [`currentUser` API](../guides/develop/index.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/index.md#current-user).
 - Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.

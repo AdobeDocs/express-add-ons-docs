@@ -47,12 +47,21 @@ The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-componen
 The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components) (or [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react) are the preferred approach to use for building the UI in your add-ons since it currently offers the most comprehensive set of components and built-in benefits.  -->
 
 ### Spectrum Web Components with React
-[**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) is a collection of React wrapper components for the Spectrum Web Components (SWC) library, allowing you to use SWC in your React applications with ease. Currently, `swc-react` supports 62 components. To install `swc-react`, simply replace the scope name `"@spectrum-web-components"` with `"@swc-react"` in the package naming convention. The sub-package name remains identical to the original SWC component. Check out [this page](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) for more details on swc-react. 
+[**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) is a collection of React wrapper components for the Spectrum Web Components (SWC) library, allowing you to use SWC in your React applications with ease. Currently, `swc-react` supports 62 components. To install `swc-react`, simply replace the scope name `@spectrum-web-components` with `@swc-react` in the package naming convention in your `package.json` (ie: `"@swc-react/button"` instead of `"@spectrum-web-components/button"`). The sub-package name remains identical to the original SWC component and will be automatically installed along with the **swc-react** component. Then, you can import and use it in your `.jsx` like shown in the example below:
+
+```js
+import { Button } from "@swc-react/button";
+
+<Button variant="accent">
+    Accent Button
+</Button>
+```
+
+Check out the [swc-react-theme-sampler code sample](../../samples.md#swc-react-theme-sampler) for a specific example of how to use it with various components in your add-on, as well as [the official documentation](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) for more details on **swc-react**.
 
 <InlineAlert slots="text" variant="info"/>
 
-We recommend using `swc-react` over [React Spectrum](#react-spectrum) in your add-ons based in React because it currently offers a more comprehensive set of components and built-in benefits. 
-
+We recommend chossing [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) over [React Spectrum](#react-spectrum) in your add-ons based on React because it currently offers a more comprehensive set of components and built-in benefits. 
 
 ### Spectrum Web Components with Express Theme
 Below are the steps for using the Express theme with your Spectrum Web Components UI:
@@ -66,12 +75,19 @@ Below are the steps for using the Express theme with your Spectrum Web Component
     npm install @spectrum-web-components/button
     ```
 
-- Next, start adding your imports. All add-ons should have this base set of imports, which provide support for Spectrum typography, the Express themes, including colors (lightest, light, dark, and darkest) and scale (medium, large). 
+- Next, start adding your imports. All add-ons should have this base set of imports, which provide support for Spectrum typography and the base Spectrum theme component, the Express themes, including colors (lightest, light, dark, and darkest) and scale options (medium, large). 
 
     ```js        
     import '@spectrum-web-components/styles/typography.css';
     import '@spectrum-web-components/theme/sp-theme.js';
-    import '@spectrum-web-components/theme/src/express/themes.js';       
+    import '@spectrum-web-components/theme/express/theme-light.js';
+    import '@spectrum-web-components/theme/express/theme-darkest.js';
+    import '@spectrum-web-components/theme/express/theme-dark.js';
+    import '@spectrum-web-components/theme/express/theme-light.js';
+    import '@spectrum-web-components/theme/express/theme-lightest.js';
+    import '@spectrum-web-components/theme/express/scale-medium.js';
+    import '@spectrum-web-components/theme/express/scale-large.js';
+
     ``` 
 
 - Then import the specific components you want to use in your code, such as: 
@@ -122,6 +138,11 @@ Check out the [code samples](../../samples.md) in the contributed folder for **S
   - **react-aria**: a library of React hooks implementing the patterns defined in the ARIA practices spec, including mouse, touch, and keyboard behavior, accessibility, and internationalization support
   - **react-stately**: a library of React hooks implementing cross platform (e.g. web/native) state management for components that need it.
 
+<InlineAlert slots="text" variant="warning"/>
+
+We recommend using [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) over [React Spectrum](#react-spectrum) in your add-ons based on React, because it currently offers a more comprehensive set of components which provide built-in benefits as detailed above in the [Spectrum Web Components section](#spectrum-web-components), and is more actively supported.
+
+
 ### React Spectrum with Express Theme
 [The React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in an alpha stage currently, but can be used with the following steps:
 
@@ -156,8 +177,6 @@ Below is an example of some components from React Spectrum with the two themes. 
 
 ##### Express theme sample:
 ![Express theme](./img/express-theme.png)
-
-
 
 <InlineAlert slots="text" variant="info"/>
 

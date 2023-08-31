@@ -30,7 +30,7 @@ A `string` containing the current locale value. Current locale could be one of:
 #### Example Usage
 ```js
 AddOnSdk.ready.then(async () => {    
-    console.log(AddOnSdk.app.ui.locales); // output "es-ES" 
+    console.log(AddOnSdk.app.ui.locale); // output "es-ES" 
 });
 ```
 

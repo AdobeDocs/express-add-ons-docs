@@ -117,6 +117,20 @@ Demonstrates how to use the Modal Dialog APIs to pop-up variations of modals fro
 
 - [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
 
+## [licensed-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/licensed-addon)
+Demonstrates how to utilize the hash of the user ID to integrate an add-on with licensing and payment services and monetize effectively.
+
+**Technologies Used:** <br/>
+
+- React
+- React Spectrum
+- Webpack
+
+
+**Features Leveraged:**<br/>
+
+- [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
+- [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
 <!-- # Contributed Add-on Samples
 The following samples were contributed from the team. -->
@@ -152,21 +166,18 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 
 - [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
 
-
-## [licensed-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/licensed-addon)
-Demonstrates how to utilize the hash of the user ID to integrate an add-on with licensing and payment services and monetize effectively.
+## [swc-react-theme-sampler](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc-react-theme-sampler)
+Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) library, a set of React wrapper components for Spectrum Web Components (SWC), as well as illustrates some of the different [Spectrum theme](https://opensource.adobe.com/spectrum-web-components/tools/theme/) component properties provided with Spectrum (ie: main *Express* theme, *scale* and *color*) and how they affect the UI.
 
 **Technologies Used:** <br/>
 
 - React
-- React Spectrum
+- SWC-React
 - Webpack
-
 
 **Features Leveraged:**<br/>
 
-- [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
-- [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
+- [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
 
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->
