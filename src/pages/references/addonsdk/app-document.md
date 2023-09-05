@@ -1,5 +1,5 @@
 # AddOnSdk.app.document
-Provides access to the methods needed for [importing content](../../guides/develop/index.md#importing-content) to the document and for [exporting content](../../guides/develop/index.md#exporting-content) for export.
+Provides access to the methods needed for [importing content](../../guides/develop/index.md#importing-content) including images, audio and video to the document, and for [exporting content](../../guides/develop/index.md#exporting-content) from the current document.
 
 ## Import Content Methods
 ### addImage()
@@ -14,29 +14,124 @@ Adds an image to the current page.
 | `imageBlob`   | `Blob`       | The image to add to the page. |
 
 #### Return Value
-A resolved promise if the image was successfully added to the canvas, otherwise will throw an error with the rejected promise.
+A resolved promise if the image was successfully added to the canvas; otherwise will throw an error with the rejected promise.
 
 <InlineAlert slots="text" variant="info"/>
 
 The supported file types for imported content are currently **`png/jpg/jpeg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**.
 
+#### Example Usage
+```js
+// Add image(blob) to the current page
+async function addImageFromBlob(blob) {
+  try {
+    await document.addImage(blob);
+  }
+  catch(error) {
+    console.log("Failed to add the image to the page.");
+  }
+}
+ 
+// Add image(url) to the current page
+async function addImageFromURL(url) {
+  try {
+    const blob = await fetch(url).then(response => response.blob());
+    await document.addImage(blob);
+  }
+  catch(error) {
+    console.log("Failed to add the image to the page.");
+  }
+}
+```
+
 ### addVideo()
 Adds a video to the current page. 
 
 #### Signature
-`addVideo(blob: Blob): Promise<void>`
+`addVideo(videoBlob: Blob): Promise<void>`
 
 #### Parameters
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `imageBlob`   | `Blob`       | The video to add to the page. |
+| `videoBlob`   | `Blob`       | The video to add to the page. |
 
 #### Return Value
-A resolved promise if the image was successfully added to the canvas, otherwise will throw an error with the rejected promise.
+A resolved promise if the video was successfully added to the canvas; otherwise will throw an error with the rejected promise.
+
+#### Example Usage
+```js
+async function addVideoFromBlob(blob) {
+  try {
+    await document.addVideo(blob);
+  }
+  catch(error) {
+    console.log("Failed to add the video to the page.");
+  }
+}
+
+async function addVideoFromURL(url) {
+  try {
+     const blob = await fetch(url).then(response => response.blob());
+     await document.addVideo(blob);
+  }
+  catch(error) {
+    console.log("Failed to add the video to the page.");
+  }
+}
+```
+
+
+### addAudio()
+Adds audio to the current page.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This new method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it's been declared stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+
+#### Signature
+`addAudio(audioBlob: Blob, attributes: MediaAttributes): Promise<void>`
+
+#### Parameters
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `audioBlob`   | `Blob`       | The audio to add to the page. |
+| `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |   
+
+#### `MediaAttributes`
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `title`       | `string`     | Media title (mandatory for audio import). | 
+
+#### Return Value
+A resolved promise if the audio was successfully added to the canvas; otherwise will throw an error with the rejected promise.
 
 <InlineAlert slots="text" variant="info"/>
 
 Refer to the [importing content use case](../../guides/develop/index.md#importing-content) and the [import-images-from-local](../../samples/#import-images-from-local) in the code samples for usage examples.
+
+
+
+#### Example Usage
+```js
+async function addAudioFromBlob(blob) {
+  try {
+    await document.addAudio(blob, {title: "Jazzy beats"});
+  }
+  catch(error) {
+    console.log("Failed to add the audio to the page.");
+  }
+}
+ 
+async function addAudioFromURL(url) {
+  try {
+    const blob = await fetch(url).then(response => response.blob());
+    await document.addAudio(blob, {title: "Jazzy beats"});
+  }
+  catch(error) {
+    console.log("Failed to add the audio to the page.");
+  }
+```
 
 ### Errors
 The table below describes the possible error messages that may occur when using the import methods, with a description of the scenario that would cause them to be returned.

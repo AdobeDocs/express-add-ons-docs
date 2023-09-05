@@ -200,7 +200,7 @@ let inputDialogOptions = {
 See the use case implementations for an example of the [custom modal dialog](../../guides/develop/index.md#custom-dialog-example).
 
 ### enableDragToDocument()
-Allows for drag to document functionality to be enabled on an element such as an image or video.
+Allows for drag and document functionality to be enabled on an element such as an image, video or audio.
 
 #### Signature
 `enableDragToDocument(element: HTMLElement, dragCallbacks: DragCallbacks): [DisableDragToDocument]()`
@@ -225,19 +225,33 @@ type DragPreviewCallback = (element: HTMLElement) => URL;
 ```
 
 ##### `DragCompletionCallback` Type Definition
-Callback to provide the content (image/gif/video) to be added to the document post drag & drop action. Returns [DragCompletionData](#dragcompletiondata) array.
+Callback to provide the content (image/gif/video/audio) to be added to the document post drag & drop action. Returns [DragCompletionData](#dragcompletiondata) array.
 
 ```ts
 type DragCompletionCallback = (element: HTMLElement) => Promise<DragCompletionData[]>;
 ```
 
 ##### `DragCompletionData` 
+Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks), and contains the `blob` object to be added, as well as a [`MediaAttributes`](#mediaattributes) object with the `title` of the audio content (for audio only).
+
 | Name              | Type    | Description   |
 | ------------------| --------| -----------:  |
-| `blob`            | `Blob`  | Blob (image/video) to be added to the document |
+| `blob`            | `Blob`  | Blob (image/video/audio) to be added to the document |
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |   
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The support for drag and drop of **audio** specifically is currently **experimental only** and should not be used in any add-ons you will be distributing until it's been declared stable. To enable this support, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### `MediaAttributes`
+*Required for audio content only.* 
+
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `title`       | `string`     | Media title (mandatory for audio import). | 
 
 #### Return Value 
-`void`
+[`DisableDragToDocument`](#disabledragtodocument-type-definition)
 
 ##### `DisableDragToDocument` Type Definition
 Callback to undo the changes made by `enableDragToDocument`. Returns `void`.
@@ -254,9 +268,6 @@ The payload data sent to the `dragStart` event handler.
 | ------------------| --------| -----------:  |
 | `element`         | `HTMLElement`  | Element for which the drag event started |
 
-#### Return Value 
-`void`
-
 ##### `DragEndEventData` 
 The payload data sent to the App `dragEnd` event handler.
 
@@ -266,8 +277,6 @@ The payload data sent to the App `dragEnd` event handler.
 | `dropCancelled`   | `boolean`     | If drop occurred/drag ended at invalid position     |
 | `dropCancelReason?`| `string`     | Reason for drop cancellation |    
     
-#### Return Value 
-`void`
 
 **\* Important Event Handling Notes**<br/>
 - Since the AddOnSdk uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.

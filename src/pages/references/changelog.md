@@ -19,11 +19,32 @@ contributors:
 ---
 
 # Changelog
+## 2023-09-05
+### Added 
+Added new Audio API documentation. You can now import audio to the current Adobe Express document in two different methods:
+  
+  1. Using the new [`addAudio`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) method, which requires a [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#mediaattributes) object containing the `title` of the audio content.
+  2. Using [drag and drop](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument), and supplying the [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes) object in the [`DragCompletionData`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata). 
+  
+Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
+
+
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+
 
 ## 2023-08-31
-- Added new code sample to demonstrate how to use SWC-React and set theme properties in add-ons called **swc-react-theme-sampler** to the [Code Samples](ttps://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler).
+### Added
+Added new code sample to demonstrate how to use SWC-React and set theme properties in add-ons called **swc-react-theme-sampler** to the [Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler).
+
+### Updated
 - Updated the [User Interface Guide](../guides/index.md) to add more notes around the recommended use of `swc-react` over React Spectrum and to point to the new sample mentioned above.
-- Fixed [locale](./addonsdk/app-ui.md) example.
+
+### Fixed
+- Fixed bug in the [locale](./addonsdk/app-ui.md) example.
 
 ## 2023-08-29
 - Added [`currentUser` API](../guides/develop/index.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/index.md#current-user).

@@ -25,7 +25,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 If you're looking to explore and discover the capabilities of our add-ons platform, check out these common use cases and accompanying code snippets to help you get started with our add-on SDK. For more extensive usage examples, check out the [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) are also available to help you find all of the objects, methods, properties and events supported for building add-ons.
 
 ## Importing Content
-Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example use cases for implementing this feature. The first function shows how to implement it by adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. Follow the example below to implement this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) and [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) for more details.
+Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example use cases for implementing this feature. The first function shows how to implement it by adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. Follow the example below to implement this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) and [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) for more details. 
 
 ### Example
 ```js
@@ -57,10 +57,12 @@ async function addImageFromURL(url) {
 }
 ```
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text" variant="warning"/>
 
-The supported file types for imported content are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**. See the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/) for additional details on importing content. 
+The supported file types for imported images are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**. See the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/) for additional details on importing content. 
 
+### Video and Audio Content
+You can also import video and audio content in a similar way as described above, via the [`addVideo()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addvideo) and [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#addaudio) methods accordingly. **Please note:** the `addAudio()` method specifically is currently in *experimental mode only*, and requires an additional `MediaAttributes` object parameter containing the `title` of the audio object you're importing. See the associated [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) for more details and example usage.
 
 ## Exporting Content
 Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to allow the user to save/download the current design, (or range of a design), with certain export configurations to their local hard drive. Some examples for exporting content are provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](https://developer.adobe.com/express/add-ons/docs/samples/#export-sample).
