@@ -21,12 +21,13 @@ contributors:
 # Changelog
 ## 2023-09-05
 ### Added 
-Added new Audio API documentation. You can now import audio to the current Adobe Express document in two different methods:
+Added new **Audio API** documentation. You can now import audio to the current Adobe Express document in two different methods:
   
   1. Using the new [`addAudio`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) method, which requires a [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#mediaattributes) object containing the `title` of the audio content.
   2. Using [drag and drop](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument), and supplying the [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes) object in the [`DragCompletionData`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata). 
   
-Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
+
+ Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
 
 
 
