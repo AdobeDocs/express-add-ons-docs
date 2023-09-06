@@ -285,7 +285,7 @@ async function displayAllItems() {
 ```
 
 ## Drag and Drop
-If you want to allow a user to drag and drop items from your add-on to the document, you can use the [methods provided in the add-on SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument). There are also several [code samples](https://developer.adobe.com/express/add-ons/docs/samples) that implement drag and drop, including the [import-images-using-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth), [Dropbox](https://developer.adobe.com/express/add-ons/docs/samples/#dropbox), [pix](https://developer.adobe.com/express/add-ons/docs/samples/#pix) and more that you can reference. Some example use cases are shown below:
+If you want to allow a user to drag and drop items from your add-on to the document, you can use the [methods provided in the add-on SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument). There are also several [code samples](https://developer.adobe.com/express/add-ons/docs/samples) that implement drag and drop, including the [import-images-using-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth), [Dropbox](https://developer.adobe.com/express/add-ons/docs/samples/#dropbox), [pix](https://developer.adobe.com/express/add-ons/docs/samples/#pix) and more that you can reference. Some example use cases are shown below. **Note:** for dragging audio content (which is currently experimental), you will need to specify an additional `attributes` object that includes a `title` property. A note on how to include it specifically is below in the [second example below](#example-using-an-image-url).
 
 ### Example using local images
 ```js
@@ -368,7 +368,7 @@ async function getBlob(url) {
 
 ```
 
-### Example using an image URL
+### Example using an image URL 
 
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -386,6 +386,9 @@ function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
         response.blob()
       );
       return [{ blob: imageBlob }];
+      // Note: for audio content, an attributes object with the title is mandatory. 
+      // For instance, replace the above return with the following:
+      // return [{blob: audioBlob, attributes: { title: "Jazzy beats" }}];
     },
   };
 
