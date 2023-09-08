@@ -22,7 +22,7 @@ contributors:
 
 ## 2023-09-07
 ### Updates
--  (does not impact in-production add-ons)The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference section](../references/scriptruntime/) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously, 
+- The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference](../references/scriptruntime/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously, 
 
   from:
     
