@@ -11,7 +11,7 @@ The script runtime and iframe runtime are two different runtime execution enviro
 A default exported module from `AddOnScriptSdk` is provided to enable the communication between the iframe and the script runtime via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
 
 ```js
-import AddOnScriptSdk from "AddOnScriptSdk"; // default import
+import AddOnScriptSdk from "AddOnScriptSdk"; // AddOnScriptSdk is a default import
 
 const { runtime } = AddOnScriptSdk.instance; // runtime object provides direct access to the comm methods
 ```
@@ -27,7 +27,7 @@ This example shows how to expose APIs from the script runtime (via `code.js`) fo
 #### `code.js`
 
 ```js
-import AddOnScriptSdk from "AddOnScriptSdk"; // default import
+import AddOnScriptSdk from "AddOnScriptSdk"; 
 
 const { runtime } = AddOnScriptSdk.instance; 
 

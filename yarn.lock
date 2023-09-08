@@ -13209,9 +13209,9 @@ __metadata:
   linkType: hard
 
 "lottie-web@npm:^5.9.6":
-  version: 5.12.1
-  resolution: "lottie-web@npm:5.12.1"
-  checksum: 73dde9bf37e72a108602994a08fbf5a732281a8a5735164aa86adb4e6f5183dfbd5848140a19cc717fc5e0f13b3cb920f20d4dfcc2862514af55b003bf951a14
+  version: 5.12.2
+  resolution: "lottie-web@npm:5.12.2"
+  checksum: af5bc3bc405fd760de8b17a36158d5a8c3e8c586c711d0c63681ddf056b65bc6b54ea36b1fcad782fb02dbe12e696a40e0ba72daf41b8f10ab5b5d1113793636
   languageName: node
   linkType: hard
 

@@ -140,7 +140,7 @@ Refer to the [importing content use case](../../guides/develop/index.md#importin
 ### Errors
 The table below describes the possible error messages that may occur when using the import methods, with a description of the scenario that would cause them to be returned.
 
-<br/>
+&nbsp;
 
 | Error Message                     |   Error Scenario                 |
 |-------------------------------:|-------------------------------------------------:|
@@ -217,6 +217,7 @@ The following additional options are supported for `png` renditions:
 | 400 x 600       | 200 x -200      | 400 x 600      |
 | 400 x 600       | 800 x 1000      | 400 x 600      |
 
+
 #### Return Value
 A `Promise` with an array of page `Rendition` objects. It will contain one page if the current page was selected or all pages in the case of the document. Each rendition returned will contain the `type` and a `blob` of the rendition itself.
 
@@ -235,7 +236,7 @@ Refer to the [exporting content use case example](../../guides/develop/index.md#
 ### Errors
 The table below describes the possible error messages that may occur when using the export methods, with a description of the scenario that will return them.
 
-<br/>
+&nbsp;
 
 | Error Message                  |   Error Scenario                 |
 |-------------------------------:|-------------------------------------------------:|
