@@ -47,6 +47,7 @@ async function addImageFromURL(url) {
 
 The supported file types for imported content are currently **`png/jpg/jpeg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**.
 
+
 ### addVideo()
 Adds a video to the current page. 
 
@@ -104,6 +105,7 @@ Adds audio to the current page.
 | ------------- | -------------| -----------:  |
 | `title`       | `string`     | Media title (mandatory for audio import). | 
 
+
 #### Return Value
 A resolved promise if the audio was successfully added to the canvas; otherwise will throw an error with the rejected promise.
 
@@ -128,6 +130,7 @@ async function addAudioFromURL(url) {
     console.log("Failed to add the audio to the page.");
   }
 ```
+
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -177,7 +180,6 @@ Refer to the [exporting content use case example](../../guides/develop/index.md#
 | `range`       | `string`     | [`Range`](./addonsdk-constants.md) constant value. | 
 | `format`      | `string`     | [`RenditionFormat`](./addonsdk-constants.md) constant value. | 
 
-<!-- #### Format Specific Rendition Options -->
 
 
 #### JpgRenditionOptions
@@ -224,6 +226,7 @@ A `Promise` with an array of page `Rendition` objects. It will contain one page 
 | `type?`       | `string`     | Type of Rendition. Value is always "page" |
 | `blob`        | `Blob`       | Blob containing the rendition |
 | `title`       | `string`     | The page title of the rendition. | 
+
 
 <InlineAlert slots="text" variant="info"/>
 

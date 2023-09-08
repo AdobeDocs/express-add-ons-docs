@@ -8,17 +8,17 @@ The script runtime and iframe runtime are two different runtime execution enviro
 
 ## Accessing the APIs
 
-An exported module named `AddOnSdkApi` is provided to enable the communication between the iframe and the script runtime via its' `instance.runtime` object. You can simply import it into your script file code for use and create a reference to the `runtime` object. For example:
+A default exported module from `AddOnScriptSdk` is provided to enable the communication between the iframe and the script runtime via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
 
 ```js
-import { AddOnSdkApi } from "AddOnSdkApi"; // named import is AddOnSdkApi
+import AddOnScriptSdk from "AddOnScriptSdk"; // default import
 
-const { runtime } = AddOnSdkApi.instance; // runtime object provides direct access to the comm methods
+const { runtime } = AddOnScriptSdk.instance; // runtime object provides direct access to the comm methods
 ```
 
 ## Examples
 
-The `runtime` object provides the methods to allow you to communicate between the two execution environments via `exposeApi()` and `apiProxy()`. The examples below show the methods in use from both the `index.html` where the iframe is running with your add-on code, and the script runtime environment running the contents of `code.js`.
+The `runtime` object can then be used to access the communication methods which allow you to communicate between the two execution environments: `exposeApi()` and `apiProxy()`. The examples below show the methods in use from both the `index.html` where the iframe is running with your add-on code, and the script runtime environment running the contents of `code.js`.
 
 ### Expose APIs from the script 
 
@@ -27,8 +27,9 @@ This example shows how to expose APIs from the script runtime (via `code.js`) fo
 #### `code.js`
 
 ```js
-import { AddOnSdkApi } from "AddOnSdkApi";
-const { runtime } = AddOnSdkApi.instance;
+import AddOnScriptSdk from "AddOnScriptSdk"; // default import
+
+const { runtime } = AddOnScriptSdk.instance; 
 
 const scriptApis = {
     performWorkOnDocument: function (data, someFlag) {
@@ -99,8 +100,9 @@ AddOnSdk.ready.then(async () => {
 #### `code.js`
 
 ```js
-import { AddOnSdkApi } from "AddOnSdkApi";
-const { runtime } = AddOnSdkApi.instance;
+import AddOnScriptSdk from "AddOnScriptSdk"; // default import
+
+const { runtime } = AddOnScriptSdk.instance;
 
 async function callUIApis() {
     // Get a proxy to the APIs defined in the UI

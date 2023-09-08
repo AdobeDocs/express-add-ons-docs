@@ -36,7 +36,9 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 - [I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
 - [I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.](#i-receive-this-error-when-trying-to-run-my-add-on-error-eisdir-illegal-operation-on-a-directory)
 - [I receive a `MANIFEST_NOT_FOUND_ERROR` during the package verification when trying to upload my plugin package for distribution.](#i-receive-this-error-when-trying-to-run-my-add-on-error-eisdir-illegal-operation-on-a-directory)
-- [At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**.](#how-can-i-monetize-my-add-on)
+- [How can I monetize my add-on?](#how-can-i-monetize-my-add-on)
+- [What does it mean when an API is considered **experimental**?](#what-does-it-mean-when-an-api-is-considered-experimental)
+- [What are the supported file types for exported content?](#what-are-the-supported-file-types-for-exported-content)
 
 ## Answers
 
@@ -103,3 +105,10 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
 ### How can I monetize my add-on?
   At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**.
+
+### What does it mean when an API is considered **experimental**?
+  Experimental APIs are those which have not been declared stable yet, and to try them, first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`. The `experimentalApis` flag is **only allowed during development** and needs to be removed during submission. Experimental APIs should never be used in any add-ons you will be distributing. 
+
+### What are the supported file types for exported content?
+  The supported file types for exported content are **"image/jpeg", "image/png", "video/mp4"** and **"application/pdf"**.
+

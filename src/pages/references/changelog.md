@@ -19,11 +19,28 @@ contributors:
 ---
 
 # Changelog
+
+## 2023-09-07
+### Updates
+-  (does not impact in-production add-ons)The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference section](../references/scriptruntime/) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously, 
+
+  from:
+    
+       import { AddOnSdkApi } from "AddOnSdkApi";
+  
+  to:
+        
+        import AddOnScriptSdk from "AddOnScriptSdk";
+  
+  Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**. 
+- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md#cli-template-for-script-based-add-on) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`. 
+- Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
+
 ## 2023-09-05
 ### Added 
 Added new **Audio API** documentation. You can now import audio to the current Adobe Express document in two different methods:
   
-  1. Using the new [`addAudio`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) method, which requires a [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#mediaattributes) object containing the `title` of the audio content.
+  1. Using the new [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) method, which requires a [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#mediaattributes) object containing the `title` of the audio content.
   2. Using [drag and drop](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument), and supplying the [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes) object in the [`DragCompletionData`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata). 
   
 

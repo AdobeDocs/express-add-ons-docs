@@ -195,9 +195,11 @@ let inputDialogOptions = {
 };
 ```
 
+
 <InlineAlert slots="text" variant="info"/>
 
 See the use case implementations for an example of the [custom modal dialog](../../guides/develop/index.md#custom-dialog-example).
+
 
 ### enableDragToDocument()
 Allows for drag and document functionality to be enabled on an element such as an image, video or audio.
@@ -239,9 +241,11 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 | `blob`            | `Blob`  | Blob (image/video/audio) to be added to the document |
 | `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |   
 
+
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The support for drag and drop of **audio** specifically is currently **experimental only** and should not be used in any add-ons you will be distributing until it's been declared stable. To enable this support, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The support for drag and drop of **audio** specifically is currently **experimental only** and should not be used in any add-ons you will be distributing until it's been declared stable. To enable this support, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. See this [Drag & Drop use case code snippet](../../guides/develop/index.md#example-using-an-image-url) for an example note of how to specify the properties for audio specifically.
+
 
 #### `MediaAttributes`
 *Required for audio content only.* 
@@ -282,6 +286,7 @@ The payload data sent to the App `dragEnd` event handler.
 - Since the AddOnSdk uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
 - You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
 - TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
+
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -348,7 +353,6 @@ The table below describes the possible error messages that may occur when using 
 | Field property is valid only for input dialog  | If text field property is present for variant other than input. |
 | Input dialog field label is undefined  | Field label is undefined for input dialog variant. |
 | Invalid dialog field type: `${field.fieldType}`| Field type is invalid for input dialog variant. |
-| Custom dialog variant is an experimental API. Please add the `experimentalApis` flag to manifest to use it. | When custom dialog API is used in Production. |
 | Dialog already open with instanceID:`${this._instanceId}` | If the dialog is already open. |
 | Dialog options parameter: title is undefined | Title is undefined. |
 | Dialog options parameter: src is undefined | Source is undefined. |

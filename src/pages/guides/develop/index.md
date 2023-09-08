@@ -451,9 +451,9 @@ const response = await addOnSdk.app.showModalDialog(dialogOptions);
 console.log("Button type clicked " + response.buttonType)
 ```
 
+### Input Modal Dialog Example
 Below is an example of using an `input` dialog that accepts input you can retrieve:
 
-### Input Modal Dialog Example
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
@@ -487,9 +487,9 @@ let inputDialogOptions = {
 };
 ```
 
-There's also support for a custom modal dialog that allows you to supply custom content as shown below, but note that it is currently behind an [`experimentalApis`](../../references/manifest/) flag. 
-
 ### Custom Dialog Example
+This example shows how you can define custom content for yuour dialog in a separate source file and with a custom height and title.
+
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  

@@ -1,6 +1,6 @@
 # Editor APIs
 
-The Editor APIs provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via the provided APIs.
+The <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via the provided APIs.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -8,11 +8,11 @@ These API's are currently **experimental only**. Please do not use them in any a
 
 ## Overview
 
-Some examples of what you can do with the [Editor APIs](/express-add-on-apis/docs/api/classes/Editor) are creating shapes, adding pages to the document, clearing the artboard and more. See the following sections for more details and examples of using these new APIs.
+Some examples of what you can do with the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> are creating shapes, adding pages to the document, clearing the artboard and more. See the following sections for more details and examples of using these new APIs.
 
 ## Access to Editor APIs
 
-An exported `editor` module is provided to enable access to the Editor APIs. You can simply import this module into your script file code to access the methods provided below. For example:
+An exported `editor` module is provided to enable access to the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a>. You can simply import this module into your script file code to access the methods provided below. For example:
 
 ```js
 import { editor } from "express"; // named import 'editor' from express module
@@ -45,11 +45,11 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** While using the editor APIs in experimental mode, if you add an artboard, please be sure to **immediately add a fill**, or the document could be corrupted and unopenable. This will be fixed in the near future. 
+**IMPORTANT:** While using the Editor APIs in experimental mode, if you add an artboard, please be sure to **immediately add a fill**, or the document could be corrupted and unopenable. This will be fixed in the near future. 
 
 ## References & Code Samples
 
-Check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the editor APIs.
+Check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a>.
 
 <InlineAlert slots="text" variant="warning"/>
 
