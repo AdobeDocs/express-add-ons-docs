@@ -12,13 +12,16 @@ This section outlines everything you'll need in order to be prepared for submitt
 
 | Name                    | Character Length  | Description   |    
 | -------------:          | ------------------| -----------:  | 
+| **\* Add-on name**      | 25                | A unique name for your add-on.|                   
 | **\* Summary**               | 50                | A short description of what your add-on does.|                   
 | **\* Full Description**      | 1000              | Full context and description of your add-on and it's features |
 | **\* Help URL**              | 1000              | URL for your users to get help (ie: https://www.example.com/)  |
 | **\* Support email address** | 1000              | An email address that users of your add-on can contact for support |
 | **Privacy Notice**          | 1000              | URL of your privacy notice (ie: https://www.example.com/) |
 | **End User License Agreement(EULA)**| 1000      | End User License Agreement URL (ie: https://www.example.com/) |
-| **Keywords**                | 1000              | Keywords to help users find your add-on (comma-separated) |
+| **Keywords**                | 100              | Keywords to help users find your add-on (comma-separated) |
+| **Release notes**       | 1000  | Provide information specific to this version of the add-on |
+
 
 ### 2. Prepare your assets
 
@@ -100,7 +103,7 @@ In this step, you will be prompted to choose a unique name for your add-on. Your
 
 <InlineAlert slots="text" variant="success"/>
 
-The number of characters allowed for any given field is shown above it throughout the distribution experience (for instance, the name field allows a max of 25 characters), and the number will automatically update with the remaining amount as you're typing into it.
+The number of characters allowed for any given field is shown above it throughout the distribution experience (for instance, the name field allows a max of 25 characters). The number will automatically update with the remaining amount as you're typing into it.
 
 ![](./img/pub-name2.png)
 

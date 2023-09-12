@@ -66,13 +66,13 @@ Otherwise, you should see the following green check mark showing it's verified a
 ![Verified](./img/private-verified.png)
 
 ## Step 4: Enter name, icon and release notes
-Now you will be prompted to choose a unique *name* for your add-on, an *icon*, and *release notes*. Your add-on name will be validated when you tab out (or the field loses focus) before you will be allowed to move to the next step. You will know that it's verified by a green checkmark shown, or receive an error that it exists and you need to choose another. 
+In this step you will be prompted to choose a unique **Add-on name** (25 characters max), a 144x144px **Add-on icon**, and optional **Release notes** (1000 characters max). Your add-on name will be validated when you tab out (or the field loses focus) before you will be allowed to move to the next step. You will know that it's verified by a green checkmark shown, or receive an error that it exists, and you need to choose another. 
 
 ![](./img/private-name-icon.png)
 
 <InlineAlert slots="text" variant="success"/>
 
-The number of characters allowed for any given field is shown above it throughout the distribution experience (for instance, the name field allows a max of 25 characters), and the number will automatically update with the remaining amount as you're typing into it.
+The number of characters allowed for any given field is shown above it throughout the distribution experience (for instance, the name field allows a max of 25 characters). The number will automatically update with the remaining amount as you're typing into it.
 
 Once you've entered the required fields, the **Save and create private link** button will be enabled.
 

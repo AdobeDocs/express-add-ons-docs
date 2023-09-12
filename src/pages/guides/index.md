@@ -19,7 +19,7 @@ contributors:
 <Hero slots="heading, text" background="rgb(138, 43, 226)"/>
 
 # Overview
-Adobe Express is an all-in-one content creation app that makes it fast, easy and fun to design standout flyers, TikToks, resumes, Reels, banners, logos, invitations, webpages and so much more. 
+Adobe Express is the AI-first, all-in-one creativity app that makes it fast, easy and fun for any user to design and share standout content. 
 
 
 <InlineAlert slots="text" variant="info"/>
