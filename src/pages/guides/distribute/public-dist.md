@@ -14,7 +14,7 @@ This section outlines everything you'll need in order to be prepared for submitt
 | -------------:          | ------------------| -----------:  | 
 | **\* Add-on name**      | 25                | A unique name for your add-on.|                   
 | **\* Summary**               | 50                | A short description of what your add-on does.|                   
-| **\* Full Description**      | 1000              | Full context and description of your add-on and it's features |
+| **\* Full Description**      | 1000              | Full context and description of your add-on and its features |
 | **\* Help URL**              | 1000              | URL for your users to get help (ie: https://www.example.com/)  |
 | **\* Support email address** | 1000              | An email address that users of your add-on can contact for support |
 | **Privacy Notice**          | 1000              | URL of your privacy notice (ie: https://www.example.com/) |
