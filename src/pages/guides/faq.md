@@ -40,6 +40,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 - [What does it mean when an API is considered **experimental**?](#what-does-it-mean-when-an-api-is-considered-experimental)
 - [What are the supported mime types/file formats for exported content?](#what-are-the-supported-mime-typesfile-formats-for-exported-content)
 - [What are the supported file formats for imported content in Adobe Express?](#what-are-the-supported-file-formats-for-imported-content-in-adobe-express)
+- [Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?](#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error)
 
 ## Answers
 
@@ -116,3 +117,5 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 ### What are the supported file formats for imported content in Adobe Express?
   The supported file types for imported audio content are **aac, adts, ai, avi, crm, f4v, gif, jpeg, jpg, m1v, m2p, m2t, m2ts, m4a, m4v, mov, mp3, mp4, mpeg, mpg, msvideo, mts, png, psd, psdt, quicktime, ts, tts, wav, webm, webp, wmv, xm4a, xwav, 264, 3gp**.
 
+### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
+  This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response.

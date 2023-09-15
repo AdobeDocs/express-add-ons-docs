@@ -189,8 +189,8 @@ module.exports = {
             "path": "guides/develop/performance.md"
           },            
           {
-            "title": "Network requests and CORS",
-            "path": "guides/develop/cors.md"
+            "title": "Add-on iframe Context",
+            "path": "guides/develop/context.md"
           },          
         ]
       },          
