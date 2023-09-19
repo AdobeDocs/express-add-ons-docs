@@ -20,6 +20,27 @@ contributors:
 
 # Changelog
 
+## 2023-09-19
+### Added
+- New [iframe Sandbox Context guide](../guides/develop/context.md) with details on the new `subdomain` support and CORS handling.
+- How-to videos embedded in various guides to help visually show how to use the information in those sections.
+
+### Updates
+- **New Types Package Versions Released** <br/>
+  - A new version `0.1.6` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the [`AddOnSDK` (iframe)](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/), including new experimental APIs, as well as general improvements and bug fixes.
+  - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **Script Runtime/Editor APIs**.
+  
+  **IMPORTANT**:
+  Developers who are **NOT** using the [Script Runtime/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`. 
+  
+  The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
+- [Performance guide](../guides/develop/performance.md) updates to include [**Task Manager**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance/#task-manager) and [**Memory Consumption**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance/#memory-consumption-monitoring) details for add-ons.
+- [FAQ update](../guides/faq.md) for [`SharedArrayBuffer`](https://developer.adobe.com/express/add-ons/docs/guides/faq/#is-sharedarraybuffer-supported).
+
+## 2023-09-12
+### Updates
+- Added supported file types for import and export to the [FAQ](../guides/faq.md).
+
 ## 2023-09-07
 ### Updates
 - The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference](../references/scriptruntime/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously, 
