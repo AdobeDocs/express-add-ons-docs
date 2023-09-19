@@ -6,7 +6,7 @@ The design of your add-on is just as important to the success of your add-on as 
 
 <TextBlock slots="heading, text, buttons" theme="light" isCentered/>
 
-## UX Guidelines Available
+## UX Guidelines
 
 Check out our UX Guidelines, which have been created with the intention to help developers closely align the design of their add-ons with the Adobe brand, providing an improved, unified experience for the end-user.
 
@@ -16,6 +16,12 @@ Check out our UX Guidelines, which have been created with the intention to help 
 
  We encourage all developers to review the new UX guidelines and incorporate them into your add-on design process. Doing so will provide the benefit of rapid development, increased adoption, and an overall more positive user experience. Please check back often as these guidelines will continue to be updated frequently.
 
+## Introduction
+Watch this short introductory video, then read on for more details. <br/><br/>
+
+<div style="display: flex; justify-content: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+</div>
 
 ## Spectrum Design System
 

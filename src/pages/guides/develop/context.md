@@ -7,38 +7,37 @@ Your add-on is essentially a website running in a [sandboxed](https://developer.
 ### Restrictions
 The following set of restrictions are enabled when the `sandbox` attribute is applied to the `<iframe>` tag (ie: `<iframe sandbox=""`):
 
-- The content is assumed to be from a unique origin
-- Form submission is blocked
-- Script execution is blocked
-- Pointer Lock API (mouse movement capture) is disabled
-- Links are prevented from targeting other browser contexts (opening in a new tab or window)
-- Content is prevented from using plugins (ie: `<embed>`, `<object>`, `<applet>`, or other)
-- Content is prevented from navigating its top-level browsing context
-- Blocks auto playback of media
+- The add-on bundle is served from a unique subdomain.
+- Form submission is blocked.
+- The Pointer Lock API (capturing mouse movement) is blocked.
+- New windows or tabs cannot be opened from the add-on, unless overridden in the manifest.
+- Add-ons can't use `<embed>`, `<object>`, `<applet>`, or similar.
+- Add-ons cannot change the navigation of the top-level browsing context
+Media can't be autoplayed.
 
 ### Permissions
-The value of the `sandbox` attribute can either be empty (in which case all restrictions are applied), or a space-separated list of pre-defined permissions that remove a particular restriction. The table below describes the set of permissions generally allowed. However, there are only a limited set of these permissions currently supported for add-ons. They are indicated with an asterisk (*) in the table below. 
+The value of the `sandbox` attribute can either be empty (in which case all restrictions are applied), or a space-separated list of pre-defined permissions that remove a particular restriction. By default, **the `allow-scripts` and the `allow-same-origin` sandbox permissions are automatically set for all add-ons** (ie: `sandbox="allow-scripts allow-same-origin"`). The table below describes the rest of the permissions that can be applied to your add-on. These permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). 
 
-<InlineAlert slots="text" variant="info"/>
+<!-- <InlineAlert slots="text" variant="info"/>
 
-The add-on iframe automatically includes the `allow-scripts` and the `allow-same-origin` sandbox permissions by default (ie: `sandbox="allow-scripts allow-same-origin"`). The other supported permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). <br/><br/>
+The add-on iframe automatically includes the `allow-scripts` and the `allow-same-origin` sandbox permissions by default (ie: `sandbox="allow-scripts allow-same-origin"`). The other supported permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). <br/><br/> -->
 
 
 | Permission              | Description   |
 | ------------------ | -----------:  |
-| * `allow-downloads`  |  Allow downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute.         |
-| `allow-forms`      | Allow form submission.                 |
-| `allow-modals`     | Allows to open modal windows via the `Window.alert()` etc           |
-| `allow-orientation-lock` | Allows screen orientation lock. |
-| `allow-pointer-lock`    |  Allows the page to use the Pointer Lock API.           |
-| * `allow-popups`          | Allows the add-on to `window.open` popups |
-| * `allow-popups-to-escape-sandbox`   |  Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them.         |
-| `allow-presentation`              |           |
+| `allow-downloads`  |  Allow downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute.         |
+| `allow-popups`          | Allows the add-on to `window.open` popups |
+| `allow-popups-to-escape-sandbox`   |  Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them.         |
+| `allow-presentation`  | Allows the add-on to start a presentation session.           |
+
+<!-- The following two permissions are added to the `sandbox` attribute by default.
+
+| Permission              | Description   |
+| ------------------ | -----------:  |
 | * `allow-same-origin`               | Removes the "different" origin policy           |
-| * `allow-scripts` | Re-enables JavaScript.           |
-| `allow-top-navigation` |    Allows the iframe to change `parent.location`.       |
-| `allow-top-navigation-by-user-activation` | Lets the resource navigate the top-level browsing context, but only if initiated by a user gesture.           |
-| `allow-top-navigation-to-custom-protocols` |   Allows navigations to non-http protocols built into browser or registered by a website. This feature is also activated by `allow-popups` or `allow-top-navigation` keyword.       |
+| * `allow-scripts` | Re-enables JavaScript.           | -->
+
+**IMPORTANT:** Please note that these are currently the *only* permissions that are currently supported from [the set of sandbox permissions available](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). Any other attributes are not supported or allowed in the manifest for your add-ons.
 
 
 ## CORS
@@ -56,22 +55,23 @@ To help enable a smoother experience for developers dealing with CORS, we provid
 Your add-on is given a unique ID when you distribute your add-on for private or public sharing. This ID will not change once it's been generated, regardless of [future distributions](../distribute/index.md), so we suggest that you create a private sharing link when you need it, even if you're still in the development phase. Your add-on's [subdomain](#subdomain) is then created with a prefix of your unique add-on id, followed by the URL where it's hosted: `.wxp.adobe-addons.com`, for example: `src="https://w906hhl6k.wxp.adobe-addons.com/`. 
 
 #### Determining the subdomain
-You can determine your add-on's subdomain in the following ways:
-
-**Option 1** <br/>
-First, when you [create a private sharing link](../distribute/private-dist.md), you'll see the private link contains the add-ons unique ID in the `claimCode`, just up to the colon (:), for instance: 
+You can determine your add-on's subdomain by first [creating a private sharing link](../distribute/private-dist.md). In the link generated, you'll see that it contains a unique ID in the `claimCode`, just befre the colon (`:`), for instance: 
 
 ![private sharing link example](./img/private-link.png)
 
+#### Steps
+With the private link above: `https://new.express.adobe.com/new?category=addOns&claimCode=w906hhl6k:TEOYF0DH`
+1. Locate the `claimCode` parameter (e.g., `claimCode=w906hhl6k:TEOYF0DH`).
+2. Extract the unique add-on ID which is the string between the equal (`=`) and colon (`:`) symbols (e.g., `w906hhl6k`).
+3. Concatenate the unique ID with the `.wxp.adobe-addons.com` string to derive at the add-on's subdomain (e.g., `https://w906hhl6k.wxp.adobe-addons.com/`). 
 
-In the above link, we can extract the unique add-on ID of `w906hhl6k` from the `claimCode=w906hhl6k:TEOYF0DH` parameter. It can then be concatenated with the `.wxp.adobe-addons.com` string to derive at the add-on's subdomain of `https://w906hhl6k.wxp.adobe-addons.com/`. 
-
-**Option 2 (Preferred)** <br/>
+<!-- **Option 2 (Preferred)** <br/>
 A more straightforward way to ensure you have the correct subdomain for your add-on, is to open and add it with the [private sharing link](../distribute/private-dist.md), then inspect the CSS with the browser devtools. (In Chrome you can do this by right-clicking on your add-on, such as in the title, and clicking "Inspect" to open the devtools to the CSS tab). Locate the `<hz-iframe-panel>`, element in the CSS, and continue to drill down into its child elements until you find the actual `<iframe>` for your add-on, as shown below:
 
 ![iframe element for an add-on](./img/iframe-domain.png)
 
 You'll see the `src` of the `<iframe>` is set to the whole path to your hosted add-on, and contains the subdomain you can supply to any services/servers for the allowed domains list (ie: `"https://w906hhl6k.wxp.adobe-addons.com/"`). 
+ -->
 
 ### Using the subdomain
 There are multiple situations where you may run into a CORS issue and need to use the unique subdomain provided with your add-on to get past it. One way was described above, where you can just include it in the allowed list for a service integration. Another is to manage it by setting a server-side header, if you have access to that server. A third option is to use a [CORS proxy server](#cors-proxy-server). These options are described in the next sections below. 
@@ -80,7 +80,7 @@ There are multiple situations where you may run into a CORS issue and need to us
 If you have access to the endpoint server your add-on is fetching from, you can set an [`Access-Control-Allow-Origin`](#allowed-list-of-origins) header with the value set to the subdomain of your add-on in the server's response object. Handling the headers on the server side is the ideal solution, but often times the issue occurs with services outside your control. In that case, your best bet is to use a CORS Proxy Server.
 
 ### CORS Proxy Server
-Typically, the origin responsible for serving resources is also responsible for setting the access headers for those resources. However, in instances where you don't have access to the server, a proxy server can be set up to bypass the issue by acting as the intermediate server that makes the request for you, and that returns the `Access-Control-Allow-Origin` header in the response, with the required value needed to allow the request.
+Typically, the origin responsible for serving resources is also responsible for setting the access headers for those resources. However, in instances where you don't have access to the server, a proxy server can be set up to bypass the issue by acting as the intermediate server that makes the request for you, and returns the [`Access-Control-Allow-Origin`](#allowed-list-of-origins) header in the response with the the value of your subdomain.
 
 #### Hosted CORS Proxy Server
 One of the fastest ways to unblock your requests while testing in the event of CORS issues, is to use a hosted proxy server. For instance, `cors-anywhere` is a [NodeJS pakage](https://www.npmjs.com/package/cors-anywhere) which also has a free hosted demo server with it set up that you can use for quick testing. Open your browser to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and request temporary access to the demo server with the button shown in the screenshot:
@@ -127,7 +127,7 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 
     var cors_proxy = require('cors-anywhere');
     cors_proxy.createServer({
-        originWhitelist: [], // Allow all origins
+        originWhitelist: ['https://w906hhl6k.wxp.adobe-addons.com/'], // Your add-on subdomain
         requireHeader: ['origin', 'x-requested-with'],
         removeHeaders: ['cookie', 'cookie2']
     }).listen(port, host, function() {
@@ -144,7 +144,7 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 
 
 #### CORS / COEP Handling
-The value of the **Cross-Origin-Embedder-Policy** (COEP) header for add-on resources is set to `require-corp`. With COEP set to `require-corp`, resources loaded from within the document need to have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions. 
+The value of the [**Cross-Origin-Embedder-Policy** (COEP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) header for add-on resources is set to `credentialless`, but you should be aware that it will be changing to use `require-corp` sometime in the future, so you should plan for that by ensuring resources loaded from within the document have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions. 
 
 1. For http requests, make sure that the resource server responds with the `Cross-Origin-Resource-Policy: cross-origin` header. See [this link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy) for reference.
 

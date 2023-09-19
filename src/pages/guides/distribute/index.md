@@ -29,6 +29,13 @@ To publish and share your add-on, it must first go through a review process. By 
 <InlineAlert slots="text" variant="success"/>
 
 This set of guides is meant to provide you with an idea of what types of information you will need for the submission process and how to best prepare for review. Working through the guides provided in this section will help you make sure you’ve accounted for all of our review requirements, so you can avoid having to fix things and resubmit before being published.
+
+Check out this short video below on how to share and publish your add-on to help you get started more quickly. <br/><br/>
+
+<div style="display: flex; justify-content: center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Xdu7TRSsU3I?si=kUcJ6EMnQeNVQa-X" title="Sharing and Publishing Your Add-on" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 <!-- 
 
 ## Review Guides

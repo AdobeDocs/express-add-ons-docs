@@ -24,7 +24,10 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 <br/><br/>
 
 # Getting Started Overview
-Here you will find everything you need to know to get started building add-ons for Adobe Express. At a high level, add-ons refer to any feature distributed independently from the core Adobe Express that a user can enable or install to extend the functionality. Adobe will be providing built-in add-ons out of the box, but 3rd party developers will also have the opportunity to create and distribute their own add-ons by following the steps provided in this documentation.
+This section provides everything you need to know to get started building add-ons for Adobe Express. 
+
+## Introduction
+At a high level, add-ons refer to any feature distributed independently from the core Adobe Express that a user can enable or install to extend the functionality. Adobe provides some built-in add-ons out of the box, but 3rd party developers also have the opportunity to create and distribute their own add-ons by following the steps provided in this documentation.
 
 ### Getting Started Steps
 The [Quickstart](quickstart.md) steps you will follow to get started building your first add-on include:

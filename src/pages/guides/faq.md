@@ -41,6 +41,7 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 - [What are the supported mime types/file formats for exported content?](#what-are-the-supported-mime-typesfile-formats-for-exported-content)
 - [What are the supported file formats for imported content in Adobe Express?](#what-are-the-supported-file-formats-for-imported-content-in-adobe-express)
 - [Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?](#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error)
+- [Is `SharedArrayBuffer` supported?](#is-sharedarraybuffer-supported)
 
 ## Answers
 
@@ -119,3 +120,6 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
   This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response.
+
+  ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported? 
+  No, `SharedArrayBuffer` is not currently available to use with your add-ons.

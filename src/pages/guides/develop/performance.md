@@ -157,7 +157,25 @@ console.log(`myFunction took ${t1 - t0} milliseconds.`);
 ```
  
 ### Chrome DevTools
-Use the performance profiler in Chrome DevTools to identify performance bottlenecks in your code. The profiler can show you a detailed breakdown of the time spent in each function, as well as information about memory usage and network activity.
+Use the performance profiler in Chrome DevTools to identify performance bottlenecks in your code. The profiler can show you a detailed breakdown of the time spent in each function, as well as information about memory consumption. 
+
+#### Task Manager
+The Chrome Task Manager displays the CPU, memory, and network usage of each open tab and plug-in, and allows you to kill an individual process similar to the Windows Task Manager or MacOS Activity Monitor. To open the Task Manager, go to the Chrome triple dot menu -> **More Tools** -> **Task Manager**: 
+
+![Task Manager](img/menu_task_mgr.png)
+
+There you can locate the memory consumption of the OS process spawned specifically for the add-on iframe, like below:
+
+![Task Manager](img/task-mgr.png)
+
+
+#### Memory Consumption Monitoring
+The Chrome **Memory** tab can be used to help solve memory issues, including debugging of JavaScript memory leaks. You can also use it to see the memory consumption of the JavaScript context created by the add-on iframe specifically, as shown below:
+
+![Memory Consumption](img/memory-consumption.png)
+
+
+
 
 ### Lighthouse
 Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), an open-source tool from Google, to audit performance and identify areas for optimization while your add-on is loaded. Lighthouse can provide suggestions for improving page load time, reducing the size of resources, and optimizing JavaScript code.

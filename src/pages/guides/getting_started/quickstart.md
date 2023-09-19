@@ -6,9 +6,18 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 # Quickstart 
 
-This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript. Watch this short clip showing the quickstart steps you will take to see how easy it is to get your own add-on project up and running quickly. 
+This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript. 
 
-<iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="775" height="485" allow="autoplay" style="border: 0"></iframe>
+## Introduction
+Check out this short video below to get a quick visual introduction to the steps you'll be taking to create your very first add-on. <br/><br/>
+
+
+<div style="display: flex; justify-content: center;">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/1wazg-alo7c?si=kv0Qp_cMt4ZKDY3V" title="Creating Your First Add-on" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+</div>
+
+
+<!-- <iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="775" height="485" allow="autoplay" style="border: 0"></iframe> -->
 
 <br/>
 
@@ -35,7 +44,7 @@ This command will create a new add-on based on a basic `javascript` template. Se
 
 <InlineAlert slots="text" variant="success"/>
 
-`npx` is an `npm` package runner that can execute packages without installing them explicitly.
+`npx` is an `npm` package runner that can execute packages without installing them explicitly. 
 
 
 ## Step 2: Build and start your add-on
