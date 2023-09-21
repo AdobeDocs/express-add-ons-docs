@@ -42,6 +42,11 @@ npx @adobe/create-ccweb-add-on hello-world --template javascript
 
 This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](#cli). 
 
+
+**For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
+
+
+
 <InlineAlert slots="text" variant="success"/>
 
 `npx` is an `npm` package runner that can execute packages without installing them explicitly. 
