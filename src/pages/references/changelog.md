@@ -13,12 +13,24 @@ keywords:
   - Add-on Manifest
   - AddOnSdk
 title: Changelog
-description: This is the changelog page
+description: Contains a running log of changes to the add-on documentation, SDK, CLI, etc. 
 contributors:
   - https://github.com/hollyschinsky
 ---
 
 # Changelog
+
+## 2023-09-25
+### Updates
+The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) have been updated with additional descriptions and details as well as some new an modified APIs:
+
+- Artboard now has a single fill only. **Note:** it's possible that all node types will move to this model in the near future.
+- The `name` property is now only available on `PageNode`, not all node types.
+- New `Node.locked` & `Context.selectionIncludingNonEditable` properties were added for the locking feature that recently shipped in Express.
+
+<InlineAlert slots="text" variant="info"/>
+
+If you're using the experimental Editor APIs in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
 
 ## 2023-09-19
 ### Added
