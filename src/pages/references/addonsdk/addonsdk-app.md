@@ -18,7 +18,7 @@ Provides access to the Adobe Express host application's properties and methods t
     <td class="spectrum-Table-cell"><p>Represents the current user accessing the host application</p></td>
   </tr>
   <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
     <td class="spectrum-Table-cell"><p><pre><a href="app-devFlags.md">devFlags</a></pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
     <td class="spectrum-Table-cell"><p>Represents flags which can be used to simulate certain behavior during development.</p></td>
@@ -242,9 +242,9 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 | `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |   
 
 
-<InlineAlert slots="text" variant="warning"/>
+<!-- <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The support for drag and drop of **audio** specifically is currently **experimental only** and should not be used in any add-ons you will be distributing until it's been declared stable. To enable this support, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. See this [Drag & Drop use case code snippet](../../guides/develop/index.md#example-using-an-image-url) for an example note of how to specify the properties for audio specifically.
+**IMPORTANT:** The support for drag and drop of **audio** specifically is currently **experimental only** and should not be used in any add-ons you will be distributing until it's been declared stable. To enable this support, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. See this [Drag & Drop use case code snippet](../../guides/develop/index.md#example-using-an-image-url) for an example note of how to specify the properties for audio specifically. -->
 
 
 #### `MediaAttributes`

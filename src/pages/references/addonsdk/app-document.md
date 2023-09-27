@@ -86,11 +86,6 @@ async function addVideoFromURL(url) {
 ### addAudio()
 Adds audio to the current page.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This new method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it's been declared stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
-
-
 #### Signature
 `addAudio(audioBlob: Blob, attributes: MediaAttributes): Promise<void>`
 

@@ -1,9 +1,9 @@
 # AddOnSdk.app.devFlags
-Represents flags which can be used to simulate certain behavior during development.  
+This object contains flags which can be used to simulate certain behavior during development.  
 
 <InlineAlert slots="text" variant="warning"/>
 
-This API can only be used during development.
+`AddOnSdk.app.devFlags` are provided for testing purposes only, and thus can only be used during the development phase.
 
 
 ## Methods

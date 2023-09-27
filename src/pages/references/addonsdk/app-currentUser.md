@@ -1,10 +1,10 @@
 # AddOnSdk.app.currentUser
 Provides access to the currently logged in user.
 
-<InlineAlert slots="text" variant="warning"/>
+<!-- <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This API is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it's been marked stable. To use this API, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. 
-
+ -->
 
 ## Methods
 

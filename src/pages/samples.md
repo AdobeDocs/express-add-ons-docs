@@ -182,7 +182,7 @@ Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-we
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->
 
-## [Dropbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/dropbox)
+<!-- ## [Dropbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/dropbox)
 Allows users to connect to their Dropbox account. Once connected, they can fetch their images and videos from their account and add them to their Express pages.
 
 **Technologies Used:** <br/>
@@ -195,7 +195,7 @@ Allows users to connect to their Dropbox account. Once connected, they can fetch
 
 - [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked. -->
 
 ## [Giphy](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/giphy)
 Allows users to search for popular gifs and add them to the document.
@@ -222,3 +222,24 @@ Allows users to create a QR code based on a URL and add it to their document.
 
 - [Import Content](./references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
+
+## Script Runtime Code Samples
+
+The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) have been provided to help you get started using the [Script Runtime API's](./references/scriptruntime/index.md).
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [Script Runtime API's](./references/scriptruntime/index.md) are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
+
+
+### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/communication-iframe-script-runtime)
+
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and script runtime environments. Also includes demonstrating how to use some of the [Web APIs](./web/) such as `setTimeout()` and `console.log()`.
+
+### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis)
+
+Demonstrates how to use the [editor APIs](./editor/) to create various shapes and add them to the document.
+
+### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) 
+
+A more comprehensive example of using the [editor APIs](./editor/) to add a page, images and shapes, as well as clear the artboard.

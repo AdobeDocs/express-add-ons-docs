@@ -20,6 +20,16 @@ contributors:
 
 # Changelog
 
+## 2023-09-26
+### Removed 
+- Removed the experimental APIs notes/warnings around the **Audio APIs and User APIs** since they **are now stable**.
+- Removed references to the Dropbox sample since the [import-images-from-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth) contains the same functionality.
+
+### Updated
+- Updated the Express add-ons [introduction video](https://developer.adobe.com/express/add-ons/docs/guides/) with a newly created version.
+
+
+
 ## 2023-09-25
 ### Updates
 The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) have been updated with additional descriptions and details as well as some new an modified APIs:
@@ -81,9 +91,9 @@ Added new **Audio API** documentation. You can now import audio to the current A
 
 
 
-<InlineAlert slots="text" variant="warning"/>
+<!-- <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. -->
 
 
 
