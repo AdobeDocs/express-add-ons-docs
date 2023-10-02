@@ -11,9 +11,8 @@ This quickstart guide will help you create and run your first add-on, a simple h
 ## Introduction
 Check out this short video below to get a quick visual introduction to the steps you'll be taking to create your very first add-on. <br/><br/>
 
-
 <div style="display: flex; justify-content: center;">
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/1wazg-alo7c?si=kv0Qp_cMt4ZKDY3V" title="Creating Your First Add-on" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kSq4ykQGOdo" title="Creating Your First Add-on | How to Create Add-ons in Adobe Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 
