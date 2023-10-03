@@ -36,7 +36,7 @@ This section outlines everything you'll need in order to be prepared for submitt
 
 <InlineAlert slots="text" variant="info"/>
 
-** A publisher logo is only required the first time you submit for distribution, and if you've never created a publisher profile.
+** A publisher logo is only required the first time you submit for distribution, and if you've never created a [publisher profile](../distribute/guidelines/general/pub_profile.md).
 
 ### 3. Prepare your add-on package
 The CLI contains a handy script to help you with this step. Open your terminal and navigate into the root of your add-on project, then run the then run the following command:
@@ -146,7 +146,7 @@ Next you will specify your version details. The package that you entered in the 
 
 ![Version Details](./img/release-notes.png)
 
-### Step 8: Create a publisher profile
+### Step 8: Create a [publisher profile](../distribute/guidelines/general/pub_profile.md)
 You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission. Fill our your publisher details and upload a 250x250 logo, then hit **Continue**.
 
 ![Publisher Profile](./img/pub-profile2.png)

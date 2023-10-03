@@ -52,7 +52,7 @@ To use the script runtime in your add-on, start by defining a new `script` entry
     ]
 ```
 
-The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/), [Web APIs](./web/) and [editor APIs](./editor/).
+The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/), [Web APIs](./web/) and [editor APIs](./editor/)).
 
 ## Code Samples
 

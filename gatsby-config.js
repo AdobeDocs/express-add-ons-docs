@@ -27,15 +27,23 @@ module.exports = {
         path: 'references'        
       },
       {
-        "title": "Samples & Resources",
-        "path": 'samples'        
+        title: "Samples & Resources",
+        path: 'samples'       
       },      
-    ],
-    subPages: [  
+    ],    
+    subPages: [
+      {
+        title: 'Overview',
+        path: 'samples/samples.md'     
+      },
+      {
+        title: 'Resources',
+        path: 'samples/resources/'
+      },    
     {
       title: 'Overview',
       path: 'references/'
-    },      
+    },          
     {              
       title: 'AddOnSdk',                
       path: 'references/addonsdk/',            
@@ -133,7 +141,7 @@ module.exports = {
         "path": "guides/getting_started",
         "pages": [             
           {
-            "title": "Introduction",
+            "title": "Overview",
             "path": "guides/getting_started"
           },        
           {
@@ -155,8 +163,12 @@ module.exports = {
         "path": "guides/design",
         "pages": [
           {
-            "title": "User interface guide",
+            "title": "Overview",
             "path": "guides/design/"
+          }, 
+          {
+            "title": "User interface guide",
+            "path": "guides/design/user_interface.md"
           }, 
           // {
           //   "title": "TEST",
@@ -174,11 +186,15 @@ module.exports = {
       },      
       {
         "title": "Develop",
-        "path": "guides/develop/index.md",
+        "path": "guides/develop/",
         "pages": [   
           {
+            "title": "Overview",
+            "path": "guides/develop/",
+          },
+          {
             "title": "Implementing Common Use Cases",
-            "path": "guides/develop/index.md"
+            "path": "guides/develop/use_cases.md"
           },                                             
           {
             "title": "Frameworks, libraries and bundling",
@@ -199,8 +215,12 @@ module.exports = {
         "path": "guides/debug",
         "pages": [
           {
-            "title": "Browser debugging",
+            "title": "Overview",
             "path": "guides/debug/"
+          },
+          {
+            "title": "Browser debugging",
+            "path": "guides/debug/browser.md"
           },  
           {
             "title": "VS Code debugging",
@@ -211,11 +231,15 @@ module.exports = {
       {
         "title": "Distribute",
         "path": "guides/distribute",
-        "pages": [                      
+        "pages": [      
           {
-            "title": "Review guidelines",
-            "path": "guides/distribute/review_guidelines.md",
-          },           
+            "title": "Overview",
+            "path": "guides/distribute/"
+          },                                              
+          {
+            "title": "Our review process",
+            "path": "guides/distribute/review_process/",                                             
+          },                    
           {
             "title": "Private distribution",
             "path": "guides/distribute/private-dist.md"
@@ -223,7 +247,106 @@ module.exports = {
           {
             "title": "Public distribution",
             "path": "guides/distribute/public-dist.md"
-          },                           
+          },
+          {
+            "title": "Guidelines and requirements",            
+            "path": "guides/distribute/guidelines/general",            
+            "pages": [ 
+              {
+                "title": "General guidelines",            
+                "path": "guides/distribute/guidelines/general",                          
+                "pages": [ 
+                  {
+                    "title": "Content",
+                    "path": "guides/distribute/guidelines/general/content/index.md",
+                    // "pages": [  
+                    //   {
+                    //     "title": "Unacceptable & Restricted Content",
+                    //     "path": "guides/distribute/guidelines/general/content/unacceptable.md"
+                    //   },
+                    // ]
+                  },                  
+                  {
+                    "title": "User interface",
+                    "path": "guides/distribute/guidelines/general/user_interface.md"
+                  }, 
+                  {
+                    "title": "Listing your add-on",
+                    "path": "guides/distribute/guidelines/general/listing.md"
+                  },
+                  {
+                    "title": "Publisher profile",
+                    "path": "guides/distribute/guidelines/general/pub_profile.md"
+                  },                 
+                  {                
+                    "title": "Functionality & testing",
+                    "path": "guides/distribute/guidelines/general/perf_functionality_security",
+                    "pages": [                        
+                      {
+                        "title": "Compatibility",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/compatibility.md"
+                      },
+                      {
+                        "title": "Authenticating users",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/auth.md"
+                      },
+                      {
+                        "title": "Features",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/features.md"
+                      }, 
+                      {
+                        "title": "Performance",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/performance.md"
+                      },
+                      {
+                        "title": "Accessibility",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/accessibility.md"
+                      },
+                      {
+                        "title": "Security",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/security.md"
+                      },          
+                      {
+                        "title": "Usability",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/usability.md"
+                      },
+                      {
+                        "title": "Edge cases",
+                        "path": "guides/distribute/guidelines/general/perf_functionality_security/edge_case.md"
+                      },       
+                    ],                                       
+                  }, 
+                ],
+              },                            
+              {
+                "title": "Brand guidelines",
+                "path": "guides/distribute/guidelines/brand_guidelines.md"
+              },               
+              {
+                "title": "Monetization guidelines",
+                "path": "guides/distribute/guidelines/monetization.md"
+              },                                                     
+              
+              {
+                "title": "Generative AI guidelines",
+                "path": "guides/distribute/guidelines/genai/",
+                "pages": [
+                  {                  
+                    "title": "Restrictions",
+                    "path": "guides/distribute/guidelines/genai/restrictions"                    
+                  },
+                  {                  
+                    "title": "Requirements",
+                    "path": "guides/distribute/guidelines/genai/requirements"                    
+                  },
+                  {                  
+                    "title": "Guidelines",
+                    "path": "guides/distribute/guidelines/genai/guidelines"                    
+                }
+                ]
+              },                             
+            ],
+          },                       
         ]
       }, 
       {

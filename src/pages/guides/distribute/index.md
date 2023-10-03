@@ -24,17 +24,24 @@ Preview Adobe Express add-on SDK documentation while you wait to [join our priva
 
 Congratulations! You've built a great add-on and you're ready to release it to the community.
 
-To publish and share your add-on, it must first go through a review process. By reviewing every add-on, Adobe aims to help you get your add-ons ready for prime time and helps to ensures your users have great experiences with the add-ons they consume. Our goal is to balance providing you with the best possible developer experience during the review process, while also ensuring the approved add-ons offer a great user experience for our mutual customers.
+Thank you for joining the community of developers worldwide that are creating add-ons for Adobe Express.
+
+At Adobe, we want to make sure that all add-ons that appear on the Adobe marketplace meet the highest quality standards, and provide great experiences for users.
+
+To publish and share your add-on, it must first go through a review process. By reviewing every add-on, Adobe aims to help you get your add-ons ready for prime time and helps to ensures your users have great experiences with the add-ons they consume. Our goal is to balance providing you with the best possible developer experience during the review process, while also ensuring the approved add-ons offer a great user experience for our mutual customers. 
+
 
 <InlineAlert slots="text" variant="success"/>
 
-This set of guides is meant to provide you with an idea of what types of information you will need for the submission process and how to best prepare for review. Working through the guides provided in this section will help you make sure you’ve accounted for all of our review requirements, so you can avoid having to fix things and resubmit before being published.
+This set of guides is meant to provide you with details what types of information you will need to publish and share your add-on, and how to best prepare it for review. Working through the [guidelines](./guidelines/) provided in this section will help you make sure you’ve accounted for all of our review requirements and specific guidelines, to avoid avoid having to fix things and resubmit before being published.
 
-Check out this short video below on how to share and publish your add-on to help you get started more quickly. <br/><br/>
+
+When you're ready to distribute your add-on, watch this short video below to help you get started more quickly. <br/><br/>
 
 <div style="display: flex; justify-content: center;">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/Xdu7TRSsU3I?si=kUcJ6EMnQeNVQa-X" title="Sharing and Publishing Your Add-on" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+
 
 <!-- 
 
@@ -46,7 +53,7 @@ Check out this short video below on how to share and publish your add-on to help
 - [Submit for Private Distribution](../distribute/submit-private-dist.md)
 - [Submit for Public Distribution](../distribute/submit-public-dist.md) -->
 
-## Submission Requirements
+<!-- ## Submission Requirements
 
 ### Publisher profile
 
@@ -65,7 +72,8 @@ Your publisher profile includes required details including:
 <InlineAlert slots="text" variant="info"/>
 
 **IMPORTANT:** You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one-time thing (unless you decide you need to update it for your own reasons). **Note:** Any changes to your publisher profile will need to be submitted for approval again.
-Frequently changing your publisher profile can confuse users and erode trust. Please be sure you've considered this before changing this information.
+
+Frequently changing your publisher profile can confuse users and erode trust. Please be sure you've considered this before changing this information. -->
 
 
 
