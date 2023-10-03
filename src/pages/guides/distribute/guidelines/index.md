@@ -4,9 +4,15 @@ Thank you for joining the community of developers worldwide that are creating ad
 
 At Adobe, we want to make sure that all add-ons that appear on the Adobe marketplace meet the highest quality standards, and provide great experiences for users.
 
-We’ve created these guidelines to give you some tips on best practices, and ensure you take the right steps to get your add-on approved.
+## Guideline Categories
+We’ve created this set of guidelines to give you some tips on best practices, and ensure you take the right steps to get your add-on approved:
 
+- [General guidelines](./general/)
+- [Brand guidelines](./brand_guidelines.md)
+- [Monetization guidelines](./monetization.md)
+- [Generative AI guidelines](./genai/)
 
+<!-- 
 ## Planning your add-on
 
 ### Choosing your idea
@@ -28,6 +34,10 @@ Does my add-on enable users to be more creative, or make their work look better?
 #### Original
 
 Are there lots of add-ons already doing the same thing on the marketplace?
+
+#### Use of AI
+
+Does your add-on leverage AI to generate content or automate workflows? If so, be sure to check out the [Generative AI requirements](./genai/). -->
 
 <!-- ## Important Resources
 The following list of guidelines should be carefully reviewed as they provide important information regarding the use of branding in your add-on, Adobe’s Generative AI requirements, and Monetization guidelines (if you intend to monetize your add-on).

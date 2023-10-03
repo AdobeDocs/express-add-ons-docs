@@ -120,7 +120,7 @@ module.exports = {
           {
             "title": "Editor APIs",            
             "path": "references/scriptruntime/editor/",  
-          }
+          }          
         ]
       },      
       {
@@ -169,15 +169,7 @@ module.exports = {
           {
             "title": "User interface guide",
             "path": "guides/design/user_interface.md"
-          }, 
-          // {
-          //   "title": "TEST",
-          //   "path": "guides/design/test.md"
-          // },  
-          // {
-          //   "title": "Spectrum usage guide",
-          //   "path": "guides/design/spectrum.md"
-          // },            
+          },                    
           {
             "title": "Best practices",
             "path": "guides/design/best_practices.md"
@@ -241,81 +233,65 @@ module.exports = {
             "path": "guides/distribute/review_process/",                                             
           },                    
           {
-            "title": "Private distribution",
+            "title": "Creating a private link",
             "path": "guides/distribute/private-dist.md"
           },        
           {
-            "title": "Public distribution",
+            "title": "Creating a public listing",
             "path": "guides/distribute/public-dist.md"
           },
           {
             "title": "Guidelines and requirements",            
-            "path": "guides/distribute/guidelines/general",            
+            "path": "guides/distribute/guidelines",                       
             "pages": [ 
               {
                 "title": "General guidelines",            
-                "path": "guides/distribute/guidelines/general",                          
+                "path": "guides/distribute/guidelines/general/",                                       
                 "pages": [ 
                   {
-                    "title": "Content",
-                    "path": "guides/distribute/guidelines/general/content/index.md",
-                    // "pages": [  
-                    //   {
-                    //     "title": "Unacceptable & Restricted Content",
-                    //     "path": "guides/distribute/guidelines/general/content/unacceptable.md"
-                    //   },
-                    // ]
-                  },                  
-                  {
-                    "title": "User interface",
-                    "path": "guides/distribute/guidelines/general/user_interface.md"
-                  }, 
-                  {
-                    "title": "Listing your add-on",
+                    "title": "Your listing metadata",
                     "path": "guides/distribute/guidelines/general/listing.md"
                   },
                   {
-                    "title": "Publisher profile",
-                    "path": "guides/distribute/guidelines/general/pub_profile.md"
-                  },                 
-                  {                
-                    "title": "Functionality & testing",
-                    "path": "guides/distribute/guidelines/general/perf_functionality_security",
-                    "pages": [                        
-                      {
-                        "title": "Compatibility",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/compatibility.md"
-                      },
-                      {
-                        "title": "Authenticating users",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/auth.md"
-                      },
-                      {
-                        "title": "Features",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/features.md"
-                      }, 
-                      {
-                        "title": "Performance",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/performance.md"
-                      },
-                      {
-                        "title": "Accessibility",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/accessibility.md"
-                      },
-                      {
-                        "title": "Security",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/security.md"
-                      },          
-                      {
-                        "title": "Usability",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/usability.md"
-                      },
-                      {
-                        "title": "Edge cases",
-                        "path": "guides/distribute/guidelines/general/perf_functionality_security/edge_case.md"
-                      },       
-                    ],                                       
+                    "title": "Content",
+                    "path": "guides/distribute/guidelines/general/content.md"
                   }, 
+                  {
+                    "title": "User interface",
+                    "path": "guides/distribute/guidelines/general/user_interface.md"
+                  },
+                  {
+                    "title": "Performance",
+                    "path": "guides/distribute/guidelines/general/performance.md"
+                  },
+                  {
+                    "title": "Usability",
+                    "path": "guides/distribute/guidelines/general/usability.md"
+                  },
+                  {
+                    "title": "Security",
+                    "path": "guides/distribute/guidelines/general/security.md"
+                  }, 
+                  {
+                    "title": "Features",
+                    "path": "guides/distribute/guidelines/general/features.md"
+                  },
+                  {
+                    "title": "Authenticating users",
+                    "path": "guides/distribute/guidelines/general/auth.md"
+                  },                  
+                  {
+                    "title": "Accessibility",
+                    "path": "guides/distribute/guidelines/general/accessibility.md"
+                  },    
+                  {
+                    "title": "Compatibility",
+                    "path": "guides/distribute/guidelines/general/compatibility.md"
+                  },                                       
+                  {
+                    "title": "Edge cases",
+                    "path": "guides/distribute/guidelines/general/edge_case.md"
+                  },                     
                 ],
               },                            
               {
