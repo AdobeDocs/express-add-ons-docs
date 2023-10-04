@@ -42,13 +42,13 @@ which include:
 
     - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
     - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
-    - The `javascript-with-editor-apis` template has been removed in this version but replaced with the option from the CLI to [include the script runtime](../references/scriptruntime/#cli-prompt-to-include-script-runtime) when creating a new add-on.
+    - The `javascript-with-editor-apis` template has been removed in this version but replaced with the option from the CLI to [include the script runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) when creating a new add-on.
   
 * New type support for typescript based add-ons.
 * Ability to recreate your SSL certificates.
 
 #### Documentation updates
-- Updated [Script Runtime Reference docs](../references/scriptruntime/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include script runtime (vs the specific template).
+- Updated [Script Runtime Reference docs](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include script runtime (vs the specific template).
 - Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons". 
 
 ## 2023-09-26
