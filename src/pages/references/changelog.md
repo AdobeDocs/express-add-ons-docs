@@ -20,6 +20,37 @@ contributors:
 
 # Changelog
 
+## 2023-10-03
+### Updates
+New versions of the CLI packages:
+
+  ```json
+    "@adobe-ccwebext/ccweb-add-on-manifest": "1.5.0"
+    "@adobe-ccwebext/ccweb-add-on-core": "1.5.0"
+    "@adobe-ccwebext/ccweb-add-on-ssl": "1.5.0"
+    "@adobe-ccwebext/ccweb-add-on-analytics": "1.5.0"
+    "@adobe-ccwebext/ccweb-add-on-developer-terms": "1.5.0"
+    "@adobe-ccwebext/create-ccweb-add-on": "1.5.0"
+    "@adobe-ccwebext/ccweb-add-on-scaffolder": "1.5.0"
+    "@adobe-ccwebext/ccweb-add-on-scripts": "1.5.0"
+    "@adobe-ccwebext/ccweb-add-on-sdk-types": "0.3.0"
+  ```
+
+which include:
+
+* Updated templates for both iframe and script runtime add-ons:
+
+    - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
+    - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
+    - The `javascript-with-editor-apis` template has been removed in this version but replaced with the option from the CLI to [include the script runtime](../references/scriptruntime/#cli-prompt-to-include-script-runtime) when creating a new add-on.
+  
+* New type support for typescript based add-ons.
+* Ability to recreate your SSL certificates.
+
+#### Documentation updates
+- Updated [Script Runtime Reference docs](../references/scriptruntime/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include script runtime (vs the specific template).
+- Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons". 
+
 ## 2023-09-26
 ### Removed 
 - Removed the experimental APIs notes/warnings around the **Audio APIs and User APIs** since they **are now stable**.

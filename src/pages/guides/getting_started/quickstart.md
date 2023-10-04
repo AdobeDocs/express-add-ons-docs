@@ -41,8 +41,9 @@ npx @adobe/create-ccweb-add-on hello-world --template javascript
 
 This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](#cli). 
 
+**Note**: You'll be prompted to login to your Adobe account and you may also be prompted to accept the "Adobe Developer Terms of Use" if you haven't done so previously. You may also be prompted to configure SSL, and you'll want to do this step to ensure that your add-on can be loaded inside of Adobe Express while you develop it.
 
-**For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
+   **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
 
 
@@ -63,12 +64,13 @@ npm run start;
 The `start` script will display messages like the following after it executes:
 
 ```bash
-Your panel 'hello-world' can now be sideloaded
-By enabling the Developer Mode </> from the **Add-ons** panel.
+Done. Your add-on 'hello-world' is hosted on: https://localhost:5241/
+
+You can now sideload your add-on by enabling the Developer Mode in the Add-ons panel.
 ```
 
 ## Step 3: Enable add-on development mode (first-time only)
-- Navigate to the [beta version of Adobe Express](https://new.express.adobe.com/).
+- Navigate to [Adobe Express](https://new.express.adobe.com/).
 - Click on your user avatar in the top righthand corner and choose **Settings**.
 
    ![Dev settings toggle on](./img/avatar-settings.png)
@@ -79,27 +81,41 @@ By enabling the Developer Mode </> from the **Add-ons** panel.
 
 
 ## Step 4: Load and run your add-on
-- Navigate your browser to the [beta version of Adobe Express](https://new.express.adobe.com/new) and create a new project.
+- Navigate your browser to [Adobe Express](https://new.express.adobe.com/new) and create a new project.
 - Click the **Add-ons** icon in the left rail.
-- Toggle on the radio **Add-on testing** toggle button.
+- Notice there are two tabs, **Discover** and **Your add-ons**. 
+
+   ![add-on tabs](./img/add-on-tabs.png)
+
+- Click on the **Your add-ons** tab to access the **Add-on Development** tools panel, and toggle on the radio **Add-on testing** toggle button.
+
+   ![Dev testing toggle on](./img/launchpad-toggle.png)
+
 - Once clicked, a modal will appear where you will provide the URL of your locally hosted add-on.
 
-  **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
+   **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
 
-- Check the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
-- Your add-on should now be displayed in the add-ons panel on the right side of your Adobe Express tab running in your browser. 
+   Check the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
 
-   ![Hello World add-on](img/hello-world-loaded-log-open.png)
+   ![Add-on connect modal](./img/connect-modal.png)
+
+- The **Add-on Development** panel will expand and show a message that the add-on is connected in the log, along with the name and version of your add-on. Click on the down arrow icon to collapse the panel:
+
+   ![Hello World add-on connected](img/hello-world-loaded-log-open.png)
+
+- To run your add-on, simply click on it from the **In development** panel. Your add-on should now be displayed in the add-ons panel on the right side of your Adobe Express window:
+
+   ![Hello World add-on running](img/hello-world-run.png)   
 
 
 ## Step 5: Edit your add-on
-Now, while your add-on is still loaded and running, open the `src/index.html` file and update the **"Hello World!"** string in the `<body>` below:
+Now, while your add-on is still loaded and running, open the `src/index.html` file and update the **"Click me"** string in the `<button>` below:
 
-![](./img/vs-code-hello-world.png)
+![](./img/vs-code-click-me.png)
 
-to **"My first add-on"**:
+   to **"Say hello"**:
 
-![](./img/vs-code-update.png)
+![](./img/vs-code-say-hello.png)
 
 Note the terminal where your add-on is running will display messages showing that the `src` has been rebuilt like below. This is due to the hot module reload feature built into the CLI. 
 
@@ -111,13 +127,12 @@ Go back to your browser where your add-on is running in Adobe Express, and notic
 
 You can continue to update your code while your add-on is running and the add-on will automatically be rebuilt. 
 
-Note, however, any changes to your `manifest.json` will require a manual reload of your add-on. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on to **My first add-on**, for instance: 
+**Manifest updates**<br/>
+Any changes to your `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on to **"Say hello"**, for instance: 
 
 ![manifest update](./img/manifest-update.png)
 
 Then, switch back to your Adobe Express window and you should see a message that changes have been detected in your manifest, such as below:
-
-<!-- ![](./img/refresh-btn.png) -->
 
 ![manifest refresh reminder](./img/manifest-refresh-reminder.png)
 
