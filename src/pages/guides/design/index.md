@@ -1,3 +1,7 @@
+---
+hideBreadcrumbNav: true
+---
+
 # Design Overview
 The design of your add-on is just as important to the success of your add-on as the features it provides. 
 

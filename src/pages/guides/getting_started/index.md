@@ -14,7 +14,8 @@ keywords:
 title: Intro
 description: This is the Intro page for Getting Started
 contributors:
-  - https://github.com/hollyschinsky
+  - https://github.com/hollyschinsky  
+hideBreadcrumbNav: true
 ---
 
 # Getting Started Overview

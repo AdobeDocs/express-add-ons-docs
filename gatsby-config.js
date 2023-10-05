@@ -392,19 +392,106 @@ module.exports = {
       {
         "title": "Distribute",
         "path": "guides/distribute",
-        "pages": [                      
+        "pages": [      
           {
-            "title": "Review guidelines",
-            "path": "guides/distribute/review_guidelines.md",
-          },           
+            "title": "Overview",
+            "path": "guides/distribute/"
+          },                                              
           {
-            "title": "Private distribution",
+            "title": "Our review process",
+            "path": "guides/distribute/review_process/",                                             
+          },                    
+          {
+            "title": "Creating a private link",
             "path": "guides/distribute/private-dist.md"
           },        
           {
-            "title": "Public distribution",
+            "title": "Creating a public listing",
             "path": "guides/distribute/public-dist.md"
-          },                           
+          },
+          {
+            "title": "Guidelines and requirements",            
+            "path": "guides/distribute/guidelines",                       
+            "pages": [ 
+              {
+                "title": "General guidelines",            
+                "path": "guides/distribute/guidelines/general/",                                       
+                "pages": [ 
+                  {
+                    "title": "Your listing metadata",
+                    "path": "guides/distribute/guidelines/general/listing.md"
+                  },
+                  {
+                    "title": "Content",
+                    "path": "guides/distribute/guidelines/general/content.md"
+                  }, 
+                  {
+                    "title": "User interface",
+                    "path": "guides/distribute/guidelines/general/user_interface.md"
+                  },
+                  {
+                    "title": "Performance",
+                    "path": "guides/distribute/guidelines/general/performance.md"
+                  },
+                  {
+                    "title": "Usability",
+                    "path": "guides/distribute/guidelines/general/usability.md"
+                  },
+                  {
+                    "title": "Security",
+                    "path": "guides/distribute/guidelines/general/security.md"
+                  }, 
+                  {
+                    "title": "Features",
+                    "path": "guides/distribute/guidelines/general/features.md"
+                  },
+                  {
+                    "title": "Authenticating users",
+                    "path": "guides/distribute/guidelines/general/auth.md"
+                  },                  
+                  {
+                    "title": "Accessibility",
+                    "path": "guides/distribute/guidelines/general/accessibility.md"
+                  },    
+                  {
+                    "title": "Compatibility",
+                    "path": "guides/distribute/guidelines/general/compatibility.md"
+                  },                                       
+                  {
+                    "title": "Edge cases",
+                    "path": "guides/distribute/guidelines/general/edge_case.md"
+                  },                     
+                ],
+              },                            
+              {
+                "title": "Brand guidelines",
+                "path": "guides/distribute/guidelines/brand_guidelines.md"
+              },               
+              {
+                "title": "Monetization guidelines",
+                "path": "guides/distribute/guidelines/monetization.md"
+              },                                                     
+              
+              {
+                "title": "Generative AI guidelines",
+                "path": "guides/distribute/guidelines/genai/",
+                "pages": [
+                  {                  
+                    "title": "Restrictions",
+                    "path": "guides/distribute/guidelines/genai/restrictions"                    
+                  },
+                  {                  
+                    "title": "Requirements",
+                    "path": "guides/distribute/guidelines/genai/requirements"                    
+                  },
+                  {                  
+                    "title": "Guidelines",
+                    "path": "guides/distribute/guidelines/genai/guidelines"                    
+                }
+                ]
+              },                             
+            ],
+          },                       
         ]
       }, 
       {
