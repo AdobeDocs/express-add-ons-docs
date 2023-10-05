@@ -17,12 +17,6 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-<InlineAlert slots="text" variant="info"/>
-
-Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
-
-<br/><br/>
-
 # Getting Started Overview
 This section provides everything you need to know to get started building add-ons for Adobe Express. 
 

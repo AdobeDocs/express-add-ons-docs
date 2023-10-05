@@ -17,20 +17,11 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-<InlineAlert slots="text" variant="info"/>
-
-Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
-
 # Implementing Common Use Cases
 This guide contains a set of common use cases and accompanying code snippets to explore the capabilities of the Adobe Express add-ons platform. 
 
 
-If you're looking for more extensive examples for any of the use cases described below, you can also check out our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons. This short video below also provides an introduction to some of the add-on features and APIs available for use in your add-ons.<br/><br/>
-
-<div style="display: flex; justify-content: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ" title="Building Add-on Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
-</div>
-
+If you're looking for more extensive examples for any of the use cases described below, you can also check out our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons. 
 
 ## Importing Content
 Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example use cases for implementing this feature. The first function shows how to implement it by adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. Follow the example below to implement this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) and [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) for more details. 
@@ -592,3 +583,36 @@ validateUser(userId: string) {
 
 ### Output
 `Current Userid: 3cda976828a4a90d13b0f38b1f8a59b1d6845cccfc48037fb30bb75d3ef67d36`
+
+## Authoring Content
+We provide a set of [Editor APIs](../../references/scriptruntime/editor/) that can be used for interacting with the document for common use cases like creating shapes, adding pages, clearing the artboard and more.
+
+<InlineAlert slots="text" variant="warning"/>
+
+The Editor API's are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
+
+The following code snippet illustrates how to use the [Editor APIs](../../references/scriptruntime/editor/) from the script running in your [`code.js`](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
+
+### Example
+```js
+import { editor, utils } from "express";
+
+const insertionParent = editor.context.insertionParent; // get node to insert content into
+
+const rectangle = editor.createRectangle();
+rectangle.width = 200;
+rectangle.height = 150;
+rectangle.translateX = 100;
+rectangle.translateY = 20;
+console.log(rectangle); // for debugging purpose
+
+const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];
+const rectangleFill = editor.createColorFill(utils.createColor(red, green, blue, alpha));            
+rectangle.fills.append(rectangleFill);
+
+insertionParent.children.append(rectangle);
+```
+<InlineAlert slots="text" variant="info"/>
+
+Refer to [getting started with Script Runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Editor APIs.
+

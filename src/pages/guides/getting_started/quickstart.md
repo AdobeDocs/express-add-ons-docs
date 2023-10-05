@@ -1,9 +1,3 @@
-<InlineAlert slots="text" variant="info"/>
-
-Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
-
-<br/><br/>
-
 # Quickstart 
 
 This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript. 
@@ -25,8 +19,6 @@ Check out this short video below to get a quick visual introduction to the steps
 - [NodeJS](https://nodejs.org/en/download/) (major version of 16 or greater) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (major version of 8 or greater) installed
 - Familiarity with programming in HTML, CSS and JavaScript
 - An Adobe Express account (use an existing Adobe ID or simply create one for free).
-- Access to the beta version of Adobe Express ([Join the waitlist](https://adobe.com/go/express-developer))
-- Adobe Express add-on [CLI](#cli) ([Join the waitlist](https://adobe.com/go/express-developer))
 
 ### Add-on CLI 
 The **add-on CLI (Command Line Interface) is required for add-on development**, and allows you to create and host Adobe Express add-ons directly from your local machine. Currently, however, the CLI is offered on a wait list only basis. Please fill in and submit [this wait list form](https://adobe.com/go/express-developer) if you're interested in developing add-ons.

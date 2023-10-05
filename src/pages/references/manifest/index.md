@@ -120,8 +120,6 @@ The following platform values are currently supported in the `supportedDeviceCla
 | `app`           | Native app on mobile and tablet devices. |
 
 
-**Note:** *The beta version of Adobe Express is currently not yet supported on mobile or tablet devices.*
-
 ## entryPoints
 | Key         | Type         | Description   |
 | -------------| -------------| -----------:  |

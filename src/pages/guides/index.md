@@ -21,14 +21,6 @@ contributors:
 # Overview
 Adobe Express is the AI-first, all-in-one creativity app that makes it fast, easy and fun for any user to design and share standout content. 
 
-
-<InlineAlert slots="text" variant="info"/>
-
-Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
-
-<br/><br/>
-
-
 ## Add-ons
 Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>
 

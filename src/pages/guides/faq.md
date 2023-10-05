@@ -16,10 +16,6 @@ description: This is the FAQ page
 contributors:
   - https://github.com/hollyschinsky
 ---
-<InlineAlert slots="text" variant="info"/>
-
-Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
-
 
 # Frequently Asked Questions
 

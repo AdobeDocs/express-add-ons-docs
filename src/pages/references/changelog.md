@@ -42,7 +42,7 @@ which include:
 
     - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
     - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
-    - The `javascript-with-editor-apis` template has been removed in this version but replaced with the option from the CLI to [include the script runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) when creating a new add-on.
+    - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the script runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) when creating a new add-on.
   
 * New type support for typescript based add-ons.
 * Ability to recreate your SSL certificates.
