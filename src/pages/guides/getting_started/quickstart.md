@@ -21,8 +21,7 @@ Check out this short video below to get a quick visual introduction to the steps
 - An Adobe Express account (use an existing Adobe ID or simply create one for free).
 
 ### Add-on CLI 
-The **add-on CLI (Command Line Interface) is required for add-on development**, and allows you to create and host Adobe Express add-ons directly from your local machine. Currently, however, the CLI is offered on a wait list only basis. Please fill in and submit [this wait list form](https://adobe.com/go/express-developer) if you're interested in developing add-ons.
-
+The **add-on CLI (Command Line Interface) is required for add-on development**, and allows you to create and host Adobe Express add-ons directly from your local machine. 
 
 ## Step 1: Create your add-on project
 Open your terminal and run the following command:
