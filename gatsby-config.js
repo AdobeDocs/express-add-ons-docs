@@ -27,11 +27,15 @@ module.exports = {
         path: 'references'        
       },
       {
-        "title": "Samples & Resources",
+        "title": "Samples",
         "path": 'samples'        
+      },  
+      {
+        "title": "Community",
+        "path": 'https://developer.adobe.com/express/community'        
       },      
     ],
-    subPages: [  
+    subPages: [        
     {
       title: 'Overview',
       path: 'references/'
