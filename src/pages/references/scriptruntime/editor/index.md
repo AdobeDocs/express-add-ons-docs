@@ -1,6 +1,6 @@
 # Editor APIs
 
-The <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via the provided APIs.
+The [Editor APIs](./classes/Editor.md) provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via the provided APIs.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -8,11 +8,11 @@ These API's are currently **experimental only**. Please do not use them in any a
 
 ## Overview
 
-Some examples of what you can do with the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> are creating shapes, adding pages to the document, clearing the artboard and more. See the following sections for more details and examples of using these new APIs.
+Some examples of what you can do with the [Editor APIs](./classes/Editor.md) are creating shapes, adding pages to the document, clearing the artboard and more. See the following sections for more details and examples of using these new APIs.
 
 ## Access to Editor APIs
 
-An exported `editor` module is provided to enable access to the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a>. You can simply import this module into your script file code to access the methods provided below. For example:
+An exported `editor` module is provided to enable access to the [Editor APIs](./classes/Editor.md). You can simply import this module into your script file code to access the methods provided below. For example:
 
 ```js
 import { editor } from "express"; // named import 'editor' from express module
@@ -22,7 +22,7 @@ See the example below for further usage details.
 
 ## Example Code Snippet
 
-The following code snippet illustrates how to use the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> from the script running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
+The following code snippet illustrates how to use the [Editor APIs](./classes/Editor.md) from the script running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
 import { editor, utils } from "express";
@@ -49,7 +49,7 @@ insertionParent.children.append(rectangle);
 
 ## References & Code Samples
 
-Check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a>.
+Check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the [Editor APIs](./classes/Editor.md).
 
 <InlineAlert slots="text" variant="warning"/>
 

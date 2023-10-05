@@ -310,9 +310,9 @@ module.exports = {
         "path": "guides/getting_started",
         "pages": [             
           {
-            "title": "Introduction",
+            "title": "Overview",
             "path": "guides/getting_started"
-          },        
+          },         
           {
             "title": "Quickstart",
             "path": "guides/getting_started/quickstart.md"
@@ -320,11 +320,7 @@ module.exports = {
           {
             "title": "Development tools",
             "path": "guides/getting_started/dev_tooling.md"
-          },
-          // {
-          //   "title": "Web Programming Essentials",
-          //   "path": "guides/getting_started/web-programming.md"
-          // },    
+          },             
         ]
       },
       {
@@ -332,17 +328,13 @@ module.exports = {
         "path": "guides/design",
         "pages": [
           {
-            "title": "User interface guide",
+            "title": "Overview",
             "path": "guides/design/"
           }, 
-          // {
-          //   "title": "TEST",
-          //   "path": "guides/design/test.md"
-          // },  
-          // {
-          //   "title": "Spectrum usage guide",
-          //   "path": "guides/design/spectrum.md"
-          // },            
+          {
+            "title": "User interface guide",
+            "path": "guides/design/user_interface.md"
+          },                      
           {
             "title": "Best practices",
             "path": "guides/design/best_practices.md"
@@ -354,9 +346,13 @@ module.exports = {
         "path": "guides/develop/index.md",
         "pages": [   
           {
+            "title": "Overview",
+            "path": "guides/develop/",
+          },
+          {
             "title": "Implementing Common Use Cases",
-            "path": "guides/develop/index.md"
-          },                                             
+            "path": "guides/develop/use_cases.md"
+          },                                              
           {
             "title": "Frameworks, libraries and bundling",
             "path": "guides/develop/frameworks-libraries-bundling.md"
@@ -376,9 +372,13 @@ module.exports = {
         "path": "guides/debug",
         "pages": [
           {
-            "title": "Browser debugging",
+            "title": "Overview",
             "path": "guides/debug/"
-          },  
+          },
+          {
+            "title": "Browser debugging",
+            "path": "guides/debug/browser.md"
+          }, 
           {
             "title": "VS Code debugging",
             "path": "guides/debug/vs-code.md"
