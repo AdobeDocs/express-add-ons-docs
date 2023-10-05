@@ -147,7 +147,7 @@ module.exports = {
                       },
                       {
                         "title": "Editor",
-                        "path": "references/scriptruntime/editor/Editor.md"
+                        "path": "references/scriptruntime/editor/classes/Editor.md"
                       },
                       {
                         "title": "ExpressGroupNode",
