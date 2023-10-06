@@ -40,7 +40,7 @@ Open your terminal and run the following command:
 npx @adobe/create-ccweb-add-on hello-world --template javascript
 ```
 
-This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](#cli).
+This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](dev_tooling.md#using-the-cli).
 
 **Note**: You'll be prompted to login to your Adobe account and you may also be prompted to accept the "Adobe Developer Terms of Use" if you haven't done so previously. You may also be prompted to configure SSL, and you'll want to do this step to ensure that your add-on can be loaded inside of Adobe Express while you develop it.
 

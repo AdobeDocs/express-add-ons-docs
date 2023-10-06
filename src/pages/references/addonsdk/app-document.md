@@ -14,9 +14,9 @@ Adds an image to the current page.
 
 #### Parameters
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `imageBlob`   | `Blob`       | The image to add to the page. |
+| Name        | Type   |                   Description |
+| ----------- | ------ | ----------------------------: |
+| `imageBlob` | `Blob` | The image to add to the page. |
 
 #### Return Value
 
@@ -27,23 +27,21 @@ A resolved promise if the image was successfully added to the canvas; otherwise 
 ```js
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
-  try {
-    await document.addImage(blob);
-  }
-  catch(error) {
-    console.log("Failed to add the image to the page.");
-  }
+    try {
+        await document.addImage(blob);
+    } catch (error) {
+        console.log("Failed to add the image to the page.");
+    }
 }
- 
+
 // Add image(url) to the current page
 async function addImageFromURL(url) {
-  try {
-    const blob = await fetch(url).then(response => response.blob());
-    await document.addImage(blob);
-  }
-  catch(error) {
-    console.log("Failed to add the image to the page.");
-  }
+    try {
+        const blob = await fetch(url).then((response) => response.blob());
+        await document.addImage(blob);
+    } catch (error) {
+        console.log("Failed to add the image to the page.");
+    }
 }
 ```
 
@@ -61,30 +59,28 @@ Adds a video to the current page.
 
 #### Parameters
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `videoBlob`   | `Blob`       | The video to add to the page. |
+| Name        | Type   |                   Description |
+| ----------- | ------ | ----------------------------: |
+| `videoBlob` | `Blob` | The video to add to the page. |
 
 #### Example Usage
 
 ```js
 async function addVideoFromBlob(blob) {
-  try {
-    await document.addVideo(blob);
-  }
-  catch(error) {
-    console.log("Failed to add the video to the page.");
-  }
+    try {
+        await document.addVideo(blob);
+    } catch (error) {
+        console.log("Failed to add the video to the page.");
+    }
 }
 
 async function addVideoFromURL(url) {
-  try {
-     const blob = await fetch(url).then(response => response.blob());
-     await document.addVideo(blob);
-  }
-  catch(error) {
-    console.log("Failed to add the video to the page.");
-  }
+    try {
+        const blob = await fetch(url).then((response) => response.blob());
+        await document.addVideo(blob);
+    } catch (error) {
+        console.log("Failed to add the video to the page.");
+    }
 }
 ```
 
@@ -98,16 +94,16 @@ Adds audio to the current page.
 
 #### Parameters
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `audioBlob`   | `Blob`       | The audio to add to the page. |
-| `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
+| Name         | Type                                  |                                                                             Description |
+| ------------ | ------------------------------------- | --------------------------------------------------------------------------------------: |
+| `audioBlob`  | `Blob`                                |                                                           The audio to add to the page. |
+| `attributes` | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
 #### `MediaAttributes`
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `title`       | `string`     | Media title (mandatory for audio import). |
+| Name    | Type     |                               Description |
+| ------- | -------- | ----------------------------------------: |
+| `title` | `string` | Media title (mandatory for audio import). |
 
 #### Return Value
 
@@ -124,7 +120,7 @@ async function addAudioFromBlob(blob) {
     console.log("Failed to add the audio to the page.");
   }
 }
- 
+
 async function addAudioFromURL(url) {
   try {
     const blob = await fetch(url).then(response => response.blob());
@@ -137,7 +133,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [importing content use case](../../guides/develop/index.md#importing-content) and the [import-images-from-local](../../samples/#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [importing content use case](../../guides/develop/index.md#importing-content) and the [import-images-from-local](/samples/#import-images-from-local) in the code samples for general importing content examples.
 
 ### Errors
 
@@ -145,13 +141,13 @@ The table below describes the possible error messages that may occur when using 
 
 &nbsp;
 
-| Error Message                     |   Error Scenario                 |
-|-------------------------------:|-------------------------------------------------:|
-| Invalid blob.                  | Blob is invalid. |
-| Unsupported mime type : `${blob.type}` | Mime type is invalid. |
+|                                                                      Error Message |                                                                    Error Scenario |
+| ---------------------------------------------------------------------------------: | --------------------------------------------------------------------------------: |
+|                                                                      Invalid blob. |                                                                  Blob is invalid. |
+|                                             Unsupported mime type : `${blob.type}` |                                                             Mime type is invalid. |
 | Import image width or height exceed the maximum limit : `${maxSupportedDimension}` | The imported image dimensions exceed the maximum limit if any defined by Express. |
-| Import image size exceed the maximum limit: `${maxSupportedSize}MB` | The imported image size exceeds the maximum limit if any defined by Express.                    |
-| No active page available.             | Current page doesn't exist.           |
+|                Import image size exceed the maximum limit: `${maxSupportedSize}MB` |      The imported image size exceeds the maximum limit if any defined by Express. |
+|                                                          No active page available. |                                                       Current page doesn't exist. |
 
 ## Export Content Methods
 
@@ -165,15 +161,15 @@ Create renditions of the current page or the whole document for exporting in a s
 
 #### Parameters
 
-| Name                | Type         | Description   |
-| --------------------| -------------| -----------:  |
-| `renditionOptions`  | `Object`     | [`RenditionOptions`](#renditionoptions) object. |
-| `renditionIntent`   | `string`     | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
+| Name               | Type     |                                                  Description |
+| ------------------ | -------- | -----------------------------------------------------------: |
+| `renditionOptions` | `Object` |              [`RenditionOptions`](#renditionoptions) object. |
+| `renditionIntent`  | `string` | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
 
 **NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
 
 ```json
-"permissions": { 
+"permissions": {
     "sandbox": ["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]
 }
 ```
@@ -182,44 +178,44 @@ Refer to the [exporting content use case example](../../guides/develop/index.md#
 
 #### `RenditionOptions`
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `range`       | `string`     | [`Range`](./addonsdk-constants.md) constant value. |
-| `format`      | `string`     | [`RenditionFormat`](./addonsdk-constants.md) constant value. |
+| Name     | Type     |                                                  Description |
+| -------- | -------- | -----------------------------------------------------------: |
+| `range`  | `string` |           [`Range`](./addonsdk-constants.md) constant value. |
+| `format` | `string` | [`RenditionFormat`](./addonsdk-constants.md) constant value. |
 
 #### JpgRenditionOptions
 
 The following additional options are supported for `jpg` renditions:
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `backgroundColor?` | `number` |  Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
-| `quality?` | `number` |  A number between 0 and 1, indicating image quality. Default is 1.0. |
-| [`requestedSize?`](#requested-size-notes)| `{width?: number; height?: number}` | Requested size (in pixels). |
+| Name                                      | Type                                |                                                                                                                                                                            Description |
+| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
+| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 
 #### PngRenditionOptions
 
 The following additional options are supported for `png` renditions:
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `backgroundColor?` | `number` |  Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
-| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` | Requested size (in pixels). |
+| Name                                      | Type                                |                                                                                                                                                                            Description |
+| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 
 #### Requested Size Notes
 
-- The supported size is from 1 x 1 to width x height.
-- Aspect ratio is maintained while scaling the rendition based on the requested size.
-- Up-scaling is currently not supported.
-- If the requested size is invalid, it will be ignored and the original size rendition will be created.
-- Some examples of what the actual exported sizes will be, depending on the page size and requested size are in the table below for reference.
+-   The supported size is from 1 x 1 to width x height.
+-   Aspect ratio is maintained while scaling the rendition based on the requested size.
+-   Up-scaling is currently not supported.
+-   If the requested size is invalid, it will be ignored and the original size rendition will be created.
+-   Some examples of what the actual exported sizes will be, depending on the page size and requested size are in the table below for reference.
 
-| Page Size  | Requested Size | Exported Size |
-| ------------- | -------------| -----------:  |
-| 400 x 600       | 200 x 200      | 134 x 200       |
-| 400 x 600       | 200 x 400      | 200 x 300       |
-| 400 x 600       | 200 x -200      | 400 x 600      |
-| 400 x 600       | 800 x 1000      | 400 x 600      |
+| Page Size | Requested Size | Exported Size |
+| --------- | -------------- | ------------: |
+| 400 x 600 | 200 x 200      |     134 x 200 |
+| 400 x 600 | 200 x 400      |     200 x 300 |
+| 400 x 600 | 200 x -200     |     400 x 600 |
+| 400 x 600 | 800 x 1000     |     400 x 600 |
 
 #### Return Value
 
@@ -227,15 +223,15 @@ A `Promise` with an array of page `Rendition` objects. It will contain one page 
 
 #### `Rendition`
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `type?`       | `string`     | Type of Rendition. Value is always "page" |
-| `blob`        | `Blob`       | Blob containing the rendition |
-| `title`       | `string`     | The page title of the rendition. |
+| Name    | Type     |                               Description |
+| ------- | -------- | ----------------------------------------: |
+| `type?` | `string` | Type of Rendition. Value is always "page" |
+| `blob`  | `Blob`   |             Blob containing the rendition |
+| `title` | `string` |          The page title of the rendition. |
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [exporting content use case example](../../guides/develop/index.md#exporting-content) and the [export-sample](../../samples/#export-sample) in the code samples for usage examples.
+Refer to the [exporting content use case example](../../guides/develop/index.md#exporting-content) and the [export-sample](/samples.md#export-sample) in the code samples for usage examples.
 
 ### Errors
 
@@ -243,12 +239,12 @@ The table below describes the possible error messages that may occur when using 
 
 &nbsp;
 
-| Error Message                  |   Error Scenario                 |
-|-------------------------------:|-------------------------------------------------:|
-| Invalid range: `${options.range}` | Range value is invalid.             |
-| No active page available.         | Range is `Range.currentPage` and there is no active page. |
-| Unsupported rendition format: `${options.format}` | Rendition format is unsupported.   |
-| Invalid background color: `${options.backgroundColor}` | Background color is invalid. |
-| Invalid quality parameter: `${options.quality} not in range [0,1]` | Quality property is invalid in jpeg. |
-| No video element in the specified range. | No video is present in the range when trying to export mp4. |
-| USER_NOT_ENTITLED_TO_PREMIUM_CONTENT | The user is trying to export premium content but is not entitled to it. |
+|                                                      Error Message |                                                          Error Scenario |
+| -----------------------------------------------------------------: | ----------------------------------------------------------------------: |
+|                                  Invalid range: `${options.range}` |                                                 Range value is invalid. |
+|                                          No active page available. |               Range is `Range.currentPage` and there is no active page. |
+|                  Unsupported rendition format: `${options.format}` |                                        Rendition format is unsupported. |
+|             Invalid background color: `${options.backgroundColor}` |                                            Background color is invalid. |
+| Invalid quality parameter: `${options.quality} not in range [0,1]` |                                    Quality property is invalid in jpeg. |
+|                           No video element in the specified range. |             No video is present in the range when trying to export mp4. |
+|                               USER_NOT_ENTITLED_TO_PREMIUM_CONTENT | The user is trying to export premium content but is not entitled to it. |

@@ -1,20 +1,20 @@
 ---
 keywords:
-  - Adobe Express
-  - Express add-on SDK
-  - Express Editor
-  - Adobe Express
-  - Add-on SDK
-  - SDK
-  - JavaScript
-  - Extend
-  - Extensibility
-  - API
-  - Add-on Manifest
+    - Adobe Express
+    - Express add-on SDK
+    - Express Editor
+    - Adobe Express
+    - Add-on SDK
+    - SDK
+    - JavaScript
+    - Extend
+    - Extensibility
+    - API
+    - Add-on Manifest
 title: Guides
 description: A list of the code samples available for build add-ons for Adobe Express.
 contributors:
-  - https://github.com/hollyschinsky
+    - https://github.com/hollyschinsky
 ---
 
 # Code Samples
@@ -27,12 +27,12 @@ In addition to these code samples, you should also be sure to check out the [Tem
 
 ## Using the samples
 
-- Clone [the repo](https://github.com/AdobeDocs/express-add-on-samples) (or download the zip).
-- `cd` into the folder of a sample you want to try.
-- Run `npm install` to install the dependencies.
-- Run `npm run build` to build the source.
-- Run `npm run start` to start to start the server with your bundled sample
-- Navigate to Adobe Express and load and use the locally running sample add-on with the add-on panel developer tools just as you would with your own.
+-   Clone [the repo](https://github.com/AdobeDocs/express-add-on-samples) (or download the zip).
+-   `cd` into the folder of a sample you want to try.
+-   Run `npm install` to install the dependencies.
+-   Run `npm run build` to build the source.
+-   Run `npm run start` to start to start the server with your bundled sample
+-   Navigate to Adobe Express and load and use the locally running sample add-on with the add-on panel developer tools just as you would with your own.
 
 **NOTE:** Before you run any samples, you must have previously run the `npx @adobe/create-ccweb-add-on` command to create your own add-on at least once to ensure the package is available and ready to use.
 
@@ -42,9 +42,9 @@ Demonstrates how to get started with add-on development with a simple app that g
 
 **Technologies Used:** <br/>
 
-- HTML
-- JavaScript
-- CSS
+-   HTML
+-   JavaScript
+-   CSS
 
 **Note:** No specific add-on SDK features are used in this sample, it is meant to run a simple JavaScript app that can be loaded and run in the add-ons panel.
 
@@ -54,13 +54,13 @@ Demonstrates how to use the add-on SDK's Import and Drag and Drop APIs to add im
 
 **Technologies Used:** <br/>
 
-- JavaScript
-- CSS
+-   JavaScript
+-   CSS
 
 **Features Leveraged:**<br/>
 
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+-   [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+-   [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
 
 ## [import-images-using-oauth](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/import-images-using-oauth)
 
@@ -68,17 +68,17 @@ Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect
 
 **Technologies Used:** <br/>
 
-- React
-- React Spectrum
-- CSS
-- Webpack
+-   React
+-   React Spectrum
+-   CSS
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
-- [Import Content](./references/addonsdk/app-document.md) to add images from the add-on to the document.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
+-   [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
+-   [Import Content](./references/addonsdk/app-document.md) to add images from the add-on to the document.
+-   [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+-   [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
 
 ## [use-client-storage](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/use-client-storage)
 
@@ -86,13 +86,13 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 
 **Technologies Used:** <br/>
 
-- TypeScript
-- CSS
-- Webpack
+-   TypeScript
+-   CSS
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to persist the todo items.
+-   [Client Storage](./references/addonsdk/instance-clientStorage.md) to persist the todo items.
 
 ## [export-sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/export-sample)
 
@@ -100,14 +100,14 @@ Demonstrates how to use the add-on SDK's to export renditions of content in vari
 
 **Technologies Used:** <br/>
 
-- JavaScript
-- Spectrum Web Components
-- Webpack
+-   JavaScript
+-   Spectrum Web Components
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [Export Content](./references/addonsdk/app-document.md) to generate renditions.
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+-   [Export Content](./references/addonsdk/app-document.md) to generate renditions.
+-   [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 
 ## [dialog-add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/dialog-add-on)
 
@@ -115,13 +115,13 @@ Demonstrates how to use the Modal Dialog APIs to pop-up variations of modals fro
 
 **Technologies Used:** <br/>
 
-- React
-- React Spectrum
-- Webpack
+-   React
+-   React Spectrum
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
+-   [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
 
 ## [licensed-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/licensed-addon)
 
@@ -129,14 +129,14 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 
 **Technologies Used:** <br/>
 
-- React
-- React Spectrum
-- Webpack
+-   React
+-   React Spectrum
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
-- [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
+-   [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
+-   [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
 <!-- # Contributed Add-on Samples
 The following samples were contributed from the team. -->
@@ -147,16 +147,16 @@ A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. U
 
 **Technologies Used:** <br/>
 
-- HTML Canvas
-- React
-- Spectrum Web Components
-- Webpack
+-   HTML Canvas
+-   React
+-   Spectrum Web Components
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to add the dragged image to the document.
-- [Export Content](./references/addonsdk/app-document.md) to generate renditions.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the pixel art creations.
+-   [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to add the dragged image to the document.
+-   [Export Content](./references/addonsdk/app-document.md) to generate renditions.
+-   [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the pixel art creations.
 
 ## [swc](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc)
 
@@ -164,29 +164,29 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 
 **Technologies Used:** <br/>
 
-- HTML
-- CSS
-- JavaScript
-- Spectrum Web Components
-- Webpack
+-   HTML
+-   CSS
+-   JavaScript
+-   Spectrum Web Components
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
+-   [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
 
 ## [swc-react-theme-sampler](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc-react-theme-sampler)
 
-Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) library, a set of React wrapper components for Spectrum Web Components (SWC), as well as illustrates some of the different [Spectrum theme](https://opensource.adobe.com/spectrum-web-components/tools/theme/) component properties provided with Spectrum (ie: main *Express* theme, *scale* and *color*) and how they affect the UI.
+Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) library, a set of React wrapper components for Spectrum Web Components (SWC), as well as illustrates some of the different [Spectrum theme](https://opensource.adobe.com/spectrum-web-components/tools/theme/) component properties provided with Spectrum (ie: main _Express_ theme, _scale_ and _color_) and how they affect the UI.
 
 **Technologies Used:** <br/>
 
-- React
-- SWC-React
-- Webpack
+-   React
+-   SWC-React
+-   Webpack
 
 **Features Leveraged:**<br/>
 
-- [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
+-   [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
 
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->
@@ -212,13 +212,13 @@ Allows users to search for popular gifs and add them to the document.
 
 **Technologies Used:** <br/>
 
-- JavaScript
-- Spectrum Web Components
+-   JavaScript
+-   Spectrum Web Components
 
 **Features Leveraged:**<br/>
 
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+-   [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+-   [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 
 ## [QR Code](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/qrcode)
 
@@ -226,13 +226,13 @@ Allows users to create a QR code based on a URL and add it to their document.
 
 **Technologies Used:** <br/>
 
-- JavaScript
-- Spectrum Web Components
+-   JavaScript
+-   Spectrum Web Components
 
 **Features Leveraged:**<br/>
 
-- [Import Content](./references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
+-   [Import Content](./references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
+-   [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
 
 ## Script Runtime Code Samples
 
@@ -244,12 +244,12 @@ The following [code samples](https://github.com/AdobeDocs/express-add-on-samples
 
 ### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/communication-iframe-script-runtime)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and script runtime environments. Also includes demonstrating how to use some of the [Web APIs](./web/) such as `setTimeout()` and `console.log()`.
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and script runtime environments. Also includes demonstrating how to use some of the [Web APIs](references/scriptruntime/web/) such as `setTimeout()` and `console.log()`.
 
 ### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis)
 
-Demonstrates how to use the [editor APIs](./editor/) to create various shapes and add them to the document.
+Demonstrates how to use the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> to create various shapes and add them to the document.
 
 ### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page)
 
-A more comprehensive example of using the [editor APIs](./editor/) to add a page, images and shapes, as well as clear the artboard.
+A more comprehensive example of using the <a href="/express-add-on-apis/docs/api/classes/Editor/" target="_blank">Editor APIs</a> to add a page, images and shapes, as well as clear the artboard.

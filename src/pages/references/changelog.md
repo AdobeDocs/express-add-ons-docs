@@ -127,7 +127,7 @@ import AddOnScriptSdk from "AddOnScriptSdk";
 
 Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, _however_, it will require you to update any existing usage of these APIs in progress**.
 
--   A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md#cli-template-for-script-based-add-on) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
+-   A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md#cli-generated-script-runtime-add-on) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 -   Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
 
 ## 2023-09-05
@@ -161,7 +161,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ## 2023-08-29
 
--   Added [`currentUser` API](../guides/develop/index.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/index.md#current-user).
+-   Added [`currentUser` API](../references/addonsdk/app-currentUser.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/index.md#current-user-for-monetization-flows).
 -   Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 -   Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
@@ -237,8 +237,8 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 ### Added
 
 -   [UX Guidelines](../guides/design/index.md) are now available!
--   A new [`requestedSize`](../references/addonsdk/app-document/#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
--   A new [`clipboard` permission](../references/manifest/#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
+-   A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
+-   A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
 -   Information on [using fonts](../guides/design/index.md#using-fonts).
 -   CORS / COEP header handling added to [CORS guide](../guides/develop/cors.md#cors--coep-handling).
 
