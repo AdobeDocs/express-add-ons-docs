@@ -1,5 +1,5 @@
-# Guidelines
-Our best practice for Generative AI add-ons
+# Recommendations
+Our best practices for Generative AI add-ons
 
 ## Overview
 

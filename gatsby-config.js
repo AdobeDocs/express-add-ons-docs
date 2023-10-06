@@ -476,17 +476,17 @@ module.exports = {
                 "title": "Generative AI guidelines",
                 "path": "guides/distribute/guidelines/genai/",
                 "pages": [
-                  {                  
-                    "title": "Restrictions",
-                    "path": "guides/distribute/guidelines/genai/restrictions"                    
-                  },
+                  {
+                    "title": "Overview",
+                    "path": "guides/distribute/guidelines/genai/"
+                  },                                              
                   {                  
                     "title": "Requirements",
                     "path": "guides/distribute/guidelines/genai/requirements"                    
                   },
                   {                  
-                    "title": "Guidelines",
-                    "path": "guides/distribute/guidelines/genai/guidelines"                    
+                    "title": "Recommendations",
+                    "path": "guides/distribute/guidelines/genai/recommendations"                    
                 }
                 ]
               },                             

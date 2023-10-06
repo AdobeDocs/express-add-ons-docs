@@ -21,9 +21,8 @@ Adobe encourages users to be able to choose whether they want to try add-ons tha
 We created these guidelines to assist any developers who wish to take advantage of Generative AI in their add-ons, to make sure they do so in accordance with Adobe standards. 
 
 We have split this document into:
-- [Restrictions](./restrictions.md) (which must not be included or carried out)
 - [Requirements](./requirements.md) (which must be followed)
-- [Guidelines](./guidelines.md) (which are suggestions we encourage for best practice)
+- [Recommendations](./recommendations.md) (which are suggestions we encourage for best practice)
 
 **If your add-on does not meet required criteria, your submission will be rejected. If an issue is discovered, and your add-on is already listed in the marketplace, you’ll be contacted and given thirty (30) days to resolve the issue or risk being removed from the marketplace.**
 

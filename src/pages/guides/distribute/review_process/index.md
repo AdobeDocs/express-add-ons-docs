@@ -31,7 +31,7 @@ To make sure your review process goes smoothly, check off the tasks in this list
 
 If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailto:ccintrev@adobe.com) or reach out on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4).
 
-### 1. Make sure you’ve included all required files in your add-on submission, as per Adobe’s submission guidelines, including:
+### 1. Make sure you’ve included all required files in your add-on submission, as per the [Creating a public listing documentation](../public-dist.md), including:
 - Files
 - Assets
 - Release notes
@@ -53,8 +53,6 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 
 ### 4. Make sure the add-on meets our [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf)
 
-
-### 5. Check your add-on and resources to make sure it is NOT described as a “plugin” anywhere.
 
 ### 6. Ensure that you have read and followed all Adobe guidelines relating to your add-on, including:
 - Our [Developer Brand Guidelines](../guidelines/brand_guidelines.md)
