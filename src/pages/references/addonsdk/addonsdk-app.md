@@ -151,7 +151,7 @@ The input dialog variant accepts an [additional `field`](#input-dialog-additiona
 
 #### Return Value
 
-Returns a `Promise` (`DialogResult`)[#dialogresult] object with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
+Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
 
 #### `DialogResult`
 
