@@ -9,7 +9,7 @@ Your listing metadata provides Adobe and users with details about your add-on. F
 
 **NOTE:** Please avoid the use of emojis in your listing metadata as the user interface does not allow them. 
 
-Refer to [Adobe Express Developer Program brand guidelines](../brand_guidelines.md) for more information.
+Refer to the [Developer Brand Guidelines](../brand_guidelines.md) for more information.
 
 ### Naming your add-on
 
@@ -43,7 +43,7 @@ YYour screenshots should accurately represent the functionality and appearance o
 
 ### Your icon
 
-Use an original icon that complies with the [Adobe Express Developer Program brand guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf). Consider using a design that illustrates what the add-on does.
+Use an original icon that complies with the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf). Consider using a design that illustrates what the add-on does.
 
 Your icon should be simple and distinctive, and must be suitable for viewing on different devices and browsers.
 
@@ -55,7 +55,7 @@ It is recommended to add support for common queries or user issues.
 
 ### Privacy Policy/License Agreement
 
-You must include details of your policy and agreements. Do not include text that violates [Adobe Express Developer Program brand guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf).
+You must include details of your privacy policy and contractual terms applicable to the use of your add-on(s). Do not include text that violates [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf).
 
 ### Keywords
 
@@ -74,7 +74,7 @@ These notes must accurately describe the changes made, and be written in such a 
 
 Completing your publisher profile can be helpful in making your app look more professional, interesting and trustworthy.
 
-Ensure that all content adheres to [Adobe Express Developer brand guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf).
+Ensure that all content adheres to the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf).
 
 ### Your publisher name
 
@@ -90,7 +90,7 @@ Your publisher logo must be original. You must not use the Adobe logo, or any pr
 
 ### Your website URL
 
-Include a website so that people can find out more about you. This should successfully open your own website. Specifically, according to page 5 of the [Adobe Express Developer Program brand guidelines](../brand_guidelines.md) your “...domain name must not include any Adobe trademark or product name.”
+Include a website so that people can find out more about you. This should successfully open your own website. Specifically, according to page 5 of the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) your “...domain name must not include any Adobe trademark or product name.”
 
 For example: 
 

@@ -1,4 +1,5 @@
 # User Interface
+Your add-on's user interface should provide a great user experience.
 
 ## Your add-on design
 
@@ -46,7 +47,7 @@ Use unique icons to represent the add-on itself, and the features within it. Con
 
 Follow these guidelines to make sure you are referring to Adobe correctly in your add-on.
 
-For more information on using Adobe brand assets, check our Adobe Express Developer Program brand guidelines.
+For more information on using Adobe brand assets, check our [Developer Brand Guidelines](../brand_guidelines.md).
 
 ## Referring to add-ons
 
@@ -62,14 +63,15 @@ We allow and encourage you to use the workflow and UI icons in Spectrum Design w
 
 ## Referring to stock photos
 
-If your copy includes any mention of stock content or assets within Adobe Express,  you must refer to it with a lower case “s” (ie. stock).
+If your copy includes any mention of stock content or assets within Adobe Express, you must refer to it with a lower case “s” (ie. stock).
 
 This avoids confusion with Adobe Stock, which is a separate service.
 
 For example:
 
-“Discover a wide range of high-quality stock photos in Adobe Express”
-Localization
+***“Discover a wide range of high-quality stock photos in Adobe Express”***
+
+## Localization
 
 All add-ons must provide support for the English language. In addition, you are welcome to create your add-on in any other supported language.
 

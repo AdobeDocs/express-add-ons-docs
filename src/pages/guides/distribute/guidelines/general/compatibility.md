@@ -8,7 +8,7 @@ Your add-on must not conflict with any other installed add-ons in Adobe Express.
 
 ## Different systems and browsers
 
-Your add-on must work on the same browsers and operating systems supported by Adobe Express.
+Your add-on must work on the same [browsers and operating systems supported by Adobe Express](https://helpx.adobe.com/express/system-requirements.html).
 
 Add-ons must perform well on machines of varying performance characteristics. Adobe Express is supported on Chromebooks and machines with low resolution and limited memory. Don't assume that your users have powerful computers.
 

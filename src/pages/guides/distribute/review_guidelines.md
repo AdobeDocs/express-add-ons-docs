@@ -1,2 +1,0 @@
-# Review Guidelines
-Coming soon! 

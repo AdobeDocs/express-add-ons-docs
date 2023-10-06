@@ -1,4 +1,4 @@
-# Brand Guidelines
+# Developer Brand Guidelines
 
 ## Overview
 The [Adobe Express Developer Program brand guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) provide important information on branding, including:
@@ -9,4 +9,4 @@ The [Adobe Express Developer Program brand guidelines](https://developer.adobe.c
 - Use of acronyms and abbreviations
 - Guidelines for social media
 
-Refer to these [developer brand guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) often when creating and designing your add-on.
+Refer to these [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) often when creating and designing your add-on.

@@ -1,3 +1,8 @@
+---
+hideBreadcrumbNav: true
+
+---
+
 [@add-on-hlapi-sdk](../overview.md) / Editor
 
 # Class: Editor

@@ -43,7 +43,7 @@ You are encouraged to support both “Single-click to Add” and “Drag and Dro
 
 ## Navigation
 
-The user must  be able to navigate through all menus and screens, without feeling “stuck”. If they find themselves on the wrong screen, they should be able to navigate out (for example, using a “back” or “menu” button).
+The user must be able to navigate through all menus and screens, without feeling “stuck”. If they find themselves on the wrong screen, they should be able to navigate out (for example, using a “back” or “menu” button).
 
 ## Online-offline-online
 

@@ -2,11 +2,11 @@
 
 ## Overview
 
-We’ve created the Adobe Express add-ons marketplace so that Adobe users can benefit from amazing ideas from our developer community - including you.
+We’ve created the Adobe Express Add-ons marketplace so that Adobe users can benefit from amazing ideas from our developer community - including you.
 
 Whether you’re creating new features or speeding up user workflows, we want you to use your imagination. 
 
-But we want every add-on to perform as smoothly as possible, which is why each submission goes through a thorough review process before being accepted.
+But we want every add-on to perform as thorough as possible, which is why each submission goes through a thorough review process before being accepted.
 
 ## Review Criteria
 

@@ -43,7 +43,7 @@ Check out this short video below on how to share and publish your add-on to help
 - [Submit for Private Distribution](../distribute/submit-private-dist.md)
 - [Submit for Public Distribution](../distribute/submit-public-dist.md) -->
 
-## Submission Requirements
+<!-- ## Submission Requirements
 
 ### Publisher profile
 
@@ -65,7 +65,7 @@ Your publisher profile includes required details including:
 Frequently changing your publisher profile can confuse users and erode trust. Please be sure you've considered this before changing this information.
 
 
-
+ -->
 
 <!-- 
 ### Private Distribution Requirements

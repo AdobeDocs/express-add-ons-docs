@@ -464,7 +464,7 @@ module.exports = {
                 ],
               },                            
               {
-                "title": "Brand guidelines",
+                "title": "Developer brand guidelines",
                 "path": "guides/distribute/guidelines/brand_guidelines.md"
               },               
               {
