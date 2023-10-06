@@ -47,7 +47,7 @@ npm run package
 
 The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be used as the file you upload in this step. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder. 
 
-### 4. Carefully [review the submission guidelines](./review_guidelines.md)
+### 4. Carefully [review our set of guidelines](./guidelines/.md)
 
 
 ## Submission Steps

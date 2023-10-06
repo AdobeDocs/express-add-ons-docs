@@ -8,7 +8,7 @@ We recommend that you consider whether you want to monetize your add-on at the o
 
 Remember to research the marketplace carefully before you start creating. This will help you learn whether there is a strong market for a paid add-on – and what other developers (if any) are charging for similar solutions.
 
-## Payment Models
+<!-- ## Payment Models
 
 You can choose from a variety of models for your add-on. Take the time to consider which one suits your needs best.
 
@@ -33,7 +33,7 @@ The add-on requires the user to have access to external services before they can
 
 ### Credits
 
-This model asks users to buy credits which can be used for services on the add-on. This can be used for things such as licensing images or trying out Generative AI models. Many add-ons offer users some free credits to start so they can test out the service.
+This model asks users to buy credits which can be used for services on the add-on. This can be used for things such as licensing images or trying out Generative AI models. Many add-ons offer users some free credits to start so they can test out the service. -->
 
 ## Our Monetization Guidelines
 

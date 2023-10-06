@@ -23,7 +23,7 @@ This section provides everything you need to know to get started building add-on
 
 ## Introduction
 At a high level, add-ons refer to any feature distributed independently from the core Adobe Express that a user can enable or install to extend the functionality. Adobe provides some built-in add-ons out of the box, but 3rd party developers also have the opportunity to create and distribute their own add-ons by following the steps provided in this documentation.
-
+<!-- 
 ## Planning your add-on
 
 ### Choosing your idea
@@ -48,10 +48,10 @@ Are there lots of add-ons already doing the same thing on the marketplace?
 
 #### Use of AI
 
-Does your add-on leverage AI to generate content or automate workflows? If so, be sure to check out the [Generative AI requirements](./genai/).
+Does your add-on leverage AI to generate content or automate workflows? If so, be sure to check out the [Generative AI requirements](./genai/). -->
 
 ### Getting Started Steps
-Ready to get started? The [Quickstart](quickstart.md) steps below summarize the process to get started building your first add-on:
+The [Quickstart](quickstart.md) steps you will follow to get started building your first add-on include:
 
 1. [Set up](quickstart.md#prerequisites) your local environment.
 1. [Create a new add-on project](quickstart.md#step-1-create-your-add-on-project)

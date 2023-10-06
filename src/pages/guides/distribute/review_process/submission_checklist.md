@@ -4,7 +4,7 @@ To make sure your review process goes smoothly, check off the tasks in this list
 
 If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailto:ccintrev@adobe.com) or on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4).
 
-## Make sure you’ve included all required files in your add-on submission, as per the [submission guidelines](../), including:
+## Make sure you’ve included all required files in your add-on submission, as per the [submission guidelines](../public-dist.md#preparing-for-submission), including:
 - Files
 - Assets
 - Release notes
@@ -31,6 +31,6 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 
 
 ## Ensure that you have read and followed all Adobe guidelines relating to your add-on, including:
-- [Developer brand guidelines](../guidelines/brand_guidelines.md)
+- [Developer Brand Guidelines](../guidelines/brand_guidelines.md)
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)
 - Our [Generative AI Guidelines](../guidelines/genai/) (if you are using Generative AI)

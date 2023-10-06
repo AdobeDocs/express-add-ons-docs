@@ -4,7 +4,7 @@ If you want your add-on to become a key part of a user’s workflow, you must ma
 ## Overview
 Your add-on must meet acceptable standards in terms of loading time, response time and utilization of resources. You should also bear in mind that a user’s experience may differ, based on factors such as their network connection.
 
-Here are a few things to consider before submitting for review:
+Below are a few things to consider before submitting for review.
 
 ## Crashes
 
