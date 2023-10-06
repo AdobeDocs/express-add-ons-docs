@@ -54,7 +54,10 @@ Your add-on may be tested when you submit to the marketplace to ensure that rest
 
 In some cases, you will be required to confirm that you test your add-on to ensure that it does not generate restricted content. Adobe may also execute automated tests to validate the safety of your add-on.
 
-The following list is not exhaustive. If you have questions about whether your add-on will require additional testing, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
+<InlineAlert slots="text" variant="warning"/>
+
+If your add-on implements any of the following use cases, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com) to receive additional instructions on automated testing. This list is not exhaustive, so contact us if you have any questions.
+
 
 ### Imagery (includes images and video)
 
