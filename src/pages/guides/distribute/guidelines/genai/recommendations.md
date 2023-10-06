@@ -3,9 +3,9 @@ Our best practices for Generative AI add-ons
 
 ## Overview
 
-The following guidelines are suggestions which we think will help you to optimize the user experience of your add-ons.
+The following recommendations are suggestions which we think will help you to optimize the user experience of your add-ons.
 
-However, we will not remove an add-on if we find these guidelines are not implemented.
+However, we will not remove an add-on if we find these recommendations are not implemented.
 
 ## Create content quickly
 

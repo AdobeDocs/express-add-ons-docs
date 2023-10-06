@@ -20,7 +20,7 @@ Adobe encourages users to be able to choose whether they want to try add-ons tha
 
 We created these guidelines to assist any developers who wish to take advantage of Generative AI in their add-ons, to make sure they do so in accordance with Adobe standards. 
 
-We have split this document into:
+We have split this section into:
 - [Requirements](./requirements.md) (which must be followed)
 - [Recommendations](./recommendations.md) (which are suggestions we encourage for best practice)
 
