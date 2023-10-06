@@ -1,4 +1,5 @@
 # AddOnSdk.app.currentUser
+
 Provides access to the currently logged in user.
 
 <!-- <InlineAlert slots="text" variant="warning"/>
@@ -9,12 +10,15 @@ Provides access to the currently logged in user.
 ## Methods
 
 ### userId()
+
 Retrieve the current user of the host application (Adobe Express).
 
 #### Signature
+
 `userId(): Promise<string>`
 
 #### Return Value
+
 A resolved `Promise` containing the `userId` of the current user.
 
 ## Example
@@ -22,6 +26,7 @@ A resolved `Promise` containing the `userId` of the current user.
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
 ### Usage
+
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -32,4 +37,5 @@ AddOnSdk.ready.then(async () => {
 ```
 
 ### Output
+
 `Current Userid: 3cda976828a4a90d13b0f38b1f8a59b1d6845cccfc48037fb30bb75d3ef67d36`

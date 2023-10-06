@@ -45,7 +45,7 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** While using the Editor APIs in experimental mode, if you add an artboard, please be sure to **immediately add a fill**, or the document could be corrupted and unopenable. This will be fixed in the near future. 
+**IMPORTANT:** While using the Editor APIs in experimental mode, if you add an artboard, please be sure to **immediately add a fill**, or the document could be corrupted and unopenable. This will be fixed in the near future.
 
 ## References & Code Samples
 
@@ -53,4 +53,4 @@ Check out the [full set of API documentation](/express-add-on-apis/docs/api/clas
 
 <InlineAlert slots="text" variant="warning"/>
 
-During this experimental phase, be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Also, we recommend you ***only test the use of these experimental APIs against non-essential documents***, due to the potential for loss or corruption. 
+During this experimental phase, be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Also, we recommend you ***only test the use of these experimental APIs against non-essential documents***, due to the potential for loss or corruption.

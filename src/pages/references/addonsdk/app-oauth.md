@@ -1,20 +1,25 @@
 # AddOnSdk.app.oauth
+
 Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/develop/index.md#authorization-with-oauth-20). Be sure to check out the [code samples](../../samples.md) as well for more extensive examples of using this workflow.
 
 ## Methods
 
 ### authorize()
+
 Authorize a user using OAuth 2.0 PKCE workflow.
 
 #### Signature
+
 `authorize(request: AuthorizationRequest): Promise<AuthorizationResponse>`
 
 #### Parameters
+
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `request`      | `object`       | [`AuthorizationRequest`](#authorizationrequest) object payload with parameters to be used in the authorization workflow. |
 
-#### `AuthorizationRequest` 
+#### `AuthorizationRequest`
+
 | Name                  | Type              | Description   |
 | --------------------- | -------------:    | -----------:  |
 | `authorizationUrl`    | `string`          | OAuth provider's authorization URL.   |
@@ -23,11 +28,12 @@ Authorize a user using OAuth 2.0 PKCE workflow.
 | `codeChallenge`       | `string`     | Code challenge used in Authorization Code Exchange. |
 | `additionalParameters?`| `Map<string, string>` | Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
 
-
 #### Return Value
+
 A resolved `Promise` with the [`AuthorizationResponse`](#authorizationresponse) object containing a one-time authorization code which can be used to obtain an access token.
 
 #### `AuthorizationResponse`
+
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `id`          |`string`      | Unique identifier for the authorization request. |
@@ -36,18 +42,21 @@ A resolved `Promise` with the [`AuthorizationResponse`](#authorizationresponse) 
 | `result`      |`string` or `object` | An [`AuthorizationResult`](#authorizationresult) payload which denotes either success or failure. In the event of a "FAILED" status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses the value of `description` is a `string`.  |
 
 ### authorizeWithOwnRedirect()
-Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in window. After authorization, the user is redirected to the add-on developer provided URL.     
+
+Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in window. After authorization, the user is redirected to the add-on developer provided URL.
 
 #### Signature:
+
 `authorizeWithOwnRedirect(request: AuthorizeWithOwnRedirectRequest): Promise<AuthorizationResult>`
 
-
 #### Parameters
+
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `request`     | `object`     | [`AuthorizeWithOwnRedirectRequest`](#authorizewithownredirectrequest) object payload with parameters to be used in the authorization workflow. |
 
-#### `AuthorizeWithOwnRedirectRequest` 
+#### `AuthorizeWithOwnRedirectRequest`
+
 | Name                  | Type              | Description   |
 | --------------------- | -------------:    | -----------:  |
 | `authorizationUrl`    | `string`          | OAuth provider's authorization URL.   |
@@ -59,17 +68,18 @@ Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in w
 | `state`               | `string`             | A value which is preserved in the request, and replayed back as a query string parameter in the `redirectUri`. Although the primary reason for using the state parameter is to mitigate CSRF attacks, it can also be used to encode any other information.  |
 
 #### Return Value
+
 A resolved `Promise` with the [`AuthorizationResult`](#authorizationresult) object, which contains a `status` and a `description`, which will either be a `string` or an `object`. In the event of a `FAILED` status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses, the value of `description` is a `string`.
 
+#### `AuthorizationResult`
 
-#### `AuthorizationResult` 
 | Name          | Type                  | Description   |
 | ------------- | -------------:        | -----------:  |
 | `status`      | `AuthorizationStatus` | Status representing success or failure in the authorization workflow. |
 |`description`  | `string` or `object`   | Description about the success or failure in the authorization workflow In the event of a "FAILED" status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`. While for all other statuses the value of this property is a `string` |
 
-
 #### `AuthorizationStatus`
+
 Each of the statuses returned below is the exact name as a string (ie: SUCCESS = "SUCCESS")
 
 | Name          | Type         | Description   |
@@ -80,8 +90,8 @@ Each of the statuses returned below is the exact name as a string (ie: SUCCESS =
 | POPUP_TIMEOUT | `string`     | The popup timed out.   |
 | FAILED        | `string`     | The authorization workflow failed |
 
-
 ## Errors
+
 The table below describes the possible error statuses returned when using the OAuth API, with a description of the scenario that will return them.
 
 <br/>

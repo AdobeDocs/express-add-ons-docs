@@ -18,6 +18,7 @@ contributors:
 ---
 
 # API Overview
+
 The following APIs are currently supported for building add-ons:
 
 - [AddOnSdk](#AddOnSdk)
@@ -35,15 +36,17 @@ Also, check out the latest [Manifest Reference](../references/manifest.md) for m
 
 <InlineAlert slots="text" variant="success"/>
 
-Each API section includes the **Interface** definition as well as a **Example** tab to show an example of how the interface can be used. Please also see the [code samples](../../samples.md) for more in-depth references on using the Add-on SDK. 
+Each API section includes the **Interface** definition as well as a **Example** tab to show an example of how the interface can be used. Please also see the [code samples](../../samples.md) for more in-depth references on using the Add-on SDK.
 
 ## Introduction
-The Add-on SDK is available as a hosted JavaScript module on a CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of imports in the JavaScript source. However, you don't need to worry about adding the reference, assuming you created your project with the CLI, since it will already be imported for you based on the template you chose. 
+
+The Add-on SDK is available as a hosted JavaScript module on a CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of imports in the JavaScript source. However, you don't need to worry about adding the reference, assuming you created your project with the CLI, since it will already be imported for you based on the template you chose.
 
 But for reference, below are some examples of how it can be imported for use.
 
 ### In an HTML script tag:
-To use the SDK from an HTML file, simply include a link to it in a `<script>` tag with the `type=module` attribute on it to ensure the add-on API is initialized properly. 
+
+To use the SDK from an HTML file, simply include a link to it in a `<script>` tag with the `type=module` attribute on it to ensure the add-on API is initialized properly.
 
 ```js
 <body>
@@ -60,14 +63,17 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
 ```
 
 ### In your JavaScript source
+
 To use it in your `.js/.jsx` source files, import it as a default module reference like the following:
 `import AddOnStore from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";`
 
 ### From TypeScript
+
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 ```
+
 Note, if you create your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get the following type definition generated in your project for you:
 
 ```ts
@@ -77,12 +83,12 @@ declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
 }
 ```
 
-
 ## AddOnSdk
+
 The `AddOnSdk` provides the following interface for accessing all of the APIs. It exposes several variables listed below, which allow you to know when the APIs are ready to interact with.
 
 - `apiVersion`: Current version of the SDK running.
-- `ready`: Allows you to know you can start accessing the APIs. 
+- `ready`: Allows you to know you can start accessing the APIs.
 - `instance`: the currently running add-on instance (see [AddOn Object](#addon)), allowing you to access the [manifest.json](#manifest) details and a [Client Storage](#client-storage) object, which allows you to locally persist to storage, per user and for this add-on.
 - `app`: Provides access to the host application (Adobe Express). See the [`Application`](#application) definition below for more details.
 
@@ -134,6 +140,7 @@ AddOnSdk.ready.then(() => {
 ```
 
 ### Output
+
 ```json
 API version 1
 
@@ -142,7 +149,8 @@ Add-on instance object {"manifest":{"testId":"08f4469f-7999-458b-9ef9-b1bd043cbd
 Application object {"ui":{"theme":"light","locale":"en-US","locales":["cy-GB","da-DK","de-DE","en-US","es-ES","fi-FI","fr-FR","it-IT","ja-JP","ko-KR","nb-NO","nl-NL","pt-BR","sv-SE","zh-Hans-CN","zh-Hant-TW","zz-ZZ"]},"oauth":{},"document":{}}
 ```
 
-## Application 
+## Application
+
 The [`AddOnSdk`](#AddOnSdk) provides you with an `app` variable, which is of type `Application`, defined below, and allows you to access the following objects which are used throughout this reference:
 
 - `ui`: Provides access to the [theme](#theme), [locale and locales](language-locale).
@@ -172,7 +180,8 @@ export interface Application {
 ```
 
 ## AddOn
-Represents the current add-on, providing references to `manifest` and `clientStorage` objects. 
+
+Represents the current add-on, providing references to `manifest` and `clientStorage` objects.
 
 ```js
 /**
@@ -192,13 +201,14 @@ export interface AddOn {
 }
 ```
 
-
 ## Theme
+
 Retrieve the current theme of the host application, via the [`app.ui`](#application) object.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
 ### Interface
+
 ```js
 interface Application {
   /**
@@ -216,6 +226,7 @@ interface UI {
  * "themechange" event is triggered when the UI theme is changed in the application.
  */
 ```
+
 ### Example
 
 ```js
@@ -236,8 +247,8 @@ AddOnSdk.app.on("themechange", (data) => {
 
 We have provided a sample that can be used as a reference for implementing the Application UI Theme APIs. Please see the **swc** sample provided in the [code samples](guides/develop/samples) within the **contributed** folder for specific details.
 
-
 ## Language & Locale
+
 Retrieve the supported languages (via the `locales` variable) and current `locale` of the host application.
 
 <CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
@@ -287,6 +298,7 @@ AddOnSdk.app.on("localechange", data => {
 ```
 
 ### Output
+
 ```json
 ui: 
   locale: "en-US"
@@ -295,6 +307,7 @@ ui:
 ```
 
 ## Add-on Manifest Data
+
 Retrieve the [manifest data](../references/manifest.md) belonging to the add-on.
 
 <CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
@@ -335,11 +348,13 @@ async function logManifestData() {
 ```
 
 ### Output
+
 ```json
 
 ```
 
 ## Authorize using OAuth 2.0
+
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the [Code Exchange authorization](https://www.oauth.com/oauth2-servers/pkce/authorization-code-exchange/) workflow. Here are the steps to get started:
 
 Log in to the OAuth provider's website and create an application. This must be a web application, and if an option of SPA (Single Page Application) is listed, select it.
@@ -592,6 +607,7 @@ function authorizeWithOwnRedirect(challenge) {
 We have provided two samples that can be used as a reference for implementing the OAuth APIs. Please see the **import-images-using-oauth** and **Dropbox** samples for specific details.
 
 ## Client Storage
+
 The ClientStorage APIs allow you to store/retrieve/delete persistent data in the user's current browser. It's like the `Window.localStorage` API, but is asynchronous, and supports multiple datatypes, i.e., objects, arrays, strings, numbers, booleans, null, undefined and Uint8Array. Since data will be stored in the user’s current browser, user actions such as clearing the browser cache might clear all of the data storage in `ClientStorage` (similar to `localStorage`).
 
 Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Post 10 mb, any data additions will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added.
@@ -699,12 +715,13 @@ async function getKeys() {
   }
 }
 ```
+
 <InlineAlert slots="text" variant="success"/>
 
 The **use-client-storage** sample can also be used as a reference for implementing the Client Storage APIs.
 
-
 ## Import
+
 Allows you to import an image or video to your page.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
@@ -783,8 +800,8 @@ async function addVideoFromURL(url) {
 
 Many of the samples we've included in the [code samples](guides/develop/samples) implement the Import APIs, so please use them as a reference. This includes the the **import-images-from-local**, **import-images-using-oauth**, **giphy**, **qrcode** and **dropbox** samples.
 
-
 ## Drag and Drop
+
 Allows you to drag and drop objects to the document.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
@@ -900,15 +917,17 @@ AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
   }
 });
 ```
+
 <InlineAlert slots="text" variant="info"/>
 
-Please note, the maximum dimension of an object dropped on to the canvas in Express is 8000x8000. 
+Please note, the maximum dimension of an object dropped on to the canvas in Express is 8000x8000.
 
 <InlineAlert slots="text" variant="success"/>
 
 Many of the samples we've included in the [code samples](guides/develop/samples) implement the Drag and Drop APIs, so please use them as a reference. This includes the the **import-images-from-local**, **import-images-using-oauth**, **giphy** and **qrcode** samples.
 
 ## Export
+
 Allows you to export a rendition of a page or document in **jpg**, **png**, **pdf** and **mp4** formats.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
@@ -1047,6 +1066,7 @@ interface PageRendition extends Rendition {
 ```
 
 ### Example
+
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -1066,19 +1086,21 @@ async function displayPreview() {
   }
 }
 ```
+
 <InlineAlert slots="text" variant="success"/>
 
 Please refer to the **export-sample** and **pix** add-on in the code samples for more details on how to use the Export APIs.
 
-
 ## Simple Modal Dialogs
+
 Allows you to pop-up a modal with different variations depending on needs.
-      
+
 You can also check the [manifest documentation](../references/manifest.md) and the [dialog-add-on](guides/develop/samples) code sample for more details on this flag and see how it's used. Also, please report any issues or feedback you may have for this API to the **#express-addons-support** slack channel.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
 ### Interface
+
 ```js
 interface Application {
   /**
@@ -1243,6 +1265,7 @@ export enum ButtonType {
 ```
 
 ### Example
+
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
