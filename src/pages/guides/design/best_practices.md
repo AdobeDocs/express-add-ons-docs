@@ -1,9 +1,10 @@
 # Overview
+
 This set of best practices are important to keep in mind as you develop your add-on since they can ultimately make or break the user experience with your add-on.
 
 ## Best Practices
 
-- Design responsively and remember the width and height of your add-on panel will vary by device. 
+- Design responsively and remember the width and height of your add-on panel will vary by device.
 
 - If the user needs to drill down into multiple panels, ensure you provide a way for them to navigate back.
 
@@ -19,9 +20,10 @@ This set of best practices are important to keep in mind as you develop your add
 
 - If you're using a search, use placeholder text to guide users in what they can search for, and display the search results directly below the search field.
 
-- Use loading and progress indicators to provide visual feedback while things are in process. 
+- Use loading and progress indicators to provide visual feedback while things are in process.
 
 - Ensure your add-on is able to adapt seamlessly to appearance changes like if the theme changes from light to dark. Only the light theme will be supported at GA but you should still code your add-ons to adapt for when new support is added. **Note:** See the **SWC** sample for a reference on handling theme changes.
 
-- Always build with accessibility in mind. For instance, consider tab order and color, dark mode etc. Adobe Spectrum CSS provides design guidelines for ensuring accessibility in [the design system base docs](https://spectrum.adobe.com/), but it's also automatically built in to the Spectrum Web Components and React Spectrum implementations. 
+- Always build with accessibility in mind. For instance, consider tab order and color, dark mode etc. Adobe Spectrum CSS provides design guidelines for ensuring accessibility in [the design system base docs](https://spectrum.adobe.com/), but it's also automatically built in to the Spectrum Web Components and React Spectrum implementations.
+
 - Light mode is currently the only theme available, but dark mode will be supported in the future, so be sure to consider how your UI will look in dark mode as well.

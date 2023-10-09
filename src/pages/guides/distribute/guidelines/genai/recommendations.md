@@ -1,4 +1,5 @@
 # Recommendations
+
 Our best practices for Generative AI add-ons
 
 ## Overview
@@ -39,6 +40,7 @@ Users should be provided with information about how and why your add-on leverage
 
 
 ## Set clear expectations with your users about what is acceptable and what is not
+
 You might have additional requirements regarding acceptable content. Perhaps you want to introduce additional content restrictions beyond the Adobe requirements.
 
 Be sure to communicate these to your users.
@@ -50,6 +52,7 @@ These requirements can be listed in any number of locations:
 - As part of any of the links you provide when you submit an add-on to the marketplace (including terms of use or how your add-on uses AI).
 
 ## Provide a mechanism for reporting restricted content
+
 No content filter or classifier is perfect, and it’s possible that some restricted content might be generated unintentionally, even with a safe prompt. 
 
 You should provide your users with a mechanism for alerting you when this happens, so that you can take appropriate action to ensure that similar content isn’t generated in the future.
@@ -68,6 +71,7 @@ You can use the Firefly web app or Text-to-image features in Adobe Express as a 
 
 
 ## Haven’t found what you’re looking for? Let us know
+
 This is a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve.
 If you have any questions about a specific case or issue, or would like to learn about our testing process and requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com). 
 

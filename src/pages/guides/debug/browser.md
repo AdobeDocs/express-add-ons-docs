@@ -1,7 +1,9 @@
 # Overview
+
 During your development, it's important to be able to debug your code and troubleshoot any issues that may arise. Fortunately, most modern browsers come with built-in developer tools that can help you do just that.
 
 ## Introduction
+
 Check out this short video below on how to test and debug your add-on to help you get started more quickly, then read on for more details.<br/><br/>
 
 <div style="display: flex; justify-content: center;">
@@ -10,6 +12,7 @@ Check out this short video below on how to test and debug your add-on to help yo
 
 
 ## Browser Developer Tools
+
 Some of the key debugging features available in the browser developer tools include:
 
 - **Console** - The console allows you to log messages and errors from your code, as well as execute JavaScript code and interact with the page or add-on.
@@ -18,6 +21,7 @@ Some of the key debugging features available in the browser developer tools incl
 - **Profiler** - The profiler allows you to analyze the performance of your add-on and identify areas where it may be slow or inefficient.
 
 ### Debugging Steps
+
 To get started with debugging your add-on:
 
 Access the developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect Element** or **Inspect** from the context menu. 
@@ -44,6 +48,7 @@ By leveraging these tools, you will develop a deeper understanding of how your a
 
 
 ### Console
+
 When logging messages in your code, use the appropriate severity level that best describes the message. For example, an **Info** message might be used to provide general information about the application's state, while a **Warning** message might be used to alert developers about potential issues that could cause problems with the add-on. Similarly, an **Error** message might be used to indicate that an unexpected error has occurred, and a **Verbose** message might be used to see more descriptive information about the internal workings of the processing occurring in your add-on. 
 
  Use the `console.*` methods as shown below to represent the severity level you would like to see for debugging:
@@ -65,11 +70,13 @@ To make it easier to filter and identify relevant messages in the console, it's 
 Using appropriate severity levels and including identifiers in your console messages can greatly help improve the efficiency and effectiveness of your debugging, making it easier to identify and resolve issues.
 
 ### Printing JSON Data
+
 Another helpful console method is `.dir()`, which displays a JSON representation of an object. For example, running `console.dir(document.head)` would generate the following output:
 
 ![console.dir method](./img/dir-method.png)
 
 ## Add-on SDK Developer Tools
+
 The **Add-on Development** tools panel provides useful logging details and action buttons to allow for refreshing and clearing the data associated with your add-on, which are also useful for debugging and troubleshooting your add-on.
 
 ![add-ons tools screenshot](./img/add-on-devtools.png)

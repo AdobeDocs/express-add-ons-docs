@@ -1,4 +1,5 @@
 ## Requirements
+
 Clearly communicate that generative AI is being used to create output
 
 If you are using Generative AI to create output assets, you must be open and upfront. Do not try to mislead users.
@@ -22,6 +23,7 @@ In the future we’ll call this out separately in the add-on’s listing page. B
 ***“This add-on uses generative AI technology to create content. You are solely responsible for the use of the content, and Adobe is not responsible for your use of this add-on.”***
 
 ## Content Requirements
+
 Content created by your add-on must adhere to [Adobe’s General Terms of Use](https://www.adobe.com/legal/terms.html) and the [Developer Terms of Use](http://www.adobe.com/go/developer-terms).
 
 
@@ -77,6 +79,7 @@ If your add-on implements any of the following use cases, please [contact us](ma
 - Speech containing generated text (unless using ChatGPT and OpenAI’s moderation API)
 
 ## Exceptions
+
 Add-ons that meet the following criteria are not subject to automated testing by Adobe:
 
 - Your add-on is privately listed (**NOTE:** We may still elect to remove your privately listed add-on if we receive credible reports of abuse)

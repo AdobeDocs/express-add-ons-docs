@@ -1,4 +1,5 @@
 # Authenticating Users
+
 Users must be able to log in and out of the add-on seamlessly. Ensure that all of these functions work effectively before submitting for review.
 
 ## Sign-up functionality

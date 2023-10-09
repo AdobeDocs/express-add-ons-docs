@@ -139,7 +139,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - Fixed bug in the [locale](./addonsdk/app-ui.md) example.
 
 ## 2023-08-29
-- Added [`currentUser` API](../guides/develop/use_cases.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/use_cases.md#current-user).
+- Added [`currentUser` API](../guides/develop/use_cases.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/use_cases.md).
 - Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
@@ -216,7 +216,7 @@ change the default context to the `artboard` child of the newly added page. This
 - [UX Guidelines](../guides/design/index.md) are now available!
 - A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../guides/design/index.md#using-fonts).
+- Information on [using fonts](../guides/design/user_interface.md#using-fonts).
 - CORS / COEP header handling added to [CORS guide](../guides/develop/cors.md#cors--coep-handling).
 
 ## 2023-06-08

@@ -1,7 +1,9 @@
 # Testing for edge cases
+
 Edge cases may affect the performance of your add-on.
 
 ## Overview
+
 As well as checking for more expected errors, you must also take the time to search for edge cases that may affect the performance of your add-on.
 
 This includes checking for boundary values or extreme scenarios that may cause issues when your add-on is in general use.

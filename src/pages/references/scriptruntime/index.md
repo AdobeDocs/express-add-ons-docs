@@ -30,7 +30,7 @@ Some key concepts to note about the script runtime include:
 
 - Limited access to browser APIs (see the [Web APIs](./web/index.md) reference). Note however, you can use the [communication APIs](./communication/index.md) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the script runtime.
 - Runs in a slower execution environment.
-- Provides no debugging capabilities other than those provided by the [injected `console` functions](../web/index.md#injected-objects).
+- Provides no debugging capabilities other than those provided by the [injected `console` functions](./web/index.md#console-object).
 - Runs in the same context/thread as the host's application business logic, thus providing access to interact with it via the injected APIs.
 
 ## Getting Started with the APIs
@@ -103,7 +103,7 @@ A more comprehensive example of using the [editor APIs](./editor/) to add a page
 
 ## Debugging script based add-ons
 
-Debugging with breakpoints from the script runtime (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./editor/#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.
+Debugging with breakpoints from the script runtime (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./editor/index.md#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.
 
 
 

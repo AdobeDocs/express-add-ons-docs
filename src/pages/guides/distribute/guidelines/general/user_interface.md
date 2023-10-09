@@ -1,4 +1,5 @@
 # User Interface
+
 Your add-on's user interface should provide a great user experience.
 
 ## Your add-on design

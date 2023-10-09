@@ -1,7 +1,9 @@
 # Accessibility
+
 Adobe products and add-ons should be accessible to users with a range of needs.
 
 ## Overview
+
 We believe Adobe products and add-ons should be accessible to users with a range of needs. Follow the guidelines outlined below to make your add-on more accessible.
 
 <InlineAlert slots="text" variant="success"/>

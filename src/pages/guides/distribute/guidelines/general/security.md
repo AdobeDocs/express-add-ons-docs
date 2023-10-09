@@ -1,4 +1,5 @@
 # Security
+
 Users must be able to access an add-on without compromising their security or negatively affecting their systems.
 
 Use these guidelines to ensure the security of your add-on. 

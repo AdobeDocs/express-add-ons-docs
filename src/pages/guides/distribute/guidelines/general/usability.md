@@ -1,4 +1,5 @@
 # Usability
+
 Follow these guidelines to make sure that your add-on meets our usability standards before submitting.
 
 ## Blending with Adobe Express UI

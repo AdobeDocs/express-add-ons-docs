@@ -37,7 +37,6 @@ This model asks users to buy credits which can be used for services on the add-o
 
 ## Our Monetization Guidelines
 
-
 We’ve created these standards to ensure that monetized add-ons provide users with a consistent and reliable experience. 
 
 ### Transparency

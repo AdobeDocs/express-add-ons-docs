@@ -36,7 +36,7 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
 ### Methods
 
-- [[iterator]](ReadOnlyItemList.md#[iterator])
+- [iterator](ReadOnlyItemList.md#iterator)
 - [item](ReadOnlyItemList.md#item)
 - [toArray](ReadOnlyItemList.md#toArray)
 
@@ -78,9 +78,9 @@ Number of items in this list.
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 

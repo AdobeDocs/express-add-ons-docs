@@ -92,7 +92,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[[iterator]](ReadOnlyItemList.md#[iterator])
+[ReadOnlyItemList](ReadOnlyItemList.md).[iterator](ReadOnlyItemList.md#iterator)
 
 ___
 

@@ -1,7 +1,6 @@
 # Features
 Some elements to bear in mind when testing the features of your add-on before submission.
 
-
 ## Stability
 
 Make sure the add-on does not crash Adobe Express, and operates consistently without stability issues.
@@ -19,7 +18,6 @@ When loading takes a noticeable amount of time, a loading indicator should be di
 Where the add-on generates renditions of user content, it must provide some sort of progress indicator.
 
 This reassures the user that the process is ongoing, and that the add-on has not simply stopped responding.
-
 
 ## Text boxes
 

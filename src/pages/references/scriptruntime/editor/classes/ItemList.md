@@ -32,7 +32,7 @@ This class is used in different places for various types of items, including Nod
 
 ### Methods
 
-- [[iterator]](ItemList.md#[iterator])
+- [iterator](ItemList.md#iterator)
 - [append](ItemList.md#append)
 - [clear](ItemList.md#clear)
 - [insertAfter](ItemList.md#insertAfter)
@@ -92,9 +92,9 @@ ReadOnlyItemList.length
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -104,7 +104,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[[iterator]](ReadOnlyItemList.md#[iterator])
+[ReadOnlyItemList](ReadOnlyItemList.md).[iterator](ReadOnlyItemList.md#iterator)
 
 ___
 

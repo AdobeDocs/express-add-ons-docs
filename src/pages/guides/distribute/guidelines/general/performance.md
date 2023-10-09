@@ -1,7 +1,9 @@
 # Performance
+
 If you want your add-on to become a key part of a user’s workflow, you must make sure it performs smoothly and efficiently.
 
 ## Overview
+
 Your add-on must meet acceptable standards in terms of loading time, response time and utilization of resources. You should also bear in mind that a user’s experience may differ, based on factors such as their network connection.
 
 Below are a few things to consider before submitting for review.
@@ -13,7 +15,6 @@ Your add-on must not cause any slowdowns or crashes on Adobe Express.
 ## System resources
 
 You must ensure your add-on does not consume excessive system resources which may affect the performance of the user’s system, or Adobe Express itself. This includes resources such as CPU and memory.
-
 
 ## Network calls
 

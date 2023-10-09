@@ -18,6 +18,7 @@ contributors:
 ---
 
 # Overview
+
 This section provides a set of guides to help you in the development stage of your add-on. 
 
 ## Introduction

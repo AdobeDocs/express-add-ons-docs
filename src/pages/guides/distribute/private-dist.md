@@ -1,9 +1,11 @@
 # Create a Private Distribution Link
 
 ## Overview
+
 You can choose to create a private link to share your add-on with others to use or test by following the instructions outlined in this section.
 
 ## Prepare your add-on package
+
 You will be required to upload a zip of your add-on package in the process of creating a private link. The CLI contains a handy script to help with this step. Open your terminal and navigate into the root of your add-on project, then run the following command: 
 
 ```bash
@@ -14,6 +16,7 @@ The result will be a distributable zip of your add-on package with the name `dis
 
 
 ## Step 1: Invoke the distribution modal
+
 Locate the **Manage** button in the add-ons launchpad and click it to invoke the in-app distribution modal.
 
 ![Manage button in launchpad](./img/manage.png)
@@ -29,12 +32,14 @@ If you have existing listings, your first screen will display them:
 Select **Create New** from either, and continue to step 2.
 
 ## Step 2: Create a new private link
+
 Next, you will choose how you want to distribute your add-on, whether it's to share privately only, or if you want it publicly available. Select **Private link**, and hit **Next**.
 
 ![](./img/private-option.png)
 
 
 ## Step 3: Upload your add-on package
+
 The next step is to upload your package zip. Click on the **select from your computer** link and choose your add-on package zip from your file system.
 
 <InlineAlert slots="text" variant="info"/>
@@ -66,6 +71,7 @@ Otherwise, you should see the following green check mark showing it's verified a
 ![Verified](./img/private-verified.png)
 
 ## Step 4: Enter name, icon and release notes
+
 In this step you will be prompted to choose a unique **Add-on name** (25 characters max), a 144x144px **Add-on icon**, and optional **Release notes** (1000 characters max). Your add-on name will be validated when you tab out (or the field loses focus) before you will be allowed to move to the next step. You will know that it's verified by a green checkmark shown, or receive an error that it exists, and you need to choose another. 
 
 ![](./img/private-name-icon.png)
@@ -85,6 +91,7 @@ The **Save and create private link** button will only be enabled if you have ent
 You can now click **Copy link** to copy your private link for sharing.
 
 ## Post-Submission
+
 You can choose to revisit your submission details later if you want to copy, delete or update your link, or choose to create a public listing from it. To do so, choose **Manage** from the add-on launchpad again, and then select your add-on submission. You will see the details and options available as shown in the example screenshot below.
 
 ![private link details](./img/manage-private-link-details.png)

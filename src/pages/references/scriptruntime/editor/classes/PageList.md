@@ -25,7 +25,7 @@ remove the last remaining page from the list.
 
 ### Methods
 
-- [[iterator]](PageList.md#[iterator])
+- [iterator](PageList.md#iterator)
 - [addPage](PageList.md#addPage)
 - [item](PageList.md#item)
 - [toArray](PageList.md#toArray)
@@ -80,9 +80,9 @@ ReadOnlyItemList.length
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -92,7 +92,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[[iterator]](ReadOnlyItemList.md#[iterator])
+[ReadOnlyItemList](ReadOnlyItemList.md).[iterator](ReadOnlyItemList.md#iterator)
 
 ___
 
