@@ -1,7 +1,7 @@
 # Public add-on Distribution
 
 ## Overview
-This guide is provided to help ensure your add-on distribution process goes as smoothly as possible. We've provided a list of all of the things you can prepare in advance, as well as the steps to follow to actually submit your add-on for public distribution. Please note, public distribution is subject to a quality review by our team according to our [Review Guidelines](./review_guidelines.md).
+This guide is provided to help ensure your add-on distribution process goes as smoothly as possible. We've provided a list of all of the things you can prepare in advance, as well as the steps to follow to actually submit your add-on for public distribution. Please note, public distribution is subject to a quality review by our team according to our [Guidelines](./guidelines/index.md).
 
 ## Preparing for Submission
 This section outlines everything you'll need in order to be prepared for submitting your add-on for public distribution. 
@@ -47,7 +47,7 @@ npm run package
 
 The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be used as the file you upload in this step. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder. 
 
-### 4. Carefully [review our set of guidelines](./guidelines/.md)
+### 4. Carefully [review our set of guidelines](./guidelines/index.md)
 
 
 ## Submission Steps

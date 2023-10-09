@@ -1,7 +1,7 @@
 # AddOnSdk.instance.clientStorage
 The `clientStorage` object provides a reference to Client Storage in the currently running add-on. Client Storage allows you to store, retrieve, and delete persistent data in the user's current browser.
 
-Client Storage is similar to using `Window.localStorage`, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added. See the [Storing and Retrieving Client Side Data](../../guides/develop/index.md#storing-and-retrieving-client-side-data) for more details. 
+Client Storage is similar to using `Window.localStorage`, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added. See the [Storing and Retrieving Client Side Data](../../guides/develop/use_cases.md#storing-and-retrieving-client-side-data) for more details. 
 
 <InlineAlert slots="text1, text2" variant="info"/>
 
@@ -131,7 +131,7 @@ async function getKeys() {
 
 <InlineAlert slots="text" variant="info"/>
 
-Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/develop/index.md#storing-and-retrieving-client-side-data) for more details around using Client Storage, as well as the [**use-client-storage** sample](../../samples.md) for a more complete example of implementing it in an add-on.
+Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/develop/use_cases.md#storing-and-retrieving-client-side-data) for more details around using Client Storage, as well as the [**use-client-storage** sample](../../samples.md) for a more complete example of implementing it in an add-on.
 
 ## Errors
 The table below describes the possible error messages that may occur when using the Client Storage API, with a description of the scenario that will return them.

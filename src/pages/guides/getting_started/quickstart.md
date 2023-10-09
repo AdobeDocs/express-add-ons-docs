@@ -3,6 +3,7 @@
 This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript. 
 
 ## Introduction
+
 Check out this short video below to get a quick visual introduction to the steps you'll be taking to create your very first add-on. <br/><br/>
 
 <div style="display: flex; justify-content: center;">
@@ -20,17 +21,19 @@ Check out this short video below to get a quick visual introduction to the steps
 - Familiarity with programming in HTML, CSS and JavaScript
 - An Adobe Express account (use an existing Adobe ID or simply create one for free).
 
-### Add-on CLI 
+### Add-on CLI
+
 The **add-on CLI (Command Line Interface) is required for add-on development**, and allows you to create and host Adobe Express add-ons directly from your local machine. 
 
 ## Step 1: Create your add-on project
+
 Open your terminal and run the following command:
 
 ```bash
 npx @adobe/create-ccweb-add-on hello-world --template javascript     
 ```
 
-This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](#cli). 
+This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](dev_tooling.md#using-the-cli). 
 
 **Note**: You'll be prompted to login to your Adobe account and you may also be prompted to accept the "Adobe Developer Terms of Use" if you haven't done so previously. You may also be prompted to configure SSL, and you'll want to do this step to ensure that your add-on can be loaded inside of Adobe Express while you develop it.
 
@@ -44,6 +47,7 @@ This command will create a new add-on based on a basic `javascript` template. Se
 
 
 ## Step 2: Build and start your add-on
+
 Next, execute the following commands to change into the newly created **hello-world** add-on folder, `build` the add-on, and `start` the add-on in a local server:
 
 ```bash
@@ -61,6 +65,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 ```
 
 ## Step 3: Enable add-on development mode (first-time only)
+
 - Navigate to [Adobe Express](https://new.express.adobe.com/).
 - Click on your user avatar in the top righthand corner and choose **Settings**.
 
@@ -72,6 +77,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 
 ## Step 4: Load and run your add-on
+
 - Navigate your browser to [Adobe Express](https://new.express.adobe.com/new) and create a new project.
 - Click the **Add-ons** icon in the left rail.
 - Notice there are two tabs, **Discover** and **Your add-ons**. 
@@ -100,6 +106,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 
 ## Step 5: Edit your add-on
+
 Now, while your add-on is still loaded and running, open the `src/index.html` file and update the **"Click me"** string in the `<button>` below:
 
 ![](./img/vs-code-click-me.png)

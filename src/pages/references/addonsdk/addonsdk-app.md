@@ -1,8 +1,10 @@
 # AddOnSdk.app
-Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/index.md#modal-dialogs), [enable drag and drop](../../guides/develop/index.md#drag-and-drop) of content and subscribe and unsubscribe to events. 
+
+Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use_cases.md#modal-dialogs), [enable drag and drop](../../guides/develop/use_cases.md#drag-and-drop) of content and subscribe and unsubscribe to events. 
 
 
 ## Objects
+
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
@@ -48,12 +50,15 @@ Provides access to the Adobe Express host application's properties and methods t
 ## Methods
 
 ### on()
+
 Subscribe to an event (ie: listen for an event).
 
 #### Signature
+
 `on(name: string, handler: eventHandler): void`
 
 #### Parameters
+
 | Name              | Type                       | Description            | Valid Values |
 | -------------     | -------------------------- | ---------------------  | -----------------------------|            
 | `name`              | `string`                     | Event to subscribe to. | See [Events](#events) |
@@ -61,9 +66,11 @@ Subscribe to an event (ie: listen for an event).
 
 
 #### Return Value 
+
 `void`
 
 #### Example Usage
+
 ```js  
 AddOnSdk.app.on("themechange", (data) => {
   applyTheme(data.theme);
@@ -71,12 +78,15 @@ AddOnSdk.app.on("themechange", (data) => {
 ```
     
 ### off()
+
 Unsubscribe from an event (ie: stop listening for an event).
 
 #### Signature
+
 `off(name: string, handler: eventHandler): void`
 
 #### Parameters
+
 | Name              | Type                       | Description            | Valid Values |
 | -------------     | -------------------------- | ---------------------  | -----------------------------|            
 | `name`              | `string`                     | Event to unsubscribe to. | See [Events](#events) |
@@ -84,9 +94,11 @@ Unsubscribe from an event (ie: stop listening for an event).
 
 
 #### Return Value 
+
 `void`
 
 #### Example Usage
+
 ```js  
 AddOnSdk.app.off("themechange", (data) => {
   applyTheme(data.theme);
@@ -94,17 +106,21 @@ AddOnSdk.app.off("themechange", (data) => {
 ```
 
 ### showModalDialog()
+
 Shows a modal dialog based on specific options passed in. 
 
 #### Signature
+
 `showModalDialog(dialogOptions: DialogOptions): Promise<DialogResult>`
 
 #### Parameters
+
 | Name              | Type         | Description   |
 | -------------     | -------------| -----------:  |
 | `dialogOptions`   | `object`     | [`DialogOptions`](#dialogoptions) object payload |
 
 ##### `DialogOptions`
+
 | Name              | Type         | Description   |
 | -------------     | -------------:| -----------:  |
 | `variant`         | `string` [Variant](./addonsdk-constants.md) |  The type of dialog to show.
@@ -113,6 +129,7 @@ Shows a modal dialog based on specific options passed in.
 | `buttonLabels?`   | `object` [ButtonLabels](#buttonlabels) | The optional button labels to use in the dialog. |
 
 ##### `ButtonLabels`
+
 | Name              | Type         | Description   |
 | -------------     | -------------:| -----------:  |
 | `primary?`        | `string`       | Primary action label. Default label is "OK". |
@@ -122,11 +139,13 @@ Shows a modal dialog based on specific options passed in.
 The input dialog variant accepts an [additional `field`](#input-dialog-additional-option) object. 
 
 ##### Input Dialog Additional Option
+
 | Name              | Type           | Description   |
 | -------------     | -------------: | -----------:  |
 | `field`           | object [`Field`](#field) | Input field object |
 
 ##### `Field`
+
 | Name              | Type           | Description   |
 | -------------     | -------------: | -----------:  |
 | `label`           | `string`       | Label for the input field |
@@ -134,15 +153,18 @@ The input dialog variant accepts an [additional `field`](#input-dialog-additiona
 | `fieldType`       | `string`        | Currently always the value "text".
 
 #### Return Value
-Returns a `Promise` (`DialogResult`)[#dialogresult] object with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
+
+Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
 
 #### `DialogResult`
+
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `buttonType`  |  `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant     | The button type clicked |
 | `fieldValue`  | `string`      | The input from the user. | 
 
 #### Example Usage
+
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
@@ -198,28 +220,33 @@ let inputDialogOptions = {
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/develop/index.md#custom-dialog-example).
+See the use case implementations for an example of the [custom modal dialog](../../guides/develop/use_cases.md#custom-dialog-example).
 
 
 ### enableDragToDocument()
+
 Allows for drag and document functionality to be enabled on an element such as an image, video or audio.
 
 #### Signature
+
 `enableDragToDocument(element: HTMLElement, dragCallbacks: DragCallbacks): [DisableDragToDocument]()`
 
 #### Parameters
+
 | Name              | Type                                 | Description   |
 | -------------     | -------------------------------------| -----------:  |
 | `element`           | `HTMLElement`                             | The element to enable for drag and drop. |
 | `dragCallbacks`     | [dragCallbacks](#dragcallbacks)    | An object containing a preview and completion callback  |
 
 ##### `dragCallbacks`
+
 | Name              | Type                   | Description   |
 | ------------------| -----------------------| -----------:  |
 | `previewCallback` | [`DragPreviewCallback`](#dragpreviewcallback-type-definition)  | Callback to provide the preview image |
 | `completionCallback` | [`DragCompletionCallback`](#dragcompletioncallback-type-definition)  | Callback to provide the content to be added to the document |
 
 ##### `DragPreviewCallback` Type Definition
+
 Callback used to get the preview image for the drag & drop action. Returns a `URL` object.
 
 ```ts
@@ -227,6 +254,7 @@ type DragPreviewCallback = (element: HTMLElement) => URL;
 ```
 
 ##### `DragCompletionCallback` Type Definition
+
 Callback to provide the content (image/gif/video/audio) to be added to the document post drag & drop action. Returns [DragCompletionData](#dragcompletiondata) array.
 
 ```ts
@@ -234,6 +262,7 @@ type DragCompletionCallback = (element: HTMLElement) => Promise<DragCompletionDa
 ```
 
 ##### `DragCompletionData` 
+
 Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks), and contains the `blob` object to be added, as well as a [`MediaAttributes`](#mediaattributes) object with the `title` of the audio content (for audio only).
 
 | Name              | Type    | Description   |
@@ -248,6 +277,7 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 
 
 #### `MediaAttributes`
+
 *Required for audio content only.* 
 
 | Name          | Type         | Description   |
@@ -255,9 +285,11 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 | `title`       | `string`     | Media title (mandatory for audio import). | 
 
 #### Return Value 
+
 [`DisableDragToDocument`](#disabledragtodocument-type-definition)
 
 ##### `DisableDragToDocument` Type Definition
+
 Callback to undo the changes made by `enableDragToDocument`. Returns `void`.
 
 ```ts
@@ -265,14 +297,17 @@ type DisableDragToDocument = () => void;
 ```
 
 ##### `DragStartEventData` Object
+
 The payload data sent to the `dragStart` event handler. 
 
 ###### Properties
+
 | Name              | Type    | Description   |
 | ------------------| --------| -----------:  |
 | `element`         | `HTMLElement`  | Element for which the drag event started |
 
-##### `DragEndEventData` 
+##### `DragEndEventData`
+
 The payload data sent to the App `dragEnd` event handler.
 
 | Name              | Type    | Description   |
@@ -283,18 +318,19 @@ The payload data sent to the App `dragEnd` event handler.
     
 
 **\* Important Event Handling Notes**<br/>
-- Since the AddOnSdk uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
+- Since the `AddOnSdk` uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
 - You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
 - TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
 
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/develop/index.md#drag-and-drop) for example usage, and the [code samples](../../samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/develop/use_cases.md#drag-and-drop) for example usage, and the [code samples](../../samples.md) provided for reference.
 
 
 ## Events
-The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to subscribe to events, and the `AddOnSdk.app.off()` method to unsubscribe from them. See the [`on()`](#on()) method reference for more details.
+
+The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to subscribe to events, and the `AddOnSdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
@@ -335,6 +371,7 @@ The table below describes the events triggered from the add-on SDK. Use the `Add
 </table>
 
 ## Errors
+
 The table below describes the possible error messages that may occur when using the core `AddOnSdk.app` methods, with a description of the scenario that will return them.
 
 <br/>

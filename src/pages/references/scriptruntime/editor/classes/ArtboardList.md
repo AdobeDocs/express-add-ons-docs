@@ -24,7 +24,7 @@ remove the last remaining artboard from the list.
 
 ### Methods
 
-- [[iterator]](ArtboardList.md#[iterator])
+- [iterator](ArtboardList.md#iterator)
 - [addArtboard](ArtboardList.md#addArtboard)
 - [item](ArtboardList.md#item)
 - [remove](ArtboardList.md#remove)
@@ -80,9 +80,9 @@ ReadOnlyItemList.length
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 

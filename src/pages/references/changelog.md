@@ -87,7 +87,7 @@ If you're using the experimental Editor APIs in any add-ons currently, we encour
   Developers who are **NOT** using the [Script Runtime/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`. 
   
   The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
-- [Performance guide](../guides/develop/performance.md) updates to include [**Task Manager**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance/#task-manager) and [**Memory Consumption**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance/#memory-consumption-monitoring) details for add-ons.
+- [Performance guide](../guides/develop/performance.md) updates to include [**Task Manager**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance.md#task-manager) and [**Memory Consumption**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance.md#memory-consumption-monitoring) details for add-ons.
 - [FAQ update](../guides/faq.md) for [`SharedArrayBuffer`](https://developer.adobe.com/express/add-ons/docs/guides/faq/#is-sharedarraybuffer-supported).
 
 ## 2023-09-12
@@ -107,7 +107,7 @@ If you're using the experimental Editor APIs in any add-ons currently, we encour
         import AddOnScriptSdk from "AddOnScriptSdk";
   
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**. 
-- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md#cli-template-for-script-based-add-on) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`. 
+- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`. 
 - Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
 
 ## 2023-09-05
@@ -139,8 +139,8 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - Fixed bug in the [locale](./addonsdk/app-ui.md) example.
 
 ## 2023-08-29
-- Added [`currentUser` API](../guides/develop/index.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/index.md#current-user).
-- Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
+- Added [`currentUser` API](../guides/develop/use_cases.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/use_cases.md#current-user).
+- Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
 ## 2023-08-17
@@ -156,7 +156,7 @@ change the default context to the `artboard` child of the newly added page. This
 
 
 ### Updates
-- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/index.md#premium-content). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/use_cases.md#premium-content). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
 
 ## 2023-08-09
 
@@ -214,8 +214,8 @@ change the default context to the `artboard` child of the newly added page. This
 ### Added
 
 - [UX Guidelines](../guides/design/index.md) are now available!
-- A new [`requestedSize`](../references/addonsdk/app-document/#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
-- A new [`clipboard` permission](../references/manifest/#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
+- A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
+- A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
 - Information on [using fonts](../guides/design/index.md#using-fonts).
 - CORS / COEP header handling added to [CORS guide](../guides/develop/cors.md#cors--coep-handling).
 

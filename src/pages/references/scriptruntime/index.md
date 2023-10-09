@@ -12,11 +12,11 @@ The script runtime exposes three categories of APIs, which each have their own s
 
 ### Communication APIs
 
-The [communication APIs](./communication/) allow you to communicate between the script runtime and the iframe runtime where your add-on is running via exposed APIs.
+The [communication APIs](./communication/index.md) allow you to communicate between the script runtime and the iframe runtime where your add-on is running via exposed APIs.
 
 ### Web APIs
 
-The script runtime does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available in Script Runtime. For these, the developers can use iframe runtime environment and [communicate](./communication/#expose-apis-from-the-ui) the result back to the script running inside script runtime environment. Some of the commonly used [Web APIs](./web/) (with limited scope) have been provided inside script runtime environment.
+The script runtime does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available in Script Runtime. For these, the developers can use iframe runtime environment and [communicate](./communication/index.md#expose-apis-from-the-ui) the result back to the script running inside script runtime environment. Some of the commonly used [Web APIs](./web/index.md) (with limited scope) have been provided inside script runtime environment.
 
 ### Editor APIs
 
@@ -28,7 +28,7 @@ The script runtime is a sandboxed JavaScript execution environment, which allows
 
 Some key concepts to note about the script runtime include:
 
-- Limited access to browser APIs (see the [Web APIs](./web/) reference). Note however, you can use the [communication APIs](./communication/) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the script runtime.
+- Limited access to browser APIs (see the [Web APIs](./web/index.md) reference). Note however, you can use the [communication APIs](./communication/index.md) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the script runtime.
 - Runs in a slower execution environment.
 - Provides no debugging capabilities other than those provided by the [injected `console` functions](../web/index.md#injected-objects).
 - Runs in the same context/thread as the host's application business logic, thus providing access to interact with it via the injected APIs.
@@ -82,7 +82,7 @@ The screenshot below shows what the default script-based add-on generated from t
 
 <InlineAlert slots="text" variant="info"/>
 
-Please refer to the [Using the CLI](../../guides/getting_started/dev_tooling/#using-the-cli) section to get more information on how to use the CLI and create new add-on.
+Please refer to the [Using the CLI](../../guides/getting_started/dev_tooling.md#using-the-cli) section to get more information on how to use the CLI and create new add-on.
 <br/>
 
 ## Code Samples

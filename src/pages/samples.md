@@ -235,12 +235,12 @@ The following [code samples](https://github.com/AdobeDocs/express-add-on-samples
 
 ### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/communication-iframe-script-runtime)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and script runtime environments. Also includes demonstrating how to use some of the [Web APIs](./web/) such as `setTimeout()` and `console.log()`.
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and script runtime environments. Also includes demonstrating how to use some of the [Web APIs](./references/scriptruntime/web/) such as `setTimeout()` and `console.log()`.
 
 ### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis)
 
-Demonstrates how to use the [editor APIs](./editor/) to create various shapes and add them to the document.
+Demonstrates how to use the [editor APIs](./references/scriptruntime/editor/) to create various shapes and add them to the document.
 
 ### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) 
 
-A more comprehensive example of using the [editor APIs](./editor/) to add a page, images and shapes, as well as clear the artboard.
+A more comprehensive example of using the [editor APIs](./references/scriptruntime/editor/) to add a page, images and shapes, as well as clear the artboard.

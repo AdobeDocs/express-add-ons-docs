@@ -1,5 +1,5 @@
 # AddOnSdk.app.document
-Provides access to the methods needed for [importing content](../../guides/develop/index.md#importing-content) including images, audio and video to the document, and for [exporting content](../../guides/develop/index.md#exporting-content) from the current document.
+Provides access to the methods needed for [importing content](../../guides/develop/use_cases.md#importing-content) including images, audio and video to the document, and for [exporting content](../../guides/develop/use_cases.md#exporting-content) from the current document.
 
 ## Import Content Methods
 ### addImage()
@@ -9,8 +9,8 @@ Adds an image to the current page.
 `addImage(imageBlob: Blob): Promise<void>`
 
 #### Parameters
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
+| Name          | Type         | Description                   |
+| ------------- | -------------| ----------------------------: |
 | `imageBlob`   | `Blob`       | The image to add to the page. |
 
 
@@ -23,21 +23,21 @@ A resolved promise if the image was successfully added to the canvas; otherwise 
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
   try {
-    await document.addImage(blob);
+      await document.addImage(blob);
   }
   catch(error) {
-    console.log("Failed to add the image to the page.");
+      console.log("Failed to add the image to the page.");
   }
 }
  
 // Add image(url) to the current page
 async function addImageFromURL(url) {
   try {
-    const blob = await fetch(url).then(response => response.blob());
-    await document.addImage(blob);
+      const blob = await fetch(url).then(response => response.blob());
+      await document.addImage(blob);
   }
   catch(error) {
-    console.log("Failed to add the image to the page.");
+      console.log("Failed to add the image to the page.");
   }
 }
 ```
@@ -55,8 +55,8 @@ Adds a video to the current page.
 `addVideo(videoBlob: Blob): Promise<void>`
 
 #### Parameters
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
+| Name          | Type         | Description                   |
+| ------------- | -------------| ----------------------------: |
 | `videoBlob`   | `Blob`       | The video to add to the page. |
 
 
@@ -64,10 +64,10 @@ Adds a video to the current page.
 ```js
 async function addVideoFromBlob(blob) {
   try {
-    await document.addVideo(blob);
+      await document.addVideo(blob);
   }
   catch(error) {
-    console.log("Failed to add the video to the page.");
+      console.log("Failed to add the video to the page.");
   }
 }
 
@@ -90,14 +90,14 @@ Adds audio to the current page.
 `addAudio(audioBlob: Blob, attributes: MediaAttributes): Promise<void>`
 
 #### Parameters
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `audioBlob`   | `Blob`       | The audio to add to the page. |
+| Name          | Type         | Description                         |
+| ------------- | -------------| ---------------------------------:  |
+| `audioBlob`   | `Blob`       | The audio to add to the page.       |
 | `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |   
 
 #### `MediaAttributes`
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
+| Name          | Type         | Description                               |
+| ------------- | -------------| ----------------------------------------: |
 | `title`       | `string`     | Media title (mandatory for audio import). | 
 
 
@@ -109,27 +109,27 @@ A resolved promise if the audio was successfully added to the canvas; otherwise 
 ```js
 async function addAudioFromBlob(blob) {
   try {
-    await document.addAudio(blob, {title: "Jazzy beats"});
+      await document.addAudio(blob, {title: "Jazzy beats"});
   }
   catch(error) {
-    console.log("Failed to add the audio to the page.");
+      console.log("Failed to add the audio to the page.");
   }
 }
  
 async function addAudioFromURL(url) {
   try {
-    const blob = await fetch(url).then(response => response.blob());
-    await document.addAudio(blob, {title: "Jazzy beats"});
+      const blob = await fetch(url).then(response => response.blob());
+      await document.addAudio(blob, {title: "Jazzy beats"});
   }
   catch(error) {
-    console.log("Failed to add the audio to the page.");
+      console.log("Failed to add the audio to the page.");
   }
 ```
 
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [importing content use case](../../guides/develop/index.md#importing-content) and the [import-images-from-local](../../samples/#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [importing content use case](../../guides/develop/use_cases.md#importing-content) and the [import-images-from-local](/samples/#import-images-from-local) in the code samples for general importing content examples.
 
 
 ### Errors
@@ -161,12 +161,12 @@ Create renditions of the current page or the whole document for exporting in a s
 **NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly: 
 
 ```json
-"permissions": { 
+"permissions": {
     "sandbox": ["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]
 }
 ```
 
-Refer to the [exporting content use case example](../../guides/develop/index.md#premium-content) for more specific details on options for handling the export of premium content.
+Refer to the [exporting content use case example](../../guides/develop/use_cases.md#premium-content) for more specific details on options for handling the export of premium content.
 
 
 #### `RenditionOptions`
@@ -226,7 +226,7 @@ A `Promise` with an array of page `Rendition` objects. It will contain one page 
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [exporting content use case example](../../guides/develop/index.md#exporting-content) and the [export-sample](../../samples/#export-sample) in the code samples for usage examples.
+Refer to the [exporting content use case example](../../guides/develop/use_cases.md#exporting-content) and the [export-sample](../../samples.md) in the code samples for usage examples.
 
 ### Errors
 The table below describes the possible error messages that may occur when using the export methods, with a description of the scenario that will return them.

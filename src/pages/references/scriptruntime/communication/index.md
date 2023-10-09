@@ -35,10 +35,10 @@ const scriptApis = {
     performWorkOnDocument: function (data, someFlag) {
         // call the Editor APIs
     },
-    getDataFromDocument: function() {
+    getDataFromDocument: function () {
         // get some data from document
-    }
-}
+    },
+};
 // expose these apis to be directly consumed in the UI (ie: index.html file).
 runtime.exposeApi(scriptApis);
 ```
@@ -54,13 +54,16 @@ AddOnSdk.ready.then(async () => {
     // Wait for the promise to resolve (the script runtime may not have initialized yet) to get a proxy to call APIs defined in the script
     const scriptApis = await runtime.apiProxy("script");
 
-    await scriptApis.performWorkOnDocument({
-        pageNumber: 1,
-        op: "change_background_color",
-        data: {
-            toColor: "blue"
-        }
-    }, true);
+    await scriptApis.performWorkOnDocument(
+        {
+            pageNumber: 1,
+            op: "change_background_color",
+            data: {
+                toColor: "blue",
+            },
+        }, 
+        true
+    );
 
     console.log(await scriptApis.getDataFromDocument());
 });
@@ -78,23 +81,24 @@ AddOnSdk.ready.then(async () => {
 
     const { runtime } = AddOnSdk.instance;
     const uiApi = {
-        performWorkOnUI: function(data, someFlag) {
+        performWorkOnUI: function (data, someFlag) {
             // Do some ui operation
         },
-        getDataFromUI: async function() {
+        getDataFromUI: async function () {
             let resolver = undefined;
-            const promise = new Promise(resolve => {
+            
+            const promise = new Promise((resolve) => {
                 resolver = resolve;
             });
             setTimeout(() => {
                 resolver("button_color_blue");
             }, 10);
             return await promise;
-        }
-    }
+        },
+    };
     // Expose the UI Apis to be used in the script code (ie: code.js)
     runtime.exposeApi(uiApi);
-}
+});
 ```
 
 #### `code.js`
@@ -107,10 +111,14 @@ const { runtime } = AddOnScriptSdk.instance;
 async function callUIApis() {
     // Get a proxy to the APIs defined in the UI
     const uiApis = await runtime.apiProxy("panel");
-    await uiApis.performWorkOnUI({
-        buttonTextFont: 20,
-        buttonColor: "Green"
-    }, true);
+    await uiApis.performWorkOnUI(
+        {
+            buttonTextFont: 20,
+            buttonColor: "Green"
+        },
+        true
+    );
+    
 
     const result = await uiApis.getDataFromUI();
     console.log("Data from UI: " + result);
