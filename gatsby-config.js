@@ -150,8 +150,8 @@ module.exports = {
                         "path": "references/scriptruntime/editor/classes/Editor.md"
                       },
                       {
-                        "title": "ExpressGroupNode",
-                        "path": "references/scriptruntime/editor/classes/ExpressGroupNode.md"
+                        "title": "ExpressRootNode",
+                        "path": "references/scriptruntime/editor/classes/ExpressRootNode.md"
                       },
                       {
                         "title": "FillableNode",
@@ -223,10 +223,10 @@ module.exports = {
                           "title": "Fill",
                           "path": "references/scriptruntime/editor/interfaces/Fill.md",
                         },
-                        {
-                          "title": "FillTypeValueExtensibleEnum",
-                          "path": "references/scriptruntime/editor/interfaces/FillTypeValueExtensibleEnum.md",
-                        },
+                        // {
+                        //   "title": "FillTypeValueExtensibleEnum",
+                        //   "path": "references/scriptruntime/editor/interfaces/FillTypeValueExtensibleEnum.md",
+                        // },
                         {
                           "title": "IFillableNode",
                           "path": "references/scriptruntime/editor/interfaces/IFillableNode.md",

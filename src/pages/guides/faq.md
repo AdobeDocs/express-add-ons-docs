@@ -121,3 +121,6 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
   ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported? 
   No, `SharedArrayBuffer` is not currently available to use with your add-ons.
+
+### Which browsers and operating systems
+Please see the [Browsers and operating systems supported by Adobe Express](https://helpx.adobe.com/express/system-requirements.html) guide for system requirements.
