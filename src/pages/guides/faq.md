@@ -27,7 +27,7 @@ contributors:
 - [How do I use top level `await` while using webpack?](#how-do-i-use-top-level-await-while-using-webpack)
 - [How do I setup webpack to copy new files or folders into `dist`?](#how-do-i-setup-webpack-to-copy-new-files-or-folders-into-dist)
 - [My form submission doesn't work and the devtools console shows the error - "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?](#my-form-submission-doesnt-work-and-the-devtools-console-shows-the-error---blocked-form-submission-to---because-the-forms-frame-is-sandboxed-and-the-allow-forms-permission-is-not-set-whats-wrong)
-- [How do I enable CORS for a service that blocks my add-on requests due to the `null` origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-null-origin)
+- [How do I enable CORS for a service that blocks my add-on requests due to the origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-origin)
 - [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
 - [I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
 - [I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.](#i-receive-this-error-when-trying-to-run-my-add-on-error-eisdir-illegal-operation-on-a-directory)
@@ -87,8 +87,10 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
   </form>
   ```
 
-### How do I enable CORS for a service that blocks my add-on requests due to the `null` origin?
-  If the service you're consuming is endpoint you can modify the server settings for, you can set the `Access-Control-Allow-Origin` header to `*` to allow the requests to pass. If you don't have access to change the headers on the server, you can use a CORS proxy server to bypass this issue while in development. See the [CORS Guide](../guides/develop/cors.md) for more details and specific samples of each.
+### How do I enable CORS for a service that blocks my add-on requests due to the origin?
+  To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../guides/develop/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../guides/develop/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
+
+  
 
 ### The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?
   You can open the file picker using the `input` element with a `type` set to `file` to get around this.
@@ -115,7 +117,7 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
   The supported file types for imported audio content are **aac, adts, ai, avi, crm, f4v, gif, jpeg, jpg, m1v, m2p, m2t, m2ts, m4a, m4v, mov, mp3, mp4, mpeg, mpg, msvideo, mts, png, psd, psdt, quicktime, ts, tts, wav, webm, webp, wmv, xm4a, xwav, 264, 3gp**.
 
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
-  This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response.
+  This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../guides/develop/context.md#cors) for more details on handling CORS with your add-on.
 
   ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported? 
   No, `SharedArrayBuffer` is not currently available to use with your add-ons.
