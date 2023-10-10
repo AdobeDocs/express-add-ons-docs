@@ -347,7 +347,7 @@ The table below describes the events triggered from the add-on SDK. Use the `Add
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>dragstart</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;"> 
+    <td style="vertical-align: bottom;">
         <p>Triggered when the user starts dragging an item for which drag behavior is enabled.</p>
     </td>
 </tr>

@@ -52,7 +52,7 @@ which include:
 #### Documentation updates
 
 - Updated [Script Runtime Reference docs](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include script runtime (vs the specific template).
-- Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons". 
+- Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
 
@@ -110,15 +110,15 @@ If you're using the experimental Editor APIs in any add-ons currently, we encour
 
 ### Updates
 
-- The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference](../references/scriptruntime/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously,
+- The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference](../references/scriptruntime/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
-       `import { AddOnSdkApi } from "AddOnSdkApi";`
+  `import { AddOnSdkApi } from "AddOnSdkApi";`
   
   to:
-   
-       `import AddOnScriptSdk from "AddOnScriptSdk";`
+  
+  `import AddOnScriptSdk from "AddOnScriptSdk";`
   
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**.
 
@@ -212,7 +212,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - Likely API changes
   - Creating colors is currently done via `utils.createColor()`. We're likely to change how you assign colors to objects, so bear this in mind as you use the experimental APIs. Note that this means you cannot just pass a plain JS object of the form `{red, green, blue}` to the Editor APIs — it must be a color created using `utils.createColor`.
   - Editor API constants may be renamed or may change how they are accessed.
-  - Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be _moved_ and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.
+  - Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be *moved* and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.
   - There is no support for `fetch` in the Script Runtime environment. You can work around this by exposing a method from your panel that your script code can call that does the work of fetching remote content. In the future we may abstract this for you automatically.
   - The `strokes` API is likely to be modified so that it only supports a single stroke.
 - Typings & Typescript
