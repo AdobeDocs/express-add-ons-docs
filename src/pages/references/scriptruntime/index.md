@@ -4,7 +4,7 @@ The script runtime is a sandboxed JavaScript execution environment, which allows
 
 <InlineAlert slots="text" variant="warning"/>
 
-The script runtime references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted. 
+The script runtime references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ## Overview
 
@@ -71,7 +71,8 @@ Choose `Yes` at the prompt to include the script runtime setup in your generated
             "script": "code.js" 
         }
     ]
-```    
+```
+
 <InlineAlert slots="text" variant="info"/>
 
 Since these APIs are still experimental, choosing to include the script runtime when creating an add-on with the CLI also automatically includes the `"experimentalApis": true` in the `manifest.json`.
@@ -97,13 +98,10 @@ Demonstrates the use of the communication APIs to expose and proxy APIs bidirect
 
 Demonstrates how to use the [editor APIs](./editor/) to create various shapes and add them to the document.
 
-### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) 
+### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page)
 
 A more comprehensive example of using the [editor APIs](./editor/) to add a page, images and shapes, as well as clear the artboard.
 
 ## Debugging script based add-ons
 
 Debugging with breakpoints from the script runtime (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./editor/index.md#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.
-
-
-

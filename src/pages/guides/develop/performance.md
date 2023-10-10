@@ -48,7 +48,7 @@ fetchData().then(function(result) {
 });  
 ```
 
-**3. Asynchronous programming using async/await**<br/> 
+**3. Asynchronous programming using async/await**<br/>
 Async/await is a newer feature in JavaScript that allows you to write asynchronous code that looks like synchronous code. For example:
 
 ```js
@@ -136,7 +136,7 @@ Use lazy loading to load components or resources only when they are needed, redu
 
 ### Avoid excessive looping
 
-Avoid excessive looping by using techniques like `map`, `filter`, and `reduce`. 
+Avoid excessive looping by using techniques like `map`, `filter`, and `reduce`.
 
 ### Use memoization
 
@@ -169,7 +169,7 @@ console.time('myFunction');
 myFunction();  
 console.timeEnd('myFunction');  
 ```
- 
+
 ### `performance.now()`
 
 Use the `performance.now()` method to measure the time it takes for a block of code to execute with high precision.
@@ -180,14 +180,14 @@ myFunction();
 const t1 = performance.now();  
 console.log(`myFunction took ${t1 - t0} milliseconds.`);  
 ```
- 
+
 ### Chrome DevTools
 
-Use the performance profiler in Chrome DevTools to identify performance bottlenecks in your code. The profiler can show you a detailed breakdown of the time spent in each function, as well as information about memory consumption. 
+Use the performance profiler in Chrome DevTools to identify performance bottlenecks in your code. The profiler can show you a detailed breakdown of the time spent in each function, as well as information about memory consumption.
 
 #### Task Manager
 
-The Chrome Task Manager displays the CPU, memory, and network usage of each open tab and plug-in, and allows you to kill an individual process similar to the Windows Task Manager or MacOS Activity Monitor. To open the Task Manager, go to the Chrome triple dot menu -> **More Tools** -> **Task Manager**: 
+The Chrome Task Manager displays the CPU, memory, and network usage of each open tab and plug-in, and allows you to kill an individual process similar to the Windows Task Manager or MacOS Activity Monitor. To open the Task Manager, go to the Chrome triple dot menu -> **More Tools** -> **Task Manager**:
 
 ![Task Manager](img/menu_task_mgr.png)
 

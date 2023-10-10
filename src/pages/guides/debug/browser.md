@@ -10,7 +10,6 @@ Check out this short video below on how to test and debug your add-on to help yo
     <iframe width="560" height="315" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-
 ## Browser Developer Tools
 
 Some of the key debugging features available in the browser developer tools include:
@@ -24,18 +23,15 @@ Some of the key debugging features available in the browser developer tools incl
 
 To get started with debugging your add-on:
 
-Access the developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect Element** or **Inspect** from the context menu. 
+Access the developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect Element** or **Inspect** from the context menu.
 
 ![inspect](./img/inspect.png)
-
 
 <InlineAlert slots="text" variant="info"/>
 
 Make sure you right click outside of the document area or you will not see the context menu pop-up. A good place to right-click is in the header of your add-on, where the title is. But if you're debugging because your add-on isn't running due to an issue, then you can right-click in the top frame of Adobe Express.
 
-
 Next, navigate to the **Sources** tab, and from there you can locate and select the JavaScript file that contains the code you want to debug. You can locate it in the filesystem list or by using the **Search** tab. If the Search tab isn't displayed, clicking the 3 vertical dots will reveal it as shown below:
-
 
  ![locate source](./img/find-source.png)
 
@@ -43,9 +39,7 @@ Once you've selected your file, you can set breakpoints by clicking on the line 
 
 By leveraging these tools, you will develop a deeper understanding of how your add-on is working, be able to identify and fix bugs more quickly, and benefit from a high-performing add-on.
 
-
 <!-- <iframe aria-label="Browser Debugging Demo" src="https://drive.google.com/file/d/13FHUuRpVti9AH4nUwAMcvNcP6OzGpOc1/preview" width="640" height="480"></iframe> -->
-
 
 ### Console
 
@@ -53,7 +47,7 @@ When logging messages in your code, use the appropriate severity level that best
 
  Use the `console.*` methods as shown below to represent the severity level you would like to see for debugging:
 
-```
+```bash
     console.log('Info level)
     console.warn('Warning level')
     console.error('Error level)
@@ -63,7 +57,6 @@ When logging messages in your code, use the appropriate severity level that best
 You can specifically filter which levels you want to view in the developer tools with the **Custom levels** drop-down as well to help you find your specific messages more quickly:
 
 ![custom levels](./img/log-levels.png)
-
 
 To make it easier to filter and identify relevant messages in the console, it's also a good practice to include an obvious identifier as a prefix. This identifier could be a unique string or tag that is specific to your add-on, making it easier to distinguish your messages from other messages in the console. For example: `console.log([MyAddOn] - Initialization complete);`. Then you can filter on `MyAddOn` in the devtools and easily see what is relevant to your add-on.
 
@@ -98,7 +91,6 @@ The **Refresh** and **Clear data** buttons in the add-on developer tools can als
 To make use of the add-on SDK's [ClientStorage API](../../references/addonsdk/instance-clientStorage.md) and store data in an underlying IndexedDB store, explore the ToDo list sample. You can view this store in the browser developer tools by navigating to the **Application** tab. Look for the IndexedDB store associated with your add-on ID to locate it. Here's an example:
 
 ![application tab indexed db screenshot](./img/application-indexed-db.png)
-
 
 <InlineAlert slots="text" variant="info"/>
 

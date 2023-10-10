@@ -1,6 +1,6 @@
 # Content Requirements
 
-In the interests of user safety and acceptable standards, add-ons must not: 
+In the interests of user safety and acceptable standards, add-ons must not:
 
 - Contain or generate illegal content (such as CSAM, content that encourages illegal drug use, etc).
 - Contain or generate adult content (such as sexual content, nudity, gore, intense violence, or strong language).
@@ -10,4 +10,3 @@ In the interests of user safety and acceptable standards, add-ons must not:
 - Participate in misinformation/disinformation campaigns.
 - Violate intellectual property rights, including copyright, of other persons and companies.
 - Automatically perform actions determined by AI that would be destructive or that can’t be undone without explicit user consent..
-

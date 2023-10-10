@@ -21,4 +21,3 @@ This is why add-ons that use OAuth flows must always indicate to users when a po
 ## Test credentials
 
 If a login or license key is required to access any paid features, you must provide test credentials to reviewers so that they can view all aspects of the add-on.
-

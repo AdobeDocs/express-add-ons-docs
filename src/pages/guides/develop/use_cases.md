@@ -19,17 +19,17 @@ contributors:
 
 # Implementing Common Use Cases
 
-This guide contains a set of common use cases and accompanying code snippets to explore the capabilities of the Adobe Express add-ons platform. 
+This guide contains a set of common use cases and accompanying code snippets to explore the capabilities of the Adobe Express add-ons platform.
 
-If you're looking for more extensive examples for any of the use cases described below, you can also check out our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons..<br/><br/> 
+If you're looking for more extensive examples for any of the use cases described below, you can also check out our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons..<br/><br/>
 
 <div style="display: flex; justify-content: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ" title="Building Add-on Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ" title="Building Add-on Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ## Importing Content
 
-Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example use cases for implementing this feature. The first function shows how to implement it by adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. Follow the example below to implement this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) and [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) for more details. 
+Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example use cases for implementing this feature. The first function shows how to implement it by adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. Follow the example below to implement this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) and [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) for more details.
 
 ### Example
 
@@ -64,7 +64,7 @@ async function addImageFromURL(url) {
 
 <InlineAlert slots="text" variant="warning"/>
 
-The supported file types for imported images are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**. See the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/) for additional details on importing content. 
+The supported file types for imported images are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**. See the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/) for additional details on importing content.
 
 ### Video and Audio Content
 
@@ -141,9 +141,10 @@ document.querySelector("#export").onclick = async () => {
 
 #### OPTION 2 - Allow preview of premium content
 
-Set a `renditionPreview` intent in the [manifest requirements](../../references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](../../references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content. 
+Set a `renditionPreview` intent in the [manifest requirements](../../references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](../../references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content.
 
-**IMPORTANT**: Your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user). To that end, be sure that users cannot: 
+**IMPORTANT**: Your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user). To that end, be sure that users cannot:
+
 - **right-click -> save as**: To prevent this, reject the `contextmenu` event
 - **drag the image off the panel**: To prevent this, you can reject the `dragstart` event
 
@@ -171,7 +172,6 @@ document.querySelector("#export").onclick = async () => {
 
 **IMPORTANT:** When implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to properly load: ```"permissions": { "sandbox": ["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]
 }```
-        
 
 ## Authorization with OAuth 2.0
 
@@ -389,7 +389,7 @@ async function getBlob(url) {
 
 ```
 
-### Example using an image URL 
+### Example using an image URL
 
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -435,12 +435,11 @@ AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
 });
 ```
 
- 
 **Important Notes:**
+
 - Since the AddOnSdk uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
 - You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
 - TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
-
 
 ## Modal Dialogs
 
@@ -593,7 +592,7 @@ AddOnSdk.app.on("localechange", data => {
 
 ## Current User (for monetization flows)
 
-You can leverage the [`currentUser`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-currentUser) API to obtain the information for the currently logged in user, for instance if you want to use their `userId` to validate in a monetization flow. 
+You can leverage the [`currentUser`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-currentUser) API to obtain the information for the currently logged in user, for instance if you want to use their `userId` to validate in a monetization flow.
 
 Use the example below to try this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-currentUser). Also, refer to the [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon), which shows an example of how you can utilize the hash of the user ID to integrate your add-on with licensing and payment services.
 
@@ -627,7 +626,6 @@ The Editor API's are currently **experimental only**. Please do not use them in 
 
 The following code snippet illustrates how to use the [Editor APIs](../../references/scriptruntime/editor/) from the script running in your [`code.js`](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
-
 ```js
 import { editor, utils } from "express";
 
@@ -649,4 +647,3 @@ insertionParent.children.append(rectangle);
 <InlineAlert slots="text" variant="info"/>
 
 Refer to [getting started with Script Runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Editor APIs.
-

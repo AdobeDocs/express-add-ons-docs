@@ -1,4 +1,5 @@
 # Features
+
 Some elements to bear in mind when testing the features of your add-on before submission.
 
 ## Stability

@@ -1,7 +1,6 @@
 # AddOnSdk.app
 
-Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use_cases.md#modal-dialogs), [enable drag and drop](../../guides/develop/use_cases.md#drag-and-drop) of content and subscribe and unsubscribe to events. 
-
+Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use_cases.md#modal-dialogs), [enable drag and drop](../../guides/develop/use_cases.md#drag-and-drop) of content and subscribe and unsubscribe to events.
 
 ## Objects
 
@@ -60,23 +59,22 @@ Subscribe to an event (ie: listen for an event).
 #### Parameters
 
 | Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  | -----------------------------|            
+| -------------     | -------------------------- | ---------------------  | -----------------------------|           
 | `name`              | `string`                     | Event to subscribe to. | See [Events](#events) |
 | `handler`           | callback `function`          | Handler that gets invoked when the event is triggered. | `(data) => {}` |
 
-
-#### Return Value 
+#### Return Value
 
 `void`
 
 #### Example Usage
 
-```js  
+```js
 AddOnSdk.app.on("themechange", (data) => {
   applyTheme(data.theme);
 });
 ```
-    
+
 ### off()
 
 Unsubscribe from an event (ie: stop listening for an event).
@@ -88,18 +86,17 @@ Unsubscribe from an event (ie: stop listening for an event).
 #### Parameters
 
 | Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  | -----------------------------|            
+| -------------     | -------------------------- | ---------------------  | -----------------------------|       
 | `name`              | `string`                     | Event to unsubscribe to. | See [Events](#events) |
 | `handler`           | callback `function`          | Handler that was used during event subscription. | `(data) => {}` |
 
-
-#### Return Value 
+#### Return Value
 
 `void`
 
 #### Example Usage
 
-```js  
+```js
 AddOnSdk.app.off("themechange", (data) => {
   applyTheme(data.theme);
 });
@@ -107,7 +104,7 @@ AddOnSdk.app.off("themechange", (data) => {
 
 ### showModalDialog()
 
-Shows a modal dialog based on specific options passed in. 
+Shows a modal dialog based on specific options passed in.
 
 #### Signature
 
@@ -136,7 +133,7 @@ Shows a modal dialog based on specific options passed in.
 | `secondary?`      | `string`       | Secondary action label. |
 | `cancel?`         | `string`       | Cancel action label.    |
 
-The input dialog variant accepts an [additional `field`](#input-dialog-additional-option) object. 
+The input dialog variant accepts an [additional `field`](#input-dialog-additional-option) object.
 
 ##### Input Dialog Additional Option
 
@@ -161,7 +158,7 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `buttonType`  |  `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant     | The button type clicked |
-| `fieldValue`  | `string`      | The input from the user. | 
+| `fieldValue`  | `string`      | The input from the user. |
 
 #### Example Usage
 
@@ -217,11 +214,9 @@ let inputDialogOptions = {
 };
 ```
 
-
 <InlineAlert slots="text" variant="info"/>
 
 See the use case implementations for an example of the [custom modal dialog](../../guides/develop/use_cases.md#custom-dialog-example).
-
 
 ### enableDragToDocument()
 
@@ -261,30 +256,28 @@ Callback to provide the content (image/gif/video/audio) to be added to the docum
 type DragCompletionCallback = (element: HTMLElement) => Promise<DragCompletionData[]>;
 ```
 
-##### `DragCompletionData` 
+##### `DragCompletionData`
 
 Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks), and contains the `blob` object to be added, as well as a [`MediaAttributes`](#mediaattributes) object with the `title` of the audio content (for audio only).
 
 | Name              | Type    | Description   |
 | ------------------| --------| -----------:  |
 | `blob`            | `Blob`  | Blob (image/video/audio) to be added to the document |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |   
-
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
 <!-- <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The support for drag and drop of **audio** specifically is currently **experimental only** and should not be used in any add-ons you will be distributing until it's been declared stable. To enable this support, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. See this [Drag & Drop use case code snippet](../../guides/develop/index.md#example-using-an-image-url) for an example note of how to specify the properties for audio specifically. -->
 
-
 #### `MediaAttributes`
 
-*Required for audio content only.* 
+*Required for audio content only.*
 
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `title`       | `string`     | Media title (mandatory for audio import). | 
+| `title`       | `string`     | Media title (mandatory for audio import). |
 
-#### Return Value 
+#### Return Value
 
 [`DisableDragToDocument`](#disabledragtodocument-type-definition)
 
@@ -298,7 +291,7 @@ type DisableDragToDocument = () => void;
 
 ##### `DragStartEventData` Object
 
-The payload data sent to the `dragStart` event handler. 
+The payload data sent to the `dragStart` event handler.
 
 ###### Properties
 
@@ -314,19 +307,17 @@ The payload data sent to the App `dragEnd` event handler.
 | ------------------| --------| -----------:  |
 | `element`         | `HTMLElement` | Element for which the drag event ended    |
 | `dropCancelled`   | `boolean`     | If drop occurred/drag ended at invalid position     |
-| `dropCancelReason?`| `string`     | Reason for drop cancellation |    
-    
+| `dropCancelReason?`| `string`     | Reason for drop cancellation |
 
 **\* Important Event Handling Notes**<br/>
+
 - Since the `AddOnSdk` uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
 - You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
 - TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
 
-
 <InlineAlert slots="text" variant="info"/>
 
 See the [Drag & Drop use case implementation](../../guides/develop/use_cases.md#drag-and-drop) for example usage, and the [code samples](../../samples.md) provided for reference.
-
 
 ## Events
 
@@ -378,7 +369,7 @@ The table below describes the possible error messages that may occur when using 
 
 | Error Message                     |   Error Scenario                 |
 |-------------------------------:|-------------------------------------------------:|
-| Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. | 
+| Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. |
 | Incorrect return type: `PreviewCallback` must return an object of type `URL` | `previewCallback` function doesn't return URL. |
 | Incorrect return type: `CompletionCallback` should return an array of `DragCompletionData` | `completionCallback` doesn't return `DragCompletionData[]`. |
 | Dialog already open with instanceID: `${this._instanceId}` | Dialog is already open. |

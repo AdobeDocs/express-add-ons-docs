@@ -4,11 +4,11 @@ Your add-on's user interface should provide a great user experience.
 
 ## Your add-on design
 
-When it comes to design, create a layout that aligns with the functionality of your add-on. 
+When it comes to design, create a layout that aligns with the functionality of your add-on.
 
 However, remember that your users will be accessing your add-on as part of their Adobe Express workflow - so try to make sure they can move seamlessly without coming across anything jarring or counter-intuitive.
 
-We highly suggest leveraging the Spectrum Design System and Spectrum Express theme to create user interfaces that feel similar to the Adobe Express user interface. 
+We highly suggest leveraging the Spectrum Design System and Spectrum Express theme to create user interfaces that feel similar to the Adobe Express user interface.
 
 We’ve included these guidelines here to help you create a great experience for users. Also refer to our [User interface design guide](../../../design/user_interface.md), which includes a comprehensive set of [UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) to help with your add-on design.
 
@@ -16,7 +16,7 @@ We’ve included these guidelines here to help you create a great experience for
 
 Here are some tips to assist with the layout of your add-on, from display to icons.
 
-### Empty screens 
+### Empty screens
 
 You should avoid including any empty screens in your design. All screens within your add-on should feature at least some information.
 
@@ -34,9 +34,9 @@ The user interface should still be clear and navigable when the user switches be
 
 They should also be able to input special characters or alphabets from other languages without causing malfunctions.
 
-### Modal dialog 
+### Modal dialog
 
-Avoid using dialog boxes that interrupt the user’s workflow, except in important situations. 
+Avoid using dialog boxes that interrupt the user’s workflow, except in important situations.
 
 For example, use the in-panel UI to display things like success messages, rather than a dialog box.
 

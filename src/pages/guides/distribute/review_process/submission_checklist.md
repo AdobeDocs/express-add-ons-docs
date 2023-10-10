@@ -11,14 +11,12 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Release notes
 - Testing information
 
-
 ## Provide accurate and up-to-date information, including:
 
 - Add-on name
 - Version
 - Author
 - Contact information
-
 
 ## Ensure your add-on meets legal and licensing requirements, including:
 

@@ -4,7 +4,7 @@ Clearly communicate that generative AI is being used to create output
 
 If you are using Generative AI to create output assets, you must be open and upfront. Do not try to mislead users.
 
-You’ll have an opportunity when submitting your add-on to detail your add-on’s use of generative AI technology. You must mention in your listing that you are using Generative AI. You may also wish to indicate it in the add-on’s UI, although that is not a requirement. 
+You’ll have an opportunity when submitting your add-on to detail your add-on’s use of generative AI technology. You must mention in your listing that you are using Generative AI. You may also wish to indicate it in the add-on’s UI, although that is not a requirement.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -26,9 +26,6 @@ In the future we’ll call this out separately in the add-on’s listing page. B
 
 Content created by your add-on must adhere to [Adobe’s General Terms of Use](https://www.adobe.com/legal/terms.html) and the [Developer Terms of Use](http://www.adobe.com/go/developer-terms).
 
-
-<!-- Your add-on must guard against restricted content -->
-
 Your add-on must protect users against restricted content.
 
 Your add-on must not:
@@ -46,7 +43,7 @@ At minimum, you must apply filtering at the prompt level to protect against inte
 
 **NOTE:** How a model is trained also has a large impact on what it might create. However, the model’s training is often insufficient to ensure that users are never exposed to restricted content.
 
-As such, it’s often necessary to add additional filtering or post-processing steps. For example, you could have a set of words that would be immediately rejected, or a language classifier to detect violent speech, or an image classifier that detects sexual content in the model’s output. 
+As such, it’s often necessary to add additional filtering or post-processing steps. For example, you could have a set of words that would be immediately rejected, or a language classifier to detect violent speech, or an image classifier that detects sexual content in the model’s output.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -59,7 +56,6 @@ In some cases, you will be required to confirm that you test your add-on to ensu
 <InlineAlert slots="text" variant="warning"/>
 
 If your add-on implements any of the following use cases, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com) to receive additional instructions on automated testing. This list is not exhaustive, so contact us if you have any questions.
-
 
 ### Imagery (includes images and video)
 
@@ -87,5 +83,3 @@ Add-ons that meet the following criteria are not subject to automated testing by
 - Text-to-speech using Generative AI (provided the text is supplied by the user)
 - Instrumental music or sound effects created using Generative AI (where there are no lyrics)
 - Text generation if you use ChatGPT and OpenAI’s moderation API to filter content
-
-

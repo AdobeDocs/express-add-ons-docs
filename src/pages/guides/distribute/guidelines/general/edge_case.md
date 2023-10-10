@@ -25,4 +25,3 @@ Your add-on should be able to cope with extreme situations such as low system re
 Users often use tab navigation to make their way through websites and applications. This is particularly true of users with disabilities who rely on keyboard navigation.
 
 Please ensure that add-ons do not interfere with - or override - tab navigation.
-

@@ -30,14 +30,13 @@ This requires users to pay a fee before using the add-on. You may wish to offer 
 
 The add-on requires the user to have access to external services before they can use it.
 
-
 ### Credits
 
 This model asks users to buy credits which can be used for services on the add-on. This can be used for things such as licensing images or trying out Generative AI models. Many add-ons offer users some free credits to start so they can test out the service. -->
 
 ## Our Monetization Guidelines
 
-We’ve created these standards to ensure that monetized add-ons provide users with a consistent and reliable experience. 
+We’ve created these standards to ensure that monetized add-ons provide users with a consistent and reliable experience.
 
 ### Transparency
 
@@ -62,7 +61,7 @@ You must comply with all applicable laws and regulations. This includes regulati
 
 Your add-ons must not contain any third-party advertising, including any ads from Google Ads, Facebook Ads, or any other ad networks.
 
-This applies to the advertising of products and services within the add-on description, and the use of banners in the add-on itself. 
+This applies to the advertising of products and services within the add-on description, and the use of banners in the add-on itself.
 
 ### Complying with Express Monetization rules
 
@@ -87,7 +86,7 @@ We recommend giving users a choice of payment options when signing up or upgradi
 - A choice of payment methods, such as credit cards, PayPal and other popular alternatives.
 - A choice of payment terms. When signing up for subscription or pay-as-you-go, try to provide short and long term payment options, such as monthly and annual terms.
 - Giving users the chance to try before they buy. Free trials and freemium options can improve sign-up numbers.
- 
+
 <!-- - Differentiate between “free” and “trial”
 
 - These words are not interchangeable. “Free” tends to mean that users will not be charged for content while it is published and available.

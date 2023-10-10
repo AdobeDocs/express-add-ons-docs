@@ -2,9 +2,9 @@
 
 ## Adobe Fonts
 
-The following Adobe Express fonts are injected into the add-on and can be used automatically. 
+The following Adobe Express fonts are injected into the add-on and can be used automatically.
 
-```js
+```css
 {
     family: "adobe-clean",
     source: "url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff2'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('opentype')",
@@ -50,7 +50,6 @@ In the near future, all of the Adobe Express fonts will be injected for use, how
 
 You can use a font with a URL by either linking to it via an import rule, via the &lt;link&gt; tag, or `font-face`.
 
-
 <InlineAlert slots="text" variant="success"/>
 
 ### Import with the &lt;import&gt; tag:
@@ -66,7 +65,7 @@ You can use a font with a URL by either linking to it via an import rule, via th
 </style>
 ```
 
-or 
+or
 
 ### Import with the &lt;link&gt; tag:
 

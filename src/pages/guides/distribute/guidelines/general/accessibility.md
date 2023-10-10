@@ -10,7 +10,6 @@ We believe Adobe products and add-ons should be accessible to users with a range
 
 For more information, check [Adobe’s Accessibility guidelines](https://www.adobe.com/accessibility.html).
 
-
 ## Accessibility standards
 
 Your add-on should meet accessibility guidelines to ensure it can be used by people with disabilities. This could be [WCAG 2.0](https://www.w3.org/TR/WCAG20/) or higher.

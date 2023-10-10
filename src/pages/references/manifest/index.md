@@ -20,9 +20,11 @@ contributors:
 # Manifest Schema Reference
 
 ## Introduction
-Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave. This guide outlines the latest manifest version available, which is version 2. 
+
+Each add-on bundle contains a `manifest.json` file at the root level which defines the metadata for your add-on and how it should behave. This guide outlines the latest manifest version available, which is version 2.
 
 ### Sample manifest.json
+
 ```json
 {
     "testId": "addon-sample",
@@ -53,10 +55,9 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 }
 ```
 
-
 ## Manifest Properties
 
-**Note:** The **?** denotes the key is optional. 
+**Note:** The **?** denotes the key is optional.
 
 | Key         | Type         | Description   |
 | -------------| -------------| -----------:  |
@@ -68,6 +69,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | [`entryPoints`](#entrypoints)     | `object []`     | An entry point for your add-on. **At least one is required.** |
 
 ## requirements
+
 | Key               | Type         | Description   |
 | -------------------| -------------| -----------:  |
 | [`apps`](#requirementsapps)    | `object []`  | Add-on authors can specify the apps that the add-on is intended for. |
@@ -92,6 +94,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 ```
 
 ### requirements.apps
+
 | Key               | Type         | Description   |
 | -------------------| -------------| -----------:  |
 | `name`             | `string`       | Currently supported values: `"Express"` |
@@ -110,20 +113,21 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 ],
 ```
 
-#### requirements.apps.supportedDeviceClass 
+#### requirements.apps.supportedDeviceClass
+
 The following platform values are currently supported in the `supportedDeviceClass` key.
 
 | Platform       | Description |
 | ----------------| -------------|
 | `desktop`       | Browser on desktop. |
-| `mobile`        | Browser on mobile and tablet devices. |               
+| `mobile`        | Browser on mobile and tablet devices. |           
 | `app`           | Native app on mobile and tablet devices. |
 
-
 ## entryPoints
+
 | Key         | Type         | Description   |
 | -------------| -------------| -----------:  |
-| `type`       | `string`     | The type of the entry point. Currently supported values: `"panel"`.    | 
+| `type`       | `string`     | The type of the entry point. Currently supported values: `"panel"`.    |
 | `id`         | `string`     | Identifier for the entry point. Must be unique within the add-on.  |
 | `main`        | `string`    | Main file for this entry point when launched.   |
 | `script`      | `string`    | File containing the JavaScript code to use with the [script runtime APIs](../scriptruntime/). **Currently experimental only, and requires the [`experimentalApis`](#entrypoints) flag to be set.** |
@@ -145,6 +149,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 ```
 
 ### entrypoints.permissions
+
 | Key                   | Type         | Description   |
 | -----------------------| -------------| -----------:  |
 | [`sandbox?`](#entrypointspermissionssandbox) | `string []`  | List of iframe sandbox permissions.  | 
@@ -160,7 +165,8 @@ The following platform values are currently supported in the `supportedDeviceCla
 }
 ```
 
-#### entrypoints.permissions.sandbox 
+#### entrypoints.permissions.sandbox
+
 The following permission values are currently supported in the `sandbox` key.
 
 | Permission      |  Description |
@@ -173,7 +179,7 @@ The following permission values are currently supported in the `sandbox` key.
 **Example:**<br/>
 ```json
 "permissions" : {
-    "sandbox": ["allow-popups ", "allow-downloads"],    
+    "sandbox": ["allow-popups ", "allow-downloads"],
 }
 ```
 
@@ -193,7 +199,9 @@ The following permission values are currently supported in the `sandbox` key.
 ```
 
 ## Notes
+
 - Files within the add-on bundle can refer to each other via relative paths.
 - Changes to your add-on manifest currently require a reload, but you can simply use the **Refresh** button from the **Add-on Development** panel to force the add-on to reload and pick up your manifest changes.
 
   ![refresh button for manifest changes](../img/refresh-btn.png)
+  

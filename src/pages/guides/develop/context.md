@@ -1,6 +1,6 @@
 # Add-on iframe Context
 
-Important details about the context of your add-on; permissions, security, CORS and more. 
+Important details about the context of your add-on; permissions, security, CORS and more.
 
 ## iframe Sandbox
 
@@ -25,7 +25,6 @@ The value of the `sandbox` attribute can either be empty (in which case all rest
 <!-- <InlineAlert slots="text" variant="info"/>
 
 The add-on iframe automatically includes the `allow-scripts` and the `allow-same-origin` sandbox permissions by default (ie: `sandbox="allow-scripts allow-same-origin"`). The other supported permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). <br/><br/> -->
-
 
 | Permission              | Description   |
 | ------------------ | -----------:  |
@@ -56,32 +55,33 @@ Be sure to set your browser devtools option to "**Show CORS errors in console**"
 ### Add-on subdomain
 
 To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service.
-Your add-on is given a unique ID when you distribute your add-on for private or public sharing. This ID will not change once it's been generated, regardless of [future distributions](../distribute/index.md), so we suggest that you create a private sharing link when you need it, even if you're still in the development phase. Your add-on's [subdomain](#subdomain) is then created with a prefix of your unique add-on id, followed by the URL where it's hosted: `.wxp.adobe-addons.com`, for example: `src="https://w906hhl6k.wxp.adobe-addons.com/`. 
+Your add-on is given a unique ID when you distribute your add-on for private or public sharing. This ID will not change once it's been generated, regardless of [future distributions](../distribute/index.md), so we suggest that you create a private sharing link when you need it, even if you're still in the development phase. Your add-on's [subdomain](#subdomain) is then created with a prefix of your unique add-on id, followed by the URL where it's hosted: `.wxp.adobe-addons.com`, for example: `src="https://w906hhl6k.wxp.adobe-addons.com/`.
 
 #### Determining the subdomain
 
-You can determine your add-on's subdomain by first [creating a private sharing link](../distribute/private-dist.md). In the link generated, you'll see that it contains a unique ID in the `claimCode`, just befre the colon (`:`), for instance: 
+You can determine your add-on's subdomain by first [creating a private sharing link](../distribute/private-dist.md). In the link generated, you'll see that it contains a unique ID in the `claimCode`, just befre the colon (`:`), for instance:
 
 ![private sharing link example](./img/private-link.png)
 
 #### Steps
 
 With the private link above: `https://new.express.adobe.com/new?category=addOns&claimCode=w906hhl6k:TEOYF0DH`
+
 1. Locate the `claimCode` parameter (e.g., `claimCode=w906hhl6k:TEOYF0DH`).
 2. Extract the unique add-on ID which is the string between the equal (`=`) and colon (`:`) symbols (e.g., `w906hhl6k`).
-3. Concatenate the unique ID with the `.wxp.adobe-addons.com` string to derive at the add-on's subdomain (e.g., `https://w906hhl6k.wxp.adobe-addons.com/`). 
+3. Concatenate the unique ID with the `.wxp.adobe-addons.com` string to derive at the add-on's subdomain (e.g., `https://w906hhl6k.wxp.adobe-addons.com/`).
 
 <!-- **Option 2 (Preferred)** <br/>
 A more straightforward way to ensure you have the correct subdomain for your add-on, is to open and add it with the [private sharing link](../distribute/private-dist.md), then inspect the CSS with the browser devtools. (In Chrome you can do this by right-clicking on your add-on, such as in the title, and clicking "Inspect" to open the devtools to the CSS tab). Locate the `<hz-iframe-panel>`, element in the CSS, and continue to drill down into its child elements until you find the actual `<iframe>` for your add-on, as shown below:
 
 ![iframe element for an add-on](./img/iframe-domain.png)
 
-You'll see the `src` of the `<iframe>` is set to the whole path to your hosted add-on, and contains the subdomain you can supply to any services/servers for the allowed domains list (ie: `"https://w906hhl6k.wxp.adobe-addons.com/"`). 
+You'll see the `src` of the `<iframe>` is set to the whole path to your hosted add-on, and contains the subdomain you can supply to any services/servers for the allowed domains list (ie: `"https://w906hhl6k.wxp.adobe-addons.com/"`).
  -->
 
 ### Using the subdomain
 
-There are multiple situations where you may run into a CORS issue and need to use the unique subdomain provided with your add-on to get past it. One way was described above, where you can just include it in the allowed list for a service integration. Another is to manage it by setting a server-side header, if you have access to that server. A third option is to use a [CORS proxy server](#cors-proxy-server). These options are described in the next sections below. 
+There are multiple situations where you may run into a CORS issue and need to use the unique subdomain provided with your add-on to get past it. One way was described above, where you can just include it in the allowed list for a service integration. Another is to manage it by setting a server-side header, if you have access to that server. A third option is to use a [CORS proxy server](#cors-proxy-server). These options are described in the next sections below.
 
 ### Server-side CORS Handling
 
@@ -97,7 +97,7 @@ One of the fastest ways to unblock your requests while testing in the event of C
 
 ![CORS diagram](img/cors-demo.png)
 
-Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance: 
+Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance:
 
 ```js
 let cors_anywhere = "https://cors-anywhere.herokuapp.com/";
@@ -111,9 +111,7 @@ fetch(url).then(function (response) {
 
   The response should be a successful response including that prefixed URL call:
 
-
 `Response {type: 'cors', url: 'https://cors-anywhere.herokuapp.com/https://example.com/', redirected: false, status: 200, ok: true, …}`
-
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -153,7 +151,7 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 
 #### CORS / COEP Handling
 
-The value of the [**Cross-Origin-Embedder-Policy** (COEP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) header for add-on resources is set to `credentialless`, but you should be aware that it will be changing to use `require-corp` sometime in the future, so you should plan for that by ensuring resources loaded from within the document have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions. 
+The value of the [**Cross-Origin-Embedder-Policy** (COEP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) header for add-on resources is set to `credentialless`, but you should be aware that it will be changing to use `require-corp` sometime in the future, so you should plan for that by ensuring resources loaded from within the document have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions.
 
 1. For http requests, make sure that the resource server responds with the `Cross-Origin-Resource-Policy: cross-origin` header. See [this link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy) for reference.
 
@@ -163,7 +161,7 @@ The value of the [**Cross-Origin-Embedder-Policy** (COEP)](https://developer.moz
 
 ### origin
 
-A combination of a protocol (for example HTTP or HTTPS), hostname, and port (if specified). For example, in the URL `https://www.adobe.com:443/foo`, the "origin" is `https://www.adobe.com:443`
+A combination of a protocol (for example HTTP or HTTPS), hostname, and port (if specified). For example, in the URL `https://www.adobe.com:443/foo`, the "origin" is `https://www.adobe.com:443`.
 
 ### domain
 

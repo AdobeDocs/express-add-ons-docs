@@ -16,7 +16,7 @@ While generative AI technologies often take several seconds to yield results, yo
 
 You should also display an appropriate spinner, shimmer, or other appropriate animation while results are being generated, so that users know that the process is still underway.
 
-You might want to consider quickly returning a single image before generating variations as well. 
+You might want to consider quickly returning a single image before generating variations as well.
 
 Add-ons that take too long to generate content are not likely to see repeat use.
 
@@ -36,8 +36,7 @@ It’s pretty clear how an add-on that generates an image from a text prompt lev
 
 But there are other workflows where it might not be clear that generative AI is used, why it is used, and how it is used to facilitate a given workflow.
 
-Users should be provided with information about how and why your add-on leverages generative AI so they can understand its potential applications and limitations. 
-
+Users should be provided with information about how and why your add-on leverages generative AI so they can understand its potential applications and limitations.
 
 ## Set clear expectations with your users about what is acceptable and what is not
 
@@ -53,7 +52,7 @@ These requirements can be listed in any number of locations:
 
 ## Provide a mechanism for reporting restricted content
 
-No content filter or classifier is perfect, and it’s possible that some restricted content might be generated unintentionally, even with a safe prompt. 
+No content filter or classifier is perfect, and it’s possible that some restricted content might be generated unintentionally, even with a safe prompt.
 
 You should provide your users with a mechanism for alerting you when this happens, so that you can take appropriate action to ensure that similar content isn’t generated in the future.
 
@@ -63,17 +62,14 @@ Users can also use the “Report Abuse” feature inside Adobe Express to report
 
 ## If you remove generated content or prevent content from being generated, be clear as to why
 
-Be sure to provide a notice to your users about why your add-on couldn’t generate content, or why an output asset might have been removed. 
+Be sure to provide a notice to your users about why your add-on couldn’t generate content, or why an output asset might have been removed.
 
 You don’t need to go into details, but users shouldn’t be faced with blank content or terse, indecipherable error messages.
 
 You can use the Firefly web app or Text-to-image features in Adobe Express as a good guide on how to do this.
 
-
 ## Haven’t found what you’re looking for? Let us know
 
 This is a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve.
-If you have any questions about a specific case or issue, or would like to learn about our testing process and requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com). 
-
-
+If you have any questions about a specific case or issue, or would like to learn about our testing process and requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
  

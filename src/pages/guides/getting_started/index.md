@@ -20,7 +20,7 @@ hideBreadcrumbNav: true
 
 # Getting Started Overview
 
-This section provides everything you need to know to get started building add-ons for Adobe Express. 
+This section provides everything you need to know to get started building add-ons for Adobe Express.
 
 ## Introduction
 
@@ -36,5 +36,4 @@ The [Quickstart](quickstart.md) steps you will follow to get started building yo
 1. Log in to [Adobe Express](https://new.express.adobe.com/new).
 1. Enable the [developer mode](quickstart.md#step-3-enable-add-on-development-mode-first-time-only) (one time only).
 1. [Load and run your add-on](quickstart.md#step-4-load-and-run-your-add-on) directly in Adobe Express.
-1. [Continue developing your add-on](quickstart.md#step-5-edit-your-add-on), seeing your changes immediately appear in, allowing you to iterate quickly. 
-
+1. [Continue developing your add-on](quickstart.md#step-5-edit-your-add-on), seeing your changes immediately appear in, allowing you to iterate quickly.

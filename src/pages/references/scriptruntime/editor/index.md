@@ -45,7 +45,7 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** While using the Editor APIs in experimental mode, there is a **risk that your document could become corrupt or unopenable**. In particular, you can expect this to happen if you are using any grids or vector shapes (with the exception of simple circles/rectangles) while testing with these APIs. Please do not test these APIs with the use of any documents you deem important. 
+**IMPORTANT:** While using the Editor APIs in experimental mode, there is a **risk that your document could become corrupt or unopenable**. In particular, you can expect this to happen if you are using any grids or vector shapes (with the exception of simple circles/rectangles) while testing with these APIs. Please do not test these APIs with the use of any documents you deem important.
 
 ## References & Code Samples
 
@@ -53,4 +53,4 @@ Check out the [full set of API documentation](/express-add-on-apis/docs/api/clas
 
 <InlineAlert slots="text" variant="warning"/>
 
-During this experimental phase, be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Also, we recommend you ***only test the use of these experimental APIs against non-essential documents***, due to the potential for loss or corruption. 
+During this experimental phase, be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Also, we recommend you ***only test the use of these experimental APIs against non-essential documents***, due to the potential for loss or corruption.

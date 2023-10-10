@@ -2,7 +2,7 @@ import '/src/styles.css'
 
 # Design Overview
 
-The design of your add-on is just as important to the success of your add-on as the features it provides. This design section is provided to help lead you through the design process with useful guidelines, tips and resources. 
+The design of your add-on is just as important to the success of your add-on as the features it provides. This design section is provided to help lead you through the design process with useful guidelines, tips and resources.
 
 <TextBlock slots="heading, text, buttons" theme="light" isCentered/>
 
@@ -21,24 +21,24 @@ Check out our UX Guidelines, which have been created with the intention to help 
 Watch this short introductory video, then read on for more details. <br/><br/>
 
 <div style="display: flex; justify-content: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ## Spectrum Design System
 
-Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. Leveraging Spectrum in your add-on allows you to take advantage of all of the built-in benefits it provides while saving front-end development time. There are a few different implementations of Spectrum that are outlined in the sections below for reference, and in order of preferred use. 
+Adobe provides the [Spectrum Design System](https://spectrum.adobe.com/) which contains a comprehensive set of design guidelines, components and tools to help designers create a consistent user experience across products. Leveraging Spectrum in your add-on allows you to take advantage of all of the built-in benefits it provides while saving front-end development time. There are a few different implementations of Spectrum that are outlined in the sections below for reference, and in order of preferred use.
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out our [code samples](../../samples.md) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**. 
+Check out our [code samples](../../samples.md) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**.
 
 ### Spectrum Express Theme
 
-If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. Each of the sections below has more details on how to use the theme with the different libraries. 
+If you want your add-on UI to match the [Express look-and-feel](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express), you can find Express-themed components available within the [Spectrum CSS](https://github.com/adobe/spectrum-css), [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/tools/theme/) and [React Spectrum](https://www.npmjs.com/package/@react-spectrum/theme-express) libraries. Each of the sections below has more details on how to use the theme with the different libraries.
 
 ### Icons
 
-Check out the variety of icons available for use in your add-ons from [Spectrum here](https://spectrum.adobe.com/page/icons/) as well. Additionally, there's a set of icons specificlly for the Express theme in an alpha stage currently available. To use those, install the package with `npm i @spectrum-icons/express` and then import the ones you want to use. 
+Check out the variety of icons available for use in your add-ons from [Spectrum here](https://spectrum.adobe.com/page/icons/) as well. Additionally, there's a set of icons specificlly for the Express theme in an alpha stage currently available. To use those, install the package with `npm i @spectrum-icons/express` and then import the ones you want to use.
 
 ## Spectrum Web Components
 
@@ -64,7 +64,7 @@ Check out the [swc-react-theme-sampler code sample](../../samples.md#swc-react-t
 
 <InlineAlert slots="text" variant="info"/>
 
-We recommend chossing [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) over [React Spectrum](#react-spectrum) in your add-ons based on React because it currently offers a more comprehensive set of components and built-in benefits. 
+We recommend chossing [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) over [React Spectrum](#react-spectrum) in your add-ons based on React because it currently offers a more comprehensive set of components and built-in benefits.
 
 ### Spectrum Web Components with Express Theme
 
@@ -79,12 +79,11 @@ Below are the steps for using the Express theme with your Spectrum Web Component
     npm install @spectrum-web-components/button
     ```
 
-- Next, start adding your imports. All add-ons should have this base set of imports, which provide support for Spectrum typography and the base Spectrum theme component, the Express themes, including colors (lightest, light, dark, and darkest) and scale options (medium, large). 
+- Next, start adding your imports. All add-ons should have this base set of imports, which provide support for Spectrum typography and the base Spectrum theme component, the Express themes, including colors (lightest, light, dark, and darkest) and scale options (medium, large).
 
     ```js        
     import '@spectrum-web-components/styles/typography.css';
     import '@spectrum-web-components/theme/sp-theme.js';
-    import '@spectrum-web-components/theme/express/theme-light.js';
     import '@spectrum-web-components/theme/express/theme-darkest.js';
     import '@spectrum-web-components/theme/express/theme-dark.js';
     import '@spectrum-web-components/theme/express/theme-light.js';
@@ -94,7 +93,7 @@ Below are the steps for using the Express theme with your Spectrum Web Component
 
     ``` 
 
-- Then import the specific components you want to use in your code, such as: 
+- Then import the specific components you want to use in your code, such as:
     
     ```js
     import '@spectrum-web-components/button/sp-button.js';
@@ -104,8 +103,7 @@ Below are the steps for using the Express theme with your Spectrum Web Component
     
    **Note:** The `import '@spectrum-web-components/theme/src/express/themes.js';` includes all of the definitions for the Express theme, but you can also only include the specific parts you need. For instance, if you only want to support the light theme and the medium scale, you could specifically include those with: `import '@spectrum-web-components/theme/express/theme-light.js'; import '@spectrum-web-components/theme/express/scale-medium.js';` For more details on themes and all of the color and scale options, see [this link](https://opensource.adobe.com/spectrum-web-components/tools/theme/). 
 
-
-- Use a `webpack.config.js` for bundling the Spectrum Web Components and your JavaScript into a bundle. If you used the basic javascript template for your add-on, you can copy it in from a sample add-on, such as the SWC one in the contributed samples folder. Also be sure to include the webpack specific dependencies and script options in your `package.json`, which you can also copy from a sample like SWC. If you find that some files aren't being moved to `dist` after you build, you'll want to edit the file (line 31,32) to add more file types to copy. 
+- Use a `webpack.config.js` for bundling the Spectrum Web Components and your JavaScript into a bundle. If you used the basic javascript template for your add-on, you can copy it in from a sample add-on, such as the SWC one in the contributed samples folder. Also be sure to include the webpack specific dependencies and script options in your `package.json`, which you can also copy from a sample like SWC. If you find that some files aren't being moved to `dist` after you build, you'll want to edit the file (line 31,32) to add more file types to copy.
 
 - Now you can use the `scale`, `color` and `theme` selections you desire with the `<sp-theme>` component. Within those tags is where you should place all of your content that you want styled with those settings. For example:
     ```html
@@ -122,7 +120,7 @@ Below are the steps for using the Express theme with your Spectrum Web Component
 
 #### Default vs Express Theme
 
-The screenshots below are from a Spectrum Web Components sample app showing some an example of how the components differ between the themes to illustrate some differences for reference. 
+The screenshots below are from a Spectrum Web Components sample app showing some an example of how the components differ between the themes to illustrate some differences for reference.
 
 #### Default Theme sample:
 
@@ -235,15 +233,13 @@ export default App;
 
 [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) is an open-source implementation of Spectrum and includes components and resources to make applications more cohesive. Spectrum CSS is designed to be used in partnership with [Spectrum’s detailed usage guidelines](https://spectrum.adobe.com/).
 
-
 <InlineAlert slots="text" variant="warning"/>
 
-You should only rely on using the base [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) library for simple applications that need basic things like typography, checkboxes, text fields, etc. Otherwise you should try using one of the other implementations provided like [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) and [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) since they include interactivity, event handling etc built-in over what's possible with pure CSS. The best place to start with each of these libraries is to go to the **Getting Started** page in the top of the docs for each. 
-
+You should only rely on using the base [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) library for simple applications that need basic things like typography, checkboxes, text fields, etc. Otherwise you should try using one of the other implementations provided like [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) and [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) since they include interactivity, event handling etc built-in over what's possible with pure CSS. The best place to start with each of these libraries is to go to the **Getting Started** page in the top of the docs for each.
 
 ## Tips
 
-Use the existing Adobe Express UI as an example of the types of patterns and behaviors to use in your own add-on design. For instance, you could take a closer look at the other panels and how the UI is implemented in them to help guide you, such as the Media, Theme and Text panels shown below, which are already part of Express. 
+Use the existing Adobe Express UI as an example of the types of patterns and behaviors to use in your own add-on design. For instance, you could take a closer look at the other panels and how the UI is implemented in them to help guide you, such as the Media, Theme and Text panels shown below, which are already part of Express.
 
 #### Media Panel
 
@@ -257,7 +253,6 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 
 ![Express Text Panel](img/text-panel.png)
 
-
 <InlineAlert slots="text" variant="success"/>
 
 **Color Picker Component Tip:**
@@ -265,9 +260,9 @@ If you're using the native browser color picker, it looks slightly different in 
 
 ## Using Fonts
 
-The following `adobe-clean` fonts and weights are injected into the add-on and can be used automatically. 
+The following `adobe-clean` fonts and weights are injected into the add-on and can be used automatically.
 
-```js
+```css
 {
     family: "adobe-clean",
     source: "url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff2'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('woff'), url('https://use.typekit.net/af/c0160f/00000000000000007735dac8/30/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3') format('opentype')",
@@ -304,10 +299,6 @@ The following `adobe-clean` fonts and weights are injected into the add-on and c
     display: "auto"
 }
 ```
-
-<!-- <InlineAlert slots="text" variant="info"/>
-
-In the near future, all of the Adobe Express fonts will be injected for use, however, at the moment these specific fonts are being injected for you to access in your add-on without having to bundle them. -->
 
 ### Importing custom fonts
 
@@ -363,4 +354,3 @@ Using custom fonts can be great for design, but it’s important to also underst
 ## Useful Resources
 
 - [Figma plugin](https://www.figma.com/community/file/1211274196563394418/Adobe-Spectrum-Design-System) that provides Spectrum UI elements.
-

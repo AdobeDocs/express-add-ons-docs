@@ -1,6 +1,6 @@
 # Overview
 
-This section provides a set of guides to help you in the debugging stage of your add-on. 
+This section provides a set of guides to help you in the debugging stage of your add-on.
 
 ## Introduction
 

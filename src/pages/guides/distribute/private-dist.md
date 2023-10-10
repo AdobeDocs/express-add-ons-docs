@@ -6,14 +6,13 @@ You can choose to create a private link to share your add-on with others to use 
 
 ## Prepare your add-on package
 
-You will be required to upload a zip of your add-on package in the process of creating a private link. The CLI contains a handy script to help with this step. Open your terminal and navigate into the root of your add-on project, then run the following command: 
+You will be required to upload a zip of your add-on package in the process of creating a private link. The CLI contains a handy script to help with this step. Open your terminal and navigate into the root of your add-on project, then run the following command:
 
 ```bash
 npm run package
 ```
 
-The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder. 
-
+The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder.
 
 ## Step 1: Invoke the distribution modal
 
@@ -37,7 +36,6 @@ Next, you will choose how you want to distribute your add-on, whether it's to sh
 
 ![](./img/private-option.png)
 
-
 ## Step 3: Upload your add-on package
 
 The next step is to upload your package zip. Click on the **select from your computer** link and choose your add-on package zip from your file system.
@@ -48,7 +46,7 @@ In case you missed it, the [top section on preparing your add-on package](#prepa
 
 ![Empty upload modal](./img/private-upload.png)
 
-The package will go through a verification process which may take a few seconds, so please be patient. 
+The package will go through a verification process which may take a few seconds, so please be patient.
 
 ![Verifying](./img/private-verifying.png)
 
@@ -64,15 +62,13 @@ If you receive an error, please review the following warning notes.
 
 **4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`
 
-
-
 Otherwise, you should see the following green check mark showing it's verified and hit **Next** to go to the next step.
 
 ![Verified](./img/private-verified.png)
 
 ## Step 4: Enter name, icon and release notes
 
-In this step you will be prompted to choose a unique **Add-on name** (25 characters max), a 144x144px **Add-on icon**, and optional **Release notes** (1000 characters max). Your add-on name will be validated when you tab out (or the field loses focus) before you will be allowed to move to the next step. You will know that it's verified by a green checkmark shown, or receive an error that it exists, and you need to choose another. 
+In this step you will be prompted to choose a unique **Add-on name** (25 characters max), a 144x144px **Add-on icon**, and optional **Release notes** (1000 characters max). Your add-on name will be validated when you tab out (or the field loses focus) before you will be allowed to move to the next step. You will know that it's verified by a green checkmark shown, or receive an error that it exists, and you need to choose another.
 
 ![](./img/private-name-icon.png)
 

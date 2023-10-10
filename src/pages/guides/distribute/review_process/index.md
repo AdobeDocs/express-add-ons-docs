@@ -4,7 +4,7 @@
 
 We’ve created the Adobe Express Add-ons marketplace so that Adobe users can benefit from amazing ideas from our developer community - including you.
 
-Whether you’re creating new features or speeding up user workflows, we want you to use your imagination. 
+Whether you’re creating new features or speeding up user workflows, we want you to use your imagination.
 
 But we want every add-on to perform as thorough as possible, which is why each submission goes through a thorough review process before being accepted.
 
@@ -38,14 +38,12 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Release notes
 - Testing information
 
-
 ### 2. Provide accurate and up-to-date information, including:
 
 - Add-on name
 - Version
 - Author
 - Contact information
-
 
 ### 3. Ensure your add-on meets legal and licensing requirements, including:
 
@@ -61,4 +59,3 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Our [Developer Brand Guidelines](../guidelines/brand_guidelines.md)
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)
 - Our [Generative AI Guidelines](../guidelines/genai/) (if you are using Generative AI)
-

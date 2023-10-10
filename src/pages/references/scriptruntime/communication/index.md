@@ -20,7 +20,7 @@ const { runtime } = AddOnScriptSdk.instance; // runtime object provides direct a
 
 The `runtime` object can then be used to access the communication methods which allow you to communicate between the two execution environments: `exposeApi()` and `apiProxy()`. The examples below show the methods in use from both the `index.html` where the iframe is running with your add-on code, and the script runtime environment running the contents of `code.js`.
 
-### Expose APIs from the script 
+### Expose APIs from the script
 
 This example shows how to expose APIs from the script runtime (via `code.js`) for use by the UI (via `index.html`).
 

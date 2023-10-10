@@ -65,7 +65,7 @@ contributors:
 ### How do I setup webpack to copy new files or folders into `dist`?
 
   If you add any folders, (like images for example), to your `src`, you can update the `webpack.config.js` `CopyWebpackPlugin` section within to ensure those new resources added are copied into the `dist` folder. For instance, in the following, the 3rd line was added to ensure any `.jpg` files in the `src/images` folder get copied over:
-         
+
   ```js
   new CopyWebpackPlugin({
         patterns: [
@@ -75,7 +75,8 @@ contributors:
         ],
   });
   ```
-### My form submission doesn't work and the devtools console shows the error - "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?"
+
+### My form submission doesn't work and the devtools console shows the error: "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?"
 
   You can call `preventDefault` on the submit event to prevent the browser from trying to complete the full form submission process and avoid this error, such as:
 
@@ -107,13 +108,13 @@ contributors:
 
 ### I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.
 
-  This usually indicates you do not have SSL configured correctly. You can fix it by clearing the configurations from the configuration file. 
+  This usually indicates you do not have SSL configured correctly. You can fix it by clearing the configurations from the configuration file.
   
   - In Windows, you can locate this file at: `C:\Users\{your_username}\AppData\Local\Adobe\CCWebAddOn\add-on-preferences.json`.
   
-  - On MAC, you can locate this file at: `/Users/{user}/Library/Application Support/Adobe/CCWebAddOn\add-on-preferences.json` 
-  
-Once you find config file, delete the two properties defined for `sslCertPath` and `sslKeyPath` there. After they've been deleted, you can run the commands to create a new add-on where you will be prompted to set up SSL again and then be sure to specify the correct paths to your certificate and key file. 
+  - On MAC, you can locate this file at: `/Users/{user}/Library/Application Support/Adobe/CCWebAddOn\add-on-preferences.json`
+
+Once you find config file, delete the two properties defined for `sslCertPath` and `sslKeyPath` there. After they've been deleted, you can run the commands to create a new add-on where you will be prompted to set up SSL again and then be sure to specify the correct paths to your certificate and key file.
 
 ### I receive a `MANIFEST_NOT_FOUND_ERROR` during the package verification when trying to upload my plugin package for distribution.
 
@@ -125,7 +126,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### What does it mean when an API is considered **experimental**?
 
-  Experimental APIs are those which have not been declared stable yet, and to try them, first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the [`manifest.json`](../references/manifest/index.md). The `experimentalApis` flag is **only allowed during development** and needs to be removed during submission. Experimental APIs should never be used in any add-ons you will be distributing. 
+  Experimental APIs are those which have not been declared stable yet, and to try them, first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the [`manifest.json`](../references/manifest/index.md). The `experimentalApis` flag is **only allowed during development** and needs to be removed during submission. Experimental APIs should never be used in any add-ons you will be distributing.
 
 ### What are the supported mime types/file formats for exported content?
 
@@ -139,9 +140,11 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
   This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../guides/develop/context.md#cors) for more details on handling CORS with your add-on.
 
-  ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported? 
+  ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
+
   No, `SharedArrayBuffer` is not currently available to use with your add-ons.
 
 ### Which browsers and operating systems are currently supported?
 
   Please see the [Adobe Express System requirements](https://helpx.adobe.com/express/system-requirements.html) for what's currently supported.
+  

@@ -18,7 +18,8 @@ contributors:
 ---
 
 # Setup Guide
-This guide will help you set up your development environment so you can get started creating Express add-ons quickly. 
+
+This guide will help you set up your development environment so you can get started creating Express add-ons quickly.
 
 ## Prerequisites
 
@@ -28,6 +29,7 @@ This guide will help you set up your development environment so you can get star
 - An email address associated with an Adobe ID. If you don't have one yet, you'll be taken through steps to create one in this guide.
 
 ## Add-on CLI (Command Line Interface)
+
 To facilitate the development of add-ons, we have incorporated a command line interface (CLI). This CLI will enable you to create and run Express add-ons directly in your local machine and load them into Adobe Express in your browser. Before you can use the CLI, you must install it to your local environment.
 
 In the [next section](quickstart.md), you will learn how to create your very first add-on, a simple "hello world" add-on that outputs a string.
