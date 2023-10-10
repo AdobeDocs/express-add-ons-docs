@@ -75,7 +75,8 @@ You can also import video and audio content in a similar way as described above,
 Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to allow the user to save/download the current design, (or range of a design), with certain export configurations to their local hard drive. Some examples for exporting content are provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](https://developer.adobe.com/express/add-ons/docs/samples/#export-sample).
 
 The steps to export content:
-- Call `createRenditions()` to get the renditions based on your export configuration options. 
+
+- Call `createRenditions()` to get the renditions based on your export configuration options.
 - Convert the `blob` object returned in the response to a `string` with the `URL.createObjectURL(blob)` method.
 - Create or update an anchor `<a>` element's `href` value with the URL string from the above step.
 
@@ -639,11 +640,12 @@ rectangle.translateY = 20;
 console.log(rectangle); // for debugging purpose
 
 const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];
-const rectangleFill = editor.createColorFill(utils.createColor(red, green, blue, alpha));            
+const rectangleFill = editor.createColorFill(utils.createColor(red, green, blue, alpha));
 rectangle.fills.append(rectangleFill);
 
 insertionParent.children.append(rectangle);
 ```
+
 <InlineAlert slots="text" variant="info"/>
 
 Refer to [getting started with Script Runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Editor APIs.

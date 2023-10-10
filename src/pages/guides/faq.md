@@ -140,11 +140,10 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
   This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../guides/develop/context.md#cors) for more details on handling CORS with your add-on.
 
-  ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
+### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
 
   No, `SharedArrayBuffer` is not currently available to use with your add-ons.
 
 ### Which browsers and operating systems are currently supported?
 
   Please see the [Adobe Express System requirements](https://helpx.adobe.com/express/system-requirements.html) for what's currently supported.
-  

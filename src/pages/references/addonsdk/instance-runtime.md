@@ -38,7 +38,7 @@ Requests a promise-based proxy object from another runtime to be used to call th
 
 #### Signature
 
-`async apiProxy(runtimeType: RuntimeType): Promise<Remote<unknown>> `
+`async apiProxy(runtimeType: RuntimeType): Promise<Remote<unknown>>`
 
 #### Parameters
 
@@ -49,7 +49,7 @@ Requests a promise-based proxy object from another runtime to be used to call th
 #### Return
 
 A promise which resolves to an API proxy object exposed by the desired runtime as soon as the other runtime is finished initializing.
-     
+
 **Note:** Calling the method again for the same runtime type will return a new proxy object without any behavior difference.
 
 #### Example Usage

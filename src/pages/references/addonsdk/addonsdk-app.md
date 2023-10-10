@@ -59,7 +59,7 @@ Subscribe to an event (ie: listen for an event).
 #### Parameters
 
 | Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  | -----------------------------|           
+| -------------     | -------------------------- | ---------------------  | -----------------------------|
 | `name`              | `string`                     | Event to subscribe to. | See [Events](#events) |
 | `handler`           | callback `function`          | Handler that gets invoked when the event is triggered. | `(data) => {}` |
 
@@ -86,7 +86,7 @@ Unsubscribe from an event (ie: stop listening for an event).
 #### Parameters
 
 | Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  | -----------------------------|       
+| -------------     | -------------------------- | ---------------------  |-----------------------------|
 | `name`              | `string`                     | Event to unsubscribe to. | See [Events](#events) |
 | `handler`           | callback `function`          | Handler that was used during event subscription. | `(data) => {}` |
 
@@ -333,28 +333,28 @@ The table below describes the events triggered from the add-on SDK. Use the `Add
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>localechange</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">        
+    <td style="vertical-align: bottom;">
         <p>Triggered when there is a locale change at the host side.</p>
     </td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>themechange</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">        
+    <td style="vertical-align: bottom;">
         <p>Triggered when there is a theme change at the host side.</p>
     </td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>dragstart</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">        
+    <td style="vertical-align: bottom;"> 
         <p>Triggered when the user starts dragging an item for which drag behavior is enabled.</p>
     </td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>dragend</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">        
+    <td style="vertical-align: bottom;">
         <p>Triggered when the drag operation ends.</p>
     </td>
 </tr>

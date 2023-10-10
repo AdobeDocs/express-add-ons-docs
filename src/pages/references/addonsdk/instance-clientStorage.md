@@ -23,7 +23,6 @@ An asynchronous method to retrieve a value from Client Storage for a given key. 
 | ------------- | --------- | -----------:  |
 | key           | `string ` | The key to retrieve the value for. |
 
-
 #### Returns
 
 `Promise` or `undefined` if no value has been stored for that key.
@@ -52,7 +51,6 @@ Store a value in Client Storage with the given key. The returned promise will re
 | key           | `string ` | The key to reference the value stored. |
 | value         | `any `    | The value to store for the key. |
 
-
 #### Returns
 
 `Promise` or `undefined` if no value has been stored for that key.
@@ -78,7 +76,7 @@ Remove the stored key/value pair from Client Storage for the given key. If no su
 
 | Name          | Type      | Description   |
 | ------------- | --------- | -----------:  |
-| key           | `string ` | The key indicating which specific key/value pair to remove from storage|
+| key           | `string ` | The key indicating which specific key/value pair to remove from storage |
 
 #### Returns
 

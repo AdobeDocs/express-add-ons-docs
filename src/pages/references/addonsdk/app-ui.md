@@ -90,15 +90,18 @@ AddOnSdk.app.on("themechange", (data) => {
 ### localechange
 
 **`localechange: string`**<br/>
-The "localechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`AddOnSdk.app.on`](../addonsdk/addonsdk-app.md) function. 
+The "localechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`AddOnSdk.app.on`](../addonsdk/addonsdk-app.md) function.
 
 #### Parameters
+
 N/A
 
 #### Return Value
+
 N/A
 
 #### Example Usage
+
 ```js
 AddOnSdk.app.on("localechange", (data) => {
   applyTheme(data.locale);
@@ -107,10 +110,9 @@ AddOnSdk.app.on("localechange", (data) => {
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme`  in your own add-on.
+Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
 
 <!-- 
-
 ## AddOnSdk.app.ui Properties
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">

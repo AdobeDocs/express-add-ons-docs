@@ -78,6 +78,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | `renditionPreview?` | `boolean` |	Ensure premium content preview is properly handled for free users when add-ons create renditions. |
 
 **Example:**<br/>
+
 ```json
 "requirements": {
     "apps": [  
@@ -103,6 +104,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 
 <!-- | `supportedDeviceClass?` | `string []`  | Supported platforms by the add-on. Possible values are <ul><li>"desktop"</li><li>"mobile</li><li>"app"</li></ul> If not specified, default value assumed is: \["desktop"\]. | -->
 **Example:**<br/>
+
 ```json
 "apps": [
     {
@@ -120,7 +122,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 | Platform       | Description |
 | ----------------| -------------|
 | `desktop`       | Browser on desktop. |
-| `mobile`        | Browser on mobile and tablet devices. |           
+| `mobile`        | Browser on mobile and tablet devices. |          
 | `app`           | Native app on mobile and tablet devices. |
 
 ## entryPoints
@@ -134,6 +136,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 | [`permissions`](#entrypointspermissions) | `object`    | The permissions defined for this entry point. |
 
 **Example:**<br/>
+
 ```json
 "entryPoints": [
     {
@@ -152,11 +155,12 @@ The following platform values are currently supported in the `supportedDeviceCla
 
 | Key                   | Type         | Description   |
 | -----------------------| -------------| -----------:  |
-| [`sandbox?`](#entrypointspermissionssandbox) | `string []`  | List of iframe sandbox permissions.  | 
+| [`sandbox?`](#entrypointspermissionssandbox) | `string []`  | List of iframe sandbox permissions.  |
 | `oauth?`               | `string []` | List of 3rd party auth server domains for which OAuth workflow may be requested. |
 | `clipboard?`  | `string []` | The allowed values for the list of clipboard permissions. Currently, `clipboard-write` is supported and allows an add-on to write arbitrary data to the clipboard. |
 
 **Example:**<br/>
+
 ```json
 "permissions" : {
     "sandbox": [" allow-popups ", "allow-downloads"],
@@ -177,6 +181,7 @@ The following permission values are currently supported in the `sandbox` key.
 | `allow-downloads`     | Allows downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute, as well as through the navigation that leads to a download of a file.          |
 
 **Example:**<br/>
+
 ```json
 "permissions" : {
     "sandbox": ["allow-popups ", "allow-downloads"],
@@ -204,4 +209,3 @@ The following permission values are currently supported in the `sandbox` key.
 - Changes to your add-on manifest currently require a reload, but you can simply use the **Refresh** button from the **Add-on Development** panel to force the add-on to reload and pick up your manifest changes.
 
   ![refresh button for manifest changes](../img/refresh-btn.png)
-  

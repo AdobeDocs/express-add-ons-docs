@@ -13,7 +13,7 @@ This section outlines everything you'll need in order to be prepared for submitt
 **\* Indicates Required**
 
 | Name                    | Character Length  | Description   |
-| -------------:          | ------------------| -----------:  | 
+| -------------:          | ------------------| -----------:  |
 | **\* Add-on name**      | 25                | A unique name for your add-on.|
 | **\* Summary**               | 50                | A short description of what your add-on does.|
 | **\* Full Description**      | 1000              | Full context and description of your add-on and its features |
@@ -26,7 +26,7 @@ This section outlines everything you'll need in order to be prepared for submitt
 
 ### 2. Prepare your assets
 
-| Type           | Format      | Description   |    
+| Type           | Format      | Description   |
 | -------------: | ------------| -----------:  |
 | * 36x36 icon           | `.jpg/png`  | a 36x36 sized icon representing your add-on |
 | * 64x64 icon           | `.jpg/png`  | a 64x64 sized icon representing your add-on |

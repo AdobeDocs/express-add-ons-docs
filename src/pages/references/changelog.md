@@ -40,14 +40,14 @@ New versions of the CLI packages:
 
 which include:
 
-* Updated templates for both iframe and script runtime add-ons:
+- Updated templates for both iframe and script runtime add-ons:
 
     - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
     - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
     - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the script runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) when creating a new add-on.
   
-* New type support for typescript based add-ons.
-* Ability to recreate your SSL certificates.
+- New type support for typescript based add-ons.
+- Ability to recreate your SSL certificates.
 
 #### Documentation updates
 
@@ -114,13 +114,14 @@ If you're using the experimental Editor APIs in any add-ons currently, we encour
 
   from:
 
-       import { AddOnSdkApi } from "AddOnSdkApi";
+       `import { AddOnSdkApi } from "AddOnSdkApi";`
   
   to:
    
-       import AddOnScriptSdk from "AddOnScriptSdk";
+       `import AddOnScriptSdk from "AddOnScriptSdk";`
   
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**.
+
 - A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 - Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
 
@@ -165,8 +166,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 - There's currently a bug where `addArtboard` could crash the application or corrupt the document if there's no `fill` specified on the artboard. *Please ensure you always add a fill in the same frame as the artboard creation until this issue is resolved*. Also note, when this bug is fixed, the `ArtboardNode` will accept a single `fill` object, rather than an `ItemList` of `fill`(s).
 
-- Currently, in the `addPage` API, a new page is created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will 
-change the default context to the `artboard` child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.
+- Currently, in the `addPage` API, a new page is created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will change the default context to the `artboard` child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.
 
   **IMPORTANT:** We recommend that you ***only test the use of these experimental Editor APIs against non-essential documents***, due to the potential for loss or corruption.
 
@@ -202,7 +202,7 @@ change the default context to the `artboard` child of the newly added page. This
   - Setting rotation on an empty group is ignored. Always add content (children) to a group first, and then set its rotation.
   - When removing elements from a parent element, the element may continue to show in the Adobe Express layer stack. This will be addressed in the future. This can also occur if you call `clear()` to remove all children from an element as well as when using `removeFromParent()`.
   - Shape elements added to the document by users (via the Media tab) do not support fill or stroke properties at this time. Furthermore, you should generally avoid making changes to these shapes (they'll appear as group nodes), as this could corrupt the document. We'll add protections around this in an upcoming release.
-  - While the API supports adding multiple strokes to elements, Express currently only supports editing the _first_ stroke added. If you want to change the stroke of an element, _remove_ the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
+  - While the API supports adding multiple strokes to elements, Express currently only supports editing the *first* stroke added. If you want to change the stroke of an element, *remove* the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
 
     ```js
     element.strokes.clear();

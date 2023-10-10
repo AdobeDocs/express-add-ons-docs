@@ -56,7 +56,7 @@ An implementation of the [JavaScript `setTimeout()`](https://developer.mozilla.o
 
 | Name          | Type        | Description   |
 | --------------| ------------| -----------:  |
-| `functionRef` | `function` | A function to be executed after the timer expires. |                 
+| `functionRef` | `function` | A function to be executed after the timer expires. |
 | `delay`       | `number`   | The time, in milliseconds, that the timer should wait before the specified function or code is executed. If this parameter is omitted, a value of 0 is used, meaning execute "immediately", or more accurately, the next event cycle.        |
 | `params`      | `any []`   | Additional arguments which are passed through to the function specified by `functionRef`.                    |
 

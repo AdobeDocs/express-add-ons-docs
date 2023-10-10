@@ -40,7 +40,7 @@ This command will create a new add-on based on a basic `javascript` template. Se
 
 <InlineAlert slots="text" variant="success"/>
 
-`npx` is an `npm` package runner that can execute packages without installing them explicitly. 
+`npx` is an `npm` package runner that can execute packages without installing them explicitly.
 
 ## Step 2: Build and start your add-on
 
@@ -109,7 +109,7 @@ Now, while your add-on is still loaded and running, open the `src/index.html` fi
 
 ![](./img/vs-code-say-hello.png)
 
-Note the terminal where your add-on is running will display messages showing that the `src` has been rebuilt like below. This is due to the hot module reload feature built into the CLI. 
+Note the terminal where your add-on is running will display messages showing that the `src` has been rebuilt like below. This is due to the hot module reload feature built into the CLI.
 
 ![hot reload](./img/hot-reload.png)
 

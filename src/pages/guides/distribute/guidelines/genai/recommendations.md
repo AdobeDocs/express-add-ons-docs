@@ -70,6 +70,5 @@ You can use the Firefly web app or Text-to-image features in Adobe Express as a 
 
 ## Haven’t found what you’re looking for? Let us know
 
-This is a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve.
-If you have any questions about a specific case or issue, or would like to learn about our testing process and requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
+This is a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve. If you have any questions about a specific case or issue, or would like to learn about our testing process and requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
  

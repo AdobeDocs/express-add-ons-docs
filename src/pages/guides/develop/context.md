@@ -20,7 +20,7 @@ Media can't be autoplayed.
 
 ### Permissions
 
-The value of the `sandbox` attribute can either be empty (in which case all restrictions are applied), or a space-separated list of pre-defined permissions that remove a particular restriction. By default, **the `allow-scripts` and the `allow-same-origin` sandbox permissions are automatically set for all add-ons** (ie: `sandbox="allow-scripts allow-same-origin"`). The table below describes the rest of the permissions that can be applied to your add-on. These permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). 
+The value of the `sandbox` attribute can either be empty (in which case all restrictions are applied), or a space-separated list of pre-defined permissions that remove a particular restriction. By default, **the `allow-scripts` and the `allow-same-origin` sandbox permissions are automatically set for all add-ons** (ie: `sandbox="allow-scripts allow-same-origin"`). The table below describes the rest of the permissions that can be applied to your add-on. These permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox).
 
 <!-- <InlineAlert slots="text" variant="info"/>
 
@@ -126,8 +126,8 @@ You can also use the `cors-anywhere` node package to create and run your own pro
     `npm install -g cors-anywhere` (or `npm i cors-anywhere` to install it in your current directory)
 
 2. Create a file called `server.js` in your favorite editor and add the following to it:
-    
-    ```js        
+
+    ```js
     // Listen on a specific host via the HOST environment variable
     var host = process.env.HOST || '0.0.0.0';
     // Listen on a specific port via the PORT environment variable

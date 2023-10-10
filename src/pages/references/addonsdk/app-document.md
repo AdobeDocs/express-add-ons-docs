@@ -101,19 +101,20 @@ Adds audio to the current page.
 | Name          | Type         | Description                         |
 | ------------- | -------------| ---------------------------------:  |
 | `audioBlob`   | `Blob`       | The audio to add to the page.       |
-| `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |   
+| `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
 #### `MediaAttributes`
 
 | Name          | Type         | Description                               |
 | ------------- | -------------| ----------------------------------------: |
-| `title`       | `string`     | Media title (mandatory for audio import). | 
+| `title`       | `string`     | Media title (mandatory for audio import). |
 
 #### Return Value
 
 A resolved promise if the audio was successfully added to the canvas; otherwise will throw an error with the rejected promise.
 
 #### Example Usage
+
 ```js
 async function addAudioFromBlob(blob) {
   try {
@@ -149,7 +150,7 @@ The table below describes the possible error messages that may occur when using 
 | Invalid blob.                  | Blob is invalid. |
 | Unsupported mime type : `${blob.type}` | Mime type is invalid. |
 | Import image width or height exceed the maximum limit : `${maxSupportedDimension}` | The imported image dimensions exceed the maximum limit if any defined by Express. |
-| Import image size exceed the maximum limit: `${maxSupportedSize}MB` | The imported image size exceeds the maximum limit if any defined by Express. | 
+| Import image size exceed the maximum limit: `${maxSupportedSize}MB` | The imported image size exceeds the maximum limit if any defined by Express. |
 | No active page available. | Current page doesn't exist. |
 
 ## Export Content Methods
@@ -237,6 +238,7 @@ A `Promise` with an array of page `Rendition` objects. It will contain one page 
 Refer to the [exporting content use case example](../../guides/develop/use_cases.md#exporting-content) and the [export-sample](../../samples.md) in the code samples for usage examples.
 
 ### Errors
+
 The table below describes the possible error messages that may occur when using the export methods, with a description of the scenario that will return them.
 
 &nbsp;

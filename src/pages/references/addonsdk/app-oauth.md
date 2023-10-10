@@ -43,7 +43,7 @@ A resolved `Promise` with the [`AuthorizationResponse`](#authorizationresponse) 
 
 ### authorizeWithOwnRedirect()
 
-Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in window. After authorization, the user is redirected to the add-on developer provided URL.     
+Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in window. After authorization, the user is redirected to the add-on developer provided URL.
 
 #### Signature:
 
@@ -77,7 +77,6 @@ A resolved `Promise` with the [`AuthorizationResult`](#authorizationresult) obje
 | ------------- | -------------:        | -----------:  |
 | `status`      | `AuthorizationStatus` | Status representing success or failure in the authorization workflow. |
 |`description`  | `string` or `object`   | Description about the success or failure in the authorization workflow In the event of a "FAILED" status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`. While for all other statuses the value of this property is a `string` |
-
 
 #### `AuthorizationStatus`
 

@@ -90,7 +90,6 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently four different template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 <br/>
 
-
 | Template         | Framework        |
 | ---------------- | ---------------- |
 | `javascript`       | JavaScript       |
@@ -115,6 +114,7 @@ npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
 **TIP:** If you don't specify a template, the CLI will simply prompt you to choose from the list of template options.
 
 ## Manifest
+
 A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
 
 ## Add-on Development Tools Panel

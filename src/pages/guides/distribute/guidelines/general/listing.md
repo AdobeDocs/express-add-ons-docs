@@ -4,7 +4,7 @@ Your listing should provide valuable information about what your add-on does, an
 
 ## Listing metadata
 
-Your listing metadata provides Adobe and users with details about your add-on. Follow the guidelines below to ensure your listing clearly describes everything you want your users to know about your add-on. 
+Your listing metadata provides Adobe and users with details about your add-on. Follow the guidelines below to ensure your listing clearly describes everything you want your users to know about your add-on.
 
 <InlineAlert slots="text" variant="info"/>
 

@@ -22,6 +22,7 @@ contributors:
 This section provides a set of guides to help you in the development stage of your add-on.
 
 ## Introduction
+
 In these guides, you'll find detailed information about [implementing common use cases](./use_cases.md), [web frameworks, libraries and bundling](./frameworks-libraries-bundling.md), [performance tips](./performance.md), and more.
 
 Begin by watching this short video below which provides an introduction to some of the add-on features and APIs available for use in your add-ons.<br/><br/>

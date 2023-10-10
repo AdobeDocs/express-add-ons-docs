@@ -81,7 +81,7 @@ Below are the steps for using the Express theme with your Spectrum Web Component
 
 - Next, start adding your imports. All add-ons should have this base set of imports, which provide support for Spectrum typography and the base Spectrum theme component, the Express themes, including colors (lightest, light, dark, and darkest) and scale options (medium, large).
 
-    ```js        
+    ```js
     import '@spectrum-web-components/styles/typography.css';
     import '@spectrum-web-components/theme/sp-theme.js';
     import '@spectrum-web-components/theme/express/theme-darkest.js';
@@ -91,21 +91,22 @@ Below are the steps for using the Express theme with your Spectrum Web Component
     import '@spectrum-web-components/theme/express/scale-medium.js';
     import '@spectrum-web-components/theme/express/scale-large.js';
 
-    ``` 
+    ```
 
 - Then import the specific components you want to use in your code, such as:
-    
+
     ```js
     import '@spectrum-web-components/button/sp-button.js';
     import '@spectrum-web-components/field-label/sp-field-label.js';
     import '@spectrum-web-components/textfield/sp-textfield.js';
     ```
-    
-   **Note:** The `import '@spectrum-web-components/theme/src/express/themes.js';` includes all of the definitions for the Express theme, but you can also only include the specific parts you need. For instance, if you only want to support the light theme and the medium scale, you could specifically include those with: `import '@spectrum-web-components/theme/express/theme-light.js'; import '@spectrum-web-components/theme/express/scale-medium.js';` For more details on themes and all of the color and scale options, see [this link](https://opensource.adobe.com/spectrum-web-components/tools/theme/). 
+
+   **Note:** The `import '@spectrum-web-components/theme/src/express/themes.js';` includes all of the definitions for the Express theme, but you can also only include the specific parts you need. For instance, if you only want to support the light theme and the medium scale, you could specifically include those with: `import '@spectrum-web-components/theme/express/theme-light.js'; import '@spectrum-web-components/theme/express/scale-medium.js';` For more details on themes and all of the color and scale options, see [this link](https://opensource.adobe.com/spectrum-web-components/tools/theme/).
 
 - Use a `webpack.config.js` for bundling the Spectrum Web Components and your JavaScript into a bundle. If you used the basic javascript template for your add-on, you can copy it in from a sample add-on, such as the SWC one in the contributed samples folder. Also be sure to include the webpack specific dependencies and script options in your `package.json`, which you can also copy from a sample like SWC. If you find that some files aren't being moved to `dist` after you build, you'll want to edit the file (line 31,32) to add more file types to copy.
 
 - Now you can use the `scale`, `color` and `theme` selections you desire with the `<sp-theme>` component. Within those tags is where you should place all of your content that you want styled with those settings. For example:
+
     ```html
     <body>
         <sp-theme scale="medium" color="light" theme="express">   
@@ -132,7 +133,7 @@ The screenshots below are from a Spectrum Web Components sample app showing some
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the [code samples](../../samples.md) in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly. 
+Check out the [code samples](../../samples.md) in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly.
 
 ## React Spectrum
 
@@ -148,7 +149,6 @@ Check out the [code samples](../../samples.md) in the contributed folder for **S
 
 We recommend using [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) over [React Spectrum](#react-spectrum) in your add-ons based on React, because it currently offers a more comprehensive set of components which provide built-in benefits as detailed above in the [Spectrum Web Components section](#spectrum-web-components), and is more actively supported.
 
-
 ### React Spectrum with Express Theme
 
 [The React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum/theme-express) is still in an alpha stage currently, but can be used with the following steps:
@@ -161,8 +161,8 @@ We recommend using [**swc-react**](https://opensource.adobe.com/spectrum-web-com
 
     `npm install @spectrum-icons/express`
 
-3. Import the theme and icons into your code to use them. For example, notice the following code snippet which imports and sets the Express `theme`, light `colorScheme` option and medium `scale` option on the `<Provider>` object. It also illustrates how to use the Express version of the `Delete` icon.  
-    
+3. Import the theme and icons into your code to use them. For example, notice the following code snippet which imports and sets the Express `theme`, light `colorScheme` option and medium `scale` option on the `<Provider>` object. It also illustrates how to use the Express version of the `Delete` icon.
+
     ```js
     import { theme as expressTheme } from '@react-spectrum/theme-express';
     import Delete from '@spectrum-icons/express/Delete';
@@ -197,12 +197,13 @@ The [React Spectrum Express theme](https://www.npmjs.com/package/@react-spectrum
 If you're using a slider component with React Spectrum, you may notice behavior where if the user moves their mouse out of the panel and releases the mouse pointer, the slider still thinks the mouse pointer is down when the mouse is moved back inside the panel. You can fix this with the following steps:
 
 1. Wrap your slider(s) with another element. A &lt;div&gt; works fine.
-2. Add a ref that points to this div so you can refer to it later. 
+2. Add a ref that points to this div so you can refer to it later.
 3. Add two event handlers:
     - `onPointerDownCapture` will call `sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId)`
     - `onPointerUp` will call `sliderContainer.current.releasePointerCapture(evt.nativeEvent.pointerId)`
 
 **Example Snippet**
+
 ```js
 import React, {useRef} from "react";
 

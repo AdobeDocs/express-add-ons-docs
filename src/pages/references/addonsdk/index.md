@@ -164,5 +164,5 @@ The table below describes the possible error messages that may occur when using 
 
 | Error Message                     |   Error Scenario                 |
 |-------------------------------:|-------------------------------------------------:|
-| Invalid `${propertyName}` property. SDK is not fully initialized. | When an add-on tries to use the SDK before it is fully initialized. | 
+| Invalid `${propertyName}` property. SDK is not fully initialized. | When an add-on tries to use the SDK before it is fully initialized. |
 | Failed to initialize Addon SDK. Unsupported API version: `${apiVersion}` | API version is unsupported.  |

@@ -80,7 +80,6 @@ Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
 - [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
 
-
 ## [use-client-storage](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/use-client-storage)
 
 Demonstrates how to use the Client Storage API to persist user generated data through a todo list.
@@ -96,6 +95,7 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 - [Client Storage](./references/addonsdk/instance-clientStorage.md) to persist the todo items.
 
 ## [export-sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/export-sample)
+
 Demonstrates how to use the add-on SDK's to export renditions of content in various formats including jpeg, png, pdf and mp4.
 
 **Technologies Used:** <br/>
@@ -250,6 +250,6 @@ Demonstrates the use of the communication APIs to expose and proxy APIs bidirect
 
 Demonstrates how to use the [editor APIs](./references/scriptruntime/editor/) to create various shapes and add them to the document.
 
-### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) 
+### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page)
 
 A more comprehensive example of using the [editor APIs](./references/scriptruntime/editor/) to add a page, images and shapes, as well as clear the artboard.

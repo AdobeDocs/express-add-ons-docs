@@ -20,7 +20,7 @@ contributors:
 
 # Overview
 
-Adobe Express is the AI-first, all-in-one creativity app that makes it fast, easy and fun for any user to design and share standout content. 
+Adobe Express is the AI-first, all-in-one creativity app that makes it fast, easy and fun for any user to design and share standout content.
 
 ## Add-ons
 
