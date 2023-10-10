@@ -20,6 +20,12 @@ contributors:
 
 # Changelog
 
+## 2023-10-10
+
+## Updates
+
+Updates to the [OAuth APIs](./addonsdk/app-oauth.md) to allow for a new optional `windowSize` parameter to be specified in the [`AuthorizationRequest`](./addonsdk/app-oauth.md#authorizationrequest) object and the [`AuthorizeWithOwnRedirectRequest`](./addonsdk/app-oauth.md#authorizewithownredirectrequest) to set the desired size of the authorization window.
+
 ## 2023-10-03
 
 ### Updates
@@ -69,7 +75,7 @@ which include:
 
 ### Updates
 
-The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) have been updated with additional descriptions and details as well as some new an modified APIs:
+The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) have been updated with additional descriptions and details as well as some new and modified APIs:
 
 - Artboard now has a single fill only. **Note:** it's possible that all node types will move to this model in the near future.
 - The `name` property is now only available on `PageNode`, not all node types.
@@ -233,7 +239,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
 - Information on [using fonts](../guides/design/user_interface.md#using-fonts).
-- CORS / COEP header handling added to [CORS guide](../guides/develop/cors.md#cors--coep-handling).
+- CORS / COEP header handling added to the [CORS guide](../guides/develop/context.md#cors--coep-handling)
 
 ## 2023-06-08
 
