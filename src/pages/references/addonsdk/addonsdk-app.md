@@ -160,7 +160,7 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 | `buttonType`  |  `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant     | The button type clicked |
 | `fieldValue`  | `string`      | The input from the user. |
 
-#### Example Usage
+#### Confirmation Dialog Example Usage
 
 ```js
 import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -168,50 +168,54 @@ import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 // Wait for the SDK to be ready
 await AddOnSdk.ready;
 
-// Confirmation Dialog Example
-let dialogOptions = {
-    title: titleValue,
-    description: [descValue],
-    buttonLabels: {
-        primary:
-        primaryButtonTextValue != "" ? primaryButtonTextValue : undefined,
-        secondary:
-        secondaryButtonTextValue != ""
-            ? secondaryButtonTextValue
-            : undefined,
-        cancel:
-        cancelButtonTextValue != "" ? cancelButtonTextValue : undefined,
-    },
-    variant: "confirmation",
-};
-const response = await addOnSdk.app.showModalDialog(dialogOptions);
-console.log("Button type clicked " + response.buttonType)
-
-// Input Dialog Example 
-let inputDialogOptions = {
-    title: titleValue,
-    description: [descValue],
-    buttonLabels: {
-        primary:
-        primaryButtonTextValue != "" ? primaryButtonTextValue : undefined,
-        secondary:
-        secondaryButtonTextValue != ""
-            ? secondaryButtonTextValue
-            : undefined,
-        cancel:
-        cancelButtonTextValue != "" ? cancelButtonTextValue : undefined,
-    },
-    variant: "input",
-    field: {
-          label: labelValue,
-          placeholder: placeholderValue,
-          fieldType: "text",
-    },
-
-    const response = await addOnSdk.app.showModalDialog(inputDialogOptions);
-    console.log("Field value " + response.fieldValue); // returns the input the user entered
+async function showConfirmDialog() {
+    try {
+        // Confirmation Dialog Example
+        let dialogOptions = {
+            variant: "confirmation",
+            title: "Enable smart Filters",
+            description: "Smart filters are nondestructive and will preserve your original images.",
+            buttonLabels: { primary: "Enable", cancel: "Cancel" },
+        };    
+        const result = await AddOnSdk.app.showModalDialog(dialogOptions);
+        console.log("Button type clicked " + result.buttonType); 
+    } catch (error) {
+        console.log("Error showing modal dialog:", error);
+    }
 }
-};
+```
+
+#### Input Dialog Example Usage
+
+```js
+import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+// Wait for the SDK to be ready
+await AddOnSdk.ready;
+
+async function showInputDialog() {
+    try {
+        // Input Dialog Example
+        let inputDialogOptions = {
+            variant: "input",
+            title: "Please enter your key",
+            description: "Your API key",
+            buttonLabels: { cancel: "Cancel" },      
+            field: {
+                label: "API Key",
+                placeholder: "Enter API key",    
+                fieldType: "text",
+            },
+        }
+
+        const inputDialogResult = await AddOnSdk.app.showModalDialog(inputDialogOptions);
+        if (inputDialogResult.buttonType === "primary") {
+            console.log("Field value " + inputDialogResult.fieldValue); // returns the input the user entered if they didn't cancel
+        }
+    } catch (error) {
+        console.log("Error showing modal dialog:", error);
+    }
+}
 ```
 
 <InlineAlert slots="text" variant="info"/>
