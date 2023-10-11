@@ -17,29 +17,28 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-<InlineAlert slots="text" variant="info"/>
-
-Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
-
 # Development Tools
 
 ## Using the CLI
+
 The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
 
 Here are some key features of the add-on CLI:
+
 - **Project creation:** The add-on CLI provides a command to create a new add-on project with a basic file structure and configuration.
 - **Local development:** The add-on CLI includes a built-in server that allows you to test your add-on locally before deploying it to our platform.
 - **Live reloading:** The add-on CLI watches your project files for changes and automatically reloads the server when a change is detected.
 - **Packaging:** The add-on CLI provides a command to package your add-on for distribution, including creating a ZIP file that can be uploaded to our platform.
 
 ### CLI `create` options
+
 The table below shows the list of arguments that can be specified with the CLI create command (ie: `npx @adobe/create-ccweb-add-on`):
 
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
 | ------------- | -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `add-on-name` | No       |                                              | Name of the add-on. A new add-on project with this argument will be created in the user's current working directory. |
-| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on.                                                                         |
-| `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations.                                         |
+| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on. |
+| `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations. |
 
 For instance, the following command would specify all possible arguments:
 
@@ -52,6 +51,7 @@ npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 See the [templates](#templates) section for the currently supported template values.
 
 ### `start` script options
+
 The table below shows a list of arguments that can be specified with the `start` script on your add-on project, which starts up the add-on in a local server:
 
 | Argument  | Optional | Default Value | Description                                                                  |
@@ -86,9 +86,9 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 ```
 
 ## Templates
+
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently four different template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 <br/>
-
 
 | Template         | Framework        |
 | ---------------- | ---------------- |
@@ -96,8 +96,6 @@ The add-on CLI contains built-in, pre-configured templates to allow you to creat
 | `typescript`       | TypeScript       |
 | `react-javascript`  | React with JavaScript |
 | `react-typescript` | React with TypeScript |
-
-
 
 The following syntax can be used to specify one of the above templates:
 
@@ -111,17 +109,16 @@ For instance, the following is an example of a command that will create an add-o
 npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
 ```
 
-
 <InlineAlert slots="text" variant="success"/>
 
 **TIP:** If you don't specify a template, the CLI will simply prompt you to choose from the list of template options.
 
-
 ## Manifest
+
 A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
 
-
 ## Add-on Development Tools Panel
+
 The **Add-on Development** tools panel provides useful logging details indicating the status of your add-on, as well as action buttons to allow for refreshing and clearing the data associated with your add-on. The panel is shown in the screenshots below for reference:
 
 <InlineAlert slots="text" variant="info"/>
@@ -130,5 +127,3 @@ The **Refresh** button can be used to reload your add-on's code and resources, a
 
 ![add-ons tools screenshot](./img/add-on-devtools.png)
 ![manifest error screenshot](./img/manifest-error.png)
-
-

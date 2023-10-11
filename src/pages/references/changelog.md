@@ -20,8 +20,22 @@ contributors:
 
 # Changelog
 
-## 2023-10-03
+## 2023-10-10
+
 ### Updates
+
+Updates to the [OAuth APIs](./addonsdk/app-oauth.md) to allow for a new optional `windowSize` parameter to be specified in the [`AuthorizationRequest`](./addonsdk/app-oauth.md#authorizationrequest) object and the [`AuthorizeWithOwnRedirectRequest`](./addonsdk/app-oauth.md#authorizewithownredirectrequest) to set the desired size of the authorization window.
+
+## 2023-10-09
+
+### Updates
+
+Published new [Guidelines and requirements section](../guides/distribute/guidelines/); including [General guidelines](../guides/distribute/guidelines/general/), [Developer brand guidelines](../guides/distribute/guidelines/), [Monetization guidelines](../guides/distribute/guidelines/monetization.md) and [Generative AI guidelines](../guides/distribute/guidelines/genai/).
+
+## 2023-10-03
+
+### Updates
+
 New versions of the CLI packages:
 
   ```json
@@ -38,32 +52,36 @@ New versions of the CLI packages:
 
 which include:
 
-* Updated templates for both iframe and script runtime add-ons:
+- Updated templates for both iframe and script runtime add-ons:
 
     - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
     - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
-    - The `javascript-with-editor-apis` template has been removed in this version but replaced with the option from the CLI to [include the script runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) when creating a new add-on.
+    - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the script runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) when creating a new add-on.
   
-* New type support for typescript based add-ons.
-* Ability to recreate your SSL certificates.
+- New type support for typescript based add-ons.
+- Ability to recreate your SSL certificates.
 
 #### Documentation updates
+
 - Updated [Script Runtime Reference docs](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include script runtime (vs the specific template).
-- Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons". 
+- Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
-### Removed 
+
+### Removed
+
 - Removed the experimental APIs notes/warnings around the **Audio APIs and User APIs** since they **are now stable**.
 - Removed references to the Dropbox sample since the [import-images-from-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth) contains the same functionality.
 
 ### Updated
+
 - Updated the Express add-ons [introduction video](https://developer.adobe.com/express/add-ons/docs/guides/) with a newly created version.
 
-
-
 ## 2023-09-25
+
 ### Updates
-The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) have been updated with additional descriptions and details as well as some new an modified APIs:
+
+The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) have been updated with additional descriptions and details as well as some new and modified APIs:
 
 - Artboard now has a single fill only. **Note:** it's possible that all node types will move to this model in the near future.
 - The `name` property is now only available on `PageNode`, not all node types.
@@ -74,73 +92,84 @@ The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs
 If you're using the experimental Editor APIs in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
 
 ## 2023-09-19
+
 ### Added
+
 - New [iframe Sandbox Context guide](../guides/develop/context.md) with details on the new `subdomain` support and CORS handling.
 - How-to videos embedded in various guides to help visually show how to use the information in those sections.
 
 ### Updates
+
 - **New Types Package Versions Released** <br/>
   - A new version `0.1.6` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the [`AddOnSDK` (iframe)](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/), including new experimental APIs, as well as general improvements and bug fixes.
   - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **Script Runtime/Editor APIs**.
   
   **IMPORTANT**:
-  Developers who are **NOT** using the [Script Runtime/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`. 
+  Developers who are **NOT** using the [Script Runtime/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`.
   
   The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
-- [Performance guide](../guides/develop/performance.md) updates to include [**Task Manager**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance/#task-manager) and [**Memory Consumption**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance/#memory-consumption-monitoring) details for add-ons.
+
+- [Performance guide](../guides/develop/performance.md) updates to include [**Task Manager**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance.md#task-manager) and [**Memory Consumption**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance.md#memory-consumption-monitoring) details for add-ons.
 - [FAQ update](../guides/faq.md) for [`SharedArrayBuffer`](https://developer.adobe.com/express/add-ons/docs/guides/faq/#is-sharedarraybuffer-supported).
 
 ## 2023-09-12
+
 ### Updates
+
 - Added supported file types for import and export to the [FAQ](../guides/faq.md).
 
 ## 2023-09-07
+
 ### Updates
-- The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference](../references/scriptruntime/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously, 
+
+- The [Communication API docs](../references/scriptruntime/communication/index.md) in the [Script Runtime Reference](../references/scriptruntime/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
-    
-       import { AddOnSdkApi } from "AddOnSdkApi";
+
+  `import { AddOnSdkApi } from "AddOnSdkApi";`
   
   to:
-        
-        import AddOnScriptSdk from "AddOnScriptSdk";
   
-  Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**. 
-- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md#cli-template-for-script-based-add-on) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`. 
+  `import AddOnScriptSdk from "AddOnScriptSdk";`
+  
+  Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**.
+
+- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/scriptruntime/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 - Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
 
 ## 2023-09-05
-### Added 
+
+### Added
+
 Added new **Audio API** documentation. You can now import audio to the current Adobe Express document in two different methods:
   
   1. Using the new [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) method, which requires a [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#mediaattributes) object containing the `title` of the audio content.
-  2. Using [drag and drop](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument), and supplying the [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes) object in the [`DragCompletionData`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata). 
-  
+  2. Using [drag and drop](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument), and supplying the [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes) object in the [`DragCompletionData`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata).
 
  Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
-
-
 
 <!-- <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. -->
 
-
-
 ## 2023-08-31
+
 ### Added
+
 Added new code sample to demonstrate how to use SWC-React and set theme properties in add-ons called **swc-react-theme-sampler** to the [Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler).
 
 ### Updated
+
 - Updated the [User Interface Guide](../guides/index.md) to add more notes around the recommended use of `swc-react` over React Spectrum and to point to the new sample mentioned above.
 
 ### Fixed
+
 - Fixed bug in the [locale](./addonsdk/app-ui.md) example.
 
 ## 2023-08-29
-- Added [`currentUser` API](../guides/develop/index.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/index.md#current-user).
-- Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
+
+- Added [`currentUser` API](../guides/develop/use_cases.md#current-user-for-monetization-flows) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/use_cases.md).
+- Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
 ## 2023-08-17
@@ -149,14 +178,13 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 - There's currently a bug where `addArtboard` could crash the application or corrupt the document if there's no `fill` specified on the artboard. *Please ensure you always add a fill in the same frame as the artboard creation until this issue is resolved*. Also note, when this bug is fixed, the `ArtboardNode` will accept a single `fill` object, rather than an `ItemList` of `fill`(s).
 
-- Currently, in the `addPage` API, a new page is created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will 
-change the default context to the `artboard` child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.
+- Currently, in the `addPage` API, a new page is created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will change the default context to the `artboard` child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.
 
-  **IMPORTANT:** We recommend that you ***only test the use of these experimental Editor APIs against non-essential documents***, due to the potential for loss or corruption. 
-
+  **IMPORTANT:** We recommend that you ***only test the use of these experimental Editor APIs against non-essential documents***, due to the potential for loss or corruption.
 
 ### Updates
-- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/index.md#premium-content). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/use_cases.md#premium-content). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
 
 ## 2023-08-09
 
@@ -186,7 +214,7 @@ change the default context to the `artboard` child of the newly added page. This
   - Setting rotation on an empty group is ignored. Always add content (children) to a group first, and then set its rotation.
   - When removing elements from a parent element, the element may continue to show in the Adobe Express layer stack. This will be addressed in the future. This can also occur if you call `clear()` to remove all children from an element as well as when using `removeFromParent()`.
   - Shape elements added to the document by users (via the Media tab) do not support fill or stroke properties at this time. Furthermore, you should generally avoid making changes to these shapes (they'll appear as group nodes), as this could corrupt the document. We'll add protections around this in an upcoming release.
-  - While the API supports adding multiple strokes to elements, Express currently only supports editing the _first_ stroke added. If you want to change the stroke of an element, _remove_ the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
+  - While the API supports adding multiple strokes to elements, Express currently only supports editing the *first* stroke added. If you want to change the stroke of an element, *remove* the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
 
     ```js
     element.strokes.clear();
@@ -196,7 +224,7 @@ change the default context to the `artboard` child of the newly added page. This
 - Likely API changes
   - Creating colors is currently done via `utils.createColor()`. We're likely to change how you assign colors to objects, so bear this in mind as you use the experimental APIs. Note that this means you cannot just pass a plain JS object of the form `{red, green, blue}` to the Editor APIs — it must be a color created using `utils.createColor`.
   - Editor API constants may be renamed or may change how they are accessed.
-  - Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be _moved_ and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.
+  - Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be *moved* and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.
   - There is no support for `fetch` in the Script Runtime environment. You can work around this by exposing a method from your panel that your script code can call that does the work of fetching remote content. In the future we may abstract this for you automatically.
   - The `strokes` API is likely to be modified so that it only supports a single stroke.
 - Typings & Typescript
@@ -214,10 +242,10 @@ change the default context to the `artboard` child of the newly added page. This
 ### Added
 
 - [UX Guidelines](../guides/design/index.md) are now available!
-- A new [`requestedSize`](../references/addonsdk/app-document/#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
-- A new [`clipboard` permission](../references/manifest/#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../guides/design/index.md#using-fonts).
-- CORS / COEP header handling added to [CORS guide](../guides/develop/cors.md#cors--coep-handling).
+- A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
+- A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
+- Information on [using fonts](../guides/design/user_interface.md#using-fonts).
+- CORS / COEP header handling added to the [CORS guide](../guides/develop/context.md#cors--coep-handling)
 
 ## 2023-06-08
 

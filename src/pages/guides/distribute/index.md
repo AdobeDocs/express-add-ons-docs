@@ -16,9 +16,6 @@ description: This is the submission and review overview page
 contributors:
   - https://github.com/hollyschinsky
 ---
-<InlineAlert slots="text" variant="info"/>
-
-Preview Adobe Express add-on SDK documentation while you wait to [join our private beta](https://adobe.com/go/express-developer).
 
 # Distribution Overview
 
@@ -46,7 +43,7 @@ Check out this short video below on how to share and publish your add-on to help
 - [Submit for Private Distribution](../distribute/submit-private-dist.md)
 - [Submit for Public Distribution](../distribute/submit-public-dist.md) -->
 
-## Submission Requirements
+<!-- ## Submission Requirements
 
 ### Publisher profile
 
@@ -67,8 +64,7 @@ Your publisher profile includes required details including:
 **IMPORTANT:** You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one-time thing (unless you decide you need to update it for your own reasons). **Note:** Any changes to your publisher profile will need to be submitted for approval again.
 Frequently changing your publisher profile can confuse users and erode trust. Please be sure you've considered this before changing this information.
 
-
-
+ -->
 
 <!-- 
 ### Private Distribution Requirements
@@ -79,7 +75,6 @@ Frequently changing your publisher profile can confuse users and erode trust. Pl
     3 sizes required in `.jpg` or `.png` format:
 
     - Size 36x36px
-
 
 ### Public Distribution Requirements
 
@@ -104,7 +99,6 @@ Frequently changing your publisher profile can confuse users and erode trust. Pl
     <InlineAlert slots="text" variant="warning"/>
     
     At least one screenshot is mandatory.        
-
 
 #### Metadata Requirements:
 
