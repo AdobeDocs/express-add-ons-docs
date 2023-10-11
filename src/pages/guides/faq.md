@@ -26,7 +26,7 @@ contributors:
 - [How do I save the state of my add-on?](#how-do-i-save-the-state-of-my-add-on)
 - [How do I use top level `await` while using webpack?](#how-do-i-use-top-level-await-while-using-webpack)
 - [How do I setup webpack to copy new files or folders into `dist`?](#how-do-i-setup-webpack-to-copy-new-files-or-folders-into-dist)
-- [My form submission doesn't work and the devtools console shows the error - "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?](#my-form-submission-doesnt-work-and-the-devtools-console-shows-the-error---blocked-form-submission-to---because-the-forms-frame-is-sandboxed-and-the-allow-forms-permission-is-not-set-whats-wrong)
+- [My form submission doesn't work and the devtools console shows the error - "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?](#my-form-submission-doesnt-work-and-the-devtools-console-shows-the-error-blocked-form-submission-to---because-the-forms-frame-is-sandboxed-and-the-allow-forms-permission-is-not-set-whats-wrong)
 - [How do I enable CORS for a service that blocks my add-on requests due to the origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-origin)
 - [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
 - [I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)

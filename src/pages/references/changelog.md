@@ -22,9 +22,15 @@ contributors:
 
 ## 2023-10-10
 
-## Updates
+### Updates
 
 Updates to the [OAuth APIs](./addonsdk/app-oauth.md) to allow for a new optional `windowSize` parameter to be specified in the [`AuthorizationRequest`](./addonsdk/app-oauth.md#authorizationrequest) object and the [`AuthorizeWithOwnRedirectRequest`](./addonsdk/app-oauth.md#authorizewithownredirectrequest) to set the desired size of the authorization window.
+
+## 2023-10-09
+
+### Updates
+
+Published new [Guidelines and requirements section](../guides/distribute/guidelines/); including [General guidelines](../guides/distribute/guidelines/general/), [Developer brand guidelines](../guides/distribute/guidelines/), [Monetization guidelines](../guides/distribute/guidelines/monetization.md) and [Generative AI guidelines](../guides/distribute/guidelines/genai/).
 
 ## 2023-10-03
 

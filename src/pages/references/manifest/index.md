@@ -122,7 +122,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 | Platform       | Description |
 | ----------------| -------------|
 | `desktop`       | Browser on desktop. |
-| `mobile`        | Browser on mobile and tablet devices. |     
+| `mobile`        | Browser on mobile and tablet devices. |
 | `app`           | Native app on mobile and tablet devices. |
 
 ## entryPoints
