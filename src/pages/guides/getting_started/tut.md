@@ -99,10 +99,10 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 }
 ```
 
-If you're wondering about `script/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iFrame. The code of the blank template is as follows. <span id="code-start"></span>
+If you're wondering about `script/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iFrame. The code of the blank template is as follows. Please use the iFrame and Document API tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.<span id="code-start"></span>
 
 <!-- Code below -->
-<CodeBlock slots="heading, code" repeat="3" languages="index.html, index.js, code.js"/>
+<CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iFrame 
 
@@ -176,16 +176,22 @@ function start() {
 start();
 ```
 
+#### Document API
+
+```js
+// empty
+```
+
 The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 ## The Communication API
 
 A crucial component of any add-on that consumes the Document API is the communication bridge with the iFrame. As we've seen in [this figure](#fig-communication-api), it's precisely the role of the Communication API. 
 
-The mechanism is straightforward: through the `runtime` object ([`code.js`](#code-start), line 2), you can invoke the `exposeApi()` method, which grants the iFrame access to the object literal that's its parameter. The iFrame must get to the `runtime`, too, and use the `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
+The mechanism is straightforward: through the `runtime` object ([`code.js`](#code-start), line 2), you can invoke the `exposeApi()` method, which grants the iFrame access to the object literal that is passed as a parameter. The iFrame must get to the `runtime`, too, and use the `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
 ![Add-on Communication API](img/tut/grid-addon-communicationapi.png)
 
-It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later; in any case, mind the syntax in case you need the functions to call each other. For instance, the following won't work, as arrow functions' `this` is inherited from the enclosing scope, and there's none provided.
+It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later; in any case, mind the syntax if you need the functions to call each other. For instance, the following won't work, as arrow functions' `this` is inherited from the enclosing scope, and there's none provided.
 
 ```js
 runtime.exposeApi({
@@ -199,7 +205,7 @@ runtime.exposeApi({
 });
 ```
 
-Using the *method shorthand syntax* provides a proper `this` reference instead.
+The *method shorthand syntax* provides a proper `this` reference instead.
 
 ```js
 runtime.exposeApi({
@@ -213,15 +219,105 @@ runtime.exposeApi({
 });
 ```
 
+A similar mechanism is employed to expose iFrame methods to the Script Runtime, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
+## The Document API
+
+### Using the Reference Documentation
+
+The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference](/references/scriptruntime/editor.md).
+
+![Add-on Communication API](img/tut/grid-addon-reference.png)
+
+In the left-navbar, you can browse through all the Classes (which Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/scriptruntime/editor/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/scriptruntime/editor/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/scriptruntime/editor/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/scriptruntime/editor/classes/Node/)—the base class.
+
+Some properties are shared among the `RectangleNode` and, say, other `StrokableNode` subclasses such as the `EllipseNode`: for instance, the `opacity`, or `blendMode`. Other ones are unique, like the `topLeftRadius`, which, in the context of an `EllipseNode`, wouldn't make sense.
+
+### Creating the first Shape
+
+It's finally time to start laying down some elements. Let's hook the only iFrame button currently available to a function exposed by the Document API.
+
+<!-- Code below -->
+<CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
+
+#### iFrame
+
+```html
+<body>
+    <sp-theme scale="medium" color="light" theme="express">
+        <sp-button id="createShape" disabled>Create shape</sp-button>
+    </sp-theme>
+</body>
+```
+
+#### iFrame
+
+```js
+// ... usual imports
+addOnUISdk.ready.then(async () => {
+  console.log("addOnUISdk is ready for use.");
+  const createShapeButton = document.getElementById("createShape");
+
+  const { runtime } = addOnUISdk.instance;
+  const scriptApi = await runtime.apiProxy("script");
+  scriptApi.createShape({ width: 200, height: 100 }); // 👈
+
+  createShapeButton.disabled = false;
+});
+```
+
+#### Document API
+
+```js
+// code.js
+import addOnScriptSdk from "AddOnScriptSdk";
+const { runtime } = addOnScriptSdk.instance;
+
+function start() {
+  runtime.exposeApi({
+    createShape({ width, height }) {  // 👈
+      // ...
+    },
+  });
+}
+
+start();
+```
+
+#### Document API
+
+```js
+// empty
+```
+
+
+It's considered good practice to disable all CTA (Call To Action) elements like the `<sp-button>` by default and enable them only when the `addOnUISdk` and `addOnScriptSdk` are ready (see `index.js` line 10).
+
+According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/scriptruntime/editor/classes/Editor/) class, which must be imported from Express with the following statement.
+
+```js
+import { editor, utils, Constants } from "express";
+```
+
+We'll also make use of `utils` and `Constants`—they are named imports from `"express"`, too. `createRectangle()` doesn't seem to need any parameter, either required or optional; hence, properties of this new element should be set after its creation.
+
+```js
+const rect = editor.createRectangle();
+rect.width = 200;
+rect.height = 100;
+rect.translateX = 50;
+rect.translateY = 50;
+```
+
+The `rect` object now exists, with a width of 200 pixels, a height of 100 and the top-left corner at the coordinate (50, 50), but it's not rendered anywhere yet. It must be _appended_ to a container node first like you'd do in web development with a regular HTML element created with JavaScript.
+## Another chapter
 
 ## Another chapter
 
+## Another chapter
 
 ## Another chapter
 
-
 ## Another chapter
-
 
 ## Another chapter
 
