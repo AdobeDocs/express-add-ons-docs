@@ -24,7 +24,7 @@ This tutorial will guide you through the creation of your first Express add-on b
 
 ## Introduction
 
-We'll build a fully functional Grids System add-on from scratch. Grid systems are widely used in the design world to bring structure and consistency to all visual content, from flyers to web pages or social media posts.
+Hello, and welcome to this Document API tutorial, where we'll build together a fully functional Grids System add-on from scratch. Grid systems are widely used in the design world to bring structure and consistency to all visual content, from flyers to web pages or social media posts.
 
 ![](img/tut/grid-addon.png)
 
@@ -185,7 +185,7 @@ start();
 The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 ## The Communication API
 
-A crucial component of any add-on that consumes the Document API is the communication bridge with the iFrame. As we've seen in [this figure](#fig-communication-api), it's precisely the role of the Communication API. 
+A crucial component of any add-on that consumes the Document API is the communication bridge with the iFrame. As we've seen in [this figure](#fig-communication-api), it's precisely the role of the **Communication API**. 
 
 The mechanism is straightforward: through the `runtime` object ([`code.js`](#code-start), line 2), you can invoke the `exposeApi()` method, which grants the iFrame access to the object literal that is passed as a parameter. The iFrame must get to the `runtime`, too, and use the `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
@@ -219,7 +219,10 @@ runtime.exposeApi({
 });
 ```
 
+<InlineAlert variant="info" slots="text1" />
+
 A similar mechanism is employed to expose iFrame methods to the Script Runtime, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
+
 ## The Document API
 
 ### Using the Reference Documentation
@@ -228,13 +231,13 @@ The Document API is rapidly expanding: to keep track of its progress, you must g
 
 ![Add-on Communication API](img/tut/grid-addon-reference.png)
 
-In the left-navbar, you can browse through all the Classes (which Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/scriptruntime/editor/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/scriptruntime/editor/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/scriptruntime/editor/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/scriptruntime/editor/classes/Node/)—the base class.
+In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/scriptruntime/editor/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/scriptruntime/editor/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/scriptruntime/editor/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/scriptruntime/editor/classes/Node/)—the base class.
 
 Some properties are shared among the `RectangleNode` and, say, other `StrokableNode` subclasses such as the `EllipseNode`: for instance, the `opacity`, or `blendMode`. Other ones are unique, like the `topLeftRadius`, which, in the context of an `EllipseNode`, wouldn't make sense.
 
 ### Creating the first Shape
 
-It's finally time to start laying down some elements. Let's hook the only iFrame button currently available to a function exposed by the Document API.
+It's finally time to start laying down some elements. Let's hook the only iFrame button currently available to a function exposed by the Document API. Type the following into the source files and run the add-on.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
@@ -259,7 +262,10 @@ addOnUISdk.ready.then(async () => {
 
   const { runtime } = addOnUISdk.instance;
   const scriptApi = await runtime.apiProxy("script");
-  scriptApi.createShape({ width: 200, height: 100 }); // 👈
+
+  createShapeButton.addEventListener("click", async () => {
+    scriptApi.createShape({ width: 200, height: 100 }); // 👈
+  });
 
   createShapeButton.disabled = false;
 });
@@ -268,14 +274,24 @@ addOnUISdk.ready.then(async () => {
 #### Document API
 
 ```js
-// code.js
 import addOnScriptSdk from "AddOnScriptSdk";
 const { runtime } = addOnScriptSdk.instance;
+import { editor, utils, Constants } from "express";
 
 function start() {
   runtime.exposeApi({
     createShape({ width, height }) {  // 👈
-      // ...
+      const rect = editor.createRectangle();
+      rect.width = width;
+      rect.height = height;
+      rect.translateX = 50;
+      rect.translateY = 50;
+
+      const col = utils.createColor(0.9, 0.5, 0.9);
+      const fillColor = editor.createColorFill(col);
+      rect.fills.append(fillColor);
+
+      editor.context.insertionParent.children.append(rect);
     },
   });
 }
@@ -290,7 +306,9 @@ start();
 ```
 
 
-It's considered good practice to disable all CTA (Call To Action) elements like the `<sp-button>` by default and enable them only when the `addOnUISdk` and `addOnScriptSdk` are ready (see `index.js` line 10).
+Please note that it's considered good practice to disable all CTA (Call To Action) elements like the `<sp-button>` by default and enable them only when the `addOnUISdk` and `addOnScriptSdk` are ready, and event listeners are properly set (see `index.js` line 13).
+
+The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
 According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/scriptruntime/editor/classes/Editor/) class, which must be imported from Express with the following statement.
 
@@ -298,28 +316,286 @@ According to the Reference, `createRectangle()` is a method of the [`Editor`](/r
 import { editor, utils, Constants } from "express";
 ```
 
-We'll also make use of `utils` and `Constants`—they are named imports from `"express"`, too. `createRectangle()` doesn't seem to need any parameter, either required or optional; hence, properties of this new element should be set after its creation.
+We'll also make use of `utils` and `Constants`—they are named imports from `"express"`, too. According to the Reference, `createRectangle()` doesn't need any parameter, either required or optional; hence, the properties of this new element should be set after its creation.
 
 ```js
 const rect = editor.createRectangle();
-rect.width = 200;
-rect.height = 100;
-rect.translateX = 50;
+rect.width = width;
+rect.height = height;
+rect.translateX = 50; 
 rect.translateY = 50;
 ```
 
-The `rect` object now exists, with a width of 200 pixels, a height of 100 and the top-left corner at the coordinate (50, 50), but it's not rendered anywhere yet. It must be _appended_ to a container node first like you'd do in web development with a regular HTML element created with JavaScript.
-## Another chapter
+We've set its width, height and position from the default coordinate, the top-left corner, to (50, 50). Giving it a fill color is a multi-step process.
 
-## Another chapter
+```js
+const col = utils.createColor(0.9, 0.5, 0.9);
+const fillColor = editor.createColorFill(col);
+rect.fills.append(fillColor);
+```
 
-## Another chapter
+First, you make use of the `createColor()` method from the `utils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/scriptruntime/editor/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by appending it to the `fills` list.
 
-## Another chapter
+<!-- code here -->
+<InlineAlert variant="info" slots="text1" />
 
-## Another chapter
+Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/scriptruntime/editor/classes/Editor.md#createstroke).
 
-## Another chapter
+The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
+
+```js
+// appending the rect object to the scene
+editor.context.insertionParent.children.append(rect);
+```
+
+Let's unpack this line. As it usually happens with any DOM, it's easier if read *backwards*—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the _preferred parent_ to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^1]
+
+In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are *appended* to collections: you `append()` a color to a fills list and a rectangle to a container.
+
+![](img/tut/grid-addon-shape.png)
+
+Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](/references/scriptruntime/editor/classes/ArtboardNode/) of the first [Page](/references/scriptruntime/editor/classes/PageNode/).
+
+```js
+// ...
+const doc = editor.documentRoot;                     // document
+const currentPage = doc.pages.first;                 // page
+const currentArtboard = currentPage.artboards.first; // artboard
+currentArtboard.children.append(rect);               // children
+// or
+editor.documentRoot.pages.first.artboards.first.children.append(rect);
+```
+
+Quoting a revealing bit of the Page reference:
+
+> A PageNode represents a page in the document. A page contains one or more artboards, representing "scenes" in a linear timeline sequence. Those artboards, in turn, contain all the visual content of the document.
+
+You now understand the fundamentals of the Adobe Express DOM and the hierarchical relations between nodes. You have all the necessary tools to begin coding the Grids add-on; you can always refer to the documentation when needed.
+
+## Coding the Grids add-on
+
+### Designing the UI with Spectrum Web Components
+
+Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with Spectrum Web Components (see [this guide](/guides/design/user_interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular `<sp-number-field>` for the Rows and Columns inputs, `<sp-slider>` for the Gutter,[^2] `<sp-swatch>` for the color picker, and `<sp-button>` for the CTA buttons.
+
+The layout is based on nested FlexBox CSS classes, such as `row` and `column`. Because of the fixed width, margins are tight; the design has also been compacted along the Y-axis for consistency.
+
+![](img/tut/grid-addon-swc.png)
+
+Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](/guides/design/user_interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
+
+```bash
+npm install @spectrum-web-components/swatch
+npm install @spectrum-web-components/button
+...
+```
+
+Finally, import them in the `ui/index.js` file.
+
+```js
+import "@spectrum-web-components/swatch/sp-swatch.js";
+import "@spectrum-web-components/button/sp-button.js";
+// ...
+```
+
+The only tricky part worth mentioning here is relative to the color pickers. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element.
+
+<!-- Code below -->
+<CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
+
+#### index.html
+
+```html
+<div class="row">
+	<!-- ... -->
+	<sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
+	<input type="color" id="rowsColorPicker" style="display: none;">
+</div>
+```
+
+#### ui/index.js
+
+```js
+// Ref to the <sp-input type="color">
+const rowsColorPicker = document.getElementById("rowsColorPicker");
+// Ref to the <sp-swatch>
+const rowsColorSwatch = document.getElementById("rowsColorSwatch");
+
+// Initializing the colors for both of them
+rowsColorPicker.value = "#ccccff";
+rowsColorSwatch.color = "#ccccff";
+
+// The <sp-swatch> click triggers the <input> click
+rowsColorSwatch.addEventListener("click", function () {
+	rowsColorPicker.click();
+});
+
+// The <input> click changes the <sp-swatch> fill with the picked color.
+rowsColorPicker.addEventListener("input", function (event) {
+	const selectedColor = event.target.value;
+	rowsColorSwatch.setAttribute("color", selectedColor);
+});
+```
+
+The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On `input` (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` is changed accordingly to keep both of them in sync. Please note that their values are initialized in `ui/index.js` for convenience—setting them in `index.html` would be equally fine. 
+
+![](img/tut/grid-addon-picker.png)
+
+Please refer to the source code for other details on the HTML structure, which are not discussed here for brevity's sake.
+
+### Collecting values from the UI
+
+Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Script Runtime is retrieved, and whatever the Document API exposes is stored in the `scriptApi` constant (lines 9-10).
+
+<!-- Code below -->
+<CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
+
+#### index.html
+
+```html
+<body>
+	<sp-theme scale="medium" color="light" theme="express">
+		<h2>Design Grid creator</h2>
+		<div class="row gap-20">
+			<div class="row">
+				<div class="column">
+					<sp-field-label for="rows" size="m">Rows</sp-field-label>
+					<sp-number-field id="rows"></sp-number-field>
+				</div>
+				<sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
+				<input type="color" id="rowsColorPicker" style="display: none;">
+			</div>
+			<div class="row">
+				<div class="column">
+					<sp-field-label for="cols" size="m">Columns</sp-field-label>
+					<sp-number-field id="cols"></sp-number-field>
+				</div>
+				<sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
+				<input type="color" id="colsColorPicker" style="display: none;">
+			</div>
+		</div>
+		<div class="row">
+			<sp-slider label="Gutter" id="gutter" variant="filled" editable
+			           hide-stepper min="1" max="50" step="1"></sp-slider>
+		</div>
+		<sp-button-group horizontal>
+			<sp-button id="deleteGrid" disabled>Delete</sp-button>
+			<sp-button id="createGrid" disabled>Create</sp-button>
+		</sp-button-group>
+	</sp-theme>
+</body>
+```
+
+#### ui/index.js
+
+```js
+// All the SWC imports...
+
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  console.log("addOnUISdk is ready for use.");
+
+  // Get the Script Runtime.
+  const { runtime } = addOnUISdk.instance;
+  const scriptApi = await runtime.apiProxy("script");
+
+  // Input fields -------------------------------------------
+  const rowsInput = document.getElementById("rows");
+  const colsInput = document.getElementById("cols");
+  const gutterInput = document.getElementById("gutter");
+
+  rowsInput.value = 4;
+  colsInput.value = 6;
+  gutterInput.value = 10;
+
+  // Color pickers ------------------------------------------
+  const colsColorPicker = document.getElementById("colsColorPicker");
+  const colsColorSwatch = document.getElementById("colsColorSwatch");
+  const rowsColorPicker = document.getElementById("rowsColorPicker");
+  const rowsColorSwatch = document.getElementById("rowsColorSwatch");
+
+  colsColorPicker.value = "#ffcccc";
+  colsColorSwatch.color = "#ffcccc";
+  rowsColorPicker.value = "#ccccff";
+  rowsColorSwatch.color = "#ccccff";
+
+  colsColorSwatch.addEventListener("click", function () {
+    colsColorPicker.click();
+  });
+  colsColorPicker.addEventListener("input", function (event) {
+    const selectedColor = event.target.value;
+    colsColorSwatch.setAttribute("color", selectedColor);
+  });
+
+  rowsColorSwatch.addEventListener("click", function () {
+    rowsColorPicker.click();
+  });
+  rowsColorPicker.addEventListener("input", function (event) {
+    const selectedColor = event.target.value;
+    rowsColorSwatch.setAttribute("color", selectedColor);
+  });
+
+  // CTA Buttons --------------------------------------------
+  const createGridBtn = document.getElementById("createGrid");
+  const deleteGridBtn = document.getElementById("deleteGrid");
+
+  deleteGridBtn.onclick = async (event) => {
+    await scriptApi.deleteGrid();
+  };
+
+  createGridBtn.onclick = async (event) => {
+    await scriptApi.addGrid({
+      columns: colsInput.value,
+      rows: rowsInput.value,
+      gutter: gutterInput.value,
+      columnColor: colsColorPicker.value,
+      rowColor: rowsColorPicker.value,
+    });
+  };
+
+  // Only now we can enable the button
+  createGridBtn.disabled = false;
+  deleteGridBtn.disabled = false;
+});
+```
+
+Eventually, the two CTA buttons (Delete and Create) invoke methods exposed by the Document API, respectively `deleteGrid()` and `createGrid()`. The latter expects an options object with `rows`, `columns`, `gutter`, `columnColor`,  and `rowColor` properties.
+### Creating Rows and Columns
+
+It makes sense to approach this grid business with some caution, as we're just starting with the Document API. Let's set up `script/code.js` to expose this `addGrid()` method and manage the argument provided.
+
+<!-- Code below -->
+<CodeBlock slots="heading, code" repeat="1" languages="script/code.js"/>
+
+#### script/code.js
+
+```js
+import addOnScriptSdk from "AddOnScriptSdk";
+const { runtime } = addOnScriptSdk.instance;
+import { editor, utils, Constants } from "express";
+
+function start() {
+  runtime.exposeApi({
+    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+      console.log("addGrid", columns, rows, gutter, columnColor, rowColor);
+    },
+  });
+}
+
+start();
+```
+
+When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Script Runtime, and logged.
+
+![](img/tut/grid-addon-console.png)
+
+To begin with, we'll create rows .
+
+
+## Next Steps
+
+
 
 
 ## Final Project
@@ -606,3 +882,9 @@ const addColumns = (columNumber, gutter, color) => {
 export { addColumns, addRows };
 
 ```
+
+---
+
+[^1] The quotes are from the Documentation Reference of each element.
+
+[^2]: It could have been another `<sp-number-field>`, but a slider played well with the overall design.
