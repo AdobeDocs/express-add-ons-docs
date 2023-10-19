@@ -219,6 +219,7 @@ runtime.exposeApi({
 });
 ```
 
+<!-- code below -->
 <InlineAlert variant="info" slots="text1" />
 
 A similar mechanism is employed to expose iFrame methods to the Script Runtime, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
@@ -376,7 +377,12 @@ You now understand the fundamentals of the Adobe Express DOM and the hierarchica
 
 ### Designing the UI with Spectrum Web Components
 
-Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with Spectrum Web Components (see [this guide](/guides/design/user_interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular `<sp-number-field>` for the Rows and Columns inputs, `<sp-slider>` for the Gutter,[^2] `<sp-swatch>` for the color picker, and `<sp-button>` for the CTA buttons.
+Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with Spectrum Web Components (see [this guide](/guides/design/user_interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
+
+- `<sp-number-field>` for the Rows and Columns inputs;
+- `<sp-slider>` for the Gutter,[^2] 
+- `<sp-swatch>` for the color picker
+- `<sp-button-group>` and `<sp-button>` for the CTA buttons.
 
 The layout is based on nested FlexBox CSS classes, such as `row` and `column`. Because of the fixed width, margins are tight; the design has also been compacted along the Y-axis for consistency.
 
@@ -398,7 +404,7 @@ import "@spectrum-web-components/button/sp-button.js";
 // ...
 ```
 
-The only tricky part worth mentioning here is relative to the color pickers. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element.
+The only tricky part worth mentioning here is relative to the color pickers. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -586,11 +592,271 @@ function start() {
 start();
 ```
 
-When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Script Runtime, and logged.
+When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Script Runtime, and logged. So far, so good.
 
 ![](img/tut/grid-addon-console.png)
 
-To begin with, we'll create rows .
+To begin with, we'll create rows: rectangles that must be as wide as the page. To calculate their height, first, subtract the total number of gutters (which is equal to the number of rows plus one) from the page height. Then, divide the resulting value by the number of rows.
+
+```text
+rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
+```
+
+![](img/tut/grid-addon-rowheight.png)
+
+We must get hold of the [Document](/references/scriptruntime/editor/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](/references/scriptruntime/editor/classes/PageNode/)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
+
+```js
+// ...
+runtime.exposeApi({
+	addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+		const doc = editor.documentRoot;
+		const page = doc.pages.first;
+		const rowWidth = page.width;
+	  const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
+	},
+});
+```
+
+To draw all four of them (or any number coming from the UI) at once, a loop is in order.
+
+```js
+  // ...
+  var rowsRect = [];
+  for (let i = 0; i < rows; i++) {
+	  let r = editor.createRectangle();
+	  r.width = page.width;
+	  r.height = rowHeight;
+		// moving the row in place
+    r.translateY = gutter + (gutter + rowHeight) * i;
+    rowsRect.push(r);
+  }
+  // adding the rows to the page
+  rowsRect.forEach((rect) => page.artboards.first.children.append(rect));
+```
+
+We've created all the needed rectangles, shifting them on the Y-axis according to their number and gutter, collecting them in a `rowsRect` array; which, in turn, we've looped through to append them all to the first `artboard` in the page.
+
+<!-- code below -->
+<InlineAlert variant="info" slots="text1" />
+
+Please note that you must always `append()` elements to the container's `children` property.
+
+Using the same principles, we can create columns: rectangles as tall as the page and whose width we now know how to compute.
+
+```js
+const doc = editor.documentRoot;
+const page = doc.pages.first;
+var colsRect = [];
+const colWidth = (page.width - (cols + 1) * gutter) / cols;
+for (let i = 0; i < cols; i++) {
+	let r = editor.createRectangle();
+	  r.width = colWidth;
+	  r.height = page.height;
+		r.translateX = gutter + (gutter + colWidth) * i;
+	cols.push(r);
+}
+cols.forEach((rect) => page.artboards.first.children.append(rect));
+```
+
+We now have most of what is needed to complete the Grids add-on; we're in dire need of a better structure, though.
+
+### Organizing the code
+
+The Grid creation process can be split into smaller, separate steps—we can take this chance to think about how to structure the entire project.
+
+- Creating a rectangle is obviously best dealt with with a dedicated `createRect()` function.
+- Rows and Columns can be separate processes, too.
+- `code.js` doesn't need to expose anything else but the `addGrid()` and  `deleteGrid()` methods.
+- `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `script/code.js`. 
+- `createRect()` will be kept as a private utility.
+- The Rows and Columns colors come from the UI as hex strings, like `"#ffcccc"`; we must write a function that extracts R, G, and B values and maps them to the (0..1) range.
+
+<!-- Code below -->
+<CodeBlock slots="heading, code" repeat="2" languages="script/code.js, script/shapeUtils.js" />
+
+#### script/code.js
+
+
+```js
+import addOnScriptSdk from "AddOnScriptSdk";
+import { editor } from "express";
+import { addColumns, addRows } from "./shapeUtils";
+
+// Get the Script runtime.
+const { runtime } = addOnScriptSdk.instance;
+
+function start() {
+  const scriptApi = {
+    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+      addRows(rows, gutter, rowColor);
+      addColumns(columns, gutter, columnColor);
+			// ...
+    },
+    deleteGrid() {
+      // ...
+    },
+  };
+  runtime.exposeApi(scriptApi);
+}
+start();
+```
+
+#### script/shapeUtils.js
+
+```js
+import { editor, utils, Constants } from "express";
+
+const hexToColor = (hex) => {
+	// ...
+};
+
+// Utility to create a rectangle and fill it with a color.
+const createRect = (width, height, color) => {
+  const rect = editor.createRectangle();
+  rect.width = width;
+  rect.height = height;
+  // Fill the rectangle with the color.
+  const rectangleFill = editor.createColorFill(hexToColor(color));
+  rect.fills.append(rectangleFill);
+  return rect;
+};
+
+const addRows = (rowsNumber, gutter, color) => {
+  const page = editor.documentRoot.pages.first;
+  var rows = [];
+  const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
+  for (let i = 0; i < rowsNumber; i++) {
+    let r = createRect(page.width, rowHeight, color);
+    r.translateY = gutter + (gutter + rowHeight) * i;
+    rows.push(r);
+  }
+  rows.forEach((row) => page.artboards.first.children.append(row));
+};
+
+const addColumns = (columNumber, gutter, color) => {
+  const page = editor.documentRoot.pages.first;
+  var cols = [];
+  const colWidth = (page.width - (columNumber + 1) * gutter) / columNumber;
+  for (let i = 0; i < columNumber; i++) {
+    let r = createRect(colWidth, page.height, color);
+    r.translateX = gutter + (gutter + colWidth) * i;
+    cols.push(r);
+  }
+  cols.forEach((col) => page.artboards.first.children.append(col));
+};
+
+export { addColumns, addRows };
+```
+
+As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Let's fill in the missing bits. The color conversion method returns a proper Color object that can be used as a fill (see `shapeUtils.js`, line 13).
+
+```js
+const hexToColor = (hex) => {
+  // Ensure the hex value doesn't have a "#" at the beginning
+  if (hex.startsWith("#")) { hex = hex.slice(1) }
+  // Extract red, green, and blue hex values
+  const redHex = hex.slice(0, 2);
+  const greenHex = hex.slice(2, 4);
+  const blueHex = hex.slice(4, 6);
+  // Convert hex values to decimal values
+  const red = parseInt(redHex, 16) / 255;
+  const green = parseInt(greenHex, 16) / 255;
+  const blue = parseInt(blueHex, 16) / 255;
+  return utils.createColor(red, green, blue);
+};
+```
+
+It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/scriptruntime/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/scriptruntime/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
+
+```js
+const addRows = (rowsNumber, gutter, color) => {
+  // ...
+  var rows = [];
+  // ...
+
+  const rowsGroup = editor.createGroup();          // creating a group
+  page.artboards.first.children.append(rowsGroup); // appending to the page
+  rowsGroup.children.append(...rows);              // appending rectangles
+};
+// 👆 same in addColumns()
+```
+
+<!-- code below -->
+<InlineAlert variant="warning" slots="heading, text1, text2, text3" />
+
+** Grouping elements**
+
+Please note that, like every other node, groups are first created via `createGroup()` and then put on the page—in this example, into the first artboard of the document's first page.
+
+It's important to remember that **groups cannot act as containers unless they exist on the document** first.
+
+```js
+// DO
+const rowsGroup = editor.createGroup();          // ✅  create
+page.artboards.first.children.append(rowsGroup); // ✅  append
+rowsGroup.children.append(...rows);              // ✅  fill
+
+// DON'T
+const rowsGroup = editor.createGroup();          // ✅  create
+rowsGroup.children.append(...rows);              // ❌  fill 
+page.artboards.first.children.append(rowsGroup); // ❌  append
+```
+
+![](img/tut/grid-addon-groups.png)
+
+To complete the projects, we can add some finishing touches.
+
+Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation is again handy with the boolean [`locked`](/references/scriptruntime/editor/classes/GroupNode.md#locked) property, which we can easily set after filling the group.
+
+```js
+// ...
+rowsGroup.children.append(...rows);
+rowsGroup.locked = true;
+```
+
+The Reference also shows an interesting [`blendMode`](/references/scriptruntime/editor/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/scriptruntime/editor/enums/BlendModeValue/#multiply) will produce a visually nicer overlay effect ([opacity](/references/scriptruntime/editor/classes/GroupNode.md#opacity) can be an alternative).
+
+```js
+// ...
+rowsGroup.blendMode = Constants.BlendModeValue.multiply;
+rowsGroup.locked = true;
+```
+
+At present, the Reference includes only a few enumerations, such as `BlendModeValue`. As the Document API expands, more enumerations will be added. They provide sets of named constants, making the code more readable by replacing direct numeric values with descriptive names.[^3]
+
+It would be preferable if a single group contained Rows and Columns; we must edit both `addRows()` and `addColumns()` first to return their group in order to reference them in the parent one.
+
+```js
+const addRows = (rowsNumber, gutter, color) => {
+	// ...
+	rowsGroup.locked = true;
+	return rowsGroup;  // 👈 returning the group
+}
+
+const addColumns = (columNumber, gutter, color) => {
+	// ...
+	columnsGroup.locked = true;
+	return columnsGroup;// 👈 
+}
+```
+
+We can now use them in `addGrid()` as children of this new parent group.
+
+```js
+addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+	// ...
+
+	const rowGroup = addRows(rows, gutter, rowColor);
+	const columnGroup = addColumns(columns, gutter, columnColor);
+
+	// create a parent group
+	const gridGroup = editor.createGroup();
+	page.artboards.first.children.append(gridGroup);
+	gridGroup.children.append(rowGroup, columnGroup); // filling with Rows and Columns
+	gridGroup.locked = true;
+}
+```
 
 
 ## Next Steps
@@ -883,8 +1149,7 @@ export { addColumns, addRows };
 
 ```
 
----
 
-[^1] The quotes are from the Documentation Reference of each element.
-
+[^1]: The quotes are from the Documentation Reference of each element.
 [^2]: It could have been another `<sp-number-field>`, but a slider played well with the overall design.
+[^3]: For instance, `BlendModeValue.multiply` corresponds to `3`; developers aren't supposed to use it directly, as it's an internal value subjected to change.
