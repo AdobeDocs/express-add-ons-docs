@@ -79,7 +79,7 @@ npm run start
 
 This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](/guides/getting_started/quickstart.md) guide for a step-by-step walkthrough.
 
-Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones have a Webpack configuration, which is handy when using Spectrum Web Components (SWC). This project provides both hooks to the Script Runtime and the development environment needed to use SWCs.
+Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones have a Webpack configuration, which is handy when using Spectrum Web Components (SWC). This project provides support for the Script Runtime and the development environment needed to use SWCs.
 
 ![](img/tut/grid-addon-folder-structure.png)
 
@@ -99,7 +99,7 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 }
 ```
 
-If you're wondering about `script/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iFrame. The code of the blank template is as follows. Please use the iFrame and Document API tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.<span id="code-start"></span>
+If you're wondering about `script/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iFrame in this specific project. The code of the blank template is as follows. Please use the iFrame and Document API tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.<span id="code-start"></span>
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
@@ -187,11 +187,11 @@ The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here]
 
 A crucial component of any add-on that consumes the Document API is the communication bridge with the iFrame. As we've seen in [this figure](#fig-communication-api), it's precisely the role of the **Communication API**. 
 
-The mechanism is straightforward: through the `runtime` object ([`code.js`](#code-start), line 2), you can invoke the `exposeApi()` method, which grants the iFrame access to the object literal that is passed as a parameter. The iFrame must get to the `runtime`, too, and use the `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
+The mechanism is straightforward: through the `runtime` object ([`code.js`](#code-start), line 2), you can invoke the `exposeApi()` method, which grants the iFrame access to the object literal that is passed as a parameter. The iFrame must get to the `runtime`, too, and use its `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
 ![Add-on Communication API](img/tut/grid-addon-communicationapi.png)
 
-It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later; in any case, mind the syntax if you need the functions to call each other. For instance, the following won't work, as arrow functions' `this` is inherited from the enclosing scope, and there's none provided.
+It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later. In any case, mind the syntax if you need the functions to call each other: for instance, the following won't work, as arrow functions' `this` is inherited from the enclosing scope, and there's none provided.
 
 ```js
 runtime.exposeApi({
@@ -317,7 +317,7 @@ According to the Reference, `createRectangle()` is a method of the [`Editor`](/r
 import { editor, utils, Constants } from "express";
 ```
 
-We'll also make use of `utils` and `Constants`—they are named imports from `"express"`, too. According to the Reference, `createRectangle()` doesn't need any parameter, either required or optional; hence, the properties of this new element should be set after its creation.
+We'll also make use of `utils` and `Constants`—they are named imports from `"express"`, too. The `createRectangle()` function doesn't need any parameter, either required or optional; hence, the properties of this new element must be set after its creation.
 
 ```js
 const rect = editor.createRectangle();
@@ -327,7 +327,7 @@ rect.translateX = 50;
 rect.translateY = 50;
 ```
 
-We've set its width, height and position from the default coordinate, the top-left corner, to (50, 50). Giving it a fill color is a multi-step process.
+Dimensions and positions are straightforward, while assigning a fill color is a multi-step process.
 
 ```js
 const col = utils.createColor(0.9, 0.5, 0.9);
@@ -351,7 +351,7 @@ editor.context.insertionParent.children.append(rect);
 
 Let's unpack this line. As it usually happens with any DOM, it's easier if read *backwards*—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the _preferred parent_ to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^1]
 
-In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are *appended* to collections: you `append()` a color to a fills list and a rectangle to a container.
+In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are *appended* to collections: you `append()` a color to a `fills` list and a rectangle to a container's `children` collection.
 
 ![](img/tut/grid-addon-shape.png)
 
@@ -404,7 +404,7 @@ import "@spectrum-web-components/button/sp-button.js";
 // ...
 ```
 
-The only tricky part worth mentioning here is relative to the color pickers. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
+The only trickyUI bit worth mentioning here is relative to the color pickers. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -451,7 +451,7 @@ Please refer to the source code for other details on the HTML structure, which a
 
 ### Collecting values from the UI
 
-Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Script Runtime is retrieved, and whatever the Document API exposes is stored in the `scriptApi` constant (lines 9-10).
+Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Script Runtime is retrieved, and everything the Document API exposes is stored in the `scriptApi` constant (lines 9-10).
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -592,7 +592,7 @@ function start() {
 start();
 ```
 
-When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Script Runtime, and logged. So far, so good.
+When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Script Runtime, and logged. So far, so good, the Communication API does its job.
 
 ![](img/tut/grid-addon-console.png)
 
@@ -601,6 +601,8 @@ To begin with, we'll create rows: rectangles that must be as wide as the page. T
 ```text
 rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
 ```
+
+This is because we're using gutters as page margins, too, as the following illustration shows.
 
 ![](img/tut/grid-addon-rowheight.png)
 
@@ -640,7 +642,7 @@ We've created all the needed rectangles, shifting them on the Y-axis according t
 <!-- code below -->
 <InlineAlert variant="info" slots="text1" />
 
-Please note that you must always `append()` elements to the container's `children` property.
+Please remember that you must always `append()` elements to the container's `children` property.
 
 Using the same principles, we can create columns: rectangles as tall as the page and whose width we now know how to compute.
 
@@ -668,8 +670,7 @@ The Grid creation process can be split into smaller, separate steps—we can tak
 - Creating a rectangle is obviously best dealt with with a dedicated `createRect()` function.
 - Rows and Columns can be separate processes, too.
 - `code.js` doesn't need to expose anything else but the `addGrid()` and  `deleteGrid()` methods.
-- `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `script/code.js`. 
-- `createRect()` will be kept as a private utility.
+- `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `script/code.js`, while `createRect()` will be kept as private.
 - The Rows and Columns colors come from the UI as hex strings, like `"#ffcccc"`; we must write a function that extracts R, G, and B values and maps them to the (0..1) range.
 
 <!-- Code below -->
@@ -749,7 +750,7 @@ const addColumns = (columNumber, gutter, color) => {
 export { addColumns, addRows };
 ```
 
-As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Let's fill in the missing bits. The color conversion method returns a proper Color object that can be used as a fill (see `shapeUtils.js`, line 13).
+As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Let's fill in the missing bits. The color conversion is performed by `hexToColor()`, which returns a proper Color object that can be used as a fill (see `shapeUtils.js`, line 13).
 
 ```js
 const hexToColor = (hex) => {
@@ -782,14 +783,14 @@ const addRows = (rowsNumber, gutter, color) => {
 // 👆 same in addColumns()
 ```
 
+![](img/tut/grid-addon-groups.png)
+
 <!-- code below -->
 <InlineAlert variant="warning" slots="heading, text1, text2, text3" />
 
 ** Grouping elements**
 
-Please note that, like every other node, groups are first created via `createGroup()` and then put on the page—in this example, into the first artboard of the document's first page.
-
-It's important to remember that **groups cannot act as containers unless they exist on the document** first.
+Like every other node, groups are first created, and then put on the page. It's important to remember that **groups can only act as containers if they exist on the document** first.
 
 ```js
 // DO
@@ -803,11 +804,7 @@ rowsGroup.children.append(...rows);              // ❌  fill
 page.artboards.first.children.append(rowsGroup); // ❌  append
 ```
 
-![](img/tut/grid-addon-groups.png)
-
-To complete the projects, we can add some finishing touches.
-
-Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation is again handy with the boolean [`locked`](/references/scriptruntime/editor/classes/GroupNode.md#locked) property, which we can easily set after filling the group.
+To complete the projects, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/scriptruntime/editor/classes/GroupNode.md#locked) property, which we can easily set after filling the group.
 
 ```js
 // ...
@@ -841,7 +838,7 @@ const addColumns = (columNumber, gutter, color) => {
 }
 ```
 
-We can now use them in `addGrid()` as children of this new parent group.
+We can now reference them in `addGrid()`, appended as children of this new parent group.
 
 ```js
 addGrid({ columns, rows, gutter, columnColor, rowColor }) {
@@ -858,13 +855,65 @@ addGrid({ columns, rows, gutter, columnColor, rowColor }) {
 }
 ```
 
+### Deleting Grids
+
+To speed up the testing process for new grid designs, including a button that allows users to clear the current set and experiment with different combinations would be helpful. In theory, if you can add elements to a container object's `children` list, you should also be able to remove them. In fact, most Node elements have a `removeFromParent()` method, which detaches them from the parent container.
+
+```js
+gridGroup.removeFromParent(); // voilà
+```
+
+If you think about it, there might be an issue lurking here. The process of removing a group is performed at a later time, with respect to its creation: how can we be sure to target the correct container? Groups don't have names or IDs, at least for the time being. Luckily, the `code.js` file provides an environment that persists in between iFrame calls: in other words, you can store the group in a variable and retrieve it later.
+
+```js
+var gridRef = null; // 👈 Grids group reference
+
+function start() {
+  runtime.exposeApi({
+    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+      // ...
+      const gridGroup = editor.createGroup();
+      // ...
+      gridRef = gridGroup; // 👈 storing the group for later
+    },
+    deleteGrid() {
+      if (gridRef) {
+        try {
+          gridRef.removeFromParent(); // 👈 removing from the document
+          gridRef = null;             //    clearing the reference
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        console.log("No grid to delete");
+      }
+    },
+  });
+}
+start();
+```
+
+Although not exposed through the Communication API, the `gridRef` variable is private to `code.js`, and exists within the closure of the functions defined inside and exposed by `runtime.exposeApi()`.[^4]
 
 ## Next Steps
 
+Congratulations! You've coded from scratch the Grids Design System add-on. This proof-of-concept may be extended to make it even more useful as a product; you may implement the following features as an exercise.
 
-
+- **Page margins**: we're using the gutter for this purpose, but a proper `<sp-number-field>` can be added to allow users to set margins.
+- **Visibility toggle**: Use a `<sp-slider>`to control the grid's opacity, or add a `<sp-switch>` to toggle them on and off.
+- **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](/references/addonsdk/instance-clientStorage/).
 
 ## Final Project
+
+Let's review the concepts covered in this tutorial and how they've been implemented in the Grids add-on.
+
+- The **iFrame** and the **Script Runtime** are two distinct entities able to share contexts via the Communication API. We've used the `exposeApi()` method of the `runtime` object to allow the iFrame to invoke functions in the Document API domain.
+- The **Document API** provides access to Adobe Express' Document Object Model, which defines containment structures and inheritance hierarchies. We've retrieved the document, its pages, and artboards; created, moved and assigned blending modes to shapes; created, populated and locked groups.
+- Nodes (elements) in Adobe Express documents can be added to the document in a position relative to the currently active selection or targeting a container as the **insertion point**; we've seen how `ContainerNode` elements have a `children` collection to `append()` elements to.
+- The Document API **context is permanent** in between iFrame calls. We've seen that it's possible to store a reference to a Node within the exposed methods' closure and act upon it after its creation.
+- **Spectrum Web Components** are crucial to UI building, but sometimes they require customization; in this project, we've linked a `<sp-swatch>` to a traditional `<input>` element to create an Adobe Express' native-looking color picker.
+
+The code for this project is available [here](#), in two states: the starting point (one Create Shape button in the UI and the respective Document API function) if you want to follow along with the tutorial and type in the code; and the final state, which code is found below for convenience.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js" />
@@ -1152,4 +1201,5 @@ export { addColumns, addRows };
 
 [^1]: The quotes are from the Documentation Reference of each element.
 [^2]: It could have been another `<sp-number-field>`, but a slider played well with the overall design.
-[^3]: For instance, `BlendModeValue.multiply` corresponds to `3`; developers aren't supposed to use it directly, as it's an internal value subjected to change.
+[^3]: For instance, `BlendModeValue.multiply` corresponds to `3`; developers aren't supposed to use it directly, as it's an internal value subject to change.
+[^4]:  Future versions of the Document API may provide more deliberate ways to refer to elements.
