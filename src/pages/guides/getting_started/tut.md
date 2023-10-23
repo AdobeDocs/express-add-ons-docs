@@ -69,7 +69,7 @@ This is a high-level overview of the overall structure; while the implementation
 
 ### The Project Structure
 
-The complete code for the Grids System add-on can be found [here](#), although it would be best if you followed along, starting from this [blank template](#): it sets up a JavaScript/Webpack environment with everything we need to complete the project. You can download the code, `cd` in the `grids-design` folder and then:
+The complete code for the Grids System add-on can be found [here](https://github.com/undavide/express-grids-addon), although it would be best if you followed along, starting from this [blank template](https://github.com/undavide/express-addon-document-api-template): it sets up a JavaScript/Webpack environment with everything we need to complete the project. You can download the code, `cd` in the `grids-design` folder and then:
 
 ```bash
 npm install
@@ -112,8 +112,8 @@ If you're wondering about `script/shapeUtils.js`, it is an auxiliary file contai
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Design Grid creator Adobe Express add-on" />
-    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Script Runtime" />
+    <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Script Runtime" />
+    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Script Runtime, Document API" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grids add-on</title>
     <link rel="stylesheet" href="styles.css">
@@ -138,8 +138,8 @@ import "@spectrum-web-components/theme/theme-light.js";
 import "@spectrum-web-components/theme/express/theme-light.js";
 import "@spectrum-web-components/theme/express/scale-medium.js";
 import "@spectrum-web-components/theme/sp-theme.js";
+import "@spectrum-web-components/button/sp-button.js";
 
-// SDK import
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
@@ -154,7 +154,6 @@ addOnUISdk.ready.then(async () => {
   // Enabling CTA elements only when the addOnUISdk is ready
   createShapeButton.disabled = false;
 });
-
 ```
 
 #### Document API
@@ -168,7 +167,7 @@ function start() {
     log: (...args) => {
       console.log(...args);
     },
-    // add other properties here
+    // other properties will go here...
   });
 }
 
@@ -919,7 +918,7 @@ Let's review the concepts covered in this tutorial and how they've been implemen
 
 ## Final Project
 
-The code for this project can be downloaded [here](#). It's available in two states: the starting point (one Create Shape button in the UI and the respective Document API function) if you want to follow along with the tutorial and type in the code—the best way to learn—and the final state, which code is found also below for convenience.
+The code for this project can be downloaded [here](https://github.com/undavide/express-grids-addon). It's available in two states: the starting point (one Create Shape button in the UI and the respective Document API function) if you want to follow along with the tutorial and type in the code—the best way to learn—and the final state, which code is also found below for convenience.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, styles.css, code.js, shapeUtils.js" />
@@ -932,8 +931,8 @@ The code for this project can be downloaded [here](#). It's available in two sta
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Design Grid creator Adobe Express add-on" />
-    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Script Runtime" />
+    <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Script Runtime" />
+    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Script Runtime, Document API" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grids add-on</title>
     <link rel="stylesheet" href="styles.css">
@@ -950,7 +949,6 @@ The code for this project can be downloaded [here](#). It's available in two sta
                 </div>
                 <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
                 <input type="color" id="rowsColorPicker" style="display: none;">
-
             </div>
             <div class="row">
                 <div class="column">
@@ -967,11 +965,11 @@ The code for this project can be downloaded [here](#). It's available in two sta
         </div>
         <sp-button-group horizontal>
             <sp-button id="deleteGrid" disabled>Delete</sp-button>
-            <!-- <sp-button id="editGrid" disabled>Edit</sp-button> -->
             <sp-button id="createGrid" disabled>Create</sp-button>
         </sp-button-group>
     </sp-theme>
 </body>
+
 </html>
 ```
 
@@ -980,10 +978,8 @@ The code for this project can be downloaded [here](#). It's available in two sta
 ```js
 import "@spectrum-web-components/styles/typography.css";
 import "@spectrum-web-components/theme/src/themes.js";
-import "@spectrum-web-components/theme/theme-dark.js";
 import "@spectrum-web-components/theme/theme-light.js";
 import "@spectrum-web-components/theme/express/theme-light.js";
-import "@spectrum-web-components/theme/express/theme-dark.js";
 import "@spectrum-web-components/theme/express/scale-medium.js";
 import "@spectrum-web-components/theme/sp-theme.js";
 import "@spectrum-web-components/button/sp-button.js";
@@ -992,12 +988,13 @@ import "@spectrum-web-components/field-label/sp-field-label.js";
 import "@spectrum-web-components/number-field/sp-number-field.js";
 import "@spectrum-web-components/slider/sp-slider.js";
 import "@spectrum-web-components/swatch/sp-swatch.js";
+
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
 
-  // Get the UI runtime.
+  // Get the Script runtime.
   const { runtime } = addOnUISdk.instance;
   const scriptApi = await runtime.apiProxy("script");
 
@@ -1058,10 +1055,11 @@ addOnUISdk.ready.then(async () => {
     });
   };
 
-  // Only now we can enable the button
+  // Only now it is safe to enable the buttons
   createGridBtn.disabled = false;
   deleteGridBtn.disabled = false;
 });
+
 
 ```
 
@@ -1134,23 +1132,41 @@ var gridRef = null;
 
 function start() {
   // APIs to be exposed to the UI runtime
-  // i.e., to the `index.html` file of this add-on.
-  const scriptApi = {
+  runtime.exposeApi({
+    /**
+     * Add a grid to the document.
+     *
+     * @param {Object} options - The options for the grid.
+     * @param {number} options.columns - The number of columns in the grid.
+     * @param {number} options.rows - The number of rows in the grid.
+     * @param {number} options.gutter - The size of the gutter between columns and rows.
+     * @param {string} options.columnColor - The color of the columns.
+     * @param {string} options.rowColor - The color of the rows.
+     * @returns {Group} The group containing the grid.
+     */
     addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      console.log("addGrid", columns, rows, gutter, columnColor, rowColor);
+      // Get the document and page.
       const doc = editor.documentRoot;
       const page = doc.pages.first;
 
+      // Create the grid.
       const rowGroup = addRows(rows, gutter, rowColor);
       const columnGroup = addColumns(columns, gutter, columnColor);
 
+      // Create the grid's group.
       const gridGroup = editor.createGroup();
       page.artboards.first.children.append(gridGroup);
       gridGroup.children.append(rowGroup, columnGroup);
       gridGroup.locked = true;
+
+      // Save the grid reference.
       gridRef = gridGroup;
-      console.log("gridGroup", gridGroup);
     },
+
+    /**
+     * Delete the grid from the document.
+     * @returns {void}
+     */
     deleteGrid() {
       console.log("deleteGrid", gridRef);
       if (gridRef) {
@@ -1165,13 +1181,11 @@ function start() {
         console.log("No grid to delete");
       }
     },
-  };
-
-  // Expose `ScriptApi` to the UI runtime.
-  runtime.exposeApi(scriptApi);
+  });
 }
 
 start();
+
 ```
 
 #### Document API
@@ -1179,6 +1193,13 @@ start();
 ```js
 import { editor, utils, Constants } from "express";
 
+/**
+ * Convert a hex color string to an instance of the Color class
+ * Private utility of the shapeUtils module.
+ *
+ * @param {string} hex - The hex color value to convert.
+ * @returns {Color} A color instance with RGB values in the (0..1) range.
+ */
 const hexToColor = (hex) => {
   // Ensure the hex value doesn't have a "#" at the beginning
   if (hex.startsWith("#")) {
@@ -1198,58 +1219,86 @@ const hexToColor = (hex) => {
   return utils.createColor(red, green, blue);
 };
 
-// Utility to create a rectangle and fill it with a color.
+/**
+ * Create a rectangle with the specified width, height, and color.
+ * Private utility of the shapeUtils module.
+ *
+ * @param {number} width - The width of the rectangle.
+ * @param {number} height - The height of the rectangle.
+ * @param {string} color - The color of the rectangle in hex format.
+ * @returns {RectangleNode} The created rectangle.
+ */
 const createRect = (width, height, color) => {
   const rect = editor.createRectangle();
   rect.width = width;
   rect.height = height;
-  // Fill the rectangle with the color.
   const rectangleFill = editor.createColorFill(hexToColor(color));
   rect.fills.append(rectangleFill);
   return rect;
 };
 
+/**
+ * Add rows of rectangles to the document.
+ *
+ * @param {number} rowsNumber - The number of rows to add.
+ * @param {number} gutter - The size of the gutter between rows.
+ * @param {string} color - The color of the rows in hex format.
+ * @returns {GroupNode} A group containing the created rows.
+ */
 const addRows = (rowsNumber, gutter, color) => {
-  console.log("addRows", rowsNumber, gutter, color);
   const doc = editor.documentRoot;
   const page = doc.pages.first;
 
   var rows = [];
   const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
+  // Create the rectangles
   for (let i = 0; i < rowsNumber; i++) {
     let r = createRect(page.width, rowHeight, color);
     r.translateY = gutter + (gutter + rowHeight) * i;
     rows.push(r);
   }
+  // Append the rectangles to the document
   rows.forEach((row) => page.artboards.first.children.append(row));
-
+  // Create the group
   const rowsGroup = editor.createGroup();
+  // Append the group to the document
   page.artboards.first.children.append(rowsGroup);
+  // Populate the group with the rectangles
   rowsGroup.children.append(...rows);
-  // rowsGroup.opacity = rowsOpacity;
+  // Edit the group's properties
   rowsGroup.blendMode = Constants.BlendModeValue.multiply;
   rowsGroup.locked = true;
   return rowsGroup;
 };
 
-const addColumns = (columNumber, gutter, color) => {
-  // const context = editor.context;
+/**
+ * Add columns of rectangles to the document.
+ *
+ * @param {number} columsNumber - The number of columns to add.
+ * @param {number} gutter - The size of the gutter between columns.
+ * @param {string} color - The color of the columns in hex format.
+ * @returns {GroupNode} A group containing the created columns.
+ */
+const addColumns = (columsNumber, gutter, color) => {
   const doc = editor.documentRoot;
   const page = doc.pages.first;
-
   var cols = [];
-  const colWidth = (page.width - (columNumber + 1) * gutter) / columNumber;
-  for (let i = 0; i < columNumber; i++) {
+  const colWidth = (page.width - (columsNumber + 1) * gutter) / columsNumber;
+  // Create the rectangles
+  for (let i = 0; i < columsNumber; i++) {
     let r = createRect(colWidth, page.height, color);
     r.translateX = gutter + (gutter + colWidth) * i;
     cols.push(r);
   }
+  // Append the rectangles to the document
   cols.forEach((col) => page.artboards.first.children.append(col));
-
+  // Create the group
   const columnsGroup = editor.createGroup();
+  // Append the group to the document
   page.artboards.first.children.append(columnsGroup);
+  // Populate the group with the rectangles
   columnsGroup.children.append(...cols);
-  //   columnsGroup.opacity = columnsOpacity;
+  // Edit the group's properties
   columnsGroup.blendMode = Constants.BlendModeValue.multiply;
   columnsGroup.locked = true;
   return columnsGroup;
