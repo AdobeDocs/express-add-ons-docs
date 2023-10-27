@@ -20,6 +20,12 @@ contributors:
 
 # Changelog
 
+## 2023-10-26
+
+### Updates
+
+- New questions and answers added to the FAQ regarding Adobe's use of add-on data, where to file feature requests and more. 
+
 ## 2023-10-10
 
 ### Updates

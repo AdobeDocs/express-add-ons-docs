@@ -39,6 +39,8 @@ contributors:
 - [Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?](#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error)
 - [Is `SharedArrayBuffer` supported?](#is-sharedarraybuffer-supported)
 - [Which browsers and operating systems are currently supported?](#which-browsers-and-operating-systems-are-currently-supported)
+- [How does Adobe use my add-on’s data?](#how-does-adobe-use-my-add-ons-data)
+- [Where can I request new add-on features or suggest ideas?](#where-can-i-request-new-add-on-features-or-suggest-ideas)
 
 ## Answers
 
@@ -56,7 +58,7 @@ contributors:
 
 ### How do I save the state of my add-on?
 
-  The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](.) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
+  The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](../references/addonsdk/instance-clientStorage.md) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
 
 ### How do I use top level `await` while using webpack?
 
@@ -147,3 +149,13 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 ### Which browsers and operating systems are currently supported?
 
   Please see the [Adobe Express System requirements](https://helpx.adobe.com/express/system-requirements.html) for what's currently supported.
+
+### How does Adobe use my add-on’s data?
+
+  Adobe only instruments and reports on user behaviors related to discovering and managing their add-on, including searching for, installing, running, sharing (via link), and uninstalling an add-on.
+
+  Adobe does not instrument, store, or report on any action that the user takes within the add-on’s UI. Therefore, Adobe does not capture any user data related to 3rd party services, licenses, or user accounts, including personal information, except that which is already made directly available to Adobe through general usage of our products.
+
+### Where can I request new add-on features or suggest ideas?
+
+  You can head over to the [Adobe Express UserVoice forum](https://adobeexpress.uservoice.com/forums/951181-adobe-express) to request features, suggest integration ideas and more.
