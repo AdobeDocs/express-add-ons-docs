@@ -11,23 +11,23 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Adobe Express Document API tutorial
-description: This is an Adobe Express Document API in-depth tutorial
+title: Building your first add-on with Document APIs
+description: This is an in-depth tutorial that will guide you in the creation of a Grids add-ons for Adobe Express using the Document API
 contributors:
   - https://github.com/undavide
 ---
 
-# Adobe Express Document API tutorial
+# Building your first add-on with Document API
 
 This tutorial will guide you through the creation of your first Express add-on based on the Adobe Express Document API.
 
 ## Introduction
 
-Hello, and welcome to this Adobe Express Document API tutorial, where we'll build together a **fully functional Grids System add-on** from scratch. Grid systems are widely used in the design world to bring structure and consistency to all visual content, from flyers to web pages or social media posts.
+Hello, and welcome to this Adobe Express Document API tutorial, where we'll build together a **fully functional Grid System add-on** from scratch. Grid systems are widely used in the design world to bring structure and consistency to all visual content, from flyers to web pages or social media posts.
 
 ![](img/tut/grid-addon.png)
 
-Your add-on will allow users to create a variable number of rows and columns, controlling the gutter and color overlays.
+Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
 ### Prerequisites
 
@@ -58,7 +58,7 @@ Context permanence
 
 ### Getting Started with the Document API
 
-As part of the [Authoring Sandbox](/references/scriptruntime/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of add-ons' architecture.
+As part of the [Authoring Sandbox](/references/scriptruntime/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
 - The **iFrame** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
 - The **Authoring Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iFrame (thanks to the [Communication API](/references/scriptruntime/communication/)), providing access to the [Document API](/references/scriptruntime/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
