@@ -40,21 +40,21 @@ Your add-on will allow users to create a variable number of rows and columns, co
 <!-- List block here -->
 <ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-iFrame and Authoring Sandbox communication
+[iFrame and Authoring Sandbox communication](#the-communication-api)
 
-Spectrum Web Components
+[Spectrum Web Components](#designing-the-ui-with-spectrum-web-components)
 
-Adobe Express Document API
+[Adobe Express Document API](#the-document-api)
 
-Color Pickers
+[Color Pickers](#colorpickers)
 
-Nodes insertion point
+[Nodes insertion point](#nodeinsertionpoint)
 
-Creating and manipulating shapes
+[Creating and manipulating shapes](#creating-the-first-shape)
 
-Grouping elements
+[Grouping elements](#groupshapes)
 
-Context permanence
+[Context permanence](#deleting-grids)
 
 ### Getting Started with the Document API
 
@@ -212,7 +212,7 @@ runtime.exposeApi({
 });
 ```
 
-The *method shorthand syntax* provides a proper `this` reference instead.
+The _method shorthand syntax_ provides a proper `this` reference instead.
 
 ```js
 runtime.exposeApi({
@@ -345,16 +345,16 @@ First, you make use of the `createColor()` method from the `utils` class, which 
 
 Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/scriptruntime/editor/classes/Editor.md#createstroke).
 
-The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
+The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. <span id="nodeinsertionpoint"></span>But **it still needs to be rendered on the page!**
 
 ```js
 // appending the rect object to the scene
 editor.context.insertionParent.children.append(rect);
 ```
 
-Let's unpack this line. As it usually happens with any DOM, it's easier if read *backwards*—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the *preferred parent* to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^1]
+Let's unpack this line. As it usually happens with any DOM, it's easier if read _backwards_—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the _preferred parent_ to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^1]
 
-In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are *appended* to collections: you `append()` a color to a `fills` list and a rectangle to a container's `children` collection.[^2]
+In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a color to a `fills` list and a rectangle to a container's `children` collection.[^2]
 
 ![](img/tut/grid-addon-shape.png)
 
@@ -407,7 +407,7 @@ import "@spectrum-web-components/button/sp-button.js";
 // ...
 ```
 
-The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
+The only tricky UI bit worth mentioning here is relative to the **color pickers**.<span id="colorpickers"></span> SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -771,7 +771,7 @@ const hexToColor = (hex) => {
 };
 ```
 
-It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/scriptruntime/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/scriptruntime/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
+It'd be nice to group rows and columns. <span id="groupshapes"></span>The Editor class provides a [`createGroup()`](/references/scriptruntime/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/scriptruntime/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
