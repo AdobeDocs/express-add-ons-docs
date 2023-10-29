@@ -11,8 +11,8 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Building your first add-on with Document APIs
-description: This is an in-depth tutorial that will guide you in the creation of a Grids add-ons for Adobe Express using the Document API
+title: Building your first add-on with the Document API
+description: This is an in-depth tutorial that will guide you in the creation of a Grids add-on for Adobe Express using the Document API
 contributors:
   - https://github.com/undavide
 ---
@@ -25,7 +25,7 @@ This tutorial will guide you through the creation of your first Express add-on b
 
 Hello, and welcome to this Adobe Express Document API tutorial, where we'll build together a **fully functional Grid System add-on** from scratch. Grid systems are widely used in the design world to bring structure and consistency to all visual content, from flyers to web pages or social media posts.
 
-![](img/tut/grid-addon.png)
+![](images/grids-addon.png)
 
 Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
@@ -46,13 +46,13 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 [Adobe Express Document API](#the-document-api)
 
-[Color Pickers](#colorpickers)
+[Color Pickers](#designing-the-ui-with-spectrum-web-components)
 
-[Nodes insertion point](#nodeinsertionpoint)
+[Nodes insertion point](#creating-the-first-shape)
 
 [Creating and manipulating shapes](#creating-the-first-shape)
 
-[Grouping elements](#groupshapes)
+[Grouping elements](#organizing-the-code)
 
 [Context permanence](#deleting-grids)
 
@@ -65,7 +65,7 @@ As part of the [Authoring Sandbox](/references/scriptruntime/index.md), the Adob
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
-![](img/tut/grid-addon-communication.png)
+![](images/grids-addon-communication.png)
 
 ### The Project Structure
 
@@ -81,7 +81,7 @@ This will install the required dependencies, build the project, and then serve i
 
 Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Authoring Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
-![](img/tut/grid-addon-folder-structure.png)
+![](images/grids-addon-folder-structure.png)
 
 As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iFrame logic code (UI element handlers, etc.). The Document API entry point is instead `script/code.js`, as defined in the `manifest.json`:
 
@@ -188,7 +188,7 @@ A crucial component of any add-on that consumes the Document API is the communic
 
 The mechanism is straightforward: through the `runtime` object (`code.js`, line 2), you can invoke the `exposeApi()` method, which grants the iFrame access to the object literal that is passed as a parameter. The iFrame must get to the `runtime`, too, and use its `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
-![Add-on Communication API](img/tut/grid-addon-communicationapi.png)
+![Add-on Communication API](images/grids-addon-communicationapi.png)
 
 It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later.
 
@@ -234,7 +234,7 @@ It's also possible to expose iFrame methods to the Authoring Sandbox, i.e., usin
 
 The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/scriptruntime/editor.md).
 
-![Add-on Communication API](img/tut/grid-addon-reference.png)
+![Add-on Communication API](images/grids-addon-reference.png)
 
 In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/scriptruntime/editor/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/scriptruntime/editor/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/scriptruntime/editor/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/scriptruntime/editor/classes/Node/)—the base class.
 
@@ -345,7 +345,7 @@ First, you make use of the `createColor()` method from the `utils` class, which 
 
 Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/scriptruntime/editor/classes/Editor.md#createstroke).
 
-The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. <span id="nodeinsertionpoint"></span>But **it still needs to be rendered on the page!**
+The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
 
 ```js
 // appending the rect object to the scene
@@ -356,7 +356,7 @@ Let's unpack this line. As it usually happens with any DOM, it's easier if read 
 
 In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a color to a `fills` list and a rectangle to a container's `children` collection.[^2]
 
-![](img/tut/grid-addon-shape.png)
+![](images/grids-addon-shape.png)
 
 Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](/references/scriptruntime/editor/classes/ArtboardNode/) of the first [Page](/references/scriptruntime/editor/classes/PageNode/).
 
@@ -389,7 +389,7 @@ Although the main subject of this tutorial is the Document API, let's spend a mo
 
 The layout is based on nested FlexBox CSS classes, such as `row` and `column`. Because of the fixed width, margins are tight; the design has also been compacted along the Y-axis for consistency.
 
-![](img/tut/grid-addon-swc.png)
+![](images/grids-addon-swc.png)
 
 Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](/guides/design/user_interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
 
@@ -407,7 +407,7 @@ import "@spectrum-web-components/button/sp-button.js";
 // ...
 ```
 
-The only tricky UI bit worth mentioning here is relative to the **color pickers**.<span id="colorpickers"></span> SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
+The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -448,7 +448,7 @@ rowsColorPicker.addEventListener("input", function (event) {
 
 The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On `input` (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` controlling its fill is changed accordingly to keep both of them in sync. Please note that their values are initialized in `ui/index.js` for convenience—setting them in `index.html` would be equally fine.
 
-![](img/tut/grid-addon-picker.png)
+![](images/grids-addon-picker.png)
 
 Please refer to the source code for other details on the HTML structure, which are not discussed here for brevity's sake.
 
@@ -598,7 +598,7 @@ start();
 
 When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Authoring Sandbox, and logged. So far, so good, the Communication API does its job.
 
-![](img/tut/grid-addon-console.png)
+![](images/grids-addon-console.png)
 
 To begin with, we'll create rows: rectangles that must be as wide as the page. To calculate their height, first, subtract the total number of gutters (which is equal to the number of rows plus one) from the page height. Then, divide the resulting value by the number of rows.
 
@@ -608,7 +608,7 @@ rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
 
 This is because we're using gutters as page margins, too, as the following illustration shows.
 
-![](img/tut/grid-addon-rowheight.png)
+![](images/grids-addon-rowheight.png)
 
 We must get hold of the [Document](/references/scriptruntime/editor/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](/references/scriptruntime/editor/classes/PageNode/)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
 
@@ -771,7 +771,7 @@ const hexToColor = (hex) => {
 };
 ```
 
-It'd be nice to group rows and columns. <span id="groupshapes"></span>The Editor class provides a [`createGroup()`](/references/scriptruntime/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/scriptruntime/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
+It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/scriptruntime/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/scriptruntime/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
@@ -786,7 +786,7 @@ const addRows = (rowsNumber, gutter, color) => {
 // 👆 same in addColumns()
 ```
 
-![](img/tut/grid-addon-groups.png)
+![](images/grids-addon-groups.png)
 
 <!-- code below -->
 <InlineAlert variant="warning" slots="heading, text1, text2" />
