@@ -13,11 +13,13 @@ keywords:
   - API
 title: Building your first add-on with the Document API
 description: This is an in-depth tutorial that will guide you in the creation of a Grids add-on for Adobe Express using the Document API
+published: 2023-11-05
+updated: 2023-11-05
 contributors:
   - https://github.com/undavide
 ---
 
-# Building your first add-on with Document API
+# Building your first add-on with the Document API
 
 This tutorial will guide you through the creation of your first Express add-on based on the Adobe Express Document API.
 
@@ -29,9 +31,14 @@ Hello, and welcome to this Adobe Express Document API tutorial, where we'll buil
 
 Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
+### Timestamp
+
+This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 5th, 2023.
+
 ### Prerequisites
 
-- Familiarity with HTML, CSS, JavaScript and the Adobe Express add-ons environment. If you need a refresher, follow the [quickstart](/guides/getting_started/quickstart.md) guide.
+- Familiarity with HTML, CSS, JavaScript.
+- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting_started/quickstart.md) guide.
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 
@@ -56,6 +63,9 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 [Context permanence](#deleting-grids)
 
+
+![](images/grids-addon-animation.gif)
+
 ### Getting Started with the Document API
 
 As part of the [Authoring Sandbox](/references/scriptruntime/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
@@ -69,7 +79,7 @@ This is a high-level overview of the overall structure; while the implementation
 
 ### The Project Structure
 
-The complete code for the Grids System add-on can be found [here](https://github.com/undavide/express-grids-addon), although it would be best if you followed along, starting from this [blank template](https://github.com/undavide/express-addon-document-api-template): it sets up a JavaScript/Webpack environment with everything we need to complete the project. You can download the code, `cd` in the `grids-design` folder and then:
+The complete code for the Grids System add-on can be found [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/express-grids-addon), although it would be best if you followed along, starting from this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/express-addon-document-api-template): it sets up a JavaScript/Webpack environment with everything we need to complete the project. You can download the code, `cd` in the `grids-design` folder and then:
 
 ```bash
 npm install
@@ -180,7 +190,12 @@ start();
 // empty
 ```
 
-Please use the iFrame and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show. The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
+<InlineAlert variant="info" slots="text1" />
+
+Please use the iFrame and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show. 
+
+
+The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 
 ## The Communication API
 
@@ -310,7 +325,7 @@ start();
 // empty
 ```
 
-Please note that it's considered good practice to **disable all CTA** (Call To Action) elements like the `<sp-button>` by default and enable them only when the `addOnUISdk` and `addOnScriptSdk` are ready, and event listeners are properly set (see `index.js` line 13).
+Please note that it's considered good practice to initially **disable all interactive elements** that need to communicate with the Document API. In this case, there's only one CTA (Call To Action) `<sp-button>`, but generally any other elements that can make changes to the document should be treated similarly. You should enable them only when the `addOnUISdk` and `addOnScriptSdk` are initialized, and event listeners are properly set (see `index.js` line 13).
 
 The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
@@ -330,7 +345,7 @@ rect.translateX = 50;
 rect.translateY = 50;
 ```
 
-Dimensions and positions are straightforward, while assigning a fill color is a multi-step process.
+Dimensions and positions are straightforward while assigning a fill color is a multi-step process at the moment.[^1]
 
 ```js
 const col = utils.createColor(0.9, 0.5, 0.9);
@@ -352,9 +367,9 @@ The `rect` object now exists as a `RectangleNode` instance with a width of 200 p
 editor.context.insertionParent.children.append(rect);
 ```
 
-Let's unpack this line. As it usually happens with any DOM, it's easier if read _backwards_—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the _preferred parent_ to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^1]
+Let's unpack this line. As it usually happens with any DOM (Document Object Model), it's easier if read _backwards_—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the _preferred parent_ to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^2]
 
-In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a color to a `fills` list and a rectangle to a container's `children` collection.[^2]
+In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a color to a `fills` list and a rectangle to a container's `children` collection.[^3]
 
 ![](images/grids-addon-shape.png)
 
@@ -383,7 +398,7 @@ You now understand the fundamentals of the Adobe Express DOM and the hierarchica
 Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](/guides/design/user_interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
 
 - `<sp-number-field>` for the Rows and Columns inputs;
-- `<sp-slider>` for the Gutter;[^3]
+- `<sp-slider>` for the Gutter;[^4]
 - `<sp-swatch>` for the color picker;
 - `<sp-button-group>` and `<sp-button>` for the CTA buttons.
 
@@ -407,7 +422,7 @@ import "@spectrum-web-components/button/sp-button.js";
 // ...
 ```
 
-The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWCs feature a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
+The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -463,35 +478,37 @@ Let's finish the UI, completing the code for `ui/index.js`. As you can see, it i
 
 ```html
 <body>
-	<sp-theme scale="medium" color="light" theme="express">
-		<h2>Design Grid creator</h2>
-		<div class="row gap-20">
-			<div class="row">
-				<div class="column">
-					<sp-field-label for="rows" size="m">Rows</sp-field-label>
-					<sp-number-field id="rows"></sp-number-field>
-				</div>
-				<sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
-				<input type="color" id="rowsColorPicker" style="display: none;">
-			</div>
-			<div class="row">
-				<div class="column">
-					<sp-field-label for="cols" size="m">Columns</sp-field-label>
-					<sp-number-field id="cols"></sp-number-field>
-				</div>
-				<sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
-				<input type="color" id="colsColorPicker" style="display: none;">
-			</div>
-		</div>
-		<div class="row">
-			<sp-slider label="Gutter" id="gutter" variant="filled" editable
-			           hide-stepper min="1" max="50" step="1"></sp-slider>
-		</div>
-		<sp-button-group horizontal>
-			<sp-button id="deleteGrid" disabled>Delete</sp-button>
-			<sp-button id="createGrid" disabled>Create</sp-button>
-		</sp-button-group>
-	</sp-theme>
+  <sp-theme scale="medium" color="light" theme="express">
+    <h2>Design Grid creator</h2>
+    <div class="row gap-20">
+      <div class="row">
+        <div class="column">
+          <sp-field-label for="rows" size="m">Rows</sp-field-label>
+          <sp-number-field id="rows" min="1" max="20">
+          </sp-number-field>
+        </div>
+        <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
+        <input type="color" id="rowsColorPicker" style="display: none;">
+      </div>
+      <div class="row">
+        <div class="column">
+          <sp-field-label for="cols" size="m">Columns</sp-field-label>
+          <sp-number-field id="cols" min="1" max="20">
+          </sp-number-field>
+        </div>
+        <sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
+        <input type="color" id="colsColorPicker" style="display: none;">
+      </div>
+    </div>
+    <div class="row">
+      <sp-slider label="Gutter" id="gutter" variant="filled" editable hide-stepper min="1" max="50"
+        format-options='{"style": "unit", "unit": "px"}' step="1"></sp-slider>
+    </div>
+    <sp-button-group horizontal>
+      <sp-button id="deleteGrid" variant="secondary" disabled>Delete</sp-button>
+      <sp-button id="createGrid" disabled>Create</sp-button>
+    </sp-button-group>
+  </sp-theme>
 </body>
 ```
 
@@ -510,6 +527,7 @@ addOnUISdk.ready.then(async () => {
   const scriptApi = await runtime.apiProxy("script");
 
   // Input fields -------------------------------------------
+
   const rowsInput = document.getElementById("rows");
   const colsInput = document.getElementById("cols");
   const gutterInput = document.getElementById("gutter");
@@ -519,6 +537,7 @@ addOnUISdk.ready.then(async () => {
   gutterInput.value = 10;
 
   // Color pickers ------------------------------------------
+
   const colsColorPicker = document.getElementById("colsColorPicker");
   const colsColorSwatch = document.getElementById("colsColorSwatch");
   const rowsColorPicker = document.getElementById("rowsColorPicker");
@@ -546,11 +565,16 @@ addOnUISdk.ready.then(async () => {
   });
 
   // CTA Buttons --------------------------------------------
+
   const createGridBtn = document.getElementById("createGrid");
   const deleteGridBtn = document.getElementById("deleteGrid");
 
   deleteGridBtn.onclick = async (event) => {
-    await scriptApi.deleteGrid();
+    const res = await scriptApi.deleteGrid();
+    if (res) {
+      // When there's been an error deleting the grid, you may want to handle it here
+    }
+    deleteGridBtn.disabled = true;
   };
 
   createGridBtn.onclick = async (event) => {
@@ -561,15 +585,23 @@ addOnUISdk.ready.then(async () => {
       columnColor: colsColorPicker.value,
       rowColor: rowsColorPicker.value,
     });
+    deleteGridBtn.disabled = false;
   };
 
-  // Only now we can enable the button
+  // Only now it is safe to enable the button
   createGridBtn.disabled = false;
-  deleteGridBtn.disabled = false;
 });
 ```
 
-Eventually, the two CTA buttons (Delete and Create) invoke methods exposed by the Document API, respectively `deleteGrid()` and `createGrid()`. The latter expects an options object with `rows`, `columns`, `gutter`, `columnColor`,  and `rowColor` properties.
+Eventually, the two buttons (Delete and Create) invoke methods exposed by the Document API, respectively `deleteGrid()` and `createGrid()`. The latter expects an options object with `rows`, `columns`, `gutter`, `columnColor`,  and `rowColor` properties.
+
+### Validation and Error Handling
+
+It's worth taking a moment to discuss good validation and error-handling practices at this stage. Just as the QA engineer walking into a bar in the [famous joke](https://twitter.com/brenankeller/status/1068615953989087232), you must ensure that user input aligns with what the grid algorithm expects; for example, that it receives unsigned integers.
+
+For this tutorial, we'll limit ourselves to setting `min` and `max` values for the Rows, Columns, and Gutter ranges. This will prevent scenarios like creating a negative number of columns. In a typical implementation, you'd want to insert a validation routine before invoking the primary function. Depending on the algorithm's and the UI's complexity, this routine might belong to the iFrame, the Authoring Sandbox, or both. Additionally, apart from validating value type and range, you may want to ensure that the Gutter size is compatible with the chosen number of Rows and Columns to prevent them from overflowing the page dimensions.[^5]
+
+Another crucial notion is to avoid silent failures: every action should either succeed or provide the user with a notification if it doesn't. That's why, for instance, the Delete button is left disabled until a set of grids is created; instead of handling the removal of a non-existent grid, it's preferable to prevent it in the first place.
 
 ### Creating Rows and Columns
 
@@ -624,7 +656,25 @@ runtime.exposeApi({
 });
 ```
 
-To draw all four of them (or any number coming from the UI) at once, a loop is in order.
+In case you want to use the currently active Page instead, you have to traverse back to it using the `insertionParent` property of the `context` we've seen earlier as a starting point, and its `parent` property until you reach a node whose `type` is equal to the string `"Page"`. Adobe Express documents must have at least one page, so this is a safe operation.
+
+```js
+// ...
+// Using the current page.
+let currentNode = editor.context.insertionParent;
+let page = null;
+
+while (currentNode) {
+    if (currentNode.type === "Page") {
+        page = currentNode;
+        break;
+    }
+    page = currentNode.parent;
+}
+// ... rest of the code
+```
+
+To draw all four (or any number coming from the UI) rectangles at once, a loop is in order.
 
 ```js
   // ...
@@ -671,7 +721,7 @@ We now have most of what is needed to complete the Grids add-on; we're in dire n
 
 The Grid creation process can be split into **smaller, separate steps**—we can take this chance to think about how to structure the entire project.
 
-- Creating a rectangle is obviously best dealt with with a dedicated `createRect()` function.
+- Creating a rectangle is best handled using a dedicated `createRect()` function.
 - Rows and Columns can be separate processes, too.
 - `code.js` doesn't need to expose anything else but the `addGrid()` and  `deleteGrid()` methods.
 - `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `script/code.js`, while `createRect()` will be kept as private.
@@ -807,7 +857,7 @@ rowsGroup.children.append(...rows);              // ❌  fill
 page.artboards.first.children.append(rowsGroup); // ❌  append
 ```
 
-To complete the projects, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/scriptruntime/editor/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
+To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/scriptruntime/editor/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
 
 ```js
 // ...
@@ -823,7 +873,11 @@ rowsGroup.blendMode = Constants.BlendModeValue.multiply;
 rowsGroup.locked = true;
 ```
 
-At present, the Reference includes only a few enumerations, such as `BlendModeValue`. As the Document API expands, more enumerations will be added. They provide sets of named constants, making the code more readable by replacing direct numeric values with descriptive names.[^4]
+At present, the Reference includes only a few enumerations, such as `BlendModeValue`. As the Document API expands, more enumerations will be added. They provide sets of named constants, making the code more readable by replacing direct numeric values with descriptive names.
+
+<InlineAlert variant="warning" slots="text1" />
+
+For example, the Multiply blend mode corresponds to the number 3. Although, developers should avoid hard-coding enum's values, as they are for internal use and subject to change.
 
 It would be preferable if a single group contained Rows and Columns; we must edit both `addRows()` and `addColumns()` first to return their group in order to reference them in the parent one.
 
@@ -869,7 +923,7 @@ gridGroup.removeFromParent(); // voilà
 Curb your enthusiasm: if you think about it, there might be an issue lurking here. The process of removing a group is performed at a later time, with respect to its creation: how can we be sure to target the correct container? Groups don't have names or IDs, at least for the time being. Luckily, the `code.js` file provides **an environment that persists in between iFrame calls**: in other words, you can store the group in a variable and retrieve it later.
 
 ```js
-var gridRef = null; // 👈 Grids group reference
+let gridRef = null; // 👈 Grids group reference
 
 function start() {
   runtime.exposeApi({
@@ -886,17 +940,16 @@ function start() {
           gridRef = null;             //    clearing the reference
         } catch (error) {
           console.error(error);
+          return "Error: the Grid could not be deleted."
         }
-      } else {
-        console.log("No grid to delete");
-      }
+      } 
     },
   });
 }
 start();
 ```
 
-Although not exposed through the Communication API, the `gridRef` variable is private to `code.js`, and exists within the closure of the functions defined inside and exposed by `runtime.exposeApi()`.[^5]
+Although not exposed through the Communication API, the `gridRef` variable is private to `code.js`, and exists within the closure of the functions defined inside and exposed by `runtime.exposeApi()`.[^6]
 
 ## Next Steps
 
@@ -930,44 +983,46 @@ The code for this project can be downloaded [here](https://github.com/undavide/e
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Authoring Sandbox" />
-    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Authoring Sandbox, Document API" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grids add-on</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Authoring Sandbox" />
+  <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Authoring Sandbox, Adobe Express Document API" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grids add-on</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <sp-theme scale="medium" color="light" theme="express">
-        <h2>Design Grid creator</h2>
-        <div class="row gap-20">
-            <div class="row">
-                <div class="column">
-                    <sp-field-label for="rows" size="m">Rows</sp-field-label>
-                    <sp-number-field id="rows"></sp-number-field>
-                </div>
-                <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
-                <input type="color" id="rowsColorPicker" style="display: none;">
-            </div>
-            <div class="row">
-                <div class="column">
-                    <sp-field-label for="cols" size="m">Columns</sp-field-label>
-                    <sp-number-field id="cols"></sp-number-field>
-                </div>
-                <sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
-                <input type="color" id="colsColorPicker" style="display: none;">
-            </div>
+  <sp-theme scale="medium" color="light" theme="express">
+    <h2>Design Grid creator</h2>
+    <div class="row gap-20">
+      <div class="row">
+        <div class="column">
+          <sp-field-label for="rows" size="m">Rows</sp-field-label>
+          <sp-number-field id="rows" min="1" max="20">
+          </sp-number-field>
         </div>
-        <div class="row">
-            <sp-slider label="Gutter" id="gutter" variant="filled" editable hide-stepper min="1" max="50"
-                step="1"></sp-slider>
+        <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
+        <input type="color" id="rowsColorPicker" style="display: none;">
+      </div>
+      <div class="row">
+        <div class="column">
+          <sp-field-label for="cols" size="m">Columns</sp-field-label>
+          <sp-number-field id="cols" min="1" max="20">
+          </sp-number-field>
         </div>
-        <sp-button-group horizontal>
-            <sp-button id="deleteGrid" disabled>Delete</sp-button>
-            <sp-button id="createGrid" disabled>Create</sp-button>
-        </sp-button-group>
-    </sp-theme>
+        <sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
+        <input type="color" id="colsColorPicker" style="display: none;">
+      </div>
+    </div>
+    <div class="row">
+      <sp-slider label="Gutter" id="gutter" variant="filled" editable hide-stepper min="1" max="50"
+        format-options='{"style": "unit", "unit": "px"}' step="1"></sp-slider>
+    </div>
+    <sp-button-group horizontal>
+      <sp-button id="deleteGrid" variant="secondary" disabled>Delete</sp-button>
+      <sp-button id="createGrid" disabled>Create</sp-button>
+    </sp-button-group>
+  </sp-theme>
 </body>
 
 </html>
@@ -977,11 +1032,13 @@ The code for this project can be downloaded [here](https://github.com/undavide/e
 
 ```js
 import "@spectrum-web-components/styles/typography.css";
+
 import "@spectrum-web-components/theme/src/themes.js";
 import "@spectrum-web-components/theme/theme-light.js";
 import "@spectrum-web-components/theme/express/theme-light.js";
 import "@spectrum-web-components/theme/express/scale-medium.js";
 import "@spectrum-web-components/theme/sp-theme.js";
+
 import "@spectrum-web-components/button/sp-button.js";
 import "@spectrum-web-components/button-group/sp-button-group.js";
 import "@spectrum-web-components/field-label/sp-field-label.js";
@@ -1042,7 +1099,11 @@ addOnUISdk.ready.then(async () => {
   const deleteGridBtn = document.getElementById("deleteGrid");
 
   deleteGridBtn.onclick = async (event) => {
-    await scriptApi.deleteGrid();
+    const res = await scriptApi.deleteGrid();
+    if (res) {
+      // When there's been an error deleting the grid, you may want to handle it here
+    }
+    deleteGridBtn.disabled = true;
   };
 
   createGridBtn.onclick = async (event) => {
@@ -1053,14 +1114,12 @@ addOnUISdk.ready.then(async () => {
       columnColor: colsColorPicker.value,
       rowColor: rowsColorPicker.value,
     });
+    deleteGridBtn.disabled = false;
   };
 
-  // Only now it is safe to enable the buttons
+  // Only now it is safe to enable the button
   createGridBtn.disabled = false;
-  deleteGridBtn.disabled = false;
 });
-
-
 ```
 
 #### iFrame
@@ -1072,7 +1131,10 @@ body {
   overflow-x: hidden;
 }
 
-sp-theme {  margin: 0 24px; }
+sp-theme {
+  margin: 0 var(--spectrum-global-dimension-static-size-300);
+  display: grid;
+}
 
 .row {
   display: flex;
@@ -1082,19 +1144,34 @@ sp-theme {  margin: 0 24px; }
   align-items: flex-end;
 }
 
+.gap-20 {
+  gap: var(--spectrum-global-dimension-static-size-250);
+}
+
+.gutter-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: flex-start;
+  border: 1px solid black;
+  margin-bottom: var(--spectrum-global-dimension-static-size-150);
+}
+
 .column {
   display: flex;
   flex-direction: column;
-  padding-right: 8px;
-  width: 80px;
+  padding-right: var(--spectrum-global-dimension-static-size-100);
+  width: var(--spectrum-global-dimension-static-size-1000);
 }
 
-.gap-20 { gap: 20px; }
-.gap-10 { gap: 10px; }
+h2 {
+  font-weight: var(--spectrum-global-font-weight-black);
+}
 
-h2 { font-weight: 900; }
-
-sp-swatch { width: 32px; }
+sp-swatch {
+  width: var(--spectrum-swatch-size-medium);
+}
 
 .color-well {
   cursor: pointer;
@@ -1104,14 +1181,18 @@ sp-swatch { width: 32px; }
 
 sp-button {
   flex: 1;
-  max-width: calc((100% - 20px) / 2);
+  max-width: calc(
+    (100% - var(--spectrum-global-dimension-static-size-250)) / 2
+  );
 }
 
 sp-number-field,
-sp-slider { width: 100%; }
+sp-slider {
+  width: 100%;
+}
 
 sp-button-group {
-  margin-top: 24px;
+  margin-top: var(--spectrum-global-dimension-static-size-300);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -1128,7 +1209,7 @@ import { addColumns, addRows } from "./shapeUtils";
 // Get the Authoring Sandbox.
 const { runtime } = addOnScriptSdk.instance;
 
-var gridRef = null;
+let gridRef = null;
 
 function start() {
   // APIs to be exposed to the UI runtime
@@ -1148,7 +1229,6 @@ function start() {
       // Get the document and page.
       const doc = editor.documentRoot;
       const page = doc.pages.first;
-
       // Create the grid.
       const rowGroup = addRows(rows, gutter, rowColor);
       const columnGroup = addColumns(columns, gutter, columnColor);
@@ -1168,17 +1248,14 @@ function start() {
      * @returns {void}
      */
     deleteGrid() {
-      console.log("deleteGrid", gridRef);
       if (gridRef) {
         try {
-          console.log("in here");
           gridRef.removeFromParent();
           gridRef = null;
         } catch (error) {
           console.error(error);
+          return "Error: the Grid could not be deleted.";
         }
-      } else {
-        console.log("No grid to delete");
       }
     },
   });
@@ -1310,12 +1387,14 @@ export { addColumns, addRows };
 
 <!-- Footnotes -->
 
-[^1]: The quotes are from the Documentation Reference of each element.
+[^1]: Future updates may offer a simpler color creation process.
 
-[^2]: The terms "list" is used in the Adobe Express reference documentation, while "collection" may be more familiar to CEP/UXP developers; they are used interchangeably here.
+[^2]: The quotes are from the Documentation Reference of each element.
 
-[^3]: It could have been another `<sp-number-field>`, but a slider played well with the overall design.
+[^3]: The terms "list" is used in the Adobe Express reference documentation, while "collection" may be more familiar to CEP/UXP developers; they are used interchangeably here.
 
-[^4]: For instance, `BlendModeValue.multiply` corresponds to `3`; developers aren't supposed to use it directly, as it's an internal value subject to change.
+[^4]: It could have been another `<sp-number-field>`, but a slider played well with the overall design.
 
-[^5]:  Future versions of the Document API may provide more deliberate ways to refer to elements.
+[^5]: For example, you may want to retrieve the page's `width` and `height` properties at the beginning, and use them in the rest of the code.
+
+[^6]:  Future versions of the Document API may provide more deliberate ways to refer to elements.
