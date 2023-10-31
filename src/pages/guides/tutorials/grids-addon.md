@@ -63,7 +63,6 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 [Context permanence](#deleting-grids)
 
-
 ![](images/grids-addon-animation.gif)
 
 ### Getting Started with the Document API
@@ -192,8 +191,7 @@ start();
 
 <InlineAlert variant="info" slots="text1" />
 
-Please use the iFrame and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show. 
-
+Please use the iFrame and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
 The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 
