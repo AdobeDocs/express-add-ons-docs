@@ -320,10 +320,10 @@ module.exports = {
             title: "Development tools",
             path: "guides/getting_started/dev_tooling.md",
           },
-          {
-            title: "Tutorials",
-            path: "guides/tutorials/index.md",
-          },
+          // {
+          //   title: "Tutorials",
+          //   path: "guides/tutorials/index.md",
+          // },
         ],
       },
       {

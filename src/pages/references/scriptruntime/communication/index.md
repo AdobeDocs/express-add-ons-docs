@@ -1,3 +1,23 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Adobe Express
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Add-on Manifest
+title: Communication APIs
+description: An introduction to the Communication APIs available in the authoring sandbox.
+contributors:
+  - https://github.com/hollyschinsky  
+hideBreadcrumbNav: true
+---
+
 # Communication APIs
 
 The communication APIs allow you to communicate between the script runtime and the iframe where your add-on is running.
