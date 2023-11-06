@@ -47,7 +47,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 <!-- List block here -->
 <ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[iFrame and Authoring Sandbox communication](#the-communication-api)
+[iframe and Authoring Sandbox communication](#the-communication-api)
 
 [Spectrum Web Components](#designing-the-ui-with-spectrum-web-components)
 
@@ -69,8 +69,8 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 As part of the [Authoring Sandbox](/references/scriptruntime/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
-- The **iFrame** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
-- The **Authoring Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iFrame (thanks to the [Communication API](/references/scriptruntime/communication/)), providing access to the [Document API](/references/scriptruntime/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
+- The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
+- The **Authoring Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/scriptruntime/communication/)), providing access to the [Document API](/references/scriptruntime/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
@@ -92,7 +92,7 @@ Before jumping into the code, let's look at how the project is structured. At th
 
 ![](images/grids-addon-folder-structure.png)
 
-As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iFrame logic code (UI element handlers, etc.). The Document API entry point is instead `script/code.js`, as defined in the `manifest.json`:
+As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iframe logic code (UI element handlers, etc.). The Document API entry point is instead `script/code.js`, as defined in the `manifest.json`:
 
 ```json
 {
@@ -108,12 +108,12 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 }
 ```
 
-If you're wondering about `script/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iFrame in this specific project. The code of the blank template is as follows.
+If you're wondering about `script/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
-#### iFrame
+#### iframe
 
 ```html
 <!DOCTYPE html>
@@ -137,7 +137,7 @@ If you're wondering about `script/shapeUtils.js`, it is an auxiliary file contai
 </html>
 ```
 
-#### iFrame
+#### iframe
 
 ```js
 // Spectrum imports
@@ -191,15 +191,15 @@ start();
 
 <InlineAlert variant="info" slots="text1" />
 
-Please use the iFrame and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
+Please use the iframe and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
 The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 
 ## The Communication API
 
-A crucial component of any add-on that consumes the Document API is the communication bridge with the iFrame. As we've seen earlier, it's precisely the role of the **Communication API**.
+A crucial component of any add-on that consumes the Document API is the communication bridge with the iframe. As we've seen earlier, it's precisely the role of the **Communication API**.
 
-The mechanism is straightforward: through the `runtime` object (`code.js`, line 2), you can invoke the `exposeApi()` method, which grants the iFrame access to the object literal that is passed as a parameter. The iFrame must get to the `runtime`, too, and use its `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
+The mechanism is straightforward: through the `runtime` object (`code.js`, line 2), you can invoke the `exposeApi()` method, which grants the iframe access to the object literal that is passed as a parameter. The iframe must get to the `runtime`, too, and use its `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
 ![Add-on Communication API](images/grids-addon-communicationapi.png)
 
@@ -239,7 +239,7 @@ runtime.exposeApi({
 });
 ```
 
-It's also possible to expose iFrame methods to the Authoring Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
+It's also possible to expose iframe methods to the Authoring Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
 
 ## The Document API
 
@@ -255,12 +255,12 @@ Some properties are shared among the `RectangleNode` and, say, other `StrokableN
 
 ### Creating the first Shape
 
-It's finally time to start laying down some elements. Let's hook the only iFrame button currently available to a function exposed by the Document API. Type the following into the source files (`index.html`, `index.js`, and `code.js` have been edited), then run the add-on.
+It's finally time to start laying down some elements. Let's hook the only iframe button currently available to a function exposed by the Document API. Type the following into the source files (`index.html`, `index.js`, and `code.js` have been edited), then run the add-on.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
-#### iFrame
+#### iframe
 
 ```html
 <body>
@@ -270,7 +270,7 @@ It's finally time to start laying down some elements. Let's hook the only iFrame
 </body>
 ```
 
-#### iFrame
+#### iframe
 
 ```js
 // ... usual imports
@@ -597,7 +597,7 @@ Eventually, the two buttons (Delete and Create) invoke methods exposed by the Do
 
 It's worth taking a moment to discuss good validation and error-handling practices at this stage. Just as the QA engineer walking into a bar in the [famous joke](https://twitter.com/brenankeller/status/1068615953989087232), you must ensure that user input aligns with what the grid algorithm expects; for example, that it receives unsigned integers.
 
-For this tutorial, we'll limit ourselves to setting `min` and `max` values for the Rows, Columns, and Gutter ranges. This will prevent scenarios like creating a negative number of columns. In a typical implementation, you'd want to insert a validation routine before invoking the primary function. Depending on the algorithm's and the UI's complexity, this routine might belong to the iFrame, the Authoring Sandbox, or both. Additionally, apart from validating value type and range, you may want to ensure that the Gutter size is compatible with the chosen number of Rows and Columns to prevent them from overflowing the page dimensions.[^5]
+For this tutorial, we'll limit ourselves to setting `min` and `max` values for the Rows, Columns, and Gutter ranges. This will prevent scenarios like creating a negative number of columns. In a typical implementation, you'd want to insert a validation routine before invoking the primary function. Depending on the algorithm's and the UI's complexity, this routine might belong to the iframe, the Authoring Sandbox, or both. Additionally, apart from validating value type and range, you may want to ensure that the Gutter size is compatible with the chosen number of Rows and Columns to prevent them from overflowing the page dimensions.[^5]
 
 Another crucial notion is to avoid silent failures: every action should either succeed or provide the user with a notification if it doesn't. That's why, for instance, the Delete button is left disabled until a set of grids is created; instead of handling the removal of a non-existent grid, it's preferable to prevent it in the first place.
 
@@ -918,7 +918,7 @@ From the users' perspective, it would speed up the testing process of new grid d
 gridGroup.removeFromParent(); // voilà
 ```
 
-Curb your enthusiasm: if you think about it, there might be an issue lurking here. The process of removing a group is performed at a later time, with respect to its creation: how can we be sure to target the correct container? Groups don't have names or IDs, at least for the time being. Luckily, the `code.js` file provides **an environment that persists in between iFrame calls**: in other words, you can store the group in a variable and retrieve it later.
+Curb your enthusiasm: if you think about it, there might be an issue lurking here. The process of removing a group is performed at a later time, with respect to its creation: how can we be sure to target the correct container? Groups don't have names or IDs, at least for the time being. Luckily, the `code.js` file provides **an environment that persists in between iframe calls**: in other words, you can store the group in a variable and retrieve it later.
 
 ```js
 let gridRef = null; // 👈 Grids group reference
@@ -961,10 +961,10 @@ Congratulations! You've coded from scratch the Grids Design System add-on. This 
 
 Let's review the concepts covered in this tutorial and how they've been implemented in the Grids add-on.
 
-- The **iFrame** and the **Authoring Sandbox** are two distinct entities able to share contexts via the Communication API. We've used the `exposeApi()` method of the `runtime` object to allow the iFrame to invoke functions in the Document API domain.
+- The **iframe** and the **Authoring Sandbox** are two distinct entities able to share contexts via the Communication API. We've used the `exposeApi()` method of the `runtime` object to allow the iframe to invoke functions in the Document API domain.
 - The **Document API** provides access to Adobe Express' Document Object Model, which defines containment structures and inheritance hierarchies. We've retrieved the document, its pages, and artboards; created, moved and assigned blending modes to shapes; created, populated and locked groups.
 - Nodes (elements) in Adobe Express documents can be added to the document in a position relative to the currently active selection or targeting a container as the **insertion point**; we've seen how `ContainerNode` elements have a `children` collection to `append()` elements to.
-- The Document API **context is permanent** in between iFrame calls. We've seen that it's possible to store a reference to a Node within the exposed methods' closure and act upon it after its creation.
+- The Document API **context is permanent** in between iframe calls. We've seen that it's possible to store a reference to a Node within the exposed methods' closure and act upon it after its creation.
 - **Spectrum Web Components** are crucial to UI building, but sometimes they require customization; in this project, we've linked a `<sp-swatch>` to a traditional `<input>` element to create an Adobe Express' native-looking color picker.
 
 ## Final Project
@@ -974,7 +974,7 @@ The code for this project can be downloaded [here](https://github.com/undavide/e
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, styles.css, code.js, shapeUtils.js" />
 
-#### iFrame
+#### iframe
 
 ```html
 <!DOCTYPE html>
@@ -1026,7 +1026,7 @@ The code for this project can be downloaded [here](https://github.com/undavide/e
 </html>
 ```
 
-#### iFrame
+#### iframe
 
 ```js
 import "@spectrum-web-components/styles/typography.css";
@@ -1120,7 +1120,7 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
-#### iFrame
+#### iframe
 
 ```css
 body {
