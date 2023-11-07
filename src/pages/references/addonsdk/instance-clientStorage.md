@@ -1,4 +1,4 @@
-# AddOnSdk.instance.clientStorage
+# addOnUISdk.instance.clientStorage
 
 The `clientStorage` object provides a reference to Client Storage in the currently running add-on. Client Storage allows you to store, retrieve, and delete persistent data in the user's current browser.
 

@@ -1,3 +1,22 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Adobe Express
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Add-on Manifest
+title: Public add-on distribution
+description: A guide to public distribution of your add-on. 
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Public add-on Distribution
 
 ## Overview

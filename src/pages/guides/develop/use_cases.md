@@ -34,13 +34,13 @@ Importing content into a design is one of the most popular use cases. For instan
 ### Example
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
-await AddOnSdk.ready;
+await addOnUISdk.ready;
 
 // Reference to the active document
-const { document } = AddOnSdk.app;
+const { document } = addOnUISdk.app;
 
 // Add image via blob to the current page
 async function addImageFromBlob(blob) {
@@ -83,9 +83,9 @@ The steps to export content:
 ### Basic Example
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-const response = await AddOnSdk.app.document.createRenditions({
+const response = await addOnUISdk.app.document.createRenditions({
     range: "currentPage",
     format: "image/jpeg",
 });
@@ -110,8 +110,8 @@ Display an error message when export/download fails due to the user not being en
 
 ```js
 const showPremiumContentError = async () => {
-  const { ButtonType } = AddOnSdk.constants;
-  const {buttonType} = await window.AddOnSdk.app.showModalDialog({
+  const { ButtonType } = addOnUISdk.constants;
+  const {buttonType} = await window.addOnUISdk.app.showModalDialog({
     variant: "error",
     title: "Export failed",
     description: "Sorry, we were not able to export your design. Some assets are only included in the Premium plan. Try replacing with something else or upgrading Adobe Express to a Premium plan.", 
@@ -124,7 +124,7 @@ const showPremiumContentError = async () => {
 }
 
 document.querySelector("#export").onclick = async () => {
-  const { app, constants } = AddOnSdk;
+  const { app, constants } = addOnUISdk;
   const { Range, RenditionFormat, RenditionType, RenditionIntent } = constants;
   /* THE FOLLOWING FLAG CAN BE USED FOR TESTING PURPOSES ONLY -- REMOVE BEFORE RELEASE */
   app.devFlags.simulateFreeUser = true; 
@@ -155,7 +155,7 @@ Set a `renditionPreview` intent in the [manifest requirements](../../references/
 
 ```js
 document.querySelector("#export").onclick = async () => {
-  const { app, constants } = AddOnSdk;
+  const { app, constants } = addOnUISdk;
   const { Range, RenditionFormat, RenditionType, RenditionIntent } = constants;  
   /* THE FOLLOWING FLAG CAN BE USED FOR TESTING PURPOSES ONLY */
   app.devFlags.simulateFreeUser = true; 
@@ -217,7 +217,7 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 Once you complete the set up, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) also contain a few different examples of using OAuth 2.0 workflows that you can use for a reference. You will also find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module there, which is referenced below, and we recommend using to help with your own OAuth implementation. Also be sure to check out the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth) for additional details on the OAuth workflows.
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 const DROPBOX_AUTHORIZATION_URL = "https://www.dropbox.com/oauth2/authorize";
 const DROPBOX_TOKEN_URL = "https://api.dropboxapi.com/oauth2/token";
@@ -230,7 +230,7 @@ const ONEDRIVE_CLIENT_ID = "<ONEDRIVE_CLIENT_ID>";
 const ONEDRIVE_SCOPE = "<ONEDRIVE_SPACE_SEPARATED_SCOPES>";
 const OWN_REDIRECT_URI = "<OWN_REDIRECT_URI>";
  
-AddOnSdk.ready.then(() => {
+addOnUISdk.ready.then(() => {
     // 'oauthUtils' is a helper javascript module (included with the OAuth template) which provides utility functions to:
     // 1. generateChallenge()     Generate the 'code_challenge' and 'code_verifier' parameters that are essential in the OAuth 2.0 workflow.
     // 2. generateAccessToken()   Generate an 'access_token' and a 'refresh_token' using the 'code' and 'redirectUri' received on successful authorization.
@@ -277,12 +277,12 @@ If you want to be able to store and retrieve data on the client side rather to a
 ### Example
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 let store;
 
-AddOnSdk.ready.then(async () => {
-    store = AddOnSdk.instance.clientStorage;
+addOnUISdk.ready.then(async () => {
+    store = addOnUISdk.instance.clientStorage;
 }
 /**
  * Store item 
@@ -311,7 +311,7 @@ If you want to allow a user to drag and drop items from your add-on to the docum
 ### Example using local images
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 const IMAGES = new Map([
     ["image1.jpg", "./images/image1.jpg"],    
@@ -322,7 +322,7 @@ const IMAGES = new Map([
 let gallery;
 
 // Wait for the SDK to be ready before rendering elements in the DOM.
-AddOnSdk.ready.then(async () => {
+addOnUISdk.ready.then(async () => {
     // Create elements in the DOM.
     gallery = document.createElement("div");
     gallery.className = "gallery";
@@ -334,7 +334,7 @@ AddOnSdk.ready.then(async () => {
         image.addEventListener("click", addToDocument);
 
         // Enable drag to document for the image.
-        AddOnSdk.app.enableDragToDocument(image, {
+        addOnUISdk.app.enableDragToDocument(image, {
             previewCallback: element => {
                 return new URL(element.src);
             },
@@ -347,9 +347,9 @@ AddOnSdk.ready.then(async () => {
     });
 
     // Register event handler for "dragstart" event
-    AddOnSdk.app.on("dragstart", startDrag);
+    addOnUISdk.app.on("dragstart", startDrag);
      // Register event handler for 'dragend' event
-    AddOnSdk.app.on("dragend", endDrag);
+    addOnUISdk.app.on("dragend", endDrag);
 
     document.body.appendChild(gallery);
 });
@@ -360,7 +360,7 @@ AddOnSdk.ready.then(async () => {
 async function addToDocument(event) {
     const url = event.currentTarget.src;
     const blob = await getBlob(url);
-    AddOnSdk.app.document.addImage(blob);
+    addOnUISdk.app.document.addImage(blob);
 }
 
 /**
@@ -393,7 +393,7 @@ async function getBlob(url) {
 ### Example using an image URL
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Enable drag support for an element
 function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
@@ -415,17 +415,17 @@ function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
   };
 
   try {
-    AddOnSdk.app.enableDragToDocument(image, dragCallbacks);
+    addOnUISdk.app.enableDragToDocument(image, dragCallbacks);
   } catch (error) {
     console.log("Failed to enable DragToDocument:", error);
   }
 }
 
-AddOnSdk.app.on("dragstart", (eventData: DragStartEventData) => {
+addOnUISdk.app.on("dragstart", (eventData: DragStartEventData) => {
   console.log("The drag event has started for", eventData.element);
 });
 
-AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
+addOnUISdk.app.on("dragend", (eventData: DragEndEventData) => {
   if (!eventData.dropCancelled) {
     console.log("The drag event has ended for", eventData.element);
     disableDragToDocument();
@@ -438,8 +438,8 @@ AddOnSdk.app.on("dragend", (eventData: DragEndEventData) => {
 
 **Important Notes:**
 
-- Since the AddOnSdk uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
-- You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
+- Since the Add-on SDK uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
+- You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the Add-on SDK attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
 - TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
 
 ## Modal Dialogs
@@ -451,10 +451,10 @@ When you need to pop up a dialog to show a certain message such as an informatio
 The following example shows how to display a simple confirmation dialog.
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSdk.ready;
+await addOnUISdk.ready;
 
 async function showConfirmDialog() {
     try {
@@ -465,7 +465,7 @@ async function showConfirmDialog() {
             description: "Smart filters are nondestructive and will preserve your original images.",
             buttonLabels: { primary: "Enable", cancel: "Cancel" },
         };    
-        const result = await AddOnSdk.app.showModalDialog(dialogOptions);
+        const result = await addOnUISdk.app.showModalDialog(dialogOptions);
         console.log("Button type clicked " + result.buttonType); 
     } catch (error) {
         console.log("Error showing modal dialog:", error);
@@ -478,10 +478,10 @@ async function showConfirmDialog() {
 Below is an example of using an `input` dialog that accepts input you can retrieve:
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSdk.ready;
+await addOnUISdk.ready;
 
 async function showInputDialog() {
     try {
@@ -498,7 +498,7 @@ async function showInputDialog() {
             },
         }
 
-        const inputDialogResult = await AddOnSdk.app.showModalDialog(inputDialogOptions);
+        const inputDialogResult = await addOnUISdk.app.showModalDialog(inputDialogOptions);
         if (inputDialogResult.buttonType === "primary") {
             console.log("Field value " + inputDialogResult.fieldValue); // returns the input the user entered if they didn't cancel
         }
@@ -513,10 +513,10 @@ async function showInputDialog() {
 This example shows how you can define custom content for yuour dialog in a separate source file, (`dialog.html` in this case), and with a custom height and title.
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSdk.ready;
+await addOnUISdk.ready;
  
 function useCustomDialogResult(data: unknown) {
   // Use the dialog data
@@ -525,7 +525,7 @@ function useCustomDialogResult(data: unknown) {
 // Custom Dialog
 async function showCustomDialog() {
   try {
-    const dialogResult = await AddOnSdk.app.showModalDialog({
+    const dialogResult = await addOnUISdk.app.showModalDialog({
         variant: "custom",
         title: "Custom Modal",
         src: "dialog.html", // use content from this html file
@@ -552,38 +552,38 @@ When you want to detect the theme of the environment where your add-on is runnin
 ### Example
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 function applyTheme(theme) {
     document.querySelector("sp-theme").setAttribute("color", theme);
 }
-applyTheme(AddOnSdk.app.ui.theme);
-AddOnSdk.app.on("themechange", (data) => { applyTheme(data.theme); });
+applyTheme(addOnUISdk.app.ui.theme);
+addOnUISdk.app.on("themechange", (data) => { applyTheme(data.theme); });
 
-addOnSdk.app.on("themechange", (data) => {
+addOnUISdk.app.on("themechange", (data) => {
     applyTheme(data.theme == "dark" ? darkTheme : lightTheme);
 });
 ```
 
 ## Detecting Locale and Supported Locales
 
-If you want to find out the users current locale, the list of supported locales, or detect when the locale changes (ie: to set the language in your add-on), you can do so with the [`AddOnSdk.app.ui` object](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-ui/#locale) in the add-on SDK. A simple example is shown below.
+If you want to find out the users current locale, the list of supported locales, or detect when the locale changes (ie: to set the language in your add-on), you can do so with the [`addOnUISdk.app.ui` object](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-ui/#locale) in the add-on SDK. A simple example is shown below.
 
 ### Example
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setLanguage(language) { 
   /* Set the language in your UI strings based on the change detected */ 
 }
 
-AddOnSdk.ready.then(() => {
-  console.log(AddOnSdk.app.ui.locales);
-  setLanguage(AddOnSdk.app.ui.locale);
+addOnUISdk.ready.then(() => {
+  console.log(addOnUISdk.app.ui.locales);
+  setLanguage(addOnUISdk.app.ui.locale);
 });
 
-AddOnSdk.app.on("localechange", data => {
+addOnUISdk.app.on("localechange", data => {
   setLanguage(data.locale));
 });
 ```
@@ -599,10 +599,10 @@ Use the example below to try this feature, but also be sure to refer to the [rel
 ### Example
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
-AddOnSdk.ready.then(async () => {
-  validateUser(await AddOnSdk.app.currentUser.userId());
+addOnUISdk.ready.then(async () => {
+  validateUser(await addOnUISdk.app.currentUser.userId());
 });
 
 validateUser(userId: string) {
@@ -616,13 +616,13 @@ validateUser(userId: string) {
 
 ## Authoring Content
 
-We provide a set of [Editor APIs](../../references/scriptruntime/editor/) that can be used for interacting with the document for common use cases like creating shapes, adding pages, clearing the artboard and more.
+We provide a set of [Document APIs](../../references/scriptruntime/editor/) that can be used for interacting with the document for common use cases like creating shapes, adding pages, clearing the artboard and more.
 
 <InlineAlert slots="text" variant="warning"/>
 
 The Editor API's are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
 
-The following code snippet illustrates how to use the [Editor APIs](../../references/scriptruntime/editor/) from the script running in your [`code.js`](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
+The following code snippet illustrates how to use the [Document APIs](../../references/scriptruntime/editor/) from the script running in your [`code.js`](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
 import { editor, utils } from "express";
@@ -645,4 +645,4 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to [getting started with Script Runtime](https://developer.adobe.com/express/add-ons/docs/references/scriptruntime/#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Editor APIs.
+Refer to [getting started with Authoring Sandbox](https://developer.adobe.com/express/add-ons/docs/references/authoring/#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Document APIs for authoring content.

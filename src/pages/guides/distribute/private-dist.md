@@ -1,3 +1,22 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Adobe Express
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Add-on Manifest
+title: Create a Private Distribution Link
+description: A guide to creating a private distribution link. 
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Create a Private Distribution Link
 
 ## Overview

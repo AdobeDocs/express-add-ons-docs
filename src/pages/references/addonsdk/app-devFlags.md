@@ -1,10 +1,9 @@
-# AddOnSdk.app.devFlags
+# addOnUISdk.app.devFlags
 This object contains flags which can be used to simulate certain behavior during development.  
 
 <InlineAlert slots="text" variant="warning"/>
 
-`AddOnSdk.app.devFlags` are provided for testing purposes only, and thus can only be used during the development phase.
-
+`addOnUISdk.app.devFlags` are provided for testing purposes only, and thus can only be used during the development phase.
 
 ## Methods
 
@@ -19,9 +18,9 @@ Simulate APIs as a free user.
 
 ## Example
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
-AddOnSdk.ready.then(async () => {
-  AddOnSdk.app.devFlags.simulateFreeUser = true;
+addOnUISdk.ready.then(async () => {
+  addOnUISdk.app.devFlags.simulateFreeUser = true;
 });
 ```

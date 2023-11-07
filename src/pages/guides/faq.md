@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: FAQ
-description: This is the FAQ page
+description: A list of frequently asked questions and answers. 
 contributors:
   - https://github.com/hollyschinsky
 ---

@@ -1,3 +1,22 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Adobe Express
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Add-on Manifest
+title: Web APIs
+description: An overview of the Web APIs available as part of the authoring sandbox.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Web APIs
 
 The Web APIs refer to the set of commonly used APIs that are injected by the script runtime into the global context to allow you to access common JavaScript functions.

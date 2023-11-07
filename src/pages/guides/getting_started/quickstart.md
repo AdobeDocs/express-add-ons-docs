@@ -1,3 +1,22 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Adobe Express
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Add-on Manifest
+title: Quickstart
+description: A quickstart guide to getting started building your first Adobe Express add-on
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Quickstart
 
 This quickstart guide will help you create and run your first add-on, a simple hello world add-on built with plain JavaScript.

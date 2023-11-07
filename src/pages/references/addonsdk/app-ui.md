@@ -1,4 +1,4 @@
-# AddOnSdk.app.ui
+# addOnUISdk.app.ui
 
 Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/use_cases.md#detecting-locale-and-supported-locales) or [theme](../../guides/develop/use_cases.md#detecting-theme) in use to update your add-on user interface accordingly.
 
@@ -15,14 +15,14 @@ A `string` containing the current theme value. Currently **"light"** is the only
 #### Example Usage
 
 ```js
-AddOnSdk.ready.then(async () => {    
-    console.log(AddOnSdk.app.ui.theme); // output is "light"
+addOnUISdk.ready.then(async () => {    
+    console.log(addOnUISdk.app.ui.theme); // output is "light"
 });
 ```
 
 ### locale
 
-Access the locale currently set in Adobe Express. This value is accessed via the `AddOnSdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `AddOnSdk.ready`).
+Access the locale currently set in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the `addOnUISdk` is initialized (via the `addOnUISdk.ready`).
 
 #### Values
 
@@ -36,15 +36,15 @@ A `string` containing the current locale value. Current locale could be one of:
 #### Example Usage
 
 ```js
-AddOnSdk.ready.then(async () => {    
-    console.log(AddOnSdk.app.ui.locale); // output "es-ES" 
+addOnUISdk.ready.then(async () => {    
+    console.log(addOnUISdk.app.ui.locale); // output "es-ES" 
 });
 ```
 
 ### locales
 
 <!-- **`locales: string[]`**<br/> -->
-Access all locales currently supported in Adobe Express. This value is accessed via the `AddOnSdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `AddOnSdk.ready`).
+Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `addOnUISdk.ready`).
 
 #### Values
 
@@ -58,8 +58,8 @@ locales:
 #### Example Usage
 
 ```js
-AddOnSdk.ready.then(async () => {    
-    console.log(JSON.stringify(AddOnSdk.app.ui.locales)) 
+addOnUISdk.ready.then(async () => {    
+    console.log(JSON.stringify(addOnUISdk.app.ui.locales)) 
     // output is ["cy-GB","da-DK","de-DE","en-US","es-ES","fi-FI","fr-FR","it-IT","ja-JP","ko-KR","nb-NO","nl-NL","pt-BR","sv-SE","zh-Hans-CN","zh-Hant-TW","zz-ZZ"]
 });
 ```
@@ -69,7 +69,7 @@ AddOnSdk.ready.then(async () => {
 ### themechange
 
 **`themechange: string`**<br/>
-The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`AddOnSdk.app.on`](../addonsdk/addonsdk-app.md) function.
+The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
 
 #### Parameters
 
@@ -82,7 +82,7 @@ N/A
 #### Example Usage
 
 ```js
-AddOnSdk.app.on("themechange", (data) => {
+addOnUISdk.app.on("themechange", (data) => {
   applyTheme(data.theme); 
 });
 ```
@@ -90,7 +90,7 @@ AddOnSdk.app.on("themechange", (data) => {
 ### localechange
 
 **`localechange: string`**<br/>
-The "localechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`AddOnSdk.app.on`](../addonsdk/addonsdk-app.md) function.
+The "localechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
 
 #### Parameters
 
@@ -103,7 +103,7 @@ N/A
 #### Example Usage
 
 ```js
-AddOnSdk.app.on("localechange", (data) => {
+addOnUISdk.app.on("localechange", (data) => {
   applyTheme(data.locale);
 });
 ```

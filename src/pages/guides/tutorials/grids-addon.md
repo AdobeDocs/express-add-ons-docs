@@ -14,14 +14,14 @@ keywords:
 title: Building your first add-on with the Document API
 description: This is an in-depth tutorial that will guide you in the creation of a Grids add-on for Adobe Express using the Document API
 published: 2023-11-05
-updated: 2023-11-05
+updated: 2023-11-06
 contributors:
   - https://github.com/undavide
 ---
 
 # Building your first add-on with the Document API
 
-This tutorial will guide you through the creation of your first Express add-on based on the Adobe Express Document API.
+This tutorial will guide you through the creation of your first Adobe Express add-on based on the Adobe Express Document API.
 
 ## Introduction
 
@@ -33,7 +33,7 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 ### Timestamp
 
-This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 5th, 2023.
+This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 6th, 2023.
 
 ### Prerequisites
 
@@ -75,6 +75,10 @@ As part of the [Authoring Sandbox](/references/scriptruntime/index.md), the Adob
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
 ![](images/grids-addon-communication.png)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The authoring sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ### The Project Structure
 

@@ -1,4 +1,4 @@
-# AddOnSdk.app.oauth
+# addOnUISdk.app.oauth
 
 Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/develop/use_cases.md#authorization-with-oauth-20). Be sure to check out the [code samples](../../samples.md) as well for more extensive examples of using this workflow.
 

@@ -167,7 +167,7 @@ We recommend using [**swc-react**](https://opensource.adobe.com/spectrum-web-com
     import { theme as expressTheme } from '@react-spectrum/theme-express';
     import Delete from '@spectrum-icons/express/Delete';
 
-    const App = ({ addOnSdk }) => {
+    const App = ({ addOnUISdk }) => {
         return (
             <Provider theme={expressTheme} colorScheme="light" scale="medium">
                 <Button variant="accent"><Delete/></Button>  
@@ -210,7 +210,7 @@ import React, {useRef} from "react";
 import { theme as expressTheme } from '@react-spectrum/theme-express';
 import {Slider, Provider} from '@adobe/react-spectrum'
 
-const App = ({ addOnSdk }) => {
+const App = ({ addOnUISdk }) => {
     const sliderContainer = useRef();
     const startDrag = (evt) => {
         sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId);

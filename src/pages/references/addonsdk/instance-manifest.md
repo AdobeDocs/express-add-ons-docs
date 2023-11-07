@@ -1,4 +1,4 @@
-# AddOnSdk.instance.manifest
+# addOnUISdk.instance.manifest
 
 The `manifest` object provides access to the `manifest.json` file entries of the add-on.
 
@@ -17,10 +17,10 @@ Below is an example of using the `manifest` object, along with the expected outp
 ### Example
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-AddOnSdk.ready.then(() => {  
-  console.log(JSON.stringify(AddOnSdk.instance.manifest));  
+addOnUISdk.ready.then(() => {  
+  console.log(JSON.stringify(addOnUISdk.instance.manifest));  
 
   console.log("Name: " + manifest["name"]);
   console.log("Test ID " + manifest["testId"]);                

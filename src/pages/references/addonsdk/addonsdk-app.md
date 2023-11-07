@@ -1,4 +1,4 @@
-# AddOnSdk.app
+# addOnUISdk.app
 
 Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use_cases.md#modal-dialogs), [enable drag and drop](../../guides/develop/use_cases.md#drag-and-drop) of content and subscribe and unsubscribe to events.
 
@@ -70,7 +70,7 @@ Subscribe to an event (ie: listen for an event).
 #### Example Usage
 
 ```js
-AddOnSdk.app.on("themechange", (data) => {
+addOnUISdk.app.on("themechange", (data) => {
   applyTheme(data.theme);
 });
 ```
@@ -97,7 +97,7 @@ Unsubscribe from an event (ie: stop listening for an event).
 #### Example Usage
 
 ```js
-AddOnSdk.app.off("themechange", (data) => {
+addOnUISdk.app.off("themechange", (data) => {
   applyTheme(data.theme);
 });
 ```
@@ -163,10 +163,10 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 #### Confirmation Dialog Example Usage
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSdk.ready;
+await addOnUISdk.ready;
 
 async function showConfirmDialog() {
     try {
@@ -177,7 +177,7 @@ async function showConfirmDialog() {
             description: "Smart filters are nondestructive and will preserve your original images.",
             buttonLabels: { primary: "Enable", cancel: "Cancel" },
         };    
-        const result = await AddOnSdk.app.showModalDialog(dialogOptions);
+        const result = await addOnUISdk.app.showModalDialog(dialogOptions);
         console.log("Button type clicked " + result.buttonType); 
     } catch (error) {
         console.log("Error showing modal dialog:", error);
@@ -188,10 +188,10 @@ async function showConfirmDialog() {
 #### Input Dialog Example Usage
 
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
  
 // Wait for the SDK to be ready
-await AddOnSdk.ready;
+await addOnUISdk.ready;
 
 async function showInputDialog() {
     try {
@@ -208,7 +208,7 @@ async function showInputDialog() {
             },
         }
 
-        const inputDialogResult = await AddOnSdk.app.showModalDialog(inputDialogOptions);
+        const inputDialogResult = await addOnUISdk.app.showModalDialog(inputDialogOptions);
         if (inputDialogResult.buttonType === "primary") {
             console.log("Field value " + inputDialogResult.fieldValue); // returns the input the user entered if they didn't cancel
         }
@@ -315,8 +315,8 @@ The payload data sent to the App `dragEnd` event handler.
 
 **\* Important Event Handling Notes**<br/>
 
-- Since the `AddOnSdk` uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
-- You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the AddOnSdk attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
+- Since the `addOnUISdk` uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
+- You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the `addOnUISdk` attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
 - TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
 
 <InlineAlert slots="text" variant="info"/>
@@ -325,7 +325,7 @@ See the [Drag & Drop use case implementation](../../guides/develop/use_cases.md#
 
 ## Events
 
-The table below describes the events triggered from the add-on SDK. Use the `AddOnSdk.app.on()` method to subscribe to events, and the `AddOnSdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
+The table below describes the events triggered from the add-on SDK. Use the `addOnUISdk.app.on()` method to subscribe to events, and the `addOnUISdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
@@ -367,7 +367,7 @@ The table below describes the events triggered from the add-on SDK. Use the `Add
 
 ## Errors
 
-The table below describes the possible error messages that may occur when using the core `AddOnSdk.app` methods, with a description of the scenario that will return them.
+The table below describes the possible error messages that may occur when using the core `addOnUISdk.app` methods, with a description of the scenario that will return them.
 
 <br/>
 

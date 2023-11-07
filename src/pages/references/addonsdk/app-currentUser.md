@@ -1,4 +1,4 @@
-# AddOnSdk.app.currentUser
+# addOnUISdk.app.currentUser
 Provides access to the currently logged in user.
 
 <!-- <InlineAlert slots="text" variant="warning"/>
@@ -23,10 +23,10 @@ A resolved `Promise` containing the `userId` of the current user.
 
 ### Usage
 ```js
-import AddOnSdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-AddOnSdk.ready.then(async () => {
-    const userId = await AddOnSdk.app.currentUser.userId();
+addOnUISdk.ready.then(async () => {
+    const userId = await addOnUISdk.app.currentUser.userId();
     console.log("Current Userid: " + userId);
 });
 ```

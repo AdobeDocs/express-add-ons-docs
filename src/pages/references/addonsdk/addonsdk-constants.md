@@ -1,4 +1,4 @@
-# AddOnSdk.constants
+# addOnUISdk.constants
 A set of constants used throughout the add-on SDK. These constants are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary". 
 <!-- 
 
@@ -18,7 +18,7 @@ Variant	confirmation, information, warning, destructive, error, input
 | ButtonType	      | primary, secondary, cancel, close                           | -->
 
 
-## AddOnSdk.constants 
+## addOnUISdk.constants 
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
@@ -76,7 +76,7 @@ Variant	confirmation, information, warning, destructive, error, input
         <p>Runtime type of the entrypoint creating this backend object. 
         <ul>
           <li><strong>panel</strong></li>add-on's iframe runtime, ie: code running in <b>index.html</b>
-          <li><strong>script</strong></li>add-on's script runtime ie: code running in <b>code.js</b>
+          <li><strong>script</strong></li>add-on's authoring sandbox code ie: code running in <b>code.js</b>
           <li><strong>dialog</strong></li>currently open dialog code
         </ul>  
         </p>        
