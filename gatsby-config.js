@@ -41,7 +41,7 @@ module.exports = {
         path: "references/",
       },
       {
-        title: "AddOnSdk",
+        title: "Add-on UI SDK",
         path: "references/addonsdk/",
         pages: [
           {
@@ -101,189 +101,189 @@ module.exports = {
         ],
       },
       {
-        title: "Script Runtime",
-        path: "references/scriptruntime/",
+        title: "Authoring Sandbox",
+        path: "references/authoring/",
         pages: [
           {
             title: "Communication APIs",
-            path: "references/scriptruntime/communication/",
+            path: "references/authoring/communication/",
           },
           {
             title: "Web APIs",
-            path: "references/scriptruntime/web/",
+            path: "references/authoring/web/",
           },
           {
-            title: "Editor APIs",
-            path: "references/scriptruntime/editor/",
+            title: "Document APIs",
+            path: "references/authoring/editor/",
             pages: [
               {
                 title: "Classes",
-                path: "references/scriptruntime/editor/classes/Editor.md",
+                path: "references/authoring/editor/classes/Editor.md",
                 pages: [
                   {
                     title: "ArtboardList",
-                    path: "references/scriptruntime/editor/classes/ArtboardList.md",
+                    path: "references/authoring/editor/classes/ArtboardList.md",
                   },
                   {
                     title: "ArtboardNode",
-                    path: "references/scriptruntime/editor/classes/ArtboardNode.md",
+                    path: "references/authoring/editor/classes/ArtboardNode.md",
                   },
                   {
                     title: "Color",
-                    path: "references/scriptruntime/editor/classes/Color.md",
+                    path: "references/authoring/editor/classes/Color.md",
                   },
                   {
                     title: "ContainerNode",
-                    path: "references/scriptruntime/editor/classes/ContainerNode.md",
+                    path: "references/authoring/editor/classes/ContainerNode.md",
                   },
                   {
                     title: "Context",
-                    path: "references/scriptruntime/editor/classes/Context.md",
+                    path: "references/authoring/editor/classes/Context.md",
                   },
                   {
                     title: "EllipseNode",
-                    path: "references/scriptruntime/editor/classes/EllipseNode.md",
+                    path: "references/authoring/editor/classes/EllipseNode.md",
                   },
                   {
                     title: "Editor",
-                    path: "references/scriptruntime/editor/classes/Editor.md",
+                    path: "references/authoring/editor/classes/Editor.md",
                   },
                   {
                     title: "ExpressRootNode",
-                    path: "references/scriptruntime/editor/classes/ExpressRootNode.md",
+                    path: "references/authoring/editor/classes/ExpressRootNode.md",
                   },
                   {
                     title: "FillableNode",
-                    path: "references/scriptruntime/editor/classes/FillableNode.md",
+                    path: "references/authoring/editor/classes/FillableNode.md",
                   },
                   {
                     title: "GroupNode",
-                    path: "references/scriptruntime/editor/classes/GroupNode.md",
+                    path: "references/authoring/editor/classes/GroupNode.md",
                   },
                   {
                     title: "ImageRectangleNode",
-                    path: "references/scriptruntime/editor/classes/ImageRectangleNode.md",
+                    path: "references/authoring/editor/classes/ImageRectangleNode.md",
                   },
                   {
                     title: "ItemList",
-                    path: "references/scriptruntime/editor/classes/ItemList.md",
+                    path: "references/authoring/editor/classes/ItemList.md",
                   },
                   {
                     title: "LineNode",
-                    path: "references/scriptruntime/editor/classes/LineNode.md",
+                    path: "references/authoring/editor/classes/LineNode.md",
                   },
                   {
                     title: "MediaContainerNode",
-                    path: "references/scriptruntime/editor/classes/MediaContainerNode.md",
+                    path: "references/authoring/editor/classes/MediaContainerNode.md",
                   },
                   {
                     title: "Node",
-                    path: "references/scriptruntime/editor/classes/Node.md",
+                    path: "references/authoring/editor/classes/Node.md",
                   },
                   {
                     title: "PageList",
-                    path: "references/scriptruntime/editor/classes/PageList.md",
+                    path: "references/authoring/editor/classes/PageList.md",
                   },
                   {
                     title: "PageNode",
-                    path: "references/scriptruntime/editor/classes/PageNode.md",
+                    path: "references/authoring/editor/classes/PageNode.md",
                   },
                   {
                     title: "ReadOnlyItemList",
-                    path: "references/scriptruntime/editor/classes/ReadOnlyItemList.md",
+                    path: "references/authoring/editor/classes/ReadOnlyItemList.md",
                   },
                   {
                     title: "RectangleNode",
-                    path: "references/scriptruntime/editor/classes/RectangleNode.md",
+                    path: "references/authoring/editor/classes/RectangleNode.md",
                   },
                   {
                     title: "StrokableNode",
-                    path: "references/scriptruntime/editor/classes/StrokableNode.md",
+                    path: "references/authoring/editor/classes/StrokableNode.md",
                   },
                   {
                     title: "TextNode",
-                    path: "references/scriptruntime/editor/classes/TextNode.md",
+                    path: "references/authoring/editor/classes/TextNode.md",
                   },
                 ],
               },
               {
                 title: "Interfaces",
-                path: "references/scriptruntime/editor/interfaces/BitmapImage.md",
+                path: "references/authoring/editor/interfaces/BitmapImage.md",
                 pages: [
                   {
                     title: "BitmapImage",
-                    path: "references/scriptruntime/editor/interfaces/BitmapImage.md",
+                    path: "references/authoring/editor/interfaces/BitmapImage.md",
                   },
                   {
                     title: "ColorFill",
-                    path: "references/scriptruntime/editor/interfaces/ColorFill.md",
+                    path: "references/authoring/editor/interfaces/ColorFill.md",
                   },
                   {
                     title: "Fill",
-                    path: "references/scriptruntime/editor/interfaces/Fill.md",
+                    path: "references/authoring/editor/interfaces/Fill.md",
                   },
                   // {
                   //   "title": "FillTypeValueExtensibleEnum",
-                  //   "path": "references/scriptruntime/editor/interfaces/FillTypeValueExtensibleEnum.md",
+                  //   "path": "references/authoring/editor/interfaces/FillTypeValueExtensibleEnum.md",
                   // },
                   {
                     title: "IFillableNode",
-                    path: "references/scriptruntime/editor/interfaces/IFillableNode.md",
+                    path: "references/authoring/editor/interfaces/IFillableNode.md",
                   },
                   {
                     title: "IRectangularNode",
-                    path: "references/scriptruntime/editor/interfaces/IRectangularNode.md",
+                    path: "references/authoring/editor/interfaces/IRectangularNode.md",
                   },
                   {
                     title: "ListItem",
-                    path: "references/scriptruntime/editor/interfaces/ListItem.md",
+                    path: "references/authoring/editor/interfaces/ListItem.md",
                   },
                   {
                     title: "RectangleGeometry",
-                    path: "references/scriptruntime/editor/interfaces/RectangleGeometry.md",
+                    path: "references/authoring/editor/interfaces/RectangleGeometry.md",
                   },
 
                   {
                     title: "Stroke",
-                    path: "references/scriptruntime/editor/interfaces/Stroke.md",
+                    path: "references/authoring/editor/interfaces/Stroke.md",
                   },
                   {
                     title: "StrokeOptions",
-                    path: "references/scriptruntime/editor/interfaces/StrokeOptions.md",
+                    path: "references/authoring/editor/interfaces/StrokeOptions.md",
                   },
                   {
                     title: "Utils",
-                    path: "references/scriptruntime/editor/interfaces/Utils.md",
+                    path: "references/authoring/editor/interfaces/Utils.md",
                   },
                 ],
               },
               {
                 title: "Constants",
-                path: "references/scriptruntime/editor/enums/BlendModeValue.md",
+                path: "references/authoring/editor/enums/BlendModeValue.md",
                 pages: [
                   {
                     title: "ArrowHeadType",
-                    path: "references/scriptruntime/editor/enums/ArrowHeadType.md",
+                    path: "references/authoring/editor/enums/ArrowHeadType.md",
                   },
                   {
                     title: "BlendModeValue",
-                    path: "references/scriptruntime/editor/enums/BlendModeValue.md",
+                    path: "references/authoring/editor/enums/BlendModeValue.md",
                   },
                   {
                     title: "FillTypeValue",
-                    path: "references/scriptruntime/editor/enums/FillTypeValue.md",
+                    path: "references/authoring/editor/enums/FillTypeValue.md",
                   },
                   {
                     title: "SceneNodeTypeValueID",
-                    path: "references/scriptruntime/editor/enums/SceneNodeTypeValueID.md",
+                    path: "references/authoring/editor/enums/SceneNodeTypeValueID.md",
                   },
                   {
                     title: "StrokePositionValue",
-                    path: "references/scriptruntime/editor/enums/StrokePositionValue.md",
+                    path: "references/authoring/editor/enums/StrokePositionValue.md",
                   },
                   {
                     title: "TextAlignmentValue",
-                    path: "references/scriptruntime/editor/enums/TextAlignmentValue.md",
+                    path: "references/authoring/editor/enums/TextAlignmentValue.md",
                   },
                 ],
               },
@@ -320,10 +320,10 @@ module.exports = {
             title: "Development tools",
             path: "guides/getting_started/dev_tooling.md",
           },
-          // {
-          //   title: "Tutorials",
-          //   path: "guides/tutorials/index.md",
-          // },
+          {
+            title: "Tutorials",
+            path: "guides/tutorials/index.md",
+          },
         ],
       },
       {

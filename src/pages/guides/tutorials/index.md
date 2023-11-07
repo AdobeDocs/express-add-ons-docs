@@ -27,7 +27,7 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 ### Creating a Grid System add-on with the Adobe Express Document API
 
-Davide Barranca - November 5th, 2023
+Davide Barranca - November 6th, 2023
 
 <ResourceCard slots="link, image, heading, text" width="50%"/>
 
