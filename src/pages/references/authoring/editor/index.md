@@ -67,9 +67,9 @@ insertionParent.children.append(rectangle);
 
 **IMPORTANT:** While using the Document APIs in experimental mode, there is a **risk that your document could become corrupt or unopenable**. In particular, you can expect this to happen if you are using any grids or vector shapes (with the exception of simple circles/rectangles) while testing with these APIs. Please do not test these APIs with the use of any documents you deem important.
 
-## References & Code Samples
+## Tutorials, References & Code Samples
 
-Check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the [Document APIs](./classes/Editor.md). There's also an extensive tutorial provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/tutorials/grids-addon.md). 
+Please see [this extensive tutorial](../../../guides/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/tutorials/). Also be sure to check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the [Document APIs](./classes/Editor.md).
 
 <InlineAlert slots="text" variant="warning"/>
 

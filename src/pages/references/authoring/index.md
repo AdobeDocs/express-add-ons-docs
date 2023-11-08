@@ -43,7 +43,7 @@ The [document APIs](./editor/) provide access to the user's document structure a
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the [tutorials section](../../guides/tutorials/) to learn more about using the authoring sandbox and Adobe Express document APIs. 
+Please see the [tutorials section](../../guides/tutorials/) to learn more about using the authoring sandbox (aka: script runtime) and Adobe Express Document APIs. 
 
 ## Authoring Sandbox's JavaScript Engine
 

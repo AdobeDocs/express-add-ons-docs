@@ -100,7 +100,7 @@ The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs
 
 <InlineAlert slots="text" variant="info"/>
 
-If you're using the experimental Authoring Sandbox APIs in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
+If you're using the experimental Authoring Sandbox APIs (aka: Script Runtime) in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
 
 ## 2023-09-19
 
