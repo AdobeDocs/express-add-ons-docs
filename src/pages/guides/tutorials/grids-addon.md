@@ -67,10 +67,10 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ### Getting Started with the Document API
 
-As part of the [Authoring Sandbox](/references/scriptruntime/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
+As part of the [Authoring Sandbox](/references/authoring/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
 - The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
-- The **Authoring Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/scriptruntime/communication/)), providing access to the [Document API](/references/scriptruntime/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
+- The **Authoring Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/authoring/communication/)), providing access to the [Document API](/references/authoring/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
@@ -78,7 +78,7 @@ This is a high-level overview of the overall structure; while the implementation
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The authoring sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
+**IMPORTANT:** The authoring sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ### The Project Structure
 
@@ -249,11 +249,11 @@ It's also possible to expose iframe methods to the Authoring Sandbox, i.e., usin
 
 ### Using the Reference Documentation
 
-The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/scriptruntime/editor.md).
+The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/authoring/editor.md).
 
 ![Add-on Communication API](images/grids-addon-reference.png)
 
-In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/scriptruntime/editor/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/scriptruntime/editor/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/scriptruntime/editor/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/scriptruntime/editor/classes/Node/)—the base class.
+In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/authoring/editor/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/authoring/editor/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/authoring/editor/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/authoring/editor/classes/Node/)—the base class.
 
 Some properties are shared among the `RectangleNode` and, say, other `StrokableNode` subclasses such as the `EllipseNode`: for instance, the `opacity`, or `blendMode`. Other ones are unique, like the `topLeftRadius`, which, in the context of an `EllipseNode`, wouldn't make sense.
 
@@ -331,7 +331,7 @@ Please note that it's considered good practice to initially **disable all intera
 
 The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
-According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/scriptruntime/editor/classes/Editor/) class, which must be imported from `"express"` with the following statement.
+According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/authoring/editor/classes/Editor/) class, which must be imported from `"express"` with the following statement.
 
 ```js
 import { editor, utils, Constants } from "express";
@@ -355,12 +355,12 @@ const fillColor = editor.createColorFill(col);
 rect.fills.append(fillColor);
 ```
 
-First, you make use of the `createColor()` method from the `utils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/scriptruntime/editor/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by appending it to the `fills` list.
+First, you make use of the `createColor()` method from the `utils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/authoring/editor/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by appending it to the `fills` list.
 
 <!-- code here -->
 <InlineAlert variant="info" slots="text1" />
 
-Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/scriptruntime/editor/classes/Editor.md#createstroke).
+Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/authoring/editor/classes/Editor.md#createstroke).
 
 The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
 
@@ -375,7 +375,7 @@ In other words, we're adding `rect` as a sibling of whatever happens to be activ
 
 ![](images/grids-addon-shape.png)
 
-Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](/references/scriptruntime/editor/classes/ArtboardNode/) of the first [Page](/references/scriptruntime/editor/classes/PageNode/).
+Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](/references/authoring/editor/classes/ArtboardNode/) of the first [Page](/references/authoring/editor/classes/PageNode/).
 
 ```js
 // ...
@@ -644,7 +644,7 @@ This is because we're using gutters as page margins, too, as the following illus
 
 ![](images/grids-addon-rowheight.png)
 
-We must get hold of the [Document](/references/scriptruntime/editor/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](/references/scriptruntime/editor/classes/PageNode/)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
+We must get hold of the [Document](/references/authoring/editor/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](/references/authoring/editor/classes/PageNode/)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
 
 ```js
 // ...
@@ -823,7 +823,7 @@ const hexToColor = (hex) => {
 };
 ```
 
-It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/scriptruntime/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/scriptruntime/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
+It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/authoring/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/authoring/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
@@ -859,7 +859,7 @@ rowsGroup.children.append(...rows);              // ❌  fill
 page.artboards.first.children.append(rowsGroup); // ❌  append
 ```
 
-To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/scriptruntime/editor/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
+To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/authoring/editor/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
 
 ```js
 // ...
@@ -867,7 +867,7 @@ rowsGroup.children.append(...rows);
 rowsGroup.locked = true;
 ```
 
-The Reference also shows an interesting [`blendMode`](/references/scriptruntime/editor/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/scriptruntime/editor/enums/BlendModeValue/#multiply) will produce a visually nicer overlay effect ([opacity](/references/scriptruntime/editor/classes/GroupNode.md#opacity) can be an alternative).
+The Reference also shows an interesting [`blendMode`](/references/authoring/editor/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/authoring/editor/enums/BlendModeValue/#multiply) will produce a visually nicer overlay effect ([opacity](/references/authoring/editor/classes/GroupNode.md#opacity) can be an alternative).
 
 ```js
 // ...

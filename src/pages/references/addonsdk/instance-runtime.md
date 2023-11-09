@@ -44,7 +44,7 @@ Requests a promise-based proxy object from another runtime to be used to call th
 
 | Name          | Type        | Description   |
 | --------------| ------------| -----------:  |
-| `runtimeType` | `RuntimeType` | The runtime type to create the proxy object from (ie: "script" for instance, which maps to the code referenced in the [`script` entryPoint](../scriptruntime/index.md#script-entry-point) in your add-on's `manifest.js` file). |
+| `runtimeType` | `RuntimeType` | The runtime type to create the proxy object from (ie: "script" for instance, which maps to the code referenced in the [`script` entryPoint](../authoring/index.md#script-entry-point) in your add-on's `manifest.js` file). |
 
 #### Return
 
