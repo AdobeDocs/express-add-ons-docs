@@ -20,11 +20,7 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
   ↳ **`ReadOnlyItemList`**
 
-  ↳↳ [`ArtboardList`](ArtboardList.md)
-
-  ↳↳ [`ItemList`](ItemList.md)
-
-  ↳↳ [`PageList`](PageList.md)
+  ↳↳ [`RestrictedItemList`](RestrictedItemList.md)
 
 ## Table of contents
 
@@ -36,13 +32,14 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
 ### Methods
 
-- [iterator](ReadOnlyItemList.md#iterator)
+- [[iterator]](ReadOnlyItemList.md#[iterator])
+- [indexOf](ReadOnlyItemList.md#indexOf)
 - [item](ReadOnlyItemList.md#item)
 - [toArray](ReadOnlyItemList.md#toArray)
 
 ## Accessors
 
-### first
+### <a id="first" name="first"></a> first
 
 • `get` **first**(): `undefined` \| `T`
 
@@ -54,7 +51,7 @@ First item in this list, or undefined if list is empty.
 
 ___
 
-### last
+### <a id="last" name="last"></a> last
 
 • `get` **last**(): `undefined` \| `T`
 
@@ -66,7 +63,7 @@ Last item in this list, or undefined if list is empty.
 
 ___
 
-### length
+### <a id="length" name="length"></a> length
 
 • `get` **length**(): `number`
 
@@ -78,9 +75,9 @@ Number of items in this list.
 
 ## Methods
 
-### iterator
+### <a id="[iterator]" name="[iterator]"></a> [iterator]
 
-▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -90,7 +87,27 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ___
 
-### item
+### <a id="indexOf" name="indexOf"></a> indexOf
+
+▸ **indexOf**(`item`): `number`
+
+Get index of item in list.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `item` | `T` |
+
+#### Returns
+
+`number`
+
+index number, or -1 if item isn't in this list.
+
+___
+
+### <a id="item" name="item"></a> item
 
 ▸ **item**(`index`): `undefined` \| `T`
 
@@ -108,7 +125,7 @@ Returns item at the given index, or undefined if index is out of range.
 
 ___
 
-### toArray
+### <a id="toArray" name="toArray"></a> toArray
 
 ▸ **toArray**(): readonly `T`[]
 

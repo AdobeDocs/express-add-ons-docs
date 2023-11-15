@@ -7,7 +7,7 @@ Interface for nodes with width and height properties.
 ## Implemented by
 
 - [`ArtboardNode`](../classes/ArtboardNode.md)
-- [`ImageRectangleNode`](../classes/ImageRectangleNode.md)
+- [`GridLayoutNode`](../classes/GridLayoutNode.md)
 - [`RectangleNode`](../classes/RectangleNode.md)
 
 ## Table of contents
@@ -19,12 +19,12 @@ Interface for nodes with width and height properties.
 
 ## Properties
 
-### height
+### <a id="height" name="height"></a> height
 
 • **height**: `number`
 
 ___
 
-### width
+### <a id="width" name="width"></a> width
 
 • **width**: `number`

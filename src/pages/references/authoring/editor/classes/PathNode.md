@@ -1,38 +1,54 @@
-[@add-on-hlapi-sdk](../overview.md) / GroupNode
+[@add-on-hlapi-sdk](../overview.md) / PathNode
 
-# Class: GroupNode
+# Class: PathNode
 
-A GroupNode represents a Group object in the scenegraph, which has a collection of generic children as well as a separate,
-optional vector mask child.
+A PathNode represents a generic vector path shape in the scenegraph. Paths cannot be created or edited through this API
+yet, only read.
 
 ## Hierarchy
 
-- [`ContainerNode`](ContainerNode.md)
+- [`FillableNode`](FillableNode.md)
 
-  ↳ **`GroupNode`**
+  ↳ **`PathNode`**
 
 ## Table of contents
 
+### Properties
+
+- [DEFAULT\_STROKE\_WIDTH](PathNode.md#DEFAULT_STROKE_WIDTH)
+
 ### Accessors
 
-- [absoluteRotation](GroupNode.md#absoluteRotation)
-- [absoluteTransform](GroupNode.md#absoluteTransform)
-- [allChildren](GroupNode.md#allChildren)
-- [blendMode](GroupNode.md#blendMode)
-- [children](GroupNode.md#children)
-- [locked](GroupNode.md#locked)
-- [maskShape](GroupNode.md#maskShape)
-- [opacity](GroupNode.md#opacity)
-- [parent](GroupNode.md#parent)
-- [relativeRotation](GroupNode.md#relativeRotation)
-- [relativeTransform](GroupNode.md#relativeTransform)
-- [translateX](GroupNode.md#translateX)
-- [translateY](GroupNode.md#translateY)
-- [type](GroupNode.md#type)
+- [absoluteRotation](PathNode.md#absoluteRotation)
+- [absoluteTransform](PathNode.md#absoluteTransform)
+- [allChildren](PathNode.md#allChildren)
+- [blendMode](PathNode.md#blendMode)
+- [fillRule](PathNode.md#fillRule)
+- [fills](PathNode.md#fills)
+- [locked](PathNode.md#locked)
+- [opacity](PathNode.md#opacity)
+- [parent](PathNode.md#parent)
+- [path](PathNode.md#path)
+- [relativeRotation](PathNode.md#relativeRotation)
+- [relativeTransform](PathNode.md#relativeTransform)
+- [strokes](PathNode.md#strokes)
+- [translateX](PathNode.md#translateX)
+- [translateY](PathNode.md#translateY)
+- [type](PathNode.md#type)
 
 ### Methods
 
-- [removeFromParent](GroupNode.md#removeFromParent)
+- [removeFromParent](PathNode.md#removeFromParent)
+
+## Properties
+
+### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
+
+▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
+
+#### Inherited from
+
+[FillableNode](FillableNode.md).[DEFAULT_STROKE_WIDTH](FillableNode.md#DEFAULT_STROKE_WIDTH)
 
 ## Accessors
 
@@ -48,7 +64,7 @@ The node's absolute (global) rotation angle in degrees – includes any cumulati
 
 #### Inherited from
 
-ContainerNode.absoluteRotation
+FillableNode.absoluteRotation
 
 • `set` **absoluteRotation**(`value`): `void`
 
@@ -64,7 +80,7 @@ ContainerNode.absoluteRotation
 
 #### Inherited from
 
-ContainerNode.absoluteRotation
+FillableNode.absoluteRotation
 
 ___
 
@@ -80,7 +96,7 @@ The node's absolute (global) transform matrix.
 
 #### Inherited from
 
-ContainerNode.absoluteTransform
+FillableNode.absoluteTransform
 
 ___
 
@@ -99,7 +115,7 @@ overall display z-order.
 
 #### Inherited from
 
-ContainerNode.allChildren
+FillableNode.allChildren
 
 ___
 
@@ -116,7 +132,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 #### Inherited from
 
-ContainerNode.blendMode
+FillableNode.blendMode
 
 • `set` **blendMode**(`value`): `void`
 
@@ -132,24 +148,36 @@ ContainerNode.blendMode
 
 #### Inherited from
 
-ContainerNode.blendMode
+FillableNode.blendMode
 
 ___
 
-### <a id="children" name="children"></a> children
+### <a id="fillRule" name="fillRule"></a> fillRule
 
-• `get` **children**(): [`ItemList`](ItemList.md)<[`Node`](Node.md)\>
+• `get` **fillRule**(): [`FillRule`](../enums/FillRule.md)
 
-The Group's regular children. Does not include the maskShape if one is present.
-Use the methods on this ItemList object to get, add, and remove children.
+The fill rule specifies how the interior area of a path is determined in cases where the path is self-intersecting or
+has multiple disjoint parts. This value is read-only and cannot be modified via this API yet.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Node`](Node.md)\>
+[`FillRule`](../enums/FillRule.md)
 
-#### Overrides
+___
 
-ContainerNode.children
+### <a id="fills" name="fills"></a> fills
+
+• `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
+
+Any fill(s) on the shape. Use the methods on this ItemList object to get, add, and remove fills.
+
+#### Returns
+
+[`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
+
+#### Inherited from
+
+FillableNode.fills
 
 ___
 
@@ -166,7 +194,7 @@ cannot be edited by the user unless they are unlocked first.
 
 #### Inherited from
 
-ContainerNode.locked
+FillableNode.locked
 
 • `set` **locked**(`locked`): `void`
 
@@ -182,41 +210,7 @@ ContainerNode.locked
 
 #### Inherited from
 
-ContainerNode.locked
-
-___
-
-### <a id="maskShape" name="maskShape"></a> maskShape
-
-• `get` **maskShape**(): `undefined` \| [`FillableNode`](FillableNode.md)
-
-A vector shape that acts as a clipping mask for the content of this group. The mask node is separate from the Group's
-generic 'children' collection, though both are part of the overall 'allChildren' of this Group.
-
-#### Returns
-
-`undefined` \| [`FillableNode`](FillableNode.md)
-
-undefined if no mask is set on this group.
-
-• `set` **maskShape**(`mask`): `void`
-
-If set to a vector shape, adds a mask or replaces the exsiting mask on this Group.
-If set to undefined, removes any mask that was previously set on this Group.
-
-**`Throws`**
-
-if the given node type cannot be used as a vector mask.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `mask` | `undefined` \| [`FillableNode`](FillableNode.md) |
-
-#### Returns
-
-`void`
+FillableNode.locked
 
 ___
 
@@ -232,7 +226,7 @@ The node's opacity, from 0.0 to 1.0
 
 #### Inherited from
 
-ContainerNode.opacity
+FillableNode.opacity
 
 • `set` **opacity**(`opacity`): `void`
 
@@ -248,7 +242,7 @@ ContainerNode.opacity
 
 #### Inherited from
 
-ContainerNode.opacity
+FillableNode.opacity
 
 ___
 
@@ -264,7 +258,20 @@ The node's parent. Undefined if the node is an orphan, or if the node is the art
 
 #### Inherited from
 
-ContainerNode.parent
+FillableNode.parent
+
+___
+
+### <a id="path" name="path"></a> path
+
+• `get` **path**(): `string`
+
+The path definition as an SVG string. The path data is read-only and cannot be modified via this API yet.
+Example: "M 0 0 L 10 15".
+
+#### Returns
+
+`string`
 
 ___
 
@@ -282,7 +289,7 @@ rotates the node about its bounding box's center, not its origin.
 
 #### Inherited from
 
-ContainerNode.relativeRotation
+FillableNode.relativeRotation
 
 • `set` **relativeRotation**(`value`): `void`
 
@@ -298,7 +305,7 @@ ContainerNode.relativeRotation
 
 #### Inherited from
 
-ContainerNode.relativeRotation
+FillableNode.relativeRotation
 
 ___
 
@@ -314,7 +321,23 @@ The node's transform matrix relative to its parent.
 
 #### Inherited from
 
-ContainerNode.relativeTransform
+FillableNode.relativeTransform
+
+___
+
+### <a id="strokes" name="strokes"></a> strokes
+
+• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+
+Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
+
+#### Returns
+
+[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+
+#### Inherited from
+
+FillableNode.strokes
 
 ___
 
@@ -330,7 +353,7 @@ The translation of the node along its parent's x-axis.
 
 #### Inherited from
 
-ContainerNode.translateX
+FillableNode.translateX
 
 • `set` **translateX**(`value`): `void`
 
@@ -346,7 +369,7 @@ ContainerNode.translateX
 
 #### Inherited from
 
-ContainerNode.translateX
+FillableNode.translateX
 
 ___
 
@@ -362,7 +385,7 @@ The translation of the node along its parent's y-axis.
 
 #### Inherited from
 
-ContainerNode.translateY
+FillableNode.translateY
 
 • `set` **translateY**(`value`): `void`
 
@@ -378,7 +401,7 @@ ContainerNode.translateY
 
 #### Inherited from
 
-ContainerNode.translateY
+FillableNode.translateY
 
 ___
 
@@ -394,7 +417,7 @@ The node's type.
 
 #### Inherited from
 
-ContainerNode.type
+FillableNode.type
 
 ## Methods
 
@@ -412,4 +435,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[removeFromParent](ContainerNode.md#removeFromParent)
+[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removeFromParent)

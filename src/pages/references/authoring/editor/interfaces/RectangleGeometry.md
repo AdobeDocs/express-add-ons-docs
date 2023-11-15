@@ -11,12 +11,12 @@
 
 ## Properties
 
-### height
+### <a id="height" name="height"></a> height
 
 • **height**: `number`
 
 ___
 
-### width
+### <a id="width" name="width"></a> width
 
 • **width**: `number`

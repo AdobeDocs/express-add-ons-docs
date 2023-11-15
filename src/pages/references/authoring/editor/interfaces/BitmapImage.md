@@ -14,7 +14,7 @@ Represents a bitmap image resource. Can be displayed in the document by creating
 
 ## Properties
 
-### height
+### <a id="height" name="height"></a> height
 
 • `Readonly` **height**: `number`
 
@@ -22,7 +22,7 @@ Original height of the bitmap in pixels.
 
 ___
 
-### width
+### <a id="width" name="width"></a> width
 
 • `Readonly` **width**: `number`
 

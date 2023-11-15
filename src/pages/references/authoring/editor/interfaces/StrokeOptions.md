@@ -21,7 +21,7 @@ Properties that can be provided to create a stroke.
 
 ## Properties
 
-### color
+### <a id="color" name="color"></a> color
 
 • `Readonly` **color**: [`Color`](../classes/Color.md)
 
@@ -29,7 +29,7 @@ The color of a stroke.
 
 ___
 
-### dashOffset
+### <a id="dashOffset" name="dashOffset"></a> dashOffset
 
 • `Readonly` **dashOffset**: `number`
 
@@ -37,7 +37,7 @@ Number of pixels the beginning of dash pattern should be offset along the stroke
 
 ___
 
-### dashPattern
+### <a id="dashPattern" name="dashPattern"></a> dashPattern
 
 • `Readonly` **dashPattern**: `number`[]
 
@@ -47,7 +47,7 @@ repeated along the length of the stroke. The first value represents the first so
 
 ___
 
-### width
+### <a id="width" name="width"></a> width
 
 • `Readonly` **width**: `number`
 

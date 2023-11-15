@@ -1,38 +1,43 @@
-[@add-on-hlapi-sdk](../overview.md) / GroupNode
+[@add-on-hlapi-sdk](../overview.md) / GridLayoutNode
 
-# Class: GroupNode
+# Class: GridLayoutNode
 
-A GroupNode represents a Group object in the scenegraph, which has a collection of generic children as well as a separate,
-optional vector mask child.
+A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to
+create a layout grid that other content can be placed into.
 
 ## Hierarchy
 
-- [`ContainerNode`](ContainerNode.md)
+- [`Node`](Node.md)
 
-  ↳ **`GroupNode`**
+  ↳ **`GridLayoutNode`**
+
+## Implements
+
+- [`IRectangularNode`](../interfaces/IRectangularNode.md)
 
 ## Table of contents
 
 ### Accessors
 
-- [absoluteRotation](GroupNode.md#absoluteRotation)
-- [absoluteTransform](GroupNode.md#absoluteTransform)
-- [allChildren](GroupNode.md#allChildren)
-- [blendMode](GroupNode.md#blendMode)
-- [children](GroupNode.md#children)
-- [locked](GroupNode.md#locked)
-- [maskShape](GroupNode.md#maskShape)
-- [opacity](GroupNode.md#opacity)
-- [parent](GroupNode.md#parent)
-- [relativeRotation](GroupNode.md#relativeRotation)
-- [relativeTransform](GroupNode.md#relativeTransform)
-- [translateX](GroupNode.md#translateX)
-- [translateY](GroupNode.md#translateY)
-- [type](GroupNode.md#type)
+- [absoluteRotation](GridLayoutNode.md#absoluteRotation)
+- [absoluteTransform](GridLayoutNode.md#absoluteTransform)
+- [allChildren](GridLayoutNode.md#allChildren)
+- [blendMode](GridLayoutNode.md#blendMode)
+- [fill](GridLayoutNode.md#fill)
+- [height](GridLayoutNode.md#height)
+- [locked](GridLayoutNode.md#locked)
+- [opacity](GridLayoutNode.md#opacity)
+- [parent](GridLayoutNode.md#parent)
+- [relativeRotation](GridLayoutNode.md#relativeRotation)
+- [relativeTransform](GridLayoutNode.md#relativeTransform)
+- [translateX](GridLayoutNode.md#translateX)
+- [translateY](GridLayoutNode.md#translateY)
+- [type](GridLayoutNode.md#type)
+- [width](GridLayoutNode.md#width)
 
 ### Methods
 
-- [removeFromParent](GroupNode.md#removeFromParent)
+- [removeFromParent](GridLayoutNode.md#removeFromParent)
 
 ## Accessors
 
@@ -48,7 +53,7 @@ The node's absolute (global) rotation angle in degrees – includes any cumulati
 
 #### Inherited from
 
-ContainerNode.absoluteRotation
+Node.absoluteRotation
 
 • `set` **absoluteRotation**(`value`): `void`
 
@@ -64,7 +69,7 @@ ContainerNode.absoluteRotation
 
 #### Inherited from
 
-ContainerNode.absoluteRotation
+Node.absoluteRotation
 
 ___
 
@@ -80,7 +85,7 @@ The node's absolute (global) transform matrix.
 
 #### Inherited from
 
-ContainerNode.absoluteTransform
+Node.absoluteTransform
 
 ___
 
@@ -99,7 +104,7 @@ overall display z-order.
 
 #### Inherited from
 
-ContainerNode.allChildren
+Node.allChildren
 
 ___
 
@@ -116,7 +121,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 #### Inherited from
 
-ContainerNode.blendMode
+Node.blendMode
 
 • `set` **blendMode**(`value`): `void`
 
@@ -132,24 +137,47 @@ ContainerNode.blendMode
 
 #### Inherited from
 
-ContainerNode.blendMode
+Node.blendMode
 
 ___
 
-### <a id="children" name="children"></a> children
+### <a id="fill" name="fill"></a> fill
 
-• `get` **children**(): [`ItemList`](ItemList.md)<[`Node`](Node.md)\>
+• `get` **fill**(): [`Fill`](../interfaces/Fill.md)
 
-The Group's regular children. Does not include the maskShape if one is present.
-Use the methods on this ItemList object to get, add, and remove children.
+The background fill of the GridLayout.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Node`](Node.md)\>
+[`Fill`](../interfaces/Fill.md)
 
-#### Overrides
+• `set` **fill**(`fill`): `void`
 
-ContainerNode.children
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fill` | [`Fill`](../interfaces/Fill.md) |
+
+#### Returns
+
+`void`
+
+___
+
+### <a id="height" name="height"></a> height
+
+• `get` **height**(): `number`
+
+The height of the node.
+
+#### Returns
+
+`number`
+
+#### Implementation of
+
+[IRectangularNode](../interfaces/IRectangularNode.md).[height](../interfaces/IRectangularNode.md#height)
 
 ___
 
@@ -166,7 +194,7 @@ cannot be edited by the user unless they are unlocked first.
 
 #### Inherited from
 
-ContainerNode.locked
+Node.locked
 
 • `set` **locked**(`locked`): `void`
 
@@ -182,41 +210,7 @@ ContainerNode.locked
 
 #### Inherited from
 
-ContainerNode.locked
-
-___
-
-### <a id="maskShape" name="maskShape"></a> maskShape
-
-• `get` **maskShape**(): `undefined` \| [`FillableNode`](FillableNode.md)
-
-A vector shape that acts as a clipping mask for the content of this group. The mask node is separate from the Group's
-generic 'children' collection, though both are part of the overall 'allChildren' of this Group.
-
-#### Returns
-
-`undefined` \| [`FillableNode`](FillableNode.md)
-
-undefined if no mask is set on this group.
-
-• `set` **maskShape**(`mask`): `void`
-
-If set to a vector shape, adds a mask or replaces the exsiting mask on this Group.
-If set to undefined, removes any mask that was previously set on this Group.
-
-**`Throws`**
-
-if the given node type cannot be used as a vector mask.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `mask` | `undefined` \| [`FillableNode`](FillableNode.md) |
-
-#### Returns
-
-`void`
+Node.locked
 
 ___
 
@@ -232,7 +226,7 @@ The node's opacity, from 0.0 to 1.0
 
 #### Inherited from
 
-ContainerNode.opacity
+Node.opacity
 
 • `set` **opacity**(`opacity`): `void`
 
@@ -248,7 +242,7 @@ ContainerNode.opacity
 
 #### Inherited from
 
-ContainerNode.opacity
+Node.opacity
 
 ___
 
@@ -264,7 +258,7 @@ The node's parent. Undefined if the node is an orphan, or if the node is the art
 
 #### Inherited from
 
-ContainerNode.parent
+Node.parent
 
 ___
 
@@ -282,7 +276,7 @@ rotates the node about its bounding box's center, not its origin.
 
 #### Inherited from
 
-ContainerNode.relativeRotation
+Node.relativeRotation
 
 • `set` **relativeRotation**(`value`): `void`
 
@@ -298,7 +292,7 @@ ContainerNode.relativeRotation
 
 #### Inherited from
 
-ContainerNode.relativeRotation
+Node.relativeRotation
 
 ___
 
@@ -314,7 +308,7 @@ The node's transform matrix relative to its parent.
 
 #### Inherited from
 
-ContainerNode.relativeTransform
+Node.relativeTransform
 
 ___
 
@@ -330,7 +324,7 @@ The translation of the node along its parent's x-axis.
 
 #### Inherited from
 
-ContainerNode.translateX
+Node.translateX
 
 • `set` **translateX**(`value`): `void`
 
@@ -346,7 +340,7 @@ ContainerNode.translateX
 
 #### Inherited from
 
-ContainerNode.translateX
+Node.translateX
 
 ___
 
@@ -362,7 +356,7 @@ The translation of the node along its parent's y-axis.
 
 #### Inherited from
 
-ContainerNode.translateY
+Node.translateY
 
 • `set` **translateY**(`value`): `void`
 
@@ -378,7 +372,7 @@ ContainerNode.translateY
 
 #### Inherited from
 
-ContainerNode.translateY
+Node.translateY
 
 ___
 
@@ -394,7 +388,23 @@ The node's type.
 
 #### Inherited from
 
-ContainerNode.type
+Node.type
+
+___
+
+### <a id="width" name="width"></a> width
+
+• `get` **width**(): `number`
+
+The width of the node.
+
+#### Returns
+
+`number`
+
+#### Implementation of
+
+[IRectangularNode](../interfaces/IRectangularNode.md).[width](../interfaces/IRectangularNode.md#width)
 
 ## Methods
 
@@ -412,4 +422,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[removeFromParent](ContainerNode.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removeFromParent)

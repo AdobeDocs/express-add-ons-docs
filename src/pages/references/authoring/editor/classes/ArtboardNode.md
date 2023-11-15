@@ -45,7 +45,7 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 
 ## Accessors
 
-### absoluteRotation
+### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -77,7 +77,7 @@ ContainerNode.absoluteRotation
 
 ___
 
-### absoluteTransform
+### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -93,7 +93,7 @@ ContainerNode.absoluteTransform
 
 ___
 
-### allChildren
+### <a id="allChildren" name="allChildren"></a> allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -112,16 +112,16 @@ ContainerNode.allChildren
 
 ___
 
-### blendMode
+### <a id="blendMode" name="blendMode"></a> blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -133,7 +133,7 @@ ContainerNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -145,7 +145,7 @@ ContainerNode.blendMode
 
 ___
 
-### children
+### <a id="children" name="children"></a> children
 
 • `get` **children**(): [`ItemList`](ItemList.md)<[`Node`](Node.md)\>
 
@@ -161,7 +161,7 @@ ContainerNode.children
 
 ___
 
-### fill
+### <a id="fill" name="fill"></a> fill
 
 • `get` **fill**(): [`Fill`](../interfaces/Fill.md)
 
@@ -185,7 +185,7 @@ The background fill of the artboard.
 
 ___
 
-### height
+### <a id="height" name="height"></a> height
 
 • `get` **height**(): `number`
 
@@ -201,7 +201,7 @@ The height of the artboard.
 
 ___
 
-### locked
+### <a id="locked" name="locked"></a> locked
 
 • `get` **locked**(): `boolean`
 
@@ -234,7 +234,7 @@ ContainerNode.locked
 
 ___
 
-### opacity
+### <a id="opacity" name="opacity"></a> opacity
 
 • `get` **opacity**(): `number`
 
@@ -266,7 +266,7 @@ ContainerNode.opacity
 
 ___
 
-### parent
+### <a id="parent" name="parent"></a> parent
 
 • `get` **parent**(): `undefined` \| [`PageNode`](PageNode.md)
 
@@ -282,7 +282,7 @@ ContainerNode.parent
 
 ___
 
-### relativeRotation
+### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -316,7 +316,7 @@ ContainerNode.relativeRotation
 
 ___
 
-### relativeTransform
+### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -332,7 +332,7 @@ ContainerNode.relativeTransform
 
 ___
 
-### strokes
+### <a id="strokes" name="strokes"></a> strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -348,7 +348,7 @@ Any strokes(s) on the shape. Use the methods on this ItemList object to get, add
 
 ___
 
-### translateX
+### <a id="translateX" name="translateX"></a> translateX
 
 • `get` **translateX**(): `number`
 
@@ -380,7 +380,7 @@ ContainerNode.translateX
 
 ___
 
-### translateY
+### <a id="translateY" name="translateY"></a> translateY
 
 • `get` **translateY**(): `number`
 
@@ -412,15 +412,15 @@ ContainerNode.translateY
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -428,7 +428,7 @@ ContainerNode.type
 
 ___
 
-### width
+### <a id="width" name="width"></a> width
 
 • `get` **width**(): `number`
 
@@ -444,7 +444,7 @@ The width of the artboard.
 
 ## Methods
 
-### removeFromParent
+### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
 
 ▸ **removeFromParent**(): `void`
 

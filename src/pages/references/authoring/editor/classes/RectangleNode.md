@@ -51,7 +51,7 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ## Properties
 
-### DEFAULT\_STROKE\_WIDTH
+### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
@@ -61,7 +61,7 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ## Accessors
 
-### absoluteRotation
+### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -93,7 +93,7 @@ FillableNode.absoluteRotation
 
 ___
 
-### absoluteTransform
+### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -109,7 +109,7 @@ FillableNode.absoluteTransform
 
 ___
 
-### allChildren
+### <a id="allChildren" name="allChildren"></a> allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -128,16 +128,16 @@ FillableNode.allChildren
 
 ___
 
-### blendMode
+### <a id="blendMode" name="blendMode"></a> blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -149,7 +149,7 @@ FillableNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -161,7 +161,7 @@ FillableNode.blendMode
 
 ___
 
-### bottomLeftRadius
+### <a id="bottomLeftRadius" name="bottomLeftRadius"></a> bottomLeftRadius
 
 • `get` **bottomLeftRadius**(): `number`
 
@@ -190,7 +190,7 @@ even if the radius value set here is higher.
 
 ___
 
-### bottomRightRadius
+### <a id="bottomRightRadius" name="bottomRightRadius"></a> bottomRightRadius
 
 • `get` **bottomRightRadius**(): `number`
 
@@ -219,7 +219,7 @@ even if the radius value set here is higher.
 
 ___
 
-### fills
+### <a id="fills" name="fills"></a> fills
 
 • `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
 
@@ -235,7 +235,7 @@ FillableNode.fills
 
 ___
 
-### height
+### <a id="height" name="height"></a> height
 
 • `get` **height**(): `number`
 
@@ -268,7 +268,7 @@ Must be at least MIN_DIMENSION.
 
 ___
 
-### locked
+### <a id="locked" name="locked"></a> locked
 
 • `get` **locked**(): `boolean`
 
@@ -301,7 +301,7 @@ FillableNode.locked
 
 ___
 
-### opacity
+### <a id="opacity" name="opacity"></a> opacity
 
 • `get` **opacity**(): `number`
 
@@ -333,7 +333,7 @@ FillableNode.opacity
 
 ___
 
-### parent
+### <a id="parent" name="parent"></a> parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -349,7 +349,7 @@ FillableNode.parent
 
 ___
 
-### relativeRotation
+### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -383,7 +383,7 @@ FillableNode.relativeRotation
 
 ___
 
-### relativeTransform
+### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -399,7 +399,7 @@ FillableNode.relativeTransform
 
 ___
 
-### strokes
+### <a id="strokes" name="strokes"></a> strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -415,7 +415,7 @@ FillableNode.strokes
 
 ___
 
-### topLeftRadius
+### <a id="topLeftRadius" name="topLeftRadius"></a> topLeftRadius
 
 • `get` **topLeftRadius**(): `number`
 
@@ -444,7 +444,7 @@ even if the radius value set here is higher.
 
 ___
 
-### topRightRadius
+### <a id="topRightRadius" name="topRightRadius"></a> topRightRadius
 
 • `get` **topRightRadius**(): `number`
 
@@ -473,7 +473,7 @@ even if the radius value set here is higher.
 
 ___
 
-### translateX
+### <a id="translateX" name="translateX"></a> translateX
 
 • `get` **translateX**(): `number`
 
@@ -505,7 +505,7 @@ FillableNode.translateX
 
 ___
 
-### translateY
+### <a id="translateY" name="translateY"></a> translateY
 
 • `get` **translateY**(): `number`
 
@@ -537,15 +537,15 @@ FillableNode.translateY
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -553,7 +553,7 @@ FillableNode.type
 
 ___
 
-### width
+### <a id="width" name="width"></a> width
 
 • `get` **width**(): `number`
 
@@ -586,7 +586,7 @@ Must be at least MIN_DIMENSION.
 
 ## Methods
 
-### getUniformCornerRadius
+### <a id="getUniformCornerRadius" name="getUniformCornerRadius"></a> getUniformCornerRadius
 
 ▸ **getUniformCornerRadius**(): `undefined` \| `number`
 
@@ -599,7 +599,7 @@ If the corner radii differ, returns undefined.
 
 ___
 
-### removeFromParent
+### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -617,7 +617,7 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 ___
 
-### setUniformCornerRadius
+### <a id="setUniformCornerRadius" name="setUniformCornerRadius"></a> setUniformCornerRadius
 
 ▸ **setUniformCornerRadius**(`radius`): `void`
 

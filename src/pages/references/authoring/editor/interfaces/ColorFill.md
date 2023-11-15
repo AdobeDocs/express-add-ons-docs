@@ -19,7 +19,7 @@ Represents a solid-color fill.
 
 ## Properties
 
-### color
+### <a id="color" name="color"></a> color
 
 • `Readonly` **color**: [`Color`](../classes/Color.md)
 
@@ -27,9 +27,9 @@ The fill color.
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
-• `Readonly` **type**: [`color`](../enums/FillTypeValue.md#color)
+• `Readonly` **type**: [`color`](../enums/FillType.md#color)
 
 The fill type.
 

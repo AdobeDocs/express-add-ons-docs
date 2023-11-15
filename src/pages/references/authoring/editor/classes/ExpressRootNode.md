@@ -34,7 +34,7 @@ An ExpressRootNode represents the root node of the document's "scenegraph" artwo
 
 ## Accessors
 
-### absoluteRotation
+### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -66,7 +66,7 @@ Node.absoluteRotation
 
 ___
 
-### absoluteTransform
+### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -82,7 +82,7 @@ Node.absoluteTransform
 
 ___
 
-### allChildren
+### <a id="allChildren" name="allChildren"></a> allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -101,16 +101,16 @@ Node.allChildren
 
 ___
 
-### blendMode
+### <a id="blendMode" name="blendMode"></a> blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -122,7 +122,7 @@ Node.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -134,7 +134,7 @@ Node.blendMode
 
 ___
 
-### locked
+### <a id="locked" name="locked"></a> locked
 
 • `get` **locked**(): `boolean`
 
@@ -167,7 +167,7 @@ Node.locked
 
 ___
 
-### opacity
+### <a id="opacity" name="opacity"></a> opacity
 
 • `get` **opacity**(): `number`
 
@@ -199,7 +199,7 @@ Node.opacity
 
 ___
 
-### pages
+### <a id="pages" name="pages"></a> pages
 
 • `get` **pages**(): [`PageList`](PageList.md)
 
@@ -211,7 +211,7 @@ The pages of the document. All visual content is contained on artboards within t
 
 ___
 
-### parent
+### <a id="parent" name="parent"></a> parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -227,7 +227,7 @@ Node.parent
 
 ___
 
-### relativeRotation
+### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -261,7 +261,7 @@ Node.relativeRotation
 
 ___
 
-### relativeTransform
+### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -277,7 +277,7 @@ Node.relativeTransform
 
 ___
 
-### translateX
+### <a id="translateX" name="translateX"></a> translateX
 
 • `get` **translateX**(): `number`
 
@@ -309,7 +309,7 @@ Node.translateX
 
 ___
 
-### translateY
+### <a id="translateY" name="translateY"></a> translateY
 
 • `get` **translateY**(): `number`
 
@@ -341,15 +341,15 @@ Node.translateY
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -357,7 +357,7 @@ Node.type
 
 ## Methods
 
-### removeFromParent
+### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
 
 ▸ **removeFromParent**(): `void`
 

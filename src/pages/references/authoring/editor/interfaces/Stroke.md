@@ -22,7 +22,7 @@ Represents a stroke in the scenegraph. See [StrokableNode](../classes/StrokableN
 
 ## Properties
 
-### color
+### <a id="color" name="color"></a> color
 
 • `Readonly` **color**: [`Color`](../classes/Color.md)
 
@@ -34,7 +34,7 @@ The color of a stroke.
 
 ___
 
-### dashOffset
+### <a id="dashOffset" name="dashOffset"></a> dashOffset
 
 • `Readonly` **dashOffset**: `number`
 
@@ -46,7 +46,7 @@ Number of pixels the beginning of dash pattern should be offset along the stroke
 
 ___
 
-### dashPattern
+### <a id="dashPattern" name="dashPattern"></a> dashPattern
 
 • `Readonly` **dashPattern**: `number`[]
 
@@ -60,15 +60,15 @@ repeated along the length of the stroke. The first value represents the first so
 
 ___
 
-### position
+### <a id="position" name="position"></a> position
 
-• `Readonly` **position**: [`StrokePositionValue`](../enums/StrokePositionValue.md)
+• `Readonly` **position**: [`StrokePosition`](../enums/StrokePosition.md)
 
 The position of the stroke relative to the outline of the shape.
 
 ___
 
-### width
+### <a id="width" name="width"></a> width
 
 • `Readonly` **width**: `number`
 

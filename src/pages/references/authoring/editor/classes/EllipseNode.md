@@ -41,7 +41,7 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
 ## Properties
 
-### DEFAULT\_STROKE\_WIDTH
+### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
@@ -51,7 +51,7 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
 ## Accessors
 
-### absoluteRotation
+### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -83,7 +83,7 @@ FillableNode.absoluteRotation
 
 ___
 
-### absoluteTransform
+### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -99,7 +99,7 @@ FillableNode.absoluteTransform
 
 ___
 
-### allChildren
+### <a id="allChildren" name="allChildren"></a> allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -118,16 +118,16 @@ FillableNode.allChildren
 
 ___
 
-### blendMode
+### <a id="blendMode" name="blendMode"></a> blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -139,7 +139,7 @@ FillableNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -151,7 +151,7 @@ FillableNode.blendMode
 
 ___
 
-### fills
+### <a id="fills" name="fills"></a> fills
 
 • `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
 
@@ -167,7 +167,7 @@ FillableNode.fills
 
 ___
 
-### locked
+### <a id="locked" name="locked"></a> locked
 
 • `get` **locked**(): `boolean`
 
@@ -200,7 +200,7 @@ FillableNode.locked
 
 ___
 
-### opacity
+### <a id="opacity" name="opacity"></a> opacity
 
 • `get` **opacity**(): `number`
 
@@ -232,7 +232,7 @@ FillableNode.opacity
 
 ___
 
-### parent
+### <a id="parent" name="parent"></a> parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -248,7 +248,7 @@ FillableNode.parent
 
 ___
 
-### relativeRotation
+### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -282,7 +282,7 @@ FillableNode.relativeRotation
 
 ___
 
-### relativeTransform
+### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -298,7 +298,7 @@ FillableNode.relativeTransform
 
 ___
 
-### rx
+### <a id="rx" name="rx"></a> rx
 
 • `get` **rx**(): `number`
 
@@ -325,7 +325,7 @@ Must be at least MIN_DIMENSION / 2.
 
 ___
 
-### ry
+### <a id="ry" name="ry"></a> ry
 
 • `get` **ry**(): `number`
 
@@ -352,7 +352,7 @@ Must be at least MIN_DIMENSION / 2.
 
 ___
 
-### strokes
+### <a id="strokes" name="strokes"></a> strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -368,7 +368,7 @@ FillableNode.strokes
 
 ___
 
-### translateX
+### <a id="translateX" name="translateX"></a> translateX
 
 • `get` **translateX**(): `number`
 
@@ -400,7 +400,7 @@ FillableNode.translateX
 
 ___
 
-### translateY
+### <a id="translateY" name="translateY"></a> translateY
 
 • `get` **translateY**(): `number`
 
@@ -432,15 +432,15 @@ FillableNode.translateY
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -448,7 +448,7 @@ FillableNode.type
 
 ## Methods
 
-### removeFromParent
+### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
 
 ▸ **removeFromParent**(): `void`
 

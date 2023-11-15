@@ -20,48 +20,48 @@
 
 ## Enumeration Members
 
-### circleFilled
+### <a id="circleFilled" name="circleFilled"></a> circleFilled
 
 • **circleFilled** = ``21``
 
 ___
 
-### circleHollow
+### <a id="circleHollow" name="circleHollow"></a> circleHollow
 
 • **circleHollow** = ``24``
 
 ___
 
-### none
+### <a id="none" name="none"></a> none
 
 • **none** = ``0``
 
 ___
 
-### openTriangular
+### <a id="openTriangular" name="openTriangular"></a> openTriangular
 
 • **openTriangular** = ``11``
 
 ___
 
-### squareFilled
+### <a id="squareFilled" name="squareFilled"></a> squareFilled
 
 • **squareFilled** = ``22``
 
 ___
 
-### squareHollow
+### <a id="squareHollow" name="squareHollow"></a> squareHollow
 
 • **squareHollow** = ``25``
 
 ___
 
-### triangularFilled
+### <a id="triangularFilled" name="triangularFilled"></a> triangularFilled
 
 • **triangularFilled** = ``7``
 
 ___
 
-### verticalLine
+### <a id="verticalLine" name="verticalLine"></a> verticalLine
 
 • **verticalLine** = ``27``

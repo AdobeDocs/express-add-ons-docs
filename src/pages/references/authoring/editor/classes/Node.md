@@ -10,9 +10,13 @@ A Node represents an object in the scenegraph, the document's visual content tre
 
   ↳ **`Node`**
 
+  ↳↳ [`ComplexShapeNode`](ComplexShapeNode.md)
+
   ↳↳ [`ContainerNode`](ContainerNode.md)
 
   ↳↳ [`ExpressRootNode`](ExpressRootNode.md)
+
+  ↳↳ [`GridLayoutNode`](GridLayoutNode.md)
 
   ↳↳ [`ImageRectangleNode`](ImageRectangleNode.md)
 
@@ -47,7 +51,7 @@ A Node represents an object in the scenegraph, the document's visual content tre
 
 ## Accessors
 
-### absoluteRotation
+### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -71,7 +75,7 @@ The node's absolute (global) rotation angle in degrees – includes any cumulati
 
 ___
 
-### absoluteTransform
+### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -83,7 +87,7 @@ The node's absolute (global) transform matrix.
 
 ___
 
-### allChildren
+### <a id="allChildren" name="allChildren"></a> allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -98,16 +102,16 @@ overall display z-order.
 
 ___
 
-### blendMode
+### <a id="blendMode" name="blendMode"></a> blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 • `set` **blendMode**(`value`): `void`
 
@@ -115,7 +119,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -123,7 +127,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ___
 
-### locked
+### <a id="locked" name="locked"></a> locked
 
 • `get` **locked**(): `boolean`
 
@@ -148,7 +152,7 @@ cannot be edited by the user unless they are unlocked first.
 
 ___
 
-### opacity
+### <a id="opacity" name="opacity"></a> opacity
 
 • `get` **opacity**(): `number`
 
@@ -172,7 +176,7 @@ The node's opacity, from 0.0 to 1.0
 
 ___
 
-### parent
+### <a id="parent" name="parent"></a> parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -184,7 +188,7 @@ The node's parent. Undefined if the node is an orphan, or if the node is the art
 
 ___
 
-### relativeRotation
+### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -210,7 +214,7 @@ rotates the node about its bounding box's center, not its origin.
 
 ___
 
-### relativeTransform
+### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -222,7 +226,7 @@ The node's transform matrix relative to its parent.
 
 ___
 
-### translateX
+### <a id="translateX" name="translateX"></a> translateX
 
 • `get` **translateX**(): `number`
 
@@ -246,7 +250,7 @@ The translation of the node along its parent's x-axis.
 
 ___
 
-### translateY
+### <a id="translateY" name="translateY"></a> translateY
 
 • `get` **translateY**(): `number`
 
@@ -270,19 +274,19 @@ The translation of the node along its parent's y-axis.
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 ## Methods
 
-### removeFromParent
+### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
 
 ▸ **removeFromParent**(): `void`
 

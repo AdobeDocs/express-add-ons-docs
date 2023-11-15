@@ -1,6 +1,6 @@
-[@add-on-hlapi-sdk](../overview.md) / FillTypeValue
+[@add-on-hlapi-sdk](../overview.md) / FillType
 
-# Enumeration: FillTypeValue
+# Enumeration: FillType
 
 <InlineAlert slots="text" variant="warning"/>
 *Do not depend on the literal string values of these constants*, as they may change. Always reference the enum identifiers in your code.
@@ -13,11 +13,11 @@ always have a default/fallback case to handle any unknown values you may encount
 
 ### Enumeration Members
 
-- [color](FillTypeValue.md#color)
+- [color](FillType.md#color)
 
 ## Enumeration Members
 
-### color
+### <a id="color" name="color"></a> color
 
 • **color** = ``"Color"``
 

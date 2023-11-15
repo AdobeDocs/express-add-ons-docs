@@ -10,7 +10,7 @@
 
 ## Methods
 
-### createColor
+### <a id="createColor" name="createColor"></a> createColor
 
 ▸ **createColor**(`red`, `green`, `blue`, `alpha?`): [`Color`](../classes/Color.md)
 

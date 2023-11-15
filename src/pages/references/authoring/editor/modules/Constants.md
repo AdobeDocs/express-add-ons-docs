@@ -7,44 +7,51 @@
 ### References
 
 - [ArrowHeadType](Constants.md#ArrowHeadType)
-- [BlendModeValue](Constants.md#BlendModeValue)
-- [FillTypeValue](Constants.md#FillTypeValue)
-- [SceneNodeTypeValueID](Constants.md#SceneNodeTypeValueID)
-- [StrokePositionValue](Constants.md#StrokePositionValue)
-- [TextAlignmentValue](Constants.md#TextAlignmentValue)
+- [BlendMode](Constants.md#BlendMode)
+- [FillRule](Constants.md#FillRule)
+- [FillType](Constants.md#FillType)
+- [SceneNodeType](Constants.md#SceneNodeType)
+- [StrokePosition](Constants.md#StrokePosition)
+- [TextAlignment](Constants.md#TextAlignment)
 
 ## References
 
-### ArrowHeadType
+### <a id="ArrowHeadType" name="ArrowHeadType"></a> ArrowHeadType
 
 Re-exports [ArrowHeadType](../enums/ArrowHeadType.md)
 
 ___
 
-### BlendModeValue
+### <a id="BlendMode" name="BlendMode"></a> BlendMode
 
-Re-exports [BlendModeValue](../enums/BlendModeValue.md)
-
-___
-
-### FillTypeValue
-
-Re-exports [FillTypeValue](../enums/FillTypeValue.md)
+Re-exports [BlendMode](../enums/BlendMode.md)
 
 ___
 
-### SceneNodeTypeValueID
+### <a id="FillRule" name="FillRule"></a> FillRule
 
-Re-exports [SceneNodeTypeValueID](../enums/SceneNodeTypeValueID.md)
-
-___
-
-### StrokePositionValue
-
-Re-exports [StrokePositionValue](../enums/StrokePositionValue.md)
+Re-exports [FillRule](../enums/FillRule.md)
 
 ___
 
-### TextAlignmentValue
+### <a id="FillType" name="FillType"></a> FillType
 
-Re-exports [TextAlignmentValue](../enums/TextAlignmentValue.md)
+Re-exports [FillType](../enums/FillType.md)
+
+___
+
+### <a id="SceneNodeType" name="SceneNodeType"></a> SceneNodeType
+
+Re-exports [SceneNodeType](../enums/SceneNodeType.md)
+
+___
+
+### <a id="StrokePosition" name="StrokePosition"></a> StrokePosition
+
+Re-exports [StrokePosition](../enums/StrokePosition.md)
+
+___
+
+### <a id="TextAlignment" name="TextAlignment"></a> TextAlignment
+
+Re-exports [TextAlignment](../enums/TextAlignment.md)
