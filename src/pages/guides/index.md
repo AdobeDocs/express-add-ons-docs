@@ -16,6 +16,7 @@ description: Find the most recent documentation, code samples and resources for 
 contributors:
   - https://github.com/hollyschinsky
 ---
+
 <Hero slots="heading, text" background="rgb(138, 43, 226)"/>
 
 # Overview
@@ -23,6 +24,11 @@ contributors:
 Adobe Express is the AI-first, all-in-one creativity app that makes it fast, easy and fun for any user to design and share standout content.
 
 ## Add-ons
+
+<InlineAlert slots="text" />
+
+**How likely are you to recommend developing add-ons for Adobe Express to a fellow developer?** <br /><br />
+(Not at all likely) [1](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%221%22%7D) • [2️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%222%22%7D) • [3️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%223%22%7D) • [4️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%224%22%7D) • [5️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%225%22%7D) • [6️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%226%22%7D) • [7️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%227%22%7D) • [8️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%228%22%7D) • [9️](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%229%22%7D) • (Extremely likely) [10](https://survey.adobe.com/jfe/form/SV_bpdDeKKwaFiiexM?Q_PopulateResponse=%7B%22QID42%22:%2210%22%7D)
 
 Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>
 
