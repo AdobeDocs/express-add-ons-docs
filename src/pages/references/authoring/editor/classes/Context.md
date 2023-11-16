@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Context
+[@express-document-sdk](../overview.md) / Context
 
 # Class: Context
 
@@ -14,14 +14,14 @@ Contains the user's current selection state, indicating the content they are foc
 
 ### Accessors
 
-- [hasSelection](Context.md#hasSelection)
-- [insertionParent](Context.md#insertionParent)
+- [hasSelection](Context.md#hasselection)
+- [insertionParent](Context.md#insertionparent)
 - [selection](Context.md#selection)
-- [selectionIncludingNonEditable](Context.md#selectionIncludingNonEditable)
+- [selectionIncludingNonEditable](Context.md#selectionincludingnoneditable)
 
 ## Accessors
 
-### <a id="hasSelection" name="hasSelection"></a> hasSelection
+### hasSelection
 
 • `get` **hasSelection**(): `boolean`
 
@@ -33,7 +33,7 @@ false if the current editable selection does not contain any nodes, otherwise tr
 
 ___
 
-### <a id="insertionParent" name="insertionParent"></a> insertionParent
+### insertionParent
 
 • `get` **insertionParent**(): [`ContainerNode`](ContainerNode.md)
 
@@ -45,7 +45,7 @@ the preferred parent to insert newly added content into.
 
 ___
 
-### <a id="selection" name="selection"></a> selection
+### selection
 
 • `get` **selection**(): readonly [`Node`](Node.md)[]
 
@@ -74,7 +74,7 @@ Sets the current selection, automatically ensuring these rules are met:
 
 ___
 
-### <a id="selectionIncludingNonEditable" name="selectionIncludingNonEditable"></a> selectionIncludingNonEditable
+### selectionIncludingNonEditable
 
 • `get` **selectionIncludingNonEditable**(): readonly [`Node`](Node.md)[]
 

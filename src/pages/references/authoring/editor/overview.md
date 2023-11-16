@@ -1,6 +1,6 @@
-@add-on-hlapi-sdk
+@express-document-sdk
 
-# @add-on-hlapi-sdk
+# @express-document-sdk
 
 ## Table of contents
 

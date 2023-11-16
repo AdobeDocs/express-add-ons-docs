@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / EllipseNode
+[@express-document-sdk](../overview.md) / EllipseNode
 
 # Class: EllipseNode
 
@@ -18,16 +18,16 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
 ### Accessors
 
-- [absoluteRotation](EllipseNode.md#absoluteRotation)
-- [absoluteTransform](EllipseNode.md#absoluteTransform)
-- [allChildren](EllipseNode.md#allChildren)
-- [blendMode](EllipseNode.md#blendMode)
+- [absoluteRotation](EllipseNode.md#absoluterotation)
+- [absoluteTransform](EllipseNode.md#absolutetransform)
+- [allChildren](EllipseNode.md#allchildren)
+- [blendMode](EllipseNode.md#blendmode)
 - [fills](EllipseNode.md#fills)
 - [locked](EllipseNode.md#locked)
 - [opacity](EllipseNode.md#opacity)
 - [parent](EllipseNode.md#parent)
-- [relativeRotation](EllipseNode.md#relativeRotation)
-- [relativeTransform](EllipseNode.md#relativeTransform)
+- [relativeRotation](EllipseNode.md#relativerotation)
+- [relativeTransform](EllipseNode.md#relativetransform)
 - [rx](EllipseNode.md#rx)
 - [ry](EllipseNode.md#ry)
 - [strokes](EllipseNode.md#strokes)
@@ -37,11 +37,11 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
 ### Methods
 
-- [removeFromParent](EllipseNode.md#removeFromParent)
+- [removeFromParent](EllipseNode.md#removefromparent)
 
 ## Properties
 
-### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
+### DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
@@ -51,7 +51,7 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -83,7 +83,7 @@ FillableNode.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -99,7 +99,7 @@ FillableNode.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -118,12 +118,12 @@ FillableNode.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -151,7 +151,7 @@ FillableNode.blendMode
 
 ___
 
-### <a id="fills" name="fills"></a> fills
+### fills
 
 • `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
 
@@ -167,7 +167,7 @@ FillableNode.fills
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -200,7 +200,7 @@ FillableNode.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -232,7 +232,7 @@ FillableNode.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -248,7 +248,7 @@ FillableNode.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -282,7 +282,7 @@ FillableNode.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -298,7 +298,7 @@ FillableNode.relativeTransform
 
 ___
 
-### <a id="rx" name="rx"></a> rx
+### rx
 
 • `get` **rx**(): `number`
 
@@ -325,7 +325,7 @@ Must be at least MIN_DIMENSION / 2.
 
 ___
 
-### <a id="ry" name="ry"></a> ry
+### ry
 
 • `get` **ry**(): `number`
 
@@ -352,7 +352,7 @@ Must be at least MIN_DIMENSION / 2.
 
 ___
 
-### <a id="strokes" name="strokes"></a> strokes
+### strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -368,7 +368,7 @@ FillableNode.strokes
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -400,7 +400,7 @@ FillableNode.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -432,7 +432,7 @@ FillableNode.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -448,7 +448,7 @@ FillableNode.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -462,4 +462,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removeFromParent)
+[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removefromparent)

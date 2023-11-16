@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Utils
+[@express-document-sdk](../overview.md) / Utils
 
 # Interface: Utils
 
@@ -6,11 +6,11 @@
 
 ### Methods
 
-- [createColor](Utils.md#createColor)
+- [createColor](Utils.md#createcolor)
 
 ## Methods
 
-### <a id="createColor" name="createColor"></a> createColor
+### createColor
 
 ▸ **createColor**(`red`, `green`, `blue`, `alpha?`): [`Color`](../classes/Color.md)
 

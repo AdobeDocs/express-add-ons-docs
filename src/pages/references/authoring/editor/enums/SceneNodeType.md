@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / SceneNodeType
+[@express-document-sdk](../overview.md) / SceneNodeType
 
 # Enumeration: SceneNodeType
 
@@ -14,15 +14,15 @@ always have a default/fallback case to handle any unknown values you may encount
 ### Enumeration Members
 
 - [artboard](SceneNodeType.md#artboard)
-- [artworkRoot](SceneNodeType.md#artworkRoot)
-- [complexShape](SceneNodeType.md#complexShape)
+- [artworkRoot](SceneNodeType.md#artworkroot)
+- [complexShape](SceneNodeType.md#complexshape)
 - [ellipse](SceneNodeType.md#ellipse)
-- [gridLayout](SceneNodeType.md#gridLayout)
+- [gridLayout](SceneNodeType.md#gridlayout)
 - [group](SceneNodeType.md#group)
-- [imageRectangle](SceneNodeType.md#imageRectangle)
+- [imageRectangle](SceneNodeType.md#imagerectangle)
 - [line](SceneNodeType.md#line)
-- [linkedAsset](SceneNodeType.md#linkedAsset)
-- [mediaContainer](SceneNodeType.md#mediaContainer)
+- [linkedAsset](SceneNodeType.md#linkedasset)
+- [mediaContainer](SceneNodeType.md#mediacontainer)
 - [page](SceneNodeType.md#page)
 - [path](SceneNodeType.md#path)
 - [polygon](SceneNodeType.md#polygon)
@@ -31,19 +31,19 @@ always have a default/fallback case to handle any unknown values you may encount
 
 ## Enumeration Members
 
-### <a id="artboard" name="artboard"></a> artboard
+### artboard
 
 • **artboard** = ``"ab:Artboard"``
 
 ___
 
-### <a id="artworkRoot" name="artworkRoot"></a> artworkRoot
+### artworkRoot
 
 • **artworkRoot** = ``"ArtworkRoot"``
 
 ___
 
-### <a id="complexShape" name="complexShape"></a> complexShape
+### complexShape
 
 • **complexShape** = ``"ComplexShape"``
 
@@ -51,13 +51,13 @@ Type of ComplexShapeNode, representing a complex prepackaged shape that appears 
 
 ___
 
-### <a id="ellipse" name="ellipse"></a> ellipse
+### ellipse
 
 • **ellipse** = ``"Ellipse"``
 
 ___
 
-### <a id="gridLayout" name="gridLayout"></a> gridLayout
+### gridLayout
 
 • **gridLayout** = ``"GridLayout"``
 
@@ -65,13 +65,13 @@ Type of GridLayoutNode represents a grid layout in the scenegraph used to create
 
 ___
 
-### <a id="group" name="group"></a> group
+### group
 
 • **group** = ``"Group"``
 
 ___
 
-### <a id="imageRectangle" name="imageRectangle"></a> imageRectangle
+### imageRectangle
 
 • **imageRectangle** = ``"ImageRectangle"``
 
@@ -79,19 +79,19 @@ Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
 ___
 
-### <a id="line" name="line"></a> line
+### line
 
 • **line** = ``"Line"``
 
 ___
 
-### <a id="linkedAsset" name="linkedAsset"></a> linkedAsset
+### linkedAsset
 
 • **linkedAsset** = ``"LinkedAsset"``
 
 ___
 
-### <a id="mediaContainer" name="mediaContainer"></a> mediaContainer
+### mediaContainer
 
 • **mediaContainer** = ``"MediaContainer"``
 
@@ -99,7 +99,7 @@ Type of MediaContainerNode, representing the top-level container of the multi-no
 
 ___
 
-### <a id="page" name="page"></a> page
+### page
 
 • **page** = ``"Page"``
 
@@ -107,24 +107,24 @@ Type of PageNode
 
 ___
 
-### <a id="path" name="path"></a> path
+### path
 
 • **path** = ``"Path"``
 
 ___
 
-### <a id="polygon" name="polygon"></a> polygon
+### polygon
 
 • **polygon** = ``"artgr:Polygon"``
 
 ___
 
-### <a id="rectangle" name="rectangle"></a> rectangle
+### rectangle
 
 • **rectangle** = ``"Rectangle"``
 
 ___
 
-### <a id="text" name="text"></a> text
+### text
 
 • **text** = ``"Text"``

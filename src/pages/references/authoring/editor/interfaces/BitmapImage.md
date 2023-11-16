@@ -1,9 +1,9 @@
-[@add-on-hlapi-sdk](../overview.md) / BitmapImage
+[@express-document-sdk](../overview.md) / BitmapImage
 
 # Interface: BitmapImage
 
 Represents a bitmap image resource. Can be displayed in the document by creating a MediaContainerNode structure via
-[createImageContainer](../classes/Editor.md#createImageContainer).
+[createImageContainer](../classes/Editor.md#createimagecontainer).
 
 ## Table of contents
 
@@ -14,7 +14,7 @@ Represents a bitmap image resource. Can be displayed in the document by creating
 
 ## Properties
 
-### <a id="height" name="height"></a> height
+### height
 
 • `Readonly` **height**: `number`
 
@@ -22,7 +22,7 @@ Original height of the bitmap in pixels.
 
 ___
 
-### <a id="width" name="width"></a> width
+### width
 
 • `Readonly` **width**: `number`
 

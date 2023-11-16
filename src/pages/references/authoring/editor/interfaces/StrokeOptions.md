@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / StrokeOptions
+[@express-document-sdk](../overview.md) / StrokeOptions
 
 # Interface: StrokeOptions
 
@@ -15,13 +15,13 @@ Properties that can be provided to create a stroke.
 ### Properties
 
 - [color](StrokeOptions.md#color)
-- [dashOffset](StrokeOptions.md#dashOffset)
-- [dashPattern](StrokeOptions.md#dashPattern)
+- [dashOffset](StrokeOptions.md#dashoffset)
+- [dashPattern](StrokeOptions.md#dashpattern)
 - [width](StrokeOptions.md#width)
 
 ## Properties
 
-### <a id="color" name="color"></a> color
+### color
 
 • `Readonly` **color**: [`Color`](../classes/Color.md)
 
@@ -29,7 +29,7 @@ The color of a stroke.
 
 ___
 
-### <a id="dashOffset" name="dashOffset"></a> dashOffset
+### dashOffset
 
 • `Readonly` **dashOffset**: `number`
 
@@ -37,7 +37,7 @@ Number of pixels the beginning of dash pattern should be offset along the stroke
 
 ___
 
-### <a id="dashPattern" name="dashPattern"></a> dashPattern
+### dashPattern
 
 • `Readonly` **dashPattern**: `number`[]
 
@@ -47,7 +47,7 @@ repeated along the length of the stroke. The first value represents the first so
 
 ___
 
-### <a id="width" name="width"></a> width
+### width
 
 • `Readonly` **width**: `number`
 

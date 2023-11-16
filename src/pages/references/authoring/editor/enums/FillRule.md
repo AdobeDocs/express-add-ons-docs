@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / FillRule
+[@express-document-sdk](../overview.md) / FillRule
 
 # Enumeration: FillRule
 
@@ -9,17 +9,17 @@
 
 ### Enumeration Members
 
-- [evenOdd](FillRule.md#evenOdd)
-- [nonZero](FillRule.md#nonZero)
+- [evenOdd](FillRule.md#evenodd)
+- [nonZero](FillRule.md#nonzero)
 
 ## Enumeration Members
 
-### <a id="evenOdd" name="evenOdd"></a> evenOdd
+### evenOdd
 
 • **evenOdd** = ``1``
 
 ___
 
-### <a id="nonZero" name="nonZero"></a> nonZero
+### nonZero
 
 • **nonZero** = ``0``

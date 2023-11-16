@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Editor
+[@express-document-sdk](../overview.md) / Editor
 
 # Class: Editor
 
@@ -15,23 +15,23 @@ Entry point for APIs that read or modify the document's content.
 ### Accessors
 
 - [context](Editor.md#context)
-- [documentRoot](Editor.md#documentRoot)
+- [documentRoot](Editor.md#documentroot)
 
 ### Methods
 
-- [createColorFill](Editor.md#createColorFill)
-- [createEllipse](Editor.md#createEllipse)
-- [createGroup](Editor.md#createGroup)
-- [createImageContainer](Editor.md#createImageContainer)
-- [createLine](Editor.md#createLine)
-- [createRectangle](Editor.md#createRectangle)
-- [createStroke](Editor.md#createStroke)
-- [createText](Editor.md#createText)
-- [loadBitmapImage](Editor.md#loadBitmapImage)
+- [createColorFill](Editor.md#createcolorfill)
+- [createEllipse](Editor.md#createellipse)
+- [createGroup](Editor.md#creategroup)
+- [createImageContainer](Editor.md#createimagecontainer)
+- [createLine](Editor.md#createline)
+- [createRectangle](Editor.md#createrectangle)
+- [createStroke](Editor.md#createstroke)
+- [createText](Editor.md#createtext)
+- [loadBitmapImage](Editor.md#loadbitmapimage)
 
 ## Accessors
 
-### <a id="context" name="context"></a> context
+### context
 
 • `get` **context**(): [`Context`](Context.md)
 
@@ -43,7 +43,7 @@ User's current selection context
 
 ___
 
-### <a id="documentRoot" name="documentRoot"></a> documentRoot
+### documentRoot
 
 • `get` **documentRoot**(): [`ExpressRootNode`](ExpressRootNode.md)
 
@@ -55,7 +55,7 @@ the root of the document.
 
 ## Methods
 
-### <a id="createColorFill" name="createColorFill"></a> createColorFill
+### createColorFill
 
 ▸ **createColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
 
@@ -73,7 +73,7 @@ a solid color fill.
 
 ___
 
-### <a id="createEllipse" name="createEllipse"></a> createEllipse
+### createEllipse
 
 ▸ **createEllipse**(): [`EllipseNode`](EllipseNode.md)
 
@@ -86,7 +86,7 @@ Transform values default to 0.
 
 ___
 
-### <a id="createGroup" name="createGroup"></a> createGroup
+### createGroup
 
 ▸ **createGroup**(): [`GroupNode`](GroupNode.md)
 
@@ -98,7 +98,7 @@ a group node.
 
 ___
 
-### <a id="createImageContainer" name="createImageContainer"></a> createImageContainer
+### createImageContainer
 
 ▸ **createImageContainer**(`bitmapData`, `options?`): [`MediaContainerNode`](MediaContainerNode.md)
 
@@ -126,7 +126,7 @@ MediaContainerNode representing the top container node of the multi-node structu
 
 ___
 
-### <a id="createLine" name="createLine"></a> createLine
+### createLine
 
 ▸ **createLine**(): [`LineNode`](LineNode.md)
 
@@ -139,7 +139,7 @@ Transform values default to 0.
 
 ___
 
-### <a id="createRectangle" name="createRectangle"></a> createRectangle
+### createRectangle
 
 ▸ **createRectangle**(): [`RectangleNode`](RectangleNode.md)
 
@@ -152,7 +152,7 @@ Transform values default to 0.
 
 ___
 
-### <a id="createStroke" name="createStroke"></a> createStroke
+### createStroke
 
 ▸ **createStroke**(`options?`): [`Stroke`](../interfaces/Stroke.md)
 
@@ -181,7 +181,7 @@ a stroke configured with the given options.
 
 ___
 
-### <a id="createText" name="createText"></a> createText
+### createText
 
 ▸ **createText**(): [`TextNode`](TextNode.md)
 
@@ -195,11 +195,11 @@ adjust to accommodate whatever text is set.
 
 ___
 
-### <a id="loadBitmapImage" name="loadBitmapImage"></a> loadBitmapImage
+### loadBitmapImage
 
 ▸ **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
 
-Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createImageContainer)
+Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
 
 Note: image resources that are unused will be automatically cleaned up after the document is closed.

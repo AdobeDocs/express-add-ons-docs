@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / FillType
+[@express-document-sdk](../overview.md) / FillType
 
 # Enumeration: FillType
 
@@ -17,7 +17,7 @@ always have a default/fallback case to handle any unknown values you may encount
 
 ## Enumeration Members
 
-### <a id="color" name="color"></a> color
+### color
 
 • **color** = ``"Color"``
 

@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / BlendMode
+[@express-document-sdk](../overview.md) / BlendMode
 
 # Enumeration: BlendMode
 
@@ -7,7 +7,7 @@
 
 Determines how a scenende is composited on top of the content rendered below it.
 
-If a node is inside a container whose blend mode anything other than [passThrough](BlendMode.md#passThrough), then the node's blend mode only
+If a node is inside a container whose blend mode anything other than [passThrough](BlendMode.md#passthrough), then the node's blend mode only
 interacts with other siblings within the same container. See documentation below for details.
 
 ## Table of contents
@@ -15,92 +15,92 @@ interacts with other siblings within the same container. See documentation below
 ### Enumeration Members
 
 - [color](BlendMode.md#color)
-- [colorBurn](BlendMode.md#colorBurn)
-- [colorDodge](BlendMode.md#colorDodge)
+- [colorBurn](BlendMode.md#colorburn)
+- [colorDodge](BlendMode.md#colordodge)
 - [darken](BlendMode.md#darken)
 - [difference](BlendMode.md#difference)
 - [exclusion](BlendMode.md#exclusion)
-- [hardLight](BlendMode.md#hardLight)
+- [hardLight](BlendMode.md#hardlight)
 - [hue](BlendMode.md#hue)
 - [lighten](BlendMode.md#lighten)
 - [luminosity](BlendMode.md#luminosity)
 - [multiply](BlendMode.md#multiply)
 - [normal](BlendMode.md#normal)
 - [overlay](BlendMode.md#overlay)
-- [passThrough](BlendMode.md#passThrough)
+- [passThrough](BlendMode.md#passthrough)
 - [saturation](BlendMode.md#saturation)
 - [screen](BlendMode.md#screen)
-- [softLight](BlendMode.md#softLight)
+- [softLight](BlendMode.md#softlight)
 
 ## Enumeration Members
 
-### <a id="color" name="color"></a> color
+### color
 
 • **color** = ``16``
 
 ___
 
-### <a id="colorBurn" name="colorBurn"></a> colorBurn
+### colorBurn
 
 • **colorBurn** = ``5``
 
 ___
 
-### <a id="colorDodge" name="colorDodge"></a> colorDodge
+### colorDodge
 
 • **colorDodge** = ``8``
 
 ___
 
-### <a id="darken" name="darken"></a> darken
+### darken
 
 • **darken** = ``4``
 
 ___
 
-### <a id="difference" name="difference"></a> difference
+### difference
 
 • **difference** = ``12``
 
 ___
 
-### <a id="exclusion" name="exclusion"></a> exclusion
+### exclusion
 
 • **exclusion** = ``13``
 
 ___
 
-### <a id="hardLight" name="hardLight"></a> hardLight
+### hardLight
 
 • **hardLight** = ``11``
 
 ___
 
-### <a id="hue" name="hue"></a> hue
+### hue
 
 • **hue** = ``14``
 
 ___
 
-### <a id="lighten" name="lighten"></a> lighten
+### lighten
 
 • **lighten** = ``6``
 
 ___
 
-### <a id="luminosity" name="luminosity"></a> luminosity
+### luminosity
 
 • **luminosity** = ``17``
 
 ___
 
-### <a id="multiply" name="multiply"></a> multiply
+### multiply
 
 • **multiply** = ``3``
 
 ___
 
-### <a id="normal" name="normal"></a> normal
+### normal
 
 • **normal** = ``2``
 
@@ -110,13 +110,13 @@ Note: Group nodes default to using `passThrough` blend mode instead. See below.
 
 ___
 
-### <a id="overlay" name="overlay"></a> overlay
+### overlay
 
 • **overlay** = ``9``
 
 ___
 
-### <a id="passThrough" name="passThrough"></a> passThrough
+### passThrough
 
 • **passThrough** = ``1``
 
@@ -131,18 +131,18 @@ Group nodes are set to `passThrough` by default.
 
 ___
 
-### <a id="saturation" name="saturation"></a> saturation
+### saturation
 
 • **saturation** = ``15``
 
 ___
 
-### <a id="screen" name="screen"></a> screen
+### screen
 
 • **screen** = ``7``
 
 ___
 
-### <a id="softLight" name="softLight"></a> softLight
+### softLight
 
 • **softLight** = ``10``

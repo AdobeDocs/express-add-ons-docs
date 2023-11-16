@@ -1,10 +1,10 @@
-[@add-on-hlapi-sdk](../overview.md) / ItemList
+[@express-document-sdk](../overview.md) / ItemList
 
 # Class: ItemList<T\>
 
 ItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [allChildren](Node.md#allChildren) for details).
+children that exist in the parent node. See [allChildren](Node.md#allchildren) for details).
 
 ItemList also provides APIs for manipulating the list by adding items to the parent or removing items from the parent.
 
@@ -35,19 +35,19 @@ This class is used in different places for various types of items, including Nod
 - [[iterator]](ItemList.md#[iterator])
 - [append](ItemList.md#append)
 - [clear](ItemList.md#clear)
-- [indexOf](ItemList.md#indexOf)
-- [insertAfter](ItemList.md#insertAfter)
-- [insertBefore](ItemList.md#insertBefore)
+- [indexOf](ItemList.md#indexof)
+- [insertAfter](ItemList.md#insertafter)
+- [insertBefore](ItemList.md#insertbefore)
 - [item](ItemList.md#item)
-- [moveAfter](ItemList.md#moveAfter)
-- [moveBefore](ItemList.md#moveBefore)
+- [moveAfter](ItemList.md#moveafter)
+- [moveBefore](ItemList.md#movebefore)
 - [remove](ItemList.md#remove)
 - [replace](ItemList.md#replace)
-- [toArray](ItemList.md#toArray)
+- [toArray](ItemList.md#toarray)
 
 ## Accessors
 
-### <a id="first" name="first"></a> first
+### first
 
 • `get` **first**(): `undefined` \| `T`
 
@@ -63,7 +63,7 @@ RestrictedItemList.first
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `get` **last**(): `undefined` \| `T`
 
@@ -79,7 +79,7 @@ RestrictedItemList.last
 
 ___
 
-### <a id="length" name="length"></a> length
+### length
 
 • `get` **length**(): `number`
 
@@ -95,7 +95,7 @@ RestrictedItemList.length
 
 ## Methods
 
-### <a id="[iterator]" name="[iterator]"></a> [iterator]
+### [iterator]
 
 ▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
 
@@ -111,7 +111,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ___
 
-### <a id="append" name="append"></a> append
+### append
 
 ▸ **append**(...`items`): `void`
 
@@ -130,7 +130,7 @@ removed from their previous parent, if any – or if an item is already in *this
 
 ___
 
-### <a id="clear" name="clear"></a> clear
+### clear
 
 ▸ **clear**(): `void`
 
@@ -142,7 +142,7 @@ Remove all items from this list. No-op if list is already empty.
 
 ___
 
-### <a id="indexOf" name="indexOf"></a> indexOf
+### indexOf
 
 ▸ **indexOf**(`item`): `number`
 
@@ -162,11 +162,11 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[indexOf](RestrictedItemList.md#indexOf)
+[RestrictedItemList](RestrictedItemList.md).[indexOf](RestrictedItemList.md#indexof)
 
 ___
 
-### <a id="insertAfter" name="insertAfter"></a> insertAfter
+### insertAfter
 
 ▸ **insertAfter**(`newItem`, `after`): `void`
 
@@ -187,7 +187,7 @@ if any – or if it's already in *this* list, its index is simply changed. No-op
 
 ___
 
-### <a id="insertBefore" name="insertBefore"></a> insertBefore
+### insertBefore
 
 ▸ **insertBefore**(`newItem`, `before`): `void`
 
@@ -208,7 +208,7 @@ if any – or if it's already in *this* list, its index is simply changed. No-op
 
 ___
 
-### <a id="item" name="item"></a> item
+### item
 
 ▸ **item**(`index`): `undefined` \| `T`
 
@@ -230,7 +230,7 @@ Returns item at the given index, or undefined if index is out of range.
 
 ___
 
-### <a id="moveAfter" name="moveAfter"></a> moveAfter
+### moveAfter
 
 ▸ **moveAfter**(`item`, `after`): `void`
 
@@ -255,11 +255,11 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveAfter](RestrictedItemList.md#moveAfter)
+[RestrictedItemList](RestrictedItemList.md).[moveAfter](RestrictedItemList.md#moveafter)
 
 ___
 
-### <a id="moveBefore" name="moveBefore"></a> moveBefore
+### moveBefore
 
 ▸ **moveBefore**(`item`, `before`): `void`
 
@@ -284,11 +284,11 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#moveBefore)
+[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#movebefore)
 
 ___
 
-### <a id="remove" name="remove"></a> remove
+### remove
 
 ▸ **remove**(...`items`): `void`
 
@@ -314,7 +314,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ___
 
-### <a id="replace" name="replace"></a> replace
+### replace
 
 ▸ **replace**(`oldItem`, `newItem`): `void`
 
@@ -335,7 +335,7 @@ changed. No-op if both arguments are the same item.
 
 ___
 
-### <a id="toArray" name="toArray"></a> toArray
+### toArray
 
 ▸ **toArray**(): readonly `T`[]
 
@@ -347,4 +347,4 @@ readonly `T`[]
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[toArray](RestrictedItemList.md#toArray)
+[RestrictedItemList](RestrictedItemList.md).[toArray](RestrictedItemList.md#toarray)

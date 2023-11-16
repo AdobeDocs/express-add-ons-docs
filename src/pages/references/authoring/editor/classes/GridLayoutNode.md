@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / GridLayoutNode
+[@express-document-sdk](../overview.md) / GridLayoutNode
 
 # Class: GridLayoutNode
 
@@ -19,17 +19,17 @@ create a layout grid that other content can be placed into.
 
 ### Accessors
 
-- [absoluteRotation](GridLayoutNode.md#absoluteRotation)
-- [absoluteTransform](GridLayoutNode.md#absoluteTransform)
-- [allChildren](GridLayoutNode.md#allChildren)
-- [blendMode](GridLayoutNode.md#blendMode)
+- [absoluteRotation](GridLayoutNode.md#absoluterotation)
+- [absoluteTransform](GridLayoutNode.md#absolutetransform)
+- [allChildren](GridLayoutNode.md#allchildren)
+- [blendMode](GridLayoutNode.md#blendmode)
 - [fill](GridLayoutNode.md#fill)
 - [height](GridLayoutNode.md#height)
 - [locked](GridLayoutNode.md#locked)
 - [opacity](GridLayoutNode.md#opacity)
 - [parent](GridLayoutNode.md#parent)
-- [relativeRotation](GridLayoutNode.md#relativeRotation)
-- [relativeTransform](GridLayoutNode.md#relativeTransform)
+- [relativeRotation](GridLayoutNode.md#relativerotation)
+- [relativeTransform](GridLayoutNode.md#relativetransform)
 - [translateX](GridLayoutNode.md#translateX)
 - [translateY](GridLayoutNode.md#translateY)
 - [type](GridLayoutNode.md#type)
@@ -37,11 +37,11 @@ create a layout grid that other content can be placed into.
 
 ### Methods
 
-- [removeFromParent](GridLayoutNode.md#removeFromParent)
+- [removeFromParent](GridLayoutNode.md#removefromparent)
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -73,7 +73,7 @@ Node.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -89,7 +89,7 @@ Node.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -108,12 +108,12 @@ Node.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -141,7 +141,7 @@ Node.blendMode
 
 ___
 
-### <a id="fill" name="fill"></a> fill
+### fill
 
 • `get` **fill**(): [`Fill`](../interfaces/Fill.md)
 
@@ -165,7 +165,7 @@ The background fill of the GridLayout.
 
 ___
 
-### <a id="height" name="height"></a> height
+### height
 
 • `get` **height**(): `number`
 
@@ -181,7 +181,7 @@ The height of the node.
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -214,7 +214,7 @@ Node.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -246,7 +246,7 @@ Node.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -262,7 +262,7 @@ Node.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -296,7 +296,7 @@ Node.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -312,7 +312,7 @@ Node.relativeTransform
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -344,7 +344,7 @@ Node.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -376,7 +376,7 @@ Node.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -392,7 +392,7 @@ Node.type
 
 ___
 
-### <a id="width" name="width"></a> width
+### width
 
 • `get` **width**(): `number`
 
@@ -408,7 +408,7 @@ The width of the node.
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -422,4 +422,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

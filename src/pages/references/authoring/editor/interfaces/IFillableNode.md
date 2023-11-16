@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / IFillableNode
+[@express-document-sdk](../overview.md) / IFillableNode
 
 # Interface: IFillableNode
 
@@ -17,6 +17,6 @@ FillableNode class.
 
 ## Properties
 
-### <a id="fills" name="fills"></a> fills
+### fills
 
 • **fills**: [`ItemList`](../classes/ItemList.md)<[`Fill`](Fill.md)\>

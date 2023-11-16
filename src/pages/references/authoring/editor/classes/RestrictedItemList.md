@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / RestrictedItemList
+[@express-document-sdk](../overview.md) / RestrictedItemList
 
 # Class: RestrictedItemList<T\>
 
@@ -35,16 +35,16 @@ capabilities, however.
 ### Methods
 
 - [[iterator]](RestrictedItemList.md#[iterator])
-- [indexOf](RestrictedItemList.md#indexOf)
+- [indexOf](RestrictedItemList.md#indexof)
 - [item](RestrictedItemList.md#item)
-- [moveAfter](RestrictedItemList.md#moveAfter)
-- [moveBefore](RestrictedItemList.md#moveBefore)
+- [moveAfter](RestrictedItemList.md#moveafter)
+- [moveBefore](RestrictedItemList.md#movebefore)
 - [remove](RestrictedItemList.md#remove)
-- [toArray](RestrictedItemList.md#toArray)
+- [toArray](RestrictedItemList.md#toarray)
 
 ## Accessors
 
-### <a id="first" name="first"></a> first
+### first
 
 • `get` **first**(): `undefined` \| `T`
 
@@ -60,7 +60,7 @@ ReadOnlyItemList.first
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `get` **last**(): `undefined` \| `T`
 
@@ -76,7 +76,7 @@ ReadOnlyItemList.last
 
 ___
 
-### <a id="length" name="length"></a> length
+### length
 
 • `get` **length**(): `number`
 
@@ -92,7 +92,7 @@ ReadOnlyItemList.length
 
 ## Methods
 
-### <a id="[iterator]" name="[iterator]"></a> [iterator]
+### [iterator]
 
 ▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
 
@@ -108,7 +108,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ___
 
-### <a id="indexOf" name="indexOf"></a> indexOf
+### indexOf
 
 ▸ **indexOf**(`item`): `number`
 
@@ -128,11 +128,11 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[indexOf](ReadOnlyItemList.md#indexOf)
+[ReadOnlyItemList](ReadOnlyItemList.md).[indexOf](ReadOnlyItemList.md#indexof)
 
 ___
 
-### <a id="item" name="item"></a> item
+### item
 
 ▸ **item**(`index`): `undefined` \| `T`
 
@@ -154,7 +154,7 @@ Returns item at the given index, or undefined if index is out of range.
 
 ___
 
-### <a id="moveAfter" name="moveAfter"></a> moveAfter
+### moveAfter
 
 ▸ **moveAfter**(`item`, `after`): `void`
 
@@ -179,7 +179,7 @@ An error if either argument is not contained in this list.
 
 ___
 
-### <a id="moveBefore" name="moveBefore"></a> moveBefore
+### moveBefore
 
 ▸ **moveBefore**(`item`, `before`): `void`
 
@@ -204,7 +204,7 @@ An error if either argument is not contained in this list.
 
 ___
 
-### <a id="remove" name="remove"></a> remove
+### remove
 
 ▸ **remove**(...`items`): `void`
 
@@ -226,7 +226,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ___
 
-### <a id="toArray" name="toArray"></a> toArray
+### toArray
 
 ▸ **toArray**(): readonly `T`[]
 
@@ -238,4 +238,4 @@ readonly `T`[]
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[toArray](ReadOnlyItemList.md#toArray)
+[ReadOnlyItemList](ReadOnlyItemList.md).[toArray](ReadOnlyItemList.md#toarray)

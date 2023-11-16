@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / RectangleGeometry
+[@express-document-sdk](../overview.md) / RectangleGeometry
 
 # Interface: RectangleGeometry
 
@@ -11,12 +11,12 @@
 
 ## Properties
 
-### <a id="height" name="height"></a> height
+### height
 
 • **height**: `number`
 
 ___
 
-### <a id="width" name="width"></a> width
+### width
 
 • **width**: `number`

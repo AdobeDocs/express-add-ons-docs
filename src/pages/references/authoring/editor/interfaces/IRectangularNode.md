@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / IRectangularNode
+[@express-document-sdk](../overview.md) / IRectangularNode
 
 # Interface: IRectangularNode
 
@@ -19,12 +19,12 @@ Interface for nodes with width and height properties.
 
 ## Properties
 
-### <a id="height" name="height"></a> height
+### height
 
 • **height**: `number`
 
 ___
 
-### <a id="width" name="width"></a> width
+### width
 
 • **width**: `number`

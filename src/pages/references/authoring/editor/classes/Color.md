@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Color
+[@express-document-sdk](../overview.md) / Color
 
 # Class: Color
 
@@ -16,17 +16,17 @@ Represents a color in a defined RGB colorspace. Value is immutable – to change
 
 - [alpha](Color.md#alpha)
 - [blue](Color.md#blue)
-- [colorSpace](Color.md#colorSpace)
+- [colorSpace](Color.md#colorspace)
 - [green](Color.md#green)
 - [red](Color.md#red)
 
 ### Methods
 
-- [getHex](Color.md#getHex)
+- [getHex](Color.md#gethex)
 
 ## Accessors
 
-### <a id="alpha" name="alpha"></a> alpha
+### alpha
 
 • `get` **alpha**(): `number`
 
@@ -38,7 +38,7 @@ The alpha channel in range from 0 - 1.
 
 ___
 
-### <a id="blue" name="blue"></a> blue
+### blue
 
 • `get` **blue**(): `number`
 
@@ -50,19 +50,19 @@ The blue channel in range from 0 - 1.
 
 ___
 
-### <a id="colorSpace" name="colorSpace"></a> colorSpace
+### colorSpace
 
-• `get` **colorSpace**(): [`sRGB`](../enums/ColorSpace.md#sRGB)
+• `get` **colorSpace**(): [`sRGB`](../enums/ColorSpace.md#srgb)
 
 This color's color space. Currently only sRGB is supported.
 
 #### Returns
 
-[`sRGB`](../enums/ColorSpace.md#sRGB)
+[`sRGB`](../enums/ColorSpace.md#srgb)
 
 ___
 
-### <a id="green" name="green"></a> green
+### green
 
 • `get` **green**(): `number`
 
@@ -74,7 +74,7 @@ The green channel in range from 0 - 1.
 
 ___
 
-### <a id="red" name="red"></a> red
+### red
 
 • `get` **red**(): `number`
 
@@ -86,7 +86,7 @@ The red channel in range from 0 - 1.
 
 ## Methods
 
-### <a id="getHex" name="getHex"></a> getHex
+### getHex
 
 ▸ **getHex**(): `string`
 

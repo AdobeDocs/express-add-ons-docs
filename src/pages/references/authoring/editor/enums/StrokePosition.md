@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / StrokePosition
+[@express-document-sdk](../overview.md) / StrokePosition
 
 # Enumeration: StrokePosition
 
@@ -17,18 +17,18 @@ A stroke's [position](../interfaces/Stroke.md#position) determines how the thick
 
 ## Enumeration Members
 
-### <a id="center" name="center"></a> center
+### center
 
 • **center** = ``0``
 
 ___
 
-### <a id="inside" name="inside"></a> inside
+### inside
 
 • **inside** = ``1``
 
 ___
 
-### <a id="outside" name="outside"></a> outside
+### outside
 
 • **outside** = ``2``

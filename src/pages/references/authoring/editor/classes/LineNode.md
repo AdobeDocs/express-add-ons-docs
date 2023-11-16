@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / LineNode
+[@express-document-sdk](../overview.md) / LineNode
 
 # Class: LineNode
 
@@ -22,19 +22,19 @@ A LineNode represents a simple line object in the scenegraph – a single straig
 
 ### Accessors
 
-- [absoluteRotation](LineNode.md#absoluteRotation)
-- [absoluteTransform](LineNode.md#absoluteTransform)
-- [allChildren](LineNode.md#allChildren)
-- [blendMode](LineNode.md#blendMode)
-- [endArrowHeadType](LineNode.md#endArrowHeadType)
+- [absoluteRotation](LineNode.md#absoluterotation)
+- [absoluteTransform](LineNode.md#absolutetransform)
+- [allChildren](LineNode.md#allchildren)
+- [blendMode](LineNode.md#blendmode)
+- [endArrowHeadType](LineNode.md#endarrowheadtype)
 - [endX](LineNode.md#endX)
 - [endY](LineNode.md#endY)
 - [locked](LineNode.md#locked)
 - [opacity](LineNode.md#opacity)
 - [parent](LineNode.md#parent)
-- [relativeRotation](LineNode.md#relativeRotation)
-- [relativeTransform](LineNode.md#relativeTransform)
-- [startArrowHeadType](LineNode.md#startArrowHeadType)
+- [relativeRotation](LineNode.md#relativerotation)
+- [relativeTransform](LineNode.md#relativetransform)
+- [startArrowHeadType](LineNode.md#startarrowheadtype)
 - [startX](LineNode.md#startX)
 - [startY](LineNode.md#startY)
 - [strokes](LineNode.md#strokes)
@@ -44,36 +44,36 @@ A LineNode represents a simple line object in the scenegraph – a single straig
 
 ### Methods
 
-- [removeFromParent](LineNode.md#removeFromParent)
-- [setEndPoints](LineNode.md#setEndPoints)
+- [removeFromParent](LineNode.md#removefromparent)
+- [setEndPoints](LineNode.md#setendpoints)
 
 ## Properties
 
-### <a id="DEFAULT_END_X" name="DEFAULT_END_X"></a> DEFAULT\_END\_X
+### DEFAULT\_END\_X
 
 ▪ `Static` `Readonly` **DEFAULT\_END\_X**: ``100``
 
 ___
 
-### <a id="DEFAULT_END_Y" name="DEFAULT_END_Y"></a> DEFAULT\_END\_Y
+### DEFAULT\_END\_Y
 
 ▪ `Static` `Readonly` **DEFAULT\_END\_Y**: ``100``
 
 ___
 
-### <a id="DEFAULT_START_X" name="DEFAULT_START_X"></a> DEFAULT\_START\_X
+### DEFAULT\_START\_X
 
 ▪ `Static` `Readonly` **DEFAULT\_START\_X**: ``0``
 
 ___
 
-### <a id="DEFAULT_START_Y" name="DEFAULT_START_Y"></a> DEFAULT\_START\_Y
+### DEFAULT\_START\_Y
 
 ▪ `Static` `Readonly` **DEFAULT\_START\_Y**: ``0``
 
 ___
 
-### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
+### DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
@@ -83,7 +83,7 @@ ___
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -115,7 +115,7 @@ StrokableNode.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -131,7 +131,7 @@ StrokableNode.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -150,12 +150,12 @@ StrokableNode.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -183,7 +183,7 @@ StrokableNode.blendMode
 
 ___
 
-### <a id="endArrowHeadType" name="endArrowHeadType"></a> endArrowHeadType
+### endArrowHeadType
 
 • `get` **endArrowHeadType**(): [`ArrowHeadType`](../enums/ArrowHeadType.md)
 
@@ -215,7 +215,7 @@ and updates the arrowhead on only the first stroke of the line.
 
 ___
 
-### <a id="endX" name="endX"></a> endX
+### endX
 
 • `get` **endX**(): `number`
 
@@ -227,7 +227,7 @@ The end point on the x-axis in the parent's coordinate system. Modify using `set
 
 ___
 
-### <a id="endY" name="endY"></a> endY
+### endY
 
 • `get` **endY**(): `number`
 
@@ -239,7 +239,7 @@ The end point on the y-axis in the parent's coordinate system. Modify using `set
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -272,7 +272,7 @@ StrokableNode.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -304,7 +304,7 @@ StrokableNode.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -320,7 +320,7 @@ StrokableNode.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -354,7 +354,7 @@ StrokableNode.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -370,7 +370,7 @@ StrokableNode.relativeTransform
 
 ___
 
-### <a id="startArrowHeadType" name="startArrowHeadType"></a> startArrowHeadType
+### startArrowHeadType
 
 • `get` **startArrowHeadType**(): [`ArrowHeadType`](../enums/ArrowHeadType.md)
 
@@ -402,7 +402,7 @@ and updates the arrowhead on only the first stroke of the line.
 
 ___
 
-### <a id="startX" name="startX"></a> startX
+### startX
 
 • `get` **startX**(): `number`
 
@@ -414,7 +414,7 @@ The start point on the x-axis in the parent's coordinate system. Modify using `s
 
 ___
 
-### <a id="startY" name="startY"></a> startY
+### startY
 
 • `get` **startY**(): `number`
 
@@ -426,7 +426,7 @@ The start point on the y-axis in the parent's coordinate system. Modify using `s
 
 ___
 
-### <a id="strokes" name="strokes"></a> strokes
+### strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -442,7 +442,7 @@ StrokableNode.strokes
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -474,7 +474,7 @@ StrokableNode.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -506,7 +506,7 @@ StrokableNode.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -522,7 +522,7 @@ StrokableNode.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -536,11 +536,11 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removeFromParent)
+[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removefromparent)
 
 ___
 
-### <a id="setEndPoints" name="setEndPoints"></a> setEndPoints
+### setEndPoints
 
 ▸ **setEndPoints**(`startX`, `startY`, `endX`, `endY`): `void`
 

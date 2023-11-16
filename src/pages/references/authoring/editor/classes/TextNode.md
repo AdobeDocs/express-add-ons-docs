@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / TextNode
+[@express-document-sdk](../overview.md) / TextNode
 
 # Class: TextNode
 
@@ -14,28 +14,28 @@ A TextNode represents a text object in the scenegraph.
 
 ### Accessors
 
-- [absoluteRotation](TextNode.md#absoluteRotation)
-- [absoluteTransform](TextNode.md#absoluteTransform)
-- [allChildren](TextNode.md#allChildren)
-- [blendMode](TextNode.md#blendMode)
+- [absoluteRotation](TextNode.md#absoluterotation)
+- [absoluteTransform](TextNode.md#absolutetransform)
+- [allChildren](TextNode.md#allchildren)
+- [blendMode](TextNode.md#blendmode)
 - [locked](TextNode.md#locked)
 - [opacity](TextNode.md#opacity)
 - [parent](TextNode.md#parent)
-- [relativeRotation](TextNode.md#relativeRotation)
-- [relativeTransform](TextNode.md#relativeTransform)
+- [relativeRotation](TextNode.md#relativerotation)
+- [relativeTransform](TextNode.md#relativetransform)
 - [text](TextNode.md#text)
-- [textAlignment](TextNode.md#textAlignment)
+- [textAlignment](TextNode.md#textalignment)
 - [translateX](TextNode.md#translateX)
 - [translateY](TextNode.md#translateY)
 - [type](TextNode.md#type)
 
 ### Methods
 
-- [removeFromParent](TextNode.md#removeFromParent)
+- [removeFromParent](TextNode.md#removefromparent)
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -67,7 +67,7 @@ Node.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -83,7 +83,7 @@ Node.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -102,12 +102,12 @@ Node.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -135,7 +135,7 @@ Node.blendMode
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -168,7 +168,7 @@ Node.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -200,7 +200,7 @@ Node.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -216,7 +216,7 @@ Node.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -250,7 +250,7 @@ Node.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -266,7 +266,7 @@ Node.relativeTransform
 
 ___
 
-### <a id="text" name="text"></a> text
+### text
 
 • `get` **text**(): `string`
 
@@ -290,7 +290,7 @@ The text string of the node
 
 ___
 
-### <a id="textAlignment" name="textAlignment"></a> textAlignment
+### textAlignment
 
 • `get` **textAlignment**(): [`TextAlignment`](../enums/TextAlignment.md)
 
@@ -314,7 +314,7 @@ The horizontal text alignment of the text node. Alignment is always the same acr
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -346,7 +346,7 @@ Node.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -378,7 +378,7 @@ Node.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -394,7 +394,7 @@ Node.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -408,4 +408,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

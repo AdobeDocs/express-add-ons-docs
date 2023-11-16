@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / ComplexShapeNode
+[@express-document-sdk](../overview.md) / ComplexShapeNode
 
 # Class: ComplexShapeNode
 
@@ -15,26 +15,26 @@ of multiple separate paths. ComplexShapeNode also may have more complex resize b
 
 ### Accessors
 
-- [absoluteRotation](ComplexShapeNode.md#absoluteRotation)
-- [absoluteTransform](ComplexShapeNode.md#absoluteTransform)
-- [allChildren](ComplexShapeNode.md#allChildren)
-- [blendMode](ComplexShapeNode.md#blendMode)
+- [absoluteRotation](ComplexShapeNode.md#absoluterotation)
+- [absoluteTransform](ComplexShapeNode.md#absolutetransform)
+- [allChildren](ComplexShapeNode.md#allchildren)
+- [blendMode](ComplexShapeNode.md#blendmode)
 - [locked](ComplexShapeNode.md#locked)
 - [opacity](ComplexShapeNode.md#opacity)
 - [parent](ComplexShapeNode.md#parent)
-- [relativeRotation](ComplexShapeNode.md#relativeRotation)
-- [relativeTransform](ComplexShapeNode.md#relativeTransform)
-- [translateX](ComplexShapeNode.md#translateX)
-- [translateY](ComplexShapeNode.md#translateY)
+- [relativeRotation](ComplexShapeNode.md#relativerotation)
+- [relativeTransform](ComplexShapeNode.md#relativetransform)
+- [translateX](ComplexShapeNode.md#translatex)
+- [translateY](ComplexShapeNode.md#translatey)
 - [type](ComplexShapeNode.md#type)
 
 ### Methods
 
-- [removeFromParent](ComplexShapeNode.md#removeFromParent)
+- [removeFromParent](ComplexShapeNode.md#removefromparent)
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -66,7 +66,7 @@ Node.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -82,7 +82,7 @@ Node.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -101,12 +101,12 @@ Node.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -134,7 +134,7 @@ Node.blendMode
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -167,7 +167,7 @@ Node.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -199,7 +199,7 @@ Node.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -215,7 +215,7 @@ Node.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -249,7 +249,7 @@ Node.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -265,7 +265,7 @@ Node.relativeTransform
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -297,7 +297,7 @@ Node.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -329,7 +329,7 @@ Node.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -345,7 +345,7 @@ Node.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -359,4 +359,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

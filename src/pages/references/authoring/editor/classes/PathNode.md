@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / PathNode
+[@express-document-sdk](../overview.md) / PathNode
 
 # Class: PathNode
 
@@ -19,18 +19,18 @@ yet, only read.
 
 ### Accessors
 
-- [absoluteRotation](PathNode.md#absoluteRotation)
-- [absoluteTransform](PathNode.md#absoluteTransform)
-- [allChildren](PathNode.md#allChildren)
-- [blendMode](PathNode.md#blendMode)
-- [fillRule](PathNode.md#fillRule)
+- [absoluteRotation](PathNode.md#absoluterotation)
+- [absoluteTransform](PathNode.md#absolutetransform)
+- [allChildren](PathNode.md#allchildren)
+- [blendMode](PathNode.md#blendmode)
+- [fillRule](PathNode.md#fillrule)
 - [fills](PathNode.md#fills)
 - [locked](PathNode.md#locked)
 - [opacity](PathNode.md#opacity)
 - [parent](PathNode.md#parent)
 - [path](PathNode.md#path)
-- [relativeRotation](PathNode.md#relativeRotation)
-- [relativeTransform](PathNode.md#relativeTransform)
+- [relativeRotation](PathNode.md#relativerotation)
+- [relativeTransform](PathNode.md#relativetransform)
 - [strokes](PathNode.md#strokes)
 - [translateX](PathNode.md#translateX)
 - [translateY](PathNode.md#translateY)
@@ -38,11 +38,11 @@ yet, only read.
 
 ### Methods
 
-- [removeFromParent](PathNode.md#removeFromParent)
+- [removeFromParent](PathNode.md#removefromparent)
 
 ## Properties
 
-### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
+### DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
@@ -52,7 +52,7 @@ yet, only read.
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -84,7 +84,7 @@ FillableNode.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -100,7 +100,7 @@ FillableNode.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -119,12 +119,12 @@ FillableNode.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -152,7 +152,7 @@ FillableNode.blendMode
 
 ___
 
-### <a id="fillRule" name="fillRule"></a> fillRule
+### fillRule
 
 • `get` **fillRule**(): [`FillRule`](../enums/FillRule.md)
 
@@ -165,7 +165,7 @@ has multiple disjoint parts. This value is read-only and cannot be modified via 
 
 ___
 
-### <a id="fills" name="fills"></a> fills
+### fills
 
 • `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
 
@@ -181,7 +181,7 @@ FillableNode.fills
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -214,7 +214,7 @@ FillableNode.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -246,7 +246,7 @@ FillableNode.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -262,7 +262,7 @@ FillableNode.parent
 
 ___
 
-### <a id="path" name="path"></a> path
+### path
 
 • `get` **path**(): `string`
 
@@ -275,7 +275,7 @@ Example: "M 0 0 L 10 15".
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -309,7 +309,7 @@ FillableNode.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -325,7 +325,7 @@ FillableNode.relativeTransform
 
 ___
 
-### <a id="strokes" name="strokes"></a> strokes
+### strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -341,7 +341,7 @@ FillableNode.strokes
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -373,7 +373,7 @@ FillableNode.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -405,7 +405,7 @@ FillableNode.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -421,7 +421,7 @@ FillableNode.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -435,4 +435,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removeFromParent)
+[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removefromparent)

@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / StrokableNode
+[@express-document-sdk](../overview.md) / StrokableNode
 
 # Class: StrokableNode
 
@@ -26,15 +26,15 @@ Base class for a Node that can have its own stroke.
 
 ### Accessors
 
-- [absoluteRotation](StrokableNode.md#absoluteRotation)
-- [absoluteTransform](StrokableNode.md#absoluteTransform)
-- [allChildren](StrokableNode.md#allChildren)
-- [blendMode](StrokableNode.md#blendMode)
+- [absoluteRotation](StrokableNode.md#absoluterotation)
+- [absoluteTransform](StrokableNode.md#absolutetransform)
+- [allChildren](StrokableNode.md#allchildren)
+- [blendMode](StrokableNode.md#blendmode)
 - [locked](StrokableNode.md#locked)
 - [opacity](StrokableNode.md#opacity)
 - [parent](StrokableNode.md#parent)
-- [relativeRotation](StrokableNode.md#relativeRotation)
-- [relativeTransform](StrokableNode.md#relativeTransform)
+- [relativeRotation](StrokableNode.md#relativerotation)
+- [relativeTransform](StrokableNode.md#relativetransform)
 - [strokes](StrokableNode.md#strokes)
 - [translateX](StrokableNode.md#translateX)
 - [translateY](StrokableNode.md#translateY)
@@ -42,17 +42,17 @@ Base class for a Node that can have its own stroke.
 
 ### Methods
 
-- [removeFromParent](StrokableNode.md#removeFromParent)
+- [removeFromParent](StrokableNode.md#removefromparent)
 
 ## Properties
 
-### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
+### DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -84,7 +84,7 @@ Node.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -100,7 +100,7 @@ Node.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -119,12 +119,12 @@ Node.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -152,7 +152,7 @@ Node.blendMode
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -185,7 +185,7 @@ Node.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -217,7 +217,7 @@ Node.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -233,7 +233,7 @@ Node.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -267,7 +267,7 @@ Node.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -283,7 +283,7 @@ Node.relativeTransform
 
 ___
 
-### <a id="strokes" name="strokes"></a> strokes
+### strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -299,7 +299,7 @@ Any stroke(s) on the shape. Use the methods on this ItemList object to get, add,
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -331,7 +331,7 @@ Node.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -363,7 +363,7 @@ Node.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -379,7 +379,7 @@ Node.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -393,4 +393,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

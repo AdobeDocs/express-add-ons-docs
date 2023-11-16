@@ -1,10 +1,10 @@
-[@add-on-hlapi-sdk](../overview.md) / ReadOnlyItemList
+[@express-document-sdk](../overview.md) / ReadOnlyItemList
 
 # Class: ReadOnlyItemList<T\>
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [allChildren](Node.md#allChildren) for details).
+children that exist in the parent node. See [allChildren](Node.md#allchildren) for details).
 
 Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclasses like ItemList may add these capabilities, however.
 
@@ -33,13 +33,13 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 ### Methods
 
 - [[iterator]](ReadOnlyItemList.md#[iterator])
-- [indexOf](ReadOnlyItemList.md#indexOf)
+- [indexOf](ReadOnlyItemList.md#indexof)
 - [item](ReadOnlyItemList.md#item)
-- [toArray](ReadOnlyItemList.md#toArray)
+- [toArray](ReadOnlyItemList.md#toarray)
 
 ## Accessors
 
-### <a id="first" name="first"></a> first
+### first
 
 • `get` **first**(): `undefined` \| `T`
 
@@ -51,7 +51,7 @@ First item in this list, or undefined if list is empty.
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `get` **last**(): `undefined` \| `T`
 
@@ -63,7 +63,7 @@ Last item in this list, or undefined if list is empty.
 
 ___
 
-### <a id="length" name="length"></a> length
+### length
 
 • `get` **length**(): `number`
 
@@ -75,7 +75,7 @@ Number of items in this list.
 
 ## Methods
 
-### <a id="[iterator]" name="[iterator]"></a> [iterator]
+### [iterator]
 
 ▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
 
@@ -87,7 +87,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ___
 
-### <a id="indexOf" name="indexOf"></a> indexOf
+### indexOf
 
 ▸ **indexOf**(`item`): `number`
 
@@ -107,7 +107,7 @@ index number, or -1 if item isn't in this list.
 
 ___
 
-### <a id="item" name="item"></a> item
+### item
 
 ▸ **item**(`index`): `undefined` \| `T`
 
@@ -125,7 +125,7 @@ Returns item at the given index, or undefined if index is out of range.
 
 ___
 
-### <a id="toArray" name="toArray"></a> toArray
+### toArray
 
 ▸ **toArray**(): readonly `T`[]
 

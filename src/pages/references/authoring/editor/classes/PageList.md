@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / PageList
+[@express-document-sdk](../overview.md) / PageList
 
 # Class: PageList
 
@@ -26,17 +26,17 @@ remove the last remaining page from the list.
 ### Methods
 
 - [[iterator]](PageList.md#[iterator])
-- [addPage](PageList.md#addPage)
-- [indexOf](PageList.md#indexOf)
+- [addPage](PageList.md#addpage)
+- [indexOf](PageList.md#indexof)
 - [item](PageList.md#item)
-- [moveAfter](PageList.md#moveAfter)
-- [moveBefore](PageList.md#moveBefore)
+- [moveAfter](PageList.md#moveafter)
+- [moveBefore](PageList.md#movebefore)
 - [remove](PageList.md#remove)
-- [toArray](PageList.md#toArray)
+- [toArray](PageList.md#toarray)
 
 ## Accessors
 
-### <a id="first" name="first"></a> first
+### first
 
 • `get` **first**(): `undefined` \| `T`
 
@@ -52,7 +52,7 @@ RestrictedItemList.first
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `get` **last**(): `undefined` \| `T`
 
@@ -68,7 +68,7 @@ RestrictedItemList.last
 
 ___
 
-### <a id="length" name="length"></a> length
+### length
 
 • `get` **length**(): `number`
 
@@ -84,7 +84,7 @@ RestrictedItemList.length
 
 ## Methods
 
-### <a id="[iterator]" name="[iterator]"></a> [iterator]
+### [iterator]
 
 ▸ **[iterator]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
@@ -100,13 +100,13 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ___
 
-### <a id="addPage" name="addPage"></a> addPage
+### addPage
 
 ▸ **addPage**(`geometry`): [`PageNode`](PageNode.md)
 
 Create a new page containing a single empty artboard, and add it to the end of the list. The artboard is configured
-with the same defaults as in [addArtboard](ArtboardList.md#addArtboard). The page's artboard becomes the default target for
-newly inserted content ([insertionParent](Context.md#insertionParent)) and the viewport switches to display this artboard.
+with the same defaults as in [addArtboard](ArtboardList.md#addartboard). The page's artboard becomes the default target for
+newly inserted content ([insertionParent](Context.md#insertionparent)) and the viewport switches to display this artboard.
 
 #### Parameters
 
@@ -120,7 +120,7 @@ newly inserted content ([insertionParent](Context.md#insertionParent)) and the v
 
 ___
 
-### <a id="indexOf" name="indexOf"></a> indexOf
+### indexOf
 
 ▸ **indexOf**(`item`): `number`
 
@@ -140,11 +140,11 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[indexOf](RestrictedItemList.md#indexOf)
+[RestrictedItemList](RestrictedItemList.md).[indexOf](RestrictedItemList.md#indexof)
 
 ___
 
-### <a id="item" name="item"></a> item
+### item
 
 ▸ **item**(`index`): `undefined` \| [`PageNode`](PageNode.md)
 
@@ -166,7 +166,7 @@ Returns item at the given index, or undefined if index is out of range.
 
 ___
 
-### <a id="moveAfter" name="moveAfter"></a> moveAfter
+### moveAfter
 
 ▸ **moveAfter**(`item`, `after`): `void`
 
@@ -191,11 +191,11 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveAfter](RestrictedItemList.md#moveAfter)
+[RestrictedItemList](RestrictedItemList.md).[moveAfter](RestrictedItemList.md#moveafter)
 
 ___
 
-### <a id="moveBefore" name="moveBefore"></a> moveBefore
+### moveBefore
 
 ▸ **moveBefore**(`item`, `before`): `void`
 
@@ -220,11 +220,11 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#moveBefore)
+[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#movebefore)
 
 ___
 
-### <a id="remove" name="remove"></a> remove
+### remove
 
 ▸ **remove**(...`items`): `void`
 
@@ -250,7 +250,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ___
 
-### <a id="toArray" name="toArray"></a> toArray
+### toArray
 
 ▸ **toArray**(): readonly [`PageNode`](PageNode.md)[]
 
@@ -262,4 +262,4 @@ readonly [`PageNode`](PageNode.md)[]
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[toArray](RestrictedItemList.md#toArray)
+[RestrictedItemList](RestrictedItemList.md).[toArray](RestrictedItemList.md#toarray)

@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / RectangleNode
+[@express-document-sdk](../overview.md) / RectangleNode
 
 # Class: RectangleNode
 
@@ -22,22 +22,22 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ### Accessors
 
-- [absoluteRotation](RectangleNode.md#absoluteRotation)
-- [absoluteTransform](RectangleNode.md#absoluteTransform)
-- [allChildren](RectangleNode.md#allChildren)
-- [blendMode](RectangleNode.md#blendMode)
-- [bottomLeftRadius](RectangleNode.md#bottomLeftRadius)
-- [bottomRightRadius](RectangleNode.md#bottomRightRadius)
+- [absoluteRotation](RectangleNode.md#absoluterotation)
+- [absoluteTransform](RectangleNode.md#absolutetransform)
+- [allChildren](RectangleNode.md#allchildren)
+- [blendMode](RectangleNode.md#blendmode)
+- [bottomLeftRadius](RectangleNode.md#bottomleftradius)
+- [bottomRightRadius](RectangleNode.md#bottomrightradius)
 - [fills](RectangleNode.md#fills)
 - [height](RectangleNode.md#height)
 - [locked](RectangleNode.md#locked)
 - [opacity](RectangleNode.md#opacity)
 - [parent](RectangleNode.md#parent)
-- [relativeRotation](RectangleNode.md#relativeRotation)
-- [relativeTransform](RectangleNode.md#relativeTransform)
+- [relativeRotation](RectangleNode.md#relativerotation)
+- [relativeTransform](RectangleNode.md#relativetransform)
 - [strokes](RectangleNode.md#strokes)
-- [topLeftRadius](RectangleNode.md#topLeftRadius)
-- [topRightRadius](RectangleNode.md#topRightRadius)
+- [topLeftRadius](RectangleNode.md#topleftradius)
+- [topRightRadius](RectangleNode.md#toprightradius)
 - [translateX](RectangleNode.md#translateX)
 - [translateY](RectangleNode.md#translateY)
 - [type](RectangleNode.md#type)
@@ -45,13 +45,13 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ### Methods
 
-- [getUniformCornerRadius](RectangleNode.md#getUniformCornerRadius)
-- [removeFromParent](RectangleNode.md#removeFromParent)
-- [setUniformCornerRadius](RectangleNode.md#setUniformCornerRadius)
+- [getUniformCornerRadius](RectangleNode.md#getuniformcornerradius)
+- [removeFromParent](RectangleNode.md#removefromparent)
+- [setUniformCornerRadius](RectangleNode.md#setuniformcornerradius)
 
 ## Properties
 
-### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
+### DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
@@ -61,7 +61,7 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -93,7 +93,7 @@ FillableNode.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -109,7 +109,7 @@ FillableNode.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -128,12 +128,12 @@ FillableNode.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -161,7 +161,7 @@ FillableNode.blendMode
 
 ___
 
-### <a id="bottomLeftRadius" name="bottomLeftRadius"></a> bottomLeftRadius
+### bottomLeftRadius
 
 • `get` **bottomLeftRadius**(): `number`
 
@@ -190,7 +190,7 @@ even if the radius value set here is higher.
 
 ___
 
-### <a id="bottomRightRadius" name="bottomRightRadius"></a> bottomRightRadius
+### bottomRightRadius
 
 • `get` **bottomRightRadius**(): `number`
 
@@ -219,7 +219,7 @@ even if the radius value set here is higher.
 
 ___
 
-### <a id="fills" name="fills"></a> fills
+### fills
 
 • `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
 
@@ -235,7 +235,7 @@ FillableNode.fills
 
 ___
 
-### <a id="height" name="height"></a> height
+### height
 
 • `get` **height**(): `number`
 
@@ -268,7 +268,7 @@ Must be at least MIN_DIMENSION.
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -301,7 +301,7 @@ FillableNode.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -333,7 +333,7 @@ FillableNode.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -349,7 +349,7 @@ FillableNode.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -383,7 +383,7 @@ FillableNode.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -399,7 +399,7 @@ FillableNode.relativeTransform
 
 ___
 
-### <a id="strokes" name="strokes"></a> strokes
+### strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -415,7 +415,7 @@ FillableNode.strokes
 
 ___
 
-### <a id="topLeftRadius" name="topLeftRadius"></a> topLeftRadius
+### topLeftRadius
 
 • `get` **topLeftRadius**(): `number`
 
@@ -444,7 +444,7 @@ even if the radius value set here is higher.
 
 ___
 
-### <a id="topRightRadius" name="topRightRadius"></a> topRightRadius
+### topRightRadius
 
 • `get` **topRightRadius**(): `number`
 
@@ -473,7 +473,7 @@ even if the radius value set here is higher.
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -505,7 +505,7 @@ FillableNode.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -537,7 +537,7 @@ FillableNode.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -553,7 +553,7 @@ FillableNode.type
 
 ___
 
-### <a id="width" name="width"></a> width
+### width
 
 • `get` **width**(): `number`
 
@@ -586,7 +586,7 @@ Must be at least MIN_DIMENSION.
 
 ## Methods
 
-### <a id="getUniformCornerRadius" name="getUniformCornerRadius"></a> getUniformCornerRadius
+### getUniformCornerRadius
 
 ▸ **getUniformCornerRadius**(): `undefined` \| `number`
 
@@ -599,7 +599,7 @@ If the corner radii differ, returns undefined.
 
 ___
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -613,11 +613,11 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removeFromParent)
+[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removefromparent)
 
 ___
 
-### <a id="setUniformCornerRadius" name="setUniformCornerRadius"></a> setUniformCornerRadius
+### setUniformCornerRadius
 
 ▸ **setUniformCornerRadius**(`radius`): `void`
 

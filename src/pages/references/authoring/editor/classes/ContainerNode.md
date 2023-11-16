@@ -1,10 +1,10 @@
-[@add-on-hlapi-sdk](../overview.md) / ContainerNode
+[@express-document-sdk](../overview.md) / ContainerNode
 
 # Class: ContainerNode
 
 Base class for a Node that contains an entirely generic collection of children. Some ContainerNode subclasses may host
 *additional* children in other specific "slots," such as background or mask layers; and non-ContainerNode classes may
-also hold children in specified "slots." Use [allChildren](Node.md#allChildren) for read access to children regardless of node type.
+also hold children in specified "slots." Use [allChildren](Node.md#allchildren) for read access to children regardless of node type.
 
 ## Hierarchy
 
@@ -20,27 +20,27 @@ also hold children in specified "slots." Use [allChildren](Node.md#allChildren) 
 
 ### Accessors
 
-- [absoluteRotation](ContainerNode.md#absoluteRotation)
-- [absoluteTransform](ContainerNode.md#absoluteTransform)
-- [allChildren](ContainerNode.md#allChildren)
-- [blendMode](ContainerNode.md#blendMode)
+- [absoluteRotation](ContainerNode.md#absoluterotation)
+- [absoluteTransform](ContainerNode.md#absolutetransform)
+- [allChildren](ContainerNode.md#allchildren)
+- [blendMode](ContainerNode.md#blendmode)
 - [children](ContainerNode.md#children)
 - [locked](ContainerNode.md#locked)
 - [opacity](ContainerNode.md#opacity)
 - [parent](ContainerNode.md#parent)
-- [relativeRotation](ContainerNode.md#relativeRotation)
-- [relativeTransform](ContainerNode.md#relativeTransform)
-- [translateX](ContainerNode.md#translateX)
-- [translateY](ContainerNode.md#translateY)
+- [relativeRotation](ContainerNode.md#relativerotation)
+- [relativeTransform](ContainerNode.md#relativetransform)
+- [translateX](ContainerNode.md#translatex)
+- [translateY](ContainerNode.md#translatey)
 - [type](ContainerNode.md#type)
 
 ### Methods
 
-- [removeFromParent](ContainerNode.md#removeFromParent)
+- [removeFromParent](ContainerNode.md#removefromparent)
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -72,7 +72,7 @@ Node.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -88,7 +88,7 @@ Node.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -107,12 +107,12 @@ Node.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -140,7 +140,7 @@ Node.blendMode
 
 ___
 
-### <a id="children" name="children"></a> children
+### children
 
 • `get` **children**(): [`ItemList`](ItemList.md)<[`Node`](Node.md)\>
 
@@ -152,7 +152,7 @@ The node's children. Use the methods on this ItemList object to get, add, and re
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -185,7 +185,7 @@ Node.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -217,7 +217,7 @@ Node.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -233,7 +233,7 @@ Node.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -267,7 +267,7 @@ Node.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -283,7 +283,7 @@ Node.relativeTransform
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -315,7 +315,7 @@ Node.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -347,7 +347,7 @@ Node.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -363,7 +363,7 @@ Node.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -377,4 +377,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / TextAlignment
+[@express-document-sdk](../overview.md) / TextAlignment
 
 # Enumeration: TextAlignment
 
@@ -15,18 +15,18 @@
 
 ## Enumeration Members
 
-### <a id="center" name="center"></a> center
+### center
 
 • **center** = ``3``
 
 ___
 
-### <a id="left" name="left"></a> left
+### left
 
 • **left** = ``1``
 
 ___
 
-### <a id="right" name="right"></a> right
+### right
 
 • **right** = ``2``

@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / IStrokableNode
+[@express-document-sdk](../overview.md) / IStrokableNode
 
 # Interface: IStrokableNode
 
@@ -18,6 +18,6 @@ the StrokableNode class. (See [ArtboardNode](../classes/ArtboardNode.md), for ex
 
 ## Properties
 
-### <a id="strokes" name="strokes"></a> strokes
+### strokes
 
 • **strokes**: [`ItemList`](../classes/ItemList.md)<[`Stroke`](Stroke.md)\>

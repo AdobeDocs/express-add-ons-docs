@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / FillableNode
+[@express-document-sdk](../overview.md) / FillableNode
 
 # Class: FillableNode
 
@@ -28,16 +28,16 @@ Base class for a Node that can have its own fill and stroke.
 
 ### Accessors
 
-- [absoluteRotation](FillableNode.md#absoluteRotation)
-- [absoluteTransform](FillableNode.md#absoluteTransform)
-- [allChildren](FillableNode.md#allChildren)
-- [blendMode](FillableNode.md#blendMode)
+- [absoluteRotation](FillableNode.md#absoluterotation)
+- [absoluteTransform](FillableNode.md#absolutetransform)
+- [allChildren](FillableNode.md#allchildren)
+- [blendMode](FillableNode.md#blendmode)
 - [fills](FillableNode.md#fills)
 - [locked](FillableNode.md#locked)
 - [opacity](FillableNode.md#opacity)
 - [parent](FillableNode.md#parent)
-- [relativeRotation](FillableNode.md#relativeRotation)
-- [relativeTransform](FillableNode.md#relativeTransform)
+- [relativeRotation](FillableNode.md#relativerotation)
+- [relativeTransform](FillableNode.md#relativetransform)
 - [strokes](FillableNode.md#strokes)
 - [translateX](FillableNode.md#translateX)
 - [translateY](FillableNode.md#translateY)
@@ -45,11 +45,11 @@ Base class for a Node that can have its own fill and stroke.
 
 ### Methods
 
-- [removeFromParent](FillableNode.md#removeFromParent)
+- [removeFromParent](FillableNode.md#removefromparent)
 
 ## Properties
 
-### <a id="DEFAULT_STROKE_WIDTH" name="DEFAULT_STROKE_WIDTH"></a> DEFAULT\_STROKE\_WIDTH
+### DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
 
@@ -59,7 +59,7 @@ Base class for a Node that can have its own fill and stroke.
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -91,7 +91,7 @@ StrokableNode.absoluteRotation
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -107,7 +107,7 @@ StrokableNode.absoluteTransform
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -126,12 +126,12 @@ StrokableNode.allChildren
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -159,7 +159,7 @@ StrokableNode.blendMode
 
 ___
 
-### <a id="fills" name="fills"></a> fills
+### fills
 
 • `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
 
@@ -175,7 +175,7 @@ Any fill(s) on the shape. Use the methods on this ItemList object to get, add, a
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -208,7 +208,7 @@ StrokableNode.locked
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -240,7 +240,7 @@ StrokableNode.opacity
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -256,7 +256,7 @@ StrokableNode.parent
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -290,7 +290,7 @@ StrokableNode.relativeRotation
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -306,7 +306,7 @@ StrokableNode.relativeTransform
 
 ___
 
-### <a id="strokes" name="strokes"></a> strokes
+### strokes
 
 • `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
@@ -322,7 +322,7 @@ StrokableNode.strokes
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -354,7 +354,7 @@ StrokableNode.translateX
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -386,7 +386,7 @@ StrokableNode.translateY
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -402,7 +402,7 @@ StrokableNode.type
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
@@ -416,4 +416,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removeFromParent)
+[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removefromparent)

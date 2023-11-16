@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / ArtboardList
+[@express-document-sdk](../overview.md) / ArtboardList
 
 # Class: ArtboardList
 
@@ -25,17 +25,17 @@ remove the last remaining artboard from the list.
 ### Methods
 
 - [[iterator]](ArtboardList.md#[iterator])
-- [addArtboard](ArtboardList.md#addArtboard)
-- [indexOf](ArtboardList.md#indexOf)
+- [addArtboard](ArtboardList.md#addartboard)
+- [indexOf](ArtboardList.md#indexof)
 - [item](ArtboardList.md#item)
-- [moveAfter](ArtboardList.md#moveAfter)
-- [moveBefore](ArtboardList.md#moveBefore)
+- [moveAfter](ArtboardList.md#moveafter)
+- [moveBefore](ArtboardList.md#movebefore)
 - [remove](ArtboardList.md#remove)
-- [toArray](ArtboardList.md#toArray)
+- [toArray](ArtboardList.md#toarray)
 
 ## Accessors
 
-### <a id="first" name="first"></a> first
+### first
 
 • `get` **first**(): `undefined` \| `T`
 
@@ -51,7 +51,7 @@ RestrictedItemList.first
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `get` **last**(): `undefined` \| `T`
 
@@ -67,7 +67,7 @@ RestrictedItemList.last
 
 ___
 
-### <a id="length" name="length"></a> length
+### length
 
 • `get` **length**(): `number`
 
@@ -83,7 +83,7 @@ RestrictedItemList.length
 
 ## Methods
 
-### <a id="[iterator]" name="[iterator]"></a> [iterator]
+### [iterator]
 
 ▸ **[iterator]**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
 
@@ -99,7 +99,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ___
 
-### <a id="addArtboard" name="addArtboard"></a> addArtboard
+### addArtboard
 
 ▸ **addArtboard**(): [`ArtboardNode`](ArtboardNode.md)
 
@@ -114,7 +114,7 @@ the newly added artboard.
 
 ___
 
-### <a id="indexOf" name="indexOf"></a> indexOf
+### indexOf
 
 ▸ **indexOf**(`item`): `number`
 
@@ -134,11 +134,11 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[indexOf](RestrictedItemList.md#indexOf)
+[RestrictedItemList](RestrictedItemList.md).[indexOf](RestrictedItemList.md#indexof)
 
 ___
 
-### <a id="item" name="item"></a> item
+### item
 
 ▸ **item**(`index`): `undefined` \| [`ArtboardNode`](ArtboardNode.md)
 
@@ -160,7 +160,7 @@ Returns item at the given index, or undefined if index is out of range.
 
 ___
 
-### <a id="moveAfter" name="moveAfter"></a> moveAfter
+### moveAfter
 
 ▸ **moveAfter**(`item`, `after`): `void`
 
@@ -185,11 +185,11 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveAfter](RestrictedItemList.md#moveAfter)
+[RestrictedItemList](RestrictedItemList.md).[moveAfter](RestrictedItemList.md#moveafter)
 
 ___
 
-### <a id="moveBefore" name="moveBefore"></a> moveBefore
+### moveBefore
 
 ▸ **moveBefore**(`item`, `before`): `void`
 
@@ -214,11 +214,11 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#moveBefore)
+[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#movebefore)
 
 ___
 
-### <a id="remove" name="remove"></a> remove
+### remove
 
 ▸ **remove**(...`items`): `void`
 
@@ -244,7 +244,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ___
 
-### <a id="toArray" name="toArray"></a> toArray
+### toArray
 
 ▸ **toArray**(): readonly [`ArtboardNode`](ArtboardNode.md)[]
 
@@ -256,4 +256,4 @@ readonly [`ArtboardNode`](ArtboardNode.md)[]
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[toArray](RestrictedItemList.md#toArray)
+[RestrictedItemList](RestrictedItemList.md).[toArray](RestrictedItemList.md#toarray)

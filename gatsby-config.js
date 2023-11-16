@@ -101,7 +101,7 @@ module.exports = {
         ],
       },
       {
-        title: "Authoring Sandbox",
+        title: "Document Sandbox",
         path: "references/authoring/",
         pages: [
           {

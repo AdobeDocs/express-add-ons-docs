@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Node
+[@express-document-sdk](../overview.md) / Node
 
 # Class: Node
 
@@ -32,26 +32,26 @@ A Node represents an object in the scenegraph, the document's visual content tre
 
 ### Accessors
 
-- [absoluteRotation](Node.md#absoluteRotation)
-- [absoluteTransform](Node.md#absoluteTransform)
-- [allChildren](Node.md#allChildren)
-- [blendMode](Node.md#blendMode)
+- [absoluteRotation](Node.md#absoluterotation)
+- [absoluteTransform](Node.md#absolutetransform)
+- [allChildren](Node.md#allchildren)
+- [blendMode](Node.md#blendmode)
 - [locked](Node.md#locked)
 - [opacity](Node.md#opacity)
 - [parent](Node.md#parent)
-- [relativeRotation](Node.md#relativeRotation)
-- [relativeTransform](Node.md#relativeTransform)
+- [relativeRotation](Node.md#relativerotation)
+- [relativeTransform](Node.md#relativetransform)
 - [translateX](Node.md#translateX)
 - [translateY](Node.md#translateY)
 - [type](Node.md#type)
 
 ### Methods
 
-- [removeFromParent](Node.md#removeFromParent)
+- [removeFromParent](Node.md#removefromparent)
 
 ## Accessors
 
-### <a id="absoluteRotation" name="absoluteRotation"></a> absoluteRotation
+### absoluteRotation
 
 • `get` **absoluteRotation**(): `number`
 
@@ -75,7 +75,7 @@ The node's absolute (global) rotation angle in degrees – includes any cumulati
 
 ___
 
-### <a id="absoluteTransform" name="absoluteTransform"></a> absoluteTransform
+### absoluteTransform
 
 • `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -87,7 +87,7 @@ The node's absolute (global) transform matrix.
 
 ___
 
-### <a id="allChildren" name="allChildren"></a> allChildren
+### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
@@ -102,12 +102,12 @@ overall display z-order.
 
 ___
 
-### <a id="blendMode" name="blendMode"></a> blendMode
+### blendMode
 
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
@@ -127,7 +127,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ___
 
-### <a id="locked" name="locked"></a> locked
+### locked
 
 • `get` **locked**(): `boolean`
 
@@ -152,7 +152,7 @@ cannot be edited by the user unless they are unlocked first.
 
 ___
 
-### <a id="opacity" name="opacity"></a> opacity
+### opacity
 
 • `get` **opacity**(): `number`
 
@@ -176,7 +176,7 @@ The node's opacity, from 0.0 to 1.0
 
 ___
 
-### <a id="parent" name="parent"></a> parent
+### parent
 
 • `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
@@ -188,7 +188,7 @@ The node's parent. Undefined if the node is an orphan, or if the node is the art
 
 ___
 
-### <a id="relativeRotation" name="relativeRotation"></a> relativeRotation
+### relativeRotation
 
 • `get` **relativeRotation**(): `number`
 
@@ -214,7 +214,7 @@ rotates the node about its bounding box's center, not its origin.
 
 ___
 
-### <a id="relativeTransform" name="relativeTransform"></a> relativeTransform
+### relativeTransform
 
 • `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
@@ -226,7 +226,7 @@ The node's transform matrix relative to its parent.
 
 ___
 
-### <a id="translateX" name="translateX"></a> translateX
+### translateX
 
 • `get` **translateX**(): `number`
 
@@ -250,7 +250,7 @@ The translation of the node along its parent's x-axis.
 
 ___
 
-### <a id="translateY" name="translateY"></a> translateY
+### translateY
 
 • `get` **translateY**(): `number`
 
@@ -274,7 +274,7 @@ The translation of the node along its parent's y-axis.
 
 ___
 
-### <a id="type" name="type"></a> type
+### type
 
 • `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
@@ -286,7 +286,7 @@ The node's type.
 
 ## Methods
 
-### <a id="removeFromParent" name="removeFromParent"></a> removeFromParent
+### removeFromParent
 
 ▸ **removeFromParent**(): `void`
 
