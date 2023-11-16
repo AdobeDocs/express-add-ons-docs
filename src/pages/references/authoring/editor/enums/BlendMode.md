@@ -3,6 +3,7 @@
 # Enumeration: BlendMode
 
 <InlineAlert slots="text" variant="warning"/>
+
 *Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
 Determines how a scenende is composited on top of the content rendered below it.

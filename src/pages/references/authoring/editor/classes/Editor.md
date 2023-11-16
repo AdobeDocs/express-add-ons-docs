@@ -114,9 +114,8 @@ This local client will act as having unsaved changes until the upload has finish
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `bitmapData` | [`BitmapImage`](../interfaces/BitmapImage.md) | BitmapImage resource (e.g. returned from loadBitmapImage()). |
-| `options` | `Object` | Additional configuration:      - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the        size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down        if needed to stay below an application-defined size cap). |
-| `options.initialSize?` | [`RectangleGeometry`](../interfaces/RectangleGeometry.md) | - |
+| `bitmapData` | [`BitmapImage`](../interfaces/BitmapImage.md) | BitmapImage resource (e.g. returned from `loadBitmapImage()`). |
+| `options` | `Object` | Additional configuration:<br/><br/> `options.initialSize?:` [`RectangleGeometry`](../interfaces/RectangleGeometry.md)<br/><br/> Size the image is displayed at. Must have the same aspect ratio as `bitmapData`. Defaults to the size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down    if needed to stay below an application-defined size cap). |
 
 #### Returns
 
