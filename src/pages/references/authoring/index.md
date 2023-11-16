@@ -19,7 +19,7 @@ contributors:
 
 # Document Sandbox
 
-The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser. 
+The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -43,7 +43,7 @@ The [document APIs](./editor/) provide access to the user's document structure a
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the [tutorials section](../../guides/tutorials/) to learn more about using the document sandbox and Adobe Express Document APIs. 
+Please see the [tutorials section](../../guides/tutorials/) to learn more about using the document sandbox and Adobe Express Document APIs.
 
 ## Document Sandbox's JavaScript Engine
 

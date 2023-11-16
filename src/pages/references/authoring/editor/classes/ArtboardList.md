@@ -24,7 +24,7 @@ remove the last remaining artboard from the list.
 
 ### Methods
 
-- [[iterator]](ArtboardList.md#[iterator])
+- [[iterator]](ArtboardList.md#iterator)
 - [addArtboard](ArtboardList.md#addartboard)
 - [indexOf](ArtboardList.md#indexof)
 - [item](ArtboardList.md#item)
@@ -95,7 +95,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#[iterator])
+[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
 
 ___
 

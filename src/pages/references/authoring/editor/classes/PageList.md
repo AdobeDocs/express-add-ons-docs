@@ -25,7 +25,7 @@ remove the last remaining page from the list.
 
 ### Methods
 
-- [[iterator]](PageList.md#[iterator])
+- [[iterator]](PageList.md#iterator)
 - [addPage](PageList.md#addpage)
 - [indexOf](PageList.md#indexof)
 - [item](PageList.md#item)
@@ -96,7 +96,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#[iterator])
+[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
 
 ___
 

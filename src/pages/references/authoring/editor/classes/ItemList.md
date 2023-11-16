@@ -32,7 +32,7 @@ This class is used in different places for various types of items, including Nod
 
 ### Methods
 
-- [[iterator]](ItemList.md#[iterator])
+- [[iterator]](ItemList.md#iterator)
 - [append](ItemList.md#append)
 - [clear](ItemList.md#clear)
 - [indexOf](ItemList.md#indexof)
@@ -107,7 +107,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#[iterator])
+[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
 
 ___
 

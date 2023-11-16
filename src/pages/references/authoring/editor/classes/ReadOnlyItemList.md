@@ -32,7 +32,7 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
 ### Methods
 
-- [[iterator]](ReadOnlyItemList.md#[iterator])
+- [[iterator]](ReadOnlyItemList.md#iterator)
 - [indexOf](ReadOnlyItemList.md#indexof)
 - [item](ReadOnlyItemList.md#item)
 - [toArray](ReadOnlyItemList.md#toarray)

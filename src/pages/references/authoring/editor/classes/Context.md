@@ -58,6 +58,7 @@ the current selection. Nodes that are locked or otherwise non-editable are never
 • `set` **selection**(`nodes`): `void`
 
 Sets the current selection, automatically ensuring these rules are met:
+
 - Nodes must be within the current artboard (others are filtered out).
 - A node cannot be selected at the same time as its ancestor (descendants are filtered out).
 - Locked nodes are filtered out (but will still be included in selectionIncludingNonEditable).

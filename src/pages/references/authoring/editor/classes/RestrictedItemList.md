@@ -34,7 +34,7 @@ capabilities, however.
 
 ### Methods
 
-- [[iterator]](RestrictedItemList.md#[iterator])
+- [[iterator]](RestrictedItemList.md#iterator)
 - [indexOf](RestrictedItemList.md#indexof)
 - [item](RestrictedItemList.md#item)
 - [moveAfter](RestrictedItemList.md#moveafter)
@@ -104,7 +104,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[[iterator]](ReadOnlyItemList.md#[iterator])
+[ReadOnlyItemList](ReadOnlyItemList.md).[[iterator]](ReadOnlyItemList.md#iterator)
 
 ___
 
