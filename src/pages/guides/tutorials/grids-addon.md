@@ -3,7 +3,7 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Document API
-  - Authoring Sandbox
+  - Document Sandbox
   - Adobe Express
   - Add-on SDK
   - SDK
@@ -33,7 +33,7 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 ### Timestamp
 
-This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 6th, 2023.
+This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 6th, 2023 and last updated on November 18th, 2023.
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 <!-- List block here -->
 <ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[iframe and Authoring Sandbox communication](#the-communication-api)
+[iframe and Document Sandbox communication](#the-communication-api)
 
 [Spectrum Web Components](#designing-the-ui-with-spectrum-web-components)
 
@@ -67,10 +67,10 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ### Getting Started with the Document API
 
-As part of the [Authoring Sandbox](/references/authoring/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
+As part of the [Document Sandbox](/references/authoring/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
 - The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
-- The **Authoring Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/authoring/communication/)), providing access to the [Document API](/references/authoring/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
+- The **Document Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/authoring/communication/)), providing access to the [Document API](/references/authoring/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
@@ -92,7 +92,7 @@ npm run start
 
 This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](/guides/getting_started/quickstart.md) guide for a step-by-step walkthrough.
 
-Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Authoring Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
+Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Document Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
 ![](images/grids-addon-folder-structure.png)
 
@@ -125,8 +125,8 @@ If you're wondering about `script/shapeUtils.js`, it is an auxiliary file contai
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Authoring Sandbox" />
-    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Authoring Sandbox, Document API" />
+    <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Document Sandbox" />
+    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Document API" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grids add-on</title>
     <link rel="stylesheet" href="styles.css">
@@ -162,7 +162,7 @@ addOnUISdk.ready.then(async () => {
   // Get the UI runtime.
   const { runtime } = addOnUISdk.instance;
   const scriptApi = await runtime.apiProxy("script");
-  scriptApi.log("Authoring Sandbox up and running.");
+  scriptApi.log("Document Sandbox up and running.");
 
   // Enabling CTA elements only when the addOnUISdk is ready
   createShapeButton.disabled = false;
@@ -172,8 +172,8 @@ addOnUISdk.ready.then(async () => {
 #### Document API
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 
 function start() {
   runtime.exposeApi({
@@ -243,7 +243,7 @@ runtime.exposeApi({
 });
 ```
 
-It's also possible to expose iframe methods to the Authoring Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
+It's also possible to expose iframe methods to the Document Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
 
 ## The Document API
 
@@ -296,8 +296,8 @@ addOnUISdk.ready.then(async () => {
 #### Document API
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 import { editor, utils, Constants } from "express";
 
 function start() {
@@ -327,7 +327,7 @@ start();
 // empty
 ```
 
-Please note that it's considered good practice to initially **disable all interactive elements** that need to communicate with the Document API. In this case, there's only one CTA (Call To Action) `<sp-button>`, but generally any other elements that can make changes to the document should be treated similarly. You should enable them only when the `addOnUISdk` and `addOnScriptSdk` are initialized, and event listeners are properly set (see `index.js` line 13).
+Please note that it's considered good practice to initially **disable all interactive elements** that need to communicate with the Document API. In this case, there's only one CTA (Call To Action) `<sp-button>`, but generally any other elements that can make changes to the document should be treated similarly. You should enable them only when the `addOnUISdk` and `addOnSandboxSdk` are initialized, and event listeners are properly set (see `index.js` line 13).
 
 The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
@@ -471,7 +471,7 @@ Please refer to the source code for other details on the HTML structure, which a
 
 ### Collecting values from the UI
 
-Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Authoring Sandbox is retrieved, and everything the Document API exposes is stored in the `scriptApi` constant (lines 9-10).
+Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Document Sandbox is retrieved, and everything the Document API exposes is stored in the `scriptApi` constant (lines 9-10).
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -524,7 +524,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
 
-  // Get the Authoring Sandbox.
+  // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
   const scriptApi = await runtime.apiProxy("script");
 
@@ -601,7 +601,7 @@ Eventually, the two buttons (Delete and Create) invoke methods exposed by the Do
 
 It's worth taking a moment to discuss good validation and error-handling practices at this stage. Just as the QA engineer walking into a bar in the [famous joke](https://twitter.com/brenankeller/status/1068615953989087232), you must ensure that user input aligns with what the grid algorithm expects; for example, that it receives unsigned integers.
 
-For this tutorial, we'll limit ourselves to setting `min` and `max` values for the Rows, Columns, and Gutter ranges. This will prevent scenarios like creating a negative number of columns. In a typical implementation, you'd want to insert a validation routine before invoking the primary function. Depending on the algorithm's and the UI's complexity, this routine might belong to the iframe, the Authoring Sandbox, or both. Additionally, apart from validating value type and range, you may want to ensure that the Gutter size is compatible with the chosen number of Rows and Columns to prevent them from overflowing the page dimensions.[^5]
+For this tutorial, we'll limit ourselves to setting `min` and `max` values for the Rows, Columns, and Gutter ranges. This will prevent scenarios like creating a negative number of columns. In a typical implementation, you'd want to insert a validation routine before invoking the primary function. Depending on the algorithm's and the UI's complexity, this routine might belong to the iframe, the Document Sandbox, or both. Additionally, apart from validating value type and range, you may want to ensure that the Gutter size is compatible with the chosen number of Rows and Columns to prevent them from overflowing the page dimensions.[^5]
 
 Another crucial notion is to avoid silent failures: every action should either succeed or provide the user with a notification if it doesn't. That's why, for instance, the Delete button is left disabled until a set of grids is created; instead of handling the removal of a non-existent grid, it's preferable to prevent it in the first place.
 
@@ -615,8 +615,8 @@ It makes sense to approach this grid business with some caution, as we're just s
 #### script/code.js
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 import { editor, utils, Constants } from "express";
 
 function start() {
@@ -630,7 +630,7 @@ function start() {
 start();
 ```
 
-When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Authoring Sandbox, and logged. So far, so good, the Communication API does its job.
+When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Document Sandbox, and logged. So far, so good, the Communication API does its job.
 
 ![](images/grids-addon-console.png)
 
@@ -735,12 +735,12 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 #### script/code.js
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "AddOnScriptSdk";
 import { editor } from "express";
 import { addColumns, addRows } from "./shapeUtils";
 
-// Get the Authoring Sandbox.
-const { runtime } = addOnScriptSdk.instance;
+// Get the Document Sandbox.
+const { runtime } = addOnSandboxSdk.instance;
 
 function start() {
   const scriptApi = {
@@ -965,7 +965,7 @@ Congratulations! You've coded from scratch the Grids Design System add-on. This 
 
 Let's review the concepts covered in this tutorial and how they've been implemented in the Grids add-on.
 
-- The **iframe** and the **Authoring Sandbox** are two distinct entities able to share contexts via the Communication API. We've used the `exposeApi()` method of the `runtime` object to allow the iframe to invoke functions in the Document API domain.
+- The **iframe** and the **Document Sandbox** are two distinct entities able to share contexts via the Communication API. We've used the `exposeApi()` method of the `runtime` object to allow the iframe to invoke functions in the Document API domain.
 - The **Document API** provides access to Adobe Express' Document Object Model, which defines containment structures and inheritance hierarchies. We've retrieved the document, its pages, and artboards; created, moved and assigned blending modes to shapes; created, populated and locked groups.
 - Nodes (elements) in Adobe Express documents can be added to the document in a position relative to the currently active selection or targeting a container as the **insertion point**; we've seen how `ContainerNode` elements have a `children` collection to `append()` elements to.
 - The Document API **context is permanent** in between iframe calls. We've seen that it's possible to store a reference to a Node within the exposed methods' closure and act upon it after its creation.
@@ -986,8 +986,8 @@ The code for this project can be downloaded [here](https://github.com/undavide/e
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Authoring Sandbox" />
-  <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Authoring Sandbox, Adobe Express Document API" />
+  <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Document Sandbox" />
+  <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Adobe Express Document API" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grids add-on</title>
   <link rel="stylesheet" href="styles.css">
@@ -1053,7 +1053,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
 
-  // Get the Authoring Sandbox.
+  // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
   const scriptApi = await runtime.apiProxy("script");
 
@@ -1204,12 +1204,12 @@ sp-button-group {
 #### Document API
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "AddOnScriptSdk";
 import { editor } from "express";
 import { addColumns, addRows } from "./shapeUtils";
 
-// Get the Authoring Sandbox.
-const { runtime } = addOnScriptSdk.instance;
+// Get the Document Sandbox.
+const { runtime } = addOnSandboxSdk.instance;
 
 let gridRef = null;
 
