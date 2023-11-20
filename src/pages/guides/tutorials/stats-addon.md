@@ -789,7 +789,7 @@ Let's review the concepts covered in this tutorial and how they've been implemen
 
 ## Final Project
 
-The code for this project can be downloaded [here](https://github.com/undavide/express-stats-addon). Use [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/express-addon-document-api-template) as a starting point.
+The code for this project can be downloaded [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/express-stats-addon). Use [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/express-addon-document-api-template) as a starting point.
 
 <InlineAlert variant="info" slots="text1" />
 
