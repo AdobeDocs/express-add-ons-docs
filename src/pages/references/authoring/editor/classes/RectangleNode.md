@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / RectangleNode
+[@express-document-sdk](../overview.md) / RectangleNode
 
 # Class: RectangleNode
 
@@ -22,22 +22,22 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ### Accessors
 
-- [absoluteRotation](RectangleNode.md#absoluteRotation)
-- [absoluteTransform](RectangleNode.md#absoluteTransform)
-- [allChildren](RectangleNode.md#allChildren)
-- [blendMode](RectangleNode.md#blendMode)
-- [bottomLeftRadius](RectangleNode.md#bottomLeftRadius)
-- [bottomRightRadius](RectangleNode.md#bottomRightRadius)
+- [absoluteRotation](RectangleNode.md#absoluterotation)
+- [absoluteTransform](RectangleNode.md#absolutetransform)
+- [allChildren](RectangleNode.md#allchildren)
+- [blendMode](RectangleNode.md#blendmode)
+- [bottomLeftRadius](RectangleNode.md#bottomleftradius)
+- [bottomRightRadius](RectangleNode.md#bottomrightradius)
 - [fills](RectangleNode.md#fills)
 - [height](RectangleNode.md#height)
 - [locked](RectangleNode.md#locked)
 - [opacity](RectangleNode.md#opacity)
 - [parent](RectangleNode.md#parent)
-- [relativeRotation](RectangleNode.md#relativeRotation)
-- [relativeTransform](RectangleNode.md#relativeTransform)
+- [relativeRotation](RectangleNode.md#relativerotation)
+- [relativeTransform](RectangleNode.md#relativetransform)
 - [strokes](RectangleNode.md#strokes)
-- [topLeftRadius](RectangleNode.md#topLeftRadius)
-- [topRightRadius](RectangleNode.md#topRightRadius)
+- [topLeftRadius](RectangleNode.md#topleftradius)
+- [topRightRadius](RectangleNode.md#toprightradius)
 - [translateX](RectangleNode.md#translateX)
 - [translateY](RectangleNode.md#translateY)
 - [type](RectangleNode.md#type)
@@ -45,9 +45,9 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ### Methods
 
-- [getUniformCornerRadius](RectangleNode.md#getUniformCornerRadius)
-- [removeFromParent](RectangleNode.md#removeFromParent)
-- [setUniformCornerRadius](RectangleNode.md#setUniformCornerRadius)
+- [getUniformCornerRadius](RectangleNode.md#getuniformcornerradius)
+- [removeFromParent](RectangleNode.md#removefromparent)
+- [setUniformCornerRadius](RectangleNode.md#setuniformcornerradius)
 
 ## Properties
 
@@ -130,14 +130,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -149,7 +149,7 @@ FillableNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -539,13 +539,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -613,7 +613,7 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removeFromParent)
+[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removefromparent)
 
 ___
 

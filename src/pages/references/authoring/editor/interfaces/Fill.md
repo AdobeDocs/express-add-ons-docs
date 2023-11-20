@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Fill
+[@express-document-sdk](../overview.md) / Fill
 
 # Interface: Fill
 
@@ -20,6 +20,6 @@ Base interface representing any fill in the scenegraph. See [FillableNode](../cl
 
 ### type
 
-• `Readonly` **type**: [`color`](../enums/FillTypeValue.md#color)
+• `Readonly` **type**: [`color`](../enums/FillType.md#color)
 
 The fill type.

@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / EllipseNode
+[@express-document-sdk](../overview.md) / EllipseNode
 
 # Class: EllipseNode
 
@@ -18,16 +18,16 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
 ### Accessors
 
-- [absoluteRotation](EllipseNode.md#absoluteRotation)
-- [absoluteTransform](EllipseNode.md#absoluteTransform)
-- [allChildren](EllipseNode.md#allChildren)
-- [blendMode](EllipseNode.md#blendMode)
+- [absoluteRotation](EllipseNode.md#absoluterotation)
+- [absoluteTransform](EllipseNode.md#absolutetransform)
+- [allChildren](EllipseNode.md#allchildren)
+- [blendMode](EllipseNode.md#blendmode)
 - [fills](EllipseNode.md#fills)
 - [locked](EllipseNode.md#locked)
 - [opacity](EllipseNode.md#opacity)
 - [parent](EllipseNode.md#parent)
-- [relativeRotation](EllipseNode.md#relativeRotation)
-- [relativeTransform](EllipseNode.md#relativeTransform)
+- [relativeRotation](EllipseNode.md#relativerotation)
+- [relativeTransform](EllipseNode.md#relativetransform)
 - [rx](EllipseNode.md#rx)
 - [ry](EllipseNode.md#ry)
 - [strokes](EllipseNode.md#strokes)
@@ -37,7 +37,7 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
 ### Methods
 
-- [removeFromParent](EllipseNode.md#removeFromParent)
+- [removeFromParent](EllipseNode.md#removefromparent)
 
 ## Properties
 
@@ -120,14 +120,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -139,7 +139,7 @@ FillableNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -434,13 +434,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -462,4 +462,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removeFromParent)
+[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removefromparent)

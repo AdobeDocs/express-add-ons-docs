@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / RectangleGeometry
+[@express-document-sdk](../overview.md) / RectangleGeometry
 
 # Interface: RectangleGeometry
 

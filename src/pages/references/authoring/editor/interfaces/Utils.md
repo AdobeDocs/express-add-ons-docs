@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Utils
+[@express-document-sdk](../overview.md) / Utils
 
 # Interface: Utils
 
@@ -6,7 +6,7 @@
 
 ### Methods
 
-- [createColor](Utils.md#createColor)
+- [createColor](Utils.md#createcolor)
 
 ## Methods
 

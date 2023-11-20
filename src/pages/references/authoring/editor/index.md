@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: Document APIs
-description: An introduction to the Document APIs available in the authoring sandbox.
+description: An introduction to the Document APIs available in the document sandbox.
 contributors:
   - https://github.com/hollyschinsky  
 hideBreadcrumbNav: true
@@ -42,7 +42,7 @@ See the example below for further usage details.
 
 ## Example Code Snippet
 
-The following code snippet illustrates how to use the [Express Document APIs](./classes/Editor.md) from the authoring sandbox code running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
+The following code snippet illustrates how to use the [Express Document APIs](./classes/Editor.md) from the document sandbox code running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
 import { editor, utils } from "express";

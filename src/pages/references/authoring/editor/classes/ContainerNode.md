@@ -1,10 +1,10 @@
-[@add-on-hlapi-sdk](../overview.md) / ContainerNode
+[@express-document-sdk](../overview.md) / ContainerNode
 
 # Class: ContainerNode
 
 Base class for a Node that contains an entirely generic collection of children. Some ContainerNode subclasses may host
 *additional* children in other specific "slots," such as background or mask layers; and non-ContainerNode classes may
-also hold children in specified "slots." Use [allChildren](Node.md#allChildren) for read access to children regardless of node type.
+also hold children in specified "slots." Use [allChildren](Node.md#allchildren) for read access to children regardless of node type.
 
 ## Hierarchy
 
@@ -20,23 +20,23 @@ also hold children in specified "slots." Use [allChildren](Node.md#allChildren) 
 
 ### Accessors
 
-- [absoluteRotation](ContainerNode.md#absoluteRotation)
-- [absoluteTransform](ContainerNode.md#absoluteTransform)
-- [allChildren](ContainerNode.md#allChildren)
-- [blendMode](ContainerNode.md#blendMode)
+- [absoluteRotation](ContainerNode.md#absoluterotation)
+- [absoluteTransform](ContainerNode.md#absolutetransform)
+- [allChildren](ContainerNode.md#allchildren)
+- [blendMode](ContainerNode.md#blendmode)
 - [children](ContainerNode.md#children)
 - [locked](ContainerNode.md#locked)
 - [opacity](ContainerNode.md#opacity)
 - [parent](ContainerNode.md#parent)
-- [relativeRotation](ContainerNode.md#relativeRotation)
-- [relativeTransform](ContainerNode.md#relativeTransform)
-- [translateX](ContainerNode.md#translateX)
-- [translateY](ContainerNode.md#translateY)
+- [relativeRotation](ContainerNode.md#relativerotation)
+- [relativeTransform](ContainerNode.md#relativetransform)
+- [translateX](ContainerNode.md#translatex)
+- [translateY](ContainerNode.md#translatey)
 - [type](ContainerNode.md#type)
 
 ### Methods
 
-- [removeFromParent](ContainerNode.md#removeFromParent)
+- [removeFromParent](ContainerNode.md#removefromparent)
 
 ## Accessors
 
@@ -109,14 +109,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -128,7 +128,7 @@ Node.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -349,13 +349,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -377,4 +377,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

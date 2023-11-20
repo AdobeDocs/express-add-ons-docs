@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / PageList
+[@express-document-sdk](../overview.md) / PageList
 
 # Class: PageList
 
@@ -11,7 +11,7 @@ remove the last remaining page from the list.
 
 ## Hierarchy
 
-- [`ReadOnlyItemList`](ReadOnlyItemList.md)<[`PageNode`](PageNode.md)\>
+- [`RestrictedItemList`](RestrictedItemList.md)<[`PageNode`](PageNode.md)\>
 
   ↳ **`PageList`**
 
@@ -25,10 +25,14 @@ remove the last remaining page from the list.
 
 ### Methods
 
-- [iterator](PageList.md#iterator)
-- [addPage](PageList.md#addPage)
+- [[iterator]](PageList.md#iterator)
+- [addPage](PageList.md#addpage)
+- [indexOf](PageList.md#indexof)
 - [item](PageList.md#item)
-- [toArray](PageList.md#toArray)
+- [moveAfter](PageList.md#moveafter)
+- [moveBefore](PageList.md#movebefore)
+- [remove](PageList.md#remove)
+- [toArray](PageList.md#toarray)
 
 ## Accessors
 
@@ -44,7 +48,7 @@ First item in this list, or undefined if list is empty.
 
 #### Inherited from
 
-ReadOnlyItemList.first
+RestrictedItemList.first
 
 ___
 
@@ -60,7 +64,7 @@ Last item in this list, or undefined if list is empty.
 
 #### Inherited from
 
-ReadOnlyItemList.last
+RestrictedItemList.last
 
 ___
 
@@ -76,13 +80,13 @@ Number of items in this list.
 
 #### Inherited from
 
-ReadOnlyItemList.length
+RestrictedItemList.length
 
 ## Methods
 
-### iterator
+### [iterator]
 
-▸ **iterator**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
+▸ **[iterator]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -92,7 +96,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[iterator](ReadOnlyItemList.md#iterator)
+[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
 
 ___
 
@@ -101,8 +105,8 @@ ___
 ▸ **addPage**(`geometry`): [`PageNode`](PageNode.md)
 
 Create a new page containing a single empty artboard, and add it to the end of the list. The artboard is configured
-with the same defaults as in [addArtboard](ArtboardList.md#addArtboard). The page's artboard becomes the default target for
-newly inserted content ([insertionParent](Context.md#insertionParent)) and the viewport switches to display this artboard.
+with the same defaults as in [addArtboard](ArtboardList.md#addartboard). The page's artboard becomes the default target for
+newly inserted content ([insertionParent](Context.md#insertionparent)) and the viewport switches to display this artboard.
 
 #### Parameters
 
@@ -113,6 +117,30 @@ newly inserted content ([insertionParent](Context.md#insertionParent)) and the v
 #### Returns
 
 [`PageNode`](PageNode.md)
+
+___
+
+### indexOf
+
+▸ **indexOf**(`item`): `number`
+
+Get index of item in list.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `item` | [`PageNode`](PageNode.md) |
+
+#### Returns
+
+`number`
+
+index number, or -1 if item isn't in this list.
+
+#### Inherited from
+
+[RestrictedItemList](RestrictedItemList.md).[indexOf](RestrictedItemList.md#indexof)
 
 ___
 
@@ -134,7 +162,91 @@ Returns item at the given index, or undefined if index is out of range.
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[item](ReadOnlyItemList.md#item)
+[RestrictedItemList](RestrictedItemList.md).[item](RestrictedItemList.md#item)
+
+___
+
+### moveAfter
+
+▸ **moveAfter**(`item`, `after`): `void`
+
+Move `item` so it is immediately after `after` in this list: places `item` at the index one higher than `after`.
+Depending on the position in the list `item` originally occupied, some other items in the list may shift to higher
+or lower indices as a result. No-op if both arguments are the same item.
+
+**`Throws`**
+
+An error if either argument is not contained in this list.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `item` | [`PageNode`](PageNode.md) |
+| `after` | [`PageNode`](PageNode.md) |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[RestrictedItemList](RestrictedItemList.md).[moveAfter](RestrictedItemList.md#moveafter)
+
+___
+
+### moveBefore
+
+▸ **moveBefore**(`item`, `before`): `void`
+
+Move `item` so it is immediately before `before` in this list: places `item` at the index that `before` used
+to occupy. Depending on the position in the list `item` originally occupied, some other items in the list may
+shift to higher or lower indices as a result. No-op if both arguments are the same item.
+
+**`Throws`**
+
+An error if either argument is not contained in this list.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `item` | [`PageNode`](PageNode.md) |
+| `before` | [`PageNode`](PageNode.md) |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#movebefore)
+
+___
+
+### remove
+
+▸ **remove**(...`items`): `void`
+
+Remove the items from the list. The items need not be contiguous.
+
+**`Throws`**
+
+If any of the items are not in the list, or if it is illegal to remove any of the items from this parent.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...items` | [`PageNode`](PageNode.md)[] |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[RestrictedItemList](RestrictedItemList.md).[remove](RestrictedItemList.md#remove)
 
 ___
 
@@ -150,4 +262,4 @@ readonly [`PageNode`](PageNode.md)[]
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[toArray](ReadOnlyItemList.md#toArray)
+[RestrictedItemList](RestrictedItemList.md).[toArray](RestrictedItemList.md#toarray)

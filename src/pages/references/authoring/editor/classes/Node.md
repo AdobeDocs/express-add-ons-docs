@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Node
+[@express-document-sdk](../overview.md) / Node
 
 # Class: Node
 
@@ -10,9 +10,13 @@ A Node represents an object in the scenegraph, the document's visual content tre
 
   ↳ **`Node`**
 
+  ↳↳ [`ComplexShapeNode`](ComplexShapeNode.md)
+
   ↳↳ [`ContainerNode`](ContainerNode.md)
 
   ↳↳ [`ExpressRootNode`](ExpressRootNode.md)
+
+  ↳↳ [`GridLayoutNode`](GridLayoutNode.md)
 
   ↳↳ [`ImageRectangleNode`](ImageRectangleNode.md)
 
@@ -28,22 +32,22 @@ A Node represents an object in the scenegraph, the document's visual content tre
 
 ### Accessors
 
-- [absoluteRotation](Node.md#absoluteRotation)
-- [absoluteTransform](Node.md#absoluteTransform)
-- [allChildren](Node.md#allChildren)
-- [blendMode](Node.md#blendMode)
+- [absoluteRotation](Node.md#absoluterotation)
+- [absoluteTransform](Node.md#absolutetransform)
+- [allChildren](Node.md#allchildren)
+- [blendMode](Node.md#blendmode)
 - [locked](Node.md#locked)
 - [opacity](Node.md#opacity)
 - [parent](Node.md#parent)
-- [relativeRotation](Node.md#relativeRotation)
-- [relativeTransform](Node.md#relativeTransform)
+- [relativeRotation](Node.md#relativerotation)
+- [relativeTransform](Node.md#relativetransform)
 - [translateX](Node.md#translateX)
 - [translateY](Node.md#translateY)
 - [type](Node.md#type)
 
 ### Methods
 
-- [removeFromParent](Node.md#removeFromParent)
+- [removeFromParent](Node.md#removefromparent)
 
 ## Accessors
 
@@ -100,14 +104,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 • `set` **blendMode**(`value`): `void`
 
@@ -115,7 +119,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -272,13 +276,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 ## Methods
 

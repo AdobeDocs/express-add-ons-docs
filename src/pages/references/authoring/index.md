@@ -11,31 +11,31 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: Authoring Sandbox Overview
-description: An overview of the authoring sandbox used for content authoring with the Adobe Express Document APIs.
+title: Document Sandbox Overview
+description: An overview of the document sandbox used for content authoring with the Adobe Express Document APIs.
 contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Authoring Sandbox
+# Document Sandbox
 
-The authoring sandbox (aka: script runtime) is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser. 
+The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
 <InlineAlert slots="text" variant="warning"/>
 
-The authoring sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
+The document sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ## Overview
 
-The authoring sandbox exposes three categories of APIs, which each have their own specific references and are outlined below.
+The document sandbox exposes three categories of APIs, which each have their own specific references and are outlined below.
 
 ### Communication APIs
 
-The [communication APIs](./communication/index.md) allow you to communicate between the authoring sandbox and the iframe runtime where your add-on is running via exposed APIs.
+The [communication APIs](./communication/index.md) allow you to communicate between the document sandbox and the iframe runtime where your add-on is running via exposed APIs.
 
 ### Web APIs
 
-The authoring sandbox does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available. For these, the developers can use iframe runtime environment and [communicate](./communication/index.md#expose-apis-from-the-ui) the result back to the script running inside script runtime environment. Some of the commonly used [Web APIs](./web/index.md) (with limited scope) have been provided inside script runtime environment.
+The document sandbox does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available. For these, the developers can use iframe runtime environment and [communicate](./communication/index.md#expose-apis-from-the-ui) the result back to the script running inside script runtime environment. Some of the commonly used [Web APIs](./web/index.md) (with limited scope) have been provided inside script runtime environment.
 
 ### Document APIs
 
@@ -43,15 +43,15 @@ The [document APIs](./editor/) provide access to the user's document structure a
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the [tutorials section](../../guides/tutorials/) to learn more about using the authoring sandbox (aka: script runtime) and Adobe Express Document APIs. 
+Please see the [tutorials section](../../guides/tutorials/) to learn more about using the document sandbox and Adobe Express Document APIs.
 
-## Authoring Sandbox's JavaScript Engine
+## Document Sandbox's JavaScript Engine
 
-The authoring sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
+The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
-Some key concepts to note about the authoring sandbox include:
+Some key concepts to note about the document sandbox include:
 
-- Limited access to browser APIs (see the [Web APIs](./web/index.md) reference). Note however, you can use the [communication APIs](./communication/index.md) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the authoring sandbox.
+- Limited access to browser APIs (see the [Web APIs](./web/index.md) reference). Note however, you can use the [communication APIs](./communication/index.md) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the document sandbox.
 - Runs in a slower execution environment.
 - Provides no debugging capabilities other than those provided by the [injected `console` functions](./web/index.md#console-object).
 - Runs in the same context/thread as the host's application business logic, thus providing access to interact with it via the injected APIs.
@@ -62,7 +62,7 @@ The methods defined in the [communication API reference](./communication/) are u
 
 ### Script entry point
 
-To use the authoring sandbox APIs in your add-on, start by defining a new `script` entry point in your `manifest.json` file with the value set to the name of the file containing the JavaScript code you're using with the authoring sandbox APIs:
+To use the document sandbox APIs in your add-on, start by defining a new `script` entry point in your `manifest.json` file with the value set to the name of the file containing the JavaScript code you're using with the document sandbox APIs:
 
 ```json
     "entryPoints": [
@@ -79,11 +79,11 @@ The JavaScript code in the file referenced can then access any of the injected g
 
 ### CLI Generated Script Runtime Add-on
 
-The quickest way to get started with a scaffolded project set up with the script runtime (aka: authoring sandbox) bindings for you is via the CLI. When creating a new add-on, the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the script runtime:
+The quickest way to get started with a scaffolded project set up with the script runtime (aka: document sandbox) bindings for you is via the CLI. When creating a new add-on, the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the script runtime:
 
 ![CLI prompt for script runtime](../img/cli-script-prompt.png)
 
-Choose `Yes` at the prompt to include the authoring sandbox setup in your generated project. The project structure that's generated will differ depending on which base template you chose, but the two important additions to note, are the existence of a `script` entry point in your `manifest.json`, and the `code.js` file it references.
+Choose `Yes` at the prompt to include the document sandbox setup in your generated project. The project structure that's generated will differ depending on which base template you chose, but the two important additions to note, are the existence of a `script` entry point in your `manifest.json`, and the `code.js` file it references.
 
 ```json
 "entryPoints": [
@@ -127,4 +127,4 @@ A more comprehensive example of using the [document APIs](./editor/) to add a pa
 
 ## Debugging script based add-ons
 
-Debugging with breakpoints from the authoring sandbox (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./editor/index.md#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.
+Debugging with breakpoints from the document sandbox (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./editor/index.md#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.

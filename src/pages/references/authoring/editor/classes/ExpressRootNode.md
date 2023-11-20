@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / ExpressRootNode
+[@express-document-sdk](../overview.md) / ExpressRootNode
 
 # Class: ExpressRootNode
 
@@ -14,23 +14,23 @@ An ExpressRootNode represents the root node of the document's "scenegraph" artwo
 
 ### Accessors
 
-- [absoluteRotation](ExpressRootNode.md#absoluteRotation)
-- [absoluteTransform](ExpressRootNode.md#absoluteTransform)
-- [allChildren](ExpressRootNode.md#allChildren)
-- [blendMode](ExpressRootNode.md#blendMode)
+- [absoluteRotation](ExpressRootNode.md#absoluterotation)
+- [absoluteTransform](ExpressRootNode.md#absolutetransform)
+- [allChildren](ExpressRootNode.md#allchildren)
+- [blendMode](ExpressRootNode.md#blendmode)
 - [locked](ExpressRootNode.md#locked)
 - [opacity](ExpressRootNode.md#opacity)
 - [pages](ExpressRootNode.md#pages)
 - [parent](ExpressRootNode.md#parent)
-- [relativeRotation](ExpressRootNode.md#relativeRotation)
-- [relativeTransform](ExpressRootNode.md#relativeTransform)
+- [relativeRotation](ExpressRootNode.md#relativerotation)
+- [relativeTransform](ExpressRootNode.md#relativetransform)
 - [translateX](ExpressRootNode.md#translateX)
 - [translateY](ExpressRootNode.md#translateY)
 - [type](ExpressRootNode.md#type)
 
 ### Methods
 
-- [removeFromParent](ExpressRootNode.md#removeFromParent)
+- [removeFromParent](ExpressRootNode.md#removefromparent)
 
 ## Accessors
 
@@ -103,14 +103,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -122,7 +122,7 @@ Node.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -343,13 +343,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -371,4 +371,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

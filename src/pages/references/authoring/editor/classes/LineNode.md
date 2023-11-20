@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / LineNode
+[@express-document-sdk](../overview.md) / LineNode
 
 # Class: LineNode
 
@@ -22,19 +22,19 @@ A LineNode represents a simple line object in the scenegraph – a single straig
 
 ### Accessors
 
-- [absoluteRotation](LineNode.md#absoluteRotation)
-- [absoluteTransform](LineNode.md#absoluteTransform)
-- [allChildren](LineNode.md#allChildren)
-- [blendMode](LineNode.md#blendMode)
-- [endArrowHeadType](LineNode.md#endArrowHeadType)
+- [absoluteRotation](LineNode.md#absoluterotation)
+- [absoluteTransform](LineNode.md#absolutetransform)
+- [allChildren](LineNode.md#allchildren)
+- [blendMode](LineNode.md#blendmode)
+- [endArrowHeadType](LineNode.md#endarrowheadtype)
 - [endX](LineNode.md#endX)
 - [endY](LineNode.md#endY)
 - [locked](LineNode.md#locked)
 - [opacity](LineNode.md#opacity)
 - [parent](LineNode.md#parent)
-- [relativeRotation](LineNode.md#relativeRotation)
-- [relativeTransform](LineNode.md#relativeTransform)
-- [startArrowHeadType](LineNode.md#startArrowHeadType)
+- [relativeRotation](LineNode.md#relativerotation)
+- [relativeTransform](LineNode.md#relativetransform)
+- [startArrowHeadType](LineNode.md#startarrowheadtype)
 - [startX](LineNode.md#startX)
 - [startY](LineNode.md#startY)
 - [strokes](LineNode.md#strokes)
@@ -44,8 +44,8 @@ A LineNode represents a simple line object in the scenegraph – a single straig
 
 ### Methods
 
-- [removeFromParent](LineNode.md#removeFromParent)
-- [setEndPoints](LineNode.md#setEndPoints)
+- [removeFromParent](LineNode.md#removefromparent)
+- [setEndPoints](LineNode.md#setendpoints)
 
 ## Properties
 
@@ -152,14 +152,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -171,7 +171,7 @@ StrokableNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -508,13 +508,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -536,7 +536,7 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removeFromParent)
+[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removefromparent)
 
 ___
 

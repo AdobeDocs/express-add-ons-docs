@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / IStrokableNode
+[@express-document-sdk](../overview.md) / IStrokableNode
 
 # Interface: IStrokableNode
 

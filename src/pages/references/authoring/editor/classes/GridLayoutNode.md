@@ -1,54 +1,43 @@
-[@express-document-sdk](../overview.md) / StrokableNode
+[@express-document-sdk](../overview.md) / GridLayoutNode
 
-# Class: StrokableNode
+# Class: GridLayoutNode
 
-Base class for a Node that can have its own stroke.
+A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to
+create a layout grid that other content can be placed into.
 
 ## Hierarchy
 
 - [`Node`](Node.md)
 
-  ↳ **`StrokableNode`**
-
-  ↳↳ [`FillableNode`](FillableNode.md)
-
-  ↳↳ [`LineNode`](LineNode.md)
+  ↳ **`GridLayoutNode`**
 
 ## Implements
 
-- [`IStrokableNode`](../interfaces/IStrokableNode.md)
+- [`IRectangularNode`](../interfaces/IRectangularNode.md)
 
 ## Table of contents
 
-### Properties
-
-- [DEFAULT\_STROKE\_WIDTH](StrokableNode.md#DEFAULT_STROKE_WIDTH)
-
 ### Accessors
 
-- [absoluteRotation](StrokableNode.md#absoluterotation)
-- [absoluteTransform](StrokableNode.md#absolutetransform)
-- [allChildren](StrokableNode.md#allchildren)
-- [blendMode](StrokableNode.md#blendmode)
-- [locked](StrokableNode.md#locked)
-- [opacity](StrokableNode.md#opacity)
-- [parent](StrokableNode.md#parent)
-- [relativeRotation](StrokableNode.md#relativerotation)
-- [relativeTransform](StrokableNode.md#relativetransform)
-- [strokes](StrokableNode.md#strokes)
-- [translateX](StrokableNode.md#translateX)
-- [translateY](StrokableNode.md#translateY)
-- [type](StrokableNode.md#type)
+- [absoluteRotation](GridLayoutNode.md#absoluterotation)
+- [absoluteTransform](GridLayoutNode.md#absolutetransform)
+- [allChildren](GridLayoutNode.md#allchildren)
+- [blendMode](GridLayoutNode.md#blendmode)
+- [fill](GridLayoutNode.md#fill)
+- [height](GridLayoutNode.md#height)
+- [locked](GridLayoutNode.md#locked)
+- [opacity](GridLayoutNode.md#opacity)
+- [parent](GridLayoutNode.md#parent)
+- [relativeRotation](GridLayoutNode.md#relativerotation)
+- [relativeTransform](GridLayoutNode.md#relativetransform)
+- [translateX](GridLayoutNode.md#translateX)
+- [translateY](GridLayoutNode.md#translateY)
+- [type](GridLayoutNode.md#type)
+- [width](GridLayoutNode.md#width)
 
 ### Methods
 
-- [removeFromParent](StrokableNode.md#removefromparent)
-
-## Properties
-
-### DEFAULT\_STROKE\_WIDTH
-
-▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
+- [removeFromParent](GridLayoutNode.md#removefromparent)
 
 ## Accessors
 
@@ -149,6 +138,46 @@ Node.blendMode
 #### Inherited from
 
 Node.blendMode
+
+___
+
+### fill
+
+• `get` **fill**(): [`Fill`](../interfaces/Fill.md)
+
+The background fill of the GridLayout.
+
+#### Returns
+
+[`Fill`](../interfaces/Fill.md)
+
+• `set` **fill**(`fill`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fill` | [`Fill`](../interfaces/Fill.md) |
+
+#### Returns
+
+`void`
+
+___
+
+### height
+
+• `get` **height**(): `number`
+
+The height of the node.
+
+#### Returns
+
+`number`
+
+#### Implementation of
+
+[IRectangularNode](../interfaces/IRectangularNode.md).[height](../interfaces/IRectangularNode.md#height)
 
 ___
 
@@ -283,22 +312,6 @@ Node.relativeTransform
 
 ___
 
-### strokes
-
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
-
-#### Returns
-
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-#### Implementation of
-
-[IStrokableNode](../interfaces/IStrokableNode.md).[strokes](../interfaces/IStrokableNode.md#strokes)
-
-___
-
 ### translateX
 
 • `get` **translateX**(): `number`
@@ -376,6 +389,22 @@ The node's type.
 #### Inherited from
 
 Node.type
+
+___
+
+### width
+
+• `get` **width**(): `number`
+
+The width of the node.
+
+#### Returns
+
+`number`
+
+#### Implementation of
+
+[IRectangularNode](../interfaces/IRectangularNode.md).[width](../interfaces/IRectangularNode.md#width)
 
 ## Methods
 

@@ -1,10 +1,10 @@
-[@add-on-hlapi-sdk](../overview.md) / ReadOnlyItemList
+[@express-document-sdk](../overview.md) / ReadOnlyItemList
 
 # Class: ReadOnlyItemList<T\>
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [allChildren](Node.md#allChildren) for details).
+children that exist in the parent node. See [allChildren](Node.md#allchildren) for details).
 
 Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclasses like ItemList may add these capabilities, however.
 
@@ -20,11 +20,7 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
   ↳ **`ReadOnlyItemList`**
 
-  ↳↳ [`ArtboardList`](ArtboardList.md)
-
-  ↳↳ [`ItemList`](ItemList.md)
-
-  ↳↳ [`PageList`](PageList.md)
+  ↳↳ [`RestrictedItemList`](RestrictedItemList.md)
 
 ## Table of contents
 
@@ -36,9 +32,10 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
 ### Methods
 
-- [iterator](ReadOnlyItemList.md#iterator)
+- [[iterator]](ReadOnlyItemList.md#iterator)
+- [indexOf](ReadOnlyItemList.md#indexof)
 - [item](ReadOnlyItemList.md#item)
-- [toArray](ReadOnlyItemList.md#toArray)
+- [toArray](ReadOnlyItemList.md#toarray)
 
 ## Accessors
 
@@ -78,15 +75,35 @@ Number of items in this list.
 
 ## Methods
 
-### iterator
+### [iterator]
 
-▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
 `Iterator`<`T`, `any`, `undefined`\>
+
+___
+
+### indexOf
+
+▸ **indexOf**(`item`): `number`
+
+Get index of item in list.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `item` | `T` |
+
+#### Returns
+
+`number`
+
+index number, or -1 if item isn't in this list.
 
 ___
 

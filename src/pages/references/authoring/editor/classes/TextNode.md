@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / TextNode
+[@express-document-sdk](../overview.md) / TextNode
 
 # Class: TextNode
 
@@ -14,24 +14,24 @@ A TextNode represents a text object in the scenegraph.
 
 ### Accessors
 
-- [absoluteRotation](TextNode.md#absoluteRotation)
-- [absoluteTransform](TextNode.md#absoluteTransform)
-- [allChildren](TextNode.md#allChildren)
-- [blendMode](TextNode.md#blendMode)
+- [absoluteRotation](TextNode.md#absoluterotation)
+- [absoluteTransform](TextNode.md#absolutetransform)
+- [allChildren](TextNode.md#allchildren)
+- [blendMode](TextNode.md#blendmode)
 - [locked](TextNode.md#locked)
 - [opacity](TextNode.md#opacity)
 - [parent](TextNode.md#parent)
-- [relativeRotation](TextNode.md#relativeRotation)
-- [relativeTransform](TextNode.md#relativeTransform)
+- [relativeRotation](TextNode.md#relativerotation)
+- [relativeTransform](TextNode.md#relativetransform)
 - [text](TextNode.md#text)
-- [textAlignment](TextNode.md#textAlignment)
+- [textAlignment](TextNode.md#textalignment)
 - [translateX](TextNode.md#translateX)
 - [translateY](TextNode.md#translateY)
 - [type](TextNode.md#type)
 
 ### Methods
 
-- [removeFromParent](TextNode.md#removeFromParent)
+- [removeFromParent](TextNode.md#removefromparent)
 
 ## Accessors
 
@@ -104,14 +104,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -123,7 +123,7 @@ Node.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -292,13 +292,13 @@ ___
 
 ### textAlignment
 
-• `get` **textAlignment**(): [`TextAlignmentValue`](../enums/TextAlignmentValue.md)
+• `get` **textAlignment**(): [`TextAlignment`](../enums/TextAlignment.md)
 
 The horizontal text alignment of the text node. Alignment is always the same across this node's entire text content.
 
 #### Returns
 
-[`TextAlignmentValue`](../enums/TextAlignmentValue.md)
+[`TextAlignment`](../enums/TextAlignment.md)
 
 • `set` **textAlignment**(`alignment`): `void`
 
@@ -306,7 +306,7 @@ The horizontal text alignment of the text node. Alignment is always the same acr
 
 | Name | Type |
 | :------ | :------ |
-| `alignment` | [`TextAlignmentValue`](../enums/TextAlignmentValue.md) |
+| `alignment` | [`TextAlignment`](../enums/TextAlignment.md) |
 
 #### Returns
 
@@ -380,13 +380,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -408,4 +408,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)
