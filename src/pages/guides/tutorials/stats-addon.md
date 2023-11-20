@@ -4,7 +4,7 @@ keywords:
   - Express Add-on SDK
   - Express Document API
   - Express Communication API
-  - Authoring Sandbox
+  - Document Sandbox
   - Adobe Express
   - Add-on SDK
   - SDK
@@ -14,8 +14,6 @@ keywords:
   - API
 title: Creating a Stats add-on with the Adobe Express Communication API
 description: In this tutorial, we'll build an Adobe Express add-on that gathers statistics on the active document using the Communication API.
-published: 2023-11-05
-updated: 2023-11-06
 contributors:
   - https://github.com/undavide
 ---
@@ -32,7 +30,7 @@ Hello, and welcome to this Adobe Express Communication API tutorial, where we'll
 
 ### Timestamp
 
-This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 17th, 2023.
+This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 20th, 2023.
 
 ### Prerequisites
 
@@ -47,54 +45,54 @@ This tutorial has been written by Davide Barranca, software developer and author
 <!-- List block here -->
 <ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[Invoking Authoring Sandbox methods from the iframe](#)
+[Invoking Document Sandbox methods from the UI iframe](#proxy-api)
 
-[Invoking iframe methods from the Authoring Sandbox](#)
+[Invoking UI iframe methods from the Document Sandbox](#logic)
 
-[Proxy API](#)
+[Proxy API](#proxy-api)
 
-[Context Closures](#)
+[Context Closures](#functions)
 
 ![](images/stats-addon-animation.gif)
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The authoring sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
+**IMPORTANT:** The Document Sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ## Getting Started with the Communication API
 
-As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `AddOnSdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example. 
+As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example. 
 
-The **Document API** makes new, more powerful capabilities available, allowing the add-on to manipulate elements directly—like scripting in Desktop applications such as Photoshop or InDesign. This API is one component of the Authoring Sandbox, a JavaScript execution environment that also includes a restricted set of Web API (mostly debugging aids) as well as the means for the iframe and the Document API to exchange messages—the Communication API. This infrastructure is paramount as it bridges the gap between the two environments, allowing them to create a seamless experience.
+The **Document API** makes new, more powerful capabilities available, allowing the add-on to manipulate elements directly—like scripting in Desktop applications such as Photoshop or InDesign. This API is one component of the Document Sandbox, a JavaScript execution environment that also includes a restricted set of Web API (mostly debugging aids) as well as the means for the UI iframe and the Document API to exchange messages—the Communication API. This infrastructure is paramount as it bridges the gap between the two environments, allowing them to create a seamless experience.
 
 ### Proxies
 
-How does this all work, then? Not via messaging, as somebody coming from CEP might expect, but rather exposing proxies for the _other context_ to use. The process originates in the `runtime` objects (the iframe's and the authoring sandbox's), retrieved from their SDK instances:
+How does this all work, then? Not via messaging, as somebody coming from CEP might expect, but rather exposing proxies for the _other context_ to use. The process originates in the `runtime` objects (the UI iframe's and the Document Sandbox's), retrieved from their SDK instances:
 
 ```js
-// runtime in the iframe
+// runtime in the UI iframe
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
-// runtime in the authoring sandbox
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+// runtime in the Document Sandbox
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 ```
 
-The `runtime` object uses the `exposeApi()`to make content available to the other context—it works the same, regardless of whether the subject is the iframe or the authoring sandbox.
+The `runtime` object uses the `exposeApi()`to make content available to the other context—it works the same, regardless of whether the subject is the iframe or the Document Sandbox.
 
 ```js
-// 👇 both in the iframe and the Authoring Sandbox
+// 👇 both in the UI frame and the Document Sandbox
 runtime.exposeApi({ /* ... */ }); // exposing a payload {}
 ```
 
-We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (iframe or authoring sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
+We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
 
 ```js
-// iframe, importing a payload from the authoring sandbox
+// UI iframe, importing a payload from the Document Sandbox
 const sandboxProxy = await runtime.apiProxy("script");
 
-// authoring sandbox, importing a payload from the iframe
+// Document Sandbox, importing a payload from the UI iframe
 const panelUIProxy = await runtime.apiProxy("panel");
 ```
 
@@ -102,17 +100,17 @@ const panelUIProxy = await runtime.apiProxy("panel");
 
 Warning: the `apiProxy()` string argument `"script"` may be subject to change in future releases.
 
-At this point, `sandboxProxy` and `panelUIProxy` represent their counterparts from the original contexts. It all may be easier to understand when the entire process is written down; for example, in the following code, we expose a custom method called `ready()` defined in the iframe to the Document API.
+At this point, `sandboxProxy` and `panelUIProxy` represent their counterparts from the original contexts. It all may be easier to understand when the entire process is written down; for example, in the following code, we expose a custom method called `ready()` defined in the UI iframe to the Document API.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Authoring Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" languages="UI iframe, Document Sandbox"/>
 
-#### iframe
+#### UI iframe
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
-// exporting a payload to the Authoring Sandbox
+// exporting a payload to the Document Sandbox
 runtime.exposeApi({ 
   ready: (env) => {
     console.log(`The ${env} environment is ready`);
@@ -120,30 +118,30 @@ runtime.exposeApi({
 });
 ```
 
-#### Authoring Sandbox
+#### Document Sandbox
 
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 
 // importing from the iframe
 const panelUIProxy = await runtime.apiProxy("panel"); 
 
 // We can call this method now
-await panelUIProxy.ready("Authoring Sandbox");
+await panelUIProxy.ready("Document Sandbox");
 ```
 
-As the name implies, the `panelUIProxy` constant in the Authoring Sandbox is a *proxy* for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
+As the name implies, the `panelUIProxy` constant in the Document Sandbox is a *proxy* for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Authoring Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
 
-#### iframe
+#### UI iframe
 
 ```js
-// authoring sandbox
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+// Document Sandbox
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 
 // exporting a payload to the iframe
 runtime.exposeApi({ 
@@ -153,7 +151,7 @@ runtime.exposeApi({
 });
 ```
 
-#### Authoring Sandbox
+#### Document Sandbox
 
 
 ```js
@@ -161,7 +159,7 @@ runtime.exposeApi({
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
-// importing from the authoring sandbox
+// importing from the Document Sandbox
 const sandboxProxy = await runtime.apiProxy("script");
 
 // We can call this method now
@@ -181,7 +179,7 @@ Now that we've seen how contexts expose and import each other's API, let's discu
 Most of the time, you're going to expose **functions**.
 
 ```js
-// Authoring Sandbox
+// Document Sandbox
 runtime.exposeApi({
   drawRect:    () => { /* ... */ }, // 👈
   drawEllipse: () => { /* ... */ }, // 👈
@@ -193,7 +191,7 @@ runtime.exposeApi({
 In the above example, if `drawShape()` needs to call either `drawEllipse()` or `drawRect()`, you may use the *method shorthand syntax*.
 
 ```js
-// Authoring Sandbox
+// Document Sandbox
 runtime.exposeApi({
   drawRect()    { /* ... */ }, // 👈
   drawEllipse() { /* ... */ }, // 👈
@@ -209,7 +207,7 @@ runtime.exposeApi({
 When not strictly necessary, keep functions private and expose only the ones needed.
 
 ```js
-// Authoring Sandbox
+// Document Sandbox
 const drawRect    = () => { /* ... */ };  // 👈 private
 const drawEllipse = () => { /* ... */ };  // 👈 private
 
@@ -224,9 +222,9 @@ runtime.exposeApi({
 
 Here, `drawRect()` and `drawEllipse()` exist within the closure of the `drawShape()` function exposed to the iframe and will work just fine when the iframe invokes it. This notion of "private" variables defined in one context can be exploited in various ways, for instance, with a counter as follows.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Authoring Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
 
-#### iframe
+#### UI iframe
 
 ```js
 const sandboxProxy = await runtime.apiProxy("script");
@@ -236,7 +234,7 @@ const shapesNo = await sandboxProxy.drawShape();
 console.log("Shapes drawn", shapesNo);
 ```
 
-#### Authoring Sandbox
+#### Document Sandbox
 
 ```js
 const drawRect    = () => { /* ... */ };
@@ -256,7 +254,7 @@ runtime.exposeApi({
 ```
 
 
-The `counter` variable in the Authoring Sandbox persists between iframe calls and can be accessed by `drawShape()`; in this scenario, it's returned so the iframe knows the number of shapes created so far. This brings us to the concept of **returned values**.
+The `counter` variable in the Document Sandbox persists between iframe calls and can be accessed by `drawShape()`; in this scenario, it's returned so the iframe knows the number of shapes created so far. This brings us to the concept of **returned values**.
 
 Generally speaking, you should restrict your returns to the following types.
 
@@ -279,9 +277,9 @@ The following returns won't work as expected and must be avoided.
 
 Nothing prevents you from using something else besides functions in your proxy. For instance, you can refactor the `drawShape()` example by exposing a `counter` property alongside its setter and getter.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Authoring Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
 
-#### iframe
+#### UI iframe
 
 ```js
 // iframe
@@ -294,10 +292,10 @@ sandboxProxy.counter = 0; // resetting the counter
 await sandboxProxy.drawShape();
 ```
 
-#### Authoring Sandbox
+#### Document Sandbox
 
 ```js
-// Authoring Sandbox
+// Document Sandbox
 const drawRect    = () => { /* ... */ };
 const drawEllipse = () => { /* ... */ };
 
@@ -322,10 +320,10 @@ The `counter` setter has the ability to perform additional actions, such as mani
 
 ### Asynchronous communication
 
-The Communication API wraps all inter-context function invocations with a **Promise**. In other words, regardless of the nature of the function called, when it gets from one context to the other (from the iframe to the Authoring Sandbox or vice-versa), it must be dealt with as if it were **asynchronous**.
+The Communication API wraps all inter-context function invocations with a **Promise**. In other words, regardless of the nature of the function called, when it gets from one context to the other (from the iframe to the Document Sandbox or vice-versa), it must be dealt with as if it were **asynchronous**.
 
 ```js
-// Authoring Sandbox
+// Document Sandbox
 runtime.exposeApi({
   drawShape() { /* ... */ } // 👈 Document API methods are typically *synchronous*
 });
@@ -343,7 +341,7 @@ runtime.exposeApi({
 You are now equipped with all the theory and reference snippets needed to start building the Stats add-on: it's a simple project implementing the Communication API in a couple of different ways. Feature-wise, it's split into two parts.
 
 1. The add-on shows two **status lights** that indicate whether the SDKs are ready for use.
-1. At the press of a button, the add-on (via Document API) collects the document's metadata, which is used to compile and show a **table of Nodes** (elements).
+1. At the press of a button, the add-on (via Document API) collects the document's metadata[^0], which is used to compile and show a **table of Nodes** (elements).
 
 ![](images/stats-addon-vscode.png)
 
@@ -352,8 +350,9 @@ Like in the [Grids add-on tutorial](grids-addon.md), the starting point will be 
 - `index.html` is where the iframe's UI is built.
 - `ui/index.js` deals with the add-on's internal logic.
 - `ui/table-utils.js` contains table-related functions consumed by the iframe and imported by `index.js` to keep it slim.
-- `script/code.js` contains the Document API methods exposed to the iframe.
-- `script/utils.js` stores Document API private functions imported in `code.js`. 
+- `documentSandbox/code.js` contains the Document API methods exposed to the iframe.
+- `documentSandbox/utils.js` stores Document API private functions imported in `code.js`.
+ 
 ### User Interface
 
 To keep a consistent look & feel with the rest of the application, we'll use Spectrum Web Component as much as possible, styling them with the `express` theme provided by the `<sp-theme>` wrapper.
@@ -381,7 +380,7 @@ We'll start with a placeholder row with a friendly message, which is going to be
       <sp-status-light size="m" variant="negative" id="iframe-status">
         iFrame API
       </sp-status-light>
-      <sp-status-light size="m" variant="negative" id="authoring-status">
+      <sp-status-light size="m" variant="negative" id="document-status">
         Authoring API
       </sp-status-light>
     </div>
@@ -418,11 +417,11 @@ The iframe exposes two methods:
 - `toggleStatus()` will be used independently by the iframe and the Document API to switch the Framework Status lights to green when ready.
 - `createTable()` expects to be passed the document metadata and deals with the `<sp-table>` setup.
 
-The Authoring Sandbox exposes only a `getDocumentData()` method, which collects the metadata from the open document. Both contexts import each other's API via proxy.
+The Document Sandbox exposes only a `getDocumentData()` method, which collects the metadata from the open document. Both contexts import each other's API via proxy.
 
-When the iframe has loaded its SDK, it will call `toggleStatus()`, passing the `"iframe"` string as a parameter—telling the function which light to turn green. Similarly, when the Authoring Sandbox is ready, it will reach out for `toggleStatus()` on its own. Neither process requires the user's intervention.
+When the iframe has loaded its SDK, it will call `toggleStatus()`, passing the `"iframe"` string as a parameter—telling the function which light to turn green. Similarly, when the Document Sandbox is ready, it will reach out for `toggleStatus()` on its own. Neither process requires the user's intervention.
 
-When the "Analyze Document" button is clicked, the iframe—via the Authoring Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an *iframe-to-Authoring-Sandbox-to-iframe* roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
+When the "Analyze Document" button is clicked, the iframe—via the Document Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an *iframe-to-Document-Sandbox-to-iframe* roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
 
 <CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
 
@@ -445,7 +444,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait until the addOnUISdk has been loaded
 addOnUISdk.ready.then(async () => {
-  // API to expose to the Authoring Sandbox
+  // API to expose to the Document Sandbox
   const iframeApi = { 
     createTable(documentData) { /* ... */ },
     toggleStatus(sdk) { /* ... */ }
@@ -455,17 +454,17 @@ addOnUISdk.ready.then(async () => {
   // Toggle the iframe SDK status light
   iframeApi.toggleStatus("iframe");
   
-  // Import the Authoring Sandbox API proxy
+  // Import the Document Sandbox API proxy
   const { runtime } = addOnUISdk.instance;
-  const authoringApi = await runtime.apiProxy("script");
-  // Exposing the iFrame API to the Authoring Sandbox.
+  const sandboxProxy = await runtime.apiProxy("script");
+  // Exposing the iFrame API to the Document Sandbox.
   
   // Set the button's click handler
   const statsButton = document.getElementById("stats");
   statsButton.addEventListener("click", async () => {
-    // Invoke the Document API via Authoring Sandbox proxy
+    // Invoke the Document API via Document Sandbox proxy
     // to get the document metadata and initiate the table creation process
-    await authoringApi.getDocumentData(); // 👈 mind the await
+    await sandboxProxy.getDocumentData(); // 👈 mind the await
   });
 
   // Enable the button only when the addOnUISdk is ready
@@ -473,7 +472,7 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
-Besides the usual SWC imports, everything must be wrapped by a callback invoked when the `addOnUISdk` module is `ready`—which also means we can switch the first SDK status light to green. Please note that `toggleStatus()` must be available to both the iframe and the Authoring Sandbox: declaring the `iframeApi` constant first (lines 18-21) and passing it to `exposeApi()` later allows me to call it (line 21).
+Besides the usual SWC imports, everything must be wrapped by a callback invoked when the `addOnUISdk` module is `ready`—which also means we can switch the first SDK status light to green. Please note that `toggleStatus()` must be available to both the iframe and the Document Sandbox: declaring the `iframeApi` constant first (lines 18-21) and passing it to `exposeApi()` later allows me to call it (line 21).
 
 ```js
 // ❌ _in this case_ it's the wrong syntax choice!
@@ -496,52 +495,52 @@ iframeApi.toggleStatus("iframe"); // 👈
 
 Let me remind you again of the need to `await` when invoking `getDocumentData()` (line 37, `index.js`), as the Communication API wraps proxy calls with Promises. 
 
-In `script/code.js`, we bring the iframe proxy in, toggle the status light, and expose the `getDocumentData()` function. Please note that it must be declared asynchronous (line 7) because of the need to `await` when invoking the `iframeApi` method `createTable()` (line 12).
+In `documentSandbox/code.js`, we bring the iframe proxy in, toggle the status light, and expose the `getDocumentData()` function. Please note that it must be declared asynchronous (line 7) because of the need to `await` when invoking the `panelUIProxy` method `createTable()` (line 12).
 
 <CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
 
-#### script/code.js
+#### documentSandbox/code.js
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 
 async function start() {
-  const iframeApi = await runtime.apiProxy("panel");
+  const panelUIProxy = await runtime.apiProxy("panel");
   runtime.exposeApi({
     async getDocumentData() {                    // 👈 async keyword, because 👇
       // Get the document's metadata
       let documentData;
       // ... TODO
       // ... then, directly invoke the iframe method
-      await iframeApi.createTable(documentData); // 👈 the Communication API is async 👆
+      await panelUIProxy.createTable(documentData); // 👈 the Communication API is async 👆
     }
   });
   // switch the Framework Status light to green
-  iframeApi.toggleStatus("authoring");
+  panelUIProxy.toggleStatus("document");
 }
 start();
 ```
 
 ### Implementation
 
-Let's start filling in the missing parts in our code; we'll begin with the Framework Status, the easiest bit. The `toggleStatus()` method is immediately invoked in the `addOnUISdk.ready` callback, as well as the Authoring Sandbox `code.js`, where it is also exposed. It updates the `variant` attribute of the `<sp-status-light>` element based on the `sdk` parameter passed in.
+Let's start filling in the missing parts in our code; we'll begin with the Framework Status, the easiest bit. The `toggleStatus()` method is immediately invoked in the `addOnUISdk.ready` callback, as well as the Document Sandbox `code.js`, where it is also exposed. It updates the `variant` attribute of the `<sp-status-light>` element based on the `sdk` parameter passed in.
 
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Authoring Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
 
-#### iframe
+#### UI iframe
 
 ```js
 const iframeApi = {
   toggleStatus(sdk) {
   // sdk parameter validation  
-	if (["authoring", "iframe"].indexOf(sdk) === -1) {
+	if (["document", "iframe"].indexOf(sdk) === -1) {
 	  throw new Error("Invalid SDK type");
 	}
 	const el =
-	  sdk === "authoring"
-		  ? document.getElementById("authoring-status")
+	  sdk === "document"
+		  ? document.getElementById("document-status")
 		  : document.getElementById("iframe-status");
 	el.setAttribute("variant", "positive"); // 🟢
   },
@@ -551,16 +550,16 @@ const iframeApi = {
 iframeApi.toggleStatus("iframe"); // 👈
 ```
 
-#### Authoring Sandbox
+#### Document Sandbox
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 
 async function start() {
-  const iframeApi = await runtime.apiProxy("panel");
+  const panelUIProxy = await runtime.apiProxy("panel");
   // ...
-  iframeApi.toggleStatus("authoring"); // 👈
+  panelUIProxy.toggleStatus("document"); // 👈
 }
 start();
 ```
@@ -569,7 +568,7 @@ When refreshing the add-on, the UI updates almost instantly, but a frame-by-fram
 
 ![Status lights](images/stats-addon-lights.png)
 
-Let's tackle the metadata collection in the Authoring Sandbox, especially the data structure we want to create[^2]. There are many ways to go about this business: I've decided to keep track of elements on a Page basis and store page dimensions, too. Eventually, the iframe will receive `documentData`, an array of objects, one for each page,  with `dimensions` and `nodes` properties. If you've got a taste for TypeScript, the type definition would be as follows.
+Let's tackle the metadata collection in the Document Sandbox, especially the data structure we want to create[^2]. There are many ways to go about this business: I've decided to keep track of elements on a Page basis and store page dimensions, too. Eventually, the iframe will receive `documentData`, an array of objects, one for each page,  with `dimensions` and `nodes` properties. If you've got a taste for TypeScript, the type definition would be as follows.
 
 ```ts
 type DocumentData = Array<{
@@ -604,7 +603,7 @@ The various `"ab:Artboard"`, `"MediaContainer"` and others, are the Node type st
 
 <CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
 
-#### script/code.js
+#### documentSandbox/code.js
 
 ```js
 import { getNodeData } from "./utils";
@@ -623,16 +622,16 @@ runtime.exposeApi({
       documentData.push(pageData);        // push the object to the documentData array
     }
     // invoke the iframe method to create the table on the UI
-    await iframeApi.createTable(documentData);
+    await panelUIProxy.createTable(documentData);
   },
 });
 ```
 
-The code comments will guide you through the process of getting the document, loop through pages extracting dimensions, and retrieving nodes metadata, but up to a point. What's `getNodeData`? As I mentioned before, I've split the Document API code into two parts: the main Authoring Sandbox entrypoint (`code.js`, where methods are exposed to and imported from the iframe) and `table-utils.js`, which is kept private to the context and exports just what `code.js` needs—the `getNodeData()` method, which makes use of `increaseCount()`.
+The code comments will guide you through the process of getting the document, loop through pages extracting dimensions, and retrieving nodes metadata, but up to a point. What's `getNodeData`? As I mentioned before, I've split the Document API code into two parts: the main Document Sandbox entrypoint (`code.js`, where methods are exposed to and imported from the iframe) and `table-utils.js`, which is kept private to the context and exports just what `code.js` needs—the `getNodeData()` method, which makes use of `increaseCount()`.
 
 <CodeBlock slots="heading, code" repeat="1" languages="utils.js"/>
 
-#### script/table-utils.js
+#### documentSandbox/table-utils.js
 
 ```js
 const increaseCount = (obj, type) => {
@@ -682,13 +681,13 @@ When the whole process is repeated for each `page`, we can finally invoke the if
 
 <CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
 
-#### script/code.js
+#### documentSandbox/code.js
 
 ```js
 runtime.exposeApi({
     async getDocumentData() {
       // ... create and fill the `documentData` array
-      await iframeApi.createTable(documentData); // 👈 calling this iframe proxy method
+      await panelUIProxy.createTable(documentData); // 👈 calling this iframe proxy method
     },
   });
 ```
@@ -715,10 +714,10 @@ The process is not difficult per se, but it may be slightly tedious. The `rebuil
 
 <CodeBlock slots="heading, code" repeat="1" languages="table-utils.js"/>
 
-#### script/table-utils.js
+#### documentSandbox/table-utils.js
 
 ```js
-// script/table-utils.js
+// documentSandbox/table-utils.js
 
 const addRowToTable = (table, rowData) => {
   // Create a new row
@@ -783,10 +782,10 @@ Congratulations! You've coded from scratch the Stats add-on for Adobe Express. A
 
 Let's review the concepts covered in this tutorial and how they've been implemented in the Stats add-on.
 
-- **Communication API**: the iframe and the Authoring Sandbox can expose and import each other's API via proxy objects. The Communication API wraps all inter-context function invocations with a Promise; hence, the need to `await` when invoking a proxy method.
+- **Communication API**: the iframe and the Document Sandbox can expose and import each other's API via proxy objects. The Communication API wraps all inter-context function invocations with a Promise; hence, the need to `await` when invoking a proxy method.
 - **Proxy API**: the payload objects exchanged between the two contexts can contain functions, which are the most common use case: they can return primitives, object literals, JSON strings, ArrayBuffers, and Blobs.
 - **Context Closures**: proxy methods have access to variables defined in their context, even when invoked from the other context. This is a powerful feature that can be exploited to keep private variables and functions out of the Communication API.
-- **Roundtrip calls**: proxy methods can be chained—the iframe can invoke the Document API via the Authoring Sandbox proxy, which in turn can invoke the iframe proxy, and so on.
+- **Roundtrip calls**: proxy methods can be chained—the iframe can invoke the Document API via the Document Sandbox proxy, which in turn can invoke the iframe proxy, and so on.
 
 ## Final Project
 
@@ -794,12 +793,12 @@ The code for this project can be downloaded [here](https://github.com/undavide/e
 
 <InlineAlert variant="info" slots="text1" />
 
-Please use the iframe and Authoring Sandbox tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
+Please use the UI iframe and Document Sandbox tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
 <!-- Code below -->
-<CodeBlock slots="heading, code" repeat="6" languages="index.html, styles.css, ui/index.js, ui/table-utils.js, script/code.js, script/utils.js" />
+<CodeBlock slots="heading, code" repeat="6" languages="index.html, styles.css, ui/index.js, ui/table-utils.js, documentSandbox/code.js, documentSandbox/utils.js" />
 
-#### iframe
+#### UI iframe
 
 ```html
 <!DOCTYPE html>
@@ -808,8 +807,8 @@ Please use the iframe and Authoring Sandbox tabs to switch between the two domai
 <head>
   <meta charset="UTF-8" />
   <meta name="description"
-    content="Adobe Express Add-on template using JavaScript, the Authoring Sandbox, and Webpack" />
-  <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Authoring Sandbox, Adobe Express Document API" />
+    content="Adobe Express Add-on template using JavaScript, the Document Sandbox, and Webpack" />
+  <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Adobe Express Document API" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stats add-ons</title>
   <link rel="stylesheet" href="styles.css">
@@ -821,7 +820,7 @@ Please use the iframe and Authoring Sandbox tabs to switch between the two domai
     <hr>
     <div class="row">
       <sp-status-light size="m" variant="negative" id="iframe-status">iFrame API</sp-status-light>
-      <sp-status-light size="m" variant="negative" id="authoring-status">Authoring API</sp-status-light>
+      <sp-status-light size="m" variant="negative" id="document-status">Authoring API</sp-status-light>
     </div>
     <h3>Document statistics</h3>
     <hr>
@@ -846,7 +845,7 @@ Please use the iframe and Authoring Sandbox tabs to switch between the two domai
 </html>
 ```
 
-#### iframe
+#### UI iframe
 
 ```css
 body {
@@ -873,7 +872,7 @@ sp-button { align-self: flex-end; }
 .page-row { font-weight: var(--spectrum-global-font-weight-bold); }
 ```
 
-#### iframe
+#### UI iframe
 
 
 ```js
@@ -895,15 +894,15 @@ addOnUISdk.ready.then(async () => {
   const iframeApi = {
     /**
      * Toggles the status light.
-     * @param {string} sdk - The type of SDK that is ready, either "authoring" or "iframe"
+     * @param {string} sdk - The type of SDK that is ready, either "document" or "iframe"
      */
     toggleStatus(sdk) {
-      if (["authoring", "iframe"].indexOf(sdk) === -1) {
+      if (["document", "iframe"].indexOf(sdk) === -1) {
         throw new Error("Invalid SDK type");
       }
       const el =
-        sdk === "authoring"
-          ? document.getElementById("authoring-status")
+        sdk === "document"
+          ? document.getElementById("document-status")
           : document.getElementById("iframe-status");
       el.setAttribute("variant", "positive");
     },
@@ -917,17 +916,17 @@ addOnUISdk.ready.then(async () => {
   // the addOnUISdk is ready, so we can now toggle the status light
   iframeApi.toggleStatus("iframe");
 
-  // Get the Authoring Sandbox.
+  // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
-  // Importing the Authoring Sandbox API.
-  const authoringApi = await runtime.apiProxy("script");
-  // Exposing the iframe API to the Authoring Sandbox.
+  // Importing the Document Sandbox API.
+  const sandboxProxy = await runtime.apiProxy("script");
+  // Exposing the iframe API to the Document Sandbox.
   runtime.exposeApi(iframeApi);
 
   const statsButton = document.getElementById("stats");
 
   statsButton.addEventListener("click", async () => {
-    await authoringApi.getDocumentData();
+    await sandboxProxy.getDocumentData();
   });
   // Enabling the button only when the addOnUISdk is ready
   statsButton.disabled = false;
@@ -960,7 +959,7 @@ function addRowToTable(table, rowData) {
 
 ```
 
-#### iframe
+#### UI iframe
 
 ```js
 /**
@@ -1014,17 +1013,17 @@ const rebuildTable = (table, documentData) => {
 export { rebuildTable };
 ```
 
-#### Authoring Sandbox
+#### Document Sandbox
 
 ```js
-import addOnScriptSdk from "AddOnScriptSdk";
-const { runtime } = addOnScriptSdk.instance;
+import addOnSandboxSdk from "AddOnScriptSdk";
+const { runtime } = addOnSandboxSdk.instance;
 
 import { editor } from "express";
 import { getNodeData } from "./utils";
 
 async function start() {
-  const iframeApi = await runtime.apiProxy("panel");
+  const panelUIProxy = await runtime.apiProxy("panel");
 
   runtime.exposeApi({
     async getDocumentData() {
@@ -1041,17 +1040,17 @@ async function start() {
         documentData.push(pageData);
       }
       console.log("documentData", documentData);
-      await iframeApi.createTable(documentData);
+      await panelUIProxy.createTable(documentData);
     },
   });
 
-  iframeApi.toggleStatus("authoring");
+  panelUIProxy.toggleStatus("document");
 }
 
 start();
 ```
 
-#### Authoring Sandbox
+#### Document Sandbox
 
 ```js
 const increaseCount = (obj, type) => {
@@ -1088,6 +1087,7 @@ const getNodeData = (node, nodeData = {}) => {
 
 export { getNodeData };
 ```
+[^0]: When referring to "metadata", I mean the dimensions and types of elements on each page. Custom metadata haven't been implemented in Adobe Express yet.
 
 [^1]: In my tests, the two SDKs are ready almost instantly and together—I couldn't tell which one is loaded firsts.
 
