@@ -20,7 +20,7 @@ hideBreadcrumbNav: true
 
 # Communication APIs
 
-The communication APIs allow you to communicate between the document sandbox and the iframe where your add-on is running.
+The communication APIs allow you to communicate between the document model sandbox (referred to as simply "document sandbox" throughout the rest of this guide), and the iframe where your add-on is running specifically via the add-on SDK methods available for the document sandbox.
 
 ## Overview
 
@@ -31,6 +31,7 @@ The document sandbox and iframe runtime are two different runtime execution envi
 A default exported module from `AddOnScriptSdk` is provided to enable the communication between the iframe and the document sandbox via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
 
 ```js
+// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
 import AddOnScriptSdk from "AddOnScriptSdk"; // AddOnScriptSdk is a default import
 
 const { runtime } = AddOnScriptSdk.instance; // runtime object provides direct access to the comm methods
@@ -47,6 +48,7 @@ This example shows how to expose APIs from the document sandbox SDK (via `code.j
 #### `code.js`
 
 ```js
+// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
 import AddOnScriptSdk from "AddOnScriptSdk"; 
 
 const { runtime } = AddOnScriptSdk.instance; 
@@ -124,6 +126,7 @@ addOnUISdk.ready.then(async () => {
 #### `code.js`
 
 ```js
+// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
 import AddOnScriptSdk from "AddOnScriptSdk"; // default import
 
 const { runtime } = AddOnScriptSdk.instance;

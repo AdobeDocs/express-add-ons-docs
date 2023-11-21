@@ -39,7 +39,7 @@ The document sandbox does NOT provide a full fledged browser’s JavaScript exec
 
 ### Document APIs
 
-The [document APIs](./editor/) provide access to the user's document structure and properties, and allow you to make changes and author content to the Adobe Express document via the provided APIs.
+The [document APIs](./document-apis/) provide access to the user's document structure and properties, and allow you to make changes and author content to the Adobe Express document via the provided APIs.
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -75,7 +75,7 @@ To use the document sandbox APIs in your add-on, start by defining a new `script
     ]
 ```
 
-The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/), [Web APIs](./web/) and [document APIs](./editor/)).
+The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/), [Web APIs](./web/) and [document APIs](./document-apis/)).
 
 ### CLI Generated Script Runtime Add-on
 
@@ -119,12 +119,12 @@ Demonstrates the use of the communication APIs to expose and proxy APIs bidirect
 
 ### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis)
 
-Demonstrates how to use the [document APIs](./editor/) to create various shapes and add them to the document.
+Demonstrates how to use the [document APIs](./document-apis/) to create various shapes and add them to the document.
 
 ### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page)
 
-A more comprehensive example of using the [document APIs](./editor/) to add a page, images and shapes, as well as clear the artboard.
+A more comprehensive example of using the [document APIs](./document-apis/) to add a page, images and shapes, as well as clear the artboard.
 
 ## Debugging script based add-ons
 
-Debugging with breakpoints from the document sandbox (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./editor/index.md#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.
+Debugging with breakpoints from the document sandbox (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](./document-apis/index.md#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.

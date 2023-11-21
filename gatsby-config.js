@@ -102,188 +102,188 @@ module.exports = {
       },
       {
         title: "Document Sandbox",
-        path: "references/authoring/",
+        path: "references/document-sandbox/",
         pages: [
           {
             title: "Communication APIs",
-            path: "references/authoring/communication/",
+            path: "references/document-sandbox/communication/",
           },
           {
             title: "Web APIs",
-            path: "references/authoring/web/",
+            path: "references/document-sandbox/web/",
           },
           {
             title: "Document APIs",
-            path: "references/authoring/editor/",
+            path: "references/document-sandbox/document-apis/",
             pages: [
               {
                 title: "Classes",
-                path: "references/authoring/editor/classes/Editor.md",
+                path: "references/document-sandbox/document-apis/classes/Editor.md",
                 pages: [
                   {
                     title: "ArtboardList",
-                    path: "references/authoring/editor/classes/ArtboardList.md",
+                    path: "references/document-sandbox/document-apis/classes/ArtboardList.md",
                   },
                   {
                     title: "ArtboardNode",
-                    path: "references/authoring/editor/classes/ArtboardNode.md",
+                    path: "references/document-sandbox/document-apis/classes/ArtboardNode.md",
                   },
                   {
                     title: "Color",
-                    path: "references/authoring/editor/classes/Color.md",
+                    path: "references/document-sandbox/document-apis/classes/Color.md",
                   },
                   {
                     title: "ContainerNode",
-                    path: "references/authoring/editor/classes/ContainerNode.md",
+                    path: "references/document-sandbox/document-apis/classes/ContainerNode.md",
                   },
                   {
                     title: "Context",
-                    path: "references/authoring/editor/classes/Context.md",
+                    path: "references/document-sandbox/document-apis/classes/Context.md",
                   },
                   {
                     title: "EllipseNode",
-                    path: "references/authoring/editor/classes/EllipseNode.md",
+                    path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
                   },
                   {
                     title: "Editor",
-                    path: "references/authoring/editor/classes/Editor.md",
+                    path: "references/document-sandbox/document-apis/classes/Editor.md",
                   },
                   {
                     title: "ExpressRootNode",
-                    path: "references/authoring/editor/classes/ExpressRootNode.md",
+                    path: "references/document-sandbox/document-apis/classes/ExpressRootNode.md",
                   },
                   {
                     title: "FillableNode",
-                    path: "references/authoring/editor/classes/FillableNode.md",
+                    path: "references/document-sandbox/document-apis/classes/FillableNode.md",
                   },
                   {
                     title: "GroupNode",
-                    path: "references/authoring/editor/classes/GroupNode.md",
+                    path: "references/document-sandbox/document-apis/classes/GroupNode.md",
                   },
                   {
                     title: "ImageRectangleNode",
-                    path: "references/authoring/editor/classes/ImageRectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/ImageRectangleNode.md",
                   },
                   {
                     title: "ItemList",
-                    path: "references/authoring/editor/classes/ItemList.md",
+                    path: "references/document-sandbox/document-apis/classes/ItemList.md",
                   },
                   {
                     title: "LineNode",
-                    path: "references/authoring/editor/classes/LineNode.md",
+                    path: "references/document-sandbox/document-apis/classes/LineNode.md",
                   },
                   {
                     title: "MediaContainerNode",
-                    path: "references/authoring/editor/classes/MediaContainerNode.md",
+                    path: "references/document-sandbox/document-apis/classes/MediaContainerNode.md",
                   },
                   {
                     title: "Node",
-                    path: "references/authoring/editor/classes/Node.md",
+                    path: "references/document-sandbox/document-apis/classes/Node.md",
                   },
                   {
                     title: "PageList",
-                    path: "references/authoring/editor/classes/PageList.md",
+                    path: "references/document-sandbox/document-apis/classes/PageList.md",
                   },
                   {
                     title: "PageNode",
-                    path: "references/authoring/editor/classes/PageNode.md",
+                    path: "references/document-sandbox/document-apis/classes/PageNode.md",
                   },
                   {
                     title: "ReadOnlyItemList",
-                    path: "references/authoring/editor/classes/ReadOnlyItemList.md",
+                    path: "references/document-sandbox/document-apis/classes/ReadOnlyItemList.md",
                   },
                   {
                     title: "RectangleNode",
-                    path: "references/authoring/editor/classes/RectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/RectangleNode.md",
                   },
                   {
                     title: "StrokableNode",
-                    path: "references/authoring/editor/classes/StrokableNode.md",
+                    path: "references/document-sandbox/document-apis/classes/StrokableNode.md",
                   },
                   {
                     title: "TextNode",
-                    path: "references/authoring/editor/classes/TextNode.md",
+                    path: "references/document-sandbox/document-apis/classes/TextNode.md",
                   },
                 ],
               },
               {
                 title: "Interfaces",
-                path: "references/authoring/editor/interfaces/BitmapImage.md",
+                path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
                 pages: [
                   {
                     title: "BitmapImage",
-                    path: "references/authoring/editor/interfaces/BitmapImage.md",
+                    path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
                   },
                   {
                     title: "ColorFill",
-                    path: "references/authoring/editor/interfaces/ColorFill.md",
+                    path: "references/document-sandbox/document-apis/interfaces/ColorFill.md",
                   },
                   {
                     title: "Fill",
-                    path: "references/authoring/editor/interfaces/Fill.md",
+                    path: "references/document-sandbox/document-apis/interfaces/Fill.md",
                   },
                   // {
                   //   "title": "FillTypeValueExtensibleEnum",
-                  //   "path": "references/authoring/editor/interfaces/FillTypeValueExtensibleEnum.md",
+                  //   "path": "references/document-sandbox/document-apis/interfaces/FillTypeValueExtensibleEnum.md",
                   // },
                   {
                     title: "IFillableNode",
-                    path: "references/authoring/editor/interfaces/IFillableNode.md",
+                    path: "references/document-sandbox/document-apis/interfaces/IFillableNode.md",
                   },
                   {
                     title: "IRectangularNode",
-                    path: "references/authoring/editor/interfaces/IRectangularNode.md",
+                    path: "references/document-sandbox/document-apis/interfaces/IRectangularNode.md",
                   },
                   {
                     title: "ListItem",
-                    path: "references/authoring/editor/interfaces/ListItem.md",
+                    path: "references/document-sandbox/document-apis/interfaces/ListItem.md",
                   },
                   {
                     title: "RectangleGeometry",
-                    path: "references/authoring/editor/interfaces/RectangleGeometry.md",
+                    path: "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md",
                   },
 
                   {
                     title: "Stroke",
-                    path: "references/authoring/editor/interfaces/Stroke.md",
+                    path: "references/document-sandbox/document-apis/interfaces/Stroke.md",
                   },
                   {
                     title: "StrokeOptions",
-                    path: "references/authoring/editor/interfaces/StrokeOptions.md",
+                    path: "references/document-sandbox/document-apis/interfaces/StrokeOptions.md",
                   },
                   {
                     title: "Utils",
-                    path: "references/authoring/editor/interfaces/Utils.md",
+                    path: "references/document-sandbox/document-apis/interfaces/Utils.md",
                   },
                 ],
               },
               {
                 title: "Constants",
-                path: "references/authoring/editor/enums/ArrowHeadType.md",
+                path: "references/document-sandbox/document-apis/enums/ArrowHeadType.md",
                 pages: [
                   {
                     title: "ArrowHeadType",
-                    path: "references/authoring/editor/enums/ArrowHeadType.md",
+                    path: "references/document-sandbox/document-apis/enums/ArrowHeadType.md",
                   },
                   {
                     title: "BlendMode",
-                    path: "references/authoring/editor/enums/BlendMode.md",
+                    path: "references/document-sandbox/document-apis/enums/BlendMode.md",
                   },
                   {
                     title: "FillType",
-                    path: "references/authoring/editor/enums/FillType.md",
+                    path: "references/document-sandbox/document-apis/enums/FillType.md",
                   },
                   {
                     title: "SceneNodeType",
-                    path: "references/authoring/editor/enums/SceneNodeType.md",
+                    path: "references/document-sandbox/document-apis/enums/SceneNodeType.md",
                   },
                   {
                     title: "StrokePosition",
-                    path: "references/authoring/editor/enums/StrokePosition.md",
+                    path: "references/document-sandbox/document-apis/enums/StrokePosition.md",
                   },
                   {
                     title: "TextAlignment",
-                    path: "references/authoring/editor/enums/TextAlignment.md",
+                    path: "references/document-sandbox/document-apis/enums/TextAlignment.md",
                   },
                 ],
               },

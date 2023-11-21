@@ -14,13 +14,13 @@ The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint cr
 
 ## Experimental Methods
 
-The following methods allow you to communicate bidirectionally between the add-on running in the iframe and the [document sandbox](../authoring/) environments.
+The following methods allow you to communicate bidirectionally between the add-on running in the iframe and the [document sandbox](../document-sandbox/) environments.
 
 **IMPORTANT:** These methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To use these methods, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 ### exposeApi()
 
-Use this method to expose an API from your UI code running in the iframe to another runtime (ie: the [document sandbox code](../authoring/) defined in your `code.js` for instance).
+Use this method to expose an API from your UI code running in the iframe to another runtime (ie: the [document sandbox code](../document-sandbox/) defined in your `code.js` for instance).
 
 #### Signature
 
@@ -44,7 +44,7 @@ Requests a promise-based proxy object from another runtime to be used to call th
 
 | Name          | Type        | Description   |
 | --------------| ------------| -----------:  |
-| `runtimeType` | `RuntimeType` | The runtime type to create the proxy object from (ie: "script" for instance, which maps to the code referenced in the [`script` entryPoint](../authoring/index.md#script-entry-point) in your add-on's `manifest.js` file). |
+| `runtimeType` | `RuntimeType` | The runtime type to create the proxy object from (ie: "script" for instance, which maps to the code referenced in the [`script` entryPoint](../document-sandbox/index.md#script-entry-point) in your add-on's `manifest.js` file). |
 
 #### Return
 

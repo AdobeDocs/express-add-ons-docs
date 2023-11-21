@@ -8,7 +8,7 @@ A [traversable developer reference](./addonsdk/) for the add-on SDK where you wi
 
 ## Document Sandbox Reference
 
-The [document sandbox](./authoring/) is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
+The [document sandbox](./document-sandbox/) is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
 ## Manifest Schema Reference
 

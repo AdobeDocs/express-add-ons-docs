@@ -23,14 +23,14 @@ contributors:
 ## 2023-11-6
 
 - Added a [new tutorial section](../guides/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../guides/tutorials/grids-addon.md) by Davide Barranca.
-- Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs. 
+- Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
 
 ## 2023-10-26
 
 ### Updates
 
-New questions and answers added to the FAQ regarding Adobe's use of add-on data, where to file feature requests and more. 
+New questions and answers added to the FAQ regarding Adobe's use of add-on data, where to file feature requests and more.
 
 ## 2023-10-10
 
@@ -68,14 +68,14 @@ which include:
 
     - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
     - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
-    - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the document sandbox](https://developer.adobe.com/express/add-ons/docs/references/authoring/#cli-generated-script-runtime-add-on) when creating a new add-on.
+    - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the document sandbox](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) when creating a new add-on.
   
 - New type support for typescript based add-ons.
 - Ability to recreate your SSL certificates.
 
 #### Documentation updates
 
-- Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/authoring/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
+- Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
 - Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
@@ -117,7 +117,7 @@ If you're using the experimental Document Sandbox APIs (aka: Script Runtime) in 
   - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **document sandbox/Editor APIs**.
   
   **IMPORTANT**:
-  Developers who are **NOT** using the [document sandbox/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/authoring/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`.
+  Developers who are **NOT** using the [document sandbox/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`.
   
   The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
 
@@ -134,7 +134,7 @@ If you're using the experimental Document Sandbox APIs (aka: Script Runtime) in 
 
 ### Updates
 
-- The [Communication API docs](../references/authoring/communication/index.md) in the [document sandbox Reference](../references/authoring/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API docs](../references/document-sandbox/communication/index.md) in the [document sandbox Reference](../references/document-sandbox/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -146,7 +146,7 @@ If you're using the experimental Document Sandbox APIs (aka: Script Runtime) in 
   
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**.
 
-- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/authoring/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
+- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 - Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
 
 ## 2023-09-05
@@ -202,7 +202,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new [references section](../references/authoring/) for the document sandbox APIs.
+- Added new [references section](../references/document-sandbox/) for the document sandbox APIs.
 
 ### Important notes on document sandbox APIs (aka Document Sandbox)
 
@@ -246,7 +246,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../references/authoring/).
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../references/document-sandbox/).
 - Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11
