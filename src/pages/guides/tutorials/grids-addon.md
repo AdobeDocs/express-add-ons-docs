@@ -251,7 +251,7 @@ It's also possible to expose iframe methods to the Document Sandbox, i.e., using
 
 ### Using the Reference Documentation
 
-The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/document-sandbox/editor.md).
+The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/document-sandbox/document-apis).
 
 ![Add-on Communication API](images/grids-addon-reference.png)
 
