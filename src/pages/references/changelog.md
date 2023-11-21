@@ -23,14 +23,14 @@ contributors:
 ## 2023-11-6
 
 - Added a [new tutorial section](../guides/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../guides/tutorials/grids-addon.md) by Davide Barranca.
-- Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs. 
+- Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
 
 ## 2023-10-26
 
 ### Updates
 
-New questions and answers added to the FAQ regarding Adobe's use of add-on data, where to file feature requests and more. 
+New questions and answers added to the FAQ regarding Adobe's use of add-on data, where to file feature requests and more.
 
 ## 2023-10-10
 
