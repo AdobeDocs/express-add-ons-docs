@@ -3,7 +3,7 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Document API
-  - Document Sandbox
+  - Document Model Sandbox
   - Adobe Express
   - Add-on SDK
   - SDK
@@ -13,8 +13,6 @@ keywords:
   - API
 title: Building your first add-on with the Document API
 description: This is an in-depth tutorial that will guide you in the creation of a Grids add-on for Adobe Express using the Document API
-published: 2023-11-05
-updated: 2023-11-06
 contributors:
   - https://github.com/undavide
 ---
@@ -33,7 +31,11 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 ### Timestamp
 
-This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 6th, 2023 and last updated on November 18th, 2023.
+This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy. It's been first published on November 6th, 2023 and last updated on November 21st, 2023 with the following changes:
+
+- Editor API are now called the Document API, which are part of the Document Model Sandbox.
+- Update the add-on folders  to reflect the new naming convention (`script` is now `documentSandbox`).
+- Update Reference Documentation links and screenshots.
 
 ### Prerequisites
 
@@ -47,7 +49,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 <!-- List block here -->
 <ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[iframe and Document Sandbox communication](#the-communication-api)
+[iframe and Document Model Sandbox communication](#the-communication-api)
 
 [Spectrum Web Components](#designing-the-ui-with-spectrum-web-components)
 
@@ -67,10 +69,10 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ### Getting Started with the Document API
 
-As part of the [Document Sandbox](/references/authoring/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
+As part of the [Document Model Sandbox](/references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
 - The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
-- The **Document Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/authoring/communication/)), providing access to the [Document API](/references/authoring/editor/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
+- The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/document-sandbox/communication/)), providing access to the [Document API](/references/document-sandbox/document-apis/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
@@ -78,7 +80,7 @@ This is a high-level overview of the overall structure; while the implementation
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The authoring sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
+**IMPORTANT:** The Document Sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. _Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable._  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ### The Project Structure
 
@@ -96,7 +98,7 @@ Before jumping into the code, let's look at how the project is structured. At th
 
 ![](images/grids-addon-folder-structure.png)
 
-As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iframe logic code (UI element handlers, etc.). The Document API entry point is instead `script/code.js`, as defined in the `manifest.json`:
+As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iframe logic code (UI element handlers, etc.). The Document API entry point is instead `documentSandbox/code.js`, as defined in the `manifest.json`:
 
 ```json
 {
@@ -112,7 +114,7 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 }
 ```
 
-If you're wondering about `script/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
+If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
@@ -249,11 +251,11 @@ It's also possible to expose iframe methods to the Document Sandbox, i.e., using
 
 ### Using the Reference Documentation
 
-The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/authoring/editor.md).
+The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/document-sandbox/editor.md).
 
 ![Add-on Communication API](images/grids-addon-reference.png)
 
-In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/authoring/editor/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/authoring/editor/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/authoring/editor/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/authoring/editor/classes/Node/)—the base class.
+In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/document-sandbox/document-apis/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/document-sandbox/document-apis/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/document-sandbox/document-apis/classes/Node/)—the base class.
 
 Some properties are shared among the `RectangleNode` and, say, other `StrokableNode` subclasses such as the `EllipseNode`: for instance, the `opacity`, or `blendMode`. Other ones are unique, like the `topLeftRadius`, which, in the context of an `EllipseNode`, wouldn't make sense.
 
@@ -331,7 +333,7 @@ Please note that it's considered good practice to initially **disable all intera
 
 The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
-According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/authoring/editor/classes/Editor/) class, which must be imported from `"express"` with the following statement.
+According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/document-sandbox/document-apis/classes/Editor/) class, which must be imported from `"express"` with the following statement.
 
 ```js
 import { editor, utils, Constants } from "express";
@@ -355,12 +357,12 @@ const fillColor = editor.createColorFill(col);
 rect.fills.append(fillColor);
 ```
 
-First, you make use of the `createColor()` method from the `utils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/authoring/editor/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by appending it to the `fills` list.
+First, you make use of the `createColor()` method from the `utils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by appending it to the `fills` list.
 
 <!-- code here -->
 <InlineAlert variant="info" slots="text1" />
 
-Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/authoring/editor/classes/Editor.md#createstroke).
+Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/document-sandbox/document-apis/classes/Editor.md#createstroke).
 
 The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
 
@@ -375,7 +377,7 @@ In other words, we're adding `rect` as a sibling of whatever happens to be activ
 
 ![](images/grids-addon-shape.png)
 
-Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](/references/authoring/editor/classes/ArtboardNode/) of the first [Page](/references/authoring/editor/classes/PageNode/).
+Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](/references/document-sandbox/document-apis/classes/ArtboardNode/) of the first [Page](/references/document-sandbox/document-apis/classes/PageNode/).
 
 ```js
 // ...
@@ -607,12 +609,12 @@ Another crucial notion is to avoid silent failures: every action should either s
 
 ### Creating Rows and Columns
 
-It makes sense to approach this grid business with some caution, as we're just starting with the Document API. Let's set up `script/code.js` to expose this `addGrid()` method and manage the argument provided.
+It makes sense to approach this grid business with some caution, as we're just starting with the Document API. Let's set up `documentSandbox/code.js` to expose this `addGrid()` method and manage the argument provided.
 
 <!-- Code below -->
-<CodeBlock slots="heading, code" repeat="1" languages="script/code.js"/>
+<CodeBlock slots="heading, code" repeat="1" languages="documentSandbox/code.js"/>
 
-#### script/code.js
+#### documentSandbox/code.js
 
 ```js
 import addOnSandboxSdk from "AddOnScriptSdk";
@@ -644,7 +646,7 @@ This is because we're using gutters as page margins, too, as the following illus
 
 ![](images/grids-addon-rowheight.png)
 
-We must get hold of the [Document](/references/authoring/editor/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](/references/authoring/editor/classes/PageNode/)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
+We must get hold of the [Document](/references/document-sandbox/document-apis/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](/references/document-sandbox/document-apis/classes/PageNode/)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
 
 ```js
 // ...
@@ -726,13 +728,13 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 - Creating a rectangle is best handled using a dedicated `createRect()` function.
 - Rows and Columns can be separate processes, too.
 - `code.js` doesn't need to expose anything else but the `addGrid()` and  `deleteGrid()` methods.
-- `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `script/code.js`, while `createRect()` will be kept as private.
+- `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
 - The Rows and Columns colors come from the UI as hex strings, like `"#ffcccc"`; we must write a function that extracts R, G, and B values and maps them to the (0..1) range the Document API deals with.
 
 <!-- Code below -->
-<CodeBlock slots="heading, code" repeat="2" languages="script/code.js, script/shapeUtils.js" />
+<CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
 
-#### script/code.js
+#### documentSandbox/code.js
 
 ```js
 import addOnSandboxSdk from "AddOnScriptSdk";
@@ -758,7 +760,7 @@ function start() {
 start();
 ```
 
-#### script/shapeUtils.js
+#### documentSandbox/shapeUtils.js
 
 ```js
 import { editor, utils, Constants } from "express";
@@ -823,7 +825,7 @@ const hexToColor = (hex) => {
 };
 ```
 
-It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/authoring/editor/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/authoring/editor/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
+It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/document-sandbox/document-apis/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
@@ -859,7 +861,7 @@ rowsGroup.children.append(...rows);              // ❌  fill
 page.artboards.first.children.append(rowsGroup); // ❌  append
 ```
 
-To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/authoring/editor/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
+To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/document-sandbox/document-apis/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
 
 ```js
 // ...
@@ -867,7 +869,7 @@ rowsGroup.children.append(...rows);
 rowsGroup.locked = true;
 ```
 
-The Reference also shows an interesting [`blendMode`](/references/authoring/editor/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/authoring/editor/enums/BlendModeValue/#multiply) will produce a visually nicer overlay effect ([opacity](/references/authoring/editor/classes/GroupNode.md#opacity) can be an alternative).
+The Reference also shows an interesting [`blendMode`](/references/document-sandbox/document-apis/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/document-sandbox/document-apis/enums/BlendModeValue/#multiply) will produce a visually nicer overlay effect ([opacity](/references/document-sandbox/document-apis/classes/GroupNode.md#opacity) can be an alternative).
 
 ```js
 // ...
