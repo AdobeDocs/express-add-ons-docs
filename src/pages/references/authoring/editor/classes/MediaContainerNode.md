@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / MediaContainerNode
+[@express-document-sdk](../overview.md) / MediaContainerNode
 
 # Class: MediaContainerNode
 
@@ -16,24 +16,24 @@ determined by the maskShape which is not necessarily a rectangle.
 
 ### Accessors
 
-- [absoluteRotation](MediaContainerNode.md#absoluteRotation)
-- [absoluteTransform](MediaContainerNode.md#absoluteTransform)
-- [allChildren](MediaContainerNode.md#allChildren)
-- [blendMode](MediaContainerNode.md#blendMode)
+- [absoluteRotation](MediaContainerNode.md#absoluterotation)
+- [absoluteTransform](MediaContainerNode.md#absolutetransform)
+- [allChildren](MediaContainerNode.md#allchildren)
+- [blendMode](MediaContainerNode.md#blendmode)
 - [locked](MediaContainerNode.md#locked)
-- [maskShape](MediaContainerNode.md#maskShape)
-- [mediaRectangle](MediaContainerNode.md#mediaRectangle)
+- [maskShape](MediaContainerNode.md#maskshape)
+- [mediaRectangle](MediaContainerNode.md#mediarectangle)
 - [opacity](MediaContainerNode.md#opacity)
 - [parent](MediaContainerNode.md#parent)
-- [relativeRotation](MediaContainerNode.md#relativeRotation)
-- [relativeTransform](MediaContainerNode.md#relativeTransform)
+- [relativeRotation](MediaContainerNode.md#relativerotation)
+- [relativeTransform](MediaContainerNode.md#relativetransform)
 - [translateX](MediaContainerNode.md#translateX)
 - [translateY](MediaContainerNode.md#translateY)
 - [type](MediaContainerNode.md#type)
 
 ### Methods
 
-- [removeFromParent](MediaContainerNode.md#removeFromParent)
+- [removeFromParent](MediaContainerNode.md#removefromparent)
 
 ## Accessors
 
@@ -106,14 +106,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -125,7 +125,7 @@ Node.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -362,13 +362,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -390,4 +390,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

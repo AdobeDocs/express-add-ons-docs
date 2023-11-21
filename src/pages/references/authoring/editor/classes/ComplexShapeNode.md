@@ -1,54 +1,36 @@
-[@express-document-sdk](../overview.md) / StrokableNode
+[@express-document-sdk](../overview.md) / ComplexShapeNode
 
-# Class: StrokableNode
+# Class: ComplexShapeNode
 
-Base class for a Node that can have its own stroke.
+A ComplexShapeNode is complex prepackaged shape that appears as a leaf node in the UI, even if it is composed
+of multiple separate paths. ComplexShapeNode also may have more complex resize behavior than simple paths.
 
 ## Hierarchy
 
 - [`Node`](Node.md)
 
-  ↳ **`StrokableNode`**
-
-  ↳↳ [`FillableNode`](FillableNode.md)
-
-  ↳↳ [`LineNode`](LineNode.md)
-
-## Implements
-
-- [`IStrokableNode`](../interfaces/IStrokableNode.md)
+  ↳ **`ComplexShapeNode`**
 
 ## Table of contents
 
-### Properties
-
-- [DEFAULT\_STROKE\_WIDTH](StrokableNode.md#DEFAULT_STROKE_WIDTH)
-
 ### Accessors
 
-- [absoluteRotation](StrokableNode.md#absoluterotation)
-- [absoluteTransform](StrokableNode.md#absolutetransform)
-- [allChildren](StrokableNode.md#allchildren)
-- [blendMode](StrokableNode.md#blendmode)
-- [locked](StrokableNode.md#locked)
-- [opacity](StrokableNode.md#opacity)
-- [parent](StrokableNode.md#parent)
-- [relativeRotation](StrokableNode.md#relativerotation)
-- [relativeTransform](StrokableNode.md#relativetransform)
-- [strokes](StrokableNode.md#strokes)
-- [translateX](StrokableNode.md#translateX)
-- [translateY](StrokableNode.md#translateY)
-- [type](StrokableNode.md#type)
+- [absoluteRotation](ComplexShapeNode.md#absoluterotation)
+- [absoluteTransform](ComplexShapeNode.md#absolutetransform)
+- [allChildren](ComplexShapeNode.md#allchildren)
+- [blendMode](ComplexShapeNode.md#blendmode)
+- [locked](ComplexShapeNode.md#locked)
+- [opacity](ComplexShapeNode.md#opacity)
+- [parent](ComplexShapeNode.md#parent)
+- [relativeRotation](ComplexShapeNode.md#relativerotation)
+- [relativeTransform](ComplexShapeNode.md#relativetransform)
+- [translateX](ComplexShapeNode.md#translatex)
+- [translateY](ComplexShapeNode.md#translatey)
+- [type](ComplexShapeNode.md#type)
 
 ### Methods
 
-- [removeFromParent](StrokableNode.md#removefromparent)
-
-## Properties
-
-### DEFAULT\_STROKE\_WIDTH
-
-▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
+- [removeFromParent](ComplexShapeNode.md#removefromparent)
 
 ## Accessors
 
@@ -280,22 +262,6 @@ The node's transform matrix relative to its parent.
 #### Inherited from
 
 Node.relativeTransform
-
-___
-
-### strokes
-
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
-
-#### Returns
-
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-#### Implementation of
-
-[IStrokableNode](../interfaces/IStrokableNode.md).[strokes](../interfaces/IStrokableNode.md#strokes)
 
 ___
 

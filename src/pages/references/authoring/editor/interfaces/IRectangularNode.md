@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / IRectangularNode
+[@express-document-sdk](../overview.md) / IRectangularNode
 
 # Interface: IRectangularNode
 
@@ -8,6 +8,7 @@ Interface for nodes with width and height properties.
 
 - [`ArtboardNode`](../classes/ArtboardNode.md)
 - [`ImageRectangleNode`](../classes/ImageRectangleNode.md)
+- [`GridLayoutNode`](../classes/GridLayoutNode.md)
 - [`RectangleNode`](../classes/RectangleNode.md)
 
 ## Table of contents

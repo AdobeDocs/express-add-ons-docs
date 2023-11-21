@@ -1,9 +1,4 @@
----
-hideBreadcrumbNav: true
-
----
-
-[@add-on-hlapi-sdk](../overview.md) / Editor
+[@express-document-sdk](../overview.md) / Editor
 
 # Class: Editor
 
@@ -119,9 +114,8 @@ This local client will act as having unsaved changes until the upload has finish
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `bitmapData` | [`BitmapImage`](../interfaces/BitmapImage.md) | BitmapImage resource (e.g. returned from loadBitmapImage()). |
-| `options` | `Object` | Additional configuration: |
-| `options.initialSize?` | [`RectangleGeometry`](../interfaces/RectangleGeometry.md) | Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the        size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down        if needed to stay below an application-defined size cap). |
+| `bitmapData` | [`BitmapImage`](../interfaces/BitmapImage.md) | BitmapImage resource (e.g. returned from `loadBitmapImage()`). |
+| `options` | `Object` | Additional configuration:<br/><br/> `options.initialSize?:` [`RectangleGeometry`](../interfaces/RectangleGeometry.md)<br/><br/> Size the image is displayed at. Must have the same aspect ratio as `bitmapData`. Defaults to the size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down    if needed to stay below an application-defined size cap). |
 
 #### Returns
 
@@ -165,14 +159,13 @@ See [StrokeOptions](../interfaces/StrokeOptions.md) for more details on the `opt
 
 - `color` has default value DEFAULT_STROKE_COLOR if none is provided.
 - `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
-- `dashPattern` has default value [] if none is provided. If the dash pattern has
-  odd number of elements, the items are copied to double the array. For example,
-  [1, 2, 3] becomes [1, 2, 3, 1, 2, 3]. Values cannot be negative.
+- `dashPattern` has default value [] if none is provided. Array must be
+  of even length. Values cannot be negative.
 - `dashOffset` has default value 0 if none is provided. This options field is ignored
   if no `dashPattern` was provided.
 
 The stroke's `position` field cannot be specified via options yet because only
-[center](../enums/StrokePositionValue.md#center) is supported.
+[center](../enums/StrokePosition.md#center) is supported.
 
 #### Parameters
 
@@ -206,7 +199,7 @@ ___
 
 ▸ **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
 
-Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createImageContainer)
+Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
 
 Note: image resources that are unused will be automatically cleaned up after the document is closed.

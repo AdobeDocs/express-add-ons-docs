@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Constants
+[@express-document-sdk](../overview.md) / Constants
 
 # Namespace: Constants
 
@@ -7,11 +7,12 @@
 ### References
 
 - [ArrowHeadType](Constants.md#ArrowHeadType)
-- [BlendModeValue](Constants.md#BlendModeValue)
-- [FillTypeValue](Constants.md#FillTypeValue)
-- [SceneNodeTypeValueID](Constants.md#SceneNodeTypeValueID)
-- [StrokePositionValue](Constants.md#StrokePositionValue)
-- [TextAlignmentValue](Constants.md#TextAlignmentValue)
+- [BlendMode](Constants.md#BlendMode)
+- [FillRule](Constants.md#FillRule)
+- [FillType](Constants.md#FillType)
+- [SceneNodeType](Constants.md#SceneNodeType)
+- [StrokePosition](Constants.md#StrokePosition)
+- [TextAlignment](Constants.md#TextAlignment)
 
 ## References
 
@@ -21,30 +22,36 @@ Re-exports [ArrowHeadType](../enums/ArrowHeadType.md)
 
 ___
 
-### BlendModeValue
+### BlendMode
 
-Re-exports [BlendModeValue](../enums/BlendModeValue.md)
-
-___
-
-### FillTypeValue
-
-Re-exports [FillTypeValue](../enums/FillTypeValue.md)
+Re-exports [BlendMode](../enums/BlendMode.md)
 
 ___
 
-### SceneNodeTypeValueID
+### FillRule
 
-Re-exports [SceneNodeTypeValueID](../enums/SceneNodeTypeValueID.md)
-
-___
-
-### StrokePositionValue
-
-Re-exports [StrokePositionValue](../enums/StrokePositionValue.md)
+Re-exports [FillRule](../enums/FillRule.md)
 
 ___
 
-### TextAlignmentValue
+### FillType
 
-Re-exports [TextAlignmentValue](../enums/TextAlignmentValue.md)
+Re-exports [FillType](../enums/FillType.md)
+
+___
+
+### SceneNodeType
+
+Re-exports [SceneNodeType](../enums/SceneNodeType.md)
+
+___
+
+### StrokePosition
+
+Re-exports [StrokePosition](../enums/StrokePosition.md)
+
+___
+
+### TextAlignment
+
+Re-exports [TextAlignment](../enums/TextAlignment.md)

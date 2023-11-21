@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Context
+[@express-document-sdk](../overview.md) / Context
 
 # Class: Context
 
@@ -14,10 +14,10 @@ Contains the user's current selection state, indicating the content they are foc
 
 ### Accessors
 
-- [hasSelection](Context.md#hasSelection)
-- [insertionParent](Context.md#insertionParent)
+- [hasSelection](Context.md#hasselection)
+- [insertionParent](Context.md#insertionparent)
 - [selection](Context.md#selection)
-- [selectionIncludingNonEditable](Context.md#selectionIncludingNonEditable)
+- [selectionIncludingNonEditable](Context.md#selectionincludingnoneditable)
 
 ## Accessors
 
@@ -54,6 +54,24 @@ ___
 readonly [`Node`](Node.md)[]
 
 the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
+
+• `set` **selection**(`nodes`): `void`
+
+Sets the current selection, automatically ensuring these rules are met:
+
+- Nodes must be within the current artboard (others are filtered out).
+- A node cannot be selected at the same time as its ancestor (descendants are filtered out).
+- Locked nodes are filtered out (but will still be included in selectionIncludingNonEditable).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `nodes` | `undefined` \| [`Node`](Node.md) \| readonly [`Node`](Node.md)[] |
+
+#### Returns
+
+`void`
 
 ___
 

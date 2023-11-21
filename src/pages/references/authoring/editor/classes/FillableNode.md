@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / FillableNode
+[@express-document-sdk](../overview.md) / FillableNode
 
 # Class: FillableNode
 
@@ -11,6 +11,8 @@ Base class for a Node that can have its own fill and stroke.
   ↳ **`FillableNode`**
 
   ↳↳ [`EllipseNode`](EllipseNode.md)
+
+  ↳↳ [`PathNode`](PathNode.md)
 
   ↳↳ [`RectangleNode`](RectangleNode.md)
 
@@ -26,16 +28,16 @@ Base class for a Node that can have its own fill and stroke.
 
 ### Accessors
 
-- [absoluteRotation](FillableNode.md#absoluteRotation)
-- [absoluteTransform](FillableNode.md#absoluteTransform)
-- [allChildren](FillableNode.md#allChildren)
-- [blendMode](FillableNode.md#blendMode)
+- [absoluteRotation](FillableNode.md#absoluterotation)
+- [absoluteTransform](FillableNode.md#absolutetransform)
+- [allChildren](FillableNode.md#allchildren)
+- [blendMode](FillableNode.md#blendmode)
 - [fills](FillableNode.md#fills)
 - [locked](FillableNode.md#locked)
 - [opacity](FillableNode.md#opacity)
 - [parent](FillableNode.md#parent)
-- [relativeRotation](FillableNode.md#relativeRotation)
-- [relativeTransform](FillableNode.md#relativeTransform)
+- [relativeRotation](FillableNode.md#relativerotation)
+- [relativeTransform](FillableNode.md#relativetransform)
 - [strokes](FillableNode.md#strokes)
 - [translateX](FillableNode.md#translateX)
 - [translateY](FillableNode.md#translateY)
@@ -43,7 +45,7 @@ Base class for a Node that can have its own fill and stroke.
 
 ### Methods
 
-- [removeFromParent](FillableNode.md#removeFromParent)
+- [removeFromParent](FillableNode.md#removefromparent)
 
 ## Properties
 
@@ -126,14 +128,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -145,7 +147,7 @@ StrokableNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -386,13 +388,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -414,4 +416,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removeFromParent)
+[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removefromparent)

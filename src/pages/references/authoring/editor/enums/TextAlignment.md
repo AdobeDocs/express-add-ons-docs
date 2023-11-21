@@ -1,17 +1,18 @@
-[@add-on-hlapi-sdk](../overview.md) / TextAlignmentValue
+[@express-document-sdk](../overview.md) / TextAlignment
 
-# Enumeration: TextAlignmentValue
+# Enumeration: TextAlignment
 
 <InlineAlert slots="text" variant="warning"/>
+
 *Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
 ## Table of contents
 
 ### Enumeration Members
 
-- [center](TextAlignmentValue.md#center)
-- [left](TextAlignmentValue.md#left)
-- [right](TextAlignmentValue.md#right)
+- [center](TextAlignment.md#center)
+- [left](TextAlignment.md#left)
+- [right](TextAlignment.md#right)
 
 ## Enumeration Members
 

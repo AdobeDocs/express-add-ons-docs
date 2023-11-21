@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / ArtboardNode
+[@express-document-sdk](../overview.md) / ArtboardNode
 
 # Class: ArtboardNode
 
@@ -21,27 +21,27 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 
 ### Accessors
 
-- [absoluteRotation](ArtboardNode.md#absoluteRotation)
-- [absoluteTransform](ArtboardNode.md#absoluteTransform)
-- [allChildren](ArtboardNode.md#allChildren)
-- [blendMode](ArtboardNode.md#blendMode)
+- [absoluteRotation](ArtboardNode.md#absoluterotation)
+- [absoluteTransform](ArtboardNode.md#absolutetransform)
+- [allChildren](ArtboardNode.md#allchildren)
+- [blendMode](ArtboardNode.md#blendmode)
 - [children](ArtboardNode.md#children)
 - [fill](ArtboardNode.md#fill)
 - [height](ArtboardNode.md#height)
 - [locked](ArtboardNode.md#locked)
 - [opacity](ArtboardNode.md#opacity)
 - [parent](ArtboardNode.md#parent)
-- [relativeRotation](ArtboardNode.md#relativeRotation)
-- [relativeTransform](ArtboardNode.md#relativeTransform)
+- [relativeRotation](ArtboardNode.md#relativerotation)
+- [relativeTransform](ArtboardNode.md#relativetransform)
 - [strokes](ArtboardNode.md#strokes)
-- [translateX](ArtboardNode.md#translateX)
-- [translateY](ArtboardNode.md#translateY)
+- [translateX](ArtboardNode.md#translatex)
+- [translateY](ArtboardNode.md#translatey)
 - [type](ArtboardNode.md#type)
 - [width](ArtboardNode.md#width)
 
 ### Methods
 
-- [removeFromParent](ArtboardNode.md#removeFromParent)
+- [removeFromParent](ArtboardNode.md#removefromparent)
 
 ## Accessors
 
@@ -114,14 +114,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -133,7 +133,7 @@ ContainerNode.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -414,13 +414,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -458,4 +458,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[removeFromParent](ContainerNode.md#removeFromParent)
+[ContainerNode](ContainerNode.md).[removeFromParent](ContainerNode.md#removefromparent)

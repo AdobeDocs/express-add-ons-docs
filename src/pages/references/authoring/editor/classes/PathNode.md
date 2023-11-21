@@ -1,54 +1,54 @@
-[@express-document-sdk](../overview.md) / StrokableNode
+[@express-document-sdk](../overview.md) / PathNode
 
-# Class: StrokableNode
+# Class: PathNode
 
-Base class for a Node that can have its own stroke.
+A PathNode represents a generic vector path shape in the scenegraph. Paths cannot be created or edited through this API
+yet, only read.
 
 ## Hierarchy
 
-- [`Node`](Node.md)
+- [`FillableNode`](FillableNode.md)
 
-  ↳ **`StrokableNode`**
-
-  ↳↳ [`FillableNode`](FillableNode.md)
-
-  ↳↳ [`LineNode`](LineNode.md)
-
-## Implements
-
-- [`IStrokableNode`](../interfaces/IStrokableNode.md)
+  ↳ **`PathNode`**
 
 ## Table of contents
 
 ### Properties
 
-- [DEFAULT\_STROKE\_WIDTH](StrokableNode.md#DEFAULT_STROKE_WIDTH)
+- [DEFAULT\_STROKE\_WIDTH](PathNode.md#DEFAULT_STROKE_WIDTH)
 
 ### Accessors
 
-- [absoluteRotation](StrokableNode.md#absoluterotation)
-- [absoluteTransform](StrokableNode.md#absolutetransform)
-- [allChildren](StrokableNode.md#allchildren)
-- [blendMode](StrokableNode.md#blendmode)
-- [locked](StrokableNode.md#locked)
-- [opacity](StrokableNode.md#opacity)
-- [parent](StrokableNode.md#parent)
-- [relativeRotation](StrokableNode.md#relativerotation)
-- [relativeTransform](StrokableNode.md#relativetransform)
-- [strokes](StrokableNode.md#strokes)
-- [translateX](StrokableNode.md#translateX)
-- [translateY](StrokableNode.md#translateY)
-- [type](StrokableNode.md#type)
+- [absoluteRotation](PathNode.md#absoluterotation)
+- [absoluteTransform](PathNode.md#absolutetransform)
+- [allChildren](PathNode.md#allchildren)
+- [blendMode](PathNode.md#blendmode)
+- [fillRule](PathNode.md#fillrule)
+- [fills](PathNode.md#fills)
+- [locked](PathNode.md#locked)
+- [opacity](PathNode.md#opacity)
+- [parent](PathNode.md#parent)
+- [path](PathNode.md#path)
+- [relativeRotation](PathNode.md#relativerotation)
+- [relativeTransform](PathNode.md#relativetransform)
+- [strokes](PathNode.md#strokes)
+- [translateX](PathNode.md#translateX)
+- [translateY](PathNode.md#translateY)
+- [type](PathNode.md#type)
 
 ### Methods
 
-- [removeFromParent](StrokableNode.md#removefromparent)
+- [removeFromParent](PathNode.md#removefromparent)
 
 ## Properties
 
 ### DEFAULT\_STROKE\_WIDTH
 
 ▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
+
+#### Inherited from
+
+[FillableNode](FillableNode.md).[DEFAULT_STROKE_WIDTH](FillableNode.md#DEFAULT_STROKE_WIDTH)
 
 ## Accessors
 
@@ -64,7 +64,7 @@ The node's absolute (global) rotation angle in degrees – includes any cumulati
 
 #### Inherited from
 
-Node.absoluteRotation
+FillableNode.absoluteRotation
 
 • `set` **absoluteRotation**(`value`): `void`
 
@@ -80,7 +80,7 @@ Node.absoluteRotation
 
 #### Inherited from
 
-Node.absoluteRotation
+FillableNode.absoluteRotation
 
 ___
 
@@ -96,7 +96,7 @@ The node's absolute (global) transform matrix.
 
 #### Inherited from
 
-Node.absoluteTransform
+FillableNode.absoluteTransform
 
 ___
 
@@ -115,7 +115,7 @@ overall display z-order.
 
 #### Inherited from
 
-Node.allChildren
+FillableNode.allChildren
 
 ___
 
@@ -132,7 +132,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 #### Inherited from
 
-Node.blendMode
+FillableNode.blendMode
 
 • `set` **blendMode**(`value`): `void`
 
@@ -148,7 +148,36 @@ Node.blendMode
 
 #### Inherited from
 
-Node.blendMode
+FillableNode.blendMode
+
+___
+
+### fillRule
+
+• `get` **fillRule**(): [`FillRule`](../enums/FillRule.md)
+
+The fill rule specifies how the interior area of a path is determined in cases where the path is self-intersecting or
+has multiple disjoint parts. This value is read-only and cannot be modified via this API yet.
+
+#### Returns
+
+[`FillRule`](../enums/FillRule.md)
+
+___
+
+### fills
+
+• `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
+
+Any fill(s) on the shape. Use the methods on this ItemList object to get, add, and remove fills.
+
+#### Returns
+
+[`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
+
+#### Inherited from
+
+FillableNode.fills
 
 ___
 
@@ -165,7 +194,7 @@ cannot be edited by the user unless they are unlocked first.
 
 #### Inherited from
 
-Node.locked
+FillableNode.locked
 
 • `set` **locked**(`locked`): `void`
 
@@ -181,7 +210,7 @@ Node.locked
 
 #### Inherited from
 
-Node.locked
+FillableNode.locked
 
 ___
 
@@ -197,7 +226,7 @@ The node's opacity, from 0.0 to 1.0
 
 #### Inherited from
 
-Node.opacity
+FillableNode.opacity
 
 • `set` **opacity**(`opacity`): `void`
 
@@ -213,7 +242,7 @@ Node.opacity
 
 #### Inherited from
 
-Node.opacity
+FillableNode.opacity
 
 ___
 
@@ -229,7 +258,20 @@ The node's parent. Undefined if the node is an orphan, or if the node is the art
 
 #### Inherited from
 
-Node.parent
+FillableNode.parent
+
+___
+
+### path
+
+• `get` **path**(): `string`
+
+The path definition as an SVG string. The path data is read-only and cannot be modified via this API yet.
+Example: "M 0 0 L 10 15".
+
+#### Returns
+
+`string`
 
 ___
 
@@ -247,7 +289,7 @@ rotates the node about its bounding box's center, not its origin.
 
 #### Inherited from
 
-Node.relativeRotation
+FillableNode.relativeRotation
 
 • `set` **relativeRotation**(`value`): `void`
 
@@ -263,7 +305,7 @@ Node.relativeRotation
 
 #### Inherited from
 
-Node.relativeRotation
+FillableNode.relativeRotation
 
 ___
 
@@ -279,7 +321,7 @@ The node's transform matrix relative to its parent.
 
 #### Inherited from
 
-Node.relativeTransform
+FillableNode.relativeTransform
 
 ___
 
@@ -293,9 +335,9 @@ Any stroke(s) on the shape. Use the methods on this ItemList object to get, add,
 
 [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
 
-#### Implementation of
+#### Inherited from
 
-[IStrokableNode](../interfaces/IStrokableNode.md).[strokes](../interfaces/IStrokableNode.md#strokes)
+FillableNode.strokes
 
 ___
 
@@ -311,7 +353,7 @@ The translation of the node along its parent's x-axis.
 
 #### Inherited from
 
-Node.translateX
+FillableNode.translateX
 
 • `set` **translateX**(`value`): `void`
 
@@ -327,7 +369,7 @@ Node.translateX
 
 #### Inherited from
 
-Node.translateX
+FillableNode.translateX
 
 ___
 
@@ -343,7 +385,7 @@ The translation of the node along its parent's y-axis.
 
 #### Inherited from
 
-Node.translateY
+FillableNode.translateY
 
 • `set` **translateY**(`value`): `void`
 
@@ -359,7 +401,7 @@ Node.translateY
 
 #### Inherited from
 
-Node.translateY
+FillableNode.translateY
 
 ___
 
@@ -375,7 +417,7 @@ The node's type.
 
 #### Inherited from
 
-Node.type
+FillableNode.type
 
 ## Methods
 
@@ -393,4 +435,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removefromparent)
+[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removefromparent)

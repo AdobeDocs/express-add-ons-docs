@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / ImageRectangleNode
+[@express-document-sdk](../overview.md) / ImageRectangleNode
 
 # Class: ImageRectangleNode
 
@@ -20,16 +20,16 @@ shape sibling node).
 
 ### Accessors
 
-- [absoluteRotation](ImageRectangleNode.md#absoluteRotation)
-- [absoluteTransform](ImageRectangleNode.md#absoluteTransform)
-- [allChildren](ImageRectangleNode.md#allChildren)
-- [blendMode](ImageRectangleNode.md#blendMode)
+- [absoluteRotation](ImageRectangleNode.md#absoluterotation)
+- [absoluteTransform](ImageRectangleNode.md#absolutetransform)
+- [allChildren](ImageRectangleNode.md#allchildren)
+- [blendMode](ImageRectangleNode.md#blendmode)
 - [height](ImageRectangleNode.md#height)
 - [locked](ImageRectangleNode.md#locked)
 - [opacity](ImageRectangleNode.md#opacity)
 - [parent](ImageRectangleNode.md#parent)
-- [relativeRotation](ImageRectangleNode.md#relativeRotation)
-- [relativeTransform](ImageRectangleNode.md#relativeTransform)
+- [relativeRotation](ImageRectangleNode.md#relativerotation)
+- [relativeTransform](ImageRectangleNode.md#relativetransform)
 - [translateX](ImageRectangleNode.md#translateX)
 - [translateY](ImageRectangleNode.md#translateY)
 - [type](ImageRectangleNode.md#type)
@@ -37,7 +37,7 @@ shape sibling node).
 
 ### Methods
 
-- [removeFromParent](ImageRectangleNode.md#removeFromParent)
+- [removeFromParent](ImageRectangleNode.md#removefromparent)
 
 ## Accessors
 
@@ -110,14 +110,14 @@ ___
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendModeValue`](../enums/BlendModeValue.md)
+• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendModeValue.md#normal) for most nodes, and [passThrough](../enums/BlendModeValue.md#passThrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
 
 #### Returns
 
-[`BlendModeValue`](../enums/BlendModeValue.md)
+[`BlendMode`](../enums/BlendMode.md)
 
 #### Inherited from
 
@@ -129,7 +129,7 @@ Node.blendMode
 
 | Name | Type |
 | :------ | :------ |
-| `value` | [`BlendModeValue`](../enums/BlendModeValue.md) |
+| `value` | [`BlendMode`](../enums/BlendMode.md) |
 
 #### Returns
 
@@ -356,13 +356,13 @@ ___
 
 ### type
 
-• `get` **type**(): [`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeTypeValueID`](../enums/SceneNodeTypeValueID.md)
+[`SceneNodeType`](../enums/SceneNodeType.md)
 
 #### Inherited from
 
@@ -402,4 +402,4 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removeFromParent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)

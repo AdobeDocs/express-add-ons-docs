@@ -101,7 +101,7 @@ module.exports = {
         ],
       },
       {
-        title: "Authoring Sandbox",
+        title: "Document Sandbox",
         path: "references/authoring/",
         pages: [
           {
@@ -259,31 +259,31 @@ module.exports = {
               },
               {
                 title: "Constants",
-                path: "references/authoring/editor/enums/BlendModeValue.md",
+                path: "references/authoring/editor/enums/ArrowHeadType.md",
                 pages: [
                   {
                     title: "ArrowHeadType",
                     path: "references/authoring/editor/enums/ArrowHeadType.md",
                   },
                   {
-                    title: "BlendModeValue",
-                    path: "references/authoring/editor/enums/BlendModeValue.md",
+                    title: "BlendMode",
+                    path: "references/authoring/editor/enums/BlendMode.md",
                   },
                   {
-                    title: "FillTypeValue",
-                    path: "references/authoring/editor/enums/FillTypeValue.md",
+                    title: "FillType",
+                    path: "references/authoring/editor/enums/FillType.md",
                   },
                   {
-                    title: "SceneNodeTypeValueID",
-                    path: "references/authoring/editor/enums/SceneNodeTypeValueID.md",
+                    title: "SceneNodeType",
+                    path: "references/authoring/editor/enums/SceneNodeType.md",
                   },
                   {
-                    title: "StrokePositionValue",
-                    path: "references/authoring/editor/enums/StrokePositionValue.md",
+                    title: "StrokePosition",
+                    path: "references/authoring/editor/enums/StrokePosition.md",
                   },
                   {
-                    title: "TextAlignmentValue",
-                    path: "references/authoring/editor/enums/TextAlignmentValue.md",
+                    title: "TextAlignment",
+                    path: "references/authoring/editor/enums/TextAlignment.md",
                   },
                 ],
               },

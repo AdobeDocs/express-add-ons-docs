@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / ColorFill
+[@express-document-sdk](../overview.md) / ColorFill
 
 # Interface: ColorFill
 
@@ -29,7 +29,7 @@ ___
 
 ### type
 
-• `Readonly` **type**: [`color`](../enums/FillTypeValue.md#color)
+• `Readonly` **type**: [`color`](../enums/FillType.md#color)
 
 The fill type.
 

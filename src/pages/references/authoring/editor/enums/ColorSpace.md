@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / ColorSpace
+[@express-document-sdk](../overview.md) / ColorSpace
 
 # Enumeration: ColorSpace
 

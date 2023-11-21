@@ -1,4 +1,4 @@
-[@add-on-hlapi-sdk](../overview.md) / Stroke
+[@express-document-sdk](../overview.md) / Stroke
 
 # Interface: Stroke
 
@@ -15,8 +15,8 @@ Represents a stroke in the scenegraph. See [StrokableNode](../classes/StrokableN
 ### Properties
 
 - [color](Stroke.md#color)
-- [dashOffset](Stroke.md#dashOffset)
-- [dashPattern](Stroke.md#dashPattern)
+- [dashOffset](Stroke.md#dashoffset)
+- [dashPattern](Stroke.md#dashpattern)
 - [position](Stroke.md#position)
 - [width](Stroke.md#width)
 
@@ -42,7 +42,7 @@ Number of pixels the beginning of dash pattern should be offset along the stroke
 
 #### Inherited from
 
-[StrokeOptions](StrokeOptions.md).[dashOffset](StrokeOptions.md#dashOffset)
+[StrokeOptions](StrokeOptions.md).[dashOffset](StrokeOptions.md#dashoffset)
 
 ___
 
@@ -56,13 +56,13 @@ repeated along the length of the stroke. The first value represents the first so
 
 #### Inherited from
 
-[StrokeOptions](StrokeOptions.md).[dashPattern](StrokeOptions.md#dashPattern)
+[StrokeOptions](StrokeOptions.md).[dashPattern](StrokeOptions.md#dashpattern)
 
 ___
 
 ### position
 
-• `Readonly` **position**: [`StrokePositionValue`](../enums/StrokePositionValue.md)
+• `Readonly` **position**: [`StrokePosition`](../enums/StrokePosition.md)
 
 The position of the stroke relative to the outline of the shape.
 
