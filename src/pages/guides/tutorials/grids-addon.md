@@ -163,8 +163,8 @@ addOnUISdk.ready.then(async () => {
 
   // Get the UI runtime.
   const { runtime } = addOnUISdk.instance;
-  const scriptApi = await runtime.apiProxy("script");
-  scriptApi.log("Document Sandbox up and running.");
+  const sandboxProxy = await runtime.apiProxy("script");
+  sandboxProxy.log("Document Sandbox up and running.");
 
   // Enabling CTA elements only when the addOnUISdk is ready
   createShapeButton.disabled = false;
@@ -285,10 +285,10 @@ addOnUISdk.ready.then(async () => {
   const createShapeButton = document.getElementById("createShape");
 
   const { runtime } = addOnUISdk.instance;
-  const scriptApi = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("script");
 
   createShapeButton.addEventListener("click", async () => {
-    scriptApi.createShape({ width: 200, height: 100 }); // 👈
+    sandboxProxy.createShape({ width: 200, height: 100 }); // 👈
   });
 
   createShapeButton.disabled = false;
@@ -473,7 +473,7 @@ Please refer to the source code for other details on the HTML structure, which a
 
 ### Collecting values from the UI
 
-Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Document Sandbox is retrieved, and everything the Document API exposes is stored in the `scriptApi` constant (lines 9-10).
+Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Document Sandbox is retrieved, and everything the Document API exposes is stored in the `sandboxProxy` constant (lines 9-10).
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -528,7 +528,7 @@ addOnUISdk.ready.then(async () => {
 
   // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
-  const scriptApi = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("script");
 
   // Input fields -------------------------------------------
 
@@ -574,7 +574,7 @@ addOnUISdk.ready.then(async () => {
   const deleteGridBtn = document.getElementById("deleteGrid");
 
   deleteGridBtn.onclick = async (event) => {
-    const res = await scriptApi.deleteGrid();
+    const res = await sandboxProxy.deleteGrid();
     if (res) {
       // When there's been an error deleting the grid, you may want to handle it here
     }
@@ -582,7 +582,7 @@ addOnUISdk.ready.then(async () => {
   };
 
   createGridBtn.onclick = async (event) => {
-    await scriptApi.addGrid({
+    await sandboxProxy.addGrid({
       columns: colsInput.value,
       rows: rowsInput.value,
       gutter: gutterInput.value,
@@ -745,7 +745,7 @@ import { addColumns, addRows } from "./shapeUtils";
 const { runtime } = addOnSandboxSdk.instance;
 
 function start() {
-  const scriptApi = {
+  const sandboxProxy = {
     addGrid({ columns, rows, gutter, columnColor, rowColor }) {
       addRows(rows, gutter, rowColor);
       addColumns(columns, gutter, columnColor);
@@ -755,7 +755,7 @@ function start() {
       // ...
     },
   };
-  runtime.exposeApi(scriptApi);
+  runtime.exposeApi(sandboxProxy);
 }
 start();
 ```
@@ -1057,7 +1057,7 @@ addOnUISdk.ready.then(async () => {
 
   // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
-  const scriptApi = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("script");
 
   // Input fields -------------------------------------------
 
@@ -1103,7 +1103,7 @@ addOnUISdk.ready.then(async () => {
   const deleteGridBtn = document.getElementById("deleteGrid");
 
   deleteGridBtn.onclick = async (event) => {
-    const res = await scriptApi.deleteGrid();
+    const res = await sandboxProxy.deleteGrid();
     if (res) {
       // When there's been an error deleting the grid, you may want to handle it here
     }
@@ -1111,7 +1111,7 @@ addOnUISdk.ready.then(async () => {
   };
 
   createGridBtn.onclick = async (event) => {
-    await scriptApi.addGrid({
+    await sandboxProxy.addGrid({
       columns: colsInput.value,
       rows: rowsInput.value,
       gutter: gutterInput.value,
