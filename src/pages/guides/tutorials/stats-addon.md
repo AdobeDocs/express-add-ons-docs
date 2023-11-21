@@ -4,7 +4,7 @@ keywords:
   - Express Add-on SDK
   - Express Document API
   - Express Communication API
-  - Document Sandbox
+  - Document Model Sandbox
   - Adobe Express
   - Add-on SDK
   - SDK
@@ -45,9 +45,9 @@ This tutorial has been written by Davide Barranca, software developer and author
 <!-- List block here -->
 <ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[Invoking Document Sandbox methods from the UI iframe](#proxy-api)
+[Invoking Document Model Sandbox methods from the UI iframe](#proxy-api)
 
-[Invoking UI iframe methods from the Document Sandbox](#logic)
+[Invoking UI iframe methods from the Document Model Sandbox](#logic)
 
 [Proxy API](#proxy-api)
 
@@ -57,17 +57,17 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The Document Sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
+**IMPORTANT:** The Document Model Sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ## Getting Started with the Communication API
 
-As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example. 
+As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
 
 The **Document API** makes new, more powerful capabilities available, allowing the add-on to manipulate elements directly—like scripting in Desktop applications such as Photoshop or InDesign. This API is one component of the Document Sandbox, a JavaScript execution environment that also includes a restricted set of Web API (mostly debugging aids) as well as the means for the UI iframe and the Document API to exchange messages—the Communication API. This infrastructure is paramount as it bridges the gap between the two environments, allowing them to create a seamless experience.
 
 ### Proxies
 
-How does this all work, then? Not via messaging, as somebody coming from CEP might expect, but rather exposing proxies for the _other context_ to use. The process originates in the `runtime` objects (the UI iframe's and the Document Sandbox's), retrieved from their SDK instances:
+How does this all work, then? Not via messaging, as somebody coming from CEP might expect, but rather exposing proxies for the *other context* to use. The process originates in the `runtime` objects (the UI iframe's and the Document Sandbox's), retrieved from their SDK instances:
 
 ```js
 // runtime in the UI iframe
@@ -120,7 +120,6 @@ runtime.exposeApi({
 
 #### Document Sandbox
 
-
 ```js
 import addOnSandboxSdk from "AddOnScriptSdk";
 const { runtime } = addOnSandboxSdk.instance;
@@ -153,7 +152,6 @@ runtime.exposeApi({
 
 #### Document Sandbox
 
-
 ```js
 // iframe
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -172,7 +170,7 @@ The following diagram helps visualize the process.
 
 ### Proxy API
 
-Now that we've seen how contexts expose and import each other's API, let's discuss what's inside the payload objects that cross this environment boundary. 
+Now that we've seen how contexts expose and import each other's API, let's discuss what's inside the payload objects that cross this environment boundary.
 
 #### Functions
 
@@ -252,7 +250,6 @@ runtime.exposeApi({
   }
 });
 ```
-
 
 The `counter` variable in the Document Sandbox persists between iframe calls and can be accessed by `drawShape()`; in this scenario, it's returned so the iframe knows the number of shapes created so far. This brings us to the concept of **returned values**.
 
@@ -352,7 +349,7 @@ Like in the [Grids add-on tutorial](grids-addon.md), the starting point will be 
 - `ui/table-utils.js` contains table-related functions consumed by the iframe and imported by `index.js` to keep it slim.
 - `documentSandbox/code.js` contains the Document API methods exposed to the iframe.
 - `documentSandbox/utils.js` stores Document API private functions imported in `code.js`.
- 
+
 ### User Interface
 
 To keep a consistent look & feel with the rest of the application, we'll use Spectrum Web Component as much as possible, styling them with the `express` theme provided by the `<sp-theme>` wrapper.
@@ -408,7 +405,7 @@ We'll start with a placeholder row with a friendly message, which is going to be
 
 ### Logic
 
-The diagram below illustrates the communication flow between the two contexts. 
+The diagram below illustrates the communication flow between the two contexts.
 
 ![](images/stats-addon-flow.png)
 
@@ -493,7 +490,7 @@ iframeApi.toggleStatus("iframe"); // 👈
 
 <InlineAlert variant="info" slots="text" />
 
-Let me remind you again of the need to `await` when invoking `getDocumentData()` (line 37, `index.js`), as the Communication API wraps proxy calls with Promises. 
+Let me remind you again of the need to `await` when invoking `getDocumentData()` (line 37, `index.js`), as the Communication API wraps proxy calls with Promises.
 
 In `documentSandbox/code.js`, we bring the iframe proxy in, toggle the status light, and expose the `getDocumentData()` function. Please note that it must be declared asynchronous (line 7) because of the need to `await` when invoking the `panelUIProxy` method `createTable()` (line 12).
 
@@ -525,7 +522,6 @@ start();
 ### Implementation
 
 Let's start filling in the missing parts in our code; we'll begin with the Framework Status, the easiest bit. The `toggleStatus()` method is immediately invoked in the `addOnUISdk.ready` callback, as well as the Document Sandbox `code.js`, where it is also exposed. It updates the `variant` attribute of the `<sp-status-light>` element based on the `sdk` parameter passed in.
-
 
 <CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
 
@@ -669,14 +665,14 @@ const getNodeData = (node, nodeData = {}) => {
 export { getNodeData };
 ```
 
-Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](references/authoring/editor/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/authoring/editor/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/authoring/editor/classes/GroupNode/) elements, and so on. As follows, the metacode.
+Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](references/document-sandbox/document-apis/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/document-sandbox/document-apis/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/) elements, and so on. As follows, the metacode.
 
 1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty array. If so, it iterates over this array. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
 
 2. If a child node within this array also features a non-empty `allChildren` property, `getNodeData()` is called recursively on that child node. Mind you: during these recursive calls, `nodeData` is passed as the second argument. This approach ensures that the same `nodeData` object is continuously used throughout the recursion, allowing it to accumulate and keep tabs on all node types encountered across all hierarchy levels. The `"MediaContainer"` node is a particular one, [^3] and when encountered, we stop there.  
 
-3. The `increaseCount()` method, which we keep private to the `utils.js` module, receives the `nodeData` object and bumps the count for each `child.type`. 
- 
+3. The `increaseCount()` method, which we keep private to the `utils.js` module, receives the `nodeData` object and bumps the count for each `child.type`.
+
 When the whole process is repeated for each `page`, we can finally invoke the iframe `createTable()` method, passing the `documentData`.
 
 <CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
@@ -692,7 +688,7 @@ runtime.exposeApi({
   });
 ```
 
-Now, it's up to the iframe to manage such data (the array of objects collecting page dimensions and node counts) and transform it into a Spectrum Table. 
+Now, it's up to the iframe to manage such data (the array of objects collecting page dimensions and node counts) and transform it into a Spectrum Table.
 
 <CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
 
@@ -710,7 +706,7 @@ const iframeApi = {
   };
 ```
 
-The process is not difficult per se, but it may be slightly tedious. The `rebuildTable()` method is declared in the `table-utils.js` module alongside a private `addRowToTable()`. 
+The process is not difficult per se, but it may be slightly tedious. The `rebuildTable()` method is declared in the `table-utils.js` module alongside a private `addRowToTable()`.
 
 <CodeBlock slots="heading, code" repeat="1" languages="table-utils.js"/>
 
@@ -775,7 +771,7 @@ As follows, the `rebuildTable()` metacode.
 Congratulations! You've coded from scratch the Stats add-on for Adobe Express. As an exercise, you may want to extend it with the following features.
 
 - **Better visualization**: you can add `<sp-icon>` elements for each Node type, or bypass the Table altogether using an Accordion component for a hierarchical, collapsible menu.
-- **Hide and Show**: via the [Document API](/references/authoring) you may hide and show elements based on their type—the `<sp-table>` has a `selects` and a `selected` attributes that you can put to use.
+- **Hide and Show**: via the [Document API](/references/document-sandbox) you may hide and show elements based on their type—the `<sp-table>` has a `selects` and a `selected` attributes that you can put to use.
 - **Save Snapshots**: using the [Client Storage API](/references/addonsdk/instance-clientStorage/), you can keep track of the document's metadata and compare it with previous versions.
 
 ## Lessons Learned
@@ -873,7 +869,6 @@ sp-button { align-self: flex-end; }
 ```
 
 #### UI iframe
-
 
 ```js
 import "@spectrum-web-components/styles/typography.css";
@@ -1087,6 +1082,7 @@ const getNodeData = (node, nodeData = {}) => {
 
 export { getNodeData };
 ```
+
 [^0]: When referring to "metadata", I mean the dimensions and types of elements on each page. Custom metadata haven't been implemented in Adobe Express yet.
 
 [^1]: In my tests, the two SDKs are ready almost instantly and together—I couldn't tell which one is loaded firsts.
