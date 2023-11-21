@@ -622,7 +622,7 @@ We provide a set of [Document APIs](../../references/authoring/editor/) that can
 
 The Editor API's are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
 
-The following code snippet illustrates how to use the [Document APIs](../../references/authoring/editor/) from the script running in your [`code.js`](https://developer.adobe.com/express/add-ons/docs/references/authoring/#getting-started-with-the-apis) for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
+The following code snippet illustrates how to use the [Document APIs](../../references/authoring/editor/) from the script running in your [`code.js`](../../references/authoring/index.md#getting-started-with-the-apis) for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
 import { editor, utils } from "express";
@@ -645,4 +645,4 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to [getting started with Authoring Sandbox](https://developer.adobe.com/express/add-ons/docs/references/authoring/#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Document APIs for authoring content.
+Refer to [getting started with the Document Sandbox](../../references/authoring/index.md#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Document APIs for authoring content.

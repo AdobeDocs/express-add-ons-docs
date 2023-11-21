@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: Web APIs
-description: An overview of the Web APIs available as part of the authoring sandbox.
+description: An overview of the Web APIs available as part of the document sandbox.
 contributors:
   - https://github.com/hollyschinsky
 ---

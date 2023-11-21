@@ -21,8 +21,9 @@ contributors:
 # Changelog
 
 ## 2023-11-6
+
 - Added a [new tutorial section](../guides/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../guides/tutorials/grids-addon.md) by Davide Barranca.
-- Updated the naming conventions from Script Runtime to Authoring Sandbox and Editor APIs to Adobe Express Document APIs. The Authoring Sandbox now includes the Communication APIs, Web APIs and the Document APIs. 
+- Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs. 
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
 
 ## 2023-10-26
@@ -63,18 +64,18 @@ New versions of the CLI packages:
 
 which include:
 
-- Updated templates for both iframe and authoring sandbox add-ons:
+- Updated templates for both iframe and document sandbox add-ons:
 
     - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
     - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
-    - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the authoring sandbox](https://developer.adobe.com/express/add-ons/docs/references/authoring/#cli-generated-script-runtime-add-on) when creating a new add-on.
+    - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the document sandbox](https://developer.adobe.com/express/add-ons/docs/references/authoring/#cli-generated-script-runtime-add-on) when creating a new add-on.
   
 - New type support for typescript based add-ons.
 - Ability to recreate your SSL certificates.
 
 #### Documentation updates
 
-- Updated [authoring sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/authoring/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include authoring sandbox (vs the specific template).
+- Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/authoring/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
 - Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
@@ -100,7 +101,7 @@ The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs
 
 <InlineAlert slots="text" variant="info"/>
 
-If you're using the experimental Authoring Sandbox APIs (aka: Script Runtime) in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
+If you're using the experimental Document Sandbox APIs (aka: Script Runtime) in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
 
 ## 2023-09-19
 
@@ -113,10 +114,10 @@ If you're using the experimental Authoring Sandbox APIs (aka: Script Runtime) in
 
 - **New Types Package Versions Released** <br/>
   - A new version `0.1.6` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the [`AddOnSDK` (iframe)](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/), including new experimental APIs, as well as general improvements and bug fixes.
-  - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **authoring sandbox/Editor APIs**.
+  - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **document sandbox/Editor APIs**.
   
   **IMPORTANT**:
-  Developers who are **NOT** using the [authoring sandbox/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/authoring/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`.
+  Developers who are **NOT** using the [document sandbox/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/authoring/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`.
   
   The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
 
@@ -133,7 +134,7 @@ If you're using the experimental Authoring Sandbox APIs (aka: Script Runtime) in
 
 ### Updates
 
-- The [Communication API docs](../references/authoring/communication/index.md) in the [authoring sandbox Reference](../references/authoring/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API docs](../references/authoring/communication/index.md) in the [document sandbox Reference](../references/authoring/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -201,20 +202,20 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new [references section](../references/authoring/) for the authoring sandbox APIs.
+- Added new [references section](../references/authoring/) for the document sandbox APIs.
 
-### Important notes on authoring sandbox APIs (aka Authoring Sandbox)
+### Important notes on document sandbox APIs (aka Document Sandbox)
 
 - These APIs are experimental!
   - Do not test your add-ons on documents that you care about as these APIs are not currently considered stable.
   - Be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Visibility of a method or property is visible via `console.log` is not an indication of whether that field is supported or documented.
 - Debugging & Console messages
-  - You may see "Empty transaction not added to pendingTransaction" while running code in the authoring sandbox. You can ignore this for now.
+  - You may see "Empty transaction not added to pendingTransaction" while running code in the document sandbox. You can ignore this for now.
   - You may see "Detected a possible stutter. Excessive ECS Frame duration of ## ms" in the console. You can ignore this for now.
-  - If your script code has a syntax error, the console will log an unhelpful error message (similar to `Uncaught (in promise) at <adobe-internal.js:49>`). Your add-on panel UI will be visible and continue to be interactive, but it won't be able to communicate with the authoring sandbox, resulting in what feels like non-responsive UI (e.g., clicking doesn't trigger the expected action). You'll want to configure your editor to highlight any syntax editors so that you can be sure your code is at least syntactically correct before you save.
+  - If your script code has a syntax error, the console will log an unhelpful error message (similar to `Uncaught (in promise) at <adobe-internal.js:49>`). Your add-on panel UI will be visible and continue to be interactive, but it won't be able to communicate with the document sandbox, resulting in what feels like non-responsive UI (e.g., clicking doesn't trigger the expected action). You'll want to configure your editor to highlight any syntax editors so that you can be sure your code is at least syntactically correct before you save.
 - Intermittent issues
-  - Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the authoring sandbox to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.
-  - It's occasionally possible to run into a race condition where the communications bridge between the two contexts (panel vs authoring sandbox) is not set up in time. If you interact with your panel UI immediately after it's reloaded, the click may appear do nothing instead of invoking your script code. We're working on a fix for this.
+  - Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the document sandbox to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.
+  - It's occasionally possible to run into a race condition where the communications bridge between the two contexts (panel vs document sandbox) is not set up in time. If you interact with your panel UI immediately after it's reloaded, the click may appear do nothing instead of invoking your script code. We're working on a fix for this.
 - Common pitfalls
   - If you split your work on a document over multiple frames using `setTimeout`, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release.
   - When setting up communication between your panel UI code and your script sandbox code, calling `apiProxy()` with the wrong argument will do nothing without providing any error feedback.  If communication is not working, carefully double-check your UI code is requesting the `"script"` API proxy and your script sandbox code is requesting the `"panel"` API proxy.
@@ -236,7 +237,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
   - Creating colors is currently done via `utils.createColor()`. We're likely to change how you assign colors to objects, so bear this in mind as you use the experimental APIs. Note that this means you cannot just pass a plain JS object of the form `{red, green, blue}` to the Editor APIs — it must be a color created using `utils.createColor`.
   - Editor API constants may be renamed or may change how they are accessed.
   - Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be *moved* and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.
-  - There is no support for `fetch` in the authoring sandbox environment. You can work around this by exposing a method from your panel that your script code can call that does the work of fetching remote content. In the future we may abstract this for you automatically.
+  - There is no support for `fetch` in the document sandbox environment. You can work around this by exposing a method from your panel that your script code can call that does the work of fetching remote content. In the future we may abstract this for you automatically.
   - The `strokes` API is likely to be modified so that it only supports a single stroke.
 - Typings & Typescript
   - Typings and samples showing how to use Typescript will be available in a future release.
@@ -245,7 +246,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [authoring sandbox APIs](../references/authoring/).
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../references/authoring/).
 - Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11
