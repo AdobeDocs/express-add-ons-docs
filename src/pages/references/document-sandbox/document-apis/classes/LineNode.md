@@ -14,38 +14,37 @@ A LineNode represents a simple line object in the scenegraph – a single straig
 
 ### Properties
 
-- [DEFAULT\_END\_X](LineNode.md#DEFAULT_END_X)
-- [DEFAULT\_END\_Y](LineNode.md#DEFAULT_END_Y)
-- [DEFAULT\_START\_X](LineNode.md#DEFAULT_START_X)
-- [DEFAULT\_START\_Y](LineNode.md#DEFAULT_START_Y)
-- [DEFAULT\_STROKE\_WIDTH](LineNode.md#DEFAULT_STROKE_WIDTH)
+- [DEFAULT\_END\_X](LineNode.md#default_END_X)
+- [DEFAULT\_END\_Y](LineNode.md#default_END_Y)
+- [DEFAULT\_START\_X](LineNode.md#default_START_X)
+- [DEFAULT\_START\_Y](LineNode.md#default_START_Y)
 
 ### Accessors
 
-- [absoluteRotation](LineNode.md#absoluterotation)
-- [absoluteTransform](LineNode.md#absolutetransform)
 - [allChildren](LineNode.md#allchildren)
 - [blendMode](LineNode.md#blendmode)
 - [endArrowHeadType](LineNode.md#endarrowheadtype)
-- [endX](LineNode.md#endX)
-- [endY](LineNode.md#endY)
+- [endX](LineNode.md#endx)
+- [endY](LineNode.md#endy)
 - [locked](LineNode.md#locked)
 - [opacity](LineNode.md#opacity)
 - [parent](LineNode.md#parent)
-- [relativeRotation](LineNode.md#relativerotation)
-- [relativeTransform](LineNode.md#relativetransform)
+- [rotation](LineNode.md#rotation)
+- [rotationInScreen](LineNode.md#rotationinscreen)
 - [startArrowHeadType](LineNode.md#startarrowheadtype)
-- [startX](LineNode.md#startX)
-- [startY](LineNode.md#startY)
+- [startX](LineNode.md#startx)
+- [startY](LineNode.md#starty)
 - [strokes](LineNode.md#strokes)
-- [translateX](LineNode.md#translateX)
-- [translateY](LineNode.md#translateY)
+- [transformMatrix](LineNode.md#transformmatrix)
+- [translation](LineNode.md#translation)
 - [type](LineNode.md#type)
 
 ### Methods
 
 - [removeFromParent](LineNode.md#removefromparent)
 - [setEndPoints](LineNode.md#setendpoints)
+- [setPositionInParent](LineNode.md#setpositioninparent)
+- [setRotationInParent](LineNode.md#setrotationinparent)
 
 ## Properties
 
@@ -71,65 +70,7 @@ ___
 
 ▪ `Static` `Readonly` **DEFAULT\_START\_Y**: ``0``
 
-___
-
-### DEFAULT\_STROKE\_WIDTH
-
-▪ `Static` **DEFAULT\_STROKE\_WIDTH**: `number` = `20`
-
-#### Inherited from
-
-[StrokableNode](StrokableNode.md).[DEFAULT_STROKE_WIDTH](StrokableNode.md#DEFAULT_STROKE_WIDTH)
-
 ## Accessors
-
-### absoluteRotation
-
-• `get` **absoluteRotation**(): `number`
-
-The node's absolute (global) rotation angle in degrees – includes any cumulative rotation from the node's parent containers.
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-StrokableNode.absoluteRotation
-
-• `set` **absoluteRotation**(`value`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-StrokableNode.absoluteRotation
-
-___
-
-### absoluteTransform
-
-• `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
-
-The node's absolute (global) transform matrix.
-
-#### Returns
-
-[`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
-
-#### Inherited from
-
-StrokableNode.absoluteTransform
-
-___
 
 ### allChildren
 
@@ -320,13 +261,12 @@ StrokableNode.parent
 
 ___
 
-### relativeRotation
+### rotation
 
-• `get` **relativeRotation**(): `number`
+• `get` **rotation**(): `number`
 
-The node's local rotation value in degrees, relative to its parent's axes. Modifying this value will also adjust the
-node's x & y translation such that the node's center is in the same location after the rotation – i.e. this setter
-rotates the node about its bounding box's center, not its origin.
+The node's local rotation angle in degrees, relative to its parent's axes. Use `setRotationInParent` to
+change rotation by rotating around a defined centerpoint.
 
 #### Returns
 
@@ -334,39 +274,24 @@ rotates the node about its bounding box's center, not its origin.
 
 #### Inherited from
 
-StrokableNode.relativeRotation
-
-• `set` **relativeRotation**(`value`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-StrokableNode.relativeRotation
+StrokableNode.rotation
 
 ___
 
-### relativeTransform
+### rotationInScreen
 
-• `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
+• `get` **rotationInScreen**(): `number`
 
-The node's transform matrix relative to its parent.
+The node's total rotation angle in degrees, relative to the overall global view of the document – including any
+cumulative rotation from the node's parent containers.
 
 #### Returns
 
-[`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
+`number`
 
 #### Inherited from
 
-StrokableNode.relativeTransform
+StrokableNode.rotationInScreen
 
 ___
 
@@ -442,59 +367,47 @@ StrokableNode.strokes
 
 ___
 
-### translateX
+### transformMatrix
 
-• `get` **translateX**(): `number`
+• `get` **transformMatrix**(): `https://glmatrix.net/docs/module-mat2d.html`
 
-The translation of the node along its parent's x-axis.
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-StrokableNode.translateX
-
-• `set` **translateX**(`value`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
+The node's transform matrix relative to its parent.
 
 #### Returns
 
-`void`
+`https://glmatrix.net/docs/module-mat2d.html`
 
 #### Inherited from
 
-StrokableNode.translateX
+StrokableNode.transformMatrix
 
 ___
 
-### translateY
+### translation
 
-• `get` **translateY**(): `number`
+• `get` **translation**(): `Readonly`<{ `x`: `number` ; `y`: `number`  }\>
 
-The translation of the node along its parent's y-axis.
+The translation of the node along its parent's axes. This is identical to the translation component of
+`transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
+setting translation directly.
 
 #### Returns
 
-`number`
+`Readonly`<{ `x`: `number` ; `y`: `number`  }\>
 
 #### Inherited from
 
-StrokableNode.translateY
+StrokableNode.translation
 
-• `set` **translateY**(`value`): `void`
+• `set` **translation**(`value`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `number` |
+| `value` | `Object` |
+| `value.x` | `number` |
+| `value.y` | `number` |
 
 #### Returns
 
@@ -502,7 +415,7 @@ StrokableNode.translateY
 
 #### Inherited from
 
-StrokableNode.translateY
+StrokableNode.translation
 
 ___
 
@@ -545,8 +458,8 @@ ___
 ▸ **setEndPoints**(`startX`, `startY`, `endX`, `endY`): `void`
 
 Set the start and end points of the line in its local coordinate space (which may
-differ from its parent's coordinate space based on `relativeTransform`, i.e.
-`relativeRotation` and `translateX`/`Y`). The values passed in may be normalized
+differ from its parent's coordinate space based on `transformMatrix`, i.e.
+`rotation` and `translation`). The values passed in may be normalized
 by this setter, shifting the node's translation and counter-shifting the start/end
 points. Therefore, the start/end getters may return values different from the values
 you passed into this setter, even though the line's visual bounds and appearance are
@@ -564,3 +477,70 @@ the same. Rotation is preserved.
 #### Returns
 
 `void`
+
+___
+
+### setPositionInParent
+
+▸ **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
+
+Move the node so the given `localRegistrationPoint` in its local coordinates is placed at the given
+`parentPoint` in its parent's coordinates (taking into account any rotation on this node, etc.).
+
+**`Example`**
+
+Center a rectangle within its parent artboard:
+```
+rectangle.setPositionInParent(
+    { x: artboard.width / 2, y: artboard.height / 2 },
+    { x: rectangle.width / 2, y: rectangle.height / 2 }
+);
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parentPoint` | [`Point`](../interfaces/Point.md) | Point in this node's parent's coordinate space to move `localRegistrationPoint` to |
+| `localRegistrationPoint` | [`Point`](../interfaces/Point.md) | Point in this node's local coordinate space to align with `parentPoint` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[StrokableNode](StrokableNode.md).[setPositionInParent](StrokableNode.md#setpositioninparent)
+
+___
+
+### setRotationInParent
+
+▸ **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
+
+Set the node’s rotation angle relative to its parent to exactly the given value, keeping the given point in the
+node’s local coordinate space at a fixed location within the parent. Disregards any rotation the node may already
+have had. The angle set here may not be the absolute rotation angle seen on screen, if the parent or other
+ancestors have any rotation of their own.
+
+**`Example`**
+
+Rotate the rectangle 45 degrees clockwise around its centerpoint:
+```
+rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `angleInDegrees` | `number` | Angle in degrees. |
+| `localRotationPoint` | [`Point`](../interfaces/Point.md) | Point to rotate around, in node's local coordinates. |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[StrokableNode](StrokableNode.md).[setRotationInParent](StrokableNode.md#setrotationinparent)

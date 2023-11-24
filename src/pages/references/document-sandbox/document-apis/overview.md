@@ -44,8 +44,11 @@
 - [ReadOnlyItemList](classes/ReadOnlyItemList.md)
 - [RectangleNode](classes/RectangleNode.md)
 - [RestrictedItemList](classes/RestrictedItemList.md)
+- [SolidColorShapeNode](classes/SolidColorShapeNode.md)
 - [StrokableNode](classes/StrokableNode.md)
+- [StrokeShapeNode](classes/StrokeShapeNode.md)
 - [TextNode](classes/TextNode.md)
+- [UnknownNode](classes/UnknownNode.md)
 
 ### Interfaces
 
@@ -56,6 +59,7 @@
 - [IRectangularNode](interfaces/IRectangularNode.md)
 - [IStrokableNode](interfaces/IStrokableNode.md)
 - [ListItem](interfaces/ListItem.md)
+- [Point](interfaces/Point.md)
 - [RectangleGeometry](interfaces/RectangleGeometry.md)
 - [Stroke](interfaces/Stroke.md)
 - [StrokeOptions](interfaces/StrokeOptions.md)

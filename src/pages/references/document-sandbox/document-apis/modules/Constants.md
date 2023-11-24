@@ -6,13 +6,13 @@
 
 ### References
 
-- [ArrowHeadType](Constants.md#ArrowHeadType)
-- [BlendMode](Constants.md#BlendMode)
-- [FillRule](Constants.md#FillRule)
-- [FillType](Constants.md#FillType)
-- [SceneNodeType](Constants.md#SceneNodeType)
-- [StrokePosition](Constants.md#StrokePosition)
-- [TextAlignment](Constants.md#TextAlignment)
+- [ArrowHeadType](Constants.md#arrowheadtype)
+- [BlendMode](Constants.md#blendmode)
+- [FillRule](Constants.md#fillrule)
+- [FillType](Constants.md#filltype)
+- [SceneNodeType](Constants.md#scenenodetype)
+- [StrokePosition](Constants.md#strokeposition)
+- [TextAlignment](Constants.md#textalignment)
 
 ## References
 

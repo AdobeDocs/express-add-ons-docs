@@ -106,15 +106,11 @@ addOnUISdk.ready.then(async () => {
         performWorkOnUI: function (data, someFlag) {
             // Do some ui operation
         },
-        getDataFromUI: async function () {
-            let resolver = undefined;
-            
+        getDataFromUI: async function () {            
             const promise = new Promise((resolve) => {
-                resolver = resolve;
+                resolve("button_color_blue");
             });
-            setTimeout(() => {
-                resolver("button_color_blue");
-            }, 10);
+
             return await promise;
         },
     };
@@ -141,7 +137,6 @@ async function callUIApis() {
         },
         true
     );
-    
 
     const result = await uiApis.getDataFromUI();
     console.log("Data from UI: " + result);

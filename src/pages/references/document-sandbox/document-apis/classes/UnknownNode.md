@@ -1,47 +1,35 @@
-[@express-document-sdk](../overview.md) / ArtboardNode
+[@express-document-sdk](../overview.md) / UnknownNode
 
-# Class: ArtboardNode
+# Class: UnknownNode
 
-An ArtboardNode represents an artboard object in the scenegraph. All user visual content must be contained on an artboard.
-
-When multiple artboards exist on a page, the artboards represent "scenes" in a linear timeline sequence.
+An UnknownNode is a node with limited support and therefore treated as a leaf node.
 
 ## Hierarchy
 
-- [`ContainerNode`](ContainerNode.md)
+- [`Node`](Node.md)
 
-  ↳ **`ArtboardNode`**
-
-## Implements
-
-- [`IRectangularNode`](../interfaces/IRectangularNode.md)
-- [`IStrokableNode`](../interfaces/IStrokableNode.md)
+  ↳ **`UnknownNode`**
 
 ## Table of contents
 
 ### Accessors
 
-- [allChildren](ArtboardNode.md#allchildren)
-- [blendMode](ArtboardNode.md#blendmode)
-- [children](ArtboardNode.md#children)
-- [fill](ArtboardNode.md#fill)
-- [height](ArtboardNode.md#height)
-- [locked](ArtboardNode.md#locked)
-- [opacity](ArtboardNode.md#opacity)
-- [parent](ArtboardNode.md#parent)
-- [rotation](ArtboardNode.md#rotation)
-- [rotationInScreen](ArtboardNode.md#rotationinscreen)
-- [strokes](ArtboardNode.md#strokes)
-- [transformMatrix](ArtboardNode.md#transformmatrix)
-- [translation](ArtboardNode.md#translation)
-- [type](ArtboardNode.md#type)
-- [width](ArtboardNode.md#width)
+- [allChildren](UnknownNode.md#allchildren)
+- [blendMode](UnknownNode.md#blendmode)
+- [locked](UnknownNode.md#locked)
+- [opacity](UnknownNode.md#opacity)
+- [parent](UnknownNode.md#parent)
+- [rotation](UnknownNode.md#rotation)
+- [rotationInScreen](UnknownNode.md#rotationinscreen)
+- [transformMatrix](UnknownNode.md#transformmatrix)
+- [translation](UnknownNode.md#translation)
+- [type](UnknownNode.md#type)
 
 ### Methods
 
-- [removeFromParent](ArtboardNode.md#removefromparent)
-- [setPositionInParent](ArtboardNode.md#setpositioninparent)
-- [setRotationInParent](ArtboardNode.md#setrotationinparent)
+- [removeFromParent](UnknownNode.md#removefromparent)
+- [setPositionInParent](UnknownNode.md#setpositioninparent)
+- [setRotationInParent](UnknownNode.md#setrotationinparent)
 
 ## Accessors
 
@@ -60,7 +48,7 @@ overall display z-order.
 
 #### Inherited from
 
-ContainerNode.allChildren
+Node.allChildren
 
 ___
 
@@ -77,7 +65,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 #### Inherited from
 
-ContainerNode.blendMode
+Node.blendMode
 
 • `set` **blendMode**(`value`): `void`
 
@@ -93,63 +81,7 @@ ContainerNode.blendMode
 
 #### Inherited from
 
-ContainerNode.blendMode
-
-___
-
-### children
-
-• `get` **children**(): [`ItemList`](ItemList.md)<[`Node`](Node.md)\>
-
-The node's children. Use the methods on this ItemList object to get, add, and remove children.
-
-#### Returns
-
-[`ItemList`](ItemList.md)<[`Node`](Node.md)\>
-
-#### Inherited from
-
-ContainerNode.children
-
-___
-
-### fill
-
-• `get` **fill**(): [`Fill`](../interfaces/Fill.md)
-
-The background fill of the artboard.
-
-#### Returns
-
-[`Fill`](../interfaces/Fill.md)
-
-• `set` **fill**(`fill`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `fill` | [`Fill`](../interfaces/Fill.md) |
-
-#### Returns
-
-`void`
-
-___
-
-### height
-
-• `get` **height**(): `number`
-
-The height of the artboard.
-
-#### Returns
-
-`number`
-
-#### Implementation of
-
-[IRectangularNode](../interfaces/IRectangularNode.md).[height](../interfaces/IRectangularNode.md#height)
+Node.blendMode
 
 ___
 
@@ -166,7 +98,7 @@ cannot be edited by the user unless they are unlocked first.
 
 #### Inherited from
 
-ContainerNode.locked
+Node.locked
 
 • `set` **locked**(`locked`): `void`
 
@@ -182,7 +114,7 @@ ContainerNode.locked
 
 #### Inherited from
 
-ContainerNode.locked
+Node.locked
 
 ___
 
@@ -198,7 +130,7 @@ The node's opacity, from 0.0 to 1.0
 
 #### Inherited from
 
-ContainerNode.opacity
+Node.opacity
 
 • `set` **opacity**(`opacity`): `void`
 
@@ -214,23 +146,23 @@ ContainerNode.opacity
 
 #### Inherited from
 
-ContainerNode.opacity
+Node.opacity
 
 ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`PageNode`](PageNode.md)
+• `get` **parent**(): `undefined` \| [`Node`](Node.md)
 
-The node's parent. Undefined if the node is an orphan.
+The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`PageNode`](PageNode.md)
+`undefined` \| [`Node`](Node.md)
 
-#### Overrides
+#### Inherited from
 
-ContainerNode.parent
+Node.parent
 
 ___
 
@@ -247,7 +179,7 @@ change rotation by rotating around a defined centerpoint.
 
 #### Inherited from
 
-ContainerNode.rotation
+Node.rotation
 
 ___
 
@@ -264,23 +196,7 @@ cumulative rotation from the node's parent containers.
 
 #### Inherited from
 
-ContainerNode.rotationInScreen
-
-___
-
-### strokes
-
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-Any strokes(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
-
-#### Returns
-
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-#### Implementation of
-
-[IStrokableNode](../interfaces/IStrokableNode.md).[strokes](../interfaces/IStrokableNode.md#strokes)
+Node.rotationInScreen
 
 ___
 
@@ -296,7 +212,7 @@ The node's transform matrix relative to its parent.
 
 #### Inherited from
 
-ContainerNode.transformMatrix
+Node.transformMatrix
 
 ___
 
@@ -314,7 +230,7 @@ setting translation directly.
 
 #### Inherited from
 
-ContainerNode.translation
+Node.translation
 
 • `set` **translation**(`value`): `void`
 
@@ -332,7 +248,7 @@ ContainerNode.translation
 
 #### Inherited from
 
-ContainerNode.translation
+Node.translation
 
 ___
 
@@ -348,23 +264,7 @@ The node's type.
 
 #### Inherited from
 
-ContainerNode.type
-
-___
-
-### width
-
-• `get` **width**(): `number`
-
-The width of the artboard.
-
-#### Returns
-
-`number`
-
-#### Implementation of
-
-[IRectangularNode](../interfaces/IRectangularNode.md).[width](../interfaces/IRectangularNode.md#width)
+Node.type
 
 ## Methods
 
@@ -382,7 +282,7 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[removeFromParent](ContainerNode.md#removefromparent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)
 
 ___
 
@@ -416,7 +316,7 @@ rectangle.setPositionInParent(
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[setPositionInParent](ContainerNode.md#setpositioninparent)
+[Node](Node.md).[setPositionInParent](Node.md#setpositioninparent)
 
 ___
 
@@ -449,4 +349,4 @@ rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height 
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[setRotationInParent](ContainerNode.md#setrotationinparent)
+[Node](Node.md).[setRotationInParent](Node.md#setrotationinparent)
