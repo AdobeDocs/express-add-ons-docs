@@ -26,7 +26,7 @@ Updated [Document API references](./document-sandbox/document-apis/) to include:
 
 - [ComplexShapeNode class](./document-sandbox/document-apis/classes/ComplexShapeNode.md)
 - [GridLayoutNode class](./document-sandbox/document-apis/classes/GridLayoutNode.md)
-- [IStrokableNode interface](./document-sandbox/document-apis/classes/IStrokableNode.md)
+- [IStrokableNode interface](./document-sandbox/document-apis/interfaces/IStrokableNode.md)
 - [FillRule constant](./document-sandbox/document-apis/enums/FillRule.md)
 
 ## 2023-11-6
