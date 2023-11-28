@@ -133,6 +133,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/Color.md",
                   },
                   {
+                    title: "ComplexShapeNode",
+                    path: "references/document-sandbox/document-apis/classes/ComplexShapeNode.md",
+                  },
+                  {
                     title: "ContainerNode",
                     path: "references/document-sandbox/document-apis/classes/ContainerNode.md",
                   },
@@ -141,13 +145,13 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/Context.md",
                   },
                   {
-                    title: "EllipseNode",
-                    path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
-                  },
-                  {
                     title: "Editor",
                     path: "references/document-sandbox/document-apis/classes/Editor.md",
                   },
+                  {
+                    title: "EllipseNode",
+                    path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
+                  },                  
                   {
                     title: "ExpressRootNode",
                     path: "references/document-sandbox/document-apis/classes/ExpressRootNode.md",
@@ -155,6 +159,10 @@ module.exports = {
                   {
                     title: "FillableNode",
                     path: "references/document-sandbox/document-apis/classes/FillableNode.md",
+                  },
+                  {
+                    title: "GridLayoutNode",
+                    path: "references/document-sandbox/document-apis/classes/GridLayoutNode.md",
                   },
                   {
                     title: "GroupNode",
@@ -235,6 +243,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/IRectangularNode.md",
                   },
                   {
+                    title: "IStrokableNode",
+                    path: "references/document-sandbox/document-apis/interfaces/IStrokableNode.md",
+                  },
+                  {
                     title: "ListItem",
                     path: "references/document-sandbox/document-apis/interfaces/ListItem.md",
                   },
@@ -272,6 +284,10 @@ module.exports = {
                   {
                     title: "BlendMode",
                     path: "references/document-sandbox/document-apis/enums/BlendMode.md",
+                  },
+                  {
+                    title: "FillRule",
+                    path: "references/document-sandbox/document-apis/enums/FillRule.md",
                   },
                   {
                     title: "FillType",

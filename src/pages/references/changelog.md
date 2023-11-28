@@ -20,6 +20,15 @@ contributors:
 
 # Changelog
 
+## 2023-11-27
+
+Updated [Document API references](./document-sandbox/document-apis/) to include:
+
+- [ComplexShapeNode class](./document-sandbox/document-apis/classes/ComplexShapeNode.md)
+- [GridLayoutNode class](./document-sandbox/document-apis/classes/GridLayoutNode.md)
+- [IStrokableNode interface](./document-sandbox/document-apis/interfaces/IStrokableNode.md)
+- [FillRule constant](./document-sandbox/document-apis/enums/FillRule.md)
+
 ## 2023-11-6
 
 - Added a [new tutorial section](../guides/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../guides/tutorials/grids-addon.md) by Davide Barranca.
