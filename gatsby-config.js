@@ -151,7 +151,7 @@ module.exports = {
                   {
                     title: "EllipseNode",
                     path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
-                  },                  
+                  },
                   {
                     title: "ExpressRootNode",
                     path: "references/document-sandbox/document-apis/classes/ExpressRootNode.md",
@@ -203,6 +203,10 @@ module.exports = {
                   {
                     title: "RectangleNode",
                     path: "references/document-sandbox/document-apis/classes/RectangleNode.md",
+                  },
+                  {
+                    title: "RestrictedItemList",
+                    path: "references/document-sandbox/document-apis/classes/RestrictedItemList.md",
                   },
                   {
                     title: "SolidColorShapeNode",
