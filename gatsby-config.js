@@ -239,6 +239,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/ListItem.md",
                   },
                   {
+                    title: "Point",
+                    path: "references/document-sandbox/document-apis/interfaces/Point.md",
+                  },
+                  {
                     title: "RectangleGeometry",
                     path: "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md",
                   },
