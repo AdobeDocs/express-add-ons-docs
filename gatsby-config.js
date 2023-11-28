@@ -205,12 +205,24 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/RectangleNode.md",
                   },
                   {
+                    title: "SolidColorShapeNode",
+                    path: "references/document-sandbox/document-apis/classes/SolidColorShapeNode.md",
+                  },
+                  {
                     title: "StrokableNode",
                     path: "references/document-sandbox/document-apis/classes/StrokableNode.md",
                   },
                   {
+                    title: "StrokeShapeNode",
+                    path: "references/document-sandbox/document-apis/classes/StrokeShapeNode.md",
+                  },
+                  {
                     title: "TextNode",
                     path: "references/document-sandbox/document-apis/classes/TextNode.md",
+                  },
+                  {
+                    title: "UnknownNode",
+                    path: "references/document-sandbox/document-apis/classes/UnknownNode.md",
                   },
                 ],
               },
