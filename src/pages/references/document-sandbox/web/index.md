@@ -23,7 +23,7 @@ The Web APIs refer to the set of commonly used APIs that are injected by the scr
 
 ## Overview
 
-The Web APIs provide implementations of some common objects and functions for you to use in your script code to perform things like logging to the console. They are limited to a set of basic functions currently, as outlined in the next section. Most of the browsers APIs/Global Objects are not available in Script Runtime. For these, the developers can use iframe runtime environment and [communicate](../communication/index.md#expose-apis-from-the-ui) the result back to the script running inside script runtime environment.
+The document sandbox runtime provides implementations of some common Web APIs to perform tasks like logging to the console. They are limited to a set of basic functions currently, as outlined in the next section. Most of the browser's usual APIs/Global Objects are not available in the document sandbox. You can invoke other browser APIs using the iframe runtime environment and [communicate](../communication/index.md#expose-apis-from-the-ui) the result back to your code running inside the sandbox runtime.
 
 <InlineAlert slots="text" variant="success"/>
 
