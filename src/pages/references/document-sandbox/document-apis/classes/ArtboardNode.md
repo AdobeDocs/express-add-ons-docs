@@ -21,8 +21,6 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 
 ### Accessors
 
-- [absoluteRotation](ArtboardNode.md#absoluterotation)
-- [absoluteTransform](ArtboardNode.md#absolutetransform)
 - [allChildren](ArtboardNode.md#allchildren)
 - [blendMode](ArtboardNode.md#blendmode)
 - [children](ArtboardNode.md#children)
@@ -31,67 +29,21 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 - [locked](ArtboardNode.md#locked)
 - [opacity](ArtboardNode.md#opacity)
 - [parent](ArtboardNode.md#parent)
-- [relativeRotation](ArtboardNode.md#relativerotation)
-- [relativeTransform](ArtboardNode.md#relativetransform)
+- [rotation](ArtboardNode.md#rotation)
+- [rotationInScreen](ArtboardNode.md#rotationinscreen)
 - [strokes](ArtboardNode.md#strokes)
-- [translateX](ArtboardNode.md#translatex)
-- [translateY](ArtboardNode.md#translatey)
+- [transformMatrix](ArtboardNode.md#transformmatrix)
+- [translation](ArtboardNode.md#translation)
 - [type](ArtboardNode.md#type)
 - [width](ArtboardNode.md#width)
 
 ### Methods
 
 - [removeFromParent](ArtboardNode.md#removefromparent)
+- [setPositionInParent](ArtboardNode.md#setpositioninparent)
+- [setRotationInParent](ArtboardNode.md#setrotationinparent)
 
 ## Accessors
-
-### absoluteRotation
-
-• `get` **absoluteRotation**(): `number`
-
-The node's absolute (global) rotation angle in degrees – includes any cumulative rotation from the node's parent containers.
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-ContainerNode.absoluteRotation
-
-• `set` **absoluteRotation**(`value`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-ContainerNode.absoluteRotation
-
-___
-
-### absoluteTransform
-
-• `get` **absoluteTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
-
-The node's absolute (global) transform matrix.
-
-#### Returns
-
-[`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
-
-#### Inherited from
-
-ContainerNode.absoluteTransform
-
-___
 
 ### allChildren
 
@@ -282,13 +234,12 @@ ContainerNode.parent
 
 ___
 
-### relativeRotation
+### rotation
 
-• `get` **relativeRotation**(): `number`
+• `get` **rotation**(): `number`
 
-The node's local rotation value in degrees, relative to its parent's axes. Modifying this value will also adjust the
-node's x & y translation such that the node's center is in the same location after the rotation – i.e. this setter
-rotates the node about its bounding box's center, not its origin.
+The node's local rotation angle in degrees, relative to its parent's axes. Use `setRotationInParent` to
+change rotation by rotating around a defined centerpoint.
 
 #### Returns
 
@@ -296,39 +247,24 @@ rotates the node about its bounding box's center, not its origin.
 
 #### Inherited from
 
-ContainerNode.relativeRotation
-
-• `set` **relativeRotation**(`value`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-ContainerNode.relativeRotation
+ContainerNode.rotation
 
 ___
 
-### relativeTransform
+### rotationInScreen
 
-• `get` **relativeTransform**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
+• `get` **rotationInScreen**(): `number`
 
-The node's transform matrix relative to its parent.
+The node's total rotation angle in degrees, relative to the overall global view of the document – including any
+cumulative rotation from the node's parent containers.
 
 #### Returns
 
-[`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
+`number`
 
 #### Inherited from
 
-ContainerNode.relativeTransform
+ContainerNode.rotationInScreen
 
 ___
 
@@ -348,59 +284,47 @@ Any strokes(s) on the shape. Use the methods on this ItemList object to get, add
 
 ___
 
-### translateX
+### transformMatrix
 
-• `get` **translateX**(): `number`
+• `get` **transformMatrix**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
-The translation of the node along its parent's x-axis.
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-ContainerNode.translateX
-
-• `set` **translateX**(`value`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
+The node's transform matrix relative to its parent.
 
 #### Returns
 
-`void`
+[`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
 #### Inherited from
 
-ContainerNode.translateX
+ContainerNode.transformMatrix
 
 ___
 
-### translateY
+### translation
 
-• `get` **translateY**(): `number`
+• `get` **translation**(): `Readonly`<{ `x`: `number` ; `y`: `number`  }\>
 
-The translation of the node along its parent's y-axis.
+The translation of the node along its parent's axes. This is identical to the translation component of
+`transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
+setting translation directly.
 
 #### Returns
 
-`number`
+`Readonly`<{ `x`: `number` ; `y`: `number`  }\>
 
 #### Inherited from
 
-ContainerNode.translateY
+ContainerNode.translation
 
-• `set` **translateY**(`value`): `void`
+• `set` **translation**(`value`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `number` |
+| `value` | `Object` |
+| `value.x` | `number` |
+| `value.y` | `number` |
 
 #### Returns
 
@@ -408,7 +332,7 @@ ContainerNode.translateY
 
 #### Inherited from
 
-ContainerNode.translateY
+ContainerNode.translation
 
 ___
 
@@ -459,3 +383,72 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 #### Inherited from
 
 [ContainerNode](ContainerNode.md).[removeFromParent](ContainerNode.md#removefromparent)
+
+___
+
+### setPositionInParent
+
+▸ **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
+
+Move the node so the given `localRegistrationPoint` in its local coordinates is placed at the given
+`parentPoint` in its parent's coordinates (taking into account any rotation on this node, etc.).
+
+**`Example`**
+
+Center a rectangle within its parent artboard:
+
+```js
+rectangle.setPositionInParent(
+    { x: artboard.width / 2, y: artboard.height / 2 },
+    { x: rectangle.width / 2, y: rectangle.height / 2 }
+);
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parentPoint` | [`Point`](../interfaces/Point.md) | Point in this node's parent's coordinate space to move `localRegistrationPoint` to |
+| `localRegistrationPoint` | [`Point`](../interfaces/Point.md) | Point in this node's local coordinate space to align with `parentPoint` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[ContainerNode](ContainerNode.md).[setPositionInParent](ContainerNode.md#setpositioninparent)
+
+___
+
+### setRotationInParent
+
+▸ **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
+
+Set the node’s rotation angle relative to its parent to exactly the given value, keeping the given point in the
+node’s local coordinate space at a fixed location within the parent. Disregards any rotation the node may already
+have had. The angle set here may not be the absolute rotation angle seen on screen, if the parent or other
+ancestors have any rotation of their own.
+
+**`Example`**
+
+Rotate the rectangle 45 degrees clockwise around its centerpoint:
+
+```js
+rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `angleInDegrees` | `number` | Angle in degrees. |
+| `localRotationPoint` | [`Point`](../interfaces/Point.md) | Point to rotate around, in node's local coordinates. |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[ContainerNode](ContainerNode.md).[setRotationInParent](ContainerNode.md#setrotationinparent)

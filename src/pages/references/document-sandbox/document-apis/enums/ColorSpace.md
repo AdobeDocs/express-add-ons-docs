@@ -8,7 +8,7 @@ Available color spaces. Currently only sRGB is supported.
 
 ### Enumeration Members
 
-- [sRGB](ColorSpace.md#sRGB)
+- [sRGB](ColorSpace.md#srgb)
 
 ## Enumeration Members
 

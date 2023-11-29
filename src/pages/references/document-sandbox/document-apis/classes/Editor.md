@@ -28,6 +28,7 @@ Entry point for APIs that read or modify the document's content.
 - [createStroke](Editor.md#createstroke)
 - [createText](Editor.md#createtext)
 - [loadBitmapImage](Editor.md#loadbitmapimage)
+- [queueAsyncEdit](Editor.md#queueasyncedit)
 
 ## Accessors
 
@@ -216,3 +217,53 @@ return value can be used immediately. The local client will act as having unsave
 #### Returns
 
 `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+
+___
+
+### queueAsyncEdit
+
+▸ **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
+
+Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
+the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
+asynchronous operation such as [loadBitmapImage](Editor.md#loadbitmapimage), any edits following this pause must be scheduled using
+queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
+
+The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
+to users. However, note that queueAsyncEdit() will return *before* your function has been run.
+If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
+or await the Promise returned by queueAsyncEdit().
+
+Generally, calling any setter or method is treated as an edit; but simple getters may be safely called at any time.
+
+Example of typical usage:
+
+```javascript
+// Assume insertImage() is called from your UI code, and given a Blob containing image data
+async function insertImage(blob) {
+    // This function was invoked from the UI iframe, so we can make any edits we want synchronously here.
+    // Initially load the bitmap - an async operation
+    const bitmapImage = await editor.loadBitmapImage(blob);
+
+    // Execution doesn't arrive at this line until an async delay, due to the Promise 'await' above
+
+    // Further edits need to be queued to run at a safe time
+    editor.queueAsyncEdit(() => {
+         // Create scenenode to display the image, and add it to the current artboard
+         const mediaContainer = editor.createImageContainer(bitmapImage);
+         editor.context.insertionParent.children.append(mediaContainer);
+    });
+}
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `lambda` | () => `void` | a function which edits the document model. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.

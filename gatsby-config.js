@@ -151,7 +151,7 @@ module.exports = {
                   {
                     title: "EllipseNode",
                     path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
-                  },                  
+                  },
                   {
                     title: "ExpressRootNode",
                     path: "references/document-sandbox/document-apis/classes/ExpressRootNode.md",
@@ -205,12 +205,28 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/RectangleNode.md",
                   },
                   {
+                    title: "RestrictedItemList",
+                    path: "references/document-sandbox/document-apis/classes/RestrictedItemList.md",
+                  },
+                  {
+                    title: "SolidColorShapeNode",
+                    path: "references/document-sandbox/document-apis/classes/SolidColorShapeNode.md",
+                  },
+                  {
                     title: "StrokableNode",
                     path: "references/document-sandbox/document-apis/classes/StrokableNode.md",
                   },
                   {
+                    title: "StrokeShapeNode",
+                    path: "references/document-sandbox/document-apis/classes/StrokeShapeNode.md",
+                  },
+                  {
                     title: "TextNode",
                     path: "references/document-sandbox/document-apis/classes/TextNode.md",
+                  },
+                  {
+                    title: "UnknownNode",
+                    path: "references/document-sandbox/document-apis/classes/UnknownNode.md",
                   },
                 ],
               },
@@ -249,6 +265,10 @@ module.exports = {
                   {
                     title: "ListItem",
                     path: "references/document-sandbox/document-apis/interfaces/ListItem.md",
+                  },
+                  {
+                    title: "Point",
+                    path: "references/document-sandbox/document-apis/interfaces/Point.md",
                   },
                   {
                     title: "RectangleGeometry",

@@ -31,7 +31,6 @@ The document sandbox and iframe runtime are two different runtime execution envi
 A default exported module from `AddOnScriptSdk` is provided to enable the communication between the iframe and the document sandbox via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
 
 ```js
-// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
 import AddOnScriptSdk from "AddOnScriptSdk"; // AddOnScriptSdk is a default import
 
 const { runtime } = AddOnScriptSdk.instance; // runtime object provides direct access to the comm methods
@@ -48,7 +47,6 @@ This example shows how to expose APIs from the document sandbox SDK (via `code.j
 #### `code.js`
 
 ```js
-// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
 import AddOnScriptSdk from "AddOnScriptSdk"; 
 
 const { runtime } = AddOnScriptSdk.instance; 
@@ -106,15 +104,11 @@ addOnUISdk.ready.then(async () => {
         performWorkOnUI: function (data, someFlag) {
             // Do some ui operation
         },
-        getDataFromUI: async function () {
-            let resolver = undefined;
-            
+        getDataFromUI: async function () {            
             const promise = new Promise((resolve) => {
-                resolver = resolve;
+                resolve("button_color_blue");
             });
-            setTimeout(() => {
-                resolver("button_color_blue");
-            }, 10);
+
             return await promise;
         },
     };
@@ -126,7 +120,6 @@ addOnUISdk.ready.then(async () => {
 #### `code.js`
 
 ```js
-// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
 import AddOnScriptSdk from "AddOnScriptSdk"; // default import
 
 const { runtime } = AddOnScriptSdk.instance;
@@ -141,7 +134,6 @@ async function callUIApis() {
         },
         true
     );
-    
 
     const result = await uiApis.getDataFromUI();
     console.log("Data from UI: " + result);

@@ -8,7 +8,8 @@
 
 <InlineAlert slots="text" variant="warning"/>
 
-*Additional node types may be added in the future.* If your code has different branches or cases depending on node type, always have a default/fallback case to handle any unknown values you may encounter.
+*Additional node types may be added in the future.* If your code has different branches or cases depending on node type,
+always have a default/fallback case to handle any unknown values you may encounter.
 
 ## Table of contents
 
@@ -28,6 +29,8 @@
 - [path](SceneNodeType.md#path)
 - [polygon](SceneNodeType.md#polygon)
 - [rectangle](SceneNodeType.md#rectangle)
+- [solidColorShape](SceneNodeType.md#solidcolorshape)
+- [strokeShape](SceneNodeType.md#strokeshape)
 - [text](SceneNodeType.md#text)
 
 ## Enumeration Members
@@ -48,7 +51,7 @@ ___
 
 • **complexShape** = ``"ComplexShape"``
 
-Type of ComplexShapeNode, representing a complex prepackaged shape that appears as a leaf node in the UI
+Type of ComplexShapeNode, representing a complex prepackaged shape with fill and stroke, that appears as a leaf node in the UI
 
 ___
 
@@ -123,6 +126,22 @@ ___
 ### rectangle
 
 • **rectangle** = ``"Rectangle"``
+
+___
+
+### solidColorShape
+
+• **solidColorShape** = ``"SolidColorShape"``
+
+Type of SolidColorShapeNode, representing a solid-color prepackaged shape that appears as a leaf node in the UI
+
+___
+
+### strokeShape
+
+• **strokeShape** = ``"StrokeShape"``
+
+Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appears as a leaf node in the UI
 
 ___
 

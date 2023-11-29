@@ -1,74 +1,37 @@
-[@express-document-sdk](../overview.md) / LineNode
+[@express-document-sdk](../overview.md) / StrokeShapeNode
 
-# Class: LineNode
+# Class: StrokeShapeNode
 
-A LineNode represents a simple line object in the scenegraph – a single straight-line segment.
+A StrokeShapeNode is prepackaged shape that has a single stroke property and appears as a leaf node in the UI, even
+if it is composed of multiple separate paths.
 
 ## Hierarchy
 
-- [`StrokableNode`](StrokableNode.md)
+- [`Node`](Node.md)
 
-  ↳ **`LineNode`**
+  ↳ **`StrokeShapeNode`**
 
 ## Table of contents
 
-### Properties
-
-- [DEFAULT\_END\_X](LineNode.md#default_END_X)
-- [DEFAULT\_END\_Y](LineNode.md#default_END_Y)
-- [DEFAULT\_START\_X](LineNode.md#default_START_X)
-- [DEFAULT\_START\_Y](LineNode.md#default_START_Y)
-
 ### Accessors
 
-- [allChildren](LineNode.md#allchildren)
-- [blendMode](LineNode.md#blendmode)
-- [endArrowHeadType](LineNode.md#endarrowheadtype)
-- [endX](LineNode.md#endx)
-- [endY](LineNode.md#endy)
-- [locked](LineNode.md#locked)
-- [opacity](LineNode.md#opacity)
-- [parent](LineNode.md#parent)
-- [rotation](LineNode.md#rotation)
-- [rotationInScreen](LineNode.md#rotationinscreen)
-- [startArrowHeadType](LineNode.md#startarrowheadtype)
-- [startX](LineNode.md#startx)
-- [startY](LineNode.md#starty)
-- [strokes](LineNode.md#strokes)
-- [transformMatrix](LineNode.md#transformmatrix)
-- [translation](LineNode.md#translation)
-- [type](LineNode.md#type)
+- [allChildren](StrokeShapeNode.md#allchildren)
+- [blendMode](StrokeShapeNode.md#blendmode)
+- [locked](StrokeShapeNode.md#locked)
+- [opacity](StrokeShapeNode.md#opacity)
+- [parent](StrokeShapeNode.md#parent)
+- [rotation](StrokeShapeNode.md#rotation)
+- [rotationInScreen](StrokeShapeNode.md#rotationinscreen)
+- [stroke](StrokeShapeNode.md#stroke)
+- [transformMatrix](StrokeShapeNode.md#transformmatrix)
+- [translation](StrokeShapeNode.md#translation)
+- [type](StrokeShapeNode.md#type)
 
 ### Methods
 
-- [removeFromParent](LineNode.md#removefromparent)
-- [setEndPoints](LineNode.md#setendpoints)
-- [setPositionInParent](LineNode.md#setpositioninparent)
-- [setRotationInParent](LineNode.md#setrotationinparent)
-
-## Properties
-
-### DEFAULT\_END\_X
-
-▪ `Static` `Readonly` **DEFAULT\_END\_X**: ``100``
-
-___
-
-### DEFAULT\_END\_Y
-
-▪ `Static` `Readonly` **DEFAULT\_END\_Y**: ``100``
-
-___
-
-### DEFAULT\_START\_X
-
-▪ `Static` `Readonly` **DEFAULT\_START\_X**: ``0``
-
-___
-
-### DEFAULT\_START\_Y
-
-▪ `Static` `Readonly` **DEFAULT\_START\_Y**: ``0``
+- [removeFromParent](StrokeShapeNode.md#removefromparent)
+- [setPositionInParent](StrokeShapeNode.md#setpositioninparent)
+- [setRotationInParent](StrokeShapeNode.md#setrotationinparent)
 
 ## Accessors
 
@@ -87,7 +50,7 @@ overall display z-order.
 
 #### Inherited from
 
-StrokableNode.allChildren
+Node.allChildren
 
 ___
 
@@ -104,7 +67,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 #### Inherited from
 
-StrokableNode.blendMode
+Node.blendMode
 
 • `set` **blendMode**(`value`): `void`
 
@@ -120,63 +83,7 @@ StrokableNode.blendMode
 
 #### Inherited from
 
-StrokableNode.blendMode
-
-___
-
-### endArrowHeadType
-
-• `get` **endArrowHeadType**(): [`ArrowHeadType`](../enums/ArrowHeadType.md)
-
-The shape encapsulating the end of a line. The size and color of the arrowhead
-depends on the first available stroke's weight and color assigned to the node.
-Removal of all strokes on this line leads to the arrowhead's removal.
-
-The getter returns [none](../enums/ArrowHeadType.md#none) when there are no strokes on the line
-or no arrowhead on the first stroke of the line.
-
-#### Returns
-
-[`ArrowHeadType`](../enums/ArrowHeadType.md)
-
-• `set` **endArrowHeadType**(`type`): `void`
-
-The setter creates a default stroke for the line when there are no strokes on the line,
-and updates the arrowhead on only the first stroke of the line.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `type` | [`ArrowHeadType`](../enums/ArrowHeadType.md) |
-
-#### Returns
-
-`void`
-
-___
-
-### endX
-
-• `get` **endX**(): `number`
-
-The end point on the x-axis in the parent's coordinate system. Modify using `setEndPoints()`.
-
-#### Returns
-
-`number`
-
-___
-
-### endY
-
-• `get` **endY**(): `number`
-
-The end point on the y-axis in the parent's coordinate system. Modify using `setEndPoints()`.
-
-#### Returns
-
-`number`
+Node.blendMode
 
 ___
 
@@ -193,7 +100,7 @@ cannot be edited by the user unless they are unlocked first.
 
 #### Inherited from
 
-StrokableNode.locked
+Node.locked
 
 • `set` **locked**(`locked`): `void`
 
@@ -209,7 +116,7 @@ StrokableNode.locked
 
 #### Inherited from
 
-StrokableNode.locked
+Node.locked
 
 ___
 
@@ -225,7 +132,7 @@ The node's opacity, from 0.0 to 1.0
 
 #### Inherited from
 
-StrokableNode.opacity
+Node.opacity
 
 • `set` **opacity**(`opacity`): `void`
 
@@ -241,7 +148,7 @@ StrokableNode.opacity
 
 #### Inherited from
 
-StrokableNode.opacity
+Node.opacity
 
 ___
 
@@ -257,7 +164,7 @@ The node's parent. Undefined if the node is an orphan, or if the node is the art
 
 #### Inherited from
 
-StrokableNode.parent
+Node.parent
 
 ___
 
@@ -274,7 +181,7 @@ change rotation by rotating around a defined centerpoint.
 
 #### Inherited from
 
-StrokableNode.rotation
+Node.rotation
 
 ___
 
@@ -291,79 +198,31 @@ cumulative rotation from the node's parent containers.
 
 #### Inherited from
 
-StrokableNode.rotationInScreen
+Node.rotationInScreen
 
 ___
 
-### startArrowHeadType
+### stroke
 
-• `get` **startArrowHeadType**(): [`ArrowHeadType`](../enums/ArrowHeadType.md)
+• `get` **stroke**(): `undefined` \| [`Stroke`](../interfaces/Stroke.md)
 
-The shape encapsulating the start of a line. The size and color of the arrowhead
-depends on the first available stroke's weight and color assigned to the node.
-Removal of all strokes on this line leads to the arrowhead's removal.
-
-The getter returns [none](../enums/ArrowHeadType.md#none) when there are no strokes on the line
-or no arrowhead on the first stroke of the line.
+Stroke on the shape.
 
 #### Returns
 
-[`ArrowHeadType`](../enums/ArrowHeadType.md)
+`undefined` \| [`Stroke`](../interfaces/Stroke.md)
 
-• `set` **startArrowHeadType**(`type`): `void`
-
-The setter creates a default stroke for the line when there are no strokes on the line,
-and updates the arrowhead on only the first stroke of the line.
+• `set` **stroke**(`stroke`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `type` | [`ArrowHeadType`](../enums/ArrowHeadType.md) |
+| `stroke` | `undefined` \| [`Stroke`](../interfaces/Stroke.md) |
 
 #### Returns
 
 `void`
-
-___
-
-### startX
-
-• `get` **startX**(): `number`
-
-The start point on the x-axis in the parent's coordinate system. Modify using `setEndPoints()`.
-
-#### Returns
-
-`number`
-
-___
-
-### startY
-
-• `get` **startY**(): `number`
-
-The start point on the y-axis in the parent's coordinate system. Modify using `setEndPoints()`.
-
-#### Returns
-
-`number`
-
-___
-
-### strokes
-
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
-
-#### Returns
-
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
-
-#### Inherited from
-
-StrokableNode.strokes
 
 ___
 
@@ -379,7 +238,7 @@ The node's transform matrix relative to its parent.
 
 #### Inherited from
 
-StrokableNode.transformMatrix
+Node.transformMatrix
 
 ___
 
@@ -397,7 +256,7 @@ setting translation directly.
 
 #### Inherited from
 
-StrokableNode.translation
+Node.translation
 
 • `set` **translation**(`value`): `void`
 
@@ -415,7 +274,7 @@ StrokableNode.translation
 
 #### Inherited from
 
-StrokableNode.translation
+Node.translation
 
 ___
 
@@ -431,7 +290,7 @@ The node's type.
 
 #### Inherited from
 
-StrokableNode.type
+Node.type
 
 ## Methods
 
@@ -449,34 +308,7 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removefromparent)
-
-___
-
-### setEndPoints
-
-▸ **setEndPoints**(`startX`, `startY`, `endX`, `endY`): `void`
-
-Set the start and end points of the line in its local coordinate space (which may
-differ from its parent's coordinate space based on `transformMatrix`, i.e.
-`rotation` and `translation`). The values passed in may be normalized
-by this setter, shifting the node's translation and counter-shifting the start/end
-points. Therefore, the start/end getters may return values different from the values
-you passed into this setter, even though the line's visual bounds and appearance are
-the same. Rotation is preserved.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `startX` | `number` |
-| `startY` | `number` |
-| `endX` | `number` |
-| `endY` | `number` |
-
-#### Returns
-
-`void`
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)
 
 ___
 
@@ -511,7 +343,7 @@ rectangle.setPositionInParent(
 
 #### Inherited from
 
-[StrokableNode](StrokableNode.md).[setPositionInParent](StrokableNode.md#setpositioninparent)
+[Node](Node.md).[setPositionInParent](Node.md#setpositioninparent)
 
 ___
 
@@ -545,4 +377,4 @@ rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height 
 
 #### Inherited from
 
-[StrokableNode](StrokableNode.md).[setRotationInParent](StrokableNode.md#setrotationinparent)
+[Node](Node.md).[setRotationInParent](Node.md#setrotationinparent)

@@ -20,6 +20,39 @@ contributors:
 
 # Changelog
 
+## 2023-11-28
+
+### Updates
+
+- The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
+
+ **New Classes/Interfaces**<br/>
+
+  - New [RestrictedItemList class](./document-sandbox/document-apis/classes/RestrictedItemList.md)
+  - New [UnknownNode class](./document-sandbox/document-apis/classes/UnknownNode.md)
+  - New [SolidColorShapeNode class](./document-sandbox/document-apis/classes/SolidColorShapeNode.md)
+  - New [Point interface](./document-sandbox/document-apis/interfaces/Point.md)
+  - New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
+
+ **Updates to Node Classes**<br/>
+
+ The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
+
+  - Removes `absoluteRotation` accessor
+  - Removes `absoluteTransform` accessor
+  - Removes `relativeRotation` accessor
+  - Removes `relativeTransform` accessor
+  - Removes `translateX` accessor
+  - Removes `translateY` accessor
+  - Adds `rotation` accessor
+  - Adds `rotationInScreen` accessor
+  - Adds `transformMatrix` accessor
+  - Adds `translation` accessor
+  - Adds `setPositionInParent` method
+  - Adds `setRotationInParent` method
+
+- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
+
 ## 2023-11-27
 
 Updated [Document API references](./document-sandbox/document-apis/) to include:
@@ -226,7 +259,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
   - Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the document sandbox to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.
   - It's occasionally possible to run into a race condition where the communications bridge between the two contexts (panel vs document sandbox) is not set up in time. If you interact with your panel UI immediately after it's reloaded, the click may appear do nothing instead of invoking your script code. We're working on a fix for this.
 - Common pitfalls
-  - If you split your work on a document over multiple frames using `setTimeout`, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release.
+  - If you split your work on a document over multiple frames, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release.
   - When setting up communication between your panel UI code and your script sandbox code, calling `apiProxy()` with the wrong argument will do nothing without providing any error feedback.  If communication is not working, carefully double-check your UI code is requesting the `"script"` API proxy and your script sandbox code is requesting the `"panel"` API proxy.
 - Unexpected behavior
   - If the user has a selection and your add-on creates new content, the selection is cleared. This will be addressed before release. An API will be added in the future that will allow you to change the selection to content your add-on creates.
