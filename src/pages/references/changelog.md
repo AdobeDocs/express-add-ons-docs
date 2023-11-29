@@ -20,6 +20,39 @@ contributors:
 
 # Changelog
 
+## 2023-11-28
+
+### Updates
+
+- The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
+
+ **New Classes/Interfaces**<br/>
+
+  - New [RestrictedItemList class](./document-sandbox/document-apis/classes/RestrictedItemList.md)
+  - New [UnknownNode class](./document-sandbox/document-apis/classes/UnknownNode.md)
+  - New [SolidColorShapeNode class](./document-sandbox/document-apis/classes/SolidColorShapeNode.md)
+  - New [Point interface](./document-sandbox/document-apis/interfaces/Point.md)
+  - New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
+
+ **Updates to Node Classes**<br/>
+
+ The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
+
+  - Removes `absoluteRotation` accessor
+  - Removes `absoluteTransform` accessor
+  - Removes `relativeRotation` accessor
+  - Removes `relativeTransform` accessor
+  - Removes `translateX` accessor
+  - Removes `translateY` accessor
+  - Adds `rotation` accessor
+  - Adds `rotationInScreen` accessor
+  - Adds `transformMatrix` accessor
+  - Adds `translation` accessor
+  - Adds `setPositionInParent` method
+  - Adds `setRotationInParent` method
+
+- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
+
 ## 2023-11-27
 
 Updated [Document API references](./document-sandbox/document-apis/) to include:

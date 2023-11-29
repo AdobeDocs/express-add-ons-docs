@@ -286,13 +286,13 @@ ___
 
 ### transformMatrix
 
-• `get` **transformMatrix**(): `https://glmatrix.net/docs/module-mat2d.html`
+• `get` **transformMatrix**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
 The node's transform matrix relative to its parent.
 
 #### Returns
 
-`https://glmatrix.net/docs/module-mat2d.html`
+[`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
 #### Inherited from
 
