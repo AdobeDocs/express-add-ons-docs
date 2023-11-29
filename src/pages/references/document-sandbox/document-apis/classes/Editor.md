@@ -157,6 +157,7 @@ ___
 ▸ **createStroke**(`options?`): [`Stroke`](../interfaces/Stroke.md)
 
 See [StrokeOptions](../interfaces/StrokeOptions.md) for more details on the `options` fields. Defaults:
+
 - `color` has default value DEFAULT_STROKE_COLOR if none is provided.
 - `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
 - `dashPattern` has default value [] if none is provided. Array must be
@@ -236,6 +237,7 @@ or await the Promise returned by queueAsyncEdit().
 Generally, calling any setter or method is treated as an edit; but simple getters may be safely called at any time.
 
 Example of typical usage:
+
 ```javascript
 // Assume insertImage() is called from your UI code, and given a Blob containing image data
 async function insertImage(blob) {

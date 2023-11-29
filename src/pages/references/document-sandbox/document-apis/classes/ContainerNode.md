@@ -315,7 +315,8 @@ Move the node so the given `localRegistrationPoint` in its local coordinates is 
 **`Example`**
 
 Center a rectangle within its parent artboard:
-```
+
+```js
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -351,7 +352,8 @@ ancestors have any rotation of their own.
 **`Example`**
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-```
+
+```js
 rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
 ```
 

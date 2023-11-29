@@ -24,7 +24,7 @@ contributors:
 
 ### Updates
 
-- The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
+* The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
 
  **New Classes/Interfaces**<br/>
 
@@ -51,7 +51,7 @@ contributors:
   - Adds `setPositionInParent` method
   - Adds `setRotationInParent` method
 
-- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
+* The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
 
 ## 2023-11-27
 
