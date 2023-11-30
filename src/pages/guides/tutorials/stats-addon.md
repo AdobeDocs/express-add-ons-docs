@@ -663,7 +663,7 @@ const getNodeData = (node, nodeData = {}) => {
 export { getNodeData };
 ```
 
-Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](references/document-sandbox/document-apis/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/document-sandbox/document-apis/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/) elements, and so on. As follows, the metacode.
+Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](/references/document-sandbox/document-apis/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/document-sandbox/document-apis/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/) elements, and so on. As follows, the metacode.
 
 1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty iterable. If so, it goes through it. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
 
