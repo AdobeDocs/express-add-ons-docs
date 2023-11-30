@@ -28,12 +28,12 @@ The document sandbox and iframe runtime are two different runtime execution envi
 
 ## Accessing the APIs
 
-A default exported module from `AddOnScriptSdk` is provided to enable the communication between the iframe and the document sandbox via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
+A default exported module from `addOnSandboxSdk` is provided to enable the communication between the iframe and the document sandbox via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
 
 ```js
-import AddOnScriptSdk from "AddOnScriptSdk"; // AddOnScriptSdk is a default import
+import addOnSandboxSdk from "add-on-sdk-document-sandbox"; // a default import
 
-const { runtime } = AddOnScriptSdk.instance; // runtime object provides direct access to the comm methods
+const { runtime } = addOnSandboxSdk.instance; // runtime object provides direct access to the communication APIs
 ```
 
 ## Examples
@@ -47,9 +47,9 @@ This example shows how to expose APIs from the document sandbox SDK (via `code.j
 #### `code.js`
 
 ```js
-import AddOnScriptSdk from "AddOnScriptSdk"; 
+import addOnSandboxSdk from "add-on-sdk-document-sandbox"; 
 
-const { runtime } = AddOnScriptSdk.instance; 
+const { runtime } = addOnSandboxSdk.instance; 
 
 const scriptApis = {
     performWorkOnDocument: function (data, someFlag) {
@@ -104,11 +104,15 @@ addOnUISdk.ready.then(async () => {
         performWorkOnUI: function (data, someFlag) {
             // Do some ui operation
         },
-        getDataFromUI: async function () {            
+        getDataFromUI: async function () {
+            let resolver = undefined;
+            
             const promise = new Promise((resolve) => {
-                resolve("button_color_blue");
+                resolver = resolve;
             });
-
+            setTimeout(() => {
+                resolver("button_color_blue");
+            }, 10);
             return await promise;
         },
     };
@@ -120,9 +124,9 @@ addOnUISdk.ready.then(async () => {
 #### `code.js`
 
 ```js
-import AddOnScriptSdk from "AddOnScriptSdk"; // default import
+import addOnSandboxSdk from "add-on-sdk-document-sandbox"; // default import
 
-const { runtime } = AddOnScriptSdk.instance;
+const { runtime } = addOnSandboxSdk.instance;
 
 async function callUIApis() {
     // Get a proxy to the APIs defined in the UI
@@ -134,7 +138,7 @@ async function callUIApis() {
         },
         true
     );
-
+    
     const result = await uiApis.getDataFromUI();
     console.log("Data from UI: " + result);
 }

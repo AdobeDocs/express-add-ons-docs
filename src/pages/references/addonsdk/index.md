@@ -26,6 +26,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 - [Importing Content](../../guides/develop/)
 - [Exporting Content](../../guides/develop/)
+- [Accessing Content](../../guides/develop/)
 - [Drag & Drop Behavior](../../guides/develop/)
 - [Authorization with OAuth 2.0](../../guides/develop/)
 - [Client-side Storage Access](../../guides/develop/)
@@ -33,6 +34,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 - [Locale Detection](../../guides/develop/)
 - [Theme Detection](../../guides/develop/)
 - [Access to the Manifest](../../guides/develop/)
+- [Access to the Document information](../../references/addonsdk/app-document.md)
 
 <InlineAlert slots="text" variant="success"/>
 

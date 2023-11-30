@@ -362,6 +362,20 @@ The table below describes the events triggered from the add-on SDK. Use the `add
         <p>Triggered when the drag operation ends.</p>
     </td>
 </tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>documentIdAvailable</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Triggered when the document id is available in the application.</p>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>documentTitleChange</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Triggered when the document title is changed in the application.</p>
+    </td>
+</tr>
 </tbody>
 </table>
 

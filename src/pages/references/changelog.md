@@ -20,6 +20,56 @@ contributors:
 
 # Changelog
 
+## 2023-11-30
+
+### Updates
+
+- Adds support to the [Add-on UI SDK](./addonsdk#index.md) for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
+- Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/):
+
+  **Document Sandbox SDK import**<br/>
+
+  from:
+
+  `import AddOnScriptSdk from "AddOnScriptSdk";`
+  
+  to:
+  
+  `import addOnSandboxSdk from "add-on-sdk-document-sandbox";`
+
+  which also requires the following line to change in the example code to use the new reference:
+
+  `const { runtime } = addOnSandboxSdk.instance; // runtime object provides direct access to the comm methods`
+
+  **Express Document SDK Import (for accessing the Document APIs**<br/>
+
+  from:
+  
+  `import { editor } from "express";`
+
+  to:
+
+  `import { editor } from "express-document-sdk";`
+
+  **NOTE:** This includes the named imports for `utils` and `constants` modules as well if needed (ie: `import { editor, utils, constants } from "express-document-sdk"`).
+  
+- Updates the [`manifest.json` entry for the document sandbox script code reference](../references/manifest/index.md#entrypoints) from `script` to `documentSandbox`, as shown below:
+
+  ```json
+    "entryPoints": [
+          {
+              "type": "panel",
+              "id": "panel1",
+              "main": "index.html",
+              "documentSandbox": "code.js"
+          }
+      ]
+  ```
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The old import names will continue to be supported for a period of time to allow developers to migrate to the new import names, but we encourage you to update as soon as possible to avoid any future issues.
+
 ## 2023-11-28
 
 ### Updates
@@ -33,6 +83,7 @@ contributors:
   - New [SolidColorShapeNode class](./document-sandbox/document-apis/classes/SolidColorShapeNode.md)
   - New [Point interface](./document-sandbox/document-apis/interfaces/Point.md)
   - New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
+  - Renames the [Constants](../references/document-sandbox/document-apis/enums/) to remove the `Value` suffix.
 
  **Updates to Node Classes**<br/>
 
@@ -143,7 +194,7 @@ The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs
 
 <InlineAlert slots="text" variant="info"/>
 
-If you're using the experimental Document Sandbox APIs (aka: Script Runtime) in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
+If you're using the experimental Document Sandbox APIs in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
 
 ## 2023-09-19
 

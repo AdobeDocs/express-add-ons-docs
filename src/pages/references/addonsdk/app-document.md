@@ -1,6 +1,40 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for [importing content](../../guides/develop/use_cases.md#importing-content) including images, audio and video to the document, and for [exporting content](../../guides/develop/use_cases.md#exporting-content) from the current document.
+Provides access to the methods needed for gathering [importing content](../../guides/develop/use_cases.md#importing-content) including images, audio and video to the document, and for [exporting content](../../guides/develop/use_cases.md#exporting-content) from the current document.
+
+## General Methods
+
+### id()
+
+Retrieves the id of the document.
+
+#### Signature
+
+`id(): Promise<string | undefined>`
+
+#### Return Value
+
+A resolved `Promise` containing the `id` of the document.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** A `documentIdAvailable` event is triggered when the document id is available in the application.
+
+### title()
+
+Retrieves the title/name of the document.
+
+#### Signature
+
+`title(): Promise<string>`
+
+#### Return Value
+
+A resolved `Promise` containing the `title` (ie: name) of the document.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** A `documentTitleChange` event is triggered when the document title is changed in the application.
 
 ## Import Content Methods
 
