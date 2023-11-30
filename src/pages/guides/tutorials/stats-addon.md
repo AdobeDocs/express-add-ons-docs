@@ -75,7 +75,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
 // runtime in the Document Sandbox
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 ```
 
@@ -90,15 +90,11 @@ We'll get to the details of such a payload in a short while; for the moment, thi
 
 ```js
 // UI iframe, importing a payload from the Document Sandbox
-const sandboxProxy = await runtime.apiProxy("script");
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
 // Document Sandbox, importing a payload from the UI iframe
 const panelUIProxy = await runtime.apiProxy("panel");
 ```
-
-<InlineAlert slots="text" variant="warning"/>
-
-Warning: the `apiProxy()` string argument `"script"` may be subject to change in future releases.
 
 At this point, `sandboxProxy` and `panelUIProxy` represent their counterparts from the original contexts. It all may be easier to understand when the entire process is written down; for example, in the following code, we expose a custom method called `ready()` defined in the UI iframe to the Document API.
 
@@ -121,7 +117,7 @@ runtime.exposeApi({
 #### Document Sandbox
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 // importing from the iframe
@@ -138,8 +134,20 @@ As the name implies, the `panelUIProxy` constant in the Document Sandbox is a *p
 #### UI iframe
 
 ```js
-// Document Sandbox
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+const { runtime } = addOnUISdk.instance;
+
+// importing from the Document Sandbox
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
+
+// We can call this method now
+await sandboxProxy.drawRect();
+```
+
+#### Document Sandbox
+
+```js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 // exporting a payload to the iframe
@@ -148,20 +156,6 @@ runtime.exposeApi({
     // uss the Document API to draw a Rectangle shape...
   }
 });
-```
-
-#### Document Sandbox
-
-```js
-// iframe
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-const { runtime } = addOnUISdk.instance;
-
-// importing from the Document Sandbox
-const sandboxProxy = await runtime.apiProxy("script");
-
-// We can call this method now
-await sandboxProxy.drawRect();
 ```
 
 The following diagram helps visualize the process.
@@ -225,7 +219,7 @@ Here, `drawRect()` and `drawEllipse()` exist within the closure of the `drawShap
 #### UI iframe
 
 ```js
-const sandboxProxy = await runtime.apiProxy("script");
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
 // Calling the exposed method
 const shapesNo = await sandboxProxy.drawShape();
@@ -280,7 +274,7 @@ Nothing prevents you from using something else besides functions in your proxy. 
 
 ```js
 // iframe
-const sandboxProxy = await runtime.apiProxy("script");
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
 for (let i = 0; i < 10; i++) {
   await sandboxProxy.drawShape();
@@ -453,7 +447,7 @@ addOnUISdk.ready.then(async () => {
   
   // Import the Document Sandbox API proxy
   const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
   // Exposing the iFrame API to the Document Sandbox.
   
   // Set the button's click handler
@@ -499,7 +493,7 @@ In `documentSandbox/code.js`, we bring the iframe proxy in, toggle the status li
 #### documentSandbox/code.js
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 async function start() {
@@ -549,7 +543,7 @@ iframeApi.toggleStatus("iframe"); // 👈
 #### Document Sandbox
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 async function start() {
@@ -643,22 +637,26 @@ const getNodeData = (node, nodeData = {}) => {
   if (node.type === "MediaContainer") {
     return nodeData;
   }
+
   // Check if the current node has children and if they are not an empty array
   if (node.allChildren && node.allChildren.length > 0) {
-    // Iterate over all children
-    node.allChildren.forEach((child) => {
+    // Iterate over all children using for..of
+    for (const child of node.allChildren) {
       // Increase the count for the current type
       increaseCount(nodeData, child.type);
+
       // Recursively call getNodeData for each child that has its own children
       // ... unless it's a MediaContainer
-      if (child.type === "MediaContainer") {
-        return;
-      }
-      if (child.allChildren && child.allChildren.length > 0) {
+      if (
+        child.type !== "MediaContainer" &&
+        child.allChildren &&
+        child.allChildren.length > 0
+      ) {
         getNodeData(child, nodeData);
       }
-    });
+    }
   }
+
   return nodeData;
 };
 
@@ -667,7 +665,7 @@ export { getNodeData };
 
 Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](references/document-sandbox/document-apis/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/document-sandbox/document-apis/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/) elements, and so on. As follows, the metacode.
 
-1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty array. If so, it iterates over this array. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
+1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty iterable. If so, it goes through it. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
 
 2. If a child node within this array also features a non-empty `allChildren` property, `getNodeData()` is called recursively on that child node. Mind you: during these recursive calls, `nodeData` is passed as the second argument. This approach ensures that the same `nodeData` object is continuously used throughout the recursion, allowing it to accumulate and keep tabs on all node types encountered across all hierarchy levels. The `"MediaContainer"` node is a particular one, [^3] and when encountered, we stop there.  
 
@@ -914,7 +912,7 @@ addOnUISdk.ready.then(async () => {
   // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
   // Importing the Document Sandbox API.
-  const sandboxProxy = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
   // Exposing the iframe API to the Document Sandbox.
   runtime.exposeApi(iframeApi);
 
@@ -1011,7 +1009,7 @@ export { rebuildTable };
 #### Document Sandbox
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 import { editor } from "express";
@@ -1061,21 +1059,24 @@ const getNodeData = (node, nodeData = {}) => {
   if (node.type === "MediaContainer") {
     return nodeData;
   }
+
   // Check if the current node has children and if they are not an empty array
   if (node.allChildren && node.allChildren.length > 0) {
-    // Iterate over all children
-    node.allChildren.forEach((child) => {
+    // Iterate over all children using for..of
+    for (const child of node.allChildren) {
       // Increase the count for the current type
       increaseCount(nodeData, child.type);
+
       // Recursively call getNodeData for each child that has its own children
       // ... unless it's a MediaContainer
-      if (child.type === "MediaContainer") {
-        return;
-      }
-      if (child.allChildren && child.allChildren.length > 0) {
+      if (
+        child.type !== "MediaContainer" &&
+        child.allChildren &&
+        child.allChildren.length > 0
+      ) {
         getNodeData(child, nodeData);
       }
-    });
+    }
   }
   return nodeData;
 };
