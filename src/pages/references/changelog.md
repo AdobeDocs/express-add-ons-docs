@@ -24,7 +24,7 @@ contributors:
 
 ### Updates
 
-- Adds support to the [Add-on UI SDK](./addonsdk#index.md) for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
+- Adds support to the [Add-on UI SDK](./addonsdk/index.md) for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
 - Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/):
 
   **Document Sandbox SDK import**<br/>
@@ -52,7 +52,7 @@ contributors:
   `import { editor } from "express-document-sdk";`
 
   **NOTE:** This includes the named imports for `utils` and `constants` modules as well if needed (ie: `import { editor, utils, constants } from "express-document-sdk"`).
-  
+
 - Updates the [`manifest.json` entry for the document sandbox script code reference](../references/manifest/index.md#entrypoints) from `script` to `documentSandbox`, as shown below:
 
   ```json
@@ -65,6 +65,9 @@ contributors:
           }
       ]
   ```
+
+- [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
+- The [`RuntimeType`]() constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
 
 <InlineAlert slots="text" variant="warning"/>
 

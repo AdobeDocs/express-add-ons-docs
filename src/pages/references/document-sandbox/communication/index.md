@@ -51,7 +51,7 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 
 const { runtime } = addOnSandboxSdk.instance; 
 
-const scriptApis = {
+const sandboxApi = {
     performWorkOnDocument: function (data, someFlag) {
         // call the Document APIs
     },
@@ -60,7 +60,7 @@ const scriptApis = {
     },
 };
 // expose these apis to be directly consumed in the UI (ie: index.html file).
-runtime.exposeApi(scriptApis);
+runtime.exposeApi(sandboxApi);
 ```
 
 #### index.html
@@ -71,10 +71,10 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(async () => {
     const { runtime } = addOnUISdk.instance;
 
-    // Wait for the promise to resolve to get a proxy to call APIs defined in the script
-    const scriptApis = await runtime.apiProxy("script");
+    // Wait for the promise to resolve to get a proxy to call APIs defined in the document sandbox
+    const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-    await scriptApis.performWorkOnDocument(
+    await sandboxProxy.performWorkOnDocument(
         {
             pageNumber: 1,
             op: "change_background_color",
@@ -85,7 +85,7 @@ addOnUISdk.ready.then(async () => {
         true
     );
 
-    console.log(await scriptApis.getDataFromDocument());
+    console.log(await sandboxProxy.getDataFromDocument());
 });
 ```
 

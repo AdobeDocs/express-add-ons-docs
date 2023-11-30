@@ -6,7 +6,7 @@ Represents the runtime of the current add-on.
 
 ### `type`
 
-The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint creating this backend object (ie: `"panel"`, `"dialog"` or `"script"`).
+The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint creating this backend object (ie: `"panel"`, `"dialog"` or `"documentSandbox"`).
 
 ### [`Dialog`](../addonsdk/runtime-dialog.md)
 
@@ -44,7 +44,7 @@ Requests a promise-based proxy object from another runtime to be used to call th
 
 | Name          | Type        | Description   |
 | --------------| ------------| -----------:  |
-| `runtimeType` | `RuntimeType` | The runtime type to create the proxy object from (ie: "script" for instance, which maps to the code referenced in the [`script` entryPoint](../document-sandbox/index.md#script-entry-point) in your add-on's `manifest.js` file). |
+| `runtimeType` | `RuntimeType` | The runtime type to create the proxy object from (ie: "documentSandbox" for instance, which maps to the code referenced in the [`documentSandbox` entryPoint](../document-sandbox/index.md#document-sandbox-entry-point) in your add-on's `manifest.js` file). |
 
 #### Return
 
@@ -61,9 +61,9 @@ AddOnSdk.ready.then(async () => {
 
     let createShapesButton = document.getElementById("createShapesButton");
     createShapesButton.addEventListener("click", async (e) => {
-        const scriptApis = await runtime.apiProxy("script");
+        const sandboxProxy = await runtime.apiProxy("documentSandbox");
         try {
-            let result = await scriptApis.createShapes();
+            let result = await sandboxProxy.createShapes();
             console.log(result);
         } catch (exc) {
             console.error(exc.message, exc.stack);

@@ -60,9 +60,9 @@ Some key concepts to note about the document sandbox include:
 
 The methods defined in the [communication API reference](./communication/) are used to expose and use the API proxies between the iframe and script environments of your add-on. Start with the [communication reference](./communication/) to learn more about how to expose APIs and use them from either environment.
 
-### Script entry point
+### Document sandbox entry point
 
-To use the document sandbox APIs in your add-on, start by defining a new `script` entry point in your `manifest.json` file with the value set to the name of the file containing the JavaScript code you're using with the document sandbox APIs:
+To use the document sandbox APIs in your add-on, start by defining a new `documentSandbox` entry point in your `manifest.json` file with the value set to the name of the file containing the JavaScript code you're using with the document sandbox APIs:
 
 ```json
     "entryPoints": [
