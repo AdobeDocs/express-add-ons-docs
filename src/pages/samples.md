@@ -234,22 +234,22 @@ Allows users to create a QR code based on a URL and add it to their document.
 - [Import Content](./references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
 
-## Authoring Sandbox Code Samples
+## Document Sandbox Code Samples
 
-The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) have been provided to help you get started using the [Authoring Sandbox and Adobe Express Document APIs](./references/authoring/index.md).
+The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) have been provided to help you get started using the [Document Sandbox and Adobe Express Document APIs](./references/document-sandbox/index.md).
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [Authoring Sandbox API's](./references/authoring/index.md) are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
+**IMPORTANT:** The [Document Sandbox API's](./references/document-sandbox/index.md) are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
 
 ### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/communication-iframe-script-runtime)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and authoring sandbox code environments. Also includes demonstrating how to use some of the [Web APIs](./references/authoring/web/) such as `setTimeout()` and `console.log()`.
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments. Also includes demonstrating how to use some of the [Web APIs](./references/document-sandbox/web/) such as `console.log()`.
 
 ### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis)
 
-Demonstrates how to use the [document APIs](./references/authoring/editor/) to create various shapes and add them to the document.
+Demonstrates how to use the [document APIs](./references/document-sandbox/document-apis/) to create various shapes and add them to the document.
 
 ### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page)
 
-A more comprehensive example of using the [document APIs](./references/authoring/editor/) to add a page, images and shapes, as well as clear the artboard.
+A more comprehensive example of using the [document APIs](./references/document-sandbox/document-apis/) to add a page, images and shapes, as well as clear the artboard.
