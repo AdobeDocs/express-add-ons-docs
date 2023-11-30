@@ -35,7 +35,7 @@ Some examples of what you can do with the [Adobe Express Document APIs](./classe
 An exported `editor` module is provided to enable access to the [Document APIs](./classes/Editor.md). You can simply import this module into your script file code to access the methods provided below. For example:
 
 ```js
-import { editor } from "express"; // named import 'editor' from express module
+import { editor } from "express-document-sdk"; // named import 'editor' from the express-document-sdk module
 ```
 
 See the example below for further usage details.
@@ -45,7 +45,7 @@ See the example below for further usage details.
 The following code snippet illustrates how to use the [Express Document APIs](./classes/Editor.md) from the document sandbox code running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
-import { editor, utils } from "express";
+import { editor, utils } from "express-document-sdk"
 
 const insertionParent = editor.context.insertionParent; // get node to insert content into
 
@@ -69,7 +69,7 @@ insertionParent.children.append(rectangle);
 
 ## Tutorials, References & Code Samples
 
-Please see [this extensive tutorial](../../../guides/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/tutorials/). Also be sure to check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page) code samples provided in the [script runtime samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) for more details on using the [Document APIs](./classes/Editor.md).
+Please see [this extensive tutorial](../../../guides/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/tutorials/). Also be sure to check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page) code samples provided in the [document sandbox samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for more details on using the [Document APIs](./classes/Editor.md).
 
 <InlineAlert slots="text" variant="warning"/>
 

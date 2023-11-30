@@ -19,15 +19,15 @@ contributors:
 
 # Web APIs
 
-The Web APIs refer to the set of commonly used APIs that are injected by the script runtime into the global context to allow you to access common JavaScript functions.
+The Web APIs refer to the set of commonly used APIs that are injected by the document sandbox into the global context to allow you to access common JavaScript functions.
 
 ## Overview
 
-The Web APIs provide implementations of some common objects and functions for you to use in your script code to perform things like logging to the console and setting timeouts and intervals. They are limited to a set of basic functions currently, as outlined in the next section. Most of the browsers APIs/Global Objects are not available in Script Runtime. For these, the developers can use iframe runtime environment and [communicate](../communication/index.md#expose-apis-from-the-ui) the result back to the script running inside script runtime environment.
+The Web APIs provide implementations of some common objects and functions for you to use in your script code to perform things like logging to the console and setting timeouts and intervals. They are limited to a set of basic functions currently, as outlined in the next section. Most of the browsers APIs/Global Objects are not available in the document sandbox. For these, developers can use the iframe runtime environment and [communicate](../communication/index.md#expose-apis-from-the-ui) the result back to the script running inside the document sandbox environment.
 
 <InlineAlert slots="text" variant="success"/>
 
-These APIs can automatically be used in your script runtime code.
+These APIs can automatically be used in the document sandbox.
 
 ## Console Object
 

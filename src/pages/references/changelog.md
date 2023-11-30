@@ -20,6 +20,53 @@ contributors:
 
 # Changelog
 
+## 2023-11-30
+
+- Adds support to the Add-on UI SDK for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
+- Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/):
+
+  **Document Sandbox SDK import**<br/>
+
+  from:
+
+  `import AddOnScriptSdk from "AddOnScriptSdk";`
+  
+  to:
+  
+  `import addOnSandboxSdk from "add-on-sdk-document-sandbox";`
+
+  which also requires the following line to change in the example code to use the new reference:
+
+  `const { runtime } = addOnSandboxSdk.instance; // runtime object provides direct access to the comm methods`
+
+  **Express Document SDK Import (for accessing the Document APIs**<br/>
+
+  from:
+  
+  `import { editor, utils } from "express";`
+
+  to:
+
+  `import { editor } from "express-document-sdk";`
+
+**NOTE:**
+The old import names will still be supported for a period of time to allow developers to migrate to the new one, but we encourage you to update as soon as possible to avoid any future issues.
+
+## 2023-11-28
+
+### Updates
+
+The [Document API References](./document-sandbox/document-apis/) were updated with the changes listed below:
+
+- Adds a new `queueAsyncEdit` method in the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
+- Adds a new [RestrictedItemList class](./document-sandbox/document-apis/classes/RestrictedItemList.md)
+- Adds a new [UnknownNode class](./document-sandbox/document-apis/classes/GroupNode.md)
+- Adds a new [SolidColorShapeNode class](./document-sandbox/document-apis/classes/SolidColorShapeNode.md)
+- New [Point interface](./document-sandbox/document-apis/interfaces/Point.md)
+- Renamed [constants](./document-sandbox/document-apis/enums/) (removes `Value` from their name).
+
+The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
+
 ## 2023-11-27
 
 Updated [Document API references](./document-sandbox/document-apis/) to include:

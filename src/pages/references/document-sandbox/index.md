@@ -35,7 +35,7 @@ The [communication APIs](./communication/index.md) allow you to communicate betw
 
 ### Web APIs
 
-The document sandbox does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available. For these, the developers can use iframe runtime environment and [communicate](./communication/index.md#expose-apis-from-the-ui) the result back to the script running inside script runtime environment. Some of the commonly used [Web APIs](./web/index.md) (with limited scope) have been provided inside script runtime environment.
+The document sandbox does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available. For these, the developers can use iframe runtime environment and [communicate](./communication/index.md#expose-apis-from-the-ui) the result back to the script running inside the document sandbox environment. Some of the commonly used [Web APIs](./web/index.md) (with limited scope) have been provided inside the document sandbox environment.
 
 ### Document APIs
 
@@ -77,11 +77,11 @@ To use the document sandbox APIs in your add-on, start by defining a new `script
 
 The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/), [Web APIs](./web/) and [document APIs](./document-apis/)).
 
-### CLI Generated Script Runtime Add-on
+### CLI Generated Document Sandbox Add-on
 
-The quickest way to get started with a scaffolded project set up with the script runtime (aka: document sandbox) bindings for you is via the CLI. When creating a new add-on, the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the script runtime:
+The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
 
-![CLI prompt for script runtime](../img/cli-script-prompt.png)
+![CLI prompt for document sandbox template](../img/cli-script-prompt.png)
 
 Choose `Yes` at the prompt to include the document sandbox setup in your generated project. The project structure that's generated will differ depending on which base template you chose, but the two important additions to note, are the existence of a `script` entry point in your `manifest.json`, and the `code.js` file it references.
 
@@ -98,7 +98,7 @@ Choose `Yes` at the prompt to include the document sandbox setup in your generat
 
 <InlineAlert slots="text" variant="info"/>
 
-Since these APIs are still experimental, choosing to include the script runtime when creating an add-on with the CLI also automatically includes the `"experimentalApis": true` in the `manifest.json`.
+Since these APIs are still experimental, choosing to include the document sandbox when creating an add-on with the CLI also automatically includes the `"experimentalApis": true` in the `manifest.json`.
 
 The screenshot below shows what the default script-based add-on generated from the CLI looks like when running:
 
@@ -111,17 +111,17 @@ Please refer to the [Using the CLI](../../guides/getting_started/dev_tooling.md#
 
 ## Code Samples
 
-The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples) have also been provided to help you get started using these new script runtime APIs.
+The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have also been provided to help you get started using these new document sandbox APIs.
 
-### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/communication-iframe-script-runtime)
+### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-script-runtime)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and script runtime environments. Also includes demonstrating how to use some of the [Web APIs](./web/) such as `setTimeout()` and `console.log()`.
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox environments. Also includes demonstrating how to use some of the [Web APIs](./web/) such as `setTimeout()` and `console.log()`.
 
-### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/editor-apis)
+### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
 
 Demonstrates how to use the [document APIs](./document-apis/) to create various shapes and add them to the document.
 
-### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/image-and-page)
+### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
 
 A more comprehensive example of using the [document APIs](./document-apis/) to add a page, images and shapes, as well as clear the artboard.
 

@@ -28,13 +28,12 @@ The document sandbox and iframe runtime are two different runtime execution envi
 
 ## Accessing the APIs
 
-A default exported module from `AddOnScriptSdk` is provided to enable the communication between the iframe and the document sandbox via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
+A default exported module from `addOnSandboxSdk` is provided to enable the communication between the iframe and the document sandbox via its' `instance.runtime` object. You can simply import the module into your script file code for use, and create a reference to the `runtime` object. For instance:
 
 ```js
-// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
-import AddOnScriptSdk from "AddOnScriptSdk"; // AddOnScriptSdk is a default import
+import addOnSandboxSdk from "add-on-sdk-document-sandbox"; // a default import
 
-const { runtime } = AddOnScriptSdk.instance; // runtime object provides direct access to the comm methods
+const { runtime } = addOnSandboxSdk.instance; // runtime object provides direct access to the comm methods
 ```
 
 ## Examples
@@ -48,10 +47,9 @@ This example shows how to expose APIs from the document sandbox SDK (via `code.j
 #### `code.js`
 
 ```js
-// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
-import AddOnScriptSdk from "AddOnScriptSdk"; 
+import addOnSandboxSdk from "add-on-sdk-document-sandbox"; 
 
-const { runtime } = AddOnScriptSdk.instance; 
+const { runtime } = addOnSandboxSdk.instance; 
 
 const scriptApis = {
     performWorkOnDocument: function (data, someFlag) {
@@ -126,10 +124,9 @@ addOnUISdk.ready.then(async () => {
 #### `code.js`
 
 ```js
-// import addOnSandboxSdk from "add-on-sdk-document-sandbox" - TODOHS
-import AddOnScriptSdk from "AddOnScriptSdk"; // default import
+import addOnSandboxSdk from "add-on-sdk-document-sandbox"; // default import
 
-const { runtime } = AddOnScriptSdk.instance;
+const { runtime } = addOnSandboxSdk.instance;
 
 async function callUIApis() {
     // Get a proxy to the APIs defined in the UI
