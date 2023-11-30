@@ -35,6 +35,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 **November 29th, 2023**
 - `apiProxy()` now accepts `"documentSandbox"` as a parameter, instead of `"script"`.
+- `manifest.json` now accepts `"documentSandbox"` in lieu of the `"script"` property for the document sandbox entry point. This requires the `"@adobe/ccweb-add-on-scripts"` dependency to be updated to version `"^1.1.0"` or newer in the `package.json` file.
 - `addOnSandboxSdk` is now imported from `"add-on-sdk-document-sandbox"` (it used to be `"AddOnScriptSdk"`).
 - `editor` and other modules are now imported from `"express-document-sdk"` (it used to be `"express"`).
 - The `webpack.config.js` file has been updated to reflect the new imports (see the `externals` object) in both the `express-grids-addon` and `express-addon-document-api-template` projects.
@@ -121,13 +122,13 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 			"type": "panel",
 			"id": "panel1",
 			"main": "index.html",
-			"script": "code.js"    // 👈 here
+			"documentSandbox": "code.js"    // 👈 here
 		}
 	]
 }
 ```
 
-If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
+If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `code.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
