@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for gathering [importing content](../../guides/develop/use_cases.md#importing-content) including images, audio and video to the document, and for [exporting content](../../guides/develop/use_cases.md#exporting-content) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/use_cases.md#importing-content) such as images, audio and video into the document, and for [exporting content](../../guides/develop/use_cases.md#exporting-content) from the current document.
 
 ## General Methods
 
