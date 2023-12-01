@@ -391,7 +391,7 @@ module.exports = {
           {
             title: "Implementing Common Use Cases",
             path: "guides/develop/use_cases.md",
-          },
+          },          
           {
             title: "Frameworks, libraries and bundling",
             path: "guides/develop/frameworks-libraries-bundling.md",

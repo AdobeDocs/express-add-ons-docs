@@ -20,6 +20,23 @@ A resolved `Promise` containing the `id` of the document.
 
 **Note:** A `documentIdAvailable` event is triggered when the document id is available in the application.
 
+#### Example
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+function setId(id) { /* ... */ } 
+  
+addOnUISdk.ready.then(() => setId(await addOnUISdk.app.document.id()));
+  
+addOnUISdk.app.on("documentAvailable", data => {
+  setId(data.documentId);
+});
+```
+
 ### title()
 
 Retrieves the title/name of the document.
@@ -35,6 +52,23 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 <InlineAlert slots="text" variant="info"/>
 
 **Note:** A `documentTitleChange` event is triggered when the document title is changed in the application.
+
+#### Example
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+function setTitle(title) { /* ... */ } 
+  
+addOnUISdk.ready.then(() => setTitle(await addOnUISdk.app.document.title()));
+  
+addOnUISdk.app.on("documentTitleChange", data => {
+  setTitle(data.documentTitle);
+});
+```
 
 ## Import Content Methods
 
