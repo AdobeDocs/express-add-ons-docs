@@ -41,6 +41,7 @@ contributors:
 - [Which browsers and operating systems are currently supported?](#which-browsers-and-operating-systems-are-currently-supported)
 - [How does Adobe use my add-on’s data?](#how-does-adobe-use-my-add-ons-data)
 - [Where can I request new add-on features or suggest ideas?](#where-can-i-request-new-add-on-features-or-suggest-ideas)
+- [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
 
 ## Answers
 
@@ -159,3 +160,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 ### Where can I request new add-on features or suggest ideas?
 
   You can head over to the [Adobe Express UserVoice forum](https://adobeexpress.uservoice.com/forums/951181-adobe-express) to request features, suggest integration ideas and more.
+
+### Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?
+
+  This can happen due to a permissions issue, and the  `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write. 

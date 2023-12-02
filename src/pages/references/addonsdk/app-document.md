@@ -1,6 +1,74 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for [importing content](../../guides/develop/use_cases.md#importing-content) including images, audio and video to the document, and for [exporting content](../../guides/develop/use_cases.md#exporting-content) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/use_cases.md#importing-content) such as images, audio and video into the document, and for [exporting content](../../guides/develop/use_cases.md#exporting-content) from the current document.
+
+## General Methods
+
+### id()
+
+Retrieves the id of the document.
+
+#### Signature
+
+`id(): Promise<string | undefined>`
+
+#### Return Value
+
+A resolved `Promise` containing the `id` of the document.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** A `documentIdAvailable` event is triggered when the document id is available in the application.
+
+#### Example
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+function setId(id) { /* ... */ } 
+  
+addOnUISdk.ready.then(() => setId(await addOnUISdk.app.document.id()));
+  
+addOnUISdk.app.on("documentAvailable", data => {
+  setId(data.documentId);
+});
+```
+
+### title()
+
+Retrieves the title/name of the document.
+
+#### Signature
+
+`title(): Promise<string>`
+
+#### Return Value
+
+A resolved `Promise` containing the `title` (ie: name) of the document.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** A `documentTitleChange` event is triggered when the document title is changed in the application.
+
+#### Example
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+function setTitle(title) { /* ... */ } 
+  
+addOnUISdk.ready.then(() => setTitle(await addOnUISdk.app.document.title()));
+  
+addOnUISdk.app.on("documentTitleChange", data => {
+  setTitle(data.documentTitle);
+});
+```
 
 ## Import Content Methods
 

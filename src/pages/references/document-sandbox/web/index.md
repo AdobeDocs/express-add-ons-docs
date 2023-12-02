@@ -19,7 +19,7 @@ contributors:
 
 # Web APIs
 
-The Web APIs refer to the set of commonly used APIs that are injected by the script runtime into the global context to allow you to access common JavaScript functions.
+The Web APIs refer to the set of commonly used APIs that are injected by the document sandbox into the global context to allow you to access common JavaScript functions.
 
 ## Overview
 
@@ -27,7 +27,7 @@ The document sandbox runtime provides implementations of some common Web APIs to
 
 <InlineAlert slots="text" variant="success"/>
 
-These APIs can automatically be used in your script runtime code.
+These APIs can automatically be used in your document sandbox code.
 
 ## Console Object
 

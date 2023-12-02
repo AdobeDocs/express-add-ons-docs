@@ -132,7 +132,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 | `type`       | `string`     | The type of the entry point. Currently supported values: `"panel"`.    |
 | `id`         | `string`     | Identifier for the entry point. Must be unique within the add-on.  |
 | `main`        | `string`    | Main file for this entry point when launched.   |
-| `script`      | `string`    | File containing the JavaScript code to use with the [document sandbox SDK and Adobe Express Document APIs](../document-sandbox/). **Currently experimental only, and requires the [`experimentalApis`](#entrypoints) flag to be set.** |
+| `documentSandbox`      | `string`    | File containing the JavaScript code to use with the [document sandbox SDK and Adobe Express Document APIs](../document-sandbox/). **Currently experimental only, and requires the [`experimentalApis`](#entrypoints) flag to be set.** |
 | [`permissions`](#entrypointspermissions) | `object`    | The permissions defined for this entry point. |
 
 **Example:**<br/>

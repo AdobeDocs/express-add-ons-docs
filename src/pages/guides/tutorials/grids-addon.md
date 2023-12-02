@@ -29,13 +29,30 @@ Hello, and welcome to this Adobe Express Document API tutorial, where we'll buil
 
 Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
-### Timestamp
+### Changelog
 
-This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy. It's been first published on November 6th, 2023 and last updated on November 21st, 2023 with the following changes:
+This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy; revision history as follows.
+
+**November 29th, 2023**
+
+- `apiProxy()` now accepts `"documentSandbox"` as a parameter, instead of `"script"`.
+- `manifest.json` now accepts `"documentSandbox"` in lieu of the `"script"` property for the document sandbox entry point. This requires the `"@adobe/ccweb-add-on-scripts"` dependency to be updated to version `"^1.1.0"` or newer in the `package.json` file.
+- `addOnSandboxSdk` is now imported from `"add-on-sdk-document-sandbox"` (it used to be `"AddOnScriptSdk"`).
+- `editor` and other modules are now imported from `"express-document-sdk"` (it used to be `"express"`).
+- The `webpack.config.js` file has been updated to reflect the new imports (see the `externals` object) in both the `express-grids-addon` and `express-addon-document-api-template` projects.
+- `Constants` are now `constants` (lowercase), and their enums have changed (e.g., `BlendModeValue` is now `BlendMode`).
+- `translateX` and `translateY` have conflated in the new `translation` property.
+- The group's warning about the operations order (create, append, fill) has been removed; groups can now be created, filled and appended.
+
+**November 21st, 2023**
 
 - Editor API are now called the Document API, which are part of the Document Model Sandbox.
-- Update the add-on folders  to reflect the new naming convention (`script` is now `documentSandbox`).
+- Update the add-on folders to reflect the new naming convention (`script` is now `documentSandbox`).
 - Update Reference Documentation links and screenshots.
+
+**November 6th, 2023**
+
+- First publication.
 
 ### Prerequisites
 
@@ -108,13 +125,13 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 			"type": "panel",
 			"id": "panel1",
 			"main": "index.html",
-			"script": "code.js"    // 👈 here
+			"documentSandbox": "code.js"    // 👈 here
 		}
 	]
 }
 ```
 
-If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `script.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
+If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `code.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
@@ -163,7 +180,7 @@ addOnUISdk.ready.then(async () => {
 
   // Get the UI runtime.
   const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
   sandboxProxy.log("Document Sandbox up and running.");
 
   // Enabling CTA elements only when the addOnUISdk is ready
@@ -174,7 +191,7 @@ addOnUISdk.ready.then(async () => {
 #### Document API
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 function start() {
@@ -205,7 +222,7 @@ The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here]
 
 A crucial component of any add-on that consumes the Document API is the communication bridge with the iframe. As we've seen earlier, it's precisely the role of the **Communication API**.
 
-The mechanism is straightforward: through the `runtime` object (`code.js`, line 2), you can invoke the `exposeApi()` method, which grants the iframe access to the object literal that is passed as a parameter. The iframe must get to the `runtime`, too, and use its `apiProxy()` method passing `"script"`. This asynchronous call results in the same object whose `log()` can now be invoked.
+The mechanism is straightforward: through the `runtime` object (`code.js`, line 2), you can invoke the `exposeApi()` method, which grants the iframe access to the object literal that is passed as a parameter. The iframe must get to the `runtime`, too, and use its `apiProxy()` method passing `"documentSandbox"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
 ![Add-on Communication API](images/grids-addon-communicationapi.png)
 
@@ -255,7 +272,7 @@ The Document API is rapidly expanding: to keep track of its progress, you must g
 
 ![Add-on Communication API](images/grids-addon-reference.png)
 
-In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and Constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/document-sandbox/document-apis/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/document-sandbox/document-apis/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/document-sandbox/document-apis/classes/Node/)—the base class.
+In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/document-sandbox/document-apis/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/document-sandbox/document-apis/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/document-sandbox/document-apis/classes/Node/)—the base class.
 
 Some properties are shared among the `RectangleNode` and, say, other `StrokableNode` subclasses such as the `EllipseNode`: for instance, the `opacity`, or `blendMode`. Other ones are unique, like the `topLeftRadius`, which, in the context of an `EllipseNode`, wouldn't make sense.
 
@@ -285,7 +302,7 @@ addOnUISdk.ready.then(async () => {
   const createShapeButton = document.getElementById("createShape");
 
   const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
   createShapeButton.addEventListener("click", async () => {
     sandboxProxy.createShape({ width: 200, height: 100 }); // 👈
@@ -298,9 +315,9 @@ addOnUISdk.ready.then(async () => {
 #### Document API
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
-import { editor, utils, Constants } from "express";
+import { editor, utils, constants } from "express-document-sdk";
 
 function start() {
   runtime.exposeApi({
@@ -308,8 +325,7 @@ function start() {
       const rect = editor.createRectangle();
       rect.width = width;
       rect.height = height;
-      rect.translateX = 50;
-      rect.translateY = 50;
+      rect.translation = { x: 50, y: 50 };
 
       const col = utils.createColor(0.9, 0.5, 0.9);
       const fillColor = editor.createColorFill(col);
@@ -333,20 +349,19 @@ Please note that it's considered good practice to initially **disable all intera
 
 The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
-According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/document-sandbox/document-apis/classes/Editor/) class, which must be imported from `"express"` with the following statement.
+According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/document-sandbox/document-apis/classes/Editor/) class, which must be imported from `"express-document-sdk"` with the following statement.
 
 ```js
-import { editor, utils, Constants } from "express";
+import { editor, utils, constants } from "express-document-sdk";
 ```
 
-We'll also make use of `utils` and `Constants`—they are named imports from `"express"`, too. The `createRectangle()` function doesn't need any parameter, either required or optional; hence, the properties of this new element must be set after its creation.
+We'll also make use of `utils` and `constants`—they are named imports from `"express-document-sdk"`, too. The `createRectangle()` function doesn't need any parameter, either required or optional; hence, the properties of this new element must be set after its creation.
 
 ```js
 const rect = editor.createRectangle();
 rect.width = width;
 rect.height = height;
-rect.translateX = 50; 
-rect.translateY = 50;
+rect.translation = { x: 50, y: 50 };
 ```
 
 Dimensions and positions are straightforward while assigning a fill color is a multi-step process at the moment.[^1]
@@ -528,7 +543,7 @@ addOnUISdk.ready.then(async () => {
 
   // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
   // Input fields -------------------------------------------
 
@@ -617,9 +632,9 @@ It makes sense to approach this grid business with some caution, as we're just s
 #### documentSandbox/code.js
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
-import { editor, utils, Constants } from "express";
+import { editor, utils, constants } from "express-document-sdk";
 
 function start() {
   runtime.exposeApi({
@@ -688,7 +703,7 @@ To draw all four (or any number coming from the UI) rectangles at once, a loop i
 	  r.width = page.width;
 	  r.height = rowHeight;
 		// moving the row in place
-    r.translateY = gutter + (gutter + rowHeight) * i;
+    r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
     rowsRect.push(r);
   }
   // adding the rows to the page
@@ -713,7 +728,7 @@ for (let i = 0; i < cols; i++) {
 	let r = editor.createRectangle();
 	  r.width = colWidth;
 	  r.height = page.height;
-		r.translateX = gutter + (gutter + colWidth) * i;
+    r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
 	cols.push(r);
 }
 cols.forEach((rect) => page.artboards.first.children.append(rect));
@@ -737,8 +752,8 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 #### documentSandbox/code.js
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
-import { editor } from "express";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+import { editor } from "express-document-sdk";
 import { addColumns, addRows } from "./shapeUtils";
 
 // Get the Document Sandbox.
@@ -763,7 +778,7 @@ start();
 #### documentSandbox/shapeUtils.js
 
 ```js
-import { editor, utils, Constants } from "express";
+import { editor, utils, constants } from "express-document-sdk";
 
 const hexToColor = (hex) => {
 	// ...
@@ -786,7 +801,7 @@ const addRows = (rowsNumber, gutter, color) => {
   const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
   for (let i = 0; i < rowsNumber; i++) {
     let r = createRect(page.width, rowHeight, color);
-    r.translateY = gutter + (gutter + rowHeight) * i;
+    r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
     rows.push(r);
   }
   rows.forEach((row) => page.artboards.first.children.append(row));
@@ -798,7 +813,7 @@ const addColumns = (columNumber, gutter, color) => {
   const colWidth = (page.width - (columNumber + 1) * gutter) / columNumber;
   for (let i = 0; i < columNumber; i++) {
     let r = createRect(colWidth, page.height, color);
-    r.translateX = gutter + (gutter + colWidth) * i;
+    r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
     cols.push(r);
   }
   cols.forEach((col) => page.artboards.first.children.append(col));
@@ -842,25 +857,6 @@ const addRows = (rowsNumber, gutter, color) => {
 
 ![](images/grids-addon-groups.png)
 
-<!-- code below -->
-<InlineAlert variant="warning" slots="heading, text1, text2" />
-
-**Grouping elements**
-
-Like every other node, groups are first created, and then put on the page. It's important to remember that **groups can only act as containers if they exist on the document** first.
-
-```js
-// DO
-const rowsGroup = editor.createGroup();          // ✅  create
-page.artboards.first.children.append(rowsGroup); // ✅  append
-rowsGroup.children.append(...rows);              // ✅  fill
-
-// DON'T
-const rowsGroup = editor.createGroup();          // ✅  create
-rowsGroup.children.append(...rows);              // ❌  fill 
-page.artboards.first.children.append(rowsGroup); // ❌  append
-```
-
 To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/document-sandbox/document-apis/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
 
 ```js
@@ -869,15 +865,15 @@ rowsGroup.children.append(...rows);
 rowsGroup.locked = true;
 ```
 
-The Reference also shows an interesting [`blendMode`](/references/document-sandbox/document-apis/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/document-sandbox/document-apis/enums/BlendModeValue/#multiply) will produce a visually nicer overlay effect ([opacity](/references/document-sandbox/document-apis/classes/GroupNode.md#opacity) can be an alternative).
+The Reference also shows an interesting [`blendMode`](/references/document-sandbox/document-apis/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/document-sandbox/document-apis/enums/BlendMode/#multiply) will produce a visually nicer overlay effect ([opacity](/references/document-sandbox/document-apis/classes/GroupNode.md#opacity) can be an alternative).
 
 ```js
 // ...
-rowsGroup.blendMode = Constants.BlendModeValue.multiply;
+rowsGroup.blendMode = constants.BlendMode.multiply;
 rowsGroup.locked = true;
 ```
 
-At present, the Reference includes only a few enumerations, such as `BlendModeValue`. As the Document API expands, more enumerations will be added. They provide sets of named constants, making the code more readable by replacing direct numeric values with descriptive names.
+At present, the Reference includes only a few enumerations, such as `BlendMode`. As the Document API expands, more enumerations will be added. They provide sets of named constants, making the code more readable by replacing direct numeric values with descriptive names.
 
 <InlineAlert variant="warning" slots="text1" />
 
@@ -1057,7 +1053,7 @@ addOnUISdk.ready.then(async () => {
 
   // Get the Document Sandbox.
   const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("script");
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
   // Input fields -------------------------------------------
 
@@ -1206,8 +1202,8 @@ sp-button-group {
 #### Document API
 
 ```js
-import addOnSandboxSdk from "AddOnScriptSdk";
-import { editor } from "express";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+import { editor } from "express-document-sdk";
 import { addColumns, addRows } from "./shapeUtils";
 
 // Get the Document Sandbox.
@@ -1272,7 +1268,7 @@ start();
 #### Document API
 
 ```js
-import { editor, utils, Constants } from "express";
+import { editor, utils, constants } from "express-document-sdk";
 
 /**
  * Convert a hex color string to an instance of the Color class
@@ -1335,7 +1331,7 @@ const addRows = (rowsNumber, gutter, color) => {
   // Create the rectangles
   for (let i = 0; i < rowsNumber; i++) {
     let r = createRect(page.width, rowHeight, color);
-    r.translateY = gutter + (gutter + rowHeight) * i;
+    r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
     rows.push(r);
   }
   // Append the rectangles to the document
@@ -1347,7 +1343,7 @@ const addRows = (rowsNumber, gutter, color) => {
   // Populate the group with the rectangles
   rowsGroup.children.append(...rows);
   // Edit the group's properties
-  rowsGroup.blendMode = Constants.BlendModeValue.multiply;
+  rowsGroup.blendMode = constants.BlendMode.multiply;
   rowsGroup.locked = true;
   return rowsGroup;
 };
@@ -1368,7 +1364,7 @@ const addColumns = (columsNumber, gutter, color) => {
   // Create the rectangles
   for (let i = 0; i < columsNumber; i++) {
     let r = createRect(colWidth, page.height, color);
-    r.translateX = gutter + (gutter + colWidth) * i;
+    r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
     cols.push(r);
   }
   // Append the rectangles to the document
@@ -1380,7 +1376,7 @@ const addColumns = (columsNumber, gutter, color) => {
   // Populate the group with the rectangles
   columnsGroup.children.append(...cols);
   // Edit the group's properties
-  columnsGroup.blendMode = Constants.BlendModeValue.multiply;
+  columnsGroup.blendMode = constants.BlendMode.multiply;
   columnsGroup.locked = true;
   return columnsGroup;
 };
