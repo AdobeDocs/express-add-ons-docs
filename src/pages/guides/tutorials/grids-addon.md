@@ -33,6 +33,12 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy; revision history as follows.
 
+**December 3rd, 2023**
+
+- Removed the experimental warning from the document model sandbox APIs.
+- Importing `colorUtils` instead of `utils` from `"express-document-sdk"`; the built-in `colorUtils.fromHex()` method replaces the custom `hexToColor()`.
+- In the new API, nodes don't have the `fills` property (and it's `append()` method) anymore; instead, they use `fill`, to which a `ColorFill` is assigned.
+
 **November 29th, 2023**
 
 - `apiProxy()` now accepts `"documentSandbox"` as a parameter, instead of `"script"`.
@@ -94,10 +100,6 @@ As part of the [Document Model Sandbox](/references/document-sandbox/index.md), 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
 ![](images/grids-addon-communication.png)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The Document Sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. _Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable._  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
 
 ### The Project Structure
 
@@ -317,7 +319,7 @@ addOnUISdk.ready.then(async () => {
 ```js
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
-import { editor, utils, constants } from "express-document-sdk";
+import { editor, colorUtils, constants } from "express-document-sdk";
 
 function start() {
   runtime.exposeApi({
@@ -327,9 +329,9 @@ function start() {
       rect.height = height;
       rect.translation = { x: 50, y: 50 };
 
-      const col = utils.createColor(0.9, 0.5, 0.9);
+      const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
       const fillColor = editor.createColorFill(col);
-      rect.fills.append(fillColor);
+      rect.fill = fillColor;
 
       editor.context.insertionParent.children.append(rect);
     },
@@ -352,10 +354,10 @@ The `createShapeButton` invokes the `createShape()` method defined and exposed i
 According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/document-sandbox/document-apis/classes/Editor/) class, which must be imported from `"express-document-sdk"` with the following statement.
 
 ```js
-import { editor, utils, constants } from "express-document-sdk";
+import { editor, colorUtils, constants } from "express-document-sdk";
 ```
 
-We'll also make use of `utils` and `constants`—they are named imports from `"express-document-sdk"`, too. The `createRectangle()` function doesn't need any parameter, either required or optional; hence, the properties of this new element must be set after its creation.
+We'll also make use of `colorUtils` and `constants`—they are named imports from `"express-document-sdk"`, too. The `createRectangle()` function doesn't need any parameter, either required or optional; hence, the properties of this new element must be set after its creation.
 
 ```js
 const rect = editor.createRectangle();
@@ -364,15 +366,15 @@ rect.height = height;
 rect.translation = { x: 50, y: 50 };
 ```
 
-Dimensions and positions are straightforward while assigning a fill color is a multi-step process at the moment.[^1]
+Dimensions and positions are straightforward while assigning a fill color is a two-step process.
 
 ```js
-const col = utils.createColor(0.9, 0.5, 0.9);
+const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
 const fillColor = editor.createColorFill(col);
-rect.fills.append(fillColor);
+rect.fill = fillColor;
 ```
 
-First, you make use of the `createColor()` method from the `utils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by appending it to the `fills` list.
+First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
 
 <!-- code here -->
 <InlineAlert variant="info" slots="text1" />
@@ -388,7 +390,7 @@ editor.context.insertionParent.children.append(rect);
 
 Let's unpack this line. As it usually happens with any DOM (Document Object Model), it's easier if read _backwards_—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the _preferred parent_ to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^2]
 
-In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a color to a `fills` list and a rectangle to a container's `children` collection.[^3]
+In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a rectangle to a container's `children` collection.[^3]
 
 ![](images/grids-addon-shape.png)
 
@@ -634,7 +636,7 @@ It makes sense to approach this grid business with some caution, as we're just s
 ```js
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
-import { editor, utils, constants } from "express-document-sdk";
+import { editor, colorUtils, constants } from "express-document-sdk";
 
 function start() {
   runtime.exposeApi({
@@ -744,7 +746,6 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 - Rows and Columns can be separate processes, too.
 - `code.js` doesn't need to expose anything else but the `addGrid()` and  `deleteGrid()` methods.
 - `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
-- The Rows and Columns colors come from the UI as hex strings, like `"#ffcccc"`; we must write a function that extracts R, G, and B values and maps them to the (0..1) range the Document API deals with.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
@@ -778,11 +779,7 @@ start();
 #### documentSandbox/shapeUtils.js
 
 ```js
-import { editor, utils, constants } from "express-document-sdk";
-
-const hexToColor = (hex) => {
-	// ...
-};
+import { editor, colorUtils, constants } from "express-document-sdk";
 
 // Utility to create a rectangle and fill it with a color.
 const createRect = (width, height, color) => {
@@ -790,8 +787,8 @@ const createRect = (width, height, color) => {
   rect.width = width;
   rect.height = height;
   // Fill the rectangle with the color.
-  const rectangleFill = editor.createColorFill(hexToColor(color));
-  rect.fills.append(rectangleFill);
+  const rectangleFill = editor.createColorFill(colorUtils.fromHex(color));
+  rect.fill = rectangleFill;
   return rect;
 };
 
@@ -822,23 +819,7 @@ const addColumns = (columNumber, gutter, color) => {
 export { addColumns, addRows };
 ```
 
-As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Let's fill in the missing bits. The color conversion is performed by `hexToColor()`, which returns a proper Color object that can be used as a fill (see `shapeUtils.js`, line 13).
-
-```js
-const hexToColor = (hex) => {
-  // Ensure the hex value doesn't have a "#" at the beginning
-  if (hex.startsWith("#")) { hex = hex.slice(1) }
-  // Extract red, green, and blue hex values
-  const redHex = hex.slice(0, 2);
-  const greenHex = hex.slice(2, 4);
-  const blueHex = hex.slice(4, 6);
-  // Convert hex values to decimal values
-  const red = parseInt(redHex, 16) / 255;
-  const green = parseInt(greenHex, 16) / 255;
-  const blue = parseInt(blueHex, 16) / 255;
-  return utils.createColor(red, green, blue);
-};
-```
+As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Since the color is received as a Hex string (like `"#ffcccc"`), we make use of the `colorUtil.fromHex()` method to convert into a Color instance—see `shapeUtils.js`, line 9.
 
 It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/document-sandbox/document-apis/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
 
@@ -1268,33 +1249,7 @@ start();
 #### Document API
 
 ```js
-import { editor, utils, constants } from "express-document-sdk";
-
-/**
- * Convert a hex color string to an instance of the Color class
- * Private utility of the shapeUtils module.
- *
- * @param {string} hex - The hex color value to convert.
- * @returns {Color} A color instance with RGB values in the (0..1) range.
- */
-const hexToColor = (hex) => {
-  // Ensure the hex value doesn't have a "#" at the beginning
-  if (hex.startsWith("#")) {
-    hex = hex.slice(1);
-  }
-
-  // Extract red, green, and blue hex values
-  const redHex = hex.slice(0, 2);
-  const greenHex = hex.slice(2, 4);
-  const blueHex = hex.slice(4, 6);
-
-  // Convert hex values to decimal values
-  const red = parseInt(redHex, 16) / 255;
-  const green = parseInt(greenHex, 16) / 255;
-  const blue = parseInt(blueHex, 16) / 255;
-
-  return utils.createColor(red, green, blue);
-};
+import { editor, colorUtils, constants } from "express-document-sdk";
 
 /**
  * Create a rectangle with the specified width, height, and color.
@@ -1309,8 +1264,8 @@ const createRect = (width, height, color) => {
   const rect = editor.createRectangle();
   rect.width = width;
   rect.height = height;
-  const rectangleFill = editor.createColorFill(hexToColor(color));
-  rect.fills.append(rectangleFill);
+  const rectangleFill = editor.createColorFill(colorUtils.fromHex(color));
+  rect.fill = rectangleFill;
   return rect;
 };
 
@@ -1386,8 +1341,6 @@ export { addColumns, addRows };
 ```
 
 <!-- Footnotes -->
-
-[^1]: Future updates may offer a simpler color creation process.
 
 [^2]: The quotes are from the Documentation Reference of each element.
 
