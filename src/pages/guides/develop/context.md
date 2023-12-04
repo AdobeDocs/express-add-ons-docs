@@ -59,6 +59,7 @@ Your add-on is given a unique ID when you distribute your add-on for private or 
 
 #### Determining the subdomain
 
+You can get a 
 You can determine your add-on's subdomain by first [creating a private sharing link](../distribute/private-dist.md). In the link generated, you'll see that it contains a unique ID in the `claimCode`, just befre the colon (`:`), for instance:
 
 ![private sharing link example](./img/private-link.png)
