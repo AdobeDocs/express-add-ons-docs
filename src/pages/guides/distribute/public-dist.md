@@ -92,7 +92,7 @@ Select **Create New** from either and continue to step 2.
 
 ## Step 2: Add-on Container Settings
 
-Your add-on container will be created and a settings panel will be shown. You will be provided a unique subdomain URL which is shown in this panel and is where your add-on will be hosted, and an option to delete the add-on if needed.
+Your add-on container will be created and a settings panel like the one shown below will be presented. will be shown. In this panel you will be provided with a unique subdomain URL for where your add-on will be hosted and an option to delete the add-on if needed.
 
 ![](./img/settings-panel.png)
 
