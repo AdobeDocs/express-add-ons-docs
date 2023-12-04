@@ -15,7 +15,7 @@ Represents an RGBA color.
 
 ## Properties
 
-### <a id="alpha" name="alpha"></a> alpha
+### alpha
 
 • **alpha**: `number`
 
@@ -23,7 +23,7 @@ The alpha channel in range from 0 - 1.
 
 ___
 
-### <a id="blue" name="blue"></a> blue
+### blue
 
 • **blue**: `number`
 
@@ -31,7 +31,7 @@ The blue channel in range from 0 - 1.
 
 ___
 
-### <a id="green" name="green"></a> green
+### green
 
 • **green**: `number`
 
@@ -39,7 +39,7 @@ The green channel in range from 0 - 1.
 
 ___
 
-### <a id="red" name="red"></a> red
+### red
 
 • **red**: `number`
 

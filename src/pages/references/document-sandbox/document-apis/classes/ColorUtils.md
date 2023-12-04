@@ -20,7 +20,7 @@ Utility methods for working with color values.
 
 ## Methods
 
-### <a id="fromHex" name="fromHex"></a> fromHex
+### fromHex
 
 ▸ **fromHex**(`hex`): [`Color`](../interfaces/Color.md)
 
@@ -43,7 +43,7 @@ the hex string cannot be parsed.
 
 ___
 
-### <a id="fromRGB" name="fromRGB"></a> fromRGB
+### fromRGB
 
 ▸ **fromRGB**(`red`, `green`, `blue`, `alpha?`): [`Color`](../interfaces/Color.md)
 
@@ -80,7 +80,7 @@ Create a new Color. All color components should be in a 0 - 1 range.
 
 ___
 
-### <a id="toHex" name="toHex"></a> toHex
+### toHex
 
 ▸ **toHex**(`color`): `string`
 
