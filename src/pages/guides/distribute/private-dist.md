@@ -49,13 +49,19 @@ If you have existing listings, your first screen will display them:
 
 Select **Create New** from either, and continue to step 2.
 
-## Step 2: Create a new private link
+## Step 2: Add-on Container Settings
 
-Next, you will choose how you want to distribute your add-on, whether it's to share privately only, or if you want it publicly available. Select **Private link**, and hit **Next**.
+Your add-on container will be created and a settings panel like the one shown below will be presented. will be shown. In this panel you will be provided with a unique subdomain URL for where your add-on will be hosted and an option to delete the add-on if needed.
 
-![](./img/private-option.png)
+![](./img/settings-panel.png)
 
-## Step 3: Upload your add-on package
+## Step 3: Create a new private link
+
+Next, click on the **Private listing** tab and you will be presented with the screen below where you can press the **Create private link** button to proceed.
+
+![Private link option](./img/empty-private-listing.png)
+
+## Step 4: Upload your add-on package
 
 The next step is to upload your package zip. Click on the **select from your computer** link and choose your add-on package zip from your file system.
 
@@ -85,7 +91,7 @@ Otherwise, you should see the following green check mark showing it's verified a
 
 ![Verified](./img/private-verified.png)
 
-## Step 4: Enter name, icon and release notes
+## Step 5: Enter name, icon and release notes
 
 In this step you will be prompted to choose a unique **Add-on name** (25 characters max), a 144x144px **Add-on icon**, and optional **Release notes** (1000 characters max). Your add-on name will be validated when you tab out (or the field loses focus) before you will be allowed to move to the next step. You will know that it's verified by a green checkmark shown, or receive an error that it exists, and you need to choose another.
 
