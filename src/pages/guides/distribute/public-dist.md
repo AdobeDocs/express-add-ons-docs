@@ -98,7 +98,7 @@ Your add-on container will be created and a settings panel like the one shown be
 
 ## Step 3: Create a new public listing
 
-Next, click on the **Public listing** tab and you will be presented with the screen below where you can press the **Create public link** button to proceed. 
+Next, click on the **Public listing** tab and you will be presented with the screen below where you can press the **Create public link** button to proceed.
 
 ![Private link option](./img/empty-public-listing.png)
 

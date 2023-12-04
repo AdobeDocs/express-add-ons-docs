@@ -57,7 +57,7 @@ Your add-on container will be created and a settings panel like the one shown be
 
 ## Step 3: Create a new private link
 
-Next, click on the **Private listing** tab and you will be presented with the screen below where you can press the **Create private link** button to proceed. 
+Next, click on the **Private listing** tab and you will be presented with the screen below where you can press the **Create private link** button to proceed.
 
 ![Private link option](./img/empty-private-listing.png)
 
