@@ -20,6 +20,26 @@ contributors:
 
 # Changelog
 
+## 2023-12-04
+
+### Updates
+[Document API's](./document-sandbox/document-apis/) updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class and requires and update to the named import from `utils` to `colorUtils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+
+```js
+// Before
+import { utils } from "express-document-sdk";
+const color = utils.createColor(1, 0, 0);
+
+// After
+import { colorUtils } from "express-document-sdk";
+
+// any of:
+const color = colorUtils.fromRGB(1, 0, 0); // optional alpha
+const color = colorUtils.fromRGB({ red: 1 , green: 0, blue: 0 }); // optional alpha
+const color = colorUtils.fromHex("#ff0000");
+const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha
+```
+
 ## 2023-11-30
 
 ### Updates

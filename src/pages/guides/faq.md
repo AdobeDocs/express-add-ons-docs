@@ -133,7 +133,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### What are the supported mime types/file formats for exported content?
 
-  The supported file types for exported content are **"image/jpeg" (jpg format), "image/png" (png format), "video/mp4" (mp4 format)** and **"application/pdf" (pdf format)**.
+  The supported file types for exported content are **"image/jpeg" (jpg format), "image/png" (png format), "video/mp4" (mp4 format)** and **"text/plain" (pdf format)**.
 
 ### What are the supported file formats for imported content in Adobe Express?
 
@@ -163,4 +163,8 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?
 
-  This can happen due to a permissions issue, and the  `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write. 
+  This can happen due to a permissions issue, and the `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write.
+
+### Did the mime type for an exported PDF change?
+
+  Yes, the mime type of an exported rendition created using the [Export `createRenditions`](../references/addonsdk/app-document.md#createrenditions) method is now `text/plain` rather than `application/pdf`.

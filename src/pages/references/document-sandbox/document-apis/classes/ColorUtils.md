@@ -14,9 +14,9 @@ Utility methods for working with color values.
 
 ### Methods
 
-- [fromHex](ColorUtils.md#fromHex)
-- [fromRGB](ColorUtils.md#fromRGB)
-- [toHex](ColorUtils.md#toHex)
+- [fromHex](ColorUtils.md#fromhex)
+- [fromRGB](ColorUtils.md#fromrgb)
+- [toHex](ColorUtils.md#tohex)
 
 ## Methods
 
@@ -53,7 +53,7 @@ Create a new Color. All color components should be in a 0 - 1 range.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `red` | `number` | - |
+| `red` | `number` | The red component in a range from 0 - 1. |
 | `green` | `number` | The green component in a range from 0 - 1. |
 | `blue` | `number` | The blue component in a range from 0 - 1. |
 | `alpha?` | `number` | (optional) The alpha component in a range from 0 - 1. Defaults to 1 (fully opaque). |
