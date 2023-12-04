@@ -67,7 +67,7 @@ contributors:
   ```
 
 - [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
-- The [`RuntimeType`]() constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
+- The [`RuntimeType`](/references/addonsdk/instance-runtime/#parameters-1) constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -104,8 +104,7 @@ contributors:
   - Adds `translation` accessor
   - Adds `setPositionInParent` method
   - Adds `setRotationInParent` method
-
-- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
+  - The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
 
 ## 2023-11-27
 

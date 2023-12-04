@@ -163,4 +163,4 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?
 
-  This can happen due to a permissions issue, and the  `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write. 
+  This can happen due to a permissions issue, and the  `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write.

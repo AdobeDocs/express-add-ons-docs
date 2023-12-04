@@ -648,9 +648,11 @@ insertionParent.children.append(rectangle);
 Refer to [getting started with the Document Sandbox](../../references/document-sandbox/index.md#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Document APIs for authoring content.
 
 ## Document Metadata
+
 You can retrieve some information about the current document using the [Add-on UI SDK Document object](../../references/addonsdk/app-document.md). Currently there are methods that allow you to retrieve the ID of the document and the title (ie: name). There are also associated events that allow you to listen for when the document is available (via the `documentAvailable` event) and when the title has changed (via the `documentTitleChange` event). The examples below illustrates the use of these new methods and events for reference.
 
-### Retrieving the document id 
+### Retrieving the document id
+
 The example below listens for the `documentAvailable` event and then sets the id.
 
 #### Example
@@ -658,6 +660,7 @@ The example below listens for the `documentAvailable` event and then sets the id
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -671,6 +674,7 @@ addOnUISdk.app.on("documentAvailable", data => {
 ```
 
 ### Retrieving the document title
+
 The example below listens for the `documentTitleChange` event and then sets the id.
 
 #### Example
@@ -678,6 +682,7 @@ The example below listens for the `documentTitleChange` event and then sets the 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 

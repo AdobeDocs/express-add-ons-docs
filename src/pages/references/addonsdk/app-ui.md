@@ -114,6 +114,7 @@ Please see the **swc** sample provided in the [code samples](../../samples.md) w
 
 <!-- 
 ## AddOnSdk.app.ui Properties
+
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>

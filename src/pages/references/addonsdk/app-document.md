@@ -25,6 +25,7 @@ A resolved `Promise` containing the `id` of the document.
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -58,6 +59,7 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 

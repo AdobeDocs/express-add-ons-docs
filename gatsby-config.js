@@ -129,8 +129,8 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/ArtboardNode.md",
                   },
                   {
-                    title: "Color",
-                    path: "references/document-sandbox/document-apis/classes/Color.md",
+                    title: "ColorUtils",
+                    path: "references/document-sandbox/document-apis/classes/ColorUtils.md",
                   },
                   {
                     title: "ComplexShapeNode",
@@ -239,6 +239,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
                   },
                   {
+                    title: "Color",
+                    path: "references/document-sandbox/document-apis/interfaces/Color.md",
+                  },
+                  {
                     title: "ColorFill",
                     path: "references/document-sandbox/document-apis/interfaces/ColorFill.md",
                   },
@@ -282,10 +286,6 @@ module.exports = {
                   {
                     title: "StrokeOptions",
                     path: "references/document-sandbox/document-apis/interfaces/StrokeOptions.md",
-                  },
-                  {
-                    title: "Utils",
-                    path: "references/document-sandbox/document-apis/interfaces/Utils.md",
                   },
                 ],
               },
@@ -391,7 +391,7 @@ module.exports = {
           {
             title: "Implementing Common Use Cases",
             path: "guides/develop/use_cases.md",
-          },          
+          },
           {
             title: "Frameworks, libraries and bundling",
             path: "guides/develop/frameworks-libraries-bundling.md",
