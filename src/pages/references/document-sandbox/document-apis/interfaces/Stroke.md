@@ -24,7 +24,7 @@ Represents a stroke in the scenegraph. See [StrokableNode](../classes/StrokableN
 
 ### color
 
-• `Readonly` **color**: [`Color`](../classes/Color.md)
+• `Readonly` **color**: [`Color`](Color.md)
 
 The color of a stroke.
 
