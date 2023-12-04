@@ -90,13 +90,13 @@ If you have already created existing listings, the first screen displayed will s
 
 Select **Create New** from either and continue to step 2.
 
-## Step 2: Add-on Container Settings
+### Step 2: Add-on Container Settings
 
 Your add-on container will be created and a settings panel like the one shown below will be presented. will be shown. In this panel you will be provided with a unique subdomain URL for where your add-on will be hosted and an option to delete the add-on if needed.
 
 ![](./img/settings-panel.png)
 
-## Step 3: Create a new public listing
+### Step 3: Create a new public listing
 
 Next, click on the **Public listing** tab and you will be presented with the screen below where you can press the **Create public link** button to proceed.
 
@@ -173,9 +173,9 @@ Sometimes it may take a moment to upload the images to the back-end server befor
 
 ### Step 8: Enter the version details
 
-Next you will specify your version details. The package that you entered in the first step will be shown by default, but you can replace it if you have made an update since you originally uploaded it in this step as well. You can also enter any optional release notes at this step. You will see the green checkmark for **Version details** in the left rail and can press **Continue** to move on.
+Next you will specify your version details. The package that you entered in the first step will be shown by default, but you can replace it if you have made an update since you originally uploaded it in this step as well. You can also select the languages your add-on is supported in, and enter any optional release notes at this step. You will see the green checkmark for **Version details** in the left rail and can press **Continue** to move on.
 
-![Version Details](./img/release-notes.png)
+![Version Details](./img/version-details.png)
 
 ### Step 9: Create a publisher profile
 

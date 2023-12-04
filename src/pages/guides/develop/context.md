@@ -57,11 +57,13 @@ Be sure to set your browser devtools option to "**Show CORS errors in console**"
 To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service.
 Your add-on is given a unique ID when you go through the in-app distribution process for an add-on, to distribute it for private or public sharing. This ID will not change once it's been generated, regardless of [future distributions](../distribute/index.md), so we suggest that you create a private sharing link when you need it, even if you're still in the development phase. Your add-on's [subdomain](#subdomain) is assigned during this distribution process with a prefix of your unique add-on id, followed by the URL where it's hosted: `.wxp.adobe-addons.com`, for example: `src="https://w906hhl6k.wxp.adobe-addons.com/`.
 
-#### Determining the subdomain
+#### Retrieving a subdomain
 
-You can get a subdomain URL for your add-on during the development process by following the [add-on distribution steps](../distribute/private-dist.md) through [step 2](../distribute/private-dist.md#step-2-add-on-container-settings), where your own unique subdomain URL is provided for your add-on. This step creates the container for your add-on and assigns a unique subdomain for where it will be hosted, so you can use it to set up CORS in advance. You can stop at the creation of the container if all you need is the subdomain at this point, and come back to create a listing on it later when you've finished your development. An example of what the settings panel looks like with a sample unique add-on URL is shown below for reference. We provide a "Copy" button as well to allow you to easily copy your unique URL.
+You can get a subdomain URL for your add-on during the development process by following the [add-on distribution steps](../distribute/private-dist.md) through [step 2](../distribute/private-dist.md#step-2-add-on-container-settings), where your own unique subdomain URL is provided for your add-on. This step creates the container for your add-on and assigns a unique subdomain for where it will be hosted, so you can use it to set up CORS in advance. You can stop at the creation of the container if all you need is the subdomain at this point, and come back to create a listing on it later when you've finished your development. An example of what the settings panel with this URL looks like is shown below for reference. We provide a **Copy** button as well to allow you to easily copy your unique **Add-on URL**.
 
 ![add-on container settings panel](../distribute/img/settings-panel.png)
+
+For existing add-ons, simply choose one in the distribution workflow and navigate to the new **Settings** tab and copy the **Add-on URL** field.
 
 ### Using the subdomain
 

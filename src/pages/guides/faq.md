@@ -133,7 +133,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### What are the supported mime types/file formats for exported content?
 
-  The supported file types for exported content are **"image/jpeg" (jpg format), "image/png" (png format), "video/mp4" (mp4 format)** and **"text/plain" (pdf format)**.
+  The supported file types for exported content are **"image/jpeg" (jpg format), "image/png" (png format), "video/mp4" (mp4 format)** and **"application/pdf" (pdf format)**.
 
 ### What are the supported file formats for imported content in Adobe Express?
 
@@ -167,4 +167,4 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### Did the mime type for an exported PDF change?
 
-  Yes, the mime type of an exported rendition created using the [Export `createRenditions`](../references/addonsdk/app-document.md#createrenditions) method is now `text/plain` rather than `application/pdf`.
+  Yes, the mime type of an exported rendition created using the [Export `createRenditions`](../references/addonsdk/app-document.md#createrenditions) method is now `text/plain` rather than `application/pdf`. Please note, you should still specify `application/pdf` in the `RenditionFormat` passed to the export method for PDFs, but be aware that the file returned will have a mime type of `text/plain`.
