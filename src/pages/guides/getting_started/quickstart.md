@@ -57,9 +57,24 @@ This command will create a new add-on based on a basic `javascript` template. Se
 
    **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
-<InlineAlert slots="text" variant="success"/>
+<InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
+
+#### CLI troubleshooting <!-- 👈 will not render -->
 
 `npx` is an `npm` package runner that can execute packages without installing them explicitly.
+
+Please run this command to clear the `npx` cache and ensure the latest version of the CLI is invoked.
+
+```bash
+npx clear-npx-cache
+npx @adobe/create-ccweb-add-on hello-world 
+```
+
+The above may prove useful when updated version of the CLI are released. If you want to read each individual CLI command manual pages, run them via `npx` with the `--help` flag, for example:
+
+```bash
+npx @adobe/ccweb-add-on-scripts start --help  
+```
 
 ## Step 2: Build and start your add-on
 
