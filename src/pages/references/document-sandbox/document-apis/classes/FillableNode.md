@@ -28,13 +28,13 @@ Base class for a Node that can have its own fill and stroke.
 
 - [allChildren](FillableNode.md#allchildren)
 - [blendMode](FillableNode.md#blendmode)
-- [fills](FillableNode.md#fills)
+- [fill](FillableNode.md#fill)
 - [locked](FillableNode.md#locked)
 - [opacity](FillableNode.md#opacity)
 - [parent](FillableNode.md#parent)
 - [rotation](FillableNode.md#rotation)
 - [rotationInScreen](FillableNode.md#rotationinscreen)
-- [strokes](FillableNode.md#strokes)
+- [stroke](FillableNode.md#stroke)
 - [transformMatrix](FillableNode.md#transformmatrix)
 - [translation](FillableNode.md#translation)
 - [type](FillableNode.md#type)
@@ -52,9 +52,11 @@ Base class for a Node that can have its own fill and stroke.
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -99,19 +101,35 @@ StrokableNode.blendMode
 
 ___
 
-### fills
+### fill
 
-• `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
+• `get` **fill**(): `undefined` \| [`Fill`](../interfaces/Fill.md)
 
-Any fill(s) on the shape. Use the methods on this ItemList object to get, add, and remove fills.
+The fill applied to the shape, if any.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
+`undefined` \| [`Fill`](../interfaces/Fill.md)
 
 #### Implementation of
 
-[IFillableNode](../interfaces/IFillableNode.md).[fills](../interfaces/IFillableNode.md#fills)
+[IFillableNode](../interfaces/IFillableNode.md).[fill](../interfaces/IFillableNode.md#fill)
+
+• `set` **fill**(`fill`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fill` | `undefined` \| [`Fill`](../interfaces/Fill.md) |
+
+#### Returns
+
+`void`
+
+#### Implementation of
+
+[IFillableNode](../interfaces/IFillableNode.md).[fill](../interfaces/IFillableNode.md#fill)
 
 ___
 
@@ -182,13 +200,13 @@ ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
 
 #### Inherited from
 
@@ -230,19 +248,35 @@ StrokableNode.rotationInScreen
 
 ___
 
-### strokes
+### stroke
 
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+• `get` **stroke**(): `undefined` \| [`Stroke`](../interfaces/Stroke.md)
 
-Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
+The stroke applied to the shape, if any.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+`undefined` \| [`Stroke`](../interfaces/Stroke.md)
 
 #### Inherited from
 
-StrokableNode.strokes
+StrokableNode.stroke
+
+• `set` **stroke**(`stroke`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `stroke` | `undefined` \| [`Stroke`](../interfaces/Stroke.md) |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+StrokableNode.stroke
 
 ___
 

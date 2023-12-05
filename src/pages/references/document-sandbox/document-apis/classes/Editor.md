@@ -82,7 +82,7 @@ ___
 
 [`EllipseNode`](EllipseNode.md)
 
-an ellipse node with default x/y radii, and *no* initial stroke or fill.
+an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
 ___
@@ -147,7 +147,7 @@ ___
 
 [`RectangleNode`](RectangleNode.md)
 
-a rectangle node with default width and height, and *no* initial stroke or fill.
+a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
 
 ___

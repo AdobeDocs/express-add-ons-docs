@@ -2,17 +2,18 @@
 
 # Class: Node
 
-A Node represents an object in the scenegraph, the document's visual content tree.
+A Node represents an object in the scenegraph, the document's visual content tree. Most tangible visual content is a
+subclass of Node, but note that some abstract top-level structural nodes (such as PageNode) only extend the more minimal
+BaseNode. As a general rule, if you can click or drag an object with the select/move tool in the UI, then it extends
+from Node.
 
 ## Hierarchy
 
-- `ProxyLiveObject`
+- [`BaseNode`](BaseNode.md)
 
   ↳ **`Node`**
 
-  ↳↳ [`ContainerNode`](ContainerNode.md)
-
-  ↳↳ [`ExpressRootNode`](ExpressRootNode.md)
+  ↳↳ [`GroupNode`](GroupNode.md)
 
   ↳↳ [`GridLayoutNode`](GridLayoutNode.md)
 
@@ -20,13 +21,9 @@ A Node represents an object in the scenegraph, the document's visual content tre
 
   ↳↳ [`MediaContainerNode`](MediaContainerNode.md)
 
-  ↳↳ [`PageNode`](PageNode.md)
-
   ↳↳ [`SolidColorShapeNode`](SolidColorShapeNode.md)
 
   ↳↳ [`StrokableNode`](StrokableNode.md)
-
-  ↳↳ [`StrokeShapeNode`](StrokeShapeNode.md)
 
   ↳↳ [`TextNode`](TextNode.md)
 
@@ -60,13 +57,19 @@ A Node represents an object in the scenegraph, the document's visual content tre
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
 `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+
+#### Overrides
+
+BaseNode.allChildren
 
 ___
 
@@ -146,13 +149,17 @@ ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
+
+#### Inherited from
+
+BaseNode.parent
 
 ___
 
@@ -232,6 +239,10 @@ The node's type.
 
 [`SceneNodeType`](../enums/SceneNodeType.md)
 
+#### Inherited from
+
+BaseNode.type
+
 ## Methods
 
 ### removeFromParent
@@ -245,6 +256,10 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[BaseNode](BaseNode.md).[removeFromParent](BaseNode.md#removefromparent)
 
 ___
 

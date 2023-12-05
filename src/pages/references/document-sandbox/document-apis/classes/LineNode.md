@@ -34,7 +34,7 @@ A LineNode represents a simple line object in the scenegraph – a single straig
 - [startArrowHeadType](LineNode.md#startarrowheadtype)
 - [startX](LineNode.md#startx)
 - [startY](LineNode.md#starty)
-- [strokes](LineNode.md#strokes)
+- [stroke](LineNode.md#stroke)
 - [transformMatrix](LineNode.md#transformmatrix)
 - [translation](LineNode.md#translation)
 - [type](LineNode.md#type)
@@ -77,9 +77,11 @@ ___
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -128,12 +130,9 @@ ___
 
 • `get` **endArrowHeadType**(): [`ArrowHeadType`](../enums/ArrowHeadType.md)
 
-The shape encapsulating the end of a line. The size and color of the arrowhead
-depends on the first available stroke's weight and color assigned to the node.
-Removal of all strokes on this line leads to the arrowhead's removal.
+The shape encapsulating the end of a line.
 
-The getter returns [none](../enums/ArrowHeadType.md#none) when there are no strokes on the line
-or no arrowhead on the first stroke of the line.
+Returns [none](../enums/ArrowHeadType.md#none) if there is no stroke on the line.
 
 #### Returns
 
@@ -141,8 +140,7 @@ or no arrowhead on the first stroke of the line.
 
 • `set` **endArrowHeadType**(`type`): `void`
 
-The setter creates a default stroke for the line when there are no strokes on the line,
-and updates the arrowhead on only the first stroke of the line.
+The setter sets a default stroke on the line if it did not have one.
 
 #### Parameters
 
@@ -247,13 +245,13 @@ ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
 
 #### Inherited from
 
@@ -299,12 +297,9 @@ ___
 
 • `get` **startArrowHeadType**(): [`ArrowHeadType`](../enums/ArrowHeadType.md)
 
-The shape encapsulating the start of a line. The size and color of the arrowhead
-depends on the first available stroke's weight and color assigned to the node.
-Removal of all strokes on this line leads to the arrowhead's removal.
+The shape encapsulating the start of a line.
 
-The getter returns [none](../enums/ArrowHeadType.md#none) when there are no strokes on the line
-or no arrowhead on the first stroke of the line.
+Returns [none](../enums/ArrowHeadType.md#none) if there is no stroke on the line.
 
 #### Returns
 
@@ -312,8 +307,7 @@ or no arrowhead on the first stroke of the line.
 
 • `set` **startArrowHeadType**(`type`): `void`
 
-The setter creates a default stroke for the line when there are no strokes on the line,
-and updates the arrowhead on only the first stroke of the line.
+The setter sets a default stroke on the line if it did not have one.
 
 #### Parameters
 
@@ -351,19 +345,35 @@ The start point on the y-axis in the parent's coordinate system. Modify using `s
 
 ___
 
-### strokes
+### stroke
 
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+• `get` **stroke**(): `undefined` \| [`Stroke`](../interfaces/Stroke.md)
 
-Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
+The stroke applied to the shape, if any.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+`undefined` \| [`Stroke`](../interfaces/Stroke.md)
 
 #### Inherited from
 
-StrokableNode.strokes
+StrokableNode.stroke
+
+• `set` **stroke**(`stroke`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `stroke` | `undefined` \| [`Stroke`](../interfaces/Stroke.md) |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+StrokableNode.stroke
 
 ___
 

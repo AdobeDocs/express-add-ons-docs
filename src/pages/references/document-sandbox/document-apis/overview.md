@@ -22,6 +22,7 @@
 
 - [ArtboardList](classes/ArtboardList.md)
 - [ArtboardNode](classes/ArtboardNode.md)
+- [BaseNode](classes/BaseNode.md)
 - [ColorUtils](classes/ColorUtils.md)
 - [ComplexShapeNode](classes/ComplexShapeNode.md)
 - [Context](classes/Context.md)
@@ -53,6 +54,7 @@
 - [BitmapImage](interfaces/BitmapImage.md)
 - [Color](interfaces/Color.md)
 - [ColorFill](interfaces/ColorFill.md)
+- [ContainerNode](interfaces/ContainerNode.md)
 - [Fill](interfaces/Fill.md)
 - [IFillableNode](interfaces/IFillableNode.md)
 - [IRectangularNode](interfaces/IRectangularNode.md)

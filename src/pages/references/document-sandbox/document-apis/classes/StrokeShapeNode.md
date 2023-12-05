@@ -7,7 +7,7 @@ if it is composed of multiple separate paths.
 
 ## Hierarchy
 
-- [`Node`](Node.md)
+- [`StrokableNode`](StrokableNode.md)
 
   ↳ **`StrokeShapeNode`**
 
@@ -40,9 +40,11 @@ if it is composed of multiple separate paths.
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -50,7 +52,7 @@ overall display z-order.
 
 #### Inherited from
 
-Node.allChildren
+StrokableNode.allChildren
 
 ___
 
@@ -67,7 +69,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 #### Inherited from
 
-Node.blendMode
+StrokableNode.blendMode
 
 • `set` **blendMode**(`value`): `void`
 
@@ -83,7 +85,7 @@ Node.blendMode
 
 #### Inherited from
 
-Node.blendMode
+StrokableNode.blendMode
 
 ___
 
@@ -100,7 +102,7 @@ cannot be edited by the user unless they are unlocked first.
 
 #### Inherited from
 
-Node.locked
+StrokableNode.locked
 
 • `set` **locked**(`locked`): `void`
 
@@ -116,7 +118,7 @@ Node.locked
 
 #### Inherited from
 
-Node.locked
+StrokableNode.locked
 
 ___
 
@@ -132,7 +134,7 @@ The node's opacity, from 0.0 to 1.0
 
 #### Inherited from
 
-Node.opacity
+StrokableNode.opacity
 
 • `set` **opacity**(`opacity`): `void`
 
@@ -148,23 +150,23 @@ Node.opacity
 
 #### Inherited from
 
-Node.opacity
+StrokableNode.opacity
 
 ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
 
 #### Inherited from
 
-Node.parent
+StrokableNode.parent
 
 ___
 
@@ -181,7 +183,7 @@ change rotation by rotating around a defined centerpoint.
 
 #### Inherited from
 
-Node.rotation
+StrokableNode.rotation
 
 ___
 
@@ -198,7 +200,7 @@ cumulative rotation from the node's parent containers.
 
 #### Inherited from
 
-Node.rotationInScreen
+StrokableNode.rotationInScreen
 
 ___
 
@@ -206,11 +208,15 @@ ___
 
 • `get` **stroke**(): `undefined` \| [`Stroke`](../interfaces/Stroke.md)
 
-Stroke on the shape.
+The stroke applied to the shape, if any.
 
 #### Returns
 
 `undefined` \| [`Stroke`](../interfaces/Stroke.md)
+
+#### Inherited from
+
+StrokableNode.stroke
 
 • `set` **stroke**(`stroke`): `void`
 
@@ -223,6 +229,10 @@ Stroke on the shape.
 #### Returns
 
 `void`
+
+#### Inherited from
+
+StrokableNode.stroke
 
 ___
 
@@ -238,7 +248,7 @@ The node's transform matrix relative to its parent.
 
 #### Inherited from
 
-Node.transformMatrix
+StrokableNode.transformMatrix
 
 ___
 
@@ -256,7 +266,7 @@ setting translation directly.
 
 #### Inherited from
 
-Node.translation
+StrokableNode.translation
 
 • `set` **translation**(`value`): `void`
 
@@ -274,7 +284,7 @@ Node.translation
 
 #### Inherited from
 
-Node.translation
+StrokableNode.translation
 
 ___
 
@@ -290,7 +300,7 @@ The node's type.
 
 #### Inherited from
 
-Node.type
+StrokableNode.type
 
 ## Methods
 
@@ -308,7 +318,7 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removefromparent)
+[StrokableNode](StrokableNode.md).[removeFromParent](StrokableNode.md#removefromparent)
 
 ___
 
@@ -343,7 +353,7 @@ rectangle.setPositionInParent(
 
 #### Inherited from
 
-[Node](Node.md).[setPositionInParent](Node.md#setpositioninparent)
+[StrokableNode](StrokableNode.md).[setPositionInParent](StrokableNode.md#setpositioninparent)
 
 ___
 
@@ -377,4 +387,4 @@ rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height 
 
 #### Inherited from
 
-[Node](Node.md).[setRotationInParent](Node.md#setrotationinparent)
+[StrokableNode](StrokableNode.md).[setRotationInParent](StrokableNode.md#setrotationinparent)
