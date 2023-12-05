@@ -129,17 +129,17 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/ArtboardNode.md",
                   },
                   {
+                    title: "BaseNode",
+                    path: "references/document-sandbox/document-apis/classes/BaseNode.md",
+                  },
+                  {
                     title: "ColorUtils",
                     path: "references/document-sandbox/document-apis/classes/ColorUtils.md",
                   },
                   {
                     title: "ComplexShapeNode",
                     path: "references/document-sandbox/document-apis/classes/ComplexShapeNode.md",
-                  },
-                  {
-                    title: "ContainerNode",
-                    path: "references/document-sandbox/document-apis/classes/ContainerNode.md",
-                  },
+                  },                  
                   {
                     title: "Context",
                     path: "references/document-sandbox/document-apis/classes/Context.md",
@@ -197,6 +197,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/PageNode.md",
                   },
                   {
+                    title: "PathNode",
+                    path: "references/document-sandbox/document-apis/classes/PathNode.md",
+                  },
+                  {
                     title: "ReadOnlyItemList",
                     path: "references/document-sandbox/document-apis/classes/ReadOnlyItemList.md",
                   },
@@ -245,6 +249,10 @@ module.exports = {
                   {
                     title: "ColorFill",
                     path: "references/document-sandbox/document-apis/interfaces/ColorFill.md",
+                  },
+                  {
+                    title: "ContainerNode",
+                    path: "references/document-sandbox/document-apis/interfaces/ContainerNode.md",
                   },                  
                   {
                     title: "Fill",
@@ -278,7 +286,6 @@ module.exports = {
                     title: "RectangleGeometry",
                     path: "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md",
                   },
-
                   {
                     title: "Stroke",
                     path: "references/document-sandbox/document-apis/interfaces/Stroke.md",
