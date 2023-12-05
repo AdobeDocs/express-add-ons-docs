@@ -79,7 +79,11 @@ The JavaScript code in the file referenced can then access any of the injected g
 
 ### CLI Generated Document Sandbox Add-on
 
-The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
+The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, you can [specify a template name](../../guides/getting_started/dev_tooling.md#templates) that includes the document sandbox support:
+
+`npx @adobe/create-ccweb-add-on helloworld --template javascript-with-document-sandbox`
+
+ or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
 
 ![CLI prompt for document sandbox](../img/cli-doc-sandbox-prompt.png)
 

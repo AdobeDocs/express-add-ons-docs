@@ -23,36 +23,49 @@ contributors:
 ## 2023-12-04
 
 ### Updates
-- The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, and replaces the previous `utils` module that was used as a color helper. If you've used it in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+- The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
 
-```js
-// Before
-import { utils } from "express-document-sdk";
-const color = utils.createColor(1, 0, 0);
+  ```js
+  // Before
+  import { utils } from "express-document-sdk";
+  const color = utils.createColor(1, 0, 0);
 
-// After
-import { colorUtils } from "express-document-sdk";
+  // After
+  import { colorUtils } from "express-document-sdk";
 
-// any of:
-const color = colorUtils.fromRGB(1, 0, 0); // optional alpha
-const color = colorUtils.fromRGB({ red: 1 , green: 0, blue: 0 }); // optional alpha
-const color = colorUtils.fromHex("#ff0000");
-const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha
-```
+  // any of:
+  const color = colorUtils.fromRGB(1, 0, 0); // optional alpha
+  const color = colorUtils.fromRGB({ red: 1 , green: 0, blue: 0 }); // optional alpha
+  const color = colorUtils.fromHex("#ff0000");
+  const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha
+  ```
 
-- A new release has landed for the [**In-App Developer Submission experience**](../guides/distribute/) in Express.
+  The [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have also been updated, so please also refer to those for further details on how to use it. Please note, the [example code snippets](../references/document-sandbox/document-apis/index.md#example-code-snippet) and samples using `fills` or `strokes` off a node class were also updated to use a singular `Fill` or `Stroke` object instead of as an `ItemList` object.
 
-  Some highlights from the release:
+  ```js
+    // Before
+    rectangle.fills.append(rectFill);
+    ellipse.fills.append(ellipseFill);
+
+    // After
+    rectangle.fill = rectFill;
+    ellipse.fill = ellipseFill;
+  ```
+
+- A new release has landed for the [**In-App Developer Submission experience**](../guides/distribute/) in Express. Some highlights from the release:
 
   **Create Add-on flow:** You can now create [an add-on "container"](../guides/distribute/public-dist.md#step-2-add-on-container-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
-  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../guides/develop/context/#cors) for more details.
+  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../guides/develop/context.md#cors) for more details.
 
   **Delete Add-ons:** The "container" concept allowed us to offer better management and cleanup of your add-ons. You will now find the option to delete an add-on container entirely from the new "Settings" tab of a given add-on.
 
   **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
 
-  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-8-enter-the-version-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/use_cases/#detecting-locale-and-supported-locales).
+  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-8-enter-the-version-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/use_cases.md#detecting-locale-and-supported-locales).
+- Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev_tooling.md#no-template-parameter).
+- New [FAQ item](../guides/faq.md#did-the-mime-type-for-an-exported-pdf-change) regarding the mime type for exported PDF files.
+- Removed NPS survey.
 
 ## 2023-11-30
 
