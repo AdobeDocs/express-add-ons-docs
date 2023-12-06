@@ -2,6 +2,4 @@
 
 ## Supported Browsers
 
-
 ## Sandboxed iFrame Caveats
-

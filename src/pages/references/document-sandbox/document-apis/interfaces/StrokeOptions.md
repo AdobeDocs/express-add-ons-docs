@@ -23,7 +23,7 @@ Properties that can be provided to create a stroke.
 
 ### color
 
-• `Readonly` **color**: [`Color`](../classes/Color.md)
+• `Readonly` **color**: [`Color`](Color.md)
 
 The color of a stroke.
 

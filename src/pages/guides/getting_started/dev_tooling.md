@@ -87,7 +87,7 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 
 ## Templates
 
-The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently four different template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
+The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently four base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 <br/>
 
 | Template         | Framework        |
@@ -97,7 +97,16 @@ The add-on CLI contains built-in, pre-configured templates to allow you to creat
 | `react-javascript`  | React with JavaScript |
 | `react-typescript` | React with TypeScript |
 
-The following syntax can be used to specify one of the above templates:
+as well as the following four template options which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
+
+| Template         | Description        |
+| ---------------- | ---------------- |
+| `javascript-with-document-sandbox`  | JavaScript project with document sandbox support.  |
+| `typescript-with-document-sandbox`  | TypeScript project with document sandbox support.      |
+| `react-javascript-with-document-sandbox`  | React+JavaScript project with document sandbox support.|
+| `react-typescript-with-document-sandbox` | React+TypeScript project with document sandbox support.|
+
+You can supply any of the above template names after the `--template` parameter:
 
 ```bash
 npx @adobe/create-ccweb-add-on <add-on-name> --template <template>
@@ -109,9 +118,28 @@ For instance, the following is an example of a command that will create an add-o
 npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
 ```
 
-<InlineAlert slots="text" variant="success"/>
+and below is how you could specify the `react-javascript-with-document-sandbox` template:
 
-**TIP:** If you don't specify a template, the CLI will simply prompt you to choose from the list of template options.
+```bash
+npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox --template react-javascript-with-document-sandbox
+```
+
+### No template parameter
+The template parameter is optional, and the CLI will prompt you to choose from a list of template options if it's excluded. For instance, if you use just the base CLI command:
+
+`npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox`
+
+you will see the following prompt from the CLI:
+
+![doc sandbox prompt](./img/template-prompt.png)
+
+which shows the four base template options to choose from, followed by a prompt to ask if you want to add the document sandbox support as well once you choose the base template.
+
+![cli doc sandbox prompt](./img/doc-sandbox.png)
+
+ You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
+
+![template scaffolding message](./img/scaffold-msg.png)
 
 ## Manifest
 

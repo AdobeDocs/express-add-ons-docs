@@ -64,7 +64,7 @@ the root of the document.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `color` | [`Color`](Color.md) | The color to use for the fill. |
+| `color` | [`Color`](../interfaces/Color.md) | The color to use for the fill. |
 
 #### Returns
 

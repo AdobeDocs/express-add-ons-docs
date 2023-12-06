@@ -163,4 +163,8 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?
 
-  This can happen due to a permissions issue, and the  `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write. 
+  This can happen due to a permissions issue, and the `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write.
+
+### Did the mime type for an exported PDF change?
+
+  Yes, the mime type of an exported rendition created using the [Export `createRenditions`](../references/addonsdk/app-document.md#createrenditions) method is now `text/plain` rather than `application/pdf`. Please note, you should still specify `application/pdf` in the `RenditionFormat` passed to the export method for PDFs, but be aware that the file returned will have a mime type of `text/plain`.

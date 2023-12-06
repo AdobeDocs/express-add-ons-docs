@@ -1,7 +1,7 @@
 # CORS Guide
 
 ## Overview
-Express add-ons are run in a sandboxed iframe environment with a `null` origin, and this can cause issues when dealing with fetching from services that don't have CORS enabled or support a null origin. 
+Express add-ons are run in a sandboxed iframe environment with a `null` origin, and this can cause issues when dealing with fetching from services that don't have CORS enabled or support a null origin.
 
 When you suspect a CORS issue, check your browser console and you will likely see a message like the following in the browser console:
 
@@ -27,7 +27,7 @@ One of the quickest ways to unblock your requests for testing, is to use a hoste
 
 ![CORS diagram](img/cors-demo.png)
 
-Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance: 
+Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance:
 
 ```js
 let cors_anywhere = "https://cors-anywhere.herokuapp.com/";
@@ -41,14 +41,11 @@ fetch(url).then(function (response) {
 
   You should then receive a successful response with that prefixed URL call:
 
-
 `Response {type: 'cors', url: 'https://cors-anywhere.herokuapp.com/https://example.com/', redirected: false, status: 200, ok: true, …}`
-
 
 <InlineAlert slots="text" variant="success"/>
 
 Hosting your proxy server code in an online service like Cloudinary or Heroku is also a good option for handling CORS issues in your add-on development. These services provide a platform for deploying your code and can handle cross-origin requests for you. Additionally, using Cloudinary's [URL prefix feature](https://cloudinary.com/documentation/fetch_remote_images) can be a quick solution for handling CORS issues with remote images in your add-on development.
-
 
 ### Locally Hosted CORS Proxy Server
 You can also use the `cors-anywhere` node package to create and run your own proxy server locally for testing for instance, with a few easy steps. This can be useful if you want to modify the default settings or use different functions provided by the library. Follow the steps below to install and use it. Also be sure to run it on it's own port separate from where your add-on is running. Once you have it working as desired, you can modify the settings to host it externally to suit your needs.
@@ -85,7 +82,6 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 
 #### HTTPS URL Support
 By default, only `http` URLs are allowed with the sample code above (though the demo server supports either). To access `https` resources with your locally running script, you need to create and pass in a key and certificate in an `httpsOptions` object and include it as another object passed into the `createServer` call, such as:
-
 
 ```js
 cors_anywhere = createServer({ 

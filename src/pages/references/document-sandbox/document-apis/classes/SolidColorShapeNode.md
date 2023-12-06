@@ -89,13 +89,13 @@ ___
 
 ### color
 
-• `get` **color**(): `undefined` \| [`Color`](Color.md)
+• `get` **color**(): `undefined` \| [`Color`](../interfaces/Color.md)
 
 The color of the single color shape.
 
 #### Returns
 
-`undefined` \| [`Color`](Color.md)
+`undefined` \| [`Color`](../interfaces/Color.md)
 
 • `set` **color**(`color`): `void`
 
@@ -103,7 +103,7 @@ The color of the single color shape.
 
 | Name | Type |
 | :------ | :------ |
-| `color` | `undefined` \| [`Color`](Color.md) |
+| `color` | `undefined` \| [`Color`](../interfaces/Color.md) |
 
 #### Returns
 
