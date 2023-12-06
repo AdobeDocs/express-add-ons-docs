@@ -35,11 +35,11 @@ ___
 
 ### insertionParent
 
-• `get` **insertionParent**(): [`ContainerNode`](ContainerNode.md)
+• `get` **insertionParent**(): [`ContainerNode`](../interfaces/ContainerNode.md)
 
 #### Returns
 
-[`ContainerNode`](ContainerNode.md)
+[`ContainerNode`](../interfaces/ContainerNode.md)
 
 the preferred parent to insert newly added content into.
 

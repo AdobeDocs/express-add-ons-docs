@@ -2,22 +2,21 @@
 
 # Interface: IStrokableNode
 
-Interface for [StrokableNode](../classes/StrokableNode.md) *and* any other nodes with a similar `strokes` API that do not directly inherit from
-the StrokableNode class. (See [ArtboardNode](../classes/ArtboardNode.md), for example).
+Interface for [StrokableNode](../classes/StrokableNode.md) *and* any other nodes with a similar `stroke` property that do not directly inherit
+from the StrokableNode class. (See [ArtboardNode](../classes/ArtboardNode.md), for example).
 
 ## Implemented by
 
-- [`ArtboardNode`](../classes/ArtboardNode.md)
 - [`StrokableNode`](../classes/StrokableNode.md)
 
 ## Table of contents
 
 ### Properties
 
-- [strokes](IStrokableNode.md#strokes)
+- [stroke](IStrokableNode.md#stroke)
 
 ## Properties
 
-### strokes
+### stroke
 
-• **strokes**: [`ItemList`](../classes/ItemList.md)<[`Stroke`](Stroke.md)\>
+• **stroke**: `undefined` \| [`Stroke`](Stroke.md)

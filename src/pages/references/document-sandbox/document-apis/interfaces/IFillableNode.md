@@ -2,8 +2,8 @@
 
 # Interface: IFillableNode
 
-Interface for [FillableNode](../classes/FillableNode.md) *and* any other nodes with a similar `fills` API that do not directly inherit from the
-FillableNode class.
+Interface for [FillableNode](../classes/FillableNode.md) *and* any other nodes with a similar `fill` property that do not directly inherit from
+the FillableNode class.
 
 ## Implemented by
 
@@ -13,10 +13,10 @@ FillableNode class.
 
 ### Properties
 
-- [fills](IFillableNode.md#fills)
+- [fill](IFillableNode.md#fill)
 
 ## Properties
 
-### fills
+### fill
 
-• **fills**: [`ItemList`](../classes/ItemList.md)<[`Fill`](Fill.md)\>
+• **fill**: `undefined` \| [`Fill`](Fill.md)
