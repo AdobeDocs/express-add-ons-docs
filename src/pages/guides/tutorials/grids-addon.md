@@ -330,7 +330,7 @@ function start() {
       rect.translation = { x: 50, y: 50 };
 
       const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
-      const fillColor = editor.createColorFill(col);
+      const fillColor = editor.makeColorFill(col);
       rect.fill = fillColor;
 
       editor.context.insertionParent.children.append(rect);
@@ -370,11 +370,11 @@ Dimensions and positions are straightforward while assigning a fill color is a t
 
 ```js
 const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
-const fillColor = editor.createColorFill(col);
+const fillColor = editor.makeColorFill(col);
 rect.fill = fillColor;
 ```
 
-First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `createColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
+First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `makeColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
 
 <!-- code here -->
 <InlineAlert variant="info" slots="text1" />
@@ -787,7 +787,7 @@ const createRect = (width, height, color) => {
   rect.width = width;
   rect.height = height;
   // Fill the rectangle with the color.
-  const rectangleFill = editor.createColorFill(colorUtils.fromHex(color));
+  const rectangleFill = editor.makeColorFill(colorUtils.fromHex(color));
   rect.fill = rectangleFill;
   return rect;
 };
@@ -1264,7 +1264,7 @@ const createRect = (width, height, color) => {
   const rect = editor.createRectangle();
   rect.width = width;
   rect.height = height;
-  const rectangleFill = editor.createColorFill(colorUtils.fromHex(color));
+  const rectangleFill = editor.makeColorFill(colorUtils.fromHex(color));
   rect.fill = rectangleFill;
   return rect;
 };
