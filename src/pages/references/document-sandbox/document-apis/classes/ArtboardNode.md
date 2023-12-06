@@ -78,13 +78,13 @@ ___
 
 ### fill
 
-• `get` **fill**(): [`Fill`](../interfaces/Fill.md)
+• `get` **fill**(): `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
 The background fill of the artboard. Artboards must always have a fill.
 
 #### Returns
 
-[`Fill`](../interfaces/Fill.md)
+`Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
 • `set` **fill**(`fill`): `void`
 

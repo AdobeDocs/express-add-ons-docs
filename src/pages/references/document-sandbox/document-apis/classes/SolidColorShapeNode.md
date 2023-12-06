@@ -91,13 +91,13 @@ ___
 
 ### color
 
-• `get` **color**(): `undefined` \| [`Color`](../interfaces/Color.md)
+• `get` **color**(): `undefined` \| `Readonly`<[`Color`](../interfaces/Color.md)\>
 
 The color of the single color shape.
 
 #### Returns
 
-`undefined` \| [`Color`](../interfaces/Color.md)
+`undefined` \| `Readonly`<[`Color`](../interfaces/Color.md)\>
 
 • `set` **color**(`color`): `void`
 

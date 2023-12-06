@@ -347,13 +347,13 @@ ___
 
 ### stroke
 
-• `get` **stroke**(): `undefined` \| [`Stroke`](../interfaces/Stroke.md)
+• `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
 The stroke applied to the shape, if any.
 
 #### Returns
 
-`undefined` \| [`Stroke`](../interfaces/Stroke.md)
+`undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
 #### Inherited from
 

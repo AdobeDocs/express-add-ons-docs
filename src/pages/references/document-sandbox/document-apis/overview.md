@@ -63,4 +63,3 @@
 - [Point](interfaces/Point.md)
 - [RectangleGeometry](interfaces/RectangleGeometry.md)
 - [Stroke](interfaces/Stroke.md)
-- [StrokeOptions](interfaces/StrokeOptions.md)

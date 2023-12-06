@@ -103,13 +103,13 @@ ___
 
 ### fill
 
-• `get` **fill**(): `undefined` \| [`Fill`](../interfaces/Fill.md)
+• `get` **fill**(): `undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
 The fill applied to the shape, if any.
 
 #### Returns
 
-`undefined` \| [`Fill`](../interfaces/Fill.md)
+`undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
 #### Implementation of
 
@@ -250,13 +250,13 @@ ___
 
 ### stroke
 
-• `get` **stroke**(): `undefined` \| [`Stroke`](../interfaces/Stroke.md)
+• `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
 The stroke applied to the shape, if any.
 
 #### Returns
 
-`undefined` \| [`Stroke`](../interfaces/Stroke.md)
+`undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
 #### Inherited from
 
