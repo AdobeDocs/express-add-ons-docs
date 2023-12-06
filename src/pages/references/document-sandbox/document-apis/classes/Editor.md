@@ -198,6 +198,7 @@ Convenience helper to create a complete Stroke value given just a subset of its 
 populated with default values.
 
 See [Stroke](../interfaces/Stroke.md) for more details on the `options` fields. Defaults:
+
 - `color` has default value DEFAULT_STROKE_COLOR if none is provided.
 - `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
 - `position` has default value `center` if none is provided.
