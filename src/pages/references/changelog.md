@@ -57,6 +57,7 @@ Some items in the following list of changes may have been mentioned in recent up
   </del>
 
   **New**<br/>
+
   ```js
   import { colorUtils } from "express-document-sdk";
 
@@ -98,9 +99,9 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Adobe Express Document APIs SDK import**<br/>
   For access to the [Express document and content authoring APIs](../references/document-sandbox/document-apis/):
- 
+
   <del>
- 
+
   ```js
   // Old
   import { editor } from "express";
@@ -156,6 +157,7 @@ Some items in the following list of changes may have been mentioned in recent up
   - General improvements and bug fixes.
 
  **NOTE:** The new version should be installed by default when you create a new add-on. If for any reason it doesn't, you can force it to install by specifying the version in the command, ie: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update your existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
+
  - All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
 
@@ -288,18 +290,18 @@ Some items in the following list of changes may have been mentioned in recent up
 
  The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
 
-  - Removes `absoluteRotation` accessor
-  - Removes `absoluteTransform` accessor
-  - Removes `relativeRotation` accessor
-  - Removes `relativeTransform` accessor
-  - Removes `translateX` accessor
-  - Removes `translateY` accessor
-  - Adds `rotation` accessor
-  - Adds `rotationInScreen` accessor
-  - Adds `transformMatrix` accessor
-  - Adds `translation` accessor
-  - Adds `setPositionInParent` method
-  - Adds `setRotationInParent` method
+   - Removes `absoluteRotation` accessor
+   - Removes `absoluteTransform` accessor
+   - Removes `relativeRotation` accessor
+   - Removes `relativeTransform` accessor
+   - Removes `translateX` accessor
+   - Removes `translateY` accessor
+   - Adds `rotation` accessor
+   - Adds `rotationInScreen` accessor
+   - Adds `transformMatrix` accessor
+   - Adds `translation` accessor
+   - Adds `setPositionInParent` method
+   - Adds `setRotationInParent` method
 
 - The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
 

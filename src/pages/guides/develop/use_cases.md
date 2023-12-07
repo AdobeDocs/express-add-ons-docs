@@ -739,6 +739,7 @@ addOnUISdk.app.on("documentTitleChange", data => {
 ```
 
 ### Retrieving page metadata
+
 If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](../../references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object as shown in the example below.
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />

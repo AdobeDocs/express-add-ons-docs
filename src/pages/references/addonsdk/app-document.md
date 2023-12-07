@@ -71,6 +71,7 @@ addOnUISdk.app.on("documentTitleChange", data => {
   setTitle(data.documentTitle);
 });
 ```
+
 ### getPagesMetadata()
 
 Retrieve the metadata for all of the pages in the document.
@@ -139,7 +140,7 @@ The metadata of a page.
 
 #### `PageMetadataOptions`
 
-This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for. 
+This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
