@@ -152,7 +152,7 @@ Data type validation is performed for both the arguments and the return types th
 <br/>
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
