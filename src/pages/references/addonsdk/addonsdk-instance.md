@@ -6,13 +6,13 @@ Represents the currently running add-on instance. This object is used for provid
 
 <table columnWidths="20,50,30" class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td><p style="color: white"><strong>Attribute</strong></p></td>
-    <td><p style="color: white"><strong>Object</strong></p></td>
-    <td><p style="color: white"><strong>Description</strong></p></td>
+    <td><p><strong>Attribute</strong></p></td>
+    <td><p><strong>Object</strong></p></td>
+    <td><p><strong>Description</strong></p></td>
 </tr>
 <tbody>
 <tr class="spectrum-Table-row">
-    <td style="color:red"><p><pre>readonly</pre></p></td>
+    <td><p><pre>readonly</pre></p></td>
     <td width="80%" style="font-size: 8px"><p><pre>addOnUiSdk.instance.clientStorage</pre></p></td>
     <td>
         <p>Reference to the client storage object of the add-on.</p>

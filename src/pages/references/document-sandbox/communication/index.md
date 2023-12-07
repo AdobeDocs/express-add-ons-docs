@@ -157,17 +157,17 @@ Data type validation is performed for both the arguments and the return types th
 <br/>
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p style="color:white" ><strong>Examples</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p style="color:black"><strong>Primitive types:</strong> <br/> &nbsp;&nbsp;- string <br/>  &nbsp;&nbsp;- boolean <br/> &nbsp;&nbsp;- number <br/> &nbsp;&nbsp;- Undefined<br/></p></td>
+    <td class="spectrum-Table-cell"><p><strong>Primitive types:</strong> <br/> &nbsp;&nbsp;- string <br/>  &nbsp;&nbsp;- boolean <br/> &nbsp;&nbsp;- number <br/> &nbsp;&nbsp;- Undefined<br/></p></td>
     <td class="spectrum-Table-cell"><p><pre><br/>"hello"<br/>true<br/>1<br/>undefined</pre></p></td>
 </tr>
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p style="color:black"><strong>Simple plain objects</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p style="color:black"><pre>&#123; data: "world" &#125;, &#123; value : true &#125;</pre></p></td>
+    <td class="spectrum-Table-cell"><p><strong>Simple plain objects</strong> <br/></p></td>
+    <td class="spectrum-Table-cell"><p><pre>&#123; data: "world" &#125;, &#123; value : true &#125;</pre></p></td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><strong>Arrays of primitive and plain objects</strong> <br/></p></td>
@@ -195,13 +195,13 @@ Some data types are not supported and may result unintended behavior. To avoid t
 <br/>
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p style="color:white" ><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p style="color:white" ><strong>Examples</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p style="color:black"><strong>Map</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p style="color:black"><pre>new Map()</pre></p></td>
+    <td class="spectrum-Table-cell"><p><strong>Map</strong> <br/></p></td>
+    <td class="spectrum-Table-cell"><p><pre>new Map()</pre></p></td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><strong>Set</strong> <br/></p></td>

@@ -6,10 +6,10 @@ The core add-on UI SDK object which provides access to everything needed for add
 
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Description</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
