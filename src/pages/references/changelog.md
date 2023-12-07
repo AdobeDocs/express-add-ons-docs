@@ -27,6 +27,7 @@ contributors:
 **BREAKING NEWS:** The [Adobe Express Document Sandbox](../references/document-sandbox/) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
 
 ### Breaking changes
+
 Some items in the following list of changes may have been mentioned in recent updates but are being listed in this summary again to serve as a reminder.
 
 - The methods in the [Document API Editor class](../references/document-sandbox/document-apis/classes/Editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`makeStroke`](../references/document-sandbox/document-apis/classes/Editor.md#makestroke) accordingly.
@@ -158,7 +159,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
  **NOTE:** The new version should be installed by default when you create a new add-on. If for any reason it doesn't, you can force it to install by specifying the version in the command, ie: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update your existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
- - All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/) listed here.
+- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
 
 ### Additional Updates

@@ -149,6 +149,7 @@ async function callUIApis() {
 **DEBUGGING:** Since the script code runs in a separate context from your add-on UI, the only support for debugging is via the `console.*` methods.
 
 ## Data Types
+
 Data type validation is performed for both the arguments and the return types that are exchanged across the document sandbox runtimes (aka: communication API layer). A whitelist of supported data types is maintained and detailed below. All other data types will be rejected.
 
 ### Supported data types
