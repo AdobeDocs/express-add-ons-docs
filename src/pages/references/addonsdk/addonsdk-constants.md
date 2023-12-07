@@ -52,7 +52,7 @@ Variant	confirmation, information, warning, destructive, error, input
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>RenditionFormat</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;"> 
+    <td style="vertical-align: bottom;">
         <p>Required output format of the rendition.</p>
         <ul>
           <li><strong>jpg</strong></li>"image/jpeg" for JPG format
