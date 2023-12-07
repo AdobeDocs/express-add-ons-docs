@@ -153,18 +153,62 @@ Set a `renditionPreview` intent in the [manifest requirements](../../references/
 
 #### Example:
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
-document.querySelector("#export").onclick = async () => {
-  const { app, constants } = addOnUISdk;
-  const { Range, RenditionFormat, RenditionType, RenditionIntent } = constants;  
-  /* THE FOLLOWING FLAG CAN BE USED FOR TESTING PURPOSES ONLY */
-  app.devFlags.simulateFreeUser = true; 
-  const renditionOptions = {range: Range.currentPage, format: RenditionFormat.png};
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Display preview of all pages in the AddOn UI
+async function displayPreview() {
   try {
-    const renditions = await app.document.createRenditions(renditionOptions,RenditionIntent.preview);
-    renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
-  } catch (err) {
-    console.log("Error " + err);
+    const renditionOptions = {
+      range: addOnUISdk.constants.Range.entireDocument,
+      format: addOnUISdk.constants.RenditionFormat.png,
+      backgroundColor: 0x7FAA77FF
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, addOnUISdk.constants.RenditionIntent.preview);
+    renditions.forEach(rendition => {
+      const image = document.createElement("img");
+      image.src = URL.createObjectURL(rendition.blob);
+      document.body.appendChild(image);
+    });
+  }
+  catch(error) {
+    console.log("Failed to create renditions:", error);
+  }
+}
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+  
+// Display preview of all pages in the AddOn UI
+async function displayPreview() {
+  try {
+    const renditionOptions: PngRenditionOptions = {
+      range: addOnUISdk.constants.Range.entireDocument,
+      format: addOnUISdk.constants.RenditionFormat.png,
+      backgroundColor: 0x7FAA77FF
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, addOnUISdk.constants.RenditionIntent.preview);
+    renditions.forEach(rendition => {
+      const image = document.createElement("img");
+      image.src = URL.createObjectURL(rendition.blob);
+      document.body.appendChild(image);
+    });
+  }
+  catch(error) {
+    console.log("Failed to create renditions:", error);
   }
 }
 ```
@@ -510,7 +554,7 @@ async function showInputDialog() {
 
 ### Custom Dialog Example
 
-This example shows how you can define custom content for yuour dialog in a separate source file, (`dialog.html` in this case), and with a custom height and title.
+This example shows how you can define custom content for your dialog in a separate source file, (`dialog.html` in this case), and with a custom height and title.
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -618,10 +662,6 @@ validateUser(userId: string) {
 
 We provide a set of [Document APIs](../../references/document-sandbox/document-apis/) that can be used for interacting with the document for common use cases like creating shapes, adding pages, clearing the artboard and more.
 
-<InlineAlert slots="text" variant="warning"/>
-
-The Editor API's are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
-
 The following code snippet illustrates how to use the [Document APIs](../../references/document-sandbox/document-apis/) from the script running in your [`code.js`](../../references/document-sandbox/index.md#getting-started-with-the-apis) for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
@@ -632,12 +672,14 @@ const insertionParent = editor.context.insertionParent; // get node to insert co
 const rectangle = editor.createRectangle();
 rectangle.width = 200;
 rectangle.height = 150;
-rectangle.translateX = 100;
-rectangle.translateY = 20;
+rectangle.translation = { x: 100, y: 20 };
 console.log(rectangle); // for debugging purpose
 
 const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];
-const rectangleFill = editor.createColorFill(colorUtils.createColor(red, green, blue, alpha));
+// Note: alpha param is optional
+const aColor = colorUtils.fromRGB(red,green,blue,alpha)
+
+const rectangleFill = editor.makeColorFill(aColor);
 rectangle.fill = rectangleFill;
 
 insertionParent.children.append(rectangle);
@@ -645,12 +687,14 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to [getting started with the Document Sandbox](../../references/document-sandbox/index.md#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, which include the Document APIs for authoring content.
+Refer to [getting started with the Document Sandbox](../../references/document-sandbox/index.md#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs as well as [this extensive tutorial](../tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs.
 
-## Document Metadata
+## Document and Page Metadata
+
 You can retrieve some information about the current document using the [Add-on UI SDK Document object](../../references/addonsdk/app-document.md). Currently there are methods that allow you to retrieve the ID of the document and the title (ie: name). There are also associated events that allow you to listen for when the document is available (via the `documentAvailable` event) and when the title has changed (via the `documentTitleChange` event). The examples below illustrates the use of these new methods and events for reference.
 
 ### Retrieving the document id
+
 The example below listens for the `documentAvailable` event and then sets the id.
 
 #### Example
@@ -658,6 +702,7 @@ The example below listens for the `documentAvailable` event and then sets the id
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -671,6 +716,7 @@ addOnUISdk.app.on("documentAvailable", data => {
 ```
 
 ### Retrieving the document title
+
 The example below listens for the `documentTitleChange` event and then sets the id.
 
 #### Example
@@ -678,6 +724,7 @@ The example below listens for the `documentTitleChange` event and then sets the 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -688,4 +735,47 @@ addOnUISdk.ready.then(() => setTitle(await addOnUISdk.app.document.title()));
 addOnUISdk.app.on("documentTitleChange", data => {
   setTitle(data.documentTitle);
 });
+```
+
+### Retrieving page metadata
+
+If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](../../references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object as shown in the example below.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+ 
+// Get metadata of all the pages
+async function logMetadata() {
+  try {
+    const pages = (await addOnUISdk.app.document.getPagesMetadata({
+                            range: addOnUISdk.constants.Range.specificPages,
+                            pageIds: [
+                                "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
+                                "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
+                            ]
+                        })) as PageMetadata[];
+    for (const page of pages) {
+      console.log("Page id: ", page.id);
+      console.log("Page title: ", page.title);
+      console.log("Page size: ", page.size);
+      console.log("Page has premium content: ", page.hasPremiumContent);
+      console.log("Page has timelines: ", page.hasTemporalContent);
+      console.log("Pixels per inch: ", page.pixelsPerInch);
+    }
+  }
+  catch(error) {
+    console.log("Failed to get metadata:", error);
+  }
+}
 ```

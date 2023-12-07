@@ -18,13 +18,14 @@ A resolved `Promise` containing the `id` of the document.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Note:** A `documentIdAvailable` event is triggered when the document id is available in the application.
+**Note:** A `documentIdAvailable` event is triggered when the document id is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
 #### Example
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -51,13 +52,14 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Note:** A `documentTitleChange` event is triggered when the document title is changed in the application.
+**Note:** A `documentTitleChange` event is triggered when the document title is changed in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
 #### Example
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
 #### Usage
+
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -69,6 +71,85 @@ addOnUISdk.app.on("documentTitleChange", data => {
   setTitle(data.documentTitle);
 });
 ```
+
+### getPagesMetadata()
+
+Retrieve the metadata for all of the pages in the document.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`getPagesMetadata(options: PageMetadataOptions): Promise<PageMetadata[]>`
+
+#### Parameters
+
+| Name                | Type         | Description   |
+| --------------------| -------------| -----------:  |
+| `options`  | `Object` | [`PageMetadataOptions`](#pagemetadataoptions) object. |
+
+#### Return Value
+
+A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containing all of the pages in the document.
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+ 
+// Get metadata of all the pages
+async function logMetadata() {
+  try {
+    const pages = (await addOnUISdk.app.document.getPagesMetadata({
+                            range: addOnUISdk.constants.Range.specificPages,
+                            pageIds: [
+                                "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
+                                "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
+                            ]
+                        })) as PageMetadata[];
+    for (const page of pages) {
+      console.log("Page id: ", page.id);
+      console.log("Page title: ", page.title);
+      console.log("Page size: ", page.size);
+      console.log("Page has premium content: ", page.hasPremiumContent);
+      console.log("Page has timelines: ", page.hasTemporalContent);
+      console.log("Pixels per inch: ", page.pixelsPerInch);
+    }
+  }
+  catch(error) {
+    console.log("Failed to get metadata:", error);
+  }
+}
+```
+
+#### `PageMetadata`
+
+The metadata of a page.
+
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `id`          | `string`     | The id of the page.    |
+| `title`       | `string`     | The title of the page. |
+| `size`        | `{ width: number, height: number }` | The size of the page in pixels. |
+| `hasPremiumContent` | `boolean` | `true` if the page has premium content, `false` if not. |
+| `hasTemporalContent` | `boolean` | `true` if the page has timelines, `false` if not. |
+| `pixelsPerInch?`  | `number`  | The pixels per inch of the page. |
+
+#### `PageMetadataOptions`
+
+This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
+
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `range`          | `string`     | Range of the document to get the metadata |
+| `pageIds?: string[]` | `string`     | Ids of the pages (Only required when the range is `specificPages`) |
 
 ## Import Content Methods
 
@@ -225,7 +306,7 @@ The table below describes the possible error messages that may occur when using 
 
 ### createRenditions()
 
-Create renditions of the current page or the whole document for exporting in a specified format.
+Generate renditions of the current page, specific pages or the entire document in a specified format for export.
 
 #### Signature
 
@@ -254,10 +335,11 @@ Refer to the [exporting content use case example](../../guides/develop/use_cases
 | ------------- | -------------| -----------:  |
 | `range`       | `string`     | [`Range`](./addonsdk-constants.md) constant value. |
 | `format`      | `string`     | [`RenditionFormat`](./addonsdk-constants.md) constant value. |
+| `pageIds?`    | `string[]`   | Ids of the pages (only required if the range is [`specificPages`)](./addonsdk-constants.md) |
+  
+#### `JpgRenditionOptions`
 
-#### JpgRenditionOptions
-
-The following additional options are supported for `jpg` renditions:
+Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `jpg` renditions:
 
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
@@ -265,9 +347,9 @@ The following additional options are supported for `jpg` renditions:
 | `quality?` | `number` |  A number between 0 and 1, indicating image quality. Default is 1.0. |
 | [`requestedSize?`](#requested-size-notes)| `{width?: number; height?: number}` | Requested size (in pixels). |
 
-#### PngRenditionOptions
+#### `PngRenditionOptions`
 
-The following additional options are supported for `png` renditions:
+Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `png` renditions:
 
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
@@ -291,15 +373,85 @@ The following additional options are supported for `png` renditions:
 
 #### Return Value
 
-A `Promise` with an array of page `Rendition` objects. It will contain one page if the current page was selected or all pages in the case of the document. Each rendition returned will contain the `type` and a `blob` of the rendition itself.
+A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Display preview of all pages in the AddOn UI
+async function displayPreview() {
+  try {
+    const renditionOptions = {
+      range: addOnUISdk.constants.Range.entireDocument,
+      format: addOnUISdk.constants.RenditionFormat.png,
+      backgroundColor: 0x7FAA77FF
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, addOnUISdk.constants.RenditionIntent.preview);
+    renditions.forEach(rendition => {
+      const image = document.createElement("img");
+      image.src = URL.createObjectURL(rendition.blob);
+      document.body.appendChild(image);
+    });
+  }
+  catch(error) {
+    console.log("Failed to create renditions:", error);
+  }
+}
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+  
+// Display preview of all pages in the AddOn UI
+async function displayPreview() {
+  try {
+    const renditionOptions: PngRenditionOptions = {
+      range: Range.entireDocument,
+      format: RenditionFormat.png,
+      backgroundColor: 0x7FAA77FF
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, RenditionIntent.preview);
+    renditions.forEach(rendition => {
+      const image = document.createElement("img");
+      image.src = URL.createObjectURL(rendition.blob);
+      document.body.appendChild(image);
+    });
+  }
+  catch(error) {
+    console.log("Failed to create renditions:", error);
+  }
+}
+```
 
 #### `Rendition`
 
+A rendition object representing a page in the document, returned from [`createRenditions`](#createrenditions). See
+
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `type?`       | `string`     | Type of Rendition. Value is always "page" |
+| `type?`       | `string`     | Type of Rendition. Value is always `page`. |
 | `blob`        | `Blob`       | Blob containing the rendition |
-| `title`       | `string`     | The page title of the rendition. |
+
+#### `PageRendition`
+
+An extension of [`Rendition`](#rendition), returned in the response to [`createRenditions`](#createrenditions). This object **includes everything in [`Rendition`](#rendition)**, as well as:
+
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `title`       | `string`     | The page title of the rendition |
+| `metadata`    | [`PageMetadata`](#pagemetadata) | Page metadata |
 
 <InlineAlert slots="text" variant="info"/>
 

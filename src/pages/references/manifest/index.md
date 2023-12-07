@@ -37,8 +37,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
                 "name": "Express",
                 "apiVersion": 1
             }
-        ],
-        "experimentalApis": true,
+        ],        
         "supportsTouch": false,
     },
     "entryPoints": [
@@ -46,6 +45,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
             "type": "panel",
             "id": "panel1",
             "main": "index.html",
+            "documentSandbox": "code.js",
             "permissions": {
                 "sandbox": ["allow-popups", "allow-presentation", "allow-downloads"],
                 "oauth": ["www.dropbox.com"]
@@ -132,7 +132,7 @@ The following platform values are currently supported in the `supportedDeviceCla
 | `type`       | `string`     | The type of the entry point. Currently supported values: `"panel"`.    |
 | `id`         | `string`     | Identifier for the entry point. Must be unique within the add-on.  |
 | `main`        | `string`    | Main file for this entry point when launched.   |
-| `documentSandbox`      | `string`    | File containing the JavaScript code to use with the [document sandbox SDK and Adobe Express Document APIs](../document-sandbox/). **Currently experimental only, and requires the [`experimentalApis`](#entrypoints) flag to be set.** |
+| `documentSandbox`      | `string`    | File containing the JavaScript code to use with the [document sandbox SDK and Adobe Express Document APIs](../document-sandbox/). |
 | [`permissions`](#entrypointspermissions) | `object`    | The permissions defined for this entry point. |
 
 **Example:**<br/>
