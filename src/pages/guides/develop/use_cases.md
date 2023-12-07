@@ -196,11 +196,11 @@ await addOnUISdk.ready;
 async function displayPreview() {
   try {
     const renditionOptions: PngRenditionOptions = {
-      range: Range.entireDocument,
-      format: RenditionFormat.png,
+      range: addOnUISdk.constants.Range.entireDocument,
+      format: addOnUISdk.constants.RenditionFormat.png,
       backgroundColor: 0x7FAA77FF
     };
-    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, RenditionIntent.preview);
+    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, addOnUISdk.constants.RenditionIntent.preview);
     renditions.forEach(rendition => {
       const image = document.createElement("img");
       image.src = URL.createObjectURL(rendition.blob);
@@ -672,8 +672,7 @@ const insertionParent = editor.context.insertionParent; // get node to insert co
 const rectangle = editor.createRectangle();
 rectangle.width = 200;
 rectangle.height = 150;
-rectangle.translateX = 100;
-rectangle.translateY = 20;
+rectangle.translation = { x: 100, y: 20 };
 console.log(rectangle); // for debugging purpose
 
 const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];

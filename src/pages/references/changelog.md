@@ -30,7 +30,7 @@ contributors:
 
 Some items in the following list of changes may have been mentioned in recent updates but are being listed in this summary again to serve as a reminder.
 
-- The methods in the [Document API Editor class](../references/document-sandbox/document-apis/classes/Editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`makeStroke`](../references/document-sandbox/document-apis/classes/Editor.md#makestroke) accordingly.
+- The methods in the [Document API Editor class](../references/document-sandbox/document-apis/classes/Editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`makeStroke`](../references/document-sandbox/document-apis/classes/Editor.md#makestroke) respectively.
 - `strokes` and `fills` have been renamed to their singular counterpart. (Express does not support multiple strokes or fills). You should use `stroke` and `fill` going forward to access them, and they will no longer be `ItemList` objects, since they represent only a single stroke or fill.
 
   ```js
@@ -69,7 +69,7 @@ Some items in the following list of changes may have been mentioned in recent up
   const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha
   ```
 
-  - `fromHex` returns a color from a Hex string -- e.g., `colorUtils.fromHex("#FF8040FF")`.
+  - `fromHex` returns a color from a Hex string -- e.g., `colorUtils.fromHex("#FF8040")` or `colorUtils.fromHex("#FF8040FF")` (including the optional alpha);
   - `fromRGB` returns a color from a set of RGB(A) values (0-1) -- e.g., `colorUtils.fromRGB(1,0.5,0.25,1)`.
   - `toHex` converts a color object to a Hex string -- e.g., `colorUtils.toHex(aColor)`.
 - `allChildren` returns an `iterator`, not an `Array`. However if you want to use array methods (ie: `Array#map`), you can use `Array.from` to convert it to an array.
@@ -96,6 +96,18 @@ Some items in the following list of changes may have been mentioned in recent up
 - Some things that previously didn't make sense will now cause compile errors in typescript, or throw in javascript:
   - Do not assume a node's parent is movable — e.g., an artboard can't be repositioned.
   - Not all shapes support setting `opacity` or `locking` (e.g, the document root or an artboard).
+- The `translateX` and `translateY` properties have been replaced by a single translation object.
+
+  ```js
+  // old
+  rectangle.translateX = 100;
+  rectangle.translateY = 20;
+
+  // new
+  rectangle.translation = { x: 100,  y: 20}; // both x,y properties are required
+  ```
+
+- A new [`BaseNode`](../references/document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](../references/document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
 - The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../references/document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
   **Adobe Express Document APIs SDK import**<br/>
@@ -157,7 +169,9 @@ Some items in the following list of changes may have been mentioned in recent up
   - Manifest property additions.
   - General improvements and bug fixes.
 
- **NOTE:** The new version should be installed by default when you create a new add-on. If for any reason it doesn't, you can force it to install by specifying the version in the command, ie: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update your existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
+ **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
+ 
+ The new version should be installed by default when you create a new add-on. If you notice that the CLI is not updating automatically, try to run [`npm cache clean`](https://docs.npmjs.com/common-errors#random-errors) (or `npm cache clean --force` if necessary) first and then try again. If for any reason it still doesn't install, you can specify the version in the command itself that you want to use, ie: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. Also, yiu can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
 - All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.

@@ -43,6 +43,7 @@ contributors:
 - [Where can I request new add-on features or suggest ideas?](#where-can-i-request-new-add-on-features-or-suggest-ideas)
 - [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
 - [Did the mime type for an exported PDF returned from the `createRenditions` method change?](#did-the-mime-type-for-an-exported-pdf-returned-from-the-createrenditions-method-change)
+- [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
 
 ## Answers
 
@@ -169,3 +170,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 ### Did the mime type for an exported PDF returned from the `createRenditions` method change?
 
   Yes, an unexpected change was made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
+
+### The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.
+
+  You can force it to install by clearing the npx cache first with `npx clear-npx-cache`, or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`.

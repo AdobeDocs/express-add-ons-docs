@@ -37,8 +37,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
                 "name": "Express",
                 "apiVersion": 1
             }
-        ],
-        "experimentalApis": true,
+        ],        
         "supportsTouch": false,
     },
     "entryPoints": [
@@ -46,6 +45,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
             "type": "panel",
             "id": "panel1",
             "main": "index.html",
+            "documentSandbox": "code.js",
             "permissions": {
                 "sandbox": ["allow-popups", "allow-presentation", "allow-downloads"],
                 "oauth": ["www.dropbox.com"]

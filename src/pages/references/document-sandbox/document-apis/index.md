@@ -48,8 +48,7 @@ const insertionParent = editor.context.insertionParent; // get node to insert co
 const rectangle = editor.createRectangle();
 rectangle.width = 200;
 rectangle.height = 150;
-rectangle.translateX = 100;
-rectangle.translateY = 20;
+rectangle.translation = { x: 100, y: 20 };
 console.log(rectangle); // for debugging purpose
 
 const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];
