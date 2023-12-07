@@ -170,7 +170,7 @@ Some items in the following list of changes may have been mentioned in recent up
   - General improvements and bug fixes.
 
  **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
- 
+
  The new version should be installed by default when you create a new add-on. If you notice that the CLI is not updating automatically, try to run [`npm cache clean`](https://docs.npmjs.com/common-errors#random-errors) (or `npm cache clean --force` if necessary) first and then try again. If for any reason it still doesn't install, you can specify the version in the command itself that you want to use, ie: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. Also, yiu can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
 - All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/) listed here.
@@ -290,6 +290,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Updates
 
+- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
 - The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
 
  **New Classes/Interfaces**<br/>
@@ -317,8 +318,6 @@ Some items in the following list of changes may have been mentioned in recent up
    - Adds `translation` accessor
    - Adds `setPositionInParent` method
    - Adds `setRotationInParent` method
-
-- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
 
 ## 2023-11-27
 

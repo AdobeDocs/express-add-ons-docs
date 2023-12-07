@@ -29,7 +29,7 @@ Variant	confirmation, information, warning, destructive, error, input
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>Range</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">     
+    <td style="vertical-align: bottom;">
         <p>Rendition page range. Options:</p>
         <ul>
           <li><strong>currentPage</strong></li> Generate rendition for the current page
@@ -52,7 +52,7 @@ Variant	confirmation, information, warning, destructive, error, input
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>RenditionFormat</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">     
+    <td style="vertical-align: bottom;"> 
         <p>Required output format of the rendition.</p>
         <ul>
           <li><strong>jpg</strong></li>"image/jpeg" for JPG format
@@ -65,14 +65,14 @@ Variant	confirmation, information, warning, destructive, error, input
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>RenditionType</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;"> 
-        <p>The type of rendition. Currently returns "page".</p> 
+    <td style="vertical-align: bottom;">
+        <p>The type of rendition. Currently returns "page".</p>
     </td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>RuntimeType</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;"> 
+    <td style="vertical-align: bottom;">
         <p>Runtime type of the entrypoint creating this backend object.
         <ul>
           <li><strong>panel</strong></li>add-on's iframe runtime, ie: code running in <b>index.html</b>
@@ -82,11 +82,10 @@ Variant	confirmation, information, warning, destructive, error, input
         </p>
     </td>
 </tr>
-
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>Variant</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">        
+    <td style="vertical-align: bottom;">
         <p>Types of dialog variants supported.</p>
         <ul>
           <li><strong>confirmation</strong></li>Ask a user to confirm an action.
@@ -102,7 +101,7 @@ Variant	confirmation, information, warning, destructive, error, input
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>DialogResultType</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">   
+    <td style="vertical-align: bottom;">
         <p>The type of modal dialog result.</p>
         <ul>
           <li><strong>alert</strong></li>Alert dialog result (simple dialogs all return this).

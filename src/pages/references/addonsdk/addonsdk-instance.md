@@ -20,7 +20,7 @@ Represents the currently running add-on instance. This object is used for provid
 </tr>
 <tr class="spectrum-Table-row">
     <td><p><pre>readonly</pre></p></td>
-    <td ><p><pre>addOnUISdk.instance.manifest</pre></p></td> 
+    <td ><p><pre>addOnUISdk.instance.manifest</pre></p></td>
     <td>
         <p>Add-ons manifest details. Maps to entries in the add-ons manifest file.</p>
     </td>
