@@ -240,7 +240,7 @@ The following [code samples](https://github.com/AdobeDocs/express-add-on-samples
 
 ### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-script-runtime)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments. Also includes demonstrating how to use some of the [Web APIs](./references/document-sandbox/web/) such as `setTimeout()` and `console.log()`.
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments. Also includes demonstrating how to use some of the [Web APIs](./references/document-sandbox/web/).
 
 ### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
 

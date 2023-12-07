@@ -104,17 +104,12 @@ addOnUISdk.ready.then(async () => {
         performWorkOnUI: function (data, someFlag) {
             // Do some ui operation
         },
-        getDataFromUI: async function () {
-            let resolver = undefined;
-            
-            const promise = new Promise((resolve) => {
-                resolver = resolve;
+        getDataFromUI: async function() {
+            return new Promise(resolve => {
+                // Example of returning a user choice from hypothetical UI
+                resolve("button_color_blue");
             });
-            setTimeout(() => {
-                resolver("button_color_blue");
-            }, 10);
-            return await promise;
-        },
+        }
     };
     // Expose the UI Apis to be used in the script code (ie: code.js)
     runtime.exposeApi(uiApi);
@@ -157,7 +152,7 @@ Data type validation is performed for both the arguments and the return types th
 <br/>
 <table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Type</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
