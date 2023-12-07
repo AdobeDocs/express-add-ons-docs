@@ -111,36 +111,3 @@ addOnUISdk.app.on("localechange", (data) => {
 <InlineAlert slots="text" variant="success"/>
 
 Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
-
-<!-- 
-## AddOnSdk.app.ui Properties
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui.locale</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">        
-        <p>Retrieve the host application current locale.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui.locales</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string []</pre></p></td>
-    <td style="vertical-align: bottom;">        
-        <p>Retrieve the host application's supported languages.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>AddOnSdk.app.ui.theme</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">        
-        <p>Retrieve the current theme of the host application.</p>
-    </td>
-</tr>
-</tbody>
-</table> -->

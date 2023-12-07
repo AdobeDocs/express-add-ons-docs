@@ -42,6 +42,7 @@ contributors:
 - [How does Adobe use my add-on’s data?](#how-does-adobe-use-my-add-ons-data)
 - [Where can I request new add-on features or suggest ideas?](#where-can-i-request-new-add-on-features-or-suggest-ideas)
 - [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
+- [Did the mime type for an exported PDF returned from the `createRenditions` method change?](#did-the-mime-type-for-an-exported-pdf-returned-from-the-createrenditions-method-change)
 
 ## Answers
 
@@ -163,8 +164,8 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?
 
-  This can happen due to a permissions issue, and the `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. You can fix this by creating the folder and modifying the permissions to allow write.
+  This can happen due to a permissions issue, and the `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. This can be fixed by creating the folder and modifying the permissions to allow write.
 
-### Did the mime type for an exported PDF change?
+### Did the mime type for an exported PDF returned from the `createRenditions` method change?
 
-  Yes, the mime type of an exported rendition created using the [Export `createRenditions`](../references/addonsdk/app-document.md#createrenditions) method is now `text/plain` rather than `application/pdf`. Please note, you should still specify `application/pdf` in the `RenditionFormat` passed to the export method for PDFs, but be aware that the file returned will have a mime type of `text/plain`.
+  Yes, an unexpected change was made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.

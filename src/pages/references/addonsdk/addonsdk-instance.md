@@ -4,35 +4,31 @@ Represents the currently running add-on instance. This object is used for provid
 
 ## Objects
 
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<table columnWidths="20,50,30" class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+    <td><p style="color: white"><strong>Attribute</strong></p></td>
+    <td><p style="color: white"><strong>Object</strong></p></td>    
+    <td><p style="color: white"><strong>Description</strong></p></td>
 </tr>
-<tbody class="spectrum-Table-body">
+<tbody>
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.instance.clientStorage</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td style="vertical-align: bottom;">
+    <td style="color:red"><p><pre>readonly</pre></p></td>
+    <td width="80%" style="font-size: 8px"><p><pre>addOnUiSdk.instance.clientStorage</pre></p></td>    
+    <td>
         <p>Reference to the client storage object of the add-on.</p>
     </td>
 </tr>
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.instance.manifest</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td style="vertical-align: bottom;">
+    <td><p><pre>readonly</pre></p></td>
+    <td ><p><pre>addOnUISdk.instance.manifest</pre></p></td>    
+    <td>
         <p>Add-ons manifest details. Maps to entries in the add-ons manifest file.</p>
     </td>
 </tr>
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.instance.runtime</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td style="vertical-align: bottom;">
+    <td><p><pre>readonly</pre></p></td>
+    <td><p><pre>addOnUISdk.instance.runtime</pre></p></td>    
+    <td>
         <p>Represents the current add-on runtime.</p>
     </td>
 </tr>

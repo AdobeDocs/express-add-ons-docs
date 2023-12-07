@@ -97,16 +97,16 @@ declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
 
 See the [typescript definitions section](../../guides/develop/frameworks-libraries-bundling.md#typescript-definitions) in the developer guides as well for more details.
 
-## addOnUISdk Objects
+## addOnUISdk Properties
 
-The following objects can be accessed from the `addOnUISdk` after it has been imported.
+The following properties can be accessed from the `addOnUISdk` object after it has been imported.<br/><br/>
 
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<table columnWidths="20,30,15,35" class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Attribute</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Name</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white"><strong>Description</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
@@ -133,21 +133,6 @@ The following objects can be accessed from the `addOnUISdk` after it has been im
     <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
     <td class="spectrum-Table-cell"><p>A set of constants used throughout the add-on SDK.</p></td>
 </tr>
-</tbody>
-</table>
-
-## AddOnSdk Properties
-
-The following properties can be accessed from the `AddOnSdk` object after it has been imported.
-
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Property</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>addOnUISdk.apiVersion</pre></p></td>
@@ -157,7 +142,7 @@ The following properties can be accessed from the `AddOnSdk` object after it has
 </tbody>
 </table>
 
-## Add-on UI SDK Errors
+## addOnUISdk Errors
 
 The table below describes the possible error messages that may occur when using the core `addOnUISdk` object, with a description of the scenario that will return them.
 

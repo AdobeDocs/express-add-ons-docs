@@ -1,4 +1,4 @@
-# AddOnSdk.instance.runtime
+# addOnUISdk.instance.runtime
 
 Represents the runtime of the current add-on.
 
@@ -12,11 +12,9 @@ The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint cr
 
 (Optional) When the `RuntimeType` is `"dialog"`, this object will contain the reference to the [modal dialog](runtime-dialog.md) the add-on invoked, and can be used to programmatically close the dialog and send results back to the caller. Will be `undefined` when no modal dialog is present. Check out the [modal dialogs use case examples](../../guides/develop/use_cases.md#modal-dialogs) for more details on using dialogs, as well as the related [`showModalDialog` method](../addonsdk/addonsdk-app.md#showmodaldialog).
 
-## Experimental Methods
+## Methods
 
 The following methods allow you to communicate bidirectionally between the add-on running in the iframe and the [document sandbox](../document-sandbox/) environments.
-
-**IMPORTANT:** These methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To use these methods, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 ### exposeApi()
 
@@ -55,9 +53,9 @@ A promise which resolves to an API proxy object exposed by the desired runtime a
 #### Example Usage
 
 ```js
-AddOnSdk.ready.then(async () => {
-    console.log("AddOnSdk is ready for use.");
-    const { runtime } = AddOnSdk.instance;
+addOnUISdk.ready.then(async () => {
+    console.log("addOnUISdk is ready for use.");
+    const { runtime } = addOnUISdk.instance;
 
     let createShapesButton = document.getElementById("createShapesButton");
     createShapesButton.addEventListener("click", async (e) => {

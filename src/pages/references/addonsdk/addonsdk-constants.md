@@ -1,4 +1,5 @@
 # addOnUISdk.constants
+
 A set of constants used throughout the add-on SDK. These constants are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary". 
 <!-- 
 
@@ -18,12 +19,13 @@ Variant	confirmation, information, warning, destructive, error, input
 | ButtonType	      | primary, secondary, cancel, close                           | -->
 
 
-## addOnUISdk.constants 
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+## addOnUISdk.constants
+
+<table columnWidths="30,20,60" class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white" ><strong>Name</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white" ><strong>Type</strong></p></td>
+    <td class="spectrum-Table-headCell"><p style="color:white" ><strong>Description</strong></p></td>
 </tr>
 <tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
@@ -34,6 +36,7 @@ Variant	confirmation, information, warning, destructive, error, input
         <ul>
           <li><strong>currentPage</strong></li> Generate rendition for the current page
           <li><strong>entireDocument</strong></li>Generate rendition for all pages
+          <li><strong>specificPages</strong></li>Generate rendition for specific pages
         </ul>
     </td>    
 </tr>

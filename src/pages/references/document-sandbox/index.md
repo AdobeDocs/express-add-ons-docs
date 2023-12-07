@@ -21,10 +21,6 @@ contributors:
 
 The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
-<InlineAlert slots="text" variant="warning"/>
-
-The document sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
-
 ## Overview
 
 The document sandbox exposes three categories of APIs, which each have their own specific references and are outlined below.
@@ -99,10 +95,6 @@ Choose `Yes` at the prompt to include the document sandbox setup in your generat
         }
     ]
 ```
-
-<InlineAlert slots="text" variant="info"/>
-
-Since these APIs are still experimental, choosing to include the document sandbox when creating an add-on with the CLI also automatically includes the `"experimentalApis": true` in the `manifest.json`.
 
 The screenshot below shows what the default script-based add-on generated from the CLI looks like when running:
 
