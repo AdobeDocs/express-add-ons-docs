@@ -4,7 +4,11 @@ Represents the currently running add-on instance. This object is used for provid
 
 ## Objects
 
-<table columnWidths="20,50,30" class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
+<table columnWidths="20,50,30" class="spectrum-Table spectrum-Table--sizeM" css="
+    background-color:lavender; 
+    tbody {
+      background-color:white;
+    }">
 <tr class="spectrum-Table-row">
     <td><p><strong>Attribute</strong></p></td>
     <td><p><strong>Object</strong></p></td>

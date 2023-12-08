@@ -101,7 +101,11 @@ See the [typescript definitions section](../../guides/develop/frameworks-librari
 
 The following properties can be accessed from the `addOnUISdk` object after it has been imported.<br/><br/>
 
-<table columnWidths="20,30,15,35" class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
+<table columnWidths="20,30,15,35" class="spectrum-Table spectrum-Table--sizeM" css="
+    background-color:lavender; 
+    tbody {
+      background-color:white;
+    }">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>

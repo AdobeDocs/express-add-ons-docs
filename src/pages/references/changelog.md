@@ -162,6 +162,10 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **IMPORTANT:** The above updates should be considered breaking changes, so any add-ons in development that relied on the experimental APIs may not work correctly until you make changes to use the new/updated ones above. The intention was to ensure these important changes were made prior to marking the APIs stable to 1) make them more intuitive for developers, 2) significantly improve the process of working with colors, strokes and fills, and 3) prevent certain operations from corrupting the document.
 
+<InlineAlert slots="text" variant="warning"/>
+
+Please also note, there is an edge case where removing a page could potentially cause a problem with the document. This will be resolved in the very near future, but please take caution and be aware that it would be best to avoid page removal in the short-term until it's resolved.
+
 - The CLI has been updated to release version `1.1.1`, and includes the following:
 
   - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../references/document-sandbox/), and the `experimentalApis` flag has been removed. Please review the updated [references](../references/document-sandbox/) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.

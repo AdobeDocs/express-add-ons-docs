@@ -1,25 +1,14 @@
 # addOnUISdk.constants
 
 A set of constants used throughout the add-on SDK. These constants are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary".
-<!-- 
 
-Enum Name	Enum Values
-AuthorizationStatus	SUCCESS, POPUP_OPENED, POPUP_BLOCKED, POPUP_TIMEOUT, FAILED
-ButtonType	primary, secondary, cancel, close
-FieldType	text
-Range	currentPage, entireDocument
-RenditionFormat	png, jpg, mp4, pdf
-RenditionType	page
-Variant	confirmation, information, warning, destructive, error, input
+## Constants
 
-| Name                | Values    |
-| -------------:      | --------- |
-| AuthorizationStatus | SUCCESS, POPUP_OPENED, POPUP_BLOCKED, POPUP_TIMEOUT, FAILED |
-| ButtonType	      | primary, secondary, cancel, close                           | -->
-
-## addOnUISdk.constants
-
-<table columnWidths="30,20,60" class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
+<table columnWidths="30,20,60" class="spectrum-Table spectrum-Table--sizeM" css="
+    background-color:lavender; 
+    tbody {
+      background-color:white;
+    }">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>

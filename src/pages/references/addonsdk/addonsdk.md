@@ -4,7 +4,11 @@ The core add-on UI SDK object which provides access to everything needed for add
 
 ## addOnUISdk Properties
 
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
+<table class="spectrum-Table spectrum-Table--sizeM" css="
+    background-color:lavender; 
+    tbody {
+      background-color:white;
+    }">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>

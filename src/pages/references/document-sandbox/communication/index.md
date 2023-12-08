@@ -150,7 +150,11 @@ Data type validation is performed for both the arguments and the return types th
 ### Supported data types
 
 <br/>
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
+<table class="spectrum-Table spectrum-Table--sizeM" css="
+    background-color:lavender; 
+    tbody {
+      background-color:white;
+    }">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>
@@ -188,7 +192,11 @@ Some data types are not supported and may result unintended behavior. To avoid t
 ### Unsupported data types
 
 <br/>
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
+<table class="spectrum-Table spectrum-Table--sizeM" css="
+    background-color:lavender; 
+    tbody {
+      background-color:white;
+    }">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>

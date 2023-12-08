@@ -289,11 +289,7 @@ module.exports = {
                   {
                     title: "Stroke",
                     path: "references/document-sandbox/document-apis/interfaces/Stroke.md",
-                  },
-                  {
-                    title: "StrokeOptions",
-                    path: "references/document-sandbox/document-apis/interfaces/StrokeOptions.md",
-                  },                  
+                  },                                   
                 ],
               },
               {
