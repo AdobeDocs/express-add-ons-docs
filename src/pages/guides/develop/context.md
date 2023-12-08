@@ -55,29 +55,15 @@ Be sure to set your browser devtools option to "**Show CORS errors in console**"
 ### Add-on subdomain
 
 To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service.
-Your add-on is given a unique ID when you distribute your add-on for private or public sharing. This ID will not change once it's been generated, regardless of [future distributions](../distribute/index.md), so we suggest that you create a private sharing link when you need it, even if you're still in the development phase. Your add-on's [subdomain](#subdomain) is then created with a prefix of your unique add-on id, followed by the URL where it's hosted: `.wxp.adobe-addons.com`, for example: `src="https://w906hhl6k.wxp.adobe-addons.com/`.
+Your add-on is given a unique ID when you go through the in-app distribution process for an add-on, to distribute it for private or public sharing. This ID will not change once it's been generated, regardless of [future distributions](../distribute/index.md), so we suggest that you create a private sharing link when you need it, even if you're still in the development phase. Your add-on's [subdomain](#subdomain) is assigned during this distribution process with a prefix of your unique add-on id, followed by the URL where it's hosted: `.wxp.adobe-addons.com`, for example: `src="https://w906hhl6k.wxp.adobe-addons.com/`.
 
-#### Determining the subdomain
+#### Retrieving a subdomain
 
-You can determine your add-on's subdomain by first [creating a private sharing link](../distribute/private-dist.md). In the link generated, you'll see that it contains a unique ID in the `claimCode`, just befre the colon (`:`), for instance:
+You can get a subdomain URL for your add-on during the development process by following the [add-on distribution steps](../distribute/private-dist.md) through [step 2](../distribute/private-dist.md#step-2-add-on-container-settings), where your own unique subdomain URL is provided for your add-on. This step creates the container for your add-on and assigns a unique subdomain for where it will be hosted, so you can use it to set up CORS in advance. You can stop at the creation of the container if all you need is the subdomain at this point, and come back to create a listing on it later when you've finished your development. An example of what the settings panel with this URL looks like is shown below for reference. We provide a **Copy** button as well to allow you to easily copy your unique **Add-on URL**.
 
-![private sharing link example](./img/private-link.png)
+![add-on container settings panel](../distribute/img/settings-panel.png)
 
-#### Steps
-
-With the private link above: `https://new.express.adobe.com/new?category=addOns&claimCode=w906hhl6k:TEOYF0DH`
-
-1. Locate the `claimCode` parameter (e.g., `claimCode=w906hhl6k:TEOYF0DH`).
-2. Extract the unique add-on ID which is the string between the equal (`=`) and colon (`:`) symbols (e.g., `w906hhl6k`).
-3. Concatenate the unique ID with the `.wxp.adobe-addons.com` string to derive at the add-on's subdomain (e.g., `https://w906hhl6k.wxp.adobe-addons.com/`).
-
-<!-- **Option 2 (Preferred)** <br/>
-A more straightforward way to ensure you have the correct subdomain for your add-on, is to open and add it with the [private sharing link](../distribute/private-dist.md), then inspect the CSS with the browser devtools. (In Chrome you can do this by right-clicking on your add-on, such as in the title, and clicking "Inspect" to open the devtools to the CSS tab). Locate the `<hz-iframe-panel>`, element in the CSS, and continue to drill down into its child elements until you find the actual `<iframe>` for your add-on, as shown below:
-
-![iframe element for an add-on](./img/iframe-domain.png)
-
-You'll see the `src` of the `<iframe>` is set to the whole path to your hosted add-on, and contains the subdomain you can supply to any services/servers for the allowed domains list (ie: `"https://w906hhl6k.wxp.adobe-addons.com/"`).
- -->
+For existing add-ons, simply choose one in the distribution workflow and navigate to the new **Settings** tab and copy the **Add-on URL** field.
 
 ### Using the subdomain
 

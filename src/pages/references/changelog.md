@@ -20,6 +20,219 @@ contributors:
 
 # Changelog
 
+## 2023-12-07
+
+<InlineAlert slots="text" variant="warning"/>
+
+**BREAKING NEWS:** The [Adobe Express Document Sandbox](../references/document-sandbox/) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
+
+### Breaking changes (experimental APIs)
+
+Some items in the following list of changes may have been mentioned in recent updates but are being listed in this summary again to serve as a reminder.
+
+- The methods in the [Document API Editor class](../references/document-sandbox/document-apis/classes/Editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`makeStroke`](../references/document-sandbox/document-apis/classes/Editor.md#makestroke) respectively.
+- `strokes` and `fills` have been renamed to their singular counterpart. (Express does not support multiple strokes or fills). You should use `stroke` and `fill` going forward to access them, and they will no longer be `ItemList` objects, since they represent only a single stroke or fill.
+
+  ```js
+    // Before
+    rectangle.fills.append(rectFill);
+    ellipse.fills.append(ellipseFill);
+
+    // After
+    rectangle.fill = rectFill;
+    ellipse.fill = ellipseFill;
+  ```
+
+  - `fill` and `stroke.color` are just a [color object](../references/document-sandbox/document-apis/interfaces/Color.md) of the form `{ red, green, blue, alpha }`.
+  - `stroke` is an object of the form `{ color, width, dashPattern, dashOffset }`
+- Color utilities have moved to [`colorUtils`](../references/document-sandbox/document-apis/classes/ColorUtils.md) instead of `utils`.
+
+  **Old**<br/>
+  <del>
+
+  ```js
+  import { utils } from "express-document-sdk";
+  const color = utils.createColor(1, 0, 0);
+  ```
+
+  </del>
+
+  **New**<br/>
+
+  ```js
+  import { colorUtils } from "express-document-sdk";
+
+  // any of:
+  const color = colorUtils.fromRGB(1, 0, 0); // optional alpha
+  const color = colorUtils.fromRGB({ red: 1 , green: 0, blue: 0 };); // optional alpha
+  const color = colorUtils.fromHex("#ff0000");
+  const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha
+  ```
+
+  - `fromHex` returns a color from a Hex string -- e.g., `colorUtils.fromHex("#FF8040")` or `colorUtils.fromHex("#FF8040FF")` (including the optional alpha);
+  - `fromRGB` returns a color from a set of RGB(A) values (0-1) -- e.g., `colorUtils.fromRGB(1,0.5,0.25,1)`.
+  - `toHex` converts a color object to a Hex string -- e.g., `colorUtils.toHex(aColor)`.
+- `allChildren` returns an `iterator`, not an `Array`. However if you want to use array methods (ie: `Array#map`), you can use `Array.from` to convert it to an array.
+- Strokes and fills will no longer *move* if you add an existing `stroke`/`fill` to another shape (previously the original shape would lose the corresponding `stroke` or `fill`). For example:
+
+  ```js
+  // Old way
+  const greenFill = editor.createColorFill(colorUtils.fromRGB(0,0,1));
+  someRect.fills.append(greenFill);
+  anotherRect.fills.append(greenFill);
+  /* oops, someRect no longer has a green fill, because anotherRect is its parent */
+  ```
+
+  versus:
+
+  ```js
+  // New way
+  const greenFill = editor.makeColorFill(colorUtils.fromRGB(0,0,1));
+  someRect.fill = greenFill;
+  anotherRect.fill = greenFill;
+  /* both rectangles have a green fill */
+  ```
+
+- Some things that previously didn't make sense will now cause compile errors in typescript, or throw in javascript:
+  - Do not assume a node's parent is movable — e.g., an artboard can't be repositioned.
+  - Not all shapes support setting `opacity` or `locking` (e.g, the document root or an artboard).
+- The `translateX` and `translateY` properties have been replaced by a single translation object.
+
+  ```js
+  // old
+  rectangle.translateX = 100;
+  rectangle.translateY = 20;
+
+  // new
+  rectangle.translation = { x: 100,  y: 20}; // both x,y properties are required
+  ```
+
+- A new [`BaseNode`](../references/document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](../references/document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
+- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../references/document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
+
+  **Adobe Express Document APIs SDK import**<br/>
+  For access to the [Express document and content authoring APIs](../references/document-sandbox/document-apis/):
+
+  <del>
+
+  ```js
+  // Old
+  import { editor } from "express";
+  ```
+
+  </del>
+
+  ```js
+  // New
+  import { editor } from "express-document-sdk";
+  ```
+
+  **Document Sandbox SDK import**<br/>
+  For access to the [document sandbox runtime APIs](../references/document-sandbox/):
+
+  <del>
+
+  ```js
+  // Old
+  import AddOnScriptSdk from "AddOnScriptSdk";
+  ```
+
+  </del>
+
+  ```js
+  // New
+  import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+  ```
+
+- The [`manifest.json` entry point](../references/manifest/index.md#entrypoints) for the document sandbox script code reference was renamed from `script` to `documentSandbox`, as shown below:
+
+  ```json
+    "entryPoints": [
+          {
+              "type": "panel",
+              "id": "panel1",
+              "main": "index.html",
+              "documentSandbox": "code.js" // used to be "script": "code.js"
+          }
+      ]
+  ```
+
+- The [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) method in the [`addOnSandboxSdk.instance.runtime`](./addonsdk/addonsdk-instance.md#objects) object now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
+- The [`RuntimeType`](../references/addonsdk/addonsdk-constants.md) constant now uses the value of `"documentSandbox"` in lieu of `"script"`.
+
+  **IMPORTANT:** The above updates should be considered breaking changes, so any add-ons in development that relied on the experimental APIs may not work correctly until you make changes to use the new/updated ones above. The intention was to ensure these important changes were made prior to marking the APIs stable to 1) make them more intuitive for developers, 2) significantly improve the process of working with colors, strokes and fills, and 3) prevent certain operations from corrupting the document.
+
+- The CLI has been updated to release version `1.1.1`, and includes the following:
+
+  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../references/document-sandbox/), and the `experimentalApis` flag has been removed. Please review the updated [references](../references/document-sandbox/) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
+  - Typings support has been added to the `javascript` templates to enable intellisense features.
+  - Manifest property additions.
+  - General improvements and bug fixes.
+
+ **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
+
+ The new version should be installed by default when you create a new add-on. If you notice that the CLI is not updating automatically, try to run [`npm cache clean`](https://docs.npmjs.com/common-errors#random-errors) (or `npm cache clean --force` if necessary) first and then try again. If for any reason it still doesn't install, you can specify the version in the command itself that you want to use, ie: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. Also, yiu can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
+
+- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/) listed here.
+- Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
+
+### Additional Updates
+
+- A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](../references/addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+- The [`createRenditions()` export API](../references/addonsdk/app-document.md#createrenditions) was updated with the following changes:
+  - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](../references/addonsdk/addonsdk-constants.md) constant value.
+  - The returned type now also includes page metadata (see [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/develop/use_cases.md#retrieving-page-metadata).
+- A new [document metadata use case example](../guides/develop/use_cases.md#document-and-page-metadata) has been added to show how to retrieve the [document id](./addonsdk/app-document.md#id) and [title (ie: name)](./addonsdk/app-document.md#title), including how to listen for the [associated events](../references/addonsdk/addonsdk-app.md#events).
+- New tables have been added to the [Communication API reference](../references/document-sandbox/communication/index.md) denoting the [supported](../references/document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](../references/document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](../references/document-sandbox/communication/index.md) layer.
+
+## 2023-12-04
+
+### Updates
+
+- The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+
+  ```js
+  // Before
+  import { utils } from "express-document-sdk";
+  const color = utils.createColor(1, 0, 0);
+
+  // After
+  import { colorUtils } from "express-document-sdk";
+
+  // any of:
+  const color = colorUtils.fromRGB(1, 0, 0); // optional alpha
+  const color = colorUtils.fromRGB({ red: 1 , green: 0, blue: 0 }); // optional alpha
+  const color = colorUtils.fromHex("#ff0000");
+  const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha
+  ```
+
+  The [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have also been updated, so please also refer to those for further details on how to use it. Please note, the [example code snippets](../references/document-sandbox/document-apis/index.md#example-code-snippet) and samples using `fills` or `strokes` off a node class were also updated to use a singular `Fill` or `Stroke` object instead of as an `ItemList` object.
+
+  ```js
+    // Before
+    rectangle.fills.append(rectFill);
+    ellipse.fills.append(ellipseFill);
+
+    // After
+    rectangle.fill = rectFill;
+    ellipse.fill = ellipseFill;
+  ```
+
+- A new release has landed for the [**In-App Developer Submission experience**](../guides/distribute/) in Express. Some highlights from the release:
+
+  **Create Add-on flow:** You can now create [an add-on "container"](../guides/distribute/public-dist.md#step-2-add-on-container-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
+
+  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../guides/develop/context.md#cors) for more details.
+
+  **Delete Add-ons:** The "container" concept allowed us to offer better management and cleanup of your add-ons. You will now find the option to delete an add-on container entirely from the new "Settings" tab of a given add-on.
+
+  **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
+
+  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-8-enter-the-version-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/use_cases.md#detecting-locale-and-supported-locales).
+- Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev_tooling.md#no-template-parameter).
+- New [FAQ item](../guides/faq.md#did-the-mime-type-for-an-exported-pdf-returned-from-the-createrenditions-method-change) regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
+- Removed NPS survey.
+
 ## 2023-11-30
 
 ### Updates
@@ -67,7 +280,7 @@ contributors:
   ```
 
 - [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
-- The [`RuntimeType`]() constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
+- The [`RuntimeType`](../references/addonsdk/addonsdk-constants.md) constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -77,6 +290,7 @@ contributors:
 
 ### Updates
 
+- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
 - The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
 
  **New Classes/Interfaces**<br/>
@@ -92,20 +306,18 @@ contributors:
 
  The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
 
-  - Removes `absoluteRotation` accessor
-  - Removes `absoluteTransform` accessor
-  - Removes `relativeRotation` accessor
-  - Removes `relativeTransform` accessor
-  - Removes `translateX` accessor
-  - Removes `translateY` accessor
-  - Adds `rotation` accessor
-  - Adds `rotationInScreen` accessor
-  - Adds `transformMatrix` accessor
-  - Adds `translation` accessor
-  - Adds `setPositionInParent` method
-  - Adds `setRotationInParent` method
-
-- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`). 
+   - Removes `absoluteRotation` accessor
+   - Removes `absoluteTransform` accessor
+   - Removes `relativeRotation` accessor
+   - Removes `relativeTransform` accessor
+   - Removes `translateX` accessor
+   - Removes `translateY` accessor
+   - Adds `rotation` accessor
+   - Adds `rotationInScreen` accessor
+   - Adds `transformMatrix` accessor
+   - Adds `translation` accessor
+   - Adds `setPositionInParent` method
+   - Adds `setRotationInParent` method
 
 ## 2023-11-27
 
@@ -230,7 +442,9 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Updates
 
-- The [Communication API docs](../references/document-sandbox/communication/index.md) in the [document sandbox Reference](../references/document-sandbox/) section was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+<del>
+
+- The <a href="../references/document-sandbox/communication/index.md">Communication API</a> in the <a href="../references/document-sandbox/">document sandbox reference section</a> was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -241,6 +455,8 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
   `import AddOnScriptSdk from "AddOnScriptSdk";`
   
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**.
+
+</del>
 
 - A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 - Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
@@ -308,7 +524,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - Debugging & Console messages
   - You may see "Empty transaction not added to pendingTransaction" while running code in the document sandbox. You can ignore this for now.
   - You may see "Detected a possible stutter. Excessive ECS Frame duration of ## ms" in the console. You can ignore this for now.
-  - If your script code has a syntax error, the console will log an unhelpful error message (similar to `Uncaught (in promise) at <adobe-internal.js:49>`). Your add-on panel UI will be visible and continue to be interactive, but it won't be able to communicate with the document sandbox, resulting in what feels like non-responsive UI (e.g., clicking doesn't trigger the expected action). You'll want to configure your editor to highlight any syntax editors so that you can be sure your code is at least syntactically correct before you save.
+  - If your script code has a syntax error, the console will log an unhelpful error message (similar to `Uncaught (in promise) at adobe-internal.js:49`). Your add-on panel UI will be visible and continue to be interactive, but it won't be able to communicate with the document sandbox, resulting in what feels like non-responsive UI (e.g., clicking doesn't trigger the expected action). You'll want to configure your editor to highlight any syntax editors so that you can be sure your code is at least syntactically correct before you save.
 - Intermittent issues
   - Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the document sandbox to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.
   - It's occasionally possible to run into a race condition where the communications bridge between the two contexts (panel vs document sandbox) is not set up in time. If you interact with your panel UI immediately after it's reloaded, the click may appear do nothing instead of invoking your script code. We're working on a fix for this.

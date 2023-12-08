@@ -14,6 +14,8 @@ Base class for a Node that can have its own stroke.
 
   ↳↳ [`LineNode`](LineNode.md)
 
+  ↳↳ [`StrokeShapeNode`](StrokeShapeNode.md)
+
 ## Implements
 
 - [`IStrokableNode`](../interfaces/IStrokableNode.md)
@@ -29,7 +31,7 @@ Base class for a Node that can have its own stroke.
 - [parent](StrokableNode.md#parent)
 - [rotation](StrokableNode.md#rotation)
 - [rotationInScreen](StrokableNode.md#rotationinscreen)
-- [strokes](StrokableNode.md#strokes)
+- [stroke](StrokableNode.md#stroke)
 - [transformMatrix](StrokableNode.md#transformmatrix)
 - [translation](StrokableNode.md#translation)
 - [type](StrokableNode.md#type)
@@ -47,9 +49,11 @@ Base class for a Node that can have its own stroke.
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -161,13 +165,13 @@ ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
 
 #### Inherited from
 
@@ -209,19 +213,35 @@ Node.rotationInScreen
 
 ___
 
-### strokes
+### stroke
 
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+• `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
-Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
+The stroke applied to the shape, if any.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+`undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
 #### Implementation of
 
-[IStrokableNode](../interfaces/IStrokableNode.md).[strokes](../interfaces/IStrokableNode.md#strokes)
+[IStrokableNode](../interfaces/IStrokableNode.md).[stroke](../interfaces/IStrokableNode.md#stroke)
+
+• `set` **stroke**(`stroke`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `stroke` | `undefined` \| [`Stroke`](../interfaces/Stroke.md) |
+
+#### Returns
+
+`void`
+
+#### Implementation of
+
+[IStrokableNode](../interfaces/IStrokableNode.md).[stroke](../interfaces/IStrokableNode.md#stroke)
 
 ___
 

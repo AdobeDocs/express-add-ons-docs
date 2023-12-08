@@ -17,15 +17,15 @@ yet, only read.
 
 - [allChildren](PathNode.md#allchildren)
 - [blendMode](PathNode.md#blendmode)
+- [fill](PathNode.md#fill)
 - [fillRule](PathNode.md#fillrule)
-- [fills](PathNode.md#fills)
 - [locked](PathNode.md#locked)
 - [opacity](PathNode.md#opacity)
 - [parent](PathNode.md#parent)
 - [path](PathNode.md#path)
 - [rotation](PathNode.md#rotation)
 - [rotationInScreen](PathNode.md#rotationinscreen)
-- [strokes](PathNode.md#strokes)
+- [stroke](PathNode.md#stroke)
 - [transformMatrix](PathNode.md#transformmatrix)
 - [translation](PathNode.md#translation)
 - [type](PathNode.md#type)
@@ -43,9 +43,11 @@ yet, only read.
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -90,6 +92,38 @@ FillableNode.blendMode
 
 ___
 
+### fill
+
+• `get` **fill**(): `undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
+
+The fill applied to the shape, if any.
+
+#### Returns
+
+`undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
+
+#### Inherited from
+
+FillableNode.fill
+
+• `set` **fill**(`fill`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fill` | `undefined` \| [`Fill`](../interfaces/Fill.md) |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+FillableNode.fill
+
+___
+
 ### fillRule
 
 • `get` **fillRule**(): [`FillRule`](../enums/FillRule.md)
@@ -100,22 +134,6 @@ has multiple disjoint parts. This value is read-only and cannot be modified via 
 #### Returns
 
 [`FillRule`](../enums/FillRule.md)
-
-___
-
-### fills
-
-• `get` **fills**(): [`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
-
-Any fill(s) on the shape. Use the methods on this ItemList object to get, add, and remove fills.
-
-#### Returns
-
-[`ItemList`](ItemList.md)<[`Fill`](../interfaces/Fill.md)\>
-
-#### Inherited from
-
-FillableNode.fills
 
 ___
 
@@ -186,13 +204,13 @@ ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
 
 #### Inherited from
 
@@ -247,19 +265,35 @@ FillableNode.rotationInScreen
 
 ___
 
-### strokes
+### stroke
 
-• `get` **strokes**(): [`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+• `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
-Any stroke(s) on the shape. Use the methods on this ItemList object to get, add, and remove strokes.
+The stroke applied to the shape, if any.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Stroke`](../interfaces/Stroke.md)\>
+`undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
 #### Inherited from
 
-FillableNode.strokes
+FillableNode.stroke
+
+• `set` **stroke**(`stroke`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `stroke` | `undefined` \| [`Stroke`](../interfaces/Stroke.md) |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+FillableNode.stroke
 
 ___
 

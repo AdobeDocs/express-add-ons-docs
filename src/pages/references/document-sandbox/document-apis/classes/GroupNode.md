@@ -7,9 +7,13 @@ optional vector mask child.
 
 ## Hierarchy
 
-- [`ContainerNode`](ContainerNode.md)
+- [`Node`](Node.md)
 
   ↳ **`GroupNode`**
+
+## Implements
+
+- [`ContainerNode`](../interfaces/ContainerNode.md)
 
 ## Table of contents
 
@@ -41,17 +45,23 @@ optional vector mask child.
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
 `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
-#### Inherited from
+#### Implementation of
 
 ContainerNode.allChildren
+
+#### Inherited from
+
+Node.allChildren
 
 ___
 
@@ -68,7 +78,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 #### Inherited from
 
-ContainerNode.blendMode
+Node.blendMode
 
 • `set` **blendMode**(`value`): `void`
 
@@ -84,7 +94,7 @@ ContainerNode.blendMode
 
 #### Inherited from
 
-ContainerNode.blendMode
+Node.blendMode
 
 ___
 
@@ -99,7 +109,7 @@ Use the methods on this ItemList object to get, add, and remove children.
 
 [`ItemList`](ItemList.md)<[`Node`](Node.md)\>
 
-#### Overrides
+#### Implementation of
 
 ContainerNode.children
 
@@ -118,7 +128,7 @@ cannot be edited by the user unless they are unlocked first.
 
 #### Inherited from
 
-ContainerNode.locked
+Node.locked
 
 • `set` **locked**(`locked`): `void`
 
@@ -134,7 +144,7 @@ ContainerNode.locked
 
 #### Inherited from
 
-ContainerNode.locked
+Node.locked
 
 ___
 
@@ -184,7 +194,7 @@ The node's opacity, from 0.0 to 1.0
 
 #### Inherited from
 
-ContainerNode.opacity
+Node.opacity
 
 • `set` **opacity**(`opacity`): `void`
 
@@ -200,23 +210,27 @@ ContainerNode.opacity
 
 #### Inherited from
 
-ContainerNode.opacity
+Node.opacity
 
 ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
+
+#### Implementation of
+
+ContainerNode.parent
 
 #### Inherited from
 
-ContainerNode.parent
+Node.parent
 
 ___
 
@@ -233,7 +247,7 @@ change rotation by rotating around a defined centerpoint.
 
 #### Inherited from
 
-ContainerNode.rotation
+Node.rotation
 
 ___
 
@@ -250,7 +264,7 @@ cumulative rotation from the node's parent containers.
 
 #### Inherited from
 
-ContainerNode.rotationInScreen
+Node.rotationInScreen
 
 ___
 
@@ -266,7 +280,7 @@ The node's transform matrix relative to its parent.
 
 #### Inherited from
 
-ContainerNode.transformMatrix
+Node.transformMatrix
 
 ___
 
@@ -284,7 +298,7 @@ setting translation directly.
 
 #### Inherited from
 
-ContainerNode.translation
+Node.translation
 
 • `set` **translation**(`value`): `void`
 
@@ -302,7 +316,7 @@ ContainerNode.translation
 
 #### Inherited from
 
-ContainerNode.translation
+Node.translation
 
 ___
 
@@ -316,9 +330,13 @@ The node's type.
 
 [`SceneNodeType`](../enums/SceneNodeType.md)
 
-#### Inherited from
+#### Implementation of
 
 ContainerNode.type
+
+#### Inherited from
+
+Node.type
 
 ## Methods
 
@@ -334,9 +352,13 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 
 `void`
 
+#### Implementation of
+
+[ContainerNode](../interfaces/ContainerNode.md).[removeFromParent](../interfaces/ContainerNode.md#removefromparent)
+
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[removeFromParent](ContainerNode.md#removefromparent)
+[Node](Node.md).[removeFromParent](Node.md#removefromparent)
 
 ___
 
@@ -371,7 +393,7 @@ rectangle.setPositionInParent(
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[setPositionInParent](ContainerNode.md#setpositioninparent)
+[Node](Node.md).[setPositionInParent](Node.md#setpositioninparent)
 
 ___
 
@@ -405,4 +427,4 @@ rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height 
 
 #### Inherited from
 
-[ContainerNode](ContainerNode.md).[setRotationInParent](ContainerNode.md#setrotationinparent)
+[Node](Node.md).[setRotationInParent](Node.md#setrotationinparent)

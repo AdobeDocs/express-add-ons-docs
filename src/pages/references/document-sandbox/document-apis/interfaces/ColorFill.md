@@ -21,7 +21,7 @@ Represents a solid-color fill.
 
 ### color
 
-• `Readonly` **color**: [`Color`](../classes/Color.md)
+• **color**: [`Color`](Color.md)
 
 The fill color.
 

@@ -1,10 +1,10 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's properties and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use_cases.md#modal-dialogs), [enable drag and drop](../../guides/develop/use_cases.md#drag-and-drop) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use_cases.md#modal-dialogs), [enable drag and drop](../../guides/develop/use_cases.md#drag-and-drop) of content and subscribe and unsubscribe to events.
 
 ## Objects
 
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
@@ -269,10 +269,6 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 | `blob`            | `Blob`  | Blob (image/video/audio) to be added to the document |
 | `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
-<!-- <InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The support for drag and drop of **audio** specifically is currently **experimental only** and should not be used in any add-ons you will be distributing until it's been declared stable. To enable this support, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. See this [Drag & Drop use case code snippet](../../guides/develop/index.md#example-using-an-image-url) for an example note of how to specify the properties for audio specifically. -->
-
 #### `MediaAttributes`
 
 *Required for audio content only.*
@@ -327,9 +323,8 @@ See the [Drag & Drop use case implementation](../../guides/develop/use_cases.md#
 
 The table below describes the events triggered from the add-on SDK. Use the `addOnUISdk.app.on()` method to subscribe to events, and the `addOnUISdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
-<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:lightblue">
+<table class="spectrum-Table spectrum-Table--sizeM" style="background-color:rgb(138, 43, 226)">
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Object</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
     <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
 </tr>

@@ -21,10 +21,6 @@ contributors:
 
 The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
-<InlineAlert slots="text" variant="warning"/>
-
-The document sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
-
 ## Overview
 
 The document sandbox exposes three categories of APIs, which each have their own specific references and are outlined below.
@@ -79,7 +75,11 @@ The JavaScript code in the file referenced can then access any of the injected g
 
 ### CLI Generated Document Sandbox Add-on
 
-The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
+The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, you can [specify a template name](../../guides/getting_started/dev_tooling.md#templates) that includes the document sandbox support:
+
+`npx @adobe/create-ccweb-add-on helloworld --template javascript-with-document-sandbox`
+
+ or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
 
 ![CLI prompt for document sandbox](../img/cli-doc-sandbox-prompt.png)
 
@@ -95,10 +95,6 @@ Choose `Yes` at the prompt to include the document sandbox setup in your generat
         }
     ]
 ```
-
-<InlineAlert slots="text" variant="info"/>
-
-Since these APIs are still experimental, choosing to include the document sandbox when creating an add-on with the CLI also automatically includes the `"experimentalApis": true` in the `manifest.json`.
 
 The screenshot below shows what the default script-based add-on generated from the CLI looks like when running:
 

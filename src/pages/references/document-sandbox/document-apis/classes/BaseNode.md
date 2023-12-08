@@ -1,27 +1,39 @@
-[@express-document-sdk](../overview.md) / ExpressRootNode
+[@express-document-sdk](../overview.md) / BaseNode
 
-# Class: ExpressRootNode
+# Class: BaseNode
 
-An ExpressRootNode represents the root node of the document's "scenegraph" artwork tree.
+A "node" represents an object in the scenegraph, the document's visual content tree. This base class includes only the
+most fundamental nonvisual properties that even nodes near the top of the document structure share (such as PageNode).
+The more tangible visual content typically extends the richer Node class which extends BaseNode with additional
+properties.
 
 ## Hierarchy
 
-- [`BaseNode`](BaseNode.md)
+- `ProxyLiveObject`
 
-  ↳ **`ExpressRootNode`**
+  ↳ **`BaseNode`**
+
+  ↳↳ [`ArtboardNode`](ArtboardNode.md)
+
+  ↳↳ [`ContainerNode`](../interfaces/ContainerNode.md)
+
+  ↳↳ [`ExpressRootNode`](ExpressRootNode.md)
+
+  ↳↳ [`Node`](Node.md)
+
+  ↳↳ [`PageNode`](PageNode.md)
 
 ## Table of contents
 
 ### Accessors
 
-- [allChildren](ExpressRootNode.md#allchildren)
-- [pages](ExpressRootNode.md#pages)
-- [parent](ExpressRootNode.md#parent)
-- [type](ExpressRootNode.md#type)
+- [allChildren](BaseNode.md#allchildren)
+- [parent](BaseNode.md#parent)
+- [type](BaseNode.md#type)
 
 ### Methods
 
-- [removeFromParent](ExpressRootNode.md#removefromparent)
+- [removeFromParent](BaseNode.md#removefromparent)
 
 ## Accessors
 
@@ -41,22 +53,6 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
-#### Inherited from
-
-BaseNode.allChildren
-
-___
-
-### pages
-
-• `get` **pages**(): [`PageList`](PageList.md)
-
-The pages of the document. All visual content is contained on artboards within the pages.
-
-#### Returns
-
-[`PageList`](PageList.md)
-
 ___
 
 ### parent
@@ -69,10 +65,6 @@ The node's parent. Undefined if the node is an orphan, or if the node is the art
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
-#### Inherited from
-
-BaseNode.parent
-
 ___
 
 ### type
@@ -84,10 +76,6 @@ The node's type.
 #### Returns
 
 [`SceneNodeType`](../enums/SceneNodeType.md)
-
-#### Inherited from
-
-BaseNode.type
 
 ## Methods
 
@@ -102,7 +90,3 @@ not support removal. Also throws if node is the artwork root. No-op if node is a
 #### Returns
 
 `void`
-
-#### Inherited from
-
-[BaseNode](BaseNode.md).[removeFromParent](BaseNode.md#removefromparent)

@@ -238,13 +238,9 @@ Allows users to create a QR code based on a URL and add it to their document.
 
 The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have been provided to help you get started using the [Document Sandbox and Adobe Express Document APIs](./references/document-sandbox/index.md).
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The [Document Sandbox API's](./references/document-sandbox/index.md) are currently **experimental only**. Please do not use them in any add-ons you plan to distribute or submit with updates until they have been deemed stable.
-
 ### [communication-iframe-script-runtime sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-script-runtime)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments. Also includes demonstrating how to use some of the [Web APIs](./references/document-sandbox/web/) such as `setTimeout()` and `console.log()`.
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments. Also includes demonstrating how to use some of the [Web APIs](./references/document-sandbox/web/).
 
 ### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
 

@@ -129,17 +129,17 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/ArtboardNode.md",
                   },
                   {
-                    title: "Color",
-                    path: "references/document-sandbox/document-apis/classes/Color.md",
+                    title: "BaseNode",
+                    path: "references/document-sandbox/document-apis/classes/BaseNode.md",
+                  },
+                  {
+                    title: "ColorUtils",
+                    path: "references/document-sandbox/document-apis/classes/ColorUtils.md",
                   },
                   {
                     title: "ComplexShapeNode",
                     path: "references/document-sandbox/document-apis/classes/ComplexShapeNode.md",
-                  },
-                  {
-                    title: "ContainerNode",
-                    path: "references/document-sandbox/document-apis/classes/ContainerNode.md",
-                  },
+                  },                  
                   {
                     title: "Context",
                     path: "references/document-sandbox/document-apis/classes/Context.md",
@@ -197,6 +197,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/PageNode.md",
                   },
                   {
+                    title: "PathNode",
+                    path: "references/document-sandbox/document-apis/classes/PathNode.md",
+                  },
+                  {
                     title: "ReadOnlyItemList",
                     path: "references/document-sandbox/document-apis/classes/ReadOnlyItemList.md",
                   },
@@ -239,9 +243,17 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
                   },
                   {
+                    title: "Color",
+                    path: "references/document-sandbox/document-apis/interfaces/Color.md",
+                  },
+                  {
                     title: "ColorFill",
                     path: "references/document-sandbox/document-apis/interfaces/ColorFill.md",
                   },
+                  {
+                    title: "ContainerNode",
+                    path: "references/document-sandbox/document-apis/interfaces/ContainerNode.md",
+                  },                  
                   {
                     title: "Fill",
                     path: "references/document-sandbox/document-apis/interfaces/Fill.md",
@@ -274,7 +286,6 @@ module.exports = {
                     title: "RectangleGeometry",
                     path: "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md",
                   },
-
                   {
                     title: "Stroke",
                     path: "references/document-sandbox/document-apis/interfaces/Stroke.md",
@@ -282,11 +293,7 @@ module.exports = {
                   {
                     title: "StrokeOptions",
                     path: "references/document-sandbox/document-apis/interfaces/StrokeOptions.md",
-                  },
-                  {
-                    title: "Utils",
-                    path: "references/document-sandbox/document-apis/interfaces/Utils.md",
-                  },
+                  },                  
                 ],
               },
               {

@@ -46,9 +46,11 @@ create a layout grid that other content can be placed into.
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -95,13 +97,13 @@ ___
 
 ### fill
 
-• `get` **fill**(): [`Fill`](../interfaces/Fill.md)
+• `get` **fill**(): `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
 The background fill of the GridLayout.
 
 #### Returns
 
-[`Fill`](../interfaces/Fill.md)
+`Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
 • `set` **fill**(`fill`): `void`
 
@@ -200,13 +202,13 @@ ___
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`Node`](Node.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
 
 #### Returns
 
-`undefined` \| [`Node`](Node.md)
+`undefined` \| [`BaseNode`](BaseNode.md)
 
 #### Inherited from
 

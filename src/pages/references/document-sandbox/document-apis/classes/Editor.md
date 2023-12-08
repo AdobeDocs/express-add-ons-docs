@@ -19,15 +19,15 @@ Entry point for APIs that read or modify the document's content.
 
 ### Methods
 
-- [createColorFill](Editor.md#createcolorfill)
 - [createEllipse](Editor.md#createellipse)
 - [createGroup](Editor.md#creategroup)
 - [createImageContainer](Editor.md#createimagecontainer)
 - [createLine](Editor.md#createline)
 - [createRectangle](Editor.md#createrectangle)
-- [createStroke](Editor.md#createstroke)
 - [createText](Editor.md#createtext)
 - [loadBitmapImage](Editor.md#loadbitmapimage)
+- [makeColorFill](Editor.md#makecolorfill)
+- [makeStroke](Editor.md#makestroke)
 - [queueAsyncEdit](Editor.md#queueasyncedit)
 
 ## Accessors
@@ -56,24 +56,6 @@ the root of the document.
 
 ## Methods
 
-### createColorFill
-
-▸ **createColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `color` | [`Color`](Color.md) | The color to use for the fill. |
-
-#### Returns
-
-[`ColorFill`](../interfaces/ColorFill.md)
-
-a solid color fill.
-
-___
-
 ### createEllipse
 
 ▸ **createEllipse**(): [`EllipseNode`](EllipseNode.md)
@@ -82,7 +64,7 @@ ___
 
 [`EllipseNode`](EllipseNode.md)
 
-an ellipse node with default x/y radii, and *no* initial stroke or fill.
+an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
 ___
@@ -147,38 +129,8 @@ ___
 
 [`RectangleNode`](RectangleNode.md)
 
-a rectangle node with default width and height, and *no* initial stroke or fill.
+a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
-
-___
-
-### createStroke
-
-▸ **createStroke**(`options?`): [`Stroke`](../interfaces/Stroke.md)
-
-See [StrokeOptions](../interfaces/StrokeOptions.md) for more details on the `options` fields. Defaults:
-
-- `color` has default value DEFAULT_STROKE_COLOR if none is provided.
-- `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
-- `dashPattern` has default value [] if none is provided. Array must be
-  of even length. Values cannot be negative.
-- `dashOffset` has default value 0 if none is provided. This options field is ignored
-  if no `dashPattern` was provided.
-
-The stroke's `position` field cannot be specified via options yet because only
-[center](../enums/StrokePosition.md#center) is supported.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options?` | `Partial`<[`StrokeOptions`](../interfaces/StrokeOptions.md)\> |
-
-#### Returns
-
-[`Stroke`](../interfaces/Stroke.md)
-
-a stroke configured with the given options.
 
 ___
 
@@ -217,6 +169,54 @@ return value can be used immediately. The local client will act as having unsave
 #### Returns
 
 `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+
+___
+
+### makeColorFill
+
+▸ **makeColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
+
+Convenience helper to create a complete ColorFill value given just its color.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `color` | [`Color`](../interfaces/Color.md) | The color to use for the fill. |
+
+#### Returns
+
+[`ColorFill`](../interfaces/ColorFill.md)
+
+___
+
+### makeStroke
+
+▸ **makeStroke**(`options?`): [`Stroke`](../interfaces/Stroke.md)
+
+Convenience helper to create a complete Stroke value given just a subset of its fields. All other fields are
+populated with default values.
+
+See [Stroke](../interfaces/Stroke.md) for more details on the `options` fields. Defaults:
+
+- `color` has default value DEFAULT_STROKE_COLOR if none is provided.
+- `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
+- `position` has default value `center` if none is provided.
+- `dashPattern` has default value [] if none is provided.
+- `dashOffset` has default value 0 if none is provided. This field is ignored
+  if no `dashPattern` was provided.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `options?` | `Partial`<[`Stroke`](../interfaces/Stroke.md)\> |
+
+#### Returns
+
+[`Stroke`](../interfaces/Stroke.md)
+
+a stroke configured with the given options.
 
 ___
 

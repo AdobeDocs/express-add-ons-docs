@@ -12,7 +12,6 @@
 
 - [ArrowHeadType](enums/ArrowHeadType.md)
 - [BlendMode](enums/BlendMode.md)
-- [ColorSpace](enums/ColorSpace.md)
 - [FillRule](enums/FillRule.md)
 - [FillType](enums/FillType.md)
 - [SceneNodeType](enums/SceneNodeType.md)
@@ -23,9 +22,9 @@
 
 - [ArtboardList](classes/ArtboardList.md)
 - [ArtboardNode](classes/ArtboardNode.md)
-- [Color](classes/Color.md)
+- [BaseNode](classes/BaseNode.md)
+- [ColorUtils](classes/ColorUtils.md)
 - [ComplexShapeNode](classes/ComplexShapeNode.md)
-- [ContainerNode](classes/ContainerNode.md)
 - [Context](classes/Context.md)
 - [Editor](classes/Editor.md)
 - [EllipseNode](classes/EllipseNode.md)
@@ -53,7 +52,9 @@
 ### Interfaces
 
 - [BitmapImage](interfaces/BitmapImage.md)
+- [Color](interfaces/Color.md)
 - [ColorFill](interfaces/ColorFill.md)
+- [ContainerNode](interfaces/ContainerNode.md)
 - [Fill](interfaces/Fill.md)
 - [IFillableNode](interfaces/IFillableNode.md)
 - [IRectangularNode](interfaces/IRectangularNode.md)
@@ -62,5 +63,3 @@
 - [Point](interfaces/Point.md)
 - [RectangleGeometry](interfaces/RectangleGeometry.md)
 - [Stroke](interfaces/Stroke.md)
-- [StrokeOptions](interfaces/StrokeOptions.md)
-- [Utils](interfaces/Utils.md)
