@@ -103,7 +103,7 @@ This is a high-level overview of the overall structure; while the implementation
 
 ### The Project Structure
 
-The complete code for the Grids System add-on can be found [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/express-grids-addon), although it would be best if you followed along, starting from this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/express-addon-document-api-template): it sets up a JavaScript/Webpack environment with everything we need to complete the project. You can download the code, `cd` in the `grids-design` folder and then:
+The complete code for the Grids System add-on can be found [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon), although it would be best if you followed along, starting from this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template): it sets up a JavaScript/Webpack environment with everything we need to complete the project. You can download the code, `cd` in the `grids-design` folder and then:
 
 ```bash
 npm install
@@ -264,7 +264,7 @@ runtime.exposeApi({
 });
 ```
 
-It's also possible to expose iframe methods to the Document Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-script-runtime-sample) to see it in action.
+It's also possible to expose iframe methods to the Document Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-documentsandbox-sample) to see it in action.
 
 ## The Document API
 
@@ -952,7 +952,7 @@ Let's review the concepts covered in this tutorial and how they've been implemen
 
 ## Final Project
 
-The code for this project can be downloaded [here](https://github.com/undavide/express-grids-addon). It's available in two states: the starting point (one Create Shape button in the UI and the respective Document API function) if you want to follow along with the tutorial and type in the code—the best way to learn—and the final state, which code is also found below for convenience.
+The code for this project can be downloaded [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon). It's available in two states: the starting point (one Create Shape button in the UI and the respective Document API function) if you want to follow along with the tutorial and type in the code—the best way to learn—and the final state, which code is also found below for convenience.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, styles.css, code.js, shapeUtils.js" />
