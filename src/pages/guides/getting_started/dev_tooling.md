@@ -125,6 +125,7 @@ npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox --template react-
 ```
 
 ### No template parameter
+
 The template parameter is optional, and the CLI will prompt you to choose from a list of template options if it's excluded. For instance, if you use just the base CLI command:
 
 `npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox`
