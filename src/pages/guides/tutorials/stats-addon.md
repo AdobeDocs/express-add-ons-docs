@@ -513,6 +513,21 @@ async function start() {
 start();
 ```
 
+<InlineAlert variant="info" slots="text, text1, text2" />
+
+Please note that it would be perfectly fine to return the `documentData` object to the iframe and let it invoke `createTable()` on its own. I've chosen to do it this way to show you how that this sort of "circular" communication is possible—although the other approach is perhaps more common.
+
+Speaking of coding style in the way the proxy is exposed, you may find more readable to implement the functions elsewhere (either in the same file or in a separate module) and use the object property shorthand syntax.
+
+```js
+const getDocumentData = async () => { /* ... */ };
+// ...
+runtime.exposeApi({
+  getDocumentData, // 👈 shorthand syntax
+  // ...
+});
+```
+
 ### Implementation
 
 Let's start filling in the missing parts in our code; we'll begin with the Framework Status, the easiest bit. The `toggleStatus()` method is immediately invoked in the `addOnUISdk.ready` callback, as well as the Document Sandbox `code.js`, where it is also exposed. It updates the `variant` attribute of the `<sp-status-light>` element based on the `sdk` parameter passed in.
