@@ -1031,7 +1031,7 @@ export { rebuildTable };
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
-import { editor } from "express";
+import { editor } from "express-document-sdk";
 import { getNodeData } from "./utils";
 
 async function start() {
