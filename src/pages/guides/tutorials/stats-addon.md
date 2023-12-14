@@ -30,7 +30,7 @@ Hello, and welcome to this Adobe Express Communication API tutorial, where we'll
 
 ### Timestamp
 
-This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on November 20th, 2023.
+This tutorial has been written by Davide Barranca, software developer and author from Italy. It's been first published on December 14th, 2023.
 
 ### Prerequisites
 

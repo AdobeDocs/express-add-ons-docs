@@ -37,4 +37,4 @@ Davide Barranca - November 6th, 2023
 
 ### Creating a Stats add-on with the Adobe Express Communication API
 
-Davide Barranca - November 14th, 2023
+Davide Barranca - December 14th, 2023
