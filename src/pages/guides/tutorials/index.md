@@ -31,10 +31,10 @@ Davide Barranca - November 6th, 2023
 
 <ResourceCard slots="link, image, heading, text" width="50%"/>
 
-[Coming Soon...](../tutorials/index.md)
+[Coming Soon...](stats-addon.md)
 
-![Coming Soon](images/thumbs-coming-soon.png)
+![Coming Soon](images/thumbs-stats-addon.png)
 
 ### Creating a Stats add-on with the Adobe Express Communication API
 
-Davide Barranca
+Davide Barranca - December 14th, 2023
