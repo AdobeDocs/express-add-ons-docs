@@ -336,7 +336,7 @@ You are now equipped with all the theory and reference snippets needed to start 
 
 ![](images/stats-addon-vscode.png)
 
-Like in the [Grids add-on tutorial](grids-addon.md), the starting point will be [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/express-addon-document-api-template), which provides a Webpack-managed JavaScript—hence, able to easily import Spectrum Web Components to build the User Interface. Everything's in the `src` folder:
+Like in the [Grids add-on tutorial](grids-addon.md), the starting point will be [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template), which provides a Webpack-managed JavaScript—hence, able to easily import Spectrum Web Components to build the User Interface. Everything's in the `src` folder:
 
 - `index.html` is where the iframe's UI is built.
 - `ui/index.js` deals with the add-on's internal logic.
@@ -798,7 +798,7 @@ Let's review the concepts covered in this tutorial and how they've been implemen
 
 ## Final Project
 
-The code for this project can be downloaded [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/express-stats-addon). Use [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/script-runtime-samples/express-addon-document-api-template) as a starting point.
+The code for this project can be downloaded [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-stats-addon). Use [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template) as a starting point.
 
 <InlineAlert variant="info" slots="text1" />
 
