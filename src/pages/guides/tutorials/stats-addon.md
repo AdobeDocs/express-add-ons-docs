@@ -18,7 +18,7 @@ contributors:
   - https://github.com/undavide
 ---
 
-# Creating a Stats add-on with the Adobe Express Communication API
+# Creating a Document Stats add-on with the Adobe Express Communication API
 
 In this tutorial, we'll build an Adobe Express add-on that gathers statistics on the active document using the Communication API.
 
@@ -55,10 +55,6 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ![](images/stats-addon-animation.gif)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The Document Model Sandbox references are currently **experimental only**, so you will need to set `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json` to use them. *Please do not use these APIs in any add-ons you plan to distribute or submit with updates until they have been deemed stable.*  Also, please be aware that you should only test these experimental APIs against non-essential documents, as they could be lost or corrupted.
-
 ## Getting Started with the Communication API
 
 As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
@@ -67,7 +63,7 @@ The **Document API** makes new, more powerful capabilities available, allowing t
 
 ### Proxies
 
-How does this all work, then? Not via messaging, as somebody coming from CEP might expect, but rather exposing proxies for the *other context* to use. The process originates in the `runtime` objects (the UI iframe's and the Document Sandbox's), retrieved from their SDK instances:
+How does this all work, then? The process involves exposing proxies for the *other context* to use, serving as a user-friendly abstraction; under the hood, the implementation relies on a messaging system, which is hidden to us developers.
 
 ```js
 // runtime in the UI iframe
@@ -245,7 +241,7 @@ runtime.exposeApi({
 });
 ```
 
-The `counter` variable in the Document Sandbox persists between iframe calls and can be accessed by `drawShape()`; in this scenario, it's returned so the iframe knows the number of shapes created so far. This brings us to the concept of **returned values**.
+The `counter` variable in the Document Sandbox is maintained between iframe calls within the same user session. It remains isolated to the specific document and cannot be shared with other open documents or users. However, it can be accessed by the `drawShape()` function. In this context, it's returned to provide the iframe with the count of shapes created up to that point. This introduces us to the notion of **returned values**.
 
 Generally speaking, you should restrict your returns to the following types.
 
@@ -261,8 +257,8 @@ The following returns won't work as expected and must be avoided.
 - ❌ Class instances (will get serialized and stripped away from any method).
 - ❌ Functions.
 - ❌ Proxies.
-- ❌ Constructs such as Maps and Sets won't get through either, nor will Date and RegExp.
-- ❌ `new Error()`, either thrown or returned, won't provide any error message (at the moment) when caught using a Try/Catch block.
+- ❌ Constructs such as `Maps` and `Sets` won't get through either, nor will `Date` and `RegExp`.
+- ❌ `new Error()`, either thrown or returned, won't provide any error message (at the moment) when caught using a `try`/`catch` block.
 
 #### Primitives
 
@@ -308,6 +304,14 @@ runtime.exposeApi({
 ```
 
 The `counter` setter has the ability to perform additional actions, such as manipulating the document, in addition to assigning a new value to the private variable `_counter`.
+
+Please note that, given the async nature of the Communication API, retrieving the `counter` value in the iframe requires the use of `await` or a `then()` callback.
+
+```js
+let counter = await sandboxProxy.counter;
+// or
+sandboxProxy.counter.then((counter) => { /* ... */ });
+```
 
 ### Asynchronous communication
 
@@ -680,7 +684,7 @@ export { getNodeData };
 
 Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](/references/document-sandbox/document-apis/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/document-sandbox/document-apis/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/) elements, and so on. As follows, the metacode.
 
-1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty iterable. If so, it goes through it. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
+1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty iterable (please note: it's not an Array, but can be transformed into one if needed via `Array.from()`). If so, it goes through it. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
 
 2. If a child node within this array also features a non-empty `allChildren` property, `getNodeData()` is called recursively on that child node. Mind you: during these recursive calls, `nodeData` is passed as the second argument. This approach ensures that the same `nodeData` object is continuously used throughout the recursion, allowing it to accumulate and keep tabs on all node types encountered across all hierarchy levels. The `"MediaContainer"` node is a particular one, [^3] and when encountered, we stop there.  
 
