@@ -142,7 +142,7 @@ The metadata of a page.
 | `hasPremiumContent` | `boolean` | `true` if the page has premium content, `false` if not. |
 | `hasTemporalContent` | `boolean` | `true` if the page has timelines, `false` if not. |
 | `pixelsPerInch?`  | `number`  | The pixels per inch of the page. |
-| `isPrintReady?`  | `boolean`  | Whether page is ready to print.|
+| `isPrintReady?`  | `boolean`  | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics).|
 
 #### `PageMetadataOptions`
 
