@@ -20,6 +20,22 @@ contributors:
 
 # Changelog
 
+## 2024-01-09
+
+### New Experimental APIs
+- [`startPremiumUpgradeIfFreeUser()`](../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) experimental API has been added to the [addOnUISdk.app](../references/addonsdk/addonsdk-app.md) object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.
+
+- [`isPremiumUser()`](../references/addonsdk/app-currentUser.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](../references/addonsdk/app-currentUser.md) object to determine if the current user is a premium or free user.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The above new APIs are currently ***experimental only*** and should not be used in any add-ons you will be distributing until declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+### Additional Updates
+- A new [`PdfRenditionOptions`](../references/addonsdk/app-document.md#pdfrenditionoptions) object is now available to be used with the the [`createRenditions()` export API](../references/addonsdk/app-document.md#createrenditions) and allows a user to specify an optional [bleed](../references/addonsdk/app-document.md#bleed) object (for printing).
+- A new [`isPrintReady`](../references/addonsdk/app-document.md#pagemetadata) property has been added to the [`PageMetadata` API](../references/addonsdk/app-document.md#pagemetadata) to indicate if the page is ready to print.
+- Updated the [FAQ](../guides/faq.md#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method) regarding the mime type for exported PDF files. It will now return `application/pdf` (as opposed to `text/plain` from an earlier update).
+
 ## 2023-12-07
 
 <InlineAlert slots="text" variant="warning"/>
@@ -232,7 +248,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-8-enter-the-version-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/use_cases.md#detecting-locale-and-supported-locales).
 - Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev_tooling.md#no-template-parameter).
-- New [FAQ item](../guides/faq.md#did-the-mime-type-for-an-exported-pdf-returned-from-the-createrenditions-method-change) regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
+- New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
 - Removed NPS survey.
 
 ## 2023-11-30

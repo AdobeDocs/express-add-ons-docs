@@ -64,7 +64,7 @@ Check out the [swc-react-theme-sampler code sample](../../samples.md#swc-react-t
 
 <InlineAlert slots="text" variant="info"/>
 
-We recommend chossing [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) over [React Spectrum](#react-spectrum) in your add-ons based on React because it currently offers a more comprehensive set of components and built-in benefits.
+We recommend choosing [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) over [React Spectrum](#react-spectrum) in your add-ons based on React because it currently offers a more comprehensive set of components and built-in benefits.
 
 ### Spectrum Web Components with Express Theme
 

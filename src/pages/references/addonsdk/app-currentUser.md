@@ -34,3 +34,34 @@ addOnUISdk.ready.then(async () => {
 ### Output
 
 `Current Userid: 3cda976828a4a90d13b0f38b1f8a59b1d6845cccfc48037fb30bb75d3ef67d36`
+
+### isPremiumUser()
+
+Indicates if the current user is a premium user.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`isPremiumUser(): Promise<boolean>`
+
+#### Return Value
+
+A resolved `Promise` containing a boolean value indicating if the user is a premium user or not.
+
+## Example
+
+### Usage
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+addOnUISdk.ready.then(async () => {
+  const isPremiumUser = await addOnUISdk.app.currentUser.isPremiumUser();
+  if (!isPremiumUser) {
+    // User not premium, allow only non-premium features only
+  }
+});
+```

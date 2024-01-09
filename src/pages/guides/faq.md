@@ -42,7 +42,7 @@ contributors:
 - [How does Adobe use my add-on’s data?](#how-does-adobe-use-my-add-ons-data)
 - [Where can I request new add-on features or suggest ideas?](#where-can-i-request-new-add-on-features-or-suggest-ideas)
 - [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
-- [Did the mime type for an exported PDF returned from the `createRenditions` method change?](#did-the-mime-type-for-an-exported-pdf-returned-from-the-createrenditions-method-change)
+- [What mime type is returned from a PDF that was exported with the `createRenditions` method?](#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method)
 - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
 
 ## Answers
@@ -167,9 +167,9 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
   This can happen due to a permissions issue, and the `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. This can be fixed by creating the folder and modifying the permissions to allow write.
 
-### Did the mime type for an exported PDF returned from the `createRenditions` method change?
+### What mime type is returned from a PDF that was exported with the `createRenditions` method?
 
-  Yes, an unexpected change was made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
+  The mime type returned from a PDF generated using the [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) API is `application/pdf`.
 
 ### The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.
 

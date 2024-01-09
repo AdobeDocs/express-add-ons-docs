@@ -121,6 +121,7 @@ async function logMetadata() {
       console.log("Page has premium content: ", page.hasPremiumContent);
       console.log("Page has timelines: ", page.hasTemporalContent);
       console.log("Pixels per inch: ", page.pixelsPerInch);
+      console.log("Is page print ready: ", page.isPrintReady);
     }
   }
   catch(error) {
@@ -141,6 +142,7 @@ The metadata of a page.
 | `hasPremiumContent` | `boolean` | `true` if the page has premium content, `false` if not. |
 | `hasTemporalContent` | `boolean` | `true` if the page has timelines, `false` if not. |
 | `pixelsPerInch?`  | `number`  | The pixels per inch of the page. |
+| `isPrintReady?`  | `boolean`  | Whether page is ready to print.|
 
 #### `PageMetadataOptions`
 
@@ -370,6 +372,23 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 | 400 x 600       | 200 x 400      | 200 x 300       |
 | 400 x 600       | 200 x -200      | 400 x 600      |
 | 400 x 600       | 800 x 1000      | 400 x 600      |
+
+#### `PdfRenditionOptions`
+
+Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `pdf` renditions:
+
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `bleed?` | [`Bleed`]() |  Bleed for the page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. The parameter is optional, and if left undefined, then no bleed is assumed. |
+
+#### `Bleed`
+
+Represents a bleed for a page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed. 
+
+| Name          | Type         | Description   |
+| ------------- | -------------| -----------:  |
+| `amount?`     | `number`     | The amount for the bleed. |
+| `unit`        | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
 
 #### Return Value
 

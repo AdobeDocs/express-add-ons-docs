@@ -106,6 +106,35 @@ addOnUISdk.app.off("themechange", (data) => {
 });
 ```
 
+### startPremiumUpgradeIfFreeUser()
+
+Displays the in-app monetization upgrade flow.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`startPremiumUpgradeIfFreeUser(): Promise<boolean>`
+
+#### Return Value
+
+Returns a resolved `Promise` with a value of `true` if the user is premium or completed the flow, and `false` if the user is a free user and cancelled the upgrade.
+
+#### Example Usage
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+addOnUISdk.ready.then(async () => {
+  const isPremiumUser = await addOnUISdk.app.startPremiumUpgradeIfFreeUser();
+  if (!isPremiumUser) {
+    // User did not upgrade, show error dialog
+  }
+});
+```
+
 ### showModalDialog()
 
 Shows a modal dialog based on specific options passed in.
