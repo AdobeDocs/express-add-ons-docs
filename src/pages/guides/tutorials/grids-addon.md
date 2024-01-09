@@ -33,6 +33,12 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy; revision history as follows.
 
+**January 9th, 2024**
+
+- Added additional information on the project's setup.
+- Renamed `createStroke()` to `makeStroke()`: according to the new naming convention, `make*` is used for plain objects and helper utilities, whereas `create*` is reserved to live document objects, e.g., `createEllipse()`.
+- Improved explanations for importing Spectrum Web Components.
+
 **December 3rd, 2023**
 
 - Removed the experimental warning from the document model sandbox APIs.
@@ -103,9 +109,23 @@ This is a high-level overview of the overall structure; while the implementation
 
 ### The Project Structure
 
-The complete code for the Grids System add-on can be found [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon), although it would be best if you followed along, starting from this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template): it sets up a JavaScript/Webpack environment with everything we need to complete the project. You can download the code, `cd` in the `grids-design` folder and then:
+The complete code for the Grids System add-on can be found [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon/): it is provided as a [complete project](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon/grids-design-end), although it would be best if you followed along from [this starting point](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon/grids-design-start), which sets up a JavaScript/Webpack environment with everything needed.[^1]
+
+You can either clone the entire repository:
 
 ```bash
+git clone https://github.com/AdobeDocs/express-add-on-samples.git
+```
+
+Or download it as a `.zip` file (click the green "Code" button and then "Download ZIP").
+
+![](images/grids-addon-git.png)
+
+Then `cd` in the project folder (either the `grids-design-start` or `grids-design-end` one) and run the following commands:
+
+```bash
+cd express-add-on-samples/document-sandbox-samples/express-grids-addon/grids-design-end
+
 npm install
 npm run build
 npm run start
@@ -299,6 +319,10 @@ It's finally time to start laying down some elements. Let's hook the only iframe
 
 ```js
 // ... usual imports
+
+// Adding the sp-button import
+import "@spectrum-web-components/button/sp-button.js";
+
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
   const createShapeButton = document.getElementById("createShape");
@@ -379,7 +403,7 @@ First, you make use of the `fromRGB()` method from the `colorUtils` class, which
 <!-- code here -->
 <InlineAlert variant="info" slots="text1" />
 
-Strokes are created with the `editor.createStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/document-sandbox/document-apis/classes/Editor.md#createstroke).
+Strokes are created with the `editor.makeStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/document-sandbox/document-apis/classes/Editor.md#makestroke).
 
 The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
 
@@ -430,18 +454,38 @@ The layout is based on nested FlexBox CSS classes, such as `row` and `column`. B
 Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](/guides/design/user_interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
 
 ```bash
-npm install @spectrum-web-components/swatch
 npm install @spectrum-web-components/button
-...
+npm install @spectrum-web-components/action-button
+npm install @spectrum-web-components/button-group
+npm install @spectrum-web-components/field-label
+npm install @spectrum-web-components/number-field
+npm install @spectrum-web-components/slider
+npm install @spectrum-web-components/swatch
+npm install @spectrum-web-components/theme
 ```
 
 Finally, import them in the `ui/index.js` file.
 
 ```js
-import "@spectrum-web-components/swatch/sp-swatch.js";
+import "@spectrum-web-components/styles/typography.css";
+
+import "@spectrum-web-components/theme/src/themes.js";
+import "@spectrum-web-components/theme/theme-light.js";
+import "@spectrum-web-components/theme/express/theme-light.js";
+import "@spectrum-web-components/theme/express/scale-medium.js";
+import "@spectrum-web-components/theme/sp-theme.js";
+
 import "@spectrum-web-components/button/sp-button.js";
-// ...
+import "@spectrum-web-components/button-group/sp-button-group.js";
+import "@spectrum-web-components/field-label/sp-field-label.js";
+import "@spectrum-web-components/number-field/sp-number-field.js";
+import "@spectrum-web-components/slider/sp-slider.js";
+import "@spectrum-web-components/swatch/sp-swatch.js";
 ```
+
+<InlineAlert variant="warning" slots="text1" />
+
+Mind the import names: for example, you install a `@spectrum-web-components/button`, but you import it as `@spectrum-web-components/button/sp-button.js` (with the `sp-` prefix).
 
 The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
@@ -1341,6 +1385,8 @@ export { addColumns, addRows };
 ```
 
 <!-- Footnotes -->
+
+[^1]: Alternatively, you can use this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template) and start from scratch, but you'd need to manually add the `documentSandbox/shapeUtils.js` file and the various Spectrum imports.
 
 [^2]: The quotes are from the Documentation Reference of each element.
 
