@@ -19,22 +19,32 @@ contributors:
 
 In this page, you'll find a variety of tutorials covering the Adobe Express Add-on SDK and Document API.
 
-<ResourceCard slots="link, image, heading, text" width="50%"/>
+<ResourceCard slots="link, image, heading, text" width="33%"/>
 
-[Express Document API](grids-addon.md)
+[Grids add-on](grids-addon.md)
 
-![Grids add-on](images/thumbs-grids-addon.png)
+![Grids add-on image](images/thumbs-grids-addon.png)
 
 ### Creating a Grid System add-on with the Adobe Express Document API
 
 Davide Barranca - November 6th, 2023
 
-<ResourceCard slots="link, image, heading, text" width="50%"/>
+<ResourceCard slots="link, image, heading, text" width="33%"/>
 
-[Coming Soon...](stats-addon.md)
+[Document Stats add-on](stats-addon.md)
 
-![Coming Soon](images/thumbs-stats-addon.png)
+![Document Stats add-on image](images/thumbs-stats-addon.png)
 
-### Creating a Stats add-on with the Adobe Express Communication API
+### Creating a Document Stats add-on with the Adobe Express Communication API
 
 Davide Barranca - December 14th, 2023
+
+<ResourceCard slots="link, image, heading, text" width="33%"/>
+
+[Document API reference tutorial](dom-reference.md)
+
+![Coming Soon image](images/thumbs-coming-soon.png)
+
+### Exploring the Adobe Express Document API Reference
+
+Davide Barranca - January 9th, 2024
