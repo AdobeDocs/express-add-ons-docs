@@ -128,7 +128,7 @@ Compared to other Adobe desktop applications, the Adobe Express DOM features a r
 
 With this knowledge, we can use the  [Document APIs](/references/document-sandbox/document-apis/) reference as the primary tool to study and learn about the Adobe Express DOM.
 
-IMAGE
+![](images/refs-addon-doc.png)
 
 There is a comprehensive list of Classes (*blueprints*), Interfaces (*contracts*), and Constants in the left navigation bar. Let's familiarize ourselves with this content and learn how to read it.
 
@@ -139,9 +139,11 @@ Using the `EllipseNode` as an example, we find:
 - A list of accessors (properties), like `stroke`, `opacity`, etc.
 - A list of methods, like `removeFromParent()` and `setPositionInParent()`.
 
+![](images/refs-addon-ref.png)
+
 Some accessors are read-only, for instance, parent or rotation; some have getters and setters, like `locked` or `fill`. Properties can support a range of value kinds, from primitive values to objects, class instances or collections. Let's break down the `translation` property as an example.
 
-IMAGE 
+![](images/refs-addon-accessor.png)
 
 It's split into two parts: `get` (the getter, when you read the property) and `set` (the setter, when you write it). From the description, we see that it's a way to find out about the node's coordinates relative to its parent. The return type for the getter (wrapped with `< >` angle brackets) is `{ x: number, y: number}`, i.e. an object with numeric `x` and `y` properties. We also read that this property is inherited from the `FillableNode` class that `EllipseNode` extends. The setter expects a `value`, which the Parameters table describes as of type `Object`, with the same numeric `x` and `y` properties; it returns `void` (i.e., nothing). Given all this, we can confidently write something along these lines.
 
@@ -164,7 +166,7 @@ import { editor, colorUtils, constants } from "express-document-sdk";
 
 They represent a safe, user-friendly way to refer to internal values (subject to change) that we, developers, should not directly manipulate. For example, the stroke's `position` property is of type `StrokePosition`, which happens to be enumerable—a fixed set of pre-defined values.
 
-IMAGE
+![](images/refs-addon-strokeposition.png)
 
 Internally, the center, inside, and outside positions are represented with the integers `0`, `1`, and `2`. We should instead use the `StrokePosition` constant and its available members: 
 
@@ -189,7 +191,7 @@ ellipse.stroke = {
 
 The [Document Stats tutorial](./stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
 
-IMAGE
+![](images/stats-addon-animation.gif)
 
 To log the `type` property is acceptable in this specific case, although the proper way to check against node types involves constants; the `type` itself is an internal string value mapped to the `SceneNodeType` enumerable.
 
@@ -227,7 +229,8 @@ ellipse.fill = {
 };
 ```
 
-InfoBox
+<InlineAlert variant="info" slots="text1, text2" />
+
 There is a specific naming convention for methods used in the Adobe Express DOM.
 
 - `make*`: used for plain objects and helper utilities, e.g.,`makeColorFill()`.
@@ -250,7 +253,7 @@ CLI versions from `"1.1.1"` onwards now scaffold add-ons with type definitions f
 
 The bottom line is that `.d.ts` and `tsconfig.json` files in your JavaScript (and TypeScript) projects give code editors knowledge about the Adobe Express document sandbox APIs: it's used to provide code completion and type checking, which can help you avoid errors and write code faster.
 
-IMAGE
+![](images/refs-addon-intellisense.png)
 
 While IntelliSense is undoubtedly handy, type safety can prevent errors that are otherwise difficult to foresee. Let me show you an example.
 
@@ -266,7 +269,7 @@ for (const node of someIterable) {
 
 In *previous versions* of Adobe Express, the Console would log `allChildren` as an Array of Nodes.
 
-IMAGE
+![](images/refs-addon-allchildren.png)
 
 If `allChildren` is an Array, the following code will work just fine.
 
@@ -296,6 +299,8 @@ To finally unravel the `allChildren` purpose mystery, let's see what the documen
 > \[...] nodes with a more specific structure can hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their overall display z-order.
 
 If you inspect a `MediaContainerNode` class, which is instantiated every time you place an image, it has two peculiar properties: `maskShape` and `mediaRectangle`. They respectively hold the shape that masks the bitmap (in UI terms, the Crop—by default, a rectangle with the same image dimensions) and the `ImageRectangleNode` itself. They are the "structures" the documentation refers to: therefore, you'll find them in its `allChildren` property. Other notable examples are `maskShape` in Groups and `artboards` in Pages.
+
+![](images/refs-addon-mediacontainer.png)
 
 ## Classes and Interfaces
 
@@ -405,9 +410,9 @@ I've arbitrarily added a 20px margin between the horizontal line and the selecte
 editor.context.insertionParent.children.append(hLine);
 ```
 
-Start INFO BOX ---
+<InlineAlert variant="info" slots="text1" />
+
 Please note that, according to the documentation, `translation` is relative to the node's parent container: in other words, we're capturing the position of the `MediaContainerNode` with respect to its parent. How can we be sure, then, that the line will be drawn in the right place? The answer is that the `insertionParent` property of the `Editor` class—that we use to append the `hLine`—is a special node that always points to the current insertion point in the scenegraph. In this case, we're adding the line to the same parent container of the selected node, so `hLine` will be positioned correctly with respect to the object it measures: both the `MediaContainerNode` and the `LineNode` will be `children` of the same parent, therefore sharing the same relative coordinate space.
-End INFO BOX ---
 
 The line is there, but it lacks the proper endpoints. The reference helps us out again: the `LineNode` has a `startArrowHeadType` and `endArrowHeadType` properties, whose value is an enumerable provided by the `ArrowHeadType` constant.[^3] There are several options available: I'd pick `triangularFilled`. 
 
