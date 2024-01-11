@@ -721,22 +721,23 @@ runtime.exposeApi({
 });
 ```
 
-In case you want to use the currently active Page instead, you have to traverse back to it using the `insertionParent` property of the `context` we've seen earlier as a starting point, and its `parent` property until you reach a node whose `type` is equal to the string `"Page"`. Adobe Express documents must have at least one page, so this is a safe operation.
+In case you want to use the currently active Page instead, you have to traverse back to it using the `insertionParent` property of the `context` we've seen earlier as a starting point, and its `parent` property until you reach a node whose `type` is equal to the string `"Page"`. Adobe Express documents must have at least one page, so this is a safe operation. Modify the `addGrid()` function as follows.
 
 ```js
-// ...
-// Using the current page.
-let currentNode = editor.context.insertionParent;
-let page = null;
+addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+  // Using the current page.
+  let currentNode = editor.context.insertionParent;
+  let page = null;
 
-while (currentNode) {
+  while (currentNode) {
     if (currentNode.type === "Page") {
-        page = currentNode;
-        break;
+      page = currentNode;
+      break;
     }
-    page = currentNode.parent;
-}
+    currentNode = currentNode.parent;
+  }
 // ... rest of the code
+}
 ```
 
 To draw all four (or any number coming from the UI) rectangles at once, a loop is in order.
