@@ -24,7 +24,7 @@ In this tutorial, we'll learn about the structures that make up the Adobe Expres
 
 ## Introduction
 
-Hello, and welcome to this Adobe Express add-on development tutorial. In this session, we'll dive deep into the Reference documentation, which describes the architecture and key elements of the Adobe Express Document Object Model (DOM). Understanding the structures at play, hierarchy and inheritance system will help you develop add-ons that exploit their full potential.
+Hello, and welcome to this Adobe Express add-on development tutorial. In this session, we'll dive deep into the **Reference documentation**, which describes the architecture and key elements of the Adobe Express Document Object Model (DOM). Understanding the structures at play, hierarchy and inheritance system will help you develop add-ons that exploit their full potential.
 
 ### Changelog
 
@@ -68,7 +68,7 @@ It is essential to hierarchically organize the features that are surfaced[^2] to
 
 More formally stated, any Scripting environment must expose information about the **Containment Structures** (parent/child relations, like groups nesting shapes) and **Inheritance Hierarchies** (shared attributes like the opacity property available to both) of any element it deals with. Such a collection of organized information is called the Document Object Model, or DOM.
 
-Developers with a front-end background may instinctively associate the notion of DOM with HTML and the Browser. Although it has been the most common case for decades, any application supporting scripting sports its own Document Object Model—as Adobe developers working with desktop applications know very well. The Adobe Express add-on system is technically different from CEP extensions in Adobe After Effects or UXP plugins in Adobe Photoshop. Still, the concept of the DOM is equally valid. 
+Developers with a front-end background may instinctively associate the notion of DOM with HTML and the Browser. Although it has been the most common case for decades, any application supporting scripting sports its own Document Object Model—as Adobe developers working with desktop applications know very well. The Adobe Express add-on system is technically different from CEP extensions in Adobe After Effects or UXP plugins in Adobe Photoshop. Still, the concept of the DOM is equally valid.
 
 <InlineAlert variant="warning" slots="heading, text1, text2, text3w" />
 
@@ -79,7 +79,7 @@ Some confusion may arise regarding the meaning of the following terms—let me c
 - **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](./stats-addon.md).
 - **Document Object Model**: it represents Adobe Express documents' structure, the hierarchies between each element and their inheritance.
 
-You may think about the Document API as operating in the context of the DOM—while the Document Model Sandbox provides a secure and isolated environment for such code to run. 
+You may think about the Document API as operating in the context of the DOM—while the Document Model Sandbox provides a secure and isolated environment for such code to run.
 
 ### Using the code sample
 
@@ -99,7 +99,7 @@ function start() {
 }
 ```
 
-At the moment, the only thing it does is logging the selected node to the Console. To test it, run the add-on, select an object in the UI and click the "Log Stuff" button.
+At the moment, the only thing it does is logging the selected node to the Console. To test it, run the add-on, select an object in the UI and click the "Log selected node" button.
 
 ![](images/refs-addon-log.png)
 
@@ -130,18 +130,19 @@ With this knowledge, we can use the  [Document APIs](/references/document-sandbo
 
 ![](images/refs-addon-doc.png)
 
-There is a comprehensive list of Classes (*blueprints*), Interfaces (*contracts*), and Constants in the left navigation bar. Let's familiarize ourselves with this content and learn how to read it.
+There is a comprehensive list of Classes (_blueprints_), Interfaces (_contracts_), and Constants in the left navigation bar. Let's familiarize ourselves with this content and learn how to read it.
 
 Using the `EllipseNode` as an example, we find:
-- The class name—always in PascalCase.
-- A short description of what it represents and its role in the scenegraph.
-- The inheritance tree: in this case, `EllipseNode` is a subclass of `FillableNode`; if you follow the chain, you'll find that, in turn, this inherits from `StrokableNode`, which eventually comes from the `Node` root class.
-- A list of accessors (properties), like `stroke`, `opacity`, etc.
-- A list of methods, like `removeFromParent()` and `setPositionInParent()`.
+
+- The **class name**—always in PascalCase.
+- A short **description** of what it represents and its role in the scenegraph.
+- The **inheritance tree**: in this case, `EllipseNode` is a subclass of `FillableNode`; if you follow the chain, you'll find that, in turn, this inherits from `StrokableNode`, which eventually comes from the `Node` root class.
+- A list of **accessors** (properties), like `stroke`, `opacity`, etc.
+- A list of **methods**, like `removeFromParent()` and `setPositionInParent()`.
 
 ![](images/refs-addon-ref.png)
 
-Some accessors are read-only, for instance, parent or rotation; some have getters and setters, like `locked` or `fill`. Properties can support a range of value kinds, from primitive values to objects, class instances or collections. Let's break down the `translation` property as an example.
+Some accessors are read-only, for instance, parent or rotation; some have **getters** and **setters**, like `locked` or `fill`. Properties can support a range of value kinds, from primitive values to objects, class instances or collections. Let's break down the `translation` property as an example.
 
 ![](images/refs-addon-accessor.png)
 
@@ -156,6 +157,8 @@ ellipse.translation = { x: 100, y: 50 };
 
 Some properties rely on interfaces to define their type. The ellipse's `stroke` happens to be of type `Stroke`, an interface whose _contract_ mandates the implementation of five different properties: `color`, `width`, `position`, `dashPattern`, and `dashOffset`.
 
+![](images/refs-addon-stroke.png)
+
 ### The importance of Constants
 
 Let's use the `stroke` to demonstrate the use of Constants in the DOM. They are a named import—mind the lowercase spelling.
@@ -168,7 +171,7 @@ They represent a safe, user-friendly way to refer to internal values (subject to
 
 ![](images/refs-addon-strokeposition.png)
 
-Internally, the center, inside, and outside positions are represented with the integers `0`, `1`, and `2`. We should instead use the `StrokePosition` constant and its available members: 
+Internally, the center, inside, and outside positions are represented with the integers `0`, `1`, and `2`. We should instead use the `StrokePosition` constant and its available members:
 
 - `StrokePosition.center`
 - `StrokePosition.inside`
@@ -231,7 +234,7 @@ ellipse.fill = {
 
 <InlineAlert variant="info" slots="text1, text2" />
 
-There is a specific naming convention for methods used in the Adobe Express DOM.
+There is a specific **naming convention** for methods used in the Adobe Express DOM.
 
 - `make*`: used for plain objects and helper utilities, e.g.,`makeColorFill()`.
 - `create*`: used for live document objects, like `createEllipse()`
@@ -249,7 +252,7 @@ const geckoHex = colorUtils.toHex(gecko);        // "#9de19aff" 👈 note the in
 
 ### Types matter
 
-CLI versions from `"1.1.1"` onwards now scaffold add-ons with type definitions for JavaScript and TypeScript projects. If you're unfamiliar with TypeScript, these additional `.d.ts` and `tsconfig.json` files offer significant benefits. The `.d.ts` files, or _TypeScript declarations_, contain type information about the APIs. They describe the shape of JavaScript objects, providing TypeScript type-checking and autocompletion capabilities (in the form of IntelliSense in VSCode). The `tsconfig.json` files, on the other hand, are configuration files necessary to provide type information for global types in the sandbox runtime. For instance, the sandbox' Console only exposes a subset of the available methods: the `tsconfig.json` file (via `typeRoots`) informs the IntelliSense engine only to show the methods that are actually available.
+CLI versions from `"1.1.1"` onwards now scaffold add-ons with **type definitions** for JavaScript and TypeScript projects. If you're unfamiliar with TypeScript, these additional `.d.ts` and `tsconfig.json` files offer significant benefits. The `.d.ts` files, or _TypeScript declarations_, contain type information about the APIs. They describe the shape of JavaScript objects, providing TypeScript type-checking and autocompletion capabilities (in the form of IntelliSense in VSCode). The `tsconfig.json` files, on the other hand, are configuration files necessary to provide type information for global types in the sandbox runtime. For instance, the sandbox' Console only exposes a subset of the available methods: the `tsconfig.json` file (via `typeRoots`) informs the IntelliSense engine only to show the methods that are actually available.
 
 The bottom line is that `.d.ts` and `tsconfig.json` files in your JavaScript (and TypeScript) projects give code editors knowledge about the Adobe Express document sandbox APIs: it's used to provide code completion and type checking, which can help you avoid errors and write code faster.
 
@@ -267,11 +270,11 @@ for (const node of someIterable) {
 }
 ```
 
-In *previous versions* of Adobe Express, the Console would log `allChildren` as an Array of Nodes.
+In _previous versions_ of Adobe Express, the Console would log `allChildren` as an actual _Array_ of Nodes.
 
 ![](images/refs-addon-allchildren.png)
 
-If `allChildren` is an Array, the following code will work just fine.
+If `allChildren` is an Array, the following code will work just fine; won't it?
 
 ```js
 const selectedNode = editor.context.selection[0];
@@ -285,13 +288,13 @@ if (selectedNode.type === constants.SceneNodeType.group) {
 }
 ```
 
-In fact, it *used to work*, but it doesn't anymore; however, it's not Adobe Express' fault. Why, then?
+In fact, it _used to work_, but it doesn't anymore; however, it's not Adobe Express' fault. Why, then?
 
-The `allChildren` property is defined in its *contract* to be of type `Iterable`. The key point here is the nature of the contract itself rather than the specific implementation. For instance, when `allChildren` was internally implemented as an Array, this was in line with the contract since Arrays are indeed iterable and support the `for...of` loop. However, Arrays offer additional functionalities that *go beyond* the requirements of the `allChildren` contract. Developers should focus on using features that the contract explicitly supports rather than relying on capabilities that might be available in the current implementation of the property but are *outside the contract's scope*. This approach ensures compatibility and reliability, irrespective of changes in the property's underlying implementation. If you must use Array methods, convert the iterable with the static method `Array.from()` first.
+The `allChildren` property is defined in its _contract_ to be of type `Iterable`. The key point here is **the nature of the contract** itself rather than the specific implementation. For instance, when `allChildren` was internally implemented as an Array, this was in line with the contract since Arrays are indeed iterable and support the `for...of` loop. However, Arrays offer additional functionalities that _go beyond_ the requirements of the `allChildren` contract. Developers should focus on using features that the contract explicitly supports rather than relying on capabilities that might be available in the current implementation of the property but are _outside the contract's scope_. This approach ensures compatibility and reliability, irrespective of changes in the property's underlying implementation. If you must use Array methods, convert the iterable with the static method `Array.from()` first.
 
 ```js
-	const ellipses = Array.from(selectedNode.allChildren) // 👈
-		.filter(node => node.type === constants.SceneNodeType.ellipse);
+const ellipses = Array.from(selectedNode.allChildren) // 👈
+  .filter(node => node.type === constants.SceneNodeType.ellipse);
 ```
 
 To finally unravel the `allChildren` purpose mystery, let's see what the documentation says about it.
@@ -308,7 +311,7 @@ The Reference documentation does a good job listing all the classes and interfac
 
 ### Live Object classes
 
-Concrete classes like [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode.md") and [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode.md") represent the DOM's actual, live object elements. Some of these classes can be instantiated and used directly through factory methods.
+Concrete classes like [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode.md") and [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode.md") represent the DOM's actual, object elements with live setters. Some of these classes can be instantiated and used directly through factory methods.
 
 ```js
 import { editor } from "express-document-sdk";
@@ -319,35 +322,36 @@ group.children.append(rect);
 editor.context.insertionParent.children.append(group);
 ```
 
-Currently, only some classes of this kind have their equivalent `create*` method (for example, `PathNode` lacks it), but it's fair to expect that most of them will eventually. Live Object classes are the ones whose instances make up the Adobe Express scenegraph: `PageNode`, `ArtboardNode`, `StrokeShapeNode`, `LineNode`, and so on. 
+Currently, only some classes of this kind have their equivalent `create*` method (for example, `PathNode` lacks it), but it's fair to expect that most of them will, eventually. Live Object classes are the ones whose instances make up the Adobe Express scenegraph: `PageNode`, `ArtboardNode`, `StrokeShapeNode`, `LineNode`, and so on.
 A particular case is represented by the `UnknownNode`, which acts as a safety placeholder when dealing with actual DOM objects that don't yet have a corresponding class.
+
 ### Collection classes
 
 In Adobe Express, most collections (`children` is a notable example) are expressed as Lists: groups of homogeneous elements with properties such as `first`, `last` and `length`, and dedicated methods like `append()`, `clear()`, etc. They are iterable with `for...of` loops.
 
-Some of these collections are Generic, like `ItemList<T>`, `ReadOnlyItemList<T>`, and `RestrictedItemList<T>`, where the `<T>` means they are designed to be type-agnostic and can work with various data types. The `<T>` acts as a placeholder for the type of objects that the collection will hold or manage. 
+Some of these collections are Generic, like `ItemList<T>`, `ReadOnlyItemList<T>`, and `RestrictedItemList<T>`, where the `<T>` means they are designed to be type-agnostic and can work with various data types. The `<T>` acts as a placeholder for the type of objects that the collection will hold or manage.
 
 An implementation of such generic classes is the `ArtboardList` (which subclasses `RestrictedItemList<Artboard>`) and `PageList` (subclassing `RestrictedItemList<Page>`), found respectively in the `PageNode.artboards` and `ExpressRootNode.pages` properties.
 
 ### Abstract classes
 
-These are classes that serve as a base for other classes. Used by Adobe to rationalize the DOM structure, they provide a common set of properties and methods, but typically cannot be instantiated themselves. Instead, they are meant to be inherited and extended by other subclasses. These subclasses can then implement the abstract class's methods. In the Reference, we can identify abstract classes such as `FillableNode`, `Node` and `BaseNode`.
+These are classes that serve as a base for other classes. Used by Adobe to rationalize the DOM structure, they provide a common set of properties and methods, but typically cannot be instantiated themselves nor manipulated by add-on developers. Instead, they are meant to be inherited and extended by other subclasses. These subclasses can then implement the abstract class's methods. In the Reference, we can identify abstract classes such as `FillableNode`, `Node` and `BaseNode`.
 
 ### Static classes
 
-`Editor` and `ColorUtils` are special classes that aren't meant to be instantiated or extended; the former acts as the entry point for APIs that read or modify the document's content, whereas the latter provides static utility methods for color manipulation. They are brought into the scope as named imports (lowercase from the `"express-document-sdk"`.
+`Editor` and `ColorUtils` are special Singleton classes that aren't meant to be instantiated or extended; the former acts as the entry point for APIs that read or modify the document's content, whereas the latter provides static utility methods for color manipulation. They are brought into the scope as lowercase named imports from the `"express-document-sdk"`.
 
 ```js
 import { editor, colorUtils } from "express-document-sdk";
 ```
 
-### Object Interfaces
+### Object (POJO) Interfaces
 
-Such interfaces define the properties of actual JavaScript objects that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](/references/document-sandbox/document-apis/interfaces/ColorFill.md") or [`Stroke`](/references/document-sandbox/document-apis/interfaces/Stroke.md") interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the  [`Color`](/references/document-sandbox/document-apis/interfaces/Color.md") interface. They are the _contracts_ that establish the shape of actual JavaScript objects that developers use in their code.
+Such interfaces define the properties of actual JavaScript objects that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](/references/document-sandbox/document-apis/interfaces/ColorFill.md") or [`Stroke`](/references/document-sandbox/document-apis/interfaces/Stroke.md") interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the  [`Color`](/references/document-sandbox/document-apis/interfaces/Color.md") interface. They are the _contracts_ that establish the shape of actual JavaScript objects that developers use in their code. POJO is an acronym that stands for "Plain Old Java Object", which in this context refers to a plain, JavaScript object.
 
 ### Implementable Interfaces
 
-Implementable interfaces like [`IFillableNode`](/references/document-sandbox/document-apis/interfaces/IFillableNode.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere. 
+Implementable interfaces like [`IFillableNode`](/references/document-sandbox/document-apis/interfaces/IFillableNode.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
 
 In summary, the distinction between all the listed categories lies in their purpose and usage: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
 
@@ -355,13 +359,13 @@ In summary, the distinction between all the listed categories lies in their purp
 
 One of the best ways to test newly acquired knowledge is by experimenting with it. Let's say you had this idea for an add-on: you want it to trace the dimensions of the selected object, in the style of technical drawings.
 
-IMAGE
+![](images/refs-addon-draw.png)
 
 The production of such an add-on would require a number of stages, starting from the MVP (Minimum Viable Product) feature set to the UI. Here, we'll focus on the DOM prototyping; that is to say, we'll try to figure out the code building blocks by navigating the documentation reference alone—it will be a good exercise to get familiar with it. I'll scrupulously describe every step, and, to keep it simple, we'll restrict ourselves to the `MediaContainer` class, assuming no crop has been applied.
 
 ### Getting the context
 
-The first part is to get and validate the selected node. Browsing through the Class list, there's a promising `Context` item that, according to the documentation, _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can we access it, though? The `Editor` class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: we can use it to check if there's a selection and whether it's of the right type—`hasSelection()` and `selection` will do the job.
+The first part is to get and validate the selected node. Browsing through the Class list, there's a promising [`Context`](/references/document-sandbox/document-apis/classes/Context.md) item that, according to the documentation, _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can we access it, though? The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: we can use it to check if there's a selection and whether it's of the right type—`hasSelection()` and `selection` will do the job.
 
 ```js
 import { editor, constants, colorUtils } from "express-document-sdk";
@@ -378,7 +382,9 @@ runtime.exposeApi({
 });
 ```
 
-Now that we've made sure we're handling the right kind of node, let's get its dimensions; since we'll need to draw a line, it may be helpful to have its coordinates in space (relative to its parent container) as well. According to the reference, the `MediaContainerNode` class provides a `translation` property that returns an object with `x` and `y` properties, which we need. There are no `width` and `height`, though; where to look? `MediaContainerNode` also features a `mediaRectangle` property, which, upon inspection, is of type `ImageRectangleNode`: this holds the actual media and offers both `width` and `height` properties.
+Please note the use of the [`SceneNodeType`](/references/document-sandbox/document-apis/enums/SceneNodeType.md) constant, as discussed earlier, instead of the `"MediaContainer"` string.
+
+Now that we've made sure we're handling the right kind of node, let's get its dimensions; since we'll need to draw a line, it may be helpful to have its coordinates in space (relative to its parent container) as well. According to the reference, the [`MediaContainerNode`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md) class provides a [`translation`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md#translation) property that returns an object with `x` and `y` properties, which we need. There are no `width` and `height`, though; where to look? `MediaContainerNode` also features a [`mediaRectangle`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md#mediarectangle) property, which, upon inspection, is of type [`ImageRectangleNode`](/references/document-sandbox/document-apis/classes/ImageRectangleNode.md): this holds the actual media and offers both `width` and `height` properties. In future versions, Adobe Express will make available a proper `bounds` object for this purposes.
 
 ```js
 if ( /* ... */ ) {
@@ -387,12 +393,11 @@ if ( /* ... */ ) {
   // getting its coordinates 
   const nodeTranslation = selectedNode.translation;
   // getting its dimensions from the mediaRectangle, destucturing and renaming them on the fly
-  const { width: nodeWidth, height: nodeHeight } =
-          selectedNode.mediaRectangle;
+  const { width: nodeWidth, height: nodeHeight } = selectedNode.mediaRectangle;
 }
 ```
 
-Time to draw the line. The `Editor` class includes a `createLine()` factory method, which returns a `LineNode` instance. The `LineNode` class, we learn from the reference, has `startX`, `startY`, `endX`, and `endY` properties: they only implement the getter, though—hence, are read-only. Scrolling through the methods, we find `setEndPoints()`, which expects the same parameters and is used as a setter for them.
+Time to draw the line. The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class includes a [`createLine()`](/references/document-sandbox/document-apis/classes/Editor.md#createline) factory method, which returns a [`LineNode`](/references/document-sandbox/document-apis/classes/LineNode.md) instance. The `LineNode` class, we learn from the reference, has `startX`, `startY`, `endX`, and `endY` properties: they only implement the getter, though—hence, are read-only. Scrolling through the methods, we find [`setEndPoints()`](/references/document-sandbox/document-apis/classes/LineNode.md#setendpoints), which expects the same parameters and is used as a setter for them.
 
 ```js
 // ...
@@ -410,11 +415,13 @@ I've arbitrarily added a 20px margin between the horizontal line and the selecte
 editor.context.insertionParent.children.append(hLine);
 ```
 
-<InlineAlert variant="info" slots="text1" />
+<InlineAlert variant="info" slots="text1, text2" />
 
-Please note that, according to the documentation, `translation` is relative to the node's parent container: in other words, we're capturing the position of the `MediaContainerNode` with respect to its parent. How can we be sure, then, that the line will be drawn in the right place? The answer is that the `insertionParent` property of the `Editor` class—that we use to append the `hLine`—is a special node that always points to the current insertion point in the scenegraph. In this case, we're adding the line to the same parent container of the selected node, so `hLine` will be positioned correctly with respect to the object it measures: both the `MediaContainerNode` and the `LineNode` will be `children` of the same parent, therefore sharing the same relative coordinate space.
+Please note that, according to the documentation, `translation` is **relative to the node's parent container**: in other words, we're capturing the position of the `MediaContainerNode` with respect to its parent. How can we be sure, then, that the line will be drawn in the right place?
 
-The line is there, but it lacks the proper endpoints. The reference helps us out again: the `LineNode` has a `startArrowHeadType` and `endArrowHeadType` properties, whose value is an enumerable provided by the `ArrowHeadType` constant.[^3] There are several options available: I'd pick `triangularFilled`. 
+The answer is that the `insertionParent` property of the `Editor` class—that we use to append the `hLine`—is a special node that always points to the current insertion point in the scenegraph. In this case, we're adding the line to the same parent container of the selected node, so `hLine` will be positioned correctly with respect to the object it measures: both the `MediaContainerNode` and the `LineNode` will be `children` of _the same parent_, therefore sharing _the same relative coordinate space_.
+
+The line is there, but it lacks the proper endpoints. The reference helps us out again: the `LineNode` has a [`startArrowHeadType`](/references/document-sandbox/document-apis/classes/LineNode.md#startarrowheadtype) and [`endArrowHeadType`](/references/document-sandbox/document-apis/classes/LineNode.md#endarrowheadtype) properties, whose value is an enumerable provided by the [`ArrowHeadType`](/references/document-sandbox/document-apis/enums/ArrowHeadType.md) constant.[^3] There are several options available: I'm going to pick `triangularFilled`.
 
 ```js
 // ...
@@ -422,7 +429,9 @@ hLine.startArrowHeadType = hLine.endArrowHeadType =
           constants.ArrowHeadType.triangularFilled;
 ```
 
-As live objects, setting all the properties before or after appending the line to the scenegraph doesn't really matter, the result is the same. Next up, we need to add the text. The `Editor` class provides a `createText()` method, which returns a `TextNode` instance. The `TextNode` class has a `text` property, which expects a string. Mind you, the setter implements parameter validation; if you were to assign a number, it would throw an error. 
+As live objects, setting all the properties before or after appending the line to the scenegraph doesn't really matter, the result is the same.
+
+Next up, we need to add the text. The `Editor` class provides a [`createText()`](/references/document-sandbox/document-apis/classes/Editor.md#createtext) method, which returns a [`TextNode`](/references/document-sandbox/document-apis/classes/TextNode.md) instance. The `TextNode` class has a [`text`](/references/document-sandbox/document-apis/classes/TextNode.md#text) property, which expects a string. Mind you, the setter implements parameter validation; if you were to assign a number, it would throw an error.
 
 ```js
 // ...
@@ -441,7 +450,7 @@ hText.translation = {
 };
 ```
 
-I've added an extra 10 pixels padding from the line, but this could also be a parameter. Let's group the line and the text together, so they can be moved around as a single entity. The `Editor` class provides a `createGroup()` method, which returns a `GroupNode` instance. The `GroupNode` class provides a `children` property: we can `append()` both the line and the text to it.
+I've added an extra 10 pixels padding from the line, but this could also be a parameter. Let's group the line and the text together, so they can be moved around as a single entity. The `Editor` class provides a [`createGroup()`](/references/document-sandbox/document-apis/classes/Editor.md#creategroup) method, which returns a [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode.md) instance. The `GroupNode` class provides a `children` property: we can `append()` both the line and the text to it.
 
 ```js
 // ...
@@ -450,9 +459,13 @@ editor.context.insertionParent.children.append(hGroup);
 hGroup.children.append(hLine, hText);
 ```
 
-From this point, creating the vertical line and the text is a matter of copy-pasting and changing a few parameters. The only new element may be text rotation, for which the mighty reference helps us with again: the `TextNode` class has a `setRotationInParent()` method. It expects a number in degrees (-90) and a `localRotationPoint` object, which is the point to rotate around in the node's local coordinates: in this case, `{x: 0, y: 0}` will do.
+From this point, creating the vertical line and the text is a matter of copy/paste and changing a few parameters. The only new element may be text rotation, for which the mighty reference helps us with again: the `TextNode` class has a [`setRotationInParent()`](/references/document-sandbox/document-apis/classes/TextNode.md#setrotationinparent) method. It expects a number in degrees (-90, in our case) and a `localRotationPoint` object (implementing the [`Point`](/references/document-sandbox/document-apis/interfaces/Point/) interface), which is the point to rotate around in the node's local coordinates: in this case, `{x: 0, y: 0}` will do.
 
 The code for drawing one dimension can be abstracted into a function, which we can call twice with the appropriate parameters. I've created a straightforward add-on that features three buttons: one logs the selected node, one draws the dimensions as we've just seen, and the last one uses a utility function that accepts `width`, `height`, `translation`, `orientation`, and `margin` in an options object. It also draws extra dashed lines (red and thinner) that connect the dimensions to the object's corners.
+
+I will not go into the details of the utility function for brevity's sake: you're now familiar enough with the Reference documentation to find there everything you need to follow along with the code.
+
+Let me point out a rather unorthodox way to prevent the function to run when the wrong node type is selected, though. Using the Communication API discussed in [this tutorial](./stats-addon.md), I've exposed to the Document Sandbox a `flashWrongElement()` function, defined in the UI iframe: it gets the button `id` as a parameter, and it flashes it red for a second, acting upon the button's CSS and `textContent` property.
 
 ## Next Steps
 
@@ -486,12 +499,10 @@ The code for this project can be downloaded [here](#).
 
 Please use the UI iframe and Document Sandbox tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
-
-
 ---
 
 [^1]: Creating entirely novel features typically involves using SDKs and low-level languages such as C++.
 
 [^2]: Typically, not every feature available in an application is by default surfaced to Scripting—it's not uncommon for it to be a smaller subset of the UI, features-wise.
 
-[^3]: At the time of this writing, these properties are *not yet* available for selection in the Adobe Express user interface. It's one of those rare cases where scripting is mightier than the UI!
+[^3]: At the time of this writing, these properties are _not yet_ available for selection in the Adobe Express user interface. It's one of those rare cases where scripting is mightier than the UI!
