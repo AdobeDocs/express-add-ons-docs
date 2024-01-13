@@ -62,7 +62,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code.
 
-For example, the [Grids tutorial](./grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blend modes. If we were to implement an unsupported object type, we'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
+For example, the [Grids tutorial](./grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If we were to implement an unsupported object type, we'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
 
 It is essential to hierarchically organize the features that are surfaced[^2] to the scripting layer. For example, a shape is not just contained within a document: it may be included in a particular Group in a certain Artboard, which belongs to a specific Page of a Document. Additionally, Ellipses and Rectangles, as shapes, share some properties, such as the ability to be filled or stroked with a solid color; in that respect, though, they differ from a bitmap image, which can be stroked but not filled.
 
@@ -83,7 +83,7 @@ You may think about the Document API as operating in the context of the DOM—wh
 
 ### Using the code sample
 
-For this tutorial we'll sometime need to verify our assumptions by inspecting the Console. Please use [this add-on sample](#) as a starting point; the Document API code belongs to the `src/documentSandbox/code.js` file.
+As it's customary, this tutorial is bundled with an Adobe Express [demo add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-dimensions-addon) that you can use to follow along. It's available in two versions, corresponding to the initial state (the `express-dimensions-start` folder) and a final one (`express-dimensions-end`). The former is a starting point for the tutorial, which you can use to test our assumptions and inspect the Console: the Document API code belongs to the `src/documentSandbox/code.js` file.
 
 ```js
 // ...
@@ -99,9 +99,11 @@ function start() {
 }
 ```
 
-At the moment, the only thing it does is logging the selected node to the Console. To test it, run the add-on, select an object in the UI and click the "Log selected node" button.
+The only thing it does is logging the active element to the Console. Run the add-on, select an object in the UI and click the "Log selected node" button.
 
 ![](images/refs-addon-log.png)
+
+Later on, we'll build more functionality on top of this, as an exercise; you're encouraged to type along, and check your code against the final version—also found in the [Final Project](#final-project) section at the bottom.
 
 ## The Adobe Express DOM
 
@@ -244,10 +246,10 @@ Speaking of colors, the `ColorUtils` module comes in handy; it can output a prop
 
 ```js
 const gecko = colorUtils.fromHex("#9de19a");     // alpha is optional
-// or
+                                                 // or
 const gecko = colorUtils.fromRGB(157, 225, 154); // alpha is optional
 ellipse.fill = editor.makeColorFill(gecko);
-const geckoHex = colorUtils.toHex(gecko);        // "#9de19aff" 👈 note the included alpha
+const geckoHex = colorUtils.toHex(gecko);        // "#9de19aff" 👈 alpha is included
 ```
 
 ### Types matter
@@ -281,7 +283,7 @@ const selectedNode = editor.context.selection[0];
 // If we have a group 
 if (selectedNode.type === constants.SceneNodeType.group) {
   // Filtering the ellipse shapes
-	const ellipses = selectedNode.allChildren.filter( // ⚠️ danger!
+	const ellipses = selectedNode.allChildren.filter( // 👈 danger! ❌
 		(node) => node.type === constants.SceneNodeType.ellipse
 	);
 	console.log(`Number of ellipses in this group: ${ellipses.length}`);
@@ -311,7 +313,7 @@ The Reference documentation does a good job listing all the classes and interfac
 
 ### Live Object classes
 
-Concrete classes like [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode.md") and [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode.md") represent the DOM's actual, object elements with live setters. Some of these classes can be instantiated and used directly through factory methods.
+Concrete classes like [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode.md") and [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode.md") represent the DOM's actual, **object elements with live setters**. Some of these classes can be instantiated and used directly through factory methods.
 
 ```js
 import { editor } from "express-document-sdk";
@@ -327,7 +329,7 @@ A particular case is represented by the `UnknownNode`, which acts as a safety pl
 
 ### Collection classes
 
-In Adobe Express, most collections (`children` is a notable example) are expressed as Lists: groups of homogeneous elements with properties such as `first`, `last` and `length`, and dedicated methods like `append()`, `clear()`, etc. They are iterable with `for...of` loops.
+In Adobe Express, most collections (`children` is a notable example) are expressed as **Lists**: groups of homogeneous elements with properties such as `first`, `last` and `length`, and dedicated methods like `append()`, `clear()`, etc. They are iterable with `for...of` loops.
 
 Some of these collections are Generic, like `ItemList<T>`, `ReadOnlyItemList<T>`, and `RestrictedItemList<T>`, where the `<T>` means they are designed to be type-agnostic and can work with various data types. The `<T>` acts as a placeholder for the type of objects that the collection will hold or manage.
 
@@ -335,11 +337,11 @@ An implementation of such generic classes is the `ArtboardList` (which subclasse
 
 ### Abstract classes
 
-These are classes that serve as a base for other classes. Used by Adobe to rationalize the DOM structure, they provide a common set of properties and methods, but typically cannot be instantiated themselves nor manipulated by add-on developers. Instead, they are meant to be inherited and extended by other subclasses. These subclasses can then implement the abstract class's methods. In the Reference, we can identify abstract classes such as `FillableNode`, `Node` and `BaseNode`.
+These are classes that serve as a **base for other classes**. Used by Adobe to rationalize the DOM structure, they provide a common set of properties and methods, but typically cannot be instantiated themselves nor manipulated by add-on developers. Instead, they are meant to be inherited and extended by other subclasses. These subclasses can then implement the abstract class's methods. In the Reference, we can identify abstract classes such as `FillableNode`, `Node` and `BaseNode`.
 
 ### Static classes
 
-`Editor` and `ColorUtils` are special Singleton classes that aren't meant to be instantiated or extended; the former acts as the entry point for APIs that read or modify the document's content, whereas the latter provides static utility methods for color manipulation. They are brought into the scope as lowercase named imports from the `"express-document-sdk"`.
+`Editor` and `ColorUtils` are special **Singleton classes** that aren't meant to be instantiated or extended; the former acts as the entry point for APIs that read or modify the document's content, whereas the latter provides static utility methods for color manipulation. They are brought into the scope as lowercase named imports from the `"express-document-sdk"`.
 
 ```js
 import { editor, colorUtils } from "express-document-sdk";
@@ -347,13 +349,13 @@ import { editor, colorUtils } from "express-document-sdk";
 
 ### Object (POJO) Interfaces
 
-Such interfaces define the properties of actual JavaScript objects that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](/references/document-sandbox/document-apis/interfaces/ColorFill.md") or [`Stroke`](/references/document-sandbox/document-apis/interfaces/Stroke.md") interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the  [`Color`](/references/document-sandbox/document-apis/interfaces/Color.md") interface. They are the _contracts_ that establish the shape of actual JavaScript objects that developers use in their code. POJO is an acronym that stands for "Plain Old Java Object", which in this context refers to a plain, JavaScript object.
+Such interfaces define the properties of **actual JavaScript objects** that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](/references/document-sandbox/document-apis/interfaces/ColorFill.md") or [`Stroke`](/references/document-sandbox/document-apis/interfaces/Stroke.md") interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the  [`Color`](/references/document-sandbox/document-apis/interfaces/Color.md") interface. They are the _contracts_ that establish the shape of actual JavaScript objects that developers use in their code. POJO is an acronym that stands for "Plain Old Java Object", which in this context refers to a plain JavaScript object.
 
 ### Implementable Interfaces
 
 Implementable interfaces like [`IFillableNode`](/references/document-sandbox/document-apis/interfaces/IFillableNode.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
 
-In summary, the distinction between all the listed categories lies in their purpose and usage: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
+In summary, the distinction between all the listed categories lies in their _purpose and usage_: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
 
 ## From theory to practice
 
@@ -361,11 +363,62 @@ One of the best ways to test newly acquired knowledge is by experimenting with i
 
 ![](images/refs-addon-draw.png)
 
-The production of such an add-on would require a number of stages, starting from the MVP (Minimum Viable Product) feature set to the UI. Here, we'll focus on the DOM prototyping; that is to say, we'll try to figure out the code building blocks by navigating the documentation reference alone—it will be a good exercise to get familiar with it. I'll scrupulously describe every step, and, to keep it simple, we'll restrict ourselves to the `MediaContainer` class, assuming no crop has been applied.
+The production of such an add-on would require a number of stages, starting from the MVP (Minimum Viable Product) feature set to the UI. Here, we'll focus exclusively on the DOM prototyping; that is to say, we'll try to figure out the code building blocks by navigating the documentation reference alone—it will be a good exercise to get accustomed to it. I'll scrupulously describe every step, and, to keep it simple, we'll restrict ourselves to drawing dimension on `MediaContainer` objects, assuming no crop has been applied.
+
+If you want to follow along, add one button to the `index.html` file and attach a `drawDimensions()` function to it in `code.js`.
+
+<CodeBlock slots="heading, code" repeat="3" languages="index.html, ui/index.js, documentSandbox/code.js" />
+
+#### UI iframe
+
+```html
+<body>
+  <sp-theme scale="medium" color="light" theme="express">
+    <sp-button id="logNode">Log selected node</sp-button>
+    <sp-button id="drawDimensions">Draw Dimensions</sp-button>
+  </sp-theme>
+</body>
+```
+
+#### UI iframe
+
+```js
+// ...
+addOnUISdk.ready.then(async () => {
+  console.log("addOnUISdk is ready for use.");
+
+  // Get the Authoring Sandbox.
+  const { runtime } = addOnUISdk.instance;
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
+
+  const buttonIds = ["logNode", "drawDimensions"];
+  buttonIds.forEach((id) => {
+    const button = document.getElementById(id);
+    button.addEventListener("click", () => {
+      sandboxProxy[id](); // 👈 attach the function to the button, like:
+    });                   // sandboxProxy.logNode() or sandboxProxy.drawDimensions()
+    button.disabled = false;
+  });
+});
+```
+
+#### Document Sandbox
+
+```js
+// ...
+function start() {
+  runtime.exposeApi({
+    logNode: () => { /* ... */ },
+    drawDimensions: () => {
+      // ...
+    }
+  });
+}
+```
 
 ### Getting the context
 
-The first part is to get and validate the selected node. Browsing through the Class list, there's a promising [`Context`](/references/document-sandbox/document-apis/classes/Context.md) item that, according to the documentation, _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can we access it, though? The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: we can use it to check if there's a selection and whether it's of the right type—`hasSelection()` and `selection` will do the job.
+The first part is to get and validate the selected node. Browsing through the Class list, there's a promising [`Context`](/references/document-sandbox/document-apis/classes/Context.md) item that, according to the documentation, _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can we access it, though? The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: we can use it to check if there's a selection and whether it's of the right type—`hasSelection` and `selection` will do the job.
 
 ```js
 import { editor, constants, colorUtils } from "express-document-sdk";
@@ -382,7 +435,9 @@ runtime.exposeApi({
 });
 ```
 
-Please note the use of the [`SceneNodeType`](/references/document-sandbox/document-apis/enums/SceneNodeType.md) constant, as discussed earlier, instead of the `"MediaContainer"` string.
+Please note the use of the [`SceneNodeType`](/references/document-sandbox/document-apis/enums/SceneNodeType.md) constant, as discussed earlier, instead of the `"MediaContainer"` string literal.
+
+### Getting the dimensions
 
 Now that we've made sure we're handling the right kind of node, let's get its dimensions; since we'll need to draw a line, it may be helpful to have its coordinates in space (relative to its parent container) as well. According to the reference, the [`MediaContainerNode`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md) class provides a [`translation`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md#translation) property that returns an object with `x` and `y` properties, which we need. There are no `width` and `height`, though; where to look? `MediaContainerNode` also features a [`mediaRectangle`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md#mediarectangle) property, which, upon inspection, is of type [`ImageRectangleNode`](/references/document-sandbox/document-apis/classes/ImageRectangleNode.md): this holds the actual media and offers both `width` and `height` properties. In future versions, Adobe Express will make available a proper `bounds` object for this purposes.
 
@@ -396,6 +451,8 @@ if ( /* ... */ ) {
   const { width: nodeWidth, height: nodeHeight } = selectedNode.mediaRectangle;
 }
 ```
+
+### Drawing a line
 
 Time to draw the line. The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class includes a [`createLine()`](/references/document-sandbox/document-apis/classes/Editor.md#createline) factory method, which returns a [`LineNode`](/references/document-sandbox/document-apis/classes/LineNode.md) instance. The `LineNode` class, we learn from the reference, has `startX`, `startY`, `endX`, and `endY` properties: they only implement the getter, though—hence, are read-only. Scrolling through the methods, we find [`setEndPoints()`](/references/document-sandbox/document-apis/classes/LineNode.md#setendpoints), which expects the same parameters and is used as a setter for them.
 
@@ -431,6 +488,8 @@ hLine.startArrowHeadType = hLine.endArrowHeadType =
 
 As live objects, setting all the properties before or after appending the line to the scenegraph doesn't really matter, the result is the same.
 
+### Adding the text
+
 Next up, we need to add the text. The `Editor` class provides a [`createText()`](/references/document-sandbox/document-apis/classes/Editor.md#createtext) method, which returns a [`TextNode`](/references/document-sandbox/document-apis/classes/TextNode.md) instance. The `TextNode` class has a [`text`](/references/document-sandbox/document-apis/classes/TextNode.md#text) property, which expects a string. Mind you, the setter implements parameter validation; if you were to assign a number, it would throw an error.
 
 ```js
@@ -459,20 +518,106 @@ editor.context.insertionParent.children.append(hGroup);
 hGroup.children.append(hLine, hText);
 ```
 
+### Repeating the process
+
 From this point, creating the vertical line and the text is a matter of copy/paste and changing a few parameters. The only new element may be text rotation, for which the mighty reference helps us with again: the `TextNode` class has a [`setRotationInParent()`](/references/document-sandbox/document-apis/classes/TextNode.md#setrotationinparent) method. It expects a number in degrees (-90, in our case) and a `localRotationPoint` object (implementing the [`Point`](/references/document-sandbox/document-apis/interfaces/Point/) interface), which is the point to rotate around in the node's local coordinates: in this case, `{x: 0, y: 0}` will do.
 
-The code for drawing one dimension can be abstracted into a function, which we can call twice with the appropriate parameters. I've created a straightforward add-on that features three buttons: one logs the selected node, one draws the dimensions as we've just seen, and the last one uses a utility function that accepts `width`, `height`, `translation`, `orientation`, and `margin` in an options object. It also draws extra dashed lines (red and thinner) that connect the dimensions to the object's corners.
+```js
+const vText = editor.createText();
+vText.text = `${Math.trunc(nodeHeight).toString()}px`;
+editor.context.insertionParent.children.append(vText);
 
-I will not go into the details of the utility function for brevity's sake: you're now familiar enough with the Reference documentation to find there everything you need to follow along with the code.
+vText.translation = {
+  x: nodeTranslation.x - 30,
+  y: nodeTranslation.y + nodeHeight / 2,
+};
+vText.setRotationInParent(-90, { x: 0, y: 0 }); // 👈
+```
 
-Let me point out a rather unorthodox way to prevent the function to run when the wrong node type is selected, though. Using the Communication API discussed in [this tutorial](./stats-addon.md), I've exposed to the Document Sandbox a `flashWrongElement()` function, defined in the UI iframe: it gets the button `id` as a parameter, and it flashes it red for a second, acting upon the button's CSS and `textContent` property.
+### Refactoring and optimizing the code
+
+In the final add-on code, I've implemented three buttons: one logs the selected node, one draws the dimensions as we've just seen, and the last one is a refactored version, that also draws dashed lines (red and thinner) that connect the dimensions to the object's corners.
+
+![](images/refs-addon-refactor.png)
+
+For brevity's sake, I'll mention a couple of relevant additions to the code—please refer to the [full sample](#final-project) for the complete picture.
+
+I've moved the code that draws the dimensions into a separate `dimensions.js` file, exporting `drawDimensions()` and `drawDimensionsRefactored()`, and implementing a private `createDimensionLine()`, which abstracts the creation of a line and its text: it accepts `width`, `height`, `translation`, `orientation`, and `margin` in an options object.
+
+<CodeBlock slots="heading, code" repeat="1" languages="documentSandbox/dimensions.js" />
+
+#### documentSandbox/dimensions.js
+
+```js
+// ...
+const createDimensionLine = ({
+  width, height, translation, orientation, margin,
+}) => { /* ... */ };
+
+// ...
+const drawDimensions = () => { /* ... */ };
+const drawDimensionsRefactored = () => { 
+  // ...
+  createDimensionLine({ /* ... */ }); // 👈
+  createDimensionLine({ /* ... */ }); // 👈
+  // ...
+};
+
+export { drawDimensions, drawDimensionsRefactored };
+```
+
+I've also implemented a perhaps rather unorthodox warning system that informs the user that an unsupported note type is selected. Via the Communication API discussed in [this tutorial](./stats-addon.md), I've exposed to the Document Sandbox a `flashWrongElement()` function, defined in the UI iframe.
+
+<CodeBlock slots="heading, code" repeat="2" languages="ui/index.js, documentSandbox/dimensions.js" />
+
+#### ui/index.js
+
+```js
+addOnUISdk.ready.then(async () => {
+  // ...
+  runtime.exposeApi({
+    flashWrongElement(id) {
+      const button = document.getElementById(id);
+      const oldText = button.textContent;
+      const oldColor = button.style.backgroundColor;
+
+      button.textContent = "WRONG NODE";
+      button.style.backgroundColor = "#ff0000";
+
+      setTimeout(() => {
+        button.textContent = oldText;
+        button.style.backgroundColor = oldColor;
+      }, 1000);
+    },
+  });
+});
+```
+
+#### documentSandbox/dimensions.js
+
+```js
+const drawDimensionsRefactored = () => {
+  if (
+    editor.context.hasSelection &&
+    editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
+  ) {
+    // ...
+  } else {
+    panelUIProxy.flashWrongElement("drawDimensionsRefactored"); // 👈
+  }
+};
+```
+
+When the Document Sandbox code detects an unsupported node type, it reaches out to the iframe UI `flashWrongElement()` method (exposed via proxy), sending the button `id` as a parameter. As a result, the button blinks red for a second, as its CSS and `textContent` property are temporarily changed.
+
+![](images/refs-addon-unsupported.png)
 
 ## Next Steps
 
 This tutorial has covered the basics of the Adobe Express DOM, its structure, and how to navigate the Reference documentation. With this knowledge, you can explore the available APIs more confidently and develop your own add-ons. As an exercise, you use the code sample found below and expand it to build a more complete Dimensions add-on; for example, you can:
 
-- support more node types;
-- add UI elements:
+- support **more node types**;
+- add **UI elements**:
   - a slider to control the dimensions' distance from the object;
   - dropdowns to choose the line's style (solid, dashed, dotted), and the arrowhead type;
   - a checkbox to toggle the extra dashed lines;
@@ -490,14 +635,293 @@ Let's review the key concepts we've learned in this tutorial.
 - **Reference documentation**: the Adobe Express Document API reference is a key resource: it provides comprehensive information on available classes, interfaces, and their properties and methods.
 - **Classes and Interfaces**: you can differentiate between live object classes, collection classes, abstract classes, static classes, object interfaces, and implementable interfaces.
 - **Types and IntelliSense**: using `.d.ts` and `tsconfig.json` files in your projects can enhance code completion and type checking, leading to faster and error-free coding.
+- We've also learned how to **prototype an add-on** by navigating the Reference documentation alone.
 
 ## Final Project
 
-The code for this project can be downloaded [here](#).
+The code for this project can be found below, as well as in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository.
 
 <InlineAlert variant="info" slots="text1" />
 
-Please use the UI iframe and Document Sandbox tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
+Please use the **iframe UI** and **Document Sandbox** tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
+
+<CodeBlock slots="heading, code" repeat="4" languages="index.html, ui/index.js, documentSandbox/code.js, documentSandbox/dimensions.js" />
+
+#### iframe UI
+
+```html
+<body>
+    <sp-theme scale="medium" color="light" theme="express">
+        <sp-button id="logNode">Log selected node</sp-button>
+        <sp-button id="drawDimensions">Draw Dimensions</sp-button>
+        <sp-button id="drawDimensionsRefactored">Draw Dimensions (refactored)</sp-button>
+    </sp-theme>
+</body>
+```
+
+#### iframe UI
+
+```js
+import "@spectrum-web-components/styles/typography.css";
+import "@spectrum-web-components/theme/src/themes.js";
+import "@spectrum-web-components/theme/theme-light.js";
+import "@spectrum-web-components/theme/express/theme-light.js";
+import "@spectrum-web-components/theme/express/scale-medium.js";
+import "@spectrum-web-components/theme/sp-theme.js";
+
+import "@spectrum-web-components/button/sp-button.js";
+
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  console.log("addOnUISdk is ready for use.");
+
+  // Get the Authoring Sandbox.
+  const { runtime } = addOnUISdk.instance;
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
+
+  const buttonIds = ["logNode", "drawDimensions", "drawDimensionsRefactored"];
+
+  buttonIds.forEach((id) => {
+    const button = document.getElementById(id);
+    button.addEventListener("click", () => {
+      sandboxProxy[id]();
+    });
+    button.disabled = false;
+  });
+
+  runtime.exposeApi({
+    flashWrongElement(id) {
+      const button = document.getElementById(id);
+      const oldText = button.textContent;
+      const oldColor = button.style.backgroundColor;
+
+      button.textContent = "WRONG NODE";
+      button.style.backgroundColor = "#ff0000";
+
+      setTimeout(() => {
+        button.textContent = oldText;
+        button.style.backgroundColor = oldColor;
+      }, 1000);
+    },
+  });
+});
+```
+
+#### Document Sandbox
+
+```js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+const { runtime } = addOnSandboxSdk.instance;
+import { editor } from "express-document-sdk";
+import { drawDimensions, drawDimensionsRefactored } from "./dimensions.js";
+
+function start() {
+  runtime.exposeApi({
+    drawDimensions,
+    drawDimensionsRefactored,
+    logNode: () => {
+      const selectedNode = editor.context.selection[0];
+      console.log("Currently selected node", selectedNode);
+    },
+  });
+}
+
+start();
+```
+
+#### Document Sandbox
+
+```js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+const { runtime } = addOnSandboxSdk.instance;
+const panelUIProxy = await runtime.apiProxy("panel");
+
+import { editor, constants } from "express-document-sdk";
+
+const createDimensionLine = ({
+  width,
+  height,
+  translation,
+  orientation,
+  margin,
+}) => {
+  const isVertical = orientation === "vertical";
+
+  // Adjust line start and end points based on orientation and margin
+  const lineStart = isVertical
+    ? { x: translation.x - margin, y: translation.y }
+    : { x: translation.x, y: translation.y - margin };
+  const lineEnd = isVertical
+    ? { x: translation.x - margin, y: translation.y + height }
+    : { x: translation.x + width, y: translation.y - margin };
+
+  const textValue = isVertical ? height : width;
+  const textPos = isVertical
+    ? { x: translation.x - margin - 10, y: translation.y + height / 2 }
+    : { x: translation.x + width / 2, y: translation.y - margin - 10 };
+
+  const line = editor.createLine();
+  line.setEndPoints(lineStart.x, lineStart.y, lineEnd.x, lineEnd.y);
+  line.startArrowHeadType = line.endArrowHeadType =
+    constants.ArrowHeadType.openTriangular;
+  editor.context.insertionParent.children.append(line);
+
+  const text = editor.createText();
+  text.text = `${Math.trunc(textValue).toString()}px`;
+  editor.context.insertionParent.children.append(text);
+  text.translation = textPos;
+
+  if (isVertical) {
+    text.setRotationInParent(-90, { x: 0, y: 0 });
+  }
+
+  const group = editor.createGroup();
+  editor.context.insertionParent.children.append(group);
+  group.children.append(line, text);
+
+  // Create and append extra lines at the extremities
+  for (let i = 0; i < 2; i++) {
+    const extraLine = editor.createLine();
+    const extraLineStart = isVertical
+      ? {
+          x: translation.x,
+          y: i === 0 ? translation.y : translation.y + height,
+        }
+      : {
+          x: i === 0 ? translation.x : translation.x + width,
+          y: translation.y,
+        };
+    const extraLineEnd = isVertical
+      ? {
+          x: translation.x - margin - 10,
+          y: i === 0 ? translation.y : translation.y + height,
+        }
+      : {
+          x: i === 0 ? translation.x : translation.x + width,
+          y: translation.y - margin - 10,
+        };
+
+    extraLine.setEndPoints(
+      extraLineStart.x,
+      extraLineStart.y,
+      extraLineEnd.x,
+      extraLineEnd.y
+    );
+    extraLine.stroke = editor.makeStroke({
+      color: { red: 1, green: 0, blue: 0, alpha: 1 },
+      dashPattern: [4, 2],
+      width: 0.5,
+    });
+    group.children.append(extraLine);
+    // editor.context.insertionParent.children.append(extraLine);
+  }
+
+  return group;
+};
+
+const drawDimensions = () => {
+  if (
+    editor.context.hasSelection &&
+    editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
+  ) {
+    const selectedNode = editor.context.selection[0];
+    console.log(selectedNode);
+    const { translation: nodeTranslation } = selectedNode;
+    const { width: nodeWidth, height: nodeHeight } =
+      selectedNode.mediaRectangle;
+
+    const hLine = editor.createLine();
+    hLine.setEndPoints(
+      nodeTranslation.x,
+      nodeTranslation.y - 20,
+      nodeTranslation.x + nodeWidth,
+      nodeTranslation.y - 20
+    );
+
+    // translation is relative to the parent!!
+    editor.context.insertionParent.children.append(hLine);
+    hLine.startArrowHeadType = hLine.endArrowHeadType =
+      constants.ArrowHeadType.openTriangular;
+
+    const hText = editor.createText();
+    hText.text = `${Math.trunc(nodeWidth).toString()}px`;
+    editor.context.insertionParent.children.append(hText);
+
+    hText.translation = {
+      x: nodeTranslation.x + nodeWidth / 2,
+      y: nodeTranslation.y - 30,
+    };
+
+    const hGroup = editor.createGroup();
+    editor.context.insertionParent.children.append(hGroup);
+    hGroup.children.append(hLine, hText);
+
+    // Same for the vertical line
+    const vLine = editor.createLine();
+    vLine.setEndPoints(
+      nodeTranslation.x - 20,
+      nodeTranslation.y,
+      nodeTranslation.x - 20,
+      nodeTranslation.y + nodeHeight
+    );
+    vLine.startArrowHeadType = vLine.endArrowHeadType =
+      constants.ArrowHeadType.openTriangular;
+
+    editor.context.insertionParent.children.append(vLine);
+
+    const vText = editor.createText();
+    vText.text = `${Math.trunc(nodeHeight).toString()}px`;
+    editor.context.insertionParent.children.append(vText);
+
+    vText.translation = {
+      x: nodeTranslation.x - 30,
+      y: nodeTranslation.y + nodeHeight / 2,
+    };
+    vText.setRotationInParent(-90, { x: 0, y: 0 });
+
+    const vGroup = editor.createGroup();
+    editor.context.insertionParent.children.append(vGroup);
+    vGroup.children.append(vLine, vText);
+  } else {
+    panelUIProxy.flashWrongElement("drawDimensions");
+  }
+};
+
+const drawDimensionsRefactored = () => {
+  if (
+    editor.context.hasSelection &&
+    editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
+  ) {
+    const selectedNode = editor.context.selection[0];
+    const { translation: nodeTranslation } = selectedNode;
+    const { width: nodeWidth, height: nodeHeight } =
+      selectedNode.mediaRectangle;
+
+    // Create horizontal dimension line
+    createDimensionLine({
+      width: nodeWidth,
+      height: nodeHeight,
+      translation: nodeTranslation,
+      orientation: "horizontal",
+      margin: 60,
+    });
+
+    // Create vertical dimension line
+    createDimensionLine({
+      width: nodeWidth,
+      height: nodeHeight,
+      translation: nodeTranslation,
+      orientation: "vertical",
+      margin: 20,
+    });
+  } else {
+    panelUIProxy.flashWrongElement("drawDimensionsRefactored");
+  }
+};
+
+export { drawDimensions, drawDimensionsRefactored };
+```
 
 ---
 
