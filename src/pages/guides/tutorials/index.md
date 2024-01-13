@@ -41,10 +41,10 @@ Davide Barranca - December 14th, 2023
 
 <ResourceCard slots="link, image, heading, text" width="33%"/>
 
-[Document API reference tutorial](dom-reference.md)
+[Document API Reference tutorial](dom-reference.md)
 
-![Coming Soon image](images/thumbs-coming-soon.png)
+![Document API Reference image](images/thumbs-refs-addon.png)
 
 ### Exploring the Adobe Express Document API Reference
 
-Davide Barranca - January 9th, 2024
+Davide Barranca - January 20th, 2024
