@@ -1,10 +1,10 @@
-# Tips, Tricks & Troubleshooting1
+# Tips, Tricks & Troubleshooting
 
-Useful information to use as a reference when you are developing your add-on UI's with Spectrum.
+Useful information to use as a reference when you are developing your add-on UI's with Spectrum and how to troubleshoot issues you may see while trying.
 
 ## Notes
 
-- Using icons
+- **Using icons**
     
     You can import and use an icon from the Spectrum icon libraries provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) (icons representing graphical metaphors - a document, trash can, cloud etc) packages and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) (icons that are parts of a component definition like an X or checkmark, expand icon etc). To use, first add to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
 
@@ -70,18 +70,14 @@ Useful information to use as a reference when you are developing your add-on UI'
 
   ![Injected fonts screenshot](../images/fonts.png)
 
-- Styling for layout and typography
+- **Styling for layout and typography**
 
     Use Spectrum CSS variables for padding, gaps between controls, etc. Also, since SWC has no components for typography, it can also be used to customize typography. Note: by default, typography components do not include outer margins, but adding the `.spectrum-Typography` class to your container will provide margins to the typography components within it.
 
-
-
     [Colors](https://spectrum.adobe.com/page/color-fundamentals/): provided as part of the theme imports. The color value’s contrast with the background increases as the number increases, so colors progressively get darker in a light theme and lighter in a dark theme (so a purple 600 var would be lighter than a purple 900 in a light theme but darker in a dark theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) here in the reference for more details.
     
-    Use theme-specific color variables (defined in `theme-light.js` for instace) for most uses of color, like when the color will be applied to text, icons, or the borders of a component. Use static color variables from the overall `theme.js` when the color is going to be fixed and not dependent on theme. The naming for the relative color vs the static color variables are `--spectrum-global-color-purple-600` and
+    **TIP:** Use theme-specific color variables (defined in `theme-light.js` for instace) for most uses of color, like when the color will be applied to text, icons, or the borders of a component. Use static color variables from the overall `theme.js` when the color is going to be fixed and not dependent on theme. The naming for the relative color vs the static color variables are `--spectrum-global-color-purple-600` and
     `--spectrum-global-color-static-purple-600`, respectively.
-
-
     
     [Typography](https://opensource.adobe.com/spectrum-css/typography.html) classes:
 
@@ -94,6 +90,7 @@ Useful information to use as a reference when you are developing your add-on UI'
     ```          
 
     **TODO**
+
     Custom Properties API 
         
     - Components can be modified via their `--mod-*` prefixed custom properties. A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each, such as for button -> https://github.com/adobe/spectrum-css/blob/main/components/button/metadata/mods.md.
@@ -163,6 +160,7 @@ Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4)
 
 ## Resources
 
+- [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
 - Example codepens:
     - [Simple button using SWC](https://codepen.io/hollyschinsky/pen/xxBweyV)
     - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/bGZrdoy)

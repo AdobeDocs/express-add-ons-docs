@@ -187,27 +187,36 @@ There are a few open source Spectrum libraries available, but we specifically re
 
 1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme that will apply to all of the Spectrum Web Components in your UI. It also includes an Express theme that you'll want to use in your add-on project:
 
-    `npm install @spectrum-web-components/theme`
+    `npm install @spectrum-web-components/theme@0.39.4`
 
-    **Note:** if you prefer to use `yarn`, you could alternatively use the command: `yarn add @spectrum-web-components/theme`.
+    **Note:** if you prefer to use `yarn`, you could alternatively use the command: `yarn add @spectrum-web-components/theme@0.39.4`.
 
     Notice your new component is now included in the `package.json`. **TODO** is the installed version going to work or does it need to be manually fixed.
 
 1. Now, open your `src/index.js` and import the specific theme and typography classes below for the Express theme, color and scale you'll want to support in your add-on:
 
     ```js
+    /* Theme and typography imports */
     import '@spectrum-web-components/styles/typography.css';
     import '@spectrum-web-components/theme/express/theme-light.js';
-    // import '@spectrum-web-components/theme/express/theme-dark.js'; /* optional depending if you want to support a future dark theme */
     import '@spectrum-web-components/theme/express/scale-medium.js';
-    // import '@spectrum-web-components/theme/express/scale-large.js'; /* optional unless you want to include future support for mobile for insance */
-    import '@spectrum-web-components/theme/sp-theme.js';
+    import '@spectrum-web-components/theme/sp-theme.js';    
     ```
 
-1. You can now add the `<sp-theme>` tag to our UI, but note that you won't actually see anything visually yet, since there are no components for it to be applied to. Let's add it and configure it to use the following options:
+    Optionally note these theme-related imports to keep in mind if you plan to include support for a future dark theme or when add-ons are supported on mobile:
+
+    ```js
+    // import '@spectrum-web-components/theme/express/theme-dark.js'; /* to support a future dark theme */    
+    // import '@spectrum-web-components/theme/express/scale-large.js'; /* future support for mobile for insance */
+    ```
+    
+    **Note:** The `typography.css` import is not required, but is useful to note for using Spectrum CSS vars to help style the typography components of your add-ons, and to provide margins. 
+
+1. You can now add the `<sp-theme>` tag to your UI, but note that you won't actually see anything visually yet, since there are no components for it to be applied to. Open your `src/index.html` file, and add the following theme component into the `<body>` tags, configured with a `medium` scale, `light` color and `express` theme:
 
     ```html
     <sp-theme scale="medium" color="light" theme="express">
+        /* UI content will go here */
     </sp-theme>
     ```
 
@@ -219,7 +228,7 @@ There are a few open source Spectrum libraries available, but we specifically re
     });
     ```
 
-    Another important thing to note, is the existence of the following block in the starter template `index.js` file, which can be used to ensure the Add-on UI SDK has been fully initialized and is ready for use before trying to implement your UI. You may have noticed that the original button included in the UI was set to `disabled`, and is subsequently enabled in this block, as an example:
+    Another important thing to note, is the existence of the following block in the starter template `src/index.js` file, which can be used to ensure the Add-on UI SDK has been fully initialized and is ready for use before trying to implement your UI. You may have noticed that the original button included in the UI was set to `disabled`, and is subsequently enabled in this block, as an example:
 
     ```js
     addOnUISdk.ready.then(() => {        
@@ -232,15 +241,15 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     You will keep this pattern in your Bingo Card Generator add-on as well.
 
-1. Next, you can start installing all of the Spectrum Web Components that will be used to build the UI of your Bingo Card Generator add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command. 
+1. Next, you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command. 
 
     ```bash
-    npm install "@spectrum-web-components/theme" "@spectrum-web-components/button" "@spectrum-web-components/button-group" "@spectrum-web-components/field-label" "@spectrum-web-components/menu" "@spectrum-web-components/picker" "@spectrum-web-components/slider" "@spectrum-web-components/swatch" "@spectrum-web-components/switch"
+    npm install "@spectrum-web-components/button@0.39.4" "@spectrum-web-components/button-group@0.39.4" "@spectrum-web-components/field-label@0.39.4" "@spectrum-web-components/menu@0.39.4" "@spectrum-web-components/picker@0.39.4" "@spectrum-web-components/slider@0.39.4" "@spectrum-web-components/swatch@0.39.4" "@spectrum-web-components/switch@0.39.4"
     ```
 
-    **TODO** Is this still an issue since the npm install will install v 0.40.3? If so - use the version in the install command (@0.39.4) recommend using the manual update **
+    **NOTE:** The above specifies the 0.39.4 version due to a current issue found with compatibility using the latest default (`0.40.3` as of this writing). Please note though, you must always ensure all of your Spectrum Web Components are installed with the same package version.
 
-    Alternatively, you could save time by copying and adding the set of components below into your `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
+    Alternatively, you could also copy in the following block below to the `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
 
     ```json
     "dependencies": {
@@ -258,9 +267,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT!!!:** You must ensure the versions of all of your Spectrum Web Components installed are the same, or you will see errors upon build or while running.
-
-    **TODO - NOTE YOU CAN'T RUN IT YET BECAUSE ALL DEPENDENCIES ARE OFF - need  imports to have the componets actually build into the bundle dist folder, so if you use in the UI it won't work (check dist and not enough stuff there)**
+**IMPORTANT:** You must ensure **the versions of all of your Spectrum Web Components installed are the same,** or you will see errors upon build or while running. You may want to just open your `package.json` file at this point to double check to ensure they all match, before moving on.
 
 1. Add the imports for the new components to the `src/index.js` file with the following block:
 
@@ -277,7 +284,7 @@ There are a few open source Spectrum libraries available, but we specifically re
     import '@spectrum-web-components/switch/sp-switch.js';
     ```
 
-1. Next, open the `src/index.html` file and implement the code for the UI components used in the Bingo Card Generator by replacing your `<sp-theme>` block with the one below:
+1. Next, open the `src/index.html` file and implement the code for the UI components used in the Bingo Card Generator, within the opening and closing `<sp-theme>` block you added previously. The final result should look like this:
 
     ```html
     <sp-theme scale="medium" color="light" theme="express">                
@@ -334,17 +341,29 @@ There are a few open source Spectrum libraries available, but we specifically re
     </sp-theme>
     ```
     
-    Notice the properties for each, and use the [Spectrum Web Component documentation](https://opensource.adobe.com/spectrum-web-components) to help provide more context.
+    Note the properties for each, and use the [Spectrum Web Component documentation](https://opensource.adobe.com/spectrum-web-components) to help cross-reference them for more context.
+
+    Worth mentioning are the details around the use of the `<sp-swatch>` components, which are coupled with a hidden native `<input>` component to allow the user to pick their colors. Though SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider), there is not an actual picker, so this add-on implements it via an `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
+     
+    The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On input (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` updates as the color is changed to them in sync. 
+
+    Also, be sure to check out [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) as many of these components are included with specific guidelines, including:
+
+    `<sp-number-field>` for the gridsize value
+    `<sp-slider>` for the gridsize picker
+    `<sp-swatch>` for the color pickers
+    `<sp-button-group>` and `<sp-button>` for the CTA buttons.
+
 
 1. If you run your add-on project with the CLI at this point (`npm run build; npm run start`), you would notice that your UI layout is less than ideal, as shown below. 
 
-    ![lesson 1 prestyle screenshot](../images/lesson1-pre-style.png)
+    ![lesson 1 prestyle screenshot](../images/lesson1-prestyle.png)
 
-    Even though the Spectrum Web Components themselves have styling applied, the layout of them does not. That's because the Spectrum Web Components library doesn't have any specific layout components. However, you can use Spectrum CSS variables to help you with that.
+    Even though the Spectrum Web Components themselves have styling applied, the layout of them does not. That's because the Spectrum Web Components library doesn't include any specific layout components. However, you can use Spectrum CSS variables to help you with that.
 
-    In this step we will define some styles and selectors to improve the layout and general styling of your UI. You may have noticed there were already some classes set when you copied in the code block above, though they didn't apply yet, since you still need to add them, and will do in this step.
+    In this step we will define some styles and selectors to improve the layout and general styling of your UI. You may have noticed there were already some classes set when you copied in the code block above, but since they don't actually apply yet, you'll eed to define them in this step.
 
-   Locating the `<style>` block in your `src/index.html`, and add the following CSS selectors and classes: **TODO** fix with final.
+   Locate the `<style>` block in your `src/index.html`, and add the following CSS selectors and classes: **TODO** fix with final.
 
     ```css
     sp-theme {
@@ -425,6 +444,196 @@ There are a few open source Spectrum libraries available, but we specifically re
     } 
     ```
 
-1. Once you are happy with your UI, you can start implementing the logic for actually generating the bingo card. Since this is not the focus of this tutorial, we will not cover it in-depth, instead, the following code snippet is provided with comments for you to replace in your `src/index.js` file:
+1. If you kept your add-on running in Express, it should auto-reload now and you can view the updates. It should look something like this screenshot below:
 
-    **TODO**
+    ![lesson 1 poststyle screenshot](../images/lesson1-poststyle.png)
+
+    Notice that many of the components aren't active yet, since there's currently no associated logic to set values or enable the buttons. First, continue adjusting the layout as needed, then, once you're happy with it, you can start implementing the logic to set some default values for the components and enable the generate button to allow the user to generate their customized bingo card. Open your `src/index.js` and copy in the following code snippet after your imports, replacing the `addOnUISdk.ready.then(() => {`  callback since it's included below.
+
+```js
+
+// Wait for the SDK to be ready
+addOnUISdk.ready.then(() => {        
+    console.log("addOnUISdk is ready for use.");    
+    
+    // Ref to the <sp-input type="color">
+    const gridlinesColorPicker = document.getElementById("gridlinesColorPicker");
+    const gridlinesColorSwatch = document.getElementById("gridlinesColorSwatch");
+    const bgColorPicker = document.getElementById("bgColorPicker");
+    const bgColorSwatch = document.getElementById("bgColorSwatch");    
+    const fgColorPicker = document.getElementById("fgColorPicker");
+    const fgColorSwatch = document.getElementById("fgColorSwatch");
+    const titleColorPicker = document.getElementById("titleColorPicker");
+    const titleColorSwatch = document.getElementById("titleColorSwatch");
+    
+    gridlinesColorPicker.value = "#5258e5";    
+    gridlinesColorSwatch.color = "#5258e5";
+    bgColorPicker.value = "#f2f2f2"; // box background color
+    bgColorSwatch.color = "#f2f2f2";
+    fgColorPicker.value = "#5258e5"; // number color
+    fgColorSwatch.color = "#5258e5";    
+    titleColorPicker.value = "#000000";
+    titleColorSwatch.color = "#000000";    
+  
+    gridlinesColorSwatch.addEventListener("click", function () {
+        gridlinesColorPicker.click();
+    });
+  
+    gridlinesColorPicker.addEventListener("input", function (event) {
+      const selectedColor = event.target.value;
+      gridlinesColorSwatch.setAttribute("color", selectedColor);
+    });
+
+    fgColorSwatch.addEventListener("click", function () {
+        fgColorPicker.click();
+    });
+
+    fgColorPicker.addEventListener("input", function (event) {
+        const selectedColor = event.target.value;
+        fgColorSwatch.setAttribute("color", selectedColor);
+    });
+  
+    bgColorSwatch.addEventListener("click", function () {
+      bgColorPicker.click();
+    });
+  
+    bgColorPicker.addEventListener("input", function (event) {
+      const selectedColor = event.target.value;
+      bgColorSwatch.setAttribute("color", selectedColor);
+    });
+  
+    titleColorSwatch.addEventListener("click", function () {
+        titleColorPicker.click();
+    });
+  
+    titleColorPicker.addEventListener("input", function (event) {
+      const selectedColor = event.target.value;
+      titleColorSwatch.setAttribute("color", selectedColor);
+    });
+  
+    // CTA Buttons 
+    const generateBtn = document.getElementById("generateBtn");  
+    const addBtn = document.getElementById("addBtn");  
+  
+    generateBtn.onclick = async (event) => {                    
+      generateBingoCard();        
+    };
+  
+    // Safe to enable any buttons
+    // The add to page button should only be enabled once a card has been generated
+    generateBtn.disabled = false;        
+});
+
+function generateBingoCard() {
+    const canvas = document.getElementById("finalCard");
+    const ctx = canvas.getContext("2d");
+
+    // Set canvas width and height
+    canvas.width = 300;
+    canvas.height = 360;
+
+    // Set grid properties    
+    let gridlineSize = document.getElementById("gridlineSize").value;        
+    const numRows = 6;
+    const numCols = 5;
+    const cellWidth = 60;
+    const cellHeight = 60;
+    
+    // Draw background rect with selected color
+    ctx.fillStyle = bgColorPicker.value; 
+    for (let x = gridlineSize/2; x <= canvas.width; x += cellWidth-gridlineSize) {            
+        for (let y = gridlineSize/2; y <= canvas.height; y += cellHeight-gridlineSize) {
+            ctx.fillRect(x, y, cellWidth-gridlineSize, cellHeight-gridlineSize);                
+        }
+    } 
+    
+    // Draw gridlines
+    ctx.lineWidth = gridlineSize;
+    for (let i = 0; i <= numCols; i++) {        
+        // Need to adjust for left/right gridlines size           
+        ctx.moveTo(gridlineSize/2, 0);
+        ctx.lineTo(gridlineSize/2, canvas.height);      
+
+        ctx.moveTo(i * cellWidth-gridlineSize/2, 0);
+        ctx.lineTo(i * cellWidth-gridlineSize/2, canvas.height);        
+    }
+
+    for (let i = 0; i <= numRows; i++) { 
+        // Need to adjust for top/bottom gridlines size               
+        ctx.moveTo(0, gridlineSize/2);
+        ctx.lineTo(canvas.height, gridlineSize/2,);            
+    
+        ctx.moveTo(0, i * cellWidth-gridlineSize/2);
+        ctx.lineTo(canvas.height, i * cellWidth-gridlineSize/2);                    
+    }
+    
+    ctx.strokeStyle = gridlinesColorPicker.value;        
+    ctx.stroke();
+    
+    // Draw bingo title
+    ctx.font = fontWeightPicker.value +' 28px adobe clean';    
+    ctx.textAlign = "center";
+    ctx.textBaseline = 'middle'; 
+    ctx.fillStyle = titleColorPicker.value; //font color                        
+    let bingoTitle = ['B','I','N','G','O'];
+    for (let charCnt = 0; charCnt < bingoTitle.length; charCnt++) {
+        let letter = bingoTitle[charCnt];
+        ctx.fillText(letter, charCnt * cellWidth + cellWidth / 2 - 4, cellHeight / 2 + 8);    
+    }       
+    
+    // Generate random numbers
+    const freeSpace = [3, 2]; // Coordinates of the FREE space (third row, third column)
+    const numbers = [];
+    const usedNumbers = new Set(); // Track used numbers
+    ctx.font = fontWeightPicker.value +' 22px adobe clean';
+    ctx.fillStyle = fgColorPicker.value; // color of the numbers 
+    ctx.textAlign = "center";
+    const freeSpaceToggle = document.getElementById("freeSpaceToggle");
+    
+    for (let i = 1; i < numRows; i++) {
+        numbers[i] = [];
+        for (let j = 0; j < numCols; j++) {
+            if (freeSpaceToggle.checked) {
+                if (i === freeSpace[0] && j === freeSpace[1]) {
+                    numbers[i][j] = "FREE";
+                    continue; // Skip the FREE space
+                }
+            }
+            let num;
+            do {
+                num = Math.floor(Math.random() * 15) + 1 + (j * 15);
+            } while (usedNumbers.has(num)); // Generate unique numbers
+
+            usedNumbers.add(num);
+            numbers[i][j] = num;        
+            ctx.fillText(num, j * cellWidth + cellWidth / 2 - 3, i * cellHeight + cellHeight / 2 + 3);
+        }
+    }
+
+    // Draw "FREE" if the toggle is checked
+    if (freeSpaceToggle.checked) {
+        ctx.font = fontWeightPicker.value +' 20px adobe clean';     
+        ctx.fillText("FREE", freeSpace[1] * cellWidth + cellWidth / 2 - 3, freeSpace[0] * cellHeight + cellHeight / 2 + 3);   
+        ctx.drawImage(canvas, 0, 0);
+    }    
+
+    // Enable drag and drop for the card
+    addOnUISdk.app.enableDragToDocument(canvas, {
+        previewCallback: el => new URL(canvas.toDataURL()),
+        completionCallback: async el => {
+            const r = await fetch(canvas.toDataURL());
+            const blob = await r.blob();
+            return [{blob}];
+        }
+    })    
+        
+    // Enable the add to page button    
+    addBtn.disabled = false;  
+
+    addBtn.onclick = async () => {      
+        const r = await fetch(canvas.toDataURL());
+        const blob = await r.blob();    
+        addOnUISdk.app.document.addImage(blob);  
+    }
+}
+```
