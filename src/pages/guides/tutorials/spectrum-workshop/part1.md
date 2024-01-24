@@ -33,6 +33,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 ## Steps
 
 ### Create and configure
+
 1. Use the CLI to create a new add-on based on the basic `javascript` template:
 
     `npx @adobe/create-ccweb-add-on bingo-card-generator --template javascript`
@@ -99,7 +100,7 @@ There are a few open source Spectrum libraries available, but we specifically re
         clickMeButton.disabled = false;
     ```
 
-1. Next, you're going to need to configure your new add-on project to use webpack, since it's required to bundle the Spectrum Web Components properly. This requires a webpack config file and some additional updates to your `package.json`:
+1. Next, you're going to need to configure your new add-on project to use webpack, since it's required to bundle the Spectrum Web Components properly. This requires a `webpack.config.js` file and some additional updates to your `package.json`:
 
     First, add a new file named `webpack.config.js` to the root of your add-on project and copy in the code from below (or, alternatively, copy it in from [the provided starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
 
@@ -155,7 +156,7 @@ There are a few open source Spectrum libraries available, but we specifically re
     };
     ```
 
-    Now, update your `package.json` to configure it for webpack. This requires you to update the `scripts`(to ensure it's used with the CLI commands), and `devDependencies` objects with the following snippets (or optionally copy in the content from the provided starter project). **TODO check latest versions**
+    Now, update your `package.json` to configure it for webpack. This requires you to update the `scripts`(to ensure it's used with the CLI commands), and the `devDependencies` objects with the following snippets.
 
     ```json
      "scripts": {
@@ -451,30 +452,34 @@ There are a few open source Spectrum libraries available, but we specifically re
     Notice that many of the components aren't active yet, since there's currently no associated logic to set values or enable the buttons. First, continue adjusting the layout as needed, then, once you're happy with it, you can start implementing the logic to set some default values for the components and enable the generate button to allow the user to generate their customized bingo card. Open your `src/index.js` and copy in the following code snippet after your imports, replacing the `addOnUISdk.ready.then(() => {`  callback since it's included below.
 
 ```js
-
 // Wait for the SDK to be ready
 addOnUISdk.ready.then(() => {        
     console.log("addOnUISdk is ready for use.");    
     
-    // Ref to the <sp-input type="color">
-    const gridlinesColorPicker = document.getElementById("gridlinesColorPicker");
+    // Refs to the <sp-swatch> and <input> elements for each color
     const gridlinesColorSwatch = document.getElementById("gridlinesColorSwatch");
-    const bgColorPicker = document.getElementById("bgColorPicker");
-    const bgColorSwatch = document.getElementById("bgColorSwatch");    
-    const fgColorPicker = document.getElementById("fgColorPicker");
-    const fgColorSwatch = document.getElementById("fgColorSwatch");
-    const titleColorPicker = document.getElementById("titleColorPicker");
-    const titleColorSwatch = document.getElementById("titleColorSwatch");
+    const gridlinesColorPicker = document.getElementById("gridlinesColorPicker");
     
-    gridlinesColorPicker.value = "#5258e5";    
-    gridlinesColorSwatch.color = "#5258e5";
-    bgColorPicker.value = "#f2f2f2"; // box background color
-    bgColorSwatch.color = "#f2f2f2";
-    fgColorPicker.value = "#5258e5"; // number color
-    fgColorSwatch.color = "#5258e5";    
-    titleColorPicker.value = "#000000";
-    titleColorSwatch.color = "#000000";    
+    const bgColorSwatch = document.getElementById("bgColorSwatch");        
+    const bgColorPicker = document.getElementById("bgColorPicker");
+    
+    const fgColorSwatch = document.getElementById("fgColorSwatch");
+    const fgColorPicker = document.getElementById("fgColorPicker");
+
+    const titleColorSwatch = document.getElementById("titleColorSwatch");
+    const titleColorPicker = document.getElementById("titleColorPicker");
+    
+    // Initialize colors for the above
+    gridlinesColorPicker.value = "#5258e5"; // gridline color   
+    gridlinesColorSwatch.color = "#5258e5"; // gridline color   
+    bgColorPicker.value = "#f2f2f2";        // box background color
+    bgColorSwatch.color = "#f2f2f2";        // box background color
+    fgColorPicker.value = "#5258e5";        // bingo number color
+    fgColorSwatch.color = "#5258e5";        // bingo number color
+    titleColorPicker.value = "#000000";     // title color
+    titleColorSwatch.color = "#000000";     // title color
   
+    // Trigger click on the native color pickers for each
     gridlinesColorSwatch.addEventListener("click", function () {
         gridlinesColorPicker.click();
     });
@@ -511,19 +516,20 @@ addOnUISdk.ready.then(() => {
       titleColorSwatch.setAttribute("color", selectedColor);
     });
   
-    // CTA Buttons 
+    // CTA button references
     const generateBtn = document.getElementById("generateBtn");  
     const addBtn = document.getElementById("addBtn");  
   
+    // Generate button handler
     generateBtn.onclick = async (event) => {                    
       generateBingoCard();        
     };
   
-    // Safe to enable any buttons
-    // The add to page button should only be enabled once a card has been generated
+    /* Enable the generate button now that the SDK is ready and the button event handler has been registered. The add to page button should only be enabled once a card has been generated. */
     generateBtn.disabled = false;        
 });
 
+// Function to generate the bingo card using an HTML canvas and drawing context 
 function generateBingoCard() {
     const canvas = document.getElementById("finalCard");
     const ctx = canvas.getContext("2d");
@@ -539,7 +545,7 @@ function generateBingoCard() {
     const cellWidth = 60;
     const cellHeight = 60;
     
-    // Draw background rect with selected color
+    // Draw background rects with user selected color
     ctx.fillStyle = bgColorPicker.value; 
     for (let x = gridlineSize/2; x <= canvas.width; x += cellWidth-gridlineSize) {            
         for (let y = gridlineSize/2; y <= canvas.height; y += cellHeight-gridlineSize) {
@@ -582,7 +588,7 @@ function generateBingoCard() {
     }       
     
     // Generate random numbers
-    const freeSpace = [3, 2]; // Coordinates of the FREE space (third row, third column)
+    const freeSpace = [3, 2]; // Coordinates of the FREE space
     const numbers = [];
     const usedNumbers = new Set(); // Track used numbers
     ctx.font = fontWeightPicker.value +' 22px adobe clean';
@@ -626,14 +632,19 @@ function generateBingoCard() {
             return [{blob}];
         }
     })    
-        
-    // Enable the add to page button    
-    addBtn.disabled = false;  
-
+            
+    // Add button click handler
     addBtn.onclick = async () => {      
         const r = await fetch(canvas.toDataURL());
         const blob = await r.blob();    
         addOnUISdk.app.document.addImage(blob);  
     }
+
+    // Enable the add to page button    
+    addBtn.disabled = false;
 }
 ```
+
+Once you've updated your code, your add-on should reload and you can generate a custom bingo card! Try playing with some settigns and see how they render in a new card, drag your card to the page or add it with the add button etc. If your add-on didn't pick up the changes for any reason, you can use the [add-on developer tools](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to do a refresh, or simply run `npm run build; npm run start` again. 
+
+If you have any trouble or you're not seeing what you expect, see the [Troubleshooting section](./part3.md#troubleshootingfaq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
