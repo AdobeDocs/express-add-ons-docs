@@ -54,11 +54,11 @@ This resulting add-on allows users to select settings to customize a bingo card,
 
 <!-- - Lesson 1 Starter Project: The [lesson 1 starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js) is provided for you to use as an alternative to creating one with the CLI in the steps below. It has some configuration done for you that is covered in the initial steps, though we will be walking through how to start from scratch with the CLI as well. If you use the starter projects, you can skip the **Create and configure** steps and start hands-on with the **Theme setup** step. -->
 
-- [Lesson 1 final project](hhttps://github.com/hollyschinsky/spectrum-lessons) 
+- [Lesson 1 final project](https://github.com/hollyschinsky/bingo-card-generator-js) - Bingo Card Generator add-on using Spectrum Web Components and JS
 
 <!-- - The [lesson 2 starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)  -->
 
-- [Lesson 2 final project](https://github.com/hollyschinsky/spectrum-lesson2)
+- [Lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-js-react) - - Bingo Card Generator add-on using swc-react and ReactJS
 
 <!-- **TODO** above -->
 

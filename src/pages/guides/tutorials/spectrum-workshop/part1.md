@@ -42,7 +42,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     Note, you could also clone the [the provided starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js) and just follow along the next couple of steps where the base project is configured since it's done for you in the starter.
 
-1. If you ran the project at this point (`npm run build; npm run start`), you would see just a basic button displayed in the UI, as shown below:
+1. If you ran the project at this point (`npm run build; npm run start`), you will a basic button displayed in the UI with custom CSS set to style it for Express, as shown below:
 
   ![Basic JS add-on screenshot](../images/basic-js.png)
 
@@ -245,10 +245,10 @@ There are a few open source Spectrum libraries available, but we specifically re
 1. Next, you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command. 
 
     ```bash
-    npm install "@spectrum-web-components/button@0.39.4" "@spectrum-web-components/button-group@0.39.4" "@spectrum-web-components/field-label@0.39.4" "@spectrum-web-components/menu@0.39.4" "@spectrum-web-components/picker@0.39.4" "@spectrum-web-components/slider@0.39.4" "@spectrum-web-components/swatch@0.39.4" "@spectrum-web-components/switch@0.39.4"
+    npm install @spectrum-web-components/button@0.39.4 @spectrum-web-components/button-group@0.39.4 @spectrum-web-components/field-label@0.39.4 @spectrum-web-components/menu@0.39.4 @spectrum-web-components/picker@0.39.4 @spectrum-web-components/slider@0.39.4 @spectrum-web-components/swatch@0.39.4 @spectrum-web-components/switch@0.39.4
     ```
 
-    **NOTE:** The above specifies the 0.39.4 version due to a current issue found with compatibility using the latest default (`0.40.3` as of this writing). Please note though, you must always ensure all of your Spectrum Web Components are installed with the same package version.
+    **NOTE:** The above command specifies the 0.39.4 version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
 
     Alternatively, you could also copy in the following block below to the `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
 
@@ -270,7 +270,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
 **IMPORTANT:** You must ensure **the versions of all of your Spectrum Web Components installed are the same,** or you will see errors upon build or while running. You may want to just open your `package.json` file at this point to double check to ensure they all match, before moving on.
 
-1. Add the imports for the new components to the `src/index.js` file with the following block:
+1. Add the following list of imports for the new components into your `src/index.js` file with the following block:
 
     ```js
     import "@spectrum-web-components/button/sp-button.js";
@@ -362,7 +362,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     Even though the Spectrum Web Components themselves have styling applied, the layout of them does not. That's because the Spectrum Web Components library doesn't include any specific layout components. However, you can use Spectrum CSS variables to help you with that.
 
-    In this step we will define some styles and selectors to improve the layout and general styling of your UI. You may have noticed there were already some classes set when you copied in the code block above, but since they don't actually apply yet, you'll eed to define them in this step.
+    In this step you will define some styles and selectors to improve the layout and general styling of your UI. You may have noticed there were already some classes set when you copied in the code block above, but since they don't actually apply yet, you'll eed to define them in this step.
 
    Locate the `<style>` block in your `src/index.html`, and add the following CSS selectors and classes: **TODO** fix with final.
 
