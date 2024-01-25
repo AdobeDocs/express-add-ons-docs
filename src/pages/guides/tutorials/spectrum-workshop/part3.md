@@ -163,7 +163,7 @@ Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4)
 ## Resources
 
 - [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
-- Example codepens:
+- Example codepens
     - [Simple button using SWC](https://codepen.io/hollyschinsky/pen/xxBweyV)
     - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/bGZrdoy)
     - [Spectrum CSS](https://codepen.io/lazd/pen/Exevvey)
@@ -172,6 +172,6 @@ Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4)
 - [Spectrum XD Plugin](https://spectrum.adobe.com/page/spectrum-xd-plugin/)
 - [Spectrum Figma plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
 - [CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js/) 
-    To be used for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles. See the example codepens for details.
+    - Only to be used for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
 - [Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
 - [Color Wheel](https://color.adobe.com/create/color-wheel)

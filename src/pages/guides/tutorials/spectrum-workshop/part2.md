@@ -76,21 +76,21 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
 ### Import swc-react components
 
-1. In this step you will add the UI component imports for the Bingo Card Generator add-on. The pattern of the imports will follow in a similar manner to what was included in the generated project for `Button` and `Theme`. 
+In this step you will add the UI component imports for the Bingo Card Generator add-on. The pattern of the imports will follow in a similar manner to what was included in the generated project for `Button` and `Theme`. 
 
-    As a tip, you can use the [Spectrum Web Components Reference](https://opensource.adobe.com/spectrum-web-components/) for the corresponding component, and in the **Usage** section you will see that the third import uses the class name for the component, which is what you will need, as well as the specific package to use, it will just be prefixed with `@swc-react` instead. 
+As a tip, you can use the [Spectrum Web Components Reference](https://opensource.adobe.com/spectrum-web-components/) for the corresponding component, and in the **Usage** section you will see that the third import uses the class name for the component, which is what you will need, as well as the specific package to use, it will just be prefixed with `@swc-react` instead. 
 
-    So, for example, the first import needed is for a Button Group component. If you look at the [Spectrum Web Components - Button Group Usage](https://opensource.adobe.com/spectrum-web-components/components/button-group/#usage), the last import shows `import { ButtonGroup } from '@spectrum-web-components/button-group';`. (It's outlined in the image below as well for visual reference):
+So, for example, the first import needed is for a Button Group component. If you look at the [Spectrum Web Components - Button Group Usage](https://opensource.adobe.com/spectrum-web-components/components/button-group/#usage), the last import shows `import { ButtonGroup } from '@spectrum-web-components/button-group';`. (It's outlined in the image below as well for visual reference):
 
-    ![ButtonGroup import from SWC reference](../images/swc-button-group-import.png)        
+![ButtonGroup import from SWC reference](../images/swc-button-group-import.png)        
  
-    You can simply copy that import from the reference for any given component you want to use in your add-on, and just change the prefix from `@spectrum-web-components` to `@swc-react`. (Notice the existing imports for `Button` and `Theme` as a reference). So the resulting import to use in your add-on would be:
+You can simply copy that import from the reference for any given component you want to use in your add-on, and just change the prefix from `@spectrum-web-components` to `@swc-react`. (Notice the existing imports for `Button` and `Theme` as a reference). So the resulting import to use in your add-on would be:
  
-    `import { ButtonGroup } from '@swc-react/button-group';`. 
+`import { ButtonGroup } from '@swc-react/button-group';`. 
  
-    You can then use this same pattern for all of the `@swc-react` wrapper components you want to use.
+You can then use this same pattern for all of the `@swc-react` wrapper components you want to use.
  
-    The imports needed for the Bingo Card Generator are listed below for you to copy into your `src/components/App.jsx` file along with the existing `Button` and `Theme` imports:
+The imports needed for the Bingo Card Generator are listed below for you to copy into your `src/components/App.jsx` file along with the existing `Button` and `Theme` imports:
 
     ```js
     import { ButtonGroup } from '@swc-react/button-group';
@@ -104,49 +104,49 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
 ### Create event helper class
 
-1. Next you'll need to create a new class to handle a known issue where React events and web components don't always work well together.  See [this issue for more details](https://github.com/facebook/react/issues/19846). The issue is most often seen in the case of the React `onChange` event, and the events won't properly fire. An option to work around this is to create a helper class that will automatically register the native browser version of the events for the components to ensure they are properly fired. 
+Next you'll need to create a new class to handle a known issue where React events and web components don't always work well together.  See [this issue for more details](https://github.com/facebook/react/issues/19846). The issue is most often seen in the case of the React `onChange` event, and the events won't properly fire. An option to work around this is to create a helper class that will automatically register the native browser version of the events for the components to ensure they are properly fired. 
 
-  Create a new helper class in a file named `WC.jsx` in your `src/components` folder, then copy in the block of code below and save it. 
+Create a new helper class in a file named `WC.jsx` in your `src/components` folder, then copy in the block of code below and save it. 
   
-  **Note:** this class is also included in the [lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-js-react) if you want to copy it in from there instead.
+**Note:** this class is also included in the [lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-js-react) if you want to copy it in from there instead.
 
-    ```js
-    import React from "react";
+```js
+import React from "react";
 
-    export class WC extends React.Component {
-        constructor(props) {
-            super(props);
-            this.el = React.createRef();
-            this.handleEvent = this.handleEvent.bind(this);
-        }
+export class WC extends React.Component {
+    constructor(props) {
+        super(props);
+        this.el = React.createRef();
+        this.handleEvent = this.handleEvent.bind(this);
+    }
 
-        handleEvent(evt) {
-            const propName = `on${evt.type[0].toUpperCase()}${evt.type.substr(1)}`;
-            if (this.props[propName]) {
-                this.props[propName].call(evt.target, evt);
-            }
-        }
-
-        componentDidMount() {
-            const el = this.el.current;
-            const eventProps = Object.entries(this.props).filter(([k,v]) => k.startsWith("on"));
-            eventProps.forEach(([k,v]) => el.addEventListener(k.substr(2).toLowerCase(), this.handleEvent));
-        }
-
-        componentWillUnmount() {
-            const el = this.el.current;
-            const eventProps = Object.entries(this.props).filter(([k,v]) => k.startsWith("on"));
-            eventProps.forEach(([k,v]) => el.removeEventListener(k.substr(2).toLowerCase(), this.handleEvent));
-        }
-
-        render() {
-            const filteredProps = Object.fromEntries(Object.entries(this.props).filter(([k,v]) => !k.startsWith("on")));
-            return <div ref={this.el} {...filteredProps}>{this.props.children}</div>
+    handleEvent(evt) {
+        const propName = `on${evt.type[0].toUpperCase()}${evt.type.substr(1)}`;
+        if (this.props[propName]) {
+            this.props[propName].call(evt.target, evt);
         }
     }
-    ```
 
-1. Now, go back into your `src/components/App.jsx` and import your new `WC` helper class under the `React` and `App.css` imports, for instance:
+    componentDidMount() {
+        const el = this.el.current;
+        const eventProps = Object.entries(this.props).filter(([k,v]) => k.startsWith("on"));
+        eventProps.forEach(([k,v]) => el.addEventListener(k.substr(2).toLowerCase(), this.handleEvent));
+    }
+
+    componentWillUnmount() {
+        const el = this.el.current;
+        const eventProps = Object.entries(this.props).filter(([k,v]) => k.startsWith("on"));
+        eventProps.forEach(([k,v]) => el.removeEventListener(k.substr(2).toLowerCase(), this.handleEvent));
+    }
+
+    render() {
+        const filteredProps = Object.fromEntries(Object.entries(this.props).filter(([k,v]) => !k.startsWith("on")));
+        return <div ref={this.el} {...filteredProps}>{this.props.children}</div>
+    }
+}
+```
+
+Now, go back into your `src/components/App.jsx` and import your new `WC` helper class under the `React` and `App.css` imports, for instance:
 
     ```js
     import React, { useState, useRef } from "react";
@@ -156,7 +156,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
 ### Build UI with swc-react components
 
-1. At this point you are ready to start using the `swc-react` components. You'll also wrap some with the `<WC>` helper class as needed to handle events appropriately. Open your `src/components/App.jsx` file and replace the current `<Theme>` block in the UI section with the following block:
+At this point you are ready to start using the `swc-react` components. You'll also wrap some with the `<WC>` helper class as needed to handle events appropriately. Open your `src/components/App.jsx` file and replace the current `<Theme>` block in the UI section with the following block:
 
     ```html
     <Theme theme="express" scale="medium" color="light">
@@ -238,9 +238,9 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
     Note the use of the `<WC>..</WC>` component created in the previous step to wrap the `swc-react` components to ensure the events are are properly fired.
 
-### Add UI code wiring and canvas drawing logic
+### Wire UI code and add canvas drawing logic
 
-1. If you tried to run your add-on at this point, you would get a blank UI, and a check of the devtools console would reveal errors, since the UI components added above call functions that don't exist yet. So next you will add the logic to enable the UI components to work in your `src/components/App.jsx`. (In a typical project you would probably have more of a separation of concerns with your code rather that everything in the `App.jsx`, but for the purposes of this lesson, it will suffice).
+If you tried to run your add-on at this point, you would get a blank UI, and a check of the devtools console would reveal errors, since the UI components added above call functions that don't exist yet. So next you will add the logic to enable the UI components to work in your `src/components/App.jsx`. (In a typical project you would probably have more of a separation of concerns with your code rather that everything in the `App.jsx`, but for the purposes of this lesson, it will suffice).
 
 Replace the current logic for the original button component in the top of the `App` class before the `return (...)` with the code below. You can also reference the [`App.jsx` file of the final project](https://github.com/hollyschinsky/bingo-card-generator-react-js/blob/master/src/components/App.jsx) for reference if you have any trouble:
 
@@ -442,39 +442,39 @@ Replace the current logic for the original button component in the top of the `A
 
 ### Style your UI
 
-1. If you run your add-on project now with `npm run build; npm run start` (or if it was already running and auto-reloaded), you should see something like the following:
+If you run your add-on project now with `npm run build; npm run start` (or if it was already running and auto-reloaded), you should see something like the following:
 
-    ![Basic react add-on screenshot](../images/lesson2-prestyle.png)
+![Basic react add-on screenshot](../images/lesson2-prestyle.png)
 
-    Similar to lesson 1, you'll see that the layout of the UI is not up to par, similar to what you saw in the first lesson. In this step you'll add the styling to present the UI as you did in lesson 1. 
+Similar to lesson 1, you'll see that the layout of the UI is not up to par, similar to what you saw in the first lesson. In this step you'll add the styling to present the UI as you did in lesson 1. 
 
-    Open the `/src/components/App.css` file and replace the current contains with the followingcustom type, class and id selectors for your UI, then check to see the updates reflected in your add-on before moving to the final part of the tutorial.
+Open the `/src/components/App.css` file and replace the current contains with the followingcustom type, class and id selectors for your UI, then check to see the updates reflected in your add-on before moving to the final part of the tutorial.
 
-    ```css
-    sp-theme {
-        display: grid;
-    }
+```css
+sp-theme {
+    display: grid;
+}
 
-    h2 {
-        font-weight: var(--spectrum-global-font-weight-black);
-    }
+h2 {
+    font-weight: var(--spectrum-global-font-weight-black);
+}
 
-    sp-swatch {
-        width: var(--spectrum-swatch-size-medium);                
-    }
+sp-swatch {
+    width: var(--spectrum-swatch-size-medium);                
+}
 
-    sp-button {
-        flex: 1;
-        max-width: calc(
-            (100% - var(--spectrum-global-dimension-static-size-250)) / 2
-        );
-    }
+sp-button {
+    flex: 1;
+    max-width: calc(
+        (100% - var(--spectrum-global-dimension-static-size-250)) / 2
+    );
+}
 
-    sp-textfield,
-    sp-picker {
-        width: var(--spectrum-global-dimension-static-size-1700);
-        display: flex;
-    }
+sp-textfield,
+sp-picker {
+    width: var(--spectrum-global-dimension-static-size-1700);
+    display: flex;
+}
 
     sp-number-field {            
         width: 100%;

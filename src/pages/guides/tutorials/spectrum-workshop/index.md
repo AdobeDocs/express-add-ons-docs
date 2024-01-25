@@ -84,13 +84,13 @@ A quick way to try out [Spectrum Web Components](https://opensource.adobe.com/sp
 
 2. You can try out using any other Spectrum Web Components in a similar fashion. For instance, try adding the following avatar component, ensuring that it's included within the  opening `<sp-theme>` and closing `</sp-theme>` tags.
 
-```html
-<sp-avatar
-    size="100"
-    label="Demo User"
-    src="https://picsum.photos/500/500"
-></sp-avatar>
-```
+  ```html
+  <sp-avatar
+      size="100"
+      label="Demo User"
+      src="https://picsum.photos/500/500"
+  ></sp-avatar>
+  ```
 
 Before moving to lesson 1, where you will build an add-on that uses Spectrum Web Components in a basic JavaScript project, check out [this codepen](https://codepen.io/hollyschinsky/pen/bGZrdoy) which implements the UI for it, to help give you a glimpse of what you're building. You can change the layout in the codepen to represent how it might look running as an add-on in Express by using the layout icon button outlined below, and dragging the width of the frame to 320px:
 

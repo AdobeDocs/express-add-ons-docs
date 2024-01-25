@@ -32,7 +32,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
 ## Steps
 
-### Create and configure
+### Create and configure project
 
 1. Use the CLI to create a new add-on based on the basic `javascript` template:
 
@@ -184,7 +184,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     **IMPORTANT:** You will need to run `npm install` now to ensure all of the new dependencies are installed.
 
-### Theme setup
+### Setup theme
 
 1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme that will apply to all of the Spectrum Web Components in your UI. It also includes an Express theme that you'll want to use in your add-on project:
 
@@ -192,7 +192,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     **Note:** if you prefer to use `yarn`, you could alternatively use the command: `yarn add @spectrum-web-components/theme@0.39.4`.
 
-    Notice your new component is now included in the `package.json`. **TODO** is the installed version going to work or does it need to be manually fixed.
+    Notice your new component is now included in the `package.json`.
 
 1. Now, open your `src/index.js` and import the specific theme and typography classes below for the Express theme, color and scale you'll want to support in your add-on:
 
@@ -242,216 +242,225 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     You will keep this pattern in your Bingo Card Generator add-on as well.
 
-1. Next, you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command. 
+### Install Spectrum Web Components
 
-    ```bash
-    npm install @spectrum-web-components/button@0.39.4 @spectrum-web-components/button-group@0.39.4 @spectrum-web-components/field-label@0.39.4 @spectrum-web-components/menu@0.39.4 @spectrum-web-components/picker@0.39.4 @spectrum-web-components/slider@0.39.4 @spectrum-web-components/swatch@0.39.4 @spectrum-web-components/switch@0.39.4
-    ```
+Now you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command. 
 
-    **NOTE:** The above command specifies the 0.39.4 version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
+```bash
+npm install @spectrum-web-components/button@0.39.4 @spectrum-web-components/button-group@0.39.4 @spectrum-web-components/field-label@0.39.4 @spectrum-web-components/menu@0.39.4 @spectrum-web-components/picker@0.39.4 @spectrum-web-components/slider@0.39.4 @spectrum-web-components/swatch@0.39.4 @spectrum-web-components/switch@0.39.4
+```
 
-    Alternatively, you could also copy in the following block below to the `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
+**NOTE:** The above command specifies the 0.39.4 version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
 
-    ```json
-    "dependencies": {
-        "@spectrum-web-components/button": "0.39.4",
-        "@spectrum-web-components/button-group": "0.39.4",    
-        "@spectrum-web-components/field-label": "0.39.4",
-        "@spectrum-web-components/menu": "0.39.4",
-        "@spectrum-web-components/picker": "0.39.4",
-        "@spectrum-web-components/slider": "0.39.4",
-        "@spectrum-web-components/swatch": "0.39.4",
-        "@spectrum-web-components/switch": "0.39.4",            
-        "@spectrum-web-components/theme": "0.39.4"        
-    }
-    ```
+Alternatively, you could also copy in the following block below to the `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
+
+```json
+"dependencies": {
+    "@spectrum-web-components/button": "0.39.4",
+    "@spectrum-web-components/button-group": "0.39.4",    
+    "@spectrum-web-components/field-label": "0.39.4",
+    "@spectrum-web-components/menu": "0.39.4",
+    "@spectrum-web-components/picker": "0.39.4",
+    "@spectrum-web-components/slider": "0.39.4",
+    "@spectrum-web-components/swatch": "0.39.4",
+    "@spectrum-web-components/switch": "0.39.4",            
+    "@spectrum-web-components/theme": "0.39.4"        
+}
+```
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** You must ensure **the versions of all of your Spectrum Web Components installed are the same,** or you will see errors upon build or while running. You may want to just open your `package.json` file at this point to double check to ensure they all match, before moving on.
 
-1. Add the following list of imports for the new components into your `src/index.js` file with the following block:
+### Import Spectrum Web Components
 
-    ```js
-    import "@spectrum-web-components/button/sp-button.js";
-    import "@spectrum-web-components/button-group/sp-button-group.js";
-    import "@spectrum-web-components/field-label/sp-field-label.js";
-    import '@spectrum-web-components/menu/sp-menu.js';
-    import '@spectrum-web-components/menu/sp-menu-item.js';
-    import "@spectrum-web-components/number-field/sp-number-field.js";
-    import '@spectrum-web-components/picker/sp-picker.js';
-    import "@spectrum-web-components/slider/sp-slider.js";
-    import "@spectrum-web-components/swatch/sp-swatch.js";
-    import '@spectrum-web-components/switch/sp-switch.js';
-    ```
+Add the following list of imports for the new components into your `src/index.js` file with the following block:
 
-1. Next, open the `src/index.html` file and implement the code for the UI components used in the Bingo Card Generator, within the opening and closing `<sp-theme>` block you added previously. The final result should look like this:
+```js
+import "@spectrum-web-components/button/sp-button.js";
+import "@spectrum-web-components/button-group/sp-button-group.js";
+import "@spectrum-web-components/field-label/sp-field-label.js";
+import '@spectrum-web-components/menu/sp-menu.js';
+import '@spectrum-web-components/menu/sp-menu-item.js';
+import "@spectrum-web-components/number-field/sp-number-field.js";
+import '@spectrum-web-components/picker/sp-picker.js';
+import "@spectrum-web-components/slider/sp-slider.js";
+import "@spectrum-web-components/swatch/sp-swatch.js";
+import '@spectrum-web-components/switch/sp-switch.js';
+```
 
-    ```html
-    <sp-theme scale="medium" color="light" theme="express">                
-        <div class="row gap-20"> 
-            <div class="column">
-                <sp-field-label for="bgColorSwatch" size="m">Background color</sp-field-label>
-                <sp-swatch id="bgColorSwatch" class="color-well"></sp-swatch>
-                <input type="color" id="bgColorPicker" style="display: none;"/>                    
-            </div>
-            <div class="column">
-                <sp-field-label for="fgColorSwatch" size="m">Number color</sp-field-label>
-                <sp-swatch id="fgColorSwatch" class="color-well"></sp-swatch>
-                <input type="color" id="fgColorPicker" style="display: none;"/>                    
-            </div>                                                           
-            <div class="column">
-                <sp-field-label for="titleColorSwatch" size="m">Title color</sp-field-label>
-                <sp-swatch id="titleColorSwatch" class="color-well"></sp-swatch>
-                <input type="color" id="titleColorPicker" style="display: none;">                    
-            </div>                        
-        </div>  
-        <div class="row gap-20 margin-top-10">  
-            <div class="column">
-                <sp-field-label for="fontWeightPicker">Font Weight</sp-field-label>
-                <sp-picker id="fontWeightPicker" size="m" value="normal">
-                    <sp-menu-item value="normal">Normal</sp-menu-item>                        
-                    <sp-menu-item value="bold">Bold</sp-menu-item>                            
-                    <sp-menu-item value="lighter">Lighter</sp-menu-item>                
-                </sp-picker>
-            </div>     
-            <div class="column gap-20">
-                <sp-switch id="freeSpaceToggle" emphasized value="on" checked size="l">Free space</sp-switch>                               
-            </div>                                                        
-        </div>                   
-        <div class="row gap-20">                    
-            <sp-slider label="Gridlines width" id="gridlineSize" variant="filled" editable 
-                hide-stepper min="1" max="10" value="5"
-                format-options='{"style": "unit", "unit": "px"}' step="1">
-            </sp-slider>
-            <div class="column">
-                <sp-field-label for="gridlinesColorSwatch" size="m">Color</sp-field-label>
-                <sp-swatch id="gridlinesColorSwatch" class="color-well"></sp-swatch>
-                <input type="color" id="gridlinesColorPicker" style="display: none;">                                            
-            </div>
-        </div> 
-        <div class="margin-top-10">
-            <sp-button-group horizontal>
-                <sp-button id="generateBtn" disabled>Generate card</sp-button>
-                <sp-button id="addBtn" variant="secondary" disabled>Add to page</sp-button>
-            </sp-button-group>              
-        </div>                
-        <div class="margin-top-10">            
-            <canvas id="finalCard"/>            
-        </div>                            
-    </sp-theme>
-    ```
+### Build UI with Spectrum Web Components
+
+Next, open the `src/index.html` file and implement the code for the UI components used in the Bingo Card Generator, within the opening and closing `<sp-theme>` block you added previously. The final result should look like this:
+
+```html
+<sp-theme scale="medium" color="light" theme="express">                
+    <div class="row gap-20"> 
+        <div class="column">
+            <sp-field-label for="bgColorSwatch" size="m">Background color</sp-field-label>
+            <sp-swatch id="bgColorSwatch" class="color-well"></sp-swatch>
+            <input type="color" id="bgColorPicker" style="display: none;"/>                    
+        </div>
+        <div class="column">
+            <sp-field-label for="fgColorSwatch" size="m">Number color</sp-field-label>
+            <sp-swatch id="fgColorSwatch" class="color-well"></sp-swatch>
+            <input type="color" id="fgColorPicker" style="display: none;"/>                    
+        </div>                                                           
+        <div class="column">
+            <sp-field-label for="titleColorSwatch" size="m">Title color</sp-field-label>
+            <sp-swatch id="titleColorSwatch" class="color-well"></sp-swatch>
+            <input type="color" id="titleColorPicker" style="display: none;">                    
+        </div>                        
+    </div>  
+    <div class="row gap-20 margin-top-10">  
+        <div class="column">
+            <sp-field-label for="fontWeightPicker">Font Weight</sp-field-label>
+            <sp-picker id="fontWeightPicker" size="m" value="normal">
+                <sp-menu-item value="normal">Normal</sp-menu-item>                        
+                <sp-menu-item value="bold">Bold</sp-menu-item>                            
+                <sp-menu-item value="lighter">Lighter</sp-menu-item>                
+            </sp-picker>
+        </div>     
+        <div class="column gap-20">
+            <sp-switch id="freeSpaceToggle" emphasized value="on" checked size="l">Free space</sp-switch>                               
+        </div>                                                        
+    </div>                   
+    <div class="row gap-20">                    
+        <sp-slider label="Gridlines width" id="gridlineSize" variant="filled" editable 
+            hide-stepper min="1" max="10" value="5"
+            format-options='{"style": "unit", "unit": "px"}' step="1">
+        </sp-slider>
+        <div class="column">
+            <sp-field-label for="gridlinesColorSwatch" size="m">Color</sp-field-label>
+            <sp-swatch id="gridlinesColorSwatch" class="color-well"></sp-swatch>
+            <input type="color" id="gridlinesColorPicker" style="display: none;">                                            
+        </div>
+    </div> 
+    <div class="margin-top-10">
+        <sp-button-group horizontal>
+            <sp-button id="generateBtn" disabled>Generate card</sp-button>
+            <sp-button id="addBtn" variant="secondary" disabled>Add to page</sp-button>
+        </sp-button-group>              
+    </div>                
+    <div class="margin-top-10">            
+        <canvas id="finalCard"/>            
+    </div>                            
+</sp-theme>
+```
+
+Note the properties for each, and use the [Spectrum Web Component documentation](https://opensource.adobe.com/spectrum-web-components) to help cross-reference them for more context.
+
+Worth mentioning are the details around the use of the `<sp-swatch>` components, which are coupled with a hidden native `<input>` component to allow the user to pick their colors. Though SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider), there is not an actual picker, so this add-on implements it via an `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
     
-    Note the properties for each, and use the [Spectrum Web Component documentation](https://opensource.adobe.com/spectrum-web-components) to help cross-reference them for more context.
+The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On input (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` updates as the color is changed to them in sync. 
 
-    Worth mentioning are the details around the use of the `<sp-swatch>` components, which are coupled with a hidden native `<input>` component to allow the user to pick their colors. Though SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider), there is not an actual picker, so this add-on implements it via an `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
-     
-    The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On input (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` updates as the color is changed to them in sync. 
+Also, be sure to check out [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) as many of these components are included with specific guidelines, including:
 
-    Also, be sure to check out [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) as many of these components are included with specific guidelines, including:
+`<sp-number-field>` for the gridsize value
+`<sp-slider>` for the gridsize picker
+`<sp-swatch>` for the color pickers
+`<sp-button-group>` and `<sp-button>` for the CTA buttons.
 
-    `<sp-number-field>` for the gridsize value
-    `<sp-slider>` for the gridsize picker
-    `<sp-swatch>` for the color pickers
-    `<sp-button-group>` and `<sp-button>` for the CTA buttons.
+### Style your UI
 
+If you run your add-on project with the CLI at this point (`npm run build; npm run start`), you would notice that your UI layout is less than ideal, as shown below. 
 
-1. If you run your add-on project with the CLI at this point (`npm run build; npm run start`), you would notice that your UI layout is less than ideal, as shown below. 
+![lesson 1 prestyle screenshot](../images/lesson1-prestyle.png)
 
-    ![lesson 1 prestyle screenshot](../images/lesson1-prestyle.png)
+Even though the Spectrum Web Components themselves have styling applied, the layout of them does not. That's because the Spectrum Web Components library doesn't include any specific layout components. However, you can use Spectrum CSS variables to help you with that.
 
-    Even though the Spectrum Web Components themselves have styling applied, the layout of them does not. That's because the Spectrum Web Components library doesn't include any specific layout components. However, you can use Spectrum CSS variables to help you with that.
+In this step you will define some styles and selectors to improve the layout and general styling of your UI. You may have noticed there were already some classes set when you copied in the code block above, but since they don't actually apply yet, you'll eed to define them in this step.
 
-    In this step you will define some styles and selectors to improve the layout and general styling of your UI. You may have noticed there were already some classes set when you copied in the code block above, but since they don't actually apply yet, you'll eed to define them in this step.
+Locate the `<style>` block in your `src/index.html`, and add the following CSS selectors and classes: **TODO** fix with final.
 
-   Locate the `<style>` block in your `src/index.html`, and add the following CSS selectors and classes: **TODO** fix with final.
+```css
+sp-theme {
+    margin: 0 var(--spectrum-global-dimension-static-size-100);
+    display: grid;
+}
 
-    ```css
-    sp-theme {
-        margin: 0 var(--spectrum-global-dimension-static-size-100);
-        display: grid;
-    }
+h2 {
+    font-weight: var(--spectrum-global-font-weight-black);
+}
 
-    h2 {
-        font-weight: var(--spectrum-global-font-weight-black);
-    }
-    
-    sp-swatch {
-        width: var(--spectrum-swatch-size-medium);                
-    }
+sp-swatch {
+    width: var(--spectrum-swatch-size-medium);                
+}
 
-    sp-button {
-        flex: 1;
-        max-width: calc(
-            (100% - var(--spectrum-global-dimension-static-size-250)) / 2
-        );
-    }
+sp-button {
+    flex: 1;
+    max-width: calc(
+        (100% - var(--spectrum-global-dimension-static-size-250)) / 2
+    );
+}
 
-    sp-textfield,
-    sp-picker {
-        width: var(--spectrum-global-dimension-static-size-1700);
-        display: flex;
-    }
+sp-textfield,
+sp-picker {
+    width: var(--spectrum-global-dimension-static-size-1700);
+    display: flex;
+}
 
-    sp-number-field {            
-        width: 100%;
-    }
+sp-number-field {            
+    width: 100%;
+}
 
-    sp-button-group {
-        margin-top: var(--spectrum-global-dimension-static-size-300);
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    sp-slider {
-        width: 100%;                
-        --spectrum-slider-font-size: var(--spectrum-font-size-100);
-    } 
+sp-button-group {
+    margin-top: var(--spectrum-global-dimension-static-size-300);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-    sp-field-label {
-        font-size: var(--spectrum-global-dimension-font-size-100);        
-    }
+sp-slider {
+    width: 100%;                
+    --spectrum-slider-font-size: var(--spectrum-font-size-100);
+} 
 
-    .color-well {
-        cursor: pointer;
-        --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
-        --mod-swatch-border-color: var(--spectrum-transparent-black-500);
-    }
+sp-field-label {
+    font-size: var(--spectrum-global-dimension-font-size-100);        
+}
 
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        align-items: flex-end;
-    }
+.color-well {
+    cursor: pointer;
+    --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
+    --mod-swatch-border-color: var(--spectrum-transparent-black-500);
+}
 
-    .column {
-        display: flex;
-        flex-direction: column;        
-    }
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+}
 
-    .gap-20 {
-        gap: var(--spectrum-global-dimension-static-size-250); 
-    }
+.column {
+    display: flex;
+    flex-direction: column;        
+}
 
-    .margin-top-10 {
-        margin-top: var(--spectrum-global-dimension-static-size-125); 
-    }
+.gap-20 {
+    gap: var(--spectrum-global-dimension-static-size-250); 
+}
 
-    #finalCard {
-        width: 290px;       
-    } 
-    ```
+.margin-top-10 {
+    margin-top: var(--spectrum-global-dimension-static-size-125); 
+}
 
-    **TIP:** You can locate the custom global variables avaiable for use to adjust your UI as desired in the `/node_modules/@spectrum-web-components/styles/express/spectrum-core-global.css` of your project.
+#bingoCanvas {
+    width: 290px;       
+} 
+```
 
-1. If you kept your add-on running in Express, it should auto-reload now and you can view the updates. It should look something like this screenshot below:
+**TIP:** You can locate the custom global variables avaiable for use to adjust your UI as desired in the `/node_modules/@spectrum-web-components/styles/express/spectrum-core-global.css` of your project.
 
-    ![lesson 1 poststyle screenshot](../images/lesson1-poststyle.png)
+If you kept your add-on running in Express after the changes in the steps above, it should auto-reload now and you can view the updates. It should look something like this screenshot below:
 
-    Notice that many of the components aren't active yet, since there's currently no associated logic to set values or enable the buttons. First, continue adjusting the layout as needed, then, once you're happy with it, you can start implementing the logic to set some default values for the components and enable the generate button to allow the user to generate their customized bingo card. Open your `src/index.js` and copy in the following code snippet after your imports, replacing the `addOnUISdk.ready.then(() => {`  callback since it's included below.
+![lesson 1 poststyle screenshot](../images/lesson1-poststyle.png)
+
+### Wire UI code and add canvas drawing logic
+
+After completing the above, you will see that many of the components aren't active yet, since there's currently no associated logic applied to set values or enable the buttons. First, continue adjusting the layout as needed, then, once you're happy with it, you can start implementing the logic to set some default values for the components and enable the **Generate card** button to allow the user to generate their customized bingo card. Open your `src/index.js` and copy in the following code snippet after your imports, replacing the `addOnUISdk.ready.then(() => {`  callback since it's included below.
 
 ```js
 // Wait for the SDK to be ready
@@ -648,5 +657,7 @@ function generateBingoCard() {
 ```
 
 Once you've updated your code, your add-on should reload and you can generate a custom bingo card! Try playing with some settigns and see how they render in a new card, drag your card to the page or add it with the add button etc. If your add-on didn't pick up the changes for any reason, you can use the [add-on developer tools](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to do a refresh, or simply run `npm run build; npm run start` again. 
+
+![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 
 If you have any trouble or you're not seeing what you expect, see the [Troubleshooting section](./part3.md#troubleshootingfaq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
