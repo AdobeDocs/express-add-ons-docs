@@ -226,30 +226,35 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
 1. If you tried to run your add-on at this point, you would get a blank UI, and a check of the devtools console would reveal errors, since the UI components added above call functions that don't exist yet. So next you will add the logic to enable the UI components to work in your `src/components/App.jsx`. (In a typical project you would probably have more of a separation of concerns with your code rather that everything in the `App.jsx`, but for the purposes of this lesson, it will suffice).
 
+Replace the current logic for the original button component in the top of the `App` class with the following:
+
     ```js
-    const [bgColor, setBgColor] = useState("#E6E6E6");
-    const [bgColorSwatch, setBgColorSwatch] = useState("#E6E6E6");
-    const [fgColor, setFgColor] = useState("#3e3f3f");
-    const [fgColorSwatch, setFgColorSwatch] = useState("#3e3f3f");
-    const [titleColor, setTitleColor] = useState("#555BE7");
-    const [titleColorSwatch, setTitleColorSwatch] = useState("#555BE7");
+    // State variables to hold component values
+    const [bgColor, setBgColor] = useState("#f2f2f2");
+    const [bgColorSwatch, setBgColorSwatch] = useState("#f2f2f2");
+
+    const [fgColor, setFgColor] = useState("#5258e5");
+    const [fgColorSwatch, setFgColorSwatch] = useState("#5258e5");
+
+    const [titleColor, setTitleColor] = useState("#000000");
+    const [titleColorSwatch, setTitleColorSwatch] = useState("#000000");
+    
+    const [gridColor, setGridColor] = useState("#5258e5");
+    const [gridColorSwatch, setGridColorSwatch] = useState("#5258e5");
 
     const [fontWeightPicker, setFontWeightPicker] = useState("normal");
     const [freeSpaceToggle, setFreeSpaceToggle] = useState(false);
-
-    const [gridlineSize, setGridlineSize] = useState(5);
-    const [gridColor, setGridColor] = useState("#555BE7");
-    const [gridColorSwatch, setGridColorSwatch] = useState("#555BE7");
+    const [gridlineSize, setGridlineSize] = useState(5);    
     
-    // Reference to the hidden color picker input elements
+    // Refs to the UI elements for colors, add button and HTML canvas
     const fgColorInput = useRef(null);
     const bgColorInput = useRef(null);
     const gridColorInput = useRef(null);
     const titleColorInput = useRef(null);
-
     const addBtn = useRef(null);
     const finalCardCanvas = useRef(null);
     
+    // Function to generate the bingo card using an HTML canvas and drawing context 
     function generateBingoCard() {              
         const ctx = finalCardCanvas.current.getContext("2d");
 
@@ -265,7 +270,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
                         
         // Fill background boxes with selected bg color
         ctx.fillStyle = bgColor; 
-        for (let x = gridlineSize/2; x <= finalCardCanvas.current.width; x += cellWidth-gridlineSize) {            
+        for (let x = gridlineSize/2; x <= finalCardCanvas.current.width; x +=   cellWidth-gridlineSize) {            
             for (let y = gridlineSize/2; y <= finalCardCanvas.current.height; y += cellHeight-gridlineSize) {
                 ctx.fillRect(x, y, cellWidth-gridlineSize, cellHeight-gridlineSize);
             }
@@ -291,7 +296,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
             ctx.lineTo(finalCardCanvas.current.height, i * cellWidth-gridlineSize/2);                    
         }
                 
-        ctx.strokeStyle = gridColor; // Gridline color
+        ctx.strokeStyle = gridColor; // Gridlines color
         ctx.stroke();
                             
         // Draw bingo title
@@ -306,7 +311,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
             ctx.fillText(letter, charCnt * cellWidth + cellWidth / 2, cellHeight / 2 + 6);                
         }       
         
-        // Fill in the card with random numbers and free space if checked
+        // Fill in the card with random numbers and a free space if checked
         const freeSpace = [3, 2]; // Coordinates of the FREE space
         const numbers = [];
         const usedNumbers = new Set(); // Track used numbers
@@ -335,14 +340,14 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
             }
         }
                 
-        // Draw "FREE" on the FREE space if the toggle is on
+        // Draw "FREE" if the toggle is checked
         if (freeSpaceToggle.checked) {
             ctx.font = fontWeightPicker +' 20px adobe clean';     
             ctx.fillText("FREE", freeSpace[1] * cellWidth + cellWidth / 2 - 3, freeSpace[0] * cellHeight + cellHeight / 2 + 3);   
             ctx.drawImage(canvas, 0, 0);
         }    
             
-        // Enable drag and drop
+        // Enable drag and drop for the card
         addOnUISdk.app.enableDragToDocument(finalCardCanvas.current, {
             previewCallback: el => new URL(finalCardCanvas.current.toDataURL()),
             completionCallback: async el => {
@@ -351,68 +356,144 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
                 return [{blob}];
             }
         })
-            
-        // Enable add card button
-        addBtn.current.disabled = false;              
-
+        
+        // Add button click handler
         addBtn.current.onclick = async () => {      
             const r = await fetch(finalCardCanvas.current.toDataURL());
             const blob = await r.blob();    
             addOnUISdk.app.document.addImage(blob);  
         }
+
+        // Enable add card button
+        addBtn.current.disabled = false;                      
+    }
+    
+    // Trigger click on the native color picker input for each
+    function onBgColorClick(e) {
+        bgColorInput.current.click();
     }
 
+    function onFgColorClick(e) {        
+        fgColorInput.current.click();
+    }
+    
+    function onTitleColorClick(e) {        
+        titleColorInput.current.click();
+    }
+
+    function onGridColorClick(e) {        
+        gridColorInput.current.click();
+    }
+
+    // Update the state values with the color selected from the native color picker for each
     function onFgColorChange(e) {        
         setFgColorSwatch(e.target.value);
         setFgColor(e.target.value);        
-    }
-
-    function onFgColorClick(e) {
-        // Trigger the HTML color picker to open
-        fgColorInput.current.click();
-    }
+    }    
 
     function onBgColorChange(e) {        
         setBgColorSwatch(e.target.value);
         setBgColor(e.target.value);        
     }
-    
-    function onBgColorClick(e) {
-        // Trigger the HTML color picker to open
-        bgColorInput.current.click();
-    }
 
     function onTitleColorChange(e) {        
         setTitleColorSwatch(e.target.value);
         setTitleColor(e.target.value);        
-    }
-    
-    function onTitleColorClick(e) {
-        // Trigger the HTML color picker to open
-        titleColorInput.current.click();
-    }
+    }        
 
     function onGridColorChange(e) {        
         setGridColorSwatch(e.target.value);
         setGridColor(e.target.value);        
     }
-    
-    function onGridColorClick(e) {
-        // Trigger the HTML color picker to open
-        gridColorInput.current.click();
+    ```
+
+    **IMPORTANT!!!:**
+
+    Since you're using the React `useRef` to get references to some of the components, you'll need to add it to the import at the top of your `App.jsx`, along with the `useState` that's currently included (ie: this line `import React, { useState } from "react";`) needs to be:
+
+    `import React, { useState, useRef } from "react";`
+
+1. If you run your add-on project now with `npm run build; npm run start` (or if it was already running and auto-reloaded), you should see something like the following:
+
+    ![Basic react add-on screenshot](../images/lesson2-prestyle.png)
+
+    Similar to lesson 1, you'll see that the layout of the UI is not up to par, similar to what you saw in the first lesson. In this step you'll add the styling to present the UI as you did in lesson 1. 
+
+    Open the `/src/components/App.css` file and replace the current contains with the followingcustom type, class and id selectors for your UI, then check to see the updates reflected in your add-on before moving to the final part of the tutorial.
+
+    ```css
+    sp-theme {
+        display: grid;
+    }
+
+    h2 {
+        font-weight: var(--spectrum-global-font-weight-black);
+    }
+
+    sp-swatch {
+        width: var(--spectrum-swatch-size-medium);                
+    }
+
+    sp-button {
+        flex: 1;
+        max-width: calc(
+            (100% - var(--spectrum-global-dimension-static-size-250)) / 2
+        );
+    }
+
+    sp-textfield,
+    sp-picker {
+        width: var(--spectrum-global-dimension-static-size-1700);
+        display: flex;
+    }
+
+    sp-number-field {            
+        width: 100%;
+    }
+
+    sp-button-group {
+        margin-top: var(--spectrum-global-dimension-static-size-300);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    sp-slider {
+        width: 250px;
+        --spectrum-slider-font-size: var(--spectrum-font-size-100);    
+    } 
+
+    sp-field-label {
+    font-size: var(--spectrum-global-dimension-font-size-100);   
+    }
+
+    .color-well {
+        cursor: pointer;
+        --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
+        --mod-swatch-border-color: var(--spectrum-transparent-black-500);
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: flex-end;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;    
+    }
+
+    .gap-20 {
+        gap: var(--spectrum-global-dimension-static-size-250); 
+    }
+
+    .margin-top-10 {
+        margin-top: var(--spectrum-global-dimension-static-size-125); 
     }
     ```
 
-
-`npm run build; npm run start`
-
-1. If you run your add-on project now and view it in Express, you'll see that the layout of the UI is not up to par, similar to what you saw in the first lesson. In this step you'll add the styling to present the UI as you did in lesson 1. 
-
-    Open the `/src/components/App.css` file and start adding the following custom type, class and id selectors for your UI.    
-
-**TODO**
-
-1. Once your UI is styled to your liking, you'll be able to add the logic for it to actually generate the bingo card by adding code to your `/src/components/App.jsx` file.
-
-**TODO**
+<!-- TODO Replace  with final -->
 
