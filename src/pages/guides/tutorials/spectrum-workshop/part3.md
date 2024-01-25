@@ -2,11 +2,11 @@
 
 Useful information to use as a reference when you are developing your add-on UI's with Spectrum and how to troubleshoot issues you may see while trying.
 
-## Notes
+## Tips & Tricks
 
-- **Using icons**
+### Using icons
     
-    You can import and use an icon from the Spectrum icon libraries provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) (icons representing graphical metaphors - a document, trash can, cloud etc) packages and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) (icons that are parts of a component definition like an X or checkmark, expand icon etc). To use, first add to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
+You can import and use an icon from the Spectrum icon libraries provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) (icons representing graphical metaphors - a document, trash can, cloud etc) packages and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) (icons that are parts of a component definition like an X or checkmark, expand icon etc). To use, first add to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
 
     ```json
     "@spectrum-web-components/icons-ui": "0.39.4",
@@ -35,7 +35,7 @@ Useful information to use as a reference when you are developing your add-on UI'
     />
     ```
 
-    or as `svg` in the `sp-icon` component:
+    or as `svg` in the `<sp-icon>` component:
 
     ```html
     <sp-icon>
@@ -57,29 +57,36 @@ Useful information to use as a reference when you are developing your add-on UI'
 
     **Note:** using an iconset reference from one of the `icons-workflow` or `icons-ui` packages in the `name` on an `sp-icon` should no longer be used (ie: `<sp-icon name="ui:Arrow100"></sp-icon>`), as it's deprecated. Use the specific named import mentioned in the first bullet above instead.
 
-- Sizing
+### Spectrum sizing
 
-    In Spectrum, there are two sizing notions:
+In Spectrum, there are two sizing notions:
 
-    **Scale** - This is the overall size of all components on the page, it's either medium for desktop, or large for touch.
-    **T-shirt sizes** - This is the size of a specific component, basically a variant/modifier that resizes one instance of a component only. A component whose size is set with t-shirt sizing is still affected by scale.
+- **scale** - the overall size of all components on the page, it's either medium for desktop, or large for touch.
+- **t-shirt sizes** - the size of a specific component, set as a variant/modifier to that component (ie: `size="m"`). Note, a component whose size is set with t-shirt sizing is still affected by `scale`.
 
-- Fonts
+### Fonts
 
-    There are a set of Adobe Clean fonts automatically injected by the Add-on SDK for use in your add-ons. You can see which are available by checking the documentation, but you could also see them while running in add-on via the browser devtools like shown in the following:
+There are a set of Adobe Clean fonts automatically injected by the Add-on SDK for use in your add-ons. You can see which are available by checking the documentation, but you could also see them while running in add-on via the browser devtools like shown in the following:
 
   ![Injected fonts screenshot](../images/fonts.png)
 
-- **Styling for layout and typography**
+### Debugging tips:
 
-    Use Spectrum CSS variables for padding, gaps between controls, etc. Also, since SWC has no components for typography, it can also be used to customize typography. Note: by default, typography components do not include outer margins, but adding the `.spectrum-Typography` class to your container will provide margins to the typography components within it.
+- Use the devtools to inspect the HTML, and do a find on `add-on-iframe-slot` element to find the add-on code more quickly.
+- From the devtools, click into the stylesheets to see what variables are available for use more quickly along with their values.
+- Dig into the `node_modules/@spectrum-web-components` folder and view the component details to help better understand why an issue might be happening.
+- Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or the Storybook to locate the supported events details.
 
-    [Colors](https://spectrum.adobe.com/page/color-fundamentals/): provided as part of the theme imports. The color value’s contrast with the background increases as the number increases, so colors progressively get darker in a light theme and lighter in a dark theme (so a purple 600 var would be lighter than a purple 900 in a light theme but darker in a dark theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) here in the reference for more details.
+### Styling for layout and typography
+
+Use Spectrum CSS variables for padding, gaps between controls, etc. Also, since SWC has no components for typography, it can also be used to customize typography. Note: by default, typography components do not include outer margins, but adding the `.spectrum-Typography` class to your container will provide margins to the typography components within it.
+
+- [Color variables](https://spectrum.adobe.com/page/color-fundamentals/): provided as part of the theme imports. The color value’s contrast with the background increases as the number increases, so colors progressively get darker in a light theme and lighter in a dark theme (`--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
     
     **TIP:** Use theme-specific color variables (defined in `theme-light.js` for instace) for most uses of color, like when the color will be applied to text, icons, or the borders of a component. Use static color variables from the overall `theme.js` when the color is going to be fixed and not dependent on theme. The naming for the relative color vs the static color variables are `--spectrum-global-color-purple-600` and
     `--spectrum-global-color-static-purple-600`, respectively.
     
-    [Typography](https://opensource.adobe.com/spectrum-css/typography.html) classes:
+- [Typography](https://opensource.adobe.com/spectrum-css/typography.html) classes:
 
     ```html
     import "@spectrum-web-components/styles/typography.css";
@@ -89,11 +96,9 @@ Useful information to use as a reference when you are developing your add-on UI'
     </h3>
     ```          
 
-    **TODO**
-
-    Custom Properties API 
+### Custom modifier variables
         
-    - Components can be modified via their `--mod-*` prefixed custom properties. A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each, such as for button -> https://github.com/adobe/spectrum-css/blob/main/components/button/metadata/mods.md.
+Components have a set of variables defined to use for modifiers of classes specific to that component. They are prefixed with `--mod-*`, and you used them in the lessons for modifying the Swatch component in the `.color-well` class for reference. A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each, such as [here for swatch](https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md), [here for button](https://github.com/adobe/spectrum-css/blob/main/components/button/metadata/mods.md) etc.
 
     Example:
 
@@ -102,24 +107,21 @@ Useful information to use as a reference when you are developing your add-on UI'
         `--mod-swatch-border-color: var(--spectrum-transparent-black-500);`
     ```     
 
-    Component level styles
+## Troubleshooting
+
+### Known issues
 
 - Picker flicker issue
 
     Currently there's a known issue with the swc-react Picker component in versions `0.37.0-0.40.0` where you will see the UI flicker when using it.
 
-- Component versions
+- Spectrum Web Component versions
 
-    You must use matching component versions for all Spectrum Web Components (or swc-react components) in your `package.json` or you will receive errors and things won't work right.
+    You must use matching component versions for all Spectrum Web Components (or swc-react components) in your `package.json` or you will receive errors that are often not clear to determine the cause, so save yourself time and double check this if you're having issues running your add-on.
 
-- Debugging tips:
+    This is mentioned in this tutorial a couple of times, but there is a known issue seen when using `@spectrum-web-components` (or `@swc-react`) packages with version `0.40.3`, but in general, at the moment `0.39.4` is a stable version that should work if you suspect a component version issue.
 
-    - Use the devtools to inspect the HTML, and do a find on `add-on-iframe-slot` element to find the add-on code more quickly.
-    - From the devtools, click into the stylesheets to see what variables are available for use more quickly along with their values.
-    - Dig into the `node_modules/@spectrum-web-components` folder and view the component details to help better understand why an issue might be happening.
-    - Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or the Storybook to locate the supported events details.
-
-### Troubleshooting/FAQ
+### Troubleshooting FAQ
 
 This section is provided to help troubleshoot any errors you may encounter while following this tutorial.
 

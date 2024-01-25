@@ -445,6 +445,8 @@ There are a few open source Spectrum libraries available, but we specifically re
     } 
     ```
 
+    **TIP:** You can locate the custom global variables avaiable for use to adjust your UI as desired in the `/node_modules/@spectrum-web-components/styles/express/spectrum-core-global.css` of your project.
+
 1. If you kept your add-on running in Express, it should auto-reload now and you can view the updates. It should look something like this screenshot below:
 
     ![lesson 1 poststyle screenshot](../images/lesson1-poststyle.png)
