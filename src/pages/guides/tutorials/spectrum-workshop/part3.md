@@ -6,63 +6,63 @@ Useful information to use as a reference when you are developing your add-on UI'
 
 ### Using icons
     
-You can import and use an icon from the Spectrum icon libraries provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) (icons representing graphical metaphors - a document, trash can, cloud etc) packages and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) (icons that are parts of a component definition like an X or checkmark, expand icon etc). To use, first add to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
+You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) (icons representing graphical metaphors - a document, trash can, cloud etc) packages and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) (icons that are parts of a component definition like an X or checkmark, expand icon etc). To use, first add to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
 
-    ```json
-    "@spectrum-web-components/icons-ui": "0.39.4",
-    "@spectrum-web-components/icons-workflow": "0.39.4",
-    ```
+```json
+"@spectrum-web-components/icons-ui": "0.39.4",
+"@spectrum-web-components/icons-workflow": "0.39.4",
+```
 
-    ```js
-    import "@spectrum-web-components/icons-workflow/icons/sp-icon-play-circle.js;"
-    import '@spectrum-web-components/icons-ui/icons/sp-icon-arrow75.js';
+```js
+import "@spectrum-web-components/icons-workflow/icons/sp-icon-play-circle.js;"
+import '@spectrum-web-components/icons-ui/icons/sp-icon-arrow75.js';
 
-    <sp-icon-play-circle size="s"></sp-icon-play-circle>
-    <sp-icon-arrow75 size="m"></sp-icon-arrow75>    
-    ```    
+<sp-icon-play-circle size="s"></sp-icon-play-circle>
+<sp-icon-arrow75 size="m"></sp-icon-arrow75>    
+```    
 
-    **NOTE:** Icons go by t-shirt sizing, with a default of `size="m"` for medium.
+**NOTE:** Icons go by t-shirt sizing, with a default of `size="m"` for medium.
 
-    You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) and specify an image directly via the `src` attribute, either with the image reference or a data URL. Both are shown below for example:
+You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) and specify an image directly via the `src` attribute, either with the image reference or a data URL. Both are shown below for example:
 
-    ```html
-    <sp-icon src="icon-144x144.png"/>
+```html
+<sp-icon src="icon-144x144.png"/>
 
-    <sp-icon
-        size="l"
-        label="Previous"
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yOTU3Ljk5NSAtNTUzMC4wMzIgNiAxMCI+PGRlZnM+PHN0eWxlPi5he2ZpbGw6bm9uZTtzdHJva2U6IzE0NzNlNjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjJweDt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yNTEuMywzMzNsNC00LTQtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI3MDEuNjk1IC01MTk2LjAzMikgcm90YXRlKDE4MCkiLz48L3N2Zz4="
-    />
-    ```
+<sp-icon
+    size="l"
+    label="Previous"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yOTU3Ljk5NSAtNTUzMC4wMzIgNiAxMCI+PGRlZnM+PHN0eWxlPi5he2ZpbGw6bm9uZTtzdHJva2U6IzE0NzNlNjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjJweDt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yNTEuMywzMzNsNC00LTQtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI3MDEuNjk1IC01MTk2LjAzMikgcm90YXRlKDE4MCkiLz48L3N2Zz4="
+/>
+```
 
-    or as `svg` in the `<sp-icon>` component:
+or as `svg` in the `<sp-icon>` component:
 
-    ```html
-    <sp-icon>
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 22 22"
-            role="img"
-            fill="currentColor"
-            height="18"
-            width="18"
-            aria-hidden="true"
-        >
-            <path
-                d="M19.75,10.04h-15l5.97-5.97a.483.483,0,0,0,0-.7l-.35-.36a.513.513,0,0,0-.71,0L2.24,10.44a.513.513,0,0,0,0,.71l7.39,7.84a.513.513,0,0,0,.71,0l.35-.35a.513.513,0,0,0,0-.71L4.76,11.5H19.75a.25.25,0,0,0,.25-.25v-.96A.25.25,0,0,0,19.75,10.04Z"
-            ></path>
-        </svg>
-    </sp-icon>                    
-    ```
+```html
+<sp-icon>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 22 22"
+        role="img"
+        fill="currentColor"
+        height="18"
+        width="18"
+        aria-hidden="true"
+    >
+        <path
+            d="M19.75,10.04h-15l5.97-5.97a.483.483,0,0,0,0-.7l-.35-.36a.513.513,0,0,0-.71,0L2.24,10.44a.513.513,0,0,0,0,.71l7.39,7.84a.513.513,0,0,0,.71,0l.35-.35a.513.513,0,0,0,0-.71L4.76,11.5H19.75a.25.25,0,0,0,.25-.25v-.96A.25.25,0,0,0,19.75,10.04Z"
+        ></path>
+    </svg>
+</sp-icon>                    
+```
 
-    **Note:** using an iconset reference from one of the `icons-workflow` or `icons-ui` packages in the `name` on an `sp-icon` should no longer be used (ie: `<sp-icon name="ui:Arrow100"></sp-icon>`), as it's deprecated. Use the specific named import mentioned in the first bullet above instead.
+**Note:** using an iconset reference from one of the `icons-workflow` or `icons-ui` packages in the `name` on an `sp-icon` should no longer be used (ie: `<sp-icon name="ui:Arrow100"></sp-icon>`), as it's deprecated. Use the specific named import mentioned in the first bullet above instead.
 
 ### Spectrum sizing
 
 In Spectrum, there are two sizing notions:
 
-- **scale** - the overall size of all components on the page, it's either medium for desktop, or large for touch.
-- **t-shirt sizes** - the size of a specific component, set as a variant/modifier to that component (ie: `size="m"`). Note, a component whose size is set with t-shirt sizing is still affected by `scale`.
+- [**scale**](https://spectrum.adobe.com/page/platform-scale/) - the overall size of all components on the page, it's either medium for desktop, or large for touch.
+- [**t-shirt sizes**](https://spectrum.adobe.com/page/design-tokens/#Size-tokens) - the size of a specific component, set as a variant/modifier to that component (ie: `size="m"`). Note, a component whose size is set with t-shirt sizing is still affected by `scale`.
 
 ### Fonts
 
@@ -96,7 +96,11 @@ Use Spectrum CSS variables for padding, gaps between controls, etc. Also, since 
     </h3>
     ```          
 
-### Custom modifier variables
+- [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens)
+
+    The quickest way to see the global variable's available for use in adjusting your layouts, is to check out the actual CSS definitions located in the `@spectrum-web-components/styles/express/` folder of the `node_modules` package installed to your add-on. For instance, the core global variables are located at `/node_modules/@spectrum-web-components/styles/express/spectrum-core-global.css`. You will see specific theme CSS there as well that you can check out.
+
+### Component modifier variables
         
 Components have a set of variables defined to use for modifiers of classes specific to that component. They are prefixed with `--mod-*`, and you used them in the lessons for modifying the Swatch component in the `.color-well` class for reference. A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each, such as [here for swatch](https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md), [here for button](https://github.com/adobe/spectrum-css/blob/main/components/button/metadata/mods.md) etc.
 

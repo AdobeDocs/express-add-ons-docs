@@ -361,26 +361,36 @@ module.exports = {
           },
           {
             title: "Tutorials",
-            path: "guides/tutorials/index.md",
-          },
-          {
-            title: "Spectrum Workshop",
-            path: "guides/tutorials/spectrum-workshop/",
+            path: "guides/tutorials/",
             pages: [
               {
-                title: "Use Spectrum Web Components in a basic JavaScript add-on",
-                path: "guides/tutorials/spectrum-workshop/part1/",
+                title: "Document APIs",
+                path: "guides/tutorials/grids-addon",        
               },
               {
-                title: "Use Spectrum Web Components in a React-based add-on",
-                path: "guides/tutorials/spectrum-workshop/part2/",
+                title: "Communication APIs",
+                path: "guides/tutorials/stats-addon",        
               },
               {
-                title: "Tips, Tricks & Troubleshooting",
-                path: "guides/tutorials/spectrum-workshop/part3/",
+                title: "Using Adobe Spectrum",
+                path: "guides/tutorials/spectrum-workshop/",
+                pages: [
+                  {
+                    title: "Use Spectrum Web Components in a basic JavaScript add-on",
+                    path: "guides/tutorials/spectrum-workshop/part1/",
+                  },
+                  {
+                    title: "Use Spectrum Web Components in a React-based add-on",
+                    path: "guides/tutorials/spectrum-workshop/part2/",
+                  },
+                  {
+                    title: "Tips, Tricks & Troubleshooting",
+                    path: "guides/tutorials/spectrum-workshop/part3/",
+                  },
+                ],
               },
-            ],
-          },                             
+            ]
+          },                          
         ]},      
       {
         title: "Design",
