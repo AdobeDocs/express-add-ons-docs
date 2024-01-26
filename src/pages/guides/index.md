@@ -27,8 +27,9 @@ Adobe Express is the AI-first, all-in-one creativity app that makes it fast, eas
 
 <InlineAlert slots="text" />
 
-**Join Us: Office Hours for Adobe Express Developers** <br /><br />
-Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every other Wednesday at 9 AM PT. [Register for our next session here](https://adobe.ly/express-office-hours).
+**How likely are you to recommend developing add-ons for Adobe Express to a fellow developer?** <br /><br />
+(Not at all likely) [1](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%221%22%7D&Source=documentation) • [2️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%222%22%7D&Source=documentation) • [3️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%223%22%7D&Source=documentation) • [4️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%224%22%7D&Source=documentation) • [5️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%225%22%7D&Source=documentation) • [6️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%226%22%7D&Source=documentation) • [7️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%227%22%7D&Source=documentation) • [8️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%228%22%7D&Source=documentation) • [9️](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%229%22%7D&Source=documentation) • [10](https://survey.adobe.com/jfe/form/SV_0uIkwh3R5yvMhts?Q_PopulateResponse=%7B%22QID42%22:%2210%22%7D&Source=documentation) (Extremely likely)
+
 
 Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>
 
