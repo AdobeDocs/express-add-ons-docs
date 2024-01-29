@@ -69,11 +69,9 @@ It would be best not to use "Premium" to describe your upgrade options when list
 
 The word "Premium" should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage, and more.
 
-
 ### Exporting Premium content
 
 Adobe Express allows users who aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their documents, they'll be prompted to upgrade to a premium plan.
-
 
 Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgradeand inform the user how they can do so.
 
