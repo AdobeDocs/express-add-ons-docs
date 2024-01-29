@@ -2,11 +2,11 @@
 
 ## Considerations for Monetization
 
-Developers who submit to the marketplace are allowed to charge users for the use of their add-ons.
+Developers who submit to the marketplace can charge users for using their add-ons.
 
 We recommend that you consider whether you want to monetize your add-on at the outset, as it helps you plan your strategy more effectively.
 
-Remember to research the marketplace carefully before you start creating. This will help you learn whether there is a strong market for a paid add-on – and what other developers (if any) are charging for similar solutions.
+Remember to research the marketplace carefully before you start creating add-ons. This will help you learn whether there is a strong market for a paid add-on – and what other developers (if any) are charging for similar solutions.
 
 <!-- ## Payment Models
 
@@ -40,13 +40,13 @@ We’ve created these standards to ensure that monetized add-ons provide users w
 
 ### Transparency
 
-All add-on developers must be transparent about their pricing and monetization methods. This includes being honest about the price, and any recurring fees or additional costs.
+All add-on developers must be transparent about their pricing and monetization methods. This includes being honest about the price, recurring fees, or additional costs.
 
 Users must be able to:
 
-- Locate clear instructions on how to request a refund (please place a refund policy on your site).
+- Locate clear instructions on requesting refund (please place a refund policy on your site).
 - Find a way to cancel any recurring payments, including subscriptions.
-Manage their payments and update their payment method
+- Manage update their payment methods.
 - Clearly see how much an add-on will cost them, with no hidden fees or surprise charges.
 
 ### Support
@@ -55,36 +55,40 @@ You must offer a clear and simple support process for all publicly-listed add-on
 
 ### Compliance
 
-You must comply with all applicable laws and regulations. This includes regulations relating to payments, taxation, data privacy, and security.
+You must comply with all applicable laws and regulations. This includes payment regulayions, taxation, data privacy, and security.
 
 ### Third-party ads
 
-Your add-ons must not contain any third-party advertising, including any ads from Google Ads, Facebook Ads, or any other ad networks.
+Your add-ons must not contain third-party advertising, including any ads from Google Ads, Facebook Ads, or other ad networks.
 
-This applies to the advertising of products and services within the add-on description, and the use of banners in the add-on itself.
+This applies to advertising products and services within the add-on description and using banners in the add-on itself.
 
 ### Complying with Express Monetization rules
 
-When listing an Adobe Express add-on, you should not use the word “Premium” to describe your upgrade options.
+It would be best not to use "Premium" to describe your upgrade options when listing an Adobe Express add-on.
 
-The word “Premium” should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage and more.
+The word "Premium" should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage, and more.
+
 
 ### Exporting Premium content
 
-Adobe Express allows users that aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When the user downloads or shares their document, they'll be prompted to upgrade to a premium plan.
+Adobe Express allows users who aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their documents, they'll be prompted to upgrade to a premium plan.
 
-Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](../../develop/use_cases.md#premium-content) for more information on how to do this.
+
+Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgradeand inform the user how they can do so.
+
+See our [documentation](../../develop/use_cases.md#premium-content) for more information on how to do this.
 
 ### Recommended Practices for Monetization
 
-We recommend following these tips to make your add-on more user friendly, and to avoid potential confusion:
+We recommend following these tips to make your add-on more user friendly and to avoid potential confusion:
 
 #### Offer a choice
 
 We recommend giving users a choice of payment options when signing up or upgrading. This includes:
 
-- A choice of payment methods, such as credit cards, PayPal and other popular alternatives.
-- A choice of payment terms. When signing up for subscription or pay-as-you-go, try to provide short and long term payment options, such as monthly and annual terms.
+- A choice of payment methods, such as credit cards, PayPal, and other popular alternatives.
+- A choice of payment terms. When users sign up for a subscription or pay as they use, try to provide short and long-term payment options, such as monthly and annual terms.
 - Giving users the chance to try before they buy. Free trials and freemium options can improve sign-up numbers.
 
 <!-- - Differentiate between “free” and “trial”
@@ -93,15 +97,15 @@ We recommend giving users a choice of payment options when signing up or upgradi
 
 - “Trial” means that content is free for a limited time. A “free trial” means that the user will not be charged for content for a set period, at which point they will need to pay a fee to access it. -->
 
-- Avoid using “Pro”
+- Avoid using “Pro”.
 
-- Adobe Express caters to non-professional as well as professional users, so you should try to avoid using “pro” in your language.
+- Adobe Express caters to non-professional and professional users, so you should avoid using "Pro" in your language.
 
-- If “pro” refers to a pricing model, make this clear (for example, by saying “Pro Plan”).
+- If “Pro” refers to a pricing model, make this clear (for example, by saying “Pro Plan”).
 
 #### Consider user action
 
-Instead of using words such as “premium” or “gold” in your copy, you should try using words that make it clear what the user needs to do.
+Instead of using words such as “premium” or “gold” in your copy, you should try using words that clarify what the user needs to do.
 
 Words such as “upgrade” or “subscribe” are clearer and more user-friendly.
 
