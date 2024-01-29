@@ -96,9 +96,7 @@ We recommend giving users a choice of payment options when signing up or upgradi
 - “Trial” means that content is free for a limited time. A “free trial” means that the user will not be charged for content for a set period, at which point they will need to pay a fee to access it. -->
 
 - Avoid using “Pro”.
-
 - Adobe Express caters to non-professional and professional users, so you should avoid using "Pro" in your language.
-
 - If “Pro” refers to a pricing model, make this clear (for example, by saying “Pro Plan”).
 
 #### Consider user action
