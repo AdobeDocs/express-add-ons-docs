@@ -19,11 +19,11 @@ contributors:
 
 # Building UIs for your add-ons using Adobe's Spectrum Design System
 
-This workshop will guide you in building great UI's for your add-ons using Adobe Spectrum.
+This tutorial will guide you on how to get started building great UI's for your add-ons using [Adobe Spectrum](https://spectrum.adobe.com/).
 
 ## Introduction
 
-In this workshop, you will learn how to build two fully functioning Adobe Express add-ons from scratch that use a flavor of Adobe Spectrum for building the user interface. The concept for the add-on you will be building is a bingo card generator that allows a user to generate a customized bingo card with random numbers and an optional free space.
+In this tutorial, you will learn how to build two fully functioning Adobe Express add-ons from scratch that use a flavor of Adobe Spectrum for building the user interface. The concept for the add-on you will be building is a bingo card generator that allows a user to generate a customized bingo card with their chosen colors, random numbers and an optional free space.
 
 The two different add-on approaches are:
 
@@ -35,7 +35,7 @@ An example of the result of what you will build is shown below:
 
 ![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 
-This resulting add-on allows users to select settings to customize a bingo card, including background, foreground and title color, gridline thickness and whether to include a FREE space. The card is generated with random numbers, and ensures no numbers are used twice. The user can drag the customized card to the page, or click the "Add to page" button to use it in their document for use (print etc).
+This resulting add-on allows users to select settings to customize a bingo card, including background, foreground and title color, gridline size and whether to include a FREE space. The card is generated with random numbers, and ensures no numbers are used twice. The user can drag the customized card to the page, or click the "Add to page" button to use it in their document for use (print etc).
 
 ### Changelog
 
@@ -52,13 +52,11 @@ This resulting add-on allows users to select settings to customize a bingo card,
 
 ### Sample Projects
 
-<!-- - Lesson 1 Starter Project: The [lesson 1 starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js) is provided for you to use as an alternative to creating one with the CLI in the steps below. It has some configuration done for you that is covered in the initial steps, though we will be walking through how to start from scratch with the CLI as well. If you use the starter projects, you can skip the **Create and configure** steps and start hands-on with the **Theme setup** step. -->
-
-- [Lesson 1 final project](https://github.com/hollyschinsky/bingo-card-generator-js) - Bingo Card Generator add-on using Spectrum Web Components and JS
+- [Lesson 1 project](https://github.com/hollyschinsky/bingo-card-generator-js) - Bingo Card Generator add-on using Spectrum Web Components and JavaScript
 
 <!-- - The [lesson 2 starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)  -->
 
-- [Lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-js-react) - - Bingo Card Generator add-on using swc-react and ReactJS
+- [Lesson 2 project](https://github.com/hollyschinsky/bingo-card-generator-react-js) - - Bingo Card Generator add-on using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) and ReactJS
 
 <!-- **TODO** above -->
 
@@ -66,15 +64,13 @@ This resulting add-on allows users to select settings to customize a bingo card,
 
 <ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[Configuring your add-on to use Spectrum Web Components](#)
+[Configuring your add-on to use Spectrum Web Components](part1.md#create-and-configure-project)
 
-[Using swc-react (React Spectrum Web Components wrappers)](#)
+[Using swc-react (React Spectrum Web Components wrappers)](part2.md#import-swc-react-components)
 
-[Using Spectrum variables to customize the layout of your UI](#)
+[Using Spectrum variables to customize the layout of your UI](part2.md#style-your-ui)
 
-[Tips and Debugging](#)
-
-<!-- TODO - Fix the above -->
+[Tips and Debugging](part3.md#tips-tricks--troubleshooting
 
 ## Quickstart: Try Spectrum Web Components
 

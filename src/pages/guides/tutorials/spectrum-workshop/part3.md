@@ -72,7 +72,7 @@ There are a set of Adobe Clean fonts automatically injected by the Add-on SDK fo
 
 ### Debugging tips:
 
-- Use the devtools to inspect the HTML, and do a find on `add-on-iframe-slot` element to find the add-on code more quickly.
+- Use the devtools to inspect the HTML, and search for the `add-on-iframe-slot` element to find the add-on specific code more quickly.
 - From the devtools, click into the stylesheets to see what variables are available for use more quickly along with their values.
 - Dig into the `node_modules/@spectrum-web-components` folder and view the component details to help better understand why an issue might be happening.
 - Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or the Storybook to locate the supported events details.
@@ -169,7 +169,7 @@ Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4)
 - [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
 - Example codepens
     - [Simple button using SWC](https://codepen.io/hollyschinsky/pen/xxBweyV)
-    - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/bGZrdoy)
+    - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/wvOyrLm)
     - [Spectrum CSS](https://codepen.io/lazd/pen/Exevvey)
 - [Storybook reference](https://opensource.adobe.com/spectrum-web-components/storybook/)
 - [Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)

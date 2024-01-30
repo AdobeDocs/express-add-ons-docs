@@ -38,71 +38,75 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     `npx @adobe/create-ccweb-add-on bingo-card-generator --template javascript`
 
-    You could use the CDN URL's once again to get started quickly, but since you'll want to ensure your add-on projects are performant, you will learn how to configure your local add-on project to use the specific Spectrum Web Components you'll need, instead.
+<InlineAlert slots="text" variant="warning"/>
 
-    Note, you could also clone the [the provided starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js) and just follow along the next couple of steps where the base project is configured since it's done for you in the starter.
+If you've used the CLI prior to this, you may need to run this command to ensure you have the most up-to-date version prior to creating your project: `npx clear-npx-cache`
 
-1. If you ran the project at this point (`npm run build; npm run start`), you will a basic button displayed in the UI with custom CSS set to style it for Express, as shown below:
+**NOTE:** You could use the CDN URL's once again to get started quickly, but since you'll want to ensure your add-on projects are performant, you will learn how to configure your local add-on project to use the specific Spectrum Web Components you'll need, instead.
 
-  ![Basic JS add-on screenshot](../images/basic-js.png)
+Note, you could also clone the [the provided project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js) and just follow along these steps.
 
-    However, since you're going to be implementing a whole new UI, go ahead and remove (or comment out) the existing lines related to the button:
+If you run the project at this point (`npm run build; npm run start`), you will see a basic button displayed in the UI with custom CSS set to style it for Express, as shown below:
 
-    Open the `src/index.html` file and **remove the following lines** within the `<body>` block:
+![Basic JS add-on screenshot](../images/basic-js.png)
 
-    ```html
-    <div class="container">
-        <button id="clickMe" disabled>Click me</button>
-    </div>
-    ```
+However, since you're going to be implementing a whole new UI, go ahead and remove the existing lines related to the button:
 
-    you should also **remove the associated CSS styles** from the `<style>` block since they are no longer needed:
+Open the `src/index.html` file and **remove the following lines** within the `<body>` block:
 
-    ```css
-    .container {
-        margin: 24px;
-        display: flex;
-        flex-direction: column;
-    }
+```html
+<div class="container">
+    <button id="clickMe" disabled>Click me</button>
+</div>
+```
 
-    button {
-        background-color: rgb(82, 88, 228);
-        border-color: rgb(82, 88, 228);
-        border-radius: 16px;
-        border-style: solid;
-        color: rgb(255, 255, 255);
-        font-family: sans-serif;
-        height: 32px;
-    }
+you should also **remove the associated CSS styles** from the `<style>` block since they are no longer needed:
 
-    button:disabled {
-        background-color: rgb(177, 177, 177);
-        border-color: rgb(177, 177, 177);
-    }
+```css
+.container {
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+}
 
-    button:not([disabled]):hover {
-        background-color: rgb(64, 70, 202);
-        cursor: pointer;
-    }
-    ```            
+button {
+    background-color: rgb(82, 88, 228);
+    border-color: rgb(82, 88, 228);
+    border-radius: 16px;
+    border-style: solid;
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    height: 32px;
+}
 
-    Then open the `src/index.js` and **remove the following lines**, (ensuring you keep the `addOnUISdk.ready.then(() => {...}` block intact).
+button:disabled {
+    background-color: rgb(177, 177, 177);
+    border-color: rgb(177, 177, 177);
+}
 
-    ```js
-        const clickMeButton = document.getElementById("clickMe");
-        clickMeButton.addEventListener("click", () => {
-            clickMeButton.innerHTML = "Clicked";
-        });
+button:not([disabled]):hover {
+    background-color: rgb(64, 70, 202);
+    cursor: pointer;
+}
+```            
 
-        // Enable the button only when:
-        // 1. `addOnUISdk` is ready, and
-        // 2. `click` event listener is registered.
-        clickMeButton.disabled = false;
-    ```
+Then open the `src/index.js` and **remove the following lines**, (ensuring you keep the `addOnUISdk.ready.then(() => {...}` block intact).
 
-1. Next, you're going to need to configure your new add-on project to use webpack, since it's required to bundle the Spectrum Web Components properly. This requires a `webpack.config.js` file and some additional updates to your `package.json`:
+```js
+    const clickMeButton = document.getElementById("clickMe");
+    clickMeButton.addEventListener("click", () => {
+        clickMeButton.innerHTML = "Clicked";
+    });
 
-    First, add a new file named `webpack.config.js` to the root of your add-on project and copy in the code from below (or, alternatively, copy it in from [the provided starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
+    // Enable the button only when:
+    // 1. `addOnUISdk` is ready, and
+    // 2. `click` event listener is registered.
+    clickMeButton.disabled = false;
+```
+
+Next, you're going to need to configure your new add-on project to use webpack, since it's required to bundle the Spectrum Web Components properly. This requires a `webpack.config.js` file and some additional updates to your `package.json`:
+
+1. First, add a new file named `webpack.config.js` to the root of your add-on project and copy in the code from below (or, alternatively, copy it in from [the provided starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
 
     ```js
     const path = require("path");
@@ -184,7 +188,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
     **IMPORTANT:** You will need to run `npm install` now to ensure all of the new dependencies are installed.
 
-### Setup theme
+### Setup the Express theme
 
 1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme that will apply to all of the Spectrum Web Components in your UI. It also includes an Express theme that you'll want to use in your add-on project:
 
