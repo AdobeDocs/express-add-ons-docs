@@ -11,7 +11,7 @@ You can import and use an [icon from the Spectrum icon libraries](https://spectr
 - **icons-workflow** - icons representing graphical metaphors - a document, trash can etc.
 - **icons-ui** - icons that are parts of a component definition like an X or a checkmark. 
 
-To use an icon, first add the library to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
+To use these as an icon, first add the associated library to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference:
 
 ```json
 "@spectrum-web-components/icons-ui": "0.39.4",

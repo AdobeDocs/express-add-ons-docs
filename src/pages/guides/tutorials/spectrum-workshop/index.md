@@ -35,7 +35,7 @@ An example of the result of what you will build is shown below:
 
 ![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 
-This resulting add-on allows users to select settings to customize a bingo card, including background, foreground and title color, gridline size and whether to include a FREE space. The card is generated with random numbers, and ensures no numbers are used twice. The user can drag the customized card to the page, or click the "Add to page" button to use it in their document for use (print etc).
+This add-on allows users to select settings to customize a bingo card, including background, foreground and title color, gridline size and whether to include a FREE space. The card is generated with random numbers, and ensures no numbers are used twice. The user can drag the customized card to the page, or click the "Add to page" button to use it in their document.
 
 ### Changelog
 
