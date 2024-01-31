@@ -92,21 +92,21 @@ You can then use this same pattern for all of the `@swc-react` wrapper component
  
 The imports needed for the bingo card generator add-on sample are listed below for you to copy into your `src/components/App.jsx` file, along with the existing `Button` and `Theme` imports:
 
-    ```js
-    import { ButtonGroup } from '@swc-react/button-group';
-    import { FieldLabel } from '@swc-react/field-label';
-    import { MenuItem } from '@swc-react/menu';
-    import { Picker } from '@swc-react/picker';
-    import { Slider } from '@swc-react/slider';
-    import { Swatch } from '@swc-react/swatch';
-    import { Switch } from "@swc-react/switch";
-    ```
+```js
+import { ButtonGroup } from '@swc-react/button-group';
+import { FieldLabel } from '@swc-react/field-label';
+import { MenuItem } from '@swc-react/menu';
+import { Picker } from '@swc-react/picker';
+import { Slider } from '@swc-react/slider';
+import { Swatch } from '@swc-react/swatch';
+import { Switch } from "@swc-react/switch";
+```
 
 ### Create event helper class
 
 Next you'll need to create a new class to handle a known issue where React events and web components don't always work well together.  See [this issue for more details](https://github.com/facebook/react/issues/19846). The issue is most often seen in the case of the React `onChange` event, and the events won't properly fire. An option to work around this is to create a helper class that will automatically register the native browser version of the events for the components to ensure they are properly fired. 
 
-Create a new helper class in a file named `WC.jsx` in your `src/components` folder, then copy in the block of code below and save it. 
+Create a new file in your `src/components` folder and name it `WC.jsx`, then copy in the block of code below and save it. 
   
 **Note:** this class is also included in the [lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-js-react) if you want to copy it in from there instead.
 
@@ -148,93 +148,93 @@ export class WC extends React.Component {
 
 Now, go back into your `src/components/App.jsx` and import your new `WC` helper class under the `React` and `App.css` imports, for instance:
 
-    ```js
-    import React, { useState, useRef } from "react";
-    import "./App.css";
-    import { WC } from "./WC.jsx";
-    ```
+```js
+import React, { useState, useRef } from "react";
+import "./App.css";
+import { WC } from "./WC.jsx";
+```
 
 ### Build UI with swc-react components
 
-At this point you are ready to start using the `swc-react` components. You'll also wrap some with the `<WC>` helper class as needed to handle events appropriately. Open your `src/components/App.jsx` file and replace the current `<Theme>` block in the UI section with the following block:
+At this point, you are ready to start using the `swc-react` components. You'll also wrap some with the `<WC>` helper class as needed to handle events appropriately. Open your `src/components/App.jsx` file and replace the current `<Theme>` block in the UI section with the following block:
 
-    ```html
-    <Theme theme="express" scale="medium" color="light">
-        <div className="container">
-            <div className="row gap-20">             
-                <div className="column">
-                    <FieldLabel size="l">Background color</FieldLabel>
-                    <WC onChange={onBgColorClick}>
-                        <Swatch className="color-well" color={bgColorSwatch}></Swatch>
-                    </WC>
-                    <input ref={bgColorInput} type="color" style={{display: "none"}}
-                        value={bgColor} onChange={onBgColorChange}
-                    />
-                </div>
-                <div className="column">
-                    <FieldLabel size="l">Number color</FieldLabel>
-                    <WC onChange={onFgColorClick}>
-                        <Swatch className="color-well" color={fgColorSwatch}></Swatch>
-                    </WC>
-                    <input ref={fgColorInput} type="color" style={{display: "none"}}
-                        value={fgColor} onChange={onFgColorChange}
-                    />                        
-                </div>                                                       
-                <div className="column">
-                    <FieldLabel size="l">Title color</FieldLabel>
-                    <WC onChange={onTitleColorClick}>
-                        <Swatch className="color-well" color={titleColorSwatch}></Swatch>
-                    </WC>
-                    <input ref={titleColorInput} type="color" style={{display: "none"}}
-                        value ={titleColor} onChange={onTitleColorChange}
-                    />                    
-                </div>                                
+```html
+<Theme theme="express" scale="medium" color="light">
+    <div className="container">
+        <div className="row gap-20">             
+            <div className="column">
+                <FieldLabel size="l">Background color</FieldLabel>
+                <WC onChange={onBgColorClick}>
+                    <Swatch className="color-well" color={bgColorSwatch}></Swatch>
+                </WC>
+                <input ref={bgColorInput} type="color" style={{display: "none"}}
+                    value={bgColor} onChange={onBgColorChange}
+                />
             </div>
-            <div className="row gap-20">
-                <div className="column margin-top-10">
-                    <FieldLabel size="l">Font Weight</FieldLabel>
-                    <Picker size="m" value={fontWeightPicker} 
-                        change={event => setFontWeightPicker(event.target.value)}>
-                        <MenuItem value="normal">Normal</MenuItem>                        
-                        <MenuItem value="bold">Bold</MenuItem>                            
-                        <MenuItem value="lighter">Lighter</MenuItem>                
-                    </Picker>
-                </div>  
-                <div className="column">
-                    <WC onChange={event => setFreeSpaceToggle(event.target.checked)}>
-                        <Switch emphasized checked={freeSpaceToggle} size="l">Free space</Switch>
-                    </WC>
-                </div>         
-            </div>
-            <div className="row gap-20">                                
-                <WC onChange={event => setGridlineSize(event.target.value)}>
-                    <Slider label="Gridlines size" variant="filled" editable value={gridlineSize}
-                        hide-stepper min="1" max="10"
-                        format-options='{"style": "unit", "unit": "px"}' step="1">
-                    </Slider>
-                </WC>                                 
-                <div className="column">
-                    <FieldLabel size="l">Color</FieldLabel>
-                    <WC onChange={onGridColorClick}>
-                        <Swatch className="color-well" color={gridColorSwatch}></Swatch>
-                    </WC>
-                    <input ref={gridColorInput} type="color" style={{display: "none"}}
-                        value={gridColor} onChange={onGridColorChange}
-                    />
-                </div>                    
-            </div>                 
-            <div>
-                <ButtonGroup horizontal>
-                    <Button onClick={generateBingoCard}>Generate card</Button>
-                    <Button onClick={handleAddToPage} disabled={!addToPageEnabled} variant="secondary">Add to page</Button>
-                </ButtonGroup>              
-            </div>                
-            <div className="margin-top-10">                        
-                <canvas ref={bingoCanvas}/>            
-            </div> 
-        </div>                                        
-    </Theme>
-    ```
+            <div className="column">
+                <FieldLabel size="l">Number color</FieldLabel>
+                <WC onChange={onFgColorClick}>
+                    <Swatch className="color-well" color={fgColorSwatch}></Swatch>
+                </WC>
+                <input ref={fgColorInput} type="color" style={{display: "none"}}
+                    value={fgColor} onChange={onFgColorChange}
+                />                        
+            </div>                                                       
+            <div className="column">
+                <FieldLabel size="l">Title color</FieldLabel>
+                <WC onChange={onTitleColorClick}>
+                    <Swatch className="color-well" color={titleColorSwatch}></Swatch>
+                </WC>
+                <input ref={titleColorInput} type="color" style={{display: "none"}}
+                    value ={titleColor} onChange={onTitleColorChange}
+                />                    
+            </div>                                
+        </div>
+        <div className="row gap-20">
+            <div className="column margin-top-10">
+                <FieldLabel size="l">Font Weight</FieldLabel>
+                <Picker size="m" value={fontWeightPicker} 
+                    change={event => setFontWeightPicker(event.target.value)}>
+                    <MenuItem value="normal">Normal</MenuItem>                        
+                    <MenuItem value="bold">Bold</MenuItem>                            
+                    <MenuItem value="lighter">Lighter</MenuItem>                
+                </Picker>
+            </div>  
+            <div className="column">
+                <WC onChange={event => setFreeSpaceToggle(event.target.checked)}>
+                    <Switch emphasized checked={freeSpaceToggle} size="l">Free space</Switch>
+                </WC>
+            </div>         
+        </div>
+        <div className="row gap-20">                                
+            <WC onChange={event => setGridlineSize(event.target.value)}>
+                <Slider label="Gridlines size" variant="filled" editable value={gridlineSize}
+                    hide-stepper min="1" max="10"
+                    format-options='{"style": "unit", "unit": "px"}' step="1">
+                </Slider>
+            </WC>                                 
+            <div className="column">
+                <FieldLabel size="l">Color</FieldLabel>
+                <WC onChange={onGridColorClick}>
+                    <Swatch className="color-well" color={gridColorSwatch}></Swatch>
+                </WC>
+                <input ref={gridColorInput} type="color" style={{display: "none"}}
+                    value={gridColor} onChange={onGridColorChange}
+                />
+            </div>                    
+        </div>                 
+        <div>
+            <ButtonGroup horizontal>
+                <Button onClick={generateBingoCard}>Generate card</Button>
+                <Button onClick={handleAddToPage} disabled={!addToPageEnabled} variant="secondary">Add to page</Button>
+            </ButtonGroup>              
+        </div>                
+        <div className="margin-top-10">                        
+            <canvas ref={bingoCanvas}/>            
+        </div> 
+    </div>                                        
+</Theme>
+```
 
     Note the use of the `<WC>..</WC>` component created in the previous step to wrap the `swc-react` components to ensure the events are are properly fired.
 

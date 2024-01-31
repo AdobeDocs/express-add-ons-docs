@@ -20,9 +20,14 @@ contributors:
 
 # Changelog
 
+## 2024-01-31
+
+Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/).
+
 ## 2024-01-09
 
 ### New Experimental APIs
+
 - [`startPremiumUpgradeIfFreeUser()`](../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) experimental API has been added to the [addOnUISdk.app](../references/addonsdk/addonsdk-app.md) object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.
 
 - [`isPremiumUser()`](../references/addonsdk/app-currentUser.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](../references/addonsdk/app-currentUser.md) object to determine if the current user is a premium or free user.
