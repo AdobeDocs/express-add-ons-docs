@@ -464,7 +464,7 @@ sp-field-label {
 
 **TIP:** You can locate the custom global variables avaiable for use to adjust your UI as desired in the `/node_modules/@spectrum-web-components/styles/express/spectrum-core-global.css` of your project.
 
-If you kept your add-on running in Express after the changes in the steps above, it should auto-reload now and you can view the updates. It should look something like this screenshot below:
+If you kept your add-on running in Express after the changes in the steps above, it should automatically refresh and you can view the updates. It should look something like this screenshot below:
 
 ![lesson 1 poststyle screenshot](../images/lesson1-poststyle.png)
 
