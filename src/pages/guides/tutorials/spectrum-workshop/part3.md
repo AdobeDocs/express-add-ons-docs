@@ -133,7 +133,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
     This is probably due to mismatched versions of the `@spectrum-web-components` (or `@swc-react`) packages being used in your `package.json`. Don't forget to run `npm install` after updating your `package.json` to match the versions. 
 
-    **Solution:** open your `package.json` file and set all of the versions to the same (ie: `0.39.4`) the one from the starter project.
+    **Solution:** open your `package.json` file and set all of the versions to the same (ie: `0.39.4`), as the one from the provided project.
 
 - When I try to build or start my add-on with the CLI, I see an error like: `ERROR in ./node_modules/@spectrum-web-components/button/src/Button.dev.js 145:6-78 Module not found: Error: Can't resolve '@spectrum-web-components/progress-circle/sp-progress-circle.js' in '/Users/hollyschinsky/spectrum-workshop-2023/workshop-projects/bingo-card-addon-react-start/node_modules/@spectrum-web-components/button/src' ... Field 'browser' doesn't contain a valid alias configuration resolve as module`
 
@@ -143,7 +143,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Did I include a `webpack.config.js` file in the root of my project? Is it configured properly?
 
-    **Solution:** replace your `package.json` file with the one from the starter project.
+    **Solution:** replace your `package.json` file with the one from the provided project.
 
 - Did I update the `scripts` object in the `package.json` to ensure the webpack parameter is used?
 

@@ -19,32 +19,32 @@ contributors:
 
 # Lesson 1: Use Spectrum Web Components in a basic JavaScript add-on
 
-Learn how to configure and use Spectrum Web Components in a basic JavaScript add-on.
+Configure and use Spectrum Web Components in a basic JavaScript add-on.
 
 ## Introduction
 There are a few open source Spectrum libraries available, but we specifically recommend using the [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components) library, as it offers a comprehensive set of UI components with built-in benefits for developers, including:
 
-- Major timesaver due to the built-in styling
 - A built-in Express theme
 - Accessibility is built-in
-- It's lightweight and performant
+- Lightweight and performant
+- Time savings due to the built-in styling
 - Compliant with industry standards
 
 ## Steps
 
-### Create and configure project
+### Create and configure your add-on
 
-1. Use the CLI to create a new add-on based on the basic `javascript` template:
+Use the CLI to create a new add-on based on the basic `javascript` template:
 
-    `npx @adobe/create-ccweb-add-on bingo-card-generator --template javascript`
+```js
+npx @adobe/create-ccweb-add-on bingo-card-generator --template javascript
+```
 
 <InlineAlert slots="text" variant="warning"/>
 
 If you've used the CLI prior to this, you may need to run this command to ensure you have the most up-to-date version prior to creating your project: `npx clear-npx-cache`
 
 **NOTE:** You could use the CDN URL's once again to get started quickly, but since you'll want to ensure your add-on projects are performant, you will learn how to configure your local add-on project to use the specific Spectrum Web Components you'll need, instead.
-
-Note, you could also clone the [the provided project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js) and just follow along these steps.
 
 If you run the project at this point (`npm run build; npm run start`), you will see a basic button displayed in the UI with custom CSS set to style it for Express, as shown below:
 
@@ -106,7 +106,7 @@ Then open the `src/index.js` and **remove the following lines**, (ensuring you k
 
 Next, you're going to need to configure your new add-on project to use webpack, since it's required to bundle the Spectrum Web Components properly. This requires a `webpack.config.js` file and some additional updates to your `package.json`:
 
-1. First, add a new file named `webpack.config.js` to the root of your add-on project and copy in the code from below (or, alternatively, copy it in from [the provided starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
+1. First, create a new file named `webpack.config.js` in the root of your add-on project and copy in the code block below (or, alternatively, copy it in from [the provided project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
 
     ```js
     const path = require("path");
@@ -160,7 +160,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     };
     ```
 
-    Now, update your `package.json` to configure it for webpack. This requires you to update the `scripts`(to ensure it's used with the CLI commands), and the `devDependencies` objects with the following snippets.
+    Now, update your `package.json` to configure it for webpack. This requires you to update the `scripts` block to ensure it's used with the CLI script commands:
 
     ```json
      "scripts": {
@@ -169,7 +169,11 @@ Next, you're going to need to configure your new add-on project to use webpack, 
         "start": "ccweb-add-on-scripts start --use webpack",
         "package": "ccweb-add-on-scripts package --use webpack"
     }
+    ```
 
+    and the `devDependencies` block with the following:
+
+    ```json
     "devDependencies": {
         "@adobe/ccweb-add-on-scripts": "^1.2.1",
         "@adobe/ccweb-add-on-sdk-types": "^1.2.1",
@@ -186,7 +190,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     }
     ```
 
-    **IMPORTANT:** You will need to run `npm install` now to ensure all of the new dependencies are installed.
+    **IMPORTANT:** You will need to run `npm install` to ensure all of the new dependencies are installed.
 
 ### Setup the Express theme
 
@@ -208,20 +212,20 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     import '@spectrum-web-components/theme/sp-theme.js';    
     ```
 
-    Optionally note these theme-related imports to keep in mind if you plan to include support for a future dark theme or when add-ons are supported on mobile:
+    Optionally, note these theme-related imports to keep in mind if you plan to include support for a future "dark" theme or "large" scale when add-ons are supported on mobile:
 
     ```js
     // import '@spectrum-web-components/theme/express/theme-dark.js'; /* to support a future dark theme */    
     // import '@spectrum-web-components/theme/express/scale-large.js'; /* future support for mobile for insance */
     ```
     
-    **Note:** The `typography.css` import is not required, but is useful to note for using Spectrum CSS vars to help style the typography components of your add-ons, and to provide margins. 
+    **Note:** The `typography.css` import is not required, but is useful to note for using Spectrum CSS variables to help style the typography components of your add-ons, and to provide margins.
 
-1. You can now add the `<sp-theme>` tag to your UI, but note that you won't actually see anything visually yet, since there are no components for it to be applied to. Open your `src/index.html` file, and add the following theme component into the `<body>` tags, configured with a `medium` scale, `light` color and `express` theme:
+1. You can now add the `<sp-theme>` tag to your UI, but note that **you won't actually see anything visually yet**, since there are no components for it to be applied to. Open your `src/index.html` file, and add the following theme component into the `<body>` tags, configured with a `medium` scale, `light` color and `express` theme:
 
     ```html
     <sp-theme scale="medium" color="light" theme="express">
-        /* UI content will go here */
+        <!-- UI content will go here -->
     </sp-theme>
     ```
 

@@ -56,7 +56,7 @@ This resulting add-on allows users to select settings to customize a bingo card,
 
 <!-- - The [lesson 2 starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)  -->
 
-- [Lesson 2 project](https://github.com/hollyschinsky/bingo-card-generator-react-js) - - Bingo Card Generator add-on using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) and ReactJS
+- [Lesson 2 project](https://github.com/hollyschinsky/bingo-card-generator-react-js) - Bingo Card Generator add-on using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) and ReactJS
 
 <!-- **TODO** above -->
 
@@ -70,13 +70,13 @@ This resulting add-on allows users to select settings to customize a bingo card,
 
 [Using Spectrum variables to customize the layout of your UI](part2.md#style-your-ui)
 
-[Tips and Debugging](part3.md#tips-tricks--troubleshooting
+[Tips, Tricks & Troubleshooting](part3.md#tips-tricks--troubleshooting)
 
 ## Quickstart: Try Spectrum Web Components
 
-A quick way to try out [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) without requiring any external tools, is to use a sandboxed environment like a codepen or code sandbox. See this simple [codepen](https://codepen.io/hollyschinsky/pen/xxBweyV), for example. It references the Spectrum Web Components libraries as bundles from a CDN for simplicity, and shows how to specifically use the Express theme with a button component for starters. 
+A quick way to try out [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) without requiring any external tools, is to use a sandboxed environment like a codepen or code sandbox. See this [simple codepen](https://codepen.io/hollyschinsky/pen/xxBweyV), for example. It references the Spectrum Web Components libraries as bundles from a CDN for simplicity, and shows how to specifically use the Express theme with a button component. 
 
-1. To get your feet wet, go ahead and try changing the `scale` value in the `<sp-theme>` tag from the codepen shared to a value of `"large"`, then back to `"medium"` to see the effect.
+1. To get your feet wet, go ahead and try changing the `scale` value in the `<sp-theme>` tag from the codepen to a value of `"large"` - then back to `"medium"` to see the effect.
 
 2. You can try out using any other Spectrum Web Components in a similar fashion. For instance, try adding the following avatar component, ensuring that it's included within the  opening `<sp-theme>` and closing `</sp-theme>` tags.
 
