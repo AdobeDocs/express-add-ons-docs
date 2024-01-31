@@ -37,12 +37,12 @@ There are a few open source Spectrum libraries available, but we specifically re
 Use the CLI to create a new add-on based on the basic `javascript` template:
 
 ```js
-npx @adobe/create-ccweb-add-on bingo-card-generator --template javascript
+npx @adobe/create-ccweb-add-on bingo-card-generator-js --template javascript
 ```
 
 <InlineAlert slots="text" variant="warning"/>
 
-If you've used the CLI prior to this, you may need to run this command to ensure you have the most up-to-date version prior to creating your project: `npx clear-npx-cache`
+If you've used the CLI prior to this, you may want to run this command to ensure you have the most up-to-date version before creating your project --> `npx clear-npx-cache`
 
 **NOTE:** You could use the CDN URL's once again to get started quickly, but since you'll want to ensure your add-on projects are performant, you will learn how to configure your local add-on project to use the specific Spectrum Web Components you'll need, instead.
 
@@ -90,7 +90,7 @@ button:not([disabled]):hover {
 }
 ```            
 
-Then open the `src/index.js` and **remove the following lines**, (ensuring you keep the `addOnUISdk.ready.then(() => {...}` block intact).
+Then, open the `src/index.js` and **remove the following lines**, (ensuring you keep the `addOnUISdk.ready.then(() => {...}` block intact).
 
 ```js
     const clickMeButton = document.getElementById("clickMe");
@@ -106,7 +106,7 @@ Then open the `src/index.js` and **remove the following lines**, (ensuring you k
 
 Next, you're going to need to configure your new add-on project to use webpack, since it's required to bundle the Spectrum Web Components properly. This requires a `webpack.config.js` file and some additional updates to your `package.json`:
 
-1. First, create a new file named `webpack.config.js` in the root of your add-on project and copy in the code block below (or, alternatively, copy it in from [the provided project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
+1. First, create a new file named `webpack.config.js` in **the root** of your add-on project, (outside the `src`), and copy in the code block below (or, alternatively, copy it in from [the provided project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
 
     ```js
     const path = require("path");
@@ -160,7 +160,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     };
     ```
 
-    Now, update your `package.json` to configure it for webpack. This requires you to update the `scripts` block to ensure it's used with the CLI script commands:
+    Now, update your `package.json` to configure it for webpack. This requires an update to the `scripts` block to ensure webpack is used with the CLI script commands:
 
     ```json
      "scripts": {
@@ -171,7 +171,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     }
     ```
 
-    and the `devDependencies` block with the following:
+    It will also require you to update your `devDependencies` block with the following:
 
     ```json
     "devDependencies": {
@@ -192,9 +192,9 @@ Next, you're going to need to configure your new add-on project to use webpack, 
 
     **IMPORTANT:** You will need to run `npm install` to ensure all of the new dependencies are installed.
 
-### Setup the Express theme
+### Set up the Express theme
 
-1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme that will apply to all of the Spectrum Web Components in your UI. It also includes an Express theme that you'll want to use in your add-on project:
+1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme for the Spectrum Web Components in your UI. 
 
     `npm install @spectrum-web-components/theme@0.39.4`
 
@@ -212,7 +212,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     import '@spectrum-web-components/theme/sp-theme.js';    
     ```
 
-    Optionally, note these theme-related imports to keep in mind if you plan to include support for a future "dark" theme or "large" scale when add-ons are supported on mobile:
+    Optionally, note these theme-related imports to consider if you plan to include support for a future "dark" theme or "large" scale when add-ons are supported on mobile:
 
     ```js
     // import '@spectrum-web-components/theme/express/theme-dark.js'; /* to support a future dark theme */    
@@ -237,9 +237,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     });
     ```
 
-    Another important thing to note, is the existence of the following block in the starter template `src/index.js` file, which can be used to ensure the Add-on UI SDK has been fully initialized and is ready for use before trying to implement your UI. 
-    
-    You may have noticed that the original button included in the UI was set to `disabled`, and is subsequently enabled in this block, as an example:
+    Another important thing to note, is the existence of the following block in the starter template `src/index.js` file, which can be used to ensure the Add-on UI SDK has been fully initialized and is ready for use before trying to implement your UI. You may have also noticed that the original button in the UI was set to `disabled`, and is subsequently enabled in this block:
 
     ```js
     addOnUISdk.ready.then(() => {        
@@ -260,7 +258,7 @@ Now you can start installing all of the Spectrum Web Components that will be use
 npm install @spectrum-web-components/button@0.39.4 @spectrum-web-components/button-group@0.39.4 @spectrum-web-components/field-label@0.39.4 @spectrum-web-components/menu@0.39.4 @spectrum-web-components/picker@0.39.4 @spectrum-web-components/slider@0.39.4 @spectrum-web-components/swatch@0.39.4 @spectrum-web-components/switch@0.39.4
 ```
 
-**NOTE:** The above command specifies the 0.39.4 version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
+**NOTE:** The above command specifies the `0.39.4` version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
 
 Alternatively, you could also copy in the following block below to the `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
 

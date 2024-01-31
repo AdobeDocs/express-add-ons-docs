@@ -476,53 +476,53 @@ sp-picker {
     display: flex;
 }
 
-    sp-number-field {            
-        width: 100%;
-    }
+sp-number-field {            
+    width: 100%;
+}
 
-    sp-button-group {
-        margin-top: var(--spectrum-global-dimension-static-size-300);
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
+sp-button-group {
+    margin-top: var(--spectrum-global-dimension-static-size-300);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-    sp-slider {
-        width: 250px;
-        --spectrum-slider-font-size: var(--spectrum-font-size-100);    
-    } 
+sp-slider {
+    width: 250px;
+    --spectrum-slider-font-size: var(--spectrum-font-size-100);    
+} 
 
-    sp-field-label {
+sp-field-label {
     font-size: var(--spectrum-global-dimension-font-size-100);   
-    }
+}
 
-    .color-well {
-        cursor: pointer;
-        --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
-        --mod-swatch-border-color: var(--spectrum-transparent-black-500);
-    }
+.color-well {
+    cursor: pointer;
+    --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
+    --mod-swatch-border-color: var(--spectrum-transparent-black-500);
+}
 
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        align-items: flex-end;
-    }
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+}
 
-    .column {
-        display: flex;
-        flex-direction: column;    
-    }
+.column {
+    display: flex;
+    flex-direction: column;    
+}
 
-    .gap-20 {
-        gap: var(--spectrum-global-dimension-static-size-250); 
-    }
+.gap-20 {
+    gap: var(--spectrum-global-dimension-static-size-250); 
+}
 
-    .margin-top-10 {
-        margin-top: var(--spectrum-global-dimension-static-size-125); 
-    }
-    ```
+.margin-top-10 {
+    margin-top: var(--spectrum-global-dimension-static-size-125); 
+}
+```
 
 
 <!-- TODO Replace  with final
