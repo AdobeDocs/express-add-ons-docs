@@ -384,7 +384,7 @@ module.exports = {
                     path: "guides/tutorials/spectrum-workshop/part2/",
                   },
                   {
-                    title: "Tips, Tricks & Troubleshooting",
+                    title: "Tips & Troubleshooting",
                     path: "guides/tutorials/spectrum-workshop/part3/",
                   },
                 ],
