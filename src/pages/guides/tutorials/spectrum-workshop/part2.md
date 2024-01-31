@@ -19,7 +19,7 @@ contributors:
 
 # Lesson 2: Use Spectrum Web Components in a React-based add-on
 
-Learn how to configure and use Spectrum Web Components in a basic JavaScript add-on.
+Learn how to configure and use Spectrum Web Components in a ReactJS add-on.
 
 ## Introduction
 
