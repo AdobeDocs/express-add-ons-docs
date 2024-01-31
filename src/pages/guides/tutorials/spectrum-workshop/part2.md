@@ -41,7 +41,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
     ![Basic react add-on screenshot](../images/react-starter.png)
 
-    Take a moment to get familiar with what's included in the starter project before moving on. Notice it's pre-configured for webpack, so you don't have to do those configuration steps you had to do in lesson 1 for the basic JavaScript project.
+    Take a moment to get familiar with what's included in the generated project before moving on. Notice it's pre-configured for webpack, so you don't have to do those configuration steps you had to do in lesson 1 for the basic JavaScript project.
 
 ### Install swc-react components
 

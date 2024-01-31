@@ -72,7 +72,7 @@ There are a set of Adobe Clean fonts automatically injected by the Add-on SDK fo
 
 ### Debugging tips:
 
-- Use the devtools to inspect the HTML, and do a find on `add-on-iframe-slot` element to find the add-on code more quickly.
+- Use the devtools to inspect the HTML, and search for the `add-on-iframe-slot` element to find the add-on specific code more quickly.
 - From the devtools, click into the stylesheets to see what variables are available for use more quickly along with their values.
 - Dig into the `node_modules/@spectrum-web-components` folder and view the component details to help better understand why an issue might be happening.
 - Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or the Storybook to locate the supported events details.
@@ -133,7 +133,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
     This is probably due to mismatched versions of the `@spectrum-web-components` (or `@swc-react`) packages being used in your `package.json`. Don't forget to run `npm install` after updating your `package.json` to match the versions. 
 
-    **Solution:** open your `package.json` file and set all of the versions to the same (ie: `0.39.4`) the one from the starter project.
+    **Solution:** open your `package.json` file and set all of the versions to the same (ie: `0.39.4`), as the one from the provided project.
 
 - When I try to build or start my add-on with the CLI, I see an error like: `ERROR in ./node_modules/@spectrum-web-components/button/src/Button.dev.js 145:6-78 Module not found: Error: Can't resolve '@spectrum-web-components/progress-circle/sp-progress-circle.js' in '/Users/hollyschinsky/spectrum-workshop-2023/workshop-projects/bingo-card-addon-react-start/node_modules/@spectrum-web-components/button/src' ... Field 'browser' doesn't contain a valid alias configuration resolve as module`
 
@@ -143,7 +143,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Did I include a `webpack.config.js` file in the root of my project? Is it configured properly?
 
-    **Solution:** replace your `package.json` file with the one from the starter project.
+    **Solution:** replace your `package.json` file with the one from the provided project.
 
 - Did I update the `scripts` object in the `package.json` to ensure the webpack parameter is used?
 
@@ -169,7 +169,7 @@ Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4)
 - [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
 - Example codepens
     - [Simple button using SWC](https://codepen.io/hollyschinsky/pen/xxBweyV)
-    - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/bGZrdoy)
+    - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/wvOyrLm)
     - [Spectrum CSS](https://codepen.io/lazd/pen/Exevvey)
 - [Storybook reference](https://opensource.adobe.com/spectrum-web-components/storybook/)
 - [Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)
