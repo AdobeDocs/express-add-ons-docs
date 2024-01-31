@@ -160,7 +160,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     };
     ```
 
-    Now, update your `package.json` to configure it for webpack. This requires an update to the `scripts` block to ensure webpack is used with the CLI script commands:
+2. Now, update your `package.json` to configure it to use webpack and add the required dependencies. This requires an update to the `scripts` block to add the `--use webpack` parameter, as shown below:
 
     ```json
      "scripts": {
@@ -299,7 +299,7 @@ import '@spectrum-web-components/switch/sp-switch.js';
 
 ### Build UI with Spectrum Web Components
 
-Next, open the `src/index.html` file and implement the code for the UI components needed within the opening and closing `<sp-theme>` block, as provided below:
+Next, open the `src/index.html` file and implement the following code for the UI components within the opening and closing `<sp-theme>` block, as provided below:
 
 ```html
 <sp-theme scale="medium" color="light" theme="express">                
