@@ -25,7 +25,7 @@ Configure and use Spectrum Web Components in a basic JavaScript add-on.
 There are a few open source Spectrum libraries available, but we specifically recommend using the [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components) library, as it offers a comprehensive set of UI components with built-in benefits for developers, including:
 
 - A built-in Express theme
-- Accessibility is built-in
+- Accessibility
 - Lightweight and performant
 - Time savings due to the built-in styling
 - Compliant with industry standards
