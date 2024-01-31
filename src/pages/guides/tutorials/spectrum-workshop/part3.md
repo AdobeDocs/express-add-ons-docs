@@ -1,15 +1,15 @@
-# Tips, Tricks & Troubleshooting
+# Tips & Troubleshooting
 
-A reference to use while you're developing your add-on UI's with Spectrum.
+Useful information to use while developing your add-on UI's with Spectrum.
 
-## Tips & Tricks
+## Tips
 
 ### Using icons
     
 You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) libraries. 
 
-- [**icons-workflow**](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) - icons representing graphical metaphors - a document, trash can etc.
-- [**icons-ui**](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) - icons that are parts of a component definition like an X or a checkmark. 
+- [**icons-workflow**](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) - icons representing graphical metaphors such as a document, share symbol, trash can, etc.
+- [**icons-ui**](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) - icons that are parts of a component definition like an X, magnifying glass or checkmark. 
 
 To use these icons, first add the associated library to your project by installing them from the command line, or via the `package.json`, then import them into your JS. For example: 
 
@@ -18,15 +18,19 @@ To use these icons, first add the associated library to your project by installi
 "@spectrum-web-components/icons-workflow": "0.39.4",
 ```
 
+Then import and use them; for instance:
+
 ```js
 import "@spectrum-web-components/icons-workflow/icons/sp-icon-play-circle.js;"
 import '@spectrum-web-components/icons-ui/icons/sp-icon-arrow75.js';
+```
 
+```html
 <sp-icon-play-circle size="s"></sp-icon-play-circle>
 <sp-icon-arrow75 size="m"></sp-icon-arrow75>    
 ```    
 
-**NOTE:** Icons adhere to the [Spectrum Design t-shirt sizing](https://spectrum.adobe.com/page/design-tokens/#Size-tokens), with a default of `size="m"` for medium.
+**NOTE:** Icons adhere to the [Spectrum Design t-shirt sizing](https://spectrum.adobe.com/page/design-tokens/#Size-tokens), with a default of `size="m"` (for medium).
 
 You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) and specify an image directly via the `src` attribute, either with the image reference, or a data URL. Both are shown below for an example:
 
@@ -40,7 +44,7 @@ You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum
 />
 ```
 
-You can also supply an `svg` in the `<sp-icon>` component, as shown below:
+You can also supply an `svg` to the `<sp-icon>` component, as shown below:
 
 ```html
 <sp-icon>
@@ -60,22 +64,24 @@ You can also supply an `svg` in the `<sp-icon>` component, as shown below:
 </sp-icon>                    
 ```
 
-**Note:** using an iconset reference from one of the `icons-workflow` or `icons-ui` packages in the `name` on an `sp-icon` should no longer be used (ie: `<sp-icon name="ui:Arrow100"></sp-icon>`), as it is deprecated. Use the specific named import mentioned in the first bullet above, instead.
+<InlineAlert slots="text" variant="warning"/>
+
+Using an iconset reference from one of the `icons-workflow` or `icons-ui` packages in the `name` on an `sp-icon` should no longer be used (ie: `<sp-icon name="ui:Arrow100"></sp-icon>`), since it's deprecated. Use the specific named import mentioned in the first bullet above, instead.
 
 ### Spectrum sizing
 
-In Spectrum, there are two main sizing concepts to note:
+In Spectrum, there are two main sizing concepts to understand:
 
 - [**scale**](https://spectrum.adobe.com/page/platform-scale/) - the overall size of all of the components on the page, ie: medium for desktop, or large for touch, for instance.
 - [**t-shirt sizes**](https://spectrum.adobe.com/page/design-tokens/#Size-tokens) - the size of a specific component, set as a variant or modifier to that component (ie: `size="m"`). **Note:** a component with a t-shirt sizing is still affected by `scale`.
 
 ### Fonts
 
-There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts), but you can also see them while running an add-on via the browser developer tools, as shown in the following:
+There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
 
   ![Injected fonts screenshot](../images/fonts.png)
 
-### Debugging tips:
+### Debugging
 
 - Use the browser developer tools to inspect the HTML, and search for the `add-on-iframe-slot` element to find the add-on specific code container.
 - From the developer tools, click into the variables in the stylesheets to see their values.
@@ -85,8 +91,6 @@ There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) a
 ### Styling for layout and typography
 
 Use Spectrum CSS variables for padding, gaps between controls, and general layout. Also, since Spectrum Web Components do not include any specific components for typography, you can also use Spectrum CSS variables to help manage it better. Read on for more details.
-
-**Note:** by default, typography components do not include any outer margins, but adding the [`.spectrum-Typography` class to your container](https://opensource.adobe.com/spectrum-css/typography.html#:~:text=Applying%20margins,will%20have%20the%20correct%20margins) will provide margins to the typography components within it.
 
 - [Color variables](https://spectrum.adobe.com/page/color-fundamentals/) are provided as part of the theme imports. The color value’s contrast with the background increases as the value increases, so colors progressively get darker in a light theme, and lighter in a dark theme (ie: `--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
     
@@ -102,7 +106,9 @@ Use Spectrum CSS variables for padding, gaps between controls, and general layou
             <p className="spectrum-Heading spectrum-Heading--sizeL">This is a custom large header text</p>
     </div>
     </h3>
-    ```          
+    ```
+
+    **Note:** by default, typography components do not include any outer margins, but adding the [`.spectrum-Typography` class to your container](https://opensource.adobe.com/spectrum-css/typography.html#:~:text=Applying%20margins,will%20have%20the%20correct%20margins) will provide margins to the typography components within it.
 
 - [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens)
 
@@ -110,7 +116,9 @@ Use Spectrum CSS variables for padding, gaps between controls, and general layou
 
 ### Component modifier variables
         
-Components have a set of variables defined to use for modifying classes specific to that particular component. They are prefixed with `--mod-*`, and you used them in the lessons for modifying the `Swatch` component in the `.color-well` class for reference. A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each. For instance [the swatch modifiers are listed here](https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md), [and the button modifiers here](https://github.com/adobe/spectrum-css/blob/main/components/button/metadata/mods.md).
+Components have a set of variables defined to use for modifying classes specific to that particular component. They are prefixed with `--mod-*`, and you used them in the previous lessons for modifying the `Swatch` component in the `.color-well` class for reference. 
+
+A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each component. For instance [the swatch component modifiers are listed here](https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md), [and the button component modifiers here](https://github.com/adobe/spectrum-css/blob/main/components/button/metadata/mods.md).
 
 An example of their usage is provided below:
 
@@ -137,25 +145,27 @@ An example of their usage is provided below:
 
 This section is provided to help troubleshoot any errors you may encounter while following this tutorial.
 
-- Why do I see registry errors in the console when running my add-on, like: `Uncaught DOMException: Failed to execute 'define' on 'CustomElementRegistry': the name "sp-icon-chevron100" has already been used with this registry` and `Base.dev.js:164 Attempted to redefine <sp-icon-chevron100>. This usually indicates that multiple versions of the same web component were loaded onto a single page. https://opensource.adobe.com/spectrum-web-components/registry-conflicts`
+- *Why do I see registry errors in the console when running my add-on, for instance:* `Uncaught DOMException: Failed to execute 'define' on 'CustomElementRegistry': the name "sp-icon-chevron100" has already been used with this registry` and `Base.dev.js:164 Attempted to redefine <sp-icon-chevron100>. This usually indicates that multiple versions of the same web component were loaded onto a single page. https://opensource.adobe.com/spectrum-web-components/registry-conflicts`
 
     This is probably due to mismatched versions of the `@spectrum-web-components` (or `@swc-react`) packages being used in your `package.json`. Don't forget to run `npm install` after updating your `package.json` to match the versions. 
 
     **Solution:** open your `package.json` file and set all of the versions to the same (ie: `0.39.4`), as the one from the provided project.
 
-- When I try to build or start my add-on with the CLI, I see an error like: `ERROR in ./node_modules/@spectrum-web-components/button/src/Button.dev.js 145:6-78 Module not found: Error: Can't resolve '@spectrum-web-components/progress-circle/sp-progress-circle.js' in '/Users/hollyschinsky/spectrum-workshop-2023/workshop-projects/bingo-card-addon-react-start/node_modules/@spectrum-web-components/button/src' ... Field 'browser' doesn't contain a valid alias configuration resolve as module`
+- *Why do I see this error when trying to build or start my add-on with the CLI?* `ERROR in ./node_modules/@spectrum-web-components/button/src/Button.dev.js 145:6-78 Module not found: Error: Can't resolve '@spectrum-web-components/progress-circle/sp-progress-circle.js' in '/Users/hollyschinsky/spectrum-workshop-2023/workshop-projects/bingo-card-addon-react-start/node_modules/@spectrum-web-components/button/src' ... Field 'browser' doesn't contain a valid alias configuration resolve as module`
 
     **Solution:** there's a known issue seen when using `@spectrum-web-components` (or `@swc-react`) packages with version `0.40.3`, which is the latest version that are installed at the time of writing this tutorial, unfortunately. The solution is to update the versions of all components used in your `package.json` file to a known stable one like `0.39.4`. Don't forget to run `npm install` after updating to ensure the stable versions are installed before trying to build and run your add-on again.
 
-- General troubleshooting when running with the CLI and seeing errors. Try running `npx clear-npx-cache` to ensure the latest CLI version is installed, then run the CLI commands again. 
+- *Is there a general solution to try first if something doesn't work right when I run the CLI commands?* 
 
-- Did I include a `webpack.config.js` file in the root of my project? Is it configured properly?
+    **Solution:** try running `npx clear-npx-cache` to ensure the latest CLI version is installed, then run the CLI commands again. 
 
-    **Solution:** replace your `package.json` file with the one from the provided project.
+- *Is my project configured incorrectly by accident? Did I include a `webpack.config.js` file in the root of my project?*
+
+    **Solution:** make sure your [`webpack.config.js`](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part1/#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
 
 - Did I update the `scripts` object in the `package.json` to ensure the webpack parameter is used?
 
-    **Solution:** ensure your `package.json` has the following `scripts` block:
+    **Solution:** ensure your `package.json` has the following `scripts` block. If it doesn't, it will not use webpack to build and start, package etc.
 
     ```json
     "scripts": {
@@ -168,22 +178,22 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Are all of my components wrapped within an opening and closing `<sp-theme>` or `<Theme>` tag? 
 
-    You need to make sure all components are surrounded by the corresponding opening and closing theme tags for either Spectrum Web Components or swc-react depending on which project, or you will not see the components rendered properly.
+    **Solution:** make sure all your UI components are surrounded by the corresponding opening and closing theme tags for either Spectrum Web Components or `swc-react`, or you will not see the components rendered properly.
 
 Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4) (username `hollyschinsky`) or email me at [hschinsk@adobe.com](mailto:hschinsk@adobe.com) for help.
 
 ## Resources
 
-- [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
 - Example codepens
-    - [Simple button using SWC](https://codepen.io/hollyschinsky/pen/xxBweyV)
+    - [Simple button using Spectrum Web Components](https://codepen.io/hollyschinsky/pen/xxBweyV)
     - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/wvOyrLm)
     - [Spectrum CSS](https://codepen.io/lazd/pen/Exevvey)
-- [Storybook reference](https://opensource.adobe.com/spectrum-web-components/storybook/)
-- [Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)
-- [Spectrum XD Plugin](https://spectrum.adobe.com/page/spectrum-xd-plugin/)
-- [Spectrum Figma plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
-- [CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js/) 
+- [Adobe Express UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
+- [Adobe Spectrum Storybook Web Components Storybook](https://opensource.adobe.com/spectrum-web-components/storybook/)
+- [Adobe Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)
+- [Adobe Spectrum XD Plugin](https://spectrum.adobe.com/page/spectrum-xd-plugin/)
+- [Adobe Spectrum Figma plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
+- [Adobe Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js/) 
     - Only to be used for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
 - [Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
 - [Color Wheel](https://color.adobe.com/create/color-wheel)
