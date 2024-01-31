@@ -31,11 +31,11 @@ The two different add-on's you will create are:
 
 - A React-based add-on that uses the [`swc-react` Spectrum Web Components wrapper library](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#spectrum-web-components-with-react).
 
-An example of the result of what you will build is shown below:
+An example of what you will build is shown below:
 
 ![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 
-This add-on allows users to select settings to customize a bingo card, including background, foreground and title color, gridline size and whether to include a FREE space. The card is generated with random numbers, and ensures no numbers are used twice. The user can drag the customized card to the page, or click the "Add to page" button to use it in their document.
+This add-on allows users to select settings to customize a bingo card; including background, foreground, title color, gridline size and whether to include a "FREE" space. The card is generated with random numbers, and ensures no numbers are used twice. The user can drag the customized card to the page, or click the "Add to page" button to use it in their document.
 
 ### Changelog
 
@@ -57,8 +57,6 @@ This add-on allows users to select settings to customize a bingo card, including
 <!-- - The [lesson 2 starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)  -->
 
 - [Lesson 2 project](https://github.com/hollyschinsky/bingo-card-generator-react-js) - Bingo Card Generator add-on using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) and ReactJS
-
-<!-- **TODO** above -->
 
 ### Topics Covered
 

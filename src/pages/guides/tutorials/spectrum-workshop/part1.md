@@ -358,7 +358,7 @@ Next, open the `src/index.html` file and implement the code for the UI component
 
 Note the properties for each, and use the [Spectrum Web Component documentation](https://opensource.adobe.com/spectrum-web-components) to help cross-reference them for more context.
 
-Worth mentioning are the details around the use of the `<sp-swatch>` components, which are coupled with a hidden native `<input>` component to allow the user to pick their colors. Though SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider), there is not an actual picker, so this add-on implements it via an `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
+Worth mentioning, are the details around the use of the `<sp-swatch>` components, which are coupled with a hidden native `<input>` component to allow the user to pick their colors. Though SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider), there is not an actual picker, so this add-on implements it via an `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
     
 The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On input (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` updates as the color is changed to them in sync. 
 
@@ -371,7 +371,7 @@ Also, be sure to check out [Adobe's UX Guidelines](https://xd.adobe.com/view/urn
 
 ### Style your UI
 
-If you run your add-on project with the CLI at this point (`npm run build; npm run start`), you would notice that your UI layout is less than ideal, as shown below. 
+If you run your add-on project with the CLI at this point (`npm run build; npm run start`), you will notice that your UI layout is less than ideal, as shown below:
 
 ![lesson 1 prestyle screenshot](../images/lesson1-prestyle.png)
 
@@ -379,7 +379,7 @@ Even though the Spectrum Web Components themselves have styling applied, the lay
 
 In this step you will define some styles and selectors to improve the layout and general styling of your UI. You may have noticed there were already some classes set when you copied in the code block above, but since they don't actually apply yet, you'll eed to define them in this step.
 
-Locate the `<style>` block in your `src/index.html`, and add the following CSS selectors and classes: **TODO** fix with final.
+Locate the `<style>` block in your `src/index.html`, and add the following CSS selectors and classes:
 
 ```css
 sp-theme {
@@ -664,8 +664,8 @@ function generateBingoCard() {
 }
 ```
 
-Once you've updated your code, your add-on should reload and you can generate a custom bingo card! Try playing with some settigns and see how they render in a new card, drag your card to the page or add it with the add button etc. If your add-on didn't pick up the changes for any reason, you can use the [add-on developer tools](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to do a refresh, or simply run `npm run build; npm run start` again. 
+Once you've updated your code, your add-on should reload and you can generate a custom bingo card! Try playing with some settings and see how they render in a new card. You can also try to drag your card to the page, or add it with the add button etc. If your add-on didn't pick up the changes for any reason, you can always use the [add-on developer tools](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to do a refresh, or simply run `npm run build; npm run start` again. 
 
 ![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 
-If you have any trouble or you're not seeing what you expect, see the [Troubleshooting section](./part3.md#troubleshooting-faq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
+If you have any trouble, or don't see what you expect, see the [Troubleshooting section](./part3.md#troubleshooting-faq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
