@@ -452,7 +452,7 @@ Open the `/src/components/App.css` file and replace the current contents with th
 
 ```css
 sp-theme {
-    display: grid;
+    display: grid;        
 }
 
 h2 {
@@ -488,18 +488,18 @@ sp-button-group {
 }
 
 sp-slider {
-    width: 250px;
+    width: var(--spectrum-global-dimension-static-size-2800);
     --spectrum-slider-font-size: var(--spectrum-font-size-100);    
 } 
 
 sp-field-label {
-    font-size: var(--spectrum-global-dimension-font-size-100);   
+   font-size: var(--spectrum-global-dimension-font-size-100);   
 }
 
 .color-well {
     cursor: pointer;
     --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
-    --mod-swatch-border-color: var(--spectrum-transparent-black-500);
+    --mod-swatch-border-color: var(--spectrum-transparent-black-500);   
 }
 
 .row {
@@ -521,6 +521,10 @@ sp-field-label {
 
 .margin-top-10 {
     margin-top: var(--spectrum-global-dimension-static-size-125); 
+}
+
+#bingoCanvas {
+    width: 290px;
 }
 ```
 
