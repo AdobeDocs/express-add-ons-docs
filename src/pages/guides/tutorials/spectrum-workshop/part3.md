@@ -145,25 +145,27 @@ An example of their usage is provided below:
 
 This section is provided to help troubleshoot any errors you may encounter while following this tutorial.
 
-- Why do I see registry errors in the console when running my add-on, like: `Uncaught DOMException: Failed to execute 'define' on 'CustomElementRegistry': the name "sp-icon-chevron100" has already been used with this registry` and `Base.dev.js:164 Attempted to redefine <sp-icon-chevron100>. This usually indicates that multiple versions of the same web component were loaded onto a single page. https://opensource.adobe.com/spectrum-web-components/registry-conflicts`
+- *Why do I see registry errors in the console when running my add-on, for instance:* `Uncaught DOMException: Failed to execute 'define' on 'CustomElementRegistry': the name "sp-icon-chevron100" has already been used with this registry` and `Base.dev.js:164 Attempted to redefine <sp-icon-chevron100>. This usually indicates that multiple versions of the same web component were loaded onto a single page. https://opensource.adobe.com/spectrum-web-components/registry-conflicts`
 
     This is probably due to mismatched versions of the `@spectrum-web-components` (or `@swc-react`) packages being used in your `package.json`. Don't forget to run `npm install` after updating your `package.json` to match the versions. 
 
     **Solution:** open your `package.json` file and set all of the versions to the same (ie: `0.39.4`), as the one from the provided project.
 
-- When I try to build or start my add-on with the CLI, I see an error like: `ERROR in ./node_modules/@spectrum-web-components/button/src/Button.dev.js 145:6-78 Module not found: Error: Can't resolve '@spectrum-web-components/progress-circle/sp-progress-circle.js' in '/Users/hollyschinsky/spectrum-workshop-2023/workshop-projects/bingo-card-addon-react-start/node_modules/@spectrum-web-components/button/src' ... Field 'browser' doesn't contain a valid alias configuration resolve as module`
+- *Why do I see this error when trying to build or start my add-on with the CLI?* `ERROR in ./node_modules/@spectrum-web-components/button/src/Button.dev.js 145:6-78 Module not found: Error: Can't resolve '@spectrum-web-components/progress-circle/sp-progress-circle.js' in '/Users/hollyschinsky/spectrum-workshop-2023/workshop-projects/bingo-card-addon-react-start/node_modules/@spectrum-web-components/button/src' ... Field 'browser' doesn't contain a valid alias configuration resolve as module`
 
     **Solution:** there's a known issue seen when using `@spectrum-web-components` (or `@swc-react`) packages with version `0.40.3`, which is the latest version that are installed at the time of writing this tutorial, unfortunately. The solution is to update the versions of all components used in your `package.json` file to a known stable one like `0.39.4`. Don't forget to run `npm install` after updating to ensure the stable versions are installed before trying to build and run your add-on again.
 
-- General troubleshooting when running with the CLI and seeing errors. Try running `npx clear-npx-cache` to ensure the latest CLI version is installed, then run the CLI commands again. 
+- *Is there a general solution to try first if something doesn't work right when I run the CLI commands?* 
 
-- Did I include a `webpack.config.js` file in the root of my project? Is it configured properly?
+    **Solution:** try running `npx clear-npx-cache` to ensure the latest CLI version is installed, then run the CLI commands again. 
 
-    **Solution:** replace your `package.json` file with the one from the provided project.
+- *Is my project configured incorrectly by accident? Did I include a `webpack.config.js` file in the root of my project?*
+
+    **Solution:** make sure your [`webpack.config.js`](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part1/#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
 
 - Did I update the `scripts` object in the `package.json` to ensure the webpack parameter is used?
 
-    **Solution:** ensure your `package.json` has the following `scripts` block:
+    **Solution:** ensure your `package.json` has the following `scripts` block. If it doesn't, it will not use webpack to build and start, package etc.
 
     ```json
     "scripts": {
@@ -176,7 +178,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Are all of my components wrapped within an opening and closing `<sp-theme>` or `<Theme>` tag? 
 
-    You need to make sure all components are surrounded by the corresponding opening and closing theme tags for either Spectrum Web Components or swc-react depending on which project, or you will not see the components rendered properly.
+    **Solution:** make sure all your UI components are surrounded by the corresponding opening and closing theme tags for either Spectrum Web Components or `swc-react`, or you will not see the components rendered properly.
 
 Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4) (username `hollyschinsky`) or email me at [hschinsk@adobe.com](mailto:hschinsk@adobe.com) for help.
 
