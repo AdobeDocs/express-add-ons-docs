@@ -376,11 +376,11 @@ module.exports = {
                 path: "guides/tutorials/spectrum-workshop/",
                 pages: [
                   {
-                    title: "Use Spectrum Web Components in a basic JavaScript add-on",
+                    title: "Basic JavaScript add-on with Spectrum Web Components",
                     path: "guides/tutorials/spectrum-workshop/part1/",
                   },
                   {
-                    title: "Use Spectrum Web Components in a React-based add-on",
+                    title: "React-based add-on with Spectrum Web Components",
                     path: "guides/tutorials/spectrum-workshop/part2/",
                   },
                   {

@@ -442,13 +442,13 @@ Replace the current logic for the original button component in the top of the `A
 
 ### Style your UI
 
-If you run your add-on project now with `npm run build; npm run start` (or if it was already running and auto-reloaded), you should see something like the following:
+If you run your add-on project now with `npm run build; npm run start` (or if it was already running and automatically refreshed), you should see something like the following:
 
 ![Basic react add-on screenshot](../images/lesson2-prestyle.png)
 
-Similar to lesson 1, you'll see that the layout of the UI is not up to par, similar to what you saw in the first lesson. In this step you'll add the styling to present the UI as you did in lesson 1. 
+Similar to lesson 1, you'll see that the layout of the UI is not great. In this step you'll add the styling to present the UI as you did in lesson 1. 
 
-Open the `/src/components/App.css` file and replace the current contains with the followingcustom type, class and id selectors for your UI, then check to see the updates reflected in your add-on before moving to the final part of the tutorial.
+Open the `/src/components/App.css` file and replace the current contents with the following custom type, class and id selectors for your UI, then check to see the updates reflected in your add-on before moving to the final part of the tutorial.
 
 ```css
 sp-theme {
@@ -476,53 +476,53 @@ sp-picker {
     display: flex;
 }
 
-    sp-number-field {            
-        width: 100%;
-    }
+sp-number-field {            
+    width: 100%;
+}
 
-    sp-button-group {
-        margin-top: var(--spectrum-global-dimension-static-size-300);
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
+sp-button-group {
+    margin-top: var(--spectrum-global-dimension-static-size-300);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-    sp-slider {
-        width: 250px;
-        --spectrum-slider-font-size: var(--spectrum-font-size-100);    
-    } 
+sp-slider {
+    width: 250px;
+    --spectrum-slider-font-size: var(--spectrum-font-size-100);    
+} 
 
-    sp-field-label {
+sp-field-label {
     font-size: var(--spectrum-global-dimension-font-size-100);   
-    }
+}
 
-    .color-well {
-        cursor: pointer;
-        --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
-        --mod-swatch-border-color: var(--spectrum-transparent-black-500);
-    }
+.color-well {
+    cursor: pointer;
+    --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
+    --mod-swatch-border-color: var(--spectrum-transparent-black-500);
+}
 
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        align-items: flex-end;
-    }
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+}
 
-    .column {
-        display: flex;
-        flex-direction: column;    
-    }
+.column {
+    display: flex;
+    flex-direction: column;    
+}
 
-    .gap-20 {
-        gap: var(--spectrum-global-dimension-static-size-250); 
-    }
+.gap-20 {
+    gap: var(--spectrum-global-dimension-static-size-250); 
+}
 
-    .margin-top-10 {
-        margin-top: var(--spectrum-global-dimension-static-size-125); 
-    }
-    ```
+.margin-top-10 {
+    margin-top: var(--spectrum-global-dimension-static-size-125); 
+}
+```
 
 
 <!-- TODO Replace  with final

@@ -74,24 +74,17 @@ This add-on allows users to select settings to customize a bingo card, including
 
 ## Quickstart: Try Spectrum Web Components
 
-A quick way to try out [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) without requiring any external tools, is to use a sandboxed environment like a codepen or code sandbox. See this [simple codepen](https://codepen.io/hollyschinsky/pen/xxBweyV), for example. It references the Spectrum Web Components libraries as bundles from a CDN for simplicity, and shows how to specifically use the Express theme with a button component. 
+A quick way to try out [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) without requiring any external tools, is to use a sandboxed environment like a codepen. See this [simple codepen](https://codepen.io/hollyschinsky/pen/xxBweyV), for example. It references the Spectrum Web Components libraries as bundles from a CDN for simplicity, and shows how to use the Express theme with a button component. 
 
-1. To get your feet wet, go ahead and try changing the `scale` value in the `<sp-theme>` tag from the codepen to a value of `"large"` - then back to `"medium"` to see the effect.
+Check out [the codepen](https://codepen.io/hollyschinsky/pen/xxBweyV0), then try changing the `scale` value in the `<sp-theme>` tag to a value of `"large"` - then back to `"medium"` to see the effect.
 
-2. You can try out using any other Spectrum Web Components in a similar fashion. For instance, try adding the following avatar component, ensuring that it's included within the  opening `<sp-theme>` and closing `</sp-theme>` tags.
+**NOTE:** You can try using any other Spectrum Web Components in a similar fashion, ensuring they're included within the opening `<sp-theme>` and closing `</sp-theme>` tags.
 
-  ```html
-  <sp-avatar
-      size="100"
-      label="Demo User"
-      src="https://picsum.photos/500/500"
-  ></sp-avatar>
-  ```
-
-Before moving to lesson 1, where you will build an add-on that uses Spectrum Web Components in a basic JavaScript project, check out [this codepen](https://codepen.io/hollyschinsky/pen/bGZrdoy) which implements the UI for it, to help give you a glimpse of what you're building. You can change the layout in the codepen to represent how it might look running as an add-on in Express by using the layout icon button outlined below, and dragging the width of the frame to 320px:
+Before moving on, check out [this codepen](https://codepen.io/hollyschinsky/pen/bGZrdoy) which implements the UI for the bingo card generator add-on and gives you a glimpse of what you're going to be building. You can change the layout to represent how it might look running in Express, by clicking the layout icon button outlined below, and dragging the width of the frame to 320px:
 
 ![Bingo codepen screenshot](../images/bingo-codepen.png)
 
 <InlineAlert slots="text" variant="warning"/>
 
 CDN URL references are used to show you a quick way to get started with Spectrum Web Components. However, you will notice the UI is laggy, so you wouldn't want to use this for your final add-on projects for performance reasons. In the following lessons, you will learn how to configure your projects to use only the modules and components your UI needs to ensure the best performance for your add-ons.
+
