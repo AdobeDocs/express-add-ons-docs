@@ -237,7 +237,9 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     });
     ```
 
-    Another important thing to note, is the existence of the following block in the starter template `src/index.js` file, which can be used to ensure the Add-on UI SDK has been fully initialized and is ready for use before trying to implement your UI. You may have noticed that the original button included in the UI was set to `disabled`, and is subsequently enabled in this block, as an example:
+    Another important thing to note, is the existence of the following block in the starter template `src/index.js` file, which can be used to ensure the Add-on UI SDK has been fully initialized and is ready for use before trying to implement your UI. 
+    
+    You may have noticed that the original button included in the UI was set to `disabled`, and is subsequently enabled in this block, as an example:
 
     ```js
     addOnUISdk.ready.then(() => {        
@@ -248,7 +250,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     }
     ```
 
-    You will keep this pattern in your Bingo Card Generator add-on as well.
+    Keep note of this pattern as you develop your own add-ons.
 
 ### Install Spectrum Web Components
 
@@ -299,7 +301,7 @@ import '@spectrum-web-components/switch/sp-switch.js';
 
 ### Build UI with Spectrum Web Components
 
-Next, open the `src/index.html` file and implement the code for the UI components used in the Bingo Card Generator, within the opening and closing `<sp-theme>` block you added previously. The final result should look like this:
+Next, open the `src/index.html` file and implement the code for the UI components needed within the opening and closing `<sp-theme>` block, as provided below:
 
 ```html
 <sp-theme scale="medium" color="light" theme="express">                

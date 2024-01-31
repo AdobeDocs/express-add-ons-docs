@@ -1,12 +1,17 @@
 # Tips, Tricks & Troubleshooting
 
-Useful information to use as a reference when you are developing your add-on UI's with Spectrum and how to troubleshoot issues you may see while trying.
+A reference to use while you're developing your add-on UI's with Spectrum.
 
 ## Tips & Tricks
 
 ### Using icons
     
-You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) (icons representing graphical metaphors - a document, trash can, cloud etc) packages and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) (icons that are parts of a component definition like an X or checkmark, expand icon etc). To use, first add to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
+You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) libraries. 
+
+- **icons-workflow** - icons representing graphical metaphors - a document, trash can etc.
+- **icons-ui** - icons that are parts of a component definition like an X or a checkmark. 
+
+To use an icon, first add the library to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
 
 ```json
 "@spectrum-web-components/icons-ui": "0.39.4",
@@ -21,9 +26,9 @@ import '@spectrum-web-components/icons-ui/icons/sp-icon-arrow75.js';
 <sp-icon-arrow75 size="m"></sp-icon-arrow75>    
 ```    
 
-**NOTE:** Icons go by t-shirt sizing, with a default of `size="m"` for medium.
+**NOTE:** Icons adhere to the Spectrum Design t-shirt sizing, with a default of `size="m"` for medium.
 
-You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) and specify an image directly via the `src` attribute, either with the image reference or a data URL. Both are shown below for example:
+You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) and specify an image directly via the `src` attribute, either with the image reference, or a data URL. Both are shown below for an example:
 
 ```html
 <sp-icon src="icon-144x144.png"/>
@@ -35,7 +40,7 @@ You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum
 />
 ```
 
-or as `svg` in the `<sp-icon>` component:
+You can also supply an `svg` in the `<sp-icon>` component, as shown below:
 
 ```html
 <sp-icon>
@@ -59,31 +64,33 @@ or as `svg` in the `<sp-icon>` component:
 
 ### Spectrum sizing
 
-In Spectrum, there are two sizing notions:
+In Spectrum, there are two sizing concepts:
 
-- [**scale**](https://spectrum.adobe.com/page/platform-scale/) - the overall size of all components on the page, it's either medium for desktop, or large for touch.
-- [**t-shirt sizes**](https://spectrum.adobe.com/page/design-tokens/#Size-tokens) - the size of a specific component, set as a variant/modifier to that component (ie: `size="m"`). Note, a component whose size is set with t-shirt sizing is still affected by `scale`.
+- [**scale**](https://spectrum.adobe.com/page/platform-scale/) - the overall size of all of the components on the page, ie: medium for desktop, or large for touch, for instance.
+- [**t-shirt sizes**](https://spectrum.adobe.com/page/design-tokens/#Size-tokens) - the size of a specific component, set as a variant or modifier to that component (ie: `size="m"`). **Note:** a component with a t-shirt sizing is still affected by `scale`.
 
 ### Fonts
 
-There are a set of Adobe Clean fonts automatically injected by the Add-on SDK for use in your add-ons. You can see which are available by checking the documentation, but you could also see them while running in add-on via the browser devtools like shown in the following:
+There are a set of Adobe Clean fonts automatically injected by the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts), but you can also see them while running an add-on via the browser developer tools, as shown in the following:
 
   ![Injected fonts screenshot](../images/fonts.png)
 
 ### Debugging tips:
 
-- Use the devtools to inspect the HTML, and search for the `add-on-iframe-slot` element to find the add-on specific code more quickly.
+- Use the devtools to inspect the HTML, and search for the `add-on-iframe-slot` element to find the add-on specific code container.
 - From the devtools, click into the stylesheets to see what variables are available for use more quickly along with their values.
 - Dig into the `node_modules/@spectrum-web-components` folder and view the component details to help better understand why an issue might be happening.
-- Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or the Storybook to locate the supported events details.
+- Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or [the Storybook](https://opensource.adobe.com/spectrum-web-components/storybook) to locate the supported events details.
 
 ### Styling for layout and typography
 
-Use Spectrum CSS variables for padding, gaps between controls, etc. Also, since SWC has no components for typography, it can also be used to customize typography. Note: by default, typography components do not include outer margins, but adding the `.spectrum-Typography` class to your container will provide margins to the typography components within it.
+Use Spectrum CSS variables for padding, gaps between controls, and general layout. Also, since Spectrum Web Components do not include any specific components for typography, you can also use Spectrum CSS variables to help. 
 
-- [Color variables](https://spectrum.adobe.com/page/color-fundamentals/): provided as part of the theme imports. The color value’s contrast with the background increases as the number increases, so colors progressively get darker in a light theme and lighter in a dark theme (`--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
+**Note:** by default, typography components do not include any outer margins, but adding the [`.spectrum-Typography` class to your container](https://opensource.adobe.com/spectrum-css/typography.html#:~:text=Applying%20margins,will%20have%20the%20correct%20margins) will provide margins to the typography components within it.
+
+- [Color variables](https://spectrum.adobe.com/page/color-fundamentals/): are provided as part of the theme imports. The color value’s contrast with the background increases as the value increases, so colors progressively get darker in a light theme, and lighter in a dark theme (`--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
     
-    **TIP:** Use theme-specific color variables (defined in `theme-light.js` for instace) for most uses of color, like when the color will be applied to text, icons, or the borders of a component. Use static color variables from the overall `theme.js` when the color is going to be fixed and not dependent on theme. The naming for the relative color vs the static color variables are `--spectrum-global-color-purple-600` and
+    **TIP:** Use theme-specific color variables, (defined in `theme-light.js` for instance), for most uses of color in your add-on. For example, when the color will be applied to text, icons, or the borders of a component. Use *static* color variables from the overall `theme.js` when the color should be fixed and not dependent on the theme. The typical naming scheme is: `--spectrum-global-color-purple-600` and
     `--spectrum-global-color-static-purple-600`, respectively.
     
 - [Typography](https://opensource.adobe.com/spectrum-css/typography.html) classes:
@@ -91,7 +98,7 @@ Use Spectrum CSS variables for padding, gaps between controls, etc. Also, since 
     ```html
     import "@spectrum-web-components/styles/typography.css";
      <div className="spectrum-Typography">  
-            <p className="spectrum-Heading spectrum-Heading--sizeL">This is custom medium header text</p>
+            <p className="spectrum-Heading spectrum-Heading--sizeL">This is a custom medium header text</p>
     </div>
     </h3>
     ```          

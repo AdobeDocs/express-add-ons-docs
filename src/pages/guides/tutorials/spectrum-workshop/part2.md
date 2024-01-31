@@ -23,7 +23,7 @@ Learn how to configure and use Spectrum Web Components in a basic JavaScript add
 
 ## Introduction
 
-In this lesson, you will implement the bingo card generator add-on in a React-based project with a library called [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), a collection of wrapper components designed to make Spectrum Web Components (SWC) work like native React components in a React application. They serve as a bridge between React and Spectrum Web Components, and their properties and event names are directly derived from their corresponding SWC components. As such, the corresponding [Spectrum Web Components documentation](https://opensource.adobe.com/spectrum-web-components/) can be used as the documentation reference for usage.
+In this lesson, you will implement the bingo card generator add-on in a React-based project with a library called [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), a collection of wrapper components designed to make Spectrum Web Components (SWC) work like native React components in a React application. They serve as a bridge between React and Spectrum Web Components, and their properties and event names are directly derived from their corresponding SWC components. As such, the corresponding [Spectrum Web Components documentation](https://opensource.adobe.com/spectrum-web-components/) can be used as the documentation reference.
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -76,7 +76,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
 ### Import swc-react components
 
-In this step you will add the UI component imports for the Bingo Card Generator add-on. The pattern of the imports will follow in a similar manner to what was included in the generated project for `Button` and `Theme`. 
+In this step you will add the UI component imports for the bingo card generator add-on. The pattern of the imports will follow in a similar manner to what was included in the generated project for `Button` and `Theme`. 
 
 As a tip, you can use the [Spectrum Web Components Reference](https://opensource.adobe.com/spectrum-web-components/) for the corresponding component, and in the **Usage** section you will see that the third import uses the class name for the component, which is what you will need, as well as the specific package to use, it will just be prefixed with `@swc-react` instead. 
 
@@ -90,7 +90,7 @@ You can simply copy that import from the reference for any given component you w
  
 You can then use this same pattern for all of the `@swc-react` wrapper components you want to use.
  
-The imports needed for the Bingo Card Generator are listed below for you to copy into your `src/components/App.jsx` file along with the existing `Button` and `Theme` imports:
+The imports needed for the bingo card generator add-on sample are listed below for you to copy into your `src/components/App.jsx` file, along with the existing `Button` and `Theme` imports:
 
     ```js
     import { ButtonGroup } from '@swc-react/button-group';

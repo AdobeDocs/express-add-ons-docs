@@ -17,15 +17,15 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Building UIs for your add-ons using Adobe's Spectrum Design System
+# Building UIs using Adobe's Spectrum Design System
 
 This tutorial will guide you on how to get started building great UI's for your add-ons using [Adobe Spectrum](https://spectrum.adobe.com/).
 
 ## Introduction
 
-In this tutorial, you will learn how to build two fully functioning Adobe Express add-ons from scratch that use a flavor of Adobe Spectrum for building the user interface. The concept for the add-on you will be building is a bingo card generator that allows a user to generate a customized bingo card with their chosen colors, random numbers and an optional free space.
+In this tutorial, you will learn how to build two fully functioning [Adobe Express](https://new.express.adobe.com/) add-ons from scratch that use [Adobe Spectrum](https://spectrum.adobe.com/) for building the user interface. The concept for the add-on you will build is a bingo card generator, which allows a user to customize a bingo card with their chosen colors, random numbers and an optional free space.
 
-The two different add-on approaches are:
+The two different add-on's you will create are:
 
 - A vanilla JavaScript add-on that uses [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) to build out the UI. 
 
