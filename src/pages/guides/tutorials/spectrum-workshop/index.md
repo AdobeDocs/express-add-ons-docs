@@ -94,4 +94,4 @@ Before moving to lesson 1, where you will build an add-on that uses Spectrum Web
 
 <InlineAlert slots="text" variant="warning"/>
 
-Using CDN URL references are provided to show you a quick way to get started checking out Spectrum Web Components, but you will notice it will make your UI laggy, so you would never want to use this approach in your final add-on projects for performance reasons. In the following lessons you will learn how to configure your projects to use only the modules and components your UI needs to ensure the best performance of your add-ons.
+CDN URL references are used to show you a quick way to get started with Spectrum Web Components. However, you will notice the UI is laggy, so you wouldn't want to use this for your final add-on projects for performance reasons. In the following lessons, you will learn how to configure your projects to use only the modules and components your UI needs to ensure the best performance for your add-ons.
