@@ -6,7 +6,12 @@ Useful information to use as a reference when you are developing your add-on UI'
 
 ### Using icons
     
-You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) (icons representing graphical metaphors - a document, trash can, cloud etc) packages and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) (icons that are parts of a component definition like an X or checkmark, expand icon etc). To use, first add to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
+You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) libraries. 
+
+- **icons-workflow** - icons representing graphical metaphors - a document, trash can etc.
+- **icons-ui** - icons that are parts of a component definition like an X or a checkmark. 
+
+To use an icon, first add the library to your project by installing them from the command line, or via the `package.json` with an `npm install`. Below are the package names for reference, and an example of using one from each:
 
 ```json
 "@spectrum-web-components/icons-ui": "0.39.4",
@@ -21,7 +26,7 @@ import '@spectrum-web-components/icons-ui/icons/sp-icon-arrow75.js';
 <sp-icon-arrow75 size="m"></sp-icon-arrow75>    
 ```    
 
-**NOTE:** Icons go by t-shirt sizing, with a default of `size="m"` for medium.
+**NOTE:** Icons adhere to the Spectrum Design t-shirt sizing, with a default of `size="m"` for medium.
 
 You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) and specify an image directly via the `src` attribute, either with the image reference or a data URL. Both are shown below for example:
 
@@ -35,7 +40,7 @@ You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum
 />
 ```
 
-or as `svg` in the `<sp-icon>` component:
+or as an `svg` in the `<sp-icon>` component:
 
 ```html
 <sp-icon>
