@@ -17,7 +17,7 @@ contributors:
 
 # Tutorials
 
-In this page, you'll find a variety of tutorials covering the Adobe Express Add-on SDK and Document API.
+In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
 <ResourceCard slots="link, image, heading, text" width="50%"/>
 
@@ -45,7 +45,7 @@ Davide Barranca - December 14th, 2023
 
 ![Grids add-on](images/bingo-v1-addon.png)
 
-### Building UIs for your add-ons using Adobe's Spectrum Design System 
+### Building UIs using Adobe's Spectrum Design System 
 
 Holly Schinsky - January 25th, 2024
 
