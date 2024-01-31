@@ -66,7 +66,7 @@ This add-on allows users to select settings to customize a bingo card, including
 
 [Configuring your add-on to use Spectrum Web Components](part1.md#create-and-configure-project)
 
-[Using swc-react (React Spectrum Web Components wrappers)](part2.md#import-swc-react-components)
+[Using swc-react - Spectrum Web Component wrappers for React](part2.md#import-swc-react-components)
 
 [Using Spectrum variables to customize the layout of your UI](part2.md#style-your-ui)
 
