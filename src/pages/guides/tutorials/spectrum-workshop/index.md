@@ -64,13 +64,13 @@ This add-on allows users to select settings to customize a bingo card, including
 
 <ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[Configuring your add-on to use Spectrum Web Components](part1#create-and-configure-your-add-on)
+[Configuring your add-on to use Spectrum Web Components](part1.md#create-and-configure-your-add-on)
 
 [Using swc-react - Spectrum Web Component wrappers for React](part2.md#import-swc-react-components)
 
 [Using Spectrum variables to customize the layout of your UI](part2.md#style-your-ui)
 
-[Tips, Tricks & Troubleshooting](part3.md#troubleshooting-faq)
+[Tips, Debugging & Troubleshooting](part3.md#troubleshooting-faq)
 
 ## Quickstart: Try Spectrum Web Components
 
