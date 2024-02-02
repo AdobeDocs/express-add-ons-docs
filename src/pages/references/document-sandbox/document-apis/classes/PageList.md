@@ -15,24 +15,6 @@ remove the last remaining page from the list.
 
   ↳ **`PageList`**
 
-## Table of contents
-
-### Accessors
-
-- [first](PageList.md#first)
-- [last](PageList.md#last)
-- [length](PageList.md#length)
-
-### Methods
-
-- [[iterator]](PageList.md#iterator)
-- [addPage](PageList.md#addpage)
-- [indexOf](PageList.md#indexof)
-- [item](PageList.md#item)
-- [moveAfter](PageList.md#moveafter)
-- [moveBefore](PageList.md#movebefore)
-- [remove](PageList.md#remove)
-- [toArray](PageList.md#toarray)
 
 ## Accessors
 
@@ -84,9 +66,9 @@ RestrictedItemList.length
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -96,7 +78,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
+[RestrictedItemList](RestrictedItemList.md).[iterator](RestrictedItemList.md#iterator)
 
 ___
 
@@ -220,7 +202,7 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#movebefore)
+[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#moveBefore)
 
 ___
 

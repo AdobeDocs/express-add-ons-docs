@@ -10,28 +10,6 @@ A TextNode represents a text object in the scenegraph.
 
   ↳ **`TextNode`**
 
-## Table of contents
-
-### Accessors
-
-- [allChildren](TextNode.md#allchildren)
-- [blendMode](TextNode.md#blendmode)
-- [locked](TextNode.md#locked)
-- [opacity](TextNode.md#opacity)
-- [parent](TextNode.md#parent)
-- [rotation](TextNode.md#rotation)
-- [rotationInScreen](TextNode.md#rotationinscreen)
-- [text](TextNode.md#text)
-- [textAlignment](TextNode.md#textalignment)
-- [transformMatrix](TextNode.md#transformmatrix)
-- [translation](TextNode.md#translation)
-- [type](TextNode.md#type)
-
-### Methods
-
-- [removeFromParent](TextNode.md#removefromparent)
-- [setPositionInParent](TextNode.md#setpositioninparent)
-- [setRotationInParent](TextNode.md#setrotationinparent)
 
 ## Accessors
 
@@ -61,7 +39,7 @@ ___
 • `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
+[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passThrough) for GroupNodes.
 
 #### Returns
 
@@ -158,7 +136,12 @@ ___
 
 • `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
-The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
+The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
+content.
+
+Nodes that have been deleted are "orphaned," with a parent chain that terminates in `undefined` without reaching the
+root node. Such nodes cannot be selected, so it is unlikely to encounter one unless you retain a reference to a node
+that was part of the document content earlier. Deleted nodes can be reattached to the scenegraph, e.g. via Undo.
 
 #### Returns
 
@@ -324,9 +307,12 @@ Node.type
 
 ▸ **removeFromParent**(): `void`
 
-Removes the node from its parent - for a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`.
-For nodes with other slots, removes the child from whichever slot it resides in, if possible. Throws if the slot does
-not support removal. Also throws if node is the artwork root. No-op if node is already an orphan.
+Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
+document is closed.
+
+If parent is a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`. For nodes with other
+child "slots," removes the child from whichever slot it resides in, if possible. Throws if the slot does not permit
+removal. No-op if node is already an orphan.
 
 #### Returns
 

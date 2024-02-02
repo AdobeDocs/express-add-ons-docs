@@ -4,13 +4,6 @@
 
 Represents a 2D position.
 
-## Table of contents
-
-### Properties
-
-- [x](Point.md#x)
-- [y](Point.md#y)
-
 ## Properties
 
 ### x

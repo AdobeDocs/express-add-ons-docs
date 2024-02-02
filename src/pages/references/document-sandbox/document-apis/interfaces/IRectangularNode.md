@@ -11,13 +11,6 @@ Interface for nodes with width and height properties.
 - [`GridLayoutNode`](../classes/GridLayoutNode.md)
 - [`RectangleNode`](../classes/RectangleNode.md)
 
-## Table of contents
-
-### Properties
-
-- [height](IRectangularNode.md#height)
-- [width](IRectangularNode.md#width)
-
 ## Properties
 
 ### height

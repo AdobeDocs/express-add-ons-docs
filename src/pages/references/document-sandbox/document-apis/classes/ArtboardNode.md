@@ -17,21 +17,6 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 - [`IRectangularNode`](../interfaces/IRectangularNode.md)
 - [`ContainerNode`](../interfaces/ContainerNode.md)
 
-## Table of contents
-
-### Accessors
-
-- [allChildren](ArtboardNode.md#allchildren)
-- [children](ArtboardNode.md#children)
-- [fill](ArtboardNode.md#fill)
-- [height](ArtboardNode.md#height)
-- [parent](ArtboardNode.md#parent)
-- [type](ArtboardNode.md#type)
-- [width](ArtboardNode.md#width)
-
-### Methods
-
-- [removeFromParent](ArtboardNode.md#removefromparent)
 
 ## Accessors
 
@@ -176,9 +161,12 @@ The width of the artboard.
 
 ▸ **removeFromParent**(): `void`
 
-Removes the node from its parent - for a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`.
-For nodes with other slots, removes the child from whichever slot it resides in, if possible. Throws if the slot does
-not support removal. Also throws if node is the artwork root. No-op if node is already an orphan.
+Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
+document is closed.
+
+If parent is a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`. For nodes with other
+child "slots," removes the child from whichever slot it resides in, if possible. Throws if the slot does not permit
+removal. No-op if node is already an orphan.
 
 #### Returns
 

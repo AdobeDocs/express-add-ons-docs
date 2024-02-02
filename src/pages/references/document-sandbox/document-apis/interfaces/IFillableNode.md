@@ -9,12 +9,6 @@ the FillableNode class.
 
 - [`FillableNode`](../classes/FillableNode.md)
 
-## Table of contents
-
-### Properties
-
-- [fill](IFillableNode.md#fill)
-
 ## Properties
 
 ### fill

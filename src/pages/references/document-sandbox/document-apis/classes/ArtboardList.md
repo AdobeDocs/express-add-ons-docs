@@ -14,24 +14,6 @@ remove the last remaining artboard from the list.
 
   ↳ **`ArtboardList`**
 
-## Table of contents
-
-### Accessors
-
-- [first](ArtboardList.md#first)
-- [last](ArtboardList.md#last)
-- [length](ArtboardList.md#length)
-
-### Methods
-
-- [[iterator]](ArtboardList.md#iterator)
-- [addArtboard](ArtboardList.md#addartboard)
-- [indexOf](ArtboardList.md#indexof)
-- [item](ArtboardList.md#item)
-- [moveAfter](ArtboardList.md#moveafter)
-- [moveBefore](ArtboardList.md#movebefore)
-- [remove](ArtboardList.md#remove)
-- [toArray](ArtboardList.md#toarray)
 
 ## Accessors
 
@@ -83,9 +65,9 @@ RestrictedItemList.length
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -95,7 +77,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
+[RestrictedItemList](RestrictedItemList.md).[iterator](RestrictedItemList.md#iterator)
 
 ___
 

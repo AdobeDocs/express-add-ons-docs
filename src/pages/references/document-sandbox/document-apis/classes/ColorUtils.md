@@ -10,13 +10,7 @@ Utility methods for working with color values.
 
   ↳ **`ColorUtils`**
 
-## Table of contents
 
-### Methods
-
-- [fromHex](ColorUtils.md#fromhex)
-- [fromRGB](ColorUtils.md#fromrgb)
-- [toHex](ColorUtils.md#tohex)
 
 ## Methods
 
@@ -24,22 +18,24 @@ Utility methods for working with color values.
 
 ▸ **fromHex**(`hex`): [`Color`](../interfaces/Color.md)
 
-Create a new color from its equivalent RGBA hex representation. Currently only
-supports formats "#RRGGBBAA" or "RRGGBBAA". If the hex value is invalid, this
-method will return transparent black.
+Create a new color from its equivalent RGBA hex representation. Can specify in 6 digits (RRGGBB) or 8 digits
+(RRGGBBAA), uppercase or lowercase, with or without leading "#". Alpha defaults to FF (100% opaque) if ommitted.
+
+**`Throws`**
+
+if the hex string cannot be parsed.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `hex` | `string` | The color in hex representation. |
+| `hex` | `string` | The color represented as a hexadecimal string. |
 
 #### Returns
 
 [`Color`](../interfaces/Color.md)
 
-A new color matching the given hex representation, or transparent black if
-the hex string cannot be parsed.
+A new color value matching the given hex string.
 
 ___
 
@@ -47,36 +43,42 @@ ___
 
 ▸ **fromRGB**(`red`, `green`, `blue`, `alpha?`): [`Color`](../interfaces/Color.md)
 
-Create a new Color. All color components should be in a 0 - 1 range.
+Create a new color object with the given RGBA values.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `red` | `number` | The red component in a range from 0 - 1. |
-| `green` | `number` | The green component in a range from 0 - 1. |
-| `blue` | `number` | The blue component in a range from 0 - 1. |
-| `alpha?` | `number` | (optional) The alpha component in a range from 0 - 1. Defaults to 1 (fully opaque). |
+| `red` | `number` | The red channel, from 0 - 1. |
+| `green` | `number` | The green channel, from 0 - 1. |
+| `blue` | `number` | The blue channel, from 0 - 1. |
+| `alpha?` | `number` | Optional alpha channel, from 0 - 1. Defaults to 1 (opaque). |
 
 #### Returns
 
 [`Color`](../interfaces/Color.md)
+
+A new color object.
 
 ▸ **fromRGB**(`color`): [`Color`](../interfaces/Color.md)
 
+Create a new color object given a partial color object where the alpha field may be missing.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `color` | `Object` |
-| `color.alpha?` | `number` |
-| `color.blue` | `number` |
-| `color.green` | `number` |
-| `color.red` | `number` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `color` | `Object` | Partial color object. Alpha defaults to 1 (opaque). |
+| `color.alpha?` | `number` | - |
+| `color.blue` | `number` | - |
+| `color.green` | `number` | - |
+| `color.red` | `number` | - |
 
 #### Returns
 
 [`Color`](../interfaces/Color.md)
+
+A new color object with all fields present.
 
 ___
 

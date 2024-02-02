@@ -20,19 +20,6 @@ more minimal BaseNode (such as Artboard).
 - [`ArtboardNode`](../classes/ArtboardNode.md)
 - [`GroupNode`](../classes/GroupNode.md)
 
-## Table of contents
-
-### Accessors
-
-- [allChildren](ContainerNode.md#allchildren)
-- [children](ContainerNode.md#children)
-- [parent](ContainerNode.md#parent)
-- [type](ContainerNode.md#type)
-
-### Methods
-
-- [removeFromParent](ContainerNode.md#removefromparent)
-
 ## Accessors
 
 ### allChildren
@@ -73,7 +60,12 @@ ___
 
 • `get` **parent**(): `undefined` \| [`BaseNode`](../classes/BaseNode.md)
 
-The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
+The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
+content.
+
+Nodes that have been deleted are "orphaned," with a parent chain that terminates in `undefined` without reaching the
+root node. Such nodes cannot be selected, so it is unlikely to encounter one unless you retain a reference to a node
+that was part of the document content earlier. Deleted nodes can be reattached to the scenegraph, e.g. via Undo.
 
 #### Returns
 
@@ -105,9 +97,12 @@ BaseNode.type
 
 ▸ **removeFromParent**(): `void`
 
-Removes the node from its parent - for a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`.
-For nodes with other slots, removes the child from whichever slot it resides in, if possible. Throws if the slot does
-not support removal. Also throws if node is the artwork root. No-op if node is already an orphan.
+Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
+document is closed.
+
+If parent is a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`. For nodes with other
+child "slots," removes the child from whichever slot it resides in, if possible. Throws if the slot does not permit
+removal. No-op if node is already an orphan.
 
 #### Returns
 

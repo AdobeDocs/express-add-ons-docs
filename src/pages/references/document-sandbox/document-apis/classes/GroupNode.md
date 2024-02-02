@@ -15,29 +15,6 @@ optional vector mask child.
 
 - [`ContainerNode`](../interfaces/ContainerNode.md)
 
-## Table of contents
-
-### Accessors
-
-- [allChildren](GroupNode.md#allchildren)
-- [blendMode](GroupNode.md#blendmode)
-- [children](GroupNode.md#children)
-- [locked](GroupNode.md#locked)
-- [maskShape](GroupNode.md#maskshape)
-- [opacity](GroupNode.md#opacity)
-- [parent](GroupNode.md#parent)
-- [rotation](GroupNode.md#rotation)
-- [rotationInScreen](GroupNode.md#rotationinscreen)
-- [transformMatrix](GroupNode.md#transformmatrix)
-- [translation](GroupNode.md#translation)
-- [type](GroupNode.md#type)
-
-### Methods
-
-- [removeFromParent](GroupNode.md#removefromparent)
-- [setPositionInParent](GroupNode.md#setpositioninparent)
-- [setRotationInParent](GroupNode.md#setrotationinparent)
-
 ## Accessors
 
 ### allChildren

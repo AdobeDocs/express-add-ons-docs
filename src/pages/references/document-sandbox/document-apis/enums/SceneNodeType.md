@@ -11,28 +11,6 @@
 *Additional node types may be added in the future.* If your code has different branches or cases depending on node type,
 always have a default/fallback case to handle any unknown values you may encounter.
 
-## Table of contents
-
-### Enumeration Members
-
-- [artboard](SceneNodeType.md#artboard)
-- [artworkRoot](SceneNodeType.md#artworkroot)
-- [complexShape](SceneNodeType.md#complexshape)
-- [ellipse](SceneNodeType.md#ellipse)
-- [gridLayout](SceneNodeType.md#gridlayout)
-- [group](SceneNodeType.md#group)
-- [imageRectangle](SceneNodeType.md#imagerectangle)
-- [line](SceneNodeType.md#line)
-- [linkedAsset](SceneNodeType.md#linkedasset)
-- [mediaContainer](SceneNodeType.md#mediacontainer)
-- [page](SceneNodeType.md#page)
-- [path](SceneNodeType.md#path)
-- [polygon](SceneNodeType.md#polygon)
-- [rectangle](SceneNodeType.md#rectangle)
-- [solidColorShape](SceneNodeType.md#solidcolorshape)
-- [strokeShape](SceneNodeType.md#strokeshape)
-- [text](SceneNodeType.md#text)
-
 ## Enumeration Members
 
 ### artboard

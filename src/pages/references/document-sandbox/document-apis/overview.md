@@ -2,13 +2,11 @@
 
 # @express-document-sdk
 
-## Table of contents
-
-### Namespaces
+## Namespaces
 
 - [Constants](modules/Constants.md)
 
-### Enumerations
+## Enumerations
 
 - [ArrowHeadType](enums/ArrowHeadType.md)
 - [BlendMode](enums/BlendMode.md)
@@ -18,7 +16,7 @@
 - [StrokePosition](enums/StrokePosition.md)
 - [TextAlignment](enums/TextAlignment.md)
 
-### Classes
+## Classes
 
 - [ArtboardList](classes/ArtboardList.md)
 - [ArtboardNode](classes/ArtboardNode.md)
@@ -49,7 +47,7 @@
 - [TextNode](classes/TextNode.md)
 - [UnknownNode](classes/UnknownNode.md)
 
-### Interfaces
+## Interfaces
 
 - [BitmapImage](interfaces/BitmapImage.md)
 - [Color](interfaces/Color.md)
