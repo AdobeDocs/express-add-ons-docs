@@ -10,7 +10,6 @@ Contains the user's current selection state, indicating the content they are foc
 
   ↳ **`Context`**
 
-
 ## Accessors
 
 ### hasSelection

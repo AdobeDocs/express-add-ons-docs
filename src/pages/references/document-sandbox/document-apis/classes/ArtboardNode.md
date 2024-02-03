@@ -17,7 +17,6 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 - [`IRectangularNode`](../interfaces/IRectangularNode.md)
 - [`ContainerNode`](../interfaces/ContainerNode.md)
 
-
 ## Accessors
 
 ### allChildren

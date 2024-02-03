@@ -11,7 +11,6 @@ of multiple separate paths.
 
   ↳ **`ComplexShapeNode`**
 
-
 ## Accessors
 
 ### allChildren

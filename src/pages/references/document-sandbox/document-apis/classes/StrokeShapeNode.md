@@ -11,7 +11,6 @@ if it is composed of multiple separate paths.
 
   ↳ **`StrokeShapeNode`**
 
-
 ## Accessors
 
 ### allChildren

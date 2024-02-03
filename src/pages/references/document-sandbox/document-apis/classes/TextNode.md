@@ -10,7 +10,6 @@ A TextNode represents a text object in the scenegraph.
 
   ↳ **`TextNode`**
 
-
 ## Accessors
 
 ### allChildren

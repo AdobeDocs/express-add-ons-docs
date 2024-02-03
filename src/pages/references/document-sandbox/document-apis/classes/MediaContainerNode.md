@@ -12,7 +12,6 @@ determined by the maskShape which is not necessarily a rectangle.
 
   ↳ **`MediaContainerNode`**
 
-
 ## Accessors
 
 ### allChildren

@@ -15,7 +15,6 @@ remove the last remaining page from the list.
 
   ↳ **`PageList`**
 
-
 ## Accessors
 
 ### first

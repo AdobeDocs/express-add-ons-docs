@@ -22,7 +22,6 @@ This class is used in different places for various types of items, including Nod
 
   ↳ **`ItemList`**
 
-
 ## Accessors
 
 ### first

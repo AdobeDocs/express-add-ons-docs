@@ -10,7 +10,6 @@ An UnknownNode is a node with limited support and therefore treated as a leaf no
 
   ↳ **`UnknownNode`**
 
-
 ## Accessors
 
 ### allChildren

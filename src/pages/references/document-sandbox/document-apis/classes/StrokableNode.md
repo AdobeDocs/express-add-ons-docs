@@ -20,7 +20,6 @@ Base class for a Node that can have its own stroke.
 
 - [`IStrokableNode`](../interfaces/IStrokableNode.md)
 
-
 ## Accessors
 
 ### allChildren

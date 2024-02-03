@@ -22,7 +22,6 @@ Base class for a Node that can have its own fill and stroke.
 
 - [`IFillableNode`](../interfaces/IFillableNode.md)
 
-
 ## Accessors
 
 ### allChildren

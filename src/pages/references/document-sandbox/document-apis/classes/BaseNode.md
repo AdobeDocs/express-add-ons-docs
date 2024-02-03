@@ -23,7 +23,6 @@ properties.
 
   ↳↳ [`PageNode`](PageNode.md)
 
-
 ## Accessors
 
 ### allChildren

@@ -15,7 +15,6 @@ create a layout grid that other content can be placed into.
 
 - [`IRectangularNode`](../interfaces/IRectangularNode.md)
 
-
 ## Accessors
 
 ### allChildren
