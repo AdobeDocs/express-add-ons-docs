@@ -10,8 +10,6 @@ Utility methods for working with color values.
 
   ↳ **`ColorUtils`**
 
-
-
 ## Methods
 
 ### fromHex

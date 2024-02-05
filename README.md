@@ -4,13 +4,13 @@ This repo contains all of the guides and references for Adobe Express add-on dev
 
 ## Document API References - Manual Formatting Steps
 
-This section outlines the steps that should be taken to format the generated Document API references from Horizon into a Gatsby-friendly format. 
+This section outlines the steps that should be taken to format the generated Document API references from Horizon into a Gatsby-friendly format.
 
 **TIP:** it's easiest to open just the `editor` folder in VS Code (or your favorite editor) so you can globally search and replace in only those files to avoid unintentional mistakes. (Or set the advanced search settings to exclude everything else).
 
 **Recommended pre-req:** Install [this extension](https://marketplace.visualstudio.com/items?itemName=jakearl.search-editor-apply-changes) in VS Code to make it easier to apply transformations across many files.
 
-1. Remove the links in the generated headers. For example: 
+1. Remove the links in the generated headers. For example:
 
     `### <a id="createEllipse" name="createEllipse"></a> createEllipse`
 
@@ -18,11 +18,11 @@ This section outlines the steps that should be taken to format the generated Doc
 
     `### createEllipse`
 
-   In the **Search** box (magnifying glass in left rail), select the regex option (`.*` option in VS Code) with search string of `<a .*?.*?></a> ` and the **Replace** box empty (so it just removes it). **Note:** Be sure to include the space after the the closing tag so it doesn't leave an extra space in the heading.
+   In the **Search** box (magnifying glass in left rail), select the regex option (`.*` option in VS Code) with search string of `<a .*?.*?></a>` and the **Replace** box empty (so it just removes it). **Note:** Be sure to include the space after the the closing tag so it doesn't leave an extra space in the heading.
 
 2. **Search** and **Replace** again across files to change the auto-generated HLAPI docs headings from `@add-on-hlapi-sdk` –> to `@express-document-sdk`.
 
-3. Transform all **Table of Contents** links to lowercase so they match the way Gatsby generates internal links from the headers in all lowercase (ie: `PageNode.md#allChildren` to `PageNode.md#allchildren`). 
+3. Transform all **Table of Contents** links to lowercase so they match the way Gatsby generates internal links from the headers in all lowercase (ie: `PageNode.md#allChildren` to `PageNode.md#allchildren`).
 
    You can transform them all at once by following the steps below:
 

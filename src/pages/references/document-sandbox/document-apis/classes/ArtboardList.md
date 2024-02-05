@@ -14,7 +14,6 @@ remove the last remaining artboard from the list.
 
   ↳ **`ArtboardList`**
 
-
 ## Accessors
 
 ### first
