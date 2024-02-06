@@ -88,13 +88,31 @@ There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) a
 - Dig into the `node_modules/@spectrum-web-components` folder and view the component details to help better understand why an issue might be happening.
 - Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or [the Storybook](https://opensource.adobe.com/spectrum-web-components/storybook) to locate the details around the supported events.
 
-### Styling for layout and typography
+### Styling with Spectrum CSS
 
-Use Spectrum CSS variables for padding, gaps between controls, and general layout. Also, since Spectrum Web Components do not include any specific components for typography, you can also use Spectrum CSS variables to help manage it better. Read on for more details.
+Use Spectrum CSS variables for padding, gaps between controls, and general layout. In addition, since Spectrum Web Components do not include any specific components for typography, you can also use variables to style the typography. 
 
-- [Color variables](https://spectrum.adobe.com/page/color-fundamentals/) are provided as part of the theme imports. The color value’s contrast with the background increases as the value increases, so colors progressively get darker in a light theme, and lighter in a dark theme (ie: `--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
+Some benefits to using Spectrum CSS variables to style your components over absolute values:
+
+- By using Spectrum CSS global variables, you can ensure your UI aligns with the Spectrum design system, and if the design system changes, your UI will automatically update to the new design system.
+- Using Spectrum CSS variables to style your UI allows you to easily update the styles across your entire application by simply updating the value of the variable. If you decide to change a color used throught your app, for example, you can update the value of a single Spectrum CSS variable, and all the elements that use that variable will be updated automatically.
+
+#### Layout and typography styling
+
+- [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens) - the layout of your add-on can be adjusted by using global variables defined in the `@spectrum-web-components/styles/express/spectrum-core-global.css` folder in the `node_modules` of your add-on.
+
+    **Some general guidelines** <br/>
+    - `--spectrum-global-dimension-static-size-*` variables should be used when the dimension needs to be consistent across different elements or components, such as a uniform padding or margin throughout the application. It should also be used when a dimension needs to be adjusted based on a specific context, such as a container element or viewport size.
+
+    - `--spectrum-global-static-size-*` variables should be used for values that are not necessarily consistent across the application, but need to be adjusted based on the content or use case. In general, these variables are typically used for text-related styles that may vary based on content or context.
+
+    To summarize:
+    - Use `--spectrum-global-dimension-static-size` variables for for dimensions such as `width`, `height`, `padding`, `margin`, or general spacing variables.
+    - Use `--spectrum-global-static-size` variables for things like `font-size`, `line-height`, `border-radius`, etc.
+
+- [Color variables](https://spectrum.adobe.com/page/color-fundamentals/) are provided as part of the `theme` imports. The color value’s contrast with the background increases as the value increases, so colors progressively get darker in a light theme, and lighter in a dark theme (ie: `--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
     
-    **TIP:** Use theme-specific color variables, such as those defined in `theme-light.js`, for general uses of color in your add-on. For example, when the color will be applied to text, icons, or the borders of a component. Use *static* color variables defined in the overall `theme.js` when the color should be fixed and not dependent on the theme. The typical naming scheme is: `--spectrum-global-color-purple-600` and
+    **TIP:** Use theme-specific color variables, such as those defined in the light theme for Express, located in the CSS files in your `@spectrum-web-components/styles/express/*` folder, for general uses of color in your add-on. For example, when the color will be applied to text, icons, or the borders of a component. Use *static* color variables defined in the overall `theme.js` when the color should be fixed and not dependent on the theme. The typical naming scheme is: `--spectrum-global-color-purple-600` and
     `--spectrum-global-color-static-purple-600`, respectively.
     
 - [Typography](https://opensource.adobe.com/spectrum-css/typography.html) classes can be used to control your typography elements by importing the `typography.css`. For instance:
@@ -103,28 +121,37 @@ Use Spectrum CSS variables for padding, gaps between controls, and general layou
     import "@spectrum-web-components/styles/typography.css";
 
      <div className="spectrum-Typography">  
-            <p className="spectrum-Heading spectrum-Heading--sizeL">This is a custom large header text</p>
+        <p className="spectrum-Heading spectrum-Heading--sizeL">This is a custom large header text</p>
     </div>
     </h3>
     ```
 
-    **Note:** by default, typography components do not include any outer margins, but adding the [`.spectrum-Typography` class to your container](https://opensource.adobe.com/spectrum-css/typography.html#:~:text=Applying%20margins,will%20have%20the%20correct%20margins) will provide margins to the typography components within it.
+    **Note:** by default, typography components do not include any outer margins, but adding the [`spectrum-Typography` class to your container](https://opensource.adobe.com/spectrum-css/typography.html#:~:text=Applying%20margins,will%20have%20the%20correct%20margins) will provide margins to the typography components within it. You can try out [this codepen](https://codepen.io/hollyschinsky/pen/eYXKpmj) to see an example of this, by removing the `spectrum-Typography` from the `div` and adding it back to see the difference in the margins. It also illustrates some of the typography classes for example usage.
 
-- [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens)
+- **Overriding variables:** you can override the Spectrum CSS variables as needed in your add-on as well, by setting the name of the spectrum variable to a new value, for instance:
 
-    The quickest way to see the global variables available for use in adjusting your layouts and general typography, is to check out the actual CSS definitions located in the `@spectrum-web-components/styles/express/` folder of your `node_modules` package of your add-on. For instance, the core global variables are located at `/node_modules/@spectrum-web-components/styles/express/spectrum-core-global.css`.
+    ```css
+    --spectrum-global-dimension-font-size-150: 16px;
+    ```
 
 ### Component modifier variables
         
-Components have a set of variables defined to use for modifying classes specific to that particular component. They are prefixed with `--mod-*`, and you used them in the previous lessons for modifying the `Swatch` component in the `.color-well` class for reference. 
+Components have a set of variables defined to use for modifying properties specific to that particular component. They are prefixed with `--mod-*`, and should be used when you want to customize the styling of a specific component.
 
-A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each component. For instance [the swatch component modifiers are listed here](https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md), [and the button component modifiers here](https://github.com/adobe/spectrum-css/blob/main/components/button/metadata/mods.md).
+These variables are particularly useful in cases where you want to use a component in multiple places with different styles. By using custom variables, you can easily adjust the styling of a component in one place, and have those changes apply to all instances of the component throughout your application. 
 
-An example of their usage is provided below:
+In the sample app, you used custom modifiers for a few of the components, including to modify the Slider font size, some Swatch  border properties and to adjust the Switch component, for reference.
+
+A list of the prefixed custom properties for each UI component can be found in the Spectrum CSS repo's `mods.md` file for each component. For instance [the swatch component modifiers are listed here](https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md), [and the slider component modifiers here](https://github.com/adobe/spectrum-css/tree/main/components/slider).
+
+An example of their usage to modify the Slider is provided below for a reminder of what they look like:
 
 ```css
-.color-well {
-    `--mod-swatch-border-color: var(--spectrum-transparent-black-500);`
+.color-well {                
+    cursor: pointer;                
+    --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
+    --mod-swatch-border-color: var(--spectrum-global-color-gray-200); 
+}
 ```     
 
 ## Troubleshooting
@@ -189,6 +216,7 @@ The following list of resources can be used to learn more about using Adobe's Sp
 - Example codepens
     - [Simple button using Spectrum Web Components](https://codepen.io/hollyschinsky/pen/xxBweyV)
     - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/wvOyrLm)
+    - [Spectrum Typography](https://codepen.io/hollyschinsky/pen/eYXKpmj)
     - [Spectrum CSS](https://codepen.io/lazd/pen/Exevvey)
 - [Adobe Express UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
 - [Adobe Spectrum Storybook Web Components Storybook](https://opensource.adobe.com/spectrum-web-components/storybook/)
