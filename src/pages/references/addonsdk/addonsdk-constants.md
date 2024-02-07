@@ -35,6 +35,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
         <ul>
           <li><strong>preview</strong></li>Intent to preview the content.
           <li><strong>export</strong></li>Intent to export/download the content (default).
+          <li><strong>print</strong></li>Intent to export and print the content **Note:** For `pdf` format, a print optimized pdf is generated. This option is not supported for `mp4` format.
         </ul>
     </td>
 </tr>
