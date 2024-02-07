@@ -39,6 +39,10 @@ This add-on allows users to select settings to customize a bingo card; including
 
 ### Changelog
 
+**February 6th, 2024**
+
+- Updated tips on Spectrum CSS styling to add additional details on [why you should use Spectrum CSS variables](./part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](part3.md#layout-and-typography-styling)
+
 **January 31st, 2024**
 
 - First publication, by Holly Schinsky
