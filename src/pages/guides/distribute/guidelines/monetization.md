@@ -55,7 +55,7 @@ You must offer a clear and simple support process for all publicly-listed add-on
 
 ### Compliance
 
-You must comply with all applicable laws and regulations. This includes payment regulayions, taxation, data privacy, and security.
+You must comply with all applicable laws and regulations. This includes payment regulations, taxation, data privacy, and security.
 
 ### Third-party ads
 
