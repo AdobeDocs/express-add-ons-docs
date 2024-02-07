@@ -6,19 +6,6 @@
 
 *Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
-## Table of contents
-
-### Enumeration Members
-
-- [circleFilled](ArrowHeadType.md#circlefilled)
-- [circleHollow](ArrowHeadType.md#circlehollow)
-- [none](ArrowHeadType.md#none)
-- [openTriangular](ArrowHeadType.md#opentriangular)
-- [squareFilled](ArrowHeadType.md#squarefilled)
-- [squareHollow](ArrowHeadType.md#squarehollow)
-- [triangularFilled](ArrowHeadType.md#triangularfilled)
-- [verticalLine](ArrowHeadType.md#verticalline)
-
 ## Enumeration Members
 
 ### circleFilled

@@ -11,31 +11,6 @@ yet, only read.
 
   ↳ **`PathNode`**
 
-## Table of contents
-
-### Accessors
-
-- [allChildren](PathNode.md#allchildren)
-- [blendMode](PathNode.md#blendmode)
-- [fill](PathNode.md#fill)
-- [fillRule](PathNode.md#fillrule)
-- [locked](PathNode.md#locked)
-- [opacity](PathNode.md#opacity)
-- [parent](PathNode.md#parent)
-- [path](PathNode.md#path)
-- [rotation](PathNode.md#rotation)
-- [rotationInScreen](PathNode.md#rotationinscreen)
-- [stroke](PathNode.md#stroke)
-- [transformMatrix](PathNode.md#transformmatrix)
-- [translation](PathNode.md#translation)
-- [type](PathNode.md#type)
-
-### Methods
-
-- [removeFromParent](PathNode.md#removefromparent)
-- [setPositionInParent](PathNode.md#setpositioninparent)
-- [setRotationInParent](PathNode.md#setrotationinparent)
-
 ## Accessors
 
 ### allChildren
@@ -129,11 +104,23 @@ ___
 • `get` **fillRule**(): [`FillRule`](../enums/FillRule.md)
 
 The fill rule specifies how the interior area of a path is determined in cases where the path is self-intersecting or
-has multiple disjoint parts. This value is read-only and cannot be modified via this API yet.
+has multiple disjoint parts. The default value is nonZero.
 
 #### Returns
 
 [`FillRule`](../enums/FillRule.md)
+
+• `set` **fillRule**(`rule`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `rule` | [`FillRule`](../enums/FillRule.md) |
+
+#### Returns
+
+`void`
 
 ___
 
@@ -206,7 +193,12 @@ ___
 
 • `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
-The node's parent. Undefined if the node is an orphan, or if the node is the artwork root.
+The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
+content.
+
+Nodes that have been deleted are "orphaned," with a parent chain that terminates in `undefined` without reaching the
+root node. Such nodes cannot be selected, so it is unlikely to encounter one unless you retain a reference to a node
+that was part of the document content earlier. Deleted nodes can be reattached to the scenegraph, e.g. via Undo.
 
 #### Returns
 
@@ -223,7 +215,8 @@ ___
 • `get` **path**(): `string`
 
 The path definition as an SVG string. The path data is read-only and cannot be modified via this API yet.
-Example: "M 0 0 L 10 15".
+Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input.
+For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...".
 
 #### Returns
 
@@ -369,9 +362,12 @@ FillableNode.type
 
 ▸ **removeFromParent**(): `void`
 
-Removes the node from its parent - for a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`.
-For nodes with other slots, removes the child from whichever slot it resides in, if possible. Throws if the slot does
-not support removal. Also throws if node is the artwork root. No-op if node is already an orphan.
+Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
+document is closed.
+
+If parent is a basic ContainerNode, this is equivalent to `node.parent.children.remove(node)`. For nodes with other
+child "slots," removes the child from whichever slot it resides in, if possible. Throws if the slot does not permit
+removal. No-op if node is already an orphan.
 
 #### Returns
 

@@ -4,18 +4,13 @@
 
 Represents a solid-color fill.
 
+The most convenient way to create a stroke is via `Editor.makeColorFill()`.
+
 ## Hierarchy
 
 - [`Fill`](Fill.md)
 
   ↳ **`ColorFill`**
-
-## Table of contents
-
-### Properties
-
-- [color](ColorFill.md#color)
-- [type](ColorFill.md#type)
 
 ## Properties
 

@@ -2,18 +2,6 @@
 
 # Namespace: Constants
 
-## Table of contents
-
-### References
-
-- [ArrowHeadType](Constants.md#arrowheadtype)
-- [BlendMode](Constants.md#blendmode)
-- [FillRule](Constants.md#fillrule)
-- [FillType](Constants.md#filltype)
-- [SceneNodeType](Constants.md#scenenodetype)
-- [StrokePosition](Constants.md#strokeposition)
-- [TextAlignment](Constants.md#textalignment)
-
 ## References
 
 ### ArrowHeadType

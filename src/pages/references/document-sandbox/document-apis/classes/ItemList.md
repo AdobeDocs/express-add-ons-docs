@@ -22,29 +22,6 @@ This class is used in different places for various types of items, including Nod
 
   ↳ **`ItemList`**
 
-## Table of contents
-
-### Accessors
-
-- [first](ItemList.md#first)
-- [last](ItemList.md#last)
-- [length](ItemList.md#length)
-
-### Methods
-
-- [[iterator]](ItemList.md#iterator)
-- [append](ItemList.md#append)
-- [clear](ItemList.md#clear)
-- [indexOf](ItemList.md#indexof)
-- [insertAfter](ItemList.md#insertafter)
-- [insertBefore](ItemList.md#insertbefore)
-- [item](ItemList.md#item)
-- [moveAfter](ItemList.md#moveafter)
-- [moveBefore](ItemList.md#movebefore)
-- [remove](ItemList.md#remove)
-- [replace](ItemList.md#replace)
-- [toArray](ItemList.md#toarray)
-
 ## Accessors
 
 ### first
@@ -95,9 +72,9 @@ RestrictedItemList.length
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -107,7 +84,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
+[RestrictedItemList](RestrictedItemList.md).[iterator](RestrictedItemList.md#iterator)
 
 ___
 

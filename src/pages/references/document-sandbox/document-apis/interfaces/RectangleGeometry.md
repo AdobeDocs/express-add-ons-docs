@@ -2,13 +2,6 @@
 
 # Interface: RectangleGeometry
 
-## Table of contents
-
-### Properties
-
-- [height](RectangleGeometry.md#height)
-- [width](RectangleGeometry.md#width)
-
 ## Properties
 
 ### height

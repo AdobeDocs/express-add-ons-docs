@@ -11,28 +11,6 @@ Determines how a scenende is composited on top of the content rendered below it.
 If a node is inside a container whose blend mode anything other than [passThrough](BlendMode.md#passthrough), then the node's blend mode only
 interacts with other siblings within the same container. See documentation below for details.
 
-## Table of contents
-
-### Enumeration Members
-
-- [color](BlendMode.md#color)
-- [colorBurn](BlendMode.md#colorburn)
-- [colorDodge](BlendMode.md#colordodge)
-- [darken](BlendMode.md#darken)
-- [difference](BlendMode.md#difference)
-- [exclusion](BlendMode.md#exclusion)
-- [hardLight](BlendMode.md#hardlight)
-- [hue](BlendMode.md#hue)
-- [lighten](BlendMode.md#lighten)
-- [luminosity](BlendMode.md#luminosity)
-- [multiply](BlendMode.md#multiply)
-- [normal](BlendMode.md#normal)
-- [overlay](BlendMode.md#overlay)
-- [passThrough](BlendMode.md#passthrough)
-- [saturation](BlendMode.md#saturation)
-- [screen](BlendMode.md#screen)
-- [softLight](BlendMode.md#softlight)
-
 ## Enumeration Members
 
 ### color

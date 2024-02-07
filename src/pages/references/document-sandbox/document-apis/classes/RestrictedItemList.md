@@ -24,24 +24,6 @@ capabilities, however.
 
   ↳↳ [`PageList`](PageList.md)
 
-## Table of contents
-
-### Accessors
-
-- [first](RestrictedItemList.md#first)
-- [last](RestrictedItemList.md#last)
-- [length](RestrictedItemList.md#length)
-
-### Methods
-
-- [[iterator]](RestrictedItemList.md#iterator)
-- [indexOf](RestrictedItemList.md#indexof)
-- [item](RestrictedItemList.md#item)
-- [moveAfter](RestrictedItemList.md#moveafter)
-- [moveBefore](RestrictedItemList.md#movebefore)
-- [remove](RestrictedItemList.md#remove)
-- [toArray](RestrictedItemList.md#toarray)
-
 ## Accessors
 
 ### first
@@ -92,9 +74,9 @@ ReadOnlyItemList.length
 
 ## Methods
 
-### [iterator]
+### iterator
 
-▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -104,7 +86,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[[iterator]](ReadOnlyItemList.md#iterator)
+[ReadOnlyItemList](ReadOnlyItemList.md).[iterator](ReadOnlyItemList.md#iterator)
 
 ___
 

@@ -2,16 +2,7 @@
 
 # Interface: Color
 
-Represents an RGBA color.
-
-## Table of contents
-
-### Properties
-
-- [alpha](Color.md#alpha)
-- [blue](Color.md#blue)
-- [green](Color.md#green)
-- [red](Color.md#red)
+Represents an RGBA color value.
 
 ## Properties
 
