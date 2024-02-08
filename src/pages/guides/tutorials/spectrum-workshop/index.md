@@ -19,7 +19,11 @@ contributors:
 
 # Building UIs using Adobe's Spectrum Design System
 
-This tutorial will guide you on how to get started building great UI's for your add-ons using [Adobe Spectrum](https://spectrum.adobe.com/).
+This tutorial will guide you on how to get started building great UI's for your add-ons using [Adobe Spectrum](https://spectrum.adobe.com/). 
+
+<InlineAlert slots="text" variant="success"/>
+
+This tutorial was also presented in a recorded workshop that can be viewed [here](https://www.youtube.com/watch?v=5PA4KEN4JdQ).
 
 ## Introduction
 

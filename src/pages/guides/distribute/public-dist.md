@@ -173,17 +173,24 @@ Next you will specify your version details. The package that you entered in the 
 
 The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. However, this technology also brings the risk of users encountering inappropriate or offensive content. While Adobe encourages user choice regarding add-ons using Generative AI, transparency is paramount. We ensure clear, upfront communication, guarantee appropriate content, and respect intellectual property rights.
 
-Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get latest information on Adobe’s requirements and reccomendations to try add-ons that employ Generative AI technology.
+Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe’s requirements and recommendations to try add-ons that employ Generative AI technology.
 
 ### Step 10: Enter the monetization details
 
-With the Monetization details tab, developers can monetize their add-ons and seamlessly choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. Dive deeper into customization with additional details fields, allowing developers to specify their preferred payment terms effortlessly.
+The **Monetization details** tab allows developers to declare the payment option they support for their add-on. Once a developer completes the setup on the Monetization details tab, Adobe Express users will be shown a monetization badge in the add-on's detail view.
 
 ![](./img/monetization.png)
 
+Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. 
+
+- The *Additional details* field allows developers to provide additional payment terms like "7 day free trial" OR "$9.99/month".
+- Developers also have the flexibility to choose the “Other” option if their current setup does not fit the provided options.
+
+Developers can preview their Monetization badge on the Preview screen.
+
 Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
 
-If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter.
+If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter.
 
 Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
 

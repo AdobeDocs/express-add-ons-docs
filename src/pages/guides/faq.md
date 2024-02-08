@@ -44,6 +44,7 @@ contributors:
 - [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
 - [What mime type is returned from a PDF that was exported with the `createRenditions` method?](#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method)
 - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
+- [I'm trying to use a newly released feature, but it seems to be unavailable?](#im-trying-to-use-a-newly-released-feature-but-it-seems-to-be-unavailable)
 
 ## Answers
 
@@ -174,3 +175,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 ### The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.
 
   You can force it to install by clearing the npx cache first with `npx clear-npx-cache`, or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`.
+
+### I'm trying to use a newly released feature, but it seems to be unavailable?
+
+  If you are trying out a newly released feature in your add-on and have an instance of Adobe Express still open in a browser tab from before, you will need to refresh the page to ensure the latest release is loaded before trying out a new feature.

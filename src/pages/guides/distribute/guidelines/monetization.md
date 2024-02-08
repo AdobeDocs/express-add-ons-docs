@@ -1,19 +1,21 @@
-# Monetization
-
-Our Monetization guidelines include:
-
--   Overview
--   Requirements
--   Recommendations
--   Branding your add ons
-
-## Overview
+# Monetization Guidelines
 
 Developers who submit to the marketplace can charge users for using their add-ons.
+
+## Overview
 
 Consider whether you want to monetize your add-on at the outset, as it helps you plan your strategy more effectively.
 
 Remember to research the marketplace carefully before you start creating. This will help you learn whether there is a substantial market for a paid add-on and what other developers (if any) are charging for similar solutions.
+
+We’ve created these standards to ensure monetized add-ons provide users with a consistent and reliable experience.
+
+Our monetization guidelines include:
+
+-   [General](#general-guidelines)
+-   [Requirements](#requirements-for-monetizing-add-ons)
+-   [Recommendations](#recommendations-for-monetizing-add-ons)
+-   [Branding your add-ons](#branding-your-add-ons-for-monetization)
 
 <!-- ## Payment Models
 
@@ -41,9 +43,9 @@ The add-on requires the user to have access to external services before they can
 
 This model asks users to buy credits which can be used for services on the add-on. This can be used for things such as licensing images or trying out Generative AI models. Many add-ons offer users some free credits to start so they can test out the service. -->
 
-## Our Monetization Guidelines
+## General Guidelines
 
-We’ve created these standards to ensure monetized add-ons provide users with a consistent and reliable experience.
+The sections below provide details on the guidelines developers should be following when monetizing their add-ons.
 
 ### Transparency
 
@@ -69,13 +71,13 @@ Your add-ons must not contain any third-party advertising, including any ads fro
 
 This applies to the advertising of products and services within the add-on description, and the use of banners in the add-on itself.
 
-### Complying with Express Monetization rules
+### Complying with Express monetization rules
 
 When listing an Adobe Express add-on, you should not use “Premium” to describe your upgrade options.
 
 The word “Premium” should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage and more.
 
-### Exporting Premium content
+### Exporting premium content
 
 Adobe Express allows users that aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their document, they'll be prompted to upgrade to a premium plan.
 
@@ -125,27 +127,23 @@ We recommend giving users payment options when signing up or upgrading. This inc
 
 Instead of using words such as "premium" or "gold" in your copy, you should try using words that make it clear what the user needs to do.
 
-Words such as "upgrade" or "subscribe" are clearer and more user-friendly.
+Words such as "upgrade" or "subscribe" are clearer and more user-friendly. For example, instead of:
 
-For example, instead of:
-
-*"You're using the trial version. Go Premium"*
+❌ *"You're using the trial version. Go Premium"*
 
 Try:
 
-*"You're using the trial version. Upgrade today"*
+✅ *"You're using the trial version. Upgrade today"*
 
-Also, consider adjusting your language to make the benefits of upgrading clearer.
+Also, consider adjusting your language to make the benefits of upgrading clearer. For example, instead of:
 
-For example, instead of:
-
-*"This item is premium"*
+❌ *"This item is premium"*
 
 Try:
 
-*"Subscribe to access unlimited illustrations like these"*
+✅ *"Subscribe to access unlimited illustrations like these"*
 
-## Branding your add ons for monetization
+## Branding your add-ons for monetization
 
 When building your monetization checkout experience, you can use the approved colors, gradients, and iconography to communicate when content or features in your add-on require purchase and when content or features are paid and unlocked.
 
@@ -201,6 +199,10 @@ Use the checkmark badge below to indicate when content or features are paid and 
 | <img src="../img/addon-pro-badge.svg" width="18" height="18"/> | 18x18 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg">Download</a> |
 | <img src="../img/addon-pro-badge.svg" width="24" height="24"/> | 24x24 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg" >Download</a> |
 | <img src="../img/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg">Download</a> |
+
+ <img src="/addon-pro-badge.svg" width="24" height="24"/>
+ 
+ <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Static download</a>
 
 <!-- | Badge  | Size(px) | Download link |
 |--------|-------|-------------:|
