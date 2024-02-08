@@ -189,7 +189,7 @@ Use the gradient plus badge below to indicate when content or features require p
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
-| Badge  | Size | Download link | 
+| Badge  | Size | Download link |
 |--------|-------|-------------:|
 | <img src="/addon-pro-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
 | <img src="/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
