@@ -86,6 +86,6 @@ Ensure that changing the language does not result in add-on strings or text cont
 
 ## Branding your Add-ons for monetization
 
-When building your checkout experience for monetize your add-ons, you can use the approved colors, gradients, and iconography to communicate when content or features in your add-on require purchase and when content or features are paid and unlocked. 
+When building your checkout experience for monetize your add-ons, you can use the approved colors, gradients, and iconography to communicate when content or features in your add-on require purchase and when content or features are paid and unlocked.
 
-Carefully review our [monetization brand guidelines](../monetization.md) to get the latest information on Adobe’s recommendations on branding your add-ons for monetization. 
+Carefully review our [monetization brand guidelines](../monetization.md) to get the latest information on Adobe’s recommendations on branding your add-ons for monetization.

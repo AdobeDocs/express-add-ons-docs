@@ -169,7 +169,6 @@ Sometimes it may take a moment to upload the images to the back-end server befor
 
 Next you will specify your version details. The package that you entered in the first step will be shown by default, but you can replace it if you have made an update since you originally uploaded it in this step as well. You can also select the languages your add-on is supported in, and enter any optional release notes at this step. You will see the green checkmark for **Version details** in the left rail and can press **Continue** to move on.
 
-
 ### Step 9: Enter the AI usage details
 
 The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. However, this technology also brings the risk of users encountering inappropriate or offensive content. While Adobe encourages user choice regarding add-ons using Generative AI, transparency is paramount. We ensure clear, upfront communication, guarantee appropriate content, and respect intellectual property rights.
@@ -191,7 +190,7 @@ Carefully review our [monetization guidelines](./guidelines/monetization.md)to g
 ### Step 11: Create a publisher profile
 
 <InlineAlert slots="text" variant="info"/>
-You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission. 
+You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission.
 
 Fill our your publisher details and upload a 250x250 logo, then hit **Continue**.
 

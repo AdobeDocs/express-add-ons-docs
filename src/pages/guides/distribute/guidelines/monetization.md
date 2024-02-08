@@ -15,7 +15,6 @@ Consider whether you want to monetize your add-on at the outset, as it helps you
 
 Remember to research the marketplace carefully before you start creating. This will help you learn whether there is a substantial market for a paid add-on and what other developers (if any) are charging for similar solutions.
 
-
 <!-- ## Payment Models
 
 You can choose from a variety of models for your add-on. Take the time to consider which one suits your needs best.
@@ -87,6 +86,7 @@ Add-ons must not allow users on a free plan to download, share, or export premiu
 When listing your add-on for monetization to the public marketplace, you must indicate your add-on's purchase offerings in the public listing.
 
 The following are the supported monetization details currently, 
+
 - Free
 - One time payment
 - Recurring subscription
@@ -95,18 +95,15 @@ The following are the supported monetization details currently,
 
 <InlineAlert slots="text" variant="info"/>
 
-In all these examples, Checkout is handled by the developer outside of Adobe Express. 
-
+In all these examples, Checkout is handled by the developer outside of Adobe Express.
 
 Here are examples for each payment model based on a Brush Pack add-on in Adobe Express:
-
 | Your selection         | End user view: add-on listing payment details                                                                       | Example                                                                                                                                                                                                                                      |
 |------------------------|---------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Free                   | This add-on does not require any payment.                                                                           | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
 | One time payment       | The user can purchase a  one-time upgrade or license for full access. Upgrade is available for a one-time purchase. | Upgrade to premium brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
 | Recurring subscription | Upgrade is available with a recurring subscription.                                                                 | Subscribe to Premium and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
 | Micro-transactions     | The user can purchase access to  assets or features individually or in packages.                                    | Customize your creative toolkit with individual brush packs available for purchase in Adobe Express. Choose from a variety of sets or opt for bundled packages to save. Pay only for what you need, empowering you to create without limits. |
-
 
 ## Recommendations for monetizing add ons
 
@@ -155,14 +152,14 @@ When building your monetization checkout experience, you can use the approved co
 
 Here are some guidelines for effectively communicating purchasing options and upgrades within your add-ons:
 
--   Use visual cues like the "plus" badge and gradient to indicate that certain features require a purchase. The "plus" icon suggests that users can upgrade their experience. 
+-   Use visual cues like the "plus" badge and gradient to indicate that certain features require a purchase. The "plus" icon suggests that users can upgrade their experience.
 -   Provide textual cues through tooltips to inform users about in-app purchase options. Consider using phrases like "add" alongside the plus badge to convey that users can access additional features or content by upgrading.
 -   Use the checkmark badge to signify when a feature or asset has been successfully added after purchase.
 -   Use terms like "upgrade," "add," "Pro," and "Plus," for example:
     -   Add this [feature] by upgrading the add-on.
     -   Add more when you upgrade.
-    -   Upgrade to Pro
-    -   Upgrade to [Add-on name] Plus
+    -   Upgrade to Pro.
+    -   Upgrade to [Add-on name] Plus.
 - At the beginning of the upgrade flow, let users know that they will have to navigate to an external payment processor to complete their upgrade purchase, for example:
     -   "You'll need to pay to upgrade outside of Adobe."
 -   Include a disclaimer in your checkout flow to remind users that upgrading the add-on does not change their access to Adobe Express Premium, for example:
@@ -175,7 +172,6 @@ While our monetization best practices are recommendations for your add-on, imple
 -   Don't use any crown icons, colors, or gradients associated with Adobe Express Premium.
 -   Don't use "Premium" for your add-on's upgrade experience.
 -   Don't use a lock icon because it conflicts with the "lock layer" feature in Express. If you previously implemented this pattern, we recommend updating to the "plus badge" in your next submission.
-
 
 ###  Branding assets for monetization
 
