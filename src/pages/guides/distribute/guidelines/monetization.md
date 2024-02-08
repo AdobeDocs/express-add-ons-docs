@@ -122,3 +122,27 @@ For example, instead of:
 Try:
 
 *“Subscribe to access unlimited illustrations like these”*
+
+### Branding assets
+
+When building your monetization checkout experience, you can use the approved colors, gradients, and iconography to communicate when content or features in your add-on require purchase and when content or features are paid and unlocked.
+
+#### Plus badge
+
+Use the gradient plus badge below to indicate when content or features require purchase:
+
+| Badge  | Size | Download link |
+|--------|-------|-------------:|
+| <img src="/addon-plus-gradient-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
+| <img src="/addon-plus-gradient-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
+| <img src="/addon-plus-gradient-badge.svg" width="48" height="48"/> | 48x48 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
+
+#### Pro badge
+
+Use the checkmark badge below to indicate when content or features are paid and unlocked:
+
+| Badge  | Size | Download link | 
+|--------|-------|-------------:|
+| <img src="/addon-pro-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
+| <img src="/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
+| <img src="/addon-pro-badge.svg" width="48" height="48"/> | 48x48 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
