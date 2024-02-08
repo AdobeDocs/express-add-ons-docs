@@ -95,14 +95,15 @@ The following are the supported monetization details currently,
 
 <InlineAlert slots="text" variant="info"/>
 
-In all these examples, Checkout is handled by the developer outside of Adobe Express.
+In all these examples, checkout is handled by the developer outside of Adobe Express.
 
 Here are examples for each payment model based on a Brush Pack add-on in Adobe Express:
+
 | Your selection         | End user view: add-on listing payment details                                                                       | Example                                                                                                                                                                                                                                      |
 |------------------------|---------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Free                   | This add-on does not require any payment.                                                                           | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
-| One time payment       | The user can purchase a  one-time upgrade or license for full access. Upgrade is available for a one-time purchase. | Upgrade to premium brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
-| Recurring subscription | Upgrade is available with a recurring subscription.                                                                 | Subscribe to Premium and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
+| One time payment       | The user can purchase a one-time upgrade or license for full access. Upgrade is available for a one-time purchase. | Upgrade to pro brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
+| Recurring subscription | Upgrade is available with a recurring subscription.                                                                 | Subscribe to pro and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
 | Micro-transactions     | The user can purchase access to  assets or features individually or in packages.                                    | Customize your creative toolkit with individual brush packs available for purchase in Adobe Express. Choose from a variety of sets or opt for bundled packages to save. Pay only for what you need, empowering you to create without limits. |
 
 ## Recommendations for monetizing add ons
@@ -169,9 +170,9 @@ Here are some guidelines for effectively communicating purchasing options and up
 
 While our monetization best practices are recommendations for your add-on, implementing the following patterns to avoid them may result in a rejected submission.
 
--   Don't use any crown icons, colors, or gradients associated with Adobe Express Premium.
--   Don't use "Premium" for your add-on's upgrade experience.
--   Don't use a lock icon because it conflicts with the "lock layer" feature in Express. If you previously implemented this pattern, we recommend updating to the "plus badge" in your next submission.
+-   🚫 Don't use any crown icons, colors, or gradients associated with Adobe Express Premium.
+-   🚫 Don't use "Premium" for your add-on's upgrade experience.
+-   🚫 Don't use a lock icon because it conflicts with the "lock layer" feature in Express. If you previously implemented this pattern, we recommend updating to the "plus badge" in your next submission.
 
 ###  Branding assets for monetization
 
@@ -179,7 +180,7 @@ While our monetization best practices are recommendations for your add-on, imple
 
 Use the gradient plus badge below to indicate when content or features require purchase:
 
-| Badge  | Size | Download link |
+| Badge  | Size(px) | Download link |
 |--------|-------|-------------:|
 | <img src="/addon-plus-gradient-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
 | <img src="/addon-plus-gradient-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
@@ -189,7 +190,7 @@ Use the gradient plus badge below to indicate when content or features require p
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
-| Badge  | Size | Download link |
+| Badge  | Size(px) | Download link |
 |--------|-------|-------------:|
 | <img src="/addon-pro-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
 | <img src="/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |

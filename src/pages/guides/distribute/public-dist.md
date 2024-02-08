@@ -173,11 +173,11 @@ Next you will specify your version details. The package that you entered in the 
 
 The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. However, this technology also brings the risk of users encountering inappropriate or offensive content. While Adobe encourages user choice regarding add-ons using Generative AI, transparency is paramount. We ensure clear, upfront communication, guarantee appropriate content, and respect intellectual property rights.
 
-Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get latest information on Adobe’s requirements and reccomendations to try add-ons that employ Generative AI technology..
+Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get latest information on Adobe’s requirements and reccomendations to try add-ons that employ Generative AI technology.
 
 ### Step 10: Enter the monetization details
 
-With the Monetization details tab, developers can monetize their addons and seamlessly choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. Dive deeper into customization with additional details fields, allowing developers to specify their preferred payment terms effortlessly.
+With the Monetization details tab, developers can monetize their add-ons and seamlessly choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. Dive deeper into customization with additional details fields, allowing developers to specify their preferred payment terms effortlessly.
 
 ![](./img/monetization.png)
 
