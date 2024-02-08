@@ -151,8 +151,6 @@ The `*` indicates required fields. Note that you can skip entering these require
 
 Once you finish entering your listing details, you should see a green checkmark for **Listing Details** in the left rail showing your progress. You can then hit **Continue** to move on to the next step.
 
-![](./img/listing-details.png)
-
 <InlineAlert slots="text" variant="success"/>
 
 You can use the "Back" button throughout the distribution experience when you need to go back to change any details at any step.
@@ -161,11 +159,7 @@ You can use the "Back" button throughout the distribution experience when you ne
 
 In the next screen, you will be prompted to should upload 1-5 screenshots to show off your add-on and what it's all about. **NOTE**: At least one screenshot is required.
 
-![Upload screenshot](./img/screenshot.png)
-
 You will see the green checkmark for **Screenshots** in the left rail once you upload at least one, and at this point you can choose to **Continue**.
-
-![Uploaded screenshot](./img/screenshot2.png)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -175,15 +169,35 @@ Sometimes it may take a moment to upload the images to the back-end server befor
 
 Next you will specify your version details. The package that you entered in the first step will be shown by default, but you can replace it if you have made an update since you originally uploaded it in this step as well. You can also select the languages your add-on is supported in, and enter any optional release notes at this step. You will see the green checkmark for **Version details** in the left rail and can press **Continue** to move on.
 
-![Version Details](./img/version-details.png)
 
-### Step 9: Create a publisher profile
+### Step 9: Enter the AI usage details
 
-You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission. Fill our your publisher details and upload a 250x250 logo, then hit **Continue**.
+The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. However, this technology also brings the risk of users encountering inappropriate or offensive content. While Adobe encourages user choice regarding add-ons using Generative AI, transparency is paramount. We ensure clear, upfront communication, guarantee appropriate content, and respect intellectual property rights.
 
-![Publisher Profile](./img/pub-profile2.png)
+Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get latest information on Adobe’s requirements and reccomendations to try add-ons that employ Generative AI technology..
 
-### Step 10: Final submission step
+### Step 10: Enter the monetization details
+
+With the Monetization details tab, developers can monetize their addons and seamlessly choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. Dive deeper into customization with additional details fields, allowing developers to specify their preferred payment terms effortlessly.
+
+![](./img/monetization.png)
+
+Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization/#requirements-for-monetizing-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
+
+If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter.
+
+Carefully review our [monetization guidelines](./guidelines/monetization.md)to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
+
+### Step 11: Create a publisher profile
+
+<InlineAlert slots="text" variant="info"/>
+You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission. 
+
+Fill our your publisher details and upload a 250x250 logo, then hit **Continue**.
+
+<!-- ![Publisher Profile](./img/pub-profile2.png)-->
+
+### Step 12: Final submission step
 
 The final submission step prompts you to enter any **Notes to reviewer** and then you can choose to **Submit for review** if you've entered all of the required data and you are done making any more changes.
 

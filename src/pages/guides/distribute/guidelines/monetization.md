@@ -1,12 +1,20 @@
 # Monetization
 
-## Considerations for Monetization
+Our Monetization guidelines include:
+
+-   Overview
+-   Requirements
+-   Recommendations
+-   Branding your add ons
+
+## Overview
 
 Developers who submit to the marketplace can charge users for using their add-ons.
 
-We recommend that you consider whether you want to monetize your add-on at the outset, as it helps you plan your strategy more effectively.
+Consider whether you want to monetize your add-on at the outset, as it helps you plan your strategy more effectively.
 
-Remember to research the marketplace carefully before you start creating add-ons. This will help you learn whether there is a strong market for a paid add-on – and what other developers (if any) are charging for similar solutions.
+Remember to research the marketplace carefully before you start creating. This will help you learn whether there is a substantial market for a paid add-on and what other developers (if any) are charging for similar solutions.
+
 
 <!-- ## Payment Models
 
@@ -36,18 +44,17 @@ This model asks users to buy credits which can be used for services on the add-o
 
 ## Our Monetization Guidelines
 
-We’ve created these standards to ensure that monetized add-ons provide users with a consistent and reliable experience.
+We’ve created these standards to ensure monetized add-ons provide users with a consistent and reliable experience.
 
 ### Transparency
 
-All add-on developers must be transparent about their pricing and monetization methods. This includes being honest about the price, recurring fees, or additional costs.
+All add-on developers must be transparent about their pricing and monetization methods. This includes being honest about the price and any recurring fees or additional costs.
 
 Users must be able to:
 
-- Locate clear instructions on requesting refund (please place a refund policy on your site).
-- Find a way to cancel any recurring payments, including subscriptions.
-- Manage update their payment methods.
-- Clearly see how much an add-on will cost them, with no hidden fees or surprise charges.
+-   Locate clear instructions on requesting a refund (please place a refund policy on your site).
+-   Find a way to cancel any recurring payments, including subscriptions. Manage their payments and update their payment method
+-   see how much an add-on will cost them, with no hidden fees or surprise charges.
 
 ### Support
 
@@ -59,73 +66,118 @@ You must comply with all applicable laws and regulations. This includes payment 
 
 ### Third-party ads
 
-Your add-ons must not contain third-party advertising, including any ads from Google Ads, Facebook Ads, or other ad networks.
+Your add-ons must not contain any third-party advertising, including any ads from Google Ads, Facebook Ads, or any other ad networks.
 
-This applies to advertising products and services within the add-on description and using banners in the add-on itself.
+This applies to the advertising of products and services within the add-on description, and the use of banners in the add-on itself.
 
 ### Complying with Express Monetization rules
 
-It would be best not to use "Premium" to describe your upgrade options when listing an Adobe Express add-on.
+When listing an Adobe Express add-on, you should not use “Premium” to describe your upgrade options.
 
-The word "Premium" should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage, and more.
+The word “Premium” should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage and more.
 
 ### Exporting Premium content
 
-Adobe Express allows users who aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their documents, they'll be prompted to upgrade to a premium plan.
+Adobe Express allows users that aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their document, they'll be prompted to upgrade to a premium plan.
 
-Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgradeand inform the user how they can do so.
+Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](/..guides/develop/use_cases/#premium-content) for more information on how to do this.
 
-See our [documentation](../../develop/use_cases.md#premium-content) for more information on how to do this.
+## Requirements for monetizing add ons
 
-### Recommended Practices for Monetization
+When listing your add-on for monetization to the public marketplace, you must indicate your add-on's purchase offerings in the public listing.
 
-We recommend following these tips to make your add-on more user friendly and to avoid potential confusion:
+The following are the supported monetization details currently, 
+- Free
+- One time payment
+- Recurring subscription
+- Micro transactions
+- Other
 
-#### Offer a choice
+<InlineAlert slots="text" variant="info"/>
 
-We recommend giving users a choice of payment options when signing up or upgrading. This includes:
+In all these examples, Checkout is handled by the developer outside of Adobe Express. 
 
-- A choice of payment methods, such as credit cards, PayPal, and other popular alternatives.
-- A choice of payment terms. When users sign up for a subscription or pay as they use, try to provide short and long-term payment options, such as monthly and annual terms.
-- Giving users the chance to try before they buy. Free trials and freemium options can improve sign-up numbers.
 
-<!-- - Differentiate between “free” and “trial”
+Here are examples for each payment model based on a Brush Pack add-on in Adobe Express:
 
-- These words are not interchangeable. “Free” tends to mean that users will not be charged for content while it is published and available.
+| Your selection         | End user view: add-on listing payment details                                                                       | Example                                                                                                                                                                                                                                      |
+|------------------------|---------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Free                   | This add-on does not require any payment.                                                                           | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
+| One time payment       | The user can purchase a  one-time upgrade or license for full access. Upgrade is available for a one-time purchase. | Upgrade to premium brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
+| Recurring subscription | Upgrade is available with a recurring subscription.                                                                 | Subscribe to Premium and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
+| Micro-transactions     | The user can purchase access to  assets or features individually or in packages.                                    | Customize your creative toolkit with individual brush packs available for purchase in Adobe Express. Choose from a variety of sets or opt for bundled packages to save. Pay only for what you need, empowering you to create without limits. |
 
-- “Trial” means that content is free for a limited time. A “free trial” means that the user will not be charged for content for a set period, at which point they will need to pay a fee to access it. -->
 
-- Avoid using “Pro”.
-- Adobe Express caters to non-professional and professional users, so you should avoid using "Pro" in your language.
-- If “Pro” refers to a pricing model, make this clear (for example, by saying “Pro Plan”).
+## Recommendations for monetizing add ons
 
-#### Consider user action
+We recommend following these tips to make your add-on more user-friendly and to avoid potential confusion:
 
-Instead of using words such as “premium” or “gold” in your copy, you should try using words that clarify what the user needs to do.
+### Offer a choice
 
-Words such as “upgrade” or “subscribe” are clearer and more user-friendly.
+We recommend giving users payment options when signing up or upgrading. This includes:
+
+-   A choice of payment methods, such as credit cards, PayPal and other popular alternatives.
+-   A choice of payment terms. When signing up for a subscription or pay-as-you-go, provide short and long-term payment options, such as monthly and annual terms.
+-   Giving users the chance to try before they buy. Free trials and freemium options can improve sign-up numbers.
+-   Avoid using "Pro".
+-   Adobe Express caters to non-professional and professional users, so avoid using "pro" in your language.
+-   If "pro" refers to a pricing model, make this clear (for example, by saying "Pro Plan").
+
+### Consider user action
+
+Instead of using words such as "premium" or "gold" in your copy, you should try using words that make it clear what the user needs to do.
+
+Words such as "upgrade" or "subscribe" are clearer and more user-friendly.
 
 For example, instead of:
 
-*“You’re using the trial version. Go Premium”*
+*"You're using the trial version. Go Premium"*
 
 Try:
 
-*“You’re using the trial version. Upgrade today”*
+*"You're using the trial version. Upgrade today"*
 
 Also, consider adjusting your language to make the benefits of upgrading clearer.
 
 For example, instead of:
 
-*“This item is premium”*
+*"This item is premium"*
 
 Try:
 
-*“Subscribe to access unlimited illustrations like these”*
+*"Subscribe to access unlimited illustrations like these"*
 
-### Branding assets
+## Branding your add ons for monetization
 
 When building your monetization checkout experience, you can use the approved colors, gradients, and iconography to communicate when content or features in your add-on require purchase and when content or features are paid and unlocked.
+
+### Best practices
+
+Here are some guidelines for effectively communicating purchasing options and upgrades within your add-ons:
+
+-   Use visual cues like the "plus" badge and gradient to indicate that certain features require a purchase. The "plus" icon suggests that users can upgrade their experience. 
+-   Provide textual cues through tooltips to inform users about in-app purchase options. Consider using phrases like "add" alongside the plus badge to convey that users can access additional features or content by upgrading.
+-   Use the checkmark badge to signify when a feature or asset has been successfully added after purchase.
+-   Use terms like "upgrade," "add," "Pro," and "Plus," for example:
+    -   Add this [feature] by upgrading the add-on.
+    -   Add more when you upgrade.
+    -   Upgrade to Pro
+    -   Upgrade to [Add-on name] Plus
+- At the beginning of the upgrade flow, let users know that they will have to navigate to an external payment processor to complete their upgrade purchase, for example:
+    -   "You'll need to pay to upgrade outside of Adobe."
+-   Include a disclaimer in your checkout flow to remind users that upgrading the add-on does not change their access to Adobe Express Premium, for example:
+    -   "This upgrade only applies to the [Add-on name] add-on and does not grant or remove access to Adobe Express Premium."
+
+### Patterns to avoid
+
+While our monetization best practices are recommendations for your add-on, implementing the following patterns to avoid them may result in a rejected submission.
+
+-   Don't use any crown icons, colors, or gradients associated with Adobe Express Premium.
+-   Don't use "Premium" for your add-on's upgrade experience.
+-   Don't use a lock icon because it conflicts with the "lock layer" feature in Express. If you previously implemented this pattern, we recommend updating to the "plus badge" in your next submission.
+
+
+###  Branding assets for monetization
 
 #### Plus badge
 
