@@ -181,17 +181,29 @@ While our monetization best practices are recommendations for your add-on, imple
 Use the gradient plus badge below to indicate when content or features require purchase:
 
 | Badge  | Size(px) | Download link |
+|--------|----------|-------------:|
+| <img src="../img/addon-plus-gradient-badge.svg" width="18" height="18"/> | 18x18 | <a href="../img/addon-plus-gradient-badge.svg" download="../img/addon-plus-gradient-badge.svg">Download</a> |
+| <img src="../img/addon-plus-gradient-badge.svg" width="24" height="24"/> | 24x24 | <a href="../img/addon-plus-gradient-badge.svg" download="../img/addon-plus-gradient-badge.svg" >Download</a> |
+| <img src="../img/addon-plus-gradient-badge.svg" width="32" height="32"/> | 32x32 | <a href="../img/addon-plus-gradient-badge.svg" download="../img/addon-plus-gradient-badge.svg">Download</a> |
+
+<!-- | Badge  | Size(px) | Download link |
 |--------|-------|-------------:|
 | <img src="/addon-plus-gradient-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
 | <img src="/addon-plus-gradient-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
-| <img src="/addon-plus-gradient-badge.svg" width="48" height="48"/> | 48x48 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
+| <img src="/addon-plus-gradient-badge.svg" width="48" height="48"/> | 48x48 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> | -->
 
 #### Pro badge
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
 | Badge  | Size(px) | Download link |
+|--------|----------|-------------:|
+| <img src="../img/addon-pro-badge.svg" width="18" height="18"/> | 18x18 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg">Download</a> |
+| <img src="../img/addon-pro-badge.svg" width="24" height="24"/> | 24x24 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg" >Download</a> |
+| <img src="../img/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg">Download</a> |
+
+<!-- | Badge  | Size(px) | Download link |
 |--------|-------|-------------:|
 | <img src="/addon-pro-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
 | <img src="/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
-| <img src="/addon-pro-badge.svg" width="48" height="48"/> | 48x48 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> |
+| <img src="/addon-pro-badge.svg" width="48" height="48"/> | 48x48 | <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Download</a> | -->
