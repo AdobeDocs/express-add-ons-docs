@@ -201,7 +201,6 @@ Use the checkmark badge below to indicate when content or features are paid and 
 | <img src="../img/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg">Download</a> |
 
  <img src="/addon-pro-badge.svg" width="24" height="24"/>
- 
  <a href="/addon-pro-badge.svg" download="/addon-pro-badge.svg">Static download</a>
 
 <!-- | Badge  | Size(px) | Download link |

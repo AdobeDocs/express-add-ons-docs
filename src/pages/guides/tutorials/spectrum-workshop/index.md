@@ -19,7 +19,7 @@ contributors:
 
 # Building UIs using Adobe's Spectrum Design System
 
-This tutorial will guide you on how to get started building great UI's for your add-ons using [Adobe Spectrum](https://spectrum.adobe.com/). 
+This tutorial will guide you on how to get started building great UI's for your add-ons using [Adobe Spectrum](https://spectrum.adobe.com/).
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -31,7 +31,7 @@ In this tutorial, you will learn how to build two fully functioning [Adobe Expre
 
 The two different add-on's you will create are:
 
-- A basic JavaScript add-on that uses [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) to build out the UI. 
+- A basic JavaScript add-on that uses [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) to build out the UI.
 
 - A React-based add-on that uses the [`swc-react` Spectrum Web Components wrapper library](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#spectrum-web-components-with-react).
 
@@ -80,7 +80,7 @@ This add-on allows users to select settings to customize a bingo card; including
 
 ## Quickstart: Try Spectrum Web Components
 
-A quick way to try out [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) without requiring any external tools, is to use a sandboxed environment like a codepen. See this [simple codepen](https://codepen.io/hollyschinsky/pen/xxBweyV), for example. It references the Spectrum Web Components libraries as bundles from a CDN for simplicity, and shows how to use the Express theme with a button component. 
+A quick way to try out [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) without requiring any external tools, is to use a sandboxed environment like a codepen. See this [simple codepen](https://codepen.io/hollyschinsky/pen/xxBweyV), for example. It references the Spectrum Web Components libraries as bundles from a CDN for simplicity, and shows how to use the Express theme with a button component.
 
 Check out [the codepen](https://codepen.io/hollyschinsky/pen/xxBweyV0), then try changing the `scale` value in the `<sp-theme>` tag to a value of `"large"` - then back to `"medium"` to see the effect.
 
@@ -93,4 +93,3 @@ Before moving on, check out [this codepen](https://codepen.io/hollyschinsky/pen/
 <InlineAlert slots="text" variant="warning"/>
 
 CDN URL references are used to show you a quick way to get started with Spectrum Web Components. However, you will notice the UI is laggy, so you wouldn't want to use this for your final add-on projects for performance reasons. In the following lessons, you will learn how to configure your projects to use only the modules and components your UI needs to ensure the best performance for your add-ons.
-
