@@ -181,16 +181,15 @@ The **Monetization details** tab allows developers to declare the payment option
 
 ![](./img/monetization.png)
 
-Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. 
+Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
 
-- The *Additional details* field allows developers to provide additional payment terms like "7 day free trial" OR "$9.99/month".
-- Developers also have the flexibility to choose the “Other” option if their current setup does not fit the provided options.
+- The **Additional details** field allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"*.
+- Developers also have the flexibility to choose the **Other** option if their current setup does not fit the provided options.
 
-Developers can preview their Monetization badge on the Preview screen.
+Developers can preview their Monetization badge by clicking the **Preview listing**.
 
-Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
 
-If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter.
+<!-- If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter. -->
 
 Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
 

@@ -13,8 +13,8 @@ We’ve created these standards to ensure monetized add-ons provide users with a
 Our monetization guidelines include:
 
 -   [General](#general-guidelines)
--   [Requirements](#requirements-for-monetizing-add-ons)
--   [Recommendations](#recommendations-for-monetizing-add-ons)
+-   [Requirements](#requirements-for-monetizing-your-add-ons)
+-   [Recommendations](#recommendations-for-monetizing-your-add-ons)
 -   [Branding your add-ons](#branding-your-add-ons-for-monetization)
 
 <!-- ## Payment Models
@@ -83,14 +83,14 @@ Adobe Express allows users that aren't subscribed to a premium version of Adobe 
 
 Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](/..guides/develop/use_cases/#premium-content) for more information on how to do this.
 
-## Requirements for monetizing add ons
+## Requirements for monetizing your add-ons
 
-When listing your add-on for monetization to the public marketplace, you must indicate your add-on's purchase offerings in the public listing.
+When listing your add-ons for monetization to the public marketplace, you must indicate your add-on's purchase offerings in the public listing.
 
 The following are the supported monetization details currently,
 
 - Free
-- One time payment
+- One-time payment
 - Recurring subscription
 - Micro transactions
 - Other
@@ -101,14 +101,14 @@ In all these examples, checkout is handled by the developer outside of Adobe Exp
 
 Here are examples for each payment model based on a Brush Pack add-on in Adobe Express:
 
-| Your selection         | End user view: add-on listing payment details                                                                       | Example                                                                                                                                                                                                                                      |
-|------------------------|---------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Free                   | This add-on does not require any payment.                                                                           | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
-| One time payment       | The user can purchase a one-time upgrade or license for full access. Upgrade is available for a one-time purchase. | Upgrade to pro brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
-| Recurring subscription | Upgrade is available with a recurring subscription.                                                                 | Subscribe to pro and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
-| Micro-transactions     | The user can purchase access to  assets or features individually or in packages.                                    | Customize your creative toolkit with individual brush packs available for purchase in Adobe Express. Choose from a variety of sets or opt for bundled packages to save. Pay only for what you need, empowering you to create without limits. |
+| Your selection         | End-user view: add-on listing Payment details                    | Example                                                                                                                                                                                                                                      |
+|------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Free                   | This add-on does not require any payment.                        | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
+| One time payment       | Upgrade is available for a one-time purchase.                    | Upgrade to premium brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
+| Recurring subscription | Upgrade is available with a recurring subscription.              | Subscribe to Premium and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
+| Micro-transactions     | You can purchase assets or features individually or in packages. | Customize your creative toolkit with individual brush packs available for purchase in Adobe Express. Choose from a variety of sets or opt for bundled packages to save. Pay only for what you need, empowering you to create without limits. |
 
-## Recommendations for monetizing add ons
+## Recommendations for monetizing your add-ons
 
 We recommend following these tips to make your add-on more user-friendly and to avoid potential confusion:
 
@@ -145,7 +145,7 @@ Try:
 
 ## Branding your add-ons for monetization
 
-When building your monetization checkout experience, you can use the approved colors, gradients, and iconography to communicate when content or features in your add-on require purchase and when content or features are paid and unlocked.
+When building your checkout experience to monetize your add-ons, you can use the approved colors, gradients, and iconography to communicate when content or features in your add-on require purchase and when content or features are paid and unlocked.
 
 ### Best practices
 
