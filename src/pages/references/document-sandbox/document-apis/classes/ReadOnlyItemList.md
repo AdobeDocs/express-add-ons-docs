@@ -4,7 +4,7 @@
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [allChildren](Node.md#allChildren) for details).
+children that exist in the parent node. See [allChildren](Node.md#allchildren) for details).
 
 Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclasses like ItemList may add these capabilities, however.
 
@@ -16,7 +16,7 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
 ## Hierarchy
 
-- `TemplatizedProxyLiveObject`
+- `TemplatizedProxyLiveObject`<`HzApiInputType`\>
 
   ↳ **`ReadOnlyItemList`**
 
@@ -60,9 +60,9 @@ Number of items in this list.
 
 ## Methods
 
-### iterator
+### [iterator]
 
-▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 

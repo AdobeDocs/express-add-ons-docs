@@ -65,9 +65,9 @@ RestrictedItemList.length
 
 ## Methods
 
-### iterator
+### [iterator]
 
-▸ **iterator**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
+▸ **[iterator]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -77,7 +77,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[iterator](RestrictedItemList.md#iterator)
+[RestrictedItemList](RestrictedItemList.md).[[iterator]](RestrictedItemList.md#iterator)
 
 ___
 
@@ -201,7 +201,7 @@ An error if either argument is not contained in this list.
 
 #### Inherited from
 
-[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#moveBefore)
+[RestrictedItemList](RestrictedItemList.md).[moveBefore](RestrictedItemList.md#movebefore)
 
 ___
 

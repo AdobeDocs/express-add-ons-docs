@@ -142,6 +142,23 @@ The end point on the y-axis in the parent's coordinate system. Modify using `set
 
 ___
 
+### id
+
+• `get` **id**(): `string`
+
+A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
+moved to a different part of the document.
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+StrokableNode.id
+
+___
+
 ### locked
 
 • `get` **locked**(): `boolean`
@@ -355,7 +372,6 @@ The node's transform matrix relative to its parent.
 #### Returns
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
-`[`mat2d`](https://glmatrix.net/docs/module-mat2d.html)`
 
 #### Inherited from
 

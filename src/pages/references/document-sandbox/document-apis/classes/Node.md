@@ -77,6 +77,23 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ___
 
+### id
+
+• `get` **id**(): `string`
+
+A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
+moved to a different part of the document.
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+BaseNode.id
+
+___
+
 ### locked
 
 • `get` **locked**(): `boolean`

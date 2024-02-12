@@ -109,7 +109,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `path` | `string` | a string representing any [SVG path element](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths). Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input. For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...". * Throws if the input is empty or is not legal SVG path syntax. |
+| `path` | `string` | a string representing any [SVG path element](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths). Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input. For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...". Throws if the input is empty or is not legal SVG path syntax. |
 
 #### Returns
 
@@ -154,7 +154,7 @@ Creates a bitmap image resource in the document, which can be displayed in the s
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
 
 Because the resulting BitmapImage is returned asynchronously, to use it you must schedule an edit lambda to run at a
-safe later time in order to call [createImageContainer](Editor.md#createImageContainer). See [queueAsyncEdit](Editor.md#queueAsyncEdit).
+safe later time in order to call [createImageContainer](Editor.md#createimagecontainer). See [queueAsyncEdit](Editor.md#queueasyncedit).
 
 Further async steps to upload image resource data may continue in the background after this call's Promise resolves,
 but the resulting BitmapImage can be used right away (via the queue API noted above). The local client will act as
@@ -198,7 +198,6 @@ Convenience helper to create a complete Stroke value given just a subset of its 
 populated with default values.
 
 See [Stroke](../interfaces/Stroke.md) for more details on the `options` fields. Defaults:
-
 - `color` has default value DEFAULT_STROKE_COLOR if none is provided.
 - `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
 - `position` has default value `center` if none is provided.
