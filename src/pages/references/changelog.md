@@ -20,9 +20,22 @@ contributors:
 
 # Changelog
 
+## 2024-02-07
+
+- A new [`createPath`](../references/document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
+- Updates descriptions in various methods and classes in the [Document APIs](../references/document-sandbox/document-apis/).
+- Updates to the [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
+- Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../guides/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../guides/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
+- The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
+
+## 2024-01-31
+
+Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/).
+
 ## 2024-01-09
 
 ### New Experimental APIs
+
 - [`startPremiumUpgradeIfFreeUser()`](../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) experimental API has been added to the [addOnUISdk.app](../references/addonsdk/addonsdk-app.md) object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.
 
 - [`isPremiumUser()`](../references/addonsdk/app-currentUser.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](../references/addonsdk/app-currentUser.md) object to determine if the current user is a premium or free user.

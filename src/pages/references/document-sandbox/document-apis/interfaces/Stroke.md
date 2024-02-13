@@ -4,15 +4,8 @@
 
 Represents a stroke in the scenegraph. See [StrokableNode](../classes/StrokableNode.md).
 
-## Table of contents
-
-### Properties
-
-- [color](Stroke.md#color)
-- [dashOffset](Stroke.md#dashoffset)
-- [dashPattern](Stroke.md#dashpattern)
-- [position](Stroke.md#position)
-- [width](Stroke.md#width)
+The most convenient way to create a stroke is via `Editor.makeStroke()`. This also futureproofs your code in case any
+other required fields are added to the Stroke descriptor in the future.
 
 ## Properties
 

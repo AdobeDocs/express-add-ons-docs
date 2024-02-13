@@ -8,14 +8,6 @@
 
 A stroke's [position](../interfaces/Stroke.md#position) determines how the thickness of the stroke is aligned along a shape's path outline.
 
-## Table of contents
-
-### Enumeration Members
-
-- [center](StrokePosition.md#center)
-- [inside](StrokePosition.md#inside)
-- [outside](StrokePosition.md#outside)
-
 ## Enumeration Members
 
 ### center

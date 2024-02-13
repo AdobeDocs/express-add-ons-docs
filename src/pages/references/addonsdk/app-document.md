@@ -379,16 +379,47 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
-| `bleed?` | [`Bleed`]() |  Bleed for the page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. The parameter is optional, and if left undefined, then no bleed is assumed. |
+| `bleed?`      | [`Bleed`](#bleed) |  Bleed for the page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. The parameter is optional, and if left undefined, then no bleed is assumed. If `bleed` is defined, `CropBox` and `TrimBox` will be the size of the Express document, `BleedBox` and `MediaBox` will be equal to each other, and they will expand on all sides (left, top, right, bottom) with the amount/unit specified by `bleed`.  |
+| `pageBoxes?`  | [`PdfPageBoxes`](#pdfpageboxes) | Exposes the ability to customize each PDF Page Box (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions by defining how much it should expand on each side beyond the Express document page size. If `pageBoxes` are defined, then `PdfRenditionOptions.bleed` is ignored. |
 
 #### `Bleed`
 
-Represents a bleed for a page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed. 
+Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed. 
 
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `amount?`     | `number`     | The amount for the bleed. |
 | `unit`        | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
+
+#### `PdfPageBoxes`
+
+Represents all of the PDF page boxes (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`).
+
+| Name          | Type         | Description |
+| ------------- | -------------| -----------:|
+| `mediaBox?`   | [`PdfPageBox`](#pdfpagebox) | Media box |
+| `bleedBox?`   | [`PdfPageBox`](#pdfpagebox) | Bleed box |
+| `cropBox?`    | [`PdfPageBox`](#pdfpagebox) | Crop box |
+| `trimBox?`    | [`PdfPageBox`](#pdfpagebox) | Trim box |
+
+#### `PdfPageBox`
+ 
+Represents a PDF page box.
+
+| Name          | Type         | Description |
+| ------------- | -------------| -----------:|
+| `margins`   | [`PdfPageBoxMargins`](#pdfpageboxmargins) | Margins for a box |
+ 
+#### `PdfPageBoxMargins`
+ 
+Represents margins for a PDF page box.
+
+| Name          | Type         | Description |
+| ------------- | -------------| -----------:|
+| `top?`    | [`Bleed`](#bleed) | Top margin |
+| `bottom?` | [`Bleed`](#bleed) | Bottom margin |
+| `left?` | [`Bleed`](#bleed) | Left margin |
+| `right?` | [`Bleed`](#bleed) | Right margin |
 
 #### Return Value
 

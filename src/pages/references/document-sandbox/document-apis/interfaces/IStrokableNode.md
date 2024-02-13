@@ -9,12 +9,6 @@ from the StrokableNode class. (See [ArtboardNode](../classes/ArtboardNode.md), f
 
 - [`StrokableNode`](../classes/StrokableNode.md)
 
-## Table of contents
-
-### Properties
-
-- [stroke](IStrokableNode.md#stroke)
-
 ## Properties
 
 ### stroke

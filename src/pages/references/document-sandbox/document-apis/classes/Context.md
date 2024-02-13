@@ -10,15 +10,6 @@ Contains the user's current selection state, indicating the content they are foc
 
   ↳ **`Context`**
 
-## Table of contents
-
-### Accessors
-
-- [hasSelection](Context.md#hasselection)
-- [insertionParent](Context.md#insertionparent)
-- [selection](Context.md#selection)
-- [selectionIncludingNonEditable](Context.md#selectionincludingnoneditable)
-
 ## Accessors
 
 ### hasSelection
@@ -41,7 +32,9 @@ ___
 
 [`ContainerNode`](../interfaces/ContainerNode.md)
 
-the preferred parent to insert newly added content into.
+the preferred parent to insert newly added content into (i.e., the location content would get inserted if a
+user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
+other UI state.
 
 ___
 

@@ -10,26 +10,6 @@ Entry point for APIs that read or modify the document's content.
 
   ↳ **`Editor`**
 
-## Table of contents
-
-### Accessors
-
-- [context](Editor.md#context)
-- [documentRoot](Editor.md#documentroot)
-
-### Methods
-
-- [createEllipse](Editor.md#createellipse)
-- [createGroup](Editor.md#creategroup)
-- [createImageContainer](Editor.md#createimagecontainer)
-- [createLine](Editor.md#createline)
-- [createRectangle](Editor.md#createrectangle)
-- [createText](Editor.md#createtext)
-- [loadBitmapImage](Editor.md#loadbitmapimage)
-- [makeColorFill](Editor.md#makecolorfill)
-- [makeStroke](Editor.md#makestroke)
-- [queueAsyncEdit](Editor.md#queueasyncedit)
-
 ## Accessors
 
 ### context
@@ -121,6 +101,24 @@ Transform values default to 0.
 
 ___
 
+### createPath
+
+▸ **createPath**(`path`): [`PathNode`](PathNode.md)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `string` | a string representing any [SVG path element](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths). Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input. For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...". * Throws if the input is empty or is not legal SVG path syntax. |
+
+#### Returns
+
+[`PathNode`](PathNode.md)
+
+a path node with a default stroke and no initial fill.
+
+___
+
 ### createRectangle
 
 ▸ **createRectangle**(): [`RectangleNode`](RectangleNode.md)
@@ -155,10 +153,12 @@ ___
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
 
-Note: image resources that are unused will be automatically cleaned up after the document is closed.
+Because the resulting BitmapImage is returned asynchronously, to use it you must schedule an edit lambda to run at a
+safe later time in order to call [createImageContainer](Editor.md#createImageContainer). See [queueAsyncEdit](Editor.md#queueAsyncEdit).
 
-Async steps to upload image resource data continue in the background after this call's Promise resolves, but the BitmapImage
-return value can be used immediately. The local client will act as having unsaved changes until the upload has finished.
+Further async steps to upload image resource data may continue in the background after this call's Promise resolves,
+but the resulting BitmapImage can be used right away (via the queue API noted above). The local client will act as
+having unsaved changes until all the upload steps have finished.
 
 #### Parameters
 
