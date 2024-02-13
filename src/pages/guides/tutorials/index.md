@@ -17,34 +17,38 @@ contributors:
 
 # Tutorials
 
-In this page, you'll find a variety of tutorials covering the Adobe Express Add-on SDK and Document API.
+In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
-<ResourceCard slots="link, image, heading, text" width="33%"/>
+<ResourceCard slots="link, image, heading, text" width="50%"/>
 
-[Grids add-on](grids-addon.md)
+[Express Document API](grids-addon.md)
 
-![Grids add-on image](images/thumbs-grids-addon.png)
+![Grids add-on](images/thumbs-grids-addon.png)
 
 ### Creating a Grid System add-on with the Adobe Express Document API
 
 Davide Barranca - November 6th, 2023
 
-<ResourceCard slots="link, image, heading, text" width="33%"/>
+<ResourceCard slots="link, image, heading, text" width="50%"/>
 
-[Document Stats add-on](stats-addon.md)
+[Coming Soon...](stats-addon.md)
 
-![Document Stats add-on image](images/thumbs-stats-addon.png)
+![Coming Soon](images/thumbs-stats-addon.png)
 
-### Creating a Document Stats add-on with the Adobe Express Communication API
+### Creating a Stats add-on with the Adobe Express Communication API
 
 Davide Barranca - December 14th, 2023
 
-<ResourceCard slots="link, image, heading, text" width="33%"/>
+<ResourceCard slots="link, image, heading, text" width="80%"/>
 
-[Document API Reference tutorial](dom-reference.md)
+[Express Document API](spectrum-workshop/index.md)
 
-![Document API Reference image](images/thumbs-refs-addon.png)
+![Grids add-on](images/bingo-v1-addon.png)
 
-### Exploring the Adobe Express Document API Reference
+### Building UIs using Adobe's Spectrum Design System 
 
-Davide Barranca - January 20th, 2024
+Holly Schinsky - January 25th, 2024
+
+
+
+
