@@ -139,7 +139,7 @@ module.exports = {
                   {
                     title: "ComplexShapeNode",
                     path: "references/document-sandbox/document-apis/classes/ComplexShapeNode.md",
-                  },                  
+                  },
                   {
                     title: "Context",
                     path: "references/document-sandbox/document-apis/classes/Context.md",
@@ -253,7 +253,7 @@ module.exports = {
                   {
                     title: "ContainerNode",
                     path: "references/document-sandbox/document-apis/interfaces/ContainerNode.md",
-                  },                  
+                  },
                   {
                     title: "Fill",
                     path: "references/document-sandbox/document-apis/interfaces/Fill.md",
@@ -289,7 +289,7 @@ module.exports = {
                   {
                     title: "Stroke",
                     path: "references/document-sandbox/document-apis/interfaces/Stroke.md",
-                  },                                   
+                  },
                 ],
               },
               {
@@ -325,6 +325,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/enums/TextAlignment.md",
                   },
                 ],
+              },
+              {
+                title: "Concepts",
+                path: "references/document-sandbox/document-apis/concepts/index.md",
               },
             ],
           },
@@ -394,7 +398,7 @@ module.exports = {
           {
             title: "Implementing Common Use Cases",
             path: "guides/develop/use_cases.md",
-          },          
+          },
           {
             title: "Frameworks, libraries and bundling",
             path: "guides/develop/frameworks-libraries-bundling.md",
