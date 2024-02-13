@@ -110,17 +110,34 @@ has multiple disjoint parts. The default value is nonZero.
 
 [`FillRule`](../enums/FillRule.md)
 
-• `set` **fillRule**(`rule`): `void`
+• `set` **fillRule**(`fillRule`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `rule` | [`FillRule`](../enums/FillRule.md) |
+| `fillRule` | [`FillRule`](../enums/FillRule.md) |
 
 #### Returns
 
 `void`
+
+___
+
+### id
+
+• `get` **id**(): `string`
+
+A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
+moved to a different part of the document.
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+FillableNode.id
 
 ___
 

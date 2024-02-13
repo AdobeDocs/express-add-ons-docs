@@ -56,6 +56,23 @@ The node's children. Use the methods on this ItemList object to get, add, and re
 
 ___
 
+### id
+
+• `get` **id**(): `string`
+
+A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
+moved to a different part of the document.
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+BaseNode.id
+
+___
+
 ### parent
 
 • `get` **parent**(): `undefined` \| [`BaseNode`](../classes/BaseNode.md)
