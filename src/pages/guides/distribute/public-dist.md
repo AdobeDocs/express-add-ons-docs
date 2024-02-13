@@ -100,7 +100,7 @@ Your add-on container will be created and a settings panel like the one shown be
 
 Next, click on the **Public listing** tab and you will be presented with the screen below where you can press the **Create public link** button to proceed.
 
-![Private link option](./img/empty-public-listing.png)
+![Public link option](./img/empty-public-listing.png)
 
 ### Step 4: Upload your add-on package
 
@@ -220,3 +220,13 @@ The **Submit for review** button will only be enabled if you have entered all of
 <InlineAlert slots="text" variant="success"/>
 
 You can also choose to view your submission details later from the add-on launchpad by clicking **Manage** again, and then selecting any existing listing. If it's in a *Draft* status, you can click the ellipsis button "..." and choose **edit** if you want to update the details.
+
+## Post-Submission
+
+You can choose to revisit your submission details later if you need to update it, or if you want to download insights for your add-on. To do so, choose **Manage** from the add-on launchpad again, and then select your add-on listing. You will see the details and options available as shown in the example screenshot below.
+
+![public listing details](./img/public_listing_details.png)
+
+The **Download insights** button will provide some analytics for your published add-ons in the form of a `.csv` file, named with the name of your add-on, followed by the `_public` or `_private` string depending on the listing type. The insights data available includes the number of installs, uninstalls and invocations of your add-on per week. An example `.csv` is shown below for reference:
+
+![sample insights](./img/sample-insights.png)
