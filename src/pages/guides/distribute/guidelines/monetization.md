@@ -85,9 +85,9 @@ Add-ons must not allow users on a free plan to download, share, or export premiu
 
 ## Requirements for monetizing your add-ons
 
-When listing your add-ons for monetization to the public marketplace, you must indicate your add-on's purchase offerings in the public listing.
+When listing your add-ons for monetization to the public marketplace, you must indicate your add-on's purchase offerings in [the public listing](../public-dist.md#step-10-enter-the-monetization-details).
 
-The following are the supported monetization details currently,
+The following are the supported monetization details currently:
 
 - Free
 - One-time payment
@@ -151,9 +151,9 @@ When building your checkout experience to monetize your add-ons, you can use the
 
 Here are some guidelines for effectively communicating purchasing options and upgrades within your add-ons:
 
--   Use visual cues like the "plus" badge and gradient to indicate that certain features require a purchase. The "plus" icon suggests that users can upgrade their experience.
+-   Use visual cues like the "plus" gradient badge to indicate that certain features require a purchase. The "plus" icon visually suggests that users can upgrade their experience.
 -   Provide textual cues through tooltips to inform users about in-app purchase options. Consider using phrases like "add" alongside the plus badge to convey that users can access additional features or content by upgrading.
--   Use the checkmark badge to signify when a feature or asset has been successfully added after purchase.
+-   Use the "paid" green checkmark badge to signify when a feature or asset has been successfully added after purchase.
 -   Use terms like "upgrade," "add," "Pro," and "Plus," for example:
     -   Add this [feature] by upgrading the add-on.
     -   Add more when you upgrade.
@@ -176,26 +176,36 @@ While our monetization best practices are recommendations for your add-on, imple
 
 #### Plus badge
 
-Use the gradient plus badge below to indicate when content or features require purchase:
+Use the plus gradient icon below to indicate when content or features require purchase:
 
 | Badge  | Size(px) | Download link |
 |--------|----------|-------------:|
-| <img src="../img/addon-plus-gradient-badge.svg" width="18" height="18"/> | 18x18 | <a href="../img/addon-plus-gradient-badge.svg" download="../img/addon-plus-gradient-badge.svg">Download</a> |
-| <img src="../img/addon-plus-gradient-badge.svg" width="24" height="24"/> | 24x24 | <a href="../img/addon-plus-gradient-badge.svg" download="../img/addon-plus-gradient-badge.svg" >Download</a> |
-| <img src="../img/addon-plus-gradient-badge.svg" width="32" height="32"/> | 32x32 | <a href="../img/addon-plus-gradient-badge.svg" download="../img/addon-plus-gradient-badge.svg">Download</a> |
+| <img src="../img/addon-plus-badge20.svg" width="20" height="20"/> | 20x20 | <a href="../img/addon-plus-badge20.svg" download="../img/addon-plus-badge20.svg">Download</a> |
 
-<!-- | Badge  | Size(px) | Download link |
-|--------|-------|-------------:|
-| <img src="/addon-plus-gradient-badge.svg" width="24" height="24"/> | 24x24 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
-| <img src="/addon-plus-gradient-badge.svg" width="32" height="32"/> | 32x32 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> |
-| <img src="/addon-plus-gradient-badge.svg" width="48" height="48"/> | 48x48 | <a href="/addon-plus-gradient-badge.svg" download="/addon-plus-gradient-badge.svg">Download</a> | -->
-
-#### Pro badge
+#### Paid badge
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
 | Badge  | Size(px) | Download link |
 |--------|----------|-------------:|
-| <img src="../img/addon-pro-badge.svg" width="18" height="18"/> | 18x18 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg">Download</a> |
-| <img src="../img/addon-pro-badge.svg" width="24" height="24"/> | 24x24 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg" >Download</a> |
-| <img src="../img/addon-pro-badge.svg" width="32" height="32"/> | 32x32 | <a href="../img/addon-pro-badge.svg" download="../img/addon-pro-badge.svg">Download</a> |
+| <img src="../img/addon-pro-badge20.svg" width="20" height="20"/> | 20x20 | <a href="../img/addon-pro-badge20.svg" download="../img/addon-pro-badge20.svg">Download</a> |
+
+<InlineAlert slots="text" variant="info"/>
+
+The most common size of badges used within Express panels is typically 20x20px, so we've included an easy download of that size specifically above. However, since it's an `.svg` icon, you could simply scale it to another size as needed. 
+
+#### General badge recommendations
+
+- As a general rule, badges should be placed on the bottom right or right side of the paywalled content or feature.
+- The badge size should typically be 18px or 20px, but can be adjusted depending on the size of the content it is paired with.
+- We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. *This content is available when you upgrade the add-on*.
+- Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
+- If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.<br/><br/>
+
+ | Sample badge usage  |      |       |
+ |----------|------|-------------:|
+ | <img src="../img/list-placement-example.png"/> | <img src="../img/avatar-placement-example.png"/>  | <img src="../img/grid-placement-example.png"/> |
+
+<InlineAlert slots="text" variant="success"/>
+
+For other examples of badge sizes and placement used in Adobe Express, check the **Templates** or **Media** panel for instance, where you'll see content marked with a crown icon used to denote Adobe Express Premium content.

@@ -288,7 +288,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [importing content use case](../../guides/develop/use_cases.md#importing-content) and the [import-images-from-local](/samples/#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [importing content use case](../../guides/develop/use_cases.md#importing-content) and the [import-images-from-local](../../samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### Errors
 

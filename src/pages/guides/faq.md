@@ -128,7 +128,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### How can I monetize my add-on?
 
-  At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**.
+  At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**. Find out more about how you can communicate your monetization details to users in our [monetization guidelines](../guides/distribute/guidelines/monetization.md#branding-your-add-ons-for-monetization).
 
 ### What does it mean when an API is considered **experimental**?
 
