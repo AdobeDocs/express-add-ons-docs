@@ -157,7 +157,7 @@ ellipse.stroke = {
 
 The [Document Stats tutorial](/guides/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
 
-![](/guides/tutorials/images/stats-addon-animation.gif)
+![](images/stats-addon-animation.gif)
 
 To log the `type` property is acceptable in this specific case, although the proper way to check against node types involves constants; the `type` itself is an internal string value mapped to the `SceneNodeType` enumerable.
 
