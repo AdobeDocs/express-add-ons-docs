@@ -2,7 +2,7 @@
 
 # Interface: BitmapImage
 
-Represents a bitmap image resource. Use [loadBitmapImage](../classes/Editor.md#loadBitmapImage) to create a BitmapImage, and then [createImageContainer](../classes/Editor.md#createImageContainer)
+Represents a bitmap image resource. Use [loadBitmapImage](../classes/Editor.md#loadbitmapimage) to create a BitmapImage, and then [createImageContainer](../classes/Editor.md#createimagecontainer)
 to display it in the document by creating a MediaContainerNode structure.
 
 ## Properties

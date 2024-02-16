@@ -74,9 +74,9 @@ ReadOnlyItemList.length
 
 ## Methods
 
-### iterator
+### [iterator]
 
-▸ **iterator**(): `Iterator`<`T`, `any`, `undefined`\>
+▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -86,7 +86,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[ReadOnlyItemList](ReadOnlyItemList.md).[iterator](ReadOnlyItemList.md#iterator)
+[ReadOnlyItemList](ReadOnlyItemList.md).[[iterator]](ReadOnlyItemList.md#iterator)
 
 ___
 

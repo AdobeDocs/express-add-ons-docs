@@ -10,31 +10,6 @@ An EllipseNode represents an ellipse object in the scenegraph.
 
   ↳ **`EllipseNode`**
 
-## Table of contents
-
-### Accessors
-
-- [allChildren](EllipseNode.md#allchildren)
-- [blendMode](EllipseNode.md#blendmode)
-- [fill](EllipseNode.md#fill)
-- [locked](EllipseNode.md#locked)
-- [opacity](EllipseNode.md#opacity)
-- [parent](EllipseNode.md#parent)
-- [rotation](EllipseNode.md#rotation)
-- [rotationInScreen](EllipseNode.md#rotationinscreen)
-- [rx](EllipseNode.md#rx)
-- [ry](EllipseNode.md#ry)
-- [stroke](EllipseNode.md#stroke)
-- [transformMatrix](EllipseNode.md#transformmatrix)
-- [translation](EllipseNode.md#translation)
-- [type](EllipseNode.md#type)
-
-### Methods
-
-- [removeFromParent](EllipseNode.md#removefromparent)
-- [setPositionInParent](EllipseNode.md#setpositioninparent)
-- [setRotationInParent](EllipseNode.md#setrotationinparent)
-
 ## Accessors
 
 ### allChildren
@@ -120,6 +95,23 @@ FillableNode.fill
 #### Inherited from
 
 FillableNode.fill
+
+___
+
+### id
+
+• `get` **id**(): `string`
+
+A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
+moved to a different part of the document.
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+FillableNode.id
 
 ___
 

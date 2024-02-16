@@ -43,6 +43,19 @@ to guarantee all their children are full-fledged Node instances.
 
 ___
 
+### id
+
+• `get` **id**(): `string`
+
+A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
+moved to a different part of the document.
+
+#### Returns
+
+`string`
+
+___
+
 ### parent
 
 • `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
