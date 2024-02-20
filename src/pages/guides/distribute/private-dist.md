@@ -113,6 +113,10 @@ You can now click **Copy link** to copy your private link for sharing.
 
 ## Post-Submission
 
-You can choose to revisit your submission details later if you want to copy, delete or update your link, or choose to create a public listing from it. To do so, choose **Manage** from the add-on launchpad again, and then select your add-on submission. You will see the details and options available as shown in the example screenshot below.
+You can choose to revisit your submission details later if you want to copy, delete, update your link, or choose to create a public listing from it. To do so, choose **Manage** from the add-on launchpad again, and then select your add-on submission. You will see the details and options available as shown in the example screenshot below.
 
-![private link details](./img/manage-private-link-details.png)
+![private listing details](./img/download_insights.png)
+
+This view also allows you to download insights for your add-on, via the **Download insights** button. The download is in the form of a `.csv` file named with the name of your add-on, followed by `_private` or `_public` depending on the listing type. The insights data currently includes the number of installs, uninstalls and invocations of your add-on per week. A sample is shown below for reference:
+
+![sample insights](./img/sample-insights.png)

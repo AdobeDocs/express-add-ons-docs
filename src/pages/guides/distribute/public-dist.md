@@ -100,7 +100,7 @@ Your add-on container will be created and a settings panel like the one shown be
 
 Next, click on the **Public listing** tab and you will be presented with the screen below where you can press the **Create public link** button to proceed.
 
-![Private link option](./img/empty-public-listing.png)
+![Public link option](./img/empty-public-listing.png)
 
 ### Step 4: Upload your add-on package
 
@@ -151,8 +151,6 @@ The `*` indicates required fields. Note that you can skip entering these require
 
 Once you finish entering your listing details, you should see a green checkmark for **Listing Details** in the left rail showing your progress. You can then hit **Continue** to move on to the next step.
 
-![](./img/listing-details.png)
-
 <InlineAlert slots="text" variant="success"/>
 
 You can use the "Back" button throughout the distribution experience when you need to go back to change any details at any step.
@@ -161,11 +159,7 @@ You can use the "Back" button throughout the distribution experience when you ne
 
 In the next screen, you will be prompted to should upload 1-5 screenshots to show off your add-on and what it's all about. **NOTE**: At least one screenshot is required.
 
-![Upload screenshot](./img/screenshot.png)
-
 You will see the green checkmark for **Screenshots** in the left rail once you upload at least one, and at this point you can choose to **Continue**.
-
-![Uploaded screenshot](./img/screenshot2.png)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -175,15 +169,39 @@ Sometimes it may take a moment to upload the images to the back-end server befor
 
 Next you will specify your version details. The package that you entered in the first step will be shown by default, but you can replace it if you have made an update since you originally uploaded it in this step as well. You can also select the languages your add-on is supported in, and enter any optional release notes at this step. You will see the green checkmark for **Version details** in the left rail and can press **Continue** to move on.
 
-![Version Details](./img/version-details.png)
+### Step 9: Enter the AI usage details
 
-### Step 9: Create a publisher profile
+The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. However, this technology also brings the risk of users encountering inappropriate or offensive content. While Adobe encourages user choice regarding add-ons using Generative AI, transparency is paramount. We ensure clear, upfront communication, guarantee appropriate content, and respect intellectual property rights.
 
-You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission. Fill our your publisher details and upload a 250x250 logo, then hit **Continue**.
+Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe’s requirements and recommendations to try add-ons that employ Generative AI technology.
 
-![Publisher Profile](./img/pub-profile2.png)
+### Step 10: Enter the monetization details
 
-### Step 10: Final submission step
+The **Monetization details** tab allows developers to declare the payment option they support for their add-on. Once a developer completes the setup on the Monetization details tab, Adobe Express users will be shown a monetization badge in the add-on's detail view.
+
+![](./img/monetization.png)
+
+Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
+
+- The **Additional details** field allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"*.
+- Developers also have the flexibility to choose the **Other** option if their current setup does not fit the provided options.
+
+Developers can preview their Monetization badge by clicking the **Preview listing**.
+
+<!-- If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter. -->
+
+Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
+
+### Step 11: Create a publisher profile
+
+<InlineAlert slots="text" variant="info"/>
+You will only see this step the first time you submit an add-on and if you've never created a publisher profile prior to this submission.
+
+Fill our your publisher details and upload a 250x250 logo, then hit **Continue**.
+
+<!-- ![Publisher Profile](./img/pub-profile2.png)-->
+
+### Step 12: Final submission step
 
 The final submission step prompts you to enter any **Notes to reviewer** and then you can choose to **Submit for review** if you've entered all of the required data and you are done making any more changes.
 
@@ -202,3 +220,13 @@ The **Submit for review** button will only be enabled if you have entered all of
 <InlineAlert slots="text" variant="success"/>
 
 You can also choose to view your submission details later from the add-on launchpad by clicking **Manage** again, and then selecting any existing listing. If it's in a *Draft* status, you can click the ellipsis button "..." and choose **edit** if you want to update the details.
+
+## Post-Submission
+
+You can choose to revisit your submission details later if you need to update it, or if you want to download insights for your add-on. To do so, choose **Manage** from the add-on launchpad again, and then select your add-on listing. You will see the details and options available as shown in the example screenshot below.
+
+![public listing details](./img/public_listing_details.png)
+
+The **Download insights** button will provide some analytics for your published add-ons in the form of a `.csv` file, named with the name of your add-on, followed by the `_public` or `_private` string depending on the listing type. The insights data available includes the number of installs, uninstalls and invocations of your add-on per week. An example `.csv` is shown below for reference:
+
+![sample insights](./img/sample-insights.png)
