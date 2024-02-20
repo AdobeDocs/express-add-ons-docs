@@ -20,10 +20,13 @@ contributors:
 
 # Changelog
 
-## 2024-02-14
+<!-- ## 2024-02-21
 
 - New monetization support is now available in the [in-app distribution/submission flows](../guides/distribute/) that allows you to [provide details around any monetization options](../guides/distribute/public-dist.md#step-10-enter-the-monetization-details) your add-on supports, as well as [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to communicate when content or features in your add-on require purchase, and when content/features are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) as well for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but instead provides a way for developers to communicate their add-ons monetization option(s) through the details provided in the distribution flows, and visually via the new badging support.
-- A new insights feature is now available in the in-app distribution/submission flows as well, and allows you to [download insights details](../guides/distribute/public-dist.md#post-submission) for your published add-ons.
+- A new insights feature is now available in the in-app distribution/submission flows as well, and allows you to [download insights details](../guides/distribute/public-dist.md#post-submission) for your published add-ons. -->
+
+## 2024-02-14
+
 - A new `id` accessor has been added to the [`BaseNode`](../references/document-sandbox/document-apis/classes/BaseNode.md) class in the Document APIs and is inherited by all classes that extend it. The `id` represents a unique identifier that stays the same when the file is closed and reopened, or if the node is moved to a different part of the document.
 
 ## 2024-02-07
