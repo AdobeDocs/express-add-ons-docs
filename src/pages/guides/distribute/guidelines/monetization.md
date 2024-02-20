@@ -192,7 +192,7 @@ Use the checkmark badge below to indicate when content or features are paid and 
 
 <InlineAlert slots="text" variant="info"/>
 
-The most common size of badges used within Express panels is typically 20x20px, so we've included an easy download of that size specifically above. However, since it's an `.svg` icon, you could simply scale it to another size as needed. 
+The most common size of badges used within Express panels is typically 20x20px, so we've included an easy download of that size specifically above. However, since it's an `.svg` icon, you could simply scale it to another size as needed.
 
 #### General badge recommendations
 

@@ -384,7 +384,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 #### `Bleed`
 
-Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed. 
+Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
 
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
@@ -403,15 +403,15 @@ Represents all of the PDF page boxes (`MediaBox`, `BleedBox`, `CropBox`, `TrimBo
 | `trimBox?`    | [`PdfPageBox`](#pdfpagebox) | Trim box |
 
 #### `PdfPageBox`
- 
+
 Represents a PDF page box.
 
 | Name          | Type         | Description |
 | ------------- | -------------| -----------:|
 | `margins`   | [`PdfPageBoxMargins`](#pdfpageboxmargins) | Margins for a box |
- 
+
 #### `PdfPageBoxMargins`
- 
+
 Represents margins for a PDF page box.
 
 | Name          | Type         | Description |

@@ -51,6 +51,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 **IMPORTANT:** The above new APIs are currently ***experimental only*** and should not be used in any add-ons you will be distributing until declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Additional Updates
+
 - A new [`PdfRenditionOptions`](../references/addonsdk/app-document.md#pdfrenditionoptions) object is now available to be used with the the [`createRenditions()` export API](../references/addonsdk/app-document.md#createrenditions) and allows a user to specify an optional [bleed](../references/addonsdk/app-document.md#bleed) object (for printing).
 - A new [`isPrintReady`](../references/addonsdk/app-document.md#pagemetadata) property has been added to the [`PageMetadata` API](../references/addonsdk/app-document.md#pagemetadata) to indicate if the page is ready to print.
 - Updated the [FAQ](../guides/faq.md#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method) regarding the mime type for exported PDF files. It will now return `application/pdf` (as opposed to `text/plain` from an earlier update).
