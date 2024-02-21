@@ -26,6 +26,7 @@ contributors:
 
   In addition, the [monetization guidelines](../guides/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../guides/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../guides/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
+- A new [Concepts guide](../references/document-sandbox/document-apis/concepts/index.md) was added to the [Document APIs](../references/document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
 
