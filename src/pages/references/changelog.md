@@ -20,10 +20,12 @@ contributors:
 
 # Changelog
 
-<!-- ## 2024-02-21
+## 2024-02-21
 
-- New monetization support is now available in the [in-app distribution/submission flows](../guides/distribute/) that allows you to [provide details around any monetization options](../guides/distribute/public-dist.md#step-10-enter-the-monetization-details) your add-on supports, as well as [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to communicate when content or features in your add-on require purchase, and when content/features are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) as well for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but instead provides a way for developers to communicate their add-ons monetization option(s) through the details provided in the distribution flows, and visually via the new badging support.
-- A new insights feature is now available in the in-app distribution/submission flows as well, and allows you to [download insights details](../guides/distribute/public-dist.md#post-submission) for your published add-ons. -->
+- New support for [monetization details](../guides/distribute/public-dist.md#step-10-enter-the-monetization-details) has been added to the public distribution flow and allows you to [provide details around monetization options](../guides/distribute/public-dist.md#step-10-enter-the-monetization-details) your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include *free*, *one-time payment*, *recurring subscription*, *micro-transactions*, and *other*.
+
+  In addition, the [monetization guidelines](../guides/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
+- The first phase of add-on analytics support has been released, and allows developers to [download insights data](../guides/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../guides/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
 
 ## 2024-02-14
 

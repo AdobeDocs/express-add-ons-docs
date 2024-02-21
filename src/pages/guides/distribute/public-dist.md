@@ -177,16 +177,24 @@ Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get t
 
 ### Step 10: Enter the monetization details
 
-The **Monetization details** tab allows developers to declare the payment option they support for their add-on. Once a developer completes the setup on the Monetization details tab, Adobe Express users will be shown a monetization badge in the add-on's detail view.
+The **Monetization details** tab allows developers to declare the payment option they support for their add-on. A selection is required for any new add-ons submitted, and existing add-ons can be updated to include or change the selection. The monetization details entered in this tab can be seen in the preview of the listing before submission, and in the add-on details once published.
 
-![](./img/monetization.png)
+![Monetization details](./img/monetization.png)
 
-Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, microtransactions, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
+Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, micro-transactions, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose. 
 
-- The **Additional details** field allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"*.
-- Developers also have the flexibility to choose the **Other** option if their current setup does not fit the provided options.
+- The *Other* option is provided for developers to choose when their current setup does not fit the provided options.
+- The final *additional details* text area allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"* and is optional for all payment choices except *Other*. We encourage the use of this field to clearly state any specific payment details.
 
-Developers can preview their Monetization badge by clicking the **Preview listing**.
+Developers can preview the monetization details that will be shown to users by clicking the **Preview listing** button. Depending on the payment selection, different details will automatically be displayed in the add-on listing. If the payment choice selected was not free, an **Upgrade available** badge will be displayed in the details as shown below:
+
+  ![Upgrade available](./img/preview-listing-with-upgrade.png)
+
+along with specific default text describing the choice selected (ie: "*...for a one-time purchase*", "*...with a recurring subscription*", "*...purchase assets or features individually or in packages*") - and then **Checkout is handled by the developer outside of Adobe Express**. Any additional custom details entered by the developer are then shown below the default checkout message, as well as a timestamp indicating when the listing was last updated.
+
+In the case of the **free** payment selection, the following would simply be shown:
+
+![Free option](./img/preview-free-option.png)
 
 <!-- If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter. -->
 
@@ -221,12 +229,12 @@ The **Submit for review** button will only be enabled if you have entered all of
 
 You can also choose to view your submission details later from the add-on launchpad by clicking **Manage** again, and then selecting any existing listing. If it's in a *Draft* status, you can click the ellipsis button "..." and choose **edit** if you want to update the details.
 
-## Post-Submission
+## Post-Submission details and insights
 
 You can choose to revisit your submission details later if you need to update it, or if you want to download insights for your add-on. To do so, choose **Manage** from the add-on launchpad again, and then select your add-on listing. You will see the details and options available as shown in the example screenshot below.
 
 ![public listing details](./img/public_listing_details.png)
 
-The **Download insights** button will provide some analytics for your published add-ons in the form of a `.csv` file, named with the name of your add-on, followed by the `_public` or `_private` string depending on the listing type. The insights data available includes the number of installs, uninstalls and invocations of your add-on per week. An example `.csv` is shown below for reference:
+The **Download insights** button will provide some analytics for your published add-ons in the form of a `.csv` file, named with the name of your add-on, and appended with `_public` or `_private` depending on the listing type (ie: `AmazingAddOn_public.csv`). The insights data available includes the number of installs, uninstalls and invocations of your add-on per week. An example `.csv` is shown below for reference:
 
 ![sample insights](./img/sample-insights.png)
