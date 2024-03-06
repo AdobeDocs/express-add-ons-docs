@@ -100,18 +100,21 @@ document.getElementById("anchor").href = downloadUrl;
 
 ### Premium Content
 
-While the above is a very basic example, add-ons that call `createRenditions` to export content should ensure proper handling in the case of premium content. There are two options that can be considered for handling it.
+While the above is a very basic example, add-ons that call `createRenditions` to export content should ensure proper handling in the case of premium content. There are a few strategies that can be implemented.
 
-#### Option 1: Show premium content error with "Upgrade" option
+#### Option 1: Show a Premium Content error with the "Upgrade" option
 
-Display an error message when export/download fails due to the user not being entitled for premium content, and include a button to allow them to upgrade. *Be sure to update your `manifest.json` as outlined in the warning below the code snippet examples to allow the pricing page to properly load.*
+Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](../../references/addonsdk/app-currentUser.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent()`](../../references/addonsdk/app-document.md#pagemetadata)) in the first place. Try/catch blocks intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message are not recommended anymore.
 
 #### Example:
 
 ```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+const { app, constants } = addOnUISdk;
+const { ButtonType, Range, RenditionFormat, RenditionType, RenditionIntent } = constants;
+
 const showPremiumContentError = async () => {
-  const { ButtonType } = addOnUISdk.constants;
-  const {buttonType} = await window.addOnUISdk.app.showModalDialog({
+  const { buttonType } = await window.addOnUISdk.app.showModalDialog({
     variant: "error",
     title: "Export failed",
     description: "Sorry, we were not able to export your design. Some assets are only included in the Premium plan. Try replacing with something else or upgrading Adobe Express to a Premium plan.", 
@@ -119,28 +122,50 @@ const showPremiumContentError = async () => {
   });
   if (buttonType === ButtonType.cancel) return;
   if (buttonType === ButtonType.secondary) {
-    window.open("https://www.adobe.com/go/express_addons_pricing", "_blank")
+    const hasUpgradedToPremiumUser = await app.startPremiumUpgradeIfFreeUser();
+    if (!hasUpgradedToPremiumUser) {
+      // User did not upgrade, show error dialog
+    } else {
+      // User has upgraded, proceed with export
+      const renditionOptions = {range: Range.entireDocument, format: RenditionFormat.png};
+      renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
+    }
   }
 }
 
 document.querySelector("#export").onclick = async () => {
-  const { app, constants } = addOnUISdk;
-  const { Range, RenditionFormat, RenditionType, RenditionIntent } = constants;
-  /* THE FOLLOWING FLAG CAN BE USED FOR TESTING PURPOSES ONLY -- REMOVE BEFORE RELEASE */
-  app.devFlags.simulateFreeUser = true; 
-  const renditionOptions = {range: Range.currentPage, format: RenditionFormat.png};
-  try {
-    const renditions = await app.document.createRenditions(renditionOptions);
-    renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
-  } catch (err) {
-    if (err.message?.includes("USER_NOT_ENTITLED_TO_PREMIUM_CONTENT")) {
-      showPremiumContentError();
+  // 👇 Testing purposes only! 👇 
+  app.devFlags.simulateFreeUser = true; // Remove this line in production!
+  
+  const userIsPremium = await app.currentUser.isPremiumUser();
+  const pages = await app.document.getPagesMetadata({
+    range: Range.entireDocument, // use the proper range
+  });
+  let containsPremiumContent = false;
+  for (const page of pages) {
+    if (page.hasPremiumContent) {
+      containsPremiumContent = true;
+      break;
     }
+  }
+
+  if (containsPremiumContent && !userIsPremium) {
+    showPremiumContentError();
+    return;
+  } else {
+    const renditionOptions = {range: Range.entireDocument, format: RenditionFormat.png};
+    renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
   }
 }
 ```
 
-#### OPTION 2 - Allow preview of premium content
+Please note that [`startPremiumUpgradeIfFreeUser()`](../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) allows a more streamlined user experience for upgrading to premium content, compared to the older method of redirecting to the Adobe Express pricing page, which is now deprecated.
+
+#### Option 2: Provide visual cues in the UI
+
+Developers can provide visual cues directly in the add-on UI to show that users are not entitled to export/download premium content. This can be done in various ways, for instance, by disabling the export/download button, replacing it with an upgrade button, or appending a brief explanation, tooltip, or icon. This would inform users upfront that they are not entitled to export/download premium content, preventing them from facing the warning popup after attempting to do so.
+
+#### Option 3: Allow preview of Premium Content
 
 Set a `renditionPreview` intent in the [manifest requirements](../../references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](../../references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content.
 
@@ -212,11 +237,6 @@ async function displayPreview() {
   }
 }
 ```
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** When implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to properly load: ```"permissions": { "sandbox": ["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]
-}```
 
 ## Authorization with OAuth 2.0
 
