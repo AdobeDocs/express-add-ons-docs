@@ -110,10 +110,6 @@ addOnUISdk.app.off("themechange", (data) => {
 
 Displays the in-app monetization upgrade flow.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `startPremiumUpgradeIfFreeUser(): Promise<boolean>`
