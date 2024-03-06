@@ -5,7 +5,7 @@ Provides access to the Adobe Express host application's objects and methods to p
 ## Objects
 
 <table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">
@@ -353,7 +353,7 @@ See the [Drag & Drop use case implementation](../../guides/develop/use_cases.md#
 The table below describes the events triggered from the add-on SDK. Use the `addOnUISdk.app.on()` method to subscribe to events, and the `addOnUISdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
 <table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">
