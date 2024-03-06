@@ -122,6 +122,9 @@ const showPremiumContentError = async () => {
   });
   if (buttonType === ButtonType.cancel) return;
   if (buttonType === ButtonType.secondary) {
+    // Deprecated method
+    // ❌ window.open("https://www.adobe.com/go/express_addons_pricing", "_blank")
+    // 👇 Use startPremiumUpgradeIfFreeUser() instead 
     const hasUpgradedToPremiumUser = await app.startPremiumUpgradeIfFreeUser();
     if (!hasUpgradedToPremiumUser) {
       // User did not upgrade, show error dialog
@@ -134,7 +137,7 @@ const showPremiumContentError = async () => {
 }
 
 document.querySelector("#export").onclick = async () => {
-  // 👇 Testing purposes only! 👇 
+  // 👇 Testing purposes only!
   app.devFlags.simulateFreeUser = true; // Remove this line in production!
   
   const userIsPremium = await app.currentUser.isPremiumUser();
