@@ -25,9 +25,9 @@ This tutorial will guide you through the creation of your first Adobe Express ad
 
 Hello, and welcome to this Adobe Express Document API tutorial, where we'll build together a **fully functional Grid System add-on** from scratch. Grid systems are widely used in the design world to bring structure and consistency to all visual content, from flyers to web pages or social media posts.
 
-<div style="display: flex; justify-content: center; margin-top: 20px;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/SQMYA660gII?si=KOWp7FVBG4Ms3C3o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/>
+<Media slots="video"/>
+
+<https://www.youtube.com/watch?v=SQMYA660gII>
 
 ![](images/grids-addon.png)
 
