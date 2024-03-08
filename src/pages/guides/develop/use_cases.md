@@ -104,14 +104,14 @@ While the above is a very basic example, add-ons that call `createRenditions` to
 
 #### Option 1: Show a Premium Content error with the "Upgrade" option
 
-Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](../../references/addonsdk/app-currentUser.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent()`](../../references/addonsdk/app-document.md#pagemetadata)) in the first place. Try/catch blocks intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message are not recommended anymore.
+Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](../../references/addonsdk/app-currentUser.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent`](../../references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is not recommended anymore.
 
 #### Example:
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 const { app, constants } = addOnUISdk;
-const { ButtonType, Range, RenditionFormat, RenditionType, RenditionIntent } = constants;
+const { ButtonType, Range, RenditionFormat } = constants;
 
 const showPremiumContentError = async () => {
   const { buttonType } = await window.addOnUISdk.app.showModalDialog({
@@ -120,46 +120,51 @@ const showPremiumContentError = async () => {
     description: "Sorry, we were not able to export your design. Some assets are only included in the Premium plan. Try replacing with something else or upgrading Adobe Express to a Premium plan.", 
     buttonLabels: { secondary: "Upgrade" }
   });
-  if (buttonType === ButtonType.cancel) return;
+
+  if (buttonType === ButtonType.cancel) return false; // user is still not premium
   if (buttonType === ButtonType.secondary) {
-    // Deprecated method
+    // Original flow (don't use anymore)
     // ❌ window.open("https://www.adobe.com/go/express_addons_pricing", "_blank")
     // 👇 Use startPremiumUpgradeIfFreeUser() instead 
-    const hasUpgradedToPremiumUser = await app.startPremiumUpgradeIfFreeUser();
-    if (!hasUpgradedToPremiumUser) {
-      // User did not upgrade, show error dialog
-    } else {
-      // User has upgraded, proceed with export
-      const renditionOptions = {range: Range.entireDocument, format: RenditionFormat.png};
-      renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
-    }
+    const hasUpgradedToPremium = await app.startPremiumUpgradeIfFreeUser();
+	return hasUpgradedToPremium;
   }
 }
 
-document.querySelector("#export").onclick = async () => {
+const isRangeSafeToExport = async (range) => {
+  const userIsPremium = await app.currentUser.isPremiumUser();
+  const pages = await app.document.getPagesMetadata({range});
+  const containsPremiumContent = pages.some(page => page.hasPremiumContent);
+  return (containsPremiumContent && userIsPremium) || !containsPremiumContent;  
+}
+
+const exportDocument = async () => {
   // 👇 Testing purposes only!
   app.devFlags.simulateFreeUser = true; // Remove this line in production!
-  
-  const userIsPremium = await app.currentUser.isPremiumUser();
-  const pages = await app.document.getPagesMetadata({
-    range: Range.entireDocument, // use the proper range
-  });
-  let containsPremiumContent = false;
-  for (const page of pages) {
-    if (page.hasPremiumContent) {
-      containsPremiumContent = true;
-      break;
-    }
-  }
 
-  if (containsPremiumContent && !userIsPremium) {
-    showPremiumContentError();
-    return;
-  } else {
-    const renditionOptions = {range: Range.entireDocument, format: RenditionFormat.png};
-    renditions.forEach(rendition => { /* do your thing w/ the renditions */ });
+  let isSafeToExport = await isRangeSafeToExport(Range.entireDocument);  
+  if (!isSafeToExport) {
+    const isNowPremiumUser = await showPremiumContentError();
+    isSafeToExport = isNowPremiumUser;
   }
+  
+  if (isSafeToExport) {
+    try {
+      const renditions = await app.document.createRenditions({
+        range: Range.entireDocument, format: RenditionFormat.png
+      });
+      renditions.forEach(rendition => { /* do your thing w/ the renditions */ });	  
+    } catch (err) {
+      // did someone just add premium content in the split second between
+      // our original check? did the user just downgrade?
+      if (err.message?.includes("USER_NOT_ENTITLED_TO_PREMIUM_CONTENT")) {
+        return await exportDocument(); // try again
+      }
+    }
+  }  
 }
+
+document.querySelector("#export").onclick = exportDocument;
 ```
 
 Please note that [`startPremiumUpgradeIfFreeUser()`](../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) allows a more streamlined user experience for upgrading to premium content, compared to the older method of redirecting to the Adobe Express pricing page, which is now deprecated.
