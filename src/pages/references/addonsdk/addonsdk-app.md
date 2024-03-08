@@ -5,7 +5,7 @@ Provides access to the Adobe Express host application's objects and methods to p
 ## Objects
 
 <table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">
@@ -109,10 +109,6 @@ addOnUISdk.app.off("themechange", (data) => {
 ### startPremiumUpgradeIfFreeUser()
 
 Displays the in-app monetization upgrade flow.
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -357,7 +353,7 @@ See the [Drag & Drop use case implementation](../../guides/develop/use_cases.md#
 The table below describes the events triggered from the add-on SDK. Use the `addOnUISdk.app.on()` method to subscribe to events, and the `addOnUISdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
 <table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">

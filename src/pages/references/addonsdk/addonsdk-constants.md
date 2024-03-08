@@ -5,7 +5,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
 ## Constants
 
 <table columnWidths="30,20,60" class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">

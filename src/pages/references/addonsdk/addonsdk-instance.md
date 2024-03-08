@@ -5,7 +5,7 @@ Represents the currently running add-on instance. This object is used for provid
 ## Objects
 
 <table columnWidths="20,50,30" class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">
