@@ -89,6 +89,19 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     </td>
 </tr>
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>VideoResolution</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Video resolution options for the mp4 renditions.</p>
+        <ul>
+          <li><strong>sd480p</strong></li>"480p"
+          <li><strong>hd720p</strong></li>"720p"
+          <li><strong>fhd1080p</strong></li>"1080p"
+          <li><strong>custom</strong></li>Custom resolution
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>DialogResultType</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">

@@ -421,6 +421,16 @@ Represents margins for a PDF page box.
 | `left?` | [`Bleed`](#bleed) | Left margin |
 | `right?` | [`Bleed`](#bleed) | Right margin |
 
+#### `Mp4RenditionOptions`
+
+Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
+
+| Name                                      | Type                                |                                                                                                                                                                            Description |
+| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                        | `string`                            | [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
+| `resolution?`                                | `string`                            |                                                                                                                    [`VideoResolution`](./addonsdk-constants.md) constant value. |
+| `customResolution?` | `number` |  Only required/used if the `resolution` is `VideoResolution.custom` |
+
 #### Return Value
 
 A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
