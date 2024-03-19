@@ -157,21 +157,28 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 ### addImage()
 
-Adds an image to the current page.
+Adds an image (including a Ps/Ai file) to the current page.
 
 #### Signature
 
-`addImage(imageBlob: Blob): Promise<void>`
+`addImage(imageBlob: Blob, attributes?: MediaAttributes): Promise<void>`
 
 #### Parameters
 
 | Name          | Type         | Description                   |
 | ------------- | -------------| ----------------------------: |
 | `imageBlob`   | `Blob`       | The image to add to the page. |
+| `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the image to the page (i.e., `title`, which is mandatory). |
+
+#### `MediaAttributes`
+
+| Name    | Type     |                               Description |
+| ------- | -------- | ----------------------------------------: |
+| `title` | `string` | Media title (mandatory for audio import). |
 
 #### Return Value
 
-A resolved promise if the image was successfully added to the canvas; otherwise will throw an error with the rejected promise.
+A resolved promise if the image was successfully added to the canvas; otherwise, it will throw an error with the rejected promise.
 
 #### Example Usage
 
