@@ -20,6 +20,14 @@ contributors:
 
 # Changelog
 
+## 2024-03-19
+
+- Support for Ps and Ai files to be added to the page via the [`addImage()`](../references/addonsdk/app-document.md#addimage) method. (Note: there were no changes to the drag-n-drop APIs).
+- Adds new `MediaAttributes` parameter to the [`addImage()`](../references/addonsdk/app-document.md#addimage) method for Ps/Ai file types to pass media attributes like `title`.
+- Adds new [`Mp4RenditionOptions`](../references/addonsdk/app-document.md#mp4renditionoptions) object to support `mp4` renditions.
+- Adds new [`VideoResolution`](../references/addonsdk/addonsdk-constants.md) constant to set video resolution options.
+- Adds [`registerIframe()`](../references/addonsdk/addonsdk-app.md#registeriframe) method and [`unregisterIframe`](../references/addonsdk/addonsdk-app.md#unregisteriframe-type-definition) type definition with example usage. **NOTE:** These APIs are currently experimental.
+
 ## 2024-03-08
 
 - [`getPagesMetadata()`](../references/addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../references/addonsdk/app-currentUser.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.

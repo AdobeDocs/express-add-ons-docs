@@ -251,6 +251,61 @@ async function showInputDialog() {
 
 See the use case implementations for an example of the [custom modal dialog](../../guides/develop/use_cases.md#custom-dialog-example).
 
+### registerIframe()
+
+Allows an iframe hosted within an add-on to register its intent to communicate with the add-on SDK. While iframes can be used for embedding media without SDK interaction, `registerIframe()` is needed for those requiring SDK capabilities. It marks a transition to a more controlled approach, where add-ons must explicitly opt-in to this level of integration.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`registerIframe(element: HTMLIFrameElement): [UnregisterIframe]()`
+
+#### Parameters
+
+| Name              | Type                                 | Description   |
+| -------------     | -------------------------------------| -----------:  |
+| `element`           | `HTMLIFrameElement`                             | The iframe to register. |
+
+#### Return Value
+
+[`UnregisterIframe`](#unregisteriframe-type-definition)
+
+##### `UnregisterIframe` Type Definition
+
+Callback function that unregisters the previously registered iframe, ceasing its direct communication with the add-on SDK. Returns `void`.
+
+```ts
+type UnregisterIframe = () => void;
+```
+
+#### Example Usage
+
+```ts
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
+function RegisterIframe(elementId: string) {
+  const iframe = document.getElementById(elementId);
+  try {
+    unregisterIframe = addOnUISdk.app.registerIframe(iframe);
+  }
+  catch(error) {
+    console.log("Failed to register iframe with the SDK:", error);
+  }
+}
+ 
+addOnUISdk.ready.then(() => {
+  let unregisterIframe: UnregisterIframe = RegisterIframe("iframe1");
+  // ...
+  unregisterIframe();
+  unregisterIframe = RegisterIframe("iframe2");
+  // ...
+  unregisterIframe();
+});
+```
+
 ### enableDragToDocument()
 
 Allows for drag and document functionality to be enabled on an element such as an image, video or audio.

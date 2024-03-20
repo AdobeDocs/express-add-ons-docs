@@ -157,21 +157,28 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 ### addImage()
 
-Adds an image to the current page.
+Adds an image (including gif/Ps/Ai files) to the current page.
 
 #### Signature
 
-`addImage(imageBlob: Blob): Promise<void>`
+`addImage(imageBlob: Blob, attributes?: MediaAttributes): Promise<void>`
 
 #### Parameters
 
 | Name          | Type         | Description                   |
 | ------------- | -------------| ----------------------------: |
 | `imageBlob`   | `Blob`       | The image to add to the page. |
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding Ps/Ai filse to the page (i.e., `title`). |
+
+#### `MediaAttributes`
+
+| Name    | Type     |                               Description |
+| ------- | -------- | ----------------------------------------: |
+| `title` | `string` | Media title (mandatory for audio import). |
 
 #### Return Value
 
-A resolved promise if the image was successfully added to the canvas; otherwise will throw an error with the rejected promise.
+A resolved promise if the image was successfully added to the canvas; otherwise, it will throw an error with the rejected promise.
 
 #### Example Usage
 
@@ -420,6 +427,16 @@ Represents margins for a PDF page box.
 | `bottom?` | [`Bleed`](#bleed) | Bottom margin |
 | `left?` | [`Bleed`](#bleed) | Left margin |
 | `right?` | [`Bleed`](#bleed) | Right margin |
+
+#### `Mp4RenditionOptions`
+
+Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
+
+| Name                                      | Type                                |                                                                                                                                                                            Description |
+| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                        | `string`                            | [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
+| `resolution?`                                | `string`                            |                                                                                                                    [`VideoResolution`](./addonsdk-constants.md) constant value. |
+| `customResolution?` | `number` |  Only required/used if the `resolution` is `VideoResolution.custom` |
 
 #### Return Value
 
