@@ -157,7 +157,7 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 ### addImage()
 
-Adds an image (including a Ps/Ai file) to the current page.
+Adds an image (including gif/Ps/Ai files) to the current page.
 
 #### Signature
 
@@ -168,7 +168,7 @@ Adds an image (including a Ps/Ai file) to the current page.
 | Name          | Type         | Description                   |
 | ------------- | -------------| ----------------------------: |
 | `imageBlob`   | `Blob`       | The image to add to the page. |
-| `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the image to the page (i.e., `title`, which is mandatory). |
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding Ps/Ai filse to the page (i.e., `title`). |
 
 #### `MediaAttributes`
 
