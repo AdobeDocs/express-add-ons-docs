@@ -48,14 +48,14 @@ The **add-on CLI (Command Line Interface) is required for add-on development**, 
 Open your terminal and run the following command:
 
 ```bash
-npx @adobe/create-ccweb-add-on hello-world --template javascript     
+npx @adobe/create-ccweb-add-on hello-world --template javascript-with-document-sandbox     
 ```
 
-This command will create a new add-on based on a basic `javascript` template. See the [Templates section](dev_tooling.md#templates) in the **Development Tools** page for more details on the built-in templates available with the [Adobe Express add-on CLI](dev_tooling.md#using-the-cli).
+This command will create a new add-on based on pure JavaScript with Document Sandbox support (the set of APIs that allow you to interact with Adobe Express documents). The `hello-world` parameter is the name of the add-on you are creating, and the `--template` flag specifies the `javascript-with-document-sandbox` template. See the [Templates section](dev_tooling.md#templates) on the **Development Tools** page for more details on the available ones with the [Adobe Express add-on CLI](dev_tooling.md#using-the-cli).
 
-**Note**: You'll be prompted to login to your Adobe account and you may also be prompted to accept the "Adobe Developer Terms of Use" if you haven't done so previously. You may also be prompted to configure SSL, and you'll want to do this step to ensure that your add-on can be loaded inside of Adobe Express while you develop it.
+**Note**: You'll be prompted to log in to your Adobe account and accept the 'Adobe Developer Terms of Use' periodically to ensure your account remains compliant and secure. You may also be prompted to configure SSL, which is recommended so that your add-on can be loaded in Adobe Express while you develop it.
 
-   **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
+**For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
 <InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
 
@@ -166,6 +166,10 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 ![manifest refresh complete](./img/manifest-refresh-complete.png)
 
+## Next steps
+
 Congratulations! You've completed the quickstart and run your first add-on!
 
-Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons. If you're ready to dive into our developer platform, we highly recommend exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.
+Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons. 
+
+If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/guides/tutorials), and exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.
