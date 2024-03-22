@@ -170,6 +170,6 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 Congratulations! You've completed the quickstart and run your first add-on!
 
-Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons. 
+Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons.
 
 If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/guides/tutorials), and exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs, and are a great resource to help you get started building your own add-ons.

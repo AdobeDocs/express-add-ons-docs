@@ -263,7 +263,7 @@ The sample add-on that the [Document Statistics tutorial](./guides/tutorials/sta
 
 ## [express-dimensions-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-dimensions-addon)
 
-The sample add-on that the [Document APIs Concepts](./references/document-sandbox/document-apis/concepts.md) article is based upon. It's used to discuss the Adobe Express Document Object Model, its Classes, Interface, and Constants. The add-on draws Dimensions (arrows measuring the width and height) around the selected shape.
+The sample add-on that the [Document APIs Concepts](./references/document-sandbox/document-apis/concepts/index.md) article is based upon. It's used to discuss the Adobe Express Document Object Model, its Classes, Interface, and Constants. The add-on draws Dimensions (arrows measuring the width and height) around the selected shape.
 
 ## [communication-iframe-documentSandbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-documentSandbox)
 
@@ -280,4 +280,3 @@ A more comprehensive example of using the [Document APIs](./references/document-
 ## [express-addon-document-api-template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template)
 
 A barebone JavaScript template that implements the Document APIs.
-
