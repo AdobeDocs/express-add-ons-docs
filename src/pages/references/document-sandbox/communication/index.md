@@ -151,7 +151,7 @@ Data type validation is performed for both the arguments and the return types th
 
 <br/>
 <table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">
@@ -193,7 +193,7 @@ Some data types are not supported and may result unintended behavior. To avoid t
 
 <br/>
 <table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender; 
+    background-color:lavender;
     tbody {
       background-color:white;
     }">

@@ -97,7 +97,7 @@ The add-on CLI contains built-in, pre-configured templates to allow you to creat
 | `react-javascript`  | React with JavaScript |
 | `react-typescript` | React with TypeScript |
 
-as well as the following four template options which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
+As well as the following four template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
 
 | Template         | Description        |
 | ---------------- | ---------------- |
@@ -141,6 +141,12 @@ which shows the four base template options to choose from, followed by a prompt 
  You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
 
 ![template scaffolding message](./img/scaffold-msg.png)
+
+<InlineAlert slots="text1, text2" variant="warning"/>
+
+Please note that to use [Spectrum Web Components](/guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
+
+If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
 
 ## Manifest
 

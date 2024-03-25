@@ -50,6 +50,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
     ```bash
     npm install @swc-react/button-group@0.39.4 @swc-react/field-label@0.39.4 @swc-react/menu@0.39.4 @swc-react/picker@0.39.4 @swc-react/slider@0.39.4 @swc-react/swatch@0.39.4 @swc-react/switch@0.39.4
     ```
+
     **NOTE:** The above command specifies the `0.39.4` version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
 
     Alternatively, replace the `dependencies` block in your `package.json` file with the following, and then run `npm install` to install them all at once:
@@ -76,20 +77,20 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
 ### Import swc-react components
 
-In this step you will add the UI component imports for the bingo card generator add-on. The pattern of the imports will follow in a similar manner to what was included in the generated project for `Button` and `Theme`. 
+In this step you will add the UI component imports for the bingo card generator add-on. The pattern of the imports will follow in a similar manner to what was included in the generated project for `Button` and `Theme`.
 
-As a tip, you can use the [Spectrum Web Components Reference](https://opensource.adobe.com/spectrum-web-components/) for the corresponding component, and in the **Usage** section you will see that the third import uses the class name for the component, which is what you will need, as well as the specific package to use, it will just be prefixed with `@swc-react` instead. 
+As a tip, you can use the [Spectrum Web Components Reference](https://opensource.adobe.com/spectrum-web-components/) for the corresponding component, and in the **Usage** section you will see that the third import uses the class name for the component, which is what you will need, as well as the specific package to use, it will just be prefixed with `@swc-react` instead.
 
 So, for example, the first import is for the **Button Group** component. If you look at the [Spectrum Web Components - Button Group Usage](https://opensource.adobe.com/spectrum-web-components/components/button-group/#usage), the last import definition shows `import { ButtonGroup } from '@spectrum-web-components/button-group';`. It's outlined in the image below for visual reference:
 
-![ButtonGroup import from SWC reference](../images/swc-button-group-import.png)        
- 
+![ButtonGroup import from SWC reference](../images/swc-button-group-import.png)
+
 You can simply copy that import from the reference for any given component you want to use in your add-on, and just change the prefix from `@spectrum-web-components` to `@swc-react`. (Notice the existing imports for `Button` and `Theme`). The resulting import to use in your add-on would be:
- 
-`import { ButtonGroup } from '@swc-react/button-group';`. 
- 
+
+`import { ButtonGroup } from '@swc-react/button-group';`.
+
 You can then use this same pattern for all of the `@swc-react` wrapper components you want to use.
- 
+
 The imports needed for the bingo card generator add-on sample are listed below for you to copy into your `src/components/App.jsx` file, along with the existing `Button` and `Theme` imports:
 
 ```js
@@ -104,9 +105,9 @@ import { Switch } from "@swc-react/switch";
 
 ### Create event helper class
 
-Next you'll need to create a new class to handle a known issue where React events and web components don't always work well together.  See [this issue for more details](https://github.com/facebook/react/issues/19846). The issue is most often seen in the case of the React `onChange` event, and the events won't properly fire. An option to work around this is to create a helper class that will automatically register the native browser version of the events for the components to ensure they are properly fired. 
+Next you'll need to create a new class to handle a known issue where React events and web components don't always work well together.  See [this issue for more details](https://github.com/facebook/react/issues/19846). The issue is most often seen in the case of the React `onChange` event, and the events won't properly fire. An option to work around this is to create a helper class that will automatically register the native browser version of the events for the components to ensure they are properly fired.
 
-Create a new file in your `src/components` folder and name it `WC.jsx`, then copy in the block of code below and save it. 
+Create a new file in your `src/components` folder and name it `WC.jsx`, then copy in the block of code below and save it.
   
 **Note:** this class is also included in the [lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-js-react) if you want to copy it in from there instead.
 
@@ -446,7 +447,7 @@ If you run your add-on project now with `npm run build; npm run start` (or if it
 
 ![Basic react add-on screenshot](../images/lesson2-prestyle.png)
 
-Similar to lesson 1, you'll see that the layout of the UI is not great. In this step you'll add the styling to present the UI as you did in lesson 1. 
+Similar to lesson 1, you'll see that the layout of the UI is not great. In this step you'll add the styling to present the UI as you did in lesson 1.
 
 Open the `/src/components/App.css` file and replace the current contents with the following custom type, class and id selectors for your UI, then check to see the updates reflected in your add-on before moving to the final part of the tutorial.
 

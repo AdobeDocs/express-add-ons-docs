@@ -181,7 +181,7 @@ The **Monetization details** tab allows developers to declare the payment option
 
 ![Monetization details](./img/monetization.png)
 
-Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, micro-transactions, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose. 
+Developers can choose from various payment options, including free, one-time payments, recurring subscriptions, micro-transactions, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
 
 - The *Other* option is provided for developers to choose when their current setup does not fit the provided options.
 - The final *additional details* text area allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"* and is optional for all payment choices except *Other*. We encourage the use of this field to clearly state any specific payment details.
