@@ -3,19 +3,21 @@
 # Class: Node
 
 A Node represents an object in the scenegraph, the document's visual content tree. Most tangible visual content is a
-subclass of Node, but note that some abstract top-level structural nodes (such as PageNode) only extend the more minimal
-BaseNode. As a general rule, if you can click or drag an object with the select/move tool in the UI, then it extends
-from Node.
+subclass of Node, but note that some abstract top-level structural nodes (such as PageNode) only extend the more
+minimal VisualNode or BaseNode. As a general rule, if you can click or drag an object with the select/move
+tool in the UI, then it extends from Node.
+
+A Node’s parent is always a VisualContentNode but may not be another Node (e.g. if the parent is an ArtboardNode)
 
 ## Hierarchy
 
-- [`BaseNode`](BaseNode.md)
+- [`VisualNode`](VisualNode.md)
 
   ↳ **`Node`**
 
-  ↳↳ [`GroupNode`](GroupNode.md)
-
   ↳↳ [`GridLayoutNode`](GridLayoutNode.md)
+
+  ↳↳ [`GroupNode`](GroupNode.md)
 
   ↳↳ [`ImageRectangleNode`](ImageRectangleNode.md)
 
@@ -48,7 +50,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Overrides
 
-BaseNode.allChildren
+VisualNode.allChildren
 
 ___
 
@@ -77,6 +79,60 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ___
 
+### boundsInParent
+
+• `get` **boundsInParent**(): `Readonly`<`Rect`\>
+
+An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
+[boundsLocal](Node.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
+top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
+even for an orphan node with no parent.
+
+#### Returns
+
+`Readonly`<`Rect`\>
+
+___
+
+### boundsLocal
+
+• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+
+The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
+relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
+"spine" of the shape as well as its stroke, but excluding effects such as shadows.
+
+The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+
+#### Returns
+
+`Readonly`<`Rect`\>
+
+#### Inherited from
+
+VisualNode.boundsLocal
+
+___
+
+### centerPointLocal
+
+• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
+box.
+
+#### Returns
+
+`Readonly`<[`Point`](../interfaces/Point.md)\>
+
+#### Inherited from
+
+VisualNode.centerPointLocal
+
+___
+
 ### id
 
 • `get` **id**(): `string`
@@ -90,7 +146,7 @@ moved to a different part of the document.
 
 #### Inherited from
 
-BaseNode.id
+VisualNode.id
 
 ___
 
@@ -160,7 +216,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 #### Inherited from
 
-BaseNode.parent
+VisualNode.parent
 
 ___
 
@@ -190,6 +246,24 @@ cumulative rotation from the node's parent containers.
 
 ___
 
+### topLeftLocal
+
+• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
+boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
+boundsInParent.
+
+#### Returns
+
+`Readonly`<[`Point`](../interfaces/Point.md)\>
+
+#### Inherited from
+
+VisualNode.topLeftLocal
+
+___
+
 ### transformMatrix
 
 • `get` **transformMatrix**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
@@ -204,7 +278,7 @@ ___
 
 ### translation
 
-• `get` **translation**(): `Readonly`<{ `x`: `number` ; `y`: `number`  }\>
+• `get` **translation**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -212,7 +286,7 @@ setting translation directly.
 
 #### Returns
 
-`Readonly`<{ `x`: `number` ; `y`: `number`  }\>
+`Readonly`<[`Point`](../interfaces/Point.md)\>
 
 • `set` **translation**(`value`): `void`
 
@@ -220,9 +294,7 @@ setting translation directly.
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `Object` |
-| `value.x` | `number` |
-| `value.y` | `number` |
+| `value` | [`Point`](../interfaces/Point.md) |
 
 #### Returns
 
@@ -242,9 +314,75 @@ The node's type.
 
 #### Inherited from
 
-BaseNode.type
+VisualNode.type
+
+___
+
+### visualRoot
+
+• `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
+
+The highest ancestor that still has visual presence in the document. Typically an Artboard, but for orphaned
+content, it will be the root of the deleted content (which might be this node itself).
+
+Nodes that are both in the same visualRoot subtree lie within the same "visual space" of the document's
+structure. Nodes that are in different visual roots have no spatial relation to one another; there is no
+meaningful comparison or conversion between the bounds or coordinate spaces of such nodes.
+
+#### Returns
+
+[`VisualNode`](VisualNode.md)
+
+#### Inherited from
+
+VisualNode.visualRoot
 
 ## Methods
+
+### boundsInNode
+
+▸ **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
+
+Convert the node's [boundsLocal](Node.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+node. Both nodes must share the same [visualRoot](Node.md#visualroot), but can lie anywhere within that subtree
+relative to one another (the target node need not be an ancestor of this node, nor vice versa).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `targetNode` | [`VisualNode`](VisualNode.md) |
+
+#### Returns
+
+`Readonly`<`Rect`\>
+
+___
+
+### localPointInNode
+
+▸ **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
+Both nodes must share the same [visualRoot](Node.md#visualroot), but can lie anywhere within that subtree relative to one
+another (the target node need not be an ancestor of this node, nor vice versa).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `localPoint` | [`Point`](../interfaces/Point.md) |
+| `targetNode` | [`VisualNode`](VisualNode.md) |
+
+#### Returns
+
+`Readonly`<[`Point`](../interfaces/Point.md)\>
+
+#### Inherited from
+
+[VisualNode](VisualNode.md).[localPointInNode](VisualNode.md#localpointinnode)
+
+___
 
 ### removeFromParent
 
@@ -263,7 +401,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[BaseNode](BaseNode.md).[removeFromParent](BaseNode.md#removefromparent)
+[VisualNode](VisualNode.md).[removeFromParent](VisualNode.md#removefromparent)
 
 ___
 
@@ -305,7 +443,7 @@ ___
 Set the node’s rotation angle relative to its parent to exactly the given value, keeping the given point in the
 node’s local coordinate space at a fixed location within the parent. Disregards any rotation the node may already
 have had. The angle set here may not be the absolute rotation angle seen on screen, if the parent or other
-ancestors have any rotation of their own.
+ancestors also have rotation of their own.
 
 **`Example`**
 

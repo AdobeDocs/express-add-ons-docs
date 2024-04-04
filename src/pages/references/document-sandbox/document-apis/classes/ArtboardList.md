@@ -85,7 +85,9 @@ ___
 ▸ **addArtboard**(): [`ArtboardNode`](ArtboardNode.md)
 
 Create a new artboard and add it to the end of the list. The artboard size is the same as others on this page. The
-artboard background is set to default fill color DEFAULT_ARTBOARD_FILL_COLOR.
+artboard background is set to default fill color DEFAULT_ARTBOARD_FILL_COLOR. The new artboard becomes the
+default target for newly inserted content (see insertionParent) and the timeline advances to show this artboard
+in the current viewport.
 
 #### Returns
 

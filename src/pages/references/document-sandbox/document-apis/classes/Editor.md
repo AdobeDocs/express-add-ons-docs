@@ -70,7 +70,7 @@ uncropped image initially, but cropping can be changed after it is created by mo
 container's mediaRectangle and maskShape children.
 
 Image creation involves some asynchronous steps. The image will be visible in this client almost instantly, but will
-render as a gray placeholder on other clients until it has been uploaded to storage and then downloaded by those clients.
+render as a gray placeholder on other clients until it has been uploaded to DCX and then downloaded by those clients.
 This local client will act as having unsaved changes until the upload has finished.
 
 #### Parameters
@@ -148,7 +148,7 @@ ___
 
 ### loadBitmapImage
 
-▸ **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+▸ **loadBitmapImage**(`rendition`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -164,7 +164,7 @@ having unsaved changes until all the upload steps have finished.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `bitmapData` | `Blob` | Encoded image data in PNG or JPEG format. |
+| `rendition` | `Blob` | Encoded image data in PNG or JPEG format. |
 
 #### Returns
 
