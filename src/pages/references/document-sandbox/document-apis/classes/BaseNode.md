@@ -13,15 +13,11 @@ properties.
 
   ↳ **`BaseNode`**
 
-  ↳↳ [`ArtboardNode`](ArtboardNode.md)
-
-  ↳↳ [`ContainerNode`](../interfaces/ContainerNode.md)
-
   ↳↳ [`ExpressRootNode`](ExpressRootNode.md)
 
-  ↳↳ [`Node`](Node.md)
-
   ↳↳ [`PageNode`](PageNode.md)
+
+  ↳↳ [`VisualNode`](VisualNode.md)
 
 ## Accessors
 

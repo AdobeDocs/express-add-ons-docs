@@ -6,7 +6,7 @@
 
 *Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
-Determines how a scenende is composited on top of the content rendered below it.
+Determines how a scenenode is composited on top of the content rendered below it.
 
 If a node is inside a container whose blend mode anything other than [passThrough](BlendMode.md#passthrough), then the node's blend mode only
 interacts with other siblings within the same container. See documentation below for details.

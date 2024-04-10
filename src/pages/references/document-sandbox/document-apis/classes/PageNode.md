@@ -163,6 +163,23 @@ Readonly.width
 
 ## Methods
 
+### cloneInPlace
+
+▸ **cloneInPlace**(): [`PageNode`](PageNode.md)
+
+Clones this page, all artboards within it, and all content within those artboards. The cloned page is the same size
+as the original. Adds the new page immediately after this one in the pages list. The first artboard in the cloned
+page becomes the default target for newly inserted content ([insertionParent](Context.md#insertionparent)) and the viewport
+switches to display this artboard.
+
+#### Returns
+
+[`PageNode`](PageNode.md)
+
+the cloned page.
+
+___
+
 ### removeFromParent
 
 ▸ **removeFromParent**(): `void`
