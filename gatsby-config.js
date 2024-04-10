@@ -232,6 +232,10 @@ module.exports = {
                     title: "UnknownNode",
                     path: "references/document-sandbox/document-apis/classes/UnknownNode.md",
                   },
+                  {
+                    title: "VisualNode",
+                    path: "references/document-sandbox/document-apis/classes/VisualNode.md",
+                  },
                 ],
               },
               {

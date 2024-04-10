@@ -8,7 +8,7 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 
 ## Hierarchy
 
-- [`BaseNode`](BaseNode.md)
+- [`VisualNode`](VisualNode.md)
 
   ↳ **`ArtboardNode`**
 
@@ -40,7 +40,53 @@ ContainerNode.allChildren
 
 #### Overrides
 
-BaseNode.allChildren
+VisualNode.allChildren
+
+___
+
+### boundsLocal
+
+• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+
+The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
+relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
+"spine" of the shape as well as its stroke, but excluding effects such as shadows.
+
+The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+
+#### Returns
+
+`Readonly`<`Rect`\>
+
+#### Implementation of
+
+ContainerNode.boundsLocal
+
+#### Inherited from
+
+VisualNode.boundsLocal
+
+___
+
+### centerPointLocal
+
+• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
+box.
+
+#### Returns
+
+`Readonly`<[`Point`](../interfaces/Point.md)\>
+
+#### Implementation of
+
+ContainerNode.centerPointLocal
+
+#### Inherited from
+
+VisualNode.centerPointLocal
 
 ___
 
@@ -64,13 +110,13 @@ ___
 
 • `get` **fill**(): `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
-The background fill of the artboard. Artboards must always have a fill.
-
 #### Returns
 
 `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
 • `set` **fill**(`fill`): `void`
+
+The background fill of the artboard. Artboards must always have a fill.
 
 #### Parameters
 
@@ -117,7 +163,7 @@ ContainerNode.id
 
 #### Inherited from
 
-BaseNode.id
+VisualNode.id
 
 ___
 
@@ -137,7 +183,29 @@ ContainerNode.parent
 
 #### Overrides
 
-BaseNode.parent
+VisualNode.parent
+
+___
+
+### topLeftLocal
+
+• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
+boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
+boundsInParent.
+
+#### Returns
+
+`Readonly`<[`Point`](../interfaces/Point.md)\>
+
+#### Implementation of
+
+ContainerNode.topLeftLocal
+
+#### Inherited from
+
+VisualNode.topLeftLocal
 
 ___
 
@@ -157,7 +225,32 @@ ContainerNode.type
 
 #### Inherited from
 
-BaseNode.type
+VisualNode.type
+
+___
+
+### visualRoot
+
+• `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
+
+The highest ancestor that still has visual presence in the document. Typically an Artboard, but for orphaned
+content, it will be the root of the deleted content (which might be this node itself).
+
+Nodes that are both in the same visualRoot subtree lie within the same "visual space" of the document's
+structure. Nodes that are in different visual roots have no spatial relation to one another; there is no
+meaningful comparison or conversion between the bounds or coordinate spaces of such nodes.
+
+#### Returns
+
+[`VisualNode`](VisualNode.md)
+
+#### Implementation of
+
+ContainerNode.visualRoot
+
+#### Inherited from
+
+VisualNode.visualRoot
 
 ___
 
@@ -176,6 +269,35 @@ The width of the artboard.
 [IRectangularNode](../interfaces/IRectangularNode.md).[width](../interfaces/IRectangularNode.md#width)
 
 ## Methods
+
+### localPointInNode
+
+▸ **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
+Both nodes must share the same [visualRoot](ArtboardNode.md#visualroot), but can lie anywhere within that subtree relative to one
+another (the target node need not be an ancestor of this node, nor vice versa).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `localPoint` | [`Point`](../interfaces/Point.md) |
+| `targetNode` | [`VisualNode`](VisualNode.md) |
+
+#### Returns
+
+`Readonly`<[`Point`](../interfaces/Point.md)\>
+
+#### Implementation of
+
+[ContainerNode](../interfaces/ContainerNode.md).[localPointInNode](../interfaces/ContainerNode.md#localpointinnode)
+
+#### Inherited from
+
+[VisualNode](VisualNode.md).[localPointInNode](VisualNode.md#localpointinnode)
+
+___
 
 ### removeFromParent
 
@@ -198,4 +320,4 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[BaseNode](BaseNode.md).[removeFromParent](BaseNode.md#removefromparent)
+[VisualNode](VisualNode.md).[removeFromParent](VisualNode.md#removefromparent)

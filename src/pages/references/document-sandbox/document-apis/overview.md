@@ -46,6 +46,7 @@
 - [StrokeShapeNode](classes/StrokeShapeNode.md)
 - [TextNode](classes/TextNode.md)
 - [UnknownNode](classes/UnknownNode.md)
+- [VisualNode](classes/VisualNode.md)
 
 ## Interfaces
 

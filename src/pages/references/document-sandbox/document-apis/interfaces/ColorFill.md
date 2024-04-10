@@ -4,7 +4,7 @@
 
 Represents a solid-color fill.
 
-The most convenient way to create a stroke is via `Editor.makeColorFill()`.
+The most convenient way to create a fill is via `Editor.makeColorFill()`.
 
 ## Hierarchy
 

@@ -12,6 +12,18 @@ Contains the user's current selection state, indicating the content they are foc
 
 ## Accessors
 
+### currentPage
+
+• `get` **currentPage**(): [`PageNode`](PageNode.md)
+
+#### Returns
+
+[`PageNode`](PageNode.md)
+
+The currently viewed page.
+
+___
+
 ### hasSelection
 
 • `get` **hasSelection**(): `boolean`
