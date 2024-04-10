@@ -41,7 +41,7 @@ Check out this short video below to get a quick visual introduction to the steps
 
 ### Add-on CLI
 
-The **add-on CLI (Command Line Interface) is required for add-on development**, and allows you to create and host Adobe Express add-ons directly from your local machine.
+The **[Adobe Express add-on CLI](dev_tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
 
 ## Step 1: Create your add-on project
 
@@ -51,9 +51,12 @@ Open your terminal and run the following command:
 npx @adobe/create-ccweb-add-on hello-world --template javascript-with-document-sandbox     
 ```
 
-This command will create a new add-on based on pure JavaScript with Document Sandbox support (the set of APIs that allow you to interact with Adobe Express documents). The `hello-world` parameter is the name of the add-on you are creating, and the `--template` flag specifies the `javascript-with-document-sandbox` template. See the [Templates section](dev_tooling.md#templates) on the **Development Tools** page for more details on the available ones with the [Adobe Express add-on CLI](dev_tooling.md#using-the-cli).
+This command will create a new add-on based on pure JavaScript with Document Sandbox support (the set of APIs that allow you to interact with Adobe Express documents).
 
-**Note**: You'll be prompted to log in to your Adobe account and accept the 'Adobe Developer Terms of Use' periodically to ensure your account remains compliant and secure. You may also be prompted to configure SSL, which is recommended so that your add-on can be loaded in Adobe Express while you develop it.
+- `hello-world` is the name of the add-on you are creating.
+- The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
+
+The [Templates section](dev_tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
 
 **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
