@@ -138,6 +138,19 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 - [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
 - [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
+## [audio-recording-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on)
+
+Demonstrates how to record audio using the browser's media recorder API, converting the raw Blob into a `WAV` Blob and using the document's `addAudio()` API.
+
+**Technologies Used:** <br/>
+
+- JavaScript
+
+**Features Leveraged:**<br/>
+
+- Record audio using the Browser's API, transforming a raw Blob into a WAV Blob using an HPC codec.
+- [Add audio](./references/addonsdk/app-document.md#addaudio) to the current document's page.
+
 <!-- # Contributed Add-on Samples
 The following samples were contributed from the team. -->
 
