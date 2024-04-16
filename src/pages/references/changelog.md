@@ -22,6 +22,7 @@ contributors:
 
 ## 2024-04-10
 
+- A new [`VisualNode`](./document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
 - New Document APIs have been added:
   - [`currentPage`](./document-sandbox/document-apis/classes/Context.md#currentpage) Context accessor: returns the active page.
   - [`visualRoot`](./document-sandbox/document-apis/classes/VisualNode.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
