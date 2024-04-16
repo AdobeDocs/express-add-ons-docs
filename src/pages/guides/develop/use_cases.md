@@ -250,6 +250,12 @@ async function displayPreview() {
 
 This use case focuses on providing an authorization feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. Here you will find instructions of how to set it up, and an example of how to implement it. But also check out the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details, as well as the  [import-images-using-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth) sample add-ons for more advanced usage.
 
+### Login and Logout flows
+
+Both login and logout flows are equally important, and developers should ensure that the add-on's UI provides functionality for both actions.
+
+Authorization should persist across sessions so users don't have to log in with their credentials every time they use the add-on. The token's lifespan is at the discretion of the OAuth provider; the token itself can be stored remotely (e.g., mapping its UUID in the add-on's local storage) or directly in the local storage (easier but less secure).
+
 ### Setup
 
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some setup steps with the provider you want to use OAuth with first. Here are the steps to get started:

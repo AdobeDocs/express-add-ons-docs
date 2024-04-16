@@ -5,13 +5,13 @@ Useful information to use while developing your add-on UI's with Spectrum.
 ## Tips
 
 ### Using icons
-    
-You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) libraries. 
+
+You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) libraries.
 
 - [**icons-workflow**](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) - icons representing graphical metaphors such as a document, share symbol, trash can, etc.
-- [**icons-ui**](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) - icons that are parts of a component definition like an X, magnifying glass or checkmark. 
+- [**icons-ui**](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) - icons that are parts of a component definition like an X, magnifying glass or checkmark.
 
-To use these icons, first add the associated library to your project by installing them from the command line, or via the `package.json`, then import them into your JS. For example: 
+To use these icons, first add the associated library to your project by installing them from the command line, or via the `package.json`, then import them into your JS. For example:
 
 ```json
 "@spectrum-web-components/icons-ui": "0.39.4",
@@ -28,7 +28,7 @@ import '@spectrum-web-components/icons-ui/icons/sp-icon-arrow75.js';
 ```html
 <sp-icon-play-circle size="s"></sp-icon-play-circle>
 <sp-icon-arrow75 size="m"></sp-icon-arrow75>    
-```    
+```
 
 **NOTE:** Icons adhere to the [Spectrum Design t-shirt sizing](https://spectrum.adobe.com/page/design-tokens/#Size-tokens), with a default of `size="m"` (for medium).
 
@@ -90,7 +90,7 @@ There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) a
 
 ### Styling with Spectrum CSS
 
-Use Spectrum CSS variables for padding, gaps between controls, and general layout. In addition, since Spectrum Web Components do not include any specific components for typography, you can also use variables to style the typography. 
+Use Spectrum CSS variables for padding, gaps between controls, and general layout. In addition, since Spectrum Web Components do not include any specific components for typography, you can also use variables to style the typography.
 
 Some benefits to using Spectrum CSS variables to style your components over absolute values:
 
@@ -111,10 +111,10 @@ Some benefits to using Spectrum CSS variables to style your components over abso
     - Use `--spectrum-global-static-size` variables for things like `font-size`, `line-height`, `border-radius`, etc.
 
 - [Color variables](https://spectrum.adobe.com/page/color-fundamentals/) are provided as part of the `theme` imports. The color value’s contrast with the background increases as the value increases, so colors progressively get darker in a light theme, and lighter in a dark theme (ie: `--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
-    
+
     **TIP:** Use theme-specific color variables, such as those defined in the light theme for Express, located in the CSS files in your `@spectrum-web-components/styles/express/*` folder, for general uses of color in your add-on. For example, when the color will be applied to text, icons, or the borders of a component. Use *static* color variables defined in the overall `theme.js` when the color should be fixed and not dependent on the theme. The typical naming scheme is: `--spectrum-global-color-purple-600` and
     `--spectrum-global-color-static-purple-600`, respectively.
-    
+
 - [Typography](https://opensource.adobe.com/spectrum-css/typography.html) classes can be used to control your typography elements by importing the `typography.css`. For instance:
 
     ```html
@@ -135,10 +135,10 @@ Some benefits to using Spectrum CSS variables to style your components over abso
     ```
 
 ### Component modifier variables
-        
+
 Components have a set of variables defined to use for modifying properties specific to that particular component. They are prefixed with `--mod-*`, and should be used when you want to customize the styling of a specific component.
 
-These variables are particularly useful in cases where you want to use a component in multiple places with different styles. By using custom variables, you can easily adjust the styling of a component in one place, and have those changes apply to all instances of the component throughout your application. 
+These variables are particularly useful in cases where you want to use a component in multiple places with different styles. By using custom variables, you can easily adjust the styling of a component in one place, and have those changes apply to all instances of the component throughout your application.
 
 In the sample app, you used custom modifiers for a few of the components, including to modify the Slider font size, some Swatch  border properties and to adjust the Switch component, for reference.
 
@@ -152,7 +152,7 @@ An example of their usage to modify the Slider is provided below for a reminder 
     --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
     --mod-swatch-border-color: var(--spectrum-global-color-gray-200); 
 }
-```     
+```
 
 ## Troubleshooting
 
@@ -174,7 +174,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Why do I see registry errors in the console when running my add-on, for instance: `Uncaught DOMException: Failed to execute 'define' on 'CustomElementRegistry': the name "sp-icon-chevron100" has already been used with this registry` and `Base.dev.js:164 Attempted to redefine <sp-icon-chevron100>. This usually indicates that multiple versions of the same web component were loaded onto a single page. https://opensource.adobe.com/spectrum-web-components/registry-conflicts`
 
-    This is probably due to mismatched versions of the `@spectrum-web-components` (or `@swc-react`) packages being used in your `package.json`. Don't forget to run `npm install` after updating your `package.json` to match the versions. 
+    This is probably due to mismatched versions of the `@spectrum-web-components` (or `@swc-react`) packages being used in your `package.json`. Don't forget to run `npm install` after updating your `package.json` to match the versions.
 
     **Solution:** open your `package.json` file and set all of the versions to the same one (ie: `0.39.4`). You can always reference [the sample projects](https://github.com/hollyschinsky/bingo-card-generator-js) as needed.
 
@@ -184,7 +184,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Is there a general solution to try when something doesn't work right with the CLI?
 
-    **Solution:** try running `npx clear-npx-cache` to ensure the latest CLI version is installed, then run the CLI commands again. 
+    **Solution:** try running `npx clear-npx-cache` to ensure the latest CLI version is installed, then run the CLI commands again.
 
 - Why isn't the CLI building the output to the `dist` folder as I would expect? Did I forget to include a `webpack.config.js` file in the root of my project?
 
@@ -203,7 +203,7 @@ This section is provided to help troubleshoot any errors you may encounter while
     }
     ```
 
-- Are all of my components wrapped within an opening and closing `<sp-theme>` or `<Theme>` tag? 
+- Are all of my components wrapped within an opening and closing `<sp-theme>` or `<Theme>` tag?
 
     **Solution:** make sure all your UI components are surrounded by the corresponding opening and closing theme tags for either Spectrum Web Components or `swc-react`, or you will not see the components rendered properly.
 
@@ -223,7 +223,7 @@ The following list of resources can be used to learn more about using Adobe's Sp
 - [Adobe Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)
 - [Adobe Spectrum XD Plugin](https://spectrum.adobe.com/page/spectrum-xd-plugin/)
 - [Adobe Spectrum Figma plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
-- [Adobe Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js/) 
+- [Adobe Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js/)
     - **Reminder:** you should only use this option for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles specifically. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
 - [Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
 - [Color Wheel](https://color.adobe.com/create/color-wheel)

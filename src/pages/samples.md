@@ -138,6 +138,19 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 - [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
 - [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
+## [audio-recording-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on)
+
+Demonstrates how to record audio using the browser's media recorder API, converting the raw Blob into a `WAV` Blob and using the document's `addAudio()` API.
+
+**Technologies Used:** <br/>
+
+- JavaScript
+
+**Features Leveraged:**<br/>
+
+- Record audio using the Browser's API, transforming a raw Blob into a WAV Blob using an HPC codec.
+- [Add audio](./references/addonsdk/app-document.md#addaudio) to the current document's page.
+
 <!-- # Contributed Add-on Samples
 The following samples were contributed from the team. -->
 
@@ -234,18 +247,49 @@ Allows users to create a QR code based on a URL and add it to their document.
 - [Import Content](./references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
 
+## [gradients](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/gradients)
+
+Allows users to create two-color gradients of various shapes and direction, and add them to their Adobe Express project.
+
+**Technologies Used:** <br/>
+
+- Lit Web Components
+- Spectrum Web Components
+- 2D Canvas
+- TypeScript
+
+**Features Leveraged:**<br/>
+
+- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/Editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
+
 ## Document Sandbox Code Samples
 
 The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have been provided to help you get started using the [Document Sandbox and Adobe Express Document APIs](./references/document-sandbox/index.md).
 
-### [communication-iframe-documentSandbox sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-documentSandbox)
+## [express-grids-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments.
+The sample add-on that the [Grid System tutorial](./guides/tutorials/grids-addon.md) is based upon. Demonstrates how to use the [Document APIs](./references/document-sandbox/index.md) to create and manipulate shapes, context permanence, color pickers, and Spectrum Web Components usage.
 
-### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
+## [express-stats-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-stats-addon)
 
-Demonstrates how to use the [document APIs](./references/document-sandbox/document-apis/) to create various shapes and add them to the document.
+The sample add-on that the [Document Statistics tutorial](./guides/tutorials/stats-addon.md) is based upon. It demonstrates how to use the [Communication APIs](./references/document-sandbox/communication/index.md) to invoke Document Sandbox method from the iframe UI and vice-versa, touching on asynchronous communication and context permanence. The add-on can build a list of statistics for the document, e.g., the number of class instances (shapes, text, images, and so on).
 
-### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
+## [express-dimensions-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-dimensions-addon)
 
-A more comprehensive example of using the [document APIs](./references/document-sandbox/document-apis/) to add a page, images and shapes, as well as clear the artboard.
+The sample add-on that the [Document APIs Concepts](./references/document-sandbox/document-apis/concepts/index.md) article is based upon. It's used to discuss the Adobe Express Document Object Model, its Classes, Interface, and Constants. The add-on draws Dimensions (arrows measuring the width and height) around the selected shape.
+
+## [communication-iframe-documentSandbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-documentSandbox)
+
+Demonstrates using the Communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments via [`runtime.apiProxy()`](/references/addonsdk/instance-runtime.md#apiproxy) and [`runtime.exposeApi()`](/references/addonsdk/instance-runtime.md#exposeapi).
+
+## [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
+
+Demonstrates how to use the [Document APIs](./references/document-sandbox/document-apis/) to create various shapes and text, and add them to the document.
+
+## [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
+
+A more comprehensive example of using the [Document APIs](./references/document-sandbox/document-apis/) to add a page, images, and shapes, and clear the artboard.
+
+## [express-addon-document-api-template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template)
+
+A barebone JavaScript template that implements the Document APIs.

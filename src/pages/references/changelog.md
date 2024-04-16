@@ -20,6 +20,24 @@ contributors:
 
 # Changelog
 
+## 2024-04-10
+
+- A new [`VisualNode`](./document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
+- New Document APIs have been added:
+  - [`currentPage`](./document-sandbox/document-apis/classes/Context.md#currentpage) Context accessor: returns the active page.
+  - [`visualRoot`](./document-sandbox/document-apis/classes/VisualNode.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
+  - [`cloneInPlace()`](./document-sandbox/document-apis/classes/PageNode.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
+  - Support to Bounds has been added in several classes: [`boundsInParent`](./document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](./document-sandbox/document-apis/classes/GroupNode.md#boundslocal) and [VisualNode](./document-sandbox/document-apis/classes/VisualNode.md#boundslocal)); [`centerPointLocal`](./document-sandbox/document-apis/classes/VisualNode.md#centerpointlocal); [`topLeftLocal`](./document-sandbox/document-apis/classes/VisualNode.md#topleftlocal); [`boundsInNode()`](./document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](./document-sandbox/document-apis/classes/VisualNode.md#localpointinnode);
+- The CLI has been updated to release version `2.0.0`, and includes the following:
+  - Periodic login and EULA consent are no longer required.
+  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](/guides/getting_started/dev_tooling.md#templates) for details on all the available templates.
+  - Typings have been updated to include the latest SDK changes, and other internal packages are now at version `2.0.0`.
+
+ **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
+
+ - The [Samples](../samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../samples.md#audio-recording-addon).
+ - Added a section on [Login and Logout flows](/guides/develop/use_cases.md#login-and-logout-flows) to the Use Cases guide. Other minor fixes and improvements have been made to the documentation.
+  
 ## 2024-03-19
 
 - Support for Ps and Ai files to be added to the page via the [`addImage()`](../references/addonsdk/app-document.md#addimage) method. (Note: there were no changes to the drag-n-drop APIs).

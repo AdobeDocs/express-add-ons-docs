@@ -22,6 +22,7 @@ contributors:
 Configure and use Spectrum Web Components in a basic JavaScript add-on.
 
 ## Introduction
+
 There are a few open source Spectrum libraries available, but we specifically recommend using the [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components) library, as it offers a comprehensive set of UI components with built-in benefits for developers, including:
 
 - A built-in Express theme
@@ -88,7 +89,7 @@ button:not([disabled]):hover {
     background-color: rgb(64, 70, 202);
     cursor: pointer;
 }
-```            
+```
 
 Then, open the `src/index.js` and **remove the following lines**, (ensuring you keep the `addOnUISdk.ready.then(() => {...}` block intact).
 
@@ -194,7 +195,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
 
 ### Set up the Express theme
 
-1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme for the Spectrum Web Components in your UI. 
+1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme for the Spectrum Web Components in your UI.
 
     `npm install @spectrum-web-components/theme@0.39.4`
 
@@ -218,7 +219,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     // import '@spectrum-web-components/theme/express/theme-dark.js'; /* to support a future dark theme */    
     // import '@spectrum-web-components/theme/express/scale-large.js'; /* future support for mobile for insance */
     ```
-    
+
     **Note:** The `typography.css` import is not required, but is useful to note for using Spectrum CSS variables to help style the typography components of your add-ons, and to provide margins.
 
 1. You can now add the `<sp-theme>` tag to your UI, but note that **you won't actually see anything visually yet**, since there are no components for it to be applied to. Open your `src/index.html` file, and add the following theme component into the `<body>` tags, configured with a `medium` scale, `light` color and `express` theme:
@@ -252,7 +253,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
 
 ### Install Spectrum Web Components
 
-Now you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command. 
+Now you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command.
 
 ```bash
 npm install @spectrum-web-components/button@0.39.4 @spectrum-web-components/button-group@0.39.4 @spectrum-web-components/field-label@0.39.4 @spectrum-web-components/menu@0.39.4 @spectrum-web-components/picker@0.39.4 @spectrum-web-components/slider@0.39.4 @spectrum-web-components/swatch@0.39.4 @spectrum-web-components/switch@0.39.4
@@ -359,8 +360,8 @@ Next, open the `src/index.html` file and implement the following code for the UI
 Note the properties for each, and use the [Spectrum Web Component documentation](https://opensource.adobe.com/spectrum-web-components) to help cross-reference them for more context.
 
 Worth mentioning, are the details around the use of the `<sp-swatch>` components, which are coupled with a hidden native `<input>` component to allow the user to pick their colors. Though SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider), there is not an actual picker, so this add-on implements it via an `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
-    
-The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On input (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` updates as the color is changed to them in sync. 
+
+The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On input (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` updates as the color is changed to them in sync.
 
 Also, be sure to check out [Adobe's UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) as many of these components are included with specific guidelines, including:
 
@@ -664,7 +665,7 @@ function generateBingoCard() {
 }
 ```
 
-Once you've updated your code, your add-on should reload and you can generate a custom bingo card! Try playing with some settings and see how they render in a new card. You can also try to drag your card to the page, or add it with the add button etc. If your add-on didn't pick up the changes for any reason, you can always use the [add-on developer tools](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to do a refresh, or simply run `npm run build; npm run start` again. 
+Once you've updated your code, your add-on should reload and you can generate a custom bingo card! Try playing with some settings and see how they render in a new card. You can also try to drag your card to the page, or add it with the add button etc. If your add-on didn't pick up the changes for any reason, you can always use the [add-on developer tools](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to do a refresh, or simply run `npm run build; npm run start` again.
 
 ![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 

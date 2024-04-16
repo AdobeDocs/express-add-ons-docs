@@ -87,24 +87,26 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 
 ## Templates
 
-The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently four base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
+The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 <br/>
 
 | Template         | Framework        |
 | ---------------- | ---------------- |
 | `javascript`       | JavaScript       |
-| `typescript`       | TypeScript       |
+| `swc-javascript`       | JavaScript with Spectrum Web Components support     |
+| `swc-typescript`       | TypeScript with Spectrum Web Components support     |
 | `react-javascript`  | React with JavaScript |
 | `react-typescript` | React with TypeScript |
 
-as well as the following four template options which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
+As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
 
 | Template         | Description        |
 | ---------------- | ---------------- |
-| `javascript-with-document-sandbox`  | JavaScript project with document sandbox support.  |
-| `typescript-with-document-sandbox`  | TypeScript project with document sandbox support.      |
-| `react-javascript-with-document-sandbox`  | React+JavaScript project with document sandbox support.|
-| `react-typescript-with-document-sandbox` | React+TypeScript project with document sandbox support.|
+| `javascript-with-document-sandbox`  | JavaScript with Document Sandbox support.  |
+| `swc-javascript-with-document-sandbox`  | JavaScript and Spectrum Web Components with Document Sandbox support.  |
+| `swc-typescript-with-document-sandbox`  | TypeScript and Spectrum Web Components with Document Sandbox support.      |
+| `react-javascript-with-document-sandbox`  | React and JavaScript with Document Sandbox support.|
+| `react-typescript-with-document-sandbox` | React and TypeScript with Document Sandbox support.|
 
 You can supply any of the above template names after the `--template` parameter:
 
@@ -141,6 +143,12 @@ which shows the four base template options to choose from, followed by a prompt 
  You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
 
 ![template scaffolding message](./img/scaffold-msg.png)
+
+<InlineAlert slots="text1, text2" variant="warning"/>
+
+Please note that to use [Spectrum Web Components](/guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
+
+If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
 
 ## Manifest
 
