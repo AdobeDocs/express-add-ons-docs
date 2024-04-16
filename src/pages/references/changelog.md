@@ -20,6 +20,37 @@ contributors:
 
 # Changelog
 
+## 2024-04-16
+
+### Removed
+- Removed the `login` requirement in the CLI.
+- Removed the `analytics` property from the add-on manifest.
+
+### Updated
+- Updated to use the latest `@adobe/ccweb-add-on-devcert` package, which includes an updated `password-prompt` package.
+
+### Templates
+- Added new JavaScript templates:
+  - `swc-javascript`
+  - `swc-javascript-with-document-sandbox`
+- Renamed TypeScript templates to:
+  - `swc-typescript`
+  - `swc-typescript-with-document-sandbox`
+
+### API Typings
+- Added new document sandbox API typings:
+
+  - Support for cloning the page, all artboards within it, and all content within those artboards using the method, [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/PageNode.md#cloneinplace) in the class, `PageNode`
+  - Support for returning the currently viewed page using [`get currentPage()`](../references/document-sandbox/document-apis/classes/Context.md).
+  - `get boundsLocal()` in `GroupNode.ts`
+  - `get boundsInParent()` in `Node.ts`
+  - `boundsInNode()` in `Node.ts`
+  - `get visualRoot()` in `VisualNode.ts`
+  - `get boundsLocal()` in `VisualNode.ts`
+  - `get centerPointLocal()` in `in VisualNode.ts`
+  - `get topLeftLocal()` in `VisualNode.ts`
+  - `localPointInNode()` in `VisualNode.ts`
+
 ## 2024-03-19
 
 - Support for Ps and Ai files to be added to the page via the [`addImage()`](../references/addonsdk/app-document.md#addimage) method. (Note: there were no changes to the drag-n-drop APIs).
