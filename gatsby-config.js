@@ -34,6 +34,10 @@ module.exports = {
         title: "Community",
         path: "https://developer.adobe.com/express/community",
       },
+      {
+        title: 'Fund for Design', 
+        path: 'https://developer.adobe.com/fund-for-design'
+      }  
     ],
     subPages: [
       {
