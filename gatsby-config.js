@@ -35,9 +35,9 @@ module.exports = {
         path: "https://developer.adobe.com/express/community",
       },
       {
-        title: 'Fund for Design', 
-        path: 'https://developer.adobe.com/fund-for-design'
-      }  
+        title: "Fund for Design",
+        path: "https://developer.adobe.com/fund-for-design",
+      },
     ],
     subPages: [
       {
@@ -377,18 +377,19 @@ module.exports = {
             pages: [
               {
                 title: "Document APIs",
-                path: "guides/tutorials/grids-addon",        
+                path: "guides/tutorials/grids-addon",
               },
               {
                 title: "Communication APIs",
-                path: "guides/tutorials/stats-addon",        
+                path: "guides/tutorials/stats-addon",
               },
               {
                 title: "Using Adobe Spectrum",
                 path: "guides/tutorials/spectrum-workshop/",
                 pages: [
                   {
-                    title: "Basic JavaScript add-on with Spectrum Web Components",
+                    title:
+                      "Basic JavaScript add-on with Spectrum Web Components",
                     path: "guides/tutorials/spectrum-workshop/part1/",
                   },
                   {
@@ -401,9 +402,10 @@ module.exports = {
                   },
                 ],
               },
-            ]
-          },                          
-        ]},      
+            ],
+          },
+        ],
+      },
       {
         title: "Design",
         path: "guides/design",
@@ -431,8 +433,38 @@ module.exports = {
             path: "guides/develop/",
           },
           {
-            title: "Implementing Common Use Cases",
+            title: "Common Use Cases",
             path: "guides/develop/use_cases.md",
+            pages: [
+              {
+                title: "Content Management",
+                path: "guides/develop/use_cases/content_management.md",
+              },
+              {
+                title: "Authentication and Authorization",
+                path: "guides/develop/use_cases/authentication_authorization.md",
+              },
+              {
+                title: "Client-side Data",
+                path: "guides/develop/use_cases/clientside_data.md",
+              },
+              {
+                title: "User Interaction",
+                path: "guides/develop/use_cases/user_interaction.md",
+              },
+              {
+                title: "Environment Settings",
+                path: "guides/develop/use_cases/environment_settings.md",
+              },
+              {
+                title: "Monetization Flows",
+                path: "guides/develop/use_cases/monetization_flows.md",
+              },
+              {
+                title: "Content Authoring and Metadata",
+                path: "guides/develop/use_cases/content_authoring.md",
+              },
+            ],
           },
           {
             title: "Frameworks, libraries and bundling",
