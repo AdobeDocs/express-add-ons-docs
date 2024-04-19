@@ -22,9 +22,9 @@ contributors:
 
 ## Get Current User information
 
-You can leverage the [`currentUser`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-currentUser) API to obtain the information for the currently logged in user, for instance if you want to use their `userId` to validate in a monetization flow.
+You can leverage the [`currentUser`](/references/addonsdk/app-currentUser.md) API to obtain the information for the currently logged-in user, for instance, if you want to use their `userId` to validate in a monetization flow.
 
-Use the example below to try this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-currentUser). Also, refer to the [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples/#licensed-addon), which shows how you can utilize the hash of the user ID to integrate your add-on with licensing and payment services.
+See the example below and refer to the [related SDK Reference section](/references/addonsdk/app-currentUser.md) and the [licensed-addon code sample](/samples.md#licensed-addon), which shows how you can utilize the hash of the user ID to integrate your add-on with licensing and payment services.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 

@@ -22,7 +22,7 @@ contributors:
 
 ## Drag and Drop
 
-If you want to allow a user to drag and drop items from your add-on to the document, you can use the [methods provided in the add-on SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument). There are also several [code samples](https://developer.adobe.com/express/add-ons/docs/samples) that implement drag and drop, including the [import-images-using-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth) and [pix](https://developer.adobe.com/express/add-ons/docs/samples/#pix) samples you can reference. Some example use cases are shown below.
+If you want to allow a user to drag and drop items from your add-on to the document, you can use the [methods provided in the add-on SDK](/references/addonsdk/addonsdk-app.md#enabledragtodocument). There are also several [code samples](/samples.md) that implement drag and drop, including the [import-images-using-oauth](/samples.md#import-images-using-oauth) and [pix](/samples.md#pix) samples you can reference. Some example use cases are shown below.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -164,7 +164,7 @@ addOnUISdk.app.on("dragend", (eventData: DragEndEventData) => {
 
 ## Modal Dialogs
 
-When you need to pop up a dialog to show a certain message, such as an informational, warning, or error message, you can use a modal dialog to do so. Below are some examples of the different types of modal dialogs. Also, check out the SDK references for details on how to [show](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#showmodaldialog) or [programmatically close a dialog](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/runtime-dialog/#close), as well as the [dialog add-on sample](https://developer.adobe.com/express/add-ons/docs/samples/#dialog-add-on) for more details.
+When you need to pop up a dialog to show a certain message, such as an informational, warning, or error message, you can use a modal dialog. Below are some examples of the different types. Also, check out the SDK references for details on how to [show](/references/addonsdk/addonsdk-app.md#showmodaldialog) or [programmatically close a dialog](/references/addonsdk/runtime-dialog.md#close), as well as the [dialog add-on sample](/samples.md#dialog-add-on) for more details.
 
 ### Simple Modal Dialog Example
 
@@ -230,7 +230,7 @@ async function showInputDialog() {
 
 ### Custom Dialog Example
 
-This example shows how you can define custom content for your dialog in a separate source file, (`dialog.html` in this case), and with a custom height and title.
+This example shows how you can define custom content for your dialog in a separate source file (`dialog.html` in this case) and with a custom height and title.
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -263,4 +263,4 @@ async function showCustomDialog() {
 
 <InlineAlert slots="text" variant="success"/>
 
-Check out the [add-on SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) for more specific details on using modal dialogs, including [programmatically closing a dialog with an optional custom result](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/runtime-dialog/#close).
+Check out the [add-on SDK](/references/addonsdk.md) for more specific details on using modal dialogs, including [programmatically closing a dialog with an optional custom result](/references/addonsdk/runtime-dialog.md#close).

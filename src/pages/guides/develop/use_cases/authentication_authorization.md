@@ -21,7 +21,7 @@ contributors:
 
 ## OAuth 2.0
 
-This use case focuses on providing an authorization feature that allows a user to login to one of their existing services with OAuth 2.0. A typical use case would be to use assets you have stored in another service. Here you will find instructions of how to set it up, and an example of how to implement it. But also check out the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details, as well as the  [import-images-using-oauth](https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth) sample add-ons for more advanced usage.
+This section covers implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services. A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details and the [import-images-using-oauth](/samples/#import-images-using-oauth) sample add-on for more advanced usage.
 
 ### Login and Logout flows
 
@@ -65,7 +65,7 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 
 ### Example
 
-Once you complete the set up, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) also contain a few different examples of using OAuth 2.0 workflows that you can use for a reference. You will also find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module there, which is referenced below, and we recommend using to help with your own OAuth implementation. Also be sure to check out the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth) for additional details on the OAuth workflows.
+Once you complete the setup, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](/samples.md) also include several examples of implementing OAuth 2.0 workflows, which you can refer to. Additionally, you'll find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module, referenced below, and we recommend utilizing this module to facilitate your own OAuth implementation. For further details on the OAuth workflows, be sure to explore the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth).
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";

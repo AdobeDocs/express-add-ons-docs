@@ -20,7 +20,7 @@ contributors:
 
 ## Importing Content
 
-Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example use cases for implementing this feature. The first function shows how to implement it by adding an image directly from a `blob` object, and the second shows how to implement it by fetching an image via a URL first. Follow the example below to implement this feature, but also be sure to refer to the [related SDK Reference section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) and [code samples](https://developer.adobe.com/express/add-ons/docs/samples/) for more details.
+Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example implements this feature. The first function shows how to add an image directly from a `blob` object, and the second shows how to fetch an image via URL. Please also refer to the [related SDK Reference section](/references/addonsdk/app-document.md#methods) and [code samples](/samples.md) for more details.
 
 ### Example
 
@@ -59,11 +59,11 @@ The supported file types for imported images are currently **`png/jpg/mp4`,** an
 
 ### Video and Audio Content
 
-You can also import video and audio content in a similar way as described above, via the [`addVideo()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addvideo) and [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#addaudio) methods accordingly. **Please note:** the `addAudio()` method requires an additional `MediaAttributes` object parameter containing the `title` of the audio object you're importing. See the associated [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) for more details and example usage.
+You can also import video and audio content similarly via the [`addVideo()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addvideo) and [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#addaudio) methods. **Please note:** the `addAudio()` method requires an additional `MediaAttributes` object parameter containing the `title` of the audio object you're importing. See the associated [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) for more details, and the [`audio-recording-add-on`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on) sample.
 
 ## Exporting Content
 
-Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to allow the user to save/download the current design, (or range of a design), with certain export configurations to their local hard drive. Some examples for exporting content are provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](https://developer.adobe.com/express/add-ons/docs/samples/#export-sample).
+Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to allow the user to save/download the current design, (or range of a design), with certain export configurations to their local hard drive. Some examples for exporting content are provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](/samples.md#export-sample).
 
 The steps to export content:
 
@@ -95,7 +95,7 @@ While the above is a very basic example, add-ons that call `createRenditions` to
 
 #### Option 1: Show a Premium Content error with the "Upgrade" option
 
-Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](../../references/addonsdk/app-currentUser.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent`](../../references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is not recommended anymore.
+Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](/references/addonsdk/app-currentUser.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent`](/references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
 
 #### Example:
 
@@ -158,7 +158,7 @@ const exportDocument = async () => {
 document.querySelector("#export").onclick = exportDocument;
 ```
 
-Please note that [`startPremiumUpgradeIfFreeUser()`](../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) allows a more streamlined user experience for upgrading to premium content, compared to the older method of redirecting to the Adobe Express pricing page, which is now deprecated.
+Please note that [`startPremiumUpgradeIfFreeUser()`](/references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) allows a more streamlined user experience for upgrading to premium content, compared to the older method of redirecting to the Adobe Express pricing page, which is now deprecated.
 
 #### Option 2: Provide visual cues in the UI
 
@@ -166,7 +166,7 @@ Developers can provide visual cues directly in the add-on UI to show that users 
 
 #### Option 3: Allow preview of Premium Content
 
-Set a `renditionPreview` intent in the [manifest requirements](../../references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](../../references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content.
+Set a `renditionPreview` intent in the [manifest requirements](/references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](/references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content.
 
 **IMPORTANT**: Your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user). To that end, be sure that users cannot:
 
