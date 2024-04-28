@@ -9,7 +9,6 @@ Our Generative AI guidelines include:
 - Acceptable content
 - Restricted content
 - Transparency when using Gen AI content
-- Testing and security
 
 We will edit and update this guide as our requirements and the technology evolve.
 
@@ -28,9 +27,6 @@ We have split this section into:
 - [Requirements](./requirements.md) (which must be followed)
 - [Recommendations](./recommendations.md) (which are suggestions we encourage for best practice)
 
-**If your add-on does not meet required criteria, your submission will be rejected. If an issue is discovered, and your add-on is already listed in the marketplace, you’ll be contacted and given thirty (30) days to resolve the issue or risk being removed from the marketplace.**
-
-Add-ons that are listed privately are not required to undergo automated testing. However you should not use private add-ons as a way to avoid ensuring the safety of your add-on when sharing it with users.
 
 <InlineAlert slots="text" variant="warning"/>
 
