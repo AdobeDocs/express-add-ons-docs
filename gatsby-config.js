@@ -35,9 +35,9 @@ module.exports = {
         path: "https://developer.adobe.com/express/community",
       },
       {
-        title: 'Fund for Design', 
-        path: 'https://developer.adobe.com/fund-for-design'
-      }  
+        title: "Fund for Design",
+        path: "https://developer.adobe.com/fund-for-design",
+      },
     ],
     subPages: [
       {
@@ -377,18 +377,19 @@ module.exports = {
             pages: [
               {
                 title: "Document APIs",
-                path: "guides/tutorials/grids-addon",        
+                path: "guides/tutorials/grids-addon",
               },
               {
                 title: "Communication APIs",
-                path: "guides/tutorials/stats-addon",        
+                path: "guides/tutorials/stats-addon",
               },
               {
                 title: "Using Adobe Spectrum",
                 path: "guides/tutorials/spectrum-workshop/",
                 pages: [
                   {
-                    title: "Basic JavaScript add-on with Spectrum Web Components",
+                    title:
+                      "Basic JavaScript add-on with Spectrum Web Components",
                     path: "guides/tutorials/spectrum-workshop/part1/",
                   },
                   {
@@ -401,9 +402,10 @@ module.exports = {
                   },
                 ],
               },
-            ]
-          },                          
-        ]},      
+            ],
+          },
+        ],
+      },
       {
         title: "Design",
         path: "guides/design",
@@ -568,6 +570,10 @@ module.exports = {
                 ],
               },
             ],
+          },
+          {
+            title: "Rejections",
+            path: "guides/distribute/rejections.md",
           },
         ],
       },
