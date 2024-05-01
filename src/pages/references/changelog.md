@@ -36,7 +36,7 @@ contributors:
  **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
 
  - The [Samples](../samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../samples.md#audio-recording-addon).
- - Added a section on [Login and Logout flows](/guides/develop/use_cases.md#login-and-logout-flows) to the Use Cases guide. Other minor fixes and improvements have been made to the documentation.
+ - The [Common Use Cases](/guides/develop/use_cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](/guides/develop/use_cases/authentication_authorization.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation. 
   
 ## 2024-03-19
 
