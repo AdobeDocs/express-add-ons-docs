@@ -24,17 +24,17 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 ## Features Supported by the SDK
 
-- [Importing Content](../../guides/develop/use_cases.md#importing-content)
-- [Exporting Content](../../guides/develop/use_cases.md#exporting-content)
-- [Accessing Content](../../guides/develop/use_cases.md#authoring-content)
-- [Drag & Drop Behavior](../../guides/develop/use_cases.md#drag-and-drop)
-- [Authorization with OAuth 2.0](../../guides/develop/use_cases.md#authorization-with-oauth-20)
-- [Client-side Storage Access](../../guides/develop/use_cases.md#storing-and-retrieving-client-side-data)
-- [Modal Dialogs](../../guides/develop/use_cases.md#modal-dialogs)
-- [Locale Detection](../../guides/develop/use_cases.md#detecting-locale-and-supported-locales)
-- [Theme Detection](../../guides/develop/use_cases.md#detecting-theme)
-- [Access to the Manifest](../../references/addonsdk/instance-manifest.md)
-- [Access to the Document information](../../references/addonsdk/app-document.md)
+- [Importing Content](../../guides/develop/use_cases/content_management.md#importing-content)
+- [Exporting Content](../../guides/develop/use_cases/content_management.md#exporting-content)
+- [Accessing Content](../../guides/develop/use_cases/content_management.md)
+- [Drag & Drop Behavior](../../guides/develop/use_cases/user_interaction.md#drag-and-drop)
+- [Authorization with OAuth 2.0](../../guides/develop/use_cases/authentication_authorization.md#oauth-20)
+- [Client-side Storage Access](../../guides/develop/use_cases/clientside_data.md)
+- [Modal Dialogs](../../guides/develop/use_cases/user_interaction.md#modal-dialogs)
+- [Locale Detection](../../guides/develop/use_cases/environment_settings.md#detecting-locale-and-supported-locales)
+- [Theme Detection](../../guides/develop/use_cases/environment_settings.md#detecting-theme)
+- [Access to the Manifest](/references/addonsdk/instance-manifest.md)
+- [Access to the Document information](/references/addonsdk/app-document.md)
 
 <InlineAlert slots="text" variant="success"/>
 
