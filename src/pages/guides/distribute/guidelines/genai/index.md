@@ -16,9 +16,9 @@ We will edit and update this guide as our requirements and the technology evolve
 
 The rise of Generative AI offers potential benefits for add-ons, particularly in facilitating content creation and accelerating workflows.
 
-However, it also means it is possible for users to be exposed to inappropriate or offensive content on a large scale, even if the add-on’s own code bundle and assets technically meet requirements.
+However, it also means it is possible for users to be exposed to llegal content on a large scale, even if the add-on’s own code bundle and assets technically meet requirements.
 
-Adobe encourages users to be able to choose whether they want to try add-ons that employ Generative AI technology. But we want to make sure that this is clearly stated upfront - and that the content they receive is appropriate and respects intellectual property (including copyrights and trademarks).
+Adobe requires that users be able to choose whether they want to try add-ons that employ Generative AI technology. This means that add-ons must clearly state upfront when they use generative AI technologies.
 
 We created these guidelines to assist any developers who wish to take advantage of Generative AI in their add-ons, to make sure they do so in accordance with Adobe standards.
 

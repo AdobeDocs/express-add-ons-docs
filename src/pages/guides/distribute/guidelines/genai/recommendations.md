@@ -26,10 +26,6 @@ If your add-on leverage generative AI technologies, you should provide informati
 
 While your ethics don’t have to match Adobe’s perfectly, users should be able to learn about your ethical standards and how these standards apply to your use of AI.
 
-**Soon you’ll have an opportunity to share a link to this information when you submit your add-on to the marketplace. Users will see this link when they view the add-on’s detailed listing page.**
-
-**In the meantime, consider including this information on your website or support page.**
-
 ## Share information about how your add-on uses generative AI
 
 It’s pretty clear how an add-on that generates an image from a text prompt leverages generative AI.
@@ -50,7 +46,7 @@ These requirements can be listed in any number of locations:
 - In the add-on’s description
 - As part of any of the links you provide when you submit an add-on to the marketplace (including terms of use or how your add-on uses AI).
 
-## Provide a mechanism for reporting restricted content
+## Provide a mechanism for reporting inappropriate content
 
 No content filter or classifier is perfect, and it’s possible that some restricted content might be generated unintentionally, even with a safe prompt.
 
@@ -58,7 +54,7 @@ You should provide your users with a mechanism for alerting you when this happen
 
 Users can also use the “Report Abuse” feature inside Adobe Express to report content, but this report will only be sent to Adobe.
 
-**If we receive a significant amount of abuse reports, we reserve the right to remove your add-on for the safety of our users.**
+**If we receive a significant amount of abuse reports, we may remove your add-on for the safety of our users.**
 
 ## If you remove generated content or prevent content from being generated, be clear as to why
 
@@ -70,4 +66,4 @@ You can use the Firefly web app or Text-to-image features in Adobe Express as a 
 
 ## Haven’t found what you’re looking for? Let us know
 
-This is a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve. If you have any questions about a specific case or issue, or would like to learn about our testing process and requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
+These recommendations are a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve. If you have any questions about a specific case or issue, or would like to learn more about our requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
