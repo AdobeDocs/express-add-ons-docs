@@ -158,14 +158,18 @@ The following platform values are currently supported in the `supportedDeviceCla
 | [`sandbox?`](#entrypointspermissionssandbox) | `string []`  | List of iframe sandbox permissions.  |
 | `oauth?`               | `string []` | List of 3rd party auth server domains for which OAuth workflow may be requested. |
 | `clipboard?`  | `string []` | The allowed values for the list of clipboard permissions. Currently, `clipboard-write` is supported and allows an add-on to write arbitrary data to the clipboard. |
+| `microphone?` | `string` | The [allowlists](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists) value used in iframe `‘allow’` attribute. Enables the add-on to access the user's microphone for audio input. |
+| `camera?` | `string` | The [allowlists](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists) value used in iframe `‘allow’` attribute. Enables the add-on to access the user's camera for video input. |
 
 **Example:**<br/>
 
 ```json
 "permissions" : {
     "sandbox": [" allow-popups ", "allow-downloads"],
-    "oauth" : [“...”, “...”], 
-    "clipboard": ["clipboard-write"]
+    "oauth" : ["...", "..."], 
+    "clipboard": ["clipboard-write"],
+    "microphone": "*", 
+    "camera" : "*"
 }
 ```
 
