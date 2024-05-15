@@ -50,7 +50,7 @@ These requirements can be listed in any number of locations:
 
 No content filter or classifier is perfect, and it’s possible that some restricted content might be generated unintentionally, even with a safe prompt.
 
-You should provide your users with a mechanism for alerting you when this happens, so that you can take appropriate action to ensure that similar content isn’t generated in the future.
+You may provide your users with a mechanism for alerting you when this happens, so that you can take appropriate action to ensure that similar content isn’t generated in the future.
 
 Users can also use the “Report Abuse” feature inside Adobe Express to report content, but this report will only be sent to Adobe.
 
