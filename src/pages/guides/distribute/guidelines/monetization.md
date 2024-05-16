@@ -85,7 +85,7 @@ Add-ons must not allow users on a free plan to download, share, or export premiu
 
 ## Requirements for monetizing your add-ons
 
-When listing your add-ons for monetization to the public marketplace, you must indicate your add-on's purchase offerings in [the public listing](../public-dist.md#step-10-enter-the-monetization-details).
+When listing your add-ons for monetization to the public marketplace, you must indicate your add-on's purchase offerings in [the public listing](../public-dist.md#step-8-enter-the-monetization-details).
 
 The following are the supported monetization details currently:
 

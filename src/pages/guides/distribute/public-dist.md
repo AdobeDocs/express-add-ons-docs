@@ -154,7 +154,7 @@ It's time to upload your package. Either drag and drop the add-on package `.zip`
 
 <InlineAlert slots="text" variant="info"/>
 
-In case you missed it, the [top section on preparing your add-on package](#prepare-your-add-on-package) can be used to help you create the zip file needed for this step.
+In case you missed it, the [top section on preparing your add-on package](#3-prepare-your-add-on-package) can be used to help you create the zip file needed for this step.
 
 ![Public listing screenshots](./img/public-listing-upload-v2.png)
 
