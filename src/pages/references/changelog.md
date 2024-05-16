@@ -23,7 +23,6 @@ contributors:
 
 ## 2024-05-20
 
-- The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect improvements in the in-app developer experience, particularly around distribution and listing.
 - A new section on Marketplace [rejections](/guides/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them. 
 - The [Manifest Reference](./manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
