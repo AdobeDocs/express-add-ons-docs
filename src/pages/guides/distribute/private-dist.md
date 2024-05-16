@@ -36,7 +36,7 @@ The result will be a distributable zip of your add-on package with the name `dis
 
 ## Step 1: Create a new Add-on Listing
 
-In order to get a private distribution link, you will need to create a new add-on listing first; provided that you've enabled Add-on Development in your user's settings as described [here](../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience. 
+In order to get a private distribution link, you will need to create a new add-on listing first; provided that you've enabled Add-on Development in your user's settings as described [here](../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 1. From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 
@@ -72,7 +72,7 @@ Navigate to the **Private link** tab, and click the **Create private link** butt
 
 ## Step 4: Upload your add-on package
 
-The next step is to upload your package zip. Either drag and drop the add-on package `.zip` file, or click the **browse** link to select the file from your computer's filesystem.
+The next step is to upload your package. Either drag and drop the add-on package `.zip` file, or click the **browse** link to select the file from your computer's filesystem.
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -120,10 +120,10 @@ You can choose to revisit your submission details now if you want to copy, delet
 
 ![private listing details](./img/create-private-link-review-v2.png)
 
-If you select the **Insights** tab, you'll be able to get analytics for your add-on, via the **Download** buttons. 
+If you select the **Insights** tab, you'll be able to get analytics for your add-on, via the **Download** buttons.
 
 ![listing insights](./img/add-on-insights-v2.png)
 
-The insights come as `.csv` files named like your add-on, and appended with `_public` or `_private` depending on the listing type (e.g., `AmazingAddOn_private.csv`). The insights data currently includes the number of installs, uninstalls and invocations of your add-on per week. A sample is shown below for reference:
+The insights come as `.csv` files named like your add-on, and appended with `_public` or `_private` depending on the listing type (e.g., `AFineAddOn_private.csv`). The insights data currently includes the number of installs, uninstalls and invocations of your add-on per week. A sample is shown below for reference:
 
 ![sample insights](./img/sample-insights.png)
