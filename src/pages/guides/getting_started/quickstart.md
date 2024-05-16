@@ -74,7 +74,7 @@ npx clear-npx-cache
 npx @adobe/create-ccweb-add-on hello-world 
 ```
 
-The above may prove useful when updated version of the CLI are released. If you want to read each individual CLI command manual pages, run them via `npx` with the `--help` flag, for example:
+The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
 
 ```bash
 npx @adobe/ccweb-add-on-scripts start --help  
@@ -115,8 +115,15 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 ## Step 4: Load and run your add-on
 
-- Navigate your browser to [Adobe Express](https://new.express.adobe.com/new) and **create a new project**.
+- Navigate your browser to [Adobe Express](https://new.express.adobe.com/new) and **create a new project**—a blank one will suffice.
 - Click the **Add-ons** icon on the left rail.
+
+<InlineAlert slots="text1, text2" variant="info"/>
+
+It's possible to access the **Add-ons** from the home page as well (i.e., without the need to open a new project first). In this case, you must follow the listing creation outlined [here](../distribute/private-dist.md#step-1-create-a-new-add-on-listing) first.
+
+For simplicity's sake, this Quickstart guide covers the document creation method.
+
 - Notice there are two tabs: **Discover** and **Your add-ons**.
 
 ![add-on tabs](./img/add-on-tabs-v2.png)
@@ -129,7 +136,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
    **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
 
-   Tick the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
+   Select the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
 
 ![Add-on connect modal](./img/connect-modal-v2.png)
 
