@@ -20,6 +20,11 @@ contributors:
 
 # Changelog
 
+## 2024-05-21
+
+- The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect several UI/UX improvements for in-app workflows, particularly around distribution and listing management.
+- The Add-ons tab is now active from the Adobe Express home page, regardless of whether there's a project open or not.
+
 ## 2024-04-10
 
 - A new [`VisualNode`](./document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
