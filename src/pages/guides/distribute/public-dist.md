@@ -234,7 +234,7 @@ Eventually, the submission will be successful. Congratulations!
 
 ![View Submission Details](./img/public-listing-submission-details-v2.png)
 
-You can choose to revisit your submission details later if you need to update it, or if you want to download insights for your add-on. To do so, choose **Manage add-ons** from the add-on launchpad again, and then select your add-on listing. 
+You can choose to revisit your submission details later if you need to update it, or if you want to download insights for your add-on. To do so, choose **Manage add-ons** from the add-on launchpad again, and then select your add-on listing.
 
 ## Post-Submission details and insights
 
