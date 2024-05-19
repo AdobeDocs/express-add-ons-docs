@@ -19,13 +19,13 @@ contributors:
 
 # Common Rejection Causes and How To Avoid Them
 
-## Overview
+## 📋 Overview
 
 When you submit an add-on for distribution, the review team *thoroughly* examines it to ensure it meets the [guidelines](./guidelines/index.md) and is safe for public distribution. If something goes wrong, you will receive an email with the reasons that led to a rejection. You shouldn't be discouraged, though! Usually, the fixes are relatively straightforward, and the detailed feedback from the reviewers is an opportunity to improve and learn.
 
 That said, being rejected is annoying and, most importantly, time-consuming, as multiple re-submissions will impact the time it takes to get your add-on published. To help you avoid it, we've compiled a list of the most common reasons for review failures and how to address them.
 
-## Functional issues
+## 🔧 Functional issues
 
 As trivial as it may sound, the add-on not working as expected is the **most common cause** of trouble. This can be anything from a simple failure to the inability to log in. Here are some of the most common functional issues the reviewers have reported and our suggestions to prevent them.
 
@@ -45,7 +45,9 @@ In case your product requires users to log in, make sure the **authentication wo
 
 Adobe Express [officially supports](https://helpx.adobe.com/express/system-requirements.html#system-requirements-web) the four most popular browsers: **Chrome, Safari, Edge, and Firefox**. Your add-on must be tested and work seamlessly across all of them. If any problems discussed so far are found in even one of these browsers, the reviewers are bound to reject it.
 
-## UI/UX Issues
+![](./img/browser-compatibility.png)
+
+## 📐 UI/UX Issues
 
 Both the User Interface and Experience—i.e., how information is presented to users and how they interact with it—are crucial elements for the success of your products. Here are some common pitfalls that can prevent your add-on from being approved.
 
@@ -57,7 +59,7 @@ The UI should always provide an intuitive and **functional way to navigate the a
 
 Every **user interaction should always return clear feedback**. For instance, progress indicators or text notices should be displayed when the add-on runs a process in the background to signal that it is actually doing something and is not idle or frozen. Input fields should have proper validation to avoid errors with out-of-bounds values in your routines, and displayed errors should be informative and actionable. Additional information should be provided as tooltips or text to clarify why elements are disabled or actions are unavailable. It's relatively common to forget about these details, but they are a typical cause of review failures; make sure to remember them.
 
-## Recent changes to review criteria
+## 📝 Recent changes to review criteria
 
 Due to changes in the testing and reviewing processes, some issues that used to cause rejections aren't considered blocking anymore. Please find below some of the most recent ones.
 
