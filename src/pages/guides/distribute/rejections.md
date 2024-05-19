@@ -61,9 +61,13 @@ Both the User Interface and Experience—i.e., how information is presented to u
 
 The UI should always provide an intuitive and **functional way to navigate the add-on's screens**. It should also offer a method to return to the previous screen or home page, especially if a PDF or webpage is opened in the iframe and overrides its entire content. If users can't find a clear path to follow and get stuck, the reviewers will throw the ball back in your court and ask you to revise your code.
 
+![](./img/rejections-navigation-problems.png)
+
 ### Error handling
 
 Every **user interaction should always return clear feedback**. For instance, progress indicators or text notices should be displayed when the add-on runs a process in the background to signal that it is actually doing something and is not idle or frozen. Input fields should have proper validation to avoid errors with out-of-bounds values in your routines, and displayed errors should be informative and actionable. Additional information should be provided as tooltips or text to clarify why elements are disabled or actions are unavailable. It's relatively common to forget about these details, but they are a typical cause of review failures; make sure to remember them.
+
+![](./img/rejections-error-feedback.png)
 
 ## 📝 Recent changes to review criteria
 
