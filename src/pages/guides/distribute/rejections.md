@@ -33,19 +33,25 @@ As trivial as it may sound, the add-on not working as expected is the **most com
 
 Problems can be directly related to the **add-on's core functionality**, e.g., failures in exporting from and importing assets into the document or performing server-side processing. Sometimes, bugs are sneaky and only appear under specific conditions, which our reviewers have proved *exceptionally talented* in finding—just so you know. Test your add-on thoroughly and make sure it works in all scenarios, edge cases included.
 
+![](./img/rejections-functional-issues.png)
+
 ### Minor bugs
 
 The reviewers will also reject your add-on if they find less critical problems that still **affect the user experience**. Issues could vary from missing event handlers to 404 links and broken icons. Do your best to catch them all before submitting your add-on.
+
+![](./img/rejections-404-error.png)
 
 ### Authentication problems
 
 In case your product requires users to log in, make sure the **authentication workflow is operating properly**, and don't forget to *always* add a logout option. If present, reviewers should also be provided with working **credentials to test premium features**, a key requirement for add-ons that offer paid services.
 
+![](./img/rejections-authentication-failed.png)
+
 ### Browser compatibility
 
 Adobe Express [officially supports](https://helpx.adobe.com/express/system-requirements.html#system-requirements-web) the four most popular browsers: **Chrome, Safari, Edge, and Firefox**. Your add-on must be tested and work seamlessly across all of them. If any problems discussed so far are found in even one of these browsers, the reviewers are bound to reject it.
 
-![](./img/browser-compatibility.png)
+![](./img/rejections-browser-compatibility.png)
 
 ## 📐 UI/UX Issues
 
