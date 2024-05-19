@@ -76,10 +76,6 @@ addOnUISdk.app.on("documentTitleChange", data => {
 
 Retrieve the metadata for all of the pages in the document.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `getPagesMetadata(options: PageMetadataOptions): Promise<PageMetadata[]>`
@@ -460,7 +456,9 @@ async function displayPreview() {
       format: addOnUISdk.constants.RenditionFormat.png,
       backgroundColor: 0x7FAA77FF
     };
-    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, addOnUISdk.constants.RenditionIntent.preview);
+    const renditions = await addOnUISdk.app.document.createRenditions(
+      renditionOptions, addOnUISdk.constants.RenditionIntent.preview
+    );
     renditions.forEach(rendition => {
       const image = document.createElement("img");
       image.src = URL.createObjectURL(rendition.blob);
