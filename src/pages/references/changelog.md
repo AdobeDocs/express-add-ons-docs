@@ -21,7 +21,7 @@ contributors:
 
 # Changelog
 
-## 2024-05-20
+## 2024-05-21
 
 - The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
