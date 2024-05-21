@@ -90,7 +90,7 @@ The package will go through a verification process which may take a few seconds,
 
 **3.** In places where you are referring to paths, please ensure you are only using relative paths.
 
-**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`
+**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`. The `package` script [described earlier](#prepare-your-add-on-package) takes care of this for you.
 
 ## Step 5: Enter add-on details
 

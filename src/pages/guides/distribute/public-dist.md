@@ -168,7 +168,7 @@ The package will go through a verification process which may take a few seconds,
 
 **3.** In places where you are referring to paths, please ensure you are only using relative paths.
 
-**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`
+**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`. The `package` script [described earlier](#3-prepare-your-add-on-package) takes care of this for you.
 
 If the `zip` validation is successful, you will see a green checkmark next to the **Add-on package verified** text; you can then add some Release Notes (1000 characters max) and check the add-on's supported languages.
 
@@ -176,7 +176,7 @@ If the `zip` validation is successful, you will see a green checkmark next to th
 
 ### Step 7: Enter the AI usage details
 
-The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. However, this technology also brings the risk of users encountering inappropriate or offensive content. While Adobe encourages user choice regarding add-ons using Generative AI, transparency is paramount. We ensure clear, upfront communication, guarantee appropriate content, and respect intellectual property rights.
+The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. Adobe encourages user choice regarding add-ons using Generative AI, but transparency is paramount. Your AI-powered add-on must not generate illegal content, and it must be clear and transparent about how generative AI is used in your add-on.
 
 In this section, you'll have to answer a variety of questions, depending on the type of AI-based content your add-on generates, the input it accepts, whether you test the output, etc. Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe’s requirements and recommendations to try add-ons that employ Generative AI technology.
 
@@ -191,7 +191,7 @@ Developers can choose from various payment options, including **free**, **one-ti
 - The *Other* option is provided for developers to choose when their current setup does not fit the provided options.
 - The final *additional details* text area allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"* and is optional for all payment choices except *Other*. We encourage the use of this field to clearly state any specific payment details.
 
-Doo check in the live preview how the listing will appear to users. Depending on the payment selection, different details will automatically be displayed in the add-on listing.
+Do check in the live preview how the listing will appear to users. Depending on the payment selection, different details will automatically be displayed in the add-on listing.
 
 If the payment choice selected is not free, an **Upgrade available** badge will be displayed in the details along with specific default text describing the choice selected (ie: "*...for a one-time purchase*", "*...with a recurring subscription*", "*...purchase assets or features individually or in packages*"), and **Checkout is handled by the developer outside of Adobe Express**—as shown in the previous screenshot.
 
