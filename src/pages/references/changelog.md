@@ -21,9 +21,12 @@ contributors:
 
 # Changelog
 
-## 2024-05-20
+## 2024-05-21
 
+- The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
+- The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
 - A new section on Marketplace [rejections](/guides/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
+- The [Manifest Reference](./manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
 ## 2024-04-10
 
@@ -59,7 +62,7 @@ contributors:
 
 ## 2024-02-21
 
-- New support for [monetization details](../guides/distribute/public-dist.md#step-10-enter-the-monetization-details) has been added to the public distribution flow and allows you to [provide details around monetization options](../guides/distribute/public-dist.md#step-10-enter-the-monetization-details) your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include *free*, *one-time payment*, *recurring subscription*, *micro-transactions*, and *other*.
+- New support for [monetization details](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) has been added to the public distribution flow and allows you to [provide details around monetization options](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include *free*, *one-time payment*, *recurring subscription*, *micro-transactions*, and *other*.
 
   In addition, the [monetization guidelines](../guides/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../guides/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../guides/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
@@ -301,7 +304,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
 - A new release has landed for the [**In-App Developer Submission experience**](../guides/distribute/) in Express. Some highlights from the release:
 
-  **Create Add-on flow:** You can now create [an add-on "container"](../guides/distribute/public-dist.md#step-2-add-on-container-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
+  **Create Add-on flow:** You can now create [an add-on "container"](../guides/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
   **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../guides/develop/context.md#cors) for more details.
 
@@ -309,7 +312,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
 
-  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-8-enter-the-version-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/use_cases/environment_settings.md#detecting-locale-and-supported-locales).
+  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/use_cases/environment_settings.md#detecting-locale-and-supported-locales).
 - Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev_tooling.md#no-template-parameter).
 - New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
 - Removed NPS survey.
