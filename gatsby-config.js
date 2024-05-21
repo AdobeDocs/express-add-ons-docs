@@ -601,6 +601,10 @@ module.exports = {
               },
             ],
           },
+          {
+            title: "Rejections",
+            path: "guides/distribute/rejections.md",
+          },
         ],
       },
       {
