@@ -16,9 +16,14 @@ title: Changelog
 description: Contains a running log of changes to the add-on documentation, SDK, CLI, etc. 
 contributors:
   - https://github.com/hollyschinsky
+  - https://github.com/undavide
 ---
 
 # Changelog
+
+## 2024-05-20
+
+- A new section on Marketplace [rejections](/guides/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
 
 ## 2024-04-10
 
