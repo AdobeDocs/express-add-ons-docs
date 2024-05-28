@@ -130,8 +130,11 @@ const { constants } = addOnUISdk;
 const { PanelActionType, EditorPanel } = constants;
  
 addOnUISdk.ready.then(() => {
-  const action = { type: PanelActionType.search, searchString: "test" };
-    addOnUISdk.app.ui.openEditorPanel(EditorPanel.templates, action); 
+  const action = { 
+    type: PanelActionType.search, 
+    searchString: "test" 
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.templates, action); 
 });
  
 // Navigate to collection
@@ -187,7 +190,7 @@ addOnUISdk.ready.then(() => {
   addOnUISdk.app.ui.openEditorPanel(EditorPanel.templates, action); 
 });
  
-//Navigate to tab 
+// Navigate to tab 
 addOnUISdk.ready.then(() => {
   const action: NavigateAction = {
     type: PanelActionType.navigate, 
