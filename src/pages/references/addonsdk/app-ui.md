@@ -64,6 +64,152 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
+## Methods
+
+### openEditorPanel
+
+Programmatically open the Editor panel in Adobe Express. When sub-tabs are available, this method can target them, as well as pre-populate the Search field.
+
+#### Signature
+
+`openEditorPanel(panel: EditorPanel, action?: PanelAction): void;`
+
+#### Parameters
+
+| Name               | Type     |                                                  Description |
+| ------------------ | -------- | -----------------------------------------------------------: |
+| `panel`            | `string` |     [`EditorPanel`](./addonsdk-constants.md) constant value. |
+| `action?`          | `Object` |                        [`PanelAction`](#panelaction) object. |
+
+#### `PanelAction`
+
+| Name       | Type       |                                                        Description |
+| ---------- | ---------- | -----------------------------------------------------------------: |
+| `type`     | `string`   |      [`PanelActionType`](./addonsdk-constants.md) constant value.  |
+
+#### `SearchAction`
+
+Extends the [`PanelAction`](#panelaction) object and adds the following options for the Search action:
+
+| Name       | Type       |                                                                   Description |
+| ------------------ | ---------- | --------------------------------------------------------------------: |
+| `type`             | `string`   |  [`PanelActionType.search`](./addonsdk-constants.md) constant value.  |
+| `searchString`     | `string`   |                             Query used to perform the Search action.  |
+
+#### `NavigateAction`
+
+Extends the [`PanelAction`](#panelaction) object and adds the following options for the Navigation action:
+
+| Name       | Type       |                                                                     Description |
+| ------------------ | ---------- | ----------------------------------------------------------------------: |
+| `type`             | `string`   |  [`PanelActionType.navigate`](./addonsdk-constants.md) constant value.  |
+| `tab?`             | `string`   |  [`ElementsTabs`](./addonsdk-constants.md) or [`MediaTabs`](./addonsdk-constants.md) constant values  |
+| `collectionId?`    | `string`   |  collectionId of the asset collection to navigate to                    |
+
+#### Actions Notes
+
+Actions are currently not supported on every Editor panel. Please find the supported actions for each panel below:
+
+| Action                 | Supported panels                                     |
+| ---------------------- | ---------------------------------------------------: |
+| Search                 | Templates, Media, Elements, Text, Your stuff, Search |
+| Navigate to Collection | Templates, Media, Elements, Text                     |
+| Navigate to Tab        | Media, Elements                                      |
+
+Both Collection and Tab navigation can be executed in combination.
+
+#### Example usage
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+const { constants } = addOnUISdk;
+const { PanelActionType, EditorPanel } = constants;
+ 
+addOnUISdk.ready.then(() => {
+  const action = { 
+    type: PanelActionType.search, 
+    searchString: "test" 
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.templates, action); 
+});
+ 
+// Navigate to collection
+addOnUISdk.ready.then(() => {
+  const action = { 
+    type: PanelActionType.navigate, 
+    collectionId: "urn:aaid:sc:VA6C2:cd6aa706-12f2-525b-9500-3d23bc663882"
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.templates, action); 
+});
+ 
+// Navigate to tab
+addOnUISdk.ready.then(() => {
+  const action: NavigateAction = {
+    type: PanelActionType.navigate, 
+    tab: "photos"
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.media, action); 
+});
+ 
+// Navigate to tab + collection
+addOnUISdk.ready.then(() => {
+  const action: NavigateAction = { 
+    type: PanelActionType.navigate, 
+    tab: "photos", 
+    collectionId: "urn:aaid:sc:VA6C2:cd6aa706-12f2-525b-9500-3d23bc663882"
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.media, action); 
+});
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+const { constants } = addOnUISdk;
+const { PanelActionType, EditorPanel } = constants;
+
+addOnUISdk.ready.then(() => {
+  const action: SearchAction = {
+    type: PanelActionType.search, 
+    searchString: "test"
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.templates, action); 
+});
+
+// Navigate to collection
+addOnUISdk.ready.then(() => {
+  const action: NavigateAction = {
+    type: PanelActionType.navigate, 
+    collectionId: "urn:aaid:sc:VA6C2:cd6aa706-12f2-525b-9500-3d23bc663882"
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.templates, action); 
+});
+ 
+// Navigate to tab 
+addOnUISdk.ready.then(() => {
+  const action: NavigateAction = {
+    type: PanelActionType.navigate, 
+    tab: "photos"
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.media, action); 
+});
+ 
+// Navigate to tab + collection
+addOnUISdk.ready.then(() => {
+  const action: NavigateAction = {
+    type: PanelActionType.navigate, 
+    tab: "photos", 
+    collectionId: "urn:aaid:sc:VA6C2:cd6aa706-12f2-525b-9500-3d23bc663882"
+  };
+  addOnUISdk.app.ui.openEditorPanel(EditorPanel.media, action); 
+});
+```
+
 ## Events
 
 ### themechange
