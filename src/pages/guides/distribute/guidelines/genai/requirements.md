@@ -22,10 +22,10 @@ If your add-on generates text or code, your add-on must remind the user that the
 
 Add-ons that meet the following criteria do not require the add-on's developer to submit a self-certification of compliance with our content generation requirements:
 
-- Your add-on is privately listed (**NOTE:** We may still elect to remove your privately listed add-on if we receive credible reports of abuse)
-- AI Models that the user installs and runs locally on their device (that is, models that are not included within the add-on bundle)
-- Text-to-speech using Generative AI (provided the text is supplied by the user)
-- Instrumental music or sound effects created using Generative AI (where there are no lyrics)
+* Your add-on is privately listed (**NOTE:** We may still elect to remove your privately listed add-on if we receive credible reports of abuse)
+* AI Models that the user installs and runs locally on their device (that is, models that are not included within the add-on bundle)
+* Text-to-speech using Generative AI (provided the text is supplied by the user)
+* Instrumental music or sound effects created using Generative AI (where there are no lyrics)
 
 ## Check back frequently!
 
