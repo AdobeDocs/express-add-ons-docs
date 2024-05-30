@@ -23,7 +23,6 @@ We have split this section into:
 - [Requirements](./requirements.md) (which must be followed)
 - [Recommendations](./recommendations.md) (which are suggestions we encourage for best practice)
 
-
 <InlineAlert slots="text" variant="warning"/>
 
 **If we receive reports of abuse, we may elect to remove an add-on whether it is private or public.**
