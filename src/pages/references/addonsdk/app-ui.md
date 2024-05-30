@@ -70,6 +70,10 @@ addOnUISdk.ready.then(async () => {
 
 Programmatically open the Editor panel in Adobe Express. When sub-tabs are available, this method can target them, as well as pre-populate the Search field.
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
 #### Signature
 
 `openEditorPanel(panel: EditorPanel, action?: PanelAction): void;`
