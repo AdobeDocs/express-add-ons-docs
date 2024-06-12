@@ -15,6 +15,7 @@ title: Quickstart
 description: This is the Quickstart page
 contributors:
   - https://github.com/hollyschinsky
+  - https://github.com/undavide
 ---
 
 # Development Tools
@@ -46,9 +47,24 @@ For instance, the following command would specify all possible arguments:
 npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 ```
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
+
+#### CLI troubleshooting <!-- 👈 will not render -->
 
 See the [templates](#templates) section for the currently supported template values.
+
+`npx` is an `npm` package runner that can execute packages without installing them explicitly. If needed, please run this command to clear the `npx` cache to ensure the latest version of the CLI is invoked.
+
+```bash
+npx clear-npx-cache
+npx @adobe/create-ccweb-add-on my-addon 
+```
+
+The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
+
+```bash
+npx @adobe/ccweb-add-on-scripts start --help  
+```
 
 ### `start` script options
 
@@ -130,25 +146,29 @@ npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox --template react-
 
 The template parameter is optional, and the CLI will prompt you to choose from a list of template options if it's excluded. For instance, if you use just the base CLI command:
 
-`npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox`
+`npx @adobe/create-ccweb-add-on <add-on-name>`
 
 you will see the following prompt from the CLI:
 
-![doc sandbox prompt](./img/template-prompt.png)
+![doc sandbox prompt](./img/CLI-template-prompt.png)
 
-which shows the four base template options to choose from, followed by a prompt to ask if you want to add the document sandbox support as well once you choose the base template.
+which shows the five base template options to choose from, followed by a prompt to ask if you want to add the Document Sandbox support once you choose the base template.
 
-![cli doc sandbox prompt](./img/doc-sandbox.png)
+![cli doc sandbox prompt](./img/CLI-doc-sandbox.png)
 
- You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
+You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
 
-![template scaffolding message](./img/scaffold-msg.png)
+![template scaffolding message](./img/CLI-scaffold-message.png)
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
 Please note that to use [Spectrum Web Components](/guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
 
 If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
+
+When the scaffolding is complete, you will see the following message, prompting you to navigate to the newly created project directory and start the local development scripts:
+
+![CLI completed message](./img/CLI-completed.png)
 
 ## Manifest
 
