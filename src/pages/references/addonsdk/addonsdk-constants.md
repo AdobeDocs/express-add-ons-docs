@@ -16,6 +16,97 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
 </tr>
 <tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>BleedUnit</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Units for the page bleed.</p>
+        <ul>
+          <li><strong>"in" (`Inch`)</strong></li>Inch units.
+          <li><strong>"mm" (`Millimeter`)</strong></li>Millimeter units.
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>ButtonType</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>The type of the button pressed in a dialog.</p>
+        <ul>
+          <li><strong>primary</strong></li>Primary button pressed.
+          <li><strong>secondary</strong></li>Secondary button pressed.
+          <li><strong>cancel</strong></li>Cancel button pressed.
+          <li><strong>close</strong></li>Dialog closed via ESC or close(X) button.
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>DialogResultType</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>The type of modal dialog result.</p>
+        <ul>
+          <li><strong>alert</strong></li>Alert dialog result (simple dialogs all return this).
+          <li><strong>input</strong></li>Input dialog result.
+          <li><strong>custom</strong></li>Custom dialog result.
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>EditorPanel</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>The Adobe Express Editor panel to be opened.</p>
+        <ul>
+          <li><strong>search</strong></li>Editor Search panel.
+          <li><strong>yourStuff</strong></li>Editor Your stuff panel.
+          <li><strong>templates</strong></li>Editor Templates panel.
+          <li><strong>media</strong></li>Editor Media panel.
+          <li><strong>text</strong></li>Editor Text panel.
+          <li><strong>elements</strong></li>Editor Elements panel.
+          <li><strong>grids</strong></li>Editor Grids panel.
+          <li><strong>brands</strong></li>Editor Brands panel.
+          <li><strong>addOns</strong></li>Editor Add-ons panel.
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>ElementsTabs</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Tabs in the Editor's Elements panel.</p>
+        <ul>
+          <li><strong>designAssets</strong></li>Design assets tab.
+          <li><strong>backgrounds</strong></li>Backgrounds tab.
+          <li><strong>shapes</strong></li>Shapes tab.
+          <li><strong>stockIcons</strong></li>Icons tab.
+          <li><strong>charts</strong></li>Charts tab.
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>MediaTabs</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Tabs in the Editor's Media panel.</p>
+        <ul>
+          <li><strong>video</strong></li>Video tab.
+          <li><strong>audio</strong></li>Audio tab.
+          <li><strong>photos</strong></li>Photos tab.
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>PanelActionType</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Types of actions that can be performed on Editor panels.</p>
+        <ul>
+          <li><strong>search</strong></li>Action type to perform search within the Editor panel.
+          <li><strong>navigate</strong></li>Action type to perform navigation within the Editor panel.
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>Range</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
@@ -24,18 +115,6 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
           <li><strong>currentPage</strong></li> Generate rendition for the current page
           <li><strong>entireDocument</strong></li>Generate rendition for all pages
           <li><strong>specificPages</strong></li>Generate rendition for specific pages
-        </ul>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>RenditionIntent</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">  
-        <p>The intent to set for creating the rendition. Options:</p>
-        <ul>
-          <li><strong>preview</strong></li>Intent to preview the content.
-          <li><strong>export</strong></li>Intent to export/download the content (default).
-          <li><strong>print</strong></li>Intent to export and print the content **Note:** For `pdf` format, a print optimized pdf is generated. This option is not supported for `mp4` format.
         </ul>
     </td>
 </tr>
@@ -49,6 +128,18 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
           <li><strong>png</strong></li>"image/png" for PNG format
           <li><strong>mp4</strong></li>"video/mp4" for MP4 format
           <li><strong>pdf</strong></li>"application/pdf" for PDF format
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>RenditionIntent</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">  
+        <p>The intent to set for creating the rendition. Options:</p>
+        <ul>
+          <li><strong>preview</strong></li>Intent to preview the content.
+          <li><strong>export</strong></li>Intent to export/download the content (default).
+          <li><strong>print</strong></li>Intent to export and print the content **Note:** For `pdf` format, a print optimized pdf is generated. This option is not supported for `mp4` format.
         </ul>
     </td>
 </tr>
@@ -98,42 +189,6 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
           <li><strong>hd720p</strong></li>"720p"
           <li><strong>fhd1080p</strong></li>"1080p"
           <li><strong>custom</strong></li>Custom resolution
-        </ul>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>DialogResultType</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>The type of modal dialog result.</p>
-        <ul>
-          <li><strong>alert</strong></li>Alert dialog result (simple dialogs all return this).
-          <li><strong>input</strong></li>Input dialog result.
-          <li><strong>custom</strong></li>Custom dialog result.
-        </ul>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>ButtonType</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>The type of the button pressed in a dialog.</p>
-        <ul>
-          <li><strong>primary</strong></li>Primary button pressed.
-          <li><strong>secondary</strong></li>Secondary button pressed.
-          <li><strong>cancel</strong></li>Cancel button pressed.
-          <li><strong>close</strong></li>Dialog closed via ESC or close(X) button.
-        </ul>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>BleedUnit</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Units for the page bleed.</p>
-        <ul>
-          <li><strong>"in" (`Inch`)</strong></li>Inch units.
-          <li><strong>"mm" (`Millimeter`)</strong></li>Millimeter units.
         </ul>
     </td>
 </tr>

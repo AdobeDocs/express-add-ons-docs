@@ -21,6 +21,11 @@ contributors:
 
 # Changelog
 
+## 2024-05-28
+
+- Added a new *experimental* [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) API to programmatically open and interact with the Editor panel. This method of the `addOnUISdk.app.ui` allows navigation to specific tabs and collections, as well as performing content searches. The [Constants](../references/addonsdk/addonsdk-constants.md) page has been updated accordingly.
+- Added a new [`Cross-Origin-Embedder-Policy`](../guides/faq.md#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues) FAQ.
+
 ## 2024-05-21
 
 - The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.

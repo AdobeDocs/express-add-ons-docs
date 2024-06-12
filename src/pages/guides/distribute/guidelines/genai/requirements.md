@@ -1,85 +1,32 @@
-## Requirements
+## Listing requirements
 
-Clearly communicate that generative AI is being used to create output
+Your add-on's listing must be clear that generative AI is being used. During submission of your add-on, you'll be prompted to select if your add-on uses generative AI. If your add-on does so, in any capacity, you must answer in the affirmative. This will ensure that users are properly informated that your add-on utilized generative AI for some or all of its features.
 
-If you are using Generative AI to create output assets, you must be open and upfront. Do not try to mislead users.
-
-You’ll have an opportunity when submitting your add-on to detail your add-on’s use of generative AI technology. You must mention in your listing that you are using Generative AI. You may also wish to indicate it in the add-on’s UI, although that is not a requirement.
-
-<InlineAlert slots="text" variant="warning"/>
-
-Never portray content created using generative UI as stock content created by human artists.
-
-Some possible examples:
-
-- As part of your add-on’s description: *“Create engaging comic book strips from text using the power of generative AI.”*
-As part of your add-on’s UI: *“Generate images”* (call to action button)
-- As part of your add-on’s UI: *“Generate images”* (call to action button)
-
-Users should be aware that your add-on is using generative AI.
-
-In the future we’ll call this out separately in the add-on’s listing page. But in the meantime, include at least the following text in your add-on’s description:
-
-***“This add-on uses generative AI technology to create content. You are solely responsible for the use of the content, and Adobe is not responsible for your use of this add-on.”***
-
-## Content Requirements
+## Content generation requirements
 
 Content created by your add-on must adhere to [Adobe’s General Terms of Use](https://www.adobe.com/legal/terms.html) and the [Developer Terms of Use](http://www.adobe.com/go/developer-terms).
 
-Your add-on must protect users against restricted content.
+Specifically:
 
-Your add-on must not:
+* Your add-on must not generate illegal content.
+* Your add-on must leverage filtering technologies and must test your add-on to ensure that illegal content is not generated.
+* Before an add-on leveraging generative AI is approved for publication, you may be asked to certify that you have read these guidelines and agree to abide by them.
 
-- Contain or generate illegal content (such as CSAM, content that encourages illegal drug use, etc)
-- Contain or generate adult content (such as sexual content, nudity, gore, intense violence, or strong language)
-- Contain or generate hate speech or speech that promotes violence or bullying or cruel behavior to anyone
-- Generate content that promotes, automates, or relates to highly regulated activities (such as financial advice, medical advice or diagnosis, legal advice or documents, contracts)
-- Contain or generate code that could be malicious (such as viruses, malware, spyware, etc.)
-- Participate in misinformation/disinformation campaigns
-- Violate intellectual property rights, including copyright, of other persons and companies
-- Automatically perform actions determined by AI that would be destructive or that can’t be undone without explicit user consent.
+If your add-on is found to be generating illegal content, your add-on will be removed.
 
-At minimum, you must apply filtering at the prompt level to protect against intentional attempts to generate restricted content. However, you might need to add additional filtering after generating content in order to pass Adobe’s automated tests.
+### Disclaimer requirements
 
-**NOTE:** How a model is trained also has a large impact on what it might create. However, the model’s training is often insufficient to ensure that users are never exposed to restricted content.
+If your add-on generates text or code, your add-on must remind the user that the content generated may be inaccurate. Users should always review the generated content with trusted sources before publishing the content or executing any code.  Because every use of AI is different, Adobe doesn't provide a one-size-fits-all example, but there are several examples in the generative AI ecosystem that should provide good examples.
 
-As such, it’s often necessary to add additional filtering or post-processing steps. For example, you could have a set of words that would be immediately rejected, or a language classifier to detect violent speech, or an image classifier that detects sexual content in the model’s output.
+### Use cases that don't require certification
 
-<InlineAlert slots="text" variant="warning"/>
+Add-ons that meet the following criteria do not require the add-on's developer to submit a self-certification of compliance with our content generation requirements:
 
-Your add-on may be tested when you submit to the marketplace to ensure that restricted content is not generated.
+* Your add-on is privately listed (**NOTE:** We may still elect to remove your privately listed add-on if we receive credible reports of abuse)
+* AI Models that the user installs and runs locally on their device (that is, models that are not included within the add-on bundle)
+* Text-to-speech using Generative AI (provided the text is supplied by the user)
+* Instrumental music or sound effects created using Generative AI (where there are no lyrics)
 
-## Use cases requiring additional testing
+## Check back frequently!
 
-In some cases, you will be required to confirm that you test your add-on to ensure that it does not generate restricted content. Adobe may also execute automated tests to validate the safety of your add-on.
-
-<InlineAlert slots="text" variant="warning"/>
-
-If your add-on implements any of the following use cases, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com) to receive additional instructions on automated testing. This list is not exhaustive, so contact us if you have any questions.
-
-### Imagery (includes images and video)
-
-- Text to image
-- In-painting / out-painting
-- Generative fill
-
-### Text (unless using ChatGPT and OpenAI’s moderation API)
-
-- Text generated by a large language model
-- Summarization
-- Code generation
-
-### Audio
-
-- Music containing generated lyrics
-- Speech containing generated text (unless using ChatGPT and OpenAI’s moderation API)
-
-## Exceptions
-
-Add-ons that meet the following criteria are not subject to automated testing by Adobe:
-
-- Your add-on is privately listed (**NOTE:** We may still elect to remove your privately listed add-on if we receive credible reports of abuse)
-- AI Models that the user installs and runs locally on their device
-- Text-to-speech using Generative AI (provided the text is supplied by the user)
-- Instrumental music or sound effects created using Generative AI (where there are no lyrics)
-- Text generation if you use ChatGPT and OpenAI’s moderation API to filter content
+These requirements are a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve. If you have any questions about a specific case or issue, or would like to learn more about our requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
