@@ -43,7 +43,7 @@ addOnUISdk.app.on("themechange", (data) => {
 });
 ```
 
-## Detecting Locale, Supported Locales and Format
+## Detecting Locale, Supported Locales, and Format
 
 If you want to find out the user's current locale, the list of supported locales, or detect when the locale changes (e.g., to set the language in your add-on), you can do so with the [`addOnUISdk.app.ui` object](/references/addonsdk/app-ui.md#locale) in the add-on SDK. Similarly, you can get and detect a change in the Format used display dates, times, numbers, etc. A simple example is shown below.
 
@@ -65,7 +65,7 @@ addOnUISdk.ready.then(() => {
   addOnUISdk.app.on("localechange", data => {
     setLanguage(data.locale);
   });
-  
+
   addOnUISdk.app.on("formatchange", data => {
     console.log("New format", data.format);
   });
