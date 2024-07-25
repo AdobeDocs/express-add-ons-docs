@@ -1,6 +1,6 @@
 # addOnUISdk.app.ui
 
-Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/use_cases/environment_settings.md#detecting-locale-and-supported-locales) or [theme](../../guides/develop/use_cases/environment_settings.md#detecting-theme) in use to update your add-on user interface accordingly.
+Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/use_cases/environment_settings.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/develop/use_cases/environment_settings.md#detecting-theme) in use to update your add-on user interface accordingly.
 
 ## Properties
 
@@ -65,6 +65,7 @@ addOnUISdk.ready.then(async () => {
 ```
 
 ### format
+
 Access the regional format currently set in Adobe Express to display dates, times, numbers, etc. This value is accessed via the `addOnUISdk.app.ui` object, so you should only access this object after the `addOnUISdk` is initialized (via the `addOnUISdk.ready`).
 
 #### Values
@@ -267,7 +268,6 @@ addOnUISdk.app.on("themechange", (data) => {
 <InlineAlert slots="text" variant="success"/>
 
 Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
-
 
 ### localechange
 
