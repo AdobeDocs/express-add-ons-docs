@@ -122,6 +122,7 @@ The following platform value is currently supported in the `supportedDeviceClass
 | Platform       | Description |
 | ----------------| -------------|
 | `desktop`       | Browser on desktop. |
+<!-- Extra comment, otherwise the table will show the content anyway—bar the first cell -->
 <!-- | `mobile`        | Browser on mobile and tablet devices. | -->
 <!-- | `app`           | Native app on mobile and tablet devices. | -->
 
