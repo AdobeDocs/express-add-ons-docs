@@ -1,6 +1,6 @@
 # addOnUISdk.app.ui
 
-Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/use_cases/environment_settings.md#detecting-locale-and-supported-locales) or [theme](../../guides/develop/use_cases/environment_settings.md#detecting-theme) in use to update your add-on user interface accordingly.
+Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/use_cases/environment_settings.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/develop/use_cases/environment_settings.md#detecting-theme) in use to update your add-on user interface accordingly.
 
 ## Properties
 
@@ -61,6 +61,34 @@ locales:
 addOnUISdk.ready.then(async () => {    
     console.log(JSON.stringify(addOnUISdk.app.ui.locales)) 
     // output is ["cy-GB","da-DK","de-DE","en-US","es-ES","fi-FI","fr-FR","it-IT","ja-JP","ko-KR","nb-NO","nl-NL","pt-BR","sv-SE","zh-Hans-CN","zh-Hant-TW","zz-ZZ"]
+});
+```
+
+### format
+
+Access the regional format currently set in Adobe Express to display dates, times, numbers, etc. This value is accessed via the `addOnUISdk.app.ui` object, so you should only access this object after the `addOnUISdk` is initialized (via the `addOnUISdk.ready`).
+
+#### Values
+
+A `string` containing the current format value. Current regional format could be one of:
+
+```json
+["ms-MY", "cs-CZ", "cy-GB", "da-DK", "de-DE", "de-LU", "de-AT", "de-CH", "et-EE", 
+"en-AU", "en-CA", "en-GB", "en-HK", "en-IN", "en-IE", "en-IL", "en-NZ", "en-SG", 
+"en-ZA", "en-US", "es-AR", "es-CL", "es-CO", "es-CR", "es-EC", "es-ES", "es-GT", 
+"es-419", "es-MX", "es-PE", "es-PR", "fr-BE", "fr-CA", "fr-FR", "fr-LU", "fr-CH", 
+"hr-HR", "id-ID", "it-IT", "it-CH", "lv-LV", "lt-LT", "hu-HU", "nl-BE", "nl-NL", 
+"nb-NO", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "sk-SK", "sl-SI", "sr-Latn-RS", "fi-FI", 
+"sv-SE", "vi-VN", "tr-TR", "el-GR", "bg-BG", "ru-RU", "uk-UA", "he-IL", "ar-AE", 
+"ar-KW", "ar-SA", "ar-QA", "ar-EG", "ne-NP", "mr-IN", "hi-IN", "bn-IN", "ta-IN", 
+"te-IN", "th-TH", "ko-KR", "zh-Hant-HK", "ja-JP", "zh-Hans-CN", "zh-Hant-TW"]
+```
+
+#### Example Usage
+
+```js
+addOnUISdk.ready.then(async () => {    
+    console.log(addOnUISdk.app.ui.format); // output "en-GB" 
 });
 ```
 
@@ -237,10 +265,14 @@ addOnUISdk.app.on("themechange", (data) => {
 });
 ```
 
+<InlineAlert slots="text" variant="success"/>
+
+Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
+
 ### localechange
 
 **`localechange: string`**<br/>
-The "localechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+The "localechange" event is fired when the user changes the UI locale in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
 
 #### Parameters
 
@@ -258,6 +290,23 @@ addOnUISdk.app.on("localechange", (data) => {
 });
 ```
 
-<InlineAlert slots="text" variant="success"/>
+### formatchange
 
-Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
+**`formatchange: string`**<br/>
+The "formatchange" event is fired when the user changes the UI format in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+
+#### Parameters
+
+N/A
+
+#### Return Value
+
+N/A
+
+#### Example Usage
+
+```js
+addOnUISdk.app.on("formatchange", (data) => {
+  console.log(data.format);
+});
+```

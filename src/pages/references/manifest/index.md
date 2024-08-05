@@ -117,13 +117,14 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 
 #### requirements.apps.supportedDeviceClass
 
-The following platform values are currently supported in the `supportedDeviceClass` key.
+The following platform value is currently supported in the `supportedDeviceClass` key.
 
 | Platform       | Description |
 | ----------------| -------------|
 | `desktop`       | Browser on desktop. |
-| `mobile`        | Browser on mobile and tablet devices. |
-| `app`           | Native app on mobile and tablet devices. |
+<!-- Extra comment, otherwise the table will show the content anyway—bar the first cell -->
+<!-- | `mobile`        | Browser on mobile and tablet devices. | -->
+<!-- | `app`           | Native app on mobile and tablet devices. | -->
 
 ## entryPoints
 
