@@ -415,7 +415,65 @@ module.exports = {
             path: "guides/design/",
           },
           {
-            title: "User interface guide",
+            title: "UX Guidelines",
+            path: "guides/design/ux_guidelines/introduction.md",
+            pages: [
+              {
+                title: "Introduction",
+                path: "guides/design/ux_guidelines/introduction.md",
+              },
+              {
+                title: "Design Principles",
+                path: "guides/design/ux_guidelines/design_principles.md",
+              },
+              {
+                title: "Branding Guidelines",
+                path: "guides/design/ux_guidelines/branding_guidelines.md",
+              },
+              {
+                title: "Visual Elements",
+                path: "guides/design/ux_guidelines/visual_elements.md",
+              },
+              {
+                title: "Layout & Structure",
+                path: "guides/design/ux_guidelines/layout_and_structure.md",
+              },
+              {
+                title: "Components",
+                path: "guides/design/ux_guidelines/components.md",
+              },
+              {
+                title: "Form Elements",
+                path: "guides/design/ux_guidelines/form_elements.md",
+              },
+              {
+                title: "Sliders",
+                path: "guides/design/ux_guidelines/sliders.md",
+              },
+              {
+                title: "Feedback & Messaging",
+                path: "guides/design/ux_guidelines/feedback_and_messaging.md",
+              },
+              {
+                title: "Core Content Actions",
+                path: "guides/design/ux_guidelines/core_content_actions.md",
+              },
+              {
+                title: "Mobile UX",
+                path: "guides/design/ux_guidelines/mobile_ux.md",
+              },
+              {
+                title: "Theming",
+                path: "guides/design/ux_guidelines/theming.md",
+              },
+              {
+                title: "Resources & References",
+                path: "guides/design/ux_guidelines/resources_and_references.md",
+              },
+            ],
+          },
+          {
+            title: "Implementation guide",
             path: "guides/design/user_interface.md",
           },
           {
