@@ -16,6 +16,11 @@ contributors:
   - https://github.com/undavide
 ---
 
-# Introduction to UX Guidelines for Adobe Express Add-ons
+# UX Guidelines for Adobe Express Add-ons
 
-For the success of your add-ons, it is crucial to create a seamless and intuitive user experience (UX) that blends with Adobe Express. Follow these Guidelines to align your work with Adobe's design principles and visual language, ensuring a consistent, enjoyable and successful experience for all your users.
+A successful add-on provides a seamless and intuitive user experience (UX) that blends with Adobe Express. 
+
+Follow these Guidelines to align your project with Adobe's design principles and visual language, ensuring a consistent, enjoyable, and successful experience for all your users.
+
+STUB: add brief overview of the guidelines and how they are structured.
+STUB: add some eye-candy screenshots.
