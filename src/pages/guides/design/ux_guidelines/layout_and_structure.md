@@ -20,3 +20,13 @@ contributors:
 # Layout & Structure
 
 Stub
+
+## Basic Structure
+
+### Padding
+
+### Responsive Grid and Core Container Styles
+
+### Structural Grids and Container Variants
+
+### Panel Structure and Foundational Patterns

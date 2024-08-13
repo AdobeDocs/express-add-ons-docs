@@ -20,3 +20,11 @@ contributors:
 # Resources and References
 
 Stub
+
+## Tools and Templates
+
+## Further Reading
+
+## Acknowledgments
+
+## Changelog

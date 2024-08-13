@@ -19,3 +19,7 @@ contributors:
 # Navigation
 
 Stub
+
+## Tabs
+
+## Accordions

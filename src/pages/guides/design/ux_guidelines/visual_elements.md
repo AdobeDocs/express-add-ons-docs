@@ -19,3 +19,13 @@ contributors:
 # Visual Elements
 
 Stub
+
+## Color
+
+## Typography
+
+### Headings
+
+### Body Text
+
+### Usage

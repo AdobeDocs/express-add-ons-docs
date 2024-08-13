@@ -19,3 +19,13 @@ contributors:
 # Branding Guidelines
 
 Stub
+
+## Add-on Icon
+
+## Publisher Logo
+
+## Imagery
+
+### Screenshots
+
+### Illustrations
