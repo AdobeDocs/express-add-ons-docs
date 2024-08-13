@@ -30,7 +30,7 @@ All add-ons you develop should be accessible to everyone, regardless of their ab
 
 ## Usability: prioritizing ease of use
 
-Your add-on should be as easy to operate as it is powerful. Design it with users in mind so they can navigate it effortlessly, with each feature clearly accessible and straightforward. Eliminate unnecessary steps and ensure that every interaction feels natural. Always provide feedback so users know what to expect and how to achieve their goals. The more intuitive the experience, the more likely they are to engage and rely on it over again.
+Your add-on should be as easy to operate as it is powerful. Design it with users in mind so they can navigate it effortlessly, where each feature is clearly accessible and straightforward. Eliminate unnecessary steps and ensure that every interaction feels natural. Always provide feedback so users know what to expect and how to achieve their goals. The more intuitive the experience, the more likely they are to engage and rely on it over again.
 
 ## Aesthetics: balancing form and function
 
@@ -38,6 +38,8 @@ The aesthetic appeal of your add-on plays a significant role in the overall user
 
 ## Bringing it all together
 
-By embracing these design principles, you'll build add-ons that integrate smoothly with Adobe Express and provide real value to users. Each concept works in harmony with the others; keep these guidelines in mind as you develop, and you'll create tools that are effective and a pleasure for users to interact with.
+By embracing these design principles, you'll build add-ons that integrate smoothly with Adobe Express and provide real value to users. Each concept works in harmony with the others; keep these guidelines in mind as you develop, and you'll create tools that are both effective and a pleasure for users to interact with.
 
-TODO: add graphics (Spectrum icons?)
+In the following pages of these guidelines, you'll find more detailed information on how to apply these principles when building your add-ons, including specific recommendations, requirements, and best practices.
+
+TODO: add graphics (Spectrum icons? Where?)
