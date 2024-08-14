@@ -18,7 +18,7 @@ contributors:
 
 # Design Principles
 
-When you're designing add-ons for Adobe Express, it's important to start with the principles that guide all of Adobe's products. They will be your roadmap, ensuring that what you create is not only visually appealing but also consistent, accessible, and user-friendly. Think of them as your toolkit for building something that looks great, works well, and fits seamlessly into the main application.
+When you're designing add-ons for Adobe Express, it's important to start with the principles that guide all of Adobe's products. They will be your roadmap, ensuring that what you create is not only visually appealing but also consistent, accessible, and user-friendly. Think of them as your toolkit for building something that looks great, works well, and fits seamlessly into the application.
 
 ## Consistency: creating a cohesive experience
 
@@ -38,6 +38,6 @@ The aesthetic appeal of your add-on plays a significant role in the overall user
 
 ## Bringing it all together
 
-By embracing these design principles, you'll build add-ons that integrate smoothly with Adobe Express and provide real value to users. Each concept works in harmony with the others; keep these guidelines in mind as you develop, and you'll create tools that are both effective and a pleasure to use. In the following pages of these guidelines, you'll find detailed recommendations, requirements, and best practices to help you apply these principles to your work.
+By embracing these design principles, you'll build add-ons that integrate smoothly with Adobe Express and provide real value to users. Each concept works in harmony with the others; keep these guidelines in mind as you develop, and you'll create tools that are both effective and a pleasure to use. In the following pages, you'll find detailed recommendations, requirements, and best practices to help you apply these principles to your projects.
 
 TODO: add graphics (Spectrum icons? Where?)

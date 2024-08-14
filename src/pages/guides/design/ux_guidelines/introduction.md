@@ -18,13 +18,13 @@ contributors:
 
 # UX Guidelines for Adobe Express Add-ons
 
-A successful add-on provides a seamless and intuitive user experience (UX) that blends harmoniously with Adobe Express. 
+A successful add-on provides a seamless and intuitive User Experience (UX) that blends harmoniously with Adobe Express. 
 
-These Guidelines are your roadmap to creating add-ons that align with Adobe's design principles and visual language, ensuring a consistent, enjoyable, and successful experience for all users. Following them will help you build tools that resonate with users and feel like a natural extension of the application.
+These Guidelines are your roadmap to creating add-ons that align with Adobe's design principles and visual language, ensuring a consistent and enjoyable experience. Following them will help you build tools that resonate with users and feel like a natural extension of the application.
 
 ## Intended audience
 
-This document is designed for developers, designers, and product teams involved in creating add-ons for Adobe Express. Whether you're crafting your first add-on or refining an existing one, these guidelines offer valuable insights and best practices to help you align with Adobe's UX standards.
+This document is intended for developers, designers, and product teams involved in creating Adobe Express add-ons. Whether you're crafting your first add-on or improving an existing one, these guidelines offer valuable insights and best practices to help you align with Adobe's UX standards.
 
 ## How to navigate the UX Guidelines
 
