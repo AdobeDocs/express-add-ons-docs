@@ -26,5 +26,3 @@ Stub
 ## Further Reading
 
 ## Acknowledgments
-
-## Changelog
