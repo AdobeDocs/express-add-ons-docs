@@ -451,6 +451,10 @@ module.exports = {
                 path: "guides/design/ux_guidelines/sliders.md",
               },
               {
+                title: "Navigation",
+                path: "guides/design/ux_guidelines/navigation.md",
+              },
+              {
                 title: "Feedback & Messaging",
                 path: "guides/design/ux_guidelines/feedback_and_messaging.md",
               },
