@@ -470,6 +470,10 @@ module.exports = {
                 title: "Resources & References",
                 path: "guides/design/ux_guidelines/resources_and_references.md",
               },
+              {
+                title: "Changelog",
+                path: "guides/design/ux_guidelines/changelog.md",
+              },
             ],
           },
           {

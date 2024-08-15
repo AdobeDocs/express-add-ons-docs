@@ -47,15 +47,3 @@ The [Mobile UX](mobile_ux.md) section offers guidance on how to format content f
 Finally, the [Theming](theming.md) section shows you how to implement the Spectrum for Adobe Express theme, along with customization options and examples.
 
 Please refer to the [Resources & References](resources_and_references.md) for additional tools, templates, and further reading. You can also find there a [Changelog](resources_and_references.md#changelog) listing the latest updates to these guidelines.
-
-## Changelog
-
-### 31 August 2024
-
-- Created the new web version of the Adobe Express add-ons UX Guidelines
-- Integrated the existing content from the Adobe XD document into the new structure.
-- Added a new section on Mobile UX.
-
-### 28 August 2023
-
-- Last update to the Adobe XD document version of the Adobe Express add-ons UX Guidelines.
