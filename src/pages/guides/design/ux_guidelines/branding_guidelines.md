@@ -18,11 +18,11 @@ contributors:
 
 # Branding Guidelines
 
-When creating your add-on, a distinct and consistent brand identity is your ticket to a lasting impression. 
+When creating your add-on, a distinct and consistent brand identity is your ticket to a lasting impression.
 
 This section focuses on key aspects of branding, like Icon and Publisher Logo design, as well as best practices for incorporating promotional images (screenshots or illustrations) for the Adobe Express add-on Marketplace.
 
-Please refer to the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) for comprehensive details on integrating Adobe branding, including when and how to use Adobe logos, product names, and terms. 
+Please refer to the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) for comprehensive details on integrating Adobe branding, including when and how to use Adobe logos, product names, and terms.
 
 ## Add-on Icon
 
@@ -40,7 +40,7 @@ The publisher's logo is only required the first time you [submit for distributio
 
 ## Imagery
 
-When creating a [public listing](guides/distribute/public-dist.md) for the Adobe Express add-on Marketplace, you can provide promotional images, such as screenshots and illustrations. At least one is required.
+When creating a [public listing](../../distribute/public-dist.md) for the Adobe Express add-on Marketplace, you can provide promotional images, such as screenshots and illustrations. At least one is required.
 
 ![screenshots and illustrations](../../distribute/img/public-listing-screenshots-v2.png)
 
@@ -49,4 +49,3 @@ When creating a [public listing](guides/distribute/public-dist.md) for the Adobe
 Any image used in your listing must comply with the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf). They should accurately depict the add-on's functionality and features and not contain any misleading information or inappropriate content. The recommended image size is **1360x800** pixels, as PNG or JPG.
 
 ![screenshots and illustrations](./img/branding_screenshot.png)
-

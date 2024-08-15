@@ -30,7 +30,7 @@ It's recommended to let text fields span the entire add-on's width—minus the c
 
 ## Search Fields
 
-A [Search Field](https://spectrum.adobe.com/page/search-field/) is used for searching and filtering content. As mentioned in the [Layout & Structure](./layout_and_structure/#panel-structure-and-core-content-actions) section, the search field should be placed at the top of the panel, between the title and the main body.
+A [Search Field](https://spectrum.adobe.com/page/search-field/) is used for searching and filtering content. As mentioned in the [Layout & Structure](./layout_and_structure.md#panel-structure-and-core-content-actions) section, the search field should be placed at the top of the panel, between the title and the main body.
 
 ![Search Fields](./img/form_search-field.png)
 
@@ -48,6 +48,6 @@ Color pickers are a special type of picker that allows users to select a color.
 
 ![Color Pickers](./img/form_color-pickers.png)
 
-The Spectrum component used as a Color Picker is the [Swatch](https://spectrum.adobe.com/page/swatch/), which shows a small sample of a fill—such as a color, gradient, texture, or material—that is intended to be applied to an object. 
+The Spectrum component used as a Color Picker is the [Swatch](https://spectrum.adobe.com/page/swatch/), which shows a small sample of a fill—such as a color, gradient, texture, or material—that is intended to be applied to an object.
 
 The Swatch itself doesn't embed any color picker functionality, but it can be used in conjunction with a native `<input>` hidden element to trigger the browser's color picker. You can find an example with sample code in [this tutorial](/guides/tutorials/grids-addon.md#coding-the-grids-add-on).

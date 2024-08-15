@@ -25,10 +25,10 @@ Adobe Express is built on a clean and consistent structure designed for clarity 
 
 ## Basic Structure
 
-Add-ons on Desktop are assigned a specific width of **320px** and a **100%** height to ensure uniformity within the Adobe Express user interface and its modules. The layout is divided into the following parts: 
+Add-ons on Desktop are assigned a specific width of **320px** and a **100%** height to ensure uniformity within the Adobe Express user interface and its modules. The layout is divided into the following parts:
 
 - The title bar with the add-on's icon—controlled by Adobe.
-- The body holding the add-on's content. 
+- The body holding the add-on's content.
 - Optionally, a footer with Call to Action (CTA) buttons.
 
 ![Basic Structure](./img/layout_basic.png)

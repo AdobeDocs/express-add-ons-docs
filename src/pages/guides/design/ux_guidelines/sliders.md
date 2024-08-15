@@ -18,7 +18,7 @@ contributors:
 
 # Sliders
 
-Sliders allow users to quickly select a value within a range. 
+Sliders allow users to quickly select a value within a range.
 
 They should be used when the upper and lower bounds are both fixed; a 100% width is always recommended.
 

@@ -22,8 +22,12 @@ Navigation is a key component of any user interface. It helps users understand w
 
 ## Tabs
 
-Tabs organize content into multiple sections and allow users to navigate between them; the content under the set of tabs should be related and form a coherent unit. Please always include a label for accessibility. 
+Tabs organize content into multiple sections and allow users to navigate between them; the content under the set of tabs should be related and form a coherent unit. Please always include a label for accessibility.
 
 ![Tabs](./img/navigation_tabs.png)
 
 ## Accordions
+
+The [Accordion](https://opensource.adobe.com/spectrum-web-components/components/accordion/) element contains a list of items that can be expanded or collapsed to reveal additional content or information associated with each item. There can be zero expanded items, exactly one expanded item or more than one item expanded at a time, depending on the configuration. This list of items is defined by child elements that are targeted to the default slot of their parent.
+
+![Accordions](./img/navigation_accordions.png)

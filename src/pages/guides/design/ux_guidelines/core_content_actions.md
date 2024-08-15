@@ -25,4 +25,3 @@ Stub
 ## Best Practices
 
 ## Examples
-

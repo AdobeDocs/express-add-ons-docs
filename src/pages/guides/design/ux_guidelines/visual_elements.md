@@ -46,7 +46,6 @@ Headings in Spectrum for Adobe Express use bolder typography. The default weight
 
 ![](./img/visual_heading.png)
 
-
 ### Body Text
 
 The available sizes for body text in Spectrum for Adobe Express span from L to XXS, while the weight is usually around 400-500.

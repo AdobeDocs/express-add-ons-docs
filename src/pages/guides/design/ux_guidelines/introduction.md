@@ -18,7 +18,7 @@ contributors:
 
 # UX Guidelines for Adobe Express Add-ons
 
-A successful add-on provides a seamless and intuitive User Experience (UX) that blends harmoniously with Adobe Express. 
+A successful add-on provides a seamless and intuitive User Experience (UX) that blends harmoniously with Adobe Express.
 
 ![](./img/introduction_cover.png)
 
@@ -38,7 +38,6 @@ As you move forward, the [Layout & Structure](layout_and_structure.md) and [Comp
 
 The [Navigation](./navigation.md) page will help you design a clear and intuitive routing system that guides users through your add-on's features, while [Feedback & Messaging](feedback_and_messaging.md) provides best practices for communicating feedback or alert errors.
 
-
 [Core Content Actions](core_content_actions.md) focuses on...
 TODO: ...on what?! Ask Matthew Ladner.
 
@@ -46,4 +45,4 @@ The [Mobile UX](mobile_ux.md) section offers guidance on how to format content f
 
 Finally, the [Theming](theming.md) section shows you how to implement the Spectrum for Adobe Express theme, along with customization options and examples.
 
-Please refer to the [Resources & References](resources_and_references.md) for additional tools, templates, and further reading. You can also find there a [Changelog](resources_and_references.md#changelog) listing the latest updates to these guidelines.
+Please refer to the [Resources & References](./resources_and_references.md) for additional tools, templates, and further reading. You can also find there a [Changelog](./changelog.md) listing the latest updates to these guidelines.
