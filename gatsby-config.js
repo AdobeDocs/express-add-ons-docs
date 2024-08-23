@@ -482,7 +482,7 @@ module.exports = {
           },
           {
             title: "Implementation guide",
-            path: "guides/design/user_interface.md",
+            path: "guides/design/implementation_guide.md",
           },
           {
             title: "Best practices",
