@@ -24,7 +24,7 @@ Adobe Express implements the "Spectrum for Adobe Express theme", which has been 
 
 ## Color
 
-TODO: Ask someone what to say about color
+TODO: Ask Matthew what to say about color
 
 ## Typography
 
@@ -48,7 +48,7 @@ Headings in Spectrum for Adobe Express use bolder typography. The default weight
 
 ### Body Text
 
-The available sizes for body text in Spectrum for Adobe Express span from L to XXS, while the weight is usually around 400-500.
+The available sizes for body text in Spectrum for Adobe Express span from XS to XXL, while the weight is usually around 400-500.
 
 ![](./img/visual_body.png)
 
