@@ -662,7 +662,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - [UX Guidelines](../guides/design/index.md) are now available!
 - A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../guides/design/user_interface.md#using-fonts).
+- Information on [using fonts](../guides/design/implementation_guide.md#using-fonts).
 - CORS / COEP header handling added to the [CORS guide](../guides/develop/context.md#cors--coep-handling)
 
 ## 2023-06-08

@@ -18,8 +18,7 @@ contributors:
 
 # Core Content Actions
 
-Core Content Actions are interactive elements that allow users to search, sort, and filter content within your add-on. 
-
+Core Content Actions are interactive elements that allow users to search, sort, and filter content within your add-on.
 
 ## Actions Overview
 

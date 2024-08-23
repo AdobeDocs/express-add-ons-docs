@@ -42,13 +42,14 @@ PIC 1
 On mobile, **body** is in the same 15-19px range, with a font-weight of 300.
 
 PIC 2
+
 ## Foundational components
 
-While mobile and desktop share many common components, sizing and placement are crucial distinctions. Mobile interfaces should avoid using extra-large (XL) component instances, which can overwhelm the screen. Instead, opt for Medium (M) or Large (L) sizes, more suitable for mobile displays. 
+While mobile and desktop share many common components, sizing and placement are crucial distinctions. Mobile interfaces should avoid using extra-large (XL) component instances, which can overwhelm the screen. Instead, opt for Medium (M) or Large (L) sizes, more suitable for mobile displays.
 
 PIC
 
-### Buttons 
+### Buttons
 
 On mobile, buttons that convey singular, primary actions should be styled using the Medium size and Primary variant. Center them horizontally and align them to the bottom—remember to account for the footer area controlled by Adobe.
 
@@ -57,4 +58,3 @@ PIC
 ### Button Groups
 
 Button groups should extend across the available width of the UI, minus a 40px margin (16px on each side, with an 8px gap between buttons). This layout ensures that buttons are easily tappable and well-spaced on smaller screens.
-

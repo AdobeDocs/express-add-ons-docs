@@ -29,7 +29,7 @@ Loading indicators are particularly important when the system is processing a re
 
 ### Progress Circles
 
-[Progress circles](https://spectrum.adobe.com/page/progress-circle/) show the progression of a system operation such as downloading, uploading, processing, etc. in a visual way. 
+[Progress circles](https://spectrum.adobe.com/page/progress-circle/) show the progression of a system operation such as downloading, uploading, processing, etc. in a visual way.
 
 ![Progress circles](./img/feedback_progress-circles.png)
 
@@ -39,7 +39,7 @@ They can represent determinate or indeterminate progress: either the percentage 
 
 ### Ghost Loading
 
-When a group of cards are loading, they follow the [ghost loading convention](https://spectrum.adobe.com/page/cards/#Ghost-loading). 
+When a group of cards are loading, they follow the [ghost loading convention](https://spectrum.adobe.com/page/cards/#Ghost-loading).
 
 ![](./img/feedback_ghost-loading.png)
 
