@@ -25,7 +25,7 @@ Core Content Actions are interactive elements that allow users to search, sort, 
 
 These actions enable users to "drill into" specific sections, for example dynamically refining a list of thumbnails that follows.
 
-![Core Content Actions](./img/core_actions.png)
+![Core Content Actions](./img/core_actions-search.png)
 
 ## Best Practices
 
