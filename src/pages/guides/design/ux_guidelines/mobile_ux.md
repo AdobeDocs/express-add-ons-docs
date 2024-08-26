@@ -22,9 +22,13 @@ Designing add-ons that can be used when Adobe Express runs on mobile devices req
 
 The following sections outline the key differences and best practices for optimizing your add-ons for mobile devices.
 
+![Mobile UX overview](./img/mobile_overview.png)
+
 ## Basic Structure
 
 Mobile interfaces feature a streamlined layout, with two primary content areas controlled by Adobe: the title bar and the footer. The add-on's content is displayed in the body area; considering the smaller screen size, you should optimize the design for readability and ease of interaction.
+
+![Mobile basic structure](./img/mobile_basic-structure.png)
 
 ## Default panel height vs. full panel height
 
@@ -32,29 +36,34 @@ By default, the panel covers around half of the screen's vertical space, with a 
 
 When the user swipes up the handlebar, which is always visible, the panel expands upward until the entire 699px height available is covered. This full-height view is ideal for displaying detailed content or additional options.
 
+![Mobile height](./img/mobile_default-vs-full.png)
+
 ## Typography
 
 Typography on mobile requires adjustments from desktop standards to ensure readability; the font size is generally smaller, and the weight is lighter.
 
 For **headings**, we recommended a font-size in the 15-19px range, and not exceeding 20px. The font-weight should be 400-500, typically the latter. On desktop, headings are in the 14-22px range (rarely, up to 34px) and weights of 600-700 are common.
 
-PIC 1
+![Mobile typography](./img/mobile_typography.png)
+
 On mobile, **body** is in the same 15-19px range, with a font-weight of 300.
 
-PIC 2
+![Mobile typography specs](./img/mobile_typography-specs.png)
 
 ## Foundational components
 
 While mobile and desktop share many common components, sizing and placement are crucial distinctions. Mobile interfaces should avoid using extra-large (XL) component instances, which can overwhelm the screen. Instead, opt for Medium (M) or Large (L) sizes, more suitable for mobile displays.
 
-PIC
+![Mobile foundational components](./img/mobile_components.png)
 
 ### Buttons
 
 On mobile, buttons that convey singular, primary actions should be styled using the Medium size and Primary variant. Center them horizontally and align them to the bottom—remember to account for the footer area controlled by Adobe.
 
-PIC
+![Mobile buttons](./img/mobile_buttons.png)
 
 ### Button Groups
 
 Button groups should extend across the available width of the UI, minus a 40px margin (16px on each side, with an 8px gap between buttons). This layout ensures that buttons are easily tappable and well-spaced on smaller screens.
+
+![Mobile buttons](./img/mobile_button-groups.png)
