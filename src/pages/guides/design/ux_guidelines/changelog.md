@@ -18,7 +18,7 @@ contributors:
 
 ## Changelog
 
-### 31 August 2024
+### 15 September 2024
 
 - Created the new web version of the Adobe Express add-on UX Guidelines.
 - Integrated the existing content from the Adobe XD document into the new structure. The old version is [available here](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) as a reference.

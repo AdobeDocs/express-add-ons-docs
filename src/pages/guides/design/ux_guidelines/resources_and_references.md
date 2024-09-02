@@ -23,7 +23,7 @@ To inform and inspire your design process, we've compiled a list of resources an
 
 ## Tools and Templates
 
-TODO: Ask Matthew to provide a list of resources.
+**TODO:** Ask the Design team to provide a list of resources they would like to include here.
 
 ## Further Reading
 
@@ -33,4 +33,4 @@ TODO: Ask Matthew to provide a list of resources.
 
 ## Acknowledgments
 
-TODO: Ask Matthew, is this a place for the list of people in the Design team who have worked on extensibility?
+**TODO:** Ask the Design team what content is supposed to go here.

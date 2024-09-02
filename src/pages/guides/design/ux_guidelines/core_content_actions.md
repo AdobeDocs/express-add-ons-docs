@@ -32,4 +32,4 @@ Core Content Actions, when available, should be arranged at the top of the add-o
 
 ## Examples
 
-TODO: Ask Matthew for examples that he mentions, and in general, more content for this page.
+**TODO:** Ask the Design team for examples, and in general, more content for this page.

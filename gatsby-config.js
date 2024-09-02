@@ -427,32 +427,12 @@ module.exports = {
                 path: "guides/design/ux_guidelines/design_principles.md",
               },
               {
-                title: "Branding Guidelines",
-                path: "guides/design/ux_guidelines/branding_guidelines.md",
+                title: "Theming",
+                path: "guides/design/ux_guidelines/theming.md",
               },
               {
                 title: "Visual Elements",
                 path: "guides/design/ux_guidelines/visual_elements.md",
-              },
-              {
-                title: "Layout & Structure",
-                path: "guides/design/ux_guidelines/layout_and_structure.md",
-              },
-              {
-                title: "Components",
-                path: "guides/design/ux_guidelines/components.md",
-              },
-              {
-                title: "Form Elements",
-                path: "guides/design/ux_guidelines/form_elements.md",
-              },
-              {
-                title: "Sliders",
-                path: "guides/design/ux_guidelines/sliders.md",
-              },
-              {
-                title: "Navigation",
-                path: "guides/design/ux_guidelines/navigation.md",
               },
               {
                 title: "Feedback & Messaging",
@@ -467,8 +447,8 @@ module.exports = {
                 path: "guides/design/ux_guidelines/mobile_ux.md",
               },
               {
-                title: "Theming",
-                path: "guides/design/ux_guidelines/theming.md",
+                title: "Branding Guidelines & Distribution",
+                path: "guides/design/ux_guidelines/branding_guidelines.md",
               },
               {
                 title: "Resources & References",

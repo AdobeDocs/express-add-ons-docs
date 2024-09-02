@@ -40,4 +40,4 @@ The aesthetic appeal of your add-on plays a significant role in the overall user
 
 By embracing these design principles, you'll build add-ons that integrate smoothly with Adobe Express and provide real value to users. Each concept works in harmony with the others; keep these guidelines in mind as you develop, and you'll create tools that are both effective and a pleasure to use. In the following pages, you'll find detailed recommendations, requirements, and best practices to help you apply these principles to your projects.
 
-TODO: add graphics (Spectrum icons? Where?)
+**TODO:** add graphics (Can the Design team help here?)

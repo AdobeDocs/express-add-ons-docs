@@ -32,8 +32,8 @@ The Spectrum design system supports theming, allowing you to customize features 
 
 You can find information about [theming](https://spectrum.adobe.com/page/theming/) on the Adobe Spectrum website.
 
-TODO: There's next to nothing on the Spectrum website about theming; ask Matthew where to find theming guidelines.
+**TODO:** There's next to nothing on the Spectrum website about theming; is it documented internally somewhere we can draw from?
 
 ## Theming Examples
 
-TODO: same for examples
+**TODO:** Same as above.

@@ -32,17 +32,10 @@ This document is intended for developers, designers, and product teams involved 
 
 To get the most out of the UX Guidelines, start by familiarizing yourself with the [Design Principles](design_principles.md) section. They provide the foundation for all design decisions and will help you understand the core values that should drive your work.
 
-Next, explore the [Branding Guidelines](branding_guidelines.md) and [Visual Elements](./visual_elements.md) to ensure your add-on is legally & visually aligned with Adobe Express. These sections cover everything from color schemes to typography and proper ways to refer to copyrighted material.
+Next, the [Theming](theming.md) section shows you how to implement the Spectrum for Adobe Express theme, along with customization options and examples. [Visual Elements](./visual_elements.md) is a detailed list of structural and functional components that make up the Adobe Express visual language. It covers everything from typography to grids, navigation, and a variety of UI elements alongside with implementation examples.
 
-As you move forward, the [Layout & Structure](layout_and_structure.md) and [Components](components.md), [Form Elements](./form_elements.md), and [Sliders](sliders.md) sections offer detailed instructions on how to construct a fitting user interface. They provide specific guidance on everything from grid systems to individual UI elements like buttons and form components.
+[Feedback & Messaging](feedback_and_messaging.md) provides best practices for communicating feedback or alert errors to users, while [Core Content Actions](core_content_actions.md) focuses on interactive elements that allow them to search, sort, and filter content within add-ons. The [Mobile UX](mobile_ux.md) section offers guidance on how to format content for mobile devices so that the user experience is consistent across all platforms.
 
-The [Navigation](./navigation.md) page will help you design a clear and intuitive routing system that guides users through your add-on's features, while [Feedback & Messaging](feedback_and_messaging.md) provides best practices for communicating feedback or alert errors.
+Explore the [Branding Guidelines](branding_guidelines.md) to ensure your add-on is legally & visually aligned with Adobe Express. They cover key aspects of branding, as well as best practices for incorporating promotional images for the Adobe Express add-on Marketplace.
 
-[Core Content Actions](core_content_actions.md) focuses on...
-TODO: ...on what?! Ask Matthew Ladner.
-
-The [Mobile UX](mobile_ux.md) section offers guidance on how to format content for mobile devices so that the user experience is consistent across all platforms.
-
-Finally, the [Theming](theming.md) section shows you how to implement the Spectrum for Adobe Express theme, along with customization options and examples.
-
-Please refer to the [Resources & References](./resources_and_references.md) for additional tools, templates, and further reading. You can also find there a [Changelog](./changelog.md) listing the latest updates to these guidelines.
+Finally, look at the [Resources & References](./resources_and_references.md) for additional tools, templates, and further reading. Refer to the [Changelog](./changelog.md) to stay up-to-date with the latest features and improvements to these guidelines: they are a living document we encourage you to consult regularly, both as a reference and a source of inspiration.
