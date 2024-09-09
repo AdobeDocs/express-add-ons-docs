@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / RestrictedItemList
 
-# Class: RestrictedItemList\<T\>
+# Class: RestrictedItemList<T\>
 
 Base for ItemLists that have restricted behavior on how items are added to the list,
 but allow items to be removed and reordered. Subclasses like ItemList may add more
@@ -8,7 +8,7 @@ capabilities, however.
 
 ## Extends
 
--   [`ReadOnlyItemList`](ReadOnlyItemList.md)\<`T`\>
+-   [`ReadOnlyItemList`](ReadOnlyItemList.md)<`T`\>
 
 ## Extended by
 
@@ -60,13 +60,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-> **\[iterator\]**(): `Iterator`\<`T`, `any`, `undefined`\>
+> **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`\<`T`, `any`, `undefined`\>
+`Iterator`<`T`, `any`, `undefined`\>
 
 #### Inherited from
 

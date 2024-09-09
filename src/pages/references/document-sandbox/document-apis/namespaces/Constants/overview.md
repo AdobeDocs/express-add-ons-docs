@@ -44,6 +44,12 @@ Re-exports [StrokePosition](../../enumerations/StrokePosition.md)
 
 ---
 
+### StrokeType
+
+Re-exports [StrokeType](../../enumerations/StrokeType.md)
+
+---
+
 ### TextAlignment
 
 Re-exports [TextAlignment](../../enumerations/TextAlignment.md)

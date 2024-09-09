@@ -10,7 +10,7 @@ remove the last remaining artboard from the list.
 
 ## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md)\<[`ArtboardNode`](ArtboardNode.md)\>
+-   [`RestrictedItemList`](RestrictedItemList.md)<[`ArtboardNode`](ArtboardNode.md)\>
 
 ## Accessors
 
@@ -52,13 +52,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-> **\[iterator\]**(): `Iterator`\<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
+> **\[iterator\]**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`\<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
+`Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
 
 #### Inherited from
 

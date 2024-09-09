@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / ItemList
 
-# Class: ItemList\<T\>
+# Class: ItemList<T\>
 
 ItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
@@ -12,7 +12,7 @@ This class is used in different places for various types of items, including Nod
 
 ## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md)\<`T`\>
+-   [`RestrictedItemList`](RestrictedItemList.md)<`T`\>
 
 ## Type parameters
 
@@ -58,13 +58,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-> **\[iterator\]**(): `Iterator`\<`T`, `any`, `undefined`\>
+> **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`\<`T`, `any`, `undefined`\>
+`Iterator`<`T`, `any`, `undefined`\>
 
 #### Inherited from
 

@@ -11,7 +11,7 @@ remove the last remaining page from the list.
 
 ## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md)\<[`PageNode`](PageNode.md)\>
+-   [`RestrictedItemList`](RestrictedItemList.md)<[`PageNode`](PageNode.md)\>
 
 ## Accessors
 
@@ -53,13 +53,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-> **\[iterator\]**(): `Iterator`\<[`PageNode`](PageNode.md), `any`, `undefined`\>
+> **\[iterator\]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`\<[`PageNode`](PageNode.md), `any`, `undefined`\>
+`Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
 #### Inherited from
 

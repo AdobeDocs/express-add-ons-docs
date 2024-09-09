@@ -21,7 +21,7 @@ This section outlines the steps that should be taken to format the generated Doc
     ```md
     ## Extends
 
-    -   `TemplatizedProxyLiveObject`\<`HzApiInputType`\>
+    -   `TemplatizedProxyLiveObject`<`HzApiInputType`\>
     ```
 
 5. Find and remove all ocurrences of `ProxyLiveObject`. An example is of `BaseNode.md`, where you should remove the following section:
@@ -35,6 +35,8 @@ This section outlines the steps that should be taken to format the generated Doc
 6. Add a blank line after any `InlineAlert` in the Enums to render them properly. _(This can be easily fixed in the hz repo)_
 
 7. Ensure any lists are surrounded by one blank line so the linter in the PR job doesn't complain. See **Context**, **Editor** classes specifically such as the `makeStroke` method which has a list. (Note: you can check the PR validation job to see if you missed any). _(This can be easily fixed in the hz repo)_
+
+8. Find and replace `\<` with `<` for all `.md` files.
 
 ## Adobe I/O Documentation Template Info
 
