@@ -18,19 +18,19 @@ This section outlines the steps that should be taken to format the generated Doc
 
 4. Find and remove all ocurrences of `TemplatizedProxyLiveObject`. An example is of `ReadOnlyItemList.md`, where you should remove the following section:
 
-```
-## Extends
+    ```md
+    ## Extends
 
--   `TemplatizedProxyLiveObject`\<`HzApiInputType`\>
-```
+    -   `TemplatizedProxyLiveObject`\<`HzApiInputType`\>
+    ```
 
 5. Find and remove all ocurrences of `ProxyLiveObject`. An example is of `BaseNode.md`, where you should remove the following section:
 
-```
-## Extends
+    ```md
+    ## Extends
 
--   `ProxyLiveObject`
-```
+    -   `ProxyLiveObject`
+    ```
 
 6. Add a blank line after any `InlineAlert` in the Enums to render them properly. _(This can be easily fixed in the hz repo)_
 
