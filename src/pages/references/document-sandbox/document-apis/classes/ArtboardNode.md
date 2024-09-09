@@ -6,133 +6,97 @@ An ArtboardNode represents an artboard object in the scenegraph. All user visual
 
 When multiple artboards exist on a page, the artboards represent "scenes" in a linear timeline sequence.
 
-## Hierarchy
+## Extends
 
-- [`VisualNode`](VisualNode.md)
-
-  ↳ **`ArtboardNode`**
+-   [`VisualNode`](VisualNode.md)
 
 ## Implements
 
-- [`IRectangularNode`](../interfaces/IRectangularNode.md)
-- [`ContainerNode`](../interfaces/ContainerNode.md)
+-   [`IRectangularNode`](../interfaces/IRectangularNode.md)
+-   [`ContainerNode`](../interfaces/ContainerNode.md)
 
 ## Accessors
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+> `get` **allChildren**(): `Readonly`\<`Iterable`\<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
 overall display z-order.
 
 The children of an Artboard are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+`Readonly`\<`Iterable`\<[`Node`](Node.md)\>\>
 
-#### Implementation of
-
-ContainerNode.allChildren
-
-#### Overrides
-
-VisualNode.allChildren
-
-___
+---
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+> `get` **boundsLocal**(): `Readonly`\<`Rect`\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`\<`Rect`\>
 
-#### Implementation of
-
-ContainerNode.boundsLocal
-
-#### Inherited from
-
-VisualNode.boundsLocal
-
-___
+---
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+> `get` **centerPointLocal**(): `Readonly`\<[`Point`](../interfaces/Point.md)\>
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
 box.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`\<[`Point`](../interfaces/Point.md)\>
 
-#### Implementation of
-
-ContainerNode.centerPointLocal
-
-#### Inherited from
-
-VisualNode.centerPointLocal
-
-___
+---
 
 ### children
 
-• `get` **children**(): [`ItemList`](ItemList.md)<[`Node`](Node.md)\>
+> `get` **children**(): [`ItemList`](ItemList.md)\<[`Node`](Node.md)\>
 
 The node's children. Use the methods on this ItemList object to get, add, and remove children.
 
 #### Returns
 
-[`ItemList`](ItemList.md)<[`Node`](Node.md)\>
+[`ItemList`](ItemList.md)\<[`Node`](Node.md)\>
 
-#### Implementation of
-
-ContainerNode.children
-
-___
+---
 
 ### fill
 
-• `get` **fill**(): `Readonly`<[`Fill`](../interfaces/Fill.md)\>
+> `get` **fill**(): `Readonly`\<[`Fill`](../interfaces/Fill.md)\>
 
-#### Returns
-
-`Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
-• `set` **fill**(`fill`): `void`
+> `set` **fill**(`fill`): `void`
 
 The background fill of the artboard. Artboards must always have a fill.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `fill` | [`Fill`](../interfaces/Fill.md) |
+• **fill**: [`Fill`](../interfaces/Fill.md)
 
 #### Returns
 
-`void`
+`Readonly`\<[`Fill`](../interfaces/Fill.md)\>
 
-___
+---
 
 ### height
 
-• `get` **height**(): `number`
+> `get` **height**(): `number`
 
 The height of the artboard.
 
@@ -140,15 +104,11 @@ The height of the artboard.
 
 `number`
 
-#### Implementation of
-
-[IRectangularNode](../interfaces/IRectangularNode.md).[height](../interfaces/IRectangularNode.md#height)
-
-___
+---
 
 ### id
 
-• `get` **id**(): `string`
+> `get` **id**(): `string`
 
 A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
 moved to a different part of the document.
@@ -157,19 +117,11 @@ moved to a different part of the document.
 
 `string`
 
-#### Implementation of
-
-ContainerNode.id
-
-#### Inherited from
-
-VisualNode.id
-
-___
+---
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`PageNode`](PageNode.md)
+> `get` **parent**(): `undefined` \| [`PageNode`](PageNode.md)
 
 The node's parent. Undefined if the node is an orphan.
 
@@ -177,19 +129,11 @@ The node's parent. Undefined if the node is an orphan.
 
 `undefined` \| [`PageNode`](PageNode.md)
 
-#### Implementation of
-
-ContainerNode.parent
-
-#### Overrides
-
-VisualNode.parent
-
-___
+---
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+> `get` **topLeftLocal**(): `Readonly`\<[`Point`](../interfaces/Point.md)\>
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -197,41 +141,25 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`\<[`Point`](../interfaces/Point.md)\>
 
-#### Implementation of
-
-ContainerNode.topLeftLocal
-
-#### Inherited from
-
-VisualNode.topLeftLocal
-
-___
+---
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
+> `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enums/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/SceneNodeType.md)
 
-#### Implementation of
-
-ContainerNode.type
-
-#### Inherited from
-
-VisualNode.type
-
-___
+---
 
 ### visualRoot
 
-• `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
+> `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
 
 The highest ancestor that still has visual presence in the document. Typically an Artboard, but for orphaned
 content, it will be the root of the deleted content (which might be this node itself).
@@ -244,19 +172,11 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](VisualNode.md)
 
-#### Implementation of
-
-ContainerNode.visualRoot
-
-#### Inherited from
-
-VisualNode.visualRoot
-
-___
+---
 
 ### width
 
-• `get` **width**(): `number`
+> `get` **width**(): `number`
 
 The width of the artboard.
 
@@ -264,44 +184,39 @@ The width of the artboard.
 
 `number`
 
-#### Implementation of
-
-[IRectangularNode](../interfaces/IRectangularNode.md).[width](../interfaces/IRectangularNode.md#width)
-
 ## Methods
 
-### localPointInNode
+### localPointInNode()
 
-▸ **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+> **localPointInNode**(`localPoint`, `targetNode`): `Readonly`\<[`Point`](../interfaces/Point.md)\>
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](ArtboardNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localPoint` | [`Point`](../interfaces/Point.md) |
-| `targetNode` | [`VisualNode`](VisualNode.md) |
+• **localPoint**: [`Point`](../interfaces/Point.md)
+
+• **targetNode**: [`VisualNode`](VisualNode.md)
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`\<[`Point`](../interfaces/Point.md)\>
 
 #### Implementation of
 
-[ContainerNode](../interfaces/ContainerNode.md).[localPointInNode](../interfaces/ContainerNode.md#localpointinnode)
+[`ContainerNode`](../interfaces/ContainerNode.md).[`localPointInNode`](../interfaces/ContainerNode.md#localpointinnode)
 
 #### Inherited from
 
-[VisualNode](VisualNode.md).[localPointInNode](VisualNode.md#localpointinnode)
+[`VisualNode`](VisualNode.md).[`localPointInNode`](VisualNode.md#localpointinnode)
 
-___
+---
 
-### removeFromParent
+### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+> **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.
@@ -316,8 +231,8 @@ removal. No-op if node is already an orphan.
 
 #### Implementation of
 
-[ContainerNode](../interfaces/ContainerNode.md).[removeFromParent](../interfaces/ContainerNode.md#removefromparent)
+[`ContainerNode`](../interfaces/ContainerNode.md).[`removeFromParent`](../interfaces/ContainerNode.md#removefromparent)
 
 #### Inherited from
 
-[VisualNode](VisualNode.md).[removeFromParent](VisualNode.md#removefromparent)
+[`VisualNode`](VisualNode.md).[`removeFromParent`](VisualNode.md#removefromparent)

@@ -4,7 +4,7 @@
 
 <InlineAlert slots="text" variant="warning"/>
 
-*Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
+_Do not depend on the literal numeric values of these constants_, as they may change. Always reference the enum identifiers in your code.
 
 Determines how a scenenode is composited on top of the content rendered below it.
 
@@ -15,113 +15,113 @@ interacts with other siblings within the same container. See documentation below
 
 ### color
 
-• **color** = ``16``
+> **color**: `16`
 
-___
+---
 
 ### colorBurn
 
-• **colorBurn** = ``5``
+> **colorBurn**: `5`
 
-___
+---
 
 ### colorDodge
 
-• **colorDodge** = ``8``
+> **colorDodge**: `8`
 
-___
+---
 
 ### darken
 
-• **darken** = ``4``
+> **darken**: `4`
 
-___
+---
 
 ### difference
 
-• **difference** = ``12``
+> **difference**: `12`
 
-___
+---
 
 ### exclusion
 
-• **exclusion** = ``13``
+> **exclusion**: `13`
 
-___
+---
 
 ### hardLight
 
-• **hardLight** = ``11``
+> **hardLight**: `11`
 
-___
+---
 
 ### hue
 
-• **hue** = ``14``
+> **hue**: `14`
 
-___
+---
 
 ### lighten
 
-• **lighten** = ``6``
+> **lighten**: `6`
 
-___
+---
 
 ### luminosity
 
-• **luminosity** = ``17``
+> **luminosity**: `17`
 
-___
+---
 
 ### multiply
 
-• **multiply** = ``3``
+> **multiply**: `3`
 
-___
+---
 
 ### normal
 
-• **normal** = ``2``
+> **normal**: `2`
 
 The normal, default blend mode for leaf nodes.
 
 Note: Group nodes default to using `passThrough` blend mode instead. See below.
 
-___
+---
 
 ### overlay
 
-• **overlay** = ``9``
+> **overlay**: `9`
 
-___
+---
 
 ### passThrough
 
-• **passThrough** = ``1``
+> **passThrough**: `1`
 
 This blend mode only applies to container nodes with children; for leaf nodes, it is treated the same as `normal`.
 
 In this mode, the container has no particular blend mode of its own, but rather each individual child of the container
-will be individually composited onto the background using its own specific blend mode. In *any other* blend mode, the
+will be individually composited onto the background using its own specific blend mode. In _any other_ blend mode, the
 children are first rendered in an "isolation mode" and then the flattened result is composited onto other content
 below it using solely the container's own blend mode.
 
 Group nodes are set to `passThrough` by default.
 
-___
+---
 
 ### saturation
 
-• **saturation** = ``15``
+> **saturation**: `15`
 
-___
+---
 
 ### screen
 
-• **screen** = ``7``
+> **screen**: `7`
 
-___
+---
 
 ### softLight
 
-• **softLight** = ``10``
+> **softLight**: `10`

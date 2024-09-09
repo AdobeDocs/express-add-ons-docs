@@ -8,30 +8,30 @@ Represents an RGBA color value.
 
 ### alpha
 
-• **alpha**: `number`
+> **alpha**: `number`
 
 The alpha channel in range from 0 - 1.
 
-___
+---
 
 ### blue
 
-• **blue**: `number`
+> **blue**: `number`
 
 The blue channel in range from 0 - 1.
 
-___
+---
 
 ### green
 
-• **green**: `number`
+> **green**: `number`
 
 The green channel in range from 0 - 1.
 
-___
+---
 
 ### red
 
-• **red**: `number`
+> **red**: `number`
 
 The red channel in range from 0 - 1.

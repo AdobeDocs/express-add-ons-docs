@@ -6,10 +6,10 @@
 
 ### height
 
-• **height**: `number`
+> **height**: `number`
 
-___
+---
 
 ### width
 
-• **width**: `number`
+> **width**: `number`
