@@ -21,6 +21,11 @@ contributors:
 
 # Changelog
 
+## 2024-09-10
+
+-   Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
+-   Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/Stroke.md) APIs.
+
 ## 2024-07-22
 
 -   Added a new [`format`](../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/develop/use_cases/environment_settings.md#detecting-locale-supported-locales-and-format) section.
