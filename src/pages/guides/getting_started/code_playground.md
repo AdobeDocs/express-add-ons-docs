@@ -24,6 +24,7 @@ contributors:
 The Code Playground is an in-app lightweight code editor for fast and effortless prototyping. It lets you iterate on ideas directly by allowing you to experiment without any setup. Whether you're just getting started building add-ons or you want to test your concepts and ideas, this playground is for you.
 
 ## Introduction
+
 Check out the video below for a quick introduction to the add-on playground.
 
 <br/><br/><div style="display: flex; justify-content: center;">
@@ -36,7 +37,6 @@ Check out the video below for a quick introduction to the add-on playground.
 - **Effortless Prototyping:** Quickly turn ideas into add-ons with minimal setup.
 - **Rapid Implementation:** Fast-track your prototype to a product by directly pasting your code into an add-on template.
 
-
 ## Getting Started
 
 ### Step 1: Enable Add-On Development Mode
@@ -45,7 +45,7 @@ Go to your settings and enable add-on development mode (if it isn't already enab
 
 ![Adobe Express Settings](./img/settings_alt.png)
 
-### Step 2: Locate the 'Code-playground' option 
+### Step 2: Locate the 'Code-playground' option
 
 1. Start by opening any document in Adobe Express.
 2. Click on the "Add-ons" section located on the left side rail.
@@ -53,7 +53,7 @@ Go to your settings and enable add-on development mode (if it isn't already enab
 
 ![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
 
-### Step 3: Access the Playground 
+### Step 3: Access the Playground
 
 At the bottom of the add-ons rail, you'll see the option to open the Code Playground. Click to get started!
 
@@ -89,6 +89,6 @@ At the bottom of the add-ons rail, you'll see the option to open the Code Playgr
 
  Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
 
- ### Where can I go for help?
+### Where can I go for help?
 
 [Join our Discord](http://discord.gg/nc3QDyFeb4) to chat with the add-on developer community.
