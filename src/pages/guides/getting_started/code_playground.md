@@ -29,7 +29,7 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 - **Rapid Implementation:** Fast-track your prototype to a product by directly pasting your code into an add-on template.
 
 <div style="display: flex; justify-content: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://youtu.be/v-6II0CcNx0" title="Introducing Code Playground for Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div><br/>
 
 ### Getting Started Steps
