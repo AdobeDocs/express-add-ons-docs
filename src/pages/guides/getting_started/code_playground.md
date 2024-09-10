@@ -67,6 +67,7 @@ At the bottom of the add-ons rail, you'll see the option to open the Code Playgr
   - [iFrame Context](../develop/context.md)
   - [Document Sandbox](../../references/document-sandbox/document-apis/concepts/index.md)
   - [Manifest File](../../references/manifest/index.md)
+
 - **Explore API References:** Discover all available APIs and their capabilities in the [SDK Reference](../../references/index.md).
 - **[Ask Questions](https://developer.adobe.com/express/community/):** Join us for Office Hours or chat with the team on Discord.
 
