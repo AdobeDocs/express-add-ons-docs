@@ -75,4 +75,3 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 ### How do I start creating add-ons?
 
  Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
- 
