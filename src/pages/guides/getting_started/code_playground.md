@@ -28,26 +28,24 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 - **Effortless Prototyping:** Quickly turn ideas into add-ons with minimal setup.
 - **Rapid Implementation:** Fast-track your prototype to a product by directly pasting your code into an add-on template.
 
-<div style="display: flex; justify-content: center;">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/v-6II0CcNx0?si=j5jf7FQNIKg_-LWl" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/>
+  <div style="display: flex; justify-content: center;">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/v-6II0CcNx0?si=j5jf7FQNIKg_-LWl" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div><br/><br/>
 
 ### Getting Started Steps
 
-1. **Enable Add-On Development Mode:** Go to your settings and enable add-on development mode (if it isn’t already enabled).
-
-![Adobe Express Settings](./img/settings_alt.png)
-
+1. **Enable Add-On Development Mode:** Go to your settings and enable add-on development mode (if it isn’t already enabled). <br /><br />
+  ![Adobe Express Settings](./img/settings_alt.png)
 2. **Open a Document in Express:** Start by opening any document in Adobe Express.
 1. **Navigate to the Add-ons Section:** Click on the "Add-Ons" section located on the left side rail.
 1. **Select "Your Add-Ons" Tab:** In the Add-ons panel, select the "Your Add-ons" tab.
-
-![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
-
+<br/><br/>
+  ![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
+<br /><br />
 5. **Access the Playground:** At the bottom of the add-ons rail, you’ll see the option to open the Code Playground. Click to get started!
-
-![Adobe Express Code Playground](./img/playground.png)
-
+<br /><br />
+  ![Adobe Express Code Playground](./img/playground.png)
+<br /><br />
 ## Where to Go Next / Get Started and Explore More
 
 - **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](../develop/use_cases.md) to kickstart your development.
