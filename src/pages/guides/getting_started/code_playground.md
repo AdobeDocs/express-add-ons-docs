@@ -29,40 +29,34 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 - **Rapid Implementation:** Fast-track your prototype to a product by directly pasting your code into an add-on template.
 
 <div style="display: flex; justify-content: center;">
-  <iframe width="560" height="315" src="https://youtu.be/v-6II0CcNx0" title="Introducing Code Playground for Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/v-6II0CcNx0?si=j5jf7FQNIKg_-LWl" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div><br/>
 
 ### Getting Started Steps
 
 1. **Enable Add-On Development Mode:** Go to your settings and enable add-on development mode (if it isn’t already enabled).
 
-<div style="display: flex; justify-content: center;">
-<img src="./img/settings.png" alt="Adobe Express Settings"  width="50%"/>
-</div>
+![Adobe Express Settings](./img/settings_alt.png)
 
 2. **Open a Document in Express:** Start by opening any document in Adobe Express.
 1. **Navigate to the Add-ons Section:** Click on the "Add-Ons" section located on the left side rail.
 1. **Select "Your Add-Ons" Tab:** In the Add-ons panel, select the "Your Add-ons" tab.
 
-<div style="display: flex; justify-content: center;">
-<img src="./img/toggle-playground.png" alt="Adobe Express Code Playground Toggle"  width="50%" />
-</div>
+![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
 
 5. **Access the Playground:** At the bottom of the add-ons rail, you’ll see the option to open the Code Playground. Click to get started!
 
-<div style="display: flex; justify-content: center;">
-<img src="./img/playground.png" alt="Adobe Express Code Playground"  width="50%"/>
-</div>
+![Adobe Express Code Playground](./img/playground.png)
 
 ## Where to Go Next / Get Started and Explore More
 
-- **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](./develop/use_cases/) to kickstart your development.
-- **Start with Code Samples:** Check out [these samples](https://developer.adobe.com/express/add-ons/docs/samples/) to see what’s possible and get inspired.
+- **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](../develop/use_cases.md) to kickstart your development.
+- **Start with Code Samples:** Check out [these samples](../../samples.md) to see what’s possible and get inspired.
 - **Understand Add-on Concepts:** Get familiar with the fundamentals of building add-ons.
-  - [iFrame Context](https://developer.adobe.com/express/add-ons/docs/guides/develop/context/)
-  - [Document Sandbox](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/document-apis/concepts/)
-  - [Manifest File](https://developer.adobe.com/express/add-ons/docs/references/manifest/)
-- **Explore API References:** Discover all available APIs and their capabilities in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/manifest/).
+  - [iFrame Context](../develop/context.md)
+  - [Document Sandbox](../../references/document-sandbox/document-apis/concepts/index.md)
+  - [Manifest File](../../references/manifest/index.md)
+- **Explore API References:** Discover all available APIs and their capabilities in the [SDK Reference](../../references/index.md).
 
 ## FAQs
 
@@ -81,3 +75,4 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 ### How do I start creating add-ons?
 
  Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
+ 
