@@ -372,6 +372,10 @@ module.exports = {
             path: "guides/getting_started/dev_tooling.md",
           },
           {
+            title: "Code Playground",
+            path: "guides/getting_started/code_playground.md",
+          },
+          {
             title: "Tutorials",
             path: "guides/tutorials/",
             pages: [
