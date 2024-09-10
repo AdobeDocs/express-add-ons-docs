@@ -11,176 +11,73 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: Quickstart
-description: This is the Quickstart page
+title: Code Playground
+description: How to access the Code Playground
 contributors:
-  - https://github.com/hollyschinsky
-  - https://github.com/undavide
+  - https://github.com/ErinFinnegan
+  - https://github.com/padmkris123
 ---
 
-# Development Tools
+# Adobe Express Add-On Code Playground
 
-## Using the CLI
+## What is the Code Playground?
 
-The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
+The Code Playground is an in-app lightweight code editor for fast and effortless prototyping. It lets you iterate on ideas directly by allowing you to experiment without any setup. Whether you're just getting started building add-ons or you want to test your concepts and ideas, this playground is for you.
 
-Here are some key features of the add-on CLI:
+- **Real-Time Preview:** See your changes instantly as you code, allowing for immediate feedback and faster adjustments.
+- **Effortless Prototyping:** Quickly turn ideas into add-ons with minimal setup.
+- **Rapid Implementation:** Fast-track your prototype to a product by directly pasting your code into an add-on template.
 
-- **Project creation:** The add-on CLI provides a command to create a new add-on project with a basic file structure and configuration.
-- **Local development:** The add-on CLI includes a built-in server that allows you to test your add-on locally before deploying it to our platform.
-- **Live reloading:** The add-on CLI watches your project files for changes and automatically reloads the server when a change is detected.
-- **Packaging:** The add-on CLI provides a command to package your add-on for distribution, including creating a ZIP file that can be uploaded to our platform.
+<div style="display: flex; justify-content: center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div><br/>
 
-### CLI `create` options
+### Getting Started Steps
 
-The table below shows the list of arguments that can be specified with the CLI create command (ie: `npx @adobe/create-ccweb-add-on`):
+1. **Enable Add-On Development Mode:** Go to your settings and enable add-on development mode (if it isn’t already enabled).
 
-| Argument      | Optional | Default Value                                | Description                                                                                                          |
-| ------------- | -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `add-on-name` | No       |                                              | Name of the add-on. A new add-on project with this argument will be created in the user's current working directory. |
-| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on. |
-| `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations. |
+<div style="display: flex; justify-content: center;">
+<img src="./img/settings.png" alt="Adobe Express Settings"  width="50%"/>
+</div>
 
-For instance, the following command would specify all possible arguments:
+2. **Open a Document in Express:** Start by opening any document in Adobe Express.
+1. **Navigate to the Add-ons Section:** Click on the "Add-Ons" section located on the left side rail.
+1. **Select "Your Add-Ons" Tab:** In the Add-ons panel, select the "Your Add-ons" tab.
 
-```bash
-npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
-```
+<div style="display: flex; justify-content: center;">
+<img src="./img/toggle-playground.png" alt="Adobe Express Code Playground Toggle"  width="50%" />
+</div>
 
-<InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
+5. **Access the Playground:** At the bottom of the add-ons rail, you’ll see the option to open the Code Playground. Click to get started!
 
-#### CLI troubleshooting <!-- 👈 will not render -->
+<div style="display: flex; justify-content: center;">
+<img src="./img/playground.png" alt="Adobe Express Code Playground"  width="50%"/>
+</div>
 
-See the [templates](#templates) section for the currently supported template values.
+## Where to Go Next / Get Started and Explore More
 
-`npx` is an `npm` package runner that can execute packages without installing them explicitly. If needed, please run this command to clear the `npx` cache to ensure the latest version of the CLI is invoked.
+- **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](./develop/use_cases/) to kickstart your development.
+- **Start with Code Samples:** Check out [these samples](https://developer.adobe.com/express/add-ons/docs/samples/) to see what’s possible and get inspired.
+- **Understand Add-on Concepts:** Get familiar with the fundamentals of building add-ons.
+  - [iFrame Context](https://developer.adobe.com/express/add-ons/docs/guides/develop/context/)
+  - [Document Sandbox](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/document-apis/concepts/)
+  - [Manifest File](https://developer.adobe.com/express/add-ons/docs/references/manifest/)
+- **Explore API References:** Discover all available APIs and their capabilities in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/manifest/).
 
-```bash
-npx clear-npx-cache
-npx @adobe/create-ccweb-add-on my-addon 
-```
+## FAQs
 
-The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
+### What is the Adobe Express Developer Playground?
 
-```bash
-npx @adobe/ccweb-add-on-scripts start --help  
-```
+ Adobe Express Developer Playground is a lightweight code editor designed for fast and effortless prototyping. It allows you to experiment with simple code snippets to build and refine add-ons, quickly turning ideas into functional features.
 
-### `start` script options
+### Is it free to use?
 
-The table below shows a list of arguments that can be specified with the `start` script on your add-on project, which starts up the add-on in a local server:
+ Yes, the Developer Playground is free to use. You can access all its features without any cost and start prototyping and creating add-ons right away.
 
-| Argument  | Optional | Default Value | Description                                                                  |
-| --------- | -------- | ------------- | ---------------------------------------------------------------------------- |
-| `src`     | Yes      | `src`         | Directory where the source code and assets for the add-on is present.        |
-| `use`     | Yes      |               | Transpiler/bundler to be used. For example, webpack.                         |
-| `port`    | Yes      | `5241`        | Local development server port.                                               |
-| `verbose` | Yes      | false         | Setting this argument enables the verbose flag on the underlying operations. |
+### Do I need coding experience?
 
-For instance, to specify a port of `8080` instead, use the following command:
+ While some basic coding knowledge is helpful, Playground is designed to be beginner-friendly and accessible. Its intuitive interface and simple code snippets make it easier for both experienced developers and those newer to coding to create and test add-ons.
 
-```bash
-npm run start -- --port 8080
-```
+### How do I start creating add-ons?
 
-To specify you want to use `webpack` AND port `8080`:
-
-```bash
-npm run start -- --use webpack --port 8080
-```
-
-<InlineAlert slots="text" variant="info"/>
-
-The extra arguments are unnecessary unless you do not want to use a transpiler/bundler or use the default port of `5241`. Also, note that all of the templates other than the `javascript` template are pre-configured to use webpack by default and the `--use webpack` is automatically added when you run the `build` and `start` commands. Take a look at the `scripts` property in the `package.json` of those templates and you will see the following:
-
-```json
-"scripts": {
-    "clean": "ccweb-add-on-scripts clean",
-    "build": "ccweb-add-on-scripts build --use webpack",
-    "start": "ccweb-add-on-scripts start --use webpack"
-}
-```
-
-## Templates
-
-The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
-<br/>
-
-| Template         | Framework        |
-| ---------------- | ---------------- |
-| `javascript`       | JavaScript       |
-| `swc-javascript`       | JavaScript with Spectrum Web Components support     |
-| `swc-typescript`       | TypeScript with Spectrum Web Components support     |
-| `react-javascript`  | React with JavaScript |
-| `react-typescript` | React with TypeScript |
-
-As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
-
-| Template         | Description        |
-| ---------------- | ---------------- |
-| `javascript-with-document-sandbox`  | JavaScript with Document Sandbox support.  |
-| `swc-javascript-with-document-sandbox`  | JavaScript and Spectrum Web Components with Document Sandbox support.  |
-| `swc-typescript-with-document-sandbox`  | TypeScript and Spectrum Web Components with Document Sandbox support.      |
-| `react-javascript-with-document-sandbox`  | React and JavaScript with Document Sandbox support.|
-| `react-typescript-with-document-sandbox` | React and TypeScript with Document Sandbox support.|
-
-You can supply any of the above template names after the `--template` parameter:
-
-```bash
-npx @adobe/create-ccweb-add-on <add-on-name> --template <template>
-```
-
-For instance, the following is an example of a command that will create an add-on based on the `react-javascript` template:
-
-```bash
-npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
-```
-
-and below is how you could specify the `react-javascript-with-document-sandbox` template:
-
-```bash
-npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox --template react-javascript-with-document-sandbox
-```
-
-### No template parameter
-
-The template parameter is optional, and the CLI will prompt you to choose from a list of template options if it's excluded. For instance, if you use just the base CLI command:
-
-`npx @adobe/create-ccweb-add-on <add-on-name>`
-
-you will see the following prompt from the CLI:
-
-![doc sandbox prompt](./img/CLI-template-prompt.png)
-
-which shows the five base template options to choose from, followed by a prompt to ask if you want to add the Document Sandbox support once you choose the base template.
-
-![cli doc sandbox prompt](./img/CLI-doc-sandbox.png)
-
-You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
-
-![template scaffolding message](./img/CLI-scaffold-message.png)
-
-<InlineAlert slots="text1, text2" variant="warning"/>
-
-Please note that to use [Spectrum Web Components](/guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
-
-If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
-
-When the scaffolding is complete, you will see the following message, prompting you to navigate to the newly created project directory and start the local development scripts:
-
-![CLI completed message](./img/CLI-completed.png)
-
-## Manifest
-
-A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
-
-## Add-on Development Tools Panel
-
-The **Add-on Development** tools panel provides useful logging details indicating the status of your add-on, as well as action buttons to allow for refreshing and clearing the data associated with your add-on. The panel is shown in the screenshots below for reference:
-
-<InlineAlert slots="text" variant="info"/>
-
-The **Refresh** button can be used to reload your add-on's code and resources, and the **Clear Storage** button allows you to clear any data stored by your add-on.
-
-![add-ons tools screenshot](./img/add-on-devtools.png)
-![manifest error screenshot](./img/manifest-error.png)
+ Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
