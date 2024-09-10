@@ -22,7 +22,7 @@ This class is used in different places for various types of items, including Nod
 
 ### first
 
-> `get` **first**(): `undefined` \| `T`
+• `get` **first**(): `undefined` \| `T`
 
 First item in this list, or undefined if list is empty.
 
@@ -34,7 +34,7 @@ First item in this list, or undefined if list is empty.
 
 ### last
 
-> `get` **last**(): `undefined` \| `T`
+• `get` **last**(): `undefined` \| `T`
 
 Last item in this list, or undefined if list is empty.
 
@@ -46,7 +46,7 @@ Last item in this list, or undefined if list is empty.
 
 ### length
 
-> `get` **length**(): `number`
+• `get` **length**(): `number`
 
 Number of items in this list.
 
@@ -58,7 +58,7 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-> **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
+• **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -74,7 +74,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ### append()
 
-> **append**(...`items`): `void`
+• **append**(...`items`): `void`
 
 Add one or more items to the end of the list. The last argument will become the last item in this list. Items are
 removed from their previous parent, if any – or if an item is already in _this_ list, its index is simply changed.
@@ -91,7 +91,7 @@ removed from their previous parent, if any – or if an item is already in _this
 
 ### clear()
 
-> **clear**(): `void`
+• **clear**(): `void`
 
 Remove all items from this list. No-op if list is already empty.
 
@@ -103,7 +103,7 @@ Remove all items from this list. No-op if list is already empty.
 
 ### indexOf()
 
-> **indexOf**(`item`): `number`
+• **indexOf**(`item`): `number`
 
 Get index of item in list.
 
@@ -125,7 +125,7 @@ index number, or -1 if item isn't in this list.
 
 ### insertAfter()
 
-> **insertAfter**(`newItem`, `after`): `void`
+• **insertAfter**(`newItem`, `after`): `void`
 
 Insert `newItem` so it is immediately after `after` in this list: places `newItem` at the index one higher than `after`,
 shifting all later items to higher indices (the index of `after` remains unchanged). `newItem` is removed from its previous parent,
@@ -145,7 +145,7 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 ### insertBefore()
 
-> **insertBefore**(`newItem`, `before`): `void`
+• **insertBefore**(`newItem`, `before`): `void`
 
 Insert `newItem` so it is immediately before `before` in this list: places `newItem` at the index that `before` used
 to occupy, shifting `before` and all later items to higher indices. `newItem` is removed from its previous parent,
@@ -165,7 +165,7 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 ### item()
 
-> **item**(`index`): `undefined` \| `T`
+• **item**(`index`): `undefined` \| `T`
 
 Returns item at the given index, or undefined if index is out of range.
 
@@ -187,7 +187,7 @@ Zero-based index
 
 ### moveAfter()
 
-> **moveAfter**(`item`, `after`): `void`
+• **moveAfter**(`item`, `after`): `void`
 
 Move `item` so it is immediately after `after` in this list: places `item` at the index one higher than `after`.
 Depending on the position in the list `item` originally occupied, some other items in the list may shift to higher
@@ -215,7 +215,7 @@ An error if either argument is not contained in this list.
 
 ### moveBefore()
 
-> **moveBefore**(`item`, `before`): `void`
+• **moveBefore**(`item`, `before`): `void`
 
 Move `item` so it is immediately before `before` in this list: places `item` at the index that `before` used
 to occupy. Depending on the position in the list `item` originally occupied, some other items in the list may
@@ -243,7 +243,7 @@ An error if either argument is not contained in this list.
 
 ### remove()
 
-> **remove**(...`items`): `void`
+• **remove**(...`items`): `void`
 
 Remove the items from the list. The items need not be contiguous.
 
@@ -267,7 +267,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ### replace()
 
-> **replace**(`oldItem`, `newItem`): `void`
+• **replace**(`oldItem`, `newItem`): `void`
 
 Replace `oldItem` with `newItem` in this list. Throws if `oldItem` is not a member of this list.
 `newItem` is removed from its previous parent, if any – or if it's already in _this_ list, its index is simply
@@ -287,7 +287,7 @@ changed. No-op if both arguments are the same item.
 
 ### toArray()
 
-> **toArray**(): readonly `T`[]
+• **toArray**(): readonly `T`[]
 
 All items in the list, as a static array. Mutations that occur later are not reflected in an array returned earlier.
 

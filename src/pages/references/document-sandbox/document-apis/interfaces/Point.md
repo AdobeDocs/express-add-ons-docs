@@ -8,10 +8,10 @@ Represents a 2D position.
 
 ### x
 
-> **x**: `number`
+• **x**: `number`
 
 ---
 
 ### y
 
-> **y**: `number`
+• **y**: `number`

@@ -10,16 +10,16 @@ _Do not depend on the literal numeric values of these constants_, as they may ch
 
 ### center
 
-> **center**: `3`
+• **center**: `3`
 
 ---
 
 ### left
 
-> **left**: `1`
+• **left**: `1`
 
 ---
 
 ### right
 
-> **right**: `2`
+• **right**: `2`

@@ -16,7 +16,7 @@ remove the last remaining artboard from the list.
 
 ### first
 
-> `get` **first**(): `undefined` \| `T`
+• `get` **first**(): `undefined` \| `T`
 
 First item in this list, or undefined if list is empty.
 
@@ -28,7 +28,7 @@ First item in this list, or undefined if list is empty.
 
 ### last
 
-> `get` **last**(): `undefined` \| `T`
+• `get` **last**(): `undefined` \| `T`
 
 Last item in this list, or undefined if list is empty.
 
@@ -40,7 +40,7 @@ Last item in this list, or undefined if list is empty.
 
 ### length
 
-> `get` **length**(): `number`
+• `get` **length**(): `number`
 
 Number of items in this list.
 
@@ -52,7 +52,7 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-> **\[iterator\]**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
+• **\[iterator\]**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -68,7 +68,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ### addArtboard()
 
-> **addArtboard**(): [`ArtboardNode`](ArtboardNode.md)
+• **addArtboard**(): [`ArtboardNode`](ArtboardNode.md)
 
 Create a new artboard and add it to the end of the list. The artboard size is the same as others on this page. The
 artboard background is set to default fill color DEFAULT_ARTBOARD_FILL_COLOR. The new artboard becomes the
@@ -85,7 +85,7 @@ the newly added artboard.
 
 ### indexOf()
 
-> **indexOf**(`item`): `number`
+• **indexOf**(`item`): `number`
 
 Get index of item in list.
 
@@ -107,7 +107,7 @@ index number, or -1 if item isn't in this list.
 
 ### item()
 
-> **item**(`index`): `undefined` \| [`ArtboardNode`](ArtboardNode.md)
+• **item**(`index`): `undefined` \| [`ArtboardNode`](ArtboardNode.md)
 
 Returns item at the given index, or undefined if index is out of range.
 
@@ -129,7 +129,7 @@ Zero-based index
 
 ### moveAfter()
 
-> **moveAfter**(`item`, `after`): `void`
+• **moveAfter**(`item`, `after`): `void`
 
 Move `item` so it is immediately after `after` in this list: places `item` at the index one higher than `after`.
 Depending on the position in the list `item` originally occupied, some other items in the list may shift to higher
@@ -157,7 +157,7 @@ An error if either argument is not contained in this list.
 
 ### moveBefore()
 
-> **moveBefore**(`item`, `before`): `void`
+• **moveBefore**(`item`, `before`): `void`
 
 Move `item` so it is immediately before `before` in this list: places `item` at the index that `before` used
 to occupy. Depending on the position in the list `item` originally occupied, some other items in the list may
@@ -185,7 +185,7 @@ An error if either argument is not contained in this list.
 
 ### remove()
 
-> **remove**(...`items`): `void`
+• **remove**(...`items`): `void`
 
 Remove the items from the list. The items need not be contiguous.
 
@@ -209,7 +209,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ### toArray()
 
-> **toArray**(): readonly [`ArtboardNode`](ArtboardNode.md)[]
+• **toArray**(): readonly [`ArtboardNode`](ArtboardNode.md)[]
 
 All items in the list, as a static array. Mutations that occur later are not reflected in an array returned earlier.
 

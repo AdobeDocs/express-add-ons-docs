@@ -20,7 +20,7 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
 ### first
 
-> `get` **first**(): `undefined` \| `T`
+• `get` **first**(): `undefined` \| `T`
 
 First item in this list, or undefined if list is empty.
 
@@ -32,7 +32,7 @@ First item in this list, or undefined if list is empty.
 
 ### last
 
-> `get` **last**(): `undefined` \| `T`
+• `get` **last**(): `undefined` \| `T`
 
 Last item in this list, or undefined if list is empty.
 
@@ -44,7 +44,7 @@ Last item in this list, or undefined if list is empty.
 
 ### length
 
-> `get` **length**(): `number`
+• `get` **length**(): `number`
 
 Number of items in this list.
 
@@ -56,7 +56,7 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-> **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
+• **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -68,7 +68,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ### indexOf()
 
-> **indexOf**(`item`): `number`
+• **indexOf**(`item`): `number`
 
 Get index of item in list.
 
@@ -86,7 +86,7 @@ index number, or -1 if item isn't in this list.
 
 ### item()
 
-> **item**(`index`): `undefined` \| `T`
+• **item**(`index`): `undefined` \| `T`
 
 Returns item at the given index, or undefined if index is out of range.
 
@@ -104,7 +104,7 @@ Zero-based index
 
 ### toArray()
 
-> **toArray**(): readonly `T`[]
+• **toArray**(): readonly `T`[]
 
 All items in the list, as a static array. Mutations that occur later are not reflected in an array returned earlier.
 

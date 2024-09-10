@@ -8,7 +8,7 @@ Entry point for APIs that read or modify the document's content.
 
 ### context
 
-> `get` **context**(): [`Context`](Context.md)
+• `get` **context**(): [`Context`](Context.md)
 
 User's current selection context
 
@@ -20,7 +20,7 @@ User's current selection context
 
 ### documentRoot
 
-> `get` **documentRoot**(): [`ExpressRootNode`](ExpressRootNode.md)
+• `get` **documentRoot**(): [`ExpressRootNode`](ExpressRootNode.md)
 
 #### Returns
 
@@ -32,7 +32,7 @@ the root of the document.
 
 ### createEllipse()
 
-> **createEllipse**(): [`EllipseNode`](EllipseNode.md)
+• **createEllipse**(): [`EllipseNode`](EllipseNode.md)
 
 #### Returns
 
@@ -45,7 +45,7 @@ Transform values default to 0.
 
 ### createGroup()
 
-> **createGroup**(): [`GroupNode`](GroupNode.md)
+• **createGroup**(): [`GroupNode`](GroupNode.md)
 
 #### Returns
 
@@ -57,7 +57,7 @@ a group node.
 
 ### createImageContainer()
 
-> **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](MediaContainerNode.md)
+• **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](MediaContainerNode.md)
 
 Creates a bitmap image, represented as a multi-node MediaContainerNode structure. Always creates a "full-frame,"
 uncropped image initially, but cropping can be changed after it is created by modifying the properties of the
@@ -91,7 +91,7 @@ MediaContainerNode representing the top container node of the multi-node structu
 
 ### createLine()
 
-> **createLine**(): [`LineNode`](LineNode.md)
+• **createLine**(): [`LineNode`](LineNode.md)
 
 #### Returns
 
@@ -104,7 +104,7 @@ Transform values default to 0.
 
 ### createPath()
 
-> **createPath**(`path`): [`PathNode`](PathNode.md)
+• **createPath**(`path`): [`PathNode`](PathNode.md)
 
 #### Parameters
 
@@ -125,7 +125,7 @@ a path node with a default stroke and no initial fill.
 
 ### createRectangle()
 
-> **createRectangle**(): [`RectangleNode`](RectangleNode.md)
+• **createRectangle**(): [`RectangleNode`](RectangleNode.md)
 
 #### Returns
 
@@ -138,7 +138,7 @@ Transform values default to 0.
 
 ### createText()
 
-> **createText**(): [`TextNode`](TextNode.md)
+• **createText**(): [`TextNode`](TextNode.md)
 
 #### Returns
 
@@ -152,7 +152,7 @@ adjust to accommodate whatever text is set.
 
 ### loadBitmapImage()
 
-> **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -178,7 +178,7 @@ Encoded image data in PNG or JPEG format.
 
 ### makeColorFill()
 
-> **makeColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
+• **makeColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
 
 Convenience helper to create a complete ColorFill value given just its color.
 
@@ -196,7 +196,7 @@ The color to use for the fill.
 
 ### makeStroke()
 
-> **makeStroke**(`options`?): [`SolidColorStroke`](../interfaces/SolidColorStroke.md)
+• **makeStroke**(`options`?): [`SolidColorStroke`](../interfaces/SolidColorStroke.md)
 
 Convenience helper to create a complete SolidColorStroke value given just a
 subset of its fields. All other fields are populated with default values.
@@ -226,7 +226,7 @@ a stroke configured with the given options.
 
 ### queueAsyncEdit()
 
-> **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
+• **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
 
 Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
 the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
@@ -252,7 +252,7 @@ async function insertImage(blob) {
     // Execution doesn't arrive at this line until an async delay, due to the Promise 'await' above
 
     // Further edits need to be queued to run at a safe time
-    editor.queueAsyncEdit(() => {
+    editor.queueAsyncEdit(() =• {
         // Create scenenode to display the image, and add it to the current artboard
         const mediaContainer = editor.createImageContainer(bitmapImage);
         editor.context.insertionParent.children.append(mediaContainer);

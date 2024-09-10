@@ -13,10 +13,10 @@ self-intersecting or contains separate, nested closed loops.
 
 ### evenOdd
 
-> **evenOdd**: `1`
+• **evenOdd**: `1`
 
 ---
 
 ### nonZero
 
-> **nonZero**: `0`
+• **nonZero**: `0`

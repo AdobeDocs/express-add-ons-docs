@@ -8,7 +8,7 @@ Utility methods for working with color values.
 
 ### fromHex()
 
-> **fromHex**(`hex`): [`Color`](../interfaces/Color.md)
+• **fromHex**(`hex`): [`Color`](../interfaces/Color.md)
 
 Create a new color from its equivalent RGBA hex representation. Can specify in 6 digits (RRGGBB) or 8 digits
 (RRGGBBAA), uppercase or lowercase, with or without leading "#". Alpha defaults to FF (100% opaque) if ommitted.
@@ -35,7 +35,7 @@ if the hex string cannot be parsed.
 
 #### fromRGB(red, green, blue, alpha)
 
-> **fromRGB**(`red`, `green`, `blue`, `alpha`?): [`Color`](../interfaces/Color.md)
+• **fromRGB**(`red`, `green`, `blue`, `alpha`?): [`Color`](../interfaces/Color.md)
 
 Create a new color object with the given RGBA values.
 
@@ -65,7 +65,7 @@ A new color object.
 
 #### fromRGB(color)
 
-> **fromRGB**(`color`): [`Color`](../interfaces/Color.md)
+• **fromRGB**(`color`): [`Color`](../interfaces/Color.md)
 
 Create a new color object given a partial color object where the alpha field may be missing.
 
@@ -93,7 +93,7 @@ A new color object with all fields present.
 
 ### toHex()
 
-> **toHex**(`color`): `string`
+• **toHex**(`color`): `string`
 
 Get the color in 8-digit hex "#RRGGBBAA" format.
 

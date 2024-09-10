@@ -14,4 +14,4 @@ other stroke types when reading from scenegraph content.
 
 ### type
 
-> `readonly` **type**: [`color`](../enumerations/StrokeType.md#color)
+• `readonly` **type**: [`color`](../enumerations/StrokeType.md#color)

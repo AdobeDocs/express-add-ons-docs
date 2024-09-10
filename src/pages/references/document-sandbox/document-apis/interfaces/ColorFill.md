@@ -14,7 +14,7 @@ The most convenient way to create a fill is via `Editor.makeColorFill()`.
 
 ### color
 
-> **color**: [`Color`](Color.md)
+• **color**: [`Color`](Color.md)
 
 The fill color.
 
@@ -22,7 +22,7 @@ The fill color.
 
 ### type
 
-> `readonly` **type**: [`color`](../enumerations/FillType.md#color)
+• `readonly` **type**: [`color`](../enumerations/FillType.md#color)
 
 The fill type.
 

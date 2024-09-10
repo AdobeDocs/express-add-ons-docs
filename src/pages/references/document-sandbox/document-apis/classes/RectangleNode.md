@@ -16,7 +16,7 @@ A RectangleNode represents a rectangle object in the scenegraph.
 
 ### allChildren
 
-> `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -33,12 +33,12 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 ### blendMode
 
-> `get` **blendMode**(): [`BlendMode`](../enumerations/BlendMode.md)
+• `get` **blendMode**(): [`BlendMode`](../enumerations/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
 [BlendMode.normal](../enumerations/BlendMode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/BlendMode.md#passthrough) for GroupNodes.
 
-> `set` **blendMode**(`value`): `void`
+• `set` **blendMode**(`value`): `void`
 
 #### Parameters
 
@@ -52,7 +52,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ### bottomLeftRadius
 
-> `get` **bottomLeftRadius**(): `number`
+• `get` **bottomLeftRadius**(): `number`
 
 The radius of the bottom left corner, or 0 if the corner is not rounded.
 
@@ -61,7 +61,7 @@ The radius of the bottom left corner, or 0 if the corner is not rounded.
 The actual corner radius that is rendered is capped based on the size of the rectangle
 even if the radius value set here is higher.
 
-> `set` **bottomLeftRadius**(`value`): `void`
+• `set` **bottomLeftRadius**(`value`): `void`
 
 #### Parameters
 
@@ -75,7 +75,7 @@ even if the radius value set here is higher.
 
 ### bottomRightRadius
 
-> `get` **bottomRightRadius**(): `number`
+• `get` **bottomRightRadius**(): `number`
 
 The radius of the bottom right corner, or 0 if the corner is not rounded.
 
@@ -84,7 +84,7 @@ The radius of the bottom right corner, or 0 if the corner is not rounded.
 The actual corner radius that is rendered is capped based on the size of the rectangle
 even if the radius value set here is higher.
 
-> `set` **bottomRightRadius**(`value`): `void`
+• `set` **bottomRightRadius**(`value`): `void`
 
 #### Parameters
 
@@ -98,7 +98,7 @@ even if the radius value set here is higher.
 
 ### boundsInParent
 
-> `get` **boundsInParent**(): `Readonly`<`Rect`\>
+• `get` **boundsInParent**(): `Readonly`<`Rect`\>
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -114,7 +114,7 @@ even for an orphan node with no parent.
 
 ### boundsLocal
 
-> `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<`Rect`\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -131,7 +131,7 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 ### centerPointLocal
 
-> `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
 box.
@@ -144,9 +144,9 @@ box.
 
 ### fill
 
-> `get` **fill**(): `undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
+• `get` **fill**(): `undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
-> `set` **fill**(`fill`): `void`
+• `set` **fill**(`fill`): `void`
 
 The fill applied to the shape, if any.
 
@@ -162,12 +162,12 @@ The fill applied to the shape, if any.
 
 ### height
 
-> `get` **height**(): `number`
+• `get` **height**(): `number`
 
 The height of the node.
 Must be at least MIN_DIMENSION.
 
-> `set` **height**(`value`): `void`
+• `set` **height**(`value`): `void`
 
 #### Parameters
 
@@ -181,7 +181,7 @@ Must be at least MIN_DIMENSION.
 
 ### id
 
-> `get` **id**(): `string`
+• `get` **id**(): `string`
 
 A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
 moved to a different part of the document.
@@ -194,12 +194,12 @@ moved to a different part of the document.
 
 ### locked
 
-> `get` **locked**(): `boolean`
+• `get` **locked**(): `boolean`
 
 The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
 cannot be edited by the user unless they are unlocked first.
 
-> `set` **locked**(`locked`): `void`
+• `set` **locked**(`locked`): `void`
 
 #### Parameters
 
@@ -213,11 +213,11 @@ cannot be edited by the user unless they are unlocked first.
 
 ### opacity
 
-> `get` **opacity**(): `number`
+• `get` **opacity**(): `number`
 
 The node's opacity, from 0.0 to 1.0
 
-> `set` **opacity**(`opacity`): `void`
+• `set` **opacity**(`opacity`): `void`
 
 #### Parameters
 
@@ -231,7 +231,7 @@ The node's opacity, from 0.0 to 1.0
 
 ### parent
 
-> `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
 content.
@@ -248,7 +248,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 ### rotation
 
-> `get` **rotation**(): `number`
+• `get` **rotation**(): `number`
 
 The node's local rotation angle in degrees, relative to its parent's axes. Use `setRotationInParent` to
 change rotation by rotating around a defined centerpoint.
@@ -261,7 +261,7 @@ change rotation by rotating around a defined centerpoint.
 
 ### rotationInScreen
 
-> `get` **rotationInScreen**(): `number`
+• `get` **rotationInScreen**(): `number`
 
 The node's total rotation angle in degrees, relative to the overall global view of the document – including any
 cumulative rotation from the node's parent containers.
@@ -274,9 +274,9 @@ cumulative rotation from the node's parent containers.
 
 ### stroke
 
-> `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
+• `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
-> `set` **stroke**(`stroke`): `void`
+• `set` **stroke**(`stroke`): `void`
 
 The stroke applied to the shape, if any.
 Only [SolidColorStroke](../interfaces/SolidColorStroke.md) values are supported by the setter, but the "type" field is optional
@@ -294,7 +294,7 @@ for backward compatibility. Throws if another type is provided.
 
 ### topLeftLocal
 
-> `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -308,7 +308,7 @@ boundsInParent.
 
 ### topLeftRadius
 
-> `get` **topLeftRadius**(): `number`
+• `get` **topLeftRadius**(): `number`
 
 The radius of the top left corner, or 0 if the corner is not rounded.
 
@@ -317,7 +317,7 @@ The radius of the top left corner, or 0 if the corner is not rounded.
 The actual corner radius that is rendered is capped based on the size of the rectangle
 even if the radius value set here is higher.
 
-> `set` **topLeftRadius**(`value`): `void`
+• `set` **topLeftRadius**(`value`): `void`
 
 #### Parameters
 
@@ -331,7 +331,7 @@ even if the radius value set here is higher.
 
 ### topRightRadius
 
-> `get` **topRightRadius**(): `number`
+• `get` **topRightRadius**(): `number`
 
 The radius of the top right corner, or 0 if the corner is not rounded.
 
@@ -340,7 +340,7 @@ The radius of the top right corner, or 0 if the corner is not rounded.
 The actual corner radius that is rendered is capped based on the size of the rectangle
 even if the radius value set here is higher.
 
-> `set` **topRightRadius**(`value`): `void`
+• `set` **topRightRadius**(`value`): `void`
 
 #### Parameters
 
@@ -354,7 +354,7 @@ even if the radius value set here is higher.
 
 ### transformMatrix
 
-> `get` **transformMatrix**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
+• `get` **transformMatrix**(): [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
 The node's transform matrix relative to its parent.
 
@@ -366,13 +366,13 @@ The node's transform matrix relative to its parent.
 
 ### translation
 
-> `get` **translation**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **translation**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
 setting translation directly.
 
-> `set` **translation**(`value`): `void`
+• `set` **translation**(`value`): `void`
 
 #### Parameters
 
@@ -386,7 +386,7 @@ setting translation directly.
 
 ### type
 
-> `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
@@ -398,7 +398,7 @@ The node's type.
 
 ### visualRoot
 
-> `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
+• `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
 
 The highest ancestor that still has visual presence in the document. Typically an Artboard, but for orphaned
 content, it will be the root of the deleted content (which might be this node itself).
@@ -415,12 +415,12 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### width
 
-> `get` **width**(): `number`
+• `get` **width**(): `number`
 
 The width of the node.
 Must be at least MIN_DIMENSION.
 
-> `set` **width**(`value`): `void`
+• `set` **width**(`value`): `void`
 
 #### Parameters
 
@@ -434,7 +434,7 @@ Must be at least MIN_DIMENSION.
 
 ### boundsInNode()
 
-> **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
+• **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
 
 Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
@@ -456,7 +456,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### getUniformCornerRadius()
 
-> **getUniformCornerRadius**(): `undefined` \| `number`
+• **getUniformCornerRadius**(): `undefined` \| `number`
 
 If all corners have the same rounding radius value, returns that value (or 0 if all corners are not rounded).
 If the corner radii differ, returns undefined.
@@ -469,7 +469,7 @@ If the corner radii differ, returns undefined.
 
 ### localPointInNode()
 
-> **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -493,7 +493,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 ### removeFromParent()
 
-> **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.
@@ -514,7 +514,7 @@ removal. No-op if node is already an orphan.
 
 ### setPositionInParent()
 
-> **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
+• **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
 
 Move the node so the given `localRegistrationPoint` in its local coordinates is placed at the given
 `parentPoint` in its parent's coordinates (taking into account any rotation on this node, etc.).
@@ -552,7 +552,7 @@ rectangle.setPositionInParent(
 
 ### setRotationInParent()
 
-> **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
+• **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
 
 Set the node’s rotation angle relative to its parent to exactly the given value, keeping the given point in the
 node’s local coordinate space at a fixed location within the parent. Disregards any rotation the node may already
@@ -589,7 +589,7 @@ rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height 
 
 ### setUniformCornerRadius()
 
-> **setUniformCornerRadius**(`radius`): `void`
+• **setUniformCornerRadius**(`radius`): `void`
 
 Set all corner radii to the same value. Set to 0 to make the corners non-rounded.
 

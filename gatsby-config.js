@@ -339,6 +339,16 @@ module.exports = {
                                 ],
                             },
                             {
+                                title: "Types",
+                                path: "references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md",
+                                pages: [
+                                    {
+                                        title: "SolidColorStrokeWithOptionalType",
+                                        path: "references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md",
+                                    },
+                                ],
+                            },
+                            {
                                 title: "Concepts",
                                 path: "references/document-sandbox/document-apis/concepts/index.md",
                             },

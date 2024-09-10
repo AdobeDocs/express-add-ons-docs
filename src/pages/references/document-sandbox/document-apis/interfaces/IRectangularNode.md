@@ -8,10 +8,10 @@ Interface for nodes with width and height properties.
 
 ### height
 
-> **height**: `number`
+• **height**: `number`
 
 ---
 
 ### width
 
-> **width**: `number`
+• **width**: `number`

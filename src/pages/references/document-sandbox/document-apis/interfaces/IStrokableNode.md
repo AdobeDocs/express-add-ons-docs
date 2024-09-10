@@ -9,4 +9,4 @@ from the StrokableNode class. (See [ArtboardNode](../classes/ArtboardNode.md), f
 
 ### stroke
 
-> **stroke**: `undefined` \| [`Stroke`](Stroke.md)
+• **stroke**: `undefined` \| [`Stroke`](Stroke.md)

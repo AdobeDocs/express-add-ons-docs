@@ -12,11 +12,21 @@ This section outlines the steps that should be taken to format the generated Doc
 
 1. **Search** and **Replace** again across files to change the auto-generated HLAPI docs headings from `@express-document-sdk` –> to `@express-document-sdk`.
 
-2. Replace all \`mat2d\` --> \[\`mat2d\`\]\(https://glmatrix.net/docs/module-mat2d.html\)
+2. The heading in the generated `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is not required. So, find and remove all occurrences of:
 
-3. Fix any `[iterator]` links to remove the brackets from the link references to ensure they work. For instance: `ArtboardList.md#%5Biterator%5D` should be `ArtboardList.md#iterator`. To fix, use Search again with a regex string of `.md#%5Biterator%5D` and replace with `.md#iterator`.
+    ```md
+    [**@express-document-sdk**](../overview.md) • **Docs**
 
-4. Find and remove all ocurrences of `TemplatizedProxyLiveObject`. An example is of `ReadOnlyItemList.md`, where you should remove the following section:
+    ---
+    ```
+
+3. The API signatures generated in `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is indented. In these directories, find and replace all occurrences of `>` + space with `•` + space.
+
+4. Find and replace all \`mat2d\` --> \[\`mat2d\`\]\(https://glmatrix.net/docs/module-mat2d.html\)
+
+5. Fix any `[iterator]` links to remove the brackets from the link references to ensure they work. For instance: `ArtboardList.md#%5Biterator%5D` should be `ArtboardList.md#iterator`. To fix, use Search again with a regex string of `.md#%5Biterator%5D` and replace with `.md#iterator`.
+
+6. Find and remove all occurrences of `TemplatizedProxyLiveObject`. An example is of `ReadOnlyItemList.md`, where you should remove the following section:
 
     ```md
     ## Extends
@@ -24,7 +34,7 @@ This section outlines the steps that should be taken to format the generated Doc
     -   `TemplatizedProxyLiveObject`<`HzApiInputType`\>
     ```
 
-5. Find and remove all ocurrences of `ProxyLiveObject`. An example is of `BaseNode.md`, where you should remove the following section:
+7. Find and remove all occurrences of `ProxyLiveObject`. An example is of `BaseNode.md`, where you should remove the following section:
 
     ```md
     ## Extends
@@ -32,11 +42,11 @@ This section outlines the steps that should be taken to format the generated Doc
     -   `ProxyLiveObject`
     ```
 
-6. Add a blank line after any `InlineAlert` in the Enums to render them properly. _(This can be easily fixed in the hz repo)_
+8. Add a blank line after any `InlineAlert` in the Enums to render them properly. _(This can be easily fixed in the hz repo)_
 
-7. Ensure any lists are surrounded by one blank line so the linter in the PR job doesn't complain. See **Context**, **Editor** classes specifically such as the `makeStroke` method which has a list. (Note: you can check the PR validation job to see if you missed any). _(This can be easily fixed in the hz repo)_
+9. Ensure any lists are surrounded by one blank line so the linter in the PR job doesn't complain. See **Context**, **Editor** classes specifically such as the `makeStroke` method which has a list. (Note: you can check the PR validation job to see if you missed any). _(This can be easily fixed in the hz repo)_
 
-8. Find and replace `\<` with `<` for all `.md` files.
+10. Find and replace `\<` with `<` for all `.md` files.
 
 ## Adobe I/O Documentation Template Info
 

@@ -8,7 +8,7 @@ Contains the user's current selection state, indicating the content they are foc
 
 ### currentPage
 
-> `get` **currentPage**(): [`PageNode`](PageNode.md)
+• `get` **currentPage**(): [`PageNode`](PageNode.md)
 
 #### Returns
 
@@ -20,7 +20,7 @@ The currently viewed page.
 
 ### hasSelection
 
-> `get` **hasSelection**(): `boolean`
+• `get` **hasSelection**(): `boolean`
 
 #### Returns
 
@@ -32,7 +32,7 @@ false if the current editable selection does not contain any nodes, otherwise tr
 
 ### insertionParent
 
-> `get` **insertionParent**(): [`ContainerNode`](../interfaces/ContainerNode.md)
+• `get` **insertionParent**(): [`ContainerNode`](../interfaces/ContainerNode.md)
 
 #### Returns
 
@@ -46,9 +46,9 @@ other UI state.
 
 ### selection
 
-> `get` **selection**(): readonly [`Node`](Node.md)[]
+• `get` **selection**(): readonly [`Node`](Node.md)[]
 
-> `set` **selection**(`nodes`): `void`
+• `set` **selection**(`nodes`): `void`
 
 Sets the current selection, automatically ensuring these rules are met:
 
@@ -70,7 +70,7 @@ the current selection. Nodes that are locked or otherwise non-editable are never
 
 ### selectionIncludingNonEditable
 
-> `get` **selectionIncludingNonEditable**(): readonly [`Node`](Node.md)[]
+• `get` **selectionIncludingNonEditable**(): readonly [`Node`](Node.md)[]
 
 #### Returns
 

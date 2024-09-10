@@ -15,73 +15,73 @@ interacts with other siblings within the same container. See documentation below
 
 ### color
 
-> **color**: `16`
+• **color**: `16`
 
 ---
 
 ### colorBurn
 
-> **colorBurn**: `5`
+• **colorBurn**: `5`
 
 ---
 
 ### colorDodge
 
-> **colorDodge**: `8`
+• **colorDodge**: `8`
 
 ---
 
 ### darken
 
-> **darken**: `4`
+• **darken**: `4`
 
 ---
 
 ### difference
 
-> **difference**: `12`
+• **difference**: `12`
 
 ---
 
 ### exclusion
 
-> **exclusion**: `13`
+• **exclusion**: `13`
 
 ---
 
 ### hardLight
 
-> **hardLight**: `11`
+• **hardLight**: `11`
 
 ---
 
 ### hue
 
-> **hue**: `14`
+• **hue**: `14`
 
 ---
 
 ### lighten
 
-> **lighten**: `6`
+• **lighten**: `6`
 
 ---
 
 ### luminosity
 
-> **luminosity**: `17`
+• **luminosity**: `17`
 
 ---
 
 ### multiply
 
-> **multiply**: `3`
+• **multiply**: `3`
 
 ---
 
 ### normal
 
-> **normal**: `2`
+• **normal**: `2`
 
 The normal, default blend mode for leaf nodes.
 
@@ -91,13 +91,13 @@ Note: Group nodes default to using `passThrough` blend mode instead. See below.
 
 ### overlay
 
-> **overlay**: `9`
+• **overlay**: `9`
 
 ---
 
 ### passThrough
 
-> **passThrough**: `1`
+• **passThrough**: `1`
 
 This blend mode only applies to container nodes with children; for leaf nodes, it is treated the same as `normal`.
 
@@ -112,16 +112,16 @@ Group nodes are set to `passThrough` by default.
 
 ### saturation
 
-> **saturation**: `15`
+• **saturation**: `15`
 
 ---
 
 ### screen
 
-> **screen**: `7`
+• **screen**: `7`
 
 ---
 
 ### softLight
 
-> **softLight**: `10`
+• **softLight**: `10`
