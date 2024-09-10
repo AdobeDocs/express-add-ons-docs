@@ -3,7 +3,7 @@ const glob = require(`glob`)
 const fs = require(`fs-extra`)
 
 const matches = glob.sync(`src/pages/**/*.{png,jpg,jpeg}`)
-const MAX_WIDTH = 1800
+const MAX_WIDTH = 1024
 const QUALITY = 70
 
 Promise.all(
