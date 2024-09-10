@@ -9,4 +9,4 @@ the FillableNode class.
 
 ### fill
 
-▸ **fill**: `undefined` \| [`Fill`](Fill.md)
+• **fill**: `undefined` \| [`Fill`](Fill.md)

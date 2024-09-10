@@ -8,7 +8,7 @@ Represents an RGBA color value.
 
 ### alpha
 
-▸ **alpha**: `number`
+• **alpha**: `number`
 
 The alpha channel in range from 0 - 1.
 
@@ -16,7 +16,7 @@ The alpha channel in range from 0 - 1.
 
 ### blue
 
-▸ **blue**: `number`
+• **blue**: `number`
 
 The blue channel in range from 0 - 1.
 
@@ -24,7 +24,7 @@ The blue channel in range from 0 - 1.
 
 ### green
 
-▸ **green**: `number`
+• **green**: `number`
 
 The green channel in range from 0 - 1.
 
@@ -32,6 +32,6 @@ The green channel in range from 0 - 1.
 
 ### red
 
-▸ **red**: `number`
+• **red**: `number`
 
 The red channel in range from 0 - 1.

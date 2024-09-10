@@ -15,19 +15,19 @@ always have a default/fallback case to handle any unknown values you may encount
 
 ### artboard
 
-▸ **artboard**: `"ab:Artboard"`
+• **artboard**: `"ab:Artboard"`
 
 ---
 
 ### artworkRoot
 
-▸ **artworkRoot**: `"ArtworkRoot"`
+• **artworkRoot**: `"ArtworkRoot"`
 
 ---
 
 ### complexShape
 
-▸ **complexShape**: `"ComplexShape"`
+• **complexShape**: `"ComplexShape"`
 
 Type of ComplexShapeNode, representing a complex prepackaged shape with fill and stroke, that appears as a leaf node in the UI
 
@@ -35,13 +35,13 @@ Type of ComplexShapeNode, representing a complex prepackaged shape with fill and
 
 ### ellipse
 
-▸ **ellipse**: `"Ellipse"`
+• **ellipse**: `"Ellipse"`
 
 ---
 
 ### gridLayout
 
-▸ **gridLayout**: `"GridLayout"`
+• **gridLayout**: `"GridLayout"`
 
 Type of GridLayoutNode represents a grid layout in the scenegraph used to create a layout grid that other content can be placed into
 
@@ -49,13 +49,13 @@ Type of GridLayoutNode represents a grid layout in the scenegraph used to create
 
 ### group
 
-▸ **group**: `"Group"`
+• **group**: `"Group"`
 
 ---
 
 ### imageRectangle
 
-▸ **imageRectangle**: `"ImageRectangle"`
+• **imageRectangle**: `"ImageRectangle"`
 
 Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
@@ -63,19 +63,19 @@ Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
 ### line
 
-▸ **line**: `"Line"`
+• **line**: `"Line"`
 
 ---
 
 ### linkedAsset
 
-▸ **linkedAsset**: `"LinkedAsset"`
+• **linkedAsset**: `"LinkedAsset"`
 
 ---
 
 ### mediaContainer
 
-▸ **mediaContainer**: `"MediaContainer"`
+• **mediaContainer**: `"MediaContainer"`
 
 Type of MediaContainerNode, representing the top-level container of the multi-node construct used to display images or video.
 
@@ -83,7 +83,7 @@ Type of MediaContainerNode, representing the top-level container of the multi-no
 
 ### page
 
-▸ **page**: `"Page"`
+• **page**: `"Page"`
 
 Type of PageNode
 
@@ -91,25 +91,25 @@ Type of PageNode
 
 ### path
 
-▸ **path**: `"Path"`
+• **path**: `"Path"`
 
 ---
 
 ### polygon
 
-▸ **polygon**: `"artgr:Polygon"`
+• **polygon**: `"artgr:Polygon"`
 
 ---
 
 ### rectangle
 
-▸ **rectangle**: `"Rectangle"`
+• **rectangle**: `"Rectangle"`
 
 ---
 
 ### solidColorShape
 
-▸ **solidColorShape**: `"SolidColorShape"`
+• **solidColorShape**: `"SolidColorShape"`
 
 Type of SolidColorShapeNode, representing a solid-color prepackaged shape that appears as a leaf node in the UI
 
@@ -117,7 +117,7 @@ Type of SolidColorShapeNode, representing a solid-color prepackaged shape that a
 
 ### strokeShape
 
-▸ **strokeShape**: `"StrokeShape"`
+• **strokeShape**: `"StrokeShape"`
 
 Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appears as a leaf node in the UI
 
@@ -125,4 +125,4 @@ Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appea
 
 ### text
 
-▸ **text**: `"Text"`
+• **text**: `"Text"`

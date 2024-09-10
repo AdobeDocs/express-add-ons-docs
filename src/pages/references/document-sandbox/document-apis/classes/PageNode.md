@@ -17,7 +17,7 @@ timeline sequence. Those artboards in turn contain all the visual content of the
 
 ### allChildren
 
-▸ `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -35,7 +35,7 @@ to guarantee all their children are full-fledged Node instances.
 
 ### artboards
 
-▸ `get` **artboards**(): [`ArtboardList`](ArtboardList.md)
+• `get` **artboards**(): [`ArtboardList`](ArtboardList.md)
 
 The artboards or "scenes" of a page, ordered by timeline sequence.
 
@@ -47,7 +47,7 @@ The artboards or "scenes" of a page, ordered by timeline sequence.
 
 ### height
 
-▸ `get` **height**(): `number`
+• `get` **height**(): `number`
 
 The height of the node.
 All Artboards within a page share the same dimensions.
@@ -60,7 +60,7 @@ All Artboards within a page share the same dimensions.
 
 ### id
 
-▸ `get` **id**(): `string`
+• `get` **id**(): `string`
 
 A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
 moved to a different part of the document.
@@ -73,15 +73,15 @@ moved to a different part of the document.
 
 ### name
 
-▸ `get` **name**(): `undefined` \| `string`
+• `get` **name**(): `undefined` \| `string`
 
 The page's name. Displayed as a user-editable label above the current artboard in the UI.
 
-▸ `set` **name**(`name`): `void`
+• `set` **name**(`name`): `void`
 
 #### Parameters
 
-▸ **name**: `undefined` \| `string`
+• **name**: `undefined` \| `string`
 
 #### Returns
 
@@ -91,7 +91,7 @@ The page's name. Displayed as a user-editable label above the current artboard i
 
 ### parent
 
-▸ `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
 content.
@@ -108,7 +108,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 ### type
 
-▸ `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
@@ -120,7 +120,7 @@ The node's type.
 
 ### width
 
-▸ `get` **width**(): `number`
+• `get` **width**(): `number`
 
 The width of the node.
 All Artboards within a page share the same dimensions.
@@ -133,7 +133,7 @@ All Artboards within a page share the same dimensions.
 
 ### cloneInPlace()
 
-▸ **cloneInPlace**(): [`PageNode`](PageNode.md)
+• **cloneInPlace**(): [`PageNode`](PageNode.md)
 
 Clones this page, all artboards within it, and all content within those artboards. The cloned page is the same size
 as the original. Adds the new page immediately after this one in the pages list. The first artboard in the cloned
@@ -150,7 +150,7 @@ the cloned page.
 
 ### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.

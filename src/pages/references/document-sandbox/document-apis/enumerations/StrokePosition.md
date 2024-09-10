@@ -12,16 +12,16 @@ A stroke's Stroke.position determines how the thickness of the stroke is aligned
 
 ### center
 
-▸ **center**: `0`
+• **center**: `0`
 
 ---
 
 ### inside
 
-▸ **inside**: `1`
+• **inside**: `1`
 
 ---
 
 ### outside
 
-▸ **outside**: `2`
+• **outside**: `2`

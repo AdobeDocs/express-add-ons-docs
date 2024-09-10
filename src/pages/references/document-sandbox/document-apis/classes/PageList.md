@@ -17,7 +17,7 @@ remove the last remaining page from the list.
 
 ### first
 
-▸ `get` **first**(): `undefined` \| `T`
+• `get` **first**(): `undefined` \| `T`
 
 First item in this list, or undefined if list is empty.
 
@@ -29,7 +29,7 @@ First item in this list, or undefined if list is empty.
 
 ### last
 
-▸ `get` **last**(): `undefined` \| `T`
+• `get` **last**(): `undefined` \| `T`
 
 Last item in this list, or undefined if list is empty.
 
@@ -41,7 +41,7 @@ Last item in this list, or undefined if list is empty.
 
 ### length
 
-▸ `get` **length**(): `number`
+• `get` **length**(): `number`
 
 Number of items in this list.
 
@@ -53,7 +53,7 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-▸ **\[iterator\]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
+• **\[iterator\]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -69,7 +69,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 ### addPage()
 
-▸ **addPage**(`inputGeometry`): [`PageNode`](PageNode.md)
+• **addPage**(`inputGeometry`): [`PageNode`](PageNode.md)
 
 Create a new page containing a single empty artboard, and add it to the end of the list. The artboard is configured
 with the same defaults as in [ArtboardList.addArtboard](ArtboardList.md#addartboard). The page's artboard becomes the default target for
@@ -77,7 +77,7 @@ newly inserted content ([Context.insertionParent](Context.md#insertionparent)) a
 
 #### Parameters
 
-▸ **inputGeometry**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
+• **inputGeometry**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
 
 #### Returns
 
@@ -87,13 +87,13 @@ newly inserted content ([Context.insertionParent](Context.md#insertionparent)) a
 
 ### indexOf()
 
-▸ **indexOf**(`item`): `number`
+• **indexOf**(`item`): `number`
 
 Get index of item in list.
 
 #### Parameters
 
-▸ **item**: [`PageNode`](PageNode.md)
+• **item**: [`PageNode`](PageNode.md)
 
 #### Returns
 
@@ -109,13 +109,13 @@ index number, or -1 if item isn't in this list.
 
 ### item()
 
-▸ **item**(`index`): `undefined` \| [`PageNode`](PageNode.md)
+• **item**(`index`): `undefined` \| [`PageNode`](PageNode.md)
 
 Returns item at the given index, or undefined if index is out of range.
 
 #### Parameters
 
-▸ **index**: `number`
+• **index**: `number`
 
 Zero-based index
 
@@ -131,7 +131,7 @@ Zero-based index
 
 ### moveAfter()
 
-▸ **moveAfter**(`item`, `after`): `void`
+• **moveAfter**(`item`, `after`): `void`
 
 Move `item` so it is immediately after `after` in this list: places `item` at the index one higher than `after`.
 Depending on the position in the list `item` originally occupied, some other items in the list may shift to higher
@@ -139,9 +139,9 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 #### Parameters
 
-▸ **item**: [`PageNode`](PageNode.md)
+• **item**: [`PageNode`](PageNode.md)
 
-▸ **after**: [`PageNode`](PageNode.md)
+• **after**: [`PageNode`](PageNode.md)
 
 #### Returns
 
@@ -159,7 +159,7 @@ An error if either argument is not contained in this list.
 
 ### moveBefore()
 
-▸ **moveBefore**(`item`, `before`): `void`
+• **moveBefore**(`item`, `before`): `void`
 
 Move `item` so it is immediately before `before` in this list: places `item` at the index that `before` used
 to occupy. Depending on the position in the list `item` originally occupied, some other items in the list may
@@ -167,9 +167,9 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 #### Parameters
 
-▸ **item**: [`PageNode`](PageNode.md)
+• **item**: [`PageNode`](PageNode.md)
 
-▸ **before**: [`PageNode`](PageNode.md)
+• **before**: [`PageNode`](PageNode.md)
 
 #### Returns
 
@@ -187,13 +187,13 @@ An error if either argument is not contained in this list.
 
 ### remove()
 
-▸ **remove**(...`items`): `void`
+• **remove**(...`items`): `void`
 
 Remove the items from the list. The items need not be contiguous.
 
 #### Parameters
 
-▸ ...**items**: [`PageNode`](PageNode.md)[]
+• ...**items**: [`PageNode`](PageNode.md)[]
 
 #### Returns
 
@@ -211,7 +211,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ### toArray()
 
-▸ **toArray**(): readonly [`PageNode`](PageNode.md)[]
+• **toArray**(): readonly [`PageNode`](PageNode.md)[]
 
 All items in the list, as a static array. Mutations that occur later are not reflected in an array returned earlier.
 

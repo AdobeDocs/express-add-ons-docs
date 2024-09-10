@@ -17,7 +17,7 @@ properties.
 
 ### allChildren
 
-▸ `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -35,7 +35,7 @@ to guarantee all their children are full-fledged Node instances.
 
 ### id
 
-▸ `get` **id**(): `string`
+• `get` **id**(): `string`
 
 A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
 moved to a different part of the document.
@@ -48,7 +48,7 @@ moved to a different part of the document.
 
 ### parent
 
-▸ `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
 
 The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
 content.
@@ -65,7 +65,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 ### type
 
-▸ `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
@@ -77,7 +77,7 @@ The node's type.
 
 ### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.

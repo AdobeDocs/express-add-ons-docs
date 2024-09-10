@@ -9,7 +9,7 @@ to display it in the document by creating a MediaContainerNode structure.
 
 ### height
 
-▸ `readonly` **height**: `number`
+• `readonly` **height**: `number`
 
 Original height of the bitmap in pixels.
 
@@ -17,6 +17,6 @@ Original height of the bitmap in pixels.
 
 ### width
 
-▸ `readonly` **width**: `number`
+• `readonly` **width**: `number`
 
 Original width of the bitmap in pixels.
