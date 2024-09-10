@@ -35,17 +35,30 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 ### Getting Started Steps
 
 1. **Enable Add-On Development Mode:** Go to your settings and enable add-on development mode (if it isn’t already enabled). <br /><br />
+
+<br /><br />
+
   ![Adobe Express Settings](./img/settings_alt.png)
+
+<br /><br />
+
 2. **Open a Document in Express:** Start by opening any document in Adobe Express.
 1. **Navigate to the Add-ons Section:** Click on the "Add-Ons" section located on the left side rail.
 1. **Select "Your Add-Ons" Tab:** In the Add-ons panel, select the "Your Add-ons" tab.
 <br/><br/>
+
   ![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
+
 <br /><br />
+
 5. **Access the Playground:** At the bottom of the add-ons rail, you’ll see the option to open the Code Playground. Click to get started!
+
 <br /><br />
+
   ![Adobe Express Code Playground](./img/playground.png)
+
 <br /><br />
+
 ## Where to Go Next / Get Started and Explore More
 
 - **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](../develop/use_cases.md) to kickstart your development.
@@ -55,6 +68,8 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
   - [Document Sandbox](../../references/document-sandbox/document-apis/concepts/index.md)
   - [Manifest File](../../references/manifest/index.md)
 - **Explore API References:** Discover all available APIs and their capabilities in the [SDK Reference](../../references/index.md).
+- **[Ask Questions](https://developer.adobe.com/express/community/):** Join us for Office Hours or chat with the team on Discord.
+
 
 ## FAQs
 
@@ -73,3 +88,7 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 ### How do I start creating add-ons?
 
  Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
+
+ ### How do I start creating add-ons?
+
+[Join our Discord](http://discord.gg/nc3QDyFeb4) to chat with the add-on developer community.
