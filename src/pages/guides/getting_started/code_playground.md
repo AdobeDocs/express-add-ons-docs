@@ -26,7 +26,7 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 ## Introduction
 Check out the video below for a quick introduction to the add-on playground.
 
-<div style="display: flex; justify-content: center;">
+<br/><br/><div style="display: flex; justify-content: center;">
  <iframe width="560" height="315" src="https://www.youtube.com/embed/v-6II0CcNx0?si=j5jf7FQNIKg_-LWl" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div><br/>
 
@@ -68,6 +68,7 @@ At the bottom of the add-ons rail, you'll see the option to open the Code Playgr
   - [Document Sandbox](../../references/document-sandbox/document-apis/concepts/index.md)
   - [Manifest File](../../references/manifest/index.md)
 - **Explore API References:** Discover all available APIs and their capabilities in the [SDK Reference](../../references/index.md).
+- **[Ask Questions](https://developer.adobe.com/express/community/):** Join us for Office Hours or chat with the team on Discord.
 
 ## FAQs
 
@@ -86,3 +87,7 @@ At the bottom of the add-ons rail, you'll see the option to open the Code Playgr
 ### How do I start creating add-ons?
 
  Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
+
+ ### Where can I go for help?
+
+[Join our Discord](http://discord.gg/nc3QDyFeb4) to chat with the add-on developer community.
