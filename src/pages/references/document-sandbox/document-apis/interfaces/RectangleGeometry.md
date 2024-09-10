@@ -8,7 +8,7 @@
 
 • **height**: `number`
 
-___
+---
 
 ### width
 

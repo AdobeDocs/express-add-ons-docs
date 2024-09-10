@@ -7,17 +7,11 @@ most fundamental nonvisual properties that even nodes near the top of the docume
 The more tangible visual content typically extends the richer Node class which extends BaseNode with additional
 properties.
 
-## Hierarchy
+## Extended by
 
-- `ProxyLiveObject`
-
-  ↳ **`BaseNode`**
-
-  ↳↳ [`ExpressRootNode`](ExpressRootNode.md)
-
-  ↳↳ [`PageNode`](PageNode.md)
-
-  ↳↳ [`VisualNode`](VisualNode.md)
+-   [`ExpressRootNode`](ExpressRootNode.md)
+-   [`PageNode`](PageNode.md)
+-   [`VisualNode`](VisualNode.md)
 
 ## Accessors
 
@@ -26,8 +20,8 @@ properties.
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
 overall display z-order.
 
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
@@ -37,7 +31,7 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
-___
+---
 
 ### id
 
@@ -50,7 +44,7 @@ moved to a different part of the document.
 
 `string`
 
-___
+---
 
 ### parent
 
@@ -67,23 +61,23 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
-___
+---
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enums/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 ## Methods
 
-### removeFromParent
+### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.

@@ -3,22 +3,15 @@
 # Interface: ContainerNode
 
 Interface for any node that contains an entirely generic collection of children. Some ContainerNode classes may host
-*additional* children in other specific "slots," such as background or mask layers; and non-ContainerNode classes may
-also hold children in specified "slots." Use [allChildren](../classes/Node.md#allchildren) for read access to children regardless of node type.
+_additional_ children in other specific "slots," such as background or mask layers; and non-ContainerNode classes may
+also hold children in specified "slots." Use [Node.allChildren](../classes/Node.md#allchildren) for read access to children regardless of node type.
 
 Some ContainerNode classes may be full-fledged Node subclasses (such as Group), while others may be a subclass of the
 more minimal VisualNode (such as Artboard).
 
-## Hierarchy
+## Extends
 
-- [`VisualNode`](../classes/VisualNode.md)
-
-  ↳ **`ContainerNode`**
-
-## Implemented by
-
-- [`ArtboardNode`](../classes/ArtboardNode.md)
-- [`GroupNode`](../classes/GroupNode.md)
+-   [`VisualNode`](../classes/VisualNode.md)
 
 ## Accessors
 
@@ -27,8 +20,8 @@ more minimal VisualNode (such as Artboard).
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](../classes/BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
+GroupNode also provide a mutable [ContainerNode.children](ContainerNode.md#children) list. Other nodes with a more specific structure can
+hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
 overall display z-order.
 
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
@@ -38,11 +31,7 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly`<`Iterable`<[`BaseNode`](../classes/BaseNode.md)\>\>
 
-#### Inherited from
-
-VisualNode.allChildren
-
-___
+---
 
 ### boundsLocal
 
@@ -53,17 +42,13 @@ relative to its parent). Generally matches the selection outline seen in the UI,
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
 `Readonly`<`Rect`\>
 
-#### Inherited from
-
-VisualNode.boundsLocal
-
-___
+---
 
 ### centerPointLocal
 
@@ -76,11 +61,7 @@ box.
 
 `Readonly`<[`Point`](Point.md)\>
 
-#### Inherited from
-
-VisualNode.centerPointLocal
-
-___
+---
 
 ### children
 
@@ -92,7 +73,7 @@ The node's children. Use the methods on this ItemList object to get, add, and re
 
 [`ItemList`](../classes/ItemList.md)<[`Node`](../classes/Node.md)\>
 
-___
+---
 
 ### id
 
@@ -105,11 +86,7 @@ moved to a different part of the document.
 
 `string`
 
-#### Inherited from
-
-VisualNode.id
-
-___
+---
 
 ### parent
 
@@ -126,11 +103,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](../classes/BaseNode.md)
 
-#### Inherited from
-
-VisualNode.parent
-
-___
+---
 
 ### topLeftLocal
 
@@ -144,27 +117,19 @@ boundsInParent.
 
 `Readonly`<[`Point`](Point.md)\>
 
-#### Inherited from
-
-VisualNode.topLeftLocal
-
-___
+---
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enums/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/SceneNodeType.md)
 
-#### Inherited from
-
-VisualNode.type
-
-___
+---
 
 ### visualRoot
 
@@ -181,26 +146,21 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](../classes/VisualNode.md)
 
-#### Inherited from
-
-VisualNode.visualRoot
-
 ## Methods
 
-### localPointInNode
+### localPointInNode()
 
-▸ **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](Point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](Point.md)\>
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](ContainerNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](../classes/VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localPoint` | [`Point`](Point.md) |
-| `targetNode` | [`VisualNode`](../classes/VisualNode.md) |
+• **localPoint**: [`Point`](Point.md)
+
+• **targetNode**: [`VisualNode`](../classes/VisualNode.md)
 
 #### Returns
 
@@ -208,13 +168,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[VisualNode](../classes/VisualNode.md).[localPointInNode](../classes/VisualNode.md#localpointinnode)
+[`VisualNode`](../classes/VisualNode.md).[`localPointInNode`](../classes/VisualNode.md#localpointinnode)
 
-___
+---
 
-### removeFromParent
+### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.
@@ -229,4 +189,4 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[VisualNode](../classes/VisualNode.md).[removeFromParent](../classes/VisualNode.md#removefromparent)
+[`VisualNode`](../classes/VisualNode.md).[`removeFromParent`](../classes/VisualNode.md#removefromparent)
