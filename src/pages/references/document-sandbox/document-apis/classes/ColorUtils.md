@@ -8,14 +8,14 @@ Utility methods for working with color values.
 
 ### fromHex()
 
-• **fromHex**(`hex`): [`Color`](../interfaces/Color.md)
+▸ **fromHex**(`hex`): [`Color`](../interfaces/Color.md)
 
 Create a new color from its equivalent RGBA hex representation. Can specify in 6 digits (RRGGBB) or 8 digits
 (RRGGBBAA), uppercase or lowercase, with or without leading "#". Alpha defaults to FF (100% opaque) if ommitted.
 
 #### Parameters
 
-• **hex**: `string`
+▸ **hex**: `string`
 
 The color represented as a hexadecimal string.
 
@@ -35,25 +35,25 @@ if the hex string cannot be parsed.
 
 #### fromRGB(red, green, blue, alpha)
 
-• **fromRGB**(`red`, `green`, `blue`, `alpha`?): [`Color`](../interfaces/Color.md)
+▸ **fromRGB**(`red`, `green`, `blue`, `alpha`?): [`Color`](../interfaces/Color.md)
 
 Create a new color object with the given RGBA values.
 
 ##### Parameters
 
-• **red**: `number`
+▸ **red**: `number`
 
 The red channel, from 0 - 1.
 
-• **green**: `number`
+▸ **green**: `number`
 
 The green channel, from 0 - 1.
 
-• **blue**: `number`
+▸ **blue**: `number`
 
 The blue channel, from 0 - 1.
 
-• **alpha?**: `number`
+▸ **alpha?**: `number`
 
 Optional alpha channel, from 0 - 1. Defaults to 1 (opaque).
 
@@ -65,23 +65,23 @@ A new color object.
 
 #### fromRGB(color)
 
-• **fromRGB**(`color`): [`Color`](../interfaces/Color.md)
+▸ **fromRGB**(`color`): [`Color`](../interfaces/Color.md)
 
 Create a new color object given a partial color object where the alpha field may be missing.
 
 ##### Parameters
 
-• **color**
+▸ **color**
 
 Partial color object. Alpha defaults to 1 (opaque).
 
-• **color.alpha?**: `number`
+▸ **color.alpha?**: `number`
 
-• **color.blue**: `number`
+▸ **color.blue**: `number`
 
-• **color.green**: `number`
+▸ **color.green**: `number`
 
-• **color.red**: `number`
+▸ **color.red**: `number`
 
 ##### Returns
 
@@ -93,13 +93,13 @@ A new color object with all fields present.
 
 ### toHex()
 
-• **toHex**(`color`): `string`
+▸ **toHex**(`color`): `string`
 
 Get the color in 8-digit hex "#RRGGBBAA" format.
 
 #### Parameters
 
-• **color**: [`Color`](../interfaces/Color.md)
+▸ **color**: [`Color`](../interfaces/Color.md)
 
 #### Returns
 

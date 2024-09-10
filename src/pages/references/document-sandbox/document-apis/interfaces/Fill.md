@@ -14,6 +14,6 @@ other fill types when reading scenegraph content.
 
 ### type
 
-• `readonly` **type**: [`color`](../enumerations/FillType.md#color)
+▸ `readonly` **type**: [`color`](../enumerations/FillType.md#color)
 
 The fill type.

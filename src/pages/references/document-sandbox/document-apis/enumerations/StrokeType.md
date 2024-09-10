@@ -15,6 +15,6 @@ always have a default/fallback case to handle any unknown values you may encount
 
 ### color
 
-• **color**: `"Color"`
+▸ **color**: `"Color"`
 
 A solid-color stroke, with optional dashes.

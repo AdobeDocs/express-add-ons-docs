@@ -15,7 +15,7 @@ your code in case any other required fields are added to the Stroke descriptor i
 
 ### color
 
-• **color**: [`Color`](Color.md)
+▸ **color**: [`Color`](Color.md)
 
 The color of a stroke.
 
@@ -23,7 +23,7 @@ The color of a stroke.
 
 ### dashOffset
 
-• **dashOffset**: `number`
+▸ **dashOffset**: `number`
 
 Number of pixels the beginning of dash pattern should be offset along the stroke.
 
@@ -31,7 +31,7 @@ Number of pixels the beginning of dash pattern should be offset along the stroke
 
 ### dashPattern
 
-• **dashPattern**: `number`[]
+▸ **dashPattern**: `number`[]
 
 If empty, this is a solid stroke.
 If non-empty, the values alternate between length of a rendered and blank segment,
@@ -42,7 +42,7 @@ Array must be of even length. Values cannot be negative.
 
 ### position
 
-• **position**: [`StrokePosition`](../enumerations/StrokePosition.md)
+▸ **position**: [`StrokePosition`](../enumerations/StrokePosition.md)
 
 The position of the stroke relative to the outline of the shape.
 
@@ -50,7 +50,7 @@ The position of the stroke relative to the outline of the shape.
 
 ### type
 
-• `readonly` **type**: [`color`](../enumerations/StrokeType.md#color)
+▸ `readonly` **type**: [`color`](../enumerations/StrokeType.md#color)
 
 The stroke type.
 
@@ -62,6 +62,6 @@ The stroke type.
 
 ### width
 
-• **width**: `number`
+▸ **width**: `number`
 
 The thickness of a stroke. Must be from MIN_STROKE_WIDTH to MAX_STROKE_WIDTH.
