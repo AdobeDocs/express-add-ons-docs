@@ -20,7 +20,7 @@ This section outlines the steps that should be taken to format the generated Doc
     ---
     ```
 
-3. The API signatures generated in `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is indented. In these directories, find and replace all occurrences of `newline + > + space` with `newline + • + space`, ensuring no code example or closing tag is replaced.
+3. The API signatures generated in `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is indented. In these directories, find and replace all occurrences of `newline + > + space` with `newline + ▸ + space`, ensuring no code example or closing tag is replaced.
 
 4. Find and replace all \`mat2d\` --> \[\`mat2d\`\]\(https://glmatrix.net/docs/module-mat2d.html\)
 
