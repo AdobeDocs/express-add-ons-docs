@@ -17,6 +17,7 @@ description: How to access the Code Playground
 contributors:
   - https://github.com/ErinFinnegan
   - https://github.com/padmkris123
+  - https://github.com/undavide
 ---
 
 # Code Playground
@@ -28,7 +29,7 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 Check out the video below for a quick introduction to the add-on playground.
 
 <br/><br/><div style="display: flex; justify-content: center;">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/v-6II0CcNx0?si=j5jf7FQNIKg_-LWl" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div><br/>
 
 ## Features
