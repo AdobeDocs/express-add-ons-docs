@@ -201,9 +201,19 @@ async function addImageFromURL(url) {
 }
 ```
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="header, text1, text2, text3, text4" variant="info"/>
 
-The supported file types for imported content are currently **`png/jpg/jpeg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**.
+Supported file types:
+
+The supported file types for imported content are currently **`gif/png/jpg/jpeg/mp4`**. The size of the imported images for all types except gif images, should not exceed **8000px** or **40MB**. 
+
+For **gif** images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html), but summarized below for reference as well:
+
+  **Maximum resolution:** 512px
+  **Maximum size:** 10 MB
+  **Maximum GIFs per scene:** 7
+
+In the event that it doesn't fit the criteria, only the first frame will be added.
 
 ### addVideo()
 

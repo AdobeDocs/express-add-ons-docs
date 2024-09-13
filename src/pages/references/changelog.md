@@ -21,6 +21,10 @@ contributors:
 
 # Changelog
 
+## 2024-09-16
+
+- Adds notes about support for **gif images** when [importing](./addonsdk//app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument), their technical requirements, and associated handling for each scenario. This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) and notes added to the associated use cases.
+
 ## 2024-09-10
 
 -   Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.

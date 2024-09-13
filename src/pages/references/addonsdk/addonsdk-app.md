@@ -310,6 +310,10 @@ addOnUISdk.ready.then(() => {
 
 Allows for drag and document functionality to be enabled on an element such as an image, video or audio.
 
+<InlineAlert slots="text" variant="info"/>
+
+**IMPORTANT:** If the content being dragged is an animated GIF, it will be added as an animated GIF to the document, as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it doesn't fit the size criteria, an error toast will be shown to the user.
+
 #### Signature
 
 `enableDragToDocument(element: HTMLElement, dragCallbacks: DragCallbacks): [DisableDragToDocument]()`
