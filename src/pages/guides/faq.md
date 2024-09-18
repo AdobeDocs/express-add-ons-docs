@@ -151,15 +151,15 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### Are animated GIF's supported when importing or dragging content to the document?
 
-  Yes, however, there are [technical requirements](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and certain handling for each scenario.  The gif requirements are summarized below for reference, and the handling that will take place when importing vs drag and drop follow:
+  Yes, however, there are [technical requirements](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and certain handling for each scenario.  The requirements are summarized below for reference, and the handling that will take place when importing vs drag and drop follow:
 
-  **Maximum resolution:** 512px
-  **Maximum size:** 10 MB
-  **Maximum GIFs per scene:** 7
+  - **Maximum resolution:** 512px
+  - **Maximum size:** 10 MB
+  - **Maximum GIFs per scene:** 7
   
-  - **importing gifs:** If the content being imported is an animated GIF, it will be added as an animated GIF to the document, as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that the gif doesn't fit the criteria, only the first frame will be added.
+**Importing gifs:** You should use the [`addAnimatedImage()`](../references/addonsdk/app-document.md#addanimatedimage) method when you want to import an animated GIF by default. It will be added as an animated GIF to the document as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it does not fit the criteria, only the first frame will be added. **Note:** Though [`addImage()`](../references/addonsdk/app-document.md#addaudio) supports the `gif` file type, if an animated GIF is passed in, only the first frame will be added.
   
-  - **drag and drop:** If the content being dragged is an animated GIF, it will be added as an animated GIF to the document, as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it doesn't fit the size criteria, an error toast will be shown to the user.
+**Drag and drop:** If the content being dragged is an animated GIF, it will be added as an animated GIF to the document, as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it doesn't fit the size criteria, an error toast will be shown to the user.
 
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
 

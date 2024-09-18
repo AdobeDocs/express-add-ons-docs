@@ -147,13 +147,13 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 | Name          | Type         | Description   |
 | ------------- | -------------| -----------:  |
 | `range`          | `string`     | Range of the document to get the metadata |
-| `pageIds?: string[]` | `string`     | Ids of the pages (Only required when the range is `specificPages`) |
+| `pageIds?: string[]` | `string` | Ids of the pages (Only required when the range is `specificPages`) |
 
 ## Import Content Methods
 
 ### addImage()
 
-Adds an image (including gif/Ps/Ai files) to the current page.
+Adds an image/gif/Ps/Ai files to the current page.
 
 #### Signature
 
@@ -164,13 +164,7 @@ Adds an image (including gif/Ps/Ai files) to the current page.
 | Name          | Type         | Description                   |
 | ------------- | -------------| ----------------------------: |
 | `imageBlob`   | `Blob`       | The image to add to the page. |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding Ps/Ai filse to the page (i.e., `title`). |
-
-#### `MediaAttributes`
-
-| Name    | Type     |                               Description |
-| ------- | -------- | ----------------------------------------: |
-| `title` | `string` | Media title (mandatory for audio import). |
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -201,19 +195,46 @@ async function addImageFromURL(url) {
 }
 ```
 
-<InlineAlert slots="header, text1, text2, text3, text4" variant="info"/>
+<InlineAlert slots="text" variant="info"/>
 
-Supported file types:
+Refer to the [image requirements](#image-requirements) section for specific details on supported image sizes and GIF handling.
 
-The supported file types for imported content are currently **`gif/png/jpg/jpeg/mp4`**. The size of the imported images for all types except gif images, should not exceed **8000px** or **40MB**. 
+### addAnimatedImage()
 
-For **gif** images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html), but summarized below for reference as well:
+Adds an animated image (gif) to the current page.
 
-  **Maximum resolution:** 512px
-  **Maximum size:** 10 MB
-  **Maximum GIFs per scene:** 7
+#### Signature
 
-In the event that it doesn't fit the criteria, only the first frame will be added.
+`addAnimatedImage(imageBlob: Blob, attributes?: MediaAttributes): Promise<void>`
+
+#### Parameters
+
+| Name          | Type         | Description                   |
+| ------------- | -------------| ----------------------------: |
+| `imageBlob`   | `Blob`       | The image to add to the page. |
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
+
+#### Return Value
+
+A resolved promise if the animated image was successfully added to the canvas; otherwise, it will throw an error with the rejected promise.
+
+#### Example Usage
+
+```js
+// Add animated image(blob) to the current page
+async function addAnimatedImageFromBlob(blob) {
+  try {
+      await document.addAnimatedImage(blob);
+  }
+  catch(error) {
+      console.log("Failed to add the animated image to the page.");
+  }
+}
+```
+
+<InlineAlert slots="text" variant="info"/>
+
+Refer to the [image requirements](#image-requirements) section for specific details on supported image sizes and GIF handling.
 
 ### addVideo()
 
@@ -267,12 +288,6 @@ Adds audio to the current page.
 | `audioBlob`   | `Blob`       | The audio to add to the page.       |
 | `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
-#### `MediaAttributes`
-
-| Name          | Type         | Description                               |
-| ------------- | -------------| ----------------------------------------: |
-| `title`       | `string`     | Media title (mandatory for audio import). |
-
 #### Return Value
 
 A resolved promise if the audio was successfully added to the canvas; otherwise will throw an error with the rejected promise.
@@ -299,9 +314,35 @@ async function addAudioFromURL(url) {
   }
 ```
 
+#### `MediaAttributes`
+
+| Name          | Type         | Description                               |
+| ------------- | -------------| ----------------------------------------: |
+| `title`       | `string`     | Media title (mandatory for audio import). |
+
 <InlineAlert slots="text" variant="info"/>
 
 Refer to the [importing content use case](../../guides/develop/use_cases/content_management.md#importing-content) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
+
+### Image requirements
+
+The size of the imported images for all types **except `gif`** images should not exceed **8000px** or **40MB**.
+
+For `gif` images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and summarized below for quick reference:
+
+- **Maximum resolution:** 512px
+- **Maximum size:** 10 MB
+- **Maximum GIFs per scene:** 7
+
+<InlineAlert slots="header, text1, text2" variant="info"/>
+
+IMPORTANT: Animated GIFs
+
+Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an *animated GIF* specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
+
+If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
+
+** See the [FAQ's](../../guides/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
 
 ### Errors
 
@@ -527,6 +568,9 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 | ------------- | -------------| -----------:  |
 | `title`       | `string`     | The page title of the rendition |
 | `metadata`    | [`PageMetadata`](#pagemetadata) | Page metadata |
+
+
+** See the [FAQs](../../guides/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
 
 <InlineAlert slots="text" variant="info"/>
 

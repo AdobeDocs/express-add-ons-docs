@@ -21,9 +21,10 @@ contributors:
 
 # Changelog
 
-## 2024-09-16
+## 2024-09-18
 
-- Adds notes about support for **gif images** when [importing](./addonsdk//app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument), their technical requirements, and associated handling for each scenario. This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) and notes added to the associated use cases.
+-   Adds a new [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](./addonsdk/app-document.md#image-requirements)).
+-   Adds notes about specific support and handling for animated GIF images when [importing](./addonsdk/app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
 
 ## 2024-09-10
 
