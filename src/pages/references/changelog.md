@@ -26,6 +26,10 @@ contributors:
 -   Adds a new [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](./addonsdk/app-document.md#image-requirements)).
 -   Adds notes about specific support and handling for animated GIF images when [importing](./addonsdk/app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `addAnimatedImage()` method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
 ## 2024-09-10
 
 -   Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
