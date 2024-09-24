@@ -10,7 +10,7 @@ This section outlines the steps that should be taken to format the generated Doc
 
 **Recommended pre-req:** Install [this extension](https://marketplace.visualstudio.com/items?itemName=jakearl.search-editor-apply-changes) in VS Code to make it easier to apply transformations across many files.
 
-1. **Search** and **Replace** again across files to change the auto-generated HLAPI docs headings from `@express-document-sdk` –> to `@express-document-sdk`.
+1. **Search** and **Replace** again across files to change the auto-generated HLAPI docs headings from `@hz/add-on-hz-hlapi-sdk` –> to `@express-document-sdk`.
 
 2. The heading in the generated `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is not required. So, find and remove all occurrences of:
 
