@@ -27,6 +27,7 @@ contributors:
 -   Adds a new [`importPdf()`](./addonsdk/app-document.md#importpdf) method which can be used to add a PDF to the document.
 -   Adds a new [`importPresentation()`](./addonsdk/app-document.md#importpresentation) method which can be used to add a PowerPoint presentation to the document.
 -   Adds notes about specific support and handling for animated GIF images when [importing](./addonsdk/app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
+-   Adds all of the new methods mentioned above to the [content management](../guides/develop/use_cases/content_management.md) use case page with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
 

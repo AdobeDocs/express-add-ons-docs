@@ -385,7 +385,7 @@ async function importPdfFrom(url) {
 
 ### importPresentation()
 
-Imports a presentation (only `.pptx` supported currently) to the document.
+Imports a presentation to the document. **Note:** Currently Express only supports PowerPoint presentations (`.pptx`).
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -422,7 +422,7 @@ function importPresentation(blob, mediaAttributes) {
     document.importPresentation(blob, mediaAttributes);
   }
   catch(error) {
-    console.log("Failed to import pdf to the page.");
+    console.log("Failed to import presentation to the page.");
   }
 }
  
@@ -433,14 +433,14 @@ async function importPresentationFrom(url) {
     document.importPresentation(blob, {title: "Sample.pptx"});
   }
   catch(error) {
-    console.log("Failed to import presentation to document.");
+    console.log("Failed to import presentation to the document.");
   }
 }
 ```
 
 ### Image requirements
 
-The size of the imported images for all types **except `gif`** images should not exceed **8000px** or **40MB**.
+When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **40MB**.
 
 For `gif` images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and summarized below for quick reference:
 
