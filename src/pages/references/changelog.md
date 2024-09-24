@@ -24,11 +24,13 @@ contributors:
 ## 2024-09-24
 
 -   Adds a new [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](./addonsdk/app-document.md#image-requirements)).
+-   Adds a new [`importPdf()`](./addonsdk/app-document.md#importpdf) method which can be used to add a PDF to the document.
+-   Adds a new [`importPresentation()`](./addonsdk/app-document.md#importpresentation) method which can be used to add a PowerPoint presentation to the document.
 -   Adds notes about specific support and handling for animated GIF images when [importing](./addonsdk/app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage), [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ## 2024-09-10
 

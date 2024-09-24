@@ -328,6 +328,116 @@ async function addAudioFromURL(url) {
 
 Refer to the [importing content use case](../../guides/develop/use_cases/content_management.md#importing-content) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
+### importPdf()
+
+Adds a PDF to the current page.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`importPdf(blob: Blob, attributes: MediaAttributes): void;`
+
+#### Parameters
+
+| Name          | Type         | Description                   |
+| ------------- | -------------| ----------------------------: |
+| `blob`        | `Blob`       | The PDF to add to the page. |
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+
+#### Return Value
+
+None
+
+#### Example Usage
+
+```js
+import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+  
+// Reference to the active document
+const {document} = AddOnSDKAPI.app;
+ 
+const mediaAttributes = {title: "Sample.pdf"}
+ 
+// Import Pdf to document
+function importPdf(blob, mediaAttributes) {
+  try {
+    document.importPdf(blob, mediaAttributes);
+  }
+  catch(error) {
+    console.log("Failed to import pdf to the page.");
+  }
+}
+ 
+// Add pdf(url) to the current page
+async function importPdfFrom(url) {
+  try {
+    const blob = await fetch(url).then(response => response.blob());
+    document.importPdf(blob, {title: "Sample.pdf"});
+  }
+  catch(error) {
+    console.log("Failed to import pdf to document.");
+  }
+}
+```
+
+### importPresentation()
+
+Imports a presentation (only `.pptx` supported currently) to the document.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`importPresentation(blob: Blob, attributes: MediaAttributes): void;`
+
+#### Parameters
+
+| Name          | Type         | Description                   |
+| ------------- | -------------| ----------------------------: |
+| `blob`        | `Blob`       | The PowerPoint presentation (`.pptx`) to add to the page. |
+| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding a presentation to the page (i.e., `title`). |
+
+#### Return Value
+
+None
+
+#### Example Usage
+
+```js
+import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+  
+// Reference to the active document
+const {document} = AddOnSDKAPI.app;
+ 
+const mediaAttributes = {title: "Sample.pptx"} // only Pptx is supported by Express
+ 
+// Import presentation to document
+function importPresentation(blob, mediaAttributes) {
+  try {
+    document.importPresentation(blob, mediaAttributes);
+  }
+  catch(error) {
+    console.log("Failed to import pdf to the page.");
+  }
+}
+ 
+// Add presentation(url) to the current page
+async function importPresentationFrom(url) {
+  try {
+    const blob = await fetch(url).then(response => response.blob());
+    document.importPresentation(blob, {title: "Sample.pptx"});
+  }
+  catch(error) {
+    console.log("Failed to import presentation to document.");
+  }
+}
+```
+
 ### Image requirements
 
 The size of the imported images for all types **except `gif`** images should not exceed **8000px** or **40MB**.
