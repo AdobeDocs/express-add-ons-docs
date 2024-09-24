@@ -683,7 +683,6 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 | `title`       | `string`     | The page title of the rendition |
 | `metadata`    | [`PageMetadata`](#pagemetadata) | Page metadata |
 
-
 ** See the [FAQs](../../guides/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
 
 <InlineAlert slots="text" variant="info"/>
