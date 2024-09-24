@@ -45,7 +45,7 @@ contributors:
 
 ## 2024-05-28
 
--   Added a new _experimental_ [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) API to programmatically open and interact with the Editor panel. This method of the `addOnUISdk.app.ui` allows navigation to specific tabs and collections, as well as performing content searches. The [Constants](../references/addonsdk/addonsdk-constants.md) page has been updated accordingly.
+-   Added a new *experimental* [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) API to programmatically open and interact with the Editor panel. This method of the `addOnUISdk.app.ui` allows navigation to specific tabs and collections, as well as performing content searches. The [Constants](../references/addonsdk/addonsdk-constants.md) page has been updated accordingly.
 -   Added a new [`Cross-Origin-Embedder-Policy`](../guides/faq.md#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues) FAQ.
 
 ## 2024-05-21
@@ -90,7 +90,7 @@ contributors:
 
 ## 2024-02-21
 
--   New support for [monetization details](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) has been added to the public distribution flow and allows you to [provide details around monetization options](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include _free_, _one-time payment_, _recurring subscription_, _micro-transactions_, and _other_.
+-   New support for [monetization details](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) has been added to the public distribution flow and allows you to [provide details around monetization options](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include *free*, *one-time payment*, *recurring subscription*, *micro-transactions*, and *other*.
 
     In addition, the [monetization guidelines](../guides/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
@@ -123,7 +123,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The above new APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The above new APIs are currently **experimental only** and should not be used in any add-ons you will be distributing until declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Additional Updates
 
@@ -186,7 +186,7 @@ Some items in the following list of changes may have been mentioned in recent up
     -   `toHex` converts a color object to a Hex string -- e.g., `colorUtils.toHex(aColor)`.
 
 -   `allChildren` returns an `iterator`, not an `Array`. However if you want to use array methods (ie: `Array#map`), you can use `Array.from` to convert it to an array.
--   Strokes and fills will no longer _move_ if you add an existing `stroke`/`fill` to another shape (previously the original shape would lose the corresponding `stroke` or `fill`). For example:
+-   Strokes and fills will no longer *move* if you add an existing `stroke`/`fill` to another shape (previously the original shape would lose the corresponding `stroke` or `fill`). For example:
 
     ```js
     // Old way
@@ -293,7 +293,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Additional Updates
 
--   A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](../references/addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+-   A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](../references/addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **experimental only** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 -   The [`createRenditions()` export API](../references/addonsdk/app-document.md#createrenditions) was updated with the following changes:
     -   You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](../references/addonsdk/addonsdk-constants.md) constant value.
     -   The returned type now also includes page metadata (see [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/develop/use_cases/content_authoring.md#retrieving-page-metadata).
@@ -571,7 +571,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
     `import AddOnScriptSdk from "AddOnScriptSdk";`
 
-    Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, _however_, it will require you to update any existing usage of these APIs in progress**.
+    Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, *however*, it will require you to update any existing usage of these APIs in progress**.
 
 </del>
 
@@ -617,11 +617,11 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Bugs and Fixes
 
--   There's currently a bug where `addArtboard` could crash the application or corrupt the document if there's no `fill` specified on the artboard. _Please ensure you always add a fill in the same frame as the artboard creation until this issue is resolved_. Also note, when this bug is fixed, the `ArtboardNode` will accept a single `fill` object, rather than an `ItemList` of `fill`(s).
+-   There's currently a bug where `addArtboard` could crash the application or corrupt the document if there's no `fill` specified on the artboard. *Please ensure you always add a fill in the same frame as the artboard creation until this issue is resolved*. Also note, when this bug is fixed, the `ArtboardNode` will accept a single `fill` object, rather than an `ItemList` of `fill`(s).
 
 -   Currently, in the `addPage` API, a new page is created, but the selected context is not changed to the newly added `artboard`. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will change the default context to the `artboard` child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.
 
-    **IMPORTANT:** We recommend that you **_only test the use of these experimental Editor APIs against non-essential documents_**, due to the potential for loss or corruption.
+    **IMPORTANT:** We recommend that you ***only test the use of these experimental Editor APIs against non-essential documents***, due to the potential for loss or corruption.
 
 ### Updates
 
@@ -656,7 +656,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
     -   Setting rotation on an empty group is ignored. Always add content (children) to a group first, and then set its rotation.
     -   When removing elements from a parent element, the element may continue to show in the Adobe Express layer stack. This will be addressed in the future. This can also occur if you call `clear()` to remove all children from an element as well as when using `removeFromParent()`.
     -   Shape elements added to the document by users (via the Media tab) do not support fill or stroke properties at this time. Furthermore, you should generally avoid making changes to these shapes (they'll appear as group nodes), as this could corrupt the document. We'll add protections around this in an upcoming release.
-    -   While the API supports adding multiple strokes to elements, Express currently only supports editing the _first_ stroke added. If you want to change the stroke of an element, _remove_ the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
+    -   While the API supports adding multiple strokes to elements, Express currently only supports editing the *first* stroke added. If you want to change the stroke of an element, *remove* the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:
 
         ```js
         element.strokes.clear();
@@ -666,7 +666,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 -   Likely API changes
     -   Creating colors is currently done via `utils.createColor()`. We're likely to change how you assign colors to objects, so bear this in mind as you use the experimental APIs. Note that this means you cannot just pass a plain JS object of the form `{red, green, blue}` to the Editor APIs — it must be a color created using `utils.createColor`.
     -   Editor API constants may be renamed or may change how they are accessed.
-    -   Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be _moved_ and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.
+    -   Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be *moved* and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.
     -   There is no support for `fetch` in the document sandbox environment. You can work around this by exposing a method from your panel that your script code can call that does the work of fetching remote content. In the future we may abstract this for you automatically.
     -   The `strokes` API is likely to be modified so that it only supports a single stroke.
 -   Typings & Typescript
