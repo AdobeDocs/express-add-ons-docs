@@ -205,7 +205,7 @@ Adds an animated image (gif) to the current page.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The `addAnimatedImage()` method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`addAnimatedImage()`](../addonsdk/app-document.md#addanimatedimage) method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 

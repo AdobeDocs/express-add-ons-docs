@@ -9,8 +9,10 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-
 module.exports = {
+  flags: {
+    FAST_DEV: true,
+  },
   pathPrefix: process.env.PATH_PREFIX || "/express/add-ons/docs/",
   siteMetadata: {
     pages: [
