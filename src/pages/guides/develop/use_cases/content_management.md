@@ -20,9 +20,13 @@ contributors:
 
 ## Importing Content
 
-Importing content into a design is one of the most popular use cases. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following example implements this feature. The first function shows how to add an image directly from a `blob` object, and the second shows how to fetch an image via URL. Please also refer to the [related SDK Reference section](/references/addonsdk/app-document.md#methods) and [code samples](/samples.md) for more details.
+Importing content into a design is one of the most popular use cases for an add-on. For instance, to add content retrieved from a third-party service or directly from the local hard drive. The following sections cover all of the different types of content that can be imported/added to the document from your add-on.
 
-### Example
+### Image Content
+
+The following example demonstrates how to add an image to the current page. The first function shows how to add an image directly from a `blob` object, and the second illustrates how to fetch an image via a URL to add. Please also refer to the [related SDK Reference section](/references/addonsdk/app-document.md#methods) and [code samples](/samples.md) for more details.
+
+#### Add Image Example
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -53,13 +57,152 @@ async function addImageFromURL(url) {
 }
 ```
 
+### Animated Images
+
+There's a specific method provided in the `AddOnSDK` to allow you to add animated images (gifs) to the current page as well.
+
 <InlineAlert slots="text" variant="warning"/>
 
-The supported file types for imported images are currently **`png/jpg/mp4`,** and the size of the imported images should not exceed **8000px** or **40MB**. See the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/) for additional details on importing content.
+**IMPORTANT:** The [`addAnimatedImage()`](../../../references/addonsdk/app-document.md#addanimatedimage) method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Add Animated Image Example
+
+```js
+// Add animated image(blob) to the current page
+async function addAnimatedImageFromBlob(blob) {
+  try {
+      await document.addAnimatedImage(blob);
+  }
+  catch(error) {
+      console.log("Failed to add the animated image to the page.");
+  }
+}
+```
+
+<InlineAlert slots="text" variant="warning"/>
+
+Refer to the [AddOnSDK Document Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#image-requirements) for specific details on supported image and GIF requirements.
 
 ### Video and Audio Content
 
-You can also import video and audio content similarly via the [`addVideo()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addvideo) and [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#addaudio) methods. **Please note:** the `addAudio()` method requires an additional `MediaAttributes` object parameter containing the `title` of the audio object you're importing. See the associated [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) for more details, and the [`audio-recording-add-on`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on) sample.
+You can also import video and audio content similarly via the [`addVideo()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addvideo) and [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#addaudio) methods. **Please note:** the `addAudio()` method requires an additional `MediaAttributes` object parameter containing the `title` of the audio object you're importing. See the example below, as well as the associated [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#methods) for more details. There's also an [`audio-recording-add-on`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on) sample available that you can use as an additional reference.
+
+#### Add Audio Example
+
+```js
+async function addAudioFromBlob(blob) {
+  try {
+      await document.addAudio(blob, {title: "Jazzy beats"});
+  }
+  catch(error) {
+      console.log("Failed to add the audio to the page.");
+  }
+}
+
+async function addAudioFromURL(url) {
+  try {
+      const blob = await fetch(url).then(response => response.blob());
+      await document.addAudio(blob, {title: "Jazzy beats"});
+  }
+  catch(error) {
+      console.log("Failed to add the audio to the page.");
+  }
+```
+
+#### Add Video Example
+
+```js
+async function addVideoFromBlob(blob) {
+  try {
+      await document.addVideo(blob);
+  }
+  catch(error) {
+      console.log("Failed to add the video to the page.");
+  }
+}
+
+async function addVideoFromURL(url) {
+  try {
+     const blob = await fetch(url).then(response => response.blob());
+     await document.addVideo(blob);
+  }
+  catch(error) {
+    console.log("Failed to add the video to the page.");
+  }
+}
+```
+
+### PDFs and PowerPoint Presentations
+
+If you need to import/add a PDF or a PowerPoint presentation to the document, you can use the designated import methods for each shown in the examples below.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`importPdf()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#import-content-methods) and [`importPresentation()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#import-content-methods) methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Import PDF Example
+
+```js
+import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+  
+// Reference to the active document
+const {document} = AddOnSDKAPI.app;
+ 
+const mediaAttributes = {title: "Sample.pdf"}
+ 
+// Add PDF to current page
+function importPdf(blob, mediaAttributes) {
+  try {
+    document.importPdf(blob, mediaAttributes);
+  }
+  catch(error) {
+    console.log("Failed to add pdf to the document.");
+  }
+}
+ 
+// Add pdf(url) to the current page
+async function importPdfFrom(url) {
+  try {
+    const blob = await fetch(url).then(response => response.blob());
+    document.importPdf(blob, {title: "Sample.pdf"});
+  }
+  catch(error) {
+    console.log("Failed to add pdf to document.");
+  }
+}
+```
+
+#### Import Presentation Example
+
+```js
+import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+  
+// Reference to the active document
+const {document} = AddOnSDKAPI.app;
+ 
+const mediaAttributes = {title: "Sample.pptx"} // only .pptx file types are supported by Express
+ 
+// Import presentation to document
+function importPresentation(blob, mediaAttributes) {
+  try {
+    document.importPresentation(blob, mediaAttributes);
+  }
+  catch(error) {
+    console.log("Failed to add the presentation to the document.");
+  }
+}
+ 
+// Add presentation(url) to the current page
+async function importPresentationFrom(url) {
+  try {
+    const blob = await fetch(url).then(response => response.blob());
+    document.importPresentation(blob, {title: "Sample.pptx"});
+  }
+  catch(error) {
+    console.log("Failed to add the presentation to document.");
+  }
+}
+```
 
 ## Exporting Content
 
