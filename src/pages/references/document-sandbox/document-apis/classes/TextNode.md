@@ -18,7 +18,7 @@ the text content and styles – instead it refers to a [TextContentModel](TextCo
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
 
@@ -148,13 +148,13 @@ moved to a different part of the document.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 • `set` **layout**(`layout`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Sets the layout mode of the text node "frame."
 Throws if changing text layout to/from Dynamic or Circular layout when the text contains font(s) unavailable to the current user.
@@ -199,12 +199,12 @@ cannot be edited by the user unless they are unlocked first.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
 (AreaTextLayout), any text content that does not fit within this node's area will be clipped.
 
-To get _all_ TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
+To get *all* TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
 
 #### Returns
 
@@ -387,7 +387,7 @@ The node's type.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Returns
 
