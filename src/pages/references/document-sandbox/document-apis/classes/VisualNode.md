@@ -21,6 +21,22 @@ Some VisualNodes might have a non-visual parent such as a PageNode.
 
 ## Accessors
 
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
+
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
@@ -41,7 +57,7 @@ to guarantee all their children are full-fledged Node instances.
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -52,7 +68,7 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 

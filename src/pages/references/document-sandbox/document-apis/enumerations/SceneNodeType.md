@@ -39,6 +39,14 @@ Type of ComplexShapeNode, representing a complex prepackaged shape with fill and
 
 ---
 
+### gridCell
+
+• **gridCell**: `"GridCell"`
+
+Type of MediaContainerNode which is a child of a GridLayout, representing one of the Grid's cells
+
+---
+
 ### gridLayout
 
 • **gridLayout**: `"GridLayout"`
@@ -126,3 +134,5 @@ Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appea
 ### text
 
 • **text**: `"Text"`
+
+Type of TextNode, representing a non-threaded text or a threaded text frame

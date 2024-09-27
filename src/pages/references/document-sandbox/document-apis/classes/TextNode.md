@@ -2,13 +2,31 @@
 
 # Class: TextNode
 
-A TextNode represents a text object in the scenegraph.
+A TextNode represents a text display frame in the scenegraph. It may display an entire piece of text, or sometimes just
+a subset of longer text that flows across multiple TextNode frames. Because of this, the TextNode does not directly hold
+the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple frames.
 
 ## Extends
 
 -   [`Node`](Node.md)
 
 ## Accessors
+
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
 
 ### allChildren
 
@@ -48,7 +66,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<`Rect`\>
+• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -58,13 +76,13 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -75,7 +93,7 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 
@@ -92,6 +110,25 @@ box.
 
 ---
 
+### fullContent
+
+• `get` **fullContent**(): [`TextContentModel`](TextContentModel.md)
+
+The model containing the complete text string and its styles, only part of which may be visible within the bounds of
+this specific TextNode "frame." The full text may be split across multiple frames, and/or it may be clipped if a
+fixed-size frame using AreaTextLayout does not fit all the (remaining) text.
+
+Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
+same single TextContentModel; this can give the impression that the same text is duplicated multiple times when it is
+not. Use TextContentModel.entity to determine whether a given piece of text content is unique or if it's already been
+encountered before.
+
+#### Returns
+
+[`TextContentModel`](TextContentModel.md)
+
+---
+
 ### id
 
 • `get` **id**(): `string`
@@ -102,6 +139,38 @@ moved to a different part of the document.
 #### Returns
 
 `string`
+
+---
+
+### layout
+
+• `get` **layout**(): `Readonly`<[`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+• `set` **layout**(`layout`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Sets the layout mode of the text node "frame."
+Throws if changing text layout to/from Dynamic or Circular layout when the text contains font(s) unavailable to the current user.
+
+If this TextNode is part of a multi-frame text content flow, it must be configured to use AreaTextLayout. Other
+layout modes are only available for single-frame text.
+
+#### Parameters
+
+• **layout**: [`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md)
+
+#### Returns
+
+`Readonly`<[`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+
+The layout mode of the text node "frame."
 
 ---
 
@@ -121,6 +190,25 @@ cannot be edited by the user unless they are unlocked first.
 #### Returns
 
 `boolean`
+
+---
+
+### nextTextNode
+
+• `get` **nextTextNode**(): `undefined` \| [`TextNode`](TextNode.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
+(AreaTextLayout), any text content that does not fit within this node's area will be clipped.
+
+To get _all_ TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
+
+#### Returns
+
+`undefined` \| [`TextNode`](TextNode.md)
 
 ---
 
@@ -189,11 +277,23 @@ cumulative rotation from the node's parent containers.
 
 • `get` **text**(): `string`
 
-The text string of the node.
+The text string content which is partially *or* fully displayed in this TextNode "frame."
+WARNING: If a piece of text content is split across several TextNodes, *each* TextNode's `text` getter will return
+the *entire* text content string.
+
+#### Deprecated
+
+- Use `TextNode.fullContent.text` instead
 
 • `set` **text**(`textContent`): `void`
 
 Sets the text content of the text node.
+WARNING: If a piece of text content is split across several TextNodes,
+*each* TextNode's `text` setter will sets the *entire* text content string.
+
+#### Deprecated
+
+- Use `TextNode.fullContent.text` instead
 
 #### Parameters
 
@@ -281,6 +381,22 @@ The node's type.
 
 ---
 
+### visualEffects
+
+• `get` **visualEffects**(): readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Returns
+
+readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
+
+The list of visual effects applied to the text node.
+
+---
+
 ### visualRoot
 
 • `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
@@ -300,7 +416,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
+• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
@@ -312,7 +428,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 #### Inherited from
 

@@ -145,7 +145,7 @@ Transform values default to 0.
 [`TextNode`](TextNode.md)
 
 a text node with default styles. The text content is initially empty, so the text node will be
-invisible until its `text` property is set. Creates point text, so the node's width will automatically
+invisible until its `fullContent` property's `text` is set. Creates point text, so the node's width will automatically
 adjust to accommodate whatever text is set.
 
 ---
@@ -208,9 +208,9 @@ See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on th
 -   `position` has default value `center` if none is provided.
 -   `dashPattern` has default value [] if none is provided.
 -   `dashOffset` has default value 0 if none is provided. This field is ignored
-    if no `dashPattern` was provided.
+  if no `dashPattern` was provided.
 -   `type` has default value SolidColorStroke.type if none is provided. This field
-    shouldn't be set to any other value.
+   shouldn't be set to any other value.
 
 #### Parameters
 
@@ -253,9 +253,9 @@ async function insertImage(blob) {
 
     // Further edits need to be queued to run at a safe time
     editor.queueAsyncEdit(() => {
-        // Create scenenode to display the image, and add it to the current artboard
-        const mediaContainer = editor.createImageContainer(bitmapImage);
-        editor.context.insertionParent.children.append(mediaContainer);
+         // Create scenenode to display the image, and add it to the current artboard
+         const mediaContainer = editor.createImageContainer(bitmapImage);
+         editor.context.insertionParent.children.append(mediaContainer);
     });
 }
 ```

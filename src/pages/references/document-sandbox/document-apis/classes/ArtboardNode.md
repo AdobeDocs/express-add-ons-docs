@@ -5,6 +5,7 @@
 An ArtboardNode represents an artboard object in the scenegraph. All user visual content must be contained on an artboard.
 
 When multiple artboards exist on a page, the artboards represent "scenes" in a linear timeline sequence.
+Please note that creating and deleting an artboard in a single frame will crash the editor.
 
 ## Extends
 
@@ -16,6 +17,22 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 -   [`ContainerNode`](../interfaces/ContainerNode.md)
 
 ## Accessors
+
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
 
 ### allChildren
 
@@ -36,7 +53,7 @@ The children of an Artboard are always other Node classes (never the more minima
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -47,7 +64,7 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 

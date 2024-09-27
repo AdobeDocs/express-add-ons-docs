@@ -11,6 +11,22 @@ if it is composed of multiple separate paths.
 
 ## Accessors
 
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
+
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
@@ -49,7 +65,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<`Rect`\>
+• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -59,13 +75,13 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -76,7 +92,7 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 
@@ -283,7 +299,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
+• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
@@ -295,7 +311,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 #### Inherited from
 
