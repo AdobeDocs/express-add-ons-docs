@@ -48,7 +48,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
 The children of a Node are always other Node classes (never the more minimal BaseNode).
@@ -103,7 +103,7 @@ relative to its parent). Generally matches the selection outline seen in the UI,
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 

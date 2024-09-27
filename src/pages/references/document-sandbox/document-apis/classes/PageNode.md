@@ -37,7 +37,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
