@@ -127,12 +127,24 @@ module.exports = {
                 path: "references/document-sandbox/document-apis/classes/Editor.md",
                 pages: [
                   {
+                    title: "AddOnData",
+                    path: "references/document-sandbox/document-apis/classes/AddOnData.md",
+                  },
+                  {
                     title: "ArtboardList",
                     path: "references/document-sandbox/document-apis/classes/ArtboardList.md",
                   },
                   {
                     title: "ArtboardNode",
                     path: "references/document-sandbox/document-apis/classes/ArtboardNode.md",
+                  },
+                  {
+                    title: "AvailableFont",
+                    path: "references/document-sandbox/document-apis/classes/AvailableFont.md",
+                  },
+                  {
+                    title: "BaseFont",
+                    path: "references/document-sandbox/document-apis/classes/BaseFont.md",
                   },
                   {
                     title: "BaseNode",
@@ -165,6 +177,10 @@ module.exports = {
                   {
                     title: "FillableNode",
                     path: "references/document-sandbox/document-apis/classes/FillableNode.md",
+                  },
+                  {
+                    title: "Fonts",
+                    path: "references/document-sandbox/document-apis/classes/Fonts.md",
                   },
                   {
                     title: "GridLayoutNode",
@@ -231,8 +247,16 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/StrokeShapeNode.md",
                   },
                   {
+                    title: "TextContentModel",
+                    path: "references/document-sandbox/document-apis/classes/TextContentModel.md",
+                  },
+                  {
                     title: "TextNode",
                     path: "references/document-sandbox/document-apis/classes/TextNode.md",
+                  },
+                  {
+                    title: "UnavailableFont",
+                    path: "references/document-sandbox/document-apis/classes/UnavailableFont.md",
                   },
                   {
                     title: "UnknownNode",
@@ -246,11 +270,35 @@ module.exports = {
               },
               {
                 title: "Interfaces",
-                path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
+                path: "references/document-sandbox/document-apis/interfaces/AreaTextLayout.md",
                 pages: [
+                  {
+                    title: "AreaTextLayout",
+                    path: "references/document-sandbox/document-apis/interfaces/AreaTextLayout.md",
+                  },
+                  {
+                    title: "AutoHeightTextLayout",
+                    path: "references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md",
+                  },
                   {
                     title: "BitmapImage",
                     path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
+                  },
+                  {
+                    title: "CharacterStyles",
+                    path: "references/document-sandbox/document-apis/interfaces/CharacterStyles.md",
+                  },
+                  {
+                    title: "CharacterStylesInput",
+                    path: "references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md",
+                  },
+                  {
+                    title: "CharacterStylesRange",
+                    path: "references/document-sandbox/document-apis/interfaces/CharacterStylesRange.md",
+                  },
+                  {
+                    title: "CharacterStylesRangeInput",
+                    path: "references/document-sandbox/document-apis/interfaces/CharacterStylesRangeInput.md",
                   },
                   {
                     title: "Color",
@@ -293,12 +341,28 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/Point.md",
                   },
                   {
+                    title: "PointTextLayout",
+                    path: "references/document-sandbox/document-apis/interfaces/PointTextLayout.md",
+                  },
+                  {
+                    title: "Rect",
+                    path: "references/document-sandbox/document-apis/interfaces/Rect.md",
+                  },
+                  {
                     title: "RectangleGeometry",
                     path: "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md",
                   },
                   {
                     title: "Stroke",
                     path: "references/document-sandbox/document-apis/interfaces/Stroke.md",
+                  },
+                  {
+                    title: "StyleRange",
+                    path: "references/document-sandbox/document-apis/interfaces/StyleRange.md",
+                  },
+                  {
+                    title: "UnsupportedTextLayout",
+                    path: "references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout.md",
                   },
                 ],
               },
@@ -313,6 +377,10 @@ module.exports = {
                   {
                     title: "BlendMode",
                     path: "references/document-sandbox/document-apis/enumerations/BlendMode.md",
+                  },
+                  {
+                    title: "EditorEvent",
+                    path: "references/document-sandbox/document-apis/enumerations/EditorEvent.md",
                   },
                   {
                     title: "FillRule",
@@ -338,12 +406,32 @@ module.exports = {
                     title: "TextAlignment",
                     path: "references/document-sandbox/document-apis/enumerations/TextAlignment.md",
                   },
+                  {
+                    title: "TextType",
+                    path: "references/document-sandbox/document-apis/enumerations/TextType.md",
+                  },
+                  {
+                    title: "VisualEffectType",
+                    path: "references/document-sandbox/document-apis/enumerations/VisualEffectType.md",
+                  },
                 ],
               },
               {
                 title: "Types",
-                path: "references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md",
+                path: "references/document-sandbox/document-apis/type-aliases/EditorEventHandler.md",
                 pages: [
+                  {
+                    title: "EditorEventHandler",
+                    path: "references/document-sandbox/document-apis/type-aliases/EditorEventHandler.md",
+                  },
+                  {
+                    title: "EventHandlerId",
+                    path: "references/document-sandbox/document-apis/type-aliases/EventHandlerId.md",
+                  },
+                  {
+                    title: "Font",
+                    path: "references/document-sandbox/document-apis/type-aliases/Font.md",
+                  },
                   {
                     title: "SolidColorStrokeWithOptionalType",
                     path: "references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md",
