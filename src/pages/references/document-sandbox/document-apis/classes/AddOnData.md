@@ -13,7 +13,7 @@ This metadata is accessible only to the add-on that has set it.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Returns
 
@@ -56,7 +56,7 @@ The iterator yields the metadata key-value pairs.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Clears all private metadata entries on the node.
 
@@ -74,7 +74,7 @@ Clears all private metadata entries on the node.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Retrieves the private metadata value for the specified key on the node.
 
@@ -100,7 +100,7 @@ The value of the private metadata entry.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Returns
 
@@ -118,7 +118,7 @@ an array of all keys for the private metadata entries on the node.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Removes a single private metadata entry on the node.
 
@@ -142,7 +142,7 @@ The key of the private metadata entry to remove.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ___experimental only___ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Sets a private metadata entry on the node.
 
