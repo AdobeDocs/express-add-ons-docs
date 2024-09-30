@@ -183,6 +183,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/Fonts.md",
                   },
                   {
+                    title: "GridCellNode",
+                    path: "references/document-sandbox/document-apis/classes/GridCellNode.md",
+                  },
+                  {
                     title: "GridLayoutNode",
                     path: "references/document-sandbox/document-apis/classes/GridLayoutNode.md",
                   },

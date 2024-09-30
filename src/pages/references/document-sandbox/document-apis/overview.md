@@ -38,6 +38,7 @@
 -   [ExpressRootNode](classes/ExpressRootNode.md)
 -   [FillableNode](classes/FillableNode.md)
 -   [Fonts](classes/Fonts.md)
+-   [GridCellNode](classes/GridCellNode.md)
 -   [GridLayoutNode](classes/GridLayoutNode.md)
 -   [GroupNode](classes/GroupNode.md)
 -   [ImageRectangleNode](classes/ImageRectangleNode.md)

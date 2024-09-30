@@ -1,18 +1,14 @@
-[@express-document-sdk](../overview.md) / MediaContainerNode
+[@express-document-sdk](../overview.md) / GridCellNode
 
-# Class: MediaContainerNode
+# Class: GridCellNode
 
-A MediaContainerNode is a multi-node construct that displays media (such as images or video) with optional cropping and
-clipping to a shape mask. The underlying media asset is always rectangular, but the final appearance of this node is
-determined by the maskShape which is not necessarily a rectangle.
+A GridCellNode represents the MediaContainerNode aspect of a grid cell. Unlike other MediaContainerNodes,
+GridCellNodes cannot be translated or rotated directly. This implementation translates and rotates the
+MediaRectangle child of the GridCellNode when those actions are applied.
 
 ## Extends
 
--   [`Node`](Node.md)
-
-## Extended by
-
--   [`GridCellNode`](GridCellNode.md)
+-   [`MediaContainerNode`](MediaContainerNode.md)
 
 ## Accessors
 
@@ -328,7 +324,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Inherited from
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`MediaContainerNode`](MediaContainerNode.md).[`boundsInNode`](MediaContainerNode.md#boundsinnode)
 
 ---
 
@@ -352,7 +348,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
+[`MediaContainerNode`](MediaContainerNode.md).[`localPointInNode`](MediaContainerNode.md#localpointinnode)
 
 ---
 
@@ -373,7 +369,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+[`MediaContainerNode`](MediaContainerNode.md).[`removeFromParent`](MediaContainerNode.md#removefromparent)
 
 ---
 
@@ -394,6 +390,10 @@ New content to display. Currently must be a [BitmapImage](../interfaces/BitmapIm
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`MediaContainerNode`](MediaContainerNode.md).[`replaceMedia`](MediaContainerNode.md#replacemedia)
 
 ---
 
@@ -420,7 +420,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`Node`](Node.md).[`setPositionInParent`](Node.md#setpositioninparent)
+[`MediaContainerNode`](MediaContainerNode.md).[`setPositionInParent`](MediaContainerNode.md#setpositioninparent)
 
 #### Example
 
@@ -460,7 +460,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`Node`](Node.md).[`setRotationInParent`](Node.md#setrotationinparent)
+[`MediaContainerNode`](MediaContainerNode.md).[`setRotationInParent`](MediaContainerNode.md#setrotationinparent)
 
 #### Example
 
