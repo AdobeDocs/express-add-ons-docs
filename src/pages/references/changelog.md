@@ -21,6 +21,24 @@ contributors:
 
 # Changelog
 
+## 2024-09-30
+
+- Added many new **Text APIs** for improved text management.
+  - New [`TextNode.fullContent`](./document-sandbox/document-apis/classes/TextNode.md#fullcontent) accessor: returns the [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel.md) containing the complete text string and its styles. `fullContent.text` supersedes `TextNode.text`, now deprecated.
+  - New [`TextNode.layout`](./document-sandbox/document-apis/classes/TextNode.md#layout) accessor: gets and sets the [`TextType`](./document-sandbox/document-apis/enumerations/TextType.md) of the text node frame.
+  - New [`TextNode.nextTextNode`](./document-sandbox/document-apis/classes/TextNode.md#nexttextnode) accessor: gets the newxt node that overflowing text will spill into.
+  - New [`TextNode.visualEffects`](./document-sandbox/document-apis/classes/TextNode.md#visualeffects) accessor: list of [`VisualEffectType`](./document-sandbox/document-apis/enumerations/VisualEffectType.md) applied to the text node.
+  - New [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) accessor: list of [character style](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#color), [`font`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#font), [`fontSize`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#fontsize), [`tracking`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#tracking) and [`underline`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#underline) properties.
+  - New [AvailableFont](./document-sandbox/document-apis/classes/AvailableFont.md) and [UnavailableFont](./document-sandbox/document-apis/classes/UnavailableFont.md) classes.
+  - New supporting interfaces, enumerations and type aliases.
+- Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](./document-sandbox/document-apis/classes/AddOnData.md) class and the [`addOnData`](./document-sandbox/document-apis/classes/BaseNode.md#addondata) accessor for the BaseNode class.
+- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](./document-sandbox/document-apis/classes/Context.md) class will expose two [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
+- Added a new [`GridCellNode`](./document-sandbox/document-apis/classes/GridCellNode.md) class that represents a cell in a grid.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This round of new APIs are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use them, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
 ## 2024-09-24
 
 -   Adds a new [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](./addonsdk/app-document.md#image-requirements)).
