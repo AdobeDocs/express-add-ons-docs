@@ -2,8 +2,6 @@
 
 # Type alias: EventHandlerId
 
-`Experimental`
-
 • **EventHandlerId**: `string`
 
 <InlineAlert slots="text" variant="warning"/>

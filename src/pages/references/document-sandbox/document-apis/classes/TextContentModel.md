@@ -5,15 +5,15 @@
 Represents a complete piece of text content, which may be split across multiple [TextNode](TextNode.md) frames for display.
 Use this model to get or modify the text string and the style ranges applied to it.
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
 ## Accessors
 
 ### allTextNodes
 
 • `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md)\>\>
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Get ordered list of all TextNodes that display this text content in the scenegraph. The text content
 starts in the first TextNode and then flows into the second TextNode once it has filled the first one. The ending of the
@@ -30,10 +30,6 @@ If there are multiple TextNodes, all of them must be configured to use AreaTextL
 ### characterStyleRanges
 
 • `get` **characterStyleRanges**(): readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 The character style ranges of this text content.
 
@@ -52,10 +48,6 @@ readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
 ### id
 
 • `get` **id**(): `string`
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
 moved to a different part of the document.
@@ -90,13 +82,7 @@ The complete text string, which may span multiple [TextNode](TextNode.md) frames
 
 ### applyCharacterStyles()
 
-`Experimental`
-
 • **applyCharacterStyles**(`styles`, `range`?): `void`
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Apply one or more styles to the characters in the given range, leaving other styles in this range unchanged. Does
 not modify any styles in the text outside this range.

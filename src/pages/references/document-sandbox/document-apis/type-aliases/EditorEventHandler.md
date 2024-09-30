@@ -2,8 +2,6 @@
 
 # Type alias: EditorEventHandler()
 
-`Experimental`
-
 • **EditorEventHandler**: () => `void`
 
 <InlineAlert slots="text" variant="warning"/>
