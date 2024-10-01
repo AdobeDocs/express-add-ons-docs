@@ -124,7 +124,7 @@ fixed-size frame using AreaTextLayout does not fit all the (remaining) text.
 
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
 same single TextContentModel; this can give the impression that the same text is duplicated multiple times when it is
-not. Use TextContentModel.entity to determine whether a given piece of text content is unique or if it's already been
+not. Use TextContentModel.id to determine whether a given piece of text content is unique or if it's already been
 encountered before.
 
 #### Returns
