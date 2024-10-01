@@ -114,10 +114,6 @@ box.
 
 • `get` **fullContent**(): [`TextContentModel`](TextContentModel.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 The model containing the complete text string and its styles, only part of which may be visible within the bounds of
 this specific TextNode "frame." The full text may be split across multiple frames, and/or it may be clipped if a
 fixed-size frame using AreaTextLayout does not fit all the (remaining) text.
