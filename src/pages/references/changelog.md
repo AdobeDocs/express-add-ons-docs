@@ -39,7 +39,7 @@ contributors:
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This round of new APIs are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use them, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This round of new APIs is currently ***experimental only*** with the exception of `TextNode.fullContent.text`, and should not be used in any add-ons you will be distributing until it has been declared stable. To use them, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Fixed
 
@@ -47,7 +47,7 @@ contributors:
 
 ### Deprecated
 
-- [`TextNode.text`](../references/document-sandbox/document-apis/classes/TextNode.md#text) is now deprecated, use [`TextNode.fullContent.text`](../references/document-sandbox/document-apis/classes/TextNode.md#fullcontent) instead.
+- [`TextNode.text`](../references/document-sandbox/document-apis/classes/TextNode.md#text) is now deprecated; it is still working, but will be removed in a future update. Please use [`TextNode.fullContent.text`](../references/document-sandbox/document-apis/classes/TextNode.md#fullcontent) instead.
 
 ## 2024-09-24
 
