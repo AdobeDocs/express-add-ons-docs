@@ -22,31 +22,49 @@ Whether the current user has permission to create / edit content using this font
 
 `boolean`
 
-***
+---
 
 ### family
 
 • `get` **family**(): `string`
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+The font family containing the font.
+
 #### Returns
 
 `string`
 
-***
+---
 
 ### postscriptName
 
 • `get` **postscriptName**(): `string`
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+The PostScript name of the font.
+
 #### Returns
 
 `string`
 
-***
+---
 
 ### style
 
 • `get` **style**(): `string`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+The style of the font within the family.
 
 #### Returns
 

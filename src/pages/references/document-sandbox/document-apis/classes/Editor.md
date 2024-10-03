@@ -148,6 +148,9 @@ a text node with default styles. The text content is initially empty, so the tex
 invisible until its `fullContent` property's `text` is set. Creates point text, so the node's width will automatically
 adjust to accommodate whatever text is set.
 
+Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
+insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
+
 ---
 
 ### loadBitmapImage()

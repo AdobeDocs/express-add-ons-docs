@@ -3,8 +3,8 @@
 # Class: TextNode
 
 A TextNode represents a text display frame in the scenegraph. It may display an entire piece of text, or sometimes just
-a subset of longer text that flows across multiple TextNode frames. Because of this, the TextNode does not directly hold
-the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple frames.
+a subset of longer text that flows across multiple TextNode "frames". Because of this, the TextNode does not directly hold
+the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple TextNodes.
 
 ## Extends
 
@@ -115,12 +115,12 @@ box.
 • `get` **fullContent**(): [`TextContentModel`](TextContentModel.md)
 
 The model containing the complete text string and its styles, only part of which may be visible within the bounds of
-this specific TextNode "frame." The full text may be split across multiple frames, and/or it may be clipped if a
-fixed-size frame using AreaTextLayout does not fit all the (remaining) text.
+this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
+fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
 
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
-same single TextContentModel; this can give the impression that the same text is duplicated multiple times when it is
-not. Use TextContentModel.id to determine whether a given piece of text content is unique or if it's already been
+same single [TextContentModel](TextContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
+not. Use [TextContentModel](TextContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
 encountered before.
 
 #### Returns
@@ -156,11 +156,18 @@ moved to a different part of the document.
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Sets the layout mode of the text node "frame."
-Throws if changing text layout to/from Dynamic or Circular layout when the text contains font(s) unavailable to the current user.
+Sets the layout mode of the TextNode "frame."
 
-If this TextNode is part of a multi-frame text content flow, it must be configured to use AreaTextLayout. Other
+If this TextNode is part of a multi-frame text content flow, it must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md). Other
 layout modes are only available for single-frame text.
+
+#### Throws
+
+if changing text layout to/from [TextType.magicFit](../enumerations/TextType.md#magicfit) or [TextType.circular](../enumerations/TextType.md#circular) layout when the text contains font(s) unavailable to the current user.
+
+#### Throws
+
+if TextNode is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Parameters
 
@@ -170,7 +177,7 @@ layout modes are only available for single-frame text.
 
 `Readonly`<[`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
 
-The layout mode of the text node "frame."
+The layout mode of the TextNode "frame."
 
 ---
 
@@ -202,7 +209,7 @@ cannot be edited by the user unless they are unlocked first.
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
-(AreaTextLayout), any text content that does not fit within this node's area will be clipped.
+([AreaTextLayout](../interfaces/AreaTextLayout.md)), any text content that does not fit within this node's area will be clipped.
 
 To get *all* TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
 
@@ -278,22 +285,22 @@ cumulative rotation from the node's parent containers.
 • `get` **text**(): `string`
 
 The text string content which is partially *or* fully displayed in this TextNode "frame."
-WARNING: If a piece of text content is split across several TextNodes, *each* TextNode's `text` getter will return
+WARNING: If a piece of text content flows across several TextNodes, *each* TextNode's `text` getter will return
 the *entire* text content string.
 
 #### Deprecated
 
-- Use `TextNode.fullContent.text` instead
+- Use the text getter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
 
 • `set` **text**(`textContent`): `void`
 
-Sets the text content of the text node.
-WARNING: If a piece of text content is split across several TextNodes,
+Sets the text content of the TextNode.
+WARNING: If a piece of text content flows across several TextNodes,
 *each* TextNode's `text` setter will sets the *entire* text content string.
 
 #### Deprecated
 
-- Use `TextNode.fullContent.text` instead
+- Use the text setter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
 
 #### Parameters
 
@@ -309,7 +316,7 @@ WARNING: If a piece of text content is split across several TextNodes,
 
 • `get` **textAlignment**(): [`TextAlignment`](../enumerations/TextAlignment.md)
 
-The horizontal text alignment of the text node. Alignment is always the same across this node's entire text content.
+The horizontal text alignment of the TextNode. Alignment is always the same across this node's entire text content.
 
 • `set` **textAlignment**(`alignment`): `void`
 
@@ -393,7 +400,7 @@ The node's type.
 
 readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
 
-The list of visual effects applied to the text node.
+The list of visual effects applied to the TextNode.
 
 ---
 

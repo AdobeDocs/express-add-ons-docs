@@ -35,7 +35,8 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
-The Grid's regular children. Does not include rectangles and skips over media container nodes to return fill grandchildren.
+The Grid's regular children. Does not include rectangles and skips over media constainer nodes to return fill grandchildren.
+Grid Cells are ordered by the y and then x position of their top left corner, i.e. left to right and top to bottom.
 The children cannot be added or removed.
 
 #### Returns

@@ -2,7 +2,7 @@
 
 # Class: TextContentModel
 
-Represents a complete piece of text content, which may be split across multiple [TextNode](TextNode.md) frames for display.
+Represents a complete piece of text content flow, which may be split across multiple [TextNode](TextNode.md) frames for display.
 Use this model to get or modify the text string and the style ranges applied to it.
 
 ## Accessors
@@ -15,11 +15,11 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Get ordered list of all TextNodes that display this text content in the scenegraph. The text content
-starts in the first TextNode and then flows into the second TextNode once it has filled the first one. The ending of the
-text content may not be visible at all, if the last TextNode is not large enough to accommodate it.
+Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. The text content
+starts in the first  [TextNode](TextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
+text content may not be visible at all, if the last [TextNode](TextNode.md) "frame" is not large enough to accommodate it.
 
-If there are multiple TextNodes, all of them must be configured to use AreaTextLayout.
+If there are multiple [TextNode](TextNode.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Returns
 
@@ -29,11 +29,11 @@ If there are multiple TextNodes, all of them must be configured to use AreaTextL
 
 ### characterStyleRanges
 
+• `get` **characterStyleRanges**(): readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
+
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-• `get` **characterStyleRanges**(): readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
 
 The character style ranges of this text content.
 
@@ -53,6 +53,10 @@ readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
 
 • `get` **id**(): `string`
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
 A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
 moved to a different part of the document.
 
@@ -70,7 +74,7 @@ Comparing two models using `===` will always fail.
 
 • `get` **text**(): `string`
 
-The complete text string, which may span multiple [TextNode](TextNode.md) frames in the scenegraph.
+The complete text string, which may span multiple [TextNode](TextNode.md) "frames" in the scenegraph.
 
 • `set` **text**(`textContent`): `void`
 
@@ -85,6 +89,8 @@ The complete text string, which may span multiple [TextNode](TextNode.md) frames
 ## Methods
 
 ### applyCharacterStyles()
+
+`Experimental`
 
 • **applyCharacterStyles**(`styles`, `range`?): `void`
 
@@ -104,7 +110,7 @@ The styles to apply.
 • **range?**
 
 The start and length of character sequence to which the styles should be applied.
-If not specified the styles will be applied to the entire text node.
+If not specified the styles will be applied to the entire piece of text content flow.
 
 • **range.length?**: `number`
 
