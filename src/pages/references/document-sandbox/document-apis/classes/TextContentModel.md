@@ -90,8 +90,6 @@ The complete text string, which may span multiple [TextNode](TextNode.md) "frame
 
 ### applyCharacterStyles()
 
-`Experimental`
-
 • **applyCharacterStyles**(`styles`, `range`?): `void`
 
 <InlineAlert slots="text" variant="warning"/>

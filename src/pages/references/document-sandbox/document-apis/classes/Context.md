@@ -84,8 +84,6 @@ locked nodes in addition to regular unlocked nodes.
 
 ### off()
 
-`Experimental`
-
 • **off**(`eventName`, `handlerId`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -112,8 +110,6 @@ Callback that was previously registered will be removed and will no more be invo
 ---
 
 ### on()
-
-`Experimental`
 
 • **on**(`eventName`, `callback`): `string`
 
