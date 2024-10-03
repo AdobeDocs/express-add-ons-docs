@@ -21,13 +21,29 @@ Some VisualNodes might have a non-visual parent such as a PageNode.
 
 ## Accessors
 
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
+
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
@@ -41,18 +57,18 @@ to guarantee all their children are full-fledged Node instances.
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 

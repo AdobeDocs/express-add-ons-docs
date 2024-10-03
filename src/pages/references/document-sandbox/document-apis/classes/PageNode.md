@@ -15,13 +15,29 @@ timeline sequence. Those artboards in turn contain all the visual content of the
 
 ## Accessors
 
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
+
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren

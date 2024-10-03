@@ -5,6 +5,7 @@
 An ArtboardNode represents an artboard object in the scenegraph. All user visual content must be contained on an artboard.
 
 When multiple artboards exist on a page, the artboards represent "scenes" in a linear timeline sequence.
+Please note that creating and deleting an artboard in a single frame will crash the editor.
 
 ## Extends
 
@@ -17,13 +18,29 @@ When multiple artboards exist on a page, the artboards represent "scenes" in a l
 
 ## Accessors
 
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
+
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
 The children of an Artboard are always other Node classes (never the more minimal BaseNode).
@@ -36,18 +53,18 @@ The children of an Artboard are always other Node classes (never the more minima
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 

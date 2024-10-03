@@ -1,17 +1,14 @@
-[@express-document-sdk](../overview.md) / GridLayoutNode
+[@express-document-sdk](../overview.md) / GridCellNode
 
-# Class: GridLayoutNode
+# Class: GridCellNode
 
-A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to create
-a layout grid that other content can be placed into.
+A GridCellNode represents the MediaContainerNode aspect of a grid cell. Unlike other MediaContainerNodes,
+GridCellNodes cannot be translated or rotated directly. This implementation translates and rotates the
+MediaRectangle child of the GridCellNode when those actions are applied.
 
 ## Extends
 
--   [`Node`](Node.md)
-
-## Implements
-
--   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+-   [`MediaContainerNode`](MediaContainerNode.md)
 
 ## Accessors
 
@@ -35,9 +32,12 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
-The Grid's regular children. Does not include rectangles and skips over media constainer nodes to return fill grandchildren.
-Grid Cells are ordered by the y and then x position of their top left corner, i.e. left to right and top to bottom.
-The children cannot be added or removed.
+Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
+overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -110,36 +110,6 @@ box.
 
 ---
 
-### fill
-
-• `get` **fill**(): `Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
-• `set` **fill**(`fill`): `void`
-
-The background fill of the GridLayout.
-
-#### Parameters
-
-• **fill**: [`Fill`](../interfaces/Fill.md)
-
-#### Returns
-
-`Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
----
-
-### height
-
-• `get` **height**(): `number`
-
-The height of the node.
-
-#### Returns
-
-`number`
-
----
-
 ### id
 
 • `get` **id**(): `string`
@@ -169,6 +139,34 @@ cannot be edited by the user unless they are unlocked first.
 #### Returns
 
 `boolean`
+
+---
+
+### maskShape
+
+• `get` **maskShape**(): [`FillableNode`](FillableNode.md)
+
+The mask used for cropping/clipping the media. The bounds of this shape are entire visible bounds of the container.
+The shape's geometric properties (position, rotation, size, etc.) can be changed, but it cannot be replaced by a
+different shape via this API.
+
+#### Returns
+
+[`FillableNode`](FillableNode.md)
+
+---
+
+### mediaRectangle
+
+• `get` **mediaRectangle**(): [`Node`](Node.md) \| [`ImageRectangleNode`](ImageRectangleNode.md)
+
+The rectangular node representing the entire, uncropped bounds of the media (e.g. image, GIFs, or video). The media's position and
+rotation can be changed, but it cannot be resized yet via this API. Media types other than images will yield a plain Node object
+for now.
+
+#### Returns
+
+[`Node`](Node.md) \| [`ImageRectangleNode`](ImageRectangleNode.md)
 
 ---
 
@@ -306,18 +304,6 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](VisualNode.md)
 
----
-
-### width
-
-• `get` **width**(): `number`
-
-The width of the node.
-
-#### Returns
-
-`number`
-
 ## Methods
 
 ### boundsInNode()
@@ -338,7 +324,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Inherited from
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`MediaContainerNode`](MediaContainerNode.md).[`boundsInNode`](MediaContainerNode.md#boundsinnode)
 
 ---
 
@@ -362,7 +348,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
+[`MediaContainerNode`](MediaContainerNode.md).[`localPointInNode`](MediaContainerNode.md#localpointinnode)
 
 ---
 
@@ -383,7 +369,31 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+[`MediaContainerNode`](MediaContainerNode.md).[`removeFromParent`](MediaContainerNode.md#removefromparent)
+
+---
+
+### replaceMedia()
+
+• **replaceMedia**(`media`): `void`
+
+Replace existing media inline. The new media is sized to completely fill the bounds of the existing maskShape; if the
+media's aspect ratio differs from the maskShape's, the media will be cropped by the maskShape on either the left/right
+or top/bottom edges. Currently only supports images as the new media, but previous media can be of any type.
+
+#### Parameters
+
+• **media**: [`BitmapImage`](../interfaces/BitmapImage.md)
+
+New content to display. Currently must be a [BitmapImage](../interfaces/BitmapImage.md).
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`MediaContainerNode`](MediaContainerNode.md).[`replaceMedia`](MediaContainerNode.md#replacemedia)
 
 ---
 
@@ -410,7 +420,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`Node`](Node.md).[`setPositionInParent`](Node.md#setpositioninparent)
+[`MediaContainerNode`](MediaContainerNode.md).[`setPositionInParent`](MediaContainerNode.md#setpositioninparent)
 
 #### Example
 
@@ -450,7 +460,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`Node`](Node.md).[`setRotationInParent`](Node.md#setrotationinparent)
+[`MediaContainerNode`](MediaContainerNode.md).[`setRotationInParent`](MediaContainerNode.md#setrotationinparent)
 
 #### Example
 

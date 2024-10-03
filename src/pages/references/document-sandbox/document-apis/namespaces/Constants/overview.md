@@ -20,6 +20,12 @@ Re-exports [BlendMode](../../enumerations/BlendMode.md)
 
 ---
 
+### EditorEvent
+
+Re-exports [EditorEvent](../../enumerations/EditorEvent.md)
+
+---
+
 ### FillRule
 
 Re-exports [FillRule](../../enumerations/FillRule.md)
@@ -53,3 +59,15 @@ Re-exports [StrokeType](../../enumerations/StrokeType.md)
 ### TextAlignment
 
 Re-exports [TextAlignment](../../enumerations/TextAlignment.md)
+
+---
+
+### TextType
+
+Re-exports [TextType](../../enumerations/TextType.md)
+
+---
+
+### VisualEffectType
+
+Re-exports [VisualEffectType](../../enumerations/VisualEffectType.md)

@@ -12,17 +12,23 @@
 
 -   [ArrowHeadType](enumerations/ArrowHeadType.md)
 -   [BlendMode](enumerations/BlendMode.md)
+-   [EditorEvent](enumerations/EditorEvent.md)
 -   [FillRule](enumerations/FillRule.md)
 -   [FillType](enumerations/FillType.md)
 -   [SceneNodeType](enumerations/SceneNodeType.md)
 -   [StrokePosition](enumerations/StrokePosition.md)
 -   [StrokeType](enumerations/StrokeType.md)
 -   [TextAlignment](enumerations/TextAlignment.md)
+-   [TextType](enumerations/TextType.md)
+-   [VisualEffectType](enumerations/VisualEffectType.md)
 
 ## Classes
 
+-   [AddOnData](classes/AddOnData.md)
 -   [ArtboardList](classes/ArtboardList.md)
 -   [ArtboardNode](classes/ArtboardNode.md)
+-   [AvailableFont](classes/AvailableFont.md)
+-   [BaseFont](classes/BaseFont.md)
 -   [BaseNode](classes/BaseNode.md)
 -   [ColorUtils](classes/ColorUtils.md)
 -   [ComplexShapeNode](classes/ComplexShapeNode.md)
@@ -31,6 +37,8 @@
 -   [EllipseNode](classes/EllipseNode.md)
 -   [ExpressRootNode](classes/ExpressRootNode.md)
 -   [FillableNode](classes/FillableNode.md)
+-   [Fonts](classes/Fonts.md)
+-   [GridCellNode](classes/GridCellNode.md)
 -   [GridLayoutNode](classes/GridLayoutNode.md)
 -   [GroupNode](classes/GroupNode.md)
 -   [ImageRectangleNode](classes/ImageRectangleNode.md)
@@ -47,13 +55,21 @@
 -   [SolidColorShapeNode](classes/SolidColorShapeNode.md)
 -   [StrokableNode](classes/StrokableNode.md)
 -   [StrokeShapeNode](classes/StrokeShapeNode.md)
+-   [TextContentModel](classes/TextContentModel.md)
 -   [TextNode](classes/TextNode.md)
+-   [UnavailableFont](classes/UnavailableFont.md)
 -   [UnknownNode](classes/UnknownNode.md)
 -   [VisualNode](classes/VisualNode.md)
 
 ## Interfaces
 
+-   [AreaTextLayout](interfaces/AreaTextLayout.md)
+-   [AutoHeightTextLayout](interfaces/AutoHeightTextLayout.md)
 -   [BitmapImage](interfaces/BitmapImage.md)
+-   [CharacterStyles](interfaces/CharacterStyles.md)
+-   [CharacterStylesInput](interfaces/CharacterStylesInput.md)
+-   [CharacterStylesRange](interfaces/CharacterStylesRange.md)
+-   [CharacterStylesRangeInput](interfaces/CharacterStylesRangeInput.md)
 -   [Color](interfaces/Color.md)
 -   [ColorFill](interfaces/ColorFill.md)
 -   [ContainerNode](interfaces/ContainerNode.md)
@@ -63,10 +79,17 @@
 -   [IStrokableNode](interfaces/IStrokableNode.md)
 -   [ListItem](interfaces/ListItem.md)
 -   [Point](interfaces/Point.md)
+-   [PointTextLayout](interfaces/PointTextLayout.md)
+-   [Rect](interfaces/Rect.md)
 -   [RectangleGeometry](interfaces/RectangleGeometry.md)
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
+-   [StyleRange](interfaces/StyleRange.md)
+-   [UnsupportedTextLayout](interfaces/UnsupportedTextLayout.md)
 
 ## Type Aliases
 
+-   [EditorEventHandler](type-aliases/EditorEventHandler.md)
+-   [EventHandlerId](type-aliases/EventHandlerId.md)
+-   [Font](type-aliases/Font.md)
 -   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)

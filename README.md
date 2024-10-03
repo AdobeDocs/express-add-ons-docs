@@ -22,7 +22,7 @@ This section outlines the steps that should be taken to format the generated Doc
 
 3. The API signatures generated in `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is indented. In these directories, find and replace all occurrences of `newline + > + space` with `newline + • + space`, ensuring no code example or closing tag is replaced.
 
-4. Find and replace all \`mat2d\` --> \[\`mat2d\`\]\(https://glmatrix.net/docs/module-mat2d.html\)
+4. Find and replace all \`mat2d\` --> \[\`mat2d\`\]\(https://glmatrix.net/docs/module-mat2d.html)
 
 5. Fix any `[iterator]` links to remove the brackets from the link references to ensure they work. For instance: `ArtboardList.md#%5Biterator%5D` should be `ArtboardList.md#iterator`. To fix, use Search again with a regex string of `.md#%5Biterator%5D` and replace with `.md#iterator`.
 

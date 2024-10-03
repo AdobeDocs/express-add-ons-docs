@@ -20,13 +20,29 @@ Base class for a Node that can have its own stroke.
 
 ## Accessors
 
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
+
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
 The children of a Node are always other Node classes (never the more minimal BaseNode).
@@ -58,7 +74,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<`Rect`\>
+• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -68,24 +84,24 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 ---
 
@@ -292,7 +308,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
+• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
@@ -304,7 +320,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 #### Inherited from
 
