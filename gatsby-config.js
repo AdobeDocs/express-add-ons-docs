@@ -551,10 +551,6 @@ module.exports = {
                 path: "guides/design/ux_guidelines/feedback_and_messaging.md",
               },
               {
-                title: "Core Content Actions",
-                path: "guides/design/ux_guidelines/core_content_actions.md",
-              },
-              {
                 title: "Mobile UX",
                 path: "guides/design/ux_guidelines/mobile_ux.md",
               },
