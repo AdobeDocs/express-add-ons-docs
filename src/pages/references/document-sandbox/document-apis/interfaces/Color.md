@@ -12,7 +12,7 @@ Represents an RGBA color value.
 
 The alpha channel in range from 0 - 1.
 
-___
+---
 
 ### blue
 
@@ -20,7 +20,7 @@ ___
 
 The blue channel in range from 0 - 1.
 
-___
+---
 
 ### green
 
@@ -28,7 +28,7 @@ ___
 
 The green channel in range from 0 - 1.
 
-___
+---
 
 ### red
 

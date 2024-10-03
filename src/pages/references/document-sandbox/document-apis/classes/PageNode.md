@@ -5,24 +5,38 @@
 A PageNode represents a page in the document. A page contains one or more artboards, representing "scenes" in a linear
 timeline sequence. Those artboards in turn contain all the visual content of the document.
 
-## Hierarchy
+## Extends
 
-- [`BaseNode`](BaseNode.md)
-
-  ↳ **`PageNode`**
+-   [`BaseNode`](BaseNode.md)
 
 ## Implements
 
-- `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+-   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
 
 ## Accessors
+
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
 
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -33,11 +47,7 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
-#### Inherited from
-
-BaseNode.allChildren
-
-___
+---
 
 ### artboards
 
@@ -49,7 +59,7 @@ The artboards or "scenes" of a page, ordered by timeline sequence.
 
 [`ArtboardList`](ArtboardList.md)
 
-___
+---
 
 ### height
 
@@ -62,11 +72,7 @@ All Artboards within a page share the same dimensions.
 
 `number`
 
-#### Implementation of
-
-Readonly.height
-
-___
+---
 
 ### id
 
@@ -79,11 +85,7 @@ moved to a different part of the document.
 
 `string`
 
-#### Inherited from
-
-BaseNode.id
-
-___
+---
 
 ### name
 
@@ -91,23 +93,17 @@ ___
 
 The page's name. Displayed as a user-editable label above the current artboard in the UI.
 
-#### Returns
-
-`undefined` \| `string`
-
 • `set` **name**(`name`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `undefined` \| `string` |
+• **name**: `undefined` \| `string`
 
 #### Returns
 
-`void`
+`undefined` \| `string`
 
-___
+---
 
 ### parent
 
@@ -124,27 +120,19 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
-#### Inherited from
-
-BaseNode.parent
-
-___
+---
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enums/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/SceneNodeType.md)
 
-#### Inherited from
-
-BaseNode.type
-
-___
+---
 
 ### width
 
@@ -157,19 +145,15 @@ All Artboards within a page share the same dimensions.
 
 `number`
 
-#### Implementation of
-
-Readonly.width
-
 ## Methods
 
-### cloneInPlace
+### cloneInPlace()
 
-▸ **cloneInPlace**(): [`PageNode`](PageNode.md)
+• **cloneInPlace**(): [`PageNode`](PageNode.md)
 
 Clones this page, all artboards within it, and all content within those artboards. The cloned page is the same size
 as the original. Adds the new page immediately after this one in the pages list. The first artboard in the cloned
-page becomes the default target for newly inserted content ([insertionParent](Context.md#insertionparent)) and the viewport
+page becomes the default target for newly inserted content ([Context.insertionParent](Context.md#insertionparent)) and the viewport
 switches to display this artboard.
 
 #### Returns
@@ -178,11 +162,11 @@ switches to display this artboard.
 
 the cloned page.
 
-___
+---
 
-### removeFromParent
+### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.
@@ -197,4 +181,4 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[BaseNode](BaseNode.md).[removeFromParent](BaseNode.md#removefromparent)
+[`BaseNode`](BaseNode.md).[`removeFromParent`](BaseNode.md#removefromparent)

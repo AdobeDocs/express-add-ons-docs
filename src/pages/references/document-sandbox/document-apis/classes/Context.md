@@ -4,12 +4,6 @@
 
 Contains the user's current selection state, indicating the content they are focused on.
 
-## Hierarchy
-
-- `ProxyLiveObject`
-
-  ↳ **`Context`**
-
 ## Accessors
 
 ### currentPage
@@ -22,7 +16,7 @@ Contains the user's current selection state, indicating the content they are foc
 
 The currently viewed page.
 
-___
+---
 
 ### hasSelection
 
@@ -34,7 +28,7 @@ ___
 
 false if the current editable selection does not contain any nodes, otherwise true.
 
-___
+---
 
 ### insertionParent
 
@@ -48,17 +42,11 @@ the preferred parent to insert newly added content into (i.e., the location cont
 user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
 other UI state.
 
-___
+---
 
 ### selection
 
 • `get` **selection**(): readonly [`Node`](Node.md)[]
-
-#### Returns
-
-readonly [`Node`](Node.md)[]
-
-the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
 
 • `set` **selection**(`nodes`): `void`
 
@@ -70,15 +58,15 @@ Sets the current selection, automatically ensuring these rules are met:
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `nodes` | `undefined` \| [`Node`](Node.md) \| readonly [`Node`](Node.md)[] |
+• **nodes**: `undefined` \| [`Node`](Node.md) \| readonly [`Node`](Node.md)[]
 
 #### Returns
 
-`void`
+readonly [`Node`](Node.md)[]
 
-___
+the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
+
+---
 
 ### selectionIncludingNonEditable
 
@@ -88,6 +76,63 @@ ___
 
 readonly [`Node`](Node.md)[]
 
-the current selection *and* any locked nodes the user has attempted to select at the same time. This can
+the current selection _and_ any locked nodes the user has attempted to select at the same time. This can
 happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
 locked nodes in addition to regular unlocked nodes.
+
+## Methods
+
+### off()
+
+• **off**(`eventName`, `handlerId`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently _**experimental only**_ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Unregisters handlers for editor events like selection change.
+
+#### Parameters
+
+• **eventName**: [`selectionChange`](../enumerations/EditorEvent.md#selectionchange)
+
+an editor event name.
+
+• **handlerId**: `string`
+
+a unique ID returned by `editor.context.on` API.
+Callback that was previously registered will be removed and will no more be invoked when the event occurs.
+
+#### Returns
+
+`void`
+
+---
+
+### on()
+
+• **on**(`eventName`, `callback`): `string`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently _**experimental only**_ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Registers a handler for editor events such as selection change.
+The registered callback will be invoked when the specified event occurs.
+Note: Do not attempt to make changes to the document in response to a selection change callback because it may destabilize the application.
+
+#### Parameters
+
+• **eventName**: [`selectionChange`](../enumerations/EditorEvent.md#selectionchange)
+
+an editor event name.
+
+• **callback**: [`EditorEventHandler`](../type-aliases/EditorEventHandler.md)
+
+a callback to be registered for an editor event.
+
+#### Returns
+
+`string`
+
+a unique ID for the registered event handler.

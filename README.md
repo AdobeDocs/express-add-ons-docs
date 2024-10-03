@@ -10,16 +10,49 @@ This section outlines the steps that should be taken to format the generated Doc
 
 **Recommended pre-req:** Install [this extension](https://marketplace.visualstudio.com/items?itemName=jakearl.search-editor-apply-changes) in VS Code to make it easier to apply transformations across many files.
 
-1. **Search** and **Replace** again across files to change the auto-generated HLAPI docs headings from `@add-on-hlapi-sdk` –> to `@express-document-sdk`.
-2. Fix any `[iterator]` links to remove the brackets from the link references to ensure they work. For instance: `ArtboardList.md#[iterator]` should be `ArtboardList.md#iterator`. To fix, use Search again with a regex string of `.md#\[iterator\]` and replace with `.md#iterator`.
-3. Add a blank line after any `InlineAlerts` in the Enums to render them properly. *(This can be easily fixed in the hz repo)*
-4. Ensure any lists are be surrounded by one blank line so the linter in the PR job doesn't complain. See **Context**, **Editor** classes specifically such as the `createStroke` method which has a list. (Note: you can check the PR validation job to see if you missed any). *(This can be easily fixed in the hz repo)*
+1. **Search** and **Replace** again across files to change the auto-generated HLAPI docs headings from `@hz/add-on-hz-hlapi-sdk` –> to `@express-document-sdk`.
+
+2. The heading in the generated `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is not required. So, find and remove all occurrences of:
+
+    ```md
+    [**@express-document-sdk**](../overview.md) • **Docs**
+
+    ---
+    ```
+
+3. The API signatures generated in `classes`, `enumerations`, `interfaces`, `namespaces`, and `type-aliases` is indented. In these directories, find and replace all occurrences of `newline + > + space` with `newline + • + space`, ensuring no code example or closing tag is replaced.
+
+4. Find and replace all \`mat2d\` --> \[\`mat2d\`\]\(https://glmatrix.net/docs/module-mat2d.html)
+
+5. Fix any `[iterator]` links to remove the brackets from the link references to ensure they work. For instance: `ArtboardList.md#%5Biterator%5D` should be `ArtboardList.md#iterator`. To fix, use Search again with a regex string of `.md#%5Biterator%5D` and replace with `.md#iterator`.
+
+6. Find and remove all occurrences of `TemplatizedProxyLiveObject`. An example is of `ReadOnlyItemList.md`, where you should remove the following section:
+
+    ```md
+    ## Extends
+
+    -   `TemplatizedProxyLiveObject`<`HzApiInputType`\>
+    ```
+
+7. Find and remove all occurrences of `ProxyLiveObject`. An example is of `BaseNode.md`, where you should remove the following section:
+
+    ```md
+    ## Extends
+
+    -   `ProxyLiveObject`
+    ```
+
+8. Add a blank line after any `InlineAlert` in the Enums to render them properly. _(This can be easily fixed in the hz repo)_
+
+9. Ensure any lists are surrounded by one blank line so the linter in the PR job doesn't complain. See **Context**, **Editor** classes specifically such as the `makeStroke` method which has a list. (Note: you can check the PR validation job to see if you missed any). _(This can be easily fixed in the hz repo)_
+
+10. Find and replace `\<` with `<` for all `.md` files.
 
 ## Adobe I/O Documentation Template Info
 
 This is a site template built with the [Adobe I/O Theme](https://github.com/adobe/aio-theme).
 
-View the [demo](https://adobedocs.github.io/dev-site-documentation-template/) running on Github Pages.  
+View the [demo](https://adobedocs.github.io/dev-site-documentation-template/) running on Github Pages.
 
 ## Where to ask for help
 
@@ -36,37 +69,37 @@ $ yarn dev
 
 For the developer documentation, read the following sections on how to:
 
-- [Arrange the structure content of your docs](https://github.com/adobe/aio-theme#content-structure)
-- [Link to pages](https://github.com/adobe/aio-theme#links)
-- [Use assets](https://github.com/adobe/aio-theme#assets)
-- [Set global Navigation](https://github.com/adobe/aio-theme#global-navigation)
-- [Set side navigation](https://github.com/adobe/aio-theme#side-navigation)
-- [Use content blocks](https://github.com/adobe/aio-theme#jsx-blocks)
-- [Use Markdown](https://github.com/adobe/aio-theme#writing-enhanced-markdown)
+-   [Arrange the structure content of your docs](https://github.com/adobe/aio-theme#content-structure)
+-   [Link to pages](https://github.com/adobe/aio-theme#links)
+-   [Use assets](https://github.com/adobe/aio-theme#assets)
+-   [Set global Navigation](https://github.com/adobe/aio-theme#global-navigation)
+-   [Set side navigation](https://github.com/adobe/aio-theme#side-navigation)
+-   [Use content blocks](https://github.com/adobe/aio-theme#jsx-blocks)
+-   [Use Markdown](https://github.com/adobe/aio-theme#writing-enhanced-markdown)
 
 For more in-depth [instructions](https://github.com/adobe/aio-theme#getting-started).
 
 ## How to test
 
-- To run the configured linters locally (requires [Docker](https://www.docker.com/)):
+-   To run the configured linters locally (requires [Docker](https://www.docker.com/)):
 
-  ```shell
-  yarn lint
-  ```
+    ```shell
+    yarn lint
+    ```
 
-  > NOTE If you cannot use Docker, you can install the linters separately. In `.github/super-linter.env`, see which linters are enabled, and find the tools being used for linting in [Supported Linters](https://github.com/github/super-linter#supported-linters).
+    > NOTE If you cannot use Docker, you can install the linters separately. In `.github/super-linter.env`, see which linters are enabled, and find the tools being used for linting in [Supported Linters](https://github.com/github/super-linter#supported-linters).
 
-- To check internal links locally
+-   To check internal links locally
 
-  ```shell
-  yarn test:links
-  ```
+    ```shell
+    yarn test:links
+    ```
 
-- To build and preview locally:
+-   To build and preview locally:
 
-  ```shell
-  yarn start
-  ```
+    ```shell
+    yarn start
+    ```
 
 ## How to deploy
 

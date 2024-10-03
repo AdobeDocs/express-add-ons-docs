@@ -7,26 +7,36 @@ most fundamental nonvisual properties that even nodes near the top of the docume
 The more tangible visual content typically extends the richer Node class which extends BaseNode with additional
 properties.
 
-## Hierarchy
+## Extended by
 
-- `ProxyLiveObject`
-
-  ↳ **`BaseNode`**
-
-  ↳↳ [`ExpressRootNode`](ExpressRootNode.md)
-
-  ↳↳ [`PageNode`](PageNode.md)
-
-  ↳↳ [`VisualNode`](VisualNode.md)
+-   [`ExpressRootNode`](ExpressRootNode.md)
+-   [`PageNode`](PageNode.md)
+-   [`VisualNode`](VisualNode.md)
 
 ## Accessors
+
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
 
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -37,7 +47,7 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
 
-___
+---
 
 ### id
 
@@ -50,7 +60,7 @@ moved to a different part of the document.
 
 `string`
 
-___
+---
 
 ### parent
 
@@ -67,23 +77,23 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
-___
+---
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enums/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 ## Methods
 
-### removeFromParent
+### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.

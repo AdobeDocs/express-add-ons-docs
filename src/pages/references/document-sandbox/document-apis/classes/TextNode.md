@@ -2,22 +2,38 @@
 
 # Class: TextNode
 
-A TextNode represents a text object in the scenegraph.
+A TextNode represents a text display frame in the scenegraph. It may display an entire piece of text, or sometimes just
+a subset of longer text that flows across multiple TextNode "frames". Because of this, the TextNode does not directly hold
+the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple TextNodes.
 
-## Hierarchy
+## Extends
 
-- [`Node`](Node.md)
-
-  ↳ **`TextNode`**
+-   [`Node`](Node.md)
 
 ## Accessors
+
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
 
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -27,68 +43,46 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
-#### Inherited from
-
-Node.allChildren
-
-___
+---
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
+• `get` **blendMode**(): [`BlendMode`](../enumerations/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
-
-#### Returns
-
-[`BlendMode`](../enums/BlendMode.md)
-
-#### Inherited from
-
-Node.blendMode
+[BlendMode.normal](../enumerations/BlendMode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/BlendMode.md#passthrough) for GroupNodes.
 
 • `set` **blendMode**(`value`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | [`BlendMode`](../enums/BlendMode.md) |
+• **value**: [`BlendMode`](../enumerations/BlendMode.md)
 
 #### Returns
 
-`void`
+[`BlendMode`](../enumerations/BlendMode.md)
 
-#### Inherited from
-
-Node.blendMode
-
-___
+---
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<`Rect`\>
+• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](TextNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-#### Inherited from
-
-Node.boundsInParent
-
-___
+---
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -99,13 +93,9 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-#### Inherited from
-
-Node.boundsLocal
-
-___
+---
 
 ### centerPointLocal
 
@@ -118,11 +108,26 @@ box.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-#### Inherited from
+---
 
-Node.centerPointLocal
+### fullContent
 
-___
+• `get` **fullContent**(): [`TextContentModel`](TextContentModel.md)
+
+The model containing the complete text string and its styles, only part of which may be visible within the bounds of
+this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
+fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
+
+Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
+same single [TextContentModel](TextContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
+not. Use [TextContentModel](TextContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
+encountered before.
+
+#### Returns
+
+[`TextContentModel`](TextContentModel.md)
+
+---
 
 ### id
 
@@ -135,44 +140,84 @@ moved to a different part of the document.
 
 `string`
 
-#### Inherited from
+---
 
-Node.id
+### layout
 
-___
+• `get` **layout**(): `Readonly`<[`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+• `set` **layout**(`layout`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Sets the layout mode of the TextNode "frame."
+
+If this TextNode is part of a multi-frame text content flow, it must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md). Other
+layout modes are only available for single-frame text.
+
+#### Throws
+
+if changing text layout to/from [TextType.magicFit](../enumerations/TextType.md#magicfit) or [TextType.circular](../enumerations/TextType.md#circular) layout when the text contains font(s) unavailable to the current user.
+
+#### Throws
+
+if TextNode is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
+
+#### Parameters
+
+• **layout**: [`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md)
+
+#### Returns
+
+`Readonly`<[`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+
+The layout mode of the TextNode "frame."
+
+---
 
 ### locked
 
 • `get` **locked**(): `boolean`
 
-The node's lock/unlock state. Locked nodes are excluded from the selection (see [selection](Context.md#selection)), and
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
 cannot be edited by the user unless they are unlocked first.
-
-#### Returns
-
-`boolean`
-
-#### Inherited from
-
-Node.locked
 
 • `set` **locked**(`locked`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locked` | `boolean` |
+• **locked**: `boolean`
 
 #### Returns
 
-`void`
+`boolean`
 
-#### Inherited from
+---
 
-Node.locked
+### nextTextNode
 
-___
+• `get` **nextTextNode**(): `undefined` \| [`TextNode`](TextNode.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
+([AreaTextLayout](../interfaces/AreaTextLayout.md)), any text content that does not fit within this node's area will be clipped.
+
+To get *all* TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
+
+#### Returns
+
+`undefined` \| [`TextNode`](TextNode.md)
+
+---
 
 ### opacity
 
@@ -180,31 +225,17 @@ ___
 
 The node's opacity, from 0.0 to 1.0
 
-#### Returns
-
-`number`
-
-#### Inherited from
-
-Node.opacity
-
 • `set` **opacity**(`opacity`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opacity` | `number` |
+• **opacity**: `number`
 
 #### Returns
 
-`void`
+`number`
 
-#### Inherited from
-
-Node.opacity
-
-___
+---
 
 ### parent
 
@@ -221,11 +252,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
-#### Inherited from
-
-Node.parent
-
-___
+---
 
 ### rotation
 
@@ -238,11 +265,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
-#### Inherited from
-
-Node.rotation
-
-___
+---
 
 ### rotationInScreen
 
@@ -255,59 +278,57 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
-#### Inherited from
-
-Node.rotationInScreen
-
-___
+---
 
 ### text
 
 • `get` **text**(): `string`
 
-The text string of the node
+The text string content which is partially *or* fully displayed in this TextNode "frame."
+WARNING: If a piece of text content flows across several TextNodes, *each* TextNode's `text` getter will return
+the *entire* text content string.
+
+#### Deprecated
+
+- Use the text getter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
+• `set` **text**(`textContent`): `void`
+
+Sets the text content of the TextNode.
+WARNING: If a piece of text content flows across several TextNodes,
+*each* TextNode's `text` setter will sets the *entire* text content string.
+
+#### Deprecated
+
+- Use the text setter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
+#### Parameters
+
+• **textContent**: `string`
 
 #### Returns
 
 `string`
 
-• `set` **text**(`textContent`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `textContent` | `string` |
-
-#### Returns
-
-`void`
-
-___
+---
 
 ### textAlignment
 
-• `get` **textAlignment**(): [`TextAlignment`](../enums/TextAlignment.md)
+• `get` **textAlignment**(): [`TextAlignment`](../enumerations/TextAlignment.md)
 
-The horizontal text alignment of the text node. Alignment is always the same across this node's entire text content.
-
-#### Returns
-
-[`TextAlignment`](../enums/TextAlignment.md)
+The horizontal text alignment of the TextNode. Alignment is always the same across this node's entire text content.
 
 • `set` **textAlignment**(`alignment`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `alignment` | [`TextAlignment`](../enums/TextAlignment.md) |
+• **alignment**: [`TextAlignment`](../enumerations/TextAlignment.md)
 
 #### Returns
 
-`void`
+[`TextAlignment`](../enumerations/TextAlignment.md)
 
-___
+---
 
 ### topLeftLocal
 
@@ -321,11 +342,7 @@ boundsInParent.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-#### Inherited from
-
-Node.topLeftLocal
-
-___
+---
 
 ### transformMatrix
 
@@ -337,11 +354,7 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
-#### Inherited from
-
-Node.transformMatrix
-
-___
+---
 
 ### translation
 
@@ -351,47 +364,45 @@ The translation of the node along its parent's axes. This is identical to the tr
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
 setting translation directly.
 
-#### Returns
-
-`Readonly`<[`Point`](../interfaces/Point.md)\>
-
-#### Inherited from
-
-Node.translation
-
 • `set` **translation**(`value`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | [`Point`](../interfaces/Point.md) |
+• **value**: [`Point`](../interfaces/Point.md)
 
 #### Returns
 
-`void`
+`Readonly`<[`Point`](../interfaces/Point.md)\>
 
-#### Inherited from
-
-Node.translation
-
-___
+---
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enums/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/SceneNodeType.md)
 
-#### Inherited from
+---
 
-Node.type
+### visualEffects
 
-___
+• `get` **visualEffects**(): readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Returns
+
+readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
+
+The list of visual effects applied to the TextNode.
+
+---
 
 ### visualRoot
 
@@ -408,50 +419,43 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](VisualNode.md)
 
-#### Inherited from
-
-Node.visualRoot
-
 ## Methods
 
-### boundsInNode
+### boundsInNode()
 
-▸ **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
+• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-Convert the node's [boundsLocal](TextNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
-node. Both nodes must share the same [visualRoot](TextNode.md#visualroot), but can lie anywhere within that subtree
+Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `targetNode` | [`VisualNode`](VisualNode.md) |
+• **targetNode**: [`VisualNode`](VisualNode.md)
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 #### Inherited from
 
-[Node](Node.md).[boundsInNode](Node.md#boundsinnode)
+[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
 
-___
+---
 
-### localPointInNode
+### localPointInNode()
 
-▸ **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](TextNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localPoint` | [`Point`](../interfaces/Point.md) |
-| `targetNode` | [`VisualNode`](VisualNode.md) |
+• **localPoint**: [`Point`](../interfaces/Point.md)
+
+• **targetNode**: [`VisualNode`](VisualNode.md)
 
 #### Returns
 
@@ -459,13 +463,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[Node](Node.md).[localPointInNode](Node.md#localpointinnode)
+[`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
 
-___
+---
 
-### removeFromParent
+### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.
@@ -480,18 +484,36 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[Node](Node.md).[removeFromParent](Node.md#removefromparent)
+[`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
 
-___
+---
 
-### setPositionInParent
+### setPositionInParent()
 
-▸ **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
+• **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
 
 Move the node so the given `localRegistrationPoint` in its local coordinates is placed at the given
 `parentPoint` in its parent's coordinates (taking into account any rotation on this node, etc.).
 
-**`Example`**
+#### Parameters
+
+• **parentPoint**: [`Point`](../interfaces/Point.md)
+
+Point in this node's parent's coordinate space to move `localRegistrationPoint` to
+
+• **localRegistrationPoint**: [`Point`](../interfaces/Point.md)
+
+Point in this node's local coordinate space to align with `parentPoint`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`setPositionInParent`](Node.md#setpositioninparent)
+
+#### Example
 
 Center a rectangle within its parent artboard:
 
@@ -502,46 +524,26 @@ rectangle.setPositionInParent(
 );
 ```
 
-#### Parameters
+---
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `parentPoint` | [`Point`](../interfaces/Point.md) | Point in this node's parent's coordinate space to move `localRegistrationPoint` to |
-| `localRegistrationPoint` | [`Point`](../interfaces/Point.md) | Point in this node's local coordinate space to align with `parentPoint` |
+### setRotationInParent()
 
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[Node](Node.md).[setPositionInParent](Node.md#setpositioninparent)
-
-___
-
-### setRotationInParent
-
-▸ **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
+• **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
 
 Set the node’s rotation angle relative to its parent to exactly the given value, keeping the given point in the
 node’s local coordinate space at a fixed location within the parent. Disregards any rotation the node may already
 have had. The angle set here may not be the absolute rotation angle seen on screen, if the parent or other
 ancestors also have rotation of their own.
 
-**`Example`**
-
-Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
-rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
-```
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `angleInDegrees` | `number` | Angle in degrees. |
-| `localRotationPoint` | [`Point`](../interfaces/Point.md) | Point to rotate around, in node's local coordinates. |
+• **angleInDegrees**: `number`
+
+Angle in degrees.
+
+• **localRotationPoint**: [`Point`](../interfaces/Point.md)
+
+Point to rotate around, in node's local coordinates.
 
 #### Returns
 
@@ -549,4 +551,12 @@ rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height 
 
 #### Inherited from
 
-[Node](Node.md).[setRotationInParent](Node.md#setrotationinparent)
+[`Node`](Node.md).[`setRotationInParent`](Node.md#setrotationinparent)
+
+#### Example
+
+Rotate the rectangle 45 degrees clockwise around its centerpoint:
+
+```js
+rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
+```

@@ -4,12 +4,6 @@
 
 Entry point for APIs that read or modify the document's content.
 
-## Hierarchy
-
-- `ProxyLiveObject`
-
-  ↳ **`Editor`**
-
 ## Accessors
 
 ### context
@@ -22,7 +16,7 @@ User's current selection context
 
 [`Context`](Context.md)
 
-___
+---
 
 ### documentRoot
 
@@ -36,9 +30,9 @@ the root of the document.
 
 ## Methods
 
-### createEllipse
+### createEllipse()
 
-▸ **createEllipse**(): [`EllipseNode`](EllipseNode.md)
+• **createEllipse**(): [`EllipseNode`](EllipseNode.md)
 
 #### Returns
 
@@ -47,11 +41,11 @@ the root of the document.
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
-___
+---
 
-### createGroup
+### createGroup()
 
-▸ **createGroup**(): [`GroupNode`](GroupNode.md)
+• **createGroup**(): [`GroupNode`](GroupNode.md)
 
 #### Returns
 
@@ -59,11 +53,11 @@ ___
 
 a group node.
 
-___
+---
 
-### createImageContainer
+### createImageContainer()
 
-▸ **createImageContainer**(`bitmapData`, `options?`): [`MediaContainerNode`](MediaContainerNode.md)
+• **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](MediaContainerNode.md)
 
 Creates a bitmap image, represented as a multi-node MediaContainerNode structure. Always creates a "full-frame,"
 uncropped image initially, but cropping can be changed after it is created by modifying the properties of the
@@ -75,10 +69,17 @@ This local client will act as having unsaved changes until the upload has finish
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `bitmapData` | [`BitmapImage`](../interfaces/BitmapImage.md) | BitmapImage resource (e.g. returned from `loadBitmapImage()`). |
-| `options` | `Object` | Additional configuration:<br/><br/> `options.initialSize?:` [`RectangleGeometry`](../interfaces/RectangleGeometry.md)<br/><br/> Size the image is displayed at. Must have the same aspect ratio as `bitmapData`. Defaults to the size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down    if needed to stay below an application-defined size cap). |
+• **bitmapData**: [`BitmapImage`](../interfaces/BitmapImage.md)
+
+BitmapImage resource (e.g. returned from loadBitmapImage()).
+
+• **options**= `{}`
+
+Additional configuration: - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
+size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
+if needed to stay below an application-defined size cap).
+
+• **options.initialSize?**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
 
 #### Returns
 
@@ -86,11 +87,11 @@ This local client will act as having unsaved changes until the upload has finish
 
 MediaContainerNode representing the top container node of the multi-node structure.
 
-___
+---
 
-### createLine
+### createLine()
 
-▸ **createLine**(): [`LineNode`](LineNode.md)
+• **createLine**(): [`LineNode`](LineNode.md)
 
 #### Returns
 
@@ -99,17 +100,20 @@ ___
 a line node with default start point and end point and a default stroke.
 Transform values default to 0.
 
-___
+---
 
-### createPath
+### createPath()
 
-▸ **createPath**(`path`): [`PathNode`](PathNode.md)
+• **createPath**(`path`): [`PathNode`](PathNode.md)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `path` | `string` | a string representing any [SVG path element](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths). Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input. For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...". Throws if the input is empty or is not legal SVG path syntax. |
+• **path**: `string`
+
+a string representing any [SVG path element](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths).
+Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input.
+For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...".
+Throws if the input is empty or is not legal SVG path syntax.
 
 #### Returns
 
@@ -117,11 +121,11 @@ ___
 
 a path node with a default stroke and no initial fill.
 
-___
+---
 
-### createRectangle
+### createRectangle()
 
-▸ **createRectangle**(): [`RectangleNode`](RectangleNode.md)
+• **createRectangle**(): [`RectangleNode`](RectangleNode.md)
 
 #### Returns
 
@@ -130,25 +134,28 @@ ___
 a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
 
-___
+---
 
-### createText
+### createText()
 
-▸ **createText**(): [`TextNode`](TextNode.md)
+• **createText**(): [`TextNode`](TextNode.md)
 
 #### Returns
 
 [`TextNode`](TextNode.md)
 
 a text node with default styles. The text content is initially empty, so the text node will be
-invisible until its `text` property is set. Creates point text, so the node's width will automatically
+invisible until its `fullContent` property's `text` is set. Creates point text, so the node's width will automatically
 adjust to accommodate whatever text is set.
 
-___
+Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
+insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
 
-### loadBitmapImage
+---
 
-▸ **loadBitmapImage**(`rendition`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+### loadBitmapImage()
+
+• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -162,67 +169,67 @@ having unsaved changes until all the upload steps have finished.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `rendition` | `Blob` | Encoded image data in PNG or JPEG format. |
+• **bitmapData**: `Blob`
+
+Encoded image data in PNG or JPEG format.
 
 #### Returns
 
 `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
 
-___
+---
 
-### makeColorFill
+### makeColorFill()
 
-▸ **makeColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
+• **makeColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
 
 Convenience helper to create a complete ColorFill value given just its color.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `color` | [`Color`](../interfaces/Color.md) | The color to use for the fill. |
+• **color**: [`Color`](../interfaces/Color.md)
+
+The color to use for the fill.
 
 #### Returns
 
 [`ColorFill`](../interfaces/ColorFill.md)
 
-___
+---
 
-### makeStroke
+### makeStroke()
 
-▸ **makeStroke**(`options?`): [`Stroke`](../interfaces/Stroke.md)
+• **makeStroke**(`options`?): [`SolidColorStroke`](../interfaces/SolidColorStroke.md)
 
-Convenience helper to create a complete Stroke value given just a subset of its fields. All other fields are
-populated with default values.
+Convenience helper to create a complete SolidColorStroke value given just a
+subset of its fields. All other fields are populated with default values.
 
-See [Stroke](../interfaces/Stroke.md) for more details on the `options` fields. Defaults:
+See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on the `options` fields. Defaults:
 
-- `color` has default value DEFAULT_STROKE_COLOR if none is provided.
-- `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
-- `position` has default value `center` if none is provided.
-- `dashPattern` has default value [] if none is provided.
-- `dashOffset` has default value 0 if none is provided. This field is ignored
+-   `color` has default value DEFAULT_STROKE_COLOR if none is provided.
+-   `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
+-   `position` has default value `center` if none is provided.
+-   `dashPattern` has default value [] if none is provided.
+-   `dashOffset` has default value 0 if none is provided. This field is ignored
   if no `dashPattern` was provided.
+-   `type` has default value SolidColorStroke.type if none is provided. This field
+   shouldn't be set to any other value.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `Partial`<[`Stroke`](../interfaces/Stroke.md)\> |
+• **options?**: `Partial`<[`SolidColorStroke`](../interfaces/SolidColorStroke.md)\>
 
 #### Returns
 
-[`Stroke`](../interfaces/Stroke.md)
+[`SolidColorStroke`](../interfaces/SolidColorStroke.md)
 
 a stroke configured with the given options.
 
-___
+---
 
-### queueAsyncEdit
+### queueAsyncEdit()
 
-▸ **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
+• **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
 
 Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
 the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
@@ -230,7 +237,7 @@ asynchronous operation such as [loadBitmapImage](Editor.md#loadbitmapimage), any
 queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
 
 The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
-to users. However, note that queueAsyncEdit() will return *before* your function has been run.
+to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
 If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
 or await the Promise returned by queueAsyncEdit().
 
@@ -238,7 +245,7 @@ Generally, calling any setter or method is treated as an edit; but simple getter
 
 Example of typical usage:
 
-```javascript
+```js
 // Assume insertImage() is called from your UI code, and given a Blob containing image data
 async function insertImage(blob) {
     // This function was invoked from the UI iframe, so we can make any edits we want synchronously here.
@@ -258,9 +265,9 @@ async function insertImage(blob) {
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `lambda` | () => `void` | a function which edits the document model. |
+• **lambda**
+
+a function which edits the document model.
 
 #### Returns
 

@@ -4,23 +4,17 @@
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [allChildren](Node.md#allchildren) for details).
+children that exist in the parent node. See [Node.allChildren](Node.md#allchildren) for details).
 
 Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclasses like ItemList may add these capabilities, however.
 
+## Extended by
+
+-   [`RestrictedItemList`](RestrictedItemList.md)
+
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`ListItem`](../interfaces/ListItem.md) |
-
-## Hierarchy
-
-- `TemplatizedProxyLiveObject`<`HzApiInputType`\>
-
-  ↳ **`ReadOnlyItemList`**
-
-  ↳↳ [`RestrictedItemList`](RestrictedItemList.md)
+• **T** _extends_ [`ListItem`](../interfaces/ListItem.md)
 
 ## Accessors
 
@@ -34,7 +28,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
-___
+---
 
 ### last
 
@@ -46,7 +40,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
-___
+---
 
 ### length
 
@@ -60,9 +54,9 @@ Number of items in this list.
 
 ## Methods
 
-### [iterator]
+### `[iterator]`()
 
-▸ **[iterator]**(): `Iterator`<`T`, `any`, `undefined`\>
+• **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
@@ -70,19 +64,17 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 `Iterator`<`T`, `any`, `undefined`\>
 
-___
+---
 
-### indexOf
+### indexOf()
 
-▸ **indexOf**(`item`): `number`
+• **indexOf**(`item`): `number`
 
 Get index of item in list.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `item` | `T` |
+• **item**: `T`
 
 #### Returns
 
@@ -90,29 +82,29 @@ Get index of item in list.
 
 index number, or -1 if item isn't in this list.
 
-___
+---
 
-### item
+### item()
 
-▸ **item**(`index`): `undefined` \| `T`
+• **item**(`index`): `undefined` \| `T`
 
 Returns item at the given index, or undefined if index is out of range.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `index` | `number` | Zero-based index |
+• **index**: `number`
+
+Zero-based index
 
 #### Returns
 
 `undefined` \| `T`
 
-___
+---
 
-### toArray
+### toArray()
 
-▸ **toArray**(): readonly `T`[]
+• **toArray**(): readonly `T`[]
 
 All items in the list, as a static array. Mutations that occur later are not reflected in an array returned earlier.
 

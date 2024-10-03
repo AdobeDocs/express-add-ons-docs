@@ -2,12 +2,8 @@
 
 # Interface: IStrokableNode
 
-Interface for [StrokableNode](../classes/StrokableNode.md) *and* any other nodes with a similar `stroke` property that do not directly inherit
+Interface for [StrokableNode](../classes/StrokableNode.md) _and_ any other nodes with a similar `stroke` property that do not directly inherit
 from the StrokableNode class. (See [ArtboardNode](../classes/ArtboardNode.md), for example).
-
-## Implemented by
-
-- [`StrokableNode`](../classes/StrokableNode.md)
 
 ## Properties
 

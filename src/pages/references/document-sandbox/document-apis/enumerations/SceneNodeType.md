@@ -4,125 +4,135 @@
 
 <InlineAlert slots="text" variant="warning"/>
 
-*Do not depend on the literal string values of these constants*, as they may change. Always reference the enum identifiers in your code.
+_Do not depend on the literal string values of these constants_, as they may change. Always reference the enum identifiers in your code.
 
 <InlineAlert slots="text" variant="warning"/>
 
-*Additional node types may be added in the future.* If your code has different branches or cases depending on node type,
+_Additional node types may be added in the future._ If your code has different branches or cases depending on node type,
 always have a default/fallback case to handle any unknown values you may encounter.
 
 ## Enumeration Members
 
 ### artboard
 
-• **artboard** = ``"ab:Artboard"``
+• **artboard**: `"ab:Artboard"`
 
-___
+---
 
 ### artworkRoot
 
-• **artworkRoot** = ``"ArtworkRoot"``
+• **artworkRoot**: `"ArtworkRoot"`
 
-___
+---
 
 ### complexShape
 
-• **complexShape** = ``"ComplexShape"``
+• **complexShape**: `"ComplexShape"`
 
 Type of ComplexShapeNode, representing a complex prepackaged shape with fill and stroke, that appears as a leaf node in the UI
 
-___
+---
 
 ### ellipse
 
-• **ellipse** = ``"Ellipse"``
+• **ellipse**: `"Ellipse"`
 
-___
+---
+
+### gridCell
+
+• **gridCell**: `"GridCell"`
+
+Type of MediaContainerNode which is a child of a GridLayout, representing one of the Grid's cells
+
+---
 
 ### gridLayout
 
-• **gridLayout** = ``"GridLayout"``
+• **gridLayout**: `"GridLayout"`
 
 Type of GridLayoutNode represents a grid layout in the scenegraph used to create a layout grid that other content can be placed into
 
-___
+---
 
 ### group
 
-• **group** = ``"Group"``
+• **group**: `"Group"`
 
-___
+---
 
 ### imageRectangle
 
-• **imageRectangle** = ``"ImageRectangle"``
+• **imageRectangle**: `"ImageRectangle"`
 
 Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
-___
+---
 
 ### line
 
-• **line** = ``"Line"``
+• **line**: `"Line"`
 
-___
+---
 
 ### linkedAsset
 
-• **linkedAsset** = ``"LinkedAsset"``
+• **linkedAsset**: `"LinkedAsset"`
 
-___
+---
 
 ### mediaContainer
 
-• **mediaContainer** = ``"MediaContainer"``
+• **mediaContainer**: `"MediaContainer"`
 
 Type of MediaContainerNode, representing the top-level container of the multi-node construct used to display images or video.
 
-___
+---
 
 ### page
 
-• **page** = ``"Page"``
+• **page**: `"Page"`
 
 Type of PageNode
 
-___
+---
 
 ### path
 
-• **path** = ``"Path"``
+• **path**: `"Path"`
 
-___
+---
 
 ### polygon
 
-• **polygon** = ``"artgr:Polygon"``
+• **polygon**: `"artgr:Polygon"`
 
-___
+---
 
 ### rectangle
 
-• **rectangle** = ``"Rectangle"``
+• **rectangle**: `"Rectangle"`
 
-___
+---
 
 ### solidColorShape
 
-• **solidColorShape** = ``"SolidColorShape"``
+• **solidColorShape**: `"SolidColorShape"`
 
 Type of SolidColorShapeNode, representing a solid-color prepackaged shape that appears as a leaf node in the UI
 
-___
+---
 
 ### strokeShape
 
-• **strokeShape** = ``"StrokeShape"``
+• **strokeShape**: `"StrokeShape"`
 
 Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appears as a leaf node in the UI
 
-___
+---
 
 ### text
 
-• **text** = ``"Text"``
+• **text**: `"Text"`
+
+Type of TextNode, representing a non-threaded text or a threaded text frame

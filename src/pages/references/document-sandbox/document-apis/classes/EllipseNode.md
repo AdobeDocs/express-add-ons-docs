@@ -4,20 +4,34 @@
 
 An EllipseNode represents an ellipse object in the scenegraph.
 
-## Hierarchy
+## Extends
 
-- [`FillableNode`](FillableNode.md)
-
-  ↳ **`EllipseNode`**
+-   [`FillableNode`](FillableNode.md)
 
 ## Accessors
+
+### addOnData
+
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
 
 ### allChildren
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -27,68 +41,46 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
 
-#### Inherited from
-
-FillableNode.allChildren
-
-___
+---
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendMode`](../enums/BlendMode.md)
+• `get` **blendMode**(): [`BlendMode`](../enumerations/BlendMode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[normal](../enums/BlendMode.md#normal) for most nodes, and [passThrough](../enums/BlendMode.md#passthrough) for GroupNodes.
-
-#### Returns
-
-[`BlendMode`](../enums/BlendMode.md)
-
-#### Inherited from
-
-FillableNode.blendMode
+[BlendMode.normal](../enumerations/BlendMode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/BlendMode.md#passthrough) for GroupNodes.
 
 • `set` **blendMode**(`value`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | [`BlendMode`](../enums/BlendMode.md) |
+• **value**: [`BlendMode`](../enumerations/BlendMode.md)
 
 #### Returns
 
-`void`
+[`BlendMode`](../enumerations/BlendMode.md)
 
-#### Inherited from
-
-FillableNode.blendMode
-
-___
+---
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<`Rect`\>
+• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](EllipseNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-#### Inherited from
-
-FillableNode.boundsInParent
-
-___
+---
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<`Rect`\>
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -99,13 +91,9 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-#### Inherited from
-
-FillableNode.boundsLocal
-
-___
+---
 
 ### centerPointLocal
 
@@ -118,23 +106,11 @@ box.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-#### Inherited from
-
-FillableNode.centerPointLocal
-
-___
+---
 
 ### fill
 
 • `get` **fill**(): `undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
-#### Returns
-
-`undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
-#### Inherited from
-
-FillableNode.fill
 
 • `set` **fill**(`fill`): `void`
 
@@ -142,19 +118,13 @@ The fill applied to the shape, if any.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `fill` | `undefined` \| [`Fill`](../interfaces/Fill.md) |
+• **fill**: `undefined` \| [`Fill`](../interfaces/Fill.md)
 
 #### Returns
 
-`void`
+`undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
-#### Inherited from
-
-FillableNode.fill
-
-___
+---
 
 ### id
 
@@ -167,44 +137,26 @@ moved to a different part of the document.
 
 `string`
 
-#### Inherited from
-
-FillableNode.id
-
-___
+---
 
 ### locked
 
 • `get` **locked**(): `boolean`
 
-The node's lock/unlock state. Locked nodes are excluded from the selection (see [selection](Context.md#selection)), and
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
 cannot be edited by the user unless they are unlocked first.
-
-#### Returns
-
-`boolean`
-
-#### Inherited from
-
-FillableNode.locked
 
 • `set` **locked**(`locked`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locked` | `boolean` |
+• **locked**: `boolean`
 
 #### Returns
 
-`void`
+`boolean`
 
-#### Inherited from
-
-FillableNode.locked
-
-___
+---
 
 ### opacity
 
@@ -212,31 +164,17 @@ ___
 
 The node's opacity, from 0.0 to 1.0
 
-#### Returns
-
-`number`
-
-#### Inherited from
-
-FillableNode.opacity
-
 • `set` **opacity**(`opacity`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opacity` | `number` |
+• **opacity**: `number`
 
 #### Returns
 
-`void`
+`number`
 
-#### Inherited from
-
-FillableNode.opacity
-
-___
+---
 
 ### parent
 
@@ -253,11 +191,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
-#### Inherited from
-
-FillableNode.parent
-
-___
+---
 
 ### rotation
 
@@ -270,11 +204,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
-#### Inherited from
-
-FillableNode.rotation
-
-___
+---
 
 ### rotationInScreen
 
@@ -287,21 +217,13 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
-#### Inherited from
-
-FillableNode.rotationInScreen
-
-___
+---
 
 ### rx
 
 • `get` **rx**(): `number`
 
 The radius of the ellipse on the x-axis.
-
-#### Returns
-
-`number`
 
 • `set` **rx**(`value`): `void`
 
@@ -310,25 +232,19 @@ Must be at least MIN_DIMENSION / 2.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
+• **value**: `number`
 
 #### Returns
 
-`void`
+`number`
 
-___
+---
 
 ### ry
 
 • `get` **ry**(): `number`
 
 The radius of the ellipse on the y-axis.
-
-#### Returns
-
-`number`
 
 • `set` **ry**(`value`): `void`
 
@@ -337,47 +253,33 @@ Must be at least MIN_DIMENSION / 2.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
+• **value**: `number`
 
 #### Returns
 
-`void`
+`number`
 
-___
+---
 
 ### stroke
 
 • `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
+• `set` **stroke**(`stroke`): `void`
+
+The stroke applied to the shape, if any.
+Only [SolidColorStroke](../interfaces/SolidColorStroke.md) values are supported by the setter, but the "type" field is optional
+for backward compatibility. Throws if another type is provided.
+
+#### Parameters
+
+• **stroke**: `undefined` \| [`SolidColorStrokeWithOptionalType`](../type-aliases/SolidColorStrokeWithOptionalType.md)
+
 #### Returns
 
 `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
-#### Inherited from
-
-FillableNode.stroke
-
-• `set` **stroke**(`stroke`): `void`
-
-The stroke applied to the shape, if any.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `stroke` | `undefined` \| [`Stroke`](../interfaces/Stroke.md) |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-FillableNode.stroke
-
-___
+---
 
 ### topLeftLocal
 
@@ -391,11 +293,7 @@ boundsInParent.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-#### Inherited from
-
-FillableNode.topLeftLocal
-
-___
+---
 
 ### transformMatrix
 
@@ -407,11 +305,7 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
-#### Inherited from
-
-FillableNode.transformMatrix
-
-___
+---
 
 ### translation
 
@@ -421,47 +315,29 @@ The translation of the node along its parent's axes. This is identical to the tr
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
 setting translation directly.
 
-#### Returns
-
-`Readonly`<[`Point`](../interfaces/Point.md)\>
-
-#### Inherited from
-
-FillableNode.translation
-
 • `set` **translation**(`value`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | [`Point`](../interfaces/Point.md) |
+• **value**: [`Point`](../interfaces/Point.md)
 
 #### Returns
 
-`void`
+`Readonly`<[`Point`](../interfaces/Point.md)\>
 
-#### Inherited from
-
-FillableNode.translation
-
-___
+---
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enums/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enums/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/SceneNodeType.md)
 
-#### Inherited from
-
-FillableNode.type
-
-___
+---
 
 ### visualRoot
 
@@ -478,50 +354,43 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](VisualNode.md)
 
-#### Inherited from
-
-FillableNode.visualRoot
-
 ## Methods
 
-### boundsInNode
+### boundsInNode()
 
-▸ **boundsInNode**(`targetNode`): `Readonly`<`Rect`\>
+• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-Convert the node's [boundsLocal](EllipseNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
-node. Both nodes must share the same [visualRoot](EllipseNode.md#visualroot), but can lie anywhere within that subtree
+Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `targetNode` | [`VisualNode`](VisualNode.md) |
+• **targetNode**: [`VisualNode`](VisualNode.md)
 
 #### Returns
 
-`Readonly`<`Rect`\>
+`Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[boundsInNode](FillableNode.md#boundsinnode)
+[`FillableNode`](FillableNode.md).[`boundsInNode`](FillableNode.md#boundsinnode)
 
-___
+---
 
-### localPointInNode
+### localPointInNode()
 
-▸ **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](EllipseNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localPoint` | [`Point`](../interfaces/Point.md) |
-| `targetNode` | [`VisualNode`](VisualNode.md) |
+• **localPoint**: [`Point`](../interfaces/Point.md)
+
+• **targetNode**: [`VisualNode`](VisualNode.md)
 
 #### Returns
 
@@ -529,13 +398,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[localPointInNode](FillableNode.md#localpointinnode)
+[`FillableNode`](FillableNode.md).[`localPointInNode`](FillableNode.md#localpointinnode)
 
-___
+---
 
-### removeFromParent
+### removeFromParent()
 
-▸ **removeFromParent**(): `void`
+• **removeFromParent**(): `void`
 
 Removes the node from its parent - effectively deleting it, if the node is not re-added to another parent before the
 document is closed.
@@ -550,18 +419,36 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[removeFromParent](FillableNode.md#removefromparent)
+[`FillableNode`](FillableNode.md).[`removeFromParent`](FillableNode.md#removefromparent)
 
-___
+---
 
-### setPositionInParent
+### setPositionInParent()
 
-▸ **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
+• **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
 
 Move the node so the given `localRegistrationPoint` in its local coordinates is placed at the given
 `parentPoint` in its parent's coordinates (taking into account any rotation on this node, etc.).
 
-**`Example`**
+#### Parameters
+
+• **parentPoint**: [`Point`](../interfaces/Point.md)
+
+Point in this node's parent's coordinate space to move `localRegistrationPoint` to
+
+• **localRegistrationPoint**: [`Point`](../interfaces/Point.md)
+
+Point in this node's local coordinate space to align with `parentPoint`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FillableNode`](FillableNode.md).[`setPositionInParent`](FillableNode.md#setpositioninparent)
+
+#### Example
 
 Center a rectangle within its parent artboard:
 
@@ -572,46 +459,26 @@ rectangle.setPositionInParent(
 );
 ```
 
-#### Parameters
+---
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `parentPoint` | [`Point`](../interfaces/Point.md) | Point in this node's parent's coordinate space to move `localRegistrationPoint` to |
-| `localRegistrationPoint` | [`Point`](../interfaces/Point.md) | Point in this node's local coordinate space to align with `parentPoint` |
+### setRotationInParent()
 
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[FillableNode](FillableNode.md).[setPositionInParent](FillableNode.md#setpositioninparent)
-
-___
-
-### setRotationInParent
-
-▸ **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
+• **setRotationInParent**(`angleInDegrees`, `localRotationPoint`): `void`
 
 Set the node’s rotation angle relative to its parent to exactly the given value, keeping the given point in the
 node’s local coordinate space at a fixed location within the parent. Disregards any rotation the node may already
 have had. The angle set here may not be the absolute rotation angle seen on screen, if the parent or other
 ancestors also have rotation of their own.
 
-**`Example`**
-
-Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
-rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
-```
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `angleInDegrees` | `number` | Angle in degrees. |
-| `localRotationPoint` | [`Point`](../interfaces/Point.md) | Point to rotate around, in node's local coordinates. |
+• **angleInDegrees**: `number`
+
+Angle in degrees.
+
+• **localRotationPoint**: [`Point`](../interfaces/Point.md)
+
+Point to rotate around, in node's local coordinates.
 
 #### Returns
 
@@ -619,4 +486,12 @@ rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height 
 
 #### Inherited from
 
-[FillableNode](FillableNode.md).[setRotationInParent](FillableNode.md#setrotationinparent)
+[`FillableNode`](FillableNode.md).[`setRotationInParent`](FillableNode.md#setrotationinparent)
+
+#### Example
+
+Rotate the rectangle 45 degrees clockwise around its centerpoint:
+
+```js
+rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
+```

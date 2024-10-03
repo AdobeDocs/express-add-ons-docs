@@ -1,20 +1,20 @@
 ---
 keywords:
-  - Adobe Express
-  - Express Add-on SDK
-  - Express Document API
-  - Document Model Sandbox
-  - Adobe Express
-  - Add-on SDK
-  - SDK
-  - JavaScript
-  - Extend
-  - Extensibility
-  - API
+    - Adobe Express
+    - Express Add-on SDK
+    - Express Document API
+    - Document Model Sandbox
+    - Adobe Express
+    - Add-on SDK
+    - SDK
+    - JavaScript
+    - Extend
+    - Extensibility
+    - API
 title: Building your first add-on with the Document API
 description: This is an in-depth tutorial that will guide you in the creation of a Grids add-on for Adobe Express using the Document API
 contributors:
-  - https://github.com/undavide
+    - https://github.com/undavide
 ---
 
 # Building your first add-on with the Document API
@@ -39,43 +39,43 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 **January 9th, 2024**
 
-- Added additional information on the project's setup.
-- Renamed `createStroke()` to `makeStroke()`: according to the new naming convention, `make*` is used for plain objects and helper utilities, whereas `create*` is reserved to live document objects, e.g., `createEllipse()`.
-- Improved explanations for importing Spectrum Web Components.
+-   Added additional information on the project's setup.
+-   Renamed `createStroke()` to `makeStroke()`: according to the new naming convention, `make*` is used for plain objects and helper utilities, whereas `create*` is reserved to live document objects, e.g., `createEllipse()`.
+-   Improved explanations for importing Spectrum Web Components.
 
 **December 3rd, 2023**
 
-- Removed the experimental warning from the document model sandbox APIs.
-- Importing `colorUtils` instead of `utils` from `"express-document-sdk"`; the built-in `colorUtils.fromHex()` method replaces the custom `hexToColor()`.
-- In the new API, nodes don't have the `fills` property (and it's `append()` method) anymore; instead, they use `fill`, to which a `ColorFill` is assigned.
+-   Removed the experimental warning from the document model sandbox APIs.
+-   Importing `colorUtils` instead of `utils` from `"express-document-sdk"`; the built-in `colorUtils.fromHex()` method replaces the custom `hexToColor()`.
+-   In the new API, nodes don't have the `fills` property (and it's `append()` method) anymore; instead, they use `fill`, to which a `ColorFill` is assigned.
 
 **November 29th, 2023**
 
-- `apiProxy()` now accepts `"documentSandbox"` as a parameter, instead of `"script"`.
-- `manifest.json` now accepts `"documentSandbox"` in lieu of the `"script"` property for the document sandbox entry point. This requires the `"@adobe/ccweb-add-on-scripts"` dependency to be updated to version `"^1.1.0"` or newer in the `package.json` file.
-- `addOnSandboxSdk` is now imported from `"add-on-sdk-document-sandbox"` (it used to be `"AddOnScriptSdk"`).
-- `editor` and other modules are now imported from `"express-document-sdk"` (it used to be `"express"`).
-- The `webpack.config.js` file has been updated to reflect the new imports (see the `externals` object) in both the `express-grids-addon` and `express-addon-document-api-template` projects.
-- `Constants` are now `constants` (lowercase), and their enums have changed (e.g., `BlendModeValue` is now `BlendMode`).
-- `translateX` and `translateY` have conflated in the new `translation` property.
-- The group's warning about the operations order (create, append, fill) has been removed; groups can now be created, filled and appended.
+-   `apiProxy()` now accepts `"documentSandbox"` as a parameter, instead of `"script"`.
+-   `manifest.json` now accepts `"documentSandbox"` in lieu of the `"script"` property for the document sandbox entry point. This requires the `"@adobe/ccweb-add-on-scripts"` dependency to be updated to version `"^1.1.0"` or newer in the `package.json` file.
+-   `addOnSandboxSdk` is now imported from `"add-on-sdk-document-sandbox"` (it used to be `"AddOnScriptSdk"`).
+-   `editor` and other modules are now imported from `"express-document-sdk"` (it used to be `"express"`).
+-   The `webpack.config.js` file has been updated to reflect the new imports (see the `externals` object) in both the `express-grids-addon` and `express-addon-document-api-template` projects.
+-   `Constants` are now `constants` (lowercase), and their enumerations have changed (e.g., `BlendModeValue` is now `BlendMode`).
+-   `translateX` and `translateY` have conflated in the new `translation` property.
+-   The group's warning about the operations order (create, append, fill) has been removed; groups can now be created, filled and appended.
 
 **November 21st, 2023**
 
-- Editor API are now called the Document API, which are part of the Document Model Sandbox.
-- Update the add-on folders to reflect the new naming convention (`script` is now `documentSandbox`).
-- Update Reference Documentation links and screenshots.
+-   Editor API are now called the Document API, which are part of the Document Model Sandbox.
+-   Update the add-on folders to reflect the new naming convention (`script` is now `documentSandbox`).
+-   Update Reference Documentation links and screenshots.
 
 **November 6th, 2023**
 
-- First publication.
+-   First publication.
 
 ### Prerequisites
 
-- Familiarity with HTML, CSS, JavaScript.
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting_started/quickstart.md) guide.
-- An Adobe Express account; use your existing Adobe ID or create one for free.
-- Node.js version 16 or newer.
+-   Familiarity with HTML, CSS, JavaScript.
+-   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting_started/quickstart.md) guide.
+-   An Adobe Express account; use your existing Adobe ID or create one for free.
+-   Node.js version 16 or newer.
 
 ### Topics Covered
 
@@ -104,8 +104,8 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 As part of the [Document Model Sandbox](/references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
-- The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
-- The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/document-sandbox/communication/)), providing access to the [Document API](/references/document-sandbox/document-apis/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
+-   The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
+-   The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/document-sandbox/communication/)), providing access to the [Document API](/references/document-sandbox/document-apis/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
@@ -145,15 +145,15 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 
 ```json
 {
-	// ...
-	"entryPoints": [
-		{
-			"type": "panel",
-			"id": "panel1",
-			"main": "index.html",
-			"documentSandbox": "code.js"    // 👈 here
-		}
-	]
+    // ...
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "main": "index.html",
+            "documentSandbox": "code.js" // 👈 here
+        }
+    ]
 }
 ```
 
@@ -167,22 +167,20 @@ If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary fi
 ```html
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Document Sandbox" />
+        <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Document API" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grids add-on</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Document Sandbox" />
-    <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Document API" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grids add-on</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <sp-theme scale="medium" color="light" theme="express">
-        <sp-button id="createShape">Create shape</sp-button>
-    </sp-theme>
-</body>
-
+    <body>
+        <sp-theme scale="medium" color="light" theme="express">
+            <sp-button id="createShape">Create shape</sp-button>
+        </sp-theme>
+    </body>
 </html>
 ```
 
@@ -201,16 +199,16 @@ import "@spectrum-web-components/button/sp-button.js";
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-  console.log("addOnUISdk is ready for use.");
-  const createShapeButton = document.getElementById("createShape");
+    console.log("addOnUISdk is ready for use.");
+    const createShapeButton = document.getElementById("createShape");
 
-  // Get the UI runtime.
-  const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("documentSandbox");
-  sandboxProxy.log("Document Sandbox up and running.");
+    // Get the UI runtime.
+    const { runtime } = addOnUISdk.instance;
+    const sandboxProxy = await runtime.apiProxy("documentSandbox");
+    sandboxProxy.log("Document Sandbox up and running.");
 
-  // Enabling CTA elements only when the addOnUISdk is ready
-  createShapeButton.disabled = false;
+    // Enabling CTA elements only when the addOnUISdk is ready
+    createShapeButton.disabled = false;
 });
 ```
 
@@ -221,12 +219,12 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 function start() {
-  runtime.exposeApi({
-    log: (...args) => {
-      console.log(...args);
-    },
-    // other properties will go here...
-  });
+    runtime.exposeApi({
+        log: (...args) => {
+            console.log(...args);
+        },
+        // other properties will go here...
+    });
 }
 
 start();
@@ -264,13 +262,13 @@ Mind the syntax if you need the functions to call each other: for instance, the 
 
 ```js
 runtime.exposeApi({
-	log: (...args) => {
-		console.log(...args);
-	},
-	createShape: (shape) => {
-		// ...
-		this.log("Shape created."); // ❌
-	}
+    log: (...args) => {
+        console.log(...args);
+    },
+    createShape: (shape) => {
+        // ...
+        this.log("Shape created."); // ❌
+    },
 });
 ```
 
@@ -278,13 +276,13 @@ The _method shorthand syntax_ provides a proper `this` reference instead.
 
 ```js
 runtime.exposeApi({
-	log(...args) {
-		console.log(...args);
-	},
-	createShape(shape) {
-		// ...
-		this.log("Shape created.");  // ✅
-	},
+    log(...args) {
+        console.log(...args);
+    },
+    createShape(shape) {
+        // ...
+        this.log("Shape created."); // ✅
+    },
 });
 ```
 
@@ -328,17 +326,17 @@ It's finally time to start laying down some elements. Let's hook the only iframe
 import "@spectrum-web-components/button/sp-button.js";
 
 addOnUISdk.ready.then(async () => {
-  console.log("addOnUISdk is ready for use.");
-  const createShapeButton = document.getElementById("createShape");
+    console.log("addOnUISdk is ready for use.");
+    const createShapeButton = document.getElementById("createShape");
 
-  const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("documentSandbox");
+    const { runtime } = addOnUISdk.instance;
+    const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-  createShapeButton.addEventListener("click", async () => {
-    sandboxProxy.createShape({ width: 200, height: 100 }); // 👈
-  });
+    createShapeButton.addEventListener("click", async () => {
+        sandboxProxy.createShape({ width: 200, height: 100 }); // 👈
+    });
 
-  createShapeButton.disabled = false;
+    createShapeButton.disabled = false;
 });
 ```
 
@@ -350,20 +348,21 @@ const { runtime } = addOnSandboxSdk.instance;
 import { editor, colorUtils, constants } from "express-document-sdk";
 
 function start() {
-  runtime.exposeApi({
-    createShape({ width, height }) {  // 👈
-      const rect = editor.createRectangle();
-      rect.width = width;
-      rect.height = height;
-      rect.translation = { x: 50, y: 50 };
+    runtime.exposeApi({
+        createShape({ width, height }) {
+            // 👈
+            const rect = editor.createRectangle();
+            rect.width = width;
+            rect.height = height;
+            rect.translation = { x: 50, y: 50 };
 
-      const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
-      const fillColor = editor.makeColorFill(col);
-      rect.fill = fillColor;
+            const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
+            const fillColor = editor.makeColorFill(col);
+            rect.fill = fillColor;
 
-      editor.context.insertionParent.children.append(rect);
-    },
-  });
+            editor.context.insertionParent.children.append(rect);
+        },
+    });
 }
 
 start();
@@ -426,10 +425,10 @@ Alternatively, you can target the insertion point specifically rather than relyi
 
 ```js
 // ...
-const doc = editor.documentRoot;                     // document
-const currentPage = doc.pages.first;                 // page
+const doc = editor.documentRoot; // document
+const currentPage = doc.pages.first; // page
 const currentArtboard = currentPage.artboards.first; // artboard
-currentArtboard.children.append(rect);               // children
+currentArtboard.children.append(rect); // children
 // or
 editor.documentRoot.pages.first.artboards.first.children.append(rect);
 ```
@@ -446,10 +445,10 @@ You now understand the fundamentals of the Adobe Express DOM and the hierarchica
 
 Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](/guides/design/user_interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
 
-- `<sp-number-field>` for the Rows and Columns inputs;
-- `<sp-slider>` for the Gutter;[^4]
-- `<sp-swatch>` for the color picker;
-- `<sp-button-group>` and `<sp-button>` for the CTA buttons.
+-   `<sp-number-field>` for the Rows and Columns inputs;
+-   `<sp-slider>` for the Gutter;[^4]
+-   `<sp-swatch>` for the color picker;
+-   `<sp-button-group>` and `<sp-button>` for the CTA buttons.
 
 The layout is based on nested FlexBox CSS classes, such as `row` and `column`. Because of the fixed width, margins are tight; the design has also been compacted along the Y-axis for consistency.
 
@@ -500,9 +499,9 @@ The only tricky UI bit worth mentioning here is relative to the **color pickers*
 
 ```html
 <div class="row">
-	<!-- ... -->
-	<sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
-	<input type="color" id="rowsColorPicker" style="display: none;">
+    <!-- ... -->
+    <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
+    <input type="color" id="rowsColorPicker" style="display: none;" />
 </div>
 ```
 
@@ -520,13 +519,13 @@ rowsColorSwatch.color = "#ccccff";
 
 // The <sp-swatch> click triggers the <input> click
 rowsColorSwatch.addEventListener("click", function () {
-	rowsColorPicker.click();
+    rowsColorPicker.click();
 });
 
 // The <input> click changes the <sp-swatch> fill with the picked color.
 rowsColorPicker.addEventListener("input", function (event) {
-	const selectedColor = event.target.value;
-	rowsColorSwatch.setAttribute("color", selectedColor);
+    const selectedColor = event.target.value;
+    rowsColorSwatch.setAttribute("color", selectedColor);
 });
 ```
 
@@ -547,37 +546,44 @@ Let's finish the UI, completing the code for `ui/index.js`. As you can see, it i
 
 ```html
 <body>
-  <sp-theme scale="medium" color="light" theme="express">
-    <h2>Design Grid creator</h2>
-    <div class="row gap-20">
-      <div class="row">
-        <div class="column">
-          <sp-field-label for="rows" size="m">Rows</sp-field-label>
-          <sp-number-field id="rows" min="1" max="20">
-          </sp-number-field>
+    <sp-theme scale="medium" color="light" theme="express">
+        <h2>Design Grid creator</h2>
+        <div class="row gap-20">
+            <div class="row">
+                <div class="column">
+                    <sp-field-label for="rows" size="m">Rows</sp-field-label>
+                    <sp-number-field id="rows" min="1" max="20"> </sp-number-field>
+                </div>
+                <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
+                <input type="color" id="rowsColorPicker" style="display: none;" />
+            </div>
+            <div class="row">
+                <div class="column">
+                    <sp-field-label for="cols" size="m">Columns</sp-field-label>
+                    <sp-number-field id="cols" min="1" max="20"> </sp-number-field>
+                </div>
+                <sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
+                <input type="color" id="colsColorPicker" style="display: none;" />
+            </div>
         </div>
-        <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
-        <input type="color" id="rowsColorPicker" style="display: none;">
-      </div>
-      <div class="row">
-        <div class="column">
-          <sp-field-label for="cols" size="m">Columns</sp-field-label>
-          <sp-number-field id="cols" min="1" max="20">
-          </sp-number-field>
+        <div class="row">
+            <sp-slider
+                label="Gutter"
+                id="gutter"
+                variant="filled"
+                editable
+                hide-stepper
+                min="1"
+                max="50"
+                format-options='{"style": "unit", "unit": "px"}'
+                step="1"
+            ></sp-slider>
         </div>
-        <sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
-        <input type="color" id="colsColorPicker" style="display: none;">
-      </div>
-    </div>
-    <div class="row">
-      <sp-slider label="Gutter" id="gutter" variant="filled" editable hide-stepper min="1" max="50"
-        format-options='{"style": "unit", "unit": "px"}' step="1"></sp-slider>
-    </div>
-    <sp-button-group horizontal>
-      <sp-button id="deleteGrid" variant="secondary" disabled>Delete</sp-button>
-      <sp-button id="createGrid" disabled>Create</sp-button>
-    </sp-button-group>
-  </sp-theme>
+        <sp-button-group horizontal>
+            <sp-button id="deleteGrid" variant="secondary" disabled>Delete</sp-button>
+            <sp-button id="createGrid" disabled>Create</sp-button>
+        </sp-button-group>
+    </sp-theme>
 </body>
 ```
 
@@ -589,80 +595,80 @@ Let's finish the UI, completing the code for `ui/index.js`. As you can see, it i
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-  console.log("addOnUISdk is ready for use.");
+    console.log("addOnUISdk is ready for use.");
 
-  // Get the Document Sandbox.
-  const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("documentSandbox");
+    // Get the Document Sandbox.
+    const { runtime } = addOnUISdk.instance;
+    const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-  // Input fields -------------------------------------------
+    // Input fields -------------------------------------------
 
-  const rowsInput = document.getElementById("rows");
-  const colsInput = document.getElementById("cols");
-  const gutterInput = document.getElementById("gutter");
+    const rowsInput = document.getElementById("rows");
+    const colsInput = document.getElementById("cols");
+    const gutterInput = document.getElementById("gutter");
 
-  rowsInput.value = 4;
-  colsInput.value = 6;
-  gutterInput.value = 10;
+    rowsInput.value = 4;
+    colsInput.value = 6;
+    gutterInput.value = 10;
 
-  // Color pickers ------------------------------------------
+    // Color pickers ------------------------------------------
 
-  const colsColorPicker = document.getElementById("colsColorPicker");
-  const colsColorSwatch = document.getElementById("colsColorSwatch");
-  const rowsColorPicker = document.getElementById("rowsColorPicker");
-  const rowsColorSwatch = document.getElementById("rowsColorSwatch");
+    const colsColorPicker = document.getElementById("colsColorPicker");
+    const colsColorSwatch = document.getElementById("colsColorSwatch");
+    const rowsColorPicker = document.getElementById("rowsColorPicker");
+    const rowsColorSwatch = document.getElementById("rowsColorSwatch");
 
-  colsColorPicker.value = "#ffcccc";
-  colsColorSwatch.color = "#ffcccc";
-  rowsColorPicker.value = "#ccccff";
-  rowsColorSwatch.color = "#ccccff";
+    colsColorPicker.value = "#ffcccc";
+    colsColorSwatch.color = "#ffcccc";
+    rowsColorPicker.value = "#ccccff";
+    rowsColorSwatch.color = "#ccccff";
 
-  colsColorSwatch.addEventListener("click", function () {
-    colsColorPicker.click();
-  });
-  colsColorPicker.addEventListener("input", function (event) {
-    const selectedColor = event.target.value;
-    colsColorSwatch.setAttribute("color", selectedColor);
-  });
-
-  rowsColorSwatch.addEventListener("click", function () {
-    rowsColorPicker.click();
-  });
-  rowsColorPicker.addEventListener("input", function (event) {
-    const selectedColor = event.target.value;
-    rowsColorSwatch.setAttribute("color", selectedColor);
-  });
-
-  // CTA Buttons --------------------------------------------
-
-  const createGridBtn = document.getElementById("createGrid");
-  const deleteGridBtn = document.getElementById("deleteGrid");
-
-  deleteGridBtn.onclick = async (event) => {
-    const res = await sandboxProxy.deleteGrid();
-    if (res) {
-      // When there's been an error deleting the grid, you may want to handle it here
-    }
-    deleteGridBtn.disabled = true;
-  };
-
-  createGridBtn.onclick = async (event) => {
-    await sandboxProxy.addGrid({
-      columns: colsInput.value,
-      rows: rowsInput.value,
-      gutter: gutterInput.value,
-      columnColor: colsColorPicker.value,
-      rowColor: rowsColorPicker.value,
+    colsColorSwatch.addEventListener("click", function () {
+        colsColorPicker.click();
     });
-    deleteGridBtn.disabled = false;
-  };
+    colsColorPicker.addEventListener("input", function (event) {
+        const selectedColor = event.target.value;
+        colsColorSwatch.setAttribute("color", selectedColor);
+    });
 
-  // Only now it is safe to enable the button
-  createGridBtn.disabled = false;
+    rowsColorSwatch.addEventListener("click", function () {
+        rowsColorPicker.click();
+    });
+    rowsColorPicker.addEventListener("input", function (event) {
+        const selectedColor = event.target.value;
+        rowsColorSwatch.setAttribute("color", selectedColor);
+    });
+
+    // CTA Buttons --------------------------------------------
+
+    const createGridBtn = document.getElementById("createGrid");
+    const deleteGridBtn = document.getElementById("deleteGrid");
+
+    deleteGridBtn.onclick = async (event) => {
+        const res = await sandboxProxy.deleteGrid();
+        if (res) {
+            // When there's been an error deleting the grid, you may want to handle it here
+        }
+        deleteGridBtn.disabled = true;
+    };
+
+    createGridBtn.onclick = async (event) => {
+        await sandboxProxy.addGrid({
+            columns: colsInput.value,
+            rows: rowsInput.value,
+            gutter: gutterInput.value,
+            columnColor: colsColorPicker.value,
+            rowColor: rowsColorPicker.value,
+        });
+        deleteGridBtn.disabled = false;
+    };
+
+    // Only now it is safe to enable the button
+    createGridBtn.disabled = false;
 });
 ```
 
-Eventually, the two buttons (Delete and Create) invoke methods exposed by the Document API, respectively `deleteGrid()` and `createGrid()`. The latter expects an options object with `rows`, `columns`, `gutter`, `columnColor`,  and `rowColor` properties.
+Eventually, the two buttons (Delete and Create) invoke methods exposed by the Document API, respectively `deleteGrid()` and `createGrid()`. The latter expects an options object with `rows`, `columns`, `gutter`, `columnColor`, and `rowColor` properties.
 
 ### Validation and Error Handling
 
@@ -687,11 +693,11 @@ const { runtime } = addOnSandboxSdk.instance;
 import { editor, colorUtils, constants } from "express-document-sdk";
 
 function start() {
-  runtime.exposeApi({
-    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      console.log("addGrid", columns, rows, gutter, columnColor, rowColor);
-    },
-  });
+    runtime.exposeApi({
+        addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+            console.log("addGrid", columns, rows, gutter, columnColor, rowColor);
+        },
+    });
 }
 
 start();
@@ -716,12 +722,12 @@ We must get hold of the [Document](/references/document-sandbox/document-apis/cl
 ```js
 // ...
 runtime.exposeApi({
-	addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-		const doc = editor.documentRoot;
-		const page = doc.pages.first;
-		const rowWidth = page.width;
-	  const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
-	},
+    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+        const doc = editor.documentRoot;
+        const page = doc.pages.first;
+        const rowWidth = page.width;
+        const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
+    },
 });
 ```
 
@@ -747,18 +753,18 @@ addGrid({ columns, rows, gutter, columnColor, rowColor }) {
 To draw all four (or any number coming from the UI) rectangles at once, a loop is in order.
 
 ```js
-  // ...
-  var rowsRect = [];
-  for (let i = 0; i < rows; i++) {
-	  let r = editor.createRectangle();
-	  r.width = page.width;
-	  r.height = rowHeight;
-		// moving the row in place
+// ...
+var rowsRect = [];
+for (let i = 0; i < rows; i++) {
+    let r = editor.createRectangle();
+    r.width = page.width;
+    r.height = rowHeight;
+    // moving the row in place
     r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
     rowsRect.push(r);
-  }
-  // adding the rows to the page
-  rowsRect.forEach((rect) => page.artboards.first.children.append(rect));
+}
+// adding the rows to the page
+rowsRect.forEach((rect) => page.artboards.first.children.append(rect));
 ```
 
 We've created all the needed rectangles, shifting them on the Y-axis according to their number and gutter, collecting them in a `rowsRect` array; which, in turn, we've looped through to append them all to the first `artboard` in the page.
@@ -776,11 +782,11 @@ const page = doc.pages.first;
 var colsRect = [];
 const colWidth = (page.width - (cols + 1) * gutter) / cols;
 for (let i = 0; i < cols; i++) {
-	let r = editor.createRectangle();
-	  r.width = colWidth;
-	  r.height = page.height;
+    let r = editor.createRectangle();
+    r.width = colWidth;
+    r.height = page.height;
     r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
-	cols.push(r);
+    cols.push(r);
 }
 cols.forEach((rect) => page.artboards.first.children.append(rect));
 ```
@@ -791,10 +797,10 @@ We now have most of what is needed to complete the Grids add-on; we're in dire n
 
 The Grid creation process can be split into **smaller, separate steps**—we can take this chance to think about how to structure the entire project.
 
-- Creating a rectangle is best handled using a dedicated `createRect()` function.
-- Rows and Columns can be separate processes, too.
-- `code.js` doesn't need to expose anything else but the `addGrid()` and  `deleteGrid()` methods.
-- `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
+-   Creating a rectangle is best handled using a dedicated `createRect()` function.
+-   Rows and Columns can be separate processes, too.
+-   `code.js` doesn't need to expose anything else but the `addGrid()` and `deleteGrid()` methods.
+-   `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
 
 <!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
@@ -810,17 +816,17 @@ import { addColumns, addRows } from "./shapeUtils";
 const { runtime } = addOnSandboxSdk.instance;
 
 function start() {
-  const sandboxProxy = {
-    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      addRows(rows, gutter, rowColor);
-      addColumns(columns, gutter, columnColor);
-			// ...
-    },
-    deleteGrid() {
-      // ...
-    },
-  };
-  runtime.exposeApi(sandboxProxy);
+    const sandboxProxy = {
+        addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+            addRows(rows, gutter, rowColor);
+            addColumns(columns, gutter, columnColor);
+            // ...
+        },
+        deleteGrid() {
+            // ...
+        },
+    };
+    runtime.exposeApi(sandboxProxy);
 }
 start();
 ```
@@ -832,37 +838,37 @@ import { editor, colorUtils, constants } from "express-document-sdk";
 
 // Utility to create a rectangle and fill it with a color.
 const createRect = (width, height, color) => {
-  const rect = editor.createRectangle();
-  rect.width = width;
-  rect.height = height;
-  // Fill the rectangle with the color.
-  const rectangleFill = editor.makeColorFill(colorUtils.fromHex(color));
-  rect.fill = rectangleFill;
-  return rect;
+    const rect = editor.createRectangle();
+    rect.width = width;
+    rect.height = height;
+    // Fill the rectangle with the color.
+    const rectangleFill = editor.makeColorFill(colorUtils.fromHex(color));
+    rect.fill = rectangleFill;
+    return rect;
 };
 
 const addRows = (rowsNumber, gutter, color) => {
-  const page = editor.documentRoot.pages.first;
-  var rows = [];
-  const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
-  for (let i = 0; i < rowsNumber; i++) {
-    let r = createRect(page.width, rowHeight, color);
-    r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
-    rows.push(r);
-  }
-  rows.forEach((row) => page.artboards.first.children.append(row));
+    const page = editor.documentRoot.pages.first;
+    var rows = [];
+    const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
+    for (let i = 0; i < rowsNumber; i++) {
+        let r = createRect(page.width, rowHeight, color);
+        r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
+        rows.push(r);
+    }
+    rows.forEach((row) => page.artboards.first.children.append(row));
 };
 
 const addColumns = (columNumber, gutter, color) => {
-  const page = editor.documentRoot.pages.first;
-  var cols = [];
-  const colWidth = (page.width - (columNumber + 1) * gutter) / columNumber;
-  for (let i = 0; i < columNumber; i++) {
-    let r = createRect(colWidth, page.height, color);
-    r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
-    cols.push(r);
-  }
-  cols.forEach((col) => page.artboards.first.children.append(col));
+    const page = editor.documentRoot.pages.first;
+    var cols = [];
+    const colWidth = (page.width - (columNumber + 1) * gutter) / columNumber;
+    for (let i = 0; i < columNumber; i++) {
+        let r = createRect(colWidth, page.height, color);
+        r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
+        cols.push(r);
+    }
+    cols.forEach((col) => page.artboards.first.children.append(col));
 };
 
 export { addColumns, addRows };
@@ -874,13 +880,13 @@ It'd be nice to group rows and columns. The Editor class provides a [`createGrou
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
-  // ...
-  var rows = [];
-  // ...
+    // ...
+    var rows = [];
+    // ...
 
-  const rowsGroup = editor.createGroup();          // creating a group
-  page.artboards.first.children.append(rowsGroup); // appending to the page
-  rowsGroup.children.append(...rows);              // appending rectangles
+    const rowsGroup = editor.createGroup(); // creating a group
+    page.artboards.first.children.append(rowsGroup); // appending to the page
+    rowsGroup.children.append(...rows); // appending rectangles
 };
 // 👆 same in addColumns()
 ```
@@ -895,7 +901,7 @@ rowsGroup.children.append(...rows);
 rowsGroup.locked = true;
 ```
 
-The Reference also shows an interesting [`blendMode`](/references/document-sandbox/document-apis/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/document-sandbox/document-apis/enums/BlendMode/#multiply) will produce a visually nicer overlay effect ([opacity](/references/document-sandbox/document-apis/classes/GroupNode.md#opacity) can be an alternative).
+The Reference also shows an interesting [`blendMode`](/references/document-sandbox/document-apis/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/document-sandbox/document-apis/enumerations/BlendMode/#multiply) will produce a visually nicer overlay effect ([opacity](/references/document-sandbox/document-apis/classes/GroupNode.md#opacity) can be an alternative).
 
 ```js
 // ...
@@ -913,16 +919,16 @@ It would be preferable if a single group contained Rows and Columns; we must edi
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
-	// ...
-	rowsGroup.locked = true;
-	return rowsGroup;  // 👈 returning the group
-}
+    // ...
+    rowsGroup.locked = true;
+    return rowsGroup; // 👈 returning the group
+};
 
 const addColumns = (columNumber, gutter, color) => {
-	// ...
-	columnsGroup.locked = true;
-	return columnsGroup;// 👈 
-}
+    // ...
+    columnsGroup.locked = true;
+    return columnsGroup; // 👈
+};
 ```
 
 They can be referenced in `addGrid()`, appending them as children of this new group.
@@ -956,25 +962,25 @@ Curb your enthusiasm: if you think about it, there might be an issue lurking her
 let gridRef = null; // 👈 Grids group reference
 
 function start() {
-  runtime.exposeApi({
-    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      // ...
-      const gridGroup = editor.createGroup();
-      // ...
-      gridRef = gridGroup; // 👈 storing the group for later
-    },
-    deleteGrid() {
-      if (gridRef) {
-        try {
-          gridRef.removeFromParent(); // 👈 removing from the document
-          gridRef = null;             //    clearing the reference
-        } catch (error) {
-          console.error(error);
-          return "Error: the Grid could not be deleted."
-        }
-      } 
-    },
-  });
+    runtime.exposeApi({
+        addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+            // ...
+            const gridGroup = editor.createGroup();
+            // ...
+            gridRef = gridGroup; // 👈 storing the group for later
+        },
+        deleteGrid() {
+            if (gridRef) {
+                try {
+                    gridRef.removeFromParent(); // 👈 removing from the document
+                    gridRef = null; //    clearing the reference
+                } catch (error) {
+                    console.error(error);
+                    return "Error: the Grid could not be deleted.";
+                }
+            }
+        },
+    });
 }
 start();
 ```
@@ -985,19 +991,19 @@ Although not exposed through the Communication API, the `gridRef` variable is pr
 
 Congratulations! You've coded from scratch the Grids Design System add-on. This proof-of-concept may be extended to make it even more useful as a product; you may implement the following features as an exercise.
 
-- **Page margins**: we're using the gutter for this purpose, but a proper `<sp-number-field>` can be added to allow users to set margins.
-- **Visibility toggle**: Use a `<sp-slider>`to control the grid's opacity, or add a `<sp-switch>` to toggle them on and off.
-- **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](/references/addonsdk/instance-clientStorage/).
+-   **Page margins**: we're using the gutter for this purpose, but a proper `<sp-number-field>` can be added to allow users to set margins.
+-   **Visibility toggle**: Use a `<sp-slider>`to control the grid's opacity, or add a `<sp-switch>` to toggle them on and off.
+-   **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](/references/addonsdk/instance-clientStorage/).
 
 ## Lessons Learned
 
 Let's review the concepts covered in this tutorial and how they've been implemented in the Grids add-on.
 
-- The **iframe** and the **Document Sandbox** are two distinct entities able to share contexts via the Communication API. We've used the `exposeApi()` method of the `runtime` object to allow the iframe to invoke functions in the Document API domain.
-- The **Document API** provides access to Adobe Express' Document Object Model, which defines containment structures and inheritance hierarchies. We've retrieved the document, its pages, and artboards; created, moved and assigned blending modes to shapes; created, populated and locked groups.
-- Nodes (elements) in Adobe Express documents can be added to the document in a position relative to the currently active selection or targeting a container as the **insertion point**; we've seen how `ContainerNode` elements have a `children` collection to `append()` elements to.
-- The Document API **context is permanent** in between iframe calls. We've seen that it's possible to store a reference to a Node within the exposed methods' closure and act upon it after its creation.
-- **Spectrum Web Components** are crucial to UI building, but sometimes they require customization; in this project, we've linked a `<sp-swatch>` to a traditional `<input>` element to create an Adobe Express' native-looking color picker.
+-   The **iframe** and the **Document Sandbox** are two distinct entities able to share contexts via the Communication API. We've used the `exposeApi()` method of the `runtime` object to allow the iframe to invoke functions in the Document API domain.
+-   The **Document API** provides access to Adobe Express' Document Object Model, which defines containment structures and inheritance hierarchies. We've retrieved the document, its pages, and artboards; created, moved and assigned blending modes to shapes; created, populated and locked groups.
+-   Nodes (elements) in Adobe Express documents can be added to the document in a position relative to the currently active selection or targeting a container as the **insertion point**; we've seen how `ContainerNode` elements have a `children` collection to `append()` elements to.
+-   The Document API **context is permanent** in between iframe calls. We've seen that it's possible to store a reference to a Node within the exposed methods' closure and act upon it after its creation.
+-   **Spectrum Web Components** are crucial to UI building, but sometimes they require customization; in this project, we've linked a `<sp-swatch>` to a traditional `<input>` element to create an Adobe Express' native-looking color picker.
 
 ## Final Project
 
@@ -1011,50 +1017,58 @@ The code for this project can be downloaded [here](https://github.com/AdobeDocs/
 ```html
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Document Sandbox" />
+        <meta
+            name="keywords"
+            content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Adobe Express Document API"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grids add-on</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Document Sandbox" />
-  <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Adobe Express Document API" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grids add-on</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <sp-theme scale="medium" color="light" theme="express">
-    <h2>Design Grid creator</h2>
-    <div class="row gap-20">
-      <div class="row">
-        <div class="column">
-          <sp-field-label for="rows" size="m">Rows</sp-field-label>
-          <sp-number-field id="rows" min="1" max="20">
-          </sp-number-field>
-        </div>
-        <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
-        <input type="color" id="rowsColorPicker" style="display: none;">
-      </div>
-      <div class="row">
-        <div class="column">
-          <sp-field-label for="cols" size="m">Columns</sp-field-label>
-          <sp-number-field id="cols" min="1" max="20">
-          </sp-number-field>
-        </div>
-        <sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
-        <input type="color" id="colsColorPicker" style="display: none;">
-      </div>
-    </div>
-    <div class="row">
-      <sp-slider label="Gutter" id="gutter" variant="filled" editable hide-stepper min="1" max="50"
-        format-options='{"style": "unit", "unit": "px"}' step="1"></sp-slider>
-    </div>
-    <sp-button-group horizontal>
-      <sp-button id="deleteGrid" variant="secondary" disabled>Delete</sp-button>
-      <sp-button id="createGrid" disabled>Create</sp-button>
-    </sp-button-group>
-  </sp-theme>
-</body>
-
+    <body>
+        <sp-theme scale="medium" color="light" theme="express">
+            <h2>Design Grid creator</h2>
+            <div class="row gap-20">
+                <div class="row">
+                    <div class="column">
+                        <sp-field-label for="rows" size="m">Rows</sp-field-label>
+                        <sp-number-field id="rows" min="1" max="20"> </sp-number-field>
+                    </div>
+                    <sp-swatch id="rowsColorSwatch" class="color-well"></sp-swatch>
+                    <input type="color" id="rowsColorPicker" style="display: none;" />
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <sp-field-label for="cols" size="m">Columns</sp-field-label>
+                        <sp-number-field id="cols" min="1" max="20"> </sp-number-field>
+                    </div>
+                    <sp-swatch id="colsColorSwatch" class="color-well"></sp-swatch>
+                    <input type="color" id="colsColorPicker" style="display: none;" />
+                </div>
+            </div>
+            <div class="row">
+                <sp-slider
+                    label="Gutter"
+                    id="gutter"
+                    variant="filled"
+                    editable
+                    hide-stepper
+                    min="1"
+                    max="50"
+                    format-options='{"style": "unit", "unit": "px"}'
+                    step="1"
+                ></sp-slider>
+            </div>
+            <sp-button-group horizontal>
+                <sp-button id="deleteGrid" variant="secondary" disabled>Delete</sp-button>
+                <sp-button id="createGrid" disabled>Create</sp-button>
+            </sp-button-group>
+        </sp-theme>
+    </body>
 </html>
 ```
 
@@ -1079,76 +1093,76 @@ import "@spectrum-web-components/swatch/sp-swatch.js";
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-  console.log("addOnUISdk is ready for use.");
+    console.log("addOnUISdk is ready for use.");
 
-  // Get the Document Sandbox.
-  const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("documentSandbox");
+    // Get the Document Sandbox.
+    const { runtime } = addOnUISdk.instance;
+    const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-  // Input fields -------------------------------------------
+    // Input fields -------------------------------------------
 
-  const rowsInput = document.getElementById("rows");
-  const colsInput = document.getElementById("cols");
-  const gutterInput = document.getElementById("gutter");
+    const rowsInput = document.getElementById("rows");
+    const colsInput = document.getElementById("cols");
+    const gutterInput = document.getElementById("gutter");
 
-  rowsInput.value = 4;
-  colsInput.value = 6;
-  gutterInput.value = 10;
+    rowsInput.value = 4;
+    colsInput.value = 6;
+    gutterInput.value = 10;
 
-  // Color pickers ------------------------------------------
+    // Color pickers ------------------------------------------
 
-  const colsColorPicker = document.getElementById("colsColorPicker");
-  const colsColorSwatch = document.getElementById("colsColorSwatch");
-  const rowsColorPicker = document.getElementById("rowsColorPicker");
-  const rowsColorSwatch = document.getElementById("rowsColorSwatch");
+    const colsColorPicker = document.getElementById("colsColorPicker");
+    const colsColorSwatch = document.getElementById("colsColorSwatch");
+    const rowsColorPicker = document.getElementById("rowsColorPicker");
+    const rowsColorSwatch = document.getElementById("rowsColorSwatch");
 
-  colsColorPicker.value = "#ffcccc";
-  colsColorSwatch.color = "#ffcccc";
-  rowsColorPicker.value = "#ccccff";
-  rowsColorSwatch.color = "#ccccff";
+    colsColorPicker.value = "#ffcccc";
+    colsColorSwatch.color = "#ffcccc";
+    rowsColorPicker.value = "#ccccff";
+    rowsColorSwatch.color = "#ccccff";
 
-  colsColorSwatch.addEventListener("click", function () {
-    colsColorPicker.click();
-  });
-  colsColorPicker.addEventListener("input", function (event) {
-    const selectedColor = event.target.value;
-    colsColorSwatch.setAttribute("color", selectedColor);
-  });
-
-  rowsColorSwatch.addEventListener("click", function () {
-    rowsColorPicker.click();
-  });
-  rowsColorPicker.addEventListener("input", function (event) {
-    const selectedColor = event.target.value;
-    rowsColorSwatch.setAttribute("color", selectedColor);
-  });
-
-  // CTA Buttons --------------------------------------------
-
-  const createGridBtn = document.getElementById("createGrid");
-  const deleteGridBtn = document.getElementById("deleteGrid");
-
-  deleteGridBtn.onclick = async (event) => {
-    const res = await sandboxProxy.deleteGrid();
-    if (res) {
-      // When there's been an error deleting the grid, you may want to handle it here
-    }
-    deleteGridBtn.disabled = true;
-  };
-
-  createGridBtn.onclick = async (event) => {
-    await sandboxProxy.addGrid({
-      columns: colsInput.value,
-      rows: rowsInput.value,
-      gutter: gutterInput.value,
-      columnColor: colsColorPicker.value,
-      rowColor: rowsColorPicker.value,
+    colsColorSwatch.addEventListener("click", function () {
+        colsColorPicker.click();
     });
-    deleteGridBtn.disabled = false;
-  };
+    colsColorPicker.addEventListener("input", function (event) {
+        const selectedColor = event.target.value;
+        colsColorSwatch.setAttribute("color", selectedColor);
+    });
 
-  // Only now it is safe to enable the button
-  createGridBtn.disabled = false;
+    rowsColorSwatch.addEventListener("click", function () {
+        rowsColorPicker.click();
+    });
+    rowsColorPicker.addEventListener("input", function (event) {
+        const selectedColor = event.target.value;
+        rowsColorSwatch.setAttribute("color", selectedColor);
+    });
+
+    // CTA Buttons --------------------------------------------
+
+    const createGridBtn = document.getElementById("createGrid");
+    const deleteGridBtn = document.getElementById("deleteGrid");
+
+    deleteGridBtn.onclick = async (event) => {
+        const res = await sandboxProxy.deleteGrid();
+        if (res) {
+            // When there's been an error deleting the grid, you may want to handle it here
+        }
+        deleteGridBtn.disabled = true;
+    };
+
+    createGridBtn.onclick = async (event) => {
+        await sandboxProxy.addGrid({
+            columns: colsInput.value,
+            rows: rowsInput.value,
+            gutter: gutterInput.value,
+            columnColor: colsColorPicker.value,
+            rowColor: rowsColorPicker.value,
+        });
+        deleteGridBtn.disabled = false;
+    };
+
+    // Only now it is safe to enable the button
+    createGridBtn.disabled = false;
 });
 ```
 
@@ -1156,76 +1170,74 @@ addOnUISdk.ready.then(async () => {
 
 ```css
 body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 sp-theme {
-  margin: 0 var(--spectrum-global-dimension-static-size-300);
-  display: grid;
+    margin: 0 var(--spectrum-global-dimension-static-size-300);
+    display: grid;
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
 }
 
 .gap-20 {
-  gap: var(--spectrum-global-dimension-static-size-250);
+    gap: var(--spectrum-global-dimension-static-size-250);
 }
 
 .gutter-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 100%;
-  align-items: flex-start;
-  border: 1px solid black;
-  margin-bottom: var(--spectrum-global-dimension-static-size-150);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: flex-start;
+    border: 1px solid black;
+    margin-bottom: var(--spectrum-global-dimension-static-size-150);
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
-  padding-right: var(--spectrum-global-dimension-static-size-100);
-  width: var(--spectrum-global-dimension-static-size-1000);
+    display: flex;
+    flex-direction: column;
+    padding-right: var(--spectrum-global-dimension-static-size-100);
+    width: var(--spectrum-global-dimension-static-size-1000);
 }
 
 h2 {
-  font-weight: var(--spectrum-global-font-weight-black);
+    font-weight: var(--spectrum-global-font-weight-black);
 }
 
 sp-swatch {
-  width: var(--spectrum-swatch-size-medium);
+    width: var(--spectrum-swatch-size-medium);
 }
 
 .color-well {
-  cursor: pointer;
-  --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
-  --mod-swatch-border-color: var(--spectrum-transparent-black-500);
+    cursor: pointer;
+    --mod-swatch-border-thickness: var(--spectrum-divider-thickness-small);
+    --mod-swatch-border-color: var(--spectrum-transparent-black-500);
 }
 
 sp-button {
-  flex: 1;
-  max-width: calc(
-    (100% - var(--spectrum-global-dimension-static-size-250)) / 2
-  );
+    flex: 1;
+    max-width: calc((100% - var(--spectrum-global-dimension-static-size-250)) / 2);
 }
 
 sp-number-field,
 sp-slider {
-  width: 100%;
+    width: 100%;
 }
 
 sp-button-group {
-  margin-top: var(--spectrum-global-dimension-static-size-300);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+    margin-top: var(--spectrum-global-dimension-static-size-300);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 ```
 
@@ -1242,57 +1254,56 @@ const { runtime } = addOnSandboxSdk.instance;
 let gridRef = null;
 
 function start() {
-  // APIs to be exposed to the UI runtime
-  runtime.exposeApi({
-    /**
-     * Add a grid to the document.
-     *
-     * @param {Object} options - The options for the grid.
-     * @param {number} options.columns - The number of columns in the grid.
-     * @param {number} options.rows - The number of rows in the grid.
-     * @param {number} options.gutter - The size of the gutter between columns and rows.
-     * @param {string} options.columnColor - The color of the columns.
-     * @param {string} options.rowColor - The color of the rows.
-     * @returns {Group} The group containing the grid.
-     */
-    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      // Get the document and page.
-      const doc = editor.documentRoot;
-      const page = doc.pages.first;
-      // Create the grid.
-      const rowGroup = addRows(rows, gutter, rowColor);
-      const columnGroup = addColumns(columns, gutter, columnColor);
+    // APIs to be exposed to the UI runtime
+    runtime.exposeApi({
+        /**
+         * Add a grid to the document.
+         *
+         * @param {Object} options - The options for the grid.
+         * @param {number} options.columns - The number of columns in the grid.
+         * @param {number} options.rows - The number of rows in the grid.
+         * @param {number} options.gutter - The size of the gutter between columns and rows.
+         * @param {string} options.columnColor - The color of the columns.
+         * @param {string} options.rowColor - The color of the rows.
+         * @returns {Group} The group containing the grid.
+         */
+        addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+            // Get the document and page.
+            const doc = editor.documentRoot;
+            const page = doc.pages.first;
+            // Create the grid.
+            const rowGroup = addRows(rows, gutter, rowColor);
+            const columnGroup = addColumns(columns, gutter, columnColor);
 
-      // Create the grid's group.
-      const gridGroup = editor.createGroup();
-      page.artboards.first.children.append(gridGroup);
-      gridGroup.children.append(rowGroup, columnGroup);
-      gridGroup.locked = true;
+            // Create the grid's group.
+            const gridGroup = editor.createGroup();
+            page.artboards.first.children.append(gridGroup);
+            gridGroup.children.append(rowGroup, columnGroup);
+            gridGroup.locked = true;
 
-      // Save the grid reference.
-      gridRef = gridGroup;
-    },
+            // Save the grid reference.
+            gridRef = gridGroup;
+        },
 
-    /**
-     * Delete the grid from the document.
-     * @returns {void}
-     */
-    deleteGrid() {
-      if (gridRef) {
-        try {
-          gridRef.removeFromParent();
-          gridRef = null;
-        } catch (error) {
-          console.error(error);
-          return "Error: the Grid could not be deleted.";
-        }
-      }
-    },
-  });
+        /**
+         * Delete the grid from the document.
+         * @returns {void}
+         */
+        deleteGrid() {
+            if (gridRef) {
+                try {
+                    gridRef.removeFromParent();
+                    gridRef = null;
+                } catch (error) {
+                    console.error(error);
+                    return "Error: the Grid could not be deleted.";
+                }
+            }
+        },
+    });
 }
 
 start();
-
 ```
 
 #### Document API
@@ -1310,12 +1321,12 @@ import { editor, colorUtils, constants } from "express-document-sdk";
  * @returns {RectangleNode} The created rectangle.
  */
 const createRect = (width, height, color) => {
-  const rect = editor.createRectangle();
-  rect.width = width;
-  rect.height = height;
-  const rectangleFill = editor.makeColorFill(colorUtils.fromHex(color));
-  rect.fill = rectangleFill;
-  return rect;
+    const rect = editor.createRectangle();
+    rect.width = width;
+    rect.height = height;
+    const rectangleFill = editor.makeColorFill(colorUtils.fromHex(color));
+    rect.fill = rectangleFill;
+    return rect;
 };
 
 /**
@@ -1327,29 +1338,29 @@ const createRect = (width, height, color) => {
  * @returns {GroupNode} A group containing the created rows.
  */
 const addRows = (rowsNumber, gutter, color) => {
-  const doc = editor.documentRoot;
-  const page = doc.pages.first;
+    const doc = editor.documentRoot;
+    const page = doc.pages.first;
 
-  var rows = [];
-  const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
-  // Create the rectangles
-  for (let i = 0; i < rowsNumber; i++) {
-    let r = createRect(page.width, rowHeight, color);
-    r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
-    rows.push(r);
-  }
-  // Append the rectangles to the document
-  rows.forEach((row) => page.artboards.first.children.append(row));
-  // Create the group
-  const rowsGroup = editor.createGroup();
-  // Append the group to the document
-  page.artboards.first.children.append(rowsGroup);
-  // Populate the group with the rectangles
-  rowsGroup.children.append(...rows);
-  // Edit the group's properties
-  rowsGroup.blendMode = constants.BlendMode.multiply;
-  rowsGroup.locked = true;
-  return rowsGroup;
+    var rows = [];
+    const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
+    // Create the rectangles
+    for (let i = 0; i < rowsNumber; i++) {
+        let r = createRect(page.width, rowHeight, color);
+        r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
+        rows.push(r);
+    }
+    // Append the rectangles to the document
+    rows.forEach((row) => page.artboards.first.children.append(row));
+    // Create the group
+    const rowsGroup = editor.createGroup();
+    // Append the group to the document
+    page.artboards.first.children.append(rowsGroup);
+    // Populate the group with the rectangles
+    rowsGroup.children.append(...rows);
+    // Edit the group's properties
+    rowsGroup.blendMode = constants.BlendMode.multiply;
+    rowsGroup.locked = true;
+    return rowsGroup;
 };
 
 /**
@@ -1361,44 +1372,38 @@ const addRows = (rowsNumber, gutter, color) => {
  * @returns {GroupNode} A group containing the created columns.
  */
 const addColumns = (columsNumber, gutter, color) => {
-  const doc = editor.documentRoot;
-  const page = doc.pages.first;
-  var cols = [];
-  const colWidth = (page.width - (columsNumber + 1) * gutter) / columsNumber;
-  // Create the rectangles
-  for (let i = 0; i < columsNumber; i++) {
-    let r = createRect(colWidth, page.height, color);
-    r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
-    cols.push(r);
-  }
-  // Append the rectangles to the document
-  cols.forEach((col) => page.artboards.first.children.append(col));
-  // Create the group
-  const columnsGroup = editor.createGroup();
-  // Append the group to the document
-  page.artboards.first.children.append(columnsGroup);
-  // Populate the group with the rectangles
-  columnsGroup.children.append(...cols);
-  // Edit the group's properties
-  columnsGroup.blendMode = constants.BlendMode.multiply;
-  columnsGroup.locked = true;
-  return columnsGroup;
+    const doc = editor.documentRoot;
+    const page = doc.pages.first;
+    var cols = [];
+    const colWidth = (page.width - (columsNumber + 1) * gutter) / columsNumber;
+    // Create the rectangles
+    for (let i = 0; i < columsNumber; i++) {
+        let r = createRect(colWidth, page.height, color);
+        r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
+        cols.push(r);
+    }
+    // Append the rectangles to the document
+    cols.forEach((col) => page.artboards.first.children.append(col));
+    // Create the group
+    const columnsGroup = editor.createGroup();
+    // Append the group to the document
+    page.artboards.first.children.append(columnsGroup);
+    // Populate the group with the rectangles
+    columnsGroup.children.append(...cols);
+    // Edit the group's properties
+    columnsGroup.blendMode = constants.BlendMode.multiply;
+    columnsGroup.locked = true;
+    return columnsGroup;
 };
 
 export { addColumns, addRows };
-
 ```
 
 <!-- Footnotes -->
 
 [^1]: Alternatively, you can use this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template) and start from scratch, but you'd need to manually add the `documentSandbox/shapeUtils.js` file and the various Spectrum imports.
-
 [^2]: The quotes are from the Documentation Reference of each element.
-
 [^3]: The terms "list" is used in the Adobe Express reference documentation, while "collection" may be more familiar to CEP/UXP developers; they are used interchangeably here.
-
 [^4]: It could have been another `<sp-number-field>`, but a slider played well with the overall design.
-
 [^5]: For example, you may want to retrieve the page's `width` and `height` properties at the beginning, and use them in the rest of the code.
-
-[^6]:  Future versions of the Document API may provide more deliberate ways to refer to elements.
+[^6]: Future versions of the Document API may provide more deliberate ways to refer to elements.
