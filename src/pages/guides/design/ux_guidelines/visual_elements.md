@@ -20,11 +20,17 @@ import '/src/styles.css'
 
 # Visual Elements
 
+You can use Color, Typography and Layout to establish hierarchy in your designs.
+
 Adobe Express implements the "Spectrum for Adobe Express theme", which has been designed specifically for it. You’ll notice a friendlier visual tone, with bolder typography, softer rounding on elements, and indigo serving as the accent color.
 
 ## Color
 
-**TODO:** Ask the Design team what to say about color here
+The colors available in the Spectrum for Adobe Express light theme are designed to provide users with clear visual context and establish a hierarchy of actions within the UI. These colors help guide users through their workflow, ensuring that key actions stand out while maintaining a cohesive and accessible design.
+
+When applying color, follow the specific styling recommendations at the component level to ensure consistency. Avoid overusing the accent color: it's meant to highlight primary actions, not dominate the entire interface. Additionally, adhere to the contrast ratio guidelines to maintain readability and accessibility for all users.
+
+For more details on best practices, please refer to this [Color system guide](https://spectrum.adobe.com/page/color-system/#Colors).
 
 ## Typography
 
@@ -114,6 +120,34 @@ Structural grids in Adobe Express add-ons are designed to accommodate various co
 Please note the specific paddings on each of these grid types.
 
 ![Structural Grids and Foundational Patterns](./img/layout_patterns.png)
+
+## Panel Actions
+
+Panel Actions are interactive elements that allow users to search, sort, filter, and manage content within your add-on.
+
+### Actions Overview
+
+Commonly found at the top of the add-on panel, Panel Actions include:
+
+- **Search**: allows users to quickly find specific content.
+- **Filter**: enables users to narrow down visible content based on criteria.
+- **Sort**: organizes content by relevance, date, or other metrics.
+- **Add Folder**: gives users the ability to create new folders within the add-on.
+- **Tabs**: lmets users navigate between different sections or views.
+
+These actions enable users to "drill into" specific sections, for example dynamically refining a list of thumbnails that follows.
+
+![Panel Actions](./img/visual_actions-search.png)
+
+### Best Practices
+
+Panel Actions, when available, should be arranged at the top of the add-on's content area. This ensures that users can easily access them and that they are always visible even when the grid below scrolls.
+
+### Examples
+
+Here are some examples of common panel organizations and hierarchies for Adobe Express add-ons.
+
+![Placeholder](./img/placeholder.png)
 
 ## Components
 
