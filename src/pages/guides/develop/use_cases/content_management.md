@@ -61,10 +61,6 @@ async function addImageFromURL(url) {
 
 There's a specific method provided in the `AddOnSDK` to allow you to add animated images (gifs) to the current page as well.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The [`addAnimatedImage()`](../../../references/addonsdk/app-document.md#addanimatedimage) method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Add Animated Image Example
 
 ```js
@@ -92,7 +88,7 @@ You can also import video and audio content similarly via the [`addVideo()`](htt
 ```js
 async function addAudioFromBlob(blob) {
   try {
-      await document.addAudio(blob, {title: "Jazzy beats"});
+      await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
   }
   catch(error) {
       console.log("Failed to add the audio to the page.");
@@ -102,7 +98,7 @@ async function addAudioFromBlob(blob) {
 async function addAudioFromURL(url) {
   try {
       const blob = await fetch(url).then(response => response.blob());
-      await document.addAudio(blob, {title: "Jazzy beats"});
+      await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
   }
   catch(error) {
       console.log("Failed to add the audio to the page.");
