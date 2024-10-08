@@ -23,6 +23,7 @@ contributors:
 
 ## 2024-10-08
 
+- Adds a brand new version of the [UX Guidelines](../guides/design/ux_guidelines/introduction.md) for Adobe Express add-ons.
 - Removes the experimental warnings for [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) since it is now stable.
 - Adds the `author` property to [`MediaAttributes`](../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](../references/addonsdk/app-document.md#addaudio) API.
 
@@ -719,7 +720,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 -   [UX Guidelines](../guides/design/index.md) are now available!
 -   A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 -   A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
--   Information on [using fonts](../guides/design/user_interface.md#using-fonts).
+-   Information on [using fonts](../guides/design/ux_guidelines/visual_elements.md#typography).
 -   CORS / COEP header handling added to the [CORS guide](../guides/develop/context.md#cors--coep-handling)
 
 ## 2023-06-08

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 h1 {
-    font-family: "adobe-clean" !important;
+  font-family: "adobe-clean" !important;
 }
 
 .custom-height {
@@ -22,4 +22,48 @@ h1 {
 .pad {
   padding-right: 100px;
 }
-  
+
+/* Adding custom CSS for a 2-columns layout */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Aligns items to the top */
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 8px;
+  margin-top: var(--spectrum-global-dimension-size-500); /* Custom margin top */
+}
+
+.image-column,
+.text-column {
+  flex: 1 1 40%;
+  max-width: 40%;
+  min-width: 250px;
+}
+
+.text-column {
+  flex: 1 1 55%;
+  max-width: 55%;
+}
+
+.text-column h1,
+.text-column h2,
+.text-column h3,
+.text-column h4 {
+  margin-top: 0; /* Set margin-top to zero for headers */
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image-column,
+  .text-column {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}

@@ -75,7 +75,7 @@ Due to changes in the testing and reviewing processes, some issues that used to 
 
 ### Relaxed UI Requirements
 
-Using the [Spectrum Design System](../design/user_interface.md#spectrum-design-system) is **no longer mandatory**, provided that the add-on's UI follows the best practices outlined in the [UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) and is well-crafted. Spectrum Web Components and the Spectrum Express theme are still the recommended options, as they reliably provide a native look and feel. Mind you, malfunctioning or poorly designed UIs will always be rejected regardless of the design system used.
+Using the [Spectrum Design System](../design/implementation_guide.md#spectrum-design-system) is **no longer mandatory**, provided that the add-on's UI follows the best practices outlined in the [UX Guidelines](../design/ux_guidelines/introduction.md) and is well-crafted. Spectrum Web Components and the Spectrum Express theme are still the recommended options, as they reliably provide a native look and feel. Mind you, malfunctioning or poorly designed UIs will always be rejected regardless of the design system used.
 
 ### COEP issues
 

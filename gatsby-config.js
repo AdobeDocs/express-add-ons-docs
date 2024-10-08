@@ -527,8 +527,50 @@ module.exports = {
             path: "guides/design/",
           },
           {
-            title: "User interface guide",
-            path: "guides/design/user_interface.md",
+            title: "UX Guidelines",
+            path: "guides/design/ux_guidelines/introduction.md",
+            pages: [
+              {
+                title: "Introduction",
+                path: "guides/design/ux_guidelines/introduction.md",
+              },
+              {
+                title: "Design Principles",
+                path: "guides/design/ux_guidelines/design_principles.md",
+              },
+              {
+                title: "Theming",
+                path: "guides/design/ux_guidelines/theming.md",
+              },
+              {
+                title: "Visual Elements",
+                path: "guides/design/ux_guidelines/visual_elements.md",
+              },
+              {
+                title: "Feedback & Messaging",
+                path: "guides/design/ux_guidelines/feedback_and_messaging.md",
+              },
+              // {
+              //   title: "Mobile UX",
+              //   path: "guides/design/ux_guidelines/mobile_ux.md",
+              // },
+              {
+                title: "Branding Guidelines & Distribution",
+                path: "guides/design/ux_guidelines/branding_guidelines.md",
+              },
+              {
+                title: "Resources & References",
+                path: "guides/design/ux_guidelines/resources_and_references.md",
+              },
+              {
+                title: "Changelog",
+                path: "guides/design/ux_guidelines/changelog.md",
+              },
+            ],
+          },
+          {
+            title: "Implementation guide",
+            path: "guides/design/implementation_guide.md",
           },
           {
             title: "Best practices",

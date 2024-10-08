@@ -40,7 +40,7 @@ You must provide a valid email address so that we can contact you for support. E
 
 ### Screenshots
 
-YYour screenshots should accurately represent the functionality and appearance of the add-on, such as key features and important user steps. It is essential to refrain from including images that could potentially mislead users or are deemed inappropriate.
+Your screenshots should accurately represent the functionality and appearance of the add-on, such as key features and important user steps. It is essential to refrain from including images that could potentially mislead users or are deemed inappropriate.
 
 ### Your icon
 

@@ -10,7 +10,7 @@ However, remember that your users will be accessing your add-on as part of their
 
 We highly suggest leveraging the Spectrum Design System and Spectrum Express theme to create user interfaces that feel similar to the Adobe Express user interface.
 
-We’ve included these guidelines here to help you create a great experience for users. Also refer to our [User interface design guide](../../../design/user_interface.md), which includes a comprehensive set of [UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/) to help with your add-on design.
+We’ve included these guidelines here to help you create a great experience for users. Also refer to our [User interface design guide](../../../design/index.md), which includes a comprehensive set of [UX Guidelines](../../../design/ux_guidelines/introduction.md) to help with your add-on design.
 
 ## Display Items
 
