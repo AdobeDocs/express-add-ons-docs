@@ -158,10 +158,6 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
   - **Maximum GIFs per scene:** 7
   
 **Importing gifs:** You should use the [`addAnimatedImage()`](../references/addonsdk/app-document.md#addanimatedimage) method when you want to import an animated GIF by default. It will be added as an animated GIF to the document as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it does not fit the criteria, only the first frame will be added. **Note:** Though [`addImage()`](../references/addonsdk/app-document.md#addaudio) supports the `gif` file type, if an animated GIF is passed in, only the first frame will be added.
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The [`addAnimatedImage()`](../references/addonsdk/app-document.md#addanimatedimage) method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
   
 **Drag and drop:** If the content being dragged is an animated GIF, it will be added as an animated GIF to the document, as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it doesn't fit the size criteria, an error toast will be shown to the user.
 
