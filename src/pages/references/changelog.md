@@ -24,9 +24,7 @@ contributors:
 ## 2024-10-08
 
 - Removes the experimental warnings for [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) since it is now stable.
-- Adds the `author` property to [`MediaAttributes`](../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the `addAudio()` API.
-
-### New
+- Adds the `author` property to [`MediaAttributes`](../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](../references/addonsdk/app-document.md#addaudio) API.
 
 ## 2024-09-30
 
