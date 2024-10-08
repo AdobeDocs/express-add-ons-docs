@@ -147,7 +147,7 @@ Panel Actions, when available, should be arranged at the top of the add-on's con
 
 Here are some examples of common panel organizations and hierarchies for Adobe Express add-ons.
 
-![Placeholder](./img/placeholder.png)
+![Examples](./img/visual_actions.png)
 
 ## Components
 
