@@ -21,6 +21,13 @@ contributors:
 
 # Changelog
 
+## 2024-10-08
+
+- Removes the experimental warnings for [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) since it is now stable.
+- Adds the `author` property to [`MediaAttributes`](../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the `addAudio()` API.
+
+### New
+
 ## 2024-09-30
 
 ### New
@@ -59,7 +66,7 @@ contributors:
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage), [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ## 2024-09-10
 

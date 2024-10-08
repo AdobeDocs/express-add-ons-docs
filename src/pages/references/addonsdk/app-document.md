@@ -203,10 +203,6 @@ Refer to the [image requirements](#image-requirements) section for specific deta
 
 Adds an animated image (gif) to the current page.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The [`addAnimatedImage()`](../addonsdk/app-document.md#addanimatedimage) method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `addAnimatedImage(imageBlob: Blob, attributes?: MediaAttributes): Promise<void>`
@@ -300,8 +296,8 @@ A resolved promise if the audio was successfully added to the canvas; otherwise 
 
 ```js
 async function addAudioFromBlob(blob) {
-  try {
-      await document.addAudio(blob, {title: "Jazzy beats"});
+  try {      
+      await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
   }
   catch(error) {
       console.log("Failed to add the audio to the page.");
@@ -310,8 +306,8 @@ async function addAudioFromBlob(blob) {
 
 async function addAudioFromURL(url) {
   try {
-      const blob = await fetch(url).then(response => response.blob());
-      await document.addAudio(blob, {title: "Jazzy beats"});
+      const blob = await fetch(url).then(response => response.blob());      
+      await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
   }
   catch(error) {
       console.log("Failed to add the audio to the page.");
@@ -323,6 +319,7 @@ async function addAudioFromURL(url) {
 | Name          | Type         | Description                               |
 | ------------- | -------------| ----------------------------------------: |
 | `title`       | `string`     | Media title (mandatory for audio import). |
+| `author?`     | `string`     | Media author |
 
 <InlineAlert slots="text" variant="info"/>
 
