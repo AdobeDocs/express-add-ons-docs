@@ -34,7 +34,7 @@ To get the most out of the UX Guidelines, start by familiarizing yourself with t
 
 Next, the [Theming](theming.md) section shows you how to implement the Spectrum for Adobe Express theme, along with customization options and examples. [Visual Elements](./visual_elements.md) is a detailed list of structural and functional components that make up the Adobe Express visual language. It covers everything from typography to grids, navigation, and a variety of UI elements alongside with implementation examples.
 
-[Feedback & Messaging](feedback_and_messaging.md) provides best practices for communicating feedback or alert errors to users. 
+[Feedback & Messaging](feedback_and_messaging.md) provides best practices for communicating feedback or alert errors to users.
 
 <!-- The [Mobile UX](mobile_ux.md) section offers guidance on how to format content for mobile devices so that the user experience is consistent across all platforms. -->
 
