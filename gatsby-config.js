@@ -550,10 +550,10 @@ module.exports = {
                 title: "Feedback & Messaging",
                 path: "guides/design/ux_guidelines/feedback_and_messaging.md",
               },
-              {
-                title: "Mobile UX",
-                path: "guides/design/ux_guidelines/mobile_ux.md",
-              },
+              // {
+              //   title: "Mobile UX",
+              //   path: "guides/design/ux_guidelines/mobile_ux.md",
+              // },
               {
                 title: "Branding Guidelines & Distribution",
                 path: "guides/design/ux_guidelines/branding_guidelines.md",
