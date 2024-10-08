@@ -23,6 +23,7 @@ contributors:
 
 ## 2024-10-08
 
+- Adds a brand new version of the [UX Guidelines](../guides/design/ux_guidelines/introduction.md) for Adobe Express add-ons.
 - Removes the experimental warnings for [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) since it is now stable.
 - Adds the `author` property to [`MediaAttributes`](../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](../references/addonsdk/app-document.md#addaudio) API.
 
