@@ -146,24 +146,24 @@ const {document} = AddOnSDKAPI.app;
  
 const mediaAttributes = {title: "Sample.pdf"}
  
-// Add PDF to current page
+// Import a PDF. Note this will be imported as a new Adobe Express document.
 function importPdf(blob, mediaAttributes) {
   try {
     document.importPdf(blob, mediaAttributes);
   }
   catch(error) {
-    console.log("Failed to add pdf to the document.");
+    console.log("Failed to import the pdf.");
   }
 }
  
-// Add pdf(url) to the current page
+// Import a PDF from a URL. Note this will be imported as a new Adobe Express document.
 async function importPdfFrom(url) {
   try {
     const blob = await fetch(url).then(response => response.blob());
     document.importPdf(blob, {title: "Sample.pdf"});
   }
   catch(error) {
-    console.log("Failed to add pdf to document.");
+    console.log("Failed to import the pdf.");
   }
 }
 ```
@@ -178,7 +178,7 @@ const {document} = AddOnSDKAPI.app;
  
 const mediaAttributes = {title: "Sample.pptx"} // only .pptx file types are supported by Express
  
-// Import presentation to document
+// Import a presentation. Note: this will be imported as a new Adobe Express presentation.
 function importPresentation(blob, mediaAttributes) {
   try {
     document.importPresentation(blob, mediaAttributes);
@@ -188,7 +188,7 @@ function importPresentation(blob, mediaAttributes) {
   }
 }
  
-// Add presentation(url) to the current page
+// Import a powerpoint presentation from a URL. Note: this will be imported as a new Adobe Express presentation.
 async function importPresentationFrom(url) {
   try {
     const blob = await fetch(url).then(response => response.blob());
