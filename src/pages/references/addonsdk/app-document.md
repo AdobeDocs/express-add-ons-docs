@@ -327,7 +327,7 @@ Refer to the [importing content use case](../../guides/develop/use_cases/content
 
 ### importPdf()
 
-Adds a PDF to the current page.
+Imports a PDF as a new Adobe Express document.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -382,7 +382,7 @@ async function importPdfFrom(url) {
 
 ### importPresentation()
 
-Imports a presentation to the document. **Note:** Currently Express only supports PowerPoint presentations (`.pptx`).
+Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
 
 <InlineAlert slots="text" variant="warning"/>
 
