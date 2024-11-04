@@ -54,7 +54,7 @@ To apply an override, right click on the entry for "new.express.adobe.com" and s
 
 ![Override headers screenshot](./img/coi-test-2.png)
 
-Assuming you haven’t done this before, the developer tools will ask you to pick a folder on your local file system where these overrides are stored. the developer tools will ask you to pick a folder where these overrides are stored. This folder is on your local file system. The alert is easy to miss, since it doesn’t present as a dialog box, but rather a message near the top of your developer tool window.
+Assuming you haven’t done this before, the developer tools will ask you to pick a folder on your local file system where these overrides are stored. The alert is easy to miss, since it doesn’t present as a dialog box, but rather a message near the top of your developer tool window.
 
 ![Override storage folder screenshot](./img/coi-test-3.png)
 
