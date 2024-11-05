@@ -4,7 +4,7 @@ How to ensure your add-ons work properly with the cross-origin isolation headers
 
 ## Overview
 
-Adobe Express will soon be enforcing cross-origin isolation on the associated domains (i.e., “new.express.adobe.com”) for Chromium-based browsers (including Chrome, Microsoft Edge, Opera, and others). This *may* impact your add-on due to stricter rules enforced by the browser. 
+Adobe Express will soon be enforcing cross-origin isolation on the associated domains (i.e., “new.express.adobe.com”) for Chromium-based browsers (including Chrome, Microsoft Edge, Opera, and others). This *may* impact your add-on due to stricter rules enforced by the browser.
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -50,12 +50,12 @@ You cannot test this on mobile devices. You should test your add-on on a desktop
 
 To enable this environment yourself, perform the following steps:
 
-1. Open Developer Tools:
+1. Open the developer tools:
 
  Launch your Chromium-based browser (e.g., Chrome, Edge, Opera).
  Open the developer tools by pressing `F12` or `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Option+I` (Mac).
 
-2. Navigate to the Network tab:
+2. Navigate to the **Network** tab:
 
  In the developer tools, click on the **Network** tab, and then navigate to [Adobe Express](https://new.express.adobe.com) in the browser. Your network panel should fill up with a lot of network traffic, like this:
 
@@ -71,7 +71,7 @@ To enable this environment yourself, perform the following steps:
 
   ![Override storage folder screenshot](./img/coi-test-3.png)
 
-4. Select a folder:
+4. Select a local folder:
 
  Click **Select folder** to choose where you want to store the overrides. This will open your browser’s file picker. You’ll likely want to create a new folder for this step. You can put this anywhere you’d like. For example, in the following image we've selected the **Downloads** folder.
 
@@ -87,13 +87,13 @@ To enable this environment yourself, perform the following steps:
 
  ![OS permissions prompt screenshot](./img/coi-test-6.png)
 
-6. Navigate to the Sources tab:
+6. Navigate to the **Sources** tab:
 
  Once any required permissions have been granted, navigate to the **Sources** tab in the developer tools:
 
  ![Sources panel screenshot](./img/coi-test-7.png)
 
-7. Open the Overrides menu:
+7. Open the **Overrides** menu:
 
   Next, click the **`>>`** icon and select the **Overrides** menu option:
 
@@ -103,13 +103,13 @@ To enable this environment yourself, perform the following steps:
 
  ![Overrides screenshot](./img/coi-test-9.png)
 
-8. Add override rule:
+8. Add an override rule:
 
  To add an override rule, click the **Add override rule** option:
 
  ![Add override rules screenshot](./img/coi-test-10.png)
 
-9. Enter header names and values to override:
+9. Enter the header names and values to override:
 
  Click on `header-name-1` and start entering the name of the first header -- in this case, `Cross-Origin-Embedder-Policy`.
 
@@ -119,13 +119,13 @@ To enable this environment yourself, perform the following steps:
 
  ![Credentialless header value](./img/coi-test-12.png)
 
-10. Check final headers:
+10. Finalize header overrides:
 
  You’ll want to add headers until your overrides look like the following:
 
  ![Final header values screenshot](./img/coi-test-13.png)
 
-11. Test your add-on:
+11. Reload and test:
 
  At this point, you can reload Adobe Express and test your add-on. Be sure to watch the network panel for errors that your add-on might encounter.
 
