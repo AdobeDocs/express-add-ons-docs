@@ -4,9 +4,13 @@ How to ensure your add-ons work properly with the cross-origin isolation headers
 
 ## Overview
 
-Adobe Express will soon be enforcing cross-origin isolation on the associated domains (i.e., “new.express.adobe.com”) for Chromium-based browsers (including Chrome, Microsoft Edge, Opera, and others). This *may* impact your add-on due to stricter rules enforced by the browser. You’ll want to ensure that any add-ons you’ve developed or are developing now work in this new environment.
+Adobe Express will soon be enforcing cross-origin isolation on the associated domains (i.e., “new.express.adobe.com”) for Chromium-based browsers (including Chrome, Microsoft Edge, Opera, and others). This *may* impact your add-on due to stricter rules enforced by the browser. 
 
-Specifically, Adobe Express will be setting the following headers:
+<InlineAlert slots="text" variant="info"/>
+
+We expect the enforcement of cross-origin isolation headers to begin around the end of 2024, and we will update you the moment we have a more specific date. In the meantime, you’ll want to ensure that any add-ons you’ve developed or are developing now work in this new environment.
+
+Specifically, Adobe Express will be setting the following response headers:
 
 - `Cross-Origin-Embedder-Policy: credentialless`
 - `Cross-Origin-Opener-Policy: same-origin`
@@ -42,71 +46,96 @@ The developer tools in Chromium-based browsers on the desktop allow you to speci
 
 Mobile add-ons
 
-You cannot test this on mobile devices. You should test your add-on on a desktop web browser. Any issues you run into would also appear on mobile devices, and any fixes you apply would also apply to mobile users.
+You cannot test this on mobile devices. You should test your add-on on a desktop web browser powered by Chromium. Any issues you run into would also appear on mobile devices, and any fixes you apply would also apply to mobile users.
 
 To enable this environment yourself, perform the following steps:
 
-First, launch your browser’s developer tools and navigate to the "Network" tab, and then navigate to [Adobe Express](https://new.express.adobe.com) in the browser. Your network panel should fill up with a lot of network traffic, like this:
+1. Open Developer Tools:
 
-![Network panel screenshot](./img/coi-test-1.png)
+ Launch your Chromium-based browser (e.g., Chrome, Edge, Opera).
+ Open the developer tools by pressing `F12` or `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Option+I` (Mac).
 
-To apply an override, right click on the entry for "new.express.adobe.com" and select **Override Headers**.
+2. Navigate to the Network tab:
 
-![Override headers screenshot](./img/coi-test-2.png)
+ In the developer tools, click on the **Network** tab, and then navigate to [Adobe Express](https://new.express.adobe.com) in the browser. Your network panel should fill up with a lot of network traffic, like this:
 
-Assuming you haven’t done this before, the developer tools will ask you to pick a folder on your local file system where these overrides are stored. The alert is easy to miss, since it doesn’t present as a dialog box, but rather a message near the top of your developer tool window.
+ ![Network panel screenshot](./img/coi-test-1.png)
 
-![Override storage folder screenshot](./img/coi-test-3.png)
+3. Apply header overrides:
 
-Click **Select Folder**. This will open your browser’s file picker. You’ll likely want to create a new folder for this step. You can put this anywhere you’d like. For example, in the following image we've selected the **Downloads** folder.
+ To apply an override, right click on the entry for **new.express.adobe.com** and select **Override headers**.
 
-![Override downloads folder screenshot](./img/coi-test-4.png)
+ ![Override headers screenshot](./img/coi-test-2.png)
 
-Depending on your operating system and location of the folder, the developer tools may need to request additional permissions in order to access the folder. If so, the message will again appear near the top of the developer tool window.
+  **IMPORTANT:** Assuming you haven’t done this before, the developer tools will ask you to pick a folder on your local file system where these overrides are stored. The alert is easy to miss, since it doesn’t present as a dialog box, but rather a message near the top of your developer tool window.
 
-![Allow access screenshot](./img/coi-test-5.png)
+  ![Override storage folder screenshot](./img/coi-test-3.png)
 
-Click **Allow**. This may prompt an operating system level permissions prompt. In that case, be sure to allow that as well:
+4. Select a folder:
 
-![OS permissions prompt screenshot](./img/coi-test-6.png)
+ Click **Select folder** to choose where you want to store the overrides. This will open your browser’s file picker. You’ll likely want to create a new folder for this step. You can put this anywhere you’d like. For example, in the following image we've selected the **Downloads** folder.
 
-Once permissions have been granted, navigate to the **Sources** panel:
+  ![Override downloads folder screenshot](./img/coi-test-4.png)
 
-![Sources panel screenshot](./img/coi-test-7.png)
+5. Allow access, if prompted:
 
-Next, click the **`>>`** icon and select **Overrides**:
+ Depending on your operating system and the folder's location, the developer tools may need to request additional permissions to access it. If so, the message will again appear near the top of the developer tool window.
 
-![Sources panel screenshot](./img/coi-test-8.png)
+ ![Allow access screenshot](./img/coi-test-5.png)
 
-Expand the entry you see there completely. You should see something like the following:
+ Click **Allow**. This may prompt an operating system level permissions prompt. In that case, be sure to allow that as well:
 
-![Sources panel screenshot](./img/coi-test-9.png)
+ ![OS permissions prompt screenshot](./img/coi-test-6.png)
 
-Click **Add override rule**:
+6. Navigate to the Sources tab:
 
-![Sources panel screenshot](./img/coi-test-10.png)
+ Once any required permissions have been granted, navigate to the **Sources** tab in the developer tools:
 
-Click on `header-name-1` and start entering the name of the first header -- in this case, `Cross-Origin-Embedder-Policy`.
+ ![Sources panel screenshot](./img/coi-test-7.png)
 
-![Sources panel screenshot](./img/coi-test-11.png)
+7. Open the Overrides menu:
 
-Press TAB or click into the field that says "header value" and update it to the appropriate value -– in this case, `credentialless`. Once done, click the **+** icon to add the next header.
+  Next, click the **`>>`** icon and select the **Overrides** menu option:
 
-![Credentialless header value](./img/coi-test-12.png)
+ ![>> Icon clicked screenshot](./img/coi-test-8.png)
 
-You’ll want to add headers until your overrides look like the following:
+ Expand the entry you see there completely. You should see something like the following:
 
-![Final header values screenshot](./img/coi-test-13.png)
+ ![Overrides screenshot](./img/coi-test-9.png)
 
-At this point you can reload Adobe Express and proceed to test your add-on. Be sure to watch the network panel for errors that your add-on might encounter.
+8. Add override rule:
+
+ To add an override rule, click the **Add override rule** option:
+
+ ![Add override rules screenshot](./img/coi-test-10.png)
+
+9. Enter header names and values to override:
+
+ Click on `header-name-1` and start entering the name of the first header -- in this case, `Cross-Origin-Embedder-Policy`.
+
+ ![Header name screenshot](./img/coi-test-11.png)
+
+ Press TAB or click into the field that says `header value` and update it to the appropriate value -– in this case, `credentialless`. Once done, click the **+** icon to add the next header.
+
+ ![Credentialless header value](./img/coi-test-12.png)
+
+10. Check final headers:
+
+ You’ll want to add headers until your overrides look like the following:
+
+ ![Final header values screenshot](./img/coi-test-13.png)
+
+11. Test your add-on:
+
+ At this point, you can reload Adobe Express and test your add-on. Be sure to watch the network panel for errors that your add-on might encounter.
 
 ### What to test in your add-on
 
 You should test flows in your add-on that involve the following:
 
-- **Purchase flows:** In particular, if you’re using an iframe to handle the purchase experience, you should also test an international purchase to ensure that any additional verification flows your payment provider requires also work. *Please note that if you handle purchases on a new tab, you should not need to worry about failures.*
+- **Purchase flows:** In particular, if you’re using an iframe to handle the purchase experience, you should also test an international purchase to ensure that any additional verification flows your payment provider requires also work. *Note: You're probably not impacted if you handle purchases in a new tab.*
 - **Flows that load external domains in iframes:** For example, you may be using an iframe to generate a preview for the user or using an iframe to embed a video player.
-- **Flows that display images and other content:** For example, if you’ve built an add-on that allows the user to add stickers and the stickers are served from your domain or another third party, you should verify that the images appear in the add-on’s user interface correctly. (If the content is bundled with your add-on you should already be covered.)
+- **Flows that display images and other content:** For example, if you’ve built an add-on that allows the user to add stickers and the stickers are served from your domain or another third party, you should verify that the images appear in the add-on’s user interface correctly. (If the content is bundled with your add-on, you should already be covered.)
 - **Flows that add content to the user’s document:** Make sure that users can successfully add images or other assets to the document if your add-on provides this functionality. This should only apply to assets loaded from your domain or an external domain. Generated assets or assets bundled with your add-on should not have any issues.
 
 If your add-on doesn’t access external content, make network calls, or use iframes to display content or payment flows, you should not be affected by this change.
@@ -119,7 +148,7 @@ When you’re done testing, you’ll likely want to disable any header overrides
 
 ## Addressing issues found in your add-on
 
-Applying fixes to your add-on is generally straightforward, but does depend on the issue you’re seeing.
+Applying fixes to your add-on is generally straightforward, but it depends on the issue you’re seeing.
 
 ### Fixing assets that fail to load
 
@@ -138,6 +167,6 @@ If the endpoint is managed by a third party, you may have more difficulty in add
 - Ask if the third party provider can set headers for you via their existing support channels.
 - Create a proxy that you control to act as an intermediary. This has security and privacy implications since you need to ensure that the proxy is secure, doesn’t mix up or serve incorrect data, and doesn’t preserve user information for any longer than necessary to complete the transaction.
 
-## Review process impact
+## [Review process impact](https://developer.adobe.com/express/add-ons/docs/guides/distribute/guidelines/general/)
 
 All new add-ons published to the marketplace will be reviewed with these headers in place. If the reviewer finds a problem with your submission related to cross-origin isolation that impacts the usability of your add-on, the reviewer will reject your add-on. You can then use the above to address the issues before submitting again.
