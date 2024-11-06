@@ -21,6 +21,11 @@ contributors:
 
 # Changelog
 
+## 2024-11-04
+
+- Adds a new [Cross-origin Isolation Handling](../guides/develop/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.
+- Updates the descriptions for the [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.
+
 ## 2024-10-08
 
 - Adds a brand new version of the [UX Guidelines](../guides/design/ux_guidelines/introduction.md) for Adobe Express add-ons.

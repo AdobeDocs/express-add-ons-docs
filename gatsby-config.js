@@ -621,7 +621,7 @@ module.exports = {
             ],
           },
           {
-            title: "Frameworks, libraries and bundling",
+            title: "Frameworks, Libraries and Bundling",
             path: "guides/develop/frameworks-libraries-bundling.md",
           },
           {
@@ -631,6 +631,10 @@ module.exports = {
           {
             title: "Add-on iframe Context",
             path: "guides/develop/context.md",
+          },
+          {
+            title: "Cross-origin Isolation Handling",
+            path: "guides/develop/coi.md",
           },
         ],
       },
