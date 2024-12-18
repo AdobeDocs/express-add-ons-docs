@@ -102,19 +102,31 @@ NOT:
 
 ### Trader details
 
-In accordance with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, developers who wish to distribute their add-ons in the EU must provide additional information in their publisher profile.
+In accordance with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, developers who wish to distribute their add-ons in the European Union(EU) must provide additional information in their publisher profile.
 
-<InlineAlert variant="neutral" slots="header, text1, text2, text3" />
+<InlineAlert variant="help" slots="header, text1, text2, text3, text4" />
 
 Developer/Trader
 
 Note that the terms **developers/traders** are used interchangeably in this guide.
 
-Any developer who wishes to distribute their add-ons in the EU can be identified as a trader.
+Any developer who wishes to publish their add-ons in the EU can be identified as a trader.
 
-Checkout the [Adobe Know your trader](https://developer.adobe.com/compliance/) guide to understand why and by when you must provide these details to make your add-ons available in the EU.
+Checkout the [Adobe Know your trader](https://developer.adobe.com/compliance/) guide to understand **why and by when** you must provide these details to make your listings available in the EU.
 
-Choose **Yes** if you wish to make your add-ons available for users in the European Union.
+<InlineNestedAlert variant="info" header="true" iconPosition="right">
+
+   Are you an existing developer? Stay ahead: Update your trader details to keep your add-ons active in the EU
+
+   Existing developers can easily update their trader details directly in their publisher profile. 
+   
+   Note that only trader details can be added; other fields cannot be edited by developers.
+
+   Failing to update these details will result in the removal of your add-ons from the EU region.
+   
+ </InlineNestedAlert>
+
+Choose **Yes** if you wish to make your add-ons available for users in the EU.
 
 You must provide the following details:
 
@@ -130,4 +142,4 @@ You must complete and submit your publisher profile in order to submit your fi
 
 <InlineAlert slots="text" variant="warning"/>
 
-Any changes to your publisher profile will need to be submitted for approval again. Frequently changing your publisher profile will confuse users and erode trust. Please be sure you've considered this before changing this information.
+Any changes to your publisher profile will need to be submitted for approval again.
