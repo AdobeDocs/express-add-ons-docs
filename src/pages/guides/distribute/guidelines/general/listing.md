@@ -100,8 +100,34 @@ NOT:
 
 **www.[Your Company name]forAdobeExpress.com**
 
-<InlineAlert slots="text" variant="info"/>
+### Trader details
 
-**IMPORTANT:** You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one-time thing (unless you decide you need to update it for your own reasons). **Note:** Any changes to your publisher profile will need to be submitted for approval again.
+In accordance with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, developers who wish to distribute their add-ons in the EU must provide additional information in their publisher profile.
 
-Frequently changing your publisher profile can confuse users and erode trust. Please be sure you've considered this before changing this information.
+<InlineAlert variant="neutral" slots="header, text1, text2, text3" />
+
+Developer/Trader
+
+Note that the terms **developers/traders** are used interchangeably in this guide.
+
+Any developer who wishes to distribute their add-ons in the EU can be identified as a trader.
+
+Checkout the [Adobe Know your trader](https://developer.adobe.com/compliance/) guide to understand why you must provide these details to make your add-ons available in the EU.
+
+Choose **Yes** if you wish to make your add-ons available for users in the European Union.
+
+You must provide the following details:
+
+- Business email address​
+- Country code and Business telephone number
+- Business street address or P.O. box
+- City
+- State/Province/Region
+- ZIP/Postal code
+- Country
+
+You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one time thing, unless you decide you need to update for your own reasons.
+
+<InlineAlert slots="text" variant="warning"/>
+
+Any changes to your publisher profile will need to be submitted for approval again. Frequently changing your publisher profile will confuse users and erode trust. Please be sure you've considered this before changing this information.
