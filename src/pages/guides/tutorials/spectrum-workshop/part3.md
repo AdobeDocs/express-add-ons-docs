@@ -77,7 +77,7 @@ In Spectrum, there are two main sizing concepts to understand:
 
 ### Fonts
 
-There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
+There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user-interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
 
   ![Injected fonts screenshot](../images/fonts.png)
 

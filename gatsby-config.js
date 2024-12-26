@@ -465,23 +465,23 @@ module.exports = {
       },
       {
         title: "Getting started",
-        path: "guides/getting_started",
+        path: "guides/getting-started",
         pages: [
           {
             title: "Overview",
-            path: "guides/getting_started",
+            path: "guides/getting-started",
           },
           {
             title: "Quickstart",
-            path: "guides/getting_started/quickstart.md",
+            path: "guides/getting-started/quickstart.md",
           },
           {
             title: "Development tools",
-            path: "guides/getting_started/dev_tooling.md",
+            path: "guides/getting-started/dev-tooling.md",
           },
           {
             title: "Code Playground",
-            path: "guides/getting_started/code_playground.md",
+            path: "guides/getting-started/code-playground.md",
           },
           {
             title: "Tutorials",
@@ -528,53 +528,53 @@ module.exports = {
           },
           {
             title: "UX Guidelines",
-            path: "guides/design/ux_guidelines/introduction.md",
+            path: "guides/design/ux-guidelines/introduction.md",
             pages: [
               {
                 title: "Introduction",
-                path: "guides/design/ux_guidelines/introduction.md",
+                path: "guides/design/ux-guidelines/introduction.md",
               },
               {
                 title: "Design Principles",
-                path: "guides/design/ux_guidelines/design_principles.md",
+                path: "guides/design/ux-guidelines/design-principles.md",
               },
               {
                 title: "Theming",
-                path: "guides/design/ux_guidelines/theming.md",
+                path: "guides/design/ux-guidelines/theming.md",
               },
               {
                 title: "Visual Elements",
-                path: "guides/design/ux_guidelines/visual_elements.md",
+                path: "guides/design/ux-guidelines/visual-elements.md",
               },
               {
                 title: "Feedback & Messaging",
-                path: "guides/design/ux_guidelines/feedback_and_messaging.md",
+                path: "guides/design/ux-guidelines/feedback-and-messaging.md",
               },
               // {
               //   title: "Mobile UX",
-              //   path: "guides/design/ux_guidelines/mobile_ux.md",
+              //   path: "guides/design/ux-guidelines/mobile-ux.md",
               // },
               {
                 title: "Branding Guidelines & Distribution",
-                path: "guides/design/ux_guidelines/branding_guidelines.md",
+                path: "guides/design/ux-guidelines/branding-guidelines.md",
               },
               {
                 title: "Resources & References",
-                path: "guides/design/ux_guidelines/resources_and_references.md",
+                path: "guides/design/ux-guidelines/resources-and-references.md",
               },
               {
                 title: "Changelog",
-                path: "guides/design/ux_guidelines/changelog.md",
+                path: "guides/design/ux-guidelines/changelog.md",
               },
             ],
           },
           {
             title: "Implementation guide",
-            path: "guides/design/implementation_guide.md",
+            path: "guides/design/implementation-guide.md",
           },
           {
             title: "Best practices",
-            path: "guides/design/best_practices.md",
+            path: "guides/design/best-practices.md",
           },
         ],
       },
@@ -588,35 +588,35 @@ module.exports = {
           },
           {
             title: "Common Use Cases",
-            path: "guides/develop/use_cases.md",
+            path: "guides/develop/use-cases.md",
             pages: [
               {
                 title: "Content Management",
-                path: "guides/develop/use_cases/content_management.md",
+                path: "guides/develop/use-cases/content-management.md",
               },
               {
                 title: "Authentication and Authorization",
-                path: "guides/develop/use_cases/authentication_authorization.md",
+                path: "guides/develop/use-cases/authentication-authorization.md",
               },
               {
                 title: "Client-side Data",
-                path: "guides/develop/use_cases/clientside_data.md",
+                path: "guides/develop/use-cases/clientside-data.md",
               },
               {
                 title: "User Interaction",
-                path: "guides/develop/use_cases/user_interaction.md",
+                path: "guides/develop/use-cases/user-interaction.md",
               },
               {
                 title: "Environment Settings",
-                path: "guides/develop/use_cases/environment_settings.md",
+                path: "guides/develop/use-cases/environment-settings.md",
               },
               {
                 title: "Monetization Flows",
-                path: "guides/develop/use_cases/monetization_flows.md",
+                path: "guides/develop/use-cases/monetization-flows.md",
               },
               {
                 title: "Content Authoring and Metadata",
-                path: "guides/develop/use_cases/content_authoring.md",
+                path: "guides/develop/use-cases/content-authoring.md",
               },
             ],
           },
@@ -666,7 +666,7 @@ module.exports = {
           },
           {
             title: "Our review process",
-            path: "guides/distribute/review_process/",
+            path: "guides/distribute/review-process/",
           },
           {
             title: "Creating a private link",
@@ -694,7 +694,7 @@ module.exports = {
                   },
                   {
                     title: "User interface",
-                    path: "guides/distribute/guidelines/general/user_interface.md",
+                    path: "guides/distribute/guidelines/general/user-interface.md",
                   },
                   {
                     title: "Performance",
@@ -726,13 +726,13 @@ module.exports = {
                   },
                   {
                     title: "Edge cases",
-                    path: "guides/distribute/guidelines/general/edge_case.md",
+                    path: "guides/distribute/guidelines/general/edge-case.md",
                   },
                 ],
               },
               {
                 title: "Developer brand guidelines",
-                path: "guides/distribute/guidelines/brand_guidelines.md",
+                path: "guides/distribute/guidelines/brand-guidelines.md",
               },
               {
                 title: "Monetization guidelines",

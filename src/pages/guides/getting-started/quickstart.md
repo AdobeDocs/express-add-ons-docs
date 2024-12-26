@@ -42,7 +42,7 @@ Check out this short video below for a quick visual introduction to the steps yo
 
 ### Add-on CLI
 
-The **[Adobe Express add-on CLI](dev_tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
+The **[Adobe Express add-on CLI](dev-tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
 
 ## Step 1: Create your add-on project
 
@@ -57,7 +57,7 @@ This command will create a new add-on based on pure JavaScript with Document San
 - `hello-world` is the name of the add-on you are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
-The [Templates section](dev_tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
+The [Templates section](dev-tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
 
 **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
@@ -186,6 +186,6 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 Congratulations! You've completed the quickstart and run your first add-on!
 
-Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons.
+Next, check out the [development tools](dev-tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons.
 
 If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/guides/tutorials), and exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.

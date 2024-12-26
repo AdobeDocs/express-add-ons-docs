@@ -73,7 +73,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 ### Prerequisites
 
 -   Familiarity with HTML, CSS, JavaScript.
--   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting_started/quickstart.md) guide.
+-   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting-started/quickstart.md) guide.
 -   An Adobe Express account; use your existing Adobe ID or create one for free.
 -   Node.js version 16 or newer.
 
@@ -135,7 +135,7 @@ npm run build
 npm run start
 ```
 
-This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](/guides/getting_started/quickstart.md) guide for a step-by-step walkthrough.
+This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](/guides/getting-started/quickstart.md) guide for a step-by-step walkthrough.
 
 Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Document Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
@@ -240,7 +240,7 @@ start();
 
 Please use the iframe and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
-The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
+The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user-interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 
 ## The Communication API
 
@@ -443,7 +443,7 @@ You now understand the fundamentals of the Adobe Express DOM and the hierarchica
 
 ### Designing the UI with Spectrum Web Components
 
-Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](/guides/design/user_interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
+Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](/guides/design/user-interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
 
 -   `<sp-number-field>` for the Rows and Columns inputs;
 -   `<sp-slider>` for the Gutter;[^4]
@@ -454,7 +454,7 @@ The layout is based on nested FlexBox CSS classes, such as `row` and `column`. B
 
 ![](images/grids-addon-swc.png)
 
-Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](/guides/design/user_interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
+Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](/guides/design/user-interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
 
 ```bash
 npm install @spectrum-web-components/button

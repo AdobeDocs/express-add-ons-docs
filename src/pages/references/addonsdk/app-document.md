@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/use_cases/content_management.md#importing-content) such as images, audio and video into the document, and for [exporting content](../../guides/develop/use_cases/content_management.md#exporting-content) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/use-cases/content-management.md#importing-content) such as images, audio and video into the document, and for [exporting content](../../guides/develop/use-cases/content-management.md#exporting-content) from the current document.
 
 ## General Methods
 
@@ -323,7 +323,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [importing content use case](../../guides/develop/use_cases/content_management.md#importing-content) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [importing content use case](../../guides/develop/use-cases/content-management.md#importing-content) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -494,7 +494,7 @@ Generate renditions of the current page, specific pages or the entire document i
 }
 ```
 
-Refer to the [exporting content use case example](../../guides/develop/use_cases/content_management.md#premium-content) for more specific details on options for handling the export of premium content.
+Refer to the [exporting content use case example](../../guides/develop/use-cases/content-management.md#premium-content) for more specific details on options for handling the export of premium content.
 
 #### `RenditionOptions`
 
@@ -684,7 +684,7 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [exporting content use case example](../../guides/develop/use_cases/content_management.md#exporting-content) and the [export-sample](/samples.md) in the code samples for usage examples.
+Refer to the [exporting content use case example](../../guides/develop/use-cases/content-management.md#exporting-content) and the [export-sample](/samples.md) in the code samples for usage examples.
 
 ### Errors
 

@@ -33,7 +33,7 @@ The two different add-on's you will create are:
 
 - A basic JavaScript add-on that uses [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) to build out the UI.
 
-- A React-based add-on that uses the [`swc-react` Spectrum Web Components wrapper library](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#spectrum-web-components-with-react).
+- A React-based add-on that uses the [`swc-react` Spectrum Web Components wrapper library](https://developer.adobe.com/express/add-ons/docs/guides/design/user-interface/#spectrum-web-components-with-react).
 
 An example of what you will build is shown below:
 
@@ -54,7 +54,7 @@ This add-on allows users to select settings to customize a bingo card; including
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting_started/quickstart.md) guide.
+- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting-started/quickstart.md) guide.
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 

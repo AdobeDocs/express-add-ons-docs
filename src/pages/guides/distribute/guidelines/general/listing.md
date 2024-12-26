@@ -10,7 +10,7 @@ Your listing metadata provides Adobe and users with details about your add-on. F
 
 **NOTE:** Please avoid the use of emojis in your listing metadata as the user interface does not allow them.
 
-Refer to our [Developer Brand Guidelines](../brand_guidelines.md) for more information.
+Refer to our [Developer Brand Guidelines](../brand-guidelines.md) for more information.
 
 ### Naming your add-on
 

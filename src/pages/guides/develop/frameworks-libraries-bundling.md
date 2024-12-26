@@ -59,7 +59,7 @@ new CopyWebpackPlugin({
 
 ## React
 
-The CLI supports two different [react-based templates](../getting_started/dev_tooling.md#templates), and the [code samples](../../samples.md) repository contains various add-ons built with React for you to use as a reference.
+The CLI supports two different [react-based templates](../getting-started/dev-tooling.md#templates), and the [code samples](../../samples.md) repository contains various add-ons built with React for you to use as a reference.
 
 ## Other JavaScript and CSS libraries
 

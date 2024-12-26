@@ -230,7 +230,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
     </sp-theme>
     ```
 
-    **NOTE:** Express currently only supports a light theme, but support for a dark theme will be coming in the future, so you could add some code that listens for the [Add-on UI SDK's `themechange` event](https://developer.adobe.com/express/add-ons/docs/guides/develop/use_cases/) and apply the change to your UI with something like the following:
+    **NOTE:** Express currently only supports a light theme, but support for a dark theme will be coming in the future, so you could add some code that listens for the [Add-on UI SDK's `themechange` event](https://developer.adobe.com/express/add-ons/docs/guides/develop/use-cases/) and apply the change to your UI with something like the following:
 
     ```js
     addOnUISdk.app.on("themechange", (data) => { 
