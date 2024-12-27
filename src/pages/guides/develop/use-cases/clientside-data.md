@@ -24,7 +24,7 @@ contributors:
 
 Instead of relying solely on server-side data, you can use the `clientStorage` API to store and retrieve data locally on the client-side. This can be useful for caching images, storing user preferences, or other scenarios where you want to avoid making repeated server requests.
 
-An example is shown below; also refer to the [SDK Reference section for clientStorage](/references/addonsdk/instance-clientStorage/) and the [use-client-storage sample add-on](/samples.md#use-client-storage) for more details.
+An example is shown below; also refer to the [SDK Reference section for clientStorage](/references/addonsdk/instance-client-storage/) and the [use-client-storage sample add-on](/samples.md#use-client-storage) for more details.
 
 ### Example
 

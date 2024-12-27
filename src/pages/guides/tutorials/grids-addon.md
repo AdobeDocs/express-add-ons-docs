@@ -993,7 +993,7 @@ Congratulations! You've coded from scratch the Grids Design System add-on. This 
 
 -   **Page margins**: we're using the gutter for this purpose, but a proper `<sp-number-field>` can be added to allow users to set margins.
 -   **Visibility toggle**: Use a `<sp-slider>`to control the grid's opacity, or add a `<sp-switch>` to toggle them on and off.
--   **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](/references/addonsdk/instance-clientStorage/).
+-   **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](/references/addonsdk/instance-client-storage/).
 
 ## Lessons Learned
 

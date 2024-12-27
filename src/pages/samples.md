@@ -78,7 +78,7 @@ Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect
 - [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
 - [Import Content](./references/addonsdk/app-document.md) to add images from the add-on to the document.
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
+- [Client Storage](./references/addonsdk/instance-client-storage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
 
 ## [use-client-storage](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/use-client-storage)
 
@@ -92,7 +92,7 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 
 **Features Leveraged:**
 
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to persist the todo items.
+- [Client Storage](./references/addonsdk/instance-client-storage.md) to persist the todo items.
 
 ## [export-sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/export-sample)
 
@@ -169,7 +169,7 @@ A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. U
 
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to add the dragged image to the document.
 - [Export Content](./references/addonsdk/app-document.md) to generate renditions.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the pixel art creations.
+- [Client Storage](./references/addonsdk/instance-client-storage.md) to store the pixel art creations.
 
 ## [swc](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc)
 

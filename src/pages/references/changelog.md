@@ -650,7 +650,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 -   Added [`currentUser` API](../guides/develop/use-cases/monetization-flows.md#get-current-user-information) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/use-cases.md).
 -   Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
--   Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
+-   Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-dev-flags) details, which can be used to simulate certain behavior during development.
 
 ## 2023-08-17
 

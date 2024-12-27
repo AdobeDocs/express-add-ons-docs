@@ -789,7 +789,7 @@ Congratulations! You've coded from scratch the Stats add-on for Adobe Express. A
 
 - **Better visualization**: you can add `<sp-icon>` elements for each Node type, or bypass the Table altogether using an Accordion component for a hierarchical, collapsible menu.
 - **Hide and Show**: via the [Document API](/references/document-sandbox) you may hide and show elements based on their type—the `<sp-table>` has a `selects` and a `selected` attributes that you can put to use.
-- **Save Snapshots**: using the [Client Storage API](/references/addonsdk/instance-clientStorage/), you can keep track of the document's metadata and compare it with previous versions.
+- **Save Snapshots**: using the [Client Storage API](/references/addonsdk/instance-client-storage/), you can keep track of the document's metadata and compare it with previous versions.
 
 ## Lessons Learned
 

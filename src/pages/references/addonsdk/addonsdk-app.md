@@ -7,7 +7,7 @@ Provides access to the Adobe Express host application's objects and methods to p
 | Attribute  | Name                                  | Type     | Description                                                                                |
 | ---------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
 | `readonly` | [`currentUser`](./app-current-user.md) | `object` | Represents the current user accessing the host application                                 |
-|            | [`devFlags`](./app-devFlags.md)       | `object` | Represents flags which can be used to simulate certain behavior during development.        |
+|            | [`devFlags`](./app-dev-flags.md)       | `object` | Represents flags which can be used to simulate certain behavior during development.        |
 | `readonly` | [`document`](./app-document.md)       | `object` | Represents the active document of the host application.                                    |
 | `readonly` | [`oauth`](./app-oauth.md)             | `object` | Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
 | `readonly` | [`ui`]('./app-ui.md')                 | `object` | Represents the host UI (Adobe Express UI).                                                 |

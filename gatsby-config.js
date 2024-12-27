@@ -60,7 +60,7 @@ module.exports = {
               },
               {
                 title: "devFlags",
-                path: "references/addonsdk/app-devFlags.md",
+                path: "references/addonsdk/app-dev-flags.md",
               },
               {
                 title: "document",
@@ -82,7 +82,7 @@ module.exports = {
             pages: [
               {
                 title: "clientStorage",
-                path: "references/addonsdk/instance-clientStorage.md",
+                path: "references/addonsdk/instance-client-storage.md",
               },
               {
                 title: "manifest",
