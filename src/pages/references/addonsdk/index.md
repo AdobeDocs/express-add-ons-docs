@@ -40,7 +40,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 See the [implementing common use cases page](../../guides/develop/index.md) for details and examples of how to add the features above.
 
-<Inline-Nested-Alert slots="text" variant="success" >
+<NestedBlock slots="text" variant="success" >
 
 # SDK vs API
 
@@ -54,7 +54,7 @@ In general, an SDK provides a more complete set of tools and resources for devel
 
 **Note:** an `interface` can also be considered an `object` in terms of this reference. You can traverse the `addOnUISdk` interfaces/objects (ie: `app`,`instance`) etc in the left navigation to learn more.
 
-</Inline-Nested-Alert>
+</NestedBlock >
 
 ## Importing the addOnUISdk for Use
 
