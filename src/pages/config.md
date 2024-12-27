@@ -13,7 +13,7 @@
     - [Overview](references/) 
     - [Add-on UI SDK](references/addonsdk/) 
         - [app](references/addonsdk/addonsdk-app.md) 
-            - [currentUser](references/addonsdk/app-currentUser.md) 
+            - [currentUser](references/addonsdk/app-current-user.md) 
             - [devFlags](references/addonsdk/app-devFlags.md) 
             - [document](references/addonsdk/app-document.md) 
             - [oauth](references/addonsdk/app-oauth.md) 

@@ -1,12 +1,12 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use-cases/user-interaction.md#modal-dialogs), [enable drag and drop](../../guides/develop/use-cases/user-interaction.md#drag-and-drop) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-current-user.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use-cases/user-interaction.md#modal-dialogs), [enable drag and drop](../../guides/develop/use-cases/user-interaction.md#drag-and-drop) of content and subscribe and unsubscribe to events.
 
 ## Objects
 
 | Attribute  | Name                                  | Type     | Description                                                                                |
 | ---------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
-| `readonly` | [`currentUser`](./app-currentUser.md) | `object` | Represents the current user accessing the host application                                 |
+| `readonly` | [`currentUser`](./app-current-user.md) | `object` | Represents the current user accessing the host application                                 |
 |            | [`devFlags`](./app-devFlags.md)       | `object` | Represents flags which can be used to simulate certain behavior during development.        |
 | `readonly` | [`document`](./app-document.md)       | `object` | Represents the active document of the host application.                                    |
 | `readonly` | [`oauth`](./app-oauth.md)             | `object` | Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |

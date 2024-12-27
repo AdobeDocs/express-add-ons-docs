@@ -234,7 +234,7 @@ While the above is a very basic example, add-ons that call `createRenditions` to
 
 #### Option 1: Show a Premium Content error with the "Upgrade" option
 
-Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](/references/addonsdk/app-currentUser.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent`](/references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
+Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](/references/addonsdk/app-current-user.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent`](/references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
 
 #### Example:
 

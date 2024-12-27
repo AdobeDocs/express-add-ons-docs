@@ -135,7 +135,7 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 
 **Features Leveraged:**
 
-- [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
+- [Current User API](./references/addonsdk/app-current-user.md) to validate the current userid's.
 - [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
 ## [audio-recording-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on)

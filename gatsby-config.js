@@ -56,7 +56,7 @@ module.exports = {
             pages: [
               {
                 title: "currentUser",
-                path: "references/addonsdk/app-currentUser.md",
+                path: "references/addonsdk/app-current-user.md",
               },
               {
                 title: "devFlags",
