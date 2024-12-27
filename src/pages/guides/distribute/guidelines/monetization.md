@@ -200,7 +200,7 @@ The most common size of badges used within Express panels is typically 20x20px, 
 - The badge size should typically be 18px or 20px, but can be adjusted depending on the size of the content it is paired with.
 - We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. *This content is available when you upgrade the add-on*.
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
-- If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.<br/><br/>
+- If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.
 
  | Sample badge usage  |      |       |
  |----------|------|-------------:|

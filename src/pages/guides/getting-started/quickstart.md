@@ -24,7 +24,7 @@ This quickstart guide will help you create and run your first add-on, a simple h
 
 ## Introduction
 
-Check out this short video below for a quick visual introduction to the steps you'll take to create your very first add-on.<br/><br/>
+Check out this short video below for a quick visual introduction to the steps you'll take to create your very first add-on.
 
 <div style="display: flex; justify-content: center;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kSq4ykQGOdo" title="Creating Your First Add-on | How to Create Add-ons in Adobe Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -32,7 +32,7 @@ Check out this short video below for a quick visual introduction to the steps yo
 
 <!-- <iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="775" height="485" allow="autoplay" style="border: 0"></iframe> -->
 
-<br/>
+
 
 ## Prerequisites
 
@@ -168,7 +168,7 @@ Go back to your browser where the add-on is running in Adobe Express and notice 
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
-**Manifest updates**<br/>
+**Manifest updates**
 
 Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
 

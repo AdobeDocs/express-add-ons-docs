@@ -24,7 +24,7 @@ The value of the `sandbox` attribute can either be empty (in which case all rest
 
 <!-- <InlineAlert slots="text" variant="info"/>
 
-The add-on iframe automatically includes the `allow-scripts` and the `allow-same-origin` sandbox permissions by default (ie: `sandbox="allow-scripts allow-same-origin"`). The other supported permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). <br/><br/> -->
+The add-on iframe automatically includes the `allow-scripts` and the `allow-same-origin` sandbox permissions by default (ie: `sandbox="allow-scripts allow-same-origin"`). The other supported permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox).  -->
 
 | Permission              | Description   |
 | ------------------ | -----------:  |

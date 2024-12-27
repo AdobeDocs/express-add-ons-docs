@@ -17,7 +17,7 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-<Hero slots="heading, text" background="rgb(138, 43, 226)"/>
+<HeroSimple slots="heading, text" background="rgb(138, 43, 226)"/>
 
 # Overview
 
@@ -27,14 +27,14 @@ Adobe Express is the AI-first, all-in-one creativity app that makes it fast, eas
 
 <InlineAlert slots="text" />
 
-**Join Us: Office Hours for Adobe Express Developers** <br /><br />
+**Join Us: Office Hours for Adobe Express Developers** 
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
 
-Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>
+Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. 
 
 <div style="display: flex; justify-content: center;">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/>
+</div>
 
 To discover add-ons in [Adobe Express](https://new.express.adobe.com/new):
 

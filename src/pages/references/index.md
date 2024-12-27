@@ -4,11 +4,11 @@ Here you will find all of the technical references you'll need to help you throu
 
 ## Add-on UI SDK Reference
 
-A [traversable developer reference](./addonsdk/) for the add-on SDK where you will find detailed information about all of the objects, methods, properties and events you'll need for developing add-ons.
+A [traversable developer reference](./addonsdk/index.md) for the add-on SDK where you will find detailed information about all of the objects, methods, properties and events you'll need for developing add-ons.
 
 ## Document Sandbox Reference
 
-The [document sandbox](./document-sandbox/) is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
+The [document sandbox](./document-sandbox/index.md) is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
 ## Manifest Schema Reference
 

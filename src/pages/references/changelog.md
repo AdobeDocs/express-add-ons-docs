@@ -198,7 +198,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
 -   Color utilities have moved to [`colorUtils`](../references/document-sandbox/document-apis/classes/ColorUtils.md) instead of `utils`.
 
-    **Old**<br/>
+    **Old**
     <del>
 
     ```js
@@ -208,7 +208,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
     </del>
 
-    **New**<br/>
+    **New**
 
     ```js
     import { colorUtils } from "express-document-sdk";
@@ -262,7 +262,7 @@ Some items in the following list of changes may have been mentioned in recent up
 -   A new [`BaseNode`](../references/document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](../references/document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
 -   The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../references/document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
-    **Adobe Express Document APIs SDK import**<br/>
+    **Adobe Express Document APIs SDK import**
     For access to the [Express document and content authoring APIs](../references/document-sandbox/document-apis/):
 
     <del>
@@ -279,7 +279,7 @@ Some items in the following list of changes may have been mentioned in recent up
     import { editor } from "express-document-sdk";
     ```
 
-    **Document Sandbox SDK import**<br/>
+    **Document Sandbox SDK import**
     For access to the [document sandbox runtime APIs](../references/document-sandbox/):
 
     <del>
@@ -395,7 +395,7 @@ Some items in the following list of changes may have been mentioned in recent up
 -   Adds support to the [Add-on UI SDK](./addonsdk/index.md) for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
 -   Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/):
 
-    **Document Sandbox SDK import**<br/>
+    **Document Sandbox SDK import**
 
     from:
 
@@ -409,7 +409,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
     `const { runtime } = addOnSandboxSdk.instance; // runtime object provides direct access to the comm methods`
 
-    **Express Document SDK Import (for accessing the Document APIs**<br/>
+    **Express Document SDK Import (for accessing the Document APIs**
 
     from:
 
@@ -448,7 +448,7 @@ Some items in the following list of changes may have been mentioned in recent up
 -   The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
 -   The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
 
-    **New Classes/Interfaces**<br/>
+    **New Classes/Interfaces**
 
     -   New [RestrictedItemList class](./document-sandbox/document-apis/classes/RestrictedItemList.md)
     -   New [UnknownNode class](./document-sandbox/document-apis/classes/UnknownNode.md)
@@ -457,7 +457,7 @@ Some items in the following list of changes may have been mentioned in recent up
     -   New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
     -   Renames the [Constants](../references/document-sandbox/document-apis/enumerations/) to remove the `Value` suffix.
 
-    **Updates to Node Classes**<br/>
+    **Updates to Node Classes**
 
 The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
 
@@ -575,7 +575,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Updates
 
--   **New Types Package Versions Released** <br/>
+-   **New Types Package Versions Released** 
 
     -   A new version `0.1.6` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the [`AddOnSDK` (iframe)](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/), including new experimental APIs, as well as general improvements and bug fixes.
     -   A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **document sandbox/Editor APIs**.

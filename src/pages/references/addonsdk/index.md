@@ -38,7 +38,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [implementing common use cases page](../../guides/develop/) for details and examples of how to add the features above.
+See the [implementing common use cases page](../../guides/develop/index.md) for details and examples of how to add the features above.
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
@@ -99,58 +99,11 @@ See the [typescript definitions section](../../guides/develop/frameworks-librari
 
 ## addOnUISdk Properties
 
-The following properties can be accessed from the `addOnUISdk` object after it has been imported.<br/><br/>
-
-<table columnWidths="20,30,15,35" class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.app</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Provides access to the host application (Adobe Express)</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.instance</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>The currently running add-on instance.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.ready</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>Promise</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Promise.then</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">await this promise</a>.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.constants</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>A set of constants used throughout the add-on SDK.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.apiVersion</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td class="spectrum-Table-cell"><p>The current version of the add-on SDK running.</p></td>
-</tr>
-</tbody>
-</table>
+The following properties can be accessed from the `addOnUISdk` object after it has been imported.
 
 ## addOnUISdk Errors
 
 The table below describes the possible error messages that may occur when using the core `addOnUISdk` object, with a description of the scenario that will return them.
-
-<br/>
 
 | Error Message                     |   Error Scenario                 |
 |-------------------------------:|-------------------------------------------------:|

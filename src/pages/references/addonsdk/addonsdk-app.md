@@ -397,7 +397,7 @@ The payload data sent to the App `dragEnd` event handler.
 | `dropCancelled`   | `boolean`     | If drop occurred/drag ended at invalid position     |
 | `dropCancelReason?`| `string`     | Reason for drop cancellation |
 
-**\* Important Event Handling Notes**<br/>
+**\* Important Event Handling Notes**
 
 - Since the `addOnUISdk` uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
 - You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the `addOnUISdk` attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
@@ -470,7 +470,7 @@ The table below describes the events triggered from the add-on SDK. Use the `add
 
 The table below describes the possible error messages that may occur when using the core `addOnUISdk.app` methods, with a description of the scenario that will return them.
 
-<br/>
+
 
 | Error Message                     |   Error Scenario                 |
 |-------------------------------:|-------------------------------------------------:|
