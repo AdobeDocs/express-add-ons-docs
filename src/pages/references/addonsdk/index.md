@@ -102,6 +102,7 @@ See the [typescript definitions section](../../guides/develop/frameworks-librari
 The following properties can be accessed from the `addOnUISdk` object after it has been imported.
 
 | Attribute | Name | Type | Description |
+|-----------|-------|------|------------------|
 | readonly | addOnUISdk.app | object | Provides access to the host application (Adobe Express) | 
 | readonly | addOnUISdk.instance | object | The currently running add-on instance. |
 | readonly | addOnUISdk.ready | Promise | Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with [Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await). |
