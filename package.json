@@ -15,7 +15,8 @@
     "@adobe/gatsby-theme-aio": "^4.14.14",
     "gatsby": "4.22.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "webpack": "^5.97.1"
   },
   "resolutions": {
     "sharp": "0.33.0",
@@ -41,6 +42,7 @@
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "remark-cli": "^11.0.0",
-    "remark-validate-links": "^12.1.0"
+    "remark-validate-links": "^12.1.0",
+    "webpack-cli": "^6.0.1"
   }
 }
