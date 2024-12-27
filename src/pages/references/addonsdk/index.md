@@ -40,7 +40,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 See the [implementing common use cases page](../../guides/develop/index.md) for details and examples of how to add the features above.
 
-<NestedBlock slots="text" repeat="6" variant="success" >
+<InlineAlert slots="text" repeat="6" variant="success" />
 
 # SDK vs API
 
@@ -53,8 +53,6 @@ The distinction between an SDK and an API can be a bit blurry and can depend on 
 In general, an SDK provides a more complete set of tools and resources for developers than an API alone. An SDK may include an API, but it also includes other tools and resources that can help developers build applications more easily. However, the terms SDK and API are often used interchangeably, and the specific definitions can vary depending on the context.
 
 **Note:** an `interface` can also be considered an `object` in terms of this reference. You can traverse the `addOnUISdk` interfaces/objects (ie: `app`,`instance`) etc in the left navigation to learn more.
-
-</NestedBlock >
 
 ## Importing the addOnUISdk for Use
 
