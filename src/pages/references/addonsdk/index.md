@@ -42,7 +42,7 @@ See the [implementing common use cases page](../../guides/develop/index.md) for 
 
 <InlineAlert slots="text" repeat="6" variant="success" />
 
-# SDK vs API
+#### SDK vs API
 
 The distinction between an SDK and an API can be a bit blurry and can depend on the specific context. However, here's a general overview of the differences between an SDK and an API:
 
