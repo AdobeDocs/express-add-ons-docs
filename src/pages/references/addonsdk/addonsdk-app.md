@@ -4,51 +4,13 @@ Provides access to the Adobe Express host application's objects and methods to p
 
 ## Objects
 
-<table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-currentUser.md">currentUser</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the current user accessing the host application</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-devFlags.md">devFlags</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents flags which can be used to simulate certain behavior during development.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-document.md">document</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the active document of the host application.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-     <td class="spectrum-Table-cell"><p><pre><a href="app-oauth.md">oauth</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-ui.md">ui</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the host UI (Adobe Express UI).</p></td>
-  </tr>  
-  
-</tbody>
-</table>
+| Attribute  | Name                                  | Type     | Description                                                                                |
+| ---------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| `readonly` | [`currentUser`](./app-currentUser.md) | `object` | Represents the current user accessing the host application                                 |
+|            | [`devFlags`](./app-devFlags.md)       | `object` | Represents flags which can be used to simulate certain behavior during development.        |
+| `readonly` | [`document`](./app-document.md)       | `object` | Represents the active document of the host application.                                    |
+| `readonly` | [`oauth`](./app-oauth.md)             | `object` | Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
+| `readonly` | [`ui`]('./app-ui.md')                 | `object` | Represents the host UI (Adobe Express UI).                                                 |
 
 ## Methods
 
@@ -62,10 +24,10 @@ Subscribe to an event (ie: listen for an event).
 
 #### Parameters
 
-| Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  | -----------------------------|
-| `name`              | `string`                     | Event to subscribe to. | See [Events](#events) |
-| `handler`           | callback `function`          | Handler that gets invoked when the event is triggered. | `(data) => {}` |
+| Name      | Type                | Description                                            | Valid Values          |
+| --------- | ------------------- | ------------------------------------------------------ | --------------------- |
+| `name`    | `string`            | Event to subscribe to.                                 | See [Events](#events) |
+| `handler` | callback `function` | Handler that gets invoked when the event is triggered. | `(data) => {}`        |
 
 #### Return Value
 
@@ -89,10 +51,10 @@ Unsubscribe from an event (ie: stop listening for an event).
 
 #### Parameters
 
-| Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  |-----------------------------|
-| `name`              | `string`                     | Event to unsubscribe to. | See [Events](#events) |
-| `handler`           | callback `function`          | Handler that was used during event subscription. | `(data) => {}` |
+| Name      | Type                | Description                                      | Valid Values          |
+| --------- | ------------------- | ------------------------------------------------ | --------------------- |
+| `name`    | `string`            | Event to unsubscribe to.                         | See [Events](#events) |
+| `handler` | callback `function` | Handler that was used during event subscription. | `(data) => {}`        |
 
 #### Return Value
 
@@ -141,42 +103,42 @@ Shows a modal dialog based on specific options passed in.
 
 #### Parameters
 
-| Name              | Type         | Description   |
-| -------------     | -------------| -----------:  |
-| `dialogOptions`   | `object`     | [`DialogOptions`](#dialogoptions) object payload |
+| Name            | Type     |                                      Description |
+| --------------- | -------- | -----------------------------------------------: |
+| `dialogOptions` | `object` | [`DialogOptions`](#dialogoptions) object payload |
 
 ##### `DialogOptions`
 
-| Name              | Type         | Description   |
-| -------------     | -------------:| -----------:  |
-| `variant`         | `string` [Variant](./addonsdk-constants.md) |  The type of dialog to show.
-| `title`           | `string`        | Dialog title  |
-| `description`     | `string`        | Description for the dialog. |
-| `buttonLabels?`   | `object` [ButtonLabels](#buttonlabels) | The optional button labels to use in the dialog. |
+| Name            |                                        Type |                                      Description |
+| --------------- | ------------------------------------------: | -----------------------------------------------: |
+| `variant`       | `string` [Variant](./addonsdk-constants.md) |                      The type of dialog to show. |
+| `title`         |                                    `string` |                                     Dialog title |
+| `description`   |                                    `string` |                      Description for the dialog. |
+| `buttonLabels?` |      `object` [ButtonLabels](#buttonlabels) | The optional button labels to use in the dialog. |
 
 ##### `ButtonLabels`
 
-| Name              | Type         | Description   |
-| -------------     | -------------:| -----------:  |
-| `primary?`        | `string`       | Primary action label. Default label is "OK". |
-| `secondary?`      | `string`       | Secondary action label. |
-| `cancel?`         | `string`       | Cancel action label.    |
+| Name         |     Type |                                  Description |
+| ------------ | -------: | -------------------------------------------: |
+| `primary?`   | `string` | Primary action label. Default label is "OK". |
+| `secondary?` | `string` |                      Secondary action label. |
+| `cancel?`    | `string` |                         Cancel action label. |
 
 The input dialog variant accepts an [additional `field`](#input-dialog-additional-option) object.
 
 ##### Input Dialog Additional Option
 
-| Name              | Type           | Description   |
-| -------------     | -------------: | -----------:  |
-| `field`           | object [`Field`](#field) | Input field object |
+| Name    |                     Type |        Description |
+| ------- | -----------------------: | -----------------: |
+| `field` | object [`Field`](#field) | Input field object |
 
 ##### `Field`
 
-| Name              | Type           | Description   |
-| -------------     | -------------: | -----------:  |
-| `label`           | `string`       | Label for the input field |
-| `placeholder`     | `string`       | Specifies a short hint that describes the expected value of the field |
-| `fieldType`       | `string`        | Currently always the value "text".
+| Name          |     Type |                                                           Description |
+| ------------- | -------: | --------------------------------------------------------------------: |
+| `label`       | `string` |                                             Label for the input field |
+| `placeholder` | `string` | Specifies a short hint that describes the expected value of the field |
+| `fieldType`   | `string` |                                    Currently always the value "text". |
 
 #### Return Value
 
@@ -184,10 +146,10 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 
 #### `DialogResult`
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `buttonType`  |  `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant     | The button type clicked |
-| `fieldValue`  | `string`      | The input from the user. |
+| Name         | Type                                                                |              Description |
+| ------------ | ------------------------------------------------------------------- | -----------------------: |
+| `buttonType` | `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant |  The button type clicked |
+| `fieldValue` | `string`                                                            | The input from the user. |
 
 #### Confirmation Dialog Example Usage
 
@@ -265,9 +227,9 @@ Allows an iframe hosted within an add-on to register its intent to communicate w
 
 #### Parameters
 
-| Name              | Type                                 | Description   |
-| -------------     | -------------------------------------| -----------:  |
-| `element`           | `HTMLIFrameElement`                             | The iframe to register. |
+| Name      | Type                |             Description |
+| --------- | ------------------- | ----------------------: |
+| `element` | `HTMLIFrameElement` | The iframe to register. |
 
 #### Return Value
 
@@ -320,17 +282,17 @@ Allows for drag and document functionality to be enabled on an element such as a
 
 #### Parameters
 
-| Name              | Type                                 | Description   |
-| -------------     | -------------------------------------| -----------:  |
-| `element`           | `HTMLElement`                             | The element to enable for drag and drop. |
-| `dragCallbacks`     | [dragCallbacks](#dragcallbacks)    | An object containing a preview and completion callback  |
+| Name            | Type                            |                                            Description |
+| --------------- | ------------------------------- | -----------------------------------------------------: |
+| `element`       | `HTMLElement`                   |               The element to enable for drag and drop. |
+| `dragCallbacks` | [dragCallbacks](#dragcallbacks) | An object containing a preview and completion callback |
 
 ##### `dragCallbacks`
 
-| Name              | Type                   | Description   |
-| ------------------| -----------------------| -----------:  |
-| `previewCallback` | [`DragPreviewCallback`](#dragpreviewcallback-type-definition)  | Callback to provide the preview image |
-| `completionCallback` | [`DragCompletionCallback`](#dragcompletioncallback-type-definition)  | Callback to provide the content to be added to the document |
+| Name                 | Type                                                                |                                                 Description |
+| -------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------: |
+| `previewCallback`    | [`DragPreviewCallback`](#dragpreviewcallback-type-definition)       |                       Callback to provide the preview image |
+| `completionCallback` | [`DragCompletionCallback`](#dragcompletioncallback-type-definition) | Callback to provide the content to be added to the document |
 
 ##### `DragPreviewCallback` Type Definition
 
@@ -352,18 +314,18 @@ type DragCompletionCallback = (element: HTMLElement) => Promise<DragCompletionDa
 
 Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks), and contains the `blob` object to be added, as well as a [`MediaAttributes`](#mediaattributes) object with the `title` of the audio content (for audio only).
 
-| Name              | Type    | Description   |
-| ------------------| --------| -----------:  |
-| `blob`            | `Blob`  | Blob (image/video/audio) to be added to the document |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
+| Name          | Type                                  |                                                                             Description |
+| ------------- | ------------------------------------- | --------------------------------------------------------------------------------------: |
+| `blob`        | `Blob`                                |                                    Blob (image/video/audio) to be added to the document |
+| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
 #### `MediaAttributes`
 
 *Required for audio content only.*
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `title`       | `string`     | Media title (mandatory for audio import). |
+| Name    | Type     |                               Description |
+| ------- | -------- | ----------------------------------------: |
+| `title` | `string` | Media title (mandatory for audio import). |
 
 #### Return Value
 
@@ -383,19 +345,19 @@ The payload data sent to the `dragStart` event handler.
 
 ###### Properties
 
-| Name              | Type    | Description   |
-| ------------------| --------| -----------:  |
-| `element`         | `HTMLElement`  | Element for which the drag event started |
+| Name      | Type          |                              Description |
+| --------- | ------------- | ---------------------------------------: |
+| `element` | `HTMLElement` | Element for which the drag event started |
 
 ##### `DragEndEventData`
 
 The payload data sent to the App `dragEnd` event handler.
 
-| Name              | Type    | Description   |
-| ------------------| --------| -----------:  |
-| `element`         | `HTMLElement` | Element for which the drag event ended    |
-| `dropCancelled`   | `boolean`     | If drop occurred/drag ended at invalid position     |
-| `dropCancelReason?`| `string`     | Reason for drop cancellation |
+| Name                | Type          |                                     Description |
+| ------------------- | ------------- | ----------------------------------------------: |
+| `element`           | `HTMLElement` |          Element for which the drag event ended |
+| `dropCancelled`     | `boolean`     | If drop occurred/drag ended at invalid position |
+| `dropCancelReason?` | `string`      |                    Reason for drop cancellation |
 
 **\* Important Event Handling Notes**
 
@@ -411,60 +373,14 @@ See the [Drag & Drop use case implementation](../../guides/develop/use-cases/use
 
 The table below describes the events triggered from the add-on SDK. Use the `addOnUISdk.app.on()` method to subscribe to events, and the `addOnUISdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
-<table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>localechange</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when there is a locale change at the host side.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>themechange</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when there is a theme change at the host side.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>dragstart</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the user starts dragging an item for which drag behavior is enabled.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>dragend</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the drag operation ends.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>documentIdAvailable</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the document id is available in the application.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>documentTitleChange</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the document title is changed in the application.</p>
-    </td>
-</tr>
-</tbody>
-</table>
+| Type                | Description |                                                                                     |
+| ------------------- | ----------- | ----------------------------------------------------------------------------------- |
+| localechange        | string      | Triggered when there is a locale change at the host side.                           |
+| themechange         | string      | Triggered when there is a theme change at the host side.                            |
+| dragstart           | string      | Triggered when the user starts dragging an item for which drag behavior is enabled. |
+| dragend             | string      | Triggered when the drag operation ends.                                             |
+| documentIdAvailable | string      | Triggered when the document id is available in the application                      |
+| documentTitleChange | string      | Triggered when the document title is changed in the application.                    |
 
 ## Errors
 
@@ -472,21 +388,21 @@ The table below describes the possible error messages that may occur when using 
 
 
 
-| Error Message                     |   Error Scenario                 |
-|-------------------------------:|-------------------------------------------------:|
-| Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. |
-| Incorrect return type: `PreviewCallback` must return an object of type `URL` | `previewCallback` function doesn't return URL. |
-| Incorrect return type: `CompletionCallback` should return an array of `DragCompletionData` | `completionCallback` doesn't return `DragCompletionData[]`. |
-| Dialog already open with instanceID: `${this._instanceId}` | Dialog is already open. |
-| Dialog options parameter: title is undefined | Title is undefined. |
-| Dialog options parameter: description is undefined | Description is undefined. |
-| Dialog options parameter: variant is undefined | Variant is undefined. |
-| Invalid dialog variant: `${variant}` | Invalid dialog variant. |
-| Input dialog field is undefined | Text field property is undefined for input variant. |
-| Field property is valid only for input dialog  | If text field property is present for variant other than input. |
-| Input dialog field label is undefined  | Field label is undefined for input dialog variant. |
-| Invalid dialog field type: `${field.fieldType}`| Field type is invalid for input dialog variant. |
-| Dialog already open with instanceID:`${this._instanceId}` | If the dialog is already open. |
-| Dialog options parameter: title is undefined | Title is undefined. |
-| Dialog options parameter: src is undefined | Source is undefined. |
-| Invalid dialog variant: `${variant}` | Invalid dialog variant. |
+|                                                                              Error Message |                                                                Error Scenario |
+| -----------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------: |
+|                                         Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. |
+|               Incorrect return type: `PreviewCallback` must return an object of type `URL` |                                `previewCallback` function doesn't return URL. |
+| Incorrect return type: `CompletionCallback` should return an array of `DragCompletionData` |                   `completionCallback` doesn't return `DragCompletionData[]`. |
+|                                 Dialog already open with instanceID: `${this._instanceId}` |                                                       Dialog is already open. |
+|                                               Dialog options parameter: title is undefined |                                                           Title is undefined. |
+|                                         Dialog options parameter: description is undefined |                                                     Description is undefined. |
+|                                             Dialog options parameter: variant is undefined |                                                         Variant is undefined. |
+|                                                       Invalid dialog variant: `${variant}` |                                                       Invalid dialog variant. |
+|                                                            Input dialog field is undefined |                           Text field property is undefined for input variant. |
+|                                              Field property is valid only for input dialog |               If text field property is present for variant other than input. |
+|                                                      Input dialog field label is undefined |                            Field label is undefined for input dialog variant. |
+|                                            Invalid dialog field type: `${field.fieldType}` |                               Field type is invalid for input dialog variant. |
+|                                  Dialog already open with instanceID:`${this._instanceId}` |                                                If the dialog is already open. |
+|                                               Dialog options parameter: title is undefined |                                                           Title is undefined. |
+|                                                 Dialog options parameter: src is undefined |                                                          Source is undefined. |
+|                                                       Invalid dialog variant: `${variant}` |                                                       Invalid dialog variant. |
