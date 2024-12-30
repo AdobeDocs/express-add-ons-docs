@@ -168,7 +168,7 @@ module.exports = {
                   },
                   {
                     title: "EllipseNode",
-                    path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
+                    path: "references/document-sandbox/document-apis/classes/ellipse-node.md",
                   },
                   {
                     title: "ExpressRootNode",

@@ -39,7 +39,7 @@
                 - [ComplexShapeNode](references/document-sandbox/document-apis/classes/ComplexShapeNode.md) 
                 - [Context](references/document-sandbox/document-apis/classes/Context.md) 
                 - [Editor](references/document-sandbox/document-apis/classes/editor.md) 
-                - [EllipseNode](references/document-sandbox/document-apis/classes/EllipseNode.md) 
+                - [EllipseNode](references/document-sandbox/document-apis/classes/ellipse-node.md) 
                 - [ExpressRootNode](references/document-sandbox/document-apis/classes/ExpressRootNode.md) 
                 - [FillableNode](references/document-sandbox/document-apis/classes/FillableNode.md) 
                 - [Fonts](references/document-sandbox/document-apis/classes/Fonts.md) 
