@@ -66,3 +66,25 @@ container's mediaRectangle and maskShape children.
 Image creation involves some asynchronous steps. The image will be visible in this client almost instantly, but will
 render as a gray placeholder on other clients until it has been uploaded to DCX and then downloaded by those clients.
 This local client will act as having unsaved changes until the upload has finished.
+
+#### Parameters
+
+• **bitmapData**: [`BitmapImage`](../interfaces/BitmapImage.md)
+
+BitmapImage resource (e.g. returned from loadBitmapImage()).
+
+• **options**= `{}`
+
+Additional configuration: - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
+size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
+if needed to stay below an application-defined size cap).
+
+• **options.initialSize?**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
+
+#### Returns
+
+[`MediaContainerNode`](MediaContainerNode.md)
+
+MediaContainerNode representing the top container node of the multi-node structure.
+
+<hr />
