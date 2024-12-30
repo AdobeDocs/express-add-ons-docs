@@ -156,7 +156,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`[`<BitmapImage />`](../interfaces/BitmapImage.md)
+• **loadBitmapImage**(`bitmapData`): `Promise`[`BitmapImage`](../interfaces/BitmapImage.md)
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
