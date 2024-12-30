@@ -56,3 +56,13 @@ a group node.
 <hr />
 
 ### createImageContainer()
+
+• **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](MediaContainerNode.md)
+
+Creates a bitmap image, represented as a multi-node MediaContainerNode structure. Always creates a "full-frame,"
+uncropped image initially, but cropping can be changed after it is created by modifying the properties of the
+container's mediaRectangle and maskShape children.
+
+Image creation involves some asynchronous steps. The image will be visible in this client almost instantly, but will
+render as a gray placeholder on other clients until it has been uploaded to DCX and then downloaded by those clients.
+This local client will act as having unsaved changes until the upload has finished.
