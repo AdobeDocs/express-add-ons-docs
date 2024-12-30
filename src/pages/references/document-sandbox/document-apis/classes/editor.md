@@ -175,3 +175,104 @@ having unsaved changes until all the upload steps have finished.
 Encoded image data in PNG or JPEG format.
 
 #### Returns
+
+
+`Promise`[`BitmapImage`](../interfaces/BitmapImage.md)
+
+<hr />
+
+### makeColorFill()
+
+• **makeColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
+
+Convenience helper to create a complete ColorFill value given just its color.
+
+#### Parameters
+
+• **color**: [`Color`](../interfaces/Color.md)
+
+The color to use for the fill.
+
+#### Returns
+
+[`ColorFill`](../interfaces/ColorFill.md)
+
+<hr />
+
+### makeStroke()
+
+• **makeStroke**(`options`?): [`SolidColorStroke`](../interfaces/SolidColorStroke.md)
+
+Convenience helper to create a complete SolidColorStroke value given just a
+subset of its fields. All other fields are populated with default values.
+
+See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on the `options` fields. Defaults:
+
+-   `color` has default value DEFAULT_STROKE_COLOR if none is provided.
+-   `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
+-   `position` has default value `center` if none is provided.
+-   `dashPattern` has default value [] if none is provided.
+-   `dashOffset` has default value 0 if none is provided. This field is ignored
+  if no `dashPattern` was provided.
+-   `type` has default value SolidColorStroke.type if none is provided. This field
+   shouldn't be set to any other value.
+
+#### Parameters
+
+• **options?**: `Partial`[`SolidColorStroke`](../interfaces/SolidColorStroke.md)
+
+#### Returns
+
+[`SolidColorStroke`](../interfaces/SolidColorStroke.md)
+
+a stroke configured with the given options.
+
+<hr />
+
+### queueAsyncEdit()
+
+• **queueAsyncEdit**(`lambda`): `Promise``void`
+
+Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
+the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
+asynchronous operation such as [loadBitmapImage](editor.md#loadbitmapimage), any edits following this pause must be scheduled using
+queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
+
+The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
+to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
+If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
+or await the Promise returned by queueAsyncEdit().
+
+Generally, calling any setter or method is treated as an edit; but simple getters may be safely called at any time.
+
+Example of typical usage:
+
+```js
+// Assume insertImage() is called from your UI code, and given a Blob containing image data
+async function insertImage(blob) {
+    // This function was invoked from the UI iframe, so we can make any edits we want synchronously here.
+    // Initially load the bitmap - an async operation
+    const bitmapImage = await editor.loadBitmapImage(blob);
+
+    // Execution doesn't arrive at this line until an async delay, due to the Promise 'await' above
+
+    // Further edits need to be queued to run at a safe time
+    editor.queueAsyncEdit(() => {
+         // Create scenenode to display the image, and add it to the current artboard
+         const mediaContainer = editor.createImageContainer(bitmapImage);
+         editor.context.insertionParent.children.append(mediaContainer);
+    });
+}
+```
+
+#### Parameters
+
+• **lambda**
+
+a function which edits the document model.
+
+#### Returns
+
+`Promise``void`
+
+a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.
