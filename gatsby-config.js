@@ -124,7 +124,7 @@ module.exports = {
             pages: [
               {
                 title: "Classes",
-                path: "references/document-sandbox/document-apis/classes/Editor.md",
+                path: "references/document-sandbox/document-apis/classes/editor.md",
                 pages: [
                   {
                     title: "AddOnData",
@@ -164,7 +164,7 @@ module.exports = {
                   },
                   {
                     title: "Editor",
-                    path: "references/document-sandbox/document-apis/classes/Editor.md",
+                    path: "references/document-sandbox/document-apis/classes/editor.md",
                   },
                   {
                     title: "EllipseNode",
