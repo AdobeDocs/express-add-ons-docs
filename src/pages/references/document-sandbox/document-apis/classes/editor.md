@@ -156,13 +156,13 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+• **loadBitmapImage**(`bitmapData`): `Promise`[`<BitmapImage />`](../interfaces/BitmapImage.md)
 
-Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
+Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
 
 Because the resulting BitmapImage is returned asynchronously, to use it you must schedule an edit lambda to run at a
-safe later time in order to call [createImageContainer](Editor.md#createimagecontainer). See [queueAsyncEdit](Editor.md#queueasyncedit).
+safe later time in order to call [createImageContainer](editor.md#createimagecontainer). See [queueAsyncEdit](editor.md#queueasyncedit).
 
 Further async steps to upload image resource data may continue in the background after this call's Promise resolves,
 but the resulting BitmapImage can be used right away (via the queue API noted above). The local client will act as
