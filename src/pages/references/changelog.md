@@ -37,16 +37,16 @@ contributors:
 ### New
 
 - Added many new **Text APIs** for improved text management.
-  - [`TextNode.fullContent`](./document-sandbox/document-apis/classes/TextNode.md#fullcontent) accessor: returns the [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel.md) containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).
-  - [`TextNode.nextTextNode`](./document-sandbox/document-apis/classes/TextNode.md#nexttextnode) accessor: gets the next node that overflowing text will spill into.
-  - [`TextNode.layout`](./document-sandbox/document-apis/classes/TextNode.md#layout) accessor: gets and sets the [`TextType`](./document-sandbox/document-apis/enumerations/TextType.md) of the text node frame.
-  - [`TextNode.visualEffects`](./document-sandbox/document-apis/classes/TextNode.md#visualeffects) accessor: list of [`VisualEffectType`](./document-sandbox/document-apis/enumerations/VisualEffectType.md) applied to the text node.
-  - [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) accessor: list of [character style](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#color), [`font`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#font), [`fontSize`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#fontsize), [`tracking`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#tracking) and [`underline`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#underline) properties.
-  - [AvailableFont](./document-sandbox/document-apis/classes/AvailableFont.md) and [UnavailableFont](./document-sandbox/document-apis/classes/UnavailableFont.md) classes.
+  - [`TextNode.fullContent`](./document-sandbox/document-apis/classes/text-node.md#fullcontent) accessor: returns the [`TextContentModel`](./document-sandbox/document-apis/classes/text-content-model.md) containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).
+  - [`TextNode.nextTextNode`](./document-sandbox/document-apis/classes/text-node.md#nexttextnode) accessor: gets the next node that overflowing text will spill into.
+  - [`TextNode.layout`](./document-sandbox/document-apis/classes/text-node.md#layout) accessor: gets and sets the [`TextType`](./document-sandbox/document-apis/enumerations/text-type.md) of the text node frame.
+  - [`TextNode.visualEffects`](./document-sandbox/document-apis/classes/text-node.md#visualeffects) accessor: list of [`VisualEffectType`](./document-sandbox/document-apis/enumerations/visual-effect-type.md) applied to the text node.
+  - [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/text-content-model.md#characterstyleranges) accessor: list of [character style](./document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/character-styles.md#color), [`font`](./document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/character-styles.md#font), [`fontSize`](./document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/character-styles.md#fontsize), [`tracking`](./document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/character-styles.md#tracking) and [`underline`](./document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/character-styles.md#underline) properties.
+  - [AvailableFont](./document-sandbox/document-apis/classes/available-font.md) and [UnavailableFont](./document-sandbox/document-apis/classes/unavailable-font.md) classes.
   - Supporting interfaces, enumerations and type aliases.
-- Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](./document-sandbox/document-apis/classes/AddOnData.md) class and the [`addOnData`](./document-sandbox/document-apis/classes/BaseNode.md#addondata) accessor for the BaseNode class.
-- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](./document-sandbox/document-apis/classes/Context.md) class will expose two [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
-- Added a new [`GridCellNode`](./document-sandbox/document-apis/classes/GridCellNode.md) class that represents a **cell in a grid**.
+- Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](./document-sandbox/document-apis/classes/add-on-data.md) class and the [`addOnData`](./document-sandbox/document-apis/classes/base-node.md#addondata) accessor for the BaseNode class.
+- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](./document-sandbox/document-apis/classes/context.md) class will expose two [`on()`](./document-sandbox/document-apis/classes/context.md#on) and [`off()`](./document-sandbox/document-apis/classes/context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
+- Added a new [`GridCellNode`](./document-sandbox/document-apis/classes/grid-cell-node.md) class that represents a **cell in a grid**.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -54,11 +54,11 @@ contributors:
 
 ### Fixed
 
-- [`GridLayoutNode.allChildren`](../references/document-sandbox/document-apis/classes/GridLayoutNode.md#allchildren) does not include rectangle nodes.
+- [`GridLayoutNode.allChildren`](../references/document-sandbox/document-apis/classes/grid-layout-node.md#allchildren) does not include rectangle nodes.
 
 ### Deprecated
 
-- [`TextNode.text`](../references/document-sandbox/document-apis/classes/TextNode.md#text) is now deprecated; it is still working, but will be removed in a future update. Please use [`TextNode.fullContent.text`](../references/document-sandbox/document-apis/classes/TextNode.md#fullcontent) instead.
+- [`TextNode.text`](../references/document-sandbox/document-apis/classes/text-node.md#text) is now deprecated; it is still working, but will be removed in a future update. Please use [`TextNode.fullContent.text`](../references/document-sandbox/document-apis/classes/text-node.md#fullcontent) instead.
 
 ## 2024-09-24
 
@@ -74,8 +74,8 @@ contributors:
 
 ## 2024-09-10
 
--   Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
--   Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/Stroke.md) APIs.
+-   Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/mediacontainer-node.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
+-   Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/stroke.md) APIs.
 
 ## 2024-07-22
 
@@ -96,12 +96,12 @@ contributors:
 
 ## 2024-04-10
 
--   A new [`VisualNode`](./document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
+-   A new [`VisualNode`](./document-sandbox/document-apis/classes/visual-node.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
 -   New Document APIs have been added:
-    -   [`currentPage`](./document-sandbox/document-apis/classes/Context.md#currentpage) Context accessor: returns the active page.
-    -   [`visualRoot`](./document-sandbox/document-apis/classes/VisualNode.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
-    -   [`cloneInPlace()`](./document-sandbox/document-apis/classes/PageNode.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
-    -   Support to Bounds has been added in several classes: [`boundsInParent`](./document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](./document-sandbox/document-apis/classes/GroupNode.md#boundslocal) and [VisualNode](./document-sandbox/document-apis/classes/VisualNode.md#boundslocal)); [`centerPointLocal`](./document-sandbox/document-apis/classes/VisualNode.md#centerpointlocal); [`topLeftLocal`](./document-sandbox/document-apis/classes/VisualNode.md#topleftlocal); [`boundsInNode()`](./document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](./document-sandbox/document-apis/classes/VisualNode.md#localpointinnode);
+    -   [`currentPage`](./document-sandbox/document-apis/classes/context.md#currentpage) Context accessor: returns the active page.
+    -   [`visualRoot`](./document-sandbox/document-apis/classes/visual-node.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
+    -   [`cloneInPlace()`](./document-sandbox/document-apis/classes/page-node.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
+    -   Support to Bounds has been added in several classes: [`boundsInParent`](./document-sandbox/document-apis/classes/node.md#boundsinparent); `boundsLocal` (for both [GroupNode](./document-sandbox/document-apis/classes/group-node.md#boundslocal) and [VisualNode](./document-sandbox/document-apis/classes/visual-node.md#boundslocal)); [`centerPointLocal`](./document-sandbox/document-apis/classes/visual-node.md#centerpointlocal); [`topLeftLocal`](./document-sandbox/document-apis/classes/visual-node.md#topleftlocal); [`boundsInNode()`](./document-sandbox/document-apis/classes/node.md#boundsinnode); [`localPointInNode()`](./document-sandbox/document-apis/classes/visual-node.md#localpointinnode);
 -   The CLI has been updated to release version `2.0.0`, and includes the following:
 
     -   Periodic login and EULA consent are no longer required.
@@ -138,11 +138,11 @@ contributors:
 
 ## 2024-02-14
 
--   A new `id` accessor has been added to the [`BaseNode`](../references/document-sandbox/document-apis/classes/BaseNode.md) class in the Document APIs and is inherited by all classes that extend it. The `id` represents a unique identifier that stays the same when the file is closed and reopened, or if the node is moved to a different part of the document.
+-   A new `id` accessor has been added to the [`BaseNode`](../references/document-sandbox/document-apis/classes/base-node.md) class in the Document APIs and is inherited by all classes that extend it. The `id` represents a unique identifier that stays the same when the file is closed and reopened, or if the node is moved to a different part of the document.
 
 ## 2024-02-07
 
--   A new [`createPath`](../references/document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
+-   A new [`createPath`](../references/document-sandbox/document-apis/classes/editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
 -   Updates descriptions in various methods and classes in the [Document APIs](../references/document-sandbox/document-apis/).
 -   Updates to the [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
 -   Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../guides/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../guides/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
@@ -180,7 +180,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 
 Some items in the following list of changes may have been mentioned in recent updates but are being listed in this summary again to serve as a reminder.
 
--   The methods in the [Document API Editor class](../references/document-sandbox/document-apis/classes/Editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`makeStroke`](../references/document-sandbox/document-apis/classes/Editor.md#makestroke) respectively.
+-   The methods in the [Document API Editor class](../references/document-sandbox/document-apis/classes/editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../references/document-sandbox/document-apis/classes/editor.md#makecolorfill) and [`makeStroke`](../references/document-sandbox/document-apis/classes/editor.md#makestroke) respectively.
 -   `strokes` and `fills` have been renamed to their singular counterpart. (Express does not support multiple strokes or fills). You should use `stroke` and `fill` going forward to access them, and they will no longer be `ItemList` objects, since they represent only a single stroke or fill.
 
     ```js
@@ -193,10 +193,10 @@ Some items in the following list of changes may have been mentioned in recent up
     ellipse.fill = ellipseFill;
     ```
 
-    -   `fill` and `stroke.color` are just a [color object](../references/document-sandbox/document-apis/interfaces/Color.md) of the form `{ red, green, blue, alpha }`.
+    -   `fill` and `stroke.color` are just a [color object](../references/document-sandbox/document-apis/interfaces/color.md) of the form `{ red, green, blue, alpha }`.
     -   `stroke` is an object of the form `{ color, width, dashPattern, dashOffset }`
 
--   Color utilities have moved to [`colorUtils`](../references/document-sandbox/document-apis/classes/ColorUtils.md) instead of `utils`.
+-   Color utilities have moved to [`colorUtils`](../references/document-sandbox/document-apis/classes/color-utils.md) instead of `utils`.
 
     **Old**
     <del>
@@ -259,7 +259,7 @@ Some items in the following list of changes may have been mentioned in recent up
     rectangle.translation = { x: 100, y: 20 }; // both x,y properties are required
     ```
 
--   A new [`BaseNode`](../references/document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](../references/document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
+-   A new [`BaseNode`](../references/document-sandbox/document-apis/classes/base-node.md) class has been introduced, and [`ContainerNode`](../references/document-sandbox/document-apis/interfaces/container-node.md) has been moved from a class to an interface.
 -   The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../references/document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
     **Adobe Express Document APIs SDK import**
@@ -343,7 +343,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Updates
 
--   The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+-   The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/color-utils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/color-utils.md). An example of the old way and new way to create a color are shown below for reference:
 
     ```js
     // Before
@@ -450,16 +450,16 @@ Some items in the following list of changes may have been mentioned in recent up
 
     **New Classes/Interfaces**
 
-    -   New [RestrictedItemList class](./document-sandbox/document-apis/classes/RestrictedItemList.md)
-    -   New [UnknownNode class](./document-sandbox/document-apis/classes/UnknownNode.md)
-    -   New [SolidColorShapeNode class](./document-sandbox/document-apis/classes/SolidColorShapeNode.md)
-    -   New [Point interface](./document-sandbox/document-apis/interfaces/Point.md)
-    -   New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
+    -   New [RestrictedItemList class](./document-sandbox/document-apis/classes/restricted-item-list.md)
+    -   New [UnknownNode class](./document-sandbox/document-apis/classes/unknown-node.md)
+    -   New [SolidColorShapeNode class](./document-sandbox/document-apis/classes/solid-color-shape-node.md)
+    -   New [Point interface](./document-sandbox/document-apis/interfaces/point.md)
+    -   New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/editor.md) class.
     -   Renames the [Constants](../references/document-sandbox/document-apis/enumerations/) to remove the `Value` suffix.
 
     **Updates to Node Classes**
 
-The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
+The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
 
 -   Removes `absoluteRotation` accessor
 -   Removes `absoluteTransform` accessor
@@ -478,10 +478,10 @@ The accessors and methods below were removed or replaced with new names in the [
 
 Updated [Document API references](./document-sandbox/document-apis/) to include:
 
--   [ComplexShapeNode class](./document-sandbox/document-apis/classes/ComplexShapeNode.md)
--   [GridLayoutNode class](./document-sandbox/document-apis/classes/GridLayoutNode.md)
--   [IStrokableNode interface](./document-sandbox/document-apis/interfaces/IStrokableNode.md)
--   [FillRule constant](./document-sandbox/document-apis/enumerations/FillRule.md)
+-   [ComplexShapeNode class](./document-sandbox/document-apis/classes/complex-shape-node.md)
+-   [GridLayoutNode class](./document-sandbox/document-apis/classes/grid-layout-node.md)
+-   [IStrokableNode interface](./document-sandbox/document-apis/interfaces/i-strokable-node.md)
+-   [FillRule constant](./document-sandbox/document-apis/enumerations/fill-rule.md)
 
 ## 2023-11-6
 

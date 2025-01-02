@@ -10,6 +10,6 @@ The design of your add-on is just as important to the success of your add-on as 
 
 This set of design guides is provided to help lead you through the design process of your add-on and includes useful guidelines, tips, and resources. First, we encourage you to watch this short video about designing your add-on interface, then read on for more details. 
 
-<div style="display: flex; justify-content: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
-</div>
+<Embed slots="video" />
+
+https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI

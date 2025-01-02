@@ -24,6 +24,6 @@ This guide contains a set of common use cases and accompanying code snippets to 
 
 If you're looking for more extensive examples for any of the use cases described below, you can also check out our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons..
 
-<div style="display: flex; justify-content: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ" title="Building Add-on Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<Embed slots="video" />
+
+https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ

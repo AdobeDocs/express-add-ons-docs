@@ -8,11 +8,11 @@ Contains the user's current selection state, indicating the content they are foc
 
 ### currentPage
 
-• `get` **currentPage**(): [`PageNode`](PageNode.md)
+• `get` **currentPage**(): [`PageNode`](page-node.md)
 
 #### Returns
 
-[`PageNode`](PageNode.md)
+[`PageNode`](page-node.md)
 
 The currently viewed page.
 
@@ -32,11 +32,11 @@ false if the current editable selection does not contain any nodes, otherwise tr
 
 ### insertionParent
 
-• `get` **insertionParent**(): [`ContainerNode`](../interfaces/ContainerNode.md)
+• `get` **insertionParent**(): [`ContainerNode`](../interfaces/container-node.md)
 
 #### Returns
 
-[`ContainerNode`](../interfaces/ContainerNode.md)
+[`ContainerNode`](../interfaces/container-node.md)
 
 the preferred parent to insert newly added content into (i.e., the location content would get inserted if a
 user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
@@ -46,7 +46,7 @@ other UI state.
 
 ### selection
 
-• `get` **selection**(): readonly [`Node`](Node.md)[]
+• `get` **selection**(): readonly [`Node`](node.md)[]
 
 • `set` **selection**(`nodes`): `void`
 
@@ -58,11 +58,11 @@ Sets the current selection, automatically ensuring these rules are met:
 
 #### Parameters
 
-• **nodes**: `undefined` \| [`Node`](Node.md) \| readonly [`Node`](Node.md)[]
+• **nodes**: `undefined` \| [`Node`](node.md) \| readonly [`Node`](node.md)[]
 
 #### Returns
 
-readonly [`Node`](Node.md)[]
+readonly [`Node`](node.md)[]
 
 the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
 
@@ -70,11 +70,11 @@ the current selection. Nodes that are locked or otherwise non-editable are never
 
 ### selectionIncludingNonEditable
 
-• `get` **selectionIncludingNonEditable**(): readonly [`Node`](Node.md)[]
+• `get` **selectionIncludingNonEditable**(): readonly [`Node`](node.md)[]
 
 #### Returns
 
-readonly [`Node`](Node.md)[]
+readonly [`Node`](node.md)[]
 
 the current selection _and_ any locked nodes the user has attempted to select at the same time. This can
 happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
@@ -127,7 +127,7 @@ Note: Do not attempt to make changes to the document in response to a selection 
 
 an editor event name.
 
-• **callback**: [`EditorEventHandler`](../type-aliases/EditorEventHandler.md)
+• **callback**: [`EditorEventHandler`](../type-aliases/editor-event-handler.md)
 
 a callback to be registered for an editor event.
 

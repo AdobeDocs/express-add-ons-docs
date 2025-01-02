@@ -17,32 +17,6 @@ Our monetization guidelines include:
 -   [Recommendations](#recommendations-for-monetizing-your-add-ons)
 -   [Branding your add-ons](#branding-your-add-ons-for-monetization)
 
-<!-- ## Payment Models
-
-You can choose from a variety of models for your add-on. Take the time to consider which one suits your needs best.
-
-### Free
-
-Users are not charged for adding and using the add-on.
-
-## Freemium
-
-This model offers a basic version for free, but users must upgrade to a paid version for extra features and content. This payment could be a one-time fee or subscription.
-
-Freemium add-ons have a high percentage of acquisition in our marketplace, making this our recommended option.
-
-### Paid
-
-This requires users to pay a fee before using the add-on. You may wish to offer a trial period at the outset, in which users can test out the add-on for a certain period of time before deciding whether to pay.
-
-### Sign-up for service (SaaS)
-
-The add-on requires the user to have access to external services before they can use it.
-
-### Credits
-
-This model asks users to buy credits which can be used for services on the add-on. This can be used for things such as licensing images or trying out Generative AI models. Many add-ons offer users some free credits to start so they can test out the service. -->
-
 ## General Guidelines
 
 The sections below provide details on the guidelines developers should be following when monetizing their add-ons.

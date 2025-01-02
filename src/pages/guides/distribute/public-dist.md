@@ -199,7 +199,6 @@ Any additional custom details entered by the developer are then shown below the 
 
 In the case of the **free** payment selection, the following text simply be shown: "This add-on does not require any payment".
 
-<!-- If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter. -->
 
 Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
 
@@ -209,8 +208,6 @@ Carefully review our [monetization guidelines](./guidelines/monetization.md) to 
 You will only see this step the first time you submit an add-on and if you've never created a publisher profile before to this submission.
 
 Fill your publisher details and upload a 250x250 logo.
-
-<!-- ![Publisher Profile](./img/pub-profile2.png)-->
 
 ### Step 10: Final submission
 

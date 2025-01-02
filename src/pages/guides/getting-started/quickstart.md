@@ -26,13 +26,9 @@ This quickstart guide will help you create and run your first add-on, a simple h
 
 Check out this short video below for a quick visual introduction to the steps you'll take to create your very first add-on.
 
-<div style="display: flex; justify-content: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kSq4ykQGOdo" title="Creating Your First Add-on | How to Create Add-ons in Adobe Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<Embed slots="video" />
 
-<!-- <iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="775" height="485" allow="autoplay" style="border: 0"></iframe> -->
-
-
+https://www.youtube.com/embed/kSq4ykQGOdo
 
 ## Prerequisites
 
@@ -63,7 +59,7 @@ The [Templates section](dev-tooling.md#templates) on the **Development Tools** p
 
 <InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
 
-#### CLI troubleshooting <!-- 👈 will not render -->
+#### CLI troubleshooting
 
 `npx` is an `npm` package runner that can execute packages without installing them explicitly.
 

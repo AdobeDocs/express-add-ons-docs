@@ -10,7 +10,7 @@ Represents a 2D position.
 
 • **x**: `number`
 
----
+<hr />
 
 ### y
 

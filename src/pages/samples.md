@@ -151,9 +151,6 @@ Demonstrates how to record audio using the browser's media recorder API, convert
 - Record audio using the Browser's API, transforming a raw Blob into a WAV Blob using an HPC codec.
 - [Add audio](./references/addonsdk/app-document.md#addaudio) to the current document's page.
 
-<!-- # Contributed Add-on Samples
-The following samples were contributed from the team. -->
-
 ## [pix](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/pix)
 
 A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. Users can drag the resulting pixel art on to the canvas, but they can also import the current page as pixel art (downsampled to 16x16).
@@ -201,24 +198,6 @@ Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-we
 
 - [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
 
-<!-- # Marketplace Add-on Samples
-The following samples were built to show how to use specific some popular 3rd party services. -->
-
-<!-- ## [Dropbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/dropbox)
-Allows users to connect to their Dropbox account. Once connected, they can fetch their images and videos from their account and add them to their Express pages.
-
-**Technologies Used:** 
-
-- React
-- React Spectrum
-- Webpack
-
-**Features Leveraged:**
-
-- [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked. -->
-
 ## [Giphy](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/giphy)
 
 Allows users to search for popular gifs and add them to the document.
@@ -260,7 +239,7 @@ Allows users to create two-color gradients of various shapes and direction, and 
 
 **Features Leveraged:**
 
-- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/Editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
+- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
 
 ## Document Sandbox Code Samples
 

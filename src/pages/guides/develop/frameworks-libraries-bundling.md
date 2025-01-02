@@ -13,9 +13,9 @@ import {
 
 An example of how this works in Visual Studio Code is shown in this short clip below.
 
-<div style="display: flex; justify-content: center;">
-<iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
-</div>
+<Embed slots="video" />
+
+https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview
 
 ## Webpack & JavaScript bundler
 

@@ -8,6 +8,6 @@ During your development, it's important to be able to debug your code and troubl
 
 Check out this short video below on how to test and debug your add-on to help you get started more quickly, then read through the rest of the guides provided in this section for more details.
 
-<div style="display: flex; justify-content: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<Embed slots="video" />
+
+https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi

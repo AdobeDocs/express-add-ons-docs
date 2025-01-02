@@ -8,23 +8,23 @@ Entry point for APIs that read or modify the document's content.
 
 ### context
 
-• `get` **context**(): [`Context`](Context.md)
+• `get` **context**(): [`Context`](context.md)
 
 User's current selection context
 
 #### Returns
 
-[`Context`](Context.md)
+[`Context`](context.md)
 
 <hr />
 
 ### documentRoot
 
-• `get` **documentRoot**(): [`ExpressRootNode`](ExpressRootNode.md)
+• `get` **documentRoot**(): [`ExpressRootNode`](express-root-node.md)
 
 #### Returns
 
-[`ExpressRootNode`](ExpressRootNode.md)
+[`ExpressRootNode`](express-root-node.md)
 
 the root of the document.
 
@@ -32,11 +32,11 @@ the root of the document.
 
 ### createEllipse()
 
-• **createEllipse**(): [`EllipseNode`](EllipseNode.md)
+• **createEllipse**(): [`EllipseNode`](ellipse-node.md)
 
 #### Returns
 
-[`EllipseNode`](EllipseNode.md)
+[`EllipseNode`](ellipse-node.md)
 
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
@@ -45,11 +45,11 @@ Transform values default to 0.
 
 ### createGroup()
 
-• **createGroup**(): [`GroupNode`](GroupNode.md)
+• **createGroup**(): [`GroupNode`](group-node.md)
 
 #### Returns
 
-[`GroupNode`](GroupNode.md)
+[`GroupNode`](group-node.md)
 
 a group node.
 
@@ -57,7 +57,7 @@ a group node.
 
 ### createImageContainer()
 
-• **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](MediaContainerNode.md)
+• **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](mediacontainer-node.md)
 
 Creates a bitmap image, represented as a multi-node MediaContainerNode structure. Always creates a "full-frame,"
 uncropped image initially, but cropping can be changed after it is created by modifying the properties of the
@@ -69,7 +69,7 @@ This local client will act as having unsaved changes until the upload has finish
 
 #### Parameters
 
-• **bitmapData**: [`BitmapImage`](../interfaces/BitmapImage.md)
+• **bitmapData**: [`BitmapImage`](../interfaces/bitmap-image.md)
 
 BitmapImage resource (e.g. returned from loadBitmapImage()).
 
@@ -79,11 +79,11 @@ Additional configuration: - initialSize - Size the image is displayed at. Must h
 size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
 if needed to stay below an application-defined size cap).
 
-• **options.initialSize?**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
+• **options.initialSize?**: [`RectangleGeometry`](../interfaces/rectangle-geometry.md)
 
 #### Returns
 
-[`MediaContainerNode`](MediaContainerNode.md)
+[`MediaContainerNode`](mediacontainer-node.md)
 
 MediaContainerNode representing the top container node of the multi-node structure.
 
@@ -92,11 +92,11 @@ MediaContainerNode representing the top container node of the multi-node structu
 
 ### createLine()
 
-• **createLine**(): [`LineNode`](LineNode.md)
+• **createLine**(): [`LineNode`](line-node.md)
 
 #### Returns
 
-[`LineNode`](LineNode.md)
+[`LineNode`](line-node.md)
 
 a line node with default start point and end point and a default stroke.
 Transform values default to 0.
@@ -105,7 +105,7 @@ Transform values default to 0.
 
 ### createPath()
 
-• **createPath**(`path`): [`PathNode`](PathNode.md)
+• **createPath**(`path`): [`PathNode`](path-node.md)
 
 #### Parameters
 
@@ -118,7 +118,7 @@ Throws if the input is empty or is not legal SVG path syntax.
 
 #### Returns
 
-[`PathNode`](PathNode.md)
+[`PathNode`](path-node.md)
 
 a path node with a default stroke and no initial fill.
 
@@ -126,11 +126,11 @@ a path node with a default stroke and no initial fill.
 
 ### createRectangle()
 
-• **createRectangle**(): [`RectangleNode`](RectangleNode.md)
+• **createRectangle**(): [`RectangleNode`](rectangle-node.md)
 
 #### Returns
 
-[`RectangleNode`](RectangleNode.md)
+[`RectangleNode`](rectangle-node.md)
 
 a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
@@ -139,11 +139,11 @@ Transform values default to 0.
 
 ### createText()
 
-• **createText**(): [`TextNode`](TextNode.md)
+• **createText**(): [`TextNode`](text-node.md)
 
 #### Returns
 
-[`TextNode`](TextNode.md)
+[`TextNode`](text-node.md)
 
 a text node with default styles. The text content is initially empty, so the text node will be
 invisible until its `fullContent` property's `text` is set. Creates point text, so the node's width will automatically
@@ -156,7 +156,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`[`BitmapImage`](../interfaces/BitmapImage.md)
+• **loadBitmapImage**(`bitmapData`): `Promise`[`BitmapImage`](../interfaces/bitmap-image.md)
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -177,36 +177,36 @@ Encoded image data in PNG or JPEG format.
 #### Returns
 
 
-`Promise`[`BitmapImage`](../interfaces/BitmapImage.md)
+`Promise`[`BitmapImage`](../interfaces/bitmap-image.md)
 
 <hr />
 
 ### makeColorFill()
 
-• **makeColorFill**(`color`): [`ColorFill`](../interfaces/ColorFill.md)
+• **makeColorFill**(`color`): [`ColorFill`](../interfaces/color-fill.md)
 
 Convenience helper to create a complete ColorFill value given just its color.
 
 #### Parameters
 
-• **color**: [`Color`](../interfaces/Color.md)
+• **color**: [`Color`](../interfaces/color.md)
 
 The color to use for the fill.
 
 #### Returns
 
-[`ColorFill`](../interfaces/ColorFill.md)
+[`ColorFill`](../interfaces/color-fill.md)
 
 <hr />
 
 ### makeStroke()
 
-• **makeStroke**(`options`?): [`SolidColorStroke`](../interfaces/SolidColorStroke.md)
+• **makeStroke**(`options`?): [`SolidColorStroke`](../interfaces/solid-color-stroke.md)
 
 Convenience helper to create a complete SolidColorStroke value given just a
 subset of its fields. All other fields are populated with default values.
 
-See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on the `options` fields. Defaults:
+See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on the `options` fields. Defaults:
 
 -   `color` has default value DEFAULT_STROKE_COLOR if none is provided.
 -   `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
@@ -219,11 +219,11 @@ See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on th
 
 #### Parameters
 
-• **options?**: `Partial`[`SolidColorStroke`](../interfaces/SolidColorStroke.md)
+• **options?**: `Partial`[`SolidColorStroke`](../interfaces/solid-color-stroke.md)
 
 #### Returns
 
-[`SolidColorStroke`](../interfaces/SolidColorStroke.md)
+[`SolidColorStroke`](../interfaces/solid-color-stroke.md)
 
 a stroke configured with the given options.
 
