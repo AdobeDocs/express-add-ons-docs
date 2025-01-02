@@ -74,7 +74,7 @@
 -   [ColorFill](interfaces/color-fill.md)
 -   [ContainerNode](interfaces/container-node.md)
 -   [Fill](interfaces/fill.md)
--   [IFillableNode](interfaces/Ifillable-node.md)
+-   [IFillableNode](interfaces/i-fillable-node.md)
 -   [IRectangularNode](interfaces/i-rectangular-node.md)
 -   [IStrokableNode](interfaces/i-strokable-node.md)
 -   [ListItem](interfaces/list-item.md)

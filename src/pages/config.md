@@ -77,7 +77,7 @@
                 - [ColorFill](references/document-sandbox/document-apis/interfaces/color-fill.md) 
                 - [ContainerNode](references/document-sandbox/document-apis/interfaces/container-node.md) 
                 - [Fill](references/document-sandbox/document-apis/interfaces/fill.md) 
-                - [IFillableNode](references/document-sandbox/document-apis/interfaces/Ifillable-node.md) 
+                - [IFillableNode](references/document-sandbox/document-apis/interfaces/i-fillable-node.md) 
                 - [IRectangularNode](references/document-sandbox/document-apis/interfaces/i-rectangular-node.md) 
                 - [IStrokableNode](references/document-sandbox/document-apis/interfaces/i-strokable-node.md) 
                 - [ListItem](references/document-sandbox/document-apis/interfaces/list-item.md) 

@@ -328,7 +328,7 @@ Such interfaces define the properties of **actual JavaScript objects** that must
 
 ### Implementable Interfaces
 
-Implementable interfaces like [`IFillableNode`](/references/document-sandbox/document-apis/interfaces/Ifillable-node.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
+Implementable interfaces like [`IFillableNode`](/references/document-sandbox/document-apis/interfaces/i-fillable-node.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
 
 In summary, the distinction between all the listed categories lies in their _purpose and usage_: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances, or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
 

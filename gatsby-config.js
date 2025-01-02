@@ -326,7 +326,7 @@ module.exports = {
                   // },
                   {
                     title: "IFillableNode",
-                    path: "references/document-sandbox/document-apis/interfaces/Ifillable-node.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-fillable-node.md",
                   },
                   {
                     title: "IRectangularNode",
