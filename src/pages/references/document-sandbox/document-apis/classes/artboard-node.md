@@ -32,8 +32,8 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
+<hr />
 ---
-
 ### allChildren
 
 • `get` **allChildren**(): `Readonly``Iterable`[`Node`](node.md)
@@ -49,7 +49,7 @@ The children of an Artboard are always other Node classes (never the more minima
 
 `Readonly``Iterable`[`Node`](node.md)
 
----
+<hr />
 
 ### boundsLocal
 
@@ -66,7 +66,7 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`[`Rect`](../interfaces/rect.md)
 
----
+<hr />
 
 ### centerPointLocal
 
@@ -79,7 +79,7 @@ box.
 
 `Readonly`[`Point`](../interfaces/point.md)
 
----
+<hr />
 
 ### children
 
@@ -91,7 +91,7 @@ The node's children. Use the methods on this ItemList object to get, add, and re
 
 [`ItemList`](item-list.md)[`Node`](node.md)
 
----
+<hr />
 
 ### fill
 
@@ -109,7 +109,7 @@ The background fill of the artboard. Artboards must always have a fill.
 
 `Readonly`[`Fill`](../interfaces/fill.md)
 
----
+<hr />
 
 ### height
 
@@ -121,7 +121,7 @@ The height of the artboard.
 
 `number`
 
----
+<hr />
 
 ### id
 
@@ -134,7 +134,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<hr />
 
 ### parent
 
@@ -146,7 +146,7 @@ The node's parent. Undefined if the node is an orphan.
 
 `undefined` \| [`PageNode`](page-node.md)
 
----
+<hr />
 
 ### topLeftLocal
 
@@ -160,7 +160,7 @@ boundsInParent.
 
 `Readonly`[`Point`](../interfaces/point.md)
 
----
+<hr />
 
 ### type
 
@@ -172,7 +172,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<hr />
 
 ### visualRoot
 
@@ -189,7 +189,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](visual-node.md)
 
----
+<hr />
 
 ### width
 
@@ -229,7 +229,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 [`VisualNode`](visual-node.md).[`localPointInNode`](visual-node.md#localpointinnode)
 
----
+<hr />
 
 ### removeFromParent()
 
