@@ -37,7 +37,7 @@ The object contains the following properties:
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator` [`string`, `string`], `any`, `undefined`
+• **[iterator]**(): `Iterator` [`string`, `string`], `any`, `undefined`
 
 #### Returns
 
