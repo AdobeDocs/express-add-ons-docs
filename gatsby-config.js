@@ -640,11 +640,11 @@ module.exports = {
       },
       {
         title: "Debug",
-        path: "guides/debug",
+        path: "guides/debug/index.md",
         pages: [
           {
             title: "Overview",
-            path: "guides/debug/",
+            path: "guides/debug/index.md",
           },
           {
             title: "Browser debugging",
