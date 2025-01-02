@@ -1,4 +1,4 @@
----
+<hr />
 keywords:
     - Adobe Express
     - Express Add-on SDK
@@ -13,7 +13,7 @@ title: Exploring the Adobe Document API Concepts
 description: In this article, you'll learn about the structures that make up the Adobe Express Document Object Model, their features, and how they're reflected in the Reference documentation.
 contributors:
     - https://github.com/undavide
----
+<hr />
 
 # Adobe Express Document API Concepts
 
@@ -874,7 +874,7 @@ const drawDimensionsRefactored = () => {
 export { drawDimensions, drawDimensionsRefactored };
 ```
 
----
+<hr />
 
 [^1]: Creating entirely novel features for desktop applications typically involves using SDKs and low-level languages such as C++. Adobe Express doesn't allow for this kind of customization.
 [^2]: Typically, not every feature available in an application is by default surfaced to Scripting—it's not uncommon for it to be a smaller subset of the UI, features-wise.
