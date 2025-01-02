@@ -22,7 +22,7 @@ Re-exports [BlendMode](../../enumerations/blend-mode.md)
 
 ### EditorEvent
 
-Re-exports [EditorEvent](../../enumerations/EditorEvent.md)
+Re-exports [EditorEvent](../../enumerations/editor-event.md)
 
 ---
 

@@ -12,7 +12,7 @@
 
 -   [ArrowHeadType](enumerations/arrow-head-type.md)
 -   [BlendMode](enumerations/blend-mode.md)
--   [EditorEvent](enumerations/EditorEvent.md)
+-   [EditorEvent](enumerations/editor-event.md)
 -   [FillRule](enumerations/fill-rule.md)
 -   [FillType](enumerations/fill-type.md)
 -   [SceneNodeType](enumerations/scene-node-type.md)

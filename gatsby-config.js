@@ -384,7 +384,7 @@ module.exports = {
                   },
                   {
                     title: "EditorEvent",
-                    path: "references/document-sandbox/document-apis/enumerations/EditorEvent.md",
+                    path: "references/document-sandbox/document-apis/enumerations/editor-event.md",
                   },
                   {
                     title: "FillRule",

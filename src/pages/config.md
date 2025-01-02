@@ -91,7 +91,7 @@
             - [Constants](references/document-sandbox/document-apis/enumerations/arrow-head-type.md) 
                 - [ArrowHeadType](references/document-sandbox/document-apis/enumerations/arrow-head-type.md) 
                 - [BlendMode](references/document-sandbox/document-apis/enumerations/blend-mode.md) 
-                - [EditorEvent](references/document-sandbox/document-apis/enumerations/EditorEvent.md) 
+                - [EditorEvent](references/document-sandbox/document-apis/enumerations/editor-event.md) 
                 - [FillRule](references/document-sandbox/document-apis/enumerations/fill-rule.md) 
                 - [FillType](references/document-sandbox/document-apis/enumerations/fill-type.md) 
                 - [SceneNodeType](references/document-sandbox/document-apis/enumerations/scene-node-type.md) 

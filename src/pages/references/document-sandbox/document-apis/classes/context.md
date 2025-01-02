@@ -94,7 +94,7 @@ Unregisters handlers for editor events like selection change.
 
 #### Parameters
 
-• **eventName**: [`selectionChange`](../enumerations/EditorEvent.md#selectionchange)
+• **eventName**: [`selectionChange`](../enumerations/editor-event.md#selectionchange)
 
 an editor event name.
 
@@ -123,7 +123,7 @@ Note: Do not attempt to make changes to the document in response to a selection 
 
 #### Parameters
 
-• **eventName**: [`selectionChange`](../enumerations/EditorEvent.md#selectionchange)
+• **eventName**: [`selectionChange`](../enumerations/editor-event.md#selectionchange)
 
 an editor event name.
 
