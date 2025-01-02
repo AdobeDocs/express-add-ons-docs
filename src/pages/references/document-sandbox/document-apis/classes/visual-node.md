@@ -174,7 +174,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)
+`Readonly` [`Point`](../interfaces/point.md)
 
 <hr />
 
