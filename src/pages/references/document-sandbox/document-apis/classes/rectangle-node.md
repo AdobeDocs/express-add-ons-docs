@@ -304,13 +304,13 @@ for backward compatibility. Throws if another type is provided.
 
 #### Returns
 
-`undefined` \| `Readonly`<[`Stroke`](../interfaces/stroke.md)
+`undefined` \| `Readonly` [`Stroke`](../interfaces/stroke.md)
 
 <hr />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/point.md)
+• `get` **topLeftLocal**(): `Readonly` [`Point`](../interfaces/point.md)
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -318,7 +318,7 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)
+`Readonly` [`Point`](../interfaces/point.md)
 
 <hr />
 
@@ -450,7 +450,7 @@ Must be at least MIN_DIMENSION.
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/rect.md)
+• **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/rect.md)
 
 Convert the node's [boundsLocal](visual-node.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](visual-node.md#visualroot), but can lie anywhere within that subtree
@@ -462,7 +462,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)
+`Readonly` [`Rect`](../interfaces/rect.md)
 
 #### Inherited from
 
@@ -485,7 +485,7 @@ If the corner radii differ, returns undefined.
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/point.md)
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly` [`Point`](../interfaces/point.md)
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](visual-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -499,7 +499,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)
+`Readonly` [`Point`](../interfaces/point.md)
 
 #### Inherited from
 
