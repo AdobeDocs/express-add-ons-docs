@@ -502,15 +502,15 @@ module.exports = {
                   {
                     title:
                       "Basic JavaScript add-on with Spectrum Web Components",
-                    path: "guides/tutorials/spectrum-workshop/part1/",
+                    path: "guides/tutorials/spectrum-workshop/part1",
                   },
                   {
                     title: "React-based add-on with Spectrum Web Components",
-                    path: "guides/tutorials/spectrum-workshop/part2/",
+                    path: "guides/tutorials/spectrum-workshop/part2",
                   },
                   {
                     title: "Tips & Troubleshooting",
-                    path: "guides/tutorials/spectrum-workshop/part3/",
+                    path: "guides/tutorials/spectrum-workshop/part3",
                   },
                 ],
               },
@@ -524,7 +524,7 @@ module.exports = {
         pages: [
           {
             title: "Overview",
-            path: "guides/design/",
+            path: "guides/design/index.md",
           },
           {
             title: "UX Guidelines",
