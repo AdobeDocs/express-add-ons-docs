@@ -7,11 +7,11 @@ a layout grid that other content can be placed into.
 
 ## Extends
 
--   [`Node`](node.md)
+- [`Node`](node.md)
 
 ## Implements
 
--   `Readonly` [`IRectangularNode`](../interfaces/i-rectangular-node.md)
+- `Readonly` [`IRectangularNode`](../interfaces/i-rectangular-node.md)
 
 ## Accessors
 

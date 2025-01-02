@@ -8,7 +8,7 @@ MediaRectangle child of the GridCellNode when those actions are applied.
 
 ## Extends
 
--   [`MediaContainerNode`](mediacontainer-node.md)
+- [`MediaContainerNode`](mediacontainer-node.md)
 
 ## Accessors
 
@@ -82,7 +82,7 @@ even for an orphan node with no parent.
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/rect.md)
+• `get` **boundsLocal**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
