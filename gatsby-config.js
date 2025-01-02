@@ -465,11 +465,11 @@ module.exports = {
       },
       {
         title: "Getting started",
-        path: "guides/getting-started",
+        path: "guides/getting-started/index.md",
         pages: [
           {
             title: "Overview",
-            path: "guides/getting-started",
+            path: "guides/getting-started/index.md",
           },
           {
             title: "Quickstart",
