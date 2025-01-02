@@ -40,7 +40,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly` `Iterable`<[`Node`](node.md)
+`Readonly` `Iterable` [`Node`](node.md)
 
 <hr />
 
@@ -65,7 +65,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/rect.md)
+• `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](visual-node.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
