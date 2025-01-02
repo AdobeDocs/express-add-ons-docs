@@ -584,7 +584,7 @@ module.exports = {
         pages: [
           {
             title: "Overview",
-            path: "guides/develop/",
+            path: "guides/develop/index.md",
           },
           {
             title: "Common Use Cases",

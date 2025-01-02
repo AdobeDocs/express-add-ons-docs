@@ -135,7 +135,7 @@
         - [Implementation guide](guides/design/implementation-guide.md) 
         - [Best practices](guides/design/best-practices.md) 
     - [Develop](guides/develop/index.md) 
-        - [Overview](guides/develop/) 
+        - [Overview](guides/develop/index.md) 
         - [Common Use Cases](guides/develop/use-cases.md) 
             - [Content Management](guides/develop/use-cases/content-management.md) 
             - [Authentication and Authorization](guides/develop/use-cases/authentication-authorization.md) 
