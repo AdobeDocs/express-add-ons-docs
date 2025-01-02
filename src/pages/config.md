@@ -59,7 +59,7 @@
                 - [RestrictedItemList](references/document-sandbox/document-apis/classes/restricted-item-list.md) 
                 - [SolidColorShapeNode](references/document-sandbox/document-apis/classes/solid-color-shape-node.md) 
                 - [StrokableNode](references/document-sandbox/document-apis/classes/strokable-node.md) 
-                - [StrokeShapeNode](references/document-sandbox/document-apis/classes/StrokeShapeNode.md) 
+                - [StrokeShapeNode](references/document-sandbox/document-apis/classes/stroke-shape-node.md) 
                 - [TextContentModel](references/document-sandbox/document-apis/classes/text-content-model.md) 
                 - [TextNode](references/document-sandbox/document-apis/classes/text-node.md) 
                 - [UnavailableFont](references/document-sandbox/document-apis/classes/unavailable-font.md) 

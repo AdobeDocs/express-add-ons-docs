@@ -248,7 +248,7 @@ module.exports = {
                   },
                   {
                     title: "StrokeShapeNode",
-                    path: "references/document-sandbox/document-apis/classes/StrokeShapeNode.md",
+                    path: "references/document-sandbox/document-apis/classes/stroke-shape-node.md",
                   },
                   {
                     title: "TextContentModel",

@@ -12,7 +12,7 @@ Base class for a Node that can have its own stroke.
 
 -   [`FillableNode`](fillable-node.md)
 -   [`LineNode`](line-node.md)
--   [`StrokeShapeNode`](StrokeShapeNode.md)
+-   [`StrokeShapeNode`](stroke-shape-node.md)
 
 ## Implements
 

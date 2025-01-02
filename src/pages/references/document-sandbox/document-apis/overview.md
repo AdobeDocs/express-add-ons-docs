@@ -54,7 +54,7 @@
 -   [RestrictedItemList](classes/restricted-item-list.md)
 -   [SolidColorShapeNode](classes/solid-color-shape-node.md)
 -   [StrokableNode](classes/strokable-node.md)
--   [StrokeShapeNode](classes/StrokeShapeNode.md)
+-   [StrokeShapeNode](classes/stroke-shape-node.md)
 -   [TextContentModel](classes/text-content-model.md)
 -   [TextNode](classes/text-node.md)
 -   [UnavailableFont](classes/unavailable-font.md)
