@@ -106,7 +106,7 @@
                 - [Font](references/document-sandbox/document-apis/type-aliases/font.md) 
                 - [SolidColorStrokeWithOptionalType](references/document-sandbox/document-apis/type-aliases/solid-color-stroke-with-optional-type.md) 
             - [Concepts](references/document-sandbox/document-apis/concepts/index.md) 
-    - [Manifest Schema](references/manifest) 
+    - [Manifest Schema](references/manifest/index.md) 
     - [Changelog](references/changelog.md) 
     - [Overview](guides/) 
     - [Getting started](guides/getting-started) 

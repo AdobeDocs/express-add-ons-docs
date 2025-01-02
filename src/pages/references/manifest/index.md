@@ -102,7 +102,6 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | `apiVersion`         | `number`       | API version that the add-on uses. Currently supported values: 1 |
 | [`supportedDeviceClass?`](#requirementsappssupporteddeviceclass ) | `string []`  | Supported platforms by the add-on. If not specified, the default value assumed is: `["desktop"]`. |
 
-<!-- | `supportedDeviceClass?` | `string []`  | Supported platforms by the add-on. Possible values are <ul><li>"desktop"</li><li>"mobile</li><li>"app"</li></ul> If not specified, default value assumed is: \["desktop"\]. | -->
 **Example:**
 
 ```json
@@ -122,9 +121,6 @@ The following platform value is currently supported in the `supportedDeviceClass
 | Platform       | Description |
 | ----------------| -------------|
 | `desktop`       | Browser on desktop. |
-<!-- Extra comment, otherwise the table will show the content anyway—bar the first cell -->
-<!-- | `mobile`        | Browser on mobile and tablet devices. | -->
-<!-- | `app`           | Native app on mobile and tablet devices. | -->
 
 ## entryPoints
 

@@ -453,7 +453,7 @@ module.exports = {
       {
         title: "Manifest Schema",
         description: "Manifest schema",
-        path: "references/manifest",
+        path: "references/manifest/index.md",
       },
       {
         title: "Changelog",
