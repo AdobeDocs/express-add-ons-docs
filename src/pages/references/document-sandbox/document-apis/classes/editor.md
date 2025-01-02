@@ -57,7 +57,7 @@ a group node.
 
 ### createImageContainer()
 
-• **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](mediacontainer-node.md)
+• **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](media-container-node.md.md)
 
 Creates a bitmap image, represented as a multi-node MediaContainerNode structure. Always creates a "full-frame,"
 uncropped image initially, but cropping can be changed after it is created by modifying the properties of the
@@ -83,7 +83,7 @@ if needed to stay below an application-defined size cap).
 
 #### Returns
 
-[`MediaContainerNode`](mediacontainer-node.md)
+[`MediaContainerNode`](media-container-node.md.md)
 
 MediaContainerNode representing the top container node of the multi-node structure.
 

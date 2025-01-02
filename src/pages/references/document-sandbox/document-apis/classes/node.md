@@ -18,7 +18,7 @@ A Node’s parent is always a VisualContentNode but may not be another Node (e.g
 -   [`GridLayoutNode`](grid-layout-node.md)
 -   [`GroupNode`](group-node.md)
 -   [`ImageRectangleNode`](image-rectangle-node.md)
--   [`MediaContainerNode`](mediacontainer-node.md)
+-   [`MediaContainerNode`](media-container-node.md.md)
 -   [`SolidColorShapeNode`](solid-color-shape-node.md)
 -   [`StrokableNode`](strokable-node.md)
 -   [`TextNode`](text-node.md)
