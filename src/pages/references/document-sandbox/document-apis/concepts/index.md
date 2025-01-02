@@ -35,7 +35,7 @@ Developers with a front-end background may instinctively associate the notion of
 
 <InlineAlert variant="warning" slots="heading, text1, text2, text3w" />
 
-**Warning** <!-- 👈 won't be rendered -->
+**Warning** 
 
 Some confusion may arise regarding the meaning of the following terms—let me clarify.
 
