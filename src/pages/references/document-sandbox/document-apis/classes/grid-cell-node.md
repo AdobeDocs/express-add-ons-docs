@@ -259,7 +259,7 @@ The node's transform matrix relative to its parent.
 
 ### translation
 
-• `get` **translation**(): `Readonly`<[`Point`](../interfaces/point.md)
+• `get` **translation**(): `Readonly` [`Point`](../interfaces/point.md)
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
