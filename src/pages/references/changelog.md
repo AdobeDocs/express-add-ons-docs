@@ -74,7 +74,7 @@ contributors:
 
 ## 2024-09-10
 
--   Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/mediacontainer-node.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
+-   Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/media-container-node.md.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
 -   Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/stroke.md) APIs.
 
 ## 2024-07-22

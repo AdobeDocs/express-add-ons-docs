@@ -8,7 +8,7 @@ MediaRectangle child of the GridCellNode when those actions are applied.
 
 ## Extends
 
-- [`MediaContainerNode`](mediacontainer-node.md)
+- [`MediaContainerNode`](media-container-node.md.md)
 
 ## Accessors
 
@@ -324,7 +324,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Inherited from
 
-[`MediaContainerNode`](mediacontainer-node.md).[`boundsInNode`](mediacontainer-node.md#boundsinnode)
+[`MediaContainerNode`](media-container-node.md.md).[`boundsInNode`](media-container-node.md.md#boundsinnode)
 
 <hr />
 
@@ -348,7 +348,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[`MediaContainerNode`](mediacontainer-node.md).[`localPointInNode`](mediacontainer-node.md#localpointinnode)
+[`MediaContainerNode`](media-container-node.md.md).[`localPointInNode`](media-container-node.md.md#localpointinnode)
 
 <hr />
 
@@ -369,7 +369,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`MediaContainerNode`](mediacontainer-node.md).[`removeFromParent`](mediacontainer-node.md#removefromparent)
+[`MediaContainerNode`](media-container-node.md.md).[`removeFromParent`](media-container-node.md.md#removefromparent)
 
 <hr />
 
@@ -393,7 +393,7 @@ New content to display. Currently must be a [BitmapImage](../interfaces/bitmap-i
 
 #### Inherited from
 
-[`MediaContainerNode`](mediacontainer-node.md).[`replaceMedia`](mediacontainer-node.md#replacemedia)
+[`MediaContainerNode`](media-container-node.md.md).[`replaceMedia`](media-container-node.md.md#replacemedia)
 
 <hr />
 
@@ -420,7 +420,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`MediaContainerNode`](mediacontainer-node.md).[`setPositionInParent`](mediacontainer-node.md#setpositioninparent)
+[`MediaContainerNode`](media-container-node.md.md).[`setPositionInParent`](media-container-node.md.md#setpositioninparent)
 
 #### Example
 
@@ -460,7 +460,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`MediaContainerNode`](mediacontainer-node.md).[`setRotationInParent`](mediacontainer-node.md#setrotationinparent)
+[`MediaContainerNode`](media-container-node.md.md).[`setRotationInParent`](media-container-node.md.md#setrotationinparent)
 
 #### Example
 

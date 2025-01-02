@@ -208,7 +208,7 @@ module.exports = {
                   },
                   {
                     title: "MediaContainerNode",
-                    path: "references/document-sandbox/document-apis/classes/mediacontainer-node.md",
+                    path: "references/document-sandbox/document-apis/classes/media-container-node.md.md",
                   },
                   {
                     title: "Node",
