@@ -16,7 +16,7 @@ Contains the user's current selection state, indicating the content they are foc
 
 The currently viewed page.
 
----
+<hr />
 
 ### hasSelection
 
@@ -28,7 +28,7 @@ The currently viewed page.
 
 false if the current editable selection does not contain any nodes, otherwise true.
 
----
+<hr />
 
 ### insertionParent
 
@@ -42,7 +42,7 @@ the preferred parent to insert newly added content into (i.e., the location cont
 user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
 other UI state.
 
----
+<hr />
 
 ### selection
 
@@ -66,7 +66,7 @@ readonly [`Node`](node.md)[]
 
 the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
 
----
+<hr />
 
 ### selectionIncludingNonEditable
 
@@ -107,7 +107,7 @@ Callback that was previously registered will be removed and will no more be invo
 
 `void`
 
----
+<hr />
 
 ### on()
 

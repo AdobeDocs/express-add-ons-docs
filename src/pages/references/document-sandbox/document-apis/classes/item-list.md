@@ -30,7 +30,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<hr />
 
 ### last
 
@@ -42,7 +42,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<hr />
 
 ### length
 
@@ -70,7 +70,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 [`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](restricted-item-list.md#iterator)
 
----
+<hr />
 
 ### append()
 
@@ -91,7 +91,7 @@ removed from their previous parent, if any – or if an item is already in _this
 
 - if item has a different parent and item is a [TextNode](text-node.md) that's a part of a Text Flow, or if item's children subtree contains a TextNode who is a part of a Text Flow.
 
----
+<hr />
 
 ### clear()
 
@@ -103,7 +103,7 @@ Remove all items from this list. No-op if list is already empty.
 
 `void`
 
----
+<hr />
 
 ### indexOf()
 
@@ -125,7 +125,7 @@ index number, or -1 if item isn't in this list.
 
 [`RestrictedItemList`](restricted-item-list.md).[`indexOf`](restricted-item-list.md#indexof)
 
----
+<hr />
 
 ### insertAfter()
 
@@ -149,7 +149,7 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 - if newItem has a different parent and it is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
 
----
+<hr />
 
 ### insertBefore()
 
@@ -173,7 +173,7 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 - if newItem has a different parent and it is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
 
----
+<hr />
 
 ### item()
 
@@ -195,7 +195,7 @@ Zero-based index
 
 [`RestrictedItemList`](restricted-item-list.md).[`item`](restricted-item-list.md#item)
 
----
+<hr />
 
 ### moveAfter()
 
@@ -223,7 +223,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 An error if either argument is not contained in this list.
 
----
+<hr />
 
 ### moveBefore()
 
@@ -251,7 +251,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 An error if either argument is not contained in this list.
 
----
+<hr />
 
 ### remove()
 
@@ -275,7 +275,7 @@ Remove the items from the list. The items need not be contiguous.
 
 If any of the items are not in the list, or if it is illegal to remove any of the items from this parent.
 
----
+<hr />
 
 ### replace()
 
@@ -299,7 +299,7 @@ changed. No-op if both arguments are the same item.
 
 - if newItem has a different parent and newItem is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
 
----
+<hr />
 
 ### toArray()
 

@@ -22,7 +22,7 @@ Whether the current user has permission to create / edit content using this font
 
 `boolean`
 
----
+<hr />
 
 ### family
 
@@ -38,7 +38,7 @@ The font family containing the font.
 
 `string`
 
----
+<hr />
 
 ### postscriptName
 
@@ -54,7 +54,7 @@ The PostScript name of the font.
 
 `string`
 
----
+<hr />
 
 ### style
 

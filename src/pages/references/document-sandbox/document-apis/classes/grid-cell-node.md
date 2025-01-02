@@ -26,7 +26,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<hr />
 
 ### allChildren
 
@@ -43,7 +43,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 `Readonly`<`Iterable`<[`Node`](node.md)\>\>
 
----
+<hr />
 
 ### blendMode
 
@@ -62,7 +62,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 [`BlendMode`](../enumerations/blend-mode.md)
 
----
+<hr />
 
 ### boundsInParent
 
@@ -78,7 +78,7 @@ even for an orphan node with no parent.
 
 `Readonly`<[`Rect`](../interfaces/rect.md)\>
 
----
+<hr />
 
 ### boundsLocal
 
@@ -95,7 +95,7 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`<[`Rect`](../interfaces/rect.md)\>
 
----
+<hr />
 
 ### centerPointLocal
 
@@ -108,7 +108,7 @@ box.
 
 `Readonly`<[`Point`](../interfaces/point.md)\>
 
----
+<hr />
 
 ### id
 
@@ -121,7 +121,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<hr />
 
 ### locked
 
@@ -140,7 +140,7 @@ cannot be edited by the user unless they are unlocked first.
 
 `boolean`
 
----
+<hr />
 
 ### maskShape
 
@@ -154,7 +154,7 @@ different shape via this API.
 
 [`FillableNode`](fillable-node.md)
 
----
+<hr />
 
 ### mediaRectangle
 
@@ -168,7 +168,7 @@ for now.
 
 [`Node`](node.md) \| [`ImageRectangleNode`](image-rectangle-node.md)
 
----
+<hr />
 
 ### opacity
 
@@ -186,7 +186,7 @@ The node's opacity, from 0.0 to 1.0
 
 `number`
 
----
+<hr />
 
 ### parent
 
@@ -203,7 +203,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<hr />
 
 ### rotation
 
@@ -216,7 +216,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<hr />
 
 ### rotationInScreen
 
@@ -229,7 +229,7 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<hr />
 
 ### topLeftLocal
 
@@ -243,7 +243,7 @@ boundsInParent.
 
 `Readonly`<[`Point`](../interfaces/point.md)\>
 
----
+<hr />
 
 ### transformMatrix
 
@@ -255,7 +255,7 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<hr />
 
 ### translation
 
@@ -275,7 +275,7 @@ setting translation directly.
 
 `Readonly`<[`Point`](../interfaces/point.md)\>
 
----
+<hr />
 
 ### type
 
@@ -287,7 +287,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<hr />
 
 ### visualRoot
 
@@ -326,7 +326,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 [`MediaContainerNode`](mediacontainer-node.md).[`boundsInNode`](mediacontainer-node.md#boundsinnode)
 
----
+<hr />
 
 ### localPointInNode()
 
@@ -350,7 +350,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 [`MediaContainerNode`](mediacontainer-node.md).[`localPointInNode`](mediacontainer-node.md#localpointinnode)
 
----
+<hr />
 
 ### removeFromParent()
 
@@ -371,7 +371,7 @@ removal. No-op if node is already an orphan.
 
 [`MediaContainerNode`](mediacontainer-node.md).[`removeFromParent`](mediacontainer-node.md#removefromparent)
 
----
+<hr />
 
 ### replaceMedia()
 
@@ -395,7 +395,7 @@ New content to display. Currently must be a [BitmapImage](../interfaces/bitmap-i
 
 [`MediaContainerNode`](mediacontainer-node.md).[`replaceMedia`](mediacontainer-node.md#replacemedia)
 
----
+<hr />
 
 ### setPositionInParent()
 
@@ -433,7 +433,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<hr />
 
 ### setRotationInParent()
 

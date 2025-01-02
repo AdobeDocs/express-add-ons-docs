@@ -35,7 +35,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<hr />
 
 ### allChildren
 
@@ -53,7 +53,7 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly` `Iterable` [`BaseNode`](base-node.md)
 
----
+<hr />
 
 ### boundsLocal
 
@@ -70,7 +70,7 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly` [`Rect`](../interfaces/rect.md)
 
----
+<hr />
 
 ### centerPointLocal
 
@@ -83,7 +83,7 @@ box.
 
 `Readonly` [`Point`](../interfaces/point.md)
 
----
+<hr />
 
 ### id
 
@@ -96,7 +96,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<hr />
 
 ### parent
 
@@ -113,7 +113,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<hr />
 
 ### topLeftLocal
 
@@ -127,7 +127,7 @@ boundsInParent.
 
 `Readonly` [`Point`](../interfaces/point.md)
 
----
+<hr />
 
 ### type
 
@@ -139,7 +139,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<hr />
 
 ### visualRoot
 
@@ -176,7 +176,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 `Readonly`<[`Point`](../interfaces/point.md)
 
----
+<hr />
 
 ### removeFromParent()
 

@@ -24,7 +24,7 @@ Whether the current user has permission to create / edit content using this font
 
 `true`
 
----
+<hr />
 
 ### family
 
@@ -36,7 +36,7 @@ The font family containing the font.
 
 `string`
 
----
+<hr />
 
 ### isPremium
 
@@ -48,7 +48,7 @@ Whether the font is a premium Adobe font.
 
 `boolean`
 
----
+<hr />
 
 ### postscriptName
 
@@ -60,7 +60,7 @@ The PostScript name of the font.
 
 `string`
 
----
+<hr />
 
 ### style
 
