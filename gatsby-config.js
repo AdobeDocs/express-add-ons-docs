@@ -520,7 +520,7 @@ module.exports = {
       },
       {
         title: "Design",
-        path: "guides/design",
+        path: "guides/design/index.md",
         pages: [
           {
             title: "Overview",
