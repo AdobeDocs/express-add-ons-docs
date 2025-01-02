@@ -180,7 +180,7 @@ module.exports = {
                   },
                   {
                     title: "Fonts",
-                    path: "references/document-sandbox/document-apis/classes/Fonts.md",
+                    path: "references/document-sandbox/document-apis/classes/fonts.md",
                   },
                   {
                     title: "GridCellNode",

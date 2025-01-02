@@ -42,7 +42,7 @@
                 - [EllipseNode](references/document-sandbox/document-apis/classes/ellipse-node.md) 
                 - [ExpressRootNode](references/document-sandbox/document-apis/classes/express-root-node.md) 
                 - [FillableNode](references/document-sandbox/document-apis/classes/fillable-node.md) 
-                - [Fonts](references/document-sandbox/document-apis/classes/Fonts.md) 
+                - [Fonts](references/document-sandbox/document-apis/classes/fonts.md) 
                 - [GridCellNode](references/document-sandbox/document-apis/classes/grid-cell-node.md) 
                 - [GridLayoutNode](references/document-sandbox/document-apis/classes/grid-layout-node.md) 
                 - [GroupNode](references/document-sandbox/document-apis/classes/group-node.md) 

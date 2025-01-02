@@ -37,7 +37,7 @@
 -   [EllipseNode](classes/ellipse-node.md)
 -   [ExpressRootNode](classes/express-root-node.md)
 -   [FillableNode](classes/fillable-node.md)
--   [Fonts](classes/Fonts.md)
+-   [Fonts](classes/fonts.md)
 -   [GridCellNode](classes/grid-cell-node.md)
 -   [GridLayoutNode](classes/grid-layout-node.md)
 -   [GroupNode](classes/group-node.md)
