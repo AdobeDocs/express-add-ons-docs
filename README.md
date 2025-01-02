@@ -24,9 +24,9 @@ This section outlines the steps that should be taken to format the generated Doc
 
 4. Find and replace all \`mat2d\` --> \[\`mat2d\`\]\(https://glmatrix.net/docs/module-mat2d.html)
 
-5. Fix any `[iterator]` links to remove the brackets from the link references to ensure they work. For instance: `ArtboardList.md#%5Biterator%5D` should be `ArtboardList.md#iterator`. To fix, use Search again with a regex string of `.md#%5Biterator%5D` and replace with `.md#iterator`.
+5. Fix any `[iterator]` links to remove the brackets from the link references to ensure they work. For instance: `artboard-list.md#%5Biterator%5D` should be `artboard-list.md#iterator`. To fix, use Search again with a regex string of `.md#%5Biterator%5D` and replace with `.md#iterator`.
 
-6. Find and remove all occurrences of `TemplatizedProxyLiveObject`. An example is of `ReadOnlyItemList.md`, where you should remove the following section:
+6. Find and remove all occurrences of `TemplatizedProxyLiveObject`. An example is of `read-only-item-list.md`, where you should remove the following section:
 
     ```md
     ## Extends
@@ -34,7 +34,7 @@ This section outlines the steps that should be taken to format the generated Doc
     -   `TemplatizedProxyLiveObject`<`HzApiInputType`\>
     ```
 
-7. Find and remove all occurrences of `ProxyLiveObject`. An example is of `BaseNode.md`, where you should remove the following section:
+7. Find and remove all occurrences of `ProxyLiveObject`. An example is of `base-node.md`, where you should remove the following section:
 
     ```md
     ## Extends

@@ -13,11 +13,11 @@ This metadata is accessible only to the add-on that has set it.
 
 ### remainingQuota
 
-• `get` **remainingQuota**(): `Readonly`<`object`\>
+• `get` **remainingQuota**(): `Readonly` `object`
 
 #### Returns
 
-`Readonly`<`object`\>
+`Readonly` `object`
 
 an object with the remaining quota for private metadata on the node for this add-on.
 The object contains the following properties:
@@ -37,16 +37,16 @@ The object contains the following properties:
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<[`string`, `string`], `any`, `undefined`\>
+• **\[iterator\]**(): `Iterator` [`string`, `string`], `any`, `undefined`
 
 #### Returns
 
-`Iterator`<[`string`, `string`], `any`, `undefined`\>
+`Iterator` [`string`, `string`], `any`, `undefined`
 
 an iterator for all the private metadata entries on the node.
 The iterator yields the metadata key-value pairs.
 
----
+<hr />
 
 ### clear()
 
@@ -58,7 +58,7 @@ Clears all private metadata entries on the node.
 
 `void`
 
----
+<hr />
 
 ### getItem()
 
@@ -78,7 +78,7 @@ The key of the private metadata entry to retrieve.
 
 The value of the private metadata entry.
 
----
+<hr />
 
 ### keys()
 
@@ -90,7 +90,7 @@ The value of the private metadata entry.
 
 an array of all keys for the private metadata entries on the node.
 
----
+<hr />
 
 ### removeItem()
 
@@ -108,7 +108,7 @@ The key of the private metadata entry to remove.
 
 `void`
 
----
+<hr />
 
 ### setItem()
 
