@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / ReadOnlyItemList
 
-# Class: ReadOnlyItemList<T\>
+# Class: ReadOnlyItemList T
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
