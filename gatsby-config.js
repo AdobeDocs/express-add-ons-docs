@@ -658,11 +658,11 @@ module.exports = {
       },
       {
         title: "Distribute",
-        path: "guides/distribute",
+        path: "guides/distribute/index.md",
         pages: [
           {
             title: "Overview",
-            path: "guides/distribute/",
+            path: "guides/distribute/index.md",
           },
           {
             title: "Our review process",
