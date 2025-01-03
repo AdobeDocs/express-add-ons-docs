@@ -12,7 +12,7 @@ The [document sandbox](./document-sandbox/index.md) is a sandboxed JavaScript ex
 
 ## Manifest Schema Reference
 
-The add-on `manifest.json` file defines the metadata for your add-on and how it should behave. Use the [manifest schema reference](./manifest/) to discover all of the possible keys and values available for describing your add-on.
+The add-on `manifest.json` file defines the metadata for your add-on and how it should behave. Use the [manifest schema reference](./manifest/index.md) to discover all of the possible keys and values available for describing your add-on.
 
 ## Changelog
 
