@@ -22,9 +22,9 @@ contributors:
 
 ## Authoring Adobe Express Content
 
-We provide a set of [Document APIs](/references/document-sandbox/document-apis/) that can be used to interact with the document for common use cases like creating shapes, adding pages, clearing the artboard, and more.
+We provide a set of [Document APIs](../../../references/document-sandbox/document-apis/index.md) that can be used to interact with the document for common use cases like creating shapes, adding pages, clearing the artboard, and more.
 
-The following code snippet illustrates how to use the [Document APIs](/references/document-sandbox/document-apis/) from the script running in your [`code.js`](/references/document-sandbox/index.md#getting-started-with-the-apis); for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document.
+The following code snippet illustrates how to use the [Document APIs](../../../references/document-sandbox/document-apis/index.md) from the script running in your [`code.js`](../../../references/document-sandbox/index.md#getting-started-with-the-apis); for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document.
 
 ```js
 import { editor, colorUtils } from "express";
@@ -49,11 +49,11 @@ insertionParent.children.append(rectangle);
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to [getting started with the Document Sandbox](/references/document-sandbox/index.md#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, as well as [this extensive tutorial](../../tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs.
+Refer to [getting started with the Document Sandbox](../../../references/document-sandbox/index.md#getting-started-with-the-apis) for more details on how to set up your add-on to use the script-based APIs, as well as [this extensive tutorial](../../tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs.
 
 ## Document and Page Metadata
 
-You can retrieve some information about the current document using the [Add-on UI SDK Document object](/references/addonsdk/app-document.md). Currently, there are methods that allow you to retrieve the ID of the document and the title (i.e., name). Also, associated events will let you listen for when the document is available (via the `documentAvailable` event) and when the title has changed (via the `documentTitleChange` event). See the examples below.
+You can retrieve some information about the current document using the [Add-on UI SDK Document object](../../../references/addonsdk/app-document.md). Currently, there are methods that allow you to retrieve the ID of the document and the title (i.e., name). Also, associated events will let you listen for when the document is available (via the `documentAvailable` event) and when the title has changed (via the `documentTitleChange` event). See the examples below.
 
 ### Retrieving the Document ID
 
@@ -101,7 +101,7 @@ addOnUISdk.app.on("documentTitleChange", data => {
 
 ### Retrieving page metadata
 
-If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](/references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object, as shown in the example below.
+If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](../../../references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object, as shown in the example below.
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
