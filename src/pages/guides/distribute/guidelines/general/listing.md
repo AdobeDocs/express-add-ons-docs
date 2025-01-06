@@ -128,7 +128,7 @@ Existing developers can easily update their trader details directly in their [pu
 
 Note that only trader details can be added; other fields cannot be edited by developers.
 
-If you do not provide this information by February 16, 2025, your add-on won't be visible or available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries. 
+If you do not provide this information by February 16, 2025, your add-on won't be visible or available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.
 
 Choose **Yes** if you wish to make your add-ons available for users in the EU.
 
