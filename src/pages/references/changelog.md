@@ -21,6 +21,10 @@ contributors:
 
 # Changelog
 
+## 2025-01-13
+
+- Adds a new section in [Listing Your Add-on guidlines](../guides/distribute/guidelines/general/listing.md) which describes how to [add trader details](../guides/distribute/guidelines/general/listing.md#trader-details) in the publisher profile.
+
 ## 2024-11-04
 
 - Adds a new [Cross-origin Isolation Handling](../guides/develop/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.

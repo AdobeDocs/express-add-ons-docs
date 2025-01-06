@@ -208,7 +208,17 @@ Carefully review our [monetization guidelines](./guidelines/monetization.md) to 
 <InlineAlert slots="text" variant="info"/>
 You will only see this step the first time you submit an add-on and if you've never created a publisher profile before to this submission.
 
-Fill your publisher details and upload a 250x250 logo.
+- Fill your publisher profile details.
+- Upload a 250x250 logo.
+- Add your trader details: In accordance with the European Union Digital Services Act trader requirements, developers who wish to distribute their listings in the EU must provide additional information in their publisher profile. [Learn more](./guidelines/general/listing.md#trader-details) about adding trader details.
+  
+<InlineAlert variant="warning" slots="text1, text2, text3" />
+
+**Are you an existing developer?**
+
+If you do not provide trader details by February 16, 2025, your add-on won't be visible or available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries. 
+
+[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
 
 <!-- ![Publisher Profile](./img/pub-profile2.png)-->
 

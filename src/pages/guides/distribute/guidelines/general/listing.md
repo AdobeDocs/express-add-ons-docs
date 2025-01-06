@@ -4,11 +4,11 @@ Your listing should provide valuable information about what your add-on does, an
 
 <AnnouncementBlock slots="heading, text, button" />
 
-#### Are you an existing developer?
+Are you an existing developer?
 
 Action required: Add trader details to continue EU distribution.
 
-[Add compliance information now](https://new.express.adobe.com/add-ons?mode=submission)
+[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
 
 ## Listing metadata
 
@@ -118,9 +118,9 @@ The terms **developers/traders** are used interchangeably in this guide.
 
 Any developer who wishes to publish their add-ons in the EU can be identified as a trader.
 
-Checkout the [Adobe Know your trader](https://developer.adobe.com/compliance/) guide to understand **why and by when** you must provide these details to make your listings available in the EU.
+Checkout our [Know your trader](https://developer.adobe.com/compliance/) guide to understand **why** you must provide these details to make your listings available in the EU.
 
-<InlineAlert variant="help" slots="header, text1, text2, text3" />
+<InlineAlert variant="warning" slots="header, text1, text2, text3" />
 
 **Are you an existing developer?**
 
@@ -128,7 +128,7 @@ Existing developers can easily update their trader details directly in their [pu
 
 Note that only trader details can be added; other fields cannot be edited by developers.
 
-If you do not provide this information by February 16, 2025, your add-on won't be visible or available in Adobe Express for users in the European Union as of February 17, 2025.
+If you do not provide this information by February 16, 2025, your add-on won't be visible or available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries. 
 
 Choose **Yes** if you wish to make your add-ons available for users in the EU.
 
