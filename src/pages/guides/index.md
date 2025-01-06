@@ -60,16 +60,16 @@ Ready to build your own? Check out these popular use cases supported by our add-
 - Managing language and locale
 - Retrieving the current theme and detecting theme changes
 
-See the [implementing common use cases](develop) page and [code samples](../samples.md) for more details on how to implement the features above.
+See the [implementing common use cases](./develop/index.md) page and [code samples](../samples.md) for more details on how to implement the features above.
 
 ## Add-on Developer Journey
 
 The journey to developing an add-on is outlined below:
 
-1. Create an add-on project with the CLI. You can refer to the [Getting Started](./getting-started/) guides to help you create your first project quickly.
+1. Create an add-on project with the CLI. You can refer to the [Getting Started](./getting-started/index.md) guides to help you create your first project quickly.
 2. Design your UI using [Adobe's Spectrum Design System](https://spectrum.adobe.com/). This system provides guidelines and resources for designing user interfaces that follow Adobe's design language and best practices.
-3. Use the [common use case implementations](./develop/), [code samples](../samples.md), and [references](../references/) to learn how to include all of the features you want to showcase in your add-on. This can help you save time and avoid common mistakes when developing your add-on.
-4. [Debug and test](./debug/) your add-on using your favorite browser tools, Visual Studio Code, and the add-on logging window provided in the Adobe Express UI development environment. This will help you identify and fix any bugs or issues before distributing your add-on.
-5. Distribute your add-on for public or private sharing. You can refer to the [add-on distribution guidelines](./distribute/) to learn how to package and distribute your add-on on the Adobe add-ons marketplace or privately to your clients.
+3. Use the [common use case implementations](./develop/index.md), [code samples](../samples.md), and [references](../references/index.md) to learn how to include all of the features you want to showcase in your add-on. This can help you save time and avoid common mistakes when developing your add-on.
+4. [Debug and test](./debug/index.md) your add-on using your favorite browser tools, Visual Studio Code, and the add-on logging window provided in the Adobe Express UI development environment. This will help you identify and fix any bugs or issues before distributing your add-on.
+5. Distribute your add-on for public or private sharing. You can refer to the [add-on distribution guidelines](./distribute/index.md) to learn how to package and distribute your add-on on the Adobe add-ons marketplace or privately to your clients.
 
-If you run into any issues at any time throughout your development process, please refer to the [Debug Guides](../guides/debug/) and [FAQ](../guides/faq.md) for more help.
+If you run into any issues at any time throughout your development process, please refer to the [Debug Guides](../guides/debug/index.md) and [FAQ](../guides/faq.md) for more help.
