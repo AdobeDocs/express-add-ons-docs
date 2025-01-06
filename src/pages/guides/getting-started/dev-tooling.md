@@ -114,7 +114,7 @@ The add-on CLI contains built-in, pre-configured templates to allow you to creat
 | `react-javascript`  | React with JavaScript |
 | `react-typescript` | React with TypeScript |
 
-As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
+As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/index.md):
 
 | Template         | Description        |
 | ---------------- | ---------------- |
@@ -162,7 +162,7 @@ You will also see a message in the CLI output notifying you of which template th
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
-Please note that to use [Spectrum Web Components](/guides/design/user-interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
+Please note that to use [Spectrum Web Components](../design/index.md) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
 
 If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
 
@@ -172,7 +172,7 @@ When the scaffolding is complete, you will see the following message, prompting 
 
 ## Manifest
 
-A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
+A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest/index.md) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
 
 ## Add-on Development Tools Panel
 
