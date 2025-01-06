@@ -71,7 +71,7 @@ To use the document sandbox APIs in your add-on, start by defining a new `docume
     ]
 ```
 
-The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/), [Web APIs](./web/index.md) and [document APIs](./document-apis/index.md)).
+The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/index.md), [Web APIs](./web/index.md) and [document APIs](./document-apis/index.md)).
 
 ### CLI Generated Document Sandbox Add-on
 
