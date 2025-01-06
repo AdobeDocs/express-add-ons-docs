@@ -323,7 +323,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [importing content use case](../../guides/develop/use-cases/content-management.md#importing-content) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [importing content use case](../../guides/develop/use-cases/content-management.md#importing-content) and the [import-images-from-local](../../samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -684,7 +684,7 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [exporting content use case example](../../guides/develop/use-cases/content-management.md#exporting-content) and the [export-sample](/samples.md) in the code samples for usage examples.
+Refer to the [exporting content use case example](../../guides/develop/use-cases/content-management.md#exporting-content) and the [export-sample](../../samples.md) in the code samples for usage examples.
 
 ### Errors
 

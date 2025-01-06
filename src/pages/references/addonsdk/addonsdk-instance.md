@@ -1,6 +1,6 @@
 # addOnUISdk.instance
 
-Represents the currently running add-on instance. This object is used to provide access to the `clientStorage` and `manifest` objects. See the [Storing and Retrieving Client Side Data](../../guides/develop/use-cases/clientside-data.md) use case implementation and [Manifest](../manifest) reference for more details.
+Represents the currently running add-on instance. This object is used to provide access to the `clientStorage` and `manifest` objects. See the [Storing and Retrieving Client Side Data](../../guides/develop/use-cases/clientside-data.md) use case implementation and [Manifest](../manifest/index.md) reference for more details.
 
 ## Objects
 

@@ -10,7 +10,7 @@ Provides access to the Adobe Express host application's objects and methods to p
 |            | [`devFlags`](./app-dev-flags.md)       | `object` | Represents flags which can be used to simulate certain behavior during development.        |
 | `readonly` | [`document`](./app-document.md)       | `object` | Represents the active document of the host application.                                    |
 | `readonly` | [`oauth`](./app-oauth.md)             | `object` | Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
-| `readonly` | [`ui`]('./app-ui.md')                 | `object` | Represents the host UI (Adobe Express UI).                                                 |
+| `readonly` | [`ui`](./app-ui.md)                 | `object` | Represents the host UI (Adobe Express UI).                                                 |
 
 ## Methods
 
@@ -367,7 +367,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/develop/use-cases/user-interaction.md#drag-and-drop) for example usage, and the [code samples](/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/develop/use-cases/user-interaction.md#drag-and-drop) for example usage, and the [code samples](../../samples.md) provided for reference.
 
 ## Events
 

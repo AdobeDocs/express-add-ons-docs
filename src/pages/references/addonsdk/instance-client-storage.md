@@ -148,7 +148,7 @@ async function getKeys() {
 
 <InlineAlert slots="text" variant="info"/>
 
-Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/develop/use-cases/clientside-data.md) for more details about using Client Storage, as well as the [**use-client-storage** sample](/samples.md) for a more complete example of implementing it in an add-on.
+Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/develop/use-cases/clientside-data.md) for more details about using Client Storage, as well as the [**use-client-storage** sample](../../samples.md) for a more complete example of implementing it in an add-on.
 
 ## Errors
 
