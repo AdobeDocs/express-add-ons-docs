@@ -24,7 +24,7 @@ Importing content into a design is one of the most popular use cases for an add-
 
 ### Image Content
 
-The following example demonstrates how to add an image to the current page. The first function shows how to add an image directly from a `blob` object, and the second illustrates how to fetch an image via a URL to add. Please also refer to the [related SDK Reference section](/references/addonsdk/app-document.md#methods) and [code samples](/samples.md) for more details.
+The following example demonstrates how to add an image to the current page. The first function shows how to add an image directly from a `blob` object, and the second illustrates how to fetch an image via a URL to add. Please also refer to the [related SDK Reference section](../../../references/addonsdk/app-document.md#methods) and [code samples](../../../samples.md) for more details.
 
 #### Add Image Example
 
@@ -202,7 +202,7 @@ async function importPresentationFrom(url) {
 
 ## Exporting Content
 
-Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to allow the user to save/download the current design, (or range of a design), with certain export configurations to their local hard drive. Some examples for exporting content are provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](/samples.md#export-sample).
+Another popular feature available for use in your add-on is the ability to export content. For instance, if you want to allow the user to save/download the current design, (or range of a design), with certain export configurations to their local hard drive. Some examples for exporting content are provided below, but also check out the [`createRenditions` section in the SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#createrenditions) for more specific options and details, as well as the [export-sample add-on](../../../samples.md#export-sample).
 
 The steps to export content:
 
@@ -234,7 +234,7 @@ While the above is a very basic example, add-ons that call `createRenditions` to
 
 #### Option 1: Show a Premium Content error with the "Upgrade" option
 
-Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](/references/addonsdk/app-current-user.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent`](/references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
+Display a warning message when the user is not entitled to export/download premium content, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content ([`isPremiumUser()`](../../../references/addonsdk/app-current-user.md#isPremiumUser)) and whether the page contains premium content ([`hasPremiumContent`](../../../references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
 
 #### Example:
 
@@ -297,7 +297,7 @@ const exportDocument = async () => {
 document.querySelector("#export").onclick = exportDocument;
 ```
 
-Please note that [`startPremiumUpgradeIfFreeUser()`](/references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) allows a more streamlined user experience for upgrading to premium content, compared to the older method of redirecting to the Adobe Express pricing page, which is now deprecated.
+Please note that [`startPremiumUpgradeIfFreeUser()`](../../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) allows a more streamlined user experience for upgrading to premium content, compared to the older method of redirecting to the Adobe Express pricing page, which is now deprecated.
 
 #### Option 2: Provide visual cues in the UI
 
@@ -305,7 +305,7 @@ Developers can provide visual cues directly in the add-on UI to show that users 
 
 #### Option 3: Allow preview of Premium Content
 
-Set a `renditionPreview` intent in the [manifest requirements](/references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](/references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content.
+Set a `renditionPreview` intent in the [manifest requirements](../../../references/manifest/index.md#requirements), and add an extra argument to the [`createRenditions` method](../../../references/addonsdk/app-document.md#createrenditions) (ie: `RenditionIntent.preview`) to generate previews that can still use premium content.
 
 **IMPORTANT**: Your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user). To that end, be sure that users cannot:
 
