@@ -26,7 +26,7 @@ In this tutorial, we'll build an Adobe Express add-on that gathers statistics on
 
 Hello, and welcome to this Adobe Express Communication API tutorial, where we'll build together a **fully functional Stats add-on** from scratch. This add-on will retrieve metadata from the currently open Adobe Express document, such as pages and their size, plus information about the kind and number of any element used.
 
-![](images/stats-addon.png)
+![](./images/stats-addon.png)
 
 ### Timestamp
 
@@ -35,8 +35,8 @@ This tutorial has been written by Davide Barranca, software developer and author
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting-started/quickstart.md) guide.
-- Familiarity with the Adobe Express Document API, covered in [this tutorial](grids-addon.md).
+- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../guides/getting-started/quickstart.md) guide.
+- Familiarity with the Adobe Express Document API, covered in [this tutorial](./grids-addon.md).
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 
@@ -52,11 +52,11 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 [Context Closures](#functions)
 
-![](images/stats-addon-animation.gif)
+![](./images/stats-addon-animation.gif)
 
 ## Getting Started with the Communication API
 
-As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
+As we've seen in the previous Adobe Express [Document API tutorial](./grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
 
 The **Document API** makes new, more powerful capabilities available, allowing the add-on to manipulate elements directly—like scripting in Desktop applications such as Photoshop or InDesign. This API is one component of the Document Sandbox, a JavaScript execution environment that also includes a restricted set of Web API (mostly debugging aids) as well as the means for the UI iframe and the Document API to exchange messages—the Communication API. This infrastructure is paramount as it bridges the gap between the two environments, allowing them to create a seamless experience.
 
@@ -81,7 +81,7 @@ The `runtime` object uses the `exposeApi()`to make content available to the othe
 runtime.exposeApi({ /* ... */ }); // exposing a payload {}
 ```
 
-We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
+We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](../../references/addonsdk/instance-runtime.md).
 
 ```js
 // UI iframe, importing a payload from the Document Sandbox
@@ -155,7 +155,7 @@ runtime.exposeApi({
 
 The following diagram helps visualize the process.
 
-![Proxy objects](images/stats-addon-proxy.png)
+![Proxy objects](./images/stats-addon-proxy.png)
 
 ### Proxy API
 
@@ -337,9 +337,9 @@ You are now equipped with all the theory and reference snippets needed to start 
 1. The add-on shows two **status lights** that indicate whether the SDKs are ready for use.
 1. At the press of a button, the add-on (via Document API) collects the document's metadata[^0], which is used to compile and show a **table of Nodes** (elements).
 
-![](images/stats-addon-vscode.png)
+![](./images/stats-addon-vscode.png)
 
-Like in the [Grids add-on tutorial](grids-addon.md), the starting point will be [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template), which provides a Webpack-managed JavaScript—hence, able to easily import Spectrum Web Components to build the User Interface. Everything's in the `src` folder:
+Like in the [Grids add-on tutorial](./grids-addon.md), the starting point will be [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template), which provides a Webpack-managed JavaScript—hence, able to easily import Spectrum Web Components to build the User Interface. Everything's in the `src` folder:
 
 - `index.html` is where the iframe's UI is built.
 - `ui/index.js` deals with the add-on's internal logic.
@@ -404,7 +404,7 @@ We'll start with a placeholder row with a friendly message, which is going to be
 
 The diagram below illustrates the communication flow between the two contexts.
 
-![](images/stats-addon-flow.png)
+![](./images/stats-addon-flow.png)
 
 The iframe exposes two methods:
 
@@ -574,7 +574,7 @@ start();
 
 When refreshing the add-on, the UI updates almost instantly, but a frame-by-frame analysis would reveal a progression in the rendering process: first, the HTML is loaded, then the CSS with the `<sp-status-light>` components in their original, "red" variant; finally, when the two SDK are fully loaded, we get the green lights.[^1]
 
-![Status lights](images/stats-addon-lights.png)
+![Status lights](./images/stats-addon-lights.png)
 
 Let's tackle the metadata collection in the Document Sandbox, especially the data structure we want to create[^2]. There are many ways to go about this business: I've decided to keep track of elements on a Page basis and store page dimensions, too. Eventually, the iframe will receive `documentData`, an array of objects, one for each page,  with `dimensions` and `nodes` properties. If you've got a taste for TypeScript, the type definition would be as follows.
 
@@ -607,7 +607,7 @@ The above would transpose into something along these lines.
 
 The various `"ab:Artboard"`, `"MediaContainer"` and others, are the Node type strings as Adobe Express exposes them. Let's create the `getDocumentData()` function that outputs such a structure.
 
-![](images/stats-addon-type.png)
+![](./images/stats-addon-type.png)
 
 <CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
 
@@ -681,7 +681,7 @@ const getNodeData = (node, nodeData = {}) => {
 export { getNodeData };
 ```
 
-Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](/references/document-sandbox/document-apis/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/document-sandbox/document-apis/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/) elements, and so on. As follows, the metacode.
+Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](../../references/document-sandbox/document-apis/classes/page-node.md) can contain multiple [`ArtboardNode`](../../references/document-sandbox/document-apis/classes/artboard-node.md) elements, which in turn can contain multiple [`GroupNode`](../../references/document-sandbox/document-apis/classes/group-node.md) elements, and so on. As follows, the metacode.
 
 1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty iterable (please note: it's not an Array, but can be transformed into one if needed via `Array.from()`). If so, it goes through it. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
 
@@ -780,15 +780,15 @@ As follows, the `rebuildTable()` metacode.
 - Loop through each node in the `pageData.nodes` object, adding a row with the node type and the number of instances found on that page.
 - `addRowToTable()` is a utility function that takes a table and an array of strings as arguments. It creates a new `<sp-table-row>`, then loops through the array, creating a `<sp-table-cell>` for each string and appending it to the row. If the array contains only one element, the cell is given a `page-row` class, which makes it bold.
 
-![](images/stats-addon-stats.png)
+![](./images/stats-addon-stats.png)
 
 ## Next Steps
 
 Congratulations! You've coded from scratch the Stats add-on for Adobe Express. As an exercise, you may want to extend it with the following features.
 
 - **Better visualization**: you can add `<sp-icon>` elements for each Node type, or bypass the Table altogether using an Accordion component for a hierarchical, collapsible menu.
-- **Hide and Show**: via the [Document API](/references/document-sandbox) you may hide and show elements based on their type—the `<sp-table>` has a `selects` and a `selected` attributes that you can put to use.
-- **Save Snapshots**: using the [Client Storage API](/references/addonsdk/instance-client-storage/), you can keep track of the document's metadata and compare it with previous versions.
+- **Hide and Show**: via the [Document API](../../references/document-sandbox/index.md) you may hide and show elements based on their type—the `<sp-table>` has a `selects` and a `selected` attributes that you can put to use.
+- **Save Snapshots**: using the [Client Storage API](../../references/addonsdk/instance-client-storage.md), you can keep track of the document's metadata and compare it with previous versions.
 
 ## Lessons Learned
 
