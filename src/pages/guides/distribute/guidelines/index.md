@@ -6,7 +6,7 @@ Thank you for joining the community of developers worldwide that are creating ad
 
 Adobe's goal is to publish high-quality add-ons. With that goal in mind, we’ve created this set of guidelines to give you some tips on best practices, and ensure you take the right steps to get your add-on approved:
 
-- [General guidelines](./general/)
+- [General guidelines](./general/index.md)
 - [Adobe Express Developer Program brand guidelines](./brand-guidelines.md) (aka: "Developer Brand Guidelines" throughout these guides)
 - [Monetization guidelines](./monetization.md)
-- [Generative AI guidelines](./genai/)
+- [Generative AI guidelines](./genai/index.md)
