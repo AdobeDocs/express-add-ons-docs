@@ -240,7 +240,7 @@ start();
 
 Please use the iframe and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
-The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](../..//guides/design/user-interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
+The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](../../guides/design/user-interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 
 ## The Communication API
 
