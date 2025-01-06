@@ -25,7 +25,7 @@ When you want to detect the theme of the environment where your add-on is runnin
 
 <InlineAlert slots="text" variant="info"/>
 
-Currently, Adobe Express only supports a "light" theme, though this will be changing to include support for a "dark" theme in the future. See the snippet below for an example of how to use and detect the theme, as well as the [related SDK Reference section](/references/addonsdk/app-ui.md#theme).
+Currently, Adobe Express only supports a "light" theme, though this will be changing to include support for a "dark" theme in the future. See the snippet below for an example of how to use and detect the theme, as well as the [related SDK Reference section](../../../references/addonsdk/app-ui.md#theme).
 
 ### Example
 
@@ -45,7 +45,7 @@ addOnUISdk.app.on("themechange", (data) => {
 
 ## Detecting Locale, Supported Locales, and Format
 
-If you want to find out the user's current locale, the list of supported locales, or detect when the locale changes (e.g., to set the language in your add-on), you can do so with the [`addOnUISdk.app.ui` object](/references/addonsdk/app-ui.md#locale) in the add-on SDK. Similarly, you can get and detect a change in the Format used display dates, times, numbers, etc. A simple example is shown below.
+If you want to find out the user's current locale, the list of supported locales, or detect when the locale changes (e.g., to set the language in your add-on), you can do so with the [`addOnUISdk.app.ui` object](../../../references/addonsdk/app-ui.md#locale) in the add-on SDK. Similarly, you can get and detect a change in the Format used display dates, times, numbers, etc. A simple example is shown below.
 
 ### Example
 
