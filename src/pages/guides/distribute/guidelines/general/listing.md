@@ -28,7 +28,7 @@ Think of this as your elevator pitch. Use this space to concisely describe the f
 
 If your add-on generates assets via AI or imports assets from an asset repository, you should include accurate and up-to-date information about usage rights here.
 
-Consult our [Generative AI guidelines](../genai/) for more information.
+Consult our [Generative AI guidelines](../genai/index.md) for more information.
 
 ### Your summary
 
