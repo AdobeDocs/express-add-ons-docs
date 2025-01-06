@@ -54,7 +54,7 @@ This add-on allows users to select settings to customize a bingo card; including
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting-started/quickstart.md) guide.
+- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../guides/getting-started/quickstart.md) guide.
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 
