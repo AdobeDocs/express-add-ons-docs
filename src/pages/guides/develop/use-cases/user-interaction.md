@@ -264,4 +264,4 @@ async function showCustomDialog() {
 
 <InlineAlert slots="text" variant="success"/>
 
-Check out the [add-on SDK](../../../references/addonsdk.md) for more specific details on using modal dialogs, including [programmatically closing a dialog with an optional custom result](../../../references/addonsdk/runtime-dialog.md#close).
+Check out the [add-on SDK](../../../references/addonsdk/index.md) for more specific details on using modal dialogs, including [programmatically closing a dialog with an optional custom result](../../../references/addonsdk/runtime-dialog.md#close).
