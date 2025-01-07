@@ -79,26 +79,18 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 ### Topics Covered
 
+- [iframe and Document Model Sandbox communication](#the-communication-api)
+- [Spectrum Web Components](#designing-the-ui-with-spectrum-web-components)
+- [Adobe Express Document API](#the-document-api)
+-  [Color Pickers](#designing-the-ui-with-spectrum-web-components)
+-  [Nodes insertion point](#creating-the-first-shape)
+-  [Creating and manipulating shapes](#creating-the-first-shape)
+-  [Grouping elements](#organizing-the-code)
+-  [Context permanence](#deleting-grids)
 
-<ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<Embed slots="video" />
 
-[iframe and Document Model Sandbox communication](#the-communication-api)
-
-[Spectrum Web Components](#designing-the-ui-with-spectrum-web-components)
-
-[Adobe Express Document API](#the-document-api)
-
-[Color Pickers](#designing-the-ui-with-spectrum-web-components)
-
-[Nodes insertion point](#creating-the-first-shape)
-
-[Creating and manipulating shapes](#creating-the-first-shape)
-
-[Grouping elements](#organizing-the-code)
-
-[Context permanence](#deleting-grids)
-
-![](images/grids-addon-animation.gif)
+./images/stats-addon-animation.mp4
 
 ### Getting Started with the Document API
 
