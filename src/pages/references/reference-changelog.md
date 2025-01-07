@@ -107,3 +107,17 @@ contributors:
 
 - The [Samples](../samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../samples.md#audio-recording-addon).
 - The [Common Use Cases](../guides/develop/use-cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](../guides/develop/use-cases/authentication-authorization.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
+
+## 2024-03-19
+
+- Support for Ps and Ai files to be added to the page via the [`addImage()`](../references/addonsdk/app-document.md#addimage) method. (Note: there were no changes to the drag-n-drop APIs).
+- Adds new `MediaAttributes` parameter to the [`addImage()`](../references/addonsdk/app-document.md#addimage) method for Ps/Ai file types to pass media attributes like `title`.
+- Adds new [`Mp4RenditionOptions`](../references/addonsdk/app-document.md#mp4renditionoptions) object to support `mp4` renditions.
+- Adds new [`VideoResolution`](../references/addonsdk/addonsdk-constants.md) constant to set video resolution options.
+- Adds [`registerIframe()`](../references/addonsdk/addonsdk-app.md#registeriframe) method and [`unregisterIframe`](../references/addonsdk/addonsdk-app.md#unregisteriframe-type-definition) type definition with example usage. **NOTE:** These APIs are currently experimental.
+
+## 2024-03-08
+
+- [`getPagesMetadata()`](../references/addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../references/addonsdk/app-current-user.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
+- New examples have been added to the [use cases guide](../guides/develop/use-cases/content-management.md#premium-content) for handling premium content.
+- A new video has been added to the [grids tutorial](../guides/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
