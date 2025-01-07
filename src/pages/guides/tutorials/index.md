@@ -27,22 +27,18 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 Davide Barranca - November 6th, 2023
 
-<Resource-Card slots="link, image, heading, text" width="50%"/>
+<Resource-Card slots="link, image, text" width="50%"/>
 
-[Coming Soon...](stats-addon.md)
+[Creating a Stats add-on with the Adobe Express Communication API](stats-addon.md)
 
 ![Coming Soon](./images/thumbs-stats-addon.png)
-
-### Creating a Stats add-on with the Adobe Express Communication API
 
 Davide Barranca - December 14th, 2023
 
 <Resource-Card slots="link, image, heading, text" width="80%"/>
 
-[Express Document API](spectrum-workshop/index.md)
+[Building UIs using Adobe's Spectrum Design System](spectrum-workshop/index.md)
 
 ![Grids add-on](./images/bingo-v1-addon.png)
-
-### Building UIs using Adobe's Spectrum Design System
 
 Holly Schinsky - January 25th, 2024
