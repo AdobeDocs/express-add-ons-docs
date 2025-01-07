@@ -79,7 +79,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 ### Topics Covered
 
-<List-Block slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [iframe and Document Model Sandbox communication](#the-communication-api)
 
