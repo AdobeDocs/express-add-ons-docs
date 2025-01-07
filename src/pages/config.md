@@ -131,7 +131,7 @@
             - [Feedback & Messaging](guides/design/ux-guidelines/feedback-and-messaging.md) 
             - [Branding Guidelines & Distribution](guides/design/ux-guidelines/branding-guidelines.md) 
             - [Resources & References](guides/design/ux-guidelines/resources-and-references.md) 
-            - [Changelog](guides/design/ux-guidelines/reference-changelog.md) 
+            - [Changelog](guides/design/ux-guidelines/ux-guidelines-changelog.md) 
         - [Implementation guide](guides/design/implementation-guide.md) 
         - [Best practices](guides/design/best-practices.md) 
     - [Develop](guides/develop/index.md) 

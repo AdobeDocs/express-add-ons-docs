@@ -564,7 +564,7 @@ module.exports = {
               },
               {
                 title: "Changelog",
-                path: "guides/design/ux-guidelines/reference-changelog.md",
+                path: "guides/design/ux-guidelines/ux-guidelines-changelog.md",
               },
             ],
           },
