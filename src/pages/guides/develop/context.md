@@ -40,7 +40,7 @@ In order to provide security to the users of your add-on, browsers implement a [
 
 Be sure to set your browser devtools option to "**Show CORS errors in console**". For example, in Chrome it looks like the screenshot shown below.
 
-![Show CORS errors in Chrome screenshot](img/show-cors.png)
+![Show CORS errors in Chrome screenshot](./img/show-cors.png)
 
 ### Add-on subdomain
 
