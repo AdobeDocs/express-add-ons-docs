@@ -160,10 +160,6 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
-| Badge  | Size(px) | Download link |
-|--------|----------|-------------:|
-| <img src="../img/addon-pro-badge20.svg" width="20" height="20"/> | 20x20 | <a href="../img/addon-pro-badge20.svg" download="../img/addon-pro-badge20.svg">Download</a> |
-
 <InlineAlert slots="text" variant="info"/>
 
 The most common size of badges used within Express panels is typically 20x20px, so we've included an easy download of that size specifically above. However, since it's an `.svg` icon, you could simply scale it to another size as needed.
@@ -175,10 +171,6 @@ The most common size of badges used within Express panels is typically 20x20px, 
 - We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. *This content is available when you upgrade the add-on*.
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
 - If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.
-
- | Sample badge usage  |      |       |
- |----------|------|-------------:|
- | <img src="../img/list-placement-example.png"/> | <img src="../img/avatar-placement-example.png"/>  | <img src="../img/grid-placement-example.png"/> |
 
 <InlineAlert slots="text" variant="success"/>
 
