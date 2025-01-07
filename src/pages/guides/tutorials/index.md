@@ -19,7 +19,7 @@ contributors:
 
 In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
-<ResourceCard slots="link, image, heading, text" width="50%"/>
+<Resource-Card slots="link, image, heading, text" width="50%"/>
 
 [Express Document API](grids-addon.md)
 
@@ -29,7 +29,7 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 Davide Barranca - November 6th, 2023
 
-<ResourceCard slots="link, image, heading, text" width="50%"/>
+<Resource-Card slots="link, image, heading, text" width="50%"/>
 
 [Coming Soon...](stats-addon.md)
 
@@ -39,7 +39,7 @@ Davide Barranca - November 6th, 2023
 
 Davide Barranca - December 14th, 2023
 
-<ResourceCard slots="link, image, heading, text" width="80%"/>
+<Resource-Card slots="link, image, heading, text" width="80%"/>
 
 [Express Document API](spectrum-workshop/index.md)
 
