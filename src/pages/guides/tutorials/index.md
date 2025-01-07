@@ -35,7 +35,7 @@ Davide Barranca - November 6th, 2023
 
 Davide Barranca - December 14th, 2023
 
-<Resource-Card slots="link, image, heading, text" width="80%"/>
+<Resource-Card slots="link, image, text" width="50%"/>
 
 [Building UIs using Adobe's Spectrum Design System](spectrum-workshop/index.md)
 
