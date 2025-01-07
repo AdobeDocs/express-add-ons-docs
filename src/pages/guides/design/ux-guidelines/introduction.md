@@ -38,4 +38,4 @@ Next, the [Theming](theming.md) section shows you how to implement the Spectrum 
 
 Explore the [Branding Guidelines](branding-guidelines.md) to ensure your add-on is legally & visually aligned with Adobe Express. They cover key aspects of branding, as well as best practices for incorporating promotional images for the Adobe Express add-on Marketplace.
 
-Finally, look at the [Resources & References](./resources-and-references.md) for videos and further reading. Refer to the [Changelog](./changelog.md) to stay up-to-date with the latest features and improvements to these guidelines: they are a living document we encourage you to consult regularly, both as a reference and a source of inspiration.
+Finally, look at the [Resources & References](./resources-and-references.md) for videos and further reading. Refer to the [Changelog](./reference-changelog.md) to stay up-to-date with the latest features and improvements to these guidelines: they are a living document we encourage you to consult regularly, both as a reference and a source of inspiration.
