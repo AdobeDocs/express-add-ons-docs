@@ -66,3 +66,26 @@ contributors:
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+
+## 2024-09-10
+
+- Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/media-container-node.md.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
+- Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/stroke.md) APIs.
+
+## 2024-07-22
+
+- Added a new [`format`](../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/develop/use-cases/environment-settings.md#detecting-locale-supported-locales-and-format) section.
+- Removed `mobile` and `app` as [`supportedDeviceClass`](../references/manifest/index.md#requirementsappssupporteddeviceclass) values in the Manifest's `requirements.apps` object.
+
+## 2024-05-28
+
+- Added a new *experimental* [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) API to programmatically open and interact with the Editor panel. This method of the `addOnUISdk.app.ui` allows navigation to specific tabs and collections, as well as performing content searches. The [Constants](../references/addonsdk/addonsdk-constants.md) page has been updated accordingly.
+- Added a new [`Cross-Origin-Embedder-Policy`](../guides/faq.md#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues) FAQ.
+
+## 2024-05-21
+
+- The [Quickstart](../guides/getting-started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
+- The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
+- A new section on Marketplace [rejections](/guides/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
+- The [Manifest Reference](./manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
