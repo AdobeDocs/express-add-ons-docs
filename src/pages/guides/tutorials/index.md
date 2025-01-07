@@ -19,13 +19,11 @@ contributors:
 
 In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
-<Resource-Card slots="link, image, heading, text" width="50%"/>
+<Resource-Card slots="link, image, text" width="50%"/>
 
-[Express Document API](grids-addon.md)
+[Creating a Grid System add-on with the Adobe Express Document API](grids-addon.md)
 
 ![Grids add-on](./images/thumbs-grids-addon.png)
-
-### Creating a Grid System add-on with the Adobe Express Document API
 
 Davide Barranca - November 6th, 2023
 
