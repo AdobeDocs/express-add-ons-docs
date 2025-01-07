@@ -222,15 +222,15 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 
 #### Media Panel
 
-![Express Media Panel](img/media-panel.png)
+![Express Media Panel](./img/media-panel.png)
 
 #### Theme Panel
 
-![Express Theme Panel](img/theme-panel.png)
+![Express Theme Panel](./img/theme-panel.png)
 
 #### Text Panel
 
-![Express Text Panel](img/text-panel.png)
+![Express Text Panel](./img/text-panel.png)
 
 <InlineAlert slots="text" variant="success"/>
 
