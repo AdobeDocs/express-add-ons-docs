@@ -12,7 +12,7 @@ When you suspect a CORS issue, check your browser console and you will likely se
 
 Be sure to have your browser devtools option set to "**Show CORS errors in console**". For example, in Chrome it looks like the screenshot shown below.
 
-![Show CORS errors in Chrome screenshot](img/show-cors.png)
+![Show CORS errors in Chrome screenshot](./img/show-cors.png)
 
 ## Options
 
