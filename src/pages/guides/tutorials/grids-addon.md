@@ -100,7 +100,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 <Embed slots="video" />
 
-https://www.youtube.com/watch?v=SQMYA660gII
+./images/stats-addon-animation.mp4
 
 
 ### Getting Started with the Document API
