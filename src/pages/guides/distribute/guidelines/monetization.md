@@ -76,7 +76,7 @@ In all these examples, checkout is handled by the developer outside of Adobe Exp
 Here are examples for each payment model based on a Brush Pack add-on in Adobe Express:
 
 | Your selection         | End-user view: add-on listing Payment details                    | Example                                                                                                                                                                                                                                      |
-|------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ---------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Free                   | This add-on does not require any payment.                        | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
 | One time payment       | Upgrade is available for a one-time purchase.                    | Upgrade to premium brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
 | Recurring subscription | Upgrade is available with a recurring subscription.              | Subscribe to Premium and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
@@ -129,14 +129,14 @@ Here are some guidelines for effectively communicating purchasing options and up
 -   Provide textual cues through tooltips to inform users about in-app purchase options. Consider using phrases like "add" alongside the plus badge to convey that users can access additional features or content by upgrading.
 -   Use the "paid" green checkmark badge to signify when a feature or asset has been successfully added after purchase.
 -   Use terms like "upgrade," "add," "Pro," and "Plus," for example:
-    -   Add this [feature] by upgrading the add-on.
-    -   Add more when you upgrade.
-    -   Upgrade to Pro.
-    -   Upgrade to [Add-on name] Plus.
+-   Add this [feature] by upgrading the add-on.
+-   Add more when you upgrade.
+-   Upgrade to Pro.
+-   Upgrade to [Add-on name] Plus.
 - At the beginning of the upgrade flow, let users know that they will have to navigate to an external payment processor to complete their upgrade purchase, for example:
-    -   "You'll need to pay to upgrade outside of Adobe."
+-   "You'll need to pay to upgrade outside of Adobe."
 -   Include a disclaimer in your checkout flow to remind users that upgrading the add-on does not change their access to Adobe Express Premium, for example:
-    -   "This upgrade only applies to the [Add-on name] add-on and does not grant or remove access to Adobe Express Premium."
+-   "This upgrade only applies to the [Add-on name] add-on and does not grant or remove access to Adobe Express Premium."
 
 ### Patterns to avoid
 
@@ -151,10 +151,6 @@ While our monetization best practices are recommendations for your add-on, imple
 #### Plus badge
 
 Use the plus gradient icon below to indicate when content or features require purchase:
-
-| Badge  | Size(px) | Download link |
-|--------|----------|-------------:|
-| <img src="../img/addon-plus-badge20.svg" width="20" height="20"/> | 20x20 | <a href="../img/addon-plus-badge20.svg" download="../img/addon-plus-badge20.svg">Download</a> |
 
 #### Paid badge
 
