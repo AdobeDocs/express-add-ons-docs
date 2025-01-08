@@ -97,6 +97,12 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 [Context permanence](#deleting-grids)
 
+
+<Embed slots="video" />
+
+./images/stats-addon-animation.mp4
+
+
 ### Getting Started with the Document API
 
 As part of the [Document Model Sandbox](../../references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
