@@ -160,9 +160,6 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 
 If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `code.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
 
-
-<CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
-
 #### iframe
 
 ```html
@@ -302,9 +299,6 @@ Some properties are shared among the `RectangleNode` and, say, other `StrokableN
 ### Creating the first Shape
 
 It's finally time to start laying down some elements. Let's hook the only iframe button currently available to a function exposed by the Document API. Type the following into the source files (`index.html`, `index.js`, and `code.js` have been edited), then run the add-on.
-
-
-<CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iframe
 
@@ -490,9 +484,6 @@ Mind the import names: for example, you install a `@spectrum-web-components/butt
 
 The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
-
-<CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
-
 #### index.html
 
 ```html
@@ -536,8 +527,6 @@ Please refer to the source code for other details on the HTML structure, which a
 ### Collecting values from the UI
 
 Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Document Sandbox is retrieved, and everything the Document API exposes is stored in the `sandboxProxy` constant (lines 9-10).
-
-<CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
 
 #### index.html
 
@@ -679,7 +668,6 @@ Another crucial notion is to avoid silent failures: every action should either s
 
 It makes sense to approach this grid business with some caution, as we're just starting with the Document API. Let's set up `documentSandbox/code.js` to expose this `addGrid()` method and manage the argument provided.
 
-<CodeBlock slots="heading, code" repeat="1" languages="documentSandbox/code.js"/>
 
 #### documentSandbox/code.js
 
@@ -798,8 +786,6 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 -   `code.js` doesn't need to expose anything else but the `addGrid()` and `deleteGrid()` methods.
 -   `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
 
-
-<CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
 
 #### documentSandbox/code.js
 
@@ -1005,8 +991,6 @@ Let's review the concepts covered in this tutorial and how they've been implemen
 
 The code for this project can be downloaded [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon). It's available in two states: the starting point (one Create Shape button in the UI and the respective Document API function) if you want to follow along with the tutorial and type in the code—the best way to learn—and the final state, which code is also found below for convenience.
 
-
-<CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, styles.css, code.js, shapeUtils.js" />
 
 #### iframe
 
