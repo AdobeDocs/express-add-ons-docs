@@ -44,3 +44,23 @@ Davide Barranca - December 14th, 2023
 Holly Schinsky - January 25th, 2024
 
 ### absoluteTransform
+
+<TabsBlock orientation="vertical" slots="heading, image, content" repeat="3"  theme="dark" className='bgBlue ' />
+
+## Tab 1
+
+![Code for initializing SDK](./images/bingo-v1-addon.png)
+
+content tab 1
+
+## Tab 2
+
+![Code to invoke full editor](./images/bingo-v1-addon.png)
+
+content tab 2
+
+## Tab 3
+
+![Code to invoke quick actions](./images/bingo-v1-addon.png)
+
+content tab 3
