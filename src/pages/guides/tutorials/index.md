@@ -45,7 +45,7 @@ Holly Schinsky - January 25th, 2024
 
 ### absoluteTransform
 
-<TabsBlock orientation="vertical" slots="heading, image, content" repeat="3"  theme="dark" className='bgBlue ' />
+<Tab orientation="vertical" slots="heading, image, content" repeat="3"  theme="dark" className='bgBlue ' />
 
 ## Tab 1
 
