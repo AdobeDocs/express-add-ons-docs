@@ -71,10 +71,44 @@ content tab 3
 
 ![Code for initializing SDK](./images/bingo-v1-addon.png)
 
-test 1
+
+```graphql
+mutation {
+  createCustomerV2(
+    input: {
+      firstname: "Bob"
+      lastname: "Loblaw"
+      email: "bobloblaw@example.com"
+      password: "b0bl0bl@w"
+      is_subscribed: true
+    }
+  ) {
+    customer {
+      firstname
+      lastname
+      email
+      is_subscribed
+    }
+  }
+}
+```
 
 ### Response
 
 ![Code for initializing SDK](./images/bingo-v1-addon.png)
 
-test 2
+
+```json
+{
+  "data": {
+    "createCustomer": {
+      "customer": {
+        "firstname": "Bob",
+        "lastname": "Loblaw",
+        "email": "bobloblaw@example.com",
+        "is_subscribed": true
+      }
+    }
+  }
+}
+```
