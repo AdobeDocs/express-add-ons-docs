@@ -65,9 +65,12 @@ content tab 2
 
 content tab 3
 
-<Tab orientation="horizontal" slots="heading, content" repeat="2" theme="light"/>
+<Tab orientation="horizontal" slots="heading, image, content" repeat="2" theme="light"/>
 
 ### Request
+
+![Code for initializing SDK](./images/bingo-v1-addon.png)
+
 
 ```graphql
 mutation {
@@ -91,6 +94,9 @@ mutation {
 ```
 
 ### Response
+
+![Code for initializing SDK](./images/bingo-v1-addon.png)
+
 
 ```json
 {
