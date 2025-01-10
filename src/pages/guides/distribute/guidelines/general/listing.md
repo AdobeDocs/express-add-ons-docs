@@ -135,6 +135,7 @@ You must provide the following details:
 - State/Province/Region
 - ZIP/Postal code
 - Country
+- Business D-U-N-S number [`optional`]
 
 You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one time thing, unless you decide you need to update for your own reasons.
 
@@ -148,4 +149,4 @@ Existing developers can easily update their trader details directly in their [pu
 
 Note that only trader details can be added; other fields cannot be edited by developers.
 
-If you do not provide this information by February 16, 2025, your add-on won't be visible or available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.
+You must provide trader details by February 16, 2025, to keep your add-on visible and available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.
