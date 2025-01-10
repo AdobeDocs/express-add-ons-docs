@@ -239,4 +239,4 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### What should I do if I encounter issues updating my trader information?
 
-  If you have any problems, you can contact [Adobe Express support](https://developer.adobe.com/express/community/) for help. We can help resolve any issues and ensure your information is correctly updated.
+  If you have any problems, you can contact [Adobe Express support](https://developer.adobe.com/express/community/) for help.We can help resolve any issues and ensure your information is correctly updated.
