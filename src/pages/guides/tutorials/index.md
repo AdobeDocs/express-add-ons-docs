@@ -65,7 +65,6 @@ content tab 2
 
 content tab 3
 
-
 <Tab orientation="horizontal" slots="heading, content" repeat="2" theme="light"/>
 
 ### Request
