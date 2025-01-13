@@ -587,37 +587,194 @@ module.exports = {
             path: "guides/develop/",
           },
           {
-            title: "Common Use Cases",
-            path: "guides/develop/use_cases.md",
+            title: "How-Tos",
+            path: "guides/develop/how_tos/debugging.md",
             pages: [
               {
-                title: "Content Management",
-                path: "guides/develop/use_cases/content_management.md",
+                title: "Add-on Development",
+                path: "guides/develop/how_tos/debugging.md",
+                pages: [
+                  {
+                    title: "Debugging",
+                    path: "guides/develop/how_tos/debugging.md",
+                  },
+                  {
+                    title: "Imports and Constants",
+                    path: "guides/develop/how_tos/imports_and_constants.md",
+                  },
+                  {
+                    title: "Listening to Events",
+                    path: "guides/develop/how_tos/listening_to_events.md",
+                  },
+                  {
+                    title: "Add-on UI and Document API communication",
+                    path: "guides/develop/how_tos/ui_document_api_communication.md",
+                  },
+                ],
               },
               {
-                title: "Authentication and Authorization",
-                path: "guides/develop/use_cases/authentication_authorization.md",
+                title: "Authentication & Authorization",
+                path: "guides/develop/how_tos/oauth2.md",
+                pages: [
+                  {
+                    title: "Using OAuth 2.0",
+                    path: "guides/develop/how_tos/oauth2.md",
+                  },
+                ],
               },
               {
-                title: "Client-side Data",
-                path: "guides/develop/use_cases/clientside_data.md",
+                title: "Data & Environment",
+                path: "guides/develop/how_tos/local_data_management.md",
+                pages: [
+                  {
+                    title: "Storing Data",
+                    path: "guides/develop/how_tos/local_data_management.md",
+                  },
+                  {
+                    title: "Theme & Locale",
+                    path: "guides/develop/how_tos/theme_locale.md",
+                  },
+                ],
               },
               {
-                title: "User Interaction",
-                path: "guides/develop/use_cases/user_interaction.md",
+                title: "UI & Interaction",
+                path: "guides/develop/how_tos/drag_and_drop.md",
+                pages: [
+                  {
+                    title: "Drag & Drop",
+                    path: "guides/develop/how_tos/drag_and_drop.md",
+                  },
+                  {
+                    title: "Modal Dialogs",
+                    path: "guides/develop/how_tos/modal_dialogs.md",
+                  },
+                ],
               },
               {
-                title: "Environment Settings",
-                path: "guides/develop/use_cases/environment_settings.md",
+                title: "Using Design Elements",
+                path: "guides/develop/how_tos/authoring_adobe_express_content.md", // change this!!
+                pages: [
+                  {
+                    title: "Using Text",
+                    path: "guides/develop/how_tos/using_text.md",
+                  },
+                  {
+                    title: "Using Shapes",
+                    path: "guides/develop/how_tos/using_shapes.md",
+                  },
+                  {
+                    title: "Using Images",
+                    path: "guides/develop/how_tos/using_images.md",
+                  },
+                  {
+                    title: "Using Videos",
+                    path: "guides/develop/how_tos/using_videos.md",
+                  },
+                  {
+                    title: "Using Audio",
+                    path: "guides/develop/how_tos/using_audio.md",
+                  },
+                  {
+                    title: "Using PDF and PowerPoint",
+                    path: "guides/develop/how_tos/using_pdf_powerpoint.md",
+                  },
+                  {
+                    title: "Using Color",
+                    path: "guides/develop/how_tos/using_color.md",
+                  },
+                  {
+                    title: "Grouping Elements",
+                    path: "guides/develop/how_tos/grouping_elements.md",
+                  },
+                  {
+                    title: "Positioning Elements",
+                    path: "guides/develop/how_tos/positioning_elements.md",
+                  },
+                  {
+                    title: "Replacing Elements",
+                    path: "guides/develop/how_tos/replacing_elements.md",
+                  },
+                ],
               },
               {
-                title: "Monetization Flows",
-                path: "guides/develop/use_cases/monetization_flows.md",
+                title: "Authoring and Metadata",
+                path: "guides/develop/how_tos/authoring_adobe_express_content.md",
+                pages: [
+                  {
+                    title: "Authoring Adobe Express Content",
+                    path: "guides/develop/how_tos/authoring_adobe_express_content.md",
+                  },
+                  {
+                    title: "Getting Document Metadata",
+                    path: "guides/develop/how_tos/document_metadata.md",
+                  },
+                  {
+                    title: "Getting Page Metadata",
+                    path: "guides/develop/how_tos/page_metadata.md",
+                  },
+                  {
+                    title: "Getting Element Metadata",
+                    path: "guides/develop/how_tos/element_metadata.md",
+                  },
+                ],
               },
               {
-                title: "Content Authoring and Metadata",
-                path: "guides/develop/use_cases/content_authoring.md",
+                title: "Exporting & Output",
+                path: "guides/develop/how_tos/creating_renditions.md",
+                pages: [
+                  {
+                    title: "Creating Renditions",
+                    path: "guides/develop/how_tos/creating_renditions.md",
+                  },
+                  {
+                    title: "Dealing with Premium Content",
+                    path: "guides/develop/how_tos/premium_content.md",
+                  },
+                ],
               },
+              {
+                title: "Monetization & User Info",
+                path: "guides/develop/how_tos/monetization_flows.md",
+                pages: [
+                  {
+                    title: "Monetization Flows",
+                    path: "guides/develop/how_tos/monetization_flows.md",
+                  },
+                  {
+                    title: "Getting User information",
+                    path: "guides/develop/how_tos/user_info.md",
+                  },
+                ],
+              },
+              // ------------------------------------------------------------------
+              // {
+              //   title: "Content Management",
+              //   path: "guides/develop/use_cases/content_management.md",
+              // },
+              // {
+              //   title: "Authentication and Authorization",
+              //   path: "guides/develop/use_cases/authentication_authorization.md",
+              // },
+              // {
+              //   title: "Client-side Data",
+              //   path: "guides/develop/use_cases/clientside_data.md",
+              // },
+              // {
+              //   title: "User Interaction",
+              //   path: "guides/develop/use_cases/user_interaction.md",
+              // },
+              // {
+              //   title: "Environment Settings",
+              //   path: "guides/develop/use_cases/environment_settings.md",
+              // },
+              // {
+              //   title: "Monetization Flows",
+              //   path: "guides/develop/use_cases/monetization_flows.md",
+              // },
+              // {
+              //   title: "Content Authoring and Metadata",
+              //   path: "guides/develop/use_cases/content_authoring.md",
+              // },
             ],
           },
           {
