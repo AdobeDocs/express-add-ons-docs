@@ -223,7 +223,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### What is the deadline for updating trader information?
 
-  Existing Developers must update their trader information in the [publisher profile](https://new.express.adobe.com/add-ons?mode=submission) by February 16th.
+  Existing Developers must update their trader information in the [publisher profile](https://new.express.adobe.com/add-ons?mode=submission) by February 16, 2025.
 
 ### How should developers update their trader information?
 
@@ -231,7 +231,7 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
 ### What happens if a developer fails to update their trader information by the deadline?
 
-  If the trader information is not updated by February 16th, the developer's add-ons will not be visible to users in the EU region. It is crucial to meet this deadline to avoid disruptions.
+  If the trader information is not updated by February 16, 2025, the developer's add-ons will not be visible to users in the EU region. It is crucial to meet this deadline to avoid disruptions.
 
 ### Why is my add-on not visible in the EU region?
 
@@ -240,4 +240,3 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 ### What should I do if I encounter issues updating my trader information?
 
   If you have any problems, you can contact [Adobe Express support](https://developer.adobe.com/express/community/) for help.We can help resolve any issues and ensure your information is correctly updated.
-  

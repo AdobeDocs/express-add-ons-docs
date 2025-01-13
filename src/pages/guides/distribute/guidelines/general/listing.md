@@ -120,7 +120,7 @@ The terms **developers/traders** are used interchangeably in this guide.
 
 Any developer who wishes to publish their add-ons in the EU can be identified as a trader.
 
-Checkout our [Know your trader](https://developer.adobe.com/compliance/) guide to understand **why** you must provide these details to make your listings available in the EU.
+Checkout our [Know your trader](https://developer.adobe.com/compliance/) guide to understand **why** you must provide these details to make your add-ons available in the EU.
 
 Choose **Yes** if you wish to make your add-ons available for users in the EU.
 
