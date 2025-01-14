@@ -588,8 +588,12 @@ module.exports = {
           },
           {
             title: "How-Tos",
-            path: "guides/develop/how_tos/debugging.md",
+            path: "guides/develop/how_tos.md",
             pages: [
+              {
+                title: "Using How-Tos",
+                path: "guides/develop/how_tos.md",
+              },
               {
                 title: "Add-on Development",
                 path: "guides/develop/how_tos/debugging.md",
@@ -652,7 +656,7 @@ module.exports = {
               },
               {
                 title: "Using Design Elements",
-                path: "guides/develop/how_tos/authoring_adobe_express_content.md", // change this!!
+                path: "guides/develop/how_tos/using_text.md", // change this!!
                 pages: [
                   {
                     title: "Using Text",
