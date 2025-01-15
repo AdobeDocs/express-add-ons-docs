@@ -152,3 +152,5 @@ You should not attach `click` event listeners to drag-enabled elements in the ca
 <InlineAlert slots="text" variant="info"/>
 
 Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any that may be causing conflicts with drag and drop handlers.
+
+There are several [code samples](/samples.md) that implement drag and drop, including the [import-images-using-oauth](/samples.md#import-images-using-oauth) and [pix](/samples.md#pix) projects that you can reference.
