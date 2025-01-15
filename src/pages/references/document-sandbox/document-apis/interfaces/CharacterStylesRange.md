@@ -6,7 +6,11 @@
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Output shape of the characterStyleRange getter.
+A set of [CharacterStyles](CharacterStyles.md) along with the range of characters they apply to. Seen in the characterStyleRanges
+getter.
+
+Note that fonts returned by the getter are *not* guaranteed to be ones the user has rights to edit with, even though they
+are visible in the document.
 
 ## Extends
 
@@ -17,6 +21,8 @@ Output shape of the characterStyleRange getter.
 ### color
 
 • **color**: [`Color`](Color.md)
+
+Text color.
 
 #### Inherited from
 
@@ -37,6 +43,8 @@ Output shape of the characterStyleRange getter.
 ### fontSize
 
 • **fontSize**: `number`
+
+Size of the text in points.
 
 #### Inherited from
 
@@ -62,6 +70,10 @@ such as emojis are considered to have a length of 2.
 
 • **tracking**: `number`
 
+Uniformly adjusts the letter spacing, aka character spacing. Specified as a delta relative to the font's default
+spacing, in units of 1/1000 em: positive values increase the spacing, negative values tighten the spacing, and 0
+leaves spacing at its default.
+
 #### Inherited from
 
 [`CharacterStyles`](CharacterStyles.md).[`tracking`](CharacterStyles.md#tracking)
@@ -71,6 +83,8 @@ such as emojis are considered to have a length of 2.
 ### underline
 
 • **underline**: `boolean`
+
+Adds an underline to text.
 
 #### Inherited from
 

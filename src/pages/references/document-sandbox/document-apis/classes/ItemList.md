@@ -58,13 +58,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<`T`, `any`, `undefined`\>
+• **\[iterator\]**(): `Iterator`<`T`, `any`, `any`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<`T`, `any`, `undefined`\>
+`Iterator`<`T`, `any`, `any`\>
 
 #### Inherited from
 

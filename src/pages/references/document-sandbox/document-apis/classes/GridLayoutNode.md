@@ -5,6 +5,8 @@
 A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to create
 a layout grid that other content can be placed into.
 
+APIs to create a new grid layout are not yet available.
+
 ## Extends
 
 -   [`Node`](Node.md)
@@ -33,7 +35,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 The Grid's regular children. Does not include rectangles and skips over media constainer nodes to return fill grandchildren.
 Grid Cells are ordered by the y and then x position of their top left corner, i.e. left to right and top to bottom.
@@ -41,7 +43,7 @@ The children cannot be added or removed.
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 ---
 
