@@ -594,28 +594,28 @@ module.exports = {
                 title: "Using How-Tos",
                 path: "guides/develop/how_tos.md",
               },
-              {
-                title: "Add-on Development",
-                path: "guides/develop/how_tos/debugging.md",
-                pages: [
-                  {
-                    title: "Debugging",
-                    path: "guides/develop/how_tos/debugging.md",
-                  },
-                  {
-                    title: "Imports and Constants",
-                    path: "guides/develop/how_tos/imports_and_constants.md",
-                  },
-                  {
-                    title: "Listening to Events",
-                    path: "guides/develop/how_tos/listening_to_events.md",
-                  },
-                  {
-                    title: "Add-on UI and Document API communication",
-                    path: "guides/develop/how_tos/ui_document_api_communication.md",
-                  },
-                ],
-              },
+              // {
+              //   title: "Add-on Development",
+              //   path: "guides/develop/how_tos/debugging.md",
+              //   pages: [
+              //     {
+              //       title: "Debugging",
+              //       path: "guides/develop/how_tos/debugging.md",
+              //     },
+              //     {
+              //       title: "Imports and Constants",
+              //       path: "guides/develop/how_tos/imports_and_constants.md",
+              //     },
+              //     {
+              //       title: "Listening to Events",
+              //       path: "guides/develop/how_tos/listening_to_events.md",
+              //     },
+              //     {
+              //       title: "Add-on UI and Document API communication",
+              //       path: "guides/develop/how_tos/ui_document_api_communication.md",
+              //     },
+              //   ],
+              // },
               {
                 title: "Authentication & Authorization",
                 path: "guides/develop/how_tos/oauth2.md",
