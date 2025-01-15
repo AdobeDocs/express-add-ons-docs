@@ -10,10 +10,47 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Local Data Management
-description:  Local Data Management.
+title: Storing Data
+description:  Storing Data.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
-# Local Data Management
+# Storing Data
+
+## Using the clientStorage API
+
+Instead of relying solely on server-side data, you can use the **asynchronous** `clientStorage` API to store and retrieve data locally on the client-side. This can be useful for caching images, saving user preferences, or other scenarios where you want to avoid making repeated server requests.
+
+Each add-on can store up to **10MB of data as key-value pairs**; supported values are not limited to strings, but also include objects, arrays, numbers, booleans, `null`, `undefined` and `Uint8Array`.
+
+### Example
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+let store;
+
+addOnUISdk.ready.then(async () => {
+    store = addOnUISdk.instance.clientStorage;
+}
+/**
+ * Store item 
+ */
+async function setItem(item: string, isComplete: boolean) {
+    await store.setItem(item, isComplete);
+    todoItemInput.value = "";
+}
+/**
+ * Log all storage item values
+ */
+async function displayAllItems() {
+    const todoItems = await store.keys();
+    todoItems.forEach(async (item: string) => {
+        const itemValue = await store.getItem(item);
+        console.log("Key: " + item + " value: " + itemValue);
+    });
+}
+```
+
+Please, refer to the [SDK Reference section for clientStorage](/references/addonsdk/instance-clientStorage/) for a complete list of methods, and the [use-client-storage sample add-on](/samples.md#use-client-storage) for more details.

@@ -18,9 +18,11 @@ contributors:
   - https://github.com/undavide
 ---
 
-# OAuth 2.0
+# Using OAuth 2.0
 
-This section covers implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services. A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details and the [import-images-using-oauth](/samples/#import-images-using-oauth) sample add-on for more advanced usage.
+Implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services. 
+
+A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details and the [import-images-using-oauth](/samples/#import-images-using-oauth) sample add-on for more advanced usage.
 
 ### Login and Logout flows
 
