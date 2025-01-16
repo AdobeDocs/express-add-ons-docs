@@ -21,6 +21,18 @@ contributors:
 
 # Changelog
 
+## 2025-01-13
+
+- Adds a new section in [Listing Your Add-on guidelines](../guides/distribute/guidelines/general/listing.md) which describes how to [add trader details](../guides/distribute/guidelines/general/listing.md#trader-details) in the publisher profile.
+
+<InlineAlert variant="warning" slots="text1, text2, text3" />
+
+**Are you an existing developer?**
+
+You must provide trader details by February 16, 2025, to keep your add-on visible and available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.
+
+[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+
 ## 2024-11-04
 
 - Adds a new [Cross-origin Isolation Handling](../guides/develop/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.
