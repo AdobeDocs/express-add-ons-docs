@@ -12,7 +12,7 @@ Represents the area of the canvas that is currently visible on-screen.
 
 Adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
 Makes the node's [ArtboardNode](ArtboardNode.md) or [PageNode](PageNode.md) visible if they were not already
-(which may result in [Context.selection](Context.md#selection) being cleared). It is strongly recomended
+(which may result in [Context.selection](Context.md#selection) being cleared). It is strongly recommended
 to further draw user's attention to the node by setting it as the [Context.selection](Context.md#selection) following this call.
 
 After this call, the value of [Context.insertionParent](Context.md#insertionparent) will always be the node's containing [ArtboardNode](ArtboardNode.md).

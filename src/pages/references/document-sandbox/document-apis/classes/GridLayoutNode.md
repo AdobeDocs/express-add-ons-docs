@@ -5,8 +5,6 @@
 A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to create
 a layout grid that other content can be placed into.
 
-APIs to create a new grid layout are not yet available.
-
 ## Extends
 
 -   [`Node`](Node.md)

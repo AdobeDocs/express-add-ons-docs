@@ -21,6 +21,11 @@ contributors:
 
 # Changelog
 
+## 2025-01-17
+
+-   A new [`Viewport`](./document-sandbox/document-apis/classes/Viewport.md) class has been added to the Document APIs, and represents the area of the canvas that is currently visible on-screen.
+-   A new API [`bringIntoView`](./document-sandbox/document-apis/classes/Viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
+
 ## 2025-01-13
 
 - Adds a new section in [Listing Your Add-on guidelines](../guides/distribute/guidelines/general/listing.md) which describes how to [add trader details](../guides/distribute/guidelines/general/listing.md#trader-details) in the publisher profile.
