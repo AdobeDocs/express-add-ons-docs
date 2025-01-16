@@ -1,6 +1,6 @@
 **@express-document-sdk** • **Docs**
 
----
+<hr />
 
 # @express-document-sdk
 
