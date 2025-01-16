@@ -17,7 +17,7 @@ Base class for a Node that can have its own fill and stroke.
 
 ## Implements
 
--   [`IFillableNode`](../interfaces/fillable-node.md)
+-   [`IFillableNode`](../interfaces/i-fillable-node.md)
 
 ## Accessors
 
