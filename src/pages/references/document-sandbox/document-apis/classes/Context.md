@@ -55,6 +55,7 @@ Accepts a single node as a shortcut for a length-1 array `[node]` or
 `undefined` as a shortcut for `[]`, which clears the selection.
 
 Only node(s) that meet the following criteria can be selected:
+
 - Nodes must be within the current artboard (nodes outside the active artboard are filtered out).
 - A node cannot be selected if its ancestor is also selected (descendants are filtered out).
 - Locked nodes are filtered out (but will still be included in selectionIncludingNonEditable).
