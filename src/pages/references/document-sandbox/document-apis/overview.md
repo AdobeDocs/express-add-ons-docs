@@ -44,7 +44,7 @@
 -   [ImageRectangleNode](classes/image-rectangle-node.md)
 -   [ItemList](classes/item-list.md)
 -   [LineNode](classes/line-node.md)
--   [MediaContainerNode](classes/media-container-node.md.md)
+-   [MediaContainerNode](classes/media-container-node.md)
 -   [Node](classes/node.md)
 -   [PageList](classes/page-list.md)
 -   [PageNode](classes/page-node.md)
