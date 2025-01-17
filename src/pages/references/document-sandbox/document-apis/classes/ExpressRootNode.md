@@ -66,7 +66,7 @@ moved to a different part of the document.
 • `get` **pages**(): [`PageList`](PageList.md)
 
 The pages of the document. All visual content is contained on artboards within the pages.
-To create new pages, see [PageList.addPage](PageList.md#addpage).
+To create a new page, see [PageList.addPage](PageList.md#addpage).
 
 #### Returns
 

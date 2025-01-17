@@ -35,13 +35,13 @@ If there are multiple [TextNode](TextNode.md)s, all of them must be configured t
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-The character styles applied to different ranges of this text content. When setting character styles, any style
+The character styles are applied to different ranges of this text content. When setting character styles, any style
 properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](TextContentModel.md#applycharacterstyles) which
 preserves the text's existing styles for any fields not specified). When *getting* styles, all fields are always
 provided.
 
 Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
-has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
+has rights to edit with. The *setter* only accepts the AvailableFont type, which has been verified to be usable.
 
 • `set` **characterStyleRanges**(`styles`): `void`
 

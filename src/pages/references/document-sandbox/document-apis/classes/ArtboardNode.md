@@ -6,7 +6,7 @@ An ArtboardNode represents an artboard object in the scenegraph. All user visual
 Artboards are always contained on a [PageNode](PageNode.md); when a page contains multiple artboards, the artboards represent
 "scenes" in a linear timeline sequence.
 
-To create new artboards, see [ArtboardList.addArtboard](ArtboardList.md#addartboard).
+To create a new artboard, see [ArtboardList.addArtboard](ArtboardList.md#addartboard).
 
 Please note that creating and deleting an artboard in a single frame will crash the editor.
 

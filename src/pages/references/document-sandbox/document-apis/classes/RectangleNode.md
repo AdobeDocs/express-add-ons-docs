@@ -4,7 +4,7 @@
 
 A RectangleNode represents a rectangle shape in the scenegraph.
 
-To create new rectangles, see [Editor.createRectangle](Editor.md#createrectangle).
+To create a new rectangle, see [Editor.createRectangle](Editor.md#createrectangle).
 
 ## Extends
 

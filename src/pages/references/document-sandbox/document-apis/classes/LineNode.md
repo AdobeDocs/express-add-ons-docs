@@ -4,7 +4,7 @@
 
 A LineNode represents a simple vector line in the scenegraph – a single straight-line segment.
 
-To create new lines, see [Editor.createLine](Editor.md#createline).
+To create a new line, see [Editor.createLine](Editor.md#createline).
 
 ## Extends
 

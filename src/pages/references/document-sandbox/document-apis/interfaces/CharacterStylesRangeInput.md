@@ -7,7 +7,7 @@
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Variant of [CharacterStylesRange](CharacterStylesRange.md) with all style fields optional, along with the range of characters they apply to.
-Used for the characterStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults.
+Used for the [characterStyleRanges](../classes/TextContentModel.md#characterstyleranges) setter. When invoking the setter, any fields not specified are reset to their defaults.
 
 If specified, the font must be of the [AvailableFont](../classes/AvailableFont.md) type – one that is guaranteed to be available for the current
 user to edit with.
