@@ -71,7 +71,7 @@ This local client will act as having unsaved changes until the upload has finish
 
 • **bitmapData**: [`BitmapImage`](../interfaces/BitmapImage.md)
 
-BitmapImage resource (e.g. returned from loadBitmapImage()).
+BitmapImage resource (e.g. returned from [loadBitmapImage](Editor.md#loadbitmapimage)).
 
 • **options**= `{}`
 

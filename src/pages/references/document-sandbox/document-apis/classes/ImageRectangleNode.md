@@ -6,6 +6,9 @@ ImageRectangleNode is a rectangular node that displays the image media part of a
 within that container parent. Cropping can be adjusted by changing this media's position/rotation (as well as its mask
 shape sibling node).
 
+ImageRectangleNodes cannot be created directly; use [Editor.createImageContainer](Editor.md#createimagecontainer) to create the entire
+container structure together.
+
 ## Extends
 
 -   [`Node`](Node.md)
@@ -34,7 +37,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -45,7 +48,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 ---
 
