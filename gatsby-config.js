@@ -701,13 +701,13 @@ module.exports = {
                 ],
               },
               {
-                title: "Authoring and Metadata",
-                path: "guides/develop/how_tos/authoring_adobe_express_content.md",
+                title: "Using Metadata",
+                path: "guides/develop/how_tos/document_metadata.md",
                 pages: [
-                  {
-                    title: "Authoring Adobe Express Content",
-                    path: "guides/develop/how_tos/authoring_adobe_express_content.md",
-                  },
+                  // {
+                  //   title: "Authoring Adobe Express Content",
+                  //   path: "guides/develop/how_tos/authoring_adobe_express_content.md",
+                  // },
                   {
                     title: "Getting Document Metadata",
                     path: "guides/develop/how_tos/document_metadata.md",
@@ -717,7 +717,7 @@ module.exports = {
                     path: "guides/develop/how_tos/page_metadata.md",
                   },
                   {
-                    title: "Getting Element Metadata",
+                    title: "Using Element Metadata",
                     path: "guides/develop/how_tos/element_metadata.md",
                   },
                 ],

@@ -48,8 +48,8 @@ You're encouraged to use the [Code Playground](../getting_started/code_playgroun
   - [Grouping Elements](./how_tos/grouping_elements.md)
   - [Positioning Elements](./how_tos/positioning_elements.md)
   - [Replacing Elements](./how_tos/replacing_elements.md)
-- Authoring and Metadata
-  - [Authoring Adobe Express Content](./how_tos/authoring_adobe_express_content.md)
+- Using Metadata
+  <!-- - [Authoring Adobe Express Content](./how_tos/authoring_adobe_express_content.md) -->
   - [Getting Document Metadata](./how_tos/document_metadata.md)
   - [Getting Page Metadata](./how_tos/page_metadata.md)
   - [Getting Element Metadata](./how_tos/element_metadata.md)

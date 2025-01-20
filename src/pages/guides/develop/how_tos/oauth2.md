@@ -121,3 +121,7 @@ function authorize(challenge) {
     const accessToken = await oauthUtils.getAccessToken(id);
 }
 ```
+
+## Use Cases
+
+OAuth is ideal for scenarios where users need to connect their accounts to access personalized features, sync data, or enable functionalities like cloud storage. You can also use it to authenticate users and authorize them to access your add-on's premium users, after they've subscribed to a paid plan.

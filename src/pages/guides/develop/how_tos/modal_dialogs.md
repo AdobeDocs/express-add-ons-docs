@@ -62,7 +62,7 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-## Input Modal Dialog 
+### Input Modal Dialog 
 
 A dialog of variant `input` allows you to accept input from the user. The construction of the dialog is similar to the previous example, but with an additional [`field`](../../../references/addonsdk/addonsdk-app.md#field) object that defines the input field and has a `label`, `placeholder` and `fieldType` properties. In addition to the `buttonType`, the `fieldValue` is returned in the result object of the [`addOnUISdk.app.showModalDialog()`](../../../references/addonsdk/addonsdk-app.md#showmodaldialog) method.
 
@@ -75,7 +75,6 @@ addOnUISdk.ready.then(() => {
   // Utility function to show an input dialog
   async function showInputDialog() {
     try {
-      c
 
       // Dialog Settings
       const inputDialogOptions = {
@@ -166,3 +165,7 @@ createButton.onsubmit = () => {
   });
 }
 ```
+
+## Use Cases
+
+Modals are versatile tools suitable for a wide range of scenarios. They can display simple information or warning pop-ups when you need users to confirm an action or provide input. Additionally, modals can present more complex content, such as custom dialogs that initiate the payment process for accessing add-on's premium features.
