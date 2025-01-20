@@ -83,3 +83,7 @@ addOnUISdk.ready.then(() => {
   // ]
 });
 ```
+
+## Use Cases
+
+Page metadata can be used to determine the size of the page, the title, and whether it contains temporal content (videos and animations). Tge `hasPremiumContent` property is particularly helpful when dealing with the rendition of [premium content](./premium_content.md)—for instance, when the user is not authorized to export/download assets that are available only to paid subscribers.

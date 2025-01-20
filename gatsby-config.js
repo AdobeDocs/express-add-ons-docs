@@ -731,7 +731,7 @@ module.exports = {
                     path: "guides/develop/how_tos/creating_renditions.md",
                   },
                   {
-                    title: "Dealing with Premium Content",
+                    title: "Managing Premium Content",
                     path: "guides/develop/how_tos/premium_content.md",
                   },
                 ],
@@ -741,12 +741,12 @@ module.exports = {
                 path: "guides/develop/how_tos/monetization_flows.md",
                 pages: [
                   {
-                    title: "Monetization Flows",
-                    path: "guides/develop/how_tos/monetization_flows.md",
+                    title: "Identifying users",
+                    path: "guides/develop/how_tos/user_info.md",
                   },
                   {
-                    title: "Getting User information",
-                    path: "guides/develop/how_tos/user_info.md",
+                    title: "Monetization Flows",
+                    path: "guides/develop/how_tos/monetization_flows.md",
                   },
                 ],
               },
