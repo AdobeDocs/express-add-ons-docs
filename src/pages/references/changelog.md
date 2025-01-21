@@ -21,14 +21,16 @@ contributors:
 
 # Changelog
 
-## Added
-
 ## 2025-01-17
+
+### Added
 
 -   A new [`Viewport`](./document-sandbox/document-apis/classes/Viewport.md) class has been added to the Document APIs. [`Viewport`](./document-sandbox/document-apis/classes/Viewport.md) represents the canvas area currently visible on-screen.
 -   A new API [`bringIntoView`](./document-sandbox/document-apis/classes/Viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
 
 ## 2025-01-13
+
+### Added
 
 - Adds a new section in [Listing Your Add-on guidelines](../guides/distribute/guidelines/general/listing.md) which describes how to [add trader details](../guides/distribute/guidelines/general/listing.md#trader-details) in the publisher profile.
 
@@ -41,6 +43,8 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
 
 ## 2024-11-04
+
+### Added
 
 - Adds a new [Cross-origin Isolation Handling](../guides/develop/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.
 - Updates the descriptions for the [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.
