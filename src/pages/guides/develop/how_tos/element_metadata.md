@@ -22,7 +22,7 @@ contributors:
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 Add-ons can store **private metadata** (custom data accessible only to the add-on that set it) on any node within the Express document. Currently, each node can hold up to **3 KB** of data, organized as key/value pairs where both keys and values are Strings. Additionally, there is a limit of **20 key/value pairs** per node.
 
