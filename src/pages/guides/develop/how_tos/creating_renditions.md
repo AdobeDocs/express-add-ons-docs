@@ -25,36 +25,7 @@ Renditions are different output versions of a document made for specific purpose
 Renditions are created via the [`createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method of the `addOnUISdk.app.document` object. The method accepts two parameters:
 
 1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the page range that is meant to be exported and the file format (jpg, png, mp4 and pdf).
-2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the quality of the exported content (preview, export, print).
-
-<InlineAlert slots="text" variant="info"/>
-
-When the `renditionIntent` is set to `RenditionIntent.preview`, you must add to the `manifest.json` a `"renditionPreview"` flag set to `true` in the **"requirements"** section. Additionally, to allow the user to download the rendition, the **"permissions"** section should include `"allow-downloads"` in the `"sandbox"` array.
-
-```json
-{
-  "testId": "cbe48204-578d-47cc-9ad4-a9aaa81dc3d3",
-  "name": "Hello World", "version": "1.0.0", "manifestVersion": 2,
-  "requirements": {
-    "apps": [ { "name": "Express", "apiVersion": 1 } ],
-    "experimentalApis": true,
-    "renditionPreview": true 👈 👀
-  },
-  "entryPoints": [
-    {
-      "type": "panel", "id": "panel1", "main": "index.html", 
-      "documentSandbox": "sandbox/code.js",
-      "permissions": {
-        "sandbox": [
-          "allow-popups-to-escape-sandbox",
-          "allow-popups",
-          "allow-downloads" 👈 👀
-        ]
-      }
-    }
-  ]
-}
-```
+2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the intent of the exported content (preview, export, print).
 
 ## Exporting content
 
@@ -137,5 +108,55 @@ const pdfRendition = await addOnUISdk.app.document.createRenditions(
   },                                             
 );
 ```
+<InlineAlert slots="text" variant="info"/>
+
+To allow the user to download the rendition, the **"permissions"** section should include `"allow-downloads"` in the `"sandbox"` array.
+
+```json
+{
+  "testId": "cbe48204-578d-47cc-9ad4-a9aaa81dc3d3",
+  "name": "Hello World", "version": "1.0.0", "manifestVersion": 2,
+  "requirements": {
+    "apps": [ { "name": "Express", "apiVersion": 1 } ],
+  },
+  "entryPoints": [
+    {
+      "type": "panel", "id": "panel1", "main": "index.html", 
+      "documentSandbox": "sandbox/code.js",
+      "permissions": {
+        "sandbox": [
+          "allow-popups-to-escape-sandbox",
+          "allow-popups",
+          "allow-downloads" 👈 👀
+        ]
+      }
+    }
+  ]
+}
+```
 
 Please also check out the [export-sample add-on](/samples.md#export-sample) for a more detailed example.
+
+## The Preview intent
+
+When the `renditionIntent` is set to `RenditionIntent.preview`, the output is created for **preview purposes only**. This means that the rendition is not meant to be downloaded or shared; for example, because the user is not on a paid Adobe Express plan and the design contains Premium content. 
+
+In this case, preview renditions are used either for processing purposes (e.g., if the add-on needs to perform data analysis on the design), or to be displayed in the add-on's panel or in a new window—making sure users cannot extract the content. Please see [this page](./premium_content.md#allowing-only-the-preview-of-premium-content) for more detail on handling such scenarios.
+
+<InlineAlert slots="text" variant="info"/>
+
+When the `renditionIntent` is set to `RenditionIntent.preview`, you must add to the `manifest.json` a `"renditionPreview"` flag set to `true` in the **"requirements"** section. 
+
+```json
+{
+  "testId": "cbe48204-578d-47cc-9ad4-a9aaa81dc3d3",
+  "name": "Hello World", "version": "1.0.0", "manifestVersion": 2,
+  "requirements": {
+    "apps": [ { "name": "Express", "apiVersion": 1 } ],
+    "renditionPreview": true 👈 👀
+  },
+  "entryPoints": [
+    // ...
+  ]
+}
+```

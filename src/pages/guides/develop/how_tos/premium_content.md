@@ -21,13 +21,13 @@ import '/src/styles.css'
 
 # Managing Premium Content
 
-When exporting Adobe Express documents, you should ensure proper handling of premium content. 
+When exporting Adobe Express documents, you should ensure proper handling of Premium content. 
 
-Let's go through all the available options to manage the rendition of premium content in case your your add-on allows users to export/download it.
+Let's go through all the available options to manage the rendition of Premium content in case your add-on allows users to export or download it.
 
 ## Showing a Premium Content error with the "Upgrade" option
 
-One way to handle premium content is to display a warning message when the user is not entitled to export/download it, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to premium content (via [`isPremiumUser()`](../../../references/addonsdk/app-currentUser.md#isPremiumUser)), and whether the page contains premium content (via [`hasPremiumContent`](/references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
+One way to handle premium content is to display a warning message when the user is not entitled to export or download it, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to Premium content (via [`isPremiumUser()`](../../../references/addonsdk/app-currentUser.md#isPremiumUser)), and whether the page contains Premium content (via [`hasPremiumContent`](/references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
 
 ### Example
 
@@ -112,11 +112,11 @@ Alternatively, you can provide visual cues directly in the add-on UI to show tha
 
 ## Allowing only the preview of Premium Content
 
-As mentioned in [Creating Renditions](./creating_renditions.md), you can allow users to preview premium content within the iframe by setting the `renditionIntent` to the constant [`RenditionIntent.preview`](../../../references/addonsdk/addonsdk-constants.md) as the second parameter of the [`addOnUISdk.app.document.createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method.
+As mentioned in [Creating Renditions](./creating_renditions.md), you can allow users to preview Premium content within the iframe by setting the `renditionIntent` to the constant [`RenditionIntent.preview`](../../../references/addonsdk/addonsdk-constants.md) as the second parameter of the [`addOnUISdk.app.document.createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method. Remember to also add the [`"renditionPreview"`](./creating_renditions.md#the-preview-intent) permission to your add-on's `manifest.json` file.
 
 <InlineAlert slots="header, text, text1, text2" variant="warning"/>
 
-**IMPORTANT!**
+Prevent previews download
 
 Your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user). To that end, be sure that users cannot:
 
