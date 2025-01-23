@@ -3,8 +3,8 @@
 # Class: PageList
 
 PageList represents an ordered list of PageNodes, all of which are children of the root node of the document's "scenegraph"
-artwork tree (see [ExpressRootNode](ExpressRootNode.md)). A page contains one or more artboards representing "scenes" in a linear timeline
-sequence. The artboards, in turn, contain all the visual content of the document.
+artwork tree (see [ExpressRootNode](ExpressRootNode.md)). A page contains one or more artboards, representing "scenes" in a linear timeline
+sequence. Those artboards, in turn, contain all the visual content of the document.
 
 PageList also provides APIs for adding/removing pages from the document. PageList is never empty: it is illegal to
 remove the last remaining page from the list.

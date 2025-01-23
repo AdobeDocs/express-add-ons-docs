@@ -49,9 +49,9 @@ Size of the text in points.
 
 ---
 
-### tracking
+### letterSpacing
 
-• **tracking**: `number`
+• **letterSpacing**: `number`
 
 Uniformly adjusts the letter spacing, aka character spacing. Specified as a delta relative to the font's default
 spacing, in units of 1/1000 em: positive values increase the spacing, negative values tighten the spacing, and 0
@@ -59,7 +59,7 @@ leaves spacing at its default.
 
 #### Inherited from
 
-`BaseCharacterStyles.tracking`
+`BaseCharacterStyles.letterSpacing`
 
 ---
 

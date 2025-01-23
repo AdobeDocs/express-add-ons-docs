@@ -6,8 +6,7 @@
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-A set of [CharacterStyles](CharacterStyles.md) along with the range of characters they apply to. Seen in the [characterStyleRanges](../classes/TextContentModel.md#characterstyleranges)
-getter.
+A set of [CharacterStyles](CharacterStyles.md) along with the range of characters they apply to. Seen in the characterStyleRanges getter.
 
 Note that fonts returned by the getter are *not* guaranteed to be ones the user has rights to edit with, even though they
 are visible in the document.
@@ -66,9 +65,9 @@ such as emojis are considered to have a length of 2.
 
 ---
 
-### tracking
+### letterSpacing
 
-• **tracking**: `number`
+• **letterSpacing**: `number`
 
 Uniformly adjusts the letter spacing, aka character spacing. Specified as a delta relative to the font's default
 spacing, in units of 1/1000 em: positive values increase the spacing, negative values tighten the spacing, and 0
@@ -76,7 +75,7 @@ leaves spacing at its default.
 
 #### Inherited from
 
-[`CharacterStyles`](CharacterStyles.md).[`tracking`](CharacterStyles.md#tracking)
+[`CharacterStyles`](CharacterStyles.md).[`letterSpacing`](CharacterStyles.md#letterspacing)
 
 ---
 
