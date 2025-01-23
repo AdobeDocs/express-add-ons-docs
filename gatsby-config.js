@@ -738,16 +738,16 @@ module.exports = {
               },
               {
                 title: "Monetization & User Info",
-                path: "guides/develop/how_tos/monetization_flows.md",
+                path: "guides/develop/how_tos/user_info.md",
                 pages: [
                   {
                     title: "Identifying users",
                     path: "guides/develop/how_tos/user_info.md",
                   },
-                  {
-                    title: "Monetization Flows",
-                    path: "guides/develop/how_tos/monetization_flows.md",
-                  },
+                  // {
+                  //   title: "Monetization Flows",
+                  //   path: "guides/develop/how_tos/monetization_flows.md",
+                  // },
                 ],
               },
               // ------------------------------------------------------------------
