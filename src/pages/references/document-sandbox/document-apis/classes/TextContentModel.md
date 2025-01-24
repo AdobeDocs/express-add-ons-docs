@@ -41,7 +41,7 @@ preserves the text's existing styles for any fields not specified). When *gettin
 provided.
 
 Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
-has rights to edit with. The *setter* only accepts the AvailableFont type, which has been verified to be usable.
+has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
 
 • `set` **characterStyleRanges**(`styles`): `void`
 

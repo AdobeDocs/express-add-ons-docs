@@ -5,7 +5,7 @@
 A PathNode represents a generic vector path shape in the scenegraph. Paths cannot be edited through this API
 yet, only read.
 
-To create a new path, see [Editor.createPath](Editor.md#createpath).
+To create new paths, see [Editor.createPath](Editor.md#createpath).
 
 ## Extends
 
