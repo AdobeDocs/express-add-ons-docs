@@ -21,6 +21,12 @@ contributors:
 
 # Changelog
 
+## 2025-01-27
+
+### Changed
+
+Stabilized [`importPdf()`](../references/addonsdk/app-document.md#importpdf) and [`importPresentation()`](../references/addonsdk/app-document.md#importpresentation) APIs. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to utilize these APIs.
+
 ## 2025-01-17
 
 ### Added
