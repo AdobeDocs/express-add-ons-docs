@@ -55,11 +55,6 @@ contributors:
     - [What mime type is returned from a PDF that was exported with the `createRenditions` method?](#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method)
     - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
     - [I'm trying to use a newly released feature, but it seems to be unavailable?](#im-trying-to-use-a-newly-released-feature-but-it-seems-to-be-unavailable)
-    - [Who qualifies as a "trader" under the DSA?](#who-qualifies-as-a-trader-under-the-dsa)
-    - [What information must Adobe Express add-on developers provide as traders?](#what-information-must-adobe-express-add-on-developers-provide-as-traders)
-    - [What is the deadline for updating trader information?](#what-is-the-deadline-for-updating-trader-information)
-    - [How should developers update their trader information?](#how-should-developers-update-their-trader-information)
-    - [What happens if a developer fails to update their trader information by the deadline?](#what-happens-if-a-developer-fails-to-update-their-trader-information-by-the-deadline)
     - [Why is my add-on not visible in the EU region?](#why-is-my-add-on-not-visible-in-the-eu-region)
     - [What should I do if I encounter issues updating my trader information?](#what-should-i-do-if-i-encounter-issues-updating-my-trader-information)
 
@@ -213,30 +208,10 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
   If you are trying out a newly released feature in your add-on and have an instance of Adobe Express still open in a browser tab from before, you will need to refresh the page to ensure the latest release is loaded before trying out a new feature.
 
-### Who qualifies as a "trader" under the DSA?
-
-  In the context of Adobe Express add-ons, developers who publish their add-ons in the EU region are identified as traders.
-
-### What information must Adobe Express add-on developers provide as traders?
-
-  Developers must provide basic information, including their names, addresses, telephone numbers, and email addresses. This information must be accurate and up-to-date.
-
-### What is the deadline for updating trader information?
-
-  Existing Developers must update their trader information in the [publisher profile](https://new.express.adobe.com/add-ons?mode=submission) by February 16, 2025.
-
-### How should developers update their trader information?
-
-  Developers can update their trader information through the Adobe Express add-on [publisher profile](https://new.express.adobe.com/add-ons?mode=submission). Please make sure all required fields are filled out accurately.
-
-### What happens if a developer fails to update their trader information by the deadline?
-
-  If the trader information is not updated by February 16, 2025, the developer's add-ons will not be visible to users in the EU region. It is crucial to meet this deadline to avoid disruptions.
-
 ### Why is my add-on not visible in the EU region?
 
   This could be due to incomplete or outdated trader information in your [publisher profile](https://new.express.adobe.com/add-ons?mode=submission). Please make sure all required details are updated and accurate.
 
 ### What should I do if I encounter issues updating my trader information?
 
-  If you have any problems, you can contact [Adobe Express support](https://developer.adobe.com/express/community/) for help.We can help resolve any issues and ensure your information is correctly updated.
+  If you have any problems, you can contact ccintrev@adobe.com for help. We can help resolve any issues and ensure your information is correctly updated.
