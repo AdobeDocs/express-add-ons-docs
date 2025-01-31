@@ -3,7 +3,7 @@
 # Class: ArtboardList
 
 ArtboardList represents an ordered list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
-All items in the list are children of a single PageNode.
+All items in the list are children of a single [PageNode](PageNode.md).
 
 ArtboardList also provides APIs for adding/removing artboards from the page. ArtboardList is never empty: it is illegal to
 remove the last remaining artboard from the list.
@@ -52,13 +52,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`[`ArtboardNode`](artboard-node.md), `any`, `undefined`
+• **\[iterator\]**(): `Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `any`\>
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`[`ArtboardNode`](artboard-node.md), `any`, `undefined`
+`Iterator`<[`ArtboardNode`](ArtboardNode.md), `any`, `any`\>
 
 #### Inherited from
 

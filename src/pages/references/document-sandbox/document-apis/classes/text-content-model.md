@@ -9,7 +9,7 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](text-node.md)  
+• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -23,7 +23,7 @@ If there are multiple [TextNode](text-node.md)s, all of them must be configured 
 
 #### Returns
 
-`Readonly` `Iterable` [`TextNode`](text-node.md)  
+`Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
 
 <hr />
 
@@ -35,7 +35,13 @@ If there are multiple [TextNode](text-node.md)s, all of them must be configured 
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-The character style ranges of this text content.
+The character styles are applied to different ranges of this text content. When setting character styles, any style
+properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](TextContentModel.md#applycharacterstyles) which
+preserves the text's existing styles for any fields not specified). When *getting* styles, all fields are always
+provided.
+
+Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
+has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
 
 • `set` **characterStyleRanges**(`styles`): `void`
 
@@ -96,8 +102,10 @@ The complete text string, which may span multiple [TextNode](text-node.md) "fram
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Apply one or more styles to the characters in the given range, leaving other styles in this range unchanged. Does
-not modify any styles in the text outside this range.
+Apply one or more styles to the characters in the given range, leaving any style properties that were not specified
+unchanged. Does not modify any styles in the text outside this range. Contrast to the [characterStyleRanges](TextContentModel.md#characterstyleranges)
+setter, which specifies new style range(s) for the entire text at once, and resets any unspecified properties back to
+default styles.
 
 #### Parameters
 

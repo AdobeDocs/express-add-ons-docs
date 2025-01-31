@@ -33,7 +33,7 @@ Get [AddOnData](../classes/add-on-data.md) reference for managing the private me
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly` `Iterable` [`BaseNode`](../classes/base-node.md)
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](../classes/BaseNode.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](container-node.md#children) list. Other nodes with a more specific structure can
@@ -45,7 +45,7 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly` `Iterable` [`BaseNode`](../classes/base-node.md) 
+`Readonly`<`Iterable`<[`BaseNode`](../classes/BaseNode.md), `any`, `any`\>\>
 
 <hr />
 

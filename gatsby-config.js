@@ -267,6 +267,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/unknown-node.md",
                   },
                   {
+                    title: "Viewport",
+                    path: "references/document-sandbox/document-apis/classes/Viewport.md",
+                  },
+                  {
                     title: "VisualNode",
                     path: "references/document-sandbox/document-apis/classes/visual-node.md",
                   },

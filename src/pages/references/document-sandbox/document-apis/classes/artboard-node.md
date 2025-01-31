@@ -3,8 +3,11 @@
 # Class: ArtboardNode
 
 An ArtboardNode represents an artboard object in the scenegraph. All user visual content must be contained on an artboard.
+Artboards are always contained on a [PageNode](PageNode.md); when a page contains multiple artboards, the artboards represent
+"scenes" in a linear timeline sequence.
 
-When multiple artboards exist on a page, the artboards represent "scenes" in a linear timeline sequence.
+To create a new artboard, see [ArtboardList.addArtboard](ArtboardList.md#addartboard).
+
 Please note that creating and deleting an artboard in a single frame will crash the editor.
 
 ## Extends
@@ -36,7 +39,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 ---
 ### allChildren
 
-• `get` **allChildren**(): `Readonly``Iterable`[`Node`](node.md)
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -47,7 +50,7 @@ The children of an Artboard are always other Node classes (never the more minima
 
 #### Returns
 
-`Readonly``Iterable`[`Node`](node.md)
+`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 <hr />
 

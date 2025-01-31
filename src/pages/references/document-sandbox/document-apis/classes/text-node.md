@@ -4,7 +4,10 @@
 
 A TextNode represents a text display frame in the scenegraph. It may display an entire piece of text, or sometimes just
 a subset of longer text that flows across multiple TextNode "frames". Because of this, the TextNode does not directly hold
-the text content and styles – instead it refers to a [TextContentModel](text-content-model.md), which may be shared across multiple TextNodes.
+the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple TextNode frames.
+
+To create new a single-frame piece of text, see [Editor.createText](Editor.md#createtext). APIs are not yet available to create
+multi-frame text flows.
 
 ## Extends
 
@@ -30,7 +33,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly` `Iterable` [`Node`](node.md)  
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -41,7 +44,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly` `Iterable` [`Node`](node.md)  
+`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
  <hr />
 

@@ -2,6 +2,14 @@
 
 Your listing should provide valuable information about what your add-on does, and why people should use it.
 
+<AnnouncementBlock slots="heading, text, button" />
+
+Are you an existing developer?
+
+Action required: Add trader details to continue EU distribution.
+
+[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+
 ## Listing metadata
 
 Your listing metadata provides Adobe and users with details about your add-on. Follow the guidelines below to ensure your listing clearly describes everything you want your users to know about your add-on.
@@ -100,8 +108,45 @@ NOT:
 
 **www.[Your Company name]forAdobeExpress.com**
 
-<InlineAlert slots="text" variant="info"/>
+### Trader details
 
-**IMPORTANT:** You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one-time thing (unless you decide you need to update it for your own reasons). **Note:** Any changes to your publisher profile will need to be submitted for approval again.
+In accordance with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, developers who wish to distribute their add-ons in the European Union (EU) must provide additional information in their publisher profile.
 
-Frequently changing your publisher profile can confuse users and erode trust. Please be sure you've considered this before changing this information.
+<InlineAlert variant="info" slots="header, text1, text2, text3" />
+
+Developer/Trader
+
+The terms **developers/traders** are used interchangeably in this guide.
+
+Any developer who wishes to publish their add-ons in the EU can be identified as a trader.
+
+Checkout our [Know your trader](https://developer.adobe.com/compliance/) guide to understand **why** you must provide these details to make your add-ons available in the EU.
+
+Choose **Yes** if you wish to make your add-ons available for users in the EU.
+
+![Trader details](../../img/trader-details.png)
+
+You must provide the following details:
+
+- Business email address​
+- Country code and Business telephone number
+- Business street address or P.O. box
+- City
+- State/Province/Region
+- ZIP/Postal code
+- Country
+- Business D-U-N-S number [`optional`]
+
+You must complete and submit your publisher profile in order to submit your first add-on, however this is only a one time thing, unless you decide you need to update for your own reasons.
+
+Any changes to your publisher profile will need to be submitted for approval again.
+
+<InlineAlert variant="warning" slots="header, text1, text2, text3" />
+
+**Are you an existing developer?**
+
+Existing developers can easily update their trader details directly in their [publisher profile](https://new.express.adobe.com/add-ons?mode=submission).
+
+Note that only trader details can be added; other fields cannot be edited by developers.
+
+You must provide trader details by February 16, 2025, to keep your add-on visible and available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.

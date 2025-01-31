@@ -6,7 +6,11 @@
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Input shape of the applyCharacterStyle API.
+Variant of [CharacterStyles](CharacterStyles.md) with all style fields optional, used for applyCharacterStyles(). When using that API,
+any fields not specified are left unchanged, preserving the text's existing styles.
+
+If specified, the font must be of the [AvailableFont](../classes/AvailableFont.md) type – one that is guaranteed to be available for the current
+user to edit with.
 
 ## Extends
 
@@ -21,6 +25,8 @@ Input shape of the applyCharacterStyle API.
 ### color?
 
 • `optional` **color**: [`Color`](color.md)
+
+Text color.
 
 #### Inherited from
 
@@ -38,25 +44,33 @@ Input shape of the applyCharacterStyle API.
 
 • `optional` **fontSize**: `number`
 
+Size of the text in points.
+
 #### Inherited from
 
 `Partial.fontSize`
 
 <hr />
 
-### tracking?
+### letterSpacing?
 
-• `optional` **tracking**: `number`
+• `optional` **letterSpacing**: `number`
+
+Uniformly adjusts the letter spacing, aka character spacing. Specified as a delta relative to the font's default
+spacing, in units of 1/1000 em: positive values increase the spacing, negative values tighten the spacing, and 0
+leaves spacing at its default.
 
 #### Inherited from
 
-`Partial.tracking`
+`Partial.letterSpacing`
 
 <hr />
 
 ### underline?
 
 • `optional` **underline**: `boolean`
+
+Adds an underline to text.
 
 #### Inherited from
 

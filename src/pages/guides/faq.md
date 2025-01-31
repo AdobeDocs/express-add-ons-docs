@@ -11,11 +11,15 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
+  - DSA
+  - Adobe DSA requirements
+  - Compliance
 title: FAQ
 description: A list of frequently asked questions and answers. 
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
+  - https://github.com/nimithajalal
 ---
 
 # Frequently Asked Questions
@@ -51,6 +55,8 @@ contributors:
     - [What mime type is returned from a PDF that was exported with the `createRenditions` method?](#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method)
     - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
     - [I'm trying to use a newly released feature, but it seems to be unavailable?](#im-trying-to-use-a-newly-released-feature-but-it-seems-to-be-unavailable)
+    - [Why is my add-on not visible in the EU region?](#why-is-my-add-on-not-visible-in-the-eu-region)
+    - [What should I do if I encounter issues updating my trader information?](#what-should-i-do-if-i-encounter-issues-updating-my-trader-information)
 
 ## Answers
 
@@ -201,3 +207,11 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 ### I'm trying to use a newly released feature, but it seems to be unavailable?
 
   If you are trying out a newly released feature in your add-on and have an instance of Adobe Express still open in a browser tab from before, you will need to refresh the page to ensure the latest release is loaded before trying out a new feature.
+
+### Why is my add-on not visible in the EU region?
+
+  This could be due to incomplete or outdated trader information in your [publisher profile](https://new.express.adobe.com/add-ons?mode=submission). Please make sure all required details are updated and accurate.
+
+### What should I do if I encounter issues updating my trader information?
+
+  If you have any problems, you can contact ccintrev@adobe.com for help. We can help resolve any issues and ensure your information is correctly updated.

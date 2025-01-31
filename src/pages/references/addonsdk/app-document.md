@@ -329,9 +329,11 @@ Refer to the [importing content use case](../../guides/develop/use-cases/content
 
 Imports a PDF as a new Adobe Express document.
 
-<InlineAlert slots="text" variant="warning"/>
+<!-- Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
 
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+<!-- <InlineAlert slots="text" variant="warning"/> -->
+
+<!--**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 
@@ -384,9 +386,11 @@ async function importPdfFrom(url) {
 
 Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
 
-<InlineAlert slots="text" variant="warning"/>
+<!--Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
 
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+<!-- <InlineAlert slots="text" variant="warning"/> -->
+
+<!-- **IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 
