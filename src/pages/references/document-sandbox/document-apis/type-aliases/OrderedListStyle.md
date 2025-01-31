@@ -1,13 +1,12 @@
-[@express-document-sdk](../overview.md) / EventHandlerId
+[@express-document-sdk](../overview.md) / OrderedListStyle
 
-# Type alias: EventHandlerId
+# Type alias: OrderedListStyle
 
 `Experimental`
 
-• **EventHandlerId**: `string`
+• **OrderedListStyle**: `Required`\<[`OrderedListStyleInput`](../interfaces/OrderedListStyleInput.md)\>
 
+OrderedListStyle represents the style of an ordered list.
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-This type represents unique id of each event handler callback that is registered.
