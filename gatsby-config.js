@@ -345,6 +345,18 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/ListItem.md",
                   },
                   {
+                    title: "ParagraphStyles",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStyles.md",
+                  },
+                  {
+                    title: "ParagraphStylesRange",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md",
+                  },
+                  {
+                    title: "ParagraphStylesRangeInput",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput.md",
+                  },
+                  {
                     title: "Point",
                     path: "references/document-sandbox/document-apis/interfaces/Point.md",
                   },
