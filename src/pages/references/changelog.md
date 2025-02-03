@@ -25,7 +25,7 @@ contributors:
 
 ### Added
 
-Exposed ParagraphStyles API ([`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges)).
+Exposed [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API.
 
 ## 2025-01-27
 
