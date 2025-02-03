@@ -111,7 +111,7 @@ if the text content contains fonts unavailable to the current user and an ordere
 
 readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
 
-***
+---
 
 ### text
 
