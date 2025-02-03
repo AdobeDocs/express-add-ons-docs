@@ -4,10 +4,6 @@
 
 Internal helpers for working with paragraph style ranges.
 
-## Extends
-
-- `ProxyLiveObject`
-
 ## Methods
 
 ### getStyleRanges()
