@@ -127,7 +127,7 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 
 #### CORS / COEP Handling
 
-The value of the [**Cross-Origin-Embedder-Policy** (COEP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) header for add-on resources is set to `credentialless`, but you should be aware that it will be changing to use `require-corp` sometime in the future, so you should plan for that by ensuring resources loaded from within the document have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions.
+The value of the [Cross-Origin-Embedder-Policy (COEP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) header for add-on resources is set to `credentialless`, but you should be aware that it will be changing to use `require-corp` sometime in the future, so you should plan for that by ensuring resources loaded from within the document have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions.
 
 1. For http requests, make sure that the resource server responds with the `Cross-Origin-Resource-Policy: cross-origin` header. See [this link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy) for reference.
 
@@ -145,7 +145,7 @@ A website's address on the Internet that is used in URLs to identify which serve
 
 ### subdomain
 
-Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives (ie: https://w906hhl6k.wxp.adobe-addons.com).
+Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives (ie: [https://w906hhl6k.wxp.adobe-addons.com](https://w906hhl6k.wxp.adobe-addons.com)).
 
 ### allowed list of origins
 

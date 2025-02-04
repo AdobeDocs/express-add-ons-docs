@@ -66,7 +66,7 @@ This add-on allows users to select settings to customize a bingo card; including
 
 ### Topics Covered
 
-<ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [Configuring your add-on to use Spectrum Web Components](part1.md#create-and-configure-your-add-on)
 

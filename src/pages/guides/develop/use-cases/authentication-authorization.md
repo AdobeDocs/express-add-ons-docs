@@ -34,7 +34,7 @@ Authorization should persist across sessions so users don't have to log in with 
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some setup steps with the provider you want to use OAuth with first. Here are the steps to get started:
 
 1. Log in to the OAuth provider's website and create an application (for example, Dropbox). This must be a web application, and if an option of SPA (Single Page Application) is listed, select it.
-2. As an input to the "Redirect URIs" field, add: https://new.express.adobe.com/static/oauth-redirect.html.
+2. As an input to the "Redirect URIs" field, add: [https://new.express.adobe.com/static/oauth-redirect.html](https://new.express.adobe.com/static/oauth-redirect.html).
 3. Fill out other details as necessary and save the form. A client Id / application Id / application key (this differs on different OAuth providers) will be generated. Make note of it as you will need it in your add-on code.
 4. Next, update your add-on `manifest.json` file with the hostname of the OAuth provider's authorization URL. **NOTE:** When using multiple providers, all hostnames must be provided. For example, if the add-on uses two OAuth providers (`"login.microsoftonline.com"` and `"www.dropbox.com"`), the `manifest.json` should contain both of them, as shown below:
 

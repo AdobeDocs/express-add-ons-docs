@@ -42,7 +42,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ### Topics Covered
 
-<ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [Invoking Document Model Sandbox methods from the UI iframe](#proxy-api)
 
