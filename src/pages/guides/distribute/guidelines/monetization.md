@@ -55,7 +55,7 @@ The word “Premium” should only be used in relation to the Adobe Express Prem
 
 Adobe Express allows users that aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their document, they'll be prompted to upgrade to a premium plan.
 
-Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](/guides/develop/use-cases/#premium-content) for more information on how to do this.
+Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](../../develop/use-cases.md) for more information on how to do this.
 
 ## Requirements for monetizing your add-ons
 
@@ -129,14 +129,14 @@ Here are some guidelines for effectively communicating purchasing options and up
 -   Provide textual cues through tooltips to inform users about in-app purchase options. Consider using phrases like "add" alongside the plus badge to convey that users can access additional features or content by upgrading.
 -   Use the "paid" green checkmark badge to signify when a feature or asset has been successfully added after purchase.
 -   Use terms like "upgrade," "add," "Pro," and "Plus," for example:
--   Add this [feature] by upgrading the add-on.
--   Add more when you upgrade.
--   Upgrade to Pro.
--   Upgrade to [Add-on name] Plus.
+    -   Add this [feature] by upgrading the add-on.
+    -   Add more when you upgrade.
+    -   Upgrade to Pro.
+    -   Upgrade to [Add-on name] Plus.
 - At the beginning of the upgrade flow, let users know that they will have to navigate to an external payment processor to complete their upgrade purchase, for example:
--   "You'll need to pay to upgrade outside of Adobe."
+    -   "You'll need to pay to upgrade outside of Adobe."
 -   Include a disclaimer in your checkout flow to remind users that upgrading the add-on does not change their access to Adobe Express Premium, for example:
--   "This upgrade only applies to the [Add-on name] add-on and does not grant or remove access to Adobe Express Premium."
+    -   "This upgrade only applies to the [Add-on name] add-on and does not grant or remove access to Adobe Express Premium."
 
 ### Patterns to avoid
 
@@ -152,9 +152,17 @@ While our monetization best practices are recommendations for your add-on, imple
 
 Use the plus gradient icon below to indicate when content or features require purchase:
 
+| Badge  | Size(px) | Download link |
+|--------|----------|-------------:|
+| <img src="../img/addon-plus-badge20.svg" width="20" height="20"/> | 20x20 | <a href="../img/addon-plus-badge20.svg" download="../img/addon-plus-badge20.svg">Download</a> |
+
 #### Paid badge
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
+
+| Badge  | Size(px) | Download link |
+|--------|----------|-------------:|
+| <img src="../img/addon-pro-badge20.svg" width="20" height="20"/> | 20x20 | <a href="../img/addon-pro-badge20.svg" download="../img/addon-pro-badge20.svg">Download</a> |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -167,6 +175,10 @@ The most common size of badges used within Express panels is typically 20x20px, 
 - We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. *This content is available when you upgrade the add-on*.
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
 - If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.
+
+ | Sample badge usage  |      |       |
+ |----------|------|-------------:|
+ | <img src="../img/list-placement-example.png"/> | <img src="../img/avatar-placement-example.png"/>  | <img src="../img/grid-placement-example.png"/> |
 
 <InlineAlert slots="text" variant="success"/>
 
