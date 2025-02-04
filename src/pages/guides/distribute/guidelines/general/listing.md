@@ -4,7 +4,7 @@ Your listing should provide valuable information about what your add-on does, an
 
 <AnnouncementBlock slots="heading, text, button" />
 
-Are you an existing developer?
+### Are you an existing developer?
 
 Action required: Add trader details to continue EU distribution.
 

@@ -37,10 +37,10 @@ This section outlines everything you'll need to be prepared for submitting your 
 | **\* Add-on name**      | 25                | A unique name for your add-on.|
 | **\* Summary**               | 50                | A short description of what your add-on does.|
 | **\* Full Description**      | 1000              | Full context and description of your add-on and its features |
-| **\* Help URL**              | 1000              | URL for your users to get help (ie: https://www.example.com/)  |
+| **\* Help URL**              | 1000              | URL for your users to get help (ie: [https://www.example.com/](https://www.example.com/))  |
 | **\* Support email address** | 1000              | An email address that users of your add-on can contact for support |
-| **Privacy Notice**          | 1000              | URL of your privacy notice (ie: https://www.example.com/) |
-| **End User License Agreement(EULA)**| 1000      | End User License Agreement URL (ie: https://www.example.com/) |
+| **Privacy Notice**          | 1000              | URL of your privacy notice (ie: [https://www.example.com/](https://www.example.com/)) |
+| **End User License Agreement(EULA)**| 1000      | End User License Agreement URL (ie: [https://www.example.com/](https://www.example.com/)) |
 | **Keywords**                | 100              | Keywords to help users find your add-on (comma-separated) |
 | **Release notes**       | 1000  | Provide information specific to this version of the add-on |
 
