@@ -55,7 +55,7 @@ This command will create a new add-on based on pure JavaScript with Document San
 
 The [Templates section](dev-tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
 
-**For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
+**For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from [https://git-scm.com/downloads](https://git-scm.com/downloads), and add the directory location to the `path` variable in your Environment Variables.
 
 <InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
 
