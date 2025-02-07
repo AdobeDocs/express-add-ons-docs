@@ -2,18 +2,19 @@
 
 # Interface: ParagraphStylesRangeInput
 
-Variant of [ParagraphStyles](ParagraphStyles.md) with all style fields optional, along with the text range they apply to. Used for the
-paragraphStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults.
-
-Paragraphs are separated by newline characters (`\n`) in the text content. Ranges specified here should align with
-those boundaries.
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
+Variant of [ParagraphStylesRange](ParagraphStylesRange.md) with all style fields optional, along with the text range they apply to. Used for the
+paragraphStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults.
+
+Paragraphs are separated by newline characters (`\n`) in the text content. Ranges specified here should align with
+those boundaries.
+
 ## Extends
 
-- `Partial`\<[`BaseParagraphStyles`](BaseParagraphStyles.md)\>.[`StyleRange`](StyleRange.md)
+- [`ParagraphStylesInput`](ParagraphStylesInput.md).[`StyleRange`](StyleRange.md)
 
 ## Properties
 
@@ -40,13 +41,17 @@ Only affects the space *between* lines, not the space above the first line or be
 
 #### Inherited from
 
-`Partial.lineSpacing`
+[`ParagraphStylesInput`](ParagraphStylesInput.md).[`lineSpacing`](ParagraphStylesInput.md#linespacing)
 
 ***
 
 ### list?
 
 • `optional` **list**: [`OrderedListStyleInput`](OrderedListStyleInput.md) \| [`UnorderedListStyleInput`](UnorderedListStyleInput.md)
+
+#### Inherited from
+
+[`ParagraphStylesInput`](ParagraphStylesInput.md).[`list`](ParagraphStylesInput.md#list)
 
 ***
 
@@ -59,7 +64,7 @@ Space after paragraph (in points). Has no effect on the last paragraph. Additive
 
 #### Inherited from
 
-`Partial.spaceAfter`
+[`ParagraphStylesInput`](ParagraphStylesInput.md).[`spaceAfter`](ParagraphStylesInput.md#spaceafter)
 
 ***
 
@@ -72,4 +77,4 @@ Space before paragraph (in points). Has no effect on the first paragraph. Additi
 
 #### Inherited from
 
-`Partial.spaceBefore`
+[`ParagraphStylesInput`](ParagraphStylesInput.md).[`spaceBefore`](ParagraphStylesInput.md#spacebefore)

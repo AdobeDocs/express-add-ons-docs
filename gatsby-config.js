@@ -349,6 +349,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/ParagraphStyles.md",
                   },
                   {
+                    title: "ParagraphStylesInput",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md",
+                  },
+                  {
                     title: "ParagraphStylesRange",
                     path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md",
                   },

@@ -2,12 +2,13 @@
 
 # Interface: BaseParagraphStyles
 
-Base paragraph styles that can be applied to an entire paragraph atomically.
-Excludes list style settings, which differ between the getter-oriented [ParagraphStyles](ParagraphStyles.md) interface and the
-setter-oriented [ParagraphStylesRangeInput](ParagraphStylesRangeInput.md).
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Base paragraph styles that can be applied to an entire paragraph atomically.
+Excludes list style settings, which differ between the getter-oriented [ParagraphStyles](ParagraphStyles.md) interface and the
+setter-oriented [ParagraphStylesRangeInput](ParagraphStylesRangeInput.md).
 
 ## Extended by
 

@@ -156,6 +156,44 @@ The styles to apply.
 
 The start and length of character sequence to which the styles should be applied.
 If not specified the styles will be applied to the entire piece of text content flow.
+If the specified range doesn't align well with the paragraph boundaries, the range will be expanded to cover the
+entire paragraphs it overlaps.
+
+• **range.length?**: `number`
+
+• **range.start?**: `number`
+
+#### Returns
+
+`void`
+
+***
+
+### applyParagraphStyles()
+
+`Experimental`
+
+• **applyParagraphStyles**(`styles`, `range`?): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Apply one or more styles to the paragphras in the given range, leaving any style properties that were not specified
+unchanged. Does not modify any styles in the text outside this range. Contrast to the [paragraphStyleRanges](TextContentModel.md#paragraphstyleranges)
+setter, which specifies new style range(s) for the entire text at once, and resets any unspecified properties back to
+default styles.
+
+#### Parameters
+
+• **styles**: [`ParagraphStylesInput`](../interfaces/ParagraphStylesInput.md)
+
+The styles to apply.
+
+• **range?**
+
+The start and length of character sequence to which the styles should be applied.
+If not specified the styles will be applied to the entire piece of text content flow.
 
 • **range.length?**: `number`
 
