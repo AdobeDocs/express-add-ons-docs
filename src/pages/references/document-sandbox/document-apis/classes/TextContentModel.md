@@ -167,7 +167,7 @@ entire paragraphs it overlaps.
 
 `void`
 
-***
+---
 
 ### applyParagraphStyles()
 
