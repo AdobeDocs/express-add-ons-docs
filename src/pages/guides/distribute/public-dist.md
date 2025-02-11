@@ -39,6 +39,7 @@ This section outlines everything you'll need to be prepared for submitting your 
 | **\* Full Description**      | 1000              | Full context and description of your add-on and its features |
 | **\* Help URL**              | 1000              | URL for your users to get help (ie: https://www.example.com/)  |
 | **\* Support email address** | 1000              | An email address that users of your add-on can contact for support |
+| **\*Trader information**     | NA                | Provide the trader information as per the [listing metadata guidelines](./guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
 | **Privacy Notice**          | 1000              | URL of your privacy notice (ie: https://www.example.com/) |
 | **End User License Agreement(EULA)**| 1000      | End User License Agreement URL (ie: https://www.example.com/) |
 | **Keywords**                | 100              | Keywords to help users find your add-on (comma-separated) |
