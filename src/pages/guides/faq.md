@@ -56,7 +56,9 @@ contributors:
     - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
     - [I'm trying to use a newly released feature, but it seems to be unavailable?](#im-trying-to-use-a-newly-released-feature-but-it-seems-to-be-unavailable)
     - [Why is my add-on not visible in the EU region?](#why-is-my-add-on-not-visible-in-the-eu-region)
-    - [What should I do if I encounter issues updating my trader information?](#what-should-i-do-if-i-encounter-issues-updating-my-trader-information)
+    - [How can I update my trader details in the publisher profile after submission?](#how-can-i-update-my-trader-details-in-the-publisher-profile-after-submission)
+    - [What happens if an EU user has a deep link to my add-on and I am not compliant with the European Union Digital Services Act (DSA) trader requirements?](#what-happens-if-an-eu-user-has-a-deep-link-to-my-add-on-and-i-am-not-compliant-with-the-european-union-digital-services-act-dsa-trader-requirements)
+    - [Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?](#can-an-eu-user-still-use-my-add-on-if-they-have-already-installed-it-but-i-am-not-compliant-with-the-dsa-trader-requirements)
 
 ## Answers
 
@@ -212,6 +214,14 @@ Once you find config file, delete the two properties defined for `sslCertPath` a
 
   This could be due to incomplete or outdated trader information in your [publisher profile](https://new.express.adobe.com/add-ons?mode=submission). Please make sure all required details are updated and accurate.
 
-### What should I do if I encounter issues updating my trader information?
+### How can I update my trader details in the publisher profile after submission?
 
-  If you have any problems, you can contact ccintrev@adobe.com for help. We can help resolve any issues and ensure your information is correctly updated.
+  To update only your trader details in the publisher profile after submission, please contact our team at [ccintrev@adobe.com](mailto:ccintrev@adobe.com). At this time, we are not processing change requests for other fields in the publisher profile.
+
+### What happens if an EU user has a deep link to my add-on and I am not compliant with the European Union Digital Services Act (DSA) trader requirements? 
+
+  If you are not compliant with the European Union Digital Services Act trader requirements, an EU user with a deep link to your add-on will not be able to install it. They will see a banner with a message indicating the compliance issue.
+
+### Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?
+
+  Yes, if an EU user has already installed your add-on, they will still be able to use it even if you are not compliant with the DSA trader requirements. However, they will see a banner with a message indicating the compliance issue.
