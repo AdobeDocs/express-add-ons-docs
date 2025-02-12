@@ -21,6 +21,15 @@ contributors:
 
 # Changelog
 
+## 2025-02-17
+
+### Update
+
+- Starting February 17, 2025: Listings will not be visible in the European Union unless trader information is provided.
+- Compliance: Trader information will be displayed publicly on listing detail pages to comply with EU Digital Services Act (DSA) regulations.
+  
+[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+
 ## 2025-01-27
 
 ### Changed
