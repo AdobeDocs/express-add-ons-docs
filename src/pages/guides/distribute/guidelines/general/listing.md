@@ -110,7 +110,7 @@ NOT:
 
 ### Trader details
 
-In accordance with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, developers who wish to distribute their add-ons in the European Union (EU) must provide additional information in their publisher profile. <InlineAlert variant="info" slots="text" />
+In accordance with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, developers who wish to distribute their add-ons in the European Union (EU) must provide additional information in their publisher profile.
 
 <InlineAlert variant="info" slots="header, text1, text2, text3, text4" />
 
