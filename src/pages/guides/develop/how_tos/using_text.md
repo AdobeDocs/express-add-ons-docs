@@ -82,9 +82,13 @@ The styles are defined by the [`CharacterStylesInput`](../../../references/docum
 
 The range is an object with the `start` and `length` properties.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="header, text" variant="warning"/>
 
-`applyCharacterStyles()` is only one way to set styles; you can also use the `characterStyleRanges` property, which supports both getting and setting styles, as described [here](#example-setting-all-styles).
+Style Ranges and Text edits
+
+For the moment, replacing the `fullContent.text` will result in applying the style from the first range to the whole text. This behavior is subject to change in future releases.
+
+Please note that `applyCharacterStyles()` is only one way to set styles; you can also use the `characterStyleRanges` property, which supports both getting and setting styles, as described [here](#example-setting-all-styles).
 
 ### Example: Setting Styles in a range
 
