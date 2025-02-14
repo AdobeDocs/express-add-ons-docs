@@ -251,7 +251,7 @@ You can choose to revisit your submission details later if you need to update it
 
 <InlineAlert variant="warning" slots="header, text1, text2" />
 
-Addon visbility for EU users
+Add-on visbility for EU users
 
 If an EU user has a deep link to your add-on, and you are not compliant with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, they will not be able to install the add-on. However, if they have already installed it, they will still be able to use it. In both cases, they will see a banner with the following message:
 
