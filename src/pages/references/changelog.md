@@ -21,11 +21,11 @@ contributors:
 
 # Changelog
 
-## 2025-02-10
+## 2025-02-20
 
 ### Added
 
-Exposed [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API.
+Added new [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
 
 ## 2025-02-17
 

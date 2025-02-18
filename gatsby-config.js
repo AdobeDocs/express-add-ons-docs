@@ -289,10 +289,6 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md",
                   },
                   {
-                    title: "BaseParagraphListStyle",
-                    path: "references/document-sandbox/document-apis/interfaces/BaseParagraphListStyle.md",
-                  },
-                  {
                     title: "BaseParagraphStyles",
                     path: "references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md",
                   },
