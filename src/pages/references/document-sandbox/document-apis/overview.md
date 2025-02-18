@@ -68,7 +68,6 @@
 
 -   [AreaTextLayout](interfaces/AreaTextLayout.md)
 -   [AutoHeightTextLayout](interfaces/AutoHeightTextLayout.md)
--   [BaseParagraphListStyle](interfaces/BaseParagraphListStyle.md)
 -   [BaseParagraphStyles](interfaces/BaseParagraphStyles.md)
 -   [BitmapImage](interfaces/BitmapImage.md)
 -   [CharacterStyles](interfaces/CharacterStyles.md)

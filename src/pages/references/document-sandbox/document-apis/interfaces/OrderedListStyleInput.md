@@ -10,7 +10,7 @@ Interface for specifying an ordered list style, such as a numbered list.
 
 ## Extends
 
-- [`BaseParagraphListStyle`](BaseParagraphListStyle.md)
+- `BaseParagraphListStyle`
 
 ## Properties
 
@@ -22,7 +22,7 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 
 #### Inherited from
 
-[`BaseParagraphListStyle`](BaseParagraphListStyle.md).[`indentLevel`](BaseParagraphListStyle.md#indentlevel)
+`BaseParagraphListStyle.indentLevel`
 
 ***
 

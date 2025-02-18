@@ -179,7 +179,7 @@ entire paragraphs it overlaps.
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Apply one or more styles to the paragphras in the given range, leaving any style properties that were not specified
+Apply one or more styles to the paragraphs in the given range, leaving any style properties that were not specified
 unchanged. Does not modify any styles in the text outside this range. Contrast to the [paragraphStyleRanges](TextContentModel.md#paragraphstyleranges)
 setter, which specifies new style range(s) for the entire text at once, and resets any unspecified properties back to
 default styles.
