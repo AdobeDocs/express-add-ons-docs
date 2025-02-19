@@ -103,13 +103,13 @@ Outer Group
 
 <InlineAlert variant="warning" slots="text" />
 
-In Adobe Express, **Groups must contain at least two elements** to be valid—either other Groups or other nodes. It's not possible to nest a single element within a Group, like for example, in Adobe Photoshop with Layers and Layer Sets.
+In Adobe Express, **Groups must contain at least two elements** to be valid—either other Groups or nodes. It's not possible to nest a single element within a Group, like for example, in Adobe Photoshop with Layers and Layer Sets.
 
 ## Element order
 
 As you would intuitively expect, the order in which you append elements to a Group matters. The last element you append will be on top of the others, and the first one will be at the bottom.
 
-I've created a very simple Square factory function that creates and append a shape to the page, passing an option object with the `size` and `color` (grayscale) and `offset` properties.
+As follows, a simple Square factory function creates and append a shape to the page, passing an option object with the `size` and `color` (grayscale) and `offset` properties. We'll be using it to test element order in a Group.
 
 ```js
 // sandbox/code.js
@@ -145,15 +145,15 @@ Creating a Group with two squares; the lighter one is added last, and it will be
 // sandbox/code.js
 const s1 = squareFactory({ size: 50, color: 0.5 });
 const s2 = squareFactory({ size: 50, color: 0.7, offset: 10 });
-const innerGroup = editor.createGroup();
-innerGroup.children.append(s1, s2);
+const group = editor.createGroup();
+group.children.append(s1, s2);
 
-editor.context.insertionParent.children.append(innerGroup);
+editor.context.insertionParent.children.append(group);
 ```
 
 ![Grouping elements](./images/groups_above.png)
 
-### Example: re-order elements
+### Example: re-ordering elements
 
 It's possible to re-order the elements in the Group by using the `children` property and the `moveAfter()` or `moveBefore()` method.
 
@@ -161,18 +161,18 @@ It's possible to re-order the elements in the Group by using the `children` prop
 // sandbox/code.js
 const s1 = squareFactory({ size: 50, color: 0.5 });
 const s2 = squareFactory({ size: 50, color: 0.7, offset: 10 });
-const innerGroup = editor.createGroup();
-innerGroup.children.append(s1, s2);
+const group = editor.createGroup();
+group.children.append(s1, s2);
 // s2 is on top of s1, as it's been added last
 
 // Moves s1 after (on top of) s2
-innerGroup.children.moveAfter(s1, s2);
-editor.context.insertionParent.children.append(innerGroup);
+group.children.moveAfter(s1, s2);
+editor.context.insertionParent.children.append(group);
 ```
 
 ![Grouping elements](./images/groups_below.png)
 
-### Example: add elements in a specific order
+### Example: addding elements in a specific order
 
 Similarly, it's possible to determine the elements insertion order with `insertAfter()` and `insertBefore()`.
 
@@ -181,20 +181,48 @@ Similarly, it's possible to determine the elements insertion order with `insertA
 const s1 = squareFactory({ size: 50, color: 0.5 });
 const s2 = squareFactory({ size: 50, color: 0.7, offset: 10 });
 const s3 = squareFactory({ size: 50, color: 0.9, offset: 20 });
-const innerGroup = editor.createGroup();
-innerGroup.children.append(s1, s2);
+const group = editor.createGroup();
+group.children.append(s1, s2);
 // s2 is on top of s1, as it's been added last
 
 // Inserts s3 after s1 (in the middle)
-innerGroup.children.insertAfter(s3, s1);
-editor.context.insertionParent.children.append(innerGroup);
+group.children.insertAfter(s3, s1);
+editor.context.insertionParent.children.append(group);
 ```
 
 ![Grouping elements](./images/groups_middle.png)
 
+## Moving elements out of a Group
+
+To move an element out of one Group (the source) and into another (the target), you can use the `children.append()` method of the target, passing the source element you want to move. It's no different from appending a new element to a Group, you just need to reference the source element regardless of where it is.
+
+### Example
+
+```js
+// sandbox/code.js
+const s1 = squareFactory({ size: 50, color: 0.1 });
+const s2 = squareFactory({ size: 50, color: 0.3, offset: 10 });
+const s3 = squareFactory({ size: 50, color: 0.5, offset: 20 });
+const s4 = squareFactory({ size: 50, color: 0.7, offset: 30 });
+const s5 = squareFactory({ size: 50, color: 0.9, offset: 40 });
+const group1 = editor.createGroup();
+const group2 = editor.createGroup();
+
+// Grouping elements in two different groups
+group1.children.append(s1, s2, s3);
+group2.children.append(s4, s5);
+
+editor.context.insertionParent.children.append(group1);
+editor.context.insertionParent.children.append(group2);
+
+// Moves s1 into group2
+group2.children.append(s1);
+// 👆 target group     👆 source element
+```
+
 ## Removing elements
 
-To remove an element from a Group, you can use the `remove()` method on the `children` property, which effectively also deletes the element from the page.
+To remove an element from a Group, you can use the `remove()` method on the `children` property, which effectively also deletes the element from the document.
 
 ### Example
 
@@ -203,10 +231,10 @@ To remove an element from a Group, you can use the `remove()` method on the `chi
 const s1 = squareFactory({ size: 50, color: 0.5 });
 const s2 = squareFactory({ size: 50, color: 0.7, offset: 10 });
 const s3 = squareFactory({ size: 50, color: 0.9, offset: 20 });
-const innerGroup = editor.createGroup();
-innerGroup.children.append(s1, s2, s3);
-editor.context.insertionParent.children.append(innerGroup);
+const group = editor.createGroup();
+group.children.append(s1, s2, s3);
+editor.context.insertionParent.children.append(group);
 
 // Removes s2 from the Group and from the page!
-innerGroup.children.remove(s2);
+group.children.remove(s2);
 ```
