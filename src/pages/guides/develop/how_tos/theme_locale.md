@@ -11,7 +11,7 @@ keywords:
   - Extensibility
   - API
 title: Theme & Locale
-description:  Theme & Locale.
+description: Theme & Locale.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
@@ -34,7 +34,7 @@ The current theme is available in the [`addOnUISdk.app.ui.theme`](../../../refer
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-addOnUISdk.ready.then(async () => {    
+addOnUISdk.ready.then(async () => {
   // Get the current theme
   console.log(addOnUISdk.app.ui.theme); // "light"
 
@@ -42,7 +42,7 @@ addOnUISdk.ready.then(async () => {
   addOnUISdk.app.on("themechange", (data) => {
     // data theme will be either "light" or "dark"
     console.log("The theme is now", data.theme);
-    // ... 
+    // ...
     // Apply the new theme to your add-on UI
   });
 });
@@ -59,7 +59,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   // Get the currently supported locales
-  console.log(addOnUISdk.app.ui.locales); // ["bn-IN", "cy-GB", "da-DK", ...]
+  console.log(addOnUISdk.app.ui.locales); // ["bn-IN", "cy-GB", ...]
 
   // Get the current locale
   console.log(addOnUISdk.app.ui.locale); // "en-US"
@@ -68,16 +68,15 @@ addOnUISdk.ready.then(() => {
   console.log(addOnUISdk.app.ui.format); // "en-US"
 
   // Listen to locale changes
-  addOnUISdk.app.on("localechange", data => {
+  addOnUISdk.app.on("localechange", (data) => {
     console.log("The locale is now", data.locale); // "fr-FR"
-    // ... 
+    // ...
   });
 
   // Listen to format changes
-  addOnUISdk.app.on("formatchange", data => {
+  addOnUISdk.app.on("formatchange", (data) => {
     console.log("The format is now", data.format); // "fr-FR"
     // ...
   });
 });
-
 ```

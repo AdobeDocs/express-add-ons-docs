@@ -587,7 +587,7 @@ module.exports = {
             path: "guides/develop/",
           },
           {
-            title: "How-Tos ❇",
+            title: "How-Tos 📌",
             path: "guides/develop/how_tos.md",
             pages: [
               {

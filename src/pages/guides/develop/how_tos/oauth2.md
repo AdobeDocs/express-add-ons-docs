@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: OAuth 2.0
-description:  Understand how to implement OAuth 2.0 authentication and authorization flows, including login, logout, and setup examples.
+description: Understand how to implement OAuth 2.0 authentication and authorization flows, including login, logout, and setup examples.
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
@@ -20,7 +20,7 @@ contributors:
 
 # Using OAuth 2.0
 
-Implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services. 
+Implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services.
 
 A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details and the [import-images-using-oauth](/samples/#import-images-using-oauth) sample add-on for more advanced usage.
 
@@ -41,26 +41,26 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 
 ```json
 {
-    "id": "<ADD_ON_ID>",
-    "name": "<ADD_ON_NAME>",
-    "version": "1.0.0",
-    "manifestVersion": 1,
-    "requirements": {
-        "apps": ["Express"]
-    },
-    "entryPoints": [
-        {
-            "type": "panel",
-            "id": "panel1",
-            "label": {
-                "default": "<ADD_ON_LABEL>"
-            },
-            "main": "index.html",
-            "permissions": {
-                "oauth": ["login.microsoftonline.com", "www.dropbox.com"]
-            }
-        }
-    ]
+  "id": "<ADD_ON_ID>",
+  "name": "<ADD_ON_NAME>",
+  "version": "1.0.0",
+  "manifestVersion": 1,
+  "requirements": {
+    "apps": ["Express"]
+  },
+  "entryPoints": [
+    {
+      "type": "panel",
+      "id": "panel1",
+      "label": {
+        "default": "<ADD_ON_LABEL>"
+      },
+      "main": "index.html",
+      "permissions": {
+        "oauth": ["login.microsoftonline.com", "www.dropbox.com"]
+      }
+    }
+  ]
 }
 ```
 
@@ -70,55 +70,64 @@ Once you complete the setup, you can use the following code snippet as an exampl
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 const DROPBOX_AUTHORIZATION_URL = "https://www.dropbox.com/oauth2/authorize";
 const DROPBOX_TOKEN_URL = "https://api.dropboxapi.com/oauth2/token";
 const DROPBOX_CLIENT_ID = "<DROPBOX_CLIENT_ID>";
 const DROPBOX_SCOPE = "<DROPBOX_SPACE_SEPARATED_SCOPES>";
- 
+
 const ONEDRIVE_AUTHORIZATION_URL = "https://login.microsoftonline.com/<AZURE_AD_TENANT_ID>/oauth2/v2.0/authorize";
 const ONEDRIVE_TOKEN_URL = "https://login.microsoftonline.com/<AZURE_AD_TENANT_ID>/oauth2/v2.0/token";
 const ONEDRIVE_CLIENT_ID = "<ONEDRIVE_CLIENT_ID>";
 const ONEDRIVE_SCOPE = "<ONEDRIVE_SPACE_SEPARATED_SCOPES>";
 const OWN_REDIRECT_URI = "<OWN_REDIRECT_URI>";
- 
+
 addOnUISdk.ready.then(() => {
-    // 'oauthUtils' is a helper javascript module (included with the OAuth template) which provides utility functions to:
-    // 1. generateChallenge()     Generate the 'code_challenge' and 'code_verifier' parameters that are essential in the OAuth 2.0 workflow.
-    // 2. generateAccessToken()   Generate an 'access_token' and a 'refresh_token' using the 'code' and 'redirectUri' received on successful authorization.
-    // 3. getAccessToken()        Get an always valid 'access_token'.
-     
-    const challenge = await oauthUtils.generateChallenge();     
-    await authorize(challenge);         
+  // 'oauthUtils' is a helper javascript module (included with
+  // the OAuth template) which provides utility functions to:
+
+  // 1. Generate the 'code_challenge' and 'code_verifier' parameters
+  // that are essential in the OAuth 2.0 workflow.
+  // generateChallenge()
+
+  // 2. Generate an 'access_token' and a 'refresh_token' using the
+  // 'code' and 'redirectUri' received on successful authorization.
+  // generateAccessToken()
+
+  // Get an always valid 'access_token'.
+  // 3. getAccessToken()
+  const challenge = await oauthUtils.generateChallenge();
+  await authorize(challenge);
 });
- 
+
 function authorize(challenge) {
-    // Trigger the OAuth 2.0 based authorization which opens up a sign-in window for the user
-    // and returns an authorization code which can be used to obtain an access_token.
-    const { id, code, redirectUri, result } = await oauth.authorize({
-        authorizationUrl: DROPBOX_AUTHORIZATION_URL,
-        clientId: DROPBOX_CLIENT_ID,
-        scope: DROPBOX_SCOPE,
-        codeChallenge: challenge.codeChallenge
-    });
- 
-    const { status, description } = result;
-    if (status !== "SUCCESS") {
-        throw new Error(`Status: ${status} | Description: ${description}`);
-    }
- 
-    // Generate the access_token which can be used to verify the identity of the user and
-    // grant them access to the requested resource.
-    await oauthUtils.generateAccessToken({
-        id,
-        clientId: DROPBOX_CLIENT_ID,
-        codeVerifier: challenge.codeVerifier,
-        code,
-        tokenUrl: DROPBOX_TOKEN_URL,
-        redirectUri
-    });
- 
-    const accessToken = await oauthUtils.getAccessToken(id);
+  // Trigger the OAuth 2.0 based authorization which opens up a
+  // sign-in window for the user and returns an authorization code
+  // which can be used to obtain an access_token.
+  const { id, code, redirectUri, result } = await oauth.authorize({
+    authorizationUrl: DROPBOX_AUTHORIZATION_URL,
+    clientId: DROPBOX_CLIENT_ID,
+    scope: DROPBOX_SCOPE,
+    codeChallenge: challenge.codeChallenge
+  });
+
+  const { status, description } = result;
+  if (status !== "SUCCESS") {
+    throw new Error(`Status: ${status} | Description: ${description}`);
+  }
+
+  // Generate the access_token which can be used to verify the identity
+  // of the user and grant them access to the requested resource.
+  await oauthUtils.generateAccessToken({
+    id,
+    clientId: DROPBOX_CLIENT_ID,
+    codeVerifier: challenge.codeVerifier,
+    code,
+    tokenUrl: DROPBOX_TOKEN_URL,
+    redirectUri
+  });
+
+  const accessToken = await oauthUtils.getAccessToken(id);
 }
 ```
 

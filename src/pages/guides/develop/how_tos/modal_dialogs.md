@@ -11,16 +11,17 @@ keywords:
   - Extensibility
   - API
 title: Modal Dialogs
-description:  Modal Dialogs.
+description: Modal Dialogs.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
+
 # Modal Dialogs
 
-When you need to pop up a dialog to show a certain message, such as an informational, warning, or error message, you can use a modal dialog. 
+When you need to pop up a dialog to show a certain message, such as an informational, warning, or error message, you can use a modal dialog.
 
-Below are some examples of the different types. Also, check out the SDK references for details on how to [show](/references/addonsdk/addonsdk-app.md#showmodaldialog) or [programmatically close a dialog](/references/addonsdk/runtime-dialog.md#close), as well as the [dialog add-on sample](/samples.md#dialog-add-on) for more details. 
+Below are some examples of the different types. Also, check out the SDK references for details on how to [show](/references/addonsdk/addonsdk-app.md#showmodaldialog) or [programmatically close a dialog](/references/addonsdk/runtime-dialog.md#close), as well as the [dialog add-on sample](/samples.md#dialog-add-on) for more details.
 
 ## Simple Modal Dialog
 
@@ -30,29 +31,28 @@ You can show a dialog with the [`addOnUISdk.app.showModalDialog()`](../../../ref
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 addOnUISdk.ready.then(() => {
   // Utility function to show a confirmation dialog
   async function showConfirmDialog() {
     try {
-
       // Dialog Settings
       const dialogOptions = {
         // Available variants:
-        // confirmation, information, warning, destructive, error, input, custom
+        // confirmation, information, warning,
+        // destructive, error, input, custom
         variant: "confirmation",
         title: "Enable smart Filters",
-        description: "Smart filters are nondestructive, editable filters.",
+        description: "Smart filters are editable filters.",
         // Available button labels: primary, secondary, cancel
         buttonLabels: { primary: "Enable", cancel: "Cancel" },
       };
 
       // Show the dialog
       const result = await addOnUISdk.app.showModalDialog(dialogOptions);
-      
-      // Log the button type clicked, returns either "primary" or "cancel"
-      console.log("Button type clicked " + result.buttonType); 
-    
+
+      // Log the button type clicked, return either "primary" or "cancel"
+      console.log("Button type clicked " + result.buttonType);
     } catch (error) {
       console.log("Error showing modal dialog:", error);
     }
@@ -62,7 +62,7 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-### Input Modal Dialog 
+### Input Modal Dialog
 
 A dialog of variant `input` allows you to accept input from the user. The construction of the dialog is similar to the previous example, but with an additional [`field`](../../../references/addonsdk/addonsdk-app.md#field) object that defines the input field and has a `label`, `placeholder` and `fieldType` properties. In addition to the `buttonType`, the `fieldValue` is returned in the result object of the [`addOnUISdk.app.showModalDialog()`](../../../references/addonsdk/addonsdk-app.md#showmodaldialog) method.
 
@@ -70,34 +70,34 @@ A dialog of variant `input` allows you to accept input from the user. The constr
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 addOnUISdk.ready.then(() => {
   // Utility function to show an input dialog
   async function showInputDialog() {
     try {
-
       // Dialog Settings
       const inputDialogOptions = {
-        variant: "input",                   // 👈
+        variant: "input", // 👈
         title: "Please enter your key",
         description: "Your API key",
-        buttonLabels: { cancel: "Cancel" },           
-        field: {                            // 👈
+        buttonLabels: { cancel: "Cancel" },
+        field: {
+          // 👈
           label: "API Key",
-          placeholder: "Enter API key", 
+          placeholder: "Enter API key",
           fieldType: "text",
         },
-      }
+      };
 
       // Show the dialog
-      const inputDialogResult = 
-        await addOnUISdk.app.showModalDialog(inputDialogOptions);
-      
+      const inputDialogResult = await addOnUISdk.app.showModalDialog(
+        inputDialogOptions
+      );
+
       if (inputDialogResultwi.buttonType === "primary") {
         // returns the input the user entered if they didn't cancel
-        console.log("Field value " + inputDialogResult.fieldValue);  // 👈
+        console.log("Field value", inputDialogResult.fieldValue); // 👈
       }
-    
     } catch (error) {
       console.log("Error showing modal dialog:", error);
     }
@@ -115,27 +115,26 @@ If you need to show a dialog with custom content, you can use the `custom` varia
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 addOnUISdk.ready.then(() => {
   // Utility function to show a custom dialog
   async function showCustomDialog() {
     try {
-
       // Dialog Settings
       const customDialogOptions = {
         variant: "custom",
         title: "Custom Modal",
         src: "dialog.html", // use content from this html file
-        size: { width: 600, height: 400 }
+        size: { width: 600, height: 400 },
       };
 
       // Show the dialog
-      const customDialogResult = 
-        await addOnUISdk.app.showModalDialog(customDialogOptions);
+      const customDialogResult = await addOnUISdk.app.showModalDialog(
+        customDialogOptions
+      );
 
       // Log the result object
       console.log("Custom dialog result " + customDialogResult.result);
-    
     } catch (error) {
       console.log("Error showing modal dialog:", error);
     }
@@ -149,21 +148,21 @@ Inside the custom dialog's HTML file, you can use the [`addOnUISdk.instance.runt
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
 
 closeButton.onsubmit = () => {
   // User canceled the operation, close the dialog with no result
   addOnUISdk.instance.runtime.dialog.close();
-}
+};
 
 createButton.onsubmit = () => {
   // return an object, to be captured in the result object
   addOnUISdk.instance.runtime.dialog.close({
-    selectedDesign: "grid-layout"
+    selectedDesign: "grid-layout",
   });
-}
+};
 ```
 
 ## Use Cases
