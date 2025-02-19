@@ -6,10 +6,10 @@
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Variant of [ParagraphStylesRange](ParagraphStylesRange.md) with all style fields optional, along with the text range they apply to. Used for the
+A variant of [ParagraphStylesRange](ParagraphStylesRange.md) with all style fields optional and the text range they apply to. Used for the
 paragraphStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults.
 
-Paragraphs are separated by newline characters (`\n`) in the text content. Ranges specified here should align with
+The text content separates Paragraphs by newline characters (`\n`). The ranges specified here should align with
 those boundaries.
 
 ## Extends
@@ -37,7 +37,7 @@ such as emojis are considered to have a length of 2.
 • `optional` **lineSpacing**: `number`
 
 Spacing between lines, aka leading, expressed as a multiple of the font size's default spacing - ex. 1.5 = 150% of normal.
-Only affects the space *between* lines, not the space above the first line or below the last line.
+It only affects the space *between* lines, not the space above the first line or below the last line.
 
 #### Inherited from
 
@@ -59,7 +59,7 @@ Only affects the space *between* lines, not the space above the first line or be
 
 • `optional` **spaceAfter**: `number`
 
-Space after paragraph (in points). Has no effect on the last paragraph. Additive to next paragraph's spaceBefore
+Space after paragraph (in points). It does not affect the last paragraph. It is additive to the next paragraph's spaceBefore
 (adjacent spacing does not merge/collapse together).
 
 #### Inherited from
@@ -72,7 +72,7 @@ Space after paragraph (in points). Has no effect on the last paragraph. Additive
 
 • `optional` **spaceBefore**: `number`
 
-Space before paragraph (in points). Has no effect on the first paragraph. Additive to previous paragraph's spaceAfter
+Space before paragraph (in points). It does not affect the first paragraph. It is additive to previous paragraph's spaceAfter
 (adjacent spacing does not merge/collapse together).
 
 #### Inherited from

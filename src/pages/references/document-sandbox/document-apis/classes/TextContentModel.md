@@ -95,7 +95,7 @@ The styles applied to different paragraphs of this text content.
 Apply styles to different paragraphs of this text content. Any style properties that are not provided are reset to their defaults.
 When **getting** styles, all properties are always provided.
 
-Paragraphs are separated by newline characters (`\n`) in the text content. Ranges specified here should align with
+The text content separates Paragraphs by newline characters (`\n`). The ranges specified here should align with
 those boundaries. If multiple ranges provided overlap a single paragraph, the first one to overlap is applied to the
 entire paragraph.
 
@@ -154,10 +154,10 @@ The styles to apply.
 
 • **range?**
 
-The start and length of character sequence to which the styles should be applied.
-If not specified the styles will be applied to the entire piece of text content flow.
+The start and length of the character sequence to which the styles should be applied.
+The styles will be applied to the entire text content flow if not specified.
 If the specified range doesn't align well with the paragraph boundaries, the range will be expanded to cover the
-entire paragraphs it overlaps.
+entire paragraphs, it overlaps.
 
 • **range.length?**: `number`
 

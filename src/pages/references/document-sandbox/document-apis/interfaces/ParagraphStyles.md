@@ -24,7 +24,7 @@ any range of characters, even a short span like one single word).
 • **lineSpacing**: `number`
 
 Spacing between lines, aka leading, expressed as a multiple of the font size's default spacing - ex. 1.5 = 150% of normal.
-Only affects the space *between* lines, not the space above the first line or below the last line.
+It only affects the space *between* lines, not the space above the first line or below the last line.
 
 #### Inherited from
 
@@ -42,7 +42,7 @@ Only affects the space *between* lines, not the space above the first line or be
 
 • **spaceAfter**: `number`
 
-Space after paragraph (in points). Has no effect on the last paragraph. Additive to next paragraph's spaceBefore
+Space after paragraph (in points). It does not affect the last paragraph. It is additive to the next paragraph's spaceBefore
 (adjacent spacing does not merge/collapse together).
 
 #### Inherited from
@@ -55,7 +55,7 @@ Space after paragraph (in points). Has no effect on the last paragraph. Additive
 
 • **spaceBefore**: `number`
 
-Space before paragraph (in points). Has no effect on the first paragraph. Additive to previous paragraph's spaceAfter
+Space before paragraph (in points). It does not affect the first paragraph. It is additive to previous paragraph's spaceAfter
 (adjacent spacing does not merge/collapse together).
 
 #### Inherited from

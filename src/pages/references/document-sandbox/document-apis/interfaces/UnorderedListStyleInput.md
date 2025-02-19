@@ -30,10 +30,10 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 
 • `optional` **marker**: `string`
 
-Marker symbol to use. If undefined, defaults to a different symbol depending on the paragraph's indent level.
+Marker symbol to use. If undefined, it defaults to a different symbol depending on the paragraph's indent level.
 The defaults for increasing indent are: •, ◦, ◼, ◻, and then they repeat.
 Markers are always displayed using the default font (SourceSans3 Regular), regardless of the font(s) used in the
-paragraph's text content. If the default font does not support the symbol, a default marker is used instead.
+paragraph's text content. A default marker is used instead if the default font does not support the symbol.
 
 Text or Unicode glyphs are accepted to represent the list marker.
 

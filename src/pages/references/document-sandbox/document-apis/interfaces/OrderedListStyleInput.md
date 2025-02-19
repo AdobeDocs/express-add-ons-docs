@@ -30,8 +30,8 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 
 • `optional` **numbering**: [`OrderedListNumbering`](../enumerations/OrderedListNumbering.md)
 
-The numbering style to use. If undefined, defaults to a different type depending on the paragraph's indent level.
-The defaults for increasing indent are: 1, a, i, I, and then they repeat.
+The numbering style to use. If undefined, it defaults to a different type depending on the paragraph's indent level.
+The defaults for increasing indent are 1, a, i, I, and then they repeat.
 These markers and the prefix/postfix strings (if any) are displayed using the same font as the start of the
 paragraph's text content.
 
