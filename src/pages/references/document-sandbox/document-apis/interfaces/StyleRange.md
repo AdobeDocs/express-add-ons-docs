@@ -8,6 +8,8 @@ Represents a range of characters defined by a length (and implicitly started at 
 
 -   [`CharacterStylesRangeInput`](CharacterStylesRangeInput.md)
 -   [`CharacterStylesRange`](CharacterStylesRange.md)
+-   [`ParagraphStylesRangeInput`](ParagraphStylesRangeInput.md)
+-   [`ParagraphStylesRange`](ParagraphStylesRange.md)
 
 ## Properties
 
