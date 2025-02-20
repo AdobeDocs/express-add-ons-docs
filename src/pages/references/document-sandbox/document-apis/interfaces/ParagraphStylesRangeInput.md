@@ -9,7 +9,7 @@
 A variant of [ParagraphStylesRange](ParagraphStylesRange.md) with all style fields optional and the text range they apply to. Used for the
 paragraphStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults.
 
-The text content separates Paragraphs by newline characters (`\n`). The ranges specified here should align with
+Paragraphs are separated by newline characters (`\n`). The ranges specified here should align with
 those boundaries.
 
 ## Extends

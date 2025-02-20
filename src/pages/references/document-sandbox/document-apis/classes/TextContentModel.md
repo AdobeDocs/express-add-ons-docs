@@ -95,7 +95,7 @@ The styles applied to different paragraphs of this text content.
 Apply styles to different paragraphs of this text content. Any style properties that are not provided are reset to their defaults.
 When **getting** styles, all properties are always provided.
 
-The text content separates Paragraphs by newline characters (`\n`). The ranges specified here should align with
+Paragraphs are separated by newline characters (`\n`). The ranges specified here should align with
 those boundaries. If multiple ranges provided overlap a single paragraph, the first one to overlap is applied to the
 entire paragraph.
 
