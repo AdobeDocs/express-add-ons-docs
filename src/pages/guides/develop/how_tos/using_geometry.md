@@ -22,38 +22,23 @@ contributors:
 
 Adobe Express provides a set of geometric shapes that you can create and style programmatically. These shapes are instances of the [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/RectangleNode.md) and [`EllipseNode`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md) classes, and you can draw them using the [`editor.createRectangle()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createrectangle) and [`editor.createEllipse()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createellipse) methods, respectively.
 
-### Example: Adding Shapes
+### Example: Adding a Rectangle
 
 ```js
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
-const shape = editor.createRectangle(); // or editor.createEllipse();
+const rect = editor.createRectangle();
 
 // Define rectangle dimensions.
-shape.width = 100;
-shape.height = 100;
+rect.width = 100;
+rect.height = 100;
 
 // The current page, where the rectangle will be placed
 const currentPage = editor.context.currentPage;
 
-console.log({ currentPage });
-// Center the rectangle in the page.
-shape.setPositionInParent(
-  {
-    // Where to move the rectangle - the page center
-    x: currentPage.width / 2,
-    y: currentPage.height / 2,
-  },
-  {
-    // Reference point of the rectangle - its center
-    x: shape.width / 2,
-    y: shape.height / 2,
-  }
-);
-
 // Append the rectangle to the page.
-currentPage.artboards.first.children.append(shape);
+currentPage.artboards.first.children.append(rect);
 ```
 
 <InlineAlert slots="header, text, text1" variant="warning"/>
@@ -74,21 +59,44 @@ const s2 = editor.createEllipse();
 editor.context.currentPage.artboards.first.children.append(s1, s2); // 👈
 ```
 
+### Example: Adding an Ellipse
+
+Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md#rx) and [`ry`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md#ry) (radius x, radius y) instead.
+
+<InlineAlert slots="text" variant="warning"/>
+
+An ellipse with a radius of 200 on the x-axis and 100 on the y-axis will result in a shape with 400 wide (`rx` times two) and a 200 tall (`ry` times two)!
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+const ellipse = editor.createEllipse();
+ellipse.rx = 200; // radius x 👈
+ellipse.ry = 100; // radius y 👈
+
+console.log(ellipse.boundsLocal);
+// { x: 0, y: 0, width: 400, height: 200 } 👈 mind the actual bounds!
+
+// The current page, where the rectangle will be placed
+const currentPage = editor.context.currentPage;
+
+// Append the rectangle to the page.
+currentPage.artboards.first.children.append(rect);
+```
+
 ### Example: Styling Shapes
 
 Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create a rectangle with a fill and a stroke.
 
 ```js
 // sandbox/code.js
-
 import { editor, colorUtils, constants } from "express-document-sdk";
 
 // Create the shape
 const ellipse = editor.createEllipse();
-ellipse.width = 100;
-ellipse.height = 50;
-// Shift the ellipse to the right and down a bit
-ellipse.translation = { x: 50, y: 50 };
+ellipse.rx = 200;
+ellipse.ry = 100;
 
 // 👇 Apply the fill color
 ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F3D988"));
@@ -113,6 +121,54 @@ editor.context.insertionParent.children.append(ellipse);
 <InlineAlert slots="text" variant="info"/>
 
 If you need a refresher on how to create and apply colors, check out [Using Colors](./using_color.md).
+
+### Example: Transforming Shapes
+
+Shapes can be moved around by setting their `translation` property, which is an object with `x` and `y` properties.
+
+```js
+//... same code to create the ellipse as before
+ellipse.translation = { x: 50, y: 50 };
+```
+
+A more advanced way to move shapes is by using the `setPositionInParent()` method, which takes two arguments: the **desired position** and the **reference point** of the shape.
+
+```js
+const artboard = editor.context.currentPage.artboards.first;
+ellipse.setPositionInParent(
+  // Where to move the shape - the artboard center
+  { x: artboard.width / 2, y: artboard.height / 2 },
+  // Reference point of the shape
+  { x: ellipse.rx, y: ellipse.ry } // the ellipse's center 👈
+);
+```
+
+![Centering an ellipse](./images/shapes_ellipse-center.jpg)
+
+<InlineAlert slots="text, text2" variant="warning"/>
+
+If that was a Rectangle instead, you'd use the `width` and `height` properties divided by two, instead of `rx` and `ry` (which are already half the shape's width and height) to center it on the artboard.
+
+```js
+// Centering a rectangle
+rectangle.setPositionInParent(
+  // Where to move the shape - the artboard center
+  { x: artboard.width / 2, y: artboard.height / 2 },
+  // Reference point of the shape
+  { x: rectangle.width / 2, y: rectangle.height / 2 } // 👈 👀
+);
+```
+
+You cannot rotate shapes by setting their `rotation` property, though; it's read-only, like `rotationInScreen`, which takes into account any cumulative rotations from the node's parent container. To rotate a shape, you must use `setRotationInParent()` instead, passing the **desired angle** in degrees, and the **point to rotate around**, in the shape's local coordinates.
+
+```js
+// sitting on the top-left corner
+ellipse.translation = { x: 0, y: 0 };
+// rotate 15 degrees around the ellipse's top-left corner
+ellipse.setRotationInParent(15, { x: 0, y: 0 });
+```
+
+![Rotating shapes](./images/shapes_rotation.jpg)
 
 ## Creating Paths
 
