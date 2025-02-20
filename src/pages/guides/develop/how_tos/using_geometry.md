@@ -14,10 +14,105 @@ title: Using Shapes
 description: Using Shapes.
 contributors:
   - https://github.com/undavide
-  - https://github.com/hollyschinsky
 ---
 
-# Using Shapes
+# Using Geometry
+
+## Creating Shapes
+
+Adobe Express provides a set of geometric shapes that you can create and style programmatically. These shapes are instances of the [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/RectangleNode.md) and [`EllipseNode`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md) classes, and you can draw them using the [`editor.createRectangle()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createrectangle) and [`editor.createEllipse()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createellipse) methods, respectively.
+
+### Example: Adding Shapes
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+const shape = editor.createRectangle(); // or editor.createEllipse();
+
+// Define rectangle dimensions.
+shape.width = 100;
+shape.height = 100;
+
+// The current page, where the rectangle will be placed
+const currentPage = editor.context.currentPage;
+
+console.log({ currentPage });
+// Center the rectangle in the page.
+shape.setPositionInParent(
+  {
+    // Where to move the rectangle - the page center
+    x: currentPage.width / 2,
+    y: currentPage.height / 2,
+  },
+  {
+    // Reference point of the rectangle - its center
+    x: shape.width / 2,
+    y: shape.height / 2,
+  }
+);
+
+// Append the rectangle to the page.
+currentPage.artboards.first.children.append(shape);
+```
+
+<InlineAlert slots="header, text, text1" variant="warning"/>
+
+Creating vs. Adding to the page
+
+Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/ArtboardNode.md), a [Group](./grouping_elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/ContainerNode.md) interface.
+
+You usually reference the container using [`editor.context`](../../../references/document-sandbox/document-apis/classes/Context.md), which provides access to the current page, selection, and other useful properties.
+
+Please note that you can append multiple shapes at once with the `append()` method:
+
+```js
+const s1 = editor.createRectangle();
+const s2 = editor.createEllipse();
+// ... set all properties ...
+
+editor.context.currentPage.artboards.first.children.append(s1, s2); // 👈
+```
+
+### Example: Styling Shapes
+
+Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create a rectangle with a fill and a stroke.
+
+```js
+// sandbox/code.js
+
+import { editor, colorUtils, constants } from "express-document-sdk";
+
+// Create the shape
+const ellipse = editor.createEllipse();
+ellipse.width = 100;
+ellipse.height = 50;
+// Shift the ellipse to the right and down a bit
+ellipse.translation = { x: 50, y: 50 };
+
+// 👇 Apply the fill color
+ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F3D988"));
+
+// 👇 Create the stroke
+const stroke = editor.makeStroke({
+  color: colorUtils.fromHex("#E29E4E"),
+  width: 20,
+  position: constants.StrokePosition.inside,
+  dashPattern: [50, 2],
+});
+
+// 👇 Apply the stroke
+ellipse.stroke = stroke;
+
+// Add the shape to the document
+editor.context.insertionParent.children.append(ellipse);
+```
+
+![Ellipse with fill and stroke](./images/shapes_ellipse.jpg)
+
+<InlineAlert slots="text" variant="info"/>
+
+If you need a refresher on how to create and apply colors, check out [Using Colors](./using_color.md).
 
 ## Creating Paths
 
@@ -27,6 +122,8 @@ Paths are a versatile tool to create complex shapes in Adobe Express. The [`edit
 
 ```js
 // sandbox/code.js
+import { editor } from "express-document-sdk";
+
 const p1 = editor.createPath(
   `M224,151L142,151C142,151 145.69,129.772 144,119C147.578,121.515 153.324,124.558 153,124C153.551,119.627 149,115 149,115C154.041,111.701 155.245,104.477 150,110C151.775,105.754 151.55,100.222 146,107C140.45,113.778 150.733,97.726 152,89C153.267,80.274 143.163,79.42 137,77C130.837,74.58 133.264,72.337 133,71C130.052,80.34 126.261,82.078 123,81C119.567,79.866 119.164,65.513 125,57C120.007,59.519 119,58 119,58C128.157,53.412 134.031,44.13 132,42C129.969,39.87 114.451,41.06 106,54C97.549,66.94 99.126,73.868 104,79C96.435,82.127 72,99 72,99C72,99 65.521,102.836 59,102C59.031,109.474 62.37,105.88 65,105C61.399,110.264 61.382,114.8 62,119C64.225,116.9 64,115 64,115C64,115 64.124,118.136 64,122C65.53,120.78 66,119 66,119C66,119 65.324,128.405 66.474,127.387C69.247,124.933 72.234,118.577 74,105C78.171,103.746 106,92 106,92C109.996,104.248 115.941,119.738 112,151L91,151`
 );
@@ -34,7 +131,7 @@ const p1 = editor.createPath(
 editor.context.insertionParent.children.append(p1);
 ```
 
-![Path](./images/paths_linea.png)
+![Google "Osvaldo Cavandoli". You're welcome](./images/paths_linea.png)
 
 ### Example: Multiple paths
 
@@ -42,6 +139,8 @@ Combining and grouping multiple paths, you can create complex shapes, like in th
 
 ```js
 // sandbox/code.js
+import { editor } from "express-document-sdk";
+
 const p1 = editor.createPath(
   `M310,222 A92,92 0 1,0 126,222 A92,92 0 1,0 310,222 Z`
 );
@@ -84,6 +183,7 @@ editor.context.insertionParent.children.append(g);
 
 ```js
 // sandbox/code.js
+import { editor } from "express-document-sdk";
 
 const p1 = editor.createPath(/* same as before... */);
 const p2 = editor.createPath(/* same as before... */);
@@ -117,7 +217,3 @@ editor.context.insertionParent.children.append(g);
 ```
 
 ![Path](./images/paths_styled.png)
-
-<InlineAlert slots="text" variant="info"/>
-
-If you need a refresher on how to create and apply colors, check out [Using Colors](./using_color.md).

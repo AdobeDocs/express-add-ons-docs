@@ -587,7 +587,7 @@ module.exports = {
             path: "guides/develop/",
           },
           {
-            title: "How-Tos 📌",
+            title: "How-Tos",
             path: "guides/develop/how_tos.md",
             pages: [
               {
@@ -663,8 +663,12 @@ module.exports = {
                     path: "guides/develop/how_tos/using_text.md",
                   },
                   {
-                    title: "Using Shapes",
-                    path: "guides/develop/how_tos/using_shapes.md",
+                    title: "Using Geometry",
+                    path: "guides/develop/how_tos/using_geometry.md",
+                  },
+                  {
+                    title: "Using Color",
+                    path: "guides/develop/how_tos/using_color.md",
                   },
                   {
                     title: "Using Images",
@@ -683,10 +687,6 @@ module.exports = {
                     path: "guides/develop/how_tos/using_pdf_powerpoint.md",
                   },
                   {
-                    title: "Using Color",
-                    path: "guides/develop/how_tos/using_color.md",
-                  },
-                  {
                     title: "Grouping Elements",
                     path: "guides/develop/how_tos/grouping_elements.md",
                   },
@@ -694,10 +694,10 @@ module.exports = {
                     title: "Positioning Elements",
                     path: "guides/develop/how_tos/positioning_elements.md",
                   },
-                  {
-                    title: "Replacing Elements",
-                    path: "guides/develop/how_tos/replacing_elements.md",
-                  },
+                  // {
+                  //   title: "Replacing Elements",
+                  //   path: "guides/develop/how_tos/replacing_elements.md",
+                  // },
                 ],
               },
               {
