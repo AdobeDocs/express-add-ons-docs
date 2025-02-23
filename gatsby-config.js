@@ -698,10 +698,6 @@ module.exports = {
                     title: "Positioning Elements",
                     path: "guides/develop/how_tos/positioning_elements.md",
                   },
-                  // {
-                  //   title: "Replacing Elements",
-                  //   path: "guides/develop/how_tos/replacing_elements.md",
-                  // },
                 ],
               },
               {
