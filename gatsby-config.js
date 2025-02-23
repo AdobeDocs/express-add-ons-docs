@@ -709,15 +709,15 @@ module.exports = {
                   //   path: "guides/develop/how_tos/authoring_adobe_express_content.md",
                   // },
                   {
-                    title: "Getting Document Metadata",
+                    title: "Document Metadata",
                     path: "guides/develop/how_tos/document_metadata.md",
                   },
                   {
-                    title: "Getting Page Metadata",
+                    title: "Page Metadata",
                     path: "guides/develop/how_tos/page_metadata.md",
                   },
                   {
-                    title: "Using Element Metadata",
+                    title: "Element Metadata",
                     path: "guides/develop/how_tos/element_metadata.md",
                   },
                 ],
