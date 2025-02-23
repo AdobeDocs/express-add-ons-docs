@@ -122,54 +122,6 @@ editor.context.insertionParent.children.append(ellipse);
 
 If you need a refresher on how to create and apply colors, check out [Using Colors](./using_color.md).
 
-### Example: Transforming Shapes
-
-Shapes can be moved around by setting their `translation` property, which is an object with `x` and `y` properties.
-
-```js
-//... same code to create the ellipse as before
-ellipse.translation = { x: 50, y: 50 };
-```
-
-A more advanced way to move shapes is by using the `setPositionInParent()` method, which takes two arguments: the **desired position** and the **reference point** of the shape.
-
-```js
-const artboard = editor.context.currentPage.artboards.first;
-ellipse.setPositionInParent(
-  // Where to move the shape - the artboard center
-  { x: artboard.width / 2, y: artboard.height / 2 },
-  // Reference point of the shape
-  { x: ellipse.rx, y: ellipse.ry } // the ellipse's center 👈
-);
-```
-
-![Centering an ellipse](./images/shapes_ellipse-center.jpg)
-
-<InlineAlert slots="text, text2" variant="warning"/>
-
-If that was a Rectangle instead, you'd use the `width` and `height` properties divided by two, instead of `rx` and `ry` (which are already half the shape's width and height) to center it on the artboard.
-
-```js
-// Centering a rectangle
-rectangle.setPositionInParent(
-  // Where to move the shape - the artboard center
-  { x: artboard.width / 2, y: artboard.height / 2 },
-  // Reference point of the shape
-  { x: rectangle.width / 2, y: rectangle.height / 2 } // 👈 👀
-);
-```
-
-You cannot rotate shapes by setting their `rotation` property, though; it's read-only, like `rotationInScreen`, which takes into account any cumulative rotations from the node's parent container. To rotate a shape, you must use `setRotationInParent()` instead, passing the **desired angle** in degrees, and the **point to rotate around**, in the shape's local coordinates.
-
-```js
-// sitting on the top-left corner
-ellipse.translation = { x: 0, y: 0 };
-// rotate 15 degrees around the ellipse's top-left corner
-ellipse.setRotationInParent(15, { x: 0, y: 0 });
-```
-
-![Rotating shapes](./images/shapes_rotation.jpg)
-
 ## Creating Paths
 
 Paths are a versatile tool to create complex shapes in Adobe Express. The [`editor.createPath()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createpath) method returns an instance of the [`PathNode`](../../../references/document-sandbox/document-apis/classes/PathNode.md) class, and accepts one [SVG string](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) as the input.

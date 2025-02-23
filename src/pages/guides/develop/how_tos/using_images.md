@@ -11,11 +11,12 @@ keywords:
   - Extensibility
   - API
 title: Using Images
-description:  Using Images.
+description: Using Images.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
+
 # Using Images
 
 ## Importing Images into the page
@@ -27,6 +28,7 @@ It expects a `Blob` object as the first argument, and an optional [`MediaAttribu
 ### Example
 
 ```js
+// sandbox/code.js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
@@ -34,14 +36,14 @@ addOnUISdk.ready.then(async () => {
     const imageUrl = "https://placehold.co/600x400.png";
     const image = await fetch(imageUrl);
     const imageBlob = await image.blob();
-  
+
     await addOnUISdk.app.document.addImage(
-      imageBlob,                      // 👈 Blob object
-      {                               
-        title: "Placeholder image",   // 👈 Optional MediaAttributes
-        author: "Adobe Developer"
+      imageBlob, // 👈 Blob object
+      {
+        title: "Placeholder image", // 👈 Optional MediaAttributes
+        author: "Adobe Developer",
       }
-    )
+    );
   } catch (e) {
     console.error("Failed to add the image", e);
   }
@@ -51,11 +53,12 @@ addOnUISdk.ready.then(async () => {
 Please note that you can use `fetch()` also to get images that are local to the add-on; in this case, you can use paths relative to the add-on's root.
 
 ```js
+// sandbox/code.js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {
-    const imageUrl = "./600x400.png";     // 👈 Local image 
+    const imageUrl = "./600x400.png";     // 👈 Local image
     const image = await fetch(imageUrl);
     // ... same as before
 ```
@@ -73,6 +76,7 @@ Importing a `GIF` via `addImage()` won't work as expected, as the method convert
 ### Example
 
 ```js
+// sandbox/code.js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
@@ -80,11 +84,14 @@ addOnUISdk.ready.then(async () => {
     const gifImageUrl = "https://path/to/a/file.gif"; // 👈 a GIF image
     const gifImage = await fetch(gifImageUrl);
     const gifImageBlob = await gifImage.blob();
-  
-    await addOnUISdk.app.document.addAnimatedImage( // 👈 
-      gifImageBlob,                   // 👈 Blob object
-      { /* ... */ }                   // 👈 Optional MediaAttributes
-    )
+
+    await addOnUISdk.app.document.addAnimatedImage(
+      // 👈
+      gifImageBlob, // 👈 Blob object
+      {
+        /* ... */
+      } // 👈 Optional MediaAttributes
+    );
   } catch (e) {
     console.error("Failed to add the image", e);
   }

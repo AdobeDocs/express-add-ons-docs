@@ -26,6 +26,7 @@ Colors in Adobe Express are created as instances of the [`Color`](../../../refer
 The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRgb()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
 
 ```js
+// sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
 // Alpha is optional, defaults to 1

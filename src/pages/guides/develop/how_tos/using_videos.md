@@ -26,6 +26,7 @@ Similarly to Images and Audio, you can add Videos to the page using the [`addVid
 ### Example
 
 ```js
+// sandbox/code.js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
@@ -47,6 +48,7 @@ addOnUISdk.ready.then(async () => {
 Please note that you can use `fetch()` also to get videos that are local to the add-on; in this case, you can use paths relative to the add-on's root.
 
 ```js
+// sandbox/code.js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {

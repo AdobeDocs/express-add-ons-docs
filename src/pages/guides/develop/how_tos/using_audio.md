@@ -26,6 +26,7 @@ Similarly to Images and Video, you can add Audio to the page using the [`addAudi
 ### Example
 
 ```js
+// sandbox/code.js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
