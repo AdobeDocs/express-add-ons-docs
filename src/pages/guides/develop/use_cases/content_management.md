@@ -132,9 +132,11 @@ async function addVideoFromURL(url) {
 
 If you need to import/add a PDF or a PowerPoint presentation to the document, you can use the designated import methods for each shown in the examples below.
 
-<InlineAlert slots="text" variant="warning"/>
+<!-- <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`importPdf()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#import-content-methods) and [`importPresentation()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#import-content-methods) methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 
+
+**IMPORTANT:** The [`importPdf()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#import-content-methods) and [`importPresentation()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document#import-content-methods) methods are currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Import PDF Example
 

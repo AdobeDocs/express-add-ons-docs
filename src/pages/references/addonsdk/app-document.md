@@ -29,10 +29,10 @@ A resolved `Promise` containing the `id` of the document.
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-function setId(id) { /* ... */ } 
-  
+function setId(id) { /* ... */ }
+
 addOnUISdk.ready.then(() => setId(await addOnUISdk.app.document.id()));
-  
+
 addOnUISdk.app.on("documentAvailable", data => {
   setId(data.documentId);
 });
@@ -63,10 +63,10 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-function setTitle(title) { /* ... */ } 
-  
+function setTitle(title) { /* ... */ }
+
 addOnUISdk.ready.then(() => setTitle(await addOnUISdk.app.document.title()));
-  
+
 addOnUISdk.app.on("documentTitleChange", data => {
   setTitle(data.documentTitle);
 });
@@ -82,9 +82,9 @@ Retrieve the metadata for all of the pages in the document.
 
 #### Parameters
 
-| Name                | Type         | Description   |
-| --------------------| -------------| -----------:  |
-| `options`  | `Object` | [`PageMetadataOptions`](#pagemetadataoptions) object. |
+| Name      | Type     |                                           Description |
+| --------- | -------- | ----------------------------------------------------: |
+| `options` | `Object` | [`PageMetadataOptions`](#pagemetadataoptions) object. |
 
 #### Return Value
 
@@ -99,7 +99,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
- 
+
 // Get metadata of all the pages
 async function logMetadata() {
   try {
@@ -130,23 +130,23 @@ async function logMetadata() {
 
 The metadata of a page.
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `id`          | `string`     | The id of the page.    |
-| `title`       | `string`     | The title of the page. |
-| `size`        | `{ width: number, height: number }` | The size of the page in pixels. |
-| `hasPremiumContent` | `boolean` | `true` if the page has premium content, `false` if not. |
-| `hasTemporalContent` | `boolean` | `true` if the page has timelines, `false` if not. |
-| `pixelsPerInch?`  | `number`  | The pixels per inch of the page. |
-| `isPrintReady?`  | `boolean`  | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics).|
+| Name                 | Type                                |                                                                                                                                                                                                                                                                                                                                                                Description |
+| -------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `id`                 | `string`                            |                                                                                                                                                                                                                                                                                                                                                        The id of the page. |
+| `title`              | `string`                            |                                                                                                                                                                                                                                                                                                                                                     The title of the page. |
+| `size`               | `{ width: number, height: number }` |                                                                                                                                                                                                                                                                                                                                            The size of the page in pixels. |
+| `hasPremiumContent`  | `boolean`                           |                                                                                                                                                                                                                                                                                                                    `true` if the page has premium content, `false` if not. |
+| `hasTemporalContent` | `boolean`                           |                                                                                                                                                                                                                                                                                                                          `true` if the page has timelines, `false` if not. |
+| `pixelsPerInch?`     | `number`                            |                                                                                                                                                                                                                                                                                                                                           The pixels per inch of the page. |
+| `isPrintReady?`      | `boolean`                           | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
 
 #### `PageMetadataOptions`
 
 This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `range`          | `string`     | Range of the document to get the metadata |
+| Name                 | Type     |                                                        Description |
+| -------------------- | -------- | -----------------------------------------------------------------: |
+| `range`              | `string` |                          Range of the document to get the metadata |
 | `pageIds?: string[]` | `string` | Ids of the pages (Only required when the range is `specificPages`) |
 
 ## Import Content Methods
@@ -161,10 +161,10 @@ Adds an image/gif/Ps/Ai files to the current page.
 
 #### Parameters
 
-| Name          | Type         | Description                   |
-| ------------- | -------------| ----------------------------: |
-| `imageBlob`   | `Blob`       | The image to add to the page. |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
+| Name          | Type                                  |                                                                              Description |
+| ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------: |
+| `imageBlob`   | `Blob`                                |                                                            The image to add to the page. |
+| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -176,21 +176,19 @@ A resolved promise if the image was successfully added to the canvas; otherwise,
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
   try {
-      await document.addImage(blob);
-  }
-  catch(error) {
-      console.log("Failed to add the image to the page.");
+    await document.addImage(blob);
+  } catch (error) {
+    console.log("Failed to add the image to the page.");
   }
 }
 
 // Add image(url) to the current page
 async function addImageFromURL(url) {
   try {
-      const blob = await fetch(url).then(response => response.blob());
-      await document.addImage(blob);
-  }
-  catch(error) {
-      console.log("Failed to add the image to the page.");
+    const blob = await fetch(url).then((response) => response.blob());
+    await document.addImage(blob);
+  } catch (error) {
+    console.log("Failed to add the image to the page.");
   }
 }
 ```
@@ -209,10 +207,10 @@ Adds an animated image (gif) to the current page.
 
 #### Parameters
 
-| Name          | Type         | Description                   |
-| ------------- | -------------| ----------------------------: |
-| `imageBlob`   | `Blob`       | The image to add to the page. |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
+| Name          | Type                                  |                                                                          Description |
+| ------------- | ------------------------------------- | -----------------------------------------------------------------------------------: |
+| `imageBlob`   | `Blob`                                |                                                        The image to add to the page. |
+| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -224,10 +222,9 @@ A resolved promise if the animated image was successfully added to the canvas; o
 // Add animated image(blob) to the current page
 async function addAnimatedImageFromBlob(blob) {
   try {
-      await document.addAnimatedImage(blob);
-  }
-  catch(error) {
-      console.log("Failed to add the animated image to the page.");
+    await document.addAnimatedImage(blob);
+  } catch (error) {
+    console.log("Failed to add the animated image to the page.");
   }
 }
 ```
@@ -246,28 +243,26 @@ Adds a video to the current page.
 
 #### Parameters
 
-| Name          | Type         | Description                   |
-| ------------- | -------------| ----------------------------: |
-| `videoBlob`   | `Blob`       | The video to add to the page. |
+| Name        | Type   |                   Description |
+| ----------- | ------ | ----------------------------: |
+| `videoBlob` | `Blob` | The video to add to the page. |
 
 #### Example Usage
 
 ```js
 async function addVideoFromBlob(blob) {
   try {
-      await document.addVideo(blob);
-  }
-  catch(error) {
-      console.log("Failed to add the video to the page.");
+    await document.addVideo(blob);
+  } catch (error) {
+    console.log("Failed to add the video to the page.");
   }
 }
 
 async function addVideoFromURL(url) {
   try {
-     const blob = await fetch(url).then(response => response.blob());
-     await document.addVideo(blob);
-  }
-  catch(error) {
+    const blob = await fetch(url).then((response) => response.blob());
+    await document.addVideo(blob);
+  } catch (error) {
     console.log("Failed to add the video to the page.");
   }
 }
@@ -283,10 +278,10 @@ Adds audio to the current page.
 
 #### Parameters
 
-| Name          | Type         | Description                         |
-| ------------- | -------------| ---------------------------------:  |
-| `audioBlob`   | `Blob`       | The audio to add to the page.       |
-| `attributes`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
+| Name         | Type                                  |                                                                             Description |
+| ------------ | ------------------------------------- | --------------------------------------------------------------------------------------: |
+| `audioBlob`  | `Blob`                                |                                                           The audio to add to the page. |
+| `attributes` | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
 #### Return Value
 
@@ -296,7 +291,7 @@ A resolved promise if the audio was successfully added to the canvas; otherwise 
 
 ```js
 async function addAudioFromBlob(blob) {
-  try {      
+  try {
       await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
   }
   catch(error) {
@@ -306,7 +301,7 @@ async function addAudioFromBlob(blob) {
 
 async function addAudioFromURL(url) {
   try {
-      const blob = await fetch(url).then(response => response.blob());      
+      const blob = await fetch(url).then(response => response.blob());
       await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
   }
   catch(error) {
@@ -316,10 +311,10 @@ async function addAudioFromURL(url) {
 
 #### `MediaAttributes`
 
-| Name          | Type         | Description                               |
-| ------------- | -------------| ----------------------------------------: |
-| `title`       | `string`     | Media title (mandatory for audio import). |
-| `author?`     | `string`     | Media author |
+| Name      | Type     |                               Description |
+| --------- | -------- | ----------------------------------------: |
+| `title`   | `string` | Media title (mandatory for audio import). |
+| `author?` | `string` |                              Media author |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -329,9 +324,11 @@ Refer to the [importing content use case](../../guides/develop/use_cases/content
 
 Imports a PDF as a new Adobe Express document.
 
-<InlineAlert slots="text" variant="warning"/>
+<!-- Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
 
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+<!-- <InlineAlert slots="text" variant="warning"/> -->
+
+<!--**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 
@@ -339,10 +336,10 @@ Imports a PDF as a new Adobe Express document.
 
 #### Parameters
 
-| Name          | Type         | Description                   |
-| ------------- | -------------| ----------------------------: |
-| `blob`        | `Blob`       | The PDF to add to the page. |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| Name          | Type                                  |                                                                 Description |
+| ------------- | ------------------------------------- | --------------------------------------------------------------------------: |
+| `blob`        | `Blob`                                |                                                 The PDF to add to the page. |
+| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -352,29 +349,27 @@ None
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-  
+
 // Reference to the active document
-const {document} = AddOnSDKAPI.app;
- 
-const mediaAttributes = {title: "Sample.pdf"}
- 
+const { document } = AddOnSDKAPI.app;
+
+const mediaAttributes = { title: "Sample.pdf" };
+
 // Import a PDF. Note this will be imported as a new Adobe Express document.
 function importPdf(blob, mediaAttributes) {
   try {
     document.importPdf(blob, mediaAttributes);
-  }
-  catch(error) {
+  } catch (error) {
     console.log("Failed to import the pdf.");
   }
 }
- 
+
 // Import a PDF from a URL. Note this will be imported as a new Adobe Express document.
 async function importPdfFrom(url) {
   try {
-    const blob = await fetch(url).then(response => response.blob());
-    document.importPdf(blob, {title: "Sample.pdf"});
-  }
-  catch(error) {
+    const blob = await fetch(url).then((response) => response.blob());
+    document.importPdf(blob, { title: "Sample.pdf" });
+  } catch (error) {
     console.log("Failed to import the pdf.");
   }
 }
@@ -384,9 +379,11 @@ async function importPdfFrom(url) {
 
 Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
 
-<InlineAlert slots="text" variant="warning"/>
+<!--Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
 
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+<!-- <InlineAlert slots="text" variant="warning"/> -->
+
+<!-- **IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 
@@ -394,10 +391,10 @@ Imports a presentation as a new Adobe Express document. **Note:** Currently Expr
 
 #### Parameters
 
-| Name          | Type         | Description                   |
-| ------------- | -------------| ----------------------------: |
-| `blob`        | `Blob`       | The PowerPoint presentation (`.pptx`) to add to the page. |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding a presentation to the page (i.e., `title`). |
+| Name          | Type                                  |                                                                           Description |
+| ------------- | ------------------------------------- | ------------------------------------------------------------------------------------: |
+| `blob`        | `Blob`                                |                             The PowerPoint presentation (`.pptx`) to add to the page. |
+| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding a presentation to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -407,29 +404,27 @@ None
 
 ```js
 import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-  
+
 // Reference to the active document
-const {document} = AddOnSDKAPI.app;
- 
-const mediaAttributes = {title: "Sample.pptx"} // only Pptx is supported by Express
- 
+const { document } = AddOnSDKAPI.app;
+
+const mediaAttributes = { title: "Sample.pptx" }; // only Pptx is supported by Express
+
 // Import a presentation. Note: this will be imported as a new Adobe Express presentation.
 function importPresentation(blob, mediaAttributes) {
   try {
     document.importPresentation(blob, mediaAttributes);
-  }
-  catch(error) {
+  } catch (error) {
     console.log("Failed to add the presentation to the document.");
   }
 }
- 
+
 // Import a powerpoint presentation from a URL. Note: this will be imported as a new Adobe Express presentation.
 async function importPresentationFrom(url) {
   try {
-    const blob = await fetch(url).then(response => response.blob());
-    document.importPresentation(blob, {title: "Sample.pptx"});
-  }
-  catch(error) {
+    const blob = await fetch(url).then((response) => response.blob());
+    document.importPresentation(blob, { title: "Sample.pptx" });
+  } catch (error) {
     console.log("Failed to add the presentation to document.");
   }
 }
@@ -441,7 +436,7 @@ When importing images, the size of the images for all types **except `gif`** ima
 
 For `gif` images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and summarized below for quick reference:
 
-- **Maximum resolution:** 512px
+- **Maximum resolution:** 1080px
 - **Maximum size:** 10 MB
 - **Maximum GIFs per scene:** 7
 
@@ -449,11 +444,11 @@ For `gif` images, [the technical requirements are listed here](https://helpx.ado
 
 IMPORTANT: Animated GIFs
 
-Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an *animated GIF* specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
+Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an _animated GIF_ specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
 
 If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
 
-** See the [FAQ's](../../guides/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
+\*\* See the [FAQ's](../../guides/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
 
 ### Errors
 
@@ -461,13 +456,13 @@ The table below describes the possible error messages that may occur when using 
 
 &nbsp;
 
-| Error Message                     |   Error Scenario                 |
-|-------------------------------:|-------------------------------------------------:|
-| Invalid blob.                  | Blob is invalid. |
-| Unsupported mime type : `${blob.type}` | Mime type is invalid. |
+|                                                                      Error Message |                                                                    Error Scenario |
+| ---------------------------------------------------------------------------------: | --------------------------------------------------------------------------------: |
+|                                                                      Invalid blob. |                                                                  Blob is invalid. |
+|                                             Unsupported mime type : `${blob.type}` |                                                             Mime type is invalid. |
 | Import image width or height exceed the maximum limit : `${maxSupportedDimension}` | The imported image dimensions exceed the maximum limit if any defined by Express. |
-| Import image size exceed the maximum limit: `${maxSupportedSize}MB` | The imported image size exceeds the maximum limit if any defined by Express. |
-| No active page available. | Current page doesn't exist. |
+|                Import image size exceed the maximum limit: `${maxSupportedSize}MB` |      The imported image size exceeds the maximum limit if any defined by Express. |
+|                                                          No active page available. |                                                       Current page doesn't exist. |
 
 ## Export Content Methods
 
@@ -481,10 +476,10 @@ Generate renditions of the current page, specific pages or the entire document i
 
 #### Parameters
 
-| Name                | Type         | Description   |
-| --------------------| -------------| -----------:  |
-| `renditionOptions`  | `Object`     | [`RenditionOptions`](#renditionoptions) object. |
-| `renditionIntent`   | `string`     | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
+| Name               | Type     |                                                  Description |
+| ------------------ | -------- | -----------------------------------------------------------: |
+| `renditionOptions` | `Object` |              [`RenditionOptions`](#renditionoptions) object. |
+| `renditionIntent`  | `string` | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
 
 **NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
 
@@ -498,30 +493,30 @@ Refer to the [exporting content use case example](../../guides/develop/use_cases
 
 #### `RenditionOptions`
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `range`       | `string`     | [`Range`](./addonsdk-constants.md) constant value. |
-| `format`      | `string`     | [`RenditionFormat`](./addonsdk-constants.md) constant value. |
-| `pageIds?`    | `string[]`   | Ids of the pages (only required if the range is [`specificPages`)](./addonsdk-constants.md) |
-  
+| Name       | Type       |                                                                                 Description |
+| ---------- | ---------- | ------------------------------------------------------------------------------------------: |
+| `range`    | `string`   |                                          [`Range`](./addonsdk-constants.md) constant value. |
+| `format`   | `string`   |                                [`RenditionFormat`](./addonsdk-constants.md) constant value. |
+| `pageIds?` | `string[]` | Ids of the pages (only required if the range is [`specificPages`)](./addonsdk-constants.md) |
+
 #### `JpgRenditionOptions`
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `jpg` renditions:
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `backgroundColor?` | `number` |  Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
-| `quality?` | `number` |  A number between 0 and 1, indicating image quality. Default is 1.0. |
-| [`requestedSize?`](#requested-size-notes)| `{width?: number; height?: number}` | Requested size (in pixels). |
+| Name                                      | Type                                |                                                                                                                                                                            Description |
+| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
+| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 
 #### `PngRenditionOptions`
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `png` renditions:
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `backgroundColor?` | `number` |  Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
-| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` | Requested size (in pixels). |
+| Name                                      | Type                                |                                                                                                                                                                            Description |
+| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 
 #### Requested Size Notes
 
@@ -531,70 +526,70 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 - If the requested size is invalid, it will be ignored and the original size rendition will be created.
 - Some examples of what the actual exported sizes will be, depending on the page size and requested size are in the table below for reference.
 
-| Page Size  | Requested Size | Exported Size |
-| ------------- | -------------| -----------:  |
-| 400 x 600       | 200 x 200      | 134 x 200       |
-| 400 x 600       | 200 x 400      | 200 x 300       |
-| 400 x 600       | 200 x -200      | 400 x 600      |
-| 400 x 600       | 800 x 1000      | 400 x 600      |
+| Page Size | Requested Size | Exported Size |
+| --------- | -------------- | ------------: |
+| 400 x 600 | 200 x 200      |     134 x 200 |
+| 400 x 600 | 200 x 400      |     200 x 300 |
+| 400 x 600 | 200 x -200     |     400 x 600 |
+| 400 x 600 | 800 x 1000     |     400 x 600 |
 
 #### `PdfRenditionOptions`
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `pdf` renditions:
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `bleed?`      | [`Bleed`](#bleed) |  Bleed for the page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. The parameter is optional, and if left undefined, then no bleed is assumed. If `bleed` is defined, `CropBox` and `TrimBox` will be the size of the Express document, `BleedBox` and `MediaBox` will be equal to each other, and they will expand on all sides (left, top, right, bottom) with the amount/unit specified by `bleed`.  |
-| `pageBoxes?`  | [`PdfPageBoxes`](#pdfpageboxes) | Exposes the ability to customize each PDF Page Box (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions by defining how much it should expand on each side beyond the Express document page size. If `pageBoxes` are defined, then `PdfRenditionOptions.bleed` is ignored. |
+| Name         | Type                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Description |
+| ------------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `bleed?`     | [`Bleed`](#bleed)               | Bleed for the page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. The parameter is optional, and if left undefined, then no bleed is assumed. If `bleed` is defined, `CropBox` and `TrimBox` will be the size of the Express document, `BleedBox` and `MediaBox` will be equal to each other, and they will expand on all sides (left, top, right, bottom) with the amount/unit specified by `bleed`. |
+| `pageBoxes?` | [`PdfPageBoxes`](#pdfpageboxes) |                                                                                                                                                                                                                               Exposes the ability to customize each PDF Page Box (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions by defining how much it should expand on each side beyond the Express document page size. If `pageBoxes` are defined, then `PdfRenditionOptions.bleed` is ignored. |
 
 #### `Bleed`
 
-Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
+Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `amount?`     | `number`     | The amount for the bleed. |
-| `unit`        | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
+| Name      | Type                                                       |                                      Description |
+| --------- | ---------------------------------------------------------- | -----------------------------------------------: |
+| `amount?` | `number`                                                   |                        The amount for the bleed. |
+| `unit`    | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
 
 #### `PdfPageBoxes`
 
 Represents all of the PDF page boxes (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`).
 
-| Name          | Type         | Description |
-| ------------- | -------------| -----------:|
-| `mediaBox?`   | [`PdfPageBox`](#pdfpagebox) | Media box |
-| `bleedBox?`   | [`PdfPageBox`](#pdfpagebox) | Bleed box |
-| `cropBox?`    | [`PdfPageBox`](#pdfpagebox) | Crop box |
-| `trimBox?`    | [`PdfPageBox`](#pdfpagebox) | Trim box |
+| Name        | Type                        | Description |
+| ----------- | --------------------------- | ----------: |
+| `mediaBox?` | [`PdfPageBox`](#pdfpagebox) |   Media box |
+| `bleedBox?` | [`PdfPageBox`](#pdfpagebox) |   Bleed box |
+| `cropBox?`  | [`PdfPageBox`](#pdfpagebox) |    Crop box |
+| `trimBox?`  | [`PdfPageBox`](#pdfpagebox) |    Trim box |
 
 #### `PdfPageBox`
 
 Represents a PDF page box.
 
-| Name          | Type         | Description |
-| ------------- | -------------| -----------:|
-| `margins`   | [`PdfPageBoxMargins`](#pdfpageboxmargins) | Margins for a box |
+| Name      | Type                                      |       Description |
+| --------- | ----------------------------------------- | ----------------: |
+| `margins` | [`PdfPageBoxMargins`](#pdfpageboxmargins) | Margins for a box |
 
 #### `PdfPageBoxMargins`
 
 Represents margins for a PDF page box.
 
-| Name          | Type         | Description |
-| ------------- | -------------| -----------:|
-| `top?`    | [`Bleed`](#bleed) | Top margin |
+| Name      | Type              |   Description |
+| --------- | ----------------- | ------------: |
+| `top?`    | [`Bleed`](#bleed) |    Top margin |
 | `bottom?` | [`Bleed`](#bleed) | Bottom margin |
-| `left?` | [`Bleed`](#bleed) | Left margin |
-| `right?` | [`Bleed`](#bleed) | Right margin |
+| `left?`   | [`Bleed`](#bleed) |   Left margin |
+| `right?`  | [`Bleed`](#bleed) |  Right margin |
 
 #### `Mp4RenditionOptions`
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
 
-| Name                                      | Type                                |                                                                                                                                                                            Description |
-| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `format`                        | `string`                            | [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
-| `resolution?`                                | `string`                            |                                                                                                                    [`VideoResolution`](./addonsdk-constants.md) constant value. |
-| `customResolution?` | `number` |  Only required/used if the `resolution` is `VideoResolution.custom` |
+| Name                | Type     |                                                        Description |
+| ------------------- | -------- | -----------------------------------------------------------------: |
+| `format`            | `string` |   [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
+| `resolution?`       | `string` |       [`VideoResolution`](./addonsdk-constants.md) constant value. |
+| `customResolution?` | `number` | Only required/used if the `resolution` is `VideoResolution.custom` |
 
 #### Return Value
 
@@ -616,18 +611,18 @@ async function displayPreview() {
     const renditionOptions = {
       range: addOnUISdk.constants.Range.entireDocument,
       format: addOnUISdk.constants.RenditionFormat.png,
-      backgroundColor: 0x7FAA77FF
+      backgroundColor: 0x7faa77ff,
     };
     const renditions = await addOnUISdk.app.document.createRenditions(
-      renditionOptions, addOnUISdk.constants.RenditionIntent.preview
+      renditionOptions,
+      addOnUISdk.constants.RenditionIntent.preview
     );
-    renditions.forEach(rendition => {
+    renditions.forEach((rendition) => {
       const image = document.createElement("img");
       image.src = URL.createObjectURL(rendition.blob);
       document.body.appendChild(image);
     });
-  }
-  catch(error) {
+  } catch (error) {
     console.log("Failed to create renditions:", error);
   }
 }
@@ -637,26 +632,28 @@ async function displayPreview() {
 
 ```ts
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
-  
+
 // Display preview of all pages in the AddOn UI
 async function displayPreview() {
   try {
     const renditionOptions: PngRenditionOptions = {
       range: Range.entireDocument,
       format: RenditionFormat.png,
-      backgroundColor: 0x7FAA77FF
+      backgroundColor: 0x7faa77ff,
     };
-    const renditions = await addOnUISdk.app.document.createRenditions(renditionOptions, RenditionIntent.preview);
-    renditions.forEach(rendition => {
+    const renditions = await addOnUISdk.app.document.createRenditions(
+      renditionOptions,
+      RenditionIntent.preview
+    );
+    renditions.forEach((rendition) => {
       const image = document.createElement("img");
       image.src = URL.createObjectURL(rendition.blob);
       document.body.appendChild(image);
     });
-  }
-  catch(error) {
+  } catch (error) {
     console.log("Failed to create renditions:", error);
   }
 }
@@ -666,21 +663,21 @@ async function displayPreview() {
 
 A rendition object representing a page in the document, returned from [`createRenditions`](#createrenditions). See
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `type?`       | `string`     | Type of Rendition. Value is always `page`. |
-| `blob`        | `Blob`       | Blob containing the rendition |
+| Name    | Type     |                                Description |
+| ------- | -------- | -----------------------------------------: |
+| `type?` | `string` | Type of Rendition. Value is always `page`. |
+| `blob`  | `Blob`   |              Blob containing the rendition |
 
 #### `PageRendition`
 
 An extension of [`Rendition`](#rendition), returned in the response to [`createRenditions`](#createrenditions). This object **includes everything in [`Rendition`](#rendition)**, as well as:
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `title`       | `string`     | The page title of the rendition |
-| `metadata`    | [`PageMetadata`](#pagemetadata) | Page metadata |
+| Name       | Type                            |                     Description |
+| ---------- | ------------------------------- | ------------------------------: |
+| `title`    | `string`                        | The page title of the rendition |
+| `metadata` | [`PageMetadata`](#pagemetadata) |                   Page metadata |
 
-** See the [FAQs](../../guides/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
+\*\* See the [FAQs](../../guides/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -692,12 +689,12 @@ The table below describes the possible error messages that may occur when using 
 
 &nbsp;
 
-| Error Message                  |   Error Scenario                 |
-|-------------------------------:|-------------------------------------------------:|
-| Invalid range: `${options.range}` | Range value is invalid.             |
-| No active page available.         | Range is `Range.currentPage` and there is no active page. |
-| Unsupported rendition format: `${options.format}` | Rendition format is unsupported.   |
-| Invalid background color: `${options.backgroundColor}` | Background color is invalid. |
-| Invalid quality parameter: `${options.quality} not in range [0,1]` | Quality property is invalid in jpeg. |
-| No video element in the specified range. | No video is present in the range when trying to export mp4. |
-| USER_NOT_ENTITLED_TO_PREMIUM_CONTENT | The user is trying to export premium content but is not entitled to it. |
+|                                                      Error Message |                                                          Error Scenario |
+| -----------------------------------------------------------------: | ----------------------------------------------------------------------: |
+|                                  Invalid range: `${options.range}` |                                                 Range value is invalid. |
+|                                          No active page available. |               Range is `Range.currentPage` and there is no active page. |
+|                  Unsupported rendition format: `${options.format}` |                                        Rendition format is unsupported. |
+|             Invalid background color: `${options.backgroundColor}` |                                            Background color is invalid. |
+| Invalid quality parameter: `${options.quality} not in range [0,1]` |                                    Quality property is invalid in jpeg. |
+|                           No video element in the specified range. |             No video is present in the range when trying to export mp4. |
+|                               USER_NOT_ENTITLED_TO_PREMIUM_CONTENT | The user is trying to export premium content but is not entitled to it. |

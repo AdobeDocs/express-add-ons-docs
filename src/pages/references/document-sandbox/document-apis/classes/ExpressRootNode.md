@@ -32,7 +32,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -44,7 +44,7 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
+`Readonly`<`Iterable`<[`BaseNode`](BaseNode.md), `any`, `any`\>\>
 
 ---
 
@@ -66,6 +66,7 @@ moved to a different part of the document.
 • `get` **pages**(): [`PageList`](PageList.md)
 
 The pages of the document. All visual content is contained on artboards within the pages.
+To create a new page, see [PageList.addPage](PageList.md#addpage).
 
 #### Returns
 

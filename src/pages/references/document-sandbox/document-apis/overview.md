@@ -59,6 +59,7 @@
 -   [TextNode](classes/TextNode.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
 -   [UnknownNode](classes/UnknownNode.md)
+-   [Viewport](classes/Viewport.md)
 -   [VisualNode](classes/VisualNode.md)
 
 ## Interfaces

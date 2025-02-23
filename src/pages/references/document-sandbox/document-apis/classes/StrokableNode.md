@@ -38,7 +38,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -49,7 +49,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](Node.md)\>\>
+`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
 ---
 

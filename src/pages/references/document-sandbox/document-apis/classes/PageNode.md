@@ -2,8 +2,11 @@
 
 # Class: PageNode
 
-A PageNode represents a page in the document. A page contains one or more artboards, representing "scenes" in a linear
-timeline sequence. Those artboards in turn contain all the visual content of the document.
+A PageNode represents a page in the document, a child of the root node of the document's "scenegraph" artwork tree
+(see [ExpressRootNode](ExpressRootNode.md)). A page contains one or more artboards, representing "scenes" in a linear timeline
+sequence. Those artboards, in turn, contain all the visual content of the document.
+
+To create new pages, see [PageList.addPage](PageList.md#addpage).
 
 ## Extends
 
@@ -33,7 +36,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -45,7 +48,7 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly`<`Iterable`<[`BaseNode`](BaseNode.md)\>\>
+`Readonly`<`Iterable`<[`BaseNode`](BaseNode.md), `any`, `any`\>\>
 
 ---
 
@@ -54,6 +57,7 @@ to guarantee all their children are full-fledged Node instances.
 • `get` **artboards**(): [`ArtboardList`](ArtboardList.md)
 
 The artboards or "scenes" of a page, ordered by timeline sequence.
+To create new artboards, see [ArtboardList.addArtboard](ArtboardList.md#addartboard).
 
 #### Returns
 

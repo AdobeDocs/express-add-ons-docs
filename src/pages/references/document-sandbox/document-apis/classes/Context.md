@@ -50,10 +50,14 @@ other UI state.
 
 • `set` **selection**(`nodes`): `void`
 
-Sets the current selection, automatically ensuring these rules are met:
+Sets the current selection to an array of [Node](Node.md).
+Accepts a single node as a shortcut for a length-1 array `[node]` or
+`undefined` as a shortcut for `[]`, which clears the selection.
 
-- Nodes must be within the current artboard (others are filtered out).
-- A node cannot be selected at the same time as its ancestor (descendants are filtered out).
+Only node(s) that meet the following criteria can be selected:
+
+- Nodes must be within the current artboard (nodes outside the active artboard are filtered out).
+- A node cannot be selected if its ancestor is also selected (descendants are filtered out).
 - Locked nodes are filtered out (but will still be included in selectionIncludingNonEditable).
 
 #### Parameters
