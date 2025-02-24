@@ -69,7 +69,7 @@ addOnUISdk.ready.then(async () => {
 
 ## Importing PowerPoint into the page
 
-For PowerPoint files, the process is similar to the one for PDFs, but you need to use the [`importPowerPoint()`](../../../references/addonsdk/app-document.md#importpowerpoint) method instead. The method supports both `.pptx` and `.ppt` files, and shows the same consent and progress dialogues as seen above.
+For PowerPoint files, the process is similar to the one for PDFs, but you need to use the [`importPowerPoint()`](../../../references/addonsdk/app-document.md#importpresentation) method instead. The method supports both `.pptx` and `.ppt` files, and shows the same consent and progress dialogues as seen above.
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";

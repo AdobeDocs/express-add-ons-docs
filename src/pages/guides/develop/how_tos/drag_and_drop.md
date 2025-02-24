@@ -20,7 +20,7 @@ contributors:
 
 ## Using local images
 
-You must invoke the [`addOnUISdk.app.enableDragToDocument()`](/references/addonsdk/addonsdk-app.md#enabledragtodocument) method for each draggable image to implement this feature. It accepts two parameters: the `HTMLElement` and an object with a `previewCallback()` that returns the image URL for preview purposes, and a `completionCallback()` that fetches the corresponding blob to finalize insertion into the document. 
+You must invoke the [`addOnUISdk.app.enableDragToDocument()`](/references/addonsdk/addonsdk-app.md#enabledragtodocument) method for each draggable image to implement this feature. It accepts two parameters: the `HTMLElement` and an object with a `previewCallback()` that returns the image URL for preview purposes, and a `completionCallback()` that fetches the corresponding blob to finalize insertion into the document.
 
 You also need to listen for `"dragstart"` and `"dragend"` events to manage logs or other custom behaviour when the user interacts with the images.
 

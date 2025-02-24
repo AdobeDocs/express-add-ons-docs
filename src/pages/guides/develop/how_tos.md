@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: Using How-Tos
-description: 
+description:
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
@@ -29,6 +29,7 @@ You're encouraged to use the [Code Playground](../getting_started/code_playgroun
   - [Imports and Constants](./how_tos/imports_and_constants.md)
   - [Listening to Events](./how_tos/listening_to_events.md)
   - [Add-on UI and Document API communication](./how_tos/ui_document_api_communication.md) -->
+
 - Authentication & Authorization
   - [Using OAuth 2.0](./how_tos/oauth2.md)
 - Data & Environment
@@ -39,7 +40,7 @@ You're encouraged to use the [Code Playground](../getting_started/code_playgroun
   - [Modal Dialogs](./how_tos/modal_dialogs.md)
 - Using Design Elements
   - [Using Text](./how_tos/using_text.md)
-  - [Using Shapes](./how_tos/using_shapes.md)
+  - [Using Shapes](./how_tos/using_geometry.md)
   - [Using Images](./how_tos/using_images.md)
   - [Using Videos](./how_tos/using_videos.md)
   - [Using Audio](./how_tos/using_audio.md)

@@ -21,7 +21,7 @@ import '/src/styles.css'
 
 # Managing Premium Content
 
-When exporting Adobe Express documents, you should ensure proper handling of Premium content. 
+When exporting Adobe Express documents, you should ensure proper handling of Premium content.
 
 Let's go through all the available options to manage the rendition of Premium content in case your add-on allows users to export or download it.
 

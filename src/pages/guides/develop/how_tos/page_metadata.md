@@ -20,7 +20,7 @@ contributors:
 
 ## Getting the Page Metadata
 
-If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](../../../references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object. The method expects an object with a `range` and optional `pageIds` properties. 
+If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](../../../references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object. The method expects an object with a `range` and optional `pageIds` properties.
 
 The `range` property is one of the available [`Range`](../../../references/addonsdk/addonsdk-constants.md) enumerables, either `currentPage`, `entireDocument`, or `specificPages`. If you choose `specificPages`, you must provide an array of page IDs in the `pageIds` property.
 

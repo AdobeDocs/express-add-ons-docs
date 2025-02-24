@@ -92,7 +92,7 @@ editor.context.insertionParent.children.append(outerGroup);
 
 This code results in the following grouping:
 
-```
+```txt
 Outer Group
 ├── Inner Group
 │   ├── Text Node: "Hiya!"

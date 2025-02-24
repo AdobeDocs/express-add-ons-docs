@@ -32,7 +32,7 @@ With the `remainingQuota` property, you can check how much space is left, both i
 
 <InlineAlert slots="text" variant="info"/>
 
-While Document and Page metadata operate from the `addOnUISdk.app.document` object and belong to the [Add-on UI SDK](../../../references/addonsdk/index.md), Element metadata are part of the [Document Sandbox](../../../references/document-sandbox/document-apis/index.md) and are accessed through the `node.addOnData` property. 
+While Document and Page metadata operate from the `addOnUISdk.app.document` object and belong to the [Add-on UI SDK](../../../references/addonsdk/index.md), Element metadata are part of the [Document Sandbox](../../../references/document-sandbox/document-apis/index.md) and are accessed through the `node.addOnData` property.
 
 ### Example
 
