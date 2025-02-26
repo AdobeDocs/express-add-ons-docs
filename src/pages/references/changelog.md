@@ -17,9 +17,30 @@ description: Contains a running log of changes to the add-on documentation, SDK,
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
+  - https://github.com/nimithajalal
 ---
 
 # Changelog
+
+## 2025-02-26
+
+### Added
+
+**New Feature: [Add-on Icon Auto-Resizing Support](../guides/distribute/public-dist.md#step-4-enter-listing-details)**
+
+- Icon Size Requirement: The uploaded icon must be 144 px.
+- Auto-Resizing: Once uploaded, the icon will be automatically resized to:
+  - Minimized Add-on Module Icon: 36 px
+  - Panel Header Icon: 64 px
+  - Launchpad Icon: 144 px
+
+**API `paragraphStyleRanges`**
+
+Added new [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
+
+### Changed
+
+Stabilized [`registerIframe()`](../references/addonsdk/addonsdk-app.md#registeriframe) and [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) APIs. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to utilize these APIs.
 
 ## 2025-02-17
 

@@ -1,13 +1,21 @@
-[@express-document-sdk](../overview.md) / EventHandlerId
+[@express-document-sdk](../overview.md) / ParagraphListType
 
-# Type alias: EventHandlerId
-
-`Experimental`
-
-• **EventHandlerId**: `string`
+# Enumeration: ParagraphListType
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-This type represents unique id of each event handler callback that is registered.
+Indicates list type: see [UnorderedListStyleInput](../interfaces/UnorderedListStyleInput.md) and [OrderedListStyleInput](../interfaces/OrderedListStyleInput.md).
+
+## Enumeration Members
+
+### ordered
+
+• **ordered**: `1`
+
+***
+
+### unordered
+
+• **unordered**: `0`

@@ -162,7 +162,7 @@ moved to a different part of the document.
 Sets the layout mode of the TextNode "frame."
 
 If this TextNode is part of a multi-frame text content flow, it must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md). Other
-layout modes are only available for single-frame text.
+layout modes, except for [AreaTextLayout](../interfaces/AreaTextLayout.md), are only available for single-frame text.
 
 #### Throws
 
@@ -170,7 +170,11 @@ if changing text layout to/from [TextType.magicFit](../enumerations/TextType.md#
 
 #### Throws
 
-if TextNode is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
+if [TextNode](TextNode.md) is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
+
+#### Throws
+
+if [TextNode](TextNode.md) is not a part of a multi-frame text content flow and the layout is [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Parameters
 
@@ -189,7 +193,9 @@ The layout mode of the TextNode "frame."
 • `get` **locked**(): `boolean`
 
 The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
-cannot be edited by the user unless they are unlocked first.
+cannot be edited by the user in the UI unless they are unlocked first. Operations on locked nodes using the API
+are permitted. However, please consider if modifying a locked node would align with user expectations
+before using the API to make changes to locked nodes.
 
 • `set` **locked**(`locked`): `void`
 
