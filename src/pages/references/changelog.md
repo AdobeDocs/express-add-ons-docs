@@ -17,6 +17,7 @@ description: Contains a running log of changes to the add-on documentation, SDK,
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
+  - https://github.com/nimithajalal
 ---
 
 # Changelog
@@ -33,9 +34,13 @@ contributors:
   - Panel Header Icon: 64 px
   - Launchpad Icon: 144 px
 
-**New API ParagraphStyles API**
+**API `paragraphStyleRanges`**
 
 Added new [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
+
+### Changed
+
+Stabilized [`registerIframe()`](../references/addonsdk/addonsdk-app.md#registeriframe) and [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) APIs. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to utilize these APIs.
 
 ## 2025-02-17
 
