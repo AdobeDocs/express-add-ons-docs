@@ -5,6 +5,8 @@
 A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to create
 a layout grid that other content can be placed into.
 
+APIs to create a new grid layout are not yet available.
+
 ## Extends
 
 -   [`Node`](Node.md)
@@ -158,7 +160,9 @@ moved to a different part of the document.
 • `get` **locked**(): `boolean`
 
 The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
-cannot be edited by the user unless they are unlocked first.
+cannot be edited by the user in the UI unless they are unlocked first. Operations on locked nodes using the API
+are permitted. However, please consider if modifying a locked node would align with user expectations
+before using the API to make changes to locked nodes.
 
 • `set` **locked**(`locked`): `void`
 

@@ -33,6 +33,10 @@ contributors:
   - Panel Header Icon: 64 px
   - Launchpad Icon: 144 px
 
+**New API ParagraphStyles API**
+
+Added new [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
+
 ## 2025-02-17
 
 ### Update
