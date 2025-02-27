@@ -31,7 +31,7 @@ Some examples of what you can do with the [Adobe Express Document APIs](./classe
 An exported `editor` module is provided to enable access to the [Document APIs](./classes/Editor.md). You can simply import this module into your script file code to access the methods provided below. For example:
 
 ```js
-import { editor } from "express"; // named import 'editor' from express module
+import { editor } from "express-document-sdk"; // named import 'editor' from express-document-sdk module
 ```
 
 See the example below for further usage details.
@@ -41,7 +41,7 @@ See the example below for further usage details.
 The following code snippet illustrates how to use the [Express Document APIs](./classes/Editor.md) from the document sandbox code running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
-import { editor, colorUtils } from "express";
+import { editor, colorUtils } from "express-document-sdk";
 
 const insertionParent = editor.context.insertionParent; // get node to insert content into
 

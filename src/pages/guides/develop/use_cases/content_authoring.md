@@ -27,7 +27,7 @@ We provide a set of [Document APIs](/references/document-sandbox/document-apis/)
 The following code snippet illustrates how to use the [Document APIs](/references/document-sandbox/document-apis/) from the script running in your [`code.js`](/references/document-sandbox/index.md#getting-started-with-the-apis); for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document.
 
 ```js
-import { editor, colorUtils } from "express";
+import { editor, colorUtils } from "express-document-sdk";
 
 const insertionParent = editor.context.insertionParent; // get node to insert content into
 
