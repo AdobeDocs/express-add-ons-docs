@@ -629,6 +629,10 @@ module.exports = {
             path: "guides/develop/frameworks-libraries-bundling.md",
           },
           {
+            title: "Using LIT",
+            path: "guides/develop/lit-get-started.md",
+          },
+          {
             title: "Performance Tips",
             path: "guides/develop/performance.md",
           },
