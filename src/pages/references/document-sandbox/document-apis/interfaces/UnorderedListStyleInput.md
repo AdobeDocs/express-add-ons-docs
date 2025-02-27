@@ -10,7 +10,7 @@ Interface for specifying an unordered list style, such as a bullet list.
 
 ## Extends
 
-- `BaseParagraphListStyle`
+-   `BaseParagraphListStyle`
 
 ## Properties
 
@@ -24,7 +24,7 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 
 `BaseParagraphListStyle.indentLevel`
 
-***
+---
 
 ### marker?
 
@@ -37,7 +37,7 @@ paragraph's text content. A default marker is used instead if the default font d
 
 Text or Unicode glyphs are accepted to represent the list marker.
 
-***
+---
 
 ### type
 
