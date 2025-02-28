@@ -2,8 +2,6 @@
 
 # Type alias: Font
 
-`Experimental`
-
 • **Font**: [`AvailableFont`](../classes/AvailableFont.md) \| [`UnavailableFont`](../classes/UnavailableFont.md)
 
 <InlineAlert slots="text" variant="warning"/>

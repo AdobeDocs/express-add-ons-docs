@@ -8,9 +8,7 @@ The Fonts class provides methods to work with fonts.
 
 ### fromPostscriptName()
 
-`Experimental`
-
-• **fromPostscriptName**(`postscriptName`): `Promise`\<`undefined` \| [`AvailableFont`](AvailableFont.md)\>
+• **fromPostscriptName**(`postscriptName`): `Promise`<`undefined` \| [`AvailableFont`](AvailableFont.md)\>
 
 <InlineAlert slots="text" variant="warning"/>
 

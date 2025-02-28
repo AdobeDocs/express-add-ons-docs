@@ -5,10 +5,6 @@
 AddOnData class provides APIs to read, write, remove private metadata to a Node.
 This metadata is accessible only to the add-on that has set it.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 ## Accessors
 
 ### remainingQuota
