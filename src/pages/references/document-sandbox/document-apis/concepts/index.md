@@ -1,18 +1,18 @@
 ---
 keywords:
-    - Adobe Express
-    - Express Add-on SDK
-    - Express Document API
-    - Express Communication API
-    - Document Model Sandbox
-    - Adobe Express
-    - JavaScript
-    - Extensibility
-    - API
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Document API
+  - Express Communication API
+  - Document Model Sandbox
+  - Adobe Express
+  - JavaScript
+  - Extensibility
+  - API
 title: Exploring the Adobe Document API Concepts
 description: In this article, you'll learn about the structures that make up the Adobe Express Document Object Model, their features, and how they're reflected in the Reference documentation.
 contributors:
-    - https://github.com/undavide
+  - https://github.com/undavide
 ---
 
 # Adobe Express Document API Concepts
@@ -39,8 +39,8 @@ Developers with a front-end background may instinctively associate the notion of
 
 Some confusion may arise regarding the meaning of the following terms—let me clarify.
 
--   **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](/guides/tutorials/stats-addon.md).
--   **Document Object Model**: it represents Adobe Express documents' structure, the hierarchies between each element, and their inheritance.
+- **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](/guides/tutorials/stats-addon.md).
+- **Document Object Model**: it represents Adobe Express documents' structure, the hierarchies between each element, and their inheritance.
 
 You may think about the Document API as operating in the context of the DOM—while the Document Model Sandbox provides a secure and isolated environment for such code to run.
 
@@ -52,13 +52,13 @@ You are encouraged to try the code snippets discussed here; please use [this boi
 // ...
 import { editor, colorUtils } from "express-document-sdk";
 function start() {
-    runtime.exposeApi({
-        log: () => {
-            const selectedNode = editor.context.selection[0];
-            console.log("Currently selected node", selectedNode);
-        },
-        // ...
-    });
+  runtime.exposeApi({
+    log: () => {
+      const selectedNode = editor.context.selection[0];
+      console.log("Currently selected node", selectedNode);
+    },
+    // ...
+  });
 }
 ```
 
@@ -78,10 +78,10 @@ Such a structure is referred to as the **Scenegraph**, and it allows for efficie
 
 Understanding the hierarchical tree of nodes in the Adobe Express DOM requires a firm grasp of a handful of key concepts in object-oriented programming (OOP).
 
--   **Classes**: the blueprint for creating objects. They define a set of properties and methods the created objects (known as _instances_ of that class) will have. For example, when users add a page to an Adobe Express document, a new `PageNode` class is _instantiated_. Such a Page instance comes by default with a peculiar set of accessors (properties) like `width`, `height`, and `artboards` and methods like `removeFromParent()`.
--   **Inheritance**: classes can inherit properties and methods from an existing class. The `LineNode` inherits from the `StrokableNode`, which in turn inherits from the `Node` class, establishing a parent/child relation.
--   **Class Extension**: this concept is closely related to Inheritance. A child class inherits the methods and properties from its parent and extends them with its additional ones. `TextNode` extends `Node`, adding, among others, the `text` property and the `setPositionInParent()` method.
--   **Interfaces**: define a _contract_ for classes without implementing any behavior themselves. They specify a set of methods and properties a class must have but do not define how they work internally. For example, the `ContainerNode` interface mandates the implementation of `allChildren`, `children`, `parent`, and `type` properties. Classes implementing this interface, such as `ArtboardNode` and `GroupNode`, are responsible for providing these properties' actual implementation. By doing so, these classes conform to the structure and requirements defined by the `ContainerNode` interface. Interfaces can be extended, too: the `ColorFill` inherits the `type` property from the `Fill` interface and extends it with an additional `color`.
+- **Classes**: the blueprint for creating objects. They define a set of properties and methods the created objects (known as _instances_ of that class) will have. For example, when users add a page to an Adobe Express document, a new `PageNode` class is _instantiated_. Such a Page instance comes by default with a peculiar set of accessors (properties) like `width`, `height`, and `artboards` and methods like `removeFromParent()`.
+- **Inheritance**: classes can inherit properties and methods from an existing class. The `LineNode` inherits from the `StrokableNode`, which in turn inherits from the `Node` class, establishing a parent/child relation.
+- **Class Extension**: this concept is closely related to Inheritance. A child class inherits the methods and properties from its parent and extends them with its additional ones. `TextNode` extends `Node`, adding, among others, the `text` property and the `setPositionInParent()` method.
+- **Interfaces**: define a _contract_ for classes without implementing any behavior themselves. They specify a set of methods and properties a class must have but do not define how they work internally. For example, the `ContainerNode` interface mandates the implementation of `allChildren`, `children`, `parent`, and `type` properties. Classes implementing this interface, such as `ArtboardNode` and `GroupNode`, are responsible for providing these properties' actual implementation. By doing so, these classes conform to the structure and requirements defined by the `ContainerNode` interface. Interfaces can be extended, too: the `ColorFill` inherits the `type` property from the `Fill` interface and extends it with an additional `color`.
 
 Compared to other Adobe desktop applications, the Adobe Express DOM features a remarkably clean class hierarchy, where every element has a well-defined lineage that traces back to a minimal set of root classes.
 
@@ -97,11 +97,11 @@ There is a comprehensive list of Classes (_blueprints_), Interfaces (_contracts_
 
 Using the `EllipseNode` as an example, you can find:
 
--   The **class name**, always PascalCase.
--   A short **description** of what it represents and its role in the scenegraph.
--   The **inheritance tree**: in this case, `EllipseNode` is a subclass of `FillableNode`; following the chain, you'll find that, in turn, this inherits from `StrokableNode`, which eventually comes from the `Node` root class.
--   A list of **accessors** (properties), like `stroke`, `opacity`, etc.
--   A list of **methods**, like `removeFromParent()` and `setPositionInParent()`.
+- The **class name**, always PascalCase.
+- A short **description** of what it represents and its role in the scenegraph.
+- The **inheritance tree**: in this case, `EllipseNode` is a subclass of `FillableNode`; following the chain, you'll find that, in turn, this inherits from `StrokableNode`, which eventually comes from the `Node` root class.
+- A list of **accessors** (properties), like `stroke`, `opacity`, etc.
+- A list of **methods**, like `removeFromParent()` and `setPositionInParent()`.
 
 ![](images/refs-addon-ref.png)
 
@@ -136,9 +136,9 @@ They represent a safe, user-friendly way to refer to internal values (subject to
 
 Internally, the center, inside, and outside positions are represented with the integers `0`, `1`, and `2`. You should instead use the `StrokePosition` constant and its available members:
 
--   `StrokePosition.center`
--   `StrokePosition.inside`
--   `StrokePosition.outside`
+- `StrokePosition.center`
+- `StrokePosition.inside`
+- `StrokePosition.outside`
 
 Using constants will ensure expected outcomes, in case Adobe Express engineers remap values in the future. This is the code needed to conclude the `stroke` example.
 
@@ -146,12 +146,12 @@ Using constants will ensure expected outcomes, in case Adobe Express engineers r
 const ellipse = editor.createEllipse();
 editor.context.insertionParent.children.append(ellipse);
 ellipse.stroke = {
-    color: { red: 0.7, green: 0.6, blue: 1, alpha: 1 },
-    dashOffset: 0,
-    dashPattern: [4, 2],
-    // position: 1 ❌
-    position: constants.StrokePosition.inside, // ✅
-    width: 3,
+  color: { red: 0.7, green: 0.6, blue: 1, alpha: 1 },
+  dashOffset: 0,
+  dashPattern: [4, 2],
+  // position: 1 ❌
+  position: constants.StrokePosition.inside, // ✅
+  width: 3,
 };
 ```
 
@@ -174,7 +174,7 @@ Let's return to strokes and fills: they are expressed as plain objects; in fact,
 const ellipse = editor.createEllipse();
 editor.context.insertionParent.children.append(ellipse);
 ellipse.stroke = editor.makeStroke({
-    color: { red: 0.7, green: 0.6, blue: 1, alpha: 1 },
+  color: { red: 0.7, green: 0.6, blue: 1, alpha: 1 },
 });
 ```
 
@@ -182,10 +182,10 @@ Here, you get a 1-pixel, solid stroke of the provided color, the only property y
 
 ```js
 ellipse.fill = editor.makeColorFill({
-    red: 0.6,
-    green: 0.9,
-    blue: 0.6,
-    alpha: 1,
+  red: 0.6,
+  green: 0.9,
+  blue: 0.6,
+  alpha: 1,
 });
 ```
 
@@ -193,8 +193,8 @@ If you wonder where all the help is since you've to type the entire color object
 
 ```js
 ellipse.fill = {
-    color: { red: 0.6, green: 0.9, blue: 0.6, alpha: 1 },
-    type: constants.FillType.color, // 👈
+  color: { red: 0.6, green: 0.9, blue: 0.6, alpha: 1 },
+  type: constants.FillType.color, // 👈
 };
 ```
 
@@ -202,9 +202,9 @@ ellipse.fill = {
 
 A specific **naming convention** exists for methods used in the Adobe Express DOM.
 
--   `make*`: used for plain objects and helper utilities, e.g.,`makeColorFill()`.
--   `create*`: used for live document objects, like `createEllipse()`
--   `add*`: reserved to create complex structures like Pages and Artboards, adding them to the parent list automatically in a way that may also update the insertion point. Found in `addPage()` and `addArtboard()`.
+- `make*`: used for plain objects and helper utilities, e.g.,`makeColorFill()`.
+- `create*`: used for live document objects, like `createEllipse()`
+- `add*`: reserved to create complex structures like Pages and Artboards, adding them to the parent list automatically in a way that may also update the insertion point. Found in `addPage()` and `addArtboard()`.
 
 Speaking of colors, the `ColorUtils` module can output a proper `Color` from either a partial RGB object (where the `alpha` property is optional, defaulting to `1`) or a Hex string with or without alpha, providing the reverse function as well.
 
@@ -242,7 +242,7 @@ The type for `children` and `allChildren` is defined as `Iterable<Node>`, where 
 
 ```js
 for (const node of someIterable) {
-    console.log(node.type);
+  console.log(node.type);
 }
 ```
 
@@ -256,12 +256,12 @@ If `allChildren` is an Array, the following code will work just fine, won't it?
 const selectedNode = editor.context.selection[0];
 // If we have a group
 if (selectedNode.type === constants.SceneNodeType.group) {
-    // Filtering the ellipse shapes
-    const ellipses = selectedNode.allChildren.filter(
-        // 👈 danger! ❌
-        (node) => node.type === constants.SceneNodeType.ellipse
-    );
-    console.log(`Number of ellipses in this group: ${ellipses.length}`);
+  // Filtering the ellipse shapes
+  const ellipses = selectedNode.allChildren.filter(
+    // 👈 danger! ❌
+    (node) => node.type === constants.SceneNodeType.ellipse
+  );
+  console.log(`Number of ellipses in this group: ${ellipses.length}`);
 }
 ```
 
@@ -271,12 +271,12 @@ The `allChildren` property is defined in its _contract_ to be of type `Iterable`
 
 ```js
 const ellipses = Array.from(selectedNode.allChildren) // 👈
-    .filter((node) => node.type === constants.SceneNodeType.ellipse);
+  .filter((node) => node.type === constants.SceneNodeType.ellipse);
 ```
 
 To finally unravel the `allChildren` purpose mystery, let's see what the documentation says about it.
 
-> \[...] nodes with a more specific structure can hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their overall display z-order.
+> \[...] nodes with a more specific structure can hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their overall display z-order.
 
 If you inspect a `MediaContainerNode` class, which is instantiated every time you place an image, it has two peculiar properties: `maskShape` and `mediaRectangle`. They hold the shape that masks the bitmap (in UI terms, the Crop—by default, a rectangle with the same image dimensions) and the `ImageRectangleNode` itself. They are the "structures" the documentation refers to; therefore, you'll find them in its `allChildren` property. Other notable examples are `maskShape` in Groups and `artboards` in Pages.
 
@@ -348,10 +348,14 @@ To follow along, add one button to the `index.html` file and attach a `drawDimen
 
 ```html
 <body>
-    <sp-theme scale="medium" color="light" theme="express">
-        <sp-button id="logNode">Log selected node</sp-button>
-        <sp-button id="drawDimensions">Draw Dimensions</sp-button>
-    </sp-theme>
+  <sp-theme
+    scale="medium"
+    color="light"
+    theme="express"
+  >
+    <sp-button id="logNode">Log selected node</sp-button>
+    <sp-button id="drawDimensions">Draw Dimensions</sp-button>
+  </sp-theme>
 </body>
 ```
 
@@ -360,20 +364,20 @@ To follow along, add one button to the `index.html` file and attach a `drawDimen
 ```js
 // ...
 addOnUISdk.ready.then(async () => {
-    console.log("addOnUISdk is ready for use.");
+  console.log("addOnUISdk is ready for use.");
 
-    // Get the Authoring Sandbox.
-    const { runtime } = addOnUISdk.instance;
-    const sandboxProxy = await runtime.apiProxy("documentSandbox");
+  // Get the Authoring Sandbox.
+  const { runtime } = addOnUISdk.instance;
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-    const buttonIds = ["logNode", "drawDimensions"];
-    buttonIds.forEach((id) => {
-        const button = document.getElementById(id);
-        button.addEventListener("click", () => {
-            sandboxProxy[id](); // 👈 attach the function to the button, like:
-        }); // sandboxProxy.logNode() or sandboxProxy.drawDimensions()
-        button.disabled = false;
-    });
+  const buttonIds = ["logNode", "drawDimensions"];
+  buttonIds.forEach((id) => {
+    const button = document.getElementById(id);
+    button.addEventListener("click", () => {
+      sandboxProxy[id](); // 👈 attach the function to the button, like:
+    }); // sandboxProxy.logNode() or sandboxProxy.drawDimensions()
+    button.disabled = false;
+  });
 });
 ```
 
@@ -382,14 +386,14 @@ addOnUISdk.ready.then(async () => {
 ```js
 // ...
 function start() {
-    runtime.exposeApi({
-        logNode: () => {
-            /* ... */
-        },
-        drawDimensions: () => {
-            // ...
-        },
-    });
+  runtime.exposeApi({
+    logNode: () => {
+      /* ... */
+    },
+    drawDimensions: () => {
+      // ...
+    },
+  });
 }
 ```
 
@@ -401,14 +405,15 @@ The first part is to get and validate the selected node. There's a promising [`C
 import { editor, constants, colorUtils } from "express-document-sdk";
 
 runtime.exposeApi({
-    drawDimensions: () => {
-        if (
-            editor.context.hasSelection &&
-            editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
-        ) {
-            // ...
-        }
-    },
+  drawDimensions: () => {
+    if (
+      editor.context.hasSelection &&
+      editor.context.selection[0].type ===
+        constants.SceneNodeType.mediaContainer
+    ) {
+      // ...
+    }
+  },
 });
 ```
 
@@ -436,7 +441,12 @@ Time to draw the line. The [`Editor`](/references/document-sandbox/document-apis
 ```js
 // ...
 const hLine = editor.createLine();
-hLine.setEndPoints(nodeTranslation.x, nodeTranslation.y - 20, nodeTranslation.x + nodeWidth, nodeTranslation.y - 20);
+hLine.setEndPoints(
+  nodeTranslation.x,
+  nodeTranslation.y - 20,
+  nodeTranslation.x + nodeWidth,
+  nodeTranslation.y - 20
+);
 ```
 
 Here, an arbitrary 20px margin is added between the horizontal line and the selected node; this could very well be a parameter chosen by the user from a UI control you can add later. The line is extended to a `nodeWidth` length, i.e., the `mediaRectangle`'s. You can finally add it to the scenegraph.
@@ -455,7 +465,8 @@ The line is there, but it lacks the proper endpoints. The reference helps us out
 
 ```js
 // ...
-hLine.startArrowHeadType = hLine.endArrowHeadType = constants.ArrowHeadType.triangularFilled;
+hLine.startArrowHeadType = hLine.endArrowHeadType =
+  constants.ArrowHeadType.triangularFilled;
 ```
 
 As live objects, setting all the properties before or after appending the line to the scenegraph doesn't really matter; the result is the same.
@@ -467,7 +478,7 @@ Next up, you need to add the text. The `Editor` class provides a [`createText()`
 ```js
 // ...
 const hText = editor.createText();
-hText.text = `${Math.trunc(nodeWidth).toString()}px`;
+hText.fullContent.text = `${Math.trunc(nodeWidth).toString()}px`;
 editor.context.insertionParent.children.append(hText);
 ```
 
@@ -476,8 +487,8 @@ The text appears on the top-left corner of the document, which is the default in
 ```js
 // ...
 hText.translation = {
-    x: nodeTranslation.x + nodeWidth / 2,
-    y: nodeTranslation.y - 30,
+  x: nodeTranslation.x + nodeWidth / 2,
+  y: nodeTranslation.y - 30,
 };
 ```
 
@@ -496,12 +507,12 @@ From this point, creating the vertical line and the text is a matter of copying/
 
 ```js
 const vText = editor.createText();
-vText.text = `${Math.trunc(nodeHeight).toString()}px`;
+vText.fullContent.text = `${Math.trunc(nodeHeight).toString()}px`;
 editor.context.insertionParent.children.append(vText);
 
 vText.translation = {
-    x: nodeTranslation.x - 30,
-    y: nodeTranslation.y + nodeHeight / 2,
+  x: nodeTranslation.x - 30,
+  y: nodeTranslation.y + nodeHeight / 2,
 };
 vText.setRotationInParent(-90, { x: 0, y: 0 }); // 👈
 ```
@@ -522,23 +533,29 @@ The code for drawing the dimensions is moved to a separate `dimensions.js` file.
 
 ```js
 // ...
-const createDimensionLine = ({ width, height, translation, orientation, margin }) => {
-    /* ... */
+const createDimensionLine = ({
+  width,
+  height,
+  translation,
+  orientation,
+  margin,
+}) => {
+  /* ... */
 };
 
 // ...
 const drawDimensions = () => {
-    /* ... */
+  /* ... */
 };
 const drawDimensionsRefactored = () => {
-    // ...
-    createDimensionLine({
-        /* ... */
-    }); // 👈
-    createDimensionLine({
-        /* ... */
-    }); // 👈
-    // ...
+  // ...
+  createDimensionLine({
+    /* ... */
+  }); // 👈
+  createDimensionLine({
+    /* ... */
+  }); // 👈
+  // ...
 };
 
 export { drawDimensions, drawDimensionsRefactored };
@@ -552,22 +569,22 @@ A rather unorthodox warning system is implemented to alert the user when selecti
 
 ```js
 addOnUISdk.ready.then(async () => {
-    // ...
-    runtime.exposeApi({
-        flashWrongElement(id) {
-            const button = document.getElementById(id);
-            const oldText = button.textContent;
-            const oldColor = button.style.backgroundColor;
+  // ...
+  runtime.exposeApi({
+    flashWrongElement(id) {
+      const button = document.getElementById(id);
+      const oldText = button.textContent;
+      const oldColor = button.style.backgroundColor;
 
-            button.textContent = "WRONG NODE";
-            button.style.backgroundColor = "#ff0000";
+      button.textContent = "WRONG NODE";
+      button.style.backgroundColor = "#ff0000";
 
-            setTimeout(() => {
-                button.textContent = oldText;
-                button.style.backgroundColor = oldColor;
-            }, 1000);
-        },
-    });
+      setTimeout(() => {
+        button.textContent = oldText;
+        button.style.backgroundColor = oldColor;
+      }, 1000);
+    },
+  });
 });
 ```
 
@@ -575,11 +592,14 @@ addOnUISdk.ready.then(async () => {
 
 ```js
 const drawDimensionsRefactored = () => {
-    if (editor.context.hasSelection && editor.context.selection[0].type === constants.SceneNodeType.mediaContainer) {
-        // ...
-    } else {
-        panelUIProxy.flashWrongElement("drawDimensionsRefactored"); // 👈
-    }
+  if (
+    editor.context.hasSelection &&
+    editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
+  ) {
+    // ...
+  } else {
+    panelUIProxy.flashWrongElement("drawDimensionsRefactored"); // 👈
+  }
 };
 ```
 
@@ -591,24 +611,24 @@ When the Document Sandbox code detects an unsupported node type, it reaches out 
 
 As an exercise, you use the code sample found below and expand it to build a more complete Dimensions add-on; for example, you can:
 
--   support **more node types**;
--   add **UI elements**:
-    -   a slider to control the dimensions' distance from the object;
-    -   dropdowns to choose the line's style (solid, dashed, dotted), and the arrowhead type;
-    -   a checkbox to toggle the extra dashed lines;
-    -   a color picker to change the line's color—see the [Grids add-on](/guides/tutorials/grids-addon.md) for an example.
+- support **more node types**;
+- add **UI elements**:
+  - a slider to control the dimensions' distance from the object;
+  - dropdowns to choose the line's style (solid, dashed, dotted), and the arrowhead type;
+  - a checkbox to toggle the extra dashed lines;
+  - a color picker to change the line's color—see the [Grids add-on](/guides/tutorials/grids-addon.md) for an example.
 
 ## Lessons Learned
 
 Let's review the key concepts discussed in this article.
 
--   **DOM Structure**: the DOM is a hierarchical tree of nodes with parent/child relationships and well-defined inheritance.
--   **OOP principles**: classes, inheritance, class extension, and interfaces are crucial Object Oriented programming notions.
--   **Constants**: represent a safe way to refer to internal values and check against enumerable properties.
--   **Reference documentation**: the Adobe Express Document API reference is a key resource: it provides comprehensive information on available classes, interfaces, and their properties and methods.
--   **Classes and Interfaces**: you can differentiate between live object classes, collection classes, abstract classes, static classes, object interfaces, and implementable interfaces.
--   **Types and IntelliSense**: using `.d.ts` and `tsconfig.json` files in your projects can enhance code completion and type checking, leading to faster and error-free coding.
--   You've also learned how to **prototype an add-on** by navigating the Reference documentation alone.
+- **DOM Structure**: the DOM is a hierarchical tree of nodes with parent/child relationships and well-defined inheritance.
+- **OOP principles**: classes, inheritance, class extension, and interfaces are crucial Object Oriented programming notions.
+- **Constants**: represent a safe way to refer to internal values and check against enumerable properties.
+- **Reference documentation**: the Adobe Express Document API reference is a key resource: it provides comprehensive information on available classes, interfaces, and their properties and methods.
+- **Classes and Interfaces**: you can differentiate between live object classes, collection classes, abstract classes, static classes, object interfaces, and implementable interfaces.
+- **Types and IntelliSense**: using `.d.ts` and `tsconfig.json` files in your projects can enhance code completion and type checking, leading to faster and error-free coding.
+- You've also learned how to **prototype an add-on** by navigating the Reference documentation alone.
 
 ## Final Project
 
@@ -624,11 +644,17 @@ Please use the **iframe UI** and **Document Sandbox** tabs to switch between the
 
 ```html
 <body>
-    <sp-theme scale="medium" color="light" theme="express">
-        <sp-button id="logNode">Log selected node</sp-button>
-        <sp-button id="drawDimensions">Draw Dimensions</sp-button>
-        <sp-button id="drawDimensionsRefactored">Draw Dimensions (refactored)</sp-button>
-    </sp-theme>
+  <sp-theme
+    scale="medium"
+    color="light"
+    theme="express"
+  >
+    <sp-button id="logNode">Log selected node</sp-button>
+    <sp-button id="drawDimensions">Draw Dimensions</sp-button>
+    <sp-button id="drawDimensionsRefactored"
+      >Draw Dimensions (refactored)</sp-button
+    >
+  </sp-theme>
 </body>
 ```
 
@@ -647,37 +673,37 @@ import "@spectrum-web-components/button/sp-button.js";
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-    console.log("addOnUISdk is ready for use.");
+  console.log("addOnUISdk is ready for use.");
 
-    // Get the Authoring Sandbox.
-    const { runtime } = addOnUISdk.instance;
-    const sandboxProxy = await runtime.apiProxy("documentSandbox");
+  // Get the Authoring Sandbox.
+  const { runtime } = addOnUISdk.instance;
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-    const buttonIds = ["logNode", "drawDimensions", "drawDimensionsRefactored"];
+  const buttonIds = ["logNode", "drawDimensions", "drawDimensionsRefactored"];
 
-    buttonIds.forEach((id) => {
-        const button = document.getElementById(id);
-        button.addEventListener("click", () => {
-            sandboxProxy[id]();
-        });
-        button.disabled = false;
+  buttonIds.forEach((id) => {
+    const button = document.getElementById(id);
+    button.addEventListener("click", () => {
+      sandboxProxy[id]();
     });
+    button.disabled = false;
+  });
 
-    runtime.exposeApi({
-        flashWrongElement(id) {
-            const button = document.getElementById(id);
-            const oldText = button.textContent;
-            const oldColor = button.style.backgroundColor;
+  runtime.exposeApi({
+    flashWrongElement(id) {
+      const button = document.getElementById(id);
+      const oldText = button.textContent;
+      const oldColor = button.style.backgroundColor;
 
-            button.textContent = "WRONG NODE";
-            button.style.backgroundColor = "#ff0000";
+      button.textContent = "WRONG NODE";
+      button.style.backgroundColor = "#ff0000";
 
-            setTimeout(() => {
-                button.textContent = oldText;
-                button.style.backgroundColor = oldColor;
-            }, 1000);
-        },
-    });
+      setTimeout(() => {
+        button.textContent = oldText;
+        button.style.backgroundColor = oldColor;
+      }, 1000);
+    },
+  });
 });
 ```
 
@@ -690,14 +716,14 @@ import { editor } from "express-document-sdk";
 import { drawDimensions, drawDimensionsRefactored } from "./dimensions.js";
 
 function start() {
-    runtime.exposeApi({
-        drawDimensions,
-        drawDimensionsRefactored,
-        logNode: () => {
-            const selectedNode = editor.context.selection[0];
-            console.log("Currently selected node", selectedNode);
-        },
-    });
+  runtime.exposeApi({
+    drawDimensions,
+    drawDimensionsRefactored,
+    logNode: () => {
+      const selectedNode = editor.context.selection[0];
+      console.log("Currently selected node", selectedNode);
+    },
+  });
 }
 
 start();
@@ -712,163 +738,185 @@ const panelUIProxy = await runtime.apiProxy("panel");
 
 import { editor, constants } from "express-document-sdk";
 
-const createDimensionLine = ({ width, height, translation, orientation, margin }) => {
-    const isVertical = orientation === "vertical";
+const createDimensionLine = ({
+  width,
+  height,
+  translation,
+  orientation,
+  margin,
+}) => {
+  const isVertical = orientation === "vertical";
 
-    // Adjust line start and end points based on orientation and margin
-    const lineStart = isVertical
-        ? { x: translation.x - margin, y: translation.y }
-        : { x: translation.x, y: translation.y - margin };
-    const lineEnd = isVertical
-        ? { x: translation.x - margin, y: translation.y + height }
-        : { x: translation.x + width, y: translation.y - margin };
+  // Adjust line start and end points based on orientation and margin
+  const lineStart = isVertical
+    ? { x: translation.x - margin, y: translation.y }
+    : { x: translation.x, y: translation.y - margin };
+  const lineEnd = isVertical
+    ? { x: translation.x - margin, y: translation.y + height }
+    : { x: translation.x + width, y: translation.y - margin };
 
-    const textValue = isVertical ? height : width;
-    const textPos = isVertical
-        ? { x: translation.x - margin - 10, y: translation.y + height / 2 }
-        : { x: translation.x + width / 2, y: translation.y - margin - 10 };
+  const textValue = isVertical ? height : width;
+  const textPos = isVertical
+    ? { x: translation.x - margin - 10, y: translation.y + height / 2 }
+    : { x: translation.x + width / 2, y: translation.y - margin - 10 };
 
-    const line = editor.createLine();
-    line.setEndPoints(lineStart.x, lineStart.y, lineEnd.x, lineEnd.y);
-    line.startArrowHeadType = line.endArrowHeadType = constants.ArrowHeadType.openTriangular;
-    editor.context.insertionParent.children.append(line);
+  const line = editor.createLine();
+  line.setEndPoints(lineStart.x, lineStart.y, lineEnd.x, lineEnd.y);
+  line.startArrowHeadType = line.endArrowHeadType =
+    constants.ArrowHeadType.openTriangular;
+  editor.context.insertionParent.children.append(line);
 
-    const text = editor.createText();
-    text.text = `${Math.trunc(textValue).toString()}px`;
-    editor.context.insertionParent.children.append(text);
-    text.translation = textPos;
+  const text = editor.createText();
+  text.fullContent.text = `${Math.trunc(textValue).toString()}px`;
+  editor.context.insertionParent.children.append(text);
+  text.translation = textPos;
 
-    if (isVertical) {
-        text.setRotationInParent(-90, { x: 0, y: 0 });
-    }
+  if (isVertical) {
+    text.setRotationInParent(-90, { x: 0, y: 0 });
+  }
 
-    const group = editor.createGroup();
-    editor.context.insertionParent.children.append(group);
-    group.children.append(line, text);
+  const group = editor.createGroup();
+  editor.context.insertionParent.children.append(group);
+  group.children.append(line, text);
 
-    // Create and append extra lines at the extremities
-    for (let i = 0; i < 2; i++) {
-        const extraLine = editor.createLine();
-        const extraLineStart = isVertical
-            ? {
-                  x: translation.x,
-                  y: i === 0 ? translation.y : translation.y + height,
-              }
-            : {
-                  x: i === 0 ? translation.x : translation.x + width,
-                  y: translation.y,
-              };
-        const extraLineEnd = isVertical
-            ? {
-                  x: translation.x - margin - 10,
-                  y: i === 0 ? translation.y : translation.y + height,
-              }
-            : {
-                  x: i === 0 ? translation.x : translation.x + width,
-                  y: translation.y - margin - 10,
-              };
+  // Create and append extra lines at the extremities
+  for (let i = 0; i < 2; i++) {
+    const extraLine = editor.createLine();
+    const extraLineStart = isVertical
+      ? {
+          x: translation.x,
+          y: i === 0 ? translation.y : translation.y + height,
+        }
+      : {
+          x: i === 0 ? translation.x : translation.x + width,
+          y: translation.y,
+        };
+    const extraLineEnd = isVertical
+      ? {
+          x: translation.x - margin - 10,
+          y: i === 0 ? translation.y : translation.y + height,
+        }
+      : {
+          x: i === 0 ? translation.x : translation.x + width,
+          y: translation.y - margin - 10,
+        };
 
-        extraLine.setEndPoints(extraLineStart.x, extraLineStart.y, extraLineEnd.x, extraLineEnd.y);
-        extraLine.stroke = editor.makeStroke({
-            color: { red: 1, green: 0, blue: 0, alpha: 1 },
-            dashPattern: [4, 2],
-            width: 0.5,
-        });
-        group.children.append(extraLine);
-        // editor.context.insertionParent.children.append(extraLine);
-    }
+    extraLine.setEndPoints(
+      extraLineStart.x,
+      extraLineStart.y,
+      extraLineEnd.x,
+      extraLineEnd.y
+    );
+    extraLine.stroke = editor.makeStroke({
+      color: { red: 1, green: 0, blue: 0, alpha: 1 },
+      dashPattern: [4, 2],
+      width: 0.5,
+    });
+    group.children.append(extraLine);
+    // editor.context.insertionParent.children.append(extraLine);
+  }
 
-    return group;
+  return group;
 };
 
 const drawDimensions = () => {
-    if (editor.context.hasSelection && editor.context.selection[0].type === constants.SceneNodeType.mediaContainer) {
-        const selectedNode = editor.context.selection[0];
-        console.log(selectedNode);
-        const { translation: nodeTranslation } = selectedNode;
-        const { width: nodeWidth, height: nodeHeight } = selectedNode.mediaRectangle;
+  if (
+    editor.context.hasSelection &&
+    editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
+  ) {
+    const selectedNode = editor.context.selection[0];
+    console.log(selectedNode);
+    const { translation: nodeTranslation } = selectedNode;
+    const { width: nodeWidth, height: nodeHeight } =
+      selectedNode.mediaRectangle;
 
-        const hLine = editor.createLine();
-        hLine.setEndPoints(
-            nodeTranslation.x,
-            nodeTranslation.y - 20,
-            nodeTranslation.x + nodeWidth,
-            nodeTranslation.y - 20
-        );
+    const hLine = editor.createLine();
+    hLine.setEndPoints(
+      nodeTranslation.x,
+      nodeTranslation.y - 20,
+      nodeTranslation.x + nodeWidth,
+      nodeTranslation.y - 20
+    );
 
-        // translation is relative to the parent!!
-        editor.context.insertionParent.children.append(hLine);
-        hLine.startArrowHeadType = hLine.endArrowHeadType = constants.ArrowHeadType.openTriangular;
+    // translation is relative to the parent!!
+    editor.context.insertionParent.children.append(hLine);
+    hLine.startArrowHeadType = hLine.endArrowHeadType =
+      constants.ArrowHeadType.openTriangular;
 
-        const hText = editor.createText();
-        hText.text = `${Math.trunc(nodeWidth).toString()}px`;
-        editor.context.insertionParent.children.append(hText);
+    const hText = editor.createText();
+    hText.fullContent.text = `${Math.trunc(nodeWidth).toString()}px`;
+    editor.context.insertionParent.children.append(hText);
 
-        hText.translation = {
-            x: nodeTranslation.x + nodeWidth / 2,
-            y: nodeTranslation.y - 30,
-        };
+    hText.translation = {
+      x: nodeTranslation.x + nodeWidth / 2,
+      y: nodeTranslation.y - 30,
+    };
 
-        const hGroup = editor.createGroup();
-        editor.context.insertionParent.children.append(hGroup);
-        hGroup.children.append(hLine, hText);
+    const hGroup = editor.createGroup();
+    editor.context.insertionParent.children.append(hGroup);
+    hGroup.children.append(hLine, hText);
 
-        // Same for the vertical line
-        const vLine = editor.createLine();
-        vLine.setEndPoints(
-            nodeTranslation.x - 20,
-            nodeTranslation.y,
-            nodeTranslation.x - 20,
-            nodeTranslation.y + nodeHeight
-        );
-        vLine.startArrowHeadType = vLine.endArrowHeadType = constants.ArrowHeadType.openTriangular;
+    // Same for the vertical line
+    const vLine = editor.createLine();
+    vLine.setEndPoints(
+      nodeTranslation.x - 20,
+      nodeTranslation.y,
+      nodeTranslation.x - 20,
+      nodeTranslation.y + nodeHeight
+    );
+    vLine.startArrowHeadType = vLine.endArrowHeadType =
+      constants.ArrowHeadType.openTriangular;
 
-        editor.context.insertionParent.children.append(vLine);
+    editor.context.insertionParent.children.append(vLine);
 
-        const vText = editor.createText();
-        vText.text = `${Math.trunc(nodeHeight).toString()}px`;
-        editor.context.insertionParent.children.append(vText);
+    const vText = editor.createText();
+    vText.fullContent.text = `${Math.trunc(nodeHeight).toString()}px`;
+    editor.context.insertionParent.children.append(vText);
 
-        vText.translation = {
-            x: nodeTranslation.x - 30,
-            y: nodeTranslation.y + nodeHeight / 2,
-        };
-        vText.setRotationInParent(-90, { x: 0, y: 0 });
+    vText.translation = {
+      x: nodeTranslation.x - 30,
+      y: nodeTranslation.y + nodeHeight / 2,
+    };
+    vText.setRotationInParent(-90, { x: 0, y: 0 });
 
-        const vGroup = editor.createGroup();
-        editor.context.insertionParent.children.append(vGroup);
-        vGroup.children.append(vLine, vText);
-    } else {
-        panelUIProxy.flashWrongElement("drawDimensions");
-    }
+    const vGroup = editor.createGroup();
+    editor.context.insertionParent.children.append(vGroup);
+    vGroup.children.append(vLine, vText);
+  } else {
+    panelUIProxy.flashWrongElement("drawDimensions");
+  }
 };
 
 const drawDimensionsRefactored = () => {
-    if (editor.context.hasSelection && editor.context.selection[0].type === constants.SceneNodeType.mediaContainer) {
-        const selectedNode = editor.context.selection[0];
-        const { translation: nodeTranslation } = selectedNode;
-        const { width: nodeWidth, height: nodeHeight } = selectedNode.mediaRectangle;
+  if (
+    editor.context.hasSelection &&
+    editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
+  ) {
+    const selectedNode = editor.context.selection[0];
+    const { translation: nodeTranslation } = selectedNode;
+    const { width: nodeWidth, height: nodeHeight } =
+      selectedNode.mediaRectangle;
 
-        // Create horizontal dimension line
-        createDimensionLine({
-            width: nodeWidth,
-            height: nodeHeight,
-            translation: nodeTranslation,
-            orientation: "horizontal",
-            margin: 60,
-        });
+    // Create horizontal dimension line
+    createDimensionLine({
+      width: nodeWidth,
+      height: nodeHeight,
+      translation: nodeTranslation,
+      orientation: "horizontal",
+      margin: 60,
+    });
 
-        // Create vertical dimension line
-        createDimensionLine({
-            width: nodeWidth,
-            height: nodeHeight,
-            translation: nodeTranslation,
-            orientation: "vertical",
-            margin: 20,
-        });
-    } else {
-        panelUIProxy.flashWrongElement("drawDimensionsRefactored");
-    }
+    // Create vertical dimension line
+    createDimensionLine({
+      width: nodeWidth,
+      height: nodeHeight,
+      translation: nodeTranslation,
+      orientation: "vertical",
+      margin: 20,
+    });
+  } else {
+    panelUIProxy.flashWrongElement("drawDimensionsRefactored");
+  }
 };
 
 export { drawDimensions, drawDimensionsRefactored };
