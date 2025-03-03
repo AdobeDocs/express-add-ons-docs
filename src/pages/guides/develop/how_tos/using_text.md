@@ -317,6 +317,124 @@ editor.queueAsyncEdit(() => {
 
 Since we're dealing with asynchronous operations, we're queuing the edit to ensure it's properly tracked for saving and undo, as we did for [setting other styles](#example-setting-all-styles)
 
+## Applying Paragraph Styles
+
+Paragraph styles can be applied to a TextNode using the [`fullContent.applyParagraphStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applyparagraphstyles) method. This method applies one or more style properties to entire paragraphs within the specified range, while leaving any style properties that are not provided unchanged. In contrast to directly setting the [`paragraphStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges) property—which resets any unspecified properties to their defaults—using `applyParagraphStyles()` lets you update only the desired aspects of the style.
+
+The available properties are defined by the [`ParagraphStylesInput`](../../../references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md) interface and include:
+
+- **lineSpacing**: Specifies the spacing between lines (leading), expressed as a multiple of the font’s default spacing (e.g. 1.5 means 150% of normal).
+- **spaceBefore**: Sets the space (in points) before a paragraph.
+- **spaceAfter**: Sets the space (in points) after a paragraph.
+- **list**: Configures list styles (ordered or unordered) for the paragraph. When specifying list styles, you provide the settings via either the [`OrderedListStyleInput`](../../../references/document-sandbox/document-apis/interfaces/OrderedListStyleInput.md) or [`UnorderedListStyleInput`](../../../references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md) interface.
+
+Paragraphs are defined by newline characters (`\n`), so the style ranges should align with these boundaries. The method accepts an optional range—an object with `start` and `length` properties—that determines which portion of the text content will be updated. If no range is provided, the styles will be applied to the entire text content flow.
+
+<InlineAlert slots="header, text" variant="warning"/>
+
+Style Ranges and Text Edits
+
+For the moment, replacing the `fullContent.text` will result in applying the style from the first range to the whole text. This behavior is subject to change in future releases.
+
+### Example: Setting Styles in a Range
+
+In this example, we modify the styles for a specific paragraph (the first 20 characters) by updating the line spacing and adding an ordered list style.
+
+```js
+// sandbox/code.js
+import { editor, constants } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0];
+
+// Apply paragraph styles to the specified range (e.g., the first paragraph)
+textNode.fullContent.applyParagraphStyles(
+  {
+    lineSpacing: 1.5, // 150% of normal line spacing
+    spaceBefore: 12, // 12 points before the paragraph
+    spaceAfter: 8, // 8 points after the paragraph
+    list: {
+      type: constants.ParagraphListType.ordered,
+      numbering: constants.OrderedListNumbering.doubleZeroPrefixNumeric,
+      prefix: "",
+      postfix: ".",
+      indentLevel: 2, // Indent level for the list
+    },
+  },
+  {
+    start: 0,
+    length: 20,
+  }
+);
+```
+
+### Example: Getting All Styles
+
+To view the paragraph styles currently applied to a TextNode, you can access the [`fullContent.paragraphStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges) property. This property returns an array of [`ParagraphStylesRange`](../../../references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md) objects, each representing the style configuration for a contiguous block of text (i.e. a paragraph).
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0];
+const contentModel = textNode.fullContent;
+
+// Retrieve and log the paragraph style ranges
+const paragraphStyles = contentModel.paragraphStyleRanges;
+console.log("Paragraph Styles: ", paragraphStyles);
+```
+
+### Example: Setting All Styles
+
+You can also update paragraph styles for the entire text content by modifying the array returned by [`paragraphStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges). In this example, we update the `spaceAfter` property for all paragraphs.
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0];
+const contentModel = textNode.fullContent;
+
+// Get the current paragraph style ranges
+const existingStyles = contentModel.paragraphStyleRanges;
+
+// Update each range (for instance, set spaceAfter to 10 points)
+existingStyles.forEach((range) => {
+  range.spaceAfter = 10;
+});
+
+// Reassign the modified array to apply the changes
+contentModel.paragraphStyleRanges = existingStyles;
+```
+
+### Example: Reapplying Styles
+
+When you update the text content, paragraph boundaries may change. To preserve your custom paragraph styles, save the current style ranges, modify the text, and then reapply the saved styles.
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0];
+const contentModel = textNode.fullContent;
+
+// Save the current paragraph style ranges
+const savedParagraphStyles = contentModel.paragraphStyleRanges;
+
+// Replace the text content
+contentModel.text = "New text content\nwith updated paragraphs";
+
+// Reapply the saved paragraph styles
+contentModel.paragraphStyleRanges = savedParagraphStyles;
+```
+
+<InlineAlert slots="text" variant="warning"/>
+
+If the updated text does not match the original paragraph boundaries, some styles may not be reapplied as expected. This is a temporary limitation until automatic preservation of paragraph styles is implemented.
+
 ## Dealing with Text Flow
 
 With the introduction of "Text Flow" in Adobe Express (allowing content to move freely between multiple text frames), the concept of a text node had to be separated from text content.
