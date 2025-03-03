@@ -22,6 +22,14 @@ contributors:
 
 # Changelog
 
+## 2025-03-03
+
+### Changed
+
+- Stabilized the Per Element Metadata APIs. Refer to the [AddOnData](../references/document-sandbox/document-apis/classes/AddOnData.md) class for details. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
+- Stabilized the Selection Change Notification Events APIs. Refer to the [Context](../references/document-sandbox/document-apis/classes/Context.md) class which exposes two [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
 ## 2025-02-26
 
 ### Added
