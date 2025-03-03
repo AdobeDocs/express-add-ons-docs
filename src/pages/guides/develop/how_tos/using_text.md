@@ -166,6 +166,32 @@ existingStyles.forEach((style) => {
 contentModel.characterStyleRanges = existingStyles;
 ```
 
+### Example: Reapplying Styles
+
+In the current release, automatic preservation of the Character Style configuration is not available when editing a TextNode’s content via the `fullContent.text`. As a temporary solution, you can save the existing character style ranges before updating the text and reapply them afterward to maintain your custom styles.
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0];
+const contentModel = textNode.fullContent;
+
+// Save existing character style ranges
+const savedStyles = contentModel.characterStyleRanges;
+
+// Replace the text content
+contentModel.text = "Updated text content\nwith preserved styles";
+
+// Reapply the saved character styles
+contentModel.characterStyleRanges = savedStyles;
+```
+
+<InlineAlert slots="text" variant="warning"/>
+
+If the text content differs too much from the original, the character style ranges might not be reapplied correctly. This is a temporary solution until automatic preservation of character styles is available.
+
 ## Using Fonts
 
 In the Adobe Express Document API, Fonts are part of the Character Styles; we're treating them separately here for clarity. Similarly to the color and other properties, you can use individual [`CharacterStylesRange`](../../../references/document-sandbox/document-apis/interfaces/CharacterStylesRange.md) items from the [`CharacterStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) array as Font getters and setters, or use the [`applyCharacterStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applycharacterstyles) method to apply a Font style to a specific range.
