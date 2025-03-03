@@ -133,8 +133,6 @@ The complete text string, which may span multiple [TextNode](TextNode.md) "frame
 
 ### applyCharacterStyles()
 
-`Experimental`
-
 • **applyCharacterStyles**(`styles`, `range`?): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -170,8 +168,6 @@ entire paragraphs, it overlaps.
 ---
 
 ### applyParagraphStyles()
-
-`Experimental`
 
 • **applyParagraphStyles**(`styles`, `range`?): `void`
 

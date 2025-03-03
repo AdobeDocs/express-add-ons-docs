@@ -10,7 +10,7 @@ A set of [ParagraphStyles](ParagraphStyles.md) and the text range they apply to.
 
 ## Extends
 
-- [`ParagraphStyles`](ParagraphStyles.md).[`StyleRange`](StyleRange.md)
+-   [`ParagraphStyles`](ParagraphStyles.md).[`StyleRange`](StyleRange.md)
 
 ## Properties
 
@@ -26,7 +26,7 @@ such as emojis are considered to have a length of 2.
 
 [`StyleRange`](StyleRange.md).[`length`](StyleRange.md#length)
 
-***
+---
 
 ### lineSpacing
 
@@ -39,17 +39,17 @@ It only affects the space *between* lines, not the space above the first line or
 
 [`ParagraphStyles`](ParagraphStyles.md).[`lineSpacing`](ParagraphStyles.md#linespacing)
 
-***
+---
 
 ### list?
 
-• `optional` **list**: `Required`\<[`OrderedListStyleInput`](OrderedListStyleInput.md)\> \| `Required`\<[`UnorderedListStyleInput`](UnorderedListStyleInput.md)\>
+• `optional` **list**: `Required`<[`OrderedListStyleInput`](OrderedListStyleInput.md)\> \| `Required`<[`UnorderedListStyleInput`](UnorderedListStyleInput.md)\>
 
 #### Inherited from
 
 [`ParagraphStyles`](ParagraphStyles.md).[`list`](ParagraphStyles.md#list)
 
-***
+---
 
 ### spaceAfter
 
@@ -62,7 +62,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 [`ParagraphStyles`](ParagraphStyles.md).[`spaceAfter`](ParagraphStyles.md#spaceafter)
 
-***
+---
 
 ### spaceBefore
 

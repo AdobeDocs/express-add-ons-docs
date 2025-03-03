@@ -11,11 +11,11 @@ any fields not specified are left unchanged, preserving the text's existing styl
 
 ## Extends
 
-- `Partial`\<[`BaseParagraphStyles`](BaseParagraphStyles.md)\>
+-   `Partial`<[`BaseParagraphStyles`](BaseParagraphStyles.md)\>
 
 ## Extended by
 
-- [`ParagraphStylesRangeInput`](ParagraphStylesRangeInput.md)
+-   [`ParagraphStylesRangeInput`](ParagraphStylesRangeInput.md)
 
 ## Properties
 
@@ -30,13 +30,13 @@ It only affects the space *between* lines, not the space above the first line or
 
 `Partial.lineSpacing`
 
-***
+---
 
 ### list?
 
 • `optional` **list**: [`OrderedListStyleInput`](OrderedListStyleInput.md) \| [`UnorderedListStyleInput`](UnorderedListStyleInput.md)
 
-***
+---
 
 ### spaceAfter?
 
@@ -49,7 +49,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 `Partial.spaceAfter`
 
-***
+---
 
 ### spaceBefore?
 

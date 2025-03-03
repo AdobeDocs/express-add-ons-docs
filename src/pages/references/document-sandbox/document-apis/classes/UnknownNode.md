@@ -14,10 +14,6 @@ An UnknownNode is a node with limited support and therefore treated as a leaf no
 
 • `get` **addOnData**(): [`AddOnData`](AddOnData.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
 
 #### Returns
@@ -127,7 +123,7 @@ moved to a different part of the document.
 
 The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
 cannot be edited by the user in the UI unless they are unlocked first. Operations on locked nodes using the API
-are permitted, but developers should consider if modifying a locked node would align with user expectations
+are permitted. However, please consider if modifying a locked node would align with user expectations
 before using the API to make changes to locked nodes.
 
 • `set` **locked**(`locked`): `void`
