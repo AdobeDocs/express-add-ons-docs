@@ -85,12 +85,19 @@ even for an orphan node with no parent.
 
 • `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-Note: If this group has a maskShape, group's bounds are always identical to the maskShape's, regardless of the
-group's other content.
+The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
+relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
+"spine" of the shape as well as its stroke, but excluding effects such as shadows.
+
+The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+
+Note: If this group has a maskShape, group's bounds are always identical to the maskShape's, regardless of the
+group's other content.
 
 ---
 
@@ -98,8 +105,7 @@ group's other content.
 
 • `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
-box.
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 

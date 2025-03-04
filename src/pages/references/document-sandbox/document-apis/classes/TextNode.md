@@ -100,12 +100,14 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 • `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
-box.
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Note: The center of the orphaned TextNode may be different from the center of the node placed on a page. It is
+recommended to use this property only when the node is placed on a page.
 
 ---
 
@@ -208,10 +210,6 @@ before using the API to make changes to locked nodes.
 ### nextTextNode
 
 • `get` **nextTextNode**(): `undefined` \| [`TextNode`](TextNode.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
 ([AreaTextLayout](../interfaces/AreaTextLayout.md)), any text content that does not fit within this node's area will be clipped.
@@ -347,6 +345,9 @@ boundsInParent.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
+Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
+page. It is recommended to use this property only when the node is placed on a page.
+
 ---
 
 ### transformMatrix
@@ -396,10 +397,6 @@ The node's type.
 ### visualEffects
 
 • `get` **visualEffects**(): readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Returns
 

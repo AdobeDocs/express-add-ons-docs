@@ -72,8 +72,7 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 • `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
-box.
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 

@@ -66,8 +66,7 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 • `get` **centerPointLocal**(): `Readonly`<[`Point`](Point.md)\>
 
-Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
-box.
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
