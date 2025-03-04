@@ -26,7 +26,7 @@ contributors:
 
 ### Changed
 
-- Stablized few HLAPI's like: 
+- Stablized few HLAPI's like:
   - The [TextNode](../references/document-sandbox/document-apis/classes/TextNode.md) API's.
   - The [fromPostscriptName()](./document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](../references/document-sandbox/document-apis/classes/Fonts.md) class.
   - The [TextContentModel](../references/document-sandbox/document-apis/classes/TextContentModel.md) APIs like [characterStyleRanges](../references/document-sandbox/document-apis/classes/TextContentModel#characterStyleRanges.md). The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
