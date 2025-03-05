@@ -105,3 +105,15 @@
 -   [OrderedListStyle](type-aliases/OrderedListStyle.md)
 -   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)
 -   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)
+
+## References
+
+### OrderedListNumbering
+
+Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/OrderedListNumbering.md)
+
+---
+
+### ParagraphListType
+
+Re-exports [ParagraphListType](namespaces/Constants/enumerations/ParagraphListType.md)
