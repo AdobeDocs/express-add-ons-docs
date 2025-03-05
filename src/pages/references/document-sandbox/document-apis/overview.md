@@ -15,8 +15,6 @@
 -   [EditorEvent](enumerations/EditorEvent.md)
 -   [FillRule](enumerations/FillRule.md)
 -   [FillType](enumerations/FillType.md)
--   [OrderedListNumbering](enumerations/OrderedListNumbering.md)
--   [ParagraphListType](enumerations/ParagraphListType.md)
 -   [SceneNodeType](enumerations/SceneNodeType.md)
 -   [StrokePosition](enumerations/StrokePosition.md)
 -   [StrokeType](enumerations/StrokeType.md)
