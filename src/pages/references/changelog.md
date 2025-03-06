@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-03-07
+
+### Added
+
+- A new [How-to](../guides/develop/how_to.md) section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.
+
 ## 2025-02-26
 
 ### Added
