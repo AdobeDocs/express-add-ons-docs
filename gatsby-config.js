@@ -781,7 +781,7 @@ module.exports = {
                 ],
               },
               {
-                title: "Monetization & User Info",
+                title: "User Info",
                 path: "guides/develop/how_to/user_info.md",
                 pages: [
                   {

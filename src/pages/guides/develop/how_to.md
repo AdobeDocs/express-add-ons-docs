@@ -11,14 +11,14 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: Using How-Tos
+title: About our How-to guides
 description:
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
 ---
 
-# Using How-Tos
+# About our How-to guides
 
 The following guides contain a set of common use cases and accompanying code snippets that will help you quickly implement a wide variety of features in your add-ons.
 
@@ -33,31 +33,30 @@ You're encouraged to use the [Code Playground](../getting_started/code_playgroun
 - Authentication & Authorization
   - [Use OAuth 2.0](./how_to/oauth2.md)
 - Data & Environment
-  - [Storing Data](./how_to/local_data_management.md)
+  - [Store Data](./how_to/local_data_management.md)
   - [Theme & Locale](./how_to/theme_locale.md)
 - UI & Interaction
-  - [Drag & Drop](./how_to/drag_and_drop.md)
-  - [Modal Dialogs](./how_to/modal_dialogs.md)
+  - [Use Drag & Drop](./how_to/drag_and_drop.md)
+  - [Use Modal Dialogs](./how_to/modal_dialogs.md)
 - Use Design Elements
   - [Use Text](./how_to/use_text.md)
-  - [Use Shapes](./how_to/use_geometry.md)
+  - [Use Geometry](./how_to/use_geometry.md)
+  - [Use Color](./how_to/use_color.md)
   - [Use Images](./how_to/use_images.md)
   - [Use Videos](./how_to/use_videos.md)
   - [Use Audio](./how_to/use_audio.md)
   - [Use PDF and PowerPoint](./how_to/use_pdf_powerpoint.md)
-  - [Use Color](./how_to/use_color.md)
   - [Group Elements](./how_to/group_elements.md)
   - [Position Elements](./how_to/position_elements.md)
-  - [Replace Elements](./how_to/replacing_elements.md)
 - Use Metadata
   <!-- - [Authoring Adobe Express Content](./how_to/authoring_adobe_express_content.md) -->
-  - [Get Document Metadata](./how_to/document_metadata.md)
-  - [Get Page Metadata](./how_to/page_metadata.md)
-  - [Get Element Metadata](./how_to/element_metadata.md)
+  - [Document Metadata](./how_to/document_metadata.md)
+  - [Page Metadata](./how_to/page_metadata.md)
+  - [Element Metadata](./how_to/element_metadata.md)
 - Exporting & Output
   - [Create Renditions](./how_to/create_renditions.md)
-  - [Deal with Premium Content](./how_to/premium_content.md)
-- Monetization & User Info
-  - [Get User information](./how_to/user_info.md)
+  - [Manage with Premium Content](./how_to/premium_content.md)
+- User Info
+  - [Identify users](./how_to/user_info.md)
 
 Feel free to reach out and suggest new ones that you would find helpful!
