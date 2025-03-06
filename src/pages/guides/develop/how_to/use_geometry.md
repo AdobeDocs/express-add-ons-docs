@@ -10,19 +10,19 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Using Shapes
-description: Using Shapes.
+title: Use Shapes
+description: Use Shapes.
 contributors:
   - https://github.com/undavide
 ---
 
-# Using Geometry
+# Use Geometry
 
-## Creating Shapes
+## Create Shapes
 
 Adobe Express provides a set of geometric shapes that you can create and style programmatically. These shapes are instances of the [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/RectangleNode.md) and [`EllipseNode`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md) classes, and you can draw them using the [`editor.createRectangle()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createrectangle) and [`editor.createEllipse()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createellipse) methods, respectively.
 
-### Example: Adding a Rectangle
+### Example: Add a Rectangle
 
 ```js
 // sandbox/code.js
@@ -43,9 +43,9 @@ currentPage.artboards.first.children.append(rect);
 
 <InlineAlert slots="header, text, text1" variant="warning"/>
 
-Creating vs. Adding to the page
+Create vs. Add to the page
 
-Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/ArtboardNode.md), a [Group](./grouping_elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/ContainerNode.md) interface.
+Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/ArtboardNode.md), a [Group](./group_elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/ContainerNode.md) interface.
 
 You usually reference the container using [`editor.context`](../../../references/document-sandbox/document-apis/classes/Context.md), which provides access to the current page, selection, and other useful properties.
 
@@ -59,7 +59,7 @@ const s2 = editor.createEllipse();
 editor.context.currentPage.artboards.first.children.append(s1, s2); // 👈
 ```
 
-### Example: Adding an Ellipse
+### Example: Add an Ellipse
 
 Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md#rx) and [`ry`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md#ry) (radius x, radius y) instead.
 
@@ -85,7 +85,7 @@ const currentPage = editor.context.currentPage;
 currentPage.artboards.first.children.append(rect);
 ```
 
-### Example: Styling Shapes
+### Example: Style Shapes
 
 Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create a rectangle with a fill and a stroke.
 
@@ -120,9 +120,9 @@ editor.context.insertionParent.children.append(ellipse);
 
 <InlineAlert slots="text" variant="info"/>
 
-If you need a refresher on how to create and apply colors, check out [Using Colors](./using_color.md).
+If you need a refresher on how to create and apply colors, check out [Using Colors](./use_color.md).
 
-## Creating Paths
+## Create Paths
 
 Paths are a versatile tool to create complex shapes in Adobe Express. The [`editor.createPath()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createpath) method returns an instance of the [`PathNode`](../../../references/document-sandbox/document-apis/classes/PathNode.md) class, and accepts one [SVG string](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) as the input.
 
@@ -185,7 +185,7 @@ editor.context.insertionParent.children.append(g);
 
 ![Path](./images/paths_complex.png)
 
-### Example: Adding Fills and Strokes
+### Example: Add Fills and Strokes
 
 `PathNode` instances have `fill` and `stroke` properties that you can use to style the path, very much like, say, a [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/RectangleNode.md). In the code snippet below, we're going to add some life to the path from the previous example.
 

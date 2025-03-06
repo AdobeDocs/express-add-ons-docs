@@ -10,18 +10,18 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Using Text
-description: Using Text.
+title: Use Text
+description: Use Text.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Using Text
+# Use Text
 
 Text is an essential part of any design. Let's explore how to use all the available APIs to create and style it.
 
-## Creating Text
+## Create Text
 
 The `editor.createText()` method doesn't accept any parameters and returns a brand new [`TextNode`](../../../references/document-sandbox/document-apis/classes/TextNode.md). The actual textual content starts as empty and is found in its [`fullContent.text`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#text) property.
 
@@ -53,7 +53,7 @@ console.log("Text: ", textNode.fullContent.text);
 
 The text is created with the default styles (Source Sans 3, 100pt, black). Use `\n` or `\r` to add a line break.
 
-## Replacing Text
+## Replace Text
 
 The text content of a `TextNode` can be replaced by setting the [`fullContent.text`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#text) property.
 
@@ -68,14 +68,14 @@ const selectedTextNode = editor.context.selection[0];
 selectedTextNode.fullContent.text = "Something else";
 ```
 
-## Applying Character Styles
+## Apply Character Styles
 
 Text styles can be applied to a `TextNode` using the [`fullContent.applyCharacterStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applycharacterstyles) method, which applies one or more styles to the characters in the given range, leaving any style properties that were not specified unchanged.
 
 The styles are defined by the [`CharacterStylesInput`](../../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md) interface; the properties that can be set are:
 
 - color
-- font (please see the [Using Fonts](#using-fonts) section)
+- font (please see the [Use Fonts](#use-fonts) section)
 - fontSize
 - letterSpacing
 - underline
@@ -88,9 +88,9 @@ Style Ranges and Text edits
 
 For the moment, replacing the `fullContent.text` will result in applying the style from the first range to the whole text. This behavior is subject to change in future releases.
 
-Please note that `applyCharacterStyles()` is only one way to set styles; you can also use the `characterStyleRanges` property, which supports both getting and setting styles, as described [here](#example-setting-all-styles).
+Please note that `applyCharacterStyles()` is only one way to set styles; you can also use the `characterStyleRanges` property, which supports both getting and setting styles, as described [here](#example-set-all-styles).
 
-### Example: Setting Styles in a range
+### Example: Set Styles in a range
 
 Let's change the styles for the first three characters of a TextNode.
 
@@ -118,7 +118,7 @@ textNode.fullContent.applyCharacterStyles(
 
 The `applyCharacterStyles()` method is not the only one that allows you to set styles; you can also use the `characterStyleRanges` property, which supports both getting and setting styles.
 
-### Example: Getting all Styles
+### Example: Get all Styles
 
 To get the complete list of text character styles, you can use the [`fullContent.characterStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) property, which returns an array of [`CharacterStylesRange`](../../../references/document-sandbox/document-apis/interfaces/CharacterStylesRange.md) elements.
 
@@ -140,7 +140,7 @@ existingStyles[0].fontSize = 10;
 contentModel.characterStyleRanges = existingStyles;
 ```
 
-### Example: Setting all Styles
+### Example: Set all Styles
 
 You can also use the [`characterStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) property to set individual ranges or them all. It's always best to get the array, modify it, and then reassign it.
 
@@ -166,7 +166,7 @@ existingStyles.forEach((style) => {
 contentModel.characterStyleRanges = existingStyles;
 ```
 
-### Example: Reapplying Styles
+### Example: Reapply Styles
 
 In the current release, automatic preservation of the Character Style configuration is not available when editing a TextNode’s content via the `fullContent.text`. As a temporary solution, you can save the existing character style ranges before updating the text and reapply them afterward to maintain your custom styles.
 
@@ -192,7 +192,7 @@ contentModel.characterStyleRanges = savedStyles;
 
 If the text content differs too much from the original, the character style ranges might not be reapplied correctly. This is a temporary solution until automatic preservation of character styles is available.
 
-## Using Fonts
+## Use Fonts
 
 In the Adobe Express Document API, Fonts are part of the Character Styles; we're treating them separately here for clarity. Similarly to the color and other properties, you can use individual [`CharacterStylesRange`](../../../references/document-sandbox/document-apis/interfaces/CharacterStylesRange.md) items from the [`CharacterStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) array as Font getters and setters, or use the [`applyCharacterStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applycharacterstyles) method to apply a Font style to a specific range.
 
@@ -212,13 +212,13 @@ The only caveat is that you cannot set the font as an Object literal, like, e.g.
 }
 ```
 
-You can get PostScript names by setting different text fonts in the Adobe Express UI; then, log and inspec the `font` property of `characterStyleRange`, as seen [here](#example-getting-all-styles).
+You can get PostScript names by setting different text fonts in the Adobe Express UI; then, log and inspec the `font` property of `characterStyleRange`, as seen [here](#example-get-all-styles).
 
 <InlineAlert slots="text" variant="info"/>
 
 Remember that the `fromPostscriptName()` method is **asynchronous**. The promise resolves to an `AvailableFont` instance only for fonts that the user has permission to use for editing content; otherwise, it will resolve to `undefined`.
 
-### Example: Setting Fonts in a range.
+### Example: Set Fonts in a range.
 
 Let's now change the font of the first three characters in a TextNode. Please note that although you're allowed to set the font as the only style, the font object itself must contain all the properties, as the following code snippet demonstrates.
 
@@ -248,7 +248,7 @@ Asynchronous operations
 
 Queuing the `applyCharacterStyles()` method is necessary because `fromPostscriptName()` is asynchronous. This ensures the edit is properly tracked for saving and undo. You can read more about this in the [queueAsyncEdit()](../../../references/document-sandbox/document-apis/classes/Editor.md#queueasyncedit) reference.
 
-### Example: Getting all Fonts
+### Example: Get all Fonts
 
 A font, regardless of whether accessed via `CharacterStylesRange` or executing `fromPostscriptName()`, exposes the following properties:
 
@@ -282,9 +282,9 @@ console.log(existingStyles[0].font);
 // }
 ```
 
-### Example: Setting all Fonts
+### Example: Set all Fonts
 
-Similarly to what we've seen with [other styles](#example-setting-all-styles), you can set the font in a range by reassigning the `characterStyleRanges` array.
+Similarly to what we've seen with [other styles](#example-set-all-styles), you can set the font in a range by reassigning the `characterStyleRanges` array.
 
 ```js
 // sandbox/code.js
@@ -315,9 +315,9 @@ editor.queueAsyncEdit(() => {
 
 <InlineAlert slots="text" variant="warning"/>
 
-Since we're dealing with asynchronous operations, we're queuing the edit to ensure it's properly tracked for saving and undo, as we did for [setting other styles](#example-setting-all-styles)
+Since we're dealing with asynchronous operations, we're queuing the edit to ensure it's properly tracked for saving and undo, as we did for [setting other styles](#example-set-all-styles)
 
-## Applying Paragraph Styles
+## Apply Paragraph Styles
 
 Paragraph styles can be applied to a TextNode using the [`fullContent.applyParagraphStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applyparagraphstyles) method. This method applies one or more style properties to entire paragraphs within the specified range, while leaving any style properties that are not provided unchanged. In contrast to directly setting the [`paragraphStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges) property—which resets any unspecified properties to their defaults—using `applyParagraphStyles()` lets you update only the desired aspects of the style.
 
@@ -336,7 +336,7 @@ Style Ranges and Text Edits
 
 For the moment, replacing the `fullContent.text` will result in applying the style from the first range to the whole text. This behavior is subject to change in future releases.
 
-### Example: Setting Styles in a Range
+### Example: Set Styles in a Range
 
 In this example, we modify the styles for a specific paragraph (the first 20 characters) by updating the line spacing and adding an ordered list style.
 
@@ -368,7 +368,7 @@ textNode.fullContent.applyParagraphStyles(
 );
 ```
 
-### Example: Getting All Styles
+### Example: Get All Styles
 
 To view the paragraph styles currently applied to a TextNode, you can access the [`fullContent.paragraphStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges) property. This property returns an array of [`ParagraphStylesRange`](../../../references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md) objects, each representing the style configuration for a contiguous block of text (i.e. a paragraph).
 
@@ -385,7 +385,7 @@ const paragraphStyles = contentModel.paragraphStyleRanges;
 console.log("Paragraph Styles: ", paragraphStyles);
 ```
 
-### Example: Setting All Styles
+### Example: Set All Styles
 
 You can also update paragraph styles for the entire text content by modifying the array returned by [`paragraphStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges). In this example, we update the `spaceAfter` property for all paragraphs.
 
@@ -409,7 +409,7 @@ existingStyles.forEach((range) => {
 contentModel.paragraphStyleRanges = existingStyles;
 ```
 
-### Example: Reapplying Styles
+### Example: Reapply Styles
 
 When you update the text content, paragraph boundaries may change. To preserve your custom paragraph styles, save the current style ranges, modify the text, and then reapply the saved styles.
 
@@ -435,7 +435,7 @@ contentModel.paragraphStyleRanges = savedParagraphStyles;
 
 If the updated text does not match the original paragraph boundaries, some styles may not be reapplied as expected. This is a temporary limitation until automatic preservation of paragraph styles is implemented.
 
-## Dealing with Text Flow
+## Deal with Text Flow
 
 With the introduction of "Text Flow" in Adobe Express (allowing content to move freely between multiple text frames), the concept of a text node had to be separated from text content.
 

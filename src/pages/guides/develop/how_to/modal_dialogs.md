@@ -10,14 +10,14 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Modal Dialogs
-description: Modal Dialogs.
+title: Use Modal Dialogs
+description: Use Modal Dialogs.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Modal Dialogs
+# Use Modal Dialogs
 
 When you need to pop up a dialog to show a certain message, such as an informational, warning, or error message, you can use a modal dialog.
 

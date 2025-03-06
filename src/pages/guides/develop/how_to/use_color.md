@@ -10,16 +10,16 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Using Color
-description: Using Color.
+title: Use Color
+description: Use Color.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Using Color
+# Use Color
 
-## Creating colors
+## Create colors
 
 Colors in Adobe Express are created as instances of the [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) class: objects with `red`, `green`, `blue`, and `alpha` (optional) values in the range from 0 to 1. The `alpha` value represents the opacity of the color, with 0 being fully transparent and 1 fully opaque.
 
@@ -45,7 +45,7 @@ const red = colorUtils.fromRgb(1, 0, 0);
 const redHex = colorUtils.toHex(red); // #FF0000FF
 ```
 
-## Applying colors
+## Apply colors
 
 You can directly set the `color` property of a Text node via [`applyCharacterStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applycharacterstyles):
 
@@ -65,7 +65,7 @@ textNode.fullContent.applyCharacterStyles(
 );
 ```
 
-See the [Using Text](./using_text.md) page for more examples.
+See the [Use Text](./use_text.md) page for more examples.
 
 ### Example: Fill and Stroke colors
 

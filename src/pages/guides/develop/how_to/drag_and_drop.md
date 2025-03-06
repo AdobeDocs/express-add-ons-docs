@@ -10,15 +10,16 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Drag and Drop
-description:  Drag and Drop.
+title: Use Drag-and-Drop
+description: Use Drag-and-Drop.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
-# Drag and Drop
 
-## Using local images
+# Use Drag-and-Drop
+
+## With local images
 
 You must invoke the [`addOnUISdk.app.enableDragToDocument()`](/references/addonsdk/addonsdk-app.md#enabledragtodocument) method for each draggable image to implement this feature. It accepts two parameters: the `HTMLElement` and an object with a `previewCallback()` that returns the image URL for preview purposes, and a `completionCallback()` that fetches the corresponding blob to finalize insertion into the document.
 
@@ -40,14 +41,14 @@ addOnUISdk.ready.then(async () => {
 
   // Enable drag to document for the image.
   addOnUISdk.app.enableDragToDocument(image, {
-    previewCallback: element => {
+    previewCallback: (element) => {
       // return the new URL for preview purposes
       return new URL(element.src);
     },
     completionCallback: async (element) => {
       // return the blob for the image
       return [{ blob: await getBlob(element.src) }];
-    }
+    },
   });
 
   // Add the image to the document.
@@ -79,11 +80,11 @@ function endDrag(eventData) {
 
 // Get the binary object for the image.
 async function getBlob(url) {
-  return await fetch(url).then(response => response.blob());
+  return await fetch(url).then((response) => response.blob());
 }
 ```
 
-## Using remote images or audio
+## With remote images or audio
 
 To implement drag and drop with remotely hosted images, you similarly invoke `addOnUISdk.app.enableDragToDocument()`, but you fetch the resource from its remote URL. Provide a `previewCallback()` that returns the preview URL and a `completionCallback()` that retrieves the image as a blob. You can then attach the same `"dragstart"` and `"dragend"` event handlers to log or customize interactions as needed.
 
@@ -107,11 +108,12 @@ function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
     },
     completionCallback: async (image: HTMLElement) => {
       // Fetch and return the image blob
-      const imageBlob = await fetch(image.src)
-        .then((response) => response.blob());
+      const imageBlob = await fetch(image.src).then((response) =>
+        response.blob()
+      );
       return [{ blob: imageBlob }];
-  
-      // ⚠️ for audio content, an attributes object 
+
+      // ⚠️ for audio content, an attributes object
       // with the title is mandatory. For example:
       // return [{ blob: audioBlob, attributes: { title: "Jazzy beats" } }];
     },

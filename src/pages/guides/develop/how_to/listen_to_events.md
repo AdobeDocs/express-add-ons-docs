@@ -10,10 +10,11 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Authoring Adobe Express Content
-description:  Authoring Adobe Express Content.
+title: Listen to Events
+description: Listen to Events.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
-# Authoring Adobe Express Content
+
+# Listen to Events

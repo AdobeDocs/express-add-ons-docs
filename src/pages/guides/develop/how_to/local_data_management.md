@@ -10,15 +10,16 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Storing Data
-description:  Storing Data.
+title: Store Data
+description: Store Data.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
-# Storing Data
 
-## Using the clientStorage API
+# Store Data
+
+## Use the clientStorage API
 
 Instead of relying solely on server-side data, you can use the **asynchronous** `clientStorage` API to store and retrieve data locally on the client-side. This can be useful for caching images, saving user preferences, or other scenarios where you want to avoid making repeated server requests.
 
@@ -35,7 +36,7 @@ addOnUISdk.ready.then(async () => {
     store = addOnUISdk.instance.clientStorage;
 }
 /**
- * Store item 
+ * Store item
  */
 async function setItem(item: string, isComplete: boolean) {
     await store.setItem(item, isComplete);

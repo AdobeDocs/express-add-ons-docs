@@ -10,16 +10,16 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Using Videos
-description: Using Videos.
+title: Use Videos
+description: Use Videos.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Using Videos
+# Use Videos
 
-## Importing videos into the page
+## Import videos into the page
 
 Similarly to Images and Audio, you can add Videos to the page using the [`addVideo()`](../../../references/addonsdk/app-document.md#addvideo) method of the `addOnUISdk.app.document` object, which expects a `Blob` object as an argument.
 

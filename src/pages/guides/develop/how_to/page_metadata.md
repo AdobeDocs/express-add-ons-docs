@@ -11,14 +11,15 @@ keywords:
   - Extensibility
   - API
 title: Page Metadata
-description:  Page Metadata.
+description: Page Metadata.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
+
 # Page Metadata
 
-## Getting the Page Metadata
+## Get the Page Metadata
 
 If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](../../../references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object. The method expects an object with a `range` and optional `pageIds` properties.
 
@@ -26,7 +27,7 @@ The `range` property is one of the available [`Range`](../../../references/addon
 
 The returned value is always an array of [`PageMetadata`](../../../references/addonsdk/app-document.md#pagemetadata) objects.
 
-### Single page Example
+### Single Page Example
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -34,7 +35,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(() => {
   const page = await addOnUISdk.app.document.getPagesMetadata({
     range: addOnUISdk.constants.Range.currentPage
-  }); 
+  });
   console.log("Current page metadata: ", page); // 👈 always returns an array
   // [
   //   {
@@ -49,7 +50,7 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-### Page range Example
+### Page Range Example
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -61,7 +62,7 @@ addOnUISdk.ready.then(() => {
         "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc", // 👈
         "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"  // 👈
     ]                                           // 👈
-  }); 
+  });
   console.log("Current page metadata: ", pages);
   // [
   //   {

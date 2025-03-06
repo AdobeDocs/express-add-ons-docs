@@ -10,10 +10,11 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Replacing Elements
-description:  Replacing Elements.
+title: Author Adobe Express Content
+description: Author Adobe Express Content.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
-# Replacing Elements
+
+# Author Adobe Express Content

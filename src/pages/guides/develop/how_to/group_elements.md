@@ -17,9 +17,9 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Grouping Elements
+# Group Elements
 
-## Creating a group
+## Create a group
 
 Groups are just like any other element in Adobe Express, very much like Text or Shapes: you must create them, and append them to the page. Interestingly, as instances of the [`GroupNode`](../../../references/document-sandbox/document-apis/classes/GroupNode.md) class, they can host other nodes in their `children` property.
 
@@ -60,7 +60,7 @@ You can append the Group to the page and then append the Text nodes to the Group
 
 Please note that the Text nodes in the example above haven't been appended to the page before getting into the group—they're invisible, until they're part of the Group and the Group itself ends on the page.
 
-## Nesting groups
+## Nest groups
 
 Groups can be nested, meaning that you can have a Group inside another Group; just create the needed Group nodes and `append()` elements to their `children` property.
 
@@ -192,7 +192,7 @@ editor.context.insertionParent.children.append(group);
 
 ![Grouping elements](./images/groups_middle.png)
 
-## Moving elements out of a Group
+## Move elements out of a Group
 
 To move an element out of one Group (the source) and into another (the target), you can use the `children.append()` method of the target, passing the source element you want to move. It's no different from appending a new element to a Group, you just need to reference the source element regardless of where it is.
 
@@ -220,7 +220,7 @@ group2.children.append(s1);
 // 👆 target group     👆 source element
 ```
 
-## Removing elements
+## Remove elements
 
 To remove an element from a Group, you can use the `remove()` method on the `children` property, which effectively also deletes the element from the document.
 

@@ -10,15 +10,15 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Positioning Elements
-description: Positioning Elements.
+title: Position Elements
+description: Position Elements.
 contributors:
   - https://github.com/undavide
 ---
 
-# Positioning Elements
+# Position Elements
 
-## Moving and Rotating Elements
+## Move and Rotate Elements
 
 Let's use this simple Rectangle to demonstrate how to move and rotate elements in Adobe Express.
 
@@ -33,7 +33,7 @@ rect.height = 100;
 editor.context.insertionParent.children.append(rect);
 ```
 
-### Example: Translating
+### Example: Translation
 
 Elements can be moved around by setting their `translation` property, which is an object with `x` and `y` properties defined in the element's parent coordinates.
 
@@ -63,7 +63,7 @@ rect.setPositionInParent(
 );
 ```
 
-### Example: Rotating
+### Example: Rotation
 
 You cannot rotate shapes by setting their `rotation` property, though; it's read-only, like `rotationInScreen`, which takes into account any cumulative rotations from the node's parent container. To rotate a shape, you must use `setRotationInParent()` instead, passing the **desired angle** in degrees, and the **point to rotate around**, in the shape's local coordinates. The `{ x: 0, y: 0 }` point in the example below is the shape's top-left corner.
 
@@ -80,7 +80,7 @@ rect.setRotationInParent(15, { x: 0, y: 0 });
 
 Please note, rotation and translation are never additive, meaning that each time you set a new value, it replaces the previous one.
 
-## Getting Element Bounds
+## Get Element Bounds
 
 By definition, the bounds of an element (or its _bounding box_) are the smallest rectangle that contains the element. The bounds are represented by a [Rect](../../../references/document-sandbox/document-apis/interfaces/Rect.md) object, which has a `x`, `y`, `width`, and `height` properties. There are two types of bounds, though, depending on the coordinate space in which they are calculated:
 
@@ -115,7 +115,7 @@ editor.context.insertionParent.children.append(rect);
 
 In case you need it, there's a handy `centerPointLocal` property of the element that returns the center point of the `boundsLocal` box.
 
-## Accounting for Parent Transformations
+## Account for Parent Transformations
 
 The one Rectangle on the canvas, as we've used here for demonstration purposes, is but a simplified example; when dealing with real-world scenarios, the element's parent container may have a different rotation or translation, which affects the element's position and global angle. The Document Sandbox API provides some handy features that help you account for the parent's transformations.
 

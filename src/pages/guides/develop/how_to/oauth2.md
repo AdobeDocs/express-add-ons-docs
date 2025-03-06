@@ -11,14 +11,14 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: OAuth 2.0
+title: Use OAuth 2.0
 description: Understand how to implement OAuth 2.0 authentication and authorization flows, including login, logout, and setup examples.
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
 ---
 
-# Using OAuth 2.0
+# Use OAuth 2.0
 
 Implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services.
 
@@ -84,7 +84,7 @@ const OWN_REDIRECT_URI = "<OWN_REDIRECT_URI>";
 
 addOnUISdk.ready.then(() => {
   // 'oauthUtils' is a helper javascript module (included with
-  // the OAuth template) which provides utility functions to:
+  // the OAuth sample) which provides utility functions to:
 
   // 1. Generate the 'code_challenge' and 'code_verifier' parameters
   // that are essential in the OAuth 2.0 workflow.
@@ -104,7 +104,7 @@ function authorize(challenge) {
   // Trigger the OAuth 2.0 based authorization which opens up a
   // sign-in window for the user and returns an authorization code
   // which can be used to obtain an access_token.
-  const { id, code, redirectUri, result } = await oauth.authorize({
+  const { id, code, redirectUri, result } = await addOnUISdk.app.oauth.authorize({
     authorizationUrl: DROPBOX_AUTHORIZATION_URL,
     clientId: DROPBOX_CLIENT_ID,
     scope: DROPBOX_SCOPE,

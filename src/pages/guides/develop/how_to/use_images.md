@@ -10,16 +10,16 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Using Images
-description: Using Images.
+title: Use Images
+description: Use Images.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Using Images
+# Use Images
 
-## Importing Images into the page
+## Import Images into the page
 
 Add-ons are hosted in an iframe within the Adobe Express UI, and can load images as `<img>` elements like any other web application. But in order to add images into an Adobe Express document, you need to use the [`addImage()`](../../../references/addonsdk/app-document.md#addimage) method of the `addOnUISdk.app.document` object.
 
@@ -69,7 +69,7 @@ Image requirements
 
 Please refer to [this section](../../../references/addonsdk/app-document.md#image-requirements) to know more about the file formats support and size requirements for images.
 
-## Importing Animated images
+## Import Animated images
 
 Importing a `GIF` via `addImage()` won't work as expected, as the method converts the animation into a static image before adding it to the document. You should use the [`addAnimatedImage()`](../../../references/addonsdk/app-document.md#addanimatedimage) method instead.
 

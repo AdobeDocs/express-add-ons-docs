@@ -13,14 +13,14 @@ keywords:
   - Rendition
   - createRendition
   - exporting
-title: Creating Renditions
-description: Creating Renditions.
+title: Create Renditions
+description: Create Renditions.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Creating Renditions
+# Create Renditions
 
 Renditions are different output versions of a document made for specific purposes; for example, a high-quality PDF for printing or a smaller JPG for sharing online.
 
@@ -31,7 +31,7 @@ Renditions are created via the [`createRendition()`](../../../references/addonsd
 1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the page range that is meant to be exported and the file format (jpg, png, mp4 and pdf).
 2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the intent of the exported content (preview, export, print).
 
-## Exporting content
+## Export content
 
 Usually, you create renditions to allow users to download or share your content in different formats. This is a multi-step process that involves:
 
@@ -145,7 +145,7 @@ Please also check out the [export-sample add-on](/samples.md#export-sample) for 
 
 When the `renditionIntent` is set to `RenditionIntent.preview`, the output is created for **preview purposes only**. This means that the rendition is not meant to be downloaded or shared; for example, because the user is not on a paid Adobe Express plan and the design contains Premium content.
 
-In this case, preview renditions are used either for processing purposes (e.g., if the add-on needs to perform data analysis on the design), or to be displayed in the add-on's panel or in a new window—making sure users cannot extract the content. Please see [this page](./premium_content.md#allowing-only-the-preview-of-premium-content) for more detail on handling such scenarios.
+In this case, preview renditions are used either for processing purposes (e.g., if the add-on needs to perform data analysis on the design), or to be displayed in the add-on's panel or in a new window—making sure users cannot extract the content. Please see [this page](./premium_content.md#allow-only-the-preview-of-premium-content) for more detail on handling such scenarios.
 
 <InlineAlert slots="text" variant="info"/>
 

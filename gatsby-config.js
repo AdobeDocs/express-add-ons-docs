@@ -635,163 +635,159 @@ module.exports = {
             path: "guides/develop/",
           },
           {
-            title: "How-Tos",
-            path: "guides/develop/how_tos.md",
+            title: "How-to",
+            path: "guides/develop/how_to.md",
             pages: [
               {
-                title: "Using How-Tos",
-                path: "guides/develop/how_tos.md",
+                title: "About our How-to guides",
+                path: "guides/develop/how_to.md",
               },
               // {
               //   title: "Add-on Development",
-              //   path: "guides/develop/how_tos/debugging.md",
+              //   path: "guides/develop/how_to/debugging.md",
               //   pages: [
               //     {
               //       title: "Debugging",
-              //       path: "guides/develop/how_tos/debugging.md",
+              //       path: "guides/develop/how_to/debugging.md",
               //     },
               //     {
-              //       title: "Imports and Constants",
-              //       path: "guides/develop/how_tos/imports_and_constants.md",
+              //       title: "Use Imports and Constants",
+              //       path: "guides/develop/how_to/imports_and_constants.md",
               //     },
               //     {
-              //       title: "Listening to Events",
-              //       path: "guides/develop/how_tos/listening_to_events.md",
+              //       title: "Listen to Events",
+              //       path: "guides/develop/how_to/listen_to_events.md",
               //     },
               //     {
               //       title: "Add-on UI and Document API communication",
-              //       path: "guides/develop/how_tos/ui_document_api_communication.md",
+              //       path: "guides/develop/how_to/ui_document_api_communication.md",
               //     },
               //   ],
               // },
               {
                 title: "Authentication & Authorization",
-                path: "guides/develop/how_tos/oauth2.md",
+                path: "guides/develop/how_to/oauth2.md",
                 pages: [
                   {
-                    title: "Using OAuth 2.0",
-                    path: "guides/develop/how_tos/oauth2.md",
+                    title: "Use OAuth 2.0",
+                    path: "guides/develop/how_to/oauth2.md",
                   },
                 ],
               },
               {
                 title: "Data & Environment",
-                path: "guides/develop/how_tos/local_data_management.md",
+                path: "guides/develop/how_to/local_data_management.md",
                 pages: [
                   {
-                    title: "Storing Data",
-                    path: "guides/develop/how_tos/local_data_management.md",
+                    title: "Store Data",
+                    path: "guides/develop/how_to/local_data_management.md",
                   },
                   {
                     title: "Theme & Locale",
-                    path: "guides/develop/how_tos/theme_locale.md",
+                    path: "guides/develop/how_to/theme_locale.md",
                   },
                 ],
               },
               {
                 title: "UI & Interaction",
-                path: "guides/develop/how_tos/drag_and_drop.md",
+                path: "guides/develop/how_to/drag_and_drop.md",
                 pages: [
                   {
-                    title: "Drag & Drop",
-                    path: "guides/develop/how_tos/drag_and_drop.md",
+                    title: "Use Drag & Drop",
+                    path: "guides/develop/how_to/drag_and_drop.md",
                   },
                   {
-                    title: "Modal Dialogs",
-                    path: "guides/develop/how_tos/modal_dialogs.md",
+                    title: "Use Modal Dialogs",
+                    path: "guides/develop/how_to/modal_dialogs.md",
                   },
                 ],
               },
               {
-                title: "Using Design Elements",
-                path: "guides/develop/how_tos/using_text.md", // change this!!
+                title: "Use Design Elements",
+                path: "guides/develop/how_to/use_text.md", // change this!!
                 pages: [
                   {
-                    title: "Using Text",
-                    path: "guides/develop/how_tos/using_text.md",
+                    title: "Use Text",
+                    path: "guides/develop/how_to/use_text.md",
                   },
                   {
-                    title: "Using Geometry",
-                    path: "guides/develop/how_tos/using_geometry.md",
+                    title: "Use Geometry",
+                    path: "guides/develop/how_to/use_geometry.md",
                   },
                   {
-                    title: "Using Color",
-                    path: "guides/develop/how_tos/using_color.md",
+                    title: "Use Color",
+                    path: "guides/develop/how_to/use_color.md",
                   },
                   {
-                    title: "Using Images",
-                    path: "guides/develop/how_tos/using_images.md",
+                    title: "Use Images",
+                    path: "guides/develop/how_to/use_images.md",
                   },
                   {
-                    title: "Using Videos",
-                    path: "guides/develop/how_tos/using_videos.md",
+                    title: "Use Videos",
+                    path: "guides/develop/how_to/use_videos.md",
                   },
                   {
-                    title: "Using Audio",
-                    path: "guides/develop/how_tos/using_audio.md",
+                    title: "Use Audio",
+                    path: "guides/develop/how_to/use_audio.md",
                   },
                   {
-                    title: "Using PDF and PowerPoint",
-                    path: "guides/develop/how_tos/using_pdf_powerpoint.md",
+                    title: "Use PDF and PowerPoint",
+                    path: "guides/develop/how_to/use_pdf_powerpoint.md",
                   },
                   {
-                    title: "Grouping Elements",
-                    path: "guides/develop/how_tos/grouping_elements.md",
+                    title: "Group Elements",
+                    path: "guides/develop/how_to/group_elements.md",
                   },
                   {
-                    title: "Positioning Elements",
-                    path: "guides/develop/how_tos/positioning_elements.md",
+                    title: "Position Elements",
+                    path: "guides/develop/how_to/position_elements.md",
                   },
                 ],
               },
               {
-                title: "Using Metadata",
-                path: "guides/develop/how_tos/document_metadata.md",
+                title: "Use Metadata",
+                path: "guides/develop/how_to/document_metadata.md",
                 pages: [
                   // {
                   //   title: "Authoring Adobe Express Content",
-                  //   path: "guides/develop/how_tos/authoring_adobe_express_content.md",
+                  //   path: "guides/develop/how_to/authoring_adobe_express_content.md",
                   // },
                   {
                     title: "Document Metadata",
-                    path: "guides/develop/how_tos/document_metadata.md",
+                    path: "guides/develop/how_to/document_metadata.md",
                   },
                   {
                     title: "Page Metadata",
-                    path: "guides/develop/how_tos/page_metadata.md",
+                    path: "guides/develop/how_to/page_metadata.md",
                   },
                   {
                     title: "Element Metadata",
-                    path: "guides/develop/how_tos/element_metadata.md",
+                    path: "guides/develop/how_to/element_metadata.md",
                   },
                 ],
               },
               {
                 title: "Exporting & Output",
-                path: "guides/develop/how_tos/creating_renditions.md",
+                path: "guides/develop/how_to/create_renditions.md",
                 pages: [
                   {
-                    title: "Creating Renditions",
-                    path: "guides/develop/how_tos/creating_renditions.md",
+                    title: "Create Renditions",
+                    path: "guides/develop/how_to/create_renditions.md",
                   },
                   {
-                    title: "Managing Premium Content",
-                    path: "guides/develop/how_tos/premium_content.md",
+                    title: "Manage Premium Content",
+                    path: "guides/develop/how_to/premium_content.md",
                   },
                 ],
               },
               {
                 title: "Monetization & User Info",
-                path: "guides/develop/how_tos/user_info.md",
+                path: "guides/develop/how_to/user_info.md",
                 pages: [
                   {
-                    title: "Identifying users",
-                    path: "guides/develop/how_tos/user_info.md",
+                    title: "Identify users",
+                    path: "guides/develop/how_to/user_info.md",
                   },
-                  // {
-                  //   title: "Monetization Flows",
-                  //   path: "guides/develop/how_tos/monetization_flows.md",
-                  // },
                 ],
               },
               // ------------------------------------------------------------------

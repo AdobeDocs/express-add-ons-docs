@@ -10,16 +10,16 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Using Audio
-description: Using Audio.
+title: Use Audio
+description: Use Audio.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Using Audio
+# Use Audio
 
-## Importing audio into the page
+## Import audio into the page
 
 Similarly to Images and Video, you can add Audio to the page using the [`addAudio()`](../../../references/addonsdk/app-document.md#addaudio) method of the `addOnUISdk.app.document` object, which expects a `Blob` object as the first argument, and a [`MediaAttribute`](../../../references/addonsdk/app-document.md#mediaattributes) object with the audio's title (mandatory) and author (optional) as the second.
 

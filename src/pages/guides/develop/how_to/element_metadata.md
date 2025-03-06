@@ -11,22 +11,19 @@ keywords:
   - Extensibility
   - API
 title: Element Metadata
-description:  Element Metadata.
+description: Element Metadata.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
+
 # Element Metadata
 
-## Using Element Metadata
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+## Get and Set Element Metadata
 
 Add-ons can store **private metadata** (custom data accessible only to the add-on that set it) on any node within the Express document. Currently, each node can hold up to **3 KB** of data, organized as key/value pairs where both keys and values are Strings. Additionally, there is a limit of **20 key/value pairs** per node.
 
-All nodes that inherit from the [`BaseNode`](../../../references/document-sandbox/document-apis/classes/BaseNode.md) class have a `addOnData` property that can be used to store and retrieve metadata. It is an instance of the [`AddOnData`](../../../references/document-sandbox/document-apis/classes/AddOnData.md) class, which provides methods to perform operations such as `getItem()`, `setItem()`, `removeItem()`, and `clear()`.  
+All nodes that inherit from the [`BaseNode`](../../../references/document-sandbox/document-apis/classes/BaseNode.md) class have a `addOnData` property that can be used to store and retrieve metadata. It is an instance of the [`AddOnData`](../../../references/document-sandbox/document-apis/classes/AddOnData.md) class, which provides methods to perform operations such as `getItem()`, `setItem()`, `removeItem()`, and `clear()`.
 
 With the `remainingQuota` property, you can check how much space is left, both in terms of `sizeInBytes` and `numKeys`, while `keys()` returns an array of the keys in use.
 
@@ -58,7 +55,7 @@ console.log("Remaining quota: ", text.addOnData.remainingQuota);
 // }
 
 // Check the keys in use
-console.log("Keys in use: ", text.addOnData.keys()); 
+console.log("Keys in use: ", text.addOnData.keys());
 // ["originalText", "date"]
 
 // Remove the metadata
@@ -83,7 +80,7 @@ Alternatively, you can use the `keys()` method to get an array of all keys and t
 
 ```js
 // Iterate over all keys
-text.addOnData.keys().forEach(key => {
+text.addOnData.keys().forEach((key) => {
   console.log(`Key: ${key}, Value: ${text.addOnData.getItem(key)}`);
 });
 ```

@@ -10,16 +10,16 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Using PDF and PowerPoint
-description: Using PDF and PowerPoint.
+title: Use PDF and PowerPoint
+description: Use PDF and PowerPoint.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 ---
 
-# Using PDF and PowerPoint
+# Use PDF and PowerPoint
 
-## Importing PDF into the page
+## Import PDF into the page
 
 You can add PDFs to the page using the [`importPdf()`](../../../references/addonsdk/app-document.md#importpdf) method of the `addOnUISdk.app.document` object, which expects a `Blob` object as an argument and a [`MediaAttribute`](../../../references/addonsdk/app-document.md#mediaattributes) object with a title (mandatory) and author (optional) as the second.
 
@@ -67,7 +67,7 @@ addOnUISdk.ready.then(async () => {
     // ... same as before
 ```
 
-## Importing PowerPoint into the page
+## Import PowerPoint into the page
 
 For PowerPoint files, the process is similar to the one for PDFs, but you need to use the [`importPowerPoint()`](../../../references/addonsdk/app-document.md#importpresentation) method instead. The method supports both `.pptx` and `.ppt` files, and shows the same consent and progress dialogues as seen above.
 
