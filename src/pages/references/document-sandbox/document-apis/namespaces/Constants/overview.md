@@ -6,6 +6,13 @@
 
 # Namespace: Constants
 
+## Index
+
+### Enumerations
+
+- [OrderedListNumbering](enumerations/OrderedListNumbering.md)
+- [ParagraphListType](enumerations/ParagraphListType.md)
+
 ## References
 
 ### ArrowHeadType

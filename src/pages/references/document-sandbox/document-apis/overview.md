@@ -15,8 +15,6 @@
 -   [EditorEvent](enumerations/EditorEvent.md)
 -   [FillRule](enumerations/FillRule.md)
 -   [FillType](enumerations/FillType.md)
--   [OrderedListNumbering](enumerations/OrderedListNumbering.md)
--   [ParagraphListType](enumerations/ParagraphListType.md)
 -   [SceneNodeType](enumerations/SceneNodeType.md)
 -   [StrokePosition](enumerations/StrokePosition.md)
 -   [StrokeType](enumerations/StrokeType.md)
@@ -105,3 +103,15 @@
 -   [OrderedListStyle](type-aliases/OrderedListStyle.md)
 -   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)
 -   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)
+
+## References
+
+### OrderedListNumbering
+
+Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/OrderedListNumbering.md)
+
+---
+
+### ParagraphListType
+
+Re-exports [ParagraphListType](namespaces/Constants/enumerations/ParagraphListType.md)
