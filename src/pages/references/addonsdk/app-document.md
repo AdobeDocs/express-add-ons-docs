@@ -90,9 +90,9 @@ Retrieve the metadata for all of the pages in the document.
 
 A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containing all of the pages in the document.
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
 
-#### Usage
+## Usage
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -119,7 +119,7 @@ async function logMetadata() {
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
       console.log("Is page blank: ", page.isBlank);
-      console.log("Template details of page: ", page.templateDetails);
+      console.log("Template details: ", page.templateDetails);
     }
   }
   catch(error) {
@@ -128,9 +128,23 @@ async function logMetadata() {
 }
 ```
 
+## Output 
+
+```bash
+Page id: 772dc4b6-0df5-469f-b477-2a0c5445a6ef
+Page title: My First Page
+Page size: { width: 2550, height: 3300 }
+Page has premium content: false
+Page has timelines: false
+Pixels per inch: 72
+Is page print ready: true
+Is page blank: false
+Template details of page: { id: 'urn:aaid:sc:VA6C2:0ccab100-a230-5b45-89f6-7e78fdf04141', creativeIntent: 'flyer' }
+```
+
 ### runPrintQualityCheck()
 
-Runs a print quality check on a page, a page range or the entire document.
+Tells Express to run a print quality check to determine if the document is ready for printing and updates the quality metadata with the result. For instance, if the document is not ready for printing, the `isPrintReady` property of the page metadata will be set to `false`.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -150,7 +164,7 @@ Runs a print quality check on a page, a page range or the entire document.
 
 `void`
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
 #### Usage
 
@@ -164,6 +178,7 @@ const {document} = addOnUISdk.app;
 function runPrintQualityCheck() {
   try {
     document.runPrintQualityCheck({range: addOnUISdk.constants.Range.entireDocument});
+    console.log("Print quality check completed successfully");
   }
   catch(error) {
     console.log("Failed to run print quality check");
@@ -171,9 +186,15 @@ function runPrintQualityCheck() {
 }
 ```
 
+#### Output
+
+```bash
+Print quality check completed successfully
+```
+
 #### `TemplateDetails`
 
-The details of the template for the page.
+Retrieve the details about the template used to create the document.
 
 | Name                | Type     |  Description             |
 | ------------------- | ----------------------------------- | 
