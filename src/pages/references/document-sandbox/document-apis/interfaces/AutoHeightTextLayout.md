@@ -17,3 +17,5 @@
 ### width
 
 • **width**: `number`
+
+The width of the text node in pixels.

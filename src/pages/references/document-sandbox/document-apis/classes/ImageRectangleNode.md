@@ -23,10 +23,6 @@ container structure together.
 
 • `get` **addOnData**(): [`AddOnData`](AddOnData.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
 
 #### Returns
@@ -108,8 +104,7 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 • `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
-Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
-box.
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 

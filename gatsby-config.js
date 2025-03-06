@@ -428,11 +428,11 @@ module.exports = {
                   },
                   {
                     title: "OrderedListNumbering",
-                    path: "references/document-sandbox/document-apis/enumerations/OrderedListNumbering.md",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md",
                   },
                   {
                     title: "ParagraphListType",
-                    path: "references/document-sandbox/document-apis/enumerations/ParagraphListType.md",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md",
                   },
                   {
                     title: "SceneNodeType",

@@ -28,6 +28,23 @@ contributors:
 
 - A new [How-to](../guides/develop/how_to.md) section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.
 
+## 2025-03-04
+
+### Changed
+
+- Stabilized the following HLAPI's:
+  - The [TextNode](../references/document-sandbox/document-apis/classes/TextNode.md) API's.
+  - The [fromPostscriptName()](./document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](../references/document-sandbox/document-apis/classes/Fonts.md) class.
+  - The [TextContentModel](./document-sandbox/document-apis/classes/TextContentModel.md) APIs like [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges). The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
+## 2025-03-03
+
+### Changed
+
+- The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](../references/document-sandbox/document-apis/classes/AddOnData.md) class for details. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
+- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](../references/document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
 ## 2025-02-26
 
 ### Added
