@@ -22,6 +22,23 @@ contributors:
 
 # Changelog
 
+## 2025-03-06
+
+### Added
+
+- An [FAQ item](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) was added for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The [FAQ](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) provides a workaround for this issue.
+
+- The following new properties have been added to the AddOnSdk [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata) API:
+
+  - [`isBlank`](../references/addonsdk/app-document.md#pagemetadata): Allows you to check if a page is blank.
+  - [`templateDetails`](../references/addonsdk/app-document.md#pagemetadata): Retrieves details about the template used to create the document.
+
+- A new [`runPrintQualityCheck`](../references/addonsdk/app-document.md#runprintqualitycheck) method has been added to the AddOnSdk [`App.Document`](../references/addonsdk/app-document.md) API, which allows you to run a print quality check on the document to ensure that it meets print quality standards.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`runPrintQualityCheck()`](../references/addonsdk/app-document.md#runprintqualitycheck) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
 ## 2025-03-04
 
 ### Changed
