@@ -232,7 +232,7 @@ Yes, if an EU user has already installed your add-on, they will still be able to
 
 ### Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?
 
-There's a known issue currently with running certain versions of Node.js on Windows with the CLI, specifically, v22.14.0 or v18.20.7 have been found to fail with the following error:
+There's a known issue with running certain versions of Node.js on Windows with the CLI currently. Specifically, `v22.14.0` and `v18.20.7` have been found to fail with the following error:
 
 ```bash
 Creating a new Add-on ...
@@ -259,4 +259,4 @@ Unexpected error. Please report it as a bug:
 TypeError: Invalid URL
 ```
 
-If you encounter this issue, please update your Node.js version to v20.11.0 and try again.
+If you encounter this issue, please update your Node.js version to `v20.11.0` and try again.

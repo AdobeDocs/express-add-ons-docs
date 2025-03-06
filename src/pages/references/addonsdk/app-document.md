@@ -128,7 +128,7 @@ async function logMetadata() {
 }
 ```
 
-## Output 
+## Output
 
 ```bash
 Page id: 772dc4b6-0df5-469f-b477-2a0c5445a6ef
@@ -197,7 +197,7 @@ Print quality check completed successfully
 Retrieve the details about the template used to create the document.
 
 | Name                | Type     |  Description             |
-| ------------------- | ----------------------------------- | 
+| ------------------- | ----------------------------------- |
 | `id`                | `string` | Unique id of the template |
 | `creativeIntent?`   | `string` | Creative intent of the template |
 
@@ -206,7 +206,7 @@ Retrieve the details about the template used to create the document.
 The options to pass into the print quality check..
 
 | Name |        Type   |           Description               |
-| -------------------- | ----------------------------------- | 
+| -------------------- | ----------------------------------- |
 | `range` | [`Range`](../addonsdk/addonsdk-constants.md) | The range of the document to run the print quality check on. |
 | `pageIds?` | `string[]` | Id's of the pages. (Only required when the range is `specificPages`). |
 
@@ -526,7 +526,7 @@ For `gif` images, [the technical requirements are listed here](https://helpx.ado
 
 IMPORTANT: Animated GIFs
 
-Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an _animated GIF_ specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
+Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an *animated GIF* specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
 
 If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
 
@@ -626,7 +626,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 #### `Bleed`
 
-Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
+Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
 
 | Name      | Type                                                       |                                      Description |
 | --------- | ---------------------------------------------------------- | -----------------------------------------------: |
