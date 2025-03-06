@@ -10,6 +10,8 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Images
+  - addImage
 title: Use Images
 description: Use Images.
 contributors:

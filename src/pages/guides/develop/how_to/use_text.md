@@ -10,6 +10,20 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Text
+  - Style Text
+  - TextNode
+  - Paragraph Styles
+  - Character Styles
+  - Fonts
+  - Text Flow
+  - Text Content
+  - Text Styles
+  - fullContent
+  - applyCharacterStyles
+  - applyParagraphStyles
+  - fromPostscriptName
+  - AvailableFont
 title: Use Text
 description: Use Text.
 contributors:

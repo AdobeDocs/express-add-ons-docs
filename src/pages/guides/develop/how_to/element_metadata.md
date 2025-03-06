@@ -10,6 +10,8 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Metadata
+  - Element
 title: Element Metadata
 description: Element Metadata.
 contributors:

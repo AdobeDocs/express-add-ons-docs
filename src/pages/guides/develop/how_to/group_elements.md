@@ -10,8 +10,11 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Grouping Elements
-description: Grouping Elements.
+  - Group
+  - Lock
+  - Nest
+title: Group Elements
+description: Group Elements.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky

@@ -10,6 +10,8 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Theme
+  - Locale
 title: Theme & Locale
 description: Theme & Locale.
 contributors:

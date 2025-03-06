@@ -10,6 +10,8 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Audio
+  - addAudio
 title: Use Audio
 description: Use Audio.
 contributors:

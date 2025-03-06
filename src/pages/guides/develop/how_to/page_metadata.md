@@ -10,6 +10,8 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Metadata
+  - Page
 title: Page Metadata
 description: Page Metadata.
 contributors:

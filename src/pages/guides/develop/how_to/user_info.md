@@ -10,6 +10,10 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - User info
+  - userId
+  - isPremiumUser
+  - currentUser
 title: Identify Users
 description: Identify Users.
 contributors:

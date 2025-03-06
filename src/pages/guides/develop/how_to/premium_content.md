@@ -10,6 +10,10 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Premium
+  - Content
+  - isPremiumUser
+  - startPremiumUpgradeIfFreeUser
 title: Manage Premium Content
 description: Manage Premium Content.
 contributors:

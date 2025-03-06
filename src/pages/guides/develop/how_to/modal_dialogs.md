@@ -10,6 +10,9 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Dialogs
+  - Modal dialogs
+  - showModalDialog
 title: Use Modal Dialogs
 description: Use Modal Dialogs.
 contributors:

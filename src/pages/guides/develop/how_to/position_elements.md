@@ -10,6 +10,11 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Position
+  - Translation
+  - Rotation
+  - Bounding Box
+  - Bounds
 title: Position Elements
 description: Position Elements.
 contributors:

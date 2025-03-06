@@ -13,6 +13,7 @@ keywords:
   - Rendition
   - createRendition
   - exporting
+  - output
 title: Create Renditions
 description: Create Renditions.
 contributors:

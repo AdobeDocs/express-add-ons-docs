@@ -10,6 +10,8 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Metadata
+  - Document
 title: Document Metadata
 description: Document Metadata.
 contributors:

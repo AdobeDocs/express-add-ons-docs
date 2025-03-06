@@ -10,6 +10,12 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Color
+  - Fill Color
+  - Stroke Color
+  - Text Color
+  - HEX Color
+  - RGB Color
 title: Use Color
 description: Use Color.
 contributors:
@@ -102,7 +108,7 @@ ellipse.stroke = outerColorStroke;
 editor.context.insertionParent.children.append(ellipse);
 ```
 
-While the `fill` property is more straightforward to create, the `color` is just one of the possible properties of a `stroke`, as you can read in the [SolitColorStroke](../../../references/document-sandbox/document-apis/interfaces/SolidColorStroke.md) interface reference.
+While the `fill` property is more straightforward to create, the `color` is just one of the possible properties of a `stroke`, as you can read in the [SolidColorStroke](../../../references/document-sandbox/document-apis/interfaces/SolidColorStroke.md) interface reference.
 
 Simplifying the example above:
 

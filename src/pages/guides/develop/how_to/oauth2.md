@@ -11,6 +11,9 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
+  - Oauth
+  - Authentication
+  - Authorization
 title: Use OAuth 2.0
 description: Understand how to implement OAuth 2.0 authentication and authorization flows, including login, logout, and setup examples.
 contributors:

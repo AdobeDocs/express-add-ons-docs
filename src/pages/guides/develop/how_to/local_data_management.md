@@ -10,6 +10,8 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Storage
+  - clientStorage
 title: Store Data
 description: Store Data.
 contributors:

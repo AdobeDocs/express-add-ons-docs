@@ -10,8 +10,13 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Use Shapes
-description: Use Shapes.
+  - Shapes
+  - Geometry
+  - Rectangle
+  - Ellipse
+  - Path
+title: Use Geometry
+description: Use Geometry.
 contributors:
   - https://github.com/undavide
 ---

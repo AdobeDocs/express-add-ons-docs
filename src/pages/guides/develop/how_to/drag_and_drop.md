@@ -10,6 +10,7 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Drag and Drop
 title: Use Drag-and-Drop
 description: Use Drag-and-Drop.
 contributors:

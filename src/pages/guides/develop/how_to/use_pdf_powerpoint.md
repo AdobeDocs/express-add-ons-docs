@@ -10,6 +10,10 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - PDF Import
+  - PowerPoint Import
+  - importPdf
+  - importPowerPoint
 title: Use PDF and PowerPoint
 description: Use PDF and PowerPoint.
 contributors:
@@ -83,7 +87,7 @@ addOnUISdk.ready.then(async () => {
     const powerPoint = await fetch(powerPointUrl);
     const powerPointBlob = await powerPoint.blob();
 
-    await addOnUISdk.app.document.importPdf(
+    await addOnUISdk.app.document.importPowerPoint(
       powerPointBlob, // 👈 Blob object
       {
         title: "Official Launch Party",

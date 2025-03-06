@@ -10,6 +10,10 @@ keywords:
   - Extend
   - Extensibility
   - API
+  - Video
+  - Media
+  - mp4
+  - addVideo
 title: Use Videos
 description: Use Videos.
 contributors:
