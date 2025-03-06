@@ -22,6 +22,23 @@ contributors:
 
 # Changelog
 
+## 2025-03-06
+
+### Added
+
+The following new properties have been added to the AddOnSdk [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata) API:
+
+- A new [`isBlank`](../references/addonsdk/app-document.md#pagemetadata) property, which allows you to check if a page is blank.
+- A new [`templateDetails`](../references/addonsdk/app-document.md#pagemetadata) property, which allows you to retrieve details about the template used to create the document.
+
+In addition, the following new method has been added to the AddOnSdk [`App.Document`](../references/addonsdk/app-document.md) API:
+
+- A new [`runPrintQualityCheck`](../references/addonsdk/app-document.md#runprintqualitycheck) method, which allows you to run a print quality check on the document to ensure that it meets print quality standards.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`runPrintQualityCheck()`](../references/addonsdk/app-document.md#runprintqualitycheck) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
 ## 2025-03-03
 
 ### Changed

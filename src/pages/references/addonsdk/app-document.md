@@ -118,6 +118,8 @@ async function logMetadata() {
       console.log("Page has timelines: ", page.hasTemporalContent);
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
+      console.log("Is page blank: ", page.isBlank);
+      console.log("Template details of page: ", page.templateDetails);
     }
   }
   catch(error) {
@@ -126,19 +128,82 @@ async function logMetadata() {
 }
 ```
 
+### runPrintQualityCheck()
+
+Runs a print quality check on a page, a page range or the entire document.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`runPrintQualityCheck(options: PrintQualityCheckOptions): void`
+
+#### Parameters
+
+| Name      | Type     | Description |
+| --------- | -------- | ----------------------------------------------------: |
+| `options` | `Object` | [`PrintQualityCheckOptions`](#printqualitycheckoptions) object. |
+
+#### Return Value
+
+`void`
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Reference to the active document
+const {document} = addOnUISdk.app;
+ 
+// Run Print Quality Check
+function runPrintQualityCheck() {
+  try {
+    document.runPrintQualityCheck({range: addOnUISdk.constants.Range.entireDocument});
+  }
+  catch(error) {
+    console.log("Failed to run print quality check");
+  }
+}
+```
+
+#### `TemplateDetails`
+
+The details of the template for the page.
+
+| Name                | Type     |  Description             |
+| ------------------- | ----------------------------------- | 
+| `id`                | `string` | Unique id of the template |
+| `creativeIntent?`   | `string` | Creative intent of the template |
+
+#### `PrintQualityCheckOptions`
+
+The options to pass into the print quality check..
+
+| Name |        Type   |           Description               |
+| -------------------- | ----------------------------------- | 
+| `range` | [`Range`](../addonsdk/addonsdk-constants.md) | The range of the document to run the print quality check on. |
+| `pageIds?` | `string[]` | Id's of the pages. (Only required when the range is `specificPages`). |
+
 #### `PageMetadata`
 
 The metadata of a page.
 
-| Name                 | Type                                |                                                                                                                                                                                                                                                                                                                                                                Description |
+| Name | Type |   Description |
 | -------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `id`                 | `string`                            |                                                                                                                                                                                                                                                                                                                                                        The id of the page. |
-| `title`              | `string`                            |                                                                                                                                                                                                                                                                                                                                                     The title of the page. |
-| `size`               | `{ width: number, height: number }` |                                                                                                                                                                                                                                                                                                                                            The size of the page in pixels. |
-| `hasPremiumContent`  | `boolean`                           |                                                                                                                                                                                                                                                                                                                    `true` if the page has premium content, `false` if not. |
-| `hasTemporalContent` | `boolean`                           |                                                                                                                                                                                                                                                                                                                          `true` if the page has timelines, `false` if not. |
-| `pixelsPerInch?`     | `number`                            |                                                                                                                                                                                                                                                                                                                                           The pixels per inch of the page. |
-| `isPrintReady?`      | `boolean`                           | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
+| `id`                 |`string`  |  The id of the page. |
+| `title`              | `string` |  The title of the page. |
+| `size`               | `{ width: number, height: number }` |   The size of the page in pixels. |
+| `hasPremiumContent`  | `boolean` | `true` if the page has premium content, `false` if not. |
+| `hasTemporalContent` | `boolean` | `true` if the page has timelines, `false` if not. |
+| `pixelsPerInch?`     | `number` | The pixels per inch of the page. |
+| `isPrintReady?`      | `boolean` | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
+| `isBlank?` | `boolean` | Indicates whether the page is blank. |
+| `templateDetails?` | `TemplateDetails` | The details of the template for the page. |
 
 #### `PageMetadataOptions`
 
@@ -146,8 +211,8 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 | Name                 | Type     |                                                        Description |
 | -------------------- | -------- | -----------------------------------------------------------------: |
-| `range`              | `string` |                          Range of the document to get the metadata |
-| `pageIds?: string[]` | `string` | Ids of the pages (Only required when the range is `specificPages`) |
+| `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) | Range of the document to get the metadata |
+| `pageIds?: string[]` | `string` | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ## Import Content Methods
 
@@ -324,11 +389,7 @@ Refer to the [importing content use case](../../guides/develop/use_cases/content
 
 Imports a PDF as a new Adobe Express document.
 
-<!-- Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
-<!-- <InlineAlert slots="text" variant="warning"/> -->
-
-<!--**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
+<!-- Removed experimental as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
 
 #### Signature
 
@@ -495,9 +556,9 @@ Refer to the [exporting content use case example](../../guides/develop/use_cases
 
 | Name       | Type       |                                                                                 Description |
 | ---------- | ---------- | ------------------------------------------------------------------------------------------: |
-| `range`    | `string`   |                                          [`Range`](./addonsdk-constants.md) constant value. |
-| `format`   | `string`   |                                [`RenditionFormat`](./addonsdk-constants.md) constant value. |
-| `pageIds?` | `string[]` | Ids of the pages (only required if the range is [`specificPages`)](./addonsdk-constants.md) |
+| `range`    | `string`   |   [`Range`](./addonsdk-constants.md) constant value. |
+| `format`   | `string`   |   [`RenditionFormat`](./addonsdk-constants.md) constant value. |
+| `pageIds?` | `string[]` | Id's of the pages (only required if the range is [`specificPages`](./addonsdk-constants.md)) |
 
 #### `JpgRenditionOptions`
 
