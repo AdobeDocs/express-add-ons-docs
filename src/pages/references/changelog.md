@@ -28,8 +28,8 @@ contributors:
 
 The following new properties have been added to the AddOnSdk [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata) API:
 
-- A new [`isBlank`](../references/addonsdk/app-document.md#pagemetadata) property, which allows you to check if a page is blank.
-- A new [`templateDetails`](../references/addonsdk/app-document.md#pagemetadata) property, which allows you to retrieve details about the template used to create the document.
+[`isBlank`](../references/addonsdk/app-document.md#pagemetadata): Allows you to check if a page is blank.
+[`templateDetails`](../references/addonsdk/app-document.md#pagemetadata): Retrieves details about the template used to create the document.
 
 In addition, the following new method has been added to the AddOnSdk [`App.Document`](../references/addonsdk/app-document.md) API:
 
@@ -38,6 +38,10 @@ In addition, the following new method has been added to the AddOnSdk [`App.Docum
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The [`runPrintQualityCheck()`](../references/addonsdk/app-document.md#runprintqualitycheck) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+### Changed
+
+Added a new [FAQ item](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The [FAQ](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) provides a workaround for this issue.
 
 ## 2025-03-03
 
