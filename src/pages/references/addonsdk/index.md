@@ -12,10 +12,11 @@ keywords:
   - API
   - Add-on Manifest
 title: SDK Reference
-description: The Adobe Express add-on SDK Reference. 
+description: The Adobe Express add-on SDK Reference.
 contributors:
   - https://github.com/hollyschinsky
 ---
+
 # Add-on UI SDK Reference
 
 ## Overview
@@ -24,15 +25,15 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 ## Features Supported by the SDK
 
-- [Importing Content](../../guides/develop/use_cases/content_management.md#importing-content)
-- [Exporting Content](../../guides/develop/use_cases/content_management.md#exporting-content)
-- [Accessing Content](../../guides/develop/use_cases/content_management.md)
-- [Drag & Drop Behavior](../../guides/develop/use_cases/user_interaction.md#drag-and-drop)
-- [Authorization with OAuth 2.0](../../guides/develop/use_cases/authentication_authorization.md#oauth-20)
-- [Client-side Storage Access](../../guides/develop/use_cases/clientside_data.md)
-- [Modal Dialogs](../../guides/develop/use_cases/user_interaction.md#modal-dialogs)
-- [Locale Detection](../../guides/develop/use_cases/environment_settings.md#detecting-locale-supported-locales-and-format)
-- [Theme Detection](../../guides/develop/use_cases/environment_settings.md#detecting-theme)
+- [Importing Content](../../guides/develop/how_to/use_images.md)
+- [Exporting Content](../../guides/develop/how_to/create_renditions.md)
+- [Accessing Content](../../guides/develop/how_to/group_elements.md)
+- [Drag & Drop Behavior](../../guides/develop/how_to/drag_and_drop.md)
+- [Authorization with OAuth 2.0](../../guides/develop/how_to/oauth2.md)
+- [Client-side Storage Access](../../guides/develop/how_to/local_data_management.md)
+- [Modal Dialogs](../../guides/develop/how_to/modal_dialogs.md)
+- [Locale Detection](../../guides/develop/how_to/theme_locale.md#detecting-locale-supported-locales-and-format)
+- [Theme Detection](../../guides/develop/how_to/theme_locale.md#detecting-theme)
 - [Access to the Manifest](/references/addonsdk/instance-manifest.md)
 - [Access to the Document information](/references/addonsdk/app-document.md)
 
@@ -46,9 +47,9 @@ See the [implementing common use cases page](../../guides/develop/) for details 
 
 The distinction between an SDK and an API can be a bit blurry and can depend on the specific context. However, here's a general overview of the differences between an SDK and an API:
 
-   **SDK** (Software Development Kit) - a collection of software development tools and libraries that developers can use to create applications for a specific platform or system. An SDK typically includes an API, documentation, code samples, and other resources that developers need to build applications.
+**SDK** (Software Development Kit) - a collection of software development tools and libraries that developers can use to create applications for a specific platform or system. An SDK typically includes an API, documentation, code samples, and other resources that developers need to build applications.
 
-   **API** (Application Programming Interface) - a set of rules and protocols that developers can use to interact with a platform.
+**API** (Application Programming Interface) - a set of rules and protocols that developers can use to interact with a platform.
 
 In general, an SDK provides a more complete set of tools and resources for developers than an API alone. An SDK may include an API, but it also includes other tools and resources that can help developers build applications more easily. However, the terms SDK and API are often used interchangeably, and the specific definitions can vary depending on the context.
 
@@ -69,7 +70,7 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
         import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
         addOnUISdk.ready.then(async () => {
             console.log("addOnUISdk is ready for use.");
-        });     
+        });
     </script>
 </body>
 ```
@@ -90,8 +91,8 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 ```ts
 declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
-    export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
-    export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+  export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+  export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 }
 ```
 
@@ -152,7 +153,7 @@ The table below describes the possible error messages that may occur when using 
 
 <br/>
 
-| Error Message                     |   Error Scenario                 |
-|-------------------------------:|-------------------------------------------------:|
-| Invalid `${propertyName}` property. SDK is not fully initialized. | When an add-on tries to use the SDK before it is fully initialized. |
-| Failed to initialize Addon SDK. Unsupported API version: `${apiVersion}` | API version is unsupported.  |
+|                                                            Error Message |                                                      Error Scenario |
+| -----------------------------------------------------------------------: | ------------------------------------------------------------------: |
+|        Invalid `${propertyName}` property. SDK is not fully initialized. | When an add-on tries to use the SDK before it is fully initialized. |
+| Failed to initialize Addon SDK. Unsupported API version: `${apiVersion}` |                                         API version is unsupported. |

@@ -1,6 +1,6 @@
 # addOnUISdk.app.devFlags
 
-This object contains flags which can be used to simulate certain behavior during development.  
+This object contains flags which can be used to simulate certain behavior during development.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -24,10 +24,10 @@ Simulate APIs as a free user.
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 addOnUISdk.ready.then(async () => {
   addOnUISdk.app.devFlags.simulateFreeUser = true;
 });
 ```
 
-See this [export content use case example](../../guides/develop/use_cases/content_management.md#option-1-show-a-premium-content-error-with-the-upgrade-option), which uses this flag for more details.
+See this [export content use case example](../../guides/develop/how_to/premium_content.md#show-a-premium-content-error-with-the-upgrade-option), which uses this flag for more details.
