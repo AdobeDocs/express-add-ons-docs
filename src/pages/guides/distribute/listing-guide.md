@@ -77,3 +77,13 @@ As part of your submission, you will upload your add-on package. Take the follow
      Right-click > Send to > Compressed (zipped) folder
 
      **Note:** You should _not_ compress the add-on's parent folder. Instead, compress the contents of the parent folder. Failure to do so will likely cause a rejection when submitting.
+
+#### Trader information
+
+<InlineAlert variant="info" slots="text" />
+
+This information will be displayed to only users in the European Union (EU) region in accordance with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements.
+
+- Email
+- Telephone
+- Address

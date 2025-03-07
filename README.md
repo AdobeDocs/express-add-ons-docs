@@ -48,6 +48,8 @@ This section outlines the steps that should be taken to format the generated Doc
 
 10. Find and replace `\<` with `<` for all `.md` files.
 
+11. Find and replace "\n`Experimental`\n" with "" with a regex option turned on in VS Code for all `.md` files. This will remove the additional `Experimental` text from the generated docs.
+
 ## Adobe I/O Documentation Template Info
 
 This is a site template built with the [Adobe I/O Theme](https://github.com/adobe/aio-theme).

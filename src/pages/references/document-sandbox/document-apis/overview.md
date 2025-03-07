@@ -64,33 +64,54 @@
 
 ## Interfaces
 
--   [AreaTextLayout](interfaces/area-text-layout.md)
--   [AutoHeightTextLayout](interfaces/auto-height-text-layout.md)
--   [BitmapImage](interfaces/bitmap-image.md)
--   [CharacterStyles](interfaces/character-styles.md)
--   [CharacterStylesInput](interfaces/character-styles-input.md)
--   [CharacterStylesRange](interfaces/character-styles-range.md)
--   [CharacterStylesRangeInput](interfaces/character-styles-range-input.md)
--   [Color](interfaces/color.md)
--   [ColorFill](interfaces/color-fill.md)
--   [ContainerNode](interfaces/container-node.md)
--   [Fill](interfaces/fill.md)
--   [IFillableNode](interfaces/i-fillable-node.md)
--   [IRectangularNode](interfaces/i-rectangular-node.md)
--   [IStrokableNode](interfaces/i-strokable-node.md)
--   [ListItem](interfaces/list-item.md)
--   [Point](interfaces/point.md)
--   [PointTextLayout](interfaces/point-text-layout.md)
--   [Rect](interfaces/rect.md)
--   [RectangleGeometry](interfaces/rectangle-geometry.md)
--   [SolidColorStroke](interfaces/solid-color-stroke.md)
--   [Stroke](interfaces/stroke.md)
--   [StyleRange](interfaces/style-range.md)
--   [UnsupportedTextLayout](interfaces/unsupported-text-layout.md)
+-   [AreaTextLayout](interfaces/AreaTextLayout.md)
+-   [AutoHeightTextLayout](interfaces/AutoHeightTextLayout.md)
+-   [BaseParagraphStyles](interfaces/BaseParagraphStyles.md)
+-   [BitmapImage](interfaces/BitmapImage.md)
+-   [CharacterStyles](interfaces/CharacterStyles.md)
+-   [CharacterStylesInput](interfaces/CharacterStylesInput.md)
+-   [CharacterStylesRange](interfaces/CharacterStylesRange.md)
+-   [CharacterStylesRangeInput](interfaces/CharacterStylesRangeInput.md)
+-   [Color](interfaces/Color.md)
+-   [ColorFill](interfaces/ColorFill.md)
+-   [ContainerNode](interfaces/ContainerNode.md)
+-   [Fill](interfaces/Fill.md)
+-   [IFillableNode](interfaces/IFillableNode.md)
+-   [IRectangularNode](interfaces/IRectangularNode.md)
+-   [IStrokableNode](interfaces/IStrokableNode.md)
+-   [ListItem](interfaces/ListItem.md)
+-   [OrderedListStyleInput](interfaces/OrderedListStyleInput.md)
+-   [ParagraphStyles](interfaces/ParagraphStyles.md)
+-   [ParagraphStylesInput](interfaces/ParagraphStylesInput.md)
+-   [ParagraphStylesRange](interfaces/ParagraphStylesRange.md)
+-   [ParagraphStylesRangeInput](interfaces/ParagraphStylesRangeInput.md)
+-   [Point](interfaces/Point.md)
+-   [PointTextLayout](interfaces/PointTextLayout.md)
+-   [Rect](interfaces/Rect.md)
+-   [RectangleGeometry](interfaces/RectangleGeometry.md)
+-   [SolidColorStroke](interfaces/SolidColorStroke.md)
+-   [Stroke](interfaces/Stroke.md)
+-   [StyleRange](interfaces/StyleRange.md)
+-   [UnorderedListStyleInput](interfaces/UnorderedListStyleInput.md)
+-   [UnsupportedTextLayout](interfaces/UnsupportedTextLayout.md)
 
 ## Type Aliases
 
--   [EditorEventHandler](type-aliases/editor-event-handler.md)
--   [EventHandlerId](type-aliases/event-handler-id.md)
--   [Font](type-aliases/font.md)
--   [SolidColorStrokeWithOptionalType](type-aliases/solid-color-stroke-with-optional-type.md)
+-   [EditorEventHandler](type-aliases/EditorEventHandler.md)
+-   [EventHandlerId](type-aliases/EventHandlerId.md)
+-   [Font](type-aliases/Font.md)
+-   [OrderedListStyle](type-aliases/OrderedListStyle.md)
+-   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)
+-   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)
+
+## References
+
+### OrderedListNumbering
+
+Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/OrderedListNumbering.md)
+
+---
+
+### ParagraphListType
+
+Re-exports [ParagraphListType](namespaces/Constants/enumerations/ParagraphListType.md)

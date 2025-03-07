@@ -44,6 +44,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Version
 - Author
 - Contact information
+- Trader infromation in the publisher profile if you wish to distribute your add-ons in the EU region.
 
 ### 3. Ensure your add-on meets legal and licensing requirements, including:
 
@@ -54,7 +55,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 
 ### 4. Make sure the add-on meets our [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf)
 
-### 6. Ensure that you have read and followed all Adobe guidelines relating to your add-on, including:
+### 5. Ensure that you have read and followed all Adobe guidelines relating to your add-on, including:
 
 - Our [Developer Brand Guidelines](../guidelines/brand-guidelines.md)
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)

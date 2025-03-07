@@ -13,6 +13,7 @@ The Fonts class provides methods to work with fonts.
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+• **fromPostscriptName**(`postscriptName`): `Promise`<`undefined` \| [`AvailableFont`](AvailableFont.md)\>
 
 Get an [AvailableFont](available-font.md) that exactly matches the given PostScript name, if any. Only fonts that the user has permission to use
 for editing content are returned, so the result of this call is always safe to apply to a [TextContentModel](text-content-model.md)'s styles.

@@ -31,8 +31,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test:links": "remark src/pages --quiet --frail",
+    "test:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src",
+    "fix:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src --fix",
     "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1",
-    "buildNavigation": "webpack --config webpack.config.js && node buildNavigation.js"
+    "buildNavigation": "webpack --config webpack.config.js && node buildNavigation.js",
   },
   "remarkConfig": {
     "plugins": [
@@ -41,6 +43,8 @@
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
+    "markdownlint": "^0.35.0",
+    "markdownlint-cli": "^0.41.0",
     "remark-cli": "^11.0.0",
     "remark-validate-links": "^12.1.0",
     "webpack-cli": "^6.0.1"

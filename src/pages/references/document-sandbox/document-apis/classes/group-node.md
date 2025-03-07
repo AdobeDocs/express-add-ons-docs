@@ -24,6 +24,7 @@ To create new group, see [Editor.createGroup](Editor.md#creategroup).
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
 
 Get [AddOnData](add-on-data.md) reference for managing the private metadata on this node for this add-on.
 
@@ -87,14 +88,21 @@ even for an orphan node with no parent.
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly` [`Rect`](../interfaces/rect.md)
+• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-Note: If this group has a maskShape, group's bounds are always identical to the maskShape's, regardless of the
-group's other content.
+The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
+relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
+"spine" of the shape as well as its stroke, but excluding effects such as shadows.
+
+The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly` [`Rect`](../interfaces/rect.md)
+`Readonly`<[`Rect`] (../interfaces/Rect.md)\>
+
+Note: If this group has a maskShape, group's bounds are always identical to the maskShape's, regardless of the
+group's other content.
 
 <hr />
 
@@ -102,8 +110,7 @@ group's other content.
 
 • `get` **centerPointLocal**(): `Readonly` [`Point`](../interfaces/point.md)
 
-Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal
-box.
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
@@ -143,6 +150,10 @@ moved to a different part of the document.
 
 The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](context.md#selection)), and
 cannot be edited by the user unless they are unlocked first.
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
+cannot be edited by the user in the UI unless they are unlocked first. Operations on locked nodes using the API
+are permitted. However, please consider if modifying a locked node would align with user expectations
+before using the API to make changes to locked nodes.
 
 • `set` **locked**(`locked`): `void`
 

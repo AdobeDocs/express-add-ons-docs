@@ -289,6 +289,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/auto-height-text-layout.md",
                   },
                   {
+                    title: "BaseParagraphStyles",
+                    path: "references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md",
+                  },
+                  {
                     title: "BitmapImage",
                     path: "references/document-sandbox/document-apis/interfaces/bitmap-image.md",
                   },
@@ -345,6 +349,26 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/list-item.md",
                   },
                   {
+                    title: "OrderedListStyleInput",
+                    path: "references/document-sandbox/document-apis/interfaces/OrderedListStyleInput.md",
+                  },
+                  {
+                    title: "ParagraphStyles",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStyles.md",
+                  },
+                  {
+                    title: "ParagraphStylesInput",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md",
+                  },
+                  {
+                    title: "ParagraphStylesRange",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md",
+                  },
+                  {
+                    title: "ParagraphStylesRangeInput",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput.md",
+                  },
+                  {
                     title: "Point",
                     path: "references/document-sandbox/document-apis/interfaces/point.md",
                   },
@@ -367,6 +391,10 @@ module.exports = {
                   {
                     title: "StyleRange",
                     path: "references/document-sandbox/document-apis/interfaces/style-range.md",
+                  },
+                  {
+                    title: "UnorderedListStyleInput",
+                    path: "references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md",
                   },
                   {
                     title: "UnsupportedTextLayout",
@@ -397,6 +425,14 @@ module.exports = {
                   {
                     title: "FillType",
                     path: "references/document-sandbox/document-apis/enumerations/fill-type.md",
+                  },
+                  {
+                    title: "OrderedListNumbering",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md",
+                  },
+                  {
+                    title: "ParagraphListType",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md",
                   },
                   {
                     title: "SceneNodeType",
@@ -441,8 +477,16 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/type-aliases/font.md",
                   },
                   {
+                    title: "OrderedListStyle",
+                    path: "references/document-sandbox/document-apis/type-aliases/OrderedListStyle.md",
+                  },
+                  {
                     title: "SolidColorStrokeWithOptionalType",
                     path: "references/document-sandbox/document-apis/type-aliases/solid-color-stroke-with-optional-type.md",
+                  },
+                  {
+                    title: "UnorderedListStyle",
+                    path: "references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md",
                   },
                 ],
               },

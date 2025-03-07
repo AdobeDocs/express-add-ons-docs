@@ -11,11 +11,13 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
+  - DSA
 title: Public add-on distribution
 description: A guide to public distribution of your add-on. 
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
+  - https://github.com/nimithajalal
 ---
 
 # Public add-on Distribution
@@ -39,8 +41,9 @@ This section outlines everything you'll need to be prepared for submitting your 
 | **\* Full Description**      | 1000              | Full context and description of your add-on and its features |
 | **\* Help URL**              | 1000              | URL for your users to get help (ie: [https://www.example.com/](https://www.example.com/))  |
 | **\* Support email address** | 1000              | An email address that users of your add-on can contact for support |
-| **Privacy Notice**          | 1000              | URL of your privacy notice (ie: [https://www.example.com/](https://www.example.com/)) |
-| **End User License Agreement(EULA)**| 1000      | End User License Agreement URL (ie: [https://www.example.com/](https://www.example.com/)) |
+| **\*Trader information**     | NA                | Provide the trader information as per the [listing guidelines](./guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
+| **Privacy Notice**          | 1000              | URL of your privacy notice (ie: https://www.example.com/) |
+| **End User License Agreement(EULA)**| 1000      | End User License Agreement URL (ie: https://www.example.com/) |
 | **Keywords**                | 100              | Keywords to help users find your add-on (comma-separated) |
 | **Release notes**       | 1000  | Provide information specific to this version of the add-on |
 
@@ -48,8 +51,6 @@ This section outlines everything you'll need to be prepared for submitting your 
 
 | Type           | Format      | Description   |
 | -------------: | ------------| -----------:  |
-| * 36x36 icon           | `.jpg/png`  | a 36x36 sized icon representing your add-on |
-| * 64x64 icon           | `.jpg/png`  | a 64x64 sized icon representing your add-on |
 | * 144x144 icon         | `.jpg/png`  | a 144x144 sized icon representing your add-on |
 | * Screenshot           | `.jpg/png`  | a 1360x800 sized screenshot to show users how to use your add-on |
 |   Additional screenshots | `.jpg/png` | 4 more optional 1360x800 sized screenshots for your add-on |
@@ -126,13 +127,15 @@ The **"Create a public listing"** page contains a number of form inputs, grouped
 
 Fill the details with the requested information. The **Add-on name** must be unique, 25 characters max. It will be validated when you tab out (or the field loses focus) before you can move to the next step. You will know that it's verified by a green checkmark, or you'll receive an error, in which case you'll need to choose another.
 
-The **icons** must contain the same graphics, in three different sizes (square, with sides of 32px, 64px, 144px). All the other **textual fields** have a character count that update with the remaining amount as you're typing into them.  Please ensure your URLs and email addresses are properly formed to avoid unnecessary errors.
+The **icon** must be of the size, 144 px. Once you upload an icon, it will be auto-resized into **Minimized add-on module icon(36 px)**, **Panel header icon (64 px)** and **Launchpad icon (144 px)**.
+
+![Public listing blank](./img/public-listing-icon-resize.png)
+
+All the other **textual fields** have a character count that update with the remaining amount as you're typing into them. Please ensure your URLs and email addresses are properly formed to avoid unnecessary errors.
 
 <InlineAlert slots="text" variant="success"/>
 
 The `*` indicates required fields. Note that you can skip entering these required fields if you are only planning to save a draft with your current edit, though you will not be able to submit it until they are completed.
-
-![Public listing with details](./img/public-listing-with-details-v2.png)
 
 Please note the dropdown checklist below the **"Jump to"** label, in the top-left corner: you can use it to scroll to the relevant part of the document—complete sections are marked in green. Also note a Progress bar, indicating how far you are in the listing compilation.
 
@@ -141,8 +144,6 @@ Please note the dropdown checklist below the **"Jump to"** label, in the top-lef
 ### Step 5: Upload screenshots
 
 In the next section, you should upload 1-5 screenshots to show off your add-on and what it's all about. Please note, at least one screenshot is required.
-
-![Public listing screenshots](./img/public-listing-screenshots-v2.png)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -155,8 +156,6 @@ It's time to upload your package. Either drag and drop the add-on package `.zip`
 <InlineAlert slots="text" variant="info"/>
 
 In case you missed it, the [top section on preparing your add-on package](#3-prepare-your-add-on-package) can be used to help you create the zip file needed for this step.
-
-![Public listing screenshots](./img/public-listing-upload-v2.png)
 
 The package will go through a verification process which may take a few seconds, so please be patient. In case you receive an error, please review the following warning notes.
 
@@ -171,8 +170,6 @@ The package will go through a verification process which may take a few seconds,
 **4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`. The `package` script [described earlier](#3-prepare-your-add-on-package) takes care of this for you.
 
 If the `zip` validation is successful, you will see a green checkmark next to the **Add-on package verified** text; you can then add some Release Notes (1000 characters max) and check the add-on's supported languages.
-
-![Public listing upload success](./img/public-listing-upload-success-v2.png)
 
 ### Step 7: Enter the AI usage details
 
@@ -229,7 +226,9 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ### Step 10: Final submission
 
-Enter your **Notes to reviewer**; add there any relevant information for the vetting team, including coupon codes that may allow them to test premium features for free. Carefully review all the information entered, and then click the **Submit for review** button in the top-right corner.
+- Enter your **Notes to reviewer**
+  - Add there any relevant information for the vetting team, including coupon codes that may allow them to test premium features for free. Carefully review all the information entered.
+- Click the **Submit for review** button in the top-right corner.
 
 ![Submitting the listing](./img/public-listing-submission-v2.png)
 
@@ -239,17 +238,19 @@ The **Submit for review** button will only be enabled if you have entered all of
 
 In case there are any errors, a message will be displayed at the bottom of the page. Follow the instructions to fix them, and try submitting again.
 
-![Submission Error](./img/public-listing-errors-v2.png)
-
 Eventually, the submission will be successful. Congratulations!
 
-![Submission complete](./img/public-listing-submitted-v2.png)
-
-**View submission details** will display the details of your add-on submission:
-
-![View Submission Details](./img/public-listing-submission-details-v2.png)
+Click **View submission details** to see the details of your add-on submission.
 
 You can choose to revisit your submission details later if you need to update it, or if you want to download insights for your add-on. To do so, choose **Manage add-ons** from the add-on launchpad again, and then select your add-on listing.
+
+<InlineAlert variant="warning" slots="header, text1, text2" />
+
+Add-on visbility for EU users
+
+If an EU user has a deep link to your add-on, and you are not compliant with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, they will not be able to install the add-on. However, if they have already installed it, they will still be able to use it. In both cases, they will see a banner with the following message:
+
+*This listing is not currently available in the EU. This developer has not submitted the trader information required by the EU Digital Services Act.*
 
 ## Post-Submission details and insights
 

@@ -12,6 +12,8 @@
 
 • **height**: `number`
 
+The height of the text node in pixels.
+
 <hr />
 
 ### type
@@ -23,3 +25,5 @@
 ### width
 
 • **width**: `number`
+
+The width of the text node in pixels.

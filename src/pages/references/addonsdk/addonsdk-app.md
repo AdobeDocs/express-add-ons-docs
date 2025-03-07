@@ -217,10 +217,6 @@ See the use case implementations for an example of the [custom modal dialog](../
 
 Allows an iframe hosted within an add-on to register its intent to communicate with the add-on SDK. While iframes can be used for embedding media without SDK interaction, `registerIframe()` is needed for those requiring SDK capabilities. It marks a transition to a more controlled approach, where add-ons must explicitly opt-in to this level of integration.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `registerIframe(element: HTMLIFrameElement): [UnregisterIframe]()`
