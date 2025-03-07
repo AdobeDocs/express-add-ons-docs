@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/use_cases/content_management.md#importing-content) such as images, audio and video into the document, and for [exporting content](../../guides/develop/use_cases/content_management.md#exporting-content) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/how_to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/develop/how_to/create_renditions.md) from the current document.
 
 ## General Methods
 
@@ -148,7 +148,7 @@ Tells Express to run a print quality check to determine if the document is ready
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -156,8 +156,8 @@ Tells Express to run a print quality check to determine if the document is ready
 
 #### Parameters
 
-| Name      | Type     | Description |
-| --------- | -------- | ----------------------------------------------------: |
+| Name      | Type     |                                                     Description |
+| --------- | -------- | --------------------------------------------------------------: |
 | `options` | `Object` | [`PrintQualityCheckOptions`](#printqualitycheckoptions) object. |
 
 #### Return Value
@@ -172,15 +172,16 @@ Tells Express to run a print quality check to determine if the document is ready
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
-const {document} = addOnUISdk.app;
- 
+const { document } = addOnUISdk.app;
+
 // Run Print Quality Check
 function runPrintQualityCheck() {
   try {
-    document.runPrintQualityCheck({range: addOnUISdk.constants.Range.entireDocument});
+    document.runPrintQualityCheck({
+      range: addOnUISdk.constants.Range.entireDocument,
+    });
     console.log("Print quality check completed successfully");
-  }
-  catch(error) {
+  } catch (error) {
     console.log("Failed to run print quality check");
   }
 }
@@ -196,44 +197,44 @@ Print quality check completed successfully
 
 Retrieve the details about the template used to create the document.
 
-| Name                | Type     |  Description             |
-| ------------------- | ----------------------------------- |
-| `id`                | `string` | Unique id of the template |
-| `creativeIntent?`   | `string` | Creative intent of the template |
+| Name              | Type     | Description                     |
+| ----------------- | -------- | ------------------------------- |
+| `id`              | `string` | Unique id of the template       |
+| `creativeIntent?` | `string` | Creative intent of the template |
 
 #### `PrintQualityCheckOptions`
 
 The options to pass into the print quality check..
 
-| Name |        Type   |           Description               |
-| -------------------- | ----------------------------------- |
-| `range` | [`Range`](../addonsdk/addonsdk-constants.md) | The range of the document to run the print quality check on. |
-| `pageIds?` | `string[]` | Id's of the pages. (Only required when the range is `specificPages`). |
+| Name       | Type                                         | Description                                                           |
+| ---------- | -------------------------------------------- | --------------------------------------------------------------------- |
+| `range`    | [`Range`](../addonsdk/addonsdk-constants.md) | The range of the document to run the print quality check on.          |
+| `pageIds?` | `string[]`                                   | Id's of the pages. (Only required when the range is `specificPages`). |
 
 #### `PageMetadata`
 
 The metadata of a page.
 
-| Name | Type |   Description |
+| Name                 | Type                                |                                                                                                                                                                                                                                                                                                                                                                Description |
 | -------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `id`                 |`string`  |  The id of the page. |
-| `title`              | `string` |  The title of the page. |
-| `size`               | `{ width: number, height: number }` |   The size of the page in pixels. |
-| `hasPremiumContent`  | `boolean` | `true` if the page has premium content, `false` if not. |
-| `hasTemporalContent` | `boolean` | `true` if the page has timelines, `false` if not. |
-| `pixelsPerInch?`     | `number` | The pixels per inch of the page. |
-| `isPrintReady?`      | `boolean` | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
-| `isBlank?` | `boolean` | Indicates whether the page is blank. |
-| `templateDetails?` | `TemplateDetails` | The details of the template for the page. |
+| `id`                 | `string`                            |                                                                                                                                                                                                                                                                                                                                                        The id of the page. |
+| `title`              | `string`                            |                                                                                                                                                                                                                                                                                                                                                     The title of the page. |
+| `size`               | `{ width: number, height: number }` |                                                                                                                                                                                                                                                                                                                                            The size of the page in pixels. |
+| `hasPremiumContent`  | `boolean`                           |                                                                                                                                                                                                                                                                                                                    `true` if the page has premium content, `false` if not. |
+| `hasTemporalContent` | `boolean`                           |                                                                                                                                                                                                                                                                                                                          `true` if the page has timelines, `false` if not. |
+| `pixelsPerInch?`     | `number`                            |                                                                                                                                                                                                                                                                                                                                           The pixels per inch of the page. |
+| `isPrintReady?`      | `boolean`                           | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
+| `isBlank?`           | `boolean`                           |                                                                                                                                                                                                                                                                                                                                       Indicates whether the page is blank. |
+| `templateDetails?`   | `TemplateDetails`                   |                                                                                                                                                                                                                                                                                                                                  The details of the template for the page. |
 
 #### `PageMetadataOptions`
 
 This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
-| Name                 | Type     |                                                        Description |
-| -------------------- | -------- | -----------------------------------------------------------------: |
-| `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) | Range of the document to get the metadata |
-| `pageIds?: string[]` | `string` | Id's of the pages. (Only required when the range is `specificPages`). |
+| Name                 | Type                                                   |                                                           Description |
+| -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
+| `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
+| `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ## Import Content Methods
 
@@ -404,7 +405,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [importing content use case](../../guides/develop/use_cases/content_management.md#importing-content) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [import images how-to](../../guides/develop/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -526,7 +527,7 @@ For `gif` images, [the technical requirements are listed here](https://helpx.ado
 
 IMPORTANT: Animated GIFs
 
-Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an *animated GIF* specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
+Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an _animated GIF_ specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
 
 If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
 
@@ -571,14 +572,14 @@ Generate renditions of the current page, specific pages or the entire document i
 }
 ```
 
-Refer to the [exporting content use case example](../../guides/develop/use_cases/content_management.md#premium-content) for more specific details on options for handling the export of premium content.
+Refer to the [manage premium content how-to](../../guides/develop/how_to/premium_content.md) for more specific details on options for handling the export of premium content.
 
 #### `RenditionOptions`
 
-| Name       | Type       |                                                                                 Description |
-| ---------- | ---------- | ------------------------------------------------------------------------------------------: |
-| `range`    | `string`   |   [`Range`](./addonsdk-constants.md) constant value. |
-| `format`   | `string`   |   [`RenditionFormat`](./addonsdk-constants.md) constant value. |
+| Name       | Type       |                                                                                  Description |
+| ---------- | ---------- | -------------------------------------------------------------------------------------------: |
+| `range`    | `string`   |                                           [`Range`](./addonsdk-constants.md) constant value. |
+| `format`   | `string`   |                                 [`RenditionFormat`](./addonsdk-constants.md) constant value. |
 | `pageIds?` | `string[]` | Id's of the pages (only required if the range is [`specificPages`](./addonsdk-constants.md)) |
 
 #### `JpgRenditionOptions`
@@ -626,7 +627,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 #### `Bleed`
 
-Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
+Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
 
 | Name      | Type                                                       |                                      Description |
 | --------- | ---------------------------------------------------------- | -----------------------------------------------: |
@@ -763,7 +764,7 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [exporting content use case example](../../guides/develop/use_cases/content_management.md#exporting-content) and the [export-sample](/samples.md) in the code samples for usage examples.
+Refer to the [create renditions how-to](../../guides/develop/how_to/create_renditions.md) and the [export-sample](/samples.md) in the code samples for usage examples.
 
 ### Errors
 

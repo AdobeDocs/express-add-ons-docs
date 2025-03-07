@@ -29,6 +29,7 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 Check out the video below for a quick introduction to the add-on playground.
 
 <br/><br/><div style="display: flex; justify-content: center;">
+
  <iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div><br/>
 
@@ -62,9 +63,10 @@ At the bottom of the add-ons rail, you'll see the option to open the Code Playgr
 
 ## Next steps
 
-- **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](../develop/use_cases.md) to kickstart your development.
+- **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](../develop/how_to.md) to kickstart your development.
 - **Start with Code Samples:** Check out [these samples](../../samples.md) to see what's possible and get inspired.
 - **Understand Add-on Concepts:** Get familiar with the fundamentals of building add-ons.
+
   - [iFrame Context](../develop/context.md)
   - [Document Sandbox](../../references/document-sandbox/document-apis/concepts/index.md)
   - [Manifest File](../../references/manifest/index.md)
@@ -76,19 +78,19 @@ At the bottom of the add-ons rail, you'll see the option to open the Code Playgr
 
 ### What is the Adobe Express Developer Playground?
 
- Adobe Express Developer Playground is a lightweight code editor designed for fast and effortless prototyping. It allows you to experiment with simple code snippets to build and refine add-ons, quickly turning ideas into functional features.
+Adobe Express Developer Playground is a lightweight code editor designed for fast and effortless prototyping. It allows you to experiment with simple code snippets to build and refine add-ons, quickly turning ideas into functional features.
 
 ### Is it free to use?
 
- Yes, the Developer Playground is free to use. You can access all its features without any cost and start prototyping and creating add-ons right away.
+Yes, the Developer Playground is free to use. You can access all its features without any cost and start prototyping and creating add-ons right away.
 
 ### Do I need coding experience?
 
- While some basic coding knowledge is helpful, Playground is designed to be beginner-friendly and accessible. Its intuitive interface and simple code snippets make it easier for both experienced developers and those newer to coding to create and test add-ons.
+While some basic coding knowledge is helpful, Playground is designed to be beginner-friendly and accessible. Its intuitive interface and simple code snippets make it easier for both experienced developers and those newer to coding to create and test add-ons.
 
 ### How do I start creating add-ons?
 
- Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
+Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
 
 ### Where can I go for help?
 

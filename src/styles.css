@@ -67,3 +67,8 @@ h1 {
     flex: 1 1 100%;
   }
 }
+
+/* Fix for unordered lists left margin in warning boxes */
+.spectrum-InLineAlert-content li {
+  margin-left: 12px;
+}
