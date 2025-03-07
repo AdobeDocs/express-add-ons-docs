@@ -56,6 +56,7 @@ contributors:
 - [How can I update my trader details in the publisher profile after submission?](#how-can-i-update-my-trader-details-in-the-publisher-profile-after-submission)
 - [What happens if an EU user has a deep link to my add-on and I am not compliant with the European Union Digital Services Act (DSA) trader requirements?](#what-happens-if-an-eu-user-has-a-deep-link-to-my-add-on-and-i-am-not-compliant-with-the-european-union-digital-services-act-dsa-trader-requirements)
 - [Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?](#can-an-eu-user-still-use-my-add-on-if-they-have-already-installed-it-but-i-am-not-compliant-with-the-dsa-trader-requirements)
+- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows)
 
 ## Answers
 
@@ -228,3 +229,34 @@ If you are not compliant with the European Union Digital Services Act trader req
 ### Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?
 
 Yes, if an EU user has already installed your add-on, they will still be able to use it even if you are not compliant with the DSA trader requirements. However, they will see a banner with a message indicating the compliance issue.
+
+### Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?
+
+There's a known issue with running certain versions of Node.js on Windows with the CLI currently. Specifically, `v22.14.0` and `v18.20.7` have been found to fail with the following error:
+
+```bash
+Creating a new Add-on ...
+This may take a minute ...
+
+√ Please select a template which you want to scaffold the Add-on project with » [javascript]: Get started with Add-on development using JavaScript
+√ Do you want to include document sandbox runtime? » Yes
+err:: TypeError: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at Object.fileURLToPath (node:internal/url:1505:12)
+    at WxpAddOnFactory._copyTemplateFiles (file:///C:/Temp/abc/node_modules/@adobe/create-ccweb-add-on/dist/app/WxpAddOnFactory.js:131:39)
+    at WxpAddOnFactory.create (file:///C:/Temp/abc/node_modules/@adobe/create-ccweb-add-on/dist/app/WxpAddOnFactory.js:90:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async CreateCCWebAddOn.run (file:///C:/Temp/abc/node_modules/@adobe/create-ccweb-add-on/dist/commands/create.js:90:9)
+    at async CreateCCWebAddOn._run (C:\Temp\abc\node_modules\@oclif\core\lib\command.js:108:22)
+    at async Config.runCommand (C:\Temp\abc\node_modules\@oclif\core\lib\config\config.js:328:25)
+    at async Object.run (C:\Temp\abc\node_modules\@oclif\core\lib\main.js:89:16) {
+  code: 'ERR_INVALID_URL',
+  input: '.\\file:\\C:\\Temp\\abc\\node_modules\\@adobe\\create-ccweb-add-on\\dist\\templates\\javascript-with-document-sandbox'
+}
+
+Aborting installation.
+Unexpected error. Please report it as a bug:
+TypeError: Invalid URL
+```
+
+If you encounter this issue, please update your Node.js version to `v20.11.0` and try again.

@@ -1,7 +1,7 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on 
+  - Express Add-on
   - Extend
   - Extensibility
   - User Interface
