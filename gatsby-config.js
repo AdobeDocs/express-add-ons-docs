@@ -630,7 +630,7 @@ module.exports = {
           },        
           {
             title: "Using Lit & TypeScript",
-            path: "guides/develop/using-lit.md",
+            path: "guides/develop/using-lit-typescript.md",
           },
           {
             title: "Performance Tips",
