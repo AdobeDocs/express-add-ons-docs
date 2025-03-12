@@ -1,4 +1,4 @@
-<hr />
+---
 keywords:
     - Adobe Express
     - Express Add-on SDK
@@ -13,7 +13,7 @@ title: Exploring the Adobe Document API Concepts
 description: In this article, you'll learn about the structures that make up the Adobe Express Document Object Model, their features, and how they're reflected in the Reference documentation.
 contributors:
     - https://github.com/undavide
-<hr />
+---
 
 # Adobe Express Document API Concepts
 
