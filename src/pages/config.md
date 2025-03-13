@@ -1,5 +1,5 @@
 - pathPrefix:
-    - /express/add-ons/docs/:
+    - /express/add-ons/docs/
 
 - pages:
     - [Adobe Express Add-ons](https://developer.adobe.com/express/add-ons)
