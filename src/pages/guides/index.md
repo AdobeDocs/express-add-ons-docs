@@ -34,7 +34,7 @@ Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.co
 
 <Embed slots="video" />
 
-https://www.youtube.com/embed/CHBiTTN1neE
+https://www.youtube.com/watch?v=CHBiTTN1neE
 
 To discover add-ons in [Adobe Express](https://new.express.adobe.com/new):
 
