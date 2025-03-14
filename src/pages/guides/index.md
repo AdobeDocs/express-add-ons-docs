@@ -13,6 +13,8 @@ keywords:
   - Add-on Manifest
 title: Adobe Express Add-ons Guides
 description: Find the most recent documentation, code samples and resources for building add-ons for Adobe Express.
+contributors:
+  - https://github.com/hollyschinsky
 ---
 
 <HeroSimple slots="heading, text" background="rgb(138, 43, 226)"/>
