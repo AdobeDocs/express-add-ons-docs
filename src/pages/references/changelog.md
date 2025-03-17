@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-03-21
+
+### Added
+
+- A native Color Picker is available to add-ons via the [`showColorPicker()`](../references/addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](../references/addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
+
 ## 2025-03-07
 
 ### Added
