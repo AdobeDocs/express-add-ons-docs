@@ -21,19 +21,19 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 <Info-Card slots="link, image, text" repeat="3"/>
 
-### [Creating a Grid System add-on with the Adobe Express Document API](grids-addon.md)
+[Creating a Grid System add-on with the Adobe Express Document API](grids-addon.md)
 
 ![Grids add-on](./images/thumbs-grids-addon.png)
 
 Davide Barranca - November 6th, 2023
 
-### [Creating a Stats add-on with the Adobe Express Communication API](stats-addon.md)
+[Creating a Stats add-on with the Adobe Express Communication API](stats-addon.md)
 
 ![Coming Soon](./images/thumbs-stats-addon.png)
 
 Davide Barranca - December 14th, 2023
 
-### [Building UIs using Adobe's Spectrum Design System](spectrum-workshop/index.md)
+[Building UIs using Adobe's Spectrum Design System](spectrum-workshop/index.md)
 
 ![Grids add-on](./images/bingo-v1-addon.png)
 
