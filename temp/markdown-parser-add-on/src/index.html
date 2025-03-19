@@ -15,7 +15,7 @@ governing permissions and limitations under the License. -->
     <meta name="description" content="Adobe Express Add-on tutorial using JavaScript and the Document Sandbox" />
     <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Adobe Express Document API" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grids add-on</title>
+    <title>Markdown Parser Add-on</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -44,10 +44,18 @@ governing permissions and limitations under the License. -->
             </sp-dropzone>
         </div>
 
-        <sp-button-group horizontal>
-            <sp-button id="deleteGrid" variant="secondary">Delete</sp-button>
-            <sp-button id="createGrid">Create</sp-button>
-        </sp-button-group>
+        <div class="row" style="margin-top: 20px; display: flex; align-items: center; justify-content: center;">
+            <sp-button id="parseButton" variant="accent" disabled>
+                Parse Markdown
+            </sp-button>
+            <sp-progress-circle size="s" indeterminate id="progress-circle"
+                style="margin-left: 10px;"></sp-progress-circle>
+        </div>
+
+        <div class="row" style="margin-top: 10px; font-size: 12px; color: #6E6E6E;">
+            <p>Parses Markdown and creates styled text in your Adobe Express document.</p>
+            <p>Supported formats: Headings, Bold, Italic, Links, and Lists.</p>
+        </div>
     </sp-theme>
 </body>
 

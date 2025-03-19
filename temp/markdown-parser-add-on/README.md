@@ -1,14 +1,16 @@
+# Markdown Parser Add-on
+
 ## About
 
-This project has been created with _@adobe/create-ccweb-add-on_. As an example, this Add-on demonstrates how to get started with Add-on development using JavaScript with the Document Sandbox.
+This project has been created with _@adobe/create-ccweb-add-on_. As an example, this Add-on demonstrates how to get started with **Add-on development** using JavaScript with the Document Sandbox.
 
 ## Tools
 
--   HTML
--   CSS
--   JavaScript
+- HTML
+- CSS
+- JavaScript
 
-## Setup
+### Setup
 
 1. To install the dependencies, run `npm install`.
 2. To build the application, run `npm run build`.

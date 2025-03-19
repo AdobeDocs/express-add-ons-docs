@@ -27,8 +27,28 @@ import "@spectrum-web-components/swatch/sp-swatch.js";
 import "@spectrum-web-components/link/sp-link.js";
 import "@spectrum-web-components/illustrated-message/sp-illustrated-message.js";
 import "@spectrum-web-components/dropzone/sp-dropzone.js";
+import "@spectrum-web-components/progress-circle/sp-progress-circle.js";
 
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import { processMarkdown } from "./markdown-parser.js";
+import {
+  createExpressStylingFromAST,
+  debugStyleRanges,
+} from "./adobe-express-formatter.js";
+
+// For debugging
+const DEBUG = true;
+
+// Save debug information to a file in development
+async function saveDebugData(name, data) {
+  if (!DEBUG) return;
+
+  try {
+    console.log(`Debug data for ${name}:`, data);
+  } catch (error) {
+    console.error("Error saving debug data:", error);
+  }
+}
 
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
@@ -39,19 +59,25 @@ addOnUISdk.ready.then(async () => {
 
   customElements.whenDefined("sp-dropzone").then(() => {
     const dropzone = document.getElementById("dropzone");
-
+    const parseButton = document.getElementById("parseButton");
     const message = document.getElementById("message");
-    console.log("message", message);
     const fileInput = document.getElementById("file-input");
-    console.log("fileInput", fileInput);
+    const progressCircle = document.getElementById("progress-circle");
     let input;
     let beingDraggedOver = false;
+    let markdownContent = null;
+
+    // Hide progress initially
+    if (progressCircle) {
+      progressCircle.style.display = "none";
+    }
 
     const isMarkdownFile = (file) => {
       return (
         file.name.toLowerCase().endsWith(".md") || file.type === "text/markdown"
       );
     };
+
     const updateMessage = () => {
       message.heading =
         input !== undefined
@@ -95,7 +121,12 @@ addOnUISdk.ready.then(async () => {
       reader.onload = (e) => {
         const content = e.target.result;
         input = content;
+        markdownContent = content;
         console.log("Markdown content:", content);
+
+        // Enable parse button now that we have content
+        parseButton.disabled = false;
+
         // Ensure message is updated after content is loaded
         updateMessage();
       };
@@ -103,6 +134,65 @@ addOnUISdk.ready.then(async () => {
       console.log("READING FILE");
     };
 
+    // Function to parse markdown and insert styled text into the document
+    const parseMarkdownAndInsert = async () => {
+      if (!markdownContent) {
+        console.error("No markdown content to parse");
+        return;
+      }
+
+      try {
+        // Show progress
+        if (progressCircle) {
+          progressCircle.style.display = "block";
+        }
+        message.heading = "Processing markdown...";
+        parseButton.disabled = true;
+
+        // Process the markdown to get AST
+        const processedMarkdown = await processMarkdown(markdownContent);
+        await saveDebugData("processedMarkdown", processedMarkdown);
+        console.log("Processed markdown:", processedMarkdown);
+
+        // Create Express styling from AST
+        const expressStyling = createExpressStylingFromAST(
+          processedMarkdown.ast
+        );
+        await saveDebugData("ExpressStyling", expressStyling);
+        console.log("Express styling:", expressStyling);
+
+        // Debug style ranges
+        if (DEBUG) {
+          debugStyleRanges(
+            expressStyling.plainText,
+            expressStyling.styleRanges
+          );
+        }
+
+        // Create styled text in the document
+        message.heading = "Adding text to document...";
+
+        // Group ranges by type to apply styling more efficiently
+        const textNode = await sandboxProxy.createStyledTextFromMarkdown(
+          expressStyling.plainText,
+          expressStyling.styleRanges
+        );
+
+        message.heading = "Markdown successfully added to document!";
+        parseButton.disabled = false;
+      } catch (error) {
+        console.error("Error parsing markdown:", error);
+        message.heading = "Error parsing markdown";
+        parseButton.disabled = false;
+      } finally {
+        // Hide progress
+        if (progressCircle) {
+          progressCircle.style.display = "none";
+        }
+      }
+    };
+
+    // Event listeners
     dropzone.addEventListener("dragover", (event) => {
       event.preventDefault();
       beingDraggedOver = true;
@@ -128,5 +218,11 @@ addOnUISdk.ready.then(async () => {
     fileInput.addEventListener("change", (event) => {
       handleDropOrChange(event);
     });
+
+    // Parse button click handler
+    parseButton.addEventListener("click", parseMarkdownAndInsert);
+
+    // Initially disable parse button until we have content
+    parseButton.disabled = true;
   });
 });

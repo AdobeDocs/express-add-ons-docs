@@ -12,8 +12,6 @@ governing permissions and limitations under the License.
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 import { editor } from "express-document-sdk";
 
-import { addColumns, addRows } from "./shapeUtils";
-
 // Get the Authoring Sandbox.
 const { runtime } = addOnSandboxSdk.instance;
 
@@ -34,30 +32,9 @@ function start() {
      * @returns {Group} The group containing the grid.
      */
     addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      let currentNode = editor.context.insertionParent;
-      let page = null;
-
-      while (currentNode) {
-        if (currentNode.type === "Page") {
-          page = currentNode;
-          break;
-        }
-        currentNode = currentNode.parent;
-      }
-
-      // Create the grid.
-      const rowGroup = addRows(rows, gutter, rowColor);
-      console.log("Group ready", rowGroup);
-      const columnGroup = addColumns(columns, gutter, columnColor);
-
-      // Create the grid's group.
-      const gridGroup = editor.createGroup();
-      page.artboards.first.children.append(gridGroup);
-      gridGroup.children.append(rowGroup, columnGroup);
-      gridGroup.locked = true;
-
-      // Save the grid reference.
-      gridRef = gridGroup;
+      // This function is not used for the markdown parser add-on
+      // It's left as a placeholder for reference
+      console.log("Grid creation is not implemented in this add-on");
     },
 
     /**
@@ -65,14 +42,227 @@ function start() {
      * @returns {void}
      */
     deleteGrid() {
-      if (gridRef) {
-        try {
-          gridRef.removeFromParent();
-          gridRef = null;
-        } catch (error) {
-          console.error(error);
-          return "Error: the Grid could not be deleted.";
+      // This function is not used for the markdown parser add-on
+      // It's left as a placeholder for reference
+      console.log("Grid deletion is not implemented in this add-on");
+    },
+
+    /**
+     * Create a text node with the given text
+     * @param {string} text - The text content
+     * @returns {TextNode} The created text node
+     */
+    createTextNode(text) {
+      try {
+        let currentNode = editor.context.insertionParent;
+        let page = null;
+
+        while (currentNode) {
+          if (currentNode.type === "Page") {
+            page = currentNode;
+            break;
+          }
+          currentNode = currentNode.parent;
         }
+
+        // Create a new text node
+        const textNode = editor.createText();
+
+        // Set the text content
+        textNode.fullContent.text = text;
+
+        // Position in the center of the page
+        const artboard = page.artboards.first;
+        textNode.setPositionInParent(
+          { x: artboard.width / 2, y: artboard.height / 3 },
+          { x: 0.5, y: 0 }
+        );
+
+        // Add to document
+        artboard.children.append(textNode);
+
+        return textNode;
+      } catch (error) {
+        console.error("Error creating text node:", error);
+        throw error;
+      }
+    },
+
+    /**
+     * Create a styled text node from markdown content
+     * @param {string} markdownText - The plain text (already extracted from markdown)
+     * @param {Array} styleRanges - Style ranges to apply
+     * @returns {TextNode} The created and styled text node
+     */
+    createStyledTextFromMarkdown(markdownText, styleRanges) {
+      try {
+        // Create a text node with the content
+        const textNode = this.createTextNode(markdownText);
+
+        // Apply each style range to the appropriate part of the text
+        if (styleRanges && styleRanges.length > 0) {
+          for (const range of styleRanges) {
+            if (range.style.type === "heading") {
+              // Apply heading styles (font size and weight)
+              this.applyHeadingStyle(
+                textNode,
+                range.start,
+                range.end,
+                range.style.level
+              );
+            } else if (range.style.type === "emphasis") {
+              // Apply italic
+              this.applyEmphasisStyle(textNode, range.start, range.end);
+            } else if (range.style.type === "strong") {
+              // Apply bold
+              this.applyStrongStyle(textNode, range.start, range.end);
+            } else if (range.style.type === "list") {
+              // Apply list style
+              this.applyListStyle(
+                textNode,
+                range.start,
+                range.end,
+                range.style.ordered
+              );
+            }
+            // Add more style types as needed
+          }
+        }
+
+        return textNode;
+      } catch (error) {
+        console.error("Error creating styled text from markdown:", error);
+        throw error;
+      }
+    },
+
+    /**
+     * Apply heading styles to a text range
+     * @param {TextNode} textNode - The text node
+     * @param {number} start - Start index
+     * @param {number} end - End index
+     * @param {number} level - Heading level (1-6)
+     */
+    applyHeadingStyle(textNode, start, end, level) {
+      try {
+        // Get font size based on heading level
+        let fontSize;
+        switch (level) {
+          case 1:
+            fontSize = 32;
+            break;
+          case 2:
+            fontSize = 28;
+            break;
+          case 3:
+            fontSize = 24;
+            break;
+          case 4:
+            fontSize = 20;
+            break;
+          case 5:
+            fontSize = 18;
+            break;
+          case 6:
+            fontSize = 16;
+            break;
+          default:
+            fontSize = 16;
+        }
+
+        // Apply character styles for the heading
+        textNode.fullContent.applyCharacterStyles(
+          {
+            fontSize: fontSize,
+            // We can't set fontWeight directly, would need to use a font with the right weight
+          },
+          { start, length: end - start }
+        );
+
+        // Apply paragraph styles for spacing if needed
+        textNode.fullContent.applyParagraphStyles(
+          {
+            spaceBefore: 12,
+            spaceAfter: 8,
+          },
+          { start, length: end - start }
+        );
+      } catch (error) {
+        console.error("Error applying heading style:", error);
+        throw error;
+      }
+    },
+
+    /**
+     * Apply emphasis (italic) style to a text range
+     * @param {TextNode} textNode - The text node
+     * @param {number} start - Start index
+     * @param {number} end - End index
+     */
+    applyEmphasisStyle(textNode, start, end) {
+      try {
+        // Apply italic
+        textNode.fullContent.applyCharacterStyles(
+          {
+            fontStyle: "italic",
+          },
+          { start, length: end - start }
+        );
+      } catch (error) {
+        console.error("Error applying emphasis style:", error);
+        throw error;
+      }
+    },
+
+    /**
+     * Apply strong (bold) style to a text range
+     * @param {TextNode} textNode - The text node
+     * @param {number} start - Start index
+     * @param {number} end - End index
+     */
+    applyStrongStyle(textNode, start, end) {
+      try {
+        // For bold, we need to use a bold font variant
+        // Since we can't directly set fontWeight, we apply a style that makes it visually bold
+        textNode.fullContent.applyCharacterStyles(
+          {
+            fontSize:
+              textNode.fullContent.characterStyleRanges[0].fontSize * 1.05,
+            // Ideally we would use a bold font here
+          },
+          { start, length: end - start }
+        );
+      } catch (error) {
+        console.error("Error applying strong style:", error);
+        throw error;
+      }
+    },
+
+    /**
+     * Apply list style to a text range
+     * @param {TextNode} textNode - The text node
+     * @param {number} start - Start index
+     * @param {number} end - End index
+     * @param {boolean} ordered - Whether the list is ordered
+     */
+    applyListStyle(textNode, start, end, ordered) {
+      try {
+        // Apply list paragraph style
+        const listType = ordered ? "ordered" : "unordered";
+
+        textNode.fullContent.applyParagraphStyles(
+          {
+            // This is not currently supported in the base SDK
+            // A full implementation would use the constants.ParagraphListType.ordered/unordered
+            // And set other list properties
+            spaceBefore: 4,
+            spaceAfter: 4,
+          },
+          { start, length: end - start }
+        );
+      } catch (error) {
+        console.error("Error applying list style:", error);
+        throw error;
       }
     },
   });
