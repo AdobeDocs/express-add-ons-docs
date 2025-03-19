@@ -10,14 +10,32 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor, fonts } from "express-document-sdk";
+import { editor, fonts, constants } from "express-document-sdk";
 
 // Get the Authoring Sandbox.
 const { runtime } = addOnSandboxSdk.instance;
 
-let gridRef = null;
+function getFontSizeForHeadingLevel(level) {
+  const sizes = { 1: 24, 2: 22, 3: 20, 4: 18, 5: 16, 6: 16 };
+  return sizes[level] || 16;
+}
 
 function start() {
+  const fontCache = new Map();
+
+  async function preloadFonts(postscriptNames) {
+    await Promise.all(
+      postscriptNames.map(async (psName) => {
+        const font = await fonts.fromPostscriptName(psName);
+        if (font) {
+          fontCache.set(psName, font);
+        } else {
+          console.warn(`Font ${psName} couldn't be loaded.`);
+        }
+      })
+    );
+  }
+
   // APIs to be exposed to the UI runtime
   const docApi = {
     /**
@@ -43,18 +61,23 @@ function start() {
 
         // Set the text content
         textNode.fullContent.text = text;
+        textNode.textAlignment = constants.TextAlignment.left;
 
-        // Position in the center of the page
         const artboard = page.artboards.first;
-        textNode.setPositionInParent(
-          { x: artboard.width / 2, y: artboard.height / 3 },
-          { x: 0.5, y: 0 }
-        );
+        textNode.layout = {
+          type: constants.TextType.autoHeight,
+          width: artboard.width - 40,
+        };
+
+        // Position the text at the top-left corner and fill the page width
+        textNode.setPositionInParent({ x: 20, y: 20 }, { x: 0, y: 0 });
+
         textNode.fullContent.applyCharacterStyles({
-          fontSize: 24,
+          fontSize: 16,
         });
         // Add to document
         artboard.children.append(textNode);
+        console.log("textNode", textNode);
         return textNode;
       } catch (error) {
         console.error("Error creating text node:", error);
@@ -70,40 +93,47 @@ function start() {
      */
     createStyledTextFromMarkdown: async (markdownText, styleRanges) => {
       try {
-        // Create a text node with the content
-        console.log("About to create text node");
+        // Create text node first (this is allowed synchronously)
         const textNode = docApi.createTextNode(markdownText);
 
-        // Apply each style range to the appropriate part of the text
-        if (styleRanges && styleRanges.length > 0) {
+        await preloadFonts([
+          "SourceSans3-Bold",
+          "SourceSans3-It",
+          "SourceSans3-Regular",
+        ]);
+
+        // All fonts are already cached
+        const headingFont = fontCache.get("SourceSans3-Bold");
+        const italicFont = fontCache.get("SourceSans3-It");
+        const boldFont = fontCache.get("SourceSans3-Bold");
+
+        // Now queue all style edits together
+        await editor.queueAsyncEdit(async () => {
           for (const range of styleRanges) {
             if (range.style.type === "heading") {
-              // Apply heading styles (font size and weight)
-              await docApi.applyHeadingStyle(
-                textNode,
-                range.start,
-                range.end,
-                range.style.level
+              // You have the font already, now apply synchronously inside queue
+              textNode.fullContent.applyCharacterStyles(
+                {
+                  font: headingFont,
+                  fontSize: getFontSizeForHeadingLevel(range.style.level),
+                },
+                { start: range.start, length: range.end - range.start }
               );
-              console.log("DONE with heading style");
             } else if (range.style.type === "emphasis") {
-              // Apply italic
-              docApi.applyEmphasisStyle(textNode, range.start, range.end);
+              textNode.fullContent.applyCharacterStyles(
+                { font: italicFont },
+                { start: range.start, length: range.end - range.start }
+              );
             } else if (range.style.type === "strong") {
-              // Apply bold
-              docApi.applyStrongStyle(textNode, range.start, range.end);
-            } else if (range.style.type === "list") {
-              // Apply list style
-              docApi.applyListStyle(
-                textNode,
-                range.start,
-                range.end,
-                range.style.ordered
+              textNode.fullContent.applyCharacterStyles(
+                { font: boldFont },
+                { start: range.start, length: range.end - range.start }
               );
             }
-            // Add more style types as needed
+            // Add any additional styles here...
           }
-        }
+        });
+
         return textNode;
       } catch (error) {
         console.error("Error creating styled text from markdown:", error);
@@ -112,131 +142,34 @@ function start() {
     },
 
     /**
-     * Apply heading styles to a text range
+     * Apply ordered/unordered list styles to a paragraph range.
      * @param {TextNode} textNode - The text node
      * @param {number} start - Start index
      * @param {number} end - End index
-     * @param {number} level - Heading level (1-6)
-     */
-    applyHeadingStyle: async (textNode, start, end, level) => {
-      console.log("Applying heading style", textNode, start, end, level);
-      try {
-        // Get font size based on heading level
-        let fontSize;
-        switch (level) {
-          case 1:
-            fontSize = 32;
-            break;
-          case 2:
-            fontSize = 28;
-            break;
-          case 3:
-            fontSize = 24;
-            break;
-          case 4:
-            fontSize = 20;
-            break;
-          case 5:
-            fontSize = 18;
-            break;
-          case 6:
-            fontSize = 16;
-            break;
-          default:
-            fontSize = 16;
-        }
-        const font = await fonts.fromPostscriptName("SourceSans3-Bold");
-        // Apply character styles for the heading
-        editor.queueAsyncEdit(() => {
-          textNode.fullContent.applyCharacterStyles(
-            {
-              font,
-              fontSize,
-            },
-            { start, length: end - start }
-          );
-          // Apply paragraph styles for spacing if needed
-          // textNode.fullContent.applyParagraphStyles(
-          //   {
-          //     spaceBefore: 12,
-          //     spaceAfter: 8,
-          //   },
-          //   { start, length: end - start }
-          // );
-        });
-      } catch (error) {
-        console.error("Error applying heading style:", error);
-        throw error;
-      }
-    },
-
-    /**
-     * Apply emphasis (italic) style to a text range
-     * @param {TextNode} textNode - The text node
-     * @param {number} start - Start index
-     * @param {number} end - End index
-     */
-    applyEmphasisStyle: (textNode, start, end) => {
-      try {
-        // Apply italic
-        textNode.fullContent.applyCharacterStyles(
-          {
-            fontStyle: "italic",
-          },
-          { start, length: end - start }
-        );
-      } catch (error) {
-        console.error("Error applying emphasis style:", error);
-        throw error;
-      }
-    },
-
-    /**
-     * Apply strong (bold) style to a text range
-     * @param {TextNode} textNode - The text node
-     * @param {number} start - Start index
-     * @param {number} end - End index
-     */
-    applyStrongStyle: (textNode, start, end) => {
-      try {
-        // For bold, we need to use a bold font variant
-        // Since we can't directly set fontWeight, we apply a style that makes it visually bold
-        textNode.fullContent.applyCharacterStyles(
-          {
-            fontSize:
-              textNode.fullContent.characterStyleRanges[0].fontSize * 1.05,
-            // Ideally we would use a bold font here
-          },
-          { start, length: end - start }
-        );
-      } catch (error) {
-        console.error("Error applying strong style:", error);
-        throw error;
-      }
-    },
-
-    /**
-     * Apply list style to a text range
-     * @param {TextNode} textNode - The text node
-     * @param {number} start - Start index
-     * @param {number} end - End index
-     * @param {boolean} ordered - Whether the list is ordered
+     * @param {boolean} ordered - Ordered (true) or Unordered (false)
      */
     applyListStyle: (textNode, start, end, ordered) => {
       try {
-        // Apply list paragraph style
-        const listType = ordered ? "ordered" : "unordered";
+        const listType = ordered
+          ? constants.ParagraphListType.ordered
+          : constants.ParagraphListType.unordered;
 
-        // textNode.fullContent.applyParagraphStyles(
-        //   {
-        //     // This is not currently supported in the base SDK
-        //     // A full implementation would use the constants.ParagraphListType.ordered/unordered
-        //     // And set other list properties
-        //     spaceBefore: 4,
-        //     spaceAfter: 4,
-        //   },
-        //   { start, length: end - start }
-        // );
+        textNode.fullContent.applyParagraphStyles(
+          {
+            list: {
+              type: listType,
+              numbering: ordered
+                ? constants.OrderedListNumbering.numeric // You can customize numbering
+                : undefined,
+              prefix: ordered ? "" : "•", // Customize bullet
+              postfix: ordered ? "." : "",
+              indentLevel: 0, // adjust as needed
+            },
+            spaceBefore: 8, // adjust spacing as desired
+            spaceAfter: 4,
+          },
+          { start, length: end - start }
+        );
       } catch (error) {
         console.error("Error applying list style:", error);
         throw error;

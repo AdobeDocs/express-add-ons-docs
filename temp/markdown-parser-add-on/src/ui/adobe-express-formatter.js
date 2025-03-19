@@ -13,6 +13,11 @@ governing permissions and limitations under the License.
 import { toString } from "mdast-util-to-string";
 import { getFormattedText } from "./markdown-parser.js";
 
+function cleanText(text) {
+  // Replace multiple consecutive spaces, tabs, and newlines with a single space
+  return text.replace(/\s+/g, " ").trim();
+}
+
 /**
  * Extracts the full plain text from a markdown AST
  * @param {object} ast - A markdown AST
@@ -33,68 +38,84 @@ function processNodeForStyling(ast, styleRanges) {
   const traverse = (node) => {
     if (!node) return;
 
-    if (node.type === "text") {
-      offset += node.value.length;
-      return;
-    }
-
     const startOffset = offset;
 
-    if (node.children) {
-      node.children.forEach(traverse);
-    }
-
-    const endOffset = offset;
-
     switch (node.type) {
+      case "root":
+        node.children.forEach((child, index) => {
+          traverse(child);
+          if (
+            index < node.children.length - 1 &&
+            ["paragraph", "heading", "list"].includes(child.type)
+          ) {
+            offset += 2; // \n\n between blocks
+          }
+        });
+        break;
+
+      case "paragraph":
       case "heading":
-        styleRanges.push({
-          start: startOffset,
-          end: endOffset,
-          style: { type: "heading", level: node.depth },
-        });
+        node.children.forEach(traverse);
+        if (node.type === "heading") {
+          styleRanges.push({
+            start: startOffset,
+            end: offset,
+            style: { type: "heading", level: node.depth },
+          });
+        }
         break;
-      case "strong":
-        styleRanges.push({
-          start: startOffset,
-          end: endOffset,
-          style: { type: "strong", bold: true },
-        });
+
+      case "text":
+        offset += node.value.length;
         break;
+
       case "emphasis":
+        const emphasisStart = offset;
+        node.children.forEach(traverse);
+        const emphasisEnd = offset;
         styleRanges.push({
-          start: startOffset,
-          end: endOffset,
+          start: emphasisStart,
+          end: emphasisEnd,
           style: { type: "emphasis", italic: true },
         });
         break;
-      case "link":
+
+      case "strong":
+        const strongStart = offset;
+        node.children.forEach(traverse);
+        const strongEnd = offset;
         styleRanges.push({
-          start: startOffset,
-          end: endOffset,
-          style: { type: "link", url: node.url },
+          start: strongStart,
+          end: strongEnd,
+          style: { type: "strong", bold: true },
         });
         break;
-      case "inlineCode":
+
+      case "list":
+        node.children.forEach((item, index) => {
+          const marker = node.ordered ? `${index + 1}. ` : "• ";
+          offset += marker.length;
+          item.children.forEach(traverse);
+          if (index < node.children.length - 1) offset += 1; // single newline
+        });
         styleRanges.push({
           start: startOffset,
-          end: endOffset,
+          end: offset,
+          style: { type: "list", ordered: node.ordered },
+        });
+        break;
+
+      case "inlineCode":
+        offset += node.value.length;
+        styleRanges.push({
+          start: startOffset,
+          end: offset,
           style: { type: "code", isInline: true },
         });
         break;
-      case "code":
-        styleRanges.push({
-          start: startOffset,
-          end: endOffset,
-          style: { type: "code", isInline: false, language: node.lang },
-        });
-        break;
-      case "list":
-        styleRanges.push({
-          start: startOffset,
-          end: endOffset,
-          style: { type: "list", ordered: node.ordered },
-        });
+
+      default:
+        if (node.children) node.children.forEach(traverse);
         break;
     }
   };
