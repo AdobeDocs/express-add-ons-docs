@@ -164,7 +164,8 @@ export async function processMarkdown(markdownContent) {
   return {
     ast,
     headings,
-    plainText: extractTextFromAst(ast),
+    plainText: formattedText,
+    // plainText: extractTextFromAst(ast),
     formattedText,
   };
 }

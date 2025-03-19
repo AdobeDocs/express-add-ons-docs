@@ -65,12 +65,12 @@ sp-swatch {
 
 sp-button {
   flex: 1;
-  max-width: calc(
+  /* max-width: calc(
     (100% - var(--spectrum-global-dimension-static-size-250)) / 2
-  );
+  ); */
 }
 
-sp-number-field,
+/* sp-number-field,
 sp-slider {
   width: 100%;
 }
@@ -80,7 +80,7 @@ sp-button-group {
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 /* Method 2: Set a max-width */
 sp-dropzone {

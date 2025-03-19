@@ -37,7 +37,7 @@ import {
 } from "./adobe-express-formatter.js";
 
 // For debugging
-const DEBUG = true;
+const DEBUG = false;
 
 // Save debug information to a file in development
 async function saveDebugData(name, data) {
@@ -56,6 +56,11 @@ addOnUISdk.ready.then(async () => {
   // Get the Authoring Sandbox.
   const { runtime } = addOnUISdk.instance;
   const sandboxProxy = await runtime.apiProxy("documentSandbox");
+
+  const testButton = document.getElementById("test");
+  testButton.addEventListener("click", () => {
+    sandboxProxy.createTextNode("Hello\nWorld!");
+  });
 
   customElements.whenDefined("sp-dropzone").then(() => {
     const dropzone = document.getElementById("dropzone");

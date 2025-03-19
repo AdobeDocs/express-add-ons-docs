@@ -10,7 +10,7 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor } from "express-document-sdk";
+import { editor, fonts } from "express-document-sdk";
 
 // Get the Authoring Sandbox.
 const { runtime } = addOnSandboxSdk.instance;
@@ -19,40 +19,13 @@ let gridRef = null;
 
 function start() {
   // APIs to be exposed to the UI runtime
-  runtime.exposeApi({
-    /**
-     * Add a grid to the document.
-     *
-     * @param {Object} options - The options for the grid.
-     * @param {number} options.columns - The number of columns in the grid.
-     * @param {number} options.rows - The number of rows in the grid.
-     * @param {number} options.gutter - The size of the gutter between columns and rows.
-     * @param {string} options.columnColor - The color of the columns.
-     * @param {string} options.rowColor - The color of the rows.
-     * @returns {Group} The group containing the grid.
-     */
-    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      // This function is not used for the markdown parser add-on
-      // It's left as a placeholder for reference
-      console.log("Grid creation is not implemented in this add-on");
-    },
-
-    /**
-     * Delete the grid from the document.
-     * @returns {void}
-     */
-    deleteGrid() {
-      // This function is not used for the markdown parser add-on
-      // It's left as a placeholder for reference
-      console.log("Grid deletion is not implemented in this add-on");
-    },
-
+  const docApi = {
     /**
      * Create a text node with the given text
      * @param {string} text - The text content
      * @returns {TextNode} The created text node
      */
-    createTextNode(text) {
+    createTextNode: (text) => {
       try {
         let currentNode = editor.context.insertionParent;
         let page = null;
@@ -77,10 +50,11 @@ function start() {
           { x: artboard.width / 2, y: artboard.height / 3 },
           { x: 0.5, y: 0 }
         );
-
+        textNode.fullContent.applyCharacterStyles({
+          fontSize: 24,
+        });
         // Add to document
         artboard.children.append(textNode);
-
         return textNode;
       } catch (error) {
         console.error("Error creating text node:", error);
@@ -94,31 +68,33 @@ function start() {
      * @param {Array} styleRanges - Style ranges to apply
      * @returns {TextNode} The created and styled text node
      */
-    createStyledTextFromMarkdown(markdownText, styleRanges) {
+    createStyledTextFromMarkdown: async (markdownText, styleRanges) => {
       try {
         // Create a text node with the content
-        const textNode = this.createTextNode(markdownText);
+        console.log("About to create text node");
+        const textNode = docApi.createTextNode(markdownText);
 
         // Apply each style range to the appropriate part of the text
         if (styleRanges && styleRanges.length > 0) {
           for (const range of styleRanges) {
             if (range.style.type === "heading") {
               // Apply heading styles (font size and weight)
-              this.applyHeadingStyle(
+              await docApi.applyHeadingStyle(
                 textNode,
                 range.start,
                 range.end,
                 range.style.level
               );
+              console.log("DONE with heading style");
             } else if (range.style.type === "emphasis") {
               // Apply italic
-              this.applyEmphasisStyle(textNode, range.start, range.end);
+              docApi.applyEmphasisStyle(textNode, range.start, range.end);
             } else if (range.style.type === "strong") {
               // Apply bold
-              this.applyStrongStyle(textNode, range.start, range.end);
+              docApi.applyStrongStyle(textNode, range.start, range.end);
             } else if (range.style.type === "list") {
               // Apply list style
-              this.applyListStyle(
+              docApi.applyListStyle(
                 textNode,
                 range.start,
                 range.end,
@@ -128,7 +104,6 @@ function start() {
             // Add more style types as needed
           }
         }
-
         return textNode;
       } catch (error) {
         console.error("Error creating styled text from markdown:", error);
@@ -143,7 +118,8 @@ function start() {
      * @param {number} end - End index
      * @param {number} level - Heading level (1-6)
      */
-    applyHeadingStyle(textNode, start, end, level) {
+    applyHeadingStyle: async (textNode, start, end, level) => {
+      console.log("Applying heading style", textNode, start, end, level);
       try {
         // Get font size based on heading level
         let fontSize;
@@ -169,24 +145,25 @@ function start() {
           default:
             fontSize = 16;
         }
-
+        const font = await fonts.fromPostscriptName("SourceSans3-Bold");
         // Apply character styles for the heading
-        textNode.fullContent.applyCharacterStyles(
-          {
-            fontSize: fontSize,
-            // We can't set fontWeight directly, would need to use a font with the right weight
-          },
-          { start, length: end - start }
-        );
-
-        // Apply paragraph styles for spacing if needed
-        textNode.fullContent.applyParagraphStyles(
-          {
-            spaceBefore: 12,
-            spaceAfter: 8,
-          },
-          { start, length: end - start }
-        );
+        editor.queueAsyncEdit(() => {
+          textNode.fullContent.applyCharacterStyles(
+            {
+              font,
+              fontSize,
+            },
+            { start, length: end - start }
+          );
+          // Apply paragraph styles for spacing if needed
+          // textNode.fullContent.applyParagraphStyles(
+          //   {
+          //     spaceBefore: 12,
+          //     spaceAfter: 8,
+          //   },
+          //   { start, length: end - start }
+          // );
+        });
       } catch (error) {
         console.error("Error applying heading style:", error);
         throw error;
@@ -199,7 +176,7 @@ function start() {
      * @param {number} start - Start index
      * @param {number} end - End index
      */
-    applyEmphasisStyle(textNode, start, end) {
+    applyEmphasisStyle: (textNode, start, end) => {
       try {
         // Apply italic
         textNode.fullContent.applyCharacterStyles(
@@ -220,7 +197,7 @@ function start() {
      * @param {number} start - Start index
      * @param {number} end - End index
      */
-    applyStrongStyle(textNode, start, end) {
+    applyStrongStyle: (textNode, start, end) => {
       try {
         // For bold, we need to use a bold font variant
         // Since we can't directly set fontWeight, we apply a style that makes it visually bold
@@ -245,27 +222,29 @@ function start() {
      * @param {number} end - End index
      * @param {boolean} ordered - Whether the list is ordered
      */
-    applyListStyle(textNode, start, end, ordered) {
+    applyListStyle: (textNode, start, end, ordered) => {
       try {
         // Apply list paragraph style
         const listType = ordered ? "ordered" : "unordered";
 
-        textNode.fullContent.applyParagraphStyles(
-          {
-            // This is not currently supported in the base SDK
-            // A full implementation would use the constants.ParagraphListType.ordered/unordered
-            // And set other list properties
-            spaceBefore: 4,
-            spaceAfter: 4,
-          },
-          { start, length: end - start }
-        );
+        // textNode.fullContent.applyParagraphStyles(
+        //   {
+        //     // This is not currently supported in the base SDK
+        //     // A full implementation would use the constants.ParagraphListType.ordered/unordered
+        //     // And set other list properties
+        //     spaceBefore: 4,
+        //     spaceAfter: 4,
+        //   },
+        //   { start, length: end - start }
+        // );
       } catch (error) {
         console.error("Error applying list style:", error);
         throw error;
       }
     },
-  });
+  };
+
+  runtime.exposeApi(docApi);
 }
 
 start();
