@@ -62,7 +62,6 @@ function start() {
         // Set the text content
         textNode.fullContent.text = text;
         textNode.textAlignment = constants.TextAlignment.left;
-
         const artboard = page.artboards.first;
         textNode.layout = {
           type: constants.TextType.autoHeight,
@@ -100,17 +99,38 @@ function start() {
           "SourceSans3-Bold",
           "SourceSans3-It",
           "SourceSans3-Regular",
+          "AnonymousPro",
         ]);
 
         // All fonts are already cached
         const headingFont = fontCache.get("SourceSans3-Bold");
         const italicFont = fontCache.get("SourceSans3-It");
         const boldFont = fontCache.get("SourceSans3-Bold");
+        const monospaceFont = fontCache.get("AnonymousPro");
 
         // Now queue all style edits together
         await editor.queueAsyncEdit(async () => {
           for (const range of styleRanges) {
-            if (range.style.type === "heading") {
+            console.log(
+              "Applying style:",
+              range.style.type,
+              "from",
+              range.start,
+              "to",
+              range.end
+            );
+            if (range.style.type === "list") {
+              docApi.applyListStyle(
+                textNode,
+                range.start,
+                range.end,
+                range.style.ordered
+              );
+            } else if (range.style.type === "heading") {
+              console.log(
+                "Applying heading style for level:",
+                range.style.level
+              );
               // You have the font already, now apply synchronously inside queue
               textNode.fullContent.applyCharacterStyles(
                 {
@@ -119,22 +139,35 @@ function start() {
                 },
                 { start: range.start, length: range.end - range.start }
               );
+              console.log("Applied heading style:", range.style.level);
             } else if (range.style.type === "emphasis") {
+              console.log("Applying emphasis style");
               textNode.fullContent.applyCharacterStyles(
                 { font: italicFont },
                 { start: range.start, length: range.end - range.start }
               );
+              console.log("Applied emphasis style");
             } else if (range.style.type === "strong") {
+              console.log("Applying strong style");
               textNode.fullContent.applyCharacterStyles(
                 { font: boldFont },
                 { start: range.start, length: range.end - range.start }
               );
+              console.log("Applied strong style");
+            } else if (range.style.type === "code") {
+              console.log("Applying code style");
+              textNode.fullContent.applyCharacterStyles(
+                { font: monospaceFont },
+                { start: range.start, length: range.end - range.start }
+              );
+              console.log("Applied code style");
             }
             // Add any additional styles here...
           }
+          console.log("All styles applied");
         });
 
-        return textNode;
+        // return textNode;
       } catch (error) {
         console.error("Error creating styled text from markdown:", error);
         throw error;
@@ -154,6 +187,20 @@ function start() {
           ? constants.ParagraphListType.ordered
           : constants.ParagraphListType.unordered;
 
+        let listStyle = {
+          list: {
+            type: listType,
+            numbering: ordered
+              ? constants.OrderedListNumbering.numeric // You can customize numbering
+              : undefined,
+            prefix: ordered ? "" : "•", // Customize bullet
+            postfix: ordered ? "." : "",
+            indentLevel: 0, // adjust as needed
+          },
+          spaceBefore: 8, // adjust spacing as desired
+          spaceAfter: 4,
+          lineSpacing: 1.5,
+        };
         textNode.fullContent.applyParagraphStyles(
           {
             list: {
@@ -167,8 +214,12 @@ function start() {
             },
             spaceBefore: 8, // adjust spacing as desired
             spaceAfter: 4,
+            lineSpacing: 1.5,
           },
-          { start, length: end - start }
+          {
+            start,
+            length: end - start,
+          }
         );
       } catch (error) {
         console.error("Error applying list style:", error);

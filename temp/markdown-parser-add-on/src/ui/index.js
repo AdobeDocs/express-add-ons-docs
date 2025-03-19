@@ -178,7 +178,7 @@ addOnUISdk.ready.then(async () => {
         message.heading = "Adding text to document...";
 
         // Group ranges by type to apply styling more efficiently
-        const textNode = await sandboxProxy.createStyledTextFromMarkdown(
+        await sandboxProxy.createStyledTextFromMarkdown(
           expressStyling.plainText,
           expressStyling.styleRanges
         );

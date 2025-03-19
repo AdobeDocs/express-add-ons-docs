@@ -91,16 +91,20 @@ function processNodeForStyling(ast, styleRanges) {
         });
         break;
 
+      // example AST traversal logic for lists:
       case "list":
+        const listStart = offset;
         node.children.forEach((item, index) => {
-          const marker = node.ordered ? `${index + 1}. ` : "• ";
-          offset += marker.length;
+          //   const marker = node.ordered ? `${index + 1}. ` : "• ";
+          //   offset += marker.length;
           item.children.forEach(traverse);
-          if (index < node.children.length - 1) offset += 1; // single newline
+          if (index < node.children.length - 1) offset += 1; // newline between items
         });
+        const listEnd = offset;
+
         styleRanges.push({
-          start: startOffset,
-          end: offset,
+          start: listStart,
+          end: listEnd,
           style: { type: "list", ordered: node.ordered },
         });
         break;

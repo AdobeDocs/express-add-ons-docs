@@ -33,7 +33,7 @@ export async function parseMarkdown(markdownContent) {
 
     return result;
   } catch (error) {
-    console.error("Error parsing markdown:", error);
+    console.error("Error parsing markdown in markdown-parser.js:", error);
     throw error;
   }
 }
@@ -88,9 +88,10 @@ export function getFormattedText(ast) {
       case "list":
         let listText = "";
         node.children.forEach((item, index) => {
-          const marker = node.ordered ? `${index + 1}. ` : "• ";
+          // const marker = node.ordered ? `${index + 1}. ` : "• ";
           const itemText = cleanText(toString(item));
-          listText += marker + itemText;
+          // listText += marker + itemText;
+          listText += itemText;
           if (index < node.children.length - 1) {
             listText += "\n";
           }
