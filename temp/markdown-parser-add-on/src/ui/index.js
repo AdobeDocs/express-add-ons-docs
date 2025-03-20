@@ -57,10 +57,10 @@ addOnUISdk.ready.then(async () => {
   const { runtime } = addOnUISdk.instance;
   const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-  const testButton = document.getElementById("test");
-  testButton.addEventListener("click", () => {
-    sandboxProxy.createTextNode("Hello\nWorld!");
-  });
+  // const testButton = document.getElementById("test");
+  // testButton.addEventListener("click", () => {
+  //   sandboxProxy.createTextNode("Hello\nWorld!");
+  // });
 
   customElements.whenDefined("sp-dropzone").then(() => {
     const dropzone = document.getElementById("dropzone");
