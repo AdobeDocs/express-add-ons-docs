@@ -100,8 +100,8 @@ Stabilized [`importPdf()`](../references/addonsdk/app-document.md#importpdf) and
 
 ### Added
 
-- A new [`Viewport`](./document-sandbox/document-apis/classes/Viewport.md) class has been added to the Document APIs. [`Viewport`](./document-sandbox/document-apis/classes/Viewport.md) represents the canvas area currently visible on-screen.
-- A new API [`bringIntoView`](./document-sandbox/document-apis/classes/Viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
+- A new [`Viewport`](./document-sandbox/document-apis/classes/viewport.md) class has been added to the Document APIs. [`Viewport`](./document-sandbox/document-apis/classes/viewport.md) represents the canvas area currently visible on-screen.
+- A new API [`bringIntoView`](./document-sandbox/document-apis/classes/viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
 
 ## 2025-01-13
 

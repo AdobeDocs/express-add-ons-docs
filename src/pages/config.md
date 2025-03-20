@@ -64,7 +64,7 @@
                 - [TextNode](references/document-sandbox/document-apis/classes/text-node.md) 
                 - [UnavailableFont](references/document-sandbox/document-apis/classes/unavailable-font.md) 
                 - [UnknownNode](references/document-sandbox/document-apis/classes/unknown-node.md) 
-                - [Viewport](references/document-sandbox/document-apis/classes/Viewport.md) 
+                - [Viewport](references/document-sandbox/document-apis/classes/viewport.md) 
                 - [VisualNode](references/document-sandbox/document-apis/classes/visual-node.md) 
             - [Interfaces](references/document-sandbox/document-apis/interfaces/area-text-layout.md) 
                 - [AreaTextLayout](references/document-sandbox/document-apis/interfaces/area-text-layout.md) 

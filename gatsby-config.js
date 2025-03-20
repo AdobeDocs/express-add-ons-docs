@@ -268,7 +268,7 @@ module.exports = {
                   },
                   {
                     title: "Viewport",
-                    path: "references/document-sandbox/document-apis/classes/Viewport.md",
+                    path: "references/document-sandbox/document-apis/classes/viewport.md",
                   },
                   {
                     title: "VisualNode",
