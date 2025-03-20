@@ -169,7 +169,7 @@
         - [Our review process](guides/distribute/review-process/) 
         - [Creating a private link](guides/distribute/private-dist.md) 
         - [Creating a public listing](guides/distribute/public-dist.md) 
-        - [Guidelines and requirements](guides/distribute/guidelines) 
+        - [Guidelines and requirements](guides/distribute/guidelines/index.md) 
             - [General guidelines](guides/distribute/guidelines/general/) 
                 - [Your listing metadata](guides/distribute/guidelines/general/listing.md) 
                 - [Content](guides/distribute/guidelines/general/content.md) 

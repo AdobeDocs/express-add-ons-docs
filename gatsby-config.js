@@ -726,7 +726,7 @@ module.exports = {
           },
           {
             title: "Guidelines and requirements",
-            path: "guides/distribute/guidelines",
+            path: "guides/distribute/guidelines/index.md",
             pages: [
               {
                 title: "General guidelines",
