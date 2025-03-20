@@ -14,8 +14,10 @@
   "dependencies": {
     "@adobe/gatsby-theme-aio": "^4.14.14",
     "gatsby": "4.22.0",
+    "glob": "^11.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "webpack-cli": "^6.0.1"
   },
   "resolutions": {
     "sharp": "0.33.0",
@@ -32,7 +34,9 @@
     "test:links": "remark src/pages --quiet --frail",
     "test:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src",
     "fix:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src --fix",
-    "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1"
+    "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1",
+    "buildNavigation": "webpack --config webpack.config.js && node buildNavigation.js",
+    "buildRedirections": "node buildRedirections.js"
   },
   "remarkConfig": {
     "plugins": [
@@ -44,6 +48,6 @@
     "markdownlint": "^0.35.0",
     "markdownlint-cli": "^0.41.0",
     "remark-cli": "^11.0.0",
-    "remark-validate-links": "^12.1.0"
+    "remark-validate-links": "^13.1.0"
   }
 }
