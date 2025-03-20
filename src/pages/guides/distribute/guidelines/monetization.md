@@ -160,6 +160,10 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
+| Badge  | Size(px) | Download link |
+|--------|----------|-------------:|
+| ![](../img/addon-pro-badge20.svg) | 20x20 | [Download](https://drive.usercontent.google.com/u/0/uc?id=1gUuice1_EiYijMSKsCEjt1BlLesiI2z1&export=download) |
+
 <InlineAlert slots="text" variant="info"/>
 
 The most common size of badges used within Express panels is typically 20x20px, so we've included an easy download of that size specifically above. However, since it's an `.svg` icon, you could simply scale it to another size as needed.
