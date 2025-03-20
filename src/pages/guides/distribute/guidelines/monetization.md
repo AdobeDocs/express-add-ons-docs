@@ -153,8 +153,8 @@ While our monetization best practices are recommendations for your add-on, imple
 Use the plus gradient icon below to indicate when content or features require purchase:
 
 | Badge  | Size(px) | Download link |
-|--------|----------|-------------:|
-| ![img](../img/addon-plus-badge20.svg) | 20x20 | Download |
+|--------|----------|--------------|
+| ![img](../img/addon-plus-badge20.svg) | 20x20 | [Download](../img/addon-plus-badge20.svg) |
 
 #### Paid badge
 
@@ -171,6 +171,10 @@ The most common size of badges used within Express panels is typically 20x20px, 
 - We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. *This content is available when you upgrade the add-on*.
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
 - If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.
+
+ | Sample badge usage  |      |       |
+ |----------|------|-------------:|
+ | ![](../img/list-placement-example.png) | ![](../img/avatar-placement-example.png)  | ![](../img/grid-placement-example.png) |
 
 <InlineAlert slots="text" variant="success"/>
 
