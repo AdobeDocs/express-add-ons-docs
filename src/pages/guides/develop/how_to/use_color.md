@@ -131,7 +131,9 @@ Please note that Adobe Express uses the terms **make** and **create** to disting
 
 ## Use the Color Picker
 
-It's possible to call the native, Adobe Express color picker in your add-on using the [`addOnUISdk.app.showColorPicker()`](../../../references/addonsdk/addonsdk-app.md#showcolorpicker) method—which offers a few benefits:
+Adobe Express includes a native Color Picker, with special features such as Recommended Swatches, Eyedropper, Themes, Library and Brand colors. The Color Picker is available also to add-ons, you can invoke it using the [`addOnUISdk.app.showColorPicker()`](../../../references/addonsdk/addonsdk-app.md#showcolorpicker) method.
+
+#### Benefits
 
 - It simplifies the process of selecting a color, bypassing the Browser's color picker.
 - It's in sync with any swatches or Brand colors defined in Adobe Express.
