@@ -154,7 +154,7 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 | Badge  | Size(px) | Download link |
 |--------|----------|--------------|
-| ![img](../img/addon-plus-badge20.svg) | 20x20 | [Download](../img/addon-plus-badge20.svg) |
+| ![img](../img/addon-plus-badge20.svg) | 20x20 | [Download](https://drive.google.com/file/d/1m0TV9856MlkhWJoDYUk56Y0Ct6PUpzPN/view?usp=sharing) |
 
 #### Paid badge
 
