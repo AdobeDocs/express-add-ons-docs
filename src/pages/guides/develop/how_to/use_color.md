@@ -163,7 +163,7 @@ addOnUISdk.ready.then(async () => {
       // The title of the color picker
       title: "Awesome Color Picker",
       // The placement of the color picker
-      placement: ColorPickerPlacement.Left,
+      placement: ColorPickerPlacement.left,
       // Whether the eyedropper hides the color picker
       eyedropperHidesPicker: true,
       // The initial color of the color picker
@@ -243,7 +243,7 @@ addOnUISdk.ready.then(async () => {
   colorDisplay.addEventListener("click", () => {
     addOnUISdk.app.showColorPicker(colorDisplay, {
       title: "Color Picker 1",
-      placement: ColorPickerPlacement.Left,
+      placement: ColorPickerPlacement.left,
       eyedropperHidesPicker: true,
     });
   });
