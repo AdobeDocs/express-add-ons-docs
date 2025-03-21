@@ -27,7 +27,7 @@ Adobe Express is the AI-first, all-in-one creativity app that makes it fast, eas
 
 <InlineAlert slots="text" />
 
-**Join Us: Office Hours for Adobe Express Developers** <br /><br />
+**Join Us: Office Hours for Adobe Express Developers**
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
 
 Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>
