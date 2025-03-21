@@ -27,8 +27,8 @@ contributors:
 ### Added
 
 - A native Color Picker is available to add-ons via the [`showColorPicker()`](../references/addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](../references/addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
-- We've updated the [How-to](../guides/develop/how_to.md) section to include a new [Use Color](../guides/develop/how_to/use_color.md) guide, which provides a few examples on how to use the Color Picker.
-- A new [Built-in UI Components](../references/ui-components/index.md) page has been added to the documentation, which provides a reference for the built-in UI components available to add-ons.
+- We've updated the [Use Color](../guides/develop/how_to/use_color.md) How-to guide, now including a few examples on the Color Picker.
+- A [new section](../references/ui-components/color-picker.md) has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.
 
 ## 2025-03-07
 
