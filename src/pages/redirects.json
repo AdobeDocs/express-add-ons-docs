@@ -492,8 +492,8 @@
             "Destination": "/express/add-ons/docs/guides/getting-started/quickstart"
         },
         {
-            "Source": "/express/add-ons/docs/guides/getting_started/index.md",
-            "Destination": "/express/add-ons/docs/guides/getting-started/index.md/"
+            "Source": "/express/add-ons/docs/guides/getting_started",
+            "Destination": "/express/add-ons/docs/guides/getting-started/"
         },
         {
             "Source": "/express/add-ons/docs/guides/getting_started/dev_tooling/",
