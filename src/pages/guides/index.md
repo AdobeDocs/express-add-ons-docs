@@ -17,7 +17,7 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-<Hero slots="heading, text" background="rgb(138, 43, 226)"/>
+<HeroSimple slots="heading, text" background="rgb(138, 43, 226)"/>
 
 # Overview
 
