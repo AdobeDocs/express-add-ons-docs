@@ -56,10 +56,10 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td style="vertical-align: bottom;">
         <p>Placement of the color picker popover with respect to the anchor element.</p>
         <ul>
-          <li><strong>Top</strong></li><pre>"top"</pre>
-        <li><strong>Bottom</strong></li><pre>"bottom"</pre>
-        <li><strong>Left</strong></li><pre>"left"</pre>
-        <li><strong>Right</strong></li><pre>"right"</pre>
+          <li><strong>top</strong></li><pre>"top"</pre>
+        <li><strong>bottom</strong></li><pre>"bottom"</pre>
+        <li><strong>left</strong></li><pre>"left"</pre>
+        <li><strong>right</strong></li><pre>"right"</pre>
         </ul>
     </td>
 </tr>
