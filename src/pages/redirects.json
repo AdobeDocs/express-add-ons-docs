@@ -4,8 +4,8 @@
     "limit": 195,
     "data": [
         {
-            "Source": "/express/add-ons/docs/src/pages/samples/",
-            "Destination": "/express/add-ons/docs/src/pages/samples"
+            "Source": "/express/add-ons/docs/samples/",
+            "Destination": "/express/add-ons/docs/samples"
         },
         {
             "Source": "/express/add-ons/docs/src/pages/references/index.md",
