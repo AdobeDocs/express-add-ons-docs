@@ -492,7 +492,7 @@
             "Destination": "/express/add-ons/docs/guides/getting-started/quickstart"
         },
         {
-            "Source": "/express/add-ons/docs/guides/getting_started",
+            "Source": "/express/add-ons/docs/guides/getting_started/",
             "Destination": "/express/add-ons/docs/guides/getting-started/"
         },
         {
