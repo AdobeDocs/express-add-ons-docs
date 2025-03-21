@@ -41,7 +41,7 @@
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/solid-color-stroke-with-optional-type"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/OrderedListStyle/",
@@ -49,15 +49,15 @@
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/Font/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/Font"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/font"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EventHandlerId/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EventHandlerId"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/event-handler-id"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EditorEventHandler/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EditorEventHandler"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/editor-event-handler"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview/",
@@ -73,7 +73,7 @@
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/unsupported-text-layout"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput/",
@@ -81,31 +81,31 @@
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/StyleRange/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/StyleRange"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/style-range"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Stroke/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Stroke"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/stroke"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/SolidColorStroke/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/SolidColorStroke"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/solid-color-stroke"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/RectangleGeometry/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/RectangleGeometry"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/rectangle-geometry"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Rect/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Rect"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/rect"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/PointTextLayout/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/PointTextLayout"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/point-text-layout"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Point/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Point"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/point"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput/",
