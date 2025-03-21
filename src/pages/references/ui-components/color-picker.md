@@ -18,11 +18,9 @@ contributors:
 
 # Built-in UI Components: Color Picker
 
-Adobe Express includes a set of built-in UI Components that are provide a consistent experience across different parts of the application.
+Adobe Express includes a set of built-in UI Components that provide a consistent experience across different parts of the application.
 
-## Color Picker
-
-### Features
+## Features
 
 The Adobe Express native Color Picker offers several unique features, compared to the Browser's default alternative, for example:
 
@@ -38,27 +36,191 @@ Using the Adobe ExpressColor Picker in your add-on instead of building your own 
 
 - It simplifies the process of selecting a color, bypassing the Browser's color picker.
 - It provides a consistent experience to users, as the color picker is integrated with Adobe Express.
-- It's in sync with any swatches or Brand colors defined in Adobe Express.
+- It's in sync with any swatches or Brand colors defined in the application.
 - It will evolve with Adobe Express, adding new features over time.
 
-### API
+## API
 
 The [`addOnUISdk.app`](../addonsdk/addonsdk-app.md) has two dedicated method:
 
 - [`showColorPicker()`](../addonsdk/addonsdk-app.md#showcolorpicker)
 - [`hideColorPicker()`](../addonsdk/addonsdk-app.md#hidecolorpicker)
 
-#### `showColorPicker()`
+<InlineAlert variant="info" slots="text" />
 
-`showColorPicker(anchorElement: HTMLElement, options?: ColorPickerOptions): Promise<void>;`
+Please refer to the [API reference](../addonsdk/addonsdk-app.md) for a complete list of the available options.
+
+### `showColorPicker()`
+
+```js
+showColorPicker(
+  anchorElement: HTMLElement,
+  options?: ColorPickerOptions): Promise<void>;
+```
 
 The method accepts a reference to an HTML element as its first argument, which will become the color picker's anchor element. This is important for two reasons:
 
-1. The picker will be positioned relative to this element, based on the placement options available in the `ColorPickerPlacement` enum;
-2. The anchor will receive two custom events, that you can use to get the color:
-   - `"colorpicker-color-change"` when the color changes
-   - `"colorpicker-close"` when the picker is closed
+1. The picker will be positioned relative to this element, based on the placement options available in the [`ColorPickerPlacement`](../addonsdk/addonsdk-constants.md#constants) enumerable;
+2. The anchor will receive two custom events:
+   - `"colorpicker-color-change"` when the color changes—use it to get the color.
+   - `"colorpicker-close"` when the picker is closed—use it to clean up any state.
 
-#### `hideColorPicker()`
+<InlineAlert variant="warning" slots="text" />
 
-The `hideColorPicker()` method will close the color picker.
+When colors are changed during a drag action (e.g., on the color area or slider), only the final color at the end of the drag will be sent, to avoid performance issues.
+
+The second argument is an object of type [`ColorPickerOptions`](../addonsdk/addonsdk-app.md#colorpickeroptions) that allows you to customize the picker with the following options:
+
+- `title?`: the title of the picker (string, default: `""`).
+- `initialColor?`: the color to be selected when the picker is opened (HEX number, default: `0xFFFFFF`).
+- `placement?`: the placement of the picker relative to the anchor element (enum, default: `ColorPickerPlacement.left`).
+- `eyedropperHidesPicker?`: if `true`, the eyedropper will hide the picker when activated (boolean, default: `false`).
+- `disableAlphaChannel?`: if `true`, the alpha channel will be disabled (boolean, default: `false`).
+
+### `hideColorPicker()`
+
+```js
+hideColorPicker(): Promise<void>;
+```
+
+This method will programmatically close the color picker.
+
+## Examples
+
+<InlineAlert variant="info" slots="text" />
+
+Please also refer to the the Color Picker section of the [Use Color](../../guides/develop/how_to/use_color.md#use-the-color-picker) how-to guide for more examples.
+
+### Basic usage
+
+```js
+import addOnUISdk, {
+  ColorPickerPlacement,
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Basic usage - just show color picker
+addOnUISdk.app.showColorPicker(element);
+
+// Example 1: With title, initial color and eyedropper
+addOnUISdk.app.showColorPicker(element, {
+  title: "Color Picker 1",
+  initialColor: 0x00ff00,
+  eyedropperHidesPicker: true,
+});
+
+// Example 2: With alpha channel disabled
+addOnUISdk.app.showColorPicker(element, {
+  title: "Color Picker 2",
+  initialColor: 0xff0000,
+  disableAlphaChannel: true,
+});
+
+// Example 3: With initial color only
+addOnUISdk.app.showColorPicker(element, {
+  title: "Color Picker 3",
+  initialColor: 0x0000ff,
+});
+
+// Example 4: Basic with title
+addOnUISdk.app.showColorPicker(element, {
+  title: "Color Picker 4",
+});
+
+// Example 5: With title and placement
+addOnUISdk.app.showColorPicker(element, {
+  title: "Color Picker 5",
+  placement: ColorPickerPlacement.bottom,
+});
+```
+
+### Listening to events
+
+```js
+import addOnUISdk, {
+  ColorPickerEvents,
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  const colorPickerButton = document.getElementById("colorPicker");
+
+  // Add event listeners for color picker events
+  colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+    console.log("Color picker color change event from add-on:", event.detail);
+  });
+
+  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
+    console.log("Color picker closed from add-on:", event.detail);
+  });
+
+  colorPickerButton.addEventListener("click", () => {
+    addOnUISdk.app.showColorPicker(colorPickerButton, {
+      title: "JS Color Picker",
+      initialColor: 0x00ff00,
+      placement: "bottom",
+    });
+  });
+});
+```
+
+### Using ReactJS
+
+```jsx
+// Example of Color Picker with auto-hide after 10 seconds
+<Button
+  size="s"
+  ref={buttonRef2}
+  id="color-picker1"
+  style={{ width: "200px" }}
+  onClick={() => {
+    addOnUISdk.app.showColorPicker(buttonRef2.current, {
+      title: "Color Picker 2",
+      initialColor: 0xff0000,
+      disableAlphaChannel: true,
+    });
+    setTimeout(() => {
+      console.log("Hiding Color Picker 1 after 10 seconds");
+      addOnUISdk.app.hideColorPicker();
+    }, 10000);
+  }}
+>
+  Color Picker
+</Button>
+```
+
+## Positioning
+
+The color picker can be positioned relative to the anchor element using the `placement` option in the `ColorPickerOptions` object. The position will be flipped (right to left or bottom to top) when there is not enough space to show the picker in the specified placement.
+
+![Color Picker Placement](./images/colorpicker_position.png)
+
+## Error Conditions
+
+**Invalid anchor element: must be an instance of `HTMLElement`.**
+
+- **Origin:** Parameter `anchorElement`
+- **Fix:** the anchorElement should be a valid `HTMLElement`
+
+**Invalid title: must be a string.**
+
+- **Origin:** Property `title` in the `ColorPickerOptions`
+- **Fix:** the `title` should be a valid string
+
+**Invalid initial color: must be a HEX number in `0xRRGGBB` format.**
+
+- **Origin:** Property `initialColor` in the `ColorPickerOptions`
+- **Fix:** the `initialColor` should be a valid number in 0xRRGGBB format.
+
+**Invalid placement value: must be one of the valid `ColorPickerPlacement` values.**
+
+- **Origin:** Property `placement` in the `ColorPickerOptions`
+- **Fix:** the `placement` should be a valid string from the `ColorPickerPlacement` enum.
+
+**Invalid `eyedropperHidesPicker`: must be a boolean value.**
+
+- **Origin:** Property `eyedropperHidesPicker` in the `ColorPickerOptions`
+- **Fix:** the `eyedropperHidesPicker` must be a boolean value.
+
+**Invalid `disableAlphaChannel`: must be a boolean value.**
+
+- **Origin:** Property `disableAlphaChannel` in the `ColorPickerOptions`
+- **Fix:** the `disableAlphaChannel` must be a boolean value.
