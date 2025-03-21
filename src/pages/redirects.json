@@ -485,23 +485,23 @@
         },
         {
             "Source": "/express-add-ons-docs/src/pages/guides/getting_started/setup/",
-            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/setup"
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting-started/setup"
         },
         {
             "Source": "/express-add-ons-docs/src/pages/guides/getting_started/quickstart/",
-            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/quickstart"
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting-started/quickstart"
         },
         {
             "Source": "/express-add-ons-docs/src/pages/guides/getting_started/index.md",
-            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/index.md/"
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting-started/index.md/"
         },
         {
             "Source": "/express-add-ons-docs/src/pages/guides/getting_started/dev_tooling/",
-            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/dev_tooling"
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting-started/dev_tooling"
         },
         {
             "Source": "/express-add-ons-docs/src/pages/guides/getting_started/code_playground/",
-            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/code_playground"
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting-started/code_playground"
         },
         {
             "Source": "/express-add-ons-docs/src/pages/guides/distribute/rejections/",
