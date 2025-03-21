@@ -448,8 +448,8 @@
             "Destination": "/express/add-ons/docs/references/addonsdk/addonsdk-app"
         },
         {
-            "Source": "/express/add-ons/docs/guides/index.md",
-            "Destination": "/express/add-ons/docs/guides/index.md/"
+            "Source": "/express/add-ons/docs/guides/",
+            "Destination": "/express/add-ons/docs/guides/"
         },
         {
             "Source": "/express/add-ons/docs/guides/faq/",
