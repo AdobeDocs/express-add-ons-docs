@@ -291,7 +291,7 @@ const colorPickerButton = document.getElementById("color-picker-button");
 colorPickerButton.addEventListener("click", () => {
   addOnUISdk.app.showColorPicker(colorPickerButton, {
     title: "Add-on's Color Picker",
-    placement: ColorPickerPlacement.Left,
+    placement: ColorPickerPlacement.left,
     eyedropperHidesPicker: true,
     disableAlphaChannel: false,
   });
@@ -322,7 +322,7 @@ const colorPickerButton = document.getElementById("color-picker-button");
 colorPickerButton.addEventListener("click", () => {
   addOnUISdk.app.showColorPicker(colorPickerButton, {
     title: "Add-on's Color Picker",
-    placement: ColorPickerPlacement.Left,
+    placement: ColorPickerPlacement.left,
     eyedropperHidesPicker: true,
     disableAlphaChannel: false,
   });
