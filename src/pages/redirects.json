@@ -404,7 +404,7 @@
             "Destination": "/express/add-ons/docs/references/addonsdk/instance-manifest"
         },
         {
-            "Source": "/express/add-ons/docs/references/addonsdk/instance-clientStorage/",
+            "Source": "/express/add-ons/docs/references/addonsdk/instance-clientStorage",
             "Destination": "/express/add-ons/docs/references/addonsdk/instance-client-storage"
         },
         {
@@ -424,11 +424,11 @@
             "Destination": "/express/add-ons/docs/references/addonsdk/app-document"
         },
         {
-            "Source": "/express/add-ons/docs/references/addonsdk/app-devFlags/",
+            "Source": "/express/add-ons/docs/references/addonsdk/app-devFlags",
             "Destination": "/express/add-ons/docs/references/addonsdk/app-dev-flags"
         },
         {
-            "Source": "/express/add-ons/docs/references/addonsdk/app-currentUser/",
+            "Source": "/express/add-ons/docs/references/addonsdk/app-currentUser",
             "Destination": "/express/add-ons/docs/references/addonsdk/app-current-user"
         },
         {
