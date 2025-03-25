@@ -152,8 +152,8 @@ The `showColorPicker()` method requires an HTML element as its anchor point. Her
 2. **Event Handling**
 
 - The anchor element receives two custom events:
-  - `"colorpicker-color-change"`: Fires when a new color is selected
-  - `"colorpicker-close"`: Fires when the picker is closed
+  - `"colorpicker-color-change"`: Fires when a new color is selected.
+  - `"colorpicker-close"`: Fires when the picker is closed.
 
 ### Example: Show the Color Picker
 
