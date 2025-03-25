@@ -177,7 +177,7 @@
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/BitmapImage/",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/BitmapImage"
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/bitmap-image"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/BaseParagraphStyles/",
@@ -497,11 +497,11 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/getting_started/dev_tooling/",
-            "Destination": "/express/add-ons/docs/guides/getting-started/dev_tooling"
+            "Destination": "/express/add-ons/docs/guides/getting-started/dev-tooling"
         },
         {
             "Source": "/express/add-ons/docs/guides/getting_started/code_playground/",
-            "Destination": "/express/add-ons/docs/guides/getting-started/code_playground"
+            "Destination": "/express/add-ons/docs/guides/getting-started/code-playground"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/rejections/",
@@ -517,7 +517,7 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/listing_guide/",
-            "Destination": "/express/add-ons/docs/guides/distribute/listing_guide"
+            "Destination": "/express/add-ons/docs/guides/distribute/listing-guide"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/index.md",
@@ -525,11 +525,11 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/review_process/submission_checklist/",
-            "Destination": "/express/add-ons/docs/guides/distribute/review_process/submission_checklist"
+            "Destination": "/express/add-ons/docs/guides/distribute/review-process/submission-checklist"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/review_process/index.md",
-            "Destination": "/express/add-ons/docs/guides/distribute/review_process/index.md/"
+            "Destination": "/express/add-ons/docs/guides/distribute/review-process/index.md/"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/monetization/",
@@ -541,11 +541,11 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/brand_guidelines/",
-            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/brand_guidelines"
+            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/brand-guidelines"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/user_interface/",
-            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/general/user_interface"
+            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/general/user-interface"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/usability/",
@@ -577,7 +577,7 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/edge_case/",
-            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/general/edge_case"
+            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/general/edge-case"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/content/",
@@ -617,7 +617,7 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/frameworks-libraries-bundling/",
@@ -637,83 +637,83 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/use_videos/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_videos"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_videos"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/use_text/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_text"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_text"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/use_pdf_powerpoint/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_pdf_powerpoint"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_pdf_powerpoint"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/use_images/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_images"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_images"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/use_geometry/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_geometry"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_geometry"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/use_color/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_color"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_color"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/use_audio/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_audio"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_audio"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/user_info/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/user_info"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/user_info"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/theme_locale/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/theme_locale"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/theme_locale"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/premium_content/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/premium_content"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/premium_content"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/position_elements/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/position_elements"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/position_elements"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/page_metadata/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/page_metadata"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/page_metadata"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/oauth2/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/oauth2"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/oauth2"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/modal_dialogs/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/modal_dialogs"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/modal_dialogs"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/local_data_management/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/local_data_management"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/local_data_management"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/group_elements/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/group_elements"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/group_elements"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/element_metadata/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/element_metadata"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/element_metadata"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/drag_and_drop/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/drag_and_drop"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/drag_and_drop"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/document_metadata/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/document_metadata"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/document_metadata"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/how_to/create_renditions/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/create_renditions"
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/create_renditions"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/index.md",
@@ -721,7 +721,7 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/design/implementation_guide/",
-            "Destination": "/express/add-ons/docs/guides/design/implementation_guide"
+            "Destination": "/express/add-ons/docs/guides/design/implementation-guide"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/fonts/",
@@ -729,31 +729,31 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/design/best_practices/",
-            "Destination": "/express/add-ons/docs/guides/design/best_practices"
+            "Destination": "/express/add-ons/docs/guides/design/best-practices"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/visual_elements/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/visual_elements"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/visual-elements"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/theming/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/theming"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/theming"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/resources_and_references/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/resources_and_references"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/resources-and-references"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/mobile_ux/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/mobile_ux"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/mobile-ux"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/introduction/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/introduction"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/introduction"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/feedback_and_messaging/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/feedback_and_messaging"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/feedback-and-messaging"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/design_principles",
@@ -761,11 +761,11 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/changelog/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/changelog"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/changelog"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/ux_guidelines/branding_guidelines/",
-            "Destination": "/express/add-ons/docs/guides/design/ux_guidelines/branding_guidelines"
+            "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/branding-guidelines"
         },
         {
             "Source": "/express/add-ons/docs/guides/debug/vs-code/",
@@ -773,7 +773,7 @@
         },
         {
             "Source": "/express/add-ons/docs/guides/debug/known_issues_limitations/",
-            "Destination": "/express/add-ons/docs/guides/debug/known_issues_limitations"
+            "Destination": "/express/add-ons/docs/guides/debug/known-issues-limitations"
         },
         {
             "Source": "/express/add-ons/docs/guides/debug/index.md",

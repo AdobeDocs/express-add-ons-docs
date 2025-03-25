@@ -24,12 +24,6 @@ The following guides contain a set of common use cases and accompanying code sni
 
 You're encouraged to use the [Code Playground](../getting_started/code_playground.md) to test each one of them. We're constantly adding new how-tos, so make sure to check back often! If you're looking for more extensive examples, you can also look at our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons. A list of the available topics can be found below:
 
-<!-- - Add-on Development
-  - [Debugging](./how_to/debugging.md)
-  - [Imports and Constants](./how_to/imports_and_constants.md)
-  - [Listening to Events](./how_to/listening_to_events.md)
-  - [Add-on UI and Document API communication](./how_to/ui_document_api_communication.md) -->
-
 - Authentication & Authorization
   - [Use OAuth 2.0](./how_to/oauth2.md)
 - Data & Environment
@@ -49,7 +43,6 @@ You're encouraged to use the [Code Playground](../getting_started/code_playgroun
   - [Group Elements](./how_to/group_elements.md)
   - [Position Elements](./how_to/position_elements.md)
 - Use Metadata
-  <!-- - [Authoring Adobe Express Content](./how_to/authoring_adobe_express_content.md) -->
   - [Document Metadata](./how_to/document_metadata.md)
   - [Page Metadata](./how_to/page_metadata.md)
   - [Element Metadata](./how_to/element_metadata.md)
