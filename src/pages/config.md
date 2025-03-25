@@ -118,7 +118,7 @@
                 - [SolidColorStrokeWithOptionalType](references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md) 
                 - [UnorderedListStyle](references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md) 
             - [Concepts](references/document-sandbox/document-apis/concepts/index.md) 
-    - [Manifest Schema](references/manifest) 
+    - [Manifest Schema](references/manifest/index.md) 
     - [Changelog](references/changelog.md) 
     - [Overview](guides/) 
     - [Getting started](guides/getting_started) 
