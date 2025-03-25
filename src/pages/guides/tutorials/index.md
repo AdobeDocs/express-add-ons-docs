@@ -19,32 +19,30 @@ contributors:
 
 In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
-<ResourceCard slots="link, image, heading, text" width="50%"/>
-
-[Express Document API](grids-addon.md)
-
-![Grids add-on](images/thumbs-grids-addon.png)
+<Info-Card slots="heading, link, image, text" repeat="3"/>
 
 ### Creating a Grid System add-on with the Adobe Express Document API
 
+[Creating a Grid System add-on with the Adobe Express Document API](grids-addon.md)
+
+![Grids add-on](./images/thumbs-grids-addon.png)
+
 Davide Barranca - November 6th, 2023
-
-<ResourceCard slots="link, image, heading, text" width="50%"/>
-
-[Coming Soon...](stats-addon.md)
-
-![Coming Soon](images/thumbs-stats-addon.png)
 
 ### Creating a Stats add-on with the Adobe Express Communication API
 
+[Creating a Stats add-on with the Adobe Express Communication API](stats-addon.md)
+
+![Coming Soon](./images/thumbs-stats-addon.png)
+
 Davide Barranca - December 14th, 2023
-
-<ResourceCard slots="link, image, heading, text" width="80%"/>
-
-[Express Document API](spectrum-workshop/index.md)
-
-![Grids add-on](images/bingo-v1-addon.png)
 
 ### Building UIs using Adobe's Spectrum Design System
 
+[Building UIs using Adobe's Spectrum Design System](spectrum-workshop/index.md)
+
+![Grids add-on](./images/bingo-v1-addon.png)
+
 Holly Schinsky - January 25th, 2024
+
+### absoluteTransform dfdf
