@@ -499,6 +499,16 @@ module.exports = {
         ],
       },
       {
+        title: "Built-in UI Components",
+        path: "references/ui-components/color-picker.md",
+        pages: [
+          {
+            title: "Color Picker",
+            path: "references/ui-components/color-picker.md",
+          },
+        ],
+      },
+      {
         title: "Manifest Schema",
         description: "Manifest schema",
         path: "references/manifest",
