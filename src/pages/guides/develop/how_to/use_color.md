@@ -195,7 +195,7 @@ addOnUISdk.ready.then(async () => {
   });
 
   // Add a listener for the colorpicker-close event
-  colorPickerButton.addEventListener(ColorPickerEvents.Close, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
     console.log(event.type); // "colorpicker-close"
   });
 });
