@@ -141,6 +141,20 @@ Adobe Express includes a native Color Picker, with special features such as Reco
 
 The `showColorPicker()` method accepts a reference to an HTML element as its first argument, which will become the color picker's anchor element. The picker will be positioned relative to this element, based on the placement options available in the `ColorPickerPlacement` enum; additionally, the anchor will receive a custom `"colorpicker-color-change"` event when the color changes and a `"colorpicker-close"` event when it is closed.
 
+The `showColorPicker()` method requires an HTML element as its anchor point. Here's how it works:
+
+1. **Anchor Element**
+
+- Pass an HTML element reference as the first argument.
+- The color picker will position itself relative to this element.
+- Use the `ColorPickerPlacement` enum to control positioning.
+
+2. **Event Handling**
+
+- The anchor element receives two custom events:
+  - `"colorpicker-color-change"`: Fires when a new color is selected
+  - `"colorpicker-close"`: Fires when the picker is closed
+
 ### Example: Show the Color Picker
 
 <CodeBlock slots="heading, code" repeat="2" languages="js, html"/>
