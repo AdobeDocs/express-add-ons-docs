@@ -188,7 +188,7 @@
             "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/auto-height-text-layout"
         },
         {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/AreaTextLayout/",
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/AreaTextLayout",
             "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/area-text-layout"
         },
         {
