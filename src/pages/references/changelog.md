@@ -22,6 +22,50 @@ contributors:
 
 # Changelog
 
+## 2025-03-25
+
+### Updated
+
+The CLI has been updated with the following package versions:
+
+- `@adobe/ccweb-add-on-manifest`: 3.0.0
+- `@adobe/create-ccweb-add-on`: 3.0.0
+- `@adobe/ccweb-add-on-scaffolder`: 3.0.0
+- `@adobe/ccweb-add-on-analytics`: 3.0.0
+- `@adobe/ccweb-add-on-core`: 3.0.0
+- `@adobe/ccweb-add-on-scripts`: 3.0.0
+- `@adobe/ccweb-add-on-ssl`: 3.0.0
+- `@adobe/ccweb-add-on-sdk-types`: 1.14.0
+
+**IMPORTANT:** As a result of the above, please be aware of the following:
+
+1. Node-related tooling requirements are now:
+
+- Minimum `node` version: 18
+- Minimum `npm` version: 10
+
+2. SSL Certificates:
+
+SSL for hosting add-ons is now managed from the following locations:
+
+- Mac: `/Users/[user]/Library/Application Support/Adobe/CCWebAddOn/devcert`
+- Windows: `C:\Users\Administrator\AppData\Local\Adobe\CCWebAddOn\devcert`
+
+After updating `@adobe/ccweb-add-on-scripts` to `3.0.0`, developers will be asked to re-create their SSL certificate.
+
+For a new add-on created using `npx @adobe/create-ccweb-add-on@3.0.0`, a new SSL certificate will be set up one-time.
+
+For removing expired SSL certificate or certificate authority, developers can now run: `npx @adobe/ccweb-add-on-ssl purge`, and re-create them using `npx @adobe/ccweb-add-on-ssl setup --hostname localhost`
+
+3. Spectrum Web Components
+
+- The version of `@swc-react` components in the templates based on React has been updated to `1.0.3`.
+- The version of `@spectrum-web-components` components in the templates based on SWC has been updated to `1.1.2`.
+- The theme usage has been updated to use the `system` attribute instead of `theme`, ie:
+
+  - SWC: `<sp-theme system="express" color="light"  scale="medium">`
+  - React: `<Theme system="express" scale="medium" color="light">`
+
 ## 2025-03-21
 
 ### Added
