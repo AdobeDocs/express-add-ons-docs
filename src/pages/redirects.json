@@ -528,8 +528,8 @@
             "Destination": "/express/add-ons/docs/guides/distribute/review-process/submission-checklist"
         },
         {
-            "Source": "/express/add-ons/docs/guides/distribute/review_process/index.md",
-            "Destination": "/express/add-ons/docs/guides/distribute/review-process/index.md/"
+            "Source": "/express/add-ons/docs/guides/distribute/review_process/",
+            "Destination": "/express/add-ons/docs/guides/distribute/review-process/"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/monetization/",
