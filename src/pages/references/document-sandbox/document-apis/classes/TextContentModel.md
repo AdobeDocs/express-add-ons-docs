@@ -138,16 +138,12 @@ default styles.
 
 The styles to apply.
 
-• **range?**
+• **range?**: [`TextRange`](../interfaces/TextRange.md)
 
 The start and length of the character sequence to which the styles should be applied.
 The styles will be applied to the entire text content flow if not specified.
 If the specified range doesn't align well with the paragraph boundaries, the range will be expanded to cover the
 entire paragraphs, it overlaps.
-
-• **range.length?**: `number`
-
-• **range.start?**: `number`
 
 #### Returns
 
@@ -174,15 +170,30 @@ default styles.
 
 The styles to apply.
 
-• **range?**
+• **range?**: [`TextRange`](../interfaces/TextRange.md)
 
 The start and length of character sequence to which the styles should be applied.
 If not specified the styles will be applied to the entire piece of text content flow.
 
-• **range.length?**: `number`
-
-• **range.start?**: `number`
-
 #### Returns
 
 `void`
+
+---
+
+### hasUnavailableFonts()
+
+• **hasUnavailableFonts**(): `boolean`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Returns true if this text contains any fonts unavailable to the current user.
+Currently, if any unavailable fonts are present, the text content cannot be modified and
+certain styling changes are limited as well. To remove these restrictions, you must modify
+the character styles to use only AvailableFonts.
+
+#### Returns
+
+`boolean`

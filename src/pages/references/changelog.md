@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-03-25
+
+### Added
+
+- Added a new [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method as experimental.
+
 ## 2025-03-21
 
 ### Added
