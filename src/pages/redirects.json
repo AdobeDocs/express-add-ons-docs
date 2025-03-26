@@ -720,7 +720,7 @@
             "Destination": "/express/add-ons/docs/guides/design/index.md/"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/implementation_guide/",
+            "Source": "/express/add-ons/docs/guides/design/implementation_guide",
             "Destination": "/express/add-ons/docs/guides/design/implementation-guide"
         },
         {
@@ -728,19 +728,19 @@
             "Destination": "/express/add-ons/docs/guides/design/fonts"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/best_practices/",
+            "Source": "/express/add-ons/docs/guides/design/best_practices",
             "Destination": "/express/add-ons/docs/guides/design/best-practices"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/visual_elements/",
+            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/visual_elements",
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/visual-elements"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/theming/",
+            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/theming",
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/theming"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/resources_and_references/",
+            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/resources_and_references",
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/resources-and-references"
         },
         {
@@ -748,11 +748,11 @@
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/mobile-ux"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/introduction/",
+            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/introduction",
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/introduction"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/feedback_and_messaging/",
+            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/feedback_and_messaging",
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/feedback-and-messaging"
         },
         {
@@ -760,11 +760,11 @@
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/design-principles"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/changelog/",
+            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/changelog",
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/changelog"
         },
         {
-            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/branding_guidelines/",
+            "Source": "/express/add-ons/docs/guides/design/ux_guidelines/branding_guidelines",
             "Destination": "/express/add-ons/docs/guides/design/ux-guidelines/branding-guidelines"
         },
         {

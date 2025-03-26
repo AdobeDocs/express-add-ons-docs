@@ -133,7 +133,7 @@
                 - [Basic JavaScript add-on with Spectrum Web Components](guides/tutorials/spectrum-workshop/part1/) 
                 - [React-based add-on with Spectrum Web Components](guides/tutorials/spectrum-workshop/part2/) 
                 - [Tips & Troubleshooting](guides/tutorials/spectrum-workshop/part3/) 
-    - [Design](guides/design) 
+    - [Design](guides/design/index.md) 
         - [Overview](guides/design/) 
         - [UX Guidelines](guides/design/ux_guidelines/introduction.md) 
             - [Introduction](guides/design/ux_guidelines/introduction.md) 
