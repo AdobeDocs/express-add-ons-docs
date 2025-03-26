@@ -488,7 +488,7 @@
             "Destination": "/express/add-ons/docs/guides/getting-started/setup"
         },
         {
-            "Source": "/express/add-ons/docs/guides/getting_started/quickstart/",
+            "Source": "/express/add-ons/docs/guides/getting_started/quickstart",
             "Destination": "/express/add-ons/docs/guides/getting-started/quickstart"
         },
         {
@@ -496,11 +496,11 @@
             "Destination": "/express/add-ons/docs/guides/getting-started/"
         },
         {
-            "Source": "/express/add-ons/docs/guides/getting_started/dev_tooling/",
+            "Source": "/express/add-ons/docs/guides/getting_started/dev_tooling",
             "Destination": "/express/add-ons/docs/guides/getting-started/dev-tooling"
         },
         {
-            "Source": "/express/add-ons/docs/guides/getting_started/code_playground/",
+            "Source": "/express/add-ons/docs/guides/getting_started/code_playground",
             "Destination": "/express/add-ons/docs/guides/getting-started/code-playground"
         },
         {
