@@ -16,6 +16,7 @@ keywords:
   - Text Color
   - HEX Color
   - RGB Color
+  - Color Picker
 title: Use Color
 description: Use Color.
 contributors:
@@ -127,3 +128,157 @@ ellipse.stroke = editor.makeStroke({
 Naming conventions
 
 Please note that Adobe Express uses the terms **make** and **create** to distinguish between plain objects and live document objects. You `makeColorFill()`, but `createEllipse()`.
+
+## Use the Color Picker
+
+Adobe Express includes a native Color Picker, with special features such as Recommended Swatches, Eyedropper, Themes, Library and Brand colors. The Color Picker is available also to add-ons, you can invoke it using the [`addOnUISdk.app.showColorPicker()`](../../../references/addonsdk/addonsdk-app.md#showcolorpicker) method.
+
+#### Benefits
+
+- It simplifies the process of selecting a color, bypassing the Browser's color picker.
+- It's in sync with any swatches or Brand colors defined in Adobe Express.
+- It will evolve with Adobe Express, providing a consistent color picking experience across different parts of the application.
+
+The `showColorPicker()` method accepts a reference to an HTML element as its first argument, which will become the color picker's anchor element. The picker will be positioned relative to this element, based on the placement options available in the `ColorPickerPlacement` enum; additionally, the anchor will receive a custom `"colorpicker-color-change"` event when the color changes and a `"colorpicker-close"` event when it is closed.
+
+The `showColorPicker()` method requires an HTML element as its anchor point. Here's how it works:
+
+1. **Anchor Element**
+
+- Pass an HTML element reference as the first argument.
+- The color picker will position itself relative to this element.
+- Use the `ColorPickerPlacement` enum to control positioning.
+
+2. **Event Handling**
+
+- The anchor element receives two custom events:
+  - `"colorpicker-color-change"`: Fires when a new color is selected.
+  - `"colorpicker-close"`: Fires when the picker is closed.
+
+### Example: Show the Color Picker
+
+<CodeBlock slots="heading, code" repeat="2" languages="js, html"/>
+
+#### ui/index.js
+
+```js
+import addOnUISdk, {
+  ColorPickerEvents,
+  ColorPickerPlacement,
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  // Get the button element
+  const colorPickerButton = document.getElementById("colorPicker");
+
+  // Add a click event listener to the button to show the color picker
+  colorPickerButton.addEventListener("click", () => {
+    addOnUISdk.app.showColorPicker(colorPickerButton, {
+      // The title of the color picker
+      title: "Awesome Color Picker",
+      // The placement of the color picker
+      placement: ColorPickerPlacement.left,
+      // Whether the eyedropper hides the color picker
+      eyedropperHidesPicker: true,
+      // The initial color of the color picker
+      initialColor: 0x0000ff,
+      // Whether the alpha channel is disabled
+      disableAlphaChannel: false,
+    });
+  });
+
+  // Add a listener for the colorpicker-color-change event
+  addOnUISdk.app.on(ColorPickerEvents.ColorChange, (event) => {
+    // Get the color from the event
+    console.log(event.detail.color);
+    // e.g., "#F0EDD8FF" in HEX (RRGGBBAA) format
+  });
+
+  // Add a listener for the colorpicker-close event
+  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
+    console.log(event.type); // "colorpicker-close"
+  });
+});
+```
+
+#### index.html
+
+```html
+<button id="colorPicker">Show the Color Picker</button>
+```
+
+Please note that the color returned by the `colorpicker-color-change` event is always a string in HEX format—with or without an alpha value, e.g., `#F0EDD8FF` or `#F0EDD8` depending on the `disableAlphaChannel` option.
+
+### Example: Hide the Color Picker
+
+You can decide to hide picker UI e.g., after a certain amount of time.
+
+```js
+colorPickerButton.addEventListener("click", () => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    /* ... */
+  });
+  setTimeout(() => {
+    console.log("Hiding the Color Picker after 10 seconds");
+    addOnUISdk.app.hideColorPicker();
+  }, 10000);
+});
+```
+
+### Example: Use the color
+
+You can use any HTML element as the color picker's anchor element; in the example below, we're using a `<div>` element to display a color swatch.
+
+<CodeBlock slots="heading, code" repeat="2" languages="html, js"/>
+
+#### index.html
+
+```html
+<style>
+  #color-display {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+  }
+</style>
+<body>
+  <div id="color-display"></div>
+</body>
+```
+
+#### index.js
+
+```js
+addOnUISdk.ready.then(async () => {
+  const colorDisplay = document.getElementById("color-display");
+
+  colorDisplay.addEventListener("click", () => {
+    addOnUISdk.app.showColorPicker(colorDisplay, {
+      title: "Color Picker 1",
+      placement: ColorPickerPlacement.left,
+      eyedropperHidesPicker: true,
+    });
+  });
+
+  colorDisplay.addEventListener(ColorPickerEvents.colorChange, (event) => {
+    // Update the color swatch display in the UI
+    colorDisplay.style.backgroundColor = event.detail.color;
+  });
+});
+```
+
+To use the picked color in the Document Sandbox, you can use the [`colorUtils.fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) method, which converts the HEX color string to a [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) object.
+
+```js
+// sandbox/code.js
+const color = colorUtils.fromHex(event.detail.color); // 👈 A Color object
+
+// Use the color in the Document Sandbox, for example:
+let selection = editor.context.selection;
+if (selection.length === 1 && selection[0].type === "Text") {
+  const textContentModel = selection[0].fullContent;
+  textContentModel.applyCharacterStyles({ color }); // 👈 Using the color
+}
+```

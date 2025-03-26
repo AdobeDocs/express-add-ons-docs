@@ -254,6 +254,85 @@ async function showInputDialog() {
 
 See the use case implementations for an example of the [custom modal dialog](../../guides/develop/how_to/modal_dialogs.md#custom-dialog).
 
+### showColorPicker()
+
+Shows the Adobe Express color picker based on specific options passed in.
+
+#### Signature
+
+`showColorPicker(anchorElement: HTMLElement, options?: ColorPickerOptions): Promise<void>;`
+
+#### Parameters
+
+| Name            | Type                 |                                       Description |
+| --------------- | -------------------- | ------------------------------------------------: |
+| `anchorElement` | `HTMLElement`        |        The element to anchor the color picker to. |
+| `options`       | `ColorPickerOptions` | The optional options to pass to the color picker. |
+
+##### `ColorPickerOptions`
+
+| Name                     |                                                               Type |                                                                                                                                                                                                                                                                      Description |
+| ------------------------ | -----------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `title?`                 |                                                           `string` |                                                                                                                                                                                                                     Label header/title for the color picker. Default value: `""` |
+| `initialColor?`          |                                                           `number` | Default/starting color when you open the color picker for the first time on a `anchorElement`. When you have already changed the color with this picker, then the next time you open the picker, the last selected color will be the starting color. Default: `0xFFFFFF` (white) |
+| `placement?`             | `object` [ColorPickerPlacement](./addonsdk-constants.md#constants) |                                                                                                                                                                                                 Placement of the popover with respect to the anchor element (default: `"left"`). |
+| `eyedropperHidesPicker?` |                                                          `boolean` |                                                                                                                Closes the color picker popover while using the EyeDropper. After the color is selected via the EyeDropper, the color picker popup opens again. Default: `false`. |
+| `disableAlphaChannel?`   |                                                          `boolean` |                                                                                                                                                                                  Disables the transparency slider in the "custom" section of the color picker. Default: `false`. |
+
+#### Return Value
+
+Returns a void `Promise`.
+
+#### Example Usage
+
+```js
+const colorPickerButton = document.getElementById("color-picker-button");
+
+colorPickerButton.addEventListener("click", () => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    title: "Add-on's Color Picker",
+    placement: ColorPickerPlacement.left,
+    eyedropperHidesPicker: true,
+    disableAlphaChannel: false,
+  });
+});
+
+colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  console.log("Color change event received!", event.detail.color;);
+});
+```
+
+### hideColorPicker()
+
+Hides the Adobe Express color picker.
+
+#### Signature
+
+`hideColorPicker(): Promise<void>;`
+
+#### Return Value
+
+Returns a void `Promise`.
+
+#### Example Usage
+
+```js
+const colorPickerButton = document.getElementById("color-picker-button");
+
+colorPickerButton.addEventListener("click", () => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    title: "Add-on's Color Picker",
+    placement: ColorPickerPlacement.left,
+    eyedropperHidesPicker: true,
+    disableAlphaChannel: false,
+  });
+  setTimeout(() => {
+    console.log("Hiding Color Picker after 10 seconds...");
+    addOnUISdk.app.hideColorPicker();
+  }, 10000);
+});
+```
+
 ### registerIframe()
 
 Allows an iframe hosted within an add-on to register its intent to communicate with the add-on SDK. While iframes can be used for embedding media without SDK interaction, `registerIframe()` is needed for those requiring SDK capabilities. It marks a transition to a more controlled approach, where add-ons must explicitly opt-in to this level of integration.
