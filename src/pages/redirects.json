@@ -540,11 +540,11 @@
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/index.md/"
         },
         {
-            "Source": "/express/add-ons/docs/guides/distribute/guidelines/brand_guidelines/",
+            "Source": "/express/add-ons/docs/guides/distribute/guidelines/brand_guidelines",
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/brand-guidelines"
         },
         {
-            "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/user_interface/",
+            "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/user_interface",
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/general/user-interface"
         },
         {
@@ -576,7 +576,7 @@
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/general/features"
         },
         {
-            "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/edge_case/",
+            "Source": "/express/add-ons/docs/guides/distribute/guidelines/general/edge_case",
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/general/edge-case"
         },
         {
@@ -616,7 +616,7 @@
             "Destination": "/express/add-ons/docs/guides/develop/index.md/"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/",
+            "Source": "/express/add-ons/docs/guides/develop/how_to",
             "Destination": "/express/add-ons/docs/guides/develop/how-to"
         },
         {
