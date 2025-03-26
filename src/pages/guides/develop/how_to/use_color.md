@@ -133,6 +133,10 @@ Please note that Adobe Express uses the terms **make** and **create** to disting
 
 Adobe Express includes a native Color Picker, with special features such as Recommended Swatches, Eyedropper, Themes, Library and Brand colors. The Color Picker is available also to add-ons, you can invoke it using the [`addOnUISdk.app.showColorPicker()`](../../../references/addonsdk/addonsdk-app.md#showcolorpicker) method.
 
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
 #### Benefits
 
 - It simplifies the process of selecting a color, bypassing the Browser's color picker.
@@ -188,7 +192,7 @@ addOnUISdk.ready.then(async () => {
   });
 
   // Add a listener for the colorpicker-color-change event
-  addOnUISdk.app.on(ColorPickerEvents.ColorChange, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
     // Get the color from the event
     console.log(event.detail.color);
     // e.g., "#F0EDD8FF" in HEX (RRGGBBAA) format
