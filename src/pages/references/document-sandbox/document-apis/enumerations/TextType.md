@@ -10,13 +10,13 @@ _Do not depend on the literal numeric values of these constants_, as they may ch
 
 ### area
 
-• **area**: `2`
+• **area**: `1`
 
 ---
 
 ### autoHeight
 
-• **autoHeight**: `1`
+• **autoHeight**: `2`
 
 Soft bottom
 
@@ -24,7 +24,7 @@ Soft bottom
 
 ### autoWidth
 
-• **autoWidth**: `0`
+• **autoWidth**: `3`
 
 Point text
 
@@ -38,4 +38,4 @@ Point text
 
 ### magicFit
 
-• **magicFit**: `3`
+• **magicFit**: `5`

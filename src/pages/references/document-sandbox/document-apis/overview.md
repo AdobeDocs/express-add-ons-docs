@@ -92,6 +92,7 @@
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
 -   [StyleRange](interfaces/StyleRange.md)
+-   [TextRange](interfaces/TextRange.md)
 -   [UnorderedListStyleInput](interfaces/UnorderedListStyleInput.md)
 -   [UnsupportedTextLayout](interfaces/UnsupportedTextLayout.md)
 
