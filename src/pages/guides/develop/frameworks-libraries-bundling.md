@@ -17,6 +17,10 @@ An example of how this works in Visual Studio Code is shown in this short clip b
 <iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
 </div>
 
+<InlineAlert slots="text" variant="info"/>
+
+Make sure you check out the [Using Lit & Typescript Guide](./lit-guide.md) for a more detailed explanation of how to use TypeScript with the Add-on SDK.
+
 ## Webpack & JavaScript bundler
 
 When using Node libraries or other frameworks, you'll often need to use a JavaScript bundler. All of the templates the CLI provides (other than the basic `javascript` template) are pre-configured for webpack via the `--use` option set on the `ccweb-add-on-scripts` commands. If you create a new add-on project based on a react or typescript based template for instance, you will see the following `scripts` block generated in your `package.json`, and the existence of a `webpack.config.js` in the root of your project:
@@ -61,6 +65,13 @@ new CopyWebpackPlugin({
 
 The CLI supports two different [react-based templates](../getting_started/dev_tooling.md#templates), and the [code samples](../../samples.md) repository contains various add-ons built with React for you to use as a reference.
 
+## Lit Framework
+
+The CLI provides [starter template options](../getting_started/dev_tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
+
+To learn more about developing with [Lit](https://lit.dev/), be sure to check out the [Using Lit & TypeScript Guide](./using-lit-typescript.md).
+
 ## Other JavaScript and CSS libraries
 
-You shouldn't see any issues trying to include other JavaScript or CSS libraries you might want to use in your add-ons (ie: jQuery, Bootstrap).
+You should be able to use any other JavaScript or CSS libraries you might want to include in your add-ons (ie: jQuery, Bootstrap) without any issues. Just make sure you include the necessary scripts and stylesheets in your project, and ensure they are bundled correctly by your chosen bundler.
+

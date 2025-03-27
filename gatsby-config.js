@@ -832,8 +832,12 @@ module.exports = {
             ],
           },
           {
-            title: "Frameworks, Libraries and Bundling",
+            title: "Web Frameworks, Libraries and Bundling",
             path: "guides/develop/frameworks-libraries-bundling.md",
+          },        
+          {
+            title: "Using Lit & TypeScript",
+            path: "guides/develop/using-lit-typescript.md",
           },
           {
             title: "Performance Tips",
