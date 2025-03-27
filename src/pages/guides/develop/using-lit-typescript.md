@@ -1,4 +1,6 @@
-# Developing add-ons with Lit and TypeScript
+# Building Adobe Express Add-ons with Lit and TypeScript
+
+## 1. Introduction
 
 <ProductCard slots="icon, text, buttons" theme="light" width="50%" />
 
@@ -16,9 +18,65 @@ TypeScript is a statically typed superset of JavaScript that adds optional stati
 
 - [Learn more](https://https://www.typescriptlang.org/)
 
-When you develop add-ons with a combination of [Lit](https://lit.dev/) and [TypeScript](https://https://www.typescriptlang.org/), you get the benefits of both worlds; a lightweight component library with reactive properties and templating capabilities, which help you build fast and efficient components, and the robust type system provided by TypeScript. 
+When you develop add-ons with a combination of [Lit](https://lit.dev/) and [TypeScript](https://https://www.typescriptlang.org/), you get the benefits of both worlds; a lightweight component library with reactive properties and templating capabilities, which help you build fast and efficient components, and the robust type system provided by TypeScript.
 
-## Lit Key Features
+### Prerequisites
+
+- Node.js 16 or newer
+- Familiarity with HTML, CSS, and JavaScript
+- Basic understanding of web components
+- Adobe Express account
+
+## 2. Getting Started
+
+### Development Environment Setup
+
+1. Install or update the Adobe Express Add-on CLI:
+
+    ```bash
+    # For new installation
+    npm install -g @adobe/create-ccweb-add-on
+
+    # If you already have it installed, ensure you have the latest version
+    npm update -g @adobe/create-ccweb-add-on
+    ```
+
+    If you've used the CLI before, you may want to clear the npx cache before creating a new project to ensure you're using the latest version:
+
+    ```bash
+    npx clear-npx-cache
+    ```
+
+2. Create a new project:
+
+    ```bash
+    npx @adobe/create-ccweb-add-on my-lit-addon --template swc-typescript
+    ```
+
+3. Navigate to your project and install dependencies:
+
+    ```bash
+    cd my-lit-addon
+    npm install
+    ```
+
+### Project Structure Overview
+
+```
+my-lit-addon/
+├── src/
+│ ├── index.html # Main entry point
+│ ├── index.ts # Root component
+│ ├── ui/
+│ │ ├── components/ # Lit components
+│ │ └── styles/ # Component styles
+│ ├── models/ # TypeScript interfaces
+│ └── sandbox/ # Document sandbox code
+├── tsconfig.json # TypeScript configuration
+└── package.json # Project dependencies
+```
+
+## 3. Building Blocks
 
 ### `LitElement` Base Class
 
@@ -28,13 +86,13 @@ Lit provides the `LitElement` base class for creating custom elements. It extend
 
 Components must have dashes in their name to be valid custom elements. For example, `my-component` is a valid custom element name, while `MyComponent` is not.
 
-### Template Literals
+### Lit Template Literals
 
-A template literal is a string literal that allows embedded expressions. It is enclosed in backticks (\`) and can contain placeholders `(${expression})` for dynamic values. Template literals provide a more flexible and readable way to define strings compared to traditional string concatenation.
+A [template literal](https://lit.dev/docs/templates/overview/) is a string literal that allows embedded expressions. It is enclosed in backticks (\`) and can contain placeholders `(${expression})` for dynamic values. Template literals provide a more flexible and readable way to define strings compared to traditional string concatenation.
 
-### Decorators
+### Lit Decorators
 
-A *decorator* is a certain type of declaration that can be attached to a class declaration. It is prefixed with an `@` symbol and can be used to modify the behavior of a class or its members. Some popular decorators in Lit include:
+A [*decorator*](https://lit.dev/docs/components/decorators/) is a certain type of declaration that can be attached to a class declaration. It is prefixed with an `@` symbol and can be used to modify the behavior of a class or its members. Some popular decorators in Lit include:
 
 - `@customElement`: defines a custom element with a given tag name.
 - `@property`: defines a reactive property that triggers a re-render when its value changes.
@@ -42,9 +100,9 @@ A *decorator* is a certain type of declaration that can be attached to a class d
 - `@query`: allows you to query for elements in the component's shadow DOM, for instance, to access a button element with the id `myButton`, you can use `@query('#myButton') myButton: HTMLButtonElement;`. 
 - `@eventOptions`: allows you to specify event options like `capture`, `once`, and `passive` for event listeners. For example, `@eventOptions({ capture: true }) handleClick() { ... }`. 
 
-### Directives
+### Lit Directives
 
-A lit *directive* is a special kind of decorator that allows you to extend the template syntax with custom behavior. Some popular directives include:
+A Lit [*directive*](https://lit.dev/docs/templates/directives/) is a special kind of decorator that allows you to extend the template syntax with custom behavior. Some popular directives include:
 
 - `until`: waits for a promise to resolve before rendering the content.
 - `repeat`: repeats a template for each item in an array.
@@ -66,13 +124,13 @@ The `render` method is defined as a template literal that returns the component'
 
 ### Reactive Properties
 
-Lit uses *reactive properties* to automatically update the DOM when the state of your component changes. You define properties using decorators like `@property`. When a property changes, Lit automatically triggers a re-render of the component. This reactive behavior simplifies the process of managing state and updating the UI.
+Lit uses [*reactive properties*](https://lit.dev/docs/components/properties/) to automatically update the DOM when the state of your component changes. You define properties using decorators like `@property`. When a property changes, Lit automatically triggers a re-render of the component. This reactive behavior simplifies the process of managing state and updating the UI.
 
-## TypeScript Key Features
+## TypeScript Integration
 
 ### Static Typing
 
-TypeScript allows you to define types for variables, function parameters, and return values, which helps catch type-related errors at compile time.
+TypeScript allows you to [define types](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#static-type-checking) for variables, function parameters, and return values, which helps catch type-related errors at compile time.
 
    ```typescript
    let message: string = "Hello, TypeScript!";
@@ -80,7 +138,7 @@ TypeScript allows you to define types for variables, function parameters, and re
 
 ### Type Inference 
 
-TypeScript can automatically infer types based on the assigned values, reducing the need for explicit type annotations.
+TypeScript can automatically [infer types](https://www.typescriptlang.org/docs/handbook/type-inference.html#handbook-content) based on the assigned values, reducing the need for explicit type annotations.
 
    ```typescript
    let count = 42; // inferred as number
@@ -88,7 +146,7 @@ TypeScript can automatically infer types based on the assigned values, reducing 
 
 ### Interfaces 
 
-Interfaces define the shape of an object, specifying the properties and their types. They help enforce consistent object structures.
+[Interfaces](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces) define the shape of an object, specifying the properties and their types. They help enforce consistent object structures.
 
    ```typescript
    interface User {
@@ -99,7 +157,7 @@ Interfaces define the shape of an object, specifying the properties and their ty
 
 ### Classes
 
-TypeScript supports object-oriented programming with classes, including features like inheritance, access modifiers, and decorators.
+TypeScript supports object-oriented programming with [classes](https://www.typescriptlang.org/docs/handbook/2/classes.html), including features like inheritance, access modifiers, and decorators.
 
    ```typescript
    class Person {
@@ -112,7 +170,7 @@ TypeScript supports object-oriented programming with classes, including features
    ```  
 ### Modules
 
-TypeScript uses ES6 module syntax to organize code into reusable modules, making it easier to manage large codebases.
+TypeScript uses [ES6 module syntax](https://www.typescriptlang.org/docs/handbook/2/modules.html) to organize code into reusable modules, making it easier to manage large codebases.
 
    ```typescript
    // math.ts
@@ -127,7 +185,7 @@ TypeScript uses ES6 module syntax to organize code into reusable modules, making
 
 ### Generics
 
-Generics allow you to create reusable components that work with various types, providing flexibility and type safety.
+[Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html#handbook-content) allow you to create reusable components that work with various types, providing flexibility and type safety.
 
    ```typescript
    function identity<T>(arg: T): T {
@@ -135,270 +193,273 @@ Generics allow you to create reusable components that work with various types, p
    }
    ```
 
-## Add-on Project Anatomy
+### Spectrum Web Components Integration
 
-When you use the CLI to create an add-on based on Lit and TypeScript (ie: the `swc-typescript` template), the CLI generates a project structure that includes the necessary files and configurations to get you started quickly. For instance:
-
-<!-- - ![](img/swc-ts-files.png) -->
-<!-- <img src="img/swc-ts-files.png" alt="swc-ts-files" width="20%"/> -->
-<!-- 
-|  |  |
-| ----------- | ----------- |
-| ![](img/swc-ts-files.png) | | -->
-
-| File/Folder | Description |
-| ------------|-------------| ----------- |
-| `src/index.html`|The main HTML template that loads your add-on. |
-|`src/index.ts` | The entry point for your add-on, where you define your Lit components. |
-|`src/ui/components` | The directory where you define your Lit components. |
-|`src/ui/components/App.ts` | The main application component that uses the Adobe Add-On UI SDK to interact with the document sandbox runtime. |
-|`src/ui/components/App.css.ts` | The CSS styles for the main application component. |
-|`src/models` | The directory where you define TypeScript interfaces for your add-on APIs. |
-|`src/models/DocumentSandboxApi.ts` | The TypeScript interface for the APIs exposed by the document sandbox runtime. |
-|`src/sandbox/code.ts` | The implementation of the document sandbox runtime. |
-|`src/sandbox/tsconfig.json` | The TypeScript configuration file that specifies the compiler options for your project. |
-
-
-A more in-depth description of the files and folders in the project structure is provided below.
-
-### index.html
-
-This is the main HTML file that serves as the entry point for the web application. It includes the custom element `<add-on-root>`, which is defined in `index.ts`.
-
-```html
-<body>
-    <add-on-root></add-on-root>
-</body>
-```
-
-### index.ts
-
-This file defines the root custom element `<add-on-root>` using Lit. It initializes the Adobe Add-On UI SDK and renders the `<add-on-app>` component once the SDK is ready.
+Spectrum Web Components can be used for your UI to maintain consistency with the Adobe Express interface. Below is a quick snippet showing how they can be used as part of an add-on built with Lit and TypeScript:
 
 ```typescript
 import { LitElement, html } from "lit";
-import { customElement, state } from "lit/decorators.js";
-import { until } from "lit/directives/until.js";
-import "./components/App";
+import { customElement } from "lit/decorators.js";
+import "@spectrum-web-components/button/sp-button.js";
+import "@spectrum-web-components/theme/sp-theme.js";
 
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-
-@customElement("add-on-root") // Lit customElement decorator defines a custom element <add-on-root>.
-export class Root extends LitElement {
-    @state()
-    private _isAddOnUISdkReady = addOnUISdk.ready;
-
-    // The render method returns an HTML template that uses the until directive to wait for the Add-On UI SDK to be ready. Once the SDK is ready, it renders the <add-on-app> component.
+@customElement("my-component")
+export class MyComponent extends LitElement {
     render() {
-        // This block is a template literal that returns an HTML template using the Lit html function. denoted by it being enclosed in backticks (`). Dynamic values are inserted using placeholders like (${expression}).
-        return html`            
-            ${until(  // The until directive is used to wait for a promise to resolve before rendering the content.
-                this._isAddOnUISdkReady.then(async () => {
-                    console.log("addOnUISdk is ready for use.");
-                    return html`<add-on-app .addOnUISdk=${addOnUISdk}></add-on-app>`;
-                })
-            )}
+        return html`
+            <sp-theme theme="express" color="light" scale="medium">
+                <sp-button variant="primary">Click me</sp-button>
+            </sp-theme>
         `;
     }
 }
 ```
+## 4. Advanced Development
 
-### App.ts
+### State Management
 
-Defines the main application component `<add-on-app>` using Lit. It uses the Adobe Add-On UI SDK to interact with the document sandbox runtime and provides a button to create a rectangle in the document.
+Lit provides several ways to manage state in your components:
 
 ```typescript
 import { LitElement, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import { DocumentSandboxApi } from "../../models/DocumentSandboxApi";
-import { style } from "./App.css";
 
-import { AddOnSDKAPI, RuntimeType } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+@customElement("state-example")
+export class StateExample extends LitElement {
+    // Public property that triggers renders when changed
+    @property({ type: String })
+    public title = "Hello";
 
-// The following line defines a custom element <add-on-app> using the Lit customElement decorator.
-@customElement("add-on-app") 
-export class App extends LitElement {
-    @property({ type: Object })
-    addOnUISdk!: AddOnSDKAPI;
+    // Private state that triggers renders when changed
+    @state()
+    private _count = 0;
 
+    render() {
+        return html`
+            <h1>${this.title}</h1>
+            <p>Count: ${this._count}</p>
+            <sp-button @click=${this._increment}>Increment</sp-button>
+        `;
+    }
+
+    private _increment() {
+        this._count++;
+    }
+}
+```
+
+### Communication Patterns
+
+When building Adobe Express add-ons with Lit and TypeScript, there are several important communication patterns to understand:
+
+#### 1. Component-to-Component Communication
+
+```typescript
+// Parent component
+@customElement('parent-component')
+export class ParentComponent extends LitElement {
+    @state()
+    private message = 'Hello from parent';
+
+    render() {
+        return html`
+            <child-component 
+                .parentMessage=${this.message}
+                @child-event=${this._handleChildEvent}>
+            </child-component>
+        `;
+    }
+
+    private _handleChildEvent(e: CustomEvent) {
+        console.log('Received from child:', e.detail);
+    }
+}
+
+// Child component
+@customElement('child-component')
+export class ChildComponent extends LitElement {
+    @property()
+    parentMessage = '';
+
+    private _sendToParent() {
+        this.dispatchEvent(new CustomEvent('child-event', {
+            detail: 'Message from child',
+            bubbles: true,
+            composed: true
+        }));
+    }
+}
+```
+
+#### 2. Document Sandbox Communication
+
+The Document Sandbox API allows communication between your UI components and the Adobe Express document:
+
+```typescript
+// Define the interface for sandbox communication
+interface DocumentSandboxApi {
+    createShape(): Promise<void>;
+    updateElement(id: string, properties: object): Promise<void>;
+    // Add other methods as needed
+}
+
+@customElement('my-addon-component')
+export class MyAddonComponent extends LitElement {
     @state()
     private _sandboxProxy: DocumentSandboxApi;
 
-    static get styles() {
-        return style;
-    }
-
-    async firstUpdated(): Promise<void> {
+    async firstUpdated() {
         const { runtime } = this.addOnUISdk.instance;
         this._sandboxProxy = await runtime.apiProxy(RuntimeType.documentSandbox);
     }
 
-    private _handleClick() {
-        this._sandboxProxy.createRectangle();
-    }
-    // The render method returns an HTML template that uses the .container class defined in the CSS.
-    render() {
-        // This block is a template literal that returns an HTML template using the Lit html function.A template literal in Lit is enclosed in backticks (`) and can contain placeholders (${expression}) for dynamic values.
-        return html` <sp-theme theme="express" color="light" scale="medium">
-            <div class="container">
-                <sp-button size="m" @click=${this._handleClick}>Create Rectangle</sp-button>
-            </div>
-        </sp-theme>`;
-    }
-}
-```
-
-### App.css.ts
-
-Defines the CSS styles for the `<add-on-app>` component using Lit's `css` tagged template literal.
-
-```typescript
-import { css } from "lit"; // Import the css function from the lit package
-
-// The following block defines the CSS styles for the .container class using the css tagged template literal. The styles are defined within backticks (`) and are passed to the css function to create a CSSResult object. A CSSResult object is a representation of CSS that can be applied to a LitElement component.
-export const style = css`
-    .container {
-        margin: 24px;
-        display: flex;
-        flex-direction: column;
-    }
-`;
-```
-
-### DocumentSandboxApi.ts
-
-Defines the TypeScript interface for the APIs that the [document sandbox runtime](../../references/document-sandbox/index.md) exposes to the UI runtime. Once you define an interface, any object that implements that interface must implement to the contract defined in the interface. The document sandbox runtime implements this interface in the `code.ts` file.
-
-```typescript
-export interface DocumentSandboxApi { //
-    createRectangle(): void;
-}
-```
-
-### code.ts
-
-Contains the implementation of the document sandbox runtime. It defines the `createRectangle` function and exposes it to the UI runtime (ie: the code running in the iframe in the `ui` folder). 
-
-```typescript
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor } from "express-document-sdk";
-import { DocumentSandboxApi } from "../models/DocumentSandboxApi"; // this line imports the DocumentSandboxApi interface from the models folder
-
-const { runtime } = addOnSandboxSdk.instance;
-
-function start(): void {
-    // The following block defines a sandboxApi object that implements the DocumentSandboxApi interface. Since it implements the interface, it must provide an implementation for the createRectangle function.
-    const sandboxApi: DocumentSandboxApi = {
-        createRectangle: () => {
-            const rectangle = editor.createRectangle();
-            rectangle.width = 240;
-            rectangle.height = 180;
-            rectangle.translation = { x: 10, y: 10 };
-            const color = { red: 0.32, green: 0.34, blue: 0.89, alpha: 1 };
-            const rectangleFill = editor.makeColorFill(color);
-            rectangle.fill = rectangleFill;
-            const insertionParent = editor.context.insertionParent;
-            insertionParent.children.append(rectangle);
+    private async _handleAction() {
+        try {
+            await this._sandboxProxy.createShape();
+        } catch (error) {
+            console.error('Sandbox communication error:', error);
         }
-    };
-    const sandboxApi: DocumentSandboxApi = {
-        createRectangle: () => {
-            const rectangle = editor.createRectangle();
-            rectangle.width = 240;
-            rectangle.height = 180;
-            rectangle.translation = { x: 10, y: 10 };
-            const color = { red: 0.32, green: 0.34, blue: 0.89, alpha: 1 };
-            const rectangleFill = editor.makeColorFill(color);
-            rectangle.fill = rectangleFill;
-            const insertionParent = editor.context.insertionParent;
-            insertionParent.children.append(rectangle);
-        }
-    };
-
-    runtime.exposeApi(sandboxApi);
-}
-
-start();
-```
-
-### tsconfig.json
-
-Specifies the TypeScript compiler options for your project. It includes settings like the target ECMAScript version, module format, and output directory.
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "strict": true,
-    "outDir": "./dist"
-  },
-  "include": ["src/**/*"]
+    }
 }
 ```
 
-## Create a new Lit Component
+#### 3. Event Handling with Spectrum Web Components
 
-To create a new component using Lit and TypeScript, follow these steps:
-
-#### Step 1: Create a new TypeScript file in the `src/ui/components` directory.
-
-#### Step 2: Define a new class that extends `LitElement` and implements your component logic.
+When using Spectrum Web Components, handle events with proper TypeScript types:
 
 ```typescript
-import { LitElement, html } from "lit";
-import { customElement, state } from "lit/decorators.js";  // Import the customElement and state decorators from the lit package
-@customElement("my-custom-button") // The customElement decorator defines a custom element my-custom-button
+import { SpectrumEvent } from '@spectrum-web-components/base';
+import '@spectrum-web-components/button/sp-button.js';
 
-// The following code block defines a custom LitElement component MyCustomButton that extends LitElement. The code includes a state property message that holds the text to be displayed and a render method that returns an HTML template. The template includes a button element that triggers the handleClick method when clicked and displays the message property value.
-export class MyCustomButton extends LitElement {
-    @state()
-    private message = "Hello, Lit!";
-    
+@customElement('my-form')
+export class MyForm extends LitElement {
+    private _handleSubmit(e: SpectrumEvent) {
+        e.preventDefault();
+        // Handle form submission
+    }
+
+    private _handleButtonClick(e: MouseEvent) {
+        const button = e.target as HTMLElement;
+        // Handle button click
+    }
+
     render() {
         return html`
-                <sp-button @click="${this.handleClick}">Send</sp-button>
-                <p>${this.message}</p>
+            <form @submit=${this._handleSubmit}>
+                <sp-button @click=${this._handleButtonClick}>
+                    Submit
+                </sp-button>
+            </form>
         `;
     }
-
-    handleClick() {
-        this.message = "Custom Button Clicked!";
-    }
 }
 ```
 
-#### Step 2: Import the Component
+#### 4. State Management Between Components
 
-To use the new component in your application, import it in the `App.ts` file and include it in the render method.
+For larger applications, consider using a state management pattern:
 
 ```typescript
-import { LitElement, html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
-import { MyCustomButton } from "./MyCustomButton"; // Import the MyCustomButton component   
+// Create a shared state interface
+interface SharedState {
+    currentTheme: string;
+    selectedElements: string[];
+}
 
-@customElement("add-on-app")
-// Now you can use the MyCustomButton component in the render method of the App component. For instance in the block below:
-export class App extends LitElement {
-    ...
-    render() {
-        return html` <sp-theme theme="express" color="light" scale="medium">
-            <div class="container">
-                <sp-button size="m" @click=${this._handleClick}>Create Rectangle</sp-button>                
-                <my-custom-button></my-custom-button>
-            </div>
-        </sp-theme>`;
+// Create a simple state manager
+class StateManager {
+    private static instance: StateManager;
+    private state: SharedState = {
+        currentTheme: 'light',
+        selectedElements: []
+    };
+    private listeners: Set<(state: SharedState) => void> = new Set();
+
+    static getInstance(): StateManager {
+        if (!StateManager.instance) {
+            StateManager.instance = new StateManager();
+        }
+        return StateManager.instance;
     }
-    ...
+
+    subscribe(listener: (state: SharedState) => void) {
+        this.listeners.add(listener);
+        listener(this.state);
+        return () => this.listeners.delete(listener);
+    }
+
+    updateState(partial: Partial<SharedState>) {
+        this.state = { ...this.state, ...partial };
+        this.listeners.forEach(listener => listener(this.state));
+    }
+}
+
+// Use in components
+@customElement('theme-switcher')
+export class ThemeSwitcher extends LitElement {
+    private stateManager = StateManager.getInstance();
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.stateManager.subscribe(state => {
+            this.requestUpdate();
+        });
+    }
+
+    private _handleThemeChange(theme: string) {
+        this.stateManager.updateState({ currentTheme: theme });
+    }
 }
 ```
+
+#### 5. Error Handling and Loading States
+
+Implement proper error handling and loading states for asynchronous operations:
+
+```typescript
+@customElement('async-component')
+export class AsyncComponent extends LitElement {
+    @state() private loading = false;
+    @state() private error: Error | null = null;
+
+    async performAction() {
+        this.loading = true;
+        this.error = null;
+
+        try {
+            await this._sandboxProxy.someAsyncOperation();
+        } catch (err) {
+            this.error = err as Error;
+        } finally {
+            this.loading = false;
+        }
+    }
+
+    render() {
+        return html`
+            ${this.loading ? 
+                html`<sp-progress-circle size="m"></sp-progress-circle>` :
+                this.error ?
+                    html`<sp-banner variant="negative">${this.error.message}</sp-banner>` :
+                    html`<sp-button @click=${this.performAction}>Perform Action</sp-button>`
+            }
+        `;
+    }
+}
+```
+
+These communication patterns help create maintainable and scalable Adobe Express add-ons while leveraging the benefits of both Lit and TypeScript for type safety and better developer experience.
+
+## 5. Testing and Debugging
+
+
 
 ## Next Steps
 
 Next, you can explore more advanced features of Lit and TypeScript to enhance your components. Some areas to explore include:
 
-- **Event Handling**: Learn how to handle events in Lit components and communicate between components.
-- **Component Composition**: Explore how to compose multiple components together to create complex UIs.
-- **State Management**: Implement state management solutions like Redux or MobX to manage the state of your components.
-- **Performance Optimization**: Optimize your components for performance by using memoization, lazy loading, and other techniques.
-- **Testing**: Write unit tests for your components using tools like Jest or Mocha to ensure their correctness and reliability.
+- [**Event Handling**](https://lit.dev/docs/v1/components/events/): Learn how to handle events in Lit components and communicate between components.
+- [**Component Composition**](https://lit.dev/docs/composition/component-composition/): Explore how to compose multiple components together to create complex UIs.
+- [**State Management**](https://lit.dev/articles/lit-cheat-sheet/#data-flow-and-state-management): Implement state management solutions like Redux or MobX to manage the state of your components.
+- [**Performance Optimization**](https://lit.dev/docs/components/events/#optimizing-for-performance): Optimize your components for performance by using memoization, lazy loading, and other techniques.
+- [**Testing**](https://lit.dev/docs/tools/testing/): Write unit tests for your components using tools like Jest or Mocha to ensure their correctness and reliability.

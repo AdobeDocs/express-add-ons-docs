@@ -19,7 +19,7 @@ An example of how this works in Visual Studio Code is shown in this short clip b
 
 <InlineAlert slots="text" variant="info"/>
 
-Make sure you check out the [Using Lit & Typescript Guide](./lit-guide.md) for a more detailed explanation of how to use TypeScript with the Add-on SDK.
+Check out the [Using Lit & Typescript Guide](./lit-guide.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
 
 ## Webpack & JavaScript bundler
 
@@ -67,11 +67,25 @@ The CLI supports two different [react-based templates](../getting_started/dev_to
 
 ## Lit Framework
 
-The CLI provides [starter template options](../getting_started/dev_tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
+Build fast, lightweight web components using the Lit framework. Our CLI offers [starter templates](../getting_started/dev_tooling.md#templates) to help you get started:
 
-To learn more about developing with [Lit](https://lit.dev/), be sure to check out the [Using Lit & TypeScript Guide](./using-lit-typescript.md).
+- `swc-javascript`: For building with Lit and JavaScript
+- `swc-typescript`: For building with Lit and TypeScript
+
+Both templates come pre-configured with the necessary setup and dependencies.
+
+For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](./using-lit-typescript.md).
 
 ## Other JavaScript and CSS libraries
 
-You should be able to use any other JavaScript or CSS libraries you might want to include in your add-ons (ie: jQuery, Bootstrap) without any issues. Just make sure you include the necessary scripts and stylesheets in your project, and ensure they are bundled correctly by your chosen bundler.
+You can enhance your add-ons with additional JavaScript and CSS libraries like jQuery or Bootstrap. Follow these steps to integrate them:
 
+1. Add the library's scripts and stylesheets to your project
+2. Configure your bundler to process these files
+3. Import the libraries where needed in your code
+
+<InlineAlert slots="text" variant="info">
+
+Make sure your chosen bundler is properly configured to handle any additional libraries you include.
+
+</InlineAlert>
