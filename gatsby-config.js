@@ -513,64 +513,45 @@ module.exports = {
         description: "Manifest schema",
         path: "references/manifest",
       },
-      {
-        title: "Changelog",
-        path: "references/changelog.md",
-      },
-      {
-        title: "Overview",
-        path: "guides/",
-      },
+      // {
+      //   title: "Changelog",
+      //   path: "references/changelog.md",
+      // },
+      // {
+      //   title: "Overview",
+      //   path: "guides/",
+      // },
       {
         title: "Getting started",
-        path: "guides/getting_started",
+        path: "guides/",
         pages: [
           {
             title: "Overview",
-            path: "guides/getting_started",
+            path: "guides/",
           },
-          {
-            title: "Quickstart",
-            path: "guides/getting_started/quickstart.md",
-          },
-          {
-            title: "Development tools",
-            path: "guides/getting_started/dev_tooling.md",
-          },
+          // {
+          //   title: "Quickstart",
+          //   path: "guides/getting_started/quickstart.md",
+          // },
           {
             title: "Code Playground",
             path: "guides/getting_started/code_playground.md",
           },
           {
-            title: "Tutorials",
-            path: "guides/tutorials/",
+            title: "Hello World",
+            path: "guides/getting_started/hello_world.md",
+          },
+          {
+            title: "Learning Paths",
+            path: "guides/getting_started/beginners.md",
             pages: [
               {
-                title: "Document APIs",
-                path: "guides/tutorials/grids-addon",
+                title: "Beginner Friendly",
+                path: "guides/getting_started/beginners.md",
               },
               {
-                title: "Communication APIs",
-                path: "guides/tutorials/stats-addon",
-              },
-              {
-                title: "Using Adobe Spectrum",
-                path: "guides/tutorials/spectrum-workshop/",
-                pages: [
-                  {
-                    title:
-                      "Basic JavaScript add-on with Spectrum Web Components",
-                    path: "guides/tutorials/spectrum-workshop/part1/",
-                  },
-                  {
-                    title: "React-based add-on with Spectrum Web Components",
-                    path: "guides/tutorials/spectrum-workshop/part2/",
-                  },
-                  {
-                    title: "Tips & Troubleshooting",
-                    path: "guides/tutorials/spectrum-workshop/part3/",
-                  },
-                ],
+                title: "Experienced Developers",
+                path: "guides/getting_started/experienced.md",
               },
             ],
           },
@@ -638,18 +619,32 @@ module.exports = {
       },
       {
         title: "Develop",
-        path: "guides/develop/index.md",
+        path: "guides/getting_started/dev_tooling.md",
         pages: [
           {
-            title: "Overview",
-            path: "guides/develop/",
+            title: "Development tools",
+            path: "guides/getting_started/dev_tooling.md",
+          },
+          {
+            title: "Debug",
+            path: "guides/debug/browser.md",
+            pages: [
+              {
+                title: "Browser debugging",
+                path: "guides/debug/browser.md",
+              },
+              {
+                title: "VS Code debugging",
+                path: "guides/debug/vs-code.md",
+              },
+            ],
           },
           {
             title: "How-to",
             path: "guides/develop/how_to.md",
             pages: [
               {
-                title: "About our How-to guides",
+                title: "About",
                 path: "guides/develop/how_to.md",
               },
               // {
@@ -832,38 +827,59 @@ module.exports = {
             ],
           },
           {
-            title: "Frameworks, Libraries and Bundling",
+            title: "Tutorials",
+            path: "guides/tutorials/",
+            pages: [
+              {
+                title: "Document APIs",
+                path: "guides/tutorials/grids-addon",
+              },
+              {
+                title: "Communication APIs",
+                path: "guides/tutorials/stats-addon",
+              },
+              {
+                title: "Using Adobe Spectrum",
+                path: "guides/tutorials/spectrum-workshop/",
+                pages: [
+                  {
+                    title:
+                      "Basic JavaScript add-on with Spectrum Web Components",
+                    path: "guides/tutorials/spectrum-workshop/part1/",
+                  },
+                  {
+                    title: "React-based add-on with Spectrum Web Components",
+                    path: "guides/tutorials/spectrum-workshop/part2/",
+                  },
+                  {
+                    title: "Tips & Troubleshooting",
+                    path: "guides/tutorials/spectrum-workshop/part3/",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            title: "Advanced Topics",
             path: "guides/develop/frameworks-libraries-bundling.md",
-          },
-          {
-            title: "Performance Tips",
-            path: "guides/develop/performance.md",
-          },
-          {
-            title: "Add-on iframe Context",
-            path: "guides/develop/context.md",
-          },
-          {
-            title: "Cross-origin Isolation Handling",
-            path: "guides/develop/coi.md",
-          },
-        ],
-      },
-      {
-        title: "Debug",
-        path: "guides/debug",
-        pages: [
-          {
-            title: "Overview",
-            path: "guides/debug/",
-          },
-          {
-            title: "Browser debugging",
-            path: "guides/debug/browser.md",
-          },
-          {
-            title: "VS Code debugging",
-            path: "guides/debug/vs-code.md",
+            pages: [
+              {
+                title: "Frameworks, Libraries and Bundling",
+                path: "guides/develop/frameworks-libraries-bundling.md",
+              },
+              {
+                title: "Performance Tips",
+                path: "guides/develop/performance.md",
+              },
+              {
+                title: "Add-on iframe Context",
+                path: "guides/develop/context.md",
+              },
+              {
+                title: "Cross-origin Isolation Handling",
+                path: "guides/develop/coi.md",
+              },
+            ],
           },
         ],
       },
@@ -977,8 +993,24 @@ module.exports = {
         ],
       },
       {
-        title: "FAQs",
+        title: "Troubleshoot",
         path: "guides/faq.md",
+        pages: [
+          {
+            title: "FAQs",
+            path: "guides/faq/",
+          },
+        ],
+      },
+      {
+        title: "What's New",
+        path: "guides/whatsnew.md",
+        // pages: [
+        //   {
+        //     title: "Changelog",
+        //     path: "guides/whatsnew.md",
+        //   },
+        // ],
       },
     ],
   },
