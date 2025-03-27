@@ -66,6 +66,7 @@
 
 -   [AreaTextLayout](interfaces/AreaTextLayout.md)
 -   [AutoHeightTextLayout](interfaces/AutoHeightTextLayout.md)
+-   [BaseParagraphStyles](interfaces/BaseParagraphStyles.md)
 -   [BitmapImage](interfaces/BitmapImage.md)
 -   [CharacterStyles](interfaces/CharacterStyles.md)
 -   [CharacterStylesInput](interfaces/CharacterStylesInput.md)
@@ -79,6 +80,11 @@
 -   [IRectangularNode](interfaces/IRectangularNode.md)
 -   [IStrokableNode](interfaces/IStrokableNode.md)
 -   [ListItem](interfaces/ListItem.md)
+-   [OrderedListStyleInput](interfaces/OrderedListStyleInput.md)
+-   [ParagraphStyles](interfaces/ParagraphStyles.md)
+-   [ParagraphStylesInput](interfaces/ParagraphStylesInput.md)
+-   [ParagraphStylesRange](interfaces/ParagraphStylesRange.md)
+-   [ParagraphStylesRangeInput](interfaces/ParagraphStylesRangeInput.md)
 -   [Point](interfaces/Point.md)
 -   [PointTextLayout](interfaces/PointTextLayout.md)
 -   [Rect](interfaces/Rect.md)
@@ -86,6 +92,7 @@
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
 -   [StyleRange](interfaces/StyleRange.md)
+-   [UnorderedListStyleInput](interfaces/UnorderedListStyleInput.md)
 -   [UnsupportedTextLayout](interfaces/UnsupportedTextLayout.md)
 
 ## Type Aliases
@@ -93,4 +100,18 @@
 -   [EditorEventHandler](type-aliases/EditorEventHandler.md)
 -   [EventHandlerId](type-aliases/EventHandlerId.md)
 -   [Font](type-aliases/Font.md)
+-   [OrderedListStyle](type-aliases/OrderedListStyle.md)
 -   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)
+-   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)
+
+## References
+
+### OrderedListNumbering
+
+Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/OrderedListNumbering.md)
+
+---
+
+### ParagraphListType
+
+Re-exports [ParagraphListType](namespaces/Constants/enumerations/ParagraphListType.md)

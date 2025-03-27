@@ -1,6 +1,6 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/use_cases/user_interaction.md#modal-dialogs), [enable drag and drop](../../guides/develop/use_cases/user_interaction.md#drag-and-drop) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/how_to/modal_dialogs.md), [enable drag and drop](../../guides/develop/how_to/drag_and_drop.md) of content and subscribe and unsubscribe to events.
 
 ## Objects
 
@@ -62,10 +62,10 @@ Subscribe to an event (ie: listen for an event).
 
 #### Parameters
 
-| Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  | -----------------------------|
-| `name`              | `string`                     | Event to subscribe to. | See [Events](#events) |
-| `handler`           | callback `function`          | Handler that gets invoked when the event is triggered. | `(data) => {}` |
+| Name      | Type                | Description                                            | Valid Values          |
+| --------- | ------------------- | ------------------------------------------------------ | --------------------- |
+| `name`    | `string`            | Event to subscribe to.                                 | See [Events](#events) |
+| `handler` | callback `function` | Handler that gets invoked when the event is triggered. | `(data) => {}`        |
 
 #### Return Value
 
@@ -89,10 +89,10 @@ Unsubscribe from an event (ie: stop listening for an event).
 
 #### Parameters
 
-| Name              | Type                       | Description            | Valid Values |
-| -------------     | -------------------------- | ---------------------  |-----------------------------|
-| `name`              | `string`                     | Event to unsubscribe to. | See [Events](#events) |
-| `handler`           | callback `function`          | Handler that was used during event subscription. | `(data) => {}` |
+| Name      | Type                | Description                                      | Valid Values          |
+| --------- | ------------------- | ------------------------------------------------ | --------------------- |
+| `name`    | `string`            | Event to unsubscribe to.                         | See [Events](#events) |
+| `handler` | callback `function` | Handler that was used during event subscription. | `(data) => {}`        |
 
 #### Return Value
 
@@ -122,7 +122,7 @@ Returns a resolved `Promise` with a value of `true` if the user is premium or co
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 addOnUISdk.ready.then(async () => {
   const isPremiumUser = await addOnUISdk.app.startPremiumUpgradeIfFreeUser();
   if (!isPremiumUser) {
@@ -141,42 +141,42 @@ Shows a modal dialog based on specific options passed in.
 
 #### Parameters
 
-| Name              | Type         | Description   |
-| -------------     | -------------| -----------:  |
-| `dialogOptions`   | `object`     | [`DialogOptions`](#dialogoptions) object payload |
+| Name            | Type     |                                      Description |
+| --------------- | -------- | -----------------------------------------------: |
+| `dialogOptions` | `object` | [`DialogOptions`](#dialogoptions) object payload |
 
 ##### `DialogOptions`
 
-| Name              | Type         | Description   |
-| -------------     | -------------:| -----------:  |
-| `variant`         | `string` [Variant](./addonsdk-constants.md) |  The type of dialog to show.
-| `title`           | `string`        | Dialog title  |
-| `description`     | `string`        | Description for the dialog. |
-| `buttonLabels?`   | `object` [ButtonLabels](#buttonlabels) | The optional button labels to use in the dialog. |
+| Name            |                                        Type |                                      Description |
+| --------------- | ------------------------------------------: | -----------------------------------------------: |
+| `variant`       | `string` [Variant](./addonsdk-constants.md) |                      The type of dialog to show. |
+| `title`         |                                    `string` |                                     Dialog title |
+| `description`   |                                    `string` |                      Description for the dialog. |
+| `buttonLabels?` |      `object` [ButtonLabels](#buttonlabels) | The optional button labels to use in the dialog. |
 
 ##### `ButtonLabels`
 
-| Name              | Type         | Description   |
-| -------------     | -------------:| -----------:  |
-| `primary?`        | `string`       | Primary action label. Default label is "OK". |
-| `secondary?`      | `string`       | Secondary action label. |
-| `cancel?`         | `string`       | Cancel action label.    |
+| Name         |     Type |                                  Description |
+| ------------ | -------: | -------------------------------------------: |
+| `primary?`   | `string` | Primary action label. Default label is "OK". |
+| `secondary?` | `string` |                      Secondary action label. |
+| `cancel?`    | `string` |                         Cancel action label. |
 
 The input dialog variant accepts an [additional `field`](#input-dialog-additional-option) object.
 
 ##### Input Dialog Additional Option
 
-| Name              | Type           | Description   |
-| -------------     | -------------: | -----------:  |
-| `field`           | object [`Field`](#field) | Input field object |
+| Name    |                     Type |        Description |
+| ------- | -----------------------: | -----------------: |
+| `field` | object [`Field`](#field) | Input field object |
 
 ##### `Field`
 
-| Name              | Type           | Description   |
-| -------------     | -------------: | -----------:  |
-| `label`           | `string`       | Label for the input field |
-| `placeholder`     | `string`       | Specifies a short hint that describes the expected value of the field |
-| `fieldType`       | `string`        | Currently always the value "text".
+| Name          |     Type |                                                           Description |
+| ------------- | -------: | --------------------------------------------------------------------: |
+| `label`       | `string` |                                             Label for the input field |
+| `placeholder` | `string` | Specifies a short hint that describes the expected value of the field |
+| `fieldType`   | `string` |                                    Currently always the value "text". |
 
 #### Return Value
 
@@ -184,33 +184,34 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 
 #### `DialogResult`
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `buttonType`  |  `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant     | The button type clicked |
-| `fieldValue`  | `string`      | The input from the user. |
+| Name         | Type                                                                |              Description |
+| ------------ | ------------------------------------------------------------------- | -----------------------: |
+| `buttonType` | `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant |  The button type clicked |
+| `fieldValue` | `string`                                                            | The input from the user. |
 
 #### Confirmation Dialog Example Usage
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
 
 async function showConfirmDialog() {
-    try {
-        // Confirmation Dialog Example
-        let dialogOptions = {
-            variant: "confirmation",
-            title: "Enable smart Filters",
-            description: "Smart filters are nondestructive and will preserve your original images.",
-            buttonLabels: { primary: "Enable", cancel: "Cancel" },
-        };    
-        const result = await addOnUISdk.app.showModalDialog(dialogOptions);
-        console.log("Button type clicked " + result.buttonType); 
-    } catch (error) {
-        console.log("Error showing modal dialog:", error);
-    }
+  try {
+    // Confirmation Dialog Example
+    let dialogOptions = {
+      variant: "confirmation",
+      title: "Enable smart Filters",
+      description:
+        "Smart filters are nondestructive and will preserve your original images.",
+      buttonLabels: { primary: "Enable", cancel: "Cancel" },
+    };
+    const result = await addOnUISdk.app.showModalDialog(dialogOptions);
+    console.log("Button type clicked " + result.buttonType);
+  } catch (error) {
+    console.log("Error showing modal dialog:", error);
+  }
 }
 ```
 
@@ -218,46 +219,131 @@ async function showConfirmDialog() {
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
 
 async function showInputDialog() {
-    try {
-        // Input Dialog Example
-        let inputDialogOptions = {
-            variant: "input",
-            title: "Please enter your key",
-            description: "Your API key",
-            buttonLabels: { cancel: "Cancel" },      
-            field: {
-                label: "API Key",
-                placeholder: "Enter API key",    
-                fieldType: "text",
-            },
-        }
+  try {
+    // Input Dialog Example
+    let inputDialogOptions = {
+      variant: "input",
+      title: "Please enter your key",
+      description: "Your API key",
+      buttonLabels: { cancel: "Cancel" },
+      field: {
+        label: "API Key",
+        placeholder: "Enter API key",
+        fieldType: "text",
+      },
+    };
 
-        const inputDialogResult = await addOnUISdk.app.showModalDialog(inputDialogOptions);
-        if (inputDialogResult.buttonType === "primary") {
-            console.log("Field value " + inputDialogResult.fieldValue); // returns the input the user entered if they didn't cancel
-        }
-    } catch (error) {
-        console.log("Error showing modal dialog:", error);
+    const inputDialogResult = await addOnUISdk.app.showModalDialog(
+      inputDialogOptions
+    );
+    if (inputDialogResult.buttonType === "primary") {
+      console.log("Field value " + inputDialogResult.fieldValue); // returns the input the user entered if they didn't cancel
     }
+  } catch (error) {
+    console.log("Error showing modal dialog:", error);
+  }
 }
 ```
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/develop/use_cases/user_interaction.md#custom-dialog-example).
+See the use case implementations for an example of the [custom modal dialog](../../guides/develop/how_to/modal_dialogs.md#custom-dialog).
+
+### showColorPicker()
+
+Shows the Adobe Express color picker based on specific options passed in.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`showColorPicker(anchorElement: HTMLElement, options?: ColorPickerOptions): Promise<void>;`
+
+#### Parameters
+
+| Name            | Type                 |                                       Description |
+| --------------- | -------------------- | ------------------------------------------------: |
+| `anchorElement` | `HTMLElement`        |        The element to anchor the color picker to. |
+| `options`       | `ColorPickerOptions` | The optional options to pass to the color picker. |
+
+##### `ColorPickerOptions`
+
+| Name                     |                                                               Type |                                                                                                                                                                                                                                                                      Description |
+| ------------------------ | -----------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `title?`                 |                                                           `string` |                                                                                                                                                                                                                     Label header/title for the color picker. Default value: `""` |
+| `initialColor?`          |                                                           `number` | Default/starting color when you open the color picker for the first time on a `anchorElement`. When you have already changed the color with this picker, then the next time you open the picker, the last selected color will be the starting color. Default: `0xFFFFFF` (white) |
+| `placement?`             | `object` [ColorPickerPlacement](./addonsdk-constants.md#constants) |                                                                                                                                                                                                 Placement of the popover with respect to the anchor element (default: `"left"`). |
+| `eyedropperHidesPicker?` |                                                          `boolean` |                                                                                                                Closes the color picker popover while using the EyeDropper. After the color is selected via the EyeDropper, the color picker popup opens again. Default: `false`. |
+| `disableAlphaChannel?`   |                                                          `boolean` |                                                                                                                                                                                  Disables the transparency slider in the "custom" section of the color picker. Default: `false`. |
+
+#### Return Value
+
+Returns a void `Promise`.
+
+#### Example Usage
+
+```js
+const colorPickerButton = document.getElementById("color-picker-button");
+
+colorPickerButton.addEventListener("click", () => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    title: "Add-on's Color Picker",
+    placement: ColorPickerPlacement.left,
+    eyedropperHidesPicker: true,
+    disableAlphaChannel: false,
+  });
+});
+
+colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  console.log("Color change event received!", event.detail.color;);
+});
+```
+
+### hideColorPicker()
+
+Hides the Adobe Express color picker.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`hideColorPicker(): Promise<void>;`
+
+#### Return Value
+
+Returns a void `Promise`.
+
+#### Example Usage
+
+```js
+const colorPickerButton = document.getElementById("color-picker-button");
+
+colorPickerButton.addEventListener("click", () => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    title: "Add-on's Color Picker",
+    placement: ColorPickerPlacement.left,
+    eyedropperHidesPicker: true,
+    disableAlphaChannel: false,
+  });
+  setTimeout(() => {
+    console.log("Hiding Color Picker after 10 seconds...");
+    addOnUISdk.app.hideColorPicker();
+  }, 10000);
+});
+```
 
 ### registerIframe()
 
 Allows an iframe hosted within an add-on to register its intent to communicate with the add-on SDK. While iframes can be used for embedding media without SDK interaction, `registerIframe()` is needed for those requiring SDK capabilities. It marks a transition to a more controlled approach, where add-ons must explicitly opt-in to this level of integration.
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -265,9 +351,9 @@ Allows an iframe hosted within an add-on to register its intent to communicate w
 
 #### Parameters
 
-| Name              | Type                                 | Description   |
-| -------------     | -------------------------------------| -----------:  |
-| `element`           | `HTMLIFrameElement`                             | The iframe to register. |
+| Name      | Type                |             Description |
+| --------- | ------------------- | ----------------------: |
+| `element` | `HTMLIFrameElement` | The iframe to register. |
 
 #### Return Value
 
@@ -285,17 +371,16 @@ type UnregisterIframe = () => void;
 
 ```ts
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
- 
+
 function RegisterIframe(elementId: string) {
   const iframe = document.getElementById(elementId);
   try {
     unregisterIframe = addOnUISdk.app.registerIframe(iframe);
-  }
-  catch(error) {
+  } catch (error) {
     console.log("Failed to register iframe with the SDK:", error);
   }
 }
- 
+
 addOnUISdk.ready.then(() => {
   let unregisterIframe: UnregisterIframe = RegisterIframe("iframe1");
   // ...
@@ -320,17 +405,17 @@ Allows for drag and document functionality to be enabled on an element such as a
 
 #### Parameters
 
-| Name              | Type                                 | Description   |
-| -------------     | -------------------------------------| -----------:  |
-| `element`           | `HTMLElement`                             | The element to enable for drag and drop. |
-| `dragCallbacks`     | [dragCallbacks](#dragcallbacks)    | An object containing a preview and completion callback  |
+| Name            | Type                            |                                            Description |
+| --------------- | ------------------------------- | -----------------------------------------------------: |
+| `element`       | `HTMLElement`                   |               The element to enable for drag and drop. |
+| `dragCallbacks` | [dragCallbacks](#dragcallbacks) | An object containing a preview and completion callback |
 
 ##### `dragCallbacks`
 
-| Name              | Type                   | Description   |
-| ------------------| -----------------------| -----------:  |
-| `previewCallback` | [`DragPreviewCallback`](#dragpreviewcallback-type-definition)  | Callback to provide the preview image |
-| `completionCallback` | [`DragCompletionCallback`](#dragcompletioncallback-type-definition)  | Callback to provide the content to be added to the document |
+| Name                 | Type                                                                |                                                 Description |
+| -------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------: |
+| `previewCallback`    | [`DragPreviewCallback`](#dragpreviewcallback-type-definition)       |                       Callback to provide the preview image |
+| `completionCallback` | [`DragCompletionCallback`](#dragcompletioncallback-type-definition) | Callback to provide the content to be added to the document |
 
 ##### `DragPreviewCallback` Type Definition
 
@@ -345,25 +430,27 @@ type DragPreviewCallback = (element: HTMLElement) => URL;
 Callback to provide the content (image/gif/video/audio) to be added to the document post drag & drop action. Returns [DragCompletionData](#dragcompletiondata) array.
 
 ```ts
-type DragCompletionCallback = (element: HTMLElement) => Promise<DragCompletionData[]>;
+type DragCompletionCallback = (
+  element: HTMLElement
+) => Promise<DragCompletionData[]>;
 ```
 
 ##### `DragCompletionData`
 
 Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks), and contains the `blob` object to be added, as well as a [`MediaAttributes`](#mediaattributes) object with the `title` of the audio content (for audio only).
 
-| Name              | Type    | Description   |
-| ------------------| --------| -----------:  |
-| `blob`            | `Blob`  | Blob (image/video/audio) to be added to the document |
-| `attributes?`  | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
+| Name          | Type                                  |                                                                             Description |
+| ------------- | ------------------------------------- | --------------------------------------------------------------------------------------: |
+| `blob`        | `Blob`                                |                                    Blob (image/video/audio) to be added to the document |
+| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
 #### `MediaAttributes`
 
-*Required for audio content only.*
+_Required for audio content only._
 
-| Name          | Type         | Description   |
-| ------------- | -------------| -----------:  |
-| `title`       | `string`     | Media title (mandatory for audio import). |
+| Name    | Type     |                               Description |
+| ------- | -------- | ----------------------------------------: |
+| `title` | `string` | Media title (mandatory for audio import). |
 
 #### Return Value
 
@@ -383,19 +470,19 @@ The payload data sent to the `dragStart` event handler.
 
 ###### Properties
 
-| Name              | Type    | Description   |
-| ------------------| --------| -----------:  |
-| `element`         | `HTMLElement`  | Element for which the drag event started |
+| Name      | Type          |                              Description |
+| --------- | ------------- | ---------------------------------------: |
+| `element` | `HTMLElement` | Element for which the drag event started |
 
 ##### `DragEndEventData`
 
 The payload data sent to the App `dragEnd` event handler.
 
-| Name              | Type    | Description   |
-| ------------------| --------| -----------:  |
-| `element`         | `HTMLElement` | Element for which the drag event ended    |
-| `dropCancelled`   | `boolean`     | If drop occurred/drag ended at invalid position     |
-| `dropCancelReason?`| `string`     | Reason for drop cancellation |
+| Name                | Type          |                                     Description |
+| ------------------- | ------------- | ----------------------------------------------: |
+| `element`           | `HTMLElement` |          Element for which the drag event ended |
+| `dropCancelled`     | `boolean`     | If drop occurred/drag ended at invalid position |
+| `dropCancelReason?` | `string`      |                    Reason for drop cancellation |
 
 **\* Important Event Handling Notes**<br/>
 
@@ -405,7 +492,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/develop/use_cases/user_interaction.md#drag-and-drop) for example usage, and the [code samples](/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/develop/how_to/drag_and_drop.md) for example usage, and the [code samples](/samples.md) provided for reference.
 
 ## Events
 
@@ -472,21 +559,21 @@ The table below describes the possible error messages that may occur when using 
 
 <br/>
 
-| Error Message                     |   Error Scenario                 |
-|-------------------------------:|-------------------------------------------------:|
-| Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. |
-| Incorrect return type: `PreviewCallback` must return an object of type `URL` | `previewCallback` function doesn't return URL. |
-| Incorrect return type: `CompletionCallback` should return an array of `DragCompletionData` | `completionCallback` doesn't return `DragCompletionData[]`. |
-| Dialog already open with instanceID: `${this._instanceId}` | Dialog is already open. |
-| Dialog options parameter: title is undefined | Title is undefined. |
-| Dialog options parameter: description is undefined | Description is undefined. |
-| Dialog options parameter: variant is undefined | Variant is undefined. |
-| Invalid dialog variant: `${variant}` | Invalid dialog variant. |
-| Input dialog field is undefined | Text field property is undefined for input variant. |
-| Field property is valid only for input dialog  | If text field property is present for variant other than input. |
-| Input dialog field label is undefined  | Field label is undefined for input dialog variant. |
-| Invalid dialog field type: `${field.fieldType}`| Field type is invalid for input dialog variant. |
-| Dialog already open with instanceID:`${this._instanceId}` | If the dialog is already open. |
-| Dialog options parameter: title is undefined | Title is undefined. |
-| Dialog options parameter: src is undefined | Source is undefined. |
-| Invalid dialog variant: `${variant}` | Invalid dialog variant. |
+|                                                                              Error Message |                                                                Error Scenario |
+| -----------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------: |
+|                                         Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. |
+|               Incorrect return type: `PreviewCallback` must return an object of type `URL` |                                `previewCallback` function doesn't return URL. |
+| Incorrect return type: `CompletionCallback` should return an array of `DragCompletionData` |                   `completionCallback` doesn't return `DragCompletionData[]`. |
+|                                 Dialog already open with instanceID: `${this._instanceId}` |                                                       Dialog is already open. |
+|                                               Dialog options parameter: title is undefined |                                                           Title is undefined. |
+|                                         Dialog options parameter: description is undefined |                                                     Description is undefined. |
+|                                             Dialog options parameter: variant is undefined |                                                         Variant is undefined. |
+|                                                       Invalid dialog variant: `${variant}` |                                                       Invalid dialog variant. |
+|                                                            Input dialog field is undefined |                           Text field property is undefined for input variant. |
+|                                              Field property is valid only for input dialog |               If text field property is present for variant other than input. |
+|                                                      Input dialog field label is undefined |                            Field label is undefined for input dialog variant. |
+|                                            Invalid dialog field type: `${field.fieldType}` |                               Field type is invalid for input dialog variant. |
+|                                  Dialog already open with instanceID:`${this._instanceId}` |                                                If the dialog is already open. |
+|                                               Dialog options parameter: title is undefined |                                                           Title is undefined. |
+|                                                 Dialog options parameter: src is undefined |                                                          Source is undefined. |
+|                                                       Invalid dialog variant: `${variant}` |                                                       Invalid dialog variant. |

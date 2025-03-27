@@ -289,6 +289,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md",
                   },
                   {
+                    title: "BaseParagraphStyles",
+                    path: "references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md",
+                  },
+                  {
                     title: "BitmapImage",
                     path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
                   },
@@ -345,6 +349,26 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/ListItem.md",
                   },
                   {
+                    title: "OrderedListStyleInput",
+                    path: "references/document-sandbox/document-apis/interfaces/OrderedListStyleInput.md",
+                  },
+                  {
+                    title: "ParagraphStyles",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStyles.md",
+                  },
+                  {
+                    title: "ParagraphStylesInput",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md",
+                  },
+                  {
+                    title: "ParagraphStylesRange",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md",
+                  },
+                  {
+                    title: "ParagraphStylesRangeInput",
+                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput.md",
+                  },
+                  {
                     title: "Point",
                     path: "references/document-sandbox/document-apis/interfaces/Point.md",
                   },
@@ -367,6 +391,10 @@ module.exports = {
                   {
                     title: "StyleRange",
                     path: "references/document-sandbox/document-apis/interfaces/StyleRange.md",
+                  },
+                  {
+                    title: "UnorderedListStyleInput",
+                    path: "references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md",
                   },
                   {
                     title: "UnsupportedTextLayout",
@@ -397,6 +425,14 @@ module.exports = {
                   {
                     title: "FillType",
                     path: "references/document-sandbox/document-apis/enumerations/FillType.md",
+                  },
+                  {
+                    title: "OrderedListNumbering",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md",
+                  },
+                  {
+                    title: "ParagraphListType",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md",
                   },
                   {
                     title: "SceneNodeType",
@@ -441,8 +477,16 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/type-aliases/Font.md",
                   },
                   {
+                    title: "OrderedListStyle",
+                    path: "references/document-sandbox/document-apis/type-aliases/OrderedListStyle.md",
+                  },
+                  {
                     title: "SolidColorStrokeWithOptionalType",
                     path: "references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md",
+                  },
+                  {
+                    title: "UnorderedListStyle",
+                    path: "references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md",
                   },
                 ],
               },
@@ -451,6 +495,16 @@ module.exports = {
                 path: "references/document-sandbox/document-apis/concepts/index.md",
               },
             ],
+          },
+        ],
+      },
+      {
+        title: "Built-in UI Components",
+        path: "references/ui-components/color-picker.md",
+        pages: [
+          {
+            title: "Color Picker",
+            path: "references/ui-components/color-picker.md",
           },
         ],
       },
@@ -591,37 +645,190 @@ module.exports = {
             path: "guides/develop/",
           },
           {
-            title: "Common Use Cases",
-            path: "guides/develop/use_cases.md",
+            title: "How-to",
+            path: "guides/develop/how_to.md",
             pages: [
               {
-                title: "Content Management",
-                path: "guides/develop/use_cases/content_management.md",
+                title: "About our How-to guides",
+                path: "guides/develop/how_to.md",
+              },
+              // {
+              //   title: "Add-on Development",
+              //   path: "guides/develop/how_to/debugging.md",
+              //   pages: [
+              //     {
+              //       title: "Debugging",
+              //       path: "guides/develop/how_to/debugging.md",
+              //     },
+              //     {
+              //       title: "Use Imports and Constants",
+              //       path: "guides/develop/how_to/imports_and_constants.md",
+              //     },
+              //     {
+              //       title: "Listen to Events",
+              //       path: "guides/develop/how_to/listen_to_events.md",
+              //     },
+              //     {
+              //       title: "Add-on UI and Document API communication",
+              //       path: "guides/develop/how_to/ui_document_api_communication.md",
+              //     },
+              //   ],
+              // },
+              {
+                title: "Authentication & Authorization",
+                path: "guides/develop/how_to/oauth2.md",
+                pages: [
+                  {
+                    title: "Use OAuth 2.0",
+                    path: "guides/develop/how_to/oauth2.md",
+                  },
+                ],
               },
               {
-                title: "Authentication and Authorization",
-                path: "guides/develop/use_cases/authentication_authorization.md",
+                title: "Data & Environment",
+                path: "guides/develop/how_to/local_data_management.md",
+                pages: [
+                  {
+                    title: "Store Data",
+                    path: "guides/develop/how_to/local_data_management.md",
+                  },
+                  {
+                    title: "Theme & Locale",
+                    path: "guides/develop/how_to/theme_locale.md",
+                  },
+                ],
               },
               {
-                title: "Client-side Data",
-                path: "guides/develop/use_cases/clientside_data.md",
+                title: "UI & Interaction",
+                path: "guides/develop/how_to/drag_and_drop.md",
+                pages: [
+                  {
+                    title: "Use Drag & Drop",
+                    path: "guides/develop/how_to/drag_and_drop.md",
+                  },
+                  {
+                    title: "Use Modal Dialogs",
+                    path: "guides/develop/how_to/modal_dialogs.md",
+                  },
+                ],
               },
               {
-                title: "User Interaction",
-                path: "guides/develop/use_cases/user_interaction.md",
+                title: "Use Design Elements",
+                path: "guides/develop/how_to/use_text.md", // change this!!
+                pages: [
+                  {
+                    title: "Use Text",
+                    path: "guides/develop/how_to/use_text.md",
+                  },
+                  {
+                    title: "Use Geometry",
+                    path: "guides/develop/how_to/use_geometry.md",
+                  },
+                  {
+                    title: "Use Color",
+                    path: "guides/develop/how_to/use_color.md",
+                  },
+                  {
+                    title: "Use Images",
+                    path: "guides/develop/how_to/use_images.md",
+                  },
+                  {
+                    title: "Use Videos",
+                    path: "guides/develop/how_to/use_videos.md",
+                  },
+                  {
+                    title: "Use Audio",
+                    path: "guides/develop/how_to/use_audio.md",
+                  },
+                  {
+                    title: "Use PDF and PowerPoint",
+                    path: "guides/develop/how_to/use_pdf_powerpoint.md",
+                  },
+                  {
+                    title: "Group Elements",
+                    path: "guides/develop/how_to/group_elements.md",
+                  },
+                  {
+                    title: "Position Elements",
+                    path: "guides/develop/how_to/position_elements.md",
+                  },
+                ],
               },
               {
-                title: "Environment Settings",
-                path: "guides/develop/use_cases/environment_settings.md",
+                title: "Use Metadata",
+                path: "guides/develop/how_to/document_metadata.md",
+                pages: [
+                  // {
+                  //   title: "Authoring Adobe Express Content",
+                  //   path: "guides/develop/how_to/authoring_adobe_express_content.md",
+                  // },
+                  {
+                    title: "Document",
+                    path: "guides/develop/how_to/document_metadata.md",
+                  },
+                  {
+                    title: "Page",
+                    path: "guides/develop/how_to/page_metadata.md",
+                  },
+                  {
+                    title: "Element",
+                    path: "guides/develop/how_to/element_metadata.md",
+                  },
+                ],
               },
               {
-                title: "Monetization Flows",
-                path: "guides/develop/use_cases/monetization_flows.md",
+                title: "Exporting & Output",
+                path: "guides/develop/how_to/create_renditions.md",
+                pages: [
+                  {
+                    title: "Create Renditions",
+                    path: "guides/develop/how_to/create_renditions.md",
+                  },
+                  {
+                    title: "Manage Premium Content",
+                    path: "guides/develop/how_to/premium_content.md",
+                  },
+                ],
               },
               {
-                title: "Content Authoring and Metadata",
-                path: "guides/develop/use_cases/content_authoring.md",
+                title: "User Info",
+                path: "guides/develop/how_to/user_info.md",
+                pages: [
+                  {
+                    title: "Identify users",
+                    path: "guides/develop/how_to/user_info.md",
+                  },
+                ],
               },
+              // ------------------------------------------------------------------
+              // {
+              //   title: "Content Management",
+              //   path: "guides/develop/use_cases/content_management.md",
+              // },
+              // {
+              //   title: "Authentication and Authorization",
+              //   path: "guides/develop/use_cases/authentication_authorization.md",
+              // },
+              // {
+              //   title: "Client-side Data",
+              //   path: "guides/develop/use_cases/clientside_data.md",
+              // },
+              // {
+              //   title: "User Interaction",
+              //   path: "guides/develop/use_cases/user_interaction.md",
+              // },
+              // {
+              //   title: "Environment Settings",
+              //   path: "guides/develop/use_cases/environment_settings.md",
+              // },
+              // {
+              //   title: "Monetization Flows",
+              //   path: "guides/develop/use_cases/monetization_flows.md",
+              // },
+              // {
+              //   title: "Content Authoring and Metadata",
+              //   path: "guides/develop/use_cases/content_authoring.md",
+              // },
             ],
           },
           {

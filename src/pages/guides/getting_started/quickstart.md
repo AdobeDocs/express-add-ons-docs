@@ -49,7 +49,7 @@ The **[Adobe Express add-on CLI](dev_tooling.md#using-the-cli) (Command Line Int
 Open your terminal and run the following command:
 
 ```bash
-npx @adobe/create-ccweb-add-on hello-world --template javascript-with-document-sandbox     
+npx @adobe/create-ccweb-add-on hello-world --template javascript-with-document-sandbox
 ```
 
 This command will create a new add-on based on pure JavaScript with Document Sandbox support (the set of APIs that allow you to interact with Adobe Express documents).
@@ -71,13 +71,13 @@ Please run this command to clear the `npx` cache and ensure the latest version o
 
 ```bash
 npx clear-npx-cache
-npx @adobe/create-ccweb-add-on hello-world 
+npx @adobe/create-ccweb-add-on hello-world
 ```
 
 The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
 
 ```bash
-npx @adobe/ccweb-add-on-scripts start --help  
+npx @adobe/ccweb-add-on-scripts start --help
 ```
 
 ## Step 2: Build and start your add-on
@@ -134,9 +134,9 @@ For simplicity's sake, this Quickstart guide covers the document creation method
 
 - Once clicked, a modal will appear where you will provide the URL of your locally hosted add-on.
 
-   **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
+  **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
 
-   Select the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
+  Select the _I understand the risks of loading an add-on from an external server_ checkbox and press the **Connect** button.
 
 ![Add-on connect modal](./img/connect-modal-v2.png)
 
@@ -170,7 +170,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 **Manifest updates**<br/>
 
-Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
+Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
 
 ![manifest update](./img/manifest-update-v2.png)
 

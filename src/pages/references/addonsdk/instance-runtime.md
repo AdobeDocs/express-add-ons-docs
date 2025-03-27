@@ -10,7 +10,7 @@ The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint cr
 
 ### [`Dialog`](../addonsdk/runtime-dialog.md)
 
-(Optional) When the `RuntimeType` is `"dialog"`, this object will contain the reference to the [modal dialog](runtime-dialog.md) the add-on invoked, and can be used to programmatically close the dialog and send results back to the caller. Will be `undefined` when no modal dialog is present. Check out the [modal dialogs use case examples](../../guides/develop/use_cases/user_interaction.md#modal-dialogs) for more details on using dialogs, as well as the related [`showModalDialog` method](../addonsdk/addonsdk-app.md#showmodaldialog).
+(Optional) When the `RuntimeType` is `"dialog"`, this object will contain the reference to the [modal dialog](runtime-dialog.md) the add-on invoked, and can be used to programmatically close the dialog and send results back to the caller. Will be `undefined` when no modal dialog is present. Check out the [modal dialogs use case examples](../../guides/develop/how_to/modal_dialogs.md) for more details on using dialogs, as well as the related [`showModalDialog` method](../addonsdk/addonsdk-app.md#showmodaldialog).
 
 ## Methods
 
@@ -26,9 +26,9 @@ Use this method to expose an API from your UI code running in the iframe to anot
 
 #### Parameters
 
-| Name      | Type        | Description   |
-| ----------| ------------| -----------:  |
-| `obj`     | `object`    | The concrete object/class instance to expose to other runtimes. This method call is allowed only once. Subsequent calls are ignored. **Note**: you cannot expose entire classes from one runtime and create an instance of that class in another. |
+| Name  | Type     |                                                                                                                                                                                                                                       Description |
+| ----- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `obj` | `object` | The concrete object/class instance to expose to other runtimes. This method call is allowed only once. Subsequent calls are ignored. **Note**: you cannot expose entire classes from one runtime and create an instance of that class in another. |
 
 ### apiProxy()
 
@@ -40,8 +40,8 @@ Requests a promise-based proxy object from another runtime to be used to call th
 
 #### Parameters
 
-| Name          | Type        | Description   |
-| --------------| ------------| -----------:  |
+| Name          | Type          |                                                                                                                                                                                                                                                    Description |
+| ------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | `runtimeType` | `RuntimeType` | The runtime type to create the proxy object from (ie: "documentSandbox" for instance, which maps to the code referenced in the [`documentSandbox` entryPoint](../document-sandbox/index.md#document-sandbox-entry-point) in your add-on's `manifest.js` file). |
 
 #### Return
@@ -54,19 +54,18 @@ A promise which resolves to an API proxy object exposed by the desired runtime a
 
 ```js
 addOnUISdk.ready.then(async () => {
-    console.log("addOnUISdk is ready for use.");
-    const { runtime } = addOnUISdk.instance;
+  console.log("addOnUISdk is ready for use.");
+  const { runtime } = addOnUISdk.instance;
 
-    let createShapesButton = document.getElementById("createShapesButton");
-    createShapesButton.addEventListener("click", async (e) => {
-        const sandboxProxy = await runtime.apiProxy("documentSandbox");
-        try {
-            let result = await sandboxProxy.createShapes();
-            console.log(result);
-        } catch (exc) {
-            console.error(exc.message, exc.stack);
-        }
-        
-    });
+  let createShapesButton = document.getElementById("createShapesButton");
+  createShapesButton.addEventListener("click", async (e) => {
+    const sandboxProxy = await runtime.apiProxy("documentSandbox");
+    try {
+      let result = await sandboxProxy.createShapes();
+      console.log(result);
+    } catch (exc) {
+      console.error(exc.message, exc.stack);
+    }
+  });
 });
 ```

@@ -17,9 +17,123 @@ description: Contains a running log of changes to the add-on documentation, SDK,
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
+  - https://github.com/nimithajalal
 ---
 
 # Changelog
+
+## 2025-03-25
+
+### Updated
+
+The CLI has been updated with the following package versions:
+
+- `@adobe/ccweb-add-on-manifest`: 3.0.0
+- `@adobe/create-ccweb-add-on`: 3.0.0
+- `@adobe/ccweb-add-on-scaffolder`: 3.0.0
+- `@adobe/ccweb-add-on-analytics`: 3.0.0
+- `@adobe/ccweb-add-on-core`: 3.0.0
+- `@adobe/ccweb-add-on-scripts`: 3.0.0
+- `@adobe/ccweb-add-on-ssl`: 3.0.0
+- `@adobe/ccweb-add-on-sdk-types`: 1.14.0
+
+**IMPORTANT:** As a result of the above, please be aware of the following:
+
+1. Node-related tooling requirements are now:
+
+- Minimum `node` version: 18
+- Minimum `npm` version: 10
+
+2. SSL Certificates:
+
+SSL for hosting add-ons is now managed from the following locations:
+
+- Mac: `/Users/[user]/Library/Application Support/Adobe/CCWebAddOn/devcert`
+- Windows: `C:\Users\Administrator\AppData\Local\Adobe\CCWebAddOn\devcert`
+
+After updating `@adobe/ccweb-add-on-scripts` to `3.0.0`, developers will be asked to re-create their SSL certificate.
+
+For a new add-on created using `npx @adobe/create-ccweb-add-on@3.0.0`, a new SSL certificate will be set up one-time.
+
+For removing expired SSL certificate or certificate authority, developers can now run: `npx @adobe/ccweb-add-on-ssl purge`, and re-create them using `npx @adobe/ccweb-add-on-ssl setup --hostname localhost`
+
+3. Spectrum Web Components
+
+- The version of `@swc-react` components in the templates based on React has been updated to `1.0.3`.
+- The version of `@spectrum-web-components` components in the templates based on SWC has been updated to `1.1.2`.
+- The theme usage has been updated to use the `system` attribute instead of `theme`, ie:
+
+  - SWC: `<sp-theme system="express" color="light"  scale="medium">`
+  - React: `<Theme system="express" scale="medium" color="light">`
+
+## 2025-03-21
+
+### Added
+
+- A native Color Picker is available to add-ons via the [`showColorPicker()`](../references/addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](../references/addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
+- We've updated the [Use Color](../guides/develop/how_to/use_color.md) How-to guide, now including a few examples on the Color Picker.
+- A [new section](../references/ui-components/color-picker.md) has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.
+- A new version of the `@adobe/ccweb-add-on-sdk-types` package (v1.14.0) has been released for the CLI. Run `npm update` from the root of your add-on project to update to get the latest typings.
+
+## 2025-03-07
+
+### Added
+
+- A new [How-to](../guides/develop/how_to.md) section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.
+
+## 2025-03-06
+
+### Added
+
+- An [FAQ item](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) was added for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The [FAQ](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) provides a workaround for this issue.
+
+- The following new properties have been added to the AddOnSdk [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata) API:
+
+  - [`isBlank`](../references/addonsdk/app-document.md#pagemetadata): Allows you to check if a page is blank.
+  - [`templateDetails`](../references/addonsdk/app-document.md#pagemetadata): Retrieves details about the template used to create the document.
+
+- A new [`runPrintQualityCheck`](../references/addonsdk/app-document.md#runprintqualitycheck) method has been added to the AddOnSdk [`App.Document`](../references/addonsdk/app-document.md) API, which allows you to run a print quality check on the document to ensure that it meets print quality standards.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`runPrintQualityCheck()`](../references/addonsdk/app-document.md#runprintqualitycheck) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+## 2025-03-04
+
+### Changed
+
+- Stabilized the following HLAPI's:
+  - The [TextNode](../references/document-sandbox/document-apis/classes/TextNode.md) API's.
+  - The [fromPostscriptName()](./document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](../references/document-sandbox/document-apis/classes/Fonts.md) class.
+  - The [TextContentModel](./document-sandbox/document-apis/classes/TextContentModel.md) APIs like [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges). The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
+## 2025-03-03
+
+### Changed
+
+- The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](../references/document-sandbox/document-apis/classes/AddOnData.md) class for details. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
+- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](../references/document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+
+## 2025-02-26
+
+### Added
+
+**New Feature: [Add-on Icon Auto-Resizing Support](../guides/distribute/public-dist.md#step-4-enter-listing-details)**
+
+- Icon Size Requirement: The uploaded icon must be 144 px.
+- Auto-Resizing: Once uploaded, the icon will be automatically resized to:
+  - Minimized Add-on Module Icon: 36 px
+  - Panel Header Icon: 64 px
+  - Launchpad Icon: 144 px
+
+**API `paragraphStyleRanges`**
+
+Added new [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
+
+### Changed
+
+Stabilized [`registerIframe()`](../references/addonsdk/addonsdk-app.md#registeriframe) and [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) APIs. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to utilize these APIs.
 
 ## 2025-02-17
 
@@ -109,7 +223,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - Adds a new [`importPdf()`](./addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
 - Adds a new [`importPresentation()`](./addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
 - Adds notes about specific support and handling for animated GIF images when [importing](./addonsdk/app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
-- Adds all of the new methods mentioned above to the [content management](../guides/develop/use_cases/content_management.md) use case page with example code snippets for each.
+- Adds all of the new methods mentioned above to the [How-to](../guides/develop/how_to.md) section with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -122,7 +236,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-07-22
 
-- Added a new [`format`](../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/develop/use_cases/environment_settings.md#detecting-locale-supported-locales-and-format) section.
+- Added a new [`format`](../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/develop/how_to/theme_locale.md) section.
 - Removed `mobile` and `app` as [`supportedDeviceClass`](../references/manifest/index.md#requirementsappssupporteddeviceclass) values in the Manifest's `requirements.apps` object.
 
 ## 2024-05-28
@@ -154,7 +268,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
 
 - The [Samples](../samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../samples.md#audio-recording-addon).
-- The [Common Use Cases](/guides/develop/use_cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](/guides/develop/use_cases/authentication_authorization.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
+- The [Common Use Cases](/guides/develop/use_cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](/guides/develop/how_to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
 
 ## 2024-03-19
 
@@ -167,7 +281,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-03-08
 
 - [`getPagesMetadata()`](../references/addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../references/addonsdk/app-currentUser.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
-- New examples have been added to the [use cases guide](../guides/develop/use_cases/content_management.md#premium-content) for handling premium content.
+- New examples have been added to the [use cases guide](../guides/develop/how_to/premium_content.md) for handling premium content.
 - A new video has been added to the [grids tutorial](../guides/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
 
 ## 2024-02-21
@@ -378,8 +492,8 @@ Some items in the following list of changes may have been mentioned in recent up
 - A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](../references/addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **experimental only** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 - The [`createRenditions()` export API](../references/addonsdk/app-document.md#createrenditions) was updated with the following changes:
   - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](../references/addonsdk/addonsdk-constants.md) constant value.
-  - The returned type now also includes page metadata (see [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/develop/use_cases/content_authoring.md#retrieving-page-metadata).
-- A new [document metadata use case example](../guides/develop/use_cases/content_authoring.md#document-and-page-metadata) has been added to show how to retrieve the [document id](./addonsdk/app-document.md#id) and [title (ie: name)](./addonsdk/app-document.md#title), including how to listen for the [associated events](../references/addonsdk/addonsdk-app.md#events).
+  - The returned type now also includes page metadata (see [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/develop/how_to/page_metadata.md).
+- A new [document metadata use case example](../guides/develop/how_to/document_metadata.md) has been added to show how to retrieve the [document id](./addonsdk/app-document.md#id) and [title (ie: name)](./addonsdk/app-document.md#title), including how to listen for the [associated events](../references/addonsdk/addonsdk-app.md#events).
 - New tables have been added to the [Communication API reference](../references/document-sandbox/communication/index.md) denoting the [supported](../references/document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](../references/document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](../references/document-sandbox/communication/index.md) layer.
 
 ## 2023-12-04
@@ -425,7 +539,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
 
-  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/use_cases/environment_settings.md#detecting-locale-supported-locales-and-format).
+  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/how_to/theme_locale.md).
 
 - Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev_tooling.md#no-template-parameter).
 - New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
@@ -691,7 +805,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ## 2023-08-29
 
-- Added [`currentUser` API](../guides/develop/use_cases/monetization_flows.md#get-current-user-information) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/use_cases.md).
+- Added [`currentUser` API](../guides/develop/how_to/user_info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/how_to.md).
 - Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
@@ -707,7 +821,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Updates
 
-- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/use_cases/content_management.md#premium-content). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/how_to/premium_content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
 
 ## 2023-08-09
 

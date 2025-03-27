@@ -40,6 +40,30 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     </td>
 </tr>
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>ColorPickerEvents</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Custom events dispatched by the Color Picker.</p>
+        <ul>
+          <li><strong>colorChange</strong></li><pre>"colorpicker-color-change"</pre>
+          <li><strong>close</strong></li><pre>"colorpicker-close"</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>ColorPickerPlacement</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Placement of the color picker popover with respect to the anchor element.</p>
+        <ul>
+          <li><strong>top</strong></li><pre>"top"</pre>
+        <li><strong>bottom</strong></li><pre>"bottom"</pre>
+        <li><strong>left</strong></li><pre>"left"</pre>
+        <li><strong>right</strong></li><pre>"right"</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>DialogResultType</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
