@@ -20,6 +20,14 @@ contributors:
 
 # Development Tools
 
+This section provides a set of guides to help you in the development stage of your add-on.
+
+Begin by watching this short video below which provides an introduction to some of the add-on features and APIs available for use in your add-ons.<br/><br/>
+
+<div style="display: flex; justify-content: center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ" title="Building Add-on Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## Using the CLI
 
 The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
@@ -38,8 +46,8 @@ The table below shows the list of arguments that can be specified with the CLI c
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
 | ------------- | -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `add-on-name` | No       |                                              | Name of the add-on. A new add-on project with this argument will be created in the user's current working directory. |
-| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on. |
-| `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations. |
+| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on.                                                                         |
+| `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations.                                         |
 
 For instance, the following command would specify all possible arguments:
 
@@ -57,13 +65,13 @@ See the [templates](#templates) section for the currently supported template val
 
 ```bash
 npx clear-npx-cache
-npx @adobe/create-ccweb-add-on my-addon 
+npx @adobe/create-ccweb-add-on my-addon
 ```
 
 The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
 
 ```bash
-npx @adobe/ccweb-add-on-scripts start --help  
+npx @adobe/ccweb-add-on-scripts start --help
 ```
 
 ### `start` script options
@@ -106,23 +114,23 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 <br/>
 
-| Template         | Framework        |
-| ---------------- | ---------------- |
-| `javascript`       | JavaScript       |
-| `swc-javascript`       | JavaScript with Spectrum Web Components support     |
-| `swc-typescript`       | TypeScript with Spectrum Web Components support     |
-| `react-javascript`  | React with JavaScript |
-| `react-typescript` | React with TypeScript |
+| Template           | Framework                                       |
+| ------------------ | ----------------------------------------------- |
+| `javascript`       | JavaScript                                      |
+| `swc-javascript`   | JavaScript with Spectrum Web Components support |
+| `swc-typescript`   | TypeScript with Spectrum Web Components support |
+| `react-javascript` | React with JavaScript                           |
+| `react-typescript` | React with TypeScript                           |
 
 As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
 
-| Template         | Description        |
-| ---------------- | ---------------- |
-| `javascript-with-document-sandbox`  | JavaScript with Document Sandbox support.  |
-| `swc-javascript-with-document-sandbox`  | JavaScript and Spectrum Web Components with Document Sandbox support.  |
-| `swc-typescript-with-document-sandbox`  | TypeScript and Spectrum Web Components with Document Sandbox support.      |
-| `react-javascript-with-document-sandbox`  | React and JavaScript with Document Sandbox support.|
-| `react-typescript-with-document-sandbox` | React and TypeScript with Document Sandbox support.|
+| Template                                 | Description                                                           |
+| ---------------------------------------- | --------------------------------------------------------------------- |
+| `javascript-with-document-sandbox`       | JavaScript with Document Sandbox support.                             |
+| `swc-javascript-with-document-sandbox`   | JavaScript and Spectrum Web Components with Document Sandbox support. |
+| `swc-typescript-with-document-sandbox`   | TypeScript and Spectrum Web Components with Document Sandbox support. |
+| `react-javascript-with-document-sandbox` | React and JavaScript with Document Sandbox support.                   |
+| `react-typescript-with-document-sandbox` | React and TypeScript with Document Sandbox support.                   |
 
 You can supply any of the above template names after the `--template` parameter:
 
