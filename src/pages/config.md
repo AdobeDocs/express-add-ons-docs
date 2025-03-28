@@ -118,6 +118,8 @@
                 - [SolidColorStrokeWithOptionalType](references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md) 
                 - [UnorderedListStyle](references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md) 
             - [Concepts](references/document-sandbox/document-apis/concepts/index.md) 
+    - [Built-in UI Components](references/ui-components/color-picker.md) 
+        - [Color Picker](references/ui-components/color-picker.md) 
     - [Manifest Schema](references/manifest/index.md) 
     - [Changelog](references/changelog.md) 
     - [Overview](guides/) 
