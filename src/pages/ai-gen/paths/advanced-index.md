@@ -15,15 +15,15 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Advanced Path: Mastering Add-on Development
+# Advanced Learning Path: Mastering Add-on Development
 
 **Total Estimated Time: 10 hours**
+
+## Path Overview
 
 This path is designed for developers who have completed the Beginner and Intermediate paths and are ready to tackle complex concepts and build professional-grade add-ons.
 
 In this advanced path, you'll learn techniques for optimizing performance, handling complex data scenarios, implementing advanced user interfaces, and integrating with external services. By the end of this learning journey, you'll be equipped to create sophisticated add-ons with robust architecture and superior user experience.
-
-## Path Overview
 
 This learning path consists of 5 steps that will guide you through advanced add-on development concepts:
 

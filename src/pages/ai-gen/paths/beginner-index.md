@@ -18,13 +18,11 @@ contributors:
 
 # Beginner Learning Path: Getting Started with Adobe Express Add-ons
 
-This structured path will guide you through the fundamental concepts and skills needed to build your first Adobe Express add-on.
+**Estimated time: 4 hours**
 
 ## Path Overview
 
-**Total Estimated Time: 4 hours**
-
-This learning path consists of four progressive modules, each building on the knowledge from the previous step. By the end of this path, you'll be able to create a functional Adobe Express add-on from scratch.
+This structured path will guide you through the fundamental concepts and skills needed to build your first Adobe Express add-on. The learning path consists of four progressive modules, each building on the knowledge from the previous step. By the end of this path, you'll be able to create a functional Adobe Express add-on from scratch.
 
 ## [**Module 1: Introduction to Add-ons (30 minutes)**](beginner-step1.md)
 

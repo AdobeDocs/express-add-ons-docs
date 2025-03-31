@@ -18,13 +18,11 @@ contributors:
 
 # Intermediate Learning Path: Building Functional Add-ons
 
-This structured path will help you build on your basic knowledge to create more sophisticated add-ons with practical real-world functionality.
+**Estimated time: 8 hours**
 
 ## Path Overview
 
-**Total Estimated Time: 8 hours**
-
-This learning path consists of four progressive modules that build on the fundamentals you learned in the Beginner path. By the end of this path, you'll be able to create feature-rich add-ons that manipulate document content, interact with users, and store data.
+This structured path will help you build on your basic knowledge to create more sophisticated add-ons with practical real-world functionality. The learning path consists of four progressive modules that build on the fundamentals you learned in the Beginner path. By the end of this path, you'll be able to create feature-rich add-ons that manipulate document content, interact with users, and store data.
 
 ## [**Module 1: Working with Document Elements (2 hours)**](intermediate-step1.md)
 

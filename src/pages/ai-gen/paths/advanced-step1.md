@@ -17,7 +17,7 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Advanced Add-on Architecture
+# Module 1: Advanced Add-on Architecture
 
 **Estimated time: 2 hours**
 
