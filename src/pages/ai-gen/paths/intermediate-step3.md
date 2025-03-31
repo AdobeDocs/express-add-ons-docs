@@ -498,9 +498,9 @@ This example demonstrates:
 
 To deepen your understanding of data management:
 
-- [Local Data Management](../../develop/how_to/local_data_management.md)
-- [Document Metadata](../../develop/how_to/document_metadata.md)
-- [Element Metadata](../../develop/how_to/element_metadata.md)
+- [Local Data Management](../../guides/develop/how_to/local_data_management.md)
+- [Document Metadata](../../guides/develop/how_to/document_metadata.md)
+- [Element Metadata](../../guides/develop/how_to/element_metadata.md)
 - [Client Storage Sample](/samples.md#use-client-storage)
 
 ## Knowledge Check

@@ -195,4 +195,4 @@ function ButtonExample() {
 - [Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)
 
 ## Next Module
-[Module 3: Advanced Features](./03-advanced-features/README.md) 
+[Module 3: Advanced Features](../03-advanced-features/index.md)

@@ -24,9 +24,9 @@ This structured path will help you build on your basic knowledge to create more 
 
 **Total Estimated Time: 8 hours**
 
-This learning path consists of four progressive steps that build on the fundamentals you learned in the Beginner path. By the end of this path, you'll be able to create feature-rich add-ons that manipulate document content, interact with users, and store data.
+This learning path consists of four progressive modules that build on the fundamentals you learned in the Beginner path. By the end of this path, you'll be able to create feature-rich add-ons that manipulate document content, interact with users, and store data.
 
-## Module 1: Working with Document Elements (2 hours)
+## [**Module 1: Working with Document Elements (2 hours)**](intermediate-step1.md)
 
 In this step, you'll learn how to add, manipulate, and position different types of elements in Adobe Express documents.
 
@@ -38,7 +38,7 @@ In this step, you'll learn how to add, manipulate, and position different types 
 
 [Begin Module 1: Working with Document Elements →](intermediate-step1.md)
 
-## Module 2: Working with User Interaction (2 hours)
+## [**Module 2: Working with User Interaction (2 hours)**](intermediate-step2.md)
 
 Learn how to create interactive experiences for your users through drag and drop functionality and modal dialogs.
 
@@ -50,7 +50,7 @@ Learn how to create interactive experiences for your users through drag and drop
 
 [Begin Module 2: Working with User Interaction →](intermediate-step2.md)
 
-## Module 3: Storing and Managing Data (1.5 hours)
+## [**Module 3: Storing and Managing Data (1.5 hours)**](intermediate-step3.md)
 
 Discover how to persist user data and work with metadata in documents and elements.
 
@@ -62,7 +62,7 @@ Discover how to persist user data and work with metadata in documents and elemen
 
 [Begin Module 3: Storing and Managing Data →](intermediate-step3.md)
 
-## Module 4: Building a Practical Add-on (2.5 hours)
+## [**Module 4: Building a Practical Add-on (2.5 hours)**](intermediate-step4.md)
 
 Apply all your knowledge by following a comprehensive tutorial to build a complete, practical add-on.
 
@@ -88,7 +88,7 @@ By completing this intermediate path, you'll gain:
 
 Before starting this path, you should have:
 
-- Completed the [Beginner Learning Path](index.md) or have equivalent knowledge
+- Completed the [Beginner Learning Path](beginner-index.md) or have equivalent knowledge
 - Understanding of HTML, CSS, and JavaScript fundamentals
 - Experience creating a basic Adobe Express add-on
 - Familiarity with the Add-on SDK basics
@@ -103,6 +103,6 @@ Begin building more powerful add-ons with advanced functionality:
 
 After completing this Intermediate Path, you can advance to:
 
-- [Advanced Path: Mastering Add-on Development](../learning-paths.md#advanced-path-mastering-add-on-development-10-hours)
-- [Path: Add-on Development Lifecycle](../learning-paths.md#path-add-on-development-lifecycle-7-hours)
-- [Path for Developers: Add-on Technical Implementation](../learning-paths.md#path-for-developers-add-on-technical-implementation-8-hours) 
+- [Advanced Path: Mastering Add-on Development](advanced-index.md#advanced-path-mastering-add-on-development)
+- [Path: Add-on Development Lifecycle](subject-based.md#path-add-on-development-lifecycle-7-hours)
+- [Path for Developers: Add-on Technical Implementation](role-based.md#path-for-developers-add-on-technical-implementation-8-hours)

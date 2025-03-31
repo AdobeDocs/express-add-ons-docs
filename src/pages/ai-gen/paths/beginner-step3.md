@@ -16,7 +16,7 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Using the Playground to Experiment
+# Module 3: Using the Playground to Experiment
 
 **Estimated time: 45 minutes**
 
@@ -151,7 +151,7 @@ While powerful, the Playground has some limitations:
 
 For more information on using the Code Playground:
 
-- [Code Playground Documentation](../../getting_started/code_playground.md)
+- [Code Playground Documentation](../../guides/getting_started/code_playground.md)
 
 ## Knowledge Check
 

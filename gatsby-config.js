@@ -40,8 +40,142 @@ module.exports = {
         title: "Fund for Design",
         path: "https://developer.adobe.com/fund-for-design",
       },
+      {
+        title: "Experimental",
+        path: "ai-gen",
+      },       
     ],
     subPages: [
+      {
+        title: "Learning Paths",
+        header: true,
+        path: "/ai-gen/paths/index-with-paths",
+        pages: [                          
+          {
+            title: "Beginner",
+            path: "/ai-gen/paths/beginner-index",
+            pages: [              
+              {
+                title: "Introduction to Adobe Express Add-ons",
+                path: "/ai-gen/paths/beginner-step1",
+              },
+              {
+                title: "Setting Up Your Development Environment",
+                path: "/ai-gen/paths/beginner-step2",
+              },
+              {
+                title: "Using the Playground to Experiment",
+                path: "/ai-gen/paths/beginner-step3",
+              },
+              {
+                title: "Building Your First Add-on",
+                path: "/ai-gen/paths/beginner-step4",
+              },          
+            ],
+          },
+          {
+            title: "Intermediate",
+            path: "/ai-gen/paths/intermediate-index/",
+            pages: [              
+              {
+                title: "Working with Document Elements",
+                path: "/ai-gen/paths/intermediate-step1",
+              },
+              {
+                title: "Working with User Interaction",
+                path: "/ai-gen/paths/intermediate-step2",
+              },
+              {
+                title: "Storing and Managing Data",
+                path: "/ai-gen/paths/intermediate-step3",
+              },
+              {
+                title: "Building a Practical Add-on",
+                path: "/ai-gen/paths/intermediate-step4",
+              },
+            ],
+          },
+          {
+            title: "Advanced",
+            path: "/ai-gen/paths/advanced-index",
+            pages: [              
+              {
+                title: "Advanced Add-on Architecture",
+                path: "/ai-gen/paths/advanced-step1",
+              },
+              {
+                title: "Performance Optimization",
+                path: "/ai-gen/paths/advanced-step2",
+              },
+              {
+                title: "Advanced UI Patterns",
+                path: "/ai-gen/paths/advanced-step3",
+              },
+              {
+                title: "External API Integration",
+                path: "/ai-gen/paths/advanced-step4",
+              },
+              {
+                title: "Deploying and Scaling Add-ons",
+                path: "/ai-gen/paths/advanced-step5",
+              },
+            ],
+          },
+          {
+            title: "Building with Spectrum Path",
+            path: "/ai-gen/paths/spectrum/01-foundation/",
+            pages: [              
+              {
+                title: "Foundation of Spectrum Design System",
+                path: "/ai-gen/paths/spectrum/01-foundation/",
+              },
+              {
+                title: "Basic Implementation with Spectrum Web Components",
+                path: "/ai-gen/paths/spectrum/02-basic-implementation/",
+              },
+              {
+                title: "Advanced Features and Best Practices",
+                path: "/ai-gen/paths/spectrum/03-advanced-features/",
+              }                  
+            ]
+          },
+          {
+            title: "Subject-based Path",
+            path: "/ai-gen/paths/subject-based",
+          },
+          {
+            title: "Subject-based Path (2)",
+            path: "/ai-gen/paths/subject-based2",
+          },
+          {
+            title: "Role-based Path",
+            path: "/ai-gen/paths/role-based",
+          },                         
+        ]
+      },
+      {
+        title: "Related Content",        
+        path: "/ai-gen/related-content",          
+      },
+      {
+        title: "How To's",
+        header: true,
+        path: "/ai-gen/how-tos/working-with-addons",
+        pages: [
+          {
+            title: "Working with Add-ons",
+            path: "/ai-gen/how-tos/working-with-addons",
+          }, 
+          {
+            title: "Spectrum Design Guide",
+            path: "/ai-gen/spectrum/spectrum",
+          },                            
+          {
+            title: "Troubleshooting Add-ons",
+            path: "/ai-gen/how-tos/troubleshoot",
+          },                     
+        ],
+      },      
       {
         title: "Overview",
         path: "references/",
@@ -543,15 +677,15 @@ module.exports = {
           },
           {
             title: "Learning Paths",
-            path: "guides/getting_started/beginners.md",
+            path: "/ai-gen/paths/beginner-index/index.md",
             pages: [
               {
                 title: "Beginner Friendly",
-                path: "guides/getting_started/beginners.md",
+                path: "/ai-gen/paths/beginner-index/index.md",
               },
               {
                 title: "Experienced Developers",
-                path: "guides/getting_started/experienced.md",
+                path: "/ai-gen/paths/advanced-index/index.md",
               },
             ],
           },

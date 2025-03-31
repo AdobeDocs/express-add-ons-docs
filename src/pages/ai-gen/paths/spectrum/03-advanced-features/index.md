@@ -307,6 +307,3 @@ export const measurePerformance = (componentName) => {
 - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/)
 - [SWC React Documentation](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
 - [Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)
-
-## Next Module
-[Module 4: Testing and Deployment](./04-testing-deployment/README.md) 

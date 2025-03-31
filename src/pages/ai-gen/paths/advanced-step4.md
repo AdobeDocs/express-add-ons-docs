@@ -1335,10 +1335,9 @@ To create robust, maintainable API integrations:
 
 ## Additional Resources
 
-- [Working with APIs](../../develop/guides/apis.md)
-- [API Security Best Practices](../../develop/best_practices/security.md)
-- [Performance Optimization](../../develop/best_practices/performance.md)
-- [Sample Add-ons Using APIs](../../samples.md)
+- [Working with APIs](../../guides/develop/)
+- [Performance Optimization](../../guides/develop/performance.md)
+- [Sample Add-ons Using APIs](/samples.md)
 
 ## Knowledge Check
 

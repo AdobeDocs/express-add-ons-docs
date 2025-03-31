@@ -744,7 +744,7 @@ addOnUISdk.ready.then(() => {
 
 For more information on advanced architecture:
 
-- [Adobe Express Add-on API Reference](../../references/addonsdk-reference.md)
+- [Adobe Express Add-on API Reference](/references/addonsdk-reference.md)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [Redux Documentation](https://redux.js.org/)
 - [React Patterns](https://reactpatterns.com/)

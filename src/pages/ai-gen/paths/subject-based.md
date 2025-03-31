@@ -24,10 +24,17 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Implementing undo/redo functionality
 - Handling document events and state changes
 - Creating and manipulating shapes, text, and images
+
 **Practical Exercise**: Build an add-on that adds custom shapes and responds to document changes
+
 **Resources**:
-  - [App Document APIs](/references/addonsdk/app-document.md)
-  - [Document Context APIs](../develop/context.md)
+  - [Document Sandbox](/references/document-sandbox/)
+  - [Document APIs](/references/document-sandbox/document-apis/)
+Element Metadata
+  - [Element Metadata](/references/document-sandbox/document-apis/classes/AddOnData/)
+  - [Use Element Metadata](../../guides/develop/how_to/element_metadata.md)
+  - [Position Elements](../../guides/develop/how_to/position_elements.md)
+  - [Group Elements](../../guides/develop/how_to/group_elements.md)
 
 ### Module 3: User Interface and Interaction APIs (1.5 hours)
 
@@ -35,10 +42,12 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Managing theme changes and localization
 - Creating custom UI components that match Adobe Express
 - Handling user interactions and input validation
+
 **Practical Exercise**: Create a theme-aware panel with localized content
+
 **Resources**:
   - [App UI APIs](/references/addonsdk/app-ui.md)
-  - [Theme and Locale](../develop/how_to/theme_locale.md)
+  - [Theme and Locale](../../guides/develop/how_to/theme_locale.md)
 
 ### Module 4: User Data and Authentication APIs (1.5 hours)
 
@@ -50,7 +59,7 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 **Resources**:
   - [Current User APIs](/references/addonsdk/app-currentUser.md)
   - [OAuth APIs](/references/addonsdk/app-oauth.md)
-  - [User Info](../develop/how_to/user_info.md)
+  - [User Info](../../guides/develop/how_to/user_info.md)
 
 ## Path: Add-on UI Design (5 hours)
 
@@ -64,8 +73,8 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Planning responsive layouts
 **Practical Exercise**: Analyze and critique existing add-ons for UX improvements
 **Resources**:
-  - [Design Best Practices](../design/best_practices.md)
-  - [UX Guidelines](../design/ux_guidelines/index.md)
+  - [Design Best Practices](../../guides/design/best_practices.md)
+  - [UX Guidelines](../../guides/design/ux_guidelines/introduction.md)
 
 ### Module 2: Implementation Guidelines (2 hours)
 
@@ -75,8 +84,8 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Creating loading and error states
 **Practical Exercise**: Convert a basic add-on UI to follow Adobe Express guidelines
 **Resources**:
-  - [Implementation Guide](../design/implementation_guide.md)
-  - [Fonts](../design/fonts.md)
+  - [Implementation Guide](../../guides/design/implementation_guide.md)
+  - [Fonts](../../guides/design/fonts.md)
 
 ### Module 3: Using Spectrum Components (2 hours)
 
@@ -86,7 +95,7 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Building accessible dialogs and modals
 **Practical Exercise**: Build a complex form using Spectrum components
 **Resources**:
-  - [Spectrum Workshop Tutorial](../tutorials/spectrum-workshop/index.md)
+  - [Spectrum Workshop Tutorial](../../guides/tutorials/spectrum-workshop/index.md)
   - [SWC Sample](/samples.md#swc)
   - [SWC React Theme Sampler](/samples.md#swc-react-theme-sampler)
 
@@ -103,7 +112,7 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 **Practical Exercise**: Create a new add-on project with proper configuration
 **Resources**:
   - [Manifest References](/references/manifest/index.md)
-  - [Setup Guide](../getting_started/setup.md)
+  - [Setup Guide](../../guides/getting_started/setup.md)
 
 ### Module 2: Development and Debugging (2.5 hours)
 
@@ -113,8 +122,8 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Testing across different environments
 **Practical Exercise**: Debug and fix common add-on issues
 **Resources**:
-  - [Debugging Guides](../debug/index.md)
-  - [Development Tools](../getting_started/dev_tooling.md)
+  - [Debugging Guides](../../guides/debug/index.md)
+  - [Development Tools](../../guides/getting_started/dev_tooling.md)
 
 ### Module 3: Optimization and Testing (1.5 hours)
 
@@ -124,7 +133,7 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Handling edge cases and errors
 **Practical Exercise**: Optimize an add-on's performance and implement tests
 **Resources**:
-  - [Performance Guide](../develop/performance.md)
+  - [Performance Guide](../../guides/develop/performance.md)
 
 ### Module 4: Distribution and Updates (1.5 hours)
 
@@ -134,4 +143,4 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Gathering user feedback
 **Practical Exercise**: Prepare an add-on for distribution
 **Resources**:
-  - [Distribution Guides](../distribute/index.md)
+  - [Distribution Guides](../../guides/distribute/index.md)

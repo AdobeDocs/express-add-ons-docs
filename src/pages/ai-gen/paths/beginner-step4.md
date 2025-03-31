@@ -16,7 +16,7 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Building Your First Add-on
+# Module 4: Building Your First Add-on
 
 **Estimated time: 2 hours**
 
@@ -342,13 +342,13 @@ Once your basic add-on is working, try these enhancements:
 Congratulations! You've built your first Adobe Express add-on. Here's what you can do next:
 
 1. Explore the [Get Started Sample](/samples.md#get-started) for more ideas
-2. Study the [Quickstart Guide](../../getting_started/quickstart.md) for additional concepts
+2. Study the [Quickstart Guide](../../guides/getting_started/quickstart.md) for additional concepts
 3. Move on to the Intermediate Learning Path to expand your skills
 4. Share your add-on with colleagues or friends for feedback
 
 ## Additional Resources
 
-- [Quickstart Guide](../../getting_started/quickstart.md)
+- [Quickstart Guide](../../guides/getting_started/quickstart.md)
 - [Get Started Sample](/samples.md#get-started)
 
 ## Knowledge Check
@@ -375,6 +375,6 @@ By completing this beginner path, you've learned:
 
 Ready to expand your skills? Continue to the Intermediate Path to learn more advanced techniques:
 
-[Proceed to Intermediate Path: Building Functional Add-ons →](../learning-paths.md#intermediate-path-building-functional-add-ons-8-hours)
+[Proceed to Intermediate Path: Building Functional Add-ons →](intermediate-index.md#intermediate-learning-path-building-functional-add-ons)
 
 [← Back to Step 3: Using the Playground to Experiment](beginner-step3.md) 

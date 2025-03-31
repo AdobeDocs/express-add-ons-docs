@@ -19,8 +19,8 @@
 **Practical Exercise**: Create a new add-on project with proper error handling and lifecycle management
 
 **Resources**: 
-- [Development Tools](src/pages/guides/getting_started/dev_tooling.md)
-- [Add-on SDK References](src/pages/references/index.md)
+- [Development Tools](../../guides/getting_started/dev_tooling.md)
+- [Add-on SDK References](/references/index.md)
 
 ### Module 2: Content Manipulation APIs (2 hours)
 
@@ -39,9 +39,9 @@
 **Practical Exercise**: Build an add-on that creates, modifies, and arranges document elements
 
 **Resources**: 
-- [App Document APIs](src/pages/references/addonsdk/app-document.md)
-- [Position Elements](src/pages/guides/develop/how_to/position_elements.md)
-- [Group Elements](src/pages/guides/develop/how_to/group_elements.md)
+- [App Document APIs](/references/addonsdk/app-document.md)
+- [Position Elements](../../guides/develop/how_to/position_elements.md)
+- [Group Elements](../../guides/develop/how_to/group_elements.md)
 
 ### Module 3: Integration and Services (2 hours)
 **Learning Objectives**:
@@ -60,9 +60,9 @@
 
 **Resources**:
 
-- [OAuth2 Integration](src/pages/guides/develop/how_to/oauth2.md)
-- [Cross-Origin Isolation](src/pages/guides/develop/coi.md)
-- [CORS Handling](src/pages/guides/develop/cors.md)
+- [OAuth2 Integration](../../guides/develop/how_to/oauth2.md)
+- [Cross-Origin Isolation](../../guides/develop/coi.md)
+- [CORS Handling](../../guides/develop/cors.md)
 
 ### Module 4: Performance and Optimization (2 hours)
 
@@ -84,8 +84,8 @@
 
 **Resources**:
 
-- [Performance Guide](src/pages/guides/develop/performance.md)
-- [Frameworks, Libraries, and Bundling](src/pages/guides/develop/frameworks-libraries-bundling.md)
+- [Performance Guide](../../guides/develop/performance.md)
+- [Frameworks, Libraries, and Bundling](../../guides/develop/frameworks-libraries-bundling.md)
 
 ## Path for Designers: Add-on User Experience Design (6 hours)
 
@@ -111,8 +111,8 @@
 
 **Resources**:
 
-- [Design Best Practices](src/pages/guides/design/best_practices.md)
-- [UX Guidelines](src/pages/guides/design/ux_guidelines/index.md)
+- [Design Best Practices](../../guides/design/best_practices.md)
+- [UX Guidelines](../../guides/design/ux_guidelines/introduction.md)
 
 ### Module 2: UI Implementation (2 hours)
 
@@ -134,8 +134,8 @@
 
 **Resources**:
 
-- [Implementation Guide](src/pages/guides/design/implementation_guide.md)
-- [Fonts](src/pages/guides/design/fonts.md)
+- [Implementation Guide](../../guides/design/implementation_guide.md)
+- [Fonts](../../guides/design/fonts.md)
 
 ### Module 3: Spectrum Design System (1.5 hours)
 
@@ -157,7 +157,7 @@
 
 **Resources**:
 
-- [Spectrum Workshop Tutorial](src/pages/guides/tutorials/spectrum-workshop/index.md)
+- [Spectrum Workshop Tutorial](../../guides/tutorials/spectrum-workshop/index.md)
 
 ### Module 4: User Testing and Refinement (1 hour)
 
@@ -179,7 +179,7 @@
 
 **Resources**:
 
-- [Design Best Practices](src/pages/guides/design/best_practices.md)
+- [Design Best Practices](../../guides/design/best_practices.md)
 
 ## Path for Product Managers: Add-on Planning and Distribution (5 hours)
 
@@ -205,8 +205,8 @@
 
 **Resources**:
 
-- [Getting Started - Introduction](src/pages/guides/getting_started/index.md)
-- [FAQ](src/pages/guides/faq.md)
+- [Getting Started - Introduction](../../guides/getting_started/index.md)
+- [FAQ](../../guides/faq.md)
 
 ### Module 2: Feature Planning (1.5 hours)
 
@@ -228,8 +228,8 @@
 
 **Resources**:
 
-- [Add-on SDK References](src/pages/references/index.md)
-- [Samples](src/pages/samples.md)
+- [Add-on SDK References](/references/index.md)
+- [Samples](/samples.md)
 
 ### Module 3: Licensing and Monetization (1 hour)
 
@@ -251,7 +251,7 @@
 
 **Resources**:
 
-- [Licensed Add-on Sample](src/pages/samples.md#licensed-addon)
+- [Licensed Add-on Sample](/samples.md#licensed-addon)
 
 ### Module 4: Distribution and Marketing (1.5 hours)
 
@@ -273,4 +273,4 @@
 
 **Resources**:
 
-- [Distribution Guides](src/pages/guides/distribute/index.md)
+- [Distribution Guides](../../guides/distribute/index.md)

@@ -146,7 +146,7 @@ Choose a learning path that matches your current skill level and goals, and foll
 
 For additional resources, check out:
 
-- [Adobe Express Add-on Documentation](../overview.md)
-- [API Reference](../../references/addonsdk-reference.md)
-- [Sample Add-ons](../../samples/index.md)
+- [Adobe Express Add-on Documentation](../../guides/index.md)
+- [API Reference](/references/addonsdk-reference.md)
+- [Sample Add-ons](/samples/index.md)
 - [Community Forum](https://experienceleaguecommunities.adobe.com/t5/express-add-ons-discussions/ct-p/express-add-ons-discussions) 

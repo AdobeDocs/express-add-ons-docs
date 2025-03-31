@@ -179,4 +179,4 @@ Spectrum components are tightly coupled, and mismatched versions can lead to:
 - [Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)
 
 ## Next Module
-[Module 2: Basic Implementation](./02-basic-implementation/README.md) 
+[Module 2: Basic Implementation](../02-basic-implementation/index.md)

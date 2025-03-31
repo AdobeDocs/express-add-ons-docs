@@ -326,10 +326,10 @@ This example demonstrates how to create a functional layout with precisely posit
 
 To deepen your understanding of working with document elements:
 
-- [Using Images](../../develop/how_to/use_images.md)
-- [Using Text](../../develop/how_to/use_text.md)
-- [Position Elements](../../develop/how_to/position_elements.md)
-- [Group Elements](../../develop/how_to/group_elements.md)
+- [Using Images](../../guides/develop/how_to/use_images.md)
+- [Using Text](../../guides/develop/how_to/use_text.md)
+- [Position Elements](../../guides/develop/how_to/position_elements.md)
+- [Group Elements](../../guides/develop/how_to/group_elements.md)
 
 ## Knowledge Check
 

@@ -18,11 +18,11 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Introduction to Adobe Express Add-ons
+# Module 1: Introduction to Adobe Express Add-ons
 
 **Estimated time: 30 minutes**
 
-This first step will introduce you to what add-ons are, their capabilities, and the foundational architecture that makes them work.
+This first module will introduce you to what add-ons are, their capabilities, and the foundational architecture that makes them work.
 
 ## What Are Adobe Express Add-ons?
 
@@ -85,8 +85,8 @@ Take 10 minutes to explore the [Adobe Express Add-ons Marketplace](https://new.e
 
 To deepen your understanding of Adobe Express add-ons, explore these resources:
 
-- [Getting Started - Introduction](../../getting_started/index.md)
-- [Frequently Asked Questions](../../faq.md)
+- [Getting Started - Introduction](../../guides/getting_started/index.md)
+- [Frequently Asked Questions](../../guides/faq.md)
 
 ## Knowledge Check
 

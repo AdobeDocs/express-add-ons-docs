@@ -1706,10 +1706,10 @@ class DragDropList {
   
   For more information on advanced UI patterns:
   
-  - [Spectrum Workshop Tutorial](../../tutorials/spectrum-workshop/index.md)
-  - [Design Best Practices](../../design/best_practices.md)
-  - [UX Guidelines](../../design/ux_guidelines/index.md)
-  - [Implementation Guide](../../design/implementation_guide.md)
+  - [Spectrum Workshop Tutorial](../../guides/tutorials/spectrum-workshop/index.md)
+  - [Design Best Practices](../../guides/design/best_practices.md)
+  - [UX Guidelines](../../guides/design/ux_guidelines/introduction.md)
+  - [Implementation Guide](../../guides/design/implementation_guide.md)
   
   ## Knowledge Check
   
@@ -1725,8 +1725,7 @@ class DragDropList {
   
   Now that you understand how to implement advanced UI patterns in Adobe Express add-ons, you're ready to learn about integrating with external APIs and services.
   
-  [Continue to Step 4: External API Integration →](advanced-step4a.md)
+  [Continue to Step 4: External API Integration →](advanced-step4.md)
   
   [← Back to Step 2: Performance Optimization](advanced-step2.md)
   
-

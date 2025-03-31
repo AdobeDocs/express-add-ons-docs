@@ -835,8 +835,8 @@ After completing the basic Grid Maker add-on, consider these enhancements:
 
 For more detailed examples and code samples:
 
-- [Stats Add-on Tutorial](../../tutorials/stats-addon.md)
-- [Grids Add-on Tutorial](../../tutorials/grids-addon.md)
+- [Stats Add-on Tutorial](../../guides/tutorials/stats-addon.md)
+- [Grids Add-on Tutorial](../../guides/tutorials/grids-addon.md)
 
 ## Knowledge Check
 
@@ -861,6 +861,6 @@ By completing this Intermediate learning path, you've learned how to:
 
 Ready to advance your skills further? Continue to the Advanced Path for more sophisticated techniques:
 
-[Proceed to Advanced Path: Mastering Add-on Development →](../learning-paths.md#advanced-path-mastering-add-on-development-10-hours)
+[Proceed to Advanced Path: Mastering Add-on Development →](advanced-index.md)
 
-[← Back to Step 3: Storing and Managing Data](intermediate-step3.md) 
+[← Back to Step 3: Storing and Managing Data](intermediate-step3.md#module-3-storing-and-managing-data) 

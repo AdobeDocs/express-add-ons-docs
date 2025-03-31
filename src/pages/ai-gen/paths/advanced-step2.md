@@ -938,8 +938,8 @@ function updateBatchSize(event) {
 
 For more information on performance optimization:
 
-- [Performance Guide](../../develop/performance.md)
-- [Frameworks, Libraries, and Bundling](../../develop/frameworks-libraries-bundling.md)
+- [Performance Guide](../../guides/develop/performance.md)
+- [Frameworks, Libraries, and Bundling](../../guides/develop/frameworks-libraries-bundling.md)
 - [Web Performance MDN Guide](https://developer.mozilla.org/en-US/docs/Web/Performance)
 
 ## Knowledge Check

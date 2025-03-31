@@ -496,8 +496,8 @@ This example demonstrates a complete image gallery that allows users to:
 
 To deepen your understanding of user interaction features:
 
-- [Drag and Drop](../../develop/how_to/drag_and_drop.md)
-- [Modal Dialogs](../../develop/how_to/modal_dialogs.md)
+- [Drag and Drop](../../guides/develop/how_to/drag_and_drop.md)
+- [Modal Dialogs](../../guides/develop/how_to/modal_dialogs.md)
 - [Dialog Add-on Sample](/samples.md#dialog-add-on)
 
 ## Knowledge Check

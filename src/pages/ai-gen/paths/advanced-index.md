@@ -59,7 +59,7 @@ By completing this advanced path, you'll gain expertise in:
 
 Before starting this Advanced Path, you should:
 
-- Have completed the [Beginner](../learning-paths/index.md) and [Intermediate](../learning-paths/intermediate-index.md) learning paths
+- Have completed the [Beginner](beginner-index.md) and [Intermediate](intermediate-index.md) learning paths
 - Be comfortable with JavaScript/TypeScript programming
 - Understand asynchronous programming and Promises
 - Have experience with modern web development patterns
@@ -69,6 +69,4 @@ Before starting this Advanced Path, you should:
 
 This path will challenge you with advanced concepts and techniques, but will reward you with the skills to create professional-grade add-ons that stand out in the marketplace.
 
-[Start with Step 1: Advanced Add-on Architecture →](advanced-step1.md)
-
-[← Back to Learning Paths Overview](../learning-paths.md) 
+[Start with Module 1: Advanced Add-on Architecture →](advanced-step1.md)

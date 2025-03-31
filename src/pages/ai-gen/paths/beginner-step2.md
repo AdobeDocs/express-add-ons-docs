@@ -16,7 +16,7 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Setting Up Your Development Environment
+# Module 2: Setting Up Your Development Environment
 
 **Estimated time: 45 minutes**
 
@@ -127,8 +127,8 @@ Take some time to familiarize yourself with the files and structure of the proje
 
 For more detailed information on setting up your environment:
 
-- [Setup Guide](../../getting_started/setup.md)
-- [Development Tools](../../getting_started/dev_tooling.md)
+- [Setup Guide](../../guides/getting_started/setup.md)
+- [Development Tools](../../guides/getting_started/dev_tooling.md)
 
 ## Knowledge Check
 
