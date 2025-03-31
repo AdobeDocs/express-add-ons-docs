@@ -1,6 +1,6 @@
 # Subject-Based Learning Paths for Adobe Express Add-on Development
 
-## Learning Path: Using Images in Adobe Express Add-ons
+## Subject Path: Using Images in Adobe Express Add-ons
 
 ### Core Concepts
 - [Use Images Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/use_images.md) - Learn the fundamentals of importing images into Adobe Express documents
@@ -36,7 +36,7 @@
 - [FAQ on Import Issues](https://developer.adobe.com/express/add-ons/docs/guides/faq.md) - Solutions to common image import problems
 - [Debugging Guide](https://developer.adobe.com/express/add-ons/docs/guides/debug/) - Tools and techniques for debugging image-related issues
 
-## Learning Path: Authentication and Authorization
+## Subject Path: Authentication and Authorization
 
 ### OAuth 2.0 Implementation
 - [OAuth 2.0 Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/oauth2.md) - Complete guide to implementing OAuth in add-ons
@@ -54,7 +54,7 @@
 - [simulateFreeUser Flag](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags.md#simulatefreeuser) - Testing free user experiences
 - [Error Handling](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth.md#errors) - OAuth-specific error management
 
-## Learning Path: Data Management
+## Subject Path: Data Management
 
 ### Client-side Storage
 - [Client Storage Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/local_data_management.md) - Guide to persistent client-side storage
@@ -68,7 +68,7 @@
 - [Recent Items Storage Example](https://developer.adobe.com/express/add-ons/docs/guides/design/spectrum.md#practical-example-content-library-add-on) - Example of storing recently viewed items
 - [Error Handling](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/instance-clientStorage.md#errors) - Managing storage quotas and failures
 
-## Learning Path: Building User Interfaces with Spectrum
+## Subject Path: Building User Interfaces with Spectrum
 
 ### Getting Started with Spectrum
 - [Spectrum Design System Overview](https://developer.adobe.com/express/add-ons/docs/guides/design/spectrum.md#spectrum-design-system-overview) - Introduction to Adobe's design system
@@ -97,7 +97,7 @@
 - [Troubleshooting Common Issues](https://developer.adobe.com/express/add-ons/docs/guides/design/spectrum.md#troubleshooting-common-issues) - Solutions to common Spectrum problems
 - [Best Practices](https://developer.adobe.com/express/add-ons/docs/guides/design/spectrum.md#best-practices) - Recommended approaches for Spectrum implementation
 
-## Learning Path: Document Manipulation
+## Subject Path: Document Manipulation
 
 ### Document APIs Basics
 - [Document Object Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document.md) - Complete API documentation
@@ -115,7 +115,7 @@
 - [Drag and Drop](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/drag_and_drop.md) - Enabling drag to document functionality
 - [Modal Dialogs](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/modal_dialogs.md) - Creating interactive dialogs
 
-## Learning Path: Add-on Development Workflow
+## Subject Path: Add-on Development Workflow
 
 ### Getting Started
 - [Overview](https://developer.adobe.com/express/add-ons/docs/guides/) - Introduction to Adobe Express add-ons

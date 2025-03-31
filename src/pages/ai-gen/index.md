@@ -103,21 +103,21 @@ This comprehensive path covers sophisticated development concepts across five st
 
 These paths focus on specific aspects of add-on development.
 
-### [**UI Development Path**](paths/subject-based.md#path-add-on-ui-design-5-hours)
+### [**UI Development Path**](paths/subject-based/gen1.md#path-add-on-ui-design-5-hours)
 
 - Introduction to Add-on UI Design
 - Building Responsive Layouts
 - Creating Custom UI Components
 - Advanced UI Techniques and Animations
 
-### [**API Integration Path**](paths/subject-based.md#path-adobe-express-add-on-apis-6-hours)
+### [**API Integration Path**](paths/subject-based/gen1.md#path-adobe-express-add-on-apis-6-hours)
 
 - Understanding the Adobe Express Add-on API
 - Working with Document Elements
 - Integrating External Services
 - Building Multi-service Integrations
 
-### [**Data Management Path**](paths/subject-based2.md#learning-path-data-management)
+### [**Data Management Path**](paths/subject-based/gen2.md#subject-path-data-management)
 
 - Client-side Storage Fundamentals
 - Managing User Preferences
@@ -151,15 +151,15 @@ Learning paths tailored to different roles in the development process.
 ## [**Subject-Based Learning Paths**](paths/subject-based.md)
 These paths focus on specific aspects of add-on development.
 
-- [Learning Path: API Integration](paths/subject-based.md#path-adobe-express-add-on-apis-6-hours)
-- [Learning Path: UI Development](paths/subject-based.md#path-add-on-ui-design-5-hours)
-- [Learning Path: Add-on Development Lifecycle](paths/subject-based.md#path-add-on-development-lifecycle-7-hours)
-- [Learning Path: Using Images in Adobe Express Add-ons](paths/subject-based2.md#learning-path-using-images-in-adobe-express-add-ons)
-- [Learning Path: Authentication and Authorization](paths/subject-based2.md#learning-path-authentication-and-authorization)
-- [Learning Path: Data Management](paths/subject-based2.md#learning-path-data-management)
-- [Learning Path: Building User Interfaces with Spectrum](paths/subject-based2.md#learning-path-building-user-interfaces-with-spectrum)
-- [Learning Path: Document Manipulation](paths/subject-based2.md#learning-path-document-manipulation)
-- [Learning Path: Add-on Development Workflow](paths/subject-based2.md#learning-path-add-on-development-workflow)
+- [Learning Path: API Integration](paths/subject-based/gen1.md#path-adobe-express-add-on-apis-6-hours)
+- [Learning Path: UI Development](paths/subject-based/gen1.md#path-add-on-ui-design-5-hours)
+- [Learning Path: Add-on Development Lifecycle](paths/subject-based/gen1.md#path-add-on-development-lifecycle-7-hours)
+- [Learning Path: Using Images in Adobe Express Add-ons](paths/subject-based/gen2.md#learning-path-using-images-in-adobe-express-add-ons)
+- [Learning Path: Authentication and Authorization](paths/subject-based/gen2.md#learning-path-authentication-and-authorization)
+- [Learning Path: Data Management](paths/subject-based/gen2.md#learning-path-data-management)
+- [Learning Path: Building User Interfaces with Spectrum](paths/subject-based/gen2.md#learning-path-building-user-interfaces-with-spectrum)
+- [Learning Path: Document Manipulation](paths/subject-based/gen2.md#learning-path-document-manipulation)
+- [Learning Path: Add-on Development Workflow](paths/subject-based/gen2.md#learning-path-add-on-development-workflow)
 
 ## [**Project-Based Learning Paths**](paths/project-based.md)
 

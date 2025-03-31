@@ -61,7 +61,7 @@ customElements.define('custom-card', CustomCard);
 ```jsx
 // src/components/FormContainer.jsx
 import { useState } from 'react';
-import { Theme, TextField, Button } from '@adobe/swc-react';
+import { Theme, TextField, Button } from '@swc-react';
 
 function FormContainer() {
     const [formData, setFormData] = useState({
@@ -140,7 +140,7 @@ module.exports = {
 #### ARIA Attributes
 ```jsx
 // src/components/AccessibleForm.jsx
-import { Theme, TextField, Button } from '@adobe/swc-react';
+import { Theme, TextField, Button } from '@swc-react';
 
 function AccessibleForm() {
     return (
@@ -232,7 +232,7 @@ export class ThemeManager {
 ```jsx
 // src/components/ErrorBoundary.jsx
 import React from 'react';
-import { Theme, Banner } from '@adobe/swc-react';
+import { Theme, Banner } from '@swc-react';
 
 class ErrorBoundary extends React.Component {
     state = { hasError: false, error: null };

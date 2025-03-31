@@ -59,7 +59,7 @@ addOnUISdk.ready.then(() => {
 #### Basic React Setup
 ```jsx
 // src/App.jsx
-import { Theme, Button, TextField } from '@adobe/swc-react';
+import { Theme, Button, TextField } from '@swc-react';
 
 function App() {
     return (
@@ -84,7 +84,7 @@ function App() {
 #### Building Complex Components
 ```jsx
 // src/components/Form.jsx
-import { Theme, TextField, Button, FieldLabel } from '@adobe/swc-react';
+import { Theme, TextField, Button, FieldLabel } from '@swc-react';
 
 function Form() {
     return (

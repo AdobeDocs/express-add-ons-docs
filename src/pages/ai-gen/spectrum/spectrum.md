@@ -30,7 +30,7 @@ Each has its specific use cases in add-on development:
 #### For plain JavaScript implementations:
 
 ```bash
-npm install @spectrum-web-components/theme@0.39.4
+npm install @spectrum-web-components/theme
 npm install @spectrum-web-components/styles
 ```
 
@@ -39,7 +39,6 @@ npm install @spectrum-web-components/styles
 ```bash
 npm install @swc-react/theme
 npm install @swc-react/styles
-npm install @swc-react
 ```
 
 ### Basic Setup in HTML and JavaScript

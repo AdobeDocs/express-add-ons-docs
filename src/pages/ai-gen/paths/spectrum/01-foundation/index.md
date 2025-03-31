@@ -65,11 +65,12 @@ npx clear-npx-cache
 #### Installing Dependencies
 ```bash
 # Core dependencies for SWC
-npm install @spectrum-web-components/theme@0.39.4
+npm install @spectrum-web-components/theme
 npm install @spectrum-web-components/styles
 
 # For React-based add-ons
-npm install @adobe/spectrum-web-components-react@0.39.4
+npm install @swc-react/theme
+npm install @swc-react/styles
 ```
 
 #### Webpack Configuration

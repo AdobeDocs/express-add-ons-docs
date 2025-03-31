@@ -41,24 +41,24 @@ The Spectrum Design System is Adobe's design language that ensures consistent, a
 
 ```bash
 # Install core dependencies
-npm install @spectrum-web-components/theme@0.39.4
+npm install @spectrum-web-components/theme
 npm install @spectrum-web-components/styles
 
 # Install commonly used components
-npm install @spectrum-web-components/button@0.39.4
-npm install @spectrum-web-components/field-label@0.39.4
-npm install @spectrum-web-components/textfield@0.39.4
+npm install @spectrum-web-components/button
+npm install @spectrum-web-components/field-label
+npm install @spectrum-web-components/textfield
 ```
 
 ### Installation for React
 
 ```bash
 # Install core dependencies
-npm install @spectrum-web-components/theme@0.39.4
-npm install @spectrum-web-components/styles
-npm install @swc-react/button@0.39.4
-npm install @swc-react/field-label@0.39.4
-npm install @swc-react/textfield@0.39.4
+npm install @swc-react/theme
+npm install @swc-react/styles
+npm install @swc-react/button
+npm install @swc-react/field-label
+npm install @swc-react/textfield
 ```
 
 ### Basic Project Structure

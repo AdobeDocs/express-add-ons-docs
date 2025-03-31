@@ -102,5 +102,5 @@ Begin building more powerful add-ons with advanced functionality:
 After completing this Intermediate Path, you can advance to:
 
 - [Advanced Path: Mastering Add-on Development](advanced-index.md#advanced-path-mastering-add-on-development)
-- [Path: Add-on Development Lifecycle](subject-based.md#path-add-on-development-lifecycle-7-hours)
+- [Path: Add-on Development Lifecycle](subject-based/gen1.md#path-add-on-development-lifecycle-7-hours)
 - [Path for Developers: Add-on Technical Implementation](role-based.md#path-for-developers-add-on-technical-implementation-8-hours)
