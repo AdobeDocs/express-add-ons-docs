@@ -52,7 +52,7 @@ module.exports = {
         path: "/ai-gen/paths/index-with-paths",
         pages: [                          
           {
-            title: "Beginner",
+            title: "Beginner Path",
             path: "/ai-gen/paths/beginner-index",
             pages: [              
               {
@@ -74,7 +74,7 @@ module.exports = {
             ],
           },
           {
-            title: "Intermediate",
+            title: "Intermediate Path",
             path: "/ai-gen/paths/intermediate-index/",
             pages: [              
               {
@@ -96,7 +96,7 @@ module.exports = {
             ],
           },
           {
-            title: "Advanced",
+            title: "Advanced Path",
             path: "/ai-gen/paths/advanced-index",
             pages: [              
               {
@@ -122,7 +122,7 @@ module.exports = {
             ],
           },
           {
-            title: "Building with Spectrum Path",
+            title: "UIs with Spectrum Path",
             path: "/ai-gen/paths/spectrum/01-foundation/",
             pages: [              
               {
@@ -140,12 +140,18 @@ module.exports = {
             ]
           },
           {
-            title: "Subject-based Path",
-            path: "/ai-gen/paths/subject-based",
-          },
-          {
-            title: "Subject-based Path (2)",
-            path: "/ai-gen/paths/subject-based2",
+            title: "Subject-based Paths",
+            path: "/ai-gen/paths/subject-based/gen1",
+            pages: [        
+            {
+              title: "General Subject Paths",
+              path: "/ai-gen/paths/subject-based/gen1",
+            },
+            {
+              title: "Specific Subject Paths",
+              path: "/ai-gen/paths/subject-based/gen2",
+            },
+            ]
           },
           {
             title: "Role-based Path",
@@ -154,7 +160,7 @@ module.exports = {
         ]
       },
       {
-        title: "Related Content",        
+        title: "Related Content Path",        
         path: "/ai-gen/related-content",          
       },
       {
