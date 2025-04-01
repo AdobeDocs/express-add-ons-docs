@@ -148,18 +148,18 @@ Learning paths tailored to different roles in the development process.
 - [Licensing and Monetization](paths/role-based.md#module-3-licensing-and-monetization-1-hour)
 - [Distribution and Marketing](paths/role-based.md#module-4-distribution-and-marketing-15-hours)
 
-## [**Subject-Based Learning Paths**](paths/subject-based.md)
+## [**Subject-Based Learning Paths**](paths/subject-based/gen1.md)
 These paths focus on specific aspects of add-on development.
 
 - [Learning Path: API Integration](paths/subject-based/gen1.md#path-adobe-express-add-on-apis-6-hours)
 - [Learning Path: UI Development](paths/subject-based/gen1.md#path-add-on-ui-design-5-hours)
 - [Learning Path: Add-on Development Lifecycle](paths/subject-based/gen1.md#path-add-on-development-lifecycle-7-hours)
-- [Learning Path: Using Images in Adobe Express Add-ons](paths/subject-based/gen2.md#learning-path-using-images-in-adobe-express-add-ons)
-- [Learning Path: Authentication and Authorization](paths/subject-based/gen2.md#learning-path-authentication-and-authorization)
-- [Learning Path: Data Management](paths/subject-based/gen2.md#learning-path-data-management)
-- [Learning Path: Building User Interfaces with Spectrum](paths/subject-based/gen2.md#learning-path-building-user-interfaces-with-spectrum)
-- [Learning Path: Document Manipulation](paths/subject-based/gen2.md#learning-path-document-manipulation)
-- [Learning Path: Add-on Development Workflow](paths/subject-based/gen2.md#learning-path-add-on-development-workflow)
+- [Learning Path: Using Images in Adobe Express Add-ons](paths/subject-based/gen2.md#subject-path-using-images-in-adobe-express-add-ons)
+- [Learning Path: Authentication and Authorization](paths/subject-based/gen2.md#subject-path-authentication-and-authorization)
+- [Learning Path: Data Management](paths/subject-based/gen2.md#subject-path-data-management)
+- [Learning Path: Building User Interfaces with Spectrum](paths/subject-based/gen2.md#subject-path-building-user-interfaces-with-spectrum)
+- [Learning Path: Document Manipulation](paths/subject-based/gen2.md#subject-path-document-manipulation)
+- [Learning Path: Add-on Development Workflow](paths/subject-based/gen2.md#subject-path-add-on-development-workflow)
 
 ## [**Project-Based Learning Paths**](paths/project-based.md)
 

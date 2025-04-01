@@ -60,7 +60,7 @@ This guide provides solutions to common issues that developers may encounter dur
 - **Solution:** Ensure that your server is configured to allow cross-origin requests. Use the `Access-Control-Allow-Origin` header to specify allowed origins.
 
 ### Problem: COI Headers Not Applied
-- **Solution:** Follow the steps to apply COI headers in your browser's developer tools. Refer to the [Cross-Origin Isolation Guide](src/pages/guides/develop/coi.md) for detailed instructions.
+- **Solution:** Follow the steps to apply COI headers in your browser's developer tools. Refer to the [Cross-Origin Isolation Guide](../../guides/develop/coi.md) for detailed instructions.
 
 ## Common Error Messages
 

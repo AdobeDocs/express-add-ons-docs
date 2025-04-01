@@ -33,7 +33,7 @@ The Adobe Express add-on development structured learning paths will help you lea
 
 I'm new to Adobe Express add-on development.
 
-- [Start](beginner-index)
+- [Start](beginner-index.md)
 
 <TextBlock slots="image, heading, text, links" width="33%" />
 
@@ -43,7 +43,7 @@ I'm new to Adobe Express add-on development.
 
 I've built add-ons before but want to learn more.
 
-- [Start](intermediate-index)
+- [Start](intermediate-index.md)
 
 <TextBlock slots="image, heading, text, links" width="33%" />
 
