@@ -22,15 +22,15 @@ module.exports = {
       },
       {
         title: "Guides",
-        path: "guides",
+        path: "guides/index.md",
       },
       {
         title: "SDK References",
-        path: "references",
+        path: "references/index.md",
       },
       {
         title: "Samples",
-        path: "samples",
+        path: "samples.md",
       },
       {
         title: "Community",
