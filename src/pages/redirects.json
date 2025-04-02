@@ -16,8 +16,8 @@
             "Destination": "/express/add-ons/docs/references/changelog"
         },
         {
-            "Source": "/express/add-ons/docs/references/manifest/index.md",
-            "Destination": "/express/add-ons/docs/references/manifest/index.md/"
+            "Source": "/express/add-ons/docs/references/manifest",
+            "Destination": "/express/add-ons/docs/references/manifest/"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/index.md",
