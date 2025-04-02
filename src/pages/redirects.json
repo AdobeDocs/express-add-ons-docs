@@ -780,6 +780,10 @@
             "Destination": "/express/add-ons/docs/guides/debug/known-issues-limitations"
         },
         {
+            "Source": "/express/add-ons/docs/guides/debug",
+            "Destination": "/express/add-ons/docs/guides/debug/"
+        },
+        {
             "Source": "/express/add-ons/docs/guides/debug/index.md",
             "Destination": "/express/add-ons/docs/guides/debug/index.md/"
         },
