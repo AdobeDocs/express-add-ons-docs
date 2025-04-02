@@ -716,6 +716,10 @@
             "Destination": "/express/add-ons/docs/guides/develop/how-to/create_renditions"
         },
         {
+            "Source":"/express/add-ons/docs/guides/design",
+            "Destination":"/express/add-ons/docs/guides/design/"
+        },
+        {
             "Source": "/express/add-ons/docs/guides/design/index.md",
             "Destination": "/express/add-ons/docs/guides/design/index.md/"
         },
