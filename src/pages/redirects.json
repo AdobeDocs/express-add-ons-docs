@@ -540,6 +540,10 @@
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/monetization"
         },
         {
+            "Source": "/express/add-ons/docs/guides/distribute/guidelines",
+            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/"
+        },
+        {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/index.md",
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/index.md/"
         },
