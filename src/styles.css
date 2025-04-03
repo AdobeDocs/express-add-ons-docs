@@ -72,3 +72,12 @@ h1 {
 .spectrum-InLineAlert-content li {
   margin-left: 12px;
 }
+
+/* Fix for the first paragraph in a TextBlock */
+section[class*="TextBlock"] > div > p:first-of-type {
+  height: 150px;
+}
+
+section[class*="TextBlock"] {
+  padding: 20px 0 10px 0;
+}

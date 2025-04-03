@@ -18,7 +18,7 @@ contributors:
   - https://github.com/undavide
 ---
 
-import '/src/custom.css'
+import '/src/styles.css'
 
 <Hero slots="heading, text" background="rgb(138, 43, 226)"/>
 
