@@ -26,7 +26,7 @@ contributors:
 
 ### Added
 
-- A new [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method is added to [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel) class, which returns true if the text contains any fonts unavailable to the current user.
+- A new [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method is added to [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel.md) class, which returns true if the text contains any fonts unavailable to the current user.
 
 <InlineAlert slots="text" variant="warning"/>
 
