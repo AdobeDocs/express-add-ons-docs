@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/how_to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/develop/how_to/create_renditions.md) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/how-to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/develop/how-to/create_renditions.md) from the current document.
 
 ## General Methods
 
@@ -405,7 +405,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [import images how-to](../../guides/develop/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [import images how-to](../../guides/develop/how-to/use_images.md#import-images-into-the-page) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -572,7 +572,7 @@ Generate renditions of the current page, specific pages or the entire document i
 }
 ```
 
-Refer to the [manage premium content how-to](../../guides/develop/how_to/premium_content.md) for more specific details on options for handling the export of premium content.
+Refer to the [manage premium content how-to](../../guides/develop/how-to/premium_content.md) for more specific details on options for handling the export of premium content.
 
 #### `RenditionOptions`
 
@@ -764,7 +764,7 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [create renditions how-to](../../guides/develop/how_to/create_renditions.md) and the [export-sample](/samples.md) in the code samples for usage examples.
+Refer to the [create renditions how-to](../../guides/develop/how-to/create_renditions.md) and the [export-sample](/samples.md) in the code samples for usage examples.
 
 ### Errors
 

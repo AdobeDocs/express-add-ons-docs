@@ -616,8 +616,8 @@
             "Destination": "/express/add-ons/docs/guides/develop/index.md/"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to"
         },
         {
             "Source": "/express/add-ons/docs/guides/develop/frameworks-libraries-bundling/",
@@ -636,84 +636,84 @@
             "Destination": "/express/add-ons/docs/guides/develop/coi"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/use_videos/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_videos"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/use_videos/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_videos"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/use_text/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_text"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/use_text/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_text"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/use_pdf_powerpoint/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_pdf_powerpoint"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/use_pdf_powerpoint/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_pdf_powerpoint"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/use_images/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_images"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/use_images/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_images"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/use_geometry/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_geometry"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/use_geometry/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_geometry"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/use_color/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_color"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/use_color/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_color"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/use_audio/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/use_audio"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/use_audio/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/use_audio"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/user_info/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/user_info"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/user_info/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/user_info"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/theme_locale/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/theme_locale"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/theme_locale/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/theme_locale"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/premium_content/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/premium_content"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/premium_content/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/premium_content"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/position_elements/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/position_elements"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/position_elements/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/position_elements"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/page_metadata/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/page_metadata"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/page_metadata/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/page_metadata"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/oauth2/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/oauth2"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/oauth2/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/oauth2"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/modal_dialogs/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/modal_dialogs"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/modal_dialogs/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/modal_dialogs"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/local_data_management/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/local_data_management"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/local_data_management/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/local_data_management"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/group_elements/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/group_elements"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/group_elements/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/group_elements"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/element_metadata/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/element_metadata"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/element_metadata/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/element_metadata"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/drag_and_drop/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/drag_and_drop"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/drag_and_drop/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/drag_and_drop"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/document_metadata/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/document_metadata"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/document_metadata/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/document_metadata"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how_to/create_renditions/",
-            "Destination": "/express/add-ons/docs/guides/develop/how_to/create_renditions"
+            "Source": "/express/add-ons/docs/guides/develop/how-to/create_renditions/",
+            "Destination": "/express/add-ons/docs/guides/develop/how-to/create_renditions"
         },
         {
             "Source": "/express/add-ons/docs/guides/design/index.md",

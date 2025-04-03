@@ -1,6 +1,6 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/how_to/modal_dialogs.md), [enable drag and drop](../../guides/develop/how_to/drag_and_drop.md) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/how-to/modal_dialogs.md), [enable drag and drop](../../guides/develop/how-to/drag_and_drop.md) of content and subscribe and unsubscribe to events.
 
 ## Objects
 
@@ -252,7 +252,7 @@ async function showInputDialog() {
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/develop/how_to/modal_dialogs.md#custom-dialog).
+See the use case implementations for an example of the [custom modal dialog](../../guides/develop/how-to/modal_dialogs.md#custom-dialog).
 
 ### showColorPicker()
 
@@ -492,7 +492,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/develop/how_to/drag_and_drop.md) for example usage, and the [code samples](/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/develop/how-to/drag_and_drop.md) for example usage, and the [code samples](/samples.md) provided for reference.
 
 ## Events
 
