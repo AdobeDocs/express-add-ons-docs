@@ -25,9 +25,9 @@ This tutorial will guide you through the creation of your first Adobe Express ad
 
 Hello, and welcome to this Adobe Express Document API tutorial, where we'll build together a **fully functional Grid System add-on** from scratch. Grid systems are widely used in the design world to bring structure and consistency to all visual content, from flyers to web pages or social media posts.
 
-<Media slots="video"/>
+<Embed slots="video"/>
 
-<https://www.youtube.com/watch?v=SQMYA660gII>
+https://www.youtube.com/watch?v=SQMYA660gII
 
 ![](images/grids-addon.png)
 
@@ -79,8 +79,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 ### Topics Covered
 
-<!-- List block here -->
-<ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [iframe and Document Model Sandbox communication](#the-communication-api)
 
@@ -98,14 +97,16 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 [Context permanence](#deleting-grids)
 
-![](./images/grids-addon-animation.gif)
+<Embed slots="video" />
+
+./images/stats-addon-animation.mp4
 
 ### Getting Started with the Document API
 
-As part of the [Document Model Sandbox](/references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
+As part of the [Document Model Sandbox](../../references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
--   The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](/guides/develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
--   The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/document-sandbox/communication/)), providing access to the [Document API](/references/document-sandbox/document-apis/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
+-   The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](../develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
+-   The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](../../references/document-sandbox/communication/index.md)), providing access to the [Document API](../../references/document-sandbox/document-apis/index.md). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
@@ -117,17 +118,17 @@ The complete code for the Grids System add-on can be found [here](https://github
 
 You can either clone the entire repository:
 
-```bash
+```
 git clone https://github.com/AdobeDocs/express-add-on-samples.git
 ```
 
 Or download it as a `.zip` file (click the green "Code" button and then "Download ZIP").
 
-![](images/grids-addon-git.png)
+![](./images/grids-addon-git.png)
 
 Then `cd` in the project folder (either the `grids-design-start` or `grids-design-end` one) and run the following commands:
 
-```bash
+```
 cd express-add-on-samples/document-sandbox-samples/express-grids-addon/grids-design-end
 
 npm install
@@ -135,11 +136,11 @@ npm run build
 npm run start
 ```
 
-This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](/guides/getting_started/quickstart.md) guide for a step-by-step walkthrough.
+This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](../getting-started/quickstart.md) guide for a step-by-step walkthrough.
 
 Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Document Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
-![](images/grids-addon-folder-structure.png)
+![](./images/grids-addon-folder-structure.png)
 
 As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iframe logic code (UI element handlers, etc.). The Document API entry point is instead `documentSandbox/code.js`, as defined in the `manifest.json`:
 
@@ -159,7 +160,7 @@ As usual, we'll work in the `src` folder while Webpack outputs the result in `di
 
 If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `code.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
 
-<!-- Code below -->
+
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iframe
@@ -240,7 +241,7 @@ start();
 
 Please use the iframe and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
-The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](/guides/design/user_interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
+The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](../../guides/design/user-interface.md#spectrum-web-components-with-express-theme), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 
 ## The Communication API
 
@@ -248,12 +249,10 @@ A crucial component of any add-on that consumes the Document API is the communic
 
 The mechanism is straightforward: through the `runtime` object (`code.js`, line 2), you can invoke the `exposeApi()` method, which grants the iframe access to the object literal that is passed as a parameter. The iframe must get to the `runtime`, too, and use its `apiProxy()` method passing `"documentSandbox"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
-![Add-on Communication API](images/grids-addon-communicationapi.png)
+![Add-on Communication API](./images/grids-addon-communicationapi.png)
 
 It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later.
 
-<!-- code below -->
-<!-- please note, the heading won't render anyway -->
 <InlineAlert variant="warning" slots="heading, text1, text2, text3, text4" />
 
 **Syntax**
@@ -286,17 +285,17 @@ runtime.exposeApi({
 });
 ```
 
-It's also possible to expose iframe methods to the Document Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](/samples.md#communication-iframe-documentsandbox-sample) to see it in action.
+It's also possible to expose iframe methods to the Document Sandbox, i.e., using `apiProxy()` passing `"panel"`, but it's outside the scope of this tutorial—please refer to [this sample](../../samples.md#communication-iframe-documentsandbox) to see it in action.
 
 ## The Document API
 
 ### Using the Reference Documentation
 
-The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](/references/document-sandbox/document-apis).
+The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](../../references/document-sandbox/document-apis/index.md).
 
-![Add-on Communication API](images/grids-addon-reference.png)
+![Add-on Communication API](./images/grids-addon-reference.png)
 
-In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode/) is a subclass of the [`FillableNode`](/references/document-sandbox/document-apis/classes/FillableNode/), which in turn subclasses the [`StrokableNode`](/references/document-sandbox/document-apis/classes/StrokableNode/), which eventually is just a particular kind of [`Node`](/references/document-sandbox/document-apis/classes/Node/)—the base class.
+In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](../../references/document-sandbox/document-apis/classes/rectangle-node.md) is a subclass of the [`FillableNode`](../../references/document-sandbox/document-apis/classes/fillable-node.md), which in turn subclasses the [`StrokableNode`](../../references/document-sandbox/document-apis/classes/strokable-node.md), which eventually is just a particular kind of [`Node`](../../references/document-sandbox/document-apis/classes/node.md)—the base class.
 
 Some properties are shared among the `RectangleNode` and, say, other `StrokableNode` subclasses such as the `EllipseNode`: for instance, the `opacity`, or `blendMode`. Other ones are unique, like the `topLeftRadius`, which, in the context of an `EllipseNode`, wouldn't make sense.
 
@@ -304,7 +303,7 @@ Some properties are shared among the `RectangleNode` and, say, other `StrokableN
 
 It's finally time to start laying down some elements. Let's hook the only iframe button currently available to a function exposed by the Document API. Type the following into the source files (`index.html`, `index.js`, and `code.js` have been edited), then run the add-on.
 
-<!-- Code below -->
+
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iframe
@@ -378,7 +377,7 @@ Please note that it's considered good practice to initially **disable all intera
 
 The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
-According to the Reference, `createRectangle()` is a method of the [`Editor`](/references/document-sandbox/document-apis/classes/Editor/) class, which must be imported from `"express-document-sdk"` with the following statement.
+According to the Reference, `createRectangle()` is a method of the [`Editor`](../../references/document-sandbox/document-apis/classes/editor.md) class, which must be imported from `"express-document-sdk"` with the following statement.
 
 ```js
 import { editor, colorUtils, constants } from "express-document-sdk";
@@ -401,12 +400,11 @@ const fillColor = editor.makeColorFill(col);
 rect.fill = fillColor;
 ```
 
-First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `makeColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
+First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](../../references/document-sandbox/document-apis/classes/color-utils.md) instance. Then, you use such color to create either a fill or stroke—here, we're using `makeColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
 
-<!-- code here -->
 <InlineAlert variant="info" slots="text1" />
 
-Strokes are created with the `editor.makeStroke()` method, which accepts more parameters (all optional). It's documented [here](/references/document-sandbox/document-apis/classes/Editor.md#makestroke).
+Strokes are created with the `editor.makeStroke()` method, which accepts more parameters (all optional). It's documented [here](../../references/document-sandbox/document-apis/classes/editor.md#makestroke).
 
 The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
 
@@ -421,7 +419,7 @@ In other words, we're adding `rect` as a sibling of whatever happens to be activ
 
 ![](images/grids-addon-shape.png)
 
-Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](/references/document-sandbox/document-apis/classes/ArtboardNode/) of the first [Page](/references/document-sandbox/document-apis/classes/PageNode/).
+Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](../../references/document-sandbox/document-apis/classes/artboard-list.md) of the first [Page](../../references/document-sandbox/document-apis/classes/page-node.md).
 
 ```js
 // ...
@@ -443,7 +441,7 @@ You now understand the fundamentals of the Adobe Express DOM and the hierarchica
 
 ### Designing the UI with Spectrum Web Components
 
-Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](/guides/design/user_interface.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
+Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](../../guides/design/index.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
 
 -   `<sp-number-field>` for the Rows and Columns inputs;
 -   `<sp-slider>` for the Gutter;[^4]
@@ -454,7 +452,7 @@ The layout is based on nested FlexBox CSS classes, such as `row` and `column`. B
 
 ![](images/grids-addon-swc.png)
 
-Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](/guides/design/user_interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
+Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](../../guides/design/user-interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
 
 ```bash
 npm install @spectrum-web-components/button
@@ -492,7 +490,7 @@ Mind the import names: for example, you install a `@spectrum-web-components/butt
 
 The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
-<!-- Code below -->
+
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
 
 #### index.html
@@ -539,7 +537,6 @@ Please refer to the source code for other details on the HTML structure, which a
 
 Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Document Sandbox is retrieved, and everything the Document API exposes is stored in the `sandboxProxy` constant (lines 9-10).
 
-<!-- Code below -->
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
 
 #### index.html
@@ -682,7 +679,6 @@ Another crucial notion is to avoid silent failures: every action should either s
 
 It makes sense to approach this grid business with some caution, as we're just starting with the Document API. Let's set up `documentSandbox/code.js` to expose this `addGrid()` method and manage the argument provided.
 
-<!-- Code below -->
 <CodeBlock slots="heading, code" repeat="1" languages="documentSandbox/code.js"/>
 
 #### documentSandbox/code.js
@@ -709,7 +705,7 @@ When the user clicks the Create button, the parameters from the UI are properly 
 
 To begin with, we'll create rows: rectangles that must be as wide as the page. To calculate their height, first, subtract the total number of gutters (which is equal to the number of rows plus one) from the page height. Then, divide the resulting value by the number of rows.
 
-```text
+```txt
 rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
 ```
 
@@ -717,7 +713,7 @@ This is because we're using gutters as page margins, too, as the following illus
 
 ![](images/grids-addon-rowheight.png)
 
-We must get hold of the [Document](/references/document-sandbox/document-apis/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](/references/document-sandbox/document-apis/classes/PageNode/)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
+We must get hold of the [Document](../../references/document-sandbox/document-apis/classes/editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](../../references/document-sandbox/document-apis/classes/page-node.md)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
 
 ```js
 // ...
@@ -769,7 +765,7 @@ rowsRect.forEach((rect) => page.artboards.first.children.append(rect));
 
 We've created all the needed rectangles, shifting them on the Y-axis according to their number and gutter, collecting them in a `rowsRect` array; which, in turn, we've looped through to append them all to the first `artboard` in the page.
 
-<!-- code below -->
+
 <InlineAlert variant="info" slots="text1" />
 
 Please remember that you must always `append()` elements to their container's `children` property.
@@ -802,7 +798,7 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 -   `code.js` doesn't need to expose anything else but the `addGrid()` and `deleteGrid()` methods.
 -   `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
 
-<!-- Code below -->
+
 <CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
 
 #### documentSandbox/code.js
@@ -876,7 +872,7 @@ export { addColumns, addRows };
 
 As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Since the color is received as a Hex string (like `"#ffcccc"`), we make use of the `colorUtil.fromHex()` method to convert into a Color instance—see `shapeUtils.js`, line 9.
 
-It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](/references/document-sandbox/document-apis/classes/Editor.md#creategroup) method returning a [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
+It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](../../references/document-sandbox/document-apis/classes/editor.md#creategroup) method returning a [`GroupNode`](../../references/document-sandbox/document-apis/classes/group-node.md). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
@@ -893,7 +889,7 @@ const addRows = (rowsNumber, gutter, color) => {
 
 ![](images/grids-addon-groups.png)
 
-To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](/references/document-sandbox/document-apis/classes/GroupNode.md#locked) property, which we can easily set after populating the group.
+To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](../../references/document-sandbox/document-apis/classes/group-node.md#locked) property, which we can easily set after populating the group.
 
 ```js
 // ...
@@ -901,7 +897,7 @@ rowsGroup.children.append(...rows);
 rowsGroup.locked = true;
 ```
 
-The Reference also shows an interesting [`blendMode`](/references/document-sandbox/document-apis/classes/GroupNode.md#blendmode): setting it to [`multiply`](/references/document-sandbox/document-apis/enumerations/BlendMode/#multiply) will produce a visually nicer overlay effect ([opacity](/references/document-sandbox/document-apis/classes/GroupNode.md#opacity) can be an alternative).
+The Reference also shows an interesting [`blendMode`](../../references/document-sandbox/document-apis/classes/group-node.md#blendmode): setting it to [`multiply`](../../references/document-sandbox/document-apis/enumerations/blend-mode.md#multiply) will produce a visually nicer overlay effect ([opacity](../../references/document-sandbox/document-apis/classes/group-node.md#opacity) can be an alternative).
 
 ```js
 // ...
@@ -993,7 +989,7 @@ Congratulations! You've coded from scratch the Grids Design System add-on. This 
 
 -   **Page margins**: we're using the gutter for this purpose, but a proper `<sp-number-field>` can be added to allow users to set margins.
 -   **Visibility toggle**: Use a `<sp-slider>`to control the grid's opacity, or add a `<sp-switch>` to toggle them on and off.
--   **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](/references/addonsdk/instance-clientStorage/).
+-   **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](../../references/addonsdk/instance-client-storage.md).
 
 ## Lessons Learned
 
@@ -1009,7 +1005,7 @@ Let's review the concepts covered in this tutorial and how they've been implemen
 
 The code for this project can be downloaded [here](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon). It's available in two states: the starting point (one Create Shape button in the UI and the respective Document API function) if you want to follow along with the tutorial and type in the code—the best way to learn—and the final state, which code is also found below for convenience.
 
-<!-- Code below -->
+
 <CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, styles.css, code.js, shapeUtils.js" />
 
 #### iframe
@@ -1398,8 +1394,6 @@ const addColumns = (columsNumber, gutter, color) => {
 
 export { addColumns, addRows };
 ```
-
-<!-- Footnotes -->
 
 [^1]: Alternatively, you can use this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template) and start from scratch, but you'd need to manually add the `documentSandbox/shapeUtils.js` file and the various Spectrum imports.
 [^2]: The quotes are from the Documentation Reference of each element.
