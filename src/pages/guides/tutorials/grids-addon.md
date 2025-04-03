@@ -73,7 +73,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 ### Prerequisites
 
 -   Familiarity with HTML, CSS, JavaScript.
--   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](/guides/getting_started/quickstart.md) guide.
+-   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../guides/getting_started/quickstart.md) guide.
 -   An Adobe Express account; use your existing Adobe ID or create one for free.
 -   Node.js version 16 or newer.
 
@@ -136,7 +136,7 @@ npm run build
 npm run start
 ```
 
-This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](../getting-started/quickstart.md) guide for a step-by-step walkthrough.
+This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](../getting_started/quickstart.md) guide for a step-by-step walkthrough.
 
 Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Document Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
@@ -705,7 +705,7 @@ When the user clicks the Create button, the parameters from the UI are properly 
 
 To begin with, we'll create rows: rectangles that must be as wide as the page. To calculate their height, first, subtract the total number of gutters (which is equal to the number of rows plus one) from the page height. Then, divide the resulting value by the number of rows.
 
-```txt
+```text
 rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
 ```
 
