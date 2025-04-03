@@ -26,7 +26,11 @@ contributors:
 
 ### Added
 
-- Added a new [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method as experimental.
+- A new [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method is added to [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel) class, which returns true if the text contains any fonts unavailable to the current user.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ## 2025-03-21
 
