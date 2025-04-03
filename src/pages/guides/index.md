@@ -15,7 +15,10 @@ title: Adobe Express Add-ons Guides
 description: Find the most recent documentation, code samples and resources for building add-ons for Adobe Express.
 contributors:
   - https://github.com/hollyschinsky
+  - https://github.com/undavide
 ---
+
+import '/src/custom.css'
 
 <Hero slots="heading, text" background="rgb(138, 43, 226)"/>
 
@@ -23,53 +26,88 @@ contributors:
 
 Adobe Express is the AI-first, all-in-one creativity app that makes it fast, easy, and fun for any user to design and share standout content.
 
-## Add-ons
+## Welcome to Adobe Express Add-ons!
+
+Check out this quick introduction to learn more, then read on to get started. <br/><br/>
+
+<div style="display: flex; justify-content: center;">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div><br/>
+
+## Add-on Developer Journey
+
+Ready to build your own add-on? Check out the following steps to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
+
+<TextBlock slots="image, heading, text, text1, text2" width="50%" />
+
+![Discover](./getting_started/img/devjourney-1-discovery.png)
+
+### Discover
+
+Explore how add-ons can expand capabilities and streamline creative workflows.
+
+#### Time: 10 minutes
+
+- Watch the [add-on introduction video](https://www.youtube.com/watch?v=CHBiTTN1neE).
+- Still confused? Here's an [overview](https://developer.adobe.com/express/add-ons/) of the platform and its capabilities.
+
+<TextBlock slots="image, heading, text, text1, text2" width="50%" />
+
+![Learn](./getting_started/img/devjourney-2-learn.png)
+
+### Learn
+
+Familiarize and experiment with powerful features in our Code Playground.
+
+#### Time: 2+ hours
+
+- Learn by tinkering with the [Code Playground](./getting_started/code_playground.md).
+- Browse our [How-to Guides](./develop/how_to.md) and test our APIs.
+
+<div class="pad">&nbsp;</div>
+
+<TextBlock slots="image, heading, text, text1, text2" width="50%" />
+
+![Develop](./getting_started/img/devjourney-3-develop.png)
+
+### Develop
+
+Transform your ideas into a polished product following our best practices.
+
+#### Time: 2+ days
+
+- Scaffold your project with the [CLI](./getting_started/dev_tooling.md) and follow the [Debug guide](./debug/index.md).
+- Explore our [UX Guidelines](../guides/design/index.md) and [Tutorials](../guides/tutorials/index.md).
+- Check out our [Code Samples](../samples.md) and [API Reference](../references/index.md).
+
+<TextBlock slots="image, heading, text, text1, text2" width="50%" />
+
+![Distribute](./getting_started/img/devjourney-4-distribute.png)
+
+### Distribute
+
+Share your add-on with the world in the Adobe Express Marketplace.
+
+#### Time: 1+ days
+
+- Learn about the [distribution process](./distribute/index.md) and how to [monetize](./distribute/guidelines/monetization.md) your add-on.
+- Follow our [guidelines](./distribute/guidelines/general/index.md) to get your add-on ready for review.
+- Find quick solutions to common issues in our [FAQ](./faq.md).
+
+## The add-ons Marketplace
+
+Do you want to try some add-ons first? Open [Adobe Express](https://new.express.adobe.com/new) and click on the **Add-ons** button located in the left-hand sidebar. Browse through Adobe's picks, the Collections or use the search bar to find specific add-ons.
+
+![discover add-ons image](../images/addons.png)
+
+Click on an add-on to view more information and install it. That's it!
 
 <InlineAlert slots="text" />
 
 **Join Us: Office Hours for Adobe Express Developers** <br /><br />
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
 
-Add-ons extend the functionality of [Adobe Express](https://new.express.adobe.com/), unlocking creative workflows for Adobe Express users. The add-ons marketplace is a dedicated platform for developers to distribute and users to discover new add-ons. Check out this quick introduction to Adobe Express add-ons to learn more, then read on to get started. <br/><br/>
+## What's next?
 
-<div style="display: flex; justify-content: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/>
-
-To discover add-ons in [Adobe Express](https://new.express.adobe.com/new):
-
-1. Open the Adobe Express editor and [create a new file](https://new.express.adobe.com/new) or open an existing one.
-2. Click on the **Add-ons** button located in the left-hand sidebar.
-3. Browse through the different categories of add-ons or use the search bar to find specific add-ons.
-4. Click on an add-on to view more information and to install it.
-
-![discover add-ons image](../images/discover.png)
-
-That's it! You can now use the installed add-ons in your Adobe Express projects.
-
-### Use Cases
-
-Ready to build your own? Check out these popular use cases supported by our add-on SDK for inspiration:
-
-- Importing images and video
-- Exporting renditions of images in different formats
-- Connecting to external sources via OAuth 2.0
-- Storing and retrieving data
-- Drag-and-drop support of content to the canvas
-- Retrieving manifest data
-- Managing language and locale
-- Retrieving the current theme and detecting theme changes
-
-See the [implementing common use cases](develop) page and [code samples](../samples.md) for more details on how to implement the features above.
-
-## Add-on Developer Journey
-
-The journey to developing an add-on is outlined below:
-
-1. Create an add-on project with the CLI. You can refer to the [Getting Started](./getting_started/) guides to help you create your first project quickly.
-2. Design your UI using [Adobe's Spectrum Design System](https://spectrum.adobe.com/). This system provides guidelines and resources for designing user interfaces that follow Adobe's design language and best practices.
-3. Use the [common use case implementations](./develop/), [code samples](../samples.md), and [references](../references/) to learn how to include all of the features you want to showcase in your add-on. This can help you save time and avoid common mistakes when developing your add-on.
-4. [Debug and test](./debug/) your add-on using your favorite browser tools, Visual Studio Code, and the add-on logging window provided in the Adobe Express UI development environment. This will help you identify and fix any bugs or issues before distributing your add-on.
-5. Distribute your add-on for public or private sharing. You can refer to the [add-on distribution guidelines](./distribute/) to learn how to package and distribute your add-on on the Adobe add-ons marketplace or privately to your clients.
-
-If you run into any issues at any time throughout your development process, please refer to the [Debug Guides](../guides/debug/) and [FAQ](../guides/faq.md) for more help.
+Go on the Getting started guide and explore the [Code Playground](./getting_started/code_playground.md) or jump to our Learning Paths!
+<br/><br/><br/><br/>

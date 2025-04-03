@@ -1,0 +1,11 @@
+section[class*="TextBlock"] > div > p:first-of-type {
+  height: 150px;
+}
+
+section[class*="TextBlock"] {
+  padding: 20px 0 10px 0;
+}
+
+div.pad {
+  height: -100px;
+}
