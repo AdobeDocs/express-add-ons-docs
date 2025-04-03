@@ -16,8 +16,8 @@
             "Destination": "/express/add-ons/docs/references/changelog"
         },
         {
-            "Source": "/express/add-ons/docs/references/manifest/index.md",
-            "Destination": "/express/add-ons/docs/references/manifest/index.md/"
+            "Source": "/express/add-ons/docs/references/manifest",
+            "Destination": "/express/add-ons/docs/references/manifest/"
         },
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/index.md",
@@ -520,6 +520,10 @@
             "Destination": "/express/add-ons/docs/guides/distribute/listing-guide"
         },
         {
+            "Source": "/express/add-ons/docs/guides/distribute",
+            "Destination": "/express/add-ons/docs/guides/distribute/"
+        },
+        {
             "Source": "/express/add-ons/docs/guides/distribute/index.md",
             "Destination": "/express/add-ons/docs/guides/distribute/index.md/"
         },
@@ -534,6 +538,10 @@
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/monetization/",
             "Destination": "/express/add-ons/docs/guides/distribute/guidelines/monetization"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/distribute/guidelines",
+            "Destination": "/express/add-ons/docs/guides/distribute/guidelines/"
         },
         {
             "Source": "/express/add-ons/docs/guides/distribute/guidelines/index.md",
@@ -716,6 +724,10 @@
             "Destination": "/express/add-ons/docs/guides/develop/how-to/create_renditions"
         },
         {
+            "Source":"/express/add-ons/docs/guides/design",
+            "Destination":"/express/add-ons/docs/guides/design/"
+        },
+        {
             "Source": "/express/add-ons/docs/guides/design/index.md",
             "Destination": "/express/add-ons/docs/guides/design/index.md/"
         },
@@ -774,6 +786,10 @@
         {
             "Source": "/express/add-ons/docs/guides/debug/known_issues_limitations/",
             "Destination": "/express/add-ons/docs/guides/debug/known-issues-limitations"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/debug",
+            "Destination": "/express/add-ons/docs/guides/debug/"
         },
         {
             "Source": "/express/add-ons/docs/guides/debug/index.md",
