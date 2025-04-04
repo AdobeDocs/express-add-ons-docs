@@ -20,11 +20,15 @@ contributors:
 
 import '/src/styles.css'
 
-<Hero slots="heading, text" background="rgb(138, 43, 226)"/>
+<Hero slots="heading, text"  className="hero-gradient" />
 
-# Overview
+## Build add-ons for Adobe Express
 
 Adobe Express is the AI-first, all-in-one creativity app that makes it fast, easy, and fun for any user to design and share standout content.
+
+<div className="hero-image-container">
+  <img src="../images/Explore_Image_3.png" alt="Adobe Express add-ons" />
+</div>
 
 ## Welcome to Adobe Express Add-ons!
 
