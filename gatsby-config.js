@@ -533,6 +533,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/StyleRange.md",
                   },
                   {
+                    title: "TextRange",
+                    path: "references/document-sandbox/document-apis/interfaces/TextRange.md",
+                  },
+                  {
                     title: "UnorderedListStyleInput",
                     path: "references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md",
                   },
