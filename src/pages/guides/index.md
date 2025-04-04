@@ -31,14 +31,14 @@ Adobe Express is the AI-first, all-in-one creativity app that makes it fast, eas
 Check out this quick introduction to learn more, then read on to get started. <br/><br/>
 
 <div style="display: flex; justify-content: center;">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="779" height="438" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div><br/>
 
 ## Add-on Developer Journey
 
 Ready to build your own add-on? Check out the following steps to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
 
-<TextBlock slots="image, heading, text, text1, text2" width="50%" />
+<TextBlock slots="image, heading, text, text1, text2" width="50%"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
 
@@ -46,7 +46,7 @@ Ready to build your own add-on? Check out the following steps to get started, or
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-#### Time: 10 minutes
+#### Effort: 30 minutes
 
 - Watch the [add-on introduction video](https://www.youtube.com/watch?v=CHBiTTN1neE).
 - Still confused? Here's an [overview](https://developer.adobe.com/express/add-ons/) of the platform and its capabilities.
@@ -59,7 +59,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 Familiarize and experiment with powerful features in our Code Playground.
 
-#### Time: 2+ hours
+#### Effort: 2+ hours
 
 - Learn by tinkering with the [Code Playground](./getting_started/code_playground.md).
 - Browse our [How-to Guides](./develop/how_to.md) and test our APIs.
@@ -74,7 +74,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 Transform your ideas into a polished product following our best practices.
 
-#### Time: 2+ days
+#### Effort: 2+ days
 
 - Scaffold your project with the [CLI](./getting_started/dev_tooling.md) and follow the [Debug guide](./debug/index.md).
 - Explore our [UX Guidelines](../guides/design/index.md) and [Tutorials](../guides/tutorials/index.md).
@@ -88,7 +88,7 @@ Transform your ideas into a polished product following our best practices.
 
 Share your add-on with the world in the Adobe Express Marketplace.
 
-#### Time: 1+ days
+#### Effort: 1+ days
 
 - Learn about the [distribution process](./distribute/index.md) and how to [monetize](./distribute/guidelines/monetization.md) your add-on.
 - Follow our [guidelines](./distribute/guidelines/general/index.md) to get your add-on ready for review.

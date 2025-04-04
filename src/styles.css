@@ -74,10 +74,18 @@ h1 {
 }
 
 /* Fix for the first paragraph in a TextBlock */
-section[class*="TextBlock"] > div > p:first-of-type {
+/* section[class*="TextBlock"] > div > p:first-of-type {
   height: 150px;
 }
 
 section[class*="TextBlock"] {
   padding: 20px 0 10px 0;
+} */
+
+section > div > p:has(> span > picture) {
+  height: 150px !important;
+}
+
+section:has(> div > p > span > picture) {
+  padding: 20px 0 10px 0 !important;
 }
