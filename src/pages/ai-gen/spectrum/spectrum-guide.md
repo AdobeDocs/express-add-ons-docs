@@ -24,7 +24,7 @@ The Spectrum Design System is Adobe's design language that ensures consistent, a
    - For new Adobe Express add-ons
    - When framework independence is important
    - When you need the Express theme
-   
+
 2. **swc-react**
    - For React-based add-ons
    - When you want React-like component usage
@@ -262,12 +262,12 @@ export default ContentManager;
    - Refined color palette with improved contrast
    - Updated typography system
    - New iconography style
-   
+
 2. **Component Updates**
    - Redesigned component variants
    - Improved interaction patterns
    - New animation standards
-   
+
 3. **Accessibility Improvements**
    - Enhanced color contrast ratios
    - Improved keyboard navigation
@@ -282,6 +282,7 @@ For Adobe Express add-ons, continue using the Express theme until Adobe Express 
 ### Common Issues and Solutions
 
 1. **Certificate Issues in Development**
+
    ```bash
    # Reset development certificates
    rm -rf ~/Library/Application\ Support/devcert   # Mac
@@ -294,6 +295,7 @@ For Adobe Express add-ons, continue using the Express theme until Adobe Express 
    - Verify component versions match
 
 3. **Theme Not Applied**
+
    ```html
    <!-- Correct -->
    <sp-theme scale="medium" color="light" theme="express">
@@ -324,4 +326,4 @@ const Dialog = await loadDialog();
 - [Adobe Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)
 - [Spectrum Web Components GitHub](https://github.com/adobe/spectrum-web-components)
 - [Adobe Express UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
-- [Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/) 
+- [Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)

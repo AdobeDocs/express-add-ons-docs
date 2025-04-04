@@ -25,6 +25,7 @@ Now that you understand the basics and have experimented in the Playground, it's
 ## Project Overview: Motivational Quotes Add-on
 
 Our add-on will:
+
 1. Display a collection of motivational quotes
 2. Allow users to select a quote
 3. Add the selected quote to their document with styling options
@@ -36,9 +37,11 @@ First, let's create a new add-on project:
 
 1. Open a terminal/command prompt
 2. Run:
+
    ```
    npx @adobe/create-ccweb-add-on motivational-quotes
    ```
+
 3. When prompted, select the following options:
    - Add-on type: Panel
    - UI Framework: HTML (for simplicity)
@@ -46,11 +49,13 @@ First, let's create a new add-on project:
    - Include addon-helpers: Yes
 
 4. Once the project is created, navigate to the project directory:
+
    ```
    cd motivational-quotes
    ```
 
 5. Install dependencies:
+
    ```
    npm install
    ```
@@ -299,6 +304,7 @@ Let's ensure our manifest is properly configured:
 Now it's time to test your add-on:
 
 1. Start the development server:
+
    ```
    npm run start
    ```
@@ -377,4 +383,4 @@ Ready to expand your skills? Continue to the Intermediate Path to learn more adv
 
 [Proceed to Intermediate Path: Building Functional Add-ons →](intermediate-index.md#intermediate-learning-path-building-functional-add-ons)
 
-[← Back to Step 3: Using the Playground to Experiment](beginner-step3.md) 
+[← Back to Step 3: Using the Playground to Experiment](beginner-step3.md)

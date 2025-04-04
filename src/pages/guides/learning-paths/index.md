@@ -91,7 +91,7 @@ You've built a few add-ons, and you're ready to take your skills to the next lev
 
 If you've completed all the paths, you know more than most developers; congratulations! Feel free to explore the rest of the documentation website and samples. For additional resources, check out:
 
-- [Adobe Express add-on Documentation](../guides/index.md)
+- [Adobe Express add-on Documentation](../getting_started/index.md)
 - [API Reference](../../references/index.md)
 - [Sample Add-ons](../../samples.md)
 - [Adobe Express Developer Community](https://developer.adobe.com/express/community)

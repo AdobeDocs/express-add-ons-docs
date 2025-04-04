@@ -57,6 +57,7 @@ At a high level, Adobe Express add-ons consist of:
 3. **Add-on SDK**: JavaScript APIs that enable communication between your code and Adobe Express
 
 The typical workflow involves:
+
 - User interacts with your add-on UI
 - Your code calls Add-on SDK APIs
 - The Adobe Express application responds by updating the document or providing data
@@ -101,4 +102,4 @@ Before moving to the next step, make sure you can answer these questions:
 
 Once you're comfortable with these concepts, you're ready to set up your development environment and start building.
 
-[Proceed to Step 2: Setting Up Your Development Environment →](beginner-step2.md) 
+[Proceed to Step 2: Setting Up Your Development Environment →](beginner-step2.md)

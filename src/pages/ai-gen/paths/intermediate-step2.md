@@ -487,6 +487,7 @@ function dialogScript() {
 ```
 
 This example demonstrates a complete image gallery that allows users to:
+
 - Browse a collection of images
 - Drag images directly into their document
 - View detailed previews in a modal dialog
@@ -515,4 +516,4 @@ Now that you understand how to create interactive user experiences, let's explor
 
 [Proceed to Step 3: Storing and Managing Data →](intermediate-step3.md)
 
-[← Back to Step 1: Working with Document Elements](intermediate-step1.md) 
+[← Back to Step 1: Working with Document Elements](intermediate-step1.md)

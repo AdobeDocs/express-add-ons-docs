@@ -104,8 +104,8 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 - Stabilized the following HLAPI's:
   - The [TextNode](../references/document-sandbox/document-apis/classes/TextNode.md) API's.
-  - The [fromPostscriptName()](./document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](../references/document-sandbox/document-apis/classes/Fonts.md) class.
-  - The [TextContentModel](./document-sandbox/document-apis/classes/TextContentModel.md) APIs like [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges). The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+  - The [fromPostscriptName()](../references/document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](../references/document-sandbox/document-apis/classes/Fonts.md) class.
+  - The [TextContentModel](../references/document-sandbox/document-apis/classes/TextContentModel.md) APIs like [`TextContentModel.characterStyleRanges`](../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges). The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-03-03
 
@@ -113,7 +113,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 - The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](../references/document-sandbox/document-apis/classes/AddOnData.md) class for details. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
 
-- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](../references/document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](../references/document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](../references/document-sandbox/document-apis/classes/Context.md#on) and [`off()`](../references/document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-02-26
 
@@ -129,7 +129,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 **API `paragraphStyleRanges`**
 
-Added new [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
+Added new [`TextContentModel.paragraphStyleRanges`](../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
 
 ### Changed
 
@@ -159,8 +159,8 @@ Stabilized [`importPdf()`](../references/addonsdk/app-document.md#importpdf) and
 
 ### Added
 
-- A new [`Viewport`](./document-sandbox/document-apis/classes/Viewport.md) class has been added to the Document APIs. [`Viewport`](./document-sandbox/document-apis/classes/Viewport.md) represents the canvas area currently visible on-screen.
-- A new API [`bringIntoView`](./document-sandbox/document-apis/classes/Viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
+- A new [`Viewport`](../references/document-sandbox/document-apis/classes/Viewport.md) class has been added to the Document APIs. [`Viewport`](../references/document-sandbox/document-apis/classes/Viewport.md) represents the canvas area currently visible on-screen.
+- A new API [`bringIntoView`](../references/document-sandbox/document-apis/classes/Viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
 
 ## 2025-01-13
 
@@ -181,12 +181,12 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ### Added
 
 - Adds a new [Cross-origin Isolation Handling](../guides/develop/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.
-- Updates the descriptions for the [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.
+- Updates the descriptions for the [`importPdf()`](../references/addonsdk/app-document.md#importpdf) and [`importPresentation()`](../references/addonsdk/app-document.md#importpresentation) functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.
 
 ## 2024-10-08
 
 - Adds a brand new version of the [UX Guidelines](../guides/design/ux_guidelines/introduction.md) for Adobe Express add-ons.
-- Removes the experimental warnings for [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) since it is now stable.
+- Removes the experimental warnings for [`addAnimatedImage()`](../references/addonsdk/app-document.md#addanimatedimage) since it is now stable.
 - Adds the `author` property to [`MediaAttributes`](../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](../references/addonsdk/app-document.md#addaudio) API.
 
 ## 2024-09-30
@@ -194,16 +194,16 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ### New
 
 - Added many new **Text APIs** for improved text management.
-  - [`TextNode.fullContent`](./document-sandbox/document-apis/classes/TextNode.md#fullcontent) accessor: returns the [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel.md) containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).
-  - [`TextNode.nextTextNode`](./document-sandbox/document-apis/classes/TextNode.md#nexttextnode) accessor: gets the next node that overflowing text will spill into.
-  - [`TextNode.layout`](./document-sandbox/document-apis/classes/TextNode.md#layout) accessor: gets and sets the [`TextType`](./document-sandbox/document-apis/enumerations/TextType.md) of the text node frame.
-  - [`TextNode.visualEffects`](./document-sandbox/document-apis/classes/TextNode.md#visualeffects) accessor: list of [`VisualEffectType`](./document-sandbox/document-apis/enumerations/VisualEffectType.md) applied to the text node.
-  - [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) accessor: list of [character style](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#color), [`font`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#font), [`fontSize`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#fontsize), [`letterSpacing`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#letterSpacing) and [`underline`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#underline) properties.
-  - [AvailableFont](./document-sandbox/document-apis/classes/AvailableFont.md) and [UnavailableFont](./document-sandbox/document-apis/classes/UnavailableFont.md) classes.
+  - [`TextNode.fullContent`](../references/document-sandbox/document-apis/classes/TextNode.md#fullcontent) accessor: returns the [`TextContentModel`](../references/document-sandbox/document-apis/classes/TextContentModel.md) containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).
+  - [`TextNode.nextTextNode`](../references/document-sandbox/document-apis/classes/TextNode.md#nexttextnode) accessor: gets the next node that overflowing text will spill into.
+  - [`TextNode.layout`](../references/document-sandbox/document-apis/classes/TextNode.md#layout) accessor: gets and sets the [`TextType`](../references/document-sandbox/document-apis/enumerations/TextType.md) of the text node frame.
+  - [`TextNode.visualEffects`](../references/document-sandbox/document-apis/classes/TextNode.md#visualeffects) accessor: list of [`VisualEffectType`](../references/document-sandbox/document-apis/enumerations/VisualEffectType.md) applied to the text node.
+  - [`TextContentModel.characterStyleRanges`](../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) accessor: list of [character style](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#color), [`font`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#font), [`fontSize`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#fontsize), [`letterSpacing`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#letterSpacing) and [`underline`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#underline) properties.
+  - [AvailableFont](../references/document-sandbox/document-apis/classes/AvailableFont.md) and [UnavailableFont](../references/document-sandbox/document-apis/classes/UnavailableFont.md) classes.
   - Supporting interfaces, enumerations and type aliases.
-- Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](./document-sandbox/document-apis/classes/AddOnData.md) class and the [`addOnData`](./document-sandbox/document-apis/classes/BaseNode.md#addondata) accessor for the BaseNode class.
-- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](./document-sandbox/document-apis/classes/Context.md) class will expose two [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
-- Added a new [`GridCellNode`](./document-sandbox/document-apis/classes/GridCellNode.md) class that represents a **cell in a grid**.
+- Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](../references/document-sandbox/document-apis/classes/AddOnData.md) class and the [`addOnData`](../references/document-sandbox/document-apis/classes/BaseNode.md#addondata) accessor for the BaseNode class.
+- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](../references/document-sandbox/document-apis/classes/Context.md) class will expose two [`on()`](../references/document-sandbox/document-apis/classes/Context.md#on) and [`off()`](../references/document-sandbox/document-apis/classes/Context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
+- Added a new [`GridCellNode`](../references/document-sandbox/document-apis/classes/GridCellNode.md) class that represents a **cell in a grid**.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -219,20 +219,20 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-09-24
 
-- Adds a new [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](./addonsdk/app-document.md#image-requirements)).
-- Adds a new [`importPdf()`](./addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
-- Adds a new [`importPresentation()`](./addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
-- Adds notes about specific support and handling for animated GIF images when [importing](./addonsdk/app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
+- Adds a new [`addAnimatedImage()`](../references/addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](../references/addonsdk/app-document.md#image-requirements)).
+- Adds a new [`importPdf()`](../references/addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
+- Adds a new [`importPresentation()`](../references/addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
+- Adds notes about specific support and handling for animated GIF images when [importing](../references/addonsdk/app-document.md#addimage) and [dragging content](../references/addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
 - Adds all of the new methods mentioned above to the [How-to](../guides/develop/how_to.md) section with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) methods are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`importPdf()`](../references/addonsdk/app-document.md#importpdf) and [`importPresentation()`](../references/addonsdk/app-document.md#importpresentation) methods are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ## 2024-09-10
 
-- Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
-- Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/Stroke.md) APIs.
+- Added a new [`replaceMedia()`](../references/document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
+- Refactoring done to the [`Stroke`](../references/document-sandbox/document-apis/interfaces/Stroke.md) APIs.
 
 ## 2024-07-22
 
@@ -249,16 +249,16 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
 - A new section on Marketplace [rejections](/guides/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
-- The [Manifest Reference](./manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
+- The [Manifest Reference](../references/manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
 ## 2024-04-10
 
-- A new [`VisualNode`](./document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
+- A new [`VisualNode`](../references/document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
 - New Document APIs have been added:
-  - [`currentPage`](./document-sandbox/document-apis/classes/Context.md#currentpage) Context accessor: returns the active page.
-  - [`visualRoot`](./document-sandbox/document-apis/classes/VisualNode.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
-  - [`cloneInPlace()`](./document-sandbox/document-apis/classes/PageNode.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
-  - Support to Bounds has been added in several classes: [`boundsInParent`](./document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](./document-sandbox/document-apis/classes/GroupNode.md#boundslocal) and [VisualNode](./document-sandbox/document-apis/classes/VisualNode.md#boundslocal)); [`centerPointLocal`](./document-sandbox/document-apis/classes/VisualNode.md#centerpointlocal); [`topLeftLocal`](./document-sandbox/document-apis/classes/VisualNode.md#topleftlocal); [`boundsInNode()`](./document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](./document-sandbox/document-apis/classes/VisualNode.md#localpointinnode);
+  - [`currentPage`](../references/document-sandbox/document-apis/classes/Context.md#currentpage) Context accessor: returns the active page.
+  - [`visualRoot`](../references/document-sandbox/document-apis/classes/VisualNode.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
+  - [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/PageNode.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
+  - Support to Bounds has been added in several classes: [`boundsInParent`](../references/document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](../references/document-sandbox/document-apis/classes/GroupNode.md#boundslocal) and [VisualNode](../references/document-sandbox/document-apis/classes/VisualNode.md#boundslocal)); [`centerPointLocal`](../references/document-sandbox/document-apis/classes/VisualNode.md#centerpointlocal); [`topLeftLocal`](../references/document-sandbox/document-apis/classes/VisualNode.md#topleftlocal); [`boundsInNode()`](../references/document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](../references/document-sandbox/document-apis/classes/VisualNode.md#localpointinnode);
 - The CLI has been updated to release version `2.0.0`, and includes the following:
 
   - Periodic login and EULA consent are no longer required.
@@ -466,7 +466,7 @@ Some items in the following list of changes may have been mentioned in recent up
       ]
   ```
 
-- The [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) method in the [`addOnSandboxSdk.instance.runtime`](./addonsdk/addonsdk-instance.md#objects) object now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
+- The [`apiProxy()`](../references/addonsdk/instance-runtime.md#apiproxy) method in the [`addOnSandboxSdk.instance.runtime`](../references/addonsdk/addonsdk-instance.md#objects) object now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
 - The [`RuntimeType`](../references/addonsdk/addonsdk-constants.md) constant now uses the value of `"documentSandbox"` in lieu of `"script"`.
 
   **IMPORTANT:** The above updates should be considered breaking changes, so any add-ons in development that relied on the experimental APIs may not work correctly until you make changes to use the new/updated ones above. The intention was to ensure these important changes were made prior to marking the APIs stable to 1) make them more intuitive for developers, 2) significantly improve the process of working with colors, strokes and fills, and 3) prevent certain operations from corrupting the document.
@@ -493,14 +493,14 @@ Some items in the following list of changes may have been mentioned in recent up
 - The [`createRenditions()` export API](../references/addonsdk/app-document.md#createrenditions) was updated with the following changes:
   - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](../references/addonsdk/addonsdk-constants.md) constant value.
   - The returned type now also includes page metadata (see [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/develop/how_to/page_metadata.md).
-- A new [document metadata use case example](../guides/develop/how_to/document_metadata.md) has been added to show how to retrieve the [document id](./addonsdk/app-document.md#id) and [title (ie: name)](./addonsdk/app-document.md#title), including how to listen for the [associated events](../references/addonsdk/addonsdk-app.md#events).
+- A new [document metadata use case example](../guides/develop/how_to/document_metadata.md) has been added to show how to retrieve the [document id](../references/addonsdk/app-document.md#id) and [title (ie: name)](../references/addonsdk/app-document.md#title), including how to listen for the [associated events](../references/addonsdk/addonsdk-app.md#events).
 - New tables have been added to the [Communication API reference](../references/document-sandbox/communication/index.md) denoting the [supported](../references/document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](../references/document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](../references/document-sandbox/communication/index.md) layer.
 
 ## 2023-12-04
 
 ### Updates
 
-- The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+- The [Document API's](../references/document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](../references/document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](../references/document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
 
   ```js
   // Before
@@ -549,8 +549,8 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Updates
 
-- Adds support to the [Add-on UI SDK](./addonsdk/index.md) for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
-- Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/):
+- Adds support to the [Add-on UI SDK](../references/addonsdk/index.md) for retrieving the [document id](../references/addonsdk/app-document.md#id) and [title](../references/addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
+- Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](../references/document-sandbox/document-apis/):
 
   **Document Sandbox SDK import**<br/>
 
@@ -591,7 +591,7 @@ Some items in the following list of changes may have been mentioned in recent up
       ]
   ```
 
-- [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
+- [`apiProxy()`](../references/addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
 - The [`RuntimeType`](../references/addonsdk/addonsdk-constants.md) constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -602,21 +602,21 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Updates
 
-- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
-- The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
+- The [Web API's in the Document Sandbox Reference](../references/document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
+- The [Document API References](../references/document-sandbox/document-apis/) were updated with the following additions and changes:
 
   **New Classes/Interfaces**<br/>
 
-  - New [RestrictedItemList class](./document-sandbox/document-apis/classes/RestrictedItemList.md)
-  - New [UnknownNode class](./document-sandbox/document-apis/classes/UnknownNode.md)
-  - New [SolidColorShapeNode class](./document-sandbox/document-apis/classes/SolidColorShapeNode.md)
-  - New [Point interface](./document-sandbox/document-apis/interfaces/Point.md)
-  - New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
+  - New [RestrictedItemList class](../references/document-sandbox/document-apis/classes/RestrictedItemList.md)
+  - New [UnknownNode class](../references/document-sandbox/document-apis/classes/UnknownNode.md)
+  - New [SolidColorShapeNode class](../references/document-sandbox/document-apis/classes/SolidColorShapeNode.md)
+  - New [Point interface](../references/document-sandbox/document-apis/interfaces/Point.md)
+  - New `queueAsyncEdit` method added to the [Editor](../references/document-sandbox/document-apis/classes/Editor.md) class.
   - Renames the [Constants](../references/document-sandbox/document-apis/enumerations/) to remove the `Value` suffix.
 
   **Updates to Node Classes**<br/>
 
-The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
+The accessors and methods below were removed or replaced with new names in the [`Node` class](../references/document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](../references/document-sandbox/document-apis/) specifically to learn more about each.
 
 - Removes `absoluteRotation` accessor
 - Removes `absoluteTransform` accessor
@@ -633,12 +633,12 @@ The accessors and methods below were removed or replaced with new names in the [
 
 ## 2023-11-27
 
-Updated [Document API references](./document-sandbox/document-apis/) to include:
+Updated [Document API references](../references/document-sandbox/document-apis/) to include:
 
-- [ComplexShapeNode class](./document-sandbox/document-apis/classes/ComplexShapeNode.md)
-- [GridLayoutNode class](./document-sandbox/document-apis/classes/GridLayoutNode.md)
-- [IStrokableNode interface](./document-sandbox/document-apis/interfaces/IStrokableNode.md)
-- [FillRule constant](./document-sandbox/document-apis/enumerations/FillRule.md)
+- [ComplexShapeNode class](../references/document-sandbox/document-apis/classes/ComplexShapeNode.md)
+- [GridLayoutNode class](../references/document-sandbox/document-apis/classes/GridLayoutNode.md)
+- [IStrokableNode interface](../references/document-sandbox/document-apis/interfaces/IStrokableNode.md)
+- [FillRule constant](../references/document-sandbox/document-apis/enumerations/FillRule.md)
 
 ## 2023-11-6
 
@@ -656,7 +656,7 @@ New questions and answers added to the FAQ regarding Adobe's use of add-on data,
 
 ### Updates
 
-Updates to the [OAuth APIs](./addonsdk/app-oauth.md) to allow for a new optional `windowSize` parameter to be specified in the [`AuthorizationRequest`](./addonsdk/app-oauth.md#authorizationrequest) object and the [`AuthorizeWithOwnRedirectRequest`](./addonsdk/app-oauth.md#authorizewithownredirectrequest) to set the desired size of the authorization window.
+Updates to the [OAuth APIs](../references/addonsdk/app-oauth.md) to allow for a new optional `windowSize` parameter to be specified in the [`AuthorizationRequest`](../references/addonsdk/app-oauth.md#authorizationrequest) object and the [`AuthorizeWithOwnRedirectRequest`](../references/addonsdk/app-oauth.md#authorizewithownredirectrequest) to set the desired size of the authorization window.
 
 ## 2023-10-09
 
@@ -801,7 +801,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Fixed
 
-- Fixed bug in the [locale](./addonsdk/app-ui.md) example.
+- Fixed bug in the [locale](../references/addonsdk/app-ui.md) example.
 
 ## 2023-08-29
 
@@ -873,7 +873,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 ### Added
 
 - Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../references/document-sandbox/).
-- Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
+- Added [`DisableDragToDocument`](../references/addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](../references/addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11
 

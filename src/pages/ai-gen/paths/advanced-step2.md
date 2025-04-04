@@ -958,4 +958,4 @@ Now that you understand how to optimize performance in Adobe Express add-ons, yo
 
 [Continue to Step 3: Advanced UI Patterns →](advanced-step3.md)
 
-[← Back to Step 1: Advanced Add-on Architecture](advanced-step1.md) 
+[← Back to Step 1: Advanced Add-on Architecture](advanced-step1.md)

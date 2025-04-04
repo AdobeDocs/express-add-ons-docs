@@ -41,6 +41,7 @@ The Adobe Express add-on development tools are built on Node.js:
 1. Go to [Node.js website](https://nodejs.org/)
 2. Download and install the LTS (Long Term Support) version
 3. Verify installation by opening a terminal/command prompt and typing:
+
    ```
    node --version
    npm --version
@@ -52,10 +53,13 @@ The Create CCWeb Add-on CLI tool helps you create, build, and test add-ons:
 
 1. Open a terminal/command prompt
 2. Run the following command:
+
    ```
    npm install -g @adobe/create-ccweb-add-on
    ```
+
 3. Verify installation:
+
    ```
    npx @adobe/create-ccweb-add-on --version
    ```
@@ -89,19 +93,26 @@ Let's create a basic project to verify everything is working:
 1. Open a terminal/command prompt
 2. Navigate to a directory where you want to store your add-on projects
 3. Run:
+
    ```
    npx @adobe/create-ccweb-add-on my-first-addon
    ```
+
 4. Follow the prompts to create a simple add-on project
 5. Once created, navigate into the project directory:
+
    ```
    cd my-first-addon
    ```
+
 6. Install dependencies:
+
    ```
    npm install
    ```
+
 7. Start the development server:
+
    ```
    npm run start
    ```
@@ -153,4 +164,4 @@ Now that your development environment is set up, you're ready to start experimen
 
 [Proceed to Step 3: Using the Playground to Experiment →](beginner-step3.md)
 
-[← Back to Step 1: Introduction to Add-ons](beginner-step1.md) 
+[← Back to Step 1: Introduction to Add-ons](beginner-step1.md)

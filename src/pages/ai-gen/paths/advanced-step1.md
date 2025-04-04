@@ -21,7 +21,7 @@ contributors:
 
 **Estimated time: 2 hours**
 
-As you move from creating simple add-ons to developing more complex solutions, good architecture becomes crucial. In this step, you'll learn how to design and implement robust, maintainable architectures for sophisticated add-ons. 
+As you move from creating simple add-ons to developing more complex solutions, good architecture becomes crucial. In this step, you'll learn how to design and implement robust, maintainable architectures for sophisticated add-ons.
 
 ## Understanding Advanced Architectural Patterns
 
@@ -765,4 +765,4 @@ Now that you understand advanced architectural patterns for Adobe Express add-on
 
 [Continue to Step 2: Performance Optimization →](advanced-step2.md)
 
-[← Back to Advanced Path Overview](advanced-index.md) 
+[← Back to Advanced Path Overview](advanced-index.md)

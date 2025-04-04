@@ -23,7 +23,7 @@ contributors:
 
 Paths to guide you in learning how to develop Adobe Express add-ons.
 
-The Adobe Express add-on development structured learning paths will help you learn add-on development in a systematic way, organized by different criteria to match your learning style and goals. Choose the learning path relevant to your experience to get started with Adobe Express add-on development. 
+The Adobe Express add-on development structured learning paths will help you learn add-on development in a systematic way, organized by different criteria to match your learning style and goals. Choose the learning path relevant to your experience to get started with Adobe Express add-on development.
 
 <TextBlock slots="image, heading, text, links" width="33%" />
 
@@ -69,6 +69,7 @@ Designed for those who are new to add-on development, this path introduces the f
 **[Explore the Complete Beginner Path →](beginner-index.md)**
 
 This detailed path includes comprehensive tutorials and hands-on exercises across four steps:
+
 1. Introduction to Add-ons
 2. Setting Up Your Development Environment
 3. Using the Playground to Experiment
@@ -81,6 +82,7 @@ For developers who understand the basics and want to create more functional add-
 **[Explore the Complete Intermediate Path →](intermediate-index.md)**
 
 This detailed path covers more advanced concepts across four steps:
+
 1. Working with Document Elements
 2. Working with User Interaction
 3. Storing and Managing Data
@@ -93,6 +95,7 @@ For experienced developers aiming to create professional-grade add-ons with comp
 **[Explore the Complete Advanced Path →](advanced-index.md)**
 
 This comprehensive path covers sophisticated development concepts across five steps:
+
 1. Advanced Add-on Architecture
 2. Performance Optimization
 3. Advanced UI Patterns
@@ -180,4 +183,4 @@ For additional resources, check out:
 - [Adobe Express Add-on Documentation](../../guides/index.md)
 - [API Reference](/references/addonsdk-reference.md)
 - [Sample Add-ons](/samples/index.md)
-- [Community Forum](https://experienceleaguecommunities.adobe.com/t5/express-add-ons-discussions/ct-p/express-add-ons-discussions) 
+- [Community Forum](https://experienceleaguecommunities.adobe.com/t5/express-add-ons-discussions/ct-p/express-add-ons-discussions)

@@ -346,4 +346,4 @@ Now that you understand how to work with document elements, let's explore how to
 
 [Proceed to Step 2: Working with User Interaction →](intermediate-step2.md)
 
-[← Back to Intermediate Path Overview](intermediate-index.md) 
+[← Back to Intermediate Path Overview](intermediate-index.md)

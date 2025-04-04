@@ -168,4 +168,4 @@ Now that you're comfortable experimenting in the Playground, you're ready to bui
 
 [Proceed to Step 4: Building Your First Add-on →](beginner-step4.md)
 
-[← Back to Step 2: Setting Up Your Development Environment](beginner-step2.md) 
+[← Back to Step 2: Setting Up Your Development Environment](beginner-step2.md)

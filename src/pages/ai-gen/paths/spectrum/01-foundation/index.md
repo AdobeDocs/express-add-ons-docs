@@ -1,18 +1,22 @@
 # Module 1: Foundation of Spectrum Design System
 
 ## Overview
+
 This module introduces you to Adobe's Spectrum Design System and its various implementations. You'll learn about the different options available for building Express add-ons and understand when to use each approach.
 
 ## Learning Objectives
+
 - Understand the different Spectrum implementations available
 - Learn when to use each implementation
 - Set up your development environment
 - Configure your project with the necessary dependencies
 
 ## Time Estimate
+
 4-6 hours
 
 ## Prerequisites
+
 - Basic understanding of web development
 - Node.js installed (version 14 or higher)
 - npm or yarn package manager
@@ -23,6 +27,7 @@ This module introduces you to Adobe's Spectrum Design System and its various imp
 ### 1. Understanding Spectrum Design System
 
 #### What is Spectrum?
+
 Spectrum is Adobe's design system that provides a comprehensive set of guidelines, components, and tools for creating consistent user experiences across Adobe applications. For Express add-ons, Spectrum ensures your UI feels native and integrated with the Express interface.
 
 #### Available Implementations
@@ -51,6 +56,7 @@ Spectrum is Adobe's design system that provides a comprehensive set of guideline
 ### 2. Project Setup
 
 #### Creating a New Express Add-on
+
 ```bash
 # Create a new add-on project
 npx @adobe/create-ccweb-add-on my-spectrum-addon
@@ -63,6 +69,7 @@ npx clear-npx-cache
 ```
 
 #### Installing Dependencies
+
 ```bash
 # Core dependencies for SWC
 npm install @spectrum-web-components/theme
@@ -74,6 +81,7 @@ npm install @swc-react/styles
 ```
 
 #### Webpack Configuration
+
 ```javascript
 // webpack.config.js
 const path = require("path");
@@ -128,19 +136,23 @@ module.exports = {
 ### 3. Version Management
 
 #### Why Version Management is Important
+
 Spectrum components are tightly coupled, and mismatched versions can lead to:
+
 - Styling inconsistencies
 - Component behavior issues
 - Runtime errors
 - Performance problems
 
 #### Best Practices
+
 1. Keep all Spectrum packages on the same version
 2. Use package-lock.json or yarn.lock
 3. Document version requirements
 4. Test with different version combinations
 
 #### Version Configuration
+
 ```json
 {
     "dependencies": {
@@ -175,9 +187,11 @@ Spectrum components are tightly coupled, and mismatched versions can lead to:
    - Configure build process
 
 ## Resources
+
 - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/)
 - [SWC React Documentation](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
 - [Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)
 
 ## Next Module
+
 [Module 2: Basic Implementation](../02-basic-implementation/index.md)

@@ -32,6 +32,7 @@ The Grid Maker add-on will allow users to:
 4. Apply grids to their Adobe Express documents
 
 This project will bring together all the skills you've learned in the Intermediate path:
+
 - Working with document elements
 - Creating interactive user experiences
 - Storing and managing data
@@ -42,9 +43,11 @@ Let's start by creating a new project:
 
 1. Open a terminal/command prompt
 2. Create a new add-on project with the following command:
+
    ```
    npx @adobe/create-ccweb-add-on grid-maker
    ```
+
 3. When prompted, choose:
    - Add-on type: Panel
    - UI Framework: HTML (or React if you prefer)
@@ -52,6 +55,7 @@ Let's start by creating a new project:
    - Include addon-helpers: Yes
 
 4. Navigate to the project directory and install dependencies:
+
    ```
    cd grid-maker
    npm install
@@ -769,6 +773,7 @@ Update the `manifest.json` file to include the necessary permissions:
 To test the add-on:
 
 1. Start the development server:
+
    ```
    npm run start
    ```
@@ -863,4 +868,4 @@ Ready to advance your skills further? Continue to the Advanced Path for more sop
 
 [Proceed to Advanced Path: Mastering Add-on Development →](advanced-index.md)
 
-[← Back to Step 3: Storing and Managing Data](intermediate-step3.md#module-3-storing-and-managing-data) 
+[← Back to Step 3: Storing and Managing Data](intermediate-step3.md#module-3-storing-and-managing-data)

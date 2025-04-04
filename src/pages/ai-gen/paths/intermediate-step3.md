@@ -489,6 +489,7 @@ function showMessage(message) {
 ```
 
 This example demonstrates:
+
 1. Using client storage to persist a list of favorites
 2. Using element metadata to mark elements as favorites
 3. Building a complete CRUD interface (Create, Read, Update, Delete) for favorites
@@ -518,4 +519,4 @@ Now that you understand how to store and manage data, let's apply all your knowl
 
 [Proceed to Step 4: Building a Practical Add-on →](intermediate-step4.md)
 
-[← Back to Step 2: Working with User Interaction](intermediate-step2.md) 
+[← Back to Step 2: Working with User Interaction](intermediate-step2.md)

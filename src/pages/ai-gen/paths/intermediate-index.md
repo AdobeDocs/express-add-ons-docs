@@ -29,6 +29,7 @@ This structured path will help you build on your basic knowledge to create more 
 In this step, you'll learn how to add, manipulate, and position different types of elements in Adobe Express documents.
 
 **Key Concepts:**
+
 - Adding images and text to documents
 - Positioning elements with precision
 - Grouping elements for organization
@@ -41,6 +42,7 @@ In this step, you'll learn how to add, manipulate, and position different types 
 Learn how to create interactive experiences for your users through drag and drop functionality and modal dialogs.
 
 **Key Concepts:**
+
 - Implementing drag and drop
 - Creating modal dialogs
 - Handling user events
@@ -53,6 +55,7 @@ Learn how to create interactive experiences for your users through drag and drop
 Discover how to persist user data and work with metadata in documents and elements.
 
 **Key Concepts:**
+
 - Using client storage for data persistence
 - Working with document metadata
 - Managing element metadata
@@ -65,6 +68,7 @@ Discover how to persist user data and work with metadata in documents and elemen
 Apply all your knowledge by following a comprehensive tutorial to build a complete, practical add-on.
 
 **Key Concepts:**
+
 - Applying UI/UX design principles
 - Integrating multiple API features
 - Implementing error handling

@@ -1,9 +1,11 @@
 # Module 2: Basic Implementation with Spectrum Web Components
 
 ## Overview
+
 This module covers the fundamental implementation of Spectrum Web Components in Express add-ons. You'll learn how to implement both vanilla JavaScript and React-based solutions, understand component composition, and master basic theming.
 
 ## Learning Objectives
+
 - Implement basic Spectrum components
 - Understand component composition
 - Master theming and styling
@@ -11,9 +13,11 @@ This module covers the fundamental implementation of Spectrum Web Components in 
 - Handle basic user interactions
 
 ## Time Estimate
+
 8-10 hours
 
 ## Prerequisites
+
 - Completed Module 1: Foundation
 - Basic understanding of JavaScript/React
 - Development environment set up
@@ -23,6 +27,7 @@ This module covers the fundamental implementation of Spectrum Web Components in 
 ### 1. Vanilla JavaScript Implementation
 
 #### Basic Component Setup
+
 ```javascript
 // src/index.js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -49,6 +54,7 @@ addOnUISdk.ready.then(() => {
 ```
 
 #### Understanding Component Structure
+
 - Each Spectrum component is a web component
 - Components use Shadow DOM for encapsulation
 - Theme context is required for proper styling
@@ -57,6 +63,7 @@ addOnUISdk.ready.then(() => {
 ### 2. React Implementation
 
 #### Basic React Setup
+
 ```jsx
 // src/App.jsx
 import { Theme, Button, TextField } from '@swc-react';
@@ -74,6 +81,7 @@ function App() {
 ```
 
 #### React Component Patterns
+
 - Components follow React conventions
 - Props map to Spectrum attributes
 - Events use React naming conventions
@@ -82,6 +90,7 @@ function App() {
 ### 3. Component Composition
 
 #### Building Complex Components
+
 ```jsx
 // src/components/Form.jsx
 import { Theme, TextField, Button, FieldLabel } from '@swc-react';
@@ -100,6 +109,7 @@ function Form() {
 ```
 
 #### Component Hierarchy
+
 - Theme wrapper at the root
 - Layout components for structure
 - Form components for input
@@ -108,6 +118,7 @@ function Form() {
 ### 4. Styling and Layout
 
 #### Using Spectrum CSS Variables
+
 ```css
 /* src/styles/custom.css */
 .container {
@@ -125,6 +136,7 @@ function Form() {
 ```
 
 #### Layout Best Practices
+
 - Use Spectrum spacing variables
 - Follow responsive design patterns
 - Maintain consistent spacing
@@ -133,6 +145,7 @@ function Form() {
 ### 5. Event Handling
 
 #### Vanilla JavaScript Events
+
 ```javascript
 const button = document.querySelector('sp-button');
 button.addEventListener('click', (e) => {
@@ -141,6 +154,7 @@ button.addEventListener('click', (e) => {
 ```
 
 #### React Events
+
 ```jsx
 function ButtonExample() {
     const handleClick = () => {
@@ -190,9 +204,11 @@ function ButtonExample() {
    - Test event propagation
 
 ## Resources
+
 - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/)
 - [SWC React Documentation](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
 - [Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)
 
 ## Next Module
+
 [Module 3: Advanced Features](../03-advanced-features/index.md)

@@ -3,9 +3,11 @@
 ## Category: Getting Started
 
 ### Description
+
 Resources to help you begin developing Adobe Express add-ons.
 
 ### Core Documentation
+
 - [Quick Start Guide](https://developer.adobe.com/express/add-ons/docs/guides/getting_started/)
   - Set up your development environment
   - Create your first add-on
@@ -22,12 +24,14 @@ Resources to help you begin developing Adobe Express add-ons.
   - Learn through pre-built examples and live previews
 
 ### Sample Code
+
 - [Getting Started Sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/ui-runtime-samples/get-started)
   - Follow the basic add-on structure
   - Learn about manifest configuration
   - Understand initialization patterns
 
 ## References
+
 - [Adobe Express Add-ons Developer Documentation](https://developer.adobe.com/express/add-ons/docs/)
   - Bookmark this as your main reference
   - Use the search functionality to find specific topics
@@ -41,6 +45,7 @@ Resources to help you begin developing Adobe Express add-ons.
 ## Category: Working with Images
 
 ### Description
+
 Learn everything about using images in Adobe Express add-ons, including how to import, manipulate, and display images from various sources.
 
 ### Core Documentation
@@ -70,9 +75,11 @@ Learn everything about using images in Adobe Express add-ons, including how to i
 ## Category: Document APIs
 
 ### Description
+
 Learn about Adobe Express Document APIs that allow you to access and manipulate document structure, create shapes, and work with document elements programmatically.
 
 ### Core Documentation
+
 - [Document Sandbox APIs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/)
   - Start with the Editor class documentation
   - Learn about document structure and node hierarchy
@@ -84,6 +91,7 @@ Learn about Adobe Express Document APIs that allow you to access and manipulate 
   - Study undo/redo functionality implementation
 
 ### Sample Code
+
 - [Editor APIs Sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
   - Follow the step-by-step implementation of basic editing features
   - Learn how to handle document events
@@ -92,9 +100,11 @@ Learn about Adobe Express Document APIs that allow you to access and manipulate 
 ## Category: External API Integration
 
 ### Description
+
 Learn how to connect Adobe Express add-ons with external services and APIs, including authentication and data exchange.
 
 ### Core Documentation
+
 - [OAuth Implementation](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/oauth2/)
   - Follow the step-by-step OAuth setup guide
   - Learn how to configure OAuth providers
@@ -106,6 +116,7 @@ Learn how to connect Adobe Express add-ons with external services and APIs, incl
   - Understand session management
 
 ### Sample Code
+
 - [OAuth Integration Sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/ui-runtime-samples/import-images-using-oauth)
   - Examine a complete OAuth implementation
   - Learn how to handle authentication states
@@ -114,9 +125,11 @@ Learn how to connect Adobe Express add-ons with external services and APIs, incl
 ## Category: Spectrum Design System
 
 ### Description
+
 Learn how to use Adobe's Spectrum Design System to create consistent, accessible, and visually appealing user interfaces.
 
 ### Core Documentation
+
 - [Design Guidelines](https://developer.adobe.com/express/add-ons/docs/guides/design/)
   - Review UI/UX best practices
   - Learn about accessibility requirements
@@ -128,6 +141,7 @@ Learn how to use Adobe's Spectrum Design System to create consistent, accessible
   - Study component interaction patterns
 
 ### Sample Code
+
 - [Spectrum Web Components Sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc)
   - Follow the implementation of common UI patterns
   - Learn about component composition
@@ -141,15 +155,18 @@ Learn how to use Adobe's Spectrum Design System to create consistent, accessible
 ## Category: Add-on Storage
 
 ### Description
+
 Learn how to store and retrieve data in your add-ons, including user preferences and application state.
 
 ### Core Documentation
+
 - [Client Storage Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/instance-clientStorage/)
   - Learn about available storage methods
   - Understand storage limitations
   - Study data persistence patterns
 
 ### Sample Code
+
 - [Client Storage Sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/ui-runtime-samples/use-client-storage)
   - Examine data storage implementation
   - Learn about error handling
@@ -158,9 +175,11 @@ Learn how to store and retrieve data in your add-ons, including user preferences
 ## Category: Distribution
 
 ### Description
+
 Learn how to distribute your add-ons to users through the Adobe Express Add-on Marketplace.
 
 ### Core Documentation
+
 - [Distribution Guide](https://developer.adobe.com/express/add-ons/docs/guides/distribute/)
   - Follow the submission process
   - Learn about version management

@@ -29,6 +29,7 @@ This structured path will guide you through the fundamental concepts and skills 
 In this first module, you'll learn what Adobe Express add-ons are, their capabilities, and the basic architecture behind them.
 
 **Key Concepts:**
+
 - Understanding what add-ons are and what they can do
 - Learning about the add-on architecture
 - Exploring core concepts and terminology
@@ -40,6 +41,7 @@ In this first module, you'll learn what Adobe Express add-ons are, their capabil
 Learn how to set up and configure your local development environment with all the necessary tools to build Adobe Express add-ons.
 
 **Key Concepts:**
+
 - Installing Node.js and npm
 - Setting up the Adobe Express Add-on CLI
 - Configuring your development tools
@@ -52,6 +54,7 @@ Learn how to set up and configure your local development environment with all th
 Explore the Adobe Express Code Playground, a tool that allows you to experiment with add-on functionality without setting up a full project.
 
 **Key Concepts:**
+
 - Using the Code Playground environment
 - Testing basic SDK features
 - Creating simple UI components
@@ -64,6 +67,7 @@ Explore the Adobe Express Code Playground, a tool that allows you to experiment 
 Follow a step-by-step guide to build, test, and run a complete add-on that allows users to add motivational quotes to their documents.
 
 **Key Concepts:**
+
 - Creating a full add-on project
 - Building a functional user interface
 - Implementing document interaction

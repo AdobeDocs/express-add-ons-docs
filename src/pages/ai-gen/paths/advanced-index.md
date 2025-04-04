@@ -28,18 +28,23 @@ In this advanced path, you'll learn techniques for optimizing performance, handl
 This learning path consists of 5 steps that will guide you through advanced add-on development concepts:
 
 ## [**Module 1: Advanced Add-on Architecture (2 hours)**](advanced-step1.md)  
+
    Learn best practices for structuring complex add-ons, implementing state management, and organizing code for maintainability and scalability.
 
 ## [**Module 2: Performance Optimization (1.5 hours)**](advanced-step2.md)  
+
    Master techniques for optimizing add-on performance, reducing memory usage, and ensuring smooth operation with large documents or complex operations.
 
 ## [**Module 3: Advanced UI Patterns (2 hours)**](advanced-step3.md)  
+
    Implement sophisticated UI patterns, custom components, and responsive layouts for a professional user experience.
 
 ## [**Module 4: External API Integration (2.5 hours)**](advanced-step4.md)  
+
    Connect your add-on with external services and APIs to expand its capabilities beyond the Adobe Express environment.
 
 ## [**Module 5: Building a Professional Add-on (2 hours)**](advanced-step5.md)  
+
    Apply all advanced concepts in a comprehensive project that demonstrates professional-grade add-on development.
 
 ## What You'll Learn

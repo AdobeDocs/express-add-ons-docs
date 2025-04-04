@@ -1093,7 +1093,7 @@ class DragDropList {
   }
   ```
   
-  ### Custom Scrolling with Focus Areas
+### Custom Scrolling with Focus Areas
   
   Create custom scrolling behavior for improved user experience:
   
@@ -1351,7 +1351,7 @@ class DragDropList {
   }
   ```
   
-  ## Practical Exercise: Building a Media Library Add-on
+## Practical Exercise: Building a Media Library Add-on
   
   Let's apply these advanced UI patterns to create a sophisticated media library add-on:
   
@@ -1694,7 +1694,7 @@ class DragDropList {
   }
   ```
   
-  ## Key Takeaways for Advanced UI Patterns
+## Key Takeaways for Advanced UI Patterns
   
   1. **Component Architecture**: Break down complex UIs into reusable, maintainable components
   2. **Adaptiveness**: Create layouts that adapt to different device sizes and panel dimensions
@@ -1702,7 +1702,7 @@ class DragDropList {
   4. **Context-Aware UI**: Use patterns like master-detail and contextual menus to make UIs more intuitive
   5. **Progressive Disclosure**: Reveal complexity gradually through patterns like multi-step wizards
   
-  ## Additional Resources
+## Additional Resources
   
   For more information on advanced UI patterns:
   
@@ -1711,7 +1711,7 @@ class DragDropList {
   - [UX Guidelines](../../guides/design/ux_guidelines/introduction.md)
   - [Implementation Guide](../../guides/design/implementation_guide.md)
   
-  ## Knowledge Check
+## Knowledge Check
   
   Before proceeding to the next step, make sure you can answer these questions:
   
@@ -1721,7 +1721,7 @@ class DragDropList {
   4. How can you create performant custom UI components that don't negatively impact performance?
   5. What considerations should you keep in mind when implementing drag-and-drop functionality?
   
-  ## Next Steps
+## Next Steps
   
   Now that you understand how to implement advanced UI patterns in Adobe Express add-ons, you're ready to learn about integrating with external APIs and services.
   

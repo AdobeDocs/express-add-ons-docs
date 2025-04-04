@@ -1008,6 +1008,7 @@ export class EffectsManager {
   }
 }
 ```
+
 ## Performance Optimization
 
 Add performance utilities to optimize image processing:
@@ -1224,6 +1225,7 @@ This professional add-on implementation demonstrates:
 - Testing and documentation best practices
 
 Remember to:
+
 - Test thoroughly across different scenarios
 - Monitor performance metrics
 - Gather user feedback
@@ -1233,6 +1235,7 @@ Remember to:
 - Document code and features comprehensively
 
 Next steps could include:
+
 - Adding more advanced effects
 - Implementing user preferences
 - Adding collaboration features

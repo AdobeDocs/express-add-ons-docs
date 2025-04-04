@@ -5,6 +5,7 @@ This guide will walk you through the process of building an Express add-on using
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - Node.js (version 14 or higher)
 - npm (comes with Node.js)
 - Adobe Creative Cloud account with access to Express
@@ -12,6 +13,7 @@ Before you begin, ensure you have the following installed:
 ## Step 1: Create a New Add-on Project
 
 1. Open your terminal and run the following command to create a new Express add-on:
+
    ```bash
    npx @adobe/create-ccweb-add-on
    ```
@@ -24,6 +26,7 @@ Before you begin, ensure you have the following installed:
 ## Step 2: Configure Webpack
 
 1. Create a `webpack.config.js` file in your project root with the following configuration:
+
    ```javascript
    const path = require("path");
    const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -77,6 +80,7 @@ Before you begin, ensure you have the following installed:
 ## Step 3: Update package.json
 
 1. Update your `package.json` scripts to use webpack:
+
    ```json
    "scripts": {
        "clean": "ccweb-add-on-scripts clean",
@@ -87,6 +91,7 @@ Before you begin, ensure you have the following installed:
    ```
 
 2. Add the required Spectrum Web Components dependencies:
+
    ```json
    "dependencies": {
        "@spectrum-web-components/theme": "1.1.2",
@@ -101,6 +106,7 @@ Before you begin, ensure you have the following installed:
    ```
 
 3. Add the required development dependencies:
+
    ```json
    "devDependencies": {
        "@adobe/ccweb-add-on-scripts": "^3.0.0",
@@ -121,6 +127,7 @@ Before you begin, ensure you have the following installed:
 ## Step 4: Set Up the UI Components
 
 1. Update your `src/index.js` file to import the required Spectrum Web Components:
+
    ```javascript
    import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -139,6 +146,7 @@ Before you begin, ensure you have the following installed:
    ```
 
 2. Create your UI components within the `addOnUISdk.ready` promise:
+
    ```javascript
    addOnUISdk.ready.then(() => {
        // Create the main container with theme
@@ -185,21 +193,25 @@ Before you begin, ensure you have the following installed:
 ## Step 5: Install Dependencies and Run the Add-on
 
 1. Install all dependencies:
+
    ```bash
    npm install
    ```
 
 2. Start the development server:
+
    ```bash
    npm start
    ```
 
 3. Build the add-on:
+
    ```bash
    npm run build
    ```
 
 4. Package the add-on:
+
    ```bash
    npm run package
    ```
@@ -207,12 +219,14 @@ Before you begin, ensure you have the following installed:
 ## Available Components
 
 This add-on includes the following Spectrum Web Components:
+
 - Text Field with Label
 - Button Group with Primary and Secondary buttons
 - Picker with Menu Items
 - Switch
 
 All components are themed using the Express theme with:
+
 - Light color scheme
 - Medium scale
 - Express system
@@ -230,4 +244,4 @@ If you encounter any issues:
 
 - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/)
 - [Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/)
-- [Webpack Documentation](https://webpack.js.org/) 
+- [Webpack Documentation](https://webpack.js.org/)

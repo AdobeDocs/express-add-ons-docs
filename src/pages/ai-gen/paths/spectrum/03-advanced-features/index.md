@@ -1,9 +1,11 @@
 # Module 3: Advanced Features and Best Practices
 
 ## Overview
+
 This module covers advanced features of Spectrum Web Components, including complex component patterns, performance optimization, accessibility implementation, and production-ready practices.
 
 ## Learning Objectives
+
 - Implement complex component patterns
 - Optimize performance and bundle size
 - Ensure accessibility compliance
@@ -11,9 +13,11 @@ This module covers advanced features of Spectrum Web Components, including compl
 - Implement production-ready practices
 
 ## Time Estimate
+
 10-12 hours
 
 ## Prerequisites
+
 - Completed Module 2: Basic Implementation
 - Understanding of component lifecycle
 - Basic knowledge of performance optimization
@@ -23,6 +27,7 @@ This module covers advanced features of Spectrum Web Components, including compl
 ### 1. Advanced Component Patterns
 
 #### Custom Component Creation
+
 ```javascript
 // src/components/CustomCard.js
 import { LitElement, html, css } from 'lit';
@@ -58,6 +63,7 @@ customElements.define('custom-card', CustomCard);
 ```
 
 #### Component Communication
+
 ```jsx
 // src/components/FormContainer.jsx
 import { useState } from 'react';
@@ -99,6 +105,7 @@ function FormContainer() {
 ### 2. Performance Optimization
 
 #### Code Splitting
+
 ```javascript
 // Lazy load components
 const Dialog = React.lazy(() => import('@spectrum-web-components-react/dialog'));
@@ -115,6 +122,7 @@ function App() {
 ```
 
 #### Bundle Optimization
+
 ```javascript
 // webpack.config.js optimization
 module.exports = {
@@ -138,6 +146,7 @@ module.exports = {
 ### 3. Accessibility Implementation
 
 #### ARIA Attributes
+
 ```jsx
 // src/components/AccessibleForm.jsx
 import { Theme, TextField, Button } from '@swc-react';
@@ -164,6 +173,7 @@ function AccessibleForm() {
 ```
 
 #### Keyboard Navigation
+
 ```javascript
 // src/components/KeyboardNav.js
 class KeyboardNav extends LitElement {
@@ -195,6 +205,7 @@ class KeyboardNav extends LitElement {
 ### 4. Advanced Theming
 
 #### Dynamic Theme Switching
+
 ```javascript
 // src/utils/themeManager.js
 export class ThemeManager {
@@ -212,6 +223,7 @@ export class ThemeManager {
 ```
 
 #### Custom Theme Variables
+
 ```css
 /* src/styles/custom-theme.css */
 :root {
@@ -229,6 +241,7 @@ export class ThemeManager {
 ### 5. Production Readiness
 
 #### Error Boundaries
+
 ```jsx
 // src/components/ErrorBoundary.jsx
 import React from 'react';
@@ -257,6 +270,7 @@ class ErrorBoundary extends React.Component {
 ```
 
 #### Performance Monitoring
+
 ```javascript
 // src/utils/performance.js
 export const measurePerformance = (componentName) => {
@@ -304,6 +318,7 @@ export const measurePerformance = (componentName) => {
    - Test theme switching
 
 ## Resources
+
 - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/)
 - [SWC React Documentation](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
 - [Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)

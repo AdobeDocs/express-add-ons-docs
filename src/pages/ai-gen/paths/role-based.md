@@ -1,16 +1,20 @@
 # Role-Based Learning Paths
 
 ## Path for Developers: Add-on Technical Implementation (8 hours)
+
 **Description**: Master the technical aspects of Adobe Express add-on development, from core APIs to performance optimization. This path focuses on practical implementation skills needed to build robust, production-ready add-ons.
 
 ### Module 1: Technical Foundations (2 hours)
+
 **Learning Objectives**:
+
 - Set up a complete development environment for add-on creation
 - Master the SDK architecture and runtime environments
 - Understand communication between UI and document sandbox
 - Handle lifecycle events and error scenarios properly
 
 **Key Topics**:
+
 - Development environment setup (Node.js, npm, IDE configuration)
 - SDK initialization and lifecycle management
 - TypeScript configuration and best practices
@@ -18,19 +22,22 @@
 
 **Practical Exercise**: Create a new add-on project with proper error handling and lifecycle management
 
-**Resources**: 
+**Resources**:
+
 - [Development Tools](../../guides/getting_started/dev_tooling.md)
 - [Add-on SDK References](/references/index.md)
 
 ### Module 2: Content Manipulation APIs (2 hours)
 
 **Learning Objectives**:
+
 - Implement document manipulation features effectively
 - Handle document events and state changes
 - Manage element selection and properties
 - Create and modify document content programmatically
 
 **Key Topics**:
+
 - Document element creation and manipulation
 - Selection handling and event management
 - Element positioning and grouping
@@ -38,19 +45,23 @@
 
 **Practical Exercise**: Build an add-on that creates, modifies, and arranges document elements
 
-**Resources**: 
+**Resources**:
+
 - [App Document APIs](/references/addonsdk/app-document.md)
 - [Position Elements](../../guides/develop/how_to/position_elements.md)
 - [Group Elements](../../guides/develop/how_to/group_elements.md)
 
 ### Module 3: Integration and Services (2 hours)
+
 **Learning Objectives**:
+
 - Implement secure authentication flows
 - Handle cross-origin resource sharing
 - Integrate external services safely
 - Manage API responses and error states
 
 **Key Topics**:
+
 - OAuth2 implementation
 - CORS configuration and security
 - API integration patterns

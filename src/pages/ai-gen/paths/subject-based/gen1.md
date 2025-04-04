@@ -28,6 +28,7 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 **Practical Exercise**: Build an add-on that adds custom shapes and responds to document changes
 
 **Resources**:
+
   - [Document Sandbox](/references/document-sandbox/)
   - [Document APIs](/references/document-sandbox/document-apis/)
 Element Metadata
@@ -46,6 +47,7 @@ Element Metadata
 **Practical Exercise**: Create a theme-aware panel with localized content
 
 **Resources**:
+
   - [App UI APIs](/references/addonsdk/app-ui.md)
   - [Theme and Locale](../../../guides/develop/how_to/theme_locale.md)
 

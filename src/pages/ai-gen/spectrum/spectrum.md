@@ -9,6 +9,7 @@ This guide will walk you through implementing Spectrum in your Adobe Express add
 ## Spectrum Design System Overview
 
 Adobe Spectrum consists of several key parts:
+
 - Spectrum Design Language: The foundational visual and interaction design principles
 - Spectrum CSS: Implementation in CSS and HTML  
 - Spectrum Web Components: Web components that encapsulate Spectrum design patterns
@@ -238,11 +239,13 @@ Spectrum Web Components provides numerous UI components. Here's a guide to the m
 ### Choosing Between Standard HTML and Spectrum Components
 
 Use Spectrum Web Components when:
+
 - The component matches a standard Spectrum UI pattern
 - You need built-in accessibility features
 - You want automatic theme support
 
 Use standard HTML with Spectrum CSS classes when:
+
 - You need a highly customized UI element
 - The component isn't available in Spectrum Web Components
 - Performance is critical for your specific use case
@@ -909,7 +912,7 @@ Then, apply the Spectrum 2 theme in your HTML:
 </sp-theme>
 ```
 
-> **Important Note**: The `theme` attribute now uses "spectrum" value (instead of "express" as in Spectrum 1) to indicate Spectrum 2. 
+> **Important Note**: The `theme` attribute now uses "spectrum" value (instead of "express" as in Spectrum 1) to indicate Spectrum 2.
 
 ### Migrating from Spectrum 1 to Spectrum 2
 
@@ -973,6 +976,7 @@ Certificate issues are often the culprit. Try these steps:
 **Issue**: Spectrum Web Components not rendering correctly
 
 **Solution**:
+
 - Ensure components are properly imported
 - Verify the `<sp-theme>` wrapper is correctly implemented
 - Check browser console for errors
@@ -991,6 +995,7 @@ import '@spectrum-web-components/button/sp-button.js';
 **Issue**: Custom CSS conflicts with Spectrum styles
 
 **Solution**:
+
 - Use CSS variables instead of hardcoded values
 - Avoid global CSS that might override Spectrum styles
 - Use more specific selectors for custom styles
@@ -1012,6 +1017,7 @@ button {
 **Issue**: Slow rendering or high memory usage
 
 **Solution**:
+
 - Import only the components you need
 - Use lazy loading for components not needed immediately
 - Minimize DOM operations and rerenders
@@ -1114,4 +1120,3 @@ Ensure all components are inside the `<sp-theme>` wrapper and check CSS specific
 - [Adobe Express Add-ons Documentation](https://developer.adobe.com/express/add-ons/docs/)
 - [Spectrum Design for Scale](https://adobe.design/stories/design-for-scale/designing-design-systems-how-to-lay-the-groundwork-that-drives-decision-making/)
 - [Spectrum 2 Documentation](https://s2.spectrum.adobe.com/)
-
