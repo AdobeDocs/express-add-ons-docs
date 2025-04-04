@@ -80,6 +80,10 @@ section > div > p:has(> span > picture) {
   height: 150px !important;
 }
 
+section > div > p:has(> span > img) {
+  height: 150px !important;
+}
+
 section:has(> div > p > span > picture) {
   padding: 20px 0 10px 0 !important;
 }

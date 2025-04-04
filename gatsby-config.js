@@ -687,15 +687,19 @@ module.exports = {
           },
           {
             title: "Learning Paths",
-            path: "/ai-gen/paths/beginner-index/index.md",
+            path: "guides/learning-paths/index.md",
             pages: [
               {
-                title: "Beginner Friendly",
-                path: "/ai-gen/paths/beginner-index/index.md",
+                title: "Beginner",
+                path: "guides/learning-paths/beginner.md",
               },
               {
-                title: "Experienced Developers",
-                path: "/ai-gen/paths/advanced-index/index.md",
+                title: "Intermediate",
+                path: "guides/learning-paths/intermediate.md",
+              },
+              {
+                title: "Advanced",
+                path: "guides/learning-paths/advanced.md",
               },
             ],
           },
