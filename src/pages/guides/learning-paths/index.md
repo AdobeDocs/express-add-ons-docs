@@ -30,7 +30,7 @@ These paths are designed to progressively build your skills from beginner to adv
 
 <TextBlock slots="image, heading, text" width="33%" />
 
-![Beginner Level Badge](./images/beginner.png)
+![Beginner Level Badge](./images/path-beginner.png)
 
 ### Beginner
 
@@ -38,7 +38,7 @@ I'm new to add-on development and Adobe Express, I'd like to learn the basics.
 
 <TextBlock slots="image, heading, text" width="33%" />
 
-![Intermediate Level Badge](./images/intermediate.png)
+![Intermediate Level Badge](./images/path-intermediate.png)
 
 ### Intermediate
 
@@ -46,7 +46,7 @@ I'm familiar with the Code Playground, and I'm ready to build my first add-on.<b
 
 <TextBlock slots="image, heading, text" width="33%" />
 
-![Advanced Level Badge](./images/advanced.png)
+![Advanced Level Badge](./images/path-advanced.png)
 
 ### Advanced
 
