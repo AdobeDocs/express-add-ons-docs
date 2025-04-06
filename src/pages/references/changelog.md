@@ -22,6 +22,13 @@ contributors:
 
 # Changelog
 
+## 2025-04-07
+
+### Added
+
+- New [`link()`](../references/app-document.md#link) method added to the `AddOnUISdk.app.document` reference. This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- A new [Lit & TypeScript Guide](../guides/develop/using-lit-typescript.md) has been added to help developers build add-ons using the Lit framework and TypeScript.
+
 ## 2025-04-03
 
 ### Added

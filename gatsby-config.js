@@ -840,6 +840,10 @@ module.exports = {
             path: "guides/develop/frameworks-libraries-bundling.md",
           },
           {
+            title: "Using Lit & TypeScript",
+            path: "guides/develop/using-lit-typescript.md",
+          },
+          {
             title: "Performance Tips",
             path: "guides/develop/performance.md",
           },
