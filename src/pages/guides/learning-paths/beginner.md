@@ -22,7 +22,7 @@ contributors:
 
 If you're new to software development and don't know very well what Adobe Express can offer, this path is for you. We'll start with the basics and give you a sense of what you can create with add-ons.
 
-## Introduction to the Adobe Express ecosystem
+## 1. Introduction to the Adobe Express ecosystem
 
 [Adobe Express](https://www.adobe.com/express/) is an AI-first, all-in-one, web-based app to easily create and share content for free. It's a powerful tool that can be used by everyone, from designers to marketers, to create stunning content in minutes.
 
@@ -69,7 +69,7 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 - [Adobe Express Office Hours](https://developer.adobe.com/developers-live)
 - [Adobe Fund for Design](https://developer.adobe.com/fund-for-design)
 
-## The Code Playground
+## 2. The Code Playground
 
 The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code_playground.md) environment that allows you tinker with the code directly in the application, without the need to set up a local development environment.
 
@@ -80,11 +80,11 @@ The best way to learn is by doing! Adobe Express integrates a [Playground](../ge
 
 Read the [Code Playground](../getting_started/code_playground.md) guide now to get started! Come back here when you're familiar with it, there's just one more thing before completing the Beginner Path.
 
-## Hello World
+## 3. Hello World
 
 Placeholder for a pointer to the Hello World guide (which is not yet written...)
 
-## Explore the How-to Guides
+## 4. Explore the How-to Guides
 
 Now that you've got the hang of the Code Playground, it's time to try your hand at some real-world use cases. Head to the [How-tos](../develop/how_to.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. As a starter, we recommend the following:
 
