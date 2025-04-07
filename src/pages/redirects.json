@@ -700,7 +700,7 @@
             "Destination": "/express/add-ons/docs/guides/develop/how-to/modal_dialogs"
         },
         {
-            "Source": "/express/add-ons/docs/guides/develop/how-to/local-data-management/",
+            "Source": "/express/add-ons/docs/guides/develop/how-to/local_data_management",
             "Destination": "/express/add-ons/docs/guides/develop/how-to/local-data-management"
         },
         {
