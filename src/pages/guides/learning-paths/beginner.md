@@ -100,4 +100,6 @@ When you feel more comfortable, you can try to play with the following use cases
 
 ## Next steps
 
-Congratulations 🎉 you've completed the Beginner Path! You should now have a good understanding of the Adobe Express ecosystem and how add-ons work. Feel free to explore the rest of the [How-to Guides](../develop/how_to.md) to get more comfortable with the different features and use cases, or jump straight into the [Intermediate Path](../learning-paths/intermediate.md). You'll learn how to scaffold a local development environment with the CLI, and build a more complex add-on from the ground up.
+Congratulations 🎉 you've completed the Beginner Path! You should now have a good understanding of the Adobe Express ecosystem and how add-ons work.
+
+Feel free to explore the rest of the [How-to Guides](../develop/how_to.md) to get more comfortable with the different features and use cases, or jump straight into the [Intermediate Path](../learning-paths/intermediate.md). You'll learn how to scaffold a local development environment with the CLI, and build a more complex add-on from the ground up.
