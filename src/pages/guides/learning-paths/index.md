@@ -56,7 +56,7 @@ I've built add-ons before, now I would like to up my game!<br/><br/>
 
 ## Beginner Path: Getting started with Adobe Express add-ons
 
-If you're new to software development and don't know very well what Adobe Express can offer, this path is for you. We'll start with the basics and give you a sense of what you can create with add-ons. This path includes:
+If you're new to software development or don't know very well what Adobe Express can offer, this path is for you. We'll start with the basics and give you a sense of what you can create with add-ons. This path includes:
 
 1. **Introduction** to Add-ons.
 2. Explore the Adobe Express **Marketplace**.
@@ -81,7 +81,7 @@ If you have completed the beginner path, or have some software development exper
 You've built a few add-ons, and you're ready to take your skills to the next level. This path is for you!
 
 1. Discover our **UX Guidelines** and **Spectrum Web Components**.
-2. Dig into the **Document Sandbox API**.
+2. Master the **Document Sandbox API**.
 3. **Distribute** your add-on to the Marketplace.
 4. Improve your add-on's sales with our **Monetization Guide**.
 
