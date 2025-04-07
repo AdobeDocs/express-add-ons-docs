@@ -76,7 +76,7 @@ If you have completed the beginner path, or have some software development exper
 
 **[Start the Intermediate Path →](./intermediate.md)**
 
-## Advanced Path: Mastering Add-on Development
+## Advanced Path: Mastering add-on Development
 
 You've built a few add-ons, and you're ready to take your skills to the next level. This path is for you!
 
