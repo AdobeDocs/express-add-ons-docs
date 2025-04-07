@@ -16,4 +16,4 @@ The add-on `manifest.json` file defines the metadata for your add-on and how it 
 
 ## Changelog
 
-Visit the [Changelog](./changelog.md) to learn about all of the latest new features, updates, bug fixes and more!
+Visit the [Changelog](../guides/whatsnew.md) to learn about all of the latest new features, updates, bug fixes and more!
