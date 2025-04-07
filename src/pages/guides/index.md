@@ -100,18 +100,35 @@ Share your add-on with the world in the Adobe Express Marketplace.
 
 ## The add-ons Marketplace
 
-Do you want to try some add-ons first? Open [Adobe Express](https://new.express.adobe.com/new) and click on the **Add-ons** button located in the left-hand sidebar. Browse through Adobe's picks, the Collections or use the search bar to find specific add-ons.
+Do you want to try some add-ons first? Open [Adobe Express](https://new.express.adobe.com/add-ons) and click on the **Add-ons** button located in the left-hand sidebar. Browse through Adobe's picks, the Collections or use the search bar to find specific add-ons.
 
-![discover add-ons image](../images/addons.png)
+[![discover add-ons image](../images/addons.png)](https://new.express.adobe.com/add-ons)
 
 Click on an add-on to view more information and install it. That's it!
+
+## Skill Level-Based Learning Paths
+
+We've done our best to write this add-on developers documentation as a linear and coherent guide that everyone can find accessible; however, we understand that different users may have different backgrounds. We've created three skill level-based learning paths, designed to address your needs at different stages of your add-on development journey.
+
+- [Beginner Path](./learning-paths/beginner.md)
+- [Intermediate Path](./learning-paths/intermediate.md)
+- [Advanced Path](./learning-paths/advanced.md)
+
+In each one of them, we've handpicked a selection of resources in a curated order that we believe will be most useful for you.
+
+<div className="icon-links-fixer">&nbsp;</div>
+
+<TextBlock slots="links" />
+
+- ![Learning Paths](./learning-paths/images/path-learning-full.png) **Unsure about your skill level?**&nbsp;[Find the right learning path for you!](./learning-paths/index.md)
+
+## What's next?
+
+Go on reading the Getting started guide and explore the [Code Playground](./getting_started/code_playground.md), or jump to the [Learning Paths](./learning-paths/index.md)!
 
 <InlineAlert slots="text" />
 
 **Join Us: Office Hours for Adobe Express Developers** <br /><br />
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
 
-## What's next?
-
-Go on the Getting started guide and explore the [Code Playground](./getting_started/code_playground.md) or jump to our Learning Paths!
 <br/><br/><br/><br/>

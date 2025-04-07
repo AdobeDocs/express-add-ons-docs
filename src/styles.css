@@ -129,3 +129,9 @@ section:has(> div > p > span > picture) {
 .hero-image-container img {
   opacity: 0.8 !important;
 }
+
+/* Landing page learning paths icon stuff */
+
+.icon-links-fixer + section > div {
+  margin: -110px 0 -70px 0px;
+}
