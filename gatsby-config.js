@@ -634,11 +634,15 @@ module.exports = {
                   },
                 ],
               },
-              {
-                title: "Concepts",
-                path: "references/document-sandbox/document-apis/concepts/index.md",
-              },
+              // {
+              //   title: "Concepts",
+              //   path: "references/document-sandbox/document-apis/concepts/index.md",
+              // },
             ],
+          },
+          {
+            title: "Concepts",
+            path: "references/document-sandbox/document-apis/concepts/index.md",
           },
         ],
       },
