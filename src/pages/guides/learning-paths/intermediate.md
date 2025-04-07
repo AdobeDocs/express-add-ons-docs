@@ -56,7 +56,7 @@ The add-on you're building in this tutorial is production-ready, and is an excel
 - **The Document API** to manipulate the document and its elements.
 - Iframe and Document Model Sandbox **communication**.
 
-Alongside with a more complex usage of the various APIs and the creation of a structured UI, you'll be introduced to the [Communication API](../tutorials/grids-addon/#the-communication-api), which is the main way for an add-on to interact with Adobe Express Documents.
+Alongside with a more complex usage of the various APIs and the creation of a structured UI, you'll be introduced to the [Communication API](../tutorials/grids-addon.md#the-communication-api), which is the main way for an add-on to interact with Adobe Express Documents.
 
 [![Document API Tutorial](../tutorials/images/grids-addon-communication.png)](../tutorials/grids-addon.md)
 

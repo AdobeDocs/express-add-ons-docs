@@ -32,7 +32,7 @@ Adobe Express is based on the [Adobe Spectrum design system](https://s2.spectrum
     <iframe width="779" height="438" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 </div>
 
-We've created a set of [UX Guidelines](../design/index.md) to help you get started; they cover the [design principles](../design/ux_guidelines/design_principles.md), [color](../design/ux_guidelines/visual_elements/#color), [typography](../design/ux_guidelines/visual_elements/#typography), [layout](../design/ux_guidelines/visual_elements/##layout--structure) and much more.
+We've created a set of [UX Guidelines](../design/index.md) to help you get started; they cover the [design principles](../design/ux_guidelines/design_principles.md), [color](../design/ux_guidelines/visual_elements.md#color), [typography](../design/ux_guidelines/visual_elements.md#typography), [layout](../design/ux_guidelines/visual_elements.md#layout--structure) and much more.
 
 You should use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), a library of pre-built components that you can use to create a consistent UI for your add-on. You can test them in a sandboxed environment like Codepen
 
