@@ -12,11 +12,10 @@ keywords:
   - API
   - Add-on Manifest
 title: SDK Reference
-description: The Adobe Express add-on SDK Reference.
+description: The Adobe Express add-on SDK Reference. 
 contributors:
   - https://github.com/hollyschinsky
 ---
-
 # Add-on UI SDK Reference
 
 ## Overview
@@ -25,31 +24,31 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 ## Features Supported by the SDK
 
-- [Importing Content](../../guides/develop/how-to/use_images.md)
-- [Exporting Content](../../guides/develop/how-to/create_renditions.md)
-- [Accessing Content](../../guides/develop/how-to/group_elements.md)
-- [Drag & Drop Behavior](../../guides/develop/how-to/drag_and_drop.md)
-- [Authorization with OAuth 2.0](../../guides/develop/how-to/oauth2.md)
-- [Client-side Storage Access](../../guides/develop/how-to/local-data-management.md)
-- [Modal Dialogs](../../guides/develop/how-to/modal_dialogs.md)
-- [Locale Detection](../../guides/develop/how-to/theme_locale.md#detecting-locale-supported-locales-and-format)
-- [Theme Detection](../../guides/develop/how-to/theme_locale.md#detecting-theme)
-- [Access to the Manifest](../../references/addonsdk/instance-manifest.md)
-- [Access to the Document information](../../references/addonsdk/app-document.md)
+- [Importing Content](../../guides/develop/use-cases/content-management.md#importing-content)
+- [Exporting Content](../../guides/develop/use-cases/content-management.md#exporting-content)
+- [Accessing Content](../../guides/develop/use-cases/content-management.md)
+- [Drag & Drop Behavior](../../guides/develop/use-cases/user-interaction.md#drag-and-drop)
+- [Authorization with OAuth 2.0](../../guides/develop/use-cases/authentication-authorization.md#oauth-20)
+- [Client-side Storage Access](../../guides/develop/use-cases/clientside-data.md)
+- [Modal Dialogs](../../guides/develop/use-cases/user-interaction.md#modal-dialogs)
+- [Locale Detection](../../guides/develop/use-cases/environment-settings.md#detecting-locale-supported-locales-and-format)
+- [Theme Detection](../../guides/develop/use-cases/environment-settings.md#detecting-theme)
+- [Access to the Manifest](./instance-manifest.md)
+- [Access to the Document information](./app-document.md)
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [implementing common use cases page](../../guides/develop/) for details and examples of how to add the features above.
+See the [implementing common use cases page](../../guides/develop/index.md) for details and examples of how to add the features above.
 
-<InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
+<InlineAlert slots="text" repeat="6" variant="success" />
 
-# SDK vs API
+#### SDK vs API
 
 The distinction between an SDK and an API can be a bit blurry and can depend on the specific context. However, here's a general overview of the differences between an SDK and an API:
 
-**SDK** (Software Development Kit) - a collection of software development tools and libraries that developers can use to create applications for a specific platform or system. An SDK typically includes an API, documentation, code samples, and other resources that developers need to build applications.
+   **SDK** (Software Development Kit) - a collection of software development tools and libraries that developers can use to create applications for a specific platform or system. An SDK typically includes an API, documentation, code samples, and other resources that developers need to build applications.
 
-**API** (Application Programming Interface) - a set of rules and protocols that developers can use to interact with a platform.
+   **API** (Application Programming Interface) - a set of rules and protocols that developers can use to interact with a platform.
 
 In general, an SDK provides a more complete set of tools and resources for developers than an API alone. An SDK may include an API, but it also includes other tools and resources that can help developers build applications more easily. However, the terms SDK and API are often used interchangeably, and the specific definitions can vary depending on the context.
 
@@ -70,7 +69,7 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
         import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
         addOnUISdk.ready.then(async () => {
             console.log("addOnUISdk is ready for use.");
-        });
+        });     
     </script>
 </body>
 ```
@@ -91,8 +90,8 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 ```ts
 declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
-  export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
-  export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+    export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+    export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 }
 ```
 
@@ -100,58 +99,19 @@ See the [typescript definitions section](../../guides/develop/frameworks-librari
 
 ## addOnUISdk Properties
 
-The following properties can be accessed from the `addOnUISdk` object after it has been imported.<br/><br/>
+The following properties can be accessed from the `addOnUISdk` object after it has been imported.
 
-<table columnWidths="20,30,15,35" class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.app</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Provides access to the host application (Adobe Express)</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.instance</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>The currently running add-on instance.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.ready</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>Promise</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Promise.then</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">await this promise</a>.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.constants</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>A set of constants used throughout the add-on SDK.</p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>addOnUISdk.apiVersion</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td class="spectrum-Table-cell"><p>The current version of the add-on SDK running.</p></td>
-</tr>
-</tbody>
-</table>
+| Attribute | Name                  | Type    | Description                                                                                                                                                                                                                                                                                                                                    |
+| --------- | --------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `readonly`  | `addOnUISdk.app`      | `object`  | Provides access to the host application (Adobe Express)                                                                                                                                                                                                                                                                                        |
+| `readonly`  | `addOnUISdk.instance`   | `object`  | The currently running add-on instance.                                                                                                                                                                                                                                                                                                         |
+| `readonly`  | `addOnUISdk.ready`      | `Promise` | Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with [Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await). |
+|           | `addOnUISdk.constants`  | `object`  | A set of constants used throughout the add-on SDK.                                                                                                                                                                                                                                                                                             |
+| `readonly`  | `addOnUISdk.apiVersion` | `string`  | The current version of the add-on SDK running.                                                                                                                                                                                                                                                                                                 |
 
 ## addOnUISdk Errors
 
 The table below describes the possible error messages that may occur when using the core `addOnUISdk` object, with a description of the scenario that will return them.
-
-<br/>
 
 |                                                            Error Message |                                                      Error Scenario |
 | -----------------------------------------------------------------------: | ------------------------------------------------------------------: |
