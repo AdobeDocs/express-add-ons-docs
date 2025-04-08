@@ -16,6 +16,7 @@ description: The Adobe Express add-on SDK Reference.
 contributors:
   - https://github.com/hollyschinsky
 ---
+
 # Add-on UI SDK Reference
 
 ## Overview
