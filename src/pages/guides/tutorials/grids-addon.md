@@ -239,7 +239,7 @@ start();
 
 Please use the iframe and Document API tabs above to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
-The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](../../guides/design/ux_guidelines/branding_guidelines.md), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
+The `index.html` contains a `<sp-theme>` wrapper, whose role is explained [here](../../guides/design/ux_guidelines/branding-guidelines.md), and just a button. There's already something going on in `index.js` and `code.js` instead, which we must understand.
 
 ## The Communication API
 
@@ -450,7 +450,7 @@ The layout is based on nested FlexBox CSS classes, such as `row` and `column`. B
 
 ![](images/grids-addon-swc.png)
 
-Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](../../guides/design/user-interface.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
+Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](../../guides/design/ux_guidelines/branding-guidelines.md). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
 
 ```bash
 npm install @spectrum-web-components/button
