@@ -97,9 +97,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 [Context permanence](#deleting-grids)
 
-<Embed slots="video" />
-
-![](images/stats-addon-animation.gif)
+![](images/grids-addon-animation.gif)
 
 ### Getting Started with the Document API
 
