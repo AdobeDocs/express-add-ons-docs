@@ -34,7 +34,7 @@ It only affects the space *between* lines, not the space above the first line or
 
 ### list?
 
-• `optional` **list**: `Required`<[`OrderedListStyleInput`](OrderedListStyleInput.md)\> \| `Required`<[`UnorderedListStyleInput`](UnorderedListStyleInput.md)\>
+• `optional` **list**: `Required`[`OrderedListStyleInput`](OrderedListStyleInput.md) \| `Required`[`UnorderedListStyleInput`](UnorderedListStyleInput.md)
 
 <hr />
 
