@@ -2,7 +2,7 @@
 
 # Type alias: OrderedListStyle
 
-• **OrderedListStyle**: `Required`<[`OrderedListStyleInput`](../interfaces/OrderedListStyleInput.md)\>
+• **OrderedListStyle**: `Required` [`OrderedListStyleInput`](../interfaces/OrderedListStyleInput.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
