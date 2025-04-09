@@ -124,7 +124,7 @@ git clone https://github.com/AdobeDocs/express-add-on-samples.git
 
 Or download it as a `.zip` file (click the green "Code" button and then "Download ZIP").
 
-![](./images/grids-addon-git.png)
+![Grid AddOn git](./images/grids-addon-git.png)
 
 Then `cd` in the project folder (either the `grids-design-start` or `grids-design-end` one) and run the following commands:
 
