@@ -118,7 +118,7 @@ The complete code for the Grids System add-on can be found [here](https://github
 
 You can either clone the entire repository:
 
-```
+```bash
 git clone https://github.com/AdobeDocs/express-add-on-samples.git
 ```
 
@@ -128,7 +128,7 @@ Or download it as a `.zip` file (click the green "Code" button and then "Downloa
 
 Then `cd` in the project folder (either the `grids-design-start` or `grids-design-end` one) and run the following commands:
 
-```
+```bash
 cd express-add-on-samples/document-sandbox-samples/express-grids-addon/grids-design-end
 
 npm install
