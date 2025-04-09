@@ -705,7 +705,7 @@ When the user clicks the Create button, the parameters from the UI are properly 
 
 To begin with, we'll create rows: rectangles that must be as wide as the page. To calculate their height, first, subtract the total number of gutters (which is equal to the number of rows plus one) from the page height. Then, divide the resulting value by the number of rows.
 
-```txt
+```js
 rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
 ```
 
