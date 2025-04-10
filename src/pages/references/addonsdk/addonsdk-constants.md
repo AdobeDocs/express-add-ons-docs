@@ -113,7 +113,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td style="vertical-align: bottom;">
         <p>The type of link</p>
         <ul>
-          <li><strong>document</strong></li>Link to the current document.          
+          <li><strong>document</strong></li>Link to the current document. 
         </ul>
     </td>
 </tr>
