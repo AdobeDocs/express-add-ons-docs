@@ -97,6 +97,7 @@ async function removeData(key) {
 ### clear()
 
 **`clear(): Promise void`**
+
 Delete all data present in ClientStorage for this add-on.
 
 #### Parameters
@@ -122,6 +123,7 @@ async function clearData() {
 ### keys()
 
 **`async keys(): Promise string[]`**
+
 Retrieve a list of all keys in Client Storage. Use this to enumerate the full contents of the Client Storage for the add-on.
 
 #### Parameters
