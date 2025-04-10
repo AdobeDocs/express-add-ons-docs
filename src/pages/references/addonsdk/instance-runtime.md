@@ -14,15 +14,15 @@ The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint cr
 
 ## Methods
 
-The following methods allow you to communicate bidirectionally between the add-on running in the iframe and the [document sandbox](../document-sandbox/) environments.
+The following methods allow you to communicate bidirectionally between the add-on running in the iframe and the [document sandbox](../document-sandbox/index.md) environments.
 
 ### exposeApi()
 
-Use this method to expose an API from your UI code running in the iframe to another runtime (ie: the [document sandbox code](../document-sandbox/) defined in your `code.js` for instance).
+Use this method to expose an API from your UI code running in the iframe to another runtime (ie: the [document sandbox code](../document-sandbox/index.md) defined in your `code.js` for instance).
 
 #### Signature
 
-`exposeApi<T>(obj: T): void`
+`exposeApi T (obj: T): void`
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Requests a promise-based proxy object from another runtime to be used to call th
 
 #### Signature
 
-`async apiProxy(runtimeType: RuntimeType): Promise<Remote<unknown>>`
+`async apiProxy(runtimeType: RuntimeType): Promise Remote unknown `
 
 #### Parameters
 
