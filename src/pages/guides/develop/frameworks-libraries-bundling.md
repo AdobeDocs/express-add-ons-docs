@@ -17,10 +17,6 @@ An example of how this works in Visual Studio Code is shown in this short clip b
 <iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
 </div>
 
-<InlineAlert slots="text" variant="info"/>
-
-Make sure you check out the [Using Lit & Typescript Guide](./lit-guide.md) for a more detailed explanation of how to use TypeScript with the Add-on SDK.
-
 ## Webpack & JavaScript bundler
 
 When using Node libraries or other frameworks, you'll often need to use a JavaScript bundler. All of the templates the CLI provides (other than the basic `javascript` template) are pre-configured for webpack via the `--use` option set on the `ccweb-add-on-scripts` commands. If you create a new add-on project based on a react or typescript based template for instance, you will see the following `scripts` block generated in your `package.json`, and the existence of a `webpack.config.js` in the root of your project:

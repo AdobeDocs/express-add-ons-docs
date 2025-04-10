@@ -22,12 +22,12 @@ contributors:
 
 # Changelog
 
-## 2025-04-07
+## 2025-04-10
 
 ### Added
 
-- New [`link()`](../references/app-document.md#link) method added to the `AddOnUISdk.app.document` reference. This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
-- A new [Lit & TypeScript Guide](../guides/develop/using-lit-typescript.md) has been added to help developers build add-ons using the Lit framework and TypeScript.
+- New [`link()`](../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference. This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [vue-starter](../samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
 
 ## 2025-04-03
 
