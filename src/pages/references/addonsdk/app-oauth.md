@@ -10,7 +10,7 @@ Authorize a user using OAuth 2.0 PKCE workflow.
 
 #### Signature
 
-`authorize(request: AuthorizationRequest): Promise<AuthorizationResponse>`
+`authorize(request: AuthorizationRequest): Promise AuthorizationResponse`
 
 #### Parameters
 
@@ -26,7 +26,7 @@ Authorize a user using OAuth 2.0 PKCE workflow.
 | `clientId`              |                            `string` |                                                                                                                                                                                                        Client identifier of the application created at the OAuth provider. |
 | `scope`                 |                            `string` |                                                                                                                                                                                                                                 Scope to control the application's access. |
 | `codeChallenge`         |                            `string` |                                                                                                                                                                                                                        Code challenge used in Authorization Code Exchange. |
-| `additionalParameters?` |               `Map<string, string>` |                                                                                                                                               Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
+| `additionalParameters?` |               `Map string, string` |                                                                                                                                               Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
 | `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`.**NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
 
 #### Return Value
@@ -48,7 +48,7 @@ Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in w
 
 #### Signature:
 
-`authorizeWithOwnRedirect(request: AuthorizeWithOwnRedirectRequest): Promise<AuthorizationResult>`
+`authorizeWithOwnRedirect(request: AuthorizeWithOwnRedirectRequest): Promise AuthorizationResult`
 
 #### Parameters
 
@@ -64,7 +64,7 @@ Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in w
 | `clientId`              |                            `string` |                                                                                                                                                                                                        Client identifier of the application created at the OAuth provider. |
 | `scope`                 |                            `string` |                                                                                                                                                                                                                                 Scope to control the application's access. |
 | `codeChallenge`         |                            `string` |                                                                                                                                                                                                                        Code challenge used in Authorization Code Exchange. |
-| `additionalParameters?` |               `Map<string, string>` |                                                                                                                                               Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
+| `additionalParameters?` |               `Map string, string` |                                                                                                                                               Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
 | `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`.**NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
 | `redirectUri`           |                            `string` |                                                                                                                  URL where the user is redirected to after successful or failed authorization. Hosting and handling redirects to this URL should be managed by the caller. |
 | `state`                 |                            `string` |                 A value which is preserved in the request, and replayed back as a query string parameter in the `redirectUri`. Although the primary reason for using the state parameter is to mitigate CSRF attacks, it can also be used to encode any other information. |
