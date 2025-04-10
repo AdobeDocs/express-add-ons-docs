@@ -10,7 +10,7 @@ Retrieves the id of the document.
 
 #### Signature
 
-`id(): Promise<string | undefined>`
+`id(): Promise string | undefined`
 
 #### Return Value
 
@@ -44,7 +44,7 @@ Retrieves the title/name of the document.
 
 #### Signature
 
-`title(): Promise<string>`
+`title(): Promise string`
 
 #### Return Value
 
@@ -361,7 +361,7 @@ Adds audio to the current page.
 
 #### Signature
 
-`addAudio(audioBlob: Blob, attributes: MediaAttributes): Promise<void>`
+`addAudio(audioBlob: Blob, attributes: MediaAttributes): Promise void `
 
 #### Parameters
 
@@ -547,7 +547,7 @@ Generate renditions of the current page, specific pages or the entire document i
 
 #### Signature
 
-`createRenditions(renditionOptions: RenditionOptions, renditionIntent?: RenditionIntent): Promise<Rendition[]>`
+`createRenditions(renditionOptions: RenditionOptions, renditionIntent?: RenditionIntent): Promise Rendition[]`
 
 #### Parameters
 
