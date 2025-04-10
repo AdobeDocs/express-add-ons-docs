@@ -13,7 +13,7 @@ Closes the modal dialog and posts the result back to the dialog invoker.
 
 | Name      | Type           |                                         Description |
 | --------- | -------------- | --------------------------------------------------: |
-| `result?` | `unknown<any>` | An optional result to return to the dialog invoker. |
+| `result?` | `unknown any ` | An optional result to return to the dialog invoker. |
 
 #### Returns
 
