@@ -14,7 +14,7 @@ Additionally, you should always provide a way for users to delete or clear any d
 
 ### getItem()
 
-**`async getItem(key: string): Promise<unknown | undefined>`**<br/>
+**`async getItem(key: string): Promise unknown | undefined`**
 An asynchronous method to retrieve a value from Client Storage for a given key. If no value has been stored for that key, this function will return `undefined`.
 
 #### Parameters
@@ -41,7 +41,7 @@ async function getData(key) {
 
 ### setItem()
 
-**`async setItem(key: string, value: any): Promise<void>;`**<br/>
+**`async setItem(key: string, value: any): Promise void;`**
 Store a value in Client Storage with the given key. The returned promise will resolve if storage is successful, or reject with an error message if storage failed. The value can be any of multiple data types, such as `object`, `string`, array, `number`, `boolean`, `null`, `undefined` and `Uint8Array`.
 
 #### Parameters
@@ -69,7 +69,7 @@ async function setData(key, value) {
 
 ### removeItem()
 
-**`async removeItem(key: string): Promise<void>`**<br/>
+**`async removeItem(key: string): Promise void`**
 Remove the stored key/value pair from Client Storage for the given key. If no such key is stored, this function will return normally, but will otherwise do nothing.
 
 #### Parameters
@@ -96,7 +96,7 @@ async function removeData(key) {
 
 ### clear()
 
-**`clear(): Promise<void>`**<br/>
+**`clear(): Promise void`**
 Delete all data present in ClientStorage for this add-on.
 
 #### Parameters
@@ -121,7 +121,7 @@ async function clearData() {
 
 ### keys()
 
-**`async keys(): Promise<string[]>`**<br/>
+**`async keys(): Promise string[]`**
 Retrieve a list of all keys in Client Storage. Use this to enumerate the full contents of the Client Storage for the add-on.
 
 #### Parameters
@@ -152,8 +152,6 @@ Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/
 ## Errors
 
 The table below describes the possible error messages that may occur when using the Client Storage API, with a description of the scenario that will return them.
-
-<br/>
 
 |                                  Error Message |                              Error Scenario |
 | ---------------------------------------------: | ------------------------------------------: |
