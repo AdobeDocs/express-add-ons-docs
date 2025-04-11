@@ -6,8 +6,8 @@ The Add-on SDK's are a set of interfaces written in TypeScript, and a TypeScript
 
 ```ts
 import {
-    Application,
-    AuthorizationRequest
+  Application,
+  AuthorizationRequest,
 } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 ```
 
@@ -65,7 +65,7 @@ The CLI supports two different [react-based templates](../getting_started/dev_to
 
 The CLI provides [starter template options](../getting_started/dev_tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
 
-To learn more about developing with [Lit](https://lit.dev/), be sure to check out the [Using Lit & TypeScript Guide](./using-lit-typescript.md).
+<!-- To learn more about developing with [Lit](https://lit.dev/), be sure to check out the [Using Lit & TypeScript Guide](./using-lit-typescript.md). -->
 
 ## Other JavaScript and CSS libraries
 
