@@ -133,7 +133,7 @@ Commonly found at the top of the add-on panel, Panel Actions include:
 - **Filter**: enables users to narrow down visible content based on criteria.
 - **Sort**: organizes content by relevance, date, or other metrics.
 - **Add Folder**: gives users the ability to create new folders within the add-on.
-- **Tabs**: lmets users navigate between different sections or views.
+- **Tabs**: lets users navigate between different sections or views.
 
 These actions enable users to "drill into" specific sections, for example dynamically refining a list of thumbnails that follows.
 

@@ -38,7 +38,11 @@ addOnUISdk.ready.then(() => {
 
   // Get the document title
   const docTitle = await addOnUISdk.app.document.title();
-  console.log(`Document ID: ${docId}; Document Title: ${docTitle}`);
+
+  // Get the document Link
+  const docLink = await addOnUISdk.app.document.link();
+  
+  console.log(`Document ID: ${docId}; Document Title: ${docTitle}`; `Document Link: ${docLink}`);  
 
   // Listen for document ID change
   addOnUISdk.app.on("documentIdAvailable", data => {
@@ -54,4 +58,4 @@ addOnUISdk.ready.then(() => {
 
 <InlineAlert slots="text" variant="warning"/>
 
-Please remember that `id()` and `title()` are **asynchronous methods** and not properties of the `addOnUISdk.app.document` object, so you need to call them and `await` for the promise to be resolved before using the returned value.
+Please remember that `id()`, `title()`, and `link()` are asynchronous methods and not properties of the `addOnUISdk.app.document` object. You need to call them and `await` for the promise to be resolved before using the returned value.
