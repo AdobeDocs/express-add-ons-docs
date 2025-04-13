@@ -250,7 +250,7 @@ A resolved `Promise` containing the `link` of the document.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Note:** A `documentLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
+A `documentLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
 #### Example
 

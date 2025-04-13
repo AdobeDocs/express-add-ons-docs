@@ -58,4 +58,4 @@ addOnUISdk.ready.then(() => {
 
 <InlineAlert slots="text" variant="warning"/>
 
-Please remember that `id()`, `title()` and `link()` are **asynchronous methods** and not properties of the `addOnUISdk.app.document` object, so you need to call them and `await` for the promise to be resolved before using the returned value.
+Please remember that `id()`, `title()`, and `link()` are asynchronous methods and not properties of the `addOnUISdk.app.document` object. You need to call them and `await` for the promise to be resolved before using the returned value.
