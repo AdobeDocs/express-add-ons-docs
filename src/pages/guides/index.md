@@ -81,8 +81,8 @@ Transform your ideas into a polished product following our best practices.
 #### Effort: 2+ days
 
 - Scaffold your project with the [CLI](./getting_started/dev_tooling.md) and follow the [Debug guide](./debug/index.md).
-- Explore our [UX Guidelines](../guides/design/index.md) and [Tutorials](../guides/tutorials/index.md).
-- Check out our [Code Samples](../samples.md) and [API Reference](../references/index.md).
+- Explore our [UX Guidelines](../resources/design/index.md) and [Tutorials](../guides/tutorials/index.md).
+- Check out our [Code Samples](../guides/samples.md) and [API Reference](../references/index.md).
 
 <TextBlock slots="image, heading, text, text1, text2" width="50%" />
 
@@ -94,9 +94,9 @@ Share your add-on with the world in the Adobe Express Marketplace.
 
 #### Effort: 1+ days
 
-- Learn about the [distribution process](./distribute/index.md) and how to [monetize](./distribute/guidelines/monetization.md) your add-on.
-- Follow our [guidelines](./distribute/guidelines/general/index.md) to get your add-on ready for review.
-- Find quick solutions to common issues in our [FAQ](./faq.md).
+- Learn about the [distribution process](../resources/distribute/index.md) and how to [monetize](../resources/distribute/guidelines/monetization.md) your add-on.
+- Follow our [guidelines](../resources/distribute/guidelines/general/index.md) to get your add-on ready for review.
+- Find quick solutions to common issues in our [FAQ](../resources/faq.md).
 
 ## The add-ons Marketplace
 

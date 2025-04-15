@@ -1,4 +1,3 @@
-
 # Troubleshooting Add-On Development
 
 This guide provides solutions to common issues that developers may encounter during add-on development.
@@ -72,7 +71,7 @@ This guide provides solutions to common issues that developers may encounter dur
 
 ### Problem: COI Headers Not Applied
 
-- **Solution:** Follow the steps to apply COI headers in your browser's developer tools. Refer to the [Cross-Origin Isolation Guide](../../guides/develop/coi.md) for detailed instructions.
+- **Solution:** Follow the steps to apply COI headers in your browser's developer tools. Refer to the [Cross-Origin Isolation Guide](../../resources/advanced-topics/coi.md) for detailed instructions.
 
 ## Common Error Messages
 

@@ -87,7 +87,7 @@ Take 10 minutes to explore the [Adobe Express Add-ons Marketplace](https://new.e
 To deepen your understanding of Adobe Express add-ons, explore these resources:
 
 - [Getting Started - Introduction](../../guides/getting_started/index.md)
-- [Frequently Asked Questions](../../guides/faq.md)
+- [Frequently Asked Questions](../../resources/faq.md)
 
 ## Knowledge Check
 

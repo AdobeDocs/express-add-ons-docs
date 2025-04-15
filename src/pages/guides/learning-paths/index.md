@@ -93,5 +93,5 @@ If you've completed all the paths, you know more than most developers; congratul
 
 - [Adobe Express add-on Documentation](../getting_started/index.md)
 - [API Reference](../../references/index.md)
-- [Sample Add-ons](../../samples.md)
+- [Sample Add-ons](../samples.md)
 - [Adobe Express Developer Community](https://developer.adobe.com/express/community)

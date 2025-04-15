@@ -32,13 +32,13 @@ Adobe Express is based on the [Adobe Spectrum design system](https://s2.spectrum
     <iframe width="779" height="438" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 </div>
 
-We've created a set of [UX Guidelines](../design/index.md) to help you get started; they cover the [design principles](../design/ux_guidelines/design_principles.md), [color](../design/ux_guidelines/visual_elements.md#color), [typography](../design/ux_guidelines/visual_elements.md#typography), [layout](../design/ux_guidelines/visual_elements.md#layout--structure) and much more.
+We've created a set of [UX Guidelines](../../resources/design/index.md) to help you get started; they cover the [design principles](../../resources/design/ux_guidelines/design_principles.md), [color](../../resources/design/ux_guidelines/visual_elements.md#color), [typography](../../resources/design/ux_guidelines/visual_elements.md#typography), [layout](../../resources/design/ux_guidelines/visual_elements.md#layout--structure) and much more.
 
 You should use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), a library of pre-built components that you can use to create a consistent UI for your add-on. You can test them in a sandboxed environment like Codepen
 
 [![Spectrum Web Components Codepen](../tutorials/images/bingo-codepen.png)](../tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
 
-Read our [Implementation Guide](../design/implementation_guide.md) or follow our two-part[Bingo Card Generator add-on tutorial](../tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
+Read our [Implementation Guide](../../resources/design/implementation_guide.md) or follow our two-part[Bingo Card Generator add-on tutorial](../tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
 
 [![Bingo Card Generator add-on](../tutorials/images/bingo-v1-addon.png)](../tutorials/spectrum-workshop/index.md)
 
@@ -54,7 +54,7 @@ Complete the [Dimension annotation sample add-on exercise](../../references/docu
 
 ## 3. Distribute your add-on to the Marketplace
 
-Add-ons can be [privately distributed](../distribute/private-dist.md) for testing purposes or [published in the Adobe Express Marketplace](../distribute/public-dist.md).
+Add-ons can be [privately distributed](../../resources/distribute/private-dist.md) for testing purposes or [published in the Adobe Express Marketplace](../../resources/distribute/public-dist.md).
 
 [![Publish your add-on](../../resources/distribute/img/public-listing-submission-v2.png)](../../resources/distribute/public-dist.md)
 
@@ -78,7 +78,7 @@ Congratulations 🎉 Pause for a moment and pat yourself on the back—you've ju
 
 Now that you've learned more than most developers, we have just a few more tasks for you.
 
-- Read about [Advanced topics](../develop/frameworks-libraries-bundling.md) like frameworks, bundling, CORS, performance tips, and more.
+- Read about [Advanced topics](../../resources/advanced-topics/frameworks-libraries-bundling.md) like frameworks, bundling, CORS, performance tips, and more.
 - Give back to the community! Either engaging with other developers, participating in the [Adobe Express Office Hours](https://developer.adobe.com/developers-live) or contributing to the [Code Samples](https://github.com/AdobeDocs/express-add-on-samples) GitHub repository.
 - Let us know what you think of the Documentation! We're always looking to improve it, so if you have any feedback, please [get in touch](http://discord.gg/nc3QDyFeb4).
 - Have fun building!

@@ -120,7 +120,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 <InlineAlert slots="text1, text2" variant="info"/>
 
-It's possible to access the **Add-ons** from the home page as well (i.e., without the need to open a new project first). In this case, you must follow the listing creation outlined [here](../distribute/private-dist.md#step-1-create-a-new-add-on-listing) first.
+It's possible to access the **Add-ons** from the home page as well (i.e., without the need to open a new project first). In this case, you must follow the listing creation outlined [here](../../resources/distribute/private-dist.md#step-1-create-a-new-add-on-listing) first.
 
 For simplicity's sake, this Quickstart guide covers the document creation method.
 
@@ -186,6 +186,6 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 Congratulations! You've completed the quickstart and run your first add-on!
 
-Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons.
+Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../../resources/design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../../resources/distribute/index.md) your add-ons.
 
-If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/guides/tutorials), and exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.
+If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/guides/tutorials), and exploring our collection of [code samples](../../guides/samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.

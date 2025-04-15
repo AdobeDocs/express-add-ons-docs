@@ -59,8 +59,8 @@ Demonstrates how to use the add-on SDK's Import and Drag and Drop APIs to add im
 
 **Features Leveraged:**<br/>
 
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+- [Import Content](../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+- [Drag and Drop](../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
 
 ## [import-images-using-oauth](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/import-images-using-oauth)
 
@@ -75,10 +75,10 @@ Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect
 
 **Features Leveraged:**<br/>
 
-- [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
-- [Import Content](./references/addonsdk/app-document.md) to add images from the add-on to the document.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
+- [OAuth API's](../references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
+- [Import Content](../references/addonsdk/app-document.md) to add images from the add-on to the document.
+- [Drag and Drop](../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+- [Client Storage](../references/addonsdk/instance-clientStorage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
 
 ## [use-client-storage](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/use-client-storage)
 
@@ -92,7 +92,7 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 
 **Features Leveraged:**<br/>
 
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to persist the todo items.
+- [Client Storage](../references/addonsdk/instance-clientStorage.md) to persist the todo items.
 
 ## [export-sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/export-sample)
 
@@ -106,8 +106,8 @@ Demonstrates how to use the add-on SDK's to export renditions of content in vari
 
 **Features Leveraged:**<br/>
 
-- [Export Content](./references/addonsdk/app-document.md) to generate renditions.
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+- [Export Content](../references/addonsdk/app-document.md) to generate renditions.
+- [Import Content](../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 
 ## [dialog-add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/dialog-add-on)
 
@@ -121,7 +121,7 @@ Demonstrates how to use the Modal Dialog APIs to pop-up variations of modals fro
 
 **Features Leveraged:**<br/>
 
-- [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
+- [Modal Dialogs](../references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
 
 ## [licensed-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/licensed-addon)
 
@@ -135,8 +135,8 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 
 **Features Leveraged:**<br/>
 
-- [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
-- [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
+- [Current User API](../references/addonsdk/app-currentUser.md) to validate the current userid's.
+- [Modal Dialogs](../references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
 ## [audio-recording-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on)
 
@@ -149,7 +149,7 @@ Demonstrates how to record audio using the browser's media recorder API, convert
 **Features Leveraged:**<br/>
 
 - Record audio using the Browser's API, transforming a raw Blob into a WAV Blob using an HPC codec.
-- [Add audio](./references/addonsdk/app-document.md#addaudio) to the current document's page.
+- [Add audio](../references/addonsdk/app-document.md#addaudio) to the current document's page.
 
 <!-- # Contributed Add-on Samples
 The following samples were contributed from the team. -->
@@ -167,9 +167,9 @@ A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. U
 
 **Features Leveraged:**<br/>
 
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to add the dragged image to the document.
-- [Export Content](./references/addonsdk/app-document.md) to generate renditions.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the pixel art creations.
+- [Drag and Drop](../references/addonsdk/addonsdk-app.md#enabledragtodocument) to add the dragged image to the document.
+- [Export Content](../references/addonsdk/app-document.md) to generate renditions.
+- [Client Storage](../references/addonsdk/instance-clientStorage.md) to store the pixel art creations.
 
 ## [swc](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc)
 
@@ -185,7 +185,7 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 
 **Features Leveraged:**<br/>
 
-- [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
+- [Application UI Theme](../references/addonsdk/app-ui.md) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
 
 ## [swc-react-theme-sampler](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc-react-theme-sampler)
 
@@ -199,7 +199,7 @@ Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-we
 
 **Features Leveraged:**<br/>
 
-- [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
+- [Application UI Theme](../references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
 
 ## [vue-starter](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/vue-starter)
 
@@ -215,7 +215,7 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 
 **Features Leveraged:**<br/>
 
-- [Add-on SDK Ready](./references/addonsdk/addonsdk.md) method is checked to ensure the SDK is loaded before enabling the button in the UI (similar to the templates generated with our CLI, but based on Vue.js).
+- [Add-on SDK Ready](../references/addonsdk/addonsdk.md) method is checked to ensure the SDK is loaded before enabling the button in the UI (similar to the templates generated with our CLI, but based on Vue.js).
 
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->
@@ -231,9 +231,9 @@ Allows users to connect to their Dropbox account. Once connected, they can fetch
 
 **Features Leveraged:**<br/>
 
-- [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked. -->
+- [OAuth API's](../references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
+- [Drag and Drop](../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+- [Import Content](../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked. -->
 
 ## [Giphy](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/giphy)
 
@@ -246,8 +246,8 @@ Allows users to search for popular gifs and add them to the document.
 
 **Features Leveraged:**<br/>
 
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
+- [Drag and Drop](../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+- [Import Content](../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 
 ## [QR Code](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/qrcode)
 
@@ -260,8 +260,8 @@ Allows users to create a QR code based on a URL and add it to their document.
 
 **Features Leveraged:**<br/>
 
-- [Import Content](./references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
-- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
+- [Import Content](../references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
+- [Drag and Drop](../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
 
 ## [gradients](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/gradients)
 
@@ -276,35 +276,35 @@ Allows users to create two-color gradients of various shapes and direction, and 
 
 **Features Leveraged:**<br/>
 
-- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/Editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
+- [Create Bitmap Image](../references/document-sandbox/document-apis/classes/Editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
 
 ## Document Sandbox Code Samples
 
-The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have been provided to help you get started using the [Document Sandbox and Adobe Express Document APIs](./references/document-sandbox/index.md).
+The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have been provided to help you get started using the [Document Sandbox and Adobe Express Document APIs](../references/document-sandbox/index.md).
 
 ## [express-grids-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon)
 
-The sample add-on that the [Grid System tutorial](./guides/tutorials/grids-addon.md) is based upon. Demonstrates how to use the [Document APIs](./references/document-sandbox/index.md) to create and manipulate shapes, context permanence, color pickers, and Spectrum Web Components usage.
+The sample add-on that the [Grid System tutorial](../guides/tutorials/grids-addon.md) is based upon. Demonstrates how to use the [Document APIs](../references/document-sandbox/index.md) to create and manipulate shapes, context permanence, color pickers, and Spectrum Web Components usage.
 
 ## [express-stats-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-stats-addon)
 
-The sample add-on that the [Document Statistics tutorial](./guides/tutorials/stats-addon.md) is based upon. It demonstrates how to use the [Communication APIs](./references/document-sandbox/communication/index.md) to invoke Document Sandbox method from the iframe UI and vice-versa, touching on asynchronous communication and context permanence. The add-on can build a list of statistics for the document, e.g., the number of class instances (shapes, text, images, and so on).
+The sample add-on that the [Document Statistics tutorial](../guides/tutorials/stats-addon.md) is based upon. It demonstrates how to use the [Communication APIs](../references/document-sandbox/communication/index.md) to invoke Document Sandbox method from the iframe UI and vice-versa, touching on asynchronous communication and context permanence. The add-on can build a list of statistics for the document, e.g., the number of class instances (shapes, text, images, and so on).
 
 ## [express-dimensions-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-dimensions-addon)
 
-The sample add-on that the [Document APIs Concepts](./references/document-sandbox/document-apis/concepts/index.md) article is based upon. It's used to discuss the Adobe Express Document Object Model, its Classes, Interface, and Constants. The add-on draws Dimensions (arrows measuring the width and height) around the selected shape.
+The sample add-on that the [Document APIs Concepts](../references/document-sandbox/document-apis/concepts/index.md) article is based upon. It's used to discuss the Adobe Express Document Object Model, its Classes, Interface, and Constants. The add-on draws Dimensions (arrows measuring the width and height) around the selected shape.
 
 ## [communication-iframe-documentSandbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-documentSandbox)
 
-Demonstrates using the Communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments via [`runtime.apiProxy()`](/references/addonsdk/instance-runtime.md#apiproxy) and [`runtime.exposeApi()`](/references/addonsdk/instance-runtime.md#exposeapi).
+Demonstrates using the Communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox code environments via [`runtime.apiProxy()`](../references/addonsdk/instance-runtime.md#apiproxy) and [`runtime.exposeApi()`](../references/addonsdk/instance-runtime.md#exposeapi).
 
 ## [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
 
-Demonstrates how to use the [Document APIs](./references/document-sandbox/document-apis/) to create various shapes and text, and add them to the document.
+Demonstrates how to use the [Document APIs](../references/document-sandbox/document-apis/) to create various shapes and text, and add them to the document.
 
 ## [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
 
-A more comprehensive example of using the [Document APIs](./references/document-sandbox/document-apis/) to add a page, images, and shapes, and clear the artboard.
+A more comprehensive example of using the [Document APIs](../references/document-sandbox/document-apis/) to add a page, images, and shapes, and clear the artboard.
 
 ## [express-addon-document-api-template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template)
 

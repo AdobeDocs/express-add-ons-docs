@@ -57,13 +57,13 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ## Getting Started with the Communication API
 
-As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../develop/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
+As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../../resources/advanced-topics/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
 
 The **Document API** makes new, more powerful capabilities available, allowing the add-on to manipulate elements directly—like scripting in Desktop applications such as Photoshop or InDesign. This API is one component of the Document Sandbox, a JavaScript execution environment that also includes a restricted set of Web API (mostly debugging aids) as well as the means for the UI iframe and the Document API to exchange messages—the Communication API. This infrastructure is paramount as it bridges the gap between the two environments, allowing them to create a seamless experience.
 
 ### Proxies
 
-How does this all work, then? The process involves exposing proxies for the *other context* to use, serving as a user-friendly abstraction; under the hood, the implementation relies on a messaging system, which is hidden to us developers.
+How does this all work, then? The process involves exposing proxies for the _other context_ to use, serving as a user-friendly abstraction; under the hood, the implementation relies on a messaging system, which is hidden to us developers.
 
 ```js
 // runtime in the UI iframe
@@ -79,17 +79,19 @@ The `runtime` object uses the `exposeApi()`to make content available to the othe
 
 ```js
 // 👇 both in the UI frame and the Document Sandbox
-runtime.exposeApi({ /* ... */ }); // exposing a payload {}
+runtime.exposeApi({
+  /* ... */
+}); // exposing a payload {}
 ```
 
-We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
+We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required _on the other side_ to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
 
 ```js
 // UI iframe, importing a payload from the Document Sandbox
-const sandboxProxy = await runtime.apiProxy("documentSandbox");
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
 // Document Sandbox, importing a payload from the UI iframe
-const panelUIProxy = await runtime.apiProxy("panel");
+const panelUIProxy = await runtime.apiProxy("panel");
 ```
 
 At this point, `sandboxProxy` and `panelUIProxy` represent their counterparts from the original contexts. It all may be easier to understand when the entire process is written down; for example, in the following code, we expose a custom method called `ready()` defined in the UI iframe to the Document API.
@@ -103,10 +105,10 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
 // exporting a payload to the Document Sandbox
-runtime.exposeApi({ 
+runtime.exposeApi({
   ready: (env) => {
     console.log(`The ${env} environment is ready`);
-  }
+  },
 });
 ```
 
@@ -117,13 +119,13 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 // importing from the iframe
-const panelUIProxy = await runtime.apiProxy("panel"); 
+const panelUIProxy = await runtime.apiProxy("panel");
 
 // We can call this method now
 await panelUIProxy.ready("Document Sandbox");
 ```
 
-As the name implies, the `panelUIProxy` constant in the Document Sandbox is a *proxy* for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
+As the name implies, the `panelUIProxy` constant in the Document Sandbox is a _proxy_ for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
 
 <CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
 
@@ -134,7 +136,7 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
 // importing from the Document Sandbox
-const sandboxProxy = await runtime.apiProxy("documentSandbox");
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
 // We can call this method now
 await sandboxProxy.drawRect();
@@ -147,10 +149,10 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
 // exporting a payload to the iframe
-runtime.exposeApi({ 
+runtime.exposeApi({
   drawRect: () => {
     // uss the Document API to draw a Rectangle shape...
-  }
+  },
 });
 ```
 
@@ -169,24 +171,34 @@ Most of the time, you're going to expose **functions**.
 ```js
 // Document Sandbox
 runtime.exposeApi({
-  drawRect:    () => { /* ... */ }, // 👈
-  drawEllipse: () => { /* ... */ }, // 👈
-  drawShape:   () => { /* ... */ }, // 👈
+  drawRect: () => {
+    /* ... */
+  }, // 👈
+  drawEllipse: () => {
+    /* ... */
+  }, // 👈
+  drawShape: () => {
+    /* ... */
+  }, // 👈
   // etc.
 });
 ```
 
-In the above example, if `drawShape()` needs to call either `drawEllipse()` or `drawRect()`, you may use the *method shorthand syntax*.
+In the above example, if `drawShape()` needs to call either `drawEllipse()` or `drawRect()`, you may use the _method shorthand syntax_.
 
 ```js
 // Document Sandbox
 runtime.exposeApi({
-  drawRect()    { /* ... */ }, // 👈
-  drawEllipse() { /* ... */ }, // 👈
-  drawShape() { 
-    this.drawRect();           // 👆
+  drawRect() {
+    /* ... */
+  }, // 👈
+  drawEllipse() {
+    /* ... */
+  }, // 👈
+  drawShape() {
+    this.drawRect(); // 👆
     // or
-    this.drawEllipse();        // 👆
+    this.drawEllipse(); // 👆
   },
   // etc.
 });
@@ -196,15 +208,19 @@ When not strictly necessary, keep functions private and expose only the ones nee
 
 ```js
 // Document Sandbox
-const drawRect    = () => { /* ... */ };  // 👈 private
-const drawEllipse = () => { /* ... */ };  // 👈 private
+const drawRect = () => {
+  /* ... */
+}; // 👈 private
+const drawEllipse = () => {
+  /* ... */
+}; // 👈 private
 
 runtime.exposeApi({
-  drawShape() { 
-    drawRect();    // 👆
+  drawShape() {
+    drawRect(); // 👆
     // or
     drawEllipse(); // 👆
-  }
+  },
 });
 ```
 
@@ -215,7 +231,7 @@ Here, `drawRect()` and `drawEllipse()` exist within the closure of the `drawShap
 #### UI iframe
 
 ```js
-const sandboxProxy = await runtime.apiProxy("documentSandbox");
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
 // Calling the exposed method
 const shapesNo = await sandboxProxy.drawShape();
@@ -225,19 +241,25 @@ console.log("Shapes drawn", shapesNo);
 #### Document Sandbox
 
 ```js
-const drawRect    = () => { /* ... */ };
-const drawEllipse = () => { /* ... */ };
+const drawRect = () => {
+  /* ... */
+};
+const drawEllipse = () => {
+  /* ... */
+};
 
-let counter = 0;    // 👈 private to the sandbox
+let counter = 0; // 👈 private to the sandbox
 
 runtime.exposeApi({
-  drawShape() { 
-    if (counter >= 10) { throw new Error("Shape's budget depleted!"); }
+  drawShape() {
+    if (counter >= 10) {
+      throw new Error("Shape's budget depleted!");
+    }
     // Randomly draw either a rectangle or an ellipse
     Math.random() < 0.5 ? drawRect() : drawEllipse();
 
-	return ++counter; // 👆
-  }
+    return ++counter; // 👆
+  },
 });
 ```
 
@@ -270,7 +292,7 @@ Nothing prevents you from using something else besides functions in your proxy. 
 
 ```js
 // iframe
-const sandboxProxy = await runtime.apiProxy("documentSandbox");
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
 for (let i = 0; i < 10; i++) {
   await sandboxProxy.drawShape();
@@ -289,13 +311,13 @@ const drawEllipse = () => { /* ... */ };
 let _counter = 0; 👈 // private member (mind the underscore)
 
 runtime.exposeApi({
-  drawShape() { 
+  drawShape() {
     if (_counter >= 10) { // 👈 mind the underscore
       throw new Error("Shape's budget depleted!");
     }
     // Randomly draw either a rectangle or an ellipse
     Math.random() < 0.5 ? drawRect() : drawEllipse();
-	this.counter = this.counter + 1; // Use the setter to increment 
+	this.counter = this.counter + 1; // Use the setter to increment
 	return this.counter; // Return the new value after incrementing
   },
   get counter()    { return _counter; }, // 👈 getter
@@ -310,7 +332,9 @@ Please note that, given the async nature of the Communication API, retrieving th
 ```js
 let counter = await sandboxProxy.counter;
 // or
-sandboxProxy.counter.then((counter) => { /* ... */ });
+sandboxProxy.counter.then((counter) => {
+  /* ... */
+});
 ```
 
 ### Asynchronous communication
@@ -368,19 +392,31 @@ We'll start with a placeholder row with a friendly message, which is going to be
 
 ```html
 <body>
-  <sp-theme scale="medium" color="light" theme="express">
+  <sp-theme
+    scale="medium"
+    color="light"
+    theme="express"
+  >
     <h3>Framework status</h3>
-    <hr>
+    <hr />
     <div class="row">
-      <sp-status-light size="m" variant="negative" id="iframe-status">
+      <sp-status-light
+        size="m"
+        variant="negative"
+        id="iframe-status"
+      >
         iFrame API
       </sp-status-light>
-      <sp-status-light size="m" variant="negative" id="document-status">
+      <sp-status-light
+        size="m"
+        variant="negative"
+        id="document-status"
+      >
         Authoring API
       </sp-status-light>
     </div>
     <h3>Document statistics</h3>
-    <hr>
+    <hr />
     <div class="row">
       <sp-table size="m">
         <sp-table-head>
@@ -416,7 +452,7 @@ The Document Sandbox exposes only a `getDocumentData()` method, which collects t
 
 When the iframe has loaded its SDK, it will call `toggleStatus()`, passing the `"iframe"` string as a parameter—telling the function which light to turn green. Similarly, when the Document Sandbox is ready, it will reach out for `toggleStatus()` on its own. Neither process requires the user's intervention.
 
-When the "Analyze Document" button is clicked, the iframe—via the Document Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an *iframe-to-Document-Sandbox-to-iframe* roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
+When the "Analyze Document" button is clicked, the iframe—via the Document Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an _iframe-to-Document-Sandbox-to-iframe_ roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
 
 <CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
 
@@ -440,20 +476,24 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 // Wait until the addOnUISdk has been loaded
 addOnUISdk.ready.then(async () => {
   // API to expose to the Document Sandbox
-  const iframeApi = { 
-    createTable(documentData) { /* ... */ },
-    toggleStatus(sdk) { /* ... */ }
+  const iframeApi = {
+    createTable(documentData) {
+      /* ... */
+    },
+    toggleStatus(sdk) {
+      /* ... */
+    },
   };
   runtime.exposeApi(iframeApi);
-  
+
   // Toggle the iframe SDK status light
   iframeApi.toggleStatus("iframe");
-  
+
   // Import the Document Sandbox API proxy
   const { runtime } = addOnUISdk.instance;
   const sandboxProxy = await runtime.apiProxy("documentSandbox");
   // Exposing the iFrame API to the Document Sandbox.
-  
+
   // Set the button's click handler
   const statsButton = document.getElementById("stats");
   statsButton.addEventListener("click", async () => {
@@ -471,13 +511,13 @@ Besides the usual SWC imports, everything must be wrapped by a callback invoked 
 
 ```js
 // ❌ _in this case_ it's the wrong syntax choice!
-runtime.exposeApi({ 
+runtime.exposeApi({
   createTable(documentData) { /* ... */ },
   toggleStatus(sdk) { /* ... */ }
 });
 
 // ✅ better for our needs _in this context_
-const iframeApi = { 
+const iframeApi = {
   createTable(documentData) { /* ... */ },
   toggleStatus(sdk) { /* ... */ }
 });
@@ -503,13 +543,14 @@ const { runtime } = addOnSandboxSdk.instance;
 async function start() {
   const panelUIProxy = await runtime.apiProxy("panel");
   runtime.exposeApi({
-    async getDocumentData() {                    // 👈 async keyword, because 👇
+    async getDocumentData() {
+      // 👈 async keyword, because 👇
       // Get the document's metadata
       let documentData;
       // ... TODO
       // ... then, directly invoke the iframe method
       await panelUIProxy.createTable(documentData); // 👈 the Communication API is async 👆
-    }
+    },
   });
   // switch the Framework Status light to green
   panelUIProxy.toggleStatus("document");
@@ -524,7 +565,9 @@ Please note that it would be perfectly fine to return the `documentData` object 
 Speaking of coding style in the way the proxy is exposed, you may find more readable to implement the functions elsewhere (either in the same file or in a separate module) and use the object property shorthand syntax.
 
 ```js
-const getDocumentData = async () => { /* ... */ };
+const getDocumentData = async () => {
+  /* ... */
+};
 // ...
 runtime.exposeApi({
   getDocumentData, // 👈 shorthand syntax
@@ -543,18 +586,18 @@ Let's start filling in the missing parts in our code; we'll begin with the Frame
 ```js
 const iframeApi = {
   toggleStatus(sdk) {
-  // sdk parameter validation  
-	if (["document", "iframe"].indexOf(sdk) === -1) {
-	  throw new Error("Invalid SDK type");
-	}
-	const el =
-	  sdk === "document"
-		  ? document.getElementById("document-status")
-		  : document.getElementById("iframe-status");
-	el.setAttribute("variant", "positive"); // 🟢
+    // sdk parameter validation
+    if (["document", "iframe"].indexOf(sdk) === -1) {
+      throw new Error("Invalid SDK type");
+    }
+    const el =
+      sdk === "document"
+        ? document.getElementById("document-status")
+        : document.getElementById("iframe-status");
+    el.setAttribute("variant", "positive"); // 🟢
   },
   // ...
-}
+};
 
 iframeApi.toggleStatus("iframe"); // 👈
 ```
@@ -577,12 +620,12 @@ When refreshing the add-on, the UI updates almost instantly, but a frame-by-fram
 
 ![Status lights](images/stats-addon-lights.png)
 
-Let's tackle the metadata collection in the Document Sandbox, especially the data structure we want to create[^2]. There are many ways to go about this business: I've decided to keep track of elements on a Page basis and store page dimensions, too. Eventually, the iframe will receive `documentData`, an array of objects, one for each page,  with `dimensions` and `nodes` properties. If you've got a taste for TypeScript, the type definition would be as follows.
+Let's tackle the metadata collection in the Document Sandbox, especially the data structure we want to create[^2]. There are many ways to go about this business: I've decided to keep track of elements on a Page basis and store page dimensions, too. Eventually, the iframe will receive `documentData`, an array of objects, one for each page, with `dimensions` and `nodes` properties. If you've got a taste for TypeScript, the type definition would be as follows.
 
 ```ts
 type DocumentData = Array<{
-  dimensions: { width: number; height: number; };
-  nodes: { [key: string]: number; };
+  dimensions: { width: number; height: number };
+  nodes: { [key: string]: number };
 }>;
 ```
 
@@ -590,20 +633,27 @@ The above would transpose into something along these lines.
 
 ```js
 [
-  { // page 1
-    "dimensions": { "width": 1200, "height": 1200 },
-    "nodes": {
-      "ab:Artboard": 1, "MediaContainer": 1, "Text": 2, "ComplexShape": 3
-    }
+  {
+    // page 1
+    dimensions: { width: 1200, height: 1200 },
+    nodes: {
+      "ab:Artboard": 1,
+      MediaContainer: 1,
+      Text: 2,
+      ComplexShape: 3,
+    },
   },
-  { // page 2
-    "dimensions": { "width": 800, "height": 400 },
-    "nodes": {
-      "ab:Artboard": 1, "MediaContainer": 4, "Rectangle": 2
-    }
+  {
+    // page 2
+    dimensions: { width: 800, height: 400 },
+    nodes: {
+      "ab:Artboard": 1,
+      MediaContainer: 4,
+      Rectangle: 2,
+    },
   },
   // ...
-]
+];
 ```
 
 The various `"ab:Artboard"`, `"MediaContainer"` and others, are the Node type strings as Adobe Express exposes them. Let's create the `getDocumentData()` function that outputs such a structure.
@@ -619,16 +669,18 @@ import { getNodeData } from "./utils";
 
 runtime.exposeApi({
   async getDocumentData() {
-    const doc = editor.documentRoot;      // get the document
-    let documentData = [];                // initialize the array to return
-    for (const page of doc.pages) {       // loop through each page
-      let pageData = {};                  // create an empty object
-      pageData.dimensions = {             // get and store the page `dimensions`
+    const doc = editor.documentRoot; // get the document
+    let documentData = []; // initialize the array to return
+    for (const page of doc.pages) {
+      // loop through each page
+      let pageData = {}; // create an empty object
+      pageData.dimensions = {
+        // get and store the page `dimensions`
         width: page.width,
         height: page.height,
       };
       pageData.nodes = getNodeData(page); // 👈 build the `nodes` object (more on this later)
-      documentData.push(pageData);        // push the object to the documentData array
+      documentData.push(pageData); // push the object to the documentData array
     }
     // invoke the iframe method to create the table on the UI
     await panelUIProxy.createTable(documentData);
@@ -686,7 +738,7 @@ Given the nature of Adobe Express documents (which will be covered in detail in 
 
 1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty iterable (please note: it's not an Array, but can be transformed into one if needed via `Array.from()`). If so, it goes through it. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
 
-2. If a child node within this array also features a non-empty `allChildren` property, `getNodeData()` is called recursively on that child node. Mind you: during these recursive calls, `nodeData` is passed as the second argument. This approach ensures that the same `nodeData` object is continuously used throughout the recursion, allowing it to accumulate and keep tabs on all node types encountered across all hierarchy levels. The `"MediaContainer"` node is a particular one, [^3] and when encountered, we stop there.  
+2. If a child node within this array also features a non-empty `allChildren` property, `getNodeData()` is called recursively on that child node. Mind you: during these recursive calls, `nodeData` is passed as the second argument. This approach ensures that the same `nodeData` object is continuously used throughout the recursion, allowing it to accumulate and keep tabs on all node types encountered across all hierarchy levels. The `"MediaContainer"` node is a particular one, [^3] and when encountered, we stop there.
 
 3. The `increaseCount()` method, which we keep private to the `utils.js` module, receives the `nodeData` object and bumps the count for each `child.type`.
 
@@ -698,11 +750,11 @@ When the whole process is repeated for each `page`, we can finally invoke the if
 
 ```js
 runtime.exposeApi({
-    async getDocumentData() {
-      // ... create and fill the `documentData` array
-      await panelUIProxy.createTable(documentData); // 👈 calling this iframe proxy method
-    },
-  });
+  async getDocumentData() {
+    // ... create and fill the `documentData` array
+    await panelUIProxy.createTable(documentData); // 👈 calling this iframe proxy method
+  },
+});
 ```
 
 Now, it's up to the iframe to manage such data (the array of objects collecting page dimensions and node counts) and transform it into a Spectrum Table.
@@ -715,12 +767,15 @@ Now, it's up to the iframe to manage such data (the array of objects collecting 
 import { rebuildTable } from "./table-utils";
 
 const iframeApi = {
-    toggleStatus(sdk) { /* ... */ },
-    createTable(documentData) {  // 👈
-      const table = document.getElementById("stats-table-body");
-      rebuildTable(table, documentData);
-    },
-  };
+  toggleStatus(sdk) {
+    /* ... */
+  },
+  createTable(documentData) {
+    // 👈
+    const table = document.getElementById("stats-table-body");
+    rebuildTable(table, documentData);
+  },
+};
 ```
 
 The process is not difficult per se, but it may be slightly tedious. The `rebuildTable()` method is declared in the `table-utils.js` module alongside a private `addRowToTable()`.
@@ -777,7 +832,7 @@ export { rebuildTable };
 As follows, the `rebuildTable()` metacode.
 
 - Initialize the existing table, which is the first argument it receives.
-- Loop through each page in the `documentData` array, adding a row with the dimensions via  `addRowToTable()`; please note that, although the Table is supposed to have two columns, we can set a row with only one cell, which will span both of them.
+- Loop through each page in the `documentData` array, adding a row with the dimensions via `addRowToTable()`; please note that, although the Table is supposed to have two columns, we can set a row with only one cell, which will span both of them.
 - Loop through each node in the `pageData.nodes` object, adding a row with the node type and the number of instances found on that page.
 - `addRowToTable()` is a utility function that takes a table and an array of strings as arguments. It creates a new `<sp-table-row>`, then loops through the array, creating a `<sp-table-cell>` for each string and appending it to the row. If the array contains only one element, the cell is given a `page-row` class, which makes it bold.
 
@@ -816,45 +871,69 @@ Please use the UI iframe and Document Sandbox tabs to switch between the two dom
 ```html
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Adobe Express Add-on template using JavaScript, the Document Sandbox, and Webpack"
+    />
+    <meta
+      name="keywords"
+      content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Adobe Express Document API"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Stats add-ons</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description"
-    content="Adobe Express Add-on template using JavaScript, the Document Sandbox, and Webpack" />
-  <meta name="keywords" content="Adobe, Express, Add-On, JavaScript, Document Sandbox, Adobe Express Document API" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stats add-ons</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <sp-theme scale="medium" color="light" theme="express">
-    <h3>Framework status</h3>
-    <hr>
-    <div class="row">
-      <sp-status-light size="m" variant="negative" id="iframe-status">iFrame API</sp-status-light>
-      <sp-status-light size="m" variant="negative" id="document-status">Authoring API</sp-status-light>
-    </div>
-    <h3>Document statistics</h3>
-    <hr>
-    <div class="row">
-      <sp-table size="m">
-        <sp-table-head>
-          <sp-table-head-cell>Element</sp-table-head-cell>
-          <sp-table-head-cell>Count</sp-table-head-cell>
-        </sp-table-head>
-        <sp-table-body id="stats-table-body">
-          <sp-table-row id="row-placeholder">
-            <sp-table-cell>Get the Document stats first...</sp-table-cell>
-          </sp-table-row>
-        </sp-table-body>
-      </sp-table>
-    </div>
-    <div class="row align-right">
-      <sp-button id="stats">Analyze document</sp-button>
-    </div>
-  </sp-theme>
-</body>
+  <body>
+    <sp-theme
+      scale="medium"
+      color="light"
+      theme="express"
+    >
+      <h3>Framework status</h3>
+      <hr />
+      <div class="row">
+        <sp-status-light
+          size="m"
+          variant="negative"
+          id="iframe-status"
+          >iFrame API</sp-status-light
+        >
+        <sp-status-light
+          size="m"
+          variant="negative"
+          id="document-status"
+          >Authoring API</sp-status-light
+        >
+      </div>
+      <h3>Document statistics</h3>
+      <hr />
+      <div class="row">
+        <sp-table size="m">
+          <sp-table-head>
+            <sp-table-head-cell>Element</sp-table-head-cell>
+            <sp-table-head-cell>Count</sp-table-head-cell>
+          </sp-table-head>
+          <sp-table-body id="stats-table-body">
+            <sp-table-row id="row-placeholder">
+              <sp-table-cell>Get the Document stats first...</sp-table-cell>
+            </sp-table-row>
+          </sp-table-body>
+        </sp-table>
+      </div>
+      <div class="row align-right">
+        <sp-button id="stats">Analyze document</sp-button>
+      </div>
+    </sp-theme>
+  </body>
 </html>
 ```
 
@@ -867,7 +946,9 @@ body {
   overflow-x: hidden;
 }
 
-sp-theme { margin: 0 var(--spectrum-global-dimension-static-size-300); }
+sp-theme {
+  margin: 0 var(--spectrum-global-dimension-static-size-300);
+}
 
 .row {
   display: flex;
@@ -876,13 +957,21 @@ sp-theme { margin: 0 var(--spectrum-global-dimension-static-size-300); }
   margin-bottom: var(--spectrum-global-dimension-static-size-175);
 }
 
-.align-right { justify-content: flex-end; }
+.align-right {
+  justify-content: flex-end;
+}
 
-sp-table { width: 100%; }
+sp-table {
+  width: 100%;
+}
 
-sp-button { align-self: flex-end; }
+sp-button {
+  align-self: flex-end;
+}
 
-.page-row { font-weight: var(--spectrum-global-font-weight-bold); }
+.page-row {
+  font-weight: var(--spectrum-global-font-weight-bold);
+}
 ```
 
 #### UI iframe
@@ -968,7 +1057,6 @@ function addRowToTable(table, rowData) {
   // Append the row to the table body
   table.appendChild(newRow);
 }
-
 ```
 
 #### UI iframe
@@ -1104,9 +1192,6 @@ export { getNodeData };
 ```
 
 [^0]: When referring to "metadata", I mean the dimensions and types of elements on each page. Custom metadata haven't been implemented in Adobe Express yet.
-
 [^1]: In my tests, the two SDKs are ready almost instantly and together—I couldn't tell which one is loaded firsts.
-
 [^2]: Designing data structures in the early stages of the development process is, in my humble opinion, a way to dodge a good deal of future headaches.
-
-[^3]:  A `"MediaContainer"` (say, an image) has as children both the `"ImageRectangle"` and the mask that crops it. At this stage of the Document API development, getting complex masks may throw an Error—hence, I've decided to use the `"MediaContainer"` type as a recursion's termination clause.
+[^3]: A `"MediaContainer"` (say, an image) has as children both the `"ImageRectangle"` and the mask that crops it. At this stage of the Document API development, getting complex masks may throw an Error—hence, I've decided to use the `"MediaContainer"` type as a recursion's termination clause.

@@ -41,30 +41,30 @@ Always begin optimization efforts by measuring current performance:
 
 ```javascript
 // Mark the start of a performance-critical section
-console.time('documentOperationTimer');
+console.time("documentOperationTimer");
 
 // Perform your operation
 await processLargeDocument();
 
 // Mark the end and log the time
-console.timeEnd('documentOperationTimer');
+console.timeEnd("documentOperationTimer");
 ```
 
 ### Performance Markers for Complex Operations
 
 ```javascript
 // For more complex scenarios, use performance markers
-performance.mark('startOperation');
+performance.mark("startOperation");
 
 // Perform operation
 await complexOperation();
 
 // End the performance measurement
-performance.mark('endOperation');
-performance.measure('operationDuration', 'startOperation', 'endOperation');
+performance.mark("endOperation");
+performance.measure("operationDuration", "startOperation", "endOperation");
 
 // Log the results
-const measures = performance.getEntriesByName('operationDuration');
+const measures = performance.getEntriesByName("operationDuration");
 console.log(`Operation took ${measures[0].duration}ms`);
 ```
 
@@ -79,74 +79,74 @@ class PerformanceMonitor {
     this.metrics = {};
     this.ongoing = new Map();
   }
-  
+
   start(operationName) {
     this.ongoing.set(operationName, performance.now());
     return operationName;
   }
-  
+
   end(operationName) {
     if (!this.ongoing.has(operationName)) {
       console.warn(`No performance measurement started for: ${operationName}`);
       return;
     }
-    
+
     const startTime = this.ongoing.get(operationName);
     const duration = performance.now() - startTime;
-    
+
     this.ongoing.delete(operationName);
-    
+
     if (!this.metrics[operationName]) {
       this.metrics[operationName] = {
         count: 0,
         totalTime: 0,
         minTime: Infinity,
-        maxTime: 0
+        maxTime: 0,
       };
     }
-    
+
     const metric = this.metrics[operationName];
     metric.count++;
     metric.totalTime += duration;
     metric.minTime = Math.min(metric.minTime, duration);
     metric.maxTime = Math.max(metric.maxTime, duration);
-    
+
     return duration;
   }
-  
+
   getMetrics(operationName = null) {
     if (operationName) {
       return this.metrics[operationName] || null;
     }
-    
+
     return this.metrics;
   }
-  
+
   getSummary() {
     const summary = {};
-    
+
     for (const [op, metric] of Object.entries(this.metrics)) {
       summary[op] = {
         count: metric.count,
         avgTime: metric.totalTime / metric.count,
         minTime: metric.minTime,
         maxTime: metric.maxTime,
-        totalTime: metric.totalTime
+        totalTime: metric.totalTime,
       };
     }
-    
+
     return summary;
   }
-  
+
   logSummary() {
     console.table(this.getSummary());
   }
-  
+
   reset() {
     this.metrics = {};
     this.ongoing.clear();
   }
-  
+
   // Create an async monitoring wrapper
   async monitor(operationName, asyncFunc, ...args) {
     this.start(operationName);
@@ -164,11 +164,11 @@ export const performanceMonitor = new PerformanceMonitor();
 Usage:
 
 ```javascript
-import { performanceMonitor } from '../utils/performance.js';
+import { performanceMonitor } from "../utils/performance.js";
 
 // Simple operation timing
 async function loadDocument() {
-  const opName = performanceMonitor.start('documentLoad');
+  const opName = performanceMonitor.start("documentLoad");
   try {
     // Perform document loading
     const elements = await addOnUISdk.app.document.getElements();
@@ -180,14 +180,11 @@ async function loadDocument() {
 
 // Monitoring wrapper for async functions
 async function processDocumentElements() {
-  return await performanceMonitor.monitor(
-    'elementProcessing',
-    async () => {
-      const elements = await addOnUISdk.app.document.getElements();
-      // Process elements...
-      return processedData;
-    }
-  );
+  return await performanceMonitor.monitor("elementProcessing", async () => {
+    const elements = await addOnUISdk.app.document.getElements();
+    // Process elements...
+    return processedData;
+  });
 }
 
 // Log performance metrics
@@ -208,7 +205,9 @@ Instead of making multiple individual API calls, batch them where possible:
 // Inefficient: Multiple individual API calls
 async function addMultipleTextsInefficient(texts) {
   for (const text of texts) {
-    await addOnUISdk.app.document.addText(text, { position: { x: 100, y: 100 + index * 50 } });
+    await addOnUISdk.app.document.addText(text, {
+      position: { x: 100, y: 100 + index * 50 },
+    });
   }
 }
 
@@ -216,16 +215,16 @@ async function addMultipleTextsInefficient(texts) {
 async function addMultipleTextsEfficient(texts) {
   const elements = [];
   let y = 100;
-  
+
   for (const text of texts) {
     elements.push({
-      type: 'text',
-      text, 
-      position: { x: 100, y }
+      type: "text",
+      text,
+      position: { x: 100, y },
     });
     y += 50;
   }
-  
+
   // A hypothetical batch API - check documentation for actual batch methods
   await addOnUISdk.app.document.addElements(elements);
 }
@@ -238,36 +237,37 @@ Cache results when they don't change frequently:
 ```javascript
 // Cache manager for API results
 class ApiCache {
-  constructor(ttlMs = 30000) { // Default TTL: 30 seconds
+  constructor(ttlMs = 30000) {
+    // Default TTL: 30 seconds
     this.cache = new Map();
     this.ttlMs = ttlMs;
   }
-  
+
   async get(key, fetchFunc) {
     const now = Date.now();
     const cached = this.cache.get(key);
-    
+
     // Return cached value if valid
     if (cached && now - cached.timestamp < this.ttlMs) {
       return cached.value;
     }
-    
+
     // Fetch new value
     const value = await fetchFunc();
-    
+
     // Cache the new value
     this.cache.set(key, {
       value,
-      timestamp: now
+      timestamp: now,
     });
-    
+
     return value;
   }
-  
+
   invalidate(key) {
     this.cache.delete(key);
   }
-  
+
   invalidateAll() {
     this.cache.clear();
   }
@@ -277,14 +277,14 @@ const apiCache = new ApiCache();
 
 // Usage
 async function getDocumentElements() {
-  return apiCache.get('documentElements', async () => {
+  return apiCache.get("documentElements", async () => {
     return await addOnUISdk.app.document.getElements();
   });
 }
 
 // Invalidate cache when document changes
 function handleDocumentChange() {
-  apiCache.invalidate('documentElements');
+  apiCache.invalidate("documentElements");
 }
 ```
 
@@ -296,20 +296,20 @@ DOM manipulation is often the main cause of UI lag in add-ons:
 
 ```javascript
 function renderElementsList(elements) {
-  const container = document.getElementById('elements-list');
-  
+  const container = document.getElementById("elements-list");
+
   // Create a document fragment (doesn't trigger reflow)
   const fragment = document.createDocumentFragment();
-  
-  elements.forEach(element => {
-    const item = document.createElement('li');
+
+  elements.forEach((element) => {
+    const item = document.createElement("li");
     item.textContent = `${element.type}: ${element.id}`;
     item.dataset.id = element.id;
     fragment.appendChild(item);
   });
-  
+
   // Clear the container and append the fragment (single reflow)
-  container.innerHTML = '';
+  container.innerHTML = "";
   container.appendChild(fragment);
 }
 ```
@@ -325,73 +325,75 @@ class VirtualScroller {
     this.items = items;
     this.itemHeight = itemHeight;
     this.renderItem = renderItem;
-    
+
     this.visibleItems = [];
     this.scrollTop = 0;
     this.containerHeight = 0;
-    
+
     this.init();
   }
-  
+
   init() {
     // Set container style
-    this.container.style.position = 'relative';
-    this.container.style.overflow = 'auto';
-    
+    this.container.style.position = "relative";
+    this.container.style.overflow = "auto";
+
     // Create content height element
-    this.heightEl = document.createElement('div');
-    this.heightEl.style.position = 'absolute';
-    this.heightEl.style.width = '1px';
-    this.heightEl.style.top = '0';
+    this.heightEl = document.createElement("div");
+    this.heightEl.style.position = "absolute";
+    this.heightEl.style.width = "1px";
+    this.heightEl.style.top = "0";
     this.container.appendChild(this.heightEl);
-    
+
     // Add scroll event listener
-    this.container.addEventListener('scroll', () => {
+    this.container.addEventListener("scroll", () => {
       this.onScroll();
     });
-    
+
     // Initial render
     this.updateContainerHeight();
     this.updateVisibleItems();
   }
-  
+
   updateContainerHeight() {
     this.containerHeight = this.container.clientHeight;
     this.heightEl.style.height = `${this.items.length * this.itemHeight}px`;
   }
-  
+
   onScroll() {
     this.scrollTop = this.container.scrollTop;
     this.updateVisibleItems();
   }
-  
+
   updateVisibleItems() {
     const startIndex = Math.floor(this.scrollTop / this.itemHeight);
     const endIndex = Math.min(
       this.items.length - 1,
       Math.floor((this.scrollTop + this.containerHeight) / this.itemHeight)
     );
-    
+
     const visibleItemsCount = endIndex - startIndex + 1;
-    
+
     // Clear container
-    this.container.querySelectorAll('.virtual-item').forEach(el => el.remove());
-    
+    this.container
+      .querySelectorAll(".virtual-item")
+      .forEach((el) => el.remove());
+
     // Render visible items
     for (let i = startIndex; i <= endIndex; i++) {
       const item = this.items[i];
       const itemEl = this.renderItem(item, i);
-      
-      itemEl.classList.add('virtual-item');
-      itemEl.style.position = 'absolute';
+
+      itemEl.classList.add("virtual-item");
+      itemEl.style.position = "absolute";
       itemEl.style.top = `${i * this.itemHeight}px`;
       itemEl.style.height = `${this.itemHeight}px`;
-      itemEl.style.width = '100%';
-      
+      itemEl.style.width = "100%";
+
       this.container.appendChild(itemEl);
     }
   }
-  
+
   updateItems(newItems) {
     this.items = newItems;
     this.updateContainerHeight();
@@ -400,7 +402,7 @@ class VirtualScroller {
 }
 
 // Usage
-const container = document.getElementById('elements-container');
+const container = document.getElementById("elements-container");
 const elements = await getDocumentElements();
 
 const scroller = new VirtualScroller(
@@ -408,8 +410,8 @@ const scroller = new VirtualScroller(
   elements,
   40, // Item height in pixels
   (element, index) => {
-    const itemEl = document.createElement('div');
-    itemEl.className = 'element-item';
+    const itemEl = document.createElement("div");
+    itemEl.className = "element-item";
     itemEl.textContent = `${index + 1}. ${element.type}: ${element.id}`;
     return itemEl;
   }
@@ -432,29 +434,29 @@ Common sources of memory leaks in add-ons:
 ```javascript
 // Bad practice - potential memory leak
 function setupListeners() {
-  const button = document.getElementById('process-button');
+  const button = document.getElementById("process-button");
   const largeData = loadLargeDataset(); // This data is captured in the closure
-  
-  button.addEventListener('click', () => {
+
+  button.addEventListener("click", () => {
     processData(largeData);
   });
 }
 
 // Better practice
 function setupListeners() {
-  const button = document.getElementById('process-button');
-  
+  const button = document.getElementById("process-button");
+
   // Use a named function that can be removed later
   const handleClick = () => {
     const largeData = loadLargeDataset(); // Load data only when needed
     processData(largeData);
   };
-  
-  button.addEventListener('click', handleClick);
-  
+
+  button.addEventListener("click", handleClick);
+
   // Keep a reference to remove the listener when appropriate
   return () => {
-    button.removeEventListener('click', handleClick);
+    button.removeEventListener("click", handleClick);
   };
 }
 
@@ -473,31 +475,33 @@ When working with large documents or data sets:
 async function processLargeElementSet(elements) {
   const CHUNK_SIZE = 100;
   const results = [];
-  
+
   // Process in chunks to avoid blocking the main thread
   for (let i = 0; i < elements.length; i += CHUNK_SIZE) {
     const chunk = elements.slice(i, i + CHUNK_SIZE);
-    
+
     // Process chunk
     const chunkResults = await processElementChunk(chunk);
     results.push(...chunkResults);
-    
+
     // Allow UI to update between chunks
-    await new Promise(resolve => setTimeout(resolve, 0));
-    
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
     // Update progress UI
     updateProgress(i / elements.length);
   }
-  
+
   return results;
 }
 
 async function processElementChunk(elements) {
   // Process a manageable number of elements
-  return Promise.all(elements.map(async element => {
-    // Process individual element
-    return processElement(element);
-  }));
+  return Promise.all(
+    elements.map(async (element) => {
+      // Process individual element
+      return processElement(element);
+    })
+  );
 }
 ```
 
@@ -510,10 +514,10 @@ Efficiently loading resources improves startup time and overall responsiveness:
 ```javascript
 // Lazy load images
 function setupLazyLoading() {
-  const images = document.querySelectorAll('.lazy-image');
-  
+  const images = document.querySelectorAll(".lazy-image");
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
         img.src = img.dataset.src;
@@ -521,8 +525,8 @@ function setupLazyLoading() {
       }
     });
   });
-  
-  images.forEach(img => observer.observe(img));
+
+  images.forEach((img) => observer.observe(img));
 }
 ```
 
@@ -533,17 +537,17 @@ function setupLazyLoading() {
 async function openAdvancedEditor() {
   // Show loading indicator
   showLoading();
-  
+
   try {
     // Dynamically import the advanced editor module
-    const { AdvancedEditor } = await import('./advanced-editor.js');
-    
+    const { AdvancedEditor } = await import("./advanced-editor.js");
+
     // Initialize editor
     const editor = new AdvancedEditor();
-    editor.mount('#editor-container');
+    editor.mount("#editor-container");
   } catch (error) {
-    console.error('Failed to load advanced editor:', error);
-    showError('Failed to load editor components');
+    console.error("Failed to load advanced editor:", error);
+    showError("Failed to load editor components");
   } finally {
     hideLoading();
   }
@@ -560,7 +564,7 @@ Optimize how your add-on's UI updates and renders:
 // utils/timing.js
 export function debounce(func, delay) {
   let timeoutId;
-  return function(...args) {
+  return function (...args) {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       func.apply(this, args);
@@ -570,7 +574,7 @@ export function debounce(func, delay) {
 
 export function throttle(func, limit) {
   let inThrottle;
-  return function(...args) {
+  return function (...args) {
     if (!inThrottle) {
       func.apply(this, args);
       inThrottle = true;
@@ -582,14 +586,14 @@ export function throttle(func, limit) {
 }
 
 // Usage
-import { debounce, throttle } from '../utils/timing.js';
+import { debounce, throttle } from "../utils/timing.js";
 
 // Debounce search input - only triggers when user stops typing
 const debouncedSearch = debounce((query) => {
   searchDocumentElements(query);
 }, 300);
 
-searchInput.addEventListener('input', (e) => {
+searchInput.addEventListener("input", (e) => {
   debouncedSearch(e.target.value);
 });
 
@@ -598,7 +602,7 @@ const throttledScroll = throttle(() => {
   updateScrollPosition();
 }, 100);
 
-container.addEventListener('scroll', throttledScroll);
+container.addEventListener("scroll", throttledScroll);
 ```
 
 ### Efficient Rendering with RequestAnimationFrame
@@ -611,38 +615,38 @@ class SmoothProgressBar {
     this.target = 0;
     this.animating = false;
   }
-  
+
   setProgress(progress) {
     this.target = Math.max(0, Math.min(100, progress));
-    
+
     if (!this.animating) {
       this.animating = true;
       this.animate();
     }
   }
-  
+
   animate() {
     // Calculate step based on distance
     const diff = this.target - this.current;
     const step = Math.sign(diff) * Math.min(Math.abs(diff), 2);
-    
+
     if (Math.abs(diff) < 0.1) {
       this.current = this.target;
       this.element.style.width = `${this.current}%`;
       this.animating = false;
       return;
     }
-    
+
     this.current += step;
     this.element.style.width = `${this.current}%`;
-    
+
     requestAnimationFrame(() => this.animate());
   }
 }
 
 // Usage
 const progressBar = new SmoothProgressBar(
-  document.querySelector('.progress-bar-inner')
+  document.querySelector(".progress-bar-inner")
 );
 
 function updateProgress(percent) {
@@ -656,8 +660,8 @@ Let's apply these optimization techniques to an image processing add-on that han
 
 ```javascript
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-import { performanceMonitor } from './utils/performance.js';
-import { debounce } from './utils/timing.js';
+import { performanceMonitor } from "./utils/performance.js";
+import { debounce } from "./utils/timing.js";
 
 // Cache for document elements
 const apiCache = new Map();
@@ -670,55 +674,61 @@ addOnUISdk.ready.then(async () => {
 
 async function initializeAddOn() {
   // Set up event listeners
-  document.getElementById('process-images').addEventListener('click', processAllImages);
-  document.getElementById('batch-size').addEventListener('change', updateBatchSize);
-  
+  document
+    .getElementById("process-images")
+    .addEventListener("click", processAllImages);
+  document
+    .getElementById("batch-size")
+    .addEventListener("change", updateBatchSize);
+
   // Debounced refresh to prevent too many API calls
   const debouncedRefresh = debounce(refreshImagesList, 500);
-  document.getElementById('refresh-button').addEventListener('click', debouncedRefresh);
-  
+  document
+    .getElementById("refresh-button")
+    .addEventListener("click", debouncedRefresh);
+
   // Set up document change listener
-  addOnUISdk.app.on('documentChanged', () => {
-    console.log('Document changed, invalidating cache');
+  addOnUISdk.app.on("documentChanged", () => {
+    console.log("Document changed, invalidating cache");
     invalidateCache();
     debouncedRefresh();
   });
-  
+
   // Initial load
   await refreshImagesList();
 }
 
 async function getDocumentImages() {
-  const cacheKey = 'documentImages';
-  
+  const cacheKey = "documentImages";
+
   // Check cache first
   const cached = apiCache.get(cacheKey);
-  if (cached && (Date.now() - cached.timestamp < CACHE_TIMEOUT)) {
-    console.log('Using cached document images');
+  if (cached && Date.now() - cached.timestamp < CACHE_TIMEOUT) {
+    console.log("Using cached document images");
     return cached.data;
   }
-  
-  console.log('Fetching document images from API');
-  
+
+  console.log("Fetching document images from API");
+
   // Performance measurement
-  performanceMonitor.start('getDocumentImages');
-  
+  performanceMonitor.start("getDocumentImages");
+
   try {
     // Get all elements
     const elements = await addOnUISdk.app.document.getElements();
-    
+
     // Filter to only images
-    const images = elements.filter(el => el.type === 'image');
-    
+    const images = elements.filter((el) => el.type === "image");
+
     // Update cache
     apiCache.set(cacheKey, {
       data: images,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     });
-    
+
     return images;
   } finally {
-    const duration = performanceMonitor.end('getDocumentImages');
+    const duration = performanceMonitor.end("getDocumentImages");
     console.log(`getDocumentImages took ${duration}ms`);
   }
 }
@@ -729,36 +739,35 @@ function invalidateCache() {
 
 // Render images list with virtual scrolling
 async function refreshImagesList() {
-  const imagesContainer = document.getElementById('images-list');
-  const loadingIndicator = document.getElementById('loading-indicator');
-  
+  const imagesContainer = document.getElementById("images-list");
+  const loadingIndicator = document.getElementById("loading-indicator");
+
   try {
-    loadingIndicator.style.display = 'block';
-    
+    loadingIndicator.style.display = "block";
+
     const images = await getDocumentImages();
-    
+
     // Update count display
-    document.getElementById('image-count').textContent = images.length;
-    
+    document.getElementById("image-count").textContent = images.length;
+
     if (images.length === 0) {
-      imagesContainer.innerHTML = '<p>No images found in document</p>';
+      imagesContainer.innerHTML = "<p>No images found in document</p>";
       return;
     }
-    
+
     // Use DocumentFragment for batch DOM update
     const fragment = document.createDocumentFragment();
-    
+
     // Create a subset for display if there are many images
     const displayLimit = 100;
-    const displayImages = images.length > displayLimit 
-      ? images.slice(0, displayLimit) 
-      : images;
-    
+    const displayImages =
+      images.length > displayLimit ? images.slice(0, displayLimit) : images;
+
     displayImages.forEach((image, index) => {
-      const item = document.createElement('div');
-      item.className = 'image-item';
+      const item = document.createElement("div");
+      item.className = "image-item";
       item.dataset.id = image.id;
-      
+
       item.innerHTML = `
         <div class="image-info">
           <span class="image-number">#${index + 1}</span>
@@ -770,157 +779,161 @@ async function refreshImagesList() {
           </label>
         </div>
       `;
-      
+
       fragment.appendChild(item);
     });
-    
+
     // If there are more images than the display limit, add a message
     if (images.length > displayLimit) {
-      const message = document.createElement('div');
-      message.className = 'list-message';
+      const message = document.createElement("div");
+      message.className = "list-message";
       message.textContent = `Showing ${displayLimit} of ${images.length} images. Processing will include all images.`;
       fragment.appendChild(message);
     }
-    
+
     // Replace the content with the fragment (single reflow)
-    imagesContainer.innerHTML = '';
+    imagesContainer.innerHTML = "";
     imagesContainer.appendChild(fragment);
-    
   } catch (error) {
-    console.error('Error refreshing images list:', error);
+    console.error("Error refreshing images list:", error);
     imagesContainer.innerHTML = '<p class="error">Failed to load images</p>';
   } finally {
-    loadingIndicator.style.display = 'none';
+    loadingIndicator.style.display = "none";
   }
 }
 
 // Process images in batches
 async function processAllImages() {
-  const progressContainer = document.getElementById('progress-container');
-  const progressBar = document.getElementById('progress-bar');
-  const progressText = document.getElementById('progress-text');
-  const resultsContainer = document.getElementById('results-container');
-  
+  const progressContainer = document.getElementById("progress-container");
+  const progressBar = document.getElementById("progress-bar");
+  const progressText = document.getElementById("progress-text");
+  const resultsContainer = document.getElementById("results-container");
+
   try {
     // Get batch size from input
-    const batchSizeInput = document.getElementById('batch-size');
+    const batchSizeInput = document.getElementById("batch-size");
     const batchSize = parseInt(batchSizeInput.value, 10) || 10;
-    
+
     // Get all images
     const images = await getDocumentImages();
-    
+
     if (images.length === 0) {
-      alert('No images to process');
+      alert("No images to process");
       return;
     }
-    
+
     // Show progress UI
-    progressContainer.style.display = 'block';
-    progressBar.style.width = '0%';
-    progressText.textContent = 'Starting...';
-    resultsContainer.innerHTML = '';
-    
+    progressContainer.style.display = "block";
+    progressBar.style.width = "0%";
+    progressText.textContent = "Starting...";
+    resultsContainer.innerHTML = "";
+
     // Process in batches
     let processed = 0;
     const results = [];
-    
+
     // Performance tracking
-    performanceMonitor.start('totalProcessing');
-    
+    performanceMonitor.start("totalProcessing");
+
     for (let i = 0; i < images.length; i += batchSize) {
       // Get current batch
       const batch = images.slice(i, i + batchSize);
-      
+
       // Process batch
       const batchResults = await performanceMonitor.monitor(
-        'processBatch',
+        "processBatch",
         () => processBatch(batch)
       );
-      
+
       results.push(...batchResults);
-      
+
       // Update progress
       processed += batch.length;
       const percentComplete = (processed / images.length) * 100;
       progressBar.style.width = `${percentComplete}%`;
       progressText.textContent = `Processed ${processed} of ${images.length} images`;
-      
+
       // Allow UI to update
-      await new Promise(resolve => setTimeout(resolve, 0));
+      await new Promise((resolve) => setTimeout(resolve, 0));
     }
-    
-    const totalTime = performanceMonitor.end('totalProcessing');
-    
+
+    const totalTime = performanceMonitor.end("totalProcessing");
+
     // Display results
     displayResults(results, totalTime);
-    
   } catch (error) {
-    console.error('Error processing images:', error);
-    alert('An error occurred while processing images');
+    console.error("Error processing images:", error);
+    alert("An error occurred while processing images");
   } finally {
     // Show final state or hide progress
-    progressText.textContent = 'Processing complete';
+    progressText.textContent = "Processing complete";
   }
 }
 
 async function processBatch(imageBatch) {
   // Simulate processing each image
-  return await Promise.all(imageBatch.map(async (image) => {
-    // Simulate processing time based on "complexity"
-    const processingTime = 50 + Math.random() * 200;
-    await new Promise(resolve => setTimeout(resolve, processingTime));
-    
-    return {
-      id: image.id,
-      success: Math.random() > 0.1, // 90% success rate
-      processingTime
-    };
-  }));
+  return await Promise.all(
+    imageBatch.map(async (image) => {
+      // Simulate processing time based on "complexity"
+      const processingTime = 50 + Math.random() * 200;
+      await new Promise((resolve) => setTimeout(resolve, processingTime));
+
+      return {
+        id: image.id,
+        success: Math.random() > 0.1, // 90% success rate
+        processingTime,
+      };
+    })
+  );
 }
 
 function displayResults(results, totalTime) {
-  const resultsContainer = document.getElementById('results-container');
+  const resultsContainer = document.getElementById("results-container");
   const fragment = document.createDocumentFragment();
-  
-  const summary = document.createElement('div');
-  summary.className = 'results-summary';
-  
-  const successful = results.filter(r => r.success).length;
+
+  const summary = document.createElement("div");
+  summary.className = "results-summary";
+
+  const successful = results.filter((r) => r.success).length;
   const failed = results.length - successful;
-  
+
   summary.innerHTML = `
     <h3>Processing Complete</h3>
-    <p>Processed ${results.length} images in ${(totalTime / 1000).toFixed(2)} seconds</p>
+    <p>Processed ${results.length} images in ${(totalTime / 1000).toFixed(
+    2
+  )} seconds</p>
     <p>
       <span class="success">${successful} successful</span> | 
       <span class="failed">${failed} failed</span>
     </p>
   `;
-  
+
   fragment.appendChild(summary);
-  
+
   // Show performance metrics
   const metrics = performanceMonitor.getSummary();
-  const metricsEl = document.createElement('div');
-  metricsEl.className = 'performance-metrics';
+  const metricsEl = document.createElement("div");
+  metricsEl.className = "performance-metrics";
   metricsEl.innerHTML = `
     <h4>Performance Metrics</h4>
-    <p>Average batch processing time: ${metrics.processBatch.avgTime.toFixed(2)}ms</p>
+    <p>Average batch processing time: ${metrics.processBatch.avgTime.toFixed(
+      2
+    )}ms</p>
     <p>Batches processed: ${metrics.processBatch.count}</p>
   `;
-  
+
   fragment.appendChild(metricsEl);
-  
+
   // Reset for next run
   performanceMonitor.reset();
-  
-  resultsContainer.innerHTML = '';
+
+  resultsContainer.innerHTML = "";
   resultsContainer.appendChild(fragment);
 }
 
 function updateBatchSize(event) {
   const batchSize = parseInt(event.target.value, 10) || 10;
-  document.getElementById('batch-size-display').textContent = batchSize;
+  document.getElementById("batch-size-display").textContent = batchSize;
 }
 ```
 
@@ -938,8 +951,8 @@ function updateBatchSize(event) {
 
 For more information on performance optimization:
 
-- [Performance Guide](../../guides/develop/performance.md)
-- [Frameworks, Libraries, and Bundling](../../guides/develop/frameworks-libraries-bundling.md)
+- [Performance Guide](../../resources/advanced-topics/performance.md)
+- [Frameworks, Libraries, and Bundling](../../resources/advanced-topics/frameworks-libraries-bundling.md)
 - [Web Performance MDN Guide](https://developer.mozilla.org/en-US/docs/Web/Performance)
 
 ## Knowledge Check

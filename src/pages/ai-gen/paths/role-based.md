@@ -72,7 +72,7 @@
 **Resources**:
 
 - [OAuth2 Integration](../../guides/develop/how_to/oauth2.md)
-- [Cross-Origin Isolation](../../guides/develop/coi.md)
+- [Cross-Origin Isolation](../../resources/advanced-topics/coi.md)
 - [CORS Handling](../../guides/develop/cors.md)
 
 ### Module 4: Performance and Optimization (2 hours)
@@ -95,8 +95,8 @@
 
 **Resources**:
 
-- [Performance Guide](../../guides/develop/performance.md)
-- [Frameworks, Libraries, and Bundling](../../guides/develop/frameworks-libraries-bundling.md)
+- [Performance Guide](../../resources/advanced-topics/performance.md)
+- [Frameworks, Libraries, and Bundling](../../resources/advanced-topics/frameworks-libraries-bundling.md)
 
 ## Path for Designers: Add-on User Experience Design (6 hours)
 
@@ -122,8 +122,8 @@
 
 **Resources**:
 
-- [Design Best Practices](../../guides/design/best_practices.md)
-- [UX Guidelines](../../guides/design/ux_guidelines/introduction.md)
+- [Design Best Practices](../../resources/design/best_practices.md)
+- [UX Guidelines](../../resources/design/ux_guidelines/introduction.md)
 
 ### Module 2: UI Implementation (2 hours)
 
@@ -145,8 +145,8 @@
 
 **Resources**:
 
-- [Implementation Guide](../../guides/design/implementation_guide.md)
-- [Fonts](../../guides/design/fonts.md)
+- [Implementation Guide](../../resources/design/implementation_guide.md)
+- [Fonts](../../resources/design/fonts.md)
 
 ### Module 3: Spectrum Design System (1.5 hours)
 
@@ -190,7 +190,7 @@
 
 **Resources**:
 
-- [Design Best Practices](../../guides/design/best_practices.md)
+- [Design Best Practices](../../resources/design/best_practices.md)
 
 ## Path for Product Managers: Add-on Planning and Distribution (5 hours)
 
@@ -217,7 +217,7 @@
 **Resources**:
 
 - [Getting Started - Introduction](../../guides/getting_started/index.md)
-- [FAQ](../../guides/faq.md)
+- [FAQ](../../resources/faq.md)
 
 ### Module 2: Feature Planning (1.5 hours)
 
@@ -284,4 +284,4 @@
 
 **Resources**:
 
-- [Distribution Guides](../../guides/distribute/index.md)
+- [Distribution Guides](../../resources/distribute/index.md)

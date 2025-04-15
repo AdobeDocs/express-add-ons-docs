@@ -64,10 +64,10 @@ At the bottom of the add-ons rail, you'll see the option to open the Code Playgr
 ## Next steps
 
 - **Experiment with Common Use Cases:** Begin by experimenting with some [common use cases](../develop/how_to.md) to kickstart your development.
-- **Start with Code Samples:** Check out [these samples](../../samples.md) to see what's possible and get inspired.
+- **Start with Code Samples:** Check out [these samples](../../guides/samples.md) to see what's possible and get inspired.
 - **Understand Add-on Concepts:** Get familiar with the fundamentals of building add-ons.
 
-  - [iFrame Context](../develop/context.md)
+  - [iFrame Context](../../resources/advanced-topics/context.md)
   - [Document Sandbox](../../references/document-sandbox/document-apis/concepts/index.md)
   - [Manifest File](../../references/manifest/index.md)
 

@@ -70,7 +70,7 @@ Now that you've built your first add-on, the next crucial skill to learn is how 
     <iframe width="779" height="438" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-The most effective way to debug your add-on is by using the [Browser Developer Tools](../debug/browser.md), although you can also use the built-in [VS Code debugger](../debug/vs-code.md). If you find yourself in any trouble, worry not—we have a [Troubleshooting Guide](../faq.md) to help you out!
+The most effective way to debug your add-on is by using the [Browser Developer Tools](../debug/browser.md), although you can also use the built-in [VS Code debugger](../debug/vs-code.md). If you find yourself in any trouble, worry not—we have a [Troubleshooting Guide](../../resources/faq.md) to help you out!
 
 ## 4. Explore the Adobe Express add-on APIs
 
@@ -88,7 +88,7 @@ You should then read the [The Adobe Express DOM](../../references/document-sandb
 
 Congratulations 🎉 you've completed the Intermediate Path!
 
-You've now all it takes to have fun exploring from the [Code Samples](../../samples.md); you'll find plenty of add-ons to draw inspiration and learning from. You can check our [Community page](https://developer.adobe.com/express/community/), and start engaging with other fellow developers on the [Adobe Express add-on's Discord channel](http://discord.gg/nc3QDyFeb4). Don't forget to join the monthly [Adobe Express Office Hours](https://developer.adobe.com/developers-live) to get the latest news and ask questions to the team!
+You've now all it takes to have fun exploring from the [Code Samples](../samples.md); you'll find plenty of add-ons to draw inspiration and learning from. You can check our [Community page](https://developer.adobe.com/express/community/), and start engaging with other fellow developers on the [Adobe Express add-on's Discord channel](http://discord.gg/nc3QDyFeb4). Don't forget to join the monthly [Adobe Express Office Hours](https://developer.adobe.com/developers-live) to get the latest news and ask questions to the team!
 
 Feel free to explore the rest of our documentation, or jump straight into the [Advanced Path](../learning-paths/advanced.md).
 

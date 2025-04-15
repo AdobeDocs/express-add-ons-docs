@@ -12,8 +12,8 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Learning the difference between UI runtime and document sandbox
 - Exploring SDK initialization and lifecycle events
 - Handling SDK ready states and error scenarios
-**Practical Exercise**: Create a basic add-on that initializes the SDK and responds to lifecycle events
-**Resources**:
+  **Practical Exercise**: Create a basic add-on that initializes the SDK and responds to lifecycle events
+  **Resources**:
   - [Add-on SDK References](/references/index.md)
   - [Add-on SDK Constants](/references/addonsdk/addonsdk-constants.md)
 
@@ -29,13 +29,13 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 
 **Resources**:
 
-  - [Document Sandbox](/references/document-sandbox/)
-  - [Document APIs](/references/document-sandbox/document-apis/)
-Element Metadata
-  - [Element Metadata](/references/document-sandbox/document-apis/classes/AddOnData/)
-  - [Use Element Metadata](../../../guides/develop/how_to/element_metadata.md)
-  - [Position Elements](../../../guides/develop/how_to/position_elements.md)
-  - [Group Elements](../../../guides/develop/how_to/group_elements.md)
+- [Document Sandbox](/references/document-sandbox/)
+- [Document APIs](/references/document-sandbox/document-apis/)
+  Element Metadata
+- [Element Metadata](/references/document-sandbox/document-apis/classes/AddOnData/)
+- [Use Element Metadata](../../../guides/develop/how_to/element_metadata.md)
+- [Position Elements](../../../guides/develop/how_to/position_elements.md)
+- [Group Elements](../../../guides/develop/how_to/group_elements.md)
 
 ### Module 3: User Interface and Interaction APIs (1.5 hours)
 
@@ -48,8 +48,8 @@ Element Metadata
 
 **Resources**:
 
-  - [App UI APIs](/references/addonsdk/app-ui.md)
-  - [Theme and Locale](../../../guides/develop/how_to/theme_locale.md)
+- [App UI APIs](/references/addonsdk/app-ui.md)
+- [Theme and Locale](../../../guides/develop/how_to/theme_locale.md)
 
 ### Module 4: User Data and Authentication APIs (1.5 hours)
 
@@ -57,8 +57,8 @@ Element Metadata
 - Managing user sessions and tokens
 - Accessing user information securely
 - Handling authentication errors and edge cases
-**Practical Exercise**: Build an add-on that authenticates with an external service
-**Resources**:
+  **Practical Exercise**: Build an add-on that authenticates with an external service
+  **Resources**:
   - [Current User APIs](/references/addonsdk/app-currentUser.md)
   - [OAuth APIs](/references/addonsdk/app-oauth.md)
   - [User Info](../../../guides/develop/how_to/user_info.md)
@@ -73,10 +73,10 @@ Element Metadata
 - Implementing accessibility standards
 - Creating consistent user experiences
 - Planning responsive layouts
-**Practical Exercise**: Analyze and critique existing add-ons for UX improvements
-**Resources**:
-  - [Design Best Practices](../../../guides/design/best_practices.md)
-  - [UX Guidelines](../../../guides/design/ux_guidelines/introduction.md)
+  **Practical Exercise**: Analyze and critique existing add-ons for UX improvements
+  **Resources**:
+  - [Design Best Practices](../../../resources/design/best_practices.md)
+  - [UX Guidelines](../../../resources/design/ux_guidelines/introduction.md)
 
 ### Module 2: Implementation Guidelines (2 hours)
 
@@ -84,10 +84,10 @@ Element Metadata
 - Implementing proper spacing and typography
 - Managing light and dark themes
 - Creating loading and error states
-**Practical Exercise**: Convert a basic add-on UI to follow Adobe Express guidelines
-**Resources**:
-  - [Implementation Guide](../../../guides/design/implementation_guide.md)
-  - [Fonts](../../../guides/design/fonts.md)
+  **Practical Exercise**: Convert a basic add-on UI to follow Adobe Express guidelines
+  **Resources**:
+  - [Implementation Guide](../../../resources/design/implementation_guide.md)
+  - [Fonts](../../../resources/design/fonts.md)
 
 ### Module 3: Using Spectrum Components (2 hours)
 
@@ -95,8 +95,8 @@ Element Metadata
 - Implementing form controls and navigation
 - Creating consistent action patterns
 - Building accessible dialogs and modals
-**Practical Exercise**: Build a complex form using Spectrum components
-**Resources**:
+  **Practical Exercise**: Build a complex form using Spectrum components
+  **Resources**:
   - [Spectrum Workshop Tutorial](../../../guides/tutorials/spectrum-workshop/index.md)
   - [SWC Sample](/samples.md#swc)
   - [SWC React Theme Sampler](/samples.md#swc-react-theme-sampler)
@@ -111,8 +111,8 @@ Element Metadata
 - Configuring the manifest file
 - Structuring your project for scalability
 - Managing dependencies and versioning
-**Practical Exercise**: Create a new add-on project with proper configuration
-**Resources**:
+  **Practical Exercise**: Create a new add-on project with proper configuration
+  **Resources**:
   - [Manifest References](/references/manifest/index.md)
   - [Setup Guide](../../../guides/getting_started/setup.md)
 
@@ -122,8 +122,8 @@ Element Metadata
 - Debugging common issues
 - Implementing logging and error tracking
 - Testing across different environments
-**Practical Exercise**: Debug and fix common add-on issues
-**Resources**:
+  **Practical Exercise**: Debug and fix common add-on issues
+  **Resources**:
   - [Debugging Guides](../../../guides/debug/index.md)
   - [Development Tools](../../../guides/getting_started/dev_tooling.md)
 
@@ -133,9 +133,9 @@ Element Metadata
 - Implementing automated testing
 - Managing state and memory
 - Handling edge cases and errors
-**Practical Exercise**: Optimize an add-on's performance and implement tests
-**Resources**:
-  - [Performance Guide](../../../guides/develop/performance.md)
+  **Practical Exercise**: Optimize an add-on's performance and implement tests
+  **Resources**:
+  - [Performance Guide](../../../resources/advanced-topics/performance.md)
 
 ### Module 4: Distribution and Updates (1.5 hours)
 
@@ -143,6 +143,6 @@ Element Metadata
 - Managing versions and updates
 - Monitoring add-on health
 - Gathering user feedback
-**Practical Exercise**: Prepare an add-on for distribution
-**Resources**:
-  - [Distribution Guides](../../../guides/distribute/index.md)
+  **Practical Exercise**: Prepare an add-on for distribution
+  **Resources**:
+  - [Distribution Guides](../../../resources/distribute/index.md)
