@@ -23,7 +23,7 @@ Find inspiration and great reference examples by checking out our [code samples]
 
 <InlineAlert slots="text" variant="info"/>
 
-In addition to these code samples, you should also be sure to check out the [Templates section](guides/getting_started/dev_tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
+In addition to these code samples, you should also be sure to check out the [Templates section](../guides/getting_started/dev_tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
 
 ## Using the samples
 
@@ -189,7 +189,7 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 
 ## [swc-react-theme-sampler](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc-react-theme-sampler)
 
-Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) library, a set of React wrapper components for Spectrum Web Components (SWC), as well as illustrates some of the different [Spectrum theme](https://opensource.adobe.com/spectrum-web-components/tools/theme/) component properties provided with Spectrum (ie: main *Express* theme, *scale* and *color*) and how they affect the UI.
+Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) library, a set of React wrapper components for Spectrum Web Components (SWC), as well as illustrates some of the different [Spectrum theme](https://opensource.adobe.com/spectrum-web-components/tools/theme/) component properties provided with Spectrum (ie: main _Express_ theme, _scale_ and _color_) and how they affect the UI.
 
 **Technologies Used:** <br/>
 

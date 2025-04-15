@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
 title: Create a Private Distribution Link
-description: A guide to creating a private distribution link. 
+description: A guide to creating a private distribution link.
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
@@ -32,11 +32,11 @@ In the process of creating a private link, you will be required to upload a zip 
 npm run package
 ```
 
-The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder.
+The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the _root_ of the zip file, similar to what's built into the `/dist` folder.
 
 ## Step 1: Create a new Add-on Listing
 
-In order to get a private distribution link, you will need to create a new add-on listing first; provided that you've enabled Add-on Development in your user's settings as described [here](../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
+In order to get a private distribution link, you will need to create a new add-on listing first; provided that you've enabled Add-on Development in your user's settings as described [here](../../guides/getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 1. From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 
@@ -90,7 +90,7 @@ The package will go through a verification process which may take a few seconds,
 
 **3.** In places where you are referring to paths, please ensure you are only using relative paths.
 
-**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`. The `package` script [described earlier](#prepare-your-add-on-package) takes care of this for you.
+**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included: `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`. The `package` script [described earlier](#prepare-your-add-on-package) takes care of this for you.
 
 ## Step 5: Enter add-on details
 

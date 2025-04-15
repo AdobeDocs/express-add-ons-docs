@@ -21,7 +21,7 @@ contributors:
 
 ## 📋 Overview
 
-When you submit an add-on for distribution, the review team *thoroughly* examines it to ensure it meets the [guidelines](./guidelines/index.md) and is safe for public distribution. If something goes wrong, you will receive an email with the reasons that led to a rejection. You shouldn't be discouraged, though! Usually, the fixes are relatively straightforward, and the detailed feedback from the reviewers is an opportunity to improve and learn.
+When you submit an add-on for distribution, the review team _thoroughly_ examines it to ensure it meets the [guidelines](./guidelines/index.md) and is safe for public distribution. If something goes wrong, you will receive an email with the reasons that led to a rejection. You shouldn't be discouraged, though! Usually, the fixes are relatively straightforward, and the detailed feedback from the reviewers is an opportunity to improve and learn.
 
 That said, being rejected is annoying and, most importantly, time-consuming, as multiple re-submissions will impact the time it takes to get your add-on published. To help you avoid it, we've compiled a list of the most common reasons for review failures and how to address them.
 
@@ -31,7 +31,7 @@ As trivial as it may sound, the add-on not working as expected is the **most com
 
 ### Broken features
 
-Problems can be directly related to the **add-on's core functionality**, e.g., failures in exporting from and importing assets into the document or performing server-side processing. Sometimes, bugs are sneaky and only appear under specific conditions, which our reviewers have proved *exceptionally talented* in finding—just so you know. Test your add-on thoroughly and make sure it works in all scenarios, edge cases included.
+Problems can be directly related to the **add-on's core functionality**, e.g., failures in exporting from and importing assets into the document or performing server-side processing. Sometimes, bugs are sneaky and only appear under specific conditions, which our reviewers have proved _exceptionally talented_ in finding—just so you know. Test your add-on thoroughly and make sure it works in all scenarios, edge cases included.
 
 ![](./img/rejections-functional-issues.png)
 
@@ -43,7 +43,7 @@ The reviewers will also reject your add-on if they find less critical problems t
 
 ### Authentication problems
 
-In case your product requires users to log in, make sure the **authentication workflow is operating properly**, and don't forget to *always* add a logout option. If present, reviewers should also be provided with working **credentials to test premium features**, a key requirement for add-ons that offer paid services.
+In case your product requires users to log in, make sure the **authentication workflow is operating properly**, and don't forget to _always_ add a logout option. If present, reviewers should also be provided with working **credentials to test premium features**, a key requirement for add-ons that offer paid services.
 
 ![](./img/rejections-authentication-failed.png)
 
@@ -79,4 +79,4 @@ Using the [Spectrum Design System](../design/implementation_guide.md#spectrum-de
 
 ### COEP issues
 
-The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../develop/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.
+The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../advanced-topics/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.

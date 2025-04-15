@@ -8,7 +8,7 @@ Leveraging Spectrum in your add-on allows you to take advantage of all of the bu
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out our [code samples](../../samples.md) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**.
+Check out our [code samples](../../guides/samples.md) for examples of how to use the libraries described here. Refer to the **export-sample** and **Pix** sample for a reference on using **Spectrum Web Components**, and the **Dropbox** and **import-images-using-oauth** for specific examples using **React Spectrum**.
 
 ### Spectrum Express Theme
 
@@ -20,11 +20,11 @@ Check out the variety of icons available for use in your add-ons from [Spectrum 
 
 ## Spectrum Web Components
 
-The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum with a set of pre-built UI components that can be easily customized and integrated into your application. These components are designed to work seamlessly together and provide a consistent user experience across different devices and platforms. ***We highly recommend Spectrum Web Components as the preferred approach for building the UI of your add-ons***, since it offers a comprehensive set of components and built-in benefits that make it easy to create consistent, accessible, and responsive user interfaces. Some additional benefits include:
+The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) project is an implementation of Spectrum with a set of pre-built UI components that can be easily customized and integrated into your application. These components are designed to work seamlessly together and provide a consistent user experience across different devices and platforms. **_We highly recommend Spectrum Web Components as the preferred approach for building the UI of your add-ons_**, since it offers a comprehensive set of components and built-in benefits that make it easy to create consistent, accessible, and responsive user interfaces. Some additional benefits include:
 
-  - Framework agnostic
-  - Lightweight and performant
-  - Standards based
+- Framework agnostic
+- Lightweight and performant
+- Standards based
 
 ### Spectrum Web Components with React
 
@@ -33,12 +33,10 @@ The [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-componen
 ```js
 import { Button } from "@swc-react/button";
 
-<Button variant="accent">
-    Accent Button
-</Button>
+<Button variant="accent">Accent Button</Button>;
 ```
 
-Check out the [swc-react-theme-sampler code sample](../../samples.md#swc-react-theme-sampler) for a specific example of how to use it with various components in your add-on, as well as [the official documentation](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) for more details on **swc-react**.
+Check out the [swc-react-theme-sampler code sample](../../guides/samples.md#swc-react-theme-sampler) for a specific example of how to use it with various components in your add-on, as well as [the official documentation](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) for more details on **swc-react**.
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -50,52 +48,64 @@ Below are the steps for using the Express theme with your Spectrum Web Component
 
 - Install the `spectrum-web-components` packages you would like to use. The `theme` package is one you will always want to install, but the others are included for illustration. See the [Spectrum Web Components site](https://opensource.adobe.com/spectrum-web-components/getting-started/) for all of the components available.
 
-    ```bash
-    npm install @spectrum-web-components/theme
-    npm install @spectrum-web-components/field-label        
-    npm install @spectrum-web-components/textfield
-    npm install @spectrum-web-components/button
-    ```
+  ```bash
+  npm install @spectrum-web-components/theme
+  npm install @spectrum-web-components/field-label
+  npm install @spectrum-web-components/textfield
+  npm install @spectrum-web-components/button
+  ```
 
 - Next, start adding your imports. All add-ons should have this base set of imports, which provide support for Spectrum typography and the base Spectrum theme component, the Express themes, including colors (lightest, light, dark, and darkest) and scale options (medium, large).
 
-    ```js
-    import '@spectrum-web-components/styles/typography.css';
-    import '@spectrum-web-components/theme/sp-theme.js';
-    import '@spectrum-web-components/theme/express/theme-darkest.js';
-    import '@spectrum-web-components/theme/express/theme-dark.js';
-    import '@spectrum-web-components/theme/express/theme-light.js';
-    import '@spectrum-web-components/theme/express/theme-lightest.js';
-    import '@spectrum-web-components/theme/express/scale-medium.js';
-    import '@spectrum-web-components/theme/express/scale-large.js';
-
-    ```
+  ```js
+  import "@spectrum-web-components/styles/typography.css";
+  import "@spectrum-web-components/theme/sp-theme.js";
+  import "@spectrum-web-components/theme/express/theme-darkest.js";
+  import "@spectrum-web-components/theme/express/theme-dark.js";
+  import "@spectrum-web-components/theme/express/theme-light.js";
+  import "@spectrum-web-components/theme/express/theme-lightest.js";
+  import "@spectrum-web-components/theme/express/scale-medium.js";
+  import "@spectrum-web-components/theme/express/scale-large.js";
+  ```
 
 - Then import the specific components you want to use in your code, such as:
 
-    ```js
-    import '@spectrum-web-components/button/sp-button.js';
-    import '@spectrum-web-components/field-label/sp-field-label.js';
-    import '@spectrum-web-components/textfield/sp-textfield.js';
-    ```
+  ```js
+  import "@spectrum-web-components/button/sp-button.js";
+  import "@spectrum-web-components/field-label/sp-field-label.js";
+  import "@spectrum-web-components/textfield/sp-textfield.js";
+  ```
 
-   **Note:** The `import '@spectrum-web-components/theme/src/express/themes.js';` includes all of the definitions for the Express theme, but you can also only include the specific parts you need. For instance, if you only want to support the light theme and the medium scale, you could specifically include those with: `import '@spectrum-web-components/theme/express/theme-light.js'; import '@spectrum-web-components/theme/express/scale-medium.js';` For more details on themes and all of the color and scale options, see [this link](https://opensource.adobe.com/spectrum-web-components/tools/theme/).
+  **Note:** The `import '@spectrum-web-components/theme/src/express/themes.js';` includes all of the definitions for the Express theme, but you can also only include the specific parts you need. For instance, if you only want to support the light theme and the medium scale, you could specifically include those with: `import '@spectrum-web-components/theme/express/theme-light.js'; import '@spectrum-web-components/theme/express/scale-medium.js';` For more details on themes and all of the color and scale options, see [this link](https://opensource.adobe.com/spectrum-web-components/tools/theme/).
 
 - Use a `webpack.config.js` for bundling the Spectrum Web Components and your JavaScript into a bundle. If you used the basic javascript template for your add-on, you can copy it in from a sample add-on, such as the SWC one in the contributed samples folder. Also be sure to include the webpack specific dependencies and script options in your `package.json`, which you can also copy from a sample like SWC. If you find that some files aren't being moved to `dist` after you build, you'll want to edit the file (line 31,32) to add more file types to copy.
 
 - Now you can use the `scale`, `color` and `theme` selections you desire with the `<sp-theme>` component. Within those tags is where you should place all of your content that you want styled with those settings. For example:
 
-    ```html
-    <body>
-        <sp-theme scale="medium" color="light" theme="express">   
-            /* Everything you want styled with those settings */
-            /* goes within the <sp-theme/> tag */
-            <sp-field-label required for="txtName">Enter your full name in the field below</sp-field-label>
-            <sp-textfield multiline grows id="txtName" placeholder="Full Name"></sp-textfield>
-            <sp-button>Submit</sp-button>
-        </sp-theme>                    
-    </body>
-    ```
+  ```html
+  <body>
+    <sp-theme
+      scale="medium"
+      color="light"
+      theme="express"
+    >
+      /* Everything you want styled with those settings */ /* goes within the
+      <sp-theme /> tag */
+      <sp-field-label
+        required
+        for="txtName"
+        >Enter your full name in the field below</sp-field-label
+      >
+      <sp-textfield
+        multiline
+        grows
+        id="txtName"
+        placeholder="Full Name"
+      ></sp-textfield>
+      <sp-button>Submit</sp-button>
+    </sp-theme>
+  </body>
+  ```
 
 #### Default vs Express Theme
 
@@ -111,17 +121,17 @@ The screenshots below are from a Spectrum Web Components sample app showing some
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the [code samples](../../samples.md) in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly.
+Check out the [code samples](../../guides/samples.md) in the contributed folder for **SWC** and **Pix** for examples of using Spectrum Web Components with plain JavaScript and React accordingly.
 
 ## React Spectrum
 
 [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) is a project that implements the Adobe's Spectrum design language into React UI components.
 
-  React Spectrum is composed of three parts:
+React Spectrum is composed of three parts:
 
-  - **react-spectrum**: a component library implementing the Adobe Spectrum design system
-  - **react-aria**: a library of React hooks implementing the patterns defined in the ARIA practices spec, including mouse, touch, and keyboard behavior, accessibility, and internationalization support
-  - **react-stately**: a library of React hooks implementing cross platform (e.g. web/native) state management for components that need it.
+- **react-spectrum**: a component library implementing the Adobe Spectrum design system
+- **react-aria**: a library of React hooks implementing the patterns defined in the ARIA practices spec, including mouse, touch, and keyboard behavior, accessibility, and internationalization support
+- **react-stately**: a library of React hooks implementing cross platform (e.g. web/native) state management for components that need it.
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -133,26 +143,32 @@ We recommend using [**swc-react**](https://opensource.adobe.com/spectrum-web-com
 
 1. Install it in your project with:
 
-    `npm install @react-spectrum/theme-express`
+   `npm install @react-spectrum/theme-express`
 
 2. Install the Express themed icons:
 
-    `npm install @spectrum-icons/express`
+   `npm install @spectrum-icons/express`
 
 3. Import the theme and icons into your code to use them. For example, notice the following code snippet which imports and sets the Express `theme`, light `colorScheme` option and medium `scale` option on the `<Provider>` object. It also illustrates how to use the Express version of the `Delete` icon.
 
-    ```js
-    import { theme as expressTheme } from '@react-spectrum/theme-express';
-    import Delete from '@spectrum-icons/express/Delete';
+   ```js
+   import { theme as expressTheme } from "@react-spectrum/theme-express";
+   import Delete from "@spectrum-icons/express/Delete";
 
-    const App = ({ addOnUISdk }) => {
-        return (
-            <Provider theme={expressTheme} colorScheme="light" scale="medium">
-                <Button variant="accent"><Delete/></Button>  
-            </Provider>       
-        )
-    }
-    ```
+   const App = ({ addOnUISdk }) => {
+     return (
+       <Provider
+         theme={expressTheme}
+         colorScheme="light"
+         scale="medium"
+       >
+         <Button variant="accent">
+           <Delete />
+         </Button>
+       </Provider>
+     );
+   };
+   ```
 
 #### React Spectrum Theme Examples
 
@@ -177,32 +193,45 @@ If you're using a slider component with React Spectrum, you may notice behavior 
 1. Wrap your slider(s) with another element. A &lt;div&gt; works fine.
 2. Add a ref that points to this div so you can refer to it later.
 3. Add two event handlers:
-    - `onPointerDownCapture` will call `sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId)`
-    - `onPointerUp` will call `sliderContainer.current.releasePointerCapture(evt.nativeEvent.pointerId)`
+   - `onPointerDownCapture` will call `sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId)`
+   - `onPointerUp` will call `sliderContainer.current.releasePointerCapture(evt.nativeEvent.pointerId)`
 
 **Example Snippet**
 
 ```js
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 
-import { theme as expressTheme } from '@react-spectrum/theme-express';
-import {Slider, Provider} from '@adobe/react-spectrum'
+import { theme as expressTheme } from "@react-spectrum/theme-express";
+import { Slider, Provider } from "@adobe/react-spectrum";
 
 const App = ({ addOnUISdk }) => {
-    const sliderContainer = useRef();
-    const startDrag = (evt) => {
-        sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId);
-    }
-    const stopDrag = (evt) => {
-        sliderContainer.current.releasePointerCapture(evt.nativeEvent.pointerId);
-    }
-    return <>
-        <Provider theme={expressTheme} colorScheme="light" scale="medium">
-            <div ref={sliderContainer} onPointerDownCapture={startDrag} onPointerUp={stopDrag}>
-                <Slider label="Cookies to buy" defaultValue={12} />
-            </div>
-        </Provider>
+  const sliderContainer = useRef();
+  const startDrag = (evt) => {
+    sliderContainer.current.setPointerCapture(evt.nativeEvent.pointerId);
+  };
+  const stopDrag = (evt) => {
+    sliderContainer.current.releasePointerCapture(evt.nativeEvent.pointerId);
+  };
+  return (
+    <>
+      <Provider
+        theme={expressTheme}
+        colorScheme="light"
+        scale="medium"
+      >
+        <div
+          ref={sliderContainer}
+          onPointerDownCapture={startDrag}
+          onPointerUp={stopDrag}
+        >
+          <Slider
+            label="Cookies to buy"
+            defaultValue={12}
+          />
+        </div>
+      </Provider>
     </>
+  );
 };
 
 export default App;
@@ -235,7 +264,7 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 <InlineAlert slots="text" variant="success"/>
 
 **Color Picker Component Tip:**
-If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference, or borrow the code used in [this guide](../tutorials/grids-addon.md#coding-the-grids-add-on).
+If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference, or borrow the code used in [this guide](../../guides/tutorials/grids-addon.md#coding-the-grids-add-on).
 
 ## Using Fonts
 
@@ -300,16 +329,18 @@ You can use a custom font with a URL by either linking to it via the `@import` r
 
 ```html
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Tangerine">
-    <style>
-      body {
-        font-family: 'Tangerine', serif;
-        font-size: 48px;
-      }
-    </style>
-  </head>
+  <meta charset="utf-8" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Tangerine"
+  />
+  <style>
+    body {
+      font-family: "Tangerine", serif;
+      font-size: 48px;
+    }
+  </style>
+</head>
 ```
 
 #### Via the `@font-face` rule

@@ -353,7 +353,7 @@ addOnUISdk.app.on("themechange", (data) => {
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
+Please see the **swc** sample provided in the [code samples](../../guides/samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
 
 ### localechange
 

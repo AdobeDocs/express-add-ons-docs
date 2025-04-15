@@ -16,7 +16,7 @@ The following set of restrictions are enabled when the `sandbox` attribute is ap
 - New windows or tabs cannot be opened from the add-on, unless overridden in the manifest.
 - Add-ons can't use `<embed>`, `<object>`, `<applet>`, or similar.
 - Add-ons cannot change the navigation of the top-level browsing context
-Media can't be autoplayed.
+  Media can't be autoplayed.
 
 ### Permissions
 
@@ -26,12 +26,12 @@ The value of the `sandbox` attribute can either be empty (in which case all rest
 
 The add-on iframe automatically includes the `allow-scripts` and the `allow-same-origin` sandbox permissions by default (ie: `sandbox="allow-scripts allow-same-origin"`). The other supported permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). <br/><br/> -->
 
-| Permission              | Description   |
-| ------------------ | -----------:  |
-| `allow-downloads`  |  Allow downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute.         |
-| `allow-popups`          | Allows the add-on to `window.open` popups |
-| `allow-popups-to-escape-sandbox`   |  Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them.         |
-| `allow-presentation`  | Allows the add-on to start a presentation session.           |
+| Permission                       |                                                                                       Description |
+| -------------------------------- | ------------------------------------------------------------------------------------------------: |
+| `allow-downloads`                | Allow downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute. |
+| `allow-popups`                   |                                                         Allows the add-on to `window.open` popups |
+| `allow-popups-to-escape-sandbox` |   Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them. |
+| `allow-presentation`             |                                                Allows the add-on to start a presentation session. |
 
 <!-- The following two permissions are added to the `sandbox` attribute by default.
 
@@ -40,7 +40,7 @@ The add-on iframe automatically includes the `allow-scripts` and the `allow-same
 | * `allow-same-origin`               | Removes the "different" origin policy           |
 | * `allow-scripts` | Re-enables JavaScript.           | -->
 
-**IMPORTANT:** Please note that these are currently the *only* permissions that are currently supported from [the set of sandbox permissions available](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). Any other attributes are not supported or allowed in the manifest for your add-ons.
+**IMPORTANT:** Please note that these are currently the _only_ permissions that are currently supported from [the set of sandbox permissions available](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). Any other attributes are not supported or allowed in the manifest for your add-ons.
 
 ## CORS
 
@@ -61,7 +61,7 @@ Your add-on is given a unique ID when you go through the in-app distribution pro
 
 You can get a subdomain URL for your add-on during the development process by following the [add-on distribution steps](../distribute/private-dist.md) through [step 2](../distribute/private-dist.md#step-2-add-on-listing-settings), where your own unique subdomain URL is provided for your add-on. This step creates the container for your add-on and assigns a unique subdomain for where it will be hosted, so you can use it to set up CORS in advance. You can stop at the creation of the container if all you need is the subdomain at this point, and come back to create a listing on it later when you've finished your development. An example of what the settings panel with this URL looks like is shown below for reference. We provide a **Copy** button as well to allow you to easily copy your unique **Add-on URL**.
 
-![add-on container settings panel](../distribute/img/settings-panel.png)
+![add-on container settings panel](../../resources/distribute/img/settings-panel.png)
 
 For existing add-ons, simply choose one in the distribution workflow and navigate to the new **Settings** tab and copy the **Add-on URL** field.
 
@@ -87,15 +87,15 @@ Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo serve
 
 ```js
 let cors_anywhere = "https://cors-anywhere.herokuapp.com/";
-let myUrl = "https://example.com/"; 
-let url = cors_anywhere+myUrl;  
+let myUrl = "https://example.com/";
+let url = cors_anywhere + myUrl;
 
-fetch(url).then(function (response) {        
-    console.log(response);
-})
+fetch(url).then(function (response) {
+  console.log(response);
+});
 ```
 
-  The response should be a successful response including that prefixed URL call:
+The response should be a successful response including that prefixed URL call:
 
 `Response {type: 'cors', url: 'https://cors-anywhere.herokuapp.com/https://example.com/', redirected: false, status: 200, ok: true, …}`
 
@@ -109,31 +109,33 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 
 1. Install the `cors-anywhere` node package:
 
-    `npm install -g cors-anywhere` (or `npm i cors-anywhere` to install it in your current directory)
+   `npm install -g cors-anywhere` (or `npm i cors-anywhere` to install it in your current directory)
 
 2. Create a file called `server.js` in your favorite editor and add the following to it:
 
-    ```js
-    // Listen on a specific host via the HOST environment variable
-    var host = process.env.HOST || '0.0.0.0';
-    // Listen on a specific port via the PORT environment variable
-    var port = process.env.PORT || 8080;
+   ```js
+   // Listen on a specific host via the HOST environment variable
+   var host = process.env.HOST || "0.0.0.0";
+   // Listen on a specific port via the PORT environment variable
+   var port = process.env.PORT || 8080;
 
-    var cors_proxy = require('cors-anywhere');
-    cors_proxy.createServer({
-        originWhitelist: ['https://w906hhl6k.wxp.adobe-addons.com/'], // Your add-on subdomain
-        requireHeader: ['origin', 'x-requested-with'],
-        removeHeaders: ['cookie', 'cookie2']
-    }).listen(port, host, function() {
-        console.log('Running CORS Anywhere on ' + host + ':' + port);
-    });
-    ```
+   var cors_proxy = require("cors-anywhere");
+   cors_proxy
+     .createServer({
+       originWhitelist: ["https://w906hhl6k.wxp.adobe-addons.com/"], // Your add-on subdomain
+       requireHeader: ["origin", "x-requested-with"],
+       removeHeaders: ["cookie", "cookie2"],
+     })
+     .listen(port, host, function () {
+       console.log("Running CORS Anywhere on " + host + ":" + port);
+     });
+   ```
 
 3. Run the server:
-    `node server.js`
+   `node server.js`
 
-    or optionally pass in a host and port when you run it:
-    `HOST=0.0.0.0 PORT=8080 node proxy-server.js`
+   or optionally pass in a host and port when you run it:
+   `HOST=0.0.0.0 PORT=8080 node proxy-server.js`
 
 #### CORS / COEP Handling
 

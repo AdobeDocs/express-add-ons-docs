@@ -82,7 +82,7 @@ The next step is to familiarize yourself with the Adobe Express [SDK References]
 
 You should then read the [The Adobe Express DOM](../../references/document-sandbox/document-apis/concepts/index.md#the-adobe-express-dom) section of the [Concepts](../../references/document-sandbox/document-apis/concepts/index.md) guide to deepen your understanding of the key principles underlying the Document API.
 
-[![The Adobe Express DOM](../../references/document-sandbox/document-apis/concepts/images/refs-addon-scenegraph.png)](../../references/document-sandbox/document-apis/concepts/index.md#the-adobe-express-dom)
+[![The Adobe Express DOM](../../resources/images/refs-addon-scenegraph.png)](../../references/document-sandbox/document-apis/concepts/index.md#the-adobe-express-dom)
 
 ## Next steps
 

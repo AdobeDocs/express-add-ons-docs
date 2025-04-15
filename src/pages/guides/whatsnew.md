@@ -85,7 +85,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 ### Added
 
-- An [FAQ item](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) was added for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The [FAQ](../guides/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) provides a workaround for this issue.
+- An [FAQ item](../resources/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) was added for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The [FAQ](../resources/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) provides a workaround for this issue.
 
 - The following new properties have been added to the AddOnSdk [`PageMetadata`](../references/addonsdk/app-document.md#pagemetadata) API:
 
@@ -119,7 +119,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 ### Added
 
-**New Feature: [Add-on Icon Auto-Resizing Support](../guides/distribute/public-dist.md#step-4-enter-listing-details)**
+**New Feature: [Add-on Icon Auto-Resizing Support](../resources/distribute/public-dist.md#step-4-enter-listing-details)**
 
 - Icon Size Requirement: The uploaded icon must be 144 px.
 - Auto-Resizing: Once uploaded, the icon will be automatically resized to:
@@ -166,7 +166,7 @@ Stabilized [`importPdf()`](../references/addonsdk/app-document.md#importpdf) and
 
 ### Added
 
-- Adds a new section in [Listing Your Add-on guidelines](../guides/distribute/guidelines/general/listing.md) which describes how to [add trader details](../guides/distribute/guidelines/general/listing.md#trader-details) in the publisher profile.
+- Adds a new section in [Listing Your Add-on guidelines](../resources/distribute/guidelines/general/listing.md) which describes how to [add trader details](../resources/distribute/guidelines/general/listing.md#trader-details) in the publisher profile.
 
 <InlineAlert variant="warning" slots="text1, text2, text3" />
 
@@ -180,12 +180,12 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ### Added
 
-- Adds a new [Cross-origin Isolation Handling](../guides/develop/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.
+- Adds a new [Cross-origin Isolation Handling](../resources/advanced-topics/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.
 - Updates the descriptions for the [`importPdf()`](../references/addonsdk/app-document.md#importpdf) and [`importPresentation()`](../references/addonsdk/app-document.md#importpresentation) functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.
 
 ## 2024-10-08
 
-- Adds a brand new version of the [UX Guidelines](../guides/design/ux_guidelines/introduction.md) for Adobe Express add-ons.
+- Adds a brand new version of the [UX Guidelines](../resources/design/ux_guidelines/introduction.md) for Adobe Express add-ons.
 - Removes the experimental warnings for [`addAnimatedImage()`](../references/addonsdk/app-document.md#addanimatedimage) since it is now stable.
 - Adds the `author` property to [`MediaAttributes`](../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](../references/addonsdk/app-document.md#addaudio) API.
 
@@ -222,7 +222,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - Adds a new [`addAnimatedImage()`](../references/addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](../references/addonsdk/app-document.md#image-requirements)).
 - Adds a new [`importPdf()`](../references/addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
 - Adds a new [`importPresentation()`](../references/addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
-- Adds notes about specific support and handling for animated GIF images when [importing](../references/addonsdk/app-document.md#addimage) and [dragging content](../references/addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
+- Adds notes about specific support and handling for animated GIF images when [importing](../references/addonsdk/app-document.md#addimage) and [dragging content](../references/addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../resources/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
 - Adds all of the new methods mentioned above to the [How-to](../guides/develop/how_to.md) section with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -242,13 +242,13 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-05-28
 
 - Added a new _experimental_ [`openEditorPanel()`](../references/addonsdk/app-ui.md#openeditorpanel) API to programmatically open and interact with the Editor panel. This method of the `addOnUISdk.app.ui` allows navigation to specific tabs and collections, as well as performing content searches. The [Constants](../references/addonsdk/addonsdk-constants.md) page has been updated accordingly.
-- Added a new [`Cross-Origin-Embedder-Policy`](../guides/faq.md#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues) FAQ.
+- Added a new [`Cross-Origin-Embedder-Policy`](../resources/faq.md#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues) FAQ.
 
 ## 2024-05-21
 
-- The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
+- The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../resources/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
-- A new section on Marketplace [rejections](/guides/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
+- A new section on Marketplace [rejections](/resources/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
 - The [Manifest Reference](../references/manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
 ## 2024-04-10
@@ -267,7 +267,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
 
-- The [Samples](../samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../samples.md#audio-recording-addon).
+- The [Samples](../guides/samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../guides/samples.md#audio-recording-addon).
 - The [Common Use Cases](/guides/develop/use_cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](/guides/develop/how_to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
 
 ## 2024-03-19
@@ -286,11 +286,11 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-02-21
 
-- New support for [monetization details](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) has been added to the public distribution flow and allows you to [provide details around monetization options](../guides/distribute/public-dist.md#step-8-enter-the-monetization-details) your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include _free_, _one-time payment_, _recurring subscription_, _micro-transactions_, and _other_.
+- New support for [monetization details](../resources/distribute/public-dist.md#step-8-enter-the-monetization-details) has been added to the public distribution flow and allows you to [provide details around monetization options](../resources/distribute/public-dist.md#step-8-enter-the-monetization-details) your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include _free_, _one-time payment_, _recurring subscription_, _micro-transactions_, and _other_.
 
-  In addition, the [monetization guidelines](../guides/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
+  In addition, the [monetization guidelines](../resources/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../resources/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../resources/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
-- The first phase of add-on analytics support has been released, and allows developers to [download insights data](../guides/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../guides/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
+- The first phase of add-on analytics support has been released, and allows developers to [download insights data](../resources/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../resources/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
 - A new [Concepts guide](../references/document-sandbox/document-apis/concepts/index.md) was added to the [Document APIs](../references/document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
@@ -325,7 +325,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 
 - A new [`PdfRenditionOptions`](../references/addonsdk/app-document.md#pdfrenditionoptions) object is now available to be used with the the [`createRenditions()` export API](../references/addonsdk/app-document.md#createrenditions) and allows a user to specify an optional [bleed](../references/addonsdk/app-document.md#bleed) object (for printing).
 - A new [`isPrintReady`](../references/addonsdk/app-document.md#pagemetadata) property has been added to the [`PageMetadata` API](../references/addonsdk/app-document.md#pagemetadata) to indicate if the page is ready to print.
-- Updated the [FAQ](../guides/faq.md#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method) regarding the mime type for exported PDF files. It will now return `application/pdf` (as opposed to `text/plain` from an earlier update).
+- Updated the [FAQ](../resources/faq.md#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method) regarding the mime type for exported PDF files. It will now return `application/pdf` (as opposed to `text/plain` from an earlier update).
 
 ## 2023-12-07
 
@@ -529,17 +529,17 @@ Some items in the following list of changes may have been mentioned in recent up
   ellipse.fill = ellipseFill;
   ```
 
-- A new release has landed for the [**In-App Developer Submission experience**](../guides/distribute/) in Express. Some highlights from the release:
+- A new release has landed for the [**In-App Developer Submission experience**](../resources/distribute/) in Express. Some highlights from the release:
 
-  **Create Add-on flow:** You can now create [an add-on "container"](../guides/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
+  **Create Add-on flow:** You can now create [an add-on "container"](../resources/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
-  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../guides/develop/context.md#cors) for more details.
+  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../resources/advanced-topics/context.md#cors) for more details.
 
   **Delete Add-ons:** The "container" concept allowed us to offer better management and cleanup of your add-ons. You will now find the option to delete an add-on container entirely from the new "Settings" tab of a given add-on.
 
   **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
 
-  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/how_to/theme_locale.md).
+  **Supported Languages:** The [version details step](../resources/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/how_to/theme_locale.md).
 
 - Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev_tooling.md#no-template-parameter).
 - New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
@@ -662,7 +662,7 @@ Updates to the [OAuth APIs](../references/addonsdk/app-oauth.md) to allow for a 
 
 ### Updates
 
-Published new [Guidelines and requirements section](../guides/distribute/guidelines/); including [General guidelines](../guides/distribute/guidelines/general/), [Developer brand guidelines](../guides/distribute/guidelines/), [Monetization guidelines](../guides/distribute/guidelines/monetization.md) and [Generative AI guidelines](../guides/distribute/guidelines/genai/).
+Published new [Guidelines and requirements section](../resources/distribute/guidelines/); including [General guidelines](../resources/distribute/guidelines/general/), [Developer brand guidelines](../resources/distribute/guidelines/), [Monetization guidelines](../resources/distribute/guidelines/monetization.md) and [Generative AI guidelines](../resources/distribute/guidelines/genai/).
 
 ## 2023-10-03
 
@@ -727,7 +727,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Added
 
-- New [iframe Sandbox Context guide](../guides/develop/context.md) with details on the new `subdomain` support and CORS handling.
+- New [iframe Sandbox Context guide](../resources/advanced-topics/context.md) with details on the new `subdomain` support and CORS handling.
 - How-to videos embedded in various guides to help visually show how to use the information in those sections.
 
 ### Updates
@@ -742,14 +742,14 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
   The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
 
-- [Performance guide](../guides/develop/performance.md) updates to include [**Task Manager**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance.md#task-manager) and [**Memory Consumption**](https://developer.adobe.com/express/add-ons/docs/guides/develop/performance.md#memory-consumption-monitoring) details for add-ons.
-- [FAQ update](../guides/faq.md) for [`SharedArrayBuffer`](https://developer.adobe.com/express/add-ons/docs/guides/faq/#is-sharedarraybuffer-supported).
+- [Performance guide](../resources/advanced-topics/performance.md) updates to include [**Task Manager**](../resources/advanced-topics/performance.md#task-manager) and [**Memory Consumption**](../resources/advanced-topics/performance.md#memory-consumption-monitoring) details for add-ons.
+- [FAQ update](../resources/faq.md) for [`SharedArrayBuffer`](../resources/faq.md#is-sharedarraybuffer-supported).
 
 ## 2023-09-12
 
 ### Updates
 
-- Added supported file types for import and export to the [FAQ](../guides/faq.md).
+- Added supported file types for import and export to the [FAQ](../resources/faq.md).
 
 ## 2023-09-07
 
@@ -772,7 +772,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 </del>
 
 - A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../references/document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
-- Updated the [FAQ](../guides/faq.md) with details on Experimental APIs and suppported file types for exported content.
+- Updated the [FAQ](../resources/faq.md) with details on Experimental APIs and suppported file types for exported content.
 
 ## 2023-09-05
 
@@ -879,11 +879,11 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- [UX Guidelines](../guides/design/index.md) are now available!
+- [UX Guidelines](../resources/design/ux_guidelines/introduction.md) are now available!
 - A new [`requestedSize`](../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../guides/design/ux_guidelines/visual_elements.md#typography).
-- CORS / COEP header handling added to the [CORS guide](../guides/develop/context.md#cors--coep-handling)
+- Information on [using fonts](../resources/design/ux_guidelines/visual_elements.md#typography).
+- CORS / COEP header handling added to the [CORS guide](../resources/advanced-topics/context.md#cors--coep-handling)
 
 ## 2023-06-08
 

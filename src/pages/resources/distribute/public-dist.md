@@ -13,7 +13,7 @@ keywords:
   - Add-on Manifest
   - DSA
 title: Public add-on distribution
-description: A guide to public distribution of your add-on. 
+description: A guide to public distribution of your add-on.
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
@@ -34,27 +34,27 @@ This section outlines everything you'll need to be prepared for submitting your 
 
 **\* Indicates Required**
 
-| Name                    | Character Length  | Description   |
-| -------------:          | ------------------| -----------:  |
-| **\* Add-on name**      | 25                | A unique name for your add-on.|
-| **\* Summary**               | 50                | A short description of what your add-on does.|
-| **\* Full Description**      | 1000              | Full context and description of your add-on and its features |
-| **\* Help URL**              | 1000              | URL for your users to get help (ie: https://www.example.com/)  |
-| **\* Support email address** | 1000              | An email address that users of your add-on can contact for support |
-| **\*Trader information**     | NA                | Provide the trader information as per the [listing guidelines](./guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
-| **Privacy Notice**          | 1000              | URL of your privacy notice (ie: https://www.example.com/) |
-| **End User License Agreement(EULA)**| 1000      | End User License Agreement URL (ie: https://www.example.com/) |
-| **Keywords**                | 100              | Keywords to help users find your add-on (comma-separated) |
-| **Release notes**       | 1000  | Provide information specific to this version of the add-on |
+|                                 Name | Character Length |                                                                                                                                                                                 Description |
+| -----------------------------------: | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                   **\* Add-on name** | 25               |                                                                                                                                                              A unique name for your add-on. |
+|                       **\* Summary** | 50               |                                                                                                                                               A short description of what your add-on does. |
+|              **\* Full Description** | 1000             |                                                                                                                                Full context and description of your add-on and its features |
+|                      **\* Help URL** | 1000             |                                                                                                                               URL for your users to get help (ie: https://www.example.com/) |
+|         **\* Support email address** | 1000             |                                                                                                                          An email address that users of your add-on can contact for support |
+|             **\*Trader information** | NA               | Provide the trader information as per the [listing guidelines](./guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
+|                   **Privacy Notice** | 1000             |                                                                                                                                   URL of your privacy notice (ie: https://www.example.com/) |
+| **End User License Agreement(EULA)** | 1000             |                                                                                                                               End User License Agreement URL (ie: https://www.example.com/) |
+|                         **Keywords** | 100              |                                                                                                                                   Keywords to help users find your add-on (comma-separated) |
+|                    **Release notes** | 1000             |                                                                                                                                  Provide information specific to this version of the add-on |
 
 ### 2. Prepare your assets
 
-| Type           | Format      | Description   |
-| -------------: | ------------| -----------:  |
-| * 144x144 icon         | `.jpg/png`  | a 144x144 sized icon representing your add-on |
-| * Screenshot           | `.jpg/png`  | a 1360x800 sized screenshot to show users how to use your add-on |
-|   Additional screenshots | `.jpg/png` | 4 more optional 1360x800 sized screenshots for your add-on |
-| ** Publisher logo       | `.jpg/png`  | 250x250 sized logo to represent you or your company |
+|                   Type | Format     |                                                      Description |
+| ---------------------: | ---------- | ---------------------------------------------------------------: |
+|        \* 144x144 icon | `.jpg/png` |                    a 144x144 sized icon representing your add-on |
+|          \* Screenshot | `.jpg/png` | a 1360x800 sized screenshot to show users how to use your add-on |
+| Additional screenshots | `.jpg/png` |       4 more optional 1360x800 sized screenshots for your add-on |
+|    \*\* Publisher logo | `.jpg/png` |              250x250 sized logo to represent you or your company |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -68,7 +68,7 @@ The CLI contains a handy script to help with this step. Before you proceed, open
 npm run package
 ```
 
-The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder.
+The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the _root_ of the zip file, similar to what's built into the `/dist` folder.
 
 ### 4. Carefully [review our set of guidelines](./guidelines/index.md)
 
@@ -85,7 +85,7 @@ To distribute your add-on, you must create an add-on listing.
 If you have already performed the listing creation steps, e.g. to create a Private Link as outlined here, feel free to skip to
 [Step 3](#step-3-create-a-new-public-listing).
 
-Provided that you've enabled Add-on Development in your user's settings as described [here](../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
+Provided that you've enabled Add-on Development in your user's settings as described [here](../../guides/getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 **1.** From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 
@@ -167,7 +167,7 @@ The package will go through a verification process which may take a few seconds,
 
 **3.** In places where you are referring to paths, please ensure you are only using relative paths.
 
-**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included:   `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`. The `package` script [described earlier](#3-prepare-your-add-on-package) takes care of this for you.
+**4.** Hidden files should not be present in your package zip. You can use this command on MAC to zip your add-on and to ensure unnecessary files are not included: `zip -r your_addon_name.zip . -x '**/.*' -x '**/__MACOSX' -x '*.DS_Store'`. The `package` script [described earlier](#3-prepare-your-add-on-package) takes care of this for you.
 
 If the `zip` validation is successful, you will see a green checkmark next to the **Add-on package verified** text; you can then add some Release Notes (1000 characters max) and check the add-on's supported languages.
 
@@ -185,12 +185,12 @@ The **Monetization details** section allows developers to declare the payment op
 
 Developers can choose from various payment options, including **free**, **one-time payments**, **recurring subscriptions**, **micro-transactions**, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
 
-- The *Other* option is provided for developers to choose when their current setup does not fit the provided options.
-- The final *additional details* text area allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"* and is optional for all payment choices except *Other*. We encourage the use of this field to clearly state any specific payment details.
+- The _Other_ option is provided for developers to choose when their current setup does not fit the provided options.
+- The final _additional details_ text area allows developers to provide additional payment terms like _"7 day free trial"_ or _"$9.99/month"_ and is optional for all payment choices except _Other_. We encourage the use of this field to clearly state any specific payment details.
 
 Do check in the live preview how the listing will appear to users. Depending on the payment selection, different details will automatically be displayed in the add-on listing.
 
-If the payment choice selected is not free, an **Upgrade available** badge will be displayed in the details along with specific default text describing the choice selected (ie: "*...for a one-time purchase*", "*...with a recurring subscription*", "*...purchase assets or features individually or in packages*"), and **Checkout is handled by the developer outside of Adobe Express**—as shown in the previous screenshot.
+If the payment choice selected is not free, an **Upgrade available** badge will be displayed in the details along with specific default text describing the choice selected (ie: "_...for a one-time purchase_", "_...with a recurring subscription_", "_...purchase assets or features individually or in packages_"), and **Checkout is handled by the developer outside of Adobe Express**—as shown in the previous screenshot.
 
 Any additional custom details entered by the developer are then shown below the default checkout message, as well as a timestamp indicating when the listing was last updated.
 
@@ -214,7 +214,7 @@ You will only see this step the first time you submit an add-on and if you've ne
 The existing developers can now edit their publisher profile to add trader details.
 
 Choose **Yes** if you wish to make your add-ons available for users in the EU.
-  
+
 <InlineAlert variant="warning" slots="text1, text2, text3" />
 
 **Are you an existing developer?**
@@ -251,7 +251,7 @@ Add-on visbility for EU users
 
 If an EU user has a deep link to your add-on, and you are not compliant with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, they will not be able to install the add-on. However, if they have already installed it, they will still be able to use it. In both cases, they will see a banner with the following message:
 
-*This listing is not currently available in the EU. This developer has not submitted the trader information required by the EU Digital Services Act.*
+_This listing is not currently available in the EU. This developer has not submitted the trader information required by the EU Digital Services Act._
 
 ## Post-Submission details and insights
 

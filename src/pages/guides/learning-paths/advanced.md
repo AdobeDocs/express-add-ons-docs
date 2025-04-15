@@ -50,21 +50,21 @@ Finish reading the [Adobe Express Document API Concepts](../../references/docume
 
 Complete the [Dimension annotation sample add-on exercise](../../references/document-sandbox/document-apis/concepts/index.md#from-theory-to-practice) to practice your new knowledge.
 
-[![Dimension annotation sample add-on](../../references/document-sandbox/document-apis/concepts/images/refs-addon-refactor.png)](../../references/document-sandbox/document-apis/concepts/index.md#from-theory-to-practice)
+[![Dimension annotation sample add-on](../../resources/images/refs-addon-refactor.png)](../../references/document-sandbox/document-apis/concepts/index.md#from-theory-to-practice)
 
 ## 3. Distribute your add-on to the Marketplace
 
 Add-ons can be [privately distributed](../distribute/private-dist.md) for testing purposes or [published in the Adobe Express Marketplace](../distribute/public-dist.md).
 
-[![Publish your add-on](../distribute/img/public-listing-submission-v2.png)](../distribute/public-dist.md)
+[![Publish your add-on](../../resources/distribute/img/public-listing-submission-v2.png)](../../resources/distribute/public-dist.md)
 
-Familiarize yourself with the details of our [Review Process](../distribute/review_process/index.md) and follow the [Submission Guidelines](../distribute/guidelines/index.md) to prepare your add-on for review.
+Familiarize yourself with the details of our [Review Process](../../resources/distribute/review_process/index.md) and follow the [Submission Guidelines](../../resources/distribute/guidelines/index.md) to prepare your add-on for review.
 
 ## 4. Improve your sales with the Monetization Guide
 
 As we mentioned in the [Beginner Path](./beginner.md), add-ons can be monetized according to a variety of models (perpetual, subscription, freemium, credit-based, etc.) and Adobe does not take any commission on the sales.
 
-If you want to learn more about it, please read the [Monetization Guidelines](../distribute/guidelines/monetization.md), or watch the [Marketing and monetizing Adobe Express add-ons](https://www.youtube.com/watch?v=gF6FU_d6QoY) video below, recorded at one of the monthly [Adobe Express Office Hours](https://developer.adobe.com/developers-live) community events.
+If you want to learn more about it, please read the [Monetization Guidelines](../../resources/distribute/guidelines/monetization.md), or watch the [Marketing and monetizing Adobe Express add-ons](https://www.youtube.com/watch?v=gF6FU_d6QoY) video below, recorded at one of the monthly [Adobe Express Office Hours](https://developer.adobe.com/developers-live) community events.
 
 <br/><br/>
 
