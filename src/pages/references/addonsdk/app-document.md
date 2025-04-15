@@ -33,7 +33,7 @@ function setId(id) { /* ... */ }
 
 addOnUISdk.ready.then(() => setId(await addOnUISdk.app.document.id()));
 
-addOnUISdk.app.on("documentAvailable", data => {
+addOnUISdk.app.on("documentIdAvailable", data => {
   setId(data.documentId);
 });
 ```
@@ -235,6 +235,40 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 | -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
 | `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
 | `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
+
+### link()
+
+Retrieves the document link.
+
+#### Signature
+
+ `link(options: LinkOptions): Promise<string | undefined>`
+
+#### Return Value
+
+A resolved `Promise` containing the `link` of the document.
+
+<InlineAlert slots="text" variant="info"/>
+
+A `documentLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
+
+#### Example
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+
+```js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+function setLink(link) { /* ... */ }
+
+addOnUISdk.ready.then(() => setLink(await AddOnSDKAPI.app.document.link("document"));
+
+addOnUISdk.app.on("documentLinkAvailable", data => {
+  setLink(data.documentLink);
+});
+```
 
 ## Import Content Methods
 

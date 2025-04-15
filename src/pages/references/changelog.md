@@ -22,6 +22,14 @@ contributors:
 
 # Changelog
 
+## 2025-04-10
+
+### Added
+
+- New [`link()`](../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/develop/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [vue-starter](../samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
+- Fixes `fromRGB()` method reference in the [Using Color How-to](../guides/develop/how_to/use_color.md).
+
 ## 2025-04-03
 
 ### Added
