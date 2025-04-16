@@ -26,7 +26,7 @@ contributors:
 
 ### Updated
 
-- The [Code Playground](../guides/getting_started/code_playground.md) documentation has been updated with details about the new [Script Mode](../guides/getting_started/code_playground.md#script-mode) and [Local Persistence](../guides/getting_started/code_playground.md#local-persistence) features, as well as additional details around existing features. The updates include:
+- The [Code Playground](../guides/getting_started/code_playground.md) documentation has been updated with details about the new [Script Mode](../guides/getting_started/code_playground.md#how-to-use-script-mode) and [Local Persistence](../guides/getting_started/code_playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
 
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.
