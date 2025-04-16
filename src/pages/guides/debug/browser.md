@@ -4,11 +4,11 @@ During your development, it's important to be able to debug your code and troubl
 
 ## Introduction
 
-Check out this short video below on how to test and debug your add-on to help you get started more quickly, then read on for more details.<br/><br/>
+Check out this short video below on how to test and debug your add-on to help you get started more quickly, then read on for more details.
 
-<div style="display: flex; justify-content: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<Embed slots="video" />
+
+https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi
 
 ## Browser Developer Tools
 
@@ -38,8 +38,6 @@ Next, navigate to the **Sources** tab, and from there you can locate and select 
 Once you've selected your file, you can set breakpoints by clicking on the line number where you want the breakpoint to be set. This will pause the execution of your code at that breakpoint, allowing you to inspect variables and step through your code one line at a time.
 
 By leveraging these tools, you will develop a deeper understanding of how your add-on is working, be able to identify and fix bugs more quickly, and benefit from a high-performing add-on.
-
-<!-- <iframe aria-label="Browser Debugging Demo" src="https://drive.google.com/file/d/13FHUuRpVti9AH4nUwAMcvNcP6OzGpOc1/preview" width="640" height="480"></iframe> -->
 
 ### Console
 
@@ -88,10 +86,10 @@ The **Refresh** and **Clear data** buttons in the add-on developer tools can als
 
 <InlineAlert slots="text" variant="success"/>
 
-To make use of the add-on SDK's [ClientStorage API](../../references/addonsdk/instance-clientStorage.md) and store data in an underlying IndexedDB store, explore the ToDo list sample. You can view this store in the browser developer tools by navigating to the **Application** tab. Look for the IndexedDB store associated with your add-on ID to locate it. Here's an example:
+To make use of the add-on SDK's [ClientStorage API](../../references/addonsdk/instance-client-storage.md) and store data in an underlying IndexedDB store, explore the ToDo list sample. You can view this store in the browser developer tools by navigating to the **Application** tab. Look for the IndexedDB store associated with your add-on ID to locate it. Here's an example:
 
 ![application tab indexed db screenshot](./img/application-indexed-db.png)
 
 <InlineAlert slots="text" variant="info"/>
 
-See [the Client Storage API](../../references/addonsdk/instance-clientStorage.md) for more details about storing and persisting data with your add-ons.
+See [the Client Storage API](../../references/addonsdk/instance-client-storage.md) for more details about storing and persisting data with your add-ons.

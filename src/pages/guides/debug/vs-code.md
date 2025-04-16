@@ -2,10 +2,6 @@
 
 If you are a Visual Studio Code user, you can easily debug your add-on by following the steps in this guide.
 
-<!-- An example of this workflow is shown in the video below for reference:
-
-<iframe aria-label="Debugging VS Code Demo" src="https://drive.google.com/file/d/1at1jXCTIi9TZWxwFn11su0PeEQZhUGFC/preview" width="640" height="480"></iframe> -->
-
 ## Steps
 
 1. Begin by locating the existing `launch.json` file in the `.vscode` folder in the root of your project. This file will exist if you have created your add-on with the add-on CLI. Double check to ensure the URL points to `https://new.express.adobe.com/new/`.

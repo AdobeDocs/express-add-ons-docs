@@ -22,7 +22,7 @@ contributors:
 
 ## With local images
 
-You must invoke the [`addOnUISdk.app.enableDragToDocument()`](/references/addonsdk/addonsdk-app.md#enabledragtodocument) method for each draggable image to implement this feature. It accepts two parameters: the `HTMLElement` and an object with a `previewCallback()` that returns the image URL for preview purposes, and a `completionCallback()` that fetches the corresponding blob to finalize insertion into the document.
+You must invoke the [`addOnUISdk.app.enableDragToDocument()`](../../../references/addonsdk/addonsdk-app.md#enabledragtodocument) method for each draggable image to implement this feature. It accepts two parameters: the `HTMLElement` and an object with a `previewCallback()` that returns the image URL for preview purposes, and a `completionCallback()` that fetches the corresponding blob to finalize insertion into the document.
 
 You also need to listen for `"dragstart"` and `"dragend"` events to manage logs or other custom behaviour when the user interacts with the images.
 
@@ -156,4 +156,4 @@ You should not attach `click` event listeners to drag-enabled elements in the ca
 
 Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any that may be causing conflicts with drag and drop handlers.
 
-There are several [code samples](/samples.md) that implement drag and drop, including the [import-images-using-oauth](/samples.md#import-images-using-oauth) and [pix](/samples.md#pix) projects that you can reference.
+There are several [code samples](../../../samples.md) that implement drag and drop, including the [import-images-using-oauth](../../../samples.md#import-images-using-oauth) and [pix](../../../samples.md#pix) projects that you can reference.
