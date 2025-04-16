@@ -39,7 +39,7 @@ This section outlines everything you'll need to be prepared for submitting your 
 | **\* Add-on name**      | 25                | A unique name for your add-on.|
 | **\* Summary**               | 50                | A short description of what your add-on does.|
 | **\* Full Description**      | 1000              | Full context and description of your add-on and its features |
-| **\* Help URL**              | 1000              | URL for your users to get help (ie: https://www.example.com/)  |
+| **\* Help URL**              | 1000              | URL for your users to get help (ie: [https://www.example.com/](https://www.example.com/))  |
 | **\* Support email address** | 1000              | An email address that users of your add-on can contact for support |
 | **\*Trader information**     | NA                | Provide the trader information as per the [listing guidelines](./guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
 | **Privacy Notice**          | 1000              | URL of your privacy notice (ie: https://www.example.com/) |
@@ -195,8 +195,6 @@ If the payment choice selected is not free, an **Upgrade available** badge will 
 Any additional custom details entered by the developer are then shown below the default checkout message, as well as a timestamp indicating when the listing was last updated.
 
 In the case of the **free** payment selection, the following text simply be shown: "This add-on does not require any payment".
-
-<!-- If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter. -->
 
 Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
 

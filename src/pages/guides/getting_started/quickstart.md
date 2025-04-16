@@ -24,15 +24,11 @@ This quickstart guide will help you create and run your first add-on, a simple h
 
 ## Introduction
 
-Check out this short video below for a quick visual introduction to the steps you'll take to create your very first add-on.<br/><br/>
+Check out this short video below for a quick visual introduction to the steps you'll take to create your very first add-on.
 
-<div style="display: flex; justify-content: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kSq4ykQGOdo" title="Creating Your First Add-on | How to Create Add-ons in Adobe Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<Embed slots="video" />
 
-<!-- <iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="775" height="485" allow="autoplay" style="border: 0"></iframe> -->
-
-<br/>
+https://www.youtube.com/embed/kSq4ykQGOdo
 
 ## Prerequisites
 
@@ -42,7 +38,7 @@ Check out this short video below for a quick visual introduction to the steps yo
 
 ### Add-on CLI
 
-The **[Adobe Express add-on CLI](dev_tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
+The **[Adobe Express add-on CLI](dev-tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
 
 ## Step 1: Create your add-on project
 
@@ -57,13 +53,13 @@ This command will create a new add-on based on pure JavaScript with Document San
 - `hello-world` is the name of the add-on you are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
-The [Templates section](dev_tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
+The [Templates section](dev-tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
 
 **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
 <InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
 
-#### CLI troubleshooting <!-- 👈 will not render -->
+#### CLI troubleshooting
 
 `npx` is an `npm` package runner that can execute packages without installing them explicitly.
 
@@ -136,7 +132,7 @@ For simplicity's sake, this Quickstart guide covers the document creation method
 
   **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
 
-  Select the _I understand the risks of loading an add-on from an external server_ checkbox and press the **Connect** button.
+  Select the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
 
 ![Add-on connect modal](./img/connect-modal-v2.png)
 
@@ -168,9 +164,9 @@ Go back to your browser where the add-on is running in Adobe Express and notice 
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
-**Manifest updates**<br/>
+**Manifest updates**
 
-Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
+Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
 
 ![manifest update](./img/manifest-update-v2.png)
 
@@ -186,6 +182,6 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 Congratulations! You've completed the quickstart and run your first add-on!
 
-Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons.
+Next, check out the [development tools](dev-tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../index.md), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons.
 
-If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/guides/tutorials), and exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.
+If you're ready to dive into our developer platform, we highly recommend following the [tutorials](../../guides/tutorials/index.md), and exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.

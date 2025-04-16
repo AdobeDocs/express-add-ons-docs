@@ -98,10 +98,6 @@ If the `zip` validation is successful, you will see a green checkmark next to th
 
 ![Verified](./img/create-private-link-details-v2.png)
 
-<!-- <InlineAlert slots="text" variant="success"/>
-
-The number of characters allowed for any given field is shown above it throughout the distribution experience (for instance, the name field allows a max of 25 characters). The number will automatically update with the remaining amount as you're typing into it. -->
-
 Once you've entered the required fields, the **Save and create private link** button will be enabled.
 
 <InlineAlert slots="text" variant="warning"/>

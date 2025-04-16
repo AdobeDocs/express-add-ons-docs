@@ -77,7 +77,7 @@ In Spectrum, there are two main sizing concepts to understand:
 
 ### Fonts
 
-There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
+There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](../../../references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user-interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
 
   ![Injected fonts screenshot](../images/fonts.png)
 
@@ -101,7 +101,7 @@ Some benefits to using Spectrum CSS variables to style your components over abso
 
 - [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens) - the layout of your add-on can be adjusted by using global variables defined in the `@spectrum-web-components/styles/express/spectrum-core-global.css` folder in the `node_modules` of your add-on.
 
-    **Some general guidelines** <br/>
+    **Some general guidelines**
     - `--spectrum-global-dimension-static-size-*` variables should be used when the dimension needs to be consistent across different elements or components, such as a uniform padding or margin throughout the application. It should also be used when a dimension needs to be adjusted based on a specific context, such as a container element or viewport size.
 
     - `--spectrum-global-static-size-*` variables should be used for values that are not necessarily consistent across the application, but need to be adjusted based on the content or use case. In general, these variables are typically used for text-related styles that may vary based on content or context.
@@ -188,7 +188,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Why isn't the CLI building the output to the `dist` folder as I would expect? Did I forget to include a `webpack.config.js` file in the root of my project?
 
-    **Solution:** make sure your [`webpack.config.js`](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part1/#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
+    **Solution:** make sure your [`webpack.config.js`](../../../guides/tutorials/spectrum-workshop/part1.md/#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
 
 - I'm building a react-based add-on and it's not building correctly. Does the `scripts` object in the `package.json` of my add-on ensure the `--use webpack` parameter is used?
 

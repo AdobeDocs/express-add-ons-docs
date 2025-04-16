@@ -38,7 +38,7 @@ The table below shows the list of arguments that can be specified with the CLI c
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
 | ------------- | -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `add-on-name` | No       |                                              | Name of the add-on. A new add-on project with this argument will be created in the user's current working directory. |
-| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on. |
+| `template`    | Yes      | none, you will be prompted from the CLI | The template to use for creating the add-on. |
 | `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations. |
 
 For instance, the following command would specify all possible arguments:
@@ -49,7 +49,7 @@ npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 
 <InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
 
-#### CLI troubleshooting <!-- 👈 will not render -->
+#### CLI troubleshooting
 
 See the [templates](#templates) section for the currently supported template values.
 
@@ -104,7 +104,6 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 ## Templates
 
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
-<br/>
 
 | Template         | Framework        |
 | ---------------- | ---------------- |
@@ -114,7 +113,7 @@ The add-on CLI contains built-in, pre-configured templates to allow you to creat
 | `react-javascript`  | React with JavaScript |
 | `react-typescript` | React with TypeScript |
 
-As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
+As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/index.md):
 
 | Template         | Description        |
 | ---------------- | ---------------- |
@@ -162,7 +161,7 @@ You will also see a message in the CLI output notifying you of which template th
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
-Please note that to use [Spectrum Web Components](/guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
+Please note that to use [Spectrum Web Components](../../guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
 
 If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
 
@@ -172,7 +171,7 @@ When the scaffolding is complete, you will see the following message, prompting 
 
 ## Manifest
 
-A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
+A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest/index.md) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
 
 ## Add-on Development Tools Panel
 

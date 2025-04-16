@@ -34,7 +34,7 @@ Three sizes are required for the add-on's icon: **36x36**, **64x64**, and **144x
 
 ## Publisher Logo
 
-The publisher's logo is only required the first time you [submit for distribution](/guides/distribute/public-dist.md#2-prepare-your-assets), in case you've never created a publisher profile before. It should be a square, **250x250** pixels PNG or JPG file.
+The publisher's logo is only required the first time you [submit for distribution](../../distribute/public-dist.md#2-prepare-your-assets), in case you've never created a publisher profile before. It should be a square, **250x250** pixels PNG or JPG file.
 
 ![publisher logo](./img/branding_publisher-logo.png)
 

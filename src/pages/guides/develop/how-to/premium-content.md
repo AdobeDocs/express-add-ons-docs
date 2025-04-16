@@ -31,7 +31,7 @@ Let's go through all the available options to manage the rendition of Premium co
 
 ## Show a Premium Content error with the "Upgrade" option
 
-One way to handle premium content is to display a warning message when the user is not entitled to export or download it, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to Premium content (via [`isPremiumUser()`](../../../references/addonsdk/app-currentUser.md#isPremiumUser)), and whether the page contains Premium content (via [`hasPremiumContent`](/references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
+One way to handle premium content is to display a warning message when the user is not entitled to export or download it, and include a button to allow them to upgrade. Please note that you can detect in advance if the user is entitled to Premium content (via [`isPremiumUser()`](../../../references/addonsdk/app-currentUser.md#isPremiumUser)), and whether the page contains Premium content (via [`hasPremiumContent`](../../../references/addonsdk/app-document.md#pagemetadata)) in the first place. A try/catch block intercepting the `"USER_NOT_ENTITLED_TO_PREMIUM_CONTENT"` string in the error message as the primary way to deal with it is no longer recommended.
 
 ### Example
 

@@ -25,7 +25,7 @@ contributors:
 
 Implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services.
 
-A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth/) for more options and details and the [import-images-using-oauth](/samples/#import-images-using-oauth) sample add-on for more advanced usage.
+A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](../../../references/addonsdk/app-oauth.md) for more options and details and the [import-images-using-oauth](../../../samples.md/#import-images-using-oauth) sample add-on for more advanced usage.
 
 ### Login and Logout flows
 
@@ -38,7 +38,7 @@ Authorization should persist across sessions so users don't have to log in with 
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some setup steps with the provider you want to use OAuth with first. Here are the steps to get started:
 
 1. Log in to the OAuth provider's website and create an application (for example, Dropbox). This must be a web application, and if an option of SPA (Single Page Application) is listed, select it.
-2. As an input to the "Redirect URIs" field, add: https://new.express.adobe.com/static/oauth-redirect.html.
+2. As an input to the "Redirect URIs" field, add: [https://new.express.adobe.com/static/oauth-redirect.html](https://new.express.adobe.com/static/oauth-redirect.html).
 3. Fill out other details as necessary and save the form. A client Id / application Id / application key (this differs on different OAuth providers) will be generated. Make note of it as you will need it in your add-on code.
 4. Next, update your add-on `manifest.json` file with the hostname of the OAuth provider's authorization URL. **NOTE:** When using multiple providers, all hostnames must be provided. For example, if the add-on uses two OAuth providers (`"login.microsoftonline.com"` and `"www.dropbox.com"`), the `manifest.json` should contain both of them, as shown below:
 
@@ -69,7 +69,7 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 
 ### Example
 
-Once you complete the setup, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](/samples.md) also include several examples of implementing OAuth 2.0 workflows, which you can refer to. Additionally, you'll find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module, referenced below, and we recommend utilizing this module to facilitate your own OAuth implementation. For further details on the OAuth workflows, be sure to explore the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth).
+Once you complete the setup, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](../../../samples.md) also include several examples of implementing OAuth 2.0 workflows, which you can refer to. Additionally, you'll find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module, referenced below, and we recommend utilizing this module to facilitate your own OAuth implementation. For further details on the OAuth workflows, be sure to explore the [SDK References](../../../references/addonsdk/app-oauth.md).
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";

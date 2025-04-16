@@ -22,23 +22,12 @@ Media can't be autoplayed.
 
 The value of the `sandbox` attribute can either be empty (in which case all restrictions are applied), or a space-separated list of pre-defined permissions that remove a particular restriction. By default, **the `allow-scripts` and the `allow-same-origin` sandbox permissions are automatically set for all add-ons** (ie: `sandbox="allow-scripts allow-same-origin"`). The table below describes the rest of the permissions that can be applied to your add-on. These permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox).
 
-<!-- <InlineAlert slots="text" variant="info"/>
-
-The add-on iframe automatically includes the `allow-scripts` and the `allow-same-origin` sandbox permissions by default (ie: `sandbox="allow-scripts allow-same-origin"`). The other supported permissions can be applied by setting their values in the [manifest sandbox permissions](../../references/manifest/index.md#entrypointspermissionssandbox). <br/><br/> -->
-
 | Permission              | Description   |
 | ------------------ | -----------:  |
 | `allow-downloads`  |  Allow downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute.         |
 | `allow-popups`          | Allows the add-on to `window.open` popups |
 | `allow-popups-to-escape-sandbox`   |  Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them.         |
 | `allow-presentation`  | Allows the add-on to start a presentation session.           |
-
-<!-- The following two permissions are added to the `sandbox` attribute by default.
-
-| Permission              | Description   |
-| ------------------ | -----------:  |
-| * `allow-same-origin`               | Removes the "different" origin policy           |
-| * `allow-scripts` | Re-enables JavaScript.           | -->
 
 **IMPORTANT:** Please note that these are currently the *only* permissions that are currently supported from [the set of sandbox permissions available](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). Any other attributes are not supported or allowed in the manifest for your add-ons.
 
@@ -155,7 +144,7 @@ A website's address on the Internet that is used in URLs to identify which serve
 
 ### subdomain
 
-Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives (ie: https://w906hhl6k.wxp.adobe-addons.com).
+Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives (ie:[https://w906hhl6k.wxp.adobe-addons.com](https://w906hhl6k.wxp.adobe-addons.com)).
 
 ### allowed list of origins
 
