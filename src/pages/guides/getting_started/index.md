@@ -28,12 +28,12 @@ At a high level, add-ons refer to any feature distributed independently from the
 
 ### Getting Started Steps
 
-The [Quickstart](quickstart.md) steps you will follow to get started building your first add-on include:
+The [Quickstart](./quickstart.md) steps you will follow to get started building your first add-on include:
 
-1. [Set up](quickstart.md#prerequisites) your local environment.
-1. [Create a new add-on project](quickstart.md#step-1-create-your-add-on-project)
-1. [Build and start your add-on](quickstart.md#step-2-build-and-start-your-add-on).
+1. [Set up](./quickstart.md#prerequisites) your local environment.
+1. [Create a new add-on project](./quickstart.md#step-1-create-your-add-on-project)
+1. [Build and start your add-on](./quickstart.md#step-2-build-and-start-your-add-on).
 1. Log in to [Adobe Express](https://new.express.adobe.com/new).
-1. Enable the [developer mode](quickstart.md#step-3-enable-add-on-development-mode-first-time-only) (one time only).
-1. [Load and run your add-on](quickstart.md#step-4-load-and-run-your-add-on) directly in Adobe Express.
-1. [Continue developing your add-on](quickstart.md#step-5-edit-your-add-on), seeing your changes immediately appear in, allowing you to iterate quickly.
+1. Enable the [developer mode](./quickstart.md#step-3-enable-add-on-development-mode-first-time-only) (one time only).
+1. [Load and run your add-on](./quickstart.md#step-4-load-and-run-your-add-on) directly in Adobe Express.
+1. [Continue developing your add-on](./quickstart.md#step-5-edit-your-add-on), seeing your changes immediately appear in, allowing you to iterate quickly.
