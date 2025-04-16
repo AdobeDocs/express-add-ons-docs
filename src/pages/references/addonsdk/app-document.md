@@ -92,7 +92,7 @@ A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containi
 
 <CodeBlock slots="heading, code" repeat="2" />
 
-## Usage
+#### Usage
 
 ```js
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
@@ -128,7 +128,7 @@ async function logMetadata() {
 }
 ```
 
-## Output
+#### Output
 
 ```bash
 Page id: 772dc4b6-0df5-469f-b477-2a0c5445a6ef
