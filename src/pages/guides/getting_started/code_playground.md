@@ -46,21 +46,21 @@ The Code Playground is designed for:
 
 | Feature | Description |
 |---------|-------------|
-| **Real-Time Preview** | See your changes instantly as you code, allowing for immediate feedback and faster adjustments. |
+| **Real-Time Preview** | See your changes as you code, allowing for immediate feedback and faster adjustments. |
 | **Effortless Prototyping** | Quickly turn ideas into add-ons with minimal setup. |
 | **Rapid Implementation** | Fast-track your prototype to a product by directly pasting your code into an add-on template. |
-| **Script Mode** | A streamlined way to prototype with the Document APIs, making it easier to manipulate the Adobe Express document directly. |
-| **Local Persistence** | Your work is automatically saved in your browser's local storage to prevent accidental loss. |
+| **Script Mode** | An easy way to interact with the Document APIs operations quickly. |
+| **Local Persistence** | Your work can be saved to your browser's local storage to prevent accidental loss. |
 | **Keyboard Shortcuts** | Use keyboard shortcuts to save, run, and reset your code quickly. |
 
-Check out the video below for a quick introduction to the add-on playground features.
+<!-- Check out the video below for a quick introduction to the add-on playground features.
 
 <br/><br/><div style="display: flex; justify-content: center;">
 
  <iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/>
+</div><br/> -->
 
-## Development Workflow 
+## Development Workflow
 
 There are numerous opportunities for using the Code Playground to help you throughout the development process, including:
 
@@ -74,39 +74,58 @@ There are numerous opportunities for using the Code Playground to help you throu
 
 ### Step 1: Enable Add-on Development Mode
 
-Go to your settings and enable the "Add-on Development Mode" (if it isn't already enabled).
+- Open Adobe Express settings by clicking the gear icon
+- Enable "Add-on Development Mode" if not already enabled
 
 ![Adobe Express Settings](./img/settings_alt.png)
 
-### Step 2: Locate and open the "Code Playground"
+### Step 2: Open Code Playground
 
-1. Start by opening any document in Adobe Express.
-2. Click on the "Add-ons" button located on the left side rail.
-3. In the Add-ons panel, select the "Your add-ons" tab.
-4. At the bottom of the Add-ons panel, you'll see the toggle for the "Code Playground".
+- With any document open, click the "Add-ons" button in the left sidebar
+- Select the "Your add-ons" tab
+- Toggle on "Code Playground" at the bottom of the panel
 
   ![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
 
-5. Once enabled, the playground window will open, allowing you to begin coding immediately!
+- Once enabled, the playground window will open, allowing you to begin coding immediately!
 
   ![Adobe Express Code Playground](./img/script-mode.png)
   
 ## Choose Your Development Mode
 
-The playground includes two modes for rapid development. Each mode is tailored for different aspects of add-on development.
+The playground offers two distinct development modes, each designed for different development needs:
+
+### Comparison of Modes
+
+The playground offers two distinct development modes, each designed for different development needs:
+
+| Feature | Script Mode | Add-on Mode |
+|---------|-------------|-------------|
+| **Purpose** | Quick document manipulation tests | Complete add-on UI and functionality |
+| **Environment** | Document Sandbox only | Both iframe and Document Sandbox |
+| **API Access** | Document APIs | Document APIs + Add-on UI SDK |
+| **UI Components** | No UI building | Full HTML/CSS/JS interface creation |
+| **Best For** | Testing document operations | Building complete add-ons |
+
+<!-- The playground includes two modes for rapid development. Each mode is tailored for different aspects of add-on development.
 
 - **Script Mode**: This mode is directly associated with the Document Sandbox environment, allowing you to test Document API operations quickly.
-- **Add-on Mode**: Provides a structured environment for building the user interface and logic of your add-on using HTML, CSS, and JavaScript directly in Adobe Express.
+- **Add-on Mode**: Provides a structured environment for building the user interface and logic of your add-on using HTML, CSS, and JavaScript directly in Adobe Express. -->
 
-### Script Mode
 
-Script mode provides a streamlined way to prototype with the [Document APIs](../../references/document-sandbox/document-apis/index.md), making it easier to manipulate the Adobe Express document directly. This mode is particularly helpful when you want to focus on document operations rather than building a UI.
+### When to Use Script Mode
+
+- When focusing on document manipulation operations
+- For quickly testing API calls without UI considerations
+- When learning how the [Document APIs](../../references/document-sandbox/document-apis/index.md) work
+
+<!-- Script mode provides a streamlined way to prototype with the [Document APIs](../../references/document-sandbox/document-apis/index.md), making it easier to manipulate the Adobe Express document directly. This mode is particularly helpful when you want to focus on document operations rather than building a UI. -->
 
 #### How to Use Script Mode:
 
-1. Click on the "Script" button in the top left corner of the playground window.
-2. Write your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor provided. For example, your code written here can directly manipulate the document, add shapes or text, change styles and more. The [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object is automatically available for use in this mode.
-3. Click "Run" to execute your script directly on the current document.
+1. Select the "Script" button in the top left corner of the playground window.
+2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object.
+3. Execute your script by clicking "Run" to see changes in the current document.
 
   ![Code Playground Script Mode](./img/script-mode.png)
 
@@ -163,14 +182,15 @@ The Document JS tab corresponds to the code typically found in the `code.js` fil
 
 ### Keyboard Shortcuts:
 
-- **Save:** <kbd>Ctrl</kbd>+<kbd>S</kbd> or <kbd>Cmd</kbd>+<kbd>S</kbd> (Mac)
-- **Run:** <kbd>Ctrl</kbd>+<kbd>Enter</kbd> or <kbd>Cmd</kbd>+<kbd>Enter</kbd> (Mac)
-- **Reset:** <kbd>Ctrl</kbd>+<kbd>X</kbd> or <kbd>Cmd</kbd>+<kbd>X</kbd> (Mac)
-- **Increase font size:** <kbd>Ctrl</kbd>+<kbd>Plus (+)</kbd> or <kbd>Cmd</kbd>+<kbd>Plus (+)</kbd> (Mac)
-- **Decrease font size:** <kbd>Ctrl</kbd>+<kbd>Minus (-)</kbd> or <kbd>Cmd</kbd>+<kbd>Minus (-)</kbd> (Mac)
-- **Switch between tabs:** <kbd>Ctrl</kbd>+<kbd>1, 2, 3, 4</kbd> (Mac)
-- **View the typings suggestions:** <kbd>Ctrl</kbd>+<kbd>space</kbd> (Mac)
-
+| Action | Windows/Linux | macOS |
+|--------|---------------|-------|
+| **Save** | <kbd>Ctrl</kbd>+<kbd>S</kbd> | <kbd>Cmd</kbd>+<kbd>S</kbd> |
+| **Run** | <kbd>Ctrl</kbd>+<kbd>Enter</kbd> | <kbd>Cmd</kbd>+<kbd>Enter</kbd> |
+| **Reset** | <kbd>Ctrl</kbd>+<kbd>X</kbd> | <kbd>Cmd</kbd>+<kbd>X</kbd> |
+| **Increase font size** | <kbd>Ctrl</kbd>+<kbd>Plus (+)</kbd> | <kbd>Cmd</kbd>+<kbd>Plus (+)</kbd> |
+| **Decrease font size** | <kbd>Ctrl</kbd>+<kbd>Minus (-)</kbd> | <kbd>Cmd</kbd>+<kbd>Minus (-)</kbd> |
+| **Switch between tabs** | <kbd>Ctrl</kbd>+<kbd>1, 2, 3, 4</kbd> | <kbd>Cmd</kbd>+<kbd>1, 2, 3, 4</kbd> |
+| **View the typings suggestions** | <kbd>Ctrl</kbd>+<kbd>space</kbd> | <kbd>Cmd</kbd>+<kbd>space</kbd> |
 
 ### Saving Your Work
 
@@ -180,21 +200,45 @@ Code in the playground is not saved automatically, but you can ensure it's saved
 
   1. Save your work using the keyboard shortcut for Save [(above)](#keyboard-shortcuts)
   2. Run the code via the "Run Code" button or with the keyboard shortcut for Run [(above)](#keyboard-shortcuts)
+  3. When exiting the playground
 
 <InlineAlert slots="text" variant="warning">
 
-- Regularly save your work to avoid accidental loss. 
-- Local storage is browser-specific and not synchronized across devices.
-- If you're using incognito/private browsing mode, your code will not be saved once you close the browser.
-- If you clear your browser data/cache, your saved code will be deleted.
+  - Storage is browser-specific (not synced across devices)
+  - Code is not saved in incognito/private browsing modes
+  - Clearing browser data will delete saved code
+  - Only your most recent session is saved
+
+</InlineAlert>
 
 ### Resuming Sessions
 
 There are two ways to resume working on your last saved session:
 
-1. **Via the Add-ons Panel:** With a document opened, click the Add-ons button in the left rail, then the "Your Add-ons" tab and toggle on the "Code Playground" button to automatically open your last saved session.
+1. **Via the Add-ons Panel:** 
+  
+  - With any document open, click the "Add-ons" button in the left sidebar
+  - Select the "Your add-ons" tab
+  - Toggle on "**Code Playground**" at the bottom of the panel
 
-2. **Via Your Add-ons Page:** The "Your add-ons" page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session.
+  ![Code Playground Add-on Mode](./img/playground-on.png)
+
+2. **Via the Your add-ons Page:** 
+
+  - The "Your add-ons" page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session or create a new one.
+  - Find the "**Playground Sessions**" section in the "Your add-ons" page
+  - Access your last session or create a new one with one click
+
+  ![Manage Your add-ons page](./img/playground-sessions.png)
+
+<InlineAlert slots="text" variant="info">
+
+You can access the "Your add-ons" page in two ways:
+
+- **Without a document open:** Click the Add-ons button in the left rail, then click the Add-on development toggle in the top right.
+- **With a document open:** Click the Add-ons button in the left rail, select the "Your add-ons" tab, then click the "Manage add-ons" link in the Add-on Testing section.
+
+</InlineAlert>
 
 ## Next steps
 
@@ -211,13 +255,13 @@ There are two ways to resume working on your last saved session:
 
 ## FAQs
 
-### What is the Adobe Express Developer Playground?
+### What is the Adobe Express Code Playground?
 
-Adobe Express Developer Playground is a lightweight code editor designed for fast and effortless prototyping. It allows you to experiment with simple code snippets to build and refine add-ons, quickly turning ideas into functional features.
+The Adobe Express Code Playground is a lightweight code editor designed for fast and effortless prototyping. It allows you to experiment with simple code snippets to build and refine add-ons, quickly turning ideas into functional features.
 
 ### Is it free to use?
 
-Yes, the Developer Playground is free to use. You can access all its features without any cost and start prototyping and creating add-ons right away.
+Yes, the Code Playground is free to use. You can access all its features without any cost and start prototyping and creating add-ons right away.
 
 ### Do I need coding experience?
 
@@ -225,7 +269,7 @@ While some basic coding knowledge is helpful, Playground is designed to be begin
 
 ### How do I start creating add-ons?
 
-Getting started is simple. Activate the Playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
+Getting started is simple. activate the playground, experiment with code snippets, and start building your add-ons. Use the real-time preview feature to see your changes instantly and iterate on your ideas with ease.
 
 ### Where can I go for help?
 
