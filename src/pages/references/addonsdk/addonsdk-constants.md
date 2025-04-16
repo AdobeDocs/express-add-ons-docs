@@ -108,6 +108,17 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     </td>
 </tr>
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>LinkOptions</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>The type of link</p>
+        <ul>
+          <li><strong>document</strong></li>Link to the current document.
+        </ul>
+    </td>
+</tr>
+
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>MediaTabs</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">

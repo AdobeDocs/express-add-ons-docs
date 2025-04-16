@@ -838,7 +838,7 @@ module.exports = {
           {
             title: "Frameworks, Libraries and Bundling",
             path: "guides/develop/frameworks-libraries-bundling.md",
-          },
+          },          
           {
             title: "Performance Tips",
             path: "guides/develop/performance.md",

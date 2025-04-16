@@ -6,8 +6,8 @@ The Add-on SDK's are a set of interfaces written in TypeScript, and a TypeScript
 
 ```ts
 import {
-    Application,
-    AuthorizationRequest
+  Application,
+  AuthorizationRequest,
 } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 ```
 
@@ -61,6 +61,12 @@ new CopyWebpackPlugin({
 
 The CLI supports two different [react-based templates](../getting_started/dev_tooling.md#templates), and the [code samples](../../samples.md) repository contains various add-ons built with React for you to use as a reference.
 
+## Lit Framework
+
+The CLI provides [starter template options](../getting_started/dev_tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
+
+<!-- To learn more about developing with [Lit](https://lit.dev/), be sure to check out the [Using Lit & TypeScript Guide](./using-lit-typescript.md). -->
+
 ## Other JavaScript and CSS libraries
 
-You shouldn't see any issues trying to include other JavaScript or CSS libraries you might want to use in your add-ons (ie: jQuery, Bootstrap).
+You should be able to use any other JavaScript or CSS libraries you might want to include in your add-ons (ie: jQuery, Bootstrap) without any issues. Just make sure you include the necessary scripts and stylesheets in your project, and ensure they are bundled correctly by your chosen bundler.

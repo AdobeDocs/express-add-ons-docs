@@ -198,6 +198,40 @@ Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-we
 
 - [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
 
+## [vue-starter](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/vue-starter)
+
+Simple sample which illustrates how to use **Spectrum Web Components** without React or any other framework.
+
+**Technologies Used:** <br/>
+
+- Vue.js
+- HTML
+- JavaScript
+- Webpack
+- CSS
+
+**Features Leveraged:**<br/>
+
+- [Add-on SDK Ready](./references/addonsdk/addonsdk.md) method is checked to ensure the SDK is loaded before enabling the button in the UI (similar to the templates generated with our CLI, but based on Vue.js).
+
+<!-- # Marketplace Add-on Samples
+The following samples were built to show how to use specific some popular 3rd party services. -->
+
+<!-- ## [Dropbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/dropbox)
+Allows users to connect to their Dropbox account. Once connected, they can fetch their images and videos from their account and add them to their Express pages.
+
+**Technologies Used:** <br/>
+
+- React
+- React Spectrum
+- Webpack
+
+**Features Leveraged:**<br/>
+
+- [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
+- [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
+- [Import Content](./references/addonsdk/app-document.md) to add the image to the document when the gif is clicked. -->
+
 ## [Giphy](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/giphy)
 
 Allows users to search for popular gifs and add them to the document.

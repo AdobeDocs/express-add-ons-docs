@@ -30,25 +30,25 @@ contributors:
 
 Colors in Adobe Express are created as instances of the [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) class: objects with `red`, `green`, `blue`, and `alpha` (optional) values in the range from 0 to 1. The `alpha` value represents the opacity of the color, with 0 being fully transparent and 1 fully opaque.
 
-The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRgb()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
+The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
 
 ```js
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
 // Alpha is optional, defaults to 1
-const red = colorUtils.fromRgb(1, 0, 0);
+const red = colorUtils.fromRGB(1, 0, 0);
 const green = colorUtils.fromHex("#00FF00");
 
 // With alpha
-const feldgrau = colorUtils.fromRgb(0.28, 0.32, 0.39, 0.5); // 50% opacity
+const feldgrau = colorUtils.fromRGB(0.28, 0.32, 0.39, 0.5); // 50% opacity
 const heliotrope = colorUtils.fromHex("#C768F780"); // 50% opacity
 ```
 
 In case you need it, you can also convert a color to a HEX string using the [`toHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#tohex) method. Please note that the alpha value is always included in the output string.
 
 ```js
-const red = colorUtils.fromRgb(1, 0, 0);
+const red = colorUtils.fromRGB(1, 0, 0);
 const redHex = colorUtils.toHex(red); // #FF0000FF
 ```
 
