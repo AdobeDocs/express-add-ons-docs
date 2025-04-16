@@ -77,7 +77,7 @@ Script mode provides a streamlined way to prototype with the [Document APIs](../
 #### How to Use Script Mode:
 
 1. Click on the "Script" button in the top left corner of the playground window.
-2. Write your [Document API](./../references/document-sandbox/document-apis/index.md) code in the editor provided. For example, your code written here can directly manipulate the document, add shapes or text, change styles and more. The [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object is automatically available for use in this mode.
+2. Write your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor provided. For example, your code written here can directly manipulate the document, add shapes or text, change styles and more. The [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object is automatically available for use in this mode.
 3. Click "Run" to execute your script directly on the current document.
 
   ![Code Playground Script Mode](./img/script-mode.png)
