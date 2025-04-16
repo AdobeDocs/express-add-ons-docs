@@ -97,10 +97,10 @@ There are numerous opportunities for using the Code Playground to help you throu
 
 The playground offers two distinct development modes:
 
-- **Script Mode**: Experiment with the Document APIs directly
-- **Add-on Mode**: Build complete add-on UI and functionality
+- [**Script Mode**](#script-mode): Experiment with the Express Document APIs directly
+- [**Add-on Mode**](#add-on-mode): Test and iterate on your add-on UI and functionality with no setup required
 
-A comparison of the two modes is below:
+A side-by-side comparison of the two modes and specific features is below:
 
 | Feature | Script Mode | Add-on Mode |
 |---------|-------------|-------------|
@@ -109,6 +109,8 @@ A comparison of the two modes is below:
 | **API Access** | Document APIs | Document APIs + Add-on UI SDK |
 | **UI Components** | No UI building | Full HTML/CSS/JS interface creation |
 | **Best For** | Testing document operations | Building complete add-ons |
+
+## Script Mode
 
 ### When to Use Script Mode
 
@@ -123,9 +125,11 @@ A comparison of the two modes is below:
 
   ![Code Playground Script Mode](./img/script-mode.png)
 
-4. (Optionally) If you want to use Document APIs that are currently marked experimental, click on the [manifest properties](../../references/manifest/index.md#experimentalapis) icon next to the mode buttons (outlined below) and toggle "experimentalApis" to enable them:
+4. (Optionally) If you want to use Document APIs that are currently marked experimental, click on the [manifest properties](../../references/manifest/index.md#requirements) icon next to the mode buttons (outlined below) and toggle "experimentalApis" to enable them:
 
   ![Script Mode Manifest Settings](./img/manifest-props-script.png)
+
+## Add-on Mode
 
 ### When to Use Add-on Mode
 
@@ -255,7 +259,7 @@ There are two ways to resume working on your last saved session:
 
 ## Next Steps: Build Your Add-on Locally
 
-After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment, follow our [Quickstart Guide](../develop/quickstart.md) to get up and running quickly. Once you've created your new project, simply copy your code from the Code Playground [Add-on mode tabs](./#add-on-mode) to the corresponding files in your new project to get started!
+After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment, follow our [Quickstart Guide](../getting_started/quickstart.md) to get up and running quickly. Once you've created your new project, simply copy your code from the Code Playground [Add-on mode tabs](#how-to-use-add-on-mode) to the corresponding files in your new project to get started!
 
 ## FAQs
 
