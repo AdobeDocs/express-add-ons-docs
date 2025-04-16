@@ -18,7 +18,7 @@ A resolved `Promise` containing the `userId` of the current user.
 
 ## Example
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 ### Usage
 
