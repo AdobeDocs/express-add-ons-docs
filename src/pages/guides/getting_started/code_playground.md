@@ -38,28 +38,133 @@ Check out the video below for a quick introduction to the add-on playground.
 - **Real-Time Preview:** See your changes instantly as you code, allowing for immediate feedback and faster adjustments.
 - **Effortless Prototyping:** Quickly turn ideas into add-ons with minimal setup.
 - **Rapid Implementation:** Fast-track your prototype to a product by directly pasting your code into an add-on template.
+- **Script Mode:** A streamlined way to prototype with the Document APIs, making it easier to manipulate the Adobe Express document directly.
+- **Local Persistence:** Your work is automatically saved in your browser's local storage to prevent accidental loss.
+- **Keyboard Shortcuts:** Use keyboard shortcuts to save, run, and reset your code quickly.
 
 ## Getting Started
 
-### Step 1: Enable Add-On Development Mode
+### Step 1: Enable Add-on Development Mode
 
-Go to your settings and enable add-on development mode (if it isn't already enabled).
+Go to your settings and enable the "Add-on Development Mode" (if it isn't already enabled).
 
 ![Adobe Express Settings](./img/settings_alt.png)
 
-### Step 2: Locate the 'Code-playground' option
+### Step 2: Locate and open the "Code Playground"
 
 1. Start by opening any document in Adobe Express.
-2. Click on the "Add-ons" section located on the left side rail.
-3. In the Add-ons panel, select the "Your Add-ons" tab.
+2. Click on the "Add-ons" button located on the left side rail.
+3. In the Add-ons panel, select the "Your add-ons" tab.
+4. At the bottom of the Add-ons panel, you'll see the toggle for the "Code Playground".
 
-![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
+  ![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
 
-### Step 3: Access the Playground
+5. Once enabled, the playground window will open, allowing you to begin coding immediately!
 
-At the bottom of the add-ons rail, you'll see the option to open the Code Playground. Click to get started!
+  ![Adobe Express Code Playground](./img/script-mode.png)
+  
+## The Code Playground Interface
 
-![Adobe Express Code Playground](./img/playground.png)
+The playground includes two modes for rapid development. Each mode is tailored for different aspects of add-on development.
+
+- **Script Mode**: This mode is directly associated with the Document Sandbox environment, allowing you to test Document API operations quickly.
+- **Add-on Mode**: Provides a structured environment for building the user interface and logic of your add-on using HTML, CSS, and JavaScript directly in Adobe Express.
+
+### Script Mode
+
+Script mode provides a streamlined way to prototype with the [Document APIs](../../references/document-sandbox/document-apis/index.md), making it easier to manipulate the Adobe Express document directly. This mode is particularly helpful when you want to focus on document operations rather than building a UI.
+
+#### How to Use Script Mode:
+
+1. Click on the "Script" button in the top left corner of the playground window.
+2. Write your [Document API](./../references/document-sandbox/document-apis/index.md) code in the editor provided. For example, your code written here can directly manipulate the document, add shapes or text, change styles and more. The [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object is automatically available for use in this mode.
+3. Click "Run" to execute your script directly on the current document.
+
+  ![Code Playground Script Mode](./img/script-mode.png)
+
+#### Moving from Script Mode to Add-on Mode:
+
+Once you've developed your code in Script mode, you can easily transition to Add-on mode to build a user interface around your functionality. Here's how:
+
+1. Use the "Copy" button in the top right corner of the playground while in Script mode to quickly copy your code to the clipboard.
+2. Paste the code into the "Document JS" tab in the Playground's Add-on mode.
+3. Adjust your code as needed to fit into the structure of your add-on.
+4. Use the "Run" button in Add-on mode to execute your code within the context of your add-on.
+
+### Add-on Mode
+
+The "Add-on" mode includes several tabs that help you develop different aspects of your add-on.
+
+#### How to Use Add-on Mode:
+
+1. Click on the "Add-on" button on the right of the "Script" button in the top left corner of the playground window.
+2. Write your add-on code associated to the different in the tabs provided.
+3. Click "Run" to execute your script directly on the current document.
+
+  ![Code Playground Add-on Mode](./img/addon-mode.png)
+
+### HTML Tab
+
+This tab is for writing HTML code that defines the structure of your add-on's user interface. You can create elements like buttons, text fields, and layout containers here. Functionally, this tab mirrors the role of the `index.html` file you'd use in a typical add-on project.
+
+### CSS Tab
+
+Style your add-on's HTML elements in this tab. Create a visually appealing interface consistent with Adobe Express design patterns. This section corresponds to the `styles.css` file in a standard add-on project.
+
+### Iframe JS Tab
+
+This tab is for writing JavaScript code that runs in the iframe context of your add-on. Here, you can interact with:
+
+- The [Add-on UI SDK (`addOnUISdk`)](../../references/addonsdk/index.md)
+- The DOM elements in your HTML
+- Event handlers for your UI components
+
+This environment corresponds to the code you would typically write in your `index.js` or UI JavaScript files in a full add-on project.
+
+### Document JS Tab
+
+This tab is where you write JavaScript code that interacts directly with the Adobe Express document. It runs in the [Document Sandbox](../../references/document-sandbox/index.md) environment and gives you access to:
+
+- Document manipulation capabilities with the [Document APIs](../../references/document-sandbox/document-apis/index.md)
+- [Communication APIs](../../references/document-sandbox/communication/index.md) to facilitate interaction between the iframe context and the Document Sandbox.
+
+The Document JS tab corresponds to the code typically found in the `code.js` file of a complete add-on project.
+
+## Local Persistence
+
+The Code Playground features local persistence to help prevent the loss of your work.
+
+### How It Works:
+
+- Your code is saved to your browser's local storage
+- Saving is not automatic, but happens in two situations:
+
+  1. When you use the keyboard shortcut for Save (see below)
+  2. When you run your code
+
+### Important Notes:
+
+- The local storage is browser-specific and not synchronized across devices.
+- If you're using incognito/private browsing mode, your code will not be saved once you close the browser.
+- If you clear your browser data/cache, your saved code will be deleted.
+
+### Keyboard Shortcuts:
+
+- **Save:** <kbd>Ctrl</kbd>+<kbd>S</kbd> or <kbd>Cmd</kbd>+<kbd>S</kbd> (Mac)
+- **Run:** <kbd>Ctrl</kbd>+<kbd>Enter</kbd> or <kbd>Cmd</kbd>+<kbd>Enter</kbd> (Mac)
+- **Reset:** <kbd>Ctrl</kbd>+<kbd>X</kbd> or <kbd>Cmd</kbd>+<kbd>X</kbd> (Mac)
+- **Increase font size:** <kbd>Ctrl</kbd>+<kbd>Plus (+)</kbd> or <kbd>Cmd</kbd>+<kbd>Plus (+)</kbd> (Mac)
+- **Decrease font size:** <kbd>Ctrl</kbd>+<kbd>Minus (-)</kbd> or <kbd>Cmd</kbd>+<kbd>Minus (-)</kbd> (Mac)
+- **Switch between tabs:** <kbd>Ctrl</kbd>+<kbd>1, 2, 3, 4</kbd> (Mac)
+- **View the typings suggestions:** <kbd>Ctrl</kbd>+<kbd>space</kbd> (Mac)
+
+### Resuming Your Last Session
+
+There are two ways to resume working on your last saved session:
+
+1. **Via the Add-ons Panel:** With a document opened, click the Add-ons button in the left rail, then the "Your Add-ons" tab and toggle on the "Code Playground" button to automatically open your last saved session.
+
+2. **Via Your Add-ons Page:** The "Your add-ons" page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session.
 
 ## Next steps
 
