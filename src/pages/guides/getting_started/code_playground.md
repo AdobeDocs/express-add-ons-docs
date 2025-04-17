@@ -44,7 +44,7 @@ The Code Playground is designed for:
 
 ## Features
 
-The Code Playground offers the following features:
+<br/>
 
 | Feature | Description |
 |---------|-------------|
@@ -69,7 +69,7 @@ The Code Playground offers the following features:
 The Code Playground is designed to support the following development workflow use cases:
 
 - **Experiment First**: Test your ideas and API interactions before committing to full add-on development.
-- **Learn as You Go**: Master the basics of Document APIs and Add-on SDK without complex setup requirements.
+- **Learn as You Go**: Master the basics of the Document APIs and [Add-on SDK](../../references/addonsdk/index.md) without complex setup requirements.
 - **Prototype Quickly**: Build and test features in minutes instead of hours with instant feedback.
 - **Bridge to Production**: Develop core functionality in Playground before moving to a complete project environment.
 - **Debug with Ease**: Isolate and fix specific issues by testing API calls outside your production code.
@@ -78,20 +78,20 @@ The Code Playground is designed to support the following development workflow us
 
 ### Step 1: Enable Add-on Development Mode
 
-- From your avatar icon in the top right corner, click the gear icon to open the Adobe Express settings
-- Enable "Add-on Development" if not already enabled
+- Click the avatar icon in the top right corner of Adobe Express, then the gear icon to open the "Settings".
+- Enable **Add-on Development** if it's not already enabled:
 
   ![Adobe Express Settings](./img/settings_alt.png)
 
 ### Step 2: Open Code Playground
 
-- With any document open, click the "Add-ons" button in the left rail
-- Select the "Your add-ons" tab
-- Toggle on "Code Playground" at the bottom of the panel
+- With any document open, click the **Add-ons** button in the left rail.
+- Select the **Your add-ons** tab.
+- Toggle on **Code Playground** at the bottom of the panel:
 
   ![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
 
-- Once enabled, the playground window will open, allowing you to begin coding immediately!
+- Once enabled, the playground window will open, allowing you to begin coding immediately:
 
   ![Adobe Express Code Playground Open](./img/playground-open.png)
   
@@ -99,35 +99,35 @@ The Code Playground is designed to support the following development workflow us
 
 The playground offers two distinct development modes:
 
-- [**Script Mode**](#script-mode): Experiment with the Express Document APIs directly
-- [**Add-on Mode**](#add-on-mode): Test and iterate on your add-on UI and functionality with no setup required
+- [**Script Mode**](#script-mode): Experiment with the Express [Document Sandbox](../../references/document-sandbox/index.md) directly.
+- [**Add-on Mode**](#add-on-mode): Test and iterate on your [Add-on UI](../../references/addonsdk/) and functionality with no setup required.
 
-A side-by-side comparison of the two modes and specific features is below:
+A summary of the differences between the two modes is provided in the table below:
 
-| Feature | Script Mode | Add-on Mode |
-|---------|-------------|-------------|
-| **Purpose** | Quick document manipulation tests | Complete add-on UI and functionality |
-| **Environment** | Document Sandbox only | Both iframe and Document Sandbox |
-| **API Access** | Document APIs | Document APIs + Add-on UI SDK |
-| **UI Components** | No UI building | Full HTML/CSS/JS interface creation |
-| **Best For** | Testing document operations | Building complete add-ons |
+| Comparison Factor | Script Mode | Add-on Mode |
+|--------------------|-------------|-------------|
+| **Purpose**        | Quick document manipulation tests | Complete add-on UI and functionality |
+| **Environment**    | Document Sandbox only | Both iframe and Document Sandbox |
+| **API Access**     | [Document APIs](../../references/document-sandbox/document-apis/index.md) | [Document APIs](../../references/document-sandbox/document-apis/index.md) + [Add-on UI SDK](../../references/addonsdk/index.md) |
+| **UI Components**  | No UI building | Full HTML/CSS/JS interface creation |
+| **Best For**       | Testing document operations | Building complete add-ons |
 
 ## Script Mode
 
 ### When to Use Script Mode
 
-- To learn how the [Document APIs](../../references/document-sandbox/document-apis/index.md) work
-- To quickly test Document API calls without UI considerations
+- To learn how the Document APIs work.
+- To quickly test Document API calls without UI considerations.
 
-### How to Use Script Mode:
+### How to Use Script Mode
 
-1. Select the "Script" button in the top left corner of the playground window.
+1. Select the **Script** button in the top left corner of the playground window.
 2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object.
-3. Execute your script by clicking the "Run Code" button in the top right corner of the playground window to see changes in the current document.
+3. Execute your script by clicking the **Run Code** button in the right corner of the playground window to see changes in the current document.
 
   ![Code Playground Script Mode](./img/script-mode.png)
 
-4. (Optionally) If you want to use Document APIs that are currently marked experimental, click on the [manifest properties](../../references/manifest/index.md#requirements) icon next to the mode buttons (outlined below) and toggle "experimentalApis" to enable them:
+4. If you want to use Document APIs that are currently marked experimental, click on the properties icon to open the [Manifest JSON](../../references/manifest/index.md#requirements) editing modal and toggle **experimentalApis**:
 
   ![Script Mode Manifest Settings](./img/manifest-props-script.png)
 
@@ -135,64 +135,68 @@ A side-by-side comparison of the two modes and specific features is below:
 
 ### When to Use Add-on Mode
 
-- To develop and test an add-on directly in Adobe Express, without having to set up a full development environment
-- To prototype an add-on before building a full project
-- To iterate quickly on your add-on's UI and logic
+- To develop and test an add-on directly in Adobe Express, without having to set up a full development environment.
+- To prototype an add-on before building a full project.
+- To iterate quickly on your add-on's UI and logic.
 
-### How to Use Add-on Mode:
+### How to Use Add-on Mode
 
-1. Click on the "Add-on" button on the right of the "Script" button in the top left corner of the playground window.
+1. Click on the **Add-on** button (next to the **Script** button in the top left corner of the playground window).
 2. Write code for your add-on in each of the supplied tabs (described below). This includes HTML, CSS, and JavaScript code that will run in the iframe UI or in the Document Sandbox to interact directly with the Express document (optionally).
-3. Click "Run Code" to execute your add-on. Your add-on should open in an iframe on the right side of the Adobe Express window, ie:
+3. Click **Run Code** to execute your add-on. Your add-on should open in an iframe on the right side of the Adobe Express window, ie:
 
   ![Code Playground Add-on Mode](./img/addon-mode.png)
 
-4. If you need to set [manifest properties](../../references/manifest/index.md) for your add-on (for instance if you want to use APIs that are currently marked experimental), click on the manifest properties icon next to the mode buttons (outlined below) to enable them:
+4. If you need to set [manifest properties](../../references/manifest/index.md) for your add-on (ie: if you want to use APIs that are currently marked experimental, set permissions, OAuth domains etc), click on the properties icon to open the Manifest JSON editing modal:
 
   ![Add-on Mode Manifest Settings](./img/manifest-props-addon.png)
 
-#### HTML Tab
+### Add-on Mode Tabs
 
-This tab is for writing HTML code that defines the structure of your add-on's user interface. You can create elements like buttons, text fields, and layout containers here. Functionally, this tab mirrors the role of the `index.html` file you'd use in a typical add-on project.
+The Add-on mode features four tabs for organizing your code:
 
-#### CSS Tab
+1. **HTML Tab**
 
-Style your add-on's HTML elements in this tab. Create a visually appealing interface consistent with Adobe Express design patterns. This section corresponds to the `styles.css` file in a standard add-on project.
+  This tab is for writing HTML code that defines the structure of your add-on's user interface. You can create elements like buttons, text fields, and layout containers here. Functionally, this tab mirrors the role of the `index.html` file you'd use in a typical add-on project.
 
-#### Iframe JS Tab
+2. **CSS Tab**
 
-This tab is for writing JavaScript code that runs in the iframe context of your add-on. Here, you can interact with:
+  Style your add-on's HTML elements in this tab. Create a visually appealing interface consistent with Adobe Express design patterns. This section corresponds to the `styles.css` file in a standard add-on project.
 
-- The [Add-on UI SDK (`addOnUISdk`)](../../references/addonsdk/index.md)
-- The DOM elements in your HTML
-- Event handlers for your UI components
+3. **Iframe JS Tab**
 
-This environment corresponds to the code you would typically write in your `index.js` or UI JavaScript files in a full add-on project.
+  This tab is for writing JavaScript code that runs in the iframe context of your add-on. Here, you can interact with:
 
-#### Document JS Tab
+    - The [Add-on UI SDK (`addOnUISdk`)](../../references/addonsdk/index.md)
+    - The DOM elements in your HTML
+    - Event handlers for your UI components
 
-This tab is where you write JavaScript code that interacts directly with the Adobe Express document. It runs in the [Document Sandbox](../../references/document-sandbox/index.md) environment and gives you access to:
+  This environment corresponds to the code you would typically write in your `index.js` or UI JavaScript files in a full add-on project.
 
-- Document manipulation capabilities with the [Document APIs](../../references/document-sandbox/document-apis/index.md)
-- [Communication APIs](../../references/document-sandbox/communication/index.md) to facilitate interaction between the iframe context and the Document Sandbox.
+4. **Document JS Tab**
 
-The Document JS tab corresponds to the code typically found in the `code.js` file of a complete add-on project.
+  This tab is where you write JavaScript code that interacts directly with the Adobe Express document. It runs in the [Document Sandbox](../../references/document-sandbox/index.md) environment and gives you access to:
+
+    - Document manipulation capabilities with the [Document APIs](../../references/document-sandbox/document-apis/index.md)
+    - [Communication APIs](../../references/document-sandbox/communication/index.md) to facilitate interaction between the iframe context and the Document Sandbox.
+
+  The Document JS tab corresponds to the code typically found in the `code.js` file of a complete add-on project.
 
 ## Transitioning from Script Mode to Add-on Mode
 
-Once you've tested your code in Script mode, you can easily transition it into the Add-on mode to build a user interface around your new functionality. Here's how:
+Once you've tested your code in Script mode, you can easily transition it into the [Add-on mode](#add-on-mode) to build a user interface around your new functionality. Here's how:
 
-1. Use the "Copy" button in the right corner to quickly copy your code to the clipboard.
-2. Click the "Add-on" button to enter Add-on mode.
-3. Paste the code into the "Document JS" tab.
-4. Modify your script code to be used in the add-on context along with your front-end logic in the HTML, Iframe, and CSS tabs. Use the initial sample code provided as a reference.
-5. Click the "Run Code" button in Add-on mode to execute your code within the context of your add-on.
+1. Use the **Copy** button in the right corner to quickly copy your code to the clipboard.
+2. Click the **Add-on** button to enter [Add-on mode](#add-on-mode).
+3. Paste the code into the [**Document JS**](#add-on-mode-tabs) tab.
+4. Modify your script code to be used in the add-on context along with your front-end logic in the [**HTML**](#add-on-mode-tabs), [**Iframe JS**](#add-on-mode-tabs), and [**CSS**](#add-on-mode-tabs) tabs. Use the initial sample code provided as a reference.
+5. Click the **Run Code** button to execute your code within the context of your add-on.
 
 ## Workflow Tips
 
-Keyboard Shortcuts, local persistence, and session management are all designed to help you get the most out of the Code Playground.
+Keyboard Shortcuts, local save and session management are all designed to help you get the most out of the Code Playground.
 
-### Keyboard Shortcuts:
+### Keyboard Shortcuts
 
 | Action | Windows/Linux | macOS |
 |--------|---------------|-------|
@@ -204,26 +208,32 @@ Keyboard Shortcuts, local persistence, and session management are all designed t
 | **Switch between tabs** | <kbd>Ctrl</kbd>+<kbd>1, 2, 3, 4</kbd> | <kbd>Cmd</kbd>+<kbd>1, 2, 3, 4</kbd> |
 | **View the typings suggestions** | <kbd>Ctrl</kbd>+<kbd>space</kbd> | <kbd>Cmd</kbd>+<kbd>space</kbd> |
 
+<InlineAlert slots="header,text1" variant="success"/>
+
+#### TIP
+
+Use the "**...**" button in the top right corner of the playground window to reference the available keyboard shortcuts, start a new session, link to documentation and more.
+
 ### Saving Your Work
 
 The Code Playground features local persistence to help prevent the loss of your work. This functionality ensures that your code is stored in your browser's local storage, providing a safeguard against accidental data loss.
 
-Code in the playground is not saved automatically, but you can ensure it's saved with one of the following options:
+Code in the playground is ***not saved automatically***. To ensure it's saved, you need to take one of the following steps:
 
-  1. Save your work using the keyboard shortcut for Save [(above)](#keyboard-shortcuts)
-  2. Run the code via the "Run Code" button or with the keyboard shortcut for Run [(above)](#keyboard-shortcuts)
-  3. When exiting the playground
+  1. Save your work using the [keyboard shortcut for Save](#keyboard-shortcuts).
+  2. Run the code via the **Run Code** button or with the [keyboard shortcut for Run](#keyboard-shortcuts).
+  3. Exit the playground (with the **X** in the upper right corner).
 
-<InlineAlert slots="header, text" variant="warning">
+If you don't want to save your work at any time, use the [keyboard shortcut to Reset](#keyboard-shortcuts).
 
-#### Important
+<InlineAlert slots="header, text1" variant="warning"/>
 
-- Only your most recent session is saved
-- Storage is browser-specific (not synced across devices)
-- Code is not saved in incognito/private browsing modes
-- Clearing browser data will delete saved code
+#### IMPORTANT
 
-</InlineAlert>
+- Only your most recent session is saved.
+- Storage is browser-specific (not synced across devices).
+- Code is not saved in incognito/private browsing modes.
+- Clearing browser data will delete saved code.
 
 ### Resuming Sessions
 
@@ -231,28 +241,26 @@ There are two ways to resume working on your last saved session:
 
 1. **Via the Add-ons Panel:**
 
-  - With any document open, click the "Add-ons" button in the left sidebar
-  - Select the "Your add-ons" tab
-  - Toggle on "**Code Playground**" at the bottom of the panel
+   - With any document open, click the **Add-ons** button in the left rail.
+   - Select the **Your add-ons** tab.
+   - Toggle on **Code Playground** at the bottom of the panel.
 
-  ![Code Playground Add-on Mode](./img/playground-on.png)
+   ![Code Playground Add-on Mode](./img/playground-on.png)
 
 2. **Via the Your add-ons Page:**
 
-  - The "Your add-ons" page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session or create a new one.
-  - Find the "**Playground Sessions**" section in the "Your add-ons" page
-  - Access your last session or create a new one with one click
+   - The **Your add-ons** page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session or create a new one.
+   - Find the **Playground Sessions** section in the **Your add-ons** page.
+   - Access your last session or create a new one with one click.
 
   ![Manage Your add-ons page](./img/playground-sessions.png)
 
-<InlineAlert slots="header, text" variant="info">
+<InlineAlert slots="header, text1" variant="info"/>
 
-#### Accessing "Your add-ons" page
+#### Accessing "Your add-ons" Page
 
-- **Without a document open:** Click the Add-ons button in the left rail, then click the Add-on development toggle in the top right.
-- **With a document open:** Click the Add-ons button in the left rail, select the "Your add-ons" tab, then click the "Manage add-ons" link in the Add-on Testing section.
-
-</InlineAlert>
+- **Without a document open:** Click the **Add-ons** button in the left rail, then click the **Add-on development** toggle in the top right.
+- **With a document open:** Click the **Add-ons** button in the left rail, select the **Your add-ons** tab, then click the "Manage add-ons" link in the Add-on Testing section.
 
 ## Resources
 
@@ -263,7 +271,9 @@ There are two ways to resume working on your last saved session:
 
 ## Next Steps: Build Your Add-on Locally
 
-After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment, follow our [Quickstart Guide](../getting_started/quickstart.md) to get up and running quickly. Once you've created your new project, simply copy your code from the Code Playground [Add-on mode tabs](#how-to-use-add-on-mode) to the corresponding files in your new project to get started!
+After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment, follow our [Quickstart Guide](../getting_started/quickstart.md) to get up and running quickly. 
+
+Once you've created your new project, simply copy your code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project to get started!
 
 ## FAQs
 
