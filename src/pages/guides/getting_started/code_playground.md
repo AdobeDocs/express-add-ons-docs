@@ -16,8 +16,8 @@ keywords:
   - Add-on dev tool
   - Express Document
 title: Code Playground
-description: How to access the Code Playground
-contributors:
+description: A guide to using the Code Playground in Adobe Express.
+contributors:  
   - https://github.com/padmkris123
   - https://github.com/hollyschinsky
   - https://github.com/ErinFinnegan
@@ -99,16 +99,18 @@ The Code Playground is designed to support the following development workflow us
 
 The playground offers two distinct development modes:
 
-- [**Script Mode**](#script-mode): Experiment with the Express [Document Sandbox](../../references/document-sandbox/index.md) directly.
+- [**Script Mode**](#script-mode): Experiment with the Adobe Express [Document Sandbox](../../references/document-sandbox/index.md). This mode is equivalent to writing code in the `sandbox/code.js` file in an add-on project running locally, but allows you to rapidly test in Express directly.
 - [**Add-on Mode**](#add-on-mode): Test and iterate on your [Add-on UI](../../references/addonsdk/) and functionality with no setup required.
 
-A summary of the differences between the two modes is provided in the table below:
+<br/>
 
 | Comparison Factor | Script Mode | Add-on Mode |
 |--------------------|-------------|-------------|
 | **Purpose**        | Quick document manipulation tests | Complete add-on UI and functionality |
 | **Environment**    | Document Sandbox only | Both iframe and Document Sandbox |
 | **API Access**     | [Document APIs](../../references/document-sandbox/document-apis/index.md) | [Document APIs](../../references/document-sandbox/document-apis/index.md) + [Add-on UI SDK](../../references/addonsdk/index.md) |
+| **Global Await**   | Yes | No |
+| **Automatic Imports** | Yes | No |
 | **UI Components**  | No UI building | Full HTML/CSS/JS interface creation |
 | **Best For**       | Testing document operations | Building complete add-ons |
 
@@ -116,8 +118,10 @@ A summary of the differences between the two modes is provided in the table belo
 
 ### When to Use Script Mode
 
-- To learn how the Document APIs work.
-- To quickly test Document API calls without UI considerations.
+- To learn how the Document APIs work 
+- To quickly experiment with Document API calls without UI considerations
+
+**Remember**: The code you write in this mode can be considered the same as the code you would write and use in the `sandbox/code.js` file in an add-on project running locally.
 
 ### How to Use Script Mode
 
@@ -130,6 +134,21 @@ A summary of the differences between the two modes is provided in the table belo
 4. If you want to use Document APIs that are currently marked experimental, click on the properties icon to open the [Manifest JSON](../../references/manifest/index.md#requirements) editing modal and toggle **experimentalApis**:
 
   ![Script Mode Manifest Settings](./img/manifest-props-script.png)
+
+5. Head over to our [How-to guides](../develop/how_to.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
+
+  - [How to Use Geometry](../develop/how_to/use_geometry.md)
+  - [How to Use Color](../develop/how_to/use_color.md)
+  - [How to Use Text](../develop/how_to/use_text.md)
+
+#### Key Features:
+
+- **Global Async Wrapper**: Script mode provides a global async wrapper, allowing you to execute asynchronous code without the need to wrap it in an `async` function. This is particularly useful for API calls that return promises (ie: loading fonts).
+- **Automatic import**: Script mode automatically imports the `express-document-sdk` modules, so you don't need to add import statements for the [Document APIs](../../references/document-sandbox/document-apis/index.md).
+
+<InlineAlert slots="text" variant="info"/>
+
+Once you switch to the [Add-on mode](#add-on-mode) or to your local add-on development environment, you will need to handle your `async` functions and `import` statements manually.
 
 ## Add-on Mode
 
@@ -190,13 +209,16 @@ Once you've tested your code in Script mode, you can easily transition it into t
 2. Click the **Add-on** button to enter [Add-on mode](#add-on-mode).
 3. Paste the code into the [**Document JS**](#add-on-mode-tabs) tab.
 4. Modify your script code to be used in the add-on context along with your front-end logic in the [**HTML**](#add-on-mode-tabs), [**Iframe JS**](#add-on-mode-tabs), and [**CSS**](#add-on-mode-tabs) tabs. Use the initial sample code provided as a reference.
-5. Click the **Run Code** button to execute your code within the context of your add-on.
+5. If you set any manifest properties (ie: **experimentalApis**) while in [Script mode](#how-to-use-script-mode), make sure to set the same in the [Add-ons mode - Edit Manifest JSON Modal](#how-to-use-add-on-mode) as well. These settings only apply to the context of the development mode you're in. 
+6. Click the **Run Code** button to execute your code within the context of your add-on.
 
 ## Workflow Tips
 
 Keyboard Shortcuts, local save and session management are all designed to help you get the most out of the Code Playground.
 
 ### Keyboard Shortcuts
+
+<br/>
 
 | Action | Windows/Linux | macOS |
 |--------|---------------|-------|
@@ -271,9 +293,12 @@ There are two ways to resume working on your last saved session:
 
 ## Next Steps: Build Your Add-on Locally
 
-After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment, follow our [Quickstart Guide](../getting_started/quickstart.md) to get up and running quickly. 
+After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment:
 
-Once you've created your new project, simply copy your code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project to get started!
+1. Follow our [Quickstart Guide](../getting_started/quickstart.md) to get your environment set up and your first add-on project created quickly. 
+2. Copy the code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project.
+3. Copy the JSON from the [Manifest JSON Editor](#how-to-use-add-on-mode) in the Code Playground into the `src/manifest.json` file in your new project.
+4. Run your add-on locally using the [Adobe Express CLI](../getting_started/quickstart.md) to test and see your changes in real-time.
 
 ## FAQs
 
