@@ -30,7 +30,7 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 
 ## What is Code Playground?
 
-Code Playground provides a low-barrier entry point for add-on development, allowing you to experiment and iterate on ideas directly without any setup, from within Adobe Express. From learning the basics to rapidly prototyping advanced concepts, Code Playground accommodates all stages of add-on development.
+Code Playground provides developers with a low-barrier entry point for add-on development, allowing you to experiment and iterate on ideas directly without any setup, from within Adobe Express. From learning the basics to rapidly prototyping advanced concepts, Code Playground accommodates all stages of add-on development.
 
 ## Who Should Use Code Playground?
 
@@ -43,6 +43,8 @@ The Code Playground is designed for:
 - **Designers**: UX/UI designers who want to experiment with add-on interfaces without extensive coding setup.
 
 ## Features
+
+The Code Playground offers the following features:
 
 | Feature | Description |
 |---------|-------------|
@@ -64,7 +66,7 @@ The Code Playground is designed for:
 
 ## Development Workflow Use Cases
 
-There are numerous opportunities for using the Code Playground to help you throughout the development process, including:
+The Code Playground is designed to support the following development workflow use cases:
 
 - **Experiment First**: Test your ideas and API interactions before committing to full add-on development.
 - **Learn as You Go**: Master the basics of Document APIs and Add-on SDK without complex setup requirements.
@@ -91,7 +93,7 @@ There are numerous opportunities for using the Code Playground to help you throu
 
 - Once enabled, the playground window will open, allowing you to begin coding immediately!
 
-  ![Adobe Express Code Playground](./img/script-mode.png)
+  ![Adobe Express Code Playground Open](./img/playground-open.png)
   
 ## Choose Your Development Mode
 
@@ -176,7 +178,7 @@ This tab is where you write JavaScript code that interacts directly with the Ado
 
 The Document JS tab corresponds to the code typically found in the `code.js` file of a complete add-on project.
 
-### Transitioning from Script Mode to Add-on Mode
+## Transitioning from Script Mode to Add-on Mode
 
 Once you've tested your code in Script mode, you can easily transition it into the Add-on mode to build a user interface around your new functionality. Here's how:
 
@@ -187,6 +189,8 @@ Once you've tested your code in Script mode, you can easily transition it into t
 5. Click the "Run Code" button in Add-on mode to execute your code within the context of your add-on.
 
 ## Workflow Tips
+
+Keyboard Shortcuts, local persistence, and session management are all designed to help you get the most out of the Code Playground.
 
 ### Keyboard Shortcuts:
 
@@ -204,15 +208,15 @@ Once you've tested your code in Script mode, you can easily transition it into t
 
 The Code Playground features local persistence to help prevent the loss of your work. This functionality ensures that your code is stored in your browser's local storage, providing a safeguard against accidental data loss.
 
-Code in the playground is not saved automatically, but you can ensure it's saved by using one of the following options:
+Code in the playground is not saved automatically, but you can ensure it's saved with one of the following options:
 
   1. Save your work using the keyboard shortcut for Save [(above)](#keyboard-shortcuts)
   2. Run the code via the "Run Code" button or with the keyboard shortcut for Run [(above)](#keyboard-shortcuts)
   3. When exiting the playground
 
-<InlineAlert slots="header, text1, text2, text3, text4" variant="warning">
+<InlineAlert slots="header, text" variant="warning">
 
-##### IMPORTANT
+#### Important
 
 - Only your most recent session is saved
 - Storage is browser-specific (not synced across devices)
@@ -241,7 +245,7 @@ There are two ways to resume working on your last saved session:
 
   ![Manage Your add-ons page](./img/playground-sessions.png)
 
-<InlineAlert slots="header, text1, text2" variant="info">
+<InlineAlert slots="header, text" variant="info">
 
 #### Accessing "Your add-ons" page
 
