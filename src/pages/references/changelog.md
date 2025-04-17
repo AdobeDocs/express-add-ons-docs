@@ -284,7 +284,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
 
 - The [Samples](../samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../samples.md#audio-recording-addon).
-- The [Common Use Cases](/guides/develop/use_cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](/guides/develop/how-to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
+- The [Common Use Cases](/guides/develop/use_cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](../guides/develop/how-to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
 
 ## 2024-03-19
 
@@ -307,7 +307,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   In addition, the [monetization guidelines](../guides/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../guides/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../guides/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../guides/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
-- A new [Concepts guide](../references/document-sandbox/document-apis/concepts/index.md) was added to the [Document APIs](../references/document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
+- A new [Concepts guide](../references/document-sandbox/document-apis/concepts/index.md) was added to the [Document APIs](../references/document-sandbox/document-apis/index.md) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
 
@@ -316,7 +316,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-02-07
 
 - A new [`createPath`](../references/document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
-- Updates descriptions in various methods and classes in the [Document APIs](../references/document-sandbox/document-apis/).
+- Updates descriptions in various methods and classes in the [Document APIs](../references/document-sandbox/document-apis/index.md).
 - Updates to the [`createRenditions`](../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
 - Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../guides/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../guides/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
@@ -347,7 +347,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 
 <InlineAlert slots="text" variant="warning"/>
 
-**BREAKING NEWS:** The [Adobe Express Document Sandbox](../references/document-sandbox/) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
+**BREAKING NEWS:** The [Adobe Express Document Sandbox](../references/document-sandbox/index.md) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
 
 ### Breaking changes (experimental APIs)
 
@@ -430,10 +430,10 @@ Some items in the following list of changes may have been mentioned in recent up
   ```
 
 - A new [`BaseNode`](../references/document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](../references/document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
-- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../references/document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
+- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../references/document-sandbox/index.md). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
   **Adobe Express Document APIs SDK import**
-  For access to the [Express document and content authoring APIs](../references/document-sandbox/document-apis/):
+  For access to the [Express document and content authoring APIs](../references/document-sandbox/document-apis/index.md):
 
   ```js
   // Old
@@ -446,7 +446,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ```
 
   **Document Sandbox SDK import**
-  For access to the [document sandbox runtime APIs](../references/document-sandbox/):
+  For access to the [document sandbox runtime APIs](../references/document-sandbox/index.md):
 
   ```js
   // Old
@@ -478,14 +478,14 @@ Some items in the following list of changes may have been mentioned in recent up
 
 - The CLI has been updated to release version `1.1.1`, and includes the following:
 
-  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../references/document-sandbox/), and the `experimentalApis` flag has been removed. Please review the updated [references](../references/document-sandbox/) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
+  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../references/document-sandbox/index.md), and the `experimentalApis` flag has been removed. Please review the updated [references](../references/document-sandbox/index.md) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
   - Typings support has been added to the `javascript` templates to enable intellisense features.
   - Manifest property additions.
   - General improvements and bug fixes.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
-- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/) listed here.
+- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../references/document-sandbox/document-apis/index.md) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -505,7 +505,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Updates
 
-- The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+- The [Document API's](./document-sandbox/document-apis/index.md) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
 
   ```js
   // Before
@@ -534,7 +534,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ellipse.fill = ellipseFill;
   ```
 
-- A new release has landed for the [**In-App Developer Submission experience**](../guides/distribute/) in Express. Some highlights from the release:
+- A new release has landed for the [**In-App Developer Submission experience**](../guides/distribute/index.md) in Express. Some highlights from the release:
 
   **Create Add-on flow:** You can now create [an add-on "container"](../guides/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
@@ -555,7 +555,7 @@ Some items in the following list of changes may have been mentioned in recent up
 ### Updates
 
 - Adds support to the [Add-on UI SDK](./addonsdk/index.md) for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../references/addonsdk/addonsdk-app.md#events).
-- Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/):
+- Updates the names of the SDK imports for the [Document Sandbox](../references/document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/index.md):
 
   **Document Sandbox SDK import**
 
@@ -608,7 +608,7 @@ Some items in the following list of changes may have been mentioned in recent up
 ### Updates
 
 - The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
-- The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
+- The [Document API References](./document-sandbox/document-apis/index.md) were updated with the following additions and changes:
 
   **New Classes/Interfaces**
 
@@ -621,7 +621,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Updates to Node Classes**
 
-The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
+The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/index.md) specifically to learn more about each.
 
 - Removes `absoluteRotation` accessor
 - Removes `absoluteTransform` accessor
@@ -638,7 +638,7 @@ The accessors and methods below were removed or replaced with new names in the [
 
 ## 2023-11-27
 
-Updated [Document API references](./document-sandbox/document-apis/) to include:
+Updated [Document API references](./document-sandbox/document-apis/index.md) to include:
 
 - [ComplexShapeNode class](./document-sandbox/document-apis/classes/ComplexShapeNode.md)
 - [GridLayoutNode class](./document-sandbox/document-apis/classes/GridLayoutNode.md)
@@ -647,7 +647,7 @@ Updated [Document API references](./document-sandbox/document-apis/) to include:
 
 ## 2023-11-6
 
-- Added a [new tutorial section](../guides/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../guides/tutorials/grids-addon.md) by Davide Barranca.
+- Added a [new tutorial section](../guides/tutorials/index.md) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../guides/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
 
@@ -667,7 +667,7 @@ Updates to the [OAuth APIs](./addonsdk/app-oauth.md) to allow for a new optional
 
 ### Updates
 
-Published new [Guidelines and requirements section](../guides/distribute/guidelines/); including [General guidelines](../guides/distribute/guidelines/general/), [Developer brand guidelines](../guides/distribute/guidelines/), [Monetization guidelines](../guides/distribute/guidelines/monetization.md) and [Generative AI guidelines](../guides/distribute/guidelines/genai/).
+Published new [Guidelines and requirements section](../guides/distribute/guidelines/index.md); including [General guidelines](../guides/distribute/guidelines/general/index.md), [Developer brand guidelines](../guides/distribute/guidelines/index.md), [Monetization guidelines](../guides/distribute/guidelines/monetization.md) and [Generative AI guidelines](../guides/distribute/guidelines/genai/index.md).
 
 ## 2023-10-03
 
@@ -701,7 +701,7 @@ which include:
 #### Documentation updates
 
 - Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
-- Updated [Getting Started guides](../guides/getting_started/) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
+- Updated [Getting Started guides](../guides/getting_started/index.md) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
 
@@ -743,7 +743,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
   - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **document sandbox/Editor APIs**.
 
   **IMPORTANT**:
-  Developers who are **NOT** using the [document sandbox/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`.
+  Developers who are **NOT** using the [document sandbox/Editor APIs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/index.md) should update to their types package to `0.1.6` at minimum by changing the version of it to `@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6` in the `package.json`.
 
   The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
 
@@ -760,7 +760,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Updates
 
-- The [Communication API](../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../references/document-sandbox/) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../references/document-sandbox/index.md) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -824,7 +824,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new [references section](../references/document-sandbox/) for the document sandbox APIs.
+- Added new [references section](../references/document-sandbox/index.md) for the document sandbox APIs.
 
 ### Important notes on document sandbox APIs (aka Document Sandbox)
 
@@ -869,7 +869,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../references/document-sandbox/).
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../references/document-sandbox/index.md).
 - Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11
