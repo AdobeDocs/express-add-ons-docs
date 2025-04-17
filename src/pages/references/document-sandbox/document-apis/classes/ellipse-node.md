@@ -58,7 +58,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 [`BlendMode`](../enumerations/BlendMode.md)
 
----
+<hr />
 
 ### boundsInParent
 
