@@ -157,7 +157,9 @@ ellipse.stroke = {
 
 The [Document Stats tutorial](../../../../guides/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
 
-![](images/stats-addon-animation.gif)
+<Embed slots="video" />
+
+./images/stats-addon-animation.mp4
 
 To log the `type` property is acceptable in this specific case, although the proper way to check against node types involves constants; the `type` itself is an internal string value mapped to the `SceneNodeType` enumerable.
 
@@ -222,7 +224,7 @@ CLI versions from `"1.1.1"` onwards now scaffold add-ons with **type definitions
 
 The bottom line is that `.d.ts` and `tsconfig.json` files in your JavaScript (and TypeScript) projects give code editors knowledge about the Adobe Express document sandbox APIs: it's used to provide code completion and type checking, which can help you avoid errors and write code faster.
 
-![](images/refs-addon-intellisense.png)
+![Refs add on intellisense](./images/refs-addon-intellisense.png)
 
 <InlineAlert variant="info" slots="text1, text2, text3" />
 
@@ -521,7 +523,7 @@ vText.setRotationInParent(-90, { x: 0, y: 0 }); // 👈
 
 In the final add-on code, there are three buttons: one logs the selected node, one draws the dimensions as you've just seen, and the last one is a refactored version that also draws dashed lines (red and thinner) connecting the dimensions to the object's corners.
 
-![](images/refs-addon-refactor.png)
+![addon refactor](images/refs-addon-refactor.png)
 
 For brevity's sake, only a few relevant additions to the code will be mentioned below—please refer to the [full sample](#final-project) for the complete picture.
 
