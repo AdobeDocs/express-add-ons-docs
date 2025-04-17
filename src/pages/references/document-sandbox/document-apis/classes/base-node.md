@@ -25,7 +25,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 [`AddOnData`](AddOnData.md)
 
----
+<hr />
 
 ### allChildren
 
@@ -43,7 +43,7 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly`<`Iterable`<[`BaseNode`](BaseNode.md), `any`, `any`\>\>
 
----
+<hr />
 
 ### id
 
@@ -56,7 +56,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<hr />
 
 ### parent
 
@@ -73,7 +73,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
----
+<hr />
 
 ### type
 
