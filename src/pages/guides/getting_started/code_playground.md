@@ -121,7 +121,7 @@ The playground offers two distinct development modes:
 - To learn how the Document APIs work 
 - To quickly experiment with Document API calls without UI considerations
 
-**Remember**: The code you write in this mode can be considered the same as the code you would write and use in the `sandbox/code.js` file in an add-on project running locally.
+**Note:** The code you write in this mode is equivalent to the code you would write and use in the `sandbox/code.js` file in an add-on project running locally.
 
 ### How to Use Script Mode
 
@@ -137,18 +137,37 @@ The playground offers two distinct development modes:
 
 5. Head over to our [How-to guides](../develop/how_to.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
 
-  - [How to Use Geometry](../develop/how_to/use_geometry.md)
-  - [How to Use Color](../develop/how_to/use_color.md)
-  - [How to Use Text](../develop/how_to/use_text.md)
+    - [How to Use Geometry](../develop/how_to/use_geometry.md)
+    - [How to Use Color](../develop/how_to/use_color.md)
+    - [How to Use Text](../develop/how_to/use_text.md)
 
-#### Key Features:
+#### Key Considerations
 
-- **Global Async Wrapper**: Script mode provides a global async wrapper, allowing you to execute asynchronous code without the need to wrap it in an `async` function. This is particularly useful for API calls that return promises (ie: loading fonts).
-- **Automatic import**: Script mode automatically imports the `express-document-sdk` modules, so you don't need to add import statements for the [Document APIs](../../references/document-sandbox/document-apis/index.md).
+- **No UI**: Script mode is focused on Document API interactions and does not support building a user interface. If you want to create a UI, switch to [Add-on mode](#add-on-mode).
+
+- **Global Await**: The script runtime provides a global `async` wrapper, allowing you to use `await` directly when executing asynchronous code, without needing to wrap it in an `async` function. This is particularly useful for API calls that return promises, where an `await` is needed to pause the execution of an `async` function until the Promise is resolved or rejected. For example, loading a font is an asynchronous operation, but in Script mode you can use `await` directly to pause the execution of the script until the font is loaded, ie:
+
+```js
+// The script runtime provides an async wrapper to allow this:
+const textNode = editor.context.selection[0];
+const lato = await fonts.fromPostscriptName("Lato-Light");
+```
+
+In contrast, in [**Add-on mode**](#add-on-mode) you will need to manually wrap the code in an `async` function and use `await` in it, ie:
+
+```js
+//sandbox.code.js or Document JS tab
+loadFont: async () => {
+  const textNode = editor.context.selection[0];
+  const lato = await fonts.fromPostscriptName("Lato-Light");  
+}
+```
+
+- **Automatic Imports**: Script mode automatically imports the `express-document-sdk` modules, so you don't need to add import statements for the [Document APIs](../../references/document-sandbox/document-apis/index.md). However, if you do add import statements, it wont harm anything.
 
 <InlineAlert slots="text" variant="info"/>
 
-Once you switch to the [Add-on mode](#add-on-mode) or to your local add-on development environment, you will need to handle your `async` functions and `import` statements manually.
+Once you switch to the [Add-on mode](#add-on-mode) or to your local add-on development environment, you will need to make sure to handle your `async` functions and `import` statements manually.
 
 ## Add-on Mode
 
@@ -207,7 +226,7 @@ Once you've tested your code in Script mode, you can easily transition it into t
 
 1. Use the **Copy** button in the right corner to quickly copy your code to the clipboard.
 2. Click the **Add-on** button to enter [Add-on mode](#add-on-mode).
-3. Paste the code into the [**Document JS**](#add-on-mode-tabs) tab.
+3. Paste the code into the [**Document JS**](#add-on-mode-tabs) tab. **Note:** Don't forget you'll need to add the `import` statements for the Document APIs and handle your `async` functions manually in this mode.
 4. Modify your script code to be used in the add-on context along with your front-end logic in the [**HTML**](#add-on-mode-tabs), [**Iframe JS**](#add-on-mode-tabs), and [**CSS**](#add-on-mode-tabs) tabs. Use the initial sample code provided as a reference.
 5. If you set any manifest properties (ie: **experimentalApis**) while in [Script mode](#how-to-use-script-mode), make sure to set the same in the [Add-ons mode - Edit Manifest JSON Modal](#how-to-use-add-on-mode) as well. These settings only apply to the context of the development mode you're in. 
 6. Click the **Run Code** button to execute your code within the context of your add-on.
@@ -296,7 +315,7 @@ There are two ways to resume working on your last saved session:
 After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment:
 
 1. Follow our [Quickstart Guide](../getting_started/quickstart.md) to get your environment set up and your first add-on project created quickly. 
-2. Copy the code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project.
+2. Copy the code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project. **Note:** Don't forget, if you're copying code from Script mode into your `sandbox/code.js` file, you'll need to add the `import` statements for the Document APIs and handle your `async` functions manually.
 3. Copy the JSON from the [Manifest JSON Editor](#how-to-use-add-on-mode) in the Code Playground into the `src/manifest.json` file in your new project.
 4. Run your add-on locally using the [Adobe Express CLI](../getting_started/quickstart.md) to test and see your changes in real-time.
 
