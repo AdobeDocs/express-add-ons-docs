@@ -189,11 +189,11 @@ Use the performance profiler in Chrome DevTools to identify performance bottlene
 
 The Chrome Task Manager displays the CPU, memory, and network usage of each open tab and plug-in, and allows you to kill an individual process similar to the Windows Task Manager or MacOS Activity Monitor. To open the Task Manager, go to the Chrome triple dot menu -> **More Tools** -> **Task Manager**:
 
-![Task Manager](img/menu_task_mgr.png)
+![Task Manager](./img/menu_task_mgr.png)
 
 There you can locate the memory consumption of the OS process spawned specifically for the add-on iframe, like below:
 
-![Task Manager](img/task-mgr.png)
+![Task Manager](./img/task-mgr.png)
 
 #### Memory Consumption Monitoring
 
