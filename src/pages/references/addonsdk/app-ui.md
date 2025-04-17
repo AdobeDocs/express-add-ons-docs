@@ -236,7 +236,7 @@ Both Collection and Tab navigation can be executed in combination.
 
 #### Example usage
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
