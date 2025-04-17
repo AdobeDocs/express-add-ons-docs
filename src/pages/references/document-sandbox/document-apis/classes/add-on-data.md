@@ -33,11 +33,11 @@ The object contains the following properties:
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator` [`string`, `string`], `any`, `any`
+• **\[iterator\]**(): `Iterator`<[`string`, `string`], `any`, `any`\>
 
 #### Returns
 
-`Iterator` [`string`, `string`], `any`, `any`
+`Iterator`<[`string`, `string`], `any`, `any`\>
 
 an iterator for all the private metadata entries on the node.
 The iterator yields the metadata key-value pairs.
