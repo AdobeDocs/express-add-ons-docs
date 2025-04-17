@@ -29,11 +29,11 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 [`AddOnData`](AddOnData.md)
 
----
+<hr />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly` `Iterable` [`Node`](Node.md), `any`, `any`
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
@@ -44,9 +44,9 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
+`Readonly` `Iterable` [`Node`](Node.md), `any`, `any`
 
----
+<hr />
 
 ### blendMode
 
@@ -65,11 +65,11 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 [`BlendMode`](../enumerations/BlendMode.md)
 
----
+<hr />
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+• `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/Rect.md)
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -79,13 +79,13 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly` [`Rect`](../interfaces/Rect.md)
 
----
+<hr />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+• `get` **boundsLocal**(): `Readonly` [`Rect`](../interfaces/Rect.md)
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -96,21 +96,21 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly` [`Rect`](../interfaces/Rect.md)
 
----
+<hr />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **centerPointLocal**(): `Readonly` [`Point`](../interfaces/Point.md)
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly` [`Point`](../interfaces/Point.md)
 
----
+<hr />
 
 ### id
 
@@ -123,7 +123,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<hr />
 
 ### locked
 
@@ -144,7 +144,7 @@ before using the API to make changes to locked nodes.
 
 `boolean`
 
----
+<hr />
 
 ### maskShape
 
@@ -158,7 +158,7 @@ different shape via this API.
 
 [`FillableNode`](FillableNode.md)
 
----
+<hr />
 
 ### mediaRectangle
 
@@ -172,7 +172,7 @@ for now.
 
 [`Node`](Node.md) \| [`ImageRectangleNode`](ImageRectangleNode.md)
 
----
+<hr />
 
 ### opacity
 
@@ -190,7 +190,7 @@ The node's opacity, from 0.0 to 1.0
 
 `number`
 
----
+<hr />
 
 ### parent
 
@@ -207,7 +207,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
----
+<hr />
 
 ### rotation
 
@@ -220,7 +220,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<hr />
 
 ### rotationInScreen
 
@@ -233,11 +233,11 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<hr />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **topLeftLocal**(): `Readonly` [`Point`](../interfaces/Point.md)
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -245,9 +245,9 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly` [`Point`](../interfaces/Point.md)
 
----
+<hr />
 
 ### transformMatrix
 
@@ -259,11 +259,11 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<hr />
 
 ### translation
 
-• `get` **translation**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **translation**(): `Readonly` [`Point`](../interfaces/Point.md)
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -277,9 +277,9 @@ setting translation directly.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly` [`Point`](../interfaces/Point.md)
 
----
+<hr />
 
 ### type
 
@@ -291,7 +291,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
----
+<hr />
 
 ### visualRoot
 
@@ -312,7 +312,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+• **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/Rect.md)
 
 Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
@@ -324,17 +324,17 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly` [`Rect`](../interfaces/Rect.md)
 
 #### Inherited from
 
 [`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
 
----
+<hr />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly` [`Point`](../interfaces/Point.md)
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -348,13 +348,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly` [`Point`](../interfaces/Point.md)
 
 #### Inherited from
 
 [`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
 
----
+<hr />
 
 ### removeFromParent()
 
@@ -375,7 +375,7 @@ removal. No-op if node is already an orphan.
 
 [`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
 
----
+<hr />
 
 ### replaceMedia()
 
@@ -395,7 +395,7 @@ New content to display. Currently must be a [BitmapImage](../interfaces/BitmapIm
 
 `void`
 
----
+<hr />
 
 ### setPositionInParent()
 
@@ -433,7 +433,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<hr />
 
 ### setRotationInParent()
 
