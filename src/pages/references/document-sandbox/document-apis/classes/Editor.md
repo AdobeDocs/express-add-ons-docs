@@ -155,7 +155,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`[`BitmapImage`](../interfaces/BitmapImage.md)
+• **loadBitmapImage**(`bitmapData`): `Promise` [`BitmapImage`](../interfaces/BitmapImage.md)
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -175,7 +175,7 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise`[`BitmapImage`](../interfaces/BitmapImage.md)
+`Promise` [`BitmapImage`](../interfaces/BitmapImage.md)
 
 <hr />
 
@@ -229,7 +229,7 @@ a stroke configured with the given options.
 
 ### queueAsyncEdit()
 
-• **queueAsyncEdit**(`lambda`): `Promise``void`
+• **queueAsyncEdit**(`lambda`): `Promise` `void`
 
 Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
 the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
@@ -271,6 +271,6 @@ a function which edits the document model.
 
 #### Returns
 
-`Promise``void`
+`Promise` `void`
 
 a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.
