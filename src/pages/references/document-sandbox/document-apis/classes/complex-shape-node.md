@@ -21,7 +21,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 [`AddOnData`](AddOnData.md)
 
----
+<hr />
 
 ### allChildren
 
@@ -38,7 +38,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
----
+<hr />
 
 ### blendMode
 
@@ -57,7 +57,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 [`BlendMode`](../enumerations/BlendMode.md)
 
----
+<hr />
 
 ### boundsInParent
 
@@ -73,7 +73,7 @@ even for an orphan node with no parent.
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
----
+<hr />
 
 ### boundsLocal
 
@@ -90,7 +90,7 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
----
+<hr />
 
 ### centerPointLocal
 
@@ -102,7 +102,7 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
----
+<hr />
 
 ### fill
 
@@ -120,7 +120,7 @@ The fill applied to the shape, if any.
 
 `undefined` \| `Readonly`<[`Fill`](../interfaces/Fill.md)\>
 
----
+<hr />
 
 ### id
 
@@ -133,7 +133,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<hr />
 
 ### locked
 
@@ -154,7 +154,7 @@ before using the API to make changes to locked nodes.
 
 `boolean`
 
----
+<hr />
 
 ### opacity
 
@@ -172,7 +172,7 @@ The node's opacity, from 0.0 to 1.0
 
 `number`
 
----
+<hr />
 
 ### parent
 
@@ -189,7 +189,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](BaseNode.md)
 
----
+<hr />
 
 ### rotation
 
@@ -202,7 +202,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<hr />
 
 ### rotationInScreen
 
@@ -215,7 +215,7 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<hr />
 
 ### stroke
 
@@ -235,7 +235,7 @@ for backward compatibility. Throws if another type is provided.
 
 `undefined` \| `Readonly`<[`Stroke`](../interfaces/Stroke.md)\>
 
----
+<hr />
 
 ### topLeftLocal
 
@@ -249,7 +249,7 @@ boundsInParent.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
----
+<hr />
 
 ### transformMatrix
 
@@ -261,7 +261,7 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<hr />
 
 ### translation
 
@@ -281,7 +281,7 @@ setting translation directly.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
----
+<hr />
 
 ### type
 
@@ -293,7 +293,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/SceneNodeType.md)
 
----
+<hr />
 
 ### visualRoot
 
@@ -332,7 +332,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 [`FillableNode`](FillableNode.md).[`boundsInNode`](FillableNode.md#boundsinnode)
 
----
+<hr />
 
 ### localPointInNode()
 
@@ -356,7 +356,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 [`FillableNode`](FillableNode.md).[`localPointInNode`](FillableNode.md#localpointinnode)
 
----
+<hr />
 
 ### removeFromParent()
 
@@ -377,7 +377,7 @@ removal. No-op if node is already an orphan.
 
 [`FillableNode`](FillableNode.md).[`removeFromParent`](FillableNode.md#removefromparent)
 
----
+<hr />
 
 ### setPositionInParent()
 
@@ -415,7 +415,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<hr />
 
 ### setRotationInParent()
 
