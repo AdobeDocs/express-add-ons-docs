@@ -71,15 +71,15 @@ To use the document sandbox APIs in your add-on, start by defining a new `docume
     ]
 ```
 
-The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/), [Web APIs](./web/index.md) and [document APIs](./document-apis/index.md)).
+The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](./communication/index.md), [Web APIs](./web/index.md) and [document APIs](./document-apis/index.md)).
 
 ### CLI Generated Document Sandbox Add-on
 
-The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, you can [specify a template name](../../guides/getting_started/dev_tooling.md#templates) that includes the document sandbox support:
+The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, you can [specify a template name](../../guides/getting_started/dev-tooling.md#templates) that includes the document sandbox support:
 
 `npx @adobe/create-ccweb-add-on helloworld --template javascript-with-document-sandbox`
 
- or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
+ or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev-tooling.md#templates), then ask if you want to include the document sandbox:
 
 ![CLI prompt for document sandbox](../img/cli-doc-sandbox-prompt.png)
 
@@ -102,8 +102,7 @@ The screenshot below shows what the default script-based add-on generated from t
 
 <InlineAlert slots="text" variant="info"/>
 
-Please refer to the [Using the CLI](../../guides/getting_started/dev_tooling.md#using-the-cli) section to get more information on how to use the CLI and create new add-on.
-<br/>
+Please refer to the [Using the CLI](../../guides/getting_started/dev-tooling.md#using-the-cli) section to get more information on how to use the CLI and create new add-on.
 
 ## Code Samples
 
@@ -111,15 +110,15 @@ The following [code samples](https://github.com/AdobeDocs/express-add-on-samples
 
 ### [communication-iframe-documentSandbox sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-documentSandbox)
 
-Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox environments. Also includes demonstrating how to use some of the [Web APIs](./web/) such as `console.log()`.
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox environments. Also includes demonstrating how to use some of the [Web APIs](./web/index.md) such as `console.log()`.
 
 ### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
 
-Demonstrates how to use the [document APIs](./document-apis/) to create various shapes and add them to the document.
+Demonstrates how to use the [document APIs](./document-apis/index.md) to create various shapes and add them to the document.
 
 ### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
 
-A more comprehensive example of using the [document APIs](./document-apis/) to add a page, images and shapes, as well as clear the artboard.
+A more comprehensive example of using the [document APIs](./document-apis/index.md) to add a page, images and shapes, as well as clear the artboard.
 
 ## Debugging script based add-ons
 
