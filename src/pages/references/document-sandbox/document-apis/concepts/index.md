@@ -523,7 +523,7 @@ vText.setRotationInParent(-90, { x: 0, y: 0 }); // 👈
 
 In the final add-on code, there are three buttons: one logs the selected node, one draws the dimensions as you've just seen, and the last one is a refactored version that also draws dashed lines (red and thinner) connecting the dimensions to the object's corners.
 
-![addon refactor](images/refs-addon-refactor.png)
+![addon refactor](./images/refs-addon-refactor.png)
 
 For brevity's sake, only a few relevant additions to the code will be mentioned below—please refer to the [full sample](#final-project) for the complete picture.
 
