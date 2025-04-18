@@ -9,7 +9,7 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+• `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](TextNode.md), `any`, `any`
 
 Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. The text content
 starts in the first  [TextNode](TextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
@@ -19,9 +19,9 @@ If there are multiple [TextNode](TextNode.md)s, all of them must be configured t
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+`Readonly` `Iterable` [`TextNode`](TextNode.md), `any`, `any`
 
----
+<hr />
 
 ### characterStyleRanges
 
@@ -45,7 +45,7 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 
 readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
 
----
+<hr />
 
 ### id
 
@@ -66,7 +66,7 @@ Comparing two models using `===` will always fail.
 
 `string`
 
----
+<hr />
 
 ### paragraphStyleRanges
 
@@ -103,7 +103,7 @@ if the text content contains fonts unavailable to the current user and an ordere
 
 readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
 
----
+<hr />
 
 ### text
 
@@ -149,7 +149,7 @@ entire paragraphs, it overlaps.
 
 `void`
 
----
+<hr />
 
 ### applyParagraphStyles()
 
@@ -179,7 +179,7 @@ If not specified the styles will be applied to the entire piece of text content 
 
 `void`
 
----
+<hr />
 
 ### hasUnavailableFonts()
 
