@@ -12,7 +12,7 @@
 
 • **type**: [`autoHeight`](../enumerations/TextType.md#autoheight)
 
----
+<hr />
 
 ### width
 
