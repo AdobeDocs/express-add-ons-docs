@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / ReadOnlyItemList
 
-# Class: ReadOnlyItemList<T\>
+# Class: ReadOnlyItemList T
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
@@ -14,7 +14,7 @@ Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclas
 
 ## Type parameters
 
-• **T** _extends_ [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
 
 ## Accessors
 
@@ -28,7 +28,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<hr />
 
 ### last
 
@@ -40,7 +40,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<hr />
 
 ### length
 
@@ -56,15 +56,15 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<`T`, `any`, `any`\>
+• **\[iterator\]**(): `Iterator` `T`, `any`, `any`
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<`T`, `any`, `any`\>
+`Iterator` `T`, `any`, `any`
 
----
+<hr />
 
 ### indexOf()
 
@@ -82,7 +82,7 @@ Get index of item in list.
 
 index number, or -1 if item isn't in this list.
 
----
+<hr />
 
 ### item()
 
@@ -100,7 +100,7 @@ Zero-based index
 
 `undefined` \| `T`
 
----
+<hr />
 
 ### toArray()
 
