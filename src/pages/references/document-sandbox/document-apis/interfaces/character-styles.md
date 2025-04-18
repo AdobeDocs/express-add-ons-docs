@@ -25,13 +25,13 @@ Text color.
 
 `BaseCharacterStyles.color`
 
----
+<hr />
 
 ### font
 
 • **font**: [`Font`](../type-aliases/Font.md)
 
----
+<hr />
 
 ### fontSize
 
@@ -43,7 +43,7 @@ Size of the text in points.
 
 `BaseCharacterStyles.fontSize`
 
----
+<hr />
 
 ### letterSpacing
 
@@ -57,7 +57,7 @@ leaves spacing at its default.
 
 `BaseCharacterStyles.letterSpacing`
 
----
+<hr />
 
 ### underline
 
