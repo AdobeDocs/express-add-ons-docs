@@ -13,7 +13,7 @@ to display it in the document by creating a MediaContainerNode structure.
 
 Original height of the bitmap in pixels.
 
----
+<hr />
 
 ### width
 
