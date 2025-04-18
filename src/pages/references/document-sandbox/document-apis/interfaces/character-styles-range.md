@@ -23,7 +23,7 @@ Text color.
 
 [`CharacterStyles`](CharacterStyles.md).[`color`](CharacterStyles.md#color)
 
----
+<hr />
 
 ### font
 
@@ -33,7 +33,7 @@ Text color.
 
 [`CharacterStyles`](CharacterStyles.md).[`font`](CharacterStyles.md#font)
 
----
+<hr />
 
 ### fontSize
 
@@ -45,7 +45,7 @@ Size of the text in points.
 
 [`CharacterStyles`](CharacterStyles.md).[`fontSize`](CharacterStyles.md#fontsize)
 
----
+<hr />
 
 ### length
 
@@ -59,7 +59,7 @@ such as emojis are considered to have a length of 2.
 
 [`StyleRange`](StyleRange.md).[`length`](StyleRange.md#length)
 
----
+<hr />
 
 ### letterSpacing
 
@@ -73,7 +73,7 @@ leaves spacing at its default.
 
 [`CharacterStyles`](CharacterStyles.md).[`letterSpacing`](CharacterStyles.md#letterspacing)
 
----
+<hr />
 
 ### underline
 
