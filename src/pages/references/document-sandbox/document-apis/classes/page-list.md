@@ -11,7 +11,7 @@ remove the last remaining page from the list.
 
 ## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md)<[`PageNode`](PageNode.md)\>
+-   [`RestrictedItemList`](RestrictedItemList.md) [`PageNode`](PageNode.md)
 
 ## Accessors
 
@@ -25,7 +25,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<hr />
 
 ### last
 
@@ -37,7 +37,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<hr />
 
 ### length
 
@@ -53,19 +53,19 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<[`PageNode`](PageNode.md), `any`, `any`\>
+• **\[iterator\]**(): `Iterator` [`PageNode`](PageNode.md), `any`, `any`
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<[`PageNode`](PageNode.md), `any`, `any`\>
+`Iterator` [`PageNode`](PageNode.md), `any`, `any`
 
 #### Inherited from
 
 [`RestrictedItemList`](RestrictedItemList.md).[`[iterator]`](RestrictedItemList.md#iterator)
 
----
+<hr />
 
 ### addPage()
 
@@ -83,7 +83,7 @@ newly inserted content ([Context.insertionParent](Context.md#insertionparent)) a
 
 [`PageNode`](PageNode.md)
 
----
+<hr />
 
 ### indexOf()
 
@@ -105,7 +105,7 @@ index number, or -1 if item isn't in this list.
 
 [`RestrictedItemList`](RestrictedItemList.md).[`indexOf`](RestrictedItemList.md#indexof)
 
----
+<hr />
 
 ### item()
 
@@ -127,7 +127,7 @@ Zero-based index
 
 [`RestrictedItemList`](RestrictedItemList.md).[`item`](RestrictedItemList.md#item)
 
----
+<hr />
 
 ### moveAfter()
 
@@ -155,7 +155,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 An error if either argument is not contained in this list.
 
----
+<hr />
 
 ### moveBefore()
 
@@ -183,7 +183,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 An error if either argument is not contained in this list.
 
----
+<hr />
 
 ### remove()
 
@@ -207,7 +207,7 @@ Remove the items from the list. The items need not be contiguous.
 
 If any of the items are not in the list, or if it is illegal to remove any of the items from this parent.
 
----
+<hr />
 
 ### toArray()
 
