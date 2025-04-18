@@ -14,13 +14,13 @@
 
 The height of the text node in pixels.
 
----
+<hr />
 
 ### type
 
 • **type**: [`area`](../enumerations/TextType.md#area)
 
----
+<hr />
 
 ### width
 
