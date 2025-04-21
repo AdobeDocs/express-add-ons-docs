@@ -8,19 +8,19 @@
 
 • **height**: `number`
 
----
+<hr />
 
 ### width
 
 • **width**: `number`
 
----
+<hr />
 
 ### x
 
 • **x**: `number`
 
----
+<hr />
 
 ### y
 
