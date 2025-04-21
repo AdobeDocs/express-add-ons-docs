@@ -237,7 +237,7 @@ asynchronous operation such as [loadBitmapImage](Editor.md#loadbitmapimage), any
 queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
 
 The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
-to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
+to users. However, note that queueAsyncEdit() will return *before* your function has been run.
 If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
 or await the Promise returned by queueAsyncEdit().
 
