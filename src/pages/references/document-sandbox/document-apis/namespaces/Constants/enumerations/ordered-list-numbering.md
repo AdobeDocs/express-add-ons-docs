@@ -14,37 +14,37 @@ Numbering types used to display ordered lists: 1, A, a, I, i 01, 001.
 
 • **doubleZeroPrefixNumeric**: `8`
 
----
+<hr />
 
 ### lowercaseAlpha
 
 • **lowercaseAlpha**: `3`
 
----
+<hr />
 
 ### lowercaseRomanNum
 
 • **lowercaseRomanNum**: `5`
 
----
+<hr />
 
 ### numeric
 
 • **numeric**: `1`
 
----
+<hr />
 
 ### singleZeroPrefixNumeric
 
 • **singleZeroPrefixNumeric**: `7`
 
----
+<hr />
 
 ### uppercaseAlpha
 
 • **uppercaseAlpha**: `2`
 
----
+<hr />
 
 ### uppercaseRomanNum
 
