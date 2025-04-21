@@ -4,7 +4,7 @@
 
 <InlineAlert slots="text" variant="warning"/>
 
-_Do not depend on the literal numeric values of these constants_, as they may change. Always reference the enum identifiers in your code.
+*Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
 Determines how a scenenode is composited on top of the content rendered below it.
 
@@ -17,67 +17,67 @@ interacts with other siblings within the same container. See documentation below
 
 • **color**: `16`
 
----
+<hr />
 
 ### colorBurn
 
 • **colorBurn**: `5`
 
----
+<hr />
 
 ### colorDodge
 
 • **colorDodge**: `8`
 
----
+<hr />
 
 ### darken
 
 • **darken**: `4`
 
----
+<hr />
 
 ### difference
 
 • **difference**: `12`
 
----
+<hr />
 
 ### exclusion
 
 • **exclusion**: `13`
 
----
+<hr />
 
 ### hardLight
 
 • **hardLight**: `11`
 
----
+<hr />
 
 ### hue
 
 • **hue**: `14`
 
----
+<hr />
 
 ### lighten
 
 • **lighten**: `6`
 
----
+<hr />
 
 ### luminosity
 
 • **luminosity**: `17`
 
----
+<hr />
 
 ### multiply
 
 • **multiply**: `3`
 
----
+<hr />
 
 ### normal
 
@@ -87,13 +87,13 @@ The normal, default blend mode for leaf nodes.
 
 Note: Group nodes default to using `passThrough` blend mode instead. See below.
 
----
+<hr />
 
 ### overlay
 
 • **overlay**: `9`
 
----
+<hr />
 
 ### passThrough
 
@@ -108,19 +108,19 @@ below it using solely the container's own blend mode.
 
 Group nodes are set to `passThrough` by default.
 
----
+<hr />
 
 ### saturation
 
 • **saturation**: `15`
 
----
+<hr />
 
 ### screen
 
 • **screen**: `7`
 
----
+<hr />
 
 ### softLight
 
