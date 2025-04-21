@@ -80,7 +80,7 @@ the current selection. Nodes that are locked or otherwise non-editable are never
 
 readonly [`Node`](Node.md)[]
 
-the current selection _and_ any locked nodes the user has attempted to select at the same time. This can
+the current selection *and* any locked nodes the user has attempted to select at the same time. This can
 happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
 locked nodes in addition to regular unlocked nodes.
 
