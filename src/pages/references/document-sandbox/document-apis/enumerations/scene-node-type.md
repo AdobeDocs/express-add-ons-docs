@@ -4,11 +4,11 @@
 
 <InlineAlert slots="text" variant="warning"/>
 
-_Do not depend on the literal string values of these constants_, as they may change. Always reference the enum identifiers in your code.
+*Do not depend on the literal string values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
 <InlineAlert slots="text" variant="warning"/>
 
-_Additional node types may be added in the future._ If your code has different branches or cases depending on node type,
+*Additional node types may be added in the future.* If your code has different branches or cases depending on node type,
 always have a default/fallback case to handle any unknown values you may encounter.
 
 ## Enumeration Members
@@ -17,13 +17,13 @@ always have a default/fallback case to handle any unknown values you may encount
 
 • **artboard**: `"ab:Artboard"`
 
----
+<hr />
 
 ### artworkRoot
 
 • **artworkRoot**: `"ArtworkRoot"`
 
----
+<hr />
 
 ### complexShape
 
@@ -31,13 +31,13 @@ always have a default/fallback case to handle any unknown values you may encount
 
 Type of ComplexShapeNode, representing a complex prepackaged shape with fill and stroke, that appears as a leaf node in the UI
 
----
+<hr />
 
 ### ellipse
 
 • **ellipse**: `"Ellipse"`
 
----
+<hr />
 
 ### gridCell
 
@@ -45,7 +45,7 @@ Type of ComplexShapeNode, representing a complex prepackaged shape with fill and
 
 Type of MediaContainerNode which is a child of a GridLayout, representing one of the Grid's cells
 
----
+<hr />
 
 ### gridLayout
 
@@ -53,13 +53,13 @@ Type of MediaContainerNode which is a child of a GridLayout, representing one of
 
 Type of GridLayoutNode represents a grid layout in the scenegraph used to create a layout grid that other content can be placed into
 
----
+<hr />
 
 ### group
 
 • **group**: `"Group"`
 
----
+<hr />
 
 ### imageRectangle
 
@@ -67,19 +67,19 @@ Type of GridLayoutNode represents a grid layout in the scenegraph used to create
 
 Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
----
+<hr />
 
 ### line
 
 • **line**: `"Line"`
 
----
+<hr />
 
 ### linkedAsset
 
 • **linkedAsset**: `"LinkedAsset"`
 
----
+<hr />
 
 ### mediaContainer
 
@@ -87,7 +87,7 @@ Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
 Type of MediaContainerNode, representing the top-level container of the multi-node construct used to display images or video.
 
----
+<hr />
 
 ### page
 
@@ -95,25 +95,25 @@ Type of MediaContainerNode, representing the top-level container of the multi-no
 
 Type of PageNode
 
----
+<hr />
 
 ### path
 
 • **path**: `"Path"`
 
----
+<hr />
 
 ### polygon
 
 • **polygon**: `"artgr:Polygon"`
 
----
+<hr />
 
 ### rectangle
 
 • **rectangle**: `"Rectangle"`
 
----
+<hr />
 
 ### solidColorShape
 
@@ -121,7 +121,7 @@ Type of PageNode
 
 Type of SolidColorShapeNode, representing a solid-color prepackaged shape that appears as a leaf node in the UI
 
----
+<hr />
 
 ### strokeShape
 
@@ -129,7 +129,7 @@ Type of SolidColorShapeNode, representing a solid-color prepackaged shape that a
 
 Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appears as a leaf node in the UI
 
----
+<hr />
 
 ### text
 
