@@ -8,7 +8,7 @@
 
 • **height**: `number`
 
----
+<hr />
 
 ### width
 

@@ -10,7 +10,7 @@ A range of text in a [TextContentModel](../classes/TextContentModel.md).
 
 • **length**: `number`
 
----
+<hr />
 
 ### start
 
