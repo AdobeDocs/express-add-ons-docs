@@ -4,7 +4,7 @@
 
 <InlineAlert slots="text" variant="warning"/>
 
-_Do not depend on the literal numeric values of these constants_, as they may change. Always reference the enum identifiers in your code.
+*Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
 ## Enumeration Members
 
@@ -12,7 +12,7 @@ _Do not depend on the literal numeric values of these constants_, as they may ch
 
 • **area**: `1`
 
----
+<hr />
 
 ### autoHeight
 
@@ -20,7 +20,7 @@ _Do not depend on the literal numeric values of these constants_, as they may ch
 
 Soft bottom
 
----
+<hr />
 
 ### autoWidth
 
@@ -28,13 +28,13 @@ Soft bottom
 
 Point text
 
----
+<hr />
 
 ### circular
 
 • **circular**: `4`
 
----
+<hr />
 
 ### magicFit
 
