@@ -4,7 +4,7 @@
 
 <InlineAlert slots="text" variant="warning"/>
 
-_Do not depend on the literal numeric values of these constants_, as they may change. Always reference the enum identifiers in your code.
+*Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
 ## Enumeration Members
 
@@ -12,13 +12,13 @@ _Do not depend on the literal numeric values of these constants_, as they may ch
 
 • **center**: `3`
 
----
+<hr />
 
 ### left
 
 • **left**: `1`
 
----
+<hr />
 
 ### right
 
