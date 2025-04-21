@@ -10,7 +10,7 @@ Interface for nodes with width and height properties.
 
 • **height**: `number`
 
----
+<hr />
 
 ### width
 
