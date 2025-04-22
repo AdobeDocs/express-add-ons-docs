@@ -80,9 +80,9 @@ For detailed guidance on using Lit with TypeScript, you can check out our [Using
 
 You can enhance your add-ons with additional JavaScript and CSS libraries like jQuery or Bootstrap. Follow these steps to integrate them:
 
-1. Add the library's scripts and stylesheets to your project
-2. Configure your bundler to process these files
-3. Import the libraries where needed in your code
+1. Add the library's scripts and stylesheets to your project.
+2. Configure your bundler to process these files.
+3. Import the libraries where needed in your code.
 
 <InlineAlert slots="text" variant="info">
 
