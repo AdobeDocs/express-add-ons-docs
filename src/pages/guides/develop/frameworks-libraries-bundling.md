@@ -11,11 +11,11 @@ import {
 } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 ```
 
-An example of how this works in Visual Studio Code is shown in this short clip below.<br/>
+An example of how this works in Visual Studio Code is shown in this short clip below.
 
-<div style="display: flex; justify-content: center;">
-<iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
-</div>
+<Embed slots="video" />
+
+https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview
 
 ## Webpack & JavaScript bundler
 
@@ -64,8 +64,6 @@ The CLI supports two different [react-based templates](../getting_started/dev_to
 ## Lit Framework
 
 The CLI provides [starter template options](../getting_started/dev_tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
-
-<!-- To learn more about developing with [Lit](https://lit.dev/), be sure to check out the [Using Lit & TypeScript Guide](./using-lit-typescript.md). -->
 
 ## Other JavaScript and CSS libraries
 
