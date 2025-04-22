@@ -25,7 +25,7 @@ contributors:
 
 Implementing an OAuth 2.0 authorization flow, enabling users to authenticate and log in using their existing accounts from third-party services.
 
-A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](../../../references/addonsdk/app-oauth.md) for more options and details and the [import-images-using-oauth](../../../samples.md/#import-images-using-oauth) sample add-on for more advanced usage.
+A typical use case would be to use assets stored in different services. Here, you will find instructions on how to set it up and an implementation example. Check also the [SDK Reference OAuth section](../../../references/addonsdk/app-oauth.md) for more options and details and the [import-images-using-oauth](../../../samples.md#import-images-using-oauth) sample add-on for more advanced usage.
 
 ### Login and Logout flows
 
