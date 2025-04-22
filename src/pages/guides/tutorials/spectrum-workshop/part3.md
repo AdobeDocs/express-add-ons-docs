@@ -77,7 +77,7 @@ In Spectrum, there are two main sizing concepts to understand:
 
 ### Fonts
 
-There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](../../../references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user-interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
+There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](../../../references/addonsdk/index.md#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user-interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
 
   ![Injected fonts screenshot](../images/fonts.png)
 
@@ -188,7 +188,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Why isn't the CLI building the output to the `dist` folder as I would expect? Did I forget to include a `webpack.config.js` file in the root of my project?
 
-    **Solution:** make sure your [`webpack.config.js`](../../../guides/tutorials/spectrum-workshop/part1.md/#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
+    **Solution:** make sure your [`webpack.config.js`](../../../guides/tutorials/spectrum-workshop/part1.md#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
 
 - I'm building a react-based add-on and it's not building correctly. Does the `scripts` object in the `package.json` of my add-on ensure the `--use webpack` parameter is used?
 
@@ -225,5 +225,5 @@ The following list of resources can be used to learn more about using Adobe's Sp
 - [Adobe Spectrum Figma plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
 - [Adobe Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js/)
     - **Reminder:** you should only use this option for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles specifically. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
-- [Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
+- [Add-on Code Samples](../../../samples.md)
 - [Color Wheel](https://color.adobe.com/create/color-wheel)
