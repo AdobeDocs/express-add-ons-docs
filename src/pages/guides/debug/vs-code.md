@@ -8,7 +8,7 @@ If you are a Visual Studio Code user, you can easily debug your add-on by follow
 
    **NOTE:** If it's a sample add-on that you downloaded, you may need to create one first with the **create a launch.json file**.
 
-   ![New launch.json file option](img/new-launch-json.png)
+   ![New launch.json file option](./img/new-launch-json.png)
 
  Then copy in the JSON configuration included below (or copy one in from an add-on you previously generated).
 
