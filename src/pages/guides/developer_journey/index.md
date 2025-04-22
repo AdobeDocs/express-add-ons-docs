@@ -22,6 +22,8 @@ import '/src/styles.css'
 
 # Adobe Express Add-ons Learning Paths
 
+<!--
+
 Skill tracks designed around your experience and goals.
 
 ## Skill Level-Based Learning Paths
@@ -50,10 +52,10 @@ I'm familiar with the Code Playground, and I'm ready to build my first add-on.<b
 
 ### Advanced
 
-I've built add-ons before, now I would like to up my game!<br/><br/>
+I've built add-ons before, now I would like to up my game!<br/><br/> -->
 
 <!-- # Learning Paths for Adobe Express Add-on Development -->
-
+<!--
 ## Beginner Path: Getting started with Adobe Express add-ons
 
 If you're new to software development or don't know very well what Adobe Express can offer, this path is for you. We'll start with the basics and give you a sense of what you can create with add-ons. This path includes:
@@ -94,4 +96,4 @@ If you've completed all the paths, you know more than most developers; congratul
 - [Adobe Express add-on Documentation](../getting_started/index.md)
 - [API Reference](../../references/index.md)
 - [Sample Add-ons](../samples.md)
-- [Adobe Express Developer Community](https://developer.adobe.com/express/community)
+- [Adobe Express Developer Community](https://developer.adobe.com/express/community) -->

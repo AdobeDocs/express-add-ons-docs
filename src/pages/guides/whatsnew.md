@@ -12,7 +12,7 @@ keywords:
   - API
   - Add-on Manifest
   - AddOnSdk
-title: Changelog
+title: What's New
 description: Contains a running log of changes to the add-on documentation, SDK, CLI, etc.
 contributors:
   - https://github.com/hollyschinsky
@@ -22,7 +22,35 @@ contributors:
 
 # Changelog
 
-## 2025-03-25
+## 2025-04-22
+
+### Updated
+
+- The [Code Playground](../guides/getting_started/code_playground.md) documentation has been updated with details about the new [Script Mode](../guides/getting_started/code_playground.md#how-to-use-script-mode) and [Local Persistence](../guides/getting_started/code_playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
+
+  - New sections explaining Script Mode and Add-on Mode.
+  - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.
+  - Information about local persistence and session management.
+  - Additional guidance on transitioning code between modes.
+  - New keyboard shortcuts for improved productivity.
+
+## 2025-04-10
+
+### Added
+
+- New [`link()`](../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/develop/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [vue-starter](../guides/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
+- Fixes `fromRGB()` method reference in the [Using Color How-to](../guides/develop/how_to/use_color.md).
+
+## 2025-04-03
+
+### Added
+
+- A new [`hasUnavailableFonts()`](../references/document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method is added to [`TextContentModel`](../references/document-sandbox/document-apis/classes/TextContentModel.md) class, which returns true if the text contains any fonts unavailable to the current user.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`hasUnavailableFonts()`](../references/document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Updated
 

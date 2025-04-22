@@ -307,7 +307,7 @@ There are two ways to resume working on your last saved session:
 
 - **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../develop/how_to.md) to kickstart your development.
 - **SDK/API References:** Discover more about what you can do in your add-on by exploring our [SDK References](../../references/index.md).
-- **Code Samples:** Get inspired by checking out [our code samples](../../samples.md) to see what's possible.
+- **Code Samples:** Get inspired by checking out [our code samples](../samples.md) to see what's possible.
 - **Ask Questions:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
 
 ## Next Steps: Build Your Add-on Locally

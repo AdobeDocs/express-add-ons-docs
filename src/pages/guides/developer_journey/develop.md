@@ -18,8 +18,9 @@ contributors:
   - https://github.com/undavide
 ---
 
-# Advanced Path: Mastering add-on development
+# ⚠️ WIP ⚠️
 
+<!--
 If you feel comfortable with the basics of add-on development, let's take you to the next level!
 
 ## 1. Discover our UX Guidelines and Spectrum Web Components
@@ -29,7 +30,7 @@ Adobe Express is based on the [Adobe Spectrum design system](https://s2.spectrum
 <br/><br/>
 
 <div style="display: flex; justify-content: center;">
-    <iframe width="779" height="438" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+    <iframe width="779" height="438" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 We've created a set of [UX Guidelines](../../resources/design/index.md) to help you get started; they cover the [design principles](../../resources/design/ux_guidelines/design_principles.md), [color](../../resources/design/ux_guidelines/visual_elements.md#color), [typography](../../resources/design/ux_guidelines/visual_elements.md#typography), [layout](../../resources/design/ux_guidelines/visual_elements.md#layout--structure) and much more.
@@ -81,4 +82,4 @@ Now that you've learned more than most developers, we have just a few more tasks
 - Read about [Advanced topics](../../resources/advanced-topics/frameworks-libraries-bundling.md) like frameworks, bundling, CORS, performance tips, and more.
 - Give back to the community! Either engaging with other developers, participating in the [Adobe Express Office Hours](https://developer.adobe.com/developers-live) or contributing to the [Code Samples](https://github.com/AdobeDocs/express-add-on-samples) GitHub repository.
 - Let us know what you think of the Documentation! We're always looking to improve it, so if you have any feedback, please [get in touch](http://discord.gg/nc3QDyFeb4).
-- Have fun building!
+- Have fun building! -->

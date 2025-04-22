@@ -20,6 +20,7 @@ contributors:
 
 # Intermediate Path: Build your first add-on
 
+<!--
 If you've completed the [Beginner Path](./beginner.md), or are otherwise familiar with the Adobe Express ecosystem, how add-ons work, and the [Code Playground](../getting_started/code_playground.md), this path will guide you through building a more complex add-on from the ground up.
 
 ## 1. Scaffold a new add-on with the CLI
@@ -92,4 +93,4 @@ You've now all it takes to have fun exploring from the [Code Samples](../samples
 
 Feel free to explore the rest of our documentation, or jump straight into the [Advanced Path](../developer_journey/advanced.md).
 
-<br/><br/>
+<br/><br/> -->
