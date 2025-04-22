@@ -26,7 +26,7 @@ In this tutorial, we'll build an Adobe Express add-on that gathers statistics on
 
 Hello, and welcome to this Adobe Express Communication API tutorial, where we'll build together a **fully functional Stats add-on** from scratch. This add-on will retrieve metadata from the currently open Adobe Express document, such as pages and their size, plus information about the kind and number of any element used.
 
-![](images/stats-addon.png)
+![](./images/stats-addon.png)
 
 ### Timestamp
 
@@ -42,7 +42,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ### Topics Covered
 
-<ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [Invoking Document Model Sandbox methods from the UI iframe](#proxy-api)
 
@@ -52,7 +52,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 [Context Closures](#functions)
 
-![](images/stats-addon-animation.gif)
+![](./images/stats-addon-animation.gif)
 
 ## Getting Started with the Communication API
 
@@ -155,7 +155,7 @@ runtime.exposeApi({
 
 The following diagram helps visualize the process.
 
-![Proxy objects](images/stats-addon-proxy.png)
+![Proxy objects](./images/stats-addon-proxy.png)
 
 ### Proxy API
 
@@ -337,7 +337,7 @@ You are now equipped with all the theory and reference snippets needed to start 
 1. The add-on shows two **status lights** that indicate whether the SDKs are ready for use.
 1. At the press of a button, the add-on (via Document API) collects the document's metadata[^0], which is used to compile and show a **table of Nodes** (elements).
 
-![](images/stats-addon-vscode.png)
+![](./images/stats-addon-vscode.png)
 
 Like in the [Grids add-on tutorial](grids-addon.md), the starting point will be [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template), which provides a Webpack-managed JavaScript—hence, able to easily import Spectrum Web Components to build the User Interface. Everything's in the `src` folder:
 
@@ -351,7 +351,7 @@ Like in the [Grids add-on tutorial](grids-addon.md), the starting point will be 
 
 To keep a consistent look & feel with the rest of the application, we'll use Spectrum Web Component as much as possible, styling them with the `express` theme provided by the `<sp-theme>` wrapper.
 
-![](images/stats-addon-doc.png)
+![](./images/stats-addon-doc.png)
 
 For the "Framework Status", the [Status Light](https://opensource.adobe.com/spectrum-web-components/components/status-light/) component is spot-on: it comes in many variants, which set different light colors—`positive` and `negative` (green 🟢 and red 🔴) will be enough for us. The "Document Statistics" section is going to show a list of key/value pairs (the element type and the number of items found on each page). The most obvious choice is a [Table](https://opensource.adobe.com/spectrum-web-components/components/table/) component, which in SWC is constructed with several tags.
 
@@ -404,7 +404,7 @@ We'll start with a placeholder row with a friendly message, which is going to be
 
 The diagram below illustrates the communication flow between the two contexts.
 
-![](images/stats-addon-flow.png)
+![](./images/stats-addon-flow.png)
 
 The iframe exposes two methods:
 
@@ -574,7 +574,7 @@ start();
 
 When refreshing the add-on, the UI updates almost instantly, but a frame-by-frame analysis would reveal a progression in the rendering process: first, the HTML is loaded, then the CSS with the `<sp-status-light>` components in their original, "red" variant; finally, when the two SDK are fully loaded, we get the green lights.[^1]
 
-![Status lights](images/stats-addon-lights.png)
+![Status lights](./images/stats-addon-lights.png)
 
 Let's tackle the metadata collection in the Document Sandbox, especially the data structure we want to create[^2]. There are many ways to go about this business: I've decided to keep track of elements on a Page basis and store page dimensions, too. Eventually, the iframe will receive `documentData`, an array of objects, one for each page,  with `dimensions` and `nodes` properties. If you've got a taste for TypeScript, the type definition would be as follows.
 
@@ -607,7 +607,7 @@ The above would transpose into something along these lines.
 
 The various `"ab:Artboard"`, `"MediaContainer"` and others, are the Node type strings as Adobe Express exposes them. Let's create the `getDocumentData()` function that outputs such a structure.
 
-![](images/stats-addon-type.png)
+![](./images/stats-addon-type.png)
 
 <CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
 
@@ -780,7 +780,7 @@ As follows, the `rebuildTable()` metacode.
 - Loop through each node in the `pageData.nodes` object, adding a row with the node type and the number of instances found on that page.
 - `addRowToTable()` is a utility function that takes a table and an array of strings as arguments. It creates a new `<sp-table-row>`, then loops through the array, creating a `<sp-table-cell>` for each string and appending it to the row. If the array contains only one element, the cell is given a `page-row` class, which makes it bold.
 
-![](images/stats-addon-stats.png)
+![](./images/stats-addon-stats.png)
 
 ## Next Steps
 
