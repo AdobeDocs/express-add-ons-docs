@@ -22,7 +22,7 @@
 #### Advanced Image Interactions
 
 - [Drag and Drop Implementation](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/drag_and_drop.md) - Enable drag and drop of images to documents
-- [Document APIs Tutorial](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/document_apis/) - Complete tutorial for working with document elements
+- [Document APIs Tutorial](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/document_apis/) - Complete tutorial for working with document elements
 
 ### UI Integration with Spectrum
 
@@ -37,7 +37,7 @@
 ### Samples and Examples
 
 - [Image Gallery Add-on Sample](https://developer.adobe.com/express/add-ons/docs/samples.md) - Complete sample implementing an image gallery
-- [Bingo Card Generator Sample](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part1/) - Example generating and adding canvas-based images
+- [Bingo Card Generator Sample](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/part1/) - Example generating and adding canvas-based images
 
 ### Troubleshooting
 
@@ -102,8 +102,8 @@
 
 ### Framework Integration
 
-- [JavaScript Implementation](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part1/) - Vanilla JS approach with Spectrum Web Components
-- [React Integration](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part2/) - Using Spectrum with React
+- [JavaScript Implementation](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/part1/) - Vanilla JS approach with Spectrum Web Components
+- [React Integration](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/part2/) - Using Spectrum with React
 - [Lit Framework Implementation](https://developer.adobe.com/express/add-ons/docs/guides/design/spectrum.md) - Web components with the Lit framework
 
 ### Theme Detection and Handling

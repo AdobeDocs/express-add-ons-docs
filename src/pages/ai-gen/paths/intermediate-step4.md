@@ -49,6 +49,7 @@ Let's start by creating a new project:
    ```
 
 3. When prompted, choose:
+
    - Add-on type: Panel
    - UI Framework: HTML (or React if you prefer)
    - Include TypeScript: No (for this tutorial we'll use JavaScript)
@@ -85,76 +86,139 @@ First, let's create a clean and intuitive user interface. Replace the content of
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Grid Maker</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Grid Maker</h1>
-    
-    <div class="form-section">
-      <h2>Grid Settings</h2>
-      
-      <div class="form-group">
-        <label for="rows">Rows:</label>
-        <input type="number" id="rows" min="1" max="10" value="3">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid Maker</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Grid Maker</h1>
+
+      <div class="form-section">
+        <h2>Grid Settings</h2>
+
+        <div class="form-group">
+          <label for="rows">Rows:</label>
+          <input
+            type="number"
+            id="rows"
+            min="1"
+            max="10"
+            value="3"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="columns">Columns:</label>
+          <input
+            type="number"
+            id="columns"
+            min="1"
+            max="10"
+            value="3"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cell-size">Cell Size (px):</label>
+          <input
+            type="number"
+            id="cell-size"
+            min="50"
+            max="500"
+            value="100"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="spacing">Spacing (px):</label>
+          <input
+            type="number"
+            id="spacing"
+            min="0"
+            max="50"
+            value="10"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="border-width">Border Width (px):</label>
+          <input
+            type="number"
+            id="border-width"
+            min="0"
+            max="10"
+            value="1"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="border-color">Border Color:</label>
+          <input
+            type="color"
+            id="border-color"
+            value="#000000"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="background-color">Background Color:</label>
+          <input
+            type="color"
+            id="background-color"
+            value="#FFFFFF"
+          />
+        </div>
       </div>
-      
-      <div class="form-group">
-        <label for="columns">Columns:</label>
-        <input type="number" id="columns" min="1" max="10" value="3">
+
+      <div class="preview-section">
+        <h2>Grid Preview</h2>
+        <div
+          id="grid-preview"
+          class="grid-preview"
+        ></div>
       </div>
-      
-      <div class="form-group">
-        <label for="cell-size">Cell Size (px):</label>
-        <input type="number" id="cell-size" min="50" max="500" value="100">
+
+      <div class="actions-section">
+        <button
+          id="create-grid"
+          class="primary-button"
+        >
+          Create Grid
+        </button>
+        <button
+          id="save-preset"
+          class="secondary-button"
+        >
+          Save as Preset
+        </button>
       </div>
-      
-      <div class="form-group">
-        <label for="spacing">Spacing (px):</label>
-        <input type="number" id="spacing" min="0" max="50" value="10">
-      </div>
-      
-      <div class="form-group">
-        <label for="border-width">Border Width (px):</label>
-        <input type="number" id="border-width" min="0" max="10" value="1">
-      </div>
-      
-      <div class="form-group">
-        <label for="border-color">Border Color:</label>
-        <input type="color" id="border-color" value="#000000">
-      </div>
-      
-      <div class="form-group">
-        <label for="background-color">Background Color:</label>
-        <input type="color" id="background-color" value="#FFFFFF">
+
+      <div class="presets-section">
+        <h2>Saved Presets</h2>
+        <div
+          id="presets-list"
+          class="presets-list"
+        >
+          <p class="no-presets">No presets saved yet.</p>
+        </div>
       </div>
     </div>
-    
-    <div class="preview-section">
-      <h2>Grid Preview</h2>
-      <div id="grid-preview" class="grid-preview"></div>
-    </div>
-    
-    <div class="actions-section">
-      <button id="create-grid" class="primary-button">Create Grid</button>
-      <button id="save-preset" class="secondary-button">Save as Preset</button>
-    </div>
-    
-    <div class="presets-section">
-      <h2>Saved Presets</h2>
-      <div id="presets-list" class="presets-list">
-        <p class="no-presets">No presets saved yet.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div id="message" class="message"></div>
-  
-  <script type="module" src="./src/index.js"></script>
-</body>
+
+    <div
+      id="message"
+      class="message"
+    ></div>
+
+    <script
+      type="module"
+      src="./src/index.js"
+    ></script>
+  </body>
 </html>
 ```
 
@@ -162,7 +226,7 @@ Now, create a `styles.css` file in the project root with the following content:
 
 ```css
 body {
-  font-family: 'Adobe Clean', sans-serif;
+  font-family: "Adobe Clean", sans-serif;
   margin: 0;
   padding: 16px;
   background-color: #f5f5f5;
@@ -174,7 +238,7 @@ body {
 }
 
 h1 {
-  color: #1473E6;
+  color: #1473e6;
   font-size: 18px;
   margin-bottom: 16px;
 }
@@ -185,7 +249,10 @@ h2 {
   color: #505050;
 }
 
-.form-section, .preview-section, .actions-section, .presets-section {
+.form-section,
+.preview-section,
+.actions-section,
+.presets-section {
   background-color: white;
   border-radius: 4px;
   padding: 16px;
@@ -205,7 +272,8 @@ label {
   font-size: 14px;
 }
 
-input[type="number"], input[type="color"] {
+input[type="number"],
+input[type="color"] {
   width: calc(100% - 130px);
   padding: 6px;
   border: 1px solid #ccc;
@@ -246,7 +314,7 @@ button {
 }
 
 .primary-button {
-  background-color: #1473E6;
+  background-color: #1473e6;
   color: white;
 }
 
@@ -332,8 +400,17 @@ Create the main entry point that initializes the app and connects all components
 ```javascript
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 import { createGridInDocument, updateGridPreview } from "./grid.js";
-import { loadPresets, savePreset, deletePreset, applyPreset } from "./storage.js";
-import { showMessage, setupEventListeners, updateUIFromSettings } from "./ui.js";
+import {
+  loadPresets,
+  savePreset,
+  deletePreset,
+  applyPreset,
+} from "./storage.js";
+import {
+  showMessage,
+  setupEventListeners,
+  updateUIFromSettings,
+} from "./ui.js";
 
 // Default grid settings
 export const defaultGridSettings = {
@@ -343,7 +420,7 @@ export const defaultGridSettings = {
   spacing: 10,
   borderWidth: 1,
   borderColor: "#000000",
-  backgroundColor: "#FFFFFF"
+  backgroundColor: "#FFFFFF",
 };
 
 // Current grid settings (can be modified by user)
@@ -352,7 +429,7 @@ export let currentGridSettings = { ...defaultGridSettings };
 // Wait for the SDK to be ready
 addOnUISdk.ready.then(() => {
   console.log("Grid Maker add-on initialized");
-  
+
   // Initialize the application
   initializeApp();
 });
@@ -361,13 +438,13 @@ async function initializeApp() {
   try {
     // Set up event listeners for UI elements
     setupEventListeners(currentGridSettings);
-    
+
     // Update the grid preview with default settings
     updateGridPreview(currentGridSettings);
-    
+
     // Load saved presets
     await loadPresets();
-    
+
     showMessage("Grid Maker add-on ready");
   } catch (error) {
     console.error("Error initializing app:", error);
@@ -387,21 +464,21 @@ import { showMessage } from "./ui.js";
 // Updates the grid preview in the UI
 export function updateGridPreview(settings) {
   const previewContainer = document.getElementById("grid-preview");
-  
+
   if (!previewContainer) return;
-  
+
   // Clear previous preview
   previewContainer.innerHTML = "";
-  
+
   // Create table element for the grid
   const gridTable = document.createElement("table");
   gridTable.className = "grid-table";
   gridTable.style.borderSpacing = `${settings.spacing}px`;
-  
+
   // Create grid rows and cells
   for (let i = 0; i < settings.rows; i++) {
     const row = document.createElement("tr");
-    
+
     for (let j = 0; j < settings.columns; j++) {
       const cell = document.createElement("td");
       cell.className = "grid-cell";
@@ -409,13 +486,13 @@ export function updateGridPreview(settings) {
       cell.style.height = `${settings.cellSize}px`;
       cell.style.backgroundColor = settings.backgroundColor;
       cell.style.border = `${settings.borderWidth}px solid ${settings.borderColor}`;
-      
+
       row.appendChild(cell);
     }
-    
+
     gridTable.appendChild(row);
   }
-  
+
   previewContainer.appendChild(gridTable);
 }
 
@@ -423,21 +500,23 @@ export function updateGridPreview(settings) {
 export async function createGridInDocument(settings) {
   try {
     // Calculate total grid dimensions
-    const totalWidth = (settings.columns * settings.cellSize) + 
-                      ((settings.columns - 1) * settings.spacing);
-    const totalHeight = (settings.rows * settings.cellSize) + 
-                       ((settings.rows - 1) * settings.spacing);
-    
+    const totalWidth =
+      settings.columns * settings.cellSize +
+      (settings.columns - 1) * settings.spacing;
+    const totalHeight =
+      settings.rows * settings.cellSize +
+      (settings.rows - 1) * settings.spacing;
+
     // Store created element IDs to group them later
     const elementIds = [];
-    
+
     // Create cells
     for (let row = 0; row < settings.rows; row++) {
       for (let col = 0; col < settings.columns; col++) {
         // Calculate position for this cell
-        const x = 100 + (col * (settings.cellSize + settings.spacing));
-        const y = 100 + (row * (settings.cellSize + settings.spacing));
-        
+        const x = 100 + col * (settings.cellSize + settings.spacing);
+        const y = 100 + row * (settings.cellSize + settings.spacing);
+
         // Create a rectangle shape for the cell
         const cellElement = await addOnUISdk.app.document.addRectangle({
           position: { x, y },
@@ -446,20 +525,20 @@ export async function createGridInDocument(settings) {
           fill: { color: settings.backgroundColor },
           stroke: {
             width: settings.borderWidth,
-            color: settings.borderColor
-          }
+            color: settings.borderColor,
+          },
         });
-        
+
         elementIds.push(cellElement.id);
       }
     }
-    
+
     // Group all cells into a single grid element
     if (elementIds.length > 0) {
       await addOnUISdk.app.document.groupElements(elementIds);
       showMessage(`Grid created: ${settings.rows}×${settings.columns}`);
     }
-    
+
     return true;
   } catch (error) {
     console.error("Error creating grid:", error);
@@ -485,9 +564,11 @@ const PRESETS_STORAGE_KEY = "grid-maker-presets";
 // Loads saved presets from client storage
 export async function loadPresets() {
   try {
-    const presetsStr = await addOnUISdk.instance.clientStorage.getValue(PRESETS_STORAGE_KEY);
+    const presetsStr = await addOnUISdk.instance.clientStorage.getValue(
+      PRESETS_STORAGE_KEY
+    );
     const presets = presetsStr ? JSON.parse(presetsStr) : [];
-    
+
     updatePresetsUI(presets);
     return presets;
   } catch (error) {
@@ -502,28 +583,28 @@ export async function savePreset(presetName) {
   try {
     // Get existing presets
     const presets = await loadPresets();
-    
+
     // Create new preset object
     const newPreset = {
       id: Date.now().toString(),
       name: presetName,
       settings: { ...currentGridSettings },
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
     };
-    
+
     // Add to presets array
     presets.push(newPreset);
-    
+
     // Save to storage
     await addOnUISdk.instance.clientStorage.setValue(
-      PRESETS_STORAGE_KEY, 
+      PRESETS_STORAGE_KEY,
       JSON.stringify(presets)
     );
-    
+
     // Update UI
     updatePresetsUI(presets);
     showMessage(`Preset "${presetName}" saved`);
-    
+
     return true;
   } catch (error) {
     console.error("Error saving preset:", error);
@@ -537,20 +618,20 @@ export async function deletePreset(presetId) {
   try {
     // Get existing presets
     const presets = await loadPresets();
-    
+
     // Filter out the preset to delete
-    const updatedPresets = presets.filter(preset => preset.id !== presetId);
-    
+    const updatedPresets = presets.filter((preset) => preset.id !== presetId);
+
     // Save updated list
     await addOnUISdk.instance.clientStorage.setValue(
-      PRESETS_STORAGE_KEY, 
+      PRESETS_STORAGE_KEY,
       JSON.stringify(updatedPresets)
     );
-    
+
     // Update UI
     updatePresetsUI(updatedPresets);
     showMessage("Preset deleted");
-    
+
     return true;
   } catch (error) {
     console.error("Error deleting preset:", error);
@@ -561,19 +642,19 @@ export async function deletePreset(presetId) {
 
 // Applies a preset's settings
 export function applyPreset(presetId) {
-  loadPresets().then(presets => {
-    const preset = presets.find(p => p.id === presetId);
-    
+  loadPresets().then((presets) => {
+    const preset = presets.find((p) => p.id === presetId);
+
     if (preset) {
       // Update current settings with preset values
       Object.assign(currentGridSettings, preset.settings);
-      
+
       // Update UI
       updateUIFromSettings(currentGridSettings);
-      
+
       // Update preview
       updateGridPreview(currentGridSettings);
-      
+
       showMessage(`Applied preset "${preset.name}"`);
     }
   });
@@ -582,20 +663,21 @@ export function applyPreset(presetId) {
 // Updates the presets list in the UI
 function updatePresetsUI(presets) {
   const presetsContainer = document.getElementById("presets-list");
-  
+
   if (!presetsContainer) return;
-  
+
   if (presets.length === 0) {
-    presetsContainer.innerHTML = '<p class="no-presets">No presets saved yet.</p>';
+    presetsContainer.innerHTML =
+      '<p class="no-presets">No presets saved yet.</p>';
     return;
   }
-  
-  let html = '';
-  
-  presets.forEach(preset => {
+
+  let html = "";
+
+  presets.forEach((preset) => {
     const { rows, columns } = preset.settings;
     const date = new Date(preset.createdAt).toLocaleDateString();
-    
+
     html += `
       <div class="preset-item" data-id="${preset.id}">
         <div class="preset-info">
@@ -609,16 +691,16 @@ function updatePresetsUI(presets) {
       </div>
     `;
   });
-  
+
   presetsContainer.innerHTML = html;
-  
+
   // Add event listeners for preset actions
-  document.querySelectorAll('.apply-preset').forEach(button => {
-    button.addEventListener('click', () => applyPreset(button.dataset.id));
+  document.querySelectorAll(".apply-preset").forEach((button) => {
+    button.addEventListener("click", () => applyPreset(button.dataset.id));
   });
-  
-  document.querySelectorAll('.delete-preset').forEach(button => {
-    button.addEventListener('click', () => deletePreset(button.dataset.id));
+
+  document.querySelectorAll(".delete-preset").forEach((button) => {
+    button.addEventListener("click", () => deletePreset(button.dataset.id));
   });
 }
 ```
@@ -635,20 +717,38 @@ import { savePreset } from "./storage.js";
 // Sets up all event listeners
 export function setupEventListeners() {
   // Grid setting inputs
-  document.getElementById("rows").addEventListener("change", updateSettingFromInput);
-  document.getElementById("columns").addEventListener("change", updateSettingFromInput);
-  document.getElementById("cell-size").addEventListener("change", updateSettingFromInput);
-  document.getElementById("spacing").addEventListener("change", updateSettingFromInput);
-  document.getElementById("border-width").addEventListener("change", updateSettingFromInput);
-  document.getElementById("border-color").addEventListener("change", updateSettingFromInput);
-  document.getElementById("background-color").addEventListener("change", updateSettingFromInput);
-  
+  document
+    .getElementById("rows")
+    .addEventListener("change", updateSettingFromInput);
+  document
+    .getElementById("columns")
+    .addEventListener("change", updateSettingFromInput);
+  document
+    .getElementById("cell-size")
+    .addEventListener("change", updateSettingFromInput);
+  document
+    .getElementById("spacing")
+    .addEventListener("change", updateSettingFromInput);
+  document
+    .getElementById("border-width")
+    .addEventListener("change", updateSettingFromInput);
+  document
+    .getElementById("border-color")
+    .addEventListener("change", updateSettingFromInput);
+  document
+    .getElementById("background-color")
+    .addEventListener("change", updateSettingFromInput);
+
   // Action buttons
-  document.getElementById("create-grid").addEventListener("click", handleCreateGrid);
-  document.getElementById("save-preset").addEventListener("click", handleSavePreset);
-  
+  document
+    .getElementById("create-grid")
+    .addEventListener("click", handleCreateGrid);
+  document
+    .getElementById("save-preset")
+    .addEventListener("click", handleSavePreset);
+
   // Input validation
-  document.querySelectorAll('input[type="number"]').forEach(input => {
+  document.querySelectorAll('input[type="number"]').forEach((input) => {
     input.addEventListener("input", validateNumberInput);
   });
 }
@@ -656,12 +756,15 @@ export function setupEventListeners() {
 // Updates a setting when the corresponding input changes
 function updateSettingFromInput(event) {
   const input = event.target;
-  const setting = input.id.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
-  const value = input.type === "number" ? parseInt(input.value, 10) : input.value;
-  
+  const setting = input.id.replace(/-([a-z])/g, (match, letter) =>
+    letter.toUpperCase()
+  );
+  const value =
+    input.type === "number" ? parseInt(input.value, 10) : input.value;
+
   // Update the current settings
   currentGridSettings[setting] = value;
-  
+
   // Update the preview
   updateGridPreview(currentGridSettings);
 }
@@ -680,7 +783,7 @@ export function updateUIFromSettings(settings) {
 // Handles the Create Grid button click
 async function handleCreateGrid() {
   const success = await createGridInDocument(currentGridSettings);
-  
+
   if (success) {
     showMessage("Grid created successfully");
   }
@@ -689,8 +792,11 @@ async function handleCreateGrid() {
 // Handles the Save Preset button click
 function handleSavePreset() {
   // Prompt for preset name
-  const presetName = prompt("Enter a name for this preset:", `Grid ${currentGridSettings.rows}×${currentGridSettings.columns}`);
-  
+  const presetName = prompt(
+    "Enter a name for this preset:",
+    `Grid ${currentGridSettings.rows}×${currentGridSettings.columns}`
+  );
+
   if (presetName) {
     savePreset(presetName);
   }
@@ -702,7 +808,7 @@ function validateNumberInput(event) {
   const value = parseInt(input.value, 10);
   const min = parseInt(input.min, 10);
   const max = parseInt(input.max, 10);
-  
+
   if (isNaN(value)) {
     input.value = min;
   } else if (value < min) {
@@ -715,11 +821,11 @@ function validateNumberInput(event) {
 // Shows a message to the user
 export function showMessage(message) {
   const messageElement = document.getElementById("message");
-  
+
   if (messageElement) {
     messageElement.textContent = message;
     messageElement.style.display = "block";
-    
+
     // Hide after 3 seconds
     setTimeout(() => {
       messageElement.style.display = "none";
@@ -781,6 +887,7 @@ To test the add-on:
 2. The command will display instructions for loading your add-on in Adobe Express
 
 3. Follow those instructions:
+
    - Open Adobe Express in your browser
    - Open the add-ons panel
    - Click on "Develop" at the bottom
@@ -800,11 +907,13 @@ To test the add-on:
 The Grid Maker add-on demonstrates several key features:
 
 1. **Document Element Manipulation**:
+
    - Creating shapes (rectangles for grid cells)
    - Positioning elements with precision
    - Grouping elements to create a cohesive grid
 
 2. **User Interaction**:
+
    - Real-time preview updates as settings change
    - Input validation and constraints
    - User notifications via message display
@@ -819,15 +928,18 @@ The Grid Maker add-on demonstrates several key features:
 After completing the basic Grid Maker add-on, consider these enhancements:
 
 1. **Advanced Grid Options**:
+
    - Option to create equal or custom cell sizes
    - Support for merged cells
    - Add text labels to cells
 
 2. **Export/Import Capabilities**:
+
    - Export grid designs as PNG or JPG
    - Import grid configurations from JSON
 
 3. **Theme Support**:
+
    - Add predefined color schemes
    - Integrate with Adobe Express theme colors
 
@@ -840,8 +952,8 @@ After completing the basic Grid Maker add-on, consider these enhancements:
 
 For more detailed examples and code samples:
 
-- [Stats Add-on Tutorial](../../guides/tutorials/stats-addon.md)
-- [Grids Add-on Tutorial](../../guides/tutorials/grids-addon.md)
+- [Stats Add-on Tutorial](../../resources/tutorials/stats-addon.md)
+- [Grids Add-on Tutorial](../../resources/tutorials/grids-addon.md)
 
 ## Knowledge Check
 

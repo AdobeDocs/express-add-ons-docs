@@ -44,9 +44,9 @@ Follow the [CLI's instructions](../getting_started/dev_tooling.md) and make sure
 
 ## 2. Follow a tutorial to build a full add-on from scratch
 
-Now that you have all the tools you need, you can follow a tutorial to build a full add-on from scratch. Among the [available ones](../tutorials/index.md), we suggest starting with the [Document API Tutorial](../tutorials/grids-addon.md), which guides you through building an add-on that adds a grid layout to any document.
+Now that you have all the tools you need, you can follow a tutorial to build a full add-on from scratch. Among the [available ones](../../resources/tutorials/index.md), we suggest starting with the [Document API Tutorial](../../resources/tutorials/grids-addon.md), which guides you through building an add-on that adds a grid layout to any document.
 
-[![Document API Tutorial](../tutorials/images/grids-addon-animation.gif)](../tutorials/grids-addon.md)
+[![Document API Tutorial](../../resources/tutorials/images/grids-addon-animation.gif)](../../resources/tutorials/grids-addon.md)
 
 The add-on you're building in this tutorial is production-ready, and is an excellent starting point. It covers the following topics:
 
@@ -56,9 +56,9 @@ The add-on you're building in this tutorial is production-ready, and is an excel
 - **The Document API** to manipulate the document and its elements.
 - Iframe and Document Model Sandbox **communication**.
 
-Alongside with a more complex usage of the various APIs and the creation of a structured UI, you'll be introduced to the [Communication API](../tutorials/grids-addon.md#the-communication-api), which is the main way for an add-on to interact with Adobe Express Documents.
+Alongside with a more complex usage of the various APIs and the creation of a structured UI, you'll be introduced to the [Communication API](../../resources/tutorials/grids-addon.md#the-communication-api), which is the main way for an add-on to interact with Adobe Express Documents.
 
-[![Document API Tutorial](../tutorials/images/grids-addon-communication.png)](../tutorials/grids-addon.md)
+[![Document API Tutorial](../../resources/tutorials/images/grids-addon-communication.png)](../../resources/tutorials/grids-addon.md)
 
 ## 3. Learn how to Debug and troubleshoot your add-on
 
@@ -90,6 +90,6 @@ Congratulations 🎉 you've completed the Intermediate Path!
 
 You've now all it takes to have fun exploring from the [Code Samples](../samples.md); you'll find plenty of add-ons to draw inspiration and learning from. You can check our [Community page](https://developer.adobe.com/express/community/), and start engaging with other fellow developers on the [Adobe Express add-on's Discord channel](http://discord.gg/nc3QDyFeb4). Don't forget to join the monthly [Adobe Express Office Hours](https://developer.adobe.com/developers-live) to get the latest news and ask questions to the team!
 
-Feel free to explore the rest of our documentation, or jump straight into the [Advanced Path](../learning-paths/advanced.md).
+Feel free to explore the rest of our documentation, or jump straight into the [Advanced Path](../developer_journey/advanced.md).
 
 <br/><br/>

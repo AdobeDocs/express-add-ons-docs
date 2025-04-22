@@ -65,4 +65,4 @@
 - Build an intuitive UI for content organization.
 - **Resources**:
   - [Implementation Guide](../../resources/design/implementation_guide.md)
-  - [Spectrum Workshop Tutorial](../../guides/tutorials/spectrum-workshop/index.md)
+  - [Spectrum Workshop Tutorial](../../resources/tutorials/spectrum-workshop/index.md)

@@ -33,7 +33,7 @@
 
 ### How-To Guides
 
-- [Using Adobe Spectrum](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/)
+- [Using Adobe Spectrum](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/)
 - [Implementing Modal Dialogs](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/modal_dialogs)
 - [Using Drag & Drop](https://developer.adobe.com/express/add-ons/docs/guides/develop/how_to/drag_and_drop)
 
@@ -45,8 +45,8 @@
 
 ### Samples
 
-- [Basic JavaScript with Spectrum Web Components](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part1/)
-- [React-based add-on with Spectrum](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/spectrum-workshop/part2/)
+- [Basic JavaScript with Spectrum Web Components](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/part1/)
+- [React-based add-on with Spectrum](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/part2/)
 
 ### Best Practices
 
@@ -71,11 +71,11 @@
 ### API References
 
 - [Document API Reference](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/)
-- [Communication APIs](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/communication-apis/)
+- [Communication APIs](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/communication-apis/)
 
 ### Samples
 
-- [Grids Add-on Tutorial](https://developer.adobe.com/express/add-ons/docs/guides/tutorials/grids-addon/)
+- [Grids Add-on Tutorial](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/grids-addon/)
 - Document manipulation examples
 
 ## 4. Data & Storage

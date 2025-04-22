@@ -39,7 +39,7 @@ The [document APIs](./document-apis/) provide access to the user's document stru
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the [tutorials section](../../guides/tutorials/) to learn more about using the document sandbox and Adobe Express Document APIs.
+Please see the [tutorials section](../../resources/tutorials/) to learn more about using the document sandbox and Adobe Express Document APIs.
 
 ## Document Sandbox's JavaScript Engine
 
@@ -79,7 +79,7 @@ The quickest way to get started with a scaffolded project set up with the docume
 
 `npx @adobe/create-ccweb-add-on helloworld --template javascript-with-document-sandbox`
 
- or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
+or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
 
 ![CLI prompt for document sandbox](../img/cli-doc-sandbox-prompt.png)
 

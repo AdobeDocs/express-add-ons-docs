@@ -36,11 +36,11 @@ We've created a set of [UX Guidelines](../../resources/design/index.md) to help 
 
 You should use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), a library of pre-built components that you can use to create a consistent UI for your add-on. You can test them in a sandboxed environment like Codepen
 
-[![Spectrum Web Components Codepen](../tutorials/images/bingo-codepen.png)](../tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
+[![Spectrum Web Components Codepen](../../resources/tutorials/images/bingo-codepen.png)](../../resources/tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
 
-Read our [Implementation Guide](../../resources/design/implementation_guide.md) or follow our two-part[Bingo Card Generator add-on tutorial](../tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
+Read our [Implementation Guide](../../resources/design/implementation_guide.md) or follow our two-part[Bingo Card Generator add-on tutorial](../../resources/tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
 
-[![Bingo Card Generator add-on](../tutorials/images/bingo-v1-addon.png)](../tutorials/spectrum-workshop/index.md)
+[![Bingo Card Generator add-on](../../resources/tutorials/images/bingo-v1-addon.png)](../../resources/tutorials/spectrum-workshop/index.md)
 
 ## 2. Master the Document Sandbox API
 

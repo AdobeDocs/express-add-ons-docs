@@ -683,19 +683,23 @@ module.exports = {
           // },
           {
             title: "Developer Journey",
-            path: "guides/learning-paths/index.md",
+            path: "guides/developer_journey/discover.md",
             pages: [
               {
-                title: "Beginner",
-                path: "guides/learning-paths/beginner.md",
+                title: "Discover",
+                path: "guides/developer_journey/discover.md",
               },
               {
-                title: "Intermediate",
-                path: "guides/learning-paths/intermediate.md",
+                title: "Learn",
+                path: "guides/developer_journey/learn.md",
               },
               {
-                title: "Advanced",
-                path: "guides/learning-paths/advanced.md",
+                title: "Develop",
+                path: "guides/developer_journey/develop.md",
+              },
+              {
+                title: "Distribute",
+                path: "guides/developer_journey/distribute.md",
               },
             ],
           },
@@ -921,38 +925,6 @@ module.exports = {
         ],
       },
       {
-        title: "Tutorials",
-        path: "guides/tutorials/",
-        pages: [
-          {
-            title: "Document APIs",
-            path: "guides/tutorials/grids-addon",
-          },
-          {
-            title: "Communication APIs",
-            path: "guides/tutorials/stats-addon",
-          },
-          {
-            title: "Using Adobe Spectrum",
-            path: "guides/tutorials/spectrum-workshop/",
-            pages: [
-              {
-                title: "Basic JavaScript add-on with Spectrum Web Components",
-                path: "guides/tutorials/spectrum-workshop/part1/",
-              },
-              {
-                title: "React-based add-on with Spectrum Web Components",
-                path: "guides/tutorials/spectrum-workshop/part2/",
-              },
-              {
-                title: "Tips & Troubleshooting",
-                path: "guides/tutorials/spectrum-workshop/part3/",
-              },
-            ],
-          },
-        ],
-      },
-      {
         title: "Sample add-ons",
         path: "guides/samples/",
       },
@@ -1164,6 +1136,38 @@ module.exports = {
           {
             title: "Rejections",
             path: "resources/distribute/rejections.md",
+          },
+        ],
+      },
+      {
+        title: "Tutorials",
+        path: "resources/tutorials/",
+        pages: [
+          {
+            title: "Document APIs",
+            path: "resources/tutorials/grids-addon",
+          },
+          {
+            title: "Communication APIs",
+            path: "resources/tutorials/stats-addon",
+          },
+          {
+            title: "Using Adobe Spectrum",
+            path: "resources/tutorials/spectrum-workshop/",
+            pages: [
+              {
+                title: "Basic JavaScript add-on with Spectrum Web Components",
+                path: "resources/tutorials/spectrum-workshop/part1/",
+              },
+              {
+                title: "React-based add-on with Spectrum Web Components",
+                path: "resources/tutorials/spectrum-workshop/part2/",
+              },
+              {
+                title: "Tips & Troubleshooting",
+                path: "resources/tutorials/spectrum-workshop/part3/",
+              },
+            ],
           },
         ],
       },

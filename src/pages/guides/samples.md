@@ -284,11 +284,11 @@ The following [code samples](https://github.com/AdobeDocs/express-add-on-samples
 
 ## [express-grids-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon)
 
-The sample add-on that the [Grid System tutorial](../guides/tutorials/grids-addon.md) is based upon. Demonstrates how to use the [Document APIs](../references/document-sandbox/index.md) to create and manipulate shapes, context permanence, color pickers, and Spectrum Web Components usage.
+The sample add-on that the [Grid System tutorial](../resources/tutorials/grids-addon.md) is based upon. Demonstrates how to use the [Document APIs](../references/document-sandbox/index.md) to create and manipulate shapes, context permanence, color pickers, and Spectrum Web Components usage.
 
 ## [express-stats-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-stats-addon)
 
-The sample add-on that the [Document Statistics tutorial](../guides/tutorials/stats-addon.md) is based upon. It demonstrates how to use the [Communication APIs](../references/document-sandbox/communication/index.md) to invoke Document Sandbox method from the iframe UI and vice-versa, touching on asynchronous communication and context permanence. The add-on can build a list of statistics for the document, e.g., the number of class instances (shapes, text, images, and so on).
+The sample add-on that the [Document Statistics tutorial](../resources/tutorials/stats-addon.md) is based upon. It demonstrates how to use the [Communication APIs](../references/document-sandbox/communication/index.md) to invoke Document Sandbox method from the iframe UI and vice-versa, touching on asynchronous communication and context permanence. The add-on can build a list of statistics for the document, e.g., the number of class instances (shapes, text, images, and so on).
 
 ## [express-dimensions-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-dimensions-addon)
 

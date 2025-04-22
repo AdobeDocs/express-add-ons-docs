@@ -1829,7 +1829,7 @@ function showNewCategoryDialog() {
 
 For more information on advanced UI patterns:
 
-- [Spectrum Workshop Tutorial](../../guides/tutorials/spectrum-workshop/index.md)
+- [Spectrum Workshop Tutorial](../../resources/tutorials/spectrum-workshop/index.md)
 - [Design Best Practices](../../resources/design/best_practices.md)
 - [UX Guidelines](../../resources/design/ux_guidelines/introduction.md)
 - [Implementation Guide](../../resources/design/implementation_guide.md)

@@ -97,7 +97,7 @@ Learn Adobe Express add-on development through focused, topic-specific modules.
 - Building accessible dialogs and modals
   **Practical Exercise**: Build a complex form using Spectrum components
   **Resources**:
-  - [Spectrum Workshop Tutorial](../../../guides/tutorials/spectrum-workshop/index.md)
+  - [Spectrum Workshop Tutorial](../../../resources/tutorials/spectrum-workshop/index.md)
   - [SWC Sample](/samples.md#swc)
   - [SWC React Theme Sampler](/samples.md#swc-react-theme-sampler)
 

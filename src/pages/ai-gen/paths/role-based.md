@@ -168,7 +168,7 @@
 
 **Resources**:
 
-- [Spectrum Workshop Tutorial](../../guides/tutorials/spectrum-workshop/index.md)
+- [Spectrum Workshop Tutorial](../../resources/tutorials/spectrum-workshop/index.md)
 
 ### Module 4: User Testing and Refinement (1 hour)
 
