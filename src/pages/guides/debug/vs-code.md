@@ -66,20 +66,20 @@ If you are a Visual Studio Code user, you can easily debug your add-on by follow
 
 3. Back in VS Code, click the **Run and Debug** option from the left panel and then select the profile related to where you want to debug (note that Chrome is the first one and selected by default but you can modify your configuration in the `launch.json` to your liking).
 
-    ![launch.json file](img/vscode-debug-option.png)
+    ![launch.json file](./img/vscode-debug-option.png)
 
-    ![launch profiles](img/launch-profiles.png)
+    ![launch profiles](./img/launch-profiles.png)
 
 4. Once you have your selection set from above, simply hit the green play button outlined below to start debugging.
 
-    ![start debugging](img/start-debug.png)
+    ![start debugging](./img/start-debug.png)
 
 5. A new browser window will open for your debugging session directly to the Express URL you configured above. Connect to your add-on as you normally would in Express.
 
 6. You can now set breakpoints as desired, and you will see the code execution stop with the line highlighted. You can also check the **DEBUG CONSOLE** window to see any console output directly in VS Code.
 
-  ![debugging screenshot](img/debugging.png)
+  ![debugging screenshot](./img/debugging.png)
 
 7. Note the toolbar added to the top of your screen in VS Code when you're in debug mode which allows you to step through your code after it's been stopped on a breakpoint.
 
-  ![debugging tools](img/debugger-tool.png)
+  ![debugging tools](./img/debugger-tool.png)
