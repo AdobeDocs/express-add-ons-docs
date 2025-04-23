@@ -125,7 +125,7 @@ ellipse.stroke = editor.makeStroke({
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Naming conventions
+**Naming conventions**
 
 Please note that Adobe Express uses the terms **make** and **create** to distinguish between plain objects and live document objects. You `makeColorFill()`, but `createEllipse()`.
 
