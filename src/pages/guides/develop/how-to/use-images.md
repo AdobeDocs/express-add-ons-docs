@@ -67,7 +67,7 @@ addOnUISdk.ready.then(async () => {
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Image requirements
+**Image requirements**
 
 Please refer to [this section](../../../references/addonsdk/app-document.md#image-requirements) to know more about the file formats support and size requirements for images.
 
@@ -102,6 +102,6 @@ addOnUISdk.ready.then(async () => {
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-GIF Image requirements
+**GIF Image requirements**
 
 All image formats are equal, but some formats are more equal than others. Please refer to [this FAQ](../../faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) to learn more about specific GIF limitations in terms of size and weight.
