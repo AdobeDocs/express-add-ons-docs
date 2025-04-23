@@ -51,7 +51,7 @@ rect.translation = { x: 50, y: 100 };
 
 <InlineAlert slots="header, text1" variant="info" />
 
-Mind the origin of the axes!
+**Mind the origin of the axes!**
 
 The zero point of the coordinate system is at the top-left corner of the parent container, with the x-axis pointing to the right and the y-axis pointing down. So, to move a shape to the right, you increase its `x` value; to move it down, you increase its `y` value.
 
