@@ -57,7 +57,7 @@ editor.context.insertionParent.children.append(greetingsGroup);
 
 <InlineAlert variant="info" slots="header, text, text1" />
 
-Group append order
+**Group append order**
 
 You can append the Group to the page and then append the Text nodes to the Group, or the other way around. The order doesn't matter, as long as the Group hits the page at some point.
 
