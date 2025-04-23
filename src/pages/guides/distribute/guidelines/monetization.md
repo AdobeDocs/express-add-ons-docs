@@ -154,15 +154,15 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 | Badge  | Size(px) | Download link |
 |--------|----------|-------------:|
-| ![img](../img/addon-plus-badge20.svg) | 20x20 | [Download](https://drive.usercontent.google.com/u/0/uc?id=1m0TV9856MlkhWJoDYUk56Y0Ct6PUpzPN&export=download) |
+| ![img](../img/addon-plus-badge20.svg) | 20x20 | [Download](../img/addon-plus-badge20.svg) |
 
 #### Paid badge
-
+../img/addon-pro-badge20.svg
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
 | Badge  | Size(px) | Download link |
 |--------|----------|-------------:|
-| ![](../img/addon-pro-badge20.svg) | 20x20 | [Download](https://drive.usercontent.google.com/u/0/uc?id=1gUuice1_EiYijMSKsCEjt1BlLesiI2z1&export=download) |
+| ![](../img/addon-pro-badge20.svg) | 20x20 | [Download](../img/addon-pro-badge20.svg) |
 
 <InlineAlert slots="text" variant="info"/>
 
