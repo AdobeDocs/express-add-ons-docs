@@ -553,7 +553,7 @@ For `gif` images, [the technical requirements are listed here](https://helpx.ado
 
 IMPORTANT: Animated GIFs
 
-Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an _animated GIF_ specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
+Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an *animated GIF* specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
 
 If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
 
@@ -653,7 +653,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 #### `Bleed`
 
-Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
+Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
 
 | Name      | Type                                                       |                                      Description |
 | --------- | ---------------------------------------------------------- | -----------------------------------------------: |
