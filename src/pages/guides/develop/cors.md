@@ -12,7 +12,7 @@ When you suspect a CORS issue, check your browser console and you will likely se
 
 Be sure to have your browser devtools option set to "**Show CORS errors in console**". For example, in Chrome it looks like the screenshot shown below.
 
-![Show CORS errors in Chrome screenshot](img/show-cors.png)
+![Show CORS errors in Chrome screenshot](./img/show-cors.png)
 
 ## Options
 
@@ -30,7 +30,7 @@ Typically, the origin responsible for serving resources is also responsible for 
 
 One of the quickest ways to unblock your requests for testing, is to use a hosted proxy server which adds the CORS headers to the proxied request for you. For instance, `cors-anywhere` is a [NodeJS pakage](https://www.npmjs.com/package/cors-anywhere) which also has a free hosted demo server with it set up that you can use for quick testing. Open your browser to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and request temporary access to the demo server with the button shown in the screenshot:
 
-![CORS diagram](img/cors-demo.png)
+![CORS diagram](./img/cors-demo.png)
 
 Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance:
 
