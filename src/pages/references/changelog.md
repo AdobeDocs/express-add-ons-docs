@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-04-24
+
+### Updated
+
+- Renamed enum TextType to [`TextLayout`](./document-sandbox/document-apis/enumerations/TextLayout.md) in the Text APIs.
+
 ## 2025-04-22
 
 ### Updated
