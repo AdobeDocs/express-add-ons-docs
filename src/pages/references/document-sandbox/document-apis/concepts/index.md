@@ -290,7 +290,7 @@ The Reference documentation does a good job listing all the classes and interfac
 
 ### Live Object classes
 
-Concrete classes like [`RectangleNode`](../classes/RectangleNode.md") and [`GroupNode`](../classes/GroupNode.md") represent the DOM's **object elements with live setters**. Some of these classes can be instantiated and used directly through factory methods.
+Concrete classes like [`RectangleNode`](../classes/RectangleNode.md) and [`GroupNode`](../classes/GroupNode.md) represent the DOM's **object elements with live setters**. Some of these classes can be instantiated and used directly through factory methods.
 
 ```js
 import { editor } from "express-document-sdk";
@@ -330,7 +330,7 @@ Such interfaces define the properties of **actual JavaScript objects** that must
 
 ### Implementable Interfaces
 
-Implementable interfaces like [`IFillableNode`](../interfaces/IFillableNode.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
+Implementable interfaces like [`IFillableNode`](../interfaces/IFillableNode.md) are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
 
 In summary, the distinction between all the listed categories lies in their *purpose and usage*: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances, or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
 
