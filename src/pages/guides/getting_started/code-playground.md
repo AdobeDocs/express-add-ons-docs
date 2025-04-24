@@ -44,8 +44,6 @@ The Code Playground is designed for:
 
 ## Features
 
-<br/>
-
 | Feature | Description |
 |---------|-------------|
 | **Real-Time Preview** | See your changes as you code, allowing for immediate feedback and faster adjustments. |
@@ -56,13 +54,6 @@ The Code Playground is designed for:
 | **Default Boilerplate Code** | Default boilerplate code for each tab helps you get started quickly. |
 | **Local Persistence** | Save your work to your browser's local storage and resume where you left off, preventing accidental loss. |
 | **Keyboard Shortcuts** | Use keyboard shortcuts to save, run, and reset your code quickly. |
-
-<!-- Check out the video below for a quick introduction to the add-on playground features.
-
-<Embed slots="video" />
-
- <iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/> -->
 
 ## Development Workflow Use Cases
 
@@ -101,8 +92,6 @@ The playground offers two distinct development modes:
 
 - [**Script Mode**](#script-mode): Experiment with the Adobe Express [Document Sandbox](../../references/document-sandbox/index.md). This mode is equivalent to writing code in the `sandbox/code.js` file in an add-on project running locally, but allows you to rapidly test in Express directly.
 - [**Add-on Mode**](#add-on-mode): Test and iterate on your [Add-on UI](../../references/addonsdk/) and functionality with no setup required.
-
-<br/>
 
 | Comparison Factor | Script Mode | Add-on Mode |
 |--------------------|-------------|-------------|
@@ -236,8 +225,6 @@ Once you've tested your code in Script mode, you can easily transition it into t
 Keyboard Shortcuts, local save and session management are all designed to help you get the most out of the Code Playground.
 
 ### Keyboard Shortcuts
-
-<br/>
 
 | Action | Windows/Linux | macOS |
 |--------|---------------|-------|
