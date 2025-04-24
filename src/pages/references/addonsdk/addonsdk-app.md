@@ -408,7 +408,7 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 
 #### `MediaAttributes`
 
-_Required for audio content only._
+*Required for audio content only.*
 
 | Name    | Type     |                               Description |
 | ------- | -------- | ----------------------------------------: |
