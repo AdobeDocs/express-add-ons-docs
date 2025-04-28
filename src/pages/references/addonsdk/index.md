@@ -41,7 +41,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 See the [implementing common use cases page](../../guides/develop/index.md) for details and examples of how to add the features above.
 
-<InlineAlert slots="text" repeat="6" variant="success" />
+<InlineAlert slots="text" repeat="5" variant="success" />
 
 #### SDK vs API
 
