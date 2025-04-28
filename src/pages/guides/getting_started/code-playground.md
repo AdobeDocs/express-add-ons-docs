@@ -228,13 +228,13 @@ Keyboard Shortcuts, local save and session management are all designed to help y
 
 | Action | Windows/Linux | macOS |
 |--------|---------------|-------|
-| **Save** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> |
-| **Run** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> |
-| **Reset** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> |
-| **Increase font size** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd> |
-| **Decrease font size** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd> |
-| **Switch between tabs** | <kbd>Ctrl</kbd> + <kbd>1, 2, 3, 4</kbd> | <kbd>Cmd</kbd> + <kbd>1, 2, 3, 4</kbd> |
-| **View the typings suggestions** | <kbd>Ctrl</kbd> + <kbd>space</kbd> | <kbd>Cmd</kbd> + <kbd>space</kbd> |
+| **Save** | Ctrl + Shift + S | Cmd + Shift + S |
+| **Run** | Ctrl + Shift + Return/Enter | Cmd + Shift + Return/Enter |
+| **Reset** | Ctrl + Shift + X | Cmd + Shift + X |
+| **Increase font size** | Ctrl + Shift + Plus (+) | Cmd + Shift + Plus (+) |
+| **Decrease font size** | Ctrl + Shift + Minus (-) | Cmd + Shift + Minus (-) |
+| **Switch between tabs** | Ctrl + 1, 2, 3, 4 | Cmd + 1, 2, 3, 4 |
+| **View the typings suggestions** | Ctrl + space | Cmd + space |
 
 <InlineAlert slots="header,text1" variant="success"/>
 
