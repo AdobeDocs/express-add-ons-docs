@@ -551,7 +551,7 @@ For `gif` images, [the technical requirements are listed here](https://helpx.ado
 
 <InlineAlert slots="header, text1, text2" variant="info"/>
 
-IMPORTANT: Animated GIFs
+**IMPORTANT: Animated GIFs**
 
 Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an *animated GIF* specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
 
