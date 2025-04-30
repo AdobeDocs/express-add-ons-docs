@@ -91,7 +91,7 @@ The Code Playground is designed to support the following development workflow us
 The playground offers two distinct development modes:
 
 - [**Script Mode**](#script-mode): Experiment with the Adobe Express [Document Sandbox](../../references/document-sandbox/index.md). This mode is equivalent to writing code in the `sandbox/code.js` file in an add-on project running locally, but allows you to rapidly test in Express directly.
-- [**Add-on Mode**](#add-on-mode): Test and iterate on your [Add-on UI](../../references/addonsdk/) and functionality with no setup required.
+- [**Add-on Mode**](#add-on-mode): Test and iterate on your [Add-on UI](../../references/addonsdk/index.md) and functionality with no setup required.
 
 | Comparison Factor | Script Mode | Add-on Mode |
 |--------------------|-------------|-------------|

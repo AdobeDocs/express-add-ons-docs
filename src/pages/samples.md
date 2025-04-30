@@ -279,11 +279,11 @@ Demonstrates using the Communication APIs to expose and proxy APIs bidirectional
 
 ## [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
 
-Demonstrates how to use the [Document APIs](./references/document-sandbox/document-apis/) to create various shapes and text, and add them to the document.
+Demonstrates how to use the [Document APIs](./references/document-sandbox/document-apis/index.md) to create various shapes and text, and add them to the document.
 
 ## [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
 
-A more comprehensive example of using the [Document APIs](./references/document-sandbox/document-apis/) to add a page, images, and shapes, and clear the artboard.
+A more comprehensive example of using the [Document APIs](./references/document-sandbox/document-apis/index.md) to add a page, images, and shapes, and clear the artboard.
 
 ## [express-addon-document-api-template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template)
 
