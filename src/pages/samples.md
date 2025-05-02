@@ -23,7 +23,7 @@ Find inspiration and great reference examples by checking out our [code samples]
 
 <InlineAlert slots="text" variant="info"/>
 
-In addition to these code samples, you should also be sure to check out the [Templates section](guides/getting_started/dev_tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
+In addition to these code samples, you should also be sure to check out the [Templates section](guides/getting_started/dev-tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
 
 ## Using the samples
 

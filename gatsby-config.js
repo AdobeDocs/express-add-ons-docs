@@ -539,11 +539,11 @@ module.exports = {
           },
           {
             title: "Development tools",
-            path: "guides/getting_started/dev_tooling.md",
+            path: "guides/getting_started/dev-tooling.md",
           },
           {
             title: "Code Playground",
-            path: "guides/getting_started/code_playground.md",
+            path: "guides/getting_started/code-playground.md",
           },
           {
             title: "Tutorials",
@@ -598,7 +598,7 @@ module.exports = {
               },
               {
                 title: "Design Principles",
-                path: "guides/design/ux_guidelines/design_principles.md",
+                path: "guides/design/ux_guidelines/design-principles.md",
               },
               {
                 title: "Theming",
@@ -606,23 +606,23 @@ module.exports = {
               },
               {
                 title: "Visual Elements",
-                path: "guides/design/ux_guidelines/visual_elements.md",
+                path: "guides/design/ux_guidelines/visual-elements.md",
               },
               {
                 title: "Feedback & Messaging",
-                path: "guides/design/ux_guidelines/feedback_and_messaging.md",
+                path: "guides/design/ux_guidelines/feedback-and-messaging.md",
               },
               // {
               //   title: "Mobile UX",
-              //   path: "guides/design/ux_guidelines/mobile_ux.md",
+              //   path: "guides/design/ux_guidelines/mobile-ux.md",
               // },
               {
                 title: "Branding Guidelines & Distribution",
-                path: "guides/design/ux_guidelines/branding_guidelines.md",
+                path: "guides/design/ux_guidelines/branding-guidelines.md",
               },
               {
                 title: "Resources & References",
-                path: "guides/design/ux_guidelines/resources_and_references.md",
+                path: "guides/design/ux_guidelines/resources-and-references.md",
               },
               {
                 title: "Changelog",
@@ -632,11 +632,11 @@ module.exports = {
           },
           {
             title: "Implementation guide",
-            path: "guides/design/implementation_guide.md",
+            path: "guides/design/implementation-guide.md",
           },
           {
             title: "Best practices",
-            path: "guides/design/best_practices.md",
+            path: "guides/design/best-practices.md",
           },
         ],
       },
@@ -690,77 +690,77 @@ module.exports = {
               },
               {
                 title: "Data & Environment",
-                path: "guides/develop/how-to/local_data_management.md",
+                path: "guides/develop/how-to/local-data-management.md",
                 pages: [
                   {
                     title: "Store Data",
-                    path: "guides/develop/how-to/local_data_management.md",
+                    path: "guides/develop/how-to/local-data-management.md",
                   },
                   {
                     title: "Theme & Locale",
-                    path: "guides/develop/how-to/theme_locale.md",
+                    path: "guides/develop/how-to/theme-locale.md",
                   },
                 ],
               },
               {
                 title: "UI & Interaction",
-                path: "guides/develop/how-to/drag_and_drop.md",
+                path: "guides/develop/how-to/drag-and-drop.md",
                 pages: [
                   {
                     title: "Use Drag & Drop",
-                    path: "guides/develop/how-to/drag_and_drop.md",
+                    path: "guides/develop/how-to/drag-and-drop.md",
                   },
                   {
                     title: "Use Modal Dialogs",
-                    path: "guides/develop/how-to/modal_dialogs.md",
+                    path: "guides/develop/how-to/modal-dialogs.md",
                   },
                 ],
               },
               {
                 title: "Use Design Elements",
-                path: "guides/develop/how-to/use_text.md", // change this!!
+                path: "guides/develop/how-to/use-text.md", // change this!!
                 pages: [
                   {
                     title: "Use Text",
-                    path: "guides/develop/how-to/use_text.md",
+                    path: "guides/develop/how-to/use-text.md",
                   },
                   {
                     title: "Use Geometry",
-                    path: "guides/develop/how-to/use_geometry.md",
+                    path: "guides/develop/how-to/use-geometry.md",
                   },
                   {
                     title: "Use Color",
-                    path: "guides/develop/how-to/use_color.md",
+                    path: "guides/develop/how-to/use-color.md",
                   },
                   {
                     title: "Use Images",
-                    path: "guides/develop/how-to/use_images.md",
+                    path: "guides/develop/how-to/use-images.md",
                   },
                   {
                     title: "Use Videos",
-                    path: "guides/develop/how-to/use_videos.md",
+                    path: "guides/develop/how-to/use-videos.md",
                   },
                   {
                     title: "Use Audio",
-                    path: "guides/develop/how-to/use_audio.md",
+                    path: "guides/develop/how-to/use-audio.md",
                   },
                   {
                     title: "Use PDF and PowerPoint",
-                    path: "guides/develop/how-to/use_pdf_powerpoint.md",
+                    path: "guides/develop/how-to/use-pdf-powerpoint.md",
                   },
                   {
                     title: "Group Elements",
-                    path: "guides/develop/how-to/group_elements.md",
+                    path: "guides/develop/how-to/group-elements.md",
                   },
                   {
                     title: "Position Elements",
-                    path: "guides/develop/how-to/position_elements.md",
+                    path: "guides/develop/how-to/position-elements.md",
                   },
                 ],
               },
               {
                 title: "Use Metadata",
-                path: "guides/develop/how-to/document_metadata.md",
+                path: "guides/develop/how-to/document-metadata.md",
                 pages: [
                   // {
                   //   title: "Authoring Adobe Express Content",
@@ -768,39 +768,39 @@ module.exports = {
                   // },
                   {
                     title: "Document",
-                    path: "guides/develop/how-to/document_metadata.md",
+                    path: "guides/develop/how-to/document-metadata.md",
                   },
                   {
                     title: "Page",
-                    path: "guides/develop/how-to/page_metadata.md",
+                    path: "guides/develop/how-to/page-metadata.md",
                   },
                   {
                     title: "Element",
-                    path: "guides/develop/how-to/element_metadata.md",
+                    path: "guides/develop/how-to/element-metadata.md",
                   },
                 ],
               },
               {
                 title: "Exporting & Output",
-                path: "guides/develop/how-to/create_renditions.md",
+                path: "guides/develop/how-to/create-renditions.md",
                 pages: [
                   {
                     title: "Create Renditions",
-                    path: "guides/develop/how-to/create_renditions.md",
+                    path: "guides/develop/how-to/create-renditions.md",
                   },
                   {
                     title: "Manage Premium Content",
-                    path: "guides/develop/how-to/premium_content.md",
+                    path: "guides/develop/how-to/premium-content.md",
                   },
                 ],
               },
               {
                 title: "User Info",
-                path: "guides/develop/how-to/user_info.md",
+                path: "guides/develop/how-to/user-info.md",
                 pages: [
                   {
                     title: "Identify users",
-                    path: "guides/develop/how-to/user_info.md",
+                    path: "guides/develop/how-to/user-info.md",
                   },
                 ],
               },
@@ -909,7 +909,7 @@ module.exports = {
                   },
                   {
                     title: "User interface",
-                    path: "guides/distribute/guidelines/general/user_interface.md",
+                    path: "guides/distribute/guidelines/general/user-interface.md",
                   },
                   {
                     title: "Performance",
@@ -941,7 +941,7 @@ module.exports = {
                   },
                   {
                     title: "Edge cases",
-                    path: "guides/distribute/guidelines/general/edge_case.md",
+                    path: "guides/distribute/guidelines/general/edge-case.md",
                   },
                 ],
               },

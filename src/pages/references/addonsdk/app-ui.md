@@ -1,6 +1,6 @@
 # addOnUISdk.app.ui
 
-Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/how-to/theme_locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/develop/how-to/theme_locale.md#detecting-theme) in use to update your add-on user interface accordingly.
+Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/how-to/theme-locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/develop/how-to/theme-locale.md#detecting-theme) in use to update your add-on user interface accordingly.
 
 ## Properties
 

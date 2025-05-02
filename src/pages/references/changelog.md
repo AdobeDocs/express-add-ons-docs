@@ -26,7 +26,7 @@ contributors:
 
 ### Updated
 
-- The [Code Playground](../guides/getting_started/code_playground.md) documentation has been updated with details about the new [Script Mode](../guides/getting_started/code_playground.md#how-to-use-script-mode) and [Local Persistence](../guides/getting_started/code_playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
+- The [Code Playground](../guides/getting_started/code-playground.md) documentation has been updated with details about the new [Script Mode](../guides/getting_started/code-playground.md#how-to-use-script-mode) and [Local Persistence](../guides/getting_started/code-playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
 
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.
@@ -99,7 +99,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 ### Added
 
 - A native Color Picker is available to add-ons via the [`showColorPicker()`](addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
-- We've updated the [Use Color](../guides/develop/how-to/use_color.md) How-to guide, now including a few examples on the Color Picker.
+- We've updated the [Use Color](../guides/develop/how-to/use-color.md) How-to guide, now including a few examples on the Color Picker.
 - A [new section](ui-components/color-picker.md) has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.
 - A new version of the `@adobe/ccweb-add-on-sdk-types` package (v1.14.0) has been released for the CLI. Run `npm update` from the root of your add-on project to update to get the latest typings.
 
@@ -264,7 +264,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-07-22
 
-- Added a new [`format`](addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/develop/how-to/theme_locale.md) section.
+- Added a new [`format`](addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/develop/how-to/theme-locale.md) section.
 - Removed `mobile` and `app` as [`supportedDeviceClass`](manifest/index.md#requirementsappssupporteddeviceclass) values in the Manifest's `requirements.apps` object.
 
 ## 2024-05-28
@@ -290,7 +290,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - The CLI has been updated to release version `2.0.0`, and includes the following:
 
   - Periodic login and EULA consent are no longer required.
-  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../guides/getting_started/dev_tooling.md#templates) for details on all the available templates.
+  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../guides/getting_started/dev-tooling.md#templates) for details on all the available templates.
   - Typings have been updated to include the latest SDK changes, and other internal packages are now at version `2.0.0`.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
@@ -309,7 +309,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-03-08
 
 - [`getPagesMetadata()`](addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../references/addonsdk/app-currentUser.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
-- New examples have been added to the [use cases guide](../guides/develop/how-to/premium_content.md) for handling premium content.
+- New examples have been added to the [use cases guide](../guides/develop/how-to/premium-content.md) for handling premium content.
 - A new video has been added to the [grids tutorial](../guides/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
 
 ## 2024-02-21
@@ -509,8 +509,8 @@ Some items in the following list of changes may have been mentioned in recent up
 - A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **experimental only** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 - The [`createRenditions()` export API](addonsdk/app-document.md#createrenditions) was updated with the following changes:
   - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](addonsdk/addonsdk-constants.md) constant value.
-  - The returned type now also includes page metadata (see [`PageMetadata`](addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/develop/how-to/page_metadata.md).
-- A new [document metadata use case example](../guides/develop/how-to/document_metadata.md) has been added to show how to retrieve the [document id](./addonsdk/app-document.md#id) and [title (ie: name)](./addonsdk/app-document.md#title), including how to listen for the [associated events](addonsdk/addonsdk-app.md#events).
+  - The returned type now also includes page metadata (see [`PageMetadata`](addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/develop/how-to/page-metadata.md).
+- A new [document metadata use case example](../guides/develop/how-to/document-metadata.md) has been added to show how to retrieve the [document id](./addonsdk/app-document.md#id) and [title (ie: name)](./addonsdk/app-document.md#title), including how to listen for the [associated events](addonsdk/addonsdk-app.md#events).
 - New tables have been added to the [Communication API reference](document-sandbox/communication/index.md) denoting the [supported](document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](document-sandbox/communication/index.md) layer.
 
 ## 2023-12-04
@@ -556,9 +556,9 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
 
-  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/how-to/theme_locale.md).
+  **Supported Languages:** The [version details step](../guides/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/develop/how-to/theme-locale.md).
 
-- Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev_tooling.md#no-template-parameter).
+- Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/dev-tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/dev-tooling.md#no-template-parameter).
 - New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
 - Removed NPS survey.
 
@@ -814,7 +814,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ## 2023-08-29
 
-- Added [`currentUser` API](../guides/develop/how-to/user_info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/how-to.md).
+- Added [`currentUser` API](../guides/develop/how-to/user-info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../guides/develop/how-to.md).
 - Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
@@ -830,7 +830,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Updates
 
-- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/how-to/premium_content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/develop/how-to/premium-content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
 
 ## 2023-08-09
 
@@ -891,7 +891,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - [UX Guidelines](../guides/design/index.md) are now available!
 - A new [`requestedSize`](addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../guides/design/ux_guidelines/visual_elements.md#typography).
+- Information on [using fonts](../guides/design/ux_guidelines/visual-elements.md#typography).
 - CORS / COEP header handling added to the [CORS guide](../guides/develop/context.md#cors--coep-handling)
 
 ## 2023-06-08
