@@ -21,7 +21,7 @@ contributors:
 
 Feedback and messaging are essential UX components. Your add-ons should always provide users with information about the state of the system, the results of their actions, and any errors that may have occurred.
 
-Unclear feedback and mishandled errors can lead to confusion and, crucially, are a cause of [rejection](../../../guides/distribute/rejections.md#error-handling) when submitting add-ons to the Adobe Express Marketplace. On the other hand, well-designed feedback can help users understand what is happening and what they need to do next.
+Unclear feedback and mishandled errors can lead to confusion and, crucially, are a cause of [rejection](../../distribute/rejections.md#error-handling) when submitting add-ons to the Adobe Express Marketplace. On the other hand, well-designed feedback can help users understand what is happening and what they need to do next.
 
 ## Loading Indicators
 

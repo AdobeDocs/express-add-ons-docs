@@ -9,13 +9,13 @@ your code in case any other required fields are added to the Stroke descriptor i
 
 ## Extends
 
--   [`Stroke`](Stroke.md)
+-   [`Stroke`](stroke.md)
 
 ## Properties
 
 ### color
 
-• **color**: [`Color`](Color.md)
+• **color**: [`Color`](color.md)
 
 The color of a stroke.
 
@@ -42,7 +42,7 @@ Array must be of even length. Values cannot be negative.
 
 ### position
 
-• **position**: [`StrokePosition`](../enumerations/StrokePosition.md)
+• **position**: [`StrokePosition`](../enumerations/stroke-position.md)
 
 The position of the stroke relative to the outline of the shape.
 
@@ -50,13 +50,13 @@ The position of the stroke relative to the outline of the shape.
 
 ### type
 
-• `readonly` **type**: [`color`](../enumerations/StrokeType.md#color)
+• `readonly` **type**: [`color`](../enumerations/stroke-type.md#color)
 
 The stroke type.
 
 #### Overrides
 
-[`Stroke`](Stroke.md).[`type`](Stroke.md#type)
+[`Stroke`](stroke.md).[`type`](stroke.md#type)
 
 ---
 

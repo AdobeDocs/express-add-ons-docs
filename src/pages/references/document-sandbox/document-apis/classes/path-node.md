@@ -5,32 +5,32 @@
 A PathNode represents a generic vector path shape in the scenegraph. Paths cannot be edited through this API
 yet, only read.
 
-To create new paths, see [Editor.createPath](Editor.md#createpath).
+To create new paths, see [Editor.createPath](editor.md#createpath).
 
 ## Extends
 
--   [`FillableNode`](FillableNode.md)
+-   [`FillableNode`](fillable-node.md)
 
 ## Accessors
 
 ### addOnData
 
-• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+• `get` **addOnData**(): [`AddOnData`](add-on-data.md)
 
-Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+Get [AddOnData](add-on-data.md) reference for managing the private metadata on this node for this add-on.
 
 #### Returns
 
-[`AddOnData`](AddOnData.md)
+[`AddOnData`](add-on-data.md)
 
 <hr />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly` `Iterable` [`Node`](Node.md), `any`, `any`
+• `get` **allChildren**(): `Readonly` `Iterable` [`Node`](node.md), `any`, `any`
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -38,48 +38,48 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly` `Iterable` [`Node`](Node.md), `any`, `any`
+`Readonly` `Iterable` [`Node`](node.md), `any`, `any`
 
 <hr />
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendMode`](../enumerations/BlendMode.md)
+• `get` **blendMode**(): [`BlendMode`](../enumerations/blend-mode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[BlendMode.normal](../enumerations/BlendMode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/BlendMode.md#passthrough) for GroupNodes.
+[BlendMode.normal](../enumerations/blend-mode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/blend-mode.md#passthrough) for GroupNodes.
 
 • `set` **blendMode**(`value`): `void`
 
 #### Parameters
 
-• **value**: [`BlendMode`](../enumerations/BlendMode.md)
+• **value**: [`BlendMode`](../enumerations/blend-mode.md)
 
 #### Returns
 
-[`BlendMode`](../enumerations/BlendMode.md)
+[`BlendMode`](../enumerations/blend-mode.md)
 
 <hr />
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/Rect.md)
+• `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](visual-node.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly` [`Rect`](../interfaces/Rect.md)
+`Readonly` [`Rect`](../interfaces/rect.md)
 
 <hr />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly` [`Rect`](../interfaces/Rect.md)
+• `get` **boundsLocal**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -90,25 +90,25 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly` [`Rect`](../interfaces/Rect.md)
+`Readonly` [`Rect`](../interfaces/rect.md)
 
 <hr />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly` [`Point`](../interfaces/Point.md)
+• `get` **centerPointLocal**(): `Readonly` [`Point`](../interfaces/point.md)
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly` [`Point`](../interfaces/Point.md)
+`Readonly` [`Point`](../interfaces/point.md)
 
 <hr />
 
 ### fill
 
-• `get` **fill**(): `undefined` \| `Readonly` [`Fill`](../interfaces/Fill.md)
+• `get` **fill**(): `undefined` \| `Readonly` [`Fill`](../interfaces/fill.md)
 
 • `set` **fill**(`fill`): `void`
 
@@ -116,17 +116,17 @@ The fill applied to the shape, if any.
 
 #### Parameters
 
-• **fill**: `undefined` \| [`Fill`](../interfaces/Fill.md)
+• **fill**: `undefined` \| [`Fill`](../interfaces/fill.md)
 
 #### Returns
 
-`undefined` \| `Readonly` [`Fill`](../interfaces/Fill.md)
+`undefined` \| `Readonly` [`Fill`](../interfaces/fill.md)
 
 <hr />
 
 ### fillRule
 
-• `get` **fillRule**(): [`FillRule`](../enumerations/FillRule.md)
+• `get` **fillRule**(): [`FillRule`](../enumerations/fill-rule.md)
 
 The fill rule specifies how the interior area of a path is determined in cases where the path is self-intersecting or
 has multiple disjoint parts. The default value is nonZero.
@@ -135,11 +135,11 @@ has multiple disjoint parts. The default value is nonZero.
 
 #### Parameters
 
-• **rule**: [`FillRule`](../enumerations/FillRule.md)
+• **rule**: [`FillRule`](../enumerations/fill-rule.md)
 
 #### Returns
 
-[`FillRule`](../enumerations/FillRule.md)
+[`FillRule`](../enumerations/fill-rule.md)
 
 <hr />
 
@@ -160,7 +160,7 @@ moved to a different part of the document.
 
 • `get` **locked**(): `boolean`
 
-The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](context.md#selection)), and
 cannot be edited by the user in the UI unless they are unlocked first. Operations on locked nodes using the API
 are permitted. However, please consider if modifying a locked node would align with user expectations
 before using the API to make changes to locked nodes.
@@ -197,7 +197,7 @@ The node's opacity, from 0.0 to 1.0
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](base-node.md)
 
 The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
 content.
@@ -208,7 +208,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 #### Returns
 
-`undefined` \| [`BaseNode`](BaseNode.md)
+`undefined` \| [`BaseNode`](base-node.md)
 
 <hr />
 
@@ -254,7 +254,7 @@ cumulative rotation from the node's parent containers.
 
 ### stroke
 
-• `get` **stroke**(): `undefined` \| `Readonly` [`Stroke`](../interfaces/Stroke.md)
+• `get` **stroke**(): `undefined` \| `Readonly` [`Stroke`](../interfaces/stroke.md)
 
 • `set` **stroke**(`stroke`): `void`
 
@@ -264,17 +264,17 @@ for backward compatibility. Throws if another type is provided.
 
 #### Parameters
 
-• **stroke**: `undefined` \| [`SolidColorStrokeWithOptionalType`](../type-aliases/SolidColorStrokeWithOptionalType.md)
+• **stroke**: `undefined` \| [`SolidColorStrokeWithOptionalType`](../type-aliases/solid-color-stroke-with-optional-type.md)
 
 #### Returns
 
-`undefined` \| `Readonly` [`Stroke`](../interfaces/Stroke.md)
+`undefined` \| `Readonly` [`Stroke`](../interfaces/stroke.md)
 
 <hr />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly` [`Point`](../interfaces/Point.md)
+• `get` **topLeftLocal**(): `Readonly` [`Point`](../interfaces/point.md)
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -282,7 +282,7 @@ boundsInParent.
 
 #### Returns
 
-`Readonly` [`Point`](../interfaces/Point.md)
+`Readonly` [`Point`](../interfaces/point.md)
 
 <hr />
 
@@ -300,7 +300,7 @@ The node's transform matrix relative to its parent.
 
 ### translation
 
-• `get` **translation**(): `Readonly` [`Point`](../interfaces/Point.md)
+• `get` **translation**(): `Readonly` [`Point`](../interfaces/point.md)
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -310,29 +310,29 @@ setting translation directly.
 
 #### Parameters
 
-• **value**: [`Point`](../interfaces/Point.md)
+• **value**: [`Point`](../interfaces/point.md)
 
 #### Returns
 
-`Readonly` [`Point`](../interfaces/Point.md)
+`Readonly` [`Point`](../interfaces/point.md)
 
 <hr />
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/scene-node-type.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enumerations/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/scene-node-type.md)
 
 <hr />
 
 ### visualRoot
 
-• `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
+• `get` **visualRoot**(): [`VisualNode`](visual-node.md)
 
 The highest ancestor that still has visual presence in the document. Typically an Artboard, but for orphaned
 content, it will be the root of the deleted content (which might be this node itself).
@@ -343,53 +343,53 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 #### Returns
 
-[`VisualNode`](VisualNode.md)
+[`VisualNode`](visual-node.md)
 
 ## Methods
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/Rect.md)
+• **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/rect.md)
 
-Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
-node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
+Convert the node's [boundsLocal](visual-node.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+node. Both nodes must share the same [visualRoot](visual-node.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-• **targetNode**: [`VisualNode`](VisualNode.md)
+• **targetNode**: [`VisualNode`](visual-node.md)
 
 #### Returns
 
-`Readonly` [`Rect`](../interfaces/Rect.md)
+`Readonly` [`Rect`](../interfaces/rect.md)
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`boundsInNode`](FillableNode.md#boundsinnode)
+[`FillableNode`](fillable-node.md).[`boundsInNode`](fillable-node.md#boundsinnode)
 
 <hr />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly` [`Point`](../interfaces/Point.md)
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly` [`Point`](../interfaces/point.md)
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](visual-node.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-• **localPoint**: [`Point`](../interfaces/Point.md)
+• **localPoint**: [`Point`](../interfaces/point.md)
 
-• **targetNode**: [`VisualNode`](VisualNode.md)
+• **targetNode**: [`VisualNode`](visual-node.md)
 
 #### Returns
 
-`Readonly` [`Point`](../interfaces/Point.md)
+`Readonly` [`Point`](../interfaces/point.md)
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`localPointInNode`](FillableNode.md#localpointinnode)
+[`FillableNode`](fillable-node.md).[`localPointInNode`](fillable-node.md#localpointinnode)
 
 <hr />
 
@@ -410,7 +410,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`removeFromParent`](FillableNode.md#removefromparent)
+[`FillableNode`](fillable-node.md).[`removeFromParent`](fillable-node.md#removefromparent)
 
 <hr />
 
@@ -423,11 +423,11 @@ Move the node so the given `localRegistrationPoint` in its local coordinates is 
 
 #### Parameters
 
-• **parentPoint**: [`Point`](../interfaces/Point.md)
+• **parentPoint**: [`Point`](../interfaces/point.md)
 
 Point in this node's parent's coordinate space to move `localRegistrationPoint` to
 
-• **localRegistrationPoint**: [`Point`](../interfaces/Point.md)
+• **localRegistrationPoint**: [`Point`](../interfaces/point.md)
 
 Point in this node's local coordinate space to align with `parentPoint`
 
@@ -437,7 +437,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`setPositionInParent`](FillableNode.md#setpositioninparent)
+[`FillableNode`](fillable-node.md).[`setPositionInParent`](fillable-node.md#setpositioninparent)
 
 #### Example
 
@@ -467,7 +467,7 @@ ancestors also have rotation of their own.
 
 Angle in degrees.
 
-• **localRotationPoint**: [`Point`](../interfaces/Point.md)
+• **localRotationPoint**: [`Point`](../interfaces/point.md)
 
 Point to rotate around, in node's local coordinates.
 
@@ -477,7 +477,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`setRotationInParent`](FillableNode.md#setrotationinparent)
+[`FillableNode`](fillable-node.md).[`setRotationInParent`](fillable-node.md#setrotationinparent)
 
 #### Example
 

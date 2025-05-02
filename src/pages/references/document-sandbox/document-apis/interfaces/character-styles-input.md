@@ -2,10 +2,10 @@
 
 # Interface: CharacterStylesInput
 
-Variant of [CharacterStyles](CharacterStyles.md) with all style fields optional, used for applyCharacterStyles(). When using that API,
+Variant of [CharacterStyles](character-styles.md) with all style fields optional, used for applyCharacterStyles(). When using that API,
 any fields not specified are left unchanged, preserving the text's existing styles.
 
-If specified, the font must be of the [AvailableFont](../classes/AvailableFont.md) type – one that is guaranteed to be available for the current
+If specified, the font must be of the [AvailableFont](../classes/available-font.md) type – one that is guaranteed to be available for the current
 user to edit with.
 
 ## Extends
@@ -14,13 +14,13 @@ user to edit with.
 
 ## Extended by
 
--   [`CharacterStylesRangeInput`](CharacterStylesRangeInput.md)
+-   [`CharacterStylesRangeInput`](character-styles-range-input.md)
 
 ## Properties
 
 ### color?
 
-• `optional` **color**: [`Color`](Color.md)
+• `optional` **color**: [`Color`](color.md)
 
 Text color.
 
@@ -32,7 +32,7 @@ Text color.
 
 ### font?
 
-• `optional` **font**: [`AvailableFont`](../classes/AvailableFont.md)
+• `optional` **font**: [`AvailableFont`](../classes/available-font.md)
 
 <hr />
 

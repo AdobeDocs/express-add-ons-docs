@@ -255,7 +255,7 @@ Allows users to create two-color gradients of various shapes and direction, and 
 
 **Features Leveraged:**
 
-- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/Editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
+- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
 
 ## Document Sandbox Code Samples
 

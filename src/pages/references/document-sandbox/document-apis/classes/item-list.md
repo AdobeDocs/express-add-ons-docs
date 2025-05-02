@@ -4,7 +4,7 @@
 
 ItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [Node.allChildren](Node.md#allchildren) for details).
+children that exist in the parent node. See [Node.allChildren](node.md#allchildren) for details).
 
 ItemList also provides APIs for manipulating the list by adding items to the parent or removing items from the parent.
 
@@ -12,11 +12,11 @@ This class is used in different places for various types of items, including Nod
 
 ## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md) `T`
+-   [`RestrictedItemList`](restricted-item-list.md) `T`
 
 ## Type parameters
 
-• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/list-item.md)
 
 ## Accessors
 
@@ -68,7 +68,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`[iterator]`](RestrictedItemList.md#iterator)
+[`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](RestrictedItemList.md#iterator)
 
 <hr />
 
@@ -89,7 +89,7 @@ removed from their previous parent, if any – or if an item is already in *this
 
 #### Throws
 
-- if item has a different parent and item is a [TextNode](TextNode.md) that's a part of a Text Flow, or if item's children subtree contains a TextNode who is a part of a Text Flow.
+- if item has a different parent and item is a [TextNode](text-node.md) that's a part of a Text Flow, or if item's children subtree contains a TextNode who is a part of a Text Flow.
 
 <hr />
 
@@ -123,7 +123,7 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`indexOf`](RestrictedItemList.md#indexof)
+[`RestrictedItemList`](restricted-item-list.md).[`indexOf`](restricted-item-list.md#indexof)
 
 <hr />
 
@@ -147,7 +147,7 @@ if any – or if it's already in *this* list, its index is simply changed. No-op
 
 #### Throws
 
-- if newItem has a different parent and it is a [TextNode](TextNode.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
+- if newItem has a different parent and it is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
 
 <hr />
 
@@ -171,7 +171,7 @@ if any – or if it's already in *this* list, its index is simply changed. No-op
 
 #### Throws
 
-- if newItem has a different parent and it is a [TextNode](TextNode.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
+- if newItem has a different parent and it is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
 
 <hr />
 
@@ -193,7 +193,7 @@ Zero-based index
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`item`](RestrictedItemList.md#item)
+[`RestrictedItemList`](restricted-item-list.md).[`item`](restricted-item-list.md#item)
 
 <hr />
 
@@ -217,7 +217,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`moveAfter`](RestrictedItemList.md#moveafter)
+[`RestrictedItemList`](restricted-item-list.md).[`moveAfter`](restricted-item-list.md#moveafter)
 
 #### Throws
 
@@ -245,7 +245,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`moveBefore`](RestrictedItemList.md#movebefore)
+[`RestrictedItemList`](restricted-item-list.md).[`moveBefore`](restricted-item-list.md#movebefore)
 
 #### Throws
 
@@ -269,7 +269,7 @@ Remove the items from the list. The items need not be contiguous.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`remove`](RestrictedItemList.md#remove)
+[`RestrictedItemList`](restricted-item-list.md).[`remove`](restricted-item-list.md#remove)
 
 #### Throws
 
@@ -297,7 +297,7 @@ changed. No-op if both arguments are the same item.
 
 #### Throws
 
-- if newItem has a different parent and newItem is a [TextNode](TextNode.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
+- if newItem has a different parent and newItem is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
 
 <hr />
 
@@ -313,4 +313,4 @@ readonly `T`[]
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`toArray`](RestrictedItemList.md#toarray)
+[`RestrictedItemList`](restricted-item-list.md).[`toArray`](restricted-item-list.md#toarray)

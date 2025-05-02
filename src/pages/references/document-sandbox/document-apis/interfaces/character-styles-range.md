@@ -2,36 +2,36 @@
 
 # Interface: CharacterStylesRange
 
-A set of [CharacterStyles](CharacterStyles.md) along with the range of characters they apply to. Seen in the characterStyleRanges getter.
+A set of [CharacterStyles](character-styles.md) along with the range of characters they apply to. Seen in the characterStyleRanges getter.
 
 Note that fonts returned by the getter are *not* guaranteed to be ones the user has rights to edit with, even though they
 are visible in the document.
 
 ## Extends
 
--   [`CharacterStyles`](CharacterStyles.md).[`StyleRange`](StyleRange.md)
+-   [`CharacterStyles`](character-styles.md).[`StyleRange`](style-range.md)
 
 ## Properties
 
 ### color
 
-• **color**: [`Color`](Color.md)
+• **color**: [`Color`](color.md)
 
 Text color.
 
 #### Inherited from
 
-[`CharacterStyles`](CharacterStyles.md).[`color`](CharacterStyles.md#color)
+[`CharacterStyles`](character-styles.md).[`color`](character-styles.md#color)
 
 <hr />
 
 ### font
 
-• **font**: [`Font`](../type-aliases/Font.md)
+• **font**: [`Font`](../type-aliases/font.md)
 
 #### Inherited from
 
-[`CharacterStyles`](CharacterStyles.md).[`font`](CharacterStyles.md#font)
+[`CharacterStyles`](character-styles.md).[`font`](character-styles.md#font)
 
 <hr />
 
@@ -43,7 +43,7 @@ Size of the text in points.
 
 #### Inherited from
 
-[`CharacterStyles`](CharacterStyles.md).[`fontSize`](CharacterStyles.md#fontsize)
+[`CharacterStyles`](character-styles.md).[`fontSize`](character-styles.md#fontsize)
 
 <hr />
 
@@ -57,7 +57,7 @@ such as emojis are considered to have a length of 2.
 
 #### Inherited from
 
-[`StyleRange`](StyleRange.md).[`length`](StyleRange.md#length)
+[`StyleRange`](style-range.md).[`length`](style-range.md#length)
 
 <hr />
 
@@ -71,7 +71,7 @@ leaves spacing at its default.
 
 #### Inherited from
 
-[`CharacterStyles`](CharacterStyles.md).[`letterSpacing`](CharacterStyles.md#letterspacing)
+[`CharacterStyles`](character-styles.md).[`letterSpacing`](character-styles.md#letterspacing)
 
 <hr />
 
@@ -83,4 +83,4 @@ Adds an underline to text.
 
 #### Inherited from
 
-[`CharacterStyles`](CharacterStyles.md).[`underline`](CharacterStyles.md#underline)
+[`CharacterStyles`](character-styles.md).[`underline`](character-styles.md#underline)

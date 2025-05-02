@@ -3,35 +3,35 @@
 # Class: ExpressRootNode
 
 An ExpressRootNode represents the root node of the document's "scenegraph" artwork tree. The root contains a collection
-of [pages](ExpressRootNode.md#pages). Each page contains one or more artboards, arranged in a timeline sequence. All the visual content of
+of [pages](express-root-node.md#pages). Each page contains one or more artboards, arranged in a timeline sequence. All the visual content of
 the document lies within those artboards.
 
 The parent of ExpressRootNode is undefined, since it is the root of the document tree.
 
 ## Extends
 
--   [`BaseNode`](BaseNode.md)
+-   [`BaseNode`](base-node.md)
 
 ## Accessors
 
 ### addOnData
 
-• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+• `get` **addOnData**(): [`AddOnData`](add-on-data.md)
 
-Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+Get [AddOnData](add-on-data.md) reference for managing the private metadata on this node for this add-on.
 
 #### Returns
 
-[`AddOnData`](AddOnData.md)
+[`AddOnData`](add-on-data.md)
 
 <hr />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly` `Iterable` [`BaseNode`](BaseNode.md), `any`, `any`
+• `get` **allChildren**(): `Readonly` `Iterable` [`BaseNode`](base-node.md), `any`, `any`
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -40,7 +40,7 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly` `Iterable` [`BaseNode`](BaseNode.md), `any`, `any`
+`Readonly` `Iterable` [`BaseNode`](base-node.md), `any`, `any`
 
 <hr />
 
@@ -59,20 +59,20 @@ moved to a different part of the document.
 
 ### pages
 
-• `get` **pages**(): [`PageList`](PageList.md)
+• `get` **pages**(): [`PageList`](page-list.md)
 
 The pages of the document. All visual content is contained on artboards within the pages.
-To create a new page, see [PageList.addPage](PageList.md#addpage).
+To create a new page, see [PageList.addPage](page-list.md#addpage).
 
 #### Returns
 
-[`PageList`](PageList.md)
+[`PageList`](page-list.md)
 
 <hr />
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](base-node.md)
 
 The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
 content.
@@ -83,19 +83,19 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 #### Returns
 
-`undefined` \| [`BaseNode`](BaseNode.md)
+`undefined` \| [`BaseNode`](base-node.md)
 
 <hr />
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/scene-node-type.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enumerations/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/scene-node-type.md)
 
 ## Methods
 
@@ -116,4 +116,4 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`BaseNode`](BaseNode.md).[`removeFromParent`](BaseNode.md#removefromparent)
+[`BaseNode`](base-node.md).[`removeFromParent`](base-node.md#removefromparent)

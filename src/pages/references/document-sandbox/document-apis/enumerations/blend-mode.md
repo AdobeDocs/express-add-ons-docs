@@ -8,7 +8,7 @@
 
 Determines how a scenenode is composited on top of the content rendered below it.
 
-If a node is inside a container whose blend mode anything other than [passThrough](BlendMode.md#passthrough), then the node's blend mode only
+If a node is inside a container whose blend mode anything other than [passThrough](blend-mode.md#passthrough), then the node's blend mode only
 interacts with other siblings within the same container. See documentation below for details.
 
 ## Enumeration Members

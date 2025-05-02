@@ -73,7 +73,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 ### Prerequisites
 
 -   Familiarity with HTML, CSS, JavaScript.
--   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../guides/getting_started/quickstart.md) guide.
+-   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../getting_started/quickstart.md) guide.
 -   An Adobe Express account; use your existing Adobe ID or create one for free.
 -   Node.js version 16 or newer.
 
@@ -441,7 +441,7 @@ You now understand the fundamentals of the Adobe Express DOM and the hierarchica
 
 ### Designing the UI with Spectrum Web Components
 
-Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](../../guides/design/index.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
+Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](../design/index.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
 
 -   `<sp-number-field>` for the Rows and Columns inputs;
 -   `<sp-slider>` for the Gutter;[^4]

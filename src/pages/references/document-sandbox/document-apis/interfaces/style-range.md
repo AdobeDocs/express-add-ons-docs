@@ -6,10 +6,10 @@ Represents a range of characters defined by a length (and implicitly started at 
 
 ## Extended by
 
--   [`CharacterStylesRangeInput`](CharacterStylesRangeInput.md)
--   [`CharacterStylesRange`](CharacterStylesRange.md)
--   [`ParagraphStylesRangeInput`](ParagraphStylesRangeInput.md)
--   [`ParagraphStylesRange`](ParagraphStylesRange.md)
+-   [`CharacterStylesRangeInput`](character-styles-range-input.md)
+-   [`CharacterStylesRange`](character-styles-range.md)
+-   [`ParagraphStylesRangeInput`](paragraph-styles-range-input.md)
+-   [`ParagraphStylesRange`](paragraph-styles-range.md)
 
 ## Properties
 

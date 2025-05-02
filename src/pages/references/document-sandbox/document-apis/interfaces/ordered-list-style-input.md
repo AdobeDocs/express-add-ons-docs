@@ -28,7 +28,7 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 
 ### numbering?
 
-• `optional` **numbering**: [`OrderedListNumbering`](../namespaces/Constants/enumerations/OrderedListNumbering.md)
+• `optional` **numbering**: [`OrderedListNumbering`](../namespaces/Constants/enumerations/ordered-list-numbering.md)
 
 The numbering style to use. If undefined, it defaults to a different type depending on the paragraph's indent level.
 The defaults for increasing indent are 1, a, i, I, and then they repeat.
@@ -55,4 +55,4 @@ Additional string to display before each sequence number/letter, e.g. "("
 
 ### type
 
-• **type**: [`ordered`](../namespaces/Constants/enumerations/ParagraphListType.md#ordered)
+• **type**: [`ordered`](../namespaces/Constants/enumerations/paragraph-list-type.md#ordered)

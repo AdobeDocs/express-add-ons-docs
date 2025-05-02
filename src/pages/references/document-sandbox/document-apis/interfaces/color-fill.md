@@ -8,13 +8,13 @@ The most convenient way to create a fill is via `Editor.makeColorFill()`.
 
 ## Extends
 
--   [`Fill`](Fill.md)
+-   [`Fill`](fill.md)
 
 ## Properties
 
 ### color
 
-• **color**: [`Color`](Color.md)
+• **color**: [`Color`](color.md)
 
 The fill color.
 
@@ -22,10 +22,10 @@ The fill color.
 
 ### type
 
-• `readonly` **type**: [`color`](../enumerations/FillType.md#color)
+• `readonly` **type**: [`color`](../enumerations/fill-type.md#color)
 
 The fill type.
 
 #### Overrides
 
-[`Fill`](Fill.md).[`type`](Fill.md#type)
+[`Fill`](fill.md).[`type`](fill.md#type)

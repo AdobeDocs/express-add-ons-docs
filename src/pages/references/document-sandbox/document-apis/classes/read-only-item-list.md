@@ -4,17 +4,17 @@
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [Node.allChildren](Node.md#allchildren) for details).
+children that exist in the parent node. See [Node.allChildren](node.md#allchildren) for details).
 
 Items in a bare ReadOnlyItemList cannot be added, removed, or reordered. Subclasses like ItemList may add these capabilities, however.
 
 ## Extended by
 
--   [`RestrictedItemList`](RestrictedItemList.md)
+-   [`RestrictedItemList`](restricted-item-list.md)
 
 ## Type parameters
 
-• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/list-item.md)
 
 ## Accessors
 

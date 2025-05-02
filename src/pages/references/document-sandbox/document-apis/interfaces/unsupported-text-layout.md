@@ -10,4 +10,4 @@
 
 ### type
 
-• **type**: [`magicFit`](../enumerations/TextType.md#magicfit) \| [`circular`](../enumerations/TextType.md#circular)
+• **type**: [`magicFit`](../enumerations/text-type.md#magicfit) \| [`circular`](../enumerations/text-type.md#circular)

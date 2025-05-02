@@ -167,6 +167,6 @@ If the endpoint is managed by a third party, you may have more difficulty in add
 - Ask if the third party provider can set headers for you via their existing support channels.
 - Create a proxy that you control to act as an intermediary. This has security and privacy implications since you need to ensure that the proxy is secure, doesn’t mix up or serve incorrect data, and doesn’t preserve user information for any longer than necessary to complete the transaction.
 
-## [Review process impact](../../guides/distribute/guidelines/general/index.md)
+## [Review process impact](../distribute/guidelines/general/index.md)
 
 All new add-ons published to the marketplace will be reviewed with these headers in place. If the reviewer finds a problem with your submission related to cross-origin isolation that impacts the usability of your add-on, the reviewer will reject your add-on. You can then use the above to address the issues before submitting again.
