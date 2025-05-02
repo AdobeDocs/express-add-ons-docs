@@ -308,7 +308,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-03-08
 
-- [`getPagesMetadata()`](addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../references/addonsdk/app-currentUser.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
+- [`getPagesMetadata()`](addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](addonsdk/app-current-user.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
 - New examples have been added to the [use cases guide](../guides/develop/how-to/premium-content.md) for handling premium content.
 - A new video has been added to the [grids tutorial](../guides/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
 
@@ -343,7 +343,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 
 - [`startPremiumUpgradeIfFreeUser()`](addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) experimental API has been added to the [addOnUISdk.app](addonsdk/addonsdk-app.md) object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.
 
-- [`isPremiumUser()`](../references/addonsdk/app-currentUser.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](../references/addonsdk/app-currentUser.md) object to determine if the current user is a premium or free user.
+- [`isPremiumUser()`](addonsdk/app-current-user.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](addonsdk/app-current-user.md) object to determine if the current user is a premium or free user.
 
 <InlineAlert slots="text" variant="warning"/>
 
