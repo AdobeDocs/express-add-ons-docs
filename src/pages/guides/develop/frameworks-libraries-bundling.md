@@ -59,11 +59,11 @@ new CopyWebpackPlugin({
 
 ## React
 
-The CLI supports two different [react-based templates](../getting_started/dev_tooling.md#templates), and the [code samples](../../samples.md) repository contains various add-ons built with React for you to use as a reference.
+The CLI supports two different [react-based templates](../getting_started/dev-tooling.md#templates), and the [code samples](../../samples.md) repository contains various add-ons built with React for you to use as a reference.
 
 ## Lit Framework
 
-The CLI provides [starter template options](../getting_started/dev_tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
+The CLI provides [starter template options](../getting_started/dev-tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
 
 ## Other JavaScript and CSS libraries
 

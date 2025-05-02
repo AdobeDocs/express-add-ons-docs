@@ -115,7 +115,7 @@ Alternatively, you can provide visual cues directly in the add-on UI to show tha
 
 ## Allow only the preview of Premium Content
 
-As mentioned in [Creating Renditions](./create_renditions.md), you can allow users to preview Premium content within the iframe by setting the `renditionIntent` to the constant [`RenditionIntent.preview`](../../../references/addonsdk/addonsdk-constants.md) as the second parameter of the [`addOnUISdk.app.document.createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method. Remember to also add the [`"renditionPreview"`](./create_renditions.md#the-preview-intent) permission to your add-on's `manifest.json` file.
+As mentioned in [Creating Renditions](./create-renditions.md), you can allow users to preview Premium content within the iframe by setting the `renditionIntent` to the constant [`RenditionIntent.preview`](../../../references/addonsdk/addonsdk-constants.md) as the second parameter of the [`addOnUISdk.app.document.createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method. Remember to also add the [`"renditionPreview"`](./create-renditions.md#the-preview-intent) permission to your add-on's `manifest.json` file.
 
 <InlineAlert slots="header, text, text1, text2" variant="warning"/>
 

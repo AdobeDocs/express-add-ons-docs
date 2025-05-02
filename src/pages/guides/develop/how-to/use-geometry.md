@@ -50,7 +50,7 @@ currentPage.artboards.first.children.append(rect);
 
 **Create vs. Add to the page**
 
-Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/artboard-node.md), a [Group](./group_elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/container-node.md) interface.
+Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/artboard-node.md), a [Group](./group-elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/container-node.md) interface.
 
 You usually reference the container using [`editor.context`](../../../references/document-sandbox/document-apis/classes/context.md), which provides access to the current page, selection, and other useful properties.
 
@@ -125,7 +125,7 @@ editor.context.insertionParent.children.append(ellipse);
 
 <InlineAlert slots="text" variant="info"/>
 
-If you need a refresher on how to create and apply colors, check out [Using Colors](./use_color.md).
+If you need a refresher on how to create and apply colors, check out [Using Colors](./use-color.md).
 
 ## Create Paths
 
