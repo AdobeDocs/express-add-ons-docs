@@ -120,7 +120,7 @@ You can call `preventDefault` on the submit event to prevent the browser from tr
 
 ### How do I enable CORS for a service that blocks my add-on requests due to the origin?
 
-To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../guides/develop/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../guides/develop/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
+To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](develop/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](develop/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
 
 ### How do I prevent my iframe content from being blocked due to cross-origin issues?
 
@@ -150,7 +150,7 @@ Instead of zipping the folder containing the add-on files, please zip only the c
 
 ### How can I monetize my add-on?
 
-At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**. Find out more about how you can communicate your monetization details to users in our [monetization guidelines](../guides/distribute/guidelines/monetization.md#branding-your-add-ons-for-monetization).
+At this time, the only way to monetize is by using a third party provider, and ensuring you choose one that provides safety measures, security and proper payment processing. Some options you may want to consider include **Gumroad**, **Stripe**, **Paddle** and **FastSpring**. Find out more about how you can communicate your monetization details to users in our [monetization guidelines](distribute/guidelines/monetization.md#branding-your-add-ons-for-monetization).
 
 ### What does it mean when an API is considered **experimental**?
 
@@ -178,7 +178,7 @@ Yes, however, there are [technical requirements](https://helpx.adobe.com/express
 
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
 
-This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../guides/develop/context.md#cors) for more details on handling CORS with your add-on.
+This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](develop/context.md#cors) for more details on handling CORS with your add-on.
 
 ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
 

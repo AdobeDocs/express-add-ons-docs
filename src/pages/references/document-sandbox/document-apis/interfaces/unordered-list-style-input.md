@@ -41,4 +41,4 @@ Text or Unicode glyphs are accepted to represent the list marker.
 
 ### type
 
-• **type**: [`unordered`](../namespaces/Constants/enumerations/ParagraphListType.md#unordered)
+• **type**: [`unordered`](../namespaces/Constants/enumerations/paragraph-list-type.md#unordered)

@@ -11,13 +11,13 @@ ParagraphStyles, which must be applied to an entire paragraph atomically).
 
 ## Extended by
 
--   [`CharacterStylesRange`](CharacterStylesRange.md)
+-   [`CharacterStylesRange`](character-styles-range.md)
 
 ## Properties
 
 ### color
 
-• **color**: [`Color`](Color.md)
+• **color**: [`Color`](color.md)
 
 Text color.
 
@@ -29,7 +29,7 @@ Text color.
 
 ### font
 
-• **font**: [`Font`](../type-aliases/Font.md)
+• **font**: [`Font`](../type-aliases/font.md)
 
 <hr />
 

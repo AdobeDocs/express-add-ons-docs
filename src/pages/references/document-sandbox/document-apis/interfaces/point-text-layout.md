@@ -10,4 +10,4 @@
 
 ### type
 
-• **type**: [`autoWidth`](../enumerations/TextType.md#autowidth)
+• **type**: [`autoWidth`](../enumerations/text-type.md#autowidth)

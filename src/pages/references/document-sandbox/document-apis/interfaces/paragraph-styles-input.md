@@ -6,16 +6,16 @@
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-The variant of [ParagraphStyles](ParagraphStyles.md) with all optional style fields is used to apply ParagraphStyles(). When using that API,
+The variant of [ParagraphStyles](paragraph-styles.md) with all optional style fields is used to apply ParagraphStyles(). When using that API,
 any fields not specified are left unchanged, preserving the text's existing styles.
 
 ## Extends
 
--   `Partial` [`BaseParagraphStyles`](BaseParagraphStyles.md)
+-   `Partial` [`BaseParagraphStyles`](base-paragraph-styles.md)
 
 ## Extended by
 
--   [`ParagraphStylesRangeInput`](ParagraphStylesRangeInput.md)
+-   [`ParagraphStylesRangeInput`](paragraph-styles-range-input.md)
 
 ## Properties
 
@@ -34,7 +34,7 @@ It only affects the space *between* lines, not the space above the first line or
 
 ### list?
 
-• `optional` **list**: [`OrderedListStyleInput`](OrderedListStyleInput.md) \| [`UnorderedListStyleInput`](UnorderedListStyleInput.md)
+• `optional` **list**: [`OrderedListStyleInput`](ordered-list-style-input.md) \| [`UnorderedListStyleInput`](unordered-list-style-input.md)
 
 <hr />
 

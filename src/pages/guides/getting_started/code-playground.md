@@ -115,7 +115,7 @@ The playground offers two distinct development modes:
 ### How to Use Script Mode
 
 1. Select the **Script** button in the top left corner of the playground window.
-2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object.
+2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/editor.md) object.
 3. Execute your script by clicking the **Run Code** button in the right corner of the playground window to see changes in the current document.
 
   ![Code Playground Script Mode](./img/script-mode.png)
@@ -301,10 +301,10 @@ There are two ways to resume working on your last saved session:
 
 After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment:
 
-1. Follow our [Quickstart Guide](../getting_started/quickstart.md) to get your environment set up and your first add-on project created quickly.
+1. Follow our [Quickstart Guide](quickstart.md) to get your environment set up and your first add-on project created quickly.
 2. Copy the code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project. **Note:** Don't forget, if you're copying code from Script mode into your `sandbox/code.js` file, you'll need to add the `import` statements for the Document APIs and handle your `async` functions manually.
 3. Copy the JSON from the [Manifest JSON Editor](#how-to-use-add-on-mode) in the Code Playground into the `src/manifest.json` file in your new project.
-4. Run your add-on locally using the [Adobe Express CLI](../getting_started/quickstart.md) to test and see your changes in real-time.
+4. Run your add-on locally using the [Adobe Express CLI](quickstart.md) to test and see your changes in real-time.
 
 ## FAQs
 

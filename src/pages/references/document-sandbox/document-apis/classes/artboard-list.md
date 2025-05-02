@@ -3,14 +3,14 @@
 # Class: ArtboardList
 
 ArtboardList represents an ordered list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
-All items in the list are children of a single [PageNode](PageNode.md).
+All items in the list are children of a single [PageNode](page-node.md).
 
 ArtboardList also provides APIs for adding/removing artboards from the page. ArtboardList is never empty: it is illegal to
 remove the last remaining artboard from the list.
 
 ## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md) [`ArtboardNode`](ArtboardNode.md)
+-   [`RestrictedItemList`](restricted-item-list.md) [`ArtboardNode`](artboard-node.md)
 
 ## Accessors
 
@@ -52,23 +52,23 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator` [`ArtboardNode`](ArtboardNode.md), `any`, `any`
+• **\[iterator\]**(): `Iterator` [`ArtboardNode`](artboard-node.md), `any`, `any`
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator` [`ArtboardNode`](ArtboardNode.md), `any`, `any`
+`Iterator` [`ArtboardNode`](artboard-node.md), `any`, `any`
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`[iterator]`](RestrictedItemList.md#iterator)
+[`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](RestrictedItemList.md#iterator)
 
 <hr />
 
 ### addArtboard()
 
-• **addArtboard**(): [`ArtboardNode`](ArtboardNode.md)
+• **addArtboard**(): [`ArtboardNode`](artboard-node.md)
 
 Create a new artboard and add it to the end of the list. The artboard size is the same as others on this page. The
 artboard background is set to default fill color DEFAULT_ARTBOARD_FILL_COLOR. The new artboard becomes the
@@ -77,7 +77,7 @@ in the current viewport.
 
 #### Returns
 
-[`ArtboardNode`](ArtboardNode.md)
+[`ArtboardNode`](artboard-node.md)
 
 the newly added artboard.
 
@@ -91,7 +91,7 @@ Get index of item in list.
 
 #### Parameters
 
-• **item**: [`ArtboardNode`](ArtboardNode.md)
+• **item**: [`ArtboardNode`](artboard-node.md)
 
 #### Returns
 
@@ -101,13 +101,13 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`indexOf`](RestrictedItemList.md#indexof)
+[`RestrictedItemList`](restricted-item-list.md).[`indexOf`](restricted-item-list.md#indexof)
 
 <hr />
 
 ### item()
 
-• **item**(`index`): `undefined` \| [`ArtboardNode`](ArtboardNode.md)
+• **item**(`index`): `undefined` \| [`ArtboardNode`](artboard-node.md)
 
 Returns item at the given index, or undefined if index is out of range.
 
@@ -119,11 +119,11 @@ Zero-based index
 
 #### Returns
 
-`undefined` \| [`ArtboardNode`](ArtboardNode.md)
+`undefined` \| [`ArtboardNode`](artboard-node.md)
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`item`](RestrictedItemList.md#item)
+[`RestrictedItemList`](restricted-item-list.md).[`item`](restricted-item-list.md#item)
 
 <hr />
 
@@ -137,9 +137,9 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 #### Parameters
 
-• **item**: [`ArtboardNode`](ArtboardNode.md)
+• **item**: [`ArtboardNode`](artboard-node.md)
 
-• **after**: [`ArtboardNode`](ArtboardNode.md)
+• **after**: [`ArtboardNode`](artboard-node.md)
 
 #### Returns
 
@@ -147,7 +147,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`moveAfter`](RestrictedItemList.md#moveafter)
+[`RestrictedItemList`](restricted-item-list.md).[`moveAfter`](restricted-item-list.md#moveafter)
 
 #### Throws
 
@@ -165,9 +165,9 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 #### Parameters
 
-• **item**: [`ArtboardNode`](ArtboardNode.md)
+• **item**: [`ArtboardNode`](artboard-node.md)
 
-• **before**: [`ArtboardNode`](ArtboardNode.md)
+• **before**: [`ArtboardNode`](artboard-node.md)
 
 #### Returns
 
@@ -175,7 +175,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`moveBefore`](RestrictedItemList.md#movebefore)
+[`RestrictedItemList`](restricted-item-list.md).[`moveBefore`](restricted-item-list.md#movebefore)
 
 #### Throws
 
@@ -191,7 +191,7 @@ Remove the items from the list. The items need not be contiguous.
 
 #### Parameters
 
-• ...**items**: [`ArtboardNode`](ArtboardNode.md)[]
+• ...**items**: [`ArtboardNode`](artboard-node.md)[]
 
 #### Returns
 
@@ -199,7 +199,7 @@ Remove the items from the list. The items need not be contiguous.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`remove`](RestrictedItemList.md#remove)
+[`RestrictedItemList`](restricted-item-list.md).[`remove`](restricted-item-list.md#remove)
 
 #### Throws
 
@@ -209,14 +209,14 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ### toArray()
 
-• **toArray**(): readonly [`ArtboardNode`](ArtboardNode.md)[]
+• **toArray**(): readonly [`ArtboardNode`](artboard-node.md)[]
 
 All items in the list, as a static array. Mutations that occur later are not reflected in an array returned earlier.
 
 #### Returns
 
-readonly [`ArtboardNode`](ArtboardNode.md)[]
+readonly [`ArtboardNode`](artboard-node.md)[]
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`toArray`](RestrictedItemList.md#toarray)
+[`RestrictedItemList`](restricted-item-list.md).[`toArray`](restricted-item-list.md#toarray)

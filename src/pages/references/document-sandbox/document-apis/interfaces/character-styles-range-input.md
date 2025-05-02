@@ -2,37 +2,37 @@
 
 # Interface: CharacterStylesRangeInput
 
-Variant of [CharacterStylesRange](CharacterStylesRange.md) with all style fields optional, along with the range of characters they apply to.
+Variant of [CharacterStylesRange](character-styles-range.md) with all style fields optional, along with the range of characters they apply to.
 Used for the characterStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults.
 
-If specified, the font must be of the [AvailableFont](../classes/AvailableFont.md) type – one that is guaranteed to be available for the current
+If specified, the font must be of the [AvailableFont](../classes/available-font.md) type – one that is guaranteed to be available for the current
 user to edit with.
 
 ## Extends
 
--   [`CharacterStylesInput`](CharacterStylesInput.md).[`StyleRange`](StyleRange.md)
+-   [`CharacterStylesInput`](character-styles-input.md).[`StyleRange`](style-range.md)
 
 ## Properties
 
 ### color?
 
-• `optional` **color**: [`Color`](Color.md)
+• `optional` **color**: [`Color`](color.md)
 
 Text color.
 
 #### Inherited from
 
-[`CharacterStylesInput`](CharacterStylesInput.md).[`color`](CharacterStylesInput.md#color)
+[`CharacterStylesInput`](character-styles-input.md).[`color`](character-styles-input.md#color)
 
 <hr />
 
 ### font?
 
-• `optional` **font**: [`AvailableFont`](../classes/AvailableFont.md)
+• `optional` **font**: [`AvailableFont`](../classes/available-font.md)
 
 #### Inherited from
 
-[`CharacterStylesInput`](CharacterStylesInput.md).[`font`](CharacterStylesInput.md#font)
+[`CharacterStylesInput`](character-styles-input.md).[`font`](character-styles-input.md#font)
 
 <hr />
 
@@ -44,7 +44,7 @@ Size of the text in points.
 
 #### Inherited from
 
-[`CharacterStylesInput`](CharacterStylesInput.md).[`fontSize`](CharacterStylesInput.md#fontsize)
+[`CharacterStylesInput`](character-styles-input.md).[`fontSize`](character-styles-input.md#fontsize)
 
 <hr />
 
@@ -58,7 +58,7 @@ such as emojis are considered to have a length of 2.
 
 #### Inherited from
 
-[`StyleRange`](StyleRange.md).[`length`](StyleRange.md#length)
+[`StyleRange`](style-range.md).[`length`](style-range.md#length)
 
 <hr />
 
@@ -72,7 +72,7 @@ leaves spacing at its default.
 
 #### Inherited from
 
-[`CharacterStylesInput`](CharacterStylesInput.md).[`letterSpacing`](CharacterStylesInput.md#letterspacing)
+[`CharacterStylesInput`](character-styles-input.md).[`letterSpacing`](character-styles-input.md#letterspacing)
 
 <hr />
 
@@ -84,4 +84,4 @@ Adds an underline to text.
 
 #### Inherited from
 
-[`CharacterStylesInput`](CharacterStylesInput.md).[`underline`](CharacterStylesInput.md#underline)
+[`CharacterStylesInput`](character-styles-input.md).[`underline`](character-styles-input.md#underline)

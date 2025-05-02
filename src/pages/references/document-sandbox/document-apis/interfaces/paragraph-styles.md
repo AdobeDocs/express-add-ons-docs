@@ -11,11 +11,11 @@ any range of characters, even a short span like one single word).
 
 ## Extends
 
--   [`BaseParagraphStyles`](BaseParagraphStyles.md)
+-   [`BaseParagraphStyles`](base-paragraph-styles.md)
 
 ## Extended by
 
--   [`ParagraphStylesRange`](ParagraphStylesRange.md)
+-   [`ParagraphStylesRange`](paragraph-styles-range.md)
 
 ## Properties
 
@@ -28,13 +28,13 @@ It only affects the space *between* lines, not the space above the first line or
 
 #### Inherited from
 
-[`BaseParagraphStyles`](BaseParagraphStyles.md).[`lineSpacing`](BaseParagraphStyles.md#linespacing)
+[`BaseParagraphStyles`](base-paragraph-styles.md).[`lineSpacing`](base-paragraph-styles.md#linespacing)
 
 <hr />
 
 ### list?
 
-• `optional` **list**: `Required`[`OrderedListStyleInput`](OrderedListStyleInput.md) \| `Required`[`UnorderedListStyleInput`](UnorderedListStyleInput.md)
+• `optional` **list**: `Required`[`OrderedListStyleInput`](ordered-list-style-input.md) \| `Required`[`UnorderedListStyleInput`](unordered-list-style-input.md)
 
 <hr />
 
@@ -47,7 +47,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 #### Inherited from
 
-[`BaseParagraphStyles`](BaseParagraphStyles.md).[`spaceAfter`](BaseParagraphStyles.md#spaceafter)
+[`BaseParagraphStyles`](base-paragraph-styles.md).[`spaceAfter`](base-paragraph-styles.md#spaceafter)
 
 <hr />
 
@@ -60,4 +60,4 @@ Space before paragraph (in points). It does not affect the first paragraph. It i
 
 #### Inherited from
 
-[`BaseParagraphStyles`](BaseParagraphStyles.md).[`spaceBefore`](BaseParagraphStyles.md#spacebefore)
+[`BaseParagraphStyles`](base-paragraph-styles.md).[`spaceBefore`](base-paragraph-styles.md#spacebefore)

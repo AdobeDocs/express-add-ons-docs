@@ -6,11 +6,11 @@
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-A set of [ParagraphStyles](ParagraphStyles.md) and the text range they apply to. It is seen in the paragraphStyleRanges getter.
+A set of [ParagraphStyles](paragraph-styles.md) and the text range they apply to. It is seen in the paragraphStyleRanges getter.
 
 ## Extends
 
--   [`ParagraphStyles`](ParagraphStyles.md).[`StyleRange`](StyleRange.md)
+-   [`ParagraphStyles`](paragraph-styles.md).[`StyleRange`](style-range.md)
 
 ## Properties
 
@@ -24,7 +24,7 @@ such as emojis are considered to have a length of 2.
 
 #### Inherited from
 
-[`StyleRange`](StyleRange.md).[`length`](StyleRange.md#length)
+[`StyleRange`](style-range.md).[`length`](style-range.md#length)
 
 <hr />
 
@@ -37,17 +37,17 @@ It only affects the space *between* lines, not the space above the first line or
 
 #### Inherited from
 
-[`ParagraphStyles`](ParagraphStyles.md).[`lineSpacing`](ParagraphStyles.md#linespacing)
+[`ParagraphStyles`](paragraph-styles.md).[`lineSpacing`](paragraph-styles.md#linespacing)
 
 <hr />
 
 ### list?
 
-• `optional` **list**: `Required` [`OrderedListStyleInput`](OrderedListStyleInput.md) \| `Required` [`UnorderedListStyleInput`](UnorderedListStyleInput.md)
+• `optional` **list**: `Required` [`OrderedListStyleInput`](ordered-list-style-input.md) \| `Required` [`UnorderedListStyleInput`](unordered-list-style-input.md)
 
 #### Inherited from
 
-[`ParagraphStyles`](ParagraphStyles.md).[`list`](ParagraphStyles.md#list)
+[`ParagraphStyles`](paragraph-styles.md).[`list`](paragraph-styles.md#list)
 
 <hr />
 
@@ -60,7 +60,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 #### Inherited from
 
-[`ParagraphStyles`](ParagraphStyles.md).[`spaceAfter`](ParagraphStyles.md#spaceafter)
+[`ParagraphStyles`](paragraph-styles.md).[`spaceAfter`](paragraph-styles.md#spaceafter)
 
 <hr />
 
@@ -73,4 +73,4 @@ Space before paragraph (in points). It does not affect the first paragraph. It i
 
 #### Inherited from
 
-[`ParagraphStyles`](ParagraphStyles.md).[`spaceBefore`](ParagraphStyles.md#spacebefore)
+[`ParagraphStyles`](paragraph-styles.md).[`spaceBefore`](paragraph-styles.md#spacebefore)

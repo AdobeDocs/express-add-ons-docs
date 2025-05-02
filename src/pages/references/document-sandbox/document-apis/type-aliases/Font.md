@@ -2,7 +2,7 @@
 
 # Type alias: Font
 
-• **Font**: [`AvailableFont`](../classes/AvailableFont.md) \| [`UnavailableFont`](../classes/UnavailableFont.md)
+• **Font**: [`AvailableFont`](../classes/available-font.md) \| [`UnavailableFont`](../classes/unavailable-font.md)
 
 Represents a font in the document.
 

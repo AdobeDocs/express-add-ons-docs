@@ -6,7 +6,7 @@ Font the current user has access or licensing permissions to create / edit conte
 
 ## Extends
 
--   [`BaseFont`](BaseFont.md)
+-   [`BaseFont`](base-font.md)
 
 ## Accessors
 

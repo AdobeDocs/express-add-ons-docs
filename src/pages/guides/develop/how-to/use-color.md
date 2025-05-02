@@ -28,9 +28,9 @@ contributors:
 
 ## Create colors
 
-Colors in Adobe Express are created as instances of the [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) class: objects with `red`, `green`, `blue`, and `alpha` (optional) values in the range from 0 to 1. The `alpha` value represents the opacity of the color, with 0 being fully transparent and 1 fully opaque.
+Colors in Adobe Express are created as instances of the [`Color`](../../../references/document-sandbox/document-apis/interfaces/color.md) class: objects with `red`, `green`, `blue`, and `alpha` (optional) values in the range from 0 to 1. The `alpha` value represents the opacity of the color, with 0 being fully transparent and 1 fully opaque.
 
-The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
+The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/color-utils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromhex) methods.
 
 ```js
 // sandbox/code.js
@@ -45,7 +45,7 @@ const feldgrau = colorUtils.fromRGB(0.28, 0.32, 0.39, 0.5); // 50% opacity
 const heliotrope = colorUtils.fromHex("#C768F780"); // 50% opacity
 ```
 
-In case you need it, you can also convert a color to a HEX string using the [`toHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#tohex) method. Please note that the alpha value is always included in the output string.
+In case you need it, you can also convert a color to a HEX string using the [`toHex()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#tohex) method. Please note that the alpha value is always included in the output string.
 
 ```js
 const red = colorUtils.fromRGB(1, 0, 0);
@@ -54,7 +54,7 @@ const redHex = colorUtils.toHex(red); // #FF0000FF
 
 ## Apply colors
 
-You can directly set the `color` property of a Text node via [`applyCharacterStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applycharacterstyles):
+You can directly set the `color` property of a Text node via [`applyCharacterStyles()`](../../../references/document-sandbox/document-apis/classes/text-content-model.md#applycharacterstyles):
 
 ### Example: Text color
 
@@ -76,7 +76,7 @@ See the [Use Text](./use_text.md) page for more examples.
 
 ### Example: Fill and Stroke colors
 
-Colors are not directly applied, instead, to shapes; more generally, they are used to create [`Fill`](../../../references/document-sandbox/document-apis/interfaces/Fill.md) and [`Stroke`](../../../references/document-sandbox/document-apis/interfaces/Stroke.md) objects with the [`editor.makeColorFill()`](../../../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`editor.makeStroke()`](../../../references/document-sandbox/document-apis/classes/Editor.md#makestroke) methods, respectively, that you can then apply to [`Fillable`](../../../references/document-sandbox/document-apis/classes/FillableNode.md) and [`Strokable`](../../../references/document-sandbox/document-apis/classes/StrokableNode.md) nodes.
+Colors are not directly applied, instead, to shapes; more generally, they are used to create [`Fill`](../../../references/document-sandbox/document-apis/interfaces/fill.md) and [`Stroke`](../../../references/document-sandbox/document-apis/interfaces/stroke.md) objects with the [`editor.makeColorFill()`](../../../references/document-sandbox/document-apis/classes/editor.md#makecolorfill) and [`editor.makeStroke()`](../../../references/document-sandbox/document-apis/classes/editor.md#makestroke) methods, respectively, that you can then apply to [`Fillable`](../../../references/document-sandbox/document-apis/classes/fillable-node.md) and [`Strokable`](../../../references/document-sandbox/document-apis/classes/strokable-node.md) nodes.
 
 If you're confused, worry not! This is the wondrous word of object oriented programming. The following example should clarify things:
 
@@ -273,7 +273,7 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
-To use the picked color in the Document Sandbox, you can use the [`colorUtils.fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) method, which converts the HEX color string to a [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) object.
+To use the picked color in the Document Sandbox, you can use the [`colorUtils.fromHex()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromhex) method, which converts the HEX color string to a [`Color`](../../../references/document-sandbox/document-apis/interfaces/color.md) object.
 
 ```js
 // sandbox/code.js
