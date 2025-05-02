@@ -1,6 +1,6 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/how-to/modal-dialogs.md), [enable drag and drop](../../guides/develop/how-to/drag-and-drop.md) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-current-user.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/how-to/modal-dialogs.md), [enable drag and drop](../../guides/develop/how-to/drag-and-drop.md) of content and subscribe and unsubscribe to events.
 
 ## Objects
 

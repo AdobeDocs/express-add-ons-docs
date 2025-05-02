@@ -56,11 +56,11 @@ module.exports = {
             pages: [
               {
                 title: "currentUser",
-                path: "references/addonsdk/app-currentUser.md",
+                path: "references/addonsdk/app-current-user.md",
               },
               {
                 title: "devFlags",
-                path: "references/addonsdk/app-devFlags.md",
+                path: "references/addonsdk/app-dev-flags.md",
               },
               {
                 title: "document",
@@ -82,7 +82,7 @@ module.exports = {
             pages: [
               {
                 title: "clientStorage",
-                path: "references/addonsdk/instance-clientStorage.md",
+                path: "references/addonsdk/instance-client-storage.md",
               },
               {
                 title: "manifest",
