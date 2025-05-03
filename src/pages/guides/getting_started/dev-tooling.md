@@ -47,9 +47,7 @@ For instance, the following command would specify all possible arguments:
 npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 ```
 
-<InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
-
-#### CLI troubleshooting
+<InlineAlert slots="text1, text2, text3, text4, text5" variant="info"/>
 
 See the [templates](#templates) section for the currently supported template values.
 
