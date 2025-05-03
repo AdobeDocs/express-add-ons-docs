@@ -57,9 +57,7 @@ The [Templates section](dev-tooling.md#templates) on the **Development Tools** p
 
 **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
-<InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
-
-#### CLI troubleshooting
+<InlineAlert slots="text1, text2, text3, text4, text5" variant="info"/>
 
 `npx` is an `npm` package runner that can execute packages without installing them explicitly.
 
