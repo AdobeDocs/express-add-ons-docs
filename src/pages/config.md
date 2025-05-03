@@ -206,7 +206,7 @@
                 - [Accessibility](guides/distribute/guidelines/general/accessibility.md) 
                 - [Compatibility](guides/distribute/guidelines/general/compatibility.md) 
                 - [Edge cases](guides/distribute/guidelines/general/edge-case.md) 
-            - [Developer brand guidelines](guides/distribute/guidelines/brand_guidelines.md) 
+            - [Developer brand guidelines](guides/distribute/guidelines/brand-guidelines.md) 
             - [Monetization guidelines](guides/distribute/guidelines/monetization.md) 
             - [Generative AI guidelines](guides/distribute/guidelines/genai/index.md) 
                 - [Overview](guides/distribute/guidelines/genai/index.md) 

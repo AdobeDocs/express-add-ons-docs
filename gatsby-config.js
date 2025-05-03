@@ -947,7 +947,7 @@ module.exports = {
               },
               {
                 title: "Developer brand guidelines",
-                path: "guides/distribute/guidelines/brand_guidelines.md",
+                path: "guides/distribute/guidelines/brand-guidelines.md",
               },
               {
                 title: "Monetization guidelines",
