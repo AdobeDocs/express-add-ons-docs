@@ -25,7 +25,7 @@ contributors:
 
 ## Create Shapes
 
-Adobe Express provides a set of geometric shapes that you can create and style programmatically. These shapes are instances of the [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/RectangleNode.md) and [`EllipseNode`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md) classes, and you can draw them using the [`editor.createRectangle()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createrectangle) and [`editor.createEllipse()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createellipse) methods, respectively.
+Adobe Express provides a set of geometric shapes that you can create and style programmatically. These shapes are instances of the [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/rectangle-node.md) and [`EllipseNode`](../../../references/document-sandbox/document-apis/classes/ellipse-node.md) classes, and you can draw them using the [`editor.createRectangle()`](../../../references/document-sandbox/document-apis/classes/editor.md#createrectangle) and [`editor.createEllipse()`](../../../references/document-sandbox/document-apis/classes/editor.md#createellipse) methods, respectively.
 
 ### Example: Add a Rectangle
 
@@ -50,9 +50,9 @@ currentPage.artboards.first.children.append(rect);
 
 **Create vs. Add to the page**
 
-Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/ArtboardNode.md), a [Group](./group_elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/ContainerNode.md) interface.
+Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/artboard-node.md), a [Group](./group-elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/container-node.md) interface.
 
-You usually reference the container using [`editor.context`](../../../references/document-sandbox/document-apis/classes/Context.md), which provides access to the current page, selection, and other useful properties.
+You usually reference the container using [`editor.context`](../../../references/document-sandbox/document-apis/classes/context.md), which provides access to the current page, selection, and other useful properties.
 
 Please note that you can append multiple shapes at once with the `append()` method:
 
@@ -66,7 +66,7 @@ editor.context.currentPage.artboards.first.children.append(s1, s2); // 👈
 
 ### Example: Add an Ellipse
 
-Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md#rx) and [`ry`](../../../references/document-sandbox/document-apis/classes/EllipseNode.md#ry) (radius x, radius y) instead.
+Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../references/document-sandbox/document-apis/classes/ellipse-node.md#rx) and [`ry`](../../../references/document-sandbox/document-apis/classes/ellipse-node.md#ry) (radius x, radius y) instead.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -125,11 +125,11 @@ editor.context.insertionParent.children.append(ellipse);
 
 <InlineAlert slots="text" variant="info"/>
 
-If you need a refresher on how to create and apply colors, check out [Using Colors](./use_color.md).
+If you need a refresher on how to create and apply colors, check out [Using Colors](./use-color.md).
 
 ## Create Paths
 
-Paths are a versatile tool to create complex shapes in Adobe Express. The [`editor.createPath()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createpath) method returns an instance of the [`PathNode`](../../../references/document-sandbox/document-apis/classes/PathNode.md) class, and accepts one [SVG string](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) as the input.
+Paths are a versatile tool to create complex shapes in Adobe Express. The [`editor.createPath()`](../../../references/document-sandbox/document-apis/classes/editor.md#createpath) method returns an instance of the [`PathNode`](../../../references/document-sandbox/document-apis/classes/path-node.md) class, and accepts one [SVG string](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) as the input.
 
 ### Example: Single path
 
@@ -192,7 +192,7 @@ editor.context.insertionParent.children.append(g);
 
 ### Example: Add Fills and Strokes
 
-`PathNode` instances have `fill` and `stroke` properties that you can use to style the path, very much like, say, a [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/RectangleNode.md). In the code snippet below, we're going to add some life to the path from the previous example.
+`PathNode` instances have `fill` and `stroke` properties that you can use to style the path, very much like, say, a [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/rectangle-node.md). In the code snippet below, we're going to add some life to the path from the previous example.
 
 ```js
 // sandbox/code.js

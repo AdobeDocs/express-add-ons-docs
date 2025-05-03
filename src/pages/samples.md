@@ -23,7 +23,7 @@ Find inspiration and great reference examples by checking out our [code samples]
 
 <InlineAlert slots="text" variant="info"/>
 
-In addition to these code samples, you should also be sure to check out the [Templates section](guides/getting_started/dev_tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
+In addition to these code samples, you should also be sure to check out the [Templates section](guides/getting_started/dev-tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
 
 ## Using the samples
 
@@ -78,7 +78,7 @@ Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect
 - [OAuth API's](./references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
 - [Import Content](./references/addonsdk/app-document.md) to add images from the add-on to the document.
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
+- [Client Storage](./references/addonsdk/instance-client-storage.md) to store the access_token in the IndexedDB store of the browser and reusing the same for the requests made to the Dropbox APIs.
 
 ## [use-client-storage](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/use-client-storage)
 
@@ -92,7 +92,7 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 
 **Features Leveraged:**
 
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to persist the todo items.
+- [Client Storage](./references/addonsdk/instance-client-storage.md) to persist the todo items.
 
 ## [export-sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/export-sample)
 
@@ -135,7 +135,7 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 
 **Features Leveraged:**
 
-- [Current User API](./references/addonsdk/app-currentUser.md) to validate the current userid's.
+- [Current User API](./references/addonsdk/app-current-user.md) to validate the current userid's.
 - [Modal Dialogs](./references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
 
 ## [audio-recording-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/samples/audio-recording-add-on)
@@ -166,7 +166,7 @@ A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. U
 
 - [Drag and Drop](./references/addonsdk/addonsdk-app.md#enabledragtodocument) to add the dragged image to the document.
 - [Export Content](./references/addonsdk/app-document.md) to generate renditions.
-- [Client Storage](./references/addonsdk/instance-clientStorage.md) to store the pixel art creations.
+- [Client Storage](./references/addonsdk/instance-client-storage.md) to store the pixel art creations.
 
 ## [swc](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc)
 
@@ -255,7 +255,7 @@ Allows users to create two-color gradients of various shapes and direction, and 
 
 **Features Leveraged:**
 
-- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/Editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
+- [Create Bitmap Image](./references/document-sandbox/document-apis/classes/editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
 
 ## Document Sandbox Code Samples
 
@@ -279,11 +279,11 @@ Demonstrates using the Communication APIs to expose and proxy APIs bidirectional
 
 ## [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
 
-Demonstrates how to use the [Document APIs](./references/document-sandbox/document-apis/) to create various shapes and text, and add them to the document.
+Demonstrates how to use the [Document APIs](./references/document-sandbox/document-apis/index.md) to create various shapes and text, and add them to the document.
 
 ## [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
 
-A more comprehensive example of using the [Document APIs](./references/document-sandbox/document-apis/) to add a page, images, and shapes, and clear the artboard.
+A more comprehensive example of using the [Document APIs](./references/document-sandbox/document-apis/index.md) to add a page, images, and shapes, and clear the artboard.
 
 ## [express-addon-document-api-template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template)
 

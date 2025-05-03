@@ -33,6 +33,6 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 
 ## Ensure that you have read and followed all Adobe guidelines relating to your add-on, including:
 
-- [Developer Brand Guidelines](../guidelines/brand_guidelines.md)
+- [Developer Brand Guidelines](../guidelines/brand-guidelines.md)
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)
-- Our [Generative AI Guidelines](../guidelines/genai/) (if you are using Generative AI)
+- Our [Generative AI Guidelines](../guidelines/genai/index.md) (if you are using Generative AI)

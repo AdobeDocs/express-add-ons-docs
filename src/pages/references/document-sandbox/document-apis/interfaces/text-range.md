@@ -2,7 +2,7 @@
 
 # Interface: TextRange
 
-A range of text in a [TextContentModel](../classes/TextContentModel.md).
+A range of text in a [TextContentModel](../classes/text-content-model.md).
 
 ## Properties
 

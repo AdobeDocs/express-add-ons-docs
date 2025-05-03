@@ -3,7 +3,7 @@
 # Class: PageList
 
 PageList represents an ordered list of PageNodes, all of which are children of the root node of the document's "scenegraph"
-artwork tree (see [ExpressRootNode](ExpressRootNode.md)). A page contains one or more artboards, representing "scenes" in a linear timeline
+artwork tree (see [ExpressRootNode](express-root-node.md)). A page contains one or more artboards, representing "scenes" in a linear timeline
 sequence. Those artboards, in turn, contain all the visual content of the document.
 
 PageList also provides APIs for adding/removing pages from the document. PageList is never empty: it is illegal to
@@ -11,7 +11,7 @@ remove the last remaining page from the list.
 
 ## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md) [`PageNode`](PageNode.md)
+-   [`RestrictedItemList`](restricted-item-list.md) [`PageNode`](page-node.md)
 
 ## Accessors
 
@@ -53,35 +53,35 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator` [`PageNode`](PageNode.md), `any`, `any`
+• **\[iterator\]**(): `Iterator` [`PageNode`](page-node.md), `any`, `any`
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator` [`PageNode`](PageNode.md), `any`, `any`
+`Iterator` [`PageNode`](page-node.md), `any`, `any`
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`[iterator]`](RestrictedItemList.md#iterator)
+[`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](RestrictedItemList.md#iterator)
 
 <hr />
 
 ### addPage()
 
-• **addPage**(`inputGeometry`): [`PageNode`](PageNode.md)
+• **addPage**(`inputGeometry`): [`PageNode`](page-node.md)
 
 Create a new page containing a single empty artboard, and add it to the end of the list. The artboard is configured
-with the same defaults as in [ArtboardList.addArtboard](ArtboardList.md#addartboard). The page's artboard becomes the default target for
-newly inserted content ([Context.insertionParent](Context.md#insertionparent)) and the viewport switches to display this artboard.
+with the same defaults as in [ArtboardList.addArtboard](artboard-list.md#addartboard). The page's artboard becomes the default target for
+newly inserted content ([Context.insertionParent](context.md#insertionparent)) and the viewport switches to display this artboard.
 
 #### Parameters
 
-• **inputGeometry**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
+• **inputGeometry**: [`RectangleGeometry`](../interfaces/rectangle-geometry.md)
 
 #### Returns
 
-[`PageNode`](PageNode.md)
+[`PageNode`](page-node.md)
 
 <hr />
 
@@ -93,7 +93,7 @@ Get index of item in list.
 
 #### Parameters
 
-• **item**: [`PageNode`](PageNode.md)
+• **item**: [`PageNode`](page-node.md)
 
 #### Returns
 
@@ -103,13 +103,13 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`indexOf`](RestrictedItemList.md#indexof)
+[`RestrictedItemList`](restricted-item-list.md).[`indexOf`](restricted-item-list.md#indexof)
 
 <hr />
 
 ### item()
 
-• **item**(`index`): `undefined` \| [`PageNode`](PageNode.md)
+• **item**(`index`): `undefined` \| [`PageNode`](page-node.md)
 
 Returns item at the given index, or undefined if index is out of range.
 
@@ -121,11 +121,11 @@ Zero-based index
 
 #### Returns
 
-`undefined` \| [`PageNode`](PageNode.md)
+`undefined` \| [`PageNode`](page-node.md)
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`item`](RestrictedItemList.md#item)
+[`RestrictedItemList`](restricted-item-list.md).[`item`](restricted-item-list.md#item)
 
 <hr />
 
@@ -139,9 +139,9 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 #### Parameters
 
-• **item**: [`PageNode`](PageNode.md)
+• **item**: [`PageNode`](page-node.md)
 
-• **after**: [`PageNode`](PageNode.md)
+• **after**: [`PageNode`](page-node.md)
 
 #### Returns
 
@@ -149,7 +149,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`moveAfter`](RestrictedItemList.md#moveafter)
+[`RestrictedItemList`](restricted-item-list.md).[`moveAfter`](restricted-item-list.md#moveafter)
 
 #### Throws
 
@@ -167,9 +167,9 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 #### Parameters
 
-• **item**: [`PageNode`](PageNode.md)
+• **item**: [`PageNode`](page-node.md)
 
-• **before**: [`PageNode`](PageNode.md)
+• **before**: [`PageNode`](page-node.md)
 
 #### Returns
 
@@ -177,7 +177,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`moveBefore`](RestrictedItemList.md#movebefore)
+[`RestrictedItemList`](restricted-item-list.md).[`moveBefore`](restricted-item-list.md#movebefore)
 
 #### Throws
 
@@ -193,7 +193,7 @@ Remove the items from the list. The items need not be contiguous.
 
 #### Parameters
 
-• ...**items**: [`PageNode`](PageNode.md)[]
+• ...**items**: [`PageNode`](page-node.md)[]
 
 #### Returns
 
@@ -201,7 +201,7 @@ Remove the items from the list. The items need not be contiguous.
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`remove`](RestrictedItemList.md#remove)
+[`RestrictedItemList`](restricted-item-list.md).[`remove`](restricted-item-list.md#remove)
 
 #### Throws
 
@@ -211,14 +211,14 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 
 ### toArray()
 
-• **toArray**(): readonly [`PageNode`](PageNode.md)[]
+• **toArray**(): readonly [`PageNode`](page-node.md)[]
 
 All items in the list, as a static array. Mutations that occur later are not reflected in an array returned earlier.
 
 #### Returns
 
-readonly [`PageNode`](PageNode.md)[]
+readonly [`PageNode`](page-node.md)[]
 
 #### Inherited from
 
-[`RestrictedItemList`](RestrictedItemList.md).[`toArray`](RestrictedItemList.md#toarray)
+[`RestrictedItemList`](restricted-item-list.md).[`toArray`](restricted-item-list.md#toarray)

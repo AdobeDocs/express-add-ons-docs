@@ -8,7 +8,7 @@ Utility methods for working with color values.
 
 ### fromHex()
 
-• **fromHex**(`hex`): [`Color`](../interfaces/Color.md)
+• **fromHex**(`hex`): [`Color`](../interfaces/color.md)
 
 Create a new color from its equivalent RGBA hex representation. Can specify in 6 digits (RRGGBB) or 8 digits
 (RRGGBBAA), uppercase or lowercase, with or without leading "#". Alpha defaults to FF (100% opaque) if ommitted.
@@ -21,7 +21,7 @@ The color represented as a hexadecimal string.
 
 #### Returns
 
-[`Color`](../interfaces/Color.md)
+[`Color`](../interfaces/color.md)
 
 A new color value matching the given hex string.
 
@@ -35,7 +35,7 @@ if the hex string cannot be parsed.
 
 #### fromRGB(red, green, blue, alpha)
 
-• **fromRGB**(`red`, `green`, `blue`, `alpha`?): [`Color`](../interfaces/Color.md)
+• **fromRGB**(`red`, `green`, `blue`, `alpha`?): [`Color`](../interfaces/color.md)
 
 Create a new color object with the given RGBA values.
 
@@ -59,13 +59,13 @@ Optional alpha channel, from 0 - 1. Defaults to 1 (opaque).
 
 ##### Returns
 
-[`Color`](../interfaces/Color.md)
+[`Color`](../interfaces/color.md)
 
 A new color object.
 
 #### fromRGB(color)
 
-• **fromRGB**(`color`): [`Color`](../interfaces/Color.md)
+• **fromRGB**(`color`): [`Color`](../interfaces/color.md)
 
 Create a new color object given a partial color object where the alpha field may be missing.
 
@@ -85,7 +85,7 @@ Partial color object. Alpha defaults to 1 (opaque).
 
 ##### Returns
 
-[`Color`](../interfaces/Color.md)
+[`Color`](../interfaces/color.md)
 
 A new color object with all fields present.
 
@@ -99,7 +99,7 @@ Get the color in 8-digit hex "#RRGGBBAA" format.
 
 #### Parameters
 
-• **color**: [`Color`](../interfaces/Color.md)
+• **color**: [`Color`](../interfaces/color.md)
 
 #### Returns
 

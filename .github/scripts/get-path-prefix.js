@@ -97,7 +97,7 @@ module.exports = async ({ core, isStage, isProd }) => {
           `The pathPrefix in the site's config.md file was not found in the STAGE gdrive's devsitepaths.json.
 
           pathPrefix from config.md: "${pathPrefix}"
-          devsitepath.json location: "${DEVSITE_STAGE_HOST}/${DEVSITE_PATHNAME}"
+          devsitepath.json location: "${DEVSITE_STAGE_HOST}${DEVSITE_PATHNAME}"
 
           To fix this, make sure the pathPrefix listed in the config.md is in the devsitepath.json location.
           `

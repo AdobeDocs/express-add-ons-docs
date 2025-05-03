@@ -7,8 +7,8 @@ all such fonts.
 
 ## Extended by
 
--   [`AvailableFont`](AvailableFont.md)
--   [`UnavailableFont`](UnavailableFont.md)
+-   [`AvailableFont`](available-font.md)
+-   [`UnavailableFont`](unavailable-font.md)
 
 ## Accessors
 

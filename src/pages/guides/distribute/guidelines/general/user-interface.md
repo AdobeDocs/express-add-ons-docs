@@ -48,7 +48,7 @@ Use unique icons to represent the add-on itself, and the features within it. Con
 
 Follow these guidelines to make sure you are referring to Adobe correctly in your add-on.
 
-For more information on using Adobe brand assets, check our [Developer Brand Guidelines](../brand_guidelines.md).
+For more information on using Adobe brand assets, check our [Developer Brand Guidelines](../brand-guidelines.md).
 
 ## Referring to add-ons
 

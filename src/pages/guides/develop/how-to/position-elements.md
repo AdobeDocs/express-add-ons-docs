@@ -87,7 +87,7 @@ Please note, rotation and translation are never additive, meaning that each time
 
 ## Get Element Bounds
 
-By definition, the bounds of an element (or its _bounding box_) are the smallest rectangle that contains the element. The bounds are represented by a [Rect](../../../references/document-sandbox/document-apis/interfaces/Rect.md) object, which has a `x`, `y`, `width`, and `height` properties. There are two types of bounds, though, depending on the coordinate space in which they are calculated:
+By definition, the bounds of an element (or its _bounding box_) are the smallest rectangle that contains the element. The bounds are represented by a [Rect](../../../references/document-sandbox/document-apis/interfaces/rect.md) object, which has a `x`, `y`, `width`, and `height` properties. There are two types of bounds, though, depending on the coordinate space in which they are calculated:
 
 - **Local bounds**: The bounding box of an element in its own coordinate space (which may be shifted or rotated relative to its parent).
 - **Parent bounds**: The bounding box of an element in its parent's coordinate space.
@@ -160,7 +160,7 @@ editor.context.currentPage.artboards.first.children.append(group);
 
 ![](./images/position_parent.png)
 
-Where does the second rectangle sit in the artboard's coordinate system? To find out, we can use the [`localPointInNode()`](../../../references/document-sandbox/document-apis/classes/FillableNode.md#localpointinnode) method, which converts a point from the local coordinate space of the element to the parent's coordinate space.
+Where does the second rectangle sit in the artboard's coordinate system? To find out, we can use the [`localPointInNode()`](../../../references/document-sandbox/document-apis/classes/fillable-node.md#localpointinnode) method, which converts a point from the local coordinate space of the element to the parent's coordinate space.
 
 ```js
 //...

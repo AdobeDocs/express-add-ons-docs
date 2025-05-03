@@ -9,30 +9,30 @@ properties.
 
 ## Extended by
 
--   [`ExpressRootNode`](ExpressRootNode.md)
--   [`PageNode`](PageNode.md)
--   [`VisualNode`](VisualNode.md)
+-   [`ExpressRootNode`](express-root-node.md)
+-   [`PageNode`](page-node.md)
+-   [`VisualNode`](visual-node.md)
 
 ## Accessors
 
 ### addOnData
 
-• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+• `get` **addOnData**(): [`AddOnData`](add-on-data.md)
 
-Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+Get [AddOnData](add-on-data.md) reference for managing the private metadata on this node for this add-on.
 
 #### Returns
 
-[`AddOnData`](AddOnData.md)
+[`AddOnData`](add-on-data.md)
 
 <hr />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly` `Iterable` [`BaseNode`](BaseNode.md), `any`, `any`
+• `get` **allChildren**(): `Readonly` `Iterable` [`BaseNode`](base-node.md), `any`, `any`
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -41,7 +41,7 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly` `Iterable` [`BaseNode`](BaseNode.md), `any`, `any`
+`Readonly` `Iterable` [`BaseNode`](base-node.md), `any`, `any`
 
 <hr />
 
@@ -60,7 +60,7 @@ moved to a different part of the document.
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](base-node.md)
 
 The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
 content.
@@ -71,19 +71,19 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 #### Returns
 
-`undefined` \| [`BaseNode`](BaseNode.md)
+`undefined` \| [`BaseNode`](base-node.md)
 
 <hr />
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/scene-node-type.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enumerations/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/scene-node-type.md)
 
 ## Methods
 

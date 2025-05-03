@@ -1,6 +1,6 @@
 # addOnUISdk.app.ui
 
-Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/how-to/theme_locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/develop/how-to/theme_locale.md#detecting-theme) in use to update your add-on user interface accordingly.
+Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/how-to/theme-locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/develop/how-to/theme-locale.md#detecting-theme) in use to update your add-on user interface accordingly.
 
 ## Properties
 
@@ -331,7 +331,7 @@ addOnUISdk.ready.then(() => {
 ### themechange
 
 **`themechange: string`**
-The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
 
@@ -356,7 +356,7 @@ Please see the **swc** sample provided in the [code samples](../../samples.md) w
 ### localechange
 
 **`localechange: string`**
-The "localechange" event is fired when the user changes the UI locale in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+The "localechange" event is fired when the user changes the UI locale in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
 
@@ -377,7 +377,7 @@ addOnUISdk.app.on("localechange", (data) => {
 ### formatchange
 
 **`formatchange: string`**
-The "formatchange" event is fired when the user changes the UI format in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+The "formatchange" event is fired when the user changes the UI format in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
 

@@ -24,9 +24,9 @@ contributors:
 
 ## Create a group
 
-Groups are just like any other element in Adobe Express, very much like Text or Shapes: you must create them, and append them to the page. Interestingly, as instances of the [`GroupNode`](../../../references/document-sandbox/document-apis/classes/GroupNode.md) class, they can host other nodes in their `children` property.
+Groups are just like any other element in Adobe Express, very much like Text or Shapes: you must create them, and append them to the page. Interestingly, as instances of the [`GroupNode`](../../../references/document-sandbox/document-apis/classes/group-node.md) class, they can host other nodes in their `children` property.
 
-To create a Group, you can use the [`editor.createGroup()`](../../../references/document-sandbox/document-apis/classes/Editor.md#creategroup) method.
+To create a Group, you can use the [`editor.createGroup()`](../../../references/document-sandbox/document-apis/classes/editor.md#creategroup) method.
 
 ### Example
 

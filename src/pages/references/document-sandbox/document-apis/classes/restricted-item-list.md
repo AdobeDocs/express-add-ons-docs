@@ -8,17 +8,17 @@ capabilities, however.
 
 ## Extends
 
--   [`ReadOnlyItemList`](ReadOnlyItemList.md) `T`
+-   [`ReadOnlyItemList`](read-only-item-list.md) `T`
 
 ## Extended by
 
--   [`ArtboardList`](ArtboardList.md)
--   [`ItemList`](ItemList.md)
--   [`PageList`](PageList.md)
+-   [`ArtboardList`](artboard-list.md)
+-   [`ItemList`](item-list.md)
+-   [`PageList`](page-list.md)
 
 ## Type parameters
 
-• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/list-item.md)
 
 ## Accessors
 
@@ -70,7 +70,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[`ReadOnlyItemList`](ReadOnlyItemList.md).[`[iterator]`](ReadOnlyItemList.md#iterator)
+[`ReadOnlyItemList`](read-only-item-list.md).[`[iterator]`](ReadOnlyItemList.md#iterator)
 
 <hr />
 
@@ -92,7 +92,7 @@ index number, or -1 if item isn't in this list.
 
 #### Inherited from
 
-[`ReadOnlyItemList`](ReadOnlyItemList.md).[`indexOf`](ReadOnlyItemList.md#indexof)
+[`ReadOnlyItemList`](read-only-item-list.md).[`indexOf`](read-only-item-list.md#indexof)
 
 <hr />
 
@@ -114,7 +114,7 @@ Zero-based index
 
 #### Inherited from
 
-[`ReadOnlyItemList`](ReadOnlyItemList.md).[`item`](ReadOnlyItemList.md#item)
+[`ReadOnlyItemList`](read-only-item-list.md).[`item`](read-only-item-list.md#item)
 
 <hr />
 
@@ -198,4 +198,4 @@ readonly `T`[]
 
 #### Inherited from
 
-[`ReadOnlyItemList`](ReadOnlyItemList.md).[`toArray`](ReadOnlyItemList.md#toarray)
+[`ReadOnlyItemList`](read-only-item-list.md).[`toArray`](read-only-item-list.md#toarray)

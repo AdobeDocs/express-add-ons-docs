@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/how-to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/develop/how-to/create_renditions.md) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/how-to/use-images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/develop/how-to/create-renditions.md) from the current document.
 
 ## General Methods
 
@@ -148,7 +148,7 @@ Tells Express to run a print quality check to determine if the document is ready
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -208,7 +208,7 @@ The options to pass into the print quality check..
 
 | Name       | Type                                         | Description                                                           |
 | ---------- | -------------------------------------------- | --------------------------------------------------------------------- |
-| `range`    | [`Range`](../addonsdk/addonsdk-constants.md) | The range of the document to run the print quality check on.          |
+| `range`    | [`Range`](addonsdk-constants.md) | The range of the document to run the print quality check on.          |
 | `pageIds?` | `string[]`                                   | Id's of the pages. (Only required when the range is `specificPages`). |
 
 #### `PageMetadata`
@@ -233,7 +233,7 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 | Name                 | Type                                                   |                                                           Description |
 | -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
-| `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
+| `range`              | [`Range`](addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
 | `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ### link()
@@ -439,7 +439,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [import images how-to](../../guides/develop/how-to/use_images.md#import-images-into-the-page) and the [import-images-from-local](../../samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [import images how-to](../../guides/develop/how-to/use-images.md#import-images-into-the-page) and the [import-images-from-local](../../samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -590,7 +590,7 @@ Generate renditions of the current page, specific pages or the entire document i
 | `renditionOptions` | `Object` |              [`RenditionOptions`](#renditionoptions) object. |
 | `renditionIntent`  | `string` | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
 
-**NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
+**NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
 
 ```json
 "permissions": {
@@ -598,7 +598,7 @@ Generate renditions of the current page, specific pages or the entire document i
 }
 ```
 
-Refer to the [manage premium content how-to](../../guides/develop/how-to/premium_content.md) for more specific details on options for handling the export of premium content.
+Refer to the [manage premium content how-to](../../guides/develop/how-to/premium-content.md) for more specific details on options for handling the export of premium content.
 
 #### `RenditionOptions`
 
@@ -658,7 +658,7 @@ Represents a *bleed* for a page. In printing, *bleed* is printing that goes beyo
 | Name      | Type                                                       |                                      Description |
 | --------- | ---------------------------------------------------------- | -----------------------------------------------: |
 | `amount?` | `number`                                                   |                        The amount for the bleed. |
-| `unit`    | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
+| `unit`    | [`BleedUnit`](addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
 
 #### `PdfPageBoxes`
 
@@ -790,7 +790,7 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [create renditions how-to](../../guides/develop/how-to/create_renditions.md) and the [export-sample](../../samples.md) in the code samples for usage examples.
+Refer to the [create renditions how-to](../../guides/develop/how-to/create-renditions.md) and the [export-sample](../../samples.md) in the code samples for usage examples.
 
 ### Errors
 

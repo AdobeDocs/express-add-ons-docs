@@ -25,17 +25,17 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 ## Features Supported by the SDK
 
-- [Importing Content](../../guides/develop/how-to/use_images.md)
-- [Exporting Content](../../guides/develop/how-to/create_renditions.md)
-- [Accessing Content](../../guides/develop/how-to/group_elements.md)
-- [Drag & Drop Behavior](../../guides/develop/how-to/drag_and_drop.md)
+- [Importing Content](../../guides/develop/how-to/use-images.md)
+- [Exporting Content](../../guides/develop/how-to/create-renditions.md)
+- [Accessing Content](../../guides/develop/how-to/group-elements.md)
+- [Drag & Drop Behavior](../../guides/develop/how-to/drag-and-drop.md)
 - [Authorization with OAuth 2.0](../../guides/develop/how-to/oauth2.md)
 - [Client-side Storage Access](../../guides/develop/how-to/local-data-management.md)
-- [Modal Dialogs](../../guides/develop/how-to/modal_dialogs.md)
-- [Locale Detection](../../guides/develop/how-to/theme_locale.md#detecting-locale-supported-locales-and-format)
-- [Theme Detection](../../guides/develop/how-to/theme_locale.md#detecting-theme)
-- [Access to the Manifest](../../references/addonsdk/instance-manifest.md)
-- [Access to the Document information](../../references/addonsdk/app-document.md)
+- [Modal Dialogs](../../guides/develop/how-to/modal-dialogs.md)
+- [Locale Detection](../../guides/develop/how-to/theme-locale.md#detecting-locale-supported-locales-and-format)
+- [Theme Detection](../../guides/develop/how-to/theme-locale.md#detecting-theme)
+- [Access to the Manifest](instance-manifest.md)
+- [Access to the Document information](app-document.md)
 
 <InlineAlert slots="text" variant="success"/>
 
