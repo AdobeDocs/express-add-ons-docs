@@ -137,18 +137,18 @@ addOnUISdk.app.showColorPicker(element, {
 
 ```js
 import addOnUISdk, {
-  ColorPickerEvents,
+  ColorPickerEvent,
 } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const colorPickerButton = document.getElementById("colorPicker");
 
   // Add event listeners for color picker events
-  colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
     console.log("Color picker color change event from add-on:", event.detail);
   });
 
-  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.close, (event) => {
     console.log("Color picker closed from add-on:", event.detail);
   });
 

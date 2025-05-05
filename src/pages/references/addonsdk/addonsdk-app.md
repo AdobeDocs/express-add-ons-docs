@@ -301,7 +301,7 @@ colorPickerButton.addEventListener("click", () => {
   });
 });
 
-colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
   console.log("Color change event received!", event.detail.color;);
 });
 ```

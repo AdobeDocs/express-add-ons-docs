@@ -167,7 +167,7 @@ The `showColorPicker()` method requires an HTML element as its anchor point. Her
 
 ```js
 import addOnUISdk, {
-  ColorPickerEvents,
+  ColorPickerEvent,
   ColorPickerPlacement,
 } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -192,14 +192,14 @@ addOnUISdk.ready.then(async () => {
   });
 
   // Add a listener for the colorpicker-color-change event
-  colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
     // Get the color from the event
     console.log(event.detail.color);
     // e.g., "#F0EDD8FF" in HEX (RRGGBBAA) format
   });
 
   // Add a listener for the colorpicker-close event
-  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.close, (event) => {
     console.log(event.type); // "colorpicker-close"
   });
 });
@@ -266,7 +266,7 @@ addOnUISdk.ready.then(async () => {
     });
   });
 
-  colorDisplay.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  colorDisplay.addEventListener(ColorPickerEvent.colorChange, (event) => {
     // Update the color swatch display in the UI
     colorDisplay.style.backgroundColor = event.detail.color;
   });
