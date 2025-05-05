@@ -19,7 +19,7 @@
 -   [StrokePosition](enumerations/StrokePosition.md)
 -   [StrokeType](enumerations/StrokeType.md)
 -   [TextAlignment](enumerations/TextAlignment.md)
--   [TextType](enumerations/TextType.md)
+-   [TextLayout](enumerations/TextLayout.md)
 -   [VisualEffectType](enumerations/VisualEffectType.md)
 
 ## Classes

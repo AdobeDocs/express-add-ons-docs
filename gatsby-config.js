@@ -455,8 +455,8 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/enumerations/TextAlignment.md",
                   },
                   {
-                    title: "TextType",
-                    path: "references/document-sandbox/document-apis/enumerations/TextType.md",
+                    title: "TextLayout",
+                    path: "references/document-sandbox/document-apis/enumerations/TextLayout.md",
                   },
                   {
                     title: "VisualEffectType",

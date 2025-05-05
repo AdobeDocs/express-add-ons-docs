@@ -10,7 +10,7 @@
 
 ### type
 
-• **type**: [`autoHeight`](../enumerations/TextType.md#autoheight)
+• **type**: [`autoHeight`](../enumerations/TextLayout.md#autoheight)
 
 ---
 
