@@ -22,11 +22,15 @@ contributors:
 
 # Changelog
 
-## 2025-04-30
+## 2025-05-05
 
 ### Updated
 
-- Renamed enum TextType to [`TextLayout`](./document-sandbox/document-apis/enumerations/TextLayout.md) in the Text APIs.
+- There are a few notable changes regarding the [Color Picker APIs](../references/addonsdk/addonsdk-app.md#showcolorpicker), which have now moved to stable:
+  - The `initialColor` parameter now accepts a string in `"#RRGGBB[AA]"` format, in addition to the previous HEX number `0xRRGGBB[AA]`—both with optional alpha channel.
+  - We fixed the return value of the `ColorPickerEvent.colorChange` event, which now correctly handles the color with or without the alpha channel, depending on the value of the `disableAlphaChannel` parameter.
+  - **Breaking change**: the `ColorPickerEvents` enum has been renamed to `ColorPickerEvent` (singular).
+- Renamed the TextType enumerable to [`TextLayout`](./document-sandbox/document-apis/enumerations/TextLayout.md) in the Text APIs.
 
 ## 2025-04-22
 
