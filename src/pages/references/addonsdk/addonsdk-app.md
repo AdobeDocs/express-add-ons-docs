@@ -258,10 +258,6 @@ See the use case implementations for an example of the [custom modal dialog](../
 
 Shows the Adobe Express color picker based on specific options passed in.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `showColorPicker(anchorElement: HTMLElement, options?: ColorPickerOptions): Promise<void>;`
@@ -275,13 +271,13 @@ Shows the Adobe Express color picker based on specific options passed in.
 
 ##### `ColorPickerOptions`
 
-| Name                     |                                                               Type |                                                                                                                                                                                                                                                                      Description |
-| ------------------------ | -----------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `title?`                 |                                                           `string` |                                                                                                                                                                                                                     Label header/title for the color picker. Default value: `""` |
-| `initialColor?`          |                                                           `number` | Default/starting color when you open the color picker for the first time on a `anchorElement`. When you have already changed the color with this picker, then the next time you open the picker, the last selected color will be the starting color. Default: `0xFFFFFF` (white) |
-| `placement?`             | `object` [ColorPickerPlacement](./addonsdk-constants.md#constants) |                                                                                                                                                                                                 Placement of the popover with respect to the anchor element (default: `"left"`). |
-| `eyedropperHidesPicker?` |                                                          `boolean` |                                                                                                                Closes the color picker popover while using the EyeDropper. After the color is selected via the EyeDropper, the color picker popup opens again. Default: `false`. |
-| `disableAlphaChannel?`   |                                                          `boolean` |                                                                                                                                                                                  Disables the transparency slider in the "custom" section of the color picker. Default: `false`. |
+| Name                     |                                                               Type |                                                                                                                                                                                                                                                                                                                       Description |
+| ------------------------ | -----------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `title?`                 |                                                           `string` |                                                                                                                                                                                                                                                                      Label header/title for the color picker. Default value: `""` |
+| `initialColor?`          |                                               `number` or `string` | Default/starting color when you open the color picker for the first time on a `anchorElement`, in the format `0xRRGGBB[AA]` or `"#RRGGBB[AA]"`. When you have already changed the color with this picker, then the next time you open the picker, the last selected color will be the starting color. Default: `0xFFFFFF` (white) |
+| `placement?`             | `object` [ColorPickerPlacement](./addonsdk-constants.md#constants) |                                                                                                                                                                                                                                                  Placement of the popover with respect to the anchor element (default: `"left"`). |
+| `eyedropperHidesPicker?` |                                                          `boolean` |                                                                                                                                                                 Closes the color picker popover while using the EyeDropper. After the color is selected via the EyeDropper, the color picker popup opens again. Default: `false`. |
+| `disableAlphaChannel?`   |                                                          `boolean` |                                                                                                                                                                                                                                   Disables the transparency slider in the "custom" section of the color picker. Default: `false`. |
 
 #### Return Value
 
@@ -309,10 +305,6 @@ colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
 ### hideColorPicker()
 
 Hides the Adobe Express color picker.
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
