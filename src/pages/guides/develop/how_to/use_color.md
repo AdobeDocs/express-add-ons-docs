@@ -133,10 +133,6 @@ Please note that Adobe Express uses the terms **make** and **create** to disting
 
 Adobe Express includes a native Color Picker, with special features such as Recommended Swatches, Eyedropper, Themes, Library and Brand colors. The Color Picker is available also to add-ons, you can invoke it using the [`addOnUISdk.app.showColorPicker()`](../../../references/addonsdk/addonsdk-app.md#showcolorpicker) method.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Benefits
 
 - It simplifies the process of selecting a color, bypassing the Browser's color picker.
@@ -167,7 +163,7 @@ The `showColorPicker()` method requires an HTML element as its anchor point. Her
 
 ```js
 import addOnUISdk, {
-  ColorPickerEvents,
+  ColorPickerEvent,
   ColorPickerPlacement,
 } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -192,14 +188,14 @@ addOnUISdk.ready.then(async () => {
   });
 
   // Add a listener for the colorpicker-color-change event
-  colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
     // Get the color from the event
     console.log(event.detail.color);
     // e.g., "#F0EDD8FF" in HEX (RRGGBBAA) format
   });
 
   // Add a listener for the colorpicker-close event
-  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.close, (event) => {
     console.log(event.type); // "colorpicker-close"
   });
 });
@@ -266,7 +262,7 @@ addOnUISdk.ready.then(async () => {
     });
   });
 
-  colorDisplay.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  colorDisplay.addEventListener(ColorPickerEvent.colorChange, (event) => {
     // Update the color swatch display in the UI
     colorDisplay.style.backgroundColor = event.detail.color;
   });

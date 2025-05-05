@@ -22,6 +22,16 @@ contributors:
 
 # Changelog
 
+## 2025-05-05
+
+### Updated
+
+There are a few notable changes regarding the [Color Picker APIs](../references/addonsdk/addonsdk-app.md#showcolorpicker), which have now moved to stable:
+
+- The `initialColor` parameter now accepts a string in `"#RRGGBB[AA]"` format, in addition to the previous HEX number `0xRRGGBB[AA]`—both with optional alpha channel.
+- We fixed the return value of the `ColorPickerEvent.colorChange` event, which now correctly handles the color with or without the alpha channel, depending on the value of the `disableAlphaChannel` parameter.
+- **Breaking change**: the `ColorPickerEvents` enum has been renamed to `ColorPickerEvent` (singular).
+
 ## 2025-04-22
 
 ### Updated

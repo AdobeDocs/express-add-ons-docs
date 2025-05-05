@@ -40,7 +40,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     </td>
 </tr>
 <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>ColorPickerEvents</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>ColorPickerEvent</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
         <p>Custom events dispatched by the Color Picker.</p>
