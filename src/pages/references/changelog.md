@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-05-07
+
+### Added
+
+- New [Using Lit & TypeScript Guide](../guides/develop/using-lit-typescript.md) to help developers understand and use Lit and TypeScript in their add-ons.
+
 ## 2025-05-05
 
 ### Updated
