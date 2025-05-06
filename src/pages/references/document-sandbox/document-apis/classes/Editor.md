@@ -55,6 +55,7 @@ a group node.
 
 <hr />
 
+
 ### createImageContainer()
 
 • **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](media-container-node.md)
