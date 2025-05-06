@@ -31,7 +31,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
-<hr />
+<hr/>
 
 ### allChildren
 
