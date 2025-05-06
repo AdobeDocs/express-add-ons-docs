@@ -80,7 +80,6 @@ The `runtime` object uses the `exposeApi()`to make content available to the othe
 // 👇 both in the UI frame and the Document Sandbox
 runtime.exposeApi({ /* ... */ }); // exposing a payload {}
 ```
-/references/addonsdk/instance-runtime/
 We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](../../references/addonsdk/instance-runtime.md).
 
 ```js
