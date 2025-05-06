@@ -71,8 +71,10 @@ Build fast, lightweight web components using the Lit framework. Our CLI offers [
 
 - `swc-javascript`: For building with Lit and JavaScript
 - `swc-typescript`: For building with Lit and TypeScript
+- `swc-typescript-with-document-sandbox`: For building with Lit and TypeScript with the Document Sandbox
+- `swc-javascript-with-document-sandbox`: For building with Lit and JavaScript with the Document Sandbox
 
-Both templates come pre-configured with the necessary setup and dependencies.
+All templates come pre-configured with the necessary setup and dependencies.
 
 For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](./using-lit-typescript.md).
 
@@ -84,8 +86,6 @@ You can enhance your add-ons with additional JavaScript and CSS libraries like j
 2. Configure your bundler to process these files.
 3. Import the libraries where needed in your code.
 
-<InlineAlert slots="text" variant="info">
+<InlineAlert slots="text" variant="info"/>
 
 Make sure your chosen bundler is properly configured to handle any additional libraries you include.
-
-</InlineAlert>

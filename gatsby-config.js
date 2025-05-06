@@ -832,7 +832,7 @@ module.exports = {
             ],
           },
           {
-            title: "Web Frameworks, Libraries and Bundling",
+            title: "Frameworks, Libraries and Bundling",
             path: "guides/develop/frameworks-libraries-bundling.md",
           },        
           {

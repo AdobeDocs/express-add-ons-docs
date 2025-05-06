@@ -1,6 +1,5 @@
 # Developing add-ons with Lit and TypeScript
 
-
 ## Introduction
 
 <ProductCard slots="icon, text, buttons" theme="light" width="50%" />
@@ -13,7 +12,7 @@ Lit is a simple library for building fast, lightweight web components. It's buil
 
 <ProductCard slots="icon, text, buttons" theme="light" width="50%" />
 
-![](img/ts-logo-128.svg)
+![typescript-logo](img/ts-logo-128.svg)
 
 TypeScript is a statically typed superset of JavaScript that adds optional static types to the language.TypeScript aims to improve the development experience by providing a robust type system, which helps catch errors early during development and enhances code quality and maintainability.
 
@@ -140,7 +139,8 @@ TypeScript uses [ES6 module syntax](https://www.typescriptlang.org/docs/handbook
 
 ## Add-on Project Anatomy
 
-When you use the CLI to create an add-on based on Lit and TypeScript (ie: the `swc-typescript` template), the CLI generates a project structure that includes the necessary files and configurations to get you started quickly. For instance:
+When you use the CLI to create an add-on based on Lit and TypeScript (ie: the [`swc-typescript`](https://github.com/adobe/create-ccweb-add-on/tree/main/packages/create-ccweb-add-on/templates/swc-typescript/template) or [`swc-typescript-with-document-sandbox`](https://github.com/adobe/create-ccweb-add-on/tree/main/packages/create-ccweb-add-on/templates/swc-typescript-with-document-sandbox/template
+) templates), the CLI generates a project structure that includes the necessary files and configurations to get you started quickly. For instance:
 
 
 | File/Folder | Description |
@@ -351,11 +351,15 @@ Specifies the TypeScript compiler options for your project. It includes settings
 }
 ```
 
-## Create a new Lit Component
+## Create a New Lit Component
 
 To create a new component using Lit and TypeScript, follow these steps:
 
 #### Step 1: Create a new TypeScript file in the `src/ui/components` directory.
+
+```bash
+touch src/ui/components/MyCustomButton.ts
+```
 
 #### Step 2: Define a new class that extends `LitElement` and implements your component logic.
 
@@ -425,4 +429,3 @@ Next, you can explore more advanced features of Lit and TypeScript to enhance yo
 - [**Testing**](https://lit.dev/docs/tools/testing/): Write unit tests for your components using tools like Jest or Mocha to ensure their correctness and reliability.
 
 Check out [this handy cheat sheet](https://lit.dev/articles/lit-cheat-sheet/#shadow-dom) on properties and state for further reference throughout your development.
-
