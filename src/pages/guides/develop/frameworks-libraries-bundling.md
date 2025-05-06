@@ -19,7 +19,7 @@ An example of how this works in Visual Studio Code is shown in this short clip b
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the [Using Lit & Typescript Guide](./lit-guide.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
+Check out the [Using Lit & Typescript Guide](./using-lit-typescript.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
 
 ## Webpack & JavaScript bundler
 
