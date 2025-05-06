@@ -121,7 +121,7 @@
             - [Concepts](references/document-sandbox/document-apis/concepts/index.md) 
     - [Built-in UI Components](references/ui-components/color-picker.md) 
         - [Color Picker](references/ui-components/color-picker.md) 
-    - [Manifest Schema](references/manifest) 
+    - [Manifest Schema](references/manifest/index.md) 
     - [Changelog](references/changelog.md) 
     - [Overview](guides/index.md) 
     - [Getting started](guides/getting_started/index.md) 
