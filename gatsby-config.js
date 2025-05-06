@@ -136,19 +136,19 @@ module.exports = {
                   },
                   {
                     title: "ArtboardNode",
-                    path: "references/document-sandbox/document-apis/classes/artboard-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/artboard-node.md",
                   },
                   {
                     title: "AvailableFont",
-                    path: "references/document-sandbox/document-apis/classes/available-Font.md",
+                    path: "references/document-sandbox/document-apis/classes/available-font.md",
                   },
                   {
                     title: "BaseFont",
-                    path: "references/document-sandbox/document-apis/classes/base-Font.md",
+                    path: "references/document-sandbox/document-apis/classes/base-font.md",
                   },
                   {
                     title: "BaseNode",
-                    path: "references/document-sandbox/document-apis/classes/base-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/base-node.md",
                   },
                   {
                     title: "ColorUtils",
@@ -156,7 +156,7 @@ module.exports = {
                   },
                   {
                     title: "ComplexShapeNode",
-                    path: "references/document-sandbox/document-apis/classes/complex-shape-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/complex-shape-node.md",
                   },
                   {
                     title: "Context",
@@ -168,15 +168,15 @@ module.exports = {
                   },
                   {
                     title: "EllipseNode",
-                    path: "references/document-sandbox/document-apis/classes/ellipse-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/ellipse-node.md",
                   },
                   {
                     title: "ExpressRootNode",
-                    path: "references/document-sandbox/document-apis/classes/express-root-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/express-root-node.md",
                   },
                   {
                     title: "FillableNode",
-                    path: "references/document-sandbox/document-apis/classes/fillable-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/fillable-node.md",
                   },
                   {
                     title: "Fonts",
@@ -184,19 +184,19 @@ module.exports = {
                   },
                   {
                     title: "GridCellNode",
-                    path: "references/document-sandbox/document-apis/classes/grid-cell-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/grid-cell-node.md",
                   },
                   {
                     title: "GridLayoutNode",
-                    path: "references/document-sandbox/document-apis/classes/grid-layout-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/grid-layout-node.md",
                   },
                   {
                     title: "GroupNode",
-                    path: "references/document-sandbox/document-apis/classes/group-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/group-node.md",
                   },
                   {
                     title: "ImageRectangleNode",
-                    path: "references/document-sandbox/document-apis/classes/image-rectangle-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/image-rectangle-node.md",
                   },
                   {
                     title: "ItemList",
@@ -204,7 +204,7 @@ module.exports = {
                   },
                   {
                     title: "LineNode",
-                    path: "references/document-sandbox/document-apis/classes/line-Node.md",
+                    path: "references/document-sandbox/document-apis/classes/line-node.md",
                   },
                   {
                     title: "MediaContainerNode",
@@ -260,7 +260,7 @@ module.exports = {
                   },
                   {
                     title: "UnavailableFont",
-                    path: "references/document-sandbox/document-apis/classes/unavailable-Font.md",
+                    path: "references/document-sandbox/document-apis/classes/unavailable-font.md",
                   },
                   {
                     title: "UnknownNode",
@@ -290,7 +290,7 @@ module.exports = {
                   },
                   {
                     title: "BaseParagraphStyles",
-                    path: "references/document-sandbox/document-apis/interfaces/base-ParagraphStyles.md",
+                    path: "references/document-sandbox/document-apis/interfaces/base-paragraph-styles.md",
                   },
                   {
                     title: "BitmapImage",
@@ -334,7 +334,7 @@ module.exports = {
                   // },
                   {
                     title: "IFillableNode",
-                    path: "references/document-sandbox/document-apis/interfaces/i-fillable-node.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-fillable-Node.md",
                   },
                   {
                     title: "IRectangularNode",

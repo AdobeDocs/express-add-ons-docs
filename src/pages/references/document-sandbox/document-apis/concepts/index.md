@@ -87,7 +87,7 @@ Compared to other Adobe desktop applications, the Adobe Express DOM features a r
 
 ### How to read the Reference
 
-With this knowledge, you can use the [Document APIs](../../../../references/document-sandbox/document-apis/index.md) reference as the primary tool to study and learn about the Adobe Express DOM.
+With this knowledge, you can use the [Document APIs](../index.md) reference as the primary tool to study and learn about the Adobe Express DOM.
 
 ![](images/refs-addon-doc.png)
 
