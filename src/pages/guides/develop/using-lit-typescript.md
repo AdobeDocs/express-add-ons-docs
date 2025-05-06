@@ -18,7 +18,7 @@ TypeScript is a statically typed superset of JavaScript that adds optional stati
 
 - [Learn more](https://https://www.typescriptlang.org/)
 
-When you develop add-ons with a combination of [Lit](https://lit.dev/) and [TypeScript](https://https://www.typescriptlang.org/), you get the benefits of both worlds; a lightweight component library with reactive properties and templating capabilities, which help you build fast and efficient components, and the robust type system provided by TypeScript. 
+When you develop add-ons with a combination of [Lit](https://lit.dev/) and [TypeScript](https://https://www.typescriptlang.org/), you get the benefits of both worlds; a lightweight component library with reactive properties and templating capabilities, which help you build fast and efficient components, and the robust type system provided by TypeScript.
 
 ## Lit Key Features
 
@@ -41,8 +41,8 @@ A [*decorator*](https://lit.dev/docs/components/decorators/) is a certain type o
 - `@customElement`: defines a custom element with a given tag name.
 - `@property`: defines a reactive property that triggers a re-render when its value changes.
 - `@state`: defines a local state property that triggers a re-render when its value changes. The difference between `@state` and `@property` is that `@state` properties are not exposed as custom element properties. It's useful for managing component-specific state that does not need to be shared with other components.
-- `@query`: allows you to query for elements in the component's shadow DOM, for instance, to access a button element with the id `myButton`, you can use `@query('#myButton') myButton: HTMLButtonElement;`. 
-- `@eventOptions`: allows you to specify event options like `capture`, `once`, and `passive` for event listeners. For example, `@eventOptions({ capture: true }) handleClick() { ... }`. 
+- `@query`: allows you to query for elements in the component's shadow DOM, for instance, to access a button element with the id `myButton`, you can use `@query('#myButton') myButton: HTMLButtonElement;`.
+- `@eventOptions`: allows you to specify event options like `capture`, `once`, and `passive` for event listeners. For example, `@eventOptions({ capture: true }) handleClick() { ... }`.
 
 ### Directives
 
@@ -60,7 +60,7 @@ A Lit [*directive*](https://lit.dev/docs/templates/directives/) is a special kin
 
 <InlineAlert slots="text" variant="info"/>
 
-The difference between a directive and a decorator is that a directive is applied to a template, while a decorator is applied to a class or a class member. 
+The difference between a directive and a decorator is that a directive is applied to a template, while a decorator is applied to a class or a class member.
 
 ### `render` Method
 
@@ -80,7 +80,7 @@ TypeScript allows you to [define types](https://www.typescriptlang.org/docs/hand
    let message: string = "Hello, TypeScript!";
    ```
 
-### Type Inference 
+### Type Inference
 
 TypeScript can automatically [infer types](https://www.typescriptlang.org/docs/handbook/type-inference.html#handbook-content) based on the assigned values, reducing the need for explicit type annotations.
 
@@ -88,7 +88,7 @@ TypeScript can automatically [infer types](https://www.typescriptlang.org/docs/h
    let count = 42; // inferred as number
    ```
 
-### Interfaces 
+### Interfaces
 
 [Interfaces](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces) define the shape of an object, specifying the properties and their types. They help enforce consistent object structures.
 
@@ -111,7 +111,8 @@ TypeScript supports object-oriented programming with [classes](https://www.types
        console.log(`Hello, my name is ${this.name}`);
      }
    }
-   ```  
+   ```
+   
 ### Modules
 
 TypeScript uses [ES6 module syntax](https://www.typescriptlang.org/docs/handbook/2/modules.html) to organize code into reusable modules, making it easier to manage large codebases.
@@ -141,7 +142,6 @@ TypeScript uses [ES6 module syntax](https://www.typescriptlang.org/docs/handbook
 
 When you use the CLI to create an add-on based on Lit and TypeScript (ie: the [`swc-typescript`](https://github.com/adobe/create-ccweb-add-on/tree/main/packages/create-ccweb-add-on/templates/swc-typescript/template) or [`swc-typescript-with-document-sandbox`](https://github.com/adobe/create-ccweb-add-on/tree/main/packages/create-ccweb-add-on/templates/swc-typescript-with-document-sandbox/template
 ) templates), the CLI generates a project structure that includes the necessary files and configurations to get you started quickly. For instance:
-
 
 | File/Folder | Description |
 | ------------|-------------| ----------- |
@@ -288,7 +288,7 @@ export interface DocumentSandboxApi { //
 
 ### code.ts
 
-Contains the implementation of the document sandbox runtime. It defines the `createRectangle` function and exposes it to the UI runtime (ie: the code running in the iframe in the `ui` folder). 
+Contains the implementation of the document sandbox runtime. It defines the `createRectangle` function and exposes it to the UI runtime (ie: the code running in the iframe in the `ui` folder).
 
 ```typescript
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
