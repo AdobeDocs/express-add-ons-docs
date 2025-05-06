@@ -112,7 +112,7 @@ TypeScript supports object-oriented programming with [classes](https://www.types
      }
    }
    ```
-   
+
 ### Modules
 
 TypeScript uses [ES6 module syntax](https://www.typescriptlang.org/docs/handbook/2/modules.html) to organize code into reusable modules, making it easier to manage large codebases.
