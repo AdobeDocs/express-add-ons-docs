@@ -48,11 +48,3 @@ The core add-on UI SDK object which provides access to everything needed for add
 </tr>
 </tbody>
 </table>
-
-<!-- ## Methods
-
-## ready
-Asynchronous
-
-## Example Usage:
-await AddOnSdk.ready; -->
