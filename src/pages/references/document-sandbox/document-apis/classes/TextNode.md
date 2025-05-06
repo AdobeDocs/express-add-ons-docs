@@ -164,7 +164,7 @@ layout modes, except for [AreaTextLayout](../interfaces/AreaTextLayout.md), are 
 
 #### Throws
 
-if changing text layout to/from [TextType.magicFit](../enumerations/TextType.md#magicfit) or [TextType.circular](../enumerations/TextType.md#circular) layout when the text contains font(s) unavailable to the current user.
+if changing text layout to/from [TextLayout.magicFit](../enumerations/TextLayout.md#magicfit) or [TextLayout.circular](../enumerations/TextLayout.md#circular) layout when the text contains font(s) unavailable to the current user.
 
 #### Throws
 

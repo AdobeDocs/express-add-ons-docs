@@ -393,6 +393,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/StyleRange.md",
                   },
                   {
+                    title: "TextRange",
+                    path: "references/document-sandbox/document-apis/interfaces/TextRange.md",
+                  },
+                  {
                     title: "UnorderedListStyleInput",
                     path: "references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md",
                   },
@@ -451,8 +455,8 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/enumerations/TextAlignment.md",
                   },
                   {
-                    title: "TextType",
-                    path: "references/document-sandbox/document-apis/enumerations/TextType.md",
+                    title: "TextLayout",
+                    path: "references/document-sandbox/document-apis/enumerations/TextLayout.md",
                   },
                   {
                     title: "VisualEffectType",

@@ -201,6 +201,22 @@ Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-we
 
 - [Application UI Theme](./references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
 
+## [vue-starter](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/vue-starter)
+
+Simple sample which illustrates how to use **Spectrum Web Components** without React or any other framework.
+
+**Technologies Used:** <br/>
+
+- Vue.js
+- HTML
+- JavaScript
+- Webpack
+- CSS
+
+**Features Leveraged:**<br/>
+
+- [Add-on SDK Ready](./references/addonsdk/addonsdk.md) method is checked to ensure the SDK is loaded before enabling the button in the UI (similar to the templates generated with our CLI, but based on Vue.js).
+
 <!-- # Marketplace Add-on Samples
 The following samples were built to show how to use specific some popular 3rd party services. -->
 

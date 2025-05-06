@@ -30,25 +30,25 @@ contributors:
 
 Colors in Adobe Express are created as instances of the [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) class: objects with `red`, `green`, `blue`, and `alpha` (optional) values in the range from 0 to 1. The `alpha` value represents the opacity of the color, with 0 being fully transparent and 1 fully opaque.
 
-The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRgb()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
+The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
 
 ```js
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
 // Alpha is optional, defaults to 1
-const red = colorUtils.fromRgb(1, 0, 0);
+const red = colorUtils.fromRGB(1, 0, 0);
 const green = colorUtils.fromHex("#00FF00");
 
 // With alpha
-const feldgrau = colorUtils.fromRgb(0.28, 0.32, 0.39, 0.5); // 50% opacity
+const feldgrau = colorUtils.fromRGB(0.28, 0.32, 0.39, 0.5); // 50% opacity
 const heliotrope = colorUtils.fromHex("#C768F780"); // 50% opacity
 ```
 
 In case you need it, you can also convert a color to a HEX string using the [`toHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#tohex) method. Please note that the alpha value is always included in the output string.
 
 ```js
-const red = colorUtils.fromRgb(1, 0, 0);
+const red = colorUtils.fromRGB(1, 0, 0);
 const redHex = colorUtils.toHex(red); // #FF0000FF
 ```
 
@@ -133,10 +133,6 @@ Please note that Adobe Express uses the terms **make** and **create** to disting
 
 Adobe Express includes a native Color Picker, with special features such as Recommended Swatches, Eyedropper, Themes, Library and Brand colors. The Color Picker is available also to add-ons, you can invoke it using the [`addOnUISdk.app.showColorPicker()`](../../../references/addonsdk/addonsdk-app.md#showcolorpicker) method.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Benefits
 
 - It simplifies the process of selecting a color, bypassing the Browser's color picker.
@@ -167,7 +163,7 @@ The `showColorPicker()` method requires an HTML element as its anchor point. Her
 
 ```js
 import addOnUISdk, {
-  ColorPickerEvents,
+  ColorPickerEvent,
   ColorPickerPlacement,
 } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -192,14 +188,14 @@ addOnUISdk.ready.then(async () => {
   });
 
   // Add a listener for the colorpicker-color-change event
-  colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
     // Get the color from the event
     console.log(event.detail.color);
     // e.g., "#F0EDD8FF" in HEX (RRGGBBAA) format
   });
 
   // Add a listener for the colorpicker-close event
-  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvent.close, (event) => {
     console.log(event.type); // "colorpicker-close"
   });
 });
@@ -266,7 +262,7 @@ addOnUISdk.ready.then(async () => {
     });
   });
 
-  colorDisplay.addEventListener(ColorPickerEvents.colorChange, (event) => {
+  colorDisplay.addEventListener(ColorPickerEvent.colorChange, (event) => {
     // Update the color swatch display in the UI
     colorDisplay.style.backgroundColor = event.detail.color;
   });

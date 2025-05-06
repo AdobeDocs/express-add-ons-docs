@@ -6,8 +6,8 @@ The Add-on SDK's are a set of interfaces written in TypeScript, and a TypeScript
 
 ```ts
 import {
-    Application,
-    AuthorizationRequest
+  Application,
+  AuthorizationRequest,
 } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 ```
 

@@ -22,7 +22,45 @@ contributors:
 
 # Changelog
 
-## 2025-03-25
+## 2025-05-05
+
+### Updated
+
+- There are a few notable changes regarding the [Color Picker APIs](../references/addonsdk/addonsdk-app.md#showcolorpicker), which have now moved to stable:
+  - The `initialColor` parameter now accepts a string in `"#RRGGBB[AA]"` format, in addition to the previous HEX number `0xRRGGBB[AA]`—both with optional alpha channel.
+  - We fixed the return value of the `ColorPickerEvent.colorChange` event, which now correctly handles the color with or without the alpha channel, depending on the value of the `disableAlphaChannel` parameter.
+  - **Breaking change**: the `ColorPickerEvents` enum has been renamed to `ColorPickerEvent` (singular).
+- Renamed the TextType enumerable to [`TextLayout`](./document-sandbox/document-apis/enumerations/TextLayout.md) in the Text APIs.
+
+## 2025-04-22
+
+### Updated
+
+- The [Code Playground](../guides/getting_started/code_playground.md) documentation has been updated with details about the new [Script Mode](../guides/getting_started/code_playground.md#how-to-use-script-mode) and [Local Persistence](../guides/getting_started/code_playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
+
+  - New sections explaining Script Mode and Add-on Mode.
+  - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.
+  - Information about local persistence and session management.
+  - Additional guidance on transitioning code between modes.
+  - New keyboard shortcuts for improved productivity.
+
+## 2025-04-10
+
+### Added
+
+- New [`link()`](../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/develop/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [vue-starter](../samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
+- Fixes `fromRGB()` method reference in the [Using Color How-to](../guides/develop/how_to/use_color.md).
+
+## 2025-04-03
+
+### Added
+
+- A new [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method is added to [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel.md) class, which returns true if the text contains any fonts unavailable to the current user.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Updated
 
@@ -196,7 +234,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - Added many new **Text APIs** for improved text management.
   - [`TextNode.fullContent`](./document-sandbox/document-apis/classes/TextNode.md#fullcontent) accessor: returns the [`TextContentModel`](./document-sandbox/document-apis/classes/TextContentModel.md) containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).
   - [`TextNode.nextTextNode`](./document-sandbox/document-apis/classes/TextNode.md#nexttextnode) accessor: gets the next node that overflowing text will spill into.
-  - [`TextNode.layout`](./document-sandbox/document-apis/classes/TextNode.md#layout) accessor: gets and sets the [`TextType`](./document-sandbox/document-apis/enumerations/TextType.md) of the text node frame.
+  - [`TextNode.layout`](./document-sandbox/document-apis/classes/TextNode.md#layout) accessor: gets and sets the [`TextLayout`](./document-sandbox/document-apis/enumerations/TextLayout.md) of the text node frame.
   - [`TextNode.visualEffects`](./document-sandbox/document-apis/classes/TextNode.md#visualeffects) accessor: list of [`VisualEffectType`](./document-sandbox/document-apis/enumerations/VisualEffectType.md) applied to the text node.
   - [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) accessor: list of [character style](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#color), [`font`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#font), [`fontSize`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#fontsize), [`letterSpacing`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#letterSpacing) and [`underline`](./document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](./document-sandbox/document-apis/interfaces/CharacterStyles.md#underline) properties.
   - [AvailableFont](./document-sandbox/document-apis/classes/AvailableFont.md) and [UnavailableFont](./document-sandbox/document-apis/classes/UnavailableFont.md) classes.

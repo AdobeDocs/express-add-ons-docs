@@ -19,7 +19,7 @@
 -   [StrokePosition](enumerations/StrokePosition.md)
 -   [StrokeType](enumerations/StrokeType.md)
 -   [TextAlignment](enumerations/TextAlignment.md)
--   [TextType](enumerations/TextType.md)
+-   [TextLayout](enumerations/TextLayout.md)
 -   [VisualEffectType](enumerations/VisualEffectType.md)
 
 ## Classes
@@ -92,6 +92,7 @@
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
 -   [StyleRange](interfaces/StyleRange.md)
+-   [TextRange](interfaces/TextRange.md)
 -   [UnorderedListStyleInput](interfaces/UnorderedListStyleInput.md)
 -   [UnsupportedTextLayout](interfaces/UnsupportedTextLayout.md)
 
