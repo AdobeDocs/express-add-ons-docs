@@ -18,7 +18,7 @@ The height of the text node in pixels.
 
 ### type
 
-• **type**: [`area`](../enumerations/TextType.md#area)
+• **type**: [`area`](../enumerations/TextLayout.md#area)
 
 ---
 

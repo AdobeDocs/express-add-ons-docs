@@ -17,6 +17,10 @@ An example of how this works in Visual Studio Code is shown in this short clip b
 <iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
 </div>
 
+<InlineAlert slots="text" variant="info"/>
+
+Check out the [Using Lit & Typescript Guide](./using-lit-typescript.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
+
 ## Webpack & JavaScript bundler
 
 When using Node libraries or other frameworks, you'll often need to use a JavaScript bundler. All of the templates the CLI provides (other than the basic `javascript` template) are pre-configured for webpack via the `--use` option set on the `ccweb-add-on-scripts` commands. If you create a new add-on project based on a react or typescript based template for instance, you will see the following `scripts` block generated in your `package.json`, and the existence of a `webpack.config.js` in the root of your project:
@@ -63,10 +67,25 @@ The CLI supports two different [react-based templates](../../guides/getting_star
 
 ## Lit Framework
 
-The CLI provides [starter template options](../../guides/getting_started/dev_tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
+Build fast, lightweight web components using the Lit framework. Our CLI offers [starter templates](../getting_started/dev_tooling.md#templates) to help you get started:
 
-<!-- To learn more about developing with [Lit](https://lit.dev/), be sure to check out the [Using Lit & TypeScript Guide](./using-lit-typescript.md). -->
+- `swc-javascript`: For building with Lit and JavaScript
+- `swc-typescript`: For building with Lit and TypeScript
+- `swc-typescript-with-document-sandbox`: For building with Lit and TypeScript with the Document Sandbox
+- `swc-javascript-with-document-sandbox`: For building with Lit and JavaScript with the Document Sandbox
+
+All templates come pre-configured with the necessary setup and dependencies.
+
+For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](./using-lit-typescript.md).
 
 ## Other JavaScript and CSS libraries
 
-You should be able to use any other JavaScript or CSS libraries you might want to include in your add-ons (ie: jQuery, Bootstrap) without any issues. Just make sure you include the necessary scripts and stylesheets in your project, and ensure they are bundled correctly by your chosen bundler.
+You can enhance your add-ons with additional JavaScript and CSS libraries like jQuery or Bootstrap. Follow these steps to integrate them:
+
+1. Add the library's scripts and stylesheets to your project.
+2. Configure your bundler to process these files.
+3. Import the libraries where needed in your code.
+
+<InlineAlert slots="text" variant="info"/>
+
+Make sure your chosen bundler is properly configured to handle any additional libraries you include.
