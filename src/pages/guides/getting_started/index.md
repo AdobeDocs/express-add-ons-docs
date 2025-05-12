@@ -11,29 +11,110 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: Intro
-description: This is the Intro page for Getting Started
+title: Adobe Express Add-ons Guides
+description: Find the most recent documentation, code samples and resources for building add-ons for Adobe Express.
 contributors:
-  - https://github.com/hollyschinsky  
+  - https://github.com/hollyschinsky
+  - https://github.com/undavide
 hideBreadcrumbNav: true
 ---
 
-# Getting Started Overview
+import '/src/styles.css'
 
-This section provides everything you need to know to get started building add-ons for Adobe Express.
+<Hero slots="heading, text"  className="hero-gradient" />
 
-## Introduction
+## Build add-ons for Adobe Express
 
-At a high level, add-ons refer to any feature distributed independently from the core Adobe Express that a user can enable or install to extend the functionality. Adobe provides some built-in add-ons out of the box, but 3rd party developers also have the opportunity to create and distribute their own add-ons by following the steps provided in this documentation.
+Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
-### Getting Started Steps
+<div className="hero-image-container">
+  <img src="./img/Explore_Image_3.png" alt="Adobe Express add-ons" />
+</div>
 
-The [Quickstart](quickstart.md) steps you will follow to get started building your first add-on include:
+<br/><br/>
 
-1. [Set up](quickstart.md#prerequisites) your local environment.
-1. [Create a new add-on project](quickstart.md#step-1-create-your-add-on-project)
-1. [Build and start your add-on](quickstart.md#step-2-build-and-start-your-add-on).
-1. Log in to [Adobe Express](https://new.express.adobe.com/new).
-1. Enable the [developer mode](quickstart.md#step-3-enable-add-on-development-mode-first-time-only) (one time only).
-1. [Load and run your add-on](quickstart.md#step-4-load-and-run-your-add-on) directly in Adobe Express.
-1. [Continue developing your add-on](quickstart.md#step-5-edit-your-add-on), seeing your changes immediately appear in, allowing you to iterate quickly.
+<div style="display: flex; justify-content: center;">
+  <iframe width="779" height="438" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<br/><br/>
+
+## Welcome to Adobe Express Add-ons!
+
+Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
+
+<TextBlock slots="image, heading, text, text1" width="50%"/>
+
+![Discover](./img/devjourney-1-discovery.png)
+
+### Discover
+
+Explore how add-ons can expand capabilities and streamline creative workflows.
+
+[Find inspiration →](./developer_journey/discover.md)
+
+<TextBlock slots="image, heading, text, text1" width="50%"/>
+
+![Learn](./img/devjourney-2-learn.png)
+
+### Learn
+
+Familiarize and experiment with powerful features in our Code Playground.
+
+[Dive deeper →](./developer_journey/learn.md)
+
+<TextBlock slots="image, heading, text, text1" width="50%" />
+
+![Develop](./img/devjourney-3-develop.png)
+
+### Develop
+
+Transform your ideas into a polished product following our best practices.
+
+[Start building →](https://developer.adobe.com/express/add-ons/)
+
+<TextBlock slots="image, heading, text, text1" width="50%" />
+
+![Distribute](./img/devjourney-4-distribute.png)
+
+### Distribute
+
+Share your add-on with the world in the Adobe Express Marketplace.
+
+[Launch now →](https://developer.adobe.com/express/add-ons/)
+
+<!-- ## Adobe Fund for Design: Bring Your Ideas to Life! -->
+
+## Get paid to build add-ons
+
+Have a creative idea for an Adobe Express add-on? Get **funding**, resources, and support through the [Adobe Fund for Design](https://developer.adobe.com/fund-for-design).
+
+<div style="display:flex; justify-content:center; margin-bottom: 20px; margin-top: 30px;">
+  <iframe width="315" height="560" style="border-radius: 10px;"
+    src="https://www.youtube.com/embed/76hGc6mlSSA"
+    title="YouTube Shorts"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+We’re backing innovative solutions that unlock the most popular and [trending](https://developer.adobe.com/fund-for-design/#what-were-looking-for) use cases. [Apply now](https://developer.adobe.com/fund-for-design) and turn your vision into reality!
+
+## Get inspiration and try out add-ons in the Marketplace
+
+Do you want to try some add-ons first? Open [Adobe Express](https://new.express.adobe.com/add-ons) and click on the **Add-ons** button located in the left-hand sidebar. Browse through Adobe's picks, the Collections or use the search bar to find specific add-ons.
+
+[![discover add-ons image](../../images/addons.png)](https://new.express.adobe.com/add-ons)
+
+Click on an add-on to view more information and install it. That's it!
+
+## What's next?
+
+Continue by reading the Getting started guide and explore the [Code Playground](./getting_started/code_playground.md), or jump to the [Learning Paths](./developer_journey/index.md)!
+
+<InlineAlert slots="text" />
+
+**Join Us: Office Hours for Adobe Express Developers** <br /><br />
+Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
+
+<br/><br/><br/><br/>
