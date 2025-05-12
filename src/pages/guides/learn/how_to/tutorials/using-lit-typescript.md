@@ -289,7 +289,7 @@ export const style = css`
 
 ### DocumentSandboxApi.ts
 
-Defines the TypeScript interface for the APIs that the [document sandbox runtime](../../references/document-sandbox/index.md) exposes to the UI runtime. Once you define an interface, any object that implements that interface must implement to the contract defined in the interface. The document sandbox runtime implements this interface in the `code.ts` file.
+Defines the TypeScript interface for the APIs that the [document sandbox runtime](../../../../references/document-sandbox/index.md) exposes to the UI runtime. Once you define an interface, any object that implements that interface must implement to the contract defined in the interface. The document sandbox runtime implements this interface in the `code.ts` file.
 
 ```typescript
 export interface DocumentSandboxApi {

@@ -79,4 +79,4 @@ Using the [Spectrum Design System](../design/implementation_guide.md#spectrum-de
 
 ### COEP issues
 
-The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../advanced-topics/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.
+The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../../learn/platform_concepts/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.

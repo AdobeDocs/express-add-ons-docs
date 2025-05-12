@@ -102,7 +102,7 @@ When you feel more comfortable, you can tinker with these other use cases:
 
 ### Next steps
 
-Feel free to explore the rest of the [How-to Guides](../develop/how_to.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, keep reading to learn how to scaffold a local environment with the CLI, and build a more complex add-on from the ground up.
+Feel free to explore the rest of the [How-to Guides](../learn/how_to/how_to.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, keep reading to learn how to scaffold a local environment with the CLI, and build a more complex add-on from the ground up.
 
 ## ⚠️ WIP
 

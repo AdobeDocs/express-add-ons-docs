@@ -96,7 +96,7 @@ declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
 }
 ```
 
-See the [typescript definitions section](../../resources/advanced-topics/frameworks-libraries-bundling.md#typescript-definitions) in the developer guides as well for more details.
+See the [typescript definitions section](../../guides/build/advanced-topics/frameworks-libraries-bundling.md#typescript-definitions) in the developer guides as well for more details.
 
 ## addOnUISdk Properties
 

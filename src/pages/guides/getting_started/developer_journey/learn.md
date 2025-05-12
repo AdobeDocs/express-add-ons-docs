@@ -21,7 +21,7 @@ contributors:
 
 # Learn by tinkering with the Code Playground
 
-The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code_playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
+The best way to learn is by doing! Adobe Express integrates a [Playground](../code_playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
 <br/><br/><div style="display: flex; justify-content: center;">
 
@@ -34,24 +34,24 @@ You need to tick a few boxes in the application in order to enable it, as the an
 
 ![Enable Developer Settings](./images/enable-playground.gif)
 
-Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](#) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](../getting_started/code_playground.md) for more details.
+Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](#) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](../code_playground.md) for more details.
 
-[![Code Playground](./images/playground.png)](../getting_started/code_playground.md)
+[![Code Playground](./images/playground.png)](../code_playground.md)
 
 ## Explore the How-to Guides
 
-To properly experiment with the Playground, head to the [How-tos](../develop/how_to.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. They cover the most common use cases, and are a great way to get familiar with the add-on SDK. Try the following as a starter:
+To properly experiment with the Playground, head to the [How-tos](../../learn/how_to/how_to.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. They cover the most common use cases, and are a great way to get familiar with the add-on SDK. Try the following as a starter:
 
-- [Creating Text](../develop/how_to/use_text.md#create-text)
-- [Creating Geometry](../develop/how_to/use_geometry.md)
-- [Grouping Elements](../develop/how_to/group_elements.md)
+- [Creating Text](../../learn/how_to/use_text.md#create-text)
+- [Creating Geometry](../../learn/how_to/use_geometry.md)
+- [Grouping Elements](../../learn/how_to/group_elements.md)
 
 When you feel more comfortable, you can tinker with these other use cases:
 
-- [Using Colors](../develop/how_to/use_color.md)
-- [Exporting Renditions](../develop/how_to/create_renditions.md)
-- [Document](../develop/how_to/document_metadata.md) and [Element Metadata](../develop/how_to/document_metadata.md)
+- [Using Colors](../../learn/how_to/use_color.md)
+- [Exporting Renditions](../../learn/how_to/create_renditions.md)
+- [Document](../../learn/how_to/document_metadata.md) and [Element Metadata](../../learn/how_to/document_metadata.md)
 
 ## Next steps
 
-Feel free to explore the rest of the [How-to Guides](../develop/how_to.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, head over to the [Develop](./develop.md) section to learn how to scaffold a local environment with the CLI, and build a more complex add-on from the ground up.
+Feel free to explore the rest of the [How-to Guides](../../learn/how_to/how_to.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, head over to the [Development Tools](../local_development/dev_tooling.md) section to learn how to scaffold a local environment with the CLI, and build a more complex add-on from the ground up.

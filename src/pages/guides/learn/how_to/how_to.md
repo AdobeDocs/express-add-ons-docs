@@ -22,7 +22,7 @@ contributors:
 
 The following guides contain a set of common use cases and accompanying code snippets that will help you quickly implement a wide variety of features in your add-ons.
 
-You're encouraged to use the [Code Playground](../getting_started/code_playground.md) to test each one of them. We're constantly adding new how-tos, so make sure to check back often! If you're looking for more extensive examples, you can also look at our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons. A list of the available topics can be found below:
+You're encouraged to use the [Code Playground](../../getting_started/code_playground.md) to test each one of them. We're constantly adding new how-tos, so make sure to check back often! If you're looking for more extensive examples, you can also look at our [code samples](https://developer.adobe.com/express/add-ons/docs/samples/). The [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) can be used to find all of the objects, methods, properties and events supported for building add-ons. A list of the available topics can be found below:
 
 <!-- - Add-on Development
   - [Debugging](./debugging.md)

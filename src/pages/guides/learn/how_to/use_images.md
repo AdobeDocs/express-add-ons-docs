@@ -104,4 +104,4 @@ addOnUISdk.ready.then(async () => {
 
 GIF Image requirements
 
-All image formats are equal, but some formats are more equal than others. Please refer to [this FAQ](../../../resources/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) to learn more about specific GIF limitations in terms of size and weight.
+All image formats are equal, but some formats are more equal than others. Please refer to [this FAQ](../../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) to learn more about specific GIF limitations in terms of size and weight.

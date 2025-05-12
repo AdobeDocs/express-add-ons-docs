@@ -116,7 +116,7 @@ The add-on CLI contains built-in, pre-configured templates to allow you to creat
 | `react-javascript` | React with JavaScript                           |
 | `react-typescript` | React with TypeScript                           |
 
-As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/):
+As well as the following five template options, which include support for the [Document Sandbox APIs](../../../references/document-sandbox/):
 
 | Template                                 | Description                                                           |
 | ---------------------------------------- | --------------------------------------------------------------------- |
@@ -174,7 +174,7 @@ When the scaffolding is complete, you will see the following message, prompting 
 
 ## Manifest
 
-A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
+A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
 
 ## Add-on Development Tools Panel
 

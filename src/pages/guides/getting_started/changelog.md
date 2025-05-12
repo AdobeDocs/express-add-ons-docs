@@ -267,7 +267,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - Adds a new [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
 - Adds a new [`importPresentation()`](../../references/addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
 - Adds notes about specific support and handling for animated GIF images when [importing](../../references/addonsdk/app-document.md#addimage) and [dragging content](../../references/addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
-- Adds all of the new methods mentioned above to the [How-to](../learn/how_to.md) section with example code snippets for each.
+- Adds all of the new methods mentioned above to the [How-to](../learn/how_to/how_to.md) section with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -335,7 +335,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   In addition, the [monetization guidelines](../build/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../build/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../build/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../build/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../build/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
-- A new [Concepts guide](../../references/document-sandbox/document-apis/concepts/index.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
+- A new [Concepts guide](../learn/platform_concepts/document-api.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
 
@@ -577,7 +577,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Create Add-on flow:** You can now create [an add-on "container"](../build/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
-  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../build/advanced-topics/context.md#cors) for more details.
+  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../learn/platform_concepts/context.md#cors) for more details.
 
   **Delete Add-ons:** The "container" concept allowed us to offer better management and cleanup of your add-ons. You will now find the option to delete an add-on container entirely from the new "Settings" tab of a given add-on.
 
@@ -585,7 +585,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Supported Languages:** The [version details step](../build/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../learn/how_to/theme_locale.md).
 
-- Updated list of templates and details to include the [Document Sandbox template options](./dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](./dev_tooling.md#no-template-parameter).
+- Updated list of templates and details to include the [Document Sandbox template options](./local_development/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](./local_development/dev_tooling.md#no-template-parameter).
 - New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
 - Removed NPS survey.
 
@@ -771,7 +771,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Added
 
-- New [iframe Sandbox Context guide](../build/advanced-topics/context.md) with details on the new `subdomain` support and CORS handling.
+- New [iframe Sandbox Context guide](../learn/platform_concepts/context.md) with details on the new `subdomain` support and CORS handling.
 - How-to videos embedded in various guides to help visually show how to use the information in those sections.
 
 ### Updates
@@ -787,7 +787,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
   The new types `0.2.0` types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the `0.2.0` version, you will need to update the `ccweb-add-on-sdk-typings.d.ts` file in your add-on with the content [here](https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts).
 
 - [Performance guide](../build/advanced-topics/performance.md) updates to include [**Task Manager**](../build/advanced-topics/performance.md#task-manager) and [**Memory Consumption**](../build/advanced-topics/performance.md#memory-consumption-monitoring) details for add-ons.
-- [FAQ update](../support/faq.md) for [`SharedArrayBuffer`](../support/#is-sharedarraybuffer-supported).
+- [FAQ update](../support/faq.md) for [`SharedArrayBuffer`](../support/faq.md#is-sharedarraybuffer-supported).
 
 ## 2023-09-12
 
@@ -841,7 +841,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Updated
 
-- Updated the [User Interface Guide](../guides/index.md) to add more notes around the recommended use of `swc-react` over React Spectrum and to point to the new sample mentioned above.
+- Updated the [User Interface Guide](../build/design/index.md) to add more notes around the recommended use of `swc-react` over React Spectrum and to point to the new sample mentioned above.
 
 ### Fixed
 
@@ -927,7 +927,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - A new [`requestedSize`](../../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
 - Information on [using fonts](../build/design/ux_guidelines/visual_elements.md#typography).
-- CORS / COEP header handling added to the [CORS guide](../build/advanced-topics/context.md#cors--coep-handling)
+- CORS / COEP header handling added to the [CORS guide](../learn/platform_concepts/context.md#cors--coep-handling)
 
 ## 2023-06-08
 

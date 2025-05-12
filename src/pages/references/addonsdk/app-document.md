@@ -565,7 +565,7 @@ Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, yo
 
 If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
 
-\*\* See the [FAQ's](../../resources/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
+\*\* See the [FAQ's](../../guides/support/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
 
 ### Errors
 
@@ -794,7 +794,7 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 | `title`    | `string`                        | The page title of the rendition |
 | `metadata` | [`PageMetadata`](#pagemetadata) |                   Page metadata |
 
-\*\* See the [FAQs](../../resources/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
+\*\* See the [FAQs](../../guides/support/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
 
 <InlineAlert slots="text" variant="info"/>
 
