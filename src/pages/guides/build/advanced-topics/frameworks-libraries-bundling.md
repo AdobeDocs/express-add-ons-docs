@@ -19,7 +19,7 @@ An example of how this works in Visual Studio Code is shown in this short clip b
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the [Using Lit & Typescript Guide](./using-lit-typescript.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
+Check out the [Using Lit & Typescript Guide](../../learn/how_to/tutorials/using-lit-typescript.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
 
 ## Webpack & JavaScript bundler
 
@@ -63,11 +63,11 @@ new CopyWebpackPlugin({
 
 ## React
 
-The CLI supports two different [react-based templates](../../guides/getting_started/dev_tooling.md#templates), and the [code samples](../../guides/samples.md) repository contains various add-ons built with React for you to use as a reference.
+The CLI supports two different [react-based templates](../../getting_started/local_development/dev_tooling.md#templates), and the [code samples](../../learn/samples.md) repository contains various add-ons built with React for you to use as a reference.
 
 ## Lit Framework
 
-Build fast, lightweight web components using the Lit framework. Our CLI offers [starter templates](../getting_started/dev_tooling.md#templates) to help you get started:
+Build fast, lightweight web components using the Lit framework. Our CLI offers [starter templates](../../getting_started/local_development/dev_tooling.md#templates) to help you get started:
 
 - `swc-javascript`: For building with Lit and JavaScript
 - `swc-typescript`: For building with Lit and TypeScript
@@ -76,7 +76,7 @@ Build fast, lightweight web components using the Lit framework. Our CLI offers [
 
 All templates come pre-configured with the necessary setup and dependencies.
 
-For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](./using-lit-typescript.md).
+For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](../../learn/how_to/tutorials/using-lit-typescript.md).
 
 ## Other JavaScript and CSS libraries
 
