@@ -28,54 +28,54 @@ import '/src/styles.css'
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
 <div className="hero-image-container">
-  <img src="./img/Explore_Image_3.png" alt="Adobe Express add-ons" />
+  <img src="./getting_started/img/Explore_Image_3.png" alt="Adobe Express add-ons" />
 </div>
 
 <br/><br/>
 
 ## Welcome to Adobe Express Add-ons!
 
-Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](../getting_started/code_playground.md) and start tinkering with the API right away.
+Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
 
 <TextBlock slots="image, heading, text, text1" width="50%"/>
 
-![Discover](./img/devjourney-1-discovery.png)
+![Discover](./getting_started/img/devjourney-1-discovery.png)
 
 ### Discover
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-[Find inspiration →](./developer-journey.md#discover)
+[Find inspiration →](./getting_started/developer-journey.md#discover)
 
 <TextBlock slots="image, heading, text, text1" width="50%"/>
 
-![Learn](./img/devjourney-2-learn.png)
+![Learn](./getting_started/img/devjourney-2-learn.png)
 
 ### Learn
 
 Familiarize and experiment with powerful features in our Code Playground.
 
-[Dive deeper →](./developer-journey.md#learn)
+[Dive deeper →](./getting_started/developer-journey.md#learn)
 
 <TextBlock slots="image, heading, text, text1" width="50%" />
 
-![Develop](./img/devjourney-3-develop.png)
+![Develop](./getting_started/img/devjourney-3-develop.png)
 
 ### Develop
 
 Transform your ideas into a polished product following our best practices.
 
-[Start building →](./developer-journey.md#develop)
+[Start building →](./getting_started/developer-journey.md#develop)
 
 <TextBlock slots="image, heading, text, text1" width="50%" />
 
-![Distribute](./img/devjourney-4-distribute.png)
+![Distribute](./getting_started/img/devjourney-4-distribute.png)
 
 ### Distribute
 
 Share your add-on with the world in the Adobe Express Marketplace.
 
-[Launch now →](./developer-journey.md#distribute)
+[Launch now →](./getting_started/developer-journey.md#distribute)
 
 <!-- ## Adobe Fund for Design: Bring Your Ideas to Life! -->
 
@@ -106,13 +106,13 @@ We’re backing innovative solutions that unlock the most popular and [trending]
 
 Do you want to try some add-ons first? Open [Adobe Express](https://new.express.adobe.com/add-ons) and click on the **Add-ons** button located in the left-hand sidebar. Browse through Adobe's picks, the Collections or use the search bar to find specific add-ons.
 
-[![discover add-ons image](../../images/addons.png)](https://new.express.adobe.com/add-ons)
+[![discover add-ons image](../images/addons.png)](https://new.express.adobe.com/add-ons)
 
 Click on an add-on to view more information and install it. That's it!
 
 ## What's next?
 
-Continue by reading the [Developer Journey](./developer-journey.md) and explore the [Code Playground](./code_playground.md)!
+Continue by reading the [Developer Journey](./getting_started/developer-journey.md) and explore the [Code Playground](./getting_started/code_playground.md)!
 
 <InlineAlert slots="text" />
 

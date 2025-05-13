@@ -516,7 +516,7 @@ module.exports = {
         pages: [
           {
             title: "Overview",
-            path: "guides/getting_started/index.md",
+            path: "guides/index.md",
           },
           {
             title: "Developer Journey",
@@ -719,7 +719,7 @@ module.exports = {
                   },
                   {
                     title: "Using Lit & TypeScript",
-                    path: "guides/develop/using-lit-typescript.md",
+                    path: "guides/learn/how_to/tutorials/using-lit-typescript.md",
                   },
                 ],
               },
@@ -734,7 +734,7 @@ module.exports = {
                 path: "guides/learn/platform_concepts/context.md",
               },
               {
-                title: "Document API Concepts",
+                title: "The Document API",
                 path: "guides/learn/platform_concepts/document-api.md",
               },
             ],
