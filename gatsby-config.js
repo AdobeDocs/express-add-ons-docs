@@ -950,7 +950,7 @@ module.exports = {
           },
           {
             title: "Community Resources",
-            path: "guides/support/faq.md",
+            path: "https://developer.adobe.com/express/community",
           },
         ],
       },
