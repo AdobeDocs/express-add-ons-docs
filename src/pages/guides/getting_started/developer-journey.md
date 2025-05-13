@@ -87,9 +87,9 @@ You need to tick a few boxes in the application in order to enable it, as the an
 
 ![Enable Developer Settings](./img/enable-playground.gif)
 
-Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](#) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](../getting_started/code_playground.md) for more details.
+Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code_playground.md#script-mode) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code_playground.md) for more details.
 
-[![Code Playground](./img/playground.png)](../getting_started/code_playground.md)
+[![Code Playground](./img/playground.png)](./code_playground.md)
 
 ### Explore the How-to Guides
 
@@ -109,7 +109,7 @@ When you feel more comfortable, you can tinker with these other use cases:
 
 To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](./local_development/dev_tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
 
-![doc sandbox prompt](././local_development/img/CLI-template-prompt.png)
+![doc sandbox prompt](./local_development/img/CLI-template-prompt.png)
 
 <InlineAlert slots="text1" variant="info" />
 
