@@ -33,11 +33,6 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 <br/><br/>
 
-<div style="display: flex; justify-content: center;">
-  <iframe width="779" height="438" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<br/><br/>
-
 ## Welcome to Adobe Express Add-ons!
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](../getting_started/code_playground.md) and start tinkering with the API right away.
@@ -50,7 +45,7 @@ Ready to build your own add-on? Check out the Developer Journey to get started, 
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-[Find inspiration →](./developer_journey/discover.md)
+[Find inspiration →](./developer-journey.md#discover)
 
 <TextBlock slots="image, heading, text, text1" width="50%"/>
 
@@ -60,7 +55,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 Familiarize and experiment with powerful features in our Code Playground.
 
-[Dive deeper →](./developer_journey/learn.md)
+[Dive deeper →](./developer-journey.md#learn)
 
 <TextBlock slots="image, heading, text, text1" width="50%" />
 
@@ -70,7 +65,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 Transform your ideas into a polished product following our best practices.
 
-[Start building →](https://developer.adobe.com/express/add-ons/)
+[Start building →](./developer-journey.md#develop)
 
 <TextBlock slots="image, heading, text, text1" width="50%" />
 
@@ -80,9 +75,16 @@ Transform your ideas into a polished product following our best practices.
 
 Share your add-on with the world in the Adobe Express Marketplace.
 
-[Launch now →](https://developer.adobe.com/express/add-ons/)
+[Launch now →](./developer-journey.md#distribute)
 
 <!-- ## Adobe Fund for Design: Bring Your Ideas to Life! -->
+
+<br/><br/>
+
+<div style="display: flex; justify-content: center;">
+  <iframe width="779" height="438" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<br/><br/>
 
 ## Get paid to build add-ons
 
@@ -110,7 +112,7 @@ Click on an add-on to view more information and install it. That's it!
 
 ## What's next?
 
-Continue by reading the Getting started guide and explore the [Code Playground](../getting_started/code_playground.md), or jump to the [Learning Paths](./developer_journey/index.md)!
+Continue by reading the [Developer Journey](./developer-journey.md) and explore the [Code Playground](./code_playground.md)!
 
 <InlineAlert slots="text" />
 
