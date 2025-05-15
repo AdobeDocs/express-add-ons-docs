@@ -22,6 +22,18 @@ contributors:
 
 # Changelog
 
+## 2025-05-16
+
+### Updated
+
+- We’ve completely revamped the information architecture of the site! 🎉 The new structure is designed to make content easier to navigate, whether you’re just getting started or you’ve been building add-ons for a while. This update aims to reduce friction, surface what matters most, and help both newcomers and experienced developers find their way faster. Among the changes, we have:
+  - Rebuilt the Guides navigation from scratch, and grouped the content in new sections (Getting Started, Learn, Build, Support).
+  - Introduced a new [Developer Journey](./developer-journey.md) page.
+  - Rewritten and improved the QuickStart guide, now [Hello, World!](./hello-world.md)
+  - Moved the Tutorials as [Complete Projects](../learn/how_to/tutorials/index.md) within the [How To Guides](../learn/how_to/index.md), now more visible.
+  - Regrouped content into the new [Platform Concepts](../learn/platform_concepts/context.md) and [Advanced Topics](../build/advanced-topics/frameworks-libraries-bundling.md) sections.
+- We're constantly thinking about ways to improve the developer experience; there is more to come, stay tuned and reach out if you want to share your thoughts!
+
 ## 2025-05-07
 
 ### Added
