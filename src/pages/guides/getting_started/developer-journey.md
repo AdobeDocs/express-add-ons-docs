@@ -93,7 +93,7 @@ Once it's open, you can play with the code directly in the editor, and see the c
 
 ### Explore the How-to Guides
 
-To properly experiment with the Playground, head to the [How-tos](../learn/how_to/how_to.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. They cover the most common use cases, and are a great way to get familiar with the add-on SDK. Try the following as a starter:
+To properly experiment with the Playground, head to the [How-tos](../learn/how_to/index.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. They cover the most common use cases, and are a great way to get familiar with the add-on SDK. Try the following as a starter:
 
 - [Creating Text](../learn/how_to/use_text.md#create-text)
 - [Creating Geometry](../learn/how_to/use_geometry.md)
@@ -117,7 +117,7 @@ We're actively working on improving the Code Playground so that existing project
 
 ### Next steps
 
-Feel free to explore the rest of the [How-to Guides](../learn/how_to/how_to.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, keep reading!
+Feel free to explore the rest of the [How-to Guides](../learn/how_to/index.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, keep reading!
 
 ## Develop
 

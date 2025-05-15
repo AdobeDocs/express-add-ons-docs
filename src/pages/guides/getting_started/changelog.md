@@ -123,7 +123,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 ### Added
 
-- A new [How-to](../learn/how_to/how_to.md) section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.
+- A new [How-to](../learn/how_to/index.md) section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.
 
 ## 2025-03-06
 
@@ -267,7 +267,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - Adds a new [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
 - Adds a new [`importPresentation()`](../../references/addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
 - Adds notes about specific support and handling for animated GIF images when [importing](../../references/addonsdk/app-document.md#addimage) and [dragging content](../../references/addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
-- Adds all of the new methods mentioned above to the [How-to](../learn/how_to/how_to.md) section with example code snippets for each.
+- Adds all of the new methods mentioned above to the [How-to](../learn/how_to/index.md) section with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -849,7 +849,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ## 2023-08-29
 
-- Added [`currentUser` API](../learn/how_to/user_info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../learn/how_to/how_to.md).
+- Added [`currentUser` API](../learn/how_to/user_info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../learn/how_to/index.md).
 - Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 

@@ -510,6 +510,11 @@ module.exports = {
         path: "references/manifest",
       },
       {
+        title: "Changelog",
+        description: "Changelog",
+        path: "references/changelog.md",
+      },
+      {
         title: "Getting Started",
         path: "guides/index.md",
         header: true,
@@ -545,6 +550,10 @@ module.exports = {
             ],
           },
           {
+            title: "Hello, World!",
+            path: "guides/getting_started/hello-world.md",
+          },
+          {
             title: "What's new",
             path: "guides/getting_started/changelog.md",
           },
@@ -552,16 +561,16 @@ module.exports = {
       },
       {
         title: "Learn",
-        path: "guides/learn/how_to/how_to.md",
+        path: "guides/learn/how_to/index.md",
         header: true,
         pages: [
           {
             title: "How-to",
-            path: "guides/learn/how_to/how_to.md",
+            path: "guides/learn/how_to/index.md",
             pages: [
               {
                 title: "About",
-                path: "guides/learn/how_to/how_to.md",
+                path: "guides/learn/how_to/index.md",
               },
               {
                 title: "Authentication & Authorization",

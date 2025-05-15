@@ -135,7 +135,7 @@ The playground offers two distinct development modes:
 
 ![Script Mode Manifest Settings](./img/manifest-props-script.png)
 
-5. Head over to our [How-to guides](../learn/how_to/how_to.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
+5. Head over to our [How-to guides](../learn/how_to/index.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
 
    - [How to Use Geometry](../learn/how_to/use_geometry.md)
    - [How to Use Color](../learn/how_to/use_color.md)
@@ -305,7 +305,7 @@ There are two ways to resume working on your last saved session:
 
 ## Resources
 
-- **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../learn/how_to/how_to.md) to kickstart your development.
+- **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../learn/how_to/index.md) to kickstart your development.
 - **SDK/API References:** Discover more about what you can do in your add-on by exploring our [SDK References](../../references/index.md).
 - **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
 - **Ask Questions:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
