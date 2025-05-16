@@ -528,6 +528,10 @@ module.exports = {
             path: "guides/getting_started/developer-journey.md",
           },
           {
+            title: "Hello, World!",
+            path: "guides/getting_started/hello-world.md",
+          },
+          {
             title: "Code Playground",
             path: "guides/getting_started/code_playground.md",
           },
@@ -548,10 +552,6 @@ module.exports = {
                 path: "guides/getting_started/local_development/vs-code.md",
               },
             ],
-          },
-          {
-            title: "Hello, World!",
-            path: "guides/getting_started/hello-world.md",
           },
           {
             title: "What's new",
