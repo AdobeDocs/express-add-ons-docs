@@ -36,7 +36,7 @@ Supported vector elements will be kept editable (e.g., shapes with rounded corne
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {
@@ -61,7 +61,7 @@ addOnUISdk.ready.then(async () => {
 Please note that you can use `fetch()` also to get PDFs that are local to the add-on; in this case, you can use paths relative to the add-on's root.
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {
@@ -76,7 +76,7 @@ addOnUISdk.ready.then(async () => {
 For PowerPoint files, the process is similar to the one for PDFs, but you need to use the [`importPowerPoint()`](../../../references/addonsdk/app-document.md#importpresentation) method instead. The method supports both `.pptx` and `.ppt` files, and shows the same consent and progress dialogues as seen above.
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {

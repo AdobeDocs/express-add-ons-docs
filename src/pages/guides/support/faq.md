@@ -35,7 +35,7 @@ contributors:
 - [How do I enable CORS for a service that blocks my add-on requests due to the origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-origin)
 - [How do I prevent my iframe content from being blocked due to cross-origin issues?](#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues)
 - [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
-- [I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
+- [I’m not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
 - [I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.](#i-receive-this-error-when-trying-to-run-my-add-on-error-eisdir-illegal-operation-on-a-directory)
 - [I receive a `MANIFEST_NOT_FOUND_ERROR` during the package verification when trying to upload my plugin package for distribution.](#i-receive-a-manifest_not_found_error-during-the-package-verification-when-trying-to-upload-my-plugin-package-for-distribution)
 - [How can I monetize my add-on?](#how-can-i-monetize-my-add-on)
@@ -83,7 +83,7 @@ contributors:
 - [How do I enable CORS for a service that blocks my add-on requests due to the origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-origin)
 - [How do I prevent my iframe content from being blocked due to cross-origin issues?](#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues)
 - [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
-- [I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
+- [I’m not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
 - [Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?](#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error)
 - [Is `SharedArrayBuffer` supported?](#is-sharedarraybuffer-supported)
 - [Which browsers and operating systems are currently supported?](#which-browsers-and-operating-systems-are-currently-supported)
@@ -185,7 +185,7 @@ If your iframe is being blocked by the browser, it's likely due to CORS issues. 
 
 You can open the file picker using the `input` element with a `type` set to `file` to get around this.
 
-### I’m not able to load the add-on in the browser anymore. When I click on "Connect”, I get an error `ERR_CERT_AUTHORITY_INVALID`.
+### I’m not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.
 
 This usually indicates an issue with invalid SSL credentials. Locate the `devcert` folder which can be found at `/Users/{your_username}/Library/Application\ Support/devcert` on MAC or `C:\Users\{your_username}\AppData\Local\`, delete it, and create an add-on again. You should get the option to create an SSL certificate again when you create the new add-on, which should resolve your problem.
 
@@ -271,7 +271,7 @@ If you are trying out a newly released feature in your add-on and have an instan
 
 ### Why is my add-on not visible in the EU region?
 
-This could be due to incomplete or outdated trader information in your [publisher profile](https://new.express.adobe.com/add-ons?mode=submission). Please make sure all required details are updated and accurate.
+This could be due to incomplete or outdated trader information in your [publisher profile](https://express.adobe.com/add-ons?mode=submission). Please make sure all required details are updated and accurate.
 
 ### How can I update my trader details in the publisher profile after submission?
 

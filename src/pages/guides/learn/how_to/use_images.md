@@ -31,7 +31,7 @@ It expects a `Blob` object as the first argument, and an optional [`MediaAttribu
 
 ```js
 // sandbox/code.js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {
@@ -56,7 +56,7 @@ Please note that you can use `fetch()` also to get images that are local to the 
 
 ```js
 // sandbox/code.js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {
@@ -79,7 +79,7 @@ Importing a `GIF` via `addImage()` won't work as expected, as the method convert
 
 ```js
 // sandbox/code.js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {

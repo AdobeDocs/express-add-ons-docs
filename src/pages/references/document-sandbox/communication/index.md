@@ -14,7 +14,7 @@ keywords:
 title: Communication APIs
 description: An introduction to the Communication APIs available in the document sandbox.
 contributors:
-  - https://github.com/hollyschinsky  
+  - https://github.com/hollyschinsky
 hideBreadcrumbNav: true
 ---
 
@@ -47,17 +47,17 @@ This example shows how to expose APIs from the document sandbox SDK (via `code.j
 #### `code.js`
 
 ```js
-import addOnSandboxSdk from "add-on-sdk-document-sandbox"; 
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 
-const { runtime } = addOnSandboxSdk.instance; 
+const { runtime } = addOnSandboxSdk.instance;
 
 const sandboxApi = {
-    performWorkOnDocument: function (data, someFlag) {
-        // call the Document APIs
-    },
-    getDataFromDocument: function () {
-        // get some data from document
-    },
+  performWorkOnDocument: function (data, someFlag) {
+    // call the Document APIs
+  },
+  getDataFromDocument: function () {
+    // get some data from document
+  },
 };
 // expose these apis to be directly consumed in the UI (ie: index.html file).
 runtime.exposeApi(sandboxApi);
@@ -66,26 +66,26 @@ runtime.exposeApi(sandboxApi);
 #### index.html
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-    const { runtime } = addOnUISdk.instance;
+  const { runtime } = addOnUISdk.instance;
 
-    // Wait for the promise to resolve to get a proxy to call APIs defined in the document sandbox
-    const sandboxProxy = await runtime.apiProxy("documentSandbox");
+  // Wait for the promise to resolve to get a proxy to call APIs defined in the document sandbox
+  const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-    await sandboxProxy.performWorkOnDocument(
-        {
-            pageNumber: 1,
-            op: "change_background_color",
-            data: {
-                toColor: "blue",
-            },
-        }, 
-        true
-    );
+  await sandboxProxy.performWorkOnDocument(
+    {
+      pageNumber: 1,
+      op: "change_background_color",
+      data: {
+        toColor: "blue",
+      },
+    },
+    true
+  );
 
-    console.log(await sandboxProxy.getDataFromDocument());
+  console.log(await sandboxProxy.getDataFromDocument());
 });
 ```
 
@@ -97,22 +97,22 @@ This example shows how to expose APIs from the UI (via `index.html`) for use in 
 
 ```js
 addOnUISdk.ready.then(async () => {
-    console.log("addOnUISdk is ready for use.");
+  console.log("addOnUISdk is ready for use.");
 
-    const { runtime } = addOnUISdk.instance;
-    const uiApi = {
-        performWorkOnUI: function (data, someFlag) {
-            // Do some ui operation
-        },
-        getDataFromUI: async function() {
-            return new Promise(resolve => {
-                // Example of returning a user choice from hypothetical UI
-                resolve("button_color_blue");
-            });
-        }
-    };
-    // Expose the UI Apis to be used in the script code (ie: code.js)
-    runtime.exposeApi(uiApi);
+  const { runtime } = addOnUISdk.instance;
+  const uiApi = {
+    performWorkOnUI: function (data, someFlag) {
+      // Do some ui operation
+    },
+    getDataFromUI: async function () {
+      return new Promise((resolve) => {
+        // Example of returning a user choice from hypothetical UI
+        resolve("button_color_blue");
+      });
+    },
+  };
+  // Expose the UI Apis to be used in the script code (ie: code.js)
+  runtime.exposeApi(uiApi);
 });
 ```
 
@@ -124,18 +124,18 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox"; // default import
 const { runtime } = addOnSandboxSdk.instance;
 
 async function callUIApis() {
-    // Get a proxy to the APIs defined in the UI
-    const uiApis = await runtime.apiProxy("panel");
-    await uiApis.performWorkOnUI(
-        {
-            buttonTextFont: 20,
-            buttonColor: "Green"
-        },
-        true
-    );
-    
-    const result = await uiApis.getDataFromUI();
-    console.log("Data from UI: " + result);
+  // Get a proxy to the APIs defined in the UI
+  const uiApis = await runtime.apiProxy("panel");
+  await uiApis.performWorkOnUI(
+    {
+      buttonTextFont: 20,
+      buttonColor: "Green",
+    },
+    true
+  );
+
+  const result = await uiApis.getDataFromUI();
+  console.log("Data from UI: " + result);
 }
 ```
 
@@ -220,7 +220,7 @@ Some data types are not supported and may result unintended behavior. To avoid t
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><strong>String</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new String(“hello”)</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>new String("hello")</pre></p></td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><strong>RegExp</strong> <br/></p></td>

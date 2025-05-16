@@ -36,7 +36,7 @@ One way to handle premium content is to display a warning message when the user 
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { app, constants } = addOnUISdk;
 const { ButtonType, Range, RenditionFormat } = constants;
 
@@ -135,7 +135,7 @@ Your add-on must not allow these previewed images to be downloaded or persisted 
 #### JavaScript
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -166,7 +166,7 @@ async function displayPreview() {
 #### TypeScript
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;

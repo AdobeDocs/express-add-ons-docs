@@ -22,7 +22,7 @@ An optional result of a user-defined type.
 #### Example Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;

@@ -27,7 +27,7 @@ This tutorial was also presented in a recorded workshop that can be viewed [here
 
 ## Introduction
 
-In this tutorial, you will learn how to build two fully functioning [Adobe Express](https://new.express.adobe.com/) add-ons from scratch that use [Adobe Spectrum](https://spectrum.adobe.com/) for building the user interface. The concept for the add-on you will build is a bingo card generator, which allows a user to customize a bingo card with their chosen colors, random numbers and an optional FREE space.
+In this tutorial, you will learn how to build two fully functioning [Adobe Express](https://express.adobe.com/) add-ons from scratch that use [Adobe Spectrum](https://spectrum.adobe.com/) for building the user interface. The concept for the add-on you will build is a bingo card generator, which allows a user to customize a bingo card with their chosen colors, random numbers and an optional FREE space.
 
 The two different add-on's you will create are:
 

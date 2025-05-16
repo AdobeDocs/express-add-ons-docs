@@ -29,7 +29,7 @@ You also need to listen for `"dragstart"` and `"dragend"` events to manage logs 
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready before rendering elements in the DOM.
 addOnUISdk.ready.then(async () => {
@@ -96,7 +96,7 @@ To drag audio content, you must specify an additional `attributes` object with a
 ### Example
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Enable drag support for an element
 function makeDraggableUsingUrl(elementId: string, previewUrl: string) {

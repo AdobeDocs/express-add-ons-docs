@@ -73,9 +73,9 @@ This applies to the advertising of products and services within the add-on descr
 
 ### Complying with Express monetization rules
 
-When listing an Adobe Express add-on, you should not use “Premium” to describe your upgrade options.
+When listing an Adobe Express add-on, you should not use "Premium" to describe your upgrade options.
 
-The word “Premium” should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage and more.
+The word "Premium" should only be used in relation to the Adobe Express Premium Plan, which provides users with extra content, increased storage and more.
 
 ### Exporting premium content
 

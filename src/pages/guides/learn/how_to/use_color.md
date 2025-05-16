@@ -165,7 +165,7 @@ The `showColorPicker()` method requires an HTML element as its anchor point. Her
 import addOnUISdk, {
   ColorPickerEvent,
   ColorPickerPlacement,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   // Get the button element

@@ -123,7 +123,7 @@ Returns a resolved `Promise` with a value of `true` if the user is premium or co
 #### Example Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const isPremiumUser = await addOnUISdk.app.startPremiumUpgradeIfFreeUser();
@@ -194,7 +194,7 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 #### Confirmation Dialog Example Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -220,7 +220,7 @@ async function showConfirmDialog() {
 #### Input Dialog Example Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -364,7 +364,7 @@ type UnregisterIframe = () => void;
 #### Example Usage
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function RegisterIframe(elementId: string) {
   const iframe = document.getElementById(elementId);

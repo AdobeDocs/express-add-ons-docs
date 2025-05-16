@@ -52,25 +52,25 @@ For more information on using Adobe brand assets, check our [Developer Brand Gui
 
 ## Referring to add-ons
 
-Always use the spelling “add-on”, NOT “addon” or “plugin”.
+Always use the spelling "add-on", NOT "addon" or "plugin".
 
 ## Referring to Adobe Express
 
-Always use the full name “Adobe Express” when referring to the tool. Do not shorten it to “Express”.
+Always use the full name "Adobe Express" when referring to the tool. Do not shorten it to "Express".
 
 ## Using Adobe Icons
 
-We allow and encourage you to use the workflow and UI icons in Spectrum Design within your add-on. However, you must not use any Adobe branding elements, such as the Adobe logo or the “Premium” crown icon for paid items.
+We allow and encourage you to use the workflow and UI icons in Spectrum Design within your add-on. However, you must not use any Adobe branding elements, such as the Adobe logo or the "Premium" crown icon for paid items.
 
 ## Referring to stock photos
 
-If your copy includes any mention of stock content or assets within Adobe Express, you must refer to it with a lower case “s” (ie. stock).
+If your copy includes any mention of stock content or assets within Adobe Express, you must refer to it with a lower case "s" (ie. stock).
 
 This avoids confusion with Adobe Stock, which is a separate service.
 
 For example:
 
-***“Discover a wide range of high-quality stock photos in Adobe Express”***
+**_"Discover a wide range of high-quality stock photos in Adobe Express"_**
 
 ## Localization
 

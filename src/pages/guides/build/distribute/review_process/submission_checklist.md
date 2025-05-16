@@ -29,7 +29,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 
 ## Make sure the add-on meets the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf)
 
-## Check your add-on and resources to make sure it is NOT described as a “plugin” anywhere
+## Check your add-on and resources to make sure it is NOT described as a "plugin" anywhere
 
 ## Ensure that you have read and followed all Adobe guidelines relating to your add-on, including:
 

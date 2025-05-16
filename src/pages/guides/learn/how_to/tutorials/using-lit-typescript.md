@@ -176,7 +176,7 @@ import { customElement, state } from "lit/decorators.js";
 import { until } from "lit/directives/until.js";
 import "./components/App";
 
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 @customElement("add-on-root") // Lit customElement decorator defines a custom element <add-on-root>.
 export class Root extends LitElement {
@@ -218,7 +218,7 @@ import { style } from "./App.css";
 import {
   AddOnSDKAPI,
   RuntimeType,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // The following line defines a custom element <add-on-app> using the Lit
 // customElement decorator.

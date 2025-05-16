@@ -30,7 +30,7 @@ Each add-on can store up to **10MB of data as key-value pairs**; supported value
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 let store;
 

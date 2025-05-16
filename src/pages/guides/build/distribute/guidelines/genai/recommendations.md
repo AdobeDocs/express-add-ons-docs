@@ -52,7 +52,7 @@ No content filter or classifier is perfect, and it’s possible that some restri
 
 You may provide your users with a mechanism for alerting you when this happens, so that you can take appropriate action to ensure that similar content isn’t generated in the future.
 
-Users can also use the “Report Abuse” feature inside Adobe Express to report content, but this report will only be sent to Adobe.
+Users can also use the "Report Abuse" feature inside Adobe Express to report content, but this report will only be sent to Adobe.
 
 **If we receive a significant amount of abuse reports, we may remove your add-on for the safety of our users.**
 
@@ -66,4 +66,4 @@ You can use the Firefly web app or Text-to-image features in Adobe Express as a 
 
 ## Haven’t found what you’re looking for? Let us know
 
-These recommendations are a “living document” and will be updated over time, as our guidelines - and the technology itself - evolve. If you have any questions about a specific case or issue, or would like to learn more about our requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
+These recommendations are a "living document" and will be updated over time, as our guidelines - and the technology itself - evolve. If you have any questions about a specific case or issue, or would like to learn more about our requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).

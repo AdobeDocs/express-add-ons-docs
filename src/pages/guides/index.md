@@ -104,9 +104,9 @@ We’re backing innovative solutions that unlock the most popular and [trending]
 
 ## Get inspiration and try out add-ons in the Marketplace
 
-Do you want to try some add-ons first? Open [Adobe Express](https://new.express.adobe.com/add-ons) and click on the **Add-ons** button located in the left-hand sidebar. Browse through Adobe's picks, the Collections or use the search bar to find specific add-ons.
+Do you want to try some add-ons first? Open [Adobe Express](https://express.adobe.com/add-ons) and click on the **Add-ons** button located in the left-hand sidebar. Browse through Adobe's picks, the Collections or use the search bar to find specific add-ons.
 
-[![discover add-ons image](../images/addons.png)](https://new.express.adobe.com/add-ons)
+[![discover add-ons image](../images/addons.png)](https://express.adobe.com/add-ons)
 
 Click on an add-on to view more information and install it. That's it!
 

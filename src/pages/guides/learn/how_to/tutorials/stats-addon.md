@@ -67,7 +67,7 @@ How does this all work, then? The process involves exposing proxies for the _oth
 
 ```js
 // runtime in the UI iframe
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
 // runtime in the Document Sandbox
@@ -101,7 +101,7 @@ At this point, `sandboxProxy` and `panelUIProxy` represent their counterparts fr
 #### UI iframe
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
 // exporting a payload to the Document Sandbox
@@ -132,7 +132,7 @@ As the name implies, the `panelUIProxy` constant in the Document Sandbox is a _p
 #### UI iframe
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { runtime } = addOnUISdk.instance;
 
 // importing from the Document Sandbox
@@ -471,7 +471,7 @@ import "@spectrum-web-components/status-light/sp-status-light.js";
 import "@spectrum-web-components/table/elements.js";
 import "@spectrum-web-components/button/sp-button.js";
 
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait until the addOnUISdk has been loaded
 addOnUISdk.ready.then(async () => {
@@ -988,7 +988,7 @@ import "@spectrum-web-components/status-light/sp-status-light.js";
 import "@spectrum-web-components/table/elements.js";
 import "@spectrum-web-components/button/sp-button.js";
 
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 import { rebuildTable } from "./table-utils";
 
 addOnUISdk.ready.then(async () => {

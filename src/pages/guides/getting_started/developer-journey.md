@@ -28,7 +28,7 @@ contributors:
 
 ### What are add-ons?
 
-[Add-ons](https://new.express.adobe.com/add-ons) are extensions that enhance the functionality of Adobe Express, allowing users to be more productive and creative.
+[Add-ons](https://express.adobe.com/add-ons) are extensions that enhance the functionality of Adobe Express, allowing users to be more productive and creative.
 
 ![Adobe Express add-ons](./img/beginner-addon.png)
 
@@ -50,7 +50,7 @@ Add-ons are lightweight programs that run in their own panel within the Adobe Ex
   <iframe width="779" height="438" src="https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ" title="Building Add-on Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div><br/><br/>
 
-Once you have your add-on ready, you can distribute it through the [Adobe Express Marketplace](https://new.express.adobe.com/add-ons). With a few clicks, it'll be made available to **millions of Adobe Express users**.
+Once you have your add-on ready, you can distribute it through the [Adobe Express Marketplace](https://express.adobe.com/add-ons). With a few clicks, it'll be made available to **millions of Adobe Express users**.
 
 ![Adobe Express Marketplace](./img/beginner-marketplace.png)
 

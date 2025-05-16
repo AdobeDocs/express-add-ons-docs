@@ -212,7 +212,7 @@ import "@spectrum-web-components/theme/express/scale-medium.js";
 import "@spectrum-web-components/theme/sp-theme.js";
 import "@spectrum-web-components/button/sp-button.js";
 
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
@@ -668,7 +668,7 @@ Let's finish the UI, completing the code for `ui/index.js`. As you can see, it i
 ```js
 // All the SWC imports...
 
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
@@ -1220,7 +1220,7 @@ import "@spectrum-web-components/number-field/sp-number-field.js";
 import "@spectrum-web-components/slider/sp-slider.js";
 import "@spectrum-web-components/swatch/sp-swatch.js";
 
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");

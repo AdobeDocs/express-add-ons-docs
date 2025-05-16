@@ -35,10 +35,22 @@ Authorization should persist across sessions so users don't have to log in with 
 
 ### Setup
 
-The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some setup steps with the provider you want to use OAuth with first. Here are the steps to get started:
+The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some setup steps with the provider you want to use OAuth with first.
+
+<InlineAlert variant="warning" slots="header, text1, text2, text3" />
+
+New OAuth redirect URI
+
+Adobe Express has begun moving from `new.express.adobe.com` to `express.adobe.com`, as part of the sunsetting of the legacy version.
+
+**Add** `https://express.adobe.com/static/oauth-redirect.html` **to the list of allowed redirect URIs** in your OAuth provider configuration. This replaces the previous URI based on the `new.express.adobe.com` domain.
+
+You should not change any server-side validation yet, as a temporary redirect keeps things working.
+
+Here are the steps to get started:
 
 1. Log in to the OAuth provider's website and create an application (for example, Dropbox). This must be a web application, and if an option of SPA (Single Page Application) is listed, select it.
-2. As an input to the "Redirect URIs" field, add: https://new.express.adobe.com/static/oauth-redirect.html.
+2. As an input to the "Redirect URIs" field, add: `https://express.adobe.com/static/oauth-redirect.html`.
 3. Fill out other details as necessary and save the form. A client Id / application Id / application key (this differs on different OAuth providers) will be generated. Make note of it as you will need it in your add-on code.
 4. Next, update your add-on `manifest.json` file with the hostname of the OAuth provider's authorization URL. **NOTE:** When using multiple providers, all hostnames must be provided. For example, if the add-on uses two OAuth providers (`"login.microsoftonline.com"` and `"www.dropbox.com"`), the `manifest.json` should contain both of them, as shown below:
 
@@ -72,7 +84,7 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 Once you complete the setup, you can use the following code snippet as an example of how to perform the OAuth exchange to retrieve an access token. The [code samples](../samples.md) also include several examples of implementing OAuth 2.0 workflows, which you can refer to. Additionally, you'll find the [OAuthUtils.js](https://github.com/AdobeDocs/express-add-on-samples/blob/main/samples/import-images-using-oauth/src/utils/OAuthUtils.js) module, referenced below, and we recommend utilizing this module to facilitate your own OAuth implementation. For further details on the OAuth workflows, be sure to explore the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-oauth).
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 const DROPBOX_AUTHORIZATION_URL = "https://www.dropbox.com/oauth2/authorize";
 const DROPBOX_TOKEN_URL = "https://api.dropboxapi.com/oauth2/token";

@@ -4,9 +4,9 @@ Follow these guidelines to make sure that your add-on meets our usability standa
 
 ## Blending with Adobe Express UI
 
-The add-on should integrate seamlessly with Adobe Express UI,  incorporating commonly-used patterns within the Adobe Express UI to facilitate user navigation.
+The add-on should integrate seamlessly with Adobe Express UI, incorporating commonly-used patterns within the Adobe Express UI to facilitate user navigation.
 
-We also suggest that you use the [Adobe Spectrum theme for Adobe Express](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express). It is not mandatory to use [Adobe’s Spectrum libraries](https://spectrum.adobe.com/)  for your add-on, but it can significantly simplify the development process.
+We also suggest that you use the [Adobe Spectrum theme for Adobe Express](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express). It is not mandatory to use [Adobe’s Spectrum libraries](https://spectrum.adobe.com/) for your add-on, but it can significantly simplify the development process.
 
 ## Responsive interface
 
@@ -22,4 +22,4 @@ Any error messages, warnings or notifications should be clear, informative and h
 
 ## Modal dialogs
 
-The add-on should not interrupt the user’s workflow unnecessarily with dialog boxes. These boxes should only be used for important messages. Messages such as “success” notifications should be rendered inside the add-on’s UI panel instead.
+The add-on should not interrupt the user’s workflow unnecessarily with dialog boxes. These boxes should only be used for important messages. Messages such as "success" notifications should be rendered inside the add-on’s UI panel instead.

@@ -28,21 +28,21 @@ Any text boxes must support English characters, numbers and special characters a
 
 Your add-on must be able to smoothly import any media required for design or operation.
 
-## “Drag and Drop” functionality
+## "Drag and Drop" functionality
 
 If the add-on allows users to add content to the document, it should support drag and drop functionality. This allows users to select an image from the add-on and drop it in the desired location in a document.
 
-## “Single-click to Add” functionality
+## "Single-click to Add" functionality
 
 Any add-on where content can be added to a document should also support the option to add an image with a single click. This means that users can click on the desired location to integrate an image.
 
 ## Support for both options above
 
-You are encouraged to support both “Single-click to Add” and “Drag and Drop” functionality wherever possible. There may be some exceptions in cases where “Drag and Drop” is technically not feasible. If “Drag and Drop” is not supported, ensure that you communicate this to the user to avoid confusion.
+You are encouraged to support both "Single-click to Add" and "Drag and Drop" functionality wherever possible. There may be some exceptions in cases where "Drag and Drop" is technically not feasible. If "Drag and Drop" is not supported, ensure that you communicate this to the user to avoid confusion.
 
 ## Navigation
 
-The user must be able to navigate through all menus and screens, without feeling “stuck”. If they find themselves on the wrong screen, they should be able to navigate out (for example, using a “back” or “menu” button).
+The user must be able to navigate through all menus and screens, without feeling "stuck". If they find themselves on the wrong screen, they should be able to navigate out (for example, using a "back" or "menu" button).
 
 ## Online-offline-online
 

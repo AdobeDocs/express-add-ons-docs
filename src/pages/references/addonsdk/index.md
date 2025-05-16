@@ -67,7 +67,7 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
 <body>
     Hello World!
     <script type="module">
-        import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+        import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
         addOnUISdk.ready.then(async () => {
             console.log("addOnUISdk is ready for use.");
         });
@@ -84,13 +84,13 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
 The SDK can be referenced in `.js/.jsx/.ts/.tsx` source files by adding it to the list of imports as a default module reference, such as in the following:
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
 **Note:** if you created your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get a types definition file named `add-on-ui-sdk.d.ts` generated in your project `src` for you. This file contains the following exports, and allows you to take advantage of type checking and auto-completion features while developing with the Add-on SDK in your IDE.
 
 ```ts
-declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
+declare module "https://express.adobe.com/static/add-on-sdk/sdk.js" {
   export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
   export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 }

@@ -45,7 +45,7 @@ Usually, you create renditions to allow users to download or share your content 
 In the following snippet, we create a rendition of the current page in PNG format when the user clicks a button. We'll create a temporary anchor element to trigger the download of the rendition.
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   // Attach the rendition creation to a button click event

@@ -98,7 +98,7 @@ Please also refer to the the Color Picker section of the [Use Color](../../guide
 ```js
 import addOnUISdk, {
   ColorPickerPlacement,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Basic usage - just show color picker
 addOnUISdk.app.showColorPicker(element);
@@ -140,7 +140,7 @@ addOnUISdk.app.showColorPicker(element, {
 ```js
 import addOnUISdk, {
   ColorPickerEvent,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const colorPickerButton = document.getElementById("colorPicker");

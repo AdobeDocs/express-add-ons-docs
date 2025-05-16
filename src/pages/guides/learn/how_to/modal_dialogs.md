@@ -33,7 +33,7 @@ You can show a dialog with the [`addOnUISdk.app.showModalDialog()`](../../../ref
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   // Utility function to show a confirmation dialog
@@ -72,7 +72,7 @@ A dialog of variant `input` allows you to accept input from the user. The constr
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   // Utility function to show an input dialog
@@ -117,7 +117,7 @@ If you need to show a dialog with custom content, you can use the `custom` varia
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   // Utility function to show a custom dialog
@@ -150,7 +150,7 @@ addOnUISdk.ready.then(() => {
 Inside the custom dialog's HTML file, you can use the [`addOnUISdk.instance.runtime.dialog`](../../../references/addonsdk/runtime-dialog.md) object, especially its `close()` method, to programmatically close the dialog and set an optional return value.
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;

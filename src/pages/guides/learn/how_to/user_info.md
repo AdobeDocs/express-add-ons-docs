@@ -30,7 +30,7 @@ You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const userId = await addOnUISdk.app.currentUser.userId();

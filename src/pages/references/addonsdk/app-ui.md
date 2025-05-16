@@ -243,7 +243,7 @@ Both Collection and Tab navigation can be executed in combination.
 #### JavaScript
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { constants } = addOnUISdk;
 const { PanelActionType, EditorPanel } = constants;
 
@@ -287,7 +287,7 @@ addOnUISdk.ready.then(() => {
 #### TypeScript
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { constants } = addOnUISdk;
 const { PanelActionType, EditorPanel } = constants;
 

@@ -8,7 +8,7 @@ Are you an existing developer?
 
 Action required: Add trader details to continue EU distribution.
 
-[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+[Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
 
 ## Listing metadata
 
@@ -26,7 +26,7 @@ Consider using a simple name that is easy to spell, but distinctive enough to fi
 
 The name should give users an idea of what the add-on does. For example, using a company name may be clear to you, but not to other users. Try to avoid using a long name where possible.
 
-When listing an add-on, you must not use the word “Premium” to describe your upgrade options, as this should only be used in relation to the [Adobe Express Premium Plan](https://www.adobe.com/express/pricing).
+When listing an add-on, you must not use the word "Premium" to describe your upgrade options, as this should only be used in relation to the [Adobe Express Premium Plan](https://www.adobe.com/express/pricing).
 
 ### Your add-on description
 
@@ -98,7 +98,7 @@ Your publisher logo must be original. You must not use the Adobe logo, or any pr
 
 ### Your website URL
 
-Include a website so that people can find out more about you. This should successfully open your own website. Specifically, according to page 5 of the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) your “...domain name must not include any Adobe trademark or product name.”
+Include a website so that people can find out more about you. This should successfully open your own website. Specifically, according to page 5 of the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf) your "...domain name must not include any Adobe trademark or product name."
 
 For example:
 
@@ -147,7 +147,7 @@ Any changes to your publisher profile will need to be submitted for approval aga
 
 **Are you an existing developer?**
 
-Existing developers can easily update their trader details directly in their [publisher profile](https://new.express.adobe.com/add-ons?mode=submission).
+Existing developers can easily update their trader details directly in their [publisher profile](https://express.adobe.com/add-ons?mode=submission).
 
 Note that only trader details can be added; other fields cannot be edited by developers.
 

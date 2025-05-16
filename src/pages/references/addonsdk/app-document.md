@@ -27,7 +27,7 @@ A resolved `Promise` containing the `id` of the document.
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setId(id) { /* ... */ }
 
@@ -61,7 +61,7 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setTitle(title) { /* ... */ }
 
@@ -95,7 +95,7 @@ A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containi
 ## Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -169,7 +169,7 @@ Tells Express to run a print quality check to determine if the document is ready
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = addOnUISdk.app;
@@ -259,7 +259,7 @@ A `documentLinkAvailable` event is triggered when the document link is available
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setLink(link) { /* ... */ }
 
@@ -465,7 +465,7 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = AddOnSDKAPI.app;
@@ -520,7 +520,7 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = AddOnSDKAPI.app;
@@ -717,7 +717,7 @@ A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pa
 #### JavaScript
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -748,7 +748,7 @@ async function displayPreview() {
 #### TypeScript
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;

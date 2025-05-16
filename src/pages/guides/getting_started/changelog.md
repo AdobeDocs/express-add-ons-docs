@@ -33,13 +33,16 @@ contributors:
   - Moved the Tutorials as [Complete Projects](../learn/how_to/tutorials/index.md) within the [How To Guides](../learn/how_to/index.md), now more visible.
   - Regrouped content into the new [Platform Concepts](../learn/platform_concepts/context.md) and [Advanced Topics](../build/advanced-topics/frameworks-libraries-bundling.md) sections.
   - Updated screenshots, added animations, and enhanced the overall site usability.
+- **Note:** with the new site structure, some of your bookmarks may be broken. We'll set redirects for the most common links, but please check and update them.
 - We're constantly thinking about ways to improve the developer experience; there is more to come, stay tuned and reach out if you want to share your thoughts!
 
-<InlineAlert variant="warning" slots="header, text" />
+<InlineAlert variant="info" slots="header, text, text2" />
 
-Check your bookmarks!
+New OAuth2 redirect URI:
 
-With the new site structure, some of your bookmarks may be broken. We'll set redirects for the most common links, but please check and update them.
+As part of the sunsetting of the legacy version, Adobe Express is moving from the `new.express.adobe.com` domain to `express.adobe.com`.
+
+While there are redirects in place, please use `https://express.adobe.com/static/oauth-redirect.html` as the redirect URI in your OAuth provider configuration. For more details, see the [OAuth2 guide](../learn/how_to/oauth2.md#login-and-logout-flows).
 
 ## 2025-05-07
 
@@ -205,7 +208,7 @@ Stabilized [`registerIframe()`](../../references/addonsdk/addonsdk-app.md#regist
 - Starting February 17, 2025: Listings will not be visible in the European Union unless trader information is provided.
 - Compliance: Trader information will be displayed publicly on listing detail pages to comply with EU Digital Services Act (DSA) regulations.
 
-[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+[Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
 
 ### Fixed
 
@@ -237,7 +240,7 @@ Stabilized [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) 
 
 You must provide trader details by February 16, 2025, to keep your add-on visible and available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.
 
-[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+[Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
 
 ## 2024-11-04
 

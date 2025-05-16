@@ -221,7 +221,7 @@ Choose **Yes** if you wish to make your add-ons available for users in the EU.
 
 You must provide trader details by February 16, 2025, to keep your add-on visible and available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.
 
-[Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+[Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
 
 ![Publisher Profile](./img/pub-profile2.png)
 

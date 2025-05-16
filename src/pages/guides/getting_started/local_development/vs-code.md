@@ -28,7 +28,7 @@ If you are a Visual Studio Code user, you can easily debug your add-on by follow
 
 ## 1. Create a launch.json file
 
-Begin by locating the existing `launch.json` file in the `.vscode` folder in the root of your project. This file will exist if you have created your add-on with the add-on CLI. Double check to ensure the URL points to `https://new.express.adobe.com/new/`.
+Begin by locating the existing `launch.json` file in the `.vscode` folder in the root of your project. This file will exist if you have created your add-on with the add-on CLI. Double check to ensure the URL points to `https://express.adobe.com/new/`.
 
 <InlineAlert slots="text" variant="info" />
 
@@ -61,7 +61,7 @@ Then copy in the JSON configuration included below (or copy one in from an add-o
        * This will be the link of the document where the add-on is hosted
        * or the url of the new document where you want to load the add-on
        */
-      "url": "https://new.express.adobe.com/new/"
+      "url": "https://express.adobe.com/new/"
     },
     {
       "type": "msedge",
@@ -82,7 +82,7 @@ Then copy in the JSON configuration included below (or copy one in from an add-o
        * This will be the link of the document where the add-on is hosted
        * or the url of the new document where you want to load the add-on
        */
-      "url": "https://new.express.adobe.com/new/"
+      "url": "https://express.adobe.com/new/"
     }
   ]
 }

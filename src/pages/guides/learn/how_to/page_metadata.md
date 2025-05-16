@@ -32,7 +32,7 @@ The returned value is always an array of [`PageMetadata`](../../../references/ad
 ### Single Page Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   const page = await addOnUISdk.app.document.getPagesMetadata({
@@ -55,7 +55,7 @@ addOnUISdk.ready.then(() => {
 ### Page Range Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   const pages = await addOnUISdk.app.document.getPagesMetadata({

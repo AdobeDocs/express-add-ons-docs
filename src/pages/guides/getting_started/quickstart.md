@@ -100,7 +100,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 ## Step 3: Enable add-on development mode (first-time only)
 
-- Navigate to [Adobe Express](https://new.express.adobe.com/).
+- Navigate to [Adobe Express](https://express.adobe.com/).
 - Click on your user avatar in the top righthand corner and choose **Settings**.
 
 ![Dev settings toggle on](./img/avatar-settings-v2.png)
@@ -115,7 +115,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 ## Step 4: Load and run your add-on
 
-- Navigate your browser to [Adobe Express](https://new.express.adobe.com/new) and **create a new project**—a blank one will suffice.
+- Navigate your browser to [Adobe Express](https://express.adobe.com/new) and **create a new project**—a blank one will suffice.
 - Click the **Add-ons** icon on the left rail.
 
 <InlineAlert slots="text1, text2" variant="info"/>

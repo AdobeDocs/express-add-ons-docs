@@ -34,7 +34,7 @@ The current theme is available in the [`addOnUISdk.app.ui.theme`](../../../refer
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   // Get the current theme
@@ -57,7 +57,7 @@ It's possible to retrieve the user's current locale, the list of supported local
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   // Get the currently supported locales
