@@ -164,7 +164,7 @@ You will also see a message in the CLI output notifying you of which template th
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
-Please note that to use [Spectrum Web Components](/guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
+Please note that to use [Spectrum Web Components](../../build/design/implementation_guide.md) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
 
 If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
 

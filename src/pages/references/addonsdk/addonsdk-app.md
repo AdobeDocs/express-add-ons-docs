@@ -486,7 +486,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag_and_drop.md) for example usage, and the [code samples](/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag_and_drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
 
 ## Events
 

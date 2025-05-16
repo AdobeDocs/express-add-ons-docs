@@ -24,7 +24,7 @@ contributors:
 
 When you need to pop up a dialog to show a certain message, such as an informational, warning, or error message, you can use a modal dialog.
 
-Below are some examples of the different types. Also, check out the SDK references for details on how to [show](/references/addonsdk/addonsdk-app.md#showmodaldialog) or [programmatically close a dialog](/references/addonsdk/runtime-dialog.md#close), as well as the [dialog add-on sample](/samples.md#dialog-add-on) for more details.
+Below are some examples of the different types. Also, check out the SDK references for details on how to [show](/references/addonsdk/addonsdk-app.md#showmodaldialog) or [programmatically close a dialog](/references/addonsdk/runtime-dialog.md#close), as well as the [dialog add-on sample](../samples.md#dialog-add-on) for more details.
 
 ## Simple Modal Dialog
 

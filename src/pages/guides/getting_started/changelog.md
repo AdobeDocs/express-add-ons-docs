@@ -325,13 +325,13 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - The CLI has been updated to release version `2.0.0`, and includes the following:
 
   - Periodic login and EULA consent are no longer required.
-  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](/guides/getting_started/dev_tooling.md#templates) for details on all the available templates.
+  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../getting_started/local_development/dev_tooling.md#templates) for details on all the available templates.
   - Typings have been updated to include the latest SDK changes, and other internal packages are now at version `2.0.0`.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
 
 - The [Samples](../learn/samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../learn/samples.md#audio-recording-addon).
-- The [Common Use Cases](/guides/develop/use_cases) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](/guides/develop/how_to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
+- The [Common Use Cases](../learn/how_to/index.md) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](../learn/how_to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
 
 ## 2024-03-19
 

@@ -60,4 +60,4 @@ async function displayAllItems() {
 
 Local data storage can be useful in many scenarios, such as when you need to cache data from server requests, store user UI preferences, pre-populate fields on load, or save temporary data. The fact that `clientStorage` support multiple data types makes it a more versatile tool to use compared to the Browser's `localStorage`.
 
-Please, refer to the [SDK Reference section for clientStorage](/references/addonsdk/instance-clientStorage/) for a complete list of methods, and the [use-client-storage sample add-on](/samples.md#use-client-storage) for more details.
+Please, refer to the [SDK Reference section for clientStorage](../../../references/addonsdk/instance-clientStorage.md) for a complete list of methods, and the [use-client-storage sample add-on](../samples.md#use-client-storage) for more details.

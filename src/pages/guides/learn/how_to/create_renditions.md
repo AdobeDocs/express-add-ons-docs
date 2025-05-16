@@ -140,7 +140,7 @@ To allow the user to download the rendition, the **"permissions"** section shoul
 }
 ```
 
-Please also check out the [export-sample add-on](/samples.md#export-sample) for a more detailed example.
+Please also check out the [export-sample add-on](../samples.md#export-sample) for a more detailed example.
 
 ## The Preview intent
 
