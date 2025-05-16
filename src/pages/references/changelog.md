@@ -26,7 +26,7 @@ contributors:
 
 ### Updated
 
-- We’ve completely revamped the information architecture of the site! 🎉 The new structure is designed to make content easier to navigate, whether you’re just getting started or you’ve been building add-ons for a while. This update aims to reduce friction, surface what matters most, and help both newcomers and experienced developers find their way faster. Among the changes, we have:
+- We’ve **completely revamped the information architecture** of the site! 🎉 The new structure is designed to make content easier to navigate, whether you’re just getting started or you’ve been building add-ons for a while. This update aims to reduce friction, surface what matters most, and help both newcomers and experienced developers find their way faster. Among the changes, we have:
   - Rebuilt the Guides navigation from scratch, and grouped the content in new sections (Getting Started, Learn, Build, Support).
   - Introduced a new [Developer Journey](../guides/getting_started/developer-journey.md) page.
   - Rewritten and improved the QuickStart guide, now [Hello, World!](../guides/getting_started/hello-world.md)
@@ -34,6 +34,12 @@ contributors:
   - Regrouped content into the new [Platform Concepts](../guides/learn/platform_concepts/context.md) and [Advanced Topics](../guides/build/advanced-topics/frameworks-libraries-bundling.md) sections.
   - Updated screenshots, added animations, and enhanced the overall site usability
 - We're constantly thinking about ways to improve the developer experience; there is more to come, stay tuned and reach out if you want to share your thoughts!
+
+<InlineAlert variant="warning" slots="header, text" />
+
+Check your bookmarks!
+
+With the new site structure, some of your bookmarks may be broken. We'll set redirects for the most common links, but please check and update them.
 
 ## 2025-05-07
 
