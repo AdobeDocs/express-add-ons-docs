@@ -29,10 +29,6 @@ module.exports = {
         path: "references",
       },
       {
-        title: "Samples",
-        path: "samples",
-      },
-      {
         title: "Community",
         path: "https://developer.adobe.com/express/community",
       },
@@ -494,10 +490,6 @@ module.exports = {
                   },
                 ],
               },
-              {
-                title: "Concepts",
-                path: "references/document-sandbox/document-apis/concepts/index.md",
-              },
             ],
           },
         ],
@@ -519,475 +511,469 @@ module.exports = {
       },
       {
         title: "Changelog",
+        description: "Changelog",
         path: "references/changelog.md",
       },
       {
-        title: "Overview",
-        path: "guides/",
-      },
-      {
-        title: "Getting started",
-        path: "guides/getting_started",
+        title: "Getting Started",
+        path: "guides/index.md",
+        header: true,
         pages: [
           {
             title: "Overview",
-            path: "guides/getting_started",
+            path: "guides/index.md",
           },
           {
-            title: "Quickstart",
-            path: "guides/getting_started/quickstart.md",
+            title: "Developer Journey",
+            path: "guides/getting_started/developer-journey.md",
           },
           {
-            title: "Development tools",
-            path: "guides/getting_started/dev_tooling.md",
+            title: "Hello, World!",
+            path: "guides/getting_started/hello-world.md",
           },
           {
             title: "Code Playground",
             path: "guides/getting_started/code_playground.md",
           },
           {
-            title: "Tutorials",
-            path: "guides/tutorials/",
+            title: "Local Development",
+            path: "guides/getting_started/local_development/dev_tooling.md",
             pages: [
               {
-                title: "Document APIs",
-                path: "guides/tutorials/grids-addon",
+                title: "Development tools",
+                path: "guides/getting_started/local_development/dev_tooling.md",
               },
               {
-                title: "Communication APIs",
-                path: "guides/tutorials/stats-addon",
+                title: "Browser debugging",
+                path: "guides/getting_started/local_development/browser.md",
               },
               {
-                title: "Using Adobe Spectrum",
-                path: "guides/tutorials/spectrum-workshop/",
-                pages: [
-                  {
-                    title:
-                      "Basic JavaScript add-on with Spectrum Web Components",
-                    path: "guides/tutorials/spectrum-workshop/part1/",
-                  },
-                  {
-                    title: "React-based add-on with Spectrum Web Components",
-                    path: "guides/tutorials/spectrum-workshop/part2/",
-                  },
-                  {
-                    title: "Tips & Troubleshooting",
-                    path: "guides/tutorials/spectrum-workshop/part3/",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: "Design",
-        path: "guides/design",
-        pages: [
-          {
-            title: "Overview",
-            path: "guides/design/",
-          },
-          {
-            title: "UX Guidelines",
-            path: "guides/design/ux_guidelines/introduction.md",
-            pages: [
-              {
-                title: "Introduction",
-                path: "guides/design/ux_guidelines/introduction.md",
-              },
-              {
-                title: "Design Principles",
-                path: "guides/design/ux_guidelines/design_principles.md",
-              },
-              {
-                title: "Theming",
-                path: "guides/design/ux_guidelines/theming.md",
-              },
-              {
-                title: "Visual Elements",
-                path: "guides/design/ux_guidelines/visual_elements.md",
-              },
-              {
-                title: "Feedback & Messaging",
-                path: "guides/design/ux_guidelines/feedback_and_messaging.md",
-              },
-              // {
-              //   title: "Mobile UX",
-              //   path: "guides/design/ux_guidelines/mobile_ux.md",
-              // },
-              {
-                title: "Branding Guidelines & Distribution",
-                path: "guides/design/ux_guidelines/branding_guidelines.md",
-              },
-              {
-                title: "Resources & References",
-                path: "guides/design/ux_guidelines/resources_and_references.md",
-              },
-              {
-                title: "Changelog",
-                path: "guides/design/ux_guidelines/changelog.md",
+                title: "VS Code debugging",
+                path: "guides/getting_started/local_development/vs-code.md",
               },
             ],
           },
           {
-            title: "Implementation guide",
-            path: "guides/design/implementation_guide.md",
-          },
-          {
-            title: "Best practices",
-            path: "guides/design/best_practices.md",
+            title: "What's new",
+            path: "guides/getting_started/changelog.md",
           },
         ],
       },
       {
-        title: "Develop",
-        path: "guides/develop/index.md",
+        title: "Learn",
+        path: "guides/learn/how_to/index.md",
+        header: true,
         pages: [
-          {
-            title: "Overview",
-            path: "guides/develop/",
-          },
           {
             title: "How-to",
-            path: "guides/develop/how_to.md",
+            path: "guides/learn/how_to/index.md",
             pages: [
               {
-                title: "About our How-to guides",
-                path: "guides/develop/how_to.md",
+                title: "About",
+                path: "guides/learn/how_to/index.md",
               },
-              // {
-              //   title: "Add-on Development",
-              //   path: "guides/develop/how_to/debugging.md",
-              //   pages: [
-              //     {
-              //       title: "Debugging",
-              //       path: "guides/develop/how_to/debugging.md",
-              //     },
-              //     {
-              //       title: "Use Imports and Constants",
-              //       path: "guides/develop/how_to/imports_and_constants.md",
-              //     },
-              //     {
-              //       title: "Listen to Events",
-              //       path: "guides/develop/how_to/listen_to_events.md",
-              //     },
-              //     {
-              //       title: "Add-on UI and Document API communication",
-              //       path: "guides/develop/how_to/ui_document_api_communication.md",
-              //     },
-              //   ],
-              // },
               {
                 title: "Authentication & Authorization",
-                path: "guides/develop/how_to/oauth2.md",
+                path: "guides/learn/how_to/oauth2.md",
                 pages: [
                   {
                     title: "Use OAuth 2.0",
-                    path: "guides/develop/how_to/oauth2.md",
+                    path: "guides/learn/how_to/oauth2.md",
                   },
                 ],
               },
               {
                 title: "Data & Environment",
-                path: "guides/develop/how_to/local_data_management.md",
+                path: "guides/learn/how_to/local_data_management.md",
                 pages: [
                   {
                     title: "Store Data",
-                    path: "guides/develop/how_to/local_data_management.md",
+                    path: "guides/learn/how_to/local_data_management.md",
                   },
                   {
                     title: "Theme & Locale",
-                    path: "guides/develop/how_to/theme_locale.md",
+                    path: "guides/learn/how_to/theme_locale.md",
                   },
                 ],
               },
               {
                 title: "UI & Interaction",
-                path: "guides/develop/how_to/drag_and_drop.md",
+                path: "guides/learn/how_to/drag_and_drop.md",
                 pages: [
                   {
                     title: "Use Drag & Drop",
-                    path: "guides/develop/how_to/drag_and_drop.md",
+                    path: "guides/learn/how_to/drag_and_drop.md",
                   },
                   {
                     title: "Use Modal Dialogs",
-                    path: "guides/develop/how_to/modal_dialogs.md",
+                    path: "guides/learn/how_to/modal_dialogs.md",
                   },
                 ],
               },
               {
                 title: "Use Design Elements",
-                path: "guides/develop/how_to/use_text.md", // change this!!
+                path: "guides/learn/how_to/use_text.md", // change this!!
                 pages: [
                   {
                     title: "Use Text",
-                    path: "guides/develop/how_to/use_text.md",
+                    path: "guides/learn/how_to/use_text.md",
                   },
                   {
                     title: "Use Geometry",
-                    path: "guides/develop/how_to/use_geometry.md",
+                    path: "guides/learn/how_to/use_geometry.md",
                   },
                   {
                     title: "Use Color",
-                    path: "guides/develop/how_to/use_color.md",
+                    path: "guides/learn/how_to/use_color.md",
                   },
                   {
                     title: "Use Images",
-                    path: "guides/develop/how_to/use_images.md",
+                    path: "guides/learn/how_to/use_images.md",
                   },
                   {
                     title: "Use Videos",
-                    path: "guides/develop/how_to/use_videos.md",
+                    path: "guides/learn/how_to/use_videos.md",
                   },
                   {
                     title: "Use Audio",
-                    path: "guides/develop/how_to/use_audio.md",
+                    path: "guides/learn/how_to/use_audio.md",
                   },
                   {
                     title: "Use PDF and PowerPoint",
-                    path: "guides/develop/how_to/use_pdf_powerpoint.md",
+                    path: "guides/learn/how_to/use_pdf_powerpoint.md",
                   },
                   {
                     title: "Group Elements",
-                    path: "guides/develop/how_to/group_elements.md",
+                    path: "guides/learn/how_to/group_elements.md",
                   },
                   {
                     title: "Position Elements",
-                    path: "guides/develop/how_to/position_elements.md",
+                    path: "guides/learn/how_to/position_elements.md",
                   },
                 ],
               },
               {
                 title: "Use Metadata",
-                path: "guides/develop/how_to/document_metadata.md",
+                path: "guides/learn/how_to/document_metadata.md",
                 pages: [
-                  // {
-                  //   title: "Authoring Adobe Express Content",
-                  //   path: "guides/develop/how_to/authoring_adobe_express_content.md",
-                  // },
                   {
                     title: "Document",
-                    path: "guides/develop/how_to/document_metadata.md",
+                    path: "guides/learn/how_to/document_metadata.md",
                   },
                   {
                     title: "Page",
-                    path: "guides/develop/how_to/page_metadata.md",
+                    path: "guides/learn/how_to/page_metadata.md",
                   },
                   {
                     title: "Element",
-                    path: "guides/develop/how_to/element_metadata.md",
+                    path: "guides/learn/how_to/element_metadata.md",
                   },
                 ],
               },
               {
                 title: "Exporting & Output",
-                path: "guides/develop/how_to/create_renditions.md",
+                path: "guides/learn/how_to/create_renditions.md",
                 pages: [
                   {
                     title: "Create Renditions",
-                    path: "guides/develop/how_to/create_renditions.md",
+                    path: "guides/learn/how_to/create_renditions.md",
                   },
                   {
                     title: "Manage Premium Content",
-                    path: "guides/develop/how_to/premium_content.md",
+                    path: "guides/learn/how_to/premium_content.md",
                   },
                 ],
               },
               {
                 title: "User Info",
-                path: "guides/develop/how_to/user_info.md",
+                path: "guides/learn/how_to/user_info.md",
                 pages: [
                   {
                     title: "Identify users",
-                    path: "guides/develop/how_to/user_info.md",
+                    path: "guides/learn/how_to/user_info.md",
                   },
                 ],
               },
-              // ------------------------------------------------------------------
-              // {
-              //   title: "Content Management",
-              //   path: "guides/develop/use_cases/content_management.md",
-              // },
-              // {
-              //   title: "Authentication and Authorization",
-              //   path: "guides/develop/use_cases/authentication_authorization.md",
-              // },
-              // {
-              //   title: "Client-side Data",
-              //   path: "guides/develop/use_cases/clientside_data.md",
-              // },
-              // {
-              //   title: "User Interaction",
-              //   path: "guides/develop/use_cases/user_interaction.md",
-              // },
-              // {
-              //   title: "Environment Settings",
-              //   path: "guides/develop/use_cases/environment_settings.md",
-              // },
-              // {
-              //   title: "Monetization Flows",
-              //   path: "guides/develop/use_cases/monetization_flows.md",
-              // },
-              // {
-              //   title: "Content Authoring and Metadata",
-              //   path: "guides/develop/use_cases/content_authoring.md",
-              // },
+              {
+                title: "Complete Projects",
+                path: "guides/learn/how_to/tutorials/index.md",
+                pages: [
+                  {
+                    title: "Document APIs",
+                    path: "guides/learn/how_to/tutorials/grids-addon",
+                  },
+                  {
+                    title: "Communication APIs",
+                    path: "guides/learn/how_to/tutorials/stats-addon",
+                  },
+                  {
+                    title: "Using Adobe Spectrum",
+                    path: "guides/learn/how_to/tutorials/spectrum-workshop/",
+                    pages: [
+                      {
+                        title:
+                          "Basic JavaScript add-on with Spectrum Web Components",
+                        path: "guides/learn/how_to/tutorials/spectrum-workshop/part1/",
+                      },
+                      {
+                        title:
+                          "React-based add-on with Spectrum Web Components",
+                        path: "guides/learn/how_to/tutorials/spectrum-workshop/part2/",
+                      },
+                      {
+                        title: "Tips & Troubleshooting",
+                        path: "guides/learn/how_to/tutorials/spectrum-workshop/part3/",
+                      },
+                    ],
+                  },
+                  {
+                    title: "Using Lit & TypeScript",
+                    path: "guides/learn/how_to/tutorials/using-lit-typescript.md",
+                  },
+                ],
+              },
             ],
           },
           {
-            title: "Frameworks, Libraries and Bundling",
-            path: "guides/develop/frameworks-libraries-bundling.md",
-          },        
-          {
-            title: "Using Lit & TypeScript",
-            path: "guides/develop/using-lit-typescript.md",
-          },
-          {
-            title: "Performance Tips",
-            path: "guides/develop/performance.md",
-          },
-          {
-            title: "Add-on iframe Context",
-            path: "guides/develop/context.md",
-          },
-          {
-            title: "Cross-origin Isolation Handling",
-            path: "guides/develop/coi.md",
-          },
-        ],
-      },
-      {
-        title: "Debug",
-        path: "guides/debug",
-        pages: [
-          {
-            title: "Overview",
-            path: "guides/debug/",
-          },
-          {
-            title: "Browser debugging",
-            path: "guides/debug/browser.md",
-          },
-          {
-            title: "VS Code debugging",
-            path: "guides/debug/vs-code.md",
-          },
-        ],
-      },
-      {
-        title: "Distribute",
-        path: "guides/distribute",
-        pages: [
-          {
-            title: "Overview",
-            path: "guides/distribute/",
-          },
-          {
-            title: "Our review process",
-            path: "guides/distribute/review_process/",
-          },
-          {
-            title: "Creating a private link",
-            path: "guides/distribute/private-dist.md",
-          },
-          {
-            title: "Creating a public listing",
-            path: "guides/distribute/public-dist.md",
-          },
-          {
-            title: "Guidelines and requirements",
-            path: "guides/distribute/guidelines",
+            title: "Platform Concepts",
+            path: "guides/learn/platform_concepts/context.md",
             pages: [
               {
-                title: "General guidelines",
-                path: "guides/distribute/guidelines/general/",
-                pages: [
-                  {
-                    title: "Your listing metadata",
-                    path: "guides/distribute/guidelines/general/listing.md",
-                  },
-                  {
-                    title: "Content",
-                    path: "guides/distribute/guidelines/general/content.md",
-                  },
-                  {
-                    title: "User interface",
-                    path: "guides/distribute/guidelines/general/user_interface.md",
-                  },
-                  {
-                    title: "Performance",
-                    path: "guides/distribute/guidelines/general/performance.md",
-                  },
-                  {
-                    title: "Usability",
-                    path: "guides/distribute/guidelines/general/usability.md",
-                  },
-                  {
-                    title: "Security",
-                    path: "guides/distribute/guidelines/general/security.md",
-                  },
-                  {
-                    title: "Features",
-                    path: "guides/distribute/guidelines/general/features.md",
-                  },
-                  {
-                    title: "Authenticating users",
-                    path: "guides/distribute/guidelines/general/auth.md",
-                  },
-                  {
-                    title: "Accessibility",
-                    path: "guides/distribute/guidelines/general/accessibility.md",
-                  },
-                  {
-                    title: "Compatibility",
-                    path: "guides/distribute/guidelines/general/compatibility.md",
-                  },
-                  {
-                    title: "Edge cases",
-                    path: "guides/distribute/guidelines/general/edge_case.md",
-                  },
-                ],
+                title: "Add-on iframe Context",
+                path: "guides/learn/platform_concepts/context.md",
               },
               {
-                title: "Developer brand guidelines",
-                path: "guides/distribute/guidelines/brand_guidelines.md",
-              },
-              {
-                title: "Monetization guidelines",
-                path: "guides/distribute/guidelines/monetization.md",
-              },
-
-              {
-                title: "Generative AI guidelines",
-                path: "guides/distribute/guidelines/genai/",
-                pages: [
-                  {
-                    title: "Overview",
-                    path: "guides/distribute/guidelines/genai/",
-                  },
-                  {
-                    title: "Requirements",
-                    path: "guides/distribute/guidelines/genai/requirements",
-                  },
-                  {
-                    title: "Recommendations",
-                    path: "guides/distribute/guidelines/genai/recommendations",
-                  },
-                ],
+                title: "The Document API",
+                path: "guides/learn/platform_concepts/document-api.md",
               },
             ],
           },
           {
-            title: "Rejections",
-            path: "guides/distribute/rejections.md",
+            title: "Sample add-ons",
+            path: "guides/learn/samples.md",
           },
         ],
       },
       {
-        title: "FAQs",
-        path: "guides/faq.md",
+        title: "Build",
+        path: "guides/build/advanced-topics/frameworks-libraries-bundling.md",
+        header: true,
+        pages: [
+          {
+            title: "Advanced Topics",
+            path: "guides/build/advanced-topics/frameworks-libraries-bundling.md",
+            pages: [
+              {
+                title: "Frameworks, Libraries and Bundling",
+                path: "guides/build/advanced-topics/frameworks-libraries-bundling.md",
+              },
+              {
+                title: "Cross-origin Isolation Handling",
+                path: "guides/build/advanced-topics/coi.md",
+              },
+              {
+                title: "Performance Tips",
+                path: "guides/build/advanced-topics/performance.md",
+              },
+            ],
+          },
+          {
+            title: "Design",
+            path: "guides/build/design/index.md",
+            pages: [
+              {
+                title: "Overview",
+                path: "guides/build/design/index.md",
+              },
+              {
+                title: "UX Guidelines",
+                path: "guides/build/design/ux_guidelines/introduction.md",
+                pages: [
+                  {
+                    title: "Introduction",
+                    path: "guides/build/design/ux_guidelines/introduction.md",
+                  },
+                  {
+                    title: "Design Principles",
+                    path: "guides/build/design/ux_guidelines/design_principles.md",
+                  },
+                  {
+                    title: "Theming",
+                    path: "guides/build/design/ux_guidelines/theming.md",
+                  },
+                  {
+                    title: "Visual Elements",
+                    path: "guides/build/design/ux_guidelines/visual_elements.md",
+                  },
+                  {
+                    title: "Feedback & Messaging",
+                    path: "guides/build/design/ux_guidelines/feedback_and_messaging.md",
+                  },
+                  // {
+                  //   title: "Mobile UX",
+                  //   path: "guides/build/design/ux_guidelines/mobile_ux.md",
+                  // },
+                  {
+                    title: "Branding Guidelines & Distribution",
+                    path: "guides/build/design/ux_guidelines/branding_guidelines.md",
+                  },
+                  {
+                    title: "Resources & References",
+                    path: "guides/build/design/ux_guidelines/resources_and_references.md",
+                  },
+                  {
+                    title: "Changelog",
+                    path: "guides/build/design/ux_guidelines/changelog.md",
+                  },
+                ],
+              },
+              {
+                title: "Implementation guide",
+                path: "guides/build/design/implementation_guide.md",
+              },
+              {
+                title: "Best practices",
+                path: "guides/design/best_practices.md",
+              },
+            ],
+          },
+          {
+            title: "Distribute",
+            path: "guides/build/distribute/index.md",
+            pages: [
+              {
+                title: "Overview",
+                path: "guides/build/distribute/",
+              },
+              {
+                title: "Our review process",
+                path: "guides/build/distribute/review_process/",
+              },
+              {
+                title: "Creating a private link",
+                path: "guides/build/distribute/private-dist.md",
+              },
+              {
+                title: "Creating a public listing",
+                path: "guides/build/distribute/public-dist.md",
+              },
+              {
+                title: "Guidelines and requirements",
+                path: "guides/build/distribute/guidelines",
+                pages: [
+                  {
+                    title: "General guidelines",
+                    path: "guides/build/distribute/guidelines/general/",
+                    pages: [
+                      {
+                        title: "Your listing metadata",
+                        path: "guides/build/distribute/guidelines/general/listing.md",
+                      },
+                      {
+                        title: "Content",
+                        path: "guides/build/distribute/guidelines/general/content.md",
+                      },
+                      {
+                        title: "User interface",
+                        path: "guides/build/distribute/guidelines/general/user_interface.md",
+                      },
+                      {
+                        title: "Performance",
+                        path: "guides/build/distribute/guidelines/general/performance.md",
+                      },
+                      {
+                        title: "Usability",
+                        path: "guides/build/distribute/guidelines/general/usability.md",
+                      },
+                      {
+                        title: "Security",
+                        path: "guides/build/distribute/guidelines/general/security.md",
+                      },
+                      {
+                        title: "Features",
+                        path: "guides/build/distribute/guidelines/general/features.md",
+                      },
+                      {
+                        title: "Authenticating users",
+                        path: "guides/build/distribute/guidelines/general/auth.md",
+                      },
+                      {
+                        title: "Accessibility",
+                        path: "guides/build/distribute/guidelines/general/accessibility.md",
+                      },
+                      {
+                        title: "Compatibility",
+                        path: "guides/build/distribute/guidelines/general/compatibility.md",
+                      },
+                      {
+                        title: "Edge cases",
+                        path: "guides/build/distribute/guidelines/general/edge_case.md",
+                      },
+                    ],
+                  },
+                  {
+                    title: "Developer brand guidelines",
+                    path: "guides/build/distribute/guidelines/brand_guidelines.md",
+                  },
+                  {
+                    title: "Monetization guidelines",
+                    path: "guides/build/distribute/guidelines/monetization.md",
+                  },
+
+                  {
+                    title: "Generative AI guidelines",
+                    path: "guides/build/distribute/guidelines/genai/",
+                    pages: [
+                      {
+                        title: "Overview",
+                        path: "guides/build/distribute/guidelines/genai/",
+                      },
+                      {
+                        title: "Requirements",
+                        path: "guides/build/distribute/guidelines/genai/requirements",
+                      },
+                      {
+                        title: "Recommendations",
+                        path: "guides/build/distribute/guidelines/genai/recommendations",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                title: "Rejections",
+                path: "guides/build/distribute/rejections.md",
+              },
+            ],
+          },
+        ],
       },
+      {
+        title: "Support",
+        path: "guides/support/faq.md",
+        header: true,
+        pages: [
+          {
+            title: "FAQs",
+            path: "guides/support/faq.md",
+          },
+          {
+            title: "Community Resources",
+            path: "https://developer.adobe.com/express/community",
+          },
+        ],
+      },
+
+      // {
+      //   title: "Troubleshoot",
+      //   path: "resources/faq.md",
+      //   pages: [
+      //     {
+      //       title: "FAQs",
+      //       path: "resources/faq.md",
+      //     },
+      //   ],
+      // },
     ],
   },
   plugins: [`@adobe/gatsby-theme-aio`],

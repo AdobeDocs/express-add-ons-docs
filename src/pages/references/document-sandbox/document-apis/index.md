@@ -14,7 +14,7 @@ keywords:
 title: Document APIs
 description: An introduction to the Document APIs available in the document sandbox.
 contributors:
-  - https://github.com/hollyschinsky  
+  - https://github.com/hollyschinsky
 hideBreadcrumbNav: true
 ---
 
@@ -53,7 +53,7 @@ console.log(rectangle); // for debugging purpose
 
 const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];
 // Note: alpha param is optional
-const aColor = colorUtils.fromRGB(red,green,blue,alpha)
+const aColor = colorUtils.fromRGB(red, green, blue, alpha);
 const rectangleFill = editor.makeColorFill(aColor);
 rectangle.fill = rectangleFill;
 
@@ -62,4 +62,4 @@ insertionParent.children.append(rectangle);
 
 ## Tutorials, References & Code Samples
 
-Please see [this extensive tutorial](../../../guides/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/tutorials/). Also be sure to check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page) code samples provided in the [document sandbox samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for more details on using the [Document APIs](./classes/Editor.md).
+Please see [this extensive tutorial](../../../guides/learn/how_to/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/learn/how_to/tutorials/). Also be sure to check out the [full set of API documentation](../document-apis/classes/Editor.md) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page) code samples provided in the [document sandbox samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for more details on using the [Document APIs](./classes/Editor.md).

@@ -91,14 +91,14 @@ This method will programmatically close the color picker.
 
 <InlineAlert variant="info" slots="text" />
 
-Please also refer to the the Color Picker section of the [Use Color](../../guides/develop/how_to/use_color.md#use-the-color-picker) how-to guide for more examples.
+Please also refer to the the Color Picker section of the [Use Color](../../guides/learn/how_to/use_color.md#use-the-color-picker) how-to guide for more examples.
 
 ### Basic usage
 
 ```js
 import addOnUISdk, {
   ColorPickerPlacement,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Basic usage - just show color picker
 addOnUISdk.app.showColorPicker(element);
@@ -140,7 +140,7 @@ addOnUISdk.app.showColorPicker(element, {
 ```js
 import addOnUISdk, {
   ColorPickerEvent,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const colorPickerButton = document.getElementById("colorPicker");

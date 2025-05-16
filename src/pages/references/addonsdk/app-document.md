@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/how_to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/develop/how_to/create_renditions.md) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/learn/how_to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/learn/how_to/create_renditions.md) from the current document.
 
 ## General Methods
 
@@ -27,7 +27,7 @@ A resolved `Promise` containing the `id` of the document.
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setId(id) { /* ... */ }
 
@@ -61,7 +61,7 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setTitle(title) { /* ... */ }
 
@@ -95,7 +95,7 @@ A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containi
 ## Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -169,7 +169,7 @@ Tells Express to run a print quality check to determine if the document is ready
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = addOnUISdk.app;
@@ -242,7 +242,7 @@ Retrieves the document link.
 
 #### Signature
 
- `link(options: LinkOptions): Promise<string | undefined>`
+`link(options: LinkOptions): Promise<string | undefined>`
 
 #### Return Value
 
@@ -259,7 +259,7 @@ A `documentLinkAvailable` event is triggered when the document link is available
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setLink(link) { /* ... */ }
 
@@ -439,7 +439,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [import images how-to](../../guides/develop/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](../../guides/learn/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -465,7 +465,7 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = AddOnSDKAPI.app;
@@ -520,7 +520,7 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = AddOnSDKAPI.app;
@@ -565,7 +565,7 @@ Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, yo
 
 If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
 
-\*\* See the [FAQ's](../../guides/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
+\*\* See the [FAQ's](../../guides/support/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
 
 ### Errors
 
@@ -606,7 +606,7 @@ Generate renditions of the current page, specific pages or the entire document i
 }
 ```
 
-Refer to the [manage premium content how-to](../../guides/develop/how_to/premium_content.md) for more specific details on options for handling the export of premium content.
+Refer to the [manage premium content how-to](../../guides/learn/how_to/premium_content.md) for more specific details on options for handling the export of premium content.
 
 #### `RenditionOptions`
 
@@ -717,7 +717,7 @@ A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pa
 #### JavaScript
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -748,7 +748,7 @@ async function displayPreview() {
 #### TypeScript
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -794,11 +794,11 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 | `title`    | `string`                        | The page title of the rendition |
 | `metadata` | [`PageMetadata`](#pagemetadata) |                   Page metadata |
 
-\*\* See the [FAQs](../../guides/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
+\*\* See the [FAQs](../../guides/support/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [create renditions how-to](../../guides/develop/how_to/create_renditions.md) and the [export-sample](/samples.md) in the code samples for usage examples.
+Refer to the [create renditions how-to](../../guides/learn/how_to/create_renditions.md) and the [export-sample](../../guides/learn/samples.md) in the code samples for usage examples.
 
 ### Errors
 

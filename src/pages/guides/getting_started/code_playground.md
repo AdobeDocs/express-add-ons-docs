@@ -17,7 +17,7 @@ keywords:
   - Express Document
 title: Code Playground
 description: A guide to using the Code Playground in Adobe Express.
-contributors:  
+contributors:
   - https://github.com/padmkris123
   - https://github.com/hollyschinsky
   - https://github.com/ErinFinnegan
@@ -46,16 +46,16 @@ The Code Playground is designed for:
 
 <br/>
 
-| Feature | Description |
-|---------|-------------|
-| **Real-Time Preview** | See your changes as you code, allowing for immediate feedback and faster adjustments. |
-| **Effortless Prototyping** | Quickly turn ideas into add-ons with minimal setup. |
-| **Rapid Implementation** | Fast-track your prototype to a product by directly pasting your code into an add-on template. |
-| **Script Mode** | An easy way to interact with the Document APIs quickly. |
-| **Programming Assistance** | Typed definitions and auto-completion. |
-| **Default Boilerplate Code** | Default boilerplate code for each tab helps you get started quickly. |
-| **Local Persistence** | Save your work to your browser's local storage and resume where you left off, preventing accidental loss. |
-| **Keyboard Shortcuts** | Use keyboard shortcuts to save, run, and reset your code quickly. |
+| Feature                      | Description                                                                                               |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Real-Time Preview**        | See your changes as you code, allowing for immediate feedback and faster adjustments.                     |
+| **Effortless Prototyping**   | Quickly turn ideas into add-ons with minimal setup.                                                       |
+| **Rapid Implementation**     | Fast-track your prototype to a product by directly pasting your code into an add-on template.             |
+| **Script Mode**              | An easy way to interact with the Document APIs quickly.                                                   |
+| **Programming Assistance**   | Typed definitions and auto-completion.                                                                    |
+| **Default Boilerplate Code** | Default boilerplate code for each tab helps you get started quickly.                                      |
+| **Local Persistence**        | Save your work to your browser's local storage and resume where you left off, preventing accidental loss. |
+| **Keyboard Shortcuts**       | Use keyboard shortcuts to save, run, and reset your code quickly.                                         |
 
 <!-- Check out the video below for a quick introduction to the add-on playground features.
 
@@ -79,9 +79,9 @@ The Code Playground is designed to support the following development workflow us
 ### Step 1: Enable Add-on Development Mode
 
 - Click the avatar icon in the top right corner of Adobe Express, then the gear icon to open the "Settings".
-- Enable **Add-on Development** if it's not already enabled:
+- Enable **Add-on Development** if it's not already enabled (you might need to click the **Developer Terms of Use** link the first time).
 
-  ![Adobe Express Settings](./img/settings_alt.png)
+![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
 ### Step 2: Open Code Playground
 
@@ -94,7 +94,7 @@ The Code Playground is designed to support the following development workflow us
 - Once enabled, the playground window will open, allowing you to begin coding immediately:
 
   ![Adobe Express Code Playground Open](./img/playground-open.png)
-  
+
 ## Choose Your Development Mode
 
 The playground offers two distinct development modes:
@@ -104,15 +104,15 @@ The playground offers two distinct development modes:
 
 <br/>
 
-| Comparison Factor | Script Mode | Add-on Mode |
-|--------------------|-------------|-------------|
-| **Purpose**        | Quick document manipulation tests | Complete add-on UI and functionality |
-| **Environment**    | Document Sandbox only | Both iframe and Document Sandbox |
-| **API Access**     | [Document APIs](../../references/document-sandbox/document-apis/index.md) | [Document APIs](../../references/document-sandbox/document-apis/index.md) + [Add-on UI SDK](../../references/addonsdk/index.md) |
-| **Global Await**   | Yes | No |
-| **Automatic Imports** | Yes | No |
-| **UI Components**  | No UI building | Full HTML/CSS/JS interface creation |
-| **Best For**       | Testing document operations | Building complete add-ons |
+| Comparison Factor     | Script Mode                                                               | Add-on Mode                                                                                                                     |
+| --------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Purpose**           | Quick document manipulation tests                                         | Complete add-on UI and functionality                                                                                            |
+| **Environment**       | Document Sandbox only                                                     | Both iframe and Document Sandbox                                                                                                |
+| **API Access**        | [Document APIs](../../references/document-sandbox/document-apis/index.md) | [Document APIs](../../references/document-sandbox/document-apis/index.md) + [Add-on UI SDK](../../references/addonsdk/index.md) |
+| **Global Await**      | Yes                                                                       | No                                                                                                                              |
+| **Automatic Imports** | Yes                                                                       | No                                                                                                                              |
+| **UI Components**     | No UI building                                                            | Full HTML/CSS/JS interface creation                                                                                             |
+| **Best For**          | Testing document operations                                               | Building complete add-ons                                                                                                       |
 
 ## Script Mode
 
@@ -129,17 +129,17 @@ The playground offers two distinct development modes:
 2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object.
 3. Execute your script by clicking the **Run Code** button in the right corner of the playground window to see changes in the current document.
 
-  ![Code Playground Script Mode](./img/script-mode.png)
+![Code Playground Script Mode](./img/script-mode.png)
 
 4. If you want to use Document APIs that are currently marked experimental, click on the properties icon to open the [Manifest JSON](../../references/manifest/index.md#requirements) editing modal and toggle **experimentalApis**:
 
-  ![Script Mode Manifest Settings](./img/manifest-props-script.png)
+![Script Mode Manifest Settings](./img/manifest-props-script.png)
 
-5. Head over to our [How-to guides](../develop/how_to.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
+5. Head over to our [How-to guides](../learn/how_to/index.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
 
-    - [How to Use Geometry](../develop/how_to/use_geometry.md)
-    - [How to Use Color](../develop/how_to/use_color.md)
-    - [How to Use Text](../develop/how_to/use_text.md)
+   - [How to Use Geometry](../learn/how_to/use_geometry.md)
+   - [How to Use Color](../learn/how_to/use_color.md)
+   - [How to Use Text](../learn/how_to/use_text.md)
 
 #### Key Considerations
 
@@ -159,8 +159,8 @@ In contrast, in [**Add-on mode**](#add-on-mode) you will need to manually wrap t
 //sandbox.code.js or Document JS tab
 loadFont: async () => {
   const textNode = editor.context.selection[0];
-  const lato = await fonts.fromPostscriptName("Lato-Light");  
-}
+  const lato = await fonts.fromPostscriptName("Lato-Light");
+};
 ```
 
 - **Automatic Imports**: Script mode automatically imports the `express-document-sdk` modules, so you don't need to add import statements for the [Document APIs](../../references/document-sandbox/document-apis/index.md). However, if you do add import statements, it wont harm anything.
@@ -183,11 +183,11 @@ Once you switch to the [Add-on mode](#add-on-mode) or to your local add-on devel
 2. Write code for your add-on in each of the supplied tabs (described below). This includes HTML, CSS, and JavaScript code that will run in the iframe UI or in the Document Sandbox to interact directly with the Express document (optionally).
 3. Click **Run Code** to execute your add-on. Your add-on should open in an iframe on the right side of the Adobe Express window, ie:
 
-  ![Code Playground Add-on Mode](./img/addon-mode.png)
+![Code Playground Add-on Mode](./img/addon-mode.png)
 
 4. If you need to set [manifest properties](../../references/manifest/index.md) for your add-on (ie: if you want to use APIs that are currently marked experimental, set permissions, OAuth domains etc), click on the properties icon to open the Manifest JSON editing modal:
 
-  ![Add-on Mode Manifest Settings](./img/manifest-props-addon.png)
+![Add-on Mode Manifest Settings](./img/manifest-props-addon.png)
 
 ### Add-on Mode Tabs
 
@@ -195,30 +195,30 @@ The Add-on mode features four tabs for organizing your code:
 
 1. **HTML Tab**
 
-  This tab is for writing HTML code that defines the structure of your add-on's user interface. You can create elements like buttons, text fields, and layout containers here. Functionally, this tab mirrors the role of the `index.html` file you'd use in a typical add-on project.
+This tab is for writing HTML code that defines the structure of your add-on's user interface. You can create elements like buttons, text fields, and layout containers here. Functionally, this tab mirrors the role of the `index.html` file you'd use in a typical add-on project.
 
 2. **CSS Tab**
 
-  Style your add-on's HTML elements in this tab. Create a visually appealing interface consistent with Adobe Express design patterns. This section corresponds to the `styles.css` file in a standard add-on project.
+Style your add-on's HTML elements in this tab. Create a visually appealing interface consistent with Adobe Express design patterns. This section corresponds to the `styles.css` file in a standard add-on project.
 
 3. **Iframe JS Tab**
 
-  This tab is for writing JavaScript code that runs in the iframe context of your add-on. Here, you can interact with:
+This tab is for writing JavaScript code that runs in the iframe context of your add-on. Here, you can interact with:
 
-  - The [Add-on UI SDK (`addOnUISdk`)](../../references/addonsdk/index.md)
-  - The DOM elements in your HTML
-  - Event handlers for your UI components
+- The [Add-on UI SDK (`addOnUISdk`)](../../references/addonsdk/index.md)
+- The DOM elements in your HTML
+- Event handlers for your UI components
 
-  This environment corresponds to the code you would typically write in your `index.js` or UI JavaScript files in a full add-on project.
+This environment corresponds to the code you would typically write in your `index.js` or UI JavaScript files in a full add-on project.
 
 4. **Document JS Tab**
 
-  This tab is where you write JavaScript code that interacts directly with the Adobe Express document. It runs in the [Document Sandbox](../../references/document-sandbox/index.md) environment and gives you access to:
+This tab is where you write JavaScript code that interacts directly with the Adobe Express document. It runs in the [Document Sandbox](../../references/document-sandbox/index.md) environment and gives you access to:
 
-  - Document manipulation capabilities with the [Document APIs](../../references/document-sandbox/document-apis/index.md)
-  - [Communication APIs](../../references/document-sandbox/communication/index.md) to facilitate interaction between the iframe context and the Document Sandbox.
+- Document manipulation capabilities with the [Document APIs](../../references/document-sandbox/document-apis/index.md)
+- [Communication APIs](../../references/document-sandbox/communication/index.md) to facilitate interaction between the iframe context and the Document Sandbox.
 
-  The Document JS tab corresponds to the code typically found in the `code.js` file of a complete add-on project.
+The Document JS tab corresponds to the code typically found in the `code.js` file of a complete add-on project.
 
 ## Transitioning from Script Mode to Add-on Mode
 
@@ -239,15 +239,15 @@ Keyboard Shortcuts, local save and session management are all designed to help y
 
 <br/>
 
-| Action | Windows/Linux | macOS |
-|--------|---------------|-------|
-| **Save** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> |
-| **Run** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> |
-| **Reset** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> |
-| **Increase font size** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd> |
-| **Decrease font size** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd> |
-| **Switch between tabs** | <kbd>Ctrl</kbd> + <kbd>1, 2, 3, 4</kbd> | <kbd>Cmd</kbd> + <kbd>1, 2, 3, 4</kbd> |
-| **View the typings suggestions** | <kbd>Ctrl</kbd> + <kbd>space</kbd> | <kbd>Cmd</kbd> + <kbd>space</kbd> |
+| Action                           | Windows/Linux                                                | macOS                                                       |
+| -------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| **Save**                         | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>            | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>            |
+| **Run**                          | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> |
+| **Reset**                        | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>            | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>            |
+| **Increase font size**           | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd>     | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd>     |
+| **Decrease font size**           | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd>    | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd>    |
+| **Switch between tabs**          | <kbd>Ctrl</kbd> + <kbd>1, 2, 3, 4</kbd>                      | <kbd>Cmd</kbd> + <kbd>1, 2, 3, 4</kbd>                      |
+| **View the typings suggestions** | <kbd>Ctrl</kbd> + <kbd>space</kbd>                           | <kbd>Cmd</kbd> + <kbd>space</kbd>                           |
 
 <InlineAlert slots="header,text1" variant="success"/>
 
@@ -259,11 +259,11 @@ Use the "**...**" button in the top right corner of the playground window to ref
 
 The Code Playground features local persistence to help prevent the loss of your work. This functionality ensures that your code is stored in your browser's local storage, providing a safeguard against accidental data loss.
 
-Code in the playground is ***not saved automatically***. To ensure it's saved, you need to take one of the following steps:
+Code in the playground is **_not saved automatically_**. To ensure it's saved, you need to take one of the following steps:
 
-  1. Save your work using the [keyboard shortcut for Save](#keyboard-shortcuts).
-  2. Run the code via the **Run Code** button or with the [keyboard shortcut for Run](#keyboard-shortcuts).
-  3. Exit the playground (with the **X** in the upper right corner).
+1. Save your work using the [keyboard shortcut for Save](#keyboard-shortcuts).
+2. Run the code via the **Run Code** button or with the [keyboard shortcut for Run](#keyboard-shortcuts).
+3. Exit the playground (with the **X** in the upper right corner).
 
 If you don't want to save your work at any time, use the [keyboard shortcut to Reset](#keyboard-shortcuts).
 
@@ -294,7 +294,7 @@ There are two ways to resume working on your last saved session:
    - Find the **Playground Sessions** section in the **Your add-ons** page.
    - Access your last session or create a new one with one click.
 
-  ![Manage Your add-ons page](./img/playground-sessions.png)
+![Manage Your add-ons page](./img/playground-sessions.png)
 
 <InlineAlert slots="header, text1" variant="info"/>
 
@@ -305,9 +305,9 @@ There are two ways to resume working on your last saved session:
 
 ## Resources
 
-- **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../develop/how_to.md) to kickstart your development.
+- **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../learn/how_to/index.md) to kickstart your development.
 - **SDK/API References:** Discover more about what you can do in your add-on by exploring our [SDK References](../../references/index.md).
-- **Code Samples:** Get inspired by checking out [our code samples](../../samples.md) to see what's possible.
+- **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
 - **Ask Questions:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
 
 ## Next Steps: Build Your Add-on Locally
