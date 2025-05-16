@@ -22,6 +22,21 @@ contributors:
 
 This section provides a set of guides to help you in the development stage of your add-on.
 
+## Add-on Development mode
+
+A pre-requisite for local development is to have enabled the **Add-on Development** mode in Adobe Express; [open it in the browser](https://express.adobe.com/), see the following animation for instructions, or expand the details below for a step-by-step guide.
+
+![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
+
+<details>
+  <summary>Click to view a list of steps to enable the Development Mode</summary>
+  <ol>
+    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
+    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
+    <li>Close the Settings dialog.</li>
+  </ol>
+</details>
+
 ## Using the CLI
 
 The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.

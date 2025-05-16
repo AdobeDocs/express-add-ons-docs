@@ -46,6 +46,8 @@ The [Command Line Interface (CLI)](#command-line-interface-cli) path will teach 
 - Basic familiarity with JavaScript, HTML and CSS.
 - Node.js version 18 or higher (optional, only for the CLI track).
 
+### Add-on Development mode
+
 A pre-requisite for both tracks is to have enabled the **Add-on Development** mode. Open Adobe Express in the browser and see the following animation for instructions, or expand the details below for a step-by-step guide.
 
 ![Enable Add-on Development](./img/playground-enable-dev-mode.gif)

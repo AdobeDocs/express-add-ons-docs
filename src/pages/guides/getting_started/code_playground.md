@@ -79,9 +79,9 @@ The Code Playground is designed to support the following development workflow us
 ### Step 1: Enable Add-on Development Mode
 
 - Click the avatar icon in the top right corner of Adobe Express, then the gear icon to open the "Settings".
-- Enable **Add-on Development** if it's not already enabled:
+- Enable **Add-on Development** if it's not already enabled (you might need to click the **Developer Terms of Use** link the first time).
 
-  ![Adobe Express Settings](./img/settings_alt.png)
+![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
 ### Step 2: Open Code Playground
 
