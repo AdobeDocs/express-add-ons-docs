@@ -41,9 +41,10 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 
 New OAuth redirect URI
 
-Adobe Express has moved from `new.express.adobe.com` to `express.adobe.com`, as part of the sunsetting of the legacy version.
+Adobe Express has moved from `new.express.adobe.com` to `express.adobe.com`, as part of the sunsetting of the legacy version. Make sure **both redirect URIs are allowed in your OAuth configuration**:
 
-**Add** `https://express.adobe.com/static/oauth-redirect.html` **to the list of allowed redirect URIs** in your OAuth provider configuration in addition to the existing `https://new.express.adobe.com/static/oauth-redirect.html`.
+- `https://new.express.adobe.com/static/oauth-redirect.html`
+- `https://express.adobe.com/static/oauth-redirect.html` (new)
 
 Here are the steps to get started:
 
