@@ -40,9 +40,9 @@ contributors:
 
 New OAuth2 redirect URI:
 
-As part of the sunsetting of the legacy version, Adobe Express is moving from the `new.express.adobe.com` domain to `express.adobe.com`.
+As part of the sunsetting of the legacy version, Adobe Express has moved from the `new.express.adobe.com` domain to `express.adobe.com`.
 
-While there are redirects in place, please use `https://express.adobe.com/static/oauth-redirect.html` as the redirect URI in your OAuth provider configuration. For more details, see the [OAuth2 guide](../learn/how_to/oauth2.md#login-and-logout-flows).
+While there are redirects in place, please add `https://express.adobe.com/static/oauth-redirect.html` as the redirect URI in your OAuth provider configuration. For more details, see the [OAuth2 guide](../learn/how_to/oauth2.md#login-and-logout-flows).
 
 ## 2025-05-07
 
