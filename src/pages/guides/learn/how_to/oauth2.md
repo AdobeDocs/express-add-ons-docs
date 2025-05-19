@@ -37,15 +37,14 @@ Authorization should persist across sessions so users don't have to log in with 
 
 The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0 provider supporting the Code Exchange authorization workflow. You will need to go through some setup steps with the provider you want to use OAuth with first.
 
-<InlineAlert variant="warning" slots="header, text1, text2, text3" />
+<InlineAlert variant="warning" slots="header, text1, text2" />
 
 New OAuth redirect URI
 
-Adobe Express has begun moving from `new.express.adobe.com` to `express.adobe.com`, as part of the sunsetting of the legacy version.
+Adobe Express has moved from `new.express.adobe.com` to `express.adobe.com` as part of the sunsetting of the legacy version. Make sure **both redirect URIs are allowed in your OAuth configuration**:
 
-**Add** `https://express.adobe.com/static/oauth-redirect.html` **to the list of allowed redirect URIs** in your OAuth provider configuration. This replaces the previous URI based on the `new.express.adobe.com` domain.
-
-You should not change any server-side validation yet, as a temporary redirect keeps things working.
+- `https://new.express.adobe.com/static/oauth-redirect.html`
+- `https://express.adobe.com/static/oauth-redirect.html` (new)
 
 Here are the steps to get started:
 
