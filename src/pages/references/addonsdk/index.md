@@ -25,6 +25,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 ## Features Supported by the SDK
 
+<<<<<<< HEAD
 - [Importing Content](../../guides/develop/how-to/use-images.md)
 - [Exporting Content](../../guides/develop/how-to/create-renditions.md)
 - [Accessing Content](../../guides/develop/how-to/group-elements.md)
@@ -36,6 +37,19 @@ This reference is provided to outline the interfaces, methods, properties and ev
 - [Theme Detection](../../guides/develop/how-to/theme-locale.md#detecting-theme)
 - [Access to the Manifest](instance-manifest.md)
 - [Access to the Document information](app-document.md)
+=======
+- [Importing Content](../../guides/learn/how_to/use_images.md)
+- [Exporting Content](../../guides/learn/how_to/create_renditions.md)
+- [Accessing Content](../../guides/learn/how_to/group_elements.md)
+- [Drag & Drop Behavior](../../guides/learn/how_to/drag_and_drop.md)
+- [Authorization with OAuth 2.0](../../guides/learn/how_to/oauth2.md)
+- [Client-side Storage Access](../../guides/learn/how_to/local_data_management.md)
+- [Modal Dialogs](../../guides/learn/how_to/modal_dialogs.md)
+- [Locale Detection](../../guides/learn/how_to/theme_locale.md#detecting-locale-supported-locales-and-format)
+- [Theme Detection](../../guides/learn/how_to/theme_locale.md#detecting-theme)
+- [Access to the Manifest](/references/addonsdk/instance-manifest.md)
+- [Access to the Document information](/references/addonsdk/app-document.md)
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56
 
 <InlineAlert slots="text" variant="success"/>
 
@@ -67,7 +81,7 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
 <body>
     Hello World!
     <script type="module">
-        import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+        import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
         addOnUISdk.ready.then(async () => {
             console.log("addOnUISdk is ready for use.");
         });     
@@ -84,19 +98,25 @@ To use the SDK from an HTML file, simply include a link to it in a `<script>` ta
 The SDK can be referenced in `.js/.jsx/.ts/.tsx` source files by adding it to the list of imports as a default module reference, such as in the following:
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
 **Note:** if you created your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get a types definition file named `add-on-ui-sdk.d.ts` generated in your project `src` for you. This file contains the following exports, and allows you to take advantage of type checking and auto-completion features while developing with the Add-on SDK in your IDE.
 
 ```ts
+<<<<<<< HEAD
 declare module "https://new.express.adobe.com/static/add-on-sdk/sdk.js" {
     export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
     export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+=======
+declare module "https://express.adobe.com/static/add-on-sdk/sdk.js" {
+  export * from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+  export { default } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56
 }
 ```
 
-See the [typescript definitions section](../../guides/develop/frameworks-libraries-bundling.md#typescript-definitions) in the developer guides as well for more details.
+See the [typescript definitions section](../../guides/build/advanced-topics/frameworks-libraries-bundling.md#typescript-definitions) in the developer guides as well for more details.
 
 ## addOnUISdk Properties
 

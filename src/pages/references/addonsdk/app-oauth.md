@@ -1,6 +1,10 @@
 # addOnUISdk.app.oauth
 
+<<<<<<< HEAD
 Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/develop/how-to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../samples.md) as well for more extensive examples of using this workflow.
+=======
+Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/learn/how_to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../guides/learn/samples.md) as well for more extensive examples of using this workflow.
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56
 
 ## Methods
 

@@ -10,4 +10,8 @@
 
 ### type
 
+<<<<<<< HEAD:src/pages/references/document-sandbox/document-apis/interfaces/point-text-layout.md
 • **type**: [`autoWidth`](../enumerations/text-type.md#autowidth)
+=======
+• **type**: [`autoWidth`](../enumerations/TextLayout.md#autowidth)
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/references/document-sandbox/document-apis/interfaces/PointTextLayout.md

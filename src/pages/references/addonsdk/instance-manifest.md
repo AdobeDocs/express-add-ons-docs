@@ -17,23 +17,23 @@ Below is an example of using the `manifest` object, along with the expected outp
 ### Example
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
-addOnUISdk.ready.then(() => {  
-  console.log(JSON.stringify(addOnUISdk.instance.manifest));  
+addOnUISdk.ready.then(() => {
+  console.log(JSON.stringify(addOnUISdk.instance.manifest));
 
   console.log("Name: " + manifest["name"]);
-  console.log("Test ID " + manifest["testId"]);                
+  console.log("Test ID " + manifest["testId"]);
   console.log("Version " + manifest["version"]);
   console.log("Manifest Version " + manifest["manifestVersion"]);
   for (const app of manifest["requirements"]["apps"]) {
-      console.log("Requirements -> Apps " + JSON.stringify(app));
+    console.log("Requirements -> Apps " + JSON.stringify(app));
   }
   for (const entryPoint of manifest["entryPoints"]) {
-      console.log("Entry Point Type " + entryPoint["type"]);
-      console.log("Entry Point ID " + entryPoint["id"]);
-      console.log("Entry Point main " + entryPoint["main"]);    
-}
+    console.log("Entry Point Type " + entryPoint["type"]);
+    console.log("Entry Point ID " + entryPoint["id"]);
+    console.log("Entry Point main " + entryPoint["main"]);
+  }
 });
 ```
 

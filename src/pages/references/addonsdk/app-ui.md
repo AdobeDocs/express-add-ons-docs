@@ -1,6 +1,10 @@
 # addOnUISdk.app.ui
 
+<<<<<<< HEAD
 Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/develop/how-to/theme-locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/develop/how-to/theme-locale.md#detecting-theme) in use to update your add-on user interface accordingly.
+=======
+Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/learn/how_to/theme_locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/learn/how_to/theme_locale.md#detecting-theme) in use to update your add-on user interface accordingly.
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56
 
 ## Properties
 
@@ -241,7 +245,7 @@ Both Collection and Tab navigation can be executed in combination.
 #### JavaScript
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { constants } = addOnUISdk;
 const { PanelActionType, EditorPanel } = constants;
 
@@ -285,7 +289,7 @@ addOnUISdk.ready.then(() => {
 #### TypeScript
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { constants } = addOnUISdk;
 const { PanelActionType, EditorPanel } = constants;
 
@@ -351,7 +355,7 @@ addOnUISdk.app.on("themechange", (data) => {
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the **swc** sample provided in the [code samples](../../samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
+Please see the **swc** sample provided in the [code samples](../../guides/learn/samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
 
 ### localechange
 
