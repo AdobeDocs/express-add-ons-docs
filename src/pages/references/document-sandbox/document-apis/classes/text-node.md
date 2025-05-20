@@ -164,11 +164,7 @@ layout modes, except for [AreaTextLayout](../interfaces/area-text-layout.md), ar
 
 #### Throws
 
-<<<<<<< HEAD:src/pages/references/document-sandbox/document-apis/classes/text-node.md
-if changing text layout to/from [TextType.magicFit](../enumerations/text-type.md#magicfit) or [TextType.circular](../enumerations/text-type.md#circular) layout when the text contains font(s) unavailable to the current user.
-=======
 if changing text layout to/from [TextLayout.magicFit](../enumerations/TextLayout.md#magicfit) or [TextLayout.circular](../enumerations/TextLayout.md#circular) layout when the text contains font(s) unavailable to the current user.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/references/document-sandbox/document-apis/classes/TextNode.md
 
 #### Throws
 
