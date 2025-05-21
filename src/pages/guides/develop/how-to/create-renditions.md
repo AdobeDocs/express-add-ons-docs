@@ -45,7 +45,7 @@ Usually, you create renditions to allow users to download or share your content 
 In the following snippet, we create a rendition of the current page in PNG format when the user clicks a button. We'll create a temporary anchor element to trigger the download of the rendition.
 
 ```js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   // Attach the rendition creation to a button click event
@@ -140,11 +140,7 @@ To allow the user to download the rendition, the **"permissions"** section shoul
 }
 ```
 
-<<<<<<<< HEAD:src/pages/guides/develop/how-to/create-renditions.md
 Please also check out the [export-sample add-on](../../../samples.md#export-sample) for a more detailed example.
-========
-Please also check out the [export-sample add-on](../samples.md#export-sample) for a more detailed example.
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/create_renditions.md
 
 ## The Preview intent
 

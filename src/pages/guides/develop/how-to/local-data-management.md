@@ -30,7 +30,7 @@ Each add-on can store up to **10MB of data as key-value pairs**; supported value
 ### Example
 
 ```js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 let store;
 
@@ -60,8 +60,4 @@ async function displayAllItems() {
 
 Local data storage can be useful in many scenarios, such as when you need to cache data from server requests, store user UI preferences, pre-populate fields on load, or save temporary data. The fact that `clientStorage` support multiple data types makes it a more versatile tool to use compared to the Browser's `localStorage`.
 
-<<<<<<<< HEAD:src/pages/guides/develop/how-to/local-data-management.md
 Please, refer to the [SDK Reference section for clientStorage](../../../references/addonsdk/instance-client-storage.md) for a complete list of methods, and the [use-client-storage sample add-on](../../../samples.md#use-client-storage) for more details.
-========
-Please, refer to the [SDK Reference section for clientStorage](../../../references/addonsdk/instance-clientStorage.md) for a complete list of methods, and the [use-client-storage sample add-on](../samples.md#use-client-storage) for more details.
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/local_data_management.md

@@ -28,7 +28,7 @@ Through the [Add-on UI SDK Document object](../../../references/addonsdk/app-doc
 ### Example
 
 ```js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
 
@@ -41,8 +41,8 @@ addOnUISdk.ready.then(() => {
 
   // Get the document Link
   const docLink = await addOnUISdk.app.document.link();
-
-  console.log(`Document ID: ${docId}; Document Title: ${docTitle}`; `Document Link: ${docLink}`);
+  
+  console.log(`Document ID: ${docId}; Document Title: ${docTitle}`; `Document Link: ${docLink}`);  
 
   // Listen for document ID change
   addOnUISdk.app.on("documentIdAvailable", data => {

@@ -23,11 +23,11 @@ A resolved `Promise` containing the `userId` of the current user.
 ### Usage
 
 ```js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-  const userId = await addOnUISdk.app.currentUser.userId();
-  console.log("Current Userid: " + userId);
+    const userId = await addOnUISdk.app.currentUser.userId();
+    console.log("Current Userid: " + userId);
 });
 ```
 
@@ -52,8 +52,8 @@ A resolved `Promise` containing a boolean value indicating if the user is a prem
 ### Usage
 
 ```js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+ 
 addOnUISdk.ready.then(async () => {
   const isPremiumUser = await addOnUISdk.app.currentUser.isPremiumUser();
   if (!isPremiumUser) {

@@ -6,11 +6,6 @@
 
 *Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
-<InlineAlert slots="text" variant="warning"/>
-
-_Additional alignment types may be added in the future._ If your code has different branches or cases depending on text alignment,
-always have a default/fallback case to handle any unknown values you may encounter.
-
 ## Enumeration Members
 
 ### center
@@ -18,12 +13,6 @@ always have a default/fallback case to handle any unknown values you may encount
 • **center**: `3`
 
 <hr />
-
-### justifyLeft
-
-• **justifyLeft**: `4`
-
----
 
 ### left
 

@@ -10,11 +10,7 @@ The [RuntimeType](addonsdk-constants.md) constant representing the entrypoint cr
 
 ### [`Dialog`](runtime-dialog.md)
 
-<<<<<<< HEAD
 (Optional) When the `RuntimeType` is `"dialog"`, this object will contain the reference to the [modal dialog](runtime-dialog.md) the add-on invoked, and can be used to programmatically close the dialog and send results back to the caller. Will be `undefined` when no modal dialog is present. Check out the [modal dialogs use case examples](../../guides/develop/how-to/modal-dialogs.md) for more details on using dialogs, as well as the related [`showModalDialog` method](addonsdk-app.md#showmodaldialog).
-=======
-(Optional) When the `RuntimeType` is `"dialog"`, this object will contain the reference to the [modal dialog](runtime-dialog.md) the add-on invoked, and can be used to programmatically close the dialog and send results back to the caller. Will be `undefined` when no modal dialog is present. Check out the [modal dialogs use case examples](../../guides/learn/how_to/modal_dialogs.md) for more details on using dialogs, as well as the related [`showModalDialog` method](../addonsdk/addonsdk-app.md#showmodaldialog).
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56
 
 ## Methods
 

@@ -30,7 +30,7 @@ You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk
 ### Example
 
 ```js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const userId = await addOnUISdk.app.currentUser.userId();
@@ -49,8 +49,4 @@ addOnUISdk.ready.then(async () => {
 
 The `userId()` serves as a unique identifier that you can use to track whether a user is a free or paid subscriber to your add-on. By storing this ID in your database, you can manage user-specific features and permissions, allowing your add-on to unlock premium functionalities or restrict access based on their subscription status. Similarly, `isPremiumUser()` return value can be used to tailor the user experience, for example suggesting Adobe Express premium features..
 
-<<<<<<<< HEAD:src/pages/guides/develop/how-to/user-info.md
 Please refer to the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-current-user.md) and the [licensed-addon code sample](../../../samples.md#licensed-addon), which shows how you can utilize the hash of the user ID to integrate your add-on with licensing and payment services.
-========
-Please refer to the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-currentUser.md) and the [licensed-addon code sample](../samples.md#licensed-addon), which shows how you can utilize the hash of the user ID to integrate your add-on with licensing and payment services.
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/user_info.md

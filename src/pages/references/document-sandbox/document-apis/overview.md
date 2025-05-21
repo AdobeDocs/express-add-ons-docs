@@ -10,7 +10,6 @@
 
 ## Enumerations
 
-<<<<<<< HEAD
 -   [ArrowHeadType](enumerations/arrow-head-type.md)
 -   [BlendMode](enumerations/blend-mode.md)
 -   [EditorEvent](enumerations/editor-event.md)
@@ -22,19 +21,6 @@
 -   [TextAlignment](enumerations/text-alignment.md)
 -   [TextType](enumerations/text-type.md)
 -   [VisualEffectType](enumerations/visual-effect-type.md)
-=======
--   [ArrowHeadType](enumerations/ArrowHeadType.md)
--   [BlendMode](enumerations/BlendMode.md)
--   [EditorEvent](enumerations/EditorEvent.md)
--   [FillRule](enumerations/FillRule.md)
--   [FillType](enumerations/FillType.md)
--   [SceneNodeType](enumerations/SceneNodeType.md)
--   [StrokePosition](enumerations/StrokePosition.md)
--   [StrokeType](enumerations/StrokeType.md)
--   [TextAlignment](enumerations/TextAlignment.md)
--   [TextLayout](enumerations/TextLayout.md)
--   [VisualEffectType](enumerations/VisualEffectType.md)
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56
 
 ## Classes
 

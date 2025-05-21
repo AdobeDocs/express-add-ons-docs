@@ -31,7 +31,7 @@ Similarly to Images and Audio, you can add Videos to the page using the [`addVid
 
 ```js
 // sandbox/code.js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {
@@ -53,7 +53,7 @@ Please note that you can use `fetch()` also to get videos that are local to the 
 
 ```js
 // sandbox/code.js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {

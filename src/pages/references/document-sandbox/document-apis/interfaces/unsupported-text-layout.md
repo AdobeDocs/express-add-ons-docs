@@ -10,8 +10,4 @@
 
 ### type
 
-<<<<<<< HEAD:src/pages/references/document-sandbox/document-apis/interfaces/unsupported-text-layout.md
 • **type**: [`magicFit`](../enumerations/text-type.md#magicfit) \| [`circular`](../enumerations/text-type.md#circular)
-=======
-• **type**: [`circular`](../enumerations/TextLayout.md#circular) \| [`magicFit`](../enumerations/TextLayout.md#magicfit)
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout.md

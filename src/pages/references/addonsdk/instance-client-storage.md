@@ -2,11 +2,7 @@
 
 The `clientStorage` object provides a reference to Client Storage in the currently running add-on. Client Storage allows you to store, retrieve, and delete persistent data in the user's current browser.
 
-<<<<<<< HEAD:src/pages/references/addonsdk/instance-client-storage.md
 Client Storage is similar to using `Window.localStorage`, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added. See the [Storing and Retrieving Client Side Data](../../guides/develop/how-to/local-data-management.md) for more details.
-=======
-Client Storage is similar to using `Window.localStorage`, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added. See the [Storing and Retrieving Client Side Data](../../guides/learn/how_to/local_data_management.md) for more details.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/references/addonsdk/instance-clientStorage.md
 
 <InlineAlert slots="text1, text2" variant="info"/>
 
@@ -153,11 +149,7 @@ async function getKeys() {
 
 <InlineAlert slots="text" variant="info"/>
 
-<<<<<<< HEAD:src/pages/references/addonsdk/instance-client-storage.md
 Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/develop/how-to/local-data-management.md) for more details about using Client Storage, as well as the [**use-client-storage** sample](../../samples.md) for a more complete example of implementing it in an add-on.
-=======
-Be sure to check out the [Storing and Retrieving Client Side Data](../../guides/learn/how_to/local_data_management.md) for more details about using Client Storage, as well as the [**use-client-storage** sample](../../guides/learn/samples.md) for a more complete example of implementing it in an add-on.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/references/addonsdk/instance-clientStorage.md
 
 ## Errors
 

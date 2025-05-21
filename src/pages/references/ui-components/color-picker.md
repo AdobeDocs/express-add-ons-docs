@@ -32,14 +32,12 @@ The Adobe Express native Color Picker offers several unique features, compared t
 
 ![Color Picker](./images/colorpicker_brand.png)
 
-Using the Adobe Express Color Picker in your add-on instead of building your own version provides a few benefits:
+Using the Adobe ExpressColor Picker in your add-on instead of building your own version provides a few benefits:
 
 - It simplifies the process of selecting a color, bypassing the Browser's color picker.
 - It provides a consistent experience to users, as the color picker is integrated with Adobe Express.
 - It's in sync with any swatches or Brand colors defined in the application.
 - It will evolve with Adobe Express, adding new features over time.
-
-Please note that the Color Picker is going to be available to add-ons in Adobe Express on desktop environment only.
 
 ## API
 
@@ -91,18 +89,14 @@ This method will programmatically close the color picker.
 
 <InlineAlert variant="info" slots="text" />
 
-<<<<<<< HEAD
 Please also refer to the the Color Picker section of the [Use Color](../../guides/develop/how-to/use-color.md#use-the-color-picker) how-to guide for more examples.
-=======
-Please also refer to the the Color Picker section of the [Use Color](../../guides/learn/how_to/use_color.md#use-the-color-picker) how-to guide for more examples.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56
 
 ### Basic usage
 
 ```js
 import addOnUISdk, {
   ColorPickerPlacement,
-} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Basic usage - just show color picker
 addOnUISdk.app.showColorPicker(element);
@@ -143,18 +137,18 @@ addOnUISdk.app.showColorPicker(element, {
 
 ```js
 import addOnUISdk, {
-  ColorPickerEvent,
-} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+  ColorPickerEvents,
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const colorPickerButton = document.getElementById("colorPicker");
 
   // Add event listeners for color picker events
-  colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvents.colorChange, (event) => {
     console.log("Color picker color change event from add-on:", event.detail);
   });
 
-  colorPickerButton.addEventListener(ColorPickerEvent.close, (event) => {
+  colorPickerButton.addEventListener(ColorPickerEvents.close, (event) => {
     console.log("Color picker closed from add-on:", event.detail);
   });
 
@@ -203,30 +197,30 @@ The color picker can be positioned relative to the anchor element using the `pla
 
 **Invalid anchor element: must be an instance of `HTMLElement`.**
 
-- **Origin:** Parameter `anchorElement`.
-- **Fix:** the anchorElement should be a valid `HTMLElement`.
+- **Origin:** Parameter `anchorElement`
+- **Fix:** the anchorElement should be a valid `HTMLElement`
 
 **Invalid title: must be a string.**
 
-- **Origin:** Property `title` in the `ColorPickerOptions`.
-- **Fix:** the `title` should be a valid string.
+- **Origin:** Property `title` in the `ColorPickerOptions`
+- **Fix:** the `title` should be a valid string
 
-**Invalid initialColor: must be either a number in `0xRRGGBB[AA]` format or a string in `"#RRGGBB[AA]"` format.**
+**Invalid initial color: must be a HEX number in `0xRRGGBB` format.**
 
-- **Origin:** Property `initialColor` in the `ColorPickerOptions`.
-- **Fix:** the `initialColor` should be a valid number in `0xRRGGBB[AA]` format or a valid string in `"#RRGGBB[AA]"` format.
+- **Origin:** Property `initialColor` in the `ColorPickerOptions`
+- **Fix:** the `initialColor` should be a valid number in 0xRRGGBB format.
 
 **Invalid placement value: must be one of the valid `ColorPickerPlacement` values.**
 
-- **Origin:** Property `placement` in the `ColorPickerOptions`.
+- **Origin:** Property `placement` in the `ColorPickerOptions`
 - **Fix:** the `placement` should be a valid string from the `ColorPickerPlacement` enum.
 
 **Invalid `eyedropperHidesPicker`: must be a boolean value.**
 
-- **Origin:** Property `eyedropperHidesPicker` in the `ColorPickerOptions`.
+- **Origin:** Property `eyedropperHidesPicker` in the `ColorPickerOptions`
 - **Fix:** the `eyedropperHidesPicker` must be a boolean value.
 
 **Invalid `disableAlphaChannel`: must be a boolean value.**
 
-- **Origin:** Property `disableAlphaChannel` in the `ColorPickerOptions`.
+- **Origin:** Property `disableAlphaChannel` in the `ColorPickerOptions`
 - **Fix:** the `disableAlphaChannel` must be a boolean value.

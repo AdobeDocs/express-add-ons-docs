@@ -20,23 +20,6 @@ contributors:
 
 # Development Tools
 
-This section provides a set of guides to help you in the development stage of your add-on.
-
-## Add-on Development mode
-
-A pre-requisite for local development is to have enabled the **Add-on Development** mode in Adobe Express; [open it in the browser](https://express.adobe.com/), see the following animation for instructions, or expand the details below for a step-by-step guide.
-
-![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
-
-<details>
-  <summary>Click to view a list of steps to enable the Development Mode</summary>
-  <ol>
-    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-</details>
-
 ## Using the CLI
 
 The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
@@ -55,13 +38,8 @@ The table below shows the list of arguments that can be specified with the CLI c
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
 | ------------- | -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `add-on-name` | No       |                                              | Name of the add-on. A new add-on project with this argument will be created in the user's current working directory. |
-<<<<<<<< HEAD:src/pages/guides/getting_started/dev-tooling.md
 | `template`    | Yes      | none, you will be prompted from the CLI | The template to use for creating the add-on. |
 | `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations. |
-========
-| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on.                                                                         |
-| `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations.                                         |
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/getting_started/local_development/dev_tooling.md
 
 For instance, the following command would specify all possible arguments:
 
@@ -77,13 +55,13 @@ See the [templates](#templates) section for the currently supported template val
 
 ```bash
 npx clear-npx-cache
-npx @adobe/create-ccweb-add-on my-addon
+npx @adobe/create-ccweb-add-on my-addon 
 ```
 
 The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
 
 ```bash
-npx @adobe/ccweb-add-on-scripts start --help
+npx @adobe/ccweb-add-on-scripts start --help  
 ```
 
 ### `start` script options
@@ -125,27 +103,23 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 
-| Template           | Framework                                       |
-| ------------------ | ----------------------------------------------- |
-| `javascript`       | JavaScript                                      |
-| `swc-javascript`   | JavaScript with Spectrum Web Components support |
-| `swc-typescript`   | TypeScript with Spectrum Web Components support |
-| `react-javascript` | React with JavaScript                           |
-| `react-typescript` | React with TypeScript                           |
+| Template         | Framework        |
+| ---------------- | ---------------- |
+| `javascript`       | JavaScript       |
+| `swc-javascript`       | JavaScript with Spectrum Web Components support     |
+| `swc-typescript`       | TypeScript with Spectrum Web Components support     |
+| `react-javascript`  | React with JavaScript |
+| `react-typescript` | React with TypeScript |
 
-<<<<<<<< HEAD:src/pages/guides/getting_started/dev-tooling.md
 As well as the following five template options, which include support for the [Document Sandbox APIs](../../references/document-sandbox/index.md):
-========
-As well as the following five template options, which include support for the [Document Sandbox APIs](../../../references/document-sandbox/):
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/getting_started/local_development/dev_tooling.md
 
-| Template                                 | Description                                                           |
-| ---------------------------------------- | --------------------------------------------------------------------- |
-| `javascript-with-document-sandbox`       | JavaScript with Document Sandbox support.                             |
-| `swc-javascript-with-document-sandbox`   | JavaScript and Spectrum Web Components with Document Sandbox support. |
-| `swc-typescript-with-document-sandbox`   | TypeScript and Spectrum Web Components with Document Sandbox support. |
-| `react-javascript-with-document-sandbox` | React and JavaScript with Document Sandbox support.                   |
-| `react-typescript-with-document-sandbox` | React and TypeScript with Document Sandbox support.                   |
+| Template         | Description        |
+| ---------------- | ---------------- |
+| `javascript-with-document-sandbox`  | JavaScript with Document Sandbox support.  |
+| `swc-javascript-with-document-sandbox`  | JavaScript and Spectrum Web Components with Document Sandbox support.  |
+| `swc-typescript-with-document-sandbox`  | TypeScript and Spectrum Web Components with Document Sandbox support.      |
+| `react-javascript-with-document-sandbox`  | React and JavaScript with Document Sandbox support.|
+| `react-typescript-with-document-sandbox` | React and TypeScript with Document Sandbox support.|
 
 You can supply any of the above template names after the `--template` parameter:
 
@@ -185,11 +159,7 @@ You will also see a message in the CLI output notifying you of which template th
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
-<<<<<<<< HEAD:src/pages/guides/getting_started/dev-tooling.md
 Please note that to use [Spectrum Web Components](../../guides/design/user_interface.md#spectrum-web-components) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
-========
-Please note that to use [Spectrum Web Components](../../build/design/implementation_guide.md) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/getting_started/local_development/dev_tooling.md
 
 If you don't want to use TypeScript or React, please refer to [this sample add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc) as an example of a JavaScript/Webpack project with Spectrum Web Components support.
 
@@ -199,11 +169,7 @@ When the scaffolding is complete, you will see the following message, prompting 
 
 ## Manifest
 
-<<<<<<<< HEAD:src/pages/guides/getting_started/dev-tooling.md
 A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../references/manifest/index.md) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
-========
-A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/getting_started/local_development/dev_tooling.md
 
 ## Add-on Development Tools Panel
 

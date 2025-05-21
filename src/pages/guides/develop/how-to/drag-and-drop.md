@@ -29,7 +29,7 @@ You also need to listen for `"dragstart"` and `"dragend"` events to manage logs 
 ### Example
 
 ```js
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready before rendering elements in the DOM.
 addOnUISdk.ready.then(async () => {
@@ -96,7 +96,7 @@ To drag audio content, you must specify an additional `attributes` object with a
 ### Example
 
 ```ts
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Enable drag support for an element
 function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
@@ -156,8 +156,4 @@ You should not attach `click` event listeners to drag-enabled elements in the ca
 
 Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any that may be causing conflicts with drag and drop handlers.
 
-<<<<<<<< HEAD:src/pages/guides/develop/how-to/drag-and-drop.md
 There are several [code samples](../../../samples.md) that implement drag and drop, including the [import-images-using-oauth](../../../samples.md#import-images-using-oauth) and [pix](../../../samples.md#pix) projects that you can reference.
-========
-There are several [code samples](../samples.md) that implement drag and drop, including the [import-images-using-oauth](../samples.md#import-images-using-oauth) and [pix](../samples.md#pix) projects that you can reference.
->>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/drag_and_drop.md

@@ -10,11 +10,7 @@
 
 ### type
 
-<<<<<<< HEAD:src/pages/references/document-sandbox/document-apis/interfaces/auto-height-text-layout.md
 • **type**: [`autoHeight`](../enumerations/text-type.md#autoheight)
-=======
-• **type**: [`autoHeight`](../enumerations/TextLayout.md#autoheight)
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md
 
 <hr />
 
