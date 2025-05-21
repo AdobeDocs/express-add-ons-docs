@@ -63,13 +63,6 @@ new CopyWebpackPlugin({
 
 ## React
 
-<<<<<<< HEAD:src/pages/guides/develop/frameworks-libraries-bundling.md
-The CLI supports two different [react-based templates](../getting_started/dev-tooling.md#templates), and the [code samples](../../samples.md) repository contains various add-ons built with React for you to use as a reference.
-
-## Lit Framework
-
-The CLI provides [starter template options](../getting_started/dev-tooling.md#templates) which provide a basic setup to allow you to use the Lit framework, a lightweight library for building fast, lightweight web components. There are currently template options available for either using basic JavaScript (`swc-javascript`) with Lit or TypeScript (`swc-typescript`), preconfigured to help you get started.
-=======
 The CLI supports two different [react-based templates](../../getting_started/local_development/dev_tooling.md#templates), and the [code samples](../../learn/samples.md) repository contains various add-ons built with React for you to use as a reference.
 
 ## Lit Framework
@@ -84,7 +77,6 @@ Build fast, lightweight web components using the Lit framework. Our CLI offers [
 All templates come pre-configured with the necessary setup and dependencies.
 
 For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](../../learn/how_to/tutorials/using-lit-typescript.md).
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/build/advanced-topics/frameworks-libraries-bundling.md
 
 ## Other JavaScript and CSS libraries
 

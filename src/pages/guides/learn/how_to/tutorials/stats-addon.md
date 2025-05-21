@@ -35,13 +35,8 @@ This tutorial has been written by Davide Barranca, software developer and author
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-<<<<<<< HEAD:src/pages/guides/tutorials/stats-addon.md
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../getting_started/quickstart.md) guide.
-- Familiarity with the Adobe Express Document API, covered in [this tutorial](grids-addon.md).
-=======
 - Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting_started/hello-world.md) guide.
 - Familiarity with the Adobe Express Document API, covered in [this tutorial](../tutorials/grids-addon.md).
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/stats-addon.md
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 
@@ -87,12 +82,8 @@ runtime.exposeApi({
   /* ... */
 }); // exposing a payload {}
 ```
-<<<<<<< HEAD:src/pages/guides/tutorials/stats-addon.md
-We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](../../references/addonsdk/instance-runtime.md).
-=======
 
 We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required _on the other side_ to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/stats-addon.md
 
 ```js
 // UI iframe, importing a payload from the Document Sandbox

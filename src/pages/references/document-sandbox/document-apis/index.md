@@ -62,4 +62,8 @@ insertionParent.children.append(rectangle);
 
 ## Tutorials, References & Code Samples
 
+<<<<<<< HEAD
+Please see [this extensive tutorial](../../../guides/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/tutorials/index.md). Also be sure to check out the [full set of API documentation](/express-add-on-apis/docs/api/classes/Editor) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page) code samples provided in the [document sandbox samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for more details on using the [Document APIs](./classes/editor.md).
+=======
 Please see [this extensive tutorial](../../../guides/learn/how_to/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/learn/how_to/tutorials/). Also be sure to check out the [full set of API documentation](../document-apis/classes/Editor.md) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page) code samples provided in the [document sandbox samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for more details on using the [Document APIs](./classes/Editor.md).
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56

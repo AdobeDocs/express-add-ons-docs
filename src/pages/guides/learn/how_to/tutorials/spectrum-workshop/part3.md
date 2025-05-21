@@ -101,12 +101,7 @@ Some benefits to using Spectrum CSS variables to style your components over abso
 
 - [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens) - the layout of your add-on can be adjusted by using global variables defined in the `@spectrum-web-components/styles/express/spectrum-core-global.css` folder in the `node_modules` of your add-on.
 
-<<<<<<< HEAD:src/pages/guides/tutorials/spectrum-workshop/part3.md
-    **Some general guidelines**
-    - `--spectrum-global-dimension-static-size-*` variables should be used when the dimension needs to be consistent across different elements or components, such as a uniform padding or margin throughout the application. It should also be used when a dimension needs to be adjusted based on a specific context, such as a container element or viewport size.
-=======
   **Some general guidelines** <br/>
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part3.md
 
   - `--spectrum-global-dimension-static-size-*` variables should be used when the dimension needs to be consistent across different elements or components, such as a uniform padding or margin throughout the application. It should also be used when a dimension needs to be adjusted based on a specific context, such as a container element or viewport size.
 
@@ -195,11 +190,7 @@ This section is provided to help troubleshoot any errors you may encounter while
 
 - Why isn't the CLI building the output to the `dist` folder as I would expect? Did I forget to include a `webpack.config.js` file in the root of my project?
 
-<<<<<<< HEAD:src/pages/guides/tutorials/spectrum-workshop/part3.md
-    **Solution:** make sure your [`webpack.config.js`](part1.md#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
-=======
   **Solution:** make sure your [`webpack.config.js`](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/part1/#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part3.md
 
 - I'm building a react-based add-on and it's not building correctly. Does the `scripts` object in the `package.json` of my add-on ensure the `--use webpack` parameter is used?
 
@@ -235,11 +226,6 @@ The following list of resources can be used to learn more about using Adobe's Sp
 - [Adobe Spectrum XD Plugin](https://spectrum.adobe.com/page/spectrum-xd-plugin/)
 - [Adobe Spectrum Figma plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
 - [Adobe Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js/)
-<<<<<<< HEAD:src/pages/guides/tutorials/spectrum-workshop/part3.md
-    - **Reminder:** you should only use this option for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles specifically. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
-- [Add-on Code Samples](../../../samples.md)
-=======
   - **Reminder:** you should only use this option for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles specifically. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
 - [Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part3.md
 - [Color Wheel](https://color.adobe.com/create/color-wheel)

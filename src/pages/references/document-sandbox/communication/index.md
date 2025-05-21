@@ -162,6 +162,21 @@ Some data types are not supported and may result unintended behavior. To avoid t
 
 ### Unsupported data types
 
+<<<<<<< HEAD
+| Type             | Examples                           |
+| ---------------- | ---------------------------------- |
+| Map              | `new Map()`                        |
+| Set              | `new Set()`                        |
+| DataView()       | `new DataView(new ArrayBuffer(8))` |
+| Boolean          | `new Boolean() `                   |
+| String           | `new String(“hello”) `             |
+| RegExp           | `new RegExp("pattern")`            |
+| Symbol           | `Symbol('symbol')`                 |
+| Date             | `new Date()`                       |
+| UserDefinedClass | `new UserDefinedClass()`           |
+| Function         | `() => {}`                         |
+| Circular objects | `const obj = {} obj.key = obj;`    |
+=======
 <br/>
 <table class="spectrum-Table spectrum-Table--sizeM" css="
     background-color:lavender;
@@ -219,3 +234,4 @@ Some data types are not supported and may result unintended behavior. To avoid t
 </tr>
 </tbody>
 </table>
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56

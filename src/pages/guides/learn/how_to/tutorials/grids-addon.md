@@ -72,17 +72,10 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 ### Prerequisites
 
-<<<<<<< HEAD:src/pages/guides/tutorials/grids-addon.md
--   Familiarity with HTML, CSS, JavaScript.
--   Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../getting_started/quickstart.md) guide.
--   An Adobe Express account; use your existing Adobe ID or create one for free.
--   Node.js version 16 or newer.
-=======
 - Familiarity with HTML, CSS, JavaScript.
 - Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting_started/hello-world.md) guide.
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/grids-addon.md
 
 ### Topics Covered
 
@@ -112,13 +105,8 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 As part of the [Document Model Sandbox](../../references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
-<<<<<<< HEAD:src/pages/guides/tutorials/grids-addon.md
--   The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](../develop/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
--   The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](../../references/document-sandbox/communication/index.md)), providing access to the [Document API](../../references/document-sandbox/document-apis/index.md). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
-=======
 - The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](../../platform_concepts/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
 - The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/document-sandbox/communication/)), providing access to the [Document API](/references/document-sandbox/document-apis/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/grids-addon.md
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
@@ -148,11 +136,7 @@ npm run build
 npm run start
 ```
 
-<<<<<<< HEAD:src/pages/guides/tutorials/grids-addon.md
-This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](../getting_started/quickstart.md) guide for a step-by-step walkthrough.
-=======
 This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](../../../getting_started/hello-world.md) guide for a step-by-step walkthrough.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/grids-addon.md
 
 Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Document Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
@@ -479,11 +463,7 @@ You now understand the fundamentals of the Adobe Express DOM and the hierarchica
 
 ### Designing the UI with Spectrum Web Components
 
-<<<<<<< HEAD:src/pages/guides/tutorials/grids-addon.md
-Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](../design/index.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
-=======
 Although the main subject of this tutorial is the Document API, let's spend a moment discussing the Grid add-on's User Interface. It's built mainly with **Spectrum Web Components** (see [this guide](../../../build/design/implementation_guide.md) for a refresher on Adobe's UX Guidelines and the use of the Spectrum Design System), in particular:
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/grids-addon.md
 
 - `<sp-number-field>` for the Rows and Columns inputs;
 - `<sp-slider>` for the Gutter;[^4]
@@ -1081,15 +1061,9 @@ Although not exposed through the Communication API, the `gridRef` variable is pr
 
 Congratulations! You've coded from scratch the Grids Design System add-on. This proof-of-concept may be extended to make it even more useful as a product; you may implement the following features as an exercise.
 
-<<<<<<< HEAD:src/pages/guides/tutorials/grids-addon.md
--   **Page margins**: we're using the gutter for this purpose, but a proper `<sp-number-field>` can be added to allow users to set margins.
--   **Visibility toggle**: Use a `<sp-slider>`to control the grid's opacity, or add a `<sp-switch>` to toggle them on and off.
--   **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](../../references/addonsdk/instance-client-storage.md).
-=======
 - **Page margins**: we're using the gutter for this purpose, but a proper `<sp-number-field>` can be added to allow users to set margins.
 - **Visibility toggle**: Use a `<sp-slider>`to control the grid's opacity, or add a `<sp-switch>` to toggle them on and off.
 - **Presets**: a dropdown menu might store commonly used grid sets—use a `<sp-picker>` and the [Client Storage API](/references/addonsdk/instance-clientStorage/).
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/grids-addon.md
 
 ## Lessons Learned
 

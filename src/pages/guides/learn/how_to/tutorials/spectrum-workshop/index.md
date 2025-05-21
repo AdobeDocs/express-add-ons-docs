@@ -54,11 +54,7 @@ This add-on allows users to select settings to customize a bingo card; including
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-<<<<<<< HEAD:src/pages/guides/tutorials/spectrum-workshop/index.md
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../getting_started/quickstart.md) guide.
-=======
 - Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../../getting_started/hello-world.md) guide.
->>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/guides/learn/how_to/tutorials/spectrum-workshop/index.md
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 

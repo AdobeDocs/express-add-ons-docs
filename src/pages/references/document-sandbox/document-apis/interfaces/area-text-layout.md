@@ -18,7 +18,11 @@ The height of the text node in pixels.
 
 ### type
 
+<<<<<<< HEAD:src/pages/references/document-sandbox/document-apis/interfaces/area-text-layout.md
+• **type**: [`area`](../enumerations/text-type.md#area)
+=======
 • **type**: [`area`](../enumerations/TextLayout.md#area)
+>>>>>>> c10e7f13f0ebdbfd5ff5dc03e7fed47ab831ba56:src/pages/references/document-sandbox/document-apis/interfaces/AreaTextLayout.md
 
 <hr />
 
