@@ -33,7 +33,7 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code-playground.md) and start tinkering with the API right away.
 
-<TextBlock slots="image, heading, text, text1" width="50%"/>
+<Text slots="image, heading, text, text1" width="50%"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
 
@@ -43,7 +43,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 [Find inspiration →](./getting_started/developer-journey.md#discover)
 
-<TextBlock slots="image, heading, text, text1" width="50%"/>
+<Text slots="image, heading, text, text1" width="50%"/>
 
 ![Learn](./getting_started/img/devjourney-2-learn.png)
 
@@ -53,7 +53,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 [Dive deeper →](./getting_started/developer-journey.md#learn)
 
-<TextBlock slots="image, heading, text, text1" width="50%" />
+<Text slots="image, heading, text, text1" width="50%" />
 
 ![Develop](./getting_started/img/devjourney-3-develop.png)
 
@@ -63,7 +63,7 @@ Transform your ideas into a polished product following our best practices.
 
 [Start building →](./getting_started/developer-journey.md#develop)
 
-<TextBlock slots="image, heading, text, text1" width="50%" />
+<Text slots="image, heading, text, text1" width="50%" />
 
 ![Distribute](./getting_started/img/devjourney-4-distribute.png)
 
