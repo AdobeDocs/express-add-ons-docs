@@ -41,7 +41,7 @@ In addition to these code samples, you should also be sure to check out the [Tem
 
 Demonstrates how to get started with add-on development with a simple app that greets a user after a name is entered.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - HTML
 - JavaScript
@@ -53,12 +53,12 @@ Demonstrates how to get started with add-on development with a simple app that g
 
 Demonstrates how to use the add-on SDK's Import and Drag and Drop APIs to add images over click and drag and drop to a document.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - JavaScript
 - CSS
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Import Content](../../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
 - [Drag and Drop](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
@@ -67,14 +67,14 @@ Demonstrates how to use the add-on SDK's Import and Drag and Drop APIs to add im
 
 Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect their Dropbox account (in addition to leveraging some others listed below).
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - React
 - React Spectrum
 - CSS
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [OAuth API's](../../references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
 - [Import Content](../../references/addonsdk/app-document.md) to add images from the add-on to the document.
@@ -85,13 +85,13 @@ Demonstrates how to use the add-on SDK's OAuth API to allow its users to connect
 
 Demonstrates how to use the Client Storage API to persist user generated data through a todo list.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - TypeScript
 - CSS
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Client Storage](../../references/addonsdk/instance-client-storage.md) to persist the todo items.
 
@@ -99,13 +99,13 @@ Demonstrates how to use the Client Storage API to persist user generated data th
 
 Demonstrates how to use the add-on SDK's to export renditions of content in various formats including jpeg, png, pdf and mp4.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - JavaScript
 - Spectrum Web Components
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Export Content](../../references/addonsdk/app-document.md) to generate renditions.
 - [Import Content](../../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
@@ -114,13 +114,13 @@ Demonstrates how to use the add-on SDK's to export renditions of content in vari
 
 Demonstrates how to use the Modal Dialog APIs to pop-up variations of modals from your add-ons.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - React
 - React Spectrum
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Modal Dialogs](../../references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a variation of a modal reflecting the selections made from the add-ons panel UI.
 
@@ -128,13 +128,13 @@ Demonstrates how to use the Modal Dialog APIs to pop-up variations of modals fro
 
 Demonstrates how to utilize the hash of the user ID to integrate an add-on with licensing and payment services and monetize effectively.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - React
 - React Spectrum
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Current User API](../../references/addonsdk/app-current-user.md) to validate the current userid's.
 - [Modal Dialogs](../../references/addonsdk/addonsdk-app.md#showmodaldialog) to pop-up a modal.
@@ -143,30 +143,27 @@ Demonstrates how to utilize the hash of the user ID to integrate an add-on with 
 
 Demonstrates how to record audio using the browser's media recorder API, converting the raw Blob into a `WAV` Blob and using the document's `addAudio()` API.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - JavaScript
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - Record audio using the Browser's API, transforming a raw Blob into a WAV Blob using an HPC codec.
 - [Add audio](../../references/addonsdk/app-document.md#addaudio) to the current document's page.
-
-<!-- # Contributed Add-on Samples
-The following samples were contributed from the team. -->
 
 ## [pix](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/pix)
 
 A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. Users can drag the resulting pixel art on to the canvas, but they can also import the current page as pixel art (downsampled to 16x16).
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - HTML Canvas
 - React
 - Spectrum Web Components
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Drag and Drop](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) to add the dragged image to the document.
 - [Export Content](../../references/addonsdk/app-document.md) to generate renditions.
@@ -176,7 +173,7 @@ A react-based add-on that illustrates a very simple 16x16 pixel editor add-on. U
 
 Simple sample which illustrates how to use **Spectrum Web Components** without React or any other framework.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - HTML
 - CSS
@@ -184,21 +181,21 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 - Spectrum Web Components
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Application UI Theme](../../references/addonsdk/app-ui.md) to set the theme (only once the SDK is loaded to prevent any flash of unstyled content) and to listen and respond to theme changes.
 
 ## [swc-react-theme-sampler](https://github.com/AdobeDocs/express-add-on-samples/tree/main/contributed/swc-react-theme-sampler)
 
-Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) library, a set of React wrapper components for Spectrum Web Components (SWC), as well as illustrates some of the different [Spectrum theme](https://opensource.adobe.com/spectrum-web-components/tools/theme/) component properties provided with Spectrum (ie: main _Express_ theme, _scale_ and _color_) and how they affect the UI.
+Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) library, a set of React wrapper components for Spectrum Web Components (SWC), as well as illustrates some of the different [Spectrum theme](https://opensource.adobe.com/spectrum-web-components/tools/theme/) component properties provided with Spectrum (ie: main *Express* theme, *scale* and *color*) and how they affect the UI.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - React
 - SWC-React
 - Webpack
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Application UI Theme](../../references/addonsdk/app-ui.md) to set the theme and to listen and respond to theme changes.
 
@@ -206,7 +203,7 @@ Demonstrates the use of the [SWC-React](https://opensource.adobe.com/spectrum-we
 
 Simple sample which illustrates how to use **Spectrum Web Components** without React or any other framework.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - Vue.js
 - HTML
@@ -214,38 +211,20 @@ Simple sample which illustrates how to use **Spectrum Web Components** without R
 - Webpack
 - CSS
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Add-on SDK Ready](../../references/addonsdk/addonsdk.md) method is checked to ensure the SDK is loaded before enabling the button in the UI (similar to the templates generated with our CLI, but based on Vue.js).
-
-<!-- # Marketplace Add-on Samples
-The following samples were built to show how to use specific some popular 3rd party services. -->
-
-<!-- ## [Dropbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/dropbox)
-Allows users to connect to their Dropbox account. Once connected, they can fetch their images and videos from their account and add them to their Express pages.
-
-**Technologies Used:** <br/>
-
-- React
-- React Spectrum
-- Webpack
-
-**Features Leveraged:**<br/>
-
-- [OAuth API's](../../references/addonsdk/app-oauth.md) to authorize the user with the Dropbox service.
-- [Drag and Drop](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
-- [Import Content](../../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked. -->
 
 ## [Giphy](https://github.com/AdobeDocs/express-add-on-samples/tree/main/marketplace/giphy)
 
 Allows users to search for popular gifs and add them to the document.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - JavaScript
 - Spectrum Web Components
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Drag and Drop](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping images to the document.
 - [Import Content](../../references/addonsdk/app-document.md) to add the image to the document when the gif is clicked.
@@ -254,12 +233,12 @@ Allows users to search for popular gifs and add them to the document.
 
 Allows users to create a QR code based on a URL and add it to their document.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - JavaScript
 - Spectrum Web Components
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Import Content](../../references/addonsdk/app-document.md) to add the QR Code image to the document when it's clicked.
 - [Drag and Drop](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) to support dragging and dropping QR Codes to the document.
@@ -268,14 +247,14 @@ Allows users to create a QR code based on a URL and add it to their document.
 
 Allows users to create two-color gradients of various shapes and direction, and add them to their Adobe Express project.
 
-**Technologies Used:** <br/>
+**Technologies Used:** 
 
 - Lit Web Components
 - Spectrum Web Components
 - 2D Canvas
 - TypeScript
 
-**Features Leveraged:**<br/>
+**Features Leveraged:**
 
 - [Create Bitmap Image](../../references/document-sandbox/document-apis/classes/editor.md#createimagecontainer) in the document from bitmap data generated in the add-on iframe UI.
 
