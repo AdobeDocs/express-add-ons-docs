@@ -32,7 +32,7 @@ In the process of creating a private link, you will be required to upload a zip 
 npm run package
 ```
 
-The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the _root_ of the zip file, similar to what's built into the `/dist` folder.
+The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder.
 
 ## Step 1: Create a new Add-on Listing
 
@@ -97,10 +97,6 @@ The package will go through a verification process which may take a few seconds,
 If the `zip` validation is successful, you will see a green checkmark next to the **Add-on package verified** text, and you can add some Release Notes (1000 characters max) and a 144 x 144px icon.
 
 ![Verified](./img/create-private-link-details-v2.png)
-
-<!-- <InlineAlert slots="text" variant="success"/>
-
-The number of characters allowed for any given field is shown above it throughout the distribution experience (for instance, the name field allows a max of 25 characters). The number will automatically update with the remaining amount as you're typing into it. -->
 
 Once you've entered the required fields, the **Save and create private link** button will be enabled.
 
