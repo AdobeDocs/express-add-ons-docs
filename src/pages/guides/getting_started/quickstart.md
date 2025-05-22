@@ -42,7 +42,7 @@ Check out this short video below for a quick visual introduction to the steps yo
 
 ### Add-on CLI
 
-The **[Adobe Express add-on CLI](./local_development/dev_tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
+The **[Adobe Express add-on CLI](./local_development/dev-tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
 
 ## Step 1: Create your add-on project
 
@@ -57,7 +57,7 @@ This command will create a new add-on based on pure JavaScript with Document San
 - `hello-world` is the name of the add-on you are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
-The [Templates section](./local_development/dev_tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
+The [Templates section](./local_development/dev-tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
 
 **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
@@ -120,7 +120,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 <InlineAlert slots="text1, text2" variant="info"/>
 
-It's possible to access the **Add-ons** from the home page as well (i.e., without the need to open a new project first). In this case, you must follow the listing creation outlined [here](../../guides/build/distribute/private-dist.md#step-1-create-a-new-add-on-listing) first.
+It's possible to access the **Add-ons** from the home page as well (i.e., without the need to open a new project first). In this case, you must follow the listing creation outlined [here](../build/distribute/private-dist.md#step-1-create-a-new-add-on-listing) first.
 
 For simplicity's sake, this Quickstart guide covers the document creation method.
 
@@ -186,6 +186,6 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 Congratulations! You've completed the quickstart and run your first add-on!
 
-Next, check out the [development tools](./local_development/dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../build/design/index.md), [developing](../develop/index.md), [debugging](./local_development/browser.md) and [distributing](../build/distribute/index.md) your add-ons.
+Next, check out the [development tools](./local_development/dev-tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../index.md), where you will find in-depth resources for [designing](../build/design/index.md), [developing](../develop/index.md), [debugging](./local_development/browser.md) and [distributing](../build/distribute/index.md) your add-ons.
 
 If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/resources/tutorials), and exploring our collection of [code samples](../learn/samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.

@@ -74,7 +74,7 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 
 ## Learn
 
-The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code_playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
+The best way to learn is by doing! Adobe Express integrates a [Playground](code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
 <br/><br/><div style="display: flex; justify-content: center;">
 
@@ -87,7 +87,7 @@ You need to tick a few boxes in the application in order to enable it, as the an
 
 ![Enable Developer Settings](./img/enable-playground.gif)
 
-Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code_playground.md#script-mode) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code_playground.md) for more details.
+Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code-playground.md#script-mode) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code-playground.md) for more details.
 
 [![Code Playground](./img/playground.png)](./code_playground.md)
 
@@ -95,19 +95,19 @@ Once it's open, you can play with the code directly in the editor, and see the c
 
 To properly experiment with the Playground, head to the [How-tos](../learn/how_to/index.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. They cover the most common use cases, and are a great way to get familiar with the add-on SDK. Try the following as a starter:
 
-- [Creating Text](../learn/how_to/use_text.md#create-text)
-- [Creating Geometry](../learn/how_to/use_geometry.md)
-- [Grouping Elements](../learn/how_to/group_elements.md)
+- [Creating Text](../learn/how_to/use-text.md#create-text)
+- [Creating Geometry](../learn/how_to/use-geometry.md)
+- [Grouping Elements](../learn/how_to/group-elements.md)
 
 When you feel more comfortable, you can tinker with these other use cases:
 
-- [Using Colors](../learn/how_to/use_color.md)
-- [Exporting Renditions](../learn/how_to/create_renditions.md)
-- [Document](../learn/how_to/document_metadata.md) and [Element Metadata](../learn/how_to/document_metadata.md)
+- [Using Colors](../learn/how_to/use-color.md)
+- [Exporting Renditions](../learn/how_to/create-renditions.md)
+- [Document](../learn/how_to/document-metadata.md) and [Element Metadata](../learn/how_to/document-metadata.md)
 
 ### Scaffold a Local Development Environment
 
-To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](./local_development/dev_tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
+To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](./local_development/dev-tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
 
 ![doc sandbox prompt](./local_development/img/CLI-template-prompt.png)
 
@@ -141,13 +141,13 @@ Adobe Express is based on the [Adobe Spectrum design system](https://s2.spectrum
     <iframe width="779" height="438" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-We've created a set of [UX Guidelines](../build/design/index.md) to help you get started; they cover the [design principles](../build/design/ux_guidelines/design_principles.md), [color](../build/design/ux_guidelines/visual_elements.md#color), [typography](../build/design/ux_guidelines/visual_elements.md#typography), [layout](../build/design/ux_guidelines/visual_elements.md#layout--structure) and much more.
+We've created a set of [UX Guidelines](../build/design/index.md) to help you get started; they cover the [design principles](../build/design/ux_guidelines/design-principles.md), [color](../build/design/ux_guidelines/visual-elements.md#color), [typography](../build/design/ux_guidelines/visual-elements.md#typography), [layout](../build/design/ux_guidelines/visual-elements.md#layout--structure) and much more.
 
 You should use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), a library of pre-built components that you can use to create a consistent UI for your add-on. You can test them in a sandboxed environment like Codepen.
 
 [![Spectrum Web Components Codepen](../learn/how_to/tutorials/images/bingo-codepen.png)](../learn/how_to/tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
 
-Read our [Implementation Guide](../build/design/implementation_guide.md) or follow our two-part [Bingo Card Generator add-on tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
+Read our [Implementation Guide](../build/design/implementation-guide.md) or follow our two-part [Bingo Card Generator add-on tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
 
 [![Bingo Card Generator add-on](../learn/how_to/tutorials/images/bingo-v1-addon.png)](../learn/how_to/tutorials/spectrum-workshop/index.md)
 

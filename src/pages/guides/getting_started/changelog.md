@@ -58,13 +58,13 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
   - The `initialColor` parameter now accepts a string in `"#RRGGBB[AA]"` format, in addition to the previous HEX number `0xRRGGBB[AA]`—both with optional alpha channel.
   - We fixed the return value of the `ColorPickerEvent.colorChange` event, which now correctly handles the color with or without the alpha channel, depending on the value of the `disableAlphaChannel` parameter.
   - **Breaking change**: the `ColorPickerEvents` enum has been renamed to `ColorPickerEvent` (singular).
-- Renamed the TextType enumerable to [`TextLayout`](../../references/document-sandbox/document-apis/enumerations/TextLayout.md) in the Text APIs.
+- Renamed the TextType enumerable to [`TextLayout`](../../references/document-sandbox/document-apis/enumerations/text-layout.md) in the Text APIs.
 
 ## 2025-04-22
 
 ### Updated
 
-- The [Code Playground](./code_playground.md) documentation has been updated with details about the new [Script Mode](./code_playground.md#how-to-use-script-mode) and [Local Persistence](./code_playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
+- The [Code Playground](./code-playground.md) documentation has been updated with details about the new [Script Mode](./code-playground.md#how-to-use-script-mode) and [Local Persistence](./code-playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
 
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.
@@ -76,19 +76,19 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document-metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
 - New [vue-starter](../learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
-- Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how_to/use_color.md).
+- Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how_to/use-color.md).
 
 ## 2025-04-03
 
 ### Added
 
-- A new [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method is added to [`TextContentModel`](../../references/document-sandbox/document-apis/classes/TextContentModel.md) class, which returns true if the text contains any fonts unavailable to the current user.
+- A new [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#hasunavailablefonts) method is added to [`TextContentModel`](../../references/document-sandbox/document-apis/classes/text-content-model.md) class, which returns true if the text contains any fonts unavailable to the current user.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#hasunavailablefonts) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Updated
 
@@ -137,7 +137,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 ### Added
 
 - A native Color Picker is available to add-ons via the [`showColorPicker()`](../../references/addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](../../references/addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
-- We've updated the [Use Color](../learn/how_to/use_color.md) How-to guide, now including a few examples on the Color Picker.
+- We've updated the [Use Color](../learn/how_to/use-color.md) How-to guide, now including a few examples on the Color Picker.
 - A [new section](../../references/ui-components/color-picker.md) has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.
 - A new version of the `@adobe/ccweb-add-on-sdk-types` package (v1.14.0) has been released for the CLI. Run `npm update` from the root of your add-on project to update to get the latest typings.
 
@@ -169,17 +169,17 @@ For removing expired SSL certificate or certificate authority, developers can no
 ### Changed
 
 - Stabilized the following HLAPI's:
-  - The [TextNode](../../references/document-sandbox/document-apis/classes/TextNode.md) API's.
-  - The [fromPostscriptName()](../../references/document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](../../references/document-sandbox/document-apis/classes/Fonts.md) class.
-  - The [TextContentModel](../../references/document-sandbox/document-apis/classes/TextContentModel.md) APIs like [`TextContentModel.characterStyleRanges`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges). The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+  - The [TextNode](../../references/document-sandbox/document-apis/classes/text-node.md) API's.
+  - The [fromPostscriptName()](../../references/document-sandbox/document-apis/classes/fonts.md#fromPostscriptName) API of [Fonts](../../references/document-sandbox/document-apis/classes/fonts.md) class.
+  - The [TextContentModel](../../references/document-sandbox/document-apis/classes/text-content-model.md) APIs like [`TextContentModel.characterStyleRanges`](../../references/document-sandbox/document-apis/classes/text-content-model.md#characterstyleranges). The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-03-03
 
 ### Changed
 
-- The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](../../references/document-sandbox/document-apis/classes/AddOnData.md) class for details. The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+- The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](../../references/document-sandbox/document-apis/classes/add-on-data.md) class for details. The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
 
-- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](../../references/document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](../../references/document-sandbox/document-apis/classes/Context.md#on) and [`off()`](../../references/document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
+- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](../../references/document-sandbox/document-apis/classes/context.md) class, which provides two methods: [`on()`](../../references/document-sandbox/document-apis/classes/context.md#on) and [`off()`](../../references/document-sandbox/document-apis/classes/context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-02-26
 
@@ -195,7 +195,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 **API `paragraphStyleRanges`**
 
-Added new [`TextContentModel.paragraphStyleRanges`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
+Added new [`TextContentModel.paragraphStyleRanges`](../../references/document-sandbox/document-apis/classes/text-content-model.md#paragraphstyleranges),i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.
 
 ### Changed
 
@@ -225,8 +225,8 @@ Stabilized [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) 
 
 ### Added
 
-- A new [`Viewport`](../../references/document-sandbox/document-apis/classes/Viewport.md) class has been added to the Document APIs. [`Viewport`](../../references/document-sandbox/document-apis/classes/Viewport.md) represents the canvas area currently visible on-screen.
-- A new API [`bringIntoView`](../../references/document-sandbox/document-apis/classes/Viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
+- A new [`Viewport`](../../references/document-sandbox/document-apis/classes/viewport.md) class has been added to the Document APIs. [`Viewport`](../../references/document-sandbox/document-apis/classes/viewport.md) represents the canvas area currently visible on-screen.
+- A new API [`bringIntoView`](../../references/document-sandbox/document-apis/classes/viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
 
 ## 2025-01-13
 
@@ -260,16 +260,16 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ### New
 
 - Added many new **Text APIs** for improved text management.
-  - [`TextNode.fullContent`](../../references/document-sandbox/document-apis/classes/TextNode.md#fullcontent) accessor: returns the [`TextContentModel`](../../references/document-sandbox/document-apis/classes/TextContentModel.md) containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).
-  - [`TextNode.nextTextNode`](../../references/document-sandbox/document-apis/classes/TextNode.md#nexttextnode) accessor: gets the next node that overflowing text will spill into.
-  - [`TextNode.layout`](../../references/document-sandbox/document-apis/classes/TextNode.md#layout) accessor: gets and sets the [`TextType`](../../references/document-sandbox/document-apis/enumerations/TextLayout.md) of the text node frame.
-  - [`TextNode.visualEffects`](../../references/document-sandbox/document-apis/classes/TextNode.md#visualeffects) accessor: list of [`VisualEffectType`](../../references/document-sandbox/document-apis/enumerations/VisualEffectType.md) applied to the text node.
-  - [`TextContentModel.characterStyleRanges`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) accessor: list of [character style](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#color), [`font`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#font), [`fontSize`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#fontsize), [`letterSpacing`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#letterSpacing) and [`underline`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md#underline) properties.
-  - [AvailableFont](../../references/document-sandbox/document-apis/classes/AvailableFont.md) and [UnavailableFont](../../references/document-sandbox/document-apis/classes/UnavailableFont.md) classes.
+  - [`TextNode.fullContent`](../../references/document-sandbox/document-apis/classes/text-node.md#fullcontent) accessor: returns the [`TextContentModel`](../../references/document-sandbox/document-apis/classes/text-content-model.md) containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).
+  - [`TextNode.nextTextNode`](../../references/document-sandbox/document-apis/classes/text-node.md#nexttextnode) accessor: gets the next node that overflowing text will spill into.
+  - [`TextNode.layout`](../../references/document-sandbox/document-apis/classes/text-node.md#layout) accessor: gets and sets the [`TextType`](../../references/document-sandbox/document-apis/enumerations/text-layout.md) of the text node frame.
+  - [`TextNode.visualEffects`](../../references/document-sandbox/document-apis/classes/text-node.md#visualeffects) accessor: list of [`VisualEffectType`](../../references/document-sandbox/document-apis/enumerations/visual-effect-type.md) applied to the text node.
+  - [`TextContentModel.characterStyleRanges`](../../references/document-sandbox/document-apis/classes/text-content-model.md#characterstyleranges) accessor: list of [character style](../../references/document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/character-styles.md#color), [`font`](../../references/document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/character-styles.md#font), [`fontSize`](../../references/document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/character-styles.md#fontsize), [`letterSpacing`](../../references/document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/character-styles.md#letterSpacing) and [`underline`](../../references/document-sandbox/document-apis/interfaces/character-styles.md) ranges in the text content, controlling the [`color`](../../references/document-sandbox/document-apis/interfaces/character-styles.md#underline) properties.
+  - [AvailableFont](../../references/document-sandbox/document-apis/classes/available-font.md) and [UnavailableFont](../../references/document-sandbox/document-apis/classes/unavailable-font.md) classes.
   - Supporting interfaces, enumerations and type aliases.
-- Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](../../references/document-sandbox/document-apis/classes/AddOnData.md) class and the [`addOnData`](../../references/document-sandbox/document-apis/classes/BaseNode.md#addondata) accessor for the BaseNode class.
-- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](../../references/document-sandbox/document-apis/classes/Context.md) class will expose two [`on()`](../../references/document-sandbox/document-apis/classes/Context.md#on) and [`off()`](../../references/document-sandbox/document-apis/classes/Context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
-- Added a new [`GridCellNode`](../../references/document-sandbox/document-apis/classes/GridCellNode.md) class that represents a **cell in a grid**.
+- Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](../../references/document-sandbox/document-apis/classes/add-on-data.md) class and the [`addOnData`](../../references/document-sandbox/document-apis/classes/base-node.md#addondata) accessor for the BaseNode class.
+- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](../../references/document-sandbox/document-apis/classes/context.md) class will expose two [`on()`](../../references/document-sandbox/document-apis/classes/context.md#on) and [`off()`](../../references/document-sandbox/document-apis/classes/context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
+- Added a new [`GridCellNode`](../../references/document-sandbox/document-apis/classes/grid-cell-node.md) class that represents a **cell in a grid**.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -277,11 +277,11 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ### Fixed
 
-- [`GridLayoutNode.allChildren`](../../references/document-sandbox/document-apis/classes/GridLayoutNode.md#allchildren) does not include rectangle nodes.
+- [`GridLayoutNode.allChildren`](../../references/document-sandbox/document-apis/classes/grid-layout-node.md#allchildren) does not include rectangle nodes.
 
 ### Deprecated
 
-- [`TextNode.text`](../../references/document-sandbox/document-apis/classes/TextNode.md#text) is now deprecated; it is still working, but will be removed in a future update. Please use [`TextNode.fullContent.text`](../../references/document-sandbox/document-apis/classes/TextNode.md#fullcontent) instead.
+- [`TextNode.text`](../../references/document-sandbox/document-apis/classes/text-node.md#text) is now deprecated; it is still working, but will be removed in a future update. Please use [`TextNode.fullContent.text`](../../references/document-sandbox/document-apis/classes/text-node.md#fullcontent) instead.
 
 ## 2024-09-24
 
@@ -297,12 +297,12 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-09-10
 
-- Added a new [`replaceMedia()`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
-- Refactoring done to the [`Stroke`](../../references/document-sandbox/document-apis/interfaces/Stroke.md) APIs.
+- Added a new [`replaceMedia()`](../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
+- Refactoring done to the [`Stroke`](../../references/document-sandbox/document-apis/interfaces/stroke.md) APIs.
 
 ## 2024-07-22
 
-- Added a new [`format`](../../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../learn/how_to/theme_locale.md) section.
+- Added a new [`format`](../../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../learn/how_to/theme-locale.md) section.
 - Removed `mobile` and `app` as [`supportedDeviceClass`](../../references/manifest/index.md#requirementsappssupporteddeviceclass) values in the Manifest's `requirements.apps` object.
 
 ## 2024-05-28
@@ -319,16 +319,16 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-04-10
 
-- A new [`VisualNode`](../../references/document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
+- A new [`VisualNode`](../../references/document-sandbox/document-apis/classes/visual-node.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
 - New Document APIs have been added:
-  - [`currentPage`](../../references/document-sandbox/document-apis/classes/Context.md#currentpage) Context accessor: returns the active page.
-  - [`visualRoot`](../../references/document-sandbox/document-apis/classes/VisualNode.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
-  - [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/PageNode.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
-  - Support to Bounds has been added in several classes: [`boundsInParent`](../../references/document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](../../references/document-sandbox/document-apis/classes/GroupNode.md#boundslocal) and [VisualNode](../../references/document-sandbox/document-apis/classes/VisualNode.md#boundslocal)); [`centerPointLocal`](../../references/document-sandbox/document-apis/classes/VisualNode.md#centerpointlocal); [`topLeftLocal`](../../references/document-sandbox/document-apis/classes/VisualNode.md#topleftlocal); [`boundsInNode()`](../../references/document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](../../references/document-sandbox/document-apis/classes/VisualNode.md#localpointinnode);
+  - [`currentPage`](../../references/document-sandbox/document-apis/classes/context.md#currentpage) Context accessor: returns the active page.
+  - [`visualRoot`](../../references/document-sandbox/document-apis/classes/visual-node.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
+  - [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/page-node.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
+  - Support to Bounds has been added in several classes: [`boundsInParent`](../../references/document-sandbox/document-apis/classes/node.md#boundsinparent); `boundsLocal` (for both [GroupNode](../../references/document-sandbox/document-apis/classes/group-node.md#boundslocal) and [VisualNode](../../references/document-sandbox/document-apis/classes/visual-node.md#boundslocal)); [`centerPointLocal`](../../references/document-sandbox/document-apis/classes/visual-node.md#centerpointlocal); [`topLeftLocal`](../../references/document-sandbox/document-apis/classes/visual-node.md#topleftlocal); [`boundsInNode()`](../../references/document-sandbox/document-apis/classes/node.md#boundsinnode); [`localPointInNode()`](../../references/document-sandbox/document-apis/classes/visual-node.md#localpointinnode);
 - The CLI has been updated to release version `2.0.0`, and includes the following:
 
   - Periodic login and EULA consent are no longer required.
-  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../getting_started/local_development/dev_tooling.md#templates) for details on all the available templates.
+  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](local_development/dev-tooling.md#templates) for details on all the available templates.
   - Typings have been updated to include the latest SDK changes, and other internal packages are now at version `2.0.0`.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
@@ -346,8 +346,8 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-03-08
 
-- [`getPagesMetadata()`](../../references/addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../../references/addonsdk/app-currentUser.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
-- New examples have been added to the [use cases guide](../learn/how_to/premium_content.md) for handling premium content.
+- [`getPagesMetadata()`](../../references/addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../../references/addonsdk/app-current-user.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
+- New examples have been added to the [use cases guide](../learn/how_to/premium-content.md) for handling premium content.
 - A new video has been added to the [grids tutorial](../learn/how_to/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
 
 ## 2024-02-21
@@ -357,16 +357,16 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   In addition, the [monetization guidelines](../build/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../build/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../build/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../build/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../build/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
-- A new [Concepts guide](../learn/platform_concepts/document-api.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
+- A new [Concepts guide](../learn/platform_concepts/document-api.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/index.md) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
 
-- A new `id` accessor has been added to the [`BaseNode`](../../references/document-sandbox/document-apis/classes/BaseNode.md) class in the Document APIs and is inherited by all classes that extend it. The `id` represents a unique identifier that stays the same when the file is closed and reopened, or if the node is moved to a different part of the document.
+- A new `id` accessor has been added to the [`BaseNode`](../../references/document-sandbox/document-apis/classes/base-node.md) class in the Document APIs and is inherited by all classes that extend it. The `id` represents a unique identifier that stays the same when the file is closed and reopened, or if the node is moved to a different part of the document.
 
 ## 2024-02-07
 
-- A new [`createPath`](../../references/document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
-- Updates descriptions in various methods and classes in the [Document APIs](../../references/document-sandbox/document-apis/).
+- A new [`createPath`](../../references/document-sandbox/document-apis/classes/editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
+- Updates descriptions in various methods and classes in the [Document APIs](../../references/document-sandbox/document-apis/index.md).
 - Updates to the [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
 - Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
@@ -381,7 +381,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 
 - [`startPremiumUpgradeIfFreeUser()`](../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) experimental API has been added to the [addOnUISdk.app](../../references/addonsdk/addonsdk-app.md) object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.
 
-- [`isPremiumUser()`](../../references/addonsdk/app-currentUser.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](../../references/addonsdk/app-currentUser.md) object to determine if the current user is a premium or free user.
+- [`isPremiumUser()`](../../references/addonsdk/app-current-user.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](../../references/addonsdk/app-current-user.md) object to determine if the current user is a premium or free user.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -397,13 +397,13 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https
 
 <InlineAlert slots="text" variant="warning"/>
 
-**BREAKING NEWS:** The [Adobe Express Document Sandbox](../../references/document-sandbox/) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
+**BREAKING NEWS:** The [Adobe Express Document Sandbox](../../references/document-sandbox/index.md) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
 
 ### Breaking changes (experimental APIs)
 
 Some items in the following list of changes may have been mentioned in recent updates but are being listed in this summary again to serve as a reminder.
 
-- The methods in the [Document API Editor class](../../references/document-sandbox/document-apis/classes/Editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`makeStroke`](../../references/document-sandbox/document-apis/classes/Editor.md#makestroke) respectively.
+- The methods in the [Document API Editor class](../../references/document-sandbox/document-apis/classes/editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](../../references/document-sandbox/document-apis/classes/editor.md#makecolorfill) and [`makeStroke`](../../references/document-sandbox/document-apis/classes/editor.md#makestroke) respectively.
 - `strokes` and `fills` have been renamed to their singular counterpart. (Express does not support multiple strokes or fills). You should use `stroke` and `fill` going forward to access them, and they will no longer be `ItemList` objects, since they represent only a single stroke or fill.
 
   ```js
@@ -416,10 +416,10 @@ Some items in the following list of changes may have been mentioned in recent up
   ellipse.fill = ellipseFill;
   ```
 
-  - `fill` and `stroke.color` are just a [color object](../../references/document-sandbox/document-apis/interfaces/Color.md) of the form `{ red, green, blue, alpha }`.
+  - `fill` and `stroke.color` are just a [color object](../../references/document-sandbox/document-apis/interfaces/color.md) of the form `{ red, green, blue, alpha }`.
   - `stroke` is an object of the form `{ color, width, dashPattern, dashOffset }`
 
-- Color utilities have moved to [`colorUtils`](../../references/document-sandbox/document-apis/classes/ColorUtils.md) instead of `utils`.
+- Color utilities have moved to [`colorUtils`](../../references/document-sandbox/document-apis/classes/color-utils.md) instead of `utils`.
 
   **Old**<br/>
   <del>
@@ -482,11 +482,11 @@ Some items in the following list of changes may have been mentioned in recent up
   rectangle.translation = { x: 100, y: 20 }; // both x,y properties are required
   ```
 
-- A new [`BaseNode`](../../references/document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](../../references/document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
-- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../../references/document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
+- A new [`BaseNode`](../../references/document-sandbox/document-apis/classes/base-node.md) class has been introduced, and [`ContainerNode`](../../references/document-sandbox/document-apis/interfaces/container-node.md) has been moved from a class to an interface.
+- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../../references/document-sandbox/index.md). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
   **Adobe Express Document APIs SDK import**<br/>
-  For access to the [Express document and content authoring APIs](../../references/document-sandbox/document-apis/):
+  For access to the [Express document and content authoring APIs](../../references/document-sandbox/document-apis/index.md):
 
   <del>
 
@@ -503,7 +503,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ```
 
   **Document Sandbox SDK import**<br/>
-  For access to the [document sandbox runtime APIs](../../references/document-sandbox/):
+  For access to the [document sandbox runtime APIs](../../references/document-sandbox/index.md):
 
   <del>
 
@@ -539,14 +539,14 @@ Some items in the following list of changes may have been mentioned in recent up
 
 - The CLI has been updated to release version `1.1.1`, and includes the following:
 
-  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../../references/document-sandbox/), and the `experimentalApis` flag has been removed. Please review the updated [references](../../references/document-sandbox/) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
+  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../../references/document-sandbox/index.md), and the `experimentalApis` flag has been removed. Please review the updated [references](../../references/document-sandbox/index.md) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
   - Typings support has been added to the `javascript` templates to enable intellisense features.
   - Manifest property additions.
   - General improvements and bug fixes.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
-- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../learn/how_to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../../references/document-sandbox/document-apis/) listed here.
+- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../learn/how_to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../../references/document-sandbox/document-apis/index.md) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -558,15 +558,15 @@ Some items in the following list of changes may have been mentioned in recent up
 - A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](../../references/addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **experimental only** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 - The [`createRenditions()` export API](../../references/addonsdk/app-document.md#createrenditions) was updated with the following changes:
   - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](../../references/addonsdk/addonsdk-constants.md) constant value.
-  - The returned type now also includes page metadata (see [`PageMetadata`](../../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../learn/how_to/page_metadata.md).
-- A new [document metadata use case example](../learn/how_to/document_metadata.md) has been added to show how to retrieve the [document id](../../references/addonsdk/app-document.md#id) and [title (ie: name)](../../references/addonsdk/app-document.md#title), including how to listen for the [associated events](../../references/addonsdk/addonsdk-app.md#events).
+  - The returned type now also includes page metadata (see [`PageMetadata`](../../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../learn/how_to/page-metadata.md).
+- A new [document metadata use case example](../learn/how_to/document-metadata.md) has been added to show how to retrieve the [document id](../../references/addonsdk/app-document.md#id) and [title (ie: name)](../../references/addonsdk/app-document.md#title), including how to listen for the [associated events](../../references/addonsdk/addonsdk-app.md#events).
 - New tables have been added to the [Communication API reference](../../references/document-sandbox/communication/index.md) denoting the [supported](../../references/document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](../../references/document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](../../references/document-sandbox/communication/index.md) layer.
 
 ## 2023-12-04
 
 ### Updates
 
-- The [Document API's](../../references/document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](../../references/document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+- The [Document API's](../../references/document-sandbox/document-apis/index.md) were updated to add a new [`ColorUtils`](../../references/document-sandbox/document-apis/classes/color-utils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](../../references/document-sandbox/document-apis/classes/color-utils.md). An example of the old way and new way to create a color are shown below for reference:
 
   ```js
   // Before
@@ -595,7 +595,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ellipse.fill = ellipseFill;
   ```
 
-- A new release has landed for the [**In-App Developer Submission experience**](../build/distribute/) in Express. Some highlights from the release:
+- A new release has landed for the [**In-App Developer Submission experience**](../build/distribute/index.md) in Express. Some highlights from the release:
 
   **Create Add-on flow:** You can now create [an add-on "container"](../build/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
@@ -605,9 +605,9 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
 
-  **Supported Languages:** The [version details step](../build/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../learn/how_to/theme_locale.md).
+  **Supported Languages:** The [version details step](../build/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../learn/how_to/theme-locale.md).
 
-- Updated list of templates and details to include the [Document Sandbox template options](./local_development/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](./local_development/dev_tooling.md#no-template-parameter).
+- Updated list of templates and details to include the [Document Sandbox template options](./local_development/dev-tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](./local_development/dev-tooling.md#no-template-parameter).
 - New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
 - Removed NPS survey.
 
@@ -616,7 +616,7 @@ Some items in the following list of changes may have been mentioned in recent up
 ### Updates
 
 - Adds support to the [Add-on UI SDK](../../references/addonsdk/index.md) for retrieving the [document id](../../references/addonsdk/app-document.md#id) and [title](../../references/addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../../references/addonsdk/addonsdk-app.md#events).
-- Updates the names of the SDK imports for the [Document Sandbox](../../references/document-sandbox/communication/index.md) and the [Document API's SDK](../../references/document-sandbox/document-apis/):
+- Updates the names of the SDK imports for the [Document Sandbox](../../references/document-sandbox/communication/index.md) and the [Document API's SDK](../../references/document-sandbox/document-apis/index.md):
 
   **Document Sandbox SDK import**<br/>
 
@@ -669,20 +669,20 @@ Some items in the following list of changes may have been mentioned in recent up
 ### Updates
 
 - The [Web API's in the Document Sandbox Reference](../../references/document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
-- The [Document API References](../../references/document-sandbox/document-apis/) were updated with the following additions and changes:
+- The [Document API References](../../references/document-sandbox/document-apis/index.md) were updated with the following additions and changes:
 
   **New Classes/Interfaces**<br/>
 
-  - New [RestrictedItemList class](../../references/document-sandbox/document-apis/classes/RestrictedItemList.md)
-  - New [UnknownNode class](../../references/document-sandbox/document-apis/classes/UnknownNode.md)
-  - New [SolidColorShapeNode class](../../references/document-sandbox/document-apis/classes/SolidColorShapeNode.md)
-  - New [Point interface](../../references/document-sandbox/document-apis/interfaces/Point.md)
-  - New `queueAsyncEdit` method added to the [Editor](../../references/document-sandbox/document-apis/classes/Editor.md) class.
+  - New [RestrictedItemList class](../../references/document-sandbox/document-apis/classes/restricted-item-list.md)
+  - New [UnknownNode class](../../references/document-sandbox/document-apis/classes/unknown-node.md)
+  - New [SolidColorShapeNode class](../../references/document-sandbox/document-apis/classes/solid-color-shape-node.md)
+  - New [Point interface](../../references/document-sandbox/document-apis/interfaces/point.md)
+  - New `queueAsyncEdit` method added to the [Editor](../../references/document-sandbox/document-apis/classes/editor.md) class.
   - Renames the [Constants](../../references/document-sandbox/document-apis/enumerations/) to remove the `Value` suffix.
 
   **Updates to Node Classes**<br/>
 
-The accessors and methods below were removed or replaced with new names in the [`Node` class](../../references/document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](../../references/document-sandbox/document-apis/) specifically to learn more about each.
+The accessors and methods below were removed or replaced with new names in the [`Node` class](../../references/document-sandbox/document-apis/classes/node.md) and classes that extend it. Please refer to the [Document API References](../../references/document-sandbox/document-apis/index.md) specifically to learn more about each.
 
 - Removes `absoluteRotation` accessor
 - Removes `absoluteTransform` accessor
@@ -699,16 +699,16 @@ The accessors and methods below were removed or replaced with new names in the [
 
 ## 2023-11-27
 
-Updated [Document API references](../../references/document-sandbox/document-apis/) to include:
+Updated [Document API references](../../references/document-sandbox/document-apis/index.md) to include:
 
-- [ComplexShapeNode class](../../references/document-sandbox/document-apis/classes/ComplexShapeNode.md)
-- [GridLayoutNode class](../../references/document-sandbox/document-apis/classes/GridLayoutNode.md)
-- [IStrokableNode interface](../../references/document-sandbox/document-apis/interfaces/IStrokableNode.md)
-- [FillRule constant](../../references/document-sandbox/document-apis/enumerations/FillRule.md)
+- [ComplexShapeNode class](../../references/document-sandbox/document-apis/classes/complex-shape-node.md)
+- [GridLayoutNode class](../../references/document-sandbox/document-apis/classes/grid-layout-node.md)
+- [IStrokableNode interface](../../references/document-sandbox/document-apis/interfaces/i-strokable-node.md)
+- [FillRule constant](../../references/document-sandbox/document-apis/enumerations/fill-rule.md)
 
 ## 2023-11-6
 
-- Added a [new tutorial section](../learn/how_to/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how_to/tutorials/grids-addon.md) by Davide Barranca.
+- Added a [new tutorial section](../learn/how_to/tutorials/index.md) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how_to/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
 
@@ -728,7 +728,7 @@ Updates to the [OAuth APIs](../../references/addonsdk/app-oauth.md) to allow for
 
 ### Updates
 
-Published new [Guidelines and requirements section](../build/distribute/guidelines/); including [General guidelines](../build/distribute/guidelines/general/), [Developer brand guidelines](../build/distribute/guidelines/), [Monetization guidelines](../build/distribute/guidelines/monetization.md) and [Generative AI guidelines](../build/distribute/guidelines/genai/).
+Published new [Guidelines and requirements section](../build/distribute/guidelines/index.md); including [General guidelines](../build/distribute/guidelines/general/index.md), [Developer brand guidelines](../build/distribute/guidelines/index.md), [Monetization guidelines](../build/distribute/guidelines/monetization.md) and [Generative AI guidelines](../build/distribute/guidelines/genai/index.md).
 
 ## 2023-10-03
 
@@ -871,7 +871,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ## 2023-08-29
 
-- Added [`currentUser` API](../learn/how_to/user_info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../learn/how_to/index.md).
+- Added [`currentUser` API](../learn/how_to/user-info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../learn/how_to/index.md).
 - Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
@@ -887,13 +887,13 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Updates
 
-- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../learn/how_to/premium_content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../learn/how_to/premium-content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
 
 ## 2023-08-09
 
 ### Added
 
-- Added new [references section](../../references/document-sandbox/) for the document sandbox APIs.
+- Added new [references section](../../references/document-sandbox/index.md) for the document sandbox APIs.
 
 ### Important notes on document sandbox APIs (aka Document Sandbox)
 
@@ -938,7 +938,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../../references/document-sandbox/).
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../../references/document-sandbox/index.md).
 - Added [`DisableDragToDocument`](../../references/addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](../../references/addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11
@@ -948,7 +948,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - [UX Guidelines](../build/design/ux_guidelines/introduction.md) are now available!
 - A new [`requestedSize`](../../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../build/design/ux_guidelines/visual_elements.md#typography).
+- Information on [using fonts](../build/design/ux_guidelines/visual-elements.md#typography).
 - CORS / COEP header handling added to the [CORS guide](../learn/platform_concepts/context.md#cors--coep-handling)
 
 ## 2023-06-08

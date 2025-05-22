@@ -10,71 +10,71 @@
 
 ### Enumerations
 
-- [OrderedListNumbering](enumerations/OrderedListNumbering.md)
-- [ParagraphListType](enumerations/ParagraphListType.md)
+- [OrderedListNumbering](enumerations/ordered-list-numbering.md)
+- [ParagraphListType](enumerations/paragraph-list-type.md)
 
 ## References
 
 ### ArrowHeadType
 
-Re-exports [ArrowHeadType](../../enumerations/ArrowHeadType.md)
+Re-exports [ArrowHeadType](../../enumerations/arrow-head-type.md)
 
 ---
 
 ### BlendMode
 
-Re-exports [BlendMode](../../enumerations/BlendMode.md)
+Re-exports [BlendMode](../../enumerations/blend-mode.md)
 
 ---
 
 ### EditorEvent
 
-Re-exports [EditorEvent](../../enumerations/EditorEvent.md)
+Re-exports [EditorEvent](../../enumerations/editor-event.md)
 
 ---
 
 ### FillRule
 
-Re-exports [FillRule](../../enumerations/FillRule.md)
+Re-exports [FillRule](../../enumerations/fill-rule.md)
 
 ---
 
 ### FillType
 
-Re-exports [FillType](../../enumerations/FillType.md)
+Re-exports [FillType](../../enumerations/fill-type.md)
 
 ---
 
 ### SceneNodeType
 
-Re-exports [SceneNodeType](../../enumerations/SceneNodeType.md)
+Re-exports [SceneNodeType](../../enumerations/scene-node-type.md)
 
 ---
 
 ### StrokePosition
 
-Re-exports [StrokePosition](../../enumerations/StrokePosition.md)
+Re-exports [StrokePosition](../../enumerations/stroke-position.md)
 
 ---
 
 ### StrokeType
 
-Re-exports [StrokeType](../../enumerations/StrokeType.md)
+Re-exports [StrokeType](../../enumerations/stroke-type.md)
 
 ---
 
 ### TextAlignment
 
-Re-exports [TextAlignment](../../enumerations/TextAlignment.md)
+Re-exports [TextAlignment](../../enumerations/text-alignment.md)
 
 ---
 
 ### TextLayout
 
-Re-exports [TextLayout](../../enumerations/TextLayout.md)
+Re-exports [TextLayout](../../enumerations/text-layout.md)
 
 ---
 
 ### VisualEffectType
 
-Re-exports [VisualEffectType](../../enumerations/VisualEffectType.md)
+Re-exports [VisualEffectType](../../enumerations/visual-effect-type.md)

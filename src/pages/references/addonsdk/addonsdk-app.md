@@ -1,8 +1,8 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how_to/modal_dialogs.md), [enable drag and drop](../../guides/learn/how_to/drag_and_drop.md) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-current-user.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how_to/modal-dialogs.md), [enable drag and drop](../../guides/learn/how_to/drag-and-drop.md) of content and subscribe and unsubscribe to events.
 
-[](../../guides/learn/how_to/)
+[](../../guides/learn/how_to/index.md)
 
 ## Objects
 
@@ -182,13 +182,13 @@ The input dialog variant accepts an [additional `field`](#input-dialog-additiona
 
 #### Return Value
 
-Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
+Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type](addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
 
 #### `DialogResult`
 
 | Name         | Type                                                                |              Description |
 | ------------ | ------------------------------------------------------------------- | -----------------------: |
-| `buttonType` | `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant |  The button type clicked |
+| `buttonType` | `string` [`ButtonType`](addonsdk-constants.md) constant |  The button type clicked |
 | `fieldValue` | `string`                                                            | The input from the user. |
 
 #### Confirmation Dialog Example Usage
@@ -254,7 +254,7 @@ async function showInputDialog() {
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/learn/how_to/modal_dialogs.md#custom-dialog).
+See the use case implementations for an example of the [custom modal dialog](../../guides/learn/how_to/modal-dialogs.md#custom-dialog).
 
 ### showColorPicker()
 
@@ -486,7 +486,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag_and_drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag-and-drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
 
 ## Events
 

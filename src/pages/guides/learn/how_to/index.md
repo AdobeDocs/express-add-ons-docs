@@ -26,7 +26,7 @@ The following guides contain a set of common use cases and accompanying code sni
 
 Code Playground integration is coming soon!
 
-The [Code Playground](../../getting_started/code_playground.md) is the perfect tool to test each how-to snippet. We're currently working on a leaner integration between the Playground and our documentation; running the code will be even easier soon!
+The [Code Playground](../../getting_started/code-playground.md) is the perfect tool to test each how-to snippet. We're currently working on a leaner integration between the Playground and our documentation; running the code will be even easier soon!
 
 We're constantly adding new how-tos, so make sure to check back often. If you're looking for Tutorials that guide you in building add-ons from the ground up, please check the [Complete Projects](#complete-projects) section.
 
@@ -35,55 +35,55 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 <!-- - Authentication & Authorization
   - [Use OAuth 2.0](./oauth2.md)
 - Data & Environment
-  - [Store Data](./local_data_management.md)
-  - [Theme & Locale](./theme_locale.md)
+  - [Store Data](./local-data-management.md)
+  - [Theme & Locale](./theme-locale.md)
 - UI & Interaction
-  - [Use Drag & Drop](./drag_and_drop.md)
-  - [Use Modal Dialogs](./modal_dialogs.md)
+  - [Use Drag & Drop](./drag-and-drop.md)
+  - [Use Modal Dialogs](./modal-dialogs.md)
 - Use Design Elements
-  - [Use Text](./use_text.md)
-  - [Use Geometry](./use_geometry.md)
-  - [Use Color](./use_color.md)
-  - [Use Images](./use_images.md)
-  - [Use Videos](./use_videos.md)
-  - [Use Audio](./use_audio.md)
-  - [Use PDF and PowerPoint](./use_pdf_powerpoint.md)
-  - [Group Elements](./group_elements.md)
-  - [Position Elements](./position_elements.md)
+  - [Use Text](./use-text.md)
+  - [Use Geometry](./use-geometry.md)
+  - [Use Color](./use-color.md)
+  - [Use Images](./use-images.md)
+  - [Use Videos](./use-videos.md)
+  - [Use Audio](./use-audio.md)
+  - [Use PDF and PowerPoint](./use-pdf-powerpoint.md)
+  - [Group Elements](./group-elements.md)
+  - [Position Elements](./position-elements.md)
 - Use Metadata
-  - [Document Metadata](./document_metadata.md)
-  - [Page Metadata](./page_metadata.md)
-  - [Element Metadata](./element_metadata.md)
+  - [Document Metadata](./document-metadata.md)
+  - [Page Metadata](./page-metadata.md)
+  - [Element Metadata](./element-metadata.md)
 - Exporting & Output
-  - [Create Renditions](./create_renditions.md)
-  - [Manage with Premium Content](./premium_content.md)
+  - [Create Renditions](./create-renditions.md)
+  - [Manage with Premium Content](./premium-content.md)
 - User Info
-  - [Identify users](./user_info.md) -->
+  - [Identify users](./user-info.md) -->
 
 <br/><br/>
 
 | Topics                         | How-to guides                                       |
 | ------------------------------ | --------------------------------------------------- |
 | Authentication & Authorization | [Use OAuth 2.0](./oauth2.md)                        |
-| Data & Environment             | [Store Data](./local_data_management.md)            |
-|                                | [Theme & Locale](./theme_locale.md)                 |
-| UI & Interaction               | [Use Drag & Drop](./drag_and_drop.md)               |
-|                                | [Use Modal Dialogs](./modal_dialogs.md)             |
-| Use Design Elements            | [Use Text](./use_text.md)                           |
-|                                | [Use Geometry](./use_geometry.md)                   |
-|                                | [Use Color](./use_color.md)                         |
-|                                | [Use Images](./use_images.md)                       |
-|                                | [Use Videos](./use_videos.md)                       |
-|                                | [Use Audio](./use_audio.md)                         |
-|                                | [Use PDF and PowerPoint](./use_pdf_powerpoint.md)   |
-|                                | [Group Elements](./group_elements.md)               |
-|                                | [Position Elements](./position_elements.md)         |
-| Use Metadata                   | [Document Metadata](./document_metadata.md)         |
-|                                | [Page Metadata](./page_metadata.md)                 |
-|                                | [Element Metadata](./element_metadata.md)           |
-| Exporting & Output             | [Create Renditions](./create_renditions.md)         |
-|                                | [Manage with Premium Content](./premium_content.md) |
-| User Info                      | [Identify users](./user_info.md)                    |
+| Data & Environment             | [Store Data](./local-data-management.md)            |
+|                                | [Theme & Locale](./theme-locale.md)                 |
+| UI & Interaction               | [Use Drag & Drop](./drag-and-drop.md)               |
+|                                | [Use Modal Dialogs](./modal-dialogs.md)             |
+| Use Design Elements            | [Use Text](./use-text.md)                           |
+|                                | [Use Geometry](./use-geometry.md)                   |
+|                                | [Use Color](./use-color.md)                         |
+|                                | [Use Images](./use-images.md)                       |
+|                                | [Use Videos](./use-videos.md)                       |
+|                                | [Use Audio](./use-audio.md)                         |
+|                                | [Use PDF and PowerPoint](./use-pdf-powerpoint.md)   |
+|                                | [Group Elements](./group-elements.md)               |
+|                                | [Position Elements](./position-elements.md)         |
+| Use Metadata                   | [Document Metadata](./document-metadata.md)         |
+|                                | [Page Metadata](./page-metadata.md)                 |
+|                                | [Element Metadata](./element-metadata.md)           |
+| Exporting & Output             | [Create Renditions](./create-renditions.md)         |
+|                                | [Manage with Premium Content](./premium-content.md) |
+| User Info                      | [Identify users](./user-info.md)                    |
 
 ## Complete Projects
 

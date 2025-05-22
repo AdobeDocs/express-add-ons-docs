@@ -25,21 +25,21 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 ## Features Supported by the SDK
 
-- [Importing Content](../../guides/learn/how_to/use_images.md)
-- [Exporting Content](../../guides/learn/how_to/create_renditions.md)
-- [Accessing Content](../../guides/learn/how_to/group_elements.md)
-- [Drag & Drop Behavior](../../guides/learn/how_to/drag_and_drop.md)
+- [Importing Content](../../guides/learn/how_to/use-images.md)
+- [Exporting Content](../../guides/learn/how_to/create-renditions.md)
+- [Accessing Content](../../guides/learn/how_to/group-elements.md)
+- [Drag & Drop Behavior](../../guides/learn/how_to/drag-and-drop.md)
 - [Authorization with OAuth 2.0](../../guides/learn/how_to/oauth2.md)
-- [Client-side Storage Access](../../guides/learn/how_to/local_data_management.md)
-- [Modal Dialogs](../../guides/learn/how_to/modal_dialogs.md)
-- [Locale Detection](../../guides/learn/how_to/theme_locale.md#detecting-locale-supported-locales-and-format)
-- [Theme Detection](../../guides/learn/how_to/theme_locale.md#detecting-theme)
+- [Client-side Storage Access](../../guides/learn/how_to/local-data-management.md)
+- [Modal Dialogs](../../guides/learn/how_to/modal-dialogs.md)
+- [Locale Detection](../../guides/learn/how_to/theme-locale.md#detecting-locale-supported-locales-and-format)
+- [Theme Detection](../../guides/learn/how_to/theme-locale.md#detecting-theme)
 - [Access to the Manifest](/references/addonsdk/instance-manifest.md)
 - [Access to the Document information](/references/addonsdk/app-document.md)
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [implementing common use cases page](../../guides/develop/) for details and examples of how to add the features above.
+See the [implementing common use cases page](../../guides/develop/index.md) for details and examples of how to add the features above.
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 

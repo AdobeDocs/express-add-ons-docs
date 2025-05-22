@@ -63,7 +63,7 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
 
 ## Code Playground
 
-We have a [dedicated page](./code_playground.md) for the Code Playground, which you can always refer to for more detailed information. Here, we'll focus on the basics to get you started, linking to the relevant sections of the full documentation and including screenshots to help you navigate the interface.
+We have a [dedicated page](./code-playground.md) for the Code Playground, which you can always refer to for more detailed information. Here, we'll focus on the basics to get you started, linking to the relevant sections of the full documentation and including screenshots to help you navigate the interface.
 
 ### 1. Launch it
 
@@ -83,7 +83,7 @@ To launch the Code Playground, see the following animation or expand the details
 
 ### 2. Run your first script
 
-The Code Playground allows you to operate in [two modalities](./code_playground.md#choose-your-development-mode):
+The Code Playground allows you to operate in [two modalities](./code-playground.md#choose-your-development-mode):
 
 - **Script**: directly runs code that operates on the current document.
 - **Add-on**: creates an add-on, with a custom User Interface and logic, that is able to run code on the current document.
@@ -98,7 +98,7 @@ Click the **Run Code** button on the Playground's toolbar to see the rectangle a
 
 Feel free to tweak the script to change the properties in the `color` object, or the `translation` and Rectangle dimensions; click **Run Code** again to see what happens.
 
-To get a feel of the available APIs, visit the [How-to guides](../learn/how_to/index.md) and copy and paste code snippets into the Playground. For instance, check out the [Use Text](../learn/how_to/use_text.md) page and try the following script for the original "Hello World" experience.
+To get a feel of the available APIs, visit the [How-to guides](../learn/how_to/index.md) and copy and paste code snippets into the Playground. For instance, check out the [Use Text](../learn/how_to/use-text.md) page and try the following script for the original "Hello World" experience.
 
 ```js
 // Create a new TextNode
@@ -121,7 +121,7 @@ You've been using the Document Sandbox APIs, a very extensive set of APIs that l
 
 ### 4. Create an add-on
 
-Click the **Add-on** tab to switch to the [Add-on mode](./code_playground.md#add-on-mode). You'll see that the Playground now shows four tabs:
+Click the **Add-on** tab to switch to the [Add-on mode](./code-playground.md#add-on-mode). You'll see that the Playground now shows four tabs:
 
 - `HTML`: controls the add-on's User Interface.
 - `CSS`: adds styles.
@@ -140,7 +140,7 @@ Even if the result of both the Script and Add-on modes in the Code Playground is
 
 ## Command Line Interface (CLI)
 
-The [Adobe Express add-on CLI](./local_development/dev_tooling.md#using-the-cli) allows you to create and host Adobe Express add-ons directly from your local machine. Make sure you have [enabled Add-on Development](#prerequisites) first.
+The [Adobe Express add-on CLI](./local_development/dev-tooling.md#using-the-cli) allows you to create and host Adobe Express add-ons directly from your local machine. Make sure you have [enabled Add-on Development](#prerequisites) first.
 
 ### 1. Scaffold a new project
 
@@ -157,7 +157,7 @@ This command will scaffold a new add-on based on "pure" JavaScript with Document
 - `hello-world` is the name of the add-on projectyou are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
-The [Templates section](./local_development/dev_tooling.md#templates) on the **Development Tools** page provides a list of available options.
+The [Templates section](./local_development/dev-tooling.md#templates) on the **Development Tools** page provides a list of available options.
 
 <InlineAlert slots="header, text1" variant="info"/>
 
@@ -235,7 +235,7 @@ If you click the **Create Rectangle** button, you'll see the rectangle being add
 
 ### 4. Edit your add-on's code
 
-While your add-on is still loaded and running, open the `src/index.html` file and update the **"Create Rectangle"** string in the `<button>` to something else, like **Add Text**. In the `src/sandbox/code.js` replace the body of the `createRectangle()` function with the following, borrowed from the [Use Text](../learn/how_to/use_text.md) how-to guide:
+While your add-on is still loaded and running, open the `src/index.html` file and update the **"Create Rectangle"** string in the `<button>` to something else, like **Add Text**. In the `src/sandbox/code.js` replace the body of the `createRectangle()` function with the following, borrowed from the [Use Text](../learn/how_to/use-text.md) how-to guide:
 
 ```js
 // ...
@@ -281,6 +281,6 @@ Any changes to the `manifest.json` will _require a manual reload of your add-on_
 
 Congratulations! You've completed this Hello, World! guide and run your first add-on!
 
-Next, check out the [Code Playground](./code_playground.md) page to discover all its features, and read the [How To Guides](../learn/how_to/index.md) to familiarise with the APIs and plug & play with code snippets. If you've liked the CLI track, in the [Local Development](./local_development/index.md) section you can find more details and debugging instructions.
+Next, check out the [Code Playground](./code-playground.md) page to discover all its features, and read the [How To Guides](../learn/how_to/index.md) to familiarise with the APIs and plug & play with code snippets. If you've liked the CLI track, in the [Local Development](./local_development/index.md) section you can find more details and debugging instructions.
 
 When you feel comfortable, you can dive into the [Complete Projects](../learn/how_to/tutorials/index.md), where we'll help you build fully-working add-ons from the ground up—the best way to learn is by doing! We also have an extensive collection of [code samples](../learn/samples.md), that are a great resource to help you get started building your own add-ons.

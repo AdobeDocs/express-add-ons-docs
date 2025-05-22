@@ -91,7 +91,7 @@ This method will programmatically close the color picker.
 
 <InlineAlert variant="info" slots="text" />
 
-Please also refer to the the Color Picker section of the [Use Color](../../guides/learn/how_to/use_color.md#use-the-color-picker) how-to guide for more examples.
+Please also refer to the the Color Picker section of the [Use Color](../../guides/learn/how_to/use-color.md#use-the-color-picker) how-to guide for more examples.
 
 ### Basic usage
 

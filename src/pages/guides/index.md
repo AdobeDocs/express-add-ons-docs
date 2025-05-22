@@ -35,7 +35,7 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 ## Welcome to Adobe Express Add-ons!
 
-Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
+Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code-playground.md) and start tinkering with the API right away.
 
 <TextBlock slots="image, heading, text, text1" width="50%"/>
 
@@ -112,7 +112,7 @@ Click on an add-on to view more information and install it. That's it!
 
 ## What's next?
 
-Continue by reading the [Developer Journey](./getting_started/developer-journey.md) and explore the [Code Playground](./getting_started/code_playground.md)!
+Continue by reading the [Developer Journey](./getting_started/developer-journey.md) and explore the [Code Playground](./getting_started/code-playground.md)!
 
 <InlineAlert slots="text" />
 

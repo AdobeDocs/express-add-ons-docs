@@ -81,7 +81,7 @@ The word "Premium" should only be used in relation to the Adobe Express Premium 
 
 Adobe Express allows users that aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their document, they'll be prompted to upgrade to a premium plan.
 
-Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](../../../learn/how_to/premium_content.md) for more information on how to do this.
+Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](../../../learn/how_to/premium-content.md) for more information on how to do this.
 
 ## Requirements for monetizing your add-ons
 

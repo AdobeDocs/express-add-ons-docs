@@ -88,7 +88,7 @@ Each of the statuses returned below is the exact name as a string (ie: SUCCESS =
 | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------: |
 | SUCCESS       | `string` |                            Successful authorization this is the expected result for the [Authorize](#authorize) method) |
 | POPUP_OPENED  | `string` | The popup was opened (this is the expected result for the [AuthorizeWithOwnRedirect](#authorizewithownredirect) method) |
-| POPUP_BLOCKED | `string` |      The popup was blocked. (Add `allow-popups` permission to your [manifest.json](../manifest/) `sandbox` permissions) |
+| POPUP_BLOCKED | `string` |      The popup was blocked. (Add `allow-popups` permission to your [manifest.json](../manifest/index.md) `sandbox` permissions) |
 | POPUP_TIMEOUT | `string` |                                                                                                    The popup timed out. |
 | FAILED        | `string` |                                                                                       The authorization workflow failed |
 

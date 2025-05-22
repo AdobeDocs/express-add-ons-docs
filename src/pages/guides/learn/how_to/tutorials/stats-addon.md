@@ -36,7 +36,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 - Familiarity with HTML, CSS, JavaScript.
 - Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting_started/hello-world.md) guide.
-- Familiarity with the Adobe Express Document API, covered in [this tutorial](../tutorials/grids-addon.md).
+- Familiarity with the Adobe Express Document API, covered in [this tutorial](grids-addon.md).
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 
