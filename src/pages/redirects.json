@@ -1,1 +1,1384 @@
-{"total":344,"offset":0,"limit":344,"data":[{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\changelog/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\changelog"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\ui-components\\color-picker/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\ui-components\\color-picker"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\manifest\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\manifest\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\manifest\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\manifest\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\web\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\web\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\web\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\web\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\overview/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\overview"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\UnorderedListStyle/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\UnorderedListStyle"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\SolidColorStrokeWithOptionalType/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\SolidColorStrokeWithOptionalType"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\OrderedListStyle/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\OrderedListStyle"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\Font/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\Font"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\EventHandlerId/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\EventHandlerId"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\EditorEventHandler/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\type-aliases\\EditorEventHandler"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\namespaces\\Constants\\overview/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\namespaces\\Constants\\overview"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\namespaces\\Constants\\enumerations\\ParagraphListType/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\namespaces\\Constants\\enumerations\\ParagraphListType"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\namespaces\\Constants\\enumerations\\OrderedListNumbering/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\namespaces\\Constants\\enumerations\\OrderedListNumbering"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\UnsupportedTextLayout/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\UnsupportedTextLayout"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\UnorderedListStyleInput/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\UnorderedListStyleInput"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\TextRange/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\TextRange"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\StyleRange/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\StyleRange"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Stroke/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Stroke"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\SolidColorStroke/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\SolidColorStroke"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\RectangleGeometry/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\RectangleGeometry"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Rect/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Rect"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\PointTextLayout/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\PointTextLayout"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Point/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Point"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStylesRangeInput/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStylesRangeInput"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStylesRange/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStylesRange"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStylesInput/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStylesInput"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStyles/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ParagraphStyles"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\OrderedListStyleInput/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\OrderedListStyleInput"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ListItem/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ListItem"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\IStrokableNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\IStrokableNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\IRectangularNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\IRectangularNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\IFillableNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\IFillableNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Fill/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Fill"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ContainerNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ContainerNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ColorFill/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\ColorFill"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Color/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\Color"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStylesRangeInput/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStylesRangeInput"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStylesRange/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStylesRange"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStylesInput/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStylesInput"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStyles/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\CharacterStyles"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\BitmapImage/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\BitmapImage"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\BaseParagraphStyles/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\BaseParagraphStyles"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\AutoHeightTextLayout/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\AutoHeightTextLayout"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\AreaTextLayout/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\interfaces\\AreaTextLayout"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\VisualEffectType/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\VisualEffectType"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\TextLayout/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\TextLayout"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\TextAlignment/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\TextAlignment"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\StrokeType/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\StrokeType"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\StrokePosition/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\StrokePosition"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\SceneNodeType/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\SceneNodeType"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\FillType/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\FillType"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\FillRule/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\FillRule"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\EditorEvent/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\EditorEvent"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\BlendMode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\BlendMode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\ArrowHeadType/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\enumerations\\ArrowHeadType"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\VisualNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\VisualNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Viewport/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Viewport"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\UnknownNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\UnknownNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\UnavailableFont/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\UnavailableFont"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\TextNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\TextNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\TextContentModel/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\TextContentModel"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\StrokeShapeNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\StrokeShapeNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\StrokableNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\StrokableNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\SolidColorShapeNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\SolidColorShapeNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\RestrictedItemList/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\RestrictedItemList"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\RectangleNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\RectangleNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ReadOnlyItemList/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ReadOnlyItemList"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\PathNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\PathNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\PageNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\PageNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\PageList/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\PageList"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Node/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Node"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\MediaContainerNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\MediaContainerNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\LineNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\LineNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ItemList/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ItemList"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ImageRectangleNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ImageRectangleNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\GroupNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\GroupNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\GridLayoutNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\GridLayoutNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\GridCellNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\GridCellNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Fonts/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Fonts"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\FillableNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\FillableNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ExpressRootNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ExpressRootNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\EllipseNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\EllipseNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Editor/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Editor"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Context/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\Context"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ComplexShapeNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ComplexShapeNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ColorUtils/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ColorUtils"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\BaseNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\BaseNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\BaseFont/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\BaseFont"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\AvailableFont/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\AvailableFont"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ArtboardNode/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ArtboardNode"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ArtboardList/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\ArtboardList"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\AddOnData/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\document-apis\\classes\\AddOnData"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\communication\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\communication\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\communication\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\document-sandbox\\communication\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\runtime-dialog/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\runtime-dialog"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\instance-runtime/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\instance-runtime"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\instance-manifest/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\instance-manifest"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\instance-clientStorage/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\instance-clientStorage"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-ui/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-ui"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-oauth/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-oauth"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-document/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-document"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-devFlags/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-devFlags"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-currentUser/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\app-currentUser"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk-instance/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk-instance"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk-constants/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk-constants"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk-app/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\references\\addonsdk\\addonsdk-app"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\support\\faq/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\support\\faq"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\samples/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\samples"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\platform_concepts\\document-api/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\platform_concepts\\document-api"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\platform_concepts\\context/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\platform_concepts\\context"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_videos/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_videos"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_text/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_text"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_pdf_powerpoint/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_pdf_powerpoint"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_images/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_images"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_geometry/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_geometry"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_color/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_color"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_audio/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\use_audio"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\user_info/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\user_info"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\theme_locale/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\theme_locale"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\premium_content/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\premium_content"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\position_elements/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\position_elements"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\page_metadata/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\page_metadata"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\oauth2/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\oauth2"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\modal_dialogs/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\modal_dialogs"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\local_data_management/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\local_data_management"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\group_elements/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\group_elements"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\element_metadata/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\element_metadata"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\drag_and_drop/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\drag_and_drop"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\document_metadata/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\document_metadata"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\create_renditions/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\create_renditions"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\using-lit-typescript/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\using-lit-typescript"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\stats-addon/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\stats-addon"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\grids-addon/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\grids-addon"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\part3/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\part3"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\part2/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\part2"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\part1/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\part1"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\learn\\how_to\\tutorials\\spectrum-workshop\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\setup/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\setup"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\quickstart/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\quickstart"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\hello-world/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\hello-world"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\developer-journey/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\developer-journey"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\code_playground/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\code_playground"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\changelog/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\changelog"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\vs-code/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\vs-code"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\known_issues_limitations/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\known_issues_limitations"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\dev_tooling/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\dev_tooling"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\browser/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\getting_started\\local_development\\browser"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\develop\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\develop\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\develop\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\develop\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\develop\\cors/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\develop\\cors"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\rejections/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\rejections"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\public-dist/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\public-dist"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\private-dist/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\private-dist"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\listing_guide/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\listing_guide"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\review_process\\submission_checklist/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\review_process\\submission_checklist"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\review_process\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\review_process\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\review_process\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\review_process\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\monetization/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\monetization"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\brand_guidelines/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\brand_guidelines"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\user_interface/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\user_interface"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\usability/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\usability"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\security/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\security"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\planning/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\planning"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\performance/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\performance"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\listing/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\listing"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\features/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\features"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\edge_case/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\edge_case"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\content/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\content"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\compatibility/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\compatibility"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\auth/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\auth"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\accessibility/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\general\\accessibility"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\requirements/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\requirements"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\recommendations/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\recommendations"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\distribute\\guidelines\\genai\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\index.md","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\index.md/index","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\index.md/"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\implementation_guide/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\implementation_guide"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\fonts/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\fonts"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\best_practices/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\best_practices"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\visual_elements/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\visual_elements"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\theming/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\theming"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\resources_and_references/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\resources_and_references"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\mobile_ux/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\mobile_ux"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\introduction/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\introduction"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\feedback_and_messaging/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\feedback_and_messaging"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\design_principles/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\design_principles"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\changelog/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\changelog"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\branding_guidelines/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\design\\ux_guidelines\\branding_guidelines"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\advanced-topics\\performance/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\advanced-topics\\performance"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\advanced-topics\\frameworks-libraries-bundling/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\advanced-topics\\frameworks-libraries-bundling"},{"Source":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\advanced-topics\\coi/","Destination":"D:\\projects\\EDS\\express-add-ons-docs\\src\\pages\\guides\\build\\advanced-topics\\coi"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/UnorderedListStyle","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/unordered-list-style"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/solid-color-stroke-with-optional-type"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/OrderedListStyle","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/ordered-list-style"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/Font","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/font"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EventHandlerId","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/event-handler-id"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EditorEventHandler","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/editor-event-handler"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/unsupported-text-layout"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/unordered-list-style-input"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/TextRange","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/text-range"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/StyleRange","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/style-range"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Stroke","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/stroke"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/SolidColorStroke","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/solid-color-stroke"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/RectangleGeometry","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/rectangle-geometry"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Rect","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/rect"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/PointTextLayout","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/point-text-layout"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Point","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/point"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles-range-input"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStylesRange","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles-range"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStylesInput","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles-input"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStyles","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/OrderedListStyleInput","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ordered-list-style-input"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ListItem","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/list-item"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/IStrokableNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/i-strokable-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/IRectangularNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/i-rectangular-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/IFillableNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/i-fillable-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Fill","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/fill"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ContainerNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/container-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ColorFill","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/color-fill"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Color","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/color"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStylesRangeInput","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles-range-input"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStylesRange","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles-range"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStylesInput","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles-input"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStyles","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/BitmapImage","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/bitmap-image"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/BaseParagraphStyles","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/base-paragraph-styles"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/auto-height-text-layout"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/AreaTextLayout","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/area-text-layout"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/VisualEffectType","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/visual-effect-type"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/TextLayout","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/text-layout"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/TextAlignment","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/text-alignment"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/StrokeType","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/stroke-type"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/StrokePosition","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/stroke-position"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/SceneNodeType","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/scene-node-type"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/FillType","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/fill-type"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/FillRule","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/fill-rule"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/EditorEvent","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/editor-event"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/BlendMode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/blend-mode"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/ArrowHeadType","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/arrow-head-type"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/VisualNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/visual-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/Viewport","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/viewport"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/UnknownNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/unknown-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/UnavailableFont","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/unavailable-font"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/TextNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/text-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/TextContentModel","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/text-content-model"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/StrokeShapeNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/stroke-shape-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/StrokableNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/strokable-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/SolidColorShapeNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/solid-color-shape-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/RestrictedItemList","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/restricted-item-list"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/RectangleNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/rectangle-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ReadOnlyItemList","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/read-only-item-list"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/PathNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/path-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/PageNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/page-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/PageList","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/page-list"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/Node","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/MediaContainerNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/media-container-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/LineNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/line-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ItemList","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/item-list"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ImageRectangleNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/image-rectangle-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/GroupNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/group-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/GridLayoutNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/grid-layout-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/GridCellNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/grid-cell-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/Fonts","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/fonts"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/FillableNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/fillable-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ExpressRootNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/express-root-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/EllipseNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ellipse-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/Editor","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/editor"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/Context","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/context"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ComplexShapeNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/complex-shape-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ColorUtils","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/color-utils"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/BaseNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/base-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/BaseFont","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/base-font"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/AvailableFont","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/available-font"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ArtboardNode","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/artboard-node"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/ArtboardList","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/artboard-list"},{"Source":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/AddOnData","Destination":"/express/add-ons/docs/references/document-sandbox/document-apis/classes/add-on-data"},{"Source":"/express/add-ons/docs/references/addonsdk/instance-clientStorage","Destination":"/express/add-ons/docs/references/addonsdk/instance-client-storage"},{"Source":"/express/add-ons/docs/references/addonsdk/app-devFlags","Destination":"/express/add-ons/docs/references/addonsdk/app-dev-flags"},{"Source":"/express/add-ons/docs/references/addonsdk/app-currentUser","Destination":"/express/add-ons/docs/references/addonsdk/app-current-user"},{"Source":"/express/add-ons/docs/guides/learn/how_to/use_videos","Destination":"/express/add-ons/docs/guides/learn/how_to/use-videos"},{"Source":"/express/add-ons/docs/guides/learn/how_to/use_text","Destination":"/express/add-ons/docs/guides/learn/how_to/use-text"},{"Source":"/express/add-ons/docs/guides/learn/how_to/use_pdf_powerpoint","Destination":"/express/add-ons/docs/guides/learn/how_to/use-pdf-powerpoint"},{"Source":"/express/add-ons/docs/guides/learn/how_to/use_images","Destination":"/express/add-ons/docs/guides/learn/how_to/use-images"},{"Source":"/express/add-ons/docs/guides/learn/how_to/use_geometry","Destination":"/express/add-ons/docs/guides/learn/how_to/use-geometry"},{"Source":"/express/add-ons/docs/guides/learn/how_to/use_color","Destination":"/express/add-ons/docs/guides/learn/how_to/use-color"},{"Source":"/express/add-ons/docs/guides/learn/how_to/use_audio","Destination":"/express/add-ons/docs/guides/learn/how_to/use-audio"},{"Source":"/express/add-ons/docs/guides/learn/how_to/user_info","Destination":"/express/add-ons/docs/guides/learn/how_to/user-info"},{"Source":"/express/add-ons/docs/guides/learn/how_to/theme_locale","Destination":"/express/add-ons/docs/guides/learn/how_to/theme-locale"},{"Source":"/express/add-ons/docs/guides/learn/how_to/premium_content","Destination":"/express/add-ons/docs/guides/learn/how_to/premium-content"},{"Source":"/express/add-ons/docs/guides/learn/how_to/position_elements","Destination":"/express/add-ons/docs/guides/learn/how_to/position-elements"},{"Source":"/express/add-ons/docs/guides/learn/how_to/page_metadata","Destination":"/express/add-ons/docs/guides/learn/how_to/page-metadata"},{"Source":"/express/add-ons/docs/guides/learn/how_to/modal_dialogs","Destination":"/express/add-ons/docs/guides/learn/how_to/modal-dialogs"},{"Source":"/express/add-ons/docs/guides/learn/how_to/local_data_management","Destination":"/express/add-ons/docs/guides/learn/how_to/local-data-management"},{"Source":"/express/add-ons/docs/guides/learn/how_to/group_elements","Destination":"/express/add-ons/docs/guides/learn/how_to/group-elements"},{"Source":"/express/add-ons/docs/guides/learn/how_to/element_metadata","Destination":"/express/add-ons/docs/guides/learn/how_to/element-metadata"},{"Source":"/express/add-ons/docs/guides/learn/how_to/drag_and_drop","Destination":"/express/add-ons/docs/guides/learn/how_to/drag-and-drop"},{"Source":"/express/add-ons/docs/guides/learn/how_to/document_metadata","Destination":"/express/add-ons/docs/guides/learn/how_to/document-metadata"},{"Source":"/express/add-ons/docs/guides/learn/how_to/create_renditions","Destination":"/express/add-ons/docs/guides/learn/how_to/create-renditions"},{"Source":"/express/add-ons/docs/guides/getting_started/code_playground","Destination":"/express/add-ons/docs/guides/getting_started/code-playground"},{"Source":"/express/add-ons/docs/guides/getting_started/local_development/known_issues_limitations","Destination":"/express/add-ons/docs/guides/getting_started/local_development/known-issues-limitations"},{"Source":"/express/add-ons/docs/guides/getting_started/local_development/dev_tooling","Destination":"/express/add-ons/docs/guides/getting_started/local_development/dev-tooling"},{"Source":"/express/add-ons/docs/guides/build/distribute/listing_guide","Destination":"/express/add-ons/docs/guides/build/distribute/listing-guide"},{"Source":"/express/add-ons/docs/guides/build/distribute/review_process/submission_checklist","Destination":"/express/add-ons/docs/guides/build/distribute/review_process/submission-checklist"},{"Source":"/express/add-ons/docs/guides/build/distribute/guidelines/brand_guidelines","Destination":"/express/add-ons/docs/guides/build/distribute/guidelines/brand-guidelines"},{"Source":"/express/add-ons/docs/guides/build/distribute/guidelines/general/user_interface","Destination":"/express/add-ons/docs/guides/build/distribute/guidelines/general/user-interface"},{"Source":"/express/add-ons/docs/guides/build/distribute/guidelines/general/edge_case","Destination":"/express/add-ons/docs/guides/build/distribute/guidelines/general/edge-case"},{"Source":"/express/add-ons/docs/guides/build/design/implementation_guide","Destination":"/express/add-ons/docs/guides/build/design/implementation-guide"},{"Source":"/express/add-ons/docs/guides/build/design/best_practices","Destination":"/express/add-ons/docs/guides/build/design/best-practices"},{"Source":"/express/add-ons/docs/guides/build/design/ux_guidelines/visual_elements","Destination":"/express/add-ons/docs/guides/build/design/ux_guidelines/visual-elements"},{"Source":"/express/add-ons/docs/guides/build/design/ux_guidelines/resources_and_references","Destination":"/express/add-ons/docs/guides/build/design/ux_guidelines/resources-and-references"},{"Source":"/express/add-ons/docs/guides/build/design/ux_guidelines/mobile_ux","Destination":"/express/add-ons/docs/guides/build/design/ux_guidelines/mobile-ux"},{"Source":"/express/add-ons/docs/guides/build/design/ux_guidelines/feedback_and_messaging","Destination":"/express/add-ons/docs/guides/build/design/ux_guidelines/feedback-and-messaging"},{"Source":"/express/add-ons/docs/guides/build/design/ux_guidelines/design_principles","Destination":"/express/add-ons/docs/guides/build/design/ux_guidelines/design-principles"},{"Source":"/express/add-ons/docs/guides/build/design/ux_guidelines/branding_guidelines","Destination":"/express/add-ons/docs/guides/build/design/ux_guidelines/branding-guidelines"}],":type":"sheet"}
+{
+    "total": 344,
+    "offset": 0,
+    "limit": 344,
+    "data": [
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/references/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/references/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/changelog/",
+            "Destination": "/express-add-ons-docs/src/pages/references/changelog"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/ui-components/color-picker/",
+            "Destination": "/express-add-ons-docs/src/pages/references/ui-components/color-picker"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/manifest/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/references/manifest/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/manifest/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/references/manifest/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/web/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/web/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/web/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/web/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/overview/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/overview"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/UnorderedListStyle/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/UnorderedListStyle"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/OrderedListStyle/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/OrderedListStyle"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/Font/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/Font"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/EventHandlerId/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/EventHandlerId"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/EditorEventHandler/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/type-aliases/EditorEventHandler"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/overview/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/overview"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/TextRange/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/TextRange"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/StyleRange/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/StyleRange"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Stroke/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Stroke"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/SolidColorStroke/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/SolidColorStroke"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/RectangleGeometry/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/RectangleGeometry"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Rect/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Rect"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/PointTextLayout/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/PointTextLayout"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Point/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Point"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStylesRange/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStylesRange"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStylesInput/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStylesInput"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStyles/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ParagraphStyles"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/OrderedListStyleInput/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/OrderedListStyleInput"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ListItem/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ListItem"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/IStrokableNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/IStrokableNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/IRectangularNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/IRectangularNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/IFillableNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/IFillableNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Fill/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Fill"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ContainerNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ContainerNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ColorFill/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/ColorFill"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Color/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Color"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStylesRangeInput/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStylesRangeInput"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStylesRange/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStylesRange"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStylesInput/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStylesInput"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStyles/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/CharacterStyles"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/BitmapImage/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/BitmapImage"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/BaseParagraphStyles/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/BaseParagraphStyles"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/AreaTextLayout/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/AreaTextLayout"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/VisualEffectType/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/VisualEffectType"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/TextLayout/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/TextLayout"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/TextAlignment/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/TextAlignment"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/StrokeType/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/StrokeType"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/StrokePosition/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/StrokePosition"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/SceneNodeType/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/SceneNodeType"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/FillType/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/FillType"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/FillRule/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/FillRule"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/EditorEvent/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/EditorEvent"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/BlendMode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/BlendMode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/ArrowHeadType/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/enumerations/ArrowHeadType"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/VisualNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/VisualNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Viewport/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Viewport"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/UnknownNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/UnknownNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/UnavailableFont/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/UnavailableFont"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/TextNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/TextNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/TextContentModel/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/TextContentModel"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/StrokeShapeNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/StrokeShapeNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/StrokableNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/StrokableNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/SolidColorShapeNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/SolidColorShapeNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/RestrictedItemList/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/RestrictedItemList"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/RectangleNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/RectangleNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ReadOnlyItemList/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ReadOnlyItemList"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/PathNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/PathNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/PageNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/PageNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/PageList/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/PageList"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Node/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Node"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/MediaContainerNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/MediaContainerNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/LineNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/LineNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ItemList/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ItemList"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ImageRectangleNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ImageRectangleNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/GroupNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/GroupNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/GridLayoutNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/GridLayoutNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/GridCellNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/GridCellNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Fonts/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Fonts"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/FillableNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/FillableNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ExpressRootNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ExpressRootNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/EllipseNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/EllipseNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Editor/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Editor"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Context/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Context"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ComplexShapeNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ComplexShapeNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ColorUtils/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ColorUtils"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/BaseNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/BaseNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/BaseFont/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/BaseFont"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/AvailableFont/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/AvailableFont"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ArtboardNode/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ArtboardNode"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ArtboardList/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ArtboardList"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/AddOnData/",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/AddOnData"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/communication/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/communication/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/communication/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/communication/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/runtime-dialog/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/runtime-dialog"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/instance-runtime/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/instance-runtime"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/instance-manifest/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/instance-manifest"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/instance-clientStorage/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/instance-clientStorage"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/app-ui/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/app-ui"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/app-oauth/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/app-oauth"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/app-document/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/app-document"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/app-devFlags/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/app-devFlags"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/app-currentUser/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/app-currentUser"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk-instance/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk-instance"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk-constants/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk-constants"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk-app/",
+            "Destination": "/express-add-ons-docs/src/pages/references/addonsdk/addonsdk-app"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/support/faq/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/support/faq"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/samples/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/samples"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/platform_concepts/document-api/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/platform_concepts/document-api"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/platform_concepts/context/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/platform_concepts/context"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_videos/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_videos"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_text/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_text"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_pdf_powerpoint/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_pdf_powerpoint"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_images/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_images"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_geometry/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_geometry"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_color/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_color"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_audio/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/use_audio"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/user_info/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/user_info"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/theme_locale/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/theme_locale"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/premium_content/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/premium_content"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/position_elements/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/position_elements"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/page_metadata/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/page_metadata"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/oauth2/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/oauth2"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/modal_dialogs/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/modal_dialogs"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/local_data_management/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/local_data_management"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/group_elements/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/group_elements"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/element_metadata/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/element_metadata"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/drag_and_drop/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/drag_and_drop"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/document_metadata/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/document_metadata"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/create_renditions/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/create_renditions"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/using-lit-typescript/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/using-lit-typescript"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/stats-addon/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/stats-addon"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/grids-addon/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/grids-addon"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part3/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part3"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part2/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part2"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part1/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/part1"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/learn/how_to/tutorials/spectrum-workshop/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/setup/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/setup"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/quickstart/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/quickstart"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/hello-world/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/hello-world"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/developer-journey/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/developer-journey"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/code_playground/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/code_playground"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/changelog/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/changelog"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/vs-code/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/vs-code"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/known_issues_limitations/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/known_issues_limitations"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/dev_tooling/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/dev_tooling"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/browser/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/getting_started/local_development/browser"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/develop/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/develop/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/develop/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/develop/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/develop/cors/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/develop/cors"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/rejections/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/rejections"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/public-dist/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/public-dist"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/private-dist/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/private-dist"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/listing_guide/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/listing_guide"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/review_process/submission_checklist/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/review_process/submission_checklist"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/review_process/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/review_process/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/review_process/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/review_process/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/monetization/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/monetization"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/brand_guidelines/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/brand_guidelines"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/user_interface/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/user_interface"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/usability/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/usability"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/security/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/security"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/planning/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/planning"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/performance/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/performance"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/listing/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/listing"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/features/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/features"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/edge_case/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/edge_case"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/content/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/content"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/compatibility/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/compatibility"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/auth/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/auth"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/accessibility/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/general/accessibility"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/requirements/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/requirements"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/recommendations/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/recommendations"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/distribute/guidelines/genai/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/index.md",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/index.md/index",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/index.md/"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/implementation_guide/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/implementation_guide"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/fonts/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/fonts"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/best_practices/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/best_practices"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/visual_elements/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/visual_elements"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/theming/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/theming"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/resources_and_references/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/resources_and_references"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/mobile_ux/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/mobile_ux"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/introduction/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/introduction"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/feedback_and_messaging/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/feedback_and_messaging"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/design_principles/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/design_principles"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/changelog/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/changelog"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/branding_guidelines/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/design/ux_guidelines/branding_guidelines"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/performance/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/performance"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/frameworks-libraries-bundling/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/frameworks-libraries-bundling"
+        },
+        {
+            "Source": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/coi/",
+            "Destination": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/coi"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/UnorderedListStyle",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/unordered-list-style"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/solid-color-stroke-with-optional-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/OrderedListStyle",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/ordered-list-style"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/Font",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/font"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EventHandlerId",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/event-handler-id"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/EditorEventHandler",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/type-aliases/editor-event-handler"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/unsupported-text-layout"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/unordered-list-style-input"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/TextRange",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/text-range"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/StyleRange",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/style-range"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Stroke",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/stroke"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/SolidColorStroke",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/solid-color-stroke"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/RectangleGeometry",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/rectangle-geometry"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Rect",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/rect"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/PointTextLayout",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/point-text-layout"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Point",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/point"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles-range-input"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStylesRange",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles-range"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStylesInput",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles-input"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ParagraphStyles",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/paragraph-styles"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/OrderedListStyleInput",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ordered-list-style-input"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ListItem",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/list-item"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/IStrokableNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/i-strokable-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/IRectangularNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/i-rectangular-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/IFillableNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/i-fillable-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Fill",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/fill"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ContainerNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/container-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/ColorFill",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/color-fill"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Color",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/color"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStylesRangeInput",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles-range-input"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStylesRange",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles-range"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStylesInput",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles-input"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/CharacterStyles",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/character-styles"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/BitmapImage",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/bitmap-image"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/BaseParagraphStyles",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/base-paragraph-styles"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/auto-height-text-layout"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/AreaTextLayout",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/area-text-layout"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/VisualEffectType",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/visual-effect-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/TextLayout",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/text-layout"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/TextAlignment",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/text-alignment"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/StrokeType",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/stroke-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/StrokePosition",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/stroke-position"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/SceneNodeType",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/scene-node-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/FillType",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/fill-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/FillRule",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/fill-rule"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/EditorEvent",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/editor-event"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/BlendMode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/blend-mode"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/ArrowHeadType",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/enumerations/arrow-head-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/VisualNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/visual-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Viewport",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/viewport"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/UnknownNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/unknown-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/UnavailableFont",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/unavailable-font"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/TextNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/text-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/TextContentModel",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/text-content-model"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/StrokeShapeNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/stroke-shape-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/StrokableNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/strokable-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/SolidColorShapeNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/solid-color-shape-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/RestrictedItemList",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/restricted-item-list"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/RectangleNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/rectangle-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ReadOnlyItemList",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/read-only-item-list"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/PathNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/path-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/PageNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/page-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/PageList",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/page-list"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Node",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/MediaContainerNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/media-container-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/LineNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/line-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ItemList",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/item-list"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ImageRectangleNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/image-rectangle-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/GroupNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/group-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/GridLayoutNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/grid-layout-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/GridCellNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/grid-cell-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Fonts",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/fonts"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/FillableNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/fillable-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ExpressRootNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/express-root-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/EllipseNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ellipse-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Editor",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/editor"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Context",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/context"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ComplexShapeNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/complex-shape-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ColorUtils",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/color-utils"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/BaseNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/base-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/BaseFont",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/base-font"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/AvailableFont",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/available-font"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ArtboardNode",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/artboard-node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/ArtboardList",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/artboard-list"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/AddOnData",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/add-on-data"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/addonsdk/instance-clientStorage",
+            "Destination": "/express/add-ons/docs/references/addonsdk/instance-client-storage"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/addonsdk/app-devFlags",
+            "Destination": "/express/add-ons/docs/references/addonsdk/app-dev-flags"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/addonsdk/app-currentUser",
+            "Destination": "/express/add-ons/docs/references/addonsdk/app-current-user"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use_videos",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/use-videos"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use_text",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/use-text"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use_pdf_powerpoint",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/use-pdf-powerpoint"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use_images",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/use-images"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use_geometry",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/use-geometry"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use_color",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/use-color"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use_audio",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/use-audio"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/user_info",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/user-info"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/theme_locale",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/theme-locale"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/premium_content",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/premium-content"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/position_elements",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/position-elements"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/page_metadata",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/page-metadata"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/modal_dialogs",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/modal-dialogs"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/local_data_management",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/local-data-management"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/group_elements",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/group-elements"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/element_metadata",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/element-metadata"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/drag_and_drop",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/drag-and-drop"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/document_metadata",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/document-metadata"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/create_renditions",
+            "Destination": "/express/add-ons/docs/guides/learn/how_to/create-renditions"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/code_playground",
+            "Destination": "/express/add-ons/docs/guides/getting_started/code-playground"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/local_development/known_issues_limitations",
+            "Destination": "/express/add-ons/docs/guides/getting_started/local_development/known-issues-limitations"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/local_development/dev_tooling",
+            "Destination": "/express/add-ons/docs/guides/getting_started/local_development/dev-tooling"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/distribute/listing_guide",
+            "Destination": "/express/add-ons/docs/guides/build/distribute/listing-guide"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/distribute/review_process/submission_checklist",
+            "Destination": "/express/add-ons/docs/guides/build/distribute/review_process/submission-checklist"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/distribute/guidelines/brand_guidelines",
+            "Destination": "/express/add-ons/docs/guides/build/distribute/guidelines/brand-guidelines"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/distribute/guidelines/general/user_interface",
+            "Destination": "/express/add-ons/docs/guides/build/distribute/guidelines/general/user-interface"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/distribute/guidelines/general/edge_case",
+            "Destination": "/express/add-ons/docs/guides/build/distribute/guidelines/general/edge-case"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/implementation_guide",
+            "Destination": "/express/add-ons/docs/guides/build/design/implementation-guide"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/best_practices",
+            "Destination": "/express/add-ons/docs/guides/build/design/best-practices"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/visual_elements",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux_guidelines/visual-elements"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/resources_and_references",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux_guidelines/resources-and-references"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/mobile_ux",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux_guidelines/mobile-ux"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/feedback_and_messaging",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux_guidelines/feedback-and-messaging"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/design_principles",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux_guidelines/design-principles"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/branding_guidelines",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux_guidelines/branding-guidelines"
+        }
+    ],
+    ":type": "sheet"
+}
