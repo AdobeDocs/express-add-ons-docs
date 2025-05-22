@@ -36,16 +36,6 @@ For more details on best practices, please refer to this [Color system guide](ht
 
 Spectrum is based on the Adobe Clean and Adobe Clean Han typefaces. The former is used for Latin characters, while the latter is for Simplified Chinese, Traditional Chinese, Japanese, and Korean ones.
 
-<!-- <div className="container">
-  <div className="image-column">
-    <img src="./img/visual_heading.png" alt="headings" className="responsive-image" />
-  </div>
-  <div className="text-column">
-    <h3>Headings</h3>
-    <p>Headings in Spectrum for Adobe Express always use bolder typography. The default and heavy weights both rely on Adobe Clean Black (Sans Serif).</p>
-  </div>
-</div> -->
-
 ### Headings
 
 Headings in Spectrum for Adobe Express use bolder typography. The default weight is 700 (Adobe Clean Black, Sans Serif), with a size ranging from M to XXS.
@@ -156,10 +146,6 @@ Spectrum includes a number of widgets that allow you to build rich UIs for your 
 This is a [Spectrum theme](https://spectrum.adobe.com/page/theming/) specifically designed for the Adobe Express product suite to accommodate the needs of a mainstream, creative consumer audience. It features a friendlier visual tone, bolder typography, softer rounding on elements, and indigo as the accent color. See the Spectrum for Adobe Express theme in action below on the right, compared to the default on the left:
 
 ![Spectrum for Adobe Express](./img/components_theme.png)
-
-<!-- ### Buttons & Buttons Groups
-
-Buttons are essential for enabling user interactions in your add-on. -->
 
 ### Buttons
 
