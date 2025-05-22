@@ -528,5 +528,3 @@ sp-field-label {
     width: 290px;
 }
 ```
-
-<!-- TODO replace with final and more details about customizing -->

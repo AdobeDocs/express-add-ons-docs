@@ -22,9 +22,9 @@ contributors:
 
 During your development, it's important to be able to debug your code and troubleshoot any issues that may arise. Fortunately, most modern browsers come with built-in developer tools that can help you do just that.
 
-<div style="display: flex; justify-content: center;">
-    <iframe width="779" height="438" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<Embed slots="video" />
+
+https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi
 
 ## Browser Developer Tools
 
@@ -54,8 +54,6 @@ Next, navigate to the **Sources** tab, and from there you can locate and select 
 Once you've selected your file, you can set breakpoints by clicking on the line number where you want the breakpoint to be set. This will pause the execution of your code at that breakpoint, allowing you to inspect variables and step through your code one line at a time.
 
 By leveraging these tools, you will develop a deeper understanding of how your add-on is working, be able to identify and fix bugs more quickly, and benefit from a high-performing add-on.
-
-<!-- <iframe aria-label="Browser Debugging Demo" src="https://drive.google.com/file/d/13FHUuRpVti9AH4nUwAMcvNcP6OzGpOc1/preview" width="640" height="480"></iframe> -->
 
 ### Console
 

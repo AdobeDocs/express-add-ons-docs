@@ -42,8 +42,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ### Topics Covered
 
-<!-- List block here -->
-<ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [Invoking Document Model Sandbox methods from the UI iframe](#proxy-api)
 
@@ -863,7 +862,6 @@ The code for this project can be downloaded [here](https://github.com/AdobeDocs/
 
 Please use the UI iframe and Document Sandbox tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
-<!-- Code below -->
 <CodeBlock slots="heading, code" repeat="6" languages="index.html, styles.css, ui/index.js, ui/table-utils.js, documentSandbox/code.js, documentSandbox/utils.js" />
 
 #### UI iframe

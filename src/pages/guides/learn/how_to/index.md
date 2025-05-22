@@ -32,36 +32,6 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 
 ## How-to guides
 
-<!-- - Authentication & Authorization
-  - [Use OAuth 2.0](./oauth2.md)
-- Data & Environment
-  - [Store Data](./local-data-management.md)
-  - [Theme & Locale](./theme-locale.md)
-- UI & Interaction
-  - [Use Drag & Drop](./drag-and-drop.md)
-  - [Use Modal Dialogs](./modal-dialogs.md)
-- Use Design Elements
-  - [Use Text](./use-text.md)
-  - [Use Geometry](./use-geometry.md)
-  - [Use Color](./use-color.md)
-  - [Use Images](./use-images.md)
-  - [Use Videos](./use-videos.md)
-  - [Use Audio](./use-audio.md)
-  - [Use PDF and PowerPoint](./use-pdf-powerpoint.md)
-  - [Group Elements](./group-elements.md)
-  - [Position Elements](./position-elements.md)
-- Use Metadata
-  - [Document Metadata](./document-metadata.md)
-  - [Page Metadata](./page-metadata.md)
-  - [Element Metadata](./element-metadata.md)
-- Exporting & Output
-  - [Create Renditions](./create-renditions.md)
-  - [Manage with Premium Content](./premium-content.md)
-- User Info
-  - [Identify users](./user-info.md) -->
-
-<br/><br/>
-
 | Topics                         | How-to guides                                       |
 | ------------------------------ | --------------------------------------------------- |
 | Authentication & Authorization | [Use OAuth 2.0](./oauth2.md)                        |
@@ -88,8 +58,6 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 ## Complete Projects
 
 We've created a set of in-depth tutorials that guide you through the process of building a complete add-on from scratch.
-
-<br/><br/>
 
 | Topics                        | Tutorials                                                                                      |
 | ----------------------------- | ---------------------------------------------------------------------------------------------- |

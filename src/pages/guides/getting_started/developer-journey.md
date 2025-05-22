@@ -44,11 +44,9 @@ The add-on's use cases are endless, but some real-world examples are:
 
 Add-ons are lightweight programs that run in their own panel within the Adobe Express user interface; you can build add-ons with standard web technologies like **HTML**, **CSS**, and **JavaScript**. Ideally, they provide a seamless experience for the user—they should feel like they are part of the Adobe Express app!
 
-<br/><br/>
+<Embed slots="video" />
 
-<div style="display: flex; justify-content: center;">
-  <iframe width="779" height="438" src="https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ" title="Building Add-on Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/><br/>
+https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ
 
 Once you have your add-on ready, you can distribute it through the [Adobe Express Marketplace](https://express.adobe.com/add-ons). With a few clicks, it'll be made available to **millions of Adobe Express users**.
 
@@ -76,10 +74,9 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 
 The best way to learn is by doing! Adobe Express integrates a [Playground](code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
-<br/><br/><div style="display: flex; justify-content: center;">
+<Embed slots="video" />
 
- <iframe width="779" height="438" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/>
+https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz
 
 ### Run the Code Playground
 
@@ -135,11 +132,9 @@ Feel free to explore [the other Tutorials](../learn/how_to/tutorials/index.md), 
 
 Adobe Express is based on the [Adobe Spectrum design system](https://s2.spectrum.adobe.com/), and your add-ons should follow the same design language.
 
-<br/><br/>
+<Embed slots="video" />
 
-<div style="display: flex; justify-content: center;">
-    <iframe width="779" height="438" src="https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI" title="Designing Add-on Interfaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI
 
 We've created a set of [UX Guidelines](../build/design/index.md) to help you get started; they cover the [design principles](../build/design/ux_guidelines/design-principles.md), [color](../build/design/ux_guidelines/visual-elements.md#color), [typography](../build/design/ux_guidelines/visual-elements.md#typography), [layout](../build/design/ux_guidelines/visual-elements.md#layout--structure) and much more.
 
@@ -181,11 +176,9 @@ Add-ons can be monetized according to a variety of models (free, free & paid, fr
 
 If you want to learn more about it, please read the [Monetization Guidelines](../build/distribute/guidelines/monetization.md), or watch the [Marketing and monetizing Adobe Express add-ons](https://www.youtube.com/watch?v=gF6FU_d6QoY) video below, recorded at one of the monthly [Adobe Express Office Hours](https://developer.adobe.com/developers-live) community events.
 
-<br/><br/>
+<Embed slots="video" />
 
-<div style="display: flex; justify-content: center;">
-    <iframe width="779" height="438" src="https://www.youtube.com/embed/gF6FU_d6QoY?si=YkooV1gOemVE1Rz5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+https://www.youtube.com/embed/gF6FU_d6QoY?si=YkooV1gOemVE1Rz5
 
 ## Next steps
 
