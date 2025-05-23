@@ -33,7 +33,3 @@ The Spectrum design system supports theming, allowing you to customize features 
 When customizing your add-on's theme, you're free to incorporate brand-specific elements, such as color schemes and logos tailored to your identity. It is essential that the overall experience remains consistent with the Spectrum for Adobe Express styling guidelines, though. They ensure a cohesive user experience across all add-ons, maintaining a professional and polished appearance while allowing room for personalization.
 
 If you’re developing a custom component, it must adhere to the Spectrum Express style standards, too, in order to ensure visual harmony and usability within the Adobe Express ecosystem. For detailed guidance on these requirements, please refer to [these guidelines](https://opensource.adobe.com/spectrum-web-components/tools/theme/#usage).
-
-<!-- ## Theming Examples
-
-**TODO:** Same as above. -->
