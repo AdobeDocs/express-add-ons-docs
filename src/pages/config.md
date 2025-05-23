@@ -162,7 +162,7 @@
             - [User Info](guides/learn/how_to/user-info.md) 
                 - [Identify users](guides/learn/how_to/user-info.md) 
             - [Complete Projects](guides/learn/how_to/tutorials/index.md) 
-                - [Document APIs](guides/learn/how_to/tutorials/grids-addon) 
+                - [Document APIs](guides/learn/how_to/tutorials/grids-addon.md) 
                 - [Communication APIs](guides/learn/how_to/tutorials/stats-addon) 
                 - [Using Adobe Spectrum](guides/learn/how_to/tutorials/spectrum-workshop/) 
                     - [Basic JavaScript add-on with Spectrum Web Components](guides/learn/how_to/tutorials/spectrum-workshop/part1/) 
