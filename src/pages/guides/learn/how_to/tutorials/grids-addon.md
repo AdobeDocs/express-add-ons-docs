@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=SQMYA660gII
 
 ![](images/grids-addon.png)
 
-Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
+Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the *gutter*), and apply color overlays.
 
 ### Changelog
 
@@ -284,7 +284,7 @@ runtime.exposeApi({
 });
 ```
 
-The _method shorthand syntax_ provides a proper `this` reference instead.
+The *method shorthand syntax* provides a proper `this` reference instead.
 
 ```js
 runtime.exposeApi({
@@ -433,9 +433,9 @@ The `rect` object now exists as a `RectangleNode` instance with a width of 200 p
 editor.context.insertionParent.children.append(rect);
 ```
 
-Let's unpack this line. As it usually happens with any DOM (Document Object Model), it's easier if read _backwards_—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the _preferred parent_ to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^2]
+Let's unpack this line. As it usually happens with any DOM (Document Object Model), it's easier if read *backwards*—from the end to the beginning. We are appending the `rect` object to the `children` list of the `insertionParent` (which is "the *preferred parent* to insert newly added content into") of the `context` (the "User's current selection context"), a property of the `editor` class.[^2]
 
-In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a rectangle to a container's `children` collection.[^3]
+In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are *appended* to collections: you `append()` a rectangle to a container's `children` collection.[^3]
 
 ![](images/grids-addon-shape.png)
 
