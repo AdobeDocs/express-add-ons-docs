@@ -4,7 +4,7 @@
 
 <ProductCard slots="icon, text, buttons" theme="light" width="50%" />
 
-<img src="images/lit-logo.svg" alt="lit-logo" width="70px" height="40px"/>
+![lit-logo](images/lit-logo.svg)
 
 Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
 
@@ -36,7 +36,7 @@ A [template literal](https://lit.dev/docs/templates/overview/) is a string liter
 
 ### Decorators
 
-A [_decorator_](https://lit.dev/docs/components/decorators/) is a certain type of declaration that can be attached to a class declaration. It is prefixed with an `@` symbol and can be used to modify the behavior of a class or its members. Some popular decorators in Lit include:
+A [*decorator*](https://lit.dev/docs/components/decorators/) is a certain type of declaration that can be attached to a class declaration. It is prefixed with an `@` symbol and can be used to modify the behavior of a class or its members. Some popular decorators in Lit include:
 
 - `@customElement`: defines a custom element with a given tag name.
 - `@property`: defines a reactive property that triggers a re-render when its value changes.
@@ -46,7 +46,7 @@ A [_decorator_](https://lit.dev/docs/components/decorators/) is a certain type o
 
 ### Directives
 
-A Lit [_directive_](https://lit.dev/docs/templates/directives/) is a special kind of decorator that allows you to extend the template syntax with custom behavior. Some popular directives include:
+A Lit [*directive*](https://lit.dev/docs/templates/directives/) is a special kind of decorator that allows you to extend the template syntax with custom behavior. Some popular directives include:
 
 - `until`: waits for a promise to resolve before rendering the content.
 - `repeat`: repeats a template for each item in an array.
@@ -68,7 +68,7 @@ The `render` method is defined as a template literal that returns the component'
 
 ### Reactive Properties
 
-Lit uses [_reactive properties_](https://lit.dev/docs/components/properties/) to automatically update the DOM when the state of your component changes. You define properties using decorators like `@property`. When a property changes, Lit automatically triggers a re-render of the component. This reactive behavior simplifies the process of managing state and updating the UI.
+Lit uses [*reactive properties*](https://lit.dev/docs/components/properties/) to automatically update the DOM when the state of your component changes. You define properties using decorators like `@property`. When a property changes, Lit automatically triggers a re-render of the component. This reactive behavior simplifies the process of managing state and updating the UI.
 
 ## TypeScript Key Features
 

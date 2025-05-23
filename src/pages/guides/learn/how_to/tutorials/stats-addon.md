@@ -62,7 +62,7 @@ The **Document API** makes new, more powerful capabilities available, allowing t
 
 ### Proxies
 
-How does this all work, then? The process involves exposing proxies for the _other context_ to use, serving as a user-friendly abstraction; under the hood, the implementation relies on a messaging system, which is hidden to us developers.
+How does this all work, then? The process involves exposing proxies for the *other context* to use, serving as a user-friendly abstraction; under the hood, the implementation relies on a messaging system, which is hidden to us developers.
 
 ```js
 // runtime in the UI iframe
@@ -83,7 +83,7 @@ runtime.exposeApi({
 }); // exposing a payload {}
 ```
 
-We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required _on the other side_ to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
+We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required *on the other side* to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
 
 ```js
 // UI iframe, importing a payload from the Document Sandbox
@@ -124,7 +124,7 @@ const panelUIProxy = await runtime.apiProxy("panel");
 await panelUIProxy.ready("Document Sandbox");
 ```
 
-As the name implies, the `panelUIProxy` constant in the Document Sandbox is a _proxy_ for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
+As the name implies, the `panelUIProxy` constant in the Document Sandbox is a *proxy* for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
 
 <CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
 
@@ -183,7 +183,7 @@ runtime.exposeApi({
 });
 ```
 
-In the above example, if `drawShape()` needs to call either `drawEllipse()` or `drawRect()`, you may use the _method shorthand syntax_.
+In the above example, if `drawShape()` needs to call either `drawEllipse()` or `drawRect()`, you may use the *method shorthand syntax*.
 
 ```js
 // Document Sandbox
@@ -451,7 +451,7 @@ The Document Sandbox exposes only a `getDocumentData()` method, which collects t
 
 When the iframe has loaded its SDK, it will call `toggleStatus()`, passing the `"iframe"` string as a parameter—telling the function which light to turn green. Similarly, when the Document Sandbox is ready, it will reach out for `toggleStatus()` on its own. Neither process requires the user's intervention.
 
-When the "Analyze Document" button is clicked, the iframe—via the Document Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an _iframe-to-Document-Sandbox-to-iframe_ roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
+When the "Analyze Document" button is clicked, the iframe—via the Document Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an *iframe-to-Document-Sandbox-to-iframe* roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
 
 <CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
 
