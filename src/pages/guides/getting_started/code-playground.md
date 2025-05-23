@@ -44,8 +44,6 @@ The Code Playground is designed for:
 
 ## Features
 
-<br/>
-
 | Feature                      | Description                                                                                               |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
 | **Real-Time Preview**        | See your changes as you code, allowing for immediate feedback and faster adjustments.                     |
@@ -57,12 +55,6 @@ The Code Playground is designed for:
 | **Local Persistence**        | Save your work to your browser's local storage and resume where you left off, preventing accidental loss. |
 | **Keyboard Shortcuts**       | Use keyboard shortcuts to save, run, and reset your code quickly.                                         |
 
-<!-- Check out the video below for a quick introduction to the add-on playground features.
-
-<br/><br/><div style="display: flex; justify-content: center;">
-
- <iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/> -->
 
 ## Development Workflow Use Cases
 
@@ -101,8 +93,6 @@ The playground offers two distinct development modes:
 
 - [**Script Mode**](#script-mode): Experiment with the Adobe Express [Document Sandbox](../../references/document-sandbox/index.md). This mode is equivalent to writing code in the `sandbox/code.js` file in an add-on project running locally, but allows you to rapidly test in Express directly.
 - [**Add-on Mode**](#add-on-mode): Test and iterate on your [Add-on UI](../../references/addonsdk/index.md) and functionality with no setup required.
-
-<br/>
 
 | Comparison Factor     | Script Mode                                                               | Add-on Mode                                                                                                                     |
 | --------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -237,17 +227,15 @@ Keyboard Shortcuts, local save and session management are all designed to help y
 
 ### Keyboard Shortcuts
 
-<br/>
-
-| Action                           | Windows/Linux                                                | macOS                                                       |
-| -------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| **Save**                         | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>            | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>            |
-| **Run**                          | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> |
-| **Reset**                        | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>            | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>            |
-| **Increase font size**           | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd>     | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd>     |
-| **Decrease font size**           | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd>    | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd>    |
-| **Switch between tabs**          | <kbd>Ctrl</kbd> + <kbd>1, 2, 3, 4</kbd>                      | <kbd>Cmd</kbd> + <kbd>1, 2, 3, 4</kbd>                      |
-| **View the typings suggestions** | <kbd>Ctrl</kbd> + <kbd>space</kbd>                           | <kbd>Cmd</kbd> + <kbd>space</kbd>                           |
+| Action                           | Windows/Linux                                                | macOS                      |
+| -------------------------------- | ------------------------------------------------------------ | -------------------------- |
+| **Save**                         | Ctrl + Shift + S                                             | Cmd + Shift + S            |
+| **Run**                          | Ctrl + Shift + Return/Enter                                  | Cmd + Shift + Return/Enter |
+| **Reset**                        | Ctrl + Shift + X                                             | Cmd + Shift + X            |
+| **Increase font size**           | Ctrl + Shift + Plus (+)                                      | Cmd + Shift + Plus (+)     |
+| **Decrease font size**           | Ctrl + Shift + Minus (-)                                     | Cmd + Shift + Minus (-)    |
+| **Switch between tabs**          | Ctrl + 1, 2, 3, 4                                            | Cmd + 1, 2, 3, 4           |
+| **View the typings suggestions** | Ctrl + space                                                 | Cmd + space                |
 
 <InlineAlert slots="header,text1" variant="success"/>
 
@@ -259,7 +247,7 @@ Use the "**...**" button in the top right corner of the playground window to ref
 
 The Code Playground features local persistence to help prevent the loss of your work. This functionality ensures that your code is stored in your browser's local storage, providing a safeguard against accidental data loss.
 
-Code in the playground is **_not saved automatically_**. To ensure it's saved, you need to take one of the following steps:
+Code in the playground is ***not saved automatically***. To ensure it's saved, you need to take one of the following steps:
 
 1. Save your work using the [keyboard shortcut for Save](#keyboard-shortcuts).
 2. Run the code via the **Run Code** button or with the [keyboard shortcut for Run](#keyboard-shortcuts).
