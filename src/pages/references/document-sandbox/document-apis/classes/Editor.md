@@ -16,7 +16,7 @@ User's current selection context
 
 [`Context`](context.md)
 
----
+<hr />
 
 ### documentRoot
 
@@ -41,7 +41,7 @@ the root of the document.
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
----
+<hr />
 
 ### createGroup()
 
@@ -53,7 +53,7 @@ Transform values default to 0.
 
 a group node.
 
----
+<hr />
 
 ### createImageContainer()
 
@@ -87,7 +87,7 @@ if needed to stay below an application-defined size cap).
 
 MediaContainerNode representing the top container node of the multi-node structure.
 
----
+<hr />
 
 ### createLine()
 
@@ -100,7 +100,7 @@ MediaContainerNode representing the top container node of the multi-node structu
 a line node with default start point and end point and a default stroke.
 Transform values default to 0.
 
----
+<hr />
 
 ### createPath()
 
@@ -121,7 +121,7 @@ Throws if the input is empty or is not legal SVG path syntax.
 
 a path node with a default stroke and no initial fill.
 
----
+<hr />
 
 ### createRectangle()
 
@@ -134,7 +134,7 @@ a path node with a default stroke and no initial fill.
 a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
 
----
+<hr />
 
 ### createText()
 
@@ -151,11 +151,11 @@ adjust to accommodate whatever text is set.
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
 
----
+<hr />
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/bitmap-image.md)\>
+• **loadBitmapImage**(`bitmapData`): `Promise` [`BitmapImage`](../interfaces/bitmap-image.md)
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -175,9 +175,9 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise`<[`BitmapImage`](../interfaces/bitmap-image.md)\>
+`Promise` [`BitmapImage`](../interfaces/bitmap-image.md)
 
----
+<hr />
 
 ### makeColorFill()
 
@@ -195,7 +195,7 @@ The color to use for the fill.
 
 [`ColorFill`](../interfaces/color-fill.md)
 
----
+<hr />
 
 ### makeStroke()
 
@@ -225,11 +225,11 @@ See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on 
 
 a stroke configured with the given options.
 
----
+<hr />
 
 ### queueAsyncEdit()
 
-• **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
+• **queueAsyncEdit**(`lambda`): `Promise` `void`
 
 Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
 the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
@@ -271,6 +271,6 @@ a function which edits the document model.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise` `void`
 
 a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.
