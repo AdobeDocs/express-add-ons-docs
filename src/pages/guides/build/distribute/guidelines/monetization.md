@@ -17,32 +17,6 @@ Our monetization guidelines include:
 - [Recommendations](#recommendations-for-monetizing-your-add-ons)
 - [Branding your add-ons](#branding-your-add-ons-for-monetization)
 
-<!-- ## Payment Models
-
-You can choose from a variety of models for your add-on. Take the time to consider which one suits your needs best.
-
-### Free
-
-Users are not charged for adding and using the add-on.
-
-## Freemium
-
-This model offers a basic version for free, but users must upgrade to a paid version for extra features and content. This payment could be a one-time fee or subscription.
-
-Freemium add-ons have a high percentage of acquisition in our marketplace, making this our recommended option.
-
-### Paid
-
-This requires users to pay a fee before using the add-on. You may wish to offer a trial period at the outset, in which users can test out the add-on for a certain period of time before deciding whether to pay.
-
-### Sign-up for service (SaaS)
-
-The add-on requires the user to have access to external services before they can use it.
-
-### Credits
-
-This model asks users to buy credits which can be used for services on the add-on. This can be used for things such as licensing images or trying out Generative AI models. Many add-ons offer users some free credits to start so they can test out the service. -->
-
 ## General Guidelines
 
 The sections below provide details on the guidelines developers should be following when monetizing their add-ons.
@@ -129,19 +103,19 @@ Instead of using words such as "premium" or "gold" in your copy, you should try 
 
 Words such as "upgrade" or "subscribe" are clearer and more user-friendly. For example, instead of:
 
-❌ _"You're using the trial version. Go Premium"_
+❌ *"You're using the trial version. Go Premium"*
 
 Try:
 
-✅ _"You're using the trial version. Upgrade today"_
+✅ *"You're using the trial version. Upgrade today"*
 
 Also, consider adjusting your language to make the benefits of upgrading clearer. For example, instead of:
 
-❌ _"This item is premium"_
+❌ *"This item is premium"*
 
 Try:
 
-✅ _"Subscribe to access unlimited illustrations like these"_
+✅ *"Subscribe to access unlimited illustrations like these"*
 
 ## Branding your add-ons for monetization
 
@@ -198,7 +172,7 @@ The most common size of badges used within Express panels is typically 20x20px, 
 
 - As a general rule, badges should be placed on the bottom right or right side of the paywalled content or feature.
 - The badge size should typically be 18px or 20px, but can be adjusted depending on the size of the content it is paired with.
-- We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. _This content is available when you upgrade the add-on_.
+- We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. *This content is available when you upgrade the add-on*.
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
 - If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.<br/><br/>
 
