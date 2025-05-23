@@ -68,7 +68,7 @@ The CLI contains a handy script to help with this step. Before you proceed, open
 npm run package
 ```
 
-The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the _root_ of the zip file, similar to what's built into the `/dist` folder.
+The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the *root* of the zip file, similar to what's built into the `/dist` folder.
 
 ### 4. Carefully [review our set of guidelines](./guidelines/index.md)
 
@@ -185,18 +185,16 @@ The **Monetization details** section allows developers to declare the payment op
 
 Developers can choose from various payment options, including **free**, **one-time payments**, **recurring subscriptions**, **micro-transactions**, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
 
-- The _Other_ option is provided for developers to choose when their current setup does not fit the provided options.
-- The final _additional details_ text area allows developers to provide additional payment terms like _"7 day free trial"_ or _"$9.99/month"_ and is optional for all payment choices except _Other_. We encourage the use of this field to clearly state any specific payment details.
+- The *Other* option is provided for developers to choose when their current setup does not fit the provided options.
+- The final *additional details* text area allows developers to provide additional payment terms like *"7 day free trial"* or *"$9.99/month"* and is optional for all payment choices except *Other*. We encourage the use of this field to clearly state any specific payment details.
 
 Do check in the live preview how the listing will appear to users. Depending on the payment selection, different details will automatically be displayed in the add-on listing.
 
-If the payment choice selected is not free, an **Upgrade available** badge will be displayed in the details along with specific default text describing the choice selected (ie: "_...for a one-time purchase_", "_...with a recurring subscription_", "_...purchase assets or features individually or in packages_"), and **Checkout is handled by the developer outside of Adobe Express**—as shown in the previous screenshot.
+If the payment choice selected is not free, an **Upgrade available** badge will be displayed in the details along with specific default text describing the choice selected (ie: "*...for a one-time purchase*", "*...with a recurring subscription*", "*...purchase assets or features individually or in packages*"), and **Checkout is handled by the developer outside of Adobe Express**—as shown in the previous screenshot.
 
 Any additional custom details entered by the developer are then shown below the default checkout message, as well as a timestamp indicating when the listing was last updated.
 
 In the case of the **free** payment selection, the following text simply be shown: "This add-on does not require any payment".
-
-<!-- If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter. -->
 
 Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
 
@@ -251,7 +249,7 @@ Add-on visbility for EU users
 
 If an EU user has a deep link to your add-on, and you are not compliant with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, they will not be able to install the add-on. However, if they have already installed it, they will still be able to use it. In both cases, they will see a banner with the following message:
 
-_This listing is not currently available in the EU. This developer has not submitted the trader information required by the EU Digital Services Act._
+*This listing is not currently available in the EU. This developer has not submitted the trader information required by the EU Digital Services Act.*
 
 ## Post-Submission details and insights
 
