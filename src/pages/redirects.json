@@ -480,7 +480,7 @@
             "Destination": "/express-add-ons-docs/src/pages/guides/index.md/"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/guides/index.md/index",
+            "Source": "/express-add-ons-docs/src/pages/guides/index.md",
             "Destination": "/express-add-ons-docs/src/pages/guides/index.md/"
         },
         {
