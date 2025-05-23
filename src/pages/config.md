@@ -3,8 +3,8 @@
 
 - pages:
     - [Adobe Express Add-ons](https://developer.adobe.com/express/add-ons)
-    - [Guides](guides)
-    - [SDK References](references)
+    - [Guides](guides/index.md)
+    - [SDK References](references/index.md)
     - [Community](https://developer.adobe.com/express/community)
     - [Fund for Design](https://developer.adobe.com/fund-for-design)
 
