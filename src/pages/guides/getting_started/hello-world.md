@@ -214,7 +214,7 @@ To *sideload* your add-on into Adobe Express, see the following animation or exp
   </ol>
 </details>
 
-<InlineAlert slots="text1, text2" variant="info"/>
+<InlineAlert slots="text" variant="info"/>
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
@@ -260,7 +260,7 @@ Note that the terminal where your add-on runs will display messages showing that
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
-<InlineAlert slots="header, text1, text2" variant="warning"/>
+<InlineAlert slots="header, text" variant="warning"/>
 
 Manifest updates
 
