@@ -28,14 +28,11 @@ A pre-requisite for local development is to have enabled the **Add-on Developmen
 
 ![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
 
-<details>
-  <summary>Click to view a list of steps to enable the Development Mode</summary>
-  <ol>
-    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-</details>
+<DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
+
+- Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
+- Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
+- Close the Settings dialog.
 
 ## Using the CLI
 

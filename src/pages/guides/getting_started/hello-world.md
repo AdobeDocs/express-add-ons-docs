@@ -48,14 +48,11 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
 
 ![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
-<details>
-  <summary>Click to view a list of steps to enable the Development Mode</summary>
-  <ol>
-    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-</details>
+<DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
+
+- Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
+- Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
+- Close the Settings dialog.
 
 ## Code Playground
 
@@ -67,15 +64,12 @@ To launch the Code Playground, see the following animation or expand the details
 
 ![How to open the Code Playground](./img/playground-open-the-playground.gif)
 
-<details>
-  <summary>Click to view a list of steps to open the Code Playground</summary>
-  <ol>
-    <li>Click the <b>Add-ons icon</b> in the left hand rail.</li>
-    <li>Enable the <b>Add-on Development</b> switch on the top right corner.</li>
-    <li>Click the <b>Launch code playground</b> button.</li>
-    <li>Click the <b>Script</b> tab.</li>
-  </ol>
-</details>
+<DetailsBlock slots="list"  summary="Click to view a list of steps to open the Code Playground" />
+  
+- Click the **Add-ons icon** in the left hand rail.
+- Enable the **Add-on Development** switch on the top right corner.
+- Click the **Launch code playground** button.
+- Click the **Script** tab.
 
 ### 2. Run your first script
 
@@ -202,28 +196,22 @@ To *sideload* your add-on into Adobe Express, see the following animation or exp
 
 ![How to sideload an add-on](./img/playground-sideload-add-on.gif)
 
-<details>
-  <summary>Click to view a list of steps to sideload an add-on in Adobe Express</summary>
-  <ol>
-    <li>Click the <b>Add-ons icon</b> in the left hand rail.</li>
-    <li>Enable the <b>Add-on Development</b> switch on the top right corner.</li>
-    <li>Click the <b>Test your local add-on</b> text.</li>
-    <li><b>Check the checkbox</b> in the Connect to development server modal.</li>
-    <li>Click the <b>Connect</b> button.</li>
-    <li>Click the <b>Hello World</b> add-on icon on the Add-ons tab on the left.</li>
-  </ol>
-</details>
+<DetailsBlock slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
+
+  - Click the **Add-ons icon** in the left hand rail.
+  - Enable the **Add-on Development** switch on the top right corner.
+  - Click the **Test your local add-on** text.
+  - **Check the checkbox** in the Connect to development server modal.
+  - Click the **Connect** button.
+  - Click the **Hello World** add-on icon on the Add-ons tab on the left.
 
 <InlineAlert slots="text" variant="info"/>
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-<details>
-  <summary>Click to see the screenshot</summary>
+<DetailsBlock slots="image"  summary="Click to see the screenshot" />
 
 ![Add-on testing](./img/playground-alt-testing.png)
-
-</details>
 
 If you click the **Create Rectangle** button, you'll see the rectangle being added to the document.
 
@@ -266,12 +254,9 @@ Manifest updates
 
 Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
-<details>
-  <summary>Click to see the screenshot</summary>
+<DetailsBlock slots="image"  summary="Click to see the screenshot" />
 
 ![Refresh manifest](./img/playground-refresh-manifest.png)
-
-</details>
 
 ## Next steps
 
