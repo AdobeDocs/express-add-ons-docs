@@ -154,7 +154,7 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 | Badge                                                             | Size(px) |                                                                                 Download link |
 | ----------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-plus-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-plus-badge20.svg" download="../img/addon-plus-badge20.svg">Download</a> |
+| ![](../img/addon-plus-badge20.svg)                                | 20x20    |[](../img/addon-plus-badge20.svg) download="../img/addon-plus-badge20.svg"                     |
 
 #### Paid badge
 
@@ -162,7 +162,7 @@ Use the checkmark badge below to indicate when content or features are paid and 
 
 | Badge                                                            | Size(px) |                                                                               Download link |
 | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-pro-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-pro-badge20.svg" download="../img/addon-pro-badge20.svg">Download</a> |
+| ![](../img/addon-pro-badge20.svg)                                | 20x20    | ![](../img/addon-pro-badge20.svg) download="../img/addon-pro-badge20.svg"                   |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -178,7 +178,7 @@ The most common size of badges used within Express panels is typically 20x20px, 
 
 | Sample badge usage                             |                                                  |                                                |
 | ---------------------------------------------- | ------------------------------------------------ | ---------------------------------------------: |
-| <img src="../img/list-placement-example.png"/> | <img src="../img/avatar-placement-example.png"/> | <img src="../img/grid-placement-example.png"/> |
+| ![](../img/list-placement-example.png)         |![](../img/avatar-placement-example.png)          | ![](../img/grid-placement-example.png)         |
 
 <InlineAlert slots="text" variant="success"/>
 
