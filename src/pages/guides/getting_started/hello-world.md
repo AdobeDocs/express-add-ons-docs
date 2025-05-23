@@ -124,7 +124,7 @@ This time, clicking **Run Code** will make a new add-on appear on the right side
 
 <InlineAlert variant="info" slots="header, text" />
 
-Script mode vs. Document JS
+**Script mode vs. Document JS**
 
 Even if the result of both the Script and Add-on modes in the Code Playground is the same rectangle being added to the document, you'll see that the code is different. Why? The Script mode is a simplified, prototype-friendly environment that takes care of many things under the hood, while the Add-on code needs to take care of the communication between the UI and the Document Sandbox APIs. More info [here](../learn/platform_concepts/context.md).
 
@@ -151,13 +151,13 @@ The [Templates section](./local_development/dev-tooling.md#templates) on the **D
 
 <InlineAlert slots="header, text1" variant="info"/>
 
-For Windows Users
+**For Windows Users**
 
 If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can [download `git`](https://git-scm.com/downloads) and add the directory location to the `path` variable in your Environment Variables.
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="warning"/>
 
-CLI troubleshooting
+**CLI troubleshooting**
 
 If you run into problems, run this command to clear the `npx` cache and ensure the latest version of the CLI is invoked.
 
@@ -250,7 +250,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-Manifest updates
+**Manifest updates**
 
 Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
