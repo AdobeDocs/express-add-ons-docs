@@ -106,7 +106,7 @@ The following properties can be accessed from the `addOnUISdk` object after it h
 | -----------------------: | -------------------: | -----------: | ---------------------------------------------------------: |
 | readonly                 | addOnUISdk.app       | object       | Provides access to the host application (Adobe Express)    |
 | readonly                 | addOnUISdk.instance  | object       | The currently running add-on instance.                     |
-| readonly                 | addOnUISdk.ready     | Promise      | Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with[Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).|
+| readonly                 | addOnUISdk.ready     | Promise      | Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with [Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).|
 |                          | addOnUISdk.constants | object       | A set of constants used throughout the add-on SDK.         |
 | readonly                 | addOnUISdk.apiVersion| string       | The current version of the add-on SDK running.             |
 
