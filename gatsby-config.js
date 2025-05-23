@@ -700,11 +700,11 @@ module.exports = {
                 pages: [
                   {
                     title: "Document APIs",
-                    path: "guides/learn/how_to/tutorials/grids-addon",
+                    path: "guides/learn/how_to/tutorials/grids-addon.md",
                   },
                   {
                     title: "Communication APIs",
-                    path: "guides/learn/how_to/tutorials/stats-addon",
+                    path: "guides/learn/how_to/tutorials/stats-addon.md",
                   },
                   {
                     title: "Using Adobe Spectrum",
