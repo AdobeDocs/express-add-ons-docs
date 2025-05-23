@@ -24,8 +24,6 @@ In the great tradition of programming tutorials, we'll start by building a simpl
 
 This guide is **divided into two tracks**, which you can follow independently of each other, based on your experience and preferences.
 
-<br/>
-
 | Code Playground Track                  | Command Line Interface (CLI) Track |
 | -------------------------------------- | ---------------------------------- |
 | Already available in Adobe Express     | Requires installation              |
@@ -33,8 +31,6 @@ This guide is **divided into two tracks**, which you can follow independently of
 | Limited to built-in APIs               | Full support for external packages |
 | Best for Learning & prototyping        | Best for Production development    |
 | Simple to moderate add-on's complexity | Moderate to complex add-ons        |
-
-<br/>
 
 The [Code Playground](#code-playground) path is based on a browser sandbox that runs instantly, requires no installation, and lets you explore add-on APIs with real-time feedback directly inside Adobe Express. **If you are new to add-on development**, or prefer to tinker-to-learn, then begin in the Playground to familiarise yourself with the environment; you can always try the CLI later.
 
@@ -202,7 +198,7 @@ The add-on's code is now running on a local server; you must tell Adobe Express 
 
 ### 3. Load & run your add-on
 
-To _sideload_ your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
+To *sideload* your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
 
 ![How to sideload an add-on](./img/playground-sideload-add-on.gif)
 
@@ -268,7 +264,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 Manifest updates
 
-Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
+Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
 <details>
   <summary>Click to see the screenshot</summary>
