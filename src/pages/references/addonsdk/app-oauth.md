@@ -27,7 +27,7 @@ Authorize a user using OAuth 2.0 PKCE workflow.
 | `scope`                 |                            `string` |                                                                                                                                                                                                                                 Scope to control the application's access. |
 | `codeChallenge`         |                            `string` |                                                                                                                                                                                                                        Code challenge used in Authorization Code Exchange. |
 | `additionalParameters?` |               `Map<string, string>` |                                                                                                                                               Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
-| `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`. <br/><br/>**NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
+| `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`. **NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
 
 #### Return Value
 
@@ -65,7 +65,7 @@ Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in w
 | `scope`                 |                            `string` |                                                                                                                                                                                                                                 Scope to control the application's access. |
 | `codeChallenge`         |                            `string` |                                                                                                                                                                                                                        Code challenge used in Authorization Code Exchange. |
 | `additionalParameters?` |               `Map<string, string>` |                                                                                                                                               Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
-| `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`. <br/><br/>**NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
+| `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`. **NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
 | `redirectUri`           |                            `string` |                                                                                                                  URL where the user is redirected to after successful or failed authorization. Hosting and handling redirects to this URL should be managed by the caller. |
 | `state`                 |                            `string` |                 A value which is preserved in the request, and replayed back as a query string parameter in the `redirectUri`. Although the primary reason for using the state parameter is to mitigate CSRF attacks, it can also be used to encode any other information. |
 
@@ -96,7 +96,6 @@ Each of the statuses returned below is the exact name as a string (ie: SUCCESS =
 
 The table below describes the possible error statuses returned when using the OAuth API, with a description of the scenario that will return them.
 
-<br/>
 
 |  Error Status |                                                                     Description |
 | ------------: | ------------------------------------------------------------------------------: |
