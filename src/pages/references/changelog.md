@@ -22,6 +22,16 @@ contributors:
 
 # Changelog
 
+## 2025-05-26
+
+### Added
+
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in `AddOnUISdk.app.document.link()`, along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md).
+
+### Updates
+
+- [`@adobe-ccwebext/ccweb-add-on-sdk-types`](https://github.com/adobe/create-ccweb-add-on/releases): Type Definitions for the CLI have been updated to version `1.17.0`.
+
 ## 2025-05-16
 
 ### Updated
