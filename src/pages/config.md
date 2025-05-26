@@ -9,7 +9,7 @@
     - [Fund for Design](https://developer.adobe.com/fund-for-design)
 
 - subPages:
-    - [Overview](references/) 
+    - [Overview](references/index.md) 
     - [Add-on UI SDK](references/addonsdk/) 
         - [app](references/addonsdk/addonsdk-app.md) 
             - [currentUser](references/addonsdk/app-current-user.md) 
