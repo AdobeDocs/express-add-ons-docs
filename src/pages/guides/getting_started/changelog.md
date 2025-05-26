@@ -26,7 +26,7 @@ contributors:
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in `AddOnUISdk.app.document.link()`, along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document_metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document_metadata.md).
 
 ### Updates
 
