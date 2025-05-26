@@ -21,7 +21,7 @@ contributors:
 
 # Use Document Metadata
 
-## Get the Document ID and Title
+## Get the Document ID, Title, and Link
 
 Through the [Add-on UI SDK Document object](../../../references/addonsdk/app-document.md), you can retrieve some information about the current document. Currently, there are asynchronous methods that allow you to retrieve the `id()` of the document and the `title()`. Also, associated events will let you listen for when the Document ID or the Document Title have changed, respectively via the `documentIdAvailable` and `documentTitleChange` events, which you can listen for with the [`addOnUISdk.app.on()`](../../../references/addonsdk/addonsdk-app.md#on) method.
 
@@ -40,7 +40,7 @@ addOnUISdk.ready.then(() => {
   const docTitle = await addOnUISdk.app.document.title();
 
   // Get the document Link
-  const docLink = await addOnUISdk.app.document.link();
+  const docLink = await addOnUISdk.app.document.link("document"); // or "published"
 
   console.log(`Document ID: ${docId}; Document Title: ${docTitle}`; `Document Link: ${docLink}`);
 
@@ -53,6 +53,16 @@ addOnUISdk.ready.then(() => {
   addOnUISdk.app.on("documentTitleChange", data => {
     console.log(`Document title changed to: ${data.documentTitle}`);
   });
+
+  // Listen for document link change
+    addOnUISdk.app.on("documentLinkAvailable", data => {
+      console.log(`Document ID changed to: ${data.documentLink}`);
+    });
+
+  // Listen for document published link change
+    addOnUISdk.app.on("documentPublishedLinkAvailable", data => {
+      console.log(`Document ID changed to: ${data.documentPublishedLink}`);
+    });
 });
 ```
 

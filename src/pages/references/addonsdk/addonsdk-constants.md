@@ -114,6 +114,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
         <p>The type of link</p>
         <ul>
           <li><strong>document</strong></li>Link to the current document.
+          <li><strong>published</strong></li>Link to the published document.
         </ul>
     </td>
 </tr>
