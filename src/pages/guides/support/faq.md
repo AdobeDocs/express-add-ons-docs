@@ -26,38 +26,6 @@ contributors:
 
 ## Questions
 
-<!-- - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
-- [Is `yarn` supported with the CLI, or only `npm`?](#is-yarn-supported-with-the-cli-or-only-npm)
-- [How do I save the state of my add-on?](#how-do-i-save-the-state-of-my-add-on)
-- [How do I use top level `await` while using webpack?](#how-do-i-use-top-level-await-while-using-webpack)
-- [How do I setup webpack to copy new files or folders into `dist`?](#how-do-i-setup-webpack-to-copy-new-files-or-folders-into-dist)
-- [My form submission doesn't work and the devtools console shows the error: "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?"](#my-form-submission-doesnt-work-and-the-devtools-console-shows-the-error-blocked-form-submission-to---because-the-forms-frame-is-sandboxed-and-the-allow-forms-permission-is-not-set-whats-wrong)
-- [How do I enable CORS for a service that blocks my add-on requests due to the origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-origin)
-- [How do I prevent my iframe content from being blocked due to cross-origin issues?](#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues)
-- [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
-- [I’m not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
-- [I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.](#i-receive-this-error-when-trying-to-run-my-add-on-error-eisdir-illegal-operation-on-a-directory)
-- [I receive a `MANIFEST_NOT_FOUND_ERROR` during the package verification when trying to upload my plugin package for distribution.](#i-receive-a-manifest_not_found_error-during-the-package-verification-when-trying-to-upload-my-plugin-package-for-distribution)
-- [How can I monetize my add-on?](#how-can-i-monetize-my-add-on)
-- [What does it mean when an API is considered **experimental**?](#what-does-it-mean-when-an-api-is-considered-experimental)
-- [What are the supported mime types/file formats for exported content?](#what-are-the-supported-mime-typesfile-formats-for-exported-content)
-- [What are the supported file formats for imported content in Adobe Express?](#what-are-the-supported-file-formats-for-imported-content-in-adobe-express)
-- [Are animated GIF's supported when importing or dragging content to the document?](#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document)
-- [Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?](#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error)
-- [Is `SharedArrayBuffer` supported?](#is-sharedarraybuffer-supported)
-- [Which browsers and operating systems are currently supported?](#which-browsers-and-operating-systems-are-currently-supported)
-- [How does Adobe use my add-on’s data?](#how-does-adobe-use-my-add-ons-data)
-- [Where can I request new add-on features or suggest ideas?](#where-can-i-request-new-add-on-features-or-suggest-ideas)
-- [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
-- [What mime type is returned from a PDF that was exported with the `createRenditions` method?](#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method)
-- [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
-- [I'm trying to use a newly released feature, but it seems to be unavailable?](#im-trying-to-use-a-newly-released-feature-but-it-seems-to-be-unavailable)
-- [Why is my add-on not visible in the EU region?](#why-is-my-add-on-not-visible-in-the-eu-region)
-- [How can I update my trader details in the publisher profile after submission?](#how-can-i-update-my-trader-details-in-the-publisher-profile-after-submission)
-- [What happens if an EU user has a deep link to my add-on and I am not compliant with the European Union Digital Services Act (DSA) trader requirements?](#what-happens-if-an-eu-user-has-a-deep-link-to-my-add-on-and-i-am-not-compliant-with-the-european-union-digital-services-act-dsa-trader-requirements)
-- [Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?](#can-an-eu-user-still-use-my-add-on-if-they-have-already-installed-it-but-i-am-not-compliant-with-the-dsa-trader-requirements)
-- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) -->
-
 ### 🛠️ Development Environment & Tooling
 
 - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
