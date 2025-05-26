@@ -6,52 +6,13 @@ Provides access to the Adobe Express host application's objects and methods to p
 
 ## Objects
 
-<table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-currentUser.md">currentUser</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the current user accessing the host application</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-devFlags.md">devFlags</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents flags which can be used to simulate certain behavior during development.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-document.md">document</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the active document of the host application.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-     <td class="spectrum-Table-cell"><p><pre><a href="app-oauth.md">oauth</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-ui.md">ui</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the host UI (Adobe Express UI).</p></td>
-  </tr>  
-  
-</tbody>
-</table>
-
+| Attribute      | Name                                           | Type        |  Description                                                                                |
+| -------------  | --------------------------------------------:  |-----------: |  --------------------------------------------------------------------------------------:    |          
+| readonly       | [currentUser](../addonsdk/app-current-user.md) |   object    |  Represents the current user accessing the host application                                 |
+|                | [devFlags](../addonsdk/app-dev-flags.md)       |  object     |  Represents flags which can be used to simulate certain behavior during development.        |
+| readonly       | [document](../addonsdk/app-document.md)        |  object     |  Represents the active document of the host application.                                    |
+| readonly       | [oauth](../addonsdk/app-oauth.md)              |  object     |  Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
+| readonly       | [ui](../addonsdk/app-ui.md)                    |  object     |  Represents the host UI (Adobe Express UI).                                                 |
 ## Methods
 
 ### on()
@@ -478,8 +439,7 @@ The payload data sent to the App `dragEnd` event handler.
 | `dropCancelled`     | `boolean`     | If drop occurred/drag ended at invalid position |
 | `dropCancelReason?` | `string`      |                    Reason for drop cancellation |
 
-**\* Important Event Handling Notes**<br/>
-
+**\* Important Event Handling Notes**
 - Since the `addOnUISdk` uses pointer event handlers to perform drag operations, you should ensure that you don't attach any pointer event handlers that prevent default or stop propagation. Adding those types of handlers will kill the built-in handlers and cause the events not to work.
 - You should not attach `click` event listeners to drag-enabled elements in the capture phase, as the `addOnUISdk` attaches a `cancelClickEvent` handler to drag-enabled elements to ensure that the automatic click (pointer down + pointer up automatically fires a click event) doesn't fire. Adding other handlers to this same element will cause them to be triggered on drag & drop completion.
 - TIP: Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any which may be causing conflicts with drag and drop handlers.
@@ -492,66 +452,18 @@ See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag-and
 
 The table below describes the events triggered from the add-on SDK. Use the `addOnUISdk.app.on()` method to subscribe to events, and the `addOnUISdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
-<table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>localechange</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when there is a locale change at the host side.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>themechange</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when there is a theme change at the host side.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>dragstart</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the user starts dragging an item for which drag behavior is enabled.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>dragend</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the drag operation ends.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>documentIdAvailable</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the document id is available in the application.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>documentTitleChange</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
-    <td style="vertical-align: bottom;">
-        <p>Triggered when the document title is changed in the application.</p>
-    </td>
-</tr>
-</tbody>
-</table>
+|  Type                  |   Description    |                                                                                         |  
+| --------------------:  |   ------------:  |  -------------------------------------------------------------------------------------: | 
+| localechange           |   string         |  Triggered when there is a locale change at the host side.                              |
+| themechange            |   string         |  Triggered when there is a theme change at the host side.                               |  
+| dragstart              |   string         |  Triggered when the user starts dragging an item for which drag behavior is enabled.    |  
+| dragend                |   string         |  Triggered when the drag operation ends.                                                |  
+| documentIdAvailable    |   string         |  Triggered when the document id is available in the application.                        |   
+| documentTitleChange    |   string         |  Triggered when the document title is changed in the application.                       |
 
 ## Errors
 
 The table below describes the possible error messages that may occur when using the core `addOnUISdk.app` methods, with a description of the scenario that will return them.
-
-<br/>
 
 |                                                                              Error Message |                                                                Error Scenario |
 | -----------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------: |
