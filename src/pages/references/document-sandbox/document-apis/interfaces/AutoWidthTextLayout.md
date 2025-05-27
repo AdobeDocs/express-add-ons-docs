@@ -1,6 +1,6 @@
-[@express-document-sdk](../overview.md) / PointTextLayout
+[@express-document-sdk](../overview.md) / AutoWidthTextLayout
 
-# Interface: PointTextLayout
+# Interface: AutoWidthTextLayout
 
 <InlineAlert slots="text" variant="warning"/>
 

@@ -138,15 +138,38 @@ Transform values default to 0.
 
 ### createText()
 
-• **createText**(): [`TextNode`](TextNode.md)
+#### createText()
 
-#### Returns
+• **createText**(): [`StandaloneTextNode`](StandaloneTextNode.md)
 
-[`TextNode`](TextNode.md)
+##### Returns
+
+[`StandaloneTextNode`](StandaloneTextNode.md)
 
 a text node with default styles. The text content is initially empty, so the text node will be
-invisible until its `fullContent` property's `text` is set. Creates point text, so the node's width will automatically
-adjust to accommodate whatever text is set.
+invisible until its `fullContent` property's `text` is set. Creates auto-width text, so the node's width will
+automatically adjust to accommodate whatever text is set.
+
+##### Deprecated
+
+- Initial text content is always expected so please use `createText(textContent: string): StandaloneTextNode`.
+
+#### createText(textContent)
+
+• **createText**(`textContent`): [`StandaloneTextNode`](StandaloneTextNode.md)
+
+##### Parameters
+
+• **textContent**: `string`
+
+the initial string to show.
+
+##### Returns
+
+[`StandaloneTextNode`](StandaloneTextNode.md)
+
+a text node with default styles. Creates auto-width text, so the node's width will automatically adjust
+to accommodate the given text content.
 
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.

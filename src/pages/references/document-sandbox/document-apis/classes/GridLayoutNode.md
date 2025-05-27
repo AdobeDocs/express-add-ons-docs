@@ -130,6 +130,13 @@ The background fill of the GridLayout.
 • `get` **height**(): `number`
 
 The height of the node.
+Must be at least MIN_DIMENSION.
+
+• `set` **height**(`value`): `void`
+
+#### Parameters
+
+• **value**: `number`
 
 #### Returns
 
@@ -312,6 +319,13 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 • `get` **width**(): `number`
 
 The width of the node.
+Must be at least MIN_DIMENSION.
+
+• `set` **width**(`value`): `void`
+
+#### Parameters
+
+• **value**: `number`
 
 #### Returns
 
@@ -383,6 +397,110 @@ removal. No-op if node is already an orphan.
 #### Inherited from
 
 [`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+
+---
+
+### rescaleProportionalToHeight()
+
+• **rescaleProportionalToHeight**(`height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Changes the height to the given value and the width to the given height multiplied by the aspect ratio.
+
+#### Parameters
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
+
+---
+
+### rescaleProportionalToWidth()
+
+• **rescaleProportionalToWidth**(`width`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Changes the width to the given value and the height to the given width multiplied by the aspect ratio.
+
+#### Parameters
+
+• **width**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
+
+---
+
+### resizeToCover()
+
+• **resizeToCover**(`width`, `height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Resizes the node to cover a box with the given dimensions.
+
+If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+
+#### Parameters
+
+• **width**: `number`
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
+
+---
+
+### resizeToFitWithin()
+
+• **resizeToFitWithin**(`width`, `height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Resizes the node to fit within a box with the given dimensions.
+
+If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+
+#### Parameters
+
+• **width**: `number`
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`resizeToFitWithin`](Node.md#resizetofitwithin)
 
 ---
 
