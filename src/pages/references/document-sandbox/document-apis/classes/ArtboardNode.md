@@ -16,7 +16,7 @@ Please note that creating and deleting an artboard in a single frame will crash 
 
 ## Implements
 
--   `Readonly`\<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+-   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
 -   [`ContainerNode`](../interfaces/ContainerNode.md)
 
 ## Accessors
