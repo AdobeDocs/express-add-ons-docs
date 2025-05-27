@@ -217,7 +217,7 @@ See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on 
 
 #### Parameters
 
-• **options?**: `Partial`<[`SolidColorStroke`](../interfaces/solid-color-stroke.md)\>
+• **options?**: `Partial` [`SolidColorStroke`](../interfaces/solid-color-stroke.md)
 
 #### Returns
 
