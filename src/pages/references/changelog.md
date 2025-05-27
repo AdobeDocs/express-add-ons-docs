@@ -29,6 +29,16 @@ contributors:
 - 4 new Resize HLAPI's are added in [Node](./document-sandbox/document-apis/classes/Node.md) class as experimental.
 - [`TextNode()`](./document-sandbox/document-apis/classes/TextNode.md) is now an abstract base class, with two subclasses: StandaloneTextNode and ThreadedTextNode.  These exist mainly to capture the key difference that the allowed layout choices are not the same.  (Standalone text does not support “area text” layout, while Threaded text can only use “area text” layout).
 
+## 2025-05-26
+
+### Added
+
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md).
+
+### Updates
+
+- [`@adobe-ccwebext/ccweb-add-on-sdk-types`](https://github.com/adobe/create-ccweb-add-on/releases): Type Definitions for the CLI have been updated to version `1.17.0`.
+
 ## 2025-05-16
 
 ### Updated
