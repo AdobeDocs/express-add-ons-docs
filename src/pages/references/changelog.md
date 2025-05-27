@@ -26,8 +26,10 @@ contributors:
 
 ### Added
 
-- 4 new Resize HLAPI's are added in [Node](./document-sandbox/document-apis/classes/Node.md) class as experimental.
-- [`TextNode()`](./document-sandbox/document-apis/classes/TextNode.md) is now an abstract base class, with two subclasses: StandaloneTextNode and ThreadedTextNode.  These exist mainly to capture the key difference that the allowed layout choices are not the same.  (Standalone text does not support “area text” layout, while Threaded text can only use “area text” layout).
+- 4 new Resize HLAPIs have been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class as experimental features.
+- [`TextNode()`](./document-sandbox/document-apis/classes/TextNode.md) is now an abstract base class with two specialized subclasses:
+  - [StandaloneTextNode](./document-sandbox/document-apis/classes/StandaloneTextNode.md): Does not support "area text" layout.
+  - [ThreadedTextNode](./document-sandbox/document-apis/classes/ThreadedTextNode.md): Only supports "area text" layout.
 
 ## 2025-05-26
 
