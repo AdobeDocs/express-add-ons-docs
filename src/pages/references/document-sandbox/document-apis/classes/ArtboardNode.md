@@ -16,7 +16,7 @@ Please note that creating and deleting an artboard in a single frame will crash 
 
 ## Implements
 
--   [`IRectangularNode`](../interfaces/IRectangularNode.md)
+-   `Readonly`\<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
 -   [`ContainerNode`](../interfaces/ContainerNode.md)
 
 ## Accessors
@@ -114,6 +114,7 @@ The background fill of the artboard. Artboards must always have a fill.
 • `get` **height**(): `number`
 
 The height of the artboard.
+Shares the same dimensions as the parent page and other artboards within the parent page.
 
 #### Returns
 
@@ -194,6 +195,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 • `get` **width**(): `number`
 
 The width of the artboard.
+Shares the same dimensions as the parent page and other artboards within the parent page.
 
 #### Returns
 

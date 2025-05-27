@@ -239,6 +239,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/SolidColorShapeNode.md",
                   },
                   {
+                    title: "StandaloneTextNode",
+                    path: "references/document-sandbox/document-apis/classes/StandaloneTextNode.md",
+                  },
+                  {
                     title: "StrokableNode",
                     path: "references/document-sandbox/document-apis/classes/StrokableNode.md",
                   },
@@ -253,6 +257,10 @@ module.exports = {
                   {
                     title: "TextNode",
                     path: "references/document-sandbox/document-apis/classes/TextNode.md",
+                  },
+                  {
+                    title: "ThreadedTextNode",
+                    path: "references/document-sandbox/document-apis/classes/ThreadedTextNode.md",
                   },
                   {
                     title: "UnavailableFont",
@@ -283,6 +291,10 @@ module.exports = {
                   {
                     title: "AutoHeightTextLayout",
                     path: "references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md",
+                  },
+                  {
+                    title: "AutoWidthTextLayout",
+                    path: "references/document-sandbox/document-apis/interfaces/AutoWidthTextLayout.md",
                   },
                   {
                     title: "BaseParagraphStyles",
@@ -367,10 +379,6 @@ module.exports = {
                   {
                     title: "Point",
                     path: "references/document-sandbox/document-apis/interfaces/Point.md",
-                  },
-                  {
-                    title: "PointTextLayout",
-                    path: "references/document-sandbox/document-apis/interfaces/PointTextLayout.md",
                   },
                   {
                     title: "Rect",
