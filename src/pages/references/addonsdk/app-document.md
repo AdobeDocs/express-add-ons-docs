@@ -92,7 +92,7 @@ A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containi
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
 
-## Usage
+#### Usage
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -128,7 +128,7 @@ async function logMetadata() {
 }
 ```
 
-## Output
+#### Output
 
 ```bash
 Page id: 772dc4b6-0df5-469f-b477-2a0c5445a6ef
@@ -250,7 +250,7 @@ A resolved `Promise` containing the `link` of the document.
 
 <InlineAlert slots="text" variant="info"/>
 
-A `documentLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
+A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
 #### Example
 
@@ -263,12 +263,32 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setLink(link) { /* ... */ }
 
-addOnUISdk.ready.then(() => setLink(await AddOnSDKAPI.app.document.link("document"));
+addOnUISdk.ready.then(
+  () => setLink(await AddOnSDKAPI.app.document.link("document"))
+);
 
 addOnUISdk.app.on("documentLinkAvailable", data => {
   setLink(data.documentLink);
 });
+
+function setPublishedLink(link) { /* ... */ }
+
+AddOnSDKAPI.ready.then(
+  () => setPublishedLink(await AddOnSDKAPI.app.document.link("published"))
+);
+
+AddOnSDKAPI.app.on("documentPublishedLinkAvailable", data => {
+  setPublishedLink(data.documentPublishedLink);
+});
 ```
+
+#### `LinkOptions`
+
+The options to pass into the link method.
+
+| Name          | Type     | Description                                              |
+| ------------- | -------- | -------------------------------------------------------- |
+| `linkOptions` | `string` | [`LinkOptions`](./addonsdk-constants.md) constant value. |
 
 ## Import Content Methods
 
