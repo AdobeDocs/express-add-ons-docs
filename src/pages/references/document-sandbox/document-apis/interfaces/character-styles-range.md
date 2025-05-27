@@ -4,7 +4,7 @@
 
 A set of [CharacterStyles](character-styles.md) along with the range of characters they apply to. Seen in the characterStyleRanges getter.
 
-Note that fonts returned by the getter are *not* guaranteed to be ones the user has rights to edit with, even though they
+Note that fonts returned by the getter are _not_ guaranteed to be ones the user has rights to edit with, even though they
 are visible in the document.
 
 ## Extends
@@ -23,7 +23,7 @@ Text color.
 
 [`CharacterStyles`](character-styles.md).[`color`](character-styles.md#color)
 
----
+<HorizontalLine />
 
 ### font
 
@@ -33,7 +33,7 @@ Text color.
 
 [`CharacterStyles`](character-styles.md).[`font`](character-styles.md#font)
 
----
+<HorizontalLine />
 
 ### fontSize
 
@@ -45,7 +45,7 @@ Size of the text in points.
 
 [`CharacterStyles`](character-styles.md).[`fontSize`](character-styles.md#fontsize)
 
----
+<HorizontalLine />
 
 ### length
 
@@ -59,7 +59,7 @@ such as emojis are considered to have a length of 2.
 
 [`StyleRange`](style-range.md).[`length`](style-range.md#length)
 
----
+<HorizontalLine />
 
 ### letterSpacing
 
@@ -73,7 +73,7 @@ leaves spacing at its default.
 
 [`CharacterStyles`](character-styles.md).[`letterSpacing`](character-styles.md#letterspacing)
 
----
+<HorizontalLine />
 
 ### underline
 

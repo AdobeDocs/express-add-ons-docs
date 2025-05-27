@@ -29,7 +29,7 @@ The value of the `sandbox` attribute can either be empty (in which case all rest
 | `allow-popups-to-escape-sandbox` |   Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them. |
 | `allow-presentation`             |                                                Allows the add-on to start a presentation session. |
 
-**IMPORTANT:** Please note that these are currently the *only* permissions that are currently supported from [the set of sandbox permissions available](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). Any other attributes are not supported or allowed in the manifest for your add-ons.
+**IMPORTANT:** Please note that these are currently the _only_ permissions that are currently supported from [the set of sandbox permissions available](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). Any other attributes are not supported or allowed in the manifest for your add-ons.
 
 ## CORS
 

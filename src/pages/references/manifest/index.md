@@ -77,7 +77,7 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | `supportsTouch?`   | `boolean`    | Whether the add-on supports touch-only devices. If not specified, the default value assumed is `false`.  |
 | `renditionPreview?` | `boolean` |	Ensure premium content preview is properly handled for free users when add-ons create renditions. |
 
-**Example:**<br/>
+**Example:**
 
 ```json
 "requirements": {
@@ -102,8 +102,8 @@ Each add-on bundle contains a `manifest.json` file at the root level which defin
 | `apiVersion`         | `number`       | API version that the add-on uses. Currently supported values: 1 |
 | [`supportedDeviceClass?`](#requirementsappssupporteddeviceclass ) | `string []`  | Supported platforms by the add-on. If not specified, the default value assumed is: `["desktop"]`. |
 
-<!-- | `supportedDeviceClass?` | `string []`  | Supported platforms by the add-on. Possible values are <ul><li>"desktop"</li><li>"mobile</li><li>"app"</li></ul> If not specified, default value assumed is: \["desktop"\]. | -->
-**Example:**<br/>
+
+**Example:**
 
 ```json
 "apps": [
@@ -122,9 +122,7 @@ The following platform value is currently supported in the `supportedDeviceClass
 | Platform       | Description |
 | ----------------| -------------|
 | `desktop`       | Browser on desktop. |
-<!-- Extra comment, otherwise the table will show the content anyway—bar the first cell -->
-<!-- | `mobile`        | Browser on mobile and tablet devices. | -->
-<!-- | `app`           | Native app on mobile and tablet devices. | -->
+
 
 ## entryPoints
 
@@ -136,7 +134,7 @@ The following platform value is currently supported in the `supportedDeviceClass
 | `documentSandbox`      | `string`    | File containing the JavaScript code to use with the [document sandbox SDK and Adobe Express Document APIs](../document-sandbox/index.md). |
 | [`permissions`](#entrypointspermissions) | `object`    | The permissions defined for this entry point. |
 
-**Example:**<br/>
+**Example:**
 
 ```json
 "entryPoints": [
@@ -162,7 +160,7 @@ The following platform value is currently supported in the `supportedDeviceClass
 | `microphone?` | `string` | The [allowlists](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists) value used in iframe `‘allow’` attribute. Enables the add-on to access the user's microphone for audio input. |
 | `camera?` | `string` | The [allowlists](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists) value used in iframe `‘allow’` attribute. Enables the add-on to access the user's camera for video input. |
 
-**Example:**<br/>
+**Example:**
 
 ```json
 "permissions" : {
@@ -185,7 +183,7 @@ The following permission values are currently supported in the `sandbox` key.
 | `allow-presentation`  | Lets the add-on start a [presentation session](https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest). |
 | `allow-downloads`     | Allows downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute, as well as through the navigation that leads to a download of a file.          |
 
-**Example:**<br/>
+**Example:**
 
 ```json
 "permissions" : {

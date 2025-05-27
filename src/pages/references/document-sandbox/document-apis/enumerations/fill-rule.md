@@ -15,7 +15,7 @@ self-intersecting or contains separate, nested closed loops.
 
 • **evenOdd**: `1`
 
----
+<HorizontalLine />
 
 ### nonZero
 

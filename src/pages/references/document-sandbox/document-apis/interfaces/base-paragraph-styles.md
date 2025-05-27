@@ -21,9 +21,9 @@ setter-oriented [ParagraphStylesRangeInput](paragraph-styles-range-input.md).
 • **lineSpacing**: `number`
 
 Spacing between lines, aka leading, expressed as a multiple of the font size's default spacing - ex. 1.5 = 150% of normal.
-It only affects the space *between* lines, not the space above the first line or below the last line.
+It only affects the space _between_ lines, not the space above the first line or below the last line.
 
----
+<HorizontalLine />
 
 ### spaceAfter
 
@@ -32,7 +32,7 @@ It only affects the space *between* lines, not the space above the first line or
 Space after paragraph (in points). It does not affect the last paragraph. It is additive to the next paragraph's spaceBefore
 (adjacent spacing does not merge/collapse together).
 
----
+<HorizontalLine />
 
 ### spaceBefore
 

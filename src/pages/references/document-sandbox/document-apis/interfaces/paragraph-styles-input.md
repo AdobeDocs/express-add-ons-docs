@@ -11,7 +11,7 @@ any fields not specified are left unchanged, preserving the text's existing styl
 
 ## Extends
 
--   `Partial`<[`BaseParagraphStyles`](base-paragraph-styles.md)\>
+-   `Partial` [`BaseParagraphStyles`](base-paragraph-styles.md)
 
 ## Extended by
 
@@ -24,19 +24,19 @@ any fields not specified are left unchanged, preserving the text's existing styl
 • `optional` **lineSpacing**: `number`
 
 Spacing between lines, aka leading, expressed as a multiple of the font size's default spacing - ex. 1.5 = 150% of normal.
-It only affects the space *between* lines, not the space above the first line or below the last line.
+It only affects the space _between_ lines, not the space above the first line or below the last line.
 
 #### Inherited from
 
 `Partial.lineSpacing`
 
----
+<HorizontalLine />
 
 ### list?
 
 • `optional` **list**: [`OrderedListStyleInput`](ordered-list-style-input.md) \| [`UnorderedListStyleInput`](unordered-list-style-input.md)
 
----
+<HorizontalLine />
 
 ### spaceAfter?
 
@@ -49,7 +49,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 `Partial.spaceAfter`
 
----
+<HorizontalLine />
 
 ### spaceBefore?
 

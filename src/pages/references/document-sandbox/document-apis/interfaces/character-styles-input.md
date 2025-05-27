@@ -10,7 +10,7 @@ user to edit with.
 
 ## Extends
 
--   `Partial`<`BaseCharacterStyles`\>
+-   `Partial` `BaseCharacterStyles`
 
 ## Extended by
 
@@ -28,13 +28,13 @@ Text color.
 
 `Partial.color`
 
----
+<HorizontalLine />
 
 ### font?
 
 • `optional` **font**: [`AvailableFont`](../classes/available-font.md)
 
----
+<HorizontalLine />
 
 ### fontSize?
 
@@ -46,7 +46,7 @@ Size of the text in points.
 
 `Partial.fontSize`
 
----
+<HorizontalLine />
 
 ### letterSpacing?
 
@@ -60,7 +60,7 @@ leaves spacing at its default.
 
 `Partial.letterSpacing`
 
----
+<HorizontalLine />
 
 ### underline?
 

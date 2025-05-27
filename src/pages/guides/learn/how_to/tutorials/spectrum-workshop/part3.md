@@ -112,9 +112,9 @@ Some benefits to using Spectrum CSS variables to style your components over abso
   - Use `--spectrum-global-dimension-static-size` variables for for dimensions such as `width`, `height`, `padding`, `margin`, or general spacing variables.
   - Use `--spectrum-global-static-size` variables for things like `font-size`, `line-height`, `border-radius`, etc.
 
-- [Color variables](https://spectrum.adobe.com/page/color-fundamentals/) are provided as part of the `theme` imports. The color value’s contrast with the background increases as the value increases, so colors progressively get darker in a light theme, and lighter in a dark theme (ie: `--spectrum-global-color-purple-600` is *lighter* than `--spectrum-global-color-purple-900` in a `light` theme but *darker* in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
+- [Color variables](https://spectrum.adobe.com/page/color-fundamentals/) are provided as part of the `theme` imports. The color value’s contrast with the background increases as the value increases, so colors progressively get darker in a light theme, and lighter in a dark theme (ie: `--spectrum-global-color-purple-600` is _lighter_ than `--spectrum-global-color-purple-900` in a `light` theme but _darker_ in a `dark` theme). [Preview the color palette](https://spectrum.adobe.com/page/color-palette/) in the reference for more details.
 
-  **TIP:** Use theme-specific color variables, such as those defined in the light theme for Express, located in the CSS files in your `@spectrum-web-components/styles/express/*` folder, for general uses of color in your add-on. For example, when the color will be applied to text, icons, or the borders of a component. Use *static* color variables defined in the overall `theme.js` when the color should be fixed and not dependent on the theme. The typical naming scheme is: `--spectrum-global-color-purple-600` and
+  **TIP:** Use theme-specific color variables, such as those defined in the light theme for Express, located in the CSS files in your `@spectrum-web-components/styles/express/*` folder, for general uses of color in your add-on. For example, when the color will be applied to text, icons, or the borders of a component. Use _static_ color variables defined in the overall `theme.js` when the color should be fixed and not dependent on the theme. The typical naming scheme is: `--spectrum-global-color-purple-600` and
   `--spectrum-global-color-static-purple-600`, respectively.
 
 - [Typography](https://opensource.adobe.com/spectrum-css/typography.html) classes can be used to control your typography elements by importing the `typography.css`. For instance:
@@ -162,7 +162,7 @@ An example of their usage to modify the Slider is provided below for a reminder 
 
 - [Spectrum Web Component version conflicts](https://opensource.adobe.com/spectrum-web-components/registry-conflicts/)
 
-  You *must* use **matching component versions for all Spectrum Web Components (or swc-react components)** in your `package.json` or you will receive errors that are often not clear to determine the cause, so save yourself time and double check this if you're having issues running your add-on.
+  You _must_ use **matching component versions for all Spectrum Web Components (or swc-react components)** in your `package.json` or you will receive errors that are often not clear to determine the cause, so save yourself time and double check this if you're having issues running your add-on.
 
   This is mentioned in this tutorial a couple of times, but there is a known issue seen when using `@spectrum-web-components` (or `@swc-react`) packages with version `0.40.3`. At the moment `0.39.4` is a stable version that should work if you suspect a component version issue.
 

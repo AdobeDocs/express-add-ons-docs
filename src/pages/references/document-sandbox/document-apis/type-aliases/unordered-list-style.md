@@ -2,7 +2,7 @@
 
 # Type alias: UnorderedListStyle
 
-• **UnorderedListStyle**: `Required`<[`UnorderedListStyleInput`](../interfaces/unordered-list-style-input.md)\>
+• **UnorderedListStyle**: `Required` [`UnorderedListStyleInput`](../interfaces/unordered-list-style-input.md)
 
 <InlineAlert slots="text" variant="warning"/>
 

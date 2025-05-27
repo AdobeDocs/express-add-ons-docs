@@ -12,7 +12,7 @@
 
 • **type**: [`autoHeight`](../enumerations/text-layout.md#autoheight)
 
----
+<HorizontalLine />
 
 ### width
 

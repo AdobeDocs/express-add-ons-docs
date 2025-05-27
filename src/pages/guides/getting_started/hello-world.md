@@ -192,7 +192,7 @@ The add-on's code is now running on a local server; you must tell Adobe Express 
 
 ### 3. Load & run your add-on
 
-To *sideload* your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
+To _sideload_ your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
 
 ![How to sideload an add-on](./img/playground-sideload-add-on.gif)
 
@@ -252,7 +252,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 **Manifest updates**
 
-Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
+Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
 <DetailsBlock slots="image"  summary="Click to see the screenshot" />
 

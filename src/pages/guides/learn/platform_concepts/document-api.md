@@ -25,7 +25,7 @@ In this article, you'll dive deep into the architecture and key elements of the 
 
 ### Getting started with the DOM
 
-The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to *scripting* when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](/resources/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
+The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](/resources/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
 
 It is essential to hierarchically organize the features that are surfaced[^2] to the scripting layer. For example, a shape is not just contained within a document: it may be included in a particular Group in a certain Artboard, which belongs to a specific Page of a Document. Additionally, Ellipses and Rectangles, as shapes, share some properties, such as the ability to be filled or stroked with a solid color; in that respect, though, they differ from a bitmap image, which can be stroked but not filled.
 
@@ -78,10 +78,10 @@ Such a structure is referred to as the **Scenegraph**, and it allows for efficie
 
 Understanding the hierarchical tree of nodes in the Adobe Express DOM requires a firm grasp of a handful of key concepts in object-oriented programming (OOP).
 
-- **Classes**: the blueprint for creating objects. They define a set of properties and methods the created objects (known as *instances* of that class) will have. For example, when users add a page to an Adobe Express document, a new `PageNode` class is *instantiated*. Such a Page instance comes by default with a peculiar set of accessors (properties) like `width`, `height`, and `artboards` and methods like `removeFromParent()`.
+- **Classes**: the blueprint for creating objects. They define a set of properties and methods the created objects (known as _instances_ of that class) will have. For example, when users add a page to an Adobe Express document, a new `PageNode` class is _instantiated_. Such a Page instance comes by default with a peculiar set of accessors (properties) like `width`, `height`, and `artboards` and methods like `removeFromParent()`.
 - **Inheritance**: classes can inherit properties and methods from an existing class. The `LineNode` inherits from the `StrokableNode`, which in turn inherits from the `Node` class, establishing a parent/child relation.
 - **Class Extension**: this concept is closely related to Inheritance. A child class inherits the methods and properties from its parent and extends them with its additional ones. `TextNode` extends `Node`, adding, among others, the `text` property and the `setPositionInParent()` method.
-- **Interfaces**: define a *contract* for classes without implementing any behavior themselves. They specify a set of methods and properties a class must have but do not define how they work internally. For example, the `ContainerNode` interface mandates the implementation of `allChildren`, `children`, `parent`, and `type` properties. Classes implementing this interface, such as `ArtboardNode` and `GroupNode`, are responsible for providing these properties' actual implementation. By doing so, these classes conform to the structure and requirements defined by the `ContainerNode` interface. Interfaces can be extended, too: the `ColorFill` inherits the `type` property from the `Fill` interface and extends it with an additional `color`.
+- **Interfaces**: define a _contract_ for classes without implementing any behavior themselves. They specify a set of methods and properties a class must have but do not define how they work internally. For example, the `ContainerNode` interface mandates the implementation of `allChildren`, `children`, `parent`, and `type` properties. Classes implementing this interface, such as `ArtboardNode` and `GroupNode`, are responsible for providing these properties' actual implementation. By doing so, these classes conform to the structure and requirements defined by the `ContainerNode` interface. Interfaces can be extended, too: the `ColorFill` inherits the `type` property from the `Fill` interface and extends it with an additional `color`.
 
 Compared to other Adobe desktop applications, the Adobe Express DOM features a remarkably clean class hierarchy, where every element has a well-defined lineage that traces back to a minimal set of root classes.
 
@@ -118,7 +118,7 @@ console.log(ellipse.translation); // { x: 0, y: 0 }
 ellipse.translation = { x: 100, y: 50 };
 ```
 
-Some properties rely on interfaces to define their type. The ellipse's `stroke` happens to be of type `Stroke`, an interface whose *contract* mandates the implementation of five different properties: `color`, `width`, `position`, `dashPattern`, and `dashOffset`.
+Some properties rely on interfaces to define their type. The ellipse's `stroke` happens to be of type `Stroke`, an interface whose _contract_ mandates the implementation of five different properties: `color`, `width`, `position`, `dashPattern`, and `dashOffset`.
 
 ![](images/refs-addon-stroke.png)
 
@@ -218,7 +218,7 @@ const geckoHex = colorUtils.toHex(gecko); // "#9de19aff" 👈 alpha is included
 
 ### Types matter
 
-CLI versions from `"1.1.1"` onwards now scaffold add-ons with **type definitions** for JavaScript and TypeScript projects. If you're unfamiliar with TypeScript, these additional `.d.ts` and `tsconfig.json` files offer significant benefits. The `.d.ts` files, or *TypeScript declarations*, contain type information about the APIs. They describe the shape of JavaScript objects, providing TypeScript type-checking and autocompletion capabilities (in the form of IntelliSense in VSCode). The `tsconfig.json` files, on the other hand, are configuration files necessary to provide type information for global types in the sandbox runtime. For instance, the sandbox' Console only exposes a subset of the available methods: the `tsconfig.json` file (via `typeRoots`) informs the IntelliSense engine only to show the methods that are actually available.
+CLI versions from `"1.1.1"` onwards now scaffold add-ons with **type definitions** for JavaScript and TypeScript projects. If you're unfamiliar with TypeScript, these additional `.d.ts` and `tsconfig.json` files offer significant benefits. The `.d.ts` files, or _TypeScript declarations_, contain type information about the APIs. They describe the shape of JavaScript objects, providing TypeScript type-checking and autocompletion capabilities (in the form of IntelliSense in VSCode). The `tsconfig.json` files, on the other hand, are configuration files necessary to provide type information for global types in the sandbox runtime. For instance, the sandbox' Console only exposes a subset of the available methods: the `tsconfig.json` file (via `typeRoots`) informs the IntelliSense engine only to show the methods that are actually available.
 
 The bottom line is that `.d.ts` and `tsconfig.json` files in your JavaScript (and TypeScript) projects give code editors knowledge about the Adobe Express document sandbox APIs: it's used to provide code completion and type checking, which can help you avoid errors and write code faster.
 
@@ -246,7 +246,7 @@ for (const node of someIterable) {
 }
 ```
 
-In *previous versions* of Adobe Express, the Console would log `allChildren` as an actual *Array* of Nodes.
+In _previous versions_ of Adobe Express, the Console would log `allChildren` as an actual _Array_ of Nodes.
 
 ![](images/refs-addon-allchildren.png)
 
@@ -265,9 +265,9 @@ if (selectedNode.type === constants.SceneNodeType.group) {
 }
 ```
 
-In fact, it *used to work*, but it doesn't anymore; however, it's not Adobe Express' fault. Why, then?
+In fact, it _used to work_, but it doesn't anymore; however, it's not Adobe Express' fault. Why, then?
 
-The `allChildren` property is defined in its *contract* to be of type `Iterable`. The key point here is **the nature of the contract** itself rather than the specific implementation. For instance, when `allChildren` was internally implemented as an Array, this was in line with the contract since Arrays are indeed iterable and support the `for...of` loop. However, Arrays offer additional functionalities *beyond* the requirements of the `allChildren` contract. Developers should focus on using features that the contract explicitly supports rather than relying on capabilities that might be available in the current implementation of the property but are *outside the contract's scope*. This approach ensures compatibility and reliability, irrespective of the property's underlying implementation changes. If you must use Array methods, convert the iterable with the static method `Array.from()` first.
+The `allChildren` property is defined in its _contract_ to be of type `Iterable`. The key point here is **the nature of the contract** itself rather than the specific implementation. For instance, when `allChildren` was internally implemented as an Array, this was in line with the contract since Arrays are indeed iterable and support the `for...of` loop. However, Arrays offer additional functionalities _beyond_ the requirements of the `allChildren` contract. Developers should focus on using features that the contract explicitly supports rather than relying on capabilities that might be available in the current implementation of the property but are _outside the contract's scope_. This approach ensures compatibility and reliability, irrespective of the property's underlying implementation changes. If you must use Array methods, convert the iterable with the static method `Array.from()` first.
 
 ```js
 const ellipses = Array.from(selectedNode.allChildren) // 👈
@@ -324,13 +324,13 @@ import { editor, colorUtils } from "express-document-sdk";
 
 ### Object (POJO) Interfaces
 
-Such interfaces define the properties of **actual JavaScript objects** that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](/references/document-sandbox/document-apis/interfaces/ColorFill.md) or [`Stroke`](/references/document-sandbox/document-apis/interfaces/Stroke.md) interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the [`Color`](/references/document-sandbox/document-apis/interfaces/Color.md) interface. They are the *contracts* that establish the shape of actual JavaScript objects that developers use in their code. POJO is an acronym that stands for "Plain Old Java Object", which in this context refers to a plain JavaScript object.
+Such interfaces define the properties of **actual JavaScript objects** that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](/references/document-sandbox/document-apis/interfaces/ColorFill.md) or [`Stroke`](/references/document-sandbox/document-apis/interfaces/Stroke.md) interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the [`Color`](/references/document-sandbox/document-apis/interfaces/Color.md) interface. They are the _contracts_ that establish the shape of actual JavaScript objects that developers use in their code. POJO is an acronym that stands for "Plain Old Java Object", which in this context refers to a plain JavaScript object.
 
 ### Implementable Interfaces
 
 Implementable interfaces like [`IFillableNode`](/references/document-sandbox/document-apis/interfaces/IFillableNode.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
 
-In summary, the distinction between all the listed categories lies in their *purpose and usage*: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances, or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
+In summary, the distinction between all the listed categories lies in their _purpose and usage_: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances, or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
 
 ## From theory to practice
 
@@ -399,7 +399,7 @@ function start() {
 
 ### Getting the context
 
-The first part is to get and validate the selected node. There's a promising [`Context`](/references/document-sandbox/document-apis/classes/Context.md) class in the reference documentation that *"contains the user's current selection state, indicating the content they are focused on"*. Excellent! But how can you access it, though? The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: you can use it to check if there's a selection and whether it's of the right type—`hasSelection` and `selection` will do the job.
+The first part is to get and validate the selected node. There's a promising [`Context`](/references/document-sandbox/document-apis/classes/Context.md) class in the reference documentation that _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can you access it, though? The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: you can use it to check if there's a selection and whether it's of the right type—`hasSelection` and `selection` will do the job.
 
 ```js
 import { editor, constants, colorUtils } from "express-document-sdk";
@@ -459,7 +459,7 @@ editor.context.insertionParent.children.append(hLine);
 
 Please note that, according to the documentation, `translation` is **relative to the node's parent container**: in other words, you're capturing the position of the `MediaContainerNode` with respect to its parent. How can you be sure, then, that the line will be drawn in the right place?
 
-The answer is that the `insertionParent` property of the `Editor` class—that you use to append the `hLine`—is a special node that always points to the current insertion point in the scenegraph. In this case, you're adding the line to the same parent container of the selected node, so `hLine` will be positioned correctly with respect to the object it measures: both the `MediaContainerNode` and the `LineNode` will be `children` of *the same parent*, therefore sharing *the same relative coordinate space*.
+The answer is that the `insertionParent` property of the `Editor` class—that you use to append the `hLine`—is a special node that always points to the current insertion point in the scenegraph. In this case, you're adding the line to the same parent container of the selected node, so `hLine` will be positioned correctly with respect to the object it measures: both the `MediaContainerNode` and the `LineNode` will be `children` of _the same parent_, therefore sharing _the same relative coordinate space_.
 
 The line is there, but it lacks the proper endpoints. The reference helps us out again: the `LineNode` has a [`startArrowHeadType`](/references/document-sandbox/document-apis/classes/LineNode.md#startarrowheadtype) and [`endArrowHeadType`](/references/document-sandbox/document-apis/classes/LineNode.md#endarrowheadtype) properties, whose value is an enumerable provided by the [`ArrowHeadType`](/references/document-sandbox/document-apis/enumerations/ArrowHeadType.md) constant.[^3] There are several options available: let's pick `triangularFilled`.
 
@@ -926,4 +926,4 @@ export { drawDimensions, drawDimensionsRefactored };
 
 [^1]: Creating entirely novel features for desktop applications typically involves using SDKs and low-level languages such as C++. Adobe Express doesn't allow for this kind of customization.
 [^2]: Typically, not every feature available in an application is by default surfaced to Scripting—it's not uncommon for it to be a smaller subset of the UI, features-wise.
-[^3]: At the time of this writing, these properties are *not yet* available for selection in the Adobe Express user interface. It's one of those rare cases where scripting is mightier than the UI!
+[^3]: At the time of this writing, these properties are _not yet_ available for selection in the Adobe Express user interface. It's one of those rare cases where scripting is mightier than the UI!

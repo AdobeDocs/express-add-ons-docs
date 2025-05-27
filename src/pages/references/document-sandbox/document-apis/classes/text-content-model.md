@@ -9,7 +9,7 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](text-node.md), `any`, `any`\>\>
+• `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](text-node.md), `any`, `any`
 
 Get ordered list of all [TextNode](text-node.md)s that display this text content in the scenegraph. The text content
 starts in the first  [TextNode](text-node.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
@@ -19,9 +19,9 @@ If there are multiple [TextNode](text-node.md)s, all of them must be configured 
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextNode`](text-node.md), `any`, `any`\>\>
+`Readonly` `Iterable` [`TextNode`](text-node.md), `any`, `any`
 
----
+<HorizontalLine />
 
 ### characterStyleRanges
 
@@ -29,11 +29,11 @@ If there are multiple [TextNode](text-node.md)s, all of them must be configured 
 
 The character styles are applied to different ranges of this text content. When setting character styles, any style
 properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](text-content-model.md#applycharacterstyles) which
-preserves the text's existing styles for any fields not specified). When *getting* styles, all fields are always
+preserves the text's existing styles for any fields not specified). When _getting_ styles, all fields are always
 provided.
 
 Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
-has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
+has rights to edit with. The _setter_ only accepts the AvailableFont type which has been verified to be usable.
 
 • `set` **characterStyleRanges**(`styles`): `void`
 
@@ -45,7 +45,7 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 
 readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### id
 
@@ -66,7 +66,7 @@ Comparing two models using `===` will always fail.
 
 `string`
 
----
+<HorizontalLine />
 
 ### paragraphStyleRanges
 
@@ -103,7 +103,7 @@ if the text content contains fonts unavailable to the current user and an ordere
 
 readonly [`ParagraphStylesRange`](../interfaces/paragraph-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### text
 
@@ -149,7 +149,7 @@ entire paragraphs, it overlaps.
 
 `void`
 
----
+<HorizontalLine />
 
 ### applyParagraphStyles()
 
@@ -179,7 +179,7 @@ If not specified the styles will be applied to the entire piece of text content 
 
 `void`
 
----
+<HorizontalLine />
 
 ### hasUnavailableFonts()
 

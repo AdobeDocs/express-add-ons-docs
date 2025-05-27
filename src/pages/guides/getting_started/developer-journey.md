@@ -54,11 +54,11 @@ Once you have your add-on ready, you can distribute it through the [Adobe Expres
 
 ### Monetize add-ons
 
-Add-ons can be either **free** or **paid**, and anything in between like *freemium* or *credit-based*.
+Add-ons can be either **free** or **paid**, and anything in between like _freemium_ or _credit-based_.
 
 <InlineAlert slots="text1" variant="info" />
 
-You're allowed to implement your payment processor of choice, the Adobe Express Marketplace *does not take* a cut of your revenue, so **you keep 100% of your earnings!** 💰
+You're allowed to implement your payment processor of choice, the Adobe Express Marketplace _does not take_ a cut of your revenue, so **you keep 100% of your earnings!** 💰
 
 Adobe sponsors the development of selected use cases through the [Adobe Fund for Design](https://developer.adobe.com/fund-for-design); check it out, and get paid to develop your add-on!
 

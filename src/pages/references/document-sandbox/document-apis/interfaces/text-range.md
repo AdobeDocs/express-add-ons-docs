@@ -10,7 +10,7 @@ A range of text in a [TextContentModel](../classes/text-content-model.md).
 
 • **length**: `number`
 
----
+<HorizontalLine />
 
 ### start
 

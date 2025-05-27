@@ -445,8 +445,6 @@ Refer to the [import images how-to](../../guides/learn/how_to/use-images.md#impo
 
 Imports a PDF as a new Adobe Express document.
 
-<!-- Removed experimental as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
 #### Signature
 
 `importPdf(blob: Blob, attributes: MediaAttributes): void;`
@@ -495,12 +493,6 @@ async function importPdfFrom(url) {
 ### importPresentation()
 
 Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
-
-<!--Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
-<!-- <InlineAlert slots="text" variant="warning"/> -->
-
-<!-- **IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 

@@ -103,19 +103,19 @@ Instead of using words such as "premium" or "gold" in your copy, you should try 
 
 Words such as "upgrade" or "subscribe" are clearer and more user-friendly. For example, instead of:
 
-❌ *"You're using the trial version. Go Premium"*
+❌ _"You're using the trial version. Go Premium"_
 
 Try:
 
-✅ *"You're using the trial version. Upgrade today"*
+✅ _"You're using the trial version. Upgrade today"_
 
 Also, consider adjusting your language to make the benefits of upgrading clearer. For example, instead of:
 
-❌ *"This item is premium"*
+❌ _"This item is premium"_
 
 Try:
 
-✅ *"Subscribe to access unlimited illustrations like these"*
+✅ _"Subscribe to access unlimited illustrations like these"_
 
 ## Branding your add-ons for monetization
 
@@ -172,7 +172,7 @@ The most common size of badges used within Express panels is typically 20x20px, 
 
 - As a general rule, badges should be placed on the bottom right or right side of the paywalled content or feature.
 - The badge size should typically be 18px or 20px, but can be adjusted depending on the size of the content it is paired with.
-- We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. *This content is available when you upgrade the add-on*.
+- We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. _This content is available when you upgrade the add-on_.
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
 - If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.<br/><br/>
 

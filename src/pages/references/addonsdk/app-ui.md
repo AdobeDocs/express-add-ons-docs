@@ -60,8 +60,6 @@ addOnUISdk.ready.then(async () => {
 
 ### locales
 
-<!-- **`locales: string[]`**<br/> -->
-
 Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `addOnUISdk.ready`).
 
 #### Values

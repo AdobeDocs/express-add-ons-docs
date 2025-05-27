@@ -14,7 +14,7 @@ Indicates list type: see [UnorderedListStyleInput](../../../interfaces/unordered
 
 • **ordered**: `1`
 
----
+<HorizontalLine />
 
 ### unordered
 
