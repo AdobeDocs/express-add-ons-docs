@@ -219,7 +219,7 @@ We encourage developers to use this field to clearly state any specific payment 
 
 The live preview on the right side of the page allows developers to see how their listing will appear to users. For example:
 
-- If **One-time payment** is selected, the preview will display: _"Upgrade is available through a one-time purchase."_ 
+- If **One-time payment** is selected, the preview will display: _"Upgrade is available through a one-time purchase."_
 - A note will also indicate: _"Checkout is managed by the developer outside of Adobe Express. This add-on is sold separately and not included as part of any Adobe plan."_
 
 Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
