@@ -111,7 +111,7 @@ The live preview in the public listing allows developers to see how their add-on
 - If **One-time payment** is selected, the preview will display: _"Upgrade is available through a one-time purchase."_
 - A note will also indicate: _"Checkout is managed by the developer outside of Adobe Express. This add-on is sold separately and not included as part of any Adobe plan."_
 
-Carefully review our [monetization guidelines](./guidelines/monetization.md) to ensure compliance with Adobe’s requirements and recommendations for monetizing your add-ons.
+Carefully review our [monetization guidelines](./monetization.md) to ensure compliance with Adobe’s requirements and recommendations for monetizing your add-ons.
 
 ## Recommendations for monetizing your add-ons
 
