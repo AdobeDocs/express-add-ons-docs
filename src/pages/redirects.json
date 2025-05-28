@@ -828,7 +828,7 @@
             "Destination": "/express-add-ons-docs/src/pages/guides/build/design/fonts"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/guides/build/design/best-practices/",
+            "Source": "/express-add-ons-docs/src/pages/guides/build/design/best-practices",
             "Destination": "/express-add-ons-docs/src/pages/guides/build/design/best-practices"
         },
         {
