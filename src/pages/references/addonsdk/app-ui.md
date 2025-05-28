@@ -330,7 +330,7 @@ addOnUISdk.ready.then(() => {
 
 ### themechange
 
-**`themechange: string`**<br/>
+**`themechange: string`**
 The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
@@ -355,7 +355,7 @@ Please see the **swc** sample provided in the [code samples](../../guides/learn/
 
 ### localechange
 
-**`localechange: string`**<br/>
+**`localechange: string`**
 The "localechange" event is fired when the user changes the UI locale in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
@@ -376,7 +376,7 @@ addOnUISdk.app.on("localechange", (data) => {
 
 ### formatchange
 
-**`formatchange: string`**<br/>
+**`formatchange: string`**
 The "formatchange" event is fired when the user changes the UI format in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters

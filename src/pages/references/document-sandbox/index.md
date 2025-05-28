@@ -103,7 +103,6 @@ The screenshot below shows what the default script-based add-on generated from t
 <InlineAlert slots="text" variant="info"/>
 
 Please refer to the [Using the CLI](../../guides/getting_started/local_development/dev-tooling.md#using-the-cli) section to get more information on how to use the CLI and create new add-on.
-<br/>
 
 ## Code Samples
 
