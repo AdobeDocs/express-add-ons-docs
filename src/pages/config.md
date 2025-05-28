@@ -190,7 +190,7 @@
                 - [Resources & References](guides/build/design/ux_guidelines/resources-and-references.md) 
                 - [Changelog](guides/build/design/ux_guidelines/changelog.md) 
             - [Implementation guide](guides/build/design/implementation-guide.md) 
-            - [Best practices](guides/design/best_practices.md) 
+            - [Best practices](guides/build/design/best-practices.md) 
         - [Distribute](guides/build/distribute/index.md) 
             - [Overview](guides/build/distribute/index.md) 
             - [Our review process](guides/build/distribute/review_process/index.md) 
