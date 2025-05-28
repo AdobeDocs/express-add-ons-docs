@@ -179,24 +179,46 @@ In this section, you'll have to answer a variety of questions, depending on the 
 
 ### Step 8: Enter the monetization details
 
-The **Monetization details** section allows developers to declare the payment option they support for their add-on. A selection is required for any new add-on submitted, and existing add-ons can be updated to include or change the selection. The monetization details entered can be seen in the preview of the listing (on the right) before submission, and in the add-on details once published.
+The **Monetization details** section allows developers to declare the payment options they support for their add-on. A selection is required for any new add-on submitted, and existing add-ons can be updated to include or change the selection. The monetization details entered can be seen in the preview of the listing (on the right) before submission, and in the add-on details once published.
 
 ![Monetization details](./img/public-listing-monetization-v2.png)
 
-Developers can choose from various payment options, including **free**, **one-time payments**, **recurring subscriptions**, **micro-transactions**, and more. Select the monetization options that suit your preferences best. Use the [examples](./guidelines/monetization.md#requirements-for-monetizing-your-add-ons) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
+#### Select Monetization Details
 
-- The _Other_ option is provided for developers to choose when their current setup does not fit the provided options.
-- The final _additional details_ text area allows developers to provide additional payment terms like _"7 day free trial"_ or _"$9.99/month"_ and is optional for all payment choices except _Other_. We encourage the use of this field to clearly state any specific payment details.
+Developers can choose one of the following monetization models:
 
-Do check in the live preview how the listing will appear to users. Depending on the payment selection, different details will automatically be displayed in the add-on listing.
+- **Free**: The add-on is completely free to use.
+- **Free and paid plans available**: The add-on can be used to some capacity for free, or users can pay for additional functionality or features.
+- **Free trial**: A free trial is offered, but the user must pay to use the add-on after the trial ends.
+- **Paid**: The user must pay to use the add-on.
 
-If the payment choice selected is not free, an **Upgrade available** badge will be displayed in the details along with specific default text describing the choice selected (ie: "_...for a one-time purchase_", "_...with a recurring subscription_", "_...purchase assets or features individually or in packages_"), and **Checkout is handled by the developer outside of Adobe Express**—as shown in the previous screenshot.
+This information will be visible to users in the Adobe Express add-ons marketplace.
 
-Any additional custom details entered by the developer are then shown below the default checkout message, as well as a timestamp indicating when the listing was last updated.
+#### Select Payment Options
 
-In the case of the **free** payment selection, the following text simply be shown: "This add-on does not require any payment".
+Once a monetization model is selected, developers can choose from the following payment options:
 
-<!-- If you wish to explore alternative monetization methods for your add-on, you may do so by selecting **Other** and providing relevant details in the **Additional Details** section. This information will be visible to Adobe Express users within the add-on details. We recommend clearly stating the pricing for add-on upgrades, any recurring fees, and any additional costs that users may encounter. -->
+- **One-time payment**: The user pays once for full access to the add-on.
+- **Recurring subscription**: The user pays a recurring fee (e.g., monthly or yearly) for upgraded access.
+- **Micro-transactions**: The user can purchase access to specific assets or features.
+
+This information will be visible in the add-on details view in the add-ons marketplace.
+
+#### Additional Details
+
+An optional text area is provided for developers to include additional payment details, such as:
+
+- _"7-day free trial"_
+- _"$9.99/month"_
+
+We encourage developers to use this field to clearly state any specific payment terms. The character limit for this field is 250.
+
+#### Live Preview
+
+The live preview on the right side of the page allows developers to see how their listing will appear to users. For example:
+
+- If **One-time payment** is selected, the preview will display: _"Upgrade is available through a one-time purchase."_ 
+- A note will also indicate: _"Checkout is managed by the developer outside of Adobe Express. This add-on is sold separately and not included as part of any Adobe plan."_
 
 Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
 

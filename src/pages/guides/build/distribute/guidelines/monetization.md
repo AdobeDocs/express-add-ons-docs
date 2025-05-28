@@ -17,32 +17,6 @@ Our monetization guidelines include:
 - [Recommendations](#recommendations-for-monetizing-your-add-ons)
 - [Branding your add-ons](#branding-your-add-ons-for-monetization)
 
-<!-- ## Payment Models
-
-You can choose from a variety of models for your add-on. Take the time to consider which one suits your needs best.
-
-### Free
-
-Users are not charged for adding and using the add-on.
-
-## Freemium
-
-This model offers a basic version for free, but users must upgrade to a paid version for extra features and content. This payment could be a one-time fee or subscription.
-
-Freemium add-ons have a high percentage of acquisition in our marketplace, making this our recommended option.
-
-### Paid
-
-This requires users to pay a fee before using the add-on. You may wish to offer a trial period at the outset, in which users can test out the add-on for a certain period of time before deciding whether to pay.
-
-### Sign-up for service (SaaS)
-
-The add-on requires the user to have access to external services before they can use it.
-
-### Credits
-
-This model asks users to buy credits which can be used for services on the add-on. This can be used for things such as licensing images or trying out Generative AI models. Many add-ons offer users some free credits to start so they can test out the service. -->
-
 ## General Guidelines
 
 The sections below provide details on the guidelines developers should be following when monetizing their add-ons.
@@ -89,24 +63,55 @@ When listing your add-ons for monetization to the public marketplace, you must i
 
 The following are the supported monetization details currently:
 
-- Free
-- One-time payment
-- Recurring subscription
-- Micro transactions
-- Other
+- **Free**: The add-on is completely free to use.
+- **Free and paid plans available**: The add-on can be used to some capacity for free, or users can pay for additional functionality or features.
+- **Free trial**: A free trial is offered, but the user must pay to use the add-on after the trial ends.
+- **Paid**: The user must pay to use the add-on.
 
 <InlineAlert slots="text" variant="info"/>
 
 In all these examples, checkout is handled by the developer outside of Adobe Express.
 
+### Payment Options
+
+Once a monetization model is selected, developers can choose from the following payment options:
+
+| Payment Option          | Description                                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| **One-time payment**    | The user pays once for full access to the add-on.                                               |
+| **Recurring subscription** | The user pays a recurring fee (e.g., monthly or yearly) for upgraded access.                  |
+| **Micro-transactions**  | The user can purchase access to specific assets or features individually or in packages.        |
+
+### Examples of Monetization Models
+
 Here are examples for each payment model based on a Brush Pack add-on in Adobe Express:
 
-| Your selection         | End-user view: add-on listing Payment details                    | Example                                                                                                                                                                                                                                      |
-| ---------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Free                   | This add-on does not require any payment.                        | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
-| One time payment       | Upgrade is available for a one-time purchase.                    | Upgrade to premium brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
-| Recurring subscription | Upgrade is available with a recurring subscription.              | Subscribe to Premium and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
-| Micro-transactions     | You can purchase assets or features individually or in packages. | Customize your creative toolkit with individual brush packs available for purchase in Adobe Express. Choose from a variety of sets or opt for bundled packages to save. Pay only for what you need, empowering you to create without limits. |
+| Your selection               | End-user view: add-on listing Payment details                    | Example                                                                                                                                                                                                                                      |
+| ---------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Free                         | This add-on does not require any payment.                        | Explore our selection of free brush packs in Adobe Express. Access a range of essential brushes at no cost, perfect for getting started on your creative journey without any upfront payment.                                                |
+| Free and paid plans available | Upgrade is available for additional functionality or features.   | Use our free brush packs or upgrade to premium brushes for advanced creative tools. Enjoy the flexibility of free access with the option to unlock premium features for a one-time payment or subscription.                                   |
+| Free trial                   | A free trial is offered but the user must pay to continue.       | Try our premium brush packs free for 7 days. After the trial, subscribe or make a one-time payment to continue using the advanced features.                                                                                                   |
+| Paid                         | Upgrade is available for a one-time purchase.                    | Upgrade to premium brushes with our one-time Brush Pack purchase in Adobe Express. Unlock a diverse range of high-quality brushes for a single payment, granting you unlimited creative potential without any recurring fees.                |
+| Recurring subscription       | Upgrade is available with a recurring subscription.              | Subscribe to Premium and enjoy continuous access to our extensive library of Brush Packs. For a small monthly fee, access exclusive brushes and receive regular updates with new additions to fuel your creativity.                          |
+| Micro-transactions           | You can purchase assets or features individually or in packages. | Customize your creative toolkit with individual brush packs available for purchase in Adobe Express. Choose from a variety of sets or opt for bundled packages to save. Pay only for what you need, empowering you to create without limits. |
+
+#### Additional Details
+
+Developers can provide optional additional payment details, such as:
+
+- _"7-day free trial"_
+- _"$9.99/month"_
+
+The character limit for this field is 250. Developers are encouraged to use this field to clearly state any specific payment terms.
+
+#### Live Preview
+
+The live preview in the public listing allows developers to see how their add-on listing will appear to users. For example:
+
+- If **One-time payment** is selected, the preview will display: _"Upgrade is available through a one-time purchase."_ 
+- A note will also indicate: _"Checkout is managed by the developer outside of Adobe Express. This add-on is sold separately and not included as part of any Adobe plan."_
+
+Carefully review our [monetization guidelines](./guidelines/monetization.md) to ensure compliance with Adobe’s requirements and recommendations for monetizing your add-ons.
 
 ## Recommendations for monetizing your add-ons
 
