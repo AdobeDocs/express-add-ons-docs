@@ -50,9 +50,9 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
 
 <DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
-- Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
-- Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
-- Close the Settings dialog.
+1. Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
+2. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
+3. Close the Settings dialog.
 
 ## Code Playground
 
@@ -66,10 +66,10 @@ To launch the Code Playground, see the following animation or expand the details
 
 <DetailsBlock slots="list"  summary="Click to view a list of steps to open the Code Playground" />
   
-- Click the **Add-ons icon** in the left hand rail.
-- Enable the **Add-on Development** switch on the top right corner.
-- Click the **Launch code playground** button.
-- Click the **Script** tab.
+1. Click the **Add-ons icon** in the left hand rail.
+2. Enable the **Add-on Development** switch on the top right corner.
+3. Click the **Launch code playground** button.
+4. Click the **Script** tab.
 
 ### 2. Run your first script
 
@@ -198,12 +198,12 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
 
 <DetailsBlock slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
-  - Click the **Add-ons icon** in the left hand rail.
-  - Enable the **Add-on Development** switch on the top right corner.
-  - Click the **Test your local add-on** text.
-  - **Check the checkbox** in the Connect to development server modal.
-  - Click the **Connect** button.
-  - Click the **Hello World** add-on icon on the Add-ons tab on the left.
+  1. Click the **Add-ons icon** in the left hand rail.
+  2. Enable the **Add-on Development** switch on the top right corner.
+  3. Click the **Test your local add-on** text.
+  4. **Check the checkbox** in the Connect to development server modal.
+  5. Click the **Connect** button.
+  6. Click the **Hello World** add-on icon on the Add-ons tab on the left.
 
 <InlineAlert slots="text" variant="info"/>
 
