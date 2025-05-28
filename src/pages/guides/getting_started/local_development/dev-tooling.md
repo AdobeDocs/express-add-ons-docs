@@ -30,9 +30,9 @@ A pre-requisite for local development is to have enabled the **Add-on Developmen
 
 <DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
-- Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
-- Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
-- Close the Settings dialog.
+1. Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
+2. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
+3. Close the Settings dialog.
 
 ## Using the CLI
 
@@ -185,7 +185,7 @@ When the scaffolding is complete, you will see the following message, prompting 
 
 ## Manifest
 
-A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
+A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../../references/manifest/index.md) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
 
 ## Add-on Development Tools Panel
 
