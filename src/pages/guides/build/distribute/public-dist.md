@@ -204,6 +204,8 @@ Once a monetization model is selected, developers can choose from the following 
 
 This information will be visible in the add-on details view in the add-ons marketplace.
 
+Use the [examples](./guidelines/monetization.md#examples-of-monetization-models) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
+
 #### Additional Details
 
 An optional text area is provided for developers to include additional payment details, such as:
