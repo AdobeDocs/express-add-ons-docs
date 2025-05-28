@@ -151,8 +151,7 @@ Data type validation is performed for both the arguments and the return types th
 
 | Type                                    | Examples                               |
 | --------------------------------------: | -------------------------------------: |
-| Primitive types:                                                                
-                                           
+| Primitive types:                                                                                                         
   &nbsp;&nbsp;- string                      hello             
   &nbsp;&nbsp;- boolean                     true                  
   &nbsp;&nbsp;- number                      1                        
