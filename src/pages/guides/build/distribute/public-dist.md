@@ -279,14 +279,42 @@ _This listing is not currently available in the EU. This developer has not submi
 
 ## Post-Submission details and insights
 
-When the add-on will be published, you will see the details, as shown in the screenshot below.
+When the add-on will be published, you will be able to see the insights.
 
-![public listing details](./img/public-listing-published-v2.png)
+### Insights Overview
 
-If you select the **Insights** tab, you'll be able to get analytics for your add-on, via the **Download** buttons.
+The **Insights** feature provides valuable analytics for your add-on, helping you understand its performance and user engagement. These insights are available for both public and private listings and can be downloaded as `.csv` files.
 
-![listing insights](./img/add-on-insights-v2.png)
+### Types of Insights
 
-The insights come as `.csv` files named like your add-on, and appended with `_public` or `_private` depending on the listing type (e.g., `AFineAddOn_private.csv`). The insights data currently includes the number of installs, uninstalls and invocations of your add-on per week. A sample is shown below for reference:
+The insights data includes the following metrics:
 
-![sample insights](./img/sample-insights.png)
+- **Installs**: The number of times your add-on has been installed.
+- **Uninstalls**: The number of times your add-on has been uninstalled.
+- **Invocations**: The number of times your add-on has been used.
+
+### File Naming Convention
+
+The downloaded `.csv` files are named based on your add-on name and listing type:
+
+- For public listings: `<AddOnName>_public.csv`
+- For private listings: `<AddOnName>_private.csv`
+
+### Sample Insights Data
+
+Below is an example of what the insights data might look like:
+
+| Week       | Installs | Uninstalls | Invocations |
+|------------|----------|------------|-------------|
+| 2025-05-01 | 120      | 10         | 300         |
+| 2025-05-08 | 150      | 15         | 350         |
+
+### Accessing Insights
+
+1. Navigate to the **Insights** tab in your add-on's management page.
+2. Click the **Download** button to retrieve the `.csv` file for the desired listing type.
+3. Open the file in your preferred spreadsheet application to analyze the data.
+
+By leveraging these insights, you can make informed decisions to improve your add-on's performance and user experience.
+
+Once your add-on is [reviewed](./review_process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).
