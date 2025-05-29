@@ -83,7 +83,7 @@ runtime.exposeApi({
 }); // exposing a payload {}
 ```
 
-We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required _on the other side_ to surface such a payload—it involves using the `apiProxy()` method documented [here](/references/addonsdk/instance-runtime/).
+We'll get to the details of such a payload in a short while; for the moment, think about it as a collection of methods acting on their environment (UI iframe or Document Sandbox). There needs to be more than exposing, though: some action is required _on the other side_ to surface such a payload—it involves using the `apiProxy()` method documented [here](../../../../references/addonsdk/instance-runtime.md).
 
 ```js
 // UI iframe, importing a payload from the Document Sandbox
@@ -733,7 +733,7 @@ const getNodeData = (node, nodeData = {}) => {
 export { getNodeData };
 ```
 
-Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](/references/document-sandbox/document-apis/classes/PageNode/) can contain multiple [`ArtboardNode`](/references/document-sandbox/document-apis/classes/ArtboardNode/) elements, which in turn can contain multiple [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode/) elements, and so on. As follows, the metacode.
+Given the nature of Adobe Express documents (which will be covered in detail in a future tutorial), it makes sense to build `getNodeData()` as a recursive function: a [`PageNode`](../../../../references/document-sandbox/document-apis/classes/page-node.md) can contain multiple [`ArtboardNode`](../../../../references/document-sandbox/document-apis/classes/artboard-node.md) elements, which in turn can contain multiple [`GroupNode`](../../../../references/document-sandbox/document-apis/classes/group-node.md) elements, and so on. As follows, the metacode.
 
 1. The `getNodeData()` method begins its execution when called by `getDocumentData()`, taking a single parameter named `page`. At the start, `nodeData` is initialized as an empty object. The method then checks if the current node has the `allChildren` property, which should be a non-empty iterable (please note: it's not an Array, but can be transformed into one if needed via `Array.from()`). If so, it goes through it. During each iteration, it increments the count for the `type` property of each child node (such as `"Text"`, `"Group"`, etc.).
 
@@ -842,8 +842,8 @@ As follows, the `rebuildTable()` metacode.
 Congratulations! You've coded from scratch the Stats add-on for Adobe Express. As an exercise, you may want to extend it with the following features.
 
 - **Better visualization**: you can add `<sp-icon>` elements for each Node type, or bypass the Table altogether using an Accordion component for a hierarchical, collapsible menu.
-- **Hide and Show**: via the [Document API](/references/document-sandbox) you may hide and show elements based on their type—the `<sp-table>` has a `selects` and a `selected` attributes that you can put to use.
-- **Save Snapshots**: using the [Client Storage API](/references/addonsdk/instance-clientStorage/), you can keep track of the document's metadata and compare it with previous versions.
+- **Hide and Show**: via the [Document API](../../../../references/document-sandbox/index.md) you may hide and show elements based on their type—the `<sp-table>` has a `selects` and a `selected` attributes that you can put to use.
+- **Save Snapshots**: using the [Client Storage API](../../../../references/addonsdk/instance-client-storage.md), you can keep track of the document's metadata and compare it with previous versions.
 
 ## Lessons Learned
 
