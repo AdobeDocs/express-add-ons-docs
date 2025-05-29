@@ -65,6 +65,6 @@ addOnUISdk.ready.then(async () => {
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Video file requirements
+**Video file requirements**
 
 Please refer to [this page](https://helpx.adobe.com/au/express/create-and-edit-videos/change-file-formats/video-quick-actions-requirements.html) to know more about the file formats support and size/length requirements for videos.
