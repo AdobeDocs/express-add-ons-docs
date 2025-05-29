@@ -24,7 +24,7 @@ The following guides contain a set of common use cases and accompanying code sni
 
 <InlineAlert slots="header, text1" variant="info" />
 
-Code Playground integration is coming soon!
+**Code Playground integration is coming soon!**
 
 The [Code Playground](../../getting_started/code-playground.md) is the perfect tool to test each how-to snippet. We're currently working on a leaner integration between the Playground and our documentation; running the code will be even easier soon!
 
