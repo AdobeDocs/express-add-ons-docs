@@ -48,7 +48,7 @@ currentPage.artboards.first.children.append(rect);
 
 <InlineAlert slots="header, text, text1" variant="warning"/>
 
-Create vs. Add to the page
+**Create vs. Add to the page**
 
 Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/artboard-node.md), a [Group](./group-elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/container-node.md) interface.
 
