@@ -98,7 +98,7 @@ The range is an object with the `start` and `length` properties.
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-Style Ranges and Text edits
+**Style Ranges and Text edits**
 
 For the moment, replacing the `fullContent.text` will result in applying the style from the first range to the whole text. This behavior is subject to change in future releases.
 
@@ -258,7 +258,7 @@ editor.queueAsyncEdit(() => {
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-Asynchronous operations
+**Asynchronous operations**
 
 Queuing the `applyCharacterStyles()` method is necessary because `fromPostscriptName()` is asynchronous. This ensures the edit is properly tracked for saving and undo. You can read more about this in the [queueAsyncEdit()](../../../references/document-sandbox/document-apis/classes/editor.md#queueasyncedit) reference.
 
@@ -350,7 +350,7 @@ Paragraphs are defined by newline characters (`\n`), so the style ranges should 
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-Style Ranges and Text Edits
+**Style Ranges and Text Edits**
 
 For the moment, replacing the `fullContent.text` will result in applying the style from the first range to the whole text. This behavior is subject to change in future releases.
 
