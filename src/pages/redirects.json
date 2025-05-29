@@ -320,7 +320,7 @@
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/page-list"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/node/",
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Node",
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/node"
         },
         {
