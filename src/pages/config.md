@@ -49,7 +49,7 @@
                 - [ItemList](references/document-sandbox/document-apis/classes/item-list.md) 
                 - [LineNode](references/document-sandbox/document-apis/classes/line-node.md) 
                 - [MediaContainerNode](references/document-sandbox/document-apis/classes/media-container-node.md) 
-                - [Node](references/document-sandbox/document-apis/classes/node.md) 
+                - [Node](references/document-sandbox/document-apis/classes/Node.md) 
                 - [PageList](references/document-sandbox/document-apis/classes/page-list.md) 
                 - [PageNode](references/document-sandbox/document-apis/classes/page-node.md) 
                 - [PathNode](references/document-sandbox/document-apis/classes/path-node.md) 
