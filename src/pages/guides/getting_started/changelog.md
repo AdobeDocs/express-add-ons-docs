@@ -26,7 +26,7 @@ contributors:
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document_metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document-metadata.md).
 
 ### Updates
 
@@ -324,7 +324,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 - The [Quickstart](./quickstart.md) and [Distribute](../build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
-- A new section on Marketplace [rejections](/resources/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
+- A new section on Marketplace [rejections](../build/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
 - The [Manifest Reference](../../references/manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
 ## 2024-04-10
@@ -761,7 +761,7 @@ which include:
 #### Documentation updates
 
 - Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
-- Updated [Getting Started guides](./) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
+- Updated [Getting Started guides](../getting_started/changelog.md) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
 
@@ -820,7 +820,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Updates
 
-- The [Communication API](../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../references/document-sandbox/) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../../references/document-sandbox/index.md) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
