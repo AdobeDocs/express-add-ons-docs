@@ -34,8 +34,8 @@ This reference is provided to outline the interfaces, methods, properties and ev
 - [Modal Dialogs](../../guides/learn/how_to/modal-dialogs.md)
 - [Locale Detection](../../guides/learn/how_to/theme-locale.md#detecting-locale-supported-locales-and-format)
 - [Theme Detection](../../guides/learn/how_to/theme-locale.md#detecting-theme)
-- [Access to the Manifest](/references/addonsdk/instance-manifest.md)
-- [Access to the Document information](/references/addonsdk/app-document.md)
+- [Access to the Manifest](../../references/addonsdk/instance-manifest.md)
+- [Access to the Document information](../../references/addonsdk/app-document.md)
 
 <InlineAlert slots="text" variant="success"/>
 
