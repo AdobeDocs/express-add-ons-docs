@@ -176,7 +176,7 @@
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/container-node"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/color/",
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Color",
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/color"
         },
         {

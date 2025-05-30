@@ -74,7 +74,7 @@
                 - [CharacterStylesInput](references/document-sandbox/document-apis/interfaces/character-styles-input.md) 
                 - [CharacterStylesRange](references/document-sandbox/document-apis/interfaces/character-styles-range.md) 
                 - [CharacterStylesRangeInput](references/document-sandbox/document-apis/interfaces/character-styles-range-input.md) 
-                - [Color](references/document-sandbox/document-apis/interfaces/color.md) 
+                - [Color](references/document-sandbox/document-apis/interfaces/Color.md) 
                 - [ColorFill](references/document-sandbox/document-apis/interfaces/color-fill.md) 
                 - [ContainerNode](references/document-sandbox/document-apis/interfaces/container-node.md) 
                 - [Fill](references/document-sandbox/document-apis/interfaces/fill.md) 
