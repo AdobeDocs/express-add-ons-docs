@@ -154,7 +154,7 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 | Badge                                                             | Size(px) |                                                                                 Download link |
 | ----------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------: |
-| ![](../img/addon-plus-badge20.svg)                                | 20x20    | ![](../img/addon-plus-badge20.svg) download="../img/addon-plus-badge20.svg"                   |
+| ![](../img/addon-plus-badge20.svg)                                | 20x20    | ![](../img/addon-plus-badge20.svg) [download](https://developer.adobe.com/express/add-ons/docs/assets/23062576ba7a6eb2b1ccf72f5f1e73a2/addon-plus-badge20.svg)                   |
 
 #### Paid badge
 
@@ -162,7 +162,7 @@ Use the checkmark badge below to indicate when content or features are paid and 
 
 | Badge                                                            | Size(px) |                                                                               Download link |
 | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------: |
-| ![](../img/addon-pro-badge20.svg)                                | 20x20    | ![](../img/addon-pro-badge20.svg) download="../img/addon-pro-badge20.svg"                   |
+| ![](../img/addon-pro-badge20.svg)                                | 20x20    | ![](../img/addon-pro-badge20.svg) [download](https://developer.adobe.com/express/add-ons/docs/assets/7401760935a592512e769bf3399d9007/addon-pro-badge20.svg)                  |
 
 <InlineAlert slots="text" variant="info"/>
 
