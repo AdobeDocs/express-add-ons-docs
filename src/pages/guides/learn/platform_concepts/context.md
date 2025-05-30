@@ -146,7 +146,7 @@ A website's address on the Internet that is used in URLs to identify which serve
 
 ### subdomain
 
-Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives (ie: https://w906hhl6k.wxp.adobe-addons.com).
+Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives ([ie: https://w906hhl6k.wxp.adobe-addons.com](https://w906hhl6k.wxp.adobe-addons.com)).
 
 ### allowed list of origins
 
