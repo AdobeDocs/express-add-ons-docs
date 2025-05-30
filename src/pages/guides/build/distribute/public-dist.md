@@ -39,11 +39,11 @@ This section outlines everything you'll need to be prepared for submitting your 
 |                   **\* Add-on name** | 25               |                                                                                                                                                              A unique name for your add-on. |
 |                       **\* Summary** | 50               |                                                                                                                                               A short description of what your add-on does. |
 |              **\* Full Description** | 1000             |                                                                                                                                Full context and description of your add-on and its features |
-|                      **\* Help URL** | 1000             |                                                                                                                               URL for your users to get help (ie: https://www.example.com/) |
+|                      **\* Help URL** | 1000             |                                                                                                                               URL for your users to get help ([ie: https://www.example.com/)](https://www.example.com/))|
 |         **\* Support email address** | 1000             |                                                                                                                          An email address that users of your add-on can contact for support |
 |             **\*Trader information** | NA               | Provide the trader information as per the [listing guidelines](./guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
-|                   **Privacy Notice** | 1000             |                                                                                                                                   URL of your privacy notice (ie: https://www.example.com/) |
-| **End User License Agreement(EULA)** | 1000             |                                                                                                                               End User License Agreement URL (ie: https://www.example.com/) |
+|                   **Privacy Notice** | 1000             |                                                                                                                                   URL of your privacy notice [(ie: https://www.example.com/)](https://www.example.com/) |
+| **End User License Agreement(EULA)** | 1000             |                                                                                                                               End User License Agreement URL [(ie: https://www.example.com/)](https://www.example.com/) |
 |                         **Keywords** | 100              |                                                                                                                                   Keywords to help users find your add-on (comma-separated) |
 |                    **Release notes** | 1000             |                                                                                                                                  Provide information specific to this version of the add-on |
 
@@ -245,7 +245,7 @@ You can choose to revisit your submission details later if you need to update it
 
 <InlineAlert variant="warning" slots="header, text1, text2" />
 
-Add-on visbility for EU users
+**Add-on visbility for EU users**
 
 If an EU user has a deep link to your add-on, and you are not compliant with the [European Union Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32022R2065) trader requirements, they will not be able to install the add-on. However, if they have already installed it, they will still be able to use it. In both cases, they will see a banner with the following message:
 
