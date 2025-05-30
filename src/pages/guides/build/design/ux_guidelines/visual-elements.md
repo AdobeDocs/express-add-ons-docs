@@ -203,7 +203,7 @@ Color pickers are a special type of picker that allows users to select a color.
 
 The Spectrum component used as a Color Picker is the [Swatch](https://spectrum.adobe.com/page/swatch/), which shows a small sample of a fill—such as a color, gradient, texture, or material—that is intended to be applied to an object.
 
-The Swatch itself doesn't embed any color picker functionality, but it can be used in conjunction with a native `<input>` hidden element to trigger the browser's color picker. You can find an example with sample code in [this tutorial](/resources/tutorials/grids-addon.md#coding-the-grids-add-on).
+The Swatch itself doesn't embed any color picker functionality, but it can be used in conjunction with a native `<input>` hidden element to trigger the browser's color picker. You can find an example with sample code in [this tutorial](../../../learn/how_to/tutorials/grids-addon.md).
 
 ## Navigation
 
