@@ -368,11 +368,11 @@
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/ellipse-node"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Editor/",
-            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Editor"
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Editor",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/editor"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/context/",
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/Context",
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/context"
         },
         {
