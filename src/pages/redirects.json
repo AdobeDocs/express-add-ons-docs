@@ -124,7 +124,7 @@
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/rect"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/point/",
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Point",
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/point"
         },
         {
