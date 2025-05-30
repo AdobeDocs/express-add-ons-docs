@@ -108,7 +108,7 @@
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/style-range"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/stroke/",
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/Stroke",
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/interfaces/stroke"
         },
         {

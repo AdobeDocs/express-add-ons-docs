@@ -91,7 +91,7 @@
                 - [PointTextLayout](references/document-sandbox/document-apis/interfaces/point-text-layout.md) 
                 - [Rect](references/document-sandbox/document-apis/interfaces/rect.md) 
                 - [RectangleGeometry](references/document-sandbox/document-apis/interfaces/rectangle-geometry.md) 
-                - [Stroke](references/document-sandbox/document-apis/interfaces/stroke.md) 
+                - [Stroke](references/document-sandbox/document-apis/interfaces/Stroke.md) 
                 - [StyleRange](references/document-sandbox/document-apis/interfaces/style-range.md) 
                 - [TextRange](references/document-sandbox/document-apis/interfaces/text-range.md) 
                 - [UnorderedListStyleInput](references/document-sandbox/document-apis/interfaces/unordered-list-style-input.md) 
