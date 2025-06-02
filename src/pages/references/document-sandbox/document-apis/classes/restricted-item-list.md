@@ -70,7 +70,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[`ReadOnlyItemList`](read-only-item-list.md).[`[iterator]`](ReadOnlyItemList.md#iterator)
+[`ReadOnlyItemList`](read-only-item-list.md).[`[iterator]`](read-only-item-list.md#iterator)
 
 <HorizontalLine />
 
