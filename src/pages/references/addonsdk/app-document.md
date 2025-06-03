@@ -465,11 +465,9 @@ Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#impo
 
 Imports a PDF as a new Adobe Express document.
 
-<!-- Removed experimental as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
 #### Signature
 
-`importPdf(blob: Blob, attributes: MediaAttributes): void;`
+`importPdf(blob: Blob, attributes: MediaAttributes & SourceMimeTypeInfo): void;`
 
 #### Parameters
 
@@ -477,10 +475,19 @@ Imports a PDF as a new Adobe Express document.
 | ------------- | ------------------------------------- | --------------------------------------------------------------------------: |
 | `blob`        | `Blob`                                |                                                 The PDF to add to the page. |
 | `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| [`SourceMimeTypeInfo?`](#sourcemimetypeinfo) | `SourceMimeTypeInfo` | Mime type details for importing media |
 
 #### Return Value
 
 None
+
+#### `SourceMimeTypeInfo`
+
+Mime type details for importing media
+
+| Name              | Type                 | Description |
+| ------------------| -------------------- | ----------------------------------------: |
+| `sourceMimeType?` | [`SupportedMimeTypes`](./addonsdk-constants.md#constants) | Mime type of the source asset |
 
 #### Example Usage
 
@@ -491,6 +498,7 @@ import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const { document } = AddOnSDKAPI.app;
 
 const mediaAttributes = { title: "Sample.pdf" };
+const url = "https://example.com/sample.pdf";
 
 // Import a PDF. Note this will be imported as a new Adobe Express document.
 function importPdf(blob, mediaAttributes) {
@@ -508,6 +516,35 @@ async function importPdfFrom(url) {
     document.importPdf(blob, { title: "Sample.pdf" });
   } catch (error) {
     console.log("Failed to import the pdf.");
+  }
+}
+
+// Import a PDF that was converted from a Word document, specifying the source mime type
+async function importPdfFromWordDoc(url) {
+  try {
+    const blob = await fetch(url).then((response) => response.blob());
+    let options = {
+              title: "Imported PDF", sourceMimeType: "docx" 
+      };
+    document.importPdf(blob, { 
+      title: "Converted Document.pdf",
+      sourceMimeType: AddOnSDKAPI.constants.SupportedMimeType.docx
+    });
+  } catch (error) {
+    console.log("Failed to import the pdf from Word document.");
+  }
+}
+
+// Import a PDF that was converted from a Google document
+async function importPdfFromGoogleDoc(url) {
+  try {
+    const blob = await fetch(url).then((response) => response.blob());
+    document.importPdf(blob, { 
+      title: "Google Doc.pdf",
+      sourceMimeType: AddOnSDKAPI.constants.SupportedMimeType.gdoc
+    });
+  } catch (error) {
+    console.log("Failed to import the pdf from Google document.");
   }
 }
 ```
