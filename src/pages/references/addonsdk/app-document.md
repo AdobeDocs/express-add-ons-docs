@@ -104,22 +104,27 @@ await addOnUISdk.ready;
 async function logMetadata() {
   try {
     const pages = (await addOnUISdk.app.document.getPagesMetadata({
-                            range: addOnUISdk.constants.Range.specificPages,
-                            pageIds: [
-                                "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
-                                "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
-                            ]
-                        })) as PageMetadata[];
+        range: addOnUISdk.constants.Range.specificPages,
+        pageIds: [
+            "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
+            "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
+        ]
+    })) as PageMetadata[];
     for (const page of pages) {
       console.log("Page id: ", page.id);
       console.log("Page title: ", page.title);
       console.log("Page size: ", page.size);
       console.log("Page has premium content: ", page.hasPremiumContent);
+      console.log("Page has audio content: ", page.hasAudioContent);
+      console.log("Page has video content: ", page.hasVideoContent);
+      console.log("Page has animated content: ", page.hasAnimatedContent);
       console.log("Page has timelines: ", page.hasTemporalContent);
+      if (page.hasTemporalContent)
+          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration); 
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
       console.log("Is page blank: ", page.isBlank);
-      console.log("Template details: ", page.templateDetails);
+      console.log("Template details: ", page.templateDetails);      
     }
   }
   catch(error) {
@@ -215,17 +220,21 @@ The options to pass into the print quality check..
 
 The metadata of a page.
 
-| Name                 | Type                                |                                                                                                                                                                                                                                                                                                                                                                Description |
-| -------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `id`                 | `string`                            |                                                                                                                                                                                                                                                                                                                                                        The id of the page. |
-| `title`              | `string`                            |                                                                                                                                                                                                                                                                                                                                                     The title of the page. |
-| `size`               | `{ width: number, height: number }` |                                                                                                                                                                                                                                                                                                                                            The size of the page in pixels. |
-| `hasPremiumContent`  | `boolean`                           |                                                                                                                                                                                                                                                                                                                    `true` if the page has premium content, `false` if not. |
-| `hasTemporalContent` | `boolean`                           |                                                                                                                                                                                                                                                                                                                          `true` if the page has timelines, `false` if not. |
-| `pixelsPerInch?`     | `number`                            |                                                                                                                                                                                                                                                                                                                                           The pixels per inch of the page. |
-| `isPrintReady?`      | `boolean`                           | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
-| `isBlank?`           | `boolean`                           |                                                                                                                                                                                                                                                                                                                                       Indicates whether the page is blank. |
-| `templateDetails?`   | `TemplateDetails`                   |                                                                                                                                                                                                                                                                                                                                  The details of the template for the page. |
+| Name                       | Type                                | Description |
+| ---------------------------| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `id`                       | `string`                            | The id of the page. |
+| `title`                    | `string`                            | The title of the page. |                    
+| `size`                     | `{ width: number, height: number }` | The size of the page in pixels. |
+| `hasAudioContent`          | `boolean`                           | `true` if the page has audio content, `false` if not. |
+| `hasVideoContent`          | `boolean`                           | `true` if the page has video content, `false` if not. |
+| `hasAnimatedContent`       | `boolean`                        | `true` if the page has animated content, `false` if not. |
+| `hasPremiumContent`        | `boolean`                           | `true` if the page has premium content, `false` if not. |
+| `hasTemporalContent`       | `boolean`                           | `true` if the page has timelines, `false` if not. |
+| `temporalContentDuration?` | `number`                            | Duration of the temporal content in seconds. Applicable only if `hasTemporalContent` is `true`. |
+| `pixelsPerInch?`           | `number`                            | The pixels per inch of the page. |
+| `isPrintReady?`            | `boolean`                           | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
+| `isBlank?`                 | `boolean`                           | Indicates whether the page is blank. |
+| `templateDetails?`         | `TemplateDetails`                   | The details of the template for the page. |
 
 #### `PageMetadataOptions`
 
