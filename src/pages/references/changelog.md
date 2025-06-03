@@ -48,7 +48,7 @@ contributors:
 
 <InlineAlert variant="info" slots="header, text, text2" />
 
-New OAuth2 redirect URI:
+**New OAuth2 redirect URI:**
 
 As part of the sunsetting of the legacy version, Adobe Express has moved from the `new.express.adobe.com` domain to `express.adobe.com`.
 
