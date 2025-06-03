@@ -116,7 +116,7 @@ The playground offers two distinct development modes:
 ### How to Use Script Mode
 
 1. Select the **Script** button in the top left corner of the playground window.
-2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/editor.md) object.
+2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object.
 3. Execute your script by clicking the **Run Code** button in the right corner of the playground window to see changes in the current document.
 
 ![Code Playground Script Mode](./img/script-mode.png)
