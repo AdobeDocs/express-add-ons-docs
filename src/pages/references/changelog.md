@@ -26,7 +26,7 @@ contributors:
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document-metadata.md).
 
 ### Updates
 
@@ -324,7 +324,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 - The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
-- A new section on Marketplace [rejections](/resources/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
+- A new section on Marketplace [rejections](../guides/build/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
 - The [Manifest Reference](./manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
 ## 2024-04-10
@@ -432,14 +432,11 @@ Some items in the following list of changes may have been mentioned in recent up
 - Color utilities have moved to [`colorUtils`](./document-sandbox/document-apis/classes/color-utils.md) instead of `utils`.
 
   **Old**
-  <del>
 
   ```js
   import { utils } from "express-document-sdk";
   const color = utils.createColor(1, 0, 0);
   ```
-
-  </del>
 
   **New**
 
@@ -498,14 +495,10 @@ Some items in the following list of changes may have been mentioned in recent up
   **Adobe Express Document APIs SDK import**
   For access to the [Express document and content authoring APIs](./document-sandbox/document-apis/index.md):
 
-  <del>
-
   ```js
   // Old
   import { editor } from "express";
   ```
-
-  </del>
 
   ```js
   // New
@@ -515,14 +508,10 @@ Some items in the following list of changes may have been mentioned in recent up
   **Document Sandbox SDK import**
   For access to the [document sandbox runtime APIs](./document-sandbox/index.md):
 
-  <del>
-
   ```js
   // Old
   import AddOnScriptSdk from "AddOnScriptSdk";
   ```
-
-  </del>
 
   ```js
   // New
@@ -831,9 +820,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Updates
 
-<del>
-
-- The <a href="../references/document-sandbox/communication/index.md">Communication API</a> in the <a href="../references/document-sandbox/">document sandbox reference section</a> was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../references/document-sandbox/index.md) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -844,8 +831,6 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
   `import AddOnScriptSdk from "AddOnScriptSdk";`
 
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, _however_, it will require you to update any existing usage of these APIs in progress**.
-
-</del>
 
 - A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](./document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 - Updated the [FAQ](../guides/support/faq.md) with details on Experimental APIs and suppported file types for exported content.
