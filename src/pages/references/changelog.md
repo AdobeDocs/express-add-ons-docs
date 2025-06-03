@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-06-03
+
+### Added
+
+- New fields are now returned from the [`getPagesMetadata()`](./addonsdk/app-document.md#getpagesmetadata) call that indicate if the pages contain audio, video or animated content and the duration of any temporal content.
+
 ## 2025-05-26
 
 ### Added
