@@ -89,7 +89,7 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)
+`Readonly` [`Rect`](../interfaces/rect.md)
 
 <HorizontalLine />
 
