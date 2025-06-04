@@ -2,15 +2,13 @@
 
 ## Introduction
 
-<Product-Card slots="icon, text, button" theme="light" width="50%" />
+<Product-Card slots="icon, text, button" repeat="2" theme="light" />
 
 ![lit-logo](images/lit-logo.svg)
 
 Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
 
 - [Learn more](https://lit.dev/)
-
-<Product-Card slots="icon, text, button" theme="light" width="50%" />
 
 ![typescript-logo](images/ts-logo-128.svg)
 
