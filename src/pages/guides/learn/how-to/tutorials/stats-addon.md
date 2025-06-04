@@ -35,7 +35,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting_started/hello-world.md) guide.
+- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting-started/hello-world.md) guide.
 - Familiarity with the Adobe Express Document API, covered in [this tutorial](grids-addon.md).
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
@@ -56,7 +56,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ## Getting Started with the Communication API
 
-As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../../platform_concepts/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
+As we've seen in the previous Adobe Express [Document API tutorial](grids-addon.md), add-ons belong to the **UI iframe**: a sandboxed environment subject to [CORS policies](../../platform-concepts/context.md#cors), where the User Interface (UI) and the add-on logic are built. The iframe itself has limited editing capabilities, though: via the `addOnUISdk` module, it can invoke a few methods to import media (image, video, and audio) and export the document into a number of formats, like `.pdf`, `.mp4` or `.jpg` for example.
 
 The **Document API** makes new, more powerful capabilities available, allowing the add-on to manipulate elements directly—like scripting in Desktop applications such as Photoshop or InDesign. This API is one component of the Document Sandbox, a JavaScript execution environment that also includes a restricted set of Web API (mostly debugging aids) as well as the means for the UI iframe and the Document API to exchange messages—the Communication API. This infrastructure is paramount as it bridges the gap between the two environments, allowing them to create a seamless experience.
 

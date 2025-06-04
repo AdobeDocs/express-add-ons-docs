@@ -73,7 +73,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting_started/hello-world.md) guide.
+- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting-started/hello-world.md) guide.
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 16 or newer.
 
@@ -103,7 +103,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 As part of the [Document Model Sandbox](../../../../references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
-- The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](../../platform_concepts/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
+- The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](../../platform-concepts/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
 - The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](../../../../references/document-sandbox/communication/index.md)), providing access to the [Document API](../../../../references/document-sandbox/document-apis/index.md). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
@@ -134,7 +134,7 @@ npm run build
 npm run start
 ```
 
-This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](../../../getting_started/hello-world.md) guide for a step-by-step walkthrough.
+This will install the required dependencies, build the project, and then serve it locally on port 5241; if you need more clarification about how to load an add-on in Adobe Express, please refer to the [quickstart](../../../getting-started/hello-world.md) guide for a step-by-step walkthrough.
 
 Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Document Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
@@ -306,7 +306,7 @@ The Document API is rapidly expanding: to keep track of its progress, you must g
 
 ![Add-on Communication API](images/grids-addon-reference.png)
 
-In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](../../../../references/document-sandbox/document-apis/classes/rectangle-node.md) is a subclass of the [`FillableNode`](../../../../references/document-sandbox/document-apis/classes/fillable-node.md), which in turn subclasses the [`StrokableNode`](../../../../references/document-sandbox/document-apis/classes/strokable-node.md), which eventually is just a particular kind of [`Node`](../../../../references/document-sandbox/document-apis/classes/Node.md)—the base class.
+In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](../../../../references/document-sandbox/document-apis/classes/rectangle-node.md) is a subclass of the [`FillableNode`](../../../../references/document-sandbox/document-apis/classes/fillable-node.md), which in turn subclasses the [`StrokableNode`](../../../../references/document-sandbox/document-apis/classes/strokable-node.md), which eventually is just a particular kind of [`Node`](../../../../references/document-sandbox/document-apis/classes/node.md)—the base class.
 
 Some properties are shared among the `RectangleNode` and, say, other `StrokableNode` subclasses such as the `EllipseNode`: for instance, the `opacity`, or `blendMode`. Other ones are unique, like the `topLeftRadius`, which, in the context of an `EllipseNode`, wouldn't make sense.
 
@@ -395,7 +395,7 @@ Please note that it's considered good practice to initially **disable all intera
 
 The `createShapeButton` invokes the `createShape()` method defined and exposed in `code.js` (lines 7-19), passing an option object with arbitrary `width` and `height` properties. The function reveals key insights about the Document API—let's have a deeper look at the code.
 
-According to the Reference, `createRectangle()` is a method of the [`Editor`](../../../../references/document-sandbox/document-apis/classes/Editor.md) class, which must be imported from `"express-document-sdk"` with the following statement.
+According to the Reference, `createRectangle()` is a method of the [`Editor`](../../../../references/document-sandbox/document-apis/classes/editor.md) class, which must be imported from `"express-document-sdk"` with the following statement.
 
 ```js
 import { editor, colorUtils, constants } from "express-document-sdk";
@@ -422,7 +422,7 @@ First, you make use of the `fromRGB()` method from the `colorUtils` class, which
 
 <InlineAlert variant="info" slots="text1" />
 
-Strokes are created with the `editor.makeStroke()` method, which accepts more parameters (all optional). It's documented [here](../../../../references/document-sandbox/document-apis/classes/Editor.md#makestroke).
+Strokes are created with the `editor.makeStroke()` method, which accepts more parameters (all optional). It's documented [here](../../../../references/document-sandbox/document-apis/classes/editor.md#makestroke).
 
 The `rect` object now exists as a `RectangleNode` instance with a width of 200 pixels, a height of 100, the top-left corner at the coordinate (50, 50) and a pastel pink fill color. But **it still needs to be rendered on the page!**
 
@@ -782,7 +782,7 @@ This is because we're using gutters as page margins, too, as the following illus
 
 ![](images/grids-addon-rowheight.png)
 
-We must get hold of the [Document](../../../../references/document-sandbox/document-apis/classes/Editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](../../../../references/document-sandbox/document-apis/classes/page-node.md)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
+We must get hold of the [Document](../../../../references/document-sandbox/document-apis/classes/editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](../../../../references/document-sandbox/document-apis/classes/page-node.md)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
 
 ```js
 // ...
@@ -939,7 +939,7 @@ export { addColumns, addRows };
 
 As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Since the color is received as a Hex string (like `"#ffcccc"`), we make use of the `colorUtil.fromHex()` method to convert into a Color instance—see `shapeUtils.js`, line 9.
 
-It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](../../../../references/document-sandbox/document-apis/classes/Editor.md#creategroup) method returning a [`GroupNode`](../../../../references/document-sandbox/document-apis/classes/group-node.md). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
+It'd be nice to group rows and columns. The Editor class provides a [`createGroup()`](../../../../references/document-sandbox/document-apis/classes/editor.md#creategroup) method returning a [`GroupNode`](../../../../references/document-sandbox/document-apis/classes/group-node.md). Like all `ContainerNode` classes, it has a `children` property, which we can append rectangles to.
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {

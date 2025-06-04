@@ -31,7 +31,7 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 ## Welcome to Adobe Express Add-ons!
 
-Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code-playground.md) and start tinkering with the API right away.
+Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting-started/code-playground.md) and start tinkering with the API right away.
 
 <Text slots="image, heading, text, text1" width="50%"/>
 
@@ -41,7 +41,7 @@ Ready to build your own add-on? Check out the Developer Journey to get started, 
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-[Find inspiration →](./getting_started/developer-journey.md#discover)
+[Find inspiration →](./getting-started/developer-journey.md#discover)
 
 <Text slots="image, heading, text, text1" width="50%"/>
 
@@ -51,7 +51,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 Familiarize and experiment with powerful features in our Code Playground.
 
-[Dive deeper →](./getting_started/developer-journey.md#learn)
+[Dive deeper →](./getting-started/developer-journey.md#learn)
 
 <Text slots="image, heading, text, text1" width="50%" />
 
@@ -61,7 +61,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 Transform your ideas into a polished product following our best practices.
 
-[Start building →](./getting_started/developer-journey.md#develop)
+[Start building →](./getting-started/developer-journey.md#develop)
 
 <Text slots="image, heading, text, text1" width="50%" />
 
@@ -71,7 +71,7 @@ Transform your ideas into a polished product following our best practices.
 
 Share your add-on with the world in the Adobe Express Marketplace.
 
-[Launch now →](./getting_started/developer-journey.md#distribute)
+[Launch now →](./getting-started/developer-journey.md#distribute)
 
 <Embed slots="video" />
 
@@ -97,7 +97,7 @@ Click on an add-on to view more information and install it. That's it!
 
 ## What's next?
 
-Continue by reading the [Developer Journey](./getting_started/developer-journey.md) and explore the [Code Playground](./getting_started/code-playground.md)!
+Continue by reading the [Developer Journey](./getting-started/developer-journey.md) and explore the [Code Playground](./getting-started/code-playground.md)!
 
 <InlineAlert slots="text" />
 

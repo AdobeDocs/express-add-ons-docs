@@ -116,7 +116,7 @@ The playground offers two distinct development modes:
 ### How to Use Script Mode
 
 1. Select the **Script** button in the top left corner of the playground window.
-2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object.
+2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/editor.md) object.
 3. Execute your script by clicking the **Run Code** button in the right corner of the playground window to see changes in the current document.
 
 ![Code Playground Script Mode](./img/script-mode.png)
@@ -125,11 +125,11 @@ The playground offers two distinct development modes:
 
 ![Script Mode Manifest Settings](./img/manifest-props-script.png)
 
-5. Head over to our [How-to guides](../learn/how_to/index.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
+5. Head over to our [How-to guides](../learn/how-to/index.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
 
-   - [How to Use Geometry](../learn/how_to/use-geometry.md)
-   - [How to Use Color](../learn/how_to/use-color.md)
-   - [How to Use Text](../learn/how_to/use-text.md)
+   - [How to Use Geometry](../learn/how-to/use-geometry.md)
+   - [How to Use Color](../learn/how-to/use-color.md)
+   - [How to Use Text](../learn/how-to/use-text.md)
 
 #### Key Considerations
 
@@ -293,7 +293,7 @@ There are two ways to resume working on your last saved session:
 
 ## Resources
 
-- **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../learn/how_to/index.md) to kickstart your development.
+- **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../learn/how-to/index.md) to kickstart your development.
 - **SDK/API References:** Discover more about what you can do in your add-on by exploring our [SDK References](../../references/index.md).
 - **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
 - **Ask Questions:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).

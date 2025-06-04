@@ -90,21 +90,21 @@ Once it's open, you can play with the code directly in the editor, and see the c
 
 ### Explore the How-to Guides
 
-To properly experiment with the Playground, head to the [How-tos](../learn/how_to/index.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. They cover the most common use cases, and are a great way to get familiar with the add-on SDK. Try the following as a starter:
+To properly experiment with the Playground, head to the [How-tos](../learn/how-to/index.md) section: you'll find a collection of short guides and accompanying snippets that you can plug and play in the Playground editor. They cover the most common use cases, and are a great way to get familiar with the add-on SDK. Try the following as a starter:
 
-- [Creating Text](../learn/how_to/use-text.md#create-text)
-- [Creating Geometry](../learn/how_to/use-geometry.md)
-- [Grouping Elements](../learn/how_to/group-elements.md)
+- [Creating Text](../learn/how-to/use-text.md#create-text)
+- [Creating Geometry](../learn/how-to/use-geometry.md)
+- [Grouping Elements](../learn/how-to/group-elements.md)
 
 When you feel more comfortable, you can tinker with these other use cases:
 
-- [Using Colors](../learn/how_to/use-color.md)
-- [Exporting Renditions](../learn/how_to/create-renditions.md)
-- [Document](../learn/how_to/document-metadata.md) and [Element Metadata](../learn/how_to/document-metadata.md)
+- [Using Colors](../learn/how-to/use-color.md)
+- [Exporting Renditions](../learn/how-to/create-renditions.md)
+- [Document](../learn/how-to/document-metadata.md) and [Element Metadata](../learn/how-to/document-metadata.md)
 
 ### Scaffold a Local Development Environment
 
-To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](./local_development/dev-tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
+To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](./local-development/dev-tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
 
 ![doc sandbox prompt](./local_development/img/CLI-template-prompt.png)
 
@@ -114,7 +114,7 @@ We're actively working on improving the Code Playground so that existing project
 
 ### Next steps
 
-Feel free to explore the rest of the [How-to Guides](../learn/how_to/index.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, keep reading!
+Feel free to explore the rest of the [How-to Guides](../learn/how-to/index.md) to get exposed the entire range of possibilities that the add-on SDK offers. If you're ready to get your hands dirty and start building your own add-ons, keep reading!
 
 ## Develop
 
@@ -122,11 +122,11 @@ Now that you feel comfortable with the Adobe Express add-on development's basics
 
 ### Follow a Tutorial to build a complete add-on
 
-We've created a set of tutorials that guide you through the process of building a full-featured add-on from scratch. We recommend you to start with the [Design Grid creator](../learn/how_to/tutorials/grids-addon.md), which covers the basics of the add-on SDK and how to use the Document API.
+We've created a set of tutorials that guide you through the process of building a full-featured add-on from scratch. We recommend you to start with the [Design Grid creator](../learn/how-to/tutorials/grids-addon.md), which covers the basics of the add-on SDK and how to use the Document API.
 
 [![Grids Tutorial](../learn/how_to/tutorials/images/grids-addon-animation.gif)](../learn/how_to/tutorials/grids-addon.md)
 
-Feel free to explore [the other Tutorials](../learn/how_to/tutorials/index.md), or our collection of [Code Samples](../learn/samples.md); there's no better way to learn than by doing!
+Feel free to explore [the other Tutorials](../learn/how-to/tutorials/index.md), or our collection of [Code Samples](../learn/samples.md); there's no better way to learn than by doing!
 
 ### Discover our Design System
 
@@ -136,13 +136,13 @@ Adobe Express is based on the [Adobe Spectrum design system](https://s2.spectrum
 
 https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI
 
-We've created a set of [UX Guidelines](../build/design/index.md) to help you get started; they cover the [design principles](../build/design/ux_guidelines/design-principles.md), [color](../build/design/ux_guidelines/visual-elements.md#color), [typography](../build/design/ux_guidelines/visual-elements.md#typography), [layout](../build/design/ux_guidelines/visual-elements.md#layout--structure) and much more.
+We've created a set of [UX Guidelines](../build/design/index.md) to help you get started; they cover the [design principles](../build/design/ux-guidelines/design-principles.md), [color](../build/design/ux-guidelines/visual-elements.md#color), [typography](../build/design/ux-guidelines/visual-elements.md#typography), [layout](../build/design/ux-guidelines/visual-elements.md#layout--structure) and much more.
 
 You should use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), a library of pre-built components that you can use to create a consistent UI for your add-on. You can test them in a sandboxed environment like Codepen.
 
 [![Spectrum Web Components Codepen](../learn/how_to/tutorials/images/bingo-codepen.png)](../learn/how_to/tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
 
-Read our [Implementation Guide](../build/design/implementation-guide.md) or follow our two-part [Bingo Card Generator add-on tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
+Read our [Implementation Guide](../build/design/implementation-guide.md) or follow our two-part [Bingo Card Generator add-on tutorial](../learn/how-to/tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
 
 [![Bingo Card Generator add-on](../learn/how_to/tutorials/images/bingo-v1-addon.png)](../learn/how_to/tutorials/spectrum-workshop/index.md)
 
@@ -150,11 +150,11 @@ Read our [Implementation Guide](../build/design/implementation-guide.md) or foll
 
 To become an expert add-on developer, you must confidently orient yourself around the Document Sandbox API. New features are constantly being added, and it's crucial to learn how to read and decode the SDK Reference to know how to use them.
 
-Read the [Adobe Express Document API Concepts](../learn/platform_concepts/document-api.md) guide to learn about Object Oriented Programming concepts and the various [Classes and Interfaces](../learn/platform_concepts/document-api.md#classes-and-interfaces) available to you.
+Read the [Adobe Express Document API Concepts](../learn/platform-concepts/document-api.md) guide to learn about Object Oriented Programming concepts and the various [Classes and Interfaces](../learn/platform-concepts/document-api.md#classes-and-interfaces) available to you.
 
 [![Document API Concepts](../learn/platform_concepts/images/refs-addon-scenegraph.png)](../learn/platform_concepts/document-api.md)
 
-Complete the [Dimension annotation sample add-on exercise](../learn/platform_concepts/document-api.md#from-theory-to-practice) to practice your new knowledge.
+Complete the [Dimension annotation sample add-on exercise](../learn/platform-concepts/document-api.md#from-theory-to-practice) to practice your new knowledge.
 
 [![Dimension annotation sample add-on](../learn/platform_concepts/images/refs-addon-refactor.png)](../learn/platform_concepts/document-api.md#from-theory-to-practice)
 
@@ -168,7 +168,7 @@ Add-ons can be [privately distributed](../build/distribute/private-dist.md) for 
 
 [![Publish your add-on](../build/distribute/img/public-listing-submission-v2.png)](../build/distribute/public-dist.md)
 
-Familiarize yourself with the details of our [Review Process](../build/distribute/review_process/index.md) and follow the [Submission Guidelines](../build/distribute/guidelines/index.md) to prepare your add-on for review.
+Familiarize yourself with the details of our [Review Process](../build/distribute/review-process/index.md) and follow the [Submission Guidelines](../build/distribute/guidelines/index.md) to prepare your add-on for review.
 
 ### Improve your sales with the Monetization Guide
 

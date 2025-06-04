@@ -30,4 +30,4 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
-See this [export content use case example](../../guides/learn/how_to/premium-content.md#show-a-premium-content-error-with-the-upgrade-option), which uses this flag for more details.
+See this [export content use case example](../../guides/learn/how-to/premium-content.md#show-a-premium-content-error-with-the-upgrade-option), which uses this flag for more details.

@@ -26,7 +26,7 @@ The following guides contain a set of common use cases and accompanying code sni
 
 **Code Playground integration is coming soon!**
 
-The [Code Playground](../../getting_started/code-playground.md) is the perfect tool to test each how-to snippet. We're currently working on a leaner integration between the Playground and our documentation; running the code will be even easier soon!
+The [Code Playground](../../getting-started/code-playground.md) is the perfect tool to test each how-to snippet. We're currently working on a leaner integration between the Playground and our documentation; running the code will be even easier soon!
 
 We're constantly adding new how-tos, so make sure to check back often. If you're looking for Tutorials that guide you in building add-ons from the ground up, please check the [Complete Projects](#complete-projects) section.
 

@@ -143,7 +143,7 @@ You can call `preventDefault` on the submit event to prevent the browser from tr
 
 ### How do I enable CORS for a service that blocks my add-on requests due to the origin?
 
-To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../learn/platform_concepts/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../learn/platform_concepts/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
+To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../learn/platform-concepts/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../learn/platform-concepts/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
 
 ### How do I prevent my iframe content from being blocked due to cross-origin issues?
 
@@ -201,7 +201,7 @@ Yes, however, there are [technical requirements](https://helpx.adobe.com/express
 
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
 
-This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../learn/platform_concepts/context.md#cors) for more details on handling CORS with your add-on.
+This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../learn/platform-concepts/context.md#cors) for more details on handling CORS with your add-on.
 
 ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
 

@@ -29,7 +29,7 @@ Design tips for creating Adobe Express add-ons, by Steph Corrales (Sr. Experienc
 
 https://www.youtube.com/embed/siWxy4BwkIE?si=LSjjwF1W0JNziDMg
 
-Adobe Express add-on's with Spectrum Web Components [workshop](../../../learn/how_to/tutorials/spectrum-workshop/index.md), by Holly Schinsky (Sr. Developer Relations Engineer, Adobe Developer Experience).
+Adobe Express add-on's with Spectrum Web Components [workshop](../../../learn/how-to/tutorials/spectrum-workshop/index.md), by Holly Schinsky (Sr. Developer Relations Engineer, Adobe Developer Experience).
 
 <Embed slots="video" />
 

@@ -26,7 +26,7 @@ contributors:
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document-metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how-to/document-metadata.md).
 
 ### Updates
 
@@ -40,8 +40,8 @@ contributors:
   - Rebuilt the Guides navigation from scratch, and grouped the content in new sections (Getting Started, Learn, Build, Support).
   - Introduced a new [Developer Journey](./developer-journey.md) page.
   - Rewritten and improved the QuickStart guide, now [Hello, World!](./hello-world.md)
-  - Moved the Tutorials as [Complete Projects](../learn/how_to/tutorials/index.md) within the [How To Guides](../learn/how_to/index.md), now more visible.
-  - Regrouped content into the new [Platform Concepts](../learn/platform_concepts/context.md) and [Advanced Topics](../build/advanced-topics/frameworks-libraries-bundling.md) sections.
+  - Moved the Tutorials as [Complete Projects](../learn/how-to/tutorials/index.md) within the [How To Guides](../learn/how-to/index.md), now more visible.
+  - Regrouped content into the new [Platform Concepts](../learn/platform-concepts/context.md) and [Advanced Topics](../build/advanced-topics/frameworks-libraries-bundling.md) sections.
   - Updated screenshots, added animations, and enhanced the overall site usability.
 - **Note:** with the new site structure, some of your bookmarks may be broken. We'll set redirects for the most common links, but please check and update them.
 - We're constantly thinking about ways to improve the developer experience; there is more to come, stay tuned and reach out if you want to share your thoughts!
@@ -52,13 +52,13 @@ New OAuth2 redirect URI:
 
 As part of the sunsetting of the legacy version, Adobe Express has moved from the `new.express.adobe.com` domain to `express.adobe.com`.
 
-While there are redirects in place, please **add** `https://express.adobe.com/static/oauth-redirect.html` **to the list of allowed redirect URIs** in your OAuth provider configuration in addition to the existing `https://new.express.adobe.com/static/oauth-redirect.html`. For more details, see the [OAuth2 guide](../learn/how_to/oauth2.md#login-and-logout-flows).
+While there are redirects in place, please **add** `https://express.adobe.com/static/oauth-redirect.html` **to the list of allowed redirect URIs** in your OAuth provider configuration in addition to the existing `https://new.express.adobe.com/static/oauth-redirect.html`. For more details, see the [OAuth2 guide](../learn/how-to/oauth2.md#login-and-logout-flows).
 
 ## 2025-05-07
 
 ### Added
 
-- New [Using Lit & TypeScript Guide](../learn/how_to/tutorials/using-lit-typescript.md) to help developers understand and use Lit and TypeScript in their add-ons.
+- New [Using Lit & TypeScript Guide](../learn/how-to/tutorials/using-lit-typescript.md) to help developers understand and use Lit and TypeScript in their add-ons.
 
 ## 2025-05-05
 
@@ -86,9 +86,9 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document-metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how-to/document-metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
 - New [vue-starter](../learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
-- Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how_to/use-color.md).
+- Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how-to/use-color.md).
 
 ## 2025-04-03
 
@@ -147,7 +147,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 ### Added
 
 - A native Color Picker is available to add-ons via the [`showColorPicker()`](../../references/addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](../../references/addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
-- We've updated the [Use Color](../learn/how_to/use-color.md) How-to guide, now including a few examples on the Color Picker.
+- We've updated the [Use Color](../learn/how-to/use-color.md) How-to guide, now including a few examples on the Color Picker.
 - A [new section](../../references/ui-components/color-picker.md) has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.
 - A new version of the `@adobe/ccweb-add-on-sdk-types` package (v1.14.0) has been released for the CLI. Run `npm update` from the root of your add-on project to update to get the latest typings.
 
@@ -155,7 +155,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 ### Added
 
-- A new [How-to](../learn/how_to/index.md) section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.
+- A new [How-to](../learn/how-to/index.md) section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.
 
 ## 2025-03-06
 
@@ -261,7 +261,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-10-08
 
-- Adds a brand new version of the [UX Guidelines](../build/design/ux_guidelines/introduction.md) for Adobe Express add-ons.
+- Adds a brand new version of the [UX Guidelines](../build/design/ux-guidelines/introduction.md) for Adobe Express add-ons.
 - Removes the experimental warnings for [`addAnimatedImage()`](../../references/addonsdk/app-document.md#addanimatedimage) since it is now stable.
 - Adds the `author` property to [`MediaAttributes`](../../references/addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](../../references/addonsdk/app-document.md#addaudio) API.
 
@@ -299,7 +299,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - Adds a new [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
 - Adds a new [`importPresentation()`](../../references/addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
 - Adds notes about specific support and handling for animated GIF images when [importing](../../references/addonsdk/app-document.md#addimage) and [dragging content](../../references/addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
-- Adds all of the new methods mentioned above to the [How-to](../learn/how_to/index.md) section with example code snippets for each.
+- Adds all of the new methods mentioned above to the [How-to](../learn/how-to/index.md) section with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -312,7 +312,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-07-22
 
-- Added a new [`format`](../../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../learn/how_to/theme-locale.md) section.
+- Added a new [`format`](../../references/addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](../../references/addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../learn/how-to/theme-locale.md) section.
 - Removed `mobile` and `app` as [`supportedDeviceClass`](../../references/manifest/index.md#requirementsappssupporteddeviceclass) values in the Manifest's `requirements.apps` object.
 
 ## 2024-05-28
@@ -338,13 +338,13 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - The CLI has been updated to release version `2.0.0`, and includes the following:
 
   - Periodic login and EULA consent are no longer required.
-  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](local_development/dev-tooling.md#templates) for details on all the available templates.
+  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](local-development/dev-tooling.md#templates) for details on all the available templates.
   - Typings have been updated to include the latest SDK changes, and other internal packages are now at version `2.0.0`.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
 
 - The [Samples](../learn/samples.md) page has been updated to document the existing add-ons in the [`express-add-on-samples`](https://github.com/AdobeDocs/express-add-on-samples) repository, including a newly added [`audio-recording-addon`](../learn/samples.md#audio-recording-addon).
-- The [Common Use Cases](../learn/how_to/index.md) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](../learn/how_to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
+- The [Common Use Cases](../learn/how-to/index.md) section has been refactored as a sub-menu, grouping similar topics into individual pages. A new [Login and Logout flows](../learn/how-to/oauth2.md#login-and-logout-flows) section has been added. Other minor fixes and improvements have been made to the documentation.
 
 ## 2024-03-19
 
@@ -357,8 +357,8 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-03-08
 
 - [`getPagesMetadata()`](../../references/addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](../../references/addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](../../references/addonsdk/app-current-user.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
-- New examples have been added to the [use cases guide](../learn/how_to/premium-content.md) for handling premium content.
-- A new video has been added to the [grids tutorial](../learn/how_to/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
+- New examples have been added to the [use cases guide](../learn/how-to/premium-content.md) for handling premium content.
+- A new video has been added to the [grids tutorial](../learn/how-to/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
 
 ## 2024-02-21
 
@@ -367,7 +367,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   In addition, the [monetization guidelines](../build/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../build/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../build/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../build/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../build/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
-- A new [Concepts guide](../learn/platform_concepts/document-api.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/index.md) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
+- A new [Concepts guide](../learn/platform-concepts/document-api.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/index.md) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
 
@@ -378,7 +378,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - A new [`createPath`](../../references/document-sandbox/document-apis/classes/editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
 - Updates descriptions in various methods and classes in the [Document APIs](../../references/document-sandbox/document-apis/index.md).
 - Updates to the [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
-- Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
+- Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../learn/how-to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how-to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
 
 ## 2024-01-31
@@ -545,7 +545,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
-- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../learn/how_to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../../references/document-sandbox/document-apis/index.md) listed here.
+- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../learn/how-to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../../references/document-sandbox/document-apis/index.md) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -557,8 +557,8 @@ Some items in the following list of changes may have been mentioned in recent up
 - A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](../../references/addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **experimental only** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 - The [`createRenditions()` export API](../../references/addonsdk/app-document.md#createrenditions) was updated with the following changes:
   - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](../../references/addonsdk/addonsdk-constants.md) constant value.
-  - The returned type now also includes page metadata (see [`PageMetadata`](../../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../learn/how_to/page-metadata.md).
-- A new [document metadata use case example](../learn/how_to/document-metadata.md) has been added to show how to retrieve the [document id](../../references/addonsdk/app-document.md#id) and [title (ie: name)](../../references/addonsdk/app-document.md#title), including how to listen for the [associated events](../../references/addonsdk/addonsdk-app.md#events).
+  - The returned type now also includes page metadata (see [`PageMetadata`](../../references/addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../learn/how-to/page-metadata.md).
+- A new [document metadata use case example](../learn/how-to/document-metadata.md) has been added to show how to retrieve the [document id](../../references/addonsdk/app-document.md#id) and [title (ie: name)](../../references/addonsdk/app-document.md#title), including how to listen for the [associated events](../../references/addonsdk/addonsdk-app.md#events).
 - New tables have been added to the [Communication API reference](../../references/document-sandbox/communication/index.md) denoting the [supported](../../references/document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](../../references/document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](../../references/document-sandbox/communication/index.md) layer.
 
 ## 2023-12-04
@@ -598,15 +598,15 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Create Add-on flow:** You can now create [an add-on "container"](../build/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
-  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../learn/platform_concepts/context.md#cors) for more details.
+  **Unique Subdomain retrieval:** As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See [our CORS guide](../learn/platform-concepts/context.md#cors) for more details.
 
   **Delete Add-ons:** The "container" concept allowed us to offer better management and cleanup of your add-ons. You will now find the option to delete an add-on container entirely from the new "Settings" tab of a given add-on.
 
   **NOTE:** You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.
 
-  **Supported Languages:** The [version details step](../build/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../learn/how_to/theme-locale.md).
+  **Supported Languages:** The [version details step](../build/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../learn/how-to/theme-locale.md).
 
-- Updated list of templates and details to include the [Document Sandbox template options](./local_development/dev-tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](./local_development/dev-tooling.md#no-template-parameter).
+- Updated list of templates and details to include the [Document Sandbox template options](./local-development/dev-tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](./local-development/dev-tooling.md#no-template-parameter).
 - New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
 - Removed NPS survey.
 
@@ -707,7 +707,7 @@ Updated [Document API references](../../references/document-sandbox/document-api
 
 ## 2023-11-6
 
-- Added a [new tutorial section](../learn/how_to/tutorials/index.md) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how_to/tutorials/grids-addon.md) by Davide Barranca.
+- Added a [new tutorial section](../learn/how-to/tutorials/index.md) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how-to/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
 
@@ -761,7 +761,7 @@ which include:
 #### Documentation updates
 
 - Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
-- Updated [Getting Started guides](../getting_started/changelog.md) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
+- Updated [Getting Started guides](changelog.md) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
 
@@ -792,7 +792,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Added
 
-- New [iframe Sandbox Context guide](../learn/platform_concepts/context.md) with details on the new `subdomain` support and CORS handling.
+- New [iframe Sandbox Context guide](../learn/platform-concepts/context.md) with details on the new `subdomain` support and CORS handling.
 - How-to videos embedded in various guides to help visually show how to use the information in those sections.
 
 ### Updates
@@ -862,7 +862,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ## 2023-08-29
 
-- Added [`currentUser` API](../learn/how_to/user-info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../learn/how_to/index.md).
+- Added [`currentUser` API](../learn/how-to/user-info.md) details and usage example to the [SDK References](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/) and [Implementing Common Use Cases Guide](../learn/how-to/index.md).
 - Added a new [licensed-addon code sample](https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon) to illustrate how to implement monetization by leveraging the current userid.
 - Added [`devFlags` API](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-devFlags) details, which can be used to simulate certain behavior during development.
 
@@ -878,7 +878,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Updates
 
-- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../learn/how_to/premium-content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../learn/how-to/premium-content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](../../references/manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](../../references/manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
 
 ## 2023-08-09
 
@@ -936,11 +936,11 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- [UX Guidelines](../build/design/ux_guidelines/introduction.md) are now available!
+- [UX Guidelines](../build/design/ux-guidelines/introduction.md) are now available!
 - A new [`requestedSize`](../../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../build/design/ux_guidelines/visual-elements.md#typography).
-- CORS / COEP header handling added to the [CORS guide](../learn/platform_concepts/context.md#cors--coep-handling)
+- Information on [using fonts](../build/design/ux-guidelines/visual-elements.md#typography).
+- CORS / COEP header handling added to the [CORS guide](../learn/platform-concepts/context.md#cors--coep-handling)
 
 ## 2023-06-08
 

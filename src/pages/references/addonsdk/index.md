@@ -25,17 +25,17 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 ## Features Supported by the SDK
 
-- [Importing Content](../../guides/learn/how_to/use-images.md)
-- [Exporting Content](../../guides/learn/how_to/create-renditions.md)
-- [Accessing Content](../../guides/learn/how_to/group-elements.md)
-- [Drag & Drop Behavior](../../guides/learn/how_to/drag-and-drop.md)
-- [Authorization with OAuth 2.0](../../guides/learn/how_to/oauth2.md)
-- [Client-side Storage Access](../../guides/learn/how_to/local-data-management.md)
-- [Modal Dialogs](../../guides/learn/how_to/modal-dialogs.md)
-- [Locale Detection](../../guides/learn/how_to/theme-locale.md#detecting-locale-supported-locales-and-format)
-- [Theme Detection](../../guides/learn/how_to/theme-locale.md#detecting-theme)
-- [Access to the Manifest](../../references/addonsdk/instance-manifest.md)
-- [Access to the Document information](../../references/addonsdk/app-document.md)
+- [Importing Content](../../guides/learn/how-to/use-images.md)
+- [Exporting Content](../../guides/learn/how-to/create-renditions.md)
+- [Accessing Content](../../guides/learn/how-to/group-elements.md)
+- [Drag & Drop Behavior](../../guides/learn/how-to/drag-and-drop.md)
+- [Authorization with OAuth 2.0](../../guides/learn/how-to/oauth2.md)
+- [Client-side Storage Access](../../guides/learn/how-to/local-data-management.md)
+- [Modal Dialogs](../../guides/learn/how-to/modal-dialogs.md)
+- [Locale Detection](../../guides/learn/how-to/theme-locale.md#detecting-locale-supported-locales-and-format)
+- [Theme Detection](../../guides/learn/how-to/theme-locale.md#detecting-theme)
+- [Access to the Manifest](instance-manifest.md)
+- [Access to the Document information](app-document.md)
 
 <InlineAlert slots="text" variant="success"/>
 

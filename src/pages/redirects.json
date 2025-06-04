@@ -1,7 +1,7 @@
 {
-    "total": 219,
+    "total": 282,
     "offset": 0,
-    "limit": 219,
+    "limit": 282,
     "data": [
         {
             "Source": "/express-add-ons-docs/src/pages/references/index.md",
@@ -878,6 +878,258 @@
         {
             "Source": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/coi/",
             "Destination": "/express-add-ons-docs/src/pages/guides/build/advanced-topics/coi"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Rect",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/rect"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Point",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/point"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/Color",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/interfaces/color"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Node",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/node"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Fonts",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/fonts"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Editor",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/editor"
+        },
+        {
+            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Context",
+            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/context"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/platform_concepts/document-api",
+            "Destination": "/express/add-ons/docs/guides/learn/platform-concepts/document-api"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/platform_concepts/context",
+            "Destination": "/express/add-ons/docs/guides/learn/platform-concepts/context"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/user-info",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/user-info"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use-videos",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/use-videos"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use-text",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/use-text"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use-pdf-powerpoint",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/use-pdf-powerpoint"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use-images",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/use-images"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use-geometry",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/use-geometry"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use-color",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/use-color"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/use-audio",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/use-audio"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/theme-locale",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/theme-locale"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/premium-content",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/premium-content"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/position-elements",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/position-elements"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/page-metadata",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/page-metadata"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/oauth2",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/oauth2"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/modal-dialogs",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/modal-dialogs"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/local-data-management",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/local-data-management"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/group-elements",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/group-elements"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/element-metadata",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/element-metadata"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/drag-and-drop",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/drag-and-drop"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/document-metadata",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/document-metadata"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/create-renditions",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/create-renditions"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/using-lit-typescript",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/using-lit-typescript"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/stats-addon",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/stats-addon"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/grids-addon",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/grids-addon"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part3",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/part3"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/part2"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/part1"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/",
+            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/setup",
+            "Destination": "/express/add-ons/docs/guides/getting-started/setup"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/quickstart",
+            "Destination": "/express/add-ons/docs/guides/getting-started/quickstart"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/hello-world",
+            "Destination": "/express/add-ons/docs/guides/getting-started/hello-world"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/developer-journey",
+            "Destination": "/express/add-ons/docs/guides/getting-started/developer-journey"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/code-playground",
+            "Destination": "/express/add-ons/docs/guides/getting-started/code-playground"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/changelog",
+            "Destination": "/express/add-ons/docs/guides/getting-started/changelog"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/local_development/vs-code",
+            "Destination": "/express/add-ons/docs/guides/getting-started/local-development/vs-code"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/local_development/known-issues-limitations",
+            "Destination": "/express/add-ons/docs/guides/getting-started/local-development/known-issues-limitations"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/local_development/",
+            "Destination": "/express/add-ons/docs/guides/getting-started/local-development/"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/local_development/dev-tooling",
+            "Destination": "/express/add-ons/docs/guides/getting-started/local-development/dev-tooling"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/getting_started/local_development/browser",
+            "Destination": "/express/add-ons/docs/guides/getting-started/local-development/browser"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/distribute/review_process/submission-checklist",
+            "Destination": "/express/add-ons/docs/guides/build/distribute/review-process/submission-checklist"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/distribute/review_process/",
+            "Destination": "/express/add-ons/docs/guides/build/distribute/review-process/"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/visual-elements",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/visual-elements"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/theming",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/theming"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/resources-and-references",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/resources-and-references"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/mobile-ux",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/mobile-ux"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/introduction",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/introduction"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/feedback-and-messaging",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/feedback-and-messaging"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/design-principles",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/design-principles"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/changelog",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/changelog"
+        },
+        {
+            "Source": "/express/add-ons/docs/guides/build/design/ux_guidelines/branding-guidelines",
+            "Destination": "/express/add-ons/docs/guides/build/design/ux-guidelines/branding-guidelines"
         }
     ],
     ":type": "sheet"

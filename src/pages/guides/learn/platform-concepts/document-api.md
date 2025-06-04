@@ -25,7 +25,7 @@ In this article, you'll dive deep into the architecture and key elements of the 
 
 ### Getting started with the DOM
 
-The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](../../learn/how_to/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
+The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](../how-to/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
 
 It is essential to hierarchically organize the features that are surfaced[^2] to the scripting layer. For example, a shape is not just contained within a document: it may be included in a particular Group in a certain Artboard, which belongs to a specific Page of a Document. Additionally, Ellipses and Rectangles, as shapes, share some properties, such as the ability to be filled or stroked with a solid color; in that respect, though, they differ from a bitmap image, which can be stroked but not filled.
 
@@ -37,7 +37,7 @@ Developers with a front-end background may instinctively associate the notion of
 
 Some confusion may arise regarding the meaning of the following terms—let me clarify.
 
-- **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](../../learn/how_to/tutorials/stats-addon.md).
+- **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](../how-to/tutorials/stats-addon.md).
 - **Document Object Model**: it represents Adobe Express documents' structure, the hierarchies between each element, and their inheritance.
 
 You may think about the Document API as operating in the context of the DOM—while the Document Model Sandbox provides a secure and isolated environment for such code to run.
@@ -153,7 +153,7 @@ ellipse.stroke = {
 };
 ```
 
-The [Document Stats tutorial](../../learn/how_to/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
+The [Document Stats tutorial](../how-to/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
 
 ![](images/stats-addon-animation.gif)
 
@@ -322,7 +322,7 @@ import { editor, colorUtils } from "express-document-sdk";
 
 ### Object (POJO) Interfaces
 
-Such interfaces define the properties of **actual JavaScript objects** that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](../../../references/document-sandbox/document-apis/interfaces/color-fill.md) or [`Stroke`](../../../references/document-sandbox/document-apis/interfaces/Stroke.md) interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) interface. They are the _contracts_ that establish the shape of actual JavaScript objects that developers use in their code. POJO is an acronym that stands for "Plain Old Java Object", which in this context refers to a plain JavaScript object.
+Such interfaces define the properties of **actual JavaScript objects** that must be created and used, for example, to set a shape's `fill` and `stroke` (respectively, the [`ColorFill`](../../../references/document-sandbox/document-apis/interfaces/color-fill.md) or [`Stroke`](../../../references/document-sandbox/document-apis/interfaces/Stroke.md) interfaces) or fed to utility functions like `colorUtils.fromRGB()` that expect a parameter that implements the [`Color`](../../../references/document-sandbox/document-apis/interfaces/color.md) interface. They are the _contracts_ that establish the shape of actual JavaScript objects that developers use in their code. POJO is an acronym that stands for "Plain Old Java Object", which in this context refers to a plain JavaScript object.
 
 ### Implementable Interfaces
 
@@ -397,7 +397,7 @@ function start() {
 
 ### Getting the context
 
-The first part is to get and validate the selected node. There's a promising [`Context`](../../../references/document-sandbox/document-apis/classes/Context.md) class in the reference documentation that _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can you access it, though? The [`Editor`](../../../references/document-sandbox/document-apis/classes/Editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: you can use it to check if there's a selection and whether it's of the right type—`hasSelection` and `selection` will do the job.
+The first part is to get and validate the selected node. There's a promising [`Context`](../../../references/document-sandbox/document-apis/classes/context.md) class in the reference documentation that _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can you access it, though? The [`Editor`](../../../references/document-sandbox/document-apis/classes/editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: you can use it to check if there's a selection and whether it's of the right type—`hasSelection` and `selection` will do the job.
 
 ```js
 import { editor, constants, colorUtils } from "express-document-sdk";
@@ -434,7 +434,7 @@ if ( /* ... */ ) {
 
 ### Drawing a line
 
-Time to draw the line. The [`Editor`](../../../references/document-sandbox/document-apis/classes/Editor.md) class includes a [`createLine()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createline) factory method, which returns a [`LineNode`](../../../references/document-sandbox/document-apis/classes/line-node.md) instance. The `LineNode` class, you learn from the reference, has `startX`, `startY`, `endX`, and `endY` properties: they only implement the getter, though—hence, are read-only. Scrolling through the methods, you find [`setEndPoints()`](../../../references/document-sandbox/document-apis/classes/line-node.md#setendpoints), which expects the same parameters and is used as a setter for them.
+Time to draw the line. The [`Editor`](../../../references/document-sandbox/document-apis/classes/editor.md) class includes a [`createLine()`](../../../references/document-sandbox/document-apis/classes/editor.md#createline) factory method, which returns a [`LineNode`](../../../references/document-sandbox/document-apis/classes/line-node.md) instance. The `LineNode` class, you learn from the reference, has `startX`, `startY`, `endX`, and `endY` properties: they only implement the getter, though—hence, are read-only. Scrolling through the methods, you find [`setEndPoints()`](../../../references/document-sandbox/document-apis/classes/line-node.md#setendpoints), which expects the same parameters and is used as a setter for them.
 
 ```js
 // ...
@@ -471,7 +471,7 @@ As live objects, setting all the properties before or after appending the line t
 
 ### Adding the text
 
-Next up, you need to add the text. The `Editor` class provides a [`createText()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createtext) method, which returns a [`TextNode`](../../../references/document-sandbox/document-apis/classes/text-node.md) instance. The `TextNode` class has a [`text`](../../../references/document-sandbox/document-apis/classes/text-node.md#text) property, which expects a string. Mind you, the setter implements parameter validation; if you were to assign a number, it would throw an error.
+Next up, you need to add the text. The `Editor` class provides a [`createText()`](../../../references/document-sandbox/document-apis/classes/editor.md#createtext) method, which returns a [`TextNode`](../../../references/document-sandbox/document-apis/classes/text-node.md) instance. The `TextNode` class has a [`text`](../../../references/document-sandbox/document-apis/classes/text-node.md#text) property, which expects a string. Mind you, the setter implements parameter validation; if you were to assign a number, it would throw an error.
 
 ```js
 // ...
@@ -490,7 +490,7 @@ hText.translation = {
 };
 ```
 
-An extra 10 pixels padding from the line has been added, but this could also be a parameter. Let's group the line and the text together to move them around as a single entity. The `Editor` class provides a [`createGroup()`](../../../references/document-sandbox/document-apis/classes/Editor.md#creategroup) method, which returns a [`GroupNode`](../../../references/document-sandbox/document-apis/classes/group-node.md) instance. The `GroupNode` class provides a `children` property: you can `append()` both the line and the text to it.
+An extra 10 pixels padding from the line has been added, but this could also be a parameter. Let's group the line and the text together to move them around as a single entity. The `Editor` class provides a [`createGroup()`](../../../references/document-sandbox/document-apis/classes/editor.md#creategroup) method, which returns a [`GroupNode`](../../../references/document-sandbox/document-apis/classes/group-node.md) instance. The `GroupNode` class provides a `children` property: you can `append()` both the line and the text to it.
 
 ```js
 // ...
@@ -501,7 +501,7 @@ hGroup.children.append(hLine, hText);
 
 ### Repeating the process
 
-From this point, creating the vertical line and the text is a matter of copying/pasting and changing a few parameters. The only new element may be text rotation: the `TextNode` class has a [`setRotationInParent()`](../../../references/document-sandbox/document-apis/classes/text-node.md#setrotationinparent) method. It expects a number in degrees (-90, in our case) and a `localRotationPoint` object (implementing the [`Point`](../../../references/document-sandbox/document-apis/interfaces/Point.md) interface), which is the point to rotate around in the node's local coordinates. In this case, `{x: 0, y: 0}` will do.
+From this point, creating the vertical line and the text is a matter of copying/pasting and changing a few parameters. The only new element may be text rotation: the `TextNode` class has a [`setRotationInParent()`](../../../references/document-sandbox/document-apis/classes/text-node.md#setrotationinparent) method. It expects a number in degrees (-90, in our case) and a `localRotationPoint` object (implementing the [`Point`](../../../references/document-sandbox/document-apis/interfaces/point.md) interface), which is the point to rotate around in the node's local coordinates. In this case, `{x: 0, y: 0}` will do.
 
 ```js
 const vText = editor.createText();
@@ -559,7 +559,7 @@ const drawDimensionsRefactored = () => {
 export { drawDimensions, drawDimensionsRefactored };
 ```
 
-A rather unorthodox warning system is implemented to alert the user when selecting an unsupported node type. Through the Communication API outlined in [this tutorial](../how_to/tutorials/stats-addon.md), a `flashWrongElement()` function, defined in the iframe UI, is available to the Document Sandbox.
+A rather unorthodox warning system is implemented to alert the user when selecting an unsupported node type. Through the Communication API outlined in [this tutorial](../how-to/tutorials/stats-addon.md), a `flashWrongElement()` function, defined in the iframe UI, is available to the Document Sandbox.
 
 <CodeBlock slots="heading, code" repeat="2" languages="ui/index.js, documentSandbox/dimensions.js" />
 
@@ -614,7 +614,7 @@ As an exercise, you use the code sample found below and expand it to build a mor
   - a slider to control the dimensions' distance from the object;
   - dropdowns to choose the line's style (solid, dashed, dotted), and the arrowhead type;
   - a checkbox to toggle the extra dashed lines;
-  - a color picker to change the line's color—see the [Grids add-on](../how_to/tutorials/grids-addon.md) for an example.
+  - a color picker to change the line's color—see the [Grids add-on](../how-to/tutorials/grids-addon.md) for an example.
 
 ## Lessons Learned
 

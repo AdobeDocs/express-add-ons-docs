@@ -428,11 +428,11 @@ module.exports = {
                   },
                   {
                     title: "OrderedListNumbering",
-                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering.md",
+                    path: "references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering.md",
                   },
                   {
                     title: "ParagraphListType",
-                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type.md",
+                    path: "references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type.md",
                   },
                   {
                     title: "SceneNodeType",
@@ -525,186 +525,186 @@ module.exports = {
           },
           {
             title: "Developer Journey",
-            path: "guides/getting_started/developer-journey.md",
+            path: "guides/getting-started/developer-journey.md",
           },
           {
             title: "Hello, World!",
-            path: "guides/getting_started/hello-world.md",
+            path: "guides/getting-started/hello-world.md",
           },
           {
             title: "Code Playground",
-            path: "guides/getting_started/code-playground.md",
+            path: "guides/getting-started/code-playground.md",
           },
           {
             title: "Local Development",
-            path: "guides/getting_started/local_development/dev-tooling.md",
+            path: "guides/getting-started/local-development/dev-tooling.md",
             pages: [
               {
                 title: "Development tools",
-                path: "guides/getting_started/local_development/dev-tooling.md",
+                path: "guides/getting-started/local-development/dev-tooling.md",
               },
               {
                 title: "Browser debugging",
-                path: "guides/getting_started/local_development/browser.md",
+                path: "guides/getting-started/local-development/browser.md",
               },
               {
                 title: "VS Code debugging",
-                path: "guides/getting_started/local_development/vs-code.md",
+                path: "guides/getting-started/local-development/vs-code.md",
               },
             ],
           },
           {
             title: "What's new",
-            path: "guides/getting_started/changelog.md",
+            path: "guides/getting-started/changelog.md",
           },
         ],
       },
       {
         title: "Learn",
-        path: "guides/learn/how_to/index.md",
+        path: "guides/learn/how-to/index.md",
         header: true,
         pages: [
           {
             title: "How-to",
-            path: "guides/learn/how_to/index.md",
+            path: "guides/learn/how-to/index.md",
             pages: [
               {
                 title: "About",
-                path: "guides/learn/how_to/index.md",
+                path: "guides/learn/how-to/index.md",
               },
               {
                 title: "Authentication & Authorization",
-                path: "guides/learn/how_to/oauth2.md",
+                path: "guides/learn/how-to/oauth2.md",
                 pages: [
                   {
                     title: "Use OAuth 2.0",
-                    path: "guides/learn/how_to/oauth2.md",
+                    path: "guides/learn/how-to/oauth2.md",
                   },
                 ],
               },
               {
                 title: "Data & Environment",
-                path: "guides/learn/how_to/local-data-management.md",
+                path: "guides/learn/how-to/local-data-management.md",
                 pages: [
                   {
                     title: "Store Data",
-                    path: "guides/learn/how_to/local-data-management.md",
+                    path: "guides/learn/how-to/local-data-management.md",
                   },
                   {
                     title: "Theme & Locale",
-                    path: "guides/learn/how_to/theme-locale.md",
+                    path: "guides/learn/how-to/theme-locale.md",
                   },
                 ],
               },
               {
                 title: "UI & Interaction",
-                path: "guides/learn/how_to/drag-and-drop.md",
+                path: "guides/learn/how-to/drag-and-drop.md",
                 pages: [
                   {
                     title: "Use Drag & Drop",
-                    path: "guides/learn/how_to/drag-and-drop.md",
+                    path: "guides/learn/how-to/drag-and-drop.md",
                   },
                   {
                     title: "Use Modal Dialogs",
-                    path: "guides/learn/how_to/modal-dialogs.md",
+                    path: "guides/learn/how-to/modal-dialogs.md",
                   },
                 ],
               },
               {
                 title: "Use Design Elements",
-                path: "guides/learn/how_to/use-text.md", // change this!!
+                path: "guides/learn/how-to/use-text.md", // change this!!
                 pages: [
                   {
                     title: "Use Text",
-                    path: "guides/learn/how_to/use-text.md",
+                    path: "guides/learn/how-to/use-text.md",
                   },
                   {
                     title: "Use Geometry",
-                    path: "guides/learn/how_to/use-geometry.md",
+                    path: "guides/learn/how-to/use-geometry.md",
                   },
                   {
                     title: "Use Color",
-                    path: "guides/learn/how_to/use-color.md",
+                    path: "guides/learn/how-to/use-color.md",
                   },
                   {
                     title: "Use Images",
-                    path: "guides/learn/how_to/use-images.md",
+                    path: "guides/learn/how-to/use-images.md",
                   },
                   {
                     title: "Use Videos",
-                    path: "guides/learn/how_to/use-videos.md",
+                    path: "guides/learn/how-to/use-videos.md",
                   },
                   {
                     title: "Use Audio",
-                    path: "guides/learn/how_to/use-audio.md",
+                    path: "guides/learn/how-to/use-audio.md",
                   },
                   {
                     title: "Use PDF and PowerPoint",
-                    path: "guides/learn/how_to/use-pdf-powerpoint.md",
+                    path: "guides/learn/how-to/use-pdf-powerpoint.md",
                   },
                   {
                     title: "Group Elements",
-                    path: "guides/learn/how_to/group-elements.md",
+                    path: "guides/learn/how-to/group-elements.md",
                   },
                   {
                     title: "Position Elements",
-                    path: "guides/learn/how_to/position-elements.md",
+                    path: "guides/learn/how-to/position-elements.md",
                   },
                 ],
               },
               {
                 title: "Use Metadata",
-                path: "guides/learn/how_to/document-metadata.md",
+                path: "guides/learn/how-to/document-metadata.md",
                 pages: [
                   {
                     title: "Document",
-                    path: "guides/learn/how_to/document-metadata.md",
+                    path: "guides/learn/how-to/document-metadata.md",
                   },
                   {
                     title: "Page",
-                    path: "guides/learn/how_to/page-metadata.md",
+                    path: "guides/learn/how-to/page-metadata.md",
                   },
                   {
                     title: "Element",
-                    path: "guides/learn/how_to/element-metadata.md",
+                    path: "guides/learn/how-to/element-metadata.md",
                   },
                 ],
               },
               {
                 title: "Exporting & Output",
-                path: "guides/learn/how_to/create-renditions.md",
+                path: "guides/learn/how-to/create-renditions.md",
                 pages: [
                   {
                     title: "Create Renditions",
-                    path: "guides/learn/how_to/create-renditions.md",
+                    path: "guides/learn/how-to/create-renditions.md",
                   },
                   {
                     title: "Manage Premium Content",
-                    path: "guides/learn/how_to/premium-content.md",
+                    path: "guides/learn/how-to/premium-content.md",
                   },
                 ],
               },
               {
                 title: "User Info",
-                path: "guides/learn/how_to/user-info.md",
+                path: "guides/learn/how-to/user-info.md",
                 pages: [
                   {
                     title: "Identify users",
-                    path: "guides/learn/how_to/user-info.md",
+                    path: "guides/learn/how-to/user-info.md",
                   },
                 ],
               },
               {
                 title: "Complete Projects",
-                path: "guides/learn/how_to/tutorials/index.md",
+                path: "guides/learn/how-to/tutorials/index.md",
                 pages: [
                   {
                     title: "Document APIs",
-                    path: "guides/learn/how_to/tutorials/grids-addon.md",
+                    path: "guides/learn/how-to/tutorials/grids-addon.md",
                   },
                   {
                     title: "Communication APIs",
-                    path: "guides/learn/how_to/tutorials/stats-addon.md",
+                    path: "guides/learn/how-to/tutorials/stats-addon.md",
                   },
                   {
                     title: "Using Adobe Spectrum",
@@ -728,7 +728,7 @@ module.exports = {
                   },
                   {
                     title: "Using Lit & TypeScript",
-                    path: "guides/learn/how_to/tutorials/using-lit-typescript.md",
+                    path: "guides/learn/how-to/tutorials/using-lit-typescript.md",
                   },
                 ],
               },
@@ -736,15 +736,15 @@ module.exports = {
           },
           {
             title: "Platform Concepts",
-            path: "guides/learn/platform_concepts/context.md",
+            path: "guides/learn/platform-concepts/context.md",
             pages: [
               {
                 title: "Add-on iframe Context",
-                path: "guides/learn/platform_concepts/context.md",
+                path: "guides/learn/platform-concepts/context.md",
               },
               {
                 title: "The Document API",
-                path: "guides/learn/platform_concepts/document-api.md",
+                path: "guides/learn/platform-concepts/document-api.md",
               },
             ],
           },
@@ -787,43 +787,43 @@ module.exports = {
               },
               {
                 title: "UX Guidelines",
-                path: "guides/build/design/ux_guidelines/introduction.md",
+                path: "guides/build/design/ux-guidelines/introduction.md",
                 pages: [
                   {
                     title: "Introduction",
-                    path: "guides/build/design/ux_guidelines/introduction.md",
+                    path: "guides/build/design/ux-guidelines/introduction.md",
                   },
                   {
                     title: "Design Principles",
-                    path: "guides/build/design/ux_guidelines/design-principles.md",
+                    path: "guides/build/design/ux-guidelines/design-principles.md",
                   },
                   {
                     title: "Theming",
-                    path: "guides/build/design/ux_guidelines/theming.md",
+                    path: "guides/build/design/ux-guidelines/theming.md",
                   },
                   {
                     title: "Visual Elements",
-                    path: "guides/build/design/ux_guidelines/visual-elements.md",
+                    path: "guides/build/design/ux-guidelines/visual-elements.md",
                   },
                   {
                     title: "Feedback & Messaging",
-                    path: "guides/build/design/ux_guidelines/feedback-and-messaging.md",
+                    path: "guides/build/design/ux-guidelines/feedback-and-messaging.md",
                   },
                   // {
                   //   title: "Mobile UX",
-                  //   path: "guides/build/design/ux_guidelines/mobile-ux.md",
+                  //   path: "guides/build/design/ux-guidelines/mobile-ux.md",
                   // },
                   {
                     title: "Branding Guidelines & Distribution",
-                    path: "guides/build/design/ux_guidelines/branding-guidelines.md",
+                    path: "guides/build/design/ux-guidelines/branding-guidelines.md",
                   },
                   {
                     title: "Resources & References",
-                    path: "guides/build/design/ux_guidelines/resources-and-references.md",
+                    path: "guides/build/design/ux-guidelines/resources-and-references.md",
                   },
                   {
                     title: "Changelog",
-                    path: "guides/build/design/ux_guidelines/changelog.md",
+                    path: "guides/build/design/ux-guidelines/changelog.md",
                   },
                 ],
               },

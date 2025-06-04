@@ -1,18 +1,18 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-current-user.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how_to/modal-dialogs.md), [enable drag and drop](../../guides/learn/how_to/drag-and-drop.md) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-current-user.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how-to/modal-dialogs.md), [enable drag and drop](../../guides/learn/how-to/drag-and-drop.md) of content and subscribe and unsubscribe to events.
 
-[](../../guides/learn/how_to/index.md)
+[](../../guides/learn/how-to/index.md)
 
 ## Objects
 
 | Attribute      | Name                                           | Type        |  Description                                                                                |
 | -------------  | --------------------------------------------:  |-----------: |  --------------------------------------------------------------------------------------:    |          
-| readonly       | [currentUser](../addonsdk/app-current-user.md) |   object    |  Represents the current user accessing the host application                                 |
-|                | [devFlags](../addonsdk/app-dev-flags.md)       |  object     |  Represents flags which can be used to simulate certain behavior during development.        |
-| readonly       | [document](../addonsdk/app-document.md)        |  object     |  Represents the active document of the host application.                                    |
-| readonly       | [oauth](../addonsdk/app-oauth.md)              |  object     |  Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
-| readonly       | [ui](../addonsdk/app-ui.md)                    |  object     |  Represents the host UI (Adobe Express UI).                                                 |
+| readonly       | [currentUser](app-current-user.md) |   object    |  Represents the current user accessing the host application                                 |
+|                | [devFlags](app-dev-flags.md)       |  object     |  Represents flags which can be used to simulate certain behavior during development.        |
+| readonly       | [document](app-document.md)        |  object     |  Represents the active document of the host application.                                    |
+| readonly       | [oauth](app-oauth.md)              |  object     |  Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
+| readonly       | [ui](app-ui.md)                    |  object     |  Represents the host UI (Adobe Express UI).                                                 |
 ## Methods
 
 ### on()
@@ -215,7 +215,7 @@ async function showInputDialog() {
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/learn/how_to/modal-dialogs.md#custom-dialog).
+See the use case implementations for an example of the [custom modal dialog](../../guides/learn/how-to/modal-dialogs.md#custom-dialog).
 
 ### showColorPicker()
 
@@ -446,7 +446,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag-and-drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/learn/how-to/drag-and-drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
 
 ## Events
 

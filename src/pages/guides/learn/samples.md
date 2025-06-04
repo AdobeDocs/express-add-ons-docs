@@ -24,7 +24,7 @@ Find inspiration and great reference examples by checking out our [code samples]
 
 <InlineAlert slots="text" variant="info"/>
 
-In addition to these code samples, you should also be sure to check out the [Templates section](../getting_started/local_development/dev-tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
+In addition to these code samples, you should also be sure to check out the [Templates section](../getting-started/local-development/dev-tooling.md#templates) in the **Development Tools** page for the options available for creating a starter project based on your favorite development stack.
 
 ## Using the samples
 
@@ -264,15 +264,15 @@ The following [code samples](https://github.com/AdobeDocs/express-add-on-samples
 
 ## [express-grids-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-grids-addon)
 
-The sample add-on that the [Grid System tutorial](how_to/tutorials/grids-addon.md) is based upon. Demonstrates how to use the [Document APIs](../../references/document-sandbox/index.md) to create and manipulate shapes, context permanence, color pickers, and Spectrum Web Components usage.
+The sample add-on that the [Grid System tutorial](how-to/tutorials/grids-addon.md) is based upon. Demonstrates how to use the [Document APIs](../../references/document-sandbox/index.md) to create and manipulate shapes, context permanence, color pickers, and Spectrum Web Components usage.
 
 ## [express-stats-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-stats-addon)
 
-The sample add-on that the [Document Statistics tutorial](how_to/tutorials/stats-addon.md) is based upon. It demonstrates how to use the [Communication APIs](../../references/document-sandbox/communication/index.md) to invoke Document Sandbox method from the iframe UI and vice-versa, touching on asynchronous communication and context permanence. The add-on can build a list of statistics for the document, e.g., the number of class instances (shapes, text, images, and so on).
+The sample add-on that the [Document Statistics tutorial](how-to/tutorials/stats-addon.md) is based upon. It demonstrates how to use the [Communication APIs](../../references/document-sandbox/communication/index.md) to invoke Document Sandbox method from the iframe UI and vice-versa, touching on asynchronous communication and context permanence. The add-on can build a list of statistics for the document, e.g., the number of class instances (shapes, text, images, and so on).
 
 ## [express-dimensions-addon](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-dimensions-addon)
 
-The sample add-on that the [Document APIs Concepts](platform_concepts/document-api.md) article is based upon. It's used to discuss the Adobe Express Document Object Model, its Classes, Interface, and Constants. The add-on draws Dimensions (arrows measuring the width and height) around the selected shape.
+The sample add-on that the [Document APIs Concepts](platform-concepts/document-api.md) article is based upon. It's used to discuss the Adobe Express Document Object Model, its Classes, Interface, and Constants. The add-on draws Dimensions (arrows measuring the width and height) around the selected shape.
 
 ## [communication-iframe-documentSandbox](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-documentSandbox)
 
