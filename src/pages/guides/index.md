@@ -35,9 +35,9 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 <AnnouncementBlock slots="heading, text, button" className="developers-live-announcement" />
 
-### Code. Connect. Grow your Business.
+### Adobe Developers Live, June 24 & 25, 2025
 
-**Developers Live** Adobe Express and Creative Cloud • June 24 - June 25, 2025
+Join our virtual conference to learn about Adobe Express & Creative Cloud
 
 [Register now for free](https://events.ringcentral.com/events/adobe-developers-live-2025-code-connect-grow-your-business/registration)
 
