@@ -22,6 +22,19 @@ contributors:
 
 # Changelog
 
+## 2025-05-27
+
+### Added
+
+- Four new Resize/Rescale APIs have been added to the [Node](../../references/document-sandbox/document-apis/classes/Node.md) class as experimental features:
+  - [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight)
+  - [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth)
+  - [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetocover)
+  - [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetofitwithin)
+- [`TextNode()`](../../references/document-sandbox/document-apis/classes/TextNode.md) is now an abstract base class with two specialized subclasses:
+  - [StandaloneTextNode](../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md): displays text in a single frame.
+  - [ThreadedTextNode](../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md): supports text that can flow across multiple frames.
+
 ## 2025-05-26
 
 ### Added

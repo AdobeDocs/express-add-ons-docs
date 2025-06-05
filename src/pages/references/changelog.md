@@ -26,10 +26,14 @@ contributors:
 
 ### Added
 
-- 4 new Resize HLAPIs have been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class as experimental features.
+- Four new Resize/Rescale APIs have been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class as experimental features:
+  - [`rescaleProportionalToHeight()`](./document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight)
+  - [`rescaleProportionalToWidth()`](./document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth)
+  - [`resizeToCover()`](./document-sandbox/document-apis/classes/Node.md#resizetocover)
+  - [`resizeToFitWithin()`](./document-sandbox/document-apis/classes/Node.md#resizetofitwithin)
 - [`TextNode()`](./document-sandbox/document-apis/classes/TextNode.md) is now an abstract base class with two specialized subclasses:
-  - [StandaloneTextNode](./document-sandbox/document-apis/classes/StandaloneTextNode.md): Does not support "area text" layout.
-  - [ThreadedTextNode](./document-sandbox/document-apis/classes/ThreadedTextNode.md): Only supports "area text" layout.
+  - [StandaloneTextNode](./document-sandbox/document-apis/classes/StandaloneTextNode.md): displays text in a single frame.
+  - [ThreadedTextNode](./document-sandbox/document-apis/classes/ThreadedTextNode.md): supports text that can flow across multiple frames.
 
 ## 2025-05-26
 
