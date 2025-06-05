@@ -33,6 +33,14 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 <br/><br/>
 
+<AnnouncementBlock slots="heading, text, button" className="developers-live-announcement" />
+
+### Code. Connect. Grow your Business.
+
+**Developers Live** Adobe Express and Creative Cloud • June 24 - June 25, 2025
+
+[Register now for free](https://events.ringcentral.com/events/adobe-developers-live-2025-code-connect-grow-your-business/registration)
+
 ## Welcome to Adobe Express Add-ons!
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
