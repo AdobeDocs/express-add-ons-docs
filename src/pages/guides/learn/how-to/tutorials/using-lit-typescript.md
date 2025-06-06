@@ -2,21 +2,19 @@
 
 ## Introduction
 
-<ProductCard slots="icon, text, button" theme="light" width="50%" />
+<Product-Card slots="icon,text, button" repeat="2" theme="light" />
 
 ![lit-logo](images/lit-logo.svg)
 
 Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
 
-- [Learn more](https://lit.dev/)
-
-<ProductCard slots="icon, text, button" theme="light" width="50%" />
+[Learn more](https://lit.dev/)
 
 ![typescript-logo](images/ts-logo-128.svg)
 
 TypeScript is a statically typed superset of JavaScript that adds optional static types to the language.TypeScript aims to improve the development experience by providing a robust type system, which helps catch errors early during development and enhances code quality and maintainability.
 
-- [Learn more](https://https://www.typescriptlang.org/)
+[Learn more](https://https://www.typescriptlang.org/)
 
 When you develop add-ons with a combination of [Lit](https://lit.dev/) and [TypeScript](https://https://www.typescriptlang.org/), you get the benefits of both worlds; a lightweight component library with reactive properties and templating capabilities, which help you build fast and efficient components, and the robust type system provided by TypeScript.
 
