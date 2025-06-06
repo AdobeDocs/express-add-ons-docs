@@ -39,8 +39,7 @@ While Document and Page metadata operate from the `addOnUISdk.app.document` obje
 import { editor } from "express-document-sdk";
 
 // Create some dummy node
-const text = editor.createText();
-text.fullContent.text = "Hello, World!";
+const text = editor.createText("Hello, World!");
 
 // Store some metadata as key/value pairs
 text.addOnData.setItem("originalText", "Hello, World!");
