@@ -2,7 +2,7 @@
 
 ## Introduction
 
-<Product-Card slots="icon,text, button" repeat="2" theme="light" />
+<Product-Card slots="icon,text, buttons" repeat="2" theme="light" />
 
 ![lit-logo](../../how_to/images/lit-logo.svg)
 
