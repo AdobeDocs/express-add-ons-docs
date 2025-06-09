@@ -1,21 +1,16 @@
-[@express-document-sdk](../overview.md) / ImageRectangleNode
+[@express-document-sdk](../overview.md) / ThreadedTextNode
 
-# Class: ImageRectangleNode
+# Class: ThreadedTextNode
 
-ImageRectangleNode is a rectangular node that displays the image media part of a MediaContainerNode. It can only exist
-within that container parent. Cropping can be adjusted by changing this media's position/rotation (as well as its mask
-shape sibling node).
+A ThreadedTextNode represents a text display frame in the scenegraph. It is a subset of longer text that flows across
+multiple TextNode "frames". Because of this, the TextNode does not directly hold the text content and styles –
+instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple ThreadedTextNode frames.
 
-ImageRectangleNodes cannot be created directly; use [Editor.createImageContainer](Editor.md#createimagecontainer) to create the entire
-container structure together.
+APIs are not yet available to create multi-frame text flows.
 
 ## Extends
 
--   [`Node`](Node.md)
-
-## Implements
-
--   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+- [`TextNode`](TextNode.md)
 
 ## Accessors
 
@@ -81,6 +76,9 @@ even for an orphan node with no parent.
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+Note: The bounding box of an orphaned TextNode may become different after it is placed on a
+page. It is recommended to use this property only when the node is placed on a page.
+
 ---
 
 ### boundsLocal
@@ -98,6 +96,9 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
+page. It is recommended to use this property only when the node is placed on a page.
+
 ---
 
 ### centerPointLocal
@@ -110,19 +111,27 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
+Note: The center of the orphaned TextNode may be different from the center of the node placed on a page. It is
+recommended to use this property only when the node is placed on a page.
+
 ---
 
-### height
+### fullContent
 
-• `get` **height**(): `number`
+• `get` **fullContent**(): [`TextContentModel`](TextContentModel.md)
 
-Current height of the "full frame" image rectangle, which may not be fully visible due to cropping/clipping by the
-enclosing media container's maskShape. This size may be different from the original bitmap's size in pixels, but
-will always match its aspect ratio.
+The model containing the complete text string and its styles, only part of which may be visible within the bounds of
+this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
+fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
+
+Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
+same single [TextContentModel](TextContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
+not. Use [TextContentModel](TextContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
+encountered before.
 
 #### Returns
 
-`number`
+[`TextContentModel`](TextContentModel.md)
 
 ---
 
@@ -136,6 +145,40 @@ moved to a different part of the document.
 #### Returns
 
 `string`
+
+---
+
+### layout
+
+• `get` **layout**(): `Readonly`<[`AreaTextLayout`](../interfaces/AreaTextLayout.md)\>
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+• `set` **layout**(`layout`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Sets the layout mode of the TextNode "frame."
+
+Only [AreaTextLayout](../interfaces/AreaTextLayout.md), with fully fixed bounds, is currently supported by threaded text.
+
+#### Throws
+
+if [ThreadedTextNode](ThreadedTextNode.md) is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
+
+#### Parameters
+
+• **layout**: [`AreaTextLayout`](../interfaces/AreaTextLayout.md)
+
+#### Returns
+
+`Readonly`<[`AreaTextLayout`](../interfaces/AreaTextLayout.md)\>
+
+The layout mode of the TextNode "frame."
 
 ---
 
@@ -157,6 +200,21 @@ before using the API to make changes to locked nodes.
 #### Returns
 
 `boolean`
+
+---
+
+### nextTextNode
+
+• `get` **nextTextNode**(): `undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
+
+The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
+([AreaTextLayout](../interfaces/AreaTextLayout.md)), any text content that does not fit within this node's area will be clipped.
+
+To get *all* TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
+
+#### Returns
+
+`undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
 
 ---
 
@@ -221,6 +279,56 @@ cumulative rotation from the node's parent containers.
 
 ---
 
+### text
+
+• `get` **text**(): `string`
+
+The text string content which is partially *or* fully displayed in this TextNode "frame."
+WARNING: If a piece of text content flows across several TextNodes, *each* TextNode's `text` getter will return
+the *entire* text content string.
+
+#### Deprecated
+
+- Use the text getter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
+• `set` **text**(`textContent`): `void`
+
+Sets the text content of the TextNode.
+WARNING: If a piece of text content flows across several TextNodes,
+*each* TextNode's `text` setter will sets the *entire* text content string.
+
+#### Deprecated
+
+- Use the text setter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
+#### Parameters
+
+• **textContent**: `string`
+
+#### Returns
+
+`string`
+
+---
+
+### textAlignment
+
+• `get` **textAlignment**(): [`TextAlignment`](../enumerations/TextAlignment.md)
+
+The horizontal text alignment of the TextNode. Alignment is always the same across this node's entire text content.
+
+• `set` **textAlignment**(`alignment`): `void`
+
+#### Parameters
+
+• **alignment**: [`TextAlignment`](../enumerations/TextAlignment.md)
+
+#### Returns
+
+[`TextAlignment`](../enumerations/TextAlignment.md)
+
+---
+
 ### topLeftLocal
 
 • `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
@@ -232,6 +340,9 @@ boundsInParent.
 #### Returns
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
+
+Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
+page. It is recommended to use this property only when the node is placed on a page.
 
 ---
 
@@ -279,6 +390,18 @@ The node's type.
 
 ---
 
+### visualEffects
+
+• `get` **visualEffects**(): readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
+
+#### Returns
+
+readonly [`VisualEffectType`](../enumerations/VisualEffectType.md)[]
+
+The list of visual effects applied to the TextNode.
+
+---
+
 ### visualRoot
 
 • `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
@@ -293,20 +416,6 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 #### Returns
 
 [`VisualNode`](VisualNode.md)
-
----
-
-### width
-
-• `get` **width**(): `number`
-
-Current width of the "full frame" image rectangle, which may not be fully visible due to cropping/clipping by the
-enclosing media container's maskShape. This size may be different from the original bitmap's size in pixels, but
-will always match its aspect ratio.
-
-#### Returns
-
-`number`
 
 ## Methods
 
@@ -326,9 +435,44 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+Note: The bounding box of an orphaned TextNode may become different after it is placed on a
+page. It is recommended to use this method only when the node is placed on a page.
+
 #### Inherited from
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`TextNode`](TextNode.md).[`boundsInNode`](TextNode.md#boundsinnode)
+
+---
+
+### isStandaloneText()
+
+• **isStandaloneText**(): `this is StandaloneTextNode`
+
+Helper method to determine if the text is standalone.
+
+#### Returns
+
+`this is StandaloneTextNode`
+
+#### Inherited from
+
+[`TextNode`](TextNode.md).[`isStandaloneText`](TextNode.md#isstandalonetext)
+
+---
+
+### isThreadedText()
+
+• **isThreadedText**(): `this is ThreadedTextNode`
+
+Helper method to determine if the text is in a flow.
+
+#### Returns
+
+`this is ThreadedTextNode`
+
+#### Inherited from
+
+[`TextNode`](TextNode.md).[`isThreadedText`](TextNode.md#isthreadedtext)
 
 ---
 
@@ -352,7 +496,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
+[`TextNode`](TextNode.md).[`localPointInNode`](TextNode.md#localpointinnode)
 
 ---
 
@@ -373,7 +517,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+[`TextNode`](TextNode.md).[`removeFromParent`](TextNode.md#removefromparent)
 
 ---
 
@@ -397,7 +541,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
+[`TextNode`](TextNode.md).[`rescaleProportionalToHeight`](TextNode.md#rescaleproportionaltoheight)
 
 ---
 
@@ -421,7 +565,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
+[`TextNode`](TextNode.md).[`rescaleProportionalToWidth`](TextNode.md#rescaleproportionaltowidth)
 
 ---
 
@@ -449,7 +593,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
+[`TextNode`](TextNode.md).[`resizeToCover`](TextNode.md#resizetocover)
 
 ---
 
@@ -477,7 +621,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToFitWithin`](Node.md#resizetofitwithin)
+[`TextNode`](TextNode.md).[`resizeToFitWithin`](TextNode.md#resizetofitwithin)
 
 ---
 
@@ -504,7 +648,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`Node`](Node.md).[`setPositionInParent`](Node.md#setpositioninparent)
+[`TextNode`](TextNode.md).[`setPositionInParent`](TextNode.md#setpositioninparent)
 
 #### Example
 
@@ -544,7 +688,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`Node`](Node.md).[`setRotationInParent`](Node.md#setrotationinparent)
+[`TextNode`](TextNode.md).[`setRotationInParent`](TextNode.md#setrotationinparent)
 
 #### Example
 

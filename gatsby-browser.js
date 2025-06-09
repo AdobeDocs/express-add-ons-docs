@@ -31,20 +31,17 @@ export const onClientEntry = () => {
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
   if (isBrowser) {
-    // EXAMPLE:
-    // if (
-    //   window.location.pathname.indexOf(
-    //     "contact/sales/generative-summary-api"
-    //   ) >= 0
-    // ) {
-    //   // find the link within the .Generative-Summary-API and attach the link text as the daa-ll
-    //   document.querySelectorAll(".Generative-Summary-API a").forEach((link) => {
-    //     link.setAttribute(
-    //       "daa-ll",
-    //       `Generative-Summary-API | ${link.textContent}`
-    //     );
-    //   });
-    // }
+    if (window.location.pathname.indexOf("guides") >= 0) {
+      // find the link within the .developers-live-announcement and attach the link text as the daa-ll
+      document
+        .querySelectorAll(".developers-live-announcement a")
+        .forEach((link) => {
+          link.setAttribute(
+            "daa-ll",
+            `developers-live-announcement | ${link.textContent}`
+          );
+        });
+    }
 
     function watchAndFireAnalytics() {
       // eslint-disable-next-line no-undef
