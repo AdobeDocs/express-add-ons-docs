@@ -22,11 +22,12 @@ contributors:
 
 # Changelog
 
-## 2025-06-03
+## 2025-06-09
 
 ### Added
 
 - New fields are now returned from the [`getPagesMetadata()`](./addonsdk/app-document.md#getpagesmetadata) call that indicate if the pages contain audio, video or animated content and the duration of any temporal content.
+- The `currentUser` API now includes a new method [`isAnonymousUser()`](./addonsdk/app-currentUser.md#isanonymoususer) that returns a boolean indicating whether the user is logged in or not.
 
 ## 2025-05-26
 

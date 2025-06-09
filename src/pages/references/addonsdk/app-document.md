@@ -223,7 +223,7 @@ The metadata of a page.
 | Name                       | Type                                | Description |
 | ---------------------------| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | `id`                       | `string`                            | The id of the page. |
-| `title`                    | `string`                            | The title of the page. |                    
+| `title`                    | `string`                            | The title of the page. |
 | `size`                     | `{ width: number, height: number }` | The size of the page in pixels. |
 | `hasAudioContent`          | `boolean`                           | `true` if the page has audio content, `false` if not. |
 | `hasVideoContent`          | `boolean`                           | `true` if the page has video content, `false` if not. |

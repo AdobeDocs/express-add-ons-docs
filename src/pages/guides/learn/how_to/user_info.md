@@ -13,6 +13,7 @@ keywords:
   - User info
   - userId
   - isPremiumUser
+  - isAnonymousUser
   - currentUser
 title: Identify Users
 description: Identify Users.
@@ -25,7 +26,11 @@ contributors:
 
 ## Get the User ID
 
-You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-currentUser.md) object to obtain the information for the currently logged-in user. Two asynchronous methods are available: `userId()` returns an anonymized ID that is unique to the user and persistent, and `isPremiumUser()` returns a boolean value indicating whether the user has a premium subscription with Adobe Express or not.
+You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-currentUser.md) object to obtain the information for the currently logged-in user. Three asynchronous methods are available: 
+
+  - `userId()`: returns an masked ID that is unique to the user and persistent
+  - `isPremiumUser()`: returns a boolean value indicating whether the user has a premium subscription with Adobe Express or not.
+  - `isAnonymousUser()`: returns a boolean value indicating whether the user is logged in or not.
 
 ### Example
 
@@ -35,6 +40,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(async () => {
   const userId = await addOnUISdk.app.currentUser.userId();
   const isPremium = await addOnUISdk.app.currentUser.isPremiumUser();
+  const isAnonymous = await addOnUISdk.app.currentUser.isAnonymousUser();
 
   console.log(`Current Userid:\n${userId}`);
   // Current Userid:
@@ -42,6 +48,9 @@ addOnUISdk.ready.then(async () => {
 
   console.log(`Is Premium User: ${isPremium}`);
   // Is Premium User: false
+
+  console.log(`Is Anonymous User: ${isAnonymous}`);
+  // Is Anonymous User: false
 });
 ```
 
