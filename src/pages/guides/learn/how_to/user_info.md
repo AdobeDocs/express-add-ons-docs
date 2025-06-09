@@ -26,7 +26,7 @@ contributors:
 
 ## Get the User ID
 
-You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-currentUser.md) object to obtain the information for the currently logged-in user. Three asynchronous methods are available: 
+You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-currentUser.md) object to obtain the information for the currently logged-in user. Three asynchronous methods are available:
 
   - `userId()`: returns an masked ID that is unique to the user and persistent
   - `isPremiumUser()`: returns a boolean value indicating whether the user has a premium subscription with Adobe Express or not.
