@@ -29,6 +29,26 @@ contributors:
 - New fields are now returned from the [`getPagesMetadata()`](./addonsdk/app-document.md#getpagesmetadata) call that indicate if the pages contain audio, video or animated content and the duration of any temporal content.
 - The `currentUser` API now includes a new method [`isAnonymousUser()`](./addonsdk/app-currentUser.md#isanonymoususer) that returns a boolean indicating whether the user is logged in or not.
 
+## 2025-06-06
+
+### Updated
+
+- Enhanced monetization guidelines documentation in the [Public add-on Distribution guide](../guides/build/distribute/public-dist.md#step-8-enter-the-monetization-details) with additional clarity on Adobe's requirements and recommendations for monetizing add-ons. Developers are encouraged to carefully review the updated [monetization guidelines](../guides/build/distribute/guidelines/monetization.md) for the latest information.
+
+## 2025-05-27
+
+### Added
+
+- Four new Resize/Rescale APIs have been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class as experimental features:
+  - [`rescaleProportionalToHeight()`](./document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight)
+  - [`rescaleProportionalToWidth()`](./document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth)
+  - [`resizeToCover()`](./document-sandbox/document-apis/classes/Node.md#resizetocover)
+  - [`resizeToFitWithin()`](./document-sandbox/document-apis/classes/Node.md#resizetofitwithin)
+- [`Editor.createText()`](./document-sandbox/document-apis/classes/Editor.md#createtext) now accepts a String parameter, which sets the text content of the new node. The use without a parameter is deprecated.
+- [`TextNode()`](./document-sandbox/document-apis/classes/TextNode.md) is now an abstract base class with two specialized subclasses:
+  - [StandaloneTextNode](./document-sandbox/document-apis/classes/StandaloneTextNode.md): displays text in a single frame.
+  - [ThreadedTextNode](./document-sandbox/document-apis/classes/ThreadedTextNode.md): supports text that can flow across multiple frames.
+
 ## 2025-05-26
 
 ### Added
