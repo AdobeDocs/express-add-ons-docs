@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-06-06
+
+### Updated
+
+- Enhanced monetization guidelines documentation in the [Public add-on Distribution guide](../build/distribute/public-dist.md#step-8-enter-the-monetization-details) with additional clarity on Adobe's requirements and recommendations for monetizing add-ons. Developers are encouraged to carefully review the updated [monetization guidelines](../build/distribute/guidelines/monetization.md) for the latest information.
+
 ## 2025-05-27
 
 ### Added
