@@ -89,7 +89,7 @@ removed from their previous parent, if any – or if an item is already in _this
 
 #### Throws
 
-- if item has a different parent and item is a [TextNode](text-node.md) that's a part of a Text Flow, or if item's children subtree contains a TextNode who is a part of a Text Flow.
+- if item has a different parent and item is a [ThreadedTextNode](ThreadedTextNode.md), or if item's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
 
 <HorizontalLine />
 
@@ -147,7 +147,7 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 #### Throws
 
-- if newItem has a different parent and it is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
+- if newItem has a different parent and it is a [ThreadedTextNode](ThreadedTextNode.md), or if newItem's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
 
 <HorizontalLine />
 
@@ -171,7 +171,7 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 #### Throws
 
-- if newItem has a different parent and it is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
+- if newItem has a different parent and it is a [ThreadedTextNode](ThreadedTextNode.md), or if newItem's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
 
 <HorizontalLine />
 
@@ -297,7 +297,7 @@ changed. No-op if both arguments are the same item.
 
 #### Throws
 
-- if newItem has a different parent and newItem is a [TextNode](text-node.md) that's a part of a Text Flow, or if newItem's children subtree contains a TextNode who is a part of a Text Flow.
+- if newItem has a different parent and newItem is a [ThreadedTextNode](ThreadedTextNode.md), or if newItem's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
 
 <HorizontalLine />
 

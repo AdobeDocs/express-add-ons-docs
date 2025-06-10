@@ -35,13 +35,11 @@ To create a Group, you can use the [`editor.createGroup()`](../../../references/
 import { editor } from "express-document-sdk";
 
 // Create some Text
-const greeting = editor.createText();
-greeting.fullContent.text = "Hiya!";
+const greeting = editor.createText("Hiya!");
 greeting.translation = { x: 100, y: 50 };
 
 // Create some other Text
-const saluto = editor.createText();
-saluto.fullContent.text = "Ciao!";
+const saluto = editor.createText("Ciao!");
 saluto.translation = { x: 100, y: 150 };
 
 // Create a Group 👈
@@ -73,14 +71,9 @@ Groups can be nested, meaning that you can have a Group inside another Group; ju
 // sandbox/code.js
 
 // Create three different Text nodes
-const greeting = editor.createText();
-greeting.fullContent.text = "Hiya!";
-
-const saluto = editor.createText();
-saluto.fullContent.text = "Ciao!";
-
-const salutation = editor.createText();
-salutation.fullContent.text = "Salut!";
+const greeting = editor.createText("Hiya!");
+const saluto = editor.createText("Ciao!");
+const salutation = editor.createText("Salut!");
 
 // Create an inner Group with the first two Text nodes
 const innerGroup = editor.createGroup();

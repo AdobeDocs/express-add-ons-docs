@@ -394,6 +394,110 @@ New content to display. Currently must be a [BitmapImage](../interfaces/bitmap-i
 
 <HorizontalLine />
 
+### rescaleProportionalToHeight()
+
+• **rescaleProportionalToHeight**(`height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Changes the height to the given value and the width to the given height multiplied by the aspect ratio.
+
+#### Parameters
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`MediaContainerNode`](MediaContainerNode.md).[`rescaleProportionalToHeight`](MediaContainerNode.md#rescaleproportionaltoheight)
+
+---
+
+### rescaleProportionalToWidth()
+
+• **rescaleProportionalToWidth**(`width`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Changes the width to the given value and the height to the given width multiplied by the aspect ratio.
+
+#### Parameters
+
+• **width**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`MediaContainerNode`](MediaContainerNode.md).[`rescaleProportionalToWidth`](MediaContainerNode.md#rescaleproportionaltowidth)
+
+---
+
+### resizeToCover()
+
+• **resizeToCover**(`width`, `height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Resizes the node to cover a box with the given dimensions.
+
+If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+
+#### Parameters
+
+• **width**: `number`
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`MediaContainerNode`](MediaContainerNode.md).[`resizeToCover`](MediaContainerNode.md#resizetocover)
+
+---
+
+### resizeToFitWithin()
+
+• **resizeToFitWithin**(`width`, `height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Resizes the node to fit within a box with the given dimensions.
+
+If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+
+#### Parameters
+
+• **width**: `number`
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`MediaContainerNode`](MediaContainerNode.md).[`resizeToFitWithin`](MediaContainerNode.md#resizetofitwithin)
+
+---
+
 ### setPositionInParent()
 
 • **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`

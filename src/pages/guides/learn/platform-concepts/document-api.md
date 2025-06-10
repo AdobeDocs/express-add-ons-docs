@@ -471,12 +471,11 @@ As live objects, setting all the properties before or after appending the line t
 
 ### Adding the text
 
-Next up, you need to add the text. The `Editor` class provides a [`createText()`](../../../references/document-sandbox/document-apis/classes/editor.md#createtext) method, which returns a [`TextNode`](../../../references/document-sandbox/document-apis/classes/text-node.md) instance. The `TextNode` class has a [`text`](../../../references/document-sandbox/document-apis/classes/text-node.md#text) property, which expects a string. Mind you, the setter implements parameter validation; if you were to assign a number, it would throw an error.
+Next up, you need to add the text. The `Editor` class provides a [`createText()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createtext) method, which expects a string parameter and returns a [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md) instance. Please note that passing a number as a parameter will throw an error—hence the use of `.toString()` below.
 
 ```js
 // ...
-const hText = editor.createText();
-hText.fullContent.text = `${Math.trunc(nodeWidth).toString()}px`;
+const hText = editor.createText(`${Math.trunc(nodeWidth).toString()}px`);
 editor.context.insertionParent.children.append(hText);
 ```
 
@@ -504,8 +503,7 @@ hGroup.children.append(hLine, hText);
 From this point, creating the vertical line and the text is a matter of copying/pasting and changing a few parameters. The only new element may be text rotation: the `TextNode` class has a [`setRotationInParent()`](../../../references/document-sandbox/document-apis/classes/text-node.md#setrotationinparent) method. It expects a number in degrees (-90, in our case) and a `localRotationPoint` object (implementing the [`Point`](../../../references/document-sandbox/document-apis/interfaces/point.md) interface), which is the point to rotate around in the node's local coordinates. In this case, `{x: 0, y: 0}` will do.
 
 ```js
-const vText = editor.createText();
-vText.fullContent.text = `${Math.trunc(nodeHeight).toString()}px`;
+const vText = editor.createText(`${Math.trunc(nodeHeight).toString()}px`);
 editor.context.insertionParent.children.append(vText);
 
 vText.translation = {
@@ -764,8 +762,7 @@ const createDimensionLine = ({
     constants.ArrowHeadType.openTriangular;
   editor.context.insertionParent.children.append(line);
 
-  const text = editor.createText();
-  text.fullContent.text = `${Math.trunc(textValue).toString()}px`;
+  const text = editor.createText(`${Math.trunc(textValue).toString()}px`);
   editor.context.insertionParent.children.append(text);
   text.translation = textPos;
 
@@ -841,8 +838,7 @@ const drawDimensions = () => {
     hLine.startArrowHeadType = hLine.endArrowHeadType =
       constants.ArrowHeadType.openTriangular;
 
-    const hText = editor.createText();
-    hText.fullContent.text = `${Math.trunc(nodeWidth).toString()}px`;
+    const hText = editor.createText(`${Math.trunc(nodeWidth).toString()}px`);
     editor.context.insertionParent.children.append(hText);
 
     hText.translation = {
@@ -867,8 +863,7 @@ const drawDimensions = () => {
 
     editor.context.insertionParent.children.append(vLine);
 
-    const vText = editor.createText();
-    vText.fullContent.text = `${Math.trunc(nodeHeight).toString()}px`;
+    const vText = editor.createText(`${Math.trunc(nodeHeight).toString()}px`);
     editor.context.insertionParent.children.append(vText);
 
     vText.translation = {

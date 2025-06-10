@@ -92,9 +92,7 @@ To get a feel of the available APIs, visit the [How-to guides](../learn/how-to/i
 
 ```js
 // Create a new TextNode
-const textNode = editor.createText();
-// Set the text content
-textNode.fullContent.text = "Hello,\nWorld!";
+const textNode = editor.createText("Hello,\nWorld!");
 // Center the text on the page
 const insertionParent = editor.context.insertionParent;
 textNode.setPositionInParent(
@@ -225,9 +223,7 @@ While your add-on is still loaded and running, open the `src/index.html` file an
 // ...
   createRectangle: () => {
     // Create a new TextNode
-    const textNode = editor.createText();
-    // Set the text content
-    textNode.fullContent.text = "Hello,\nWorld!";
+    const textNode = editor.createText("Hello,\nWorld!");
     // Center the text on the page
     const insertionParent = editor.context.insertionParent;
     textNode.setPositionInParent(

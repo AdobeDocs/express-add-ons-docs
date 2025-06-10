@@ -14,7 +14,7 @@ To create new pages, see [PageList.addPage](page-list.md#addpage).
 
 ## Implements
 
--   `Readonly` [`IRectangularNode`](../interfaces/i-rectangular-node.md)
+- [`IRectangularNode`](../interfaces/IRectangularNode.md)
 
 ## Accessors
 
@@ -67,6 +67,13 @@ To create new artboards, see [ArtboardList.addArtboard](artboard-list.md#addartb
 
 The height of the node.
 All Artboards within a page share the same dimensions.
+Must be at least MIN_PAGE_DIMENSION and no larger than MAX_PAGE_DIMENSION.
+
+• `set` **height**(`value`): `void`
+
+#### Parameters
+
+• **value**: `number`
 
 #### Returns
 
@@ -140,6 +147,13 @@ The node's type.
 
 The width of the node.
 All Artboards within a page share the same dimensions.
+Must be at least MIN_PAGE_DIMENSION and no larger than MAX_PAGE_DIMENSION.
+
+• `set` **width**(`value`): `void`
+
+#### Parameters
+
+• **value**: `number`
 
 #### Returns
 

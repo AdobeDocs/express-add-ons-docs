@@ -239,6 +239,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/solid-color-shape-node.md",
                   },
                   {
+                    title: "StandaloneTextNode",
+                    path: "references/document-sandbox/document-apis/classes/StandaloneTextNode.md",
+                  },
+                  {
                     title: "StrokableNode",
                     path: "references/document-sandbox/document-apis/classes/strokable-node.md",
                   },
@@ -253,6 +257,10 @@ module.exports = {
                   {
                     title: "TextNode",
                     path: "references/document-sandbox/document-apis/classes/text-node.md",
+                  },
+                  {
+                    title: "ThreadedTextNode",
+                    path: "references/document-sandbox/document-apis/classes/ThreadedTextNode.md",
                   },
                   {
                     title: "UnavailableFont",
@@ -283,6 +291,10 @@ module.exports = {
                   {
                     title: "AutoHeightTextLayout",
                     path: "references/document-sandbox/document-apis/interfaces/auto-height-text-layout.md",
+                  },
+                  {
+                    title: "AutoWidthTextLayout",
+                    path: "references/document-sandbox/document-apis/interfaces/AutoWidthTextLayout.md",
                   },
                   {
                     title: "BaseParagraphStyles",
@@ -366,11 +378,7 @@ module.exports = {
                   },
                   {
                     title: "Point",
-                    path: "references/document-sandbox/document-apis/interfaces/point.md",
-                  },
-                  {
-                    title: "PointTextLayout",
-                    path: "references/document-sandbox/document-apis/interfaces/point-text-layout.md",
+                    path: "references/document-sandbox/document-apis/interfaces/Point.md",
                   },
                   {
                     title: "Rect",
