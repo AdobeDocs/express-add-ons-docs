@@ -15,6 +15,7 @@ keywords:
   - isPremiumUser
   - isAnonymousUser
   - currentUser
+  - unauthenticated user
 title: Identify Users
 description: Identify Users.
 contributors:
