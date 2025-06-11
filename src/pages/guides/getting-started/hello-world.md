@@ -46,7 +46,7 @@ The [Command Line Interface (CLI)](#command-line-interface-cli) path will teach 
 
 A pre-requisite for both tracks is to have enabled the **Add-on Development** mode. Open Adobe Express in the browser and see the following animation for instructions, or expand the details below for a step-by-step guide.
 
-![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
+![Enable Add-on Development](../getting_started/img/playground-enable-dev-mode.gif)
 
 <DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
@@ -62,7 +62,7 @@ We have a [dedicated page](./code-playground.md) for the Code Playground, which 
 
 To launch the Code Playground, see the following animation or expand the details below for a step-by-step guide.
 
-![How to open the Code Playground](./img/playground-open-the-playground.gif)
+![How to open the Code Playground](../getting_started/img/playground-open-the-playground.gif)
 
 <DetailsBlock slots="list"  summary="Click to view a list of steps to open the Code Playground" />
   
@@ -80,7 +80,7 @@ The Code Playground allows you to operate in [two modalities](./code-playground.
 
 Make sure you've selected the **Script** tab, which is pre-filled with a sample script:
 
-![Code Playground](./img/playground-script.png)
+![Code Playground](../getting_started/img/playground-script.png)
 
 Click the **Run Code** button on the Playground's toolbar to see the rectangle added to the document. Not much, but it's a start!
 
@@ -118,7 +118,7 @@ Click the **Add-on** tab to switch to the [Add-on mode](./code-playground.md#add
 
 This time, clicking **Run Code** will make a new add-on appear on the right side of the screen. You can see and change its code in the HTML, CSS (UI and styles) and Iframe JS tabs (button click event). The "Create Rectangle" button runs the Document JS code, which does exactly what you would expect!
 
-![Code Playground Add-on](./img/playground-addon.png)
+![Code Playground Add-on](../getting_started/img/playground-addon.png)
 
 <InlineAlert variant="info" slots="header, text" />
 
@@ -192,7 +192,7 @@ The add-on's code is now running on a local server; you must tell Adobe Express 
 
 To _sideload_ your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
 
-![How to sideload an add-on](./img/playground-sideload-add-on.gif)
+![How to sideload an add-on](../getting_started/img/playground-sideload-add-on.gif)
 
 <DetailsBlock slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
@@ -209,11 +209,11 @@ It's possible to achieve the same result when a document is already open clickin
 
 <DetailsBlock slots="image"  summary="Click to see the screenshot" />
 
-![Add-on testing](./img/playground-alt-testing.png)
+![Add-on testing](../getting_started/img/playground-alt-testing.png)
 
 If you click the **Create Rectangle** button, you'll see the rectangle being added to the document.
 
-![Create Rectangle](./img/playground-run-addon.png)
+![Create Rectangle](../getting_started/img/playground-run-addon.png)
 
 ### 4. Edit your add-on's code
 
@@ -240,7 +240,7 @@ While your add-on is still loaded and running, open the `src/index.html` file an
 
 Note that the terminal where your add-on runs will display messages showing that the `src` has been rebuilt. Adobe Express has also updated the button label automatically, and the add-on will now add a "Hello, World!" text to the document.
 
-![Hello World](./img/playground-hello-world.png)
+![Hello World](../getting_started/img/playground-hello-world.png)
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
@@ -252,7 +252,7 @@ Any changes to the `manifest.json` will _require a manual reload of your add-on_
 
 <DetailsBlock slots="image"  summary="Click to see the screenshot" />
 
-![Refresh manifest](./img/playground-refresh-manifest.png)
+![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
 
 ## Next steps
 
