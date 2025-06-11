@@ -73,7 +73,7 @@ The Code Playground is designed to support the following development workflow us
 - Click the avatar icon in the top right corner of Adobe Express, then the gear icon to open the "Settings".
 - Enable **Add-on Development** if it's not already enabled (you might need to click the **Developer Terms of Use** link the first time).
 
-![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
+![Enable Add-on Development](../getting_started/img/playground-enable-dev-mode.gif)
 
 ### Step 2: Open Code Playground
 
@@ -81,11 +81,11 @@ The Code Playground is designed to support the following development workflow us
 - Select the **Your add-ons** tab.
 - Toggle on **Code Playground** at the bottom of the panel:
 
-  ![Adobe Express Code Playground Toggle](./img/toggle-playground.png)
+  ![Adobe Express Code Playground Toggle](../getting_started/img/toggle-playground.png)
 
 - Once enabled, the playground window will open, allowing you to begin coding immediately:
 
-  ![Adobe Express Code Playground Open](./img/playground-open.png)
+  ![Adobe Express Code Playground Open](../getting_started/img/playground-open.png)
 
 ## Choose Your Development Mode
 
@@ -119,11 +119,11 @@ The playground offers two distinct development modes:
 2. Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. Manipulate the document directly, add shapes or text, change styles, and more using the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/editor.md) object.
 3. Execute your script by clicking the **Run Code** button in the right corner of the playground window to see changes in the current document.
 
-![Code Playground Script Mode](./img/script-mode.png)
+![Code Playground Script Mode](../getting_started/img/script-mode.png)
 
 4. If you want to use Document APIs that are currently marked experimental, click on the properties icon to open the [Manifest JSON](../../references/manifest/index.md#requirements) editing modal and toggle **experimentalApis**:
 
-![Script Mode Manifest Settings](./img/manifest-props-script.png)
+![Script Mode Manifest Settings](../getting_started/img/manifest-props-script.png)
 
 5. Head over to our [How-to guides](../learn/how-to/index.md) to see some examples of using the Document APIs with example code snippets. For instance, the guides:
 
@@ -173,12 +173,11 @@ Once you switch to the [Add-on mode](#add-on-mode) or to your local add-on devel
 2. Write code for your add-on in each of the supplied tabs (described below). This includes HTML, CSS, and JavaScript code that will run in the iframe UI or in the Document Sandbox to interact directly with the Express document (optionally).
 3. Click **Run Code** to execute your add-on. Your add-on should open in an iframe on the right side of the Adobe Express window, ie:
 
-![Code Playground Add-on Mode](./img/addon-mode.png)
+![Code Playground Add-on Mode](../getting_started/img/addon-mode.png)
 
 4. If you need to set [manifest properties](../../references/manifest/index.md) for your add-on (ie: if you want to use APIs that are currently marked experimental, set permissions, OAuth domains etc), click on the properties icon to open the Manifest JSON editing modal:
 
-![Add-on Mode Manifest Settings](./img/manifest-props-addon.png)
-
+![Add-on Mode Manifest Settings](../getting_started/img/manifest-props-addon.png)
 ### Add-on Mode Tabs
 
 The Add-on mode features four tabs for organizing your code:
@@ -274,7 +273,7 @@ There are two ways to resume working on your last saved session:
    - Select the **Your add-ons** tab.
    - Toggle on **Code Playground** at the bottom of the panel.
 
-   ![Code Playground Add-on Mode](./img/playground-on.png)
+   ![Code Playground Add-on Mode](../getting_started/img/playground-on.png)
 
 2. **Via the Your add-ons Page:**
 
@@ -282,7 +281,7 @@ There are two ways to resume working on your last saved session:
    - Find the **Playground Sessions** section in the **Your add-ons** page.
    - Access your last session or create a new one with one click.
 
-![Manage Your add-ons page](./img/playground-sessions.png)
+![Manage Your add-ons page](../getting_started/img/playground-sessions.png)
 
 <InlineAlert slots="header, text1" variant="info"/>
 
