@@ -22,7 +22,7 @@ contributors:
 
 [Adobe Express](https://www.adobe.com/express/) is an AI-first, all-in-one, web-based app to easily create and share content for free. It's a powerful tool that can be used by everyone, from designers to marketers, to create stunning content in minutes.
 
-![Adobe Express](./img/beginner-express.png)
+![Adobe Express](../getting_started/img/beginner-express.png)
 
 ## Discover
 
@@ -30,7 +30,7 @@ contributors:
 
 [Add-ons](https://express.adobe.com/add-ons) are extensions that enhance the functionality of Adobe Express, allowing users to be more productive and creative.
 
-![Adobe Express add-ons](./img/beginner-addon.png)
+![Adobe Express add-ons](../getting_started/img/beginner-addon.png)
 
 The add-on's use cases are endless, but some real-world examples are:
 
@@ -50,7 +50,7 @@ https://www.youtube.com/embed/HHnX5o8CxHU?si=4w4KvQVdkl8r5BZZ
 
 Once you have your add-on ready, you can distribute it through the [Adobe Express Marketplace](https://express.adobe.com/add-ons). With a few clicks, it'll be made available to **millions of Adobe Express users**.
 
-![Adobe Express Marketplace](./img/beginner-marketplace.png)
+![Adobe Express Marketplace](../getting_started/img/beginner-marketplace.png)
 
 ### Monetize add-ons
 
@@ -82,11 +82,11 @@ https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz
 
 You need to tick a few boxes in the application in order to enable it, as the animation below shows.
 
-![Enable Developer Settings](./img/enable-playground.gif)
+![Enable Developer Settings](../getting_started/img/enable-playground.gif)
 
 Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code-playground.md#script-mode) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code-playground.md) for more details.
 
-[![Code Playground](./img/playground.png)](./code_playground.md)
+[![Code Playground](../getting_started/img/playground.png)](./code_playground.md)
 
 ### Explore the How-to Guides
 
@@ -106,7 +106,7 @@ When you feel more comfortable, you can tinker with these other use cases:
 
 To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](./local-development/dev-tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
 
-![doc sandbox prompt](./local_development/img/CLI-template-prompt.png)
+![doc sandbox prompt](../getting_started/local_development/img/CLI-template-prompt.png)
 
 <InlineAlert slots="text1" variant="info" />
 
