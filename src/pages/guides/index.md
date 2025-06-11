@@ -107,7 +107,8 @@ Click on an add-on to view more information and install it. That's it!
 
 Continue by reading the [Developer Journey](./getting-started/developer-journey.md) and explore the [Code Playground](./getting-started/code-playground.md)!
 
-<InlineAlert slots="text" />
+<InlineAlert slots="text1,text2" />
 
 **Join Us: Office Hours for Adobe Express Developers**
+
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
