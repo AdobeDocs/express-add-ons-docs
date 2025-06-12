@@ -121,7 +121,7 @@ ellipse.stroke = stroke;
 editor.context.insertionParent.children.append(ellipse);
 ```
 
-![Ellipse with fill and stroke](./images/shapes_ellipse.jpg)
+![Ellipse with fill and stroke](../how_to/images/shapes_ellipse.jpg)
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -144,7 +144,7 @@ const p1 = editor.createPath(
 editor.context.insertionParent.children.append(p1);
 ```
 
-![Google "Osvaldo Cavandoli". You're welcome](./images/paths_linea.png)
+![Google "Osvaldo Cavandoli". You're welcome](../how_to/images/paths_linea.png)
 
 ### Example: Multiple paths
 
@@ -188,7 +188,7 @@ g.children.append(p1, p2, p3, p4, p5, p6, p7, p8);
 editor.context.insertionParent.children.append(g);
 ```
 
-![Path](./images/paths_complex.png)
+![Path](../how_to/images/paths_complex.png)
 
 ### Example: Add Fills and Strokes
 
@@ -229,4 +229,4 @@ p3.fill = editor.makeColorFill(colorUtils.fromHex("#ffffff"));
 editor.context.insertionParent.children.append(g);
 ```
 
-![Path](./images/paths_styled.png)
+![Path](../how_to/images/paths_styled.png)
