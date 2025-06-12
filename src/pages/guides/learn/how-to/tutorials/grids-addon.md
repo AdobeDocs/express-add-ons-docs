@@ -29,7 +29,7 @@ Hello, and welcome to this Adobe Express Document API tutorial, where we'll buil
 
 https://www.youtube.com/watch?v=SQMYA660gII
 
-![](images/grids-addon.png)
+![](../../how_to/tutorials/images/grids-addon.png)
 
 Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
@@ -97,7 +97,7 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 
 [Context permanence](#deleting-grids)
 
-![](images/grids-addon-animation.gif)
+![](../../how_to/tutorials/images/grids-addon-animation.gif)
 
 ### Getting Started with the Document API
 
@@ -108,7 +108,7 @@ As part of the [Document Model Sandbox](../../../../references/document-sandbox/
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
 
-![](images/grids-addon-communication.png)
+![](../../how_to/tutorials/images/grids-addon-communication.png)
 
 ### The Project Structure
 
@@ -122,7 +122,7 @@ git clone https://github.com/AdobeDocs/express-add-on-samples.git
 
 Or download it as a `.zip` file (click the green "Code" button and then "Download ZIP").
 
-![](images/grids-addon-git.png)
+![](../../how_to/tutorials/images/grids-addon-git.png)
 
 Then `cd` in the project folder (either the `grids-design-start` or `grids-design-end` one) and run the following commands:
 
@@ -138,7 +138,7 @@ This will install the required dependencies, build the project, and then serve i
 
 Before jumping into the code, let's look at how the project is structured. At the time of this writing, the CLI provides a few templates, but Only ReactJS-based ones include the Document Sandbox while also having a Webpack configuration, which is preferable when using Spectrum Web Components (SWC). This project provides support for both of them.
 
-![](images/grids-addon-folder-structure.png)
+![](../../how_to/tutorials/images/grids-addon-folder-structure.png)
 
 As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iframe logic code (UI element handlers, etc.). The Document API entry point is instead `documentSandbox/code.js`, as defined in the `manifest.json`:
 
@@ -262,7 +262,7 @@ A crucial component of any add-on that consumes the Document API is the communic
 
 The mechanism is straightforward: through the `runtime` object (`code.js`, line 2), you can invoke the `exposeApi()` method, which grants the iframe access to the object literal that is passed as a parameter. The iframe must get to the `runtime`, too, and use its `apiProxy()` method passing `"documentSandbox"`. This asynchronous call results in the same object whose `log()` can now be invoked.
 
-![Add-on Communication API](images/grids-addon-communicationapi.png)
+![Add-on Communication API](../../how_to/tutorials/images/grids-addon-communicationapi.png)
 
 It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later.
 
@@ -304,7 +304,7 @@ It's also possible to expose iframe methods to the Document Sandbox, i.e., using
 
 The Document API is rapidly expanding: to keep track of its progress, you must get accustomed to consulting the [Reference Documentation](../../../../references/document-sandbox/document-apis/index.md).
 
-![Add-on Communication API](images/grids-addon-reference.png)
+![Add-on Communication API](../../how_to/tutorials/images/grids-addon-reference.png)
 
 In the left-navbar, you can browse through all the Classes (which Adobe Express elements are instantiated from), Interfaces and constants. It's a hierarchical representation of the Document API data structures: for instance, you can see that a [`RectangleNode`](../../../../references/document-sandbox/document-apis/classes/rectangle-node.md) is a subclass of the [`FillableNode`](../../../../references/document-sandbox/document-apis/classes/fillable-node.md), which in turn subclasses the [`StrokableNode`](../../../../references/document-sandbox/document-apis/classes/strokable-node.md), which eventually is just a particular kind of [`Node`](../../../../references/document-sandbox/document-apis/classes/node.md)—the base class.
 
@@ -435,7 +435,7 @@ Let's unpack this line. As it usually happens with any DOM (Document Object Mode
 
 In other words, we're adding `rect` as a sibling of whatever happens to be active at the moment: this is what the `context.insertionParent.children` dance does. If you try to add `rect` while a shape nested inside a group is selected, then `rect` will also belong to that group. Please note that Adobe Express documents are based on data structures where instances are _appended_ to collections: you `append()` a rectangle to a container's `children` collection.[^3]
 
-![](images/grids-addon-shape.png)
+![](../../how_to/tutorials/images/grids-addon-shape.png)
 
 Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](../../../../references/document-sandbox/document-apis/classes/artboard-node.md) of the first [Page](../../../../references/document-sandbox/document-apis/classes/page-node.md).
 
@@ -468,7 +468,7 @@ Although the main subject of this tutorial is the Document API, let's spend a mo
 
 The layout is based on nested FlexBox CSS classes, such as `row` and `column`. Because of the fixed width, margins are tight; the design has also been compacted along the Y-axis for consistency.
 
-![](images/grids-addon-swc.png)
+![](../../how_to/tutorials/images/grids-addon-swc.png)
 
 Please remember that any Spectrum Web Component you use must be installed and imported into the project first—refer to the instructions on [their official site](https://opensource.adobe.com/spectrum-web-components/) and [this guide](../../../build/design/implementation-guide.md#spectrum-web-components-with-express-theme). In a nutshell, find the package name in each component's documentation, and then `npm install` the ones you need.
 
@@ -553,7 +553,7 @@ rowsColorPicker.addEventListener("input", function (event) {
 
 The `<sp-swatch>` click handler programmatically triggers the `<input>` click, which, although hidden, can still display the browser's native color picker. On `input` (i.e., when the user selects a different color within the picker), the `color` attribute of the `<sp-swatch>` controlling its fill is changed accordingly to keep both of them in sync. Please note that their values are initialized in `ui/index.js` for convenience—setting them in `index.html` would be equally fine.
 
-![](images/grids-addon-picker.png)
+![](../../how_to/tutorials/images/grids-addon-picker.png)
 
 Please refer to the source code for other details on the HTML structure, which are not discussed here for brevity's sake.
 
@@ -770,7 +770,7 @@ start();
 
 When the user clicks the Create button, the parameters from the UI are properly collected, passed to `addGrid()` in the Document Sandbox, and logged. So far, so good, the Communication API does its job.
 
-![](images/grids-addon-console.png)
+![](../../how_to/tutorials/images/grids-addon-console.png)
 
 To begin with, we'll create rows: rectangles that must be as wide as the page. To calculate their height, first, subtract the total number of gutters (which is equal to the number of rows plus one) from the page height. Then, divide the resulting value by the number of rows.
 
@@ -780,7 +780,7 @@ rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
 
 This is because we're using gutters as page margins, too, as the following illustration shows.
 
-![](images/grids-addon-rowheight.png)
+![](../../how_to/tutorials/images/grids-addon-rowheight.png)
 
 We must get hold of the [Document](../../../../references/document-sandbox/document-apis/classes/editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](../../../../references/document-sandbox/document-apis/classes/page-node.md)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
 
@@ -954,7 +954,7 @@ const addRows = (rowsNumber, gutter, color) => {
 // 👆 same in addColumns()
 ```
 
-![](images/grids-addon-groups.png)
+![](../../how_to/tutorials/images/grids-addon-groups.png)
 
 To complete the project, we can add some finishing touches. Groups can be locked: preventing accidental shifts and transformations would be nice indeed. The Reference documentation comes in handy again with the boolean [`locked`](../../../../references/document-sandbox/document-apis/classes/group-node.md#locked) property, which we can easily set after populating the group.
 
