@@ -19,31 +19,31 @@ contributors:
 
 In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
-<InfoCard slots="link, image, heading, text" width="50%"/>
+<Info-Card slots="link, image, heading, text" width="50%"/>
 
 [Express Document API](grids-addon.md)
 
-![Grids add-on](images/thumbs-grids-addon.png)
+![Grids add-on](../../how_to/tutorials/images/thumbs-grids-addon.png)
 
 ### Creating a Grid System add-on with the Adobe Express Document API
 
 Davide Barranca - November 6th, 2023
 
-<InfoCard slots="link, image, heading, text" width="50%"/>
+<Info-Card slots="link, image, heading, text" width="50%"/>
 
 [Coming Soon...](stats-addon.md)
 
-![Coming Soon](images/thumbs-stats-addon.png)
+![Coming Soon](../../how_to/tutorials/images/thumbs-stats-addon.png)
 
 ### Creating a Stats add-on with the Adobe Express Communication API
 
 Davide Barranca - December 14th, 2023
 
-<InfoCard slots="link, image, heading, text" width="80%"/>
+<Info-Card slots="link, image, heading, text" width="80%"/>
 
 [Express Document API](spectrum-workshop/index.md)
 
-![Grids add-on](images/bingo-v1-addon.png)
+![Grids add-on](../../how_to/tutorials/images/bingo-v1-addon.png)
 
 ### Building UIs using Adobe's Spectrum Design System
 
