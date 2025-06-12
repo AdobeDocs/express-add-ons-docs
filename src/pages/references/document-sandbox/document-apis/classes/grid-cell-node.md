@@ -416,7 +416,7 @@ Changes the height to the given value and the width to the given height multipli
 
 [`MediaContainerNode`](MediaContainerNode.md).[`rescaleProportionalToHeight`](MediaContainerNode.md#rescaleproportionaltoheight)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToWidth()
 
@@ -440,7 +440,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 [`MediaContainerNode`](MediaContainerNode.md).[`rescaleProportionalToWidth`](MediaContainerNode.md#rescaleproportionaltowidth)
 
----
+<HorizontalLine />
 
 ### resizeToCover()
 
@@ -468,7 +468,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`MediaContainerNode`](MediaContainerNode.md).[`resizeToCover`](MediaContainerNode.md#resizetocover)
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 
@@ -496,7 +496,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`MediaContainerNode`](MediaContainerNode.md).[`resizeToFitWithin`](MediaContainerNode.md#resizetofitwithin)
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 

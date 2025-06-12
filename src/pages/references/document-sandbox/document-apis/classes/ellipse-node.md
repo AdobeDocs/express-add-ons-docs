@@ -444,7 +444,7 @@ Changes the height to the given value and the width to the given height multipli
 
 [`FillableNode`](FillableNode.md).[`rescaleProportionalToHeight`](FillableNode.md#rescaleproportionaltoheight)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToWidth()
 
@@ -468,7 +468,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 [`FillableNode`](FillableNode.md).[`rescaleProportionalToWidth`](FillableNode.md#rescaleproportionaltowidth)
 
----
+<HorizontalLine />
 
 ### resizeToCover()
 
@@ -496,7 +496,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`FillableNode`](FillableNode.md).[`resizeToCover`](FillableNode.md#resizetocover)
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 
@@ -524,7 +524,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`FillableNode`](FillableNode.md).[`resizeToFitWithin`](FillableNode.md#resizetofitwithin)
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 

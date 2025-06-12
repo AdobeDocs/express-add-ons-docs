@@ -437,7 +437,7 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 [`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### isStandaloneText()
 
@@ -449,7 +449,7 @@ Helper method to determine if the text is standalone.
 
 `this is StandaloneTextNode`
 
----
+<HorizontalLine />
 
 ### isThreadedText()
 
@@ -506,7 +506,7 @@ removal. No-op if node is already an orphan.
 
 [`Node`](node.md).[`removeFromParent`](node.md#removefromparent)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToHeight()
 
@@ -530,7 +530,7 @@ Changes the height to the given value and the width to the given height multipli
 
 [`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToWidth()
 
@@ -554,7 +554,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 [`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
 
----
+<HorizontalLine />
 
 ### resizeToCover()
 
@@ -582,7 +582,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 

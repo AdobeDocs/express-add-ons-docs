@@ -510,7 +510,7 @@ Changes the height to the given value and the width to the given height multipli
 
 [`StrokableNode`](StrokableNode.md).[`rescaleProportionalToHeight`](StrokableNode.md#rescaleproportionaltoheight)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToWidth()
 
@@ -534,7 +534,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 [`StrokableNode`](StrokableNode.md).[`rescaleProportionalToWidth`](StrokableNode.md#rescaleproportionaltowidth)
 
----
+<HorizontalLine />
 
 ### resizeToCover()
 
@@ -562,7 +562,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`StrokableNode`](StrokableNode.md).[`resizeToCover`](StrokableNode.md#resizetocover)
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 
@@ -590,7 +590,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`StrokableNode`](StrokableNode.md).[`resizeToFitWithin`](StrokableNode.md#resizetofitwithin)
 
----
+<HorizontalLine />
 
 ### setEndPoints()
 
