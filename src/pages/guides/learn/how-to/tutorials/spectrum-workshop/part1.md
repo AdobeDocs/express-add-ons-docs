@@ -49,7 +49,7 @@ If you've used the CLI prior to this, you may want to run this command to ensure
 
 If you run the project at this point (`npm run build; npm run start`), you will see a basic button displayed in the UI with custom CSS set to style it for Express, as shown below:
 
-![Basic JS add-on screenshot](../images/basic-js.png)
+![Basic JS add-on screenshot](../../../how_to/tutorials/images/basic-js.png)
 
 However, since you're going to be implementing a whole new UI, go ahead and remove the existing lines related to the button:
 
@@ -374,7 +374,7 @@ Also, be sure to check out [Adobe's UX Guidelines](https://xd.adobe.com/view/urn
 
 If you run your add-on project with the CLI at this point (`npm run build; npm run start`), you will notice that your UI layout is less than ideal, as shown below:
 
-![lesson 1 prestyle screenshot](../images/lesson1-prestyle.png)
+![lesson 1 prestyle screenshot](../../../how_to/tutorials/images/lesson1-prestyle.png)
 
 Even though the Spectrum Web Components themselves have styling applied, the layout of them does not. That's because the Spectrum Web Components library doesn't include any specific layout components. However, you can use Spectrum CSS variables to help you with that.
 
@@ -465,7 +465,7 @@ sp-field-label {
 
 If you kept your add-on running in Express after the changes in the steps above, it should automatically refresh and you can view the updates. It should look something like this screenshot below:
 
-![lesson 1 poststyle screenshot](../images/lesson1-poststyle.png)
+![lesson 1 poststyle screenshot](../../../how_to/tutorials/images/lesson1-poststyle.png)
 
 ### Wire UI code and add canvas drawing logic
 
@@ -667,6 +667,6 @@ function generateBingoCard() {
 
 Once you've updated your code, your add-on should reload and you can generate a custom bingo card! Try playing with some settings and see how they render in a new card. You can also try to drag your card to the page, or add it with the add button etc. If your add-on didn't pick up the changes for any reason, you can always use the [add-on developer tools](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to do a refresh, or simply run `npm run build; npm run start` again.
 
-![Bingo add-on screenshot](../images/bingo-v1-addon.png)
+![Bingo add-on screenshot](../../../how_to/tutorials/images/bingo-v1-addon.png)
 
 If you have any trouble, or don't see what you expect, see the [Troubleshooting section](./part3.md#troubleshooting-faq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
