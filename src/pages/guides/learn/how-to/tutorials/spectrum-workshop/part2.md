@@ -39,7 +39,7 @@ We recommend using **swc-react** over [**React Spectrum**](https://react-spectru
 
 1. Open the project in your favorite code editor and navigate to the `src/components/App.jsx` file. Notice that it's preconfigured with the `@swc-react/theme` and `@swc-react/button` packages and their associated imports, with a basic usage. If you run the project at this point, you should see the button show up in your add-on:
 
-    ![Basic react add-on screenshot](../images/react-starter.png)
+    ![Basic react add-on screenshot](../../../how_to/tutorials/images/react-starter.png)
 
     Take a moment to get familiar with what's included in the generated project before moving on. Notice it's pre-configured for webpack, so you don't have to do those configuration steps you had to do in lesson 1 for the basic JavaScript project.
 
@@ -83,7 +83,7 @@ As a tip, you can use the [Spectrum Web Components Reference](https://opensource
 
 So, for example, the first import is for the **Button Group** component. If you look at the [Spectrum Web Components - Button Group Usage](https://opensource.adobe.com/spectrum-web-components/components/button-group/#usage), the last import definition shows `import { ButtonGroup } from '@spectrum-web-components/button-group';`. It's outlined in the image below for visual reference:
 
-![ButtonGroup import from SWC reference](../images/swc-button-group-import.png)
+![ButtonGroup import from SWC reference](../../../how_to/tutorials/images/swc-button-group-import.png)
 
 You can simply copy that import from the reference for any given component you want to use in your add-on, and just change the prefix from `@spectrum-web-components` to `@swc-react`. (Notice the existing imports for `Button` and `Theme`). The resulting import to use in your add-on would be:
 
@@ -445,7 +445,7 @@ import { WC } from "./WC.jsx";                   /* you added in prior step */
 
 If you run your add-on project now with `npm run build; npm run start` (or if it was already running and automatically refreshed), you should see something like the following:
 
-![Basic react add-on screenshot](../images/lesson2-prestyle.png)
+![Basic react add-on screenshot](../../../how_to/tutorials/images/lesson2-prestyle.png)
 
 Similar to lesson 1, you'll see that the layout of the UI is not great. In this step you'll add the styling to present the UI as you did in lesson 1.
 
