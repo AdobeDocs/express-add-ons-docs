@@ -19,7 +19,7 @@ contributors:
 
 In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
-<Info-Card slots="link, image, heading, text" width="50%"/>
+<Info-Card slots="link, image, heading, text" repeat="3" />
 
 [Express Document API](grids-addon.md)
 
@@ -29,8 +29,6 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 Davide Barranca - November 6th, 2023
 
-<Info-Card slots="link, image, heading, text" width="50%"/>
-
 [Coming Soon...](stats-addon.md)
 
 ![Coming Soon](../../how_to/tutorials/images/thumbs-stats-addon.png)
@@ -38,8 +36,6 @@ Davide Barranca - November 6th, 2023
 ### Creating a Stats add-on with the Adobe Express Communication API
 
 Davide Barranca - December 14th, 2023
-
-<Info-Card slots="link, image, heading, text" width="80%"/>
 
 [Express Document API](spectrum-workshop/index.md)
 
