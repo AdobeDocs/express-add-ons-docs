@@ -213,7 +213,7 @@ before using the API to make changes to locked nodes.
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
 ([AreaTextLayout](../interfaces/AreaTextLayout.md)), any text content that does not fit within this node's area will be clipped.
 
-To get *all* TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
+To get _all_ TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
 
 #### Returns
 
@@ -286,9 +286,9 @@ cumulative rotation from the node's parent containers.
 
 • `get` **text**(): `string`
 
-The text string content which is partially *or* fully displayed in this TextNode "frame."
-WARNING: If a piece of text content flows across several TextNodes, *each* TextNode's `text` getter will return
-the *entire* text content string.
+The text string content which is partially _or_ fully displayed in this TextNode "frame."
+WARNING: If a piece of text content flows across several TextNodes, _each_ TextNode's `text` getter will return
+the _entire_ text content string.
 
 #### Deprecated
 
@@ -298,7 +298,7 @@ the *entire* text content string.
 
 Sets the text content of the TextNode.
 WARNING: If a piece of text content flows across several TextNodes,
-*each* TextNode's `text` setter will sets the *entire* text content string.
+_each_ TextNode's `text` setter will sets the _entire_ text content string.
 
 #### Deprecated
 
