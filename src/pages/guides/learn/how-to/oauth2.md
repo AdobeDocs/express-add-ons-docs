@@ -39,7 +39,7 @@ The OAuth APIs can be used to obtain the authorization "code" from any OAuth 2.0
 
 <InlineAlert variant="warning" slots="header, text1, text2" />
 
-New OAuth redirect URI
+**New OAuth redirect URI**
 
 Adobe Express has moved from `new.express.adobe.com` to `express.adobe.com` as part of the sunsetting of the legacy version. Make sure **both redirect URIs are allowed in your OAuth configuration**:
 
