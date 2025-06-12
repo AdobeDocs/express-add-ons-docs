@@ -39,7 +39,7 @@ In order to provide security to the users of your add-on, browsers implement a [
 
 Be sure to set your browser devtools option to "**Show CORS errors in console**". For example, in Chrome it looks like the screenshot shown below.
 
-![Show CORS errors in Chrome screenshot](images/show-cors.png)
+![Show CORS errors in Chrome screenshot](../platform_concepts/images/show-cors.png)
 
 ### Add-on subdomain
 
@@ -70,7 +70,7 @@ Typically, the origin responsible for serving resources is also responsible for 
 
 One of the fastest ways to unblock your requests while testing in the event of CORS issues, is to use a hosted proxy server. For instance, `cors-anywhere` is a [NodeJS pakage](https://www.npmjs.com/package/cors-anywhere) which also has a free hosted demo server with it set up that you can use for quick testing. Open your browser to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and request temporary access to the demo server with the button shown in the screenshot:
 
-![CORS diagram](images/cors-demo.png)
+![CORS diagram](../platform_concepts/images/cors-demo.png)
 
 Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance:
 
