@@ -68,7 +68,7 @@ We've created a set of in-depth tutorials that guide you through the process of 
 
 We recommend you to start with the [Design Grid creator](./tutorials/grids-addon.md), which covers the basics of the add-on SDK and how to use the Document API.
 
-[![Design Grid creator](./tutorials/images/grids-addon-animation.gif)](./tutorials/grids-addon.md)
+[![Design Grid creator](../how_to/tutorials/images/grids-addon-animation.gif)](./tutorials/grids-addon.md)
 
 ## Other resources
 
