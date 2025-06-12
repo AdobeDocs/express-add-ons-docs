@@ -292,6 +292,10 @@
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/strokable-node"
         },
         {
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/StandaloneTextNode",
+            "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/strokable-node"
+        },
+        {
             "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/solid-color-shape-node/",
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/classes/solid-color-shape-node"
         },
