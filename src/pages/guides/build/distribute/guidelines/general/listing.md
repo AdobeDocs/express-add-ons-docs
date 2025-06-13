@@ -114,7 +114,7 @@ In accordance with the [European Union Digital Services Act](https://eur-lex.eur
 
 <InlineAlert variant="info" slots="header, text1, text2, text3, text4" />
 
-Developer/Trader
+**Developer/Trader**
 
 The terms **developers/traders** are used interchangeably in this guide.
 

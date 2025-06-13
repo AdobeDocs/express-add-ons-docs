@@ -39,7 +39,7 @@ This reference is provided to outline the interfaces, methods, properties and ev
 
 <InlineAlert slots="text" variant="success"/>
 
-See the [implementing common use cases page](../../guides/develop/index.md) for details and examples of how to add the features above.
+See the [implementing common use cases page](../../guides/learn/how-to/index.md) for details and examples of how to add the features above.
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
