@@ -45,7 +45,11 @@ addOnUISdk.ready.then(() => {
   //     "size": { "width": 1080, "height": 1080 },
   //     "title": "First",
   //     "hasPremiumContent": false,
-  //     "hasTemporalContent": false,
+  //     "hasVideoContent": true,
+  //     "hasAudioContent": true,
+  //     "hasAnimatedContent": false,
+  //     "hasTemporalContent": true,
+  //     "temporalContentDuration": 100,
   //     "pixelsPerInch": 96
   //   },
   // ]
@@ -72,7 +76,11 @@ addOnUISdk.ready.then(() => {
   //     "size": { "width": 1080, "height": 1080 },
   //     "title": "First",
   //     "hasPremiumContent": false,
-  //     "hasTemporalContent": false,
+  //     "hasAudioContent": false,
+  //     "hasVideoContent": true, 
+  //     "hasAnimatedContent": false,
+  //     "hasTemporalContent": true,
+  //     "temporalContentDuration": 100,  
   //     "pixelsPerInch": 96
   //   },
   //   {
@@ -80,7 +88,11 @@ addOnUISdk.ready.then(() => {
   //     "size": { "width": 1080, "height": 1080 },
   //     "title": "Second",
   //     "hasPremiumContent": false,
-  //     "hasTemporalContent": false,
+  //     "hasAudioContent": false,
+  //     "hasVideoContent": true, 
+  //     "hasAnimatedContent": false,
+  //     "hasTemporalContent": true,
+  //     "temporalContentDuration": 100,  
   //     "pixelsPerInch": 96
   //   }
   // ]
