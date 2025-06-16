@@ -547,7 +547,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`rescaleProportionalToHeight`](FillableNode.md#rescaleproportionaltoheight)
+[`FillableNode`](fillable-node.md).[`rescaleProportionalToHeight`](fillable-node.md#rescaleproportionaltoheight)
 
 <HorizontalLine />
 
@@ -571,7 +571,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`rescaleProportionalToWidth`](FillableNode.md#rescaleproportionaltowidth)
+[`FillableNode`](fillable-node.md).[`rescaleProportionalToWidth`](fillable-node.md#rescaleproportionaltowidth)
 
 <HorizontalLine />
 
@@ -599,7 +599,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`resizeToCover`](FillableNode.md#resizetocover)
+[`FillableNode`](fillable-node.md).[`resizeToCover`](fillable-node.md#resizetocover)
 
 <HorizontalLine />
 
@@ -627,7 +627,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`resizeToFitWithin`](FillableNode.md#resizetofitwithin)
+[`FillableNode`](fillable-node.md).[`resizeToFitWithin`](fillable-node.md#resizetofitwithin)
 
 <HorizontalLine />
 
