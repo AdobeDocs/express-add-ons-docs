@@ -390,7 +390,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
+[`Node`](node.md).[`rescaleProportionalToHeight`](node.md#rescaleproportionaltoheight)
 
 <HorizontalLine />
 
@@ -414,7 +414,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
+[`Node`](node.md).[`rescaleProportionalToWidth`](node.md#rescaleproportionaltowidth)
 
 <HorizontalLine />
 
@@ -442,7 +442,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
+[`Node`](node.md).[`resizeToCover`](node.md#resizetocover)
 
 <HorizontalLine />
 
@@ -470,7 +470,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToFitWithin`](Node.md#resizetofitwithin)
+[`Node`](node.md).[`resizeToFitWithin`](node.md#resizetofitwithin)
 
 <HorizontalLine />
 
