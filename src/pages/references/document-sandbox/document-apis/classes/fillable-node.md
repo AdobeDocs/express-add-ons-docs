@@ -409,7 +409,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`StrokableNode`](StrokableNode.md).[`rescaleProportionalToHeight`](StrokableNode.md#rescaleproportionaltoheight)
+[`StrokableNode`](strokable-node.md).[`rescaleProportionalToHeight`](strokable-node.md#rescaleproportionaltoheight)
 
 <HorizontalLine />
 
@@ -433,7 +433,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`StrokableNode`](StrokableNode.md).[`rescaleProportionalToWidth`](StrokableNode.md#rescaleproportionaltowidth)
+[`StrokableNode`](strokable-node.md).[`rescaleProportionalToWidth`](strokable-node.md#rescaleproportionaltowidth)
 
 <HorizontalLine />
 
@@ -461,7 +461,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`StrokableNode`](StrokableNode.md).[`resizeToCover`](StrokableNode.md#resizetocover)
+[`StrokableNode`](strokable-node.md).[`resizeToCover`](strokable-node.md#resizetocover)
 
 <HorizontalLine />
 
@@ -489,7 +489,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`StrokableNode`](StrokableNode.md).[`resizeToFitWithin`](StrokableNode.md#resizetofitwithin)
+[`StrokableNode`](strokable-node.md).[`resizeToFitWithin`](strokable-node.md#resizetofitwithin)
 
 <HorizontalLine />
 
