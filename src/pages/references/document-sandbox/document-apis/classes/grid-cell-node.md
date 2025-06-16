@@ -414,7 +414,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`MediaContainerNode`](MediaContainerNode.md).[`rescaleProportionalToHeight`](MediaContainerNode.md#rescaleproportionaltoheight)
+[`MediaContainerNode`](media-container-node.md).[`rescaleProportionalToHeight`](media-container-node.md#rescaleproportionaltoheight)
 
 <HorizontalLine />
 
@@ -438,7 +438,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`MediaContainerNode`](MediaContainerNode.md).[`rescaleProportionalToWidth`](MediaContainerNode.md#rescaleproportionaltowidth)
+[`MediaContainerNode`](media-container-node.md).[`rescaleProportionalToWidth`](media-container-node.md#rescaleproportionaltowidth)
 
 <HorizontalLine />
 
@@ -466,7 +466,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`MediaContainerNode`](MediaContainerNode.md).[`resizeToCover`](MediaContainerNode.md#resizetocover)
+[`MediaContainerNode`](media-container-node.md).[`resizeToCover`](media-container-node.md#resizetocover)
 
 <HorizontalLine />
 
@@ -494,7 +494,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`MediaContainerNode`](MediaContainerNode.md).[`resizeToFitWithin`](MediaContainerNode.md#resizetofitwithin)
+[`MediaContainerNode`](media-container-node.md).[`resizeToFitWithin`](media-container-node.md#resizetofitwithin)
 
 <HorizontalLine />
 
