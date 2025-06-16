@@ -84,7 +84,7 @@ relative to its parent). Generally matches the selection outline seen in the UI,
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
@@ -399,7 +399,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`rescaleProportionalToHeight`](FillableNode.md#rescaleproportionaltoheight)
+[`FillableNode`](fillable-node.md).[`rescaleProportionalToHeight`](fillable-node.md#rescaleproportionaltoheight)
 
 <HorizontalLine />
 
@@ -423,7 +423,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`rescaleProportionalToWidth`](FillableNode.md#rescaleproportionaltowidth)
+[`FillableNode`](fillable-node.md).[`rescaleProportionalToWidth`](fillable-node.md#rescaleproportionaltowidth)
 
 <HorizontalLine />
 
@@ -451,7 +451,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`resizeToCover`](FillableNode.md#resizetocover)
+[`FillableNode`](fillable-node.md).[`resizeToCover`](fillable-node.md#resizetocover)
 
 <HorizontalLine />
 
@@ -479,7 +479,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`resizeToFitWithin`](FillableNode.md#resizetofitwithin)
+[`FillableNode`](fillable-node.md).[`resizeToFitWithin`](fillable-node.md#resizetofitwithin)
 
 <HorizontalLine />
 
