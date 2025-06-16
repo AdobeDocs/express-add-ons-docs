@@ -78,7 +78,7 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly` [`Rect`](../interfaces/Rect.md)
 
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this property only when the node is placed on a page.
@@ -94,11 +94,11 @@ relative to its parent). Generally matches the selection outline seen in the UI,
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly` [`Rect`](../interfaces/Rect.md)
 
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
@@ -155,7 +155,7 @@ moved to a different part of the document.
 
 ### layout
 
-• `get` **layout**(): `Readonly`<[`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+• `get` **layout**(): `Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)
 • `get` **layout**(): `Readonly` [`PointTextLayout`](../interfaces/point-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
 
 <InlineAlert slots="text" variant="warning"/>
@@ -170,7 +170,7 @@ moved to a different part of the document.
 
 #### Returns
 
-`Readonly`<[`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+`Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)
 
 The layout mode of the TextNode "frame."
 
@@ -290,7 +290,7 @@ the _entire_ text content string.
 
 Sets the text content of the TextNode.
 WARNING: If a piece of text content flows across several TextNodes,
-*each* TextNode's `text` setter will sets the _entire_ text content string.
+_each_ TextNode's `text` setter will sets the _entire_ text content string.
 
 #### Deprecated
 
@@ -435,7 +435,7 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 #### Overrides
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`Node`](node.md).[`boundsInNode`](node.md#boundsinnode)
 
 <HorizontalLine />
 
@@ -528,7 +528,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
+[`Node`](node.md).[`rescaleProportionalToHeight`](node.md#rescaleproportionaltoheight)
 
 <HorizontalLine />
 
@@ -552,7 +552,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
+[`Node`](node.md).[`rescaleProportionalToWidth`](node.md#rescaleproportionaltowidth)
 
 <HorizontalLine />
 
@@ -580,7 +580,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
+[`Node`](node.md).[`resizeToCover`](node.md#resizetocover)
 
 <HorizontalLine />
 
@@ -608,7 +608,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToFitWithin`](Node.md#resizetofitwithin)
+[`Node`](node.md).[`resizeToFitWithin`](node.md#resizetofitwithin)
 
 <HorizontalLine />
 

@@ -2,7 +2,7 @@
 
 # Class: TextContentModel
 
-Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) *or*
+Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) _or_
 split across multiple [ThreadedTextNode](ThreadedTextNode.md) frames for display.
 Use this model to get or modify the text string and the style ranges applied to it.
 
@@ -12,7 +12,7 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 • `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](text-node.md), `any`, `any`
 
-Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. The text content
+Get ordered list of all [TextNode](text-node.md)s that display this text content in the scenegraph. The text content
 starts in the first  [ThreadedTextNode](ThreadedTextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
 text content may not be visible at all, if the last [ThreadedTextNode](ThreadedTextNode.md) "frame" is not large enough to accommodate it.
 
