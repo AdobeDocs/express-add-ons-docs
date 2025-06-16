@@ -4,12 +4,12 @@
 
 TextNode is an abstract base class representing text displayed in the scenegraph, regardless of whether it's a fully
 self-contained [StandaloneTextNode](StandaloneTextNode.md) or one [ThreadedTextNode](ThreadedTextNode.md) "frame" of multiple in a larger flow. The
-APIs on TextNode and its [TextContentModel](TextContentModel.md) allow you to generically work with text without needing to know
-which of those subtypes you are dealing with.
+APIs on TextNode and its [TextContentModel](text-content-model.md) allow you to generically work with text without needing to know
+which of those subtypes you are dealing with.StandaloneTextNode.md
 
 ## Extends
 
--   [`Node`](Node.md)
+-   [`Node`](node.md)
 
 ## Extended by
 
@@ -78,7 +78,7 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly` [`Rect`](../interfaces/Rect.md)
+`Readonly` [`Rect`](../interfaces/rect.md)
 
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this property only when the node is placed on a page.
@@ -98,7 +98,7 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly` [`Rect`](../interfaces/Rect.md)
+`Readonly` [`Rect`](../interfaces/rect.md)
 
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
@@ -155,7 +155,7 @@ moved to a different part of the document.
 
 ### layout
 
-• `get` **layout**(): `Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)
+• `get` **layout**(): `Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
 • `get` **layout**(): `Readonly` [`PointTextLayout`](../interfaces/point-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
 
 <InlineAlert slots="text" variant="warning"/>
@@ -170,7 +170,7 @@ moved to a different part of the document.
 
 #### Returns
 
-`Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)
+`Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
 
 The layout mode of the TextNode "frame."
 
