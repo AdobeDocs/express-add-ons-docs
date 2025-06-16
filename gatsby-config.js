@@ -845,7 +845,7 @@ module.exports = {
               },
               {
                 title: "Best practices",
-                path: "guides/design/best_practices.md",
+                path: "guides/build/design/best_practices.md",
               },
             ],
           },
