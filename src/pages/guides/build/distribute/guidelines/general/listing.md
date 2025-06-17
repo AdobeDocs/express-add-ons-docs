@@ -8,7 +8,7 @@ Your listing should provide valuable information about what your add-on does, an
 
 Action required: Add trader details to continue EU distribution.
 
-[Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
+- [Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
 
 ## Listing metadata
 
