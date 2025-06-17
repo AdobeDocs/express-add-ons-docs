@@ -240,7 +240,7 @@ module.exports = {
                   },
                   {
                     title: "StandaloneTextNode",
-                    path: "references/document-sandbox/document-apis/classes/StandaloneTextNode.md",
+                    path: "references/document-sandbox/document-apis/classes/standalone-text-node.md",
                   },
                   {
                     title: "StrokableNode",
@@ -260,7 +260,7 @@ module.exports = {
                   },
                   {
                     title: "ThreadedTextNode",
-                    path: "references/document-sandbox/document-apis/classes/ThreadedTextNode.md",
+                    path: "references/document-sandbox/document-apis/classes/threaded-text-node.md",
                   },
                   {
                     title: "UnavailableFont",
@@ -294,7 +294,7 @@ module.exports = {
                   },
                   {
                     title: "AutoWidthTextLayout",
-                    path: "references/document-sandbox/document-apis/interfaces/AutoWidthTextLayout.md",
+                    path: "references/document-sandbox/document-apis/interfaces/auto-width-text-layout.md",
                   },
                   {
                     title: "BaseParagraphStyles",

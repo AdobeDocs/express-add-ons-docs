@@ -2,8 +2,8 @@
 
 # Class: TextContentModel
 
-Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) _or_
-split across multiple [ThreadedTextNode](ThreadedTextNode.md) frames for display.
+Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](standalone-text-node.md) _or_
+split across multiple [ThreadedTextNode](threaded-text-node.md) frames for display.
 Use this model to get or modify the text string and the style ranges applied to it.
 
 ## Accessors
@@ -13,10 +13,10 @@ Use this model to get or modify the text string and the style ranges applied to 
 • `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](text-node.md), `any`, `any`
 
 Get ordered list of all [TextNode](text-node.md)s that display this text content in the scenegraph. The text content
-starts in the first  [ThreadedTextNode](ThreadedTextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
-text content may not be visible at all, if the last [ThreadedTextNode](ThreadedTextNode.md) "frame" is not large enough to accommodate it.
+starts in the first  [ThreadedTextNode](threaded-text-node.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
+text content may not be visible at all, if the last [ThreadedTextNode](threaded-text-node.md) "frame" is not large enough to accommodate it.
 
-If there are multiple [ThreadedTextNode](ThreadedTextNode.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
+If there are multiple [ThreadedTextNode](threaded-text-node.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Returns
 
@@ -110,7 +110,7 @@ readonly [`ParagraphStylesRange`](../interfaces/paragraph-styles-range.md)[]
 
 • `get` **text**(): `string`
 
-The complete text string, which may span multiple [ThreadedTextNode](ThreadedTextNode.md) "frames" in the scenegraph.
+The complete text string, which may span multiple [ThreadedTextNode](threaded-text-node.md) "frames" in the scenegraph.
 
 • `set` **text**(`textContent`): `void`
 

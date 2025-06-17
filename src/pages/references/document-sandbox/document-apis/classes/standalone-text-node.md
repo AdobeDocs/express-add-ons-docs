@@ -1,12 +1,11 @@
-[@express-document-sdk](../overview.md) / ThreadedTextNode
+[@express-document-sdk](../overview.md) / StandaloneTextNode
 
-# Class: ThreadedTextNode
+# Class: StandaloneTextNode
 
-A ThreadedTextNode represents a text display frame in the scenegraph. It is a subset of longer text that flows across
-multiple TextNode "frames". Because of this, the TextNode does not directly hold the text content and styles –
-instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple ThreadedTextNode frames.
+A StandaloneTextNode represents a text display frame in the scenegraph. It displays an entire piece of text.
+The StandaloneTextNode does not directly hold the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md).
 
-APIs are not yet available to create multi-frame text flows.
+To create new a single-frame piece of text, see [Editor.createText](Editor.md#createtext).
 
 ## Extends
 
@@ -32,7 +31,7 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
 overall display z-order.
 
 The children of a Node are always other Node classes (never the more minimal BaseNode).
@@ -90,7 +89,8 @@ relative to its parent). Generally matches the selection outline seen in the UI,
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+
+_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
@@ -150,7 +150,7 @@ moved to a different part of the document.
 
 ### layout
 
-• `get` **layout**(): `Readonly` [`AreaTextLayout`](../interfaces/AreaTextLayout.md)
+• `get` **layout**(): `Readonly` [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -164,19 +164,23 @@ moved to a different part of the document.
 
 Sets the layout mode of the TextNode "frame."
 
-Only [AreaTextLayout](../interfaces/AreaTextLayout.md), with fully fixed bounds, is currently supported by threaded text.
+[AreaTextLayout](../interfaces/AreaTextLayout.md) is not supported by single-frame text.
 
 #### Throws
 
-if [ThreadedTextNode](ThreadedTextNode.md) is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
+if changing text layout to/from [TextLayout.magicFit](../enumerations/TextLayout.md#magicfit) or [TextLayout.circular](../enumerations/TextLayout.md#circular) layout when the text contains font(s) unavailable to the current user.
+
+#### Throws
+
+if [StandaloneTextNode](standalone-text-node.md) is not a part of a multi-frame text content flow and the layout is [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Parameters
 
-• **layout**: [`AreaTextLayout`](../interfaces/AreaTextLayout.md)
+• **layout**: [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md)
 
 #### Returns
 
-`Readonly` [`AreaTextLayout`](../interfaces/AreaTextLayout.md)
+`Readonly` [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)
 
 The layout mode of the TextNode "frame."
 
@@ -205,16 +209,16 @@ before using the API to make changes to locked nodes.
 
 ### nextTextNode
 
-• `get` **nextTextNode**(): `undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
+• `get` **nextTextNode**(): `undefined`
 
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
 ([AreaTextLayout](../interfaces/AreaTextLayout.md)), any text content that does not fit within this node's area will be clipped.
 
-To get *all* TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
+To get _all_ TextNodes that the text content may be split across, use `TextNode.fullContent.allTextNodes`.
 
 #### Returns
 
-`undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
+`undefined`
 
 <HorizontalLine />
 
@@ -283,9 +287,9 @@ cumulative rotation from the node's parent containers.
 
 • `get` **text**(): `string`
 
-The text string content which is partially *or* fully displayed in this TextNode "frame."
-WARNING: If a piece of text content flows across several TextNodes, *each* TextNode's `text` getter will return
-the *entire* text content string.
+The text string content which is partially _or_ fully displayed in this TextNode "frame."
+WARNING: If a piece of text content flows across several TextNodes, _each_ TextNode's `text` getter will return
+the _entire_ text content string.
 
 #### Deprecated
 
@@ -295,7 +299,7 @@ the *entire* text content string.
 
 Sets the text content of the TextNode.
 WARNING: If a piece of text content flows across several TextNodes,
-*each* TextNode's `text` setter will sets the *entire* text content string.
+_each_ TextNode's `text` setter will sets the _entire_ text content string.
 
 #### Deprecated
 

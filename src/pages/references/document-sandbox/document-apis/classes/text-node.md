@@ -3,7 +3,7 @@
 # Class: `abstract` TextNode
 
 TextNode is an abstract base class representing text displayed in the scenegraph, regardless of whether it's a fully
-self-contained [StandaloneTextNode](StandaloneTextNode.md) or one [ThreadedTextNode](ThreadedTextNode.md) "frame" of multiple in a larger flow. The
+self-contained [StandaloneTextNode](standalone-text-node.md) or one [ThreadedTextNode](threaded-text-node.md) "frame" of multiple in a larger flow. The
 APIs on TextNode and its [TextContentModel](text-content-model.md) allow you to generically work with text without needing to know
 which of those subtypes you are dealing with.StandaloneTextNode.md
 
@@ -13,8 +13,8 @@ which of those subtypes you are dealing with.StandaloneTextNode.md
 
 ## Extended by
 
--   [`StandaloneTextNode`](StandaloneTextNode.md)
--   [`ThreadedTextNode`](ThreadedTextNode.md)
+-   [`StandaloneTextNode`](standalone-text-node.md)
+-   [`ThreadedTextNode`](threaded-text-node.md)
 
 ## Accessors
 
@@ -155,7 +155,7 @@ moved to a different part of the document.
 
 ### layout
 
-• `get` **layout**(): `Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
+• `get` **layout**(): `Readonly` [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
 • `get` **layout**(): `Readonly` [`PointTextLayout`](../interfaces/point-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
 
 <InlineAlert slots="text" variant="warning"/>
@@ -170,7 +170,7 @@ moved to a different part of the document.
 
 #### Returns
 
-`Readonly` [`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
+`Readonly` [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
 
 The layout mode of the TextNode "frame."
 
@@ -199,7 +199,7 @@ before using the API to make changes to locked nodes.
 
 ### nextTextNode
 
-• `get` `abstract` **nextTextNode**(): `undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
+• `get` `abstract` **nextTextNode**(): `undefined` \| [`ThreadedTextNode`](threaded-text-node.md)
 • `get` **nextTextNode**(): `undefined` \| [`TextNode`](text-node.md)
 
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
@@ -209,7 +209,7 @@ To get _all_ TextNodes that the text content may be split across, use `TextNode.
 
 #### Returns
 
-`undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
+`undefined` \| [`ThreadedTextNode`](threaded-text-node.md)
 
 <HorizontalLine />
 

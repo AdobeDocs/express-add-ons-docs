@@ -39,8 +39,8 @@ contributors:
   - [`resizeToFitWithin()`](./document-sandbox/document-apis/classes/node.md#resizetofitwithin)
 - [`Editor.createText()`](./document-sandbox/document-apis/classes/editor.md#createtext) now accepts a String parameter, which sets the text content of the new node. The use without a parameter is deprecated.
 - [`TextNode()`](./document-sandbox/document-apis/classes/text-node.md) is now an abstract base class with two specialized subclasses:
-  - [StandaloneTextNode](./document-sandbox/document-apis/classes/StandaloneTextNode.md): displays text in a single frame.
-  - [ThreadedTextNode](./document-sandbox/document-apis/classes/ThreadedTextNode.md): supports text that can flow across multiple frames.
+  - [StandaloneTextNode](./document-sandbox/document-apis/classes/standalone-text-node.md): displays text in a single frame.
+  - [ThreadedTextNode](./document-sandbox/document-apis/classes/threaded-text-node.md): supports text that can flow across multiple frames.
 
 ## 2025-05-26
 
