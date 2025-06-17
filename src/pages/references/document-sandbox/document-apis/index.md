@@ -41,8 +41,6 @@ See the example below for further usage details.
 The following code snippet illustrates how to use the [Express Document APIs](./classes/Editor.md) from the document sandbox code running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
 ```js
-import { editor, colorUtils } from "express-document-sdk";
-
 const insertionParent = editor.context.insertionParent; // get node to insert content into
 
 const rectangle = editor.createRectangle();
