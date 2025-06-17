@@ -149,29 +149,29 @@ Data type validation is performed for both the arguments and the return types th
 
 ### Supported data types
 
-| Type                                                   | Examples                                     |
-| ------------------------------------------------------ | -------------------------------------------- |
-| Primitive types: string ,boolean ,number, Undefined    |  "hello"  true   1   undefined               |
-| Simple plain objects                                   | { data: "world" }, { value : true }          |
-| Arrays of primitive and plain objects                  | [1,2],["hello", true, { data: null }]        |
-| ArrayBuffer                                            | new ArrayBuffer(1024)                        |
-| Blob                                                   | new Blob()                                   |
-| Error                                                  | new Error()                                  |
+| Type                                                   | Examples                                       |
+| ------------------------------------------------------ | ---------------------------------------------- |
+| Primitive types: string ,boolean ,number, Undefined    |  `"hello"  true   1   undefined`               |
+| Simple plain objects                                   | `{ data: "world" }, { value : true }`          |
+| Arrays of primitive and plain objects                  | `[1,2],["hello", true, { data: null }]`        |
+| ArrayBuffer                                            | `new ArrayBuffer(1024)`                        |
+| Blob                                                   | `new Blob()`                                   |
+| Error                                                  | `new Error()`                                  |
 
 Some data types are not supported and may result unintended behavior. To avoid this, the type of argument/return type in the communication layer is checked and an error is thrown if not supported.
 
 ### Unsupported data types
 
-| Type                    | Examples                         |
-| ----------------------- | -------------------------------- |
-| Map                     | new Map()                        |
-| Set                     | new Set()                        |
-| DataView()              | new DataView(new ArrayBuffer(8)) |
-| Boolean                 | new Boolean()                    |
-| String                  | new String("hello")              |
-| RegExp                  | new RegExp("pattern")            |
-| Symbol                  | Symbol('symbol')                 |
-| Date                    | new Date()                       |
-| UserDefinedClass        | new UserDefinedClass()           |
-| Function                | () => {}                         |
-| Circular objects        | const obj = {} obj.key = obj;    |
+| Type                    | Examples                           |
+| ----------------------- | ---------------------------------- |
+| Map                     | `new Map()`                        |
+| Set                     | `new Set()`                        |
+| DataView()              | `new DataView(new ArrayBuffer(8))` |
+| Boolean                 | `new Boolean()`                    |
+| String                  | `new String("hello")`              |
+| RegExp                  | `new RegExp("pattern")`            |
+| Symbol                  | `Symbol('symbol')`                 |
+| Date                    | `new Date()`                       |
+| UserDefinedClass        | `new UserDefinedClass()`           |
+| Function                | `() => {}`                         |
+| Circular objects        | `const obj = {} obj.key = obj;`    |
