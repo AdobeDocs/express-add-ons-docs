@@ -84,7 +84,7 @@
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/overview"
         },
         {
-            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type/",
+            "Source": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type/",
             "Destination": "/express-add-ons-docs/src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type"
         },
         {
