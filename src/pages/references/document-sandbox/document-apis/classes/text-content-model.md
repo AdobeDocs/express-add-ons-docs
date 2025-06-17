@@ -16,7 +16,7 @@ Get ordered list of all [TextNode](text-node.md)s that display this text content
 starts in the first  [ThreadedTextNode](threaded-text-node.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
 text content may not be visible at all, if the last [ThreadedTextNode](threaded-text-node.md) "frame" is not large enough to accommodate it.
 
-If there are multiple [ThreadedTextNode](threaded-text-node.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
+If there are multiple [ThreadedTextNode](threaded-text-node.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/area-text-layout.md).
 
 #### Returns
 
