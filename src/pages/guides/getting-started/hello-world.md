@@ -48,7 +48,7 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
 
 ![Enable Add-on Development](../getting_started/img/playground-enable-dev-mode.gif)
 
-<DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
+<Details slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
 1. Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
 2. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
@@ -64,7 +64,7 @@ To launch the Code Playground, see the following animation or expand the details
 
 ![How to open the Code Playground](../getting_started/img/playground-open-the-playground.gif)
 
-<DetailsBlock slots="list"  summary="Click to view a list of steps to open the Code Playground" />
+<Details slots="list"  summary="Click to view a list of steps to open the Code Playground" />
   
 1. Click the **Add-ons icon** in the left hand rail.
 2. Enable the **Add-on Development** switch on the top right corner.
@@ -194,7 +194,7 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
 
 ![How to sideload an add-on](../getting_started/img/playground-sideload-add-on.gif)
 
-<DetailsBlock slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
+<Details slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
   1. Click the **Add-ons icon** in the left hand rail.
   2. Enable the **Add-on Development** switch on the top right corner.
@@ -207,7 +207,7 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-<DetailsBlock slots="text"  summary="Click to see the screenshot" />
+<Details slots="list"  summary="Click to see the screenshot" />
 
 ![Add-on testing](../getting_started/img/playground-alt-testing.png)
 
@@ -250,7 +250,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
-<DetailsBlock slots="text"  summary="Click to see the screenshot" />
+<Details slots="list"  summary="Click to see the screenshot" />
 
 ![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
 
