@@ -147,13 +147,13 @@ This command will scaffold a new add-on based on "pure" JavaScript with Document
 
 The [Templates section](./local-development/dev-tooling.md#templates) on the **Development Tools** page provides a list of available options.
 
-<InlineAlert slots="header, text" variant="info"/>
+<InlineAlert slots="header, text" variant="info" />
 
 **For Windows Users**
 
 If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can [download `git`](https://git-scm.com/downloads) and add the directory location to the `path` variable in your Environment Variables.
 
-<InlineAlert slots="header, text1, text2, text3, text4" variant="warning"/>
+<InlineAlert slots="header, text1, text2, text3, text4" variant="warning" />
 
 **CLI troubleshooting**
 
@@ -203,11 +203,11 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
   5. Click the **Connect** button.
   6. Click the **Hello World** add-on icon on the Add-ons tab on the left.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text" variant="info" />
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-<DetailsBlock slots="list"  summary="Click to see the screenshot" />
+<DetailsBlock slots="text"  summary="Click to see the screenshot" />
 
 ![Add-on testing](../getting_started/img/playground-alt-testing.png)
 
@@ -244,13 +244,13 @@ Note that the terminal where your add-on runs will display messages showing that
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
-<InlineAlert slots="header, text" variant="warning"/>
+<InlineAlert slots="header, text" variant="warning" />
 
 **Manifest updates**
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
-<DetailsBlock slots="list"  summary="Click to see the screenshot" />
+<DetailsBlock slots="text"  summary="Click to see the screenshot" />
 
 ![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
 

@@ -61,7 +61,7 @@ For instance, the following command would specify all possible arguments:
 npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 ```
 
-<InlineAlert slots="text1, text2, text3, text4, text5" variant="info"/>
+<InlineAlert slots="text1, text2, text3, text4, text5" variant="info" />
 
 See the [templates](#templates) section for the currently supported template values.
 
@@ -101,7 +101,7 @@ To specify you want to use `webpack` AND port `8080`:
 npm run start -- --use webpack --port 8080
 ```
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text" variant="info" />
 
 The extra arguments are unnecessary unless you do not want to use a transpiler/bundler or use the default port of `5241`. Also, note that all of the templates other than the `javascript` template are pre-configured to use webpack by default and the `--use webpack` is automatically added when you run the `build` and `start` commands. Take a look at the `scripts` property in the `package.json` of those templates and you will see the following:
 
@@ -171,7 +171,7 @@ You will also see a message in the CLI output notifying you of which template th
 
 ![template scaffolding message](../../getting_started/local_development/img/CLI-scaffold-message.png)
 
-<InlineAlert slots="text1, text2" variant="warning"/>
+<InlineAlert slots="text1, text2" variant="warning" />
 
 Please note that to use [Spectrum Web Components](../../build/design/implementation-guide.md) in your add-on's UI, Webpack is required. All templates, except for the `javascript` and `javascript-with-document-sandbox` templates, are pre-configured to use Webpack by default.
 
@@ -189,7 +189,7 @@ A `manifest.json` file is required in every add-on project. The manifest provide
 
 The **Add-on Development** tools panel provides useful logging details indicating the status of your add-on, as well as action buttons to allow for refreshing and clearing the data associated with your add-on. The panel is shown in the screenshots below for reference:
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text" variant="info" />
 
 The **Refresh** button can be used to reload your add-on's code and resources, and the **Clear Storage** button allows you to clear any data stored by your add-on.
 
