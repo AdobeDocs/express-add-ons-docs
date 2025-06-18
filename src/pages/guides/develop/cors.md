@@ -84,8 +84,6 @@ You can also use the `cors-anywhere` node package to create and run your own pro
     or optionally pass in a host and port when you run it:
     `HOST=0.0.0.0 PORT=8080 node proxy-server.js`
 
-<!-- <InlineAlert slots="text" variant="info"/> -->
-
 #### HTTPS URL Support
 
 By default, only `http` URLs are allowed with the sample code above (though the demo server supports either). To access `https` resources with your locally running script, you need to create and pass in a key and certificate in an `httpsOptions` object and include it as another object passed into the `createServer` call, such as:
