@@ -28,7 +28,7 @@ A pre-requisite for local development is to have enabled the **Add-on Developmen
 
 ![Enable Add-on Development](../../getting_started/img/playground-enable-dev-mode.gif)
 
-<DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
+<Details slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
 1. Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
 2. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
