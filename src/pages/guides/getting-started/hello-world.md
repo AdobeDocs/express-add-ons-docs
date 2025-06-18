@@ -147,7 +147,7 @@ This command will scaffold a new add-on based on "pure" JavaScript with Document
 
 The [Templates section](./local-development/dev-tooling.md#templates) on the **Development Tools** page provides a list of available options.
 
-<InlineAlert slots="header, text1" variant="info"/>
+<InlineAlert slots="header, text" variant="info"/>
 
 **For Windows Users**
 
