@@ -29,7 +29,7 @@ import '/src/styles.css'
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
-<AnnouncementBlock slots="heading, text, button" className="developers-live-announcement" />
+<Announcement slots="heading, text, button" className="developers-live-announcement" />
 
 ### Adobe Developers Live, June 24 & 25, 2025
 
