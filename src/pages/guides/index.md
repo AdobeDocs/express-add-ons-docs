@@ -21,21 +21,21 @@ hideBreadcrumbNav: true
 
 import '/src/styles.css'
 
-<HeroSimple slots="heading, text"  className="hero-gradient" />
+<HeroSimple slots="image, heading, text " background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white" />
+
+![Adobe Express add-ons](./getting_started/img/Explore_Image_3.png)
 
 ## Build add-ons for Adobe Express
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
-![Adobe Express add-ons](./getting_started/img/Explore_Image_3.png)
-
-<AnnouncementBlock slots="heading, text, button" className="developers-live-announcement" />
+<Announcement slots="heading, text, button" className="developers-live-announcement" />
 
 ### Adobe Developers Live, June 24 & 25, 2025
 
 Join our virtual conference to learn about Adobe Express & Creative Cloud
 
-[Register now for free](https://events.ringcentral.com/events/adobe-developers-live-2025-code-connect-grow-your-business/registration?utm_source=DevDoc%20Sites&utm_campaign=DevelopersLive)
+- [Register now for free](https://events.ringcentral.com/events/adobe-developers-live-2025-code-connect-grow-your-business/registration?utm_source=DevDoc%20Sites&utm_campaign=DevelopersLive)
 
 ## Welcome to Adobe Express Add-ons!
 
