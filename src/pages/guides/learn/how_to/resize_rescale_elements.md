@@ -21,6 +21,7 @@ title: Resize and Rescale Elements
 description: Resize and Rescale Elements.
 contributors:
   - https://github.com/undavide
+  - https://github.com/hollyschinsky
 ---
 
 # Resize and Rescale Elements
@@ -260,3 +261,55 @@ In this example, the image is resized to cover a 120x120 area; the image is enla
 <InlineAlert slots="text" variant="info"/>
 
 With nodes that can resize irrespective of their aspect ratio, like shapes, the `resizeToCover()` and `resizeToFitWithin()` methods yield the same result.
+
+## Working with Text Elements
+
+Text elements have special considerations when resizing and rescaling, as font sizes and text flow can be affected differently.
+
+### Example: Rescaling Text Proportionally
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+const textNode = editor.createText("Hello, World!");
+
+// Center the text
+const insertionParent = editor.context.insertionParent;
+textNode.setPositionInParent(
+  { x: insertionParent.width, y: insertionParent.height / 2 },
+  { x: 0, y: 0 }
+);
+
+insertionParent.children.append(textNode);
+
+// Rescale the text proportionally: the font size scales accordingly!
+textNode.rescaleProportionalToWidth(300);
+```
+
+![Rescale Text Proportionally](./images/rescale--rescale-proportional-text.png)
+
+### Example: Similarities between Resizing and Rescaling Text
+
+As we’ve seen, when rescaling text, the font size is adjusted to fit within the specified bounds. The same applies when resizing, which means the four available methods produce pairs of equivalent results then the parameters are set appropriately.
+
+```js
+// sandbox/code.js
+// import { editor } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0];
+
+// Both will result in a 200px wide text
+textNode.resizeToFitWithin(200, 100);
+textNode.rescaleProportionalToWidth(200);
+
+// Both will result in a 100px tall text
+textNode.resizeToCover(200, 100);
+textNode.rescaleProportionalToHeight(100);
+```
+
+![Resizing and Rescaling Text](./images/rescale--rescale-resize-text.png)
+
+In the screenshot above, the original text is top-left; top-right, the result of both `resizeToFitWithin()` and `rescaleProportionalToWidth()`; bottom, `resizeToCover()`
+`rescaleProportionalToHeight()`.
