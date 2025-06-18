@@ -207,7 +207,7 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-<DetailsBlock slots="image"  summary="Click to see the screenshot" />
+<DetailsBlock slots="list"  summary="Click to see the screenshot" />
 
 ![Add-on testing](../getting_started/img/playground-alt-testing.png)
 
@@ -250,7 +250,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
-<DetailsBlock slots="image"  summary="Click to see the screenshot" />
+<DetailsBlock slots="list"  summary="Click to see the screenshot" />
 
 ![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
 
