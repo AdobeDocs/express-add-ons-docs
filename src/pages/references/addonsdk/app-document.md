@@ -104,22 +104,27 @@ await addOnUISdk.ready;
 async function logMetadata() {
   try {
     const pages = (await addOnUISdk.app.document.getPagesMetadata({
-                            range: addOnUISdk.constants.Range.specificPages,
-                            pageIds: [
-                                "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
-                                "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
-                            ]
-                        })) as PageMetadata[];
+        range: addOnUISdk.constants.Range.specificPages,
+        pageIds: [
+            "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
+            "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
+        ]
+    })) as PageMetadata[];
     for (const page of pages) {
       console.log("Page id: ", page.id);
       console.log("Page title: ", page.title);
       console.log("Page size: ", page.size);
       console.log("Page has premium content: ", page.hasPremiumContent);
+      console.log("Page has audio content: ", page.hasAudioContent);
+      console.log("Page has video content: ", page.hasVideoContent);
+      console.log("Page has animated content: ", page.hasAnimatedContent);
       console.log("Page has timelines: ", page.hasTemporalContent);
+      if (page.hasTemporalContent)
+          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration); 
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
       console.log("Is page blank: ", page.isBlank);
-      console.log("Template details: ", page.templateDetails);
+      console.log("Template details: ", page.templateDetails);      
     }
   }
   catch(error) {
@@ -128,6 +133,7 @@ async function logMetadata() {
 }
 ```
 
+
 #### Output
 
 ```bash
@@ -135,7 +141,11 @@ Page id: 772dc4b6-0df5-469f-b477-2a0c5445a6ef
 Page title: My First Page
 Page size: { width: 2550, height: 3300 }
 Page has premium content: false
-Page has timelines: false
+Page has audio content: false
+Page has video content: true
+Page has animated content: false
+Page has timelines: true
+Page includes temporal content with a duration of: 100
 Pixels per inch: 72
 Is page print ready: true
 Is page blank: false
