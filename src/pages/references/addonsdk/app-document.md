@@ -133,7 +133,6 @@ async function logMetadata() {
 }
 ```
 
-
 #### Output
 
 ```bash

@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-06-19
+
+### Added
+
+- New properties have been added to the [`PageMetadata`](./addonsdk/app-document.md#pagemetadata) API to indicate if the page contains audio, video or animated content, and if it has temporal content (timelines), you can now retrieve its duration. The [how-to guide](../guides/learn/how_to/page_metadata.md) has been updated to reflect these changes as well.
+
 ## 2025-06-06
 
 ### Updated
