@@ -1,17 +1,20 @@
 [@express-document-sdk](../overview.md) / TextNode
 
-# Class: TextNode
+# Class: `abstract` TextNode
 
-A TextNode represents a text display frame in the scenegraph. It may display an entire piece of text, or sometimes just
-a subset of longer text that flows across multiple TextNode "frames". Because of this, the TextNode does not directly hold
-the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple TextNode frames.
-
-To create new a single-frame piece of text, see [Editor.createText](Editor.md#createtext). APIs are not yet available to create
-multi-frame text flows.
+TextNode is an abstract base class representing text displayed in the scenegraph, regardless of whether it's a fully
+self-contained [StandaloneTextNode](StandaloneTextNode.md) or one [ThreadedTextNode](ThreadedTextNode.md) "frame" of multiple in a larger flow. The
+APIs on TextNode and its [TextContentModel](TextContentModel.md) allow you to generically work with text without needing to know
+which of those subtypes you are dealing with.
 
 ## Extends
 
 -   [`Node`](Node.md)
+
+## Extended by
+
+-   [`StandaloneTextNode`](StandaloneTextNode.md)
+-   [`ThreadedTextNode`](ThreadedTextNode.md)
 
 ## Accessors
 
@@ -77,6 +80,9 @@ even for an orphan node with no parent.
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+Note: The bounding box of an orphaned TextNode may become different after it is placed on a
+page. It is recommended to use this property only when the node is placed on a page.
+
 ---
 
 ### boundsLocal
@@ -93,6 +99,9 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 #### Returns
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+
+Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
+page. It is recommended to use this property only when the node is placed on a page.
 
 ---
 
@@ -145,42 +154,15 @@ moved to a different part of the document.
 
 ### layout
 
-• `get` **layout**(): `Readonly`<[`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+• `get` **layout**(): `Readonly`<[`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-• `set` **layout**(`layout`): `void`
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Sets the layout mode of the TextNode "frame."
-
-If this TextNode is part of a multi-frame text content flow, it must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md). Other
-layout modes, except for [AreaTextLayout](../interfaces/AreaTextLayout.md), are only available for single-frame text.
-
-#### Throws
-
-if changing text layout to/from [TextType.magicFit](../enumerations/TextType.md#magicfit) or [TextType.circular](../enumerations/TextType.md#circular) layout when the text contains font(s) unavailable to the current user.
-
-#### Throws
-
-if [TextNode](TextNode.md) is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
-
-#### Throws
-
-if [TextNode](TextNode.md) is not a part of a multi-frame text content flow and the layout is [AreaTextLayout](../interfaces/AreaTextLayout.md).
-
-#### Parameters
-
-• **layout**: [`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md)
 
 #### Returns
 
-`Readonly`<[`PointTextLayout`](../interfaces/PointTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
+`Readonly`<[`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`AreaTextLayout`](../interfaces/AreaTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
 
 The layout mode of the TextNode "frame."
 
@@ -209,7 +191,7 @@ before using the API to make changes to locked nodes.
 
 ### nextTextNode
 
-• `get` **nextTextNode**(): `undefined` \| [`TextNode`](TextNode.md)
+• `get` `abstract` **nextTextNode**(): `undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
 
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
 ([AreaTextLayout](../interfaces/AreaTextLayout.md)), any text content that does not fit within this node's area will be clipped.
@@ -218,7 +200,7 @@ To get *all* TextNodes that the text content may be split across, use `TextNode.
 
 #### Returns
 
-`undefined` \| [`TextNode`](TextNode.md)
+`undefined` \| [`ThreadedTextNode`](ThreadedTextNode.md)
 
 ---
 
@@ -439,9 +421,36 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-#### Inherited from
+Note: The bounding box of an orphaned TextNode may become different after it is placed on a
+page. It is recommended to use this method only when the node is placed on a page.
+
+#### Overrides
 
 [`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+
+---
+
+### isStandaloneText()
+
+• **isStandaloneText**(): `this is StandaloneTextNode`
+
+Helper method to determine if the text is standalone.
+
+#### Returns
+
+`this is StandaloneTextNode`
+
+---
+
+### isThreadedText()
+
+• **isThreadedText**(): `this is ThreadedTextNode`
+
+Helper method to determine if the text is in a flow.
+
+#### Returns
+
+`this is ThreadedTextNode`
 
 ---
 
@@ -487,6 +496,110 @@ removal. No-op if node is already an orphan.
 #### Inherited from
 
 [`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+
+---
+
+### rescaleProportionalToHeight()
+
+• **rescaleProportionalToHeight**(`height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Changes the height to the given value and the width to the given height multiplied by the aspect ratio.
+
+#### Parameters
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
+
+---
+
+### rescaleProportionalToWidth()
+
+• **rescaleProportionalToWidth**(`width`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Changes the width to the given value and the height to the given width multiplied by the aspect ratio.
+
+#### Parameters
+
+• **width**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
+
+---
+
+### resizeToCover()
+
+• **resizeToCover**(`width`, `height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Resizes the node to cover a box with the given dimensions.
+
+If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+
+#### Parameters
+
+• **width**: `number`
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
+
+---
+
+### resizeToFitWithin()
+
+• **resizeToFitWithin**(`width`, `height`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Resizes the node to fit within a box with the given dimensions.
+
+If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+
+#### Parameters
+
+• **width**: `number`
+
+• **height**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`Node`](Node.md).[`resizeToFitWithin`](Node.md#resizetofitwithin)
 
 ---
 

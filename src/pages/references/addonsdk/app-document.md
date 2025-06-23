@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/develop/how_to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/develop/how_to/create_renditions.md) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/learn/how_to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/learn/how_to/create_renditions.md) from the current document.
 
 ## General Methods
 
@@ -27,13 +27,13 @@ A resolved `Promise` containing the `id` of the document.
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setId(id) { /* ... */ }
 
 addOnUISdk.ready.then(() => setId(await addOnUISdk.app.document.id()));
 
-addOnUISdk.app.on("documentAvailable", data => {
+addOnUISdk.app.on("documentIdAvailable", data => {
   setId(data.documentId);
 });
 ```
@@ -61,7 +61,7 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setTitle(title) { /* ... */ }
 
@@ -92,10 +92,10 @@ A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containi
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
 
-## Usage
+#### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -104,22 +104,27 @@ await addOnUISdk.ready;
 async function logMetadata() {
   try {
     const pages = (await addOnUISdk.app.document.getPagesMetadata({
-                            range: addOnUISdk.constants.Range.specificPages,
-                            pageIds: [
-                                "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
-                                "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
-                            ]
-                        })) as PageMetadata[];
+        range: addOnUISdk.constants.Range.specificPages,
+        pageIds: [
+            "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
+            "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
+        ]
+    })) as PageMetadata[];
     for (const page of pages) {
       console.log("Page id: ", page.id);
       console.log("Page title: ", page.title);
       console.log("Page size: ", page.size);
       console.log("Page has premium content: ", page.hasPremiumContent);
+      console.log("Page has audio content: ", page.hasAudioContent);
+      console.log("Page has video content: ", page.hasVideoContent);
+      console.log("Page has animated content: ", page.hasAnimatedContent);
       console.log("Page has timelines: ", page.hasTemporalContent);
+      if (page.hasTemporalContent)
+          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration); 
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
       console.log("Is page blank: ", page.isBlank);
-      console.log("Template details: ", page.templateDetails);
+      console.log("Template details: ", page.templateDetails);      
     }
   }
   catch(error) {
@@ -128,14 +133,18 @@ async function logMetadata() {
 }
 ```
 
-## Output
+#### Output
 
 ```bash
 Page id: 772dc4b6-0df5-469f-b477-2a0c5445a6ef
 Page title: My First Page
 Page size: { width: 2550, height: 3300 }
 Page has premium content: false
-Page has timelines: false
+Page has audio content: false
+Page has video content: true
+Page has animated content: false
+Page has timelines: true
+Page includes temporal content with a duration of: 100
 Pixels per inch: 72
 Is page print ready: true
 Is page blank: false
@@ -169,7 +178,7 @@ Tells Express to run a print quality check to determine if the document is ready
 #### Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = addOnUISdk.app;
@@ -235,6 +244,60 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 | -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
 | `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
 | `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
+
+### link()
+
+Retrieves the document link.
+
+#### Signature
+
+`link(options: LinkOptions): Promise<string | undefined>`
+
+#### Return Value
+
+A resolved `Promise` containing the `link` of the document.
+
+<InlineAlert slots="text" variant="info"/>
+
+A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
+
+#### Example
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+function setLink(link) { /* ... */ }
+
+addOnUISdk.ready.then(
+  () => setLink(await AddOnSDKAPI.app.document.link("document"))
+);
+
+addOnUISdk.app.on("documentLinkAvailable", data => {
+  setLink(data.documentLink);
+});
+
+function setPublishedLink(link) { /* ... */ }
+
+AddOnSDKAPI.ready.then(
+  () => setPublishedLink(await AddOnSDKAPI.app.document.link("published"))
+);
+
+AddOnSDKAPI.app.on("documentPublishedLinkAvailable", data => {
+  setPublishedLink(data.documentPublishedLink);
+});
+```
+
+#### `LinkOptions`
+
+The options to pass into the link method.
+
+| Name          | Type     | Description                                              |
+| ------------- | -------- | -------------------------------------------------------- |
+| `linkOptions` | `string` | [`LinkOptions`](./addonsdk-constants.md) constant value. |
 
 ## Import Content Methods
 
@@ -405,7 +468,7 @@ async function addAudioFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [import images how-to](../../guides/develop/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](/samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](../../guides/learn/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -431,7 +494,7 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = AddOnSDKAPI.app;
@@ -486,7 +549,7 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
 const { document } = AddOnSDKAPI.app;
@@ -531,7 +594,7 @@ Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, yo
 
 If you supply `addImage()` with an animated GIF, only the first frame will be added by default.
 
-\*\* See the [FAQ's](../../guides/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
+\*\* See the [FAQ's](../../guides/support/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
 
 ### Errors
 
@@ -572,7 +635,7 @@ Generate renditions of the current page, specific pages or the entire document i
 }
 ```
 
-Refer to the [manage premium content how-to](../../guides/develop/how_to/premium_content.md) for more specific details on options for handling the export of premium content.
+Refer to the [manage premium content how-to](../../guides/learn/how_to/premium_content.md) for more specific details on options for handling the export of premium content.
 
 #### `RenditionOptions`
 
@@ -683,7 +746,7 @@ A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pa
 #### JavaScript
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -714,7 +777,7 @@ async function displayPreview() {
 #### TypeScript
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -760,11 +823,11 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 | `title`    | `string`                        | The page title of the rendition |
 | `metadata` | [`PageMetadata`](#pagemetadata) |                   Page metadata |
 
-\*\* See the [FAQs](../../guides/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
+\*\* See the [FAQs](../../guides/support/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [create renditions how-to](../../guides/develop/how_to/create_renditions.md) and the [export-sample](/samples.md) in the code samples for usage examples.
+Refer to the [create renditions how-to](../../guides/learn/how_to/create_renditions.md) and the [export-sample](../../guides/learn/samples.md) in the code samples for usage examples.
 
 ### Errors
 

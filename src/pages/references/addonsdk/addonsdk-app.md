@@ -1,6 +1,8 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/develop/how_to/modal_dialogs.md), [enable drag and drop](../../guides/develop/how_to/drag_and_drop.md) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how_to/modal_dialogs.md), [enable drag and drop](../../guides/learn/how_to/drag_and_drop.md) of content and subscribe and unsubscribe to events.
+
+[](../../guides/learn/how_to/)
 
 ## Objects
 
@@ -121,7 +123,7 @@ Returns a resolved `Promise` with a value of `true` if the user is premium or co
 #### Example Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   const isPremiumUser = await addOnUISdk.app.startPremiumUpgradeIfFreeUser();
@@ -192,7 +194,7 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 #### Confirmation Dialog Example Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -218,7 +220,7 @@ async function showConfirmDialog() {
 #### Input Dialog Example Usage
 
 ```js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
@@ -252,7 +254,86 @@ async function showInputDialog() {
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/develop/how_to/modal_dialogs.md#custom-dialog).
+See the use case implementations for an example of the [custom modal dialog](../../guides/learn/how_to/modal_dialogs.md#custom-dialog).
+
+### showColorPicker()
+
+Shows the Adobe Express color picker based on specific options passed in.
+
+#### Signature
+
+`showColorPicker(anchorElement: HTMLElement, options?: ColorPickerOptions): Promise<void>;`
+
+#### Parameters
+
+| Name            | Type                 |                                       Description |
+| --------------- | -------------------- | ------------------------------------------------: |
+| `anchorElement` | `HTMLElement`        |        The element to anchor the color picker to. |
+| `options`       | `ColorPickerOptions` | The optional options to pass to the color picker. |
+
+##### `ColorPickerOptions`
+
+| Name                     |                                                               Type |                                                                                                                                                                                                                                                                                                                       Description |
+| ------------------------ | -----------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `title?`                 |                                                           `string` |                                                                                                                                                                                                                                                                      Label header/title for the color picker. Default value: `""` |
+| `initialColor?`          |                                               `number` or `string` | Default/starting color when you open the color picker for the first time on a `anchorElement`, in the format `0xRRGGBB[AA]` or `"#RRGGBB[AA]"`. When you have already changed the color with this picker, then the next time you open the picker, the last selected color will be the starting color. Default: `0xFFFFFF` (white) |
+| `placement?`             | `object` [ColorPickerPlacement](./addonsdk-constants.md#constants) |                                                                                                                                                                                                                                                  Placement of the popover with respect to the anchor element (default: `"left"`). |
+| `eyedropperHidesPicker?` |                                                          `boolean` |                                                                                                                                                                 Closes the color picker popover while using the EyeDropper. After the color is selected via the EyeDropper, the color picker popup opens again. Default: `false`. |
+| `disableAlphaChannel?`   |                                                          `boolean` |                                                                                                                                                                                                                                   Disables the transparency slider in the "custom" section of the color picker. Default: `false`. |
+
+#### Return Value
+
+Returns a void `Promise`.
+
+#### Example Usage
+
+```js
+const colorPickerButton = document.getElementById("color-picker-button");
+
+colorPickerButton.addEventListener("click", () => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    title: "Add-on's Color Picker",
+    placement: ColorPickerPlacement.left,
+    eyedropperHidesPicker: true,
+    disableAlphaChannel: false,
+  });
+});
+
+colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
+  console.log("Color change event received!", event.detail.color;);
+});
+```
+
+### hideColorPicker()
+
+Hides the Adobe Express color picker.
+
+#### Signature
+
+`hideColorPicker(): Promise<void>;`
+
+#### Return Value
+
+Returns a void `Promise`.
+
+#### Example Usage
+
+```js
+const colorPickerButton = document.getElementById("color-picker-button");
+
+colorPickerButton.addEventListener("click", () => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    title: "Add-on's Color Picker",
+    placement: ColorPickerPlacement.left,
+    eyedropperHidesPicker: true,
+    disableAlphaChannel: false,
+  });
+  setTimeout(() => {
+    console.log("Hiding Color Picker after 10 seconds...");
+    addOnUISdk.app.hideColorPicker();
+  }, 10000);
+});
+```
 
 ### registerIframe()
 
@@ -283,7 +364,7 @@ type UnregisterIframe = () => void;
 #### Example Usage
 
 ```ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function RegisterIframe(elementId: string) {
   const iframe = document.getElementById(elementId);
@@ -405,7 +486,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/develop/how_to/drag_and_drop.md) for example usage, and the [code samples](/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag_and_drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
 
 ## Events
 

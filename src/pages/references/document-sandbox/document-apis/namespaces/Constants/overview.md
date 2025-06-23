@@ -69,9 +69,9 @@ Re-exports [TextAlignment](../../enumerations/TextAlignment.md)
 
 ---
 
-### TextType
+### TextLayout
 
-Re-exports [TextType](../../enumerations/TextType.md)
+Re-exports [TextLayout](../../enumerations/TextLayout.md)
 
 ---
 

@@ -72,3 +72,111 @@ h1 {
 .spectrum-InLineAlert-content li {
   margin-left: 12px;
 }
+
+/* Fix for the icons in the TextBlocks of the landing page
+ * ugly hack until we migrate to EDS
+ */
+section > div > p:has(> span > picture) {
+  height: 150px !important;
+}
+
+section > div > p:has(> span > img) {
+  height: 150px !important;
+}
+
+section:has(> div > p > span > picture) {
+  padding: 20px 0 10px 0 !important;
+}
+
+/* Landing page Hero stuff */
+
+.hero-gradient {
+  background: linear-gradient(180deg, #c946eb 0%, #6372f5 100%) !important;
+  height: 400px !important;
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 80px;
+  width: 600px;
+}
+
+/* Responsive styles for hero-image-container */
+@media (max-width: 1280px) {
+  .hero-image-container {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1700px) {
+  .hero-image-container {
+    right: 80px;
+  }
+}
+
+@media (min-width: 1700px) and (max-width: 2200px) {
+  .hero-image-container {
+    right: 180px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .hero-image-container {
+    right: 380px;
+  }
+}
+
+.hero-image-container img {
+  opacity: 0.8 !important;
+}
+
+/* Landing page learning paths icon stuff */
+
+.icon-links-fixer + section > div {
+  margin: -110px 0 -70px 0px;
+}
+
+/* Wrapper for the developers live home page announcement */
+.developers-live-announcement {
+  /* breathing room */
+  /* padding: clamp(2rem, 6vw, 3.5rem) clamp(1.5rem, 4vw, 3rem); */
+  margin-top: -20px;
+  margin-bottom: 40px;
+  margin-inline: auto;
+  max-width: 60rem;
+
+  /* gentle elevation */
+  background: linear-gradient(180deg, #fbfbfb 0%, #f4f4f4 100%);
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem; /* mirrors the card corners in Adobe Express UI */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+/* Main heading */
+.developers-live-announcement h3 {
+  font-weight: 700;
+  font-size: clamp(1rem, 2.75vw, 1.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: #242424;
+  margin-block-end: 0.5rem;
+}
+
+/* Sub-headline line */
+.developers-live-announcement p {
+  margin-block: 0 1.25rem;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  color: #5e5e5e;
+}
+
+.developers-live-announcement a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #6372f5 !important;
+  border-color: #6372f5 !important;
+}
+
+/* Target span inside anchor on hover */
+.developers-live-announcement a:hover span {
+  color: #fff !important;
+}

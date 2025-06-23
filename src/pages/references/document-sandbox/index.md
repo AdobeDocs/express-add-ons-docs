@@ -39,7 +39,7 @@ The [document APIs](./document-apis/) provide access to the user's document stru
 
 <InlineAlert slots="text" variant="success"/>
 
-Please see the [tutorials section](../../guides/tutorials/) to learn more about using the document sandbox and Adobe Express Document APIs.
+Please see the [tutorials section](../../guides/learn/how_to/tutorials/index.md) to learn more about using the document sandbox and Adobe Express Document APIs.
 
 ## Document Sandbox's JavaScript Engine
 
@@ -75,11 +75,11 @@ The JavaScript code in the file referenced can then access any of the injected g
 
 ### CLI Generated Document Sandbox Add-on
 
-The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, you can [specify a template name](../../guides/getting_started/dev_tooling.md#templates) that includes the document sandbox support:
+The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, you can [specify a template name](../../guides/getting_started/local_development/dev_tooling.md#templates) that includes the document sandbox support:
 
 `npx @adobe/create-ccweb-add-on helloworld --template javascript-with-document-sandbox`
 
- or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/dev_tooling.md#templates), then ask if you want to include the document sandbox:
+or the CLI will prompt you to choose from the [base templates](../../guides/getting_started/local_development/dev_tooling.md#templates), then ask if you want to include the document sandbox:
 
 ![CLI prompt for document sandbox](../img/cli-doc-sandbox-prompt.png)
 
@@ -102,7 +102,7 @@ The screenshot below shows what the default script-based add-on generated from t
 
 <InlineAlert slots="text" variant="info"/>
 
-Please refer to the [Using the CLI](../../guides/getting_started/dev_tooling.md#using-the-cli) section to get more information on how to use the CLI and create new add-on.
+Please refer to the [Using the CLI](../../guides/getting_started/local_development/dev_tooling.md#using-the-cli) section to get more information on how to use the CLI and create new add-on.
 <br/>
 
 ## Code Samples

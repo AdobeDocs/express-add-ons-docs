@@ -19,7 +19,7 @@
 -   [StrokePosition](enumerations/StrokePosition.md)
 -   [StrokeType](enumerations/StrokeType.md)
 -   [TextAlignment](enumerations/TextAlignment.md)
--   [TextType](enumerations/TextType.md)
+-   [TextLayout](enumerations/TextLayout.md)
 -   [VisualEffectType](enumerations/VisualEffectType.md)
 
 ## Classes
@@ -53,10 +53,12 @@
 -   [RectangleNode](classes/RectangleNode.md)
 -   [RestrictedItemList](classes/RestrictedItemList.md)
 -   [SolidColorShapeNode](classes/SolidColorShapeNode.md)
+-   [StandaloneTextNode](classes/StandaloneTextNode.md)
 -   [StrokableNode](classes/StrokableNode.md)
 -   [StrokeShapeNode](classes/StrokeShapeNode.md)
 -   [TextContentModel](classes/TextContentModel.md)
 -   [TextNode](classes/TextNode.md)
+-   [ThreadedTextNode](classes/ThreadedTextNode.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
 -   [UnknownNode](classes/UnknownNode.md)
 -   [Viewport](classes/Viewport.md)
@@ -66,6 +68,7 @@
 
 -   [AreaTextLayout](interfaces/AreaTextLayout.md)
 -   [AutoHeightTextLayout](interfaces/AutoHeightTextLayout.md)
+-   [AutoWidthTextLayout](interfaces/AutoWidthTextLayout.md)
 -   [BaseParagraphStyles](interfaces/BaseParagraphStyles.md)
 -   [BitmapImage](interfaces/BitmapImage.md)
 -   [CharacterStyles](interfaces/CharacterStyles.md)
@@ -86,12 +89,12 @@
 -   [ParagraphStylesRange](interfaces/ParagraphStylesRange.md)
 -   [ParagraphStylesRangeInput](interfaces/ParagraphStylesRangeInput.md)
 -   [Point](interfaces/Point.md)
--   [PointTextLayout](interfaces/PointTextLayout.md)
 -   [Rect](interfaces/Rect.md)
 -   [RectangleGeometry](interfaces/RectangleGeometry.md)
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
 -   [StyleRange](interfaces/StyleRange.md)
+-   [TextRange](interfaces/TextRange.md)
 -   [UnorderedListStyleInput](interfaces/UnorderedListStyleInput.md)
 -   [UnsupportedTextLayout](interfaces/UnsupportedTextLayout.md)
 

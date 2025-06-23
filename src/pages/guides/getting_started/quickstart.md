@@ -42,14 +42,14 @@ Check out this short video below for a quick visual introduction to the steps yo
 
 ### Add-on CLI
 
-The **[Adobe Express add-on CLI](dev_tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
+The **[Adobe Express add-on CLI](./local_development/dev_tooling.md#using-the-cli) (Command Line Interface) is required for add-on development** and allows you to create and host Adobe Express add-ons directly from your local machine.
 
 ## Step 1: Create your add-on project
 
 Open your terminal and run the following command:
 
 ```bash
-npx @adobe/create-ccweb-add-on hello-world --template javascript-with-document-sandbox     
+npx @adobe/create-ccweb-add-on hello-world --template javascript-with-document-sandbox
 ```
 
 This command will create a new add-on based on pure JavaScript with Document Sandbox support (the set of APIs that allow you to interact with Adobe Express documents).
@@ -57,7 +57,7 @@ This command will create a new add-on based on pure JavaScript with Document San
 - `hello-world` is the name of the add-on you are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
-The [Templates section](dev_tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
+The [Templates section](./local_development/dev_tooling.md#templates) on the **Development Tools** page provides a list of available options; if your add-on doesn't need to manipulate documents, you may want to pick a sandbox-free template (e.g., `javascript` instead of `javascript-with-document-sandbox`).
 
 **For Windows Users:** If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can download `git` from https://git-scm.com/downloads, and add the directory location to the `path` variable in your Environment Variables.
 
@@ -71,13 +71,13 @@ Please run this command to clear the `npx` cache and ensure the latest version o
 
 ```bash
 npx clear-npx-cache
-npx @adobe/create-ccweb-add-on hello-world 
+npx @adobe/create-ccweb-add-on hello-world
 ```
 
 The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
 
 ```bash
-npx @adobe/ccweb-add-on-scripts start --help  
+npx @adobe/ccweb-add-on-scripts start --help
 ```
 
 ## Step 2: Build and start your add-on
@@ -100,7 +100,7 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 ## Step 3: Enable add-on development mode (first-time only)
 
-- Navigate to [Adobe Express](https://new.express.adobe.com/).
+- Navigate to [Adobe Express](https://express.adobe.com/).
 - Click on your user avatar in the top righthand corner and choose **Settings**.
 
 ![Dev settings toggle on](./img/avatar-settings-v2.png)
@@ -115,12 +115,12 @@ You can now sideload your add-on by enabling the Developer Mode in the Add-ons p
 
 ## Step 4: Load and run your add-on
 
-- Navigate your browser to [Adobe Express](https://new.express.adobe.com/new) and **create a new project**—a blank one will suffice.
+- Navigate your browser to [Adobe Express](https://express.adobe.com/new) and **create a new project**—a blank one will suffice.
 - Click the **Add-ons** icon on the left rail.
 
 <InlineAlert slots="text1, text2" variant="info"/>
 
-It's possible to access the **Add-ons** from the home page as well (i.e., without the need to open a new project first). In this case, you must follow the listing creation outlined [here](../distribute/private-dist.md#step-1-create-a-new-add-on-listing) first.
+It's possible to access the **Add-ons** from the home page as well (i.e., without the need to open a new project first). In this case, you must follow the listing creation outlined [here](../../guides/build/distribute/private-dist.md#step-1-create-a-new-add-on-listing) first.
 
 For simplicity's sake, this Quickstart guide covers the document creation method.
 
@@ -134,9 +134,9 @@ For simplicity's sake, this Quickstart guide covers the document creation method
 
 - Once clicked, a modal will appear where you will provide the URL of your locally hosted add-on.
 
-   **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
+  **Note:** Use the default `https://localhost:5241` supplied unless you are intentionally using a different port.
 
-   Select the *I understand the risks of loading an add-on from an external server* checkbox and press the **Connect** button.
+  Select the _I understand the risks of loading an add-on from an external server_ checkbox and press the **Connect** button.
 
 ![Add-on connect modal](./img/connect-modal-v2.png)
 
@@ -170,7 +170,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 **Manifest updates**<br/>
 
-Any changes to the `manifest.json` will *require a manual reload of your add-on*. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
+Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
 
 ![manifest update](./img/manifest-update-v2.png)
 
@@ -186,6 +186,6 @@ Click the **Refresh** button, then click your add-on icon to load it again, and 
 
 Congratulations! You've completed the quickstart and run your first add-on!
 
-Next, check out the [development tools](dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../design/index.md), [developing](../develop/index.md), [debugging](../debug/index.md) and [distributing](../distribute/index.md) your add-ons.
+Next, check out the [development tools](./local_development/dev_tooling.md) page to discover more details on topics to be aware of while building add-ons, followed by the rest of the [guides section](../), where you will find in-depth resources for [designing](../build/design/index.md), [developing](../develop/index.md), [debugging](./local_development/browser.md) and [distributing](../build/distribute/index.md) your add-ons.
 
-If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/guides/tutorials), and exploring our collection of [code samples](../../samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.
+If you're ready to dive into our developer platform, we highly recommend following the [tutorials](/resources/tutorials), and exploring our collection of [code samples](../learn/samples.md). These samples provide hands-on examples of how to use our platform SDKs and APIs and are a great resource to help you get started building your own add-ons.

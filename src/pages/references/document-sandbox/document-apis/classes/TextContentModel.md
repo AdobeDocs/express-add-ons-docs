@@ -2,7 +2,8 @@
 
 # Class: TextContentModel
 
-Represents a complete piece of text content flow, which may be split across multiple [TextNode](TextNode.md) frames for display.
+Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) *or*
+split across multiple [ThreadedTextNode](ThreadedTextNode.md) frames for display.
 Use this model to get or modify the text string and the style ranges applied to it.
 
 ## Accessors
@@ -12,10 +13,10 @@ Use this model to get or modify the text string and the style ranges applied to 
 • `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
 
 Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. The text content
-starts in the first  [TextNode](TextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
-text content may not be visible at all, if the last [TextNode](TextNode.md) "frame" is not large enough to accommodate it.
+starts in the first  [ThreadedTextNode](ThreadedTextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
+text content may not be visible at all, if the last [ThreadedTextNode](ThreadedTextNode.md) "frame" is not large enough to accommodate it.
 
-If there are multiple [TextNode](TextNode.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
+If there are multiple [ThreadedTextNode](ThreadedTextNode.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Returns
 
@@ -109,7 +110,7 @@ readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
 
 • `get` **text**(): `string`
 
-The complete text string, which may span multiple [TextNode](TextNode.md) "frames" in the scenegraph.
+The complete text string, which may span multiple [ThreadedTextNode](ThreadedTextNode.md) "frames" in the scenegraph.
 
 • `set` **text**(`textContent`): `void`
 
@@ -138,16 +139,12 @@ default styles.
 
 The styles to apply.
 
-• **range?**
+• **range?**: [`TextRange`](../interfaces/TextRange.md)
 
 The start and length of the character sequence to which the styles should be applied.
 The styles will be applied to the entire text content flow if not specified.
 If the specified range doesn't align well with the paragraph boundaries, the range will be expanded to cover the
 entire paragraphs, it overlaps.
-
-• **range.length?**: `number`
-
-• **range.start?**: `number`
 
 #### Returns
 
@@ -174,15 +171,30 @@ default styles.
 
 The styles to apply.
 
-• **range?**
+• **range?**: [`TextRange`](../interfaces/TextRange.md)
 
 The start and length of character sequence to which the styles should be applied.
 If not specified the styles will be applied to the entire piece of text content flow.
 
-• **range.length?**: `number`
-
-• **range.start?**: `number`
-
 #### Returns
 
 `void`
+
+---
+
+### hasUnavailableFonts()
+
+• **hasUnavailableFonts**(): `boolean`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Returns true if this text contains any fonts unavailable to the current user.
+Currently, if any unavailable fonts are present, the text content cannot be modified and
+certain styling changes are limited as well. To remove these restrictions, you must modify
+the character styles to use only AvailableFonts.
+
+#### Returns
+
+`boolean`
