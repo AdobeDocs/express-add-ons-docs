@@ -1,0 +1,10 @@
+extends: existence
+message: "Consider adding error scenarios or troubleshooting information for '%s'."
+ignorecase: true
+level: suggestion
+scope: text
+tokens:
+  - '(?:error|fail|exception|throw)(?!.*(?:scenario|example|troubleshooting|solution))'
+  - '(?:won.t work|doesn.t work|not supported)(?!.*(?:because|reason|why|solution))'
+  - '(?:try|attempt|use)(?!.*(?:catch|error|fail))'
+  - '(?:API|method|property)(?!.*(?:may fail|error|exception|unsupported))' 

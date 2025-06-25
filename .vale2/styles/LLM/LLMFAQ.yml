@@ -1,0 +1,10 @@
+extends: existence
+message: "Consider adding an LLM FAQ section for '%s' to improve AI understanding and response accuracy."
+ignorecase: true
+level: suggestion
+scope: text
+tokens:
+  - '^# .+(?:API|tutorial|guide)(?!.*(?:## 🤖 LLM FAQ|## LLM FAQ|## FAQ))'
+  - '(?:addOnUISdk|editor|Document API|iframe)(?!.*(?:FAQ|Q:|A:))'
+  - '(?:confusion|confuse|distinguish|difference)(?!.*(?:FAQ|Q:|A:))'
+  - '(?:can.t|cannot|won.t|doesn.t work)(?!.*(?:FAQ|troubleshooting|Q:|A:))' 

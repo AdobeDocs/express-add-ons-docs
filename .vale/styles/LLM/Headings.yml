@@ -1,0 +1,9 @@
+extends: existence
+message: "Heading structure issue detected. Ensure heading levels increment logically (H1→H2→H3, not H1→H3)."
+level: error
+scope: heading
+tokens:
+  - '^#\s+.*\n\s*###'
+  - '^##\s+.*\n\s*####'
+  - '^###\s+.*\n\s*#####'
+  - '^####\s+.*\n\s*######'

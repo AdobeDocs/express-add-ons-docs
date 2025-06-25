@@ -1,0 +1,11 @@
+extends: existence
+message: "Ambiguous reference detected. Consider clarifying the specific meaning of '%s' in this context."
+ignorecase: true
+level: warning
+scope: text
+tokens:
+  - '\bcontext\b(?!\.|\s+(class|object|iframe|Document Sandbox|selection|insertion))'
+  - '\bdocument\b(?!\.|\s+(API|Sandbox|object|class))'
+  - '\bSDK\b(?!.*(?:UI|Document|Add-on))'
+  - '\bAPI\b(?!.*(?:UI|Document|Communication|reference))'
+  - '\bnode\b(?!.*(?:class|object|type|element))' 

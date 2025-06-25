@@ -1,0 +1,12 @@
+extends: existence
+message: "Missing cross-reference or related content link. Consider adding references to '%s'."
+ignorecase: true
+level: suggestion
+scope: text
+tokens:
+  - '^# .+(?:tutorial|guide|how-to)(?!.*(?:See also|Related|Prerequisites))'
+  - 'RectangleNode(?!.*(?:FillableNode|StrokableNode|createRectangle))'
+  - 'createRectangle(?!.*(?:RectangleNode|Rectangle))'
+  - 'fill(?!.*(?:FillableNode|makeColorFill|Fill))'
+  - 'stroke(?!.*(?:StrokableNode|makeStroke|Stroke))'
+  - 'maskShape(?!.*(?:GroupNode|FillableNode))' 

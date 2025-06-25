@@ -1,0 +1,11 @@
+extends: existence
+message: "Missing structured content element. Consider adding '%s' for better LLM comprehension."
+ignorecase: true
+level: suggestion
+scope: text
+tokens:
+  - '(?<!## What [Yy]ou.ll [Ll]earn)^# .+$'
+  - '(?<!## Prerequisites)^# .+tutorial'
+  - '(?<!## Quick Answer)^# .+(?:How-to|Guide)'
+  - '(?<!## Common Issues)^# .+(?:troubleshooting|errors)'
+  - '(?<!## Related APIs?)^# .+(?:API|method|property)' 

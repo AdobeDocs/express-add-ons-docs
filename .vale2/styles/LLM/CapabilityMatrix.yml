@@ -1,0 +1,10 @@
+extends: existence
+message: "Missing capability information. Consider adding availability/support details for '%s'."
+ignorecase: true  
+level: warning
+scope: text
+tokens:
+  - '(?:can|cannot|able|unable|supports?|available)(?!.*(?:iframe|Document Sandbox|supported|available|✅|❌))'
+  - '(?:method|property|API)(?!.*(?:supported|available|✅|❌|iframe|Document Sandbox))'
+  - 'maskShape(?!.*(?:GroupNode|supported|available|only|✅|❌))'
+  - '(?:get|set|read|write)(?!.*(?:only|supported|available|✅|❌))' 

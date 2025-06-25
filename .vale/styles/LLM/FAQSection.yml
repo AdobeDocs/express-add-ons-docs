@@ -1,0 +1,9 @@
+extends: existence
+message: "Consider adding a 'Troubleshooting' or 'FAQ' section per Kapa guidelines."
+level: suggestion
+scope: text
+tokens:
+  - "### Troubleshooting"
+  - "### FAQ"
+  - "## Troubleshooting" 
+  - "## FAQ"

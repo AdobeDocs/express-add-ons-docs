@@ -1,0 +1,10 @@
+extends: existence
+message: "Potential API context confusion. Consider clarifying iframe vs Document Sandbox context for '%s'."
+ignorecase: true
+level: error
+scope: raw
+tokens:
+  - 'addOnUISdk\.app\.document'
+  - 'Document.*API'
+  - 'document.*sandbox'
+  - 'iframe.*context' 

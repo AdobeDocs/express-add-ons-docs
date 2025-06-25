@@ -1,0 +1,6 @@
+extends: existence
+message: "Missing alt text: add descriptive text for images."
+level: error
+scope: raw
+tokens:
+  - '!\[.*\]\(.*\)'

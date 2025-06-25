@@ -1,0 +1,9 @@
+extends: existence
+message: "Missing structured content element. Consider adding '%s' section for better LLM understanding."
+ignorecase: true
+level: suggestion
+scope: raw
+tokens:
+  - '^# .*tutorial(?!.*What.*learn)'
+  - '^# .*Guide(?!.*Prerequisites)'
+  - '^# .*How.*to(?!.*Quick.*Answer)' 

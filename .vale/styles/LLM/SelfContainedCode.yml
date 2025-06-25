@@ -1,0 +1,11 @@
+extends: existence
+message: "Include a brief description + imports before the code snippet for context."
+level: warning
+scope: raw
+tokens:
+  - '```js'
+  - '```javascript'
+  - '```ts'
+  - '```typescript'
+  - '```jsx'
+  - '```tsx'

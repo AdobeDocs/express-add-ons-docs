@@ -1,0 +1,11 @@
+extends: existence
+message: "Consider adding a decision matrix or clear guidance for '%s' to help LLMs provide definitive recommendations."
+ignorecase: true
+level: suggestion
+scope: text
+tokens:
+  - '(?:choose|select|decide|pick)(?!.*(?:if|when|matrix|table|✅|❌))'
+  - '(?:Code Playground|CLI)(?!.*(?:if|when|choose|recommended|best for))'
+  - '(?:JavaScript|TypeScript|React|Lit)(?!.*(?:if|when|choose|use))'
+  - '(?:beginner|intermediate|advanced)(?!.*(?:if|level|experience))'
+  - '(?:should|recommended|best)(?!.*(?:if|when|use|for))' 

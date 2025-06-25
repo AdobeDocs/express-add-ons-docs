@@ -1,0 +1,9 @@
+extends: existence
+message: "API reference may need inheritance flattening. Consider listing all available methods/properties for '%s'."
+ignorecase: true
+level: warning
+scope: text
+tokens:
+  - '## Extends\s*-\s*\[`\w+`\](?!.*(?:inherited|available|methods|properties))'
+  - 'Node|FillableNode|StrokableNode(?!.*(?:all methods|inherited properties|available))'
+  - 'class:\s*\w+Node(?!.*(?:Complete.*reference|All.*methods|Inherited))' 

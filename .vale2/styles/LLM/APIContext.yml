@@ -1,0 +1,11 @@
+extends: existence
+message: "API context ambiguity detected. Consider adding explicit context clarification (iframe vs Document Sandbox) for '%s'."
+ignorecase: true
+level: error
+scope: text
+tokens:
+  - 'addOnUISdk\.app\.document(?!\s+(import|export|addImage|createRenditions))'
+  - 'editor\.create(?!Rectangle|Text|Ellipse|Group)'
+  - 'document\.(?!addImage|createRenditions)'
+  - 'runtime\.apiProxy\("documentSandbox"\)'
+  - 'runtime\.exposeApi' 

@@ -1,0 +1,15 @@
+extends: substitution
+message: "Inconsistent terminology detected. Use '%s' instead of '%s' for better LLM understanding."
+ignorecase: true
+level: warning
+swap:
+  'add-on UI SDK': 'AddOnUISDK'
+  'Add-on UI SDK': 'AddOnUISDK'
+  'addon': 'add-on'
+  'addOn': 'add-on'
+  'document api': 'Document API'
+  'document sandbox': 'Document Sandbox'
+  'iframe context': 'iframe UI context'
+  'sandbox context': 'Document Sandbox context'
+  'SDK': 'Add-on SDK'
+  'api': 'API' 

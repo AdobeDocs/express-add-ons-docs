@@ -1,0 +1,14 @@
+extends: existence
+message: "Missing required metadata field for LLM optimization: '%s'"
+level: error
+scope: raw
+tokens:
+  - 'title:'
+  - 'description:'
+  - 'tags:'
+  - 'api_domain:'
+  - 'complexity:'
+  - 'prerequisites:'
+  - 'estimated_time:'
+  - 'context:'
+  - 'related_concepts:'

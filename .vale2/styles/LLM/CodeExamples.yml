@@ -1,0 +1,11 @@
+extends: existence
+message: "Code example may be incomplete or inconsistent. Consider adding imports, error handling, or context comments for '%s'."
+ignorecase: true
+level: warning
+scope: raw
+tokens:
+  - '(?<!import.*)(editor\.|addOnUISdk\.|colorUtils\.)'
+  - 'const\s+\w+\s*=\s*editor\.create\w+\(\)(?!.*translation)'
+  - 'fetch\((?!.*catch)'
+  - '\.addEventListener\((?!.*error)'
+  - 'async\s+function(?!.*try)' 

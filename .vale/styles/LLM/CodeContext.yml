@@ -1,0 +1,10 @@
+extends: existence
+message: "Code example may lack context. Consider adding imports or API context for '%s'."
+ignorecase: true
+level: warning
+scope: raw
+tokens:
+  - 'editor\.'
+  - 'addOnUISdk\.'
+  - 'colorUtils\.'
+  - 'const.*=.*editor\.create' 
