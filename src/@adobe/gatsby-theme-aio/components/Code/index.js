@@ -67,14 +67,29 @@ const copy = (textarea, document, setIsTooltipOpen) => {
 
 const handleTry = (codeContent) => {
   try {
-    const code = btoa(JSON.stringify(codeContent));
+    // const code = btoa(JSON.stringify(codeContent));
+    const playgroundData = {
+      scriptContent: codeContent,
+      mode: "script",
+    };
     const url = new URL("https://localhost.adobe.com:8080/new");
+    // const url = new URL("https://168534.prenv.projectx.corp.adobe.com/new");
     url.searchParams.set("mode", "playground");
     url.searchParams.set("session", "new");
-    url.searchParams.set("code", code);
-    url.searchParams.set("playgroundMode", "script");
+    // url.searchParams.set("code", code);
+    // url.searchParams.set("playgroundMode", "script");
+    url.searchParams.set(
+      "playgroundData",
+      btoa(JSON.stringify(playgroundData))
+    );
     window.open(url.toString(), "_blank");
 
+    // const playgroundData = {
+    //   scriptContent: codeContent,
+    //   mode: "script",
+    // };
+    // const encoded = btoa(JSON.stringify(playgroundData));
+    // console.log("encoded", encoded);
     //     const files = [
     //       {
     //         name: "index.html",
@@ -190,7 +205,18 @@ const handleTry = (codeContent) => {
 const Code = ({ children, className = "", theme }) => {
   const [tooltipId] = useState(nextId);
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
-  const language = className.replace(/language-/, "");
+
+  // Parse language and check for {try} attribute
+  let language = className.replace(/language-/, "");
+  const attributeMatch = language.match(/^(\w+)\s*\{([^}]+)\}$/);
+
+  let shouldShowTry = false;
+
+  if (attributeMatch) {
+    language = attributeMatch[1];
+    const attributes = attributeMatch[2];
+    shouldShowTry = attributes.includes("try");
+  }
 
   return (
     <Highlight {...defaultProps} code={children} language={language}>
@@ -219,7 +245,7 @@ const Code = ({ children, className = "", theme }) => {
               aria-describedby={tooltipId}
               css={css`
                 position: absolute;
-                right: 70px;
+                right: ${shouldShowTry ? "70px" : "10px"};
                 top: 0px;
                 border-color: var(
                   --spectrum-actionbutton-m-border-color,
@@ -237,27 +263,29 @@ const Code = ({ children, className = "", theme }) => {
             >
               Copy
             </ActionButton>
-            {/* Try Button */}
-            <ActionButton
-              className="spectrum-ActionButton"
-              css={css`
-                position: absolute;
-                right: 10px;
-                top: 0px;
-                border-color: var(
-                  --spectrum-actionbutton-m-border-color,
-                  var(--spectrum-alias-border-color)
-                ) !important;
-                color: var(
-                  --spectrum-actionbutton-m-text-color,
-                  var(--spectrum-alias-text-color)
-                ) !important;
-                padding: var(--spectrum-global-dimension-size-65);
-              `}
-              onClick={() => handleTry(children)}
-            >
-              Try
-            </ActionButton>
+            {/* Try Button - Only render if showTry is true */}
+            {shouldShowTry && (
+              <ActionButton
+                className="spectrum-ActionButton"
+                css={css`
+                  position: absolute;
+                  right: 10px;
+                  top: 0px;
+                  border-color: var(
+                    --spectrum-actionbutton-m-border-color,
+                    var(--spectrum-alias-border-color)
+                  ) !important;
+                  color: var(
+                    --spectrum-actionbutton-m-text-color,
+                    var(--spectrum-alias-text-color)
+                  ) !important;
+                  padding: var(--spectrum-global-dimension-size-65);
+                `}
+                onClick={() => handleTry(children)}
+              >
+                Try
+              </ActionButton>
+            )}
             <div
               css={css`
                 position: absolute;
