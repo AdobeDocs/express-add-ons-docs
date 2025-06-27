@@ -2,7 +2,7 @@
 
 Your listing should provide valuable information about what your add-on does, and why people should use it.
 
-<Announcement slots="heading, text, button" variant ="secondary"/>
+<Announcement slots="heading, text, button" variant ="secondary" backgroundColor ="background-color-gray" />
 
 ### Are you an existing developer?
 
