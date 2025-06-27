@@ -140,11 +140,11 @@ Transform values default to 0.
 
 #### createText()
 
-• **createText**(): [`StandaloneTextNode`](standalone-text-node.md)
+• **createText**(): [`StandaloneTextNode`](StandaloneTextNode.md)
 
 ##### Returns
 
-[`StandaloneTextNode`](standalone-text-node.md)
+[`StandaloneTextNode`](StandaloneTextNode.md)
 
 a text node with default styles. The text content is initially empty, so the text node will be
 invisible until its `fullContent` property's `text` is set. Creates auto-width text, so the node's width will
@@ -156,7 +156,7 @@ automatically adjust to accommodate whatever text is set.
 
 #### createText(textContent)
 
-• **createText**(`textContent`): [`StandaloneTextNode`](standalone-text-node.md)
+• **createText**(`textContent`): [`StandaloneTextNode`](StandaloneTextNode.md)
 
 ##### Parameters
 
@@ -166,7 +166,7 @@ the initial string to show.
 
 ##### Returns
 
-[`StandaloneTextNode`](standalone-text-node.md)
+[`StandaloneTextNode`](StandaloneTextNode.md)
 
 a text node with default styles. Creates auto-width text, so the node's width will automatically adjust
 to accommodate the given text content.

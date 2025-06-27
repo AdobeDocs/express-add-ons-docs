@@ -24,7 +24,8 @@
   "scripts": {
     "start": "gatsby build && gatsby serve",
     "start:prefix": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
-    "dev": "gatsby develop",
+    "dev:gatsby": "gatsby develop",
+    "dev": "node ./dev.mjs",
     "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -45,6 +46,7 @@
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
+    "express": "5.1.0",
     "glob": "11.0.0",
     "markdownlint": "^0.35.0",
     "markdownlint-cli": "^0.41.0",
