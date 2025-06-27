@@ -41,7 +41,7 @@ Join our virtual conference to learn about Adobe Express & Creative Cloud
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting-started/code-playground.md) and start tinkering with the API right away.
 
-<Columns slots="image, heading, text, links" variant="vertical" repeat ="4"/>
+<Columns slots="image, heading, text, links" variant="horizontal" repeat ="4"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
 
