@@ -165,9 +165,9 @@ Here is a breakdown of this initial setup:
 
 Now, let's create the actual user interface for our add-on and implement the file handling logic.
 
-### 2.1. Designing the UI with Spectrum Web Components (SWC)
+### 2.1. Designing the UI with Spectrum Web Components
 
-We'll use Spectrum Web Components to create a UI that feels native to Adobe Express. Our interface will have a dropzone for files, a button to trigger parsing, and a progress indicator. The project has already imported the Spectrum Theme and Button components, let's add the other ones we need.
+We'll use Spectrum Web Components (SWC)to create a UI that feels native to Adobe Express. Our interface will have a dropzone for files, a button to trigger parsing, and a progress indicator. The project has already imported the Spectrum Theme and Button components, let's add the other ones we need.
 
 ```bash
 npm install @spectrum-web-components/dropzone \
@@ -195,9 +195,9 @@ Update `src/index.html` with the following markup:
     <div class="row">
       <sp-dropzone tabindex="0" id="dropzone" drop-effect="copy">
         <sp-illustrated-message
+          style="--mod-illustrated-message-display: flex;"
           heading="Drag and drop your file" id="message">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
+          <svg xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 150 103" width="150" height="103">
             <path
               d="M133.7,8.5h-118c-1.9,0-3.5,1.6-3.5,3.5v27c0,0.8,0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5V23.5h119V92c0,0.3-0.2,0.5-0.5,0.5h-118c-0.3,0-0.5-0.2-0.5-0.5V69c0-0.8-0.7-1.5-1.5-1.5s-1.5,0.7-1.5,1.5v23c0,1.9,1.6,3.5,3.5,3.5h118c1.9,0,3.5-1.6,3.5-3.5V12C137.2,10.1,135.6,8.5,133.7,8.5z M15.2,21.5V12c0-0.3,0.2-0.5,0.5-0.5h118c0.3,0,0.5,0.2,0.5,0.5v9.5H15.2z M32.6,16.5c0,0.6-0.4,1-1,1h-10c-0.6,0-1-0.4-1-1s0.4-1,1-1h10C32.2,15.5,32.6,15.9,32.6,16.5z M13.6,56.1l-8.6,8.5C4.8,65,4.4,65.1,4,65.1c-0.4,0-0.8-0.1-1.1-0.4c-0.6-0.6-0.6-1.5,0-2.1l8.6-8.5l-8.6-8.5c-0.6-0.6-0.6-1.5,0-2.1c0.6-0.6,1.5-0.6,2.1,0l8.6,8.5l8.6-8.5c0.6-0.6,1.5-0.6,2.1,0c0.6,0.6,0.6,1.5,0,2.1L15.8,54l8.6,8.5c0.6,0.6,0.6,1.5,0,2.1c-0.3,0.3-0.7,0.4-1.1,0.4c-0.4,0-0.8-0.1-1.1-0.4L13.6,56.1z"
@@ -236,18 +236,38 @@ Update `src/index.html` with the following markup:
 </html>
 ```
 
+Here's how this HTML structure works:
+
+- The core of the UI is the `<sp-dropzone>` component, which creates an intuitive drag-and-drop area for files.
+- For accessibility, a standard `<input type="file">` is included but hidden with CSS.
+- A `<sp-link>` element is used to programmatically trigger the hidden file input, providing an alternative clickable way to select a file.
+- The main `<sp-button>` is initially `disabled`. This is a good practice to prevent user actions before the add-on is ready or before a file has been loaded. It will be enabled programmatically.
+
+### 2.2. Handling File Uploads
+
+To handle file interactions, we'll create a new file called `ui/file-handler.js`. This module will set up event listeners on the dropzone and the hidden file input. We'll also touch the `ui/index.js` file to import and pass it the sandbox proxy.
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, JavaScript"/>
+
 #### ui/index.js
 
 ```javascript
 import "@spectrum-web-components/styles/typography.css";
+
 import "@spectrum-web-components/theme/src/themes.js";
 import "@spectrum-web-components/theme/theme-light.js";
 import "@spectrum-web-components/theme/express/theme-light.js";
 import "@spectrum-web-components/theme/express/scale-medium.js";
 import "@spectrum-web-components/theme/sp-theme.js";
+
 import "@spectrum-web-components/button/sp-button.js";
+import "@spectrum-web-components/link/sp-link.js";
+import "@spectrum-web-components/illustrated-message/sp-illustrated-message.js";
+import "@spectrum-web-components/dropzone/sp-dropzone.js";
+import "@spectrum-web-components/progress-circle/sp-progress-circle.js";
 
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import setupFileHandler from "./file-handler.js";
 
 addOnUISdk.ready.then(async () => {
   console.log("addOnUISdk is ready for use.");
@@ -255,135 +275,181 @@ addOnUISdk.ready.then(async () => {
   // Get the Authoring Sandbox
   const { runtime } = addOnUISdk.instance;
   const sandboxProxy = await runtime.apiProxy("documentSandbox");
-
-  // Log the message to the console when the button is clicked
-  document.getElementById("helloButton").addEventListener("click", () => {
-    sandboxProxy.sayHello("from the UI");
-  });
-});
-```
-
-Here's how this HTML structure works:
-
-- The core of the UI is the `<sp-dropzone>` component, which creates an intuitive drag-and-drop area for files.
-- For accessibility, a standard `<input type="file">` is included but hidden with CSS.
-- A `<sp-link>` element is used to programmatically trigger the hidden file input, providing a seamless user experience that combines a custom UI with native browser functionality.
-- The main `<sp-button>` is initially `disabled`. This is a good practice to prevent user actions before the add-on is ready or before a file has been loaded. It will be enabled programmatically.
-
-### 2.2. Handling File Uploads
-
-The logic for handling file interactions lives in `src/ui/file-handler.js`. This module will set up event listeners on the dropzone and the hidden file input.
-
-```javascript
-// src/ui/file-handler.js
-
-export default function setupFileHandler(sandboxProxy) {
-  const dropzone = document.getElementById("dropzone");
-  const parseButton = document.getElementById("parseButton");
-  const message = document.getElementById("message");
-  const fileInput = document.getElementById("file-input");
-  const progressCircle = document.getElementById("progress-circle");
-  let markdownContent = null;
-
-  const isMarkdownFile = (file) => {
-    return (
-      file.name.toLowerCase().endsWith(".md") || file.type === "text/markdown"
-    );
-  };
-
-  const handleFile = (file) => {
-    if (!isMarkdownFile(file)) {
-      message.heading = "Please drop a markdown (.md) file";
-      return;
-    }
-
-    message.heading = "Got it!";
-    dropzone.setAttribute("filled", true);
-
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      markdownContent = e.target.result;
-      console.log("Markdown content loaded.");
-      parseButton.disabled = false;
-    };
-    reader.readAsText(file);
-  };
-
-  const parseMarkdownAndInsert = async () => {
-    if (!markdownContent) {
-      console.error("No markdown content to parse");
-      return;
-    }
-    console.log("Parsing started...");
-  };
-
-  dropzone.addEventListener("sp-dropzone-drop", (event) => {
-    const file = event.detail.dropEvent.dataTransfer.files[0];
-    if (file) handleFile(file);
-  });
-
-  fileInput.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    if (file) handleFile(file);
-  });
-
-  parseButton.addEventListener("click", parseMarkdownAndInsert);
-}
-```
-
-Let's walk through the file handling logic:
-
-- The `setupFileHandler` function in `file-handler.js` centralizes all UI interaction logic.
-- It begins by getting references to the necessary DOM elements (dropzone, button, etc.).
-- The `handleFile` function is the workhorse here. It first validates that the dropped file is a Markdown file.
-- It then uses the browser's standard `FileReader` API to read the file's content asynchronously.
-- Once the content is loaded (`reader.onload`), it's stored in a variable, and the "Parse Markdown" button is enabled.
-- Event listeners are set up for both the Spectrum dropzone's custom `sp-dropzone-drop` event and the standard `change` event on the hidden file input, ensuring both upload methods work.
-
-Now, we just need to call this setup function from our main UI script, `src/ui/index.js`, and import all the necessary Spectrum components.
-
-```javascript
-// src/ui/index.js
-
-// Spectrum Web Components imports
-import "@spectrum-web-components/styles/typography.css";
-import "@spectrum-web-components/theme/sp-theme.js";
-import "@spectrum-web-components/button/sp-button.js";
-import "@spectrum-web-components/link/sp-link.js";
-import "@spectrum-web-components/illustrated-message/sp-illustrated-message.js";
-import "@spectrum-web-components/dropzone/sp-dropzone.js";
-import "@spectrum-web-components/progress-circle/sp-progress-circle.js";
-
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-import setupFileHandler from "./file-handler.js";
-
-addOnUISdk.ready.then(async () => {
-  console.log("UI is ready.");
-
-  const { runtime } = addOnUISdk.instance;
-  const sandboxProxy = await runtime.apiProxy("documentSandbox");
-
-  // Initialize file handling
   setupFileHandler(sandboxProxy);
 });
 ```
 
-This connects our `index.js` to the `file-handler.js`, passing the `sandboxProxy` for later use. At this point, the UI is fully interactive for file selection.
+#### ui/file-handler.js
+
+```javascript
+/**
+ * Sets up file handling functionality for the markdown parser add-on
+ * @param {Object} sandboxProxy - The Adobe Express document sandbox proxy
+ */
+export default function setupFileHandler(sandboxProxy) {
+  customElements.whenDefined("sp-dropzone").then(() => {
+    const dropzone = document.getElementById("dropzone");
+    const parseButton = document.getElementById("parseButton");
+    const message = document.getElementById("message");
+    const fileInput = document.getElementById("file-input");
+    const progressCircle = document.getElementById("progress-circle");
+    let input;
+    let beingDraggedOver = false;
+    let markdownContent = null;
+
+    // Hide progress initially
+    if (progressCircle) { progressCircle.style.display = "none" }
+
+    const isMarkdownFile = (file) => {
+      return (
+        file.name.toLowerCase().endsWith(".md") ||
+        file.type === "text/markdown"
+      );
+    };
+
+    const updateMessage = () => {
+      message.heading =
+        input !== undefined
+          ? beingDraggedOver
+            ? "Drop here to replace!"
+            : "Got it!"
+          : "Drag and drop your file";
+    };
+
+    const handleDropOrChange = (event) => {
+      let file;
+
+      // Handle different event sources
+      if (event.type === "drop") {
+        file = event.dataTransfer.files[0];
+      } else if (event.type === "change") {
+        file = event.target.files[0];
+      } else if (event.detail && event.detail.dropEvent) {
+        // Handle sp-dropzone-drop event
+        file = event.detail.dropEvent.dataTransfer.files[0];
+      }
+
+      if (!file) {
+        console.error("No file found in the event");
+        return;
+      }
+
+      if (!isMarkdownFile(file)) {
+        message.heading = "Please drop a markdown (.md) file";
+        return;
+      }
+
+      // Set input to a temporary value to show "Got it!" immediately
+      input = "loading";
+      dropzone.setAttribute("filled", true);
+      beingDraggedOver = false;
+      updateMessage();
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target.result;
+        input = content;
+        markdownContent = content;
+        console.log("Markdown content:", content);
+
+        // Enable parse button now that we have content
+        parseButton.disabled = false;
+
+        // Ensure message is updated after content is loaded
+        updateMessage();
+      };
+      reader.readAsText(file);
+    };
+
+    // Function to parse markdown and insert styled text into the document
+    // To be implemented later...
+    const parseMarkdownAndInsert = async () => {
+      if (!markdownContent) {
+        console.error("No markdown content to parse");
+        return;
+      }
+
+      try {
+        progressCircle.style.display = "block";
+        message.heading = "Processing markdown...";
+        parseButton.disabled = true;
+
+        const ast = await parseMarkdown(markdownContent);
+        console.log("Parsed Markdown AST:", ast);
+
+        message.heading = "AST logged to console!";
+      } catch (error) {
+        console.error("Error during parsing:", error);
+        message.heading = "Error parsing markdown";
+      } finally {
+        progressCircle.style.display = "none";
+        parseButton.disabled = false;
+      }
+    };
+
+    // Event listeners
+    dropzone.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      beingDraggedOver = true;
+      updateMessage();
+    });
+
+    dropzone.addEventListener("dragleave", () => {
+      beingDraggedOver = false;
+      updateMessage();
+    });
+
+    dropzone.addEventListener("drop", (event) => {
+      event.preventDefault();
+      handleDropOrChange(event);
+    });
+
+    // Also listen for the Spectrum Web Component's native event
+    dropzone.addEventListener("sp-dropzone-drop", (event) => {
+      event.preventDefault();
+      handleDropOrChange(event);
+    });
+
+    fileInput.addEventListener("change", (event) => {
+      handleDropOrChange(event);
+    });
+
+    // Parse button click handler
+    parseButton.addEventListener("click", parseMarkdownAndInsert);
+
+    // Initially disable parse button until we have content
+    parseButton.disabled = true;
+  });
+}
+```
+
+Let's walk through the file handling logic in `ui/file-handler.js`:
+
+- The `setupFileHandler` function centralizes all UI interaction logic, and begins by getting references to the necessary DOM elements (dropzone, button, etc.).
+- The `handleFile` function is the workhorse here. It first validates that the dropped file is a Markdown file.
+- It then uses the browser's standard `FileReader` API to read the file's content asynchronously.
+- Once the content is loaded (`reader.onload`), it's stored in a variable, and the "Parse Markdown" button is enabled. The `updateMessage` function is called to update the message to "Got it!"
+- Event listeners are set up for both the Spectrum dropzone's custom `sp-dropzone-drop` event and the standard `change` event on the hidden file input, ensuring both upload methods work.
+
+In `ui/index.js`, instead:
+
+- We import all the necessary Spectrum components that we installed earlier.
+- The `sandboxProxy` is retrieved from the runtime API and passed to `setupFileHandler()`.
 
 ## 3. Parsing Markdown
 
-The next step is to take the raw text from the uploaded file and convert it into a structured format that we can work with. This process is called parsing.
+The next step is to take the raw text from the uploaded file and convert it into a structured format that we can work with.
 
 ### 3.1. Introduction to Parsing and AST
 
-Parsing involves analyzing a string of symbols—in our case, Markdown text—and converting it into a data structure that represents its grammatical structure. This structure is called an **Abstract Syntax Tree (AST)**. An AST is a tree representation of the source code, where each node denotes a construct occurring in the text.
+Parsing involves analyzing a Markdown text as a string and converting it into a data structure called an **Abstract Syntax Tree (AST)**. An AST is a tree representation, where each node denotes a construct occurring in the text.
 
 For example, the Markdown `## Hello` would be parsed into a `heading` node with a `depth` of 2, containing a `text` node with the value "Hello".
 
 We will use two popular libraries for this task:
 
-- **`unified`**: A powerful engine for processing content with plugins.
-- **`remark-parse`**: A `unified` plugin for parsing Markdown into an AST.
+- [`unified`](https://www.npmjs.com/package/unified): A powerful engine for processing content with plugins.
+- [`remark-parse`](https://www.npmjs.com/package/remark-parse): A `unified` plugin for parsing Markdown into an AST.
 
 Let's install them:
 
@@ -393,105 +459,143 @@ npm install unified remark-parse mdast-util-to-string
 
 ### 3.2. Implementing the Parser
 
-Now, let's create the `src/ui/markdown-parser.js` file. This module will be responsible for taking Markdown text and returning an AST.
+Now, let's create the `ui/markdown-parser.js` file. This module will be responsible for taking Markdown text and returning an AST.
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript"/>
+
+#### ui/markdown-parser.js
 
 ```javascript
-// src/ui/markdown-parser.js
-
 import { unified } from "unified";
 import remarkParse from "remark-parse";
+import remarkStringify from "remark-stringify";
 import { toString } from "mdast-util-to-string";
 
-/**
- * Parses markdown content into an AST.
- * @param {string} markdownContent The markdown content to parse.
- * @returns {Promise<object>} The AST representing the markdown content.
- */
+// Parse markdown content into an abstract syntax tree (AST)
 export async function parseMarkdown(markdownContent) {
   try {
+    // Create a unified processor with remark-parse
     const processor = unified().use(remarkParse);
+    // Parse the markdown content into an AST
     const ast = processor.parse(markdownContent);
-    return await processor.run(ast);
+    // Run any transformations needed
+    const result = await processor.run(ast);
+    return result;
   } catch (error) {
-    console.error("Error parsing markdown:", error);
+    console.error("Error parsing markdown in markdown-parser.js:", error);
     throw error;
   }
 }
 
-/**
- * A sophisticated function to get formatted text from the entire AST,
- * preserving paragraph breaks.
- * @param {object} ast The root of the AST.
- * @returns {string} The formatted text.
- */
+// Clean a text string for better text flow
+function cleanText(text) {
+  // Replace multiple consecutive spaces, tabs, and newlines with a single space
+  return text.replace(/\s+/g, " ").trim();
+}
+
+// Get properly formatted text from the AST
 export function getFormattedText(ast) {
   let text = "";
-  ast.children.forEach((node, index) => {
-    text += toString(node);
-    // Add line breaks between block-level elements
-    if (index < ast.children.length - 1) {
-      if (["paragraph", "heading", "list"].includes(node.type)) {
-        text += "\n\n";
-      }
+
+  // Process nodes to create proper paragraph breaks
+  const processNode = (node) => {
+    if (!node) return "";
+
+    if (node.type === "root") {
+      // Process each child node
+      node.children.forEach((child, index) => {
+        const childText = processNode(child);
+        text += childText;
+        // Add paragraph breaks between block elements
+        if (
+          index < node.children.length - 1 &&
+          ["paragraph", "heading", "list"].includes(child.type)
+        ) { text += "\n\n" }
+      });
+      return text;
     }
-  });
-  return text;
+
+    // Handle specific node types
+    switch (node.type) {
+      case "paragraph":
+        return cleanText(toString(node));
+
+      case "heading":
+        return cleanText(toString(node));
+
+      case "list":
+        let listText = "";
+        node.children.forEach((item, index) => {
+          // const marker = node.ordered ? `${index + 1}. ` : "• ";
+          const itemText = cleanText(toString(item));
+          // listText += marker + itemText;
+          listText += itemText;
+          if (index < node.children.length - 1) { listText += "\n" }
+        });
+        return listText;
+
+      default:
+        // For other node types, just return the text
+        return cleanText(toString(node));
+    }
+  };
+  return processNode(ast);
 }
+
+// Convert AST back to markdown string (for testing/debugging)
+export async function astToMarkdown(ast) {
+  try {
+    const processor = unified().use(remarkStringify);
+
+    const result = processor.stringify(ast);
+    return result;
+  } catch (error) {
+    console.error("Error converting AST to markdown:", error);
+    throw error;
+  }
+}
+
+// Extract plain text from the AST
+export function extractTextFromAst(ast) { return toString(ast) }
+
+// Process markdown by parsing to AST and transforming for Adobe Express
+export async function processMarkdown(markdownContent) {
+  const ast = await parseMarkdown(markdownContent);
+
+  // Extract all headings for potential TOC
+  const headings = [];
+  const processNode = (node) => {
+    if (node.type === "heading") {
+      headings.push({
+        depth: node.depth,
+        text: toString(node),
+        children: node.children,
+      });
+    }
+    if (node.children) { node.children.forEach(processNode) }
+  };
+  processNode(ast);
+
+  // Get both formatted text (with proper paragraphs) and raw text
+  const formattedText = getFormattedText(ast);
+
+  return { ast, headings, plainText: formattedText, formattedText };
+}
+
 ```
 
 Here's what our parser module does:
 
-- The `parseMarkdown` function uses the `unified` library to create a processing pipeline.
-- It plugs in `remark-parse` to handle the Markdown-to-AST conversion.
-- The `getFormattedText` helper function is crucial. It converts the AST back into a single string, but with strategic formatting.
-- It uses `toString` from the `mdast-util-to-string` library to extract text from nodes.
-- Most importantly, it adds double line breaks (`\n\n`) between block-level elements (like paragraphs and headings). This ensures that our plain text string has the correct structure before we apply styles, which is a key part of our styling strategy.
+- **Parses Markdown into a Data Structure**: At its core, the module takes the raw Markdown text from the uploaded file and uses the `unified` and `remark-parse` libraries to transform it into an Abstract Syntax Tree (AST). An AST is an organized, tree-like representation of the document's structure (headings, lists, bold text, etc.).
+- **Creates a Specially Formatted Text String**: It then traverses the AST to generate a single, continuous string of text. This isn't just plain text; the `getFormattedText` function strategically inserts double newlines (`\n\n`) between major elements like paragraphs and headings.
+- **Prepares Text for Styling**: This special formatting is key to our strategy. The single string with calculated newlines serves as the canvas upon which we'll apply styles. The newlines ensure that when the text is placed in Adobe Express, paragraphs are correctly separated. We will later use this string to calculate the exact character positions for applying styles like bold, italics, or heading sizes.
+- **Exports Key Information**: The main function, `processMarkdown`, bundles up the AST and the formatted text string, making them available to the other parts of our add-on.
 
 ### 3.3. Integrating the Parser
 
-Let's update our `file-handler.js` to use this new parser. We'll modify the `parseMarkdownAndInsert` function to parse the content and log the resulting AST to the console.
+Now that we have a module capable of turning Markdown text into an Abstract Syntax Tree (AST), the next logical step is to connect it to our UI. However, before we can render the styled text, we need two more pieces: a formatter to create styling instructions from the AST, and a sandbox module to apply those instructions.
 
-```javascript
-// src/ui/file-handler.js
-
-import { parseMarkdown } from "./markdown-parser.js";
-// ... other imports
-
-// ... inside setupFileHandler
-
-const parseMarkdownAndInsert = async () => {
-  if (!markdownContent) {
-    console.error("No markdown content to parse");
-    return;
-  }
-
-  try {
-    progressCircle.style.display = "block";
-    message.heading = "Processing markdown...";
-    parseButton.disabled = true;
-
-    const ast = await parseMarkdown(markdownContent);
-    console.log("Parsed Markdown AST:", ast);
-
-    message.heading = "AST logged to console!";
-  } catch (error) {
-    console.error("Error during parsing:", error);
-    message.heading = "Error parsing markdown";
-  } finally {
-    progressCircle.style.display = "none";
-    parseButton.disabled = false;
-  }
-};
-
-// ... rest of the file
-```
-
-Why is this step important?
-
-- This step connects the UI interaction (button click) to our new parsing logic.
-- When the "Parse Markdown" button is clicked, the stored `markdownContent` is passed to the `parseMarkdown` function.
-- The resulting AST is then logged to the console.
-- This is a critical checkpoint in the development process. It allows you to verify that the parsing is working correctly by inspecting the AST for different Markdown inputs, which is an essential debugging practice.
+We will integrate all the pieces and write the final logic for the `parseMarkdownAndInsert` function in **Section 4.4: Putting It All Together**. For now, we have successfully created the core parsing logic for our add-on.
 
 ## 4. Integrating with the Adobe Express Text API
 
@@ -508,100 +612,165 @@ Our overall strategy is as follows:
 
 ### 4.2. The Formatter: Generating Style Ranges
 
-The `src/ui/adobe-express-formatter.js` module is responsible for the second step: traversing the AST and generating style ranges.
+The new `ui/adobe-express-formatter.js` module is responsible for the second step: traversing the AST and generating style ranges.
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript"/>
+
+#### ui/adobe-express-formatter.js
 
 ```javascript
-// src/ui/adobe-express-formatter.js
+import { getFormattedText, extractTextFromAst } from "./markdown-parser.js";
 
-import { getFormattedText } from "./markdown-parser.js";
-
-/**
- * Traverses the AST to generate an array of style ranges.
- * @param {object} ast The root AST node.
- * @returns {object} An object containing the plainText and the array of styleRanges.
- */
-export function createExpressStylingFromAST(ast) {
-  const plainText = getFormattedText(ast);
-  const styleRanges = [];
+// Creates a mapping of text ranges and their styling commands for Adobe Express
+function processNodeForStyling(ast, styleRanges) {
   let offset = 0;
 
   const traverse = (node) => {
     if (!node) return;
 
     const startOffset = offset;
+    // Helper function to process styled nodes with common pattern
+    const processStyledNode = (node, styleType, styleProps = {}) => {
+      const rangeStart = offset;
+      node.children.forEach(traverse);
+      const rangeEnd = offset;
+
+      styleRanges.push({
+        start: rangeStart,  end: rangeEnd,
+        style: { type: styleType, ...styleProps },
+      });
+    };
 
     switch (node.type) {
-      case "heading":
-        node.children.forEach(traverse);
-        styleRanges.push({
-          start: startOffset,
-          end: offset,
-          style: { type: "heading", level: node.depth },
-        });
-        break;
-      case "strong":
-        node.children.forEach(traverse);
-        styleRanges.push({
-          start: startOffset,
-          end: offset,
-          style: { type: "strong" },
-        });
-        break;
-      case "emphasis":
-        node.children.forEach(traverse);
-        styleRanges.push({
-          start: startOffset,
-          end: offset,
-          style: { type: "emphasis" },
-        });
-        break;
-      case "inlineCode":
-        offset += node.value.length;
-        styleRanges.push({
-          start: startOffset,
-          end: offset,
-          style: { type: "code" },
-        });
-        break;
-      case "list":
-        node.children.forEach((item, index) => {
-          const itemStart = offset;
-          item.children.forEach(traverse);
-          styleRanges.push({
-            start: itemStart,
-            end: offset,
-            style: { type: "list-item", ordered: node.ordered },
-          });
-          if (index < node.children.length - 1) {
-            offset += 1; // For the newline character between list items
-          }
-        });
-        break;
-      case "paragraph":
-        node.children.forEach(traverse);
-        break;
-      case "text":
-        offset += node.value.length;
-        break;
       case "root":
         node.children.forEach((child, index) => {
           traverse(child);
-          if (index < node.children.length - 1) {
-            if (["paragraph", "heading", "list"].includes(child.type)) {
-              offset += 2; // For the \n\n between blocks
-            }
+          if (
+            index < node.children.length - 1 &&
+            ["paragraph", "heading", "list"].includes(child.type)
+          ) {
+            offset += 2; // \n\n between blocks
           }
         });
         break;
+
+      case "paragraph":
+        node.children.forEach(traverse);
+        break;
+
+      case "heading":
+        processStyledNode(node, "heading", { level: node.depth });
+        break;
+
+      case "text":
+        offset += node.value.length;
+        break;
+
+      case "emphasis":
+        processStyledNode(node, "emphasis", { italic: true });
+        break;
+
+      case "strong":
+        processStyledNode(node, "strong", { bold: true });
+        break;
+
+      // example AST traversal logic for lists:
+      case "list":
+        const listStart = offset;
+        node.children.forEach((item, index) => {
+          item.children.forEach(traverse);
+          if (index < node.children.length - 1) offset += 1; // newline between items
+        });
+
+        styleRanges.push({
+          start: listStart, end: offset,
+          style: { type: "list", ordered: node.ordered },
+        });
+        break;
+
+      case "inlineCode":
+        offset += node.value.length;
+        styleRanges.push({
+          start: startOffset, end: offset,
+          style: { type: "code", isInline: true },
+        });
+        break;
+
       default:
         if (node.children) node.children.forEach(traverse);
         break;
     }
   };
-
   traverse(ast);
+}
 
-  return { plainText, styleRanges };
+// Create Adobe Express text styling instructions from a markdown AST
+export function createExpressStylingFromAST(ast) {
+  // Extract the full text from the AST
+  const plainText = getFormattedText(ast);
+  const styleRanges = [];
+
+  // Process the AST to generate style ranges
+  processNodeForStyling(ast, styleRanges, plainText);
+
+  return { plainText, styleRanges }
+}
+
+// Helper function to print out style ranges for debugging
+export function debugStyleRanges(text, styleRanges) {
+  console.log("---- Style Ranges Debug ----");
+  styleRanges.forEach((range, index) => {
+    const snippet = text.substring(range.start, range.end);
+    console.log(
+      `Range ${index}: ${range.start}-${range.end} (${range.style.type})`
+    );
+    console.log(`Text: "${snippet}"`);
+    console.log("Style:", range.style);
+    console.log("-----");
+  });
+}
+
+// Helper function to apply Adobe Express text styling
+export async function applyExpressTextStyling(sandboxProxy, text, styleRanges) {
+  try {
+    // First create a text node with the plain text
+    const textNode = await sandboxProxy.createTextNode(text);
+
+    // Then apply styling to the text node
+    for (const range of styleRanges) {
+      switch (range.style.type) {
+        case "heading":
+          await sandboxProxy.applyHeadingStyle(
+            textNode, range.start, range.end, range.style.level
+          );
+          break;
+
+        case "emphasis":
+          await sandboxProxy.applyTextStyle(
+            textNode, range.start, range.end, { italic: true }
+          );
+          break;
+
+        case "strong":
+          await sandboxProxy.applyTextStyle(
+            textNode, range.start, range.end, { bold: true }
+          );
+          break;
+
+        case "link":
+          await sandboxProxy.applyLinkStyle(
+            textNode, range.start, range.end, range.style.url
+          );
+          break;
+
+        // You can add cases for other styles here...
+      }
+    }
+    return textNode;
+  } catch (error) {
+    console.error("Error applying Express text styling:", error);
+    throw error;
+  }
 }
 ```
 
@@ -616,12 +785,13 @@ Let's unpack this formatter, which is the most intricate part of our UI-side log
 
 ### 4.3. The Sandbox: Applying the Styles
 
-Now, let's implement the final piece in `src/sandbox/code.js`. This script will receive the text and style ranges and use the Text API to perform the magic. We'll also define our styling rules in `src/documentSandbox/constants.js`.
+Now, let's implement the final piece in `src/sandbox/code.js`. This script will receive the text and style ranges and use the Text API to perform the magic. We'll also define our styling rules in `sandbox/constants.js` which allows to easily change the visual output (fonts, sizes, spacing) of the parsed Markdown without having to search through the application logic.
 
-#### constants.js
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript"/>
+
+#### sandbox/constants.js
 
 ```javascript
-// src/documentSandbox/constants.js
 export const MD_CONSTANTS = {
   FONTS: {
     HEADING: "SourceSans3-Bold",
@@ -637,130 +807,236 @@ export const MD_CONSTANTS = {
     LINE_SPACING: 1.5,
     PARAGRAPH_SPACE_AFTER: 8,
   },
-  DEBUG: true,
+  DEBUG: false,
 };
 ```
 
-Why use a constants file?
-
-- Centralizing values in a `constants.js` file is a best practice for maintainability.
-- It allows you to easily change the visual output (fonts, sizes, spacing) of the parsed Markdown without having to search through the application logic.
-- Here, we've defined our desired fonts for different styles, font sizes for headings, and default layout properties.
-
-#### code.js
+#### sandbox/code.js
 
 ```javascript
-// src/sandbox/code.js
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 import { editor, fonts, constants } from "express-document-sdk";
 import { MD_CONSTANTS } from "./constants.js";
 
 const { runtime } = addOnSandboxSdk.instance;
+const DEBUG_STYLES = MD_CONSTANTS.DEBUG;
 
+// Returns the font size for a specific markdown heading level
+function getFontSizeForHeadingLevel(level) {
+  return (
+    MD_CONSTANTS.HEADING_SIZES[level] ||
+    MD_CONSTANTS.HEADING_SIZES.DEFAULT
+  );
+}
+
+// Initializes the document sandbox functionality
 function start() {
+  // Cache loaded fonts to avoid reloading them
   const fontCache = new Map();
 
+  // Preloads and caches fonts by their postscript names
   async function preloadFonts(postscriptNames) {
     await Promise.all(
       postscriptNames.map(async (psName) => {
-        if (fontCache.has(psName)) return;
         const font = await fonts.fromPostscriptName(psName);
-        if (font) fontCache.set(psName, font);
+        if (font) { fontCache.set(psName, font) }
+        else { console.warn(`Font ${psName} couldn't be loaded.`) }
       })
     );
   }
 
+  // APIs to be exposed to the UI runtime
   const docApi = {
-    async createStyledTextFromMarkdown(plainText, styleRanges) {
+    // Creates a text node in the current document
+    createTextNode: (text) => {
       try {
-        const textNode = editor.createText();
-        textNode.text = plainText;
+        // Find the current page
+        let currentNode = editor.context.insertionParent;
+        let page = null;
+        while (currentNode) {
+          if (currentNode.type === "Page") {
+            page = currentNode; break;
+          }
+          currentNode = currentNode.parent;
+        }
 
-        const artboard = editor.context.insertionParent.artboards.first;
+        // Create a new text node
+        const textNode = editor.createText(text);
+        console.log("textNode created", text);
+
+        // Set the text content
+        textNode.textAlignment = constants.TextAlignment.left;
+        const artboard = page.artboards.first;
+        textNode.layout = {
+          type: constants.TextLayout.autoHeight,
+          width: artboard.width - MD_CONSTANTS.LAYOUT.MARGIN_WIDTH,
+        };
+        console.log("textNode layout", textNode.layout);
+
+        // Position the text at the top-left corner and fill the page width
+        textNode.setPositionInParent(
+          { x: MD_CONSTANTS.LAYOUT.MARGIN, y: MD_CONSTANTS.LAYOUT.MARGIN },
+          { x: 0, y: 0 }
+        );
+
+        console.log("textNode setPositionInParent");
+
+        // Apply default character styles
+        textNode.fullContent.applyCharacterStyles({
+          fontSize: MD_CONSTANTS.LAYOUT.DEFAULT_FONT_SIZE,
+        });
+        console.log("textNode applyCharacterStyles");
+
+        // Add to document
         artboard.children.append(textNode);
+        console.log("textNode added to the artboard", textNode);
+        return textNode;
 
+      } catch (error) {
+        console.error("Error creating text node:", error);
+        throw error;
+      }
+    },
+
+    // Creates a styled text node from markdown content
+    createStyledTextFromMarkdown: async (markdownText, styleRanges) => {
+      try {
+        // Create text node first (this is allowed synchronously)
+        const textNode = docApi.createTextNode(markdownText);
+
+        // Preload fonts we'll need for styling
         await preloadFonts([
-          MD_CONSTANTS.FONTS.HEADING,
-          MD_CONSTANTS.FONTS.EMPHASIS,
-          MD_CONSTANTS.FONTS.STRONG,
-          MD_CONSTANTS.FONTS.CODE,
-          MD_CONSTANTS.FONTS.REGULAR,
+          MD_STYLES.FONTS.HEADING, MD_STYLES.FONTS.EMPHASIS,
+          MD_STYLES.FONTS.REGULAR, MD_STYLES.FONTS.CODE,
         ]);
 
-        await editor.queueAsyncEdit(() => {
-          textNode.fullContent.applyCharacterStyles(
-            {
-              font: fontCache.get(MD_CONSTANTS.FONTS.REGULAR),
-              fontSize: MD_CONSTANTS.LAYOUT.DEFAULT_FONT_SIZE,
-            },
-            { start: 0, length: plainText.length }
-          );
-          textNode.fullContent.applyParagraphStyles(
-            {
-              lineSpacing: MD_CONSTANTS.LAYOUT.LINE_SPACING,
-              spaceAfter: MD_CONSTANTS.LAYOUT.PARAGRAPH_SPACE_AFTER,
-            },
-            { start: 0, length: plainText.length }
-          );
+        // Get cached fonts
+        const headingFont = fontCache.get(MD_STYLES.FONTS.HEADING);
+        const italicFont = fontCache.get(MD_STYLES.FONTS.EMPHASIS);
+        const boldFont = fontCache.get(MD_STYLES.FONTS.STRONG);
+        const monospaceFont = fontCache.get(MD_STYLES.FONTS.CODE);
 
+        // Now queue all style edits together for better performance
+        await editor.queueAsyncEdit(async () => {
           for (const range of styleRanges) {
-            const styleProps = {};
-            const paraProps = {};
-            const rangeLength = range.end - range.start;
-
-            switch (range.style.type) {
-              case "heading":
-                styleProps.font = fontCache.get(MD_CONSTANTS.FONTS.HEADING);
-                styleProps.fontSize =
-                  MD_CONSTANTS.HEADING_SIZES[range.style.level] ||
-                  MD_CONSTANTS.HEADING_SIZES.DEFAULT;
-                break;
-              case "strong":
-                styleProps.font = fontCache.get(MD_CONSTANTS.FONTS.STRONG);
-                break;
-              case "emphasis":
-                styleProps.font = fontCache.get(MD_CONSTANTS.FONTS.EMPHASIS);
-                break;
-              case "code":
-                styleProps.font = fontCache.get(MD_CONSTANTS.FONTS.CODE);
-                break;
-              case "list-item":
-                paraProps.indentation = 20;
-                break;
+            if (DEBUG_STYLES) {
+              console.log(`Applying ${range.style.type} style:`, range);
             }
-
-            if (Object.keys(styleProps).length > 0) {
-              textNode.fullContent.applyCharacterStyles(styleProps, {
-                start: range.start,
-                length: rangeLength,
-              });
+            // Apply different styles based on the type
+            if (range.style.type === "list") {
+              docApi.applyListStyle(
+                textNode, range.start, range.end, range.style.ordered
+              );
+            } else if (range.style.type === "heading") {
+              if (DEBUG_STYLES) {
+                console.log(
+                  "Applying heading style for level:", range.style.level
+                );
+              }
+              // Apply heading styles
+              textNode.fullContent.applyCharacterStyles(
+                {
+                  font: headingFont,
+                  fontSize: getFontSizeForHeadingLevel(range.style.level),
+                },
+                { start: range.start, length: range.end - range.start }
+              );
+              if (DEBUG_STYLES) {
+                console.log("Applied heading style:", range.style.level);
+              }
+            } else if (range.style.type === "emphasis") {
+              if (DEBUG_STYLES) {
+                console.log("Applying emphasis style");
+              }
+              // Apply italic style
+              textNode.fullContent.applyCharacterStyles(
+                { font: italicFont },
+                { start: range.start, length: range.end - range.start }
+              );
+              if (DEBUG_STYLES) {
+                console.log("Applied emphasis style");
+              }
+            } else if (range.style.type === "strong") {
+              if (DEBUG_STYLES) {
+                console.log("Applying strong style");
+              }
+              // Apply bold style
+              textNode.fullContent.applyCharacterStyles(
+                { font: boldFont },
+                { start: range.start, length: range.end - range.start }
+              );
+              if (DEBUG_STYLES) {
+                console.log("Applied strong style");
+              }
+            } else if (range.style.type === "code") {
+              if (DEBUG_STYLES) {
+                console.log("Applying code style");
+              }
+              // Apply monospace font for code
+              textNode.fullContent.applyCharacterStyles(
+                { font: monospaceFont },
+                { start: range.start, length: range.end - range.start }
+              );
+              if (DEBUG_STYLES) {
+                console.log("Applied code style");
+              }
             }
-            if (Object.keys(paraProps).length > 0) {
-              textNode.fullContent.applyParagraphStyles(paraProps, {
-                start: range.start,
-                length: rangeLength,
-              });
-            }
+            // Add any additional styles here...
           }
+          console.log("All styles applied");
         });
-        console.log("Successfully created styled text from Markdown.");
-      } catch (e) {
-        console.error("Error creating styled text:", e);
+        return textNode;
+      } catch (error) {
+        console.error("Error creating styled text from markdown:", error);
+        throw error;
+      }
+    },
+
+    // Applies ordered or unordered list styles to a text range
+    applyListStyle: (textNode, start, end, ordered) => {
+      try {
+        const listType = ordered
+          ? constants.ParagraphListType.ordered
+          : constants.ParagraphListType.unordered;
+
+        textNode.fullContent.applyParagraphStyles(
+          {
+            list: {
+              type: listType,
+              numbering: ordered
+                ? constants.OrderedListNumbering.numeric
+                : undefined,
+              prefix: ordered
+                ? MD_STYLES.LIST.ORDERED_PREFIX
+                : MD_STYLES.LIST.UNORDERED_PREFIX,
+              postfix: ordered
+                ? MD_STYLES.LIST.ORDERED_POSTFIX
+                : MD_STYLES.LIST.UNORDERED_POSTFIX,
+              indentLevel: MD_STYLES.LIST.DEFAULT_INDENT,
+            },
+            spaceBefore: MD_STYLES.LAYOUT.PARAGRAPH_SPACE_BEFORE,
+            spaceAfter: MD_STYLES.LAYOUT.PARAGRAPH_SPACE_AFTER,
+            lineSpacing: MD_STYLES.LAYOUT.LINE_SPACING,
+          },
+          { start, length: end - start }
+        );
+      } catch (error) {
+        console.error("Error applying list style:", error);
+        throw error;
       }
     },
   };
   runtime.exposeApi(docApi);
 }
-
 start();
 ```
 
-This sandbox code is where the visual transformation happens. Here are the key points:
+This `sandbox/code.js` is where the visual transformation happens. Here are the key points:
 
 - The `createStyledTextFromMarkdown` function receives the plain text and style ranges from the UI.
 - It first creates a single `TextNode` with the entire plain text content and adds it to the document.
 - **Performance Tip 1: Font Caching.** The `preloadFonts` function and `fontCache` map are used to load all necessary fonts at once and store them. This avoids making multiple, slow requests for the same font.
-- **Performance Tip 2: Batch Editing.** `editor.queueAsyncEdit()` is a crucial performance optimization. It groups all the individual styling calls into a single operation, preventing UI flickering and improving speed.
+- **Safe Asynchronous Edits.** `editor.queueAsyncEdit()` is essential for making changes to the document _after_ an asynchronous operation (like `preloadFonts`). The Add-on SDK requires that any edits following a pause for an `await` be wrapped in `queueAsyncEdit()`. This ensures that all changes are correctly tracked for the application's save and undo history. While this also has the benefit of batching multiple edits into a single, efficient operation, its primary role here is to guarantee document stability.
 - Inside the queue, a base style is applied to the entire text block first. Then, the code iterates through the `styleRanges` array, applying each specific character or paragraph style to the correct portion of the text.
 
 ### 4.4. Putting It All Together
