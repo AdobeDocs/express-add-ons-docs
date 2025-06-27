@@ -66,7 +66,7 @@ The text is created with the default styles (Source Sans 3, 100pt, black). Use `
 
 <InlineAlert slots="header, text1, text2, text3" variant="info"/>
 
-Text Classes
+**Text Classes**
 
 Adobe Express supports two types of text nodes, both extending the Abstract [`TextNode`](../../../references/document-sandbox/document-apis/classes/text-node.md) class:
 
