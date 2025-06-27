@@ -41,7 +41,7 @@ Join our virtual conference to learn about Adobe Express & Creative Cloud
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting-started/code-playground.md) and start tinkering with the API right away.
 
-<Text slots="image, heading, text, text1" width="50%"/>
+<Columns slots="image, heading, text, links" variant="vertical" repeat ="4"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
 
@@ -49,9 +49,7 @@ Ready to build your own add-on? Check out the Developer Journey to get started, 
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-[Find inspiration →](./getting-started/developer-journey.md#discover)
-
-<Text slots="image, heading, text, text1" width="50%"/>
+- [Find inspiration →](./getting-started/developer-journey.md#discover)
 
 ![Learn](./getting_started/img/devjourney-2-learn.png)
 
@@ -59,9 +57,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 Familiarize and experiment with powerful features in our Code Playground.
 
-[Dive deeper →](./getting-started/developer-journey.md#learn)
-
-<Text slots="image, heading, text, text1" width="50%" />
+- [Dive deeper →](./getting-started/developer-journey.md#learn)
 
 ![Develop](./getting_started/img/devjourney-3-develop.png)
 
@@ -69,9 +65,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 Transform your ideas into a polished product following our best practices.
 
-[Start building →](./getting-started/developer-journey.md#develop)
-
-<Text slots="image, heading, text, text1" width="50%" />
+- [Start building →](./getting-started/developer-journey.md#develop)
 
 ![Distribute](./getting_started/img/devjourney-4-distribute.png)
 
@@ -79,7 +73,7 @@ Transform your ideas into a polished product following our best practices.
 
 Share your add-on with the world in the Adobe Express Marketplace.
 
-[Launch now →](./getting-started/developer-journey.md#distribute)
+- [Launch now →](./getting-started/developer-journey.md#distribute)
 
 <Embed slots="video" />
 
