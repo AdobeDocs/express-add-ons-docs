@@ -370,7 +370,7 @@ Changes the height to the given value and the width to the given height multipli
 
 `void`
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToWidth()
 
@@ -390,7 +390,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 `void`
 
----
+<HorizontalLine />
 
 ### resizeToCover()
 
@@ -414,7 +414,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 `void`
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 
@@ -438,7 +438,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 `void`
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 

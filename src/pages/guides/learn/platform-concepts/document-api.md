@@ -471,7 +471,7 @@ As live objects, setting all the properties before or after appending the line t
 
 ### Adding the text
 
-Next up, you need to add the text. The `Editor` class provides a [`createText()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createtext) method, which expects a string parameter and returns a [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/standalone-text-node.md) instance. Please note that passing a number as a parameter will throw an error—hence the use of `.toString()` below.
+Next up, you need to add the text. The `Editor` class provides a [`createText()`](../../../references/document-sandbox/document-apis/classes/editor.md#createtext) method, which expects a string parameter and returns a [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/standalone-text-node.md) instance. Please note that passing a number as a parameter will throw an error—hence the use of `.toString()` below.
 
 ```js
 // ...

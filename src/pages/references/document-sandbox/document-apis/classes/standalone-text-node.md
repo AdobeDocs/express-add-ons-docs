@@ -5,7 +5,7 @@
 A StandaloneTextNode represents a text display frame in the scenegraph. It displays an entire piece of text.
 The StandaloneTextNode does not directly hold the text content and styles – instead it refers to a [TextContentModel](TextContentModel.md).
 
-To create new a single-frame piece of text, see [Editor.createText](Editor.md#createtext).
+To create new a single-frame piece of text, see [Editor.createText](editor.md#createtext).
 
 ## Extends
 

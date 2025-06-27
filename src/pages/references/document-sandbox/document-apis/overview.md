@@ -33,7 +33,7 @@
 -   [ColorUtils](classes/ColorUtils.md)
 -   [ComplexShapeNode](classes/ComplexShapeNode.md)
 -   [Context](classes/Context.md)
--   [Editor](classes/Editor.md)
+-   [Editor](classes/editor.md)
 -   [EllipseNode](classes/EllipseNode.md)
 -   [ExpressRootNode](classes/ExpressRootNode.md)
 -   [FillableNode](classes/FillableNode.md)
