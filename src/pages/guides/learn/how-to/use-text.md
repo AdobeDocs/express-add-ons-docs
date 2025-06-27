@@ -37,7 +37,7 @@ Text is an essential part of any design. Let's explore how to use all the availa
 
 ## Create Text
 
-The `editor.createText()` method accepts a string as a parameter, and returns a brand new [`TextNode`](../../../references/document-sandbox/document-apis/classes/text-node.md). The actual textual content is found in its [`fullContent.text`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#text) property.
+The `editor.createText()` method accepts a string as a parameter, and returns a brand new [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/standalone-text-node.md). The actual textual content is found in its [`fullContent.text`](../../../references/document-sandbox/document-apis/classes/text-content-model.md#text) property.
 
 ### Example
 
@@ -63,6 +63,17 @@ console.log("Text: ", textNode.fullContent.text);
 ```
 
 The text is created with the default styles (Source Sans 3, 100pt, black). Use `\n` or `\r` to add a line break.
+
+<InlineAlert slots="header, text1, text2, text3" variant="info"/>
+
+Text Classes
+
+Adobe Express supports two types of text nodes, both extending the Abstract [`TextNode`](../../../references/document-sandbox/document-apis/classes/text-node.md) class:
+
+- [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/standalone-text-node.md): A self-contained text node.
+- [`ThreadedTextNode`](../../../references/document-sandbox/document-apis/classes/threaded-text-node.md): A text node that is part of a text flow, whose content may span multiple frames.
+
+The `editor.createText()` method returns a `StandaloneTextNode` by default; for the time being, it's not possible to create a `ThreadedTextNode` using this method.
 
 ## Replace Text
 
