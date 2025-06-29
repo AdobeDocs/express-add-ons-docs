@@ -228,5 +228,18 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
         </ul>
     </td>
 </tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>SupportedMimeTypes</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Mime type of the source asset</p>
+        <ul>
+          <li><strong>docx</strong></li>Microsoft Word document mime type
+          <li><strong>gdoc</strong></li>Google document mime type          
+        </ul>
+    </td>
+</tr>
 </tbody>
 </table>
+
+
