@@ -128,6 +128,10 @@
         "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point"
     },
     {
+        "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/Point",
+        "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point"
+    },
+    {
         "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point-text-layout/",
         "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point-text-layout"
     },
