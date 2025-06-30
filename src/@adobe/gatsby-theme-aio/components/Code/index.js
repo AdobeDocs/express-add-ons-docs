@@ -67,136 +67,18 @@ const copy = (textarea, document, setIsTooltipOpen) => {
 
 const handleTry = (codeContent) => {
   try {
-    // const code = btoa(JSON.stringify(codeContent));
     const playgroundData = {
       scriptContent: codeContent,
       mode: "script",
     };
-    const url = new URL("https://localhost.adobe.com:8080/new");
-    // const url = new URL("https://168534.prenv.projectx.corp.adobe.com/new");
+    const url = new URL("https://168534.prenv.projectx.corp.adobe.com/new");
     url.searchParams.set("mode", "playground");
     url.searchParams.set("session", "new");
-    // url.searchParams.set("code", code);
-    // url.searchParams.set("playgroundMode", "script");
     url.searchParams.set(
       "playgroundData",
       btoa(JSON.stringify(playgroundData))
     );
     window.open(url.toString(), "_blank");
-
-    // const playgroundData = {
-    //   scriptContent: codeContent,
-    //   mode: "script",
-    // };
-    // const encoded = btoa(JSON.stringify(playgroundData));
-    // console.log("encoded", encoded);
-    //     const files = [
-    //       {
-    //         name: "index.html",
-    //         content: `<!DOCTYPE html>
-    // <html lang="en">
-    //     <head>
-    //         <meta charset="UTF-8" />
-    //         <meta name="description" content="Get started with Add-on development using JavaScript" />
-    //         <meta name="keywords" content="Adobe, Express, Add-On, JavaScript" />
-    //         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    //         <title>Get Started</title>
-    //     </head>
-    //     <body>
-    //         <div class="container">
-    //             <button id="createRectangle" disabled>Create Rectangle</button>
-    //         </div>
-    //     </body>
-    // </html>
-    // `,
-    //       },
-    //       {
-    //         name: "style.css",
-    //         content: `.container {
-    //     margin: 24px;
-    //     display: flex;
-    //     flex-direction: column;
-    // }
-
-    // button {
-    //     background-color: rgb(82, 88, 228);
-    //     border-color: rgb(82, 88, 228);
-    //     border-radius: 16px;
-    //     border-style: solid;
-    //     color: rgb(255, 255, 255);
-    //     font-family: sans-serif;
-    //     height: 32px;
-    // }
-
-    // button:disabled {
-    //     background-color: rgb(177, 177, 177);
-    //     border-color: rgb(177, 177, 177);
-    // }
-
-    // button:not([disabled]):hover {
-    //     background-color: rgb(64, 70, 202);
-    //     cursor: pointer;
-    // }`,
-    //       },
-    //       {
-    //         name: "index.js",
-    //         content: `import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-
-    // addOnUISdk.ready.then(async () => {
-    //     console.log("addOnUISdk is ready for use.");
-    //     // Get the UI runtime.
-    //     const { runtime } = addOnUISdk.instance;
-    //     // Get the proxy object, which is required
-    //     // to call the APIs defined in the Script runtime
-    //     // i.e., in the code.js file of this add-on.
-    //     const scriptApi = await runtime.apiProxy("documentSandbox");
-    //     const createRectangleButton = document.getElementById("createRectangle");
-    //     createRectangleButton.addEventListener("click", async event => {
-    //         await scriptApi.createRectangle();
-    //     });
-    //     // Enable the button only when:
-    //     // 1. addOnUISdk is ready,
-    //     // 2. scriptApi is available, and
-    //     // 3. click event listener is registered.
-    //     createRectangleButton.disabled = false;
-    // });`,
-    //       },
-    //       {
-    //         name: "code.js",
-    //         content: `import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-    // import { editor } from "express-document-sdk";
-    // // Get the document sandbox runtime.
-    // const { runtime } = addOnSandboxSdk.instance;
-    // function start() {
-    //     // APIs to be exposed to the UI runtime
-    //     // i.e., to the index.html file of this add-on.
-    //     const sandboxApi = {
-    //         createRectangle: () => {
-    //             const rectangle = editor.createRectangle();
-    //             // Define rectangle dimensions.
-    //             rectangle.width = 240;
-    //             rectangle.height = 180;
-    //             // Define rectangle position.
-    //             rectangle.translation = { x: 10, y: 10 };
-    //             // Define rectangle color.
-    //             const color = { red: 0.32, green: 0.34, blue: 0.89, alpha: 1 };
-    //             // Fill the rectangle with the color.
-    //             const rectangleFill = editor.makeColorFill(color);
-    //             rectangle.fill = rectangleFill;
-    //             // Add the rectangle to the document.
-    //             const insertionParent = editor.context.insertionParent;
-    //             insertionParent.children.append(rectangle);
-    //         }
-    //     };
-    //     // Expose sandboxApi to the UI runtime.
-    //     runtime.exposeApi(sandboxApi);
-    // }
-    // start();`,
-    //       },
-    //     ];
-
-    //     const encoded = btoa(JSON.stringify(files));
-    //     console.log("encoded", encoded);
   } catch (error) {
     console.error("Error in Try button:", error);
   }
