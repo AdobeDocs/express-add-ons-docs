@@ -176,7 +176,7 @@ if [StandaloneTextNode](standalone-text-node.md) is not a part of a multi-frame 
 
 #### Parameters
 
-• **layout**: [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md)
+• **layout**: [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md)
 
 #### Returns
 
