@@ -897,15 +897,15 @@
     },
     {
         "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview",
-        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview"
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview"
     },
     {
         "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type",
-        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type"
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type"
     },
     {
         "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering",
-        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering"
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering"
     },
     {
         "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Editor",
