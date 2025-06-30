@@ -90,7 +90,7 @@
                 - [ParagraphStylesInput](references/document-sandbox/document-apis/interfaces/paragraph-styles-input.md) 
                 - [ParagraphStylesRange](references/document-sandbox/document-apis/interfaces/paragraph-styles-range.md) 
                 - [ParagraphStylesRangeInput](references/document-sandbox/document-apis/interfaces/paragraph-styles-range-input.md) 
-                - [Point](references/document-sandbox/document-apis/interfaces/Point.md) 
+                - [Point](references/document-sandbox/document-apis/interfaces/point.md) 
                 - [Rect](references/document-sandbox/document-apis/interfaces/rect.md) 
                 - [RectangleGeometry](references/document-sandbox/document-apis/interfaces/rectangle-geometry.md) 
                 - [Stroke](references/document-sandbox/document-apis/interfaces/stroke.md) 
