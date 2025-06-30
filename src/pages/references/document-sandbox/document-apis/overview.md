@@ -111,10 +111,10 @@
 
 ### OrderedListNumbering
 
-Re-exports [OrderedListNumbering](namespaces/constants/enumerations/ordered-list-numbering.md)
+Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/ordered-list-numbering.md)
 
 <HorizontalLine />
 
 ### ParagraphListType
 
-Re-exports [ParagraphListType](namespaces/constants/enumerations/paragraph-list-type.md)
+Re-exports [ParagraphListType](namespaces/Constants/enumerations/paragraph-list-type.md)
