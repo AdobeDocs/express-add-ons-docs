@@ -33,9 +33,10 @@ Hello, and welcome to this Adobe Express Document API tutorial, where we'll buil
 
 Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
-### Changelog
+<br/>
 
-This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy; revision history as follows.
+<details>
+<summary>See the <b>Changelog</b></summary>
 
 **January 9th, 2024**
 
@@ -69,6 +70,8 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 **November 6th, 2023**
 
 - First publication.
+
+</details>
 
 ### Prerequisites
 
