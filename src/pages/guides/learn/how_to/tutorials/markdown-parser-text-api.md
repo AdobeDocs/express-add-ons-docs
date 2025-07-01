@@ -70,9 +70,9 @@ We'll start by setting up the foundational structure for our add-on.
 
 ### 1.1. Environment Setup
 
-First, let's get your development environment ready. Download the [Markdown Parser Add-on template](https://github.com/adobe/express-add-on-sdk-markdown-parser-template) and unzip it.
+First, let's get your development environment ready. Download the [Markdown Parser Add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/express-markdown-parser-addon-start) from GitHub.
 
-Your add-on will follow a simple and organized structure:
+The `express-markdown-parser-addon-start` folder follows a simple and organized structure:
 
 ```txt
 .
@@ -1183,7 +1183,7 @@ This project serves as a strong foundation. You can extend it by supporting more
 
 ### 5.1 Final code
 
-You can find the final code for this tutorial in the [GitHub add-on samples repository](https://github.com/adobe/adobe-express-markdown-parser-add-on); there are two folders:
+You can find the final code for this tutorial in the [GitHub add-on samples repository](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/); there are two folders:
 
 - `markdown-parser-add-on-start` is the starting point for the tutorial as described [here](#12-initial-code).
 - `markdown-parser-add-on-end` is the final code for the add-on.
