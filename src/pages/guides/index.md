@@ -29,7 +29,7 @@ import '/src/styles.css'
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
-<Announcement slots="heading, text, button" className="developers-live-announcement" isBorder="true" variant="secondary" backgroundColor ="background-color-gray" />
+<Announcement slots="heading, text, button" className="developers-live-announcement" hasBorder="true" variant="secondary" backgroundColor ="background-color-gray" />
 
 ### Adobe Developers Live, June 24 & 25, 2025
 
