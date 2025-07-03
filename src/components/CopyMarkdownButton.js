@@ -48,14 +48,29 @@ const CopyMarkdownButton = ({ pageContext, location }) => {
           .replace(/\/$/, "");
         const cleanRelativePath = relativePath.replace(/\.md$/, "");
 
+        // Helper to make both paths comparable:
+        // 1. Strip leading slash (if any)
+        // 2. Remove trailing slash
+        // 3. Remove trailing "/index" (common for folder index pages)
+        const normalize = (p) =>
+          p
+            .replace(/^\/+/, "")
+            .replace(/\/$/, "")
+            .replace(/\/index$/, "");
+
+        const normalizedCleanPath = normalize(cleanPath);
+        const normalizedRelativePath = normalize(cleanRelativePath);
+
         console.log("Relative path:", relativePath);
         console.log("Clean path:", cleanPath);
         console.log("Clean relative path:", cleanRelativePath);
+        console.log("Normalized clean path:", normalizedCleanPath);
+        console.log("Normalized relative path:", normalizedRelativePath);
 
         const matches =
-          cleanPath === cleanRelativePath ||
-          cleanPath.endsWith(cleanRelativePath) ||
-          cleanRelativePath.endsWith(cleanPath);
+          normalizedCleanPath === normalizedRelativePath ||
+          normalizedCleanPath.endsWith(normalizedRelativePath) ||
+          normalizedRelativePath.endsWith(normalizedCleanPath);
 
         console.log("Matches:", matches);
 
