@@ -81,15 +81,12 @@ export const wrapPageElement = ({ element, props }) => {
       {element}
       {/* Add the Copy Markdown button as a floating action button */}
       <div
+        className="spectrum spectrum--medium spectrum--large spectrum--light"
         style={{
           position: "fixed",
-          bottom: "20px",
-          right: "20px",
+          bottom: 60,
+          right: 60,
           zIndex: 1000,
-          backgroundColor: "white",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-          padding: "4px",
         }}
       >
         <CopyMarkdownButton

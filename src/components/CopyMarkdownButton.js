@@ -1,5 +1,25 @@
 import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import "@spectrum-css/button";
+import { Button } from "@adobe/gatsby-theme-aio/src/components/Button";
+import { AnchorButton } from "@adobe/gatsby-theme-aio/src/components/AnchorButton";
+
+// Add CSS styles for the button
+const buttonStyles = `
+  .copy-markdown-button {
+    width: 180px !important;
+    min-width: 180px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+`;
+
+// Inject styles into the document head
+if (typeof document !== "undefined") {
+  const styleElement = document.createElement("style");
+  styleElement.textContent = buttonStyles;
+  document.head.appendChild(styleElement);
+}
 
 const CopyMarkdownButton = ({ pageContext, location }) => {
   const [copied, setCopied] = useState(false);
@@ -26,17 +46,17 @@ const CopyMarkdownButton = ({ pageContext, location }) => {
   const getCurrentPageMarkdown = () => {
     if (!location || !location.pathname) return null;
 
-    console.log("Current pathname:", location.pathname);
-    console.log(
-      "Available Markdown nodes:",
-      data.allMarkdownRemark.nodes.length
-    );
+    // console.log("Current pathname:", location.pathname);
+    // console.log(
+    //   "Available Markdown nodes:",
+    //   data.allMarkdownRemark.nodes.length
+    // );
 
     // Find the Markdown node that corresponds to the current page
     return data.allMarkdownRemark.nodes.find((node) => {
       // Match by file path
       if (node.fileAbsolutePath) {
-        console.log("Checking node:", node.fileAbsolutePath);
+        // console.log("Checking node:", node.fileAbsolutePath);
 
         // Extract the relative path and compare with current pathname
         const relativePath = node.fileAbsolutePath.replace(
@@ -61,18 +81,18 @@ const CopyMarkdownButton = ({ pageContext, location }) => {
         const normalizedCleanPath = normalize(cleanPath);
         const normalizedRelativePath = normalize(cleanRelativePath);
 
-        console.log("Relative path:", relativePath);
-        console.log("Clean path:", cleanPath);
-        console.log("Clean relative path:", cleanRelativePath);
-        console.log("Normalized clean path:", normalizedCleanPath);
-        console.log("Normalized relative path:", normalizedRelativePath);
+        // console.log("Relative path:", relativePath);
+        // console.log("Clean path:", cleanPath);
+        // console.log("Clean relative path:", cleanRelativePath);
+        // console.log("Normalized clean path:", normalizedCleanPath);
+        // console.log("Normalized relative path:", normalizedRelativePath);
 
         const matches =
           normalizedCleanPath === normalizedRelativePath ||
           normalizedCleanPath.endsWith(normalizedRelativePath) ||
           normalizedRelativePath.endsWith(normalizedCleanPath);
 
-        console.log("Matches:", matches);
+        // console.log("Matches:", matches);
 
         return matches;
       }
@@ -132,48 +152,20 @@ const CopyMarkdownButton = ({ pageContext, location }) => {
   }
 
   return (
-    <button
+    <Button
+      className="spectrum-Button--sizeL copy-markdown-button"
+      variant={copied ? "accent" : currentMarkdown ? "primary" : "secondary"}
+      style="outline"
       onClick={handleCopy}
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "8px",
-        padding: "8px 16px",
-        backgroundColor: copied
-          ? "#4caf50"
-          : currentMarkdown
-          ? "#2196f3"
-          : "#ff9800",
-        color: "white",
-        border: "none",
-        borderRadius: "4px",
-        cursor: "pointer",
-        fontSize: "14px",
-        fontFamily: "inherit",
-        transition: "background-color 0.2s ease",
-      }}
-      onMouseEnter={(e) => {
-        if (!copied) {
-          e.currentTarget.style.backgroundColor = currentMarkdown
-            ? "#1976d2"
-            : "#f57c00";
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (!copied) {
-          e.currentTarget.style.backgroundColor = currentMarkdown
-            ? "#2196f3"
-            : "#ff9800";
-        }
-      }}
+      elementType="button"
+      type="button"
     >
-      <span style={{ fontSize: "16px" }}>{copied ? "✓" : "📋"}</span>
       {copied
         ? "Copied!"
         : currentMarkdown
         ? "Copy as Markdown"
         : "Copy (Debug)"}
-    </button>
+    </Button>
   );
 };
 
