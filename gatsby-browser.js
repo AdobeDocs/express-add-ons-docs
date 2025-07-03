@@ -10,6 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
+import React from "react";
+import CopyMarkdownButton from "./src/components/CopyMarkdownButton";
+
 const isBrowser = typeof window !== "undefined";
 
 export const onClientEntry = () => {
@@ -70,4 +73,30 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
     // watch if analytics is online then track page
     const intervalId = setInterval(watchAndFireAnalytics, 1000);
   }
+};
+
+export const wrapPageElement = ({ element, props }) => {
+  return (
+    <>
+      {element}
+      {/* Add the Copy Markdown button as a floating action button */}
+      <div
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 1000,
+          backgroundColor: "white",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+          padding: "4px",
+        }}
+      >
+        <CopyMarkdownButton
+          location={props.location}
+          pageContext={props.pageContext}
+        />
+      </div>
+    </>
+  );
 };
