@@ -22,7 +22,7 @@ Learn how to build from scratch an Adobe Express add-on capable of parsing Markd
 
 ## Introduction
 
-Welcome to this hands-on tutorial where we'll build a complete Markdown Parser add-on. It will provide a way for users to import Markdown documents and see them instantly transformed into styled text elements inside Adobe Express, respecting formatting like headings, bold, italics, and lists.
+Welcome to this hands-on tutorial where we'll build a complete Markdown Parser add-on. It will provide a way for your users to import Markdown documents and see them instantly transformed into styled text elements inside Adobe Express, respecting formatting like headings, bold, italics, and lists.
 
 <InlineAlert variant="info" slots="header, text1" />
 
@@ -68,7 +68,7 @@ This tutorial is designed for intermediate developers who are comfortable with J
 
 We'll start by setting up the foundational structure for our add-on.
 
-### 1.1. Environment Setup
+### 1.1 Environment Setup
 
 First, let's get your development environment ready. Download the [Markdown Parser Add-on](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/express-markdown-parser-addon-start) from GitHub.
 
@@ -88,9 +88,18 @@ The `express-markdown-parser-addon-start` folder follows a simple and organized 
 
 We'll add a few files and packages along the way, but this is the starting point, which comes from a slightly adapted [CLI template](../../../getting_started/local_development/dev_tooling.md#templates).
 
-### 1.2. Initial Code
+### 1.2 Initial Code
 
 The sample starts with a simple "Hello World" setup to ensure the communication bridge between the UI and the document sandbox is working.
+
+Here is a breakdown of this initial setup:
+
+- The `index.html` file provides the **basic UI**, with a single button wrapped in `<sp-theme>` to match the Adobe Express style.
+- In `ui/index.js`, the script waits for the Add-on SDK to be ready (`addOnUISdk.ready`).
+- It then creates a `sandboxProxy` by calling `runtime.apiProxy("documentSandbox")`. This proxy is the communication link to the document sandbox.
+- An event listener on the button uses this proxy to call the `sayHello` function.
+- In `sandbox/code.js`, the `runtime.exposeApi()` method makes the `sayHello` function available to the UI.
+- This two-way communication setup is fundamental for add-ons that interact with the document. Clicking the button now proves that our UI and sandbox can communicate successfully and **logs a message** to the console.
 
 <CodeBlock slots="heading, code" repeat="3" languages="index.html, ui/index.js, sandbox/code.js"/>
 
@@ -161,22 +170,13 @@ function start() {
 start();
 ```
 
-Here is a breakdown of this initial setup:
-
-- The `index.html` file provides the **basic UI**, with a single button wrapped in `<sp-theme>` to match the Adobe Express style.
-- In `ui/index.js`, the script waits for the Add-on SDK to be ready (`addOnUISdk.ready`).
-- It then creates a `sandboxProxy` by calling `runtime.apiProxy("documentSandbox")`. This proxy is the communication link to the document sandbox.
-- An event listener on the button uses this proxy to call the `sayHello` function.
-- In `sandbox/code.js`, the `runtime.exposeApi()` method makes the `sayHello` function available to the UI.
-- This two-way communication setup is fundamental for add-ons that interact with the document. Clicking the button now proves that our UI and sandbox can communicate successfully and **logs a message** to the console.
-
 ![Hello World](./images/markdown--hello.png)
 
-## 2. Building the UI and Handling Files
+## 2. Build the UI and Handle Files
 
 Now, let's create the actual user interface for our add-on and implement the file handling logic.
 
-### 2.1. Designing the UI with Spectrum Web Components
+### 2.1 Design the UI with Spectrum Web Components
 
 We'll use Spectrum Web Components (SWC) to create a UI that feels native to Adobe Express. Our interface will have a dropzone for files, a button to trigger parsing, and a progress indicator. The project has already imported the Spectrum Theme and Button components, let's add the other ones we need.
 
@@ -187,7 +187,12 @@ npm install @spectrum-web-components/dropzone \
             @spectrum-web-components/progress-circle
 ```
 
-Update `src/index.html` with the following markup:
+Update `src/index.html` with the following markup.
+
+- The core of the UI is the `<sp-dropzone>` component, which creates an intuitive **drag-and-drop area** for files.
+- For accessibility, a standard `<input type="file">` is included but hidden with CSS.
+- A `<sp-link>` element is used to programmatically trigger the hidden file input, providing an alternative clickable way to handle file uploads.
+- The main `<sp-button>` is initially `disabled`. This is a good practice to prevent user actions before the add-on is ready or before a file has been loaded. It will be enabled programmatically.
 
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, styles.css"/>
 
@@ -289,16 +294,22 @@ sp-progress-circle { margin-left: 10px; }
 .info-text { margin-top: 10px; font-size: 12px; color: #6e6e6e; }
 ```
 
-Here's how this HTML structure works:
-
-- The core of the UI is the `<sp-dropzone>` component, which creates an intuitive **drag-and-drop area** for files.
-- For accessibility, a standard `<input type="file">` is included but hidden with CSS.
-- A `<sp-link>` element is used to programmatically trigger the hidden file input, providing an alternative clickable way to select a file.
-- The main `<sp-button>` is initially `disabled`. This is a good practice to prevent user actions before the add-on is ready or before a file has been loaded. It will be enabled programmatically.
-
-### 2.2. Handling File Uploads
+### 2.2 Handle File Uploads
 
 To handle file interactions, we'll create a new file called `ui/file-handler.js`. This module will **set up event listeners** on the dropzone and the hidden file input. We'll also touch the `ui/index.js` file to import and pass it the sandbox proxy.
+
+Let's walk through the file handling logic in `ui/file-handler.js`:
+
+- The `setupFileHandler` function **centralizes all UI interaction logic**, and begins by getting references to the necessary DOM elements (dropzone, button, etc.).
+- The `handleFile` function is the workhorse here. It first validates that the dropped file is a Markdown file.
+- It then uses the browser's standard `FileReader` API to read the file's content asynchronously.
+- Once the content is loaded (`reader.onload`), it's stored in a variable, and the "Parse Markdown" button is enabled. The `updateMessage` function is called to update the message to "Got it!"
+- Event listeners are set up for both the Spectrum dropzone's custom `sp-dropzone-drop` event and the standard `change` event on the hidden file input, ensuring both upload methods work.
+
+In `ui/index.js`, instead:
+
+- We import all the necessary Spectrum components that we installed earlier.
+- The `sandboxProxy` is retrieved from the runtime API and passed to `setupFileHandler()`.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, JavaScript"/>
 
@@ -448,30 +459,17 @@ export default function setupFileHandler(sandboxProxy) {
 }
 ```
 
-Let's walk through the file handling logic in `ui/file-handler.js`:
-
-- The `setupFileHandler` function **centralizes all UI interaction logic**, and begins by getting references to the necessary DOM elements (dropzone, button, etc.).
-- The `handleFile` function is the workhorse here. It first validates that the dropped file is a Markdown file.
-- It then uses the browser's standard `FileReader` API to read the file's content asynchronously.
-- Once the content is loaded (`reader.onload`), it's stored in a variable, and the "Parse Markdown" button is enabled. The `updateMessage` function is called to update the message to "Got it!"
-- Event listeners are set up for both the Spectrum dropzone's custom `sp-dropzone-drop` event and the standard `change` event on the hidden file input, ensuring both upload methods work.
-
-In `ui/index.js`, instead:
-
-- We import all the necessary Spectrum components that we installed earlier.
-- The `sandboxProxy` is retrieved from the runtime API and passed to `setupFileHandler()`.
-
 ![Markdown Parser UI](./images/markdown--ui.png)
 
 As soon as you drop a Markdown file, the UI will show "Got it!" and the Parse Markdown button will be enabled.
 
 ![Markdown Parser with console text](./images/markdown--text.png)
 
-## 3. Parsing Markdown
+## 3. Parse Markdown
 
 The next step is to take the raw text from the uploaded file and convert it into a structured format that we can work with.
 
-### 3.1. Introduction to Parsing and AST
+### 3.1 Parse Markdown into an Abstract Syntax Tree (AST)
 
 Parsing involves analyzing a Markdown text as a string and converting it into a data structure called an **Abstract Syntax Tree (AST)**. An AST is a tree representation, where each node denotes a construct occurring in the text.
 
@@ -493,9 +491,16 @@ npm install unified \
             mdast-util-to-string
 ```
 
-### 3.2. Implementing the Parser
+### 3.2 Implement the Parser
 
 Now, let's create the `ui/markdown-parser.js` file. This module will be responsible for taking Markdown text and returning an AST.
+
+Here's what our parser module does:
+
+- **Parses Markdown into a Data Structure**: At its core, the module takes the raw Markdown text from the uploaded file and uses the `unified` and `remark-parse` libraries to transform it into an Abstract Syntax Tree (AST). An AST is an organized, tree-like representation of the document's structure (headings, lists, bold text, etc.).
+- **Creates a Specially Formatted Text String**: It then traverses the AST to generate a single, continuous string of text. This isn't just plain text; the `getFormattedText` function strategically inserts double newlines (`\n\n`) between major elements like paragraphs and headings.
+- **Prepares Text for Styling**: This special formatting is key to our strategy. The single string with calculated newlines serves as the canvas upon which we'll apply styles. The newlines ensure that when the text is placed in Adobe Express, paragraphs are correctly separated. We will later use this string to calculate the exact character positions for applying styles like bold, italics, or heading sizes.
+- **Exports Key Information**: The main function, `processMarkdown`, bundles up the AST and the formatted text string, making them available to the other parts of our add-on.
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript"/>
 
@@ -609,14 +614,7 @@ export async function processMarkdown(markdownContent) {
 }
 ```
 
-Here's what our parser module does:
-
-- **Parses Markdown into a Data Structure**: At its core, the module takes the raw Markdown text from the uploaded file and uses the `unified` and `remark-parse` libraries to transform it into an Abstract Syntax Tree (AST). An AST is an organized, tree-like representation of the document's structure (headings, lists, bold text, etc.).
-- **Creates a Specially Formatted Text String**: It then traverses the AST to generate a single, continuous string of text. This isn't just plain text; the `getFormattedText` function strategically inserts double newlines (`\n\n`) between major elements like paragraphs and headings.
-- **Prepares Text for Styling**: This special formatting is key to our strategy. The single string with calculated newlines serves as the canvas upon which we'll apply styles. The newlines ensure that when the text is placed in Adobe Express, paragraphs are correctly separated. We will later use this string to calculate the exact character positions for applying styles like bold, italics, or heading sizes.
-- **Exports Key Information**: The main function, `processMarkdown`, bundles up the AST and the formatted text string, making them available to the other parts of our add-on.
-
-### 3.3. Connecting the Parser
+### 3.3 Connect the Parser
 
 Now that we have a module capable of turning Markdown text into an Abstract Syntax Tree (AST), let's connect it to our UI. This will serve as a great checkpoint to verify that our file reading and parsing logic are working correctly before we move on to styling.
 
@@ -668,11 +666,11 @@ Now, when you run the add-on, upload a Markdown file, and click "Parse Markdown"
 
 ![Markdown Parser with console AST output](./images/markdown--ast.png)
 
-## 4. Integrating with the Adobe Express Text API
+## 4. Integrate with the Adobe Express Text API
 
 With our Markdown parsed into an AST, the final and most exciting part is to render it as styled text in the Adobe Express document.
 
-### 4.1. The Strategy: From AST to Styled Text
+### 4.1 Convert the AST into Styled Text for Adobe Express
 
 Our overall strategy is as follows:
 
@@ -681,9 +679,17 @@ Our overall strategy is as follows:
 3.  **Communicate with Sandbox**: We'll send the plain text and the array of style ranges to our document sandbox.
 4.  **Apply Styles in Sandbox**: The sandbox code will create a single `TextNode` with the plain text. Then, it will iterate through the style ranges and apply the corresponding character or paragraph styles using the Text API.
 
-### 4.2. The Formatter: Generating Style Ranges
+### 4.2 The Formatter: Generating Style Ranges
 
 The new `ui/adobe-express-formatter.js` module is responsible for the second step: traversing the AST and generating style ranges.
+
+This formatter's goal is to **map the AST structure to a list of styling instructions** that Adobe Express can understand.
+
+- The `createExpressStylingFromAST()` function first generates the final, formatted plain text string.
+- It then uses a recursive `traverse` function to walk through every node in the AST.
+- The key to this process is the `offset` variable, which acts as a cursor, tracking our position within the plain text string.
+- For each styleable node (e.g., `heading`, `strong`), we record the `offset` before and after processing its children. This gives us the precise `start` and `end` indices for the style range.
+- A crucial detail is handling whitespace. The traversal logic must account for the double line breaks (`\n\n`) we added between block elements to keep the `offset` accurate. This is why the `root` node traversal manually increments the offset.
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript"/>
 
@@ -833,17 +839,17 @@ export async function applyExpressTextStyling(sandboxProxy, text, styleRanges) {
 }
 ```
 
-Let's unpack this formatter, which goal is to **map the AST structure to a list of styling instructions** that Adobe Express can understand.
-
-- The `createExpressStylingFromAST()` function first generates the final, formatted plain text string.
-- It then uses a recursive `traverse` function to walk through every node in the AST.
-- The key to this process is the `offset` variable, which acts as a cursor, tracking our position within the plain text string.
-- For each styleable node (e.g., `heading`, `strong`), we record the `offset` before and after processing its children. This gives us the precise `start` and `end` indices for the style range.
-- A crucial detail is handling whitespace. The traversal logic must account for the double line breaks (`\n\n`) we added between block elements to keep the `offset` accurate. This is why the `root` node traversal manually increments the offset.
-
-### 4.3. The Sandbox: Applying the Styles
+### 4.3 The Sandbox: Apply the Styles
 
 Now, let's implement the final piece in `sandbox/code.js`. This script will receive the text and style ranges and use the Text API to perform the magic. We'll also define our styling rules in `sandbox/constants.js` which allows to easily change the visual output (fonts, sizes, spacing) of the parsed Markdown without having to search through the application logic.
+
+This `sandbox/code.js` is where the visual transformation happens. Here are the key points:
+
+- The `createStyledTextFromMarkdown` function receives the plain text and style ranges from the UI.
+- It first creates a single `TextNode` with the entire plain text content and adds it to the document.
+- **Performance Tip: Font Caching.** The `preloadFonts` function and `fontCache` map are used to load all necessary fonts at once and store them. This avoids making multiple, slow requests for the same font.
+- **Safe Asynchronous Edits.** [`editor.queueAsyncEdit()`](../../../../references/document-sandbox/document-apis/classes/Editor.md#queueasyncedit) is essential for making changes to the document _after_ an asynchronous operation (like `preloadFonts`). The Add-on SDK requires that any edits following a pause for an `await` be wrapped in `queueAsyncEdit()`. This ensures that all changes are correctly tracked for the application's save and undo history. While this also has the benefit of batching multiple edits into a single, efficient operation, its primary role here is to guarantee document stability.
+- Inside the queue, a base style is applied to the entire text block first. Then, the code iterates through the `styleRanges` array, applying each specific character or paragraph style to the correct portion of the text.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript"/>
 
@@ -1090,19 +1096,19 @@ function start() {
 start();
 ```
 
-This `sandbox/code.js` is where the visual transformation happens. Here are the key points:
-
-- The `createStyledTextFromMarkdown` function receives the plain text and style ranges from the UI.
-- It first creates a single `TextNode` with the entire plain text content and adds it to the document.
-- **Performance Tip: Font Caching.** The `preloadFonts` function and `fontCache` map are used to load all necessary fonts at once and store them. This avoids making multiple, slow requests for the same font.
-- **Safe Asynchronous Edits.** [`editor.queueAsyncEdit()`](../../../../references/document-sandbox/document-apis/classes/Editor.md#queueasyncedit) is essential for making changes to the document _after_ an asynchronous operation (like `preloadFonts`). The Add-on SDK requires that any edits following a pause for an `await` be wrapped in `queueAsyncEdit()`. This ensures that all changes are correctly tracked for the application's save and undo history. While this also has the benefit of batching multiple edits into a single, efficient operation, its primary role here is to guarantee document stability.
-- Inside the queue, a base style is applied to the entire text block first. Then, the code iterates through the `styleRanges` array, applying each specific character or paragraph style to the correct portion of the text.
-
-### 4.4. Putting It All Together
+### 4.4 Put it all together
 
 We have all the pieces in place: the file handler, the parser, the formatter, and the sandbox styler. Now let's connect them all.
 
 First, add the necessary imports to the top of `src/ui/file-handler.js`. Then, update the `parseMarkdownAndInsert` function for the final time. This version will no longer just log the AST, but will call the formatter and the sandbox to render the styled text in the document.
+
+This final change **connects all the pieces** of our application:
+
+- The `parseMarkdownAndInsert` function now implements our complete workflow:
+  1.  It calls the `parseMarkdown()` function to get the AST.
+  2.  It passes the AST to `createExpressStylingFromAST()` to get the plain text and the list of style ranges.
+  3.  It sends this data to the document sandbox using `sandboxProxy.createStyledTextFromMarkdown()`.
+- The use of a `DEBUG` flag from our constants file is a convenient way to toggle console logging for the intermediate `plainText` and `styleRanges`, which is very helpful during development.
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript"/>
 
@@ -1158,14 +1164,6 @@ export default function setupFileHandler(sandboxProxy) {
   });
 }
 ```
-
-This final change **connects all the pieces** of our application:
-
-- The `parseMarkdownAndInsert` function now implements our complete workflow:
-  1.  It calls the `parseMarkdown()` function to get the AST.
-  2.  It passes the AST to `createExpressStylingFromAST()` to get the plain text and the list of style ranges.
-  3.  It sends this data to the document sandbox using `sandboxProxy.createStyledTextFromMarkdown()`.
-- The use of a `DEBUG` flag from our constants file is a convenient way to toggle console logging for the intermediate `plainText` and `styleRanges`, which is very helpful during development.
 
 ![Markdown Parser with Text API](./images/markdown--text-api.png)
 
