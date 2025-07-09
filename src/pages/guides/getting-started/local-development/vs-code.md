@@ -94,7 +94,7 @@ Back in VS Code, click the **Run and Debug** option from the left panel and then
 
 ![launch.json file](../../getting_started/local_development/img/vscode-debug-option.png)
 
-![launch profiles](../../getting_started/local_development/img/launch-profiles.png).
+![launch profiles](../../getting_started/local_development/img/launch-profiles.png)
 
 Once you have your selection set from above, simply hit the green play button outlined below to start debugging.
 

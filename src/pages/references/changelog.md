@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-06-19
+
+### Added
+
+The [Page Metadata API](./addonsdk/app-document.md#pagemetadata) now includes new properties to detect audio, video, and animated content on pages. You can retrieve duration information for pages with temporal content (such as timelines). We've also updated the [how-to guide](../guides/learn/how-to/page-metadata.md) to cover these new capabilities.
+
 ## 2025-06-06
 
 ### Updated

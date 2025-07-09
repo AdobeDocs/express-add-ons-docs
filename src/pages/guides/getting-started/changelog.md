@@ -22,6 +22,32 @@ contributors:
 
 # Changelog
 
+## 2025-06-19
+
+### Added
+
+The [Page Metadata API](../../references/addonsdk/app-document.md#pagemetadata) now includes new properties to detect audio, video, and animated content on pages. You can retrieve duration information for pages with temporal content (such as timelines). We've also updated the [how-to guide](../learn/how-to/page-metadata.md) to cover these new capabilities.
+
+## 2025-06-06
+
+### Updated
+
+- Enhanced monetization guidelines documentation in the [Public add-on Distribution guide](../build/distribute/public-dist.md#step-8-enter-the-monetization-details) with additional clarity on Adobe's requirements and recommendations for monetizing add-ons. Developers are encouraged to carefully review the updated [monetization guidelines](../build/distribute/guidelines/monetization.md) for the latest information.
+
+## 2025-05-27
+
+### Added
+
+- Four new Resize/Rescale APIs have been added to the [Node](../../references/document-sandbox/document-apis/classes/node.md) class as experimental features:
+  - [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/node.md#rescaleproportionaltoheight)
+  - [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/node.md#rescaleproportionaltowidth)
+  - [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/node.md#resizetocover)
+  - [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/node.md#resizetofitwithin)
+- [`Editor.createText()`](../../references/document-sandbox/document-apis/classes/editor.md#createtext) now accepts a String parameter, which sets the text content of the new node. The use without a parameter is deprecated.
+- [`TextNode`](../../references/document-sandbox/document-apis/classes/text-node.md) is now an abstract base class with two specialized subclasses:
+  - [StandaloneTextNode](../../references/document-sandbox/document-apis/classes/standalone-text-node.md): displays text in a single frame.
+  - [ThreadedTextNode](../../references/document-sandbox/document-apis/classes/threaded-text-node.md): supports text that can flow across multiple frames.
+
 ## 2025-05-26
 
 ### Added

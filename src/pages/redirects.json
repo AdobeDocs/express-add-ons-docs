@@ -1,8 +1,8 @@
 {
-  "total": 222,
-  "offset": 0,
-  "limit": 222,
-  "data": [
+  "total":230,
+  "offset":0,
+  "limit":230,
+  "data":[
     {
         "Source": "/express/add-ons/references/index.md",
         "Destination": "/express/add-ons/references/index.md/"
@@ -125,6 +125,10 @@
     },
     {
         "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point/",
+        "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point"
+    },
+    {
+        "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/Point",
         "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point"
     },
     {
@@ -695,7 +699,7 @@
         "Source": "/express/add-ons/guides/develop/index.md/index",
         "Destination": "/express/add-ons/guides/develop/index.md/"
     },
-    { 
+    {
         "Source": "/express/add-ons/guides/develop/cors/",
         "Destination": "/express/add-ons/guides/develop/cors"
     },
@@ -863,7 +867,7 @@
         "Source": "/express/add-ons/guides/build/design/ux-guidelines/introduction/",
         "Destination": "/express/add-ons/guides/build/design/ux-guidelines/introduction"
     },
-    {   
+    {
         "Source": "/express/add-ons/guides/build/design/ux-guidelines/feedback-and-messaging/",
         "Destination": "/express/add-ons/guides/build/design/ux-guidelines/feedback-and-messaging"
     },
@@ -877,7 +881,7 @@
     },
     {
         "Source": "/express/add-ons/guides/build/design/ux-guidelines/branding-guidelines/",
-    "Destination": "/express/add-ons/guides/build/design/ux-guidelines/branding-guidelines"
+        "Destination": "/express/add-ons/guides/build/design/ux-guidelines/branding-guidelines"
     },
     {
         "Source": "/express/add-ons/guides/build/advanced-topics/performance/",
@@ -890,7 +894,34 @@
     {
         "Source": "/express/add-ons/guides/build/advanced-topics/coi/",
         "Destination": "/express/add-ons/guides/build/advanced-topics/coi"
-    }
-  ],
-  ":type": "sheet"
+    },
+    {
+        "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview",
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview"
+    },
+    {
+        "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type",
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type"
+    },
+    {
+        "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering",
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering"
+    },
+    {
+        "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Editor",
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/editor"
+    },
+    {
+        "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview",
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview"
+    },
+    {
+        "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type",
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type"
+    },
+    {
+        "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering",
+        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering"
+    }]
+    ,":type":"sheet"
 }

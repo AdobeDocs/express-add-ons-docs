@@ -156,13 +156,6 @@ moved to a different part of the document.
 ### layout
 
 • `get` **layout**(): `Readonly` [`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
-• `get` **layout**(): `Readonly` [`PointTextLayout`](../interfaces/point-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-• `set` **layout**(`layout`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -200,7 +193,6 @@ before using the API to make changes to locked nodes.
 ### nextTextNode
 
 • `get` `abstract` **nextTextNode**(): `undefined` \| [`ThreadedTextNode`](threaded-text-node.md)
-• `get` **nextTextNode**(): `undefined` \| [`TextNode`](text-node.md)
 
 The next TextNode that text overflowing this node will spill into, if any. If undefined and this TextNode is fixed size
 ([AreaTextLayout](../interfaces/area-text-layout.md)), any text content that does not fit within this node's area will be clipped.
