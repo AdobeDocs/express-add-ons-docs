@@ -56,7 +56,8 @@ contributors:
 - [How can I update my trader details in the publisher profile after submission?](#how-can-i-update-my-trader-details-in-the-publisher-profile-after-submission)
 - [What happens if an EU user has a deep link to my add-on and I am not compliant with the European Union Digital Services Act (DSA) trader requirements?](#what-happens-if-an-eu-user-has-a-deep-link-to-my-add-on-and-i-am-not-compliant-with-the-european-union-digital-services-act-dsa-trader-requirements)
 - [Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?](#can-an-eu-user-still-use-my-add-on-if-they-have-already-installed-it-but-i-am-not-compliant-with-the-dsa-trader-requirements)
-- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) -->
+- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) 
+- [How do I fix "No SSL related certificate or key files were found. Please retry after setting them up" when I npm run start a add-on sample project?](#how-do-i-fix-no-ssl-related-certificate-or-key-files-were-found-please-retry-after-setting-them-up-when-i-npm-run-start-a-add-on-sample-project) -->
 
 ### 🛠️ Development Environment & Tooling
 
@@ -65,6 +66,7 @@ contributors:
 - [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
 - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
 - [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows)
+- [How do I fix "No SSL related certificate or key files were found. Please retry after setting them up" when I `npm run start` a add-on sample project?](#how-do-i-fix-no-ssl-related-certificate-or-key-files-were-found-please-retry-after-setting-them-up-when-i-npm-run-start-a-add-on-sample-project)
 
 ### 🧩 Webpack & Build Configuration
 
@@ -315,3 +317,6 @@ TypeError: Invalid URL
 ```
 
 If you encounter this issue, please update your Node.js version to `v20.11.0` and try again.
+
+### How do I fix "No SSL related certificate or key files were found. Please retry after setting them up" when I `npm run start` a add-on sample project?
+Run the following command to generate SSL certs: ```npx @adobe/ccweb-add-on-ssl setup -h <hostname>```. In case of add-on sample project, hostname should be localhost.
