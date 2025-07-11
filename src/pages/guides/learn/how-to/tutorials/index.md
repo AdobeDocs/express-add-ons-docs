@@ -19,7 +19,7 @@ contributors:
 
 In this page, you'll find a variety of tutorials covering the Adobe Express Add-on UI SDK and Document Sandbox APIs.
 
-<Info-Card slots="link, image, heading, text" repeat="3" />
+<Info-Card slots="link, image, heading, text" repeat="4" />
 
 [Express Document API](grids-addon.md)
 
