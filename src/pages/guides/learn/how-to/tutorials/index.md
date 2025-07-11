@@ -29,9 +29,9 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 Davide Barranca - November 6th, 2023
 
-[Coming Soon...](stats-addon.md)
+[Stats add-on](stats-addon.md)
 
-![Coming Soon](../../how_to/tutorials/images/thumbs-stats-addon.png)
+![Stats add-on](../../how_to/tutorials/images/thumbs-stats-addon.png)
 
 ### Creating a Stats add-on with the Adobe Express Communication API
 
@@ -44,3 +44,11 @@ Davide Barranca - December 14th, 2023
 ### Building UIs using Adobe's Spectrum Design System
 
 Holly Schinsky - January 25th, 2024
+
+[Markdown Parser add-on](../../how_to/tutorials/markdown-parser-text-api.md)
+
+![Markdown Parser add-on](../../how_to/tutorials/images/thumbs-markdown-addon.png)
+
+### Create a Markdown Parser Add-on with the Text API
+
+Davide Barranca - July 1st, 2025

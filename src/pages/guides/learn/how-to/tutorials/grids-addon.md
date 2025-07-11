@@ -33,9 +33,7 @@ https://www.youtube.com/watch?v=SQMYA660gII
 
 Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
-### Changelog
-
-This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy; revision history as follows.
+<Details slots="header , list" repeat="5"  summary="see the Changelog" />
 
 **January 9th, 2024**
 
