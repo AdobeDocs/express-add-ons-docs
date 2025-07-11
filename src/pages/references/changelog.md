@@ -27,6 +27,7 @@ contributors:
 ### Added
 
 - New [Markdown Parser add-on tutorial](../guides/learn/how_to/tutorials/markdown-parser-text-api.md) covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
+- New [Resize and Rescale Elements](../guides/learn/how-to/resize-rescale-elements.md) how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.
 
 ## 2025-06-19
 
