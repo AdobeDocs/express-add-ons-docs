@@ -313,3 +313,25 @@ textNode.rescaleProportionalToHeight(100);
 
 In the screenshot above, the original text is top-left; top-right, the result of both `resizeToFitWithin()` and `rescaleProportionalToWidth()`; bottom, `resizeToCover()`
 `rescaleProportionalToHeight()`.
+
+## Working with Page Elements
+
+Adjusting the page size is a simpler case of resizing and rescaling. Pages are resized by changing the `width` and `height` properties of the [`PageNode`](../../../references/document-sandbox/document-apis/classes/PageNode.md).
+
+### Example: Resizing a Page
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+const doc = editor.documentRoot.pages.first;
+console.log(`Doc's dimensions before: ${doc.width}x${doc.height}`);
+
+doc.width  = 300;
+doc.height = 300;
+
+console.log(`Doc's dimensions after: ${doc.width}x${doc.height}`);
+
+// Doc's dimensions before: 400x600
+// Doc's dimensions after: 300x300
+```
