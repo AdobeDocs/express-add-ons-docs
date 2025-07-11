@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-07-11
+
+### Added
+
+- New [Markdown Parser add-on tutorial](../guides/learn/how_to/tutorials/markdown-parser-text-api.md) covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
+
 ## 2025-06-19
 
 ### Added

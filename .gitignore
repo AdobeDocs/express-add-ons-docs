@@ -3,6 +3,10 @@
 .DS_Store
 .vscode/*
 .nvmrc
+# cursor
+.cursorignore
+.cursorindexingignore
+.cursor/
 
 # npm yarn
 node_modules
