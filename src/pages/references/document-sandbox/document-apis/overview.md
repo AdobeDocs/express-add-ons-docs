@@ -20,6 +20,7 @@
 -   [StrokeType](enumerations/StrokeType.md)
 -   [TextAlignment](enumerations/TextAlignment.md)
 -   [TextLayout](enumerations/TextLayout.md)
+-   [TextScriptStyle](enumerations/TextScriptStyle.md)
 -   [VisualEffectType](enumerations/VisualEffectType.md)
 
 ## Classes
@@ -45,6 +46,7 @@
 -   [ItemList](classes/ItemList.md)
 -   [LineNode](classes/LineNode.md)
 -   [MediaContainerNode](classes/MediaContainerNode.md)
+-   [MediaRectangleNode](classes/MediaRectangleNode.md)
 -   [Node](classes/Node.md)
 -   [PageList](classes/PageList.md)
 -   [PageNode](classes/PageNode.md)
@@ -60,6 +62,7 @@
 -   [TextNode](classes/TextNode.md)
 -   [ThreadedTextNode](classes/ThreadedTextNode.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
+-   [UnknownMediaRectangleNode](classes/UnknownMediaRectangleNode.md)
 -   [UnknownNode](classes/UnknownNode.md)
 -   [Viewport](classes/Viewport.md)
 -   [VisualNode](classes/VisualNode.md)

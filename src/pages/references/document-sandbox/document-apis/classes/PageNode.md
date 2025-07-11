@@ -66,7 +66,15 @@ To create new artboards, see [ArtboardList.addArtboard](ArtboardList.md#addartbo
 • `get` **height**(): `number`
 
 The height of the node.
-All Artboards within a page share the same dimensions.
+
+All Artboards within a page share the same dimensions, so changing this value will also automatically adjust the
+size of every child [ArtboardNode](ArtboardNode.md).
+
+Note: changing the page's size does not adjust the size or position of any of visual content inside any child
+[ArtboardNode](ArtboardNode.md). Callers should use their own layout logic to update the content for the new bounds as
+desired. For example, making the size smaller could result in content being clipped and hard to access if it is
+not adjusted to be visible again.
+
 Must be at least MIN_PAGE_DIMENSION and no larger than MAX_PAGE_DIMENSION.
 
 • `set` **height**(`value`): `void`
@@ -146,7 +154,15 @@ The node's type.
 • `get` **width**(): `number`
 
 The width of the node.
-All Artboards within a page share the same dimensions.
+
+All Artboards within a page share the same dimensions, so changing this value will also automatically adjust the
+size of every child [ArtboardNode](ArtboardNode.md).
+
+Note: changing the page's size does not adjust the size or position of any of visual content inside any child
+[ArtboardNode](ArtboardNode.md). Callers should use their own layout logic to update the content for the new bounds as
+desired. For example, making the size smaller could result in content being clipped and hard to access if it is
+not adjusted to be visible again.
+
 Must be at least MIN_PAGE_DIMENSION and no larger than MAX_PAGE_DIMENSION.
 
 • `set` **width**(`value`): `void`

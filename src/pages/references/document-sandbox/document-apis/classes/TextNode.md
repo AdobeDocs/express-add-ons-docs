@@ -430,6 +430,26 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 ---
 
+### clone()
+
+• **clone**(): [`TextNode`](TextNode.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Creates an orphaned copy of this node, including all persistent attributes and descendants.
+
+#### Returns
+
+[`TextNode`](TextNode.md)
+
+#### Inherited from
+
+[`Node`](Node.md).[`clone`](Node.md#clone)
+
+---
+
 ### isStandaloneText()
 
 • **isStandaloneText**(): `this is StandaloneTextNode`
