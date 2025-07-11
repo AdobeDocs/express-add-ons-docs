@@ -45,7 +45,7 @@ Davide Barranca - December 14th, 2023
 
 Holly Schinsky - January 25th, 2024
 
-[Markdown Parser add-on](../../how_to/tutorials/markdown-parser-text-api.md)
+[Markdown Parser add-on](markdown-parser-text-api.md)
 
 ![Markdown Parser add-on](../../how_to/tutorials/images/thumbs-markdown-addon.png)
 
