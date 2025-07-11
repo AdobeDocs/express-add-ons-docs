@@ -588,6 +588,10 @@
         "Destination": "/express/add-ons/guides/learn/how-to/group-elements"
     },
     {
+        "Source": "/express/add-ons/guides/learn/how-to/resize-rescale-elements/",
+        "Destination": "/express/add-ons/guides/learn/how-to/resize-rescale-elements"
+    },
+    {
         "Source": "/express/add-ons/guides/learn/how-to/element-metadata/",
         "Destination": "/express/add-ons/guides/learn/how-to/element-metadata"
     },

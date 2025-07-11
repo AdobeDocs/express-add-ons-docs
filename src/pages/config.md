@@ -153,6 +153,7 @@
                 - [Use Audio](guides/learn/how-to/use-audio.md) 
                 - [Use PDF and PowerPoint](guides/learn/how-to/use-pdf-powerpoint.md) 
                 - [Group Elements](guides/learn/how-to/group-elements.md) 
+                - [Resize & Rescale Elements](guides/learn/how-to/resize-rescale-elements.md)
                 - [Position Elements](guides/learn/how-to/position-elements.md) 
             - [Use Metadata](guides/learn/how-to/document-metadata.md) 
                 - [Document](guides/learn/how-to/document-metadata.md) 
