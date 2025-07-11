@@ -22,6 +22,13 @@ contributors:
 
 # Changelog
 
+## 2025-07-11
+
+### Added
+
+Added few new HLAPI's like Clone/Duplicate node, Hyperlinks and Sub/SuperScript.
+
+
 ## 2025-06-19
 
 ### Added

@@ -75,6 +75,12 @@ Re-exports [TextLayout](../../enumerations/TextLayout.md)
 
 ---
 
+### TextScriptStyle
+
+Re-exports [TextScriptStyle](../../enumerations/TextScriptStyle.md)
+
+---
+
 ### VisualEffectType
 
 Re-exports [VisualEffectType](../../enumerations/VisualEffectType.md)

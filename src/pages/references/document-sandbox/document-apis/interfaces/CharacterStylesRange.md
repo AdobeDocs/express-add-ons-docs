@@ -13,6 +13,18 @@ are visible in the document.
 
 ## Properties
 
+### baselineShift
+
+• **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+
+Sets a superscript or subscript style.
+
+#### Inherited from
+
+[`CharacterStyles`](CharacterStyles.md).[`baselineShift`](CharacterStyles.md#baselineshift)
+
+---
+
 ### color
 
 • **color**: [`Color`](Color.md)
@@ -72,6 +84,19 @@ leaves spacing at its default.
 #### Inherited from
 
 [`CharacterStyles`](CharacterStyles.md).[`letterSpacing`](CharacterStyles.md#letterspacing)
+
+---
+
+### link
+
+• **link**: `undefined` \| `string`
+
+URL for the hyperlink.
+A link can be removed by setting it to undefined
+
+#### Inherited from
+
+[`CharacterStyles`](CharacterStyles.md).[`link`](CharacterStyles.md#link)
 
 ---
 

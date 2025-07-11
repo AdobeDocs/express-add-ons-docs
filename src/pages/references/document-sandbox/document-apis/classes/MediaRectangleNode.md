@@ -1,19 +1,24 @@
-[@express-document-sdk](../overview.md) / GridLayoutNode
+[@express-document-sdk](../overview.md) / MediaRectangleNode
 
-# Class: GridLayoutNode
+# Class: `abstract` MediaRectangleNode
 
-A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to create
-a layout grid that other content can be placed into.
-
-APIs to create a new grid layout are not yet available.
+MediaRectangleNode is the base class for a rectangular node that represents the *uncropped* media within a
+[MediaContainerNode](MediaContainerNode.md). Specific subclasses such as [ImageRectangleNode](ImageRectangleNode.md) exist for each media type and
+may provide additional media-specific APIs. Cropping can be adjusted by changing this rectangle's position/rotation
+(as well as its maskShape sibling node).
 
 ## Extends
 
--   [`Node`](Node.md)
+- [`Node`](Node.md)
+
+## Extended by
+
+- [`ImageRectangleNode`](ImageRectangleNode.md)
+- [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
 
 ## Implements
 
--   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+- `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
 
 ## Accessors
 
@@ -33,9 +38,12 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
-The Grid's regular children. Does not include rectangles and skips over media constainer nodes to return fill grandchildren.
-Grid Cells are ordered by the y and then x position of their top left corner, i.e. left to right and top to bottom.
-The children cannot be added or removed.
+Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
+overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -107,36 +115,13 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 ---
 
-### fill
-
-• `get` **fill**(): `Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
-• `set` **fill**(`fill`): `void`
-
-The background fill of the GridLayout.
-
-#### Parameters
-
-• **fill**: [`Fill`](../interfaces/Fill.md)
-
-#### Returns
-
-`Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
----
-
 ### height
 
 • `get` **height**(): `number`
 
-The height of the node.
-Must be at least MIN_DIMENSION.
-
-• `set` **height**(`value`): `void`
-
-#### Parameters
-
-• **value**: `number`
+Current height of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
+will always match its aspect ratio.
 
 #### Returns
 
@@ -318,14 +303,9 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • `get` **width**(): `number`
 
-The width of the node.
-Must be at least MIN_DIMENSION.
-
-• `set` **width**(`value`): `void`
-
-#### Parameters
-
-• **value**: `number`
+Current width of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
+will always match its aspect ratio.
 
 #### Returns
 
@@ -357,19 +337,20 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`GridLayoutNode`](GridLayoutNode.md)
+• **clone**(): `never`
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Creates an orphaned copy of this node, including all persistent attributes and descendants.
+Always throws as it's not possible to clone just the media rectangle alone.
+Clone the entire parent MediaContainerNode instead.
 
 #### Returns
 
-[`GridLayoutNode`](GridLayoutNode.md)
+`never`
 
-#### Inherited from
+#### Overrides
 
 [`Node`](Node.md).[`clone`](Node.md#clone)
 
@@ -552,8 +533,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 #### Example
 
 Center a rectangle within its parent artboard:
-
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -592,7 +572,6 @@ Point to rotate around, in node's local coordinates.
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
+```
 rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
 ```

@@ -15,6 +15,18 @@ ParagraphStyles, which must be applied to an entire paragraph atomically).
 
 ## Properties
 
+### baselineShift
+
+• **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+
+Sets a superscript or subscript style.
+
+#### Inherited from
+
+`BaseCharacterStyles.baselineShift`
+
+---
+
 ### color
 
 • **color**: [`Color`](Color.md)
@@ -56,6 +68,19 @@ leaves spacing at its default.
 #### Inherited from
 
 `BaseCharacterStyles.letterSpacing`
+
+---
+
+### link
+
+• **link**: `undefined` \| `string`
+
+URL for the hyperlink.
+A link can be removed by setting it to undefined
+
+#### Inherited from
+
+`BaseCharacterStyles.link`
 
 ---
 

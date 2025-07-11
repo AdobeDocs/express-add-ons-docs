@@ -267,6 +267,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/UnavailableFont.md",
                   },
                   {
+                    title: "UnknownMediaRectangleNode",
+                    path: "references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md",
+                  },
+                  {
                     title: "UnknownNode",
                     path: "references/document-sandbox/document-apis/classes/UnknownNode.md",
                   },
@@ -461,6 +465,10 @@ module.exports = {
                   {
                     title: "TextLayout",
                     path: "references/document-sandbox/document-apis/enumerations/TextLayout.md",
+                  },
+                  {
+                    title: "TextScriptStyle",
+                    path: "references/document-sandbox/document-apis/enumerations/TextScriptStyle.md",
                   },
                   {
                     title: "VisualEffectType",

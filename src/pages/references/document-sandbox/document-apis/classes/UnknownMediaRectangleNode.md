@@ -1,19 +1,14 @@
-[@express-document-sdk](../overview.md) / GridLayoutNode
+[@express-document-sdk](../overview.md) / UnknownMediaRectangleNode
 
-# Class: GridLayoutNode
+# Class: UnknownMediaRectangleNode
 
-A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to create
-a layout grid that other content can be placed into.
-
-APIs to create a new grid layout are not yet available.
+UnknownMediaRectangleNode is a rectangular node that represents the *uncropped* media within a [MediaContainerNode](MediaContainerNode.md)
+for cases where the media type is not yet supported by this API. Cropping can still be adjusted by changing this
+rectangle's position/rotation (as well as its maskShape sibling node).
 
 ## Extends
 
--   [`Node`](Node.md)
-
-## Implements
-
--   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+- [`MediaRectangleNode`](MediaRectangleNode.md)
 
 ## Accessors
 
@@ -33,9 +28,12 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
 
-The Grid's regular children. Does not include rectangles and skips over media constainer nodes to return fill grandchildren.
-Grid Cells are ordered by the y and then x position of their top left corner, i.e. left to right and top to bottom.
-The children cannot be added or removed.
+Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
+overall display z-order.
+
+The children of a Node are always other Node classes (never the more minimal BaseNode).
 
 #### Returns
 
@@ -107,36 +105,13 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 ---
 
-### fill
-
-• `get` **fill**(): `Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
-• `set` **fill**(`fill`): `void`
-
-The background fill of the GridLayout.
-
-#### Parameters
-
-• **fill**: [`Fill`](../interfaces/Fill.md)
-
-#### Returns
-
-`Readonly`<[`Fill`](../interfaces/Fill.md)\>
-
----
-
 ### height
 
 • `get` **height**(): `number`
 
-The height of the node.
-Must be at least MIN_DIMENSION.
-
-• `set` **height**(`value`): `void`
-
-#### Parameters
-
-• **value**: `number`
+Current height of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
+will always match its aspect ratio.
 
 #### Returns
 
@@ -318,14 +293,9 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • `get` **width**(): `number`
 
-The width of the node.
-Must be at least MIN_DIMENSION.
-
-• `set` **width**(`value`): `void`
-
-#### Parameters
-
-• **value**: `number`
+Current width of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
+will always match its aspect ratio.
 
 #### Returns
 
@@ -351,27 +321,28 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Inherited from
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`boundsInNode`](MediaRectangleNode.md#boundsinnode)
 
 ---
 
 ### clone()
 
-• **clone**(): [`GridLayoutNode`](GridLayoutNode.md)
+• **clone**(): `never`
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Creates an orphaned copy of this node, including all persistent attributes and descendants.
+Always throws as it's not possible to clone just the media rectangle alone.
+Clone the entire parent MediaContainerNode instead.
 
 #### Returns
 
-[`GridLayoutNode`](GridLayoutNode.md)
+`never`
 
 #### Inherited from
 
-[`Node`](Node.md).[`clone`](Node.md#clone)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`clone`](MediaRectangleNode.md#clone)
 
 ---
 
@@ -395,7 +366,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`localPointInNode`](MediaRectangleNode.md#localpointinnode)
 
 ---
 
@@ -416,7 +387,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`removeFromParent`](MediaRectangleNode.md#removefromparent)
 
 ---
 
@@ -440,7 +411,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`rescaleProportionalToHeight`](MediaRectangleNode.md#rescaleproportionaltoheight)
 
 ---
 
@@ -464,7 +435,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`rescaleProportionalToWidth`](MediaRectangleNode.md#rescaleproportionaltowidth)
 
 ---
 
@@ -492,7 +463,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`resizeToCover`](MediaRectangleNode.md#resizetocover)
 
 ---
 
@@ -520,7 +491,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToFitWithin`](Node.md#resizetofitwithin)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`resizeToFitWithin`](MediaRectangleNode.md#resizetofitwithin)
 
 ---
 
@@ -547,13 +518,12 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`Node`](Node.md).[`setPositionInParent`](Node.md#setpositioninparent)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`setPositionInParent`](MediaRectangleNode.md#setpositioninparent)
 
 #### Example
 
 Center a rectangle within its parent artboard:
-
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -587,12 +557,11 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`Node`](Node.md).[`setRotationInParent`](Node.md#setrotationinparent)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`setRotationInParent`](MediaRectangleNode.md#setrotationinparent)
 
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
+```
 rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
 ```

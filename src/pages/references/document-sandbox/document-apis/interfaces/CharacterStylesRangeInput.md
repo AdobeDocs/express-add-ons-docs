@@ -14,6 +14,18 @@ user to edit with.
 
 ## Properties
 
+### baselineShift?
+
+• `optional` **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+
+Sets a superscript or subscript style.
+
+#### Inherited from
+
+[`CharacterStylesInput`](CharacterStylesInput.md).[`baselineShift`](CharacterStylesInput.md#baselineshift)
+
+---
+
 ### color?
 
 • `optional` **color**: [`Color`](Color.md)
@@ -73,6 +85,19 @@ leaves spacing at its default.
 #### Inherited from
 
 [`CharacterStylesInput`](CharacterStylesInput.md).[`letterSpacing`](CharacterStylesInput.md#letterspacing)
+
+---
+
+### link?
+
+• `optional` **link**: `string`
+
+URL for the hyperlink.
+A link can be removed by setting it to undefined
+
+#### Inherited from
+
+[`CharacterStylesInput`](CharacterStylesInput.md).[`link`](CharacterStylesInput.md#link)
 
 ---
 
