@@ -26,7 +26,7 @@ contributors:
 
 # Resize and Rescale Elements
 
-Adobe Express provides powerful APIs to resize and rescale elements while maintaining different behaviors for aspect ratios and visual styling. Understanding the difference between _resizing_ and _rescaling_ is crucial for achieving the desired visual results.
+Adobe Express offers robust APIs for resizing and rescaling elements, ensuring different behaviors for aspect ratios and visual styling. It's essential to understand the difference between _resizing_ and _rescaling_ to achieve the desired visual results.
 
 ## Resize vs. Rescale
 
@@ -44,7 +44,7 @@ Rescaling operations maintain the aspect ratio of elements while changing their 
 
 ### Example: Rescale by Width
 
-Use `rescaleProportionalToWidth()` to change an element's width while maintaining its aspect ratio. The height will automatically adjust proportionally.
+Use `rescaleProportionalToWidth()` to adjust an element's width while maintaining its aspect ratio. The height will automatically adjust proportionally.
 
 ```js
 // sandbox/code.js
@@ -69,7 +69,7 @@ console.log(`New dimensions: ${rect.width} x ${rect.height}`);
 
 ### Example: Rescale by Height
 
-Similarly, use `rescaleProportionalToHeight()` to change an element's height while maintaining its aspect ratio. The width will automatically adjust proportionally.
+Similarly, use `rescaleProportionalToHeight()` to adjust an element's height while maintaining its aspect ratio. The width will automatically adjust proportionally.
 
 ```js
 // sandbox/code.js
@@ -95,7 +95,7 @@ console.log(
 
 ### Example: Rescaling with Styled Elements
 
-When rescaling elements with strokes and fills, all visual properties scale proportionally:
+When rescaling elements with strokes and fills, all visual properties adjust proportionally:
 
 ```js
 // sandbox/code.js
@@ -188,7 +188,7 @@ console.log(
 
 <InlineAlert slots="text, text1" variant="warning"/>
 
-It's important to note that the resize behavior with media elements, compared to shapes, can be rather different when it comes to resizing nodes when a crop is involved.
+Note that the resize behavior for media elements can differ significantly from shapes, especially when cropping is involved.
 
 This is because the container is resized to fit within the bounding box, while the media inside the container also needs to be adjusted to avoid blank space between the two.
 
@@ -264,7 +264,7 @@ With nodes that can resize irrespective of their aspect ratio, like shapes, the 
 
 ## Working with Text Elements
 
-Text elements have special considerations when resizing and rescaling, as font sizes and text flow can be affected differently.
+Text elements require special considerations when resizing and rescaling, as font sizes and text flow can be affected differently.
 
 ### Example: Rescaling Text Proportionally
 
