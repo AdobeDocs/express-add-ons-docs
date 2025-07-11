@@ -533,6 +533,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 #### Example
 
 Center a rectangle within its parent artboard:
+
 ```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
@@ -572,6 +573,7 @@ Point to rotate around, in node's local coordinates.
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
+
 ```
 rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
 ```
