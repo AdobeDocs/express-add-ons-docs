@@ -506,7 +506,7 @@ Mind the import names: for example, you install a `@spectrum-web-components/butt
 
 The only tricky UI bit worth mentioning here is relative to the **color pickers**. SWC features a variety of color-related components (Color Area, Color Handle, Color Loupe, Color Slider) but not an actual picker. This add-on implements it via a `<sp-swatch>` for the UI and a hidden native `<input>` element behind it.
 
-<CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### index.html
 
@@ -559,7 +559,7 @@ Please refer to the source code for other details on the HTML structure, which a
 
 Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Document Sandbox is retrieved, and everything the Document API exposes is stored in the `sandboxProxy` constant (lines 9-10).
 
-<CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### index.html
 
@@ -746,7 +746,7 @@ Another crucial notion is to avoid silent failures: every action should either s
 
 It makes sense to approach this grid business with some caution, as we're just starting with the Document API. Let's set up `documentSandbox/code.js` to expose this `addGrid()` method and manage the argument provided.
 
-<CodeBlock slots="heading, code" repeat="1" languages="documentSandbox/code.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/code.js
 
@@ -864,7 +864,7 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 - `code.js` doesn't need to expose anything else but the `addGrid()` and `deleteGrid()` methods.
 - `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
 
-<CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### documentSandbox/code.js
 

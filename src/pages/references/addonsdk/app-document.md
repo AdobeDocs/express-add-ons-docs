@@ -22,7 +22,7 @@ A resolved `Promise` containing the `id` of the document.
 
 #### Example
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### Usage
 
@@ -56,7 +56,7 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 
 #### Example
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### Usage
 
@@ -90,7 +90,7 @@ Retrieve the metadata for all of the pages in the document.
 
 A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containing all of the pages in the document.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### Usage
 
@@ -173,7 +173,7 @@ Tells Express to run a print quality check to determine if the document is ready
 
 `void`
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### Usage
 
@@ -263,7 +263,7 @@ A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered
 
 #### Example
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### Usage
 
@@ -733,7 +733,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 

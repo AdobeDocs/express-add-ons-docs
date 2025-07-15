@@ -130,7 +130,7 @@ Your add-on must not allow these previewed images to be downloaded or persisted 
 
 ### Example
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 

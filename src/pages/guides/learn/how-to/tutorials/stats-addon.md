@@ -95,7 +95,7 @@ const panelUIProxy = await runtime.apiProxy("panel");
 
 At this point, `sandboxProxy` and `panelUIProxy` represent their counterparts from the original contexts. It all may be easier to understand when the entire process is written down; for example, in the following code, we expose a custom method called `ready()` defined in the UI iframe to the Document API.
 
-<CodeBlock slots="heading, code" repeat="2" languages="UI iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -126,7 +126,7 @@ await panelUIProxy.ready("Document Sandbox");
 
 As the name implies, the `panelUIProxy` constant in the Document Sandbox is a _proxy_ for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -225,7 +225,7 @@ runtime.exposeApi({
 
 Here, `drawRect()` and `drawEllipse()` exist within the closure of the `drawShape()` function exposed to the iframe and will work just fine when the iframe invokes it. This notion of "private" variables defined in one context can be exploited in various ways, for instance, with a counter as follows.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -285,7 +285,7 @@ The following returns won't work as expected and must be avoided.
 
 Nothing prevents you from using something else besides functions in your proxy. For instance, you can refactor the `drawShape()` example by exposing a `counter` property alongside its setter and getter.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -385,7 +385,7 @@ For the "Framework Status", the [Status Light](https://opensource.adobe.com/spec
 
 We'll start with a placeholder row with a friendly message, which is going to be removed at the first launch. A regular `<sp-button>` is placed at the bottom to initiate the metadata-collecting process.
 
-<CodeBlock slots="heading, code" repeat="1" languages="index.html"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### index.html
 
@@ -453,7 +453,7 @@ When the iframe has loaded its SDK, it will call `toggleStatus()`, passing the `
 
 When the "Analyze Document" button is clicked, the iframe—via the Document Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an _iframe-to-Document-Sandbox-to-iframe_ roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
 
-<CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### ui/index.js
 
@@ -531,7 +531,7 @@ Let me remind you again of the need to `await` when invoking `getDocumentData()`
 
 In `documentSandbox/code.js`, we bring the iframe proxy in, toggle the status light, and expose the `getDocumentData()` function. Please note that it must be declared asynchronous (line 7) because of the need to `await` when invoking the `panelUIProxy` method `createTable()` (line 12).
 
-<CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/code.js
 
@@ -578,7 +578,7 @@ runtime.exposeApi({
 
 Let's start filling in the missing parts in our code; we'll begin with the Framework Status, the easiest bit. The `toggleStatus()` method is immediately invoked in the `addOnUISdk.ready` callback, as well as the Document Sandbox `code.js`, where it is also exposed. It updates the `variant` attribute of the `<sp-status-light>` element based on the `sdk` parameter passed in.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -659,7 +659,7 @@ The various `"ab:Artboard"`, `"MediaContainer"` and others, are the Node type st
 
 ![](../../how_to/tutorials/images/stats-addon-type.png)
 
-<CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/code.js
 
@@ -689,7 +689,7 @@ runtime.exposeApi({
 
 The code comments will guide you through the process of getting the document, loop through pages extracting dimensions, and retrieving nodes metadata, but up to a point. What's `getNodeData`? As I mentioned before, I've split the Document API code into two parts: the main Document Sandbox entrypoint (`code.js`, where methods are exposed to and imported from the iframe) and `table-utils.js`, which is kept private to the context and exports just what `code.js` needs—the `getNodeData()` method, which makes use of `increaseCount()`.
 
-<CodeBlock slots="heading, code" repeat="1" languages="utils.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/table-utils.js
 
@@ -743,7 +743,7 @@ Given the nature of Adobe Express documents (which will be covered in detail in 
 
 When the whole process is repeated for each `page`, we can finally invoke the iframe `createTable()` method, passing the `documentData`.
 
-<CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/code.js
 
@@ -758,7 +758,7 @@ runtime.exposeApi({
 
 Now, it's up to the iframe to manage such data (the array of objects collecting page dimensions and node counts) and transform it into a Spectrum Table.
 
-<CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### ui/index.js
 
@@ -779,7 +779,7 @@ const iframeApi = {
 
 The process is not difficult per se, but it may be slightly tedious. The `rebuildTable()` method is declared in the `table-utils.js` module alongside a private `addRowToTable()`.
 
-<CodeBlock slots="heading, code" repeat="1" languages="table-utils.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/table-utils.js
 

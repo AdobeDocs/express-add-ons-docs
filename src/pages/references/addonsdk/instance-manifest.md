@@ -12,7 +12,7 @@ Please see the [Manifest Schema Reference](../manifest/index.md) for the whole l
 
 Below is an example of using the `manifest` object, along with the expected output.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 ### Example
 

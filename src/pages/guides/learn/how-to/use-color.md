@@ -157,7 +157,7 @@ The `showColorPicker()` method requires an HTML element as its anchor point. Her
 
 ### Example: Show the Color Picker
 
-<CodeBlock slots="heading, code" repeat="2" languages="js, html"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### ui/index.js
 

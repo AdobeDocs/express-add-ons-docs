@@ -523,7 +523,7 @@ For brevity's sake, only a few relevant additions to the code will be mentioned 
 
 The code for drawing the dimensions is moved to a separate `dimensions.js` file. This update includes exporting `drawDimensions()` and `drawDimensionsRefactored()` alongside the implementation of a private `createDimensionLine()`. This function abstracts the creation of a line and its accompanying text by accepting `width`, `height`, `translation`, `orientation`, and `margin` within an options object.
 
-<CodeBlock slots="heading, code" repeat="1" languages="documentSandbox/dimensions.js" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/dimensions.js
 
@@ -559,7 +559,7 @@ export { drawDimensions, drawDimensionsRefactored };
 
 A rather unorthodox warning system is implemented to alert the user when selecting an unsupported node type. Through the Communication API outlined in [this tutorial](../how-to/tutorials/stats-addon.md), a `flashWrongElement()` function, defined in the iframe UI, is available to the Document Sandbox.
 
-<CodeBlock slots="heading, code" repeat="2" languages="ui/index.js, documentSandbox/dimensions.js" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### ui/index.js
 
