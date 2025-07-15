@@ -229,7 +229,7 @@ colorPickerButton.addEventListener("click", () => {
 
 You can use any HTML element as the color picker's anchor element; in the example below, we're using a `<div>` element to display a color swatch.
 
-<CodeBlock slots="heading, code" repeat="2" languages="html, js"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### index.html
 
