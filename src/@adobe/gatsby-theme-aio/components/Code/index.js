@@ -10,18 +10,24 @@
  * governing permissions and limitations under the License.
  */
 
-import React, { createRef, useState } from "react";
-import { css } from "@emotion/react";
-import nextId from "react-id-generator";
-import classNames from "classnames";
-import Highlight, { defaultProps } from "prism-react-renderer";
 import "@spectrum-css/typography";
 import "@spectrum-css/tooltip";
 import "@adobe/prism-adobe";
 import { ActionButton } from "@adobe/gatsby-theme-aio/src/components/ActionButton";
-import PropTypes from "prop-types";
 
+import React, { useState } from "react";
+import nextId from "react-id-generator";
+import classNames from "classnames";
+import Highlight, { defaultProps } from "prism-react-renderer";
+import PropTypes from "prop-types";
 import Prism from "prism-react-renderer/prism";
+
+import "./styles.css";
+
+// Todo - replace this with prod url before merging
+const CODE_PLAYGROUND_URL = "https://168534.prenv.projectx.corp.adobe.com/new";
+const CODE_PLAYGROUND_MODE = "playground";
+const CODE_PLAYGROUND_SESSION = "new";
 
 (typeof global !== "undefined" ? global : window).Prism = Prism;
 
@@ -43,6 +49,7 @@ const componentsToLoad = [
 ];
 const loadedComponents = ["clike", "javascript"];
 
+// dynamically load all the prism language components
 const loader = getLoader(components, componentsToLoad, loadedComponents);
 try {
   loader.load((id) => {
@@ -52,43 +59,36 @@ try {
   console.log(e);
 }
 
-const openTooltip = (setIsTooltipOpen) => {
-  setIsTooltipOpen(true);
+// show/hide copy tooltip
+const showCopyTooltip = (setShouldShowCopyTooltip) => {
+  setShouldShowCopyTooltip(true);
   setTimeout(() => {
-    setIsTooltipOpen(false);
+    setShouldShowCopyTooltip(false);
   }, 3000);
 };
 
-const copy = (textarea, document, setIsTooltipOpen) => {
-  textarea.current.select();
-  document.execCommand("copy");
-  openTooltip(setIsTooltipOpen);
+// copy to clipboard
+const copyToClipboard = async (codeContent, setIsTooltipOpen) => {
+    await navigator.clipboard.writeText(codeContent);
+    showCopyTooltip(setIsTooltipOpen);
 };
 
-const handleTry = (codeContent) => {
-  try {
+// open code playground
+const openCodePlayground = (codeContent) => {
     const playgroundData = {
-      scriptContent: codeContent,
+      codeJs: codeContent,
       mode: "script",
     };
-    const url = new URL("https://168534.prenv.projectx.corp.adobe.com/new");
-    url.searchParams.set("mode", "playground");
-    url.searchParams.set("session", "new");
-    url.searchParams.set(
-      "playgroundData",
-      btoa(JSON.stringify(playgroundData))
-    );
+    const url = new URL(CODE_PLAYGROUND_URL);
+    url.searchParams.set("mode", CODE_PLAYGROUND_MODE);
+    url.searchParams.set("session", CODE_PLAYGROUND_SESSION);
+    url.searchParams.set("playgroundData", btoa(JSON.stringify(playgroundData)));
     window.open(url.toString(), "_blank");
-  } catch (error) {
-    console.error("Error in Try button:", error);
-  }
 };
 
-const Code = ({ children, className = "", theme }) => {
-  const [tooltipId] = useState(nextId);
-  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
-
-  // Parse language and check for {try} attribute
+// parse attributes - language and try
+// sample usage: ```js{try}
+const parseAttributes = (className) => {
   let language = className.replace(/language-/, "");
   const attributeMatch = language.match(/^(\w+)\s*\{([^}]+)\}$/);
 
@@ -100,8 +100,17 @@ const Code = ({ children, className = "", theme }) => {
     shouldShowTry = attributes.includes("try");
   }
 
+  return { language, shouldShowTry };
+};
+
+const Code = ({ children, className = "", theme }) => {
+  const [tooltipId] = useState(nextId);
+  const [shouldShowCopyTooltip, setShouldShowCopyTooltip] = useState(false);
+
+  const { language, shouldShowTry } = parseAttributes(className);
+
   return (
-    <Highlight {...defaultProps} code={children} language={language}>
+    <Highlight {...defaultProps} code={children} language={language} theme={undefined}>
       {({ className, tokens, getLineProps, getTokenProps }) => {
         const isEmptyItem = (token) =>
           token && token.length === 1 && token[0].empty;
@@ -109,103 +118,40 @@ const Code = ({ children, className = "", theme }) => {
           ? tokens.slice(0, -1)
           : tokens;
         const isMultiLine = lines.length > 1;
-        const textarea = createRef();
 
         return (
-          <div
-            className={`spectrum--${theme}`}
-            css={css`
-              position: relative;
-              max-width: calc(
-                100vw - var(--spectrum-global-dimension-size-800)
-              );
-            `}
-          >
+          <div className={`spectrum--${theme} code-container`}>
             {/* Copy Button */}
             <ActionButton
-              className="spectrum-ActionButton"
+              className={classNames(
+                "spectrum-ActionButton",
+                "code-action-button",
+                "code-copy-button",
+                { "with-try": shouldShowTry }
+              )}
               aria-describedby={tooltipId}
-              css={css`
-                position: absolute;
-                right: ${shouldShowTry ? "70px" : "10px"};
-                top: 0px;
-                border-color: var(
-                  --spectrum-actionbutton-m-border-color,
-                  var(--spectrum-alias-border-color)
-                ) !important;
-                color: var(
-                  --spectrum-actionbutton-m-text-color,
-                  var(--spectrum-alias-text-color)
-                ) !important;
-                padding: var(--spectrum-global-dimension-size-65);
-              `}
-              onClick={() => {
-                copy(textarea, document, setIsTooltipOpen);
-              }}
+              onClick={() => copyToClipboard(children, setShouldShowCopyTooltip)}
             >
               Copy
             </ActionButton>
-            {/* Try Button - Only render if showTry is true */}
+
+            {/* Try Button */}
             {shouldShowTry && (
               <ActionButton
-                className="spectrum-ActionButton"
-                css={css`
-                  position: absolute;
-                  right: 10px;
-                  top: 0px;
-                  border-color: var(
-                    --spectrum-actionbutton-m-border-color,
-                    var(--spectrum-alias-border-color)
-                  ) !important;
-                  color: var(
-                    --spectrum-actionbutton-m-text-color,
-                    var(--spectrum-alias-text-color)
-                  ) !important;
-                  padding: var(--spectrum-global-dimension-size-65);
-                `}
-                onClick={() => handleTry(children)}
+                className="spectrum-ActionButton code-action-button code-try-button"
+                onClick={() => openCodePlayground(children)}
               >
                 Try
               </ActionButton>
             )}
-            <div
-              css={css`
-                position: absolute;
-                top: var(--spectrum-global-dimension-size-200);
-                right: var(--spectrum-global-dimension-size-200);
-              `}
-            >
-              <textarea
-                tabIndex="-1"
-                readOnly={true}
-                aria-hidden="true"
-                css={css`
-                  position: fixed;
-                  left: -999px;
-                  opacity: 0;
-                `}
-                ref={textarea}
-                value={children}
-              />
+
+            <div className={classNames("code-tooltip-container", { "with-try": shouldShowTry })}>
               <span
                 role="tooltip"
                 id={tooltipId}
-                css={css`
-                  display: block;
-                  position: absolute;
-                  top: var(--spectrum-global-dimension-size-50);
-                  right: var(--spectrum-global-dimension-size-675);
-                  left: initial;
-                  font-family: var(
-                    --spectrum-alias-body-text-font-family,
-                    var(--spectrum-global-font-family-base)
-                  );
-                `}
                 className={classNames(
-                  "spectrum-Tooltip spectrum-Tooltip--left",
-                  {
-                    "is-open": isTooltipOpen,
-                  }
+                  "spectrum-Tooltip spectrum-Tooltip--left code-tooltip",
+                  { "is-open": shouldShowCopyTooltip }
                 )}
               >
                 <span className="spectrum-Tooltip-label">
@@ -214,57 +160,33 @@ const Code = ({ children, className = "", theme }) => {
                 <span className="spectrum-Tooltip-tip" />
               </span>
             </div>
+
             <pre
-              css={css`
-                padding-top: 30px !important;
-              `}
               className={classNames(
                 className,
-                "spectrum-Code spectrum-Code--sizeM"
+                "spectrum-Code spectrum-Code--sizeM code-pre"
               )}
             >
               {lines.map((line, i) => {
-                const { style: lineStyles, ...lineProps } = getLineProps({
-                  line,
-                  key: i,
-                });
+                const { style: lineStyle, ...lineProps } = getLineProps({ line, key: i });
 
                 return (
-                  <div
-                    key={i}
-                    css={css`
-                      display: table-row;
-                    `}
-                  >
+                  <div key={i} className="code-line">
                     {isMultiLine && (
                       <span
                         data-pseudo-content={i + 1}
-                        css={css`
-                          display: table-cell;
-                          color: var(--spectrum-global-color-gray-500);
-                          text-align: left;
-                          padding-right: var(
-                            --spectrum-global-dimension-size-200
-                          );
-                          user-select: none;
-                          &::before {
-                            content: attr(data-pseudo-content);
-                          }
-                        `}
-                      ></span>
+                        className="code-line-number"
+                      />
                     )}
                     <span
                       {...lineProps}
-                      css={css`
-                        margin-right: var(
-                          --spectrum-global-dimension-size-1000
-                        );
-                      `}
+                      style={lineStyle}
+                      className="code-line-content"
                     >
+                      {/* styling the tokens in the line */}
                       {line.map((token, key) => {
-                        const { style: tokenStyles, ...tokenProps } =
-                          getTokenProps({ token, key });
-                        return <span key={key} {...tokenProps} />;
+                        const { style: tokenStyle, ...tokenProps } = getTokenProps({ token, key });
+                        return <span key={key} {...tokenProps} style={tokenStyle} />;
                       })}
                     </span>
                   </div>
