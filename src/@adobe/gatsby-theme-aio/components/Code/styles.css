@@ -4,7 +4,7 @@
 }
 
 .code-pre {
-  padding-top: 30px !important;
+  padding-top: var(--spectrum-global-dimension-size-400) !important;
 }
 
 .code-line {
@@ -29,39 +29,39 @@
 
 .code-action-button {
   position: absolute;
-  top: 0px;
+  inset-block-start: 0;
   border-color: var(--spectrum-actionbutton-m-border-color, var(--spectrum-alias-border-color)) !important;
   color: var(--spectrum-actionbutton-m-text-color, var(--spectrum-alias-text-color)) !important;
   padding: var(--spectrum-global-dimension-size-65);
 }
 
 .code-copy-button {
-  right: 10px;
+  inset-inline-end: var(--spectrum-global-dimension-size-125);
 }
 
 .code-copy-button.with-try {
-  right: 70px;
+  inset-inline-end: var(--spectrum-global-dimension-size-700);
 }
 
 .code-try-button {
-  right: 10px;
+  inset-inline-end: var(--spectrum-global-dimension-size-125);
 }
 
 .code-tooltip-container {
   position: absolute;
-  top: 5px;
-  height: 30px;
+  inset-block-start: var(--spectrum-global-dimension-size-65);
+  height: var(--spectrum-global-dimension-size-300);
   display: flex;
   align-items: center;
   pointer-events: none;
 }
 
 .code-tooltip-container:not(.with-try) {
-  right: calc(10px + 60px + 10px);
+  inset-inline-end: calc(var(--spectrum-global-dimension-size-125) + var(--spectrum-global-dimension-size-600) + var(--spectrum-global-dimension-size-125));
 }
 
 .code-tooltip-container.with-try {
-  right: calc(70px + 60px + 10px);
+  inset-inline-end: calc(var(--spectrum-global-dimension-size-700) + var(--spectrum-global-dimension-size-600) + var(--spectrum-global-dimension-size-125));
 }
 
 .code-tooltip {
