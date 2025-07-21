@@ -1,0 +1,515 @@
+# LLM Test Queries for Adobe Express Add-ons Documentation
+# These queries simulate real developer questions to test documentation effectiveness
+# Enhanced with Adobe Express specific scenarios
+
+test_queries:
+  # Getting Started / Basic Usage
+  - query: "How do I create a basic Adobe Express add-on?"
+    category: "getting_started"
+    expected_elements:
+      - "manifest.json"
+      - "create-ccweb-add-on"
+      - "CLI"
+      - "template"
+      - "entry point"
+    
+  - query: "What files do I need for a minimal add-on project?"
+    category: "getting_started"
+    expected_elements:
+      - "manifest.json"
+      - "index.html"
+      - "main JavaScript file"
+      - "entryPoints"
+    
+  - query: "How do I set up local development for Adobe Express add-ons?"
+    category: "getting_started"
+    expected_elements:
+      - "npx @adobe/create-ccweb-add-on"
+      - "localhost"
+      - "development mode"
+      - "playground"
+    
+  # Document API Usage
+  - query: "How do I create a rectangle in Adobe Express using the Document API?"
+    category: "document_api"
+    expected_elements:
+      - "editor.createRectangle()"
+      - "import"
+      - "express-document-sdk"
+      - "width"
+      - "height"
+      - "append"
+    
+  - query: "How do I add an image to the Adobe Express document?"
+    category: "document_api"
+    expected_elements:
+      - "createImageContainer"
+      - "loadBitmapImage"
+      - "BitmapImage"
+      - "MediaContainerNode"
+      - "Blob"
+    
+  - query: "How do I access the current selection in Adobe Express?"
+    category: "document_api"
+    expected_elements:
+      - "editor.context"
+      - "currentSelection"
+      - "Context"
+      - "selection"
+    
+  - query: "What's the difference between createRectangle and createEllipse?"
+    category: "document_api"
+    expected_elements:
+      - "createRectangle"
+      - "createEllipse"
+      - "width"
+      - "height"
+      - "rx"
+      - "ry"
+      - "radius"
+    
+  # Styling and Colors
+  - query: "How do I apply colors and fills to shapes in Adobe Express?"
+    category: "styling"
+    expected_elements:
+      - "makeColorFill"
+      - "colorUtils"
+      - "fromHex"
+      - "fill"
+      - "Color"
+    
+  - query: "How do I add a stroke to a shape?"
+    category: "styling"
+    expected_elements:
+      - "makeStroke"
+      - "stroke"
+      - "color"
+      - "width"
+      - "StrokePosition"
+    
+  - query: "How do I create gradients in Adobe Express add-ons?"
+    category: "styling"
+    expected_elements:
+      - "gradient"
+      - "ColorStop"
+      - "LinearGradient"
+      - "RadialGradient"
+    
+  # Text Handling
+  - query: "How do I create and style text in Adobe Express?"
+    category: "text"
+    expected_elements:
+      - "createText"
+      - "StandaloneTextNode"
+      - "text"
+      - "fontFamily"
+      - "fontSize"
+    
+  - query: "How do I change font properties of text elements?"
+    category: "text"
+    expected_elements:
+      - "fontFamily"
+      - "fontSize"
+      - "fontStyle"
+      - "fontWeight"
+      - "textColor"
+    
+  # UI and Communication
+  - query: "How do I communicate between the iframe and document sandbox?"
+    category: "communication"
+    expected_elements:
+      - "exposeApi"
+      - "importApi"
+      - "communication"
+      - "iframe"
+      - "document sandbox"
+    
+  - query: "How do I create a modal dialog in my add-on?"
+    category: "ui"
+    expected_elements:
+      - "showModalDialog"
+      - "modal"
+      - "dialog"
+      - "UI"
+    
+  - query: "How do I handle user input in my Adobe Express add-on?"
+    category: "ui"
+    expected_elements:
+      - "event listener"
+      - "user input"
+      - "form"
+      - "button"
+      - "interaction"
+    
+  # Manifest and Configuration
+  - query: "What are the required fields in the manifest.json file?"
+    category: "manifest"
+    expected_elements:
+      - "manifestVersion"
+      - "id"
+      - "name"
+      - "version"
+      - "entryPoints"
+      - "main"
+    
+  - query: "How do I configure permissions for my add-on?"
+    category: "manifest"
+    expected_elements:
+      - "permissions"
+      - "manifest.json"
+      - "requiredPermissions"
+    
+  - query: "What's the difference between panel and script entry points?"
+    category: "manifest"
+    expected_elements:
+      - "entryPoints"
+      - "type"
+      - "panel"
+      - "script"
+      - "documentSandbox"
+    
+  # Advanced Features
+  - query: "How do I work with groups and layers in Adobe Express?"
+    category: "advanced"
+    expected_elements:
+      - "createGroup"
+      - "GroupNode"
+      - "children"
+      - "append"
+      - "layer"
+    
+  - query: "How do I handle errors and exceptions in my add-on code?"
+    category: "advanced"
+    expected_elements:
+      - "try"
+      - "catch"
+      - "error handling"
+      - "exception"
+    
+  - query: "How do I implement drag and drop functionality?"
+    category: "advanced"
+    expected_elements:
+      - "drag"
+      - "drop"
+      - "dragstart"
+      - "dragover"
+      - "drop event"
+    
+  # API Reference Questions
+  - query: "What parameters does createRectangle accept?"
+    category: "api_reference"
+    expected_elements:
+      - "createRectangle"
+      - "parameters"
+      - "returns"
+      - "RectangleNode"
+    
+  - query: "What's the return type of editor.context.currentSelection?"
+    category: "api_reference"
+    expected_elements:
+      - "currentSelection"
+      - "ItemList"
+      - "returns"
+      - "selection"
+    
+  - query: "How do I use the ColorUtils class?"
+    category: "api_reference"
+    expected_elements:
+      - "ColorUtils"
+      - "fromHex"
+      - "fromRGB"
+      - "Color"
+    
+  # Troubleshooting
+  - query: "Why isn't my add-on loading in Adobe Express?"
+    category: "troubleshooting"
+    expected_elements:
+      - "manifest.json"
+      - "loading"
+      - "debug"
+      - "error"
+      - "troubleshooting"
+    
+  - query: "How do I debug my Adobe Express add-on?"
+    category: "troubleshooting"
+    expected_elements:
+      - "debug"
+      - "console.log"
+      - "developer tools"
+      - "debugging"
+    
+  - query: "What are common errors when creating shapes?"
+    category: "troubleshooting"
+    expected_elements:
+      - "error"
+      - "shapes"
+      - "createRectangle"
+      - "createEllipse"
+      - "common issues"
+    
+  # Performance and Best Practices
+  - query: "What are the best practices for Adobe Express add-on development?"
+    category: "best_practices"
+    expected_elements:
+      - "best practices"
+      - "performance"
+      - "optimization"
+      - "guidelines"
+    
+  - query: "How do I optimize my add-on for better performance?"
+    category: "best_practices"
+    expected_elements:
+      - "performance"
+      - "optimization"
+      - "memory"
+      - "efficiency"
+    
+  # Integration and Distribution
+  - query: "How do I publish my add-on to the Adobe Express marketplace?"
+    category: "distribution"
+    expected_elements:
+      - "marketplace"
+      - "publish"
+      - "distribution"
+      - "review"
+      - "submission"
+    
+  - query: "What are the requirements for add-on submission?"
+    category: "distribution"
+    expected_elements:
+      - "requirements"
+      - "submission"
+      - "guidelines"
+      - "marketplace"
+      - "review process"
+
+# Test configuration
+test_config:
+  max_context_length: 3000
+  response_timeout: 30
+  expected_accuracy_threshold: 70
+  categories_to_prioritize:
+    - "getting_started"
+    - "document_api"
+    - "api_reference"
+  
+# Evaluation criteria
+evaluation_criteria:
+  accuracy_weight: 40
+  completeness_weight: 30
+  code_quality_weight: 20
+  clarity_weight: 10
+  
+  # What constitutes a good response
+  good_response_indicators:
+    - "Contains working code examples"
+    - "Includes proper import statements"
+    - "References correct API methods"
+    - "Provides step-by-step instructions"
+    - "Explains concepts clearly"
+  
+  # Red flags in responses
+  poor_response_indicators:
+    - "Contains hallucinated API methods"
+    - "Missing code examples when needed"
+    - "Vague or incomplete instructions"
+    - "Incorrect parameter information"
+    - "References non-existent features"
+
+adobe_express_specific_queries:
+  - category: "Context Disambiguation"
+    queries:
+      - query: "What is the difference between iframe context and document sandbox context?"
+        expected_elements:
+          - "iframe context refers to"
+          - "document sandbox context"
+          - "addOnUISdk"
+          - "express-document-sdk"
+          - "boundary"
+          - "isolation"
+        difficulty: "intermediate"
+        intent: "clarify_concept"
+        
+      - query: "How do I access the current document context?"
+        expected_elements:
+          - "editor.context"
+          - "addOnUISdk.app.document"
+          - "different contexts"
+          - "UI SDK vs Document API"
+        difficulty: "beginner"
+        intent: "access_api"
+        
+      - query: "What does 'getting the context' mean in Adobe Express add-ons?"
+        expected_elements:
+          - "disambiguation"
+          - "multiple meanings"
+          - "specific context"
+          - "iframe or sandbox"
+        difficulty: "beginner"
+        intent: "clarify_concept"
+
+  - category: "API Boundary Confusion"
+    queries:
+      - query: "Can I use addOnUISdk and express-document-sdk together?"
+        expected_elements:
+          - "different contexts"
+          - "iframe vs sandbox"
+          - "communication"
+          - "boundary"
+          - "cannot mix directly"
+        difficulty: "intermediate"
+        intent: "understand_limitations"
+        
+      - query: "How do I create a rectangle in an Adobe Express add-on?"
+        expected_elements:
+          - "express-document-sdk"
+          - "document sandbox"
+          - "editor.createRectangle"
+          - "NOT addOnUISdk"
+          - "context annotation"
+        difficulty: "beginner"
+        intent: "create_shape"
+        
+      - query: "What's the difference between addOnUISdk.app.document and editor methods?"
+        expected_elements:
+          - "iframe context"
+          - "sandbox context"
+          - "capability matrix"
+          - "supported features"
+          - "architectural boundary"
+        difficulty: "intermediate"
+        intent: "understand_architecture"
+
+  - category: "Variable Naming Consistency"
+    queries:
+      - query: "What should I call the Adobe Express SDK variable?"
+        expected_elements:
+          - "addOnUISdk"
+          - "consistent naming"
+          - "import statement"
+          - "avoid variations"
+        difficulty: "beginner"
+        intent: "coding_convention"
+        
+      - query: "Is it addOnUISdk or addOnSdk or just sdk?"
+        expected_elements:
+          - "addOnUISdk is correct"
+          - "consistent variable naming"
+          - "avoid confusion"
+        difficulty: "beginner"
+        intent: "clarify_naming"
+
+  - category: "Code Example Completeness"
+    queries:
+      - query: "Show me a complete example of creating a rectangle"
+        expected_elements:
+          - "import statement"
+          - "express-document-sdk"
+          - "editor.createRectangle"
+          - "context annotation"
+          - "complete setup"
+          - "error handling"
+        difficulty: "beginner"
+        intent: "generate_code"
+        
+      - query: "How do I import the Adobe Express add-on SDK?"
+        expected_elements:
+          - "import { addOnUISdk }"
+          - "from statement"
+          - "complete import"
+          - "context clarification"
+        difficulty: "beginner"
+        intent: "setup_project"
+
+  - category: "Capability Matrices"
+    queries:
+      - query: "What can I do with the UI SDK vs Document SDK?"
+        expected_elements:
+          - "capability matrix"
+          - "supported features"
+          - "iframe vs sandbox"
+          - "table format"
+          - "✅ and ❌ indicators"
+        difficulty: "intermediate"
+        intent: "understand_capabilities"
+        
+      - query: "Can I create shapes with addOnUISdk?"
+        expected_elements:
+          - "No, not supported"
+          - "use Document SDK"
+          - "capability limitation"
+          - "correct alternative"
+        difficulty: "beginner"
+        intent: "understand_limitations"
+
+  - category: "Tutorial Chunking"
+    queries:
+      - query: "How do I build a grid add-on step by step?"
+        expected_elements:
+          - "step-by-step sections"
+          - "chunked content"
+          - "focused sections"
+          - "prerequisites"
+          - "clear boundaries"
+        difficulty: "intermediate"
+        intent: "follow_tutorial"
+        
+      - query: "What's the first step in creating an add-on?"
+        expected_elements:
+          - "setup section"
+          - "prerequisites"
+          - "initial configuration"
+          - "clear starting point"
+        difficulty: "beginner"
+        intent: "get_started"
+
+  - category: "Architectural Boundaries"
+    queries:
+      - query: "Why can't I access document elements from the iframe?"
+        expected_elements:
+          - "security boundary"
+          - "iframe isolation"
+          - "architectural separation"
+          - "communication mechanism"
+        difficulty: "intermediate"
+        intent: "understand_architecture"
+        
+      - query: "How do iframe and sandbox communicate?"
+        expected_elements:
+          - "message passing"
+          - "cross-frame communication"
+          - "boundary explanation"
+          - "security model"
+        difficulty: "advanced"
+        intent: "understand_architecture"
+
+  - category: "Error Handling"
+    queries:
+      - query: "How do I handle errors in Adobe Express add-ons?"
+        expected_elements:
+          - "try/catch blocks"
+          - "error handling patterns"
+          - "specific error types"
+          - "best practices"
+        difficulty: "intermediate"
+        intent: "handle_errors"
+        
+      - query: "What errors can occur when creating shapes?"
+        expected_elements:
+          - "common errors"
+          - "error conditions"
+          - "troubleshooting"
+          - "error handling"
+        difficulty: "intermediate"
+        intent: "troubleshoot"
+
+  - category: "LLM FAQ Sections"
+    queries:
+      - query: "Common questions about Adobe Express add-ons"
+        expected_elements:
+          - "FAQ section"
+          - "Q: and A: format"
+          - "common problems"
+          - "quick answers"
+        difficulty: "beginner"
+        intent: "find_answers" 

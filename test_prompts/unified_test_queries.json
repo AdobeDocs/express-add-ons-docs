@@ -1,0 +1,3687 @@
+{
+  "metadata": {
+    "total_queries": 228,
+    "export_date": "2025-07-18T01:05:20.405578",
+    "source_files": [
+      "llm-test-queries.yaml",
+      "benchmarking_prd_queries",
+      "structured_query_data.json",
+      "unlabelled_queries.yaml"
+    ],
+    "categories": [
+      "image_media_handling",
+      "code_generation",
+      "advanced_shapes_graphics",
+      "api_integration",
+      "special_use_cases",
+      "getting_started",
+      "media_handling",
+      "addon_development_advanced",
+      "authentication_external_services",
+      "user_interface_development",
+      "debugging_troubleshooting",
+      "node_manipulation_properties",
+      "advanced",
+      "document_structure_basics",
+      "document_api",
+      "publishing_submission",
+      "styling",
+      "text",
+      "best_practices",
+      "image_collection_organization",
+      "troubleshooting",
+      "api_reference_documentation",
+      "ui",
+      "data_visualization",
+      "creating_basic_shapes",
+      "development_setup",
+      "api_reference",
+      "architecture_confusion",
+      "information_search",
+      "manifest",
+      "error_handling",
+      "getting_started_setup",
+      "distribution",
+      "validating_ideas",
+      "text_manipulation",
+      "communication",
+      "color_styling"
+    ]
+  },
+  "queries": [
+    {
+      "query": "Give me ideas for new add-ons that are not already done but could be very useful.",
+      "category": "validating_ideas",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Give me add-on ideas that can take advantage of the metadata API.",
+      "category": "validating_ideas",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Write code to clear all rectangles.",
+      "category": "code_generation",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Create a function that creates a text node and writes in it.",
+      "category": "code_generation",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Make me an Adobe add-on that takes in a prompt and creates an image using Gemini 2.0 Flash.",
+      "category": "code_generation",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Create a function that creates a landscape PNG on the right side of a 1920x1080 screen given a URL.",
+      "category": "code_generation",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Create a helper function that finds pixel boundaries of an object and returns a PNG rendition.",
+      "category": "code_generation",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "How do I add a textbox programmatically through code to the Adobe Express canvas?",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "What is the hierarchy for a single image on a single page project?",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "How can I access the current user using my add-on?",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "How do I add a video to the document?",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "What is const textNode = editor.createText();?",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Why does this code only work to draw rectangles over shapes and images, not text?",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "I got this when I ran it: Unhandled Promise Rejection: ReferenceError: 'colorUtils' is not defined.",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "My add-on in Adobe Express says this when I try to output something: sandboxApi not found.",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Error: No property with name documentRoot found on Live Object.",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "Error: Experimental APIs are not supported. To try them in your local add-on - set 'experimentalApis: true' in 'manifest.json'.",
+      "category": "information_search",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "benchmarking_prd_queries",
+      "metadata": {
+        "source_type": "benchmarking",
+        "format": "text"
+      }
+    },
+    {
+      "query": "How do I create a basic Adobe Express add-on?",
+      "category": "getting_started",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "manifest.json",
+        "create-ccweb-add-on",
+        "CLI",
+        "template",
+        "entry point"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What files do I need for a minimal add-on project?",
+      "category": "getting_started",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "manifest.json",
+        "index.html",
+        "main JavaScript file",
+        "entryPoints"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I set up local development for Adobe Express add-ons?",
+      "category": "getting_started",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "npx @adobe/create-ccweb-add-on",
+        "localhost",
+        "development mode",
+        "playground"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I create a rectangle in Adobe Express using the Document API?",
+      "category": "document_api",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "editor.createRectangle()",
+        "import",
+        "express-document-sdk",
+        "width",
+        "height",
+        "append"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I add an image to the Adobe Express document?",
+      "category": "document_api",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "createImageContainer",
+        "loadBitmapImage",
+        "BitmapImage",
+        "MediaContainerNode",
+        "Blob"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I access the current selection in Adobe Express?",
+      "category": "document_api",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "editor.context",
+        "currentSelection",
+        "Context",
+        "selection"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What's the difference between createRectangle and createEllipse?",
+      "category": "document_api",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "createRectangle",
+        "createEllipse",
+        "width",
+        "height",
+        "rx",
+        "ry",
+        "radius"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I apply colors and fills to shapes in Adobe Express?",
+      "category": "styling",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "makeColorFill",
+        "colorUtils",
+        "fromHex",
+        "fill",
+        "Color"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I add a stroke to a shape?",
+      "category": "styling",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "makeStroke",
+        "stroke",
+        "color",
+        "width",
+        "StrokePosition"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I create gradients in Adobe Express add-ons?",
+      "category": "styling",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "gradient",
+        "ColorStop",
+        "LinearGradient",
+        "RadialGradient"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I create and style text in Adobe Express?",
+      "category": "text",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "createText",
+        "StandaloneTextNode",
+        "text",
+        "fontFamily",
+        "fontSize"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I change font properties of text elements?",
+      "category": "text",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "fontFamily",
+        "fontSize",
+        "fontStyle",
+        "fontWeight",
+        "textColor"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I communicate between the iframe and document sandbox?",
+      "category": "communication",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "exposeApi",
+        "importApi",
+        "communication",
+        "iframe",
+        "document sandbox"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I create a modal dialog in my add-on?",
+      "category": "ui",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "showModalDialog",
+        "modal",
+        "dialog",
+        "UI"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I handle user input in my Adobe Express add-on?",
+      "category": "ui",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "event listener",
+        "user input",
+        "form",
+        "button",
+        "interaction"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What are the required fields in the manifest.json file?",
+      "category": "manifest",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "manifestVersion",
+        "id",
+        "name",
+        "version",
+        "entryPoints",
+        "main"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I configure permissions for my add-on?",
+      "category": "manifest",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "permissions",
+        "manifest.json",
+        "requiredPermissions"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What's the difference between panel and script entry points?",
+      "category": "manifest",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "entryPoints",
+        "type",
+        "panel",
+        "script",
+        "documentSandbox"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I work with groups and layers in Adobe Express?",
+      "category": "advanced",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "createGroup",
+        "GroupNode",
+        "children",
+        "append",
+        "layer"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I handle errors and exceptions in my add-on code?",
+      "category": "advanced",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "try",
+        "catch",
+        "error handling",
+        "exception"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I implement drag and drop functionality?",
+      "category": "advanced",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "drag",
+        "drop",
+        "dragstart",
+        "dragover",
+        "drop event"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What parameters does createRectangle accept?",
+      "category": "api_reference",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "createRectangle",
+        "parameters",
+        "returns",
+        "RectangleNode"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What's the return type of editor.context.currentSelection?",
+      "category": "api_reference",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "currentSelection",
+        "ItemList",
+        "returns",
+        "selection"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I use the ColorUtils class?",
+      "category": "api_reference",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "ColorUtils",
+        "fromHex",
+        "fromRGB",
+        "Color"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "Why isn't my add-on loading in Adobe Express?",
+      "category": "troubleshooting",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "manifest.json",
+        "loading",
+        "debug",
+        "error",
+        "troubleshooting"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I debug my Adobe Express add-on?",
+      "category": "troubleshooting",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "debug",
+        "console.log",
+        "developer tools",
+        "debugging"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What are common errors when creating shapes?",
+      "category": "troubleshooting",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "error",
+        "shapes",
+        "createRectangle",
+        "createEllipse",
+        "common issues"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What are the best practices for Adobe Express add-on development?",
+      "category": "best_practices",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "best practices",
+        "performance",
+        "optimization",
+        "guidelines"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I optimize my add-on for better performance?",
+      "category": "best_practices",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "performance",
+        "optimization",
+        "memory",
+        "efficiency"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "How do I publish my add-on to the Adobe Express marketplace?",
+      "category": "distribution",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "marketplace",
+        "publish",
+        "distribution",
+        "review",
+        "submission"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What are the requirements for add-on submission?",
+      "category": "distribution",
+      "subcategory": null,
+      "priority": "high",
+      "expected_elements": [
+        "requirements",
+        "submission",
+        "guidelines",
+        "marketplace",
+        "review process"
+      ],
+      "common_errors": [],
+      "source_file": "llm-test-queries.yaml",
+      "metadata": {
+        "source_type": "structured_test",
+        "format": "yaml",
+        "has_expected_elements": true
+      }
+    },
+    {
+      "query": "What is an Express add-on?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What is the Document sandbox?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What is a node in express?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What all document APIs are there?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What is difference between artboard, page and canvas?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "Explain the DOM hierarchy so I can easily understand the document site",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What are the different types of eventType available which add-on can listen for?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What are containers?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What are text frames?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What node types are there?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "What's the difference between boundsLocal and boundsInParent?",
+      "category": "document_structure_basics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Document_Structure_Basics"
+      }
+    },
+    {
+      "query": "How do I begin?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "How can you help with building an add-on for Express?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "How do I scaffold an add-on?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "How to create a starter template?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "What should be the prerequisite for this?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "I want to create the new project using CLI. What to do for this?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "Where do I add my code for addon?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "Where is the add-on documentation?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "How can I enable the Code Playground?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "Is there a Playground for add-ons?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "Is there a reference app that I can use to test my addon?",
+      "category": "getting_started_setup",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Getting_Started_Setup"
+      }
+    },
+    {
+      "query": "How do I set up my add-on to use Spectrum Web Components?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "Are there any guidelines to build the add-on's UI?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "Are there any native widgets I can use to build the add-on's UI?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "Can you give me a sample code to implement a text input with spectrum?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "Do addons support a dark theme?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "How do I detect the theme and adjust my UI components accordingly?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "How can I get themechange events?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "How many kinds of spectrum frameworks can I use?",
+      "category": "user_interface_development",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "User_Interface_Development"
+      }
+    },
+    {
+      "query": "How can I create a shape?",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "Create a blue circle",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "Create a rectangle and place it in the center of the document",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "Draw a rectangle, circle and triangle in green, blue and orange respectively",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "How do I create a pink circle and add it to the document?",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "How do I create a yellow rectangle?",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "How do I create a hot pink round circle that's completely round and not ellipse?",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "How do I create a round circle and add it?",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "Draw a rombus",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "Draw a pyramid in the center of the document",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "Create a chess box",
+      "category": "creating_basic_shapes",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Creating_Basic_Shapes"
+      }
+    },
+    {
+      "query": "How to add an image to the document?",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "Please generate some code to import and image from a URL",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "What code do I put in the DocumentJS if I am importing an image from a URL?",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "Add image to the bottom left of the page",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "Say that I have an image already selected, how can I switch it with another one?",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "Can I add gifs as well?",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "How would I go about adding an audio file to the current document?",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "What is the process for video?",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "Create an addon to add video",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "Can we edit a video via add-on?",
+      "category": "image_media_handling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Media_Handling"
+      }
+    },
+    {
+      "query": "How to add text to the document?",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "How to add a textnode in the page?",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "Add text that says hello world to the document",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "Create a text box with the text - Hello",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "What all can I do with Text using the APIs?",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "Can you pls help me with all Text APIs that are supported?",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "How do I select the first text element in the page?",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "I want to apply a color gradient to the currently selected text node",
+      "category": "text_manipulation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Text_Manipulation"
+      }
+    },
+    {
+      "query": "Create a flow chart with three circles filled with gray color, with text 1, 2, 3 respectively",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Create a path in the shape of a 5 points star",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Create a path in the shape of a 8 points star",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Generate a yellow star",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Can you fill existing star with light blue color?",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Draw 3 circle on inside other with different color",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Create a circle with 4 colors",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Create a pie chart of distribution 50%, 30%, 20% with different colours for each section",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Create two rectangles connected with arrow",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "How do I add an arrow to the document?",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Create an arrow with an empty arrowhead and add it to the document",
+      "category": "advanced_shapes_graphics",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Advanced_Shapes_Graphics"
+      }
+    },
+    {
+      "query": "Create one table which contains all the state of India in as row and temperature from Jan to Dec as column",
+      "category": "data_visualization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Data_Visualization"
+      }
+    },
+    {
+      "query": "Write a code to generate one table which contains all the state of India and temperature from Jan to Dec",
+      "category": "data_visualization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Data_Visualization"
+      }
+    },
+    {
+      "query": "Help me create a script that can be used to create a stock market visualization",
+      "category": "data_visualization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Data_Visualization"
+      }
+    },
+    {
+      "query": "I have a list of stock prices -- how could I create a line graph and add it to the document?",
+      "category": "data_visualization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Data_Visualization"
+      }
+    },
+    {
+      "query": "Create a 6x9 grid with blue borders and yellow cells",
+      "category": "data_visualization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Data_Visualization"
+      }
+    },
+    {
+      "query": "Make the circle without a fill, and red outline",
+      "category": "color_styling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Color_Styling"
+      }
+    },
+    {
+      "query": "Color the selected rectangle in blue color",
+      "category": "color_styling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Color_Styling"
+      }
+    },
+    {
+      "query": "How can I create a color?",
+      "category": "color_styling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Color_Styling"
+      }
+    },
+    {
+      "query": "Explain the makecolorfill method",
+      "category": "color_styling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Color_Styling"
+      }
+    },
+    {
+      "query": "Add a gradient of blue and red to the rectangle",
+      "category": "color_styling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Color_Styling"
+      }
+    },
+    {
+      "query": "Create a rectangle container with 15 different colors in it",
+      "category": "color_styling",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Color_Styling"
+      }
+    },
+    {
+      "query": "How can I apply some persistent metadata to a node I add to the document?",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Add two more keys to it and print all key value pairs",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Create a rectangle and add one key value to it",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Can we get metadata for an image?",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Is there a way to rotate an element, like a rotate() method?",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Can we rotate an image through SDK?",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Generate code to select image in canvas and rotate them by 45 degree anti clockwise",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Resize the selected nodes to fit the page",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "How do I change height and width on a ComplexShapeNode?",
+      "category": "node_manipulation_properties",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Node_Manipulation_Properties"
+      }
+    },
+    {
+      "query": "Help me write a function that accepts height and width and adjusts the height and width of the selected objects",
+      "category": "addon_development_advanced",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Addon_Development_Advanced"
+      }
+    },
+    {
+      "query": "How do I build add-on UI to say the name of the selected node type whenever the selection changes?",
+      "category": "addon_development_advanced",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Addon_Development_Advanced"
+      }
+    },
+    {
+      "query": "I want to disable a text field and button whenever a node type that doesn't have a width property is selected",
+      "category": "addon_development_advanced",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Addon_Development_Advanced"
+      }
+    },
+    {
+      "query": "How can I fetch data from an external REST API and display it within an Adobe Express document?",
+      "category": "addon_development_advanced",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Addon_Development_Advanced"
+      }
+    },
+    {
+      "query": "How can I store data within an addon?",
+      "category": "addon_development_advanced",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Addon_Development_Advanced"
+      }
+    },
+    {
+      "query": "How do I store and retrieve data from my add-on?",
+      "category": "addon_development_advanced",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Addon_Development_Advanced"
+      }
+    },
+    {
+      "query": "How can I secure store something on the client side of an add on?",
+      "category": "addon_development_advanced",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Addon_Development_Advanced"
+      }
+    },
+    {
+      "query": "How do I implement authentication in my add-on?",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "Help me OAuth API implementation for my add on",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "Can you provide me example of connecting to OAuth 2.0?",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "How to integrate google login for an add-on?",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "I want to create an add on that supports OAuth authentication, can you guide me?",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "Create an add-on with github oauth",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "Create an add-on with google drive oauth",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "Which external services we can connect from express add-on?",
+      "category": "authentication_external_services",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Authentication_External_Services"
+      }
+    },
+    {
+      "query": "Create an add-on which can read the images from the document and organize it into a collage",
+      "category": "image_collection_organization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Collection_Organization"
+      }
+    },
+    {
+      "query": "Create an add-on which can take some images from the user and create a collage out of it",
+      "category": "image_collection_organization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Collection_Organization"
+      }
+    },
+    {
+      "query": "How do I create a add-on to import multiple local images and create a collage?",
+      "category": "image_collection_organization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Collection_Organization"
+      }
+    },
+    {
+      "query": "Create an addon to add multiple images",
+      "category": "image_collection_organization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Collection_Organization"
+      }
+    },
+    {
+      "query": "I want an image picker in my UI and display that image in UI and let me drag drop that image",
+      "category": "image_collection_organization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Collection_Organization"
+      }
+    },
+    {
+      "query": "Upload an image from user",
+      "category": "image_collection_organization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Collection_Organization"
+      }
+    },
+    {
+      "query": "How to upload an image from user?",
+      "category": "image_collection_organization",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Image_Collection_Organization"
+      }
+    },
+    {
+      "query": "Create an addon to add QR code to my canvas",
+      "category": "special_use_cases",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Special_Use_Cases"
+      }
+    },
+    {
+      "query": "Create grammar checker add-on",
+      "category": "special_use_cases",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Special_Use_Cases"
+      }
+    },
+    {
+      "query": "Create an add-on for grammar and spelling checker",
+      "category": "special_use_cases",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Special_Use_Cases"
+      }
+    },
+    {
+      "query": "Provide a method to add a watermark in all pages inside canvas",
+      "category": "special_use_cases",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Special_Use_Cases"
+      }
+    },
+    {
+      "query": "Create an addon to create Ascii image",
+      "category": "special_use_cases",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Special_Use_Cases"
+      }
+    },
+    {
+      "query": "Write a add on to fetch vision board templates",
+      "category": "special_use_cases",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Special_Use_Cases"
+      }
+    },
+    {
+      "query": "Create a circluar progress component which takes full width and starts from 0 and goes till 100",
+      "category": "special_use_cases",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Special_Use_Cases"
+      }
+    },
+    {
+      "query": "Is there a debugging environment for add-ons?",
+      "category": "debugging_troubleshooting",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Debugging_Troubleshooting"
+      }
+    },
+    {
+      "query": "Is there a way to debug document sandbox code?",
+      "category": "debugging_troubleshooting",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Debugging_Troubleshooting"
+      }
+    },
+    {
+      "query": "I can't debug API code, why?",
+      "category": "debugging_troubleshooting",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Debugging_Troubleshooting"
+      }
+    },
+    {
+      "query": "I am unable to send debug logs for my addons",
+      "category": "debugging_troubleshooting",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Debugging_Troubleshooting"
+      }
+    },
+    {
+      "query": "How do I know if my add-on is leaking memory?",
+      "category": "debugging_troubleshooting",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Debugging_Troubleshooting"
+      }
+    },
+    {
+      "query": "I was unable to launch my addon",
+      "category": "debugging_troubleshooting",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Debugging_Troubleshooting"
+      }
+    },
+    {
+      "query": "I am getting this error \"editor is not defined\" while creating my add-on",
+      "category": "debugging_troubleshooting",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Debugging_Troubleshooting"
+      }
+    },
+    {
+      "query": "What are the steps to publish a add-on?",
+      "category": "publishing_submission",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Publishing_Submission"
+      }
+    },
+    {
+      "query": "How to submit my add-on for validation?",
+      "category": "publishing_submission",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Publishing_Submission"
+      }
+    },
+    {
+      "query": "How can I ensure my add-on won't be rejected when I submit it?",
+      "category": "publishing_submission",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Publishing_Submission"
+      }
+    },
+    {
+      "query": "What icon and screenshot sizes do I need for submission?",
+      "category": "publishing_submission",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "Publishing_Submission"
+      }
+    },
+    {
+      "query": "What all document APIs are available in add-on sdk?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "Which APIs are experimental?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "What are experimental APIs?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "Provide me a list of experimental APIs",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "How do I use experimental features?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "Which are some of the recent or latest APIs?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "What is AddOnSDK, what all API support it provides?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "How up to date is your knowledge of the express API?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "Does it support typescript?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "Can you provide example to enable typescript support in add-on?",
+      "category": "api_reference_documentation",
+      "subcategory": null,
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "unlabelled_queries.yaml",
+      "metadata": {
+        "source_type": "unlabelled",
+        "format": "yaml",
+        "original_category": "API_Reference_Documentation"
+      }
+    },
+    {
+      "query": "how do i create a text node and put it on the screen",
+      "category": "text_manipulation",
+      "subcategory": "creation",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "create a function that creates a text node and writes in it and positions it",
+      "category": "text_manipulation",
+      "subcategory": "creation",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "how to set text size while creating a textNode?",
+      "category": "text_manipulation",
+      "subcategory": "creation",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "how to make the textNode bold",
+      "category": "text_manipulation",
+      "subcategory": "styling",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "how to set text node color",
+      "category": "text_manipulation",
+      "subcategory": "styling",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "change the font size to something small",
+      "category": "text_manipulation",
+      "subcategory": "styling",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "console log all the possible fonts i can use",
+      "category": "text_manipulation",
+      "subcategory": "styling",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "how to change the text nodes location",
+      "category": "text_manipulation",
+      "subcategory": "positioning",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "how to ensure that a textNode fits in the screen",
+      "category": "text_manipulation",
+      "subcategory": "positioning",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": "make sure that the textNode is 50% the height of the page",
+      "category": "text_manipulation",
+      "subcategory": "positioning",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [
+        ".setSize is not a function in adobe express",
+        "setTransform is not a function"
+      ],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 35,
+        "documentation_gaps": [
+          "Complete text node lifecycle examples",
+          "Font application patterns",
+          "Text sizing and positioning best practices"
+        ]
+      }
+    },
+    {
+      "query": ".setSize is not a function in adobe express",
+      "category": "error_handling",
+      "subcategory": "function_errors",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 25,
+        "documentation_gaps": [
+          "Common error scenarios and solutions",
+          "Async operation patterns",
+          "Import/export troubleshooting guide"
+        ]
+      }
+    },
+    {
+      "query": "got this error: not a function at <anonymous> (code.js:96)",
+      "category": "error_handling",
+      "subcategory": "function_errors",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 25,
+        "documentation_gaps": [
+          "Common error scenarios and solutions",
+          "Async operation patterns",
+          "Import/export troubleshooting guide"
+        ]
+      }
+    },
+    {
+      "query": "Uncaught (in promise) ReferenceError: 'colorUtils' is not defined",
+      "category": "error_handling",
+      "subcategory": "import_errors",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 25,
+        "documentation_gaps": [
+          "Common error scenarios and solutions",
+          "Async operation patterns",
+          "Import/export troubleshooting guide"
+        ]
+      }
+    },
+    {
+      "query": "Error \"express-document-sandbox\" is not a built-in module",
+      "category": "error_handling",
+      "subcategory": "import_errors",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 25,
+        "documentation_gaps": [
+          "Common error scenarios and solutions",
+          "Async operation patterns",
+          "Import/export troubleshooting guide"
+        ]
+      }
+    },
+    {
+      "query": "Error: Editing the document is not permitted in this context. Use \"editor.queueAsyncEdit()\"",
+      "category": "error_handling",
+      "subcategory": "async_errors",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 25,
+        "documentation_gaps": [
+          "Common error scenarios and solutions",
+          "Async operation patterns",
+          "Import/export troubleshooting guide"
+        ]
+      }
+    },
+    {
+      "query": "Uncaught (in promise) Error: Editing the document is not permitted in this context",
+      "category": "error_handling",
+      "subcategory": "async_errors",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 25,
+        "documentation_gaps": [
+          "Common error scenarios and solutions",
+          "Async operation patterns",
+          "Import/export troubleshooting guide"
+        ]
+      }
+    },
+    {
+      "query": "how do i add an image",
+      "category": "media_handling",
+      "subcategory": "image_insertion",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 20,
+        "documentation_gaps": [
+          "Image insertion patterns for different data types",
+          "Blob vs URL handling",
+          "Media positioning and sizing"
+        ]
+      }
+    },
+    {
+      "query": "create an image from this jpeg url",
+      "category": "media_handling",
+      "subcategory": "image_insertion",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 20,
+        "documentation_gaps": [
+          "Image insertion patterns for different data types",
+          "Blob vs URL handling",
+          "Media positioning and sizing"
+        ]
+      }
+    },
+    {
+      "query": "how to add custom gif to canvas",
+      "category": "media_handling",
+      "subcategory": "image_insertion",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 20,
+        "documentation_gaps": [
+          "Image insertion patterns for different data types",
+          "Blob vs URL handling",
+          "Media positioning and sizing"
+        ]
+      }
+    },
+    {
+      "query": "https://images.pexels.com/photos/8761345/pexels-photo-8761345.jpeg from this jpeg, make an image",
+      "category": "media_handling",
+      "subcategory": "external_urls",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 20,
+        "documentation_gaps": [
+          "Image insertion patterns for different data types",
+          "Blob vs URL handling",
+          "Media positioning and sizing"
+        ]
+      }
+    },
+    {
+      "query": "add https://images.pexels.com/photos/6185466/pexels-photo-6185466.jpeg to this page in the middle",
+      "category": "media_handling",
+      "subcategory": "external_urls",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 20,
+        "documentation_gaps": [
+          "Image insertion patterns for different data types",
+          "Blob vs URL handling",
+          "Media positioning and sizing"
+        ]
+      }
+    },
+    {
+      "query": "i have a b64 image source how can i add it to my sandbox with my addon",
+      "category": "media_handling",
+      "subcategory": "data_format_issues",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 20,
+        "documentation_gaps": [
+          "Image insertion patterns for different data types",
+          "Blob vs URL handling",
+          "Media positioning and sizing"
+        ]
+      }
+    },
+    {
+      "query": "Error: Invalid Input: Expected bitmapData value to be of type \"Blob\"",
+      "category": "media_handling",
+      "subcategory": "data_format_issues",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 20,
+        "documentation_gaps": [
+          "Image insertion patterns for different data types",
+          "Blob vs URL handling",
+          "Media positioning and sizing"
+        ]
+      }
+    },
+    {
+      "query": "No SSL related certificate or key files were found",
+      "category": "development_setup",
+      "subcategory": "ssl_cors",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Complete development environment setup guide",
+          "SSL certificate configuration",
+          "Common build and deployment issues"
+        ]
+      }
+    },
+    {
+      "query": "What do I need to know about CORS in add-ons?",
+      "category": "development_setup",
+      "subcategory": "ssl_cors",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Complete development environment setup guide",
+          "SSL certificate configuration",
+          "Common build and deployment issues"
+        ]
+      }
+    },
+    {
+      "query": "how do i reconfigure the ssl",
+      "category": "development_setup",
+      "subcategory": "ssl_cors",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Complete development environment setup guide",
+          "SSL certificate configuration",
+          "Common build and deployment issues"
+        ]
+      }
+    },
+    {
+      "query": "'ccweb-add-on-scripts' is not recognized as an internal or external command",
+      "category": "development_setup",
+      "subcategory": "build_issues",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Complete development environment setup guide",
+          "SSL certificate configuration",
+          "Common build and deployment issues"
+        ]
+      }
+    },
+    {
+      "query": "Error: EACCES: permission denied, unlink 'dist/code.js'",
+      "category": "development_setup",
+      "subcategory": "build_issues",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Complete development environment setup guide",
+          "SSL certificate configuration",
+          "Common build and deployment issues"
+        ]
+      }
+    },
+    {
+      "query": "ccweb-add-on-scripts failed. Reason: listen EADDRINUSE: address already in use ::1:5241",
+      "category": "development_setup",
+      "subcategory": "build_issues",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Complete development environment setup guide",
+          "SSL certificate configuration",
+          "Common build and deployment issues"
+        ]
+      }
+    },
+    {
+      "query": "make an add on that takes a text prompt from the user and generates an AI image",
+      "category": "api_integration",
+      "subcategory": "ai_services",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 10,
+        "documentation_gaps": [
+          "External API integration patterns",
+          "File upload and processing workflows",
+          "AI service integration examples"
+        ]
+      }
+    },
+    {
+      "query": "I want to make an add on that uses Gemini image generation with Gemini 2.0 Flash",
+      "category": "api_integration",
+      "subcategory": "ai_services",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 10,
+        "documentation_gaps": [
+          "External API integration patterns",
+          "File upload and processing workflows",
+          "AI service integration examples"
+        ]
+      }
+    },
+    {
+      "query": "write the code for an add on to take in a pdf from a drop box and then take the text from that and display it on the page",
+      "category": "api_integration",
+      "subcategory": "file_processing",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 10,
+        "documentation_gaps": [
+          "External API integration patterns",
+          "File upload and processing workflows",
+          "AI service integration examples"
+        ]
+      }
+    },
+    {
+      "query": "how do I add a button that allows me to open the file explorer so the user can choose a PDF",
+      "category": "api_integration",
+      "subcategory": "file_processing",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 10,
+        "documentation_gaps": [
+          "External API integration patterns",
+          "File upload and processing workflows",
+          "AI service integration examples"
+        ]
+      }
+    },
+    {
+      "query": "Is there any way to use LLM apis like chatgpt or gemini while building an add-on?",
+      "category": "api_integration",
+      "subcategory": "external_apis",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 10,
+        "documentation_gaps": [
+          "External API integration patterns",
+          "File upload and processing workflows",
+          "AI service integration examples"
+        ]
+      }
+    },
+    {
+      "query": "curl -X POST https://u4of07wfe2.execute-api.us-west-2.amazonaws.com/default/chatgpt-proxy",
+      "category": "api_integration",
+      "subcategory": "external_apis",
+      "priority": "medium",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 10,
+        "documentation_gaps": [
+          "External API integration patterns",
+          "File upload and processing workflows",
+          "AI service integration examples"
+        ]
+      }
+    },
+    {
+      "query": "how can i access sandboxProxy methods outside App.jsx?",
+      "category": "architecture_confusion",
+      "subcategory": "ui_vs_sandbox",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Clear UI vs Sandbox runtime explanation",
+          "API boundary documentation",
+          "Code organization best practices"
+        ]
+      }
+    },
+    {
+      "query": "code in index.js is not calling code in code.js",
+      "category": "architecture_confusion",
+      "subcategory": "ui_vs_sandbox",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Clear UI vs Sandbox runtime explanation",
+          "API boundary documentation",
+          "Code organization best practices"
+        ]
+      }
+    },
+    {
+      "query": "Would I put this javascript code in the index.js or code.js file?",
+      "category": "architecture_confusion",
+      "subcategory": "ui_vs_sandbox",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Clear UI vs Sandbox runtime explanation",
+          "API boundary documentation",
+          "Code organization best practices"
+        ]
+      }
+    },
+    {
+      "query": "can i add images directly into the sandbox/canvas through code using my adobe express add on",
+      "category": "architecture_confusion",
+      "subcategory": "api_boundaries",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Clear UI vs Sandbox runtime explanation",
+          "API boundary documentation",
+          "Code organization best practices"
+        ]
+      }
+    },
+    {
+      "query": "This script draws a square on the addon, not on the document",
+      "category": "architecture_confusion",
+      "subcategory": "api_boundaries",
+      "priority": "high",
+      "expected_elements": [],
+      "common_errors": [],
+      "source_file": "structured_query_data.json",
+      "metadata": {
+        "source_type": "structured_analysis",
+        "format": "json",
+        "frequency_percentage": 15,
+        "documentation_gaps": [
+          "Clear UI vs Sandbox runtime explanation",
+          "API boundary documentation",
+          "Code organization best practices"
+        ]
+      }
+    }
+  ],
+  "statistics": {
+    "by_category": {
+      "validating_ideas": 2,
+      "code_generation": 5,
+      "information_search": 10,
+      "getting_started": 3,
+      "document_api": 4,
+      "styling": 3,
+      "text": 2,
+      "communication": 1,
+      "ui": 2,
+      "manifest": 3,
+      "advanced": 3,
+      "api_reference": 3,
+      "troubleshooting": 3,
+      "best_practices": 2,
+      "distribution": 2,
+      "document_structure_basics": 11,
+      "getting_started_setup": 11,
+      "user_interface_development": 8,
+      "creating_basic_shapes": 11,
+      "image_media_handling": 10,
+      "text_manipulation": 18,
+      "advanced_shapes_graphics": 11,
+      "data_visualization": 5,
+      "color_styling": 6,
+      "node_manipulation_properties": 9,
+      "addon_development_advanced": 7,
+      "authentication_external_services": 8,
+      "image_collection_organization": 7,
+      "special_use_cases": 7,
+      "debugging_troubleshooting": 7,
+      "publishing_submission": 4,
+      "api_reference_documentation": 10,
+      "error_handling": 6,
+      "media_handling": 7,
+      "development_setup": 6,
+      "api_integration": 6,
+      "architecture_confusion": 5
+    },
+    "by_priority": {
+      "high": 76,
+      "medium": 152
+    },
+    "by_source": {
+      "benchmarking_prd_queries": 17,
+      "llm-test-queries.yaml": 31,
+      "unlabelled_queries.yaml": 140,
+      "structured_query_data.json": 40
+    },
+    "with_expected_elements": 31,
+    "with_common_errors": 10
+  }
+}
