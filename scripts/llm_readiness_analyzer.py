@@ -1,0 +1,619 @@
+#!/usr/bin/env python3
+"""
+Adobe Express Add-ons Documentation LLM-Readiness Audit Framework
+
+This framework analyzes documentation for LLM-friendliness based on:
+- Structured query data patterns
+- LLM optimization best practices
+- Adobe Express specific developer needs
+
+Usage:
+    python3 llm_readiness_analyzer.py --docs-path express-add-ons-docs/src/pages
+    python3 llm_readiness_analyzer.py --baseline --output baseline_report.json
+"""
+
+import os
+import re
+import json
+import argparse
+import yaml
+from pathlib import Path
+from dataclasses import dataclass, asdict
+from typing import List, Dict, Any, Optional, Tuple
+from collections import defaultdict
+import hashlib
+
+@dataclass
+class DocumentAnalysis:
+    """Analysis results for a single document"""
+    file_path: str
+    title: str
+    word_count: int
+    code_blocks: int
+    code_examples_complete: int
+    code_examples_incomplete: int
+    context_clarity_score: float
+    error_first_sections: int
+    qa_format_sections: int
+    cross_references: int
+    progressive_structure_score: float
+    searchability_score: float
+    llm_friendly_score: float
+    issues: List[str]
+    recommendations: List[str]
+
+@dataclass
+class AuditReport:
+    """Complete audit report"""
+    timestamp: str
+    total_files: int
+    overall_score: float
+    category_scores: Dict[str, float]
+    query_pattern_coverage: Dict[str, float]
+    critical_issues: List[str]
+    top_recommendations: List[str]
+    file_analyses: List[DocumentAnalysis]
+    baseline_hash: str
+
+class DocumentationAuditor:
+    """Main auditing class"""
+    
+    def __init__(self, query_data_path: str = "structured_query_data.json"):
+        self.query_data = self._load_query_data(query_data_path)
+        self.scoring_weights = {
+            'context_clarity': 0.25,      # Clear UI vs Sandbox distinction
+            'code_completeness': 0.20,    # Complete working examples
+            'error_coverage': 0.15,       # Error-first documentation
+            'qa_format': 0.15,           # Question-answer structure
+            'progressive_structure': 0.10, # Learning progression
+            'searchability': 0.10,       # LLM searchability
+            'cross_references': 0.05      # Navigation and linking
+        }
+        
+        # Patterns from query data
+        self.common_errors = self._extract_error_patterns()
+        self.common_queries = self._extract_query_patterns()
+        
+    def _load_query_data(self, path: str) -> Dict[str, Any]:
+        """Load structured query data"""
+        try:
+            with open(path, 'r') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            print(f"Warning: Query data file {path} not found. Using default patterns.")
+            return {"query_categories": {}}
+    
+    def _extract_error_patterns(self) -> List[str]:
+        """Extract common error patterns from query data"""
+        errors = []
+        for category in self.query_data.get("query_categories", {}).values():
+            if isinstance(category, dict) and "common_errors" in category:
+                errors.extend(category["common_errors"])
+        return errors
+    
+    def _extract_query_patterns(self) -> Dict[str, List[str]]:
+        """Extract query patterns by category"""
+        patterns = {}
+        for cat_name, category in self.query_data.get("query_categories", {}).items():
+            if isinstance(category, dict) and "subcategories" in category:
+                patterns[cat_name] = []
+                for subcat in category["subcategories"].values():
+                    if isinstance(subcat, list):
+                        patterns[cat_name].extend(subcat)
+        return patterns
+    
+    def audit_directory(self, docs_path: str) -> AuditReport:
+        """Audit entire documentation directory"""
+        print(f"🔍 Auditing documentation in: {docs_path}")
+        
+        md_files = list(Path(docs_path).rglob("*.md"))
+        print(f"📄 Found {len(md_files)} markdown files")
+        
+        file_analyses = []
+        category_scores = defaultdict(list)
+        
+        for file_path in md_files:
+            print(f"   Analyzing: {file_path.relative_to(Path(docs_path))}")
+            analysis = self.analyze_file(str(file_path))
+            file_analyses.append(analysis)
+            
+            # Collect category scores
+            category_scores['context_clarity'].append(analysis.context_clarity_score)
+            category_scores['code_completeness'].append(
+                analysis.code_examples_complete / max(1, analysis.code_blocks)
+            )
+            category_scores['error_coverage'].append(
+                1.0 if analysis.error_first_sections > 0 else 0.0
+            )
+            category_scores['qa_format'].append(
+                1.0 if analysis.qa_format_sections > 0 else 0.0
+            )
+            category_scores['progressive_structure'].append(analysis.progressive_structure_score)
+            category_scores['searchability'].append(analysis.searchability_score)
+            category_scores['cross_references'].append(
+                min(1.0, analysis.cross_references / 5.0)  # Normalize to 0-1
+            )
+        
+        # Calculate overall scores
+        avg_category_scores = {
+            cat: sum(scores) / len(scores) if scores else 0.0
+            for cat, scores in category_scores.items()
+        }
+        
+        overall_score = sum(
+            avg_category_scores[cat] * weight
+            for cat, weight in self.scoring_weights.items()
+            if cat in avg_category_scores
+        )
+        
+        # Generate report
+        report = AuditReport(
+            timestamp=self._get_timestamp(),
+            total_files=len(md_files),
+            overall_score=overall_score,
+            category_scores=avg_category_scores,
+            query_pattern_coverage=self._calculate_query_coverage(file_analyses),
+            critical_issues=self._identify_critical_issues(file_analyses),
+            top_recommendations=self._generate_recommendations(file_analyses, avg_category_scores),
+            file_analyses=file_analyses,
+            baseline_hash=self._calculate_baseline_hash(docs_path)
+        )
+        
+        return report
+    
+    def analyze_file(self, file_path: str) -> DocumentAnalysis:
+        """Analyze a single markdown file"""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except Exception as e:
+            return DocumentAnalysis(
+                file_path=file_path,
+                title="ERROR_READING_FILE",
+                word_count=0,
+                code_blocks=0,
+                code_examples_complete=0,
+                code_examples_incomplete=0,
+                context_clarity_score=0.0,
+                error_first_sections=0,
+                qa_format_sections=0,
+                cross_references=0,
+                progressive_structure_score=0.0,
+                searchability_score=0.0,
+                llm_friendly_score=0.0,
+                issues=[f"Could not read file: {e}"],
+                recommendations=[]
+            )
+        
+        # Extract frontmatter and content
+        frontmatter, body = self._parse_frontmatter(content)
+        title = frontmatter.get('title', Path(file_path).stem)
+        
+        # Analyze content
+        word_count = len(body.split())
+        code_blocks = len(re.findall(r'```[\s\S]*?```', body))
+        
+        # Code example analysis
+        complete_examples, incomplete_examples = self._analyze_code_examples(body)
+        
+        # Context clarity (UI vs Sandbox distinction)
+        context_clarity = self._analyze_context_clarity(body)
+        
+        # Error-first sections
+        error_sections = self._count_error_sections(body)
+        
+        # Q&A format sections
+        qa_sections = self._count_qa_sections(body)
+        
+        # Cross-references
+        cross_refs = self._count_cross_references(body)
+        
+        # Progressive structure
+        progressive_score = self._analyze_progressive_structure(body)
+        
+        # Searchability
+        searchability_score = self._analyze_searchability(body, title)
+        
+        # Calculate LLM-friendly score for this file
+        llm_score = self._calculate_file_llm_score({
+            'context_clarity': context_clarity,
+            'code_completeness': complete_examples / max(1, code_blocks),
+            'error_coverage': 1.0 if error_sections > 0 else 0.0,
+            'qa_format': 1.0 if qa_sections > 0 else 0.0,
+            'progressive_structure': progressive_score,
+            'searchability': searchability_score,
+            'cross_references': min(1.0, cross_refs / 5.0)
+        })
+        
+        # Generate issues and recommendations
+        issues = self._identify_file_issues(body, complete_examples, incomplete_examples)
+        recommendations = self._generate_file_recommendations(body, context_clarity, error_sections)
+        
+        return DocumentAnalysis(
+            file_path=file_path,
+            title=title,
+            word_count=word_count,
+            code_blocks=code_blocks,
+            code_examples_complete=complete_examples,
+            code_examples_incomplete=incomplete_examples,
+            context_clarity_score=context_clarity,
+            error_first_sections=error_sections,
+            qa_format_sections=qa_sections,
+            cross_references=cross_refs,
+            progressive_structure_score=progressive_score,
+            searchability_score=searchability_score,
+            llm_friendly_score=llm_score,
+            issues=issues,
+            recommendations=recommendations
+        )
+    
+    def _parse_frontmatter(self, content: str) -> Tuple[Dict[str, Any], str]:
+        """Parse YAML frontmatter from markdown"""
+        if content.startswith('---\n'):
+            try:
+                end_idx = content.find('\n---\n', 4)
+                if end_idx != -1:
+                    frontmatter_str = content[4:end_idx]
+                    frontmatter = yaml.safe_load(frontmatter_str)
+                    body = content[end_idx + 5:]
+                    return frontmatter or {}, body
+            except yaml.YAMLError:
+                pass
+        return {}, content
+    
+    def _analyze_code_examples(self, content: str) -> Tuple[int, int]:
+        """Analyze code examples for completeness"""
+        code_blocks = re.findall(r'```(.*?)\n([\s\S]*?)```', content)
+        complete = 0
+        incomplete = 0
+        
+        for lang, code in code_blocks:
+            if 'javascript' in lang.lower() or 'js' in lang.lower():
+                # Check for completeness indicators
+                has_imports = 'import' in code or 'require' in code
+                has_context = 'editor' in code or 'addOnUISdk' in code
+                has_function_body = '{' in code and '}' in code
+                has_comments = '//' in code or '/*' in code
+                
+                completeness_score = sum([has_imports, has_context, has_function_body, has_comments])
+                
+                if completeness_score >= 3:
+                    complete += 1
+                else:
+                    incomplete += 1
+            else:
+                complete += 1  # Non-JS code blocks assumed complete
+        
+        return complete, incomplete
+    
+    def _analyze_context_clarity(self, content: str) -> float:
+        """Analyze how well the content distinguishes UI vs Sandbox contexts"""
+        context_indicators = [
+            'Document Sandbox',
+            'UI Runtime',
+            'code.js',
+            'index.js',
+            'sandbox',
+            'ui/',
+            'editor.queueAsyncEdit',
+            'addOnUISdk',
+            'sandboxProxy'
+        ]
+        
+        context_count = sum(1 for indicator in context_indicators if indicator in content)
+        
+        # Check for explicit context headers
+        context_headers = len(re.findall(r'###?\s*.*(?:Document Sandbox|UI Runtime)', content))
+        
+        # Bonus for file path indicators
+        file_path_clarity = len(re.findall(r'`[^`]*(?:code\.js|index\.js|sandbox|ui/)[^`]*`', content))
+        
+        total_score = context_count + (context_headers * 2) + file_path_clarity
+        return min(1.0, total_score / 10.0)  # Normalize to 0-1
+    
+    def _count_error_sections(self, content: str) -> int:
+        """Count sections that start with errors (error-first documentation)"""
+        error_patterns = [
+            r'##?\s*Error:',
+            r'##?\s*.*(?:not a function|is not defined|Error|Exception)',
+            r'❌',
+            r'🚫',
+            r'### Common (?:Errors|Issues|Problems)'
+        ]
+        
+        count = 0
+        for pattern in error_patterns:
+            count += len(re.findall(pattern, content, re.IGNORECASE))
+        
+        return count
+    
+    def _count_qa_sections(self, content: str) -> int:
+        """Count Q&A format sections"""
+        qa_patterns = [
+            r'\*\*Q:',
+            r'\*\*Question:',
+            r'## Q:',
+            r'### Q:',
+            r'\*\*A:\*\*',
+            r'\*\*Answer:\*\*'
+        ]
+        
+        count = 0
+        for pattern in qa_patterns:
+            count += len(re.findall(pattern, content, re.IGNORECASE))
+        
+        return count // 2  # Divide by 2 since Q&A come in pairs
+    
+    def _count_cross_references(self, content: str) -> int:
+        """Count cross-references and links"""
+        link_patterns = [
+            r'\[([^\]]+)\]\([^)]+\.md[^)]*\)',  # Markdown links to other docs
+            r'\[([^\]]+)\]\(\.\/[^)]+\)',       # Relative links
+            r'See also:?',
+            r'Related:?',
+            r'For more information'
+        ]
+        
+        count = 0
+        for pattern in link_patterns:
+            count += len(re.findall(pattern, content, re.IGNORECASE))
+        
+        return count
+    
+    def _analyze_progressive_structure(self, content: str) -> float:
+        """Analyze if content follows progressive learning structure"""
+        # Look for level/step indicators
+        level_patterns = [
+            r'##?\s*(?:Level|Step|Phase)\s*\d+',
+            r'##?\s*(?:Basic|Intermediate|Advanced)',
+            r'##?\s*(?:Getting Started|Next Steps)',
+            r'- \[ \]',  # Checklist items
+        ]
+        
+        level_count = 0
+        for pattern in level_patterns:
+            level_count += len(re.findall(pattern, content, re.IGNORECASE))
+        
+        # Check for prerequisites
+        prereq_count = len(re.findall(r'prerequisite|before you begin|requirements', content, re.IGNORECASE))
+        
+        return min(1.0, (level_count + prereq_count) / 5.0)
+    
+    def _analyze_searchability(self, content: str, title: str) -> float:
+        """Analyze content searchability for LLMs"""
+        # Check for clear headings
+        headings = len(re.findall(r'^#{1,6}\s+', content, re.MULTILINE))
+        
+        # Check for keywords and metadata
+        keywords_in_content = 0
+        important_keywords = ['Adobe Express', 'add-on', 'SDK', 'API', 'editor', 'document']
+        for keyword in important_keywords:
+            if keyword.lower() in content.lower():
+                keywords_in_content += 1
+        
+        # Check for descriptive text
+        sentences = len(re.findall(r'[.!?]+', content))
+        word_count = len(content.split())
+        
+        # Calculate searchability components
+        heading_score = min(1.0, headings / 8.0)
+        keyword_score = keywords_in_content / len(important_keywords)
+        structure_score = min(1.0, sentences / max(1, word_count / 50))  # Sentence density
+        
+        return (heading_score + keyword_score + structure_score) / 3.0
+    
+    def _calculate_file_llm_score(self, scores: Dict[str, float]) -> float:
+        """Calculate overall LLM-friendly score for a file"""
+        return sum(
+            scores.get(category, 0.0) * weight
+            for category, weight in self.scoring_weights.items()
+        )
+    
+    def _identify_file_issues(self, content: str, complete_examples: int, incomplete_examples: int) -> List[str]:
+        """Identify specific issues in a file"""
+        issues = []
+        
+        if incomplete_examples > complete_examples:
+            issues.append("More incomplete code examples than complete ones")
+        
+        if 'setSize' in content or 'setTransform' in content:
+            issues.append("Contains non-existent API methods (setSize, setTransform)")
+        
+        if '@adobe/ccweb-add-on-sdk' in content:
+            issues.append("Contains incorrect import package names")
+        
+        if 'editor.' in content and 'queueAsyncEdit' not in content:
+            issues.append("Uses editor API without queueAsyncEdit context")
+        
+        if len(re.findall(r'```javascript', content)) == 0 and len(re.findall(r'```js', content)) == 0:
+            if 'code' in content.lower() or 'example' in content.lower():
+                issues.append("Mentions code/examples but lacks JavaScript code blocks")
+        
+        return issues
+    
+    def _generate_file_recommendations(self, content: str, context_clarity: float, error_sections: int) -> List[str]:
+        """Generate recommendations for a file"""
+        recommendations = []
+        
+        if context_clarity < 0.5:
+            recommendations.append("Add clear UI Runtime vs Document Sandbox context headers")
+        
+        if error_sections == 0:
+            recommendations.append("Add error-first documentation sections")
+        
+        if 'Q:' not in content and 'Question:' not in content:
+            recommendations.append("Consider adding Q&A format sections")
+        
+        if len(re.findall(r'\[.*\]\(.*\.md.*\)', content)) < 2:
+            recommendations.append("Add more cross-references to related documentation")
+        
+        return recommendations
+    
+    def _calculate_query_coverage(self, file_analyses: List[DocumentAnalysis]) -> Dict[str, float]:
+        """Calculate how well documentation covers query patterns"""
+        coverage = {}
+        
+        for category, queries in self.common_queries.items():
+            covered_queries = 0
+            for query in queries:
+                query_keywords = query.lower().split()
+                for analysis in file_analyses:
+                    file_content = Path(analysis.file_path).read_text(encoding='utf-8').lower()
+                    if any(keyword in file_content for keyword in query_keywords[:3]):  # Check first 3 keywords
+                        covered_queries += 1
+                        break
+            
+            coverage[category] = covered_queries / len(queries) if queries else 0.0
+        
+        return coverage
+    
+    def _identify_critical_issues(self, file_analyses: List[DocumentAnalysis]) -> List[str]:
+        """Identify critical issues across all files"""
+        critical_issues = []
+        
+        # Count files with AI misinformation
+        files_with_bad_apis = sum(1 for analysis in file_analyses if any('non-existent API' in issue for issue in analysis.issues))
+        if files_with_bad_apis > 0:
+            critical_issues.append(f"{files_with_bad_apis} files contain non-existent API methods")
+        
+        # Count files without context clarity
+        low_context_files = sum(1 for analysis in file_analyses if analysis.context_clarity_score < 0.3)
+        if low_context_files > len(file_analyses) * 0.3:
+            critical_issues.append(f"{low_context_files} files lack clear UI vs Sandbox context")
+        
+        # Count files without error documentation
+        no_error_docs = sum(1 for analysis in file_analyses if analysis.error_first_sections == 0)
+        if no_error_docs > len(file_analyses) * 0.7:
+            critical_issues.append(f"{no_error_docs} files lack error-first documentation")
+        
+        return critical_issues
+    
+    def _generate_recommendations(self, file_analyses: List[DocumentAnalysis], category_scores: Dict[str, float]) -> List[str]:
+        """Generate top-level recommendations"""
+        recommendations = []
+        
+        # Identify lowest scoring categories
+        sorted_categories = sorted(category_scores.items(), key=lambda x: x[1])
+        
+        for category, score in sorted_categories[:3]:  # Top 3 lowest scores
+            if score < 0.5:
+                if category == 'context_clarity':
+                    recommendations.append("Priority: Add UI Runtime vs Document Sandbox context headers to all code examples")
+                elif category == 'code_completeness':
+                    recommendations.append("Priority: Convert incomplete code snippets to complete working examples")
+                elif category == 'error_coverage':
+                    recommendations.append("Priority: Add error-first documentation sections for common issues")
+                elif category == 'qa_format':
+                    recommendations.append("Medium: Convert documentation to Q&A format for better LLM training")
+        
+        return recommendations
+    
+    def _get_timestamp(self) -> str:
+        """Get current timestamp"""
+        from datetime import datetime
+        return datetime.now().isoformat()
+    
+    def _calculate_baseline_hash(self, docs_path: str) -> str:
+        """Calculate hash of documentation for comparison"""
+        hasher = hashlib.md5()
+        for file_path in sorted(Path(docs_path).rglob("*.md")):
+            try:
+                with open(file_path, 'rb') as f:
+                    hasher.update(f.read())
+            except Exception:
+                continue
+        return hasher.hexdigest()
+    
+    def save_report(self, report: AuditReport, output_path: str):
+        """Save audit report to JSON"""
+        with open(output_path, 'w') as f:
+            json.dump(asdict(report), f, indent=2, default=str)
+        print(f"📊 Report saved to: {output_path}")
+    
+    def print_summary(self, report: AuditReport):
+        """Print audit summary to console"""
+        print("\n" + "="*60)
+        print("📋 ADOBE EXPRESS ADD-ONS DOCUMENTATION AUDIT SUMMARY")
+        print("="*60)
+        print(f"📁 Files analyzed: {report.total_files}")
+        print(f"🎯 Overall LLM-Readiness Score: {report.overall_score:.2f}/1.00")
+        print()
+        
+        print("📊 CATEGORY SCORES:")
+        for category, score in report.category_scores.items():
+            status = "✅" if score >= 0.7 else "⚠️" if score >= 0.4 else "❌"
+            print(f"   {status} {category.replace('_', ' ').title()}: {score:.2f}")
+        print()
+        
+        print("🔍 QUERY PATTERN COVERAGE:")
+        for category, coverage in report.query_pattern_coverage.items():
+            status = "✅" if coverage >= 0.7 else "⚠️" if coverage >= 0.4 else "❌"
+            print(f"   {status} {category.replace('_', ' ').title()}: {coverage:.1%}")
+        print()
+        
+        if report.critical_issues:
+            print("🚨 CRITICAL ISSUES:")
+            for issue in report.critical_issues:
+                print(f"   ❌ {issue}")
+            print()
+        
+        print("💡 TOP RECOMMENDATIONS:")
+        for rec in report.top_recommendations[:5]:
+            print(f"   ➤ {rec}")
+        print()
+        
+        print(f"🔗 Baseline hash: {report.baseline_hash[:8]}...")
+        print("="*60)
+
+def main():
+    parser = argparse.ArgumentParser(description='Audit Adobe Express Add-ons documentation for LLM readiness')
+    parser.add_argument('--docs-path', default='express-add-ons-docs/src/pages', 
+                       help='Path to documentation directory')
+    parser.add_argument('--query-data', default='structured_query_data.json',
+                       help='Path to structured query data file')
+    parser.add_argument('--output', default='doc_audit_report.json',
+                       help='Output file for detailed report')
+    parser.add_argument('--baseline', action='store_true',
+                       help='Save this audit as baseline for future comparison')
+    parser.add_argument('--compare', type=str,
+                       help='Compare with previous audit report')
+    
+    args = parser.parse_args()
+    
+    # Initialize auditor
+    auditor = DocumentationAuditor(args.query_data)
+    
+    # Run audit
+    report = auditor.audit_directory(args.docs_path)
+    
+    # Print summary
+    auditor.print_summary(report)
+    
+    # Save report
+    if args.baseline:
+        baseline_path = f"baseline_{args.output}"
+        auditor.save_report(report, baseline_path)
+        print(f"💾 Baseline saved as: {baseline_path}")
+    
+    auditor.save_report(report, args.output)
+    
+    # Compare with previous if requested
+    if args.compare:
+        try:
+            with open(args.compare, 'r') as f:
+                previous_report = json.load(f)
+            
+            print("\n🔄 COMPARISON WITH PREVIOUS AUDIT:")
+            print(f"   Score change: {report.overall_score:.3f} → {previous_report['overall_score']:.3f} "
+                  f"({report.overall_score - previous_report['overall_score']:+.3f})")
+            
+            for category in report.category_scores:
+                if category in previous_report['category_scores']:
+                    change = report.category_scores[category] - previous_report['category_scores'][category]
+                    print(f"   {category}: {change:+.3f}")
+                    
+        except Exception as e:
+            print(f"⚠️ Could not compare with previous report: {e}")
+
+if __name__ == "__main__":
+    main() 
