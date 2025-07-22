@@ -224,6 +224,7 @@ class LLMMarkdownLinter:
             col_num = match.start() - content[:match.start()].rfind('\n')
             
             suggestion = self._get_suggestion_for_pattern(rule_id, match.group(0))
+            auto_fixable = rule_id in ['no-fake-api-methods', 'no-fake-imports']
             
             issues.append(LintIssue(
                 rule_id=rule_id,
@@ -232,7 +233,7 @@ class LLMMarkdownLinter:
                 line_number=line_num,
                 column=col_num,
                 suggestion=suggestion,
-                auto_fixable=suggestion is not None
+                auto_fixable=auto_fixable
             ))
         return issues
     
@@ -278,7 +279,8 @@ class LLMMarkdownLinter:
                     message="JavaScript code block lacks context header (UI Runtime vs Document Sandbox)",
                     line_number=line_num,
                     column=0,
-                    suggestion="Add header like: ### Document Sandbox (code.js) or ### UI Runtime (index.js)"
+                    suggestion="Add header like: ### Document Sandbox (code.js) or ### UI Runtime (index.js)",
+                    auto_fixable=True
                 ))
         
         return issues
@@ -497,7 +499,8 @@ class LLMMarkdownLinter:
                             message="Package @adobe/ccweb-add-on-sdk does not exist",
                             line_number=block_start_line + i,
                             column=0,
-                            suggestion="Use correct package: 'https://express.adobe.com/static/add-on-sdk/sdk.js' or 'add-on-sdk-document-sandbox'"
+                            suggestion="Use correct package: 'https://express.adobe.com/static/add-on-sdk/sdk.js' or 'add-on-sdk-document-sandbox'",
+                            auto_fixable=True
                         ))
                     elif '@adobe/express-addon-sdk' in line:
                         issues.append(LintIssue(
@@ -506,7 +509,8 @@ class LLMMarkdownLinter:
                             message="Package @adobe/express-addon-sdk does not exist",
                             line_number=block_start_line + i,
                             column=0,
-                            suggestion="Use correct package: 'https://express.adobe.com/static/add-on-sdk/sdk.js' or 'add-on-sdk-document-sandbox'"
+                            suggestion="Use correct package: 'https://express.adobe.com/static/add-on-sdk/sdk.js' or 'add-on-sdk-document-sandbox'",
+                            auto_fixable=True
                         ))
         
         return issues
@@ -568,7 +572,8 @@ class LLMMarkdownLinter:
                                 message=f"Variable '{var_name}' used without being imported or defined",
                                 line_number=block_start_line + i,
                                 column=0,
-                                suggestion=f"Add import for '{var_name}' or define it before use"
+                                suggestion=f"Add import for '{var_name}' or define it before use",
+                                auto_fixable=True
                             ))
                             defined_vars.add(var_name)  # Avoid duplicate warnings
         
@@ -796,6 +801,171 @@ class LLMMarkdownLinter:
         
         return issues
     
+    def apply_fixes(self, file_path: str, issues: List[LintIssue]) -> Tuple[str, int]:
+        """Apply auto-fixes to a file and return the fixed content and number of fixes applied"""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except Exception as e:
+            return content, 0
+        
+        lines = content.split('\n')
+        fixes_applied = 0
+        
+        # Sort issues by line number in reverse order to avoid line number shifts
+        auto_fixable_issues = [issue for issue in issues if issue.auto_fixable]
+        auto_fixable_issues.sort(key=lambda x: x.line_number, reverse=True)
+        
+        for issue in auto_fixable_issues:
+            if issue.rule_id == 'no-fake-api-methods':
+                content, fixed = self._fix_fake_api_methods(content, issue)
+                if fixed:
+                    fixes_applied += 1
+            elif issue.rule_id == 'no-fake-imports':
+                content, fixed = self._fix_fake_imports(content, issue)
+                if fixed:
+                    fixes_applied += 1
+            elif issue.rule_id == 'check-undefined-variables':
+                content, fixed = self._fix_undefined_variables(content, issue)
+                if fixed:
+                    fixes_applied += 1
+            elif issue.rule_id == 'require-context-headers':
+                content, fixed = self._fix_context_headers(content, issue)
+                if fixed:
+                    fixes_applied += 1
+        
+        return content, fixes_applied
+    
+    def _fix_fake_api_methods(self, content: str, issue: LintIssue) -> Tuple[str, bool]:
+        """Fix fake API method calls"""
+        lines = content.split('\n')
+        if issue.line_number <= len(lines):
+            line = lines[issue.line_number - 1]
+            
+            # Apply specific fixes
+            if '.setSize(' in line:
+                # Replace with width/height properties
+                fixed_line = re.sub(
+                    r'(\w+)\.setSize\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)',
+                    r'\1.width = \2;\n// ... existing code ...\n\1.height = \3',
+                    line
+                )
+                lines[issue.line_number - 1] = fixed_line
+                return '\n'.join(lines), True
+                
+            elif '.setTransform(' in line:
+                # Replace with individual properties
+                fixed_line = re.sub(
+                    r'(\w+)\.setTransform\s*\([^)]+\)',
+                    r'\1.translation = { x: 10, y: 10 };\n// ... existing code ...\n\1.width = 100;\n// ... existing code ...\n\1.height = 50',
+                    line
+                )
+                lines[issue.line_number - 1] = fixed_line
+                return '\n'.join(lines), True
+                
+            elif 'editor.createPage(' in line:
+                # Replace with correct API
+                fixed_line = line.replace('editor.createPage(', 'editor.documentRoot.pages.addPage(')
+                lines[issue.line_number - 1] = fixed_line
+                return '\n'.join(lines), True
+        
+        return content, False
+    
+    def _fix_fake_imports(self, content: str, issue: LintIssue) -> Tuple[str, bool]:
+        """Fix fake import statements"""
+        lines = content.split('\n')
+        if issue.line_number <= len(lines):
+            line = lines[issue.line_number - 1]
+            
+            if '@adobe/ccweb-add-on-sdk' in line and '@adobe/ccweb-add-on-sdk-types' not in line:
+                # Replace with correct import
+                if 'from' in line:
+                    fixed_line = 'import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";'
+                    lines[issue.line_number - 1] = fixed_line
+                    return '\n'.join(lines), True
+                    
+            elif '@adobe/express-addon-sdk' in line:
+                # Replace with correct import
+                fixed_line = 'import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";'
+                lines[issue.line_number - 1] = fixed_line
+                return '\n'.join(lines), True
+        
+        return content, False
+    
+    def _fix_undefined_variables(self, content: str, issue: LintIssue) -> Tuple[str, bool]:
+        """Fix undefined variables by adding imports"""
+        lines = content.split('\n')
+        
+        # Find the JavaScript code block that contains this issue
+        js_blocks = list(re.finditer(r'```(?:javascript|js)\n([\s\S]*?)```', content))
+        
+        for match in js_blocks:
+            block_start_line = content[:match.start()].count('\n') + 2
+            block_end_line = content[:match.end()].count('\n') + 1
+            
+            if block_start_line <= issue.line_number <= block_end_line:
+                # Add import at the beginning of the code block
+                variable_imports = {
+                    'editor': 'import { editor } from "express-document-sdk";',
+                    'colorUtils': 'import { colorUtils } from "express-document-sdk";',
+                    'runtime': 'import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";\nconst { runtime } = addOnUISdk;',
+                    'addOnUISdk': 'import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";',
+                    'constants': 'import { constants } from "express-document-sdk";'
+                }
+                
+                # Extract variable name from the issue message
+                var_match = re.search(r"Variable '(\w+)' used", issue.message)
+                if var_match:
+                    var_name = var_match.group(1)
+                    if var_name in variable_imports:
+                        import_line = variable_imports[var_name]
+                        
+                        # Insert import after the opening ``` line
+                        lines.insert(block_start_line, import_line)
+                        return '\n'.join(lines), True
+        
+        return content, False
+    
+    def _fix_context_headers(self, content: str, issue: LintIssue) -> Tuple[str, bool]:
+        """Add context headers before JavaScript code blocks"""
+        lines = content.split('\n')
+        
+        # Find the JavaScript code block at this line
+        if issue.line_number <= len(lines):
+            line = lines[issue.line_number - 1]
+            if line.strip().startswith('```javascript') or line.strip().startswith('```js'):
+                # Find the end of the code block to analyze content
+                code_block_content = ""
+                for i in range(issue.line_number, len(lines)):
+                    if lines[i].strip() == '```':
+                        break
+                    code_block_content += lines[i] + '\n'
+                
+                # Determine correct context based on code content
+                is_ui_runtime = bool(re.search(r'addOnUISdk|sandboxProxy|runtime\.|app\.ui', code_block_content))
+                is_document_sandbox = bool(re.search(r'editor\.|colorUtils|constants\.', code_block_content))
+                
+                if is_ui_runtime and not is_document_sandbox:
+                    context_header = '\n### 🖥️ UI Runtime (index.js)\n'
+                elif is_document_sandbox and not is_ui_runtime:
+                    context_header = '\n### 📁 Document Sandbox (code.js)\n'
+                else:
+                    # Default to Document Sandbox if unclear
+                    context_header = '\n### 📁 Document Sandbox (code.js)\n'
+                
+                # Check if there's already a heading nearby
+                has_nearby_heading = False
+                for i in range(max(0, issue.line_number - 4), issue.line_number - 1):
+                    if i < len(lines) and lines[i].strip().startswith('#'):
+                        has_nearby_heading = True
+                        break
+                
+                if not has_nearby_heading:
+                    lines.insert(issue.line_number - 1, context_header)
+                    return '\n'.join(lines), True
+        
+        return content, False
+
     def check_chunk_qa_optimization(self, rule_id: str, content: str, lines: List[str], severity: Severity) -> List[LintIssue]:
         """Optimize content for question-answer retrieval patterns"""
         issues = []
@@ -955,6 +1125,29 @@ def main():
         results = {args.path: result}
     else:
         results = linter.lint_directory(args.path)
+    
+    # Apply fixes if requested
+    total_fixes_applied = 0
+    if args.fix:
+        print(f"\n🔧 Applying auto-fixes...")
+        for file_path, result in results.items():
+            if result.issues:
+                fixed_content, fixes_applied = linter.apply_fixes(file_path, result.issues)
+                if fixes_applied > 0:
+                    # Write the fixed content back to the file
+                    try:
+                        with open(file_path, 'w', encoding='utf-8') as f:
+                            f.write(fixed_content)
+                        print(f"   ✅ {Path(file_path).name}: {fixes_applied} fixes applied")
+                        total_fixes_applied += fixes_applied
+                    except Exception as e:
+                        print(f"   ❌ {Path(file_path).name}: Error writing fixes - {e}")
+        
+        if total_fixes_applied > 0:
+            print(f"\n🎉 Total fixes applied: {total_fixes_applied}")
+            print("Re-run the linter to see remaining issues.")
+        else:
+            print("No auto-fixable issues found.")
     
     # Generate and print report
     report = linter.generate_report(results)

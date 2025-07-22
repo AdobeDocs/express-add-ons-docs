@@ -8,8 +8,10 @@ This framework analyzes documentation for LLM-friendliness based on:
 - Adobe Express specific developer needs
 
 Usage:
-    python3 llm_readiness_analyzer.py --docs-path express-add-ons-docs/src/pages
-    python3 llm_readiness_analyzer.py --baseline --output baseline_report.json
+    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages
+    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages --baseline --output baseline_report.json
+    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages --compare baseline_report.json
+    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages/guides/learn/how_to/use_text.md --output my_report.json
 """
 
 import os
@@ -103,11 +105,24 @@ class DocumentationAuditor:
         return patterns
     
     def audit_directory(self, docs_path: str) -> AuditReport:
-        """Audit entire documentation directory"""
+        """Audit documentation directory or single file"""
         print(f"🔍 Auditing documentation in: {docs_path}")
         
-        md_files = list(Path(docs_path).rglob("*.md"))
-        print(f"📄 Found {len(md_files)} markdown files")
+        docs_path_obj = Path(docs_path)
+        
+        # Handle single file vs directory
+        if docs_path_obj.is_file() and docs_path_obj.suffix == '.md':
+            md_files = [docs_path_obj]
+            print(f"📄 Analyzing single file: {docs_path_obj.name}")
+        elif docs_path_obj.is_dir():
+            md_files = list(docs_path_obj.rglob("*.md"))
+            print(f"📄 Found {len(md_files)} markdown files")
+        else:
+            raise ValueError(f"Path must be a directory or .md file: {docs_path}")
+            
+        if not md_files:
+            print("⚠️ No markdown files found to analyze")
+            return self._create_empty_report(docs_path)
         
         file_analyses = []
         category_scores = defaultdict(list)
@@ -508,6 +523,25 @@ class DocumentationAuditor:
         
         return recommendations
     
+    def _create_empty_report(self, docs_path: str) -> AuditReport:
+        """Create empty report when no files found"""
+        try:
+            baseline_hash = self._calculate_baseline_hash(docs_path)
+        except Exception:
+            baseline_hash = "empty"
+            
+        return AuditReport(
+            timestamp=self._get_timestamp(),
+            total_files=0,
+            overall_score=0.0,
+            category_scores={},
+            query_pattern_coverage={},
+            critical_issues=[],
+            top_recommendations=[],
+            file_analyses=[],
+            baseline_hash=baseline_hash
+        )
+    
     def _get_timestamp(self) -> str:
         """Get current timestamp"""
         from datetime import datetime
@@ -524,11 +558,15 @@ class DocumentationAuditor:
                 continue
         return hasher.hexdigest()
     
-    def save_report(self, report: AuditReport, output_path: str):
+    def save_report(self, report: AuditReport, output_path: str, report_type: str = "Report"):
         """Save audit report to JSON"""
         with open(output_path, 'w') as f:
             json.dump(asdict(report), f, indent=2, default=str)
-        print(f"📊 Report saved to: {output_path}")
+        
+        if report_type == "Baseline":
+            print(f"💾 Baseline report saved to: {output_path}")
+        else:
+            print(f"📊 Report saved to: {output_path}")
     
     def print_summary(self, report: AuditReport):
         """Print audit summary to console"""
@@ -592,10 +630,9 @@ def main():
     # Save report
     if args.baseline:
         baseline_path = f"baseline_{args.output}"
-        auditor.save_report(report, baseline_path)
-        print(f"💾 Baseline saved as: {baseline_path}")
-    
-    auditor.save_report(report, args.output)
+        auditor.save_report(report, baseline_path, "Baseline")
+    else:
+        auditor.save_report(report, args.output)
     
     # Compare with previous if requested
     if args.compare:
