@@ -207,6 +207,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/MediaContainerNode.md",
                   },
                   {
+                    title: "MediaRectangleNode",
+                    path: "references/document-sandbox/document-apis/classes/MediaRectangleNode.md",
+                  },
+                  {
                     title: "Node",
                     path: "references/document-sandbox/document-apis/classes/Node.md",
                   },

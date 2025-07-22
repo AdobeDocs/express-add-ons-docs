@@ -88,19 +88,6 @@ leaves spacing at its default.
 
 ---
 
-### link?
-
-• `optional` **link**: `string`
-
-URL for the hyperlink.
-A link can be removed by setting it to undefined
-
-#### Inherited from
-
-[`CharacterStylesInput`](CharacterStylesInput.md).[`link`](CharacterStylesInput.md#link)
-
----
-
 ### underline?
 
 • `optional` **underline**: `boolean`

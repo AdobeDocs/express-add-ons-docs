@@ -14,7 +14,7 @@ To create new pages, see [PageList.addPage](PageList.md#addpage).
 
 ## Implements
 
-- [`IRectangularNode`](../interfaces/IRectangularNode.md)
+-   [`IRectangularNode`](../interfaces/IRectangularNode.md)
 
 ## Accessors
 

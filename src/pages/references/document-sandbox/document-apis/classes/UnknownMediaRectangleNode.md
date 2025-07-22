@@ -8,7 +8,7 @@ rectangle's position/rotation (as well as its maskShape sibling node).
 
 ## Extends
 
-- [`MediaRectangleNode`](MediaRectangleNode.md)
+-   [`MediaRectangleNode`](MediaRectangleNode.md)
 
 ## Accessors
 

@@ -9,7 +9,7 @@ To create new a single-frame piece of text, see [Editor.createText](Editor.md#cr
 
 ## Extends
 
-- [`TextNode`](TextNode.md)
+-   [`TextNode`](TextNode.md)
 
 ## Accessors
 

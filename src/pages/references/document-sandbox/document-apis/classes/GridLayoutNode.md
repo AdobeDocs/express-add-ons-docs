@@ -13,7 +13,7 @@ APIs to create a new grid layout are not yet available.
 
 ## Implements
 
--   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+-   [`IRectangularNode`](../interfaces/IRectangularNode.md)
 
 ## Accessors
 

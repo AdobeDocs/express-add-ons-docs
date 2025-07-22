@@ -26,7 +26,7 @@ contributors:
 
 ### Added
 
-Added few new HLAPI's like Clone/Duplicate node, Hyperlinks and Sub/SuperScript char style.
+Added few new HLAPI's like Clone/Duplicate node and Sub/SuperScript char style.
 
 ## 2025-06-19
 

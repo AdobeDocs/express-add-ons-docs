@@ -9,16 +9,16 @@ may provide additional media-specific APIs. Cropping can be adjusted by changing
 
 ## Extends
 
-- [`Node`](Node.md)
+-   [`Node`](Node.md)
 
 ## Extended by
 
-- [`ImageRectangleNode`](ImageRectangleNode.md)
-- [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
+-   [`ImageRectangleNode`](ImageRectangleNode.md)
+-   [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
 
 ## Implements
 
-- `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+-   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
 
 ## Accessors
 

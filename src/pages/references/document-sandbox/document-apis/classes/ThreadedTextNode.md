@@ -10,7 +10,7 @@ APIs are not yet available to create multi-frame text flows.
 
 ## Extends
 
-- [`TextNode`](TextNode.md)
+-   [`TextNode`](TextNode.md)
 
 ## Accessors
 

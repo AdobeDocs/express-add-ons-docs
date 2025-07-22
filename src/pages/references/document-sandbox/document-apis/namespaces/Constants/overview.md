@@ -10,8 +10,8 @@
 
 ### Enumerations
 
-- [OrderedListNumbering](enumerations/OrderedListNumbering.md)
-- [ParagraphListType](enumerations/ParagraphListType.md)
+-   [OrderedListNumbering](enumerations/OrderedListNumbering.md)
+-   [ParagraphListType](enumerations/ParagraphListType.md)
 
 ## References
 

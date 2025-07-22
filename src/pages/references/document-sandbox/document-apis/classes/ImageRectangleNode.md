@@ -11,7 +11,7 @@ container structure together.
 
 ## Extends
 
-- [`MediaRectangleNode`](MediaRectangleNode.md)
+-   [`MediaRectangleNode`](MediaRectangleNode.md)
 
 ## Accessors
 
