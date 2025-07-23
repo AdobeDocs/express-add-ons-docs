@@ -55,8 +55,8 @@ try {
   loader.load((id) => {
     require(`prismjs/components/prism-${id}.min.js`);
   });
-} catch (e) {
-  console.log(e);
+} catch (error) {
+  console.warn(error);
 }
 
 // show/hide copy tooltip
@@ -82,7 +82,7 @@ const openCodePlayground = (codeContent) => {
     const url = new URL(CODE_PLAYGROUND_URL);
     url.searchParams.set("mode", CODE_PLAYGROUND_MODE);
     url.searchParams.set("session", CODE_PLAYGROUND_SESSION);
-    url.searchParams.set("playgroundData", btoa(JSON.stringify(playgroundData)));
+    url.searchParams.set("playgroundData", btoa(encodeURIComponent(JSON.stringify(playgroundData))));
     window.open(url.toString(), "_blank");
 };
 
