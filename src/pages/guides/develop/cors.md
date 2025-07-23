@@ -14,6 +14,20 @@ Be sure to have your browser devtools option set to "**Show CORS errors in conso
 
 ![Show CORS errors in Chrome screenshot](img/show-cors.png)
 
+## 🚨 Common CORS Issues & Solutions
+
+### ❌ Error: "blocked by CORS policy: No 'Access-Control-Allow-Origin' header"
+**Cause:** The target server doesn't allow requests from null origin (add-on iframe)  
+**Solution:** Use one of the proxy methods described below
+
+### ❌ Error: "CORS request did not succeed"  
+**Cause:** Network issue or server blocking the request entirely  
+**Solution:** Check if the target URL is accessible and try a different proxy
+
+### ❌ Error: "TypeError: Failed to fetch"
+**Cause:** Could be CORS, network issues, or invalid URL  
+**Solution:** Check browser console for specific CORS error messages
+
 ## Options
 
 Some options for handling this error are described in the sections below.
@@ -35,13 +49,34 @@ One of the quickest ways to unblock your requests for testing, is to use a hoste
 Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance:
 
 ```js
-let cors_anywhere = "https://cors-anywhere.herokuapp.com/";
-let myUrl = "https://example.com/"; 
-let url = cors_anywhere+myUrl;  
+// UI Runtime (index.js) - Fetching external data
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
-fetch(url).then(function (response) {        
-    console.log(response);
-})
+async function fetchWithCorsProxy() {
+  try {
+    const corsProxy = "https://cors-anywhere.herokuapp.com/";
+    const targetUrl = "https://api.example.com/data"; 
+    const proxyUrl = corsProxy + targetUrl;  
+
+    const response = await fetch(proxyUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log("Successfully fetched data:", data);
+    return data;
+    
+  } catch (error) {
+    console.error("CORS proxy fetch failed:", error);
+    throw error;
+  }
+}
+
+// Use in your add-on UI
+addOnUISdk.ready.then(() => {
+  document.getElementById("fetchBtn").addEventListener("click", fetchWithCorsProxy);
+});
 ```
 
   You should then receive a successful response with that prefixed URL call:
@@ -63,6 +98,7 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 2. Create a file called `server.js` in your favorite editor and add the following to it:
 
     ```js
+    // Local CORS Proxy Server (server.js) - Node.js environment
     // Listen on a specific host via the HOST environment variable
     var host = process.env.HOST || '0.0.0.0';
     // Listen on a specific port via the PORT environment variable
@@ -82,7 +118,7 @@ You can also use the `cors-anywhere` node package to create and run your own pro
     `node server.js`
 
     or optionally pass in a host and port when you run it:
-    `HOST=0.0.0.0 PORT=8080 node proxy-server.js`
+    `HOST=0.0.0.0 PORT=8080 node server.js`
 
 <!-- <InlineAlert slots="text" variant="info"/> -->
 
@@ -91,18 +127,38 @@ You can also use the `cors-anywhere` node package to create and run your own pro
 By default, only `http` URLs are allowed with the sample code above (though the demo server supports either). To access `https` resources with your locally running script, you need to create and pass in a key and certificate in an `httpsOptions` object and include it as another object passed into the `createServer` call, such as:
 
 ```js
-cors_anywhere = createServer({ 
+// Local CORS Proxy Server with HTTPS (server.js) - Node.js environment
+const fs = require('fs');
+const path = require('path');
+const cors_anywhere = require('cors-anywhere');
+
+const server = cors_anywhere.createServer({ 
     httpsOptions: { 
         key: fs.readFileSync(path.join(__dirname, 'key.pem')), 
         cert: fs.readFileSync(path.join(__dirname, 'cert.pem')), 
-    }, 
+    },
+    originWhitelist: [], // Allow all origins
+    requireHeader: ['origin', 'x-requested-with'],
+    removeHeaders: ['cookie', 'cookie2']
 }); 
+
+server.listen(8443, '0.0.0.0', function() {
+    console.log('CORS Anywhere HTTPS server running on port 8443');
+});
 ```
 
-## CORS / COEP Handling
+## ⚠️ Production Considerations
 
-The value of the **Cross-Origin-Embedder-Policy** (COEP) header for add-on resources is set to `require-corp`. With COEP set to `require-corp`, resources loaded from within the document need to have CORP / CORS enabled. If you see any issues with fetch or using images, you can try implementing one of the following solutions.
+### ❌ Don't use public CORS proxies in production
+**Why:** They can be unreliable, have rate limits, and pose security risks  
+**Solution:** Set up your own proxy server or configure your backend properly
 
-1. For http requests, make sure that the resource server responds with the `Cross-Origin-Resource-Policy: cross-origin` header. See [this link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy) for reference.
+### ❌ Don't expose sensitive data through proxy URLs
+**Why:** Proxy servers may log requests  
+**Solution:** Use authentication headers and validate data server-side
 
-2. If you're using the `<img>` tag and your resource is being served with CORS, add the `crossorigin` attribute to the HTML tag loading it, for example: `<img src="***" crossorigin>`. See [this link](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) for more details.
+### ✅ Best Practices for Production
+- Set up your own CORS proxy server
+- Configure proper CORS headers on your own backend
+- Use environment variables for API endpoints
+- Implement proper error handling and retry logic

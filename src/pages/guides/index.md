@@ -37,6 +37,57 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
 
+## 🤔 Frequently Asked Questions
+
+### Q: What should I read first as a new developer?
+
+**A:** Follow this recommended path:
+
+1. **[Developer Journey](./getting_started/developer-journey.md)** - Get the big picture
+2. **[Hello World](./getting_started/hello-world.md)** - Your first add-on
+3. **[Code Playground](./getting_started/code_playground.md)** - Experiment with APIs
+
+### Q: Should I use the Code Playground or CLI for development?
+
+**A:** Choose based on your needs:
+
+- **Code Playground**: Perfect for learning, prototyping, and simple add-ons
+- **CLI**: Required for complex add-ons with external dependencies and production builds
+
+### Q: How do I get help when I'm stuck?
+
+**A:** Multiple support options available:
+
+- **[FAQ](./support/faq.md)** - Common issues and solutions
+- **[Office Hours](https://developer.adobe.com/developers-live)** - Monthly live support sessions
+- **[GitHub Issues](https://github.com/AdobeDocs/express-add-ons-docs)** - Report documentation problems
+
+## ⚠️ Common Beginner Mistakes
+
+### ❌ Error: "Add-on Development mode not enabled"
+**Solution:** Enable it in Adobe Express Settings → Add-on Development toggle
+
+### ❌ Error: "Cannot access document APIs"
+**Solution:** Ensure you're using Document Sandbox APIs correctly:
+
+```js
+// Document Sandbox (code.js) - CORRECT
+import { editor } from "express-document-sdk";
+
+// This works in Document Sandbox
+const element = editor.createRectangle();
+```
+
+```js
+// UI Runtime (index.js) - INCORRECT for document manipulation
+// Don't try to use editor APIs here
+```
+
+### ❌ Error: "Code doesn't run in playground"
+**Solution:** Check you're in the right tab:
+- **Script tab**: For direct document manipulation
+- **Add-on tab**: For full add-on with UI
+
 <TextBlock slots="image, heading, text, text1" width="50%"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
@@ -100,7 +151,7 @@ Have a creative idea for an Adobe Express add-on? Get **funding**, resources, an
   </iframe>
 </div>
 
-We’re backing innovative solutions that unlock the most popular and [trending](https://developer.adobe.com/fund-for-design/#what-were-looking-for) use cases. [Apply now](https://developer.adobe.com/fund-for-design) and turn your vision into reality!
+We're backing innovative solutions that unlock the most popular and [trending](https://developer.adobe.com/fund-for-design/#what-were-looking-for) use cases. [Apply now](https://developer.adobe.com/fund-for-design) and turn your vision into reality!
 
 ## Get inspiration and try out add-ons in the Marketplace
 
