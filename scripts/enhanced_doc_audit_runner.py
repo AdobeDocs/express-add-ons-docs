@@ -63,7 +63,7 @@ class ComprehensiveAuditResult:
 class EnhancedAuditRunner:
     """Comprehensive documentation auditing system"""
     
-    def __init__(self, docs_path: str = "express-add-ons-docs/src/pages"):
+    def __init__(self, docs_path: str = "src/pages"):
         self.docs_path = Path(docs_path)
         # Store JSON data in root directory with other audit JSONs
         self.results_dir = Path(".")
@@ -435,14 +435,22 @@ def install_dependencies():
 def main():
     """Run comprehensive documentation audit"""
     
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Enhanced comprehensive documentation audit')
+    parser.add_argument('--docs-path', default='src/pages',
+                       help='Path to documentation directory (default: src/pages)')
+    
+    args = parser.parse_args()
+    
     # Install dependencies
     try:
         install_dependencies()
     except Exception as e:
         print(f"⚠️ Warning: Could not install dependencies: {e}")
     
-    # Run audit
-    auditor = EnhancedAuditRunner()
+    # Run audit with the provided docs path
+    auditor = EnhancedAuditRunner(docs_path=args.docs_path)
     
     print("Starting enhanced comprehensive documentation audit...")
     print("This uses ALL query sources from test_prompts/ folder and may take several minutes...")
