@@ -675,6 +675,8 @@ def main():
     parser = argparse.ArgumentParser(description='Audit Adobe Express Add-ons documentation for LLM readiness')
     parser.add_argument('--docs-path', default='express-add-ons-docs/src/pages', 
                        help='Path to documentation directory')
+    parser.add_argument('--query-data', default='structured_query_data.json',
+                       help='Path to structured query data file')
     parser.add_argument('--output', default='llm_readiness_report.json',
                        help='Output file for detailed report')
     parser.add_argument('--baseline', action='store_true',

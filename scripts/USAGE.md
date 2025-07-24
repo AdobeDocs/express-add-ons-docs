@@ -203,7 +203,7 @@ After you've run a baseline summary (ie: `python3 scripts/doc_audit_runner.py --
 python3 scripts/generate_baseline_summary.py
 ```
 
-**Note:** Result goes to `reports/` folder
+**Note:** Result goes to reports folder as `reports/baseline_summary*.md`
 
 ### Comprehensive Markdown Report
 
@@ -217,8 +217,29 @@ python3 scripts/doc_audit_runner.py --docs-path src/pages/
 python3 scripts/generate_comprehensive_style_report.py --input comprehensive_doc_audit_complete_20250723_234739.json
 ```
 
-**Note:** Result goes to `reports/` folder
-——————
+**Note:** Result goes to reports folder as `reports/comprehensive_style_report_*.md`
+
+### Linter Markdown Report
+
+```bash
+// After running the linter on all files
+python3 scripts/llm_markdown_linter.py src/pages/ --output all_pages_linter_report.json
+// Generate markdown report based on the JSON output from the above command
+python3 scripts/generate_linter_report.py --input all_pages_linter_report.json
+
+// Result goes to reports folder as `reports/llm_markdown_linter_report_*.md`
+```
+
+### LLM Readiness Markdown Report
+
+```bash
+// After running the LLM Readiness Analyzer on all files
+python3 scripts/llm_readiness_analyzer.py --docs-path src/pages --output all_files_llm_readiness.json
+// Generate markdown report based on the JSON output from the above command
+python3 scripts/generate_llm_analysis_report.py --input all_files_llm_readiness.json    
+
+// Result goes to reports folder as `reports/llm_readiness_analysis_report_*.md`
+```
 
 ## Audit Framework #2 (doc_analyzer.py and express_issue_detector.py)
 
