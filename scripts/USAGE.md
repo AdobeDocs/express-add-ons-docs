@@ -195,6 +195,18 @@ python3 scripts/query_based_doc_tester.py -h
 
 ## GENERATE MARKDOWN REPORTS
 
+### Quick Reference: Which Report to Generate?
+
+| Report Type | Use When | Audience | Output |
+|-------------|----------|----------|--------|
+| **Executive Summary** | Need high-level overview for management | Leadership, Project Managers | Health metrics, business impact, ROI analysis |
+| **Detailed Implementation** | Planning development work | Development Teams | File-by-file action items, implementation templates |
+| **Priority Summary** | Need urgency-based task ordering | Team Leads, Developers | Priority-ranked files with specific issues |
+| **Baseline Summary** | Need overall audit results | All stakeholders | General audit findings and recommendations |
+| **Comprehensive Style** | Need detailed style analysis | Documentation Writers | In-depth style and formatting issues |
+| **LLM Readiness** | Focus on AI training preparation | AI/ML Teams | LLM-specific optimization recommendations |
+| **Linter Report** | Focus on technical validation | Developers, QA | Rule violations and fixes |
+
 ### Baseline Markdown Report
 
 After you've run a baseline summary (ie: `python3 scripts/doc_audit_runner.py --filtered --baseline --docs-path src/pages/`), you can generate a markdown summary with the following (defaults to filtered scope because LLM Readiness phase 1 is addressing the core structure so by default it’s easier to exclude)
@@ -207,13 +219,10 @@ python3 scripts/generate_baseline_summary.py
 
 ### Comprehensive Markdown Report
 
-```bash
-// After you've run a non-baseline report with:
-python3 scripts/doc_audit_runner.py --complete --docs-path src/pages/
-// or
-python3 scripts/doc_audit_runner.py --docs-path src/pages/
 
-// Generate comprehensive markdown report based on the JSON output from the above command
+After you've run a non-baseline report with doc_audit_runner.py (ie: `python3 scripts/doc_audit_runner.py --docs-path src/pages/`), you can generate a comprehensive markdown report with the following command, specifying the input JSON file from the previous run of `doc_audit_runner.py`:
+
+```bash
 python3 scripts/generate_comprehensive_style_report.py --input comprehensive_doc_audit_complete_20250723_234739.json
 ```
 
@@ -229,6 +238,46 @@ python3 scripts/generate_priority_summary.py
 
 // Result goes to reports folder as `reports/priority_summary_report_*.md`
 ```
+
+### Executive Summary Markdown Report
+
+```bash
+// After running a baseline audit to generate the necessary JSON files
+python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
+// or for complete analysis:
+python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/
+
+// Generate executive summary report (defaults to filtered scope)
+python3 scripts/generate_executive_summary.py
+// or specify scope explicitly:
+python3 scripts/generate_executive_summary.py --scope filtered
+python3 scripts/generate_executive_summary.py --scope complete
+
+// Result goes to reports folder as `reports/executive_summary_[scope]_[timestamp].md`
+```
+
+**Note:** The executive summary provides a high-level management overview with health metrics, priority breakdown, and business impact analysis.
+
+### Detailed Implementation Markdown Report
+
+```bash
+// After running a baseline audit to generate the necessary JSON files
+python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
+// or for complete analysis:
+python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/
+
+// Generate detailed implementation report (defaults to filtered scope)
+python3 scripts/generate_detailed_implementation_report.py
+// or specify scope explicitly:
+python3 scripts/generate_detailed_implementation_report.py --scope filtered
+python3 scripts/generate_detailed_implementation_report.py --scope complete
+
+// Result goes to reports folder as `reports/detailed_implementation_report_[scope]_[timestamp].md`
+```
+
+**Note:** The detailed implementation report provides file-by-file action items, specific recommendations, and implementation templates for development teams.
+
+Both reports automatically locate baseline audit files in the `express-add-ons-docs/` root directory regardless of where the script is executed from.
 
 ### Linter Markdown Report
 

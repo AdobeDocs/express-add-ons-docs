@@ -6,82 +6,131 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
+def get_baseline_directory():
+    """Get the directory where baseline files are stored."""
+    # Start from the current script's directory
+    script_dir = Path(__file__).parent
+    
+    # If we're in the scripts directory, go up one level to express-add-ons-docs root
+    if script_dir.name == "scripts":
+        baseline_dir = script_dir.parent
+    else:
+        # If script is moved elsewhere, try to find express-add-ons-docs directory
+        current_dir = Path.cwd()
+        
+        # Check if we're already in express-add-ons-docs
+        if current_dir.name == "express-add-ons-docs":
+            baseline_dir = current_dir
+        # Check if express-add-ons-docs is a parent directory
+        elif "express-add-ons-docs" in [p.name for p in current_dir.parents]:
+            baseline_dir = next(p for p in current_dir.parents if p.name == "express-add-ons-docs")
+        # Check if express-add-ons-docs is a subdirectory
+        elif (current_dir / "express-add-ons-docs").exists():
+            baseline_dir = current_dir / "express-add-ons-docs"
+        else:
+            # Fallback to current directory
+            baseline_dir = current_dir
+    
+    # Verify the directory exists and contains expected files
+    if not baseline_dir.exists():
+        raise FileNotFoundError(f"Baseline directory not found: {baseline_dir}")
+    
+    print(f"📁 Looking for baseline files in: {baseline_dir}")
+    return baseline_dir
+
 def find_latest_baseline(scope="filtered"):
     """Find the most recent baseline audit file of specified scope."""
+    baseline_dir = get_baseline_directory()
+    
     if scope == "filtered":
-        # First try to find filtered baselines (new naming)
-        filtered_files = [f for f in os.listdir('.') if f.startswith('baseline_filtered_') and f.endswith('_audit.json')]
+        # First try to find filtered baselines (correct naming)
+        filtered_files = [f for f in os.listdir(baseline_dir) if f.startswith('baseline_doc_audit_filtered_') and f.endswith('.json')]
         
         if filtered_files:
             filtered_files.sort(reverse=True)
-            return filtered_files[0]
+            return baseline_dir / filtered_files[0]
         
         # Fallback to old naming pattern (for backward compatibility)
-        all_files = [f for f in os.listdir('.') if f.startswith('baseline_') and f.endswith('_audit.json') and 'complete_' not in f]
+        all_files = [f for f in os.listdir(baseline_dir) if f.startswith('baseline_doc_audit_') and f.endswith('.json') and 'complete_' not in f]
         if not all_files:
             raise FileNotFoundError("No filtered baseline audit files found")
         
         all_files.sort(reverse=True)
         print(f"⚠️  Using old naming convention baseline: {all_files[0]}")
         print(f"💡 For clearer naming, run: python3 scripts/doc_audit_runner.py --baseline --filtered")
-        return all_files[0]
+        return baseline_dir / all_files[0]
     
     elif scope == "complete":
         # Find complete baselines
-        complete_files = [f for f in os.listdir('.') if f.startswith('baseline_complete_') and f.endswith('_audit.json')]
+        complete_files = [f for f in os.listdir(baseline_dir) if f.startswith('baseline_doc_audit_complete_') and f.endswith('.json')]
         
         if complete_files:
             complete_files.sort(reverse=True)
-            return complete_files[0]
+            return baseline_dir / complete_files[0]
         
         # Fallback to old naming pattern (for backward compatibility)
-        all_files = [f for f in os.listdir('.') if f.startswith('baseline_') and f.endswith('_audit.json')]
+        all_files = [f for f in os.listdir(baseline_dir) if f.startswith('baseline_doc_audit_') and f.endswith('.json')]
         if not all_files:
             raise FileNotFoundError("No complete baseline audit files found")
         
         all_files.sort(reverse=True)
         print(f"⚠️  Using old naming convention baseline: {all_files[0]}")
         print(f"💡 For clearer naming, run: python3 scripts/doc_audit_runner.py --baseline")
-        return all_files[0]
+        return baseline_dir / all_files[0]
     
     else:
         raise ValueError("Scope must be 'filtered' or 'complete'")
 
 def find_latest_detailed_analysis(scope="filtered"):
     """Find the most recent detailed file analysis of specified scope."""
+    baseline_dir = get_baseline_directory()
+    
     if scope == "filtered":
-        # First try to find filtered detailed analysis (new naming)
-        filtered_files = [f for f in os.listdir('.') if f.startswith('detailed_file_analysis_filtered_') and f.endswith('.json')]
+        # First try to find filtered detailed analysis (correct naming)
+        filtered_files = [f for f in os.listdir(baseline_dir) if f.startswith('detailed_doc_audit_filtered_') and f.endswith('.json')]
         
         if filtered_files:
             filtered_files.sort(reverse=True)
-            return filtered_files[0]
+            return baseline_dir / filtered_files[0]
         
         # Fallback to old naming pattern (for backward compatibility)
-        all_files = [f for f in os.listdir('.') if f.startswith('detailed_file_analysis_') and f.endswith('.json') and 'complete_' not in f]
+        all_files = [f for f in os.listdir(baseline_dir) if f.startswith('detailed_doc_audit_') and f.endswith('.json') and 'complete_' not in f]
         if not all_files:
+            # Try comprehensive_doc_audit pattern as another fallback
+            comprehensive_files = [f for f in os.listdir(baseline_dir) if f.startswith('comprehensive_doc_audit_filtered_') and f.endswith('.json')]
+            if comprehensive_files:
+                comprehensive_files.sort(reverse=True)
+                print(f"⚠️  Using comprehensive doc audit file: {comprehensive_files[0]}")
+                return baseline_dir / comprehensive_files[0]
             raise FileNotFoundError("No filtered detailed analysis files found")
         
         all_files.sort(reverse=True)
         print(f"⚠️  Using old naming convention detailed analysis: {all_files[0]}")
-        return all_files[0]
+        return baseline_dir / all_files[0]
     
     elif scope == "complete":
         # Find complete detailed analysis
-        complete_files = [f for f in os.listdir('.') if f.startswith('detailed_file_analysis_complete_') and f.endswith('.json')]
+        complete_files = [f for f in os.listdir(baseline_dir) if f.startswith('detailed_doc_audit_complete_') and f.endswith('.json')]
         
         if complete_files:
             complete_files.sort(reverse=True)
-            return complete_files[0]
+            return baseline_dir / complete_files[0]
+        
+        # Try comprehensive_doc_audit pattern as fallback
+        comprehensive_files = [f for f in os.listdir(baseline_dir) if f.startswith('comprehensive_doc_audit_complete_') and f.endswith('.json')]
+        if comprehensive_files:
+            comprehensive_files.sort(reverse=True)
+            print(f"⚠️  Using comprehensive doc audit file: {comprehensive_files[0]}")
+            return baseline_dir / comprehensive_files[0]
         
         # Fallback to old naming pattern (for backward compatibility)
-        all_files = [f for f in os.listdir('.') if f.startswith('detailed_file_analysis_') and f.endswith('.json')]
+        all_files = [f for f in os.listdir(baseline_dir) if f.startswith('detailed_doc_audit_') and f.endswith('.json')]
         if not all_files:
             raise FileNotFoundError("No complete detailed analysis files found")
         
         all_files.sort(reverse=True)
         print(f"⚠️  Using old naming convention detailed analysis: {all_files[0]}")
-        return all_files[0]
+        return baseline_dir / all_files[0]
     
     else:
         raise ValueError("Scope must be 'filtered' or 'complete'")
@@ -167,16 +216,30 @@ def generate_executive_summary(scope="filtered"):
         baseline_data = json.load(f)
     
     with open(detailed_file, 'r') as f:
-        detailed_data = json.load(f)
+        detailed_file_data = json.load(f)
+    
+    # Handle different file structures - detailed_doc_audit vs comprehensive_doc_audit
+    if isinstance(detailed_file_data, list):
+        # This is a detailed_doc_audit file (list of file objects)
+        detailed_data = detailed_file_data
+    else:
+        # This is a comprehensive_doc_audit file (has nested structure)
+        detailed_data = detailed_file_data.get('file_analysis', [])
+        if not detailed_data:
+            raise ValueError(f"No file_analysis found in {detailed_file}")
+        print(f"ℹ️ Extracted {len(detailed_data)} file analysis records from comprehensive audit file")
     
     # Extract timestamp from filename (handle both old and new naming conventions)
-    parts = baseline_file.split('_')
-    if len(parts) >= 4 and parts[1] in ['filtered', 'complete']:
-        # New naming: baseline_filtered_YYYYMMDD_HHMMSS_audit.json
-        timestamp = parts[2] + '_' + parts[3].replace('.json', '')
+    parts = baseline_file.name.split('_')
+    if len(parts) >= 6 and 'filtered' in parts:
+        # New naming: baseline_doc_audit_filtered_YYYYMMDD_HHMMSS.json
+        timestamp = parts[4] + '_' + parts[5].replace('.json', '')
+    elif len(parts) >= 6 and 'complete' in parts:
+        # New naming: baseline_doc_audit_complete_YYYYMMDD_HHMMSS.json
+        timestamp = parts[4] + '_' + parts[5].replace('.json', '')
     else:
-        # Old naming: baseline_YYYYMMDD_HHMMSS_audit.json
-        timestamp = parts[1] + '_' + parts[2].replace('.json', '')
+        # Old naming: baseline_doc_audit_YYYYMMDD_HHMMSS.json
+        timestamp = parts[3] + '_' + parts[4].replace('.json', '')
     readable_date = datetime.strptime(timestamp, '%Y%m%d_%H%M%S').strftime('%Y-%m-%d %H:%M:%S')
     
     # Calculate metrics
