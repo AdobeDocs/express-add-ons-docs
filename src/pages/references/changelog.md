@@ -357,7 +357,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 - The [Quickstart](../guides/getting_started/quickstart.md) and [Distribute](../guides/build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
-- A new section on Marketplace [rejections](/resources/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
+- A new section on Marketplace [rejections](../guides/build/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
 - The [Manifest Reference](./manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
 ## 2024-04-10
@@ -411,12 +411,12 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - A new [`createPath`](./document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
 - Updates descriptions in various methods and classes in the [Document APIs](./document-sandbox/document-apis/).
 - Updates to the [`createRenditions`](./addonsdk/app-document.md#createrenditions) API, including a new [`print`](./addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](./addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
-- Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../guides/learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../guides/learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
+- Updates to the [Using Adobe Spectrum tutorial](../guides/learn/how_to/tutorials/spectrum-workshop/index.md) with additional details on [why you should use Spectrum CSS variables](../guides/learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../guides/learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
 
 ## 2024-01-31
 
-Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/).
+Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](../guides/learn/how_to/tutorials/spectrum-workshop/index.md).
 
 ## 2024-01-09
 

@@ -428,7 +428,7 @@ const fillColor = editor.makeColorFill(col);
 rect.fill = fillColor;
 ```
 
-First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `makeColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
+First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](../../../../references/document-sandbox/document-apis/interfaces/Color.md) instance. Then, you use such color to create either a fill or stroke—here, we're using `makeColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
 
 <!-- code here -->
 <InlineAlert variant="info" slots="text1" />
