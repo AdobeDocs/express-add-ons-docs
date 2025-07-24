@@ -128,11 +128,6 @@ python3 scripts/llm_readiness_analyzer.py --docs-path src/pages/guides/learn/how
 python3 scripts/llm_readiness_analyzer.py --docs-path src/pages/guides/learn/how_to/modal_dialogs.md --output modal_dialogs_result.json
 ```
 
-### Query data passed in
-```bash
-python3 scripts/llm_readiness_analyzer.py --docs-path src/pages/guides -—query-data test_prompts/structured_query_data.json
-```
-
 ## LLM LINTING ONLY
 
 ### All files (console only)
