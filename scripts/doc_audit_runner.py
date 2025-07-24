@@ -31,7 +31,7 @@ from llm_markdown_linter import LLMMarkdownLinter
 class DocumentationAuditRunner:
     """Orchestrates comprehensive documentation auditing"""
     
-    def __init__(self, docs_path: str = "express-add-ons-docs/src/pages", filtered: bool = False):
+    def __init__(self, docs_path: str = "src/pages", filtered: bool = False):
         self.docs_path = docs_path
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.auditor = DocumentationAuditor()
@@ -78,9 +78,9 @@ class DocumentationAuditRunner:
         
         for analysis in framework_report.file_analyses:
             # Extract relative path from the full file path
-            # analysis.file_path is typically like: express-add-ons-docs/src/pages/references/...
-            if 'express-add-ons-docs/src/pages/' in analysis.file_path:
-                relative_path = analysis.file_path.split('express-add-ons-docs/src/pages/')[-1]
+            # analysis.file_path is typically like: src/pages/references/...
+            if 'src/pages/' in analysis.file_path:
+                relative_path = analysis.file_path.split('src/pages/')[-1]
             else:
                 # Fallback - try to get relative path from docs_path
                 try:
@@ -155,10 +155,10 @@ class DocumentationAuditRunner:
         
         for file_path, result in linter_results.items():
             # Extract relative path
-            if 'express-add-ons-docs/src/pages/' in file_path:
-                relative_path = file_path.split('express-add-ons-docs/src/pages/')[-1]
-            elif file_path.startswith('express-add-ons-docs/src/pages/'):
-                relative_path = file_path.replace('express-add-ons-docs/src/pages/', '')
+            if 'src/pages/' in file_path:
+                relative_path = file_path.split('src/pages/')[-1]
+            elif file_path.startswith('src/pages/'):
+                relative_path = file_path.replace('src/pages/', '')
             else:
                 # Fallback - try to get relative path from docs_path
                 try:
@@ -592,10 +592,9 @@ class DocumentationAuditRunner:
             return 0
     
     def save_report(self, report: Dict[str, Any], output_path: str):
-        """Save comprehensive report"""
+        """Save report"""
         with open(output_path, 'w') as f:
             json.dump(report, f, indent=2, default=str)
-        print(f"📊 Comprehensive report saved to: {output_path}")
     
     def print_executive_summary(self, report: Dict[str, Any], comparison: Dict[str, Any] = None):
         """Print executive summary of audit results"""
@@ -671,9 +670,9 @@ class DocumentationAuditRunner:
 
 def main():
     parser = argparse.ArgumentParser(description='Comprehensive Adobe Express Add-ons documentation audit')
-    parser.add_argument('--docs-path', default='express-add-ons-docs/src/pages',
+    parser.add_argument('--docs-path', default='src/pages',
                        help='Path to documentation directory')
-    parser.add_argument('--output', default='comprehensive_audit_report.json',
+    parser.add_argument('--output', default='comprehensive_doc_audit_report.json',
                        help='Output file for comprehensive report')
     parser.add_argument('--baseline', action='store_true',
                        help='Save this audit as baseline for future comparison')
@@ -696,37 +695,73 @@ def main():
     comparison = None
     if args.compare:
         comparison = runner.compare_with_baseline(report, args.compare)
+        # Include comparison data in the report
+        if comparison and 'error' not in comparison:
+            report['comparison_with_baseline'] = comparison
     
     # Print executive summary
     runner.print_executive_summary(report, comparison)
     
+    # Check if analyzing a single file for custom naming
+    is_single_file = Path(args.docs_path).is_file() and Path(args.docs_path).suffix == '.md'
+    if is_single_file:
+        # Use the filename (without extension) for the report name
+        filename_base = Path(args.docs_path).stem
+        file_description = f"single file ({filename_base}.md)"
+    else:
+        filename_base = None
+        scope_description = "filtered (core docs only)" if args.filtered else "complete (all files)"
+    
     # Save reports
     if args.baseline:
-        # Include scope in filename to distinguish filtered vs complete baselines
-        scope = "filtered_" if args.filtered else "complete_"
-        baseline_path = f"baseline_{scope}{runner.timestamp}_audit.json"
+        if is_single_file:
+            baseline_path = f"baseline_{filename_base}_doc_audit_{runner.timestamp}.json"
+        else:
+            # Include scope in filename to distinguish filtered vs complete baselines
+            scope = "filtered_" if args.filtered else "complete_"
+            baseline_path = f"baseline_doc_audit_{scope}{runner.timestamp}.json"
+        
         runner.save_report(report, baseline_path)
-        scope_description = "filtered (core docs only)" if args.filtered else "complete (all files)"
-        print(f"💾 Baseline saved as: {baseline_path} ({scope_description})")
+        description = file_description if is_single_file else scope_description
+        print(f"💾 Baseline doc audit report saved as: {baseline_path} ({description})")
+    else:
+        # Include scope in comprehensive report filename if using default
+        if args.output == 'comprehensive_doc_audit_report.json':  # Using default filename
+            comparison_suffix = "_comparison" if args.compare else ""
+            if is_single_file:
+                output_path = f"{filename_base}_doc_audit{comparison_suffix}_{runner.timestamp}.json"
+            else:
+                scope = "filtered_" if args.filtered else "complete_"
+                output_path = f"comprehensive_doc_audit_{scope}{comparison_suffix}_{runner.timestamp}.json"
+        else:  # User provided custom filename
+            # Add comparison suffix to custom filename too
+            if args.compare:
+                # Insert _comparison before the .json extension
+                base_name = args.output.rsplit('.json', 1)[0] if args.output.endswith('.json') else args.output
+                output_path = f"{base_name}_comparison.json"
+            else:
+                output_path = args.output
+        
+        runner.save_report(report, output_path)
+        description = file_description if is_single_file else scope_description
+        comparison_note = " with baseline comparison" if args.compare else ""
+        print(f"📊 Comprehensive doc audit report saved as: {output_path} ({description}{comparison_note})")
     
-    # Include scope in comprehensive report filename if using default
-    if args.output == 'comprehensive_audit_report.json':  # Using default filename
-        scope = "filtered_" if args.filtered else "complete_"
-        output_path = f"comprehensive_audit_report_{scope}{runner.timestamp}.json"
-    else:  # User provided custom filename
-        output_path = args.output
-    
-    runner.save_report(report, output_path)
-    
-    # Additional detailed output for full reports
-    if args.full_report:
-        # Include scope in detailed analysis filename too
-        scope = "filtered_" if args.filtered else "complete_"
-        detailed_path = f"detailed_file_analysis_{scope}{runner.timestamp}.json"
+    # Additional detailed output for full reports (only for comprehensive runs, not baselines)
+    if args.full_report and not args.baseline:
+        comparison_suffix = "_comparison" if args.compare else ""
+        if is_single_file:
+            detailed_path = f"{filename_base}_detailed_doc_audit{comparison_suffix}_{runner.timestamp}.json"
+        else:
+            # Include scope in detailed analysis filename too
+            scope = "filtered_" if args.filtered else "complete_"
+            detailed_path = f"detailed_doc_audit_{scope}{comparison_suffix}_{runner.timestamp}.json"
+        
         with open(detailed_path, 'w') as f:
             json.dump(report['file_analysis'], f, indent=2, default=str)
-        scope_description = "filtered (core docs only)" if args.filtered else "complete (all files)"
-        print(f"📄 Detailed file analysis saved to: {detailed_path} ({scope_description})")
+        description = file_description if is_single_file else scope_description
+        comparison_note = " with baseline comparison" if args.compare else ""
+        print(f"📄 Detailed doc audit analysis saved to: {detailed_path} ({description}{comparison_note})")
 
 if __name__ == "__main__":
     main() 

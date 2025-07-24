@@ -8,7 +8,7 @@ Tests documentation against real developer queries to evaluate:
 - Content gaps
 - LLM-readiness for specific use cases
 
-Works with unified queries from query_parser.py
+Works with unified queries from test_prompts/unified_test_queries.json
 """
 
 import os
@@ -20,7 +20,26 @@ from dataclasses import dataclass, asdict
 from datetime import datetime
 import difflib
 
-from query_parser import QueryParser, UnifiedQuery
+
+@dataclass
+class UnifiedQuery:
+    """Standardized query format for testing"""
+    query: str
+    category: str
+    subcategory: Optional[str] = None
+    priority: str = "medium"
+    expected_elements: List[str] = None
+    common_errors: List[str] = None
+    source_file: str = ""
+    metadata: Dict[str, Any] = None
+
+    def __post_init__(self):
+        if self.expected_elements is None:
+            self.expected_elements = []
+        if self.common_errors is None:
+            self.common_errors = []
+        if self.metadata is None:
+            self.metadata = {}
 
 
 @dataclass
@@ -54,7 +73,7 @@ class DocumentationTestReport:
 class QueryBasedDocTester:
     """Tests documentation against developer queries"""
     
-    def __init__(self, docs_root: str = "express-add-ons-docs/src/pages"):
+    def __init__(self, docs_root: str = "src/pages"):
         self.docs_root = Path(docs_root)
         self.doc_cache: Dict[str, str] = {}
         self.file_index: Dict[str, List[str]] = {}  # word -> files containing it
@@ -455,13 +474,41 @@ class QueryBasedDocTester:
             print(f"   - {suggestion}")
 
 
+def load_unified_queries() -> List[UnifiedQuery]:
+    """Load queries from the unified test queries JSON file"""
+    json_path = Path("test_prompts/unified_test_queries.json")
+    
+    if not json_path.exists():
+        raise FileNotFoundError(f"Unified queries file not found: {json_path}")
+    
+    with open(json_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    queries = []
+    for query_data in data.get('queries', []):
+        # Convert JSON to UnifiedQuery object
+        query = UnifiedQuery(
+            query=query_data['query'],
+            category=query_data['category'],
+            subcategory=query_data.get('subcategory'),
+            priority=query_data.get('priority', 'medium'),
+            expected_elements=query_data.get('expected_elements', []),
+            common_errors=query_data.get('common_errors', []),
+            source_file=query_data.get('source_file', ''),
+            metadata=query_data.get('metadata', {})
+        )
+        queries.append(query)
+    
+    print(f"📊 Loaded {len(queries)} queries from {json_path}")
+    return queries
+
+
 def main():
     """Demo the query-based documentation tester"""
     
-    # Parse queries
-    print("🔍 Parsing test queries...")
-    parser = QueryParser()
-    queries = parser.parse_all_sources()
+    # Load queries from JSON file
+    print("🔍 Loading test queries from unified_test_queries.json...")
+    queries = load_unified_queries()
     
     # Test documentation
     tester = QueryBasedDocTester()
