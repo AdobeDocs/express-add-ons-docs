@@ -276,7 +276,7 @@ const ellipses = Array.from(selectedNode.allChildren) // 👈
 
 To finally unravel the `allChildren` purpose mystery, let's see what the documentation says about it.
 
-> \[...] nodes with a more specific structure can hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their overall display z-order.
+> \[...] nodes with a more specific structure can hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their overall display z-order.
 
 If you inspect a `MediaContainerNode` class, which is instantiated every time you place an image, it has two peculiar properties: `maskShape` and `mediaRectangle`. They hold the shape that masks the bitmap (in UI terms, the Crop—by default, a rectangle with the same image dimensions) and the `ImageRectangleNode` itself. They are the "structures" the documentation refers to; therefore, you'll find them in its `allChildren` property. Other notable examples are `maskShape` in Groups and `artboards` in Pages.
 
