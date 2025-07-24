@@ -219,6 +219,17 @@ python3 scripts/generate_comprehensive_style_report.py --input comprehensive_doc
 
 **Note:** Result goes to reports folder as `reports/comprehensive_style_report_*.md`
 
+### Priority Summary Markdown Report
+
+```bash
+// Make sure to run the doc_audit_runner.py first to generate the necessary JSON files
+
+// Then run the following command to generate the priority summary report:
+python3 scripts/generate_priority_summary.py
+
+// Result goes to reports folder as `reports/priority_summary_report_*.md`
+```
+
 ### Linter Markdown Report
 
 ```bash
