@@ -8,10 +8,10 @@ This framework analyzes documentation for LLM-friendliness based on:
 - Adobe Express specific developer needs
 
 Usage:
-    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages
-    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages --baseline --output baseline_report.json
-    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages --compare baseline_report.json
-    python3 llm_readiness_analyzer.py --docs-path ../express-add-ons-docs/src/pages/guides/learn/how_to/use_text.md --output my_report.json
+    python3 llm_readiness_analyzer.py --docs-path src/pages
+    python3 llm_readiness_analyzer.py --docs-path src/pages --baseline --output baseline_report.json
+    python3 llm_readiness_analyzer.py --docs-path src/pages --compare baseline_report.json
+    python3 llm_readiness_analyzer.py --docs-path src/pages/guides/learn/how_to/use_text.md --output my_report.json
 """
 
 import os
@@ -23,6 +23,7 @@ from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import List, Dict, Any, Optional, Tuple
 from collections import defaultdict
+from datetime import datetime
 import hashlib
 
 @dataclass
@@ -36,6 +37,7 @@ class DocumentAnalysis:
     code_examples_incomplete: int
     context_clarity_score: float
     error_first_sections: int
+    error_coverage_score: float
     qa_format_sections: int
     cross_references: int
     progressive_structure_score: float
@@ -134,12 +136,14 @@ class DocumentationAuditor:
             
             # Collect category scores
             category_scores['context_clarity'].append(analysis.context_clarity_score)
-            category_scores['code_completeness'].append(
-                analysis.code_examples_complete / max(1, analysis.code_blocks)
-            )
-            category_scores['error_coverage'].append(
-                1.0 if analysis.error_first_sections > 0 else 0.0
-            )
+            
+            # Code completeness: 1.0 if no code blocks, otherwise ratio of complete/total
+            if analysis.code_blocks == 0:
+                code_completeness_score = 1.0  # Perfect score when no code to evaluate
+            else:
+                code_completeness_score = analysis.code_examples_complete / analysis.code_blocks
+            category_scores['code_completeness'].append(code_completeness_score)
+            category_scores['error_coverage'].append(analysis.error_coverage_score)
             category_scores['qa_format'].append(
                 1.0 if analysis.qa_format_sections > 0 else 0.0
             )
@@ -191,6 +195,7 @@ class DocumentationAuditor:
                 code_examples_incomplete=0,
                 context_clarity_score=0.0,
                 error_first_sections=0,
+                error_coverage_score=0.0,
                 qa_format_sections=0,
                 cross_references=0,
                 progressive_structure_score=0.0,
@@ -217,6 +222,9 @@ class DocumentationAuditor:
         # Error-first sections
         error_sections = self._count_error_sections(body)
         
+        # Check if page has risky code that needs error handling
+        has_risky_code = self._has_risky_code_without_error_handling(body)
+        
         # Q&A format sections
         qa_sections = self._count_qa_sections(body)
         
@@ -224,16 +232,28 @@ class DocumentationAuditor:
         cross_refs = self._count_cross_references(body)
         
         # Progressive structure
-        progressive_score = self._analyze_progressive_structure(body)
+        progressive_score = self._analyze_progressive_structure(body, file_path)
         
         # Searchability
         searchability_score = self._analyze_searchability(body, title)
         
         # Calculate LLM-friendly score for this file
+        # Code completeness: 1.0 if no code blocks, otherwise ratio of complete/total
+        if code_blocks == 0:
+            code_completeness_score = 1.0  # Perfect score when no code to evaluate
+        else:
+            code_completeness_score = complete_examples / code_blocks
+            
+        # Error coverage: only require error sections if there's risky code
+        if has_risky_code:
+            error_coverage_score = 1.0 if error_sections > 0 else 0.0
+        else:
+            error_coverage_score = 1.0  # Perfect score when no risky operations to document errors for
+            
         llm_score = self._calculate_file_llm_score({
             'context_clarity': context_clarity,
-            'code_completeness': complete_examples / max(1, code_blocks),
-            'error_coverage': 1.0 if error_sections > 0 else 0.0,
+            'code_completeness': code_completeness_score,
+            'error_coverage': error_coverage_score,
             'qa_format': 1.0 if qa_sections > 0 else 0.0,
             'progressive_structure': progressive_score,
             'searchability': searchability_score,
@@ -242,7 +262,7 @@ class DocumentationAuditor:
         
         # Generate issues and recommendations
         issues = self._identify_file_issues(body, complete_examples, incomplete_examples)
-        recommendations = self._generate_file_recommendations(body, context_clarity, error_sections)
+        recommendations = self._generate_file_recommendations(body, context_clarity, error_sections, has_risky_code)
         
         return DocumentAnalysis(
             file_path=file_path,
@@ -253,6 +273,7 @@ class DocumentationAuditor:
             code_examples_incomplete=incomplete_examples,
             context_clarity_score=context_clarity,
             error_first_sections=error_sections,
+            error_coverage_score=error_coverage_score,
             qa_format_sections=qa_sections,
             cross_references=cross_refs,
             progressive_structure_score=progressive_score,
@@ -342,6 +363,45 @@ class DocumentationAuditor:
         
         return count
     
+    def _has_risky_code_without_error_handling(self, content: str) -> bool:
+        """Check if content has code blocks with risky operations but no error handling"""
+        code_blocks = re.findall(r'```(\w+)?\n(.*?)\n```', content, re.DOTALL)
+        
+        if not code_blocks:
+            return False
+            
+        # Define operations that could fail and need error handling
+        risky_operations = [
+            r'addOnUISdk\.app\.showModalDialog\(',     # Modal dialogs that can fail
+            r'addOnUISdk\.app\.enableDragToDocument\(',# Drag operations that can fail
+            r'addOnUISdk\.instance\.proxy\.',          # Communication operations that can fail
+            r'editor\.createRenditions\(',             # Rendition creation
+            r'editor\.createRectangle\(',              # Shape creation
+            r'editor\.createEllipse\(',                # Shape creation
+            r'editor\.createText\(',                   # Text creation
+            r'editor\.createImage\(',                  # Image creation
+            r'editor\.createPage\(',                   # Page creation
+            r'\.setFill\(',                           # Style operations that can fail
+            r'\.setStroke\(',                         # Style operations that can fail
+            r'fetch\(',                               # Network requests
+            r'JSON\.parse\(',                         # JSON parsing that can fail
+            r'JSON\.stringify\(',                     # JSON stringifying that can fail
+            r'localStorage\.',                        # Storage operations
+            r'sessionStorage\.',                      # Storage operations
+            r'require\(',                             # Require statements (dynamic requires can fail)
+            r'await\s+fonts\.',                       # Font loading operations
+        ]
+        
+        # Check if any code blocks have risky operations without try/catch
+        for lang, code in code_blocks:
+            has_risky_operations = any(re.search(pattern, code, re.IGNORECASE) for pattern in risky_operations)
+            has_try_catch = 'try' in code and 'catch' in code
+            
+            if has_risky_operations and not has_try_catch:
+                return True
+        
+        return False
+    
     def _count_qa_sections(self, content: str) -> int:
         """Count Q&A format sections"""
         qa_patterns = [
@@ -375,9 +435,17 @@ class DocumentationAuditor:
         
         return count
     
-    def _analyze_progressive_structure(self, content: str) -> float:
+    def _is_tutorial_page(self, file_path: str) -> bool:
+        """Check if a page is a tutorial based on file path"""
+        return '/tutorials/' in file_path.lower()
+    
+    def _analyze_progressive_structure(self, content: str, file_path: str) -> float:
         """Analyze if content follows progressive learning structure"""
-        # Look for level/step indicators
+        # Only analyze progressive structure for tutorial pages
+        if not self._is_tutorial_page(file_path):
+            return 1.0  # Perfect score for non-tutorials since progressive structure isn't relevant
+        
+        # Look for level/step indicators in tutorials
         level_patterns = [
             r'##?\s*(?:Level|Step|Phase)\s*\d+',
             r'##?\s*(?:Basic|Intermediate|Advanced)',
@@ -446,15 +514,15 @@ class DocumentationAuditor:
         
         return issues
     
-    def _generate_file_recommendations(self, content: str, context_clarity: float, error_sections: int) -> List[str]:
+    def _generate_file_recommendations(self, content: str, context_clarity: float, error_sections: int, has_risky_code: bool) -> List[str]:
         """Generate recommendations for a file"""
         recommendations = []
         
         if context_clarity < 0.5:
             recommendations.append("Add clear UI Runtime vs Document Sandbox context headers")
         
-        if error_sections == 0:
-            recommendations.append("Add error-first documentation sections")
+        if error_sections == 0 and has_risky_code:
+            recommendations.append("Add error-first documentation sections for API operations that can fail")
         
         if 'Q:' not in content and 'Question:' not in content:
             recommendations.append("Consider adding Q&A format sections")
@@ -496,10 +564,10 @@ class DocumentationAuditor:
         if low_context_files > len(file_analyses) * 0.3:
             critical_issues.append(f"{low_context_files} files lack clear UI vs Sandbox context")
         
-        # Count files without error documentation
-        no_error_docs = sum(1 for analysis in file_analyses if analysis.error_first_sections == 0)
-        if no_error_docs > len(file_analyses) * 0.7:
-            critical_issues.append(f"{no_error_docs} files lack error-first documentation")
+        # Count files with poor error coverage (only for files that need error handling)
+        poor_error_coverage = sum(1 for analysis in file_analyses if analysis.error_coverage_score < 0.5)
+        if poor_error_coverage > len(file_analyses) * 0.7:
+            critical_issues.append(f"{poor_error_coverage} files with API operations lack error-first documentation")
         
         return critical_issues
     
@@ -564,9 +632,9 @@ class DocumentationAuditor:
             json.dump(asdict(report), f, indent=2, default=str)
         
         if report_type == "Baseline":
-            print(f"💾 Baseline report saved to: {output_path}")
+            print(f"💾 Baseline llm readiness report saved to: {output_path}")
         else:
-            print(f"📊 Report saved to: {output_path}")
+            print(f"📊 LLM readiness report saved to: {output_path}")
     
     def print_summary(self, report: AuditReport):
         """Print audit summary to console"""
@@ -607,9 +675,7 @@ def main():
     parser = argparse.ArgumentParser(description='Audit Adobe Express Add-ons documentation for LLM readiness')
     parser.add_argument('--docs-path', default='express-add-ons-docs/src/pages', 
                        help='Path to documentation directory')
-    parser.add_argument('--query-data', default='structured_query_data.json',
-                       help='Path to structured query data file')
-    parser.add_argument('--output', default='doc_audit_report.json',
+    parser.add_argument('--output', default='llm_readiness_report.json',
                        help='Output file for detailed report')
     parser.add_argument('--baseline', action='store_true',
                        help='Save this audit as baseline for future comparison')
@@ -627,12 +693,39 @@ def main():
     # Print summary
     auditor.print_summary(report)
     
+    # Generate timestamped filename
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Check if analyzing a single file
+    docs_path_obj = Path(args.docs_path)
+    is_single_file = docs_path_obj.is_file() and docs_path_obj.suffix == '.md'
+    
+    # Generate appropriate output filename
+    if args.output == 'llm_readiness_report.json':  # Using default filename
+        if is_single_file:
+            filename_base = docs_path_obj.stem
+            if args.baseline:
+                output_path = f"baseline_{filename_base}_llm_readiness_{timestamp}.json"
+            else:
+                output_path = f"{filename_base}_llm_readiness_{timestamp}.json"
+        else:
+            if args.baseline:
+                output_path = f"baseline_llm_readiness_report_{timestamp}.json"
+            else:
+                output_path = f"llm_readiness_report_{timestamp}.json"
+    else:  # User provided custom filename
+        # Insert timestamp before .json extension
+        base_name = args.output.rsplit('.json', 1)[0] if args.output.endswith('.json') else args.output
+        if args.baseline:
+            output_path = f"baseline_{base_name}_{timestamp}.json"
+        else:
+            output_path = f"{base_name}_{timestamp}.json"
+    
     # Save report
     if args.baseline:
-        baseline_path = f"baseline_{args.output}"
-        auditor.save_report(report, baseline_path, "Baseline")
+        auditor.save_report(report, output_path, "Baseline")
     else:
-        auditor.save_report(report, args.output)
+        auditor.save_report(report, output_path)
     
     # Compare with previous if requested
     if args.compare:

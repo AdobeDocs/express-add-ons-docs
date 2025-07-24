@@ -6,8 +6,8 @@ This tool provides specific linting rules for documentation optimized for LLM tr
 and AI assistant accuracy, based on developer query patterns and best practices.
 
 Usage:
-    python3 llm_markdown_linter.py express-add-ons-docs/src/pages
-    python3 llm_markdown_linter.py --file specific_file.md --fix
+    python3 llm_markdown_linter.py src/pages
+    python3 llm_markdown_linter.py specific_file.md --fix
 """
 
 import re
@@ -392,22 +392,57 @@ class LLMMarkdownLinter:
         return issues
     
     def check_error_sections(self, rule_id: str, content: str, lines: List[str], severity: Severity) -> List[LintIssue]:
-        """Check for error-first documentation sections"""
+        """Check for error-first documentation sections when code blocks need error handling"""
         issues = []
         
-        # Check if document mentions errors but doesn't have error sections
-        mentions_errors = bool(re.search(r'error|issue|problem|troubleshoot', content, re.IGNORECASE))
-        has_error_sections = bool(re.search(r'##?\s*(?:Error|Common Issues|Troubleshooting)', content, re.IGNORECASE))
+        # Check if there are code blocks with risky operations that need error handling
+        code_blocks = re.findall(r'```(\w+)?\n(.*?)\n```', content, re.DOTALL)
         
-        if mentions_errors and not has_error_sections and len(content) > 1000:
-            issues.append(LintIssue(
-                rule_id=rule_id,
-                severity=severity,
-                message="Consider adding dedicated error/troubleshooting sections",
-                line_number=1,
-                column=0,
-                suggestion="Add section: ## Common Issues or ## Troubleshooting"
-            ))
+        # Define operations that could fail and need error handling
+        risky_operations = [
+            r'addOnUISdk\.app\.showModalDialog\(',     # Modal dialogs that can fail
+            r'addOnUISdk\.app\.enableDragToDocument\(',# Drag operations that can fail
+            r'addOnUISdk\.instance\.proxy\.',          # Communication operations that can fail
+            r'editor\.createRenditions\(',             # Rendition creation
+            r'editor\.createRectangle\(',              # Shape creation
+            r'editor\.createEllipse\(',                # Shape creation
+            r'editor\.createText\(',                   # Text creation
+            r'editor\.createImage\(',                  # Image creation
+            r'editor\.createPage\(',                   # Page creation
+            r'\.setFill\(',                           # Style operations that can fail
+            r'\.setStroke\(',                         # Style operations that can fail
+            r'fetch\(',                               # Network requests
+            r'JSON\.parse\(',                         # JSON parsing that can fail
+            r'JSON\.stringify\(',                     # JSON stringifying that can fail
+            r'localStorage\.',                        # Storage operations
+            r'sessionStorage\.',                      # Storage operations
+            r'require\(',                             # Require statements (dynamic requires can fail)
+            r'await\s+fonts\.',                       # Font loading operations
+        ]
+        
+        # Check if any code blocks have risky operations without try/catch
+        has_risky_code_without_error_handling = False
+        for lang, code in code_blocks:
+            has_risky_operations = any(re.search(pattern, code, re.IGNORECASE) for pattern in risky_operations)
+            has_try_catch = 'try' in code and 'catch' in code
+            
+            if has_risky_operations and not has_try_catch:
+                has_risky_code_without_error_handling = True
+                break
+        
+        # Only suggest error sections if we have risky code without error handling
+        if has_risky_code_without_error_handling:
+            has_error_sections = bool(re.search(r'##?\s*(?:Error|Common Issues|Troubleshooting)', content, re.IGNORECASE))
+            
+            if not has_error_sections:
+                issues.append(LintIssue(
+                    rule_id=rule_id,
+                    severity=severity,
+                    message="Consider adding error/troubleshooting sections for API operations that can fail",
+                    line_number=1,
+                    column=0,
+                    suggestion="Add section: ## Common Issues or ## Error: \"method is not a function\""
+                ))
         
         return issues
     

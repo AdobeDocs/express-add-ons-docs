@@ -19,13 +19,13 @@ def find_latest_baseline(scope="filtered"):
     """Find the most recent baseline audit file of specified scope"""
     if scope == "filtered":
         # First try to find filtered baselines (new naming)
-        filtered_files = glob.glob("baseline_filtered_*_audit.json")
+        filtered_files = glob.glob("baseline_doc_audit_filtered_*_audit.json")
         
         if filtered_files:
             return sorted(filtered_files)[-1]
         
         # Fallback to old naming pattern (for backward compatibility)  
-        baseline_files = glob.glob("baseline_*_audit.json")
+        baseline_files = glob.glob("baseline_doc_audit_*.json")
         # Exclude complete files
         baseline_files = [f for f in baseline_files if 'complete_' not in f]
         if not baseline_files:
@@ -37,7 +37,7 @@ def find_latest_baseline(scope="filtered"):
     
     elif scope == "complete":
         # Find complete baselines (new naming)
-        complete_files = glob.glob("baseline_complete_*_audit.json")
+        complete_files = glob.glob("baseline_doc_audit_complete_*.json")
         
         if complete_files:
             return sorted(complete_files)[-1]
