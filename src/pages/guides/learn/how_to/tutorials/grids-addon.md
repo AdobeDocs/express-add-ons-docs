@@ -33,9 +33,10 @@ Hello, and welcome to this Adobe Express Document API tutorial, where we'll buil
 
 Your add-on will allow users to create a variable number of rows and columns, control the spacing between them (known as the _gutter_), and apply color overlays.
 
-### Changelog
+<br/>
 
-This tutorial has been written by [Davide Barranca](https://www.davidebarranca.com), software developer and author from Italy; revision history as follows.
+<details>
+<summary>See the <b>Changelog</b></summary>
 
 **January 9th, 2024**
 
@@ -69,6 +70,8 @@ This tutorial has been written by [Davide Barranca](https://www.davidebarranca.c
 **November 6th, 2023**
 
 - First publication.
+
+</details>
 
 ### Prerequisites
 
@@ -425,7 +428,7 @@ const fillColor = editor.makeColorFill(col);
 rect.fill = fillColor;
 ```
 
-First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](/references/document-sandbox/document-apis/classes/Color/) instance. Then, you use such color to create either a fill or stroke—here, we're using `makeColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
+First, you make use of the `fromRGB()` method from the `colorUtils` class, which expects four parameters in the (0..1) range: R, G, B and an optional Alpha, and returns a [Color](../../../../references/document-sandbox/document-apis/interfaces/Color.md) instance. Then, you use such color to create either a fill or stroke—here, we're using `makeColorFill()`. Finally, you set it to the shape by assigning it to the `fill` property.
 
 <!-- code here -->
 <InlineAlert variant="info" slots="text1" />

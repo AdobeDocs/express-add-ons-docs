@@ -31,15 +31,15 @@ Davide Barranca - November 6th, 2023
 
 <ResourceCard slots="link, image, heading, text" width="50%"/>
 
-[Coming Soon...](stats-addon.md)
+[Stats add-on](stats-addon.md)
 
-![Coming Soon](images/thumbs-stats-addon.png)
+![Stats add-on](images/thumbs-stats-addon.png)
 
 ### Creating a Stats add-on with the Adobe Express Communication API
 
 Davide Barranca - December 14th, 2023
 
-<ResourceCard slots="link, image, heading, text" width="80%"/>
+<ResourceCard slots="link, image, heading, text" width="50%"/>
 
 [Express Document API](spectrum-workshop/index.md)
 
@@ -48,3 +48,13 @@ Davide Barranca - December 14th, 2023
 ### Building UIs using Adobe's Spectrum Design System
 
 Holly Schinsky - January 25th, 2024
+
+<ResourceCard slots="link, image, heading, text" width="50%"/>
+
+[Markdown Parser add-on](./markdown-parser-text-api.md)
+
+![Markdown Parser add-on](images/thumbs-markdown-addon.png)
+
+### Create a Markdown Parser Add-on with the Text API
+
+Davide Barranca - July 1st, 2025
