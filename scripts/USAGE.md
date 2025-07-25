@@ -1,347 +1,310 @@
-AUDITING/REPORTING SCRIPTS USAGE
+# Adobe Express Add-ons Documentation Auditing Scripts
 
-# This document outlines how to use the auditing and reporting scripts for the LLM Readiness project.
+This guide helps you audit and improve documentation quality using our comprehensive auditing and reporting scripts.
 
-There are two main frameworks for auditing and reporting:
-1. **Audit Framework #1**: Uses `doc_audit_runner.py` to run both LLM Markdown Linting and LLM Readiness Analyzer.
-2. **Audit Framework #2**: Uses `doc_analyzer.py` and `express_issue_detector.py` for basic documentation analysis and Adobe Express specific issues.
+## 🚀 Quick Start Guide
 
-## Audit Framework #1
+### Step 1: Run Your First Audit
+Start with a basic audit of core documentation files (excluding auto-generated API references):
 
-### Doc Audit Runner (`doc_audit_runner.py`)
-
-Calls both llm_markdown_linting.py and llm_readiness_analyzer.py and generates results in one JSON file.
-
-### All files baseline - auto-saves to `baseline_doc_audit_complete_*.json file for later comparison
 ```bash
+# Create baseline audit of core documentation (~108 files)
+python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
+```
+
+This creates: `baseline_doc_audit_filtered_[timestamp].json`
+
+### Step 2: Generate a Readable Report
+Turn your audit data into an actionable report:
+
+```bash
+# Generate executive summary for management overview
+python3 scripts/generate_executive_summary.py --scope filtered
+
+# Generate detailed implementation guide for developers  
+python3 scripts/generate_detailed_implementation_report.py --scope filtered
+```
+
+Reports are saved to the `reports/` folder.
+
+### Step 3: Start Fixing Issues
+Use the Priority Summary to see which files need attention first:
+
+```bash
+python3 scripts/generate_priority_summary.py --scope filtered
+```
+
+---
+
+## 📊 Basic Auditing Commands
+
+### Full Documentation Audit (Recommended Starting Point)
+
+**Core documentation only** (excludes auto-generated files - recommended):
+```bash
+# Baseline audit for comparison tracking
+python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
+
+# Regular audit for current status
+python3 scripts/doc_audit_runner.py --filtered full report --docs-path src/pages/
+```
+
+**All documentation files** (includes auto-generated API references):
+```bash
+# Baseline audit for comparison tracking  
 python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/
+
+# Regular audit for current status
+python3 scripts/doc_audit_runner.py --docs-path src/pages/
 ```
 
-### Filtered files (no refs or changelog) - baseline report - auto saves to `baseline_doc_audit_filtered_*.json` file for later comparison
+### Single File Auditing
 
-```bash
-python3 scripts/doc_audit_runner.py --filtered --baseline --docs-path src/pages/
-```
-
-### Filtered files (no refs or changelog) - anytime report  — auto saves to a `comprehensive_doc_audit_filtered_*.json` file (leave off —filtered to audit all files)
-
-```bash
-python3 scripts/doc_audit_runner.py --filtered --docs-path src/pages/
-```
-
-### All docs - full report with detailed file analysis - outputs to both a `detailed_doc_audit_*.json` (only each file and its details) and `comprehensive_doc-audit_*.json` (has overall scores plus detailed files info)
-
-```bash
-python3 scripts/doc_audit_runner.py --full-report --docs-path src/pages/
-```
-
-### Single file - anytime report - auto-saves to a `<filename>_doc_audit_*.json` file
-
+**Quick single file check:**
 ```bash
 python3 scripts/doc_audit_runner.py --docs-path src/pages/guides/learn/how_to/modal_dialogs.md
 ```
 
-### Single file - baseline report - auto-saves to a `baseline_<filename>_doc_audit_*.json` file for later comparison as updates are done
+**Single file baseline** (for tracking improvements):
 ```bash
 python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/guides/learn/how_to/modal_dialogs.md
 ```
 
-### Comparison reporting — uses the `--compare` flag with the file to compare to
+### Individual Tool Usage
 
+**LLM Readiness Analysis only:**
 ```bash
-// First run baseline to create baseline file
-python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/
-
-// Compare (specify baseline file to compare to)
-python3 scripts/doc_audit_runner.py --compare baseline_doc_audit_complete_20250723.json --docs-path src/pages/
-
-// Generated JSON will include the following extra section
-"comparison_with_baseline": {
-    "timeline": {
-      "baseline_date": "20250723_231658",
-      "current_date": "20250723_235408",
-      "days_elapsed": 0
-    },
-    "score_changes": {
-      "overall_llm_score": {
-        "baseline": 0.5490640467119705,
-        "current": 0.5490640467119705,
-        "change": 0.0
-      }
-    },
-    "metric_changes": {
-      "context_clarity_avg": {
-        "baseline": 0.15441176470588241,
-        "current": 0.15441176470588241,
-        "change": 0.0
-      },
-      "code_completeness_ratio": {
-        "baseline": 0.6181818181818182,
-        "current": 0.6181818181818182,
-        "change": 0.0
-      },
-      "error_documentation_coverage": {
-        "baseline": 0.10784313725490197,
-        "current": 0.10784313725490197,
-        "change": 0.0
-      }
-    },
-    "issue_changes": {
-      "linter_errors": {
-        "baseline": 581,
-        "current": 581,
-        "change": 0
-      }
-    },
-    "progress_summary": []
-  }
-```
-
-### Single file comparisons
-
-```bash
-python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/guides/learn/how_to/modal_dialogs.md
-
-# After running the baseline, you can compare a single file against the baseline
-python3 scripts/doc_audit_runner.py --compare baseline_modal_dialogs_doc_audit_20250723_233508.json --docs-path src/pages/guides/learn/how_to/modal_dialogs.md
-```
-
-## LLM READINESS ONLY
-
-### All files (defaults output to llm_readiness_report_*.json)
-```bash
+# All files
 python3 scripts/llm_readiness_analyzer.py --docs-path src/pages
-```
 
-### All files to your named json file
-```bash
-python3 scripts/llm_readiness_analyzer.py --docs-path src/pages --output all_files_llm_readiness.json
-```
-
-### Single file (outputs to <filename>_llm_readiness_report_*.json)
-```bash
+# Single file
 python3 scripts/llm_readiness_analyzer.py --docs-path src/pages/guides/learn/how_to/modal_dialogs.md
 ```
 
-### Single file to your named json
+**Linting only:**
 ```bash
-python3 scripts/llm_readiness_analyzer.py --docs-path src/pages/guides/learn/how_to/modal_dialogs.md --output modal_dialogs_result.json
-```
-
-## LLM LINTING ONLY
-
-### All files (console only)
-
-```bash
+# All files (console output)
 python3 scripts/llm_markdown_linter.py src/pages/
-```
 
-### All files - output to your named json file
-
-```bash
+# All files (JSON output)
 python3 scripts/llm_markdown_linter.py src/pages/ --output all_pages_linter_report.json
-```
 
-### Single file (console only)
-
-```bash
+# Single file
 python3 scripts/llm_markdown_linter.py src/pages/guides/learn/how_to/theme_locale.md
 ```
 
-### Single file - output to your named json file
+---
 
+## 📈 Report Generation
+
+After running audits, generate readable reports for different audiences:
+
+### Management Reports
+
+**Executive Summary** - High-level health metrics and business impact:
 ```bash
-python3 scripts/llm_markdown_linter.py src/pages/guides/learn/how_to/theme_locale.md --output theme_locale_linter_report.json
+python3 scripts/generate_executive_summary.py --scope filtered    # Core docs
+python3 scripts/generate_executive_summary.py --scope complete    # All docs
 ```
 
-### Auto-fix linter issues on single file (where possible — **THIS IS A WIP)
+### Development Team Reports  
 
+**Detailed Implementation Guide** - File-by-file action items:
 ```bash
-python3 scripts/llm_markdown_linter.py src/pages/guides/learn/how_to/theme_locale.md --fix
-```
-```bash
-Note: Output will include what/if anything was fixed 
-
-  🔧 Applying auto-fixes...
-  No auto-fixable issues found.
+python3 scripts/generate_detailed_implementation_report.py --scope filtered
+python3 scripts/generate_detailed_implementation_report.py --scope complete
 ```
 
-### Comparing 
-
-Compare llm readiness baselines (`--baseline` output goes to file with name `baseline_llm_readiness_report_*.json`)
-
+**Priority Summary** - Urgency-ranked task list:
 ```bash
-python3 scripts/llm_readiness_analyzer.py --baseline --docs-path src/pages/
-// This will create a baseline file like `baseline_llm_readiness_report_20250723_231658.json`
-// Compare against the baseline
-python3 scripts/llm_readiness_analyzer.py --compare baseline_llm_readiness_report_20250723_231658.json --docs-path src/pages/
-```
-## QUERY TESTER 
-
-```bash
-python3 scripts/query_based_doc_tester.py                
+python3 scripts/generate_priority_summary.py --scope filtered
+python3 scripts/generate_priority_summary.py --scope complete
 ```
 
-**Note:** Output goes to `query_test_report.json`
+### Specialized Reports
 
-### USAGE help
-
+**Baseline Summary** - Overall audit findings:
 ```bash
-python3 scripts/doc_analyzer.py -h
-python3 scripts/llm_readiness_analyzer.py -h
-python3 scripts/llm_markdown_linter.py -h
-python3 scripts/query_based_doc_tester.py -h
+python3 scripts/generate_baseline_summary.py
 ```
 
-## GENERATE MARKDOWN REPORTS
+**Comprehensive Style Report** - Detailed style analysis:
+```bash
+# First run a non-baseline audit
+python3 scripts/doc_audit_runner.py --docs-path src/pages/
 
-### Quick Reference: Which Report to Generate?
+# Then generate style report using the output file
+python3 scripts/generate_comprehensive_style_report.py --input comprehensive_doc_audit_complete_[timestamp].json
+```
+
+**Linter Report** - Technical validation issues:
+```bash
+# First generate linter data
+python3 scripts/llm_markdown_linter.py src/pages/ --output all_pages_linter_report.json
+
+# Then generate report
+python3 scripts/generate_linter_report.py --input all_pages_linter_report.json
+```
+
+**LLM Readiness Report** - AI training optimization:
+```bash
+# First generate readiness data
+python3 scripts/llm_readiness_analyzer.py --docs-path src/pages --output all_files_llm_readiness.json
+
+# Then generate report
+python3 scripts/generate_llm_analysis_report.py --input all_files_llm_readiness.json
+```
+
+### Report Quick Reference
 
 | Report Type | Use When | Audience | Output |
 |-------------|----------|----------|--------|
 | **Executive Summary** | Need high-level overview for management | Leadership, Project Managers | Health metrics, business impact, ROI analysis |
 | **Detailed Implementation** | Planning development work | Development Teams | File-by-file action items, implementation templates |
 | **Priority Summary** | Need urgency-based task ordering | Team Leads, Developers | Priority-ranked files with specific issues |
+| **Ground Truth Validation** | Validate accuracy against expert answers | QA Teams, Content Managers | Accuracy gaps, expert benchmark comparison |
 | **Baseline Summary** | Need overall audit results | All stakeholders | General audit findings and recommendations |
-| **Comprehensive Style** | Need detailed style analysis | Documentation Writers | In-depth style and formatting issues |
-| **LLM Readiness** | Focus on AI training preparation | AI/ML Teams | LLM-specific optimization recommendations |
-| **Linter Report** | Focus on technical validation | Developers, QA | Rule violations and fixes |
+| **Comprehensive Style** | Need detailed style/formatting analysis | Technical Writers, QA | Style consistency, formatting issues |
 
-### Baseline Markdown Report
+---
 
-After you've run a baseline summary (ie: `python3 scripts/doc_audit_runner.py --filtered --baseline --docs-path src/pages/`), you can generate a markdown summary with the following (defaults to filtered scope because LLM Readiness phase 1 is addressing the core structure so by default it’s easier to exclude)
+## 🔍 Advanced Usage
 
+### Comparison and Progress Tracking
+
+**Create baseline for later comparison:**
 ```bash
-python3 scripts/generate_baseline_summary.py
-```
-
-**Note:** Result goes to reports folder as `reports/baseline_summary*.md`
-
-### Comprehensive Markdown Report
-
-
-After you've run a non-baseline report with doc_audit_runner.py (ie: `python3 scripts/doc_audit_runner.py --docs-path src/pages/`), you can generate a comprehensive markdown report with the following command, specifying the input JSON file from the previous run of `doc_audit_runner.py`:
-
-```bash
-python3 scripts/generate_comprehensive_style_report.py --input comprehensive_doc_audit_complete_20250723_234739.json
-```
-
-**Note:** Result goes to reports folder as `reports/comprehensive_style_report_*.md`
-
-### Priority Summary Markdown Report
-
-```bash
-// Make sure to run the doc_audit_runner.py first to generate the necessary JSON files
-
-// Then run the following command to generate the priority summary report:
-python3 scripts/generate_priority_summary.py
-
-// Result goes to reports folder as `reports/priority_summary_report_*.md`
-```
-
-### Executive Summary Markdown Report
-
-```bash
-// After running a baseline audit to generate the necessary JSON files
-python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
-// or for complete analysis:
 python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/
-
-// Generate executive summary report (defaults to filtered scope)
-python3 scripts/generate_executive_summary.py
-// or specify scope explicitly:
-python3 scripts/generate_executive_summary.py --scope filtered
-python3 scripts/generate_executive_summary.py --scope complete
-
-// Result goes to reports folder as `reports/executive_summary_[scope]_[timestamp].md`
 ```
 
-**Note:** The executive summary provides a high-level management overview with health metrics, priority breakdown, and business impact analysis.
-
-### Detailed Implementation Markdown Report
-
+**Compare against baseline:**
 ```bash
-// After running a baseline audit to generate the necessary JSON files
-python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
-// or for complete analysis:
-python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/
-
-// Generate detailed implementation report (defaults to filtered scope)
-python3 scripts/generate_detailed_implementation_report.py
-// or specify scope explicitly:
-python3 scripts/generate_detailed_implementation_report.py --scope filtered
-python3 scripts/generate_detailed_implementation_report.py --scope complete
-
-// Result goes to reports folder as `reports/detailed_implementation_report_[scope]_[timestamp].md`
+python3 scripts/doc_audit_runner.py --compare baseline_doc_audit_complete_[timestamp].json --docs-path src/pages/
 ```
 
-**Note:** The detailed implementation report provides file-by-file action items, specific recommendations, and implementation templates for development teams.
-
-Both reports automatically locate baseline audit files in the `express-add-ons-docs/` root directory regardless of where the script is executed from.
-
-### Linter Markdown Report
-
+**Single file comparison:**
 ```bash
-// After running the linter on all files
-python3 scripts/llm_markdown_linter.py src/pages/ --output all_pages_linter_report.json
-// Generate markdown report based on the JSON output from the above command
-python3 scripts/generate_linter_report.py --input all_pages_linter_report.json
+# Create baseline
+python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/guides/learn/how_to/modal_dialogs.md
 
-// Result goes to reports folder as `reports/llm_markdown_linter_report_*.md`
+# Compare after changes
+python3 scripts/doc_audit_runner.py --compare baseline_modal_dialogs_doc_audit_[timestamp].json --docs-path src/pages/guides/learn/how_to/modal_dialogs.md
 ```
 
-### LLM Readiness Markdown Report
+### Scope Options Explained
 
+- **`--scope filtered`** (default): ~108 core documentation files, excludes auto-generated API references and changelogs. **Recommended for most development work.**
+- **`--scope complete`**: ~204 total files, includes everything. Use for comprehensive ecosystem analysis.
+
+### Output File Patterns
+
+| Command Type | File Pattern | Location |
+|--------------|-------------|----------|
+| Baseline audits | `baseline_doc_audit_[scope]_[timestamp].json` | Root directory |
+| Regular audits | `comprehensive_doc_audit_[scope]_[timestamp].json` | Root directory |
+| Reports | `[report_type]_[scope]_[timestamp].md` | `reports/` folder |
+| Single file audits | `[filename]_doc_audit_[timestamp].json` | Root directory |
+
+### Additional Analysis Tools
+
+**Query-based testing:**
 ```bash
-// After running the LLM Readiness Analyzer on all files
-python3 scripts/llm_readiness_analyzer.py --docs-path src/pages --output all_files_llm_readiness.json
-// Generate markdown report based on the JSON output from the above command
-python3 scripts/generate_llm_analysis_report.py --input all_files_llm_readiness.json    
+python3 scripts/query_based_doc_tester.py
+```
+Output: `query_test_report.json`
 
-// Result goes to reports folder as `reports/llm_readiness_analysis_report_*.md`
+**Adobe Express specific issues:**
+```bash
+# All files
+python3 scripts/express_issue_detector.py src/pages/ --output reports/express-issues-$(date +%Y%m%d).json --detailed
+
+# Single file  
+python3 scripts/express_issue_detector.py src/pages/guides/getting_started/hello-world.md --detailed
 ```
 
-## Audit Framework #2 (doc_analyzer.py and express_issue_detector.py)
-
-This auditing framework can be used for further checks and is another alternative to locating issues. It is used for basic documentation analysis and Adobe Express specific issues.
-
-### Basic Auditing (linting and readiness analysis -- higher level than doc_audit_runner.py)
-
+**Basic documentation analysis:**
 ```bash
-# For basic analysis of all files
-python3 scripts/doc_analyzer.py src/pages/ 
+# All files
+python3 scripts/doc_analyzer.py src/pages/ --output doc_analyzer_audit.json
 
-# For basic analysis of all files and output to a specific file
-python3 scripts/doc_analyzer.py src/pages/
---output doc_analyzer_audit.json
+# Verbose output
+python3 scripts/doc_analyzer.py src/pages/ --output doc_analyzer_audit_verbose.json --verbose
 
-# For verbose output
-python3 scripts/doc_analyzer.py src/pages/ --output doc_analyzer_audit_verbose_$(date +%Y%m%d).json --verbose
-```
-
-### Basic analysis - all files 
-
-```bash
-python3 scripts/doc_analyzer.py src/pages --output reports/doc_analyzer_audit_$(date +%Y%m%d).json
-```
-
-### Basic analysis - all guides
-```bash
-python3 scripts/doc_analyzer.py src/pages/guides/ --output reports/doc_analyzer_guides_only_audit_$(date +%Y%m%d).json
-```
-
-### Basic analysis - single file
-```bash
+# Single file
 python3 scripts/doc_analyzer.py src/pages/guides/learn/how_to/document_metadata.md
 ```
-	
-### Adobe Express specific issues analysis   - all files
+
+## 📊 **Ground Truth Validation**
+
+*New: Validate documentation against verified expert Q&A pairs for accuracy measurement*
+
+### Quick Ground Truth Testing
 ```bash
-python3 scripts/express_issue_detector.py express-add-ons-docs/src/pages/ --output reports/express-issues-$(date +%Y%m%d).json --detailed
+# Run ground truth validation against verified Q&A pairs
+python3 scripts/ground_truth_tester.py
+
+# Generate readable markdown report from results
+python3 scripts/generate_ground_truth_report.py
 ```
 
-### Adobe Express specific issues analysis  - single file
+**Output:**
+- `ground_truth_test_report.json` - Raw validation data with detailed metrics
+- `reports/ground_truth_validation_report_[timestamp].md` - Management-ready validation report
+
+### What Ground Truth Validation Measures
+
+| Metric | Description | Use Case |
+|--------|-------------|----------|
+| **Coverage** | How well docs address ground truth questions | Find topic gaps |
+| **Accuracy** | How well content matches verified answers | Identify incorrect information |
+| **Completeness** | Whether answers include all necessary elements | Ensure comprehensive answers |
+| **Overall Quality** | Combined benchmark score vs expert standards | Track improvement progress |
+
+### Key Benefits
+
+- **🎯 Expert Benchmark**: Tests against verified correct answers
+- **📊 Accuracy Measurement**: Identifies content that contradicts verified facts
+- **📈 Progress Tracking**: Provides baseline for measuring improvements
+- **🔍 Gap Analysis**: Shows exactly what's missing vs what should be there
+- **💰 ROI Focused**: Helps prioritize fixes with highest impact
+
+### Integration with Documentation Workflow
+
 ```bash
-python3 scripts/express_issue_detector.py express-add-ons-docs/src/pages/guides/getting_started/hello-world.md --detailed
+# 1. Regular validation cycle (monthly)
+python3 scripts/ground_truth_tester.py
+python3 scripts/generate_ground_truth_report.py
+
+# 2. Before major releases - validate critical content
+python3 scripts/ground_truth_tester.py
+python3 scripts/generate_ground_truth_report.py --output pre_release_validation.md
+
+# 3. After content updates - verify changes didn't break accuracy
+python3 scripts/ground_truth_tester.py
+python3 scripts/generate_ground_truth_report.py --output post_update_validation.md
 ```
+
+---
+
+## 🛠️ Getting Help
+
+For detailed command options:
+```bash
+python3 scripts/doc_audit_runner.py -h
+python3 scripts/llm_readiness_analyzer.py -h  
+python3 scripts/llm_markdown_linter.py -h
+python3 scripts/query_based_doc_tester.py -h
+python3 scripts/doc_analyzer.py -h
+python3 scripts/express_issue_detector.py -h
+```
+
+---
+
+## 💡 Recommended Workflow
+
+1. **Start here**: `python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/`
+2. **Get overview**: `python3 scripts/generate_executive_summary.py --scope filtered`
+3. **Plan work**: `python3 scripts/generate_detailed_implementation_report.py --scope filtered`
+4. **Prioritize**: `python3 scripts/generate_priority_summary.py --scope filtered`
+5. **Track progress**: Re-run audits and use `--compare` to measure improvements
 

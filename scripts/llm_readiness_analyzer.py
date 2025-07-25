@@ -81,7 +81,14 @@ class DocumentationAuditor:
     def _load_query_data(self, path: str) -> Dict[str, Any]:
         """Load structured query data"""
         try:
-            with open(path, 'r') as f:
+            # If path is just a filename (default case), look in script's directory
+            if not os.path.dirname(path):
+                script_dir = Path(__file__).parent
+                full_path = script_dir / path
+            else:
+                full_path = Path(path)
+            
+            with open(full_path, 'r') as f:
                 return json.load(f)
         except FileNotFoundError:
             print(f"Warning: Query data file {path} not found. Using default patterns.")
