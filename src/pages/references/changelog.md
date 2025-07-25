@@ -26,7 +26,10 @@ contributors:
 
 ### Added
 
-- Added few new HLAPI's like Clone/Duplicate node and Sub/SuperScript char style.
+- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](./document-sandbox/document-apis/interfaces/CharacterStyles.md) interface. The corresponding [TextScriptStyle](./document-sandbox/document-apis/enumerations/TextScriptStyle.md) enumerable has been added. The new API has been introduced as stable.
+- A new `clone()` method has been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
+- New [`MediaRectangleNode`](./document-sandbox/document-apis/classes/MediaRectangleNode.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](./document-sandbox/document-apis/classes/MediaContainerNode.md).
+- New [`UnknownMediaRectangleNode`](./document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](./document-sandbox/document-apis/classes/MediaRectangleNode.md) for cases where the media type is not yet supported by the API.
 
 ## 2025-07-11
 
