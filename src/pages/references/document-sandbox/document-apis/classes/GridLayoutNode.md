@@ -13,7 +13,7 @@ APIs to create a new grid layout are not yet available.
 
 ## Implements
 
--   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+-   [`IRectangularNode`](../interfaces/IRectangularNode.md)
 
 ## Accessors
 
@@ -352,6 +352,26 @@ relative to one another (the target node need not be an ancestor of this node, n
 #### Inherited from
 
 [`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+
+---
+
+### clone()
+
+• **clone**(): [`GridLayoutNode`](GridLayoutNode.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Creates an orphaned copy of this node, including all persistent attributes and descendants.
+
+#### Returns
+
+[`GridLayoutNode`](GridLayoutNode.md)
+
+#### Inherited from
+
+[`Node`](Node.md).[`clone`](Node.md#clone)
 
 ---
 

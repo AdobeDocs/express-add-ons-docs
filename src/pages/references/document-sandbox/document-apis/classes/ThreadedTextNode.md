@@ -10,7 +10,7 @@ APIs are not yet available to create multi-frame text flows.
 
 ## Extends
 
-- [`TextNode`](TextNode.md)
+-   [`TextNode`](TextNode.md)
 
 ## Accessors
 
@@ -441,6 +441,26 @@ page. It is recommended to use this method only when the node is placed on a pag
 #### Inherited from
 
 [`TextNode`](TextNode.md).[`boundsInNode`](TextNode.md#boundsinnode)
+
+---
+
+### clone()
+
+• **clone**(): `never`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Always throws as it's not possible to clone only a single "frame" of threaded text.
+
+#### Returns
+
+`never`
+
+#### Overrides
+
+[`TextNode`](TextNode.md).[`clone`](TextNode.md#clone)
 
 ---
 

@@ -155,15 +155,15 @@ different shape via this API.
 
 ### mediaRectangle
 
-• `get` **mediaRectangle**(): [`Node`](Node.md) \| [`ImageRectangleNode`](ImageRectangleNode.md)
+• `get` **mediaRectangle**(): [`ImageRectangleNode`](ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
 
 The rectangular node representing the entire, uncropped bounds of the media (e.g. image, GIFs, or video). The media's position and
-rotation can be changed, but it cannot be resized yet via this API. Media types other than images will yield a plain Node object
-for now.
+rotation can be changed, but it cannot be resized yet via this API. Media types other than images will yield an UnknownMediaRectangleNode
+object for now.
 
 #### Returns
 
-[`Node`](Node.md) \| [`ImageRectangleNode`](ImageRectangleNode.md)
+[`ImageRectangleNode`](ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
 
 ---
 
@@ -322,6 +322,27 @@ relative to one another (the target node need not be an ancestor of this node, n
 #### Inherited from
 
 [`MediaContainerNode`](MediaContainerNode.md).[`boundsInNode`](MediaContainerNode.md#boundsinnode)
+
+---
+
+### clone()
+
+• **clone**(): `never`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Always throws as it's not possible to clone a single grid slot.
+Use the parent grid container instead.
+
+#### Returns
+
+`never`
+
+#### Overrides
+
+[`MediaContainerNode`](MediaContainerNode.md).[`clone`](MediaContainerNode.md#clone)
 
 ---
 

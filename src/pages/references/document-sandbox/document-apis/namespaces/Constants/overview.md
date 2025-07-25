@@ -10,8 +10,8 @@
 
 ### Enumerations
 
-- [OrderedListNumbering](enumerations/OrderedListNumbering.md)
-- [ParagraphListType](enumerations/ParagraphListType.md)
+-   [OrderedListNumbering](enumerations/OrderedListNumbering.md)
+-   [ParagraphListType](enumerations/ParagraphListType.md)
 
 ## References
 
@@ -72,6 +72,12 @@ Re-exports [TextAlignment](../../enumerations/TextAlignment.md)
 ### TextLayout
 
 Re-exports [TextLayout](../../enumerations/TextLayout.md)
+
+---
+
+### TextScriptStyle
+
+Re-exports [TextScriptStyle](../../enumerations/TextScriptStyle.md)
 
 ---
 

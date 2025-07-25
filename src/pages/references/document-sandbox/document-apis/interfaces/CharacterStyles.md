@@ -15,6 +15,18 @@ ParagraphStyles, which must be applied to an entire paragraph atomically).
 
 ## Properties
 
+### baselineShift
+
+• **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+
+Sets a superscript or subscript style.
+
+#### Inherited from
+
+`BaseCharacterStyles.baselineShift`
+
+---
+
 ### color
 
 • **color**: [`Color`](Color.md)

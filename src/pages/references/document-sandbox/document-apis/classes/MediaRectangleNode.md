@@ -1,13 +1,24 @@
-[@express-document-sdk](../overview.md) / SolidColorShapeNode
+[@express-document-sdk](../overview.md) / MediaRectangleNode
 
-# Class: SolidColorShapeNode
+# Class: `abstract` MediaRectangleNode
 
-A SolidColorShapeNode is a prepackaged shape with a single color property that appears as a leaf node in the UI, even if it
-is composed of multiple separate paths.
+MediaRectangleNode is the base class for a rectangular node that represents the *uncropped* media within a
+[MediaContainerNode](MediaContainerNode.md). Specific subclasses such as [ImageRectangleNode](ImageRectangleNode.md) exist for each media type and
+may provide additional media-specific APIs. Cropping can be adjusted by changing this rectangle's position/rotation
+(as well as its maskShape sibling node).
 
 ## Extends
 
 -   [`Node`](Node.md)
+
+## Extended by
+
+-   [`ImageRectangleNode`](ImageRectangleNode.md)
+-   [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
+
+## Implements
+
+-   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
 
 ## Accessors
 
@@ -104,21 +115,17 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 ---
 
-### color
+### height
 
-• `get` **color**(): `undefined` \| `Readonly`<[`Color`](../interfaces/Color.md)\>
+• `get` **height**(): `number`
 
-The color of the single color shape.
-
-• `set` **color**(`color`): `void`
-
-#### Parameters
-
-• **color**: `undefined` \| [`Color`](../interfaces/Color.md)
+Current height of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
+will always match its aspect ratio.
 
 #### Returns
 
-`undefined` \| `Readonly`<[`Color`](../interfaces/Color.md)\>
+`number`
 
 ---
 
@@ -290,6 +297,20 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](VisualNode.md)
 
+---
+
+### width
+
+• `get` **width**(): `number`
+
+Current width of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
+will always match its aspect ratio.
+
+#### Returns
+
+`number`
+
 ## Methods
 
 ### boundsInNode()
@@ -316,19 +337,20 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`SolidColorShapeNode`](SolidColorShapeNode.md)
+• **clone**(): `never`
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Creates an orphaned copy of this node, including all persistent attributes and descendants.
+Always throws as it's not possible to clone just the media rectangle alone.
+Clone the entire parent MediaContainerNode instead.
 
 #### Returns
 
-[`SolidColorShapeNode`](SolidColorShapeNode.md)
+`never`
 
-#### Inherited from
+#### Overrides
 
 [`Node`](Node.md).[`clone`](Node.md#clone)
 

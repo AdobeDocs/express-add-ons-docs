@@ -2,20 +2,16 @@
 
 # Class: ImageRectangleNode
 
-ImageRectangleNode is a rectangular node that displays the image media part of a MediaContainerNode. It can only exist
-within that container parent. Cropping can be adjusted by changing this media's position/rotation (as well as its mask
-shape sibling node).
+ImageRectangleNode is a rectangular node that displays the image media part of a [MediaContainerNode](MediaContainerNode.md). It can only
+exist within that container parent. Cropping can be adjusted by changing this rectangle's position/rotation (as well as
+its maskShape sibling node).
 
 ImageRectangleNodes cannot be created directly; use [Editor.createImageContainer](Editor.md#createimagecontainer) to create the entire
 container structure together.
 
 ## Extends
 
--   [`Node`](Node.md)
-
-## Implements
-
--   `Readonly`<[`IRectangularNode`](../interfaces/IRectangularNode.md)\>
+-   [`MediaRectangleNode`](MediaRectangleNode.md)
 
 ## Accessors
 
@@ -116,8 +112,8 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 • `get` **height**(): `number`
 
-Current height of the "full frame" image rectangle, which may not be fully visible due to cropping/clipping by the
-enclosing media container's maskShape. This size may be different from the original bitmap's size in pixels, but
+Current height of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
 will always match its aspect ratio.
 
 #### Returns
@@ -300,8 +296,8 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • `get` **width**(): `number`
 
-Current width of the "full frame" image rectangle, which may not be fully visible due to cropping/clipping by the
-enclosing media container's maskShape. This size may be different from the original bitmap's size in pixels, but
+Current width of the "full frame" uncropped media, which may not be fully visible due to cropping/clipping by the
+enclosing media container's maskShape. This size may be different from the original image/video size in pixels, but
 will always match its aspect ratio.
 
 #### Returns
@@ -328,7 +324,28 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Inherited from
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`boundsInNode`](MediaRectangleNode.md#boundsinnode)
+
+---
+
+### clone()
+
+• **clone**(): `never`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Always throws as it's not possible to clone just the media rectangle alone.
+Clone the entire parent MediaContainerNode instead.
+
+#### Returns
+
+`never`
+
+#### Inherited from
+
+[`MediaRectangleNode`](MediaRectangleNode.md).[`clone`](MediaRectangleNode.md#clone)
 
 ---
 
@@ -352,7 +369,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`localPointInNode`](MediaRectangleNode.md#localpointinnode)
 
 ---
 
@@ -373,7 +390,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`removeFromParent`](MediaRectangleNode.md#removefromparent)
 
 ---
 
@@ -397,7 +414,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToHeight`](Node.md#rescaleproportionaltoheight)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`rescaleProportionalToHeight`](MediaRectangleNode.md#rescaleproportionaltoheight)
 
 ---
 
@@ -421,7 +438,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`Node`](Node.md).[`rescaleProportionalToWidth`](Node.md#rescaleproportionaltowidth)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`rescaleProportionalToWidth`](MediaRectangleNode.md#rescaleproportionaltowidth)
 
 ---
 
@@ -449,7 +466,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToCover`](Node.md#resizetocover)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`resizeToCover`](MediaRectangleNode.md#resizetocover)
 
 ---
 
@@ -477,7 +494,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`Node`](Node.md).[`resizeToFitWithin`](Node.md#resizetofitwithin)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`resizeToFitWithin`](MediaRectangleNode.md#resizetofitwithin)
 
 ---
 
@@ -504,7 +521,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`Node`](Node.md).[`setPositionInParent`](Node.md#setpositioninparent)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`setPositionInParent`](MediaRectangleNode.md#setpositioninparent)
 
 #### Example
 
@@ -544,7 +561,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`Node`](Node.md).[`setRotationInParent`](Node.md#setrotationinparent)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`setRotationInParent`](MediaRectangleNode.md#setrotationinparent)
 
 #### Example
 

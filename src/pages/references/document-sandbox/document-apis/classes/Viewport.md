@@ -19,9 +19,9 @@ After this call, the value of [Context.insertionParent](Context.md#insertionpare
 
 Note that the node might still not appear visible if:
 
-- Its animation settings make it invisible at the beginning of the [ArtboardNode](ArtboardNode.md) "scene".
-- It is obscured underneath other artwork in the z-order.
-- It is hidden by a [GroupNode](GroupNode.md)'s mask or similar cropping.
+  - Its animation settings make it invisible at the beginning of the [ArtboardNode](ArtboardNode.md) "scene".
+  - It is obscured underneath other artwork in the z-order.
+  - It is hidden by a [GroupNode](GroupNode.md)'s mask or similar cropping.
 
 #### Parameters
 

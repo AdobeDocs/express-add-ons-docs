@@ -207,6 +207,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/MediaContainerNode.md",
                   },
                   {
+                    title: "MediaRectangleNode",
+                    path: "references/document-sandbox/document-apis/classes/MediaRectangleNode.md",
+                  },
+                  {
                     title: "Node",
                     path: "references/document-sandbox/document-apis/classes/Node.md",
                   },
@@ -265,6 +269,10 @@ module.exports = {
                   {
                     title: "UnavailableFont",
                     path: "references/document-sandbox/document-apis/classes/UnavailableFont.md",
+                  },
+                  {
+                    title: "UnknownMediaRectangleNode",
+                    path: "references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md",
                   },
                   {
                     title: "UnknownNode",
@@ -461,6 +469,10 @@ module.exports = {
                   {
                     title: "TextLayout",
                     path: "references/document-sandbox/document-apis/enumerations/TextLayout.md",
+                  },
+                  {
+                    title: "TextScriptStyle",
+                    path: "references/document-sandbox/document-apis/enumerations/TextScriptStyle.md",
                   },
                   {
                     title: "VisualEffectType",
