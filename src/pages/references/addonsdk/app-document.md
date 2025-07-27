@@ -858,6 +858,77 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 
 Refer to the [create renditions how-to](../../guides/learn/how_to/create_renditions.md) and the [export-sample](../../guides/learn/samples.md) in the code samples for usage examples.
 
+### exportAllowed()
+
+Determines whether the current document can be exported based on its review status in review and approval workflows.
+
+#### Signature
+
+`exportAllowed(): Promise<boolean>`
+
+#### Return Value
+
+A resolved `Promise` containing a `boolean` value indicating whether export is allowed (`true`) or restricted (`false`) based on the document's review status.
+
+<InlineAlert slots="text" variant="info"/>
+
+This method is particularly useful in collaborative environments where documents may be subject to review and approval processes. When a document is in certain review states, export functionality may be restricted to prevent unauthorized distribution of content that hasn't been approved.
+
+**Important:** This restriction only applies to renditions created with `RenditionIntent.export` or `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the export status, as they are intended for preview purposes only.
+
+**User Experience Note:** If you attempt to create export/print renditions without checking `exportAllowed()` first, and the document doesn't allow exports, users will see an error dialog with the message "Request approval" and "Get approval from your viewers before sharing this file". Using `exportAllowed()` allows you to provide a more graceful user experience by checking permissions proactively.
+
+#### Example
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### Usage
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Check export permissions before creating non-preview renditions
+async function handleExportRequest() {
+  try {
+    const canExport = await addOnUISdk.app.document.exportAllowed();
+    
+    if (canExport) {
+      // Create rendition for export/download
+      const rendition = await addOnUISdk.app.document.createRenditions(
+        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
+        addOnUISdk.constants.RenditionIntent.export
+      );
+      // ... handle download
+    } else {
+      // Show preview only since export is restricted
+      console.log("Export restricted - showing preview only");
+      const previewRendition = await addOnUISdk.app.document.createRenditions(
+        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
+        addOnUISdk.constants.RenditionIntent.preview
+      );
+      // ... show preview in UI only
+    }
+  } catch (error) {
+    console.log("Failed to check export permissions:", error);
+  }
+}
+
+// Set up UI based on export permissions
+addOnUISdk.ready.then(async () => {
+  const exportAllowed = await addOnUISdk.app.document.exportAllowed();
+  
+  const downloadButton = document.getElementById('download-btn');
+  const previewButton = document.getElementById('preview-btn');
+  
+  // Download button only available if export is allowed
+  downloadButton.disabled = !exportAllowed;
+  downloadButton.title = exportAllowed ? "Download rendition" : "Download restricted - document under review";
+  
+  // Preview button is always available
+  previewButton.disabled = false;
+});
+```
+
 ### Errors
 
 The table below describes the possible error messages that may occur when using the export methods, with a description of the scenario that will return them.
