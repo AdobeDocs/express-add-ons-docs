@@ -474,11 +474,9 @@ Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#impo
 
 Imports a PDF as a new Adobe Express document.
 
-<!-- Removed experimental as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
 #### Signature
 
-`importPdf(blob: Blob, attributes: MediaAttributes): void;`
+`importPdf(blob: Blob, attributes: MediaAttributes & SourceMimeTypeInfo): void;`
 
 #### Parameters
 
@@ -486,10 +484,34 @@ Imports a PDF as a new Adobe Express document.
 | ------------- | ------------------------------------- | --------------------------------------------------------------------------: |
 | `blob`        | `Blob`                                |                                                 The PDF to add to the page. |
 | `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| [`SourceMimeTypeInfo?`](#sourcemimetypeinfo) | `SourceMimeTypeInfo` | Mime type details for importing media |
 
 #### Return Value
 
 None
+
+#### `SourceMimeTypeInfo`
+
+Mime type details for importing media
+
+| Name              | Type                 | Description |
+| ------------------| -------------------- | ----------------------------------------: |
+| `sourceMimeType?` | [`SupportedMimeTypes`](./) | Mime type of the original source asset that was converted to PDF |
+
+### SupportedMimeTypes
+
+A constant representing the mime type of the original source asset that was converted to PDF.
+
+- **docx**: `"docx"`
+- **gdoc**: `"gdoc"`
+
+<InlineAlert slots="text" variant="info"/>
+
+This property is used to improve the user experience when importing converted documents. Adobe Express does not natively support Word documents (`.docx`) or Google Docs (`.gdoc`) files. However, your add-on can convert these file types to PDF format behind the scenes before importing them.
+
+When you call `importPdf()` with a converted file, you can pass the original file's mime type (`"docx"` or `"gdoc"`) in the `sourceMimeType` parameter. This ensures that the import consent dialog displays "Import a document" instead of "Import a PDF" to the user, preventing confusion about why their Word or Google Doc file is being referred to as a PDF.
+
+**Important:** You cannot pass the original Word or Google Doc file directly to `importPdf()`. Your add-on must first convert these files to PDF format, then use this parameter solely to customize the dialog message for better user experience. 
 
 #### Example Usage
 
@@ -499,24 +521,37 @@ import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 // Reference to the active document
 const { document } = AddOnSDKAPI.app;
 
-const mediaAttributes = { title: "Sample.pdf" };
-
-// Import a PDF. Note this will be imported as a new Adobe Express document.
-function importPdf(blob, mediaAttributes) {
+// Import a regular PDF file
+async function importPdf(pdfBlob) {
   try {
-    document.importPdf(blob, mediaAttributes);
+    document.importPdf(pdfBlob, { title: "Sample.pdf" });
   } catch (error) {
     console.log("Failed to import the pdf.");
   }
 }
 
-// Import a PDF from a URL. Note this will be imported as a new Adobe Express document.
-async function importPdfFrom(url) {
+// Import a PDF that was converted from a Word document
+// The sourceMimeType parameter ensures the dialog shows "Import a document" instead of "Import a PDF"
+async function importConvertedWordDoc(convertedPdfBlob) {
   try {
-    const blob = await fetch(url).then((response) => response.blob());
-    document.importPdf(blob, { title: "Sample.pdf" });
+    document.importPdf(convertedPdfBlob, { 
+      title: "Converted Document.pdf",
+      sourceMimeType: "docx"
+    });
   } catch (error) {
-    console.log("Failed to import the pdf.");
+    console.log("Failed to import the converted Word document.");
+  }
+}
+
+// Import a PDF that was converted from a Google document
+async function importConvertedGoogleDoc(convertedPdfBlob) {
+  try {
+    document.importPdf(convertedPdfBlob, { 
+      title: "Converted Google Doc.pdf",
+      sourceMimeType: "gdoc"
+    });
+  } catch (error) {
+    console.log("Failed to import the converted Google document.");
   }
 }
 ```
@@ -524,12 +559,6 @@ async function importPdfFrom(url) {
 ### importPresentation()
 
 Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
-
-<!--Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
-<!-- <InlineAlert slots="text" variant="warning"/> -->
-
-<!-- **IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 

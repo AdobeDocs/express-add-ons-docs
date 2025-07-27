@@ -61,3 +61,33 @@ addOnUISdk.ready.then(async () => {
   }
 });
 ```
+### isAnonymousUser()
+
+Determine whether the current user is browsing as a guest (not logged in).
+
+#### Signature
+
+`isAnonymousUser(): Promise<boolean>;`
+
+#### Return Value
+
+A resolved `Promise` containing a boolean value indicating if the user is an anonymous user (logged in as a guest) or not.
+
+## Example
+
+### Usage
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  const isAnonymousUser = await addOnUISdk.app.currentUser.isAnonymousUser();
+  if (isAnonymousUser) {
+    // User is not logged in - show guest level restricted features
+    console.log("User is anonymous, some features may be limited.");
+  } else {
+    // User is logged in - show full features
+    console.log("User is logged in.");
+  }
+});
+```
