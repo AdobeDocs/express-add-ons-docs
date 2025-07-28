@@ -26,8 +26,8 @@ contributors:
 
 ### Added
 
-- New [`isAnonymousUser()`](./addonsdk/app-currentUser.md#isanonymoususer) method to the [`AddOnUISdk.app.currentUser`](./addonsdk/app-currentUser.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
-- New [`exportAllowed()`](./addonsdk/app-document.md#exportallowed) method added to the [`AddOnUISdk.app.document`](./addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
+- New [`isAnonymousUser()`](./addonsdk/app-currentUser.md#isanonymoususer) method to the [`addOnUISdk.app.currentUser`](./addonsdk/app-currentUser.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
+- New [`exportAllowed()`](./addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](./addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
 - Enhanced [`importPdf()`](./addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](./addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
 - Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](./addonsdk/addonsdk-app.md#dragcompletiondata) support.
 
@@ -84,7 +84,7 @@ The [Page Metadata API](./addonsdk/app-document.md#pagemetadata) now includes ne
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md).
 
 ### Updates
 
@@ -144,7 +144,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](./addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [`link()`](./addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
 - New [vue-starter](../guides/learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
 - Fixes `fromRGB()` method reference in the [Using Color How-to](../guides/learn/how_to/use_color.md).
 
@@ -778,7 +778,7 @@ Updated [Document API references](./document-sandbox/document-apis/) to include:
 
 - Added a [new tutorial section](../guides/learn/how_to/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../guides/learn/how_to/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
-- Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
+- Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnUISDK`) similar to what's generated in the templates for consistency.
 
 ## 2023-10-26
 

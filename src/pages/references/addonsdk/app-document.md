@@ -270,24 +270,28 @@ A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
-function setLink(link) { /* ... */ }
-
-addOnUISdk.ready.then(
-  () => setLink(await AddOnSDKAPI.app.document.link("document"))
-);
-
-addOnUISdk.app.on("documentLinkAvailable", data => {
-  setLink(data.documentLink);
-});
-
-function setPublishedLink(link) { /* ... */ }
-
-AddOnSDKAPI.ready.then(
-  () => setPublishedLink(await AddOnSDKAPI.app.document.link("published"))
-);
-
-AddOnSDKAPI.app.on("documentPublishedLinkAvailable", data => {
-  setPublishedLink(data.documentPublishedLink);
+addOnUISdk.ready.then(async () => {
+  try {
+    // Get the current document link
+    const documentLink = await addOnUISdk.app.document.link("document");
+    console.log("Document link:", documentLink);
+    
+    // Get the published document link
+    const publishedLink = await addOnUISdk.app.document.link("published");
+    console.log("Published link:", publishedLink);
+  } catch (error) {
+    console.log("Failed to get document links:", error);
+  }
+  
+  // Listen for document link changes
+  addOnUISdk.app.on("documentLinkAvailable", (data) => {
+    console.log("Document link changed:", data.documentLink);
+  });
+  
+  // Listen for published link changes
+  addOnUISdk.app.on("documentPublishedLinkAvailable", (data) => {
+    console.log("Published link changed:", data.documentPublishedLink);
+  });
 });
 ```
 
