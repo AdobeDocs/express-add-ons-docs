@@ -410,21 +410,54 @@ class DocumentationAuditor:
         return False
     
     def _count_qa_sections(self, content: str) -> int:
-        """Count Q&A format sections"""
-        qa_patterns = [
-            r'\*\*Q:',
-            r'\*\*Question:',
-            r'## Q:',
-            r'### Q:',
-            r'\*\*A:\*\*',
-            r'\*\*Answer:\*\*'
+        """Count Q&A format sections - Improved to recognize real FAQ formats"""
+        qa_count = 0
+        
+        # 1. Check for FAQ section headings (if ANY FAQ section exists, file has Q&A format)
+        faq_heading_patterns = [
+            r'^#+ .*FAQ.*$',                           # # FAQ, ## FAQ, etc.
+            r'^#+ .*Frequently Asked Questions.*$',    # # Frequently Asked Questions
+            r'^#+ .*Questions.*$',                     # # Questions, ## Questions
+            r'^#+ .*Q&A.*$',                          # # Q&A, ## Q&A
         ]
         
-        count = 0
-        for pattern in qa_patterns:
-            count += len(re.findall(pattern, content, re.IGNORECASE))
+        for pattern in faq_heading_patterns:
+            matches = re.findall(pattern, content, re.IGNORECASE | re.MULTILINE)
+            if matches:
+                qa_count += len(matches) * 5  # Heavy weight for FAQ sections
         
-        return count // 2  # Divide by 2 since Q&A come in pairs
+        # 2. Check for question headings (headings that end with "?")
+        question_headings = re.findall(r'^#{2,6}\s+.*\?$', content, re.MULTILINE)
+        qa_count += len(question_headings)
+        
+        # 3. Check for standard Q&A patterns (existing strict patterns)
+        strict_qa_patterns = [
+            r'\*\*Q:',           # **Q:
+            r'\*\*Question:',    # **Question:
+            r'## Q:',            # ## Q:
+            r'### Q:',           # ### Q:
+            r'\*\*A:\*\*',       # **A:**
+            r'\*\*Answer:\*\*'   # **Answer:**
+        ]
+        
+        for pattern in strict_qa_patterns:
+            qa_count += len(re.findall(pattern, content, re.IGNORECASE))
+        
+        # 4. Check for simple Q&A patterns
+        simple_qa_patterns = [
+            r'^Q\d*[\.:]\s',     # Q: or Q1: or Q1. at start of line
+            r'^A\d*[\.:]\s',     # A: or A1: or A1. at start of line
+        ]
+        
+        for pattern in simple_qa_patterns:
+            qa_count += len(re.findall(pattern, content, re.IGNORECASE | re.MULTILINE))
+        
+        # 5. If content has "FAQ" or "Frequently Asked Questions" anywhere, it likely has Q&A
+        if re.search(r'\bFAQ\b|\bFrequently Asked Questions\b', content, re.IGNORECASE):
+            qa_count += 2  # Bonus points for FAQ indicators
+        
+        # Return minimum of 1 if any Q&A indicators found, otherwise 0
+        return min(qa_count, 10) if qa_count > 0 else 0
     
     def _count_cross_references(self, content: str) -> int:
         """Count cross-references and links"""
