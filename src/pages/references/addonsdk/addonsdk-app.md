@@ -436,7 +436,7 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 | Name          | Type                                  |                                                                             Description |
 | ------------- | ------------------------------------- | --------------------------------------------------------------------------------------: |
 | `blob`        | `Blob`                                |                                    Blob (image/gif/video/audio) to be added to the document |
-| `attributes?` | [`MediaAttributes`](../app-document.md#mediaattributes) & [`SourceMimeTypeInfo`](../app-document.md#sourcemimetypeinfo) | Media attributes (mandatory for audio import) and source mime type information for converted documents. |
+| `attributes?` | [`MediaAttributes`](app-document.md#mediaattributes) & [`SourceMimeTypeInfo`](app-document.md#sourcemimetypeinfo) | Media attributes (mandatory for audio import) and source mime type information for converted documents. |
 
 #### `MediaAttributes`
 
