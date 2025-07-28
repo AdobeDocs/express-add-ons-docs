@@ -101,6 +101,7 @@ The styles are defined by the [`CharacterStylesInput`](../../../references/docum
 - fontSize
 - letterSpacing
 - underline
+- baselineShift (Super/SubScript)
 
 The range is an object with the `start` and `length` properties.
 
@@ -118,7 +119,7 @@ Let's change the styles for the first three characters of a TextNode.
 
 ```js
 // sandbox/code.js
-import { editor } from "express-document-sdk";
+import { editor, constants } from "express-document-sdk";
 
 // Assuming the user has selected a text frame
 const textNode = editor.context.selection[0];
@@ -130,6 +131,7 @@ textNode.fullContent.applyCharacterStyles(
     fontSize: 240,
     letterSpacing: 10,
     underline: true,
+    // baselineShift: constants.TextScriptStyle.superscript,
   },
   {
     start: 0,
