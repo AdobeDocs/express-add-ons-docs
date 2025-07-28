@@ -61,6 +61,7 @@ addOnUISdk.ready.then(async () => {
   }
 });
 ```
+
 ### isAnonymousUser()
 
 Determine whether the current user is browsing as a guest (not logged in).

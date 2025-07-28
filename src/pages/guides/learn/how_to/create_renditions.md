@@ -99,7 +99,7 @@ addOnUISdk.ready.then(async () => {
             console.log("Error showing modal dialog:", error);
         }
 
-        // Create preview rendition (always allowed)
+        // Create preview rendition (always allowed). You will need to add the `"renditionPreview"` flag to the `manifest.json` file in order to create preview renditions.
         const previewRendition = await addOnUISdk.app.document.createRenditions(
           {
             range: addOnUISdk.constants.Range.currentPage,

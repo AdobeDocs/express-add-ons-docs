@@ -33,8 +33,6 @@ You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk
   - `isPremiumUser()`: returns a boolean value indicating whether the user has a premium subscription with Adobe Express or not.
   - `isAnonymousUser()`: returns a boolean value indicating whether the current user is browsing as a guest (not logged in).
 
-
-
 ### Example
 
 ```js
@@ -68,15 +66,18 @@ Please refer to the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/
 When `isAnonymousUser()` returns `true`, the user is browsing as a guest without logging in. This creates important considerations for your add-on's functionality:
 
 #### **Data Persistence Limitations**
+
 - **User settings**: Any preferences or configurations tied to the `userId` will not persist beyond the current session or approximately 24 hours
 - **User identification**: The `userId` for anonymous users is temporary and will change if they later log in
 - **Recommendation**: Use local storage for temporary settings and prompt users to log in for persistent features
 
-#### **Analytics Considerations**  
+#### **Analytics Considerations**
+
 - **User tracking**: Anonymous user IDs are not permanent and will change upon login, potentially creating duplicate user records
 - **Recommendation**: Implement logic to handle user ID transitions or track anonymous sessions separately
 
 #### **Export Restrictions**
+
 - **Content export**: Anonymous users cannot export final content (only preview renditions are allowed)
 - **User experience**: Export attempts will trigger a login prompt, which can disrupt the user flow
 - **Recommendation**: Check `isAnonymousUser()` before showing export options and provide a proactive "Sign in to export" message instead of letting users encounter errors

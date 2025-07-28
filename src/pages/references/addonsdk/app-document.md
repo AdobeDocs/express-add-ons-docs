@@ -511,7 +511,7 @@ This property is used to improve the user experience when importing converted do
 
 When you call `importPdf()` with a converted file, you can pass the original file's mime type (`"docx"` or `"gdoc"`) in the `sourceMimeType` parameter. This ensures that the import consent dialog displays "Import a document" instead of "Import a PDF" to the user, preventing confusion about why their Word or Google Doc file is being referred to as a PDF.
 
-**Important:** You cannot pass the original Word or Google Doc file directly to `importPdf()`. Your add-on must first convert these files to PDF format, then use this parameter solely to customize the dialog message for better user experience. 
+**Important:** You cannot pass the original Word or Google Doc file directly to `importPdf()`. Your add-on must first convert these files to PDF format, then use this parameter solely to customize the dialog message for better user experience.
 
 #### Example Usage
 
