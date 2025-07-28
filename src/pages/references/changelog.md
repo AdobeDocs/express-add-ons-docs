@@ -22,6 +22,22 @@ contributors:
 
 # Changelog
 
+## 2025-07-27
+
+### Added
+
+- New [`isAnonymousUser()`](./addonsdk/app-currentUser.md#isanonymoususer) method to the [`AddOnUISdk.app.currentUser`](./addonsdk/app-currentUser.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
+- New [`exportAllowed()`](./addonsdk/app-document.md#exportallowed) method added to the [`AddOnUISdk.app.document`](./addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
+- Enhanced [`importPdf()`](./addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](./addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
+- Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](./addonsdk/addonsdk-app.md#dragcompletiondata) support.
+
+### Updated
+
+- [User Info guide](../guides/learn/how_to/user_info.md) with guidance on handling logged out users (browsing as a guest), with important considerations and limitations.
+- [Create Renditions guide](../guides/learn/how_to/create_renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
+- [PDF and PowerPoint guide](../guides/learn/how_to/use_pdf_powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
+- [Drag-and-Drop guide](../guides/learn/how_to/drag_and_drop.md) with examples of using `sourceMimeType` when dragging converted documents.
+
 ## 2025-07-25
 
 ### Added
