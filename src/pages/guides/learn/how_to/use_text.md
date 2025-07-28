@@ -484,3 +484,53 @@ for (const textNode of selectedTextNode.fullContent.allTextNodes) {
   console.log(textNode);
 }
 ```
+
+## FAQs
+
+#### Q: How do I create text in a document?
+
+**A:** Call `editor.createText("...")` to get a new standalone `TextNode`.
+
+#### Q: Where is the actual string stored?
+
+**A:** In `textNode.fullContent.text`.
+
+#### Q: How can I replace existing text?
+
+**A:** Assign a new string to `textNode.fullContent.text`.
+
+#### Q: What method applies character-level formatting?
+
+**A:** `fullContent.applyCharacterStyles(styles, range)`.
+
+#### Q: How do I read or batch-edit character styles?
+
+**A:** Use the `characterStyleRanges` array to get or set ranges.
+
+#### Q: How do I change a font programmatically?
+
+**A:** Await `fonts.fromPostscriptName("PSName")` and pass the font to `applyCharacterStyles`.
+
+#### Q: Why must font edits be queued?
+
+**A:** Because `fromPostscriptName()` is async; wrap the style edit in `editor.queueAsyncEdit()`.
+
+#### Q: How do I apply paragraph-level formatting?
+
+**A:** Use `fullContent.applyParagraphStyles(styles, range)` (requires `"experimentalApis": true` in the `manifest.json`).
+
+#### Q: Where can I inspect paragraph formats?
+
+**A:** Read or modify `fullContent.paragraphStyleRanges`.
+
+#### Q: What happens to styles after replacing text?
+
+**A:** They reset; save style ranges first and reassign them afterward to preserve formatting. This is a temporary limitation until automatic preservation of paragraph styles is implemented.
+
+#### Q: Can I create a threaded text frame with createText()?
+
+**A:** No, it only returns `StandaloneTextNode`; threaded nodes aren’t creatable yet.
+
+#### Q: How do I find all frames sharing the same story?
+
+**A:** Iterate over `textNode.fullContent.allTextNodes`.
