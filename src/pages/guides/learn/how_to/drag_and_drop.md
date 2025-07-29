@@ -144,7 +144,37 @@ addOnUISdk.app.on("dragend", (eventData: DragEndEventData) => {
 });
 ```
 
-## Notes
+## Dragging converted documents
+
+If the drag and drop operation is used to import a PDF document, and was specifically one converted from a Word document (`.docx`) or Google Docs (`.gdoc`) format, to improve the user experience, use the `sourceMimeType` parameter in the `attributes` object. This ensures that when users drag the converted PDF, the import consent dialog shows "Import a document" instead of "Import a PDF".
+
+```ts
+// Enable drag support for a converted document
+function makeDraggableConvertedDoc(elementId: string, convertedPdfBlob: Blob, originalMimeType: string) {
+  const element = document.getElementById(elementId);
+
+  const dragCallbacks = {
+    previewCallback: (element: HTMLElement) => {
+      // URL of image to display during drag operation
+      return new URL(element.src); 
+    },
+    completionCallback: async (element: HTMLElement) => {
+      // Return the converted PDF blob with source mime type information
+      return [{
+        blob: convertedPdfBlob,
+        attributes: {
+          title: "Converted Document",
+          sourceMimeType: originalMimeType // "docx" or "gdoc"
+        }
+      }];
+    },
+  };
+
+  addOnUISdk.app.enableDragToDocument(element, dragCallbacks);
+}
+```
+
+## Best Practices and Limitations
 
 If the content being dragged is an animated GIF, it will be added as an animated GIF to the document, as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it doesn't fit the size criteria, an error toast will be shown to the user.
 

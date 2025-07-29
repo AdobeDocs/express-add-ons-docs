@@ -16,11 +16,11 @@ Retrieve the current user of the host application (Adobe Express).
 
 A resolved `Promise` containing the `userId` of the current user.
 
-## Example
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
-### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -31,7 +31,7 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
-### Output
+#### Output
 
 `Current Userid: 3cda976828a4a90d13b0f38b1f8a59b1d6845cccfc48037fb30bb75d3ef67d36`
 
@@ -47,9 +47,7 @@ Indicates if the current user is a premium user.
 
 A resolved `Promise` containing a boolean value indicating if the user is a premium user or not.
 
-## Example
-
-### Usage
+#### Example Usage
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -58,6 +56,35 @@ addOnUISdk.ready.then(async () => {
   const isPremiumUser = await addOnUISdk.app.currentUser.isPremiumUser();
   if (!isPremiumUser) {
     // User not premium, allow only non-premium features only
+  }
+});
+```
+
+### isAnonymousUser()
+
+Determine whether the current user is browsing as a guest (not logged in).
+
+#### Signature
+
+`isAnonymousUser(): Promise<boolean>;`
+
+#### Return Value
+
+Returns a `Promise` that resolves to a boolean indicating whether the user is anonymous.
+
+#### Example Usage
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  const isAnonymousUser = await addOnUISdk.app.currentUser.isAnonymousUser();
+  if (isAnonymousUser) {
+    // User is not logged in - show guest level restricted features
+    console.log("User is anonymous, some features may be limited.");
+  } else {
+    // User is logged in - show full features
+    console.log("User is logged in.");
   }
 });
 ```

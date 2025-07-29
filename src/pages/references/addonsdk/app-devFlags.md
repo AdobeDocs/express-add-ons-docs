@@ -20,7 +20,7 @@ Simulate APIs as a free user.
 
 `boolean` representing the current value of the flag.
 
-## Example
+#### Example Usage
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
