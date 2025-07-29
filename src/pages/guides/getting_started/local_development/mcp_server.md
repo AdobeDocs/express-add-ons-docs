@@ -76,15 +76,17 @@ The Adobe Express Add-on MCP Server provides two main tools for development assi
 
 ### 1. Documentation Retrieval (`get_relevant_documentations`)
 
-This tool searches and retrieves relevant documentation from the Adobe Express add-on developer site.
+This tool searches and retrieves relevant documentation from the Adobe Express add-on developer documentation.
 
 **Usage Examples:**
+
 - "How do I create text in Adobe Express?"
 - "What are the steps for drag and drop functionality?"
 - "How does the Document API work?"
 - "Show me examples of using the color picker"
 
 **Features:**
+
 - Semantic search across all Adobe Express add-on documentation
 - Real-time access to the latest guides, tutorials, and references
 - Contextual examples and code snippets
@@ -96,33 +98,10 @@ Provides complete TypeScript definitions for Adobe Express add-on APIs, enabling
 
 **Available API Types:**
 
-#### `express-document-sdk`
-Complete TypeScript definitions for the Adobe Express Document APIs, including:
-- **Document manipulation**: Create, modify, and manage Express documents
-- **Content creation**: Add text, shapes, images, and other elements
-- **Styling and effects**: Apply fills, strokes, colors, and visual effects
-- **Layout and positioning**: Control element placement and transformations
-- **Media handling**: Work with images, videos, and audio content
-
-Key classes and interfaces:
-- `Editor` - Main entry point for document manipulation
-- `Node` and subclasses - Represent document elements
-- `Color`, `Fill`, `Stroke` - Styling properties
-- `TextNode`, `RectangleNode`, `EllipseNode` - Specific element types
-
-#### `add-on-sdk-document-sandbox`
-TypeScript definitions for the Document Sandbox runtime environment:
-- **Runtime management**: Handle sandbox execution environment
-- **Communication APIs**: Bridge between UI and document sandbox
-- **Type safety**: Ensure proper data exchange between contexts
-
-Key components:
-- `AddOnDocumentSandboxSdk` - Main SDK interface
-- `Runtime` - Sandbox execution environment
-- Communication proxies and type definitions
-
 #### `iframe-ui`
+
 Complete TypeScript definitions for building add-on UI panels:
+
 - **UI components**: Access to Adobe Express UI elements
 - **Event handling**: Respond to user interactions and application events
 - **Document operations**: Import/export content, create renditions
@@ -130,10 +109,42 @@ Complete TypeScript definitions for building add-on UI panels:
 - **Storage management**: Persist add-on data
 
 Key interfaces:
+
 - `AddOnSDKAPI` - Main SDK entry point
 - `Application` - Access to Express application features
 - `Document` - Document-level operations
 - `UI` - User interface management
+
+#### `express-document-sdk`
+
+Complete TypeScript definitions for the Adobe Express Document APIs, including:
+
+- **Document manipulation**: Create, modify, and manage Express documents
+- **Content creation**: Add text, shapes, images, and other elements
+- **Styling and effects**: Apply fills, strokes, colors, and visual effects
+- **Layout and positioning**: Control element placement and transformations
+- **Media handling**: Work with images, videos, and audio content
+
+Key classes and interfaces:
+
+- `Editor` - Main entry point for document manipulation
+- `Node` and subclasses - Represent document elements
+- `Color`, `Fill`, `Stroke` - Styling properties
+- `TextNode`, `RectangleNode`, `EllipseNode` - Specific element types
+
+#### `add-on-sdk-document-sandbox`
+
+TypeScript definitions for the [Document Sandbox](../../../references/document-sandbox/index.md) runtime environment:
+
+- **Runtime management**: Handle sandbox execution environment
+- **Communication APIs**: Bridge between UI and document sandbox
+- **Type safety**: Ensure proper data exchange between contexts
+
+Key components:
+
+- `AddOnDocumentSandboxSdk` - Main SDK interface
+- `Runtime` - Sandbox execution environment
+- Communication proxies and type definitions
 
 ## Usage Examples
 
@@ -206,16 +217,19 @@ To maximize the benefits of TypeScript definitions:
 ### Common Issues
 
 **MCP Server Not Starting:**
+
 - Verify Node.js is installed and accessible
 - Check npm registry access permissions
 - Ensure the MCP configuration file syntax is correct
 
 **Documentation Not Found:**
+
 - Try rephrasing your question with different keywords
 - Check for typos in API names or concepts
 - Use broader terms and then narrow down
 
 **TypeScript Definitions Missing:**
+
 - Verify the correct API type is requested
 - Ensure your TypeScript configuration includes the definitions
 - Check that your IDE supports MCP integration
@@ -224,10 +238,10 @@ To maximize the benefits of TypeScript definitions:
 
 If you encounter issues with the Adobe Express Add-on MCP Server:
 
-1. Check the [Adobe Express Add-on Documentation](https://developer.adobe.com/express/add-ons/docs/)
-2. Verify your MCP client configuration
+1. Check our [changelog](https://developer.adobe.com/express/add-ons/docs/guides/getting_started/changelog/) for any recent updates or changes
+2. Verify your [MCP client configuration](#configuration)
 3. Test with simple queries to ensure the server is responding
-4. Contact the Adobe Express Add-on team for support
+4. Reach out on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4)
 
 ## Related Resources
 
