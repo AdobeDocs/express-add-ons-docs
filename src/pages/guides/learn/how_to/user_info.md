@@ -27,11 +27,11 @@ contributors:
 
 ## Access User Information
 
-You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-currentUser.md) API to obtain the information for the current user using Adobe Express. Three asynchronous methods are available:
+You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-currentUser.md) API to to retrieve information for the current user using Adobe Express. Three asynchronous methods are available:
 
   - `userId()`: returns a masked ID that is unique to the user and persistent
-  - `isPremiumUser()`: returns a boolean value indicating whether the user has a premium subscription with Adobe Express or not.
-  - `isAnonymousUser()`: returns a boolean value indicating whether the current user is browsing as a guest (not logged in).
+  - `isPremiumUser()`: returns `true` if the user has a premium Adobe Express subscription, `false` otherwise
+  - `isAnonymousUser()`: returns `true` if the current user is browsing as a guest (not signed in), `false` otherwise
 
 ### Example
 

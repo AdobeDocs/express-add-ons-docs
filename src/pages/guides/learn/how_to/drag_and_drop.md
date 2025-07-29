@@ -146,7 +146,7 @@ addOnUISdk.app.on("dragend", (eventData: DragEndEventData) => {
 
 ## Dragging converted documents
 
-If the drag and drop operation is used to import a PDF document, and was specifically one converted from a Word (`.docx`) or Google Docs (`.gdoc`) format, you can improve the user experience by using the `sourceMimeType` parameter in the `attributes` object. This ensures that when users drag the converted PDF, the import consent dialog shows "Import a document" instead of "Import a PDF".
+If the drag and drop operation is used to import a PDF document, and was specifically one converted from a Word document (`.docx`) or Google Docs (`.gdoc`) format, to improve the user experience, use the `sourceMimeType` parameter in the `attributes` object. This ensures that when users drag the converted PDF, the import consent dialog shows "Import a document" instead of "Import a PDF".
 
 ```ts
 // Enable drag support for a converted document
@@ -155,7 +155,8 @@ function makeDraggableConvertedDoc(elementId: string, convertedPdfBlob: Blob, or
 
   const dragCallbacks = {
     previewCallback: (element: HTMLElement) => {
-      return new URL(element.src); // Preview URL
+      // URL of image to display during drag operation
+      return new URL(element.src); 
     },
     completionCallback: async (element: HTMLElement) => {
       // Return the converted PDF blob with source mime type information

@@ -73,7 +73,7 @@ addOnUISdk.ready.then(async () => {
 
 ### Importing converted documents
 
-If your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can use the `sourceMimeType` parameter to improve the user experience. When specified, the import consent dialog will show "Import a document" instead of "Import a PDF" to avoid user confusion.
+If your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can use the `sourceMimeType` parameter to improve the user experience. When specified, the import consent dialog displays the message "Import a document" rather than the default "Import a PDF".
 
 ```js
 // Import a PDF that was converted from a Word document

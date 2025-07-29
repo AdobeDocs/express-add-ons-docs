@@ -34,7 +34,9 @@ Renditions are created via the [`createRendition()`](../../../references/addonsd
 
 ## Check export permissions
 
-Before creating renditions for export or print purposes, it's recommended to check if the document allows exports based on its review status in collaborative workflows. Use the [`exportAllowed()`](../../../references/addonsdk/app-document.md#exportallowed) method to determine if export is permitted:
+The `exportAllowed()` method determines whether the current document can be exported based on its review status in collaborative workflows. This applies mainly to [enterprise customers using Adobe Express's review and approval features](https://business.adobe.com/products/workfront/integrations/express.html), where documents may be restricted from export until approved by designated reviewers.
+
+Before creating renditions for export or print purposes, you can check that it's permitted first using the [`exportAllowed()`](../../../references/addonsdk/app-document.md#exportallowed) method:
 
 ```js
 // Check export permissions before creating non-preview renditions
@@ -56,9 +58,11 @@ if (!canExport) {
 // Proceed with export renditions if allowed
 ```
 
+<InlineAlert slots="text" variant="info"/>
+
 **Important:** This check is only necessary for `RenditionIntent.export` and `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the document's review status.
 
-**Why check proactively?** If you skip this check and attempt to create export/print renditions when the document doesn't allow exports, users will encounter an error dialog saying "Request approval" and "Get approval from your viewers before sharing this file". Checking `exportAllowed()` first lets you provide a better user experience by either offering preview-only options or explaining why export is restricted.
+**Why check export permissions first?** If you skip this check and attempt to create export/print renditions when the document doesn't allow exports, users may see an error message such as "Request approval" and "Get approval from your viewers before sharing this file". Checking `exportAllowed()` first lets you provide a better user experience by either offering preview-only options or explaining why export is restricted.
 
 ## Export content
 
