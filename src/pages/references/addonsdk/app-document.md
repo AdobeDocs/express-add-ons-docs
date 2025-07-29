@@ -517,7 +517,7 @@ A constant representing the mime type of the original source asset that was conv
 
 Use this property to improve the user experience when importing converted documents. Adobe Express does not natively support Word documents (`.docx`) or Google Docs (`.gdoc`) files. However, your add-on can convert these file types to PDF format behind the scenes before importing them.
 
-When you call `importPdf()` with a converted file, you can pass the original file's mime type (`"docx"` or `"gdoc"`) in the `sourceMimeType` parameter. This ensures that the import consent dialog displays "Import a document" instead of "Import a PDF" to the user, preventing confusion about why their Word document or Google Docs file is being referred to as a PDF. 
+When you call `importPdf()` with a converted file, you can pass the original file's mime type (`"docx"` or `"gdoc"`) in the `sourceMimeType` parameter. This ensures that the import consent dialog displays "Import a document" instead of "Import a PDF" to the user, preventing confusion about why their Word document or Google Docs file is being referred to as a PDF.
 
 **Important:** Do not pass the original Word documentor Google Docs file directly to `importPdf()`. Your add-on must first convert these files to PDF format, then use this parameter solely to customize the dialog message for better user experience.
 
@@ -891,7 +891,6 @@ This method is particularly useful in collaborative environments where documents
 #### Example Usage
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
-
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
