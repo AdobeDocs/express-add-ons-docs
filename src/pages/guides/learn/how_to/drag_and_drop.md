@@ -16,6 +16,25 @@ description: Use Drag-and-Drop.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I enable drag-and-drop for an element?"
+      answer: "Call `addOnUISdk.app.enableDragToDocument(element, callbacks)` with preview and completion callbacks."
+
+    - question: "What callbacks are required?"
+      answer: "Provide `previewCallback()` for preview URL and `completionCallback()` to return the blob for insertion."
+
+    - question: "How do I handle drag events?"
+      answer: 'Listen for `"dragstart"` and `"dragend"` events using `addOnUISdk.app.on()`.'
+
+    - question: "What's special about audio content?"
+      answer: "Audio requires an `attributes` object with a `title` property in the completion callback return."
+
+    - question: "Can I drag remote images?"
+      answer: "Yes, fetch the remote URL in the completion callback and return the blob."
+
+    - question: "What event handlers should I avoid?"
+      answer: "Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements."
 ---
 
 # Use Drag-and-Drop
@@ -157,3 +176,29 @@ You should not attach `click` event listeners to drag-enabled elements in the ca
 Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any that may be causing conflicts with drag and drop handlers.
 
 There are several [code samples](../samples.md) that implement drag and drop, including the [import-images-using-oauth](../samples.md#import-images-using-oauth) and [pix](../samples.md#pix) projects that you can reference.
+
+## FAQs
+
+#### Q: How do I enable drag-and-drop for an element?
+
+**A:** Call `addOnUISdk.app.enableDragToDocument(element, callbacks)` with preview and completion callbacks.
+
+#### Q: What callbacks are required?
+
+**A:** Provide `previewCallback()` for preview URL and `completionCallback()` to return the blob for insertion.
+
+#### Q: How do I handle drag events?
+
+**A:** Listen for `"dragstart"` and `"dragend"` events using `addOnUISdk.app.on()`.
+
+#### Q: What's special about audio content?
+
+**A:** Audio requires an `attributes` object with a `title` property in the completion callback return.
+
+#### Q: Can I drag remote images?
+
+**A:** Yes, fetch the remote URL in the completion callback and return the blob.
+
+#### Q: What event handlers should I avoid?
+
+**A:** Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements.

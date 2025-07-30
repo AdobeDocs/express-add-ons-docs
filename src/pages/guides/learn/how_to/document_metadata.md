@@ -17,6 +17,28 @@ description: Document Metadata.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I get the document ID?"
+      answer: "Call `await addOnUISdk.app.document.id()` to retrieve the document ID."
+
+    - question: "How do I get the document title?"
+      answer: "Call `await addOnUISdk.app.document.title()` to retrieve the document title."
+
+    - question: "How do I get the document link?"
+      answer: 'Call `await addOnUISdk.app.document.link("document")` or `link("published")` for different link types.'
+
+    - question: "How do I listen for document ID changes?"
+      answer: 'Use `addOnUISdk.app.on("documentIdAvailable", callback)` to listen for ID changes.'
+
+    - question: "How do I listen for title changes?"
+      answer: 'Use `addOnUISdk.app.on("documentTitleChange", callback)` to listen for title changes.'
+
+    - question: "What link types are available?"
+      answer: 'You can get "document" link or "published" link via the `link()` method parameter.'
+
+    - question: "How do I listen for link changes?"
+      answer: "Use `documentLinkAvailable` or `documentPublishedLinkAvailable` events with `addOnUISdk.app.on()`."
 ---
 
 # Use Document Metadata
@@ -69,3 +91,33 @@ addOnUISdk.ready.then(() => {
 <InlineAlert slots="text" variant="warning"/>
 
 Please remember that `id()`, `title()`, and `link()` are asynchronous methods and not properties of the `addOnUISdk.app.document` object. You need to call them and `await` for the promise to be resolved before using the returned value.
+
+## FAQs
+
+#### Q: How do I get the document ID?
+
+**A:** Call `await addOnUISdk.app.document.id()` to retrieve the document ID.
+
+#### Q: How do I get the document title?
+
+**A:** Call `await addOnUISdk.app.document.title()` to retrieve the document title.
+
+#### Q: How do I get the document link?
+
+**A:** Call `await addOnUISdk.app.document.link("document")` or `link("published")` for different link types.
+
+#### Q: How do I listen for document ID changes?
+
+**A:** Use `addOnUISdk.app.on("documentIdAvailable", callback)` to listen for ID changes.
+
+#### Q: How do I listen for title changes?
+
+**A:** Use `addOnUISdk.app.on("documentTitleChange", callback)` to listen for title changes.
+
+#### Q: What link types are available?
+
+**A:** You can get "document" link or "published" link via the `link()` method parameter.
+
+#### Q: How do I listen for link changes?
+
+**A:** Use `documentLinkAvailable` or `documentPublishedLinkAvailable` events with `addOnUISdk.app.on()`.

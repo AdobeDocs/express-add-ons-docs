@@ -19,6 +19,31 @@ description: Create Renditions.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I create a rendition?"
+      answer: "Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats."
+
+    - question: "What file formats are supported?"
+      answer: "JPG, PNG, MP4, and PDF formats via `addOnUISdk.constants.RenditionFormat`."
+
+    - question: "How do I export content for download?"
+      answer: "Create rendition, convert blob to URL with `URL.createObjectURL()`, then use anchor element to trigger download."
+
+    - question: "What permissions are needed for downloads?"
+      answer: 'Add `"allow-downloads"` to the `"sandbox"` array in manifest permissions.'
+
+    - question: "What is the preview intent for?"
+      answer: "Preview intent creates renditions for processing or display only, not for download or sharing."
+
+    - question: "How do I set JPG quality?"
+      answer: "Use `quality` property (0-1 range) in `JpgRenditionOptions`."
+
+    - question: "What's required for preview intent?"
+      answer: 'Set `"renditionPreview": true` in manifest requirements section.'
+
+    - question: "How do I export the current page only?"
+      answer: "Use `range: addOnUISdk.constants.Range.currentPage` in rendition options."
 ---
 
 # Create Renditions
@@ -165,3 +190,37 @@ When the `renditionIntent` is set to `RenditionIntent.preview`, you must add to 
   ]
 }
 ```
+
+## FAQs
+
+#### Q: How do I create a rendition?
+
+**A:** Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats.
+
+#### Q: What file formats are supported?
+
+**A:** JPG, PNG, MP4, and PDF formats via `addOnUISdk.constants.RenditionFormat`.
+
+#### Q: How do I export content for download?
+
+**A:** Create rendition, convert blob to URL with `URL.createObjectURL()`, then use anchor element to trigger download.
+
+#### Q: What permissions are needed for downloads?
+
+**A:** Add `"allow-downloads"` to the `"sandbox"` array in manifest permissions.
+
+#### Q: What is the preview intent for?
+
+**A:** Preview intent creates renditions for processing or display only, not for download or sharing.
+
+#### Q: How do I set JPG quality?
+
+**A:** Use `quality` property (0-1 range) in `JpgRenditionOptions`.
+
+#### Q: What's required for preview intent?
+
+**A:** Set `"renditionPreview": true` in manifest requirements section.
+
+#### Q: How do I export the current page only?
+
+**A:** Use `range: addOnUISdk.constants.Range.currentPage` in rendition options.
