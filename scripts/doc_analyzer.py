@@ -214,11 +214,11 @@ class DocumentationAnalyzer:
         
         if not code_blocks:
             return {
-                'example_completeness': 0,
+                'example_completeness': 100,  # Perfect score when no code to evaluate
                 'variable_naming_consistency': 100,  # No variables to check
-                'context_annotation': 0,  # No code to check context
+                'context_annotation': 100,  # Perfect score when no code to check context
                 'error_handling_patterns': 100,  # Perfect score when no code to evaluate
-                'import_statement_consistency': 0,
+                'import_statement_consistency': 100,  # Perfect score when no imports to check
                 'total_code_blocks': 0
             }
         
@@ -923,17 +923,19 @@ class DocumentationAnalyzer:
         if structure.get('content_chunking', 100) < 70:
             issues.append("Content sections too long for effective RAG chunking (>400 words)")
         
-        # Code example issues
+        # Code example issues - only flag if there are actually code blocks present
         code = results.get('code_examples', {})
-        if code.get('example_completeness', 100) < 70:
-            issues.append("Code examples missing imports, setup, or variable declarations")
-        if code.get('variable_naming_consistency', 100) < 80:
-            issues.append("Inconsistent variable naming (addOnUISdk vs addOnSdk vs sdk)")
-        if code.get('context_annotation', 100) < 70:
-            issues.append("Code examples missing context annotations (iframe vs sandbox)")
-        # Only flag error handling issues if there are code examples with risky operations
-        if code.get('error_handling_patterns', 100) < 50 and code.get('total_code_blocks', 0) > 0:
-            issues.append("Code examples with API operations missing error handling patterns (try/catch)")
+        total_code_blocks = code.get('total_code_blocks', 0)
+        if total_code_blocks > 0:  # Only evaluate code quality if code blocks exist
+            if code.get('example_completeness', 100) < 70:
+                issues.append("Code examples missing imports, setup, or variable declarations")
+            if code.get('variable_naming_consistency', 100) < 80:
+                issues.append("Inconsistent variable naming (addOnUISdk vs addOnSdk vs sdk)")
+            if code.get('context_annotation', 100) < 70:
+                issues.append("Code examples missing context annotations (iframe vs sandbox)")
+            # Only flag error handling issues if there are code examples with risky operations
+            if code.get('error_handling_patterns', 100) < 50:
+                issues.append("Code examples with API operations missing error handling patterns (try/catch)")
         
         # API documentation issues
         api = results.get('api_documentation', {})

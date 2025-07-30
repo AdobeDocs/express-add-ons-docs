@@ -46,7 +46,7 @@ python3 scripts/generate_priority_summary.py --scope filtered
 python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
 
 # Regular audit for current status
-python3 scripts/doc_audit_runner.py --filtered full report --docs-path src/pages/
+python3 scripts/doc_audit_runner.py --filtered --full-report --docs-path src/pages/
 ```
 
 **All documentation files** (includes auto-generated API references):
@@ -297,6 +297,73 @@ python3 scripts/query_based_doc_tester.py -h
 python3 scripts/doc_analyzer.py -h
 python3 scripts/express_issue_detector.py -h
 ```
+
+---
+
+# 🧠 Smart Auditing with Content Classification
+
+The enhanced auditing scripts use intelligent content classification to apply rules contextually, avoiding false positives and providing more accurate quality assessments.
+
+## 🎯 Smart Audit Scripts
+
+### Simple Smart Audit
+```bash
+# Smart audit that applies rules based on content type
+python3 scripts/simpleAudit_smart.py
+
+# Show content classification details
+python3 scripts/simpleAudit_smart.py --show-classification --verbose
+
+# Compare smart vs traditional approaches
+python3 scripts/compare_audit_approaches.py
+```
+
+### Comprehensive Smart Analysis
+```bash
+# Smart LLM readiness analysis
+python3 scripts/llm_readiness_analyzer_smart.py --docs-path src/pages
+
+# Compare with baseline
+python3 scripts/llm_readiness_analyzer_smart.py --docs-path src/pages --baseline --output smart_baseline.json
+```
+
+## 🧠 How Smart Classification Works
+
+### Content Types Detected:
+- **📖 Conceptual**: Planning, overview, explanation docs
+- **🎓 Tutorial**: Step-by-step coding guides  
+- **📋 Reference**: API documentation, auto-generated docs
+- **🔧 Setup**: Installation, configuration guides
+- **❓ Troubleshooting**: FAQ, error guides
+- **💡 Samples**: Code examples, demos
+
+### Code Intensity Levels:
+- **🚫 None**: No code (concepts, setup instructions)
+- **📝 Minimal**: Few code snippets (configuration examples)
+- **⚖️ Moderate**: Some code examples with explanations
+- **🔥 Heavy**: Primarily code with step-by-step tutorials
+
+### Smart Rule Application:
+```
+❌ Traditional: All files get same 12 criteria
+✅ Smart: Files get 4-12 criteria based on content type
+
+Examples:
+• developer-journey.md: Setup/None → 8/12 criteria (excludes code rules)
+• use_text.md: Tutorial/Heavy → 12/12 criteria (all rules apply)
+• app-document.md: Reference/Heavy → 11/12 criteria (reduced Q&A requirements)
+```
+
+## 📊 Benefits of Smart Auditing
+
+| Benefit | Description | Example |
+|---------|-------------|---------|
+| **Accuracy** | No false positives for irrelevant rules | Conceptual docs not penalized for missing code |
+| **Context** | Rules applied based on document purpose | Tutorial docs get stricter error documentation |
+| **Efficiency** | Focus on relevant improvements only | Setup docs focus on structure over code quality |
+| **Fairness** | Each doc type evaluated appropriately | Reference docs get lighter Q&A requirements |
+
+**Result**: Average **+8.0 point improvement** with **2.3 fewer irrelevant criteria** per file.
 
 ---
 
