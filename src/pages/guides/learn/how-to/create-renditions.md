@@ -32,6 +32,38 @@ Renditions are created via the [`createRendition()`](../../../references/addonsd
 1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the page range that is meant to be exported and the file format (jpg, png, mp4 and pdf).
 2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the intent of the exported content (preview, export, print).
 
+## Check export permissions
+
+The `exportAllowed()` method determines whether the current document can be exported based on its review status in collaborative workflows. This applies mainly to [enterprise customers using Adobe Express's review and approval features](https://business.adobe.com/products/workfront/integrations/express.html), where documents may be restricted from export until approved by designated reviewers.
+
+Before creating renditions for export or print purposes, you can check that it's permitted first using the [`exportAllowed()`](../../../references/addonsdk/app-document.md#exportallowed) method:
+
+```js
+// Check export permissions before creating non-preview renditions
+const canExport = await addOnUISdk.app.document.exportAllowed();
+
+if (!canExport) {
+  // Export/print not allowed, but preview renditions are still permitted
+  console.log("Export restricted - only preview available");
+  
+  // Create preview rendition (always allowed)
+  const previewRendition = await addOnUISdk.app.document.createRenditions(
+    { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
+    addOnUISdk.constants.RenditionIntent.preview
+  );
+  // ... show in UI only, don't allow download
+  return;
+}
+
+// Proceed with export renditions if allowed
+```
+
+<InlineAlert slots="text" variant="info"/>
+
+**Important:** This check is only necessary for `RenditionIntent.export` and `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the document's review status.
+
+**Why check export permissions first?** If you skip this check and attempt to create export/print renditions when the document doesn't allow exports, users may see an error message such as "Request approval" and "Get approval from your viewers before sharing this file". Checking `exportAllowed()` first lets you provide a better user experience by either offering preview-only options or explaining why export is restricted.
+
 ## Export content
 
 Usually, you create renditions to allow users to download or share your content in different formats. This is a multi-step process that involves:
@@ -52,7 +84,43 @@ addOnUISdk.ready.then(async () => {
   document
     .querySelector("#download-button")
     .addEventListener("click", async () => {
-      // Create a rendition of the current page
+      // Check if export is allowed (prevents "Request approval" error dialog)
+      const canExport = await addOnUISdk.app.document.exportAllowed();
+      
+      if (!canExport) {
+        try {
+            // Show informational message for preview
+            let dialogOptions = {
+              variant: "information",
+              title: "Requires approval",
+              description:
+                "Content export/download is restricted while the document is under review and requires approval. Showing preview instead.",
+              buttonLabels: { primary: "Ok", cancel: "Cancel" },
+            };
+            const result = await addOnUISdk.app.showModalDialog(dialogOptions);
+            console.log("Button type clicked " + result.buttonType);
+        } catch (error) {
+            console.log("Error showing modal dialog:", error);
+        }
+
+        // Create preview rendition (always allowed). You will need to add the `"renditionPreview"` flag to the `manifest.json` file in order to create preview renditions.
+        const previewRendition = await addOnUISdk.app.document.createRenditions(
+          {
+            range: addOnUISdk.constants.Range.currentPage,
+            format: addOnUISdk.constants.RenditionFormat.png,
+          },
+          addOnUISdk.constants.RenditionIntent.preview
+        );
+        
+        // Display preview in UI only (don't trigger download)
+        const previewUrl = URL.createObjectURL(previewRendition[0].blob);
+        const img = document.createElement("img");
+        img.src = previewUrl;
+        document.body.appendChild(img);
+        return;
+      }
+
+      // Create a rendition for download (export intent)
       const rendition = await addOnUISdk.app.document.createRenditions(
         // renditionOptions
         {
@@ -60,7 +128,7 @@ addOnUISdk.ready.then(async () => {
           format: addOnUISdk.constants.RenditionFormat.png,
         },
         // renditionIntent
-        addOnUISdk.constants.RenditionIntent.preview
+        addOnUISdk.constants.RenditionIntent.export
       );
 
       console.log("Renditions created: ", rendition);
@@ -107,7 +175,7 @@ const pdfRendition = await addOnUISdk.app.document.createRenditions(
   // PdfRenditionOptions
   {
     range: addOnUISdk.constants.Range.currentPage,
-    format: addOnUISdk.constants.RenditionFormat.pdn,
+    format: addOnUISdk.constants.RenditionFormat.pdf,
     bleed: { amount: 5, unit: addOnUISdk.constants.BleedUnit.mm },
   }
 );

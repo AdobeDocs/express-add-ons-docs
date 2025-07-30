@@ -234,7 +234,7 @@ Actions are currently not supported on every Editor panel. Please find the suppo
 
 Both Collection and Tab navigation can be executed in combination.
 
-#### Example usage
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="2" />
 

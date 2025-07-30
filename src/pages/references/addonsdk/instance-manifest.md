@@ -8,13 +8,13 @@ The `manifest` object provides access to the `manifest.json` file entries of the
 
 Please see the [Manifest Schema Reference](../manifest/index.md) for the whole list of properties and types that can be specified in the `manifest.json` for your add-on.
 
-## Usage
+### Example Usage
 
 Below is an example of using the `manifest` object, along with the expected output.
 
 <CodeBlock slots="heading, code" repeat="2" />
 
-### Example
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -37,7 +37,7 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-### Output
+#### Output
 
 ```js
 {"testId":"08f4469f-7999-458b-9ef9-b1bd043cbdca","name":"Add On Api Sampler","version":"1.0.0","manifestVersion":2,"requirements":{"apps":[{"name":"Express","apiVersion":1}]},"entryPoints":[{"type":"panel","id":"panel1","main":"https://localhost:5241/08f4469f-7999-458b-9ef9-b1bd043cbdca/index.html"}]}

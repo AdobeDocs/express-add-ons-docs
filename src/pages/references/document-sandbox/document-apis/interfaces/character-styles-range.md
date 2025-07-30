@@ -13,6 +13,18 @@ are visible in the document.
 
 ## Properties
 
+### baselineShift
+
+• **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+
+Sets a superscript or subscript style.
+
+#### Inherited from
+
+[`CharacterStyles`](CharacterStyles.md).[`baselineShift`](CharacterStyles.md#baselineshift)
+
+---
+
 ### color
 
 • **color**: [`Color`](color.md)

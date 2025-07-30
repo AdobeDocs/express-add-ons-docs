@@ -22,12 +22,37 @@ contributors:
 
 # Changelog
 
+## 2025-07-27
+
+### Added
+
+- New [`isAnonymousUser()`](../../references/addonsdk/app-currentUser.md#isanonymoususer) method to the [`addOnUISdk.app.currentUser`](../../references/addonsdk/app-currentUser.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
+- New [`exportAllowed()`](../../references/addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](../../references/addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
+- Enhanced [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](../../references/addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
+- Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](../../references/addonsdk/addonsdk-app.md#dragcompletiondata) support.
+
+### Updated
+
+- [User Info guide](../learn/how_to/user_info.md) with guidance on handling logged out users (browsing as a guest), with important considerations and limitations.
+- [Create Renditions guide](../learn/how_to/create_renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
+- [PDF and PowerPoint guide](../learn/how_to/use_pdf_powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
+- [Drag-and-Drop guide](../learn/how_to/drag_and_drop.md) with examples of using `sourceMimeType` when dragging converted documents.
+
+## 2025-07-25
+
+### Added
+
+- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) interface. The corresponding [TextScriptStyle](../../references/document-sandbox/document-apis/enumerations/TextScriptStyle.md) enumerable has been added. The new API has been introduced as stable.
+- A new [`clone()`](../../references/document-sandbox/document-apis/classes/Node.md#clone) method has been added to the [Node](../../references/document-sandbox/document-apis/classes/Node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
+- New [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md).
+- New [`UnknownMediaRectangleNode`](../../references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md) for cases where the media type is not yet supported by the API.
+
 ## 2025-07-11
 
 ### Added
 
-- New [Markdown Parser add-on tutorial](../learn/how-to/tutorials/markdown-parser-text-api.md) covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
-- New [Resize and Rescale Elements](../learn/how-to/resize-rescale-elements.md) how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.
+- New [Markdown Parser add-on tutorial](../learn/how_to/tutorials/markdown-parser-text-api.md) covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
+- New [Resize and Rescale Elements](../learn/how_to/resize_rescale_elements.md) how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.
 
 ## 2025-06-19
 
@@ -59,7 +84,7 @@ The [Page Metadata API](../../references/addonsdk/app-document.md#pagemetadata) 
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how-to/document-metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document_metadata.md).
 
 ### Updates
 
@@ -119,7 +144,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how-to/document-metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
 - New [vue-starter](../learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
 - Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how-to/use-color.md).
 
@@ -411,12 +436,12 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - A new [`createPath`](../../references/document-sandbox/document-apis/classes/editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
 - Updates descriptions in various methods and classes in the [Document APIs](../../references/document-sandbox/document-apis/index.md).
 - Updates to the [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
-- Updates to the [Using Adobe Spectrum tutorial](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/) with additional details on [why you should use Spectrum CSS variables](../learn/how-to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how-to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
+- Updates to the [Using Adobe Spectrum tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md) with additional details on [why you should use Spectrum CSS variables](../learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
 
 ## 2024-01-31
 
-Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/).
+Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](../learn/how_to/tutorials/spectrum-workshop/index.md).
 
 ## 2024-01-09
 
@@ -742,7 +767,7 @@ Updated [Document API references](../../references/document-sandbox/document-api
 
 - Added a [new tutorial section](../learn/how-to/tutorials/index.md) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how-to/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
-- Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
+- Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnUISDK`) similar to what's generated in the templates for consistency.
 
 ## 2023-10-26
 

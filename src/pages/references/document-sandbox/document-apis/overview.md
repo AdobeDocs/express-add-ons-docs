@@ -10,17 +10,18 @@
 
 ## Enumerations
 
--   [ArrowHeadType](enumerations/arrow-head-type.md)
--   [BlendMode](enumerations/blend-mode.md)
--   [EditorEvent](enumerations/editor-event.md)
--   [FillRule](enumerations/fill-rule.md)
--   [FillType](enumerations/fill-type.md)
--   [SceneNodeType](enumerations/scene-node-type.md)
--   [StrokePosition](enumerations/stroke-position.md)
--   [StrokeType](enumerations/stroke-type.md)
--   [TextAlignment](enumerations/text-alignment.md)
--   [TextLayout](enumerations/text-layout.md)
--   [VisualEffectType](enumerations/visual-effect-type.md)
+-   [ArrowHeadType](enumerations/ArrowHeadType.md)
+-   [BlendMode](enumerations/BlendMode.md)
+-   [EditorEvent](enumerations/EditorEvent.md)
+-   [FillRule](enumerations/FillRule.md)
+-   [FillType](enumerations/FillType.md)
+-   [SceneNodeType](enumerations/SceneNodeType.md)
+-   [StrokePosition](enumerations/StrokePosition.md)
+-   [StrokeType](enumerations/StrokeType.md)
+-   [TextAlignment](enumerations/TextAlignment.md)
+-   [TextLayout](enumerations/TextLayout.md)
+-   [TextScriptStyle](enumerations/TextScriptStyle.md)
+-   [VisualEffectType](enumerations/VisualEffectType.md)
 
 ## Classes
 
@@ -45,6 +46,7 @@
 -   [ItemList](classes/ItemList.md)
 -   [LineNode](classes/LineNode.md)
 -   [MediaContainerNode](classes/MediaContainerNode.md)
+-   [MediaRectangleNode](classes/MediaRectangleNode.md)
 -   [Node](classes/Node.md)
 -   [PageList](classes/PageList.md)
 -   [PageNode](classes/PageNode.md)
@@ -60,6 +62,7 @@
 -   [TextNode](classes/TextNode.md)
 -   [ThreadedTextNode](classes/threaded-text-node.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
+-   [UnknownMediaRectangleNode](classes/UnknownMediaRectangleNode.md)
 -   [UnknownNode](classes/UnknownNode.md)
 -   [Viewport](classes/Viewport.md)
 -   [VisualNode](classes/VisualNode.md)

@@ -14,6 +14,18 @@ user to edit with.
 
 ## Properties
 
+### baselineShift?
+
+• `optional` **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+
+Sets a superscript or subscript style.
+
+#### Inherited from
+
+[`CharacterStylesInput`](CharacterStylesInput.md).[`baselineShift`](CharacterStylesInput.md#baselineshift)
+
+---
+
 ### color?
 
 • `optional` **color**: [`Color`](color.md)

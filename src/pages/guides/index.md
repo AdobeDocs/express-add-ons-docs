@@ -25,7 +25,7 @@ import '/src/styles.css'
 
 ![Adobe Express add-ons](./getting_started/img/Explore_Image_3.png)
 
-## Build add-ons for Adobe Express
+## Build add-ons for Adobe Express loal
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 

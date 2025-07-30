@@ -18,6 +18,18 @@ user to edit with.
 
 ## Properties
 
+### baselineShift?
+
+• `optional` **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+
+Sets a superscript or subscript style.
+
+#### Inherited from
+
+`Partial.baselineShift`
+
+---
+
 ### color?
 
 • `optional` **color**: [`Color`](color.md)

@@ -155,15 +155,15 @@ different shape via this API.
 
 ### mediaRectangle
 
-• `get` **mediaRectangle**(): [`Node`](node.md) \| [`ImageRectangleNode`](image-rectangle-node.md)
+• `get` **mediaRectangle**(): [`ImageRectangleNode`](ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
 
 The rectangular node representing the entire, uncropped bounds of the media (e.g. image, GIFs, or video). The media's position and
-rotation can be changed, but it cannot be resized yet via this API. Media types other than images will yield a plain Node object
-for now.
+rotation can be changed, but it cannot be resized yet via this API. Media types other than images will yield an UnknownMediaRectangleNode
+object for now.
 
 #### Returns
 
-[`Node`](node.md) \| [`ImageRectangleNode`](image-rectangle-node.md)
+[`ImageRectangleNode`](ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
 
 <HorizontalLine />
 
@@ -321,7 +321,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Inherited from
 
-[`MediaContainerNode`](media-container-node.md).[`boundsInNode`](media-container-node.md#boundsinnode)
+[`MediaContainerNode`](MediaContainerNode.md).[`boundsInNode`](MediaContainerNode.md#boundsinnode)
 
 <HorizontalLine />
 

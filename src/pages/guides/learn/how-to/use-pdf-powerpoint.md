@@ -71,6 +71,18 @@ addOnUISdk.ready.then(async () => {
     // ... same as before
 ```
 
+### Importing converted documents
+
+If your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can use the `sourceMimeType` parameter to improve the user experience. When specified, the import consent dialog displays the message "Import a document" rather than the default "Import a PDF".
+
+```js
+// Import a PDF that was converted from a Word document
+await addOnUISdk.app.document.importPdf(convertedPdfBlob, {
+  title: "Converted Document",
+  sourceMimeType: "docx" // Shows "Import a document" in the dialog
+});
+```
+
 ## Import PowerPoint into the page
 
 For PowerPoint files, the process is similar to the one for PDFs, but you need to use the [`importPowerPoint()`](../../../references/addonsdk/app-document.md#importpresentation) method instead. The method supports both `.pptx` and `.ppt` files, and shows the same consent and progress dialogues as seen above.

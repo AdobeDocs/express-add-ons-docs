@@ -207,6 +207,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/media-container-node.md",
                   },
                   {
+                    title: "MediaRectangleNode",
+                    path: "references/document-sandbox/document-apis/classes/MediaRectangleNode.md",
+                  },
+                  {
                     title: "Node",
                     path: "references/document-sandbox/document-apis/classes/node.md",
                   },
@@ -265,6 +269,10 @@ module.exports = {
                   {
                     title: "UnavailableFont",
                     path: "references/document-sandbox/document-apis/classes/unavailable-font.md",
+                  },
+                  {
+                    title: "UnknownMediaRectangleNode",
+                    path: "references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md",
                   },
                   {
                     title: "UnknownNode",
@@ -463,6 +471,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/enumerations/text-layout.md",
                   },
                   {
+                    title: "TextScriptStyle",
+                    path: "references/document-sandbox/document-apis/enumerations/TextScriptStyle.md",
+                  },
+                  {
                     title: "VisualEffectType",
                     path: "references/document-sandbox/document-apis/enumerations/visual-effect-type.md",
                   },
@@ -653,6 +665,10 @@ module.exports = {
                   {
                     title: "Group Elements",
                     path: "guides/learn/how-to/group-elements.md",
+                  },
+                  {
+                    title: "Resize & Rescale Elements",
+                    path: "guides/learn/how_to/resize_rescale_elements.md",
                   },
                   {
                     title: "Position Elements",
