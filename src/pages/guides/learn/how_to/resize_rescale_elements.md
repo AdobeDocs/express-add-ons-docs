@@ -22,6 +22,28 @@ description: Resize and Rescale Elements.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "What's the difference between resize and rescale?"
+      answer: "Resize adjusts bounding box preserving stroke/font sizes; rescale proportionally changes all visual elements."
+
+    - question: "How do I rescale proportionally by width?"
+      answer: 'Call `element.rescaleProportionalToWidth(newWidth)` to maintain aspect ratio.'
+
+    - question: "How do I resize to fit within bounds?"
+      answer: 'Call `element.resizeToFitWithin(width, height)` to fit within specified dimensions.'
+
+    - question: "How do I resize to cover an area?"
+      answer: 'Call `element.resizeToCover(width, height)` to completely cover the specified area.'
+
+    - question: "Do shapes and media resize differently?"
+      answer: "Yes, shapes can resize freely; media maintains aspect ratio and may involve cropping."
+
+    - question: "How does text resizing work?"
+      answer: "Text resize and rescale methods produce similar results by adjusting font size proportionally."
+
+    - question: "How do I resize pages?"
+      answer: 'Set `page.width` and `page.height` properties directly on the PageNode.'
 ---
 
 # Resize and Rescale Elements
@@ -335,3 +357,33 @@ console.log(`Doc's dimensions after: ${doc.width}x${doc.height}`);
 // Doc's dimensions before: 400x600
 // Doc's dimensions after: 300x300
 ```
+
+## FAQs
+
+#### Q: What's the difference between resize and rescale?
+
+**A:** Resize adjusts bounding box preserving stroke/font sizes; rescale proportionally changes all visual elements.
+
+#### Q: How do I rescale proportionally by width?
+
+**A:** Call `element.rescaleProportionalToWidth(newWidth)` to maintain aspect ratio.
+
+#### Q: How do I resize to fit within bounds?
+
+**A:** Call `element.resizeToFitWithin(width, height)` to fit within specified dimensions.
+
+#### Q: How do I resize to cover an area?
+
+**A:** Call `element.resizeToCover(width, height)` to completely cover the specified area.
+
+#### Q: Do shapes and media resize differently?
+
+**A:** Yes, shapes can resize freely; media maintains aspect ratio and may involve cropping.
+
+#### Q: How does text resizing work?
+
+**A:** Text resize and rescale methods produce similar results by adjusting font size proportionally.
+
+#### Q: How do I resize pages?
+
+**A:** Set `page.width` and `page.height` properties directly on the PageNode.

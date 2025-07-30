@@ -120,11 +120,11 @@ async function logMetadata() {
       console.log("Page has animated content: ", page.hasAnimatedContent);
       console.log("Page has timelines: ", page.hasTemporalContent);
       if (page.hasTemporalContent)
-          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration); 
+          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration);
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
       console.log("Is page blank: ", page.isBlank);
-      console.log("Template details: ", page.templateDetails);      
+      console.log("Template details: ", page.templateDetails);
     }
   }
   catch(error) {
@@ -578,7 +578,7 @@ async function importPresentationFrom(url) {
 
 ### Image requirements
 
-When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **40MB**.
+When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **80MB**—see the full [image requirements](https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html) for more details.
 
 For `gif` images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and summarized below for quick reference:
 

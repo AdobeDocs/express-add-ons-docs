@@ -18,6 +18,31 @@ description: Use Modal Dialogs.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I show a modal dialog?"
+      answer: 'Call `addOnUISdk.app.showModalDialog(options)` with variant, title, and description options.'
+
+    - question: "What dialog variants are available?"
+      answer: "confirmation, information, warning, destructive, error, input, and custom variants."
+
+    - question: "How do I get user input from a dialog?"
+      answer: 'Use variant "input" with a field object containing label, placeholder, and fieldType properties.'
+
+    - question: "What button types can be returned?"
+      answer: "Dialog results contain buttonType with values like primary, secondary, or cancel."
+
+    - question: "How do I create a custom dialog?"
+      answer: 'Use variant "custom" with src pointing to HTML file and optional size properties.'
+
+    - question: "How do I programmatically close a dialog?"
+      answer: 'Call `addOnUISdk.instance.runtime.dialog.close()` with optional result object.'
+
+    - question: "What properties does the result object contain?"
+      answer: "Result contains buttonType, and for input dialogs also fieldValue with user input."
+
+    - question: "What are common use cases for modal dialogs?"
+      answer: "Confirmations, warnings, user input collection, settings, and premium feature access."
 ---
 
 # Use Modal Dialogs
@@ -171,3 +196,37 @@ createButton.onsubmit = () => {
 ## Use Cases
 
 Modals are versatile tools suitable for a wide range of scenarios. They can display simple information or warning pop-ups when you need users to confirm an action or provide input. Additionally, modals can present more complex content, such as custom dialogs that initiate the payment process for accessing add-on's premium features.
+
+## FAQs
+
+#### Q: How do I show a modal dialog?
+
+**A:** Call `addOnUISdk.app.showModalDialog(options)` with variant, title, and description options.
+
+#### Q: What dialog variants are available?
+
+**A:** confirmation, information, warning, destructive, error, input, and custom variants.
+
+#### Q: How do I get user input from a dialog?
+
+**A:** Use variant "input" with a field object containing label, placeholder, and fieldType properties.
+
+#### Q: What button types can be returned?
+
+**A:** Dialog results contain buttonType with values like primary, secondary, or cancel.
+
+#### Q: How do I create a custom dialog?
+
+**A:** Use variant "custom" with src pointing to HTML file and optional size properties.
+
+#### Q: How do I programmatically close a dialog?
+
+**A:** Call `addOnUISdk.instance.runtime.dialog.close()` with optional result object.
+
+#### Q: What properties does the result object contain?
+
+**A:** Result contains buttonType, and for input dialogs also fieldValue with user input.
+
+#### Q: What are common use cases for modal dialogs?
+
+**A:** Confirmations, warnings, user input collection, settings, and premium feature access.

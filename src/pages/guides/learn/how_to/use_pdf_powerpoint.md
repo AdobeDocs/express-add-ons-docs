@@ -19,6 +19,31 @@ description: Use PDF and PowerPoint.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I import PDF files?"
+      answer: 'Call `addOnUISdk.app.document.importPdf(blob, attributes)` with PDF blob and MediaAttribute object.'
+
+    - question: "How do I import PowerPoint files?"
+      answer: 'Call `addOnUISdk.app.document.importPowerPoint(blob, attributes)` with PowerPoint blob and MediaAttribute.'
+
+    - question: "What PowerPoint formats are supported?"
+      answer: "Both .pptx and .ppt file formats are supported."
+
+    - question: "Are MediaAttributes required for PDF/PowerPoint?"
+      answer: "Yes, title is mandatory and author is optional in the MediaAttribute object."
+
+    - question: "Will users see a consent dialogue?"
+      answer: "Yes, PDF and PowerPoint imports trigger consent dialogues that users must confirm."
+
+    - question: "Can I bypass the consent dialogue?"
+      answer: "No, the consent dialogue cannot be bypassed for PDF and PowerPoint imports."
+
+    - question: "Are vector elements preserved?"
+      answer: "Yes, supported vector elements like shapes and text remain editable after import."
+
+    - question: "How many pages are imported?"
+      answer: "All pages from PDF and PowerPoint files are imported into the document."
 ---
 
 # Use PDF and PowerPoint
@@ -99,3 +124,37 @@ addOnUISdk.ready.then(async () => {
   }
 });
 ```
+
+## FAQs
+
+#### Q: How do I import PDF files?
+
+**A:** Call `addOnUISdk.app.document.importPdf(blob, attributes)` with PDF blob and MediaAttribute object.
+
+#### Q: How do I import PowerPoint files?
+
+**A:** Call `addOnUISdk.app.document.importPowerPoint(blob, attributes)` with PowerPoint blob and MediaAttribute.
+
+#### Q: What PowerPoint formats are supported?
+
+**A:** Both .pptx and .ppt file formats are supported.
+
+#### Q: Are MediaAttributes required for PDF/PowerPoint?
+
+**A:** Yes, title is mandatory and author is optional in the MediaAttribute object.
+
+#### Q: Will users see a consent dialogue?
+
+**A:** Yes, PDF and PowerPoint imports trigger consent dialogues that users must confirm.
+
+#### Q: Can I bypass the consent dialogue?
+
+**A:** No, the consent dialogue cannot be bypassed for PDF and PowerPoint imports.
+
+#### Q: Are vector elements preserved?
+
+**A:** Yes, supported vector elements like shapes and text remain editable after import.
+
+#### Q: How many pages are imported?
+
+**A:** All pages from PDF and PowerPoint files are imported into the document.
