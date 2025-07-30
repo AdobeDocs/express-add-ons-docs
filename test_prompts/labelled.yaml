@@ -1,0 +1,767 @@
+Spectrum:
+    - prompt: What is spectrum?
+      answer: |-
+          Spectrum is Adobe's design system that provides:
+          - A unified look and feel across Adobe products
+          - Pre-built UI components and patterns
+          - Accessibility best practices
+          - Design tokens and guidelines
+          - Cross-platform consistency
+          It helps developers create Adobe-like experiences efficiently.
+    - prompt: How to make my UI spectrum compliant?
+      answer: |-
+          To make your UI compliant with the Spectrum design system, follow these steps:
+
+          1. Use Spectrum Web Components: Utilize the pre-built UI components from the Spectrum Web Components library. These components are designed to work seamlessly together and provide a consistent user experience.
+
+          2. Install Required Packages: Install the necessary Spectrum Web Components packages using npm. For example:
+          npm install @spectrum-web-components/theme
+          npm install @spectrum-web-components/field-label
+          npm install @spectrum-web-components/textfield
+          npm install @spectrum-web-components/button
+
+          3. Import Spectrum Styles and Themes: Import the Spectrum typography, base theme, and Express themes into your project. For example:
+          import '@spectrum-web-components/styles/typography.css';
+          import '@spectrum-web-components/theme/sp-theme.js';
+          import '@spectrum-web-components/theme/express/theme-darkest.js';
+          import '@spectrum-web-components/theme/express/theme-dark.js';
+          import '@spectrum-web-components/theme/express/theme-light.js';
+          import '@spectrum-web-components/theme/express/theme-lightest.js';
+          import '@spectrum-web-components/theme/express/scale-medium.js';
+          import '@spectrum-web-components/theme/express/scale-large.js';
+
+          4. Use Spectrum Components: Import and use the specific Spectrum components you need in your code. For example:
+          import '@spectrum-web-components/button/sp-button.js';
+          import '@spectrum-web-components/field-label/sp-field-label.js';
+          import '@spectrum-web-components/textfield/sp-textfield.js';
+
+          5. Wrap Components with <sp-theme>: Ensure all your UI components are wrapped within an <sp-theme> tag to apply the desired scale, color, and theme settings. For example:
+          <body>
+              <sp-theme scale="medium" color="light" theme="express">
+                  <sp-field-label required for="txtName">Enter your full name in the field below</sp-field-label>
+                  <sp-textfield multiline grows id="txtName" placeholder="Full Name"></sp-textfield>
+                  <sp-button>Submit</sp-button>
+              </sp-theme>
+          </body>
+          6. Follow Spectrum Design Guidelines: Adhere to the Spectrum design guidelines for color, typography, layout, and component usage.
+          Use Spectrum CSS variables for consistent styling and ensure your UI aligns with the Spectrum design system.
+
+          By following these steps, you can ensure that your UI is compliant with the Spectrum design system and provides a consistent and accessible user experience.
+    - prompt: Is there a spectrum component for text boxes?
+      answer: |-
+          Yes, Spectrum provides several text input components:
+          - <sp-textfield>: For single-line text input
+          - <sp-textarea>: For multi-line text input
+          Both components support:
+          - Placeholder text
+          - Validation states
+          - Disabled state
+          - Read-only mode
+          - Helper text
+          - Error messages
+    - prompt: What are common spectrum components?
+      answer: |-
+          Common Spectrum components include:
+          - Buttons: <sp-button>
+          - Text inputs: <sp-textfield>
+          - Dropdowns: <sp-picker>
+          - Checkboxes: <sp-checkbox>
+          - Radio buttons: <sp-radio>
+          - Sliders: <sp-slider>
+          - Progress bars: <sp-progress-bar>
+          - Dialogs: <sp-dialog>
+          - Cards: <sp-card>
+          - Tabs: <sp-tabs>
+          These components provide consistent styling and behavior across Adobe applications.
+    - prompt: What are spectrum themes?
+      answer: |-
+          Spectrum themes control the visual appearance of your application:
+          - Color schemes: light, dark, and darkest
+          - Scales: medium (default), large, and XLarge
+          - Color stops: light, dark, and darkest
+          - Platform-specific styling
+          - High contrast modes
+          Themes are applied using the <sp-theme> component:
+          <sp-theme scale="medium" color="light">
+            <!-- Content -->
+          </sp-theme>
+DocumentAPIs:
+    - prompt: How to draw in the canvas?
+      answer: |-
+          You can draw shapes in the canvas using the editor APIs:
+          - createRectangle(): Creates a rectangle
+          - createEllipse(): Creates circles and ellipses
+          - createLine(): Creates lines
+          - createPath(): Creates custom paths
+
+          Example:
+          const rect = editor.createRectangle();
+          rect.width = 100;
+          rect.height = 50;
+          editor.context.insertionParent.children.append(rect);
+    - prompt: How to select elements in the canvas?
+      answer: |-
+          To select elements in the Adobe Express canvas, you can use the editor.context.selection property provided by the Editor class.
+          This property returns an array of currently selected nodes.
+          You can check if there is a selection using the editor.context.hasSelection property.
+          Here's a simple example:
+
+          if (editor.context.hasSelection) {
+              const selectedNodes = editor.context.selection;
+              selectedNodes.forEach(node => {
+                  console.log(`Selected node type: ${node.type}`);
+              });
+          } else {
+              console.log('No elements are selected.');
+          }
+          This code checks if there are any selected elements and logs their types to the console.
+    - prompt: How to add an image blob in the page using sandbox apis?
+      answer: |-
+          You can add images using the editor.loadBitmapImage() and editor.createImageContainer() API:
+
+          const addImageToCanvas = async (blob) => {
+              const bitmapImage = await editor.loadBitmapImage(blob);
+              editor.queueAsyncEdit(() => {
+                  const imageContainer = editor.createImageContainer(bitmapImage);
+                  editor.context.insertionParent.children.append(imageContainer);
+              });
+          };
+
+    - prompt: What are scenes?
+      answer: |-
+          In Adobe Express, scenes refer to distinct sections or layers within a document that can contain various elements such as images, text, shapes, and other media.
+          Each scene can be thought of as a separate canvas or workspace where different design components are organized and manipulated.
+          Scenes allow users to create complex layouts and designs by managing multiple visual elements in a structured manner, enabling better organization and presentation of content within the document.
+    - prompt: Can I detect media in a page?
+      answer: |-
+          Yes, you can detect media in a page using the Adobe Express add-on SDK.
+          You would typically use the getPagesMetadata() method to retrieve metadata for all pages in the document,
+          and then check the hasPremiumContent or hasTemporalContent properties of the PageMetadata to determine if there is media present on the page.
+          Additionally, you can inspect the SceneNodeType to identify specific media types on the page.
+    - prompt: How to work with colors in a page?
+      answer: |-
+          To work with colors in a page within an Adobe Express add-on, you can utilize the `ColorUtils` module provided by the Adobe Express SDK. This module allows you to create color objects from RGB values or Hex strings, and it also provides functions to convert colors back to Hex format. Here’s a brief overview of how to use it:
+          1. **Import the ColorUtils Module**:
+            ```javascript
+            import { colorUtils } from 'express-document-sdk';
+            ```
+
+          2. **Creating a Color Object**:
+            You can create a color object using RGB values or a Hex string:
+            ```javascript
+            const colorFromRGB = colorUtils.fromRGB(255, 0, 0); // Red color
+            const colorFromHex = colorUtils.fromHex('#00ff00'); // Green color
+            ```
+
+          3. **Using the Color Object**:
+            You can then use this color object to set properties like fill or stroke in your shapes or elements:
+            ```javascript
+            ellipse.fill = editor.makeColorFill(colorFromRGB);
+            ```
+
+          4. **Converting Color to Hex**:
+            If you need to convert a color object back to a Hex string, you can do so as follows:
+            ```javascript
+            const hexColor = colorUtils.toHex(colorFromRGB);
+            console.log(hexColor); // Outputs the Hex representation of the color
+            ```
+
+          5. **Setting Stroke Properties**:
+            You can also set stroke properties using the color object:
+            ```javascript
+            ellipse.stroke = editor.makeStroke({
+                color: colorFromHex,
+                width: 2,
+            });
+            ```
+          By following these steps, you can effectively manage and apply colors in your Adobe Express add-on pages, ensuring a visually appealing design that adheres to the guidelines provided by Adobe.
+
+    - prompt: Can we use different fonts for texts in a page?
+      answer: |-
+          Yes, you can use different fonts for texts in a page when developing an Adobe Express add-on.
+          You can apply different fonts to specific ranges of text within a TextNode using the applyCharacterStyles() method or by modifying the characterStyleRanges property.
+          Each range can have its own font style, allowing for a mix of fonts on the same page.
+          Just ensure that the fonts are instantiated correctly using the fonts.fromPostscriptName() method, which is asynchronous and resolves to an AvailableFont instance.
+    - prompt: What kind of properties of text can we change and how?
+      answer: |-
+          In Adobe Express add-ons, you can change various properties of text using the `CharacterStyles` and `CharacterStylesRange` interfaces. The properties you can modify include:
+
+          1. **color**: Change the text color using a `Color` object.
+          2. **font**: Specify the font to be used, which must be an `AvailableFont` type.
+          3. **fontSize**: Adjust the size of the text in points (number).
+          4. **letterSpacing**: Modify the letter spacing, specified as a delta relative to the font's default spacing (in units of 1/1000 em).
+          5. **underline**: Add or remove an underline from the text (boolean).
+          6. **fonts**: To change the font of a text, you can use the characterStyleRanges property of the TextContentModel class. Make sure that the font you are trying to set is available for editing. You can check the availableForEditing property to ensure the font is editable
+
+          Also, remember that some features like fonts is currently experimental, so you need to set the experimentalApis flag to true in your manifest.json file.
+          These properties can be applied to any range of characters, allowing for granular control over text styling. To apply these styles, you would typically use the `applyCharacterStyles()` method or set character style ranges using `characterStyleRanges` setter.
+UIApis:
+    - prompt: How to add images to the page
+      answer: |-
+          import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+          // Wait for the SDK to be ready
+          await addOnUISdk.ready;
+
+          // Reference to the active document
+          const { document } = addOnUISdk.app;
+
+          async function addImageFromBlob(blob) {
+              try {
+                  await document.addImage(blob);
+                  console.log("Image added successfully.");
+              } catch (error) {
+                  console.log("Failed to add the image to the page.", error);
+              }
+          }
+
+          // Example usage: Fetch an image and convert it to a blob
+          async function fetchAndAddImage(url) {
+              const response = await fetch(url);
+              const blob = await response.blob();
+              await addImageFromBlob(blob);
+          }
+
+          // Call the function with an image URL
+          fetchAndAddImage('https://example.com/image.jpg');
+UseCases:
+    - prompt: How to drag and drop images from add-on to canvas?
+      answer: |-
+          To enable drag and drop images from your add-on to the canvas, you can use the `enableDragToDocument` method provided by the Adobe Express Add-on SDK. Here is an example of how to implement this functionality using local images:
+
+          ```js
+          import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+          const IMAGES = new Map([
+              ["image1.jpg", "./images/image1.jpg"],    
+              ["image2.jpg", "./images/image2.jpg"],
+              ["image3.jpg", "./images/image3.jpg"]
+          ]);
+
+          let gallery;
+
+          // Wait for the SDK to be ready before rendering elements in the DOM.
+          addOnUISdk.ready.then(async () => {
+              // Create elements in the DOM.
+              gallery = document.createElement("div");
+              gallery.className = "gallery";
+
+              IMAGES.forEach((url, id) => {
+                  const image = document.createElement("img");
+                  image.id = id;
+                  image.src = url;
+                  image.addEventListener("click", addToDocument);
+
+                  // Enable drag to document for the image.
+                  addOnUISdk.app.enableDragToDocument(image, {
+                      previewCallback: element => {
+                          return new URL(element.src);
+                      },
+                      completionCallback: async (element) => {
+                          return [{ blob: await getBlob(element.src) }];
+                      }
+                  });
+
+                  gallery.appendChild(image);
+              });
+
+              // Register event handler for "dragstart" event
+              addOnUISdk.app.on("dragstart", startDrag);
+              // Register event handler for 'dragend' event
+              addOnUISdk.app.on("dragend", endDrag);
+
+              document.body.appendChild(gallery);
+          });
+
+          /**
+          * Add image to the document.
+          */
+          async function addToDocument(event) {
+              const url = event.currentTarget.src;
+              const blob = await getBlob(url);
+              addOnUISdk.app.document.addImage(blob);
+          }
+
+          /**
+          * Handle "dragstart" event
+          */
+          function startDrag(eventData) {
+              console.log("The drag event has started for", eventData.element.id);
+          }
+
+          /**
+          * Handle "dragend" event
+          */
+          function endDrag(eventData) {
+              if (!eventData.dropCancelled) {
+                  console.log("The drag event has ended for", eventData.element.id);
+              } else {
+                  console.log("The drag event was cancelled for", eventData.element.id);
+              }
+          }
+
+          /**
+          * Get the binary object for the image.
+          */
+          async function getBlob(url) {
+              return await fetch(url).then(response => response.blob());
+          }
+
+          ```
+          This code snippet demonstrates how to enable drag and drop functionality for images in your add-on. It includes setting up the images, enabling drag to document, and handling drag events."
+    - prompt: How to use OAUTH?
+      answer: |-
+          To use OAuth 2.0 in your Adobe Express add-on, follow these steps:
+
+           1. **Setup with OAuth Provider**:
+             - Log in to the OAuth provider's website and create an application (e.g., Dropbox).
+             - Add `https://new.express.adobe.com/static/oauth-redirect.html` to the "Redirect URIs" field.
+             - Save the form and note the generated client Id/application Id/application key.
+
+           2. **Update Manifest File**:
+             - Update your add-on `manifest.json` file with the hostname of the OAuth provider's authorization URL. For example:
+           ```json
+           {
+               "id": "<ADD_ON_ID>",
+               "name": "<ADD_ON_NAME>",
+               "version": "1.0.0",
+               "manifestVersion": 1,
+               "requirements": {
+                   "apps": ["Express"]
+               },
+               "entryPoints": [
+                   {
+                       "type": "panel",
+                       "id": "panel1",
+                       "label": {
+                           "default": "<ADD_ON_LABEL>"
+                       },
+                       "main": "index.html",
+                       "permissions": {
+                           "oauth": ["login.microsoftonline.com", "www.dropbox.com"]
+                       }
+                   }
+               ]
+           }
+           ```
+
+           3. **Implement OAuth Flow**:
+             - Use the following code snippet to perform the OAuth exchange to retrieve an access token:
+           ```js
+           import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+           
+           const DROPBOX_AUTHORIZATION_URL = "https://www.dropbox.com/oauth2/authorize";
+           const DROPBOX_TOKEN_URL = "https://api.dropboxapi.com/oauth2/token";
+           const DROPBOX_CLIENT_ID = "<DROPBOX_CLIENT_ID>";
+           const DROPBOX_SCOPE = "<DROPBOX_SPACE_SEPARATED_SCOPES>";
+           
+           addOnUISdk.ready.then(async () => {
+               const challenge = await oauthUtils.generateChallenge();     
+               await authorize(challenge);         
+           });
+           
+           async function authorize(challenge) {
+               const { id, code, redirectUri, result } = await oauth.authorize({
+                   authorizationUrl: DROPBOX_AUTHORIZATION_URL,
+                   clientId: DROPBOX_CLIENT_ID,
+                   scope: DROPBOX_SCOPE,
+                   codeChallenge: challenge.codeChallenge
+               });
+           
+               const { status, description } = result;
+               if (status !== "SUCCESS") {
+                   throw new Error(`Status: ${status} | Description: ${description}`);
+               }
+           
+               await oauthUtils.generateAccessToken({
+                   id,
+                   clientId: DROPBOX_CLIENT_ID,
+                   codeVerifier: challenge.codeVerifier,
+                   code,
+                   tokenUrl: DROPBOX_TOKEN_URL,
+                   redirectUri
+               });
+           
+               const accessToken = await oauthUtils.getAccessToken(id);
+           }
+           ```
+
+    - prompt: What is cross origin policy, and why is it required for my add-on?
+      answer: |-
+          CORS (Cross-Origin Resource Sharing) policy in Adobe Express add-ons is a security feature implemented by browsers to control whether JavaScript code can make requests to a different origin.
+          Add-ons are run in a sandboxed iframe environment with a null origin, which can cause issues when fetching from services that don't have CORS enabled or support a null origin.
+          To manage this, each add-on is provided with a unique subdomain that can be included in the allowed list of origins for a service integration.
+          Additionally, developers can use server-side CORS handling or a CORS proxy server to bypass CORS issues during development.
+Introspective:
+    - prompt: Hi
+      answer: |-
+          I am a helpful code assistant for answering questions about the Express add-ons SDK. If you have any questions or need assistance with the SDK, feel free to ask!
+    - prompt: Who are you?
+      answer: |-
+          I am a helpful code assistant for answering questions about the Express add-ons SDK. I'm designed to help developers work with the SDK effectively.
+    - prompt: What can you do?
+      answer: |-
+          I can help you with various tasks related to the Express add-ons SDK, including:
+          - Answering questions about SDK features and capabilities
+          - Providing code examples and explanations
+          - Helping debug SDK-related issues
+          - Offering best practices and guidance
+    - prompt: Can you answer my questions?
+      answer: |-
+          Yes, I can answer your questions about the Express add-ons SDK. Feel free to ask anything specific about the SDK's features, implementation, or best practices.
+    - prompt: What languages do you understand?
+      answer: |-
+          I understand and can help with JavaScript/TypeScript code used with the Express add-ons SDK, as these are the primary languages used for SDK development.
+    - prompt: Can you write C++ code for me?
+      answer: |-
+          I apologize, but I'm specifically designed to help with the Express add-ons SDK, which uses JavaScript/TypeScript. I cannot assist with C++ development.
+    - prompt: Can you help in reviewing my code?
+      answer: |-
+          Yes, I can help review your Express add-ons SDK code. I can provide feedback on best practices, identify potential issues, and suggest improvements.
+    - prompt: Can you fix my code?
+      answer: |-
+          Yes, I can help identify and fix issues in your Express add-ons code. Please share the specific code you're having trouble with, and I'll assist in debugging and resolving the problems.
+Getting_Started:
+    - prompt: What is an Express add-on?
+      answer: |-
+          An Express add-on refers to any feature that is distributed independently from the core Adobe Express application, which users can enable or install to extend its functionality. Adobe provides built-in add-ons, but third-party developers can also create and distribute their own add-ons by following the provided documentation.
+    - prompt: What can I do with an add-on?
+      answer: |-
+          With an add-on in Adobe Express, you can extend the functionality of the platform by creating custom features and tools. This includes:
+          - Enhancing User Experience: Add-ons can provide additional tools or features that improve the workflow for users, such as new design elements, templates, or editing capabilities.
+          - Integrating External Services: You can connect your add-on to external APIs or services, allowing users to access additional resources or functionalities directly within Adobe Express.
+          - Automating Tasks: Add-ons can automate repetitive tasks, making it easier for users to complete their projects efficiently.
+          - Customizing Workflows: You can create tailored solutions that fit specific user needs or industry requirements, enhancing the overall usability of Adobe Express.
+          - Prototyping and Experimentation: The Code Playground allows for rapid prototyping, enabling developers to test and iterate on their ideas quickly.
+          Overall, add-ons provide a way to customize and enhance the Adobe Express experience, making it more versatile and powerful for users.
+    - prompt: How to build an add-on?
+      answer: |-
+          To build an add-on for Adobe Express, follow these steps:
+
+          1. Prerequisites:
+            - Install NodeJS (version 16 or greater) and npm (version 8 or greater)
+            - Have basic knowledge of HTML, CSS, and JavaScript
+            - Create an Adobe Express account if you don't have one
+
+          2. Install the Adobe Express Add-on CLI:
+            - Use the command line to create and host your add-on directly from your local machine
+
+          3. Create Your Add-on Project:
+            - Open your terminal and run: `npm create @adobe/express-add-on hello-world`
+            - This creates a new add-on project named "hello-world" using a JavaScript template with Document Sandbox support
+
+          4. Build and Start Your Add-on:
+            - Change into the newly created add-on folder
+            - Run `npm install && npm start`
+            - This will host your add-on on a local server
+
+          5. Enable Add-on Development Mode:
+            - Go to Adobe Express
+            - Click on your user avatar
+            - Enable the add-on development mode in settings
+
+          6. Load and Run Your Add-on:
+            - Create a new project in Adobe Express
+            - Go to the Add-ons panel
+            - Connect your locally hosted add-on by entering the URL (usually https://localhost:5241)
+
+          7. Edit Your Add-on:
+            - While your add-on is running, you can edit the code in the src/index.html file
+            - Changes will be reflected automatically due to hot module reload
+
+          8. Manifest Updates:
+            - If you make changes to the manifest.json, you will need to manually refresh the add-on in Adobe Express
+
+          By following these steps, you can successfully build and run your first Adobe Express add-on!
+    - prompt: What are the pre-requisites to building an add-on?
+      answer: |-
+          The prerequisites to building an Adobe Express add-on are:
+
+          NodeJS: You need to have NodeJS installed (major version of 16 or greater).
+          npm: You should have npm installed (major version of 8 or greater).
+          Familiarity with HTML, CSS, and JavaScript: Basic knowledge of these programming languages is required.
+          Adobe Express Account: You need an Adobe Express account, which can be created using an existing Adobe ID or by signing up for free.
+    - prompt: How to debug my add-on?
+      answer: |-
+          To debug your Adobe Express add-on, follow these steps:
+          Access Developer Tools: Right-click on the browser window where Adobe Express is running and select Inspect Element or Inspect from the context menu. Make sure to right-click outside of the document area, preferably in the header of your add-on.
+
+          Navigate to the Sources Tab: In the developer tools, go to the Sources tab. Here, you can locate and select the JavaScript file that contains the code you want to debug. You can find it in the filesystem list or use the Search tab to locate it.
+
+          Set Breakpoints: Click on the line number in your JavaScript file to set breakpoints. This will pause the execution of your code at that line, allowing you to inspect variables and step through your code line by line.
+
+          Use the Console: Utilize the console to log messages and errors from your code. Use appropriate severity levels with console.log(), console.warn(), console.error(), and console.debug() to categorize your messages. You can filter these messages in the developer tools for easier identification.
+
+          Monitor Network Requests: Use the Network Monitor to observe the network requests made by your add-on, which helps in understanding how it interacts with other resources and services.
+
+          Analyze Performance: The Profiler can be used to analyze the performance of your add-on and identify any slow or inefficient areas.
+
+          Add-on SDK Developer Tools: Use the Add-on Development tools panel for additional logging details and action buttons to refresh or clear data associated with your add-on.
+
+          Debugging with Visual Studio Code: If you are using Visual Studio Code, you can set up a launch.json file to debug your add-on directly from the editor. Start your add-on with npm run start, select the appropriate debugging profile, and set breakpoints as needed.
+
+          By following these steps, you can effectively debug your Adobe Express add-on and resolve any issues that arise during development.
+    - prompt: How to publish my add-on?
+      answer: |-
+          To publish your add-on, follow these steps:
+
+          Prepare Your Metadata: Ensure you have all required metadata ready, including the add-on name, summary, full description, help URL, support email, privacy notice, EULA, keywords, and release notes.
+
+          Prepare Your Assets: Create the necessary assets, including icons in three sizes (36x36, 64x64, and 144x144 pixels) and at least one screenshot (1360x800 pixels).
+
+          Prepare Your Add-on Package: Use the command npm run package in your terminal to create a distributable zip file of your add-on, named dist.zip.
+
+          Review Guidelines: Carefully review Adobe's submission guidelines to ensure compliance.
+
+          Create a New Add-on Listing: In Adobe Express, navigate to the Add-ons section and create a new listing for your add-on.
+
+          Add-on Listing Settings: Fill in the required settings for your add-on listing.
+
+          Create a Public Listing: Navigate to the Public listing tab and click the Create public listing button.
+
+          Enter Listing Details: Fill in the required details for your add-on, ensuring all fields are completed correctly.
+
+          Upload Screenshots: Upload 1-5 screenshots showcasing your add-on.
+
+          Upload Your Add-on Package: Upload the dist.zip file you created earlier.
+
+          Submit for Review: After verifying that all information is correct and complete, submit your add-on for review.
+
+          Once your add-on passes the review process, it will be published and available for users.
+    - prompt: How to make my add-on look good?
+      answer: |-
+          To make your Adobe Express add-on look good, follow these design principles and best practices:
+
+          Consistency: Ensure your add-on feels like a natural extension of Adobe Express by adhering to the Spectrum Design System. This includes using similar visual elements and interaction patterns.
+
+          Accessibility: Design your add-on to be accessible to all users. Consider contrast, text size, and intuitive interactions to remove barriers for users with different abilities.
+
+          Usability: Prioritize ease of use by making navigation straightforward and eliminating unnecessary steps. Provide clear feedback to users about their actions.
+
+          Aesthetics: Create a visually appealing design that complements functionality. Align your design with Adobe's brand identity to enhance user experience.
+
+          Responsive Design: Design responsively to accommodate different device sizes and ensure your add-on looks good on all screens.
+
+          Layout: Use a vertical layout for UI components, with full-width buttons and vertical scrolling for overflow. Consider a grid layout for image galleries.
+
+          Feedback Indicators: Use loading and progress indicators to provide visual feedback during processes.
+
+          Theme Adaptability: Ensure your add-on can adapt to appearance changes, such as future support for dark mode.
+
+          Testing: Test your add-on in different languages to ensure the UI remains functional and text is displayed correctly.
+
+          By following these guidelines, you can create an add-on that is not only functional but also visually appealing and user-friendly.
+    - prompt: Can I share my add-on with someone?
+      answer: |-
+          Yes, you can share your add-on with others by creating a private distribution link. This allows you to share your add-on for use or testing. You will need to prepare your add-on package, create a new add-on listing, and then follow the steps to create a private link as outlined in the Adobe Express documentation.
+    - prompt: What kind of add-ons are possible?
+      answer: |-
+          In Adobe Express, you can create a variety of add-ons that enhance the user experience and functionality of the platform. Some possible types of add-ons include:
+          UI Components: Add-ons that provide custom user interface elements, such as buttons, sliders, or forms, using Adobe's Spectrum Design System.
+
+          Content Generators: Tools that generate content, such as templates, graphics, or text, based on user input or predefined settings (e.g., a bingo card generator).
+
+          Integrations: Add-ons that connect Adobe Express with other services or APIs, allowing users to import or export content seamlessly.
+
+          Customization Tools: Features that allow users to customize their projects, such as color pickers, font selectors, or layout adjusters.
+
+          Data Visualization: Add-ons that help users visualize data in creative ways, such as charts or infographics.
+
+          Automation Tools: Tools that automate repetitive tasks within Adobe Express, improving workflow efficiency.
+
+          Educational Tools: Add-ons that provide tutorials, tips, or resources to help users learn how to use Adobe Express more effectively.
+
+          These add-ons can be built using JavaScript and the Adobe Express Add-on SDK, allowing for a wide range of functionalities and user interactions.
+    - prompt: Suggest me an interesting add-on to extend Express functionality
+      answer: |-
+          One interesting add-on idea to extend Adobe Express functionality could be a Social Media Post Scheduler. This add-on would allow users to create and schedule their social media posts directly from Adobe Express.
+          Features:
+          Post Creation: Users can design their posts using Adobe Express tools and templates.
+          Scheduling: Users can select a date and time to publish their posts on various social media platforms (e.g., Facebook, Twitter, Instagram).
+          Preview: Users can preview how their posts will look on different platforms before scheduling.
+          Analytics: After posts are published, users can view engagement metrics (likes, shares, comments) to analyze performance.
+          Multi-Platform Support: Users can connect multiple social media accounts and manage them from one place.
+          Implementation Considerations:
+          Use OAuth for authentication with social media APIs.
+          Handle CORS issues when fetching data from social media platforms.
+          Ensure compliance with each platform's API usage policies.
+          This add-on would enhance the user experience by integrating social media management directly into the design workflow, making it easier for users to create and share content.
+Tooling:
+    - prompt: How to setup my environment?
+      answer: |-
+          To set up your environment for developing Adobe Express add-ons, follow these steps:
+          Install NodeJS and NPM:
+
+          Download and install NodeJS (make sure you have a major version of 16 or greater).
+          NPM (Node Package Manager) is included with NodeJS, but ensure you have a major version of 8 or greater.
+          Familiarity with HTML, CSS, and JavaScript:
+
+          Ensure you have a basic understanding of programming in HTML, CSS, and JavaScript, as these are essential for developing add-ons.
+          Install the Adobe Express Add-on CLI:
+
+          The CLI is required for add-on development. You can install it using the following command in your terminal:
+          `npm install -g @adobe/create-ccweb-add-on`
+          Create an Adobe Express Account:
+
+          If you don’t have an Adobe ID, create one for free. You will need this to access Adobe Express.
+          Once you have completed these steps, your development environment will be set up and ready for creating Adobe Express add-ons!
+
+    - prompt: What is CLI?
+      answer: |-
+          The Adobe Express Add-on CLI (Command Line Interface) is a tool that helps developers create, test, and manage add-ons. It provides commands to:
+          - Create new add-on projects from templates
+          - Start a local development server
+          - Build add-ons for production
+          - Validate add-on manifests
+          - Generate add-on packages
+          The CLI streamlines the development workflow and ensures best practices are followed.
+    - prompt: I cannot load and run my add-ons
+      answer: |-
+          If you're having trouble loading and running your add-on, try these troubleshooting steps:
+          1. Verify your local server is running (npm start)
+          2. Check if Add-on Development Mode is enabled in Adobe Express
+          3. Ensure you're using the correct localhost URL (usually https://localhost:5241)
+          4. Clear browser cache and reload Adobe Express
+          5. Check browser console for any error messages
+          6. Verify your manifest.json is properly configured
+          7. Make sure all required dependencies are installed
+    - prompt: My local changes are not reflecting in the add-on?
+      answer: |-
+          If your local changes aren't reflecting in the add-on:
+          1. Ensure your local development server is running
+          2. Check if hot reload is working properly
+          3. Try manually refreshing the add-on in Adobe Express
+          4. If you modified manifest.json, you must reload the add-on
+          5. Clear browser cache if needed
+          6. Check for any build errors in the terminal
+          7. Verify your file changes are being saved
+    - prompt: Can I use react for my add-on?
+      answer: |-
+          Yes, you can use React for your Adobe Express add-on development. Here's how:
+          1. Create a new add-on using the React template:
+            npm create @adobe/express-add-on@latest my-react-addon -- --template react
+          2. The template includes:
+            - React and React DOM dependencies
+            - Webpack configuration for React
+            - Sample React components
+            - TypeScript support
+          3. You can also add React to an existing project by installing required dependencies and configuring webpack
+Conceptual:
+    - prompt: What is UI code?
+      answer: |-
+          UI code refers to the code that is responsible for creating and managing the user interface of an application or add-on.
+          In the context of Adobe Express add-ons, UI code typically includes HTML, CSS, and JavaScript that define how the add-on's interface looks and behaves.
+          This code handles user interactions, displays information, and communicates with the underlying logic of the add-on,
+          often through APIs or other methods of communication with the document sandbox or other components of the application.
+    - prompt: What is document API?
+      answer: |-
+          The Document API is a set of JavaScript APIs that allow add-ons to interact with and modify the Adobe Express document. It provides:
+          - Methods to create and manipulate document elements
+          - Access to document properties and structure
+          - Tools for working with colors, shapes, text, and other document components
+          The Document API runs in the document sandbox, separate from the UI code.
+    - prompt: What can I do with UI code?
+      answer: |-
+          With UI code in Adobe Express add-ons, you can:
+          - Create interactive user interfaces
+          - Handle user input and events
+          - Display information and controls
+          - Make API calls to external services
+          - Send messages to the document sandbox
+          - Manage add-on state and data
+          - Style your add-on's appearance
+    - prompt: What can I do with document APIs?
+      answer: |-
+          With Document APIs in Adobe Express add-ons, you can:
+          - Create and modify shapes, text, and images
+          - Access and update document properties
+          - Manipulate document elements
+          - Work with colors and gradients
+          - Handle document events
+          - Manage document structure
+          - Apply effects and transformations
+    - prompt: How to send message from UI to document sandbox?
+      answer: |-
+          To send a message from the UI iframe to the document sandbox in an Adobe Express add-on, you can use the apiProxy() method to create a proxy to the document sandbox's API.
+          Here’s a step-by-step guide:
+          1. Expose an API in the Document Sandbox: First, you need to expose an API in the document sandbox that the UI can call. This is done using the runtime.exposeApi() method.
+              // code.js (Document Sandbox)
+              import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+              const { runtime } = addOnSandboxSdk.instance;
+
+              runtime.exposeApi({
+                  receiveMessage: (message) => {
+                      console.log('Message from UI:', message);
+                      // Handle the message
+                  }
+              });
+          2. Create a Proxy in the UI: In your UI code, use runtime.apiProxy() to get a proxy to the document sandbox API.
+              // index.html (UI iframe)
+              import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+              addOnUISdk.ready.then(async () => {
+                  const { runtime } = addOnUISdk.instance;
+                  const sandboxProxy = await runtime.apiProxy("documentSandbox");
+
+                  // Send a message to the Document Sandbox
+                  await sandboxProxy.receiveMessage('Hello from UI!');
+              });
+          In this example, when the UI sends a message using sandboxProxy.receiveMessage(), it will be logged in the document sandbox console.
+          You can replace the message handling logic with whatever functionality you need.
+    - prompt: What is an iframe?
+      answer: |-
+          In Adobe Express add-ons, an iframe (inline frame) is:
+          - A container that hosts your add-on's UI code
+          - Isolated from the main Adobe Express application
+          - Runs in a sandboxed environment for security
+          - Communicates with the document sandbox through messages
+          - Has its own JavaScript context and DOM
+          The iframe ensures your add-on runs safely and independently.
+Distribution:
+    - prompt: How to distribute my add-on?
+      answer: |-
+          To distribute your Adobe Express add-on, you need to follow these steps:
+
+          1. **Prepare your metadata**: Ensure you have all the required information such as add-on name, summary, full description, help URL, support email address, privacy notice, EULA, keywords, and release notes.
+
+          2. **Prepare your assets**: Create the necessary icons (36x36, 64x64, 144x144) and screenshots (1360x800). Optionally, prepare additional screenshots and a publisher logo.
+
+          3. **Prepare your add-on package**: Use the CLI to package your add-on by running `npm run package` in your terminal. This will create a distributable zip file named `dist.zip`.
+
+          4. **Review guidelines**: Carefully review the guidelines provided by Adobe to ensure your add-on meets all the requirements.
+
+          5. **Create a new Add-on Listing**: From the Adobe Express home page, click the Add-ons link in the left-hand navigation or use the Manage add-ons link in the Add-on Testing section. Create a new add-on listing by providing a unique name for your add-on.
+
+          6. **Add-on Listing Settings**: Note the unique subdomain URL from where your add-on will be hosted.
+
+          7. **Create a new public listing**: Navigate to the Public listing tab and click the Create public listing button. Fill in the required details, upload screenshots, and upload your add-on package.
+
+          8. **Submit for review**: Once all the details are filled in and the package is verified, submit your add-on for review. Adobe will review your add-on to ensure it meets the quality standards before it is published.
+
+          For private distribution, you can create a private link by following similar steps but selecting the Private link tab instead of the Public listing tab.
+
+          For more detailed instructions, refer to the provided documentation on public and private distribution.
+
+Manifest:
+    - prompt: How to add a new entry point?
+      answer: |-
+          The manifst file, named `manifest.json`, is a crucial part of an Adobe Express add-on project. Here are some key points to know about it:
+          1. **Location**: The `manifest.json` file is located at the root level of the add-on bundle.
+
+          2. **Purpose**: It defines the metadata for your add-on and specifies how it should behave.
+
+          3. **Versioning**: The manifest schema version is specified using the `manifestVersion` key. The latest version available is version 2.
+
+          4. **Properties**: The manifest includes several properties such as `testId`, `name`, `version`, `requirements`, and `entryPoints`.
+
+          5. **Requirements**: The `requirements` object specifies the apps the add-on is applicable for, whether it supports touch devices, and if it uses experimental APIs.
+
+          6. **Entry Points**: The `entryPoints` array defines the entry points for the add-on, including the type, id, main file, document sandbox, and permissions.
+
+          7. **Permissions**: The `permissions` object within `entryPoints` specifies the sandbox permissions, OAuth domains, clipboard permissions, and access to the microphone and camera.
+
+          8. **Reloading**: Changes to the manifest require a reload, which can be done using the Refresh button in the Add-on Development panel.
+
+          9. **Development vs. Submission**: Some properties like `testId` and `name` are used only during development and are ignored in add-ons submitted to the marketplace.
+
+          10. **Example**: A sample `manifest.json` file is provided to illustrate the structure and required fields.

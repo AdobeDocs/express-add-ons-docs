@@ -565,20 +565,43 @@ class DocumentationAnalyzer:
 
     def _analyze_llm_faq_presence(self, content: str) -> int:
         """Look for embedded Q&A sections that help LLM training."""
-        faq_patterns = [
+        faq_score = 0
+        
+        # Check for explicit FAQ sections
+        faq_section_patterns = [
             r'<!-- llm-faq-start',
-            r'## FAQ',
-            r'### Frequently Asked Questions',
-            r'Q:.*A:',
-            r'\*\*Q:\*\*.*\*\*A:\*\*'
+            r'^#+ .*FAQ.*$',                        # # FAQ, ## FAQ, etc.
+            r'^#+ .*Frequently Asked Questions.*$', # # Frequently Asked Questions
+            r'^#+ .*Questions.*$',                  # # Questions
+            r'^#+ .*Q&A.*$',                       # # Q&A
         ]
         
-        faq_indicators = sum(len(re.findall(pattern, content, re.IGNORECASE)) for pattern in faq_patterns)
+        # Check for Q&A pair patterns
+        qa_pair_patterns = [
+            r'Q:.*A:',
+            r'\*\*Q:\*\*.*\*\*A:\*\*',
+            r'^#{2,6}\s+.*\?$',                    # Question headings
+        ]
         
-        if faq_indicators >= 3:  # Multiple Q&A pairs
+        # Count FAQ section indicators
+        for pattern in faq_section_patterns:
+            faq_score += len(re.findall(pattern, content, re.IGNORECASE | re.MULTILINE)) * 3
+        
+        # Count Q&A pair indicators
+        for pattern in qa_pair_patterns:
+            faq_score += len(re.findall(pattern, content, re.IGNORECASE | re.MULTILINE))
+        
+        # Bonus for FAQ-related keywords
+        if re.search(r'\bFAQ\b|\bFrequently Asked Questions\b', content, re.IGNORECASE):
+            faq_score += 2
+        
+        # Return scaled score
+        if faq_score >= 5:  # Multiple Q&A pairs or clear FAQ section
             return 100
-        elif faq_indicators >= 1:  # Some FAQ content
+        elif faq_score >= 2:  # Some FAQ content
             return 70
+        elif faq_score >= 1:  # Minimal FAQ indicators
+            return 50
         else:
             return 20
 

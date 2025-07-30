@@ -24,7 +24,7 @@ def generate_llm_analysis_report(input_file, output_file=None):
     
     # Determine output filename
     if not output_file:
-        output_file = f"reports/llm_analysis_report_{report_timestamp}.md"
+        output_file = f"reports/llm_readiness_analysis_report_{report_timestamp}.md"
     
     # Ensure reports directory exists
     Path("reports").mkdir(exist_ok=True)
@@ -238,7 +238,7 @@ def main():
     parser.add_argument('--input', default='llm_analysis.json', 
                        help='Input JSON file from LLM readiness analyzer (default: llm_analysis.json)')
     parser.add_argument('--output', 
-                       help='Output markdown file (default: reports/llm_analysis_report_YYYYMMDD_HHMMSS.md)')
+                       help='Output markdown file (default: reports/llm_readiness_analysis_report_YYYYMMDD_HHMMSS.md)')
     
     args = parser.parse_args()
     

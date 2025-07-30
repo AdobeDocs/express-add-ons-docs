@@ -347,20 +347,35 @@ def format_file_entry(index, file_info, priority_icon):
 
 """
 
+def get_baseline_directory():
+    """Get the directory where baseline files are stored."""
+    from pathlib import Path
+    # Check if we're in the scripts directory
+    current_dir = Path.cwd()
+    if current_dir.name == "scripts":
+        # We're in scripts/, baseline files are in parent directory
+        return current_dir.parent
+    else:
+        # We're in the root directory, baseline files are here
+        return current_dir
+
 def find_latest_baseline(scope="filtered"):
     """Find the most recent baseline audit file of specified scope"""
     import glob
+    from pathlib import Path
+    
+    baseline_dir = get_baseline_directory()
     
     if scope == "filtered":
-        # First try to find filtered baselines (new naming)
-        filtered_files = glob.glob("baseline_filtered_*_audit.json")
+        # First try to find filtered baselines (correct naming)
+        filtered_files = list(baseline_dir.glob("baseline_doc_audit_filtered_*.json"))
         
         if filtered_files:
             return sorted(filtered_files)[-1]
         
         # Fallback to old naming pattern (for backward compatibility)
-        baseline_files = glob.glob("baseline_*_audit.json")
-        baseline_files = [f for f in baseline_files if 'complete_' not in f]
+        baseline_files = list(baseline_dir.glob("baseline_doc_audit_*.json"))
+        baseline_files = [f for f in baseline_files if 'complete_' not in f.name]
         if not baseline_files:
             return None
         
@@ -369,14 +384,14 @@ def find_latest_baseline(scope="filtered"):
         return sorted(baseline_files)[-1]
     
     elif scope == "complete":
-        # Find complete baselines (new naming)
-        complete_files = glob.glob("baseline_complete_*_audit.json")
+        # Find complete baselines (correct naming)
+        complete_files = list(baseline_dir.glob("baseline_doc_audit_complete_*.json"))
         
         if complete_files:
             return sorted(complete_files)[-1]
         
         # Fallback to old naming pattern (for backward compatibility)
-        baseline_files = glob.glob("baseline_*_audit.json")
+        baseline_files = list(baseline_dir.glob("baseline_doc_audit_*.json"))
         if not baseline_files:
             return None
         

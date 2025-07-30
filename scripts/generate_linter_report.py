@@ -24,7 +24,7 @@ def generate_linter_report(input_file, output_file=None):
     
     # Determine output filename
     if not output_file:
-        output_file = f"reports/linter_report_{report_timestamp}.md"
+        output_file = f"reports/llm_markdown_linter_report_{report_timestamp}.md"
     
     # Ensure reports directory exists
     Path("reports").mkdir(exist_ok=True)
@@ -247,7 +247,7 @@ def main():
     parser.add_argument('--input', default='linter_report.json', 
                        help='Input JSON file from markdown linter (default: linter_report.json)')
     parser.add_argument('--output', 
-                       help='Output markdown file (default: reports/linter_report_YYYYMMDD_HHMMSS.md)')
+                       help='Output markdown file (default: reports/llm_markdown_linter_report_YYYYMMDD_HHMMSS.md)')
     
     args = parser.parse_args()
     
