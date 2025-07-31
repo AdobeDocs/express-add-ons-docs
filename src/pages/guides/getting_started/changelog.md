@@ -31,6 +31,10 @@ contributors:
 - New [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md).
 - New [`UnknownMediaRectangleNode`](../../references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md) for cases where the media type is not yet supported by the API.
 
+### Updated
+
+- The [Grids add-on tutorial](../learn/how_to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
+
 ## 2025-07-11
 
 ### Added
