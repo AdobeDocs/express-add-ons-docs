@@ -27,7 +27,7 @@ def analyze_sample_files(docs_path: str, sample_files: list = None):
     
     results = []
     
-    print("🔍 Analyzing sample files with both approaches...")
+    print("🔍 Analyzing sample files with both approaches")
     print("=" * 60)
     
     for relative_file in sample_files:
@@ -269,8 +269,17 @@ Files get contextual criteria based on classification
 
 def main():
     """Main comparison function"""
+    # Auto-detect docs path based on current working directory
+    current_dir = Path.cwd()
+    if current_dir.name == "scripts":
+        default_docs_path = "../src/pages"
+    elif (current_dir / "src/pages").exists():
+        default_docs_path = "src/pages"
+    else:
+        default_docs_path = "../src/pages"  # fallback
+    
     parser = argparse.ArgumentParser(description='Compare Smart vs Traditional Auditing Approaches')
-    parser.add_argument('--docs-path', default='../src/pages', help='Path to documentation directory')
+    parser.add_argument('--docs-path', default=default_docs_path, help='Path to documentation directory')
     parser.add_argument('--output', default='audit_comparison_report.md', help='Output markdown file')
     parser.add_argument('--files', nargs='+', help='Specific files to analyze (relative to docs-path)')
     
