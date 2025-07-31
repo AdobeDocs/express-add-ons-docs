@@ -19,6 +19,8 @@ This framework evaluates your documentation against **1,328+ real developer quer
 pip install -r requirements.txt
 ```
 
+**Note:** The requirements include `pandas` which is needed for comparison and analysis scripts like `compare_audit_approaches.py`. Core audit scripts work without pandas.
+
 ### 2. Choose Your Workflow
 
 #### **🎯 For Quick Assessment (Recommended)**
@@ -33,12 +35,15 @@ python3 scripts/enhanced_doc_audit_runner.py --docs-path src/pages
 Generate specific reports for targeted improvements:
 ```bash
 # 1. Run baseline audit (filtered to core docs)
-python3 scripts/doc_audit_runner.py --baseline --filtered --full-report --docs-path /src/pages
+python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages
 
-# 2. Generate manager-friendly executive summary
+# 2. Run detailed analysis audit  
+python3 scripts/doc_audit_runner.py --filtered --full-report --docs-path src/pages
+
+# 3. Generate manager-friendly executive summary
 python3 scripts/generate_executive_summary.py --scope filtered
 
-# 3. Generate developer action list
+# 4. Generate developer action list
 python3 scripts/generate_priority_summary.py --scope filtered
 ```
 **Outputs:** Executive summary + priority action list
@@ -73,16 +78,19 @@ cat reports/executive_summary_filtered_*.md
 **Goal:** Specific files to fix and how to fix them
 
 ```bash
-# 1. Run detailed audit
-python3 scripts/doc_audit_runner.py --baseline --filtered --full-report --docs-path src/pages
+# 1. Run baseline audit
+python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages
 
-# 2. Generate priority action list
+# 2. Run detailed analysis audit
+python3 scripts/doc_audit_runner.py --filtered --full-report --docs-path src/pages
+
+# 3. Generate priority action list
 python3 scripts/generate_priority_summary.py --scope filtered
 
-# 3. Generate implementation guide
+# 4. Generate implementation guide  
 python3 scripts/generate_detailed_implementation_report.py --scope filtered
 
-# 4. View actionable reports
+# 5. View actionable reports
 ls -la reports/*filtered*.md
 ```
 
@@ -250,6 +258,12 @@ chmod +x scripts/*.py
 ```bash
 # Make sure you've run a baseline audit first
 python3 scripts/doc_audit_runner.py --baseline --docs-path your-docs/
+```
+
+**❌ "No filtered detailed analysis files found"**
+```bash
+# Make sure you've run a detailed analysis audit (not baseline)
+python3 scripts/doc_audit_runner.py --filtered --full-report --docs-path your-docs/
 ```
 
 **❌ Low confidence scores**
