@@ -2,6 +2,12 @@
 
 This guide helps you audit and improve documentation quality using our comprehensive auditing and reporting scripts.
 
+## 📋 Prerequisites
+```bash
+pip install -r requirements.txt
+```
+**Note:** Some analysis scripts require `pandas` (included in requirements.txt). Core audit workflows work without pandas.
+
 ## 🚀 Quick Start Guide
 
 ### Step 1: Run Your First Audit
@@ -14,8 +20,16 @@ python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
 
 This creates: `baseline_doc_audit_filtered_[timestamp].json`
 
-### Step 2: Generate a Readable Report
-Turn your audit data into an actionable report:
+### Step 2: Generate Detailed Analysis Data
+Create the detailed file analysis needed for comprehensive reports:
+
+```bash
+# Generate detailed analysis data (required for implementation reports)
+python3 scripts/doc_audit_runner.py --filtered --full-report --docs-path src/pages/
+```
+
+### Step 3: Generate Readable Reports
+Turn your audit data into actionable reports:
 
 ```bash
 # Generate executive summary for management overview
@@ -27,7 +41,7 @@ python3 scripts/generate_detailed_implementation_report.py --scope filtered
 
 Reports are saved to the `reports/` folder.
 
-### Step 3: Start Fixing Issues
+### Step 4: Start Fixing Issues
 Use the Priority Summary to see which files need attention first:
 
 ```bash
@@ -42,20 +56,20 @@ python3 scripts/generate_priority_summary.py --scope filtered
 
 **Core documentation only** (excludes auto-generated files - recommended):
 ```bash
-# Baseline audit for comparison tracking
+# Step 1: Baseline audit for comparison tracking
 python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
 
-# Regular audit for current status
+# Step 2: Detailed analysis audit for reports  
 python3 scripts/doc_audit_runner.py --filtered --full-report --docs-path src/pages/
 ```
 
 **All documentation files** (includes auto-generated API references):
 ```bash
-# Baseline audit for comparison tracking  
+# Step 1: Baseline audit for comparison tracking  
 python3 scripts/doc_audit_runner.py --baseline --docs-path src/pages/
 
-# Regular audit for current status
-python3 scripts/doc_audit_runner.py --docs-path src/pages/
+# Step 2: Detailed analysis audit for reports
+python3 scripts/doc_audit_runner.py --full-report --docs-path src/pages/
 ```
 
 ### Single File Auditing
@@ -314,7 +328,7 @@ python3 scripts/simpleAudit_smart.py
 # Show content classification details
 python3 scripts/simpleAudit_smart.py --show-classification --verbose
 
-# Compare smart vs traditional approaches
+# Compare smart vs traditional approaches (requires pandas)
 python3 scripts/compare_audit_approaches.py
 ```
 
