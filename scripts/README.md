@@ -100,13 +100,13 @@ ls -la reports/*filtered*.md
 
 ```bash
 # 1. Run baseline analysis
-python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path express-add-ons-docs/src/pages
+python3 scripts/doc_audit_runner.py --baseline --filtered --docs-path src/pages/
 
 # 2. Generate strategic overview
 python3 scripts/generate_baseline_summary.py --scope filtered
 
 # 3. Analyze query coverage (enhanced audit)
-python3 scripts/enhanced_doc_audit_runner.py --docs-path express-add-ons-docs/src/pages
+python3 scripts/enhanced_doc_audit_runner.py --docs-path src/pages
 ```
 
 **What you get:**
