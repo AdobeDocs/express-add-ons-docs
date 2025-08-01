@@ -20,11 +20,11 @@ A resolved `Promise` containing the `id` of the document.
 
 **Note:** A `documentIdAvailable` event is triggered when the document id is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
-#### Example
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -54,11 +54,11 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 
 **Note:** A `documentTitleChange` event is triggered when the document title is changed in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
-#### Example
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -90,9 +90,11 @@ Retrieve the metadata for all of the pages in the document.
 
 A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containing all of the pages in the document.
 
+#### Example Usage
+
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -173,9 +175,11 @@ Tells Express to run a print quality check to determine if the document is ready
 
 `void`
 
+#### Example Usage
+
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -261,33 +265,37 @@ A resolved `Promise` containing the `link` of the document.
 
 A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
-#### Example
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
-function setLink(link) { /* ... */ }
+addOnUISdk.ready.then(async () => {
+  try {
+    // Get the current document link
+    const documentLink = await addOnUISdk.app.document.link("document");
+    console.log("Document link:", documentLink);
 
-addOnUISdk.ready.then(
-  () => setLink(await AddOnSDKAPI.app.document.link("document"))
-);
+    // Get the published document link
+    const publishedLink = await addOnUISdk.app.document.link("published");
+    console.log("Published link:", publishedLink);
+  } catch (error) {
+    console.log("Failed to get document links:", error);
+  }
 
-addOnUISdk.app.on("documentLinkAvailable", data => {
-  setLink(data.documentLink);
-});
+  // Listen for document link changes
+  addOnUISdk.app.on("documentLinkAvailable", (data) => {
+    console.log("Document link changed:", data.documentLink);
+  });
 
-function setPublishedLink(link) { /* ... */ }
-
-AddOnSDKAPI.ready.then(
-  () => setPublishedLink(await AddOnSDKAPI.app.document.link("published"))
-);
-
-AddOnSDKAPI.app.on("documentPublishedLinkAvailable", data => {
-  setPublishedLink(data.documentPublishedLink);
+  // Listen for published link changes
+  addOnUISdk.app.on("documentPublishedLinkAvailable", (data) => {
+    console.log("Published link changed:", data.documentPublishedLink);
+  });
 });
 ```
 
@@ -474,49 +482,84 @@ Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#impo
 
 Imports a PDF as a new Adobe Express document.
 
-<!-- Removed experimental as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
 #### Signature
 
-`importPdf(blob: Blob, attributes: MediaAttributes): void;`
+`importPdf(blob: Blob, attributes: MediaAttributes & SourceMimeTypeInfo): void;`
 
 #### Parameters
 
-| Name          | Type                                  |                                                                 Description |
-| ------------- | ------------------------------------- | --------------------------------------------------------------------------: |
-| `blob`        | `Blob`                                |                                                 The PDF to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| Name                                         | Type                                  |                                                                 Description |
+| -------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------: |
+| `blob`                                       | `Blob`                                |                                                 The PDF to add to the page. |
+| `attributes?`                                | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| [`SourceMimeTypeInfo?`](#sourcemimetypeinfo) | `SourceMimeTypeInfo`                  |                                       Mime type details for importing media |
 
 #### Return Value
 
 None
 
+#### `SourceMimeTypeInfo`
+
+Mime type details for importing media
+
+| Name              | Type                       |                                                      Description |
+| ----------------- | -------------------------- | ---------------------------------------------------------------: |
+| `sourceMimeType?` | [`SupportedMimeTypes`](./) | Mime type of the original source asset that was converted to PDF |
+
+### SupportedMimeTypes
+
+A constant representing the mime type of the original source asset that was converted to PDF.
+
+- **docx**: `"docx"`
+- **gdoc**: `"gdoc"`
+
+<InlineAlert slots="text" variant="info"/>
+
+Use this property to improve the user experience when importing converted documents. Adobe Express does not natively support Word documents (`.docx`) or Google Docs (`.gdoc`) files. However, your add-on can convert these file types to PDF format behind the scenes before importing them.
+
+When you call `importPdf()` with a converted file, you can pass the original file's mime type (`"docx"` or `"gdoc"`) in the `sourceMimeType` parameter. This ensures that the import consent dialog displays "Import a document" instead of "Import a PDF" to the user, preventing confusion about why their Word document or Google Docs file is being referred to as a PDF.
+
+**Important:** Do not pass the original Word documentor Google Docs file directly to `importPdf()`. Your add-on must first convert these files to PDF format, then use this parameter solely to customize the dialog message for better user experience.
+
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
-const { document } = AddOnSDKAPI.app;
+const { document } = addOnUISdk.app;
 
-const mediaAttributes = { title: "Sample.pdf" };
-
-// Import a PDF. Note this will be imported as a new Adobe Express document.
-function importPdf(blob, mediaAttributes) {
+// Import a regular PDF file
+async function importPdf(pdfBlob) {
   try {
-    document.importPdf(blob, mediaAttributes);
+    document.importPdf(pdfBlob, { title: "Sample.pdf" });
   } catch (error) {
     console.log("Failed to import the pdf.");
   }
 }
 
-// Import a PDF from a URL. Note this will be imported as a new Adobe Express document.
-async function importPdfFrom(url) {
+// Import a PDF that was converted from a Word document
+// The sourceMimeType parameter ensures the dialog shows "Import a document" instead of "Import a PDF"
+async function importConvertedWordDoc(convertedPdfBlob) {
   try {
-    const blob = await fetch(url).then((response) => response.blob());
-    document.importPdf(blob, { title: "Sample.pdf" });
+    document.importPdf(convertedPdfBlob, {
+      title: "Converted Document.pdf",
+      sourceMimeType: "docx"
+    });
   } catch (error) {
-    console.log("Failed to import the pdf.");
+    console.log("Failed to import the converted Word document.");
+  }
+}
+
+// Import a PDF that was converted from a Google document
+async function importConvertedGoogleDoc(convertedPdfBlob) {
+  try {
+    document.importPdf(convertedPdfBlob, {
+      title: "Converted Google Doc.pdf",
+      sourceMimeType: "gdoc"
+    });
+  } catch (error) {
+    console.log("Failed to import the converted Google document.");
   }
 }
 ```
@@ -524,12 +567,6 @@ async function importPdfFrom(url) {
 ### importPresentation()
 
 Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
-
-<!--Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
-<!-- <InlineAlert slots="text" variant="warning"/> -->
-
-<!-- **IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 
@@ -549,10 +586,10 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
-const { document } = AddOnSDKAPI.app;
+const { document } = addOnUISdk.app;
 
 const mediaAttributes = { title: "Sample.pptx" }; // only Pptx is supported by Express
 
@@ -741,6 +778,8 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
 
+#### Example Usage
+
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
@@ -751,7 +790,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
 
-// Display preview of all pages in the AddOn UI
+// Display preview of all pages in the UI of your add-on
 async function displayPreview() {
   try {
     const renditionOptions = {
@@ -828,6 +867,76 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 <InlineAlert slots="text" variant="info"/>
 
 Refer to the [create renditions how-to](../../guides/learn/how_to/create_renditions.md) and the [export-sample](../../guides/learn/samples.md) in the code samples for usage examples.
+
+### exportAllowed()
+
+Determines whether the current document can be exported based on its review status in review and approval workflows.
+
+#### Signature
+
+`exportAllowed(): Promise<boolean>`
+
+#### Return Value
+
+A resolved `Promise` containing a `boolean` value indicating whether export is allowed (`true`) or restricted (`false`) based on the document's review status.
+
+<InlineAlert slots="text" variant="info"/>
+
+This method is particularly useful in collaborative environments where documents may be subject to review and approval processes. When a document is in certain review states, export functionality may be restricted to prevent unauthorized distribution of content that hasn't been approved.
+
+**Important:** This restriction only applies to renditions created with `RenditionIntent.export` or `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the export status, as they are intended for preview purposes only.
+
+**User Experience Note:** If you attempt to create export/print renditions without checking `exportAllowed()` first, and the document doesn't allow exports, users will see an error dialog with the message "Request approval" and "Get approval from your viewers before sharing this file". Using `exportAllowed()` allows you to provide a more graceful user experience by checking permissions proactively.
+
+#### Example Usage
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Check export permissions before creating non-preview renditions
+async function handleExportRequest() {
+  try {
+    const canExport = await addOnUISdk.app.document.exportAllowed();
+
+    if (canExport) {
+      // Create rendition for export/download
+      const rendition = await addOnUISdk.app.document.createRenditions(
+        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
+        addOnUISdk.constants.RenditionIntent.export
+      );
+      // ... handle download
+    } else {
+      // Show preview only since export is restricted
+      console.log("Export restricted - showing preview only");
+      const previewRendition = await addOnUISdk.app.document.createRenditions(
+        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
+        addOnUISdk.constants.RenditionIntent.preview
+      );
+      // ... show preview in UI only
+    }
+  } catch (error) {
+    console.log("Failed to check export permissions:", error);
+  }
+}
+
+// Set up UI based on export permissions
+addOnUISdk.ready.then(async () => {
+  const exportAllowed = await addOnUISdk.app.document.exportAllowed();
+
+  // Note: The "document" in the next two lines refers to the UI of your add-on (in the HTML file) versus the addOnUISdk.app.document object from the API
+  const downloadButton = document.getElementById('download-btn');
+  const previewButton = document.getElementById('preview-btn');
+
+  // Download button only available if export is allowed
+  downloadButton.disabled = !exportAllowed;
+  downloadButton.title = exportAllowed ? "Download rendition" : "Download restricted - document under review";
+
+  // Preview button is always available
+  previewButton.disabled = false;
+});
+```
 
 ### Errors
 

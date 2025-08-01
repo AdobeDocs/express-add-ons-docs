@@ -22,6 +22,23 @@ contributors:
 
 # Changelog
 
+## 2025-07-27
+
+### Added
+
+- New [`isAnonymousUser()`](../../references/addonsdk/app-currentUser.md#isanonymoususer) method to the [`addOnUISdk.app.currentUser`](../../references/addonsdk/app-currentUser.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
+- New [`exportAllowed()`](../../references/addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](../../references/addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
+- Enhanced [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](../../references/addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
+- Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](../../references/addonsdk/addonsdk-app.md#dragcompletiondata) support.
+
+### Updated
+
+- [User Info guide](../learn/how_to/user_info.md) with guidance on handling logged out users (browsing as a guest), with important considerations and limitations.
+- [Create Renditions guide](../learn/how_to/create_renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
+- [PDF and PowerPoint guide](../learn/how_to/use_pdf_powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
+- [Drag-and-Drop guide](../learn/how_to/drag_and_drop.md) with examples of using `sourceMimeType` when dragging converted documents.
+- The [Grids add-on tutorial](../learn/how_to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
+
 ## 2025-07-25
 
 ### Added
@@ -30,10 +47,6 @@ contributors:
 - A new [`clone()`](../../references/document-sandbox/document-apis/classes/Node.md#clone) method has been added to the [Node](../../references/document-sandbox/document-apis/classes/Node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
 - New [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md).
 - New [`UnknownMediaRectangleNode`](../../references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md) for cases where the media type is not yet supported by the API.
-
-### Updated
-
-- The [Grids add-on tutorial](../learn/how_to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
 
 ## 2025-07-11
 
@@ -72,7 +85,7 @@ The [Page Metadata API](../../references/addonsdk/app-document.md#pagemetadata) 
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`AddOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document_metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document_metadata.md).
 
 ### Updates
 
@@ -132,7 +145,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `AddOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
 - New [vue-starter](../learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
 - Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how_to/use_color.md).
 
@@ -766,7 +779,7 @@ Updated [Document API references](../../references/document-sandbox/document-api
 
 - Added a [new tutorial section](../learn/how_to/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how_to/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
-- Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnSDK`) similar to what's generated in the templates for consistency.
+- Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnUISDK`) similar to what's generated in the templates for consistency.
 
 ## 2023-10-26
 
