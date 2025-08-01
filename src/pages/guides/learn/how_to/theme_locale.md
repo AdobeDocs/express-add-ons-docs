@@ -17,6 +17,31 @@ description: Theme & Locale.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I get the current theme?"
+      answer: 'Access `addOnUISdk.app.ui.theme` property to get the current theme.'
+
+    - question: "What themes are currently supported?"
+      answer: "Currently only 'light' theme is supported, with 'dark' theme planned for future releases."
+
+    - question: "How do I listen for theme changes?"
+      answer: 'Use `addOnUISdk.app.on("themechange", callback)` to detect theme changes.'
+
+    - question: "How do I get the current locale?"
+      answer: 'Access `addOnUISdk.app.ui.locale` property to get the current locale.'
+
+    - question: "How do I get supported locales?"
+      answer: 'Access `addOnUISdk.app.ui.locales` array to get all supported locales.'
+
+    - question: "How do I listen for locale changes?"
+      answer: 'Use `addOnUISdk.app.on("localechange", callback)` to detect locale changes.'
+
+    - question: "What's the difference between locale and format?"
+      answer: "Locale is the user's language/region, format is for displaying dates, times, and numbers."
+
+    - question: "How do I listen for format changes?"
+      answer: 'Use `addOnUISdk.app.on("formatchange", callback)` to detect format changes.'
 ---
 
 # Theme & Locale
@@ -82,3 +107,37 @@ addOnUISdk.ready.then(() => {
   });
 });
 ```
+
+## FAQs
+
+#### Q: How do I get the current theme?
+
+**A:** Access `addOnUISdk.app.ui.theme` property to get the current theme.
+
+#### Q: What themes are currently supported?
+
+**A:** Currently only 'light' theme is supported, with 'dark' theme planned for future releases.
+
+#### Q: How do I listen for theme changes?
+
+**A:** Use `addOnUISdk.app.on("themechange", callback)` to detect theme changes.
+
+#### Q: How do I get the current locale?
+
+**A:** Access `addOnUISdk.app.ui.locale` property to get the current locale.
+
+#### Q: How do I get supported locales?
+
+**A:** Access `addOnUISdk.app.ui.locales` array to get all supported locales.
+
+#### Q: How do I listen for locale changes?
+
+**A:** Use `addOnUISdk.app.on("localechange", callback)` to detect locale changes.
+
+#### Q: What's the difference between locale and format?
+
+**A:** Locale is the user's language/region, format is for displaying dates, times, and numbers.
+
+#### Q: How do I listen for format changes?
+
+**A:** Use `addOnUISdk.app.on("formatchange", callback)` to detect format changes.
