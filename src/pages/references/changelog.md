@@ -30,6 +30,8 @@ contributors:
 - New [`exportAllowed()`](./addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](./addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
 - Enhanced [`importPdf()`](./addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](./addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
 - Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](./addonsdk/addonsdk-app.md#dragcompletiondata) support.
+- New [`fileSizeLimit`](./addonsdk/addonsdk-constants.md) and [`fileSizeLimitUnit`](./addonsdk/addonsdk-constants.md) properties added to the [`PngRenditionOptions`](./addonsdk/app-document.md#pngrenditionoptions) object.
+- New [`bitRate`](./addonsdk/addonsdk-constants.md) and [`frameRate`](./addonsdk/addonsdk-constants.md) properties added to the [`Mp4RenditionOptions`](./addonsdk/app-document.md#mp4renditionoptions) object.
 
 ### Updated
 

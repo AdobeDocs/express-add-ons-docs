@@ -688,6 +688,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.jpg`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
@@ -698,23 +699,29 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.png`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
+| `fileSizeLimit?`                          | `number`                            |                                                                                                                                                     File size limit for the rendition. |
+| `fileSizeLimitUnit?`                      | `string`                            |                                                                                                Unit of the file size limit, [`FileSizeLimitUnit`](./addonsdk-constants.md) enumerable. |
 
 #### Requested Size Notes
 
-- The supported size is from 1 x 1 to width x height.
+- The supported size is from 1 x 1 to 8192 x 8192.
 - Aspect ratio is maintained while scaling the rendition based on the requested size.
 - Up-scaling is currently not supported.
 - If the requested size is invalid, it will be ignored and the original size rendition will be created.
 - Some examples of what the actual exported sizes will be, depending on the page size and requested size are in the table below for reference.
 
-| Page Size | Requested Size | Exported Size |
-| --------- | -------------- | ------------: |
-| 400 x 600 | 200 x 200      |     134 x 200 |
-| 400 x 600 | 200 x 400      |     200 x 300 |
-| 400 x 600 | 200 x -200     |     400 x 600 |
-| 400 x 600 | 800 x 1000     |     400 x 600 |
+| Page Size | Requested Size               | Exported Size | Notes                                       |
+| --------- | ---------------------------- | ------------: | ------------------------------------------- |
+| 400 x 600 | undefined                    |     400 x 600 | Original page size maintained               |
+| 400 x 600 | 200 x undefined (width only) |     200 x 300 | Height scaled proportionally                |
+| 400 x 600 | 200 x 200                    |     134 x 200 | Aspect ratio preserved, fits within bounds  |
+| 400 x 600 | 200 x 400                    |     200 x 300 | Aspect ratio preserved, fits within bounds  |
+| 400 x 600 | 200 x -200                   |     400 x 600 | Negative values ignored, original size used |
+| 400 x 600 | 800 x 1000                   |    667 x 1000 | Upscaled while maintaining aspect ratio     |
+| 400 x 600 | 8000 x 10000                 |   5462 x 8192 | Upscaled to maximum allowed dimensions      |
 
 #### `PdfRenditionOptions`
 
@@ -768,11 +775,13 @@ Represents margins for a PDF page box.
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
 
-| Name                | Type     |                                                        Description |
-| ------------------- | -------- | -----------------------------------------------------------------: |
-| `format`            | `string` |   [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
-| `resolution?`       | `string` |       [`VideoResolution`](./addonsdk-constants.md) constant value. |
-| `customResolution?` | `number` | Only required/used if the `resolution` is `VideoResolution.custom` |
+| Name                | Type     |                                                                         Description |
+| ------------------- | -------- | ----------------------------------------------------------------------------------: |
+| `format`            | `string` |                    [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
+| `resolution?`       | `string` |                        [`VideoResolution`](./addonsdk-constants.md) constant value. |
+| `customResolution?` | `number` |                  Only required/used if the `resolution` is `VideoResolution.custom` |
+| `frameRate?`        | `number` | Frame rate in frames per second, [`FrameRate`](./addonsdk-constants.md) enumerable. |
+| `bitRate?`          | `number` |       Bit rate in bits per second, [`BitRate`](./addonsdk-constants.md) enumerable. |
 
 #### Return Value
 
