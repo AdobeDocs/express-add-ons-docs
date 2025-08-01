@@ -4,13 +4,20 @@ keywords:
   - Express Add-on SDK
   - Express Document API
   - Document Model Sandbox
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
-  - Extend
-  - Extensibility
-  - API
+  - Tutorial
+  - Grid System
+  - Design Grids
+  - Communication API
+  - Spectrum Web Components
+  - iframe
+  - Document Sandbox
+  - apiProxy
+  - colorUtils
+  - constants
+  - Color Picker
 title: Building your first add-on with the Document API
 description: This is an in-depth tutorial that will guide you in the creation of a Grids add-on for Adobe Express using the Document API
 contributors:
@@ -70,21 +77,21 @@ Your add-on will allow users to create a variable number of rows and columns, co
 <!-- List block here -->
 <ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[iframe and Document Model Sandbox communication](#the-communication-api)
+[iframe and Document Model Sandbox communication](#1-the-communication-api)
 
-[Spectrum Web Components](#designing-the-ui-with-spectrum-web-components)
+[Spectrum Web Components](#31-designing-the-ui-with-spectrum-web-components)
 
-[Adobe Express Document API](#the-document-api)
+[Adobe Express Document API](#2-the-document-api)
 
-[Color Pickers](#designing-the-ui-with-spectrum-web-components)
+[Color Pickers](#31-designing-the-ui-with-spectrum-web-components)
 
-[Nodes insertion point](#creating-the-first-shape)
+[Nodes insertion point](#22-creating-the-first-shape)
 
-[Creating and manipulating shapes](#creating-the-first-shape)
+[Creating and manipulating shapes](#22-creating-the-first-shape)
 
-[Grouping elements](#organizing-the-code)
+[Grouping elements](#35-organizing-the-code)
 
-[Context permanence](#deleting-grids)
+[Context permanence](#36-deleting-grids)
 
 ![](images/grids-addon-animation.gif)
 
