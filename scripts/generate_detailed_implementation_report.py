@@ -570,7 +570,7 @@ def main():
     except FileNotFoundError as e:
         print(f"❌ Error: {e}")
         scope_hint = "--filtered" if args.scope == "filtered" else ""
-        print(f"💡 Make sure you have run: python3 scripts/doc_audit_runner.py --baseline {scope_hint} --full-report")
+        print(f"💡 Make sure you have run: python3 scripts/doc_audit_runner.py {scope_hint} --full-report")
     except Exception as e:
         print(f"❌ Unexpected error: {e}")
 

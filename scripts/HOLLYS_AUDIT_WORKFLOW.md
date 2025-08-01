@@ -57,7 +57,7 @@ python3 scripts/llm_readiness_analyzer_smart.py --docs-path src/pages --verbose
 ### 📊 Smart vs Traditional Comparison
 
 ```bash
-# Compare default sample files
+# Compare default sample files (requires pandas)
 python3 scripts/compare_audit_approaches.py
 
 # Compare specific files

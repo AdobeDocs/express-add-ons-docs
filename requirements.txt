@@ -1,12 +1,2 @@
 PyYAML>=6.0
-#pathlib
-#argparse
-#dataclasses
-#typing
-#json
-#re
-#hashlib
-#collections
-#datetime
-#enum
-#subprocess
+pandas>=1.3.0 
