@@ -18,6 +18,31 @@ description: Group Elements.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I create a group?"
+      answer: "Use `editor.createGroup()` to create a group, then append elements with `group.children.append()`."
+
+    - question: "What's the minimum number of elements in a group?"
+      answer: "Groups must contain at least two elements to be valid."
+
+    - question: "Can I nest groups inside other groups?"
+      answer: "Yes, groups can be nested by appending one group to another group's children."
+
+    - question: "How does element ordering work in groups?"
+      answer: "The last element appended appears on top, the first element appears at the bottom."
+
+    - question: "How do I reorder elements in a group?"
+      answer: "Use `moveAfter()` or `moveBefore()` methods on the group's children property."
+
+    - question: "How do I insert elements at specific positions?"
+      answer: "Use `insertAfter()` or `insertBefore()` methods to place elements at specific positions."
+
+    - question: "How do I move elements between groups?"
+      answer: "Use `targetGroup.children.append(sourceElement)` to move an element from one group to another."
+
+    - question: "How do I remove elements from a group?"
+      answer: "Use `group.children.remove(element)` to remove and delete the element from the document."
 ---
 
 # Group Elements
@@ -234,3 +259,37 @@ editor.context.insertionParent.children.append(group);
 // Removes s2 from the Group and from the page!
 group.children.remove(s2);
 ```
+
+## FAQs
+
+#### Q: How do I create a group?
+
+**A:** Use `editor.createGroup()` to create a group, then append elements with `group.children.append()`.
+
+#### Q: What's the minimum number of elements in a group?
+
+**A:** Groups must contain at least two elements to be valid.
+
+#### Q: Can I nest groups inside other groups?
+
+**A:** Yes, groups can be nested by appending one group to another group's children.
+
+#### Q: How does element ordering work in groups?
+
+**A:** The last element appended appears on top, the first element appears at the bottom.
+
+#### Q: How do I reorder elements in a group?
+
+**A:** Use `moveAfter()` or `moveBefore()` methods on the group's children property.
+
+#### Q: How do I insert elements at specific positions?
+
+**A:** Use `insertAfter()` or `insertBefore()` methods to place elements at specific positions.
+
+#### Q: How do I move elements between groups?
+
+**A:** Use `targetGroup.children.append(sourceElement)` to move an element from one group to another.
+
+#### Q: How do I remove elements from a group?
+
+**A:** Use `group.children.remove(element)` to remove and delete the element from the document.

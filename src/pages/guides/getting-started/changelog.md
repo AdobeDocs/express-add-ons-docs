@@ -30,6 +30,8 @@ contributors:
 - New [`exportAllowed()`](../../references/addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](../../references/addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
 - Enhanced [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](../../references/addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
 - Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](../../references/addonsdk/addonsdk-app.md#dragcompletiondata) support.
+- New [`fileSizeLimit`](../../references/addonsdk/addonsdk-constants.md) and [`fileSizeLimitUnit`](../../references/addonsdk/addonsdk-constants.md) properties added to the [`PngRenditionOptions`](../../references/addonsdk/app-document.md#pngrenditionoptions) object.
+- New [`bitRate`](../../references/addonsdk/addonsdk-constants.md) and [`frameRate`](../../references/addonsdk/addonsdk-constants.md) properties added to the [`Mp4RenditionOptions`](../../references/addonsdk/app-document.md#mp4renditionoptions) object.
 
 ### Updated
 
@@ -37,6 +39,7 @@ contributors:
 - [Create Renditions guide](../learn/how_to/create_renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
 - [PDF and PowerPoint guide](../learn/how_to/use_pdf_powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
 - [Drag-and-Drop guide](../learn/how_to/drag_and_drop.md) with examples of using `sourceMimeType` when dragging converted documents.
+- The [Grids add-on tutorial](../learn/how_to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
 
 ## 2025-07-25
 

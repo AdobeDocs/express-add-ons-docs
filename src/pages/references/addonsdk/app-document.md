@@ -122,11 +122,11 @@ async function logMetadata() {
       console.log("Page has animated content: ", page.hasAnimatedContent);
       console.log("Page has timelines: ", page.hasTemporalContent);
       if (page.hasTemporalContent)
-          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration); 
+          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration);
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
       console.log("Is page blank: ", page.isBlank);
-      console.log("Template details: ", page.templateDetails);      
+      console.log("Template details: ", page.templateDetails);
     }
   }
   catch(error) {
@@ -279,19 +279,19 @@ addOnUISdk.ready.then(async () => {
     // Get the current document link
     const documentLink = await addOnUISdk.app.document.link("document");
     console.log("Document link:", documentLink);
-    
+
     // Get the published document link
     const publishedLink = await addOnUISdk.app.document.link("published");
     console.log("Published link:", publishedLink);
   } catch (error) {
     console.log("Failed to get document links:", error);
   }
-  
+
   // Listen for document link changes
   addOnUISdk.app.on("documentLinkAvailable", (data) => {
     console.log("Document link changed:", data.documentLink);
   });
-  
+
   // Listen for published link changes
   addOnUISdk.app.on("documentPublishedLinkAvailable", (data) => {
     console.log("Published link changed:", data.documentPublishedLink);
@@ -488,11 +488,11 @@ Imports a PDF as a new Adobe Express document.
 
 #### Parameters
 
-| Name          | Type                                  |                                                                 Description |
-| ------------- | ------------------------------------- | --------------------------------------------------------------------------: |
-| `blob`        | `Blob`                                |                                                 The PDF to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
-| [`SourceMimeTypeInfo?`](#sourcemimetypeinfo) | `SourceMimeTypeInfo` | Mime type details for importing media |
+| Name                                         | Type                                  |                                                                 Description |
+| -------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------: |
+| `blob`                                       | `Blob`                                |                                                 The PDF to add to the page. |
+| `attributes?`                                | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| [`SourceMimeTypeInfo?`](#sourcemimetypeinfo) | `SourceMimeTypeInfo`                  |                                       Mime type details for importing media |
 
 #### Return Value
 
@@ -502,8 +502,8 @@ None
 
 Mime type details for importing media
 
-| Name              | Type                 | Description |
-| ------------------| -------------------- | ----------------------------------------: |
+| Name              | Type                       |                                                      Description |
+| ----------------- | -------------------------- | ---------------------------------------------------------------: |
 | `sourceMimeType?` | [`SupportedMimeTypes`](./) | Mime type of the original source asset that was converted to PDF |
 
 ### SupportedMimeTypes
@@ -542,7 +542,7 @@ async function importPdf(pdfBlob) {
 // The sourceMimeType parameter ensures the dialog shows "Import a document" instead of "Import a PDF"
 async function importConvertedWordDoc(convertedPdfBlob) {
   try {
-    document.importPdf(convertedPdfBlob, { 
+    document.importPdf(convertedPdfBlob, {
       title: "Converted Document.pdf",
       sourceMimeType: "docx"
     });
@@ -554,7 +554,7 @@ async function importConvertedWordDoc(convertedPdfBlob) {
 // Import a PDF that was converted from a Google document
 async function importConvertedGoogleDoc(convertedPdfBlob) {
   try {
-    document.importPdf(convertedPdfBlob, { 
+    document.importPdf(convertedPdfBlob, {
       title: "Converted Google Doc.pdf",
       sourceMimeType: "gdoc"
     });
@@ -615,7 +615,7 @@ async function importPresentationFrom(url) {
 
 ### Image requirements
 
-When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **40MB**.
+When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **80MB**—see the full [image requirements](https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html) for more details.
 
 For `gif` images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and summarized below for quick reference:
 
@@ -688,6 +688,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.jpg`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
@@ -698,23 +699,29 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.png`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
+| `fileSizeLimit?`                          | `number`                            |                                                                                                                                                     File size limit for the rendition. |
+| `fileSizeLimitUnit?`                      | `string`                            |                                                                                                Unit of the file size limit, [`FileSizeLimitUnit`](./addonsdk-constants.md) enumerable. |
 
 #### Requested Size Notes
 
-- The supported size is from 1 x 1 to width x height.
+- The supported size is from 1 x 1 to 8192 x 8192.
 - Aspect ratio is maintained while scaling the rendition based on the requested size.
 - Up-scaling is currently not supported.
 - If the requested size is invalid, it will be ignored and the original size rendition will be created.
 - Some examples of what the actual exported sizes will be, depending on the page size and requested size are in the table below for reference.
 
-| Page Size | Requested Size | Exported Size |
-| --------- | -------------- | ------------: |
-| 400 x 600 | 200 x 200      |     134 x 200 |
-| 400 x 600 | 200 x 400      |     200 x 300 |
-| 400 x 600 | 200 x -200     |     400 x 600 |
-| 400 x 600 | 800 x 1000     |     400 x 600 |
+| Page Size | Requested Size               | Exported Size | Notes                                       |
+| --------- | ---------------------------- | ------------: | ------------------------------------------- |
+| 400 x 600 | undefined                    |     400 x 600 | Original page size maintained               |
+| 400 x 600 | 200 x undefined (width only) |     200 x 300 | Height scaled proportionally                |
+| 400 x 600 | 200 x 200                    |     134 x 200 | Aspect ratio preserved, fits within bounds  |
+| 400 x 600 | 200 x 400                    |     200 x 300 | Aspect ratio preserved, fits within bounds  |
+| 400 x 600 | 200 x -200                   |     400 x 600 | Negative values ignored, original size used |
+| 400 x 600 | 800 x 1000                   |    667 x 1000 | Upscaled while maintaining aspect ratio     |
+| 400 x 600 | 8000 x 10000                 |   5462 x 8192 | Upscaled to maximum allowed dimensions      |
 
 #### `PdfRenditionOptions`
 
@@ -768,11 +775,13 @@ Represents margins for a PDF page box.
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
 
-| Name                | Type     |                                                        Description |
-| ------------------- | -------- | -----------------------------------------------------------------: |
-| `format`            | `string` |   [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
-| `resolution?`       | `string` |       [`VideoResolution`](./addonsdk-constants.md) constant value. |
-| `customResolution?` | `number` | Only required/used if the `resolution` is `VideoResolution.custom` |
+| Name                | Type     |                                                                         Description |
+| ------------------- | -------- | ----------------------------------------------------------------------------------: |
+| `format`            | `string` |                    [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
+| `resolution?`       | `string` |                        [`VideoResolution`](./addonsdk-constants.md) constant value. |
+| `customResolution?` | `number` |                  Only required/used if the `resolution` is `VideoResolution.custom` |
+| `frameRate?`        | `number` | Frame rate in frames per second, [`FrameRate`](./addonsdk-constants.md) enumerable. |
+| `bitRate?`          | `number` |       Bit rate in bits per second, [`BitRate`](./addonsdk-constants.md) enumerable. |
 
 #### Return Value
 
@@ -899,7 +908,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 async function handleExportRequest() {
   try {
     const canExport = await addOnUISdk.app.document.exportAllowed();
-    
+
     if (canExport) {
       // Create rendition for export/download
       const rendition = await addOnUISdk.app.document.createRenditions(
@@ -924,15 +933,15 @@ async function handleExportRequest() {
 // Set up UI based on export permissions
 addOnUISdk.ready.then(async () => {
   const exportAllowed = await addOnUISdk.app.document.exportAllowed();
-  
+
   // Note: The "document" in the next two lines refers to the UI of your add-on (in the HTML file) versus the addOnUISdk.app.document object from the API
   const downloadButton = document.getElementById('download-btn');
   const previewButton = document.getElementById('preview-btn');
-  
+
   // Download button only available if export is allowed
   downloadButton.disabled = !exportAllowed;
   downloadButton.title = exportAllowed ? "Download rendition" : "Download restricted - document under review";
-  
+
   // Preview button is always available
   previewButton.disabled = false;
 });

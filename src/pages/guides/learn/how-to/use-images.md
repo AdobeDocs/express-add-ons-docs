@@ -17,6 +17,31 @@ description: Use Images.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I add images to a document?"
+      answer: 'Call `addOnUISdk.app.document.addImage(blob, attributes)` with image blob and optional MediaAttribute.'
+
+    - question: "What parameters does addImage require?"
+      answer: "A Blob object is required, MediaAttribute with title and author is optional."
+
+    - question: "How do I get an image as a blob?"
+      answer: 'Use `fetch(imageUrl).then(r => r.blob())` to convert images to blob format.'
+
+    - question: "Can I use local image files?"
+      answer: "Yes, use relative paths from add-on root with fetch() to load local images."
+
+    - question: "How do I add animated GIFs?"
+      answer: 'Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes)` instead of addImage().'
+
+    - question: "Why doesn't addImage work with GIFs?"
+      answer: "addImage() converts animations to static images; use addAnimatedImage() to preserve animation."
+
+    - question: "What image formats are supported?"
+      answer: "AI, GIF, JPEG, JPG, PNG, PSD, PSDT, and WEBP. 8000px or 80MB."
+
+    - question: "Are there GIF size limitations?"
+      answer: "Yes, refer to the FAQ section for specific GIF size and weight limitations."
 ---
 
 # Use Images
@@ -105,3 +130,37 @@ addOnUISdk.ready.then(async () => {
 **GIF Image requirements**
 
 All image formats are equal, but some formats are more equal than others. Please refer to [this FAQ](../../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) to learn more about specific GIF limitations in terms of size and weight.
+
+## FAQs
+
+#### Q: How do I add images to a document?
+
+**A:** Call `addOnUISdk.app.document.addImage(blob, attributes)` with image blob and optional MediaAttribute.
+
+#### Q: What parameters does addImage require?
+
+**A:** A Blob object is required, MediaAttribute with title and author is optional.
+
+#### Q: How do I get an image as a blob?
+
+**A:** Use `fetch(imageUrl).then(r => r.blob())` to convert images to blob format.
+
+#### Q: Can I use local image files?
+
+**A:** Yes, use relative paths from add-on root with fetch() to load local images.
+
+#### Q: How do I add animated GIFs?
+
+**A:** Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes)` instead of addImage().
+
+#### Q: Why doesn't addImage work with GIFs?
+
+**A:** addImage() converts animations to static images; use addAnimatedImage() to preserve animation.
+
+#### Q: What image formats are supported?
+
+**A:** AI, GIF, JPEG, JPG, PNG, PSD, PSDT, and WEBP. 8000px or 80MB.
+
+#### Q: Are there GIF size limitations?
+
+**A:** Yes, refer to the FAQ section for specific GIF size and weight limitations.

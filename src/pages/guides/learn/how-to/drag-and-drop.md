@@ -16,6 +16,34 @@ description: Use Drag-and-Drop.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I enable drag-and-drop for an element?"
+      answer: "Call `addOnUISdk.app.enableDragToDocument(element, callbacks)` with preview and completion callbacks."
+
+    - question: "What callbacks are required?"
+      answer: "Provide `previewCallback()` for preview URL and `completionCallback()` to return the blob for insertion."
+
+    - question: "How do I handle drag events?"
+      answer: 'Listen for `"dragstart"` and `"dragend"` events using `addOnUISdk.app.on()`.'
+
+    - question: "What's special about audio content?"
+      answer: "Audio requires an `attributes` object with a `title` property in the completion callback return."
+
+    - question: "Can I drag remote images?"
+      answer: "Yes, fetch the remote URL in the completion callback and return the blob."
+
+    - question: "How do I use sourceMimeType when dragging converted documents?"
+      answer: 'Add `sourceMimeType` to the attributes object in completionCallback to show "Import a document" instead of "Import a PDF" in the consent dialog.'
+
+    - question: "When should I include sourceMimeType in drag operations?"
+      answer: "Use it when dragging PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer user messaging."
+
+    - question: "What sourceMimeType values work for drag and drop?"
+      answer: 'Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.'
+
+    - question: "What event handlers should I avoid?"
+      answer: "Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements."
 ---
 
 # Use Drag-and-Drop
@@ -156,7 +184,7 @@ function makeDraggableConvertedDoc(elementId: string, convertedPdfBlob: Blob, or
   const dragCallbacks = {
     previewCallback: (element: HTMLElement) => {
       // URL of image to display during drag operation
-      return new URL(element.src); 
+      return new URL(element.src);
     },
     completionCallback: async (element: HTMLElement) => {
       // Return the converted PDF blob with source mime type information
@@ -187,3 +215,41 @@ You should not attach `click` event listeners to drag-enabled elements in the ca
 Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any that may be causing conflicts with drag and drop handlers.
 
 There are several [code samples](../samples.md) that implement drag and drop, including the [import-images-using-oauth](../samples.md#import-images-using-oauth) and [pix](../samples.md#pix) projects that you can reference.
+
+## FAQs
+
+#### Q: How do I enable drag-and-drop for an element?
+
+**A:** Call `addOnUISdk.app.enableDragToDocument(element, callbacks)` with preview and completion callbacks.
+
+#### Q: What callbacks are required?
+
+**A:** Provide `previewCallback()` for preview URL and `completionCallback()` to return the blob for insertion.
+
+#### Q: How do I handle drag events?
+
+**A:** Listen for `"dragstart"` and `"dragend"` events using `addOnUISdk.app.on()`.
+
+#### Q: What's special about audio content?
+
+**A:** Audio requires an `attributes` object with a `title` property in the completion callback return.
+
+#### Q: Can I drag remote images?
+
+**A:** Yes, fetch the remote URL in the completion callback and return the blob.
+
+#### Q: How do I use sourceMimeType when dragging converted documents?
+
+**A:** Add `sourceMimeType` to the attributes object in completionCallback to show "Import a document" instead of "Import a PDF" in the consent dialog.
+
+#### Q: When should I include sourceMimeType in drag operations?
+
+**A:** Use it when dragging PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer user messaging.
+
+#### Q: What sourceMimeType values work for drag and drop?
+
+**A:** Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.
+
+#### Q: What event handlers should I avoid?
+
+**A:** Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements.

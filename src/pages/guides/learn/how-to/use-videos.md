@@ -19,6 +19,28 @@ description: Use Videos.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I add video to a page?"
+      answer: 'Call `addOnUISdk.app.document.addVideo(blob)` with a video blob object.'
+
+    - question: "What parameter does addVideo require?"
+      answer: "Only a Blob object containing the video data."
+
+    - question: "How do I get video as a blob?"
+      answer: 'Use `fetch(videoUrl).then(r => r.blob())` to convert video files to blob format.'
+
+    - question: "Can I use local video files?"
+      answer: "Yes, use relative paths from add-on root with fetch() to load local video files."
+
+    - question: "Can I use remote video URLs?"
+      answer: "Yes, fetch remote video URLs and convert to blob before adding to document."
+
+    - question: "What video formats are supported?"
+      answer: "Refer to Adobe Express file format requirements page for supported video formats and size limits."
+
+    - question: "How do I handle video loading errors?"
+      answer: "Use try/catch blocks around fetch() and addVideo() calls to handle loading failures."
 ---
 
 # Use Videos
@@ -68,3 +90,33 @@ addOnUISdk.ready.then(async () => {
 **Video file requirements**
 
 Please refer to [this page](https://helpx.adobe.com/au/express/create-and-edit-videos/change-file-formats/video-quick-actions-requirements.html) to know more about the file formats support and size/length requirements for videos.
+
+## FAQs
+
+#### Q: How do I add video to a page?
+
+**A:** Call `addOnUISdk.app.document.addVideo(blob)` with a video blob object.
+
+#### Q: What parameter does addVideo require?
+
+**A:** Only a Blob object containing the video data.
+
+#### Q: How do I get video as a blob?
+
+**A:** Use `fetch(videoUrl).then(r => r.blob())` to convert video files to blob format.
+
+#### Q: Can I use local video files?
+
+**A:** Yes, use relative paths from add-on root with fetch() to load local video files.
+
+#### Q: Can I use remote video URLs?
+
+**A:** Yes, fetch remote video URLs and convert to blob before adding to document.
+
+#### Q: What video formats are supported?
+
+**A:** Refer to Adobe Express file format requirements page for supported video formats and size limits.
+
+#### Q: How do I handle video loading errors?
+
+**A:** Use try/catch blocks around fetch() and addVideo() calls to handle loading failures.

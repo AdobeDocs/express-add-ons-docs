@@ -22,6 +22,31 @@ description: Use Color.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I create colors from RGB values?"
+      answer: 'Use `colorUtils.fromRGB(r, g, b, alpha)` with values from 0 to 1.'
+
+    - question: "How do I create colors from HEX values?"
+      answer: 'Use `colorUtils.fromHex("#RRGGBB")` or `colorUtils.fromHex("#RRGGBBAA")` for colors with alpha.'
+
+    - question: "How do I convert a color to HEX string?"
+      answer: 'Use `colorUtils.toHex(color)` to get HEX string with alpha included.'
+
+    - question: "How do I apply color to text?"
+      answer: 'Use `textNode.fullContent.applyCharacterStyles({ color }, range)` with a Color object.'
+
+    - question: "How do I apply fill color to shapes?"
+      answer: 'Use `shape.fill = editor.makeColorFill(color)` to apply solid color fills.'
+
+    - question: "How do I apply stroke color to shapes?"
+      answer: 'Use `shape.stroke = editor.makeStroke({ color, width })` to apply colored strokes.'
+
+    - question: "How do I show the native color picker?"
+      answer: 'Call `addOnUISdk.app.showColorPicker(anchorElement, options)` to display the picker.'
+
+    - question: "How do I handle color picker events?"
+      answer: 'Listen for `"colorpicker-color-change"` and `"colorpicker-close"` events on the anchor element.'
 ---
 
 # Use Color
@@ -282,3 +307,37 @@ if (selection.length === 1 && selection[0].type === "Text") {
   textContentModel.applyCharacterStyles({ color }); // 👈 Using the color
 }
 ```
+
+## FAQs
+
+#### Q: How do I create colors from RGB values?
+
+**A:** Use `colorUtils.fromRGB(r, g, b, alpha)` with values from 0 to 1.
+
+#### Q: How do I create colors from HEX values?
+
+**A:** Use `colorUtils.fromHex("#RRGGBB")` or `colorUtils.fromHex("#RRGGBBAA")` for colors with alpha.
+
+#### Q: How do I convert a color to HEX string?
+
+**A:** Use `colorUtils.toHex(color)` to get HEX string with alpha included.
+
+#### Q: How do I apply color to text?
+
+**A:** Use `textNode.fullContent.applyCharacterStyles({ color }, range)` with a Color object.
+
+#### Q: How do I apply fill color to shapes?
+
+**A:** Use `shape.fill = editor.makeColorFill(color)` to apply solid color fills.
+
+#### Q: How do I apply stroke color to shapes?
+
+**A:** Use `shape.stroke = editor.makeStroke({ color, width })` to apply colored strokes.
+
+#### Q: How do I show the native color picker?
+
+**A:** Call `addOnUISdk.app.showColorPicker(anchorElement, options)` to display the picker.
+
+#### Q: How do I handle color picker events?
+
+**A:** Listen for `"colorpicker-color-change"` and `"colorpicker-close"` events on the anchor element.

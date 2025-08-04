@@ -17,6 +17,31 @@ description: Element Metadata.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I store metadata on an element?"
+      answer: 'Use `node.addOnData.setItem("key", "value")` to store key/value pairs on any node.'
+
+    - question: "How do I retrieve stored metadata?"
+      answer: 'Use `node.addOnData.getItem("key")` to retrieve the value for a specific key.'
+
+    - question: "What are the storage limits?"
+      answer: "Each node can store up to 3 KB of data with a maximum of 20 key/value pairs."
+
+    - question: "How do I check remaining storage space?"
+      answer: "Use `node.addOnData.remainingQuota` to get remaining bytes and key count."
+
+    - question: "How do I remove metadata?"
+      answer: 'Use `removeItem("key")` for specific keys or `clear()` to remove all metadata.'
+
+    - question: "How do I iterate over all metadata?"
+      answer: "Use `for...of` loops on `addOnData` or iterate over `keys()` array with `forEach()`."
+
+    - question: "Can other add-ons access my metadata?"
+      answer: "No, metadata is private and only accessible to the add-on that set it."
+
+    - question: "What types can I store?"
+      answer: "Only strings are supported for both keys and values."
 ---
 
 # Element Metadata
@@ -90,4 +115,38 @@ text.addOnData.keys().forEach((key) => {
 
 Per-element metadata can be useful to keep track, for example, of the original properties a node has been created with, the history of the subsequent changes made to it, or to tag some nodes in a way that is meaningful for the add-on (e.g., it's supposed to be skipped when a certain routine is launched). It can also be used to store temporary data that is not meant to be persisted.
 
-Please, refer to the SDK Reference section for [`AddOnData`](../../../references/document-sandbox/document-apis/classes/add-on-data.md) for a complete list of methods, and the [`per-element-metadata`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/per-element-metadata) sample add-on for a demonstrative implementation.
+Please, refer to the SDK Reference section for [`AddOnData`](../../../references/document-sandbox/document-apis/classes/AddOnData.md) for a complete list of methods, and the [`per-element-metadata`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/per-element-metadata) sample add-on for a demonstrative implementation.
+
+## FAQs
+
+#### Q: How do I store metadata on an element?
+
+**A:** Use `node.addOnData.setItem("key", "value")` to store key/value pairs on any node.
+
+#### Q: How do I retrieve stored metadata?
+
+**A:** Use `node.addOnData.getItem("key")` to retrieve the value for a specific key.
+
+#### Q: What are the storage limits?
+
+**A:** Each node can store up to 3 KB of data with a maximum of 20 key/value pairs.
+
+#### Q: How do I check remaining storage space?
+
+**A:** Use `node.addOnData.remainingQuota` to get remaining bytes and key count.
+
+#### Q: How do I remove metadata?
+
+**A:** Use `removeItem("key")` for specific keys or `clear()` to remove all metadata.
+
+#### Q: How do I iterate over all metadata?
+
+**A:** Use `for...of` loops on `addOnData` or iterate over `keys()` array with `forEach()`.
+
+#### Q: Can other add-ons access my metadata?
+
+**A:** No, metadata is private and only accessible to the add-on that set it.
+
+#### Q: What types can I store?
+
+**A:** Only strings are supported for both keys and values.

@@ -19,6 +19,43 @@ description: Create Renditions.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I create a rendition?"
+      answer: "Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats."
+
+    - question: "What file formats are supported?"
+      answer: "JPG, PNG, MP4, and PDF formats via `addOnUISdk.constants.RenditionFormat`."
+
+    - question: "How do I export content for download?"
+      answer: "Create rendition, convert blob to URL with `URL.createObjectURL()`, then use anchor element to trigger download."
+
+    - question: "What permissions are needed for downloads?"
+      answer: 'Add `"allow-downloads"` to the `"sandbox"` array in manifest permissions.'
+
+    - question: "Should I check export permissions before creating renditions?"
+      answer: "Yes, always call `await addOnUISdk.app.document.exportAllowed()` before using `RenditionIntent.export` or `RenditionIntent.print` to avoid approval error dialogs."
+
+    - question: "When do I need to check exportAllowed()?"
+      answer: "Check before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. Preview renditions with `RenditionIntent.preview` are always allowed."
+
+    - question: "What happens if I don't check export permissions first?"
+      answer: 'Users may see error dialogs like "Request approval" and "Get approval from your viewers before sharing this file" in collaborative workflows.'
+
+    - question: "What should I do when export is not allowed?"
+      answer: "Create preview renditions instead using `RenditionIntent.preview`, show informational messages, and display content in UI only without download options."
+
+    - question: "What is the preview intent for?"
+      answer: "Preview intent creates renditions for processing or display only, not for download or sharing."
+
+    - question: "How do I set JPG quality?"
+      answer: "Use `quality` property (0-1 range) in `JpgRenditionOptions`."
+
+    - question: "What's required for preview intent?"
+      answer: 'Set `"renditionPreview": true` in manifest requirements section.'
+
+    - question: "How do I export the current page only?"
+      answer: "Use `range: addOnUISdk.constants.Range.currentPage` in rendition options."
 ---
 
 # Create Renditions
@@ -45,7 +82,7 @@ const canExport = await addOnUISdk.app.document.exportAllowed();
 if (!canExport) {
   // Export/print not allowed, but preview renditions are still permitted
   console.log("Export restricted - only preview available");
-  
+
   // Create preview rendition (always allowed)
   const previewRendition = await addOnUISdk.app.document.createRenditions(
     { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
@@ -86,7 +123,7 @@ addOnUISdk.ready.then(async () => {
     .addEventListener("click", async () => {
       // Check if export is allowed (prevents "Request approval" error dialog)
       const canExport = await addOnUISdk.app.document.exportAllowed();
-      
+
       if (!canExport) {
         try {
             // Show informational message for preview
@@ -111,7 +148,7 @@ addOnUISdk.ready.then(async () => {
           },
           addOnUISdk.constants.RenditionIntent.preview
         );
-        
+
         // Display preview in UI only (don't trigger download)
         const previewUrl = URL.createObjectURL(previewRendition[0].blob);
         const img = document.createElement("img");
@@ -233,3 +270,53 @@ When the `renditionIntent` is set to `RenditionIntent.preview`, you must add to 
   ]
 }
 ```
+
+## FAQs
+
+#### Q: How do I create a rendition?
+
+**A:** Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats.
+
+#### Q: What file formats are supported?
+
+**A:** JPG, PNG, MP4, and PDF formats via `addOnUISdk.constants.RenditionFormat`.
+
+#### Q: How do I export content for download?
+
+**A:** Create rendition, convert blob to URL with `URL.createObjectURL()`, then use anchor element to trigger download.
+
+#### Q: What permissions are needed for downloads?
+
+**A:** Add `"allow-downloads"` to the `"sandbox"` array in manifest permissions.
+
+#### Q: Should I check export permissions before creating renditions?
+
+**A:** Yes, always call `await addOnUISdk.app.document.exportAllowed()` before using `RenditionIntent.export` or `RenditionIntent.print` to avoid approval error dialogs.
+
+#### Q: When do I need to check exportAllowed()?
+
+**A:** Check before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. Preview renditions with `RenditionIntent.preview` are always allowed.
+
+#### Q: What happens if I don't check export permissions first?
+
+**A:** Users may see error dialogs like "Request approval" and "Get approval from your viewers before sharing this file" in collaborative workflows.
+
+#### Q: What should I do when export is not allowed?
+
+**A:** Create preview renditions instead using `RenditionIntent.preview`, show informational messages, and display content in UI only without download options.
+
+#### Q: What is the preview intent for?
+
+**A:** Preview intent creates renditions for processing or display only, not for download or sharing.
+
+#### Q: How do I set JPG quality?
+
+**A:** Use `quality` property (0-1 range) in `JpgRenditionOptions`.
+
+#### Q: What's required for preview intent?
+
+**A:** Set `"renditionPreview": true` in manifest requirements section.
+
+#### Q: How do I export the current page only?
+
+**A:** Use `range: addOnUISdk.constants.Range.currentPage` in rendition options.

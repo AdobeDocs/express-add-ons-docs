@@ -19,6 +19,25 @@ title: Use Geometry
 description: Use Geometry.
 contributors:
   - https://github.com/undavide
+faq:
+  questions:
+    - question: "How do I create a rectangle?"
+      answer: 'Use `editor.createRectangle()` and set `width` and `height` properties.'
+
+    - question: "How do I create an ellipse?"
+      answer: 'Use `editor.createEllipse()` and set `rx` (radius x) and `ry` (radius y) properties.'
+
+    - question: "Do shapes appear automatically after creation?"
+      answer: "No, you must append them to a container like an artboard or group to make them visible."
+
+    - question: "How do I add shapes to the page?"
+      answer: 'Use `editor.context.insertionParent.children.append(shape)` or similar container methods.'
+
+    - question: "How do I apply fill and stroke to shapes?"
+      answer: 'Set `shape.fill = editor.makeColorFill(color)` and `shape.stroke = editor.makeStroke(options)`.'
+
+    - question: "How do I create complex shapes?"
+      answer: 'Use `editor.createPath(svgString)` with SVG path data to create custom shapes.'
 ---
 
 # Use Geometry
@@ -158,22 +177,22 @@ const p1 = editor.createPath(
   `M310,222 A92,92 0 1,0 126,222 A92,92 0 1,0 310,222 Z`
 );
 const p2 = editor.createPath(
-  `M425.096,209.235 
-    C425.096,209.235 520.492,413.969 554.392,486.722 
-    C556.956,492.226 556.533,498.659 553.270,503.779 
-    C550.007,508.900 544.355,512.000 538.283,512.000 
-    C453.556,512.000 199.784,512.000 115.057,512.000 
-    C108.985,512.000 103.333,508.900 100.070,503.779 
-    C96.807,498.659 96.384,492.226 98.948,486.722 
-    C133.289,413.023 230.896,203.545 230.896,203.545 
+  `M425.096,209.235
+    C425.096,209.235 520.492,413.969 554.392,486.722
+    C556.956,492.226 556.533,498.659 553.270,503.779
+    C550.007,508.900 544.355,512.000 538.283,512.000
+    C453.556,512.000 199.784,512.000 115.057,512.000
+    C108.985,512.000 103.333,508.900 100.070,503.779
+    C96.807,498.659 96.384,492.226 98.948,486.722
+    C133.289,413.023 230.896,203.545 230.896,203.545
     L278.678,236.000 L331.559,195.000 L383.266,236.000 L425.096,209.235 Z`
 );
 const p3 = editor.createPath(
-  `M230.896,203.545 
-    L278.041,102.365 
-    C286.849,83.461 305.815,71.375 326.670,71.375 
-    C347.525,71.375 366.491,83.461 375.299,102.365 
-    L425.096,209.235 L383.266,236.000 L331.559,195.000 
+  `M230.896,203.545
+    L278.041,102.365
+    C286.849,83.461 305.815,71.375 326.670,71.375
+    C347.525,71.375 366.491,83.461 375.299,102.365
+    L425.096,209.235 L383.266,236.000 L331.559,195.000
     L278.678,236.000 L230.896,203.545 Z`
 );
 const p4 = editor.createPath(`M218,106 L218,66`);
@@ -229,4 +248,30 @@ p3.fill = editor.makeColorFill(colorUtils.fromHex("#ffffff"));
 editor.context.insertionParent.children.append(g);
 ```
 
-![Path](../how_to/images/paths_styled.png)
+![Path](./images/paths_styled.png)
+
+## FAQs
+
+#### Q: How do I create a rectangle?
+
+**A:** Use `editor.createRectangle()` and set `width` and `height` properties.
+
+#### Q: How do I create an ellipse?
+
+**A:** Use `editor.createEllipse()` and set `rx` (radius x) and `ry` (radius y) properties.
+
+#### Q: Do shapes appear automatically after creation?
+
+**A:** No, you must append them to a container like an artboard or group to make them visible.
+
+#### Q: How do I add shapes to the page?
+
+**A:** Use `editor.context.insertionParent.children.append(shape)` or similar container methods.
+
+#### Q: How do I apply fill and stroke to shapes?
+
+**A:** Set `shape.fill = editor.makeColorFill(color)` and `shape.stroke = editor.makeStroke(options)`.
+
+#### Q: How do I create complex shapes?
+
+**A:** Use `editor.createPath(svgString)` with SVG path data to create custom shapes.

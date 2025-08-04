@@ -264,7 +264,7 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 <InlineAlert slots="text" variant="success"/>
 
 **Color Picker Component Tip:**
-If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference, or borrow the code used in [this guide](../../learn/how-to/tutorials/grids-addon.md#coding-the-grids-add-on).
+If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference, or borrow the code used in [this guide](../../learn/how_to/tutorials/grids-addon.md#3-coding-the-grids-add-on).
 
 ## Using Fonts
 
