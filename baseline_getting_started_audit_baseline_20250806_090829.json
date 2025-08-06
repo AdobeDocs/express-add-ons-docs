@@ -1,0 +1,281 @@
+{
+  "timestamp": "2025-08-06T09:08:29.640341",
+  "total_files": 11,
+  "overall_score": 0.6518181818181819,
+  "category_scores": {
+    "context_clarity": 0.4,
+    "code_completeness": 0.8819444444444445,
+    "error_coverage": 0.8181818181818182,
+    "qa_format": 0.2727272727272727,
+    "progressive_structure": 1.0,
+    "searchability": 0.7815656565656565,
+    "cross_references": 0.6727272727272727
+  },
+  "query_pattern_coverage": {
+    "text_manipulation": 1.0,
+    "error_handling": 1.0,
+    "media_handling": 1.0,
+    "development_setup": 1.0,
+    "api_integration": 1.0,
+    "architecture_confusion": 1.0
+  },
+  "critical_issues": [
+    "6 files lack clear UI vs Sandbox context"
+  ],
+  "top_recommendations": [
+    "Medium: Convert documentation to Q&A format for better LLM training",
+    "Priority: Add UI Runtime vs Document Sandbox context headers to all code examples"
+  ],
+  "file_analyses": [
+    {
+      "file_path": "src/pages/guides/getting_started/hello-world.md",
+      "title": "Hello, World!",
+      "word_count": 1853,
+      "code_blocks": 7,
+      "code_examples_complete": 7,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.7,
+      "error_first_sections": 0,
+      "error_coverage_score": 0.0,
+      "qa_format_sections": 0,
+      "cross_references": 32,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 1.0,
+      "llm_friendly_score": 0.625,
+      "issues": [
+        "Uses editor API without queueAsyncEdit context"
+      ],
+      "recommendations": [
+        "Add error-first documentation sections for API operations that can fail",
+        "Consider adding Q&A format sections"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/changelog.md",
+      "title": "What's New",
+      "word_count": 8729,
+      "code_blocks": 16,
+      "code_examples_complete": 5,
+      "code_examples_incomplete": 11,
+      "context_clarity_score": 1.0,
+      "error_first_sections": 1,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 2,
+      "cross_references": 289,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 1.0,
+      "llm_friendly_score": 0.8625,
+      "issues": [
+        "More incomplete code examples than complete ones",
+        "Contains incorrect import package names"
+      ],
+      "recommendations": [
+        "Consider adding Q&A format sections"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/setup.md",
+      "title": "Quickstart",
+      "word_count": 163,
+      "code_blocks": 0,
+      "code_examples_complete": 0,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.0,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 1,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 0.5694444444444444,
+      "llm_friendly_score": 0.5169444444444444,
+      "issues": [],
+      "recommendations": [
+        "Add clear UI Runtime vs Document Sandbox context headers",
+        "Consider adding Q&A format sections",
+        "Add more cross-references to related documentation"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/quickstart.md",
+      "title": "Quickstart",
+      "word_count": 1226,
+      "code_blocks": 5,
+      "code_examples_complete": 5,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.5,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 24,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 0.9444444444444445,
+      "llm_friendly_score": 0.7194444444444444,
+      "issues": [
+        "Mentions code/examples but lacks JavaScript code blocks"
+      ],
+      "recommendations": [
+        "Consider adding Q&A format sections"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/code_playground.md",
+      "title": "Code Playground",
+      "word_count": 2704,
+      "code_blocks": 2,
+      "code_examples_complete": 1,
+      "code_examples_incomplete": 1,
+      "context_clarity_score": 1.0,
+      "error_first_sections": 0,
+      "error_coverage_score": 0.0,
+      "qa_format_sections": 10,
+      "cross_references": 32,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 1.0,
+      "llm_friendly_score": 0.75,
+      "issues": [
+        "Uses editor API without queueAsyncEdit context"
+      ],
+      "recommendations": [
+        "Add error-first documentation sections for API operations that can fail",
+        "Consider adding Q&A format sections"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/developer-journey.md",
+      "title": "Developer Journey",
+      "word_count": 1254,
+      "code_blocks": 0,
+      "code_examples_complete": 0,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.2,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 1,
+      "cross_references": 40,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 1.0,
+      "llm_friendly_score": 0.8,
+      "issues": [
+        "Uses editor API without queueAsyncEdit context",
+        "Mentions code/examples but lacks JavaScript code blocks"
+      ],
+      "recommendations": [
+        "Add clear UI Runtime vs Document Sandbox context headers",
+        "Consider adding Q&A format sections"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/vs-code.md",
+      "title": "VS Code debugging",
+      "word_count": 502,
+      "code_blocks": 1,
+      "code_examples_complete": 1,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.0,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 1,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 0.6527777777777778,
+      "llm_friendly_score": 0.5252777777777778,
+      "issues": [],
+      "recommendations": [
+        "Add clear UI Runtime vs Document Sandbox context headers",
+        "Consider adding Q&A format sections",
+        "Add more cross-references to related documentation"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/browser.md",
+      "title": "Browser debugging",
+      "word_count": 1008,
+      "code_blocks": 1,
+      "code_examples_complete": 1,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.0,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 10,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 0.9444444444444445,
+      "llm_friendly_score": 0.5944444444444444,
+      "issues": [
+        "Mentions code/examples but lacks JavaScript code blocks"
+      ],
+      "recommendations": [
+        "Add clear UI Runtime vs Document Sandbox context headers",
+        "Consider adding Q&A format sections"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/dev_tooling.md",
+      "title": "Quickstart",
+      "word_count": 1353,
+      "code_blocks": 9,
+      "code_examples_complete": 8,
+      "code_examples_incomplete": 1,
+      "context_clarity_score": 1.0,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 7,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 0.8888888888888888,
+      "llm_friendly_score": 0.8166666666666667,
+      "issues": [],
+      "recommendations": [
+        "Consider adding Q&A format sections",
+        "Add more cross-references to related documentation"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/known_issues_limitations.md",
+      "title": "known_issues_limitations",
+      "word_count": 12,
+      "code_blocks": 0,
+      "code_examples_complete": 0,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.0,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 0,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 0.125,
+      "llm_friendly_score": 0.4625,
+      "issues": [],
+      "recommendations": [
+        "Add clear UI Runtime vs Document Sandbox context headers",
+        "Consider adding Q&A format sections",
+        "Add more cross-references to related documentation"
+      ]
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/index.md",
+      "title": "index",
+      "word_count": 114,
+      "code_blocks": 0,
+      "code_examples_complete": 0,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 0.0,
+      "error_first_sections": 0,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 0,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 0.47222222222222215,
+      "llm_friendly_score": 0.49722222222222223,
+      "issues": [
+        "Mentions code/examples but lacks JavaScript code blocks"
+      ],
+      "recommendations": [
+        "Add clear UI Runtime vs Document Sandbox context headers",
+        "Consider adding Q&A format sections",
+        "Add more cross-references to related documentation"
+      ]
+    }
+  ],
+  "baseline_hash": "b35de124a4d32e100b43786b4164b852"
+}

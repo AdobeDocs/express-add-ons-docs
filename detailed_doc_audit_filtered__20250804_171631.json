@@ -1,0 +1,22 @@
+[
+  {
+    "file_path": "src/pages/guides/support/faq.md",
+    "relative_path": "faq.md",
+    "title": "FAQ",
+    "word_count": 3074,
+    "llm_friendly_score": 0.7494444444444445,
+    "context_clarity_score": 0.5,
+    "code_blocks": 5,
+    "complete_examples": 2,
+    "incomplete_examples": 3,
+    "error_sections": 21,
+    "qa_sections": 10,
+    "cross_references": 12,
+    "linter_errors": 3,
+    "linter_warnings": 14,
+    "linter_info": 27,
+    "overall_health": 0.24944444444444447,
+    "priority_level": 0.5,
+    "improvement_potential": 0.45033333333333336
+  }
+]

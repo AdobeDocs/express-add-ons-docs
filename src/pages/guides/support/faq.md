@@ -139,38 +139,87 @@ Set `experiments: { topLevelAwait: true}` in the webpack config file (otherwise 
 
 If you add any folders, (like images for example), to your `src`, you can update the `webpack.config.js` `CopyWebpackPlugin` section within to ensure those new resources added are copied into the `dist` folder. For instance, in the following, the 3rd line was added to ensure any `.jpg` files in the `src/images` folder get copied over:
 
+### 🛠️ Build Configuration (webpack.config.js)
 ```js
-new CopyWebpackPlugin({
-  patterns: [
-    { from: "src/*.json", to: "[name][ext]" },
-    { from: "src/*.png", to: "[name][ext]" },
-    { from: "src/images/*.jpg", to: "images/[name][ext]" },
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
+
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/*.json", to: "[name][ext]" },
+        { from: "src/*.png", to: "[name][ext]" },
+        { from: "src/images/*.jpg", to: "images/[name][ext]" }, // Added this line
+      ],
+    }),
+    // Other plugins...
   ],
-});
+};
 ```
 
 ### My form submission doesn't work and the devtools console shows the error: "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?"
 
 You can call `preventDefault` on the submit event to prevent the browser from trying to complete the full form submission process and avoid this error, such as:
 
-```js
-<form
-  onSubmit={(evt) => {
+### 🖥️ UI Runtime (index.js)
+```jsx
+import React from "react";
+
+function MyForm() {
+  const handleSubmit = (evt) => {
     evt.preventDefault();
-  }}
-/>
+    // Handle form submission logic here
+    console.log('Form submitted successfully');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Enter text" />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default MyForm;
 ```
 
 **NOTE:** If the above does not work for you, you can also handle this by adding click handler to the submit button itself instead, and in that call `event.preventDefault` on the event, such as:
 
-```javascript
-<form onSubmit={(e) => e.preventDefault()}>
-  <input
-    type="submit"
-    value="Submit"
-    onClick={(e) => e.preventDefault()}
-  />
-</form>
+### 🖥️ UI Runtime (index.js)
+```jsx
+import React from "react";
+
+function MyFormWithButtonHandler() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log('Form submitted via button click');
+  };
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    handleSubmit(e);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Enter text" />
+      <input
+        type="submit"
+        value="Submit"
+        onClick={handleButtonClick}
+      />
+    </form>
+  );
+}
+
+export default MyFormWithButtonHandler;
 ```
 
 ### How do I enable CORS for a service that blocks my add-on requests due to the origin?
@@ -289,7 +338,12 @@ Yes, if an EU user has already installed your add-on, they will still be able to
 
 There's a known issue with running certain versions of Node.js on Windows with the CLI currently. Specifically, `v22.14.0` and `v18.20.7` have been found to fail with the following error:
 
+### 🛠️ Command Line Interface (Windows Terminal)
 ```bash
+# Command that triggers the error
+npx @adobe/create-ccweb-add-on my-addon
+
+# Output showing the error
 Creating a new Add-on ...
 This may take a minute ...
 
@@ -314,4 +368,16 @@ Unexpected error. Please report it as a bug:
 TypeError: Invalid URL
 ```
 
-If you encounter this issue, please update your Node.js version to `v20.11.0` and try again.
+**Solution:** If you encounter this issue, please update your Node.js version to `v20.11.0` and try again:
+
+```bash
+# Check your current Node.js version
+node --version
+
+# If you're using nvm (Node Version Manager)
+nvm install 20.11.0
+nvm use 20.11.0
+
+# Then retry creating the add-on
+npx @adobe/create-ccweb-add-on my-addon
+```
