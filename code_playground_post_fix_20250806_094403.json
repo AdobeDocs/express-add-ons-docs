@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-08-06T09:44:03.454563",
+  "total_files": 1,
+  "overall_score": 0.9714285714285714,
+  "category_scores": {
+    "context_clarity": 1.0,
+    "code_completeness": 0.8571428571428571,
+    "error_coverage": 1.0,
+    "qa_format": 1.0,
+    "progressive_structure": 1.0,
+    "searchability": 1.0,
+    "cross_references": 1.0
+  },
+  "query_pattern_coverage": {
+    "text_manipulation": 1.0,
+    "error_handling": 1.0,
+    "media_handling": 1.0,
+    "development_setup": 0.8333333333333334,
+    "api_integration": 1.0,
+    "architecture_confusion": 1.0
+  },
+  "critical_issues": [],
+  "top_recommendations": [],
+  "file_analyses": [
+    {
+      "file_path": "src/pages/guides/getting_started/code_playground.md",
+      "title": "Code Playground",
+      "word_count": 3077,
+      "code_blocks": 7,
+      "code_examples_complete": 6,
+      "code_examples_incomplete": 1,
+      "context_clarity_score": 1.0,
+      "error_first_sections": 8,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 10,
+      "cross_references": 32,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 1.0,
+      "llm_friendly_score": 0.9714285714285714,
+      "issues": [
+        "Uses editor API without queueAsyncEdit context"
+      ],
+      "recommendations": [
+        "Consider adding Q&A format sections"
+      ]
+    }
+  ],
+  "baseline_hash": "d41d8cd98f00b204e9800998ecf8427e"
+}

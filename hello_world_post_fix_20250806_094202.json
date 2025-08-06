@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-08-06T09:42:02.951241",
+  "total_files": 1,
+  "overall_score": 0.85,
+  "category_scores": {
+    "context_clarity": 1.0,
+    "code_completeness": 1.0,
+    "error_coverage": 1.0,
+    "qa_format": 0.0,
+    "progressive_structure": 1.0,
+    "searchability": 1.0,
+    "cross_references": 1.0
+  },
+  "query_pattern_coverage": {
+    "text_manipulation": 1.0,
+    "error_handling": 1.0,
+    "media_handling": 1.0,
+    "development_setup": 1.0,
+    "api_integration": 0.8333333333333334,
+    "architecture_confusion": 1.0
+  },
+  "critical_issues": [],
+  "top_recommendations": [
+    "Medium: Convert documentation to Q&A format for better LLM training"
+  ],
+  "file_analyses": [
+    {
+      "file_path": "src/pages/guides/getting_started/hello-world.md",
+      "title": "Hello, World!",
+      "word_count": 2273,
+      "code_blocks": 14,
+      "code_examples_complete": 14,
+      "code_examples_incomplete": 0,
+      "context_clarity_score": 1.0,
+      "error_first_sections": 10,
+      "error_coverage_score": 1.0,
+      "qa_format_sections": 0,
+      "cross_references": 32,
+      "progressive_structure_score": 1.0,
+      "searchability_score": 1.0,
+      "llm_friendly_score": 0.85,
+      "issues": [
+        "Uses editor API without queueAsyncEdit context"
+      ],
+      "recommendations": [
+        "Consider adding Q&A format sections"
+      ]
+    }
+  ],
+  "baseline_hash": "d41d8cd98f00b204e9800998ecf8427e"
+}

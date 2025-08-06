@@ -1,0 +1,371 @@
+{
+  "metadata": {
+    "timestamp": "20250806_093812",
+    "docs_path": "src/pages/guides/getting_started",
+    "audit_version": "1.0.0",
+    "total_files": 10
+  },
+  "framework_audit": {
+    "overall_score": 0.43075,
+    "category_scores": {
+      "context_clarity": 0.33999999999999997,
+      "code_completeness": 0.538888888888889,
+      "error_coverage": 0.0,
+      "qa_format": 0.2,
+      "progressive_structure": 1.0,
+      "searchability": 0.7597222222222222,
+      "cross_references": 0.64
+    },
+    "query_pattern_coverage": {
+      "text_manipulation": 1.0,
+      "error_handling": 1.0,
+      "media_handling": 1.0,
+      "development_setup": 1.0,
+      "api_integration": 1.0,
+      "architecture_confusion": 1.0
+    },
+    "critical_issues": [
+      "6 files lack clear UI vs Sandbox context"
+    ],
+    "baseline_hash": "b35de124a4d32e100b43786b4164b852"
+  },
+  "linter_audit": {
+    "summary": {
+      "total_files": 10,
+      "total_errors": 9,
+      "total_warnings": 9,
+      "total_info": 56,
+      "files_with_issues": 4
+    },
+    "rule_frequency": {
+      "check-undefined-variables": 4,
+      "require-context-headers": 3,
+      "require-file-indicators": 2,
+      "complete-js-examples": 4,
+      "suggest-error-sections": 2,
+      "suggest-qa-format": 9,
+      "chunk-self-contained-examples": 4,
+      "chunk-qa-optimization": 40,
+      "require-cross-references": 3,
+      "chunk-heading-hierarchy": 1,
+      "chunk-semantic-coherence": 1,
+      "chunk-context-independence": 1
+    },
+    "most_problematic_files": [
+      [
+        "src/pages/guides/getting_started/code_playground.md",
+        9
+      ],
+      [
+        "src/pages/guides/getting_started/hello-world.md",
+        7
+      ],
+      [
+        "src/pages/guides/getting_started/quickstart.md",
+        1
+      ],
+      [
+        "src/pages/guides/getting_started/local_development/browser.md",
+        1
+      ],
+      [
+        "src/pages/guides/getting_started/setup.md",
+        0
+      ],
+      [
+        "src/pages/guides/getting_started/developer-journey.md",
+        0
+      ],
+      [
+        "src/pages/guides/getting_started/local_development/vs-code.md",
+        0
+      ],
+      [
+        "src/pages/guides/getting_started/local_development/dev_tooling.md",
+        0
+      ],
+      [
+        "src/pages/guides/getting_started/local_development/known_issues_limitations.md",
+        0
+      ],
+      [
+        "src/pages/guides/getting_started/local_development/index.md",
+        0
+      ]
+    ]
+  },
+  "comprehensive_metrics": {
+    "overall_health": {
+      "average_file_health": 0.5157499999999999,
+      "files_needing_attention": 5,
+      "high_priority_files": 1,
+      "health_distribution": {
+        "excellent": 2,
+        "good": 1,
+        "fair": 5,
+        "poor": 1,
+        "critical": 1
+      }
+    },
+    "llm_readiness": {
+      "overall_score": 0.43075,
+      "context_clarity_avg": 0.33999999999999997,
+      "code_completeness_ratio": 0.92,
+      "error_documentation_coverage": 0.0,
+      "qa_format_adoption": 0.2
+    },
+    "quality_issues": {
+      "critical_linter_errors": 9,
+      "files_with_errors": 4,
+      "most_common_issues": {
+        "check-undefined-variables": 4,
+        "require-context-headers": 3,
+        "require-file-indicators": 2,
+        "complete-js-examples": 4,
+        "suggest-error-sections": 2
+      },
+      "ai_misinformation_instances": 0
+    },
+    "query_coverage": {
+      "text_manipulation": 1.0,
+      "error_handling": 1.0,
+      "media_handling": 1.0,
+      "development_setup": 1.0,
+      "api_integration": 1.0,
+      "architecture_confusion": 1.0
+    },
+    "improvement_potential": {
+      "total_potential": 2.0015,
+      "average_potential": 0.20015,
+      "high_potential_files": 0
+    }
+  },
+  "file_analysis": [
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/browser.md",
+      "relative_path": "local_development/browser.md",
+      "title": "Browser debugging",
+      "word_count": 1008,
+      "llm_friendly_score": 0.5944444444444444,
+      "context_clarity_score": 0.0,
+      "code_blocks": 1,
+      "complete_examples": 1,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 10,
+      "linter_errors": 1,
+      "linter_warnings": 0,
+      "linter_info": 8,
+      "overall_health": 0.49444444444444446,
+      "priority_level": 0.6000000000000001,
+      "improvement_potential": 0.24333333333333332
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/hello-world.md",
+      "relative_path": "hello-world.md",
+      "title": "Hello, World!",
+      "word_count": 1853,
+      "llm_friendly_score": 0.625,
+      "context_clarity_score": 0.7,
+      "code_blocks": 7,
+      "complete_examples": 7,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 32,
+      "linter_errors": 4,
+      "linter_warnings": 3,
+      "linter_info": 9,
+      "overall_health": 0.125,
+      "priority_level": 0.4,
+      "improvement_potential": 0.525
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/code_playground.md",
+      "relative_path": "code_playground.md",
+      "title": "Code Playground",
+      "word_count": 2704,
+      "llm_friendly_score": 0.75,
+      "context_clarity_score": 1.0,
+      "code_blocks": 2,
+      "complete_examples": 1,
+      "incomplete_examples": 1,
+      "error_sections": 0,
+      "qa_sections": 10,
+      "cross_references": 32,
+      "linter_errors": 4,
+      "linter_warnings": 5,
+      "linter_info": 11,
+      "overall_health": 0.25,
+      "priority_level": 0.4,
+      "improvement_potential": 0.55
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/setup.md",
+      "relative_path": "setup.md",
+      "title": "Quickstart",
+      "word_count": 163,
+      "llm_friendly_score": 0.5169444444444444,
+      "context_clarity_score": 0.0,
+      "code_blocks": 0,
+      "complete_examples": 0,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 1,
+      "linter_errors": 0,
+      "linter_warnings": 0,
+      "linter_info": 3,
+      "overall_health": 0.5169444444444444,
+      "priority_level": 0.2,
+      "improvement_potential": 0.0
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/developer-journey.md",
+      "relative_path": "developer-journey.md",
+      "title": "Developer Journey",
+      "word_count": 1254,
+      "llm_friendly_score": 0.8,
+      "context_clarity_score": 0.2,
+      "code_blocks": 0,
+      "complete_examples": 0,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 1,
+      "cross_references": 40,
+      "linter_errors": 0,
+      "linter_warnings": 0,
+      "linter_info": 4,
+      "overall_health": 0.8,
+      "priority_level": 0.2,
+      "improvement_potential": 0.11999999999999997
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/vs-code.md",
+      "relative_path": "local_development/vs-code.md",
+      "title": "VS Code debugging",
+      "word_count": 502,
+      "llm_friendly_score": 0.5252777777777778,
+      "context_clarity_score": 0.0,
+      "code_blocks": 1,
+      "complete_examples": 1,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 1,
+      "linter_errors": 0,
+      "linter_warnings": 0,
+      "linter_info": 8,
+      "overall_health": 0.5252777777777778,
+      "priority_level": 0.2,
+      "improvement_potential": 0.28483333333333327
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/known_issues_limitations.md",
+      "relative_path": "local_development/known_issues_limitations.md",
+      "title": "known_issues_limitations",
+      "word_count": 12,
+      "llm_friendly_score": 0.4625,
+      "context_clarity_score": 0.0,
+      "code_blocks": 0,
+      "complete_examples": 0,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 0,
+      "linter_errors": 0,
+      "linter_warnings": 0,
+      "linter_info": 0,
+      "overall_health": 0.4625,
+      "priority_level": 0.2,
+      "improvement_potential": 0.0
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/index.md",
+      "relative_path": "local_development/index.md",
+      "title": "index",
+      "word_count": 114,
+      "llm_friendly_score": 0.49722222222222223,
+      "context_clarity_score": 0.0,
+      "code_blocks": 0,
+      "complete_examples": 0,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 0,
+      "linter_errors": 0,
+      "linter_warnings": 0,
+      "linter_info": 2,
+      "overall_health": 0.49722222222222223,
+      "priority_level": 0.2,
+      "improvement_potential": 0.0
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/quickstart.md",
+      "relative_path": "quickstart.md",
+      "title": "Quickstart",
+      "word_count": 1226,
+      "llm_friendly_score": 0.7194444444444444,
+      "context_clarity_score": 0.5,
+      "code_blocks": 5,
+      "complete_examples": 5,
+      "incomplete_examples": 0,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 24,
+      "linter_errors": 0,
+      "linter_warnings": 1,
+      "linter_info": 8,
+      "overall_health": 0.6694444444444444,
+      "priority_level": 0.0,
+      "improvement_potential": 0.16833333333333333
+    },
+    {
+      "file_path": "src/pages/guides/getting_started/local_development/dev_tooling.md",
+      "relative_path": "local_development/dev_tooling.md",
+      "title": "Quickstart",
+      "word_count": 1353,
+      "llm_friendly_score": 0.8166666666666667,
+      "context_clarity_score": 1.0,
+      "code_blocks": 9,
+      "complete_examples": 8,
+      "incomplete_examples": 1,
+      "error_sections": 0,
+      "qa_sections": 0,
+      "cross_references": 7,
+      "linter_errors": 0,
+      "linter_warnings": 0,
+      "linter_info": 3,
+      "overall_health": 0.8166666666666667,
+      "priority_level": 0.0,
+      "improvement_potential": 0.11
+    }
+  ],
+  "recommendations": {
+    "immediate_actions": [
+      "Fix 9 critical linting errors"
+    ],
+    "short_term_improvements": [
+      "Add context headers to JavaScript code examples",
+      "Add error-first documentation sections"
+    ],
+    "long_term_goals": [
+      "Convert documentation to Q&A format for better LLM training",
+      "Achieve overall LLM-readiness score of 0.7+",
+      "Medium: Convert documentation to Q&A format for better LLM training",
+      "Priority: Add UI Runtime vs Document Sandbox context headers to all code examples"
+    ]
+  },
+  "improvement_tracking": {
+    "priority_areas": [
+      "Context Clarity (UI vs Sandbox)",
+      "Error-First Documentation"
+    ],
+    "quick_wins": [],
+    "long_term_goals": [
+      "Achieve 60%+ overall LLM-readiness score",
+      "Establish automated documentation quality monitoring"
+    ]
+  }
+}

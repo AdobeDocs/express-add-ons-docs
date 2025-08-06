@@ -63,11 +63,12 @@ When logging messages in your code, use the appropriate severity level that best
 
 Use the `console.*` methods as shown below to represent the severity level you would like to see for debugging:
 
-```bash
-    console.log('Info level)
-    console.warn('Warning level')
-    console.error('Error level)
-    console.debug(Verbose level)
+### 🖥️ UI Runtime / 📁 Document Sandbox (Debugging Code)
+```js
+console.log('Info level');
+console.warn('Warning level');
+console.error('Error level');
+console.debug('Verbose level');
 ```
 
 You can specifically filter which levels you want to view in the developer tools with the **Custom levels** drop-down as well to help you find your specific messages more quickly:
@@ -98,7 +99,7 @@ The **Add-on Development** panel also provides useful information via status mes
 
 ### Refreshing and clearing data
 
-The **Refresh** and **Clear data** buttons in the add-on developer tools can also be helpful when you want to manually force refresh your code (or when you update the manifest), or clear data you no longer want to persist. For instance, in the case of the ToDo list sample add-on (aka: `use-client-storage`), if you had added some items previously they will still be displayed when you open it again unless you actually clear the data. See the demo workflow video at the bottom of the boilerplate section for an example of this in action.
+When developing Adobe Express add-ons locally, the **Refresh** and **Clear data** buttons in the add-on developer tools can also be helpful when you want to manually force refresh your code (or when you update the manifest), or clear data you no longer want to persist. For instance, in the case of the ToDo list sample add-on (aka: `use-client-storage`), if you had added some items previously they will still be displayed when you open it again unless you actually clear the data. See the demo workflow video at the bottom of the boilerplate section for an example of this in action.
 
 ![add-ons tools clear data screenshot](./img/clear-data.png)
 
