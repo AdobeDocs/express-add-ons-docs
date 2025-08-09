@@ -110,13 +110,13 @@ python3 scripts/generate_llm_analysis_report.py --input smart_baseline.json --ou
 ### Traditional Simple Audit
 ```bash
 # Basic traditional audit
-python3 scripts/simpleAudit_fixed.py
+python3 scripts/basicAudit.py
 
 # Verbose traditional audit
-python3 scripts/simpleAudit_fixed.py --verbose
+python3 scripts/basicAudit.py --verbose
 
 # Custom output
-python3 scripts/simpleAudit_fixed.py --output traditional_audit --docs-path src/pages
+python3 scripts/basicAudit.py --output traditional_audit --docs-path src/pages
 ```
 
 ### Traditional Comprehensive Audit

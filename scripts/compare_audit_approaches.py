@@ -70,7 +70,7 @@ def analyze_sample_files(docs_path: str, sample_files: list = None):
         
         # Run traditional audit
         try:
-            from simpleAudit_fixed import audit_markdown
+            from basicAudit import audit_markdown
             
             traditional_result = audit_markdown(str(file_path))
             
