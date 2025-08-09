@@ -1,42 +1,89 @@
-# Tips & Troubleshooting
+# Lesson 3: Advanced Spectrum Web Components - Tips & Troubleshooting
 
-Useful information to use while developing your add-on UI's with Spectrum.
+Master advanced techniques and solve common issues when developing add-on UIs with Spectrum Web Components.
 
-## Tips
+## Overview
 
-### Using icons
+This lesson covers advanced topics for Spectrum Web Components development, including icons, styling, debugging, and comprehensive troubleshooting. Use this as your reference guide while developing Adobe Express add-ons.
+
+## Prerequisites FAQ
+
+**Q:** What should I complete before this lesson?
+
+**A:** You should have completed:
+- [Lesson 1: Basic JavaScript add-on with Spectrum Web Components](./part1.md)
+- [Lesson 2: React-based add-on with swc-react components](./part2.md)
+
+**Q:** What topics does this lesson cover?
+
+**A:** This lesson covers:
+- Advanced icon usage and customization
+- Spectrum sizing and design tokens
+- Typography and font management
+- CSS styling with Spectrum variables
+- Debugging techniques and tools
+- Comprehensive troubleshooting solutions
+
+## Step-by-Step Advanced Topics
+
+### Step 1: Working with Icons
 
 You can import and use an [icon from the Spectrum icon libraries](https://spectrum.adobe.com/page/icons/) provided in the [`icons-workflow`](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) and [`icons-ui`](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) libraries.
 
 - [**icons-workflow**](https://opensource.adobe.com/spectrum-web-components/components/icons-workflow/) - icons representing graphical metaphors such as a document, share symbol, trash can, etc.
 - [**icons-ui**](https://opensource.adobe.com/spectrum-web-components/components/icons-ui/) - icons that are parts of a component definition like an X, magnifying glass or checkmark.
 
-To use these icons, first add the associated library to your project by installing them from the command line, or via the `package.json`, then import them into your JS. For example:
+**Q:** How do I add icons to my add-on project?
+
+**A:** Follow these steps:
+
+1. **Install icon libraries** - Add them to your project dependencies:
 
 ```json
+// UI Runtime Context - package.json dependencies section
 "@spectrum-web-components/icons-ui": "0.39.4",
-"@spectrum-web-components/icons-workflow": "0.39.4",
+"@spectrum-web-components/icons-workflow": "0.39.4"
 ```
 
-Then import and use them; for instance:
+2. **Import specific icons** in your JavaScript file:
 
 ```js
-import "@spectrum-web-components/icons-workflow/icons/sp-icon-play-circle.js;";
+// UI Runtime Context - src/index.js imports
+import "@spectrum-web-components/icons-workflow/icons/sp-icon-play-circle.js";
 import "@spectrum-web-components/icons-ui/icons/sp-icon-arrow75.js";
 ```
 
+3. **Use icons in your HTML**:
+
 ```html
+<!-- UI Runtime Context - src/index.html -->
 <sp-icon-play-circle size="s"></sp-icon-play-circle>
 <sp-icon-arrow75 size="m"></sp-icon-arrow75>
 ```
 
+**Q:** What's the difference between workflow and UI icons?
+
+**A:** 
+- **icons-workflow**: Metaphorical icons (documents, share, trash can, etc.)
+- **icons-ui**: Component-specific icons (X, magnifying glass, checkmark, etc.)
+
 **NOTE:** Icons adhere to the [Spectrum Design t-shirt sizing](https://spectrum.adobe.com/page/design-tokens/#Size-tokens), with a default of `size="m"` (for medium).
 
-You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) and specify an image directly via the `src` attribute, either with the image reference, or a data URL. Both are shown below for an example:
+#### Alternative Icon Methods
 
+**Q:** Can I use custom images as icons?
+
+**A:** Yes! You can use the [`sp-icon` package](https://opensource.adobe.com/spectrum-web-components/components/icon/) with custom images:
+
+**Option 1: Image file reference**
 ```html
+<!-- UI Runtime Context - src/index.html -->
 <sp-icon src="icon-144x144.png" />
+```
 
+**Option 2: Data URL (base64 encoded)**
+```html
+<!-- UI Runtime Context - src/index.html -->
 <sp-icon
   size="l"
   label="Previous"
@@ -44,9 +91,9 @@ You can also use the [`[sp-icon]` package](https://opensource.adobe.com/spectrum
 />
 ```
 
-You can also supply an `svg` to the `<sp-icon>` component, as shown below:
-
+**Option 3: Inline SVG**
 ```html
+<!-- UI Runtime Context - src/index.html -->
 <sp-icon>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -68,36 +115,117 @@ You can also supply an `svg` to the `<sp-icon>` component, as shown below:
 
 Using an iconset reference from one of the `icons-workflow` or `icons-ui` packages in the `name` on an `sp-icon` should no longer be used (ie: `<sp-icon name="ui:Arrow100"></sp-icon>`), since it's deprecated. Use the specific named import mentioned in the first bullet above, instead.
 
-### Spectrum sizing
+### Step 2: Understanding Spectrum Sizing
 
-In Spectrum, there are two main sizing concepts to understand:
+**Q:** What are the two main sizing concepts in Spectrum?
 
-- [**scale**](https://spectrum.adobe.com/page/platform-scale/) - the overall size of all of the components on the page, ie: medium for desktop, or large for touch, for instance.
-- [**t-shirt sizes**](https://spectrum.adobe.com/page/design-tokens/#Size-tokens) - the size of a specific component, set as a variant or modifier to that component (ie: `size="m"`). **Note:** a component with a t-shirt sizing is still affected by `scale`.
+**A:** Spectrum uses two sizing systems:
 
-### Fonts
+1. **[Scale](https://spectrum.adobe.com/page/platform-scale/)** - Global sizing for all components:
+   - `medium` - Standard desktop interfaces
+   - `large` - Touch-friendly interfaces (mobile/tablet)
 
-There are a set of [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) automatically injected by the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use) for use in your add-ons. You can see which are available by checking [the documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts). You can also see them while running an add-on via the browser developer tools, as shown in the following:
+2. **[T-shirt sizes](https://spectrum.adobe.com/page/design-tokens/#Size-tokens)** - Individual component sizing:
+   - `size="s"` - Small
+   - `size="m"` - Medium (default)
+   - `size="l"` - Large
+   - `size="xl"` - Extra large
+
+**Q:** How do scale and component sizes interact?
+
+**A:** Component t-shirt sizes are relative to the overall scale. A `size="m"` button will be larger when the scale is `large` than when the scale is `medium`.
+
+**Example in your theme setup:**
+```html
+<!-- UI Runtime Context - src/index.html -->
+<sp-theme scale="medium" color="light" theme="express">
+  <!-- Components here will use medium scale -->
+  <sp-button size="m">Medium button on medium scale</sp-button>
+  <sp-icon-play-circle size="s">Small icon on medium scale</sp-icon-play-circle>
+</sp-theme>
+```
+
+### Step 3: Font Management
+
+**Q:** What fonts are available in Adobe Express add-ons?
+
+**A:** Adobe Express automatically injects [Adobe Clean fonts](https://spectrum.adobe.com/page/fonts/) via the [Add-on UI SDK](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/#importing-the-addonuisdk-for-use). Available fonts include:
+- Adobe Clean (regular, bold, light variations)
+- Adobe Clean Serif
+- Source Code Pro (for code displays)
+
+**Q:** How can I see which fonts are loaded?
+
+**A:** Open browser developer tools while your add-on is running and inspect the available fonts in the Fonts panel or check the [font documentation](https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts).
 
 ![Injected fonts screenshot](../images/fonts.png)
 
-### Debugging
+### Step 4: Debugging Techniques
 
-- Use the browser developer tools to inspect the HTML, and search for the `add-on-iframe-slot` element to find the add-on specific code container.
-- From the developer tools, click into the variables in the stylesheets to see their values.
-- Dig into the `node_modules/@spectrum-web-components` folder and view the component details to help better understand why an issue might be happening.
-- Use the [API tab in the component reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) or [the Storybook](https://opensource.adobe.com/spectrum-web-components/storybook) to locate the details around the supported events.
+**Q:** How do I debug my add-on effectively?
 
-### Styling with Spectrum CSS
+**A:** Use these debugging strategies:
+
+1. **Browser Developer Tools**:
+   - Open DevTools in Adobe Express (F12 or right-click → Inspect)
+   - Search for `add-on-iframe-slot` to find your add-on's container
+   - Use Console tab for JavaScript errors and `console.log()` outputs
+
+2. **CSS Variable Inspection**:
+   - In DevTools, click on CSS variables in stylesheets to see their computed values
+   - Use Elements tab to inspect component styling and structure
+
+3. **Component Investigation**:
+   - Check `node_modules/@spectrum-web-components` folder for component source
+   - Use [component API reference](https://opensource.adobe.com/spectrum-web-components/components/slider/api/) for properties and events
+   - Browse [Storybook examples](https://opensource.adobe.com/spectrum-web-components/storybook) for usage patterns
+
+4. **Common Debugging Steps**:
+   - Verify component imports are correct
+   - Check that components are wrapped in `<sp-theme>`
+   - Ensure webpack is handling CSS imports properly
+   - Validate component version compatibility (all should be 0.39.4)
+
+**Q:** What should I look for when components aren't working?
+
+**A:** Check these common issues:
+- Missing theme wrapper (`<sp-theme>`)
+- Incorrect import paths
+- Version mismatches between components
+- Missing CSS loaders in webpack config
+
+### Step 5: Advanced CSS Styling with Spectrum
 
 Use Spectrum CSS variables for padding, gaps between controls, and general layout. In addition, since Spectrum Web Components do not include any specific components for typography, you can also use variables to style the typography.
 
-Some benefits to using Spectrum CSS variables to style your components over absolute values:
+**Q:** Why should I use Spectrum CSS variables instead of absolute values?
 
-- By using Spectrum CSS global variables, you can ensure your UI aligns with the Spectrum design system, and if the design system changes, your UI will automatically update to the new design system.
-- Using Spectrum CSS variables to style your UI allows you to easily update the styles across your entire application by simply updating the value of the variable. If you decide to change a color used throught your app, for example, you can update the value of a single Spectrum CSS variable, and all the elements that use that variable will be updated automatically.
+**A:** Spectrum CSS variables provide several benefits:
 
-#### Layout and typography styling
+1. **Design System Alignment**: Your UI automatically stays aligned with Spectrum design updates
+2. **Maintainability**: Change one variable to update styles across your entire application
+3. **Theme Compatibility**: Variables automatically adapt to light/dark themes
+4. **Consistency**: Ensures uniform spacing, colors, and typography throughout your add-on
+
+**Q:** How do I implement Spectrum CSS variables in my add-on?
+
+**A:** Import the typography CSS and use Spectrum variables in your styles:
+
+```js
+// UI Runtime Context - src/index.js imports
+import "@spectrum-web-components/styles/typography.css";
+```
+
+```css
+/* UI Runtime Context - src/index.css or <style> block */
+.my-component {
+  margin: var(--spectrum-global-dimension-static-size-250);
+  padding: var(--spectrum-global-dimension-static-size-100);
+  color: var(--spectrum-global-color-gray-800);
+}
+```
+
+#### Understanding Spectrum CSS Variables
 
 - [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens) - the layout of your add-on can be adjusted by using global variables defined in the `@spectrum-web-components/styles/express/spectrum-core-global.css` folder in the `node_modules` of your add-on.
 
@@ -156,76 +284,214 @@ An example of their usage to modify the Slider is provided below for a reminder 
 }
 ```
 
-## Troubleshooting
+## Comprehensive Troubleshooting Guide
 
-### Known issues
+This section provides solutions to common issues encountered when developing with Spectrum Web Components.
 
-- [Spectrum Web Component version conflicts](https://opensource.adobe.com/spectrum-web-components/registry-conflicts/)
+### Critical Known Issues
 
-  You _must_ use **matching component versions for all Spectrum Web Components (or swc-react components)** in your `package.json` or you will receive errors that are often not clear to determine the cause, so save yourself time and double check this if you're having issues running your add-on.
+#### Spectrum Web Component Version Conflicts
 
-  This is mentioned in this tutorial a couple of times, but there is a known issue seen when using `@spectrum-web-components` (or `@swc-react`) packages with version `0.40.3`. At the moment `0.39.4` is a stable version that should work if you suspect a component version issue.
+**Issue**: [Registry conflicts](https://opensource.adobe.com/spectrum-web-components/registry-conflicts/) causing component registration errors.
 
-- [Picker](https://opensource.adobe.com/spectrum-web-components/components/picker/) flicker
+**Root Cause**: Mismatched component versions in `package.json`.
 
-  Currently there's a known issue with the `swc-react` **Picker** component in versions `0.36.*-0.40.*` where you will see the UI flicker when clicking it.
+**Solution**: Ensure ALL Spectrum Web Components use the exact same version:
 
-### Troubleshooting FAQ
+```json
+// UI Runtime Context - package.json dependencies - CORRECT
+"@spectrum-web-components/button": "0.39.4",
+"@spectrum-web-components/theme": "0.39.4",
+"@spectrum-web-components/picker": "0.39.4"
+// All components must match!
+```
 
-This section is provided to help troubleshoot any errors you may encounter while following this tutorial.
+**Critical**: Version 0.40.3 has known issues. Use 0.39.4 for stability.
 
-- Why do I see registry errors in the console when running my add-on, for instance: `Uncaught DOMException: Failed to execute 'define' on 'CustomElementRegistry': the name "sp-icon-chevron100" has already been used with this registry` and `Base.dev.js:164 Attempted to redefine <sp-icon-chevron100>. This usually indicates that multiple versions of the same web component were loaded onto a single page. https://opensource.adobe.com/spectrum-web-components/registry-conflicts`
+#### Picker Component Flicker
 
-  This is probably due to mismatched versions of the `@spectrum-web-components` (or `@swc-react`) packages being used in your `package.json`. Don't forget to run `npm install` after updating your `package.json` to match the versions.
+**Issue**: UI flicker when clicking [Picker components](https://opensource.adobe.com/spectrum-web-components/components/picker/).
 
-  **Solution:** open your `package.json` file and set all of the versions to the same one (ie: `0.39.4`). You can always reference [the sample projects](https://github.com/hollyschinsky/bingo-card-generator-js) as needed.
+**Affected Versions**: 0.36.* - 0.40.*
 
-- Why do I see the following error when trying to build or start my add-on with the CLI? `ERROR in ./node_modules/@spectrum-web-components/button/src/Button.dev.js 145:6-78 Module not found: Error: Can't resolve '@spectrum-web-components/progress-circle/sp-progress-circle.js' in '/Users/hollyschinsky/spectrum-workshop-2023/workshop-projects/bingo-card-addon-react-start/node_modules/@spectrum-web-components/button/src' ... Field 'browser' doesn't contain a valid alias configuration resolve as module`
+**Solution**: Downgrade to version 0.39.4 or wait for fix in future versions.
 
-  **Solution:** there's a known issue seen when using `@spectrum-web-components` (or `@swc-react`) packages with version `0.40.3`, which is the latest version that are installed at the time of writing this tutorial, unfortunately. The solution is to update the versions of all components used in your `package.json` file to a known stable one like `0.39.4`. Don't forget to run `npm install` after updating to ensure the stable versions are installed before trying to build and run your add-on again.
+### Step-by-Step Error Resolution
 
-- Is there a general solution to try when something doesn't work right with the CLI?
+#### Build and Configuration Errors
 
-  **Solution:** try running `npx clear-npx-cache` to ensure the latest CLI version is installed, then run the CLI commands again.
+**Q:** I see registry errors like `"sp-icon-chevron100" has already been used with this registry`. How do I fix this?
 
-- Why isn't the CLI building the output to the `dist` folder as I would expect? Did I forget to include a `webpack.config.js` file in the root of my project?
+**A:** This indicates version conflicts:
 
-  **Solution:** make sure your [`webpack.config.js`](https://developer.adobe.com/express/add-ons/docs/resources/tutorials/spectrum-workshop/part1/#create-and-configure-your-add-on) is in the root of your project and not the `src` folder. You could also double check to ensure your project has the dependencies needed to use webpack. You could also try to replace your `package.json` file with the one from the [provided project](https://github.com/hollyschinsky/bingo-card-generator-react-js).
+1. **Check versions** in `package.json`:
+   ```bash
+   # UI Runtime Context - Terminal
+   grep "@spectrum-web-components" package.json
+   ```
 
-- I'm building a react-based add-on and it's not building correctly. Does the `scripts` object in the `package.json` of my add-on ensure the `--use webpack` parameter is used?
+2. **Update to matching versions**:
+   ```json
+   // UI Runtime Context - package.json
+   "dependencies": {
+     "@spectrum-web-components/button": "0.39.4",
+     "@spectrum-web-components/theme": "0.39.4"
+   }
+   ```
 
-  **Solution:** ensure your `package.json` has the following `scripts` block. If it doesn't, it will not use webpack to build and start, package etc.
+3. **Reinstall dependencies**:
+   ```bash
+   # UI Runtime Context - Terminal
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
 
-  ```json
-  "scripts": {
-      "clean": "ccweb-add-on-scripts clean",
-      "build": "ccweb-add-on-scripts build --use webpack",
-      "start": "ccweb-add-on-scripts start --use webpack",
-      "package": "ccweb-add-on-scripts package --use webpack"
-  }
-  ```
+**Q:** Build fails with "Can't resolve '@spectrum-web-components/progress-circle'" error?
 
-- Are all of my components wrapped within an opening and closing `<sp-theme>` or `<Theme>` tag?
+**A:** This is a known issue with version 0.40.3:
 
-  **Solution:** make sure all your UI components are surrounded by the corresponding opening and closing theme tags for either Spectrum Web Components or `swc-react`, or you will not see the components rendered properly.
+1. **Downgrade all components** to 0.39.4 in `package.json`
+2. **Clear cache and reinstall**:
+   ```bash
+   # UI Runtime Context - Terminal
+   npx clear-npx-cache
+   npm install
+   ```
 
-Still having issues? Ping me on [discord](https://discord.com/invite/nc3QDyFeb4) (username `hollyschinsky`) or email me at [hschinsk@adobe.com](mailto:hschinsk@adobe.com) for help.
+**Q:** CLI not building to `dist` folder correctly?
 
-## Resources
+**A:** Check your webpack configuration:
 
-The following list of resources can be used to learn more about using Adobe's Spectrum Design System:
+1. **Verify webpack.config.js location**: Must be in project root, not `src/`
+2. **Check package.json scripts**:
+   ```json
+   // UI Runtime Context - package.json scripts
+   "scripts": {
+     "build": "ccweb-add-on-scripts build --use webpack",
+     "start": "ccweb-add-on-scripts start --use webpack"
+   }
+   ```
 
-- Example codepens
+#### Component Display Issues
+
+**Q:** Components aren't rendering or look unstyled?
+
+**A:** Check these requirements:
+
+1. **Theme wrapper**: All components must be inside `<sp-theme>`:
+   ```html
+   <!-- UI Runtime Context - src/index.html -->
+   <sp-theme scale="medium" color="light" theme="express">
+     <sp-button>Your components here</sp-button>
+   </sp-theme>
+   ```
+
+2. **Import order**: Theme imports must come first:
+   ```js
+   // UI Runtime Context - src/index.js - CORRECT ORDER
+   import '@spectrum-web-components/theme/sp-theme.js';
+   import '@spectrum-web-components/theme/express/theme-light.js';
+   import '@spectrum-web-components/button/sp-button.js';
+   ```
+
+3. **Webpack CSS handling**: Verify CSS loaders in webpack.config.js
+
+#### Development and CLI Issues
+
+**Q:** General CLI issues - what's the universal fix?
+
+**A:** Try the cache reset approach:
+
+```bash
+# UI Runtime Context - Terminal
+npx clear-npx-cache
+npm run build
+npm run start
+```
+
+### Emergency Troubleshooting Checklist
+
+When nothing works, follow this systematic approach:
+
+1. **✅ Version Audit**: All `@spectrum-web-components` use same version (0.39.4)
+2. **✅ Clean Install**: Delete `node_modules`, run `npm install`
+3. **✅ Cache Clear**: Run `npx clear-npx-cache`
+4. **✅ Theme Check**: Components wrapped in `<sp-theme>`
+5. **✅ Import Order**: Theme imports before component imports
+6. **✅ Webpack Config**: File in project root with correct CSS loaders
+7. **✅ Reference Project**: Compare with [working examples](https://github.com/hollyschinsky/bingo-card-generator-js)
+
+### Getting Additional Help
+
+**Q:** Still having issues after trying everything?
+
+**A:** Contact support through these channels:
+- **Discord**: [Adobe Express Add-ons Community](https://discord.com/invite/nc3QDyFeb4) (username `hollyschinsky`)
+- **Email**: [hschinsk@adobe.com](mailto:hschinsk@adobe.com)
+- **GitHub Issues**: Report bugs in the [Spectrum Web Components repo](https://github.com/adobe/spectrum-web-components/issues)
+
+## Additional Resources & Next Steps
+
+### Related Lessons
+
+Continue your Adobe Express add-on development journey:
+
+- **Prerequisites**: [Lesson 1: Basic JavaScript with Spectrum Web Components](./part1.md)
+- **Prerequisites**: [Lesson 2: React-based add-on with swc-react](./part2.md)
+- **Advanced Topics**: [Document API concepts](../../learn/platform_concepts/document-api.md)
+- **Publishing**: [Development and publishing guides](../../guides/getting_started/dev_tooling.md)
+
+### Interactive Examples
+
+Explore working examples to understand implementation:
+
+- **CodePen Examples**:
   - [Simple button using Spectrum Web Components](https://codepen.io/hollyschinsky/pen/xxBweyV)
-  - [Bingo Card Generator](https://codepen.io/hollyschinsky/pen/wvOyrLm)
-  - [Spectrum Typography](https://codepen.io/hollyschinsky/pen/eYXKpmj)
-  - [Spectrum CSS](https://codepen.io/lazd/pen/Exevvey)
-- [Adobe Express UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
-- [Adobe Spectrum Storybook Web Components Storybook](https://opensource.adobe.com/spectrum-web-components/storybook/)
-- [Adobe Spectrum Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)
-- [Adobe Spectrum XD Plugin](https://spectrum.adobe.com/page/spectrum-xd-plugin/)
-- [Adobe Spectrum Figma plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
-- [Adobe Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js)
-  - **Reminder:** you should only use this option for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles specifically. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
-- [Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
-- [Color Wheel](https://color.adobe.com/create/color-wheel)
+  - [Complete Bingo Card Generator](https://codepen.io/hollyschinsky/pen/wvOyrLm)
+  - [Spectrum Typography showcase](https://codepen.io/hollyschinsky/pen/eYXKpmj)
+  - [Spectrum CSS variables demo](https://codepen.io/lazd/pen/Exevvey)
+
+- **GitHub Projects**:
+  - [JavaScript Bingo Generator](https://github.com/hollyschinsky/bingo-card-generator-js)
+  - [React Bingo Generator](https://github.com/hollyschinsky/bingo-card-generator-react-js)
+  - [Official Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
+
+### Design System Resources
+
+Master the Spectrum Design System:
+
+- **Core Documentation**:
+  - [Adobe Express UX Guidelines](https://xd.adobe.com/view/urn:aaid:sc:US:fd638450-1af8-49c3-ad29-0e76c2a2136f/)
+  - [Spectrum Web Components Storybook](https://opensource.adobe.com/spectrum-web-components/storybook/)
+  - [Spectrum Design Tokens Visualizer](https://opensource.adobe.com/spectrum-tokens/visualizer/)
+
+- **Design Tools**:
+  - [Adobe Spectrum XD Plugin](https://spectrum.adobe.com/page/spectrum-xd-plugin/)
+  - [Adobe Spectrum Figma Plugin](https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system)
+  - [Adobe Color Wheel](https://color.adobe.com/create/color-wheel)
+
+### Development Tools
+
+- **Quick Testing** (Development Only):
+  - [Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js)
+  - **⚠️ Warning**: CDN defaults to base theme. Include Express theme bundles for proper styling.
+
+### Community & Support
+
+- **Discord**: [Adobe Express Add-ons Community](https://discord.com/invite/nc3QDyFeb4)
+- **Documentation**: [Complete Add-on Developer Guides](https://developer.adobe.com/express/add-ons/docs/)
+- **Issues**: [Spectrum Web Components GitHub](https://github.com/adobe/spectrum-web-components/issues)
+
+## Summary
+
+You've completed the advanced Spectrum Web Components lesson! You now understand:
+
+- ✅ Advanced icon management and custom implementations
+- ✅ Spectrum sizing concepts (scale vs. t-shirt sizes)
+- ✅ Font management in Adobe Express add-ons
+- ✅ Debugging techniques and tools
+- ✅ Advanced CSS styling with Spectrum variables
+- ✅ Component modifier variables
+- ✅ Comprehensive troubleshooting strategies
+
+**Next Steps**: Apply these advanced techniques to your own add-on projects, and explore the [Document API](../../learn/platform_concepts/document-api.md) for even more powerful functionality.

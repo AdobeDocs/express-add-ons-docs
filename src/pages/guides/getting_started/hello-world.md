@@ -100,7 +100,10 @@ Feel free to tweak the script to change the properties in the `color` object, or
 
 To get a feel of the available APIs, visit the [How-to guides](../learn/how_to/index.md) and copy and paste code snippets into the Playground. For instance, check out the [Use Text](../learn/how_to/use_text.md) page and try the following script for the original "Hello World" experience.
 
+### 📁 Document Sandbox (Code Playground Script)
 ```js
+import { editor } from "express-document-sdk";
+
 // Create a new TextNode
 const textNode = editor.createText("Hello,\nWorld!");
 // Center the text on the page
@@ -235,8 +238,13 @@ If you click the **Create Rectangle** button, you'll see the rectangle being add
 
 While your add-on is still loaded and running, open the `src/index.html` file and update the **"Create Rectangle"** string in the `<button>` to something else, like **Add Text**. In the `src/sandbox/code.js` replace the body of the `createRectangle()` function with the following, borrowed from the [Use Text](../learn/how_to/use_text.md) how-to guide:
 
+### 📁 Document Sandbox (src/sandbox/code.js)
+
 ```js
-// ...
+import { editor } from "express-document-sdk";
+
+// Replace the existing createRectangle function
+const api = {
   createRectangle: () => {
     // Create a new TextNode
     const textNode = editor.createText("Hello,\nWorld!");
@@ -272,6 +280,101 @@ Any changes to the `manifest.json` will _require a manual reload of your add-on_
 ![Refresh manifest](./img/playground-refresh-manifest.png)
 
 </details>
+
+## Common Issues & Troubleshooting
+
+### Error: "editor is not defined"
+
+❌ **Don't do this:**
+### 📁 Document Sandbox (code.js)
+```js
+// Missing import statement
+const textNode = editor.createText("Hello World!");
+```
+
+✅ **Do this instead:**
+### 📁 Document Sandbox (code.js)
+```js
+import { editor } from "express-document-sdk";
+const textNode = editor.createText("Hello World!");
+```
+
+**Why this happens:** The `editor` object needs to be imported from the Express Document SDK  
+**How to fix:** Always include the import statement at the top of your code
+
+### Error: "Cannot read property 'append' of undefined"
+
+❌ **Don't do this:**
+### 📁 Document Sandbox (code.js)
+```js
+import { editor } from "express-document-sdk";
+// Trying to append without checking context
+editor.context.insertionParent.children.append(element);
+```
+
+✅ **Do this instead:**
+### 📁 Document Sandbox (code.js)
+```js
+import { editor } from "express-document-sdk";
+const insertionParent = editor.context.insertionParent;
+if (insertionParent) {
+  insertionParent.children.append(element);
+}
+```
+
+**Why this happens:** The insertion parent might not be available in certain contexts  
+**How to fix:** Always check if the insertion parent exists before using it
+
+### Error: "Add-on Development mode not enabled"
+
+**Problem:** You can't access the Code Playground or load add-ons  
+**Solution:** 
+1. Click your avatar icon in Adobe Express
+2. Open Settings (gear icon)
+3. Enable "Add-on Development" mode
+4. Accept the Developer Terms of Use if prompted
+
+### Error: "Manifest not found" when loading CLI add-on
+
+**Problem:** Your add-on won't load in Adobe Express  
+**Solution:**
+1. Ensure `manifest.json` is in your project root
+2. Check that the manifest has valid JSON syntax
+3. Verify the `main` field points to the correct entry file
+4. Use the Refresh button in the Add-on Development panel after manifest changes
+
+### Code Playground Script vs Add-on Confusion
+
+**Problem:** Code that works in Script mode doesn't work in Add-on mode  
+**Explanation:** 
+- **Script mode**: Runs directly in the document sandbox with immediate access to `editor`
+- **Add-on mode**: Requires communication between UI and sandbox via `addOnUISdk.proxy`
+
+**Script mode example:**
+### 📁 Document Sandbox (Code Playground Script)
+```js
+import { editor } from "express-document-sdk";
+const textNode = editor.createText("Hello!");
+```
+
+**Add-on mode example:**
+### 📁 Document Sandbox (sandbox/code.js)
+```js
+import { editor } from "express-document-sdk";
+const api = {
+  createText: () => {
+    const textNode = editor.createText("Hello!");
+    // ...
+  }
+};
+```
+
+### 🖥️ UI Runtime (index.js)
+```js
+import addOnUISdk from "add-on-sdk";
+const { runtime } = addOnUISdk.instance;
+runtime.exposeApi(api);
+```
 
 ## Next steps
 

@@ -31,15 +31,40 @@ There are a few open source Spectrum libraries available, but we specifically re
 - Time savings due to the built-in styling
 - Compliant with industry standards
 
-## Steps
+## Prerequisites
 
-### Create and configure your add-on
+**Q:** What do I need before starting this lesson?
+
+**A:** You should have:
+- Node.js and npm installed
+- Basic knowledge of HTML, CSS, and JavaScript
+- Adobe Express account for testing
+- Familiarity with command line tools
+
+**Q:** How is this different from Lesson 2?
+
+**A:** This lesson uses vanilla JavaScript with Spectrum Web Components directly. Lesson 2 uses React with swc-react wrapper components.
+
+## Step-by-Step Tutorial
+
+This tutorial is organized into clear, sequential steps. Complete each step before moving to the next.
+
+### Step 1: Create and Configure Your Add-on
 
 Use the CLI to create a new add-on based on the basic `javascript` template:
 
-```js
+```bash
+# UI Runtime Context - Terminal command
 npx @adobe/create-ccweb-add-on bingo-card-generator-js --template javascript
 ```
+
+**Q:** What if the CLI command fails?
+
+**A:** Common solutions:
+1. Clear the npx cache: `npx clear-npx-cache`
+2. Check Node.js version (requires Node 16+)
+3. Ensure network connectivity
+4. Try with `--verbose` flag for detailed error info
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -53,17 +78,19 @@ If you run the project at this point (`npm run build; npm run start`), you will 
 
 However, since you're going to be implementing a whole new UI, go ahead and remove the existing lines related to the button:
 
-Open the `src/index.html` file and **remove the following lines** within the `<body>` block:
+1. Open the `src/index.html` file and **remove the following lines** within the `<body>` block:
 
 ```html
+<!-- UI Runtime Context - src/index.html -->
 <div class="container">
     <button id="clickMe" disabled>Click me</button>
 </div>
 ```
 
-you should also **remove the associated CSS styles** from the `<style>` block since they are no longer needed:
+2. **Remove the associated CSS styles** from the `<style>` block since they are no longer needed:
 
 ```css
+/* UI Runtime Context - src/index.html <style> block */
 .container {
     margin: 24px;
     display: flex;
@@ -91,136 +118,181 @@ button:not([disabled]):hover {
 }
 ```
 
-Then, open the `src/index.js` and **remove the following lines**, (ensuring you keep the `addOnUISdk.ready.then(() => {...}` block intact).
+3. Open the `src/index.js` and **remove the following lines**, (ensuring you keep the `addOnUISdk.ready.then(() => {...}` block intact):
 
 ```js
-    const clickMeButton = document.getElementById("clickMe");
-    clickMeButton.addEventListener("click", () => {
-        clickMeButton.innerHTML = "Clicked";
-    });
+// UI Runtime Context - src/index.js - REMOVE these lines
+const clickMeButton = document.getElementById("clickMe");
+clickMeButton.addEventListener("click", () => {
+    clickMeButton.innerHTML = "Clicked";
+});
 
-    // Enable the button only when:
-    // 1. `addOnUISdk` is ready, and
-    // 2. `click` event listener is registered.
-    clickMeButton.disabled = false;
+// Enable the button only when:
+// 1. `addOnUISdk` is ready, and
+// 2. `click` event listener is registered.
+clickMeButton.disabled = false;
 ```
 
-Next, you're going to need to configure your new add-on project to use webpack, since it's required to bundle the Spectrum Web Components properly. This requires a `webpack.config.js` file and some additional updates to your `package.json`:
+**Q:** What if I accidentally delete too much?
 
-1. First, create a new file named `webpack.config.js` in **the root** of your add-on project, (outside the `src`), and copy in the code block below (or, alternatively, copy it in from [the provided project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)):
+**A:** Make sure to keep the `addOnUISdk.ready.then(() => { ... })` wrapper block intact. This is essential for add-on functionality.
 
-    ```js
-    const path = require("path");
-    const HtmlWebpackPlugin = require("html-webpack-plugin");
-    const CopyWebpackPlugin = require("copy-webpack-plugin");
+### Step 2: Configure Webpack
 
-    const isEnvProduction = process.env.NODE_ENV === "production";
+**Context:** Webpack is required to bundle Spectrum Web Components properly.
 
-    module.exports = {
-        mode: isEnvProduction ? "production" : "development",
-        devtool: isEnvProduction ? "source-map" : "eval-source-map",
-        entry: "./src/index.js",
-        experiments: {
-            outputModule: true
-        },
-        output: {
-            path: path.resolve(__dirname, "dist"),
-            module: true,
-            filename: "index.js"
-        },
-        externalsType: "module",
-        externalsPresets: { web: true },
-        plugins: [
-            new HtmlWebpackPlugin({
-                template: "src/index.html",
-                scriptLoading: "module"
-            }),
-            new CopyWebpackPlugin({            
-                patterns: [
-                    { from: "src/*.json", to: "[name][ext]" },                
-                    { from: "src/*.png", to: "[name][ext]", noErrorOnMissing: true },
-                ],
-            })
-        ],
-        module: {
-            rules: [
-                {
-                    test: /\.(js)$/,
-                    exclude: /node_modules/,
-                    use: ["babel-loader"]
-                },
-                {
-                    test: /(\.css)$/,
-                    use: ["style-loader", "css-loader"]
-                }
-            ]
-        },
-        resolve: {
-            extensions: [".js", ".css"]
-        }
-    };
-    ```
+You need to configure your new add-on project to use webpack. This requires a `webpack.config.js` file and some additional updates to your `package.json`.
 
-2. Now, update your `package.json` to configure it to use webpack and add the required dependencies. This requires an update to the `scripts` block to add the `--use webpack` parameter, as shown below:
+**Q:** Why do I need webpack for Spectrum Web Components?
 
-    ```json
-     "scripts": {
-        "clean": "ccweb-add-on-scripts clean",
-        "build": "ccweb-add-on-scripts build --use webpack",
-        "start": "ccweb-add-on-scripts start --use webpack",
-        "package": "ccweb-add-on-scripts package --use webpack"
+**A:** Webpack bundles the web components and their dependencies correctly, ensuring they work properly in the add-on environment. Without webpack, you might encounter module loading issues.
+
+1. Create a new file named `webpack.config.js` in **the root** of your add-on project (outside the `src` folder)
+2. Copy in the complete configuration below:
+
+```js
+// UI Runtime Context - webpack.config.js (project root)
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const isEnvProduction = process.env.NODE_ENV === "production";
+
+module.exports = {
+    mode: isEnvProduction ? "production" : "development",
+    devtool: isEnvProduction ? "source-map" : "eval-source-map",
+    entry: "./src/index.js",
+    experiments: {
+        outputModule: true
+    },
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        module: true,
+        filename: "index.js"
+    },
+    externalsType: "module",
+    externalsPresets: { web: true },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "src/index.html",
+            scriptLoading: "module"
+        }),
+        new CopyWebpackPlugin({            
+            patterns: [
+                { from: "src/*.json", to: "[name][ext]" },                
+                { from: "src/*.png", to: "[name][ext]", noErrorOnMissing: true },
+            ],
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.(js)$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"]
+            },
+            {
+                test: /(\.css)$/,
+                use: ["style-loader", "css-loader"]
+            }
+        ]
+    },
+    resolve: {
+        extensions: [".js", ".css"]
     }
-    ```
+};
+```
 
-    It will also require you to update your `devDependencies` block with the following:
+**Q:** What if webpack configuration fails?
 
-    ```json
-    "devDependencies": {
-        "@adobe/ccweb-add-on-scripts": "^1.2.1",
-        "@adobe/ccweb-add-on-sdk-types": "^1.2.1",
-        "@babel/core": "7.23.3",
-        "@babel/preset-env": "7.23.3",
-        "@babel/preset-react": "7.23.3",
-        "babel-loader": "9.1.3",
-        "copy-webpack-plugin": "11.0.0",
-        "css-loader": "6.8.1",
-        "html-webpack-plugin": "5.5.3",
-        "style-loader": "3.3.3",
-        "webpack": "5.89.0",
-        "webpack-cli": "5.1.4"
-    }
-    ```
+**A:** Common issues and solutions:
+1. **Missing dependencies**: Run `npm install` to ensure all webpack dependencies are installed
+2. **Path errors**: Verify the `entry` and `template` paths match your project structure
+3. **Build fails**: Check console for specific error messages and verify Node.js version compatibility
 
-    **IMPORTANT:** You will need to run `npm install` to ensure all of the new dependencies are installed.
+3. Update your `package.json` to configure it to use webpack. Update the `scripts` block to add the `--use webpack` parameter:
 
-### Set up the Express theme
+```json
+// UI Runtime Context - package.json scripts section
+"scripts": {
+    "clean": "ccweb-add-on-scripts clean",
+    "build": "ccweb-add-on-scripts build --use webpack",
+    "start": "ccweb-add-on-scripts start --use webpack",
+    "package": "ccweb-add-on-scripts package --use webpack"
+}
+```
 
-1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme for the Spectrum Web Components in your UI.
+4. Update your `devDependencies` block with the required webpack dependencies:
 
-    `npm install @spectrum-web-components/theme@0.39.4`
+```json
+// UI Runtime Context - package.json devDependencies section
+"devDependencies": {
+    "@adobe/ccweb-add-on-scripts": "^1.2.1",
+    "@adobe/ccweb-add-on-sdk-types": "^1.2.1",
+    "@babel/core": "7.23.3",
+    "@babel/preset-env": "7.23.3",
+    "@babel/preset-react": "7.23.3",
+    "babel-loader": "9.1.3",
+    "copy-webpack-plugin": "11.0.0",
+    "css-loader": "6.8.1",
+    "html-webpack-plugin": "5.5.3",
+    "style-loader": "3.3.3",
+    "webpack": "5.89.0",
+    "webpack-cli": "5.1.4"
+}
+```
 
-    **Note:** if you prefer to use `yarn`, you could alternatively use the command: `yarn add @spectrum-web-components/theme@0.39.4`.
+5. **Install the dependencies:**
 
-    Notice your new component is now included in the `package.json`.
+```bash
+# UI Runtime Context - Terminal command
+npm install
+```
 
-1. Now, open your `src/index.js` and import the specific theme and typography classes below for the Express theme, color and scale you'll want to support in your add-on:
+**Q:** What if `npm install` fails?
 
-    ```js
-    /* Theme and typography imports */
-    import '@spectrum-web-components/styles/typography.css';
-    import '@spectrum-web-components/theme/express/theme-light.js';
-    import '@spectrum-web-components/theme/express/scale-medium.js';
-    import '@spectrum-web-components/theme/sp-theme.js';    
-    ```
+**A:** Try these solutions:
+1. Delete `node_modules` and `package-lock.json`, then run `npm install` again
+2. Clear npm cache: `npm cache clean --force`
+3. Check for version conflicts and update Node.js if needed
+4. Use `npm install --legacy-peer-deps` if there are peer dependency issues
 
-    Optionally, note these theme-related imports to consider if you plan to include support for a future "dark" theme or "large" scale when add-ons are supported on mobile:
+### Step 3: Set Up the Express Theme
 
-    ```js
-    // import '@spectrum-web-components/theme/express/theme-dark.js'; /* to support a future dark theme */    
-    // import '@spectrum-web-components/theme/express/scale-large.js'; /* future support for mobile for insance */
-    ```
+**Context:** The Express theme provides the Adobe Express visual styling for your components.
 
-    **Note:** The `typography.css` import is not required, but is useful to note for using Spectrum CSS variables to help style the typography components of your add-ons, and to provide margins.
+1. Install the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/):
+
+```bash
+# UI Runtime Context - Terminal command
+npm install @spectrum-web-components/theme@0.39.4
+```
+
+**Note:** If you prefer to use `yarn`: `yarn add @spectrum-web-components/theme@0.39.4`
+
+**Q:** Why version 0.39.4 specifically?
+
+**A:** Version 0.39.4 is required due to compatibility issues with version 0.40.3. All Spectrum Web Components must use the same version to avoid build errors.
+
+2. Open your `src/index.js` and add the theme imports at the top of the file:
+
+```js
+// UI Runtime Context - src/index.js theme imports
+/* Theme and typography imports */
+import '@spectrum-web-components/styles/typography.css';
+import '@spectrum-web-components/theme/express/theme-light.js';
+import '@spectrum-web-components/theme/express/scale-medium.js';
+import '@spectrum-web-components/theme/sp-theme.js';
+```
+
+**Optional future theme imports** (commented out for now):
+```js
+// UI Runtime Context - src/index.js future theme options
+// import '@spectrum-web-components/theme/express/theme-dark.js'; /* future dark theme */    
+// import '@spectrum-web-components/theme/express/scale-large.js'; /* future mobile support */
+```
+
+**Note:** The `typography.css` import is optional but useful for accessing Spectrum CSS variables for typography styling and margins.
 
 1. You can now add the `<sp-theme>` tag to your UI, but note that **you won't actually see anything visually yet**, since there are no components for it to be applied to. Open your `src/index.html` file, and add the following theme component into the `<body>` tags, configured with a `medium` scale, `light` color and `express` theme:
 
@@ -251,19 +323,21 @@ Next, you're going to need to configure your new add-on project to use webpack, 
 
     Keep note of this pattern as you develop your own add-ons.
 
-### Install Spectrum Web Components
+### Step 4: Install Spectrum Web Components
 
-Now you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command.
+Now you can install all the Spectrum Web Components needed for the bingo card generator UI.
 
+**Option 1: Command line installation**
 ```bash
+# UI Runtime Context - Terminal command
 npm install @spectrum-web-components/button@0.39.4 @spectrum-web-components/button-group@0.39.4 @spectrum-web-components/field-label@0.39.4 @spectrum-web-components/menu@0.39.4 @spectrum-web-components/picker@0.39.4 @spectrum-web-components/slider@0.39.4 @spectrum-web-components/swatch@0.39.4 @spectrum-web-components/switch@0.39.4
 ```
 
-**NOTE:** The above command specifies the `0.39.4` version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
-
-Alternatively, you could also copy in the following block below to the `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
+**Option 2: package.json method**
+Alternatively, update your `package.json` dependencies block and run `npm install`:
 
 ```json
+// UI Runtime Context - package.json dependencies section
 "dependencies": {
     "@spectrum-web-components/button": "0.39.4",
     "@spectrum-web-components/button-group": "0.39.4",    
@@ -277,9 +351,17 @@ Alternatively, you could also copy in the following block below to the `dependen
 }
 ```
 
+**Q:** What if component installation fails?
+
+**A:** Common solutions:
+1. **Version mismatch errors**: Ensure ALL Spectrum Web Components use version 0.39.4
+2. **Network timeouts**: Try `npm install --timeout=60000`
+3. **Permission errors**: Use `sudo npm install` (macOS/Linux) or run as administrator (Windows)
+4. **Cache issues**: Clear npm cache with `npm cache clean --force`
+
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** You must ensure **the versions of all of your Spectrum Web Components installed are the same,** or you will see errors upon build or while running. You may want to just open your `package.json` file at this point to double check to ensure they all match, before moving on.
+**CRITICAL:** All Spectrum Web Components must use the exact same version (0.39.4) or you'll encounter build errors. Double-check your `package.json` before proceeding.
 
 ### Import Spectrum Web Components
 
@@ -653,11 +735,15 @@ function generateBingoCard() {
         }
     })    
             
-    // Add button click handler
-    addBtn.onclick = async () => {      
-        const r = await fetch(canvas.toDataURL());
-        const blob = await r.blob();    
-        addOnUISdk.app.document.addImage(blob);  
+    // Add button click handler with error handling
+    addBtn.onclick = async () => {
+        try {
+            const r = await fetch(canvas.toDataURL());
+            const blob = await r.blob();    
+            await addOnUISdk.app.document.addImage(blob);
+        } catch (error) {
+            console.error("Error adding image to document:", error);
+        }
     }
 
     // Enable the add to page button    
@@ -669,4 +755,66 @@ Once you've updated your code, your add-on should reload and you can generate a 
 
 ![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 
-If you have any trouble, or don't see what you expect, see the [Troubleshooting section](./part3.md#troubleshooting-faq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
+## Troubleshooting FAQ
+
+### Common Build and Development Issues
+
+**Q:** My add-on won't build. What should I check?
+
+**A:** Common solutions:
+1. **Version conflicts**: Ensure all Spectrum Web Components use version 0.39.4
+2. **Missing dependencies**: Run `npm install` to ensure all packages are installed
+3. **Webpack errors**: Verify your webpack.config.js file is in the project root
+4. **Import errors**: Check that all imports in index.js are correct
+
+**Q:** Components aren't displaying correctly. How do I fix this?
+
+**A:** Check these common issues:
+1. **Missing theme wrapper**: Ensure your components are wrapped in `<sp-theme>`
+2. **CSS not loading**: Verify webpack is configured to handle CSS imports
+3. **Import order**: Make sure theme imports come before component imports
+4. **Component not appended**: Ensure components are added to the DOM
+
+**Q:** Canvas drawing isn't working. What's wrong?
+
+**A:** Common canvas issues:
+1. **Context errors**: Ensure canvas context is retrieved correctly
+2. **Timing issues**: Make sure DOM elements exist before accessing them
+3. **Reference errors**: Check that all UI element references are valid
+4. **Event handler errors**: Verify event listeners are attached properly
+
+**Q:** Add-on SDK calls are failing. How do I debug?
+
+**A:** SDK troubleshooting steps:
+1. **SDK not ready**: Wrap all SDK calls in `addOnUISdk.ready.then()`
+2. **Permission errors**: Verify manifest.json permissions are correct
+3. **API errors**: Check browser console for specific error messages
+4. **Network issues**: Ensure Adobe Express is properly connected
+
+### Development Best Practices
+
+**Q:** How can I debug my add-on effectively?
+
+**A:** Use these debugging techniques:
+1. Open browser developer tools in Adobe Express
+2. Check the Console tab for error messages
+3. Use `console.log()` statements to track variable values
+4. Verify network requests in the Network tab
+5. Inspect DOM elements in the Elements tab
+
+## Next Steps
+
+Congratulations! You've successfully built a vanilla JavaScript Adobe Express add-on using Spectrum Web Components. You now understand how to:
+
+- Set up a JavaScript add-on project with webpack
+- Configure and use Spectrum Web Components
+- Handle UI events and user interactions
+- Work with HTML5 Canvas for graphics generation
+- Integrate with the Adobe Express Add-on SDK
+
+For the next lesson, learn how to build the same add-on using React: [Lesson 2: Use Spectrum Web Components in a React-based add-on](./part2.md)
+
+For additional resources, explore:
+- [Document API concepts](../../learn/platform_concepts/document-api.md)
+- [Advanced UI patterns](../../learn/how_to/)
+- [Publishing your add-on](../../guides/getting_started/dev_tooling.md)

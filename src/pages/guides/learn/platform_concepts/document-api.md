@@ -23,9 +23,28 @@ The structures that make up the Adobe Express Document Object Model, their featu
 
 In this article, you'll dive deep into the architecture and key elements of the Adobe Express Document Object Model (DOM) and why the Reference Documentation is the primary tool to explore it. Understanding the structures at play, hierarchy, and inheritance system will help you develop add-ons that exploit their full potential.
 
+## Frequently Asked Questions
+
+### What is the Adobe Express Document Object Model (DOM)?
+
+**Q:** What is the Adobe Express Document Object Model?
+
+**A:** The Adobe Express Document Object Model (DOM) is a hierarchical tree structure that represents all elements in an Adobe Express document. It organizes nodes like shapes, text, images, and groups in parent/child relationships, similar to HTML DOM but specifically designed for Adobe Express documents.
+
+### How do I import the Document SDK?
+
+**Q:** How do I import the Adobe Express Document SDK in my add-on?
+
+**A:** Use the following imports in your Document Sandbox code:
+
+```js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+import { editor, colorUtils, constants } from "express-document-sdk";
+```
+
 ### Getting started with the DOM
 
-The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](/resources/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
+The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](../how_to/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
 
 It is essential to hierarchically organize the features that are surfaced[^2] to the scripting layer. For example, a shape is not just contained within a document: it may be included in a particular Group in a certain Artboard, which belongs to a specific Page of a Document. Additionally, Ellipses and Rectangles, as shapes, share some properties, such as the ability to be filled or stroked with a solid color; in that respect, though, they differ from a bitmap image, which can be stroked but not filled.
 
@@ -39,27 +58,70 @@ Developers with a front-end background may instinctively associate the notion of
 
 Some confusion may arise regarding the meaning of the following terms—let me clarify.
 
-- **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](/resources/tutorials/stats-addon.md).
+- **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](../how_to/tutorials/stats-addon.md).
 - **Document Object Model**: it represents Adobe Express documents' structure, the hierarchies between each element, and their inheritance.
 
 You may think about the Document API as operating in the context of the DOM—while the Document Model Sandbox provides a secure and isolated environment for such code to run.
+
+### Development Setup Guide
+
+To work with the Adobe Express Document API, you'll need to set up your development environment properly:
+
+**Q:** How do I set up my add-on project for Document API development?
+
+**A:** Follow these steps:
+
+1. **Create a new add-on project:**
+   ```bash
+   npx @adobe/create-ccweb-add-on my-addon --template javascript
+   cd my-addon
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Project structure for Document API:**
+   ```
+   my-addon/
+   ├── src/
+   │   ├── index.html          # UI iframe
+   │   ├── ui/
+   │   │   └── index.js        # UI code
+   │   └── documentSandbox/
+   │       └── code.js         # Document API code goes here
+   ├── manifest.json
+   └── package.json
+   ```
 
 ### Coding along
 
 You are encouraged to try the code snippets discussed here; please use [this boilerplate](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-dimensions-addon) to follow along. It contains a demo add-on in two states: the complete version (in the `express-dimensions-end` folder, whose code is also found in the [Final Project](#final-project) section at the bottom of this page) and a starting point (`express-dimensions-start`) that you can also use to test your assumptions and inspect the Console. The Document API code belongs to the `src/documentSandbox/code.js` file.
 
 ```js
-// ...
+// Complete example with all necessary imports
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 import { editor, colorUtils } from "express-document-sdk";
+
+const { runtime } = addOnSandboxSdk.instance;
+
 function start() {
   runtime.exposeApi({
     log: () => {
-      const selectedNode = editor.context.selection[0];
-      console.log("Currently selected node", selectedNode);
+      // Check if there's a selection before accessing it
+      if (editor.context.hasSelection) {
+        const selectedNode = editor.context.selection[0];
+        console.log("Currently selected node", selectedNode);
+      } else {
+        console.log("No node selected");
+      }
     },
-    // ...
+    // Additional methods can be added here
   });
 }
+
+start();
 ```
 
 Run the add-on, select any object in the UI, and click the "Log selected node" button: it'll be logged in the Console.
@@ -73,6 +135,16 @@ An Adobe Express document is internally represented as a hierarchical tree of **
 ![](images/refs-addon-scenegraph.png)
 
 Such a structure is referred to as the **Scenegraph**, and it allows for efficient rendering, manipulation, and traversal of all scene elements.
+
+### Common Questions About the Scenegraph
+
+**Q:** What is a scenegraph in Adobe Express?
+
+**A:** A scenegraph is the hierarchical tree structure that organizes all visual elements in an Adobe Express document. It consists of nodes that can contain other nodes (like groups containing shapes) or be leaf nodes (like individual text or shapes).
+
+**Q:** How do I access the currently selected element?
+
+**A:** Use `editor.context.selection[0]` to get the first selected element, but always check `editor.context.hasSelection` first to ensure something is selected.
 
 ### Object-Oriented programming concepts
 
@@ -112,6 +184,7 @@ Some accessors are read-only, for instance, parent or rotation; some have **gett
 It's split into two parts: `get` (the getter, when you read the property) and `set` (the setter, when you write it). From the description, you see that it's a way to find out about the node's coordinates relative to its parent. The return type for the getter (wrapped with `< >` angle brackets) is `{ x: number, y: number}`, i.e. an object with numeric `x` and `y` properties. You also read that this property is inherited from the `FillableNode` class that `EllipseNode` extends. The setter expects a `value`, which the Parameters table describes as of type `Object`, with the same numeric `x` and `y` properties; it returns `void` (i.e., nothing). Given all this, it's possible to confidently write something along these lines.
 
 ```js
+// Direct shape creation and modification - no queueAsyncEdit needed
 const ellipse = editor.createEllipse();
 editor.context.insertionParent.children.append(ellipse); // attach to the scenegraph
 console.log(ellipse.translation); // { x: 0, y: 0 }
@@ -142,20 +215,34 @@ Internally, the center, inside, and outside positions are represented with the i
 
 Using constants will ensure expected outcomes, in case Adobe Express engineers remap values in the future. This is the code needed to conclude the `stroke` example.
 
+### Shape Creation FAQ
+
+**Q:** How do I create basic shapes in Adobe Express?
+
+**A:** Use the editor factory methods: `editor.createRectangle()`, `editor.createEllipse()`, `editor.createLine()`, and `editor.createText("your text")`. All shapes must be appended to the scenegraph using `editor.context.insertionParent.children.append(shape)`.
+
+**Q:** Do I need to wrap shape creation in queueAsyncEdit?
+
+**A:** No! Direct shape creation and modification does NOT require `queueAsyncEdit`. You only need it after asynchronous operations like `await` statements (e.g., loading fonts or images).
+
 ```js
+// Import constants for proper stroke positioning
+import { editor, colorUtils, constants } from "express-document-sdk";
+
+// Direct shape creation and styling - no queueAsyncEdit needed
 const ellipse = editor.createEllipse();
 editor.context.insertionParent.children.append(ellipse);
 ellipse.stroke = {
   color: { red: 0.7, green: 0.6, blue: 1, alpha: 1 },
   dashOffset: 0,
   dashPattern: [4, 2],
-  // position: 1 ❌
-  position: constants.StrokePosition.inside, // ✅
+  // position: 1 ❌ Don't use magic numbers
+  position: constants.StrokePosition.inside, // ✅ Use constants
   width: 3,
 };
 ```
 
-The [Document Stats tutorial](/resources/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
+The [Document Stats tutorial](../how_to/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
 
 ![](images/stats-addon-animation.gif)
 
@@ -171,8 +258,13 @@ To log the `type` property is acceptable in this specific case, although the pro
 Let's return to strokes and fills: they are expressed as plain objects; in fact, all the properties the `Stroke` interface requires, like `dashPattern`, were previously provided. The `editor.makeStroke()` utility will fill in the default values when you don't provide them.
 
 ```js
+// Complete example with proper imports
+import { editor, colorUtils } from "express-document-sdk";
+
+// Direct shape creation and styling - no queueAsyncEdit needed
 const ellipse = editor.createEllipse();
 editor.context.insertionParent.children.append(ellipse);
+// Using helper function to create stroke with defaults
 ellipse.stroke = editor.makeStroke({
   color: { red: 0.7, green: 0.6, blue: 1, alpha: 1 },
 });
@@ -181,6 +273,11 @@ ellipse.stroke = editor.makeStroke({
 Here, you get a 1-pixel, solid stroke of the provided color, the only property you've explicitly supplied. There's a similar helper function for the `ColorFill` interface.
 
 ```js
+// Continue with the same ellipse - direct styling, no queueAsyncEdit needed
+const ellipse = editor.createEllipse();
+editor.context.insertionParent.children.append(ellipse);
+
+// Set fill using helper function
 ellipse.fill = editor.makeColorFill({
   red: 0.6,
   green: 0.9,
@@ -192,9 +289,16 @@ ellipse.fill = editor.makeColorFill({
 If you wonder where all the help is since you've to type the entire color object manually anyway, let me remind you that the `fill` property is of type `ColorFill`: such an interface expects a `color` property (the one provided above) as well as a `type` expressed by the `FillType.color` constants. Without the `makeColorFill()` method, you must write the following.
 
 ```js
+// Example without helper function - requires manual type specification
+import { editor, constants } from "express-document-sdk";
+
+// Direct shape creation and styling - no queueAsyncEdit needed
+const ellipse = editor.createEllipse();
+editor.context.insertionParent.children.append(ellipse);
+
 ellipse.fill = {
   color: { red: 0.6, green: 0.9, blue: 0.6, alpha: 1 },
-  type: constants.FillType.color, // 👈
+  type: constants.FillType.color, // 👈 Required when not using helper
 };
 ```
 
@@ -209,11 +313,52 @@ A specific **naming convention** exists for methods used in the Adobe Express DO
 Speaking of colors, the `ColorUtils` module can output a proper `Color` from either a partial RGB object (where the `alpha` property is optional, defaulting to `1`) or a Hex string with or without alpha, providing the reverse function as well.
 
 ```js
-const gecko = colorUtils.fromHex("#9de19a"); // alpha is optional
-// or
-const gecko = colorUtils.fromRGB(157, 225, 154); // alpha is optional
+// Complete example with imports and color utilities
+import { editor, colorUtils } from "express-document-sdk";
+
+// Direct shape creation and styling - no queueAsyncEdit needed
+const ellipse = editor.createEllipse();
+editor.context.insertionParent.children.append(ellipse);
+
+// Create color from hex string (alpha is optional)
+const gecko = colorUtils.fromHex("#9de19a");
+// Alternative: create from RGB values
+// const gecko = colorUtils.fromRGB(157, 225, 154); // alpha is optional
+
 ellipse.fill = editor.makeColorFill(gecko);
 const geckoHex = colorUtils.toHex(gecko); // "#9de19aff" 👈 alpha is included
+console.log("Created fill color:", geckoHex);
+```
+
+### When to Use `queueAsyncEdit`
+
+<InlineAlert variant="info" slots="text1, text2, text3" />
+
+**Important:** Most of the examples above do **NOT** require `queueAsyncEdit` because they involve direct, synchronous shape creation and modification.
+
+You only need `queueAsyncEdit` when making document edits **after** asynchronous operations like `await` statements. For example, loading fonts or images:
+
+```js
+// This REQUIRES queueAsyncEdit because of the async font loading
+async function createStyledText() {
+  const textNode = editor.createText("Hello World");
+  const font = await fonts.fromPostscriptName("SourceSans3-Regular"); // Async operation!
+  
+  await editor.queueAsyncEdit(() => {
+    textNode.fullContent.characterStyleRanges = [{ length: 11, font }];
+    editor.context.insertionParent.children.append(textNode);
+  });
+}
+
+// This REQUIRES queueAsyncEdit because of the async image loading
+async function addImage(blob) {
+  const bitmapImage = await editor.loadBitmapImage(blob); // Async operation!
+  
+  await editor.queueAsyncEdit(() => {
+    const mediaContainer = editor.createImageContainer(bitmapImage);
+    editor.context.insertionParent.children.append(mediaContainer);
+  });
+}
 ```
 
 ### Types matter
@@ -291,10 +436,21 @@ The Reference documentation does a good job listing all the classes and interfac
 Concrete classes like [`RectangleNode`](/references/document-sandbox/document-apis/classes/RectangleNode.md") and [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode.md") represent the DOM's **object elements with live setters**. Some of these classes can be instantiated and used directly through factory methods.
 
 ```js
+// Complete example with all necessary imports
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 import { editor } from "express-document-sdk";
 
+const { runtime } = addOnSandboxSdk.instance;
+
+// Direct shape creation and styling - no queueAsyncEdit needed
 const rect = editor.createRectangle();
 const group = editor.createGroup();
+
+// Set some properties to make the rectangle visible
+rect.width = 100;
+rect.height = 50;
+rect.fill = editor.makeColorFill({ red: 0.2, green: 0.4, blue: 0.8, alpha: 1 });
+
 group.children.append(rect);
 editor.context.insertionParent.children.append(group);
 ```
@@ -331,6 +487,16 @@ Such interfaces define the properties of **actual JavaScript objects** that must
 Implementable interfaces like [`IFillableNode`](/references/document-sandbox/document-apis/interfaces/IFillableNode.md") are only meant to be implemented by classes: they define a contract of properties and methods to which a class must adhere.
 
 In summary, the distinction between all the listed categories lies in their _purpose and usage_: "concrete" classes and object interfaces are used to create actual objects (either JavaScript objects, node instances, or collections), while abstract classes and implementable interfaces provide structure and behaviors that other classes can inherit or implement.
+
+### Classes and Interfaces FAQ
+
+**Q:** What's the difference between classes and interfaces in the Adobe Express DOM?
+
+**A:** Classes like `RectangleNode` are actual objects you can create and modify. Interfaces like `ColorFill` define the structure of plain JavaScript objects you pass to properties. Use `editor.createRectangle()` for classes, and plain objects `{ color: {...}, type: ... }` for interfaces.
+
+**Q:** When should I use helper functions like `editor.makeColorFill()`?
+
+**A:** Helper functions automatically set required properties like the `type` field. Use `editor.makeColorFill({ red: 1, green: 0, blue: 0, alpha: 1 })` instead of manually creating `{ color: {...}, type: constants.FillType.color }`.
 
 ## From theory to practice
 
@@ -384,17 +550,30 @@ addOnUISdk.ready.then(async () => {
 #### Document Sandbox
 
 ```js
-// ...
+// src/documentSandbox/code.js - Complete example with imports
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+import { editor, constants } from "express-document-sdk";
+
+const { runtime } = addOnSandboxSdk.instance;
+
 function start() {
   runtime.exposeApi({
     logNode: () => {
-      /* ... */
+      if (editor.context.hasSelection) {
+        const selectedNode = editor.context.selection[0];
+        console.log("Currently selected node", selectedNode);
+      } else {
+        console.log("No node selected");
+      }
     },
     drawDimensions: () => {
-      // ...
+      // Implementation will be shown below
+      console.log("Draw dimensions called");
     },
   });
 }
+
+start();
 ```
 
 ### Getting the context
@@ -402,16 +581,27 @@ function start() {
 The first part is to get and validate the selected node. There's a promising [`Context`](/references/document-sandbox/document-apis/classes/Context.md) class in the reference documentation that _"contains the user's current selection state, indicating the content they are focused on"_. Excellent! But how can you access it, though? The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class is the Document API entry point; it may be worth paying a visit to its page. Lo and behold, it exposes a context property, which returns a context instance: you can use it to check if there's a selection and whether it's of the right type—`hasSelection` and `selection` will do the job.
 
 ```js
+// Complete implementation with error handling
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 import { editor, constants, colorUtils } from "express-document-sdk";
+
+const { runtime } = addOnSandboxSdk.instance;
 
 runtime.exposeApi({
   drawDimensions: () => {
-    if (
-      editor.context.hasSelection &&
-      editor.context.selection[0].type ===
-        constants.SceneNodeType.mediaContainer
-    ) {
-      // ...
+    try {
+      if (
+        editor.context.hasSelection &&
+        editor.context.selection[0].type ===
+          constants.SceneNodeType.mediaContainer
+      ) {
+        // Implementation goes here
+        console.log("Valid MediaContainer selected");
+      } else {
+        console.log("Please select a MediaContainer (image) to measure");
+      }
+    } catch (error) {
+      console.error("Error in drawDimensions:", error);
     }
   },
 });
@@ -424,13 +614,20 @@ Please note the use of the [`SceneNodeType`](/references/document-sandbox/docume
 Now that you've made sure only the right kind of node is handled, let's get its dimensions; since you'll need to draw a line, it may be helpful to have its coordinates in space (relative to its parent container) as well. According to the reference, the [`MediaContainerNode`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md) class provides a [`translation`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md#translation) property that returns an object with `x` and `y` properties, which you need. There are no `width` and `height`, though; where to look? `MediaContainerNode` also features a [`mediaRectangle`](/references/document-sandbox/document-apis/classes/MediaContainerNode.md#mediarectangle) property, which, upon inspection, is of type [`ImageRectangleNode`](/references/document-sandbox/document-apis/classes/ImageRectangleNode.md): this holds the actual media and offers both `width` and `height` properties. In future versions, Adobe Express will make available a proper `bounds` object for this purpose.
 
 ```js
-if ( /* ... */ ) {
+// Continue from the previous example - add this inside the if block
+if (
+  editor.context.hasSelection &&
+  editor.context.selection[0].type === constants.SceneNodeType.mediaContainer
+) {
   // grabbing the selected node
   const selectedNode = editor.context.selection[0];
   // getting its coordinates
   const nodeTranslation = selectedNode.translation;
-  // getting its dimensions from the mediaRectangle, destucturing and renaming them on the fly
+  // getting its dimensions from the mediaRectangle, destructuring and renaming them on the fly
   const { width: nodeWidth, height: nodeHeight } = selectedNode.mediaRectangle;
+  
+  console.log(`Node position: x=${nodeTranslation.x}, y=${nodeTranslation.y}`);
+  console.log(`Node dimensions: width=${nodeWidth}, height=${nodeHeight}`);
 }
 ```
 
@@ -439,7 +636,7 @@ if ( /* ... */ ) {
 Time to draw the line. The [`Editor`](/references/document-sandbox/document-apis/classes/Editor.md) class includes a [`createLine()`](/references/document-sandbox/document-apis/classes/Editor.md#createline) factory method, which returns a [`LineNode`](/references/document-sandbox/document-apis/classes/LineNode.md) instance. The `LineNode` class, you learn from the reference, has `startX`, `startY`, `endX`, and `endY` properties: they only implement the getter, though—hence, are read-only. Scrolling through the methods, you find [`setEndPoints()`](/references/document-sandbox/document-apis/classes/LineNode.md#setendpoints), which expects the same parameters and is used as a setter for them.
 
 ```js
-// ...
+// Direct line creation and positioning - no queueAsyncEdit needed
 const hLine = editor.createLine();
 hLine.setEndPoints(
   nodeTranslation.x,
@@ -447,13 +644,12 @@ hLine.setEndPoints(
   nodeTranslation.x + nodeWidth,
   nodeTranslation.y - 20
 );
-```
 
-Here, an arbitrary 20px margin is added between the horizontal line and the selected node; this could very well be a parameter chosen by the user from a UI control you can add later. The line is extended to a `nodeWidth` length, i.e., the `mediaRectangle`'s. You can finally add it to the scenegraph.
-
-```js
+// Add to scenegraph
 editor.context.insertionParent.children.append(hLine);
 ```
+
+Here, an arbitrary 20px margin is added between the horizontal line and the selected node; this could very well be a parameter chosen by the user from a UI control you can add later. The line is extended to a `nodeWidth` length, i.e., the `mediaRectangle`'s. The line is already added to the scenegraph in the previous example.
 
 <InlineAlert variant="info" slots="text1, text2" />
 
@@ -464,9 +660,20 @@ The answer is that the `insertionParent` property of the `Editor` class—that y
 The line is there, but it lacks the proper endpoints. The reference helps us out again: the `LineNode` has a [`startArrowHeadType`](/references/document-sandbox/document-apis/classes/LineNode.md#startarrowheadtype) and [`endArrowHeadType`](/references/document-sandbox/document-apis/classes/LineNode.md#endarrowheadtype) properties, whose value is an enumerable provided by the [`ArrowHeadType`](/references/document-sandbox/document-apis/enumerations/ArrowHeadType.md) constant.[^3] There are several options available: let's pick `triangularFilled`.
 
 ```js
-// ...
-hLine.startArrowHeadType = hLine.endArrowHeadType =
-  constants.ArrowHeadType.triangularFilled;
+// Continue with the same line to set arrow heads
+const hLine = editor.createLine();
+hLine.setEndPoints(
+  nodeTranslation.x,
+  nodeTranslation.y - 20,
+  nodeTranslation.x + nodeWidth,
+  nodeTranslation.y - 20
+);
+
+// Set arrow heads using constants
+hLine.startArrowHeadType = constants.ArrowHeadType.triangularFilled;
+hLine.endArrowHeadType = constants.ArrowHeadType.triangularFilled;
+
+editor.context.insertionParent.children.append(hLine);
 ```
 
 As live objects, setting all the properties before or after appending the line to the scenegraph doesn't really matter; the result is the same.
@@ -476,25 +683,41 @@ As live objects, setting all the properties before or after appending the line t
 Next up, you need to add the text. The `Editor` class provides a [`createText()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createtext) method, which expects a string parameter and returns a [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md) instance. Please note that passing a number as a parameter will throw an error—hence the use of `.toString()` below.
 
 ```js
-// ...
+// Direct text creation and positioning - no queueAsyncEdit needed
 const hText = editor.createText(`${Math.trunc(nodeWidth).toString()}px`);
 editor.context.insertionParent.children.append(hText);
-```
 
-The text appears on the top-left corner of the document, which is the default insertion point. `setPositionInParent()` would be perfect to move it to the right spot, just above the line. At the time of this writing, a `TextNode` doesn't feature `width` and `height` properties, which would be helpful to set an appropriate `localRegistrationPoint`; hence, you'll have to do with `translation`.
-
-```js
-// ...
+// Set position above the line
 hText.translation = {
   x: nodeTranslation.x + nodeWidth / 2,
   y: nodeTranslation.y - 30,
 };
 ```
 
+The text appears initially at the default insertion point, but we set its position using the `translation` property. At the time of this writing, a `TextNode` doesn't feature `width` and `height` properties, which would be helpful to set an appropriate `localRegistrationPoint`; hence, you'll have to do with `translation`.
+
 An extra 10 pixels padding from the line has been added, but this could also be a parameter. Let's group the line and the text together to move them around as a single entity. The `Editor` class provides a [`createGroup()`](/references/document-sandbox/document-apis/classes/Editor.md#creategroup) method, which returns a [`GroupNode`](/references/document-sandbox/document-apis/classes/GroupNode.md) instance. The `GroupNode` class provides a `children` property: you can `append()` both the line and the text to it.
 
 ```js
-// ...
+// Complete example grouping line and text together
+// Create line and text (as shown in previous examples)
+const hLine = editor.createLine();
+hLine.setEndPoints(
+  nodeTranslation.x,
+  nodeTranslation.y - 20,
+  nodeTranslation.x + nodeWidth,
+  nodeTranslation.y - 20
+);
+hLine.startArrowHeadType = constants.ArrowHeadType.triangularFilled;
+hLine.endArrowHeadType = constants.ArrowHeadType.triangularFilled;
+
+const hText = editor.createText(`${Math.trunc(nodeWidth).toString()}px`);
+hText.translation = {
+  x: nodeTranslation.x + nodeWidth / 2,
+  y: nodeTranslation.y - 30,
+};
+
+// Group them together - direct creation, no queueAsyncEdit needed
 const hGroup = editor.createGroup();
 editor.context.insertionParent.children.append(hGroup);
 hGroup.children.append(hLine, hText);
@@ -503,6 +726,45 @@ hGroup.children.append(hLine, hText);
 ### Repeating the process
 
 From this point, creating the vertical line and the text is a matter of copying/pasting and changing a few parameters. The only new element may be text rotation: the `TextNode` class has a [`setRotationInParent()`](/references/document-sandbox/document-apis/classes/TextNode.md#setrotationinparent) method. It expects a number in degrees (-90, in our case) and a `localRotationPoint` object (implementing the [`Point`](/references/document-sandbox/document-apis/interfaces/Point/) interface), which is the point to rotate around in the node's local coordinates. In this case, `{x: 0, y: 0}` will do.
+
+### Common Development Issues FAQ
+
+**Q:** Why doesn't my shape appear in the document?
+
+**A:** You must append it to the scenegraph: `editor.context.insertionParent.children.append(yourShape)`. Shapes created with `editor.createRectangle()` etc. exist in memory but aren't visible until added to the document.
+
+**Q:** When do I get "editor is not defined" errors?
+
+**A:** This usually means you haven't imported the SDK correctly. Make sure you have `import { editor } from "express-document-sdk";` in your Document Sandbox code, not your UI code.
+
+**Q:** How do I handle asynchronous operations in document editing?
+
+**A:** Wrap any document edits that come after `await` statements in `editor.queueAsyncEdit()`. For example:
+```js
+try {
+  const font = await fonts.fromPostscriptName("Arial");
+  await editor.queueAsyncEdit(() => {
+    // Document modifications here
+  });
+} catch (error) {
+  console.error("Error loading font or modifying document:", error);
+}
+```
+
+**Q:** How do I handle errors when creating shapes or modifying properties?
+
+**A:** Always wrap potentially risky operations in try-catch blocks:
+```js
+try {
+  const rect = editor.createRectangle();
+  rect.width = 100;
+  rect.height = 50;
+  rect.fill = editor.makeColorFill({ red: 1, green: 0, blue: 0, alpha: 1 });
+  editor.context.insertionParent.children.append(rect);
+} catch (error) {
+  console.error("Error creating or styling rectangle:", error);
+}
+```
 
 ```js
 const vText = editor.createText(`${Math.trunc(nodeHeight).toString()}px`);
@@ -559,7 +821,7 @@ const drawDimensionsRefactored = () => {
 export { drawDimensions, drawDimensionsRefactored };
 ```
 
-A rather unorthodox warning system is implemented to alert the user when selecting an unsupported node type. Through the Communication API outlined in [this tutorial](/resources/tutorials/stats-addon.md), a `flashWrongElement()` function, defined in the iframe UI, is available to the Document Sandbox.
+A rather unorthodox warning system is implemented to alert the user when selecting an unsupported node type. Through the Communication API outlined in [this tutorial](../how_to/tutorials/stats-addon.md), a `flashWrongElement()` function, defined in the iframe UI, is available to the Document Sandbox.
 
 <CodeBlock slots="heading, code" repeat="2" languages="ui/index.js, documentSandbox/dimensions.js" />
 
@@ -614,7 +876,7 @@ As an exercise, you use the code sample found below and expand it to build a mor
   - a slider to control the dimensions' distance from the object;
   - dropdowns to choose the line's style (solid, dashed, dotted), and the arrowhead type;
   - a checkbox to toggle the extra dashed lines;
-  - a color picker to change the line's color—see the [Grids add-on](/resources/tutorials/grids-addon.md) for an example.
+  - a color picker to change the line's color—see the [Grids add-on](../how_to/tutorials/grids-addon.md) for an example.
 
 ## Lessons Learned
 

@@ -147,7 +147,9 @@ The playground offers two distinct development modes:
 
 - **Global Await**: The script runtime provides a global `async` wrapper, allowing you to use `await` directly when executing asynchronous code, without needing to wrap it in an `async` function. This is particularly useful for API calls that return promises, where an `await` is needed to pause the execution of an `async` function until the Promise is resolved or rejected. For example, loading a font is an asynchronous operation, but in Script mode you can use `await` directly to pause the execution of the script until the font is loaded, ie:
 
+### 📁 Document Sandbox (Code Playground Script Mode)
 ```js
+import { editor } from "express-document-sdk";
 // The script runtime provides an async wrapper to allow this:
 const textNode = editor.context.selection[0];
 const lato = await fonts.fromPostscriptName("Lato-Light");
@@ -155,11 +157,15 @@ const lato = await fonts.fromPostscriptName("Lato-Light");
 
 In contrast, in [**Add-on mode**](#add-on-mode) you will need to manually wrap the code in an `async` function and use `await` in it, ie:
 
+### 📁 Document Sandbox (sandbox/code.js)
 ```js
-//sandbox.code.js or Document JS tab
-loadFont: async () => {
-  const textNode = editor.context.selection[0];
-  const lato = await fonts.fromPostscriptName("Lato-Light");
+import { editor } from "express-document-sdk";
+// Add-on mode requires explicit async function wrapper
+const api = {
+  loadFont: async () => {
+    const textNode = editor.context.selection[0];
+    const lato = await fonts.fromPostscriptName("Lato-Light");
+  }
 };
 ```
 
@@ -318,6 +324,92 @@ After experimenting with the Code Playground and when you're ready to build out 
 2. Copy the code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project. **Note:** Don't forget, if you're copying code from Script mode into your `sandbox/code.js` file, you'll need to add the `import` statements for the Document APIs and handle your `async` functions manually.
 3. Copy the JSON from the [Manifest JSON Editor](#how-to-use-add-on-mode) in the Code Playground into the `src/manifest.json` file in your new project.
 4. Run your add-on locally using the [Adobe Express CLI](../getting_started/quickstart.md) to test and see your changes in real-time.
+
+## Common Issues & Troubleshooting
+
+### Error: "Code Playground not accessible"
+
+**Problem:** You can't see or access the Code Playground  
+**Solution:**
+1. Ensure you're logged into Adobe Express
+2. Enable "Add-on Development" mode in Settings (avatar icon → gear icon → Add-on Development)
+3. Accept the Developer Terms of Use if prompted
+4. Look for the "Launch code playground" button in the Add-ons panel
+
+### Error: "Script execution failed"
+
+**Problem:** Your script doesn't run or shows an error  
+**Common Causes & Solutions:**
+
+❌ **Missing imports in Add-on mode:**
+### 📁 Document Sandbox (sandbox/code.js)
+```js
+// This will fail in Add-on mode
+const textNode = editor.createText("Hello");
+```
+
+✅ **Always include imports:**
+### 📁 Document Sandbox (sandbox/code.js)
+```js
+import { editor } from "express-document-sdk";
+const textNode = editor.createText("Hello");
+```
+
+### Error: "Selection is empty"
+
+**Problem:** Code that depends on selected elements fails  
+**Solution:** Always check if elements are selected:
+
+❌ **Don't assume selection exists:**
+### 📁 Document Sandbox (Code Playground Script)
+```js
+import { editor } from "express-document-sdk";
+// This will fail if nothing is selected
+const selectedElement = editor.context.selection[0];
+selectedElement.fill = { color: "red" };
+```
+
+✅ **Check selection first:**
+### 📁 Document Sandbox (Code Playground Script)
+```js
+import { editor } from "express-document-sdk";
+const selection = editor.context.selection;
+if (selection.length > 0) {
+  const selectedElement = selection[0];
+  selectedElement.fill = { color: "red" };
+} else {
+  console.log("Please select an element first");
+}
+```
+
+### Add-on UI not showing
+
+**Problem:** Your add-on loads but the UI doesn't appear  
+**Common Issues:**
+1. **Check the UI tab**: Make sure you're editing the UI tab, not just the Document JS tab
+2. **HTML structure**: Ensure your HTML has proper structure:
+
+### 🖥️ UI Runtime (index.html)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Add-on</title>
+</head>
+<body>
+    <h1>My Add-on UI</h1>
+    <button onclick="createRectangle()">Create Rectangle</button>
+</body>
+</html>
+```
+
+### Performance: Code runs slowly
+
+**Problem:** Scripts take a long time to execute  
+**Optimization Tips:**
+1. **Batch operations**: Group multiple document changes together
+2. **Avoid frequent DOM queries**: Cache selection results
+3. **Use efficient APIs**: Prefer bulk operations over loops when possible
 
 ## FAQs
 
