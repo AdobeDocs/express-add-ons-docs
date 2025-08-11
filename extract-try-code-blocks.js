@@ -67,7 +67,7 @@ function extractCodeBlocks(content, filePath) {
  * @param block - The code block to store.
  */
 async function storeCodeBlock(block) {
-  // if (DRY_RUN) return;
+  if (DRY_RUN) return;
 
   const postData = JSON.stringify({
     id: block.id,
