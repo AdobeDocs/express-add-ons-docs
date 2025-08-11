@@ -4,11 +4,15 @@ const fs = require("fs").promises;
 const path = require("path");
 const https = require("https");
 
-const BACKEND_API_URL =
-  process.env.CODE_BLOCK_API_URL || "https://api.jsonbin.io/v3/b";
+const BACKEND_API_URL = process.env.CODE_BLOCK_API_URL
 const SCAN_DIRECTORY = "./src/pages";
 const MARKDOWN_EXTENSION = ".md";
 const DRY_RUN = process.env.DRY_RUN === "false" ? false : true;
+const JSONBIN_MASTER_KEY = process.env.JSONBIN_MASTER_KEY;
+
+console.log("BACKEND_API_URL", BACKEND_API_URL);
+console.log("JSONBIN_MASTER_KEY", JSONBIN_MASTER_KEY);
+console.log("DRY_RUN", DRY_RUN);
 
 // looks for code blocks with format: ```language{try id=explicitId}
 const CODE_BLOCK_REGEX =
@@ -69,11 +73,17 @@ function extractCodeBlocks(content, filePath) {
 async function storeCodeBlock(block) {
   if (DRY_RUN) return;
 
+  if (!JSONBIN_MASTER_KEY) {
+    throw new Error("Missing JSONBIN_MASTER_KEY");
+  }
+
   const postData = JSON.stringify({
-    id: block.id,
-    language: block.language,
-    code: block.code,
-    filePath: block.filePath,
+    record: {
+      id: block.id,
+      language: block.language,
+      code: block.code,
+      filePath: block.filePath,
+    },
   });
 
   return new Promise((resolve, reject) => {
@@ -84,6 +94,8 @@ async function storeCodeBlock(block) {
         headers: {
           "Content-Type": "application/json",
           "Content-Length": Buffer.byteLength(postData),
+          "X-Master-Key": JSONBIN_MASTER_KEY,
+          "X-Bin-Name": block.id,
         },
       },
       (res) => {

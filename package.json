@@ -26,7 +26,7 @@
     "start:prefix": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
     "dev": "gatsby develop",
     "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
-    "build": "gatsby build",
+    "build": "gatsby build && yarn extract-code-blocks",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test:links": "remark src/pages --quiet --frail",
