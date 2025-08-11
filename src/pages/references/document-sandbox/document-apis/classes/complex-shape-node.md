@@ -336,7 +336,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`ComplexShapeNode`](ComplexShapeNode.md)
+• **clone**(): [`ComplexShapeNode`](./complex-shape-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -346,13 +346,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`ComplexShapeNode`](ComplexShapeNode.md)
+[`ComplexShapeNode`](./complex-shape-node.md)
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`clone`](FillableNode.md#clone)
+[`FillableNode`](./fillable-node.md).[`clone`](./fillable-node.md#clone)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

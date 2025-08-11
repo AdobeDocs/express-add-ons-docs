@@ -18,7 +18,7 @@ contributors:
 
 Learn how to build from scratch an Adobe Express add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
 
-![Markdown Parser complete add-on](../../how_to/tutorials/images/markdown--add-on.gif)
+![Markdown Parser complete add-on](./images/markdown--add-on.gif)
 
 ## Introduction
 
@@ -170,7 +170,7 @@ function start() {
 start();
 ```
 
-![Hello World](../../how_to/tutorials/images/markdown--hello.png)
+![Hello World](./images/markdown--hello.png)
 
 ## 2. Build the UI and Handle Files
 
@@ -459,11 +459,11 @@ export default function setupFileHandler(sandboxProxy) {
 }
 ```
 
-![Markdown Parser UI](../../how_to/tutorials/images/markdown--ui.png)
+![Markdown Parser UI](./images/markdown--ui.png)
 
 As soon as you drop a Markdown file, the UI will show "Got it!" and the Parse Markdown button will be enabled.
 
-![Markdown Parser with console text](../../how_to/tutorials/images/markdown--text.png)
+![Markdown Parser with console text](./images/markdown--text.png)
 
 ## 3. Parse Markdown
 
@@ -664,7 +664,7 @@ export default function setupFileHandler(sandboxProxy) {
 
 Now, when you run the add-on, upload a Markdown file, and click "Parse Markdown", you should see the structured AST object in your browser's developer console. This confirms that the core parsing mechanism is working perfectly.
 
-![Markdown Parser with console AST output](../../how_to/tutorials/images/markdown--ast.png)
+![Markdown Parser with console AST output](./images/markdown--ast.png)
 
 ## 4. Integrate with the Adobe Express Text API
 
@@ -1165,7 +1165,7 @@ export default function setupFileHandler(sandboxProxy) {
 }
 ```
 
-![Markdown Parser with Text API](../../how_to/tutorials/images/markdown--text-api.png)
+![Markdown Parser with Text API](./images/markdown--text-api.png)
 
 ## 5. Conclusion
 
@@ -2029,4 +2029,4 @@ export const MD_CONSTANTS = {
 
 ### 5.2 Next steps
 
-If you want to learn more about Text API you can check the [Text How-to](../../how-to/use-text.md), which contains several examples on how to apply Character and Paragraph styles, as well as using fonts and colors.
+If you want to learn more about Text API you can check the [Text How-to](../use-text.md), which contains several examples on how to apply Character and Paragraph styles, as well as using fonts and colors.

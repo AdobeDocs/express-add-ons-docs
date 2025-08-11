@@ -14,7 +14,7 @@ To create new pages, see [PageList.addPage](page-list.md#addpage).
 
 ## Implements
 
--   [`IRectangularNode`](../interfaces/IRectangularNode.md)
+-   [`IRectangularNode`](../interfaces/i-rectangular-node.md)
 
 ## Accessors
 
@@ -68,10 +68,10 @@ To create new artboards, see [ArtboardList.addArtboard](artboard-list.md#addartb
 The height of the node.
 
 All Artboards within a page share the same dimensions, so changing this value will also automatically adjust the
-size of every child [ArtboardNode](ArtboardNode.md).
+size of every child [ArtboardNode](./artboard-node.md).
 
 Note: changing the page's size does not adjust the size or position of any of visual content inside any child
-[ArtboardNode](ArtboardNode.md). Callers should use their own layout logic to update the content for the new bounds as
+[ArtboardNode](./artboard-node.md). Callers should use their own layout logic to update the content for the new bounds as
 desired. For example, making the size smaller could result in content being clipped and hard to access if it is
 not adjusted to be visible again.
 
@@ -156,10 +156,10 @@ The node's type.
 The width of the node.
 
 All Artboards within a page share the same dimensions, so changing this value will also automatically adjust the
-size of every child [ArtboardNode](ArtboardNode.md).
+size of every child [ArtboardNode](./artboard-node.md).
 
 Note: changing the page's size does not adjust the size or position of any of visual content inside any child
-[ArtboardNode](ArtboardNode.md). Callers should use their own layout logic to update the content for the new bounds as
+[ArtboardNode](./artboard-node.md). Callers should use their own layout logic to update the content for the new bounds as
 desired. For example, making the size smaller could result in content being clipped and hard to access if it is
 not adjusted to be visible again.
 

@@ -17,7 +17,7 @@ ParagraphStyles, which must be applied to an entire paragraph atomically).
 
 ### baselineShift
 
-• **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+• **baselineShift**: [`TextScriptStyle`](../enumerations/text-script-style.md)
 
 Sets a superscript or subscript style.
 
@@ -25,7 +25,7 @@ Sets a superscript or subscript style.
 
 `BaseCharacterStyles.baselineShift`
 
----
+<HorizontalLine />
 
 ### color
 

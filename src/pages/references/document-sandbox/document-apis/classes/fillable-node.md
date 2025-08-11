@@ -346,7 +346,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`FillableNode`](FillableNode.md)
+• **clone**(): [`FillableNode`](./fillable-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -356,13 +356,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`FillableNode`](FillableNode.md)
+[`FillableNode`](./fillable-node.md)
 
 #### Inherited from
 
-[`StrokableNode`](StrokableNode.md).[`clone`](StrokableNode.md#clone)
+[`StrokableNode`](./strokable-node.md).[`clone`](./strokable-node.md#clone)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

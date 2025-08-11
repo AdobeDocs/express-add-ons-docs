@@ -445,7 +445,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`LineNode`](LineNode.md)
+• **clone**(): [`LineNode`](./line-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -455,13 +455,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`LineNode`](LineNode.md)
+[`LineNode`](./line-node.md)
 
 #### Inherited from
 
-[`StrokableNode`](StrokableNode.md).[`clone`](StrokableNode.md#clone)
+[`StrokableNode`](./strokable-node.md).[`clone`](./strokable-node.md#clone)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

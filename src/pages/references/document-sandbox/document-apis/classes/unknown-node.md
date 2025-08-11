@@ -297,7 +297,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`UnknownNode`](UnknownNode.md)
+• **clone**(): [`UnknownNode`](./unknown-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -307,13 +307,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`UnknownNode`](UnknownNode.md)
+[`UnknownNode`](./unknown-node.md)
 
 #### Inherited from
 
-[`Node`](Node.md).[`clone`](Node.md#clone)
+[`Node`](node.md).[`clone`](node.md#clone)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

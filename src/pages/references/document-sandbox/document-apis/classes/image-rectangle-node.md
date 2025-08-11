@@ -2,28 +2,28 @@
 
 # Class: ImageRectangleNode
 
-ImageRectangleNode is a rectangular node that displays the image media part of a [MediaContainerNode](MediaContainerNode.md). It can only
+ImageRectangleNode is a rectangular node that displays the image media part of a [MediaContainerNode](./media-container-node.md). It can only
 exist within that container parent. Cropping can be adjusted by changing this rectangle's position/rotation (as well as
 its maskShape sibling node).
 
-ImageRectangleNodes cannot be created directly; use [Editor.createImageContainer](editor.md#createimagecontainer) to create the entire
+ImageRectangleNodes cannot be created directly; use [Editor.createImageContainer](./editor.md#createimagecontainer) to create the entire
 container structure together.
 
 ## Extends
 
--   [`MediaRectangleNode`](MediaRectangleNode.md)
+-   [`MediaRectangleNode`](./media-rectangle-node.md)
 
 ## Accessors
 
 ### addOnData
 
-• `get` **addOnData**(): [`AddOnData`](add-on-data.md)
+• `get` **addOnData**(): [`AddOnData`](./add-on-data.md)
 
-Get [AddOnData](add-on-data.md) reference for managing the private metadata on this node for this add-on.
+Get [AddOnData](./add-on-data.md) reference for managing the private metadata on this node for this add-on.
 
 #### Returns
 
-[`AddOnData`](add-on-data.md)
+[`AddOnData`](./add-on-data.md)
 
 <HorizontalLine />
 
@@ -40,7 +40,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly` `Iterable` [`Node`](node.md), `any`, `any`
+`Readonly` `Iterable` [`Node`](./node.md), `any`, `any`
 
 <HorizontalLine />
 
@@ -324,9 +324,9 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`boundsInNode`](MediaRectangleNode.md#boundsinnode)
+[`MediaRectangleNode`](media-rectangle-node.md).[`boundsInNode`](media-rectangle-node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### clone()
 
@@ -345,7 +345,7 @@ Clone the entire parent MediaContainerNode instead.
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`clone`](MediaRectangleNode.md#clone)
+[`MediaRectangleNode`](media-rectangle-node.md).[`clone`](media-rectangle-node.md#clone)
 [`Node`](node.md).[`boundsInNode`](node.md#boundsinnode)
 
 <HorizontalLine />
@@ -370,7 +370,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`localPointInNode`](MediaRectangleNode.md#localpointinnode)
+[`MediaRectangleNode`](media-rectangle-node.md).[`localPointInNode`](media-rectangle-node.md#localpointinnode)
 
 <HorizontalLine />
 
@@ -391,7 +391,7 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`removeFromParent`](MediaRectangleNode.md#removefromparent)
+[`MediaRectangleNode`](media-rectangle-node.md).[`removeFromParent`](media-rectangle-node.md#removefromparent)
 
 <HorizontalLine />
 
@@ -415,7 +415,7 @@ Changes the height to the given value and the width to the given height multipli
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`rescaleProportionalToHeight`](MediaRectangleNode.md#rescaleproportionaltoheight)
+[`MediaRectangleNode`](media-rectangle-node.md).[`rescaleProportionalToHeight`](media-rectangle-node.md#rescaleproportionaltoheight)
 
 <HorizontalLine />
 
@@ -439,7 +439,7 @@ Changes the width to the given value and the height to the given width multiplie
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`rescaleProportionalToWidth`](MediaRectangleNode.md#rescaleproportionaltowidth)
+[`MediaRectangleNode`](media-rectangle-node.md).[`rescaleProportionalToWidth`](media-rectangle-node.md#rescaleproportionaltowidth)
 
 <HorizontalLine />
 
@@ -467,7 +467,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`resizeToCover`](MediaRectangleNode.md#resizetocover)
+[`MediaRectangleNode`](media-rectangle-node.md).[`resizeToCover`](media-rectangle-node.md#resizetocover)
 
 <HorizontalLine />
 
@@ -495,7 +495,7 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`resizeToFitWithin`](MediaRectangleNode.md#resizetofitwithin)
+[`MediaRectangleNode`](media-rectangle-node.md).[`resizeToFitWithin`](media-rectangle-node.md#resizetofitwithin)
 
 <HorizontalLine />
 
@@ -522,7 +522,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`setPositionInParent`](MediaRectangleNode.md#setpositioninparent)
+[`MediaRectangleNode`](media-rectangle-node.md).[`setPositionInParent`](media-rectangle-node.md#setpositioninparent)
 
 #### Example
 
@@ -562,7 +562,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`MediaRectangleNode`](MediaRectangleNode.md).[`setRotationInParent`](MediaRectangleNode.md#setrotationinparent)
+[`MediaRectangleNode`](media-rectangle-node.md).[`setRotationInParent`](media-rectangle-node.md#setrotationinparent)
 
 #### Example
 

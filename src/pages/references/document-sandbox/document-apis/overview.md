@@ -20,7 +20,7 @@
 -   [StrokeType](enumerations/StrokeType.md)
 -   [TextAlignment](enumerations/TextAlignment.md)
 -   [TextLayout](enumerations/TextLayout.md)
--   [TextScriptStyle](enumerations/TextScriptStyle.md)
+-   [TextScriptStyle](enumerations/text-script-style.md)
 -   [VisualEffectType](enumerations/VisualEffectType.md)
 
 ## Classes
@@ -46,8 +46,8 @@
 -   [ItemList](classes/ItemList.md)
 -   [LineNode](classes/LineNode.md)
 -   [MediaContainerNode](classes/MediaContainerNode.md)
--   [MediaRectangleNode](classes/MediaRectangleNode.md)
--   [Node](classes/Node.md)
+-   [MediaRectangleNode](classes/media-rectangle-node.md)
+-   [Node](classes/node.md)
 -   [PageList](classes/PageList.md)
 -   [PageNode](classes/PageNode.md)
 -   [PathNode](classes/PathNode.md)
@@ -62,9 +62,9 @@
 -   [TextNode](classes/TextNode.md)
 -   [ThreadedTextNode](classes/threaded-text-node.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
--   [UnknownMediaRectangleNode](classes/UnknownMediaRectangleNode.md)
+-   [UnknownMediaRectangleNode](classes/unknown-media-rectangle-node.md)
 -   [UnknownNode](classes/UnknownNode.md)
--   [Viewport](classes/Viewport.md)
+-   [Viewport](classes/viewport.md)
 -   [VisualNode](classes/VisualNode.md)
 
 ## Interfaces
@@ -114,10 +114,10 @@
 
 ### OrderedListNumbering
 
-Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/ordered-list-numbering.md)
+Re-exports [OrderedListNumbering](namespaces/constants/enumerations/ordered-list-numbering.md)
 
 <HorizontalLine />
 
 ### ParagraphListType
 
-Re-exports [ParagraphListType](namespaces/Constants/enumerations/paragraph-list-type.md)
+Re-exports [ParagraphListType](namespaces/constants/enumerations/paragraph-list-type.md)

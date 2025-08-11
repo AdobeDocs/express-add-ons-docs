@@ -433,7 +433,7 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 ### clone()
 
-• **clone**(): [`TextNode`](TextNode.md)
+• **clone**(): [`TextNode`](./text-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -443,13 +443,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`TextNode`](TextNode.md)
+[`TextNode`](./text-node.md)
 
 #### Inherited from
 
-[`Node`](Node.md).[`clone`](Node.md#clone)
+[`Node`](node.md).[`clone`](node.md#clone)
 
----
+<HorizontalLine />
 
 ### isStandaloneText()
 

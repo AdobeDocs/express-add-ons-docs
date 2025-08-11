@@ -1,8 +1,8 @@
 {
-    "total":235,
-    "offset":0,
-    "limit":235,
-    "data":[
+    "total": 230,
+    "offset": 0,
+    "limit": 230,
+    "data": [
         {
             "Source": "/express/add-ons/references/index.md",
             "Destination": "/express/add-ons/references/index.md/"
@@ -128,10 +128,6 @@
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point"
         },
         {
-            "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/Point",
-            "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point"
-        },
-        {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point-text-layout/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/point-text-layout"
         },
@@ -228,6 +224,10 @@
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/enumerations/visual-effect-type"
         },
         {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/enumerations/text-script-style/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/enumerations/text-script-style"
+        },
+        {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/enumerations/text-layout/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/enumerations/text-layout"
         },
@@ -278,6 +278,10 @@
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/unknown-node/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/unknown-node"
+        },
+        {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/unknown-media-rectangle-node/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/unknown-media-rectangle-node"
         },
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/unavailable-font/",
@@ -338,6 +342,10 @@
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/node/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/node"
+        },
+        {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/media-rectangle-node/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/media-rectangle-node"
         },
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/media-container-node/",
@@ -552,6 +560,10 @@
             "Destination": "/express/add-ons/guides/learn/how-to/theme-locale"
         },
         {
+            "Source": "/express/add-ons/guides/learn/how-to/resize-rescale-elements/",
+            "Destination": "/express/add-ons/guides/learn/how-to/resize-rescale-elements"
+        },
+        {
             "Source": "/express/add-ons/guides/learn/how-to/premium-content/",
             "Destination": "/express/add-ons/guides/learn/how-to/premium-content"
         },
@@ -588,10 +600,6 @@
             "Destination": "/express/add-ons/guides/learn/how-to/group-elements"
         },
         {
-            "Source": "/express/add-ons/guides/learn/how-to/resize-rescale-elements/",
-            "Destination": "/express/add-ons/guides/learn/how-to/resize-rescale-elements"
-        },
-        {
             "Source": "/express/add-ons/guides/learn/how-to/element-metadata/",
             "Destination": "/express/add-ons/guides/learn/how-to/element-metadata"
         },
@@ -614,6 +622,10 @@
         {
             "Source": "/express/add-ons/guides/learn/how-to/tutorials/stats-addon/",
             "Destination": "/express/add-ons/guides/learn/how-to/tutorials/stats-addon"
+        },
+        {
+            "Source": "/express/add-ons/guides/learn/how-to/tutorials/markdown-parser-text-api/",
+            "Destination": "/express/add-ons/guides/learn/how-to/tutorials/markdown-parser-text-api"
         },
         {
             "Source": "/express/add-ons/guides/learn/how-to/tutorials/index.md",
@@ -900,22 +912,6 @@
             "Destination": "/express/add-ons/guides/build/advanced-topics/coi"
         },
         {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview",
-        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview"
-        },
-        {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type",
-        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type"
-        },
-        {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering",
-        "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering"
-        },
-        {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/Editor",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/classes/editor"
-        },
-        {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview",
             "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview"
         },
@@ -926,10 +922,7 @@
         {
             "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering",
             "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering"
-        },
-        {
-            "Source": "/express/add-ons/docs/guides/learn/how-to/tutorials/markdown-parser-text-api/",
-            "Destination": "/express/add-ons/docs/guides/learn/how-to/tutorials/markdown-parser-text-api"
-        }]
-        ,":type":"sheet"
-    }
+        }
+    ],
+    ":type": "sheet"
+}

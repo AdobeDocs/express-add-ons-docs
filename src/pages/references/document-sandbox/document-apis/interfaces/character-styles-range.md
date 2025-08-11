@@ -15,15 +15,15 @@ are visible in the document.
 
 ### baselineShift
 
-• **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+• **baselineShift**: [`TextScriptStyle`](../enumerations/text-script-style.md)
 
 Sets a superscript or subscript style.
 
 #### Inherited from
 
-[`CharacterStyles`](CharacterStyles.md).[`baselineShift`](CharacterStyles.md#baselineshift)
+[`CharacterStyles`](./character-styles.md).[`baselineShift`](./character-styles.md#baselineshift)
 
----
+<HorizontalLine />
 
 ### color
 

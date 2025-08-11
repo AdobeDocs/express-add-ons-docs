@@ -441,27 +441,7 @@ page. It is recommended to use this method only when the node is placed on a pag
 #### Inherited from
 
 [`TextNode`](text-node.md).[`boundsInNode`](text-node.md#boundsinnode)
-[`TextNode`](TextNode.md).[`boundsInNode`](TextNode.md#boundsinnode)
-
----
-
-### clone()
-
-• **clone**(): `never`
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Always throws as it's not possible to clone only a single "frame" of threaded text.
-
-#### Returns
-
-`never`
-
-#### Overrides
-
-[`TextNode`](TextNode.md).[`clone`](TextNode.md#clone)
+[`TextNode`](./text-node.md).[`boundsInNode`](./text-node.md#boundsinnode)
 
 <HorizontalLine />
 
@@ -481,7 +461,27 @@ Always throws as it's not possible to clone only a single "frame" of threaded te
 
 #### Overrides
 
-[`TextNode`](TextNode.md).[`clone`](TextNode.md#clone)
+[`TextNode`](./text-node.md).[`clone`](./text-node.md#clone)
+
+<HorizontalLine />
+
+### clone()
+
+• **clone**(): `never`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Always throws as it's not possible to clone only a single "frame" of threaded text.
+
+#### Returns
+
+`never`
+
+#### Overrides
+
+[`TextNode`](./text-node.md).[`clone`](./text-node.md#clone)
 
 <HorizontalLine />
 

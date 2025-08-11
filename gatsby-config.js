@@ -208,7 +208,7 @@ module.exports = {
                   },
                   {
                     title: "MediaRectangleNode",
-                    path: "references/document-sandbox/document-apis/classes/MediaRectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/media-rectangle-node.md",
                   },
                   {
                     title: "Node",
@@ -272,7 +272,7 @@ module.exports = {
                   },
                   {
                     title: "UnknownMediaRectangleNode",
-                    path: "references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/unknown-media-rectangle-node.md",
                   },
                   {
                     title: "UnknownNode",
@@ -344,10 +344,6 @@ module.exports = {
                     title: "Fill",
                     path: "references/document-sandbox/document-apis/interfaces/fill.md",
                   },
-                  // {
-                  //   "title": "FillTypeValueExtensibleEnum",
-                  //   "path": "references/document-sandbox/document-apis/interfaces/FillTypeValueExtensibleEnum.md",
-                  // },
                   {
                     title: "IFillableNode",
                     path: "references/document-sandbox/document-apis/interfaces/i-fillable-node.md",
@@ -472,7 +468,7 @@ module.exports = {
                   },
                   {
                     title: "TextScriptStyle",
-                    path: "references/document-sandbox/document-apis/enumerations/TextScriptStyle.md",
+                    path: "references/document-sandbox/document-apis/enumerations/text-script-style.md",
                   },
                   {
                     title: "VisualEffectType",
@@ -632,7 +628,7 @@ module.exports = {
               },
               {
                 title: "Use Design Elements",
-                path: "guides/learn/how-to/use-text.md", // change this!!
+                path: "guides/learn/how-to/use-text.md",
                 pages: [
                   {
                     title: "Use Text",
@@ -668,7 +664,7 @@ module.exports = {
                   },
                   {
                     title: "Resize & Rescale Elements",
-                    path: "guides/learn/how_to/resize_rescale_elements.md",
+                    path: "guides/learn/how-to/resize-rescale-elements.md",
                   },
                   {
                     title: "Position Elements",

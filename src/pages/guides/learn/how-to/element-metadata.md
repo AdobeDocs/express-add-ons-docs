@@ -115,7 +115,7 @@ text.addOnData.keys().forEach((key) => {
 
 Per-element metadata can be useful to keep track, for example, of the original properties a node has been created with, the history of the subsequent changes made to it, or to tag some nodes in a way that is meaningful for the add-on (e.g., it's supposed to be skipped when a certain routine is launched). It can also be used to store temporary data that is not meant to be persisted.
 
-Please, refer to the SDK Reference section for [`AddOnData`](../../../references/document-sandbox/document-apis/classes/AddOnData.md) for a complete list of methods, and the [`per-element-metadata`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/per-element-metadata) sample add-on for a demonstrative implementation.
+Please, refer to the SDK Reference section for [`AddOnData`](../../../references/document-sandbox/document-apis/classes/add-on-data.md) for a complete list of methods, and the [`per-element-metadata`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/per-element-metadata) sample add-on for a demonstrative implementation.
 
 ## FAQs
 

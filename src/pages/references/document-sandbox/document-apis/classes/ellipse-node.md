@@ -379,7 +379,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`EllipseNode`](EllipseNode.md)
+• **clone**(): [`EllipseNode`](./ellipse-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -389,13 +389,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`EllipseNode`](EllipseNode.md)
+[`EllipseNode`](./ellipse-node.md)
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`clone`](FillableNode.md#clone)
+[`FillableNode`](./fillable-node.md).[`clone`](./fillable-node.md#clone)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

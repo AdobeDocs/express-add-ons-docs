@@ -316,7 +316,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`SolidColorShapeNode`](SolidColorShapeNode.md)
+• **clone**(): [`SolidColorShapeNode`](./solid-color-shape-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -326,13 +326,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`SolidColorShapeNode`](SolidColorShapeNode.md)
+[`SolidColorShapeNode`](./solid-color-shape-node.md)
 
 #### Inherited from
 
-[`Node`](Node.md).[`clone`](Node.md#clone)
+[`Node`](node.md).[`clone`](node.md#clone)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

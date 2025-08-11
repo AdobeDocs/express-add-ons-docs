@@ -471,7 +471,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`RectangleNode`](RectangleNode.md)
+• **clone**(): [`RectangleNode`](./rectangle-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -481,13 +481,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`RectangleNode`](RectangleNode.md)
+[`RectangleNode`](./rectangle-node.md)
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`clone`](FillableNode.md#clone)
+[`FillableNode`](./fillable-node.md).[`clone`](./fillable-node.md#clone)
 
----
+<HorizontalLine />
 
 ### getUniformCornerRadius()
 

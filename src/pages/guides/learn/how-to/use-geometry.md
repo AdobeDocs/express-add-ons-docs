@@ -248,7 +248,7 @@ p3.fill = editor.makeColorFill(colorUtils.fromHex("#ffffff"));
 editor.context.insertionParent.children.append(g);
 ```
 
-![Path](./images/paths_styled.png)
+![Path](../how_to/images/paths_styled.png)
 
 ## FAQs
 

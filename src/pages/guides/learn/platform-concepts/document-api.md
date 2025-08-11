@@ -25,7 +25,7 @@ In this article, you'll dive deep into the architecture and key elements of the 
 
 ### Getting started with the DOM
 
-The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](../how_to/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
+The notion of **Document Object Model** (DOM) is key to any scripting environment; developers refer to _scripting_ when their programs use tools primarily available through the application's User Interface (UI) but programmatically, with code. For example, the [Grids tutorial](../how-to/tutorials/grids-addon.md) add-on creates a grid system while operating with built-in elements like shapes and editing their dimensions, positions, fills, and blending modes. If you were to implement an unsupported object type, you'd need to go beyond the combination of existing tools—i.e., outside the scripting realm.[^1]
 
 It is essential to hierarchically organize the features that are surfaced[^2] to the scripting layer. For example, a shape is not just contained within a document: it may be included in a particular Group in a certain Artboard, which belongs to a specific Page of a Document. Additionally, Ellipses and Rectangles, as shapes, share some properties, such as the ability to be filled or stroked with a solid color; in that respect, though, they differ from a bitmap image, which can be stroked but not filled.
 
@@ -33,11 +33,11 @@ More formally stated, any scripting environment must expose information about th
 
 Developers with a front-end background may instinctively associate the notion of DOM with HTML and the Browser. Although it has been the most common case for decades, all applications supporting scripting rely on their own Document Object Model—as those working with desktop versions of the Creative Cloud know very well. The Adobe Express add-on system is technically different from CEP extensions in Adobe After Effects or UXP plugins in Adobe Photoshop; still, the concept of the DOM is equally valid.
 
-<InlineAlert variant="warning" slots="text1, text2, text3w" />
+<InlineAlert variant="warning" slots="text1, text2, text3" />
 
 Some confusion may arise regarding the meaning of the following terms—let me clarify.
 
-- **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](../how_to/tutorials/stats-addon.md).
+- **Document Model Sandbox**: the sandboxed JavaScript environment that makes the Document API available to add-on developers. It's usually juxtaposed with the iframe UI: both reciprocally share APIs via proxy, as described in [this tutorial](../how-to/tutorials/stats-addon.md).
 - **Document Object Model**: it represents Adobe Express documents' structure, the hierarchies between each element, and their inheritance.
 
 You may think about the Document API as operating in the context of the DOM—while the Document Model Sandbox provides a secure and isolated environment for such code to run.
@@ -153,7 +153,7 @@ ellipse.stroke = {
 };
 ```
 
-The [Document Stats tutorial](../how_to/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
+The [Document Stats tutorial](../how-to/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
 
 ![](../platform_concepts/images/stats-addon-animation.gif)
 
@@ -557,7 +557,7 @@ const drawDimensionsRefactored = () => {
 export { drawDimensions, drawDimensionsRefactored };
 ```
 
-A rather unorthodox warning system is implemented to alert the user when selecting an unsupported node type. Through the Communication API outlined in [this tutorial](../how_to/tutorials/stats-addon.md), a `flashWrongElement()` function, defined in the iframe UI, is available to the Document Sandbox.
+A rather unorthodox warning system is implemented to alert the user when selecting an unsupported node type. Through the Communication API outlined in [this tutorial](../how-to/tutorials/stats-addon.md), a `flashWrongElement()` function, defined in the iframe UI, is available to the Document Sandbox.
 
 <CodeBlock slots="heading, code" repeat="2" />
 
@@ -612,7 +612,7 @@ As an exercise, you use the code sample found below and expand it to build a mor
   - a slider to control the dimensions' distance from the object;
   - dropdowns to choose the line's style (solid, dashed, dotted), and the arrowhead type;
   - a checkbox to toggle the extra dashed lines;
-  - a color picker to change the line's color—see the [Grids add-on](../how_to/tutorials/grids-addon.md) for an example.
+  - a color picker to change the line's color—see the [Grids add-on](../how-to/tutorials/grids-addon.md) for an example.
 
 ## Lessons Learned
 

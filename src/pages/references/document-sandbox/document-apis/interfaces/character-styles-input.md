@@ -20,7 +20,7 @@ user to edit with.
 
 ### baselineShift?
 
-• `optional` **baselineShift**: [`TextScriptStyle`](../enumerations/TextScriptStyle.md)
+• `optional` **baselineShift**: [`TextScriptStyle`](../enumerations/text-script-style.md)
 
 Sets a superscript or subscript style.
 
@@ -28,7 +28,7 @@ Sets a superscript or subscript style.
 
 `Partial.baselineShift`
 
----
+<HorizontalLine />
 
 ### color?
 

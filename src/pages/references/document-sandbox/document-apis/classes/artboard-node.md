@@ -114,8 +114,8 @@ The background fill of the artboard. Artboards must always have a fill.
 • `get` **height**(): `number`
 
 The height of the artboard.
-Shares the same dimensions as the parent [PageNode](PageNode.md) and other artboards within the parent [PageNode](PageNode.md).
-To resize an artboard, resize the parent [PageNode](PageNode.md).
+Shares the same dimensions as the parent [PageNode](./page-node.md) and other artboards within the parent [PageNode](./page-node.md).
+To resize an artboard, resize the parent [PageNode](./page-node.md).
 
 #### Returns
 
@@ -196,8 +196,8 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 • `get` **width**(): `number`
 
 The width of the artboard.
-Shares the same dimensions as the parent [PageNode](PageNode.md) and other artboards within the parent [PageNode](PageNode.md).
-To resize an artboard, resize the parent [PageNode](PageNode.md).
+Shares the same dimensions as the parent [PageNode](./page-node.md) and other artboards within the parent [PageNode](./page-node.md).
+To resize an artboard, resize the parent [PageNode](./page-node.md).
 
 #### Returns
 

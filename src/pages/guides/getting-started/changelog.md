@@ -26,7 +26,7 @@ contributors:
 
 ### Added
 
-- New [`isAnonymousUser()`](../../references/addonsdk/app-currentUser.md#isanonymoususer) method to the [`addOnUISdk.app.currentUser`](../../references/addonsdk/app-currentUser.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
+- New [`isAnonymousUser()`](../../references/addonsdk/app-current-user.md#isanonymoususer) method to the [`addOnUISdk.app.currentUser`](../../references/addonsdk/app-current-user.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
 - New [`exportAllowed()`](../../references/addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](../../references/addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
 - Enhanced [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](../../references/addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
 - Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](../../references/addonsdk/addonsdk-app.md#dragcompletiondata) support.
@@ -35,27 +35,27 @@ contributors:
 
 ### Updated
 
-- [User Info guide](../learn/how_to/user_info.md) with guidance on handling logged out users (browsing as a guest), with important considerations and limitations.
-- [Create Renditions guide](../learn/how_to/create_renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
-- [PDF and PowerPoint guide](../learn/how_to/use_pdf_powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
-- [Drag-and-Drop guide](../learn/how_to/drag_and_drop.md) with examples of using `sourceMimeType` when dragging converted documents.
-- The [Grids add-on tutorial](../learn/how_to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
+- [User Info guide](../learn/how-to/user-info.md) with guidance on handling logged out users (browsing as a guest), with important considerations and limitations.
+- [Create Renditions guide](../learn/how-to/create-renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
+- [PDF and PowerPoint guide](../learn/how-to/use-pdf-powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
+- [Drag-and-Drop guide](../learn/how-to/drag-and-drop.md) with examples of using `sourceMimeType` when dragging converted documents.
+- The [Grids add-on tutorial](../learn/how-to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
 
 ## 2025-07-25
 
 ### Added
 
-- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) interface. The corresponding [TextScriptStyle](../../references/document-sandbox/document-apis/enumerations/TextScriptStyle.md) enumerable has been added. The new API has been introduced as stable.
-- A new [`clone()`](../../references/document-sandbox/document-apis/classes/Node.md#clone) method has been added to the [Node](../../references/document-sandbox/document-apis/classes/Node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
-- New [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md).
-- New [`UnknownMediaRectangleNode`](../../references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md) for cases where the media type is not yet supported by the API.
+- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](../../references/document-sandbox/document-apis/interfaces/character-styles.md) interface. The corresponding [TextScriptStyle](../../references/document-sandbox/document-apis/enumerations/text-script-style.md) enumerable has been added. The new API has been introduced as stable.
+- A new [`clone()`](../../references/document-sandbox/document-apis/classes/node.md#clone) method has been added to the [Node](../../references/document-sandbox/document-apis/classes/node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
+- New [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/media-rectangle-node.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md).
+- New [`UnknownMediaRectangleNode`](../../references/document-sandbox/document-apis/classes/unknown-media-rectangle-node.md), a subclass of [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/media-rectangle-node.md) for cases where the media type is not yet supported by the API.
 
 ## 2025-07-11
 
 ### Added
 
-- New [Markdown Parser add-on tutorial](../learn/how_to/tutorials/markdown-parser-text-api.md) covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
-- New [Resize and Rescale Elements](../learn/how_to/resize_rescale_elements.md) how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.
+- New [Markdown Parser add-on tutorial](../learn/how-to/tutorials/markdown-parser-text-api.md) covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
+- New [Resize and Rescale Elements](../learn/how-to/resize-rescale-elements.md) how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.
 
 ## 2025-06-19
 

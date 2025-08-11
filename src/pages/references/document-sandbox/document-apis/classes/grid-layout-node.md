@@ -13,7 +13,7 @@ APIs to create a new grid layout are not yet available.
 
 ## Implements
 
--   [`IRectangularNode`](../interfaces/IRectangularNode.md)
+-   [`IRectangularNode`](../interfaces/i-rectangular-node.md)
 
 ## Accessors
 
@@ -343,21 +343,21 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Parameters
 
-• **targetNode**: [`VisualNode`](VisualNode.md)
+• **targetNode**: [`VisualNode`](./visual-node.md)
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly` [`Rect`](../interfaces/Rect.md)
 
 #### Inherited from
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`Node`](node.md).[`boundsInNode`](node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### clone()
 
-• **clone**(): [`GridLayoutNode`](GridLayoutNode.md)
+• **clone**(): [`GridLayoutNode`](./grid-layout-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -367,14 +367,14 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`GridLayoutNode`](GridLayoutNode.md)
+[`GridLayoutNode`](./grid-layout-node.md)
 
 #### Inherited from
 
-[`Node`](Node.md).[`clone`](Node.md#clone)
+[`Node`](node.md).[`clone`](node.md#clone)
 [`Node`](node.md).[`boundsInNode`](node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

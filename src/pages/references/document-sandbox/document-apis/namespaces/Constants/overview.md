@@ -77,7 +77,7 @@ Re-exports [TextLayout](../../enumerations/TextLayout.md)
 
 ### TextScriptStyle
 
-Re-exports [TextScriptStyle](../../enumerations/TextScriptStyle.md)
+Re-exports [TextScriptStyle](../../enumerations/text-script-style.md)
 
 <HorizontalLine />
 

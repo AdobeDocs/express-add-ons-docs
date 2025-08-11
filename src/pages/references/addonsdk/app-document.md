@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/learn/how-to/use-images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/learn/how-to/create-renditions.md) from the current document.
+Provides access to the methods needed for retrieving [document metadata](index.md#general-methods), [importing content](../../guides/learn/how-to/use-images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/learn/how-to/create-renditions.md) from the current document.
 
 ## General Methods
 
@@ -84,11 +84,11 @@ Retrieve the metadata for all of the pages in the document.
 
 | Name      | Type     |                                           Description |
 | --------- | -------- | ----------------------------------------------------: |
-| `options` | `Object` | [`PageMetadataOptions`](#pagemetadataoptions) object. |
+| `options` | `Object` | [`PageMetadataOptions`](index.md#pagemetadataoptions) object. |
 
 #### Return Value
 
-A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containing all of the pages in the document.
+A resolved `Promise` containing a [`PageMetadata`](index.md#pagemetadata) array containing all of the pages in the document.
 
 #### Example Usage
 
@@ -169,7 +169,7 @@ Tells Express to run a print quality check to determine if the document is ready
 
 | Name      | Type     |                                                     Description |
 | --------- | -------- | --------------------------------------------------------------: |
-| `options` | `Object` | [`PrintQualityCheckOptions`](#printqualitycheckoptions) object. |
+| `options` | `Object` | [`PrintQualityCheckOptions`](index.md#printqualitycheckoptions) object. |
 
 #### Return Value
 
@@ -242,7 +242,7 @@ The metadata of a page.
 
 #### `PageMetadataOptions`
 
-This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
+This object is passed as a parameter to the [`getPagesMetadata`](index.md#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
 | Name                 | Type                                                   |                                                           Description |
 | -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
@@ -322,7 +322,7 @@ Adds an image/gif/Ps/Ai files to the current page.
 | Name          | Type                                  |                                                                              Description |
 | ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------: |
 | `imageBlob`   | `Blob`                                |                                                            The image to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
+| `attributes?` | [`MediaAttributes`](index.md#mediaattributes) | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -353,7 +353,7 @@ async function addImageFromURL(url) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [image requirements](#image-requirements) section for specific details on supported image sizes and GIF handling.
+Refer to the [image requirements](index.md#image-requirements) section for specific details on supported image sizes and GIF handling.
 
 ### addAnimatedImage()
 
@@ -368,7 +368,7 @@ Adds an animated image (gif) to the current page.
 | Name          | Type                                  |                                                                          Description |
 | ------------- | ------------------------------------- | -----------------------------------------------------------------------------------: |
 | `imageBlob`   | `Blob`                                |                                                        The image to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
+| `attributes?` | [`MediaAttributes`](index.md#mediaattributes) | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -389,7 +389,7 @@ async function addAnimatedImageFromBlob(blob) {
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [image requirements](#image-requirements) section for specific details on supported image sizes and GIF handling.
+Refer to the [image requirements](index.md#image-requirements) section for specific details on supported image sizes and GIF handling.
 
 ### addVideo()
 
@@ -439,7 +439,7 @@ Adds audio to the current page.
 | Name         | Type                                  |                                                                             Description |
 | ------------ | ------------------------------------- | --------------------------------------------------------------------------------------: |
 | `audioBlob`  | `Blob`                                |                                                           The audio to add to the page. |
-| `attributes` | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
+| `attributes` | [`MediaAttributes`](index.md#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
 
 #### Return Value
 
@@ -491,8 +491,8 @@ Imports a PDF as a new Adobe Express document.
 | Name                                         | Type                                  |                                                                 Description |
 | -------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------: |
 | `blob`                                       | `Blob`                                |                                                 The PDF to add to the page. |
-| `attributes?`                                | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
-| [`SourceMimeTypeInfo?`](#sourcemimetypeinfo) | `SourceMimeTypeInfo`                  |                                       Mime type details for importing media |
+| `attributes?`                                | [`MediaAttributes`](index.md#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| [`SourceMimeTypeInfo?`](index.md#sourcemimetypeinfo) | `SourceMimeTypeInfo`                  |                                       Mime type details for importing media |
 
 #### Return Value
 
@@ -504,7 +504,7 @@ Mime type details for importing media
 
 | Name              | Type                       |                                                      Description |
 | ----------------- | -------------------------- | ---------------------------------------------------------------: |
-| `sourceMimeType?` | [`SupportedMimeTypes`](./) | Mime type of the original source asset that was converted to PDF |
+| `sourceMimeType?` | [`SupportedMimeTypes`](./index.md) | Mime type of the original source asset that was converted to PDF |
 
 ### SupportedMimeTypes
 
@@ -577,7 +577,7 @@ Imports a presentation as a new Adobe Express document. **Note:** Currently Expr
 | Name          | Type                                  |                                                                           Description |
 | ------------- | ------------------------------------- | ------------------------------------------------------------------------------------: |
 | `blob`        | `Blob`                                |                             The PowerPoint presentation (`.pptx`) to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding a presentation to the page (i.e., `title`). |
+| `attributes?` | [`MediaAttributes`](index.md#mediaattributes) | Attributes that can be passed when adding a presentation to the page (i.e., `title`). |
 
 #### Return Value
 
@@ -661,7 +661,7 @@ Generate renditions of the current page, specific pages or the entire document i
 
 | Name               | Type     |                                                  Description |
 | ------------------ | -------- | -----------------------------------------------------------: |
-| `renditionOptions` | `Object` |              [`RenditionOptions`](#renditionoptions) object. |
+| `renditionOptions` | `Object` |              [`RenditionOptions`](index.md#renditionoptions) object. |
 | `renditionIntent`  | `string` | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
 
 **NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
@@ -684,24 +684,24 @@ Refer to the [manage premium content how-to](../../guides/learn/how-to/premium-c
 
 #### `JpgRenditionOptions`
 
-Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `jpg` renditions:
+Extends the [`RenditionOptions`](index.md#renditionoptions) object and adds the following additional options for `jpg` renditions:
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.jpg`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
-| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
+| [`requestedSize?`](index.md#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 
 #### `PngRenditionOptions`
 
-Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `png` renditions:
+Extends the [`RenditionOptions`](index.md#renditionoptions) object and adds the following additional options for `png` renditions:
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.png`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
-| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
+| [`requestedSize?`](index.md#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 | `fileSizeLimit?`                          | `number`                            |                                                                                                                                                     File size limit for the rendition. |
 | `fileSizeLimitUnit?`                      | `string`                            |                                                                                                Unit of the file size limit, [`FileSizeLimitUnit`](./addonsdk-constants.md) enumerable. |
 
@@ -725,12 +725,12 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 #### `PdfRenditionOptions`
 
-Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `pdf` renditions:
+Extends the [`RenditionOptions`](index.md#renditionoptions) object and adds the following additional options for `pdf` renditions:
 
 | Name         | Type                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Description |
 | ------------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `bleed?`     | [`Bleed`](#bleed)               | Bleed for the page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. The parameter is optional, and if left undefined, then no bleed is assumed. If `bleed` is defined, `CropBox` and `TrimBox` will be the size of the Express document, `BleedBox` and `MediaBox` will be equal to each other, and they will expand on all sides (left, top, right, bottom) with the amount/unit specified by `bleed`. |
-| `pageBoxes?` | [`PdfPageBoxes`](#pdfpageboxes) |                                                                                                                                                                                                                               Exposes the ability to customize each PDF Page Box (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions by defining how much it should expand on each side beyond the Express document page size. If `pageBoxes` are defined, then `PdfRenditionOptions.bleed` is ignored. |
+| `bleed?`     | [`Bleed`](index.md#bleed)               | Bleed for the page. In printing, bleed is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. The parameter is optional, and if left undefined, then no bleed is assumed. If `bleed` is defined, `CropBox` and `TrimBox` will be the size of the Express document, `BleedBox` and `MediaBox` will be equal to each other, and they will expand on all sides (left, top, right, bottom) with the amount/unit specified by `bleed`. |
+| `pageBoxes?` | [`PdfPageBoxes`](index.md#pdfpageboxes) |                                                                                                                                                                                                                               Exposes the ability to customize each PDF Page Box (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions by defining how much it should expand on each side beyond the Express document page size. If `pageBoxes` are defined, then `PdfRenditionOptions.bleed` is ignored. |
 
 #### `Bleed`
 
@@ -747,10 +747,10 @@ Represents all of the PDF page boxes (`MediaBox`, `BleedBox`, `CropBox`, `TrimBo
 
 | Name        | Type                        | Description |
 | ----------- | --------------------------- | ----------: |
-| `mediaBox?` | [`PdfPageBox`](#pdfpagebox) |   Media box |
-| `bleedBox?` | [`PdfPageBox`](#pdfpagebox) |   Bleed box |
-| `cropBox?`  | [`PdfPageBox`](#pdfpagebox) |    Crop box |
-| `trimBox?`  | [`PdfPageBox`](#pdfpagebox) |    Trim box |
+| `mediaBox?` | [`PdfPageBox`](index.md#pdfpagebox) |   Media box |
+| `bleedBox?` | [`PdfPageBox`](index.md#pdfpagebox) |   Bleed box |
+| `cropBox?`  | [`PdfPageBox`](index.md#pdfpagebox) |    Crop box |
+| `trimBox?`  | [`PdfPageBox`](index.md#pdfpagebox) |    Trim box |
 
 #### `PdfPageBox`
 
@@ -758,7 +758,7 @@ Represents a PDF page box.
 
 | Name      | Type                                      |       Description |
 | --------- | ----------------------------------------- | ----------------: |
-| `margins` | [`PdfPageBoxMargins`](#pdfpageboxmargins) | Margins for a box |
+| `margins` | [`PdfPageBoxMargins`](index.md#pdfpageboxmargins) | Margins for a box |
 
 #### `PdfPageBoxMargins`
 
@@ -766,14 +766,14 @@ Represents margins for a PDF page box.
 
 | Name      | Type              |   Description |
 | --------- | ----------------- | ------------: |
-| `top?`    | [`Bleed`](#bleed) |    Top margin |
-| `bottom?` | [`Bleed`](#bleed) | Bottom margin |
-| `left?`   | [`Bleed`](#bleed) |   Left margin |
-| `right?`  | [`Bleed`](#bleed) |  Right margin |
+| `top?`    | [`Bleed`](index.md#bleed) |    Top margin |
+| `bottom?` | [`Bleed`](index.md#bleed) | Bottom margin |
+| `left?`   | [`Bleed`](index.md#bleed) |   Left margin |
+| `right?`  | [`Bleed`](index.md#bleed) |  Right margin |
 
 #### `Mp4RenditionOptions`
 
-Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
+Extends the [`RenditionOptions`](index.md#renditionoptions) object and adds the following additional options for `mp4` renditions:
 
 | Name                | Type     |                                                                         Description |
 | ------------------- | -------- | ----------------------------------------------------------------------------------: |
@@ -785,7 +785,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 #### Return Value
 
-A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
+A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](index.md#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](index.md#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
 
 #### Example Usage
 
@@ -855,7 +855,7 @@ async function displayPreview() {
 
 #### `Rendition`
 
-A rendition object representing a page in the document, returned from [`createRenditions`](#createrenditions). See
+A rendition object representing a page in the document, returned from [`createRenditions`](index.md#createrenditions). See
 
 | Name    | Type     |                                Description |
 | ------- | -------- | -----------------------------------------: |
@@ -864,12 +864,12 @@ A rendition object representing a page in the document, returned from [`createRe
 
 #### `PageRendition`
 
-An extension of [`Rendition`](#rendition), returned in the response to [`createRenditions`](#createrenditions). This object **includes everything in [`Rendition`](#rendition)**, as well as:
+An extension of [`Rendition`](index.md#rendition), returned in the response to [`createRenditions`](index.md#createrenditions). This object **includes everything in [`Rendition`](index.md#rendition)**, as well as:
 
 | Name       | Type                            |                     Description |
 | ---------- | ------------------------------- | ------------------------------: |
 | `title`    | `string`                        | The page title of the rendition |
-| `metadata` | [`PageMetadata`](#pagemetadata) |                   Page metadata |
+| `metadata` | [`PageMetadata`](index.md#pagemetadata) |                   Page metadata |
 
 \*\* See the [FAQs](../../guides/support/faq.md#what-are-the-supported-mime-typesfile-formats-for-exported-content) for the file formats and mime types supported for exported content.
 

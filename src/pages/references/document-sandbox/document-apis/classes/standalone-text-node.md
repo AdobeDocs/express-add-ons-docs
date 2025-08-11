@@ -9,7 +9,7 @@ To create new a single-frame piece of text, see [Editor.createText](editor.md#cr
 
 ## Extends
 
--   [`TextNode`](TextNode.md)
+-   [`TextNode`](./text-node.md)
 
 ## Accessors
 
@@ -444,33 +444,13 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 #### Inherited from
 
-[`TextNode`](TextNode.md).[`boundsInNode`](TextNode.md#boundsinnode)
-
----
-
-### clone()
-
-• **clone**(): [`StandaloneTextNode`](StandaloneTextNode.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Creates an orphaned copy of this node, including all persistent attributes and descendants.
-
-#### Returns
-
-[`StandaloneTextNode`](StandaloneTextNode.md)
-
-#### Inherited from
-
-[`TextNode`](TextNode.md).[`clone`](TextNode.md#clone)
+[`TextNode`](./text-node.md).[`boundsInNode`](./text-node.md#boundsinnode)
 
 <HorizontalLine />
 
 ### clone()
 
-• **clone**(): [`StandaloneTextNode`](StandaloneTextNode.md)
+• **clone**(): [`StandaloneTextNode`](./standalone-text-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -480,11 +460,31 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`StandaloneTextNode`](StandaloneTextNode.md)
+[`StandaloneTextNode`](./standalone-text-node.md)
 
 #### Inherited from
 
-[`TextNode`](TextNode.md).[`clone`](TextNode.md#clone)
+[`TextNode`](./text-node.md).[`clone`](./text-node.md#clone)
+
+<HorizontalLine />
+
+### clone()
+
+• **clone**(): [`StandaloneTextNode`](./standalone-text-node.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Creates an orphaned copy of this node, including all persistent attributes and descendants.
+
+#### Returns
+
+[`StandaloneTextNode`](./standalone-text-node.md)
+
+#### Inherited from
+
+[`TextNode`](./text-node.md).[`clone`](./text-node.md#clone)
 
 <HorizontalLine />
 

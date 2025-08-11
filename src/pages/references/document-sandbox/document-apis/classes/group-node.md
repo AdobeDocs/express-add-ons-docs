@@ -348,7 +348,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### clone()
 
-• **clone**(): [`GroupNode`](GroupNode.md)
+• **clone**(): [`GroupNode`](./group-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -358,13 +358,13 @@ Creates an orphaned copy of this node, including all persistent attributes and d
 
 #### Returns
 
-[`GroupNode`](GroupNode.md)
+[`GroupNode`](./group-node.md)
 
 #### Inherited from
 
-[`Node`](Node.md).[`clone`](Node.md#clone)
+[`Node`](node.md).[`clone`](node.md#clone)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 

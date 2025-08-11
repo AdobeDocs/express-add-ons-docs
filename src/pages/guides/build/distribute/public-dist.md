@@ -317,4 +317,4 @@ Below is an example of what the insights data might look like:
 
 By leveraging these insights, you can make informed decisions to improve your add-on's performance and user experience.
 
-Once your add-on is [reviewed](./review_process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).
+Once your add-on is [reviewed](./review-process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).
