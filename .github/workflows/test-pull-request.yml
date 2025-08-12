@@ -91,5 +91,5 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=8192"
           CODE_BLOCK_API_URL: "https://api.jsonbin.io/v3/b"
           # TODO: Remove this and get the key from secrets
-          JSONBIN_MASTER_KEY: "$2a$10$RaC5evuKm1NO6elIVMJ8TOgsDpr/DgM3SDU2ChPawNp1U3ecA4fJe"
+          JSONBIN_MASTER_KEY: "$2a$10$KJQlmNhxRgK/avpqgQOU6OjwlolWiwZh2674EPYadqKxMxAUGmwMi"
           DRY_RUN: "false"

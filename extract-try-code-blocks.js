@@ -10,10 +10,6 @@ const MARKDOWN_EXTENSION = ".md";
 const DRY_RUN = process.env.DRY_RUN === "false" ? false : true;
 const JSONBIN_MASTER_KEY = process.env.JSONBIN_MASTER_KEY;
 
-console.log("BACKEND_API_URL", BACKEND_API_URL);
-console.log("JSONBIN_MASTER_KEY", JSONBIN_MASTER_KEY);
-console.log("DRY_RUN", DRY_RUN);
-
 // looks for code blocks with format: ```language{try id=explicitId}
 const CODE_BLOCK_REGEX =
   /```(\w+)\{try(?:\s+id=([a-zA-Z0-9_-]+))?\}\s*\n([\s\S]*?)\n```/g;
