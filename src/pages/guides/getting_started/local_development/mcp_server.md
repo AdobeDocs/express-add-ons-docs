@@ -13,239 +13,254 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Adobe Express Add-on MCP Server
+# Adobe Express Add-on MCP Server (Beta)
 
-The Adobe Express Add-on MCP Server provides developers with access to comprehensive documentation and TypeScript definitions for Adobe Express add-on development through the Model Context Protocol (MCP). This enables AI-powered development assistance in compatible editors like Cursor.
+Stop switching tabs. Get Adobe Express Add-on documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
 
-## What is MCP?
+> **Status: Public Beta** - We're actively improving based on developer feedback. API and tool surfaces may change.
 
-Model Context Protocol (MCP) is an open standard that enables AI assistants to securely access external data sources and tools. In the context of Adobe Express add-on development, the MCP server provides:
+> **"Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."** — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
 
-- Real-time access to the latest Adobe Express add-on documentation
-- Complete TypeScript definitions for all SDK APIs
-- Contextual code assistance and examples
-- Enhanced development workflow integration
+## What it does
 
-## Setup
+The MCP server gives you structured access to add-on docs—so you get accurate, context-aware answers for coding, debugging, and building add-ons quickly.
 
-### Prerequisites
+This MCP server connects your IDE to Adobe's Express Add-on ecosystem, providing:
 
-- A compatible MCP client (such as [Cursor](https://cursor.sh/))
-- Node.js (for the MCP server)
-- Access to Adobe's internal npm registry
+- **Semantic Documentation Search**: Find relevant guides, examples, and tutorials without leaving your editor
+- **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
+- **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-### Configuration
+**How it works**: The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It's compatible with any MCP-enabled IDE and any LLM.
 
-Add the Adobe Express Add-on MCP Server to your MCP configuration file:
+## Prerequisites
 
-**For Cursor (`.cursor/mcp.json`):**
+- **Node.js 18+** (check with `node --version`)
+- **MCP-compatible IDE** (Cursor, Claude Desktop, etc.)
+- **Internet connection** (for initial npx download)
+
+## Quick Setup (No Installation Required)
+
+You don't need to clone or build anything. Just configure your MCP client to launch the server via npx.
+
+### For Cursor Users
+
+Add this to `~/.cursor/mcp.json`:
 
 ```json
 {
   "mcpServers": {
-    "ccweb-add-on-dev-mcp-server": {
+    "adobe-express-addon": {
       "command": "npx",
       "args": [
-        "-registry=https://artifactory.corp.adobe.com/artifactory/api/npm/npm-adobe-release/",
-        "@adobe/ccweb-add-on-dev-mcp-server"
+        "@adobe/ccweb-add-on-dev-mcp-server@latest",
+        "--yes"
       ]
     }
   }
 }
 ```
 
-**For Claude Desktop (`claude_desktop_config.json`):**
+### For Claude Desktop Users
+
+Add this to `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
-    "ccweb-add-on-dev-mcp-server": {
+    "adobe-express-addon": {
       "command": "npx",
       "args": [
-        "-registry=https://artifactory.corp.adobe.com/artifactory/api/npm/npm-adobe-release/",
-        "@adobe/ccweb-add-on-dev-mcp-server"
+        "@adobe/ccweb-add-on-dev-mcp-server@latest",
+        "--yes"
       ]
     }
   }
 }
 ```
 
-## Available Tools
+**Verification**: Most IDEs show a green indicator when the MCP server connects successfully. The LLM will automatically invoke tools based on your prompts.
 
-The Adobe Express Add-on MCP Server provides two main tools for development assistance:
+<!-- ## Available Tools
 
-### 1. Documentation Retrieval (`get_relevant_documentations`)
+The server provides two powerful tools for Adobe Express Add-on development:
 
-This tool searches and retrieves relevant documentation from the Adobe Express add-on developer documentation.
+### 1. `get_relevant_documentations`
 
-**Usage Examples:**
+Searches the official Adobe Express Add-on documentation for relevant content.
 
-- "How do I create text in Adobe Express?"
-- "What are the steps for drag and drop functionality?"
-- "How does the Document API work?"
-- "Show me examples of using the color picker"
+**Great for questions like:**
 
-**Features:**
+- "How do I create and style text in Adobe Express?"
+- "What are the steps for implementing drag-and-drop functionality?"
+- "How does the Document API work for manipulating elements?"
+- "Show me examples of using the color picker component."
 
-- Semantic search across all Adobe Express add-on documentation
-- Real-time access to the latest guides, tutorials, and references
-- Contextual examples and code snippets
-- Links to related documentation sections
+### 2. `get_typedefinitions`
 
-### 2. TypeScript Definitions (`get_typedefinitions`)
+Returns TypeScript definitions for Express Add-on APIs to improve code generation and validation.
 
-Provides complete TypeScript definitions for Adobe Express add-on APIs, enabling better code completion and type checking.
+**Available API surfaces:**
 
-**Available API Types:**
+- **`iframe-ui`**: UI components and user interactions
+- **`express-document-sdk`**: Document manipulation and element creation
+- **`add-on-sdk-document-sandbox`**: Sandboxed document operations
 
-#### `iframe-ui`
+**Key types include**: `Editor`, `Node`, `TextNode`, `Color`, `Rectangle`, `TextStyle`, `Document`, etc.
 
-Complete TypeScript definitions for building add-on UI panels:
+**Great for requests like:**
 
-- **UI components**: Access to Adobe Express UI elements
-- **Event handling**: Respond to user interactions and application events
-- **Document operations**: Import/export content, create renditions
-- **OAuth integration**: Handle user authentication
-- **Storage management**: Persist add-on data
+- "Show me the Editor interface and its methods"
+- "What properties does a TextNode have?"
+- "Give me the Color type definition and its available methods" -->
 
-Key interfaces:
+## Example Questions
 
-- `AddOnSDKAPI` - Main SDK entry point
-- `Application` - Access to Express application features
-- `Document` - Document-level operations
-- `UI` - User interface management
+**Great for questions like:**
 
-#### `express-document-sdk`
+- "How do I create and style text in Adobe Express?"
+- "What are the steps for implementing drag-and-drop functionality?"
+- "How does the Document API work for manipulating elements?"
+- "Show me examples of using the color picker component."
 
-Complete TypeScript definitions for the Adobe Express Document APIs, including:
+<!-- ## Quick Reference
 
-- **Document manipulation**: Create, modify, and manage Express documents
-- **Content creation**: Add text, shapes, images, and other elements
-- **Styling and effects**: Apply fills, strokes, colors, and visual effects
-- **Layout and positioning**: Control element placement and transformations
-- **Media handling**: Work with images, videos, and audio content
+| Tool | Use Case | Example Query |
+|------|----------|---------------|
+| `get_relevant_documentations` | Find guides and examples | "How do I create text?" |
+| `get_typedefinitions` | Get API types and interfaces | "Show me Editor interface" |
 
-Key classes and interfaces:
+**Popular API Surfaces:**
 
-- `Editor` - Main entry point for document manipulation
-- `Node` and subclasses - Represent document elements
-- `Color`, `Fill`, `Stroke` - Styling properties
-- `TextNode`, `RectangleNode`, `EllipseNode` - Specific element types
+- `iframe-ui`: UI components and interactions
+- `express-document-sdk`: Document manipulation APIs  
+- `add-on-sdk-document-sandbox`: Sandboxed operations
 
-#### `add-on-sdk-document-sandbox`
+## Why Developers Love It
 
-TypeScript definitions for the [Document Sandbox](../../../references/document-sandbox/index.md) runtime environment:
+- **🚀 Faster Development**: No more tab-switching between docs and code
+- **🎯 Grounded Answers**: Semantic search over official Adobe documentation
+- **💪 Type-Safe Code**: LLM generates better code with accurate type definitions
+- **🔍 Context-Aware**: Your LLM understands your specific Express Add-on needs -->
 
-- **Runtime management**: Handle sandbox execution environment
-- **Communication APIs**: Bridge between UI and document sandbox
-- **Type safety**: Ensure proper data exchange between contexts
+## Pro Tips for Better Results
 
-Key components:
+- **Be Specific**: "Add a stroke to a rectangle" vs "Style shapes"
+- **Include Context**: "I'm building a text editor add-on" helps narrow results
+- **Use Technical Terms**: "text styling" vs "make it look good"
+- **Ask for Examples**: "Show me code examples for text manipulation"
+- **Specify Surfaces**: "Show me iframe-ui types" vs generic requests
 
-- `AddOnDocumentSandboxSdk` - Main SDK interface
-- `Runtime` - Sandbox execution environment
-- Communication proxies and type definitions
+## Current Limitations
 
-## Usage Examples
+- **Beta Status**: API and tool surfaces may evolve based on feedback
+- **Documentation Scope**: Covers official Adobe Express Add-on docs only
+- **Update Frequency**: Documentation index updates periodically, not real-time
+- **IDE Requirement**: Requires MCP-compatible IDE for full functionality
+- **Network Dependency**: Initial setup requires internet for npx download
 
-### Getting Documentation Help
+## Compatibility
 
-Ask questions about Adobe Express add-on development:
+- **Adobe Express SDK**: Latest stable versions
+- **Node.js**: 18.0.0 or higher required
+- **MCP Protocol**: v1.0 supported
+- **Tested IDEs**: Cursor 0.40+, Claude Desktop 1.0+
 
+## Getting Started Workflow
+
+1. **Configure your IDE** (see setup instructions above)
+2. **Test the connection** - ask a simple question like "How do I create text?"
+3. **Explore the APIs** - try "Show me the Editor interface"
+4. **Build something** - use the tools while developing your add-on
+
+## For Contributors
+
+If you're developing or modifying the server:
+
+```bash
+npm install
+npm run build
 ```
-"How do I create a rectangle with rounded corners in Adobe Express?"
+
+**Local Development Configuration:**
+
+```json
+{
+  "mcpServers": {
+    "adobe-express-addon": {
+      "command": "node",
+      "args": ["./dist/server.js"]
+    }
+  }
+}
 ```
 
-The MCP server will provide relevant documentation, code examples, and links to detailed guides.
+**Debug with MCP Inspector:**
 
-### Getting TypeScript Definitions
-
-Request type definitions for better development experience:
-
-```
-"Show me the TypeScript definitions for the Editor class"
+```bash
+npm run inspect
 ```
 
-This will provide complete type information for enhanced IDE support and code completion.
+(After rebuilding, reload the MCP server in your client.)
 
-### Development Workflow Integration
+Transport: STDIO.
 
-The MCP server integrates seamlessly with your development workflow:
+### Publishing (maintainers)
 
-1. **Code Completion**: Get accurate TypeScript definitions for all Adobe Express APIs
-2. **Documentation Lookup**: Instantly access relevant documentation while coding
-3. **Best Practices**: Learn recommended patterns and approaches
-4. **Error Resolution**: Get help with common issues and solutions
+```bash
+npm run build
+npm login # if needed
+npm publish
+```
 
-## Benefits
+## What's New in Beta
 
-### Enhanced Development Experience
+- **v1.0.0-beta**: Initial release with documentation search and TypeScript definitions
+- **Coming Soon**: Real-time documentation updates, additional API surfaces
+- **Your Feedback**: We're actively collecting input to improve accuracy and coverage
 
-- **Real-time Documentation**: Access the latest documentation without leaving your editor
-- **Type Safety**: Complete TypeScript definitions for all Adobe Express APIs
-- **Contextual Help**: Get relevant examples and guidance based on your current task
-- **Faster Development**: Reduce context switching and documentation lookup time
+## FAQ
 
-### AI-Powered Assistance
+### Does this generate code?
 
-- **Intelligent Search**: Semantic search finds relevant content even with partial information
-- **Code Generation**: AI can suggest code patterns using accurate type information
-- **Problem Solving**: Get help troubleshooting issues with Adobe Express add-on development
-- **Learning Acceleration**: Discover new APIs and features through contextual suggestions
+No—it provides context and types to your existing LLM. Your IDE/LLM handles code generation.
 
-## Best Practices
+### Which IDEs work?
 
-### Effective Queries
+Any IDE supporting MCP: Cursor, Claude Desktop, and others.
 
-When asking for documentation help:
+### Who should use this?
 
-- **Be specific**: "How do I add a stroke to a rectangle?" vs "How do I style shapes?"
-- **Include context**: "I'm building a text editor add-on and need to format text"
-- **Ask for examples**: "Show me code examples for creating image containers"
+Adobe Express add-on developers who want faster, more accurate development workflows.
 
-### TypeScript Integration
+### Is it free?
 
-To maximize the benefits of TypeScript definitions:
-
-1. **Set up your project** with proper TypeScript configuration
-2. **Import types** from the appropriate SDK modules
-3. **Use IDE features** like IntelliSense and error checking
-4. **Validate your code** against the provided type definitions
+Yes, free during and after beta.
 
 ## Troubleshooting
 
-### Common Issues
+### Server Won't Start
 
-**MCP Server Not Starting:**
+- ✅ Check Node.js version: `node --version` (needs 18+)
+- ✅ Verify MCP config JSON syntax
+- ✅ Ensure firewall allows npx downloads
 
-- Verify Node.js is installed and accessible
-- Check npm registry access permissions
-- Ensure the MCP configuration file syntax is correct
+### No Documentation Results
 
-**Documentation Not Found:**
+- ✅ Use specific technical terms ("text styling" vs "make it pretty")
+- ✅ Try broader queries first, then narrow down
+- ✅ Double-check API names and concepts
 
-- Try rephrasing your question with different keywords
-- Check for typos in API names or concepts
-- Use broader terms and then narrow down
+### Missing Type Definitions
 
-**TypeScript Definitions Missing:**
+- ✅ Specify the correct API surface (iframe-ui, express-document-sdk, etc.)
+- ✅ Ensure your IDE supports MCP protocol
+- ✅ Ask for specific types rather than general requests
 
-- Verify the correct API type is requested
-- Ensure your TypeScript configuration includes the definitions
-- Check that your IDE supports MCP integration
+## Resources & Support
 
-### Getting Help
-
-If you encounter issues with the Adobe Express Add-on MCP Server:
-
-1. Check our [changelog](https://developer.adobe.com/express/add-ons/docs/guides/getting_started/changelog/) for any recent updates or changes
-2. Verify your [MCP client configuration](#configuration)
-3. Test with simple queries to ensure the server is responding
-4. Reach out on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4)
-
-## Related Resources
-
-- [Adobe Express Add-on Developer Documentation](https://developer.adobe.com/express/add-ons/docs/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [Cursor Editor Documentation](https://cursor.sh/docs)
-- [Adobe Express Add-on Samples](https://github.com/AdobeDocs/express-add-on-samples)
+- **📚 Documentation**: [Adobe Express Add-on Guides](https://developer.adobe.com/express/add-ons/docs/guides/)
+- **💡 Examples**: [Samples Repository](https://github.com/AdobeDocs/express-add-on-samples)
+- **📋 Updates**: [Changelog](https://developer.adobe.com/express/add-ons/docs/guides/getting_started/changelog/)
+- **💬 Community**: [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4)
+- **🔍 Forum**: [Adobe Express Developers Community](https://community.adobe.com/t5/adobe-express-developers/ct-p/ct-adobe-express-developers?page=1&sort=latest_replies&lang=all&tabid=all)
