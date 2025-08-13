@@ -86,19 +86,17 @@ const openCodePlayground = (codeContent) => {
     window.open(url.toString(), "_blank");
 };
 
-// parse attributes - language and try
-// sample usage: ```js{try}
-const parseAttributes = (className) => {
-  let language = className.replace(/language-/, "");
-  const attributeMatch = language.match(/^(\w+)\s*\{([^}]+)\}$/);
+// parse language, try option and id.
+// usage: ```js{try id=create-rectangle}
+function parseAttributes(className) {
+  const cls = String(className || "");
 
-  let shouldShowTry = false;
+  // Extract language
+  const langMatch = cls.match(/language-([^\s{]+)/);
+  const language = langMatch ? langMatch[1].trim() : "";
 
-  if (attributeMatch) {
-    language = attributeMatch[1];
-    const attributes = attributeMatch[2];
-    shouldShowTry = attributes.includes("try");
-  }
+  // Check if "try" is present in the class string
+  const shouldShowTry = /\btry\b/.test(cls);
 
   return { language, shouldShowTry };
 };
