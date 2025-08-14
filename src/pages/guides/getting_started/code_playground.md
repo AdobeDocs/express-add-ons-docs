@@ -323,12 +323,6 @@ There are two ways to resume working on your last saved session:
 - **Without a document open:** Click the **Add-ons** button in the left rail, then click the **Add-on development** toggle in the top right.
 - **With a document open:** Click the **Add-ons** button in the left rail, select the **Your add-ons** tab, then click the "Manage add-ons" link in the Add-on Testing section.
 
-## Resources
-
-- **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
-- **Community Support:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
-- **Documentation:** Explore our comprehensive [documentation index](../../references/index.md) for detailed API references and guides.
-
 ## Next Steps
 
 Now that you have the downloaded code from the Code Playground, explore our resources to continue building robust add-ons:
@@ -337,6 +331,8 @@ Now that you have the downloaded code from the Code Playground, explore our reso
 - **[Tutorials](../learn/how_to/tutorials/index.md)**: Follow step-by-step guides to build complete add-ons
 - **[How-To Guides](../learn/how_to/index.md)**: Master specific techniques and best practices
 - **[Local Development](../getting_started/local_development/index.md)**: Set up a full development environment for production-ready add-ons
+- **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
+- **Community Support:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
 
 ## FAQs
 
