@@ -1,0 +1,173 @@
+Document_Structure_Basics:
+    - prompt: What is an Express add-on?
+    - prompt: What is the Document sandbox?
+    - prompt: What is a node in express?
+    - prompt: What all document APIs are there?
+    - prompt: What is difference between artboard, page and canvas?
+    - prompt: Explain the DOM hierarchy so I can easily understand the document site
+    - prompt: What are the different types of eventType available which add-on can listen for?
+    - prompt: What are containers?
+    - prompt: What are text frames?
+    - prompt: What node types are there?
+    - prompt: What's the difference between boundsLocal and boundsInParent?
+
+Getting_Started_Setup:
+    - prompt: How do I begin?
+    - prompt: How can you help with building an add-on for Express?
+    - prompt: How do I scaffold an add-on?
+    - prompt: How to create a starter template?
+    - prompt: What should be the prerequisite for this?
+    - prompt: I want to create the new project using CLI. What to do for this?
+    - prompt: Where do I add my code for addon?
+    - prompt: Where is the add-on documentation?
+    - prompt: How can I enable the Code Playground?
+    - prompt: Is there a Playground for add-ons?
+    - prompt: Is there a reference app that I can use to test my addon?
+
+User_Interface_Development:
+    - prompt: How do I set up my add-on to use Spectrum Web Components?
+    - prompt: Are there any guidelines to build the add-on's UI?
+    - prompt: Are there any native widgets I can use to build the add-on's UI?
+    - prompt: Can you give me a sample code to implement a text input with spectrum?
+    - prompt: Do addons support a dark theme?
+    - prompt: How do I detect the theme and adjust my UI components accordingly?
+    - prompt: How can I get themechange events?
+    - prompt: How many kinds of spectrum frameworks can I use?
+
+Creating_Basic_Shapes:
+    - prompt: How can I create a shape?
+    - prompt: Create a blue circle
+    - prompt: Create a rectangle and place it in the center of the document
+    - prompt: Draw a rectangle, circle and triangle in green, blue and orange respectively
+    - prompt: How do I create a pink circle and add it to the document?
+    - prompt: How do I create a yellow rectangle?
+    - prompt: How do I create a hot pink round circle that's completely round and not ellipse?
+    - prompt: How do I create a round circle and add it?
+    - prompt: Draw a rombus
+    - prompt: Draw a pyramid in the center of the document
+    - prompt: Create a chess box
+
+Image_Media_Handling:
+    - prompt: How to add an image to the document?
+    - prompt: Please generate some code to import and image from a URL
+    - prompt: What code do I put in the DocumentJS if I am importing an image from a URL?
+    - prompt: Add image to the bottom left of the page
+    - prompt: Say that I have an image already selected, how can I switch it with another one?
+    - prompt: Can I add gifs as well?
+    - prompt: How would I go about adding an audio file to the current document?
+    - prompt: What is the process for video?
+    - prompt: Create an addon to add video
+    - prompt: Can we edit a video via add-on?
+
+Text_Manipulation:
+    - prompt: How to add text to the document?
+    - prompt: How to add a textnode in the page?
+    - prompt: Add text that says hello world to the document
+    - prompt: "Create a text box with the text - Hello"
+    - prompt: What all can I do with Text using the APIs?
+    - prompt: Can you pls help me with all Text APIs that are supported?
+    - prompt: How do I select the first text element in the page?
+    - prompt: I want to apply a color gradient to the currently selected text node
+
+Advanced_Shapes_Graphics:
+    - prompt: Create a flow chart with three circles filled with gray color, with text 1, 2, 3 respectively
+    - prompt: Create a path in the shape of a 5 points star
+    - prompt: Create a path in the shape of a 8 points star
+    - prompt: Generate a yellow star
+    - prompt: Can you fill existing star with light blue color?
+    - prompt: Draw 3 circle on inside other with different color
+    - prompt: Create a circle with 4 colors
+    - prompt: Create a pie chart of distribution 50%, 30%, 20% with different colours for each section
+    - prompt: Create two rectangles connected with arrow
+    - prompt: How do I add an arrow to the document?
+    - prompt: Create an arrow with an empty arrowhead and add it to the document
+
+Data_Visualization:
+    - prompt: Create one table which contains all the state of India in as row and temperature from Jan to Dec as column
+    - prompt: Write a code to generate one table which contains all the state of India and temperature from Jan to Dec
+    - prompt: Help me create a script that can be used to create a stock market visualization
+    - prompt: I have a list of stock prices -- how could I create a line graph and add it to the document?
+    - prompt: Create a 6x9 grid with blue borders and yellow cells
+
+Color_Styling:
+    - prompt: Make the circle without a fill, and red outline
+    - prompt: Color the selected rectangle in blue color
+    - prompt: How can I create a color?
+    - prompt: Explain the makecolorfill method
+    - prompt: Add a gradient of blue and red to the rectangle
+    - prompt: Create a rectangle container with 15 different colors in it
+
+Node_Manipulation_Properties:
+    - prompt: How can I apply some persistent metadata to a node I add to the document?
+    - prompt: Add two more keys to it and print all key value pairs
+    - prompt: Create a rectangle and add one key value to it
+    - prompt: Can we get metadata for an image?
+    - prompt: Is there a way to rotate an element, like a rotate() method?
+    - prompt: Can we rotate an image through SDK?
+    - prompt: Generate code to select image in canvas and rotate them by 45 degree anti clockwise
+    - prompt: Resize the selected nodes to fit the page
+    - prompt: How do I change height and width on a ComplexShapeNode?
+
+Addon_Development_Advanced:
+    - prompt: Help me write a function that accepts height and width and adjusts the height and width of the selected objects
+    - prompt: How do I build add-on UI to say the name of the selected node type whenever the selection changes?
+    - prompt: I want to disable a text field and button whenever a node type that doesn't have a width property is selected
+    - prompt: How can I fetch data from an external REST API and display it within an Adobe Express document?
+    - prompt: How can I store data within an addon?
+    - prompt: How do I store and retrieve data from my add-on?
+    - prompt: How can I secure store something on the client side of an add on?
+
+Authentication_External_Services:
+    - prompt: How do I implement authentication in my add-on?
+    - prompt: Help me OAuth API implementation for my add on
+    - prompt: Can you provide me example of connecting to OAuth 2.0?
+    - prompt: How to integrate google login for an add-on?
+    - prompt: I want to create an add on that supports OAuth authentication, can you guide me?
+    - prompt: Create an add-on with github oauth
+    - prompt: Create an add-on with google drive oauth
+    - prompt: Which external services we can connect from express add-on?
+
+Image_Collection_Organization:
+    - prompt: Create an add-on which can read the images from the document and organize it into a collage
+    - prompt: Create an add-on which can take some images from the user and create a collage out of it
+    - prompt: How do I create a add-on to import multiple local images and create a collage?
+    - prompt: Create an addon to add multiple images
+    - prompt: I want an image picker in my UI and display that image in UI and let me drag drop that image
+    - prompt: Upload an image from user
+    - prompt: How to upload an image from user?
+
+Special_Use_Cases:
+    - prompt: Create an addon to add QR code to my canvas
+    - prompt: Create grammar checker add-on
+    - prompt: Create an add-on for grammar and spelling checker
+    - prompt: Provide a method to add a watermark in all pages inside canvas
+    - prompt: Create an addon to create Ascii image
+    - prompt: Write a add on to fetch vision board templates
+    - prompt: Create a circluar progress component which takes full width and starts from 0 and goes till 100
+
+Debugging_Troubleshooting:
+    - prompt: Is there a debugging environment for add-ons?
+    - prompt: Is there a way to debug document sandbox code?
+    - prompt: I can't debug API code, why?
+    - prompt: I am unable to send debug logs for my addons
+    - prompt: How do I know if my add-on is leaking memory?
+    - prompt: I was unable to launch my addon
+    - prompt: 'I am getting this error "editor is not defined" while creating my add-on'
+
+Publishing_Submission:
+    - prompt: What are the steps to publish a add-on?
+    - prompt: How to submit my add-on for validation?
+    - prompt: How can I ensure my add-on won't be rejected when I submit it?
+    - prompt: What icon and screenshot sizes do I need for submission?
+
+API_Reference_Documentation:
+    - prompt: What all document APIs are available in add-on sdk?
+    - prompt: Which APIs are experimental?
+    - prompt: What are experimental APIs?
+    - prompt: Provide me a list of experimental APIs
+    - prompt: How do I use experimental features?
+    - prompt: Which are some of the recent or latest APIs?
+    - prompt: What is AddOnSDK, what all API support it provides?
+    - prompt: How up to date is your knowledge of the express API?
+    - prompt: Does it support typescript?
+    - prompt: Can you provide example to enable typescript support in add-on?

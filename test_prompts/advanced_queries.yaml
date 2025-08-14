@@ -1,0 +1,75 @@
+text_manipulation:
+    - prompt: How do I create a simple text element with custom fonts in my add-on?
+    - prompt: What are the available text formatting options and how do I apply them?
+
+architecture_confusion:
+    - prompt: What's the difference between UI Runtime and Document Sandbox, and when should I use each?
+
+error_handling:
+    - prompt: How do I handle errors when my add-on fails to load images or fonts?
+    - prompt: What happens when my add-on encounters network connectivity issues?
+
+ui_components:
+    - prompt: How can I create a color picker component that integrates with Adobe Express themes?
+    - prompt: How do I create responsive UI layouts that work across different screen sizes?
+    - prompt: Can I create custom Spectrum Web Components for my add-on's UI?
+
+performance:
+    - prompt: What's the best way to optimize my add-on's performance when dealing with large images?
+    - prompt: What are the performance implications of frequent document updates?
+
+document_api:
+    - prompt: How do I use the Document API to create complex layouts with multiple elements?
+    - prompt: How can I access and modify the user's current selection in Adobe Express?
+    - prompt: How do I implement undo/redo functionality for my add-on's document modifications?
+
+api_integration:
+    - prompt: Can I integrate with external APIs and how do I handle authentication?
+
+interactions:
+    - prompt: How do I implement drag and drop functionality for my add-on elements?
+
+development_setup:
+    - prompt: What debugging tools and techniques are available for add-on development?
+
+deployment:
+    - prompt: How do I publish and distribute my add-on to Adobe Express users?
+
+platform_concepts:
+    - prompt: What are the limitations and restrictions for add-ons in terms of APIs and permissions?
+
+async_operations:
+    - prompt: What's the proper way to handle async operations when modifying documents?
+
+theming:
+    - prompt: How do I handle different Adobe Express themes and ensure my add-on looks consistent?
+
+state_management:
+    - prompt: What's the best practice for managing state between UI Runtime and Document Sandbox?
+
+assets:
+    - prompt: How do I add custom icons and assets to my add-on project?
+
+security:
+    - prompt: What security considerations should I keep in mind when building add-ons?
+
+testing:
+    - prompt: How can I test my add-on thoroughly before publishing?
+
+shapes_creation:
+    - prompt: What's the difference between creating shapes programmatically vs using UI components?
+
+collaboration:
+    - prompt: How do I implement real-time collaboration features in my add-on?
+
+analytics:
+    - prompt: How can I integrate analytics to track how users interact with my add-on?
+
+animations:
+    - prompt: How do I create animations and transitions in my add-on's UI?
+
+project_structure:
+    - prompt: What's the best way to organize and structure my add-on's codebase?
+
+accessibility:
+    - prompt: How can I make my add-on accessible to users with disabilities?

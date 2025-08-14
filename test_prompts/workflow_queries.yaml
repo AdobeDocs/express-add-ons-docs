@@ -1,0 +1,83 @@
+validating_ideas:
+    - prompt: Give me ideas for new add-ons that are not already done but could be very useful.
+    - prompt: Give me add-on ideas that can take advantage of the metadata API.
+
+code_generation:
+    - prompt: Write code to clear all rectangles.
+    - prompt: Create a function that creates a text node and writes in it.
+    - prompt: Make me an Adobe add-on that takes in a prompt and creates an image using Gemini 2.0 Flash.
+    - prompt: Create a function that creates a landscape PNG on the right side of a 1920x1080 screen given a URL.
+    - prompt: Create a helper function that finds pixel boundaries of an object and returns a PNG rendition.
+
+information_search:
+    - prompt: How do I add a textbox programmatically through code to the Adobe Express canvas?
+    - prompt: What is the hierarchy for a single image on a single page project?
+    - prompt: How can I access the current user using my add-on?
+    - prompt: How do I add a video to the document?
+    - prompt: What is const textNode = editor.createText();?
+    - prompt: Why does this code only work to draw rectangles over shapes and images, not text?
+    - prompt: I got this when I ran it - Unhandled Promise Rejection - ReferenceError - colorUtils is not defined.
+    - prompt: My add-on in Adobe Express says this when I try to output something - sandboxApi not found.
+    - prompt: Error - No property with name documentRoot found on Live Object.
+    - prompt: Error - Experimental APIs are not supported. To try them in your local add-on - set experimentalApis true in manifest.json.
+
+getting_started:
+    - prompt: How do I create a basic Adobe Express add-on?
+    - prompt: What files do I need for a minimal add-on project?
+    - prompt: How do I set up local development for Adobe Express add-ons?
+
+document_api:
+    - prompt: How do I create a rectangle in Adobe Express using the Document API?
+    - prompt: How do I add an image to the Adobe Express document?
+    - prompt: How do I access the current selection in Adobe Express?
+    - prompt: What's the difference between createRectangle and createEllipse?
+
+styling:
+    - prompt: How do I apply colors and fills to shapes in Adobe Express?
+    - prompt: How do I add a stroke to a shape?
+    - prompt: How do I create gradients in Adobe Express add-ons?
+
+text:
+    - prompt: How do I create and style text in Adobe Express?
+    - prompt: How do I change font properties of text elements?
+    - prompt: How do I work with different text layouts in Adobe Express?
+
+ui:
+    - prompt: How do I create buttons and interactive elements in my add-on UI?
+    - prompt: How do I use Spectrum Web Components in my add-on?
+    - prompt: How do I implement responsive design in my add-on interface?
+
+debugging_troubleshooting:
+    - prompt: How do I debug my Adobe Express add-on?
+    - prompt: How do I handle errors in my add-on gracefully?
+    - prompt: What are common issues when developing Adobe Express add-ons?
+
+media_handling:
+    - prompt: How do I work with images in Adobe Express add-ons?
+    - prompt: How do I handle different image formats in my add-on?
+    - prompt: How do I implement image upload functionality?
+
+manifest:
+    - prompt: What are the required fields in manifest.json?
+    - prompt: How do I configure permissions in my add-on manifest?
+    - prompt: How do I specify entry points in the manifest file?
+
+api_reference:
+    - prompt: What are all the available methods in the Document API?
+    - prompt: How do I use the Context API to get information about the current state?
+    - prompt: What events can I listen to in Adobe Express add-ons?
+
+best_practices:
+    - prompt: What are the best practices for Adobe Express add-on development?
+    - prompt: How should I structure my add-on project for maintainability?
+    - prompt: What performance considerations should I keep in mind?
+
+advanced:
+    - prompt: How do I implement complex layouts with multiple nested elements?
+    - prompt: How do I create custom drawing tools using the Document API?
+    - prompt: How do I implement advanced user interactions in my add-on?
+
+development_setup:
+    - prompt: How do I set up my development environment for Adobe Express add-ons?
+    - prompt: What tools and IDEs work best for add-on development?
+    - prompt: How do I configure hot reloading for faster development?
