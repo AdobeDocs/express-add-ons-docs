@@ -22,6 +22,12 @@ contributors:
 
 # Changelog
 
+## 2025-08-14
+
+### Added
+
+- The [Code Playground](./code_playground.md) now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.
+
 ## 2025-07-27
 
 ### Added
