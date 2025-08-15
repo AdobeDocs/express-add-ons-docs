@@ -3,8 +3,8 @@
 Generate Ground Truth Validation Report from JSON results
 
 Usage:
-    python3 generate_ground_truth_report.py --input ground_truth_test_report.json
-    python3 generate_ground_truth_report.py --input ground_truth_test_report.json --output my_report.md
+    python3 ground_truth_reporter.py --input ground_truth_test_report.json
+    python3 ground_truth_reporter.py --input ground_truth_test_report.json --output my_report.md
 """
 
 import json
@@ -318,8 +318,8 @@ def generate_ground_truth_report(input_file, output_file=None):
 
 def main():
     parser = argparse.ArgumentParser(description='Generate markdown report from Ground Truth test JSON')
-    parser.add_argument('--input', default='ground_truth_test_report.json', 
-                       help='Input JSON file from ground truth tester (default: ground_truth_test_report.json)')
+    parser.add_argument('--input', default='reports/raw/ground_truth_test_report.json',
+                       help='Input JSON file from ground truth tester (default: reports/raw/ground_truth_test_report.json)')
     parser.add_argument('--output', 
                        help='Output markdown file (default: reports/ground_truth_validation_report_YYYYMMDD_HHMMSS.md)')
     

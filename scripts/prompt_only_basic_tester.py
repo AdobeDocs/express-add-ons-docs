@@ -515,7 +515,7 @@ def main():
     
     # Test with a subset first (for demo)
     print(f"\n🧪 Testing with first 50 queries...")
-    report = tester.test_all_queries(queries, max_queries=50)
+    report = tester.test_all_queries(queries, max_queries=250)
     
     # Print summary
     tester.print_summary_report(report)

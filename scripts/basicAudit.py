@@ -186,7 +186,7 @@ def main():
     """Main audit function"""
     parser = argparse.ArgumentParser(description='Simple LLM Readiness Audit - Enhanced for Files and Directories')
     parser.add_argument('--docs-path', help='Path to documentation directory or single .md file')
-    parser.add_argument('--output', default='llm_audit_report', help='Output filename (without extension)')
+    parser.add_argument('--output', default='reports/basic_audit_report', help='Output filename (without extension) (default: reports/basic_audit_report)')
     parser.add_argument('--verbose', '-v', action='store_true', help='Show detailed progress')
     
     args = parser.parse_args()
@@ -215,8 +215,8 @@ def main():
         files_to_process = [input_path]
         
         # Adjust output filename for single file
-        if args.output == 'llm_audit_report':  # Default filename
-            args.output = f"audit_{input_path.stem}"
+        if args.output == 'reports/basic_audit_report':  # Default filename
+            args.output = f"reports/basic_audit_{input_path.stem}"
             
     elif input_path.is_dir():
         print(f"📂 Scanning documentation directory: {input_path}")
@@ -262,14 +262,20 @@ def main():
     df = pd.DataFrame(results)
     df.sort_values("readiness_percent", ascending=False, inplace=True)
     
-    # Save as CSV
-    csv_file = f"{args.output}.csv"
+    # Save as CSV (in reports/raw/)
+    csv_file = f"{args.output}.csv".replace('reports/', 'reports/raw/')
+    # Ensure output directory exists
+    Path(csv_file).parent.mkdir(parents=True, exist_ok=True)
+    
     df.to_csv(csv_file, index=False)
     print(f"📊 Detailed results saved to: {csv_file}")
     
-    # Save summary report
+    # Save summary report (in reports/)
     summary = generate_summary_report(results, input_type)
     summary_file = f"{args.output}_summary.txt"
+    # Ensure reports directory exists for TXT files
+    Path(summary_file).parent.mkdir(parents=True, exist_ok=True)
+    
     with open(summary_file, 'w') as f:
         f.write(summary)
     print(f"📋 Summary report saved to: {summary_file}")

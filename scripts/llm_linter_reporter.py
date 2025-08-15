@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Generate markdown report from LLM Markdown Linter JSON output
+Generate markdown report from LLM Linter JSON output
 
 Usage:
-    python3 generate_linter_report.py --input linter_report.json
-    python3 generate_linter_report.py --input linter_report.json --output my_report.md
+    python3 scripts/llm_linter_reporter.py --input linter_report.json
+    python3 scripts/llm_linter_reporter.py --input linter_report.json --output my_report.md
 """
 
 import json
@@ -24,7 +24,7 @@ def generate_linter_report(input_file, output_file=None):
     
     # Determine output filename
     if not output_file:
-        output_file = f"reports/llm_markdown_linter_report_{report_timestamp}.md"
+        output_file = f"reports/llm_linter_report_{report_timestamp}.md"
     
     # Ensure reports directory exists
     Path("reports").mkdir(exist_ok=True)
@@ -243,18 +243,18 @@ Opportunities for improvement and optimization
     return output_file
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate markdown report from LLM Markdown Linter JSON')
-    parser.add_argument('--input', default='linter_report.json', 
-                       help='Input JSON file from markdown linter (default: linter_report.json)')
+    parser = argparse.ArgumentParser(description='Generate markdown report from LLM Linter JSON')
+    parser.add_argument('--input', default='reports/raw/linter_report.json',
+                       help='Input JSON file from llm_linter (default: reports/raw/linter_report.json)')
     parser.add_argument('--output', 
-                       help='Output markdown file (default: reports/llm_markdown_linter_report_YYYYMMDD_HHMMSS.md)')
+                       help='Output markdown file (default: reports/llm_linter_report_YYYYMMDD_HHMMSS.md)')
     
     args = parser.parse_args()
     
     # Check if input file exists
     if not Path(args.input).exists():
         print(f"❌ Error: Input file '{args.input}' not found")
-        print(f"💡 Make sure you've run: python3 scripts/llm_markdown_linter.py express-add-ons-docs/src/pages --output {args.input}")
+        print(f"💡 Make sure you've run: python3 scripts/llm_linter.py --docs-path src/pages --output {args.input}")
         return
     
     try:

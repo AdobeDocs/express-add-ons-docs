@@ -8,10 +8,10 @@ This framework analyzes documentation for LLM-friendliness based on:
 - Adobe Express specific developer needs
 
 Usage:
-    python3 llm_readiness_analyzer.py --docs-path src/pages
-    python3 llm_readiness_analyzer.py --docs-path src/pages --baseline --output baseline_report.json
-    python3 llm_readiness_analyzer.py --docs-path src/pages --compare baseline_report.json
-    python3 llm_readiness_analyzer.py --docs-path src/pages/guides/learn/how_to/use_text.md --output my_report.json
+    python3 scripts/llm_readiness_analyzer.py --docs-path src/pages
+    python3 scripts/llm_readiness_analyzer.py --docs-path src/pages --baseline --output baseline_report.json
+    python3 scripts/llm_readiness_analyzer.py --docs-path src/pages --compare baseline_report.json
+    python3 scripts/llm_readiness_analyzer.py --docs-path src/pages/guides/learn/how_to/use_text.md --output my_report.json
 """
 
 import os
@@ -62,7 +62,7 @@ class AuditReport:
 class DocumentationAuditor:
     """Main auditing class"""
     
-    def __init__(self, query_data_path: str = "structured_query_data.json"):
+    def __init__(self, query_data_path: str = "unified_test_queries.json"):
         self.query_data = self._load_query_data(query_data_path)
         self.scoring_weights = {
             'context_clarity': 0.25,      # Clear UI vs Sandbox distinction
@@ -105,15 +105,76 @@ class DocumentationAuditor:
     def _extract_query_patterns(self) -> Dict[str, List[str]]:
         """Extract query patterns by category"""
         patterns = {}
-        for cat_name, category in self.query_data.get("query_categories", {}).items():
-            if isinstance(category, dict) and "subcategories" in category:
-                patterns[cat_name] = []
-                for subcat in category["subcategories"].values():
-                    if isinstance(subcat, list):
-                        patterns[cat_name].extend(subcat)
+        
+        # Handle structured_query_data.json format
+        if "query_categories" in self.query_data:
+            for cat_name, category in self.query_data["query_categories"].items():
+                if isinstance(category, dict) and "subcategories" in category:
+                    patterns[cat_name] = []
+                    for subcat in category["subcategories"].values():
+                        if isinstance(subcat, list):
+                            patterns[cat_name].extend(subcat)
+        
+        # Handle unified_test_queries.json format
+        elif "queries" in self.query_data:
+            queries_data = self.query_data["queries"]
+            if isinstance(queries_data, list):
+                # Group queries by category
+                for query_item in queries_data:
+                    if isinstance(query_item, dict):
+                        category = query_item.get("category", "general")
+                        query_text = query_item.get("query", "")
+                        if query_text:
+                            if category not in patterns:
+                                patterns[category] = []
+                            patterns[category].append(query_text)
+        
         return patterns
     
-    def audit_directory(self, docs_path: str) -> AuditReport:
+    def should_exclude_file(self, file_path: str, docs_path: str, filtered: bool = False) -> bool:
+        """Check if a file should be excluded from the filtered report"""
+        if not filtered:
+            return False
+            
+        # Get relative path from docs_path
+        try:
+            relative_path = str(Path(file_path).relative_to(Path(docs_path)))
+        except ValueError:
+            # If file is not under docs_path, include it
+            return False
+            
+        # Refined filtering logic - exclude auto-generated API docs and specific files
+        exclude_patterns = [
+            # Document API auto-generated classes  
+            'references/document-sandbox/document-apis/classes/',
+            # Document API auto-generated enumerations
+            'references/document-sandbox/document-apis/enumerations/',
+            # Document API auto-generated interfaces
+            'references/document-sandbox/document-apis/interfaces/',
+            # Document API auto-generated namespaces
+            'references/document-sandbox/document-apis/namespaces/',
+            # Document API auto-generated type aliases
+            'references/document-sandbox/document-apis/type-aliases/',
+        ]
+        
+        # Check if file matches any exclude pattern
+        for pattern in exclude_patterns:
+            if relative_path.startswith(pattern):
+                return True
+        
+        # Exclude specific files that skew scores or are technical implementation details
+        if Path(relative_path).name == 'changelog.md':
+            return True
+        if relative_path == 'guides/develop/cors.md':
+            return True
+            
+        # Exclude most addonsdk files except index.md (these are detailed API refs)
+        if relative_path.startswith('references/addonsdk/') and Path(relative_path).name != 'index.md':
+            return True
+            
+        return False
+
+    def audit_directory(self, docs_path: str, filtered: bool = False) -> AuditReport:
         """Audit documentation directory or single file"""
         print(f"🔍 Auditing documentation in: {docs_path}")
         
@@ -124,8 +185,25 @@ class DocumentationAuditor:
             md_files = [docs_path_obj]
             print(f"📄 Analyzing single file: {docs_path_obj.name}")
         elif docs_path_obj.is_dir():
-            md_files = list(docs_path_obj.rglob("*.md"))
-            print(f"📄 Found {len(md_files)} markdown files")
+            all_md_files = list(docs_path_obj.rglob("*.md"))
+            
+            # Apply filtering if requested
+            if filtered:
+                md_files = []
+                excluded_count = 0
+                for file_path in all_md_files:
+                    if self.should_exclude_file(str(file_path), docs_path, filtered):
+                        excluded_count += 1
+                    else:
+                        md_files.append(file_path)
+                
+                print(f"📄 Found {len(all_md_files)} total markdown files")
+                if excluded_count > 0:
+                    print(f"🔍 FILTERED MODE: Excluding {excluded_count} auto-generated API references and changelog files")
+                    print(f"📄 Analyzing {len(md_files)} core documentation files")
+            else:
+                md_files = all_md_files
+                print(f"📄 Found {len(md_files)} markdown files")
         else:
             raise ValueError(f"Path must be a directory or .md file: {docs_path}")
             
@@ -223,8 +301,11 @@ class DocumentationAuditor:
         # Code example analysis
         complete_examples, incomplete_examples = self._analyze_code_examples(body)
         
-        # Context clarity (UI vs Sandbox distinction)
-        context_clarity = self._analyze_context_clarity(body)
+        # Context clarity (UI vs Sandbox distinction) - only for files with code
+        if code_blocks > 0:
+            context_clarity = self._analyze_context_clarity(body)
+        else:
+            context_clarity = 1.0  # Perfect score for files without code
         
         # Error-first sections
         error_sections = self._count_error_sections(body)
@@ -545,14 +626,62 @@ class DocumentationAuditor:
         if '@adobe/ccweb-add-on-sdk' in content:
             issues.append("Contains incorrect import package names")
         
-        if 'editor.' in content and 'queueAsyncEdit' not in content:
-            issues.append("Uses editor API without queueAsyncEdit context")
+        # Check for editor API calls that require queueAsyncEdit (only after async operations)
+        if self._has_editor_calls_requiring_queue_async_edit(content):
+            issues.append("Uses editor API after async operations without queueAsyncEdit context")
         
         if len(re.findall(r'```javascript', content)) == 0 and len(re.findall(r'```js', content)) == 0:
             if 'code' in content.lower() or 'example' in content.lower():
                 issues.append("Mentions code/examples but lacks JavaScript code blocks")
         
         return issues
+    
+    def _has_editor_calls_requiring_queue_async_edit(self, content: str) -> bool:
+        """Check for editor API calls that require queueAsyncEdit (only after async operations)"""
+        code_blocks = re.findall(r'```(?:javascript|js)?\n(.*?)\n```', content, re.DOTALL | re.IGNORECASE)
+        
+        if not code_blocks:
+            return False
+        
+        for code in code_blocks:
+            # Look for patterns where editor calls come after async operations
+            lines = code.split('\n')
+            has_await_before_editor = False
+            has_async_function = 'async function' in code or 'async ' in code
+            
+            # Check if there are editor calls after await statements
+            for i, line in enumerate(lines):
+                line = line.strip()
+                
+                # Track if we've seen an await
+                if 'await ' in line:
+                    has_await_before_editor = True
+                
+                # Check for document modification operations that need queueAsyncEdit after async calls
+                if has_await_before_editor and 'queueAsyncEdit' not in code:
+                    # These are document operations that definitely need queueAsyncEdit after async operations
+                    document_operations = [
+                        'editor.create',           # All creation operations
+                        'editor.load',            # All loading operations  
+                        '.children.append',       # Adding elements to document
+                        '.setFill(',              # Style modifications
+                        '.setStroke(',            # Style modifications
+                        '.width =',               # Property modifications
+                        '.height =',              # Property modifications
+                        '.translation =',         # Property modifications
+                        '.text =',                # Text modifications
+                        '.characterStyleRanges'   # Text styling
+                    ]
+                    
+                    if any(op in line for op in document_operations):
+                        return True
+                
+                # Reset await tracking for synchronous editor calls (these are fine without queueAsyncEdit)
+                if 'editor.' in line and not any('await ' in prev_line for prev_line in lines[:i]):
+                    # This is a synchronous editor call, which is fine without queueAsyncEdit
+                    continue
+        
+        return False
     
     def _generate_file_recommendations(self, content: str, context_clarity: float, error_sections: int, has_risky_code: bool) -> List[str]:
         """Generate recommendations for a file"""
@@ -668,6 +797,9 @@ class DocumentationAuditor:
     
     def save_report(self, report: AuditReport, output_path: str, report_type: str = "Report"):
         """Save audit report to JSON"""
+        # Ensure output directory exists
+        Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+        
         with open(output_path, 'w') as f:
             json.dump(asdict(report), f, indent=2, default=str)
         
@@ -713,16 +845,18 @@ class DocumentationAuditor:
 
 def main():
     parser = argparse.ArgumentParser(description='Audit Adobe Express Add-ons documentation for LLM readiness')
-    parser.add_argument('--docs-path', default='express-add-ons-docs/src/pages', 
+    parser.add_argument('--docs-path', default='src/pages', 
                        help='Path to documentation directory')
-    parser.add_argument('--query-data', default='structured_query_data.json',
-                       help='Path to structured query data file')
-    parser.add_argument('--output', default='llm_readiness_report.json',
+    parser.add_argument('--query-data', default='unified_test_queries.json',
+                       help='Path to unified test query data file')
+    parser.add_argument('--output', default='reports/raw/llm_readiness_report.json',
                        help='Output file for detailed report')
     parser.add_argument('--baseline', action='store_true',
                        help='Save this audit as baseline for future comparison')
     parser.add_argument('--compare', type=str,
                        help='Compare with previous audit report')
+    parser.add_argument('--filtered', action='store_true',
+                       help='Exclude auto-generated API references and changelog files')
     
     args = parser.parse_args()
     
@@ -730,7 +864,7 @@ def main():
     auditor = DocumentationAuditor(args.query_data)
     
     # Run audit
-    report = auditor.audit_directory(args.docs_path)
+    report = auditor.audit_directory(args.docs_path, filtered=args.filtered)
     
     # Print summary
     auditor.print_summary(report)
@@ -743,25 +877,43 @@ def main():
     is_single_file = docs_path_obj.is_file() and docs_path_obj.suffix == '.md'
     
     # Generate appropriate output filename
-    if args.output == 'llm_readiness_report.json':  # Using default filename
+    if args.output == 'reports/raw/llm_readiness_report.json':  # Using default filename
         if is_single_file:
             filename_base = docs_path_obj.stem
             if args.baseline:
-                output_path = f"baseline_{filename_base}_llm_readiness_{timestamp}.json"
+                if args.filtered:
+                    output_path = f"reports/raw/baseline_{filename_base}_llm_readiness_filtered_{timestamp}.json"
+                else:
+                    output_path = f"reports/raw/baseline_{filename_base}_llm_readiness_{timestamp}.json"
             else:
-                output_path = f"{filename_base}_llm_readiness_{timestamp}.json"
+                if args.filtered:
+                    output_path = f"reports/raw/{filename_base}_llm_readiness_filtered_{timestamp}.json"
+                else:
+                    output_path = f"reports/raw/{filename_base}_llm_readiness_{timestamp}.json"
         else:
             if args.baseline:
-                output_path = f"baseline_llm_readiness_report_{timestamp}.json"
+                if args.filtered:
+                    output_path = f"reports/raw/baseline_llm_readiness_report_filtered_{timestamp}.json"
+                else:
+                    output_path = f"reports/raw/baseline_llm_readiness_report_{timestamp}.json"
             else:
-                output_path = f"llm_readiness_report_{timestamp}.json"
+                if args.filtered:
+                    output_path = f"reports/raw/llm_readiness_report_filtered_{timestamp}.json"
+                else:
+                    output_path = f"reports/raw/llm_readiness_report_{timestamp}.json"
     else:  # User provided custom filename
         # Insert timestamp before .json extension
         base_name = args.output.rsplit('.json', 1)[0] if args.output.endswith('.json') else args.output
         if args.baseline:
-            output_path = f"baseline_{base_name}_{timestamp}.json"
+            if args.filtered:
+                output_path = f"baseline_{base_name}_filtered_{timestamp}.json"
+            else:
+                output_path = f"baseline_{base_name}_{timestamp}.json"
         else:
-            output_path = f"{base_name}_{timestamp}.json"
+            if args.filtered:
+                output_path = f"{base_name}_filtered_{timestamp}.json"
+            else:
+                output_path = f"{base_name}_{timestamp}.json"
     
     # Save report
     if args.baseline:

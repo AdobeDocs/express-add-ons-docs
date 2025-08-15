@@ -1,0 +1,6 @@
+# Requirements for Multi Agent Documentation Evaluator
+openai>=1.10.0
+asyncio-throttle>=1.0.2
+pyyaml>=6.0
+pathlib2>=2.3.7
+dataclasses-json>=0.6.0
