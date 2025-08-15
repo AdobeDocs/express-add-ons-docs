@@ -21,36 +21,33 @@ This system provides multiple levels of documentation analysis:
 Install the basic dependencies for all main audit tools:
 
 ```bash
-# Navigate to the documentation project directory
+# ⚠️ CRITICAL: Navigate to the express-add-ons-docs root directory FIRST
 cd express-add-ons-docs
 
-# Install core dependencies
-pip install -r requirements.txt
+# RECOMMENDED: Install ALL dependencies for complete functionality
+pip install -r requirements-complete.txt
 
-# Or install individually:
+# OR install selectively based on your needs:
+
+# Basic audit tools only
 pip install PyYAML>=6.0 pandas>=1.5.0
+
+# AI-powered testing tools 
+pip install openai>=1.10.0 asyncio-throttle>=1.0.2 PyYAML>=6.0 dataclasses-json>=0.6.0
 ```
 
-**Required for**:
-- `doc_audit_runner_v2.py` (comprehensive auditing)
-- `llm_readiness_analyzer.py` (LLM readiness analysis)  
-- `llm_linter.py` (markdown linting)
-- `basicAudit.py` (basic auditing)
-- All reporter scripts (`doc_audit_reporter.py`, `llm_readiness_reporter.py`, etc.)
+### **📋 Dependency Requirements by Tool**
 
-### **Azure OpenAI Dependencies (Optional)**
+#### **🎯 Basic Tools (PyYAML + pandas only)**
+- `prompt_only_basic_tester.py` - Rule-based query testing
+- `ground_truth_tester.py` - Benchmark validation testing  
+- `doc_audit_runner_v2.py` - Comprehensive documentation auditing
+- `llm_readiness_analyzer.py` - LLM readiness analysis
+- `llm_linter.py` - Markdown linting and analysis
+- `basicAudit.py` - Basic documentation auditing
+- All reporter scripts (`*_reporter.py`) - Report generation
 
-For advanced query testing with AI evaluation:
-
-```bash
-# Install additional dependencies for AI-powered tools
-pip install -r scripts/requirements-agentic.txt
-
-# Or install individually:
-pip install openai>=1.10.0 asyncio-throttle>=1.0.2 pyyaml>=6.0 pathlib2>=2.3.7 dataclasses-json>=0.6.0
-```
-
-**Required for**:
+#### **🧠 AI-Powered Tools (Requires OpenAI + additional deps)**
 - `prompt_only_multi_agent_tester.py` (🔑 **Requires Azure OpenAI API Key**)
 - `prompt_only_llm_tester.py` (🔑 **Requires Azure OpenAI API Key**)
 

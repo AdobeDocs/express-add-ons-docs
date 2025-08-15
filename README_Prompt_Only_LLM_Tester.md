@@ -1,6 +1,9 @@
 # 🧠 Simple LLM Documentation Tester
 ## Standalone Documentation Quality Evaluator
 
+> **🚨 DIRECTORY REQUIREMENT:** You MUST run all commands from the `express-add-ons-docs` root directory!  
+> **📁 Verify location:** Run `ls` and confirm you see: `scripts/`, `src/`, `test_prompts/`
+
 **Purpose:** Evaluate documentation quality by having an LLM search through documentation files and answer real developer questions, then score the responses for quality and completeness.
 
 ---
@@ -25,7 +28,15 @@ The **Simple LLM Documentation Tester** simulates how developers would interact 
 # Python 3.8+ required
 python3 --version
 
-# Install required packages
+# Install required packages (choose one option):
+
+# Option 1: Install ALL dependencies for complete functionality
+pip install -r requirements-complete.txt
+
+# Option 2: Install only what's needed for this tool
+pip install openai>=1.10.0 PyYAML>=6.0
+
+# Option 3: Minimal install (if you have issues)
 pip install openai pyyaml
 ```
 
@@ -36,17 +47,20 @@ export OPENAI_API_KEY="your-azure-openai-api-key"
 ```
 
 ### **Basic Usage**
+
+> **⚠️ CRITICAL:** You MUST be in the `express-add-ons-docs` root directory to run these commands!
+
 ```bash
-# Navigate to the project directory
+# 1. FIRST: Navigate to the project root directory
 cd express-add-ons-docs
 
-# Run with default questions
+# 2. Run with default questions
 python3 scripts/prompt_only_llm_tester.py
 
-# Run with custom questions
+# 3. Run with custom questions
 python3 scripts/prompt_only_llm_tester.py --questions test_prompts/workflow_queries.yaml
 
-# Specify documentation path and output
+# 4. Specify documentation path and output
 python3 scripts/prompt_only_llm_tester.py --docs-path src/pages --output my_evaluation.json
 ```
 
@@ -55,8 +69,23 @@ python3 scripts/prompt_only_llm_tester.py --docs-path src/pages --output my_eval
 ## ⚙️ Installation & Requirements
 
 ### **Required Dependencies**
+
+**Option 1: Complete Installation (Recommended)**
 ```bash
-pip install openai>=1.0.0 pyyaml>=6.0
+# Install all dependencies for any script in scripts/ folder
+pip install -r requirements-complete.txt
+```
+
+**Option 2: This Tool Only**
+```bash
+# Install only dependencies needed for LLM tester
+pip install openai>=1.10.0 PyYAML>=6.0
+```
+
+**Option 3: Minimal (Troubleshooting)**
+```bash
+# If you encounter version conflicts
+pip install openai pyyaml
 ```
 
 ### **System Requirements**

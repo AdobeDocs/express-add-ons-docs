@@ -1,5 +1,8 @@
 # 🧪 Adobe Express Add-ons Prompt Testing System
 
+> **🚨 DIRECTORY REQUIREMENT:** All commands must be run from the `express-add-ons-docs` root directory!  
+> **📁 Verify location:** Run `ls` and confirm you see: `scripts/`, `src/`, `test_prompts/`
+
 **Comprehensive testing framework for evaluating documentation quality through real developer queries and AI-powered analysis.**
 
 ---
@@ -12,15 +15,29 @@ This testing system provides multiple approaches to evaluate Adobe Express Add-o
 
 ### Prerequisites
 ```bash
-# Install required dependencies
-pip install -r requirements-agentic.txt
+# Install ALL dependencies for complete functionality
+pip install -r requirements-complete.txt
 
-# Navigate to the correct directory
+# OR install only what you need:
+
+# For basic rule-based testing only
+pip install PyYAML>=6.0 pandas>=1.5.0
+
+# For AI-powered testing (LLM + Multi-Agent)
+pip install openai>=1.10.0 PyYAML>=6.0 asyncio-throttle>=1.0.2 dataclasses-json>=0.6.0
+
+# Navigate to the correct directory  
 cd express-add-ons-docs
 ```
 
 ### Basic Test Run
+
+> **⚠️ IMPORTANT:** All commands must be run from the `express-add-ons-docs` root directory!
+
 ```bash
+# FIRST: Navigate to the correct directory
+cd express-add-ons-docs
+
 # Quick basic test (recommended starting point)
 python3 scripts/prompt_only_basic_tester.py --docs-path src/pages --queries test_prompts/advanced_queries_test.json
 
@@ -326,9 +343,6 @@ python3 scripts/ground_truth_tester.py \
 
 #### **Automated Testing Pipeline**
 ```bash
-# Weekly comprehensive assessment
-./scripts/run_full_evaluation.sh
-
 # Daily quick checks  
 python3 scripts/prompt_only_basic_tester.py --docs-path src/pages --queries test_prompts/advanced_queries_test.json
 
@@ -382,8 +396,9 @@ python3 scripts/prompt_only_multi_agent_tester.py --max-concurrent 1
 
 ### 🔗 **Primary References**
 - 📖 [`README_Documentation_Audit_System.md`](README_Documentation_Audit_System.md) - Complete audit framework
-- 🤖 [`README_Multi_Agent_Tester.md`](README_Multi_Agent_Tester.md) - Multi-agent system details
-- 🎯 [`INTROSPECTIVE_QUERIES_OVERVIEW.md`](../test_prompts/INTROSPECTIVE_QUERIES_OVERVIEW.md) - AI behavior testing
+- 🤖 [`README_Prompt_Only_LLM_Tester.md`](README_Prompt_Only_LLM_Tester.md) - Simple LLM agent tester details
+
+- 🤖 [`README_Prompt_Only_Multi_Agent_Tester.md`](README_Prompt_Only_Multi_Agent_Tester.md) - Multi-agent tester details
 
 ### 🔧 **Related Tools**
 - 📊 `doc_audit_runner_v2.py` - Document quality auditing
