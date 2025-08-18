@@ -358,4 +358,4 @@ Getting started is simple. activate the playground, experiment with code snippet
 
 ### I can't find my downloaded zip file. Where is it?
 
-Check your browser's default download location, you can also review your browser's download settings to see where files are being saved.
+Check your browser's default download location, you can also review your browser's download settings to see where files are being saved. If you have blocked downloads in your browser, you may need to unblock the download.
