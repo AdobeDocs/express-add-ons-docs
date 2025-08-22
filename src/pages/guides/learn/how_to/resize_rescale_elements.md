@@ -68,6 +68,10 @@ Rescaling operations maintain the aspect ratio of elements while changing their 
 
 Use `rescaleProportionalToWidth()` to adjust an element's width while maintaining its aspect ratio. The height will automatically adjust proportionally.
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 import { editor } from "express-document-sdk";
@@ -87,17 +91,65 @@ console.log(`New dimensions: ${rect.width} x ${rect.height}`);
 // New dimensions: 300 x 150
 ```
 
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, colorUtils, RectangleNode, ContainerNode } from "express-document-sdk";
+
+// Create a rectangle with specific dimensions
+const rect: RectangleNode = editor.createRectangle();
+rect.width = 200;
+rect.height = 100;
+rect.fill = editor.makeColorFill(colorUtils.fromHex("#3498db"));
+// Add it to the page
+const insertionParent: ContainerNode = editor.context.insertionParent;
+insertionParent.children.append(rect);
+
+// Rescale to 300px width - height becomes 150px automatically
+rect.rescaleProportionalToWidth(300);
+
+console.log(`New dimensions: ${rect.width} x ${rect.height}`);
+// New dimensions: 300 x 150
+```
+
 ![Rescale by Width](./images/rescale--rescale-proportional-width.png)
 
 ### Example: Rescale by Height
 
 Similarly, use `rescaleProportionalToHeight()` to adjust an element's height while maintaining its aspect ratio. The width will automatically adjust proportionally.
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 // import { editor } from "express-document-sdk";
 
 const ellipse = editor.createEllipse();
+ellipse.rx = 100; // radius x = 100 (width = 200)
+ellipse.ry = 50; // radius y = 50 (height = 100)
+ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F0B76C"));
+
+editor.context.insertionParent.children.append(ellipse);
+
+// Rescale to 150px height - width becomes 300px automatically
+ellipse.rescaleProportionalToHeight(150);
+
+console.log(
+  `New bounds: ${ellipse.boundsLocal.width} x ${ellipse.boundsLocal.height}`
+);
+// New bounds: 300 x 150
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+// import { editor, colorUtils, EllipseNode } from "express-document-sdk";
+
+const ellipse: EllipseNode = editor.createEllipse();
 ellipse.rx = 100; // radius x = 100 (width = 200)
 ellipse.ry = 50; // radius y = 50 (height = 100)
 ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F0B76C"));

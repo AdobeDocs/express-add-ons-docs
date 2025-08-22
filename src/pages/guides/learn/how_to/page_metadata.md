@@ -49,6 +49,8 @@ faq:
 
 # Page Metadata
 
+This guide shows how to retrieve detailed information about pages in Adobe Express documents. For creating and managing pages programmatically, see the [Manage Pages how-to guide](manage_pages.md).
+
 ## Get the Page Metadata
 
 If you want to retrieve metadata for pages in the document, use the [`getPagesMetadata()`](../../../references/addonsdk/app-document.md#getpagesmetadata) method in the `addOnUISdk.app.document` object. The method expects an object with a `range` and optional `pageIds` properties.

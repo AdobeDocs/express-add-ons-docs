@@ -87,6 +87,10 @@ The SDK can be referenced in `.js/.jsx/.ts/.tsx` source files by adding it to th
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
+<InlineAlert slots="text" variant="info"/>
+
+**📦 Working with SDK Constants:** Adobe Express SDK constants use different import patterns. Some require named imports while others support both approaches. See the [complete import patterns guide](./addonsdk-constants.md#import-patterns) for details and examples.
+
 **Note:** if you created your add-on project with the CLI based on the `typescript` or `typescript-react` templates, you will automatically get a types definition file named `add-on-ui-sdk.d.ts` generated in your project `src` for you. This file contains the following exports, and allows you to take advantage of type checking and auto-completion features while developing with the Add-on SDK in your IDE.
 
 ```ts
@@ -136,7 +140,7 @@ The following properties can be accessed from the `addOnUISdk` object after it h
     <td class="spectrum-Table-cell"><p><pre></pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>addOnUISdk.constants</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>A set of constants used throughout the add-on SDK.</p></td>
+    <td class="spectrum-Table-cell"><p>A set of constants used throughout the add-on SDK. See the <a href="./addonsdk-constants.md#import-patterns">import patterns guide</a> for proper usage.</p></td>
 </tr>
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>

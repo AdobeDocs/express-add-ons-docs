@@ -50,9 +50,11 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
   - [Use PDF and PowerPoint](./use_pdf_powerpoint.md)
   - [Group Elements](./group_elements.md)
   - [Position Elements](./position_elements.md)
+  - [Selection Events and Methods](./selection_events.md)
 - Use Metadata
   - [Document Metadata](./document_metadata.md)
   - [Page Metadata](./page_metadata.md)
+  - [Manage Pages](./manage_pages.md)
   - [Element Metadata](./element_metadata.md)
 - Exporting & Output
   - [Create Renditions](./create_renditions.md)
@@ -78,8 +80,10 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 |                                | [Use PDF and PowerPoint](./use_pdf_powerpoint.md)   |
 |                                | [Group Elements](./group_elements.md)               |
 |                                | [Position Elements](./position_elements.md)         |
+|                                | [Selection Events and Methods](./selection_events.md) |
 | Use Metadata                   | [Document Metadata](./document_metadata.md)         |
 |                                | [Page Metadata](./page_metadata.md)                 |
+|                                | [Manage Pages](./manage_pages.md)                   |
 |                                | [Element Metadata](./element_metadata.md)           |
 | Exporting & Output             | [Create Renditions](./create_renditions.md)         |
 |                                | [Manage with Premium Content](./premium_content.md) |

@@ -78,6 +78,10 @@ The `editor.createText()` method accepts a string as a parameter, and returns a 
 
 ### Example
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 import { editor } from "express-document-sdk";
@@ -87,6 +91,29 @@ const textNode = editor.createText("Hello,\nWorld!");
 
 // Center the text on the page
 const insertionParent = editor.context.insertionParent;
+textNode.setPositionInParent(
+  { x: insertionParent.width / 2, y: insertionParent.height / 2 },
+  { x: 0, y: 0 }
+);
+
+// Add the TextNode to the document
+insertionParent.children.append(textNode);
+
+// Get the text content
+console.log("Text: ", textNode.fullContent.text);
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, StandaloneTextNode, ContainerNode } from "express-document-sdk";
+
+// Create a new TextNode
+const textNode: StandaloneTextNode = editor.createText("Hello,\nWorld!");
+
+// Center the text on the page
+const insertionParent: ContainerNode = editor.context.insertionParent;
 textNode.setPositionInParent(
   { x: insertionParent.width / 2, y: insertionParent.height / 2 },
   { x: 0, y: 0 }
@@ -118,12 +145,27 @@ The text content of a `TextNode` can be replaced by setting the [`fullContent.te
 
 ### Example
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
 // Assuming the user has selected a text frame
 const selectedTextNode = editor.context.selection[0];
+selectedTextNode.fullContent.text = "Something else";
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, TextNode } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const selectedTextNode = editor.context.selection[0] as TextNode;
 selectedTextNode.fullContent.text = "Something else";
 ```
 
@@ -154,6 +196,10 @@ Please note that `applyCharacterStyles()` is only one way to set styles; you can
 
 Let's change the styles for the first three characters of a TextNode.
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 import { editor, constants } from "express-document-sdk";
@@ -177,11 +223,42 @@ textNode.fullContent.applyCharacterStyles(
 );
 ```
 
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, constants, TextNode, CharacterStyles } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0] as TextNode;
+
+// Apply character styles to the first three letters
+const styles: CharacterStyles = {
+  color: { red: 0, green: 0.4, blue: 0.8, alpha: 1 },
+  fontSize: 240,
+  letterSpacing: 10,
+  underline: true,
+  // baselineShift: constants.TextScriptStyle.superscript,
+};
+
+textNode.fullContent.applyCharacterStyles(
+  styles,
+  {
+    start: 0,
+    length: 3,
+  }
+);
+```
+
 The `applyCharacterStyles()` method is not the only one that allows you to set styles; you can also use the `characterStyleRanges` property, which supports both getting and setting styles.
 
 ### Example: Get all Styles
 
 To get the complete list of text character styles, you can use the [`fullContent.characterStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges) property, which returns an array of [`CharacterStylesRange`](../../../references/document-sandbox/document-apis/interfaces/CharacterStylesRange.md) elements.
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 // sandbox/code.js
@@ -193,6 +270,26 @@ const contentModel = textNode.fullContent;
 
 // Get the array of character styles
 const existingStyles = contentModel.characterStyleRanges;
+
+// Edit some properties
+existingStyles[0].fontSize = 10;
+
+// Reassign the array to apply the style changes
+contentModel.characterStyleRanges = existingStyles;
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, TextNode, TextContentModel, CharacterStylesRange } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0] as TextNode;
+const contentModel: TextContentModel = textNode.fullContent;
+
+// Get the array of character styles
+const existingStyles: CharacterStylesRange[] = contentModel.characterStyleRanges;
 
 // Edit some properties
 existingStyles[0].fontSize = 10;

@@ -92,7 +92,7 @@ A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containi
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
+<CodeBlock slots="heading, code" repeat="3" languages="JavaScript, TypeScript, bash" />
 
 #### JavaScript
 
@@ -130,6 +130,49 @@ async function logMetadata() {
     }
   }
   catch(error) {
+    console.log("Failed to get metadata:", error);
+  }
+}
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Get metadata of all the pages
+async function logMetadata(): Promise<void> {
+  try {
+    const options: PageMetadataOptions = {
+      range: Range.specificPages,
+      pageIds: [
+        "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
+        "d45ba3fc-a3df-4a87-80a5-655e5f8f0f96"
+      ]
+    };
+    
+    const pages: PageMetadata[] = await addOnUISdk.app.document.getPagesMetadata(options);
+    
+    for (const page of pages) {
+      console.log("Page id: ", page.id);
+      console.log("Page title: ", page.title);
+      console.log("Page size: ", page.size);
+      console.log("Page has premium content: ", page.hasPremiumContent);
+      console.log("Page has audio content: ", page.hasAudioContent);
+      console.log("Page has video content: ", page.hasVideoContent);
+      console.log("Page has animated content: ", page.hasAnimatedContent);
+      console.log("Page has timelines: ", page.hasTemporalContent);
+      if (page.hasTemporalContent)
+        console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration);
+      console.log("Pixels per inch: ", page.pixelsPerInch);
+      console.log("Is page print ready: ", page.isPrintReady);
+      console.log("Is page blank: ", page.isBlank);
+      console.log("Template details: ", page.templateDetails);
+    }
+  } catch (error) {
     console.log("Failed to get metadata:", error);
   }
 }
@@ -177,7 +220,7 @@ Tells Express to run a print quality check to determine if the document is ready
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
@@ -196,6 +239,44 @@ function runPrintQualityCheck() {
     console.log("Print quality check completed successfully");
   } catch (error) {
     console.log("Failed to run print quality check");
+  }
+}
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Reference to the active document
+const { document } = addOnUISdk.app;
+
+// Run Print Quality Check
+function runPrintQualityCheck(): void {
+  try {
+    const options: PrintQualityCheckOptions = {
+      range: Range.entireDocument,
+    };
+    
+    document.runPrintQualityCheck(options);
+    console.log("Print quality check completed successfully");
+  } catch (error) {
+    console.log("Failed to run print quality check");
+  }
+}
+
+// Run Print Quality Check for specific pages
+function runPrintQualityCheckForPages(pageIds: string[]): void {
+  try {
+    const options: PrintQualityCheckOptions = {
+      range: Range.specificPages,
+      pageIds: pageIds
+    };
+    
+    document.runPrintQualityCheck(options);
+    console.log("Print quality check completed successfully for specific pages");
+  } catch (error) {
+    console.log("Failed to run print quality check for specific pages");
   }
 }
 ```
@@ -267,7 +348,11 @@ A resolved `Promise` containing an array of `string` ids representing the curren
 
 #### Example Usage
 
-```javascript
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Wait for the SDK to be ready
@@ -301,6 +386,59 @@ async function getSelectedPagesMetadata() {
       });
       
       metadata.forEach((page, index) => {
+        console.log(`Selected page ${index + 1}: ${page.title} (${page.id})`);
+      });
+    } else {
+      console.log("No pages selected");
+    }
+  } catch (error) {
+    console.log("Failed to get selected pages metadata:", error);
+  }
+}
+
+// Call the functions
+getSelectedPages();
+getSelectedPagesMetadata();
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Get the currently selected page ids
+async function getSelectedPages(): Promise<void> {
+  try {
+    const selectedPageIds: string[] = await addOnUISdk.app.document.getSelectedPageIds();
+    console.log("Selected page ids:", selectedPageIds);
+    
+    if (selectedPageIds.length === 0) {
+      console.log("No pages are currently selected");
+    } else {
+      console.log(`${selectedPageIds.length} page(s) selected:`, selectedPageIds);
+    }
+  } catch (error) {
+    console.log("Failed to get selected page ids:", error);
+  }
+}
+
+// Example: Get metadata for selected pages only
+async function getSelectedPagesMetadata(): Promise<void> {
+  try {
+    const selectedPageIds: string[] = await addOnUISdk.app.document.getSelectedPageIds();
+    
+    if (selectedPageIds.length > 0) {
+      const options: PageMetadataOptions = {
+        range: Range.specificPages,
+        pageIds: selectedPageIds
+      };
+      
+      const metadata: PageMetadata[] = await addOnUISdk.app.document.getPagesMetadata(options);
+      
+      metadata.forEach((page: PageMetadata, index: number) => {
         console.log(`Selected page ${index + 1}: ${page.title} (${page.id})`);
       });
     } else {
@@ -571,12 +709,21 @@ Mime type details for importing media
 
 | Name              | Type                       |                                                      Description |
 | ----------------- | -------------------------- | ---------------------------------------------------------------: |
-| `sourceMimeType?` | [`SupportedMimeTypes`](./) | Mime type of the original source asset that was converted to PDF |
+| `sourceMimeType?` | [`SupportedMimeTypes`](#supportedmimetypes) | Mime type of the original source asset that was converted to PDF |
 
 ### SupportedMimeTypes
 
-A constant representing the mime type of the original source asset that was converted to PDF.
+A constant representing the mime type of the original source asset that was converted to PDF. **Note:** This constant is only available as a named export and must be imported explicitly.
 
+```javascript
+import addOnUISdk, { SupportedMimeTypes } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Usage
+const docxMimeType = SupportedMimeTypes.docx;
+const gdocMimeType = SupportedMimeTypes.gdoc;
+```
+
+Available values:
 - **docx**: `"docx"`
 - **gdoc**: `"gdoc"`
 

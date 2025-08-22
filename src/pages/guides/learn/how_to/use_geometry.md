@@ -48,6 +48,10 @@ Adobe Express provides a set of geometric shapes that you can create and style p
 
 ### Example: Add a Rectangle
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 import { editor } from "express-document-sdk";
@@ -65,6 +69,25 @@ const currentPage = editor.context.currentPage;
 currentPage.artboards.first.children.append(rect);
 ```
 
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, RectangleNode, PageNode } from "express-document-sdk";
+
+const rect: RectangleNode = editor.createRectangle();
+
+// Define rectangle dimensions.
+rect.width = 100;
+rect.height = 100;
+
+// The current page, where the rectangle will be placed
+const currentPage: PageNode = editor.context.currentPage;
+
+// Append the rectangle to the page.
+currentPage.artboards.first.children.append(rect);
+```
+
 <InlineAlert slots="header, text, text1" variant="warning"/>
 
 Create vs. Add to the page
@@ -75,9 +98,23 @@ You usually reference the container using [`editor.context`](../../../references
 
 Please note that you can append multiple shapes at once with the `append()` method:
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 const s1 = editor.createRectangle();
 const s2 = editor.createEllipse();
+// ... set all properties ...
+
+editor.context.currentPage.artboards.first.children.append(s1, s2); // 👈
+```
+
+#### TypeScript
+
+```ts
+const s1: RectangleNode = editor.createRectangle();
+const s2: EllipseNode = editor.createEllipse();
 // ... set all properties ...
 
 editor.context.currentPage.artboards.first.children.append(s1, s2); // 👈
@@ -90,6 +127,10 @@ Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../ref
 <InlineAlert slots="text" variant="warning"/>
 
 An ellipse with a radius of 200 on the x-axis and 100 on the y-axis will result in a shape with 400 wide (`rx` times two) and a 200 tall (`ry` times two)!
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 // sandbox/code.js
@@ -106,12 +147,36 @@ console.log(ellipse.boundsLocal);
 const currentPage = editor.context.currentPage;
 
 // Append the rectangle to the page.
-currentPage.artboards.first.children.append(rect);
+currentPage.artboards.first.children.append(ellipse);
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, EllipseNode, PageNode } from "express-document-sdk";
+
+const ellipse: EllipseNode = editor.createEllipse();
+ellipse.rx = 200; // radius x 👈
+ellipse.ry = 100; // radius y 👈
+
+console.log(ellipse.boundsLocal);
+// { x: 0, y: 0, width: 400, height: 200 } 👈 mind the actual bounds!
+
+// The current page, where the rectangle will be placed
+const currentPage: PageNode = editor.context.currentPage;
+
+// Append the ellipse to the page.
+currentPage.artboards.first.children.append(ellipse);
 ```
 
 ### Example: Style Shapes
 
 Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create a rectangle with a fill and a stroke.
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 // sandbox/code.js
@@ -138,6 +203,36 @@ ellipse.stroke = stroke;
 
 // Add the shape to the document
 editor.context.insertionParent.children.append(ellipse);
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, colorUtils, constants, EllipseNode, Stroke, ContainerNode } from "express-document-sdk";
+
+// Create the shape
+const ellipse: EllipseNode = editor.createEllipse();
+ellipse.rx = 200;
+ellipse.ry = 100;
+
+// 👇 Apply the fill color
+ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F3D988"));
+
+// 👇 Create the stroke
+const stroke: Stroke = editor.makeStroke({
+  color: colorUtils.fromHex("#E29E4E"),
+  width: 20,
+  position: constants.StrokePosition.inside,
+  dashPattern: [50, 2],
+});
+
+// 👇 Apply the stroke
+ellipse.stroke = stroke;
+
+// Add the shape to the document
+const insertionParent: ContainerNode = editor.context.insertionParent;
+insertionParent.children.append(ellipse);
 ```
 
 ![Ellipse with fill and stroke](./images/shapes_ellipse.jpg)

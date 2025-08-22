@@ -55,6 +55,10 @@ To create a Group, you can use the [`editor.createGroup()`](../../../references/
 
 ### Example
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 import { editor } from "express-document-sdk";
@@ -78,6 +82,32 @@ greetingsGroup.children.append(greeting, saluto);
 editor.context.insertionParent.children.append(greetingsGroup);
 ```
 
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, StandaloneTextNode, GroupNode, ContainerNode } from "express-document-sdk";
+
+// Create some Text
+const greeting: StandaloneTextNode = editor.createText("Hiya!");
+greeting.translation = { x: 100, y: 50 };
+
+// Create some other Text
+const saluto: StandaloneTextNode = editor.createText("Ciao!");
+saluto.translation = { x: 100, y: 150 };
+
+// Create a Group 👈
+const greetingsGroup: GroupNode = editor.createGroup();
+greetingsGroup.translation = { x: 100, y: 100 };
+
+// Append the Text nodes to the Group 👈
+greetingsGroup.children.append(greeting, saluto);
+
+// Append the Group to the page 👈
+const insertionParent: ContainerNode = editor.context.insertionParent;
+insertionParent.children.append(greetingsGroup);
+```
+
 <InlineAlert variant="info" slots="header, text, text1" />
 
 Group append order
@@ -91,6 +121,10 @@ Please note that the Text nodes in the example above haven't been appended to th
 Groups can be nested, meaning that you can have a Group inside another Group; just create the needed Group nodes and `append()` elements to their `children` property.
 
 ### Example
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 // sandbox/code.js
@@ -106,6 +140,27 @@ innerGroup.children.append(greeting, saluto);
 
 // Create an outer Group with the inner Group and the third Text node
 const outerGroup = editor.createGroup();
+outerGroup.children.append(innerGroup, salutation);
+
+editor.context.insertionParent.children.append(outerGroup);
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+
+// Create three different Text nodes
+const greeting: StandaloneTextNode = editor.createText("Hiya!");
+const saluto: StandaloneTextNode = editor.createText("Ciao!");
+const salutation: StandaloneTextNode = editor.createText("Salut!");
+
+// Create an inner Group with the first two Text nodes
+const innerGroup: GroupNode = editor.createGroup();
+innerGroup.children.append(greeting, saluto);
+
+// Create an outer Group with the inner Group and the third Text node
+const outerGroup: GroupNode = editor.createGroup();
 outerGroup.children.append(innerGroup, salutation);
 
 editor.context.insertionParent.children.append(outerGroup);

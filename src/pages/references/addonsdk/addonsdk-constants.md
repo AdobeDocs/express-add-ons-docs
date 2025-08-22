@@ -1,6 +1,120 @@
 # addOnUISdk.constants
 
+This reference covers **all Adobe Express Add-on SDK constants**, including:
+- Constants available in `addOnUISdk.constants.*` (dual access)
+- Constants available only as named exports (import required)
+
+See the [Import Patterns](#import-patterns) section for details on how to access each type.
+
 A set of constants used throughout the add-on SDK. These constants are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary".
+
+## Import Patterns
+
+Adobe Express Add-on SDK constants are available through different import patterns depending on the constant type. Understanding these patterns is crucial for avoiding runtime errors.
+
+### Named Exports (Import Required)
+
+These constants are **only available as named exports** and must be imported explicitly. They are **not** available through `addOnUISdk.constants.*`:
+
+```javascript
+import addOnUISdk, { 
+  AppEvent, 
+  ColorPickerEvent, 
+  SupportedMimeTypes,
+  EntrypointType,
+  PdfReturnUrlType
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// ✅ Correct usage
+const docxMimeType = SupportedMimeTypes.docx;
+const colorChangeEvent = ColorPickerEvent.colorChange;
+
+// ❌ Will NOT work - these are not in the constants object
+const docxMimeType = addOnUISdk.constants.SupportedMimeTypes.docx; // undefined
+```
+
+### Dual Access Constants
+
+These constants support **both import patterns** for flexibility. You can use either approach:
+
+```javascript
+import addOnUISdk, { Range, RenditionFormat, Variant } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Option 1: Named import (recommended for cleaner code)
+const currentPage = Range.currentPage;
+const pngFormat = RenditionFormat.png;
+const confirmDialog = Variant.confirmation;
+
+// Option 2: Constants object access (traditional pattern)
+const currentPage = addOnUISdk.constants.Range.currentPage;
+const pngFormat = addOnUISdk.constants.RenditionFormat.png;
+const confirmDialog = addOnUISdk.constants.Variant.confirmation;
+```
+
+**Dual Access Constants List:**
+- `Range` / `addOnUISdk.constants.Range`
+- `RenditionFormat` / `addOnUISdk.constants.RenditionFormat`
+- `RenditionType` / `addOnUISdk.constants.RenditionType`
+- `RenditionIntent` / `addOnUISdk.constants.RenditionIntent`
+- `Variant` / `addOnUISdk.constants.Variant`
+- `DialogResultType` / `addOnUISdk.constants.DialogResultType`
+- `ButtonType` / `addOnUISdk.constants.ButtonType`
+- `RuntimeType` / `addOnUISdk.constants.RuntimeType`
+- `BleedUnit` / `addOnUISdk.constants.BleedUnit`
+- `EditorPanel` / `addOnUISdk.constants.EditorPanel`
+- `MediaTabs` / `addOnUISdk.constants.MediaTabs`
+- `ElementsTabs` / `addOnUISdk.constants.ElementsTabs`
+- `PanelActionType` / `addOnUISdk.constants.PanelActionType`
+- `ColorPickerPlacement` / `addOnUISdk.constants.ColorPickerPlacement`
+- `AuthorizationStatus` / `addOnUISdk.constants.AuthorizationStatus`
+- `FieldType` / `addOnUISdk.constants.FieldType`
+- `PlatformEnvironment` / `addOnUISdk.constants.PlatformEnvironment`
+- `DeviceClass` / `addOnUISdk.constants.DeviceClass`
+- `PlatformType` / `addOnUISdk.constants.PlatformType`
+
+### Best Practices
+
+1. **Use named imports for cleaner code** when you know which constants you need:
+   ```javascript
+   import addOnUISdk, { Range, RenditionFormat } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+   
+   const options = {
+     range: Range.currentPage,
+     format: RenditionFormat.png
+   };
+   ```
+
+2. **Use constants object for dynamic access** when the constant name is determined at runtime:
+   ```javascript
+   const format = addOnUISdk.constants.RenditionFormat[userSelectedFormat];
+   ```
+
+3. **Always import named-only exports** - there's no alternative way to access them:
+   ```javascript
+   import addOnUISdk, { SupportedMimeTypes } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+   ```
+
+### Quick Reference Table
+
+| Constant | Named Export | Constants Object | Import Required |
+|----------|--------------|------------------|-----------------|
+| `AppEvent` | ✅ | ❌ | **Yes** |
+| `ColorPickerEvent` | ✅ | ❌ | **Yes** |
+| `SupportedMimeTypes` | ✅ | ❌ | **Yes** |
+| `EntrypointType` | ✅ | ❌ | **Yes** |
+| `PdfReturnUrlType` | ✅ | ❌ | **Yes** |
+| `Range` | ✅ | ✅ | Optional |
+| `RenditionFormat` | ✅ | ✅ | Optional |
+| `Variant` | ✅ | ✅ | Optional |
+| `ButtonType` | ✅ | ✅ | Optional |
+| `FieldType` | ✅ | ✅ | Optional |
+| `PlatformEnvironment` | ✅ | ✅ | Optional |
+| `DeviceClass` | ✅ | ✅ | Optional |
+| `PlatformType` | ✅ | ✅ | Optional |
+
+<InlineAlert slots="text" variant="warning"/>
+
+**Important:** Attempting to access named-only exports through `addOnUISdk.constants.*` will return `undefined` and may cause runtime errors. Always check the table above or use TypeScript for compile-time validation.
 
 ## Constants
 
@@ -46,7 +160,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td class="spectrum-Table-cell"><p><pre>ButtonType</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
-        <p>The type of the button pressed in a dialog.</p>
+        <p>The type of the button pressed in a dialog. <strong>Dual access: both named export and constants object.</strong></p>
         <ul>
           <li><strong>primary</strong></li>Primary button pressed.
           <li><strong>secondary</strong></li>Secondary button pressed.
@@ -59,7 +173,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td class="spectrum-Table-cell"><p><pre>ColorPickerEvent</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
-        <p>Custom events dispatched by the Color Picker.</p>
+        <p>Custom events dispatched by the Color Picker. <strong>Named export only - not available in constants object.</strong></p>
         <ul>
           <li><strong>colorChange</strong></li><pre>"colorpicker-color-change"</pre>
           <li><strong>close</strong></li><pre>"colorpicker-close"</pre>
@@ -70,7 +184,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td class="spectrum-Table-cell"><p><pre>ColorPickerPlacement</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
-        <p>Placement of the color picker popover with respect to the anchor element.</p>
+        <p>Placement of the color picker popover with respect to the anchor element. <strong>Dual access: both named export and constants object.</strong></p>
         <ul>
           <li><strong>top</strong></li><pre>"top"</pre>
         <li><strong>bottom</strong></li><pre>"bottom"</pre>
@@ -187,7 +301,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td class="spectrum-Table-cell"><p><pre>Range</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
-        <p>Rendition page range. Options:</p>
+        <p>Rendition page range. <strong>Dual access: both named export and constants object.</strong></p>
         <ul>
           <li><strong>currentPage</strong></li> Generate rendition for the current page
           <li><strong>entireDocument</strong></li>Generate rendition for all pages
@@ -199,7 +313,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td class="spectrum-Table-cell"><p><pre>RenditionFormat</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
-        <p>Required output format of the rendition.</p>
+        <p>Required output format of the rendition. <strong>Dual access: both named export and constants object.</strong></p>
         <ul>
           <li><strong>jpg</strong></li><pre>"image/jpeg"</pre>
           <li><strong>png</strong></li><pre>"image/png"</pre>
@@ -213,7 +327,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td class="spectrum-Table-cell"><p><pre>RenditionIntent</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">  
-        <p>The intent to set for creating the rendition. Options:</p>
+        <p>The intent to set for creating the rendition. <strong>Dual access: both named export and constants object.</strong></p>
         <ul>
           <li><strong>preview</strong></li>Intent to preview the content.
           <li><strong>export</strong></li>Intent to export/download the content (default).
@@ -245,7 +359,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td class="spectrum-Table-cell"><p><pre>Variant</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
-        <p>Types of dialog variants supported.</p>
+        <p>Types of dialog variants supported. <strong>Dual access: both named export and constants object.</strong></p>
         <ul>
           <li><strong>confirmation</strong></li>Ask a user to confirm an action.
           <li><strong>information</strong></li>Share information for user to acknowledge.
@@ -269,6 +383,107 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
           <li><strong>qhd1440p</strong></li><pre>"1440p"</pre>
           <li><strong>uhd2160p</strong></li><pre>"2160p"</pre>
           <li><strong>custom</strong></li>Custom resolution
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AppEvent</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Events dispatched by the Add-on SDK. <strong>Named export only - not available in constants object.</strong></p>
+        <ul>
+          <li><strong>documentIdAvailable</strong></li>Document ID becomes available
+          <li><strong>documentTitleChange</strong></li>Document title changes
+          <li><strong>documentLinkAvailable</strong></li>Document link becomes available
+          <li><strong>documentPublishedLinkAvailable</strong></li>Published document link becomes available
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>AuthorizationStatus</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>OAuth authorization status values. <strong>Dual access: both named export and constants object.</strong></p>
+        <ul>
+          <li><strong>authorized</strong></li>Authorization successful
+          <li><strong>cancelled</strong></li>Authorization cancelled by user
+          <li><strong>error</strong></li>Authorization error occurred
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>SupportedMimeTypes</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>MIME types for original source assets converted to PDF. <strong>Named export only - not available in constants object.</strong></p>
+        <ul>
+          <li><strong>docx</strong></li><pre>"docx"</pre>
+          <li><strong>gdoc</strong></li><pre>"gdoc"</pre>
+        </ul>
+    </td>
+</tr>
+
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>PdfReturnUrlType</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Specifies the type of URL returned for PDF rendition export. <strong>Named export only - not available in constants object.</strong></p>
+        <ul>
+          <li><strong>cdnUrl</strong></li><pre>"cdnUrl"</pre>
+          <li><strong>jumpUrl</strong></li><pre>"jumpUrl"</pre>
+        </ul>
+    </td>
+</tr>
+
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>FieldType</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>The type of input field supported in Simple Dialog. <strong>Dual access: both named export and constants object.</strong></p>
+        <ul>
+          <li><strong>text</strong></li><pre>"text"</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>PlatformEnvironment</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Denotes the current environment where the add-on is running. <strong>Dual access: both named export and constants object.</strong></p>
+        <ul>
+          <li><strong>app</strong></li><pre>"app"</pre>
+          <li><strong>web</strong></li><pre>"web"</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>DeviceClass</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Denotes the device class/form factor where the add-on is running. <strong>Dual access: both named export and constants object.</strong></p>
+        <ul>
+          <li><strong>mobile</strong></li><pre>"mobile"</pre>
+          <li><strong>tablet</strong></li><pre>"tablet"</pre>
+          <li><strong>desktop</strong></li><pre>"desktop"</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>PlatformType</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Denotes the specific platform/operating system where the add-on is running. <strong>Dual access: both named export and constants object.</strong></p>
+        <ul>
+          <li><strong>iOS</strong></li><pre>"ios"</pre>
+          <li><strong>iPadOS</strong></li><pre>"ipad"</pre>
+          <li><strong>chromeOS</strong></li><pre>"chromeOS"</pre>
+          <li><strong>android</strong></li><pre>"android"</pre>
+          <li><strong>chromeBrowser</strong></li><pre>"chromeBrowser"</pre>
+          <li><strong>firefoxBrowser</strong></li><pre>"firefoxBrowser"</pre>
+          <li><strong>edgeBrowser</strong></li><pre>"edgeBrowser"</pre>
+          <li><strong>samsungBrowser</strong></li><pre>"samsumgBrowser"</pre> <em>(Note: Contains typo in SDK)</em>
+          <li><strong>safariBrowser</strong></li><pre>"safariBrowser"</pre>
+          <li><strong>unknown</strong></li><pre>"unknown"</pre>
         </ul>
     </td>
 </tr>

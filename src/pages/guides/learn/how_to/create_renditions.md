@@ -69,6 +69,10 @@ Renditions are created via the [`createRendition()`](../../../references/addonsd
 1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the page range that is meant to be exported and the file format (jpg, png, mp4, pdf, and pptx).
 2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the intent of the exported content (preview, export, print).
 
+<InlineAlert slots="text" variant="info"/>
+
+**SDK Constants Import:** This guide uses several SDK constants like `Range`, `RenditionFormat`, and `RenditionIntent`. These constants support dual access (both named imports and `addOnUISdk.constants.*`). See the [constants import patterns guide](../../../references/addonsdk/addonsdk-constants.md#import-patterns) for details on importing SDK constants correctly.
+
 ## Check export permissions
 
 The `exportAllowed()` method determines whether the current document can be exported based on its review status in collaborative workflows. This applies mainly to [enterprise customers using Adobe Express's review and approval features](https://business.adobe.com/products/workfront/integrations/express.html), where documents may be restricted from export until approved by designated reviewers.

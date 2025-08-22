@@ -193,6 +193,10 @@ Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type
 
 #### Confirmation Dialog Example Usage
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -217,7 +221,38 @@ async function showConfirmDialog() {
 }
 ```
 
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+async function showConfirmDialog(): Promise<void> {
+  try {
+    // Confirmation Dialog Example
+    const dialogOptions: DialogOptions = {
+      variant: Variant.confirmation,
+      title: "Enable smart Filters",
+      description:
+        "Smart filters are nondestructive and will preserve your original images.",
+      buttonLabels: { primary: "Enable", cancel: "Cancel" },
+    };
+    
+    const result: DialogResult = await addOnUISdk.app.showModalDialog(dialogOptions);
+    console.log("Button type clicked " + result.buttonType);
+  } catch (error) {
+    console.log("Error showing modal dialog:", error);
+  }
+}
+```
+
 #### Input Dialog Example Usage
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -244,6 +279,42 @@ async function showInputDialog() {
       inputDialogOptions
     );
     if (inputDialogResult.buttonType === "primary") {
+      console.log("Field value " + inputDialogResult.fieldValue); // returns the input the user entered if they didn't cancel
+    }
+  } catch (error) {
+    console.log("Error showing modal dialog:", error);
+  }
+}
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+async function showInputDialog(): Promise<void> {
+  try {
+    // Input Dialog Example
+    const inputDialogOptions: DialogOptions = {
+      variant: Variant.input,
+      title: "Please enter your key",
+      description: "Your API key",
+      buttonLabels: { cancel: "Cancel" },
+      field: {
+        label: "API Key",
+        placeholder: "Enter API key",
+        fieldType: FieldType.text,
+      },
+    };
+
+    const inputDialogResult: DialogResult = await addOnUISdk.app.showModalDialog(
+      inputDialogOptions
+    );
+    
+    if (inputDialogResult.buttonType === ButtonType.primary) {
       console.log("Field value " + inputDialogResult.fieldValue); // returns the input the user entered if they didn't cancel
     }
   } catch (error) {
@@ -287,6 +358,10 @@ Returns a void `Promise`.
 
 #### Example Usage
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 const colorPickerButton = document.getElementById("color-picker-button");
 
@@ -301,6 +376,27 @@ colorPickerButton.addEventListener("click", () => {
 
 colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
   console.log("Color change event received!", event.detail.color;);
+});
+```
+
+#### TypeScript
+
+```ts
+const colorPickerButton = document.getElementById("color-picker-button") as HTMLButtonElement;
+
+colorPickerButton.addEventListener("click", (): void => {
+  const options: ColorPickerOptions = {
+    title: "Add-on's Color Picker",
+    placement: ColorPickerPlacement.left,
+    eyedropperHidesPicker: true,
+    disableAlphaChannel: false,
+  };
+  
+  addOnUISdk.app.showColorPicker(colorPickerButton, options);
+});
+
+colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event: CustomEvent): void => {
+  console.log("Color change event received!", event.detail.color);
 });
 ```
 
@@ -456,6 +552,100 @@ Callback to undo the changes made by `enableDragToDocument`. Returns `void`.
 
 ```ts
 type DisableDragToDocument = () => void;
+```
+
+#### Example Usage
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Enable drag-to-document for an image element
+const imageElement = document.getElementById("my-image");
+
+const dragCallbacks = {
+  previewCallback: (element) => {
+    // Return the preview image URL
+    return new URL(element.src);
+  },
+  
+  completionCallback: async (element) => {
+    try {
+      // Fetch the image blob for drag completion
+      const response = await fetch(element.src);
+      const blob = await response.blob();
+      
+      return [{
+        blob: blob,
+        attributes: {
+          title: element.alt || "Dragged Image"
+        }
+      }];
+    } catch (error) {
+      console.error("Failed to fetch image for drag:", error);
+      return [];
+    }
+  }
+};
+
+// Enable drag to document
+const disableDrag = addOnUISdk.app.enableDragToDocument(imageElement, dragCallbacks);
+
+// Later, you can disable the drag functionality
+// disableDrag();
+```
+
+#### TypeScript
+
+```ts
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Enable drag-to-document for an image element
+const imageElement = document.getElementById("my-image") as HTMLImageElement;
+
+const dragCallbacks: DragCallbacks = {
+  previewCallback: (element: HTMLElement): URL => {
+    // Return the preview image URL
+    const imgElement = element as HTMLImageElement;
+    return new URL(imgElement.src);
+  },
+  
+  completionCallback: async (element: HTMLElement): Promise<DragCompletionData[]> => {
+    try {
+      // Fetch the image blob for drag completion
+      const imgElement = element as HTMLImageElement;
+      const response = await fetch(imgElement.src);
+      const blob: Blob = await response.blob();
+      
+      const completionData: DragCompletionData[] = [{
+        blob: blob,
+        attributes: {
+          title: imgElement.alt || "Dragged Image"
+        }
+      }];
+      
+      return completionData;
+    } catch (error) {
+      console.error("Failed to fetch image for drag:", error);
+      return [];
+    }
+  }
+};
+
+// Enable drag to document
+const disableDrag: DisableDragToDocument = addOnUISdk.app.enableDragToDocument(imageElement, dragCallbacks);
+
+// Later, you can disable the drag functionality
+// disableDrag();
 ```
 
 ##### `DragStartEventData` Object

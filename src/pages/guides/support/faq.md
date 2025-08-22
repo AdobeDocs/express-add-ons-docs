@@ -86,6 +86,7 @@ contributors:
 - [I'm not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
 - [Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?](#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error)
 - [What permissions are available for add-ons and how do I configure them?](#what-permissions-are-available-for-add-ons-and-how-do-i-configure-them)
+- [How do I import SDK constants correctly?](#how-do-i-import-sdk-constants-correctly)
 - [Is `SharedArrayBuffer` supported?](#is-sharedarraybuffer-supported)
 - [Which browsers and operating systems are currently supported?](#which-browsers-and-operating-systems-are-currently-supported)
 
@@ -100,7 +101,8 @@ contributors:
 
 - [I'm trying to use a newly released feature, but it seems to be unavailable?](#im-trying-to-use-a-newly-released-feature-but-it-seems-to-be-unavailable)
 - [What does it mean when an API is considered **experimental**?](#what-does-it-mean-when-an-api-is-considered-experimental)
-- [How does Adobe use my add-on’s data?](#how-does-adobe-use-my-add-ons-data)
+- [Why doesn't createPage() work? How do I add pages programmatically?](#why-doesnt-createpage-work-how-do-i-add-pages-programmatically)
+- [How does Adobe use my add-on's data?](#how-does-adobe-use-my-add-ons-data)
 - [Where can I request new add-on features or suggest ideas?](#where-can-i-request-new-add-on-features-or-suggest-ideas)
 
 ### 💰 Distribution & Monetization
@@ -212,6 +214,28 @@ At this time, the only way to monetize is by using a third party provider, and e
 
 Experimental APIs are those which have not been declared stable yet, and to try them, first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the [`manifest.json`](../../references/manifest/index.md). The `experimentalApis` flag is **only allowed during development** and needs to be removed during submission. Experimental APIs should never be used in any add-ons you will be distributing.
 
+### Why doesn't createPage() work? How do I add pages programmatically?
+
+The Adobe Express Document API uses **`addPage()`** to create new pages, not `createPage()`. This is a common confusion point for developers and LLMs familiar with other APIs.
+
+**Correct usage:**
+```js
+// ✅ Correct - Use addPage() with dimensions
+const newPage = editor.addPage({ width: 1080, height: 1080 });
+```
+
+**Incorrect usage:**
+```js
+// ❌ Wrong - createPage() doesn't exist
+const newPage = editor.createPage(); // This will throw an error
+```
+
+The Document API follows a specific naming convention:
+- `create*` methods (like `createRectangle()`, `createText()`) are for basic document objects
+- `add*` methods (like `addPage()`, `addArtboard()`) are for complex structures that need special handling
+
+For comprehensive examples and best practices, see our [Manage Pages how-to guide](../learn/how_to/manage_pages.md).
+
 ### What are the supported mime types/file formats for exported content?
 
 The supported file types for exported content are:
@@ -316,6 +340,25 @@ Adobe Express add-ons support several types of permissions that you configure in
 ```
 
 For complete details on all available permissions and their usage, see the [manifest permissions documentation](../../references/manifest/index.md#entrypointspermissions) and the [add-on context guide](../learn/platform_concepts/context.md#permissions).
+
+### How do I import SDK constants correctly?
+
+Adobe Express SDK constants use different import patterns depending on the constant type. Some constants like `SupportedMimeTypes` require named imports, while others like `Range` support both named imports and the `addOnUISdk.constants.*` pattern.
+
+**Quick Examples:**
+```javascript
+// Named imports (required for some constants)
+import addOnUISdk, { SupportedMimeTypes, Range } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Both patterns work for dual-access constants
+const currentPage = Range.currentPage;
+const currentPage = addOnUISdk.constants.Range.currentPage;
+
+// Named-only constants must be imported
+const docxType = SupportedMimeTypes.docx;
+```
+
+See the [complete import patterns guide](../../references/addonsdk/addonsdk-constants.md#import-patterns) for detailed documentation, examples, and a comprehensive list of which constants require named imports vs. support dual access.
 
 ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
 

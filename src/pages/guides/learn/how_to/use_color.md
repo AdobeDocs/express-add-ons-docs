@@ -57,6 +57,10 @@ Colors in Adobe Express are created as instances of the [`Color`](../../../refer
 
 The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
@@ -70,11 +74,37 @@ const feldgrau = colorUtils.fromRGB(0.28, 0.32, 0.39, 0.5); // 50% opacity
 const heliotrope = colorUtils.fromHex("#C768F780"); // 50% opacity
 ```
 
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, colorUtils, Color } from "express-document-sdk";
+
+// Alpha is optional, defaults to 1
+const red: Color = colorUtils.fromRGB(1, 0, 0);
+const green: Color = colorUtils.fromHex("#00FF00");
+
+// With alpha
+const feldgrau: Color = colorUtils.fromRGB(0.28, 0.32, 0.39, 0.5); // 50% opacity
+const heliotrope: Color = colorUtils.fromHex("#C768F780"); // 50% opacity
+```
+
 In case you need it, you can also convert a color to a HEX string using the [`toHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#tohex) method. Please note that the alpha value is always included in the output string.
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 const red = colorUtils.fromRGB(1, 0, 0);
 const redHex = colorUtils.toHex(red); // #FF0000FF
+```
+
+#### TypeScript
+
+```ts
+const red: Color = colorUtils.fromRGB(1, 0, 0);
+const redHex: string = colorUtils.toHex(red); // #FF0000FF
 ```
 
 ## Apply colors
@@ -82,6 +112,10 @@ const redHex = colorUtils.toHex(red); // #FF0000FF
 You can directly set the `color` property of a Text node via [`applyCharacterStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applycharacterstyles):
 
 ### Example: Text color
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 // sandbox/code.js
@@ -97,6 +131,22 @@ textNode.fullContent.applyCharacterStyles(
 );
 ```
 
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, colorUtils, TextNode } from "express-document-sdk";
+
+// Assuming the user has selected a text frame
+const textNode = editor.context.selection[0] as TextNode;
+
+// Apply character styles to the first three letters
+textNode.fullContent.applyCharacterStyles(
+  { color: colorUtils.fromHex("#E1A141") }, // 👈
+  { start: 0, length: 3 }
+);
+```
+
 See the [Use Text](./use_text.md) page for more examples.
 
 ### Example: Fill and Stroke colors
@@ -104,6 +154,10 @@ See the [Use Text](./use_text.md) page for more examples.
 Colors are not directly applied, instead, to shapes; more generally, they are used to create [`Fill`](../../../references/document-sandbox/document-apis/interfaces/Fill.md) and [`Stroke`](../../../references/document-sandbox/document-apis/interfaces/Stroke.md) objects with the [`editor.makeColorFill()`](../../../references/document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`editor.makeStroke()`](../../../references/document-sandbox/document-apis/classes/Editor.md#makestroke) methods, respectively, that you can then apply to [`Fillable`](../../../references/document-sandbox/document-apis/classes/FillableNode.md) and [`Strokable`](../../../references/document-sandbox/document-apis/classes/StrokableNode.md) nodes.
 
 If you're confused, worry not! This is the wondrous word of object oriented programming. The following example should clarify things:
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
 
 ```js
 // sandbox/code.js
@@ -134,11 +188,58 @@ ellipse.stroke = outerColorStroke;
 editor.context.insertionParent.children.append(ellipse);
 ```
 
+#### TypeScript
+
+```ts
+// sandbox/code.js
+import { editor, colorUtils, EllipseNode, Color, ColorFill, Stroke, ContainerNode } from "express-document-sdk";
+
+// Create the shape
+const ellipse: EllipseNode = editor.createEllipse();
+ellipse.width = 100;
+ellipse.height = 50;
+ellipse.translation = { x: 50, y: 50 };
+
+// Generate the needed colors
+const innerColor: Color = colorUtils.fromHex("#A38AF0");
+const outerColor: Color = colorUtils.fromHex("#2ACfA9");
+
+// Make the colorFill and the Stroke
+const innerColorFill: ColorFill = editor.makeColorFill(innerColor);
+const outerColorStroke: Stroke = editor.makeStroke({
+  color: outerColor,
+  width: 20,
+});
+
+// 👇 Apply the fill and stroke
+ellipse.fill = innerColorFill;
+ellipse.stroke = outerColorStroke;
+
+// Add the shape to the document
+editor.context.insertionParent.children.append(ellipse);
+```
+
 While the `fill` property is more straightforward to create, the `color` is just one of the possible properties of a `stroke`, as you can read in the [SolidColorStroke](../../../references/document-sandbox/document-apis/interfaces/SolidColorStroke.md) interface reference.
 
 Simplifying the example above:
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
+// ...
+ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#A38AF0"));
+ellipse.stroke = editor.makeStroke({
+  color: colorUtils.fromHex("#2ACfA9"),
+  width: 20,
+});
+// ...
+```
+
+#### TypeScript
+
+```ts
 // ...
 ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#A38AF0"));
 ellipse.stroke = editor.makeStroke({
@@ -238,12 +339,30 @@ Please note that the color returned by the `colorpicker-color-change` event is a
 
 You can decide to hide picker UI e.g., after a certain amount of time.
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 colorPickerButton.addEventListener("click", () => {
   addOnUISdk.app.showColorPicker(colorPickerButton, {
     /* ... */
   });
   setTimeout(() => {
+    console.log("Hiding the Color Picker after 10 seconds");
+    addOnUISdk.app.hideColorPicker();
+  }, 10000);
+});
+```
+
+#### TypeScript
+
+```ts
+colorPickerButton.addEventListener("click", (): void => {
+  addOnUISdk.app.showColorPicker(colorPickerButton, {
+    /* ... */
+  });
+  setTimeout((): void => {
     console.log("Hiding the Color Picker after 10 seconds");
     addOnUISdk.app.hideColorPicker();
   }, 10000);
@@ -296,6 +415,10 @@ addOnUISdk.ready.then(async () => {
 
 To use the picked color in the Document Sandbox, you can use the [`colorUtils.fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) method, which converts the HEX color string to a [`Color`](../../../references/document-sandbox/document-apis/interfaces/Color.md) object.
 
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
 ```js
 // sandbox/code.js
 const color = colorUtils.fromHex(event.detail.color); // 👈 A Color object
@@ -304,6 +427,20 @@ const color = colorUtils.fromHex(event.detail.color); // 👈 A Color object
 let selection = editor.context.selection;
 if (selection.length === 1 && selection[0].type === "Text") {
   const textContentModel = selection[0].fullContent;
+  textContentModel.applyCharacterStyles({ color }); // 👈 Using the color
+}
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.js
+const color: Color = colorUtils.fromHex(event.detail.color); // 👈 A Color object
+
+// Use the color in the Document Sandbox, for example:
+let selection = editor.context.selection;
+if (selection.length === 1 && selection[0].type === "Text") {
+  const textContentModel = (selection[0] as TextNode).fullContent;
   textContentModel.applyCharacterStyles({ color }); // 👈 Using the color
 }
 ```

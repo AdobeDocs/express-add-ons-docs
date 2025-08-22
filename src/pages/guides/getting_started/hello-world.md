@@ -266,6 +266,10 @@ Manifest updates
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
+<InlineAlert slots="text" variant="info"/>
+
+**📦 Working with SDK Constants:** As you build more complex add-ons, you'll use SDK constants like `Range`, `RenditionFormat`, and `SupportedMimeTypes`. These constants use different import patterns - some require named imports while others support multiple approaches. See the [import patterns guide](../../references/addonsdk/addonsdk-constants.md#import-patterns) for complete details.
+
 <details>
   <summary>Click to see the screenshot</summary>
 

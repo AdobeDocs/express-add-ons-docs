@@ -206,6 +206,17 @@ A specific **naming convention** exists for methods used in the Adobe Express DO
 - `create*`: used for live document objects, like `createEllipse()`
 - `add*`: reserved to create complex structures like Pages and Artboards, adding them to the parent list automatically in a way that may also update the insertion point. Found in `addPage()` and `addArtboard()`.
 
+<InlineAlert variant="warning" slots="header, text1, text2" />
+
+Common Mistake: Use `addPage()`, not `createPage()`
+
+**There is no `createPage()` method** in the Adobe Express Document API. This is a frequent source of confusion for developers and LLMs.
+
+✅ **Correct:** `editor.addPage({ width: 1080, height: 1080 })`  
+❌ **Wrong:** `editor.createPage()` (doesn't exist)
+
+See the [Manage Pages how-to guide](../how_to/manage_pages.md) for comprehensive examples and best practices.
+
 Speaking of colors, the `ColorUtils` module can output a proper `Color` from either a partial RGB object (where the `alpha` property is optional, defaulting to `1`) or a Hex string with or without alpha, providing the reverse function as well.
 
 ```js
