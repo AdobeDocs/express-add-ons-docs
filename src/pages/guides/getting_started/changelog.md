@@ -22,7 +22,7 @@ contributors:
 
 # Changelog
 
-## 2025-01-25
+## 2025-08-22
 
 ### Added
 
