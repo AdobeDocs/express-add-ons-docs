@@ -215,6 +215,7 @@ Experimental APIs are those which have not been declared stable yet, and to try 
 ### What are the supported mime types/file formats for exported content?
 
 The supported file types for exported content are:
+
 - **JPEG**: `"image/jpeg"`
 - **PNG**: `"image/png"`
 - **MP4**: `"video/mp4"`
@@ -228,6 +229,7 @@ The supported file types for exported content are:
 Adobe Express add-ons support importing various file types through the document APIs:
 
 **Image Files:**
+
 - JPEG: `image/jpeg`
 - JPG: `image/jpeg` 
 - PNG: `image/png`
@@ -235,10 +237,12 @@ Adobe Express add-ons support importing various file types through the document 
 - GIF: `image/gif` (see [animated GIF requirements](#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document))
 
 **Design Files:**
+
 - Illustrator files (AI): `application/illustrator`
 - Photoshop files (PSD): `image/vnd.adobe.photoshop`
 
 **Video Files:**
+
 - MP4: `video/mp4`
 - MOV: `video/mov`
 - QuickTime: `video/quicktime`
@@ -262,6 +266,7 @@ Adobe Express add-ons support importing various file types through the document 
 - WebM: `video/webm`
 
 **Audio Files:**
+
 - AAC: `audio/aac`
 - ADTS: `audio/aac`
 - M4A: `audio/m4a`
@@ -293,18 +298,21 @@ This error message indicates that the server that the JavaScript code is making 
 Adobe Express add-ons support several types of permissions that you configure in your `manifest.json` file:
 
 **Sandbox Permissions** (for iframe behavior):
+
 - `allow-downloads` - Enable file downloads
 - `allow-popups` - Allow opening popups/new windows  
 - `allow-popups-to-escape-sandbox` - Allow popups to escape sandbox restrictions
 - `allow-presentation` - Enable presentation mode
 
 **Additional Permissions**:
+
 - `oauth` - List of domains for OAuth workflows (e.g., `["www.dropbox.com"]`)
 - `clipboard` - Clipboard access (currently supports `["clipboard-write"]`)
 - `microphone` - Microphone access (e.g., `"*"` for all origins)
 - `camera` - Camera access (e.g., `"*"` for all origins)
 
 **Example manifest permissions:**
+
 ```json
 "permissions": {
     "sandbox": ["allow-popups", "allow-downloads"],

@@ -54,6 +54,7 @@ Beyond sandbox permissions, your add-on can also request additional permissions 
 || `camera` | `string` | Camera access permission using [allowlists](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists) syntax (e.g., `"*"` for all origins). |
 
 **Example manifest permissions:**
+
 ```json
 "permissions": {
     "sandbox": ["allow-popups", "allow-downloads"],
