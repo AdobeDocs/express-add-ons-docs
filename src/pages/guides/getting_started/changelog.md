@@ -37,6 +37,12 @@ contributors:
 - [Add-on Iframe Context guide](../learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
 - [FAQ](../support/faq.md) with a new comprehensive entry about available add-on permissions and their configuration, plus updated supported file formats for imported content organized by category (Image, Design, Video, Audio).
 
+## 2025-08-14
+
+### Added
+
+- The [Code Playground](./code_playground.md) now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.
+
 ## 2025-07-27
 
 ### Added
