@@ -249,9 +249,80 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 | `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
 | `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
 
+### getSelectedPageIds()
+
+Retrieves the currently selected page ids in the document.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`getSelectedPageIds(): Promise<string[]>`
+
+#### Return Value
+
+A resolved `Promise` containing an array of `string` ids representing the currently selected pages in the document.
+
+#### Example Usage
+
+```javascript
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Get the currently selected page ids
+async function getSelectedPages() {
+  try {
+    const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
+    console.log("Selected page ids:", selectedPageIds);
+    
+    if (selectedPageIds.length === 0) {
+      console.log("No pages are currently selected");
+    } else {
+      console.log(`${selectedPageIds.length} page(s) selected:`, selectedPageIds);
+    }
+  } catch (error) {
+    console.log("Failed to get selected page ids:", error);
+  }
+}
+
+// Example: Get metadata for selected pages only
+async function getSelectedPagesMetadata() {
+  try {
+    const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
+    
+    if (selectedPageIds.length > 0) {
+      const metadata = await addOnUISdk.app.document.getPagesMetadata({
+        range: addOnUISdk.constants.Range.specificPages,
+        pageIds: selectedPageIds
+      });
+      
+      metadata.forEach((page, index) => {
+        console.log(`Selected page ${index + 1}: ${page.title} (${page.id})`);
+      });
+    } else {
+      console.log("No pages selected");
+    }
+  } catch (error) {
+    console.log("Failed to get selected pages metadata:", error);
+  }
+}
+
+// Call the functions
+getSelectedPages();
+getSelectedPagesMetadata();
+```
+
 ### link()
 
 Retrieves the document link.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method, the LinkOptions parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -267,11 +338,7 @@ A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
-
-#### JavaScript
-
-```js
+```javascript
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
@@ -287,14 +354,14 @@ addOnUISdk.ready.then(async () => {
     console.log("Failed to get document links:", error);
   }
 
-  // Listen for document link changes
+  // Listen for document link availability changes
   addOnUISdk.app.on("documentLinkAvailable", (data) => {
-    console.log("Document link changed:", data.documentLink);
+    console.log("Document link availability changed. Link value:", data.documentLink);
   });
 
-  // Listen for published link changes
+  // Listen for published document link availability changes
   addOnUISdk.app.on("documentPublishedLinkAvailable", (data) => {
-    console.log("Published link changed:", data.documentPublishedLink);
+    console.log("Published link availability changed. Link value:", data.documentPublishedLink);
   });
 });
 ```
@@ -330,7 +397,7 @@ A resolved promise if the image was successfully added to the canvas; otherwise,
 
 #### Example Usage
 
-```js
+```javascript
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
   try {
@@ -723,6 +790,18 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 | 400 x 600 | 800 x 1000                   |    667 x 1000 | Upscaled while maintaining aspect ratio     |
 | 400 x 600 | 8000 x 10000                 |   5462 x 8192 | Upscaled to maximum allowed dimensions      |
 
+#### `PptxRenditionOptions`
+
+Extends the [`RenditionOptions`](#renditionoptions) object with the specific format for `pptx` renditions:
+
+|| Name     | Type     |                                                                                     Description |
+|| -------- | -------- | -----------------------------------------------------------------------------------------------: |
+|| `format` | `string` | [`RenditionFormat.pptx`](./addonsdk-constants.md) constant value for PowerPoint presentation. |
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** PPTX export is only available for presentation-type documents in Adobe Express. When implementing PPTX export in your add-on, consider informing users that fonts from Adobe Express might look different in PowerPoint, and that videos, audio, presenter notes, and animations will not be included in the exported file. Adobe Express displays a similar disclaimer when users download PPTX files directly from the app.
+
 #### `PdfRenditionOptions`
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `pdf` renditions:
@@ -785,7 +864,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 #### Return Value
 
-A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
+A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` or `PPTX` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
 
 #### Example Usage
 
@@ -820,6 +899,31 @@ async function displayPreview() {
     console.log("Failed to create renditions:", error);
   }
 }
+
+// Export document as PowerPoint presentation
+async function exportAsPowerPoint() {
+  try {
+    const renditionOptions = {
+      range: addOnUISdk.constants.Range.entireDocument,
+      format: addOnUISdk.constants.RenditionFormat.pptx,
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(
+      renditionOptions,
+      addOnUISdk.constants.RenditionIntent.export
+    );
+    
+    // Download the PPTX file
+    const rendition = renditions[0]; // PPTX exports as single file
+    const url = URL.createObjectURL(rendition.blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${rendition.title}.pptx`;
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.log("Failed to export as PowerPoint:", error);
+  }
+}
 ```
 
 #### TypeScript
@@ -849,6 +953,31 @@ async function displayPreview() {
     });
   } catch (error) {
     console.log("Failed to create renditions:", error);
+  }
+}
+
+// Export document as PowerPoint presentation
+async function exportAsPowerPoint() {
+  try {
+    const renditionOptions: PptxRenditionOptions = {
+      range: Range.entireDocument,
+      format: RenditionFormat.pptx,
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(
+      renditionOptions,
+      RenditionIntent.export
+    );
+    
+    // Download the PPTX file
+    const rendition = renditions[0]; // PPTX exports as single file
+    const url = URL.createObjectURL(rendition.blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${rendition.title}.pptx`;
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.log("Failed to export as PowerPoint:", error);
   }
 }
 ```

@@ -37,15 +37,19 @@ faq:
     - question: "What link types are available?"
       answer: 'You can get "document" link or "published" link via the `link()` method parameter.'
 
-    - question: "How do I listen for link changes?"
+    - question: "How do I listen for link availability changes?"
       answer: "Use `documentLinkAvailable` or `documentPublishedLinkAvailable` events with `addOnUISdk.app.on()`."
+
+
 ---
 
 # Use Document Metadata
 
 ## Get the Document ID, Title, and Link
 
-Through the [Add-on UI SDK Document object](../../../references/addonsdk/app-document.md), you can retrieve some information about the current document. Currently, there are asynchronous methods that allow you to retrieve the `id()` of the document and the `title()`. Also, associated events will let you listen for when the Document ID or the Document Title have changed, respectively via the `documentIdAvailable` and `documentTitleChange` events, which you can listen for with the [`addOnUISdk.app.on()`](../../../references/addonsdk/addonsdk-app.md#on) method.
+Through the [Add-on UI SDK Document object](../../../references/addonsdk/app-document.md), you can retrieve some information about the current document. Currently, there are asynchronous methods that allow you to retrieve the `id()`, `title()` and the document `link()`. Also, associated events allow you to listen for when the values are available or have changed, via the `documentIdAvailable`, `documentTitleChange`, `documentLinkAvailable`, and `documentPublishedLinkAvailable` events, with the [`addOnUISdk.app.on()`](../../../references/addonsdk/addonsdk-app.md#on) method.
+
+
 
 ### Example
 
@@ -64,11 +68,11 @@ addOnUISdk.ready.then(() => {
   // Get the document Link
   const docLink = await addOnUISdk.app.document.link("document"); // or "published"
 
-  console.log(`Document ID: ${docId}; Document Title: ${docTitle}`; `Document Link: ${docLink}`);
+  console.log(`Document ID: ${docId}; Document Title: ${docTitle}; Document Link: ${docLink}`);
 
   // Listen for document ID change
   addOnUISdk.app.on("documentIdAvailable", data => {
-    console.log(`Document ID changed to: ${data.documentId}`);
+    console.log(`Document ID is available. ID value: ${data.documentId}`);
   });
 
   // Listen for document title change
@@ -76,14 +80,16 @@ addOnUISdk.ready.then(() => {
     console.log(`Document title changed to: ${data.documentTitle}`);
   });
 
-  // Listen for document link change
+  // Listen for document link availability change
     addOnUISdk.app.on("documentLinkAvailable", data => {
-      console.log(`Document ID changed to: ${data.documentLink}`);
+      console.log(`Document link availability changed. Link value: ${data.documentLink}`);
     });
 
-  // Listen for document published link change
+    
+
+  // Listen for published document link availability change (for instance, via the "Publish to Web" option in Adobe Express).
     addOnUISdk.app.on("documentPublishedLinkAvailable", data => {
-      console.log(`Document ID changed to: ${data.documentPublishedLink}`);
+      console.log(`Published document link availability changed. Link value: ${data.documentPublishedLink}`);
     });
 });
 ```
@@ -118,6 +124,8 @@ Please remember that `id()`, `title()`, and `link()` are asynchronous methods an
 
 **A:** You can get "document" link or "published" link via the `link()` method parameter.
 
-#### Q: How do I listen for link changes?
+#### Q: How do I listen for link availability changes?
 
 **A:** Use `documentLinkAvailable` or `documentPublishedLinkAvailable` events with `addOnUISdk.app.on()`.
+
+

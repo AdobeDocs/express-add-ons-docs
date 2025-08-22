@@ -25,7 +25,7 @@ faq:
       answer: "Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats."
 
     - question: "What file formats are supported?"
-      answer: "JPG, PNG, MP4, and PDF formats via `addOnUISdk.constants.RenditionFormat`."
+      answer: "JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`."
 
     - question: "How do I export content for download?"
       answer: "Create rendition, convert blob to URL with `URL.createObjectURL()`, then use anchor element to trigger download."
@@ -66,7 +66,7 @@ Renditions are different output versions of a document made for specific purpose
 
 Renditions are created via the [`createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method of the `addOnUISdk.app.document` object. The method accepts two parameters:
 
-1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the page range that is meant to be exported and the file format (jpg, png, mp4 and pdf).
+1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the page range that is meant to be exported and the file format (jpg, png, mp4, pdf, and pptx).
 2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the intent of the exported content (preview, export, print).
 
 ## Check export permissions
@@ -100,6 +100,33 @@ if (!canExport) {
 **Important:** This check is only necessary for `RenditionIntent.export` and `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the document's review status.
 
 **Why check export permissions first?** If you skip this check and attempt to create export/print renditions when the document doesn't allow exports, users may see an error message such as "Request approval" and "Get approval from your viewers before sharing this file". Checking `exportAllowed()` first lets you provide a better user experience by either offering preview-only options or explaining why export is restricted.
+
+<InlineAlert slots="text" variant="info"/>
+
+To allow the user to download the rendition, the **"permissions"** section should include `"allow-downloads"` in the `"sandbox"` array.
+
+```json
+{
+  "testId": "cbe48204-578d-47cc-9ad4-a9aaa81dc3d3",
+  "name": "Hello World", "version": "1.0.0", "manifestVersion": 2,
+  "requirements": {
+    "apps": [ { "name": "Express", "apiVersion": 1 } ],
+  },
+  "entryPoints": [
+    {
+      "type": "panel", "id": "panel1", "main": "index.html",
+      "documentSandbox": "sandbox/code.js",
+      "permissions": {
+        "sandbox": [
+          "allow-popups-to-escape-sandbox",
+          "allow-popups",
+          "allow-downloads" 👈 👀
+        ]
+      }
+    }
+  ]
+}
+```
 
 ## Export content
 
@@ -191,7 +218,7 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
-There are multiple classes that inherit from the `RenditionOptions` class, such as [`JpgRenditionOptions`](../../../references/addonsdk/app-document.md#jpgrenditionoptions), [`PngRenditionOptions`](../../../references/addonsdk/app-document.md#pngrenditionoptions), and [`PdfRenditionOptions`](../../../references/addonsdk/app-document.md#pdfrenditionoptions). Each of these classes has specific properties that can be set to control the output of the rendition.
+There are multiple classes that inherit from the `RenditionOptions` class, such as [`JpgRenditionOptions`](../../../references/addonsdk/app-document.md#jpgrenditionoptions), [`PngRenditionOptions`](../../../references/addonsdk/app-document.md#pngrenditionoptions), [`PdfRenditionOptions`](../../../references/addonsdk/app-document.md#pdfrenditionoptions), and [`PptxRenditionOptions`](../../../references/addonsdk/app-document.md#pptxrenditionoptions). Each of these classes has specific properties that can be set to control the output of the rendition.
 
 ```js
 const JpgRendition = await addOnUISdk.app.document.createRenditions(
@@ -218,34 +245,23 @@ const pdfRendition = await addOnUISdk.app.document.createRenditions(
 );
 ```
 
-<InlineAlert slots="text" variant="info"/>
-
-To allow the user to download the rendition, the **"permissions"** section should include `"allow-downloads"` in the `"sandbox"` array.
-
-```json
-{
-  "testId": "cbe48204-578d-47cc-9ad4-a9aaa81dc3d3",
-  "name": "Hello World", "version": "1.0.0", "manifestVersion": 2,
-  "requirements": {
-    "apps": [ { "name": "Express", "apiVersion": 1 } ],
-  },
-  "entryPoints": [
-    {
-      "type": "panel", "id": "panel1", "main": "index.html",
-      "documentSandbox": "sandbox/code.js",
-      "permissions": {
-        "sandbox": [
-          "allow-popups-to-escape-sandbox",
-          "allow-popups",
-          "allow-downloads" 👈 👀
-        ]
-      }
-    }
-  ]
-}
+```js
+const pptxRendition = await addOnUISdk.app.document.createRenditions(
+  // PptxRenditionOptions
+  {
+    range: addOnUISdk.constants.Range.entireDocument,
+    format: addOnUISdk.constants.RenditionFormat.pptx,
+  }
+);
 ```
 
-Please also check out the [export-sample add-on](../samples.md#export-sample) for a more detailed example.
+<InlineAlert slots="text1, text2" variant="info"/>
+
+**PPTX Export Considerations:** PPTX export is only available for presentation-type documents in Adobe Express. When implementing PPTX export in your add-on, consider informing users that fonts from Adobe Express might look different in PowerPoint, and that videos, audio, presenter notes, and animations will not be included in the exported file. Adobe Express displays a similar disclaimer when users download PPTX files directly from the app, shown below:
+
+![PPTX export disclaimer in Adobe Express](images/export-ppt-font-disclaimer.png)
+
+Please also check out the [export-sample add-on](../samples.md#export-sample) for a comple add-on sample using `createRenditions()`.
 
 ## The Preview intent
 
@@ -279,7 +295,7 @@ When the `renditionIntent` is set to `RenditionIntent.preview`, you must add to 
 
 #### Q: What file formats are supported?
 
-**A:** JPG, PNG, MP4, and PDF formats via `addOnUISdk.constants.RenditionFormat`.
+**A:** JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`.
 
 #### Q: How do I export content for download?
 
