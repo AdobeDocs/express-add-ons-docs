@@ -26,7 +26,7 @@ faq:
       answer: "Call `await addOnUISdk.app.document.title()` to retrieve the document title."
 
     - question: "How do I get the document link?"
-      answer: 'Call `await addOnUISdk.app.document.link("document")` or `link("published")` for different link types.'
+      answer: 'Call `await addOnUISdk.app.document.link("document")` or `await addOnUISdk.app.document.link("published")` for different link types. This is curently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest).
 
     - question: "How do I listen for document ID changes?"
       answer: 'Use `addOnUISdk.app.on("documentIdAvailable", callback)` to listen for ID changes.'
@@ -35,12 +35,10 @@ faq:
       answer: 'Use `addOnUISdk.app.on("documentTitleChange", callback)` to listen for title changes.'
 
     - question: "What link types are available?"
-      answer: 'You can get "document" link or "published" link via the `link()` method parameter.'
+      answer: 'You can get "document" link or "published" link via the `link()` method. This is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md).'
 
     - question: "How do I listen for link availability changes?"
       answer: "Use `documentLinkAvailable` or `documentPublishedLinkAvailable` events with `addOnUISdk.app.on()`."
-
-
 ---
 
 # Use Document Metadata
@@ -49,7 +47,9 @@ faq:
 
 Through the [Add-on UI SDK Document object](../../../references/addonsdk/app-document.md), you can retrieve some information about the current document. Currently, there are asynchronous methods that allow you to retrieve the `id()`, `title()` and the document `link()`. Also, associated events allow you to listen for when the values are available or have changed, via the `documentIdAvailable`, `documentTitleChange`, `documentLinkAvailable`, and `documentPublishedLinkAvailable` events, with the [`addOnUISdk.app.on()`](../../../references/addonsdk/addonsdk-app.md#on) method.
 
+<InlineAlert slots="text" variant="info"/>
 
+The `link()` method is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md).
 
 ### Example
 
@@ -85,10 +85,8 @@ addOnUISdk.ready.then(() => {
       console.log(`Document link availability changed. Link value: ${data.documentLink}`);
     });
 
-    
-
   // Listen for published document link availability change (for instance, via the "Publish to Web" option in Adobe Express).
-    addOnUISdk.app.on("documentPublishedLinkAvailable", data => {
+  addOnUISdk.app.on("documentPublishedLinkAvailable", data => {
       console.log(`Published document link availability changed. Link value: ${data.documentPublishedLink}`);
     });
 });
@@ -110,7 +108,7 @@ Please remember that `id()`, `title()`, and `link()` are asynchronous methods an
 
 #### Q: How do I get the document link?
 
-**A:** Call `await addOnUISdk.app.document.link("document")` or `link("published")` for different link types.
+**A:** Call `await addOnUISdk.app.document.link("document")` or `link("published")` for different link types. The `link()` method is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md).
 
 #### Q: How do I listen for document ID changes?
 
@@ -122,10 +120,8 @@ Please remember that `id()`, `title()`, and `link()` are asynchronous methods an
 
 #### Q: What link types are available?
 
-**A:** You can get "document" link or "published" link via the `link()` method parameter.
+**A:** You can get the "document" link or "published" document link via the experimental `link()` method. Note, this method currently requires the`experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md).
 
 #### Q: How do I listen for link availability changes?
 
 **A:** Use `documentLinkAvailable` or `documentPublishedLinkAvailable` events with `addOnUISdk.app.on()`.
-
-
