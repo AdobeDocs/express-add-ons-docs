@@ -49,7 +49,7 @@ Through the [Add-on UI SDK Document object](../../../references/addonsdk/app-doc
 
 <InlineAlert slots="text" variant="info"/>
 
-The `link()` method is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md).
+The `link()` method is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest.json](../../../references/manifest/index.md).
 
 ### Example
 
