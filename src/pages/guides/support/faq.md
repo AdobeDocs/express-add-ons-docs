@@ -231,7 +231,7 @@ Adobe Express add-ons support importing various file types through the document 
 **Image Files:**
 
 - JPEG: `image/jpeg`
-- JPG: `image/jpeg` 
+- JPG: `image/jpeg`
 - PNG: `image/png`
 - WebP: `image/webp`
 - GIF: `image/gif` (see [animated GIF requirements](#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document))
