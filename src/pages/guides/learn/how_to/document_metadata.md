@@ -26,16 +26,16 @@ faq:
       answer: "Call `await addOnUISdk.app.document.title()` to retrieve the document title."
 
     - question: "How do I get the document link?"
-      answer: 'Call `await addOnUISdk.app.document.link("document")` or `await addOnUISdk.app.document.link("published")` for different link types. This is curently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest).
+      answer: "Call `await addOnUISdk.app.document.link(\"document\")` or `await addOnUISdk.app.document.link(\"published\")` for different link types. This is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md)."
 
     - question: "How do I listen for document ID changes?"
-      answer: 'Use `addOnUISdk.app.on("documentIdAvailable", callback)` to listen for ID changes.'
+      answer: "Use `addOnUISdk.app.on(\"documentIdAvailable\", callback)` to listen for ID changes."
 
     - question: "How do I listen for title changes?"
-      answer: 'Use `addOnUISdk.app.on("documentTitleChange", callback)` to listen for title changes.'
+      answer: "Use `addOnUISdk.app.on(\"documentTitleChange\", callback)` to listen for title changes."
 
     - question: "What link types are available?"
-      answer: 'You can get "document" link or "published" link via the `link()` method. This is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md).'
+      answer: "You can get \"document\" link or \"published\" link via the `link()` method. This is currently an experimental method and requires the `experimentalApis` flag to be enabled in the [manifest](../../../references/manifest/index.md)."
 
     - question: "How do I listen for link availability changes?"
       answer: "Use `documentLinkAvailable` or `documentPublishedLinkAvailable` events with `addOnUISdk.app.on()`."
