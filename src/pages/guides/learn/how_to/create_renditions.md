@@ -123,6 +123,7 @@ Target specific content:
 ### Rendition Intents
 
 Control how the content is used:
+
 - `preview` - For display only (no download)
 - `export` - For download and sharing
 - `print` - For printing workflows
@@ -332,7 +333,7 @@ const jpgRendition = await addOnUISdk.app.document.createRenditions(
 
 ### PNG Transparency and File Size Limits
 
-The example below shows how to create a rendition of the current page in PNG format with a transparent background, a strict file size limit of 500KB, and a requested size of 800x600 pixels. 
+The example below shows how to create a rendition of the current page in PNG format with a transparent background, a strict file size limit of 500KB, and a requested size of 800x600 pixels.
 
 ```js
 const pngRendition = await addOnUISdk.app.document.createRenditions(
