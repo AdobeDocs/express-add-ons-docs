@@ -794,9 +794,9 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 Extends the [`RenditionOptions`](#renditionoptions) object with the specific format for `pptx` renditions:
 
-|| Name     | Type     |                                                                                     Description |
-|| -------- | -------- | -----------------------------------------------------------------------------------------------: |
-|| `format` | `string` | [`RenditionFormat.pptx`](./addonsdk-constants.md) constant value for PowerPoint presentation. |
+| Name     | Type     |                                                                                     Description |
+| -------- | -------- | -----------------------------------------------------------------------------------------------: |
+| `format` | `string` | [`RenditionFormat.pptx`](./addonsdk-constants.md) constant value for PowerPoint presentation. |
 
 <InlineAlert slots="text" variant="info"/>
 

@@ -31,7 +31,7 @@ faq:
       answer: "Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats."
 
     - question: "What file formats are supported?"
-      answer: "JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`."
+      answer: "JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`. See the [RenditionFormat constants](../../../references/addonsdk/addonsdk-constants.md) for more details."
 
     - question: "How do I export content for download?"
       answer: "Create rendition, convert blob to URL with `URL.createObjectURL()`, then use anchor element to trigger download."
@@ -98,20 +98,22 @@ console.log("Generated:", rendition[0].blob.type); // "image/png"
 
 ## Basic Usage
 
-The `createRenditions` method is used to create renditions of the current page or the entire document in different formats. The method accepts two parameters:
+The [`createRenditions`](../../../references/addonsdk/app-document.md#createrenditions) method is used to create renditions of the current page or the entire document in different formats. The method accepts two parameters:
 
-1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the page range that is meant to be exported and the file format (`jpg`, `png`, `mp4`, `pdf`, and `pptx`).
-2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the intent of the exported content (`preview`, `export`, `print`).
+1. [`renditionOptions`](../../../references/addonsdk/app-document.md#renditionoptions): controls the [page range](#page-ranges) that is meant to be exported and the [file format](#supported-formats).
+2. [`renditionIntent`](../../../references/addonsdk/addonsdk-constants.md) constant (optional): controls the [intent](#rendition-intents) of the rendition (e.g. `RenditionIntent.export`).
 
 ### Supported Formats
 
 Export your designs as:
 
-- JPG - Optimized for photos and social media
-- PNG - Perfect for graphics with transparency
-- MP4 - For video content
-- PDF - Professional documents and printing
-- PPTX - PowerPoint presentations
+- JPG - "image/jpeg" - Optimized for photos and social media
+- PNG - "image/png" - Perfect for graphics with transparency
+- MP4 - "video/mp4" - For video content
+- PDF - "application/pdf" - Professional documents and printing
+- PPTX - "application/vnd.openxmlformats-officedocument.presentationml.presentation" - PowerPoint presentations
+
+The [RenditionFormat constants](../../../references/addonsdk/addonsdk-constants.md) can be used to set the format of the rendition over the MIME types specifically (e.g. `RenditionFormat.jpg`).
 
 ### Page Ranges
 
@@ -120,17 +122,21 @@ Target specific content:
 - `currentPage` - Export just the current page
 - `entireDocument` - Export all pages
 
+The [Range constants](../../../references/addonsdk/addonsdk-constants.md) can be used to set the range of the rendition (e.g. `Range.currentPage`).
+
 ### Rendition Intents
 
 Control how the content is used:
 
-- `preview` - For display only (no download)
 - `export` - For download and sharing
+- `preview` - For display only (no download)
 - `print` - For printing workflows
+
+The [RenditionIntent constants](../../../references/addonsdk/addonsdk-constants.md) can be used to set the intent of the rendition (e.g. `RenditionIntent.export`).
 
 ## Export Permissions and Collaborative Workflows
 
-The `exportAllowed()` method determines whether the current document can be exported based on its review status in collaborative workflows. This applies mainly to [enterprise customers using Adobe Express's review and approval features](https://business.adobe.com/products/workfront/integrations/express.html), where documents may be restricted from export until approved by designated reviewers.
+The `exportAllowed()` method determines whether the current document can be exported based on its review status in collaborative workflows. This applies to [enterprise customers using Adobe Express's review and approval features](https://business.adobe.com/products/workfront/integrations/express.html), where documents may be restricted from export until approved by designated reviewers.
 
 Before creating renditions for export or print purposes, you can check that it's permitted first using the [`exportAllowed()`](../../../references/addonsdk/app-document.md#exportallowed) method:
 
@@ -156,7 +162,7 @@ if (!canExport) {
 
 <InlineAlert slots="text" variant="info"/>
 
-**Important:** This check is only necessary for `RenditionIntent.export` and `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the document's review status.
+**Important:** This check is only necessary for `RenditionIntent.export` and `RenditionIntent.print` for documents that are under review. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the document's review status.
 
 **Why check export permissions first?** If you skip this check and attempt to create export/print renditions when the document doesn't allow exports, users may see an error message such as "Request approval" and "Get approval from your viewers before sharing this file". Checking `exportAllowed()` first lets you provide a better user experience by either offering preview-only options or explaining why export is restricted.
 
@@ -397,7 +403,7 @@ Please also check out the [export-sample add-on](../samples.md#export-sample) fo
 
 #### Q: What file formats are supported?
 
-**A:** JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`.
+**A:** JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`. See the [RenditionFormat constants](../../../references/addonsdk/addonsdk-constants.md) for more details.
 
 #### Q: How do I export content for download?
 
