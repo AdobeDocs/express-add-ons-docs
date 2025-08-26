@@ -1028,8 +1028,6 @@ This method is particularly useful in collaborative environments where documents
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
-
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
