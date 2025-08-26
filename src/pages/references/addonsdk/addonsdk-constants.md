@@ -205,6 +205,7 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
           <li><strong>png</strong></li><pre>"image/png"</pre>
           <li><strong>mp4</strong></li><pre>"video/mp4"</pre>
           <li><strong>pdf</strong></li><pre>"application/pdf"</pre>
+          <li><strong>pptx</strong></li><pre>"application/vnd.openxmlformats-officedocument.presentationml.presentation"</pre>
         </ul>
     </td>
 </tr>
