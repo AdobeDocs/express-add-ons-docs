@@ -114,11 +114,11 @@ addOnUISdk.app.ui.openEditorPanel(EditorPanel.media);
 
 ### Import Patterns
 
-Adobe Express Add-on SDK constants are available through different import patterns depending on the constant type. Understanding these patterns is imperative for avoiding runtime errors.
+Adobe Express Add-on SDK constants are available through different import patterns depending on the constant type. Understanding these patterns is essential for avoiding runtime errors.
 
 #### Named Exports (Import Required)
 
-These constants are **only available as named exports** and must be imported explicitly. They are **not** available through `addOnUISdk.constants.*`:
+These constants are **only available as named exports** and must be imported explicitly. They are **NOT** available through `addOnUISdk.constants.*`:
 
 ```javascript
 import addOnUISdk, { 
