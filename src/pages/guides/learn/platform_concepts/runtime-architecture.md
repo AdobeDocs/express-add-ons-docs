@@ -36,32 +36,30 @@ Adobe Express add-ons run in **two separate JavaScript execution environments** 
 ## Architecture Diagram
 
 ```mermaid
-graph TB
-    subgraph "Adobe Express Add-on Architecture"
-        
-        subgraph UI["UI Runtime Environment<br/>(iframe)<br/>"]
-            UICode["index.js/index.html<br/>Your Add-on UI"]
-            UIRuntime["addOnUISdk.instance.runtime<br/>Communication Bridge"]
-            UIFeatures["• User Interface<br/>• Event Handling<br/>• OAuth & Storage<br/>• Modal Dialogs<br/>"]
-        end
-        
-        subgraph Sandbox["Document Sandbox Environment<br/>(Secure JavaScript Context)<br/>"]
-            SandboxCode["code.js<br/><br/><br/><br/><br/>Document Manipulation"]
-            SandboxRuntime["addOnSandboxSdk.instance.runtime<br/>Communication Bridge"]
-            SandboxFeatures["• Document API<br/>• Create Elements<br/>• Modify Content<br/>• Export Renditions<br/>"]
-        end
-        
-        UIRuntime -.->|"<runtime.apiProxy('documentSandbox')<br/>"| SandboxRuntime
-        SandboxRuntime -.->|"runtime.apiProxy('panel')<br/>"| UIRuntime
-        
-        UIRuntime -->|"exposeApi()"| UICode
-        SandboxRuntime -->|"exposeApi()"| SandboxCode
-    end
-    
-    style UI fill:#ba68c8
-    style Sandbox fill:#333333
-    style UIRuntime fill:#000000
-    style SandboxRuntime fill:##68c8ba
+flowchart TB
+  subgraph UI["UI Runtime Environment<br/>(iframe)"]
+    direction TB
+    UICode["index.js / index.html<br/>Your Add-on UI"]
+    UIFeatures["• User Interface<br/>• Event Handling<br/>• OAuth & Storage<br/>• Modal Dialogs"]
+    UIRuntime["addOnUISdk.instance.runtime<br/>Communication Bridge"]
+  end
+
+  subgraph Sandbox["Document Sandbox Environment<br/>"]
+    direction TB
+    SandboxCode["code.js<br/>Document Manipulation"]
+    SandboxFeatures["• Document API<br/>• Create Elements<br/>• Modify Content<br/>• Export Renditions"]
+    SandboxRuntime["addOnSandboxSdk.instance.runtime<br/>Communication Bridge"]
+  end
+
+  UIRuntime -.->|" runtime.apiProxy('documentSandbox') "| SandboxRuntime
+  SandboxRuntime -.->|" runtime.apiProxy('panel') "| UIRuntime
+  UIRuntime -->|" exposeApi() "| UICode
+  SandboxRuntime -->|" exposeApi() "| SandboxCode
+
+  style UI fill:#a772fc,stroke:#a455b6,color:#111
+  style Sandbox fill:#564aff,stroke:#444444,color:#ffffff
+  style UIRuntime fill:#000,stroke:#222222,color:#ffffff
+  style SandboxRuntime fill:#68c8ba,stroke:#4baea2,color:#111
 ```
 
 ## What is the Runtime Object?
