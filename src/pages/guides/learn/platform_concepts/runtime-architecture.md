@@ -33,35 +33,27 @@ Adobe Express add-ons run in **two separate JavaScript execution environments** 
 1. **UI Runtime** - Your add-on's user interface (iframe)
 2. **Document Sandbox** - Secure environment for document manipulation
 
-## Architecture Diagram
+## Architecture Diagrams
 
-```mermaid
-flowchart TB
-  subgraph UI["UI Runtime Environment<br/>(iframe)"]
-    direction TB
-    UICode["index.js / index.html<br/>Your Add-on UI"]
-    UIFeatures["• User Interface<br/>• Event Handling<br/>• OAuth & Storage<br/>• Modal Dialogs"]
-    UIRuntime["addOnUISdk.instance.runtime<br/>Communication Bridge"]
-  end
+### **Architecture: Two Runtime Communication**
 
-  subgraph Sandbox["Document Sandbox Environment<br/>"]
-    direction TB
-    SandboxCode["code.js<br/>Document Manipulation"]
-    SandboxFeatures["• Document API<br/>• Create Elements<br/>• Modify Content<br/>• Export Renditions"]
-    SandboxRuntime["addOnSandboxSdk.instance.runtime<br/>Communication Bridge"]
-  end
-
-  UIRuntime -.->|" runtime.apiProxy('documentSandbox') "| SandboxRuntime
-  SandboxRuntime -.->|" runtime.apiProxy('panel') "| UIRuntime
-  UIRuntime -->|" exposeApi() "| UICode
-  SandboxRuntime -->|" exposeApi() "| SandboxCode
-
-  style UI fill:#a772fc,stroke:#a455b6,color:#111
-  style Sandbox fill:#564aff,stroke:#444444,color:#ffffff
-  style UIRuntime fill:#000,stroke:#222222,color:#ffffff
-  style SandboxRuntime fill:#68c8ba,stroke:#4baea2,color:#111
 ```
-
+┌─────────────────────────────────────┐    ┌─────────────────────────────────────┐
+│           UI iframe                 │    │        Document Sandbox             │
+│        (Add-on UI SDK)              │    │     (Document Sandbox SDK)          │
+├─────────────────────────────────────┤    ├─────────────────────────────────────┤
+│ • DOM access                        │    │ • Document APIs (editor, nodes)     │
+│ • Full browser APIs                 │◄──►│ • Limited browser APIs (console,    │
+│ • Event handling                    │    │   Blob)                             │
+│ • UI interactions                   │    │ • Communication APIs (runtime)      │
+│ • addOnUISdk.app.document.addImage()│    │ • Direct scenegraph manipulation    │
+└─────────────────────────────────────┘    └─────────────────────────────────────┘
+          │                                              │
+          │         runtime.apiProxy()                   │
+          │         runtime.exposeApi()                  │
+          └──────────────────────────────────────────────┘
+                    Communication Layer
+```
 ## What is the Runtime Object?
 
 The `runtime` object acts as a **communication bridge** between the two environments. Each environment has its own runtime object:
@@ -83,6 +75,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
 **Capabilities:**
+
 - Render your add-on's user interface
 - Handle user interactions (clicks, form inputs)
 - Access browser APIs (fetch, localStorage)
@@ -192,63 +185,9 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-## Frequently Asked Questions
+## Understanding the Document Sandbox SDK Imports
 
-### Q: Why are there two different runtime objects?
-
-**A:** Each environment has its own runtime object that acts as a "communication phone." The UI runtime calls the document sandbox, and the document sandbox runtime calls the UI. This separation ensures security and proper isolation.
-
-### Q: When do I use `addOnUISdk.instance.runtime` vs `addOnSandboxSdk.instance.runtime`?
-
-**A:** Use the runtime object from the environment you're currently in:
-- In `index.js` (UI): Use `addOnUISdk.instance.runtime`
-- In `code.js` (Sandbox): Use `addOnSandboxSdk.instance.runtime`
-
-### Q: What does `await runtime.apiProxy("documentSandbox")` actually do?
-
-**A:** It creates a proxy object that lets you call functions you've exposed in the document sandbox from your UI code. Think of it as getting a "remote control" for the other environment.
-
-### Q: What's the difference between `"documentSandbox"` and `"panel"` in apiProxy?
-
-**A:** These specify which environment you want to communicate with:
-- `"documentSandbox"` - Call from UI to document sandbox
-- `"panel"` - Call from document sandbox to UI
-
-### Q: Can I access document APIs directly from the UI?
-
-**A:** No, document APIs are only available in the document sandbox for security reasons. You must use the communication system to bridge between environments.
-
-### Q: How do I know which environment my code is running in?
-
-**A:** Check your file structure and imports:
-- If you're importing `addOnUISdk` → You're in the UI runtime
-- If you're importing `addOnSandboxSdk` → You're in the document sandbox
-
-### Q: Do I always need both imports in my code.js file?
-
-**A:** No! It depends on what your add-on does:
-
-- **Communication only**: Just `addOnSandboxSdk` (no document changes)
-- **Document only**: Just `express-document-sdk` (no UI communication)  
-- **Both**: Most add-ons need both for UI-triggered document operations
-
-### Q: Why do some examples show one import and others show both?
-
-**A:** Different add-on types have different needs:
-- Simple document manipulation → One import
-- UI-controlled document changes → Both imports
-- The example context determines which imports are shown
-
-### Q: What else is available in the add-on-sdk-document-sandbox package?
-
-**A:** Besides `runtime`, the sandbox SDK provides:
-- **Web APIs**: Limited browser APIs like `console` for debugging
-- **Automatic global injections**: No need to import basic APIs
-- **Secure execution environment**: Isolated JavaScript context
-
-## Understanding the Two SDK Imports
-
-### When do I need both SDK imports in code.js?
+### When do I need both SDK imports in `code.js`?
 
 This is a common source of confusion. In your `code.js` file, you may need one or both imports depending on what your add-on does:
 
@@ -302,18 +241,21 @@ runtime.exposeApi({
 ### Quick Decision Guide
 
 **Do I need `addOnSandboxSdk`?**
-- ✅ YES if your code.js needs to communicate with the UI
+
+- ✅ YES if your `code.js` needs to communicate with the UI
 - ✅ YES if UI triggers document operations
-- ❌ NO if code.js runs independently
+- ❌ NO if `code.js` runs independently
 
 **Do I need `express-document-sdk`?**
+
 - ✅ YES if creating/modifying document content
 - ✅ YES if accessing document properties
 - ❌ NO if only processing data or communicating
 
-### Real-World Examples
+### Examples
 
 #### Example 1: Text Generator Add-on
+
 ```js
 // sandbox/code.js - Needs BOTH imports
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";  // UI sends text data
@@ -332,6 +274,7 @@ runtime.exposeApi({
 ```
 
 #### Example 2: Document Analytics Add-on
+
 ```js
 // sandbox/code.js - Needs BOTH imports  
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";  // Send results to UI
@@ -348,6 +291,7 @@ runtime.exposeApi({
 ```
 
 #### Example 3: Document Analysis Utility
+
 ```js
 // sandbox/code.js - Only needs express-document-sdk
 import { editor } from "express-document-sdk";
@@ -572,7 +516,7 @@ The sandbox requires proper manifest setup:
 | File system access | ✅ | ❌ | - |
 | Network requests | ✅ | ❌* | - |
 
-*Can be proxied through UI runtime
+* Can be proxied through UI runtime
 
 ## Best Practices
 
@@ -599,16 +543,69 @@ The sandbox requires proper manifest setup:
    - Use sandbox console for document sandbox debugging
    - Use `console.assert()` for validation checks
 
+## Frequently Asked Questions
+
+### Q: Why are there two different runtime objects?
+
+**A:** Each environment has its own runtime object that acts as a "communication phone." The UI runtime calls the document sandbox, and the document sandbox runtime calls the UI. This separation ensures security and proper isolation.
+
+### Q: When do I use `addOnUISdk.instance.runtime` vs `addOnSandboxSdk.instance.runtime`?
+
+**A:** Use the runtime object from the environment you're currently in:
+- In `index.js` (UI): Use `addOnUISdk.instance.runtime`
+- In `code.js` (Sandbox): Use `addOnSandboxSdk.instance.runtime`
+
+### Q: What does `await runtime.apiProxy("documentSandbox")` actually do?
+
+**A:** It creates a proxy object that lets you call functions you've exposed in the document sandbox from your UI code. Think of it as getting a "remote control" for the other environment.
+
+### Q: What's the difference between `"documentSandbox"` and `"panel"` in apiProxy?
+
+**A:** These specify which environment you want to communicate with:
+- `"documentSandbox"` - Call from UI to document sandbox
+- `"panel"` - Call from document sandbox to UI
+
+### Q: Can I access document APIs directly from the UI?
+
+**A:** No, document APIs are only available in the document sandbox for security reasons. You must use the communication system to bridge between environments.
+
+### Q: How do I know which environment my code is running in?
+
+**A:** Check your file structure and imports:
+- If you're importing `addOnUISdk` → You're in the UI runtime
+- If you're importing `addOnSandboxSdk` → You're in the document sandbox
+
+### Q: Do I always need both imports in my code.js file?
+
+**A:** No! It depends on what your add-on does:
+
+- **Communication only**: Just `addOnSandboxSdk` (no document changes)
+- **Document only**: Just `express-document-sdk` (no UI communication)  
+- **Both**: Most add-ons need both for UI-triggered document operations
+
+### Q: Why do some examples show one import and others show both?
+
+**A:** Different add-on types have different needs:
+- Simple document manipulation → One import
+- UI-controlled document changes → Both imports
+- The example context determines which imports are shown
+
+### Q: What else is available in the add-on-sdk-document-sandbox package?
+
+**A:** Besides `runtime`, the sandbox SDK provides:
+- **Web APIs**: Limited browser APIs like `console` for debugging
+- **Automatic global injections**: No need to import basic APIs
+- **Secure execution environment**: Isolated JavaScript context
+
 ## Related Topics
 
 - [Communication APIs Reference](../../../references/document-sandbox/communication/index.md)
 - [UI SDK Reference](../../../references/addonsdk/index.md)
 - [Document API Concepts](./document-api.md)
-- [Modal Dialogs Tutorial](../how_to/modal_dialogs.md)
 
 ## Next Steps
 
-Now that you understand the architecture, explore these tutorials:
+Now that you understand the architecture, explore these guides:
+
+- [Document API deep dive](./document-api.md): Learn how to use the Document API to create and modify document content.
 - [Building your first add-on](../how_to/tutorials/grids-addon.md)
-- [Using Communication APIs](../how_to/modal_dialogs.md)
-- [Document API deep dive](./document-api.md)
