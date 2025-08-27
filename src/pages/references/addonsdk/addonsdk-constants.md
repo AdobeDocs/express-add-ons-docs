@@ -1,16 +1,19 @@
 # addOnUISdk.constants
 
-This reference covers **all Adobe Express Add-on SDK constants**, including:
+This reference covers set of constants used throughout the Add-on UI SDK, including:
+
 - Constants available in `addOnUISdk.constants.*` (dual access)
 - Constants available only as named exports (import required)
 
 See the [Import Patterns](#import-patterns) section for details on how to access each type.
 
-A set of constants used throughout the add-on SDK. These constants are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary".
+<InlineAlert slots="text" variant="info"/>
+
+The constants listed in this reference are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary".
 
 ## Import Patterns
 
-Adobe Express Add-on SDK constants are available through different import patterns depending on the constant type. Understanding these patterns is crucial for avoiding runtime errors.
+Adobe Express Add-on SDK constants are available through different import patterns depending on the constant type. Understanding these patterns is imperative for avoiding runtime errors.
 
 ### Named Exports (Import Required)
 
@@ -52,6 +55,7 @@ const confirmDialog = addOnUISdk.constants.Variant.confirmation;
 ```
 
 **Dual Access Constants List:**
+
 - `Range` / `addOnUISdk.constants.Range`
 - `RenditionFormat` / `addOnUISdk.constants.RenditionFormat`
 - `RenditionType` / `addOnUISdk.constants.RenditionType`
@@ -71,6 +75,13 @@ const confirmDialog = addOnUISdk.constants.Variant.confirmation;
 - `PlatformEnvironment` / `addOnUISdk.constants.PlatformEnvironment`
 - `DeviceClass` / `addOnUISdk.constants.DeviceClass`
 - `PlatformType` / `addOnUISdk.constants.PlatformType`
+- `MediaType` / `addOnUISdk.constants.MediaType`
+- `VideoResolution` / `addOnUISdk.constants.VideoResolution`
+- `FrameRate` / `addOnUISdk.constants.FrameRate`
+- `BitRate` / `addOnUISdk.constants.BitRate`
+- `FileSizeLimitUnit` / `addOnUISdk.constants.FileSizeLimitUnit`
+- `LinkOptions` / `addOnUISdk.constants.LinkOptions`
+
 
 ### Best Practices
 
@@ -111,12 +122,154 @@ const confirmDialog = addOnUISdk.constants.Variant.confirmation;
 | `PlatformEnvironment` | ✅ | ✅ | Optional |
 | `DeviceClass` | ✅ | ✅ | Optional |
 | `PlatformType` | ✅ | ✅ | Optional |
+| `AuthorizationStatus` | ✅ | ✅ | Optional |
+| `RenditionType` | ✅ | ✅ | Optional |
+| `RenditionIntent` | ✅ | ✅ | Optional |
+| `DialogResultType` | ✅ | ✅ | Optional |
+| `RuntimeType` | ✅ | ✅ | Optional |
+| `BleedUnit` | ✅ | ✅ | Optional |
+| `EditorPanel` | ✅ | ✅ | Optional |
+| `MediaTabs` | ✅ | ✅ | Optional |
+| `ElementsTabs` | ✅ | ✅ | Optional |
+| `PanelActionType` | ✅ | ✅ | Optional |
+| `ColorPickerPlacement` | ✅ | ✅ | Optional |
+| `MediaType` | ✅ | ✅ | Optional |
+| `VideoResolution` | ✅ | ✅ | Optional |
+| `FrameRate` | ✅ | ✅ | Optional |
+| `BitRate` | ✅ | ✅ | Optional |
+| `FileSizeLimitUnit` | ✅ | ✅ | Optional |
+| `LinkOptions` | ✅ | ✅ | Optional |
+
 
 <InlineAlert slots="text" variant="warning"/>
 
 **Important:** Attempting to access named-only exports through `addOnUISdk.constants.*` will return `undefined` and may cause runtime errors. Always check the table above or use TypeScript for compile-time validation.
 
-## Constants
+## Add-on UI SDK Constants
+
+### **Dialog & UI Interaction Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`Variant`** | `confirmation`, `information`, `warning`, `destructive`, `error`, `input`, `custom` | Dialog types for `showModalDialog()` | `addOnUISdk.app.showModalDialog({variant: Variant.error})` |
+| **`ButtonType`** | `primary`, `secondary`, `cancel`, `close` | Button types in dialog responses | Check `result.buttonType === ButtonType.primary` |
+| **`FieldType`** | `text` | Input field types for input dialogs | Used in dialog field configuration |
+| **`DialogResultType`** | `alert`, `input`, `custom` | Types of dialog results returned | Determine result structure type |
+
+### **Platform & Environment Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`PlatformType`** | `iOS`, `iPadOS`, `chromeOS`, `android`, `chromeBrowser`, `firefoxBrowser`, `edgeBrowser`, `samsungBrowser`, `safariBrowser`, `unknown` | Platform identification | `platform.platformType === PlatformType.iOS` |
+| **`PlatformEnvironment`** | `app`, `web` | Runtime environment type | Check if running in app vs web |
+| **`DeviceClass`** | `mobile`, `tablet`, `desktop` | Device category | Responsive design decisions |
+| **`RuntimeType`** | `panel`, `dialog`, `documentSandbox`, `command` | Add-on runtime types | Communication API configuration |
+| **`EntrypointType`** | `WIDGET`, `COMMAND`, `SCRIPT`, `PANEL`, `SHARE`, `CONTENT_HUB`, `MOBILE_MEDIA_AUDIO`, `MOBILE_YOUR_STUFF_FILES`, `MOBILE_MORE`, `SCHEDULE`, `CONTEXTUAL_REPLACE`, `CONTEXTUAL_UPLOAD`, `CONTEXTUAL_BULK_CREATE` | Types of add-on entrypoints | `addOn.entrypointType === EntrypointType.PANEL` |
+
+### **Document Export & Rendering Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`Range`** | `currentPage`, `entireDocument`, `specificPages` | Rendition page ranges | `createRenditions({range: Range.currentPage})` |
+| **`RenditionFormat`** | `png`, `jpg`, `mp4`, `pdf`, `pptx` | Export file formats | Specify output format for renditions |
+| **`RenditionType`** | `page` | Type of rendition | Document export configuration |
+| **`RenditionIntent`** | `export`, `preview`, `print` | Purpose of rendition | Optimize rendering for use case |
+
+### **Video & Media Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`VideoResolution`** | `sd480p`, `hd720p`, `fhd1080p`, `qhd1440p`, `uhd2160p`, `custom` | Video export resolutions | Video rendition quality settings |
+| **`FrameRate`** | `fps23_976`, `fps24`, `fps25`, `fps29_97`, `fps30`, `fps60` | Video frame rates | Video export frame rate |
+| **`BitRate`** | `mbps4`, `mbps8`, `mbps10`, `mbps12`, `mbps15`, `mbps25`, `mbps50` | Video bit rates in Mbps | Video compression settings |
+
+### **Print & Layout Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`BleedUnit`** | `Inch`, `Millimeter` | Print bleed units | Print preparation |
+
+### **Editor Panel Navigation Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`EditorPanel`** | `search`, `yourStuff`, `templates`, `media`, `text`, `elements`, `grids`, `brands`, `addOns` | Express editor panels | `openEditorPanel(EditorPanel.media)` |
+| **`MediaTabs`** | `video`, `audio`, `photos` | Media panel tabs | Navigate to specific media type |
+| **`ElementsTabs`** | `designAssets`, `backgrounds`, `shapes`, `stockIcons`, `charts` | Elements panel tabs | Navigate to specific element type |
+| **`PanelActionType`** | `search`, `navigate` | Panel action types | Panel interaction configuration |
+
+### **Color Picker Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`ColorPickerPlacement`** | `top`, `bottom`, `left`, `right` | Color picker positioning | `showColorPicker(element, {placement: ColorPickerPlacement.top})` |
+
+### **Event Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`AppEvent`** | `documentIdAvailable`, `documentTitleChange`, `documentLinkAvailable`, `documentPublishedLinkAvailable`, `themechange`, `localechange`, `formatchange`, `reset`, `dragstart`, `dragend`, `dragcancel`, `documentExportAllowedChange` | Events dispatched by the Add-on SDK | `addOnUISdk.app.on(AppEvent.themechange, handler)` |
+| **`ColorPickerEvent`** | `colorChange`, `close` | Custom events dispatched by the Color Picker | Listen for color picker events on anchor element |
+
+### **File Management Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`SupportedMimeTypes`** | `docx`, `gdoc` | MIME types for original source assets converted to PDF | File import validation |
+| **`PdfReturnUrlType`** | `cdnUrl`, `jumpUrl` | Type of URL returned for PDF rendition export | PDF export configuration |
+| **`MediaType`** | `Audio` | Media type identifiers | Media handling and processing |
+| **`FileSizeLimitUnit`** | `KB`, `MB` | File size limit units | File upload constraints |
+| **`LinkOptions`** | `document`, `published` | Types of document links available | `addOnUISdk.app.document.link(LinkOptions.published)` |
+
+### **OAuth & Authentication Constants**
+
+| Constant | Values | Description | Usage |
+|----------|--------|-------------|-------|
+| **`AuthorizationStatus`** | `SUCCESS`, `POPUP_OPENED`, `POPUP_BLOCKED`, `POPUP_CLOSED`, `POPUP_TIMEOUT`, `FAILED`, `IFRAME_LOAD_FAILED` | OAuth authorization workflow status values | `result.status === AuthorizationStatus.SUCCESS` |
+
+### **Usage Examples**
+
+```typescript
+import addOnUISdk, { 
+    Variant, 
+    PlatformType, 
+    RenditionFormat, 
+    EditorPanel 
+} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Dialog with error variant
+await addOnUISdk.app.showModalDialog({
+    variant: Variant.error,
+    title: "Upload Failed",
+    description: "File size exceeds limit"
+});
+
+// Platform-specific behavior
+const platform = await addOnUISdk.app.getCurrentPlatform();
+if (platform.platformType === PlatformType.iOS) {
+    // iOS-specific handling
+}
+
+// Export document as PNG
+await addOnUISdk.app.document.createRenditions({
+    format: RenditionFormat.png,
+    range: Range.currentPage
+});
+
+// Navigate to media panel
+addOnUISdk.app.ui.openEditorPanel(EditorPanel.media);
+```
+
+### **Notes for Developers**
+
+- **All constants are available as named exports** from the Add-on UI SDK
+- **Use constants instead of string literals** for type safety and future compatibility
+- **Some constants are marked as `@internal`** (like `ToastVariant`, `FeatureType`, `SettingType`) and are not included as they're for internal/privileged use only
+- **Platform detection is crucial** for responsive add-on design across different devices and browsers
+
+These constants provide type-safe ways to interact with all the major Add-on UI SDK features that third-party developers commonly use!
+
+<!-- ## Constants
 
 <table columnWidths="30,20,60" class="spectrum-Table spectrum-Table--sizeM" css="
     background-color:lavender;
@@ -488,4 +641,4 @@ const confirmDialog = addOnUISdk.constants.Variant.confirmation;
     </td>
 </tr>
 </tbody>
-</table>
+</table> -->
