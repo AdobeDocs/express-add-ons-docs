@@ -1,11 +1,9 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on SDK
-  - Express Editor
-  - Adobe Express
   - Add-on SDK
-  - SDK
+  - Adobe Express Editor
+  - SDK (Software Development Kit)
   - JavaScript
   - Extend
   - Extensibility
@@ -13,6 +11,8 @@ keywords:
   - Runtime
   - Communication
   - Document Sandbox
+  - Document Sandbox SDK
+  - Document API
   - UI Runtime
   - Architecture
   - Two-Runtime System
@@ -61,7 +61,7 @@ The `runtime` object acts as a **communication bridge** between the two environm
 - **UI Runtime**: `addOnUISdk.instance.runtime`
 - **Document Sandbox**: `addOnSandboxSdk.instance.runtime`
 
-Think of it as a "phone line" - each side has their own phone to call the other side.
+The communication bridge can be thought of like a phone line - each side has their own phone to call the other side.
 
 ## The Two Environments Explained
 
@@ -93,6 +93,7 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 ```
 
 **Capabilities:**
+
 - Access Adobe Express Document API
 - Create and modify document elements
 - Export renditions
@@ -106,6 +107,7 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 When you want to manipulate the document from your UI:
 
 #### UI Runtime (index.js)
+
 ```js
 // ui/index.js - Your add-on's interface
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -125,6 +127,7 @@ addOnUISdk.ready.then(async () => {
 ```
 
 #### Document Sandbox (code.js)
+
 ```js
 // sandbox/code.js - Document manipulation
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
@@ -183,6 +186,31 @@ addOnUISdk.ready.then(() => {
     }
   });
 });
+```
+
+### Runtime Type Detection
+
+#### UI Runtime (index.js)
+```js
+// ui/index.js - Your add-on's interface
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(() => {
+  const { runtime } = addOnUISdk.instance;
+  // Check what type of runtime you're in
+  console.log(runtime.type); // "panel"
+});
+```
+
+#### Document Sandbox (code.js)
+
+```js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+
+const { runtime } = addOnSandboxSdk.instance;
+
+// Check what type of runtime you're in
+console.log(runtime.type); // "documentSandbox"
 ```
 
 ## Understanding the Document Sandbox SDK Imports
@@ -341,38 +369,6 @@ Document analysis or operations that run without UI interaction:
 // Only requires express-document-sdk
 ```
 
-## Error Handling
-
-### Common Error: "Runtime is undefined"
-
-❌ **Wrong:** Trying to use runtime before SDK is ready
-```js
-const { runtime } = addOnUISdk.instance; // Error! SDK not ready yet
-```
-
-✅ **Correct:** Wait for SDK ready state
-```js
-addOnUISdk.ready.then(() => {
-  const { runtime } = addOnUISdk.instance; // Now it's safe
-});
-```
-
-### Common Error: "Cannot read property 'apiProxy' of undefined"
-
-❌ **Wrong:** Using wrong SDK in wrong environment
-```js
-// In code.js (Document Sandbox)
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-const { runtime } = addOnUISdk.instance; // Wrong SDK!
-```
-
-✅ **Correct:** Use appropriate SDK for each environment
-```js
-// In code.js (Document Sandbox)
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-const { runtime } = addOnSandboxSdk.instance; // Correct SDK!
-```
-
 ## Complete add-on-sdk-document-sandbox Package Overview
 
 The `add-on-sdk-document-sandbox` package provides more than just the `runtime` object. Here's what you get:
@@ -441,28 +437,6 @@ const { runtime } = addOnSandboxSdk.instance;
 import { editor, colorUtils, constants, fonts } from "express-document-sdk";
 ```
 
-### Advanced Runtime Features
-
-#### Runtime Type Detection
-```js
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-
-const { runtime } = addOnSandboxSdk.instance;
-
-// Check what type of runtime you're in
-console.log(runtime.type); // "documentSandbox"
-```
-
-#### Environment Information
-```js
-// The SDK provides context about the execution environment
-// This helps with debugging and conditional logic
-if (runtime.type === "documentSandbox") {
-    // You're in the document sandbox
-    console.log("Running in secure document context");
-}
-```
-
 ### Debugging Capabilities
 
 Since the document sandbox has limited debugging, use these patterns:
@@ -487,6 +461,26 @@ try {
 console.assert(myVariable !== undefined, "Variable should be defined");
 ```
 
+### Quick Reference: All SDK Imports
+
+| Feature | UI Runtime<br/>`addOnUISdk` | Document Sandbox<br/>`addOnSandboxSdk` | Document Sandbox<br/>`express-document-sdk` |
+|---------|------------|------------------|-----------------|
+| **Import Statement** | `import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js"` | `import addOnSandboxSdk from "add-on-sdk-document-sandbox"` | `import { editor } from "express-document-sdk"` |
+| **File Location** | `index.js/index.html` | `code.js` | `code.js` |
+| **Primary Purpose** | User interface & browser interactions | Communication between environments | Document manipulation |
+| **Runtime Communication** | ✅ `instance.runtime` | ✅ `instance.runtime` | ❌ No communication |
+| **Document Creation** | ❌ No direct access | ❌ No direct access | ✅ `editor.createText()`, etc. |
+| **Document Reading** | ❌ No direct access | ❌ No direct access | ✅ `editor.context` |
+| **Export Renditions** | ✅ `app.document.createRenditions()` | ❌ No direct access | ❌ No direct access |
+| **Modal Dialogs** | ✅ `app.showModalDialog()` | ❌ No direct access | ❌ No direct access |
+| **OAuth** | ✅ `app.oauth` | ❌ No direct access | ❌ No direct access |
+| **File Upload/Download** | ✅ Full browser APIs | ❌ No direct access | ❌ No direct access |
+| **DOM Manipulation** | ✅ Full DOM access | ❌ No DOM access | ❌ No DOM access |
+| **Browser APIs** | ✅ All browser APIs | ❌ Limited (console, Blob) | ❌ Limited (console, Blob) |
+| **Platform Detection** | ✅ `app.getCurrentPlatform()` | ❌ No direct access | ❌ No direct access |
+| **Client Storage** | ✅ `instance.clientStorage` | ❌ No direct access | ❌ No direct access |
+| **Constants** | ✅ `constants.*` | ❌ No constants | ✅ Document constants |
+
 ### Manifest Configuration
 
 The sandbox requires proper manifest setup:
@@ -504,19 +498,38 @@ The sandbox requires proper manifest setup:
 }
 ```
 
-### Quick Reference: What's Available Where
+### SDK Import Decision Matrix
 
-| Feature | UI Runtime | Document Sandbox | Import Required |
-|---------|------------|------------------|-----------------|
-| Full browser APIs | ✅ | ❌ | - |
-| Console logging | ✅ | ✅ | ❌ (Auto-injected) |
-| Document APIs | ❌ | ✅ | `express-document-sdk` |
-| Communication | ✅ | ✅ | Both SDKs |
-| DOM manipulation | ✅ | ❌ | - |
-| File system access | ✅ | ❌ | - |
-| Network requests | ✅ | ❌* | - |
+| Your Add-on Needs | UI Runtime | Document Sandbox | Required Imports |
+|-------------------|------------|------------------|------------------|
+| **UI only** (no document changes) | ✅ | ❌ | `addOnUISdk` |
+| **Document manipulation only** | ❌ | ✅ | `express-document-sdk` |
+| **UI + Document communication** | ✅ | ✅ | `addOnUISdk` + `addOnSandboxSdk` |
+| **UI + Document creation** | ✅ | ✅ | `addOnUISdk` + `addOnSandboxSdk` + `express-document-sdk` |
+| **Data processing only** | ❌ | ✅ | `addOnSandboxSdk` (for communication) |
+| **Export/Import only** | ✅ | ❌ | `addOnUISdk` |
 
-* Can be proxied through UI runtime
+### Common Import Patterns
+
+```js
+// Pattern 1: UI-only add-on (no document changes)
+// index.js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+// No code.js file needed
+
+// Pattern 2: Document manipulation only
+// code.js
+import { editor } from "express-document-sdk";
+// No index.js communication needed
+
+// Pattern 3: Full communication + document manipulation (most common)
+// index.js
+import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+
+// code.js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";  // For communication
+import { editor } from "express-document-sdk";              // For document APIs
+```
 
 ## Best Practices
 
@@ -542,6 +555,38 @@ The sandbox requires proper manifest setup:
    - Check browser dev tools for UI runtime
    - Use sandbox console for document sandbox debugging
    - Use `console.assert()` for validation checks
+
+## Error Handling
+
+### Common Error: "Runtime is undefined"
+
+❌ **Wrong:** Trying to use runtime before SDK is ready
+```js
+const { runtime } = addOnUISdk.instance; // Error! SDK not ready yet
+```
+
+✅ **Correct:** Wait for SDK ready state
+```js
+addOnUISdk.ready.then(() => {
+  const { runtime } = addOnUISdk.instance; // Now it's safe
+});
+```
+
+### Common Error: "Cannot read property 'apiProxy' of undefined"
+
+❌ **Wrong:** Using wrong SDK in wrong environment
+```js
+// In code.js (Document Sandbox)
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+const { runtime } = addOnUISdk.instance; // Wrong SDK!
+```
+
+✅ **Correct:** Use appropriate SDK for each environment
+```js
+// In code.js (Document Sandbox)
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+const { runtime } = addOnSandboxSdk.instance; // Correct SDK!
+```
 
 ## Frequently Asked Questions
 
@@ -605,7 +650,8 @@ The sandbox requires proper manifest setup:
 
 ## Next Steps
 
-Now that you understand the architecture, explore these guides:
+Now that you understand the architecture, explore these guides and tutorials:
 
 - [Document API deep dive](./document-api.md): Learn how to use the Document API to create and modify document content.
-- [Building your first add-on](../how_to/tutorials/grids-addon.md)
+- [Building your first add-on](../how_to/tutorials/grids-addon.md): Use the Document API to create a simple add-on that adds a grid to the document.
+- [Using the Communication APIs](../how_to/tutorials/stats-addon.md): Build an add-on to gather statistics on the active document using the Communication APIs.
