@@ -24,7 +24,9 @@ contributors:
 
 Access Adobe Express Add-on documentation directly in your IDE—no tab switching required. Get Adobe Express Add-on documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
 
-## What's New in Beta
+## **Status: Public Beta**
+
+**What's New**
 
 - **v1.0.0-beta**: Initial release with documentation search and TypeScript definitions
 - **Coming Soon**: Real-time documentation updates, additional API surfaces
@@ -34,10 +36,6 @@ Access Adobe Express Add-on documentation directly in your IDE—no tab switchin
 We're actively collecting input to improve accuracy and coverage. Have feedback? Join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts.
 
 > **"Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."** — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
-
-## **Status: Public Beta**
-
-We're actively improving based on developer feedback. API and tool surfaces may change.
 
 ## What it does
 
@@ -104,11 +102,11 @@ Add this to `claude_desktop_config.json`:
 
 Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:  
 
-<img src="img/mcp-server-enabled.png" alt="Example of MCP server enabled in Cursor" width="300"/>
+<img src="img/mcp-server-enabled.png" alt="Example of MCP server enabled in Cursor" width="200"/>
 
-The LLM will automatically invoke tools based on your prompts, for example:
+The LLM will automatically invoke tools based on your prompts, for example, in Cursor:
 
-<img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="400"/>
+<img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="200"/>
 
 ## How to use it
 
