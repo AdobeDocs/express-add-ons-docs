@@ -201,7 +201,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
   - ✅ Check Node.js version: `node --version` (needs 18+)
   - ✅ Verify MCP config JSON syntax and file location
   - ✅ Ensure firewall allows `npx` downloads
-  - ✅ Restart your IDE after configuration changes   
+  - ✅ Restart your IDE after configuration changes
   - ✅ Check for MCP server status indicators
 
  </InlineNestedAlert>
@@ -265,39 +265,3 @@ Adobe Express add-on developers who want faster, more accurate development workf
 ### Is it free?
 
 Yes, free during and after beta.
-
-<!--
-
-Questions for consideration whether to includeduring review
-
-Some feedback given from community champs:
-
-Instead of focusing heavily on setup basics, the public docs could include some prompt guide recommendation
-
-* Best practices for prompting with MCP servers
-* Template prompts or rules that enhance MCP functionality
-* Guidelines for optimizing MCP interactions through context setting
-
-* Template prompts or rules that enhance MCP functionality
-* Guidelines for optimizing MCP interactions through context setting
-
-Action Item:
-The public docs should
-* Have a section explaining the basic concepts of MCP and how it can help in boosting productivity can help new add-on developers. 
-* Make sure that the main doc on MCP is not too long with the basic.  Try and keep the above section tucked away in a separate page. 
-
-
-
-Takeaways:
-* Developers expect the MCP to help with UI development using Adobe-standard SWC. 
-
-Action item:
-* [Eng] Increase the scope of knowledge of the MCP serve to include public docs of Spectrum design and SWC.
-
-1 - “...the best way to ensure that the LLM always uses the server is to manually call the specific tool you want tos use each time you send a chat. In vscode you do that with a hashtag before the name of the tool”
-    
-    I did not include this in the draft because it's not clear how to do this without listing the names of the tools.
-
-
-
--->
