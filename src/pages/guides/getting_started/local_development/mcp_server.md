@@ -233,7 +233,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
   **Missing Type Definitions**
 
-  - ✅ Specify the correct API surface (iframe-ui, express-document-sdk, add-on-sdk-document-sandbox)
+  - ✅ Specify the correct API surface (`iframe-ui`, `express-document-sdk`, `add-on-sdk-document-sandbox`)
   - ✅ Ask for specific types rather than general requests
 
 </InlineNestedAlert>
