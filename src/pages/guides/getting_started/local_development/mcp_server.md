@@ -178,7 +178,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
   - ✅ Check Node.js version: `node --version` (needs 18+)
   - ✅ Verify MCP config JSON syntax and file location
   - ✅ Ensure firewall allows `npx` downloads
-  - ✅ Restart your IDE after configuration changes   
+  - ✅ Restart your IDE after configurationchanges   
   - ✅ Check for MCP server status indicators
 
 </InlineNestedAlert>
@@ -249,7 +249,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 #### Q: Where else can I get help with MCP Server connection issues?
 
-**A:** See [Model Context Protocol Debugging](https://modelcontextprotocol.io/legacy/tools/debugging) for more information. 
+**A:** See [Model Context Protocol Debugging](https://modelcontextprotocol.io/legacy/tools/debugging) for more information.
 
 <!--
 # Adobe Express Add-on Development Rules
