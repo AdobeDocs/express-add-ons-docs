@@ -14,7 +14,7 @@ keywords:
   - Vibe Coding
   - Code Generation
   - TypeScript Definitions
-title: Adobe Express Add-on MCP Server
+title: Adobe Express Add-on MCP Server (Beta)
 description: Learn how to set up and use the Adobe Express Add-on MCP Server for enhanced development workflow in compatible editors like Cursor.
 contributors:
   - https://github.com/hollyschinsky
@@ -24,6 +24,15 @@ contributors:
 
 Access Adobe Express Add-on documentation directly in your IDE—no tab switching required. Get Adobe Express Add-on documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
 
+## What's New in Beta
+
+- **v1.0.0-beta**: Initial release with documentation search and TypeScript definitions
+- **Coming Soon**: Real-time documentation updates, additional API surfaces
+
+<InlineAlert variant="info" slots="header, text1"/>
+
+We're actively collecting input to improve accuracy and coverage. Have feedback? Join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts.
+
 > **"Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."** — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
 
 ## **Status: Public Beta**
@@ -32,25 +41,26 @@ We're actively improving based on developer feedback. API and tool surfaces may 
 
 ## What it does
 
-The Adobe Express Add-on MCP Server gives you structured access to Adobe Express add-on developer resources to help you get accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
+The Adobe Express Add-on MCP Server (Beta) gives you structured access to Adobe Express add-on developer resources to help you get accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
-This MCP server connects your IDE to Adobe's Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
+Our Adobe Express Add-on MCP Server (Beta) connects your IDE to the Adobe Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
 
 - **Semantic Documentation Search**: Find relevant guides, examples, and tutorials without leaving your editor
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-**How it works**: The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
+### How it works
+
+The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
 
 ## Prerequisites
 
-- **Node.js 18+** (check with `node --version`)
-- **MCP-compatible IDE** (Cursor, Claude Desktop, etc.)
-- **Internet connection** (for initial `npx` download)
+- **Node.js 18+** (check with `node --version`) - Required to run the [Adobe Express Add-on MCP Server package](https://www.npmjs.com/package/@adobe/express-add-on-dev-mcp) via `npx`
+- **MCP-compatible IDE** - Such as Cursor, Claude Desktop, or other editors supporting the Model Context Protocol
 
 ## Quick Setup (No Installation Required)
 
-You don't need to clone or build anything. Just configure your MCP client to launch the server via `npx`.
+You don't need to clone or build anything. Just configure your MCP client (ie: Cursor, Claude Desktop) to launch the server via `npx`.
 
 ### Step 1: Configure your IDE
 
@@ -104,7 +114,7 @@ The LLM will automatically invoke tools based on your prompts, for example:
 
 ### Usage Examples
 
-The MCP server excels at both answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
+The Adobe Express Add-on MCP Server excels at both answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
 
 ### Documentation & Learning
 
@@ -215,12 +225,6 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 </InlineNestedAlert>
 
-## What's New in Beta
-
-- **v1.0.0-beta**: Initial release with documentation search and TypeScript definitions
-- **Coming Soon**: Real-time documentation updates, additional API surfaces
-- **Your Feedback**: We're actively collecting input to improve accuracy and coverage. Have feedback? Join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts.
-
 ## Resources & Support
 
 - **Documentation**: [Adobe Express Add-on Guides](https://developer.adobe.com/express/add-ons/docs/guides/)
@@ -231,7 +235,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 ## FAQs
 
-#### Q: Does this generate code?
+#### Q: Does the Adobe Express Add-on MCP Server generate code?
 
 **A:** Yes—it enhances your LLM's ability to generate accurate Adobe Express add-on code by providing relevant documentation and TypeScript definitions. Your IDE/LLM handles the actual code generation with improved context.
 
@@ -247,9 +251,9 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 **A:** Yes, free during and after beta.
 
-#### Q: Where else can I get help with MCP Server connection issues?
+#### Q: Where else can I get additional help with MCP Server connection issues?
 
-**A:** See [Model Context Protocol Debugging](https://modelcontextprotocol.io/legacy/tools/debugging) for more information.
+**A:** You can check out the [Model Context Protocol Debugging](https://modelcontextprotocol.io/legacy/tools/debugging) for more general MCP Server connection debugging information, or message us on our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4).
 
 <!--
 # Adobe Express Add-on Development Rules
