@@ -33,9 +33,11 @@ Access Adobe Express Add-on documentation directly in your IDE—no tab switchin
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-We're actively collecting input to improve accuracy and coverage. Have feedback? Join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts.
+💬  **Feedback requested:** We're actively collecting input to improve accuracy and coverage. Have feedback? Plase join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
 
-> **"Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."** — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
+<br/>
+
+> **"Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."** — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
 
 ## What it does
 
@@ -102,11 +104,11 @@ Add this to `claude_desktop_config.json`:
 
 Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:  
 
-<img src="img/mcp-server-enabled.png" alt="Example of MCP server enabled in Cursor" width="200"/>
+<img src="img/mcp-server-enabled.png" alt="Green indicator showing MCP server is active" width="400"/>
 
 The LLM will automatically invoke tools based on your prompts, for example, in Cursor:
 
-<img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="200"/>
+<img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="400"/>
 
 ## How to use it
 
