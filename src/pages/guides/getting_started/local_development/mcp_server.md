@@ -178,7 +178,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
   - ✅ Check Node.js version: `node --version` (needs 18+)
   - ✅ Verify MCP config JSON syntax and file location
   - ✅ Ensure firewall allows `npx` downloads
-  - ✅ Restart your IDE after configurationchanges   
+  - ✅ Restart your IDE after configurationchanges
   - ✅ Check for MCP server status indicators
 
 </InlineNestedAlert>
