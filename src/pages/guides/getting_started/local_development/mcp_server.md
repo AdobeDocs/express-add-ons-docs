@@ -199,9 +199,10 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
   **Server Won't Start**
 
   - ✅ Check Node.js version: `node --version` (needs 18+)
-  - ✅ Verify MCP config JSON syntax
+  - ✅ Verify MCP config JSON syntax and file location
   - ✅ Ensure firewall allows `npx` downloads
   - ✅ Restart your IDE after configuration changes   
+  - ✅ Check for MCP server status indicators
 
  </InlineNestedAlert>
 
@@ -234,17 +235,6 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
   - ✅ Specify the correct API surface (iframe-ui, express-document-sdk, add-on-sdk-document-sandbox)
   - ✅ Ask for specific types rather than general requests
-
-</InlineNestedAlert>
-
-<InlineNestedAlert variant="info" header="true" iconPosition="right">
-
-   **IDE Connection Issues**
-
-  - ✅ Ensure your IDE supports MCP protocol
-  - ✅ Check for MCP server status indicators
-  - ✅ Verify configuration file location and syntax
-  - ✅ Try restarting the MCP server connection
 
 </InlineNestedAlert>
 
