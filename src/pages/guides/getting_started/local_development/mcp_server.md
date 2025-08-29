@@ -49,7 +49,7 @@ Our Adobe Express Add-on MCP Server (Beta) connects your IDE to the Adobe Expres
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-**💡 How it works:** The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
+**⚙️ How it works:** The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
 
 ## Prerequisites
 
@@ -112,31 +112,31 @@ The LLM will automatically invoke tools based on your prompts, for example, in C
 
 ### Usage Examples
 
-The Adobe Express Add-on MCP Server excels at both answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
+The **Adobe Express Add-on MCP Server** excels at both answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
 
 ### Documentation & Learning
 
-- "How do I create and style text in Adobe Express?"
-- "What are the steps for implementing drag-and-drop functionality?"
-- "How does the Document API work for manipulating elements?"
-- "Show me examples of using the color picker component"
+- "*How do I create and style text in Adobe Express*?"
+- "*What are the steps for implementing drag-and-drop functionality*?"
+- "*How does the Document API work for manipulating elements*?"
+- "*Show me examples of using the color picker component*?"
 
 ### Code Generation & Implementation
 
-- "Implement a color picker in my add-on"
-- "Generate code to create a text element with custom styling"
-- "Build a drag-and-drop interface for uploading images"
-- "Create a button that adds a rectangle to the canvas"
-- "Write TypeScript code to handle user text input and apply it to the document"
-- "Implement an image import feature with file validation"
-- "Show me a sample code snippet for using a modal dialog"
+- "*Implement a color picker in my add-on*"
+- "*Generate code to create a text element with custom styling*"
+- "*Build a drag-and-drop interface for uploading images*"
+- "*Create a button that adds a rectangle to the canvas*"
+- "*Write TypeScript code to handle user text input and apply it to the document*"
+- "*Implement an image import feature with file validation*"
+- "*Show me a sample code snippet for using a modal dialog*"
 
 ### Debugging & Troubleshooting
 
-- "Why isn't my add-on loading in Adobe Express?"
-- "Why isn't my text element appearing on the canvas?"
-- "Debug this error when trying to add an image to the document (error message: ...)"
-- "How do I debug an issue in my `code.js` file?"
+- "*Why isn't my add-on loading in Adobe Express?*"
+- "*Why isn't my text element appearing on the canvas?*"
+- "*Debug this error when trying to add an image to the document (error message: ...)*"
+- "*How do I debug an issue in my `code.js` file?*"
 
 ## Best Practices for Effective Use
 
@@ -158,7 +158,7 @@ The Adobe Express Add-on MCP Server excels at both answering questions and gener
 
 <InlineAlert variant="success" slots="header, text1"/>
 
-**Pro tip:**
+**🚀 &nbsp;Pro Tip**
 
 Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech stack, then ask for specific feature implementations. This gives the LLM better context about your project structure and dependencies.
 
@@ -179,7 +179,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 <!-- <InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/> -->
 
-### <span style="margin-right: 10px;">🚀</span>Pro UI Tips
+### 🚀 &nbsp;Pro UI Tips
 
 Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons 
 
