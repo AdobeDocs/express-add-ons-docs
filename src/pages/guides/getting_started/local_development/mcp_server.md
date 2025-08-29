@@ -285,16 +285,16 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 > - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
 > - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)<br/>
 
-### General Recommendations
+<InlineAlert variant="info" slots="header, text1"/>
 
-- **Avoid Getting Stuck in Debugging Loops**
+**Avoid Getting Stuck in Debugging Loops**
 
-  - If the LLM keeps suggesting fixes that don't work, start fresh with a new conversation
-  - Save your working code frequently using version control branches
-  - When debugging fails repeatedly, try a different approach or even switch to a different LLM model
-  - It's often faster to restart with a clear problem description than to keep correcting a confused AI assistant
+- If the LLM keeps suggesting fixes that don't work, start fresh with a new conversation
+- Save your working code frequently using version control branches
+- When debugging fails repeatedly, try a different approach or even switch to a different LLM model
+- It's often faster to restart with a clear problem description than to keep correcting a confused AI assistant
 
-### Creating Effective LLM Rules
+### LLM Rules
 
 Custom rules can help guide your LLM's responses, but they require careful design and testing to ensure they work as intended.
 
@@ -310,7 +310,7 @@ Custom rules can help guide your LLM's responses, but they require careful desig
 - LLMs may over-prioritize avoiding the restriction and neglect coding fundamentals
 - Instead of "*Never use inline styles*," try "*Prefer CSS classes and external stylesheets for maintainability*"
 
-## Cursor Rules 
+#### Example Rules for Cursor
 
 Here are some example rules that have proven helpful for Adobe Express add-on development in Cursor. Feel free to adapt them for your own use:
 
