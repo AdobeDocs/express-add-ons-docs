@@ -303,12 +303,11 @@ Custom rules can help guide your LLM's responses, but they require careful desig
 - Test your rules thoroughly before relying on them
 - Focus on positive guidance rather than restrictions
 - Be specific about what you want, not just what you want to avoid
+- Avoid overly restrictive rules:
 
-**Avoid Overly Restrictive Rules:**
-
-- Rules that focus on "never do X" or "cannot do Y" can backfire
-- LLMs may over-prioritize avoiding the restriction and neglect coding fundamentals
-- Instead of "*Never use inline styles*," try "*Prefer CSS classes and external stylesheets for maintainability*"
+  - Rules that focus on "never do X" or "cannot do Y" can backfire
+  - LLMs may over-prioritize avoiding the restriction and neglect coding fundamentals
+  - Instead of "*Never use inline styles*," try "*Prefer CSS classes and external stylesheets for maintainability*"
 
 #### Example Rules for Cursor
 
