@@ -42,7 +42,7 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 
 **Configuration file locations:**
 
-- **Cursor**: `~/.cursor/mcp.json` or use this [one-click install deeplink](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=)
+- **Cursor**: `~/.cursor/mcp.json`
 - **Claude Desktop**: `claude_desktop_config.json`
 - **VS Code**: `~/.vscode/mcp.json`
 
