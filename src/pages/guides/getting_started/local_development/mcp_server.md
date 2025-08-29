@@ -33,7 +33,7 @@ Access Adobe Express Add-on documentation directly in your IDE—no tab switchin
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-💬  **Feedback requested:** We're actively collecting input to improve accuracy and coverage. Have feedback? Plase join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
+💬  **Feedback requested:** We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
 
 <br/>
 
@@ -49,7 +49,7 @@ Our Adobe Express Add-on MCP Server (Beta) connects your IDE to the Adobe Expres
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-**⚙️ How it works:** The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
+**How it works:** The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
 
 ## Prerequisites
 
