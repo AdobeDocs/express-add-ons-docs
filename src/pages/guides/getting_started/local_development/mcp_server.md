@@ -49,9 +49,7 @@ Our Adobe Express Add-on MCP Server (Beta) connects your IDE to the Adobe Expres
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-### How it works
-
-The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
+**💡 How it works:** The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
 
 ## Prerequisites
 
@@ -166,11 +164,11 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 ### Craft Effective Prompts
 
-- **Be Specific**: "Add a stroke to a rectangle" vs "Style shapes"
-- **Include Context**: "I'm building a text editor add-on" helps narrow results
-- **Use Technical Terms**: "text styling" vs "make it look good"
-- **Ask for Examples**: "Show me code examples for text manipulation"
-- **Request Code Generation**: "Generate TypeScript code to..." or "Implement a feature that..."
+- **Be Specific**: "*Add a stroke to a rectangle*" vs "*Style shapes*"
+- **Include Context**: "*I'm building a text editor add-on*" helps narrow results
+- **Use Technical Terms**: "*text styling*" vs "*make it look good*"
+- **Ask for Examples**: "*Show me code examples for text manipulation*"
+- **Request Code Generation**: "*Generate TypeScript code to...*" or "*Implement a feature that...*"
 
 ### Manage Your Sessions
 
@@ -181,7 +179,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 <!-- <InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/> -->
 
-### Pro UI Tips
+### <span style="margin-right: 10px;">🚀</span>Pro UI Tips
 
 Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons 
 
@@ -205,7 +203,6 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 > 
 > - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
 > - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
-> - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
 
 <br/>
 
@@ -224,15 +221,13 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 >   ```
 > 
 > - Wrap app with: `<Theme system="express" scale="medium" color="light">`
-> - Form events: Use `onInput` (not `onChange`)
 > - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
 >
 > **Related References:**
 > 
 > - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
 > - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
-
-<br/>
+> - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)<br/>
 
 ## Troubleshooting
 
