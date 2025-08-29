@@ -27,9 +27,8 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 
 ## TL;DR - Quick Setup
 
-**For experienced developers:** Add one of these configurations to your MCP-compatible IDE and restart:
+**For experienced developers:** Add this configuration to your MCP-compatible IDE and restart:
 
-**Cursor** (`~/.cursor/mcp.json`):
 ```json
 {
   "mcpServers": {
@@ -41,31 +40,17 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 }
 ```
 
-**Claude Desktop** (`claude_desktop_config.json`):
-```json
-{
-  "mcpServers": {
-    "adobe-express-add-on": {
-      "command": "npx",
-      "args": ["@adobe/express-add-on-dev-mcp@latest", "--yes"]
-    }
-  }
-}
-```
+**Configuration file locations:**
 
-**VS Code** (`~/.vscode/mcp.json`):
-```json
-{
-  "mcpServers": {
-    "adobe-express-add-on": {
-      "command": "npx",
-      "args": ["@adobe/express-add-on-dev-mcp@latest", "--yes"]
-    }
-  }
-}
-```
+- **Cursor**: `~/.cursor/mcp.json` -or- use this [one-click install via deeplink](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=)
+- **Claude Desktop**: `claude_desktop_config.json`
+- **VS Code**: `~/.vscode/mcp.json`
 
 **Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
+
+<InlineAlert variant="info" slots="text1"/>
+
+**Cursor users:** MCP servers can be installed with Cursor deeplinks for one-click setup. Click the deeplink above to automatically configure the Adobe Express Add-on MCP Server.
 
 ---
 
@@ -219,11 +204,21 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
 - **Specific components needed**: Modal dialog, color picker, buttons, etc.
 - **Build tools**: Adobe Add-on CLI for setup and development
 
-<InlineAlert variant="success" slots="header, text1"/>
+<!-- <InlineAlert variant="success" slots="header, text1"/> -->
 
-**🚀 &nbsp;Pro Tip**
+<!-- **🚀 &nbsp;Pro Tip** -->
 
-Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech stack, then ask for specific feature implementations. This gives the LLM better context about your project structure and dependencies.
+<!-- Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech stack, then ask for specific feature implementations. This gives the LLM better context about your project structure and dependencies. -->
+
+<InlineAlert variant="success" slots="header, text1, text2, text3"/>
+
+**🎯 &nbsp;Pro Tips**
+
+**Ask for official documentation:** Works better when you specifically ask to "Retrieve the official documentation" to ensure the MCP server is used.
+
+**Describe your tech stack clearly:** Include specifics like "React, Spectrum Web Components with Express theme, Modal Dialog for the popup" for more accurate responses.
+
+**Mention your setup approach:** Works best when you call out setup instructions—indicate whether to build and run using the CLI or if you have an already scaffolded project that the LLM should analyze first.
 
 ### Craft Effective Prompts
 
