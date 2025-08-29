@@ -179,6 +179,61 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 - **Provide Context**: Mention what you're building and your current progress
 - **Iterate Gradually**: Build features step-by-step rather than asking for complete applications
 
+<!-- <InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/> -->
+
+### Pro UI Tips
+
+Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons 
+
+**[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
+
+> **🤖 LLM Guidance:**
+> 
+> - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
+> - **REQUIRED theme imports:**
+> 
+>   ```js
+>   import '@spectrum-web-components/theme/express/theme-light.js';
+>   import '@spectrum-web-components/theme/express/scale-medium.js';
+>   import '@spectrum-web-components/theme/sp-theme.js';
+>   ```
+> 
+> - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
+> - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
+>
+> **Related References:**
+> 
+> - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
+> - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
+> - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
+
+<br/>
+
+**[swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)** (only for add-ons using React)
+
+> **🤖 LLM Guidance:**
+> 
+> - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
+> - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
+> - **REQUIRED theme setup:**
+> 
+>   ```js
+>   import '@spectrum-web-components/theme/express/theme-light.js';
+>   import '@spectrum-web-components/theme/express/scale-medium.js';
+>   import { Theme } from '@swc-react/theme';
+>   ```
+> 
+> - Wrap app with: `<Theme system="express" scale="medium" color="light">`
+> - Form events: Use `onInput` (not `onChange`)
+> - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
+>
+> **Related References:**
+> 
+> - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+> - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+
+<br/>
+
 ## Troubleshooting
 
 <InlineNestedAlert header="true" variant="neutral" iconPosition="right">
