@@ -42,17 +42,15 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 
 **Configuration file locations:**
 
-- **Cursor**: `~/.cursor/mcp.json` -or- use this [one-click install via deeplink](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=)
+- **Cursor**: `~/.cursor/mcp.json`
 - **Claude Desktop**: `claude_desktop_config.json`
 - **VS Code**: `~/.vscode/mcp.json`
 
-**Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
-
 <InlineAlert variant="info" slots="text1"/>
 
-**Cursor users:** MCP servers can be installed with Cursor deeplinks for one-click setup. Click the deeplink above to automatically configure the Adobe Express Add-on MCP Server.
+**Cursor users:** MCP servers can be installed with Cursor deeplinks for one-click setup. Use this [one-click install via deeplink](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=) to automatically configure the Adobe Express Add-on MCP Server to your Cursor IDE.
 
----
+**Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
 
 ## **Status: Public Beta**
 
@@ -71,7 +69,7 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 
 ## What it does
 
-The Adobe Express Add-on MCP Server (Beta) acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE (like Cursor or Claude Desktop) with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
+The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE (like Cursor or Claude Desktop) with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
 The MCP Server communicates directly with your LLM to enhance its responses by connecting your IDE to the Adobe Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
 
