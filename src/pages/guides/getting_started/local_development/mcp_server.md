@@ -48,7 +48,7 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 
 <InlineAlert variant="info" slots="text1"/>
 
-**Cursor users:** MCP servers can be installed with Cursor deeplinks for one-click setup. Use this [one-click install via deeplink](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=) to automatically configure the Adobe Express Add-on MCP Server (Beta) to your Cursor IDE.
+**Cursor users:** MCP servers can be installed with Cursor deeplinks for one-click setup. Use our [one-click install via deeplink](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=) to automatically configure the Adobe Express Add-on MCP Server (Beta) to your Cursor IDE.
 
 **Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
 
