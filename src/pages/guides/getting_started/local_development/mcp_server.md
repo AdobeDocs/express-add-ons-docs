@@ -14,6 +14,7 @@ keywords:
   - Vibe Coding
   - Code Generation
   - TypeScript Definitions
+  - IDE 
 title: Adobe Express Add-on MCP Server (Beta)
 description: Learn how to set up and use the Adobe Express Add-on MCP Server for enhanced development workflow in compatible editors like Cursor.
 contributors:
@@ -22,14 +23,58 @@ contributors:
 
 # Adobe Express Add-on MCP Server (Beta)
 
-Access Adobe Express Add-on documentation directly in your IDE—no tab switching required. Get Adobe Express Add-on documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
+Get Adobe Express Add-on documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
+
+## TL;DR - Quick Setup
+
+**For experienced developers:** Add one of these configurations to your MCP-compatible IDE and restart:
+
+**Cursor** (`~/.cursor/mcp.json`):
+```json
+{
+  "mcpServers": {
+    "adobe-express-add-on": {
+      "command": "npx",
+      "args": ["@adobe/express-add-on-dev-mcp@latest", "--yes"]
+    }
+  }
+}
+```
+
+**Claude Desktop** (`claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "adobe-express-add-on": {
+      "command": "npx",
+      "args": ["@adobe/express-add-on-dev-mcp@latest", "--yes"]
+    }
+  }
+}
+```
+
+**VS Code** (`~/.vscode/mcp.json`):
+```json
+{
+  "mcpServers": {
+    "adobe-express-add-on": {
+      "command": "npx",
+      "args": ["@adobe/express-add-on-dev-mcp@latest", "--yes"]
+    }
+  }
+}
+```
+
+**Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
+
+---
 
 ## **Status: Public Beta**
 
-**What's New**
+<!-- **What's New**
 
 - **v1.0.0-beta**: Initial release with documentation search and TypeScript definitions
-- **Coming Soon**: Real-time documentation updates, additional API surfaces
+- **Coming Soon**: Real-time documentation updates, additional API surfaces -->
 
 <InlineAlert variant="info" slots="header, text1"/>
 
@@ -41,15 +86,15 @@ Access Adobe Express Add-on documentation directly in your IDE—no tab switchin
 
 ## What it does
 
-The Adobe Express Add-on MCP Server (Beta) gives you structured access to Adobe Express add-on developer resources to help you get accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
+The Adobe Express Add-on MCP Server (Beta) acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE (like Cursor or Claude Desktop) with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
-Our Adobe Express Add-on MCP Server (Beta) connects your IDE to the Adobe Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
+The MCP Server communicates directly with your LLM to enhance its responses by connecting your IDE to the Adobe Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
 
 - **Semantic Documentation Search**: Find relevant guides, examples, and tutorials without leaving your editor
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-**How it works:** The server searches a preprocessed index of Adobe Express Add-on documentation and returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
+**How it works:** The server returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
 
 ## Prerequisites
 
@@ -58,7 +103,7 @@ Our Adobe Express Add-on MCP Server (Beta) connects your IDE to the Adobe Expres
 
 ## Quick Setup (No Installation Required)
 
-You don't need to clone or build anything. Just configure your MCP client (ie: Cursor, Claude Desktop) to launch the server via `npx`.
+Clone, install or build. Just configure your MCP client (ie: Cursor, Claude Desktop) with a simple json file.
 
 ### Step 1: Configure your IDE
 
@@ -98,6 +143,24 @@ Add this to `claude_desktop_config.json`:
 }
 ```
 
+#### For VS Code Users
+
+Add this to your workspace in `~/.vscode/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "adobe-express-add-on": {
+      "command": "npx",
+      "args": [
+        "@adobe/express-add-on-dev-mcp@latest",
+        "--yes"
+      ]
+    }
+  }
+}
+```
+
 ### Step 2: Verify the Connection
 
 Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:  
@@ -112,7 +175,7 @@ The LLM will automatically invoke tools based on your prompts, for example, in C
 
 ### Usage Examples
 
-The **Adobe Express Add-on MCP Server** excels at both answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
+The **Adobe Express Add-on MCP Server** excels at both helping with answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
 
 ### Documentation & Learning
 
@@ -181,7 +244,7 @@ Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech
 
 ### 🚀 &nbsp;Pro UI Tips
 
-Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons 
+Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. 
 
 **[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
 
@@ -228,6 +291,40 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 > - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
 > - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
 > - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)<br/>
+
+### General Recommendations
+
+- **Avoid Getting Stuck in Debugging Loops**
+
+  - If the LLM keeps suggesting fixes that don't work, start fresh with a new conversation
+  - Save your working code frequently using version control branches
+  - When debugging fails repeatedly, try a different approach or even switch to a different LLM model
+  - It's often faster to restart with a clear problem description than to keep correcting a confused AI assistant
+
+### Creating Effective LLM Rules
+
+Custom rules can help guide your LLM's responses, but they require careful design and testing to ensure they work as intended.
+
+**Best Practices:**
+
+- Test your rules thoroughly before relying on them
+- Focus on positive guidance rather than restrictions
+- Be specific about what you want, not just what you want to avoid
+
+**Avoid Overly Restrictive Rules:**
+
+- Rules that focus on "never do X" or "cannot do Y" can backfire
+- LLMs may over-prioritize avoiding the restriction and neglect coding fundamentals
+- Instead of "*Never use inline styles*," try "*Prefer CSS classes and external stylesheets for maintainability*"
+
+## Cursor Rules 
+
+Here are some example rules that have proven helpful for Adobe Express add-on development in Cursor. Feel free to adapt them for your own use:
+
+> - Use `express-add-on-dev-mcp` for questions about Express Add-ons, Express API, CLI, and SDK before web search. 
+> - Add-ons are bundled and served in the browser as an iFrame. 
+> - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer. 
+> - The term "document" most often refers to terminology related to Express Add-ons since the regular browser DOM isn't available in the sandboxed environment.
 
 ## Troubleshooting
 
@@ -284,6 +381,10 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 - **Forum**: [Adobe Express Developers Community](https://community.adobe.com/t5/adobe-express-developers/ct-p/ct-adobe-express-developers?page=1&sort=latest_replies&lang=all&tabid=all)
 
 ## FAQs
+
+#### Q: What is an LLM and why do I need one?
+
+**A:** LLM stands for "Large Language Model"—these are AI assistants like ChatGPT, Claude, or Copilot that can understand and generate human-like text and code. In the context of the MCP Server, the LLM is your AI coding assistant that reads your questions, searches Adobe Express documentation (via the MCP Server), and provides intelligent responses with accurate code examples. Think of it as having an expert Adobe Express developer as your pair programming partner who has instant access to all the documentation and can write code for you.
 
 #### Q: Does the Adobe Express Add-on MCP Server generate code?
 
