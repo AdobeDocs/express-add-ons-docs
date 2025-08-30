@@ -23,7 +23,7 @@ contributors:
 
 # Adobe Express Add-on MCP Server (Beta)
 
-****Status: Public Beta**** Get Adobe Express Add-ons documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
+**Status: Public Beta** Get Adobe Express Add-ons documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
 
 <!-- <TitleBlock slots="heading" theme="light" /> -->
 
@@ -156,9 +156,10 @@ The LLM will automatically invoke tools based on your prompts.
 <!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="30%"/> -->
 <!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="30%"/> -->
 
+#### Check Connection Status
+
 <div className="container">  
-  <div className="text-column">
-    <h3>Check Connection Status</h3>
+  <div className="text-column">  
     <p>Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:</p>
   </div>
   <div className="image-column">
@@ -178,10 +179,10 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
 
 <div className="container">
   <div className="image-column">
-    <img src=".img/mcp-server-calling-tools.png" alt="headings" className="responsive-image" />
+    <img src="./img/mcp-server-calling-tools.png" alt="MCP Server calling tools" className="responsive-image" />
   </div>
   <div className="image-column">
-    <img src="./img/mcp-tool-call-example.png" alt="headings" className="responsive-image" />
+    <img src="./img/mcp-tool-call-example.png" alt="MCP Expanded too calls" className="responsive-image" />
   </div>
 </div>
 
@@ -293,8 +294,6 @@ Here are some example rules that have proven helpful for Adobe Express add-on de
   - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer. 
   - The term "document" most often refers to terminology related to Express Add-ons since the regular browser DOM isn't available in the sandboxed environment.
 
-<InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/>
-
 ### 5. Pro UI Tips
 
 Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. 
@@ -318,7 +317,6 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 > 
 > - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
 > - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
-
 
 **[swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)** (only for add-ons using React)
 
