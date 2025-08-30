@@ -22,6 +22,27 @@ contributors:
 
 # Changelog
 
+## 2025-08-25
+
+### Added
+
+- New experimental [`getSelectedPageIds()`](../../references/addonsdk/app-document.md#getselectedpageids) method to the [`addOnUISdk.app.document`](../../references/addonsdk/app-document.md) API. This method retrieves the currently selected page IDs in the document, useful for getting metadata or performing operations on only the pages that the user has selected.
+- New [`PptxRenditionOptions`](../../references/addonsdk/app-document.md#pptxrenditionoptions) object for PPTX export support in the [`createRenditions()`](../../references/addonsdk/app-document.md#createrenditions) API. PPTX export is only available for presentation-type documents in Adobe Express.
+- New [`RenditionFormat.pptx`](../../references/addonsdk/addonsdk-constants.md) constant added to support PowerPoint presentation export format with MIME type `"application/vnd.openxmlformats-officedocument.presentationml.presentation"`.
+
+### Updated
+
+- [Page Metadata how-to guide](../learn/how_to/page_metadata.md) with documentation and examples for the new experimental `getSelectedPageIds()` method, including usage patterns for getting metadata of only selected pages.
+- [Create Renditions how-to guide](../learn/how_to/create_renditions.md) with comprehensive PPTX export support documentation, including developer guidance about font differences and content limitations when exporting to PowerPoint format.
+- [Add-on Iframe Context guide](../learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
+- [FAQ](../support/faq.md) with a new comprehensive entry about available add-on permissions and their configuration, plus updated supported file formats for imported content organized by category (Image, Design, Video, Audio).
+
+## 2025-08-14
+
+### Added
+
+- The [Code Playground](./code_playground.md) now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.
+
 ## 2025-07-27
 
 ### Added

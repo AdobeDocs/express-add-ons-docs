@@ -759,8 +759,8 @@ module.exports = {
             path: "guides/learn/platform-concepts/context.md",
             pages: [
               {
-                title: "Add-on iframe Context",
-                path: "guides/learn/platform-concepts/context.md",
+                title: "Add-on Iframe Context",
+                path: "guides/learn/platform_concepts/context.md",
               },
               {
                 title: "The Document API",
