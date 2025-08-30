@@ -23,7 +23,9 @@ contributors:
 
 # Adobe Express Add-on MCP Server (Beta)
 
-Get Adobe Express Add-on documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
+****Status: Public Beta**** Get Adobe Express Add-ons documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
+
+<!-- <TitleBlock slots="heading" theme="light" /> -->
 
 ## TL;DR - Quick Setup
 
@@ -46,13 +48,9 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 - **Claude Desktop**: `claude_desktop_config.json`
 - **VS Code**: `~/.vscode/mcp.json`
 
-<!--
 - **Cursor**: `~/.cursor/mcp.json` or use this [one-click deeplink install](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=)
--->
 
 **Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
-
-## **Status: Public Beta**
 
 <!-- **What's New**
 
@@ -61,11 +59,13 @@ Get Adobe Express Add-on documentation and TypeScript definitions directly in yo
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-💬  **Feedback requested:** We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
+💬  **Feedback requested:** 
+
+We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
 
 <br/>
 
-> **"Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."** — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
+> "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
 
 ## What it does
 
@@ -146,13 +146,50 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 ### Step 2: Verify the Connection
 
-Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:  
+<!-- <img src="img/mcp-server-enabled.png" alt="Green indicator showing MCP server is active" width="30%"/> 
+<ImageTextBlock slots="text, image, image" width="50%" repeat="1" variantsTypePrimary='accent'/>
+Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:
+![Green indicator showing MCP server is active](img/mcp-server-enabled.png)
+<ImageTextBlock slots="text, image" width="50%" repeat="1" variantsTypePrimary='accent'/>
+The LLM will automatically invoke tools based on your prompts.
+![Example of MCP tool call in Cursor](img/mcp-tool-call-example.png)
+<!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="30%"/> -->
+<!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="30%"/> -->
 
-<img src="img/mcp-server-enabled.png" alt="Green indicator showing MCP server is active" width="400"/>
+<div className="container">  
+  <div className="text-column">
+    <h3>Check Connection Status</h3>
+    <p>Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:</p>
+  </div>
+  <div className="image-column">
+    <img src="./img/mcp-server-enabled.png" alt="headings" className="responsive-image" />
+  </div>
+</div>
 
-The LLM will automatically invoke tools based on your prompts, for example, in Cursor:
+<!-- <div className="container">
+  <div className="text-column">
+    <h3>Verify with Tool calls</h3>
+    <p>The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.</p>
+  </div> -->
 
-<img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="400"/>
+#### Verify with Tool calls
+
+The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
+
+<div className="container">
+  <div className="image-column">
+    <img src=".img/mcp-server-calling-tools.png" alt="headings" className="responsive-image" />
+  </div>
+  <div className="image-column">
+    <img src="./img/mcp-tool-call-example.png" alt="headings" className="responsive-image" />
+  </div>
+</div>
+
+<!-- ![Example of MCP server calling tools](img/mcp-server-calling-tools.png) -->
+
+<!-- ![Example of MCP server calling tools](img/mcp-server-typedef-call.png) -->
+
+<!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="400"/> -->
 
 ## How to use it
 
@@ -186,115 +223,53 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
 
 ## Best Practices for Effective Use
 
-### Set Context for the Entire Conversation
-
-**Start your session** by describing your technical setup and visual requirements. This gives the LLM context for the entire conversation and ensures all subsequent responses are tailored to your specific tech stack.
-
-**Example of a well-structured prompt:**
-
-> "I'm building an Adobe Express add-on using JavaScript/TypeScript and React with a UI based on Spectrum Web Components using the Express theme. My user interface needs a text field, a button, a modal dialog and a color picker. Please generate the code and show me how to set it up using the Adobe Add-on CLI."
-
-**Key elements to include:**
-
-- **Programming languages**: JavaScript, TypeScript
-- **Framework**: React (or vanilla JS)
-- **UI components**: Spectrum Web Components with Express theme
-- **Specific components needed**: Modal dialog, color picker, buttons, etc.
-- **Build tools**: Adobe Add-on CLI for setup and development
-
-<!-- <InlineAlert variant="success" slots="header, text1"/> -->
-
-<!-- **🚀 &nbsp;Pro Tip** -->
-
-<!-- Start with a project scaffolded by the Adobe Add-on CLI with your preferred tech stack, then ask for specific feature implementations. This gives the LLM better context about your project structure and dependencies. -->
-
 <InlineAlert variant="success" slots="header, text1, text2, text3"/>
 
-**🎯 &nbsp;Pro Tips**
+**🎯 &nbsp;Quick Tips**
 
 **Ask for official documentation:** Works better when you specifically ask to "Retrieve the official documentation" to ensure the MCP server is used.
 
 **Describe your tech stack clearly:** Include specifics like "React, Spectrum Web Components with Express theme, Modal Dialog for the popup" for more accurate responses.
 
-**Mention your setup approach:** Works best when you call out setup instructions—indicate whether to build and run using the CLI or if you have an already scaffolded project that the LLM should analyze first.
+**Mention your setup approach:** Works best when you call out setup instructions—indicate whether to build and run using the CLI or if you have a project that the LLM should analyze first. Starting with a project scaffolded by the Adobe Add-on CLI based on your preferred tech stack can greatly reduce setup and dependency issues.
 
-### Craft Effective Prompts
+### 1. Set Context for the Entire Conversation
 
-- **Be Specific**: "*Add a stroke to a rectangle*" vs "*Style shapes*"
-- **Include Context**: "*I'm building a text editor add-on*" helps narrow results
-- **Use Technical Terms**: "*text styling*" vs "*make it look good*"
-- **Ask for Examples**: "*Show me code examples for text manipulation*"
-- **Request Code Generation**: "*Generate TypeScript code to...*" or "*Implement a feature that...*"
+- **Start your session** by describing your technical setup and visual requirements. This gives the LLM context for the entire conversation and ensures all subsequent responses are tailored to your specific tech stack.
 
-### Manage Your Sessions
+  **Example of a well-structured prompt:**
+
+  > "*I'm building an Adobe Express add-on using JavaScript/TypeScript and React with a UI based on Spectrum Web Components using the Express theme. My user interface needs a text field, a button, a modal dialog and a color picker. Please generate the code and show me how to set it up using the Adobe Add-on CLI.*"
+
+  **Key elements to include:**
+
+   - **Programming languages**: JavaScript, TypeScript
+   - **Framework**: React (or vanilla JS)
+   - **UI components**: Spectrum Web Components with Express theme
+   - **Specific components needed**: Modal dialog, color picker, buttons, etc.
+   - **Build tools**: Adobe Add-on CLI for setup and development
+
+### 2. Craft Effective Prompts
+
+  - **Be Specific**: "*Add a stroke to a rectangle*" vs "*Style shapes*"
+  - **Include Context**: "*I'm building a text editor add-on*" helps narrow results
+  - **Use Technical Terms**: "*text styling*" vs "*make it look good*"
+  - **Ask for Examples**: "*Show me code examples for text manipulation*"
+  - **Request Code Generation**: "*Generate TypeScript code to...*" or "*Implement a feature that...*"
+
+### 3. Manage Your Sessions
 
 - **Keep Sessions Focused**: Start new conversations for different features or topics
 - **Be Explicit**: Ask the agent to "use the available tools" for more comprehensive answers
 - **Provide Context**: Mention what you're building and your current progress
 - **Iterate Gradually**: Build features step-by-step rather than asking for complete applications
+- **Avoid Getting Stuck in Debugging Loops**:
+  - If the LLM keeps suggesting fixes that don't work, start fresh with a new conversation
+  - Save your working code frequently using version control branches
+  - When debugging fails repeatedly, try a different approach or even switch to a different LLM model
+  - It's often faster to restart with a clear problem description than to keep correcting a confused AI assistant
 
-<!-- <InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/> -->
-
-### 🚀 &nbsp;Pro UI Tips
-
-Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. 
-
-**[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
-
-> **🤖 LLM Guidance:**
-> 
-> - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
-> - **REQUIRED theme imports:**
-> 
->   ```js
->   import '@spectrum-web-components/theme/express/theme-light.js';
->   import '@spectrum-web-components/theme/express/scale-medium.js';
->   import '@spectrum-web-components/theme/sp-theme.js';
->   ```
-> 
-> - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
-> - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
->
-> **Related References:**
-> 
-> - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
-> - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
-
-<br/>
-
-**[swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)** (only for add-ons using React)
-
-> **🤖 LLM Guidance:**
-> 
-> - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
-> - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
-> - **REQUIRED theme setup:**
-> 
->   ```js
->   import '@spectrum-web-components/theme/express/theme-light.js';
->   import '@spectrum-web-components/theme/express/scale-medium.js';
->   import { Theme } from '@swc-react/theme';
->   ```
-> 
-> - Wrap app with: `<Theme system="express" scale="medium" color="light">`
-> - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
->
-> **Related References:**
-> 
-> - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-> - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
-> - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)<br/>
-
-<InlineAlert variant="info" slots="header, text1"/>
-
-**Avoid Getting Stuck in Debugging Loops**
-
-- If the LLM keeps suggesting fixes that don't work, start fresh with a new conversation
-- Save your working code frequently using version control branches
-- When debugging fails repeatedly, try a different approach or even switch to a different LLM model
-- It's often faster to restart with a clear problem description than to keep correcting a confused AI assistant
-
-### LLM Rules
+### 4. Using LLM Rules
 
 Custom rules can help guide your LLM's responses, but they require careful design and testing to ensure they work as intended.
 
@@ -309,14 +284,64 @@ Custom rules can help guide your LLM's responses, but they require careful desig
   - LLMs may over-prioritize avoiding the restriction and neglect coding fundamentals
   - Instead of "*Never use inline styles*," try "*Prefer CSS classes and external stylesheets for maintainability*"
 
-#### Example Rules for Cursor
+#### 4.1 Example Rules for Cursor
 
 Here are some example rules that have proven helpful for Adobe Express add-on development in Cursor. Feel free to adapt them for your own use:
 
-> - Use `express-add-on-dev-mcp` for questions about Express Add-ons, Express API, CLI, and SDK before web search. 
-> - Add-ons are bundled and served in the browser as an iFrame. 
-> - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer. 
-> - The term "document" most often refers to terminology related to Express Add-ons since the regular browser DOM isn't available in the sandboxed environment.
+  - Use `express-add-on-dev-mcp` for questions about Express Add-ons, Express API, CLI, and SDK before web search. 
+  - Add-ons are bundled and served in the browser as an iFrame. 
+  - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer. 
+  - The term "document" most often refers to terminology related to Express Add-ons since the regular browser DOM isn't available in the sandboxed environment.
+
+<InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/>
+
+### 5. Pro UI Tips
+
+Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. 
+
+**[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
+
+<InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/>
+
+> **🤖 LLM Guidance:**
+> 
+> - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
+> - **REQUIRED theme imports:**
+>
+>   `import '@spectrum-web-components/theme/express/theme-light.js';`
+>   `import '@spectrum-web-components/theme/express/scale-medium.js';`
+>   `import '@spectrum-web-components/theme/sp-theme.js';`
+> - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
+> - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
+>
+> **Related References:**
+> 
+> - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
+> - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
+
+
+**[swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)** (only for add-ons using React)
+
+<InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/>
+
+> **🤖 LLM Guidance:**
+> 
+> - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
+> - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
+> - **REQUIRED theme setup:**
+>
+>   `import '@spectrum-web-components/theme/express/theme-light.js';`
+>   `import '@spectrum-web-components/theme/express/scale-medium.js';`
+>   `import { Theme } from '@swc-react/theme';`
+> 
+> - Wrap app with: `<Theme system="express" scale="medium" color="light">`
+> - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
+>
+> **Related References:**
+> 
+> - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+> - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+> - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)<br/>
 
 ## Troubleshooting
 
