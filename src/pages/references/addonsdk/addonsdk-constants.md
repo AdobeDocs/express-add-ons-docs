@@ -16,6 +16,22 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
 </tr>
 <tbody class="spectrum-Table-body">
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>BitRate</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>number</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Bit rate in bits per second.</p>
+        <ul>
+            <li><strong>mbps4</strong></li><pre>4000000</pre>
+            <li><strong>mbps8</strong></li><pre>8000000</pre>
+            <li><strong>mbps10</strong></li><pre>10000000</pre>
+            <li><strong>mbps12</strong></li><pre>12000000</pre>
+            <li><strong>mbps15</strong></li><pre>15000000</pre>
+            <li><strong>mbps25</strong></li><pre>25000000</pre>
+            <li><strong>mbps50</strong></li><pre>50000000</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>BleedUnit</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
@@ -108,6 +124,32 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     </td>
 </tr>
 <tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>FileSizeLimitUnit</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Unit of the file size limit.</p>
+        <ul>
+          <li><strong>KB</strong></li><pre>"KB"</pre>
+          <li><strong>MB</strong></li><pre>"MB"</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
+    <td class="spectrum-Table-cell"><p><pre>FrameRate</pre></p></td>
+    <td class="spectrum-Table-cell"><p><pre>number</pre></p></td>
+    <td style="vertical-align: bottom;">
+        <p>Frame rate in frames per second.</p>
+        <ul>
+            <li><strong>fps23_976</strong></li><pre>23.976</pre>
+            <li><strong>fps24</strong></li><pre>24</pre>
+            <li><strong>fps25</strong></li><pre>25</pre>
+            <li><strong>fps29_97</strong></li><pre>29.97</pre>
+            <li><strong>fps30</strong></li><pre>30</pre>
+            <li><strong>fps60</strong></li><pre>60</pre>
+        </ul>
+    </td>
+</tr>
+<tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>LinkOptions</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
     <td style="vertical-align: bottom;">
@@ -118,7 +160,6 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
         </ul>
     </td>
 </tr>
-
 <tr class="spectrum-Table-row">
     <td class="spectrum-Table-cell"><p><pre>MediaTabs</pre></p></td>
     <td class="spectrum-Table-cell"><p><pre>string</pre></p></td>
@@ -160,10 +201,11 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td style="vertical-align: bottom;">
         <p>Required output format of the rendition.</p>
         <ul>
-          <li><strong>jpg</strong></li>"image/jpeg" for JPG format
-          <li><strong>png</strong></li>"image/png" for PNG format
-          <li><strong>mp4</strong></li>"video/mp4" for MP4 format
-          <li><strong>pdf</strong></li>"application/pdf" for PDF format
+          <li><strong>jpg</strong></li><pre>"image/jpeg"</pre>
+          <li><strong>png</strong></li><pre>"image/png"</pre>
+          <li><strong>mp4</strong></li><pre>"video/mp4"</pre>
+          <li><strong>pdf</strong></li><pre>"application/pdf"</pre>
+          <li><strong>pptx</strong></li><pre>"application/vnd.openxmlformats-officedocument.presentationml.presentation"</pre>
         </ul>
     </td>
 </tr>
@@ -221,9 +263,11 @@ A set of constants used throughout the add-on SDK. These constants are equal to 
     <td style="vertical-align: bottom;">
         <p>Video resolution options for the mp4 renditions.</p>
         <ul>
-          <li><strong>sd480p</strong></li>"480p"
-          <li><strong>hd720p</strong></li>"720p"
-          <li><strong>fhd1080p</strong></li>"1080p"
+          <li><strong>sd480p</strong></li><pre>"480p"</pre>
+          <li><strong>hd720p</strong></li><pre>"720p"</pre>
+          <li><strong>fhd1080p</strong></li><pre>"1080p"</pre>
+          <li><strong>qhd1440p</strong></li><pre>"1440p"</pre>
+          <li><strong>uhd2160p</strong></li><pre>"2160p"</pre>
           <li><strong>custom</strong></li>Custom resolution
         </ul>
     </td>

@@ -7,9 +7,17 @@ keywords:
   - Add-on SDK
   - SDK
   - JavaScript
-  - Extend
-  - Extensibility
-  - API
+  - Color Picker
+  - Color Picker API
+  - showColorPicker
+  - hideColorPicker
+  - ColorPickerOptions
+  - ColorPickerPlacement
+  - ColorPickerEvent
+  - Color Selection
+  - Color Swatches
+  - Brand Colors
+  - Color Picker Events
 title: Color Picker
 description: Adobe Express built-in Color Picker component
 contributors:

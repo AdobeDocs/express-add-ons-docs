@@ -20,11 +20,11 @@ A resolved `Promise` containing the `id` of the document.
 
 **Note:** A `documentIdAvailable` event is triggered when the document id is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
-#### Example
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -54,11 +54,11 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 
 **Note:** A `documentTitleChange` event is triggered when the document title is changed in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
-#### Example
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -90,9 +90,11 @@ Retrieve the metadata for all of the pages in the document.
 
 A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containing all of the pages in the document.
 
+#### Example Usage
+
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -120,11 +122,11 @@ async function logMetadata() {
       console.log("Page has animated content: ", page.hasAnimatedContent);
       console.log("Page has timelines: ", page.hasTemporalContent);
       if (page.hasTemporalContent)
-          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration); 
+          console.log("Page includes temporal content with a duration of: ", page.temporalContentDuration);
       console.log("Pixels per inch: ", page.pixelsPerInch);
       console.log("Is page print ready: ", page.isPrintReady);
       console.log("Is page blank: ", page.isBlank);
-      console.log("Template details: ", page.templateDetails);      
+      console.log("Template details: ", page.templateDetails);
     }
   }
   catch(error) {
@@ -173,9 +175,11 @@ Tells Express to run a print quality check to determine if the document is ready
 
 `void`
 
+#### Example Usage
+
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
 
-#### Usage
+#### JavaScript
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -245,9 +249,80 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 | `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
 | `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
 
+### getSelectedPageIds()
+
+Retrieves the currently selected page ids in the document.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`getSelectedPageIds(): Promise<string[]>`
+
+#### Return Value
+
+A resolved `Promise` containing an array of `string` ids representing the currently selected pages in the document.
+
+#### Example Usage
+
+```javascript
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Get the currently selected page ids
+async function getSelectedPages() {
+  try {
+    const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
+    console.log("Selected page ids:", selectedPageIds);
+    
+    if (selectedPageIds.length === 0) {
+      console.log("No pages are currently selected");
+    } else {
+      console.log(`${selectedPageIds.length} page(s) selected:`, selectedPageIds);
+    }
+  } catch (error) {
+    console.log("Failed to get selected page ids:", error);
+  }
+}
+
+// Example: Get metadata for selected pages only
+async function getSelectedPagesMetadata() {
+  try {
+    const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
+    
+    if (selectedPageIds.length > 0) {
+      const metadata = await addOnUISdk.app.document.getPagesMetadata({
+        range: addOnUISdk.constants.Range.specificPages,
+        pageIds: selectedPageIds
+      });
+      
+      metadata.forEach((page, index) => {
+        console.log(`Selected page ${index + 1}: ${page.title} (${page.id})`);
+      });
+    } else {
+      console.log("No pages selected");
+    }
+  } catch (error) {
+    console.log("Failed to get selected pages metadata:", error);
+  }
+}
+
+// Call the functions
+getSelectedPages();
+getSelectedPagesMetadata();
+```
+
 ### link()
 
 Retrieves the document link.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method, the LinkOptions parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -261,33 +336,33 @@ A resolved `Promise` containing the `link` of the document.
 
 A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
 
-#### Example
+#### Example Usage
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
-
-#### Usage
-
-```js
+```javascript
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
-function setLink(link) { /* ... */ }
+addOnUISdk.ready.then(async () => {
+  try {
+    // Get the current document link
+    const documentLink = await addOnUISdk.app.document.link("document");
+    console.log("Document link:", documentLink);
 
-addOnUISdk.ready.then(
-  () => setLink(await AddOnSDKAPI.app.document.link("document"))
-);
+    // Get the published document link
+    const publishedLink = await addOnUISdk.app.document.link("published");
+    console.log("Published link:", publishedLink);
+  } catch (error) {
+    console.log("Failed to get document links:", error);
+  }
 
-addOnUISdk.app.on("documentLinkAvailable", data => {
-  setLink(data.documentLink);
-});
+  // Listen for document link availability changes
+  addOnUISdk.app.on("documentLinkAvailable", (data) => {
+    console.log("Document link availability changed. Link value:", data.documentLink);
+  });
 
-function setPublishedLink(link) { /* ... */ }
-
-AddOnSDKAPI.ready.then(
-  () => setPublishedLink(await AddOnSDKAPI.app.document.link("published"))
-);
-
-AddOnSDKAPI.app.on("documentPublishedLinkAvailable", data => {
-  setPublishedLink(data.documentPublishedLink);
+  // Listen for published document link availability changes
+  addOnUISdk.app.on("documentPublishedLinkAvailable", (data) => {
+    console.log("Published link availability changed. Link value:", data.documentPublishedLink);
+  });
 });
 ```
 
@@ -322,7 +397,7 @@ A resolved promise if the image was successfully added to the canvas; otherwise,
 
 #### Example Usage
 
-```js
+```javascript
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
   try {
@@ -474,49 +549,84 @@ Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#impo
 
 Imports a PDF as a new Adobe Express document.
 
-<!-- Removed experimental as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
 #### Signature
 
-`importPdf(blob: Blob, attributes: MediaAttributes): void;`
+`importPdf(blob: Blob, attributes: MediaAttributes & SourceMimeTypeInfo): void;`
 
 #### Parameters
 
-| Name          | Type                                  |                                                                 Description |
-| ------------- | ------------------------------------- | --------------------------------------------------------------------------: |
-| `blob`        | `Blob`                                |                                                 The PDF to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| Name                                         | Type                                  |                                                                 Description |
+| -------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------: |
+| `blob`                                       | `Blob`                                |                                                 The PDF to add to the page. |
+| `attributes?`                                | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding PDFs to the page (i.e., `title`). |
+| [`SourceMimeTypeInfo?`](#sourcemimetypeinfo) | `SourceMimeTypeInfo`                  |                                       Mime type details for importing media |
 
 #### Return Value
 
 None
 
+#### `SourceMimeTypeInfo`
+
+Mime type details for importing media
+
+| Name              | Type                       |                                                      Description |
+| ----------------- | -------------------------- | ---------------------------------------------------------------: |
+| `sourceMimeType?` | [`SupportedMimeTypes`](./) | Mime type of the original source asset that was converted to PDF |
+
+### SupportedMimeTypes
+
+A constant representing the mime type of the original source asset that was converted to PDF.
+
+- **docx**: `"docx"`
+- **gdoc**: `"gdoc"`
+
+<InlineAlert slots="text" variant="info"/>
+
+Use this property to improve the user experience when importing converted documents. Adobe Express does not natively support Word documents (`.docx`) or Google Docs (`.gdoc`) files. However, your add-on can convert these file types to PDF format behind the scenes before importing them.
+
+When you call `importPdf()` with a converted file, you can pass the original file's mime type (`"docx"` or `"gdoc"`) in the `sourceMimeType` parameter. This ensures that the import consent dialog displays "Import a document" instead of "Import a PDF" to the user, preventing confusion about why their Word document or Google Docs file is being referred to as a PDF.
+
+**Important:** Do not pass the original Word documentor Google Docs file directly to `importPdf()`. Your add-on must first convert these files to PDF format, then use this parameter solely to customize the dialog message for better user experience.
+
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
-const { document } = AddOnSDKAPI.app;
+const { document } = addOnUISdk.app;
 
-const mediaAttributes = { title: "Sample.pdf" };
-
-// Import a PDF. Note this will be imported as a new Adobe Express document.
-function importPdf(blob, mediaAttributes) {
+// Import a regular PDF file
+async function importPdf(pdfBlob) {
   try {
-    document.importPdf(blob, mediaAttributes);
+    document.importPdf(pdfBlob, { title: "Sample.pdf" });
   } catch (error) {
     console.log("Failed to import the pdf.");
   }
 }
 
-// Import a PDF from a URL. Note this will be imported as a new Adobe Express document.
-async function importPdfFrom(url) {
+// Import a PDF that was converted from a Word document
+// The sourceMimeType parameter ensures the dialog shows "Import a document" instead of "Import a PDF"
+async function importConvertedWordDoc(convertedPdfBlob) {
   try {
-    const blob = await fetch(url).then((response) => response.blob());
-    document.importPdf(blob, { title: "Sample.pdf" });
+    document.importPdf(convertedPdfBlob, {
+      title: "Converted Document.pdf",
+      sourceMimeType: "docx"
+    });
   } catch (error) {
-    console.log("Failed to import the pdf.");
+    console.log("Failed to import the converted Word document.");
+  }
+}
+
+// Import a PDF that was converted from a Google document
+async function importConvertedGoogleDoc(convertedPdfBlob) {
+  try {
+    document.importPdf(convertedPdfBlob, {
+      title: "Converted Google Doc.pdf",
+      sourceMimeType: "gdoc"
+    });
+  } catch (error) {
+    console.log("Failed to import the converted Google document.");
   }
 }
 ```
@@ -524,12 +634,6 @@ async function importPdfFrom(url) {
 ### importPresentation()
 
 Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
-
-<!--Removed as part of https://git.corp.adobe.com/Horizon/hz/pull/113300 -->
-
-<!-- <InlineAlert slots="text" variant="warning"/> -->
-
-<!-- **IMPORTANT:** This method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. -->
 
 #### Signature
 
@@ -549,10 +653,10 @@ None
 #### Example Usage
 
 ```js
-import AddOnSDKAPI from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Reference to the active document
-const { document } = AddOnSDKAPI.app;
+const { document } = addOnUISdk.app;
 
 const mediaAttributes = { title: "Sample.pptx" }; // only Pptx is supported by Express
 
@@ -578,7 +682,7 @@ async function importPresentationFrom(url) {
 
 ### Image requirements
 
-When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **40MB**.
+When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **80MB**—see the full [image requirements](https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html) for more details.
 
 For `gif` images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and summarized below for quick reference:
 
@@ -651,6 +755,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.jpg`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
@@ -661,23 +766,41 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.png`](./addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
+| `fileSizeLimit?`                          | `number`                            |                                                                                                                                                     File size limit for the rendition. |
+| `fileSizeLimitUnit?`                      | `string`                            |                                                                                                Unit of the file size limit, [`FileSizeLimitUnit`](./addonsdk-constants.md) enumerable. |
 
 #### Requested Size Notes
 
-- The supported size is from 1 x 1 to width x height.
+- The supported size is from 1 x 1 to 8192 x 8192.
 - Aspect ratio is maintained while scaling the rendition based on the requested size.
 - Up-scaling is currently not supported.
 - If the requested size is invalid, it will be ignored and the original size rendition will be created.
 - Some examples of what the actual exported sizes will be, depending on the page size and requested size are in the table below for reference.
 
-| Page Size | Requested Size | Exported Size |
-| --------- | -------------- | ------------: |
-| 400 x 600 | 200 x 200      |     134 x 200 |
-| 400 x 600 | 200 x 400      |     200 x 300 |
-| 400 x 600 | 200 x -200     |     400 x 600 |
-| 400 x 600 | 800 x 1000     |     400 x 600 |
+| Page Size | Requested Size               | Exported Size | Notes                                       |
+| --------- | ---------------------------- | ------------: | ------------------------------------------- |
+| 400 x 600 | undefined                    |     400 x 600 | Original page size maintained               |
+| 400 x 600 | 200 x undefined (width only) |     200 x 300 | Height scaled proportionally                |
+| 400 x 600 | 200 x 200                    |     134 x 200 | Aspect ratio preserved, fits within bounds  |
+| 400 x 600 | 200 x 400                    |     200 x 300 | Aspect ratio preserved, fits within bounds  |
+| 400 x 600 | 200 x -200                   |     400 x 600 | Negative values ignored, original size used |
+| 400 x 600 | 800 x 1000                   |    667 x 1000 | Upscaled while maintaining aspect ratio     |
+| 400 x 600 | 8000 x 10000                 |   5462 x 8192 | Upscaled to maximum allowed dimensions      |
+
+#### `PptxRenditionOptions`
+
+Extends the [`RenditionOptions`](#renditionoptions) object with the specific format for `pptx` renditions:
+
+| Name     | Type     |                                                                                     Description |
+| -------- | -------- | -----------------------------------------------------------------------------------------------: |
+| `format` | `string` | [`RenditionFormat.pptx`](./addonsdk-constants.md) constant value for PowerPoint presentation. |
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** PPTX export is only available for presentation-type documents in Adobe Express. When implementing PPTX export in your add-on, consider informing users that fonts from Adobe Express might look different in PowerPoint, and that videos, audio, presenter notes, and animations will not be included in the exported file. Adobe Express displays a similar disclaimer when users download PPTX files directly from the app.
 
 #### `PdfRenditionOptions`
 
@@ -731,15 +854,19 @@ Represents margins for a PDF page box.
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
 
-| Name                | Type     |                                                        Description |
-| ------------------- | -------- | -----------------------------------------------------------------: |
-| `format`            | `string` |   [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
-| `resolution?`       | `string` |       [`VideoResolution`](./addonsdk-constants.md) constant value. |
-| `customResolution?` | `number` | Only required/used if the `resolution` is `VideoResolution.custom` |
+| Name                | Type     |                                                                         Description |
+| ------------------- | -------- | ----------------------------------------------------------------------------------: |
+| `format`            | `string` |                    [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
+| `resolution?`       | `string` |                        [`VideoResolution`](./addonsdk-constants.md) constant value. |
+| `customResolution?` | `number` |                  Only required/used if the `resolution` is `VideoResolution.custom` |
+| `frameRate?`        | `number` | Frame rate in frames per second, [`FrameRate`](./addonsdk-constants.md) enumerable. |
+| `bitRate?`          | `number` |       Bit rate in bits per second, [`BitRate`](./addonsdk-constants.md) enumerable. |
 
 #### Return Value
 
-A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
+A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pagerendition)). The array will contain one item if the `currentPage` range is requested, an array of specific pages when the `specificPages` range is requested, or all pages when the `entireDocument` range is specified. Each rendition returned will contain the `type`, `title`,[metadata for the page](#pagemetadata) and a `blob` of the rendition itself. **Note:** If you requested `PDF` or `PPTX` for the format with a larger range than `currentPage`, a single file will be generated which includes the entire range. When the format is `JPG/PNG/MP4`, an array of files will be generated that represents each page.
+
+#### Example Usage
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
@@ -751,7 +878,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
 
-// Display preview of all pages in the AddOn UI
+// Display preview of all pages in the UI of your add-on
 async function displayPreview() {
   try {
     const renditionOptions = {
@@ -770,6 +897,31 @@ async function displayPreview() {
     });
   } catch (error) {
     console.log("Failed to create renditions:", error);
+  }
+}
+
+// Export document as PowerPoint presentation
+async function exportAsPowerPoint() {
+  try {
+    const renditionOptions = {
+      range: addOnUISdk.constants.Range.entireDocument,
+      format: addOnUISdk.constants.RenditionFormat.pptx,
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(
+      renditionOptions,
+      addOnUISdk.constants.RenditionIntent.export
+    );
+    
+    // Download the PPTX file
+    const rendition = renditions[0]; // PPTX exports as single file
+    const url = URL.createObjectURL(rendition.blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${rendition.title}.pptx`;
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.log("Failed to export as PowerPoint:", error);
   }
 }
 ```
@@ -803,6 +955,31 @@ async function displayPreview() {
     console.log("Failed to create renditions:", error);
   }
 }
+
+// Export document as PowerPoint presentation
+async function exportAsPowerPoint() {
+  try {
+    const renditionOptions: PptxRenditionOptions = {
+      range: Range.entireDocument,
+      format: RenditionFormat.pptx,
+    };
+    const renditions = await addOnUISdk.app.document.createRenditions(
+      renditionOptions,
+      RenditionIntent.export
+    );
+    
+    // Download the PPTX file
+    const rendition = renditions[0]; // PPTX exports as single file
+    const url = URL.createObjectURL(rendition.blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${rendition.title}.pptx`;
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.log("Failed to export as PowerPoint:", error);
+  }
+}
 ```
 
 #### `Rendition`
@@ -828,6 +1005,74 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 <InlineAlert slots="text" variant="info"/>
 
 Refer to the [create renditions how-to](../../guides/learn/how_to/create_renditions.md) and the [export-sample](../../guides/learn/samples.md) in the code samples for usage examples.
+
+### exportAllowed()
+
+Determines whether the current document can be exported based on its review status in review and approval workflows.
+
+#### Signature
+
+`exportAllowed(): Promise<boolean>`
+
+#### Return Value
+
+A resolved `Promise` containing a `boolean` value indicating whether export is allowed (`true`) or restricted (`false`) based on the document's review status.
+
+<InlineAlert slots="text" variant="info"/>
+
+This method is particularly useful in collaborative environments where documents may be subject to review and approval processes. When a document is in certain review states, export functionality may be restricted to prevent unauthorized distribution of content that hasn't been approved.
+
+**Important:** This restriction only applies to renditions created with `RenditionIntent.export` or `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the export status, as they are intended for preview purposes only.
+
+**User Experience Note:** If you attempt to create export/print renditions without checking `exportAllowed()` first, and the document doesn't allow exports, users will see an error dialog with the message "Request approval" and "Get approval from your viewers before sharing this file". Using `exportAllowed()` allows you to provide a more graceful user experience by checking permissions proactively.
+
+#### Example Usage
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Check export permissions before creating non-preview renditions
+async function handleExportRequest() {
+  try {
+    const canExport = await addOnUISdk.app.document.exportAllowed();
+
+    if (canExport) {
+      // Create rendition for export/download
+      const rendition = await addOnUISdk.app.document.createRenditions(
+        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
+        addOnUISdk.constants.RenditionIntent.export
+      );
+      // ... handle download
+    } else {
+      // Show preview only since export is restricted
+      console.log("Export restricted - showing preview only");
+      const previewRendition = await addOnUISdk.app.document.createRenditions(
+        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
+        addOnUISdk.constants.RenditionIntent.preview
+      );
+      // ... show preview in UI only
+    }
+  } catch (error) {
+    console.log("Failed to check export permissions:", error);
+  }
+}
+
+// Set up UI based on export permissions
+addOnUISdk.ready.then(async () => {
+  const exportAllowed = await addOnUISdk.app.document.exportAllowed();
+
+  // Note: The "document" in the next two lines refers to the UI of your add-on (in the HTML file) versus the addOnUISdk.app.document object from the API
+  const downloadButton = document.getElementById('download-btn');
+  const previewButton = document.getElementById('preview-btn');
+
+  // Download button only available if export is allowed
+  downloadButton.disabled = !exportAllowed;
+  downloadButton.title = exportAllowed ? "Download rendition" : "Download restricted - document under review";
+
+  // Preview button is always available
+  previewButton.disabled = false;
+});
+```
 
 ### Errors
 

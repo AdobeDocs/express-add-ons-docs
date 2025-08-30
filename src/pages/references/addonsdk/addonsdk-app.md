@@ -431,12 +431,12 @@ type DragCompletionCallback = (
 
 ##### `DragCompletionData`
 
-Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks), and contains the `blob` object to be added, as well as a [`MediaAttributes`](#mediaattributes) object with the `title` of the audio content (for audio only).
+Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks), and contains the `blob` object to be added, as well as optional attributes for media content.
 
 | Name          | Type                                  |                                                                             Description |
 | ------------- | ------------------------------------- | --------------------------------------------------------------------------------------: |
-| `blob`        | `Blob`                                |                                    Blob (image/video/audio) to be added to the document |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes to pass when adding the audio to the page (ie: `title`, which is mandatory). |
+| `blob`        | `Blob`                                |                                    Blob (image/gif/video/audio) to be added to the document |
+| `attributes?` | [`MediaAttributes`](app-document.md#mediaattributes) & [`SourceMimeTypeInfo`](app-document.md#sourcemimetypeinfo) | Media attributes (mandatory for audio import) and source mime type information for converted documents. |
 
 #### `MediaAttributes`
 
