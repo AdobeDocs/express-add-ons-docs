@@ -172,7 +172,7 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
 
 <InlineNestedAlert variant="success" slots="header, text1/>
 
- **Tip:** 
+  **Tips:** 
 
   - Ask the LLM to "list MCP tools".
   - You don’t have to write “Adobe Express Add-ons,” but if you have multiple MCP servers, say: *Use the MCP server named **Adobe Express Add-on***
