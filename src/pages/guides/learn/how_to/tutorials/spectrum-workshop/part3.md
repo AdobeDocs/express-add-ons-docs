@@ -288,5 +288,6 @@ The following list of resources can be used to learn more about using Adobe's Sp
 - [Adobe Spectrum CDN Bundle](https://jspm.dev/@spectrum-web-components/bundle/elements.js)
 
   - **Reminder:** you should only use this option for quick testing, but note that it will default to the Spectrum base theme unless you include the Express theme bundles specifically. See the [example codepens](https://codepen.io/hollyschinsky/pen/xxBweyV) for details.
+  
 - [Add-on Code Samples](https://developer.adobe.com/express/add-ons/docs/samples/)
 - [Color Wheel](https://color.adobe.com/create/color-wheel)

@@ -78,7 +78,7 @@ This add-on allows users to select settings to customize a bingo card; including
 
 [Using Spectrum variables to customize the layout of your UI](part2.md#style-your-ui)
 
-[Tips, Debugging & Troubleshooting](part3.md#troubleshooting-faq)
+[Tips, Debugging & Troubleshooting](part3.md#faq--troubleshooting)
 
 ## Quickstart: Try Spectrum Web Components
 

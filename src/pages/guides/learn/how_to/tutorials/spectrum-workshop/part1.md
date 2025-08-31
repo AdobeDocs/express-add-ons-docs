@@ -701,4 +701,4 @@ Once you've updated your code, your add-on should reload and you can generate a 
 
 **A:** Yes! Use Spectrum CSS variables for layout and spacing, and component modifier variables (prefixed with `--mod-*`) for component-specific customizations. This ensures your styling remains consistent with the Spectrum design system and updates automatically if the design system changes.
 
-If you have any trouble, or don't see what you expect, see the [Troubleshooting section](./part3.md#troubleshooting-faq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
+If you have any trouble, or don't see what you expect, see the [Troubleshooting section](./part3.md#faq--troubleshooting) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
