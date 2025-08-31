@@ -55,7 +55,7 @@ contributors:
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-💬  **Feedback requested:** 
+💬  **Feedback requested:**
 
 We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
 
@@ -159,7 +159,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 #### Verify with Tool calls
 
-The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
+The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
 
 <div className="container">
   <div className="image-column">
@@ -169,6 +169,15 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
     <img src="./img/mcp-tool-call-example.png" alt="MCP Expanded tool calls" className="responsive-image" />
   </div>
 </div>
+
+<InlineNestedAlert variant="success" slots="header, text1/>
+
+ **Tip:** 
+
+  - Ask the LLM to "list MCP tools".
+  - You don’t have to write “Adobe Express Add-ons,” but if you have multiple MCP servers, say: *Use the MCP server named **Adobe Express Add-on***
+
+</InlineNestedAlert>
 
 ## How to use it
 
@@ -239,10 +248,11 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
 ### 3. Manage Your Sessions
 
 - **Keep Sessions Focused**: Start new conversations for different features or topics
-- **Be Explicit**: Ask the agent to "use the available tools" for more comprehensive answers
+- **Be Explicit**: Tell the agent "*For Adobe Express Add-ons questions, prefer the Adobe Express Add-on MCP tools and cite sources.*"
 - **Provide Context**: Mention what you're building and your current progress
 - **Iterate Gradually**: Build features step-by-step rather than asking for complete applications
 - **Avoid Getting Stuck in Debugging Loops**:
+
   - If the LLM keeps suggesting fixes that don't work, start fresh with a new conversation
   - Save your working code frequently using version control branches
   - When debugging fails repeatedly, try a different approach or even switch to a different LLM model
@@ -268,17 +278,15 @@ Custom rules can help guide your LLM's responses, but they require careful desig
 Here are some example rules that have proven helpful for Adobe Express add-on development in Cursor. Feel free to adapt them for your own use:
 
 ```text
-  - Use express-add-on-dev-mcp for questions about Express Add-ons, Express API, CLI, and SDK before web search. 
+  - Use adobe-express-add-on MCP server for questions about Express Add-ons, Express API, CLI, and SDK before web search.
   - Add-ons are bundled and served in the browser as an iFrame. 
-  - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer. 
+  - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer.
   - The term "document" most often refers to terminology related to Express Add-ons since the regular browser DOM isn't available in the sandboxed environment.
 ```
 
-<!-- <InlineNestedAlert variant="success" slots="header, text1/> -->
-
 ### 5. Pro UI Tips
 
-Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components (SWC)](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. 
+Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components (SWC)](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. These tips help your LLM generate UI code for add-ons.
 
 #### Using **[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
 
@@ -336,7 +344,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
   - ✅ Check Node.js version: `node --version` (needs 18+)
   - ✅ Verify MCP config JSON syntax and file location
   - ✅ Ensure firewall allows `npx` downloads
-  - ✅ Restart your IDE after configurationchanges
+  - ✅ Restart your IDE after configuration changes
   - ✅ Check for MCP server status indicators
 
 </InlineNestedAlert>
