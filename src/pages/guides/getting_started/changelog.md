@@ -26,9 +26,9 @@ contributors:
 
 ### Added
 
-Introduced a new [guide](./guides/getting_started/local_development/mcp_server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
+Introduced a new [guide](../getting_started/local_development/mcp_server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
 
-With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](./guides/getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
+With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](../getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
 
 ## 2025-08-25
 

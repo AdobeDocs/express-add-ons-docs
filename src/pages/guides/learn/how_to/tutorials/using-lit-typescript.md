@@ -1,3 +1,27 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Lit
+  - LitElement
+  - TypeScript
+  - Web Components
+  - Custom Elements
+  - JavaScript
+  - Template Literals
+  - Decorators
+  - Reactive Properties
+  - Static Typing
+  - Component Development
+  - Tutorial
+  - UI Components
+  - Spectrum Web Components
+title: Developing add-ons with Lit and TypeScript
+description: Learn how to build Adobe Express add-ons using Lit web components and TypeScript. This comprehensive guide covers LitElement, decorators, reactive properties, and project structure.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Developing add-ons with Lit and TypeScript
 
 ## Introduction
@@ -250,7 +274,7 @@ export class App extends LitElement {
     // enclosed in backticks (`) and can contain placeholders (${expression})
     // for dynamic values.
     return html` <sp-theme
-      theme="express"
+      system="express"
       color="light"
       scale="medium"
     >
@@ -419,7 +443,7 @@ import { MyCustomButton } from "./MyCustomButton";
 export class App extends LitElement {
     ...
     render() {
-        return html` <sp-theme theme="express" color="light" scale="medium">
+        return html` <sp-theme system="express" color="light" scale="medium">
             <div class="container">
                 <sp-button size="m" @click=${this._handleClick}>Create Rectangle</sp-button>
                 <my-custom-button></my-custom-button>
@@ -429,6 +453,109 @@ export class App extends LitElement {
     ...
 }
 ```
+
+## FAQ
+
+#### Q: What are the main benefits of using Lit with TypeScript for Adobe Express add-ons?
+
+**A:** The combination provides:
+
+- **Lightweight components**: Lit creates fast, efficient web components with minimal overhead
+- **Type safety**: TypeScript catches errors at compile time and improves code maintainability
+- **Modern standards**: Built on web component standards for future-proof development
+- **Reactive properties**: Automatic UI updates when component state changes
+- **Great developer experience**: Excellent tooling, IntelliSense, and debugging support
+
+#### Q: Do I need to know web components to use Lit?
+
+**A:** Not necessarily! Lit abstracts away much of the complexity of web components. You work with familiar concepts like classes, properties, and templates. However, understanding the basics of web components (custom elements, shadow DOM) can be helpful for advanced use cases.
+
+#### Q: What's the difference between `@property` and `@state` decorators?
+
+**A:** 
+
+- **`@property`**: Creates a reactive property that's exposed as a custom element attribute. Use for data that comes from parent components or HTML attributes.
+- **`@state`**: Creates internal reactive state that's not exposed externally. Use for component-specific state that doesn't need to be shared with other components.
+
+#### Q: How do I handle events in Lit components?
+
+**A:** Use the `@` syntax in templates to bind event listeners:
+
+```typescript
+render() {
+  return html`<button @click=${this.handleClick}>Click me</button>`;
+}
+
+handleClick(event: Event) {
+  // Handle the click event
+}
+```
+
+#### Q: Can I use Lit components with other frameworks like React?
+
+**A:** Yes! Lit components are standard web components, so they work with any framework or vanilla JavaScript. However, some frameworks (like React) may need special handling for events and properties.
+
+#### Q: How do I style Lit components?
+
+**A:** Use the `css` tagged template literal and the `styles` static property:
+
+```typescript
+import { css } from 'lit';
+
+static styles = css`
+  :host {
+    display: block;
+    padding: 16px;
+  }
+  button {
+    background: blue;
+    color: white;
+  }
+`;
+```
+
+#### Q: What's the `render()` method and when is it called?
+
+**A:** The `render()` method defines your component's HTML template using the `html` tagged template literal. Lit automatically calls it when:
+
+- The component is first created
+- Any reactive property (marked with `@property` or `@state`) changes
+- You manually call `this.requestUpdate()`
+
+#### Q: How do I query for elements in my component's shadow DOM?
+
+**A:** Use the `@query` decorator:
+
+```typescript
+@query('#myButton')
+myButton!: HTMLButtonElement;
+
+// Now you can access this.myButton in your methods
+```
+
+#### Q: Can I use async operations in Lit components?
+
+**A:** Yes! Use the `until` directive for promises and `asyncReplace`/`asyncAppend` for async iterables:
+
+```typescript
+render() {
+  return html`${until(this.fetchData(), html`Loading...`)}`;
+}
+```
+
+#### Q: How do I communicate between parent and child Lit components?
+
+**A:** 
+- **Parent to child**: Pass data via properties
+- **Child to parent**: Dispatch custom events using `this.dispatchEvent(new CustomEvent('my-event', { detail: data }))`
+
+#### Q: What TypeScript configuration works best with Lit?
+
+**A:** The CLI-generated `tsconfig.json` is a good starting point. Key settings include:
+
+- `"target": "ES2018"` or higher for modern features
+- `"experimentalDecorators": true` for decorator support
+- `"strict": true` for better type checking
 
 ## Next Steps
 

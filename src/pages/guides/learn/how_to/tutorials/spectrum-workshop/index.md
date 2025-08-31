@@ -95,3 +95,35 @@ Before moving on, check out [this codepen](https://codepen.io/hollyschinsky/pen/
 <InlineAlert slots="text" variant="warning"/>
 
 CDN URL references are used to show you a quick way to get started with Spectrum Web Components. However, you will notice the UI is laggy, so you wouldn't want to use this for your final add-on projects for performance reasons. In the following lessons, you will learn how to configure your projects to use only the modules and components your UI needs to ensure the best performance for your add-ons.
+
+## FAQ
+
+#### Q: What's the difference between Spectrum Web Components and swc-react?
+
+**A:** Spectrum Web Components are native web components that work with vanilla JavaScript, while swc-react provides React wrapper components for the same Spectrum Web Components. Use Spectrum Web Components for basic JavaScript projects and swc-react for React-based add-ons.
+
+#### Q: Which approach should I choose for my add-on?
+
+**A:** Choose based on your preferred development approach:
+
+- **Lesson 1 (Spectrum Web Components)**: If you prefer vanilla JavaScript or want to avoid React
+- **Lesson 2 (swc-react)**: If you're comfortable with React and want modern component patterns
+
+Both approaches create the same bingo card generator add-on with identical functionality.
+
+#### Q: Do I need to know React to follow this tutorial?
+
+**A:** No! Lesson 1 uses only vanilla JavaScript with Spectrum Web Components. Lesson 2 covers React with swc-react, but includes explanations of React concepts as needed.
+
+#### Q: What are the prerequisites for this tutorial?
+
+**A:** You'll need:
+
+- Familiarity with HTML, CSS, and JavaScript
+- Basic understanding of Adobe Express add-ons (complete the [quickstart guide](../../../../getting_started/hello-world.md) first)
+- Node.js version 16 or newer
+- An Adobe Express account
+
+#### Q: Can I use both approaches in the same add-on?
+
+**A:** No, you should choose one approach per add-on. Mixing Spectrum Web Components and swc-react in the same project can lead to conflicts and is not recommended.
