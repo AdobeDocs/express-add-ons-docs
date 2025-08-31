@@ -25,8 +25,6 @@ contributors:
 
 **Status: Public Beta** Get Adobe Express Add-ons documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
 
-<!-- <TitleBlock slots="heading" theme="light" /> -->
-
 ## TL;DR - Quick Setup
 
 **For experienced developers:** Add this configuration to your MCP-compatible IDE and restart:
@@ -44,11 +42,9 @@ contributors:
 
 **Configuration file locations:**
 
-- **Cursor**: `~/.cursor/mcp.json`
+- **Cursor**: `~/.cursor/mcp.json` or use this [one-click deeplink install](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=)
 - **Claude Desktop**: `claude_desktop_config.json`
 - **VS Code**: `~/.vscode/mcp.json`
-
-- **Cursor**: `~/.cursor/mcp.json` or use this [one-click deeplink install](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=)
 
 **Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
 
@@ -63,11 +59,9 @@ contributors:
 
 We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
 
-<br/>
+## What it does
 
 > "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
-
-## What it does
 
 The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE (like Cursor or Claude Desktop) with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
@@ -146,16 +140,6 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 ### Step 2: Verify the Connection
 
-<!-- <img src="img/mcp-server-enabled.png" alt="Green indicator showing MCP server is active" width="30%"/> 
-<ImageTextBlock slots="text, image, image" width="50%" repeat="1" variantsTypePrimary='accent'/>
-Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:
-![Green indicator showing MCP server is active](img/mcp-server-enabled.png)
-<ImageTextBlock slots="text, image" width="50%" repeat="1" variantsTypePrimary='accent'/>
-The LLM will automatically invoke tools based on your prompts.
-![Example of MCP tool call in Cursor](img/mcp-tool-call-example.png)
-<!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="30%"/> -->
-<!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="30%"/> -->
-
 #### Check Connection Status
 
 <div className="container">  
@@ -182,15 +166,9 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
     <img src="./img/mcp-server-calling-tools.png" alt="MCP Server calling tools" className="responsive-image" />
   </div>
   <div className="image-column">
-    <img src="./img/mcp-tool-call-example.png" alt="MCP Expanded too calls" className="responsive-image" />
+    <img src="./img/mcp-tool-call-example.png" alt="MCP Expanded tool calls" className="responsive-image" />
   </div>
 </div>
-
-<!-- ![Example of MCP server calling tools](img/mcp-server-calling-tools.png) -->
-
-<!-- ![Example of MCP server calling tools](img/mcp-server-typedef-call.png) -->
-
-<!-- <img src="img/mcp-tool-call-example.png" alt="Example of MCP tool call in Cursor" width="400"/> -->
 
 ## How to use it
 
@@ -198,14 +176,14 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
 
 The **Adobe Express Add-on MCP Server** excels at both helping with answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
 
-### Documentation & Learning
+#### Documentation & Learning
 
 - "*How do I create and style text in Adobe Express*?"
 - "*What are the steps for implementing drag-and-drop functionality*?"
 - "*How does the Document API work for manipulating elements*?"
 - "*Show me examples of using the color picker component*?"
 
-### Code Generation & Implementation
+#### Code Generation & Implementation
 
 - "*Implement a color picker in my add-on*"
 - "*Generate code to create a text element with custom styling*"
@@ -215,7 +193,7 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
 - "*Implement an image import feature with file validation*"
 - "*Show me a sample code snippet for using a modal dialog*"
 
-### Debugging & Troubleshooting
+#### Debugging & Troubleshooting
 
 - "*Why isn't my add-on loading in Adobe Express?*"
 - "*Why isn't my text element appearing on the canvas?*"
@@ -289,57 +267,65 @@ Custom rules can help guide your LLM's responses, but they require careful desig
 
 Here are some example rules that have proven helpful for Adobe Express add-on development in Cursor. Feel free to adapt them for your own use:
 
-  - Use `express-add-on-dev-mcp` for questions about Express Add-ons, Express API, CLI, and SDK before web search. 
+```text
+  - Use express-add-on-dev-mcp for questions about Express Add-ons, Express API, CLI, and SDK before web search. 
   - Add-ons are bundled and served in the browser as an iFrame. 
   - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer. 
   - The term "document" most often refers to terminology related to Express Add-ons since the regular browser DOM isn't available in the sandboxed environment.
+```
+
+<!-- <InlineNestedAlert variant="success" slots="header, text1/> -->
 
 ### 5. Pro UI Tips
 
-Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. 
+Consider using the following tips in your prompts/rules for LLM guidance when using [Spectrum Web Components (SWC)](https://opensource.adobe.com/spectrum-web-components/index.html) or the [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) wrappers library for React-based add-ons. 
 
-**[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
+#### Using **[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
 
-<InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/>
+<InlineNestedAlert header="true" variant="success" iconPosition="right">
 
-> **🤖 LLM Guidance:**
-> 
-> - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
-> - **REQUIRED theme imports:**
->
->   `import '@spectrum-web-components/theme/express/theme-light.js';`
->   `import '@spectrum-web-components/theme/express/scale-medium.js';`
->   `import '@spectrum-web-components/theme/sp-theme.js';`
-> - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
-> - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
->
-> **Related References:**
-> 
-> - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
-> - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
+ **🤖 LLM Guidance:**
+ 
+ - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
+ - **REQUIRED theme imports:**
 
-**[swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)** (only for add-ons using React)
+   `import '@spectrum-web-components/theme/express/theme-light.js';`
+   `import '@spectrum-web-components/theme/express/scale-medium.js';`
+   `import '@spectrum-web-components/theme/sp-theme.js';`
 
-<InlineAlert variant="success" slots="header, text1, text2, text3, text4, text5, text6"/>
+ - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
+ - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
+ - **Use Related References:**
+ 
+   - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
+   - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
 
-> **🤖 LLM Guidance:**
-> 
-> - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
-> - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
-> - **REQUIRED theme setup:**
->
->   `import '@spectrum-web-components/theme/express/theme-light.js';`
->   `import '@spectrum-web-components/theme/express/scale-medium.js';`
->   `import { Theme } from '@swc-react/theme';`
-> 
-> - Wrap app with: `<Theme system="express" scale="medium" color="light">`
-> - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
->
-> **Related References:**
-> 
-> - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-> - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
-> - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)<br/>
+</InlineNestedAlert>
+
+#### Using [swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) (only for add-ons using React)
+
+<InlineNestedAlert header="true" variant="success" iconPosition="right">
+
+ **🤖 LLM Guidance:**
+ 
+  - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
+  - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
+  - **REQUIRED theme setup:**
+
+    `import '@spectrum-web-components/theme/express/theme-light.js';`
+    `import '@spectrum-web-components/theme/express/scale-medium.js';`
+    `import { Theme } from '@swc-react/theme';`
+  
+  - Wrap app with: `<Theme system="express" scale="medium" color="light">`
+  - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
+
+- **Use Related References:**
+ 
+  - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+  - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+  - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
+
+</InlineNestedAlert>
 
 ## Troubleshooting
 
@@ -407,7 +393,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 #### Q: Which IDEs work?
 
-**A:** Any IDE supporting MCP: Cursor, Claude Desktop, and others.
+**A:** Any IDE supporting MCP: Cursor, Claude Desktop, VS Code and others.
 
 #### Q: Who should use this?
 
@@ -417,37 +403,22 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 **A:** Yes, free during and after beta.
 
+#### Q: Do I need to install anything locally?
+
+**A:** No! The MCP Server runs via `npx` which downloads and runs the latest version automatically. You only need Node.js 18+ and an MCP-compatible IDE.
+
+#### Q: How do I know if the MCP Server is working?
+
+**A:** Look for a green indicator in your IDE (like Cursor) showing the server is connected. When you ask questions, you'll see tool calls being made to retrieve documentation and TypeScript definitions.
+
+#### Q: Can I use this with existing add-on projects?
+
+**A:** Absolutely! The MCP Server works with any Adobe Express add-on project, whether you're starting from scratch or working on an existing codebase. It's especially helpful for understanding and extending existing code.
+
+#### Q: What's the difference between this and regular web search?
+
+**A:** The MCP Server provides curated, up-to-date Adobe Express add-on documentation and official TypeScript definitions directly to your LLM. This eliminates outdated information and reduces AI hallucinations compared to general web search results.
+
 #### Q: Where else can I get additional help with MCP Server connection issues?
 
 **A:** You can check out the [Model Context Protocol Debugging](https://modelcontextprotocol.io/legacy/tools/debugging) for more general MCP Server connection debugging information, or message us on our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4).
-
-<!--
-# Adobe Express Add-on Development Rules
-
-## Smple SWC Global Rules / System Prompt
-
-1. Always use `swc-react` (@swc-react/*) for UI components instead of React Spectrum.
-2. All `@swc-react/*` and `@spectrum-web-components/*` packages must use the same version (currently 1.7.0).
-3. Every project must include Adobe Express theming:
-   import "@spectrum-web-components/theme/theme-light.js";
-   import "@spectrum-web-components/theme/express/theme-light.js";
-   import "@spectrum-web-components/theme/scale-medium.js";
-   import "@spectrum-web-components/theme/express/scale-medium.js";
-   import { Theme } from "@swc-react/theme";
-4. Handle events with React synthetic events; note `onChange` does not work for form elements. Use WC.jsx helper if needed.
-5. Validate component props and events against Spectrum Web Components documentation (https://opensource.adobe.com/spectrum-web-components/).
-
-* Best practices for prompting with MCP servers
-* Template prompts or rules that enhance MCP functionality
-* Guidelines for optimizing MCP interactions through context setting
-
-## Rules before suggesting UI code:
-
-Checklist before suggesting UI code:
-
-- Using swc-react only? ✅
-- Versions aligned (1.7.0)? ✅
-- Express theming included? ✅
-- Event handling correct (onChange caveat)? ✅
-- Props/events from SWC docs? ✅
--->
