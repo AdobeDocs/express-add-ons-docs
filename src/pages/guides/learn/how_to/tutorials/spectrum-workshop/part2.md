@@ -1,23 +1,25 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on SDK
-  - Express Document API
-  - Document Model Sandbox
-  - Adobe Express
   - Add-on SDK
+  - Spectrum Design System
+  - Spectrum Web Components
+  - swc-react
+  - UI Components
+  - Tutorial
   - SDK
   - JavaScript
+  - React
   - Extend
   - Extensibility
   - API
-title: Great UIs using Adobe's Spectrum Design System
-description: This is an in-depth tutorial that will guide you in using Adobe's Spectrum Design System to help you build great UI's for your add-ons.
+title: Lesson 2: Use Spectrum Web Components in a React-based add-on
+description: Learn how to configure and use swc-react (Spectrum Web Component wrappers for React) to build the same bingo card generator add-on using React and modern component patterns.
 contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Lesson 2: Use Spectrum Web Components in a React-based add-on
+# Lesson 2: Use Spectrum Web Components in a React-based Add-on
 
 Learn how to configure and use Spectrum Web Components in a ReactJS add-on.
 
@@ -109,7 +111,7 @@ Next you'll need to create a new class to handle a known issue where React event
 
 Create a new file in your `src/components` folder and name it `WC.jsx`, then copy in the block of code below and save it.
   
-**Note:** this class is also included in the [lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-js-react) if you want to copy it in from there instead.
+**Note:** this class is also included in the [lesson 2 final project](https://github.com/hollyschinsky/bingo-card-generator-react-js) if you want to copy it in from there instead.
 
 ```js
 import React from "react";

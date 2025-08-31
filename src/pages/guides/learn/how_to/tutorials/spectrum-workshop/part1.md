@@ -1,18 +1,19 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on SDK
-  - Express Document API
-  - Document Model Sandbox
-  - Adobe Express
   - Add-on SDK
+  - Spectrum Design System
+  - Spectrum Web Components
+  - UI Components
+  - Tutorial
   - SDK
   - JavaScript
   - Extend
   - Extensibility
   - API
-title: Great UIs using Adobe's Spectrum Design System
-description: This is an in-depth tutorial that will guide you in using Adobe's Spectrum Design System to help you build great UI's for your add-ons.
+  - Basic JavaScript
+title: Lesson 1: Use Spectrum Web Components in a basic JavaScript add-on
+description: Learn how to configure and use Spectrum Web Components in a basic JavaScript add-on to build a bingo card generator with custom styling and interactive features.
 contributors:
   - https://github.com/hollyschinsky
 ---

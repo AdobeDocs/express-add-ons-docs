@@ -172,7 +172,7 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
 
 <InlineNestedAlert variant="success" slots="header, text1/>
 
-  **Tips:** 
+  **Tips:**
 
   - Ask the LLM to "list MCP tools".
   - You don’t have to write “Adobe Express Add-ons,” but if you have multiple MCP servers, say: *Use the MCP server named **Adobe Express Add-on***
@@ -293,7 +293,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
  **🤖 LLM Guidance:**
- 
+
  - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
  - **REQUIRED theme imports:**
 
@@ -304,7 +304,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
  - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
  - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
  - **Use Related References:**
- 
+
    - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
    - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
 
@@ -315,7 +315,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
  **🤖 LLM Guidance:**
- 
+
   - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
   - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
   - **REQUIRED theme setup:**
@@ -328,7 +328,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
   - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
 
 - **Use Related References:**
- 
+
   - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
   - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
   - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)

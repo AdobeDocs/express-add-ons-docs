@@ -1,18 +1,20 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on SDK
-  - Express Document API
-  - Document Model Sandbox
-  - Adobe Express
   - Add-on SDK
+  - Add-on UI
+  - Spectrum Design System
+  - Spectrum Web Components
+  - swc-react
   - SDK
   - JavaScript
   - Extend
   - Extensibility
   - API
-title: Great UIs using Adobe's Spectrum Design System
-description: This is an in-depth tutorial that will guide you in using Adobe's Spectrum Design System to help you build great UI's for your add-ons.
+  - UI Components
+  - Tutorial
+title: Building UIs using Adobe's Spectrum Design System
+description: Learn how to build great user interfaces for Adobe Express add-ons using Spectrum Web Components and swc-react. This tutorial covers both basic JavaScript and React implementations.
 contributors:
   - https://github.com/hollyschinsky
 ---

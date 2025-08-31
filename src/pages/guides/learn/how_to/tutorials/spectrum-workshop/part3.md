@@ -1,4 +1,31 @@
-# Tips & Troubleshooting
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Document API
+  - Document Model Sandbox
+  - Add-on SDK
+  - Spectrum Design System
+  - Spectrum Web Components
+  - swc-react
+  - UI Components
+  - Tutorial
+  - Troubleshooting
+  - Tips
+  - SDK
+  - JavaScript
+  - React
+  - Extend
+  - Extensibility
+  - API
+  - Debugging
+title: Spectrum Workshop - Tips & Troubleshooting
+description: Tips, troubleshooting, and debugging guidance for using Adobe's Spectrum Design System in Adobe Express add-ons.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
+# Spectrum Workshop - Tips & Troubleshooting
 
 Useful information to use while developing your add-on UI's with Spectrum.
 
