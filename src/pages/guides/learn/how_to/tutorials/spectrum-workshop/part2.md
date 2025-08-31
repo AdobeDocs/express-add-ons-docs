@@ -13,7 +13,7 @@ keywords:
   - Extend
   - Extensibility
   - API
-title: Lesson 2: Use Spectrum Web Components in a React-based add-on
+title: Lesson 2 - Use Spectrum Web Components in a React-based add-on
 description: Learn how to configure and use swc-react (Spectrum Web Component wrappers for React) to build the same bingo card generator add-on using React and modern component patterns.
 contributors:
   - https://github.com/hollyschinsky

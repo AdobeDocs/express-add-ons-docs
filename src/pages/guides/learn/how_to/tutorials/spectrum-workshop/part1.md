@@ -12,7 +12,7 @@ keywords:
   - Extensibility
   - API
   - Basic JavaScript
-title: Lesson 1: Use Spectrum Web Components in a basic JavaScript add-on
+title: Lesson 1 - Use Spectrum Web Components in a basic JavaScript add-on
 description: Learn how to configure and use Spectrum Web Components in a basic JavaScript add-on to build a bingo card generator with custom styling and interactive features.
 contributors:
   - https://github.com/hollyschinsky
