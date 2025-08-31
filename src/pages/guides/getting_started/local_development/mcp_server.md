@@ -172,7 +172,7 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
   </div>
 </div>
 
-<InlineNestedAlert variant="success" slots="header, text1/>
+<InlineNestedAlert header="true" variant="success" iconPosition="right">
 
   **Tips:**
 
