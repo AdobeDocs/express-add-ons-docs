@@ -212,9 +212,11 @@ This section provides answers to common questions and helps troubleshoot errors 
 #### Q: Can I override Spectrum CSS variables?
 
 **A:** Yes! You can override any Spectrum CSS variable by setting it to a new value in your CSS:
+
 ```css
 --spectrum-global-dimension-font-size-150: 16px;
 ```
+
 This ensures your customizations remain consistent with the design system.
 
 #### Q: What's the best way to debug Spectrum Web Component issues?

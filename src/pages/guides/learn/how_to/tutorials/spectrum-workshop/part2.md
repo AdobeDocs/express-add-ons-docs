@@ -548,11 +548,13 @@ sp-field-label {
 #### Q: How do I handle React synthetic events with web components?
 
 **A:** Use the WC.jsx helper class to wrap components that need event handling:
+
 ```jsx
 <WC onChange={handleChange}>
   <Slider value={sliderValue} />
 </WC>
 ```
+
 The helper automatically converts React event props to native browser events that web components understand.
 
 #### Q: Can I mix swc-react with regular React components?
