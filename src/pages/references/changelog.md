@@ -22,13 +22,13 @@ contributors:
 
 # Changelog
 
-## 2025-08-28
+## 2025-09-01
 
 ### Added
 
-Introduced a new [guide](./guides/getting_started/local_development/mcp_server.md) to our newly released **Adobe Express Add-on MCP Server (Beta)**. 
+Introduced a new [guide](./guides/getting_started/local_development/mcp_server.md) with the release of our public beta **Adobe Express Add-on MCP Server**. 
 
-With MCP-enabled IDEs (Cursor, Claude Desktop, etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](./guides/getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
+With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](./guides/getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
 
 ## 2025-08-25
 
@@ -176,9 +176,9 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
-- New [vue-starter](../learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
-- Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how_to/use_color.md).
+- New [`link()`](./addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [vue-starter](../guides/learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
+- Fixes `fromRGB()` method reference in the [Using Color How-to](../guides/learn/how_to/use_color.md).
 
 ## 2025-04-03
 

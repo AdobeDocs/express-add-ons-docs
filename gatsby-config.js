@@ -767,7 +767,7 @@ module.exports = {
             path: "guides/learn/platform_concepts/context.md",
             pages: [
               {
-                title: "Add-on iframe Context",
+                title: "Add-on Iframe Context",
                 path: "guides/learn/platform_concepts/context.md",
               },
               {

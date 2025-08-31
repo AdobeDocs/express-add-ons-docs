@@ -19,6 +19,40 @@ description: Use PDF and PowerPoint.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I import PDF files?"
+      answer: 'Call `addOnUISdk.app.document.importPdf(blob, attributes)` with PDF blob and MediaAttribute object.'
+
+    - question: "How do I import PowerPoint files?"
+      answer: 'Call `addOnUISdk.app.document.importPowerPoint(blob, attributes)` with PowerPoint blob and MediaAttribute.'
+
+    - question: "What PowerPoint formats are supported?"
+      answer: "Both .pptx and .ppt file formats are supported."
+
+    - question: "Are MediaAttributes required for PDF/PowerPoint?"
+      answer: "Yes, title is mandatory and author is optional in the MediaAttribute object."
+
+    - question: "What is the sourceMimeType parameter for?"
+      answer: 'Use `sourceMimeType` in MediaAttributes to improve UX when importing converted documents. It shows "Import a document" instead of "Import a PDF" in the consent dialog.'
+
+    - question: "When should I use sourceMimeType?"
+      answer: "Use it when importing PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer messaging to users."
+
+    - question: "What values does sourceMimeType accept?"
+      answer: 'Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.'
+
+    - question: "Will users see a consent dialogue?"
+      answer: "Yes, PDF and PowerPoint imports trigger consent dialogues that users must confirm."
+
+    - question: "Can I bypass the consent dialogue?"
+      answer: "No, the consent dialogue cannot be bypassed for PDF and PowerPoint imports."
+
+    - question: "Are vector elements preserved?"
+      answer: "Yes, supported vector elements like shapes and text remain editable after import."
+
+    - question: "How many pages are imported?"
+      answer: "All pages from PDF and PowerPoint files are imported into the document."
 ---
 
 # Use PDF and PowerPoint
@@ -71,6 +105,18 @@ addOnUISdk.ready.then(async () => {
     // ... same as before
 ```
 
+### Importing converted documents
+
+If your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can use the `sourceMimeType` parameter to improve the user experience. When specified, the import consent dialog displays the message "Import a document" rather than the default "Import a PDF".
+
+```js
+// Import a PDF that was converted from a Word document
+await addOnUISdk.app.document.importPdf(convertedPdfBlob, {
+  title: "Converted Document",
+  sourceMimeType: "docx" // Shows "Import a document" in the dialog
+});
+```
+
 ## Import PowerPoint into the page
 
 For PowerPoint files, the process is similar to the one for PDFs, but you need to use the [`importPowerPoint()`](../../../references/addonsdk/app-document.md#importpresentation) method instead. The method supports both `.pptx` and `.ppt` files, and shows the same consent and progress dialogues as seen above.
@@ -99,3 +145,49 @@ addOnUISdk.ready.then(async () => {
   }
 });
 ```
+
+## FAQs
+
+#### Q: How do I import PDF files?
+
+**A:** Call `addOnUISdk.app.document.importPdf(blob, attributes)` with PDF blob and MediaAttribute object.
+
+#### Q: How do I import PowerPoint files?
+
+**A:** Call `addOnUISdk.app.document.importPowerPoint(blob, attributes)` with PowerPoint blob and MediaAttribute.
+
+#### Q: What PowerPoint formats are supported?
+
+**A:** Both .pptx and .ppt file formats are supported.
+
+#### Q: Are MediaAttributes required for PDF/PowerPoint?
+
+**A:** Yes, title is mandatory and author is optional in the MediaAttribute object.
+
+#### Q: What is the sourceMimeType parameter for?
+
+**A:** Use `sourceMimeType` in MediaAttributes to improve UX when importing converted documents. It shows "Import a document" instead of "Import a PDF" in the consent dialog.
+
+#### Q: When should I use sourceMimeType?
+
+**A:** Use it when importing PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer messaging to users.
+
+#### Q: What values does sourceMimeType accept?
+
+**A:** Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.
+
+#### Q: Will users see a consent dialogue?
+
+**A:** Yes, PDF and PowerPoint imports trigger consent dialogues that users must confirm.
+
+#### Q: Can I bypass the consent dialogue?
+
+**A:** No, the consent dialogue cannot be bypassed for PDF and PowerPoint imports.
+
+#### Q: Are vector elements preserved?
+
+**A:** Yes, supported vector elements like shapes and text remain editable after import.
+
+#### Q: How many pages are imported?
+
+**A:** All pages from PDF and PowerPoint files are imported into the document.

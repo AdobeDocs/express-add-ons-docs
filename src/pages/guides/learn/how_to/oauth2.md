@@ -19,6 +19,31 @@ description: Understand how to implement OAuth 2.0 authentication and authorizat
 contributors:
   - https://github.com/hollyschinsky
   - https://github.com/undavide
+faq:
+  questions:
+    - question: "What redirect URI should I use?"
+      answer: 'Use `https://express.adobe.com/static/oauth-redirect.html` for OAuth provider configuration.'
+
+    - question: "How do I add OAuth permissions to manifest?"
+      answer: 'Add hostnames to permissions.oauth array like `["login.microsoftonline.com", "www.dropbox.com"]`.'
+
+    - question: "How do I start OAuth authorization?"
+      answer: 'Call `addOnUISdk.app.oauth.authorize()` with authorizationUrl, clientId, scope, and codeChallenge.'
+
+    - question: "What does the authorize method return?"
+      answer: "Returns object with id, code, redirectUri, and result containing status and description."
+
+    - question: "How do I generate access tokens?"
+      answer: "Use the authorization code with token exchange endpoint and code verifier from PKCE flow."
+
+    - question: "Should tokens persist across sessions?"
+      answer: "Yes, store tokens locally or remotely so users don't re-authenticate every session."
+
+    - question: "What helper utilities are available?"
+      answer: "OAuthUtils.js module provides generateChallenge(), generateAccessToken(), and getAccessToken() functions."
+
+    - question: "What are common OAuth use cases?"
+      answer: "Cloud storage access, user authentication, premium features, and personalized account data sync."
 ---
 
 # Use OAuth 2.0
@@ -148,3 +173,37 @@ function authorize(challenge) {
 ## Use Cases
 
 OAuth is ideal for scenarios where users need to connect their accounts to access personalized features, sync data, or enable functionalities like cloud storage. You can also use it to authenticate users and authorize them to access your add-on's premium users, after they've subscribed to a paid plan.
+
+## FAQs
+
+#### Q: What redirect URI should I use?
+
+**A:** Use `https://express.adobe.com/static/oauth-redirect.html` for OAuth provider configuration.
+
+#### Q: How do I add OAuth permissions to manifest?
+
+**A:** Add hostnames to permissions.oauth array like `["login.microsoftonline.com", "www.dropbox.com"]`.
+
+#### Q: How do I start OAuth authorization?
+
+**A:** Call `addOnUISdk.app.oauth.authorize()` with authorizationUrl, clientId, scope, and codeChallenge.
+
+#### Q: What does the authorize method return?
+
+**A:** Returns object with id, code, redirectUri, and result containing status and description.
+
+#### Q: How do I generate access tokens?
+
+**A:** Use the authorization code with token exchange endpoint and code verifier from PKCE flow.
+
+#### Q: Should tokens persist across sessions?
+
+**A:** Yes, store tokens locally or remotely so users don't re-authenticate every session.
+
+#### Q: What helper utilities are available?
+
+**A:** OAuthUtils.js module provides generateChallenge(), generateAccessToken(), and getAccessToken() functions.
+
+#### Q: What are common OAuth use cases?
+
+**A:** Cloud storage access, user authentication, premium features, and personalized account data sync.

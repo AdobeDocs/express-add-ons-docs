@@ -22,6 +22,7 @@ contributors:
   - https://github.com/hollyschinsky
   - https://github.com/ErinFinnegan
   - https://github.com/undavide
+  - https://github.com/nimithajalal
 ---
 
 # Code Playground
@@ -276,6 +277,25 @@ If you don't want to save your work at any time, use the [keyboard shortcut to R
 - Code is not saved in incognito/private browsing modes.
 - Clearing browser data will delete saved code.
 
+### Downloading Your Code
+
+Downloading your code is a great way to save your work and continue working on it locally in your CLI.
+
+To download your code, click the **...** button in the top right corner of the playground window, then click the **Download** button. This will download a zip file containing your code.
+
+**Folder Structure:**
+
+The downloaded zip file will contain a folder with the following structure:
+
+- add-on folder
+- `script.js` file
+
+![Downloaded Folder Structure](./img/downloaded-folder-structure.png)
+
+You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](../getting_started/quickstart.md#step-4-load-and-run-your-add-on). There is a readme file in the add-on folder that will guide you through the process as well.
+
+**Note:** You cannot run the `script.js` file alone.
+
 ### Resuming Sessions
 
 There are two ways to resume working on your last saved session:
@@ -303,21 +323,16 @@ There are two ways to resume working on your last saved session:
 - **Without a document open:** Click the **Add-ons** button in the left rail, then click the **Add-on development** toggle in the top right.
 - **With a document open:** Click the **Add-ons** button in the left rail, select the **Your add-ons** tab, then click the "Manage add-ons" link in the Add-on Testing section.
 
-## Resources
+## Next Steps
 
-- **How-To Guides:** Begin by experimenting with the code snippets found in our [how-to guides](../learn/how_to/index.md) to kickstart your development.
-- **SDK/API References:** Discover more about what you can do in your add-on by exploring our [SDK References](../../references/index.md).
+Now that you have the downloaded code from the Code Playground, explore our resources to continue building robust add-ons:
+
+- **[API References](../../references/index.md)**: Learn about the Document APIs and Add-on SDK
+- **[Tutorials](../learn/how_to/tutorials/index.md)**: Follow step-by-step guides to build complete add-ons
+- **[How-To Guides](../learn/how_to/index.md)**: Master specific techniques and best practices
+- **[Local Development](../getting_started/local_development/index.md)**: Set up a full development environment for production-ready add-ons
 - **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
-- **Ask Questions:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
-
-## Next Steps: Build Your Add-on Locally
-
-After experimenting with the Code Playground and when you're ready to build out a full-blown add-on in a local development environment:
-
-1. Follow our [Quickstart Guide](../getting_started/quickstart.md) to get your environment set up and your first add-on project created quickly.
-2. Copy the code from the Code Playground [Add-on mode tabs](#add-on-mode-tabs) to the corresponding files in your new project. **Note:** Don't forget, if you're copying code from Script mode into your `sandbox/code.js` file, you'll need to add the `import` statements for the Document APIs and handle your `async` functions manually.
-3. Copy the JSON from the [Manifest JSON Editor](#how-to-use-add-on-mode) in the Code Playground into the `src/manifest.json` file in your new project.
-4. Run your add-on locally using the [Adobe Express CLI](../getting_started/quickstart.md) to test and see your changes in real-time.
+- **Community Support:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
 
 ## FAQs
 
@@ -340,3 +355,7 @@ Getting started is simple. activate the playground, experiment with code snippet
 ### Where can I go for help?
 
 [Join our Discord](http://discord.gg/nc3QDyFeb4) to chat with the add-on developer community.
+
+### I can't find my downloaded zip file. Where is it?
+
+Check your browser's default download location, you can also review your browser's download settings to see where files are being saved. If you have blocked downloads in your browser, you may need to unblock the download.

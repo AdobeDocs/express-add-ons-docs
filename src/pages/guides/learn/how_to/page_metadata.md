@@ -17,6 +17,34 @@ description: Page Metadata.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I get page metadata?"
+      answer: 'Call `addOnUISdk.app.document.getPagesMetadata()` with range and optional pageIds parameters.'
+
+    - question: "What range options are available?"
+      answer: "currentPage, entireDocument, or specificPages from `addOnUISdk.constants.Range`."
+
+    - question: "What does getPagesMetadata return?"
+      answer: "Always returns an array of PageMetadata objects, even for single pages."
+
+    - question: "How do I get specific pages metadata?"
+      answer: 'Use `range: specificPages` and provide an array of page IDs in the pageIds parameter.'
+
+    - question: "What properties are in PageMetadata?"
+      answer: "id, size, title, hasPremiumContent, hasVideoContent, hasAudioContent, hasAnimatedContent, temporalContentDuration, pixelsPerInch."
+
+    - question: "What is hasPremiumContent used for?"
+      answer: "Indicates if the page contains premium content, helpful for rendition permissions and export controls."
+
+    - question: "What does hasTemporalContent indicate?"
+      answer: "Shows if the page contains time-based content like videos or animations."
+
+    - question: "What are common use cases?"
+      answer: "Determining page size, checking for premium content before export, and identifying temporal content duration."
+
+    - question: "How do I get the currently selected page IDs?"
+      answer: "Call `await addOnUISdk.app.document.getSelectedPageIds()` to retrieve an array of selected page IDs. Note: This is an experimental API."
 ---
 
 # Page Metadata
@@ -77,10 +105,10 @@ addOnUISdk.ready.then(() => {
   //     "title": "First",
   //     "hasPremiumContent": false,
   //     "hasAudioContent": false,
-  //     "hasVideoContent": true, 
+  //     "hasVideoContent": true,
   //     "hasAnimatedContent": false,
   //     "hasTemporalContent": true,
-  //     "temporalContentDuration": 100,  
+  //     "temporalContentDuration": 100,
   //     "pixelsPerInch": 96
   //   },
   //   {
@@ -89,16 +117,100 @@ addOnUISdk.ready.then(() => {
   //     "title": "Second",
   //     "hasPremiumContent": false,
   //     "hasAudioContent": false,
-  //     "hasVideoContent": true, 
+  //     "hasVideoContent": true,
   //     "hasAnimatedContent": false,
   //     "hasTemporalContent": true,
-  //     "temporalContentDuration": 100,  
+  //     "temporalContentDuration": 100,
   //     "pixelsPerInch": 96
   //   }
   // ]
 });
 ```
 
+## Get Selected Page IDs (Experimental)
+
+You can also retrieve the currently selected page IDs using the experimental `getSelectedPageIds()` method. This is particularly useful when you want to get metadata for only the pages that the user has selected in the document.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `getSelectedPageIds()` method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+### Example: Get Metadata for Selected Pages Only
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  try {
+    // Get the currently selected page IDs
+    const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
+    console.log("Selected page IDs:", selectedPageIds);
+    
+    if (selectedPageIds.length === 0) {
+      console.log("No pages are currently selected");
+      return;
+    }
+    
+    // Get metadata for only the selected pages
+    const selectedPagesMetadata = await addOnUISdk.app.document.getPagesMetadata({
+      range: addOnUISdk.constants.Range.specificPages,
+      pageIds: selectedPageIds
+    });
+    
+    // Process the metadata for selected pages
+    selectedPagesMetadata.forEach((page, index) => {
+      console.log(`Selected page ${index + 1}:`);
+      console.log(`  ID: ${page.id}`);
+      console.log(`  Title: ${page.title}`);
+      console.log(`  Size: ${page.size.width} x ${page.size.height}`);
+      console.log(`  Has premium content: ${page.hasPremiumContent}`);
+      console.log(`  Has temporal content: ${page.hasTemporalContent}`);
+    });
+    
+  } catch (error) {
+    console.log("Failed to get selected pages metadata:", error);
+  }
+});
+```
+
 ## Use Cases
 
 Page metadata can be used to determine the size of the page, the title, and whether it contains temporal content (videos and animations). Tge `hasPremiumContent` property is particularly helpful when dealing with the rendition of [premium content](./premium_content.md)—for instance, when the user is not authorized to export/download assets that are available only to paid subscribers.
+
+## FAQs
+
+#### Q: How do I get page metadata?
+
+**A:** Call `addOnUISdk.app.document.getPagesMetadata()` with range and optional pageIds parameters.
+
+#### Q: What range options are available?
+
+**A:** currentPage, entireDocument, or specificPages from `addOnUISdk.constants.Range`.
+
+#### Q: What does getPagesMetadata return?
+
+**A:** Always returns an array of PageMetadata objects, even for single pages.
+
+#### Q: How do I get specific pages metadata?
+
+**A:** Use `range: specificPages` and provide an array of page IDs in the pageIds parameter.
+
+#### Q: What properties are in PageMetadata?
+
+**A:** id, size, title, hasPremiumContent, hasVideoContent, hasAudioContent, hasAnimatedContent, temporalContentDuration, pixelsPerInch.
+
+#### Q: What is hasPremiumContent used for?
+
+**A:** Indicates if the page contains premium content, helpful for rendition permissions and export controls.
+
+#### Q: What does hasTemporalContent indicate?
+
+**A:** Shows if the page contains time-based content like videos or animations.
+
+#### Q: What are common use cases?
+
+**A:** Determining page size, checking for premium content before export, and identifying temporal content duration.
+
+#### Q: How do I get the currently selected page IDs?
+
+**A:** Call `await addOnUISdk.app.document.getSelectedPageIds()` to retrieve an array of selected page IDs. Note: This is an experimental API that requires setting `experimentalApis: true` in your manifest.json requirements.
