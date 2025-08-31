@@ -472,7 +472,7 @@ export class App extends LitElement {
 
 #### Q: What's the difference between `@property` and `@state` decorators?
 
-**A:** 
+**A:**
 
 - **`@property`**: Creates a reactive property that's exposed as a custom element attribute. Use for data that comes from parent components or HTML attributes.
 - **`@state`**: Creates internal reactive state that's not exposed externally. Use for component-specific state that doesn't need to be shared with other components.
@@ -545,7 +545,8 @@ render() {
 
 #### Q: How do I communicate between parent and child Lit components?
 
-**A:** 
+**A:**
+
 - **Parent to child**: Pass data via properties
 - **Child to parent**: Dispatch custom events using `this.dispatchEvent(new CustomEvent('my-event', { detail: data }))`
 
