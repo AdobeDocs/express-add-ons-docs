@@ -27,7 +27,7 @@ contributors:
 
 ## TL;DR - Quick Setup
 
-**For experienced developers:** Add this configuration to your MCP-compatible IDE and restart:
+If you are already familiar with the concepts of Model Context Protocol (MCP) and are looking for quick steps to configure, add the following json to your MCP-compatible IDE and restart. For more details, tips & tricks, and examples, continue to read the next sections. 
 
 ```json
 {
@@ -65,7 +65,7 @@ We're actively collecting input to improve accuracy and coverage. Have feedback?
 
 > "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
 
-The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE (like Cursor, Claude Desktop, VS Code etc.) with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
+The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
 The MCP Server communicates directly with your LLM to enhance its responses by connecting your IDE to the Adobe Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
 
@@ -73,7 +73,6 @@ The MCP Server communicates directly with your LLM to enhance its responses by c
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-**How it works:** The server returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, VS Code and others.
 
 ## Prerequisites
 
@@ -82,7 +81,7 @@ The MCP Server communicates directly with your LLM to enhance its responses by c
 
 ## Quick Setup (No Installation Required)
 
-Clone, install or build. Just configure your MCP client (ie: Cursor, Claude Desktop, VS Code) with a simple json file.
+No need to clone, install or build. Just configure your IDE with a simple json file.
 
 ### Step 1: Configure your IDE
 
@@ -161,7 +160,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 #### Verify with Tool calls
 
-The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
+The LLM will automatically invoke tools based on your prompts. Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
 
 <div className="container">
   <div className="image-column">
@@ -399,7 +398,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 **A:** LLM stands for "Large Language Model"—these are AI assistants like ChatGPT, Claude, or Copilot that can understand and generate human-like text and code. In the context of the MCP Server, the LLM is your AI coding assistant that reads your questions, searches Adobe Express documentation (via the MCP Server), and provides intelligent responses with accurate code examples. Think of it as having an expert Adobe Express developer as your pair programming partner who has instant access to all the documentation and can write code for you.
 
-#### Q: Does the Adobe Express Add-on MCP Server generate code?
+#### Q: Does the Adobe Express Add-on MCP Server help with generating code?
 
 **A:** Yes—it enhances your LLM's ability to generate accurate Adobe Express add-on code by providing relevant documentation and TypeScript definitions. Your IDE/LLM handles the actual code generation with improved context.
 
