@@ -3,15 +3,18 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
   - Extend
   - Extensibility
-  - API
+  - Add-ons
+  - Add-on UI SDK
   - Add-on Manifest
-  - AddOnSdk
+  - AddOnUISdk
+  - Document Sandbox
+  - Document API
+  - Changelog
 title: What's New
 description: Contains a running log of changes to the add-on documentation, SDK, CLI, etc.
 contributors:
@@ -21,6 +24,14 @@ contributors:
 ---
 
 # Changelog
+
+## 2025-09-01
+
+### Added
+
+Introduced a new [guide](../guides/getting_started/local_development/mcp_server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
+
+With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](../guides/getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
 
 ## 2025-08-25
 
@@ -935,7 +946,7 @@ Added new **Audio API** documentation. You can now import audio to the current A
 1. Using the new [`addAudio()`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) method, which requires a [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#mediaattributes) object containing the `title` of the audio content.
 2. Using [drag and drop](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument), and supplying the [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes) object in the [`DragCompletionData`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata).
 
-Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
+Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
 
 <!-- <InlineAlert slots="text" variant="warning"/>
 
@@ -991,7 +1002,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
   - You may see "Detected a possible stutter. Excessive ECS Frame duration of ## ms" in the console. You can ignore this for now.
   - If your script code has a syntax error, the console will log an unhelpful error message (similar to `Uncaught (in promise) at adobe-internal.js:49`). Your add-on panel UI will be visible and continue to be interactive, but it won't be able to communicate with the document sandbox, resulting in what feels like non-responsive UI (e.g., clicking doesn't trigger the expected action). You'll want to configure your editor to highlight any syntax editors so that you can be sure your code is at least syntactically correct before you save.
 - Intermittent issues
-  - Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the document sandbox to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.
+  - Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the document sandbox to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.
   - It's occasionally possible to run into a race condition where the communications bridge between the two contexts (panel vs document sandbox) is not set up in time. If you interact with your panel UI immediately after it's reloaded, the click may appear do nothing instead of invoking your script code. We're working on a fix for this.
 - Common pitfalls
   - If you split your work on a document over multiple frames, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release.
