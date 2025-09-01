@@ -65,7 +65,7 @@ We're actively collecting input to improve accuracy and coverage. Have feedback?
 
 > "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
 
-The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE (like Cursor or Claude Desktop) with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
+The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE (like Cursor, Claude Desktop, VS Code etc.) with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
 The MCP Server communicates directly with your LLM to enhance its responses by connecting your IDE to the Adobe Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
 
@@ -73,16 +73,16 @@ The MCP Server communicates directly with your LLM to enhance its responses by c
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
 
-**How it works:** The server returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, and others.
+**How it works:** The server returns semantically relevant chunks to your LLM. It works with MCP-compatible IDEs like Cursor, Claude Desktop, VS Code and others.
 
 ## Prerequisites
 
 - **Node.js 18+** (check with `node --version`) - Required to run the [Adobe Express Add-on MCP Server package](https://www.npmjs.com/package/@adobe/express-add-on-dev-mcp) via `npx`
-- **MCP-compatible IDE** - Such as Cursor, Claude Desktop, or other editors supporting the Model Context Protocol
+- **MCP-compatible IDE** - Such as Cursor, Claude Desktop, VS Code or other editors supporting the Model Context Protocol
 
 ## Quick Setup (No Installation Required)
 
-Clone, install or build. Just configure your MCP client (ie: Cursor, Claude Desktop) with a simple json file.
+Clone, install or build. Just configure your MCP client (ie: Cursor, Claude Desktop, VS Code) with a simple json file.
 
 ### Step 1: Configure your IDE
 
@@ -176,8 +176,8 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
 
   **Tips:**
 
-  - Ask the LLM to "list MCP tools".
-  - You don’t have to write “Adobe Express Add-ons,” but if you have multiple MCP servers, say: *Use the MCP server named **Adobe Express Add-on***
+  - Ask the LLM to "*list MCP tools*".
+  - If you have multiple MCP servers, say: "*Use the MCP server named **Adobe Express Add-on***"
 
 </InlineNestedAlert>
 
@@ -185,7 +185,7 @@ The LLM will automatically invoke tools based on your prompts.Here is an example
 
 ### Usage Examples
 
-The **Adobe Express Add-on MCP Server** excels at both helping with answering questions and generating code for Adobe Express add-ons. Here are examples of effective prompts:
+The **Adobe Express Add-on MCP Server** excels at both helping with answering questions and generating code for Adobe Express add-ons. Here are some examples of effective prompts:
 
 #### Documentation & Learning
 
@@ -234,8 +234,8 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
   **Key elements to include:**
 
    - **Programming languages**: JavaScript, TypeScript
-   - **Framework**: React (or vanilla JS)
-   - **UI components**: Spectrum Web Components with Express theme
+   - **Framework**: React
+   - **UI components**: Spectrum Web Components with Express theme using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
    - **Specific components needed**: Modal dialog, color picker, buttons, etc.
    - **Build tools**: Adobe Add-on CLI for setup and development
 
