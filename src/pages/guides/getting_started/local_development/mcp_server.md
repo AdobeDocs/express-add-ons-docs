@@ -176,7 +176,7 @@ The LLM will automatically invoke tools based on your prompts. Here is an exampl
   **Tips:**
 
   - Ask the LLM to "*list MCP tools*".
-  - If you have multiple MCP servers, say: "*Use the MCP server named **Adobe Express Add-on***"
+  - If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
 
 </InlineNestedAlert>
 
