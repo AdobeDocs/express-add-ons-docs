@@ -27,7 +27,7 @@ contributors:
 
 ## TL;DR - Quick Setup
 
-If you are already familiar with the concepts of Model Context Protocol (MCP) and are looking for quick steps to configure, add the following json to your MCP-compatible IDE and restart. For more details, tips & tricks, and examples, continue to read the next sections. 
+If you are already familiar with the concepts of Model Context Protocol (MCP) and are looking for quick steps to configure, add the following json to your MCP-compatible IDE and restart. For more details, tips & tricks, and examples, continue to read the next sections.
 
 ```json
 {
@@ -72,7 +72,6 @@ The MCP Server communicates directly with your LLM to enhance its responses by c
 - **Semantic Documentation Search**: Find relevant guides, examples, and tutorials without leaving your editor
 - **TypeScript Definitions**: Get accurate code completions and reduce AI hallucinations with official SDK types
 - **Structured Access**: Your LLM gets grounded information from the latest Adobe Express Add-on documentation
-
 
 ## Prerequisites
 
