@@ -161,7 +161,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 #### Verify with Tool calls
 
-The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
+The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the TypeScript definitions for the specific API in the parameters.
 
 <div className="container">
   <div className="image-column">
