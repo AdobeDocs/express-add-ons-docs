@@ -255,7 +255,7 @@ Retrieves the currently selected page ids in the document.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -322,7 +322,7 @@ Retrieves the document link.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This method, the LinkOptions parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This method, the LinkOptions parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 

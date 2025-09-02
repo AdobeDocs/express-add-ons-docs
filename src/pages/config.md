@@ -176,7 +176,7 @@
                     - [Tips & Troubleshooting](guides/learn/how-to/tutorials/spectrum-workshop/part3.md) 
                 - [Using Lit & TypeScript](guides/learn/how-to/tutorials/using-lit-typescript.md) 
         - [Platform Concepts](guides/learn/platform-concepts/context.md) 
-            - [Add-on iframe Context](guides/learn/platform-concepts/context.md) 
+            - [Add-on Iframe Context](guides/learn/platform-concepts/context.md) 
             - [The Document API](guides/learn/platform-concepts/document-api.md) 
         - [Sample add-ons](guides/learn/samples.md) 
     - [Build](guides/build/advanced-topics/frameworks-libraries-bundling.md) header
