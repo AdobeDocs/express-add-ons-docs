@@ -1,3 +1,28 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Best Practices
+  - Design Guidelines
+  - User Experience
+  - UX Design
+  - UI Design
+  - Responsive Design
+  - Accessibility
+  - Navigation
+  - Layout
+  - User Interface
+  - Design Patterns
+  - Usability
+  - Theme Support
+  - Dark Mode
+  - Light Mode
+title: Design Best Practices
+description: Essential design best practices for Adobe Express add-ons. Learn about responsive design, navigation patterns, accessibility, and creating user-friendly interfaces.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Overview
 
 This set of best practices are important to keep in mind as you develop your add-on since they can ultimately make or break the user experience with your add-on.

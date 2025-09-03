@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Accessibility
+  - WCAG Guidelines
+  - Inclusive Design
+  - Disability Access
+  - Keyboard Navigation
+  - Screen Readers
+  - Accessibility Standards
+  - Universal Design
+title: Accessibility Guidelines
+description: Adobe Express add-on accessibility requirements and best practices for creating inclusive experiences that work for users with diverse needs and abilities.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Accessibility
 
 Adobe products and add-ons should be accessible to users with a range of needs.

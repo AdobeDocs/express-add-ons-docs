@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Edge Cases
+  - Testing
+  - Quality Assurance
+  - Boundary Values
+  - Error Handling
+  - Input Validation
+  - Performance Testing
+  - Extreme Scenarios
+title: Edge Case Testing Guidelines
+description: Adobe Express add-on testing requirements for edge cases, boundary values, extreme scenarios, and comprehensive quality assurance practices.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Testing for edge cases
 
 Edge cases may affect the performance of your add-on.

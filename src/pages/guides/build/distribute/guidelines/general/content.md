@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Content Requirements
+  - Content Policy
+  - User Safety
+  - Illegal Content
+  - Content Moderation
+  - Acceptable Use
+  - Content Standards
+  - Safety Guidelines
+title: Content Requirements
+description: Adobe Express add-on content requirements and prohibited content policies to ensure user safety and maintain acceptable standards.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Content Requirements
 
 In the interests of user safety and acceptable standards, add-ons must not:

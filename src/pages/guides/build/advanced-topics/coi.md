@@ -1,3 +1,30 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Cross-Origin Isolation
+  - COI
+  - COOP
+  - COEP
+  - CORP
+  - Security Headers
+  - Cross-Origin Policy
+  - Browser Security
+  - Chromium
+  - Chrome
+  - Edge
+  - Security
+  - Web Security
+  - Cross-Origin
+  - Isolation
+  - Headers
+  - Browser Compatibility
+title: Cross-origin isolation handling
+description: Learn how to ensure your Adobe Express add-ons work properly with cross-origin isolation headers. This guide covers COI requirements, browser compatibility, and troubleshooting steps.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Cross-origin isolation handling
 
 How to ensure your add-ons work properly with the cross-origin isolation headers enforced by Adobe Express.
