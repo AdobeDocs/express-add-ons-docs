@@ -327,13 +327,12 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
   
   - Wrap app with: `<Theme system="express" scale="medium" color="light">`
   - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
+  - **Use Related References:**
 
-**Use Related References:**
-
-  - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-  - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
-  - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
-  - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
+    - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+    - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+    - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
+    - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
 
 </InlineNestedAlert>
 
