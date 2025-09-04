@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Authentication
+  - User Login
+  - OAuth
+  - Sign-up
+  - Logout
+  - User Management
+  - Security
+  - Identity Management
+title: Authentication Guidelines
+description: Adobe Express add-on authentication requirements covering user login, sign-up functionality, logout processes, and security best practices.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Authenticating Users
 
 Users must be able to log in and out of the add-on seamlessly. Ensure that all of these functions work effectively before submitting for review.

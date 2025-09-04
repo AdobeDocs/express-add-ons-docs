@@ -1,6 +1,24 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Compatibility
+  - Cross-platform
+  - Browser Support
+  - System Requirements
+  - Performance
+  - Responsive Design
+  - Mobile Support
+  - Operating Systems
+title: Compatibility Guidelines
+description: Adobe Express add-on compatibility requirements covering browser support, system requirements, performance standards, and responsive design principles.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Compatibility
 
-Your add-on will help the user to make the most of their Adobe Express experience, so it’s important that it feels like part of their workflow.
+Your add-on will help the user to make the most of their Adobe Express experience, so it's important that it feels like part of their workflow.
 
 ## Conflicts
 

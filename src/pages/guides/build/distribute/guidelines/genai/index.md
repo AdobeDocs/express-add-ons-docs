@@ -1,6 +1,24 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Generative AI
+  - AI Guidelines
+  - Machine Learning
+  - Content Generation
+  - AI Disclosure
+  - AI Ethics
+  - Content Policies
+  - AI Technology
+title: Generative AI Guidelines
+description: Adobe Express add-on guidelines for using generative AI technology including disclosure requirements, content generation standards, and ethical AI practices.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Generative AI Guidelines
 
-This set of guidelines gives you the latest information on how to meet Adobe’s requirements around Generative AI.
+This set of guidelines gives you the latest information on how to meet Adobe's requirements around Generative AI.
 
 ## Introduction
 

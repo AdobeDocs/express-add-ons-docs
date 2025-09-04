@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Listing Guide
+  - Marketplace Submission
+  - Add-on Metadata
+  - Listing Details
+  - Submission Process
+  - Marketplace Listing
+  - Add-on Publishing
+  - Version Management
+title: Guide to creating your add-on marketplace listing
+description: Comprehensive guide for creating Adobe Express add-on marketplace listings including metadata requirements, submission details, and version management.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Add-on Listing Guide
 
 ### Listing Details
