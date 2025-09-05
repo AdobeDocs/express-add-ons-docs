@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Review Process
+  - Marketplace Review
+  - Add-on Approval
+  - Submission Review
+  - Quality Assurance
+  - Review Criteria
+  - Approval Process
+  - Marketplace Standards
+title: Add-on Review Process
+description: Adobe Express add-on marketplace review process covering submission criteria, quality standards, approval workflow, and review requirements.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Our Review Process
 
 ## Overview

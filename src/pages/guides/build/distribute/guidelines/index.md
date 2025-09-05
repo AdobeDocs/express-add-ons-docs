@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Distribution Guidelines
+  - Marketplace
+  - Review Process
+  - Add-on Approval
+  - Publishing Guidelines
+  - Quality Standards
+  - Best Practices
+  - Developer Guidelines
+title: Distribution Guidelines
+description: Adobe Express add-on distribution guidelines covering general requirements, brand guidelines, monetization, and generative AI standards for marketplace approval.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Introduction
 
 Thank you for joining the community of developers worldwide that are creating add-ons for Adobe Express.

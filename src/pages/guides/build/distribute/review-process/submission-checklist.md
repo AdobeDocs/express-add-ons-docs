@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Submission Checklist
+  - Review Process
+  - Pre-submission
+  - Quality Assurance
+  - Submission Requirements
+  - Review Preparation
+  - Marketplace Submission
+  - Add-on Testing
+title: Submission Checklist
+description: Pre-submission checklist for Adobe Express add-ons covering required files, testing requirements, and preparation steps for marketplace review.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Submission Checklist
 
 To make sure your review process goes smoothly, check off the tasks in this list before submitting.

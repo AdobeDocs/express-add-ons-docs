@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Brand Guidelines
+  - Developer Brand Guidelines
+  - Adobe Branding
+  - Logo Usage
+  - Brand Standards
+  - Marketing Guidelines
+  - Social Media Guidelines
+  - Adobe Logos
+title: Developer Brand Guidelines
+description: Adobe Express Developer Program brand guidelines covering branding requirements, logo usage, product terminology, and marketing standards for add-on developers.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Developer Brand Guidelines
 
 ## Overview

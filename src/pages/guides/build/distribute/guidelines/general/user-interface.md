@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - User Interface Guidelines
+  - UI Design
+  - Adobe Spectrum
+  - User Experience
+  - Interface Design
+  - Display Items
+  - Design System
+  - UI Standards
+title: User Interface Guidelines
+description: Adobe Express add-on user interface requirements covering design standards, Adobe Spectrum integration, display items, and user experience best practices.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # User Interface
 
 Your add-on's user interface should provide a great user experience.

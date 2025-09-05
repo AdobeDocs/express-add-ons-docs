@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Marketplace Listing
+  - Add-on Description
+  - Metadata
+  - App Store Optimization
+  - Listing Guidelines
+  - Product Description
+  - Screenshots
+  - Add-on Marketing
+title: Add-on Listing Guidelines
+description: Adobe Express add-on marketplace listing requirements covering metadata, descriptions, screenshots, and optimization for discoverability and user engagement.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Listing Your Add-on
 
 Your listing should provide valuable information about what your add-on does, and why people should use it.

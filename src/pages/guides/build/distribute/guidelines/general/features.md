@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Feature Guidelines
+  - Stability
+  - Data Storage
+  - Loading Indicators
+  - User Experience
+  - Error Handling
+  - Performance
+  - Quality Assurance
+title: Feature Guidelines
+description: Adobe Express add-on feature requirements covering stability, data storage, loading indicators, error handling, and user experience best practices.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Features
 
 Some elements to bear in mind when testing the features of your add-on before submission.

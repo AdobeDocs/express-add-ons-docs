@@ -1,3 +1,29 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Web Frameworks
+  - Libraries
+  - TypeScript
+  - Webpack
+  - Bundling
+  - JavaScript Bundler
+  - Type Definitions
+  - React
+  - Vue
+  - Angular
+  - Build Tools
+  - Module Bundler
+  - Development Tools
+  - Framework Integration
+  - Library Integration
+  - TypeScript Definitions
+title: Using Web Frameworks and Libraries
+description: Learn how to integrate web frameworks and libraries into your Adobe Express add-ons. This guide covers TypeScript definitions, webpack bundling, and framework-specific configurations.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Using Web Frameworks and Libraries
 
 ## Typescript definitions

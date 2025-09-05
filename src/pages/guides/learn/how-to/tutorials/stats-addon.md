@@ -394,7 +394,7 @@ We'll start with a placeholder row with a friendly message, which is going to be
   <sp-theme
     scale="medium"
     color="light"
-    theme="express"
+    system="express"
   >
     <h3>Framework status</h3>
     <hr />
@@ -894,7 +894,7 @@ Please use the UI iframe and Document Sandbox tabs to switch between the two dom
     <sp-theme
       scale="medium"
       color="light"
-      theme="express"
+      system="express"
     >
       <h3>Framework status</h3>
       <hr />

@@ -1,3 +1,31 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Distribution
+  - Guidelines
+  - Marketplace
+  - Submission
+  - Review Process
+  - Testing
+  - Quality Assurance
+  - Content Guidelines
+  - User Interface Guidelines
+  - Accessibility
+  - Performance
+  - Compatibility
+  - Usability
+  - Feature Functionality
+  - Listing Metadata
+  - Brand Guidelines
+  - Monetization
+  - Generative AI
+title: General Distribution Guidelines - Overview
+description: Comprehensive guidelines for distributing Adobe Express add-ons. Learn about submission requirements, testing guidelines, content policies, and marketplace standards.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Overview
 
 This section provides a set of guides to help you in the distribution stage of your add-on.

@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Usability Guidelines
+  - User Interface
+  - UI Design
+  - Adobe Spectrum
+  - Responsive Design
+  - User Experience
+  - Interface Integration
+  - Design Standards
+title: Usability Guidelines
+description: Adobe Express add-on usability requirements covering UI integration, responsive design, user inputs, and interface standards using Adobe Spectrum.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Usability
 
 Follow these guidelines to make sure that your add-on meets our usability standards before submitting.

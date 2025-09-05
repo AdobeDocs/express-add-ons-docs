@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Security Guidelines
+  - Malicious Code
+  - Data Protection
+  - User Privacy
+  - Security Vulnerabilities
+  - System Security
+  - Data Transmission
+  - Security Best Practices
+title: Security Guidelines
+description: Adobe Express add-on security requirements covering malicious code prevention, user data protection, vulnerability management, and security best practices.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Security
 
 Users must be able to access an add-on without compromising their security or negatively affecting their systems.

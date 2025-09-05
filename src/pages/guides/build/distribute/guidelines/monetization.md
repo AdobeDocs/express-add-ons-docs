@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Monetization
+  - Paid Add-ons
+  - Marketplace Revenue
+  - Pricing Strategy
+  - Subscription Models
+  - Payment Processing
+  - Revenue Sharing
+  - Commercial Add-ons
+title: Monetization Guidelines
+description: Guidelines for monetizing Adobe Express add-ons including pricing strategies, subscription models, payment processing, and marketplace revenue requirements.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Monetization Guidelines
 
 Developers who submit to the marketplace can charge users for using their add-ons.

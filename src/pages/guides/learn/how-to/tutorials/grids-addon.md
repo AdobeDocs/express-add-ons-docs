@@ -190,7 +190,7 @@ If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary fi
     <sp-theme
       scale="medium"
       color="light"
-      theme="express"
+      system="express"
     >
       <sp-button id="createShape">Create shape</sp-button>
     </sp-theme>
@@ -336,7 +336,7 @@ It's finally time to start laying down some elements. Let's hook the only iframe
   <sp-theme
     scale="medium"
     color="light"
-    theme="express"
+    system="express"
   >
     <sp-button
       id="createShape"
@@ -611,7 +611,7 @@ Let's finish the UI, completing the code for `ui/index.js`. As you can see, it i
   <sp-theme
     scale="medium"
     color="light"
-    theme="express"
+    system="express"
   >
     <h2>Design Grid creator</h2>
     <div class="row gap-20">
@@ -1379,7 +1379,7 @@ The code for this project can be downloaded [here](https://github.com/AdobeDocs/
     <sp-theme
       scale="medium"
       color="light"
-      theme="express"
+      system="express"
     >
       <h2>Design Grid creator</h2>
       <div class="row gap-20">

@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Planning Guidelines
+  - Add-on Strategy
+  - Marketplace Research
+  - Idea Validation
+  - AI Usage
+  - Competitive Analysis
+  - User Value
+  - Workflow Integration
+title: Planning Guidelines
+description: Adobe Express add-on planning guidelines covering idea selection, marketplace research, competitive analysis, and strategic considerations for successful add-on development.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 ## Choosing your idea
 
 Before you start, do a little research on the marketplace to see what other developers are doing, and where you can make an impact.
