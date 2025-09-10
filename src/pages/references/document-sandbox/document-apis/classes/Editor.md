@@ -69,7 +69,7 @@ This local client will act as having unsaved changes until the upload has finish
 
 #### Parameters
 
-• **bitmapData**: [`BitmapImage`](../interfaces/BitmapImage.md)
+• **bitmapData**: [`BitmapImage`](BitmapImage.md)
 
 BitmapImage resource (e.g. returned from [loadBitmapImage](Editor.md#loadbitmapimage)).
 
@@ -178,7 +178,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](BitmapImage.md)\>
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -198,7 +198,7 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise`<[`BitmapImage`](../interfaces/BitmapImage.md)\>
+`Promise`<[`BitmapImage`](BitmapImage.md)\>
 
 ---
 

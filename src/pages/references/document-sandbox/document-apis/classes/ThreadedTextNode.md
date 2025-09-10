@@ -4,7 +4,7 @@
 
 A ThreadedTextNode represents a text display frame in the scenegraph. It is a subset of longer text that flows across
 multiple TextNode "frames". Because of this, the TextNode does not directly hold the text content and styles –
-instead it refers to a [TextContentModel](TextContentModel.md), which may be shared across multiple ThreadedTextNode frames.
+instead it refers to a [TextNodeContentModel](TextNodeContentModel.md), which may be shared across multiple ThreadedTextNode frames.
 
 APIs are not yet available to create multi-frame text flows.
 
@@ -67,7 +67,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 • `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](VisualNode.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
@@ -118,20 +118,20 @@ recommended to use this property only when the node is placed on a page.
 
 ### fullContent
 
-• `get` **fullContent**(): [`TextContentModel`](TextContentModel.md)
+• `get` **fullContent**(): [`TextNodeContentModel`](TextNodeContentModel.md)
 
 The model containing the complete text string and its styles, only part of which may be visible within the bounds of
 this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
 fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
 
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
-same single [TextContentModel](TextContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
-not. Use [TextContentModel](TextContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
+same single [TextNodeContentModel](TextNodeContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
+not. Use [TextNodeContentModel](TextNodeContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
 encountered before.
 
 #### Returns
 
-[`TextContentModel`](TextContentModel.md)
+[`TextNodeContentModel`](TextNodeContentModel.md)
 
 ---
 
@@ -187,9 +187,9 @@ The layout mode of the TextNode "frame."
 • `get` **locked**(): `boolean`
 
 The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
-cannot be edited by the user in the UI unless they are unlocked first. Operations on locked nodes using the API
-are permitted. However, please consider if modifying a locked node would align with user expectations
-before using the API to make changes to locked nodes.
+cannot be edited by the user in the UI unless they are unlocked first. It is still possible to mutate locked nodes
+at the model level using these APIs. However, please consider if modifying a locked node would align with user
+expectations before doing so.
 
 • `set` **locked**(`locked`): `void`
 
@@ -289,7 +289,7 @@ the *entire* text content string.
 
 #### Deprecated
 
-- Use the text getter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+- Use the text getter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
 
 • `set` **text**(`textContent`): `void`
 
@@ -299,7 +299,7 @@ WARNING: If a piece of text content flows across several TextNodes,
 
 #### Deprecated
 
-- Use the text setter on [TextContentModel](TextContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+- Use the text setter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
 
 #### Parameters
 
@@ -423,8 +423,8 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
-Convert the node's [boundsLocal](VisualNode.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
-node. Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree
+Convert the node's [boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+node. Both nodes must share the same [visualRoot](ThreadedTextNode.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
@@ -444,23 +444,25 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 ---
 
-### clone()
+### cloneInPlace()
 
-• **clone**(): `never`
+• **cloneInPlace**(): [`ThreadedTextNode`](ThreadedTextNode.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Always throws as it's not possible to clone only a single "frame" of threaded text.
+Creates a copy of this node and its entire subtree of descendants.
+
+The node must be attached to a page as the copy will be added as a sibling.
 
 #### Returns
 
-`never`
+[`ThreadedTextNode`](ThreadedTextNode.md)
 
-#### Overrides
+#### Inherited from
 
-[`TextNode`](TextNode.md).[`clone`](TextNode.md#clone)
+[`TextNode`](TextNode.md).[`cloneInPlace`](TextNode.md#cloneinplace)
 
 ---
 
@@ -501,7 +503,7 @@ Helper method to determine if the text is in a flow.
 • **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](ThreadedTextNode.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
@@ -549,7 +551,8 @@ removal. No-op if node is already an orphan.
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Changes the height to the given value and the width to the given height multiplied by the aspect ratio.
+Changes the height to the given value by visually *scaling* the entire content larger or smaller on both axes to
+preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth) documentation for additional explanation.
 
 #### Parameters
 
@@ -573,7 +576,15 @@ Changes the height to the given value and the width to the given height multipli
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Changes the width to the given value and the height to the given width multiplied by the aspect ratio.
+Changes the width to the given value by visually *scaling* the entire content larger or smaller on both axes to
+preserve its existing aspect ratio, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal)) at a fixed location.
+
+Scaling changes the size of visual styling elements such as stroke width, corner detailing, and font size.
+Contrast this to *resizing* operations (such as [resizeToFitWithin](Node.md#resizetofitwithin)), which adjust the bounding box of an
+element while trying to preserve the existing size of visual detailing such as strokes, corners, and fonts.
+
+Rescaling becomes baked into the updated values of fields such as stroke weight, rectangle width, etc. (it is not
+a separate, persistent scale factor multiplier).
 
 #### Parameters
 
@@ -597,9 +608,10 @@ Changes the width to the given value and the height to the given width multiplie
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Resizes the node to cover a box with the given dimensions.
-
-If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+Resizes the node to completely *cover* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
+at a fixed location. Nodes with a fixed aspect ratio may extend outside the box on one axis as a result, but
+nodes with flexible aspect ratio will be resized to the exact box size specified. See [resizeToFitWithin](Node.md#resizetofitwithin)
+documentation for additional explanation.
 
 #### Parameters
 
@@ -615,6 +627,10 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`TextNode`](TextNode.md).[`resizeToCover`](TextNode.md#resizetocover)
 
+#### See
+
+resizeToFitWithin
+
 ---
 
 ### resizeToFitWithin()
@@ -625,9 +641,15 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Resizes the node to fit within a box with the given dimensions.
+Resizes the node to fit entirely *within* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
+at a fixed location. Nodes with a fixed aspect ratio may leave unused space on one axis as a result, but nodes
+with flexible aspect ratio will be resized to the exact box size specified.
 
-If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+Resizing attempts to preserve the existing size of visual styling elements such as stroke width, corner detailing,
+and font size as much as possible. Contrast with *rescaling* (such as [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth)), which
+always changes the size of visual detailing in exact proportion to the change in overall bounding box size. This
+API may still produce *some* degree of rescaling if necessary for certain shapes with fixed corner/edge detailing
+to fit the box better.
 
 #### Parameters
 
@@ -642,6 +664,10 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 #### Inherited from
 
 [`TextNode`](TextNode.md).[`resizeToFitWithin`](TextNode.md#resizetofitwithin)
+
+#### See
+
+resizeToCover
 
 ---
 
@@ -674,7 +700,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 Center a rectangle within its parent artboard:
 
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -714,6 +740,6 @@ Point to rotate around, in node's local coordinates.
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
 
-```js
-rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
+```
+rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

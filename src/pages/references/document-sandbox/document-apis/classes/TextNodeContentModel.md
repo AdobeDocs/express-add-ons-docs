@@ -1,15 +1,32 @@
-[@express-document-sdk](../overview.md) / TextContentModel
+[@express-document-sdk](../overview.md) / TextNodeContentModel
 
-# Class: `abstract` TextContentModel
+# Class: TextNodeContentModel
 
-TextContentModel is an abstract base class representing a complete piece of text content.
+Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) *or*
+split across multiple [ThreadedTextNode](ThreadedTextNode.md) frames for display.
 Use this model to get or modify the text string and the style ranges applied to it.
 
-## Extended by
+## Extends
 
--   [`TextNodeContentModel`](TextNodeContentModel.md)
+-   [`TextContentModel`](TextContentModel.md)
 
 ## Accessors
+
+### allTextNodes
+
+• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+
+Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. The text content
+starts in the first [ThreadedTextNode](ThreadedTextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
+text content may not be visible at all, if the last [ThreadedTextNode](ThreadedTextNode.md) "frame" is not large enough to accommodate it.
+
+If there are multiple [ThreadedTextNode](ThreadedTextNode.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
+
+#### Returns
+
+`Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+
+---
 
 ### characterStyleRanges
 
@@ -132,6 +149,10 @@ The text to append.
 
 `void`
 
+#### Inherited from
+
+[`TextContentModel`](TextContentModel.md).[`appendText`](TextContentModel.md#appendtext)
+
 #### Throws
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
@@ -164,9 +185,14 @@ entire paragraphs, it overlaps.
 
 `void`
 
+#### Inherited from
+
+[`TextContentModel`](TextContentModel.md).[`applyCharacterStyles`](TextContentModel.md#applycharacterstyles)
+
 ---
 
 ### applyParagraphStyles()
+
 
 • **applyParagraphStyles**(`styles`, `range`?): `void`
 
@@ -194,6 +220,10 @@ If not specified the styles will be applied to the entire piece of text content 
 
 `void`
 
+#### Inherited from
+
+[`TextContentModel`](TextContentModel.md).[`applyParagraphStyles`](TextContentModel.md#applyparagraphstyles)
+
 ---
 
 ### deleteText()
@@ -217,6 +247,10 @@ The range of text to delete.
 
 `void`
 
+#### Inherited from
+
+[`TextContentModel`](TextContentModel.md).[`deleteText`](TextContentModel.md#deletetext)
+
 #### Throws
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
@@ -224,6 +258,7 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 ---
 
 ### hasUnavailableFonts()
+
 
 • **hasUnavailableFonts**(): `boolean`
 
@@ -239,6 +274,10 @@ the character styles to use only AvailableFonts.
 #### Returns
 
 `boolean`
+
+#### Inherited from
+
+[`TextContentModel`](TextContentModel.md).[`hasUnavailableFonts`](TextContentModel.md#hasunavailablefonts)
 
 ---
 
@@ -271,6 +310,10 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`TextContentModel`](TextContentModel.md).[`insertText`](TextContentModel.md#inserttext)
 
 #### Throws
 
@@ -307,6 +350,10 @@ existing text to match the style of. Default: `firstReplacedCharacter`.
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`TextContentModel`](TextContentModel.md).[`replaceText`](TextContentModel.md#replacetext)
 
 #### Throws
 

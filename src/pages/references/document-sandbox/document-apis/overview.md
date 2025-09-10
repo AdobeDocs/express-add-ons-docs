@@ -31,6 +31,7 @@
 -   [AvailableFont](classes/AvailableFont.md)
 -   [BaseFont](classes/BaseFont.md)
 -   [BaseNode](classes/BaseNode.md)
+-   [BitmapImage](classes/BitmapImage.md)
 -   [ColorUtils](classes/ColorUtils.md)
 -   [ComplexShapeNode](classes/ComplexShapeNode.md)
 -   [Context](classes/Context.md)
@@ -52,6 +53,7 @@
 -   [PageNode](classes/PageNode.md)
 -   [PathNode](classes/PathNode.md)
 -   [ReadOnlyItemList](classes/ReadOnlyItemList.md)
+-   [ReadOnlyMask](classes/ReadOnlyMask.md)
 -   [RectangleNode](classes/RectangleNode.md)
 -   [RestrictedItemList](classes/RestrictedItemList.md)
 -   [SolidColorShapeNode](classes/SolidColorShapeNode.md)
@@ -60,6 +62,7 @@
 -   [StrokeShapeNode](classes/StrokeShapeNode.md)
 -   [TextContentModel](classes/TextContentModel.md)
 -   [TextNode](classes/TextNode.md)
+-   [TextNodeContentModel](classes/TextNodeContentModel.md)
 -   [ThreadedTextNode](classes/ThreadedTextNode.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
 -   [UnknownMediaRectangleNode](classes/UnknownMediaRectangleNode.md)
@@ -73,7 +76,6 @@
 -   [AutoHeightTextLayout](interfaces/AutoHeightTextLayout.md)
 -   [AutoWidthTextLayout](interfaces/AutoWidthTextLayout.md)
 -   [BaseParagraphStyles](interfaces/BaseParagraphStyles.md)
--   [BitmapImage](interfaces/BitmapImage.md)
 -   [CharacterStyles](interfaces/CharacterStyles.md)
 -   [CharacterStylesInput](interfaces/CharacterStylesInput.md)
 -   [CharacterStylesRange](interfaces/CharacterStylesRange.md)
@@ -83,8 +85,11 @@
 -   [ContainerNode](interfaces/ContainerNode.md)
 -   [Fill](interfaces/Fill.md)
 -   [IFillableNode](interfaces/IFillableNode.md)
+-   [IMediaContainerNode](interfaces/IMediaContainerNode.md)
+-   [INodeBounds](interfaces/INodeBounds.md)
 -   [IRectangularNode](interfaces/IRectangularNode.md)
 -   [IStrokableNode](interfaces/IStrokableNode.md)
+-   [IVisualNodeBounds](interfaces/IVisualNodeBounds.md)
 -   [ListItem](interfaces/ListItem.md)
 -   [OrderedListStyleInput](interfaces/OrderedListStyleInput.md)
 -   [ParagraphStyles](interfaces/ParagraphStyles.md)
@@ -121,3 +126,9 @@ Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/OrderedListN
 ### ParagraphListType
 
 Re-exports [ParagraphListType](namespaces/Constants/enumerations/ParagraphListType.md)
+
+---
+
+### TextStyleSource
+
+Re-exports [TextStyleSource](namespaces/Constants/enumerations/TextStyleSource.md)
