@@ -28,10 +28,10 @@ contributors:
 
 - New text replacement APIs [`appendText`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#appendtext)  [`deleteText`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#deleteText) [`insertText`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#insertText) [`replaceText`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#replaceText). This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
 - New mediaAddOnData supported add metadata on the ImageRectangleNode [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData)
+- New hyperlink option to set on the character style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link)
 
 ### Updated
 
-- Update in the API to remove hyperlinks [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link)
 - Renamed clone to cloneInPlace [`cloneInPlace`](../../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace)
 - Updated maskShape in GridCellNode to readonly [`maskShape`](../../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape)
 - Converted BitMapImage interface to a class [`BitmapImage`](../../references/document-sandbox/document-apis/classes/BitmapImage.md)
