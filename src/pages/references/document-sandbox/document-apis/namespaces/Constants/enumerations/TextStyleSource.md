@@ -25,7 +25,7 @@ used instead. This option is useful when *pre*pending to an existing block of te
 
 • **beforeInsertionPoint**: `0`
 
-Use style of the character just before the insertion point, _unless_ that character is not on the same line (same
+Use style of the character just before the insertion point, *unless* that character is not on the same line (same
 paragraph) in which case falls back to afterInsertionPoint behavior. This generally matches the style a user would
 get in the UI if they place their cursor at this insertion point.
 

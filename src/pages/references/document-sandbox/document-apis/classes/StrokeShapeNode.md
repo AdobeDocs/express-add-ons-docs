@@ -409,6 +409,7 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
 • **rescaleProportionalToWidth**(`width`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -473,6 +474,7 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
 • **resizeToFitWithin**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -538,7 +540,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 Center a rectangle within its parent artboard:
 
-```
+```js
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -578,6 +580,6 @@ Point to rotate around, in node's local coordinates.
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
 
-```
+```js
 rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

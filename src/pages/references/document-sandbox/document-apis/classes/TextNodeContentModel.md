@@ -38,7 +38,7 @@ preserves the text's existing styles for any fields not specified). When *gettin
 provided.
 
 Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
-has rights to edit with. The _setter_ only accepts the AvailableFont type which has been verified to be usable.
+has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
 
 • `set` **characterStyleRanges**(`styles`): `void`
 
@@ -130,7 +130,6 @@ The complete text string, which may span multiple [ThreadedTextNode](ThreadedTex
 
 ### appendText()
 
-
 • **appendText**(`newText`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -193,7 +192,6 @@ entire paragraphs, it overlaps.
 
 ### applyParagraphStyles()
 
-
 • **applyParagraphStyles**(`styles`, `range`?): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -228,7 +226,6 @@ If not specified the styles will be applied to the entire piece of text content 
 
 ### deleteText()
 
-
 • **deleteText**(`range`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -259,7 +256,6 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 
 ### hasUnavailableFonts()
 
-
 • **hasUnavailableFonts**(): `boolean`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -282,7 +278,6 @@ the character styles to use only AvailableFonts.
 ---
 
 ### insertText()
-
 
 • **insertText**(`newText`, `index`, `style`?): `void`
 
@@ -322,7 +317,6 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 ---
 
 ### replaceText()
-
 
 • **replaceText**(`newText`, `replaceRange`, `style`?): `void`
 

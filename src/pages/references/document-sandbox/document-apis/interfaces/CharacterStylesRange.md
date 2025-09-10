@@ -91,7 +91,7 @@ leaves spacing at its default.
 
 • `optional` **link**: `string`
 
-A URL hyperlink. Character ranges with a link are underlined _by default_, unless these styles explicitly specify
+A URL hyperlink. Character ranges with a link are underlined *by default*, unless these styles explicitly specify
 `underline: false`.
 
 To remove a link from existing text, explicitly specify `link: ""` in [TextContentModel.applyCharacterStyles](../classes/TextContentModel.md#applycharacterstyles).
