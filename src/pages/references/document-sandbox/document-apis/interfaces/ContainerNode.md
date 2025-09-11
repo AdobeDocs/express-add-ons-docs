@@ -164,7 +164,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 • **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](Point.md)\>
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](../classes/VisualNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](ContainerNode.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
