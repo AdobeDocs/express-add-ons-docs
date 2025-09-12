@@ -74,7 +74,7 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 ### Topics Covered
 
-<ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [iframe and Document Model Sandbox communication](#1-the-communication-api)
 

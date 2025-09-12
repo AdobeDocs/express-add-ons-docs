@@ -391,7 +391,7 @@ const pptxRenditions = await addOnUISdk.app.document.createRenditions(
 
 **PPTX Export Considerations:** PPTX export is only available for presentation-type documents in Adobe Express. When implementing PPTX export in your add-on, consider informing users that fonts from Adobe Express might look different in PowerPoint, and that videos, audio, presenter notes, and animations will not be included in the exported file. Adobe Express displays a similar disclaimer when users download PPTX files directly from the app, shown below:
 
-![PPTX export disclaimer in Adobe Express](images/export-ppt-font-disclaimer.png)
+![PPTX export disclaimer in Adobe Express](../how_to/images/export-ppt-font-disclaimer.png)
 
 Please also check out the [export-sample add-on](../samples.md#export-sample) for a comple add-on sample using `createRenditions()`.
 

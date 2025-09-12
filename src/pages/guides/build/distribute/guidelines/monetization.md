@@ -203,7 +203,7 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 | Badge                                                             | Size(px) |                                                                                 Download link |
 | ----------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------: |
-| ![](../img/addon-plus-badge20.svg)                                | 20x20    | [download](https://drive.google.com/uc?export=download&id=1wRoBJOBHwsoWsbCB2nnTkSjXYyhG-Nyd)  |
+| ![](../img/addon-plus-badge20.svg)                                | 20x20    | [Download](https://drive.google.com/uc?export=download&id=1wRoBJOBHwsoWsbCB2nnTkSjXYyhG-Nyd)  |
 
 #### Paid badge
 
@@ -211,7 +211,7 @@ Use the checkmark badge below to indicate when content or features are paid and 
 
 | Badge                                                            | Size(px) |                                                                               Download link |
 | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------: |
-| ![](../img/addon-pro-badge20.svg)                                | 20x20    | [download](https://drive.google.com/uc?export=download&id=1U4zKzYlzm6axHOrRKIpWX2TXNuLfZ-qD)  |
+| ![](../img/addon-pro-badge20.svg)                                | 20x20    | [Download](https://drive.google.com/uc?export=download&id=1U4zKzYlzm6axHOrRKIpWX2TXNuLfZ-qD)  |
 
 <InlineAlert slots="text" variant="info"/>
 
