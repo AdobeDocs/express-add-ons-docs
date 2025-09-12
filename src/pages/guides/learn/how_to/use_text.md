@@ -470,9 +470,11 @@ contentModel.replaceText(
 );
 ```
 
-<InlineAlert slots="text" variant="warning"/>
+<InlineAlert slots="text, text1" variant="warning"/>
 
 Currently, when passing a `TextStyleSource` to the `style` parameter, any unspecified properties are reset to their default values rather than preserving the existing style. This will be fixed in a future release.
+
+As a workaround, you can call `replaceText()` with only the first two arguments, then run `applyCharacterStyles()` on the same range afterward.
 
 <InlineAlert slots="text" variant="info"/>
 
