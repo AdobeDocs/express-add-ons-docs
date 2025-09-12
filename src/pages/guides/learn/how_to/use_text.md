@@ -494,7 +494,7 @@ The range is an object with the `start` and `length` properties.
 
 Style Ranges and Text edits
 
-Replacing the `fullContent.text` will result in applying the style from the first range to the whole text. To avoid this, use the [Text Replacement APIs](#replace-text) instead.
+Replacing the `fullContent.text` will result in applying the style from the first range to the whole text. To avoid this, use the [Text Replacement APIs](#replace-text-apis) instead.
 
 Please note that `applyCharacterStyles()` is only one way to set styles; you can also use the `characterStyleRanges` property, which supports both getting and setting styles, as described [here](#example-set-all-styles).
 
