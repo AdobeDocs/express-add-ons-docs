@@ -470,6 +470,10 @@ contentModel.replaceText(
 );
 ```
 
+<InlineAlert slots="text" variant="warning"/>
+
+Currently, when passing a `TextStyleSource` to the `style` parameter, any unspecified properties are reset to their default values rather than preserving the existing style. This will be fixed in a future release.
+
 <InlineAlert slots="text" variant="info"/>
 
 Please look at the [Fonts Error Handling](#error-handling-with-unavailable-fonts) section to learn how to handle fonts that may be unavailable when using the Text Replacement APIs with custom styling.
