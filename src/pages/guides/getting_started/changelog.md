@@ -26,14 +26,26 @@ contributors:
 
 ### Added
 
-- New Text Replacement APIs: [`appendText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#appendtext), [`deleteText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#deleteText), [`insertText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#insertText), and [`replaceText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#replaceText). This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
-- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
+- New Text Replacement APIs: [`appendText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#appendtext), [`deleteText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#deleteText), [`insertText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#insertText), and [`replaceText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#replaceText).
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
 - New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
+- The [Use Text](../learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
+- The [Use Images](../learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
+- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
 
 ### Updated
 
 - Renamed `clone()` to [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace).
-- Updated [`maskShape`](../../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to readonly.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+- Updated [`maskShape`](../../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to be readonly.
 - The [`BitmapImage`](../../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
 
 ## 2025-09-01
