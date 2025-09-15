@@ -28,9 +28,13 @@ contributors:
 
 - New Text Replacement APIs: [`appendText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#appendtext), [`deleteText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#deleteText), [`insertText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#insertText), and [`replaceText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#replaceText).
 
+<div className="spectrum-InLineAlert-content">  
+
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+</div>
 
 - New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
 - New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.

@@ -69,7 +69,7 @@ h1 {
 }
 
 /* Fix for unordered lists left margin in warning boxes */
-.spectrum-InLineAlert-content li {
+.spectrum-InLineAlert-content {
   margin-left: 12px;
 }
 
