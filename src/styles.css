@@ -73,16 +73,14 @@ h1 {
   margin-left: 12px;
 }
 
-/* Custom class to align InlineAlert with markdown bullets */
-.inline-alert-bullet-aligned {
-  margin-left: 1.5rem; /* Aligns with typical bullet indentation */
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Ensure the content within the aligned alert has proper spacing */
-.inline-alert-bullet-aligned .spectrum-InLineAlert-content {
-  margin-left: 0; /* Reset the default left margin since we're handling it at the component level */
+/* Custom class to align InlineAlert with markdown bullets - Multiple approaches */
+li + .spectrum-InLineAlert,
+ul + .spectrum-InLineAlert,
+ol + .spectrum-InLineAlert {
+  margin-left: 40px !important;
+  min-width: 85% !important;  
+  box-sizing: border-box !important;
+  display: block !important;
 }
 
 /* Fix for the icons in the TextBlocks of the landing page
