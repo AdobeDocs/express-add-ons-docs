@@ -43,7 +43,7 @@ faq:
     - question: "Are there GIF size limitations?"
       answer: "Yes, refer to the FAQ section for specific GIF size and weight limitations."
     - question: "How do I replace media in an existing `MediaContainerNode`?"
-      answer: "Use the `replaceMedia()` method on a `MediaContainerNode` with a `BitmapImage` object created via `Editor.loadBitmapImage()`."
+      answer: "Use the `replaceMedia()` method on a `MediaContainerNode` with a BitmapImage` object created via `Editor.loadBitmapImage()`."
 
     - question: "Can I replace any media type with `replaceMedia()`?"
       answer: "Currently, `replaceMedia()` only accepts `BitmapImage` objects. The original media can be any type, but replacement must be a static image."
@@ -57,9 +57,11 @@ Add-ons are hosted in an iframe within the Adobe Express UI, and can load images
 
 It expects a `Blob` object as the first argument, and an optional [`MediaAttribute`](../../../references/addonsdk/app-document.md#mediaattributes) object with the image's title and author.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="header, text" variant="info"/>
 
-Please note that the following snippets import the `addOnUISdk` object, and belong to the `ui/index.js` file. This is the **iframe** side of the add-on's house—whereas most of the Design Elements how-tos make use of the **Document Sandbox API** (in the `sandbox/code.js` file).
+Iframe vs. Document Sandbox
+
+The following snippets import the `addOnUISdk` object, and belong to the `ui/index.js` file. This is the **iframe** side of the add-on's house—whereas most of the Design Elements how-tos make use of the **Document Sandbox API** (in the `sandbox/code.js` file).
 
 ### Example
 
@@ -343,11 +345,11 @@ It may be useful to know how Adobe Express represents media nodes in a document,
 The parent node that displays media within a crop mask. It holds two children:
 
 - `maskShape`: a FillableNode defining the visible bounds.
-- `mediaRectangle`: the actual media (image, video, etc.). It also provides `replaceMedia()` to swap content.
+- `mediaRectangle`: the actual media (image or video). It also provides `replaceMedia()` to swap content.
 
-2. **`MediaRectangleNode`**, the abstract base
+1. **`MediaRectangleNode`**, the abstract base
 
-An abstract base for uncropped, full-frame rectangular media. It can’t be instantiated directly but defines core properties (width, height, media data) and shared behavior for positioning, rotation, and sizing.
+An abstract base for uncropped, full-frame rectangular media. It can’t be instantiated directly, but defines core properties (width, height, and media data) and shared behavior for positioning, rotation, and sizing.
 
 3. **`ImageRectangleNode`**, the concrete class
 

@@ -95,7 +95,7 @@ Text is an essential part of any design. Let's explore how to use all the availa
 
 The `editor.createText()` method accepts a string as a parameter, and returns a brand new [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md). The actual textual content is found in its [`fullContent.text`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#text) property.
 
-### Example
+### Example: Create basic Text
 
 ```js
 // sandbox/code.js
