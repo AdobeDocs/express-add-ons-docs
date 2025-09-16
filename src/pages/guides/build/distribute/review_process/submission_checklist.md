@@ -54,3 +54,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - [Developer Brand Guidelines](../guidelines/brand_guidelines.md)
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)
 - Our [Generative AI Guidelines](../guidelines/genai/) (if you are using Generative AI)
+
+## Sign the GenAI Add-on Agreement (if applicable)
+
+If your add-on uses Generative AI features, you must sign the GenAI Add-on agreement. This agreement will be sent to you via email once you submit your add-on for review. You must complete this step before your add-on can be approved for the marketplace.
