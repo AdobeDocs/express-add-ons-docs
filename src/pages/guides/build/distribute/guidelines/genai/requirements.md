@@ -28,7 +28,7 @@ Specifically:
 
 - Your add-on must not generate illegal content.
 - Your add-on must leverage filtering technologies and must test your add-on to ensure that illegal content is not generated.
-- Before an add-on leveraging generative AI is approved for publication, you may be asked to certify that you have read these guidelines and agree to abide by them.
+- Before an add-on leveraging generative AI is approved for publication, you will be required to sign the GenAI Add-on agreement. This agreement will be sent to you via email after you submit your add-on for review and must be completed before your add-on can be approved for the marketplace.
 
 If your add-on is found to be generating illegal content, your add-on will be removed.
 
