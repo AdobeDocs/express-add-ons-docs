@@ -25,6 +25,32 @@ contributors:
 
 # Changelog
 
+## 2025-09-10
+
+### Added
+
+- New Text Replacement APIs: [`appendText()`](../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#appendtext), [`deleteText()`](../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#deleteText), [`insertText()`](../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#insertText), and [`replaceText()`](../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#replaceText).
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+- New `link` property in Character Style ranges [`CharacterStylesInput`](../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
+- The [Use Text](../guides/learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
+- The [Use Images](../guides/learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
+- New [`mediaAddOnData`](../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
+
+### Updated
+
+- Renamed `clone()` to [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace).
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+- Updated [`maskShape`](../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to be readonly.
+- The [`BitmapImage`](../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
+
 ## 2025-09-01
 
 ### Added
@@ -71,10 +97,10 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 ### Added
 
-- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](./document-sandbox/document-apis/interfaces/CharacterStyles.md) interface. The corresponding [TextScriptStyle](./document-sandbox/document-apis/enumerations/text-script-style.md) enumerable has been added. The new API has been introduced as stable.
-- A new [`clone()`](./document-sandbox/document-apis/classes/node.md#clone) method has been added to the [Node](./document-sandbox/document-apis/classes/node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
-- New [`MediaRectangleNode`](./document-sandbox/document-apis/classes/media-rectangle-node.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](./document-sandbox/document-apis/classes/MediaContainerNode.md).
-- New [`UnknownMediaRectangleNode`](./document-sandbox/document-apis/classes/unknown-media-rectangle-node.md), a subclass of [`MediaRectangleNode`](./document-sandbox/document-apis/classes/media-rectangle-node.md) for cases where the media type is not yet supported by the API.
+- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](./document-sandbox/document-apis/interfaces/CharacterStyles.md) interface. The corresponding [TextScriptStyle](./document-sandbox/document-apis/enumerations/TextScriptStyle.md) enumerable has been added. The new API has been introduced as stable.
+- A new [`cloneInPlace()`](./document-sandbox/document-apis/classes/Node.md#cloneInPlace) method has been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
+- New [`MediaRectangleNode`](./document-sandbox/document-apis/classes/MediaRectangleNode.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](./document-sandbox/document-apis/classes/MediaContainerNode.md).
+- New [`UnknownMediaRectangleNode`](./document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](./document-sandbox/document-apis/classes/MediaRectangleNode.md) for cases where the media type is not yet supported by the API.
 
 ## 2025-07-11
 

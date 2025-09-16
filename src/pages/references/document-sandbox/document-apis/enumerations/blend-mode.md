@@ -13,6 +13,12 @@ interacts with other siblings within the same container. See documentation below
 
 ## Enumeration Members
 
+### accumulate
+
+• **accumulate**: `18`
+
+---
+
 ### color
 
 • **color**: `16`

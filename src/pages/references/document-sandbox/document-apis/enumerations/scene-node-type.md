@@ -136,3 +136,11 @@ Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appea
 • **text**: `"Text"`
 
 Type of TextNode, representing a non-threaded text or a threaded text frame
+
+---
+
+### unknownMediaRectangle
+
+• **unknownMediaRectangle**: `"UnknownMediaRectangle"`
+
+Type of MediaContainerNode's "media rectangle" child when it is holding an unknown media type

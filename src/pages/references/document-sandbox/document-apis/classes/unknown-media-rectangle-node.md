@@ -65,7 +65,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 • `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](./visual-node.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
@@ -136,10 +136,10 @@ moved to a different part of the document.
 
 • `get` **locked**(): `boolean`
 
-The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](./context.md#selection)), and
-cannot be edited by the user in the UI unless they are unlocked first. Operations on locked nodes using the API
-are permitted. However, please consider if modifying a locked node would align with user expectations
-before using the API to make changes to locked nodes.
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
+cannot be edited by the user in the UI unless they are unlocked first. It is still possible to mutate locked nodes
+at the model level using these APIs. However, please consider if modifying a locked node would align with user
+expectations before doing so.
 
 • `set` **locked**(`locked`): `void`
 
@@ -151,7 +151,20 @@ before using the API to make changes to locked nodes.
 
 `boolean`
 
-<HorizontalLine />
+---
+
+### mediaAddOnData
+
+• `get` **mediaAddOnData**(): [`AddOnData`](AddOnData.md)
+
+Get [AddOnData](AddOnData.md) reference for managing private metadata attached to the media resource displayed by this node.
+The same media resource may be reused in multiple places in the document, and all share the same AddOnData state.
+
+#### Returns
+
+[`AddOnData`](AddOnData.md)
+
+---
 
 ### opacity
 
@@ -307,8 +320,8 @@ will always match its aspect ratio.
 
 • **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/rect.md)
 
-Convert the node's [boundsLocal](./visual-node.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
-node. Both nodes must share the same [visualRoot](./visual-node.md#visualroot), but can lie anywhere within that subtree
+Convert the node's [boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+node. Both nodes must share the same [visualRoot](UnknownMediaRectangleNode.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
@@ -325,9 +338,9 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 <HorizontalLine />
 
-### clone()
+### cloneInPlace()
 
-• **clone**(): `never`
+• **cloneInPlace**(): `never`
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -342,7 +355,7 @@ Clone the entire parent MediaContainerNode instead.
 
 #### Inherited from
 
-[`MediaRectangleNode`](media-rectangle-node.md).[`clone`](media-rectangle-node.md#clone)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`cloneInPlace`](MediaRectangleNode.md#cloneinplace)
 
 <HorizontalLine />
 
@@ -351,7 +364,7 @@ Clone the entire parent MediaContainerNode instead.
 • **localPointInNode**(`localPoint`, `targetNode`): `Readonly` [`Point`](../interfaces/point.md)
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](./visual-node.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](UnknownMediaRectangleNode.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
@@ -399,7 +412,8 @@ removal. No-op if node is already an orphan.
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Changes the height to the given value and the width to the given height multiplied by the aspect ratio.
+Changes the height to the given value by visually *scaling* the entire content larger or smaller on both axes to
+preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth) documentation for additional explanation.
 
 #### Parameters
 
@@ -423,7 +437,15 @@ Changes the height to the given value and the width to the given height multipli
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Changes the width to the given value and the height to the given width multiplied by the aspect ratio.
+Changes the width to the given value by visually *scaling* the entire content larger or smaller on both axes to
+preserve its existing aspect ratio, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal)) at a fixed location.
+
+Scaling changes the size of visual styling elements such as stroke width, corner detailing, and font size.
+Contrast this to *resizing* operations (such as [resizeToFitWithin](Node.md#resizetofitwithin)), which adjust the bounding box of an
+element while trying to preserve the existing size of visual detailing such as strokes, corners, and fonts.
+
+Rescaling becomes baked into the updated values of fields such as stroke weight, rectangle width, etc. (it is not
+a separate, persistent scale factor multiplier).
 
 #### Parameters
 
@@ -447,9 +469,10 @@ Changes the width to the given value and the height to the given width multiplie
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Resizes the node to cover a box with the given dimensions.
-
-If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+Resizes the node to completely *cover* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
+at a fixed location. Nodes with a fixed aspect ratio may extend outside the box on one axis as a result, but
+nodes with flexible aspect ratio will be resized to the exact box size specified. See [resizeToFitWithin](Node.md#resizetofitwithin)
+documentation for additional explanation.
 
 #### Parameters
 
@@ -465,7 +488,11 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 [`MediaRectangleNode`](./media-rectangle-node.md).[`resizeToCover`](./media-rectangle-node.md#resizetocover)
 
-<HorizontalLine />
+#### See
+
+resizeToFitWithin
+
+---
 
 ### resizeToFitWithin()
 
@@ -475,9 +502,15 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Resizes the node to fit within a box with the given dimensions.
+Resizes the node to fit entirely *within* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
+at a fixed location. Nodes with a fixed aspect ratio may leave unused space on one axis as a result, but nodes
+with flexible aspect ratio will be resized to the exact box size specified.
 
-If the node doesn't have a fixed aspect ratio then this will resize the node to the given width and height.
+Resizing attempts to preserve the existing size of visual styling elements such as stroke width, corner detailing,
+and font size as much as possible. Contrast with *rescaling* (such as [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth)), which
+always changes the size of visual detailing in exact proportion to the change in overall bounding box size. This
+API may still produce *some* degree of rescaling if necessary for certain shapes with fixed corner/edge detailing
+to fit the box better.
 
 #### Parameters
 
@@ -491,9 +524,13 @@ If the node doesn't have a fixed aspect ratio then this will resize the node to 
 
 #### Inherited from
 
-[`MediaRectangleNode`](./media-rectangle-node.md).[`resizeToFitWithin`](./media-rectangle-node.md#resizetofitwithin)
+[`MediaRectangleNode`](MediaRectangleNode.md).[`resizeToFitWithin`](MediaRectangleNode.md#resizetofitwithin)
 
-<HorizontalLine />
+#### See
+
+resizeToCover
+
+---
 
 ### setPositionInParent()
 
@@ -565,5 +602,5 @@ Point to rotate around, in node's local coordinates.
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
 
 ```js
-rectangle.setRotationInParent(45, { x: rectangle.width / 2, y: rectangle.height / 2 });
+rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

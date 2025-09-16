@@ -19,6 +19,10 @@ Some VisualNodes might have a non-visual parent such as a PageNode.
 -   [`ContainerNode`](../interfaces/container-node.md)
 -   [`Node`](node.md)
 
+## Implements
+
+-   [`IVisualNodeBounds`](../interfaces/IVisualNodeBounds.md)
+
 ## Accessors
 
 ### addOnData
@@ -171,7 +175,11 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 `Readonly` [`Point`](../interfaces/point.md)
 
-<HorizontalLine />
+#### Implementation of
+
+[`IVisualNodeBounds`](../interfaces/IVisualNodeBounds.md).[`localPointInNode`](../interfaces/IVisualNodeBounds.md#localpointinnode)
+
+---
 
 ### removeFromParent()
 

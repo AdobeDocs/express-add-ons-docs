@@ -12,6 +12,7 @@
 
 -   [OrderedListNumbering](enumerations/OrderedListNumbering.md)
 -   [ParagraphListType](enumerations/ParagraphListType.md)
+-   [TextStyleSource](enumerations/TextStyleSource.md)
 
 ## References
 

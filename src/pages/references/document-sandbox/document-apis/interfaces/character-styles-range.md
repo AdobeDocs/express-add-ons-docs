@@ -87,6 +87,21 @@ leaves spacing at its default.
 
 <HorizontalLine />
 
+### link?
+
+• `optional` **link**: `string`
+
+A URL hyperlink. Character ranges with a link are underlined *by default*, unless these styles explicitly specify
+`underline: false`.
+
+To remove a link from existing text, explicitly specify `link: ""` in [TextContentModel.applyCharacterStyles](../classes/TextContentModel.md#applycharacterstyles).
+
+#### Inherited from
+
+[`CharacterStyles`](CharacterStyles.md).[`link`](CharacterStyles.md#link)
+
+---
+
 ### underline
 
 • **underline**: `boolean`
