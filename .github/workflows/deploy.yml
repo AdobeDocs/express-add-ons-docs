@@ -122,6 +122,18 @@ jobs:
         with:
           cmd: clean
 
+      - name: Debug Secrets
+        run: |
+          echo "CLIENT_ID length: ${#PLAYGROUND_CLIENT_ID}"
+          echo "CLIENT_SECRET length: ${#PLAYGROUND_CLIENT_SECRET}"
+          echo "AUTH_CODE length: ${#PLAYGROUND_AUTH_CODE}"
+          echo "API_KEY length: ${#PLAYGROUND_API_KEY}"
+        env:
+          PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
+          PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
+          PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
+          PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
+
       - name: Build site
         uses: borales/actions-yarn@v3
         with:

@@ -101,7 +101,6 @@ function parseAttributes(className, metastring) {
     meta.match(/\bid\s*=\s*([^}\s]+)/) || cls.match(/\bid\s*=\s*([^}\s]+)/);
   const sampleId = idMatch ? idMatch[1].trim() : "";
 
-  console.log("sampleId", sampleId);
   return { language, shouldShowTry, sampleId };
 }
 
