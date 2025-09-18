@@ -69,46 +69,58 @@ const showCopyTooltip = (setShouldShowCopyTooltip) => {
 
 // copy to clipboard
 const copyToClipboard = async (codeContent, setIsTooltipOpen) => {
-    await navigator.clipboard.writeText(codeContent);
-    showCopyTooltip(setIsTooltipOpen);
+  await navigator.clipboard.writeText(codeContent);
+  showCopyTooltip(setIsTooltipOpen);
 };
 
 // open code playground
-const openCodePlayground = (codeContent) => {
-    const playgroundData = {
-      codeJs: codeContent,
-      mode: "script",
-    };
-    const url = new URL(CODE_PLAYGROUND_URL);
-    url.searchParams.set("mode", CODE_PLAYGROUND_MODE);
-    url.searchParams.set("session", CODE_PLAYGROUND_SESSION);
-    url.searchParams.set("playgroundData", btoa(encodeURIComponent(JSON.stringify(playgroundData))));
-    window.open(url.toString(), "_blank");
+const openCodePlayground = (codeContent, sampleId) => {
+  const url = new URL(CODE_PLAYGROUND_URL);
+  url.searchParams.set("mode", CODE_PLAYGROUND_MODE);
+  url.searchParams.set("session", CODE_PLAYGROUND_SESSION);
+  url.searchParams.set("sessionId", sampleId);
+  url.searchParams.set("executionMode", "script");
+  window.open(url.toString(), "_blank");
 };
 
 // parse language, try option and id.
 // usage: ```js{try id=create-rectangle}
-function parseAttributes(className) {
+function parseAttributes(className, metastring) {
   const cls = String(className || "");
+  const meta = String(metastring || "");
 
   // Extract language
   const langMatch = cls.match(/language-([^\s{]+)/);
   const language = langMatch ? langMatch[1].trim() : "";
 
   // Check if "try" is present in the class string
-  const shouldShowTry = /\btry\b/.test(cls);
+  const shouldShowTry = /\btry\b/.test(`${cls} ${meta}`);
 
-  return { language, shouldShowTry };
-};
+  // Extract id if present
+  const idMatch =
+    meta.match(/\bid\s*=\s*([^}\s]+)/) || cls.match(/\bid\s*=\s*([^}\s]+)/);
+  const sampleId = idMatch ? idMatch[1].trim() : "";
 
-const Code = ({ children, className = "", theme }) => {
+  console.log("sampleId", sampleId);
+  return { language, shouldShowTry, sampleId };
+}
+
+const Code = ({ children, className = "", theme, metastring = "" }) => {
   const [tooltipId] = useState(nextId);
   const [shouldShowCopyTooltip, setShouldShowCopyTooltip] = useState(false);
 
-  const { language, shouldShowTry } = parseAttributes(className);
+  const { language, shouldShowTry, sampleId } = parseAttributes(
+    className,
+    metastring
+  );
 
   return (
-    <Highlight {...defaultProps} code={children} language={language} theme={undefined}>
+    <Highlight
+      {...defaultProps}
+      code={children}
+      language={language}
+      theme={undefined}
+    >
       {({ className, tokens, getLineProps, getTokenProps }) => {
         const isEmptyItem = (token) =>
           token && token.length === 1 && token[0].empty;
@@ -128,7 +140,9 @@ const Code = ({ children, className = "", theme }) => {
                 { "with-try": shouldShowTry }
               )}
               aria-describedby={tooltipId}
-              onClick={() => copyToClipboard(children, setShouldShowCopyTooltip)}
+              onClick={() =>
+                copyToClipboard(children, setShouldShowCopyTooltip)
+              }
             >
               Copy
             </ActionButton>
@@ -137,13 +151,17 @@ const Code = ({ children, className = "", theme }) => {
             {shouldShowTry && (
               <ActionButton
                 className="spectrum-ActionButton code-action-button code-try-button"
-                onClick={() => openCodePlayground(children)}
+                onClick={() => openCodePlayground(children, sampleId)}
               >
                 Try
               </ActionButton>
             )}
 
-            <div className={classNames("code-tooltip-container", { "with-try": shouldShowTry })}>
+            <div
+              className={classNames("code-tooltip-container", {
+                "with-try": shouldShowTry,
+              })}
+            >
               <span
                 role="tooltip"
                 id={tooltipId}
@@ -166,7 +184,10 @@ const Code = ({ children, className = "", theme }) => {
               )}
             >
               {lines.map((line, i) => {
-                const { style: lineStyle, ...lineProps } = getLineProps({ line, key: i });
+                const { style: lineStyle, ...lineProps } = getLineProps({
+                  line,
+                  key: i,
+                });
 
                 return (
                   <div key={i} className="code-line">
@@ -183,8 +204,11 @@ const Code = ({ children, className = "", theme }) => {
                     >
                       {/* styling the tokens in the line */}
                       {line.map((token, key) => {
-                        const { style: tokenStyle, ...tokenProps } = getTokenProps({ token, key });
-                        return <span key={key} {...tokenProps} style={tokenStyle} />;
+                        const { style: tokenStyle, ...tokenProps } =
+                          getTokenProps({ token, key });
+                        return (
+                          <span key={key} {...tokenProps} style={tokenStyle} />
+                        );
                       })}
                     </span>
                   </div>

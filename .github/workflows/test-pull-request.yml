@@ -89,7 +89,8 @@ jobs:
           cmd: build
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
-          CODE_BLOCK_API_URL: "https://api.jsonbin.io/v3/b"
-          # TODO: Remove this and get the key from secrets
-          JSONBIN_MASTER_KEY: "$2a$10$KJQlmNhxRgK/avpqgQOU6OjwlolWiwZh2674EPYadqKxMxAUGmwMi"
-          DRY_RUN: "false"
+          # TODO: Remove these and get the keys from secrets (stage credentials)
+          PLAYGROUND_CLIENT_ID: "playground-addon-service-stage"
+          PLAYGROUND_CLIENT_SECRET: "s8e-UEJx1fJcrcoT3rZUjpGveVCRvF5T4INr"
+          PLAYGROUND_AUTH_CODE: "eyJhbGciOiJSUzI1NiIsIng1dSI6Imltc19uYTEtc3RnMS1rZXktcGFjLTEuY2VyIiwia2lkIjoiaW1zX25hMS1zdGcxLWtleS1wYWMtMSIsIml0dCI6InBhYyJ9.eyJpZCI6InBsYXlncm91bmQtYWRkb24tc2VydmljZS1zdGFnZV9zdGciLCJ0eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwiY2xpZW50X2lkIjoicGxheWdyb3VuZC1hZGRvbi1zZXJ2aWNlLXN0YWdlIiwidXNlcl9pZCI6InBsYXlncm91bmQtYWRkb24tc2VydmljZS1zdGFnZUBBZG9iZVNlcnZpY2UiLCJhcyI6Imltcy1uYTEtc3RnMSIsIm90byI6ZmFsc2UsInNjb3BlIjoic3lzdGVtIiwiY3JlYXRlZF9hdCI6IjE3NTgxODI5NTM4NTAifQ.xA-hOLyRsCxzyAjPTZl_f5md3aDPyVHXGV_7LVhnCrWV4h-sFlXmAph6cOobzNmfdXI88EsQ7z74FMH0myHH-_CakMo99V_ZLyu9ti6ubt8WouenG8MOMcmMqfpsXq6YEn9p1GArKMCQkWIl2SywmvInJiarIQpbHxSgcouagLsp3LKl7Dn06sjuy778oq0eEcm1dWsL0YWC4D1jQLEa6jesmyTDUMQCp915jBEw3WjJwPwgUpgNB9Qv2zR_0gWgxwa0rBHH4AEvBGa8cnTtjDyOA4VUTrC59B6NpgNh2Q8LEScbs9qHfiOU6OBeMdYWcu59amKvWjXMc1M_Z-lPOA"
+          PLAYGROUND_API_KEY: "ffc-addon-service"

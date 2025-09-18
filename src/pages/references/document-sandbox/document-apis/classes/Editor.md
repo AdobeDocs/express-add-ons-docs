@@ -268,7 +268,7 @@ Generally, calling any setter or method is treated as an edit; but simple getter
 
 Example of typical usage:
 
-```js
+```js{try id=insertImage}
 // Assume insertImage() is called from your UI code, and given a Blob containing image data
 async function insertImage(blob) {
     // This function was invoked from the UI iframe, so we can make any edits we want synchronously here.

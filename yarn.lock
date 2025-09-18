@@ -8210,7 +8210,9 @@ __metadata:
   resolution: "dev-site-documentation-template@workspace:."
   dependencies:
     "@adobe/gatsby-theme-aio": ^4.15.1
+    dotenv: ^17.2.2
     gatsby: 4.22.0
+    jszip: ^3.10.1
     markdownlint: ^0.35.0
     markdownlint-cli: ^0.41.0
     react: ^17.0.2
@@ -8519,6 +8521,13 @@ __metadata:
   version: 5.1.0
   resolution: "dotenv-expand@npm:5.1.0"
   checksum: 8017675b7f254384915d55f9eb6388e577cf0a1231a28d54b0ca03b782be9501b0ac90ac57338636d395fa59051e6209e9b44b8ddf169ce6076dffb5dea227d3
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^17.2.2":
+  version: 17.2.2
+  resolution: "dotenv@npm:17.2.2"
+  checksum: 673825993b16a6722332b2e1f8c24b1c2ebe3dd3b81ae5df9be35f1483bf52e0b463555b09da65b756c7abee3cf55ba2ae2628c22874a899556fa787fac56019
   languageName: node
   linkType: hard
 
