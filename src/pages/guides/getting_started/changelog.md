@@ -24,16 +24,14 @@ contributors:
 
 ## 2025-09-19
 
+### Added
+
+- New [`ImportAddOnData`](../../references/addonsdk/addonsdk-app.md#importaddondata) parameter support for enhanced metadata tracking on imported media in [`addImage()`](../../references/addonsdk/app-document.md#addimage), [`addVideo()`](../../references/addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](../../references/addonsdk/app-document.md#addanimatedimage), and [`enableDragToDocument()`](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) methods.
+- [`MediaAttributes`](../../references/addonsdk/addonsdk-app.md#mediaattributes) parameter documentation for [`addVideo()`](../../references/addonsdk/app-document.md#addvideo) method.
+
 ### Updated
 
-- Enhanced [`addImage()`](../../references/addonsdk/app-document.md#addimage), [`addVideo()`](../../references/addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](../../references/addonsdk/app-document.md#addanimatedimage), and [`addAudio()`](../../references/addonsdk/app-document.md#addaudio) methods to support the [`ImportAddOnData`](../../references/addonsdk/addonsdk-app.md#importaddondata) parameter for enhanced metadata tracking.
-- Added missing [`MediaAttributes`](../../references/addonsdk/addonsdk-app.md#mediaattributes) parameter documentation to [`addVideo()`](../../references/addonsdk/app-document.md#addvideo) method.
-- Enhanced [`enableDragToDocument()`](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) drag-and-drop functionality with comprehensive [`ImportAddOnData`](../../references/addonsdk/addonsdk-app.md#importaddondata) support via [`DragCompletionData`](../../references/addonsdk/addonsdk-app.md#dragcompletiondata).
-- Updated [Use Images](../learn/how_to/use_images.md) guide with complete `ImportAddOnData` examples and method signatures.
-- Updated [Use Videos](../learn/how_to/use_videos.md) guide with complete parameter documentation including `MediaAttributes` and `ImportAddOnData`.
-- Updated [Use Audio](../learn/how_to/use_audio.md) guide with `ImportAddOnData` parameter examples.
-- Updated [Drag and Drop](../learn/how_to/drag_and_drop.md) guide with comprehensive `ImportAddOnData` implementation patterns and FAQ entries.
-- All media import method documentation now accurately reflects the complete set of supported parameters with practical examples and type definitions.
+- [Use Images](../learn/how_to/use_images.md), [Use Videos](../learn/how_to/use_videos.md), and [Drag and Drop](../learn/how_to/drag_and_drop.md) how-to guides with `ImportAddOnData` parameter support, examples, and implementation patterns.
 
 ## 2025-09-10
 
