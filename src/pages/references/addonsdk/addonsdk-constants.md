@@ -5,7 +5,7 @@ This reference provides the complete technical specification for all constants u
 - Constants available in `addOnUISdk.constants.*` (dual access)
 - Constants available only as named exports (import required)
 
-For practical examples and use cases, see the [Using Constants Guide](../../guides/learn/platform_concepts/ui-sdk-constants.md).
+For practical examples and use cases, see the [Using Constants Guide](../../guides/learn/how_to/ui_sdk_constants.md).
 
 <InlineAlert slots="text" variant="info"/>
 
