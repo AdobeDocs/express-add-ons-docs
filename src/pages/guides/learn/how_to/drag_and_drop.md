@@ -44,6 +44,9 @@ faq:
 
     - question: "What event handlers should I avoid?"
       answer: "Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements."
+      
+    - question: "How do I attach custom metadata to dragged content?"
+      answer: "Use the `importAddOnData` property in completionCallback return with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs."
 ---
 
 # Use Drag-and-Drop
@@ -77,6 +80,15 @@ addOnUISdk.ready.then(async () => {
     completionCallback: async (element) => {
       // return the blob for the image
       return [{ blob: await getBlob(element.src) }];
+      
+      // To attach add-on specific metadata that can be retrieved later:
+      // return [{ 
+      //   blob: await getBlob(element.src),
+      //   importAddOnData: {
+      //     nodeAddOnData: { "imageId": "123", "category": "photo" },
+      //     mediaAddOnData: { "source": "gallery", "tags": "nature,landscape" }
+      //   }
+      // }];
     },
   });
 
@@ -145,6 +157,15 @@ function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
       // ⚠️ for audio content, an attributes object
       // with the title is mandatory. For example:
       // return [{ blob: audioBlob, attributes: { title: "Jazzy beats" } }];
+      
+      // To attach add-on specific metadata that can be retrieved later:
+      // return [{ 
+      //   blob: imageBlob,
+      //   importAddOnData: {
+      //     nodeAddOnData: { "trackId": "456", "genre": "jazz" },
+      //     mediaAddOnData: { "artist": "Cool Cat", "album": "Smooth Sounds" }
+      //   }
+      // }];
     },
   };
 
@@ -253,3 +274,7 @@ There are several [code samples](../samples.md) that implement drag and drop, in
 #### Q: What event handlers should I avoid?
 
 **A:** Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements.
+
+#### Q: How do I attach custom metadata to dragged content?
+
+**A:** Use the `importAddOnData` property in completionCallback return with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs.
