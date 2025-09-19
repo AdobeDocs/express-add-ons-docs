@@ -618,6 +618,10 @@ module.exports = {
                     title: "Theme & Locale",
                     path: "guides/learn/how_to/theme_locale.md",
                   },
+                  {
+                    title: "Using UI SDK Constants",
+                    path: "guides/learn/how_to/ui_sdk_constants.md",
+                  },
                 ],
               },
               {

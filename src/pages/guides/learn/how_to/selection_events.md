@@ -665,8 +665,6 @@ editor.context.on("selectionChange", () => {
   }
 });
 ```
-});
-```
 
 ## UI Integration
 
@@ -1067,7 +1065,8 @@ setupSelectionHandling();
 
 **Never modify the document inside selection change handlers!** This can crash the application.
 
-✅ **Safe in selection handlers:** 
+✅ **Safe in selection handlers:**
+
 - Update UI panels
 - Log information  
 - Analyze selection
@@ -1075,6 +1074,7 @@ setupSelectionHandling();
 - Send data to UI panel
 
 ❌ **Never do in selection handlers:**
+
 - Create, delete, or modify nodes
 - Change document structure  
 - Set properties on selected elements
