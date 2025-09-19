@@ -27,7 +27,7 @@ A Node’s parent is always a [VisualNode](VisualNode.md), but it might not be a
 
 ## Implements
 
--   [`INodeBounds`](../interfaces/INodeBounds.md)
+-   [`INodeBounds`](../interfaces/i-node-bounds.md)
 
 ## Accessors
 
@@ -84,7 +84,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 • `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
@@ -298,7 +298,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/rect.md)
 
-Convert the node's [boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](Node.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
@@ -308,13 +308,13 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly` [`Rect`](../interfaces/Rect.md)
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`boundsInNode`](../interfaces/INodeBounds.md#boundsinnode)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`boundsInNode`](../interfaces/i-node-bounds.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
@@ -332,7 +332,7 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 [`Node`](Node.md)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
@@ -354,7 +354,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`localPointInNode`](../interfaces/INodeBounds.md#localpointinnode)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`localPointInNode`](../interfaces/i-node-bounds.md#localpointinnode)
 
 #### Inherited from
 

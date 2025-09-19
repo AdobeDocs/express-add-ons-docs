@@ -84,7 +84,7 @@ To remove a link from existing text, explicitly specify `link: ""` in [TextConte
 
 `BaseCharacterStyles.link`
 
----
+<HorizontalLine />
 
 ### underline
 

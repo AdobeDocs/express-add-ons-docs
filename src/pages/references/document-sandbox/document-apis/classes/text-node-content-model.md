@@ -14,7 +14,7 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+• `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](TextNode.md), `any`, `any`
 
 Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. The text content
 starts in the first [ThreadedTextNode](ThreadedTextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
@@ -24,9 +24,9 @@ If there are multiple [ThreadedTextNode](ThreadedTextNode.md)s, all of them must
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+`Readonly` `Iterable` [`TextNode`](TextNode.md), `any`, `any`
 
----
+<HorizontalLine />
 
 ### characterStyleRanges
 
@@ -50,7 +50,7 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 
 readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
 
----
+<HorizontalLine />
 
 ### id
 
@@ -71,7 +71,7 @@ Comparing two models using `===` will always fail.
 
 `string`
 
----
+<HorizontalLine />
 
 ### paragraphStyleRanges
 
@@ -108,7 +108,7 @@ if the text content contains fonts unavailable to the current user and an ordere
 
 readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
 
----
+<HorizontalLine />
 
 ### text
 
@@ -156,7 +156,7 @@ The text to append.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### applyCharacterStyles()
 
@@ -169,11 +169,11 @@ default styles.
 
 #### Parameters
 
-• **styles**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md)
+• **styles**: [`CharacterStylesInput`](../interfaces/character-styles-input.md)
 
 The styles to apply.
 
-• **range?**: [`TextRange`](../interfaces/TextRange.md)
+• **range?**: [`TextRange`](../interfaces/text-range.md)
 
 The start and length of the character sequence to which the styles should be applied.
 The styles will be applied to the entire text content flow if not specified.
@@ -188,7 +188,7 @@ entire paragraphs, it overlaps.
 
 [`TextContentModel`](TextContentModel.md).[`applyCharacterStyles`](TextContentModel.md#applycharacterstyles)
 
----
+<HorizontalLine />
 
 ### applyParagraphStyles()
 
@@ -222,7 +222,7 @@ If not specified the styles will be applied to the entire piece of text content 
 
 [`TextContentModel`](TextContentModel.md).[`applyParagraphStyles`](TextContentModel.md#applyparagraphstyles)
 
----
+<HorizontalLine />
 
 ### deleteText()
 
@@ -252,7 +252,7 @@ The range of text to delete.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### hasUnavailableFonts()
 
@@ -275,7 +275,7 @@ the character styles to use only AvailableFonts.
 
 [`TextContentModel`](TextContentModel.md).[`hasUnavailableFonts`](TextContentModel.md#hasunavailablefonts)
 
----
+<HorizontalLine />
 
 ### insertText()
 
@@ -297,7 +297,7 @@ The text to insert.
 
 The index at which to insert the new text.
 
-• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint)
+• **style?**: [`CharacterStylesInput`](../interfaces/character-styles-input.md) \| [`beforeInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#afterinsertionpoint)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
 existing text to match the style of. Default: `beforeInsertionPoint`.
@@ -314,7 +314,7 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### replaceText()
 
@@ -336,7 +336,7 @@ The text to replace the range with.
 
 The range of text to replace.
 
-• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/Constants/enumerations/TextStyleSource.md#firstreplacedcharacter)
+• **style?**: [`CharacterStylesInput`](../interfaces/character-styles-input.md) \| [`beforeInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/constants/enumerations/text-style-source.md#firstreplacedcharacter)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
 existing text to match the style of. Default: `firstReplacedCharacter`.

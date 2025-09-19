@@ -277,9 +277,9 @@ The downloaded zip file will contain a folder with the following structure:
 - add-on folder
 - `script.js` file
 
-![Downloaded Folder Structure](./img/downloaded-folder-structure.png)
+![Downloaded Folder Structure](../getting_started/img/downloaded-folder-structure.png)
 
-You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](../getting_started/quickstart.md#step-4-load-and-run-your-add-on). There is a readme file in the add-on folder that will guide you through the process as well.
+You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](../getting-started/quickstart.md#step-4-load-and-run-your-add-on). There is a readme file in the add-on folder that will guide you through the process as well.
 
 **Note:** You cannot run the `script.js` file alone.
 
@@ -315,9 +315,9 @@ There are two ways to resume working on your last saved session:
 Now that you have the downloaded code from the Code Playground, explore our resources to continue building robust add-ons:
 
 - **[API References](../../references/index.md)**: Learn about the Document APIs and Add-on SDK
-- **[Tutorials](../learn/how_to/tutorials/index.md)**: Follow step-by-step guides to build complete add-ons
-- **[How-To Guides](../learn/how_to/index.md)**: Master specific techniques and best practices
-- **[Local Development](../getting_started/local_development/index.md)**: Set up a full development environment for production-ready add-ons
+- **[Tutorials](../learn/how-to/tutorials/index.md)**: Follow step-by-step guides to build complete add-ons
+- **[How-To Guides](../learn/how-to/index.md)**: Master specific techniques and best practices
+- **[Local Development](../getting-started/local-development/index.md)**: Set up a full development environment for production-ready add-ons
 - **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
 - **Community Support:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4).
 

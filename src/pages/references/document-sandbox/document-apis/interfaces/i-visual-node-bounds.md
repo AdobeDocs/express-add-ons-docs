@@ -6,7 +6,7 @@ An interface for the bounds of a [VisualNode](../classes/VisualNode.md).
 
 ## Extended by
 
--   [`INodeBounds`](INodeBounds.md)
+-   [`INodeBounds`](i-node-bounds.md)
 
 ## Accessors
 

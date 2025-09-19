@@ -7,7 +7,7 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 ## Extended by
 
--   [`TextNodeContentModel`](TextNodeContentModel.md)
+-   [`TextNodeContentModel`](text-node-content-model.md)
 
 ## Accessors
 
@@ -135,7 +135,7 @@ The text to append.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### applyCharacterStyles()
 
@@ -193,7 +193,7 @@ If not specified the styles will be applied to the entire piece of text content 
 
 `void`
 
----
+<HorizontalLine />
 
 ### hasUnavailableFonts()
 
@@ -212,7 +212,7 @@ the character styles to use only AvailableFonts.
 
 `boolean`
 
----
+<HorizontalLine />
 
 ### insertText()
 
@@ -234,7 +234,7 @@ The text to insert.
 
 The index at which to insert the new text.
 
-• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint)
+• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#afterinsertionpoint)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
 existing text to match the style of. Default: `beforeInsertionPoint`.
@@ -247,7 +247,7 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### replaceText()
 
@@ -269,7 +269,7 @@ The text to replace the range with.
 
 The range of text to replace.
 
-• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/Constants/enumerations/TextStyleSource.md#firstreplacedcharacter)
+• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/constants/enumerations/text-style-source.md#firstreplacedcharacter)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
 existing text to match the style of. Default: `firstReplacedCharacter`.

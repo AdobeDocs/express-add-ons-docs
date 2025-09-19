@@ -1,7 +1,7 @@
 {
-    "total": 230,
+    "total": 235,
     "offset": 0,
-    "limit": 230,
+    "limit": 235,
     "data": [
         {
             "Source": "/express/add-ons/references/index.md",
@@ -84,11 +84,15 @@
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/namespaces/Constants/overview"
         },
         {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/namespaces/Constants/enumerations/text-style-source/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/namespaces/Constants/enumerations/text-style-source"
+        },
+        {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type"
         },
         {
-            "Source": "/express/add-ons/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering/",
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering"
         },
         {
@@ -156,12 +160,24 @@
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/list-item"
         },
         {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-visual-node-bounds/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-visual-node-bounds"
+        },
+        {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-strokable-node/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-strokable-node"
         },
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-rectangular-node/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-rectangular-node"
+        },
+        {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-node-bounds/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-node-bounds"
+        },
+        {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-media-container-node/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-media-container-node"
         },
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/interfaces/i-fillable-node/",
@@ -296,6 +312,10 @@
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/text-node"
         },
         {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/text-node-content-model/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/text-node-content-model"
+        },
+        {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/text-content-model/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/text-content-model"
         },
@@ -322,6 +342,10 @@
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/rectangle-node/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/rectangle-node"
+        },
+        {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/read-only-mask/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/read-only-mask"
         },
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/read-only-item-list/",
@@ -406,6 +430,10 @@
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/color-utils/",
             "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/color-utils"
+        },
+        {
+            "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/bitmap-image/",
+            "Destination": "/express/add-ons/references/document-sandbox/document-apis/classes/bitmap-image"
         },
         {
             "Source": "/express/add-ons/references/document-sandbox/document-apis/classes/base-node/",
@@ -688,8 +716,16 @@
             "Destination": "/express/add-ons/guides/getting-started/local-development/vs-code"
         },
         {
+            "Source": "/express/add-ons/guides/getting-started/local-development/mcp-server/",
+            "Destination": "/express/add-ons/guides/getting-started/local-development/mcp-server"
+        },
+        {
             "Source": "/express/add-ons/guides/getting-started/local-development/known-issues-limitations/",
             "Destination": "/express/add-ons/guides/getting-started/local-development/known-issues-limitations"
+        },
+        {
+            "Source": "/express/add-ons/guides/getting-started/local-development/mcp-server",
+            "Destination": "/express/add-ons/guides/getting-started/local-development/mcp-server"
         },
         {
             "Source": "/express/add-ons/guides/getting-started/local-development/index.md",
@@ -910,18 +946,6 @@
         {
             "Source": "/express/add-ons/guides/build/advanced-topics/coi/",
             "Destination": "/express/add-ons/guides/build/advanced-topics/coi"
-        },
-        {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/overview",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/overview"
-        },
-        {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type"
-        },
-        {
-            "Source": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering",
-            "Destination": "/express/add-ons/docs/references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering"
         }
     ],
     ":type": "sheet"

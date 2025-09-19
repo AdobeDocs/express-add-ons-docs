@@ -3,7 +3,7 @@
 # Class: StandaloneTextNode
 
 A StandaloneTextNode represents a text display frame in the scenegraph. It displays an entire piece of text.
-The StandaloneTextNode does not directly hold the text content and styles – instead it refers to a [TextNodeContentModel](TextNodeContentModel.md).
+The StandaloneTextNode does not directly hold the text content and styles – instead it refers to a [TextNodeContentModel](text-node-content-model.md).
 
 To create new a single-frame piece of text, see [Editor.createText](editor.md#createtext).
 
@@ -66,7 +66,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 • `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
@@ -118,20 +118,20 @@ recommended to use this property only when the node is placed on a page.
 
 ### fullContent
 
-• `get` **fullContent**(): [`TextNodeContentModel`](TextNodeContentModel.md)
+• `get` **fullContent**(): [`TextNodeContentModel`](text-node-content-model.md)
 
 The model containing the complete text string and its styles, only part of which may be visible within the bounds of
 this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
 fixed-size frame using [AreaTextLayout](../interfaces/area-text-layout.md) does not fit all the (remaining) text.
 
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
-same single [TextNodeContentModel](TextNodeContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
-not. Use [TextNodeContentModel](TextNodeContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
+same single [TextNodeContentModel](text-node-content-model.md); this can give the impression that the same text is duplicated multiple times when it is
+not. Use [TextNodeContentModel](text-node-content-model.md).id to determine whether a given piece of text content is unique or if it's already been
 encountered before.
 
 #### Returns
 
-[`TextNodeContentModel`](TextNodeContentModel.md)
+[`TextNodeContentModel`](text-node-content-model.md)
 
 <HorizontalLine />
 
@@ -293,7 +293,7 @@ the _entire_ text content string.
 
 #### Deprecated
 
-- Use the text getter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+- Use the text getter on [TextNodeContentModel](text-node-content-model.md) instead. Access it via `TextNode.fullContent.text`.
 
 • `set` **text**(`textContent`): `void`
 
@@ -303,7 +303,7 @@ _each_ TextNode's `text` setter will sets the _entire_ text content string.
 
 #### Deprecated
 
-- Use the text setter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+- Use the text setter on [TextNodeContentModel](text-node-content-model.md) instead. Access it via `TextNode.fullContent.text`.
 
 #### Parameters
 
@@ -427,7 +427,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/rect.md)
 
-Convert the node's [boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](StandaloneTextNode.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
@@ -446,7 +446,7 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 [`TextNode`](TextNode.md).[`boundsInNode`](TextNode.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
@@ -636,7 +636,7 @@ documentation for additional explanation.
 
 resizeToFitWithin
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 

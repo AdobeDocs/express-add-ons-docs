@@ -33,7 +33,7 @@ contributors:
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 - New `link` property in Character Style ranges [`CharacterStylesInput`](../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
 - The [Use Text](../guides/learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
@@ -46,7 +46,7 @@ contributors:
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 - Updated [`maskShape`](../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to be readonly.
 - The [`BitmapImage`](../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
@@ -55,9 +55,9 @@ contributors:
 
 ### Added
 
-Introduced a new [guide](../guides/getting_started/local_development/mcp_server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
+Introduced a new [guide](../guides/getting-started/local-development/mcp-server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
 
-With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](../guides/getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
+With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](../guides/getting-started/local-development/mcp-server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
 
 ## 2025-08-25
 

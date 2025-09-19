@@ -12,7 +12,7 @@ media rectangle child when those actions are applied.
 
 ## Implements
 
--   [`IMediaContainerNode`](../interfaces/IMediaContainerNode.md)
+-   [`IMediaContainerNode`](../interfaces/i-media-container-node.md)
 
 ## Accessors
 
@@ -69,7 +69,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 • `get` **boundsInParent**(): `Readonly` [`Rect`](../interfaces/rect.md)
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
@@ -145,13 +145,13 @@ expectations before doing so.
 
 ### maskShape
 
-• `get` **maskShape**(): [`ReadOnlyMask`](ReadOnlyMask.md)
+• `get` **maskShape**(): [`ReadOnlyMask`](read-only-mask.md)
 
 A read-only view of the mask shape used for cropping/clipping the media.
 
 #### Returns
 
-[`ReadOnlyMask`](ReadOnlyMask.md)
+[`ReadOnlyMask`](read-only-mask.md)
 
 <HorizontalLine />
 
@@ -309,7 +309,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/rect.md)
 
-Convert the node's [boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](GridCellNode.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
@@ -325,7 +325,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 [`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
@@ -346,7 +346,7 @@ Use the parent grid container instead.
 
 [`Node`](Node.md).[`cloneInPlace`](Node.md#cloneinplace)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
@@ -403,9 +403,9 @@ or top/bottom edges. Currently only supports images as the new media, but previo
 
 #### Parameters
 
-• **media**: [`BitmapImage`](BitmapImage.md)
+• **media**: [`BitmapImage`](bitmap-image.md)
 
-New content to display. Currently must be a [BitmapImage](BitmapImage.md).
+New content to display. Currently must be a [BitmapImage](bitmap-image.md).
 
 #### Returns
 
@@ -413,7 +413,7 @@ New content to display. Currently must be a [BitmapImage](BitmapImage.md).
 
 #### Implementation of
 
-[`IMediaContainerNode`](../interfaces/IMediaContainerNode.md).[`replaceMedia`](../interfaces/IMediaContainerNode.md#replacemedia)
+[`IMediaContainerNode`](../interfaces/i-media-container-node.md).[`replaceMedia`](../interfaces/i-media-container-node.md#replacemedia)
 
 <HorizontalLine />
 
@@ -505,7 +505,7 @@ documentation for additional explanation.
 
 resizeToFitWithin
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 

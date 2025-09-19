@@ -17,7 +17,7 @@ interacts with other siblings within the same container. See documentation below
 
 • **accumulate**: `18`
 
----
+<HorizontalLine />
 
 ### color
 

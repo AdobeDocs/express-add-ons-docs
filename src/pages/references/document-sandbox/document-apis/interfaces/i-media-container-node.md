@@ -8,13 +8,13 @@ Interface for nodes that contain media.
 
 ### maskShape
 
-• `get` **maskShape**(): [`INodeBounds`](INodeBounds.md)
+• `get` **maskShape**(): [`INodeBounds`](i-node-bounds.md)
 
 A read-only view of the mask shape used for cropping/clipping the media.
 
 #### Returns
 
-[`INodeBounds`](INodeBounds.md)
+[`INodeBounds`](i-node-bounds.md)
 
 ---
 
@@ -42,9 +42,9 @@ or top/bottom edges. Currently only supports images as the new media, but previo
 
 #### Parameters
 
-• **media**: [`BitmapImage`](../classes/BitmapImage.md)
+• **media**: [`BitmapImage`](../classes/bitmap-image.md)
 
-New content to display. Currently must be a [BitmapImage](../classes/BitmapImage.md).
+New content to display. Currently must be a [BitmapImage](../classes/bitmap-image.md).
 
 #### Returns
 

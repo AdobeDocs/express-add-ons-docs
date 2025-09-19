@@ -137,7 +137,7 @@ Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appea
 
 Type of TextNode, representing a non-threaded text or a threaded text frame
 
----
+<HorizontalLine />
 
 ### unknownMediaRectangle
 

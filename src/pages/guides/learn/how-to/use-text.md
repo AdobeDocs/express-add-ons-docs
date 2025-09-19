@@ -133,7 +133,7 @@ The `editor.createText()` method returns a `StandaloneTextNode` by default; for 
 
 ## Replace Text APIs
 
-To replace the text content of a `TextNode`, you can use the [Text Replacement APIs](../../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#replaceText): `replaceText()`, `appendText()`, `insertText()`, and `deleteText()`. These methods provide fine-grained control over text manipulation while preserving or controlling the styling of the modified text.
+To replace the text content of a `TextNode`, you can use the [Text Replacement APIs](../../../references/document-sandbox/document-apis/classes/text-node-content-model.md#replaceText): `replaceText()`, `appendText()`, `insertText()`, and `deleteText()`. These methods provide fine-grained control over text manipulation while preserving or controlling the styling of the modified text.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -424,7 +424,7 @@ contentModel.deleteText({ start: 12, length: 22 });
 As demonstrated in the examples above, when using the text replacement APIs, you have several options for controlling how styles are applied to the new text:
 
 1. **Custom Styles**: Provide a [`CharacterStylesInput`](../../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md) object to specify exact styling.
-2. **Style Sources**: Use [`TextStyleSource`](../../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/TextStyleSource.md) constants to inherit styles from existing text.
+2. **Style Sources**: Use [`TextStyleSource`](../../../references/document-sandbox/document-apis/namespaces/constants/enumerations/text-style-source.md) constants to inherit styles from existing text.
 
 #### Example: Comprehensive Style Handling
 

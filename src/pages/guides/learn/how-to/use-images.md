@@ -144,7 +144,7 @@ All image formats are equal, but some formats are more equal than others. Please
 
 ## Replace Media
 
-The [`replaceMedia()`](../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method can be used to replace an existing media with a new one. It accepts a single argument of type [`BitmapImage`](../../../references/document-sandbox/document-apis/classes/BitmapImage.md).
+The [`replaceMedia()`](../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method can be used to replace an existing media with a new one. It accepts a single argument of type [`BitmapImage`](../../../references/document-sandbox/document-apis/classes/bitmap-image.md).
 
 <InlineAlert slots="text" variant="info"/>
 

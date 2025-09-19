@@ -561,7 +561,7 @@ module.exports = {
               },
               {
                 title: "Adobe Express Add-on MCP Server (Beta)",
-                path: "guides/getting_started/local_development/mcp_server.md",
+                path: "guides/getting-started/local-development/mcp-server.md",
               },
               {
                 title: "Browser debugging",

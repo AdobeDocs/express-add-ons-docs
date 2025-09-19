@@ -26,35 +26,35 @@ contributors:
 
 ### Added
 
-- New Text Replacement APIs: [`appendText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#appendtext), [`deleteText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#deleteText), [`insertText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#insertText), and [`replaceText()`](../../references/document-sandbox/document-apis/classes/TextNodeContentModel.md#replaceText).
+- New Text Replacement APIs: [`appendText()`](../../references/document-sandbox/document-apis/classes/text-node-content-model.md#appendtext), [`deleteText()`](../../references/document-sandbox/document-apis/classes/text-node-content-model.md#deleteText), [`insertText()`](../../references/document-sandbox/document-apis/classes/text-node-content-model.md#insertText), and [`replaceText()`](../../references/document-sandbox/document-apis/classes/text-node-content-model.md#replaceText).
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
-- New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
-- The [Use Text](../learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
-- The [Use Images](../learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
-- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
+- New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/character-styles-input.md#link) to support hyperlinks.
+- The [Use Text](../learn/how-to/use-text.md) guide has been updated to include the new Text APIs.
+- The [Use Images](../learn/how-to/use-images.md) guide has been updated to include a `replaceMedia()` example.
+- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/image-rectangle-node.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
 
 ### Updated
 
-- Renamed `clone()` to [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace).
+- Renamed `clone()` to [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/node.md#cloneInPlace).
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
-- Updated [`maskShape`](../../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to be readonly.
-- The [`BitmapImage`](../../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
+- Updated [`maskShape`](../../references/document-sandbox/document-apis/classes/grid-cell-node.md#maskShape) in `GridCellNode` to be readonly.
+- The [`BitmapImage`](../../references/document-sandbox/document-apis/classes/bitmap-image.md) has been converted from an interface to a class.
 
 ## 2025-09-01
 
 ### Added
 
-Introduced a new [guide](../getting_started/local_development/mcp_server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
+Introduced a new [guide](local-development/mcp-server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
 
-With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](../getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
+With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](local-development/mcp-server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
 
 ## 2025-08-25
 
@@ -66,8 +66,8 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 ### Updated
 
-- [Page Metadata how-to guide](../learn/how_to/page_metadata.md) with documentation and examples for the new experimental `getSelectedPageIds()` method, including usage patterns for getting metadata of only selected pages.
-- [Create Renditions how-to guide](../learn/how_to/create_renditions.md) with comprehensive PPTX export support documentation, including developer guidance about font differences and content limitations when exporting to PowerPoint format.
+- [Page Metadata how-to guide](../learn/how-to/page_metadata.md) with documentation and examples for the new experimental `getSelectedPageIds()` method, including usage patterns for getting metadata of only selected pages.
+- [Create Renditions how-to guide](../learn/how-to/create_renditions.md) with comprehensive PPTX export support documentation, including developer guidance about font differences and content limitations when exporting to PowerPoint format.
 - [Add-on Iframe Context guide](../learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
 - [FAQ](../support/faq.md) with a new comprehensive entry about available add-on permissions and their configuration, plus updated supported file formats for imported content organized by category (Image, Design, Video, Audio).
 
@@ -100,10 +100,10 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 ### Added
 
-- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](../../references/document-sandbox/document-apis/interfaces/CharacterStyles.md) interface. The corresponding [TextScriptStyle](../../references/document-sandbox/document-apis/enumerations/TextScriptStyle.md) enumerable has been added. The new API has been introduced as stable.
-- A new [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method has been added to the [Node](../../references/document-sandbox/document-apis/classes/Node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
-- New [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md).
-- New [`UnknownMediaRectangleNode`](../../references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md) for cases where the media type is not yet supported by the API.
+- The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](../../references/document-sandbox/document-apis/interfaces/character-styles.md) interface. The corresponding [TextScriptStyle](../../references/document-sandbox/document-apis/enumerations/text-script-style.md) enumerable has been added. The new API has been introduced as stable.
+- A new [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/node.md#cloneInPlace) method has been added to the [Node](../../references/document-sandbox/document-apis/classes/node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
+- New [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/media-rectangle-node.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md).
+- New [`UnknownMediaRectangleNode`](../../references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md), a subclass of [`MediaRectangleNode`](../../references/document-sandbox/document-apis/classes/media-rectangle-node.md) for cases where the media type is not yet supported by the API.
 
 ## 2025-07-11
 
@@ -142,7 +142,7 @@ The [Page Metadata API](../../references/addonsdk/app-document.md#pagemetadata) 
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how_to/document_metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](../../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../learn/how-to/document_metadata.md).
 
 ### Updates
 
@@ -202,7 +202,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [`link()`](../../references/addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../learn/how-to/document-metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
 - New [vue-starter](../learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
 - Fixes `fromRGB()` method reference in the [Using Color How-to](../learn/how-to/use-color.md).
 
@@ -494,12 +494,12 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - A new [`createPath`](../../references/document-sandbox/document-apis/classes/editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
 - Updates descriptions in various methods and classes in the [Document APIs](../../references/document-sandbox/document-apis/index.md).
 - Updates to the [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
-- Updates to the [Using Adobe Spectrum tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md) with additional details on [why you should use Spectrum CSS variables](../learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
+- Updates to the [Using Adobe Spectrum tutorial](../learn/how-to/tutorials/spectrum-workshop/index.md) with additional details on [why you should use Spectrum CSS variables](../learn/how-to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how-to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
 
 ## 2024-01-31
 
-Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](../learn/how_to/tutorials/spectrum-workshop/index.md).
+Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](../learn/how-to/tutorials/spectrum-workshop/index.md).
 
 ## 2024-01-09
 

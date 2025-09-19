@@ -16,7 +16,7 @@ Original height of the bitmap in pixels.
 
 `number`
 
----
+<HorizontalLine />
 
 ### width
 

@@ -46,24 +46,17 @@ If you are already familiar with the concepts of Model Context Protocol (MCP) an
 - **Claude Desktop**: `claude_desktop_config.json`
 - **VS Code**: `~/.vscode/mcp.json`
 
-<!-- or use this [one-click deeplink install](@cursor://anysphere.cursor-deeplink/mcp/install?name=adobe-express-add-on&config=ewogICJjb21tYW5kIjogIm5weCIsCiAgImFyZ3MiOiBbCiAgICAiQGFkb2JlL2V4cHJlc3MtYWRkLW9uLWRldi1tY3BAbGF0ZXN0IiwKICAgICItLXllcyIKICBdCn0=) -->
-
 **Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
-
-<!-- **What's New**
-
-- **v1.0.0-beta**: Initial release with documentation search and TypeScript definitions
-- **Coming Soon**: Real-time documentation updates, additional API surfaces -->
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-💬  **Feedback requested:**
+**Feedback requested:**
 
-We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
+We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!
 
 ## What it does
 
-> "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
+> "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
 
 The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
@@ -142,42 +135,17 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 #### Check Connection Status
 
-<div className="container">  
-  <div className="text-column">  
-    <p>Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:</p>
-  </div>
-  <div className="image-column">
-    <img src="./img/mcp-server-enabled.png" alt="headings" className="responsive-image" />
-  </div>
-</div>
+Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:
 
-<!-- <div className="container">
-  <div className="text-column">
-    <h3>Verify with Tool calls</h3>
-    <p>The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.</p>
-  </div> -->
+[img](../../getting_started/local_development/img/mcp-server-enabled.png)
 
 #### Verify with Tool calls
 
 The LLM will automatically invoke tools based on your prompts. Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
 
-<div className="container">
-  <div className="image-column">
-    <img src="./img/mcp-server-calling-tools.png" alt="MCP Server calling tools" className="responsive-image" />
-  </div>
-  <div className="image-column">
-    <img src="./img/mcp-tool-call-example.png" alt="MCP Expanded tool calls" className="responsive-image" />
-  </div>
-</div>
+[img](../../getting_started/local_development/img/mcp-server-calling-tools.png)
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
-
-  **Tips:**
-
-  - Ask the LLM to "*list MCP tools*".
-  - If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
-
-</InlineNestedAlert>
+[img](../../getting_started/local_development/img/mcp-server-calling-tools.png)
 
 ## How to use it
 
@@ -290,97 +258,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 #### Using **[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
-
- **🤖 LLM Guidance:**
-
- - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
- - **REQUIRED theme imports:**
-
-   `import '@spectrum-web-components/theme/express/theme-light.js';`
-   `import '@spectrum-web-components/theme/express/scale-medium.js';`
-   `import '@spectrum-web-components/theme/sp-theme.js';`
-
- - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
- - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
- - **Use Related References:**
-
-   - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
-   - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
-   - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
-  
-</InlineNestedAlert>
-
 #### Using [swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) (only for add-ons using React)
-
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
-
- **🤖 LLM Guidance:**
-
-  - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
-  - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
-  - **REQUIRED theme setup:**
-
-    `import '@spectrum-web-components/theme/express/theme-light.js';`
-    `import '@spectrum-web-components/theme/express/scale-medium.js';`
-    `import { Theme } from '@swc-react/theme';`
-  
-  - Wrap app with: `<Theme system="express" scale="medium" color="light">`
-  - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
-  - **Use Related References:**
-
-    - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-    - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
-    - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
-    - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
-
-</InlineNestedAlert>
-
-## Troubleshooting
-
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
-
-  **Server Won't Start**
-
-  - ✅ Check Node.js version: `node --version` (needs 18+)
-  - ✅ Verify MCP config JSON syntax and file location
-  - ✅ Ensure firewall allows `npx` downloads
-  - ✅ Restart your IDE after configuration changes
-  - ✅ Check for MCP server status indicators
-
-</InlineNestedAlert>
-
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
-
-  **No Documentation Results**
-
-  - ✅ Use specific technical terms ("text styling" vs "make it pretty")
-  - ✅ Try adding "Adobe Express Add-ons" for an additional context cue
-  - ✅ Try broader queries first, then narrow down
-  - ✅ Ask the agent to "use available tools" explicitly
-  - ✅ Include context about what you're building
-
-</InlineNestedAlert>
-
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
-
-   **Poor Code Generation**
-
-   - ✅ Be specific about what you want to implement
-   - ✅ Mention the programming language and frameworks (TypeScript/JavaScript, React)
-   - ✅ Provide context about your add-on's purpose
-   - ✅ Ask for complete, working examples
-
-</InlineNestedAlert>
-
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
-
-  **Missing Type Definitions**
-
-  - ✅ Specify the correct API surface (`iframe-ui`, `express-document-sdk`, `add-on-sdk-document-sandbox`)
-  - ✅ Ask for specific types rather than general requests
-
-</InlineNestedAlert>
 
 ## Resources & Support
 

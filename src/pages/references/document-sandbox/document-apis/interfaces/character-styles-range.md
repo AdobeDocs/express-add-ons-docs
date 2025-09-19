@@ -100,7 +100,7 @@ To remove a link from existing text, explicitly specify `link: ""` in [TextConte
 
 [`CharacterStyles`](CharacterStyles.md).[`link`](CharacterStyles.md#link)
 
----
+<HorizontalLine />
 
 ### underline
 

@@ -21,7 +21,7 @@ Some VisualNodes might have a non-visual parent such as a PageNode.
 
 ## Implements
 
--   [`IVisualNodeBounds`](../interfaces/IVisualNodeBounds.md)
+-   [`IVisualNodeBounds`](../interfaces/i-visual-node-bounds.md)
 
 ## Accessors
 
@@ -177,9 +177,9 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Implementation of
 
-[`IVisualNodeBounds`](../interfaces/IVisualNodeBounds.md).[`localPointInNode`](../interfaces/IVisualNodeBounds.md#localpointinnode)
+[`IVisualNodeBounds`](../interfaces/i-visual-node-bounds.md).[`localPointInNode`](../interfaces/i-visual-node-bounds.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 
