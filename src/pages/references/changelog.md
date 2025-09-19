@@ -25,6 +25,12 @@ contributors:
 
 # Changelog
 
+## 2025-09-19
+
+### Added
+
+- New [Selection Events and Methods guide](../guides/learn/how_to/selection_events.md) providing comprehensive documentation on working with selections in Adobe Express documents. The guide covers basic selection operations, selection change events, advanced techniques for handling locked elements, UI integration patterns, and best practices for selection-based add-on functionality.
+
 ## 2025-09-10
 
 ### Added
