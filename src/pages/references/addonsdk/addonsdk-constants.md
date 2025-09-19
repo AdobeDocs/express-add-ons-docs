@@ -196,7 +196,7 @@ import addOnUISdk, { AuthorizationStatus } from "https://new.express.adobe.com/s
 
 ## Constants Reference
 
-This section provides the complete technical specification for all Add-on UI SDK constants, organized by functional category. For practical examples and usage patterns, see the [Using Constants Guide](../../guides/learn/platform_concepts/ui-sdk-constants.md).
+This section provides the complete technical specification for all Add-on UI SDK constants, organized by functional category. For practical examples and usage patterns, see the [Using Constants Guide](../../guides/learn/how_to/ui_sdk_constants.md).
 
 ## Developer Tips
 
