@@ -177,10 +177,6 @@ async function run() {
     const codeBlocks = extractCodeBlocks(content, filePath);
 
     for (const codeBlock of codeBlocks) {
-      // TODO: Remove these logs after testing.
-      console.log(`File: ${filePath}`);
-      console.log(`Code:\n${codeBlock.code}\n`);
-
       try {
         await uploadCodeBlockToFFC(codeBlock, codeBlock.id);
       } catch (error) {
