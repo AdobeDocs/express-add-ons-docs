@@ -121,6 +121,7 @@ jobs:
         uses: borales/actions-yarn@v3
         with:
           cmd: clean
+
       - name: Build site
         uses: borales/actions-yarn@v3
         with:
