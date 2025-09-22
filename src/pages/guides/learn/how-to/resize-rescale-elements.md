@@ -338,7 +338,7 @@ In the screenshot above, the original text is top-left; top-right, the result of
 
 ## Working with Page Elements
 
-Adjusting the page size is a simpler case of resizing and rescaling. Pages are resized by changing the `width` and `height` properties of the [`PageNode`](../../../references/document-sandbox/document-apis/classes/PageNode.md).
+Adjusting the page size is a simpler case of resizing and rescaling. Pages are resized by changing the `width` and `height` properties of the [`PageNode`](../../../references/document-sandbox/document-apis/classes/page-node.md).
 
 ### Example: Resizing a Page
 

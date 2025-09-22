@@ -28,7 +28,7 @@
             "Destination": "/express/add-ons/references/manifest/index.md/"
         },
         {
-            "Source": "/express/add-ons/references/document-sandbox/index.md",
+            "Source": "/express/add-ons/references/document-sandbox/index.md/index",
             "Destination": "/express/add-ons/references/document-sandbox/index.md/"
         },
         {

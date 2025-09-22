@@ -56,7 +56,7 @@ Beyond sandbox permissions, your add-on can also request additional permissions 
 
 <InlineAlert slots="text" variant="info"/>
 
-**Premium Content Permissions:** When implementing premium content flows where you present a dialog or option to allow the user to upgrade, you must include specific sandbox permissions to allow the Adobe Express pricing page to load properly: `["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]`. See the [premium content guide](../how_to/premium_content.md) for more details.
+**Premium Content Permissions:** When implementing premium content flows where you present a dialog or option to allow the user to upgrade, you must include specific sandbox permissions to allow the Adobe Express pricing page to load properly: `["allow-popups-to-escape-sandbox", "allow-popups", "allow-downloads"]`. See the [premium content guide](../how-to/premium-content.md) for more details.
 
 ## CORS
 

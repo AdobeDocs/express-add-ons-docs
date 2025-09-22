@@ -68,7 +68,7 @@ Your add-on will allow users to create a variable number of rows and columns, co
 ### Prerequisites
 
 - Familiarity with HTML, CSS, JavaScript.
-- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting_started/hello-world.md) guide.
+- Familiarity with the Adobe Express add-ons environment; if you need a refresher, follow the [quickstart](../../../getting-started/hello-world.md) guide.
 - An Adobe Express account; use your existing Adobe ID or create one for free.
 - Node.js version 20 or newer.
 
@@ -137,7 +137,7 @@ Before jumping into the code, let's look at how the project is structured. At th
 
 As usual, we'll work in the `src` folder while Webpack outputs the result in `dist`. The add-on entry point is `index.html`, which relies on `ui/index.js` for the iframe logic code (UI element handlers, etc.). The Document API entry point is instead `documentSandbox/code.js`, as defined in the `manifest.json`:
 
-<CodeBlock slots="heading, code" repeat="1" languages="manifest.json" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### manifest.json
 
@@ -272,9 +272,7 @@ The mechanism is straightforward: through the `runtime` object (`code.js`, line 
 
 It would not be uncommon to define an object literal first and pass it to the `exposeAPI` later.
 
-<InlineAlert variant="warning" slots="heading, text1, text2, text3, text4" />
-
-**Syntax**
+<InlineAlert variant="warning" slots="text1, text2, text3, text4" />
 
 Mind the syntax if you need the functions to call each other: for instance, the following won't work, as arrow functions' `this` is inherited from the enclosing scope, and there's none provided.
 
@@ -600,7 +598,7 @@ The `<sp-swatch>` click handler invokes Adobe Express's built-in Color Picker us
 
 Let's finish the UI, completing the code for `ui/index.js`. As you can see, it is all standard JavaScript: besides the color pickers we've just discussed, Rows, Columns and Gutter values are initialized (lines 17-19); the Document Sandbox is retrieved, and everything the Document API exposes is stored in the `sandboxProxy` constant (lines 9-10).
 
-<CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### index.html
 
@@ -794,7 +792,7 @@ Another crucial notion is to avoid silent failures: every action should either s
 
 It makes sense to approach this grid business with some caution, as we're just starting with the Document API. Let's set up `documentSandbox/code.js` to expose this `addGrid()` method and manage the argument provided.
 
-<CodeBlock slots="heading, code" repeat="1" languages="documentSandbox/code.js"/>
+<CodeBlock slots="heading, code" repeat="1"/>
 
 #### documentSandbox/code.js
 
@@ -922,7 +920,7 @@ The Grid creation process can be split into **smaller, separate steps**—we can
 - `code.js` doesn't need to expose anything else but the `addGrid()` and `deleteGrid()` methods.
 - `addRows()` and `addColumns()` can belong to the `shapeUtils.js` module and imported in `documentSandbox/code.js`, while `createRect()` will be kept as private.
 
-<CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### documentSandbox/code.js
 

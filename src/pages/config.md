@@ -23,7 +23,7 @@
             - [runtime](references/addonsdk/instance-runtime.md) 
                 - [dialog](references/addonsdk/runtime-dialog.md) 
         - [constants](references/addonsdk/addonsdk-constants.md) 
-    - [Document Sandbox](references/document-sandbox/) 
+    - [Document Sandbox](references/document-sandbox/index.md) 
         - [Communication APIs](references/document-sandbox/communication/) 
         - [Web APIs](references/document-sandbox/web/) 
         - [Document APIs](references/document-sandbox/document-apis/) 

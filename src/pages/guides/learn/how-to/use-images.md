@@ -144,7 +144,7 @@ All image formats are equal, but some formats are more equal than others. Please
 
 ## Replace Media
 
-The [`replaceMedia()`](../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md#replacemedia) method can be used to replace an existing media with a new one. It accepts a single argument of type [`BitmapImage`](../../../references/document-sandbox/document-apis/classes/bitmap-image.md).
+The [`replaceMedia()`](../../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemedia) method can be used to replace an existing media with a new one. It accepts a single argument of type [`BitmapImage`](../../../references/document-sandbox/document-apis/classes/bitmap-image.md).
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -154,7 +154,7 @@ Compared to the previous examples, replacing media is a method that belongs to t
 
 Because the Document Sandbox doesn't have access to the `fetch()` function, in the following example the Bitmap data is fetched on the iframe side, and passed to the Document Sandbox to be replaced using the [Communication API](./tutorials/stats-addon.md).
 
-You can copy and paste the following code into a [Code Playground](../../getting_started/code_playground.md) session to try it out.
+You can copy and paste the following code into a [Code Playground](../../getting-started/code-playground.md) session to try it out.
 
 <CodeBlock slots="heading, code" repeat="4" languages="HTML, CSS, iFrame JS, Document JS"/>
 

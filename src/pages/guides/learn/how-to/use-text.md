@@ -423,7 +423,7 @@ contentModel.deleteText({ start: 12, length: 22 });
 
 As demonstrated in the examples above, when using the text replacement APIs, you have several options for controlling how styles are applied to the new text:
 
-1. **Custom Styles**: Provide a [`CharacterStylesInput`](../../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md) object to specify exact styling.
+1. **Custom Styles**: Provide a [`CharacterStylesInput`](../../../references/document-sandbox/document-apis/interfaces/character-styles-input.md) object to specify exact styling.
 2. **Style Sources**: Use [`TextStyleSource`](../../../references/document-sandbox/document-apis/namespaces/constants/enumerations/text-style-source.md) constants to inherit styles from existing text.
 
 #### Example: Comprehensive Style Handling
