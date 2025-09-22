@@ -24,8 +24,7 @@ import Prism from "prism-react-renderer/prism";
 
 import "./styles.css";
 
-// Todo - replace this with prod url before merging
-const CODE_PLAYGROUND_URL = "https://168534.prenv.projectx.corp.adobe.com/new";
+const EXPRESS_PROD_URL = "https://express.adobe.com/new";
 const CODE_PLAYGROUND_MODE = "playground";
 const CODE_PLAYGROUND_SESSION = "new";
 
@@ -75,7 +74,7 @@ const copyToClipboard = async (codeContent, setIsTooltipOpen) => {
 
 // open code playground
 const openCodePlayground = (codeContent, sampleId) => {
-  const url = new URL(CODE_PLAYGROUND_URL);
+  const url = new URL(EXPRESS_PROD_URL);
   url.searchParams.set("mode", CODE_PLAYGROUND_MODE);
   url.searchParams.set("session", CODE_PLAYGROUND_SESSION);
   url.searchParams.set("sessionId", sampleId);
@@ -84,7 +83,7 @@ const openCodePlayground = (codeContent, sampleId) => {
 };
 
 // parse language, try option and id.
-// usage: ```js{try id=create-rectangle}
+// usage: ```js{try id=createRectangle}
 function parseAttributes(className, metastring) {
   const cls = String(className || "");
   const meta = String(metastring || "");

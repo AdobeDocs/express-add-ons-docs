@@ -89,7 +89,6 @@ jobs:
           cmd: build
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
-          # TODO: Remove these and get the keys from secrets (stage credentials)
           PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
           PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
           PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
