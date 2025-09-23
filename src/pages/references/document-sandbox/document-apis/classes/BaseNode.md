@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / BaseNode
-
 # Class: BaseNode
 
 A "node" represents an object in the scenegraph, the document's visual content tree. This base class includes only the
@@ -7,11 +6,18 @@ most fundamental nonvisual properties that even nodes near the top of the docume
 The more tangible visual content typically extends the richer Node class which extends BaseNode with additional
 properties.
 
+
+
+- `ProxyLiveObject`
+
+
 ## Extended by
 
--   [`ExpressRootNode`](ExpressRootNode.md)
--   [`PageNode`](PageNode.md)
--   [`VisualNode`](VisualNode.md)
+
+- [`ExpressRootNode`](ExpressRootNode.md)
+- [`PageNode`](PageNode.md)
+- [`VisualNode`](VisualNode.md)
+
 
 ## Accessors
 

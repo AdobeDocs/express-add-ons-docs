@@ -1,17 +1,19 @@
 [@express-document-sdk](../overview.md) / CharacterStyles
-
 # Interface: CharacterStyles
 
 Text styles that can be applied to any range of characters, even a short span like a single word. (Contrast with
 ParagraphStyles, which must be applied to an entire paragraph atomically).
 
-## Extends
 
--   `BaseCharacterStyles`
+
+- `BaseCharacterStyles`
+
 
 ## Extended by
 
--   [`CharacterStylesRange`](CharacterStylesRange.md)
+
+- [`CharacterStylesRange`](CharacterStylesRange.md)
+
 
 ## Properties
 

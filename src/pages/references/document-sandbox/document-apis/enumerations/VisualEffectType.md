@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / VisualEffectType
-
 # Enumeration: VisualEffectType
 
 Visual effects that can be applied to a text node.

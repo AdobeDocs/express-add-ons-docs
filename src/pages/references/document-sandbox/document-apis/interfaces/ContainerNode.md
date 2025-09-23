@@ -1,17 +1,17 @@
 [@express-document-sdk](../overview.md) / ContainerNode
-
 # Interface: ContainerNode
 
 Interface for any node that contains an entirely generic collection of children. Some ContainerNode classes may host
-_additional_ children in other specific "slots," such as background or mask layers; and non-ContainerNode classes may
+*additional* children in other specific "slots," such as background or mask layers; and non-ContainerNode classes may
 also hold children in specified "slots." Use [Node.allChildren](../classes/Node.md#allchildren) for read access to children regardless of node type.
 
 Some ContainerNode classes may be full-fledged Node subclasses (such as Group), while others may be a subclass of the
 more minimal VisualNode (such as Artboard).
 
-## Extends
 
--   [`VisualNode`](../classes/VisualNode.md)
+
+- [`VisualNode`](../classes/VisualNode.md)
+
 
 ## Accessors
 
@@ -33,7 +33,7 @@ Get [AddOnData](../classes/AddOnData.md) reference for managing the private meta
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](ContainerNode.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
+hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
@@ -54,7 +54,7 @@ relative to its parent). Generally matches the selection outline seen in the UI,
 "spine" of the shape as well as its stroke, but excluding effects such as shadows.
 
 The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-_not_ necessarily (0,0) – this is especially true for Text and Path nodes.
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 

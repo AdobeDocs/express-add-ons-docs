@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / Font
-
 # Type alias: Font
 
 • **Font**: [`AvailableFont`](../classes/AvailableFont.md) \| [`UnavailableFont`](../classes/UnavailableFont.md)

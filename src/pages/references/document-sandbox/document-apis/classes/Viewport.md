@@ -1,8 +1,12 @@
 [@express-document-sdk](../overview.md) / Viewport
-
 # Class: Viewport
 
 Represents the area of the canvas that is currently visible on-screen.
+
+
+
+- `ProxyLiveObject`
+
 
 ## Methods
 
@@ -18,7 +22,6 @@ to further draw user's attention to the node, set it as the [Context.selection](
 After this call, the value of [Context.insertionParent](Context.md#insertionparent) will always be the node containing [ArtboardNode](ArtboardNode.md).
 
 Note that the node might still not appear visible if:
-
   - Its animation settings make it invisible at the beginning of the [ArtboardNode](ArtboardNode.md) "scene".
   - It is obscured underneath other artwork in the z-order.
   - It is hidden by a [GroupNode](GroupNode.md)'s mask or similar cropping.

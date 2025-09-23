@@ -1,7 +1,5 @@
 [@express-document-sdk](../overview.md) / Editor
-
 # Class: Editor
-
 Entry point for APIs that read or modify the document's content.
 
 ## Accessors
@@ -75,9 +73,11 @@ BitmapImage resource (e.g. returned from [loadBitmapImage](Editor.md#loadbitmapi
 
 • **options**= `{}`
 
-Additional configuration: - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
-size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
-if needed to stay below an application-defined size cap).
+Additional configuration:
+
+-   initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
+    size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
+    if needed to stay below an application-defined size cap).
 
 • **options.initialSize?**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
 
@@ -114,6 +114,9 @@ a string representing any [SVG path element](https://developer.mozilla.org/en-US
 Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input.
 For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...".
 Throws if the input is empty or is not legal SVG path syntax.
+
+Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position
+a newly created path using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting [Node.translation](Node.md#translation) directly.
 
 #### Returns
 
@@ -152,7 +155,9 @@ automatically adjust to accommodate whatever text is set.
 
 ##### Deprecated
 
+
 - Initial text content is always expected so please use `createText(textContent: string): StandaloneTextNode`.
+
 
 #### createText(textContent)
 
@@ -229,14 +234,15 @@ subset of its fields. All other fields are populated with default values.
 
 See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on the `options` fields. Defaults:
 
--   `color` has default value DEFAULT_STROKE_COLOR if none is provided.
--   `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
--   `position` has default value `center` if none is provided.
--   `dashPattern` has default value [] if none is provided.
--   `dashOffset` has default value 0 if none is provided. This field is ignored
+- `color` has default value DEFAULT_STROKE_COLOR if none is provided.
+- `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
+- `position` has default value `center` if none is provided.
+- `dashPattern` has default value [] if none is provided.
+- `dashOffset` has default value 0 if none is provided. This field is ignored
   if no `dashPattern` was provided.
--   `type` has default value SolidColorStroke.type if none is provided. This field
+- `type` has default value SolidColorStroke.type if none is provided. This field
    shouldn't be set to any other value.
+
 
 #### Parameters
 
@@ -260,14 +266,13 @@ asynchronous operation such as [loadBitmapImage](Editor.md#loadbitmapimage), any
 queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
 
 The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
-to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
+to users. However, note that queueAsyncEdit() will return *before* your function has been run.
 If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
 or await the Promise returned by queueAsyncEdit().
 
 Generally, calling any setter or method is treated as an edit; but simple getters may be safely called at any time.
 
 Example of typical usage:
-
 ```js
 // Assume insertImage() is called from your UI code, and given a Blob containing image data
 async function insertImage(blob) {

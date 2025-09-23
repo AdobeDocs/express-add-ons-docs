@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / PageList
-
 # Class: PageList
 
 PageList represents an ordered list of PageNodes, all of which are children of the root node of the document's "scenegraph"
@@ -9,9 +8,10 @@ sequence. Those artboards, in turn, contain all the visual content of the docume
 PageList also provides APIs for adding/removing pages from the document. PageList is never empty: it is illegal to
 remove the last remaining page from the list.
 
-## Extends
 
--   [`RestrictedItemList`](RestrictedItemList.md)<[`PageNode`](PageNode.md)\>
+
+- [`RestrictedItemList`](RestrictedItemList.md)<[`PageNode`](PageNode.md)\>
+
 
 ## Accessors
 

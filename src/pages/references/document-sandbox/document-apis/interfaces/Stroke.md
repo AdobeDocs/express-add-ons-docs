@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / Stroke
-
 # Interface: Stroke
 
 Base interface representing any stroke in the scenegraph. See [StrokableNode](../classes/StrokableNode.md).
@@ -8,7 +7,9 @@ other stroke types when reading from scenegraph content.
 
 ## Extended by
 
--   [`SolidColorStroke`](SolidColorStroke.md)
+
+- [`SolidColorStroke`](SolidColorStroke.md)
+
 
 ## Properties
 

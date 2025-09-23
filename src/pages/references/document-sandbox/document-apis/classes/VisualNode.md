@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / VisualNode
-
 # Class: VisualNode
 
 A "node" represents an object in the scenegraph, the document's visual content tree. This class represents any node
@@ -9,19 +8,24 @@ VisualNode with more properties, but the overall ArtboardNode container only sup
 
 Some VisualNodes might have a non-visual parent such as a PageNode.
 
-## Extends
 
--   [`BaseNode`](BaseNode.md)
+
+- [`BaseNode`](BaseNode.md)
+
 
 ## Extended by
 
--   [`ArtboardNode`](ArtboardNode.md)
--   [`ContainerNode`](../interfaces/ContainerNode.md)
--   [`Node`](Node.md)
+
+- [`ArtboardNode`](ArtboardNode.md)
+- [`ContainerNode`](../interfaces/ContainerNode.md)
+- [`Node`](Node.md)
+
 
 ## Implements
 
--   [`IVisualNodeBounds`](../interfaces/IVisualNodeBounds.md)
+
+- [`IVisualNodeBounds`](../interfaces/IVisualNodeBounds.md)
+
 
 ## Accessors
 

@@ -1,15 +1,16 @@
 [@express-document-sdk](../overview.md) / StyleRange
-
 # Interface: StyleRange
 
 Represents a range of characters defined by a length (and implicitly started at the end of the previous range).
 
 ## Extended by
 
--   [`CharacterStylesRangeInput`](CharacterStylesRangeInput.md)
--   [`CharacterStylesRange`](CharacterStylesRange.md)
--   [`ParagraphStylesRangeInput`](ParagraphStylesRangeInput.md)
--   [`ParagraphStylesRange`](ParagraphStylesRange.md)
+
+- [`CharacterStylesRangeInput`](CharacterStylesRangeInput.md)
+- [`CharacterStylesRange`](CharacterStylesRange.md)
+- [`ParagraphStylesRangeInput`](ParagraphStylesRangeInput.md)
+- [`ParagraphStylesRange`](ParagraphStylesRange.md)
+
 
 ## Properties
 

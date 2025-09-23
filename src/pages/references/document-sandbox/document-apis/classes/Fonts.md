@@ -1,8 +1,12 @@
 [@express-document-sdk](../overview.md) / Fonts
-
 # Class: Fonts
 
 The Fonts class provides methods to work with fonts.
+
+
+
+- `ProxyLiveObject`
+
 
 ## Methods
 

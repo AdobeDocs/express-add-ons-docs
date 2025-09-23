@@ -1,6 +1,7 @@
 [@express-document-sdk](../overview.md) / UnorderedListStyle
-
 # Type alias: UnorderedListStyle
+
+`Experimental`
 
 • **UnorderedListStyle**: `Required`<[`UnorderedListStyleInput`](../interfaces/UnorderedListStyleInput.md)\>
 

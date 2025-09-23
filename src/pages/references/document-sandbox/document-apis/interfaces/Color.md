@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / Color
-
 # Interface: Color
 
 Represents an RGBA color value.

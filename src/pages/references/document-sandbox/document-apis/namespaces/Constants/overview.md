@@ -1,7 +1,4 @@
 [**@express-document-sdk**](../../overview.md) • **Docs**
-
----
-
 [@express-document-sdk](../../overview.md) / Constants
 
 # Namespace: Constants
@@ -10,9 +7,11 @@
 
 ### Enumerations
 
--   [OrderedListNumbering](enumerations/OrderedListNumbering.md)
--   [ParagraphListType](enumerations/ParagraphListType.md)
--   [TextStyleSource](enumerations/TextStyleSource.md)
+
+- [OrderedListNumbering](enumerations/OrderedListNumbering.md)
+- [ParagraphListType](enumerations/ParagraphListType.md)
+- [TextStyleSource](enumerations/TextStyleSource.md)
+
 
 ## References
 

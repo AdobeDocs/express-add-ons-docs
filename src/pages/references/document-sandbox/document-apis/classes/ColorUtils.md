@@ -1,8 +1,12 @@
 [@express-document-sdk](../overview.md) / ColorUtils
-
 # Class: ColorUtils
 
 Utility methods for working with color values.
+
+
+
+- `ProxyLiveObject`
+
 
 ## Methods
 

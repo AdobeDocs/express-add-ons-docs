@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / CharacterStylesRange
-
 # Interface: CharacterStylesRange
 
 A set of [CharacterStyles](CharacterStyles.md) along with the range of characters they apply to. Seen in the characterStyleRanges getter.
@@ -7,9 +6,10 @@ A set of [CharacterStyles](CharacterStyles.md) along with the range of character
 Note that fonts returned by the getter are *not* guaranteed to be ones the user has rights to edit with, even though they
 are visible in the document.
 
-## Extends
 
--   [`CharacterStyles`](CharacterStyles.md).[`StyleRange`](StyleRange.md)
+
+- [`CharacterStyles`](CharacterStyles.md).[`StyleRange`](StyleRange.md)
+
 
 ## Properties
 

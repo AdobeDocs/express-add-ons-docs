@@ -1,15 +1,16 @@
 [@express-document-sdk](../overview.md) / StandaloneTextNode
-
 # Class: StandaloneTextNode
 
-A StandaloneTextNode represents a text display frame in the scenegraph. It displays an entire piece of text.
+A StandaloneTextNode represents text that is displayed *entirely* within one single frame in the scenegraph (in
+contrast to [ThreadedTextNode](ThreadedTextNode.md), where text may flow across several separate display "frames").
 The StandaloneTextNode does not directly hold the text content and styles – instead it refers to a [TextNodeContentModel](TextNodeContentModel.md).
 
-To create new a single-frame piece of text, see [Editor.createText](Editor.md#createtext).
+To create a new StandaloneTextNode, see [Editor.createText](Editor.md#createtext).
 
-## Extends
 
--   [`TextNode`](TextNode.md)
+
+- [`TextNode`](TextNode.md)
+
 
 ## Accessors
 
@@ -98,6 +99,9 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
+Note: the visual top-left corner of this box is usually not (0,0). Always use `boundsLocal` or [topLeftLocal](TextNode.md#topleftlocal)
+instead of assuming (0,0).
+
 ---
 
 ### centerPointLocal
@@ -161,17 +165,14 @@ moved to a different part of the document.
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Sets the layout mode of the TextNode "frame."
-
-[AreaTextLayout](../interfaces/AreaTextLayout.md) is not supported by single-frame text.
-
-#### Throws
-
-if changing text layout to/from [TextLayout.magicFit](../enumerations/TextLayout.md#magicfit) or [TextLayout.circular](../enumerations/TextLayout.md#circular) layout when the text contains font(s) unavailable to the current user.
+Sets the layout mode of this TextNode "frame" which the text content is displayed within.
+[AreaTextLayout](../interfaces/AreaTextLayout.md) is not supported by standalone text.
 
 #### Throws
 
-if [StandaloneTextNode](StandaloneTextNode.md) is not a part of a multi-frame text content flow and the layout is [AreaTextLayout](../interfaces/AreaTextLayout.md).
+if changing text layout to/from [TextLayout.magicFit](../enumerations/TextLayout.md#magicfit) or [TextLayout.circular](../enumerations/TextLayout.md#circular)
+layout when the text contains fonts that are unavailable to the current user, because these layouts change
+capitalization and thus alter which glyphs are displayed.
 
 #### Parameters
 
@@ -292,7 +293,9 @@ the *entire* text content string.
 
 #### Deprecated
 
+
 - Use the text getter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
 
 • `set` **text**(`textContent`): `void`
 
@@ -302,7 +305,9 @@ WARNING: If a piece of text content flows across several TextNodes,
 
 #### Deprecated
 
+
 - Use the text setter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
 
 #### Parameters
 
@@ -346,6 +351,8 @@ boundsInParent.
 
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
+
+Note: this value is usually not (0,0) due to the way text layout is defined.
 
 ---
 
@@ -451,10 +458,6 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 • **cloneInPlace**(): [`StandaloneTextNode`](StandaloneTextNode.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Creates a copy of this node and its entire subtree of descendants.
 
 The node must be attached to a page as the copy will be added as a sibling.
@@ -548,6 +551,8 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
+`Experimental`
+
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -572,6 +577,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -605,6 +612,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -637,6 +646,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 
@@ -702,8 +713,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 #### Example
 
 Center a rectangle within its parent artboard:
-
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -742,7 +752,6 @@ Point to rotate around, in node's local coordinates.
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
+```
 rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

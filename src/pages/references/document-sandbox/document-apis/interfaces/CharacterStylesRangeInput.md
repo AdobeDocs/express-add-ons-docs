@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / CharacterStylesRangeInput
-
 # Interface: CharacterStylesRangeInput
 
 Variant of [CharacterStylesRange](CharacterStylesRange.md) with all style fields optional, along with the range of characters they apply to.
@@ -8,9 +7,10 @@ Used for the characterStyleRanges setter. When invoking the setter, any fields n
 If specified, the font must be of the [AvailableFont](../classes/AvailableFont.md) type – one that is guaranteed to be available for the current
 user to edit with.
 
-## Extends
 
--   [`CharacterStylesInput`](CharacterStylesInput.md).[`StyleRange`](StyleRange.md)
+
+- [`CharacterStylesInput`](CharacterStylesInput.md).[`StyleRange`](StyleRange.md)
+
 
 ## Properties
 

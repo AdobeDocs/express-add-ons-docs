@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / TextScriptStyle
-
 # Enumeration: TextScriptStyle
 
 Represents a text script style.

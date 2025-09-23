@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / ParagraphStyles
-
 # Interface: ParagraphStyles
 
 <InlineAlert slots="text" variant="warning"/>
@@ -9,13 +8,16 @@
 Text styles that must be applied to an entire paragraph atomically. (Contrast with CharacterStyles which can be applied to
 any range of characters, even a short span like one single word).
 
-## Extends
 
--   [`BaseParagraphStyles`](BaseParagraphStyles.md)
+
+- [`BaseParagraphStyles`](BaseParagraphStyles.md)
+
 
 ## Extended by
 
--   [`ParagraphStylesRange`](ParagraphStylesRange.md)
+
+- [`ParagraphStylesRange`](ParagraphStylesRange.md)
+
 
 ## Properties
 

@@ -1,13 +1,19 @@
 [@express-document-sdk](../overview.md) / TextContentModel
-
 # Class: `abstract` TextContentModel
 
 TextContentModel is an abstract base class representing a complete piece of text content.
 Use this model to get or modify the text string and the style ranges applied to it.
 
+
+
+- `ProxyLiveObject`
+
+
 ## Extended by
 
--   [`TextNodeContentModel`](TextNodeContentModel.md)
+
+- [`TextNodeContentModel`](TextNodeContentModel.md)
+
 
 ## Accessors
 
@@ -15,10 +21,13 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 • `get` **characterStyleRanges**(): readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
 
-The character styles are applied to different ranges of this text content. When setting character styles, any style
-properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](TextContentModel.md#applycharacterstyles) which
-preserves the text's existing styles for any fields not specified). When *getting* styles, all fields are always
-provided.
+The character styles that are applied to different ranges of this text content. Each range starts immediately after
+the previous one: they are always contiguous, and never overlap.
+
+When *setting* character styles, any style properties that are not provided are reset to their defaults (contrast to
+[applyCharacterStyles](TextContentModel.md#applycharacterstyles) which preserves the text's existing styles for any fields not specified). If the ranges
+do not cover the full length of the text, the last range is extended to cover all the remaining text.
+When *getting* styles, all fields are always provided.
 
 Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
 has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
@@ -81,7 +90,7 @@ entire paragraph.
 
 #### Throws
 
-if the text content contains fonts unavailable to the current user and an ordered-list style is being applied.
+if applying an ordered-list style when the text contains fonts that are unavailable to the current user.
 
 #### Parameters
 
@@ -99,6 +108,11 @@ readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
 
 The complete text string, which may span multiple [ThreadedTextNode](ThreadedTextNode.md) "frames" in the scenegraph.
 
+#### Throws
+
+The setter throws if the existing text contains fonts unavailable to the current user.
+See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+
 • `set` **text**(`textContent`): `void`
 
 #### Parameters
@@ -112,6 +126,8 @@ The complete text string, which may span multiple [ThreadedTextNode](ThreadedTex
 ## Methods
 
 ### appendText()
+
+`Experimental`
 
 • **appendText**(`newText`): `void`
 
@@ -146,6 +162,9 @@ unchanged. Does not modify any styles in the text outside this range. Contrast t
 setter, which specifies new style range(s) for the entire text at once, and resets any unspecified properties back to
 default styles.
 
+Explicitly specifying `link: undefined` will remove any hyperlinks present in the existing text. If the `link` style
+property is not specified at all, existing links are preserved.
+
 #### Parameters
 
 • **styles**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md)
@@ -155,9 +174,7 @@ The styles to apply.
 • **range?**: [`TextRange`](../interfaces/TextRange.md)
 
 The start and length of the character sequence to which the styles should be applied.
-The styles will be applied to the entire text content flow if not specified.
-If the specified range doesn't align well with the paragraph boundaries, the range will be expanded to cover the
-entire paragraphs, it overlaps.
+If no range is specified, styles will be applied to the entire text content flow.
 
 #### Returns
 
@@ -166,6 +183,8 @@ entire paragraphs, it overlaps.
 ---
 
 ### applyParagraphStyles()
+
+`Experimental`
 
 • **applyParagraphStyles**(`styles`, `range`?): `void`
 
@@ -186,16 +205,23 @@ The styles to apply.
 
 • **range?**: [`TextRange`](../interfaces/TextRange.md)
 
-The start and length of character sequence to which the styles should be applied.
-If not specified the styles will be applied to the entire piece of text content flow.
+The start and length of character sequence to which the styles should be applied. Styles apply to any
+paragraphs that even partially overlap this range.
+If range is not specified, the styles will be applied to the entire text content flow.
 
 #### Returns
 
 `void`
 
+#### Throws
+
+if applying an ordered-list style when the text contains fonts that are unavailable to the current user.
+
 ---
 
 ### deleteText()
+
+`Experimental`
 
 • **deleteText**(`range`): `void`
 
@@ -223,6 +249,8 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 
 ### hasUnavailableFonts()
 
+`Experimental`
+
 • **hasUnavailableFonts**(): `boolean`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -241,6 +269,8 @@ the character styles to use only AvailableFonts.
 ---
 
 ### insertText()
+
+`Experimental`
 
 • **insertText**(`newText`, `index`, `style`?): `void`
 
@@ -263,7 +293,7 @@ The index at which to insert the new text.
 • **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
-existing text to match the style of. Default: `beforeInsertionPoint`.
+     existing text to match the style of. Default: `beforeInsertionPoint`.
 
 #### Returns
 
@@ -276,6 +306,8 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 ---
 
 ### replaceText()
+
+`Experimental`
 
 • **replaceText**(`newText`, `replaceRange`, `style`?): `void`
 
@@ -298,7 +330,7 @@ The range of text to replace.
 • **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/Constants/enumerations/TextStyleSource.md#firstreplacedcharacter)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
-existing text to match the style of. Default: `firstReplacedCharacter`.
+     existing text to match the style of. Default: `firstReplacedCharacter`.
 
 #### Returns
 

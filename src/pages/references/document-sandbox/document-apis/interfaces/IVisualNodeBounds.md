@@ -1,12 +1,13 @@
 [@express-document-sdk](../overview.md) / IVisualNodeBounds
-
 # Interface: IVisualNodeBounds
 
 An interface for the bounds of a [VisualNode](../classes/VisualNode.md).
 
 ## Extended by
 
--   [`INodeBounds`](INodeBounds.md)
+
+- [`INodeBounds`](INodeBounds.md)
+
 
 ## Accessors
 
