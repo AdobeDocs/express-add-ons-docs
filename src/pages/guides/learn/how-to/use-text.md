@@ -141,11 +141,11 @@ To replace the text content of a `TextNode`, you can use the [Text Replacement A
 
 ### Examples: Replace
 
-The `replaceText()` method replaces a specific range of text with new content. You can optionally specify the styling for the replacement text. It accepts a `newText` string, a [`replaceRange`](../../../references/document-sandbox/document-apis/interfaces/TextRange.md), and an optional `style` parameter.
+The `replaceText()` method replaces a specific range of text with new content. You can optionally specify the styling for the replacement text. It accepts a `newText` string, a [`replaceRange`](../../../references/document-sandbox/document-apis/interfaces/text-range.md), and an optional `style` parameter.
 
 <InlineAlert slots="text" variant="warning"/>
 
-Although possible, it's not recommended to replace the text content of a `TextNode` by setting the [`fullContent.text`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#text) property, as it applies the style from the first range to the whole text. Use the Text Replacement APIs instead to preserve styling.
+Although possible, it's not recommended to replace the text content of a `TextNode` by setting the [`fullContent.text`](../../../references/document-sandbox/document-apis/classes/text-content-model.md#text) property, as it applies the style from the first range to the whole text. Use the Text Replacement APIs instead to preserve styling.
 
 #### Example: Basic Text Replacement
 
@@ -382,7 +382,7 @@ contentModel.appendText("\nDeveloper");
 
 ### Examples: Delete
 
-The `deleteText()` method removes a specific range of text from the content. It accepts a [`deleteRange`](../../../references/document-sandbox/document-apis/interfaces/TextRange.md) parameter.
+The `deleteText()` method removes a specific range of text from the content. It accepts a [`deleteRange`](../../../references/document-sandbox/document-apis/interfaces/text-range.md) parameter.
 
 #### Example: Delete Text Range
 

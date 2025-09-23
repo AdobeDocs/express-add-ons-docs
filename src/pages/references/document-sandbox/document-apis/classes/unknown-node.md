@@ -120,7 +120,7 @@ moved to a different part of the document.
 
 • `get` **locked**(): `boolean`
 
-The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](context.md#selection)), and
 cannot be edited by the user in the UI unless they are unlocked first. It is still possible to mutate locked nodes
 at the model level using these APIs. However, please consider if modifying a locked node would align with user
 expectations before doing so.
@@ -278,7 +278,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 • **boundsInNode**(`targetNode`): `Readonly` [`Rect`](../interfaces/rect.md)
 
 Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
-node. Both nodes must share the same [visualRoot](UnknownNode.md#visualroot), but can lie anywhere within that subtree
+node. Both nodes must share the same [visualRoot](unknown-node.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
@@ -297,7 +297,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 ### cloneInPlace()
 
-• **cloneInPlace**(): [`UnknownNode`](UnknownNode.md)
+• **cloneInPlace**(): [`UnknownNode`](unknown-node.md)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -313,7 +313,7 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 #### Inherited from
 
-[`Node`](Node.md).[`cloneInPlace`](Node.md#cloneinplace)
+[`Node`](node.md).[`cloneInPlace`](node.md#cloneinplace)
 
 <HorizontalLine />
 
@@ -322,7 +322,7 @@ The node must be attached to a page as the copy will be added as a sibling.
 • **localPointInNode**(`localPoint`, `targetNode`): `Readonly` [`Point`](../interfaces/point.md)
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](UnknownNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](unknown-node.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
@@ -371,7 +371,7 @@ removal. No-op if node is already an orphan.
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Changes the height to the given value by visually *scaling* the entire content larger or smaller on both axes to
-preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth) documentation for additional explanation.
+preserve its existing aspect ratio. See [rescaleProportionalToWidth](node.md#rescaleproportionaltowidth) documentation for additional explanation.
 
 #### Parameters
 
@@ -396,10 +396,10 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Changes the width to the given value by visually *scaling* the entire content larger or smaller on both axes to
-preserve its existing aspect ratio, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal)) at a fixed location.
+preserve its existing aspect ratio, keeping its top-left corner ([topLeftLocal](visual-node.md#topleftlocal)) at a fixed location.
 
 Scaling changes the size of visual styling elements such as stroke width, corner detailing, and font size.
-Contrast this to *resizing* operations (such as [resizeToFitWithin](Node.md#resizetofitwithin)), which adjust the bounding box of an
+Contrast this to *resizing* operations (such as [resizeToFitWithin](node.md#resizetofitwithin)), which adjust the bounding box of an
 element while trying to preserve the existing size of visual detailing such as strokes, corners, and fonts.
 
 Rescaling becomes baked into the updated values of fields such as stroke weight, rectangle width, etc. (it is not
@@ -427,9 +427,9 @@ a separate, persistent scale factor multiplier).
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Resizes the node to completely *cover* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
+Resizes the node to completely *cover* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](visual-node.md#topleftlocal))
 at a fixed location. Nodes with a fixed aspect ratio may extend outside the box on one axis as a result, but
-nodes with flexible aspect ratio will be resized to the exact box size specified. See [resizeToFitWithin](Node.md#resizetofitwithin)
+nodes with flexible aspect ratio will be resized to the exact box size specified. See [resizeToFitWithin](node.md#resizetofitwithin)
 documentation for additional explanation.
 
 #### Parameters
@@ -460,12 +460,12 @@ resizeToFitWithin
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Resizes the node to fit entirely *within* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
+Resizes the node to fit entirely *within* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](visual-node.md#topleftlocal))
 at a fixed location. Nodes with a fixed aspect ratio may leave unused space on one axis as a result, but nodes
 with flexible aspect ratio will be resized to the exact box size specified.
 
 Resizing attempts to preserve the existing size of visual styling elements such as stroke width, corner detailing,
-and font size as much as possible. Contrast with *rescaling* (such as [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth)), which
+and font size as much as possible. Contrast with *rescaling* (such as [rescaleProportionalToWidth](node.md#rescaleproportionaltowidth)), which
 always changes the size of visual detailing in exact proportion to the change in overall bounding box size. This
 API may still produce *some* degree of rescaling if necessary for certain shapes with fixed corner/edge detailing
 to fit the box better.

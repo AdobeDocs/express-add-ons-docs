@@ -16,11 +16,11 @@ A read-only view of the mask shape used for cropping/clipping the media.
 
 [`INodeBounds`](i-node-bounds.md)
 
----
+<HorizontalLine />
 
 ### mediaRectangle
 
-• `get` **mediaRectangle**(): [`ImageRectangleNode`](../classes/ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](../classes/UnknownMediaRectangleNode.md)
+• `get` **mediaRectangle**(): [`ImageRectangleNode`](../classes/image-rectangle-node.md) \| [`UnknownMediaRectangleNode`](../classes/Unknownmedia-rectangle-node.md)
 
 The rectangular node representing the entire, uncropped bounds of the media (e.g. image, GIFs, or video). The media's position and
 rotation can be changed, but it cannot be resized yet via this API. Media types other than images will yield an UnknownMediaRectangleNode
@@ -28,7 +28,7 @@ object for now.
 
 #### Returns
 
-[`ImageRectangleNode`](../classes/ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](../classes/UnknownMediaRectangleNode.md)
+[`ImageRectangleNode`](../classes/image-rectangle-node.md) \| [`UnknownMediaRectangleNode`](../classes/Unknownmedia-rectangle-node.md)
 
 ## Methods
 

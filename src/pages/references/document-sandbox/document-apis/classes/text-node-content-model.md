@@ -2,38 +2,38 @@
 
 # Class: TextNodeContentModel
 
-Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) *or*
-split across multiple [ThreadedTextNode](ThreadedTextNode.md) frames for display.
+Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](standalone-text-node.md) *or*
+split across multiple [ThreadedTextNode](threaded-text-node.md) frames for display.
 Use this model to get or modify the text string and the style ranges applied to it.
 
 ## Extends
 
--   [`TextContentModel`](TextContentModel.md)
+-   [`TextContentModel`](text-content-model.md)
 
 ## Accessors
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](TextNode.md), `any`, `any`
+• `get` **allTextNodes**(): `Readonly` `Iterable` [`TextNode`](text-node.md), `any`, `any`
 
-Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. The text content
-starts in the first [ThreadedTextNode](ThreadedTextNode.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
-text content may not be visible at all, if the last [ThreadedTextNode](ThreadedTextNode.md) "frame" is not large enough to accommodate it.
+Get ordered list of all [TextNode](text-node.md)s that display this text content in the scenegraph. The text content
+starts in the first [ThreadedTextNode](threaded-text-node.md) "frame", and then flows into the second node once it has filled the first one. The ending of the
+text content may not be visible at all, if the last [ThreadedTextNode](threaded-text-node.md) "frame" is not large enough to accommodate it.
 
-If there are multiple [ThreadedTextNode](ThreadedTextNode.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
+If there are multiple [ThreadedTextNode](threaded-text-node.md)s, all of them must be configured to use [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Returns
 
-`Readonly` `Iterable` [`TextNode`](TextNode.md), `any`, `any`
+`Readonly` `Iterable` [`TextNode`](text-node.md), `any`, `any`
 
 <HorizontalLine />
 
 ### characterStyleRanges
 
-• `get` **characterStyleRanges**(): readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
+• `get` **characterStyleRanges**(): readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
 The character styles are applied to different ranges of this text content. When setting character styles, any style
-properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](TextContentModel.md#applycharacterstyles) which
+properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](text-content-model.md#applycharacterstyles) which
 preserves the text's existing styles for any fields not specified). When *getting* styles, all fields are always
 provided.
 
@@ -44,11 +44,11 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 
 #### Parameters
 
-• **styles**: readonly [`CharacterStylesRangeInput`](../interfaces/CharacterStylesRangeInput.md)[]
+• **styles**: readonly [`CharacterStylesRangeInput`](../interfaces/character-styles-range-input.md)[]
 
 #### Returns
 
-readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
+readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
 <HorizontalLine />
 
@@ -75,7 +75,7 @@ Comparing two models using `===` will always fail.
 
 ### paragraphStyleRanges
 
-• `get` **paragraphStyleRanges**(): readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
+• `get` **paragraphStyleRanges**(): readonly [`ParagraphStylesRange`](../interfaces/paragraph-styles-range.md)[]
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -102,11 +102,11 @@ if the text content contains fonts unavailable to the current user and an ordere
 
 #### Parameters
 
-• **styles**: readonly [`ParagraphStylesRangeInput`](../interfaces/ParagraphStylesRangeInput.md)[]
+• **styles**: readonly [`ParagraphStylesRangeInput`](../interfaces/paragraph-styles-range-input.md)[]
 
 #### Returns
 
-readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
+readonly [`ParagraphStylesRange`](../interfaces/paragraph-styles-range.md)[]
 
 <HorizontalLine />
 
@@ -114,7 +114,7 @@ readonly [`ParagraphStylesRange`](../interfaces/ParagraphStylesRange.md)[]
 
 • `get` **text**(): `string`
 
-The complete text string, which may span multiple [ThreadedTextNode](ThreadedTextNode.md) "frames" in the scenegraph.
+The complete text string, which may span multiple [ThreadedTextNode](threaded-text-node.md) "frames" in the scenegraph.
 
 • `set` **text**(`textContent`): `void`
 
@@ -150,11 +150,11 @@ The text to append.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`appendText`](TextContentModel.md#appendtext)
+[`TextContentModel`](text-content-model.md).[`appendText`](text-content-model.md#appendtext)
 
 #### Throws
 
-if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
 <HorizontalLine />
 
@@ -163,7 +163,7 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 • **applyCharacterStyles**(`styles`, `range`?): `void`
 
 Apply one or more styles to the characters in the given range, leaving any style properties that were not specified
-unchanged. Does not modify any styles in the text outside this range. Contrast to the [characterStyleRanges](TextContentModel.md#characterstyleranges)
+unchanged. Does not modify any styles in the text outside this range. Contrast to the [characterStyleRanges](text-content-model.md#characterstyleranges)
 setter, which specifies new style range(s) for the entire text at once, and resets any unspecified properties back to
 default styles.
 
@@ -186,7 +186,7 @@ entire paragraphs, it overlaps.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`applyCharacterStyles`](TextContentModel.md#applycharacterstyles)
+[`TextContentModel`](text-content-model.md).[`applyCharacterStyles`](text-content-model.md#applycharacterstyles)
 
 <HorizontalLine />
 
@@ -199,17 +199,17 @@ entire paragraphs, it overlaps.
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Apply one or more styles to the paragraphs in the given range, leaving any style properties that were not specified
-unchanged. Does not modify any styles in the text outside this range. Contrast to the [paragraphStyleRanges](TextContentModel.md#paragraphstyleranges)
+unchanged. Does not modify any styles in the text outside this range. Contrast to the [paragraphStyleRanges](text-content-model.md#paragraphstyleranges)
 setter, which specifies new style range(s) for the entire text at once, and resets any unspecified properties back to
 default styles.
 
 #### Parameters
 
-• **styles**: [`ParagraphStylesInput`](../interfaces/ParagraphStylesInput.md)
+• **styles**: [`ParagraphStylesInput`](../interfaces/paragraph-styles-input.md)
 
 The styles to apply.
 
-• **range?**: [`TextRange`](../interfaces/TextRange.md)
+• **range?**: [`TextRange`](../interfaces/text-range.md)
 
 The start and length of character sequence to which the styles should be applied.
 If not specified the styles will be applied to the entire piece of text content flow.
@@ -220,7 +220,7 @@ If not specified the styles will be applied to the entire piece of text content 
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`applyParagraphStyles`](TextContentModel.md#applyparagraphstyles)
+[`TextContentModel`](text-content-model.md).[`applyParagraphStyles`](text-content-model.md#applyparagraphstyles)
 
 <HorizontalLine />
 
@@ -236,7 +236,7 @@ Deletes a range of text from the content.
 
 #### Parameters
 
-• **range**: [`TextRange`](../interfaces/TextRange.md)
+• **range**: [`TextRange`](../interfaces/text-range.md)
 
 The range of text to delete.
 
@@ -246,11 +246,11 @@ The range of text to delete.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`deleteText`](TextContentModel.md#deletetext)
+[`TextContentModel`](text-content-model.md).[`deleteText`](text-content-model.md#deletetext)
 
 #### Throws
 
-if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
 <HorizontalLine />
 
@@ -273,7 +273,7 @@ the character styles to use only AvailableFonts.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`hasUnavailableFonts`](TextContentModel.md#hasunavailablefonts)
+[`TextContentModel`](text-content-model.md).[`hasUnavailableFonts`](text-content-model.md#hasunavailablefonts)
 
 <HorizontalLine />
 
@@ -308,11 +308,11 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`insertText`](TextContentModel.md#inserttext)
+[`TextContentModel`](text-content-model.md).[`insertText`](text-content-model.md#inserttext)
 
 #### Throws
 
-if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
 <HorizontalLine />
 
@@ -332,7 +332,7 @@ Replaces a range of text with a new text string.
 
 The text to replace the range with.
 
-• **replaceRange**: [`TextRange`](../interfaces/TextRange.md)
+• **replaceRange**: [`TextRange`](../interfaces/text-range.md)
 
 The range of text to replace.
 
@@ -347,8 +347,8 @@ existing text to match the style of. Default: `firstReplacedCharacter`.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`replaceText`](TextContentModel.md#replacetext)
+[`TextContentModel`](text-content-model.md).[`replaceText`](text-content-model.md#replacetext)
 
 #### Throws
 
-if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).

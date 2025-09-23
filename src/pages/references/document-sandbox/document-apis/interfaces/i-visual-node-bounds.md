@@ -2,7 +2,7 @@
 
 # Interface: IVisualNodeBounds
 
-An interface for the bounds of a [VisualNode](../classes/VisualNode.md).
+An interface for the bounds of a [VisualNode](../classes/visual-node.md).
 
 ## Extended by
 
@@ -12,7 +12,7 @@ An interface for the bounds of a [VisualNode](../classes/VisualNode.md).
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](Rect.md)\>
+• `get` **boundsLocal**(): `Readonly` [`Rect`](rect.md)
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -23,25 +23,25 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](Rect.md)\>
+`Readonly` [`Rect`](rect.md)
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](Point.md)\>
+• `get` **centerPointLocal**(): `Readonly` [`Point`](point.md)
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](Point.md)\>
+`Readonly` [`Point`](point.md)
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](Point.md)\>
+• `get` **topLeftLocal**(): `Readonly` [`Point`](point.md)
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -49,13 +49,13 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](Point.md)\>
+`Readonly` [`Point`](point.md)
 
 ## Methods
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](Point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly` [`Point`](point.md)
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same visualRoot, but can lie anywhere within that subtree relative to one
@@ -63,10 +63,10 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-• **localPoint**: [`Point`](Point.md)
+• **localPoint**: [`Point`](point.md)
 
-• **targetNode**: [`VisualNode`](../classes/VisualNode.md)
+• **targetNode**: [`VisualNode`](../classes/visual-node.md)
 
 #### Returns
 
-`Readonly`<[`Point`](Point.md)\>
+`Readonly` [`Point`](point.md)

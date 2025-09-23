@@ -382,7 +382,7 @@ module.exports = {
                   },
                   {
                     title: "Point",
-                    path: "references/document-sandbox/document-apis/interfaces/Point.md",
+                    path: "references/document-sandbox/document-apis/interfaces/point.md",
                   },
                   {
                     title: "Rect",

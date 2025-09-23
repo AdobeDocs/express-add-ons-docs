@@ -12,7 +12,7 @@ Represents a text script style.
 
 text appears at the standard baseline
 
----
+<HorizontalLine />
 
 ### subscript
 
@@ -20,7 +20,7 @@ text appears at the standard baseline
 
 text appears below the baseline
 
----
+<HorizontalLine />
 
 ### superscript
 

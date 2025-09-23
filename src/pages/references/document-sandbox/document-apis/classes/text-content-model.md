@@ -16,12 +16,12 @@ Use this model to get or modify the text string and the style ranges applied to 
 • `get` **characterStyleRanges**(): readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
 The character styles are applied to different ranges of this text content. When setting character styles, any style
-properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](TextContentModel.md#applycharacterstyles) which
+properties that are not provided are reset to their defaults (contrast to [applyCharacterStyles](text-content-model.md#applycharacterstyles) which
 preserves the text's existing styles for any fields not specified). When *getting* styles, all fields are always
 provided.
 
 Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
-has rights to edit with. The _setter_ only accepts the AvailableFont type which has been verified to be usable.
+has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
 
 • `set` **characterStyleRanges**(`styles`): `void`
 
@@ -133,7 +133,7 @@ The text to append.
 
 #### Throws
 
-if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
 <HorizontalLine />
 
@@ -195,6 +195,32 @@ If not specified the styles will be applied to the entire piece of text content 
 
 <HorizontalLine />
 
+### deleteText()
+
+• **deleteText**(`range`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Deletes a range of text from the content.
+
+#### Parameters
+
+• **range**: [`TextRange`](../interfaces/text-range.md)
+
+The range of text to delete.
+
+#### Returns
+
+`void`
+
+#### Throws
+
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
+
+<HorizontalLine />
+
 ### hasUnavailableFonts()
 
 • **hasUnavailableFonts**(): `boolean`
@@ -234,7 +260,7 @@ The text to insert.
 
 The index at which to insert the new text.
 
-• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#afterinsertionpoint)
+• **style?**: [`CharacterStylesInput`](../interfaces/character-styles-input.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/text-style-source.md#afterinsertionpoint)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
 existing text to match the style of. Default: `beforeInsertionPoint`.
@@ -245,7 +271,7 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 
 #### Throws
 
-if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
 <HorizontalLine />
 
@@ -265,11 +291,11 @@ Replaces a range of text with a new text string.
 
 The text to replace the range with.
 
-• **replaceRange**: [`TextRange`](../interfaces/TextRange.md)
+• **replaceRange**: [`TextRange`](../interfaces/text-range.md)
 
 The range of text to replace.
 
-• **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/constants/enumerations/text-style-source.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/constants/enumerations/text-style-source.md#firstreplacedcharacter)
+• **style?**: [`CharacterStylesInput`](../interfaces/character-styles-input.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/text-style-source.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/text-style-source.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/Constants/enumerations/text-style-source.md#firstreplacedcharacter)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
 existing text to match the style of. Default: `firstReplacedCharacter`.
@@ -280,4 +306,4 @@ existing text to match the style of. Default: `firstReplacedCharacter`.
 
 #### Throws
 
-if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
+if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
