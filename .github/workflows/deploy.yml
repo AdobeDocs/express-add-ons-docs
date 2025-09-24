@@ -152,6 +152,8 @@ jobs:
           GATSBY_FEDS_PRIVACY_ID: ${{ secrets.AIO_FEDS_PRIVACY_ID }}
           GATSBY_SITE_DOMAIN_URL: https://developer-stage.adobe.com
           NODE_OPTIONS: "--max_old_space_size=8192"
+          IMS_BASE_URL: "https://ims-na1-stg1.adobelogin.com"
+          FFC_BASE_URL: "https://ffc-addon-stage.adobe.io/"
           PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
           PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
           PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
@@ -263,6 +265,8 @@ jobs:
           GATSBY_FEDS_PRIVACY_ID: ${{ secrets.AIO_FEDS_PRIVACY_ID }}
           GATSBY_SITE_DOMAIN_URL: https://developer.adobe.com
           NODE_OPTIONS: "--max_old_space_size=8192"
+          IMS_BASE_URL: "https://ims-na1.adobelogin.com"
+          FFC_BASE_URL: "https://ffc-addon.adobe.io/"
           # TODO: Replace with prod credentials
           PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
           PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}

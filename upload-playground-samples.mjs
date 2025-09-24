@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
+import { config } from "dotenv";
+import fs from "fs-extra";
+import path from "path";
+import JSZip from "jszip";
 
-const fs = require("fs").promises;
-const path = require("path");
-const JSZip = require("jszip");
+config();
 
-const SCAN_DIRECTORY = "./src/pages";
+const PAGES_DIRECTORY = "./src/pages";
 const MARKDOWN_EXTENSION = ".md";
-const IMS_BASE_URL = "https://ims-na1-stg1.adobelogin.com";
+const IMS_BASE_URL = process.env.IMS_BASE_URL;
 const IMS_TOKEN_ENDPOINT = "/ims/token/v1";
-const FFC_BASE_URL = "https://ffc-addon-stage.adobe.io/";
+const FFC_BASE_URL = process.env.FFC_BASE_URL;
 const FFC_PLAYGROUND_ENDPOINT = "/v1/playground/projects";
 
 const PLAYGROUND_CLIENT_ID = process.env.PLAYGROUND_CLIENT_ID;
@@ -24,12 +25,18 @@ const CODE_BLOCK_REGEX =
 
 /**
  * Exchange an IMS authorization code for a service token.
- * @returns access_token.
+ * @returns service token.
  */
 async function getImsServiceToken() {
   try {
-    if (!PLAYGROUND_CLIENT_ID || !PLAYGROUND_CLIENT_SECRET || !PLAYGROUND_AUTH_CODE) {
-      throw new Error("One or more of CLIENT_ID, CLIENT_SECRET, or AUTH_CODE is not set");
+    if (
+      !PLAYGROUND_CLIENT_ID ||
+      !PLAYGROUND_CLIENT_SECRET ||
+      !PLAYGROUND_AUTH_CODE
+    ) {
+      throw new Error(
+        "One or more of CLIENT_ID, CLIENT_SECRET, or AUTH_CODE is not set"
+      );
     }
 
     const url = new URL(IMS_TOKEN_ENDPOINT, IMS_BASE_URL);
@@ -85,13 +92,17 @@ async function uploadCodeBlockToFFC(codeBlock, projectId) {
   try {
     const accessToken = await getImsServiceToken();
     const url = new URL(
-      `${FFC_PLAYGROUND_ENDPOINT}/${encodeURIComponent(projectId)}`,
+      `${FFC_PLAYGROUND_ENDPOINT}/${projectId}`,
       FFC_BASE_URL
     );
 
     const zipBuffer = await createZipFileFromCodeBlock(codeBlock);
     const form = new FormData();
-    form.append("file", new Blob([zipBuffer], { type: "application/zip" }), `${projectId}.zip`);
+    form.append(
+      "file",
+      new Blob([zipBuffer], { type: "application/zip" }),
+      `${projectId}.zip`
+    );
     form.append("name", projectId);
 
     const response = await fetch(url, {
@@ -106,7 +117,9 @@ async function uploadCodeBlockToFFC(codeBlock, projectId) {
 
     if (!response.ok) {
       const text = await response.text();
-      throw new Error(`Failed to upload code block to FFC - HTTP ${response.status}: ${text}`);
+      throw new Error(
+        `Failed to upload code block to FFC - HTTP ${response.status}: ${text}`
+      );
     }
     return response.json();
   } catch (error) {
@@ -151,10 +164,14 @@ function extractCodeBlocks(content, filePath) {
 
   while ((match = CODE_BLOCK_REGEX.exec(content)) !== null) {
     const [, language, explicitId, code] = match;
-    const id = explicitId || Math.random().toString(36).substring(2, 8);
 
+    if (!explicitId) {
+      throw new Error(`Code block missing mandatory ID tag: ${filePath}.`);
+    }
+
+    console.log(`Uploading code block to FFC: ${explicitId}`);
     codeBlocks.push({
-      id,
+      id: explicitId,
       language,
       code: code.trim(),
       filePath,
@@ -165,25 +182,24 @@ function extractCodeBlocks(content, filePath) {
 
 /**
  * Main function to run the code block extractor.
- * 1. Find all markdown files in the scan directory.
+ * 1. Find all markdown files in the pages directory.
  * 2. Extract code blocks from each markdown file.
  * 3. Store each code block in the backend API.
  */
 async function run() {
-  const markdownFiles = await findMarkdownFiles(SCAN_DIRECTORY);
+  const markdownFiles = await findMarkdownFiles(PAGES_DIRECTORY);
 
   for (const filePath of markdownFiles) {
     const content = await fs.readFile(filePath, "utf8");
     const codeBlocks = extractCodeBlocks(content, filePath);
 
     for (const codeBlock of codeBlocks) {
-      try {
-        await uploadCodeBlockToFFC(codeBlock, codeBlock.id);
-      } catch (error) {
-        console.error(`Failed to upload to FFC for ${codeBlock.id}: ${error.message}`);
-      }
+      await uploadCodeBlockToFFC(codeBlock, codeBlock.id);
     }
   }
 }
 
-run().catch(console.error);
+run().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
