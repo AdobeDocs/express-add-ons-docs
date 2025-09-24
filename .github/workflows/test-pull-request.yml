@@ -89,7 +89,3 @@ jobs:
           cmd: build
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
-          PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
-          PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
-          PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
-          PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
