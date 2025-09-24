@@ -125,7 +125,7 @@ jobs:
       - name: Build site
         uses: borales/actions-yarn@v3
         with:
-          cmd: build
+          cmd: build:deploy
         env:
           PREFIX_PATHS: true # equivalent to --prefix-paths flag for 'gatsby build'
           PATH_PREFIX: ${{ needs.set-state.outputs.path_prefix }}
@@ -235,7 +235,7 @@ jobs:
       - name: Build site
         uses: borales/actions-yarn@v3
         with:
-          cmd: build
+          cmd: build:deploy
         env:
           PREFIX_PATHS: true # equivalent to --prefix-paths flag for 'gatsby build'
           PATH_PREFIX: ${{ needs.set-state.outputs.path_prefix }}
