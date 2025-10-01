@@ -974,7 +974,6 @@ class SelectionManager {
 const selectionManager = new SelectionManager();
 ```
 
-
 ## Best Practices & Guidelines
 
 ### Event Handler Cleanup
@@ -1088,7 +1087,6 @@ setupSelectionHandling();
 2. **Essential work only**: Avoid heavy computations
 3. **Clean Up**: Always unregister handlers when done (`editor.context.off()`)
 4. **Avoid Heavy Work**: Don't do complex calculations in selection callbacks
-
 
 ### Communication Between UI and Document Sandbox
 
