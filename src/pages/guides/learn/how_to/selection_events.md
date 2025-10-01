@@ -53,21 +53,17 @@ faq:
 
 # Handle Element Selection
 
-Learn how to work with user selections, handle selection changes, and respond to user interactions in Adobe Express documents using the Document API.
-
-<InlineAlert slots="header, text1, text2" variant="info"/>
-
-Document API Context Required
-
-Selection methods and events are part of the Document API and require the document sandbox environment. These examples should be used in your `code.js` file, not in the main iframe panel.
-
-Make sure your manifest includes `"documentSandbox": "code.js"` in the entry points.
-
-For more details on the Context class, see the [Context API reference](../../../references/document-sandbox/document-apis/classes/Context.md).
+Learn how to work with user selections, handle selection changes, and create responsive interfaces that react to what users select in their Adobe Express documents.
 
 ## Getting Started with Selections
 
 Selections in Adobe Express represent the elements (nodes) that users have currently selected in their document. The selection system provides access to what's selected, the ability to change selections programmatically, and events to respond to selection changes.
+
+All selection operations use the **Document API** and run in the **document sandbox environment**. This means your selection code should be placed in your `code.js` file, not in your main iframe panel code.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Document Sandbox Setup**: Make sure your `manifest.json` includes `"documentSandbox": "code.js"` in the entry points to enable selection APIs.
 
 ### Check Current Selection
 
@@ -1059,7 +1055,7 @@ setupSelectionHandling();
 3. **Locked node handling**: Locked nodes are excluded from main selection but available in `selectionIncludingNonEditable`
 4. **Automatic filtering**: System automatically filters out invalid selections
 
-### Critical: Selection Handler Restrictions
+### Important: Selection Handler Restrictions
 
 <InlineAlert slots="header, text1, text2" variant="warning"/>
 
