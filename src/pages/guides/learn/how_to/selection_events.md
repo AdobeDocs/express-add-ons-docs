@@ -14,8 +14,8 @@ keywords:
   - Locked nodes
   - Properties panel
   - Real-time updates
-title: Selection Events and Methods
-description: Complete guide to working with selections in Adobe Express documents - from basic operations to advanced UI integration patterns.
+title: Handle Element Selection
+description: Complete guide to working with element selections in Adobe Express documents - from basic selection operations to advanced event handling and UI integration patterns.
 contributors:
   - https://github.com/hollyschinsky
 faq:
@@ -24,7 +24,7 @@ faq:
       answer: "Use `editor.context.selection` to get an array of currently selected editable nodes, or `editor.context.hasSelection` to check if anything is selected."
 
     - question: "How do I listen for selection changes?"
-      answer: "Use `editor.context.on('selectionChange', callback)` to register a handler. Always store the returned ID for cleanup."
+      answer: "Use `editor.context.on(EditorEvent.selectionChange, callback)` to register a handler. Always store the returned ID for cleanup."
 
     - question: "How do I programmatically select elements?"
       answer: "Set `editor.context.selection = node` for single elements or `editor.context.selection = [node1, node2]` for multiple elements."
@@ -42,7 +42,7 @@ faq:
       answer: "Only nodes within the current artboard can be selected, you cannot select both parent and child nodes simultaneously, and locked nodes are automatically filtered from the main selection."
 
     - question: "How do I clean up selection event handlers?"
-      answer: "Always call `editor.context.off('selectionChange', handlerId)` using the ID returned from `on()` to prevent memory leaks."
+      answer: "Always call `editor.context.off(EditorEvent.selectionChange, handlerId)` using the ID returned from `on()` to prevent memory leaks."
 
     - question: "How do I communicate selection changes to my UI?"
       answer: "Use the runtime API to send selection data from the document sandbox to your UI panel, enabling real-time interface updates."
@@ -51,7 +51,7 @@ faq:
       answer: "Typical actions include updating properties panels, enabling/disabling tools, applying formatting to selected text, grouping elements, and showing context-appropriate options."
 ---
 
-# Selection Events and Methods
+# Handle Element Selection
 
 Learn how to work with user selections, handle selection changes, and respond to user interactions in Adobe Express documents using the Document API.
 
@@ -96,8 +96,8 @@ if (editor.context.hasSelection) {
 #### TypeScript
 
 ```ts
-// code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
 // Check if anything is selected
 if (editor.context.hasSelection) {
@@ -163,8 +163,8 @@ selection.forEach((node, index) => {
 #### TypeScript
 
 ```ts
-// code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
 // Get the current selection
 const selection: readonly Node[] = editor.context.selection;
@@ -210,7 +210,7 @@ console.log("Rectangle is now selected");
 #### TypeScript
 
 ```ts
-// code.js  
+// code.ts  
 import { editor, RectangleNode, ContainerNode } from "express-document-sdk";
 
 // Create a simple rectangle to demonstrate selection
@@ -264,7 +264,7 @@ console.log("Multiple elements selected:", editor.context.selection.length);
 #### TypeScript
 
 ```ts
-// code.js
+// code.ts
 import { editor, RectangleNode, EllipseNode, ContainerNode } from "express-document-sdk";
 
 // Create multiple simple elements
@@ -309,7 +309,7 @@ console.log("Has selection:", editor.context.hasSelection); // false
 #### TypeScript
 
 ```ts
-// code.js
+// code.ts
 import { editor } from "express-document-sdk";
 
 // Clear the selection - both ways work
@@ -332,10 +332,10 @@ Respond to selection changes to create dynamic UIs that update based on what's s
 
 ```js
 // code.js
-import { editor } from "express-document-sdk";
+import { editor, EditorEvent } from "express-document-sdk";
 
 // Listen for selection changes  
-const handlerId = editor.context.on("selectionChange", () => {
+const handlerId = editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   console.log("Selection changed!");
@@ -357,11 +357,11 @@ console.log("Selection handler registered:", handlerId);
 #### TypeScript
 
 ```ts
-// code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
 // Listen for selection changes
-const handlerId: string = editor.context.on("selectionChange", () => {
+const handlerId: string = editor.context.on(EditorEvent.selectionChange, () => {
   const selection: readonly Node[] = editor.context.selection;
   
   console.log("Selection changed!");
@@ -390,7 +390,7 @@ Dynamic properties panel based on selection:
 
 ```js
 // code.js
-import { editor } from "express-document-sdk";
+import { editor, EditorEvent } from "express-document-sdk";
 
 function updatePropertiesPanel() {
   const selection = editor.context.selection;
@@ -426,7 +426,7 @@ function updatePropertiesPanel() {
 }
 
 // Register the handler
-editor.context.on("selectionChange", updatePropertiesPanel);
+editor.context.on(EditorEvent.selectionChange, updatePropertiesPanel);
 
 // Call once on startup to initialize
 updatePropertiesPanel();
@@ -435,7 +435,7 @@ updatePropertiesPanel();
 #### TypeScript
 
 ```ts
-// code.js
+// code.ts
 import { editor, Node, TextNode } from "express-document-sdk";
 
 function updatePropertiesPanel(): void {
@@ -472,7 +472,7 @@ function updatePropertiesPanel(): void {
 }
 
 // Register the handler
-editor.context.on("selectionChange", updatePropertiesPanel);
+editor.context.on(EditorEvent.selectionChange, updatePropertiesPanel);
 
 // Call once on startup to initialize
 updatePropertiesPanel();
@@ -488,14 +488,14 @@ updatePropertiesPanel();
 
 ```js
 // code.js
-import { editor } from "express-document-sdk";
+import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs so you can unregister them later
 let selectionHandlerId = null;
 
 function startListening() {
   // Register handler and store the ID
-  selectionHandlerId = editor.context.on("selectionChange", () => {
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
     console.log("Selection changed!");
     // Handle selection change
   });
@@ -506,7 +506,7 @@ function startListening() {
 function stopListening() {
   // Clean up the handler
   if (selectionHandlerId) {
-    editor.context.off("selectionChange", selectionHandlerId);
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
     selectionHandlerId = null;
     console.log("✅ Selection handler cleaned up");
   }
@@ -522,15 +522,15 @@ startListening();
 #### TypeScript
 
 ```ts
-// code.js
-import { editor } from "express-document-sdk";
+// code.ts
+import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs so you can unregister them later
 let selectionHandlerId: string | null = null;
 
 function startListening(): void {
   // Register handler and store the ID
-  selectionHandlerId = editor.context.on("selectionChange", () => {
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
     console.log("Selection changed!");
     // Handle selection change
   });
@@ -541,7 +541,7 @@ function startListening(): void {
 function stopListening(): void {
   // Clean up the handler
   if (selectionHandlerId) {
-    editor.context.off("selectionChange", selectionHandlerId);
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
     selectionHandlerId = null;
     console.log("✅ Selection handler cleaned up");
   }
@@ -552,6 +552,8 @@ startListening();
 
 // Clean up when your add-on is being destroyed or reset
 // stopListening();
+```
+
 ## Advanced Selection Techniques
 
 Advanced patterns for complex add-ons.
@@ -566,10 +568,10 @@ Handle selections that include locked or non-editable content:
 
 ```js
 // code.js
-import { editor } from "express-document-sdk";
+import { editor, EditorEvent } from "express-document-sdk";
 
 function analyzeCompleteSelection() {
-  const editableSelection = editor.context.selection;
+  const selection = editor.context.selection;
   const fullSelection = editor.context.selectionIncludingNonEditable;
   
   return {
@@ -586,8 +588,8 @@ function analyzeCompleteSelection() {
 }
 
 // Example: Dynamic UI updates based on detailed analysis
-editor.context.on("selectionChange", () => {
-  const analysis = analyzeSelection();
+editor.context.on(EditorEvent.selectionChange, () => {
+  const analysis = analyzeCompleteSelection();
   
   console.log("📊 Detailed Selection Info:");
   console.log(`  Editable: ${analysis.editableCount}`);
@@ -612,8 +614,8 @@ editor.context.on("selectionChange", () => {
 #### TypeScript
 
 ```ts
-// code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
 interface DetailedSelectionAnalysis {
   editableCount: number;
@@ -643,7 +645,7 @@ function analyzeSelection(): DetailedSelectionAnalysis {
 }
 
 // Example: Dynamic UI updates based on detailed analysis
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const analysis: DetailedSelectionAnalysis = analyzeSelection();
   
   console.log("📊 Detailed Selection Info:");
@@ -733,7 +735,7 @@ function groupSelection() {
 }
 
 // Register handlers for different actions
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   // Update UI or enable/disable actions based on selection
@@ -750,7 +752,7 @@ editor.context.on("selectionChange", () => {
 #### TypeScript
 
 ```ts
-// code.js
+// code.ts
 import { editor, colorUtils, Node, TextNode, GroupNode, ContainerNode } from "express-document-sdk";
 
 // Function to apply red color to selected text
@@ -807,7 +809,7 @@ function groupSelection(): void {
 }
 
 // Register handlers for different actions
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection: readonly Node[] = editor.context.selection;
   
   // Update UI or enable/disable actions based on selection
@@ -829,7 +831,7 @@ editor.context.on("selectionChange", () => {
 
 ```js
 // code.js
-import { editor } from "express-document-sdk";
+import { editor, EditorEvent } from "express-document-sdk";
 
 class SelectionManager {
   constructor() {
@@ -839,7 +841,7 @@ class SelectionManager {
   }
   
   startListening() {
-    this.handlerId = editor.context.on("selectionChange", () => {
+    this.handlerId = editor.context.on(EditorEvent.selectionChange, () => {
       const selection = editor.context.selection;
       
       // Store selection in history (limit to last 10)
@@ -888,7 +890,7 @@ class SelectionManager {
   
   stopListening() {
     if (this.handlerId) {
-      editor.context.off("selectionChange", this.handlerId);
+      editor.context.off(EditorEvent.selectionChange, this.handlerId);
       this.handlerId = null;
     }
   }
@@ -901,8 +903,8 @@ const selectionManager = new SelectionManager();
 #### TypeScript
 
 ```ts
-// code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
 class SelectionManager {
   private selectionHistory: Node[][] = [];
@@ -913,7 +915,7 @@ class SelectionManager {
   }
   
   startListening(): void {
-    this.handlerId = editor.context.on("selectionChange", () => {
+    this.handlerId = editor.context.on(EditorEvent.selectionChange, () => {
       const selection: readonly Node[] = editor.context.selection;
       
       // Store selection in history (limit to last 10)
@@ -962,7 +964,7 @@ class SelectionManager {
   
   stopListening(): void {
     if (this.handlerId) {
-      editor.context.off("selectionChange", this.handlerId);
+      editor.context.off(EditorEvent.selectionChange, this.handlerId);
       this.handlerId = null;
     }
   }
@@ -982,14 +984,14 @@ const selectionManager = new SelectionManager();
 
 ```js
 // code.js
-import { editor } from "express-document-sdk";
+import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs for cleanup
 let selectionHandlerId = null;
 
 function setupSelectionHandling() {
   // Register handler and store ID
-  selectionHandlerId = editor.context.on("selectionChange", () => {
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
     console.log("Selection changed");
     // Handle selection change
   });
@@ -1000,7 +1002,7 @@ function setupSelectionHandling() {
 function cleanupSelectionHandling() {
   // Unregister the handler
   if (selectionHandlerId) {
-    editor.context.off("selectionChange", selectionHandlerId);
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
     selectionHandlerId = null;
     console.log("Selection handler unregistered");
   }
@@ -1016,15 +1018,15 @@ setupSelectionHandling();
 #### TypeScript
 
 ```ts
-// code.js
-import { editor } from "express-document-sdk";
+// code.ts
+import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs for cleanup
 let selectionHandlerId: string | null = null;
 
 function setupSelectionHandling(): void {
   // Register handler and store ID
-  selectionHandlerId = editor.context.on("selectionChange", () => {
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
     console.log("Selection changed");
     // Handle selection change
   });
@@ -1035,7 +1037,7 @@ function setupSelectionHandling(): void {
 function cleanupSelectionHandling(): void {
   // Unregister the handler
   if (selectionHandlerId) {
-    editor.context.off("selectionChange", selectionHandlerId);
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
     selectionHandlerId = null;
     console.log("Selection handler unregistered");
   }
@@ -1123,7 +1125,7 @@ addOnUISdk.ready.then(async () => {
   setupSelectionUI();
   
   // Start listening for selection updates from sandbox
-  documentSandbox.registerSelectionUpdateHandler(handleSelectionUpdate);
+  documentSandbox.registerSelectionUpdateHandler();
 });
 
 function setupSelectionUI() {
@@ -1192,31 +1194,20 @@ function handleSelectionUpdate(selectionInfo) {
 ```js
 // code.js
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor, colorUtils } from "express-document-sdk";
+import { editor, colorUtils, EditorEvent } from "express-document-sdk";
 
 const { runtime } = addOnSandboxSdk.instance;
 let uiPanel;
 
-// Wait for UI panel to be ready
-runtime.ready.then(async () => {
-  // Get access to the UI panel APIs
-  uiPanel = await runtime.apiProxy("panel");
-  
-  // Set up selection change handler
-  setupSelectionHandling();
-});
-
 function setupSelectionHandling() {
-  editor.context.on("selectionChange", () => {
+  editor.context.on(EditorEvent.selectionChange, () => {
     const selectionInfo = analyzeCurrentSelection();
     
-    // Send selection info to UI panel
-    uiPanel.handleSelectionUpdate(selectionInfo);
+    // Send selection info to UI panel (if available)
+    if (uiPanel && uiPanel.handleSelectionUpdate) {
+      uiPanel.handleSelectionUpdate(selectionInfo);
+    }
   });
-  
-  // Send initial selection state
-  const initialSelection = analyzeCurrentSelection();
-  uiPanel.handleSelectionUpdate(initialSelection);
 }
 
 function analyzeCurrentSelection() {
@@ -1238,8 +1229,24 @@ function analyzeCurrentSelection() {
 
 // Export functions for UI to call
 function registerSelectionUpdateHandler(handler) {
-  // Store the handler function from UI
-  runtime.exposeApi({
+  console.log("Selection update handler registered from UI");
+  // Get the UI panel proxy to send updates
+  runtime.apiProxy("panel").then(panel => {
+    uiPanel = panel;
+    // Set up selection change handler
+    setupSelectionHandling();
+    // Send initial selection state
+    const initialSelection = analyzeCurrentSelection();
+    if (uiPanel && uiPanel.handleSelectionUpdate) {
+      uiPanel.handleSelectionUpdate(initialSelection);
+    }
+  }).catch(err => {
+    console.log("Could not get UI panel proxy:", err);
+  });
+}
+
+// Expose API functions for UI to call
+runtime.exposeApi({
     applyRedToSelection() {
       const selection = editor.context.selection;
       const textNodes = selection.filter(node => node.type === "Text");
@@ -1281,12 +1288,8 @@ function registerSelectionUpdateHandler(handler) {
       console.log("Selection cleared");
     },
     
-    registerSelectionUpdateHandler: handler
-  });
-}
-
-// Expose the registration function immediately
-runtime.exposeApi({ registerSelectionUpdateHandler });
+    registerSelectionUpdateHandler
+});
 ```
 
 #### TypeScript
@@ -1308,7 +1311,7 @@ interface SelectionInfo {
 }
 
 interface DocumentSandboxAPI {
-  registerSelectionUpdateHandler: (handler: (info: SelectionInfo) => void) => void;
+  registerSelectionUpdateHandler: () => void;
   applyRedToSelection: () => void;
   groupSelection: () => void;
   clearSelection: () => void;
@@ -1324,7 +1327,7 @@ addOnUISdk.ready.then(async () => {
   setupSelectionUI();
   
   // Start listening for selection updates from sandbox
-  documentSandbox.registerSelectionUpdateHandler(handleSelectionUpdate);
+  documentSandbox.registerSelectionUpdateHandler();
 });
 
 function setupSelectionUI(): void {
@@ -1406,8 +1409,8 @@ function handleSelectionUpdate(selectionInfo: SelectionInfo): void {
 
 ```ts
 // code.ts
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor, colorUtils, Node, TextNode, GroupNode, ContainerNode } from "express-document-sdk";
+import addOnSandboxSdk, { RuntimeType } from "add-on-sdk-document-sandbox";
+import { editor, colorUtils, Node, TextNode, GroupNode, ContainerNode, EditorEvent } from "express-document-sdk";
 
 interface SelectionInfo {
   count: number;
@@ -1426,26 +1429,15 @@ interface UIPanelAPI {
 const { runtime } = addOnSandboxSdk.instance;
 let uiPanel: UIPanelAPI;
 
-// Wait for UI panel to be ready
-runtime.ready.then(async () => {
-  // Get access to the UI panel APIs
-  uiPanel = await runtime.apiProxy("panel");
-  
-  // Set up selection change handler
-  setupSelectionHandling();
-});
-
 function setupSelectionHandling(): void {
-  editor.context.on("selectionChange", () => {
+  editor.context.on(EditorEvent.selectionChange, () => {
     const selectionInfo: SelectionInfo = analyzeCurrentSelection();
     
-    // Send selection info to UI panel
-    uiPanel.handleSelectionUpdate(selectionInfo);
+    // Send selection info to UI panel (if available)
+    if (uiPanel && uiPanel.handleSelectionUpdate) {
+      uiPanel.handleSelectionUpdate(selectionInfo);
+    }
   });
-  
-  // Send initial selection state
-  const initialSelection: SelectionInfo = analyzeCurrentSelection();
-  uiPanel.handleSelectionUpdate(initialSelection);
 }
 
 function analyzeCurrentSelection(): SelectionInfo {
@@ -1466,9 +1458,25 @@ function analyzeCurrentSelection(): SelectionInfo {
 }
 
 // Export functions for UI to call
-function registerSelectionUpdateHandler(handler: (info: SelectionInfo) => void): void {
-  // Store the handler function from UI
-  runtime.exposeApi({
+function registerSelectionUpdateHandler(): void {
+  console.log("Selection update handler registered from UI");
+  // Get the UI panel proxy to send updates
+  runtime.apiProxy(RuntimeType.panel).then((panel: any) => {
+    uiPanel = panel;
+    // Set up selection change handler
+    setupSelectionHandling();
+    // Send initial selection state
+    const initialSelection: SelectionInfo = analyzeCurrentSelection();
+    if (uiPanel && uiPanel.handleSelectionUpdate) {
+      uiPanel.handleSelectionUpdate(initialSelection);
+    }
+  }).catch((err: any) => {
+    console.log("Could not get UI panel proxy:", err);
+  });
+}
+
+// Expose API functions for UI to call
+runtime.exposeApi({
     applyRedToSelection(): void {
       const selection: readonly Node[] = editor.context.selection;
       const textNodes = selection.filter((node: Node): node is TextNode => 
@@ -1513,12 +1521,8 @@ function registerSelectionUpdateHandler(handler: (info: SelectionInfo) => void):
       console.log("Selection cleared");
     },
     
-    registerSelectionUpdateHandler: handler
-  });
-}
-
-// Expose the registration function immediately
-runtime.exposeApi({ registerSelectionUpdateHandler });
+    registerSelectionUpdateHandler
+});
 ```
 
 ### HTML Structure
@@ -1558,8 +1562,11 @@ Here are some frequently used patterns you can copy and adapt:
 ### Conditional Actions Based on Selection
 
 ```js
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
+
 // Enable/disable actions based on selection type
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   // Communicate with your UI panel
@@ -1580,8 +1587,11 @@ editor.context.on("selectionChange", () => {
 ### Selection-Based Properties Panel
 
 ```js
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
+
 // Update properties panel based on selection
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   if (selection.length === 1) {
@@ -1608,6 +1618,9 @@ editor.context.on("selectionChange", () => {
 Many add-ons focus on single-element operations. Here's a common pattern used throughout the documentation:
 
 ```js
+// code.js
+import { editor } from "express-document-sdk";
+
 // Safe access to first selected element (used in use_text.md and other guides)
 if (editor.context.hasSelection) {
   const selectedNode = editor.context.selection[0];
@@ -1627,11 +1640,11 @@ if (editor.context.hasSelection) {
 
 #### Q: How do I listen for selection changes?
 
-**A:** Use `editor.context.on('selectionChange', callback)` to register a selection change handler.
+**A:** Use `editor.context.on(EditorEvent.selectionChange, callback)` to register a selection change handler.
 
 #### Q: How do I programmatically select elements?
 
-**A:** Set `editor.context.selection = [node]` or `editor.context.selection = [node1, node2]` for multiple elements.
+**A:** Set `editor.context.selection = node` for single elements or `editor.context.selection = [node1, node2]` for multiple elements.
 
 #### Q: What's the difference between selection and selectionIncludingNonEditable?
 
@@ -1651,7 +1664,7 @@ if (editor.context.hasSelection) {
 
 #### Q: How do I unregister selection event handlers?
 
-**A:** Use `editor.context.off('selectionChange', handlerId)` with the ID returned from the `on()` method.
+**A:** Use `editor.context.off(EditorEvent.selectionChange, handlerId)` with the ID returned from the `on()` method.
 
 ## Related Topics
 
@@ -1662,7 +1675,3 @@ if (editor.context.hasSelection) {
 - **[Use Text](./use_text.md)** - Examples of working with text selections using `editor.context.selection[0]`
 - **[EditorEvent Enumeration](../../../references/document-sandbox/document-apis/enumerations/EditorEvent.md)** - All available editor events
 - **[Node API Reference](../../../references/document-sandbox/document-apis/classes/Node.md)** - Understanding the Node class used in selections
-
-#### Q: How do I unregister selection event handlers?
-
-**A:** Use `editor.context.off('selectionChange', handlerId)` with the ID returned from the `on()` method.

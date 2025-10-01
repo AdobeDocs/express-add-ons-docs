@@ -618,10 +618,7 @@ module.exports = {
                     title: "Theme & Locale",
                     path: "guides/learn/how_to/theme_locale.md",
                   },
-                  {
-                    title: "Using UI SDK Constants",
-                    path: "guides/learn/how_to/ui_sdk_constants.md",
-                  },
+                  
                 ],
               },
               {
@@ -677,6 +674,10 @@ module.exports = {
                   {
                     title: "Resize & Rescale Elements",
                     path: "guides/learn/how_to/resize_rescale_elements.md",
+                  },
+                  {
+                    title: "Handle Element Selection",
+                    path: "guides/learn/how_to/selection_events.md",
                   },
                   {
                     title: "Position Elements",
