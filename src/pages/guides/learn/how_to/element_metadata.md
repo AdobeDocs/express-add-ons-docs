@@ -42,6 +42,12 @@ faq:
 
     - question: "What types can I store?"
       answer: "Only strings are supported for both keys and values."
+
+    - question: "How do I retrieve ImportAddOnData from imported media?"
+      answer: "Use `MediaContainerNode.addOnData` for nodeAddOnData and `ImageRectangleNode.mediaAddOnData` or `UnknownMediaRectangleNode.mediaAddOnData` for mediaAddOnData. Check node types using `node.type === 'ImageRectangle'` or `node.type === 'UnknownMediaRectangle'`."
+
+    - question: "What's the difference between nodeAddOnData and mediaAddOnData?"
+      answer: "nodeAddOnData is container-level metadata that persists with the container (crop group) even when media is replaced; mediaAddOnData is media-specific metadata tied to the actual media content (resource collection) and is reset when media is replaced but duplicated when nodes are duplicated."
 ---
 
 # Element Metadata
@@ -111,6 +117,165 @@ text.addOnData.keys().forEach((key) => {
 });
 ```
 
+## ImportAddOnData for Media Import
+
+When importing media using [`ImportAddOnData`](../../../references/addonsdk/addonsdk-app.md#importaddondata), you can attach two types of metadata:
+
+- **`nodeAddOnData`** → Stored on `MediaContainerNode.addOnData` (crop group - persists even when media is replaced)
+- **`mediaAddOnData`** → Stored on `ImageRectangleNode.mediaAddOnData` or `UnknownMediaRectangleNode.mediaAddOnData` (resource collection - tied to specific media content, reset when media is replaced, duplicated when nodes are duplicated)
+
+<InlineAlert slots="header,text1" variant="info"/>
+
+### Important
+
+When checking node types in code, use the type string values (`node.type === 'ImageRectangle'` or `node.type === 'UnknownMediaRectangle'`) rather than the class names. The `mediaAddOnData` property is available on `ImageRectangleNode` and `UnknownMediaRectangleNode` instances, but you identify them using their type strings.
+
+#### Node Type vs Class Name Reference
+
+| **Class Name** | **Type String** | **Has mediaAddOnData** | **Usage** |
+|---|---|---|---|
+| `ImageRectangleNode` | `'ImageRectangle'` | ✅ Yes | `if (node.type === 'ImageRectangle') { node.mediaAddOnData... }` |
+| `UnknownMediaRectangleNode` | `'UnknownMediaRectangle'` | ✅ Yes | `if (node.type === 'UnknownMediaRectangle') { node.mediaAddOnData... }` |
+| `MediaContainerNode` | `'MediaContainer'` | ❌ No | Use `node.addOnData` for nodeAddOnData instead |
+
+### Retrieving ImportAddOnData
+
+After importing media with `ImportAddOnData` in the UI, retrieve the metadata in your document sandbox:
+
+```js
+import { editor } from "express-document-sdk";
+
+function retrieveMediaMetadata() {
+  const documentRoot = editor.documentRoot;
+  
+  // Traverse document structure to find media nodes
+  for (const page of documentRoot.pages) {
+    for (const artboard of page.artboards) {
+      for (const child of artboard.children) {
+        
+        // Check for MediaContainer nodes (nodeAddOnData)
+        if (child.type === 'MediaContainer') {
+          console.log(`Found MediaContainer: ${child.id}`);
+          
+          // Retrieve container metadata (nodeAddOnData)
+          const containerMetadata = {};
+          for (const key of child.addOnData.keys()) {
+            containerMetadata[key] = child.addOnData.getItem(key);
+          }
+          console.log('Container metadata:', containerMetadata);
+          
+          // Look for media rectangle children (mediaAddOnData)
+          for (const mediaChild of child.children) {
+            // Note: Check type strings, not class names
+            // 'ImageRectangle' → ImageRectangleNode instance
+            // 'UnknownMediaRectangle' → UnknownMediaRectangleNode instance
+            if (mediaChild.type === 'ImageRectangle' || 
+                mediaChild.type === 'UnknownMediaRectangle') {
+              
+              console.log(`Found media rectangle: ${mediaChild.type}`);
+              
+              // Retrieve media-specific metadata (mediaAddOnData)
+              // Available on ImageRectangleNode and UnknownMediaRectangleNode
+              const mediaMetadata = {};
+              for (const key of mediaChild.mediaAddOnData.keys()) {
+                mediaMetadata[key] = mediaChild.mediaAddOnData.getItem(key);
+              }
+              console.log('Media metadata:', mediaMetadata);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Call the function to retrieve all media metadata
+retrieveMediaMetadata();
+```
+
+### ImportAddOnData Example
+
+This example shows the complete round-trip of storing and retrieving `ImportAddOnData`:
+
+```js
+// UI Panel (index.js) - Store metadata when importing
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  // Import image with ImportAddOnData
+  const imageBlob = await fetch("./sample-image.png").then(r => r.blob());
+  
+  await addOnUISdk.app.document.addImage(
+    imageBlob,
+    {
+      title: "Sample Image",
+      author: "Developer"
+    },
+    {
+      // Container-level metadata (persists with container)
+      nodeAddOnData: {
+        "imageId": "sample_001",
+        "category": "demo",
+        "importDate": new Date().toISOString()
+      },
+      // Media-specific metadata (tied to actual image content)
+      mediaAddOnData: {
+        "resolution": "800x600",
+        "format": "PNG",
+        "source": "local_file"
+      }
+    }
+  );
+});
+```
+
+```js
+// Document Sandbox (code.js) - Retrieve metadata
+import { editor } from "express-document-sdk";
+
+// Function to find and display all ImportAddOnData
+function displayImportMetadata() {
+  const results = [];
+  
+  // Traverse document to find media with metadata
+  for (const page of editor.documentRoot.pages) {
+    for (const artboard of page.artboards) {
+      for (const child of artboard.children) {
+        if (child.type === 'MediaContainer') {
+          
+          // Get nodeAddOnData from container
+          const nodeData = {};
+          for (const key of child.addOnData.keys()) {
+            nodeData[key] = child.addOnData.getItem(key);
+          }
+          
+          // Get mediaAddOnData from media rectangle
+          let mediaData = {};
+          for (const mediaChild of child.children) {
+            if (mediaChild.type === 'ImageRectangle' || 
+                mediaChild.type === 'UnknownMediaRectangle') {
+              for (const key of mediaChild.mediaAddOnData.keys()) {
+                mediaData[key] = mediaChild.mediaAddOnData.getItem(key);
+              }
+              break; // Found the media rectangle
+            }
+          }
+          
+          results.push({
+            containerId: child.id,
+            nodeAddOnData: nodeData,
+            mediaAddOnData: mediaData
+          });
+        }
+      }
+    }
+  }
+  
+  console.log('All ImportAddOnData:', results);
+  return results;
+}
+```
+
 ## Use Cases
 
 Per-element metadata can be useful to keep track, for example, of the original properties a node has been created with, the history of the subsequent changes made to it, or to tag some nodes in a way that is meaningful for the add-on (e.g., it's supposed to be skipped when a certain routine is launched). It can also be used to store temporary data that is not meant to be persisted.
@@ -150,3 +315,19 @@ Please, refer to the SDK Reference section for [`AddOnData`](../../../references
 #### Q: What types can I store?
 
 **A:** Only strings are supported for both keys and values.
+
+#### Q: How do I retrieve ImportAddOnData from imported media?
+
+**A:** Use `MediaContainerNode.addOnData` for nodeAddOnData and `ImageRectangleNode.mediaAddOnData` or `UnknownMediaRectangleNode.mediaAddOnData` for mediaAddOnData. Check node types using `node.type === 'ImageRectangle'` or `node.type === 'UnknownMediaRectangle'`.
+
+#### Q: What's the difference between nodeAddOnData and mediaAddOnData?
+
+**A:** 
+- **`nodeAddOnData`**: Container-level metadata that persists with the container even when media is replaced. Stored on the crop group (MediaContainer).
+- **`mediaAddOnData`**: Media-specific metadata tied to the actual media content. Stored on the resource collection (`ImageRectangle`/`UnknownMediaRectangle`). This metadata is reset when media is replaced but is duplicated when nodes are duplicated.
+
+#### Q: What happens to metadata when I replace or duplicate media?
+
+**A:** The behavior depends on the metadata type:
+- **`nodeAddOnData`**: Retained when media is replaced (persists with the container)
+- **`mediaAddOnData`**: Reset when media is replaced, but duplicated when nodes are duplicated
