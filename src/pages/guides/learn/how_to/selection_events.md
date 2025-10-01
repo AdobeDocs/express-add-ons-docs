@@ -61,9 +61,11 @@ Selections in Adobe Express represent the elements (nodes) that users have curre
 
 All selection operations use the **Document API** and run in the **document sandbox environment**. This means your selection code should be placed in your `code.js` file, not in your main iframe panel code.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="header,text" variant="info"/>
 
-**Document Sandbox Setup**: Make sure your `manifest.json` includes `"documentSandbox": "code.js"` in the entry points to enable selection APIs.
+### Document Sandbox Setup
+
+Make sure your `manifest.json` includes `"documentSandbox": "code.js"` in the entry points to set up the document sandbox environment.
 
 ### Check Current Selection
 
@@ -1057,13 +1059,13 @@ setupSelectionHandling();
 
 ### Important: Selection Handler Restrictions
 
-<InlineAlert slots="header, text1, text2" variant="warning"/>
+<InlineNestedAlert header="true" variant="warning" iconPosition="left">
 
-⚠️ Document Modification Restrictions
+**Document Modification Restrictions**
 
 **Never modify the document inside selection change handlers!** This can crash the application.
 
-✅ **Safe in selection handlers:**
+**✅ Safe in selection handlers:**
 
 - Update UI panels
 - Log information  
@@ -1071,11 +1073,13 @@ setupSelectionHandling();
 - Enable/disable buttons
 - Send data to UI panel
 
-❌ **Never do in selection handlers:**
+**❌ Never do in selection handlers:**
 
 - Create, delete, or modify nodes
 - Change document structure  
 - Set properties on selected elements
+
+</InlineNestedAlert>
 
 ### Performance Guidelines
 
