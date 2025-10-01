@@ -25,7 +25,7 @@ contributors:
 
 # Changelog
 
-## 2025-09-19
+## 2025-10-01
 
 ### Added
 
