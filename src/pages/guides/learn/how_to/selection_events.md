@@ -2,65 +2,118 @@
 keywords:
   - Adobe Express
   - Express Add-on SDK
-  - Express Editor
-  - Adobe Express
-  - Add-on SDK
-  - SDK
-  - JavaScript
-  - Extend
-  - Extensibility
-  - API
+  - Document API
   - Selection
   - selectionChange
   - Events
-  - Context
-  - Node
-title: Selection Events and Methods
-description: Learn how to work with selections, handle selection changes, and respond to user interactions in Adobe Express documents.
+  - Node selection
+  - UI integration
+  - Document sandbox
+  - Event handlers
+  - Selection filtering
+  - Locked nodes
+  - Properties panel
+  - Real-time updates
+title: Handle Element Selection
+description: Complete guide to working with element selections in Adobe Express documents - from basic selection operations to advanced event handling and UI integration patterns.
 contributors:
   - https://github.com/hollyschinsky
 faq:
   questions:
     - question: "How do I get the current selection?"
-      answer: "Use `editor.context.selection` to get an array of currently selected nodes."
+      answer: "Use `editor.context.selection` to get an array of currently selected editable nodes, or `editor.context.hasSelection` to check if anything is selected."
 
     - question: "How do I listen for selection changes?"
-      answer: "Use `editor.context.on('selectionChange', callback)` to register a selection change handler."
+      answer: "Use `editor.context.on(EditorEvent.selectionChange, callback)` to register a handler. Always store the returned ID for cleanup."
 
     - question: "How do I programmatically select elements?"
-      answer: "Set `editor.context.selection = [node]` or `editor.context.selection = [node1, node2]` for multiple elements."
+      answer: "Set `editor.context.selection = node` for single elements or `editor.context.selection = [node1, node2]` for multiple elements."
 
     - question: "What's the difference between selection and selectionIncludingNonEditable?"
-      answer: "`selection` only includes editable nodes, while `selectionIncludingNonEditable` also includes locked/non-editable nodes."
+      answer: "`selection` only includes editable nodes, while `selectionIncludingNonEditable` includes locked/non-editable nodes that users can see but not modify."
 
     - question: "Can I modify the document in a selection change callback?"
-      answer: "No, avoid making document changes in selection change callbacks as it may destabilize the application."
+      answer: "Never modify the document in selection change handlers - this can crash the application. Only update UI, analyze data, or communicate with your panel."
 
     - question: "How do I clear the selection?"
-      answer: "Set `editor.context.selection = []` or `editor.context.selection = undefined`."
+      answer: "Set `editor.context.selection = []` or `editor.context.selection = undefined` to clear all selections."
 
-    - question: "What are the selection rules?"
-      answer: "Nodes must be within the current artboard, ancestors cannot be selected with descendants, and locked nodes are filtered out."
+    - question: "What selection rules should I know?"
+      answer: "Only nodes within the current artboard can be selected, you cannot select both parent and child nodes simultaneously, and locked nodes are automatically filtered from the main selection."
 
-    - question: "How do I unregister selection event handlers?"
-      answer: "Use `editor.context.off('selectionChange', handlerId)` with the ID returned from the `on()` method."
+    - question: "How do I clean up selection event handlers?"
+      answer: "Always call `editor.context.off(EditorEvent.selectionChange, handlerId)` using the ID returned from `on()` to prevent memory leaks."
+
+    - question: "How do I communicate selection changes to my UI?"
+      answer: "Use the runtime API to send selection data from the document sandbox to your UI panel, enabling real-time interface updates."
+
+    - question: "What are common selection-based actions?"
+      answer: "Typical actions include updating properties panels, enabling/disabling tools, applying formatting to selected text, grouping elements, and showing context-appropriate options."
 ---
 
-# Selection Events and Methods
+# Handle Element Selection
 
-Learn how to work with user selections, handle selection changes, and respond to user interactions in Adobe Express documents using the Document API.
+Learn how to work with user selections, handle selection changes, and create responsive interfaces that react to what users select in their Adobe Express documents.
 
-<InlineAlert slots="header, text1, text2" variant="info"/>
+## Getting Started with Selections
 
-Document API Context Required
+Selections in Adobe Express represent the elements (nodes) that users have currently selected in their document. The selection system provides access to what's selected, the ability to change selections programmatically, and events to respond to selection changes.
 
-Selection methods and events are part of the Document API and require the document sandbox environment. These examples should be used in your `sandbox/code.js` file, not in the main iframe panel.
+All selection operations use the **Document API** and run in the **document sandbox environment**. This means your selection code should be placed in your `code.js` file, not in your main iframe panel code.
 
-Make sure your manifest includes `"documentSandbox": "sandbox/code.js"` in the entry points.
+<InlineAlert slots="header,text" variant="info"/>
+
+### Document Sandbox Setup
+
+Make sure your `manifest.json` includes `"documentSandbox": "code.js"` in the entry points to set up the document sandbox environment.
+
+### Check Current Selection
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// code.js  
+import { editor } from "express-document-sdk";
+
+// Check if anything is selected
+if (editor.context.hasSelection) {
+  const selection = editor.context.selection;
+  console.log(`Selected ${selection.length} item(s)`);
+  
+  // Process each selected node
+  selection.forEach((node, index) => {
+    console.log(`Node ${index + 1}: ${node.type}`);
+  });
+} else {
+  console.log("Nothing is selected");
+}
+```
+
+#### TypeScript
+
+```ts
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
+
+// Check if anything is selected
+if (editor.context.hasSelection) {
+  const selection: readonly Node[] = editor.context.selection;
+  console.log(`Selected ${selection.length} item(s)`);
+  
+  // Process each selected node
+  selection.forEach((node: Node, index: number) => {
+    console.log(`Node ${index + 1}: ${node.type}`);
+  });
+} else {
+  console.log("Nothing is selected");
+}
+```
 
 ## Understanding Selections
 
-In Adobe Express, selections represent the nodes (elements) that the user has currently selected. The selection system provides:
+In Adobe Express, the selection system provides:
 
 - **Current selection access** - Get what's currently selected
 - **Selection modification** - Programmatically change selections  
@@ -69,23 +122,25 @@ In Adobe Express, selections represent the nodes (elements) that the user has cu
 
 ### Selection Rules
 
-Adobe Express enforces several rules for selections:
+Adobe Express enforces these constraints:
 
 1. **Artboard constraint** - Only nodes within the current artboard can be selected
 2. **Hierarchy filtering** - Cannot select both parent and child nodes simultaneously
 3. **Locked node filtering** - Locked nodes are excluded from the main selection
 4. **Editable-only** - Main selection only includes editable nodes
 
-## Getting the Current Selection
+## Basic Selection Operations
 
-### Basic Selection Access
+Core operations for working with selections.
+
+### Getting the Current Selection
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
 ```js
-// sandbox/code.js
+// code.js
 import { editor } from "express-document-sdk";
 
 // Get the current selection
@@ -93,110 +148,48 @@ const selection = editor.context.selection;
 
 console.log("Selected nodes:", selection.length);
 
-// Check if anything is selected
-if (editor.context.hasSelection) {
-  console.log("Something is selected");
+// Process each selected node
+selection.forEach((node, index) => {
+  console.log(`Node ${index + 1}: ${node.type}`);
   
-  // Process each selected node
-  selection.forEach((node, index) => {
-    console.log(`Node ${index + 1}:`, node.type);
-  });
-} else {
-  console.log("Nothing is selected");
-}
+  // Common node properties you can access
+  console.log("  Position:", node.translation);
+  console.log("  Size:", { width: node.width, height: node.height });
+});
 ```
 
 #### TypeScript
 
 ```ts
-// sandbox/code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
 // Get the current selection
 const selection: readonly Node[] = editor.context.selection;
 
 console.log("Selected nodes:", selection.length);
 
-// Check if anything is selected
-if (editor.context.hasSelection) {
-  console.log("Something is selected");
+// Process each selected node
+selection.forEach((node: Node, index: number) => {
+  console.log(`Node ${index + 1}: ${node.type}`);
   
-  // Process each selected node
-  selection.forEach((node: Node, index: number) => {
-    console.log(`Node ${index + 1}:`, node.type);
-  });
-} else {
-  console.log("Nothing is selected");
-}
+  // Common node properties you can access  
+  console.log("  Position:", node.translation);
+  console.log("  Size:", { width: node.width, height: node.height });
+});
 ```
 
-### Including Non-Editable Selections
+### Programmatic Selection
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
 ```js
-// sandbox/code.js
+// code.js
 import { editor } from "express-document-sdk";
 
-// Get selection including locked/non-editable nodes
-const fullSelection = editor.context.selectionIncludingNonEditable;
-const editableSelection = editor.context.selection;
-
-console.log("Total selected (including locked):", fullSelection.length);
-console.log("Editable selected:", editableSelection.length);
-
-if (fullSelection.length > editableSelection.length) {
-  console.log("Some locked nodes are selected");
-  
-  // Find the locked nodes
-  const lockedNodes = fullSelection.filter(node => 
-    !editableSelection.includes(node)
-  );
-  
-  console.log("Locked nodes:", lockedNodes.length);
-}
-```
-
-#### TypeScript
-
-```ts
-// sandbox/code.js
-import { editor, Node } from "express-document-sdk";
-
-// Get selection including locked/non-editable nodes
-const fullSelection: readonly Node[] = editor.context.selectionIncludingNonEditable;
-const editableSelection: readonly Node[] = editor.context.selection;
-
-console.log("Total selected (including locked):", fullSelection.length);
-console.log("Editable selected:", editableSelection.length);
-
-if (fullSelection.length > editableSelection.length) {
-  console.log("Some locked nodes are selected");
-  
-  // Find the locked nodes
-  const lockedNodes: Node[] = fullSelection.filter((node: Node) => 
-    !editableSelection.includes(node)
-  );
-  
-  console.log("Locked nodes:", lockedNodes.length);
-}
-```
-
-## Setting Selections Programmatically
-
-### Select Single Element
-
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
-
-#### JavaScript
-
-```js
-// sandbox/code.js
-import { editor } from "express-document-sdk";
-
-// Create a rectangle and select it
+// Create and select a single element
 const rectangle = editor.createRectangle();
 rectangle.width = 100;
 rectangle.height = 100;
@@ -205,10 +198,9 @@ rectangle.translation = { x: 50, y: 50 };
 // Add to document
 editor.context.insertionParent.children.append(rectangle);
 
-// Select the rectangle
-editor.context.selection = rectangle; // Single node shortcut
-// OR
-editor.context.selection = [rectangle]; // Array syntax
+// Select the rectangle (single element)
+editor.context.selection = rectangle; 
+// OR using array syntax: editor.context.selection = [rectangle];
 
 console.log("Rectangle is now selected");
 ```
@@ -216,10 +208,10 @@ console.log("Rectangle is now selected");
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// code.ts  
 import { editor, RectangleNode, ContainerNode } from "express-document-sdk";
 
-// Create a rectangle and select it
+// Create a simple rectangle to demonstrate selection
 const rectangle: RectangleNode = editor.createRectangle();
 rectangle.width = 100;
 rectangle.height = 100;
@@ -229,22 +221,21 @@ rectangle.translation = { x: 50, y: 50 };
 const insertionParent: ContainerNode = editor.context.insertionParent;
 insertionParent.children.append(rectangle);
 
-// Select the rectangle
-editor.context.selection = rectangle; // Single node shortcut
-// OR
-editor.context.selection = [rectangle]; // Array syntax
+// Select the rectangle (single element)
+editor.context.selection = rectangle;
+// OR using array syntax: editor.context.selection = [rectangle];
 
 console.log("Rectangle is now selected");
 ```
 
-### Select Multiple Elements
+### Multiple Selection
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
 ```js
-// sandbox/code.js
+// code.js
 import { editor } from "express-document-sdk";
 
 // Create multiple elements
@@ -258,15 +249,12 @@ ellipse.rx = 40;
 ellipse.ry = 40;
 ellipse.translation = { x: 200, y: 50 };
 
-const text = editor.createText("Hello!");
-text.translation = { x: 50, y: 200 };
-
-// Add all to document
+// Add both to document
 const parent = editor.context.insertionParent;
-parent.children.append(rectangle, ellipse, text);
+parent.children.append(rectangle, ellipse);
 
-// Select multiple elements
-editor.context.selection = [rectangle, ellipse, text];
+// Select both elements at once
+editor.context.selection = [rectangle, ellipse];
 
 console.log("Multiple elements selected:", editor.context.selection.length);
 ```
@@ -274,13 +262,13 @@ console.log("Multiple elements selected:", editor.context.selection.length);
 #### TypeScript
 
 ```ts
-// sandbox/code.js
-import { editor, RectangleNode, EllipseNode, StandaloneTextNode, ContainerNode } from "express-document-sdk";
+// code.ts
+import { editor, RectangleNode, EllipseNode, ContainerNode } from "express-document-sdk";
 
-// Create multiple elements
+// Create multiple simple elements
 const rectangle: RectangleNode = editor.createRectangle();
 rectangle.width = 80;
-rectangle.height = 80;
+rectangle.height = 80;  
 rectangle.translation = { x: 50, y: 50 };
 
 const ellipse: EllipseNode = editor.createEllipse();
@@ -288,33 +276,29 @@ ellipse.rx = 40;
 ellipse.ry = 40;
 ellipse.translation = { x: 200, y: 50 };
 
-const text: StandaloneTextNode = editor.createText("Hello!");
-text.translation = { x: 50, y: 200 };
-
-// Add all to document
+// Add both to document
 const parent: ContainerNode = editor.context.insertionParent;
-parent.children.append(rectangle, ellipse, text);
+parent.children.append(rectangle, ellipse);
 
-// Select multiple elements
-editor.context.selection = [rectangle, ellipse, text];
+// Select both elements at once
+editor.context.selection = [rectangle, ellipse];
 
 console.log("Multiple elements selected:", editor.context.selection.length);
 ```
 
-### Clear Selection
+### Clearing the Selection
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
 ```js
-// sandbox/code.js
+// code.js
 import { editor } from "express-document-sdk";
 
-// Clear the selection (both methods work)
+// Clear the selection - both ways work
 editor.context.selection = [];
-// OR
-editor.context.selection = undefined;
+// OR: editor.context.selection = undefined;
 
 console.log("Selection cleared");
 console.log("Has selection:", editor.context.hasSelection); // false
@@ -323,19 +307,20 @@ console.log("Has selection:", editor.context.hasSelection); // false
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// code.ts
 import { editor } from "express-document-sdk";
 
-// Clear the selection (both methods work)
+// Clear the selection - both ways work
 editor.context.selection = [];
-// OR
-editor.context.selection = undefined;
+// OR: editor.context.selection = undefined;
 
 console.log("Selection cleared");
 console.log("Has selection:", editor.context.hasSelection); // false
 ```
 
-## Listening for Selection Changes
+## Selection Events
+
+Respond to selection changes to create dynamic UIs that update based on what's selected.
 
 ### Basic Selection Change Handler
 
@@ -344,64 +329,246 @@ console.log("Has selection:", editor.context.hasSelection); // false
 #### JavaScript
 
 ```js
-// sandbox/code.js
-import { editor } from "express-document-sdk";
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
 
-// Register selection change handler
-const handlerId = editor.context.on("selectionChange", () => {
+// Listen for selection changes  
+const handlerId = editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   console.log("Selection changed!");
   console.log("New selection count:", selection.length);
   
-  if (selection.length > 0) {
-    console.log("Selected node types:", selection.map(node => node.type));
+  if (selection.length === 0) {
+    console.log("Nothing selected");
+  } else if (selection.length === 1) {
+    console.log("One item selected:", selection[0].type);
   } else {
-    console.log("Selection cleared");
+    console.log("Multiple items selected");
   }
 });
 
-console.log("Selection change handler registered with ID:", handlerId);
-
-// Important: Store the handlerId if you need to unregister later
+// Store handlerId if you need to unregister later
+console.log("Selection handler registered:", handlerId);
 ```
 
 #### TypeScript
 
 ```ts
-// sandbox/code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
-// Register selection change handler
-const handlerId: string = editor.context.on("selectionChange", () => {
+// Listen for selection changes
+const handlerId: string = editor.context.on(EditorEvent.selectionChange, () => {
   const selection: readonly Node[] = editor.context.selection;
   
   console.log("Selection changed!");
   console.log("New selection count:", selection.length);
   
-  if (selection.length > 0) {
-    console.log("Selected node types:", selection.map((node: Node) => node.type));
+  if (selection.length === 0) {
+    console.log("Nothing selected");
+  } else if (selection.length === 1) {
+    console.log("One item selected:", selection[0].type);
   } else {
-    console.log("Selection cleared");
+    console.log("Multiple items selected");
   }
 });
 
-console.log("Selection change handler registered with ID:", handlerId);
-
-// Important: Store the handlerId if you need to unregister later
+// Store handlerId if you need to unregister later  
+console.log("Selection handler registered:", handlerId);
 ```
 
-### Advanced Selection Analysis
+### Properties Panel Example
+
+Dynamic properties panel based on selection:
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
 ```js
-// sandbox/code.js
-import { editor } from "express-document-sdk";
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
 
-function analyzeSelection() {
+function updatePropertiesPanel() {
+  const selection = editor.context.selection;
+  
+  if (selection.length === 0) {
+    console.log("Properties Panel: Show 'Nothing Selected' state");
+    return;
+  }
+  
+  if (selection.length === 1) {
+    const node = selection[0];
+    console.log("Properties Panel: Show properties for", node.type);
+    
+    // Show different properties based on node type
+    if (node.type === "Text") {
+      console.log("  - Show font controls");
+      console.log("  - Show text color picker");
+    } else if (node.type === "Rectangle" || node.type === "Ellipse") {
+      console.log("  - Show fill color picker");  
+      console.log("  - Show stroke controls");
+    }
+    
+    // Common properties for all nodes
+    console.log("  - Show position controls");
+    console.log("  - Show size controls");
+    
+  } else {
+    console.log("Properties Panel: Show multi-selection options");
+    console.log(`  - ${selection.length} items selected`);
+    console.log("  - Show alignment tools");
+    console.log("  - Show group option");
+  }
+}
+
+// Register the handler
+editor.context.on(EditorEvent.selectionChange, updatePropertiesPanel);
+
+// Call once on startup to initialize
+updatePropertiesPanel();
+```
+
+#### TypeScript
+
+```ts
+// code.ts
+import { editor, Node, TextNode } from "express-document-sdk";
+
+function updatePropertiesPanel(): void {
+  const selection: readonly Node[] = editor.context.selection;
+  
+  if (selection.length === 0) {
+    console.log("Properties Panel: Show 'Nothing Selected' state");
+    return;
+  }
+  
+  if (selection.length === 1) {
+    const node: Node = selection[0];
+    console.log("Properties Panel: Show properties for", node.type);
+    
+    // Show different properties based on node type
+    if (node.type === "Text") {
+      console.log("  - Show font controls");
+      console.log("  - Show text color picker");
+    } else if (node.type === "Rectangle" || node.type === "Ellipse") {
+      console.log("  - Show fill color picker");
+      console.log("  - Show stroke controls");
+    }
+    
+    // Common properties for all nodes
+    console.log("  - Show position controls");
+    console.log("  - Show size controls");
+    
+  } else {
+    console.log("Properties Panel: Show multi-selection options");
+    console.log(`  - ${selection.length} items selected`);
+    console.log("  - Show alignment tools");
+    console.log("  - Show group option");
+  }
+}
+
+// Register the handler
+editor.context.on(EditorEvent.selectionChange, updatePropertiesPanel);
+
+// Call once on startup to initialize
+updatePropertiesPanel();
+```
+
+### Event Handler Cleanup
+
+⚠️ **Important**: Always clean up event handlers to prevent memory leaks.
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
+
+// Store handler IDs so you can unregister them later
+let selectionHandlerId = null;
+
+function startListening() {
+  // Register handler and store the ID
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
+    console.log("Selection changed!");
+    // Handle selection change
+  });
+  
+  console.log("✅ Selection handler registered");
+}
+
+function stopListening() {
+  // Clean up the handler
+  if (selectionHandlerId) {
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
+    selectionHandlerId = null;
+    console.log("✅ Selection handler cleaned up");
+  }
+}
+
+// Start listening
+startListening();
+
+// Clean up when your add-on is being destroyed or reset
+// stopListening();
+```
+
+#### TypeScript
+
+```ts
+// code.ts
+import { editor, EditorEvent } from "express-document-sdk";
+
+// Store handler IDs so you can unregister them later
+let selectionHandlerId: string | null = null;
+
+function startListening(): void {
+  // Register handler and store the ID
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
+    console.log("Selection changed!");
+    // Handle selection change
+  });
+  
+  console.log("✅ Selection handler registered");
+}
+
+function stopListening(): void {
+  // Clean up the handler
+  if (selectionHandlerId) {
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
+    selectionHandlerId = null;
+    console.log("✅ Selection handler cleaned up");
+  }
+}
+
+// Start listening
+startListening();
+
+// Clean up when your add-on is being destroyed or reset
+// stopListening();
+```
+
+## Advanced Selection Techniques
+
+Advanced patterns for complex add-ons.
+
+### Working with Locked/Non-Editable Elements
+
+Handle selections that include locked or non-editable content:
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
+
+function analyzeCompleteSelection() {
   const selection = editor.context.selection;
   const fullSelection = editor.context.selectionIncludingNonEditable;
   
@@ -409,7 +576,7 @@ function analyzeSelection() {
     editableCount: selection.length,
     totalCount: fullSelection.length,
     lockedCount: fullSelection.length - selection.length,
-    types: selection.map(node => node.type),
+    types: [...new Set(selection.map(node => node.type))], // Unique types
     hasText: selection.some(node => node.type === "Text"),
     hasShapes: selection.some(node => 
       node.type === "Rectangle" || node.type === "Ellipse"
@@ -418,28 +585,37 @@ function analyzeSelection() {
   };
 }
 
-// Register detailed selection handler
-const handlerId = editor.context.on("selectionChange", () => {
-  const analysis = analyzeSelection();
+// Example: Dynamic UI updates based on detailed analysis
+editor.context.on(EditorEvent.selectionChange, () => {
+  const analysis = analyzeCompleteSelection();
   
-  console.log("=== Selection Analysis ===");
-  console.log("Editable nodes:", analysis.editableCount);
-  console.log("Total nodes (including locked):", analysis.totalCount);
-  console.log("Locked nodes:", analysis.lockedCount);
-  console.log("Node types:", analysis.types);
-  console.log("Has text:", analysis.hasText);
-  console.log("Has shapes:", analysis.hasShapes);
-  console.log("Is empty:", analysis.isEmpty);
+  console.log("📊 Detailed Selection Info:");
+  console.log(`  Editable: ${analysis.editableCount}`);
+  if (analysis.lockedCount > 0) {
+    console.log(`  Locked: ${analysis.lockedCount}`);
+  }
+  console.log(`  Types: ${analysis.types.join(", ")}`);
+  
+  // Enable specific tools based on content
+  if (analysis.hasText) {
+    console.log("🔤 Text formatting tools available");
+  }
+  if (analysis.hasShapes) {
+    console.log("🔷 Shape styling tools available");  
+  }
+  if (analysis.editableCount > 1) {
+    console.log("📐 Alignment tools available");
+  }
 });
 ```
 
 #### TypeScript
 
 ```ts
-// sandbox/code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
-interface SelectionAnalysis {
+interface DetailedSelectionAnalysis {
   editableCount: number;
   totalCount: number;
   lockedCount: number;
@@ -449,7 +625,7 @@ interface SelectionAnalysis {
   isEmpty: boolean;
 }
 
-function analyzeSelection(): SelectionAnalysis {
+function analyzeSelection(): DetailedSelectionAnalysis {
   const selection: readonly Node[] = editor.context.selection;
   const fullSelection: readonly Node[] = editor.context.selectionIncludingNonEditable;
   
@@ -457,7 +633,7 @@ function analyzeSelection(): SelectionAnalysis {
     editableCount: selection.length,
     totalCount: fullSelection.length,
     lockedCount: fullSelection.length - selection.length,
-    types: selection.map((node: Node) => node.type),
+    types: [...new Set(selection.map((node: Node) => node.type))], // Unique types
     hasText: selection.some((node: Node) => node.type === "Text"),
     hasShapes: selection.some((node: Node) => 
       node.type === "Rectangle" || node.type === "Ellipse"
@@ -466,31 +642,44 @@ function analyzeSelection(): SelectionAnalysis {
   };
 }
 
-// Register detailed selection handler
-const handlerId: string = editor.context.on("selectionChange", () => {
-  const analysis: SelectionAnalysis = analyzeSelection();
+// Example: Dynamic UI updates based on detailed analysis
+editor.context.on(EditorEvent.selectionChange, () => {
+  const analysis: DetailedSelectionAnalysis = analyzeSelection();
   
-  console.log("=== Selection Analysis ===");
-  console.log("Editable nodes:", analysis.editableCount);
-  console.log("Total nodes (including locked):", analysis.totalCount);
-  console.log("Locked nodes:", analysis.lockedCount);
-  console.log("Node types:", analysis.types);
-  console.log("Has text:", analysis.hasText);
-  console.log("Has shapes:", analysis.hasShapes);
-  console.log("Is empty:", analysis.isEmpty);
+  console.log("📊 Detailed Selection Info:");
+  console.log(`  Editable: ${analysis.editableCount}`);
+  if (analysis.lockedCount > 0) {
+    console.log(`  Locked: ${analysis.lockedCount}`);
+  }
+  console.log(`  Types: ${analysis.types.join(", ")}`);
+  
+  // Enable specific tools based on content
+  if (analysis.hasText) {
+    console.log("🔤 Text formatting tools available");
+  }
+  if (analysis.hasShapes) {
+    console.log("🔷 Shape styling tools available");
+  }
+  if (analysis.editableCount > 1) {
+    console.log("📐 Alignment tools available");
+  }
 });
 ```
 
-## Practical Selection Patterns
+## UI Integration
+
+Communicate selection changes between the document sandbox and your UI panel to create responsive interfaces.
 
 ### Selection-Based Actions
+
+Common patterns for performing actions on selected elements:
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
 ```js
-// sandbox/code.js
+// code.js
 import { editor, colorUtils } from "express-document-sdk";
 
 // Function to apply red color to selected text
@@ -544,7 +733,7 @@ function groupSelection() {
 }
 
 // Register handlers for different actions
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   // Update UI or enable/disable actions based on selection
@@ -561,7 +750,7 @@ editor.context.on("selectionChange", () => {
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// code.ts
 import { editor, colorUtils, Node, TextNode, GroupNode, ContainerNode } from "express-document-sdk";
 
 // Function to apply red color to selected text
@@ -618,7 +807,7 @@ function groupSelection(): void {
 }
 
 // Register handlers for different actions
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection: readonly Node[] = editor.context.selection;
   
   // Update UI or enable/disable actions based on selection
@@ -639,8 +828,8 @@ editor.context.on("selectionChange", () => {
 #### JavaScript
 
 ```js
-// sandbox/code.js
-import { editor } from "express-document-sdk";
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
 
 class SelectionManager {
   constructor() {
@@ -650,7 +839,7 @@ class SelectionManager {
   }
   
   startListening() {
-    this.handlerId = editor.context.on("selectionChange", () => {
+    this.handlerId = editor.context.on(EditorEvent.selectionChange, () => {
       const selection = editor.context.selection;
       
       // Store selection in history (limit to last 10)
@@ -699,7 +888,7 @@ class SelectionManager {
   
   stopListening() {
     if (this.handlerId) {
-      editor.context.off("selectionChange", this.handlerId);
+      editor.context.off(EditorEvent.selectionChange, this.handlerId);
       this.handlerId = null;
     }
   }
@@ -712,8 +901,8 @@ const selectionManager = new SelectionManager();
 #### TypeScript
 
 ```ts
-// sandbox/code.js
-import { editor, Node } from "express-document-sdk";
+// code.ts
+import { editor, Node, EditorEvent } from "express-document-sdk";
 
 class SelectionManager {
   private selectionHistory: Node[][] = [];
@@ -724,7 +913,7 @@ class SelectionManager {
   }
   
   startListening(): void {
-    this.handlerId = editor.context.on("selectionChange", () => {
+    this.handlerId = editor.context.on(EditorEvent.selectionChange, () => {
       const selection: readonly Node[] = editor.context.selection;
       
       // Store selection in history (limit to last 10)
@@ -773,7 +962,7 @@ class SelectionManager {
   
   stopListening(): void {
     if (this.handlerId) {
-      editor.context.off("selectionChange", this.handlerId);
+      editor.context.off(EditorEvent.selectionChange, this.handlerId);
       this.handlerId = null;
     }
   }
@@ -783,24 +972,26 @@ class SelectionManager {
 const selectionManager = new SelectionManager();
 ```
 
-## Cleanup and Best Practices
+## Best Practices & Guidelines
 
-### Unregistering Event Handlers
+### Event Handler Cleanup
+
+⚠️ **Important**: Always clean up event handlers to prevent memory leaks.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
 #### JavaScript
 
 ```js
-// sandbox/code.js
-import { editor } from "express-document-sdk";
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs for cleanup
 let selectionHandlerId = null;
 
 function setupSelectionHandling() {
   // Register handler and store ID
-  selectionHandlerId = editor.context.on("selectionChange", () => {
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
     console.log("Selection changed");
     // Handle selection change
   });
@@ -811,7 +1002,7 @@ function setupSelectionHandling() {
 function cleanupSelectionHandling() {
   // Unregister the handler
   if (selectionHandlerId) {
-    editor.context.off("selectionChange", selectionHandlerId);
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
     selectionHandlerId = null;
     console.log("Selection handler unregistered");
   }
@@ -827,15 +1018,15 @@ setupSelectionHandling();
 #### TypeScript
 
 ```ts
-// sandbox/code.js
-import { editor } from "express-document-sdk";
+// code.ts
+import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs for cleanup
 let selectionHandlerId: string | null = null;
 
 function setupSelectionHandling(): void {
   // Register handler and store ID
-  selectionHandlerId = editor.context.on("selectionChange", () => {
+  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
     console.log("Selection changed");
     // Handle selection change
   });
@@ -846,7 +1037,7 @@ function setupSelectionHandling(): void {
 function cleanupSelectionHandling(): void {
   // Unregister the handler
   if (selectionHandlerId) {
-    editor.context.off("selectionChange", selectionHandlerId);
+    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
     selectionHandlerId = null;
     console.log("Selection handler unregistered");
   }
@@ -859,496 +1050,66 @@ setupSelectionHandling();
 // cleanupSelectionHandling();
 ```
 
-## Key Concepts and Rules
+### Selection System Rules
 
-### Selection Constraints
+1. **Artboard constraint**: Only nodes within the current artboard can be selected
+2. **Hierarchy filtering**: Cannot select both parent and child nodes simultaneously  
+3. **Locked node handling**: Locked nodes are excluded from main selection but available in `selectionIncludingNonEditable`
+4. **Automatic filtering**: System automatically filters out invalid selections
 
-1. **Artboard Limitation**: Only nodes within the current artboard can be selected
-2. **Hierarchy Rules**: Cannot select both a parent node and its children simultaneously  
-3. **Locked Node Handling**: Locked nodes are excluded from the main selection but available in `selectionIncludingNonEditable`
-4. **Automatic Filtering**: The system automatically filters out invalid selections
+### Important: Selection Handler Restrictions
 
-### Event Handler Guidelines
+<InlineNestedAlert header="true" variant="warning" iconPosition="left">
 
-<InlineAlert slots="header, text1, text2" variant="warning"/>
+**Document Modification Restrictions**
 
-Important: Document Modification Restrictions
+**Never modify the document inside selection change handlers!** This can crash the application.
 
-**Do not attempt to make changes to the document in response to a selection change callback** because it may destabilize the application. Selection change handlers should be used for:
+**✅ Safe in selection handlers:**
 
-✅ **Safe operations:** Updating UI, logging, analyzing selection, enabling/disabling buttons  
-❌ **Avoid:** Creating/deleting nodes, modifying properties, changing the document structure
+- Update UI panels
+- Log information  
+- Analyze selection
+- Enable/disable buttons
+- Send data to UI panel
 
-### Performance Considerations
+**❌ Never do in selection handlers:**
 
-1. **Minimize Handler Logic**: Keep selection change handlers lightweight
-2. **Debounce Rapid Changes**: Consider debouncing if handling rapid selection changes
-3. **Clean Up Handlers**: Always unregister event handlers when no longer needed
-4. **Avoid Deep Analysis**: Don't perform expensive operations in selection callbacks
+- Create, delete, or modify nodes
+- Change document structure  
+- Set properties on selected elements
 
-## Communication Between UI and Document Sandbox
+</InlineNestedAlert>
+
+### Performance Guidelines
+
+1. **Keep handlers fast**: Minimize processing time
+2. **Essential work only**: Avoid heavy computations
+3. **Clean Up**: Always unregister handlers when done (`editor.context.off()`)
+4. **Avoid Heavy Work**: Don't do complex calculations in selection callbacks
+
+### Communication Between UI and Document Sandbox
 
 One of the most important real-world patterns is communicating selection changes from the document sandbox to your UI panel, allowing you to update the interface based on what the user has selected.
 
-### Complete Communication Example
+For detailed information on the communication APIs, see the [Communication API reference](../../../references/document-sandbox/communication/).
+
+#### Complete Communication Example
 
 This example shows how to set up bidirectional communication between your UI panel and document sandbox for selection-based interactions.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+## Quick Reference & Common Patterns
 
-#### JavaScript
-
-**UI Panel (index.js):**
-
-```js
-// ui/index.js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-
-let documentSandbox;
-
-addOnUISdk.ready.then(async () => {
-  // Get access to the document sandbox APIs
-  documentSandbox = await addOnUISdk.instance.runtime.apiProxy("documentSandbox");
-  
-  // Set up UI elements
-  setupSelectionUI();
-  
-  // Start listening for selection updates from sandbox
-  documentSandbox.registerSelectionUpdateHandler(handleSelectionUpdate);
-});
-
-function setupSelectionUI() {
-  const container = document.getElementById("selection-info");
-  
-  container.innerHTML = `
-    <div id="selection-status">Nothing selected</div>
-    <div id="selection-actions">
-      <button id="apply-red-btn" disabled>Apply Red Color</button>
-      <button id="group-btn" disabled>Group Elements</button>
-      <button id="clear-selection-btn" disabled>Clear Selection</button>
-    </div>
-    <div id="selection-details"></div>
-  `;
-  
-  // Set up button handlers
-  document.getElementById("apply-red-btn").addEventListener("click", () => {
-    documentSandbox.applyRedToSelection();
-  });
-  
-  document.getElementById("group-btn").addEventListener("click", () => {
-    documentSandbox.groupSelection();
-  });
-  
-  document.getElementById("clear-selection-btn").addEventListener("click", () => {
-    documentSandbox.clearSelection();
-  });
-}
-
-function handleSelectionUpdate(selectionInfo) {
-  console.log("Selection update received:", selectionInfo);
-  
-  // Update status
-  const statusEl = document.getElementById("selection-status");
-  if (selectionInfo.count === 0) {
-    statusEl.textContent = "Nothing selected";
-  } else if (selectionInfo.count === 1) {
-    statusEl.textContent = `1 ${selectionInfo.types[0]} selected`;
-  } else {
-    statusEl.textContent = `${selectionInfo.count} elements selected`;
-  }
-  
-  // Update action buttons
-  document.getElementById("apply-red-btn").disabled = !selectionInfo.hasText;
-  document.getElementById("group-btn").disabled = selectionInfo.count < 2;
-  document.getElementById("clear-selection-btn").disabled = selectionInfo.count === 0;
-  
-  // Update details
-  const detailsEl = document.getElementById("selection-details");
-  if (selectionInfo.count > 0) {
-    detailsEl.innerHTML = `
-      <h4>Selection Details:</h4>
-      <p>Types: ${selectionInfo.types.join(", ")}</p>
-      <p>Has Text: ${selectionInfo.hasText ? "Yes" : "No"}</p>
-      <p>Has Shapes: ${selectionInfo.hasShapes ? "Yes" : "No"}</p>
-      <p>Locked Elements: ${selectionInfo.lockedCount}</p>
-    `;
-  } else {
-    detailsEl.innerHTML = "";
-  }
-}
-```
-
-**Document Sandbox (code.js):**
-
-```js
-// sandbox/code.js
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor, colorUtils } from "express-document-sdk";
-
-const { runtime } = addOnSandboxSdk.instance;
-let uiPanel;
-
-// Wait for UI panel to be ready
-runtime.ready.then(async () => {
-  // Get access to the UI panel APIs
-  uiPanel = await runtime.apiProxy("panel");
-  
-  // Set up selection change handler
-  setupSelectionHandling();
-});
-
-function setupSelectionHandling() {
-  editor.context.on("selectionChange", () => {
-    const selectionInfo = analyzeCurrentSelection();
-    
-    // Send selection info to UI panel
-    uiPanel.handleSelectionUpdate(selectionInfo);
-  });
-  
-  // Send initial selection state
-  const initialSelection = analyzeCurrentSelection();
-  uiPanel.handleSelectionUpdate(initialSelection);
-}
-
-function analyzeCurrentSelection() {
-  const selection = editor.context.selection;
-  const fullSelection = editor.context.selectionIncludingNonEditable;
-  
-  return {
-    count: selection.length,
-    totalCount: fullSelection.length,
-    lockedCount: fullSelection.length - selection.length,
-    types: [...new Set(selection.map(node => node.type))],
-    hasText: selection.some(node => node.type === "Text"),
-    hasShapes: selection.some(node => 
-      ["Rectangle", "Ellipse"].includes(node.type)
-    ),
-    isEmpty: selection.length === 0
-  };
-}
-
-// Export functions for UI to call
-function registerSelectionUpdateHandler(handler) {
-  // Store the handler function from UI
-  runtime.exposeApi({
-    applyRedToSelection() {
-      const selection = editor.context.selection;
-      const textNodes = selection.filter(node => node.type === "Text");
-      
-      if (textNodes.length > 0) {
-        const redColor = colorUtils.fromHex("#FF0000");
-        textNodes.forEach(textNode => {
-          textNode.fullContent.applyCharacterStyles({ color: redColor });
-        });
-        
-        console.log(`Applied red to ${textNodes.length} text nodes`);
-      }
-    },
-    
-    groupSelection() {
-      const selection = editor.context.selection;
-      
-      if (selection.length >= 2) {
-        const group = editor.createGroup();
-        
-        // Move selected elements to group
-        selection.forEach(node => {
-          node.removeFromParent();
-          group.children.append(node);
-        });
-        
-        // Add group to document
-        editor.context.insertionParent.children.append(group);
-        
-        // Select the new group
-        editor.context.selection = group;
-        
-        console.log(`Created group with ${selection.length} elements`);
-      }
-    },
-    
-    clearSelection() {
-      editor.context.selection = [];
-      console.log("Selection cleared");
-    },
-    
-    registerSelectionUpdateHandler: handler
-  });
-}
-
-// Expose the registration function immediately
-runtime.exposeApi({ registerSelectionUpdateHandler });
-```
-
-#### TypeScript
-
-**UI Panel (index.ts):**
-
-```ts
-// ui/index.ts
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-
-interface SelectionInfo {
-  count: number;
-  totalCount: number;
-  lockedCount: number;
-  types: string[];
-  hasText: boolean;
-  hasShapes: boolean;
-  isEmpty: boolean;
-}
-
-interface DocumentSandboxAPI {
-  registerSelectionUpdateHandler: (handler: (info: SelectionInfo) => void) => void;
-  applyRedToSelection: () => void;
-  groupSelection: () => void;
-  clearSelection: () => void;
-}
-
-let documentSandbox: DocumentSandboxAPI;
-
-addOnUISdk.ready.then(async () => {
-  // Get access to the document sandbox APIs
-  documentSandbox = await addOnUISdk.instance.runtime.apiProxy("documentSandbox");
-  
-  // Set up UI elements
-  setupSelectionUI();
-  
-  // Start listening for selection updates from sandbox
-  documentSandbox.registerSelectionUpdateHandler(handleSelectionUpdate);
-});
-
-function setupSelectionUI(): void {
-  const container = document.getElementById("selection-info");
-  
-  if (container) {
-    container.innerHTML = `
-      <div id="selection-status">Nothing selected</div>
-      <div id="selection-actions">
-        <button id="apply-red-btn" disabled>Apply Red Color</button>
-        <button id="group-btn" disabled>Group Elements</button>
-        <button id="clear-selection-btn" disabled>Clear Selection</button>
-      </div>
-      <div id="selection-details"></div>
-    `;
-    
-    // Set up button handlers
-    const applyRedBtn = document.getElementById("apply-red-btn");
-    const groupBtn = document.getElementById("group-btn");
-    const clearBtn = document.getElementById("clear-selection-btn");
-    
-    applyRedBtn?.addEventListener("click", () => {
-      documentSandbox.applyRedToSelection();
-    });
-    
-    groupBtn?.addEventListener("click", () => {
-      documentSandbox.groupSelection();
-    });
-    
-    clearBtn?.addEventListener("click", () => {
-      documentSandbox.clearSelection();
-    });
-  }
-}
-
-function handleSelectionUpdate(selectionInfo: SelectionInfo): void {
-  console.log("Selection update received:", selectionInfo);
-  
-  // Update status
-  const statusEl = document.getElementById("selection-status");
-  if (statusEl) {
-    if (selectionInfo.count === 0) {
-      statusEl.textContent = "Nothing selected";
-    } else if (selectionInfo.count === 1) {
-      statusEl.textContent = `1 ${selectionInfo.types[0]} selected`;
-    } else {
-      statusEl.textContent = `${selectionInfo.count} elements selected`;
-    }
-  }
-  
-  // Update action buttons
-  const applyRedBtn = document.getElementById("apply-red-btn") as HTMLButtonElement;
-  const groupBtn = document.getElementById("group-btn") as HTMLButtonElement;
-  const clearBtn = document.getElementById("clear-selection-btn") as HTMLButtonElement;
-  
-  if (applyRedBtn) applyRedBtn.disabled = !selectionInfo.hasText;
-  if (groupBtn) groupBtn.disabled = selectionInfo.count < 2;
-  if (clearBtn) clearBtn.disabled = selectionInfo.count === 0;
-  
-  // Update details
-  const detailsEl = document.getElementById("selection-details");
-  if (detailsEl) {
-    if (selectionInfo.count > 0) {
-      detailsEl.innerHTML = `
-        <h4>Selection Details:</h4>
-        <p>Types: ${selectionInfo.types.join(", ")}</p>
-        <p>Has Text: ${selectionInfo.hasText ? "Yes" : "No"}</p>
-        <p>Has Shapes: ${selectionInfo.hasShapes ? "Yes" : "No"}</p>
-        <p>Locked Elements: ${selectionInfo.lockedCount}</p>
-      `;
-    } else {
-      detailsEl.innerHTML = "";
-    }
-  }
-}
-```
-
-**Document Sandbox (code.ts):**
-
-```ts
-// sandbox/code.ts
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor, colorUtils, Node, TextNode, GroupNode, ContainerNode } from "express-document-sdk";
-
-interface SelectionInfo {
-  count: number;
-  totalCount: number;
-  lockedCount: number;
-  types: string[];
-  hasText: boolean;
-  hasShapes: boolean;
-  isEmpty: boolean;
-}
-
-interface UIPanelAPI {
-  handleSelectionUpdate: (info: SelectionInfo) => void;
-}
-
-const { runtime } = addOnSandboxSdk.instance;
-let uiPanel: UIPanelAPI;
-
-// Wait for UI panel to be ready
-runtime.ready.then(async () => {
-  // Get access to the UI panel APIs
-  uiPanel = await runtime.apiProxy("panel");
-  
-  // Set up selection change handler
-  setupSelectionHandling();
-});
-
-function setupSelectionHandling(): void {
-  editor.context.on("selectionChange", () => {
-    const selectionInfo: SelectionInfo = analyzeCurrentSelection();
-    
-    // Send selection info to UI panel
-    uiPanel.handleSelectionUpdate(selectionInfo);
-  });
-  
-  // Send initial selection state
-  const initialSelection: SelectionInfo = analyzeCurrentSelection();
-  uiPanel.handleSelectionUpdate(initialSelection);
-}
-
-function analyzeCurrentSelection(): SelectionInfo {
-  const selection: readonly Node[] = editor.context.selection;
-  const fullSelection: readonly Node[] = editor.context.selectionIncludingNonEditable;
-  
-  return {
-    count: selection.length,
-    totalCount: fullSelection.length,
-    lockedCount: fullSelection.length - selection.length,
-    types: [...new Set(selection.map((node: Node) => node.type))],
-    hasText: selection.some((node: Node) => node.type === "Text"),
-    hasShapes: selection.some((node: Node) => 
-      ["Rectangle", "Ellipse"].includes(node.type)
-    ),
-    isEmpty: selection.length === 0
-  };
-}
-
-// Export functions for UI to call
-function registerSelectionUpdateHandler(handler: (info: SelectionInfo) => void): void {
-  // Store the handler function from UI
-  runtime.exposeApi({
-    applyRedToSelection(): void {
-      const selection: readonly Node[] = editor.context.selection;
-      const textNodes = selection.filter((node: Node): node is TextNode => 
-        node.type === "Text"
-      );
-      
-      if (textNodes.length > 0) {
-        const redColor = colorUtils.fromHex("#FF0000");
-        textNodes.forEach((textNode: TextNode) => {
-          textNode.fullContent.applyCharacterStyles({ color: redColor });
-        });
-        
-        console.log(`Applied red to ${textNodes.length} text nodes`);
-      }
-    },
-    
-    groupSelection(): void {
-      const selection: readonly Node[] = editor.context.selection;
-      
-      if (selection.length >= 2) {
-        const group: GroupNode = editor.createGroup();
-        
-        // Move selected elements to group
-        selection.forEach((node: Node) => {
-          node.removeFromParent();
-          group.children.append(node);
-        });
-        
-        // Add group to document
-        const insertionParent: ContainerNode = editor.context.insertionParent;
-        insertionParent.children.append(group);
-        
-        // Select the new group
-        editor.context.selection = group;
-        
-        console.log(`Created group with ${selection.length} elements`);
-      }
-    },
-    
-    clearSelection(): void {
-      editor.context.selection = [];
-      console.log("Selection cleared");
-    },
-    
-    registerSelectionUpdateHandler: handler
-  });
-}
-
-// Expose the registration function immediately
-runtime.exposeApi({ registerSelectionUpdateHandler });
-```
-
-### HTML Structure
-
-Your `index.html` should include the selection UI container:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Selection Demo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="selection-info">
-        <!-- Selection UI will be inserted here -->
-    </div>
-    
-    <script src="index.js"></script>
-</body>
-</html>
-```
-
-### Key Communication Patterns
-
-1. **Initialization**: UI panel registers a callback with the document sandbox
-2. **Event Flow**: Document sandbox listens for selection changes and sends updates to UI
-3. **Action Triggers**: UI sends action requests back to document sandbox
-4. **Bidirectional**: Both sides can call methods on the other
-
-This pattern enables rich, responsive UIs that react to document changes in real-time.
-
-## Common Patterns
+Here are some frequently used patterns you can copy and adapt:
 
 ### Conditional Actions Based on Selection
 
 ```js
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
+
 // Enable/disable actions based on selection type
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   // Communicate with your UI panel
@@ -1369,12 +1130,15 @@ editor.context.on("selectionChange", () => {
 ### Selection-Based Properties Panel
 
 ```js
+// code.js
+import { editor, EditorEvent } from "express-document-sdk";
+
 // Update properties panel based on selection
-editor.context.on("selectionChange", () => {
+editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
   
   if (selection.length === 1) {
-    const node = selection[0];
+    const node = selection[0]; // Common pattern: access first selected element
     
     // Send node properties to UI for editing
     const properties = {
@@ -1392,6 +1156,25 @@ editor.context.on("selectionChange", () => {
 });
 ```
 
+### Working with Single Selection
+
+Many add-ons focus on single-element operations. Here's a common pattern used throughout the documentation:
+
+```js
+// code.js
+import { editor } from "express-document-sdk";
+
+// Safe access to first selected element (used in use_text.md and other guides)
+if (editor.context.hasSelection) {
+  const selectedNode = editor.context.selection[0];
+  
+  // Perform operations on the selected node
+  if (selectedNode.type === "Text") {
+    // Handle text-specific operations
+  }
+}
+```
+
 ## FAQs
 
 #### Q: How do I get the current selection?
@@ -1400,11 +1183,11 @@ editor.context.on("selectionChange", () => {
 
 #### Q: How do I listen for selection changes?
 
-**A:** Use `editor.context.on('selectionChange', callback)` to register a selection change handler.
+**A:** Use `editor.context.on(EditorEvent.selectionChange, callback)` to register a selection change handler.
 
 #### Q: How do I programmatically select elements?
 
-**A:** Set `editor.context.selection = [node]` or `editor.context.selection = [node1, node2]` for multiple elements.
+**A:** Set `editor.context.selection = node` for single elements or `editor.context.selection = [node1, node2]` for multiple elements.
 
 #### Q: What's the difference between selection and selectionIncludingNonEditable?
 
@@ -1424,4 +1207,14 @@ editor.context.on("selectionChange", () => {
 
 #### Q: How do I unregister selection event handlers?
 
-**A:** Use `editor.context.off('selectionChange', handlerId)` with the ID returned from the `on()` method.
+**A:** Use `editor.context.off(EditorEvent.selectionChange, handlerId)` with the ID returned from the `on()` method.
+
+## Related Topics
+
+- **[Context API Reference](../../../references/document-sandbox/document-apis/classes/Context.md)** - Complete API documentation for the Context class
+- **[Communication APIs](../../../references/document-sandbox/communication/)** - Learn how to communicate between document sandbox and UI panel  
+- **[Group Elements](./group_elements.md)** - Working with selections to create and manage groups
+- **[Position Elements](./position_elements.md)** - Positioning and transforming selected elements
+- **[Use Text](./use_text.md)** - Examples of working with text selections using `editor.context.selection[0]`
+- **[EditorEvent Enumeration](../../../references/document-sandbox/document-apis/enumerations/EditorEvent.md)** - All available editor events
+- **[Node API Reference](../../../references/document-sandbox/document-apis/classes/Node.md)** - Understanding the Node class used in selections
