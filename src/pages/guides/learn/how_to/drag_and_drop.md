@@ -132,9 +132,9 @@ async function getBlob(url) {
 
 To implement drag and drop with remotely hosted images, you similarly invoke `addOnUISdk.app.enableDragToDocument()`, but you fetch the resource from its remote URL. Provide a `previewCallback()` that returns the preview URL and a `completionCallback()` that retrieves the image as a blob. You can then attach the same `"dragstart"` and `"dragend"` event handlers to log or customize interactions as needed.
 
-<InlineAlert slots="text" variant="warning"/>
+<InlineAlert slots="text" variant="info"/>
 
-To drag audio content, you must specify an additional `attributes` object with a `title` property. A note on how to include it is found in the following example.
+For audio content, if you provide the optional [`MediaAttributes`](../../../references/addonsdk/addonsdk-app.md#mediaattributes) object, it must include a `title` property. You can also optionally include [`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) to attach custom metadata to the dragged content. Examples of both are shown below.
 
 ### Example
 
@@ -157,8 +157,7 @@ function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
       );
       return [{ blob: imageBlob }];
 
-      // ⚠️ for audio content, an attributes object
-      // with the title is mandatory. For example:
+      // For audio content, if you provide attributes, title is required:
       // return [{ blob: audioBlob, attributes: { title: "Jazzy beats" } }];
       
       // To attach add-on specific metadata that can be retrieved later:

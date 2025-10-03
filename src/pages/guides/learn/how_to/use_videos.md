@@ -70,7 +70,7 @@ addOnUISdk.ready.then(async () => {
         title: "NASA Moon Landing",
         author: "NASA"
       },
-      { // Optional ImportAddOnData - metadata that persists with the video
+      { // 👈 Optional ImportAddOnData - metadata that persists with the video
         nodeAddOnData: { "videoId": "nasa_moon_landing", "category": "space" },
         mediaAddOnData: { "duration": "120s", "source": "nasa.gov" }
       }

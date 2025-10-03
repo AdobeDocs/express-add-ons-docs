@@ -84,7 +84,7 @@ Make sure your `manifest.json` includes `"documentSandbox": "code.js"` in the en
 #### JavaScript
 
 ```js
-// code.js  
+// sandbox/code.js  
 import { editor } from "express-document-sdk";
 
 // Check if anything is selected
@@ -104,7 +104,7 @@ if (editor.context.hasSelection) {
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor, Node, EditorEvent } from "express-document-sdk";
 
 // Check if anything is selected
@@ -150,7 +150,7 @@ Core operations for working with selections.
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor } from "express-document-sdk";
 
 // Get the current selection
@@ -171,7 +171,7 @@ selection.forEach((node, index) => {
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor, Node, EditorEvent } from "express-document-sdk";
 
 // Get the current selection
@@ -196,7 +196,7 @@ selection.forEach((node: Node, index: number) => {
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor } from "express-document-sdk";
 
 // Create and select a single element
@@ -245,7 +245,7 @@ console.log("Rectangle is now selected");
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor } from "express-document-sdk";
 
 // Create multiple elements
@@ -272,7 +272,7 @@ console.log("Multiple elements selected:", editor.context.selection.length);
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor, RectangleNode, EllipseNode, ContainerNode } from "express-document-sdk";
 
 // Create multiple simple elements
@@ -303,7 +303,7 @@ console.log("Multiple elements selected:", editor.context.selection.length);
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor } from "express-document-sdk";
 
 // Clear the selection - both ways work
@@ -317,7 +317,7 @@ console.log("Has selection:", editor.context.hasSelection); // false
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor } from "express-document-sdk";
 
 // Clear the selection - both ways work
@@ -339,7 +339,7 @@ Respond to selection changes to create dynamic UIs that update based on what's s
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor, EditorEvent } from "express-document-sdk";
 
 // Listen for selection changes  
@@ -365,7 +365,7 @@ console.log("Selection handler registered:", handlerId);
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor, Node, EditorEvent } from "express-document-sdk";
 
 // Listen for selection changes
@@ -397,7 +397,7 @@ Dynamic properties panel based on selection:
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor, EditorEvent } from "express-document-sdk";
 
 function updatePropertiesPanel() {
@@ -443,7 +443,7 @@ updatePropertiesPanel();
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor, Node, TextNode } from "express-document-sdk";
 
 function updatePropertiesPanel(): void {
@@ -495,7 +495,7 @@ updatePropertiesPanel();
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs so you can unregister them later
@@ -530,7 +530,7 @@ startListening();
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs so you can unregister them later
@@ -575,7 +575,7 @@ Handle selections that include locked or non-editable content:
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor, EditorEvent } from "express-document-sdk";
 
 function analyzeCompleteSelection() {
@@ -689,7 +689,7 @@ Common patterns for performing actions on selected elements:
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
 // Function to apply red color to selected text
@@ -760,7 +760,7 @@ editor.context.on(EditorEvent.selectionChange, () => {
 #### TypeScript
 
 ```ts
-// code.ts
+// sandbox/code.ts
 import { editor, colorUtils, Node, TextNode, GroupNode, ContainerNode } from "express-document-sdk";
 
 // Function to apply red color to selected text
@@ -838,7 +838,7 @@ editor.context.on(EditorEvent.selectionChange, () => {
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor, EditorEvent } from "express-document-sdk";
 
 class SelectionManager {
@@ -993,7 +993,7 @@ const selectionManager = new SelectionManager();
 #### JavaScript
 
 ```js
-// code.js
+// sandbox/code.js
 import { editor, EditorEvent } from "express-document-sdk";
 
 // Store handler IDs for cleanup

@@ -98,7 +98,7 @@ console.log("Page dimensions:", newPage.width, "x", newPage.height);
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageNode, RectangleGeometry } from "express-document-sdk";
 
 // Define page dimensions (width x height in pixels)
@@ -152,7 +152,7 @@ console.log("Created 3 pages with different dimensions");
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageNode, RectangleGeometry } from "express-document-sdk";
 
 // Add an Instagram post page (square)
@@ -237,7 +237,7 @@ const lastPage = allPages[allPages.length - 1];
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageList, PageNode } from "express-document-sdk";
 
 // Get all pages in the document
@@ -287,7 +287,7 @@ console.log("Added text to the new page");
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageNode, StandaloneTextNode, ContainerNode } from "express-document-sdk";
 
 // Create a new page
@@ -340,7 +340,7 @@ firstArtboard.children.append(rect);
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageNode, ArtboardList, ArtboardNode, RectangleNode } from "express-document-sdk";
 
 // Get the current page
@@ -409,7 +409,7 @@ const templatePages = createTemplatePages();
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageNode, RectangleGeometry, StandaloneTextNode } from "express-document-sdk";
 
 interface PageSizes {
@@ -486,7 +486,7 @@ analyzeDocument();
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageList, PageNode, ArtboardNode } from "express-document-sdk";
 
 function analyzeDocument(): void {
@@ -578,7 +578,7 @@ console.log("New page ID:", newPage.id);
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageNode } from "express-document-sdk";
 
 // Add a page and get its metadata

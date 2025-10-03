@@ -62,7 +62,7 @@ faq:
 
 Add-ons are hosted in an iframe within the Adobe Express UI, and can load images as `<img>` elements like any other web application. But in order to add images into an Adobe Express document, you need to use the [`addImage()`](../../../references/addonsdk/app-document.md#addimage) method of the `addOnUISdk.app.document` object.
 
-It expects a `Blob` object as the first argument, and an optional [`MediaAttribute`](../../../references/addonsdk/app-document.md#mediaattributes) object with the image's title and author.
+It expects a `Blob` object as the first argument, an optional [`MediaAttribute`](../../../references/addonsdk/app-document.md#mediaattributes) object with the image's title and author, and an optional [`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) object with custom metadata that can be retrieved later via document sandbox APIs.
 
 <InlineAlert slots="header, text" variant="info"/>
 
@@ -88,7 +88,7 @@ addOnUISdk.ready.then(async () => {
         title: "Placeholder image", // 👈 Optional MediaAttributes
         author: "Adobe Developer",
       },
-      { // Optional ImportAddOnData - metadata that persists with the image
+      { // 👈 Optional ImportAddOnData - metadata that persists with the image
         nodeAddOnData: { "imageId": "placeholder_123", "category": "demo" },
         mediaAddOnData: { "source": "external", "resolution": "600x400" }
       }
@@ -141,7 +141,7 @@ addOnUISdk.ready.then(async () => {
         title: "Animated GIF",
         author: "GIF Creator"
       }, // 👈 Optional MediaAttributes
-      { // Optional ImportAddOnData
+      { // 👈 Optional ImportAddOnData
         nodeAddOnData: { "gifId": "animated_456", "type": "animation" },
         mediaAddOnData: { "duration": "3s", "frames": "24" }
       }

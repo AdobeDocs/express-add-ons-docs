@@ -59,6 +59,10 @@ faq:
 
 # Element Metadata
 
+Store and retrieve custom metadata on document elements.
+
+## Overview
+
 Add-ons can store **private metadata** (custom data accessible only to the add-on that set it) on elements within the Express document. There are two main approaches for working with element metadata:
 
 1. **Runtime Metadata**: Set and modify metadata on existing elements using the Document Sandbox APIs
@@ -208,6 +212,7 @@ addOnUISdk.ready.then(async () => {
 #### Add Video
 
 ```js
+// ui/index.js (iframe runtime)
 // Import a video with container metadata only
 await addOnUISdk.app.document.addVideo(videoBlob, {
   title: "Product Demo"
@@ -228,6 +233,7 @@ await addOnUISdk.app.document.addVideo(videoBlob, {
 #### Add Animated Image
 
 ```js
+// ui/index.js (iframe runtime)
 // Import an animated image with media metadata only
 await addOnUISdk.app.document.addAnimatedImage(gifBlob, {
   title: "Animated Logo"
@@ -343,6 +349,7 @@ function retrieveAllMediaMetadata() {
 #### Known MediaContainer
 
 ```js
+// sandbox/code.js (document sandbox)
 // Simple access example for a known MediaContainer
 const mediaContainer = /* get MediaContainerNode from document */;
 
