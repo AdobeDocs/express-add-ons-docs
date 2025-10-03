@@ -1,18 +1,20 @@
 [@express-document-sdk](../overview.md) / GridCellNode
-
 # Class: GridCellNode
 
 A GridCellNode represents the media aspect of a grid cell. Unlike MediaContainerNodes, grid cells cannot be
 translated or rotated directly and can't modify a mask shape. This implementation translates and rotates the
 media rectangle child when those actions are applied.
 
-## Extends
 
--   [`Node`](Node.md)
+
+- [`Node`](Node.md)
+
 
 ## Implements
 
--   [`IMediaContainerNode`](../interfaces/IMediaContainerNode.md)
+
+- [`IMediaContainerNode`](../interfaces/IMediaContainerNode.md)
+
 
 ## Accessors
 
@@ -331,10 +333,6 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 • **cloneInPlace**(): `never`
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Always throws as it's not possible to clone a single grid slot.
 Use the parent grid container instead.
 
@@ -419,6 +417,8 @@ New content to display. Currently must be a [BitmapImage](BitmapImage.md).
 
 ### rescaleProportionalToHeight()
 
+`Experimental`
+
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -443,6 +443,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -476,6 +478,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -508,6 +512,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 
@@ -573,8 +579,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 #### Example
 
 Center a rectangle within its parent artboard:
-
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -613,7 +618,6 @@ Point to rotate around, in node's local coordinates.
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
+```
 rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

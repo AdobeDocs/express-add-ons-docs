@@ -1,12 +1,12 @@
 [@express-document-sdk](../overview.md) / AvailableFont
-
 # Class: AvailableFont
 
 Font the current user has access or licensing permissions to create / edit content with.
 
-## Extends
 
--   [`BaseFont`](BaseFont.md)
+
+- [`BaseFont`](BaseFont.md)
+
 
 ## Accessors
 

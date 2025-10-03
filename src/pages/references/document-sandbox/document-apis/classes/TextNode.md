@@ -1,20 +1,25 @@
 [@express-document-sdk](../overview.md) / TextNode
-
 # Class: `abstract` TextNode
 
 TextNode is an abstract base class representing text displayed in the scenegraph, regardless of whether it's a fully
-self-contained [StandaloneTextNode](StandaloneTextNode.md) or one [ThreadedTextNode](ThreadedTextNode.md) "frame" of multiple in a larger flow. The
+self-contained [StandaloneTextNode](StandaloneTextNode.md) or one of multiple [ThreadedTextNode](ThreadedTextNode.md) "frames" in a larger flow. The
 APIs on TextNode and its [TextNodeContentModel](TextNodeContentModel.md) allow you to generically work with text without needing to know
-which of those subtypes you are dealing with.
+which subtype you are dealing with.
 
-## Extends
+Note: the visual top-left corner of text is not located at its local (0,0) origin point, so it's easiest to position
+text using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting its [Node.translation](Node.md#translation) directly.
 
--   [`Node`](Node.md)
+
+
+- [`Node`](Node.md)
+
 
 ## Extended by
 
--   [`StandaloneTextNode`](StandaloneTextNode.md)
--   [`ThreadedTextNode`](ThreadedTextNode.md)
+
+- [`StandaloneTextNode`](StandaloneTextNode.md)
+- [`ThreadedTextNode`](ThreadedTextNode.md)
+
 
 ## Accessors
 
@@ -102,6 +107,9 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
+
+Note: the visual top-left corner of this box is usually not (0,0). Always use `boundsLocal` or [topLeftLocal](TextNode.md#topleftlocal)
+instead of assuming (0,0).
 
 ---
 
@@ -275,7 +283,9 @@ the *entire* text content string.
 
 #### Deprecated
 
+
 - Use the text getter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
 
 • `set` **text**(`textContent`): `void`
 
@@ -285,7 +295,9 @@ WARNING: If a piece of text content flows across several TextNodes,
 
 #### Deprecated
 
+
 - Use the text setter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
 
 #### Parameters
 
@@ -329,6 +341,8 @@ boundsInParent.
 
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
+
+Note: this value is usually not (0,0) due to the way text layout is defined.
 
 ---
 
@@ -434,10 +448,6 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 • **cloneInPlace**(): [`TextNode`](TextNode.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Creates a copy of this node and its entire subtree of descendants.
 
 The node must be attached to a page as the copy will be added as a sibling.
@@ -523,6 +533,8 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
+`Experimental`
+
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -547,6 +559,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -580,6 +594,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -612,6 +628,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 
@@ -677,8 +695,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 #### Example
 
 Center a rectangle within its parent artboard:
-
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -717,7 +734,6 @@ Point to rotate around, in node's local coordinates.
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
+```
 rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / UnorderedListStyleInput
-
 # Interface: UnorderedListStyleInput
 
 <InlineAlert slots="text" variant="warning"/>
@@ -8,9 +7,10 @@
 
 Interface for specifying an unordered list style, such as a bullet list.
 
-## Extends
 
--   `BaseParagraphListStyle`
+
+- `BaseParagraphListStyle`
+
 
 ## Properties
 

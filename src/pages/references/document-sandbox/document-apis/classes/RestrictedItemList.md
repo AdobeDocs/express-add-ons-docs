@@ -1,24 +1,25 @@
 [@express-document-sdk](../overview.md) / RestrictedItemList
-
 # Class: RestrictedItemList<T\>
 
-Base for ItemLists that have restricted behavior on how items are added to the list,
-but allow items to be removed and reordered. Subclasses like ItemList may add more
-capabilities, however.
+Base for ItemLists that restrict how items are added to the list, but freely allow items to be removed and
+reordered. The [ItemList](ItemList.md) subclass adds more capabilities, however.
 
-## Extends
 
--   [`ReadOnlyItemList`](ReadOnlyItemList.md)<`T`\>
+
+- [`ReadOnlyItemList`](ReadOnlyItemList.md)<`T`\>
+
 
 ## Extended by
 
--   [`ArtboardList`](ArtboardList.md)
--   [`ItemList`](ItemList.md)
--   [`PageList`](PageList.md)
+
+- [`ArtboardList`](ArtboardList.md)
+- [`ItemList`](ItemList.md)
+- [`PageList`](PageList.md)
+
 
 ## Type parameters
 
-• **T** _extends_ [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
 
 ## Accessors
 

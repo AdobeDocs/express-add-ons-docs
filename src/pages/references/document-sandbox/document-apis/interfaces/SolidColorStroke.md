@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / SolidColorStroke
-
 # Interface: SolidColorStroke
 
 Represents a solid-color stroke, with optional dashes.
@@ -7,9 +6,10 @@ Represents a solid-color stroke, with optional dashes.
 The most convenient way to create a solid-color stroke is via `Editor.makeStroke()`. This also futureproofs
 your code in case any other required fields are added to the Stroke descriptor in the future.
 
-## Extends
 
--   [`Stroke`](Stroke.md)
+
+- [`Stroke`](Stroke.md)
+
 
 ## Properties
 

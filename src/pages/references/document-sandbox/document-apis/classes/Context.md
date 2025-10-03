@@ -1,8 +1,12 @@
 [@express-document-sdk](../overview.md) / Context
-
 # Class: Context
 
 Contains the user's current selection state, indicating the content they are focused on.
+
+
+
+- `ProxyLiveObject`
+
 
 ## Accessors
 
@@ -15,6 +19,7 @@ Contains the user's current selection state, indicating the content they are foc
 [`PageNode`](PageNode.md)
 
 The currently viewed page.
+To change the current page, call [Viewport.bringIntoView](Viewport.md#bringintoview) with an artboard or other content on that page.
 
 ---
 
@@ -60,6 +65,7 @@ Only node(s) that meet the following criteria can be selected:
 - A node cannot be selected if its ancestor is also selected (descendants are filtered out).
 - Locked nodes are filtered out (but will still be included in selectionIncludingNonEditable).
 
+
 #### Parameters
 
 • **nodes**: `undefined` \| [`Node`](Node.md) \| readonly [`Node`](Node.md)[]
@@ -68,7 +74,8 @@ Only node(s) that meet the following criteria can be selected:
 
 readonly [`Node`](Node.md)[]
 
-the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
+the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
+selection (see [selectionIncludingNonEditable](Context.md#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
 
 ---
 
@@ -80,7 +87,7 @@ the current selection. Nodes that are locked or otherwise non-editable are never
 
 readonly [`Node`](Node.md)[]
 
-the current selection _and_ any locked nodes the user has attempted to select at the same time. This can
+the current selection *and* any locked nodes the user has attempted to select at the same time. This can
 happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
 locked nodes in addition to regular unlocked nodes.
 

@@ -1,9 +1,13 @@
 [@express-document-sdk](../overview.md) / AddOnData
-
 # Class: AddOnData
 
 AddOnData class provides APIs to read, write, remove private metadata to a Node.
 This metadata is accessible only to the add-on that has set it.
+
+
+
+- `ProxyLiveObject`
+
 
 ## Accessors
 
@@ -20,6 +24,7 @@ The object contains the following properties:
 
 - sizeInBytes: The remaining quota size in bytes (maximum 3KB).
 - numKeys: The remaining quota for the number of keys (maximum 20 keys).
+
 
 ##### numKeys
 

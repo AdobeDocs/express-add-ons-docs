@@ -1,14 +1,20 @@
 [@express-document-sdk](../overview.md) / BaseFont
-
 # Class: `abstract` BaseFont
 
 Represents a font that is able to be rendered within this document. However, the user may not have edit permissions for
 all such fonts.
 
+
+
+- `ProxyLiveObject`
+
+
 ## Extended by
 
--   [`AvailableFont`](AvailableFont.md)
--   [`UnavailableFont`](UnavailableFont.md)
+
+- [`AvailableFont`](AvailableFont.md)
+- [`UnavailableFont`](UnavailableFont.md)
+
 
 ## Accessors
 

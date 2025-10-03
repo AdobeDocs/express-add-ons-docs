@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / BaseParagraphStyles
-
 # Interface: BaseParagraphStyles
 
 <InlineAlert slots="text" variant="warning"/>
@@ -12,7 +11,9 @@ setter-oriented [ParagraphStylesRangeInput](ParagraphStylesRangeInput.md).
 
 ## Extended by
 
--   [`ParagraphStyles`](ParagraphStyles.md)
+
+- [`ParagraphStyles`](ParagraphStyles.md)
+
 
 ## Properties
 

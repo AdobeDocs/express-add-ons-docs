@@ -1,12 +1,18 @@
 [@express-document-sdk](../overview.md) / ReadOnlyMask
-
 # Class: ReadOnlyMask
 
 A read-only view of a mask shape.
 
+
+
+- `ProxyLiveObject`
+
+
 ## Implements
 
--   [`INodeBounds`](../interfaces/INodeBounds.md)
+
+- [`INodeBounds`](../interfaces/INodeBounds.md)
+
 
 ## Accessors
 

@@ -1,12 +1,12 @@
 [@express-document-sdk](../overview.md) / INodeBounds
-
 # Interface: INodeBounds
 
 An interface for the bounds of a [Node](../classes/Node.md).
 
-## Extends
 
--   [`IVisualNodeBounds`](IVisualNodeBounds.md)
+
+- [`IVisualNodeBounds`](IVisualNodeBounds.md)
+
 
 ## Accessors
 

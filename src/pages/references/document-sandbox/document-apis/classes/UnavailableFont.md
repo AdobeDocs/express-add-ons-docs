@@ -1,12 +1,12 @@
 [@express-document-sdk](../overview.md) / UnavailableFont
-
 # Class: UnavailableFont
 
 Font the current user does not have access or licensing permissions to create / edit content with.
 
-## Extends
 
--   [`BaseFont`](BaseFont.md)
+
+- [`BaseFont`](BaseFont.md)
+
 
 ## Accessors
 

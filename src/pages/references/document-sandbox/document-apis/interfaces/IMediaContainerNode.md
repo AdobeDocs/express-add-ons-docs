@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / IMediaContainerNode
-
 # Interface: IMediaContainerNode
 
 Interface for nodes that contain media.

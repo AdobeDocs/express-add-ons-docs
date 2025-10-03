@@ -1,6 +1,7 @@
 [@express-document-sdk](../overview.md) / OrderedListStyle
-
 # Type alias: OrderedListStyle
+
+`Experimental`
 
 • **OrderedListStyle**: `Required`<[`OrderedListStyleInput`](../interfaces/OrderedListStyleInput.md)\>
 

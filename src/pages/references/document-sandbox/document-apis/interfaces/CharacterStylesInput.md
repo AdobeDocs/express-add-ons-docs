@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / CharacterStylesInput
-
 # Interface: CharacterStylesInput
 
 Variant of [CharacterStyles](CharacterStyles.md) with all style fields optional, used for applyCharacterStyles(). When using that API,
@@ -8,13 +7,16 @@ any fields not specified are left unchanged, preserving the text's existing styl
 If specified, the font must be of the [AvailableFont](../classes/AvailableFont.md) type – one that is guaranteed to be available for the current
 user to edit with.
 
-## Extends
 
--   `Partial`<`BaseCharacterStyles`\>
+
+- `Partial`<`BaseCharacterStyles`\>
+
 
 ## Extended by
 
--   [`CharacterStylesRangeInput`](CharacterStylesRangeInput.md)
+
+- [`CharacterStylesRangeInput`](CharacterStylesRangeInput.md)
+
 
 ## Properties
 

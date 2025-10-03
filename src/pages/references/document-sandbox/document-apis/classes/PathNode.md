@@ -1,5 +1,4 @@
 [@express-document-sdk](../overview.md) / PathNode
-
 # Class: PathNode
 
 A PathNode represents a generic vector path shape in the scenegraph. Paths cannot be edited through this API
@@ -7,9 +6,13 @@ yet, only read.
 
 To create new paths, see [Editor.createPath](Editor.md#createpath).
 
-## Extends
+Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position
+a path using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting its [Node.translation](Node.md#translation) directly.
 
--   [`FillableNode`](FillableNode.md)
+
+
+- [`FillableNode`](FillableNode.md)
+
 
 ## Accessors
 
@@ -373,10 +376,6 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 • **cloneInPlace**(): [`PathNode`](PathNode.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Creates a copy of this node and its entire subtree of descendants.
 
 The node must be attached to a page as the copy will be added as a sibling.
@@ -438,6 +437,8 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
+`Experimental`
+
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -462,6 +463,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -495,6 +498,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -527,6 +532,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 
@@ -592,8 +599,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 #### Example
 
 Center a rectangle within its parent artboard:
-
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -632,7 +638,6 @@ Point to rotate around, in node's local coordinates.
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
+```
 rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

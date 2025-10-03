@@ -1,16 +1,18 @@
 [@express-document-sdk](../overview.md) / ThreadedTextNode
-
 # Class: ThreadedTextNode
 
-A ThreadedTextNode represents a text display frame in the scenegraph. It is a subset of longer text that flows across
-multiple TextNode "frames". Because of this, the TextNode does not directly hold the text content and styles –
+A ThreadedTextNode represents a text display frame in the scenegraph which is a subset of longer text that flows across
+multiple such "frames". Because of this, the TextNode does not directly hold the text content and styles –
 instead it refers to a [TextNodeContentModel](TextNodeContentModel.md), which may be shared across multiple ThreadedTextNode frames.
 
-APIs are not yet available to create multi-frame text flows.
+All linked ThreadedTextNodes that share a single TextContentModel must remain together within the same artboard.
 
-## Extends
+APIs are not yet available to create multi-frame text flows. To create *non*-threaded text, use [Editor.createText](Editor.md#createtext).
 
--   [`TextNode`](TextNode.md)
+
+
+- [`TextNode`](TextNode.md)
+
 
 ## Accessors
 
@@ -99,6 +101,9 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
+Note: the visual top-left corner of this box is usually not (0,0). Always use `boundsLocal` or [topLeftLocal](TextNode.md#topleftlocal)
+instead of assuming (0,0).
+
 ---
 
 ### centerPointLocal
@@ -162,13 +167,8 @@ moved to a different part of the document.
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Sets the layout mode of the TextNode "frame."
-
+Sets the layout mode of this TextNode "frame" which the text content is displayed within.
 Only [AreaTextLayout](../interfaces/AreaTextLayout.md), with fully fixed bounds, is currently supported by threaded text.
-
-#### Throws
-
-if [ThreadedTextNode](ThreadedTextNode.md) is part of a multi-frame text content flow and the layout is not [AreaTextLayout](../interfaces/AreaTextLayout.md).
 
 #### Parameters
 
@@ -289,7 +289,9 @@ the *entire* text content string.
 
 #### Deprecated
 
+
 - Use the text getter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
 
 • `set` **text**(`textContent`): `void`
 
@@ -299,7 +301,9 @@ WARNING: If a piece of text content flows across several TextNodes,
 
 #### Deprecated
 
+
 - Use the text setter on [TextNodeContentModel](TextNodeContentModel.md) instead. Access it via `TextNode.fullContent.text`.
+
 
 #### Parameters
 
@@ -343,6 +347,8 @@ boundsInParent.
 
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
+
+Note: this value is usually not (0,0) due to the way text layout is defined.
 
 ---
 
@@ -448,10 +454,6 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 • **cloneInPlace**(): [`ThreadedTextNode`](ThreadedTextNode.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Creates a copy of this node and its entire subtree of descendants.
 
 The node must be attached to a page as the copy will be added as a sibling.
@@ -545,6 +547,8 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
+`Experimental`
+
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -569,6 +573,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -602,6 +608,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -634,6 +642,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 
@@ -699,8 +709,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 #### Example
 
 Center a rectangle within its parent artboard:
-
-```js
+```
 rectangle.setPositionInParent(
     { x: artboard.width / 2, y: artboard.height / 2 },
     { x: rectangle.width / 2, y: rectangle.height / 2 }
@@ -739,7 +748,6 @@ Point to rotate around, in node's local coordinates.
 #### Example
 
 Rotate the rectangle 45 degrees clockwise around its centerpoint:
-
-```js
+```
 rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```

@@ -1,16 +1,16 @@
 [@express-document-sdk](../overview.md) / ParagraphStylesRange
-
 # Interface: ParagraphStylesRange
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-A set of [ParagraphStyles](ParagraphStyles.md) and the text range they apply to. It is seen in the paragraphStyleRanges getter.
+A set of [ParagraphStyles](ParagraphStyles.md) along with the text range they apply to. Returned by the paragraphStyleRanges getter.
 
-## Extends
 
--   [`ParagraphStyles`](ParagraphStyles.md).[`StyleRange`](StyleRange.md)
+
+- [`ParagraphStyles`](ParagraphStyles.md).[`StyleRange`](StyleRange.md)
+
 
 ## Properties
 
