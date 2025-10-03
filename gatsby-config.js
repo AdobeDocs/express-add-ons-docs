@@ -777,6 +777,24 @@ module.exports = {
             ],
           },
           {
+            title: "SDK Fundamentals",
+            path: "guides/learn/fundamentals/ui-sdk-constants.md",
+            pages: [
+              {
+                title: "Add-on UI SDK Constants",
+                path: "guides/learn/fundamentals/ui-sdk-constants.md",
+              },
+              {
+                title: "Document Sandbox Constants",
+                path: "guides/learn/fundamentals/document-sandbox-constants.md",
+              },
+              {
+                title: "Developer Terminology",
+                path: "guides/learn/fundamentals/terminology.md",
+              },
+            ],
+          },
+          {
             title: "Sample add-ons",
             path: "guides/learn/samples.md",
           },
