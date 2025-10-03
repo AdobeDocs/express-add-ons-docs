@@ -3,7 +3,6 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
@@ -11,6 +10,10 @@ keywords:
   - Extensibility
   - API
   - Drag and Drop
+  - Media
+  - ImportAddOnData
+  - Metadata
+  - enableDragToDocument
 title: Use Drag-and-Drop
 description: Use Drag-and-Drop.
 contributors:

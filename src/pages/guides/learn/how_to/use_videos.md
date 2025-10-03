@@ -3,7 +3,6 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
@@ -14,6 +13,9 @@ keywords:
   - Media
   - mp4
   - addVideo
+  - ImportAddOnData
+  - Metadata
+  - MediaAttributes
 title: Use Videos
 description: Use Videos.
 contributors:

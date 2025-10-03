@@ -3,7 +3,6 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
@@ -11,7 +10,12 @@ keywords:
   - Extensibility
   - API
   - Images
+  - Media
   - addImage
+  - ImportAddOnData
+  - Metadata
+  - MediaAttributes
+  - replaceMedia
 title: Use Images
 description: Use Images.
 contributors:

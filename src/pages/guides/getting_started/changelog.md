@@ -22,16 +22,23 @@ contributors:
 
 # Changelog
 
-## 2025-09-30
+## 2025-10-02
 
 ### Added
 
 - New [`ImportAddOnData`](../../references/addonsdk/addonsdk-app.md#importaddondata) parameter support for enhanced metadata tracking on imported media in [`addImage()`](../../references/addonsdk/app-document.md#addimage), [`addVideo()`](../../references/addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](../../references/addonsdk/app-document.md#addanimatedimage), and [`enableDragToDocument()`](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) methods.
+- New [Handle Element Selection How-to Guide](../../guides/learn/how_to/handle_selection.md) covering selection operations, real-time selection events, UI integration patterns, selection-based actions, and working with locked elements.
+- New [Manage Pages How-to Guide](../../guides/learn/how_to/manage_pages.md) covering page creation, navigation, and management, positioned in a new **Document Structure** navigation category.
 - [`MediaAttributes`](../../references/addonsdk/addonsdk-app.md#mediaattributes) parameter documentation for [`addVideo()`](../../references/addonsdk/app-document.md#addvideo) method.
 
 ### Updated
 
-- [Use Images](../learn/how_to/use_images.md), [Use Videos](../learn/how_to/use_videos.md), and [Drag and Drop](../learn/how_to/drag_and_drop.md) how-to guides with `ImportAddOnData` parameter support, examples, and implementation patterns.
+The following how-to guides have been updated with `ImportAddOnData` support for enhanced metadata tracking on imported media, including examples and implementation patterns:
+
+- [Use Images](../../guides/learn/how_to/use_images.md)
+- [Use Videos](../../guides/learn/how_to/use_videos.md)
+- [Drag and Drop](../../guides/learn/how_to/drag_and_drop.md)
+- [Element Metadata](../../guides/learn/how_to/element_metadata.md)
 
 ## 2025-09-10
 
@@ -47,7 +54,6 @@ contributors:
 - New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
 - The [Use Text](../learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
 - The [Use Images](../learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
-- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
 
 ### Updated
 
