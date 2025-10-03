@@ -3,7 +3,6 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
@@ -14,6 +13,9 @@ keywords:
   - Media
   - mp4
   - addVideo
+  - ImportAddOnData
+  - Metadata
+  - MediaAttributes
 title: Use Videos
 description: Use Videos.
 contributors:
@@ -22,10 +24,10 @@ contributors:
 faq:
   questions:
     - question: "How do I add video to a page?"
-      answer: 'Call `addOnUISdk.app.document.addVideo(blob)` with a video blob object.'
+      answer: 'Call `addOnUISdk.app.document.addVideo(blob, attributes, importAddOnData)` with a video blob and optional metadata.'
 
     - question: "What parameter does addVideo require?"
-      answer: "Only a Blob object containing the video data."
+      answer: "A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional."
 
     - question: "How do I get video as a blob?"
       answer: 'Use `fetch(videoUrl).then(r => r.blob())` to convert video files to blob format.'
@@ -47,7 +49,7 @@ faq:
 
 ## Import videos into the page
 
-Similarly to Images and Audio, you can add Videos to the page using the [`addVideo()`](../../../references/addonsdk/app-document.md#addvideo) method of the `addOnUISdk.app.document` object, which expects a `Blob` object as an argument.
+Similarly to Images and Audio, you can add Videos to the page using the [`addVideo()`](../../../references/addonsdk/app-document.md#addvideo) method of the `addOnUISdk.app.document` object, which expects a `Blob` object as the first argument, and optionally accepts `MediaAttributes` and `ImportAddOnData` parameters.
 
 ### Example
 
@@ -63,7 +65,15 @@ addOnUISdk.ready.then(async () => {
     const videoBlob = await video.blob();
 
     await addOnUISdk.app.document.addVideo(
-      videoBlob // 👈 Blob object
+      videoBlob, // 👈 Blob object
+      { // Optional MediaAttributes
+        title: "NASA Moon Landing",
+        author: "NASA"
+      },
+      { // 👈 Optional ImportAddOnData - metadata that persists with the video
+        nodeAddOnData: { "videoId": "nasa_moon_landing", "category": "space" },
+        mediaAddOnData: { "duration": "120s", "source": "nasa.gov" }
+      }
     );
   } catch (e) {
     console.error("Failed to add the video", e);
@@ -95,11 +105,11 @@ Please refer to [this page](https://helpx.adobe.com/au/express/create-and-edit-v
 
 #### Q: How do I add video to a page?
 
-**A:** Call `addOnUISdk.app.document.addVideo(blob)` with a video blob object.
+**A:** Call `addOnUISdk.app.document.addVideo(blob, attributes, importAddOnData)` with a video blob and optional metadata.
 
 #### Q: What parameter does addVideo require?
 
-**A:** Only a Blob object containing the video data.
+**A:** A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional.
 
 #### Q: How do I get video as a blob?
 

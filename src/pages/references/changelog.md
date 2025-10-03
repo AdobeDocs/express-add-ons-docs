@@ -25,6 +25,24 @@ contributors:
 
 # Changelog
 
+## 2025-10-02
+
+### Added
+
+- New [`ImportAddOnData`](./addonsdk/addonsdk-app.md#importaddondata) support for enhanced metadata tracking on imported media in [`addImage()`](./addonsdk/app-document.md#addimage), [`addVideo()`](./addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage), and [`enableDragToDocument()`](./addonsdk/addonsdk-app.md#enabledragtodocument) methods.
+- New [Handle Element Selection How-to Guide](../guides/learn/how_to/handle_selection.md) covering selection operations, real-time selection events, UI integration patterns, selection-based actions, and working with locked elements.
+- New [Manage Pages How-to Guide](../guides/learn/how_to/manage_pages.md) covering page creation, navigation, and management, positioned in a new **Document Structure** navigation category.
+- [`MediaAttributes`](./addonsdk/addonsdk-app.md#mediaattributes) parameter documentation for [`addVideo()`](./addonsdk/app-document.md#addvideo) method.
+
+### Updated
+
+The following how-to guides have been updated with `ImportAddOnData` support for enhanced metadata tracking on imported media, including examples and implementation patterns:
+
+- [Use Images](../guides/learn/how_to/use_images.md)
+- [Use Videos](../guides/learn/how_to/use_videos.md)
+- [Drag and Drop](../guides/learn/how_to/drag_and_drop.md)
+- [Element Metadata](../guides/learn/how_to/element_metadata.md)
+
 ## 2025-09-10
 
 ### Added
@@ -39,7 +57,6 @@ contributors:
 - New `link` property in Character Style ranges [`CharacterStylesInput`](../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
 - The [Use Text](../guides/learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
 - The [Use Images](../guides/learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
-- New [`mediaAddOnData`](../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
 
 ### Updated
 
