@@ -50,7 +50,7 @@ If you are already familiar with the concepts of Model Context Protocol (MCP) an
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-**Feedback requested:**
+💬  **Feedback requested:**
 
 We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!
 
@@ -146,6 +146,13 @@ The LLM will automatically invoke tools based on your prompts. Here is an exampl
 ![img](../../getting_started/local_development/img/mcp-server-calling-tools.png)
 
 ![img](../../getting_started/local_development/img/mcp-server-calling-tools.png)
+
+<InlineAlert variant="success" slots="header, text1" />
+
+**Tips:"
+
+- Ask the LLM to "*list MCP tools*".
+- If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
 
 ## How to use it
 
@@ -258,7 +265,85 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 #### Using **[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
 
+<InlineAlert variant="success" slots="header, text1, text2, text3" />
+
+**🤖 LLM Guidance:**
+
+- **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
+- **REQUIRED theme imports:**
+
+`import '@spectrum-web-components/theme/express/theme-light.js';`
+`import '@spectrum-web-components/theme/express/scale-medium.js';`
+`import '@spectrum-web-components/theme/sp-theme.js';`
+
+- Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
+- **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
+- **Use Related References:**
+
+- [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
+- [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
+- [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
+
 #### Using [swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) (only for add-ons using React)
+
+<InlineAlert variant="success" slots="header, text1, text2, text3" />
+
+**🤖 LLM Guidance:**
+
+- **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
+- **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
+- **REQUIRED theme setup:**
+
+`import '@spectrum-web-components/theme/express/theme-light.js';`
+`import '@spectrum-web-components/theme/express/scale-medium.js';`
+`import { Theme } from '@swc-react/theme';`
+  
+- Wrap app with: `<Theme system="express" scale="medium" color="light">`
+- **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
+- **Use Related References:**
+
+- [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+- [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+- [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
+- [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
+
+## Troubleshooting
+
+<InlineAlert variant="neutral" slots="header, text1" />
+
+**Server Won't Start**
+
+- ✅ Check Node.js version: `node --version` (needs 18+)
+- ✅ Verify MCP config JSON syntax and file location
+- ✅ Ensure firewall allows `npx` downloads
+- ✅ Restart your IDE after configuration changes
+- ✅ Check for MCP server status indicators
+
+<InlineAlert variant="neutral" slots="header, text1" />
+
+**No Documentation Results**
+
+- ✅ Use specific technical terms ("text styling" vs "make it pretty")
+- ✅ Try adding "Adobe Express Add-ons" for an additional context cue
+- ✅ Try broader queries first, then narrow down
+- ✅ Ask the agent to "use available tools" explicitly
+- ✅ Include context about what you're building
+
+<InlineAlert variant="neutral" slots="header, text1" />
+
+**Poor Code Generation**
+
+- ✅ Be specific about what you want to implement
+- ✅ Mention the programming language and frameworks (TypeScript/JavaScript, React)
+- ✅ Provide context about your add-on's purpose
+- ✅ Ask for complete, working examples
+
+<InlineAlert variant="neutral" slots="header, text1" />
+
+**Missing Type Definitions**
+
+- ✅ Specify the correct API surface (`iframe-ui`, `express-document-sdk`, `add-on-sdk-document-sandbox`)
+- ✅ Ask for specific types rather than general requests
 
 ## Resources & Support
 
