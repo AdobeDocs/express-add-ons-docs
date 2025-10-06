@@ -200,7 +200,7 @@ This section provides the complete technical specification for all Add-on UI SDK
 
 ## Developer Tips
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right"/>
+<InlineNestedAlert header="true" variant="success" iconPosition="right">
 
 **Quick Start Tips:**
 
@@ -208,6 +208,8 @@ This section provides the complete technical specification for all Add-on UI SDK
 - **Copy import statements** from the [Import Generator](#import-generator) above
 - **Never guess** - check if constants are import-required before using
 - **Use TypeScript** for compile-time validation and better IDE support
+
+</InlineNestedAlert>
 
 ## Constants Reference
 
