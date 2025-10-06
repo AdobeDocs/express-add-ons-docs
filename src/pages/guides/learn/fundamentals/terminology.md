@@ -156,10 +156,10 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox"
 
 The APIs that allow you to interact with and modify Adobe Express documents.
 
-**Package:**
+**Import Statement:**
 
 ```javascript
-import { Editor, Context } from "@express-document-sdk"
+import { editor } from "express-document-sdk"
 ```
 
 **Also Known As:** Document API, Express Document API  
@@ -190,8 +190,11 @@ import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 // Document Sandbox SDK (for document sandbox code)
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 
-// Document APIs (for TypeScript types)
-import { Editor, Context } from "@express-document-sdk";
+// Document APIs (for document manipulation)
+import { editor } from "express-document-sdk";
+
+// Additional common imports in document sandbox
+import { editor, colorUtils, constants } from "express-document-sdk";
 ```
 
 ### Runtime References
