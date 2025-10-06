@@ -30,14 +30,14 @@
     "dev": "gatsby develop",
     "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
     "build": "gatsby build",
-    "build:deploy": "gatsby build && yarn run postbuild",
+    "build:deploy": "gatsby build && yarn run upload:samples",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test:links": "remark src/pages --quiet --frail",
     "test:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src",
     "fix:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src --fix",
     "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1",
-    "postbuild": "node upload-playground-samples.mjs"
+    "upload:samples": "node upload-playground-samples.mjs"
   },
   "remarkConfig": {
     "plugins": [

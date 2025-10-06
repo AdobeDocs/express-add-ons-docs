@@ -33,20 +33,8 @@ const CODE_PLAYGROUND_SESSION = "new";
 const getLoader = require("prismjs/dependencies");
 const components = require("prismjs/components");
 
-const componentsToLoad = [
-  "java",
-  "php",
-  "csharp",
-  "kotlin",
-  "swift",
-  "bash",
-  "sql",
-  "typescript",
-  "objectivec",
-  "yaml",
-  "json",
-];
-const loadedComponents = ["clike", "javascript"];
+const componentsToLoad = ["bash", "typescript", "json"];
+const loadedComponents = ["clike", "javascript", "markup", "css"];
 
 // dynamically load all the prism language components
 const loader = getLoader(components, componentsToLoad, loadedComponents);
