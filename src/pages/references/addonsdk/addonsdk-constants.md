@@ -200,7 +200,7 @@ This section provides the complete technical specification for all Add-on UI SDK
 
 ## Developer Tips
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
+<InlineNestedAlert header="true" variant="success" iconPosition="right"/>
 
 **Quick Start Tips:**
 
@@ -766,3 +766,9 @@ Types of entry points for add-on execution contexts.
 **Import**: `import { MediaType }` or `addOnUISdk.constants.MediaType` ✅ **Dual Access**
 
 Types of media content supported by the platform.
+
+| Value | Description |
+|-------|-------------|
+| `image` | Image media content |
+| `video` | Video media content |
+| `audio` | Audio media content |
