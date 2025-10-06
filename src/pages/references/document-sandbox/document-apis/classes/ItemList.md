@@ -16,7 +16,7 @@ Note that some parent nodes may have additional children that are *not* present 
 
 ## Type parameters
 
-• **T** _extends_ [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
 
 ## Accessors
 
@@ -77,7 +77,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 • **append**(...`items`): `void`
 
 Add one or more items to the end of the list. The last argument will become the last item in this list. Items are
-removed from their previous parent, if any – or if an item is already in _this_ list, its index is simply changed.
+removed from their previous parent, if any – or if an item is already in *this* list, its index is simply changed.
 
 #### Parameters
 
@@ -129,7 +129,7 @@ index number, or -1 if item isn't in this list.
 
 Insert `newItem` so it is immediately after `after` in this list: places `newItem` at the index one higher than `after`,
 shifting all later items to higher indices (the index of `after` remains unchanged). `newItem` is removed from its previous parent,
-if any – or if it's already in _this_ list, its index is simply changed. No-op if both arguments are the same item.
+if any – or if it's already in *this* list, its index is simply changed. No-op if both arguments are the same item.
 
 #### Parameters
 
@@ -149,7 +149,7 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 Insert `newItem` so it is immediately before `before` in this list: places `newItem` at the index that `before` used
 to occupy, shifting `before` and all later items to higher indices. `newItem` is removed from its previous parent,
-if any – or if it's already in _this_ list, its index is simply changed. No-op if both arguments are the same item.
+if any – or if it's already in *this* list, its index is simply changed. No-op if both arguments are the same item.
 
 #### Parameters
 
@@ -270,7 +270,7 @@ If any of the items are not in the list, or if it is illegal to remove any of th
 • **replace**(`oldItem`, `newItem`): `void`
 
 Replace `oldItem` with `newItem` in this list. Throws if `oldItem` is not a member of this list.
-`newItem` is removed from its previous parent, if any – or if it's already in _this_ list, its index is simply
+`newItem` is removed from its previous parent, if any – or if it's already in *this* list, its index is simply
 changed. No-op if both arguments are the same item.
 
 #### Parameters
