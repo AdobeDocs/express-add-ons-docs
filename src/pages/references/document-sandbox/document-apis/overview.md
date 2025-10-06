@@ -1,7 +1,3 @@
-**@express-document-sdk** • **Docs**
-
----
-
 # @express-document-sdk
 
 ## Namespaces
