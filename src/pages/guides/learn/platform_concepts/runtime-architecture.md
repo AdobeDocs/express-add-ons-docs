@@ -421,9 +421,9 @@ Document analysis or operations that run without UI interaction:
 // Only requires express-document-sdk
 ```
 
-## Complete add-on-sdk-document-sandbox Package Overview
+## Document Sandbox Overview
 
-The `add-on-sdk-document-sandbox` package provides more than just the `runtime` object. Here's what you get:
+The document sandbox environment provides a secure, isolated execution context for document manipulation. Here's what's available:
 
 ### Core Features
 
@@ -453,7 +453,21 @@ console.warn("Be careful here");
 console.clear(); // Clear console
 ```
 
-#### 3. Secure Execution Environment
+#### 3. Document APIs (`express-document-sdk`)
+
+```js
+import { editor, colorUtils, constants, fonts } from "express-document-sdk";
+
+// Create and manipulate document content
+const textNode = editor.createText("Hello World");
+const rectangle = editor.createRectangle();
+
+// Access document structure
+const currentPage = editor.context.currentPage;
+const selection = editor.context.selection;
+```
+
+#### 4. Secure Execution Environment
 
 - **Isolated JavaScript context**: Your code runs in a secure sandbox
 - **Limited browser APIs**: Only essential APIs like `console` and `Blob` are available
