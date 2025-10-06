@@ -569,7 +569,7 @@ The only tricky UI bit worth mentioning here is relative to the **color pickers*
 import addOnUISdk, {
   ColorPickerEvent,
   ColorPickerPlacement,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // ...
 

@@ -771,6 +771,10 @@ module.exports = {
                 path: "guides/learn/platform_concepts/context.md",
               },
               {
+                title: "Runtime Architecture & Communication",
+                path: "guides/learn/platform_concepts/runtime-architecture.md",
+              },
+              {
                 title: "The Document API",
                 path: "guides/learn/platform_concepts/document-api.md",
               },

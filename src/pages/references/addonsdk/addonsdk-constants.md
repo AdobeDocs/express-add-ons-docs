@@ -29,7 +29,7 @@ import addOnUISdk, {
   ColorPickerEvent,      // Import required
   SupportedMimeTypes,    // Import required
   EntrypointType         // Import required
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // ✅ Correct usage
 const docxMimeType = SupportedMimeTypes.docx;
@@ -44,7 +44,7 @@ const docxMimeType = addOnUISdk.constants.SupportedMimeTypes.docx; // undefined
 These constants support **both import patterns** for flexibility. You can use either approach:
 
 ```javascript
-import addOnUISdk, { Range, RenditionFormat, Variant } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Range, RenditionFormat, Variant } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Option 1: Named import (recommended for cleaner code)
 const currentPage = Range.currentPage;
@@ -89,7 +89,7 @@ const confirmDialog = addOnUISdk.constants.Variant.confirmation;
 1. **Use named imports for cleaner code** when you know which constants you need:
 
    ```javascript
-   import addOnUISdk, { Range, RenditionFormat } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+   import addOnUISdk, { Range, RenditionFormat } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
    
    const options = {
      range: Range.currentPage,
@@ -106,7 +106,7 @@ const confirmDialog = addOnUISdk.constants.Variant.confirmation;
 3. **Always import named-only exports** - there's no alternative way to access them:
 
    ```javascript
-   import addOnUISdk, { SupportedMimeTypes } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+   import addOnUISdk, { SupportedMimeTypes } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
    ```
 
 ### Quick Reference Table
@@ -162,32 +162,32 @@ import addOnUISdk, {
   PlatformType, DeviceClass, PlatformEnvironment, EditorPanel, MediaTabs, ElementsTabs,
   AuthorizationStatus, DialogResultType, RuntimeType, BleedUnit, PanelActionType,
   ColorPickerPlacement, VideoResolution, FrameRate, BitRate, FileSizeLimitUnit, LinkOptions
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
 ### By Use Case (Recommended)
 
 ```javascript
 // Document Export & Rendering
-import addOnUISdk, { Range, RenditionFormat, RenditionIntent } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Range, RenditionFormat, RenditionIntent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Modal Dialogs & UI
-import addOnUISdk, { Variant, ButtonType, FieldType, DialogResultType } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Variant, ButtonType, FieldType, DialogResultType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Event Handling (Import Required!)
-import addOnUISdk, { AppEvent, ColorPickerEvent } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { AppEvent, ColorPickerEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Platform Detection
-import addOnUISdk, { PlatformType, DeviceClass, PlatformEnvironment } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { PlatformType, DeviceClass, PlatformEnvironment } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Editor Navigation
-import addOnUISdk, { EditorPanel, MediaTabs, ElementsTabs, PanelActionType } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { EditorPanel, MediaTabs, ElementsTabs, PanelActionType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // File Types & MIME (Import Required!)
-import addOnUISdk, { SupportedMimeTypes } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { SupportedMimeTypes } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // OAuth & Authorization
-import addOnUISdk, { AuthorizationStatus } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { AuthorizationStatus } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
 ## Constants Reference

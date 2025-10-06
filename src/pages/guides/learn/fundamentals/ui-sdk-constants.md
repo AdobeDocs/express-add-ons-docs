@@ -51,7 +51,7 @@ Most constants support two import patterns. Choose based on your needs:
 
 ```javascript
 // Named imports (recommended for cleaner code)
-import addOnUISdk, { Range, RenditionFormat, Variant } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Range, RenditionFormat, Variant } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Constants object access (good for dynamic access)
 const format = addOnUISdk.constants.RenditionFormat.png;
@@ -70,7 +70,7 @@ Some constants (like `AppEvent`, `SupportedMimeTypes`) are **only available as n
 The most common constants you'll use for exporting documents:
 
 ```javascript
-import addOnUISdk, { Range, RenditionFormat, RenditionIntent } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Range, RenditionFormat, RenditionIntent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Export current page as PNG
 await addOnUISdk.app.document.createRenditions({
@@ -97,7 +97,7 @@ await addOnUISdk.app.document.createRenditions({
 Essential constants for user interactions:
 
 ```javascript
-import addOnUISdk, { Variant, ButtonType } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Variant, ButtonType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Show confirmation dialog
 const result = await addOnUISdk.app.showModalDialog({
@@ -124,7 +124,7 @@ if (result.buttonType === ButtonType.primary) {
 **Critical:** Event constants must be imported - they're not available in the constants object:
 
 ```javascript
-import addOnUISdk, { AppEvent } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { AppEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // ✅ Correct - must import AppEvent
 addOnUISdk.app.on(AppEvent.themechange, (event) => {
@@ -149,7 +149,7 @@ import addOnUISdk, {
   ColorPickerEvent,      // ❌ NOT in constants object  
   SupportedMimeTypes,    // ❌ NOT in constants object
   EntrypointType         // ❌ NOT in constants object
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
 ### Flexible Access (Both Ways Work)
@@ -157,7 +157,7 @@ import addOnUISdk, {
 These constants support **both patterns**:
 
 ```javascript
-import addOnUISdk, { Range, RenditionFormat, Variant } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Range, RenditionFormat, Variant } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Option 1: Named import (recommended)
 const options = {
@@ -177,16 +177,16 @@ const format = addOnUISdk.constants.RenditionFormat[userFormat];
 
 ```javascript
 // Document Export & Rendering
-import addOnUISdk, { Range, RenditionFormat, RenditionIntent } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Range, RenditionFormat, RenditionIntent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Modal Dialogs & UI
-import addOnUISdk, { Variant, ButtonType, FieldType } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { Variant, ButtonType, FieldType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Event Handling (Import Required!)
-import addOnUISdk, { AppEvent, ColorPickerEvent } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { AppEvent, ColorPickerEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Platform Detection
-import addOnUISdk, { PlatformType, DeviceClass, PlatformEnvironment } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { PlatformType, DeviceClass, PlatformEnvironment } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
 ## Common Errors & Solutions
@@ -204,7 +204,7 @@ const event = addOnUISdk.constants.AppEvent.themechange; // undefined!
 
 ```javascript
 // ✅ This works
-import addOnUISdk, { AppEvent } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk, { AppEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 const event = AppEvent.themechange;
 ```
 
@@ -236,6 +236,36 @@ await createRenditions({
 2. **Use constants object for dynamic access** - when the constant name is determined at runtime
 3. **Always import named-only exports** - there's no alternative way to access them
 4. **Group related imports** - organize by functionality for better readability
+
+## FAQs
+
+#### Q: Why do some constants require imports while others don't?
+
+**A:** Adobe Express SDK has two types of constants: dual-access (available both ways) and named-only exports (security/architecture reasons). Always check the [Import Patterns](#import-patterns) section.
+
+#### Q: How do I know if a constant requires import?
+
+**A:** Check the [Quick Reference Table](../../../references/addonsdk/addonsdk-constants.md#quick-reference-table) in the Constants Reference or use TypeScript for compile-time validation. When in doubt, use named imports - they work for all constants.
+
+#### Q: What's the difference between `Range.currentPage` and `addOnUISdk.constants.Range.currentPage`?
+
+**A:** Both work for dual-access constants like `Range`. Named imports (`Range.currentPage`) are recommended for cleaner code, while constants object access is useful for dynamic scenarios.
+
+#### Q: Why does `addOnUISdk.constants.AppEvent` return undefined?
+
+**A:** `AppEvent` is a named-only export and must be imported: `import addOnUISdk, { AppEvent } from "..."`. It's not available through the constants object.
+
+#### Q: Can I use string literals instead of constants?
+
+**A:** While possible, constants provide type safety, IDE autocomplete, and future-proofing. Always prefer constants over string literals like `"currentPage"`.
+
+#### Q: What import should I use for document export?
+
+**A:** Use `import addOnUISdk, { Range, RenditionFormat, RenditionIntent } from "https://express.adobe.com/static/add-on-sdk/sdk.js"` for most export scenarios.
+
+#### Q: Do constants work the same in Document Sandbox?
+
+**A:** No, Document Sandbox has different constants from `express-document-sdk`. See [Document Sandbox Constants](./document-sandbox-constants.md) for sandbox-specific constants.
 
 ## Next Steps
 

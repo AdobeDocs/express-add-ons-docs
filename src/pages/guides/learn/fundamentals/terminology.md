@@ -125,7 +125,7 @@ The SDK that provides APIs for the UI panel of your add-on running in the iframe
 **Import Statement:**
 
 ```javascript
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js"
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js"
 ```
 
 **Also Known As:** UI SDK, addOnUISdk (in code)  
@@ -185,7 +185,7 @@ import { editor } from "express-document-sdk"
 
 ```javascript
 // Add-on UI SDK (for iframe/UI code)
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Document Sandbox SDK (for document sandbox code)
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
@@ -240,7 +240,7 @@ const { runtime } = addOnSandboxSdk.instance;
 
 ```javascript
 // ✅ Correct patterns
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 
 // ❌ Common mistakes

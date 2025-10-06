@@ -190,7 +190,7 @@ editor.context.selection.forEach(node => {
 
 ```javascript
 // In code.js - import constants from express-document-sdk
-import { editor, constants } from "express-document-sdk";
+import { editor, constants, colorUtils } from "express-document-sdk";
 
 // Use constants through the constants object
 const newRect = editor.createRectangle();
@@ -198,6 +198,88 @@ newRect.fill = {
   type: constants.FillType.color,
   color: { red: 0.5, green: 0.5, blue: 0.5, alpha: 1 }
 };
+```
+
+## Working with Colors and Constants
+
+Document constants work hand-in-hand with the `colorUtils` utility for creating and managing colors. Here's how to combine them effectively:
+
+### Creating Colors with colorUtils
+
+```javascript
+import { editor, constants, colorUtils } from "express-document-sdk";
+
+// Create colors using colorUtils
+const redColor = colorUtils.fromRGB(1, 0, 0);           // Bright red
+const blueColor = colorUtils.fromHex("#0066CC");        // Blue from hex
+const greenColor = colorUtils.fromRGB(0, 1, 0, 0.5);   // Semi-transparent green
+
+// Use with fill constants
+const rectangle = editor.createRectangle();
+rectangle.fill = {
+  type: constants.FillType.color,  // Use constant for type safety
+  color: redColor                  // Use colorUtils for color creation
+};
+```
+
+### Color Conversion Methods
+
+```javascript
+import { colorUtils } from "express-document-sdk";
+
+// Multiple ways to create the same color
+const orange = colorUtils.fromRGB(1, 0.5, 0);                    // RGB values (0-1)
+const orange2 = colorUtils.fromRGB({ red: 1, green: 0.5, blue: 0 }); // RGB object
+const orange3 = colorUtils.fromHex("#FF8000");                   // Hex string
+const orange4 = { red: 1, green: 0.5, blue: 0, alpha: 1 };     // Direct object
+
+// Convert color to hex string
+const hexString = colorUtils.toHex(orange); // "#FF8000FF" (includes alpha)
+```
+
+### Practical Color + Constants Examples
+
+```javascript
+import { editor, constants, colorUtils } from "express-document-sdk";
+
+// Example: Create a styled button-like rectangle
+function createStyledButton(text, bgColor, textColor) {
+  // Create background rectangle
+  const button = editor.createRectangle();
+  button.width = 120;
+  button.height = 40;
+  
+  // Apply background color using constants + colorUtils
+  button.fill = {
+    type: constants.FillType.color,
+    color: colorUtils.fromHex(bgColor)
+  };
+  
+  // Add border stroke
+  button.stroke = {
+    type: constants.StrokeType.color,
+    color: colorUtils.fromHex("#CCCCCC"),
+    width: 1,
+    position: constants.StrokePosition.inside
+  };
+  
+  // Create text element
+  const textNode = editor.createText();
+  textNode.text = text;
+  textNode.textAlignment = constants.TextAlignment.center;
+  
+  // Apply text color
+  const textStyles = {
+    fontSize: 14,
+    color: colorUtils.fromHex(textColor)
+  };
+  textNode.setRangeCharacterStyles(0, text.length, textStyles);
+  
+  return { button, textNode };
+}
+
+// Usage
+const { button, textNode } = createStyledButton("Click Me", "#007ACC", "#FFFFFF");
 ```
 
 ### Communication with UI
@@ -303,8 +385,8 @@ function processSelectedNodes() {
 ```javascript
 // ❌ Wrong - Document constants not available in UI
 // In index.html/index.js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-const fillType = FillType.color; // Error: FillType is not defined
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+const fillType = addOnUISdk.constants.FillType.color; // Error: FillType is not defined
 
 // ✅ Correct - Use in document sandbox only
 // In code.js
@@ -338,9 +420,53 @@ function changeColor(node, color) {
 4. **Group related constants** for better code organization
 5. **Document your styling functions** with the constants they expect
 
+## FAQs
+
+#### Q: Why can't I access document constants from the UI?
+
+**A:** Document constants are only available in the Document Sandbox (`code.js`) for security isolation. UI and Document environments are separate - use communication APIs to pass data between them.
+
+#### Q: How do I import document constants?
+
+**A:** Use `import { constants } from "express-document-sdk"` in your `code.js` file. Access them as `constants.FillType.color`, `constants.BlendMode.normal`, etc.
+
+#### Q: What's the difference between UI SDK constants and Document Sandbox constants?
+
+**A:** UI SDK constants are for iframe operations (dialogs, exports, events). Document constants are for content creation (fills, strokes, text alignment, node types).
+
+#### Q: Can I use `FillType.gradient` or other fill types?
+
+**A:** Currently, only `FillType.color` is available. Adobe Express may add more fill types in future releases.
+
+#### Q: How do I check if a node supports fills or strokes?
+
+**A:** Check the node type first: `if (node.type === constants.SceneNodeType.rectangle || node.type === constants.SceneNodeType.ellipse)` before applying fill/stroke properties.
+
+#### Q: Why does my blend mode not work?
+
+**A:** Ensure you're applying blend modes to visual nodes and using valid constants like `constants.BlendMode.multiply`. Not all nodes support all blend modes.
+
+#### Q: How do I pass constants from Document Sandbox to UI?
+
+**A:** Expose them through communication APIs: `runtime.exposeApi({ getBlendModes: () => ({ normal: constants.BlendMode.normal }) })`.
+
+#### Q: What constants should I use for text alignment?
+
+**A:** Use `constants.TextAlignment.left`, `constants.TextAlignment.center`, `constants.TextAlignment.right`, or `constants.TextAlignment.justifyLeft`.
+
+#### Q: How do I create colors for use with constants?
+
+**A:** Use `colorUtils.fromRGB(r, g, b, alpha)` or `colorUtils.fromHex("#RRGGBB")` to create Color objects. Always import: `import { colorUtils } from "express-document-sdk"`.
+
+#### Q: What's the difference between colorUtils and manual color objects?
+
+**A:** `colorUtils` provides validation and conversion methods. Manual objects like `{ red: 1, green: 0, blue: 0, alpha: 1 }` work but lack validation and helper functions.
+
 ## Related Documentation
 
 - [Document APIs Reference](../../../references/document-sandbox/document-apis/)
 - [Document APIs Constants](../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md)
+- [ColorUtils Reference](../../../references/document-sandbox/document-apis/classes/ColorUtils.md)
+- [Use Color Guide](../how_to/use_color.md) - Comprehensive color workflow examples
 - [Add-on UI SDK Constants](./ui-sdk-constants.md)
 - [Developer Terminology](./terminology.md)
