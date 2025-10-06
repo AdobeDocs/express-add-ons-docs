@@ -331,10 +331,6 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 • **cloneInPlace**(): `never`
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Always throws as it's not possible to clone a single grid slot.
 Use the parent grid container instead.
 
@@ -403,9 +399,9 @@ or top/bottom edges. Currently only supports images as the new media, but previo
 
 #### Parameters
 
-• **media**: [`BitmapImage`](BitmapImage.md)
+• **media**: `BitmapImage`
 
-New content to display. Currently must be a [BitmapImage](BitmapImage.md).
+New content to display. Currently must be a BitmapImage.
 
 #### Returns
 
@@ -418,6 +414,8 @@ New content to display. Currently must be a [BitmapImage](BitmapImage.md).
 ---
 
 ### rescaleProportionalToHeight()
+
+`Experimental`
 
 • **rescaleProportionalToHeight**(`height`): `void`
 
@@ -443,6 +441,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -476,6 +476,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -508,6 +510,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 

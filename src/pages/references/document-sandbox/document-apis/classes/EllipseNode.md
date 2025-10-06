@@ -381,10 +381,6 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 • **cloneInPlace**(): [`EllipseNode`](EllipseNode.md)
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Creates a copy of this node and its entire subtree of descendants.
 
 The node must be attached to a page as the copy will be added as a sibling.
@@ -446,6 +442,8 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
+`Experimental`
+
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -470,6 +468,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -503,6 +503,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -535,6 +537,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 

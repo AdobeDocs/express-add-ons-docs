@@ -3,8 +3,7 @@
 # Class: ExpressRootNode
 
 An ExpressRootNode represents the root node of the document's "scenegraph" artwork tree. The root contains a collection
-of [pages](ExpressRootNode.md#pages). Each page contains one or more artboards, arranged in a timeline sequence. All the visual content of
-the document lies within those artboards.
+of [pages](ExpressRootNode.md#pages). Each page contains one or more artboards, which in turn hold all the visual content of the document.
 
 The parent of ExpressRootNode is undefined, since it is the root of the document tree.
 

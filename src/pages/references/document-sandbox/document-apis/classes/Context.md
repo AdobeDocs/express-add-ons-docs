@@ -15,6 +15,7 @@ Contains the user's current selection state, indicating the content they are foc
 [`PageNode`](PageNode.md)
 
 The currently viewed page.
+To change the current page, call [Viewport.bringIntoView](Viewport.md#bringintoview) with an artboard or other content on that page.
 
 ---
 
@@ -68,7 +69,8 @@ Only node(s) that meet the following criteria can be selected:
 
 readonly [`Node`](Node.md)[]
 
-the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
+the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
+selection (see [selectionIncludingNonEditable](Context.md#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
 
 ---
 

@@ -2,8 +2,8 @@
 
 # Class: GridLayoutNode
 
-A GridLayoutNode represents a grid layout in the scenegraph. The GridLayoutNode is used to create
-a layout grid that other content can be placed into.
+A GridLayoutNode represents a grid layout in the scenegraph. Currently, grids contain only images but in the future
+they may support other types of content as well.
 
 APIs to create a new grid layout are not yet available.
 
@@ -33,9 +33,8 @@ Get [AddOnData](AddOnData.md) reference for managing the private metadata on thi
 
 • `get` **allChildren**(): `Readonly`<`Iterable`<[`GridCellNode`](GridCellNode.md), `any`, `any`\>\>
 
-The Grid's regular children. Does not include rectangles and skips over media constainer nodes to return fill grandchildren.
-Grid Cells are ordered by the y and then x position of their top left corner, i.e. left to right and top to bottom.
-The children cannot be added or removed.
+The GridLayout's child nodes. Nodes are returned in order sorted by the y and then x position of their top left
+corner, i.e. left to right and top to bottom. These children cannot be added or removed.
 
 #### Returns
 
@@ -113,7 +112,7 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 • `set` **fill**(`fill`): `void`
 
-The background fill of the GridLayout.
+The background fill of the GridLayout. GridLayouts must always have a fill.
 
 #### Parameters
 
@@ -129,7 +128,7 @@ The background fill of the GridLayout.
 
 • `get` **height**(): `number`
 
-The height of the node.
+The height of the entire GridLayout node.
 Must be at least MIN_DIMENSION.
 
 • `set` **height**(`value`): `void`
@@ -318,7 +317,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 • `get` **width**(): `number`
 
-The width of the node.
+The width of the entire GridLayout node.
 Must be at least MIN_DIMENSION.
 
 • `set` **width**(`value`): `void`
@@ -358,10 +357,6 @@ relative to one another (the target node need not be an ancestor of this node, n
 ### cloneInPlace()
 
 • **cloneInPlace**(): [`GridLayoutNode`](GridLayoutNode.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Creates a copy of this node and its entire subtree of descendants.
 
@@ -424,6 +419,8 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
+`Experimental`
+
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -448,6 +445,8 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
+
+`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -481,6 +480,8 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
+`Experimental`
+
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -513,6 +514,8 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
+
+`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 

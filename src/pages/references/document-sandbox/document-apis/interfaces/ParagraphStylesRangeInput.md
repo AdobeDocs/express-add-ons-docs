@@ -2,15 +2,10 @@
 
 # Interface: ParagraphStylesRangeInput
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-A variant of [ParagraphStylesRange](ParagraphStylesRange.md) with all style fields optional and the text range they apply to. Used for the
+A variant of [ParagraphStylesRange](ParagraphStylesRange.md) with all style fields optional, along with the text range they apply to. Used for the
 paragraphStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults.
 
-Paragraphs are separated by newline characters (`\n`). The ranges specified here should align with
-those boundaries.
+Paragraphs are separated by newline characters (`\n`). Ranges specified here should align with those boundaries.
 
 ## Extends
 
@@ -47,7 +42,7 @@ It only affects the space *between* lines, not the space above the first line or
 
 ### list?
 
-• `optional` **list**: [`OrderedListStyleInput`](OrderedListStyleInput.md) \| [`UnorderedListStyleInput`](UnorderedListStyleInput.md)
+• `optional` **list**: [`ListStyleInput`](../type-aliases/ListStyleInput.md)
 
 #### Inherited from
 

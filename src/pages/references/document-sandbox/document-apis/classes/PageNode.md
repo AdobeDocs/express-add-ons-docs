@@ -3,8 +3,8 @@
 # Class: PageNode
 
 A PageNode represents a page in the document, a child of the root node of the document's "scenegraph" artwork tree
-(see [ExpressRootNode](ExpressRootNode.md)). A page contains one or more artboards, representing "scenes" in a linear timeline
-sequence. Those artboards, in turn, contain all the visual content of the document.
+(see [ExpressRootNode](ExpressRootNode.md)). A page contains one or more artboards, which in turn contain all the page's visual
+content. If multiple artboards are present, each represents a keyframe "scene" in the page's animation timeline.
 
 To create new pages, see [PageList.addPage](PageList.md#addpage).
 
@@ -52,7 +52,8 @@ to guarantee all their children are full-fledged Node instances.
 
 • `get` **artboards**(): [`ArtboardList`](ArtboardList.md)
 
-The artboards or "scenes" of a page, ordered by timeline sequence.
+The artboards or "scenes," which hold the page's visual contents. If multiple artboards are present, this list
+represents an ordered keyframe sequence in the page's animation timeline.
 To create new artboards, see [ArtboardList.addArtboard](ArtboardList.md#addartboard).
 
 #### Returns

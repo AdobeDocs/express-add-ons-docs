@@ -2,13 +2,13 @@
 
 # Class: ItemList<T\>
 
-ItemList represents an ordered list of API objects, representing items that are all children of the
-same parent node. (The reverse is not necessarily true, however: this list might not include all
-children that exist in the parent node. See [Node.allChildren](Node.md#allchildren) for details).
+ItemList represents an ordered list of API objects that are all children of the same parent node. It is most
+frequently encountered as [ArtboardNode.children](ArtboardNode.md#children) or [GroupNode.children](GroupNode.md#children).
 
 ItemList also provides APIs for manipulating the list by adding items to the parent or removing items from the parent.
 
-This class is used in different places for various types of items, including Nodes, Fills, and Strokes.
+Note that some parent nodes may have additional children that are *not* present in the main `children` ItemList
+(e.g. [GroupNode.maskShape](GroupNode.md#maskshape)). Use the read-only [Node.allChildren](Node.md#allchildren) for a combined view of all children.
 
 ## Extends
 
@@ -87,10 +87,6 @@ removed from their previous parent, if any – or if an item is already in _this
 
 `void`
 
-#### Throws
-
-- if item has a different parent and item is a [ThreadedTextNode](ThreadedTextNode.md), or if item's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
-
 ---
 
 ### clear()
@@ -145,10 +141,6 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 
 `void`
 
-#### Throws
-
-- if newItem has a different parent and it is a [ThreadedTextNode](ThreadedTextNode.md), or if newItem's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
-
 ---
 
 ### insertBefore()
@@ -168,10 +160,6 @@ if any – or if it's already in _this_ list, its index is simply changed. No-op
 #### Returns
 
 `void`
-
-#### Throws
-
-- if newItem has a different parent and it is a [ThreadedTextNode](ThreadedTextNode.md), or if newItem's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
 
 ---
 
@@ -294,10 +282,6 @@ changed. No-op if both arguments are the same item.
 #### Returns
 
 `void`
-
-#### Throws
-
-- if newItem has a different parent and newItem is a [ThreadedTextNode](ThreadedTextNode.md), or if newItem's children subtree contains a [ThreadedTextNode](ThreadedTextNode.md).
 
 ---
 
