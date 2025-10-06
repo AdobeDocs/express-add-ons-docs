@@ -73,6 +73,16 @@ h1 {
   margin-left: 12px;
 }
 
+/* Custom class to align InlineAlert with markdown bullets - Multiple approaches */
+li + .spectrum-InLineAlert,
+ul + .spectrum-InLineAlert,
+ol + .spectrum-InLineAlert {
+  margin-left: 40px !important;
+  min-width: 85% !important;  
+  box-sizing: border-box !important;
+  display: block !important;
+}
+
 /* Fix for the icons in the TextBlocks of the landing page
  * ugly hack until we migrate to EDS
  */

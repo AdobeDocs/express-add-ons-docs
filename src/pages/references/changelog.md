@@ -25,31 +25,49 @@ contributors:
 
 # Changelog
 
+## 2025-10-02
+
+### Added
+
+- New [`ImportAddOnData`](./addonsdk/addonsdk-app.md#importaddondata) support for enhanced metadata tracking on imported media in [`addImage()`](./addonsdk/app-document.md#addimage), [`addVideo()`](./addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage), and [`enableDragToDocument()`](./addonsdk/addonsdk-app.md#enabledragtodocument) methods.
+- New [Handle Element Selection How-to Guide](../guides/learn/how_to/handle_selection.md) covering selection operations, real-time selection events, UI integration patterns, selection-based actions, and working with locked elements.
+- New [Manage Pages How-to Guide](../guides/learn/how_to/manage_pages.md) covering page creation, navigation, and management, positioned in a new **Document Structure** navigation category.
+- [`MediaAttributes`](./addonsdk/addonsdk-app.md#mediaattributes) parameter documentation for [`addVideo()`](./addonsdk/app-document.md#addvideo) method.
+
+### Updated
+
+The following how-to guides have been updated with `ImportAddOnData` support for enhanced metadata tracking on imported media, including examples and implementation patterns:
+
+- [Use Images](../guides/learn/how_to/use_images.md)
+- [Use Videos](../guides/learn/how_to/use_videos.md)
+- [Drag and Drop](../guides/learn/how_to/drag_and_drop.md)
+- [Element Metadata](../guides/learn/how_to/element_metadata.md)
+
 ## 2025-09-10
 
 ### Added
 
 - New Text Replacement APIs: [`appendText()`](../references/document-sandbox/document-apis/classes/text-node-content-model.md#appendtext), [`deleteText()`](../references/document-sandbox/document-apis/classes/text-node-content-model.md#deleteText), [`insertText()`](../references/document-sandbox/document-apis/classes/text-node-content-model.md#insertText), and [`replaceText()`](../references/document-sandbox/document-apis/classes/text-node-content-model.md#replaceText).
 
-<InlineAlert slots="text" variant="warning"/>
+<InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/>
 
-**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
 
-- New `link` property in Character Style ranges [`CharacterStylesInput`](../references/document-sandbox/document-apis/interfaces/character-styles-input.md#link) to support hyperlinks.
-- The [Use Text](../guides/learn/how-to/use-text.md) guide has been updated to include the new Text APIs.
-- The [Use Images](../guides/learn/how-to/use-images.md) guide has been updated to include a `replaceMedia()` example.
-- New [`mediaAddOnData`](../references/document-sandbox/document-apis/classes/image-rectangle-node.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
+- New [`mediaAddOnData`](../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
+- New `link` property in Character Style ranges [`CharacterStylesInput`](../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
+- The [Use Text](../guides/learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
+- The [Use Images](../guides/learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
 
 ### Updated
 
 - Renamed `clone()` to [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/node.md#cloneInPlace).
 
-<InlineAlert slots="text" variant="warning"/>
+<InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/>
 
-**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
 
-- Updated [`maskShape`](../references/document-sandbox/document-apis/classes/grid-cell-node.md#maskShape) in `GridCellNode` to be readonly.
-- The [`BitmapImage`](../references/document-sandbox/document-apis/classes/bitmap-image.md) has been converted from an interface to a class.
+- Updated [`maskShape`](../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to readonly.
+- The [`BitmapImage`](../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
 
 ## 2025-09-01
 
@@ -140,6 +158,10 @@ The [Page Metadata API](./addonsdk/app-document.md#pagemetadata) now includes ne
 ### Added
 
 - Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how-to/document-metadata.md).
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`link()`](./addonsdk/app-document.md#link) method, the [`LinkOptions`](./addonsdk/addonsdk-constants.md) parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Updates
 
