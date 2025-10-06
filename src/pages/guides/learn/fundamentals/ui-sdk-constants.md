@@ -148,8 +148,7 @@ import addOnUISdk, {
   AppEvent,              // ❌ NOT in constants object
   ColorPickerEvent,      // ❌ NOT in constants object  
   SupportedMimeTypes,    // ❌ NOT in constants object
-  EntrypointType,        // ❌ NOT in constants object
-  PdfReturnUrlType       // ❌ NOT in constants object
+  EntrypointType         // ❌ NOT in constants object
 } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 

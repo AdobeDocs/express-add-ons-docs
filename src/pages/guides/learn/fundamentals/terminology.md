@@ -654,4 +654,5 @@ A: No, they're the same. **"Add-on UI SDK"** is the full, preferred term for cla
 - [Document Sandbox Overview](../../../references/document-sandbox/index.md)
 - [Communication APIs](../../../references/document-sandbox/communication/index.md)
 - [Platform Concepts](../platform_concepts/context.md)
-- [Constants Usage Guide](./constants.md)
+- [Add-on UI SDK Constants Usage Guide](./ui-sdk-constants.md)
+- [Document Sandbox Constants Usage Guide](./document-sandbox-constants.md)

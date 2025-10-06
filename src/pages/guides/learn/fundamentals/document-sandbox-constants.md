@@ -49,13 +49,15 @@ For complete technical specifications of all document constants, see the [Docume
 
 ## Quick Start
 
-Document constants are available directly in the document sandbox environment without imports:
+Document constants are available through the constants export in the document sandbox environment:
 
 ```javascript
-// Document constants are globally available in sandbox
-const fillType = FillType.color;
-const blendMode = BlendMode.normal;
-const textAlignment = TextAlignment.center;
+import { constants } from "express-document-sdk";
+
+// Access constants through the constants object
+const fillType = constants.FillType.color;
+const blendMode = constants.BlendMode.normal;
+const textAlignment = constants.TextAlignment.center;
 ```
 
 <InlineAlert slots="text" variant="warning"/>
@@ -67,31 +69,31 @@ const textAlignment = TextAlignment.center;
 ### Fill and Stroke Properties
 
 ```javascript
+import { editor, constants } from "express-document-sdk";
+
 // Creating solid color fills
 const rectangle = editor.createRectangle();
 rectangle.fill = {
-  type: FillType.color,
+  type: constants.FillType.color,
   color: { red: 1, green: 0, blue: 0, alpha: 1 }
 };
 
 // Adding strokes
 rectangle.stroke = {
-  type: StrokeType.solid,
+  type: constants.StrokeType.color,
   color: { red: 0, green: 0, blue: 1, alpha: 1 },
   width: 2,
-  position: StrokePosition.inside
+  position: constants.StrokePosition.inside
 };
 ```
 
 **Available Fill Types:**
 
-- `FillType.color` - Solid color fills
-- `FillType.none` - No fill
+- `FillType.color` - Solid color fills (only available type)
 
 **Available Stroke Types:**
 
-- `StrokeType.solid` - Solid color stroke
-- `StrokeType.none` - No stroke
+- `StrokeType.color` - Solid color stroke (only available type)
 
 **Available Stroke Positions:**
 
@@ -102,15 +104,17 @@ rectangle.stroke = {
 ### Text Alignment and Styling
 
 ```javascript
+import { editor, constants } from "express-document-sdk";
+
 // Creating and styling text
 const textNode = editor.createText();
 textNode.text = "Hello World";
 
 // Set text alignment
-textNode.textAlignment = TextAlignment.center;
+textNode.textAlignment = constants.TextAlignment.center;
 
 // Set text script style
-textNode.textScriptStyle = TextScriptStyle.normal;
+textNode.textScriptStyle = constants.TextScriptStyle.none;
 ```
 
 **Available Text Alignments:**
@@ -118,20 +122,22 @@ textNode.textScriptStyle = TextScriptStyle.normal;
 - `TextAlignment.left` - Left-aligned text
 - `TextAlignment.center` - Center-aligned text
 - `TextAlignment.right` - Right-aligned text
-- `TextAlignment.justify` - Justified text
+- `TextAlignment.justifyLeft` - Left-justified text
 
 **Available Text Script Styles:**
 
-- `TextScriptStyle.normal` - Normal text
+- `TextScriptStyle.none` - Normal text (standard baseline)
 - `TextScriptStyle.superscript` - Superscript text
 - `TextScriptStyle.subscript` - Subscript text
 
 ### Blend Modes
 
 ```javascript
+import { editor, constants } from "express-document-sdk";
+
 // Apply blend modes to visual elements
 const shape = editor.createEllipse();
-shape.blendMode = BlendMode.multiply;
+shape.blendMode = constants.BlendMode.multiply;
 ```
 
 **Common Blend Modes:**
@@ -146,20 +152,22 @@ shape.blendMode = BlendMode.multiply;
 ### Scene Node Types
 
 ```javascript
+import { editor, constants } from "express-document-sdk";
+
 // Check node types when traversing the document
 editor.context.selection.forEach(node => {
   switch (node.type) {
-    case SceneNodeType.rectangle:
+    case constants.SceneNodeType.rectangle:
       console.log("Selected rectangle");
       break;
-    case SceneNodeType.ellipse:
+    case constants.SceneNodeType.ellipse:
       console.log("Selected ellipse");
       break;
-    case SceneNodeType.text:
-      console.log("Selected text");
+    case constants.SceneNodeType.imageRectangle:
+      console.log("Selected image");
       break;
-    case SceneNodeType.mediaRectangle:
-      console.log("Selected image/video");
+    case constants.SceneNodeType.unknownMediaRectangle:
+      console.log("Selected media");
       break;
   }
 });
@@ -169,8 +177,9 @@ editor.context.selection.forEach(node => {
 
 - `SceneNodeType.rectangle` - Rectangle shapes
 - `SceneNodeType.ellipse` - Ellipse/circle shapes
-- `SceneNodeType.text` - Text elements
-- `SceneNodeType.mediaRectangle` - Images and videos
+- `SceneNodeType.text` - Text elements (not available in current types)
+- `SceneNodeType.imageRectangle` - Image elements
+- `SceneNodeType.unknownMediaRectangle` - Unknown media elements
 - `SceneNodeType.line` - Line elements
 - `SceneNodeType.path` - Custom path shapes
 - `SceneNodeType.group` - Grouped elements
@@ -180,13 +189,13 @@ editor.context.selection.forEach(node => {
 ### Document Sandbox Environment
 
 ```javascript
-// In code.js - constants are globally available
-const editor = addOnSandboxSdk.editor;
+// In code.js - import constants from express-document-sdk
+import { editor, constants } from "express-document-sdk";
 
-// Use constants directly (no imports needed)
+// Use constants through the constants object
 const newRect = editor.createRectangle();
 newRect.fill = {
-  type: FillType.color,
+  type: constants.FillType.color,
   color: { red: 0.5, green: 0.5, blue: 0.5, alpha: 1 }
 };
 ```
@@ -195,13 +204,16 @@ newRect.fill = {
 
 ```javascript
 // In code.js - expose constants to UI if needed
+import { constants } from "express-document-sdk";
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+
 addOnSandboxSdk.instance.runtime.exposeApi({
   getAvailableBlendModes() {
     return {
-      normal: BlendMode.normal,
-      multiply: BlendMode.multiply,
-      screen: BlendMode.screen,
-      overlay: BlendMode.overlay
+      normal: constants.BlendMode.normal,
+      multiply: constants.BlendMode.multiply,
+      screen: constants.BlendMode.screen,
+      overlay: constants.BlendMode.overlay
     };
   }
 });
@@ -212,25 +224,27 @@ addOnSandboxSdk.instance.runtime.exposeApi({
 ### Creating Styled Shapes
 
 ```javascript
+import { editor, constants } from "express-document-sdk";
+
 function createStyledRectangle(color, strokeColor) {
   const rect = editor.createRectangle();
   
   // Set fill
   rect.fill = {
-    type: FillType.color,
+    type: constants.FillType.color,
     color: color
   };
   
   // Set stroke
   rect.stroke = {
-    type: StrokeType.solid,
+    type: constants.StrokeType.color,
     color: strokeColor,
     width: 2,
-    position: StrokePosition.inside
+    position: constants.StrokePosition.inside
   };
   
   // Set blend mode
-  rect.blendMode = BlendMode.normal;
+  rect.blendMode = constants.BlendMode.normal;
   
   return rect;
 }
@@ -239,7 +253,9 @@ function createStyledRectangle(color, strokeColor) {
 ### Text Formatting
 
 ```javascript
-function createFormattedText(content, alignment = TextAlignment.left) {
+import { editor, constants } from "express-document-sdk";
+
+function createFormattedText(content, alignment = constants.TextAlignment.left) {
   const textNode = editor.createText();
   textNode.text = content;
   textNode.textAlignment = alignment;
@@ -248,7 +264,7 @@ function createFormattedText(content, alignment = TextAlignment.left) {
   const characterStyles = {
     fontSize: 24,
     fontFamily: "Arial",
-    textScriptStyle: TextScriptStyle.normal
+    textScriptStyle: constants.TextScriptStyle.none
   };
   
   textNode.setRangeCharacterStyles(0, content.length, characterStyles);
@@ -260,19 +276,21 @@ function createFormattedText(content, alignment = TextAlignment.left) {
 ### Node Type Checking
 
 ```javascript
+import { editor, constants } from "express-document-sdk";
+
 function processSelectedNodes() {
   const selection = editor.context.selection;
   
   selection.forEach(node => {
     // Type-safe node processing
-    if (node.type === SceneNodeType.rectangle || node.type === SceneNodeType.ellipse) {
+    if (node.type === constants.SceneNodeType.rectangle || node.type === constants.SceneNodeType.ellipse) {
       // Handle shapes
-      if (node.fill?.type === FillType.color) {
+      if (node.fill?.type === constants.FillType.color) {
         console.log("Shape has color fill");
       }
-    } else if (node.type === SceneNodeType.text) {
-      // Handle text
-      console.log(`Text alignment: ${node.textAlignment}`);
+    } else if (node.type === constants.SceneNodeType.imageRectangle) {
+      // Handle images
+      console.log("Processing image node");
     }
   });
 }
@@ -290,21 +308,24 @@ const fillType = FillType.color; // Error: FillType is not defined
 
 // ✅ Correct - Use in document sandbox only
 // In code.js
-const fillType = FillType.color; // Works correctly
+import { constants } from "express-document-sdk";
+const fillType = constants.FillType.color; // Works correctly
 ```
 
 ### Missing Type Checks
 
 ```javascript
+import { constants } from "express-document-sdk";
+
 // ❌ Risky - assuming node type
 function changeColor(node, color) {
-  node.fill = { type: FillType.color, color }; // May fail on text nodes
+  node.fill = { type: constants.FillType.color, color }; // May fail on non-fillable nodes
 }
 
 // ✅ Safe - check node type first
 function changeColor(node, color) {
-  if (node.type === SceneNodeType.rectangle || node.type === SceneNodeType.ellipse) {
-    node.fill = { type: FillType.color, color };
+  if (node.type === constants.SceneNodeType.rectangle || node.type === constants.SceneNodeType.ellipse) {
+    node.fill = { type: constants.FillType.color, color };
   }
 }
 ```
