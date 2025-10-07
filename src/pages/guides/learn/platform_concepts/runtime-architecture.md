@@ -61,13 +61,13 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
-# Add-on Architecture Guide: Two-Runtime System, Communication & Development
+# Add-on Architecture Guide
 
 Learn about the dual-runtime architecture, communication patterns, and development workflow essential for building Adobe Express add-ons.
 
 ## Overview
 
-Understanding Adobe Express add-on architecture is crucial for building effective add-ons. This comprehensive deep-dive guide covers the two-runtime system, cross-runtime communication patterns, SDK imports and usage, debugging techniques, security considerations, performance optimization, and development best practices. Whether you're new to add-on development or looking to master advanced concepts, this guide provides the foundational knowledge needed to build robust, secure, and performant add-ons.
+Understanding the Adobe Express add-on architecture is crucial for building effective add-ons. This comprehensive deep-dive guide covers the dual-runtime system, cross-runtime communication patterns, SDK imports and usage, debugging techniques, security considerations, performance optimization, and development best practices. Whether you're new to add-on development or looking to master advanced concepts, this guide provides the foundational knowledge needed to build robust, secure, and performant add-ons.
 
 ## Dual-Runtime Architecture
 
@@ -80,23 +80,7 @@ Adobe Express add-ons run in **two separate JavaScript execution environments** 
 
 ### **Architecture: Two Runtime Communication**
 
-```text
-┌─────────────────────────────────────┐    ┌─────────────────────────────────────┐
-│           UI iframe                 │    │        Document Sandbox             │
-│        (Add-on UI SDK)              │    │     (Document Sandbox SDK)          │
-├─────────────────────────────────────┤    ├─────────────────────────────────────┤
-│ • DOM access                        │    │ • Document APIs (editor, nodes)     │
-│ • Full browser APIs                 │◄──►│ • Limited browser APIs (console,    │
-│ • Event handling                    │    │   Blob)                             │
-│ • UI interactions                   │    │ • Communication APIs (runtime)      │
-│ • addOnUISdk.app.document.addImage()│    │ • Direct scenegraph manipulation    │
-└─────────────────────────────────────┘    └─────────────────────────────────────┘
-          │                                              │
-          │         runtime.apiProxy()                   │
-          │         runtime.exposeApi()                  │
-          └──────────────────────────────────────────────┘
-                    Communication Layer
-```
+![Runtime Architecture Diagram](images/runtime-architecture.svg)
 
 ## What is the Runtime Object?
 

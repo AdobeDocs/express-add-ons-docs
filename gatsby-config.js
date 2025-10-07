@@ -552,6 +552,10 @@ module.exports = {
             path: "guides/getting_started/hello-world.md",
           },
           {
+            title: "Add-on Project Anatomy",
+            path: "guides/getting_started/addon-project-anatomy.md",
+          },
+          {
             title: "Code Playground",
             path: "guides/getting_started/code_playground.md",
           },
@@ -771,7 +775,7 @@ module.exports = {
                 path: "guides/learn/platform_concepts/context.md",
               },
               {
-                title: "Runtime Architecture & Communication",
+                title: "Add-on Architecture",
                 path: "guides/learn/platform_concepts/runtime-architecture.md",
               },
               {

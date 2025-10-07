@@ -1,0 +1,139 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hdrL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5258E4"/>
+      <stop offset="1" stop-color="#4248D4"/>
+    </linearGradient>
+    <linearGradient id="hdrR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#059669"/>
+      <stop offset="1" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="commGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF8E1"/>
+      <stop offset="1" stop-color="#FFE082"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#374151"/>
+    </marker>
+    <marker id="arrowHeadLeft" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 Z" fill="#374151"/>
+    </marker>
+    <marker id="arrowHeadBold" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#1F2937"/>
+    </marker>
+  </defs>
+
+  <style>
+    .panel { fill: #FFFFFF; stroke: #D1D5DB; stroke-width: 2; }
+    .header { height: 56px; }
+    .hl { font: 700 20px 'Arial', sans-serif; fill: #FFFFFF; }
+    .hs { font: 500 14px 'Arial', sans-serif; fill: #FFFFFF; opacity: 0.9; }
+    .titleDark { fill: #111827; font: 700 24px 'Arial', sans-serif; }
+    .list { fill: #1F2937; font: 15px 'Arial', sans-serif; }
+    .muted { fill: #374151; font: 500 14px 'Arial', sans-serif; }
+    .caption { fill: #1F2937; font: 700 16px 'Arial', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;}
+    .api-call { fill: #059669; font: 600 13px 'Courier New', monospace; }
+    .security-note { fill: #DC2626; font: 500 12px 'Arial', sans-serif; }
+  </style>
+
+  <!-- Main title -->
+  <text x="600" y="40" text-anchor="middle" class="titleDark">Adobe Express Add-on Architecture</text>
+  <text x="600" y="65" text-anchor="middle" class="muted">Two-Runtime System with Secure Communication</text>
+
+  <!-- Left Panel: UI Runtime -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="80" width="480" height="420" class="panel" rx="12"/>
+    <!-- Left header -->
+    <rect x="60" y="80" width="480" height="56" fill="url(#hdrL)" rx="12"/>
+    <rect x="60" y="124" width="480" height="12" fill="url(#hdrL)"/>
+    
+    <text x="84" y="113" class="hl">UI Runtime Environment</text>
+    <text x="84" y="132" class="hs">Iframe • Add-on UI SDK</text>
+
+    <!-- File indicators -->
+    <rect x="84" y="160" width="140" height="24" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+    <text x="90" y="177" class="api-call">index.html</text>
+    
+    <rect x="240" y="160" width="120" height="24" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+    <text x="246" y="177" class="api-call">index.js</text>
+
+    <!-- Capabilities -->
+    <text x="88" y="215" class="list">• Full browser environment</text>
+    <text x="88" y="240" class="list">• DOM manipulation &amp; events</text>
+    <text x="88" y="265" class="list">• Network requests (fetch, OAuth)</text>
+    <text x="88" y="290" class="list">• File uploads &amp; downloads</text>
+    <text x="88" y="315" class="list">• Modal dialogs &amp; user interactions</text>
+    <text x="88" y="340" class="list">• Document export/import</text>
+
+    <!-- API Example -->
+    <rect x="88" y="360" width="430" height="32" fill="#F0FDF4" stroke="#16A34A" stroke-width="1" rx="4"/>
+    <text x="96" y="381" class="api-call">addOnUISdk.app.document.addImage(blob, attributes)</text>
+
+    <!-- Security note -->
+    <text x="88" y="415" class="security-note">⚠ Cannot directly access document content</text>
+  </g>
+
+  <!-- Right Panel: Document Sandbox -->
+  <g filter="url(#shadow)">
+    <rect x="660" y="80" width="480" height="420" class="panel" rx="12"/>
+    <!-- Right header -->
+    <rect x="660" y="80" width="480" height="56" fill="url(#hdrR)" rx="12"/>
+    <rect x="660" y="124" width="480" height="12" fill="url(#hdrR)"/>
+    
+    <text x="684" y="113" class="hl">Document Sandbox Environment</text>
+    <text x="684" y="132" class="hs">Isolated Runtime • QuickJS</text>
+
+    <!-- File indicators -->
+    <rect x="684" y="160" width="120" height="24" fill="#DCFCE7" stroke="#16A34A" stroke-width="1" rx="4"/>
+    <text x="690" y="177" class="api-call">code.js</text>
+    
+    <rect x="820" y="160" width="200" height="24" fill="#DCFCE7" stroke="#16A34A" stroke-width="1" rx="4"/>
+    <text x="826" y="177" class="api-call">express-document-sdk</text>
+
+    <!-- Capabilities -->
+    <text x="688" y="215" class="list">• Direct document manipulation</text>
+    <text x="688" y="240" class="list">• Create shapes, text, images</text>
+    <text x="688" y="265" class="list">• Access scene graph &amp; nodes</text>
+    <text x="688" y="290" class="list">• Limited browser APIs (console, Blob)</text>
+    <text x="688" y="315" class="list">• Secure isolated execution</text>
+    <text x="688" y="340" class="list">• Communication with UI runtime</text>
+
+    <!-- API Example -->
+    <rect x="688" y="360" width="430" height="32" fill="#F0FDF4" stroke="#16A34A" stroke-width="1" rx="4"/>
+    <text x="696" y="381" class="api-call">editor.createRectangle(); insertionParent.append()</text>
+
+    <!-- Security note -->
+    <text x="688" y="415" class="security-note">🔒 No DOM access • No network requests</text>
+  </g>
+
+  <!-- Communication arrows -->
+  <line x1="540" y1="320" x2="660" y2="320" stroke="#374151" stroke-width="3" 
+        marker-start="url(#arrowHeadLeft)" marker-end="url(#arrowHead)"/>
+  
+  <!-- Communication method labels -->
+  <text x="600" y="520" text-anchor="middle" class="muted">Cross-Runtime Communication</text>
+  <text x="480" y="540" text-anchor="end" class="api-call">runtime.apiProxy("documentSandbox")</text>
+  <text x="720" y="540" text-anchor="start" class="api-call">runtime.exposeApi(sandboxApi)</text>
+
+  <!-- Communication Layer -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="550" width="800" height="160" fill="url(#commGrad)" stroke="#F59E0B" stroke-width="2" rx="12"/>
+    <text x="600" y="585" text-anchor="middle" class="caption">Communication Bridge</text>
+    
+    <!-- Communication details -->
+    <text x="220" y="610" class="list">• Secure message passing between environments</text>
+    <text x="220" y="635" class="list">• API proxying for cross-runtime function calls</text>
+    <text x="220" y="660" class="list">• Data serialization and type safety</text>
+    <text x="220" y="685" class="list">• Asynchronous operation support</text>
+  </g>
+
+  <!-- Connectors to Communication Layer -->
+  <line x1="300" y1="500" x2="590" y2="550" stroke="#1F2937" stroke-width="2.5" marker-end="url(#arrowHeadBold)"/>
+  <line x1="900" y1="500" x2="610" y2="550" stroke="#1F2937" stroke-width="2.5" marker-end="url(#arrowHeadBold)"/>
+
+  <!-- Frame border -->
+  <rect x="30" y="20" width="1140" height="720" fill="none" stroke="#D1D5DB" stroke-width="2" rx="16"/>
+</svg>

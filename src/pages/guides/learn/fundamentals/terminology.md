@@ -53,7 +53,7 @@ This reference clarifies the naming conventions and terminology used throughout 
 
 ## Quick Reference
 
-<InlineAlert slots="text" variant="success"/>
+<InlineNestedAlert header="true" variant="success" iconPosition="right">
 
 **Need a quick answer?** Jump to these common questions:
 
@@ -66,59 +66,13 @@ This reference clarifies the naming conventions and terminology used throughout 
 - **Import errors?** → [Troubleshooting](#troubleshooting-common-issues)
 - **Which SDK when?** → [Decision Matrix](#decision-matrix-which-sdk-to-use)
 
-### Key Relationships
-
-```mermaid
-graph TB
-    subgraph "Adobe Express Add-on"
-        subgraph "Iframe Runtime Environment"
-            UI[Add-on UI SDK]
-            DOM[DOM & Browser APIs]
-            UIF[User Interface]
-            IE[Import/Export]
-        end
-        
-        subgraph "Document Sandbox Runtime Environment"
-            DOC[Document APIs]
-            WEB[Limited Web APIs]
-            CC[Content Creation]
-            DM[Document Manipulation]
-        end
-        
-        subgraph "Communication Layer"
-            COMM[Communication APIs]
-            EXPOSE[exposeApi]
-            PROXY[apiProxy]
-        end
-    end
-    
-    UI --> UIF
-    UI --> IE
-    UI --> EXPOSE
-    DOC --> CC
-    DOC --> DM
-    DOC --> PROXY
-    WEB --> DOC
-    
-    EXPOSE <--> COMM
-    PROXY <--> COMM
-    
-    classDef iframe fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    classDef sandbox fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef communication fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    
-    class UI,DOM,UIF,IE iframe
-    class DOC,WEB,CC,DM sandbox
-    class COMM,EXPOSE,PROXY communication
-```
+</InlineNestedAlert>
 
 ## Core SDK Components
 
 ### Add-on UI SDK
 
 <InlineAlert slots="text" variant="info"/>
-
-**Preferred Term:** Add-on UI SDK
 
 The SDK that provides APIs for the UI panel of your add-on running in the iframe environment.
 
@@ -128,14 +82,12 @@ The SDK that provides APIs for the UI panel of your add-on running in the iframe
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js"
 ```
 
-**Also Known As:** UI SDK, addOnUISdk (in code)  
+**Also Known As:** UI SDK, `addOnUISdk` (in code)  
 **Use When:** Building UI components, handling user interactions, importing/exporting content
 
 ### Document Sandbox
 
 <InlineAlert slots="text" variant="info"/>
-
-**Preferred Term:** Document Sandbox
 
 The sandboxed JavaScript runtime environment that provides access to the Document APIs for content authoring.
 
@@ -151,8 +103,6 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox"
 ### Document APIs
 
 <InlineAlert slots="text" variant="info"/>
-
-**Preferred Term:** Document APIs
 
 The APIs that allow you to interact with and modify Adobe Express documents.
 
@@ -171,6 +121,10 @@ import { editor } from "express-document-sdk"
 |------|------------|---------|---------------|
 | **Iframe Runtime** | The browser environment where your add-on's UI runs | UI development, user interactions | Add-on UI SDK, Panel, UI Runtime |
 | **Document Sandbox Runtime** | The isolated JavaScript environment for document manipulation | Content authoring, document editing | Document Sandbox SDK, documentSandbox |
+
+<InlineAlert slots="text" variant="info"/>
+
+For a comprehensive visual guide to the two-runtime architecture, communication patterns, and practical examples, see the **[Runtime Architecture & Communication Guide](../platform_concepts/runtime-architecture.md)** which includes detailed diagrams showing how these environments interact.
 
 ## Communication & APIs
 
@@ -215,7 +169,7 @@ const { runtime } = addOnSandboxSdk.instance;
 
 | Your Goal | Use This | Import Statement |
 |-----------|----------|------------------|
-| Build UI components, handle user input | **Add-on UI SDK** | `import addOnUISdk from "..."` |
+| Build user interface components, handle user input | **Add-on UI SDK** | `import addOnUISdk from "..."` |
 | Create/modify document content | **Document APIs** | Available in document sandbox |
 | Communicate between UI and document | **Communication APIs** | `runtime.exposeApi()` / `runtime.apiProxy()` |
 | Access limited browser features in sandbox | **Web APIs** | Global objects in document sandbox |
@@ -650,6 +604,7 @@ A: No, they're the same. **"Add-on UI SDK"** is the full, preferred term for cla
 
 ## Related Documentation
 
+- [Runtime Architecture & Communication Guide](../platform_concepts/runtime-architecture.md) - Comprehensive guide with visual diagrams
 - [Add-on UI SDK Reference](../../../references/addonsdk/index.md)
 - [Document Sandbox Overview](../../../references/document-sandbox/index.md)
 - [Communication APIs](../../../references/document-sandbox/communication/index.md)

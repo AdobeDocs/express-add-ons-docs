@@ -70,7 +70,7 @@ showColorPicker(
 
 The method accepts a reference to an HTML element as its first argument, which will become the color picker's anchor element. This is important for two reasons:
 
-1. The picker will be positioned relative to this element, based on the placement options available in the [`ColorPickerPlacement`](../addonsdk/addonsdk-constants.md#constants) enumerable;
+1. The picker will be positioned relative to this element, based on the placement options available in the [`ColorPickerPlacement`](../addonsdk/addonsdk-constants.md) enumerable;
 2. The anchor will receive two custom events:
    - `"colorpicker-color-change"` when the color changes—use it to get the color.
    - `"colorpicker-close"` when the picker is closed—use it to clean up any state.
