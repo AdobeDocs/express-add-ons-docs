@@ -38,20 +38,8 @@ contributors:
 
 ### Updated
 
-- **Major restructure** of the [Add-on UI SDK Constants Reference](./addonsdk/addonsdk-constants.md) - converted from dense HTML table format to readable markdown sections with individual headings, anchor links, and prominent import information for each constant.
-- Improved content and metadata for SEO and AI assistant optimization across all new guides.
-
-### Enhanced
-
-- **Visual improvements** to runtime architecture diagrams with better spacing, color coding (green for Document Sandbox, blue for UI Runtime), and clearer communication flow arrows.
-- **Expanded terminology coverage** with new sections for Manifest & Configuration, Development Workflow & Debugging, and File Structure & Bundle terminology.
-- **Improved file structure examples** in terminology guide to accurately match CLI-generated project templates.
-- **Added FAQ sections** to constants guides addressing common developer questions about import patterns, dual-access vs named-only exports, and environment differences.
-- **Integrated colorUtils guidance** in Document Sandbox constants guide with practical examples for color creation and usage with constants.
-
-### Fixed
-
-- Corrected misleading SDK decision matrices that incorrectly suggested document manipulation could be done without UI SDK involvement.
+- **Major restructure** of the [Add-on UI SDK Constants Reference](./addonsdk/addonsdk-constants.md).
+- Improved content and metadata for SEO and AI assistant optimization.
 
 ## 2025-09-10
 
@@ -100,7 +88,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 - [Page Metadata how-to guide](../guides/learn/how_to/page_metadata.md) with documentation and examples for the new experimental `getSelectedPageIds()` method, including usage patterns for getting metadata of only selected pages.
 - [Create Renditions how-to guide](../guides/learn/how_to/create_renditions.md) with comprehensive PPTX export support documentation, including developer guidance about font differences and content limitations when exporting to PowerPoint format.
-- [Add-on Context guide](../guides/learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
+- [Iframe Context guide](../guides/learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
 - [FAQ](../guides/support/faq.md) with a new comprehensive entry about available add-on permissions and their configuration, plus updated supported file formats for imported content organized by category (Image, Design, Video, Audio).
 
 ## 2025-07-27

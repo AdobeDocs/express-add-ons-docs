@@ -36,20 +36,7 @@ contributors:
 ### Updated
 
 - **Major restructure** of the [Add-on UI SDK Constants Reference](../../references/addonsdk/addonsdk-constants.md) - converted.
-- Improved content and metadata for SEO and AI assistant optimization across all new guides.
-
-### Enhanced
-
-- **Visual improvements** to runtime architecture diagrams with better spacing, color coding (green for Document Sandbox, blue for UI Runtime), and clearer communication flow arrows.
-- **Expanded terminology coverage** with new sections for Manifest & Configuration, Development Workflow & Debugging, and File Structure & Bundle terminology.
-- **Improved file structure examples** in terminology guide to accurately match CLI-generated project templates.
-- **Added FAQ sections** to constants guides addressing common developer questions about import patterns, dual-access vs named-only exports, and environment differences.
-- **Integrated colorUtils guidance** in Document Sandbox constants guide with practical examples for color creation and usage with constants.
-
-### Fixed
-
-- Resolved all markdown linting issues across updated documentation files.
-- Corrected misleading SDK decision matrices that incorrectly suggested document manipulation could be done without UI SDK involvement.
+- Improved content and metadata for SEO and AI assistant optimization.
 
 ## 2025-09-10
 
