@@ -72,8 +72,6 @@ This reference clarifies the naming conventions and terminology used throughout 
 
 ### Add-on UI SDK
 
-<InlineAlert slots="text" variant="info"/>
-
 The SDK that provides APIs for the UI panel of your add-on running in the iframe environment.
 
 **Import Statement:**
@@ -87,8 +85,6 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js"
 
 ### Document Sandbox
 
-<InlineAlert slots="text" variant="info"/>
-
 The sandboxed JavaScript runtime environment that provides access to the Document APIs for content authoring.
 
 **Import Statement:**
@@ -101,8 +97,6 @@ import addOnSandboxSdk from "add-on-sdk-document-sandbox"
 **Use When:** Creating or modifying document content, accessing document structure
 
 ### Document APIs
-
-<InlineAlert slots="text" variant="info"/>
 
 The APIs that allow you to interact with and modify Adobe Express documents.
 
@@ -162,8 +156,6 @@ const { runtime } = addOnSandboxSdk.instance;
 ```
 
 ## Decision Matrix: Which SDK to Use?
-
-<InlineAlert slots="text" variant="info"/>
 
 **Choose the right approach for your task:**
 

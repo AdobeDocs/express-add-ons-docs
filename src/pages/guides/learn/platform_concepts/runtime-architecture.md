@@ -305,15 +305,15 @@ runtime.exposeApi({
 
   **Do I need `addOnSandboxSdk`?**
 
-  - ✅ YES if your `code.js` needs to communicate with the UI
-  - ✅ YES if UI triggers document operations
-  - ❌ NO if `code.js` runs independently
+   - ✅ YES if your `code.js` needs to communicate with the UI
+   - ✅ YES if UI triggers document operations
+   - ❌ NO if `code.js` runs independently
 
   **Do I need `express-document-sdk`?**
 
-  - ✅ YES if creating/modifying document content
-  - ✅ YES if accessing document properties
-  - ❌ NO if only processing data or communicating
+   - ✅ YES if creating/modifying document content
+   - ✅ YES if accessing document properties
+   - ❌ NO if only processing data or communicating
 
 </InlineNestedAlert>
 

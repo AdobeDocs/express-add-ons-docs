@@ -97,7 +97,7 @@ module.exports = {
             ],
           },
           {
-            title: "constants",
+            title: "*constants",
             path: "references/addonsdk/addonsdk-constants.md",
           },
         ],
@@ -552,7 +552,7 @@ module.exports = {
             path: "guides/getting_started/hello-world.md",
           },
           {
-            title: "Project Anatomy",
+            title: "*Project Anatomy",
             path: "guides/getting_started/addon-project-anatomy.md",
           },
           {
@@ -689,7 +689,7 @@ module.exports = {
                     path: "guides/learn/how_to/resize_rescale_elements.md",
                   },
                   {
-                    title: "Handle Element Selection",
+                    title: "*Handle Element Selection",
                     path: "guides/learn/how_to/handle_selection.md",
                   },
                   {
@@ -711,7 +711,7 @@ module.exports = {
                     path: "guides/learn/how_to/page_metadata.md",
                   },
                   {
-                    title: "Element",
+                    title: "*Element",
                     path: "guides/learn/how_to/element_metadata.md",
                   },
                 ],
@@ -785,13 +785,13 @@ module.exports = {
             path: "guides/learn/platform_concepts/context.md",
             pages: [
               {
-                title: "Add-on Iframe Context",
-                path: "guides/learn/platform_concepts/context.md",
-              },
-              {
-                title: "Add-on Architecture",
+                title: "*Add-on Architecture",
                 path: "guides/learn/platform_concepts/runtime-architecture.md",
               },
+              {
+                title: "Add-on Iframe Context",
+                path: "guides/learn/platform_concepts/context.md",
+              },              
               {
                 title: "The Document API",
                 path: "guides/learn/platform_concepts/document-api.md",
@@ -803,17 +803,17 @@ module.exports = {
             path: "guides/learn/fundamentals/ui-sdk-constants.md",
             pages: [
               {
-                title: "Add-on UI SDK Constants",
+                title: "*Terminology",
+                path: "guides/learn/fundamentals/terminology.md",
+              },
+              {
+                title: "*Add-on UI SDK Constants",
                 path: "guides/learn/fundamentals/ui-sdk-constants.md",
               },
               {
-                title: "Document Sandbox Constants",
+                title: "*Document Sandbox Constants",
                 path: "guides/learn/fundamentals/document-sandbox-constants.md",
-              },
-              {
-                title: "Add-on SDK Terminology",
-                path: "guides/learn/fundamentals/terminology.md",
-              },
+              }              
             ],
           },
           {
