@@ -178,14 +178,17 @@ const { runtime } = addOnSandboxSdk.instance;
 ### Typical Architecture Patterns
 
 **UI-Only Add-on (no document manipulation):**
+
 - Import: Add-on UI SDK only
 - Use cases: Settings panels, external integrations, file uploads
 
 **Document-Focused Add-on (content creation/editing):**
+
 - Import: Add-on UI SDK + Document APIs + Document Sandbox SDK
 - UI triggers operations → Communication APIs → Document manipulation in sandbox
 
 **Hybrid Add-on (UI + document + external services):**
+
 - Import: All SDKs
 - Complex workflows involving UI, document operations, and external APIs
 

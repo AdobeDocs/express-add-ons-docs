@@ -63,7 +63,7 @@ contributors:
 
 # Add-on Architecture Guide
 
-Learn about the dual-runtime architecture, communication patterns, and development workflow essential for building Adobe Express add-ons.
+Learn about the dual-runtime architecture, communication patterns, and development workflow essentials for building Adobe Express add-ons.
 
 ## Overview
 

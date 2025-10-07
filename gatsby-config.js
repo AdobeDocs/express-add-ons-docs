@@ -552,7 +552,7 @@ module.exports = {
             path: "guides/getting_started/hello-world.md",
           },
           {
-            title: "Add-on Project Anatomy",
+            title: "Project Anatomy",
             path: "guides/getting_started/addon-project-anatomy.md",
           },
           {
