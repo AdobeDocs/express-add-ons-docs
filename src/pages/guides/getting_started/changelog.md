@@ -31,7 +31,7 @@ contributors:
 - New [Add-on SDK Terminology](../learn/fundamentals/terminology.md) guide with standardized definitions, decision matrices, and troubleshooting for Adobe Express Add-on development terminology.
 - New [Add-on UI SDK Constants](../learn/fundamentals/ui-sdk-constants.md) practical usage guide focusing on import patterns, common pitfalls, and solutions for UI SDK constants.
 - New [Document Sandbox Constants](../learn/fundamentals/document-sandbox-constants.md) usage guide for constants in the Document Sandbox environment, including `colorUtils` integration and practical examples.
-- New ["SDK Fundamentals"](../learn/fundamentals/index.md) section in navigation under "Learn" to group terminology and constants usage guides for better discoverability.
+- New ["SDK Fundamentals"](../learn/fundamentals/terminology.md) section in navigation under "Learn" to group terminology and constants usage guides for better discoverability.
 
 ### Updated
 
