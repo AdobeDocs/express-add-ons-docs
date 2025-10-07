@@ -436,15 +436,26 @@ Returned as part of an array from the [`DragCompletionCallback`](#dragcallbacks)
 | Name          | Type                                  |                                                                             Description |
 | ------------- | ------------------------------------- | --------------------------------------------------------------------------------------: |
 | `blob`        | `Blob`                                |                                    Blob (image/gif/video/audio) to be added to the document |
-| `attributes?` | [`MediaAttributes`](app-document.md#mediaattributes) & [`SourceMimeTypeInfo`](app-document.md#sourcemimetypeinfo) | Media attributes (mandatory for audio import) and source mime type information for converted documents. |
+| `attributes?` | [`MediaAttributes`](#mediaattributes) & [`SourceMimeTypeInfo`](app-document.md#sourcemimetypeinfo) | Optional media attributes (required for audio content) and source mime type information for converted documents. |
+| `importAddOnData?` | [`ImportAddOnData`](#importaddondata) | Optional add-on-specific metadata that can be retrieved later. |
 
 #### `MediaAttributes`
 
 _Required for audio content only._
 
-| Name    | Type     |                               Description |
-| ------- | -------- | ----------------------------------------: |
-| `title` | `string` | Media title (mandatory for audio import). |
+| Name     | Type     |                               Description |
+| -------- | -------- | ----------------------------------------: |
+| `title`  | `string` | Media title (mandatory for audio import). |
+| `author?`| `string` | Optional media author/creator information. |
+
+#### `ImportAddOnData`
+
+Add-on-specific metadata that can be attached to imported media and retrieved later via the document sandbox APIs.
+
+| Name    | Type     | Description |
+| ------- | -------- | ----------- |
+| `nodeAddOnData?` | `Record<string, string>` | Optional node-specific add-on data that persists with the individual asset container. This data remains attached to the container node even when the asset content is replaced. Can be accessed later via `MediaContainerNode.addOnData` in the document sandbox. |
+| `mediaAddOnData?` | `Record<string, string>` | Optional media-specific add-on data that is tied to the actual asset content. This data is shared across all copies of the same asset throughout the document and will be reset if the asset content is replaced with different media. Can be accessed later via `MediaRectangleNode.mediaAddOnData` in the document sandbox. |
 
 #### Return Value
 

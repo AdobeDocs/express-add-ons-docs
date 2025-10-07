@@ -386,14 +386,15 @@ Adds an image/gif/Ps/Ai files to the current page.
 
 #### Signature
 
-`addImage(imageBlob: Blob, attributes?: MediaAttributes): Promise<void>`
+`addImage(imageBlob: Blob, attributes?: MediaAttributes, importAddOnData?: ImportAddOnData): Promise<void>`
 
 #### Parameters
 
-| Name          | Type                                  |                                                                              Description |
-| ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------: |
-| `imageBlob`   | `Blob`                                |                                                            The image to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
+| Name               | Type                                        |                                                                              Description |
+| ------------------ | ------------------------------------------- | ---------------------------------------------------------------------------------------: |
+| `imageBlob`        | `Blob`                                      |                                                            The image to add to the page. |
+| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
+| `importAddOnData?` | [`ImportAddOnData`](#importaddondata)       |                                      Add-on specific metadata to attach to the imported asset. |
 
 #### Return Value
 
@@ -405,7 +406,7 @@ A resolved promise if the image was successfully added to the canvas; otherwise,
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
   try {
-    await document.addImage(blob);
+    await document.addImage(blob, {title: "Sample Image", author: "Creator"});
   } catch (error) {
     console.log("Failed to add the image to the page.");
   }
@@ -415,7 +416,29 @@ async function addImageFromBlob(blob) {
 async function addImageFromURL(url) {
   try {
     const blob = await fetch(url).then((response) => response.blob());
-    await document.addImage(blob);
+    await document.addImage(blob, {title: "Sample Image", author: "Creator"});
+  } catch (error) {
+    console.log("Failed to add the image to the page.");
+  }
+}
+
+// Add image with custom add-on metadata
+async function addImageWithMetadata(blob) {
+  try {
+    await document.addImage(
+      blob,
+      { title: "Custom Image", author: "Creator" },
+      {
+        nodeAddOnData: {
+          customId: "img_123",
+          category: "photos"
+        },
+        mediaAddOnData: {
+          sourceUrl: "https://example.com/image.jpg",
+          license: "CC0"
+        }
+      }
+    );
   } catch (error) {
     console.log("Failed to add the image to the page.");
   }
@@ -432,14 +455,15 @@ Adds an animated image (gif) to the current page.
 
 #### Signature
 
-`addAnimatedImage(imageBlob: Blob, attributes?: MediaAttributes): Promise<void>`
+`addAnimatedImage(imageBlob: Blob, attributes?: MediaAttributes, importAddOnData?: ImportAddOnData): Promise<void>`
 
 #### Parameters
 
-| Name          | Type                                  |                                                                          Description |
-| ------------- | ------------------------------------- | -----------------------------------------------------------------------------------: |
-| `imageBlob`   | `Blob`                                |                                                        The image to add to the page. |
-| `attributes?` | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
+| Name               | Type                                        |                                                                          Description |
+| ------------------ | ------------------------------------------- | -----------------------------------------------------------------------------------: |
+| `imageBlob`        | `Blob`                                      |                                                        The image to add to the page. |
+| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
+| `importAddOnData?` | [`ImportAddOnData`](#importaddondata)       |                                      Add-on specific metadata to attach to the imported asset. |
 
 #### Return Value
 
@@ -451,7 +475,7 @@ A resolved promise if the animated image was successfully added to the canvas; o
 // Add animated image(blob) to the current page
 async function addAnimatedImageFromBlob(blob) {
   try {
-    await document.addAnimatedImage(blob);
+    await document.addAnimatedImage(blob, {title: "Animated GIF", author: "Creator"});
   } catch (error) {
     console.log("Failed to add the animated image to the page.");
   }
@@ -468,20 +492,22 @@ Adds a video to the current page.
 
 #### Signature
 
-`addVideo(videoBlob: Blob): Promise<void>`
+`addVideo(videoBlob: Blob, attributes?: MediaAttributes, importAddOnData?: ImportAddOnData): Promise<void>`
 
 #### Parameters
 
-| Name        | Type   |                   Description |
-| ----------- | ------ | ----------------------------: |
-| `videoBlob` | `Blob` | The video to add to the page. |
+| Name               | Type                                        |                                                                          Description |
+| ------------------ | ------------------------------------------- | -----------------------------------------------------------------------------------: |
+| `videoBlob`        | `Blob`                                      |                                                        The video to add to the page. |
+| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding video files to the page (i.e., `title`). |
+| `importAddOnData?` | [`ImportAddOnData`](#importaddondata)       |                                      Add-on specific metadata to attach to the imported asset. |
 
 #### Example Usage
 
 ```js
 async function addVideoFromBlob(blob) {
   try {
-    await document.addVideo(blob);
+    await document.addVideo(blob, {title: "Sample Video", author: "Creator"});
   } catch (error) {
     console.log("Failed to add the video to the page.");
   }
@@ -490,7 +516,7 @@ async function addVideoFromBlob(blob) {
 async function addVideoFromURL(url) {
   try {
     const blob = await fetch(url).then((response) => response.blob());
-    await document.addVideo(blob);
+    await document.addVideo(blob, {title: "Sample Video", author: "Creator"});
   } catch (error) {
     console.log("Failed to add the video to the page.");
   }
@@ -545,7 +571,18 @@ async function addAudioFromURL(url) {
 | `title`   | `string` | Media title (mandatory for audio import). |
 | `author?` | `string` |                              Media author |
 
+#### `ImportAddOnData`
+
+Represents add-on-specific data that can be attached to imported media assets (nodes). This data provides a way for add-ons to store custom metadata with imported assets across multiple import APIs. Note: This support is not present for PSD/AI assets.
+
+| Name              | Type                       |                                                                                                                                                                                                                                   Description |
+| ----------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `nodeAddOnData?`  | `Record<string, string>`   |    Node-specific add-on data that persists with the individual asset container. This data remains attached to the container node even when the asset content is replaced. This data can be accessed later via document sandbox `MediaContainerNode.addOnData` API. |
+| `mediaAddOnData?` | `Record<string, string>`   | Media-specific add-on data that is tied to the actual asset content. This data is shared across all copies of the same asset throughout the document and will be reset if the asset content is replaced with different media. This data can be accessed later via document sandbox `MediaRectangleNode.mediaAddOnData` API. |
+
 <InlineAlert slots="text" variant="info"/>
+
+**Note:** `ImportAddOnData` is also supported in drag-and-drop operations via the `DragCompletionData` interface when using the [`enableDragToDocument`](./addonsdk-app.md#enabledragtodocument) method.
 
 Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](../../guides/learn/samples.md#import-images-from-local) in the code samples for general importing content examples.
 

@@ -35,7 +35,7 @@ contributors:
 
 ### Updated
 
-- **Major restructure** of the [Add-on UI SDK Constants Reference](../../references/addonsdk/addonsdk-constants.md) - converted.
+- **Major restructure** of the [Add-on UI SDK Constants Reference](../../references/addonsdk/addonsdk-constants.md).
 - Improved content and metadata for SEO and AI assistant optimization.
 
 ## 2025-10-02
@@ -70,7 +70,6 @@ The following how-to guides have been updated with `ImportAddOnData` support for
 - New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
 - The [Use Text](../learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
 - The [Use Images](../learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
-- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
 
 ### Updated
 
