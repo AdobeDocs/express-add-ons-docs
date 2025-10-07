@@ -797,7 +797,7 @@ module.exports = {
                 path: "guides/learn/fundamentals/document-sandbox-constants.md",
               },
               {
-                title: "Developer Terminology",
+                title: "Add-on SDK Terminology",
                 path: "guides/learn/fundamentals/terminology.md",
               },
             ],

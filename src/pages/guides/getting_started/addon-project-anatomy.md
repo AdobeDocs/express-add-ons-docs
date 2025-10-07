@@ -40,7 +40,7 @@ semantic_tags:
   - best-practices
 ---
 
-# Add-on Project Anatomy & CLI Templates
+# Add-on Project Anatomy
 
 Add-on project structure, file organization, and template selection for efficient Adobe Express add-on development.
 

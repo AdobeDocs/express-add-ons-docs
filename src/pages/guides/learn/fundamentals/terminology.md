@@ -21,7 +21,7 @@ keywords:
   - Development workflow
   - Debugging
   - Cross-origin isolation
-title: Developer Terminology Reference
+title: Add-on SDK Terminology
 description: A comprehensive reference guide for Adobe Express Add-ons SDK terminology, 
   naming conventions, and standardized definitions to ensure consistency across 
   documentation and development.
@@ -45,7 +45,7 @@ semantic_tags:
   - debugging-guide
 ---
 
-# Developer Terminology Reference
+# Add-on SDK Terminology
 
 ## Overview
 
@@ -165,14 +165,29 @@ const { runtime } = addOnSandboxSdk.instance;
 
 <InlineAlert slots="text" variant="info"/>
 
-**Choose the right tool for your task:**
+**Choose the right approach for your task:**
 
-| Your Goal | Use This | Import Statement |
-|-----------|----------|------------------|
-| Build user interface components, handle user input | **Add-on UI SDK** | `import addOnUISdk from "..."` |
-| Create/modify document content | **Document APIs** | Available in document sandbox |
-| Communicate between UI and document | **Communication APIs** | `runtime.exposeApi()` / `runtime.apiProxy()` |
-| Access limited browser features in sandbox | **Web APIs** | Global objects in document sandbox |
+| Your Goal | Primary Environment | Required SDKs | Notes |
+|-----------|-------------------|---------------|-------|
+| Build user interface components, handle user input | **Iframe Runtime** | Add-on UI SDK | UI-only add-ons may not need document sandbox |
+| Create/modify document content | **Document Sandbox** | Add-on UI SDK + Document APIs | UI SDK needed to trigger sandbox operations |
+| Communicate between UI and document | **Both Environments** | Add-on UI SDK + Document Sandbox SDK | Communication APIs available in both |
+| Import/export documents | **Iframe Runtime** | Add-on UI SDK | Document operations happen via UI SDK |
+| Access browser features (fetch, OAuth) | **Iframe Runtime** | Add-on UI SDK | Limited browser APIs available in sandbox |
+
+### Typical Architecture Patterns
+
+**UI-Only Add-on (no document manipulation):**
+- Import: Add-on UI SDK only
+- Use cases: Settings panels, external integrations, file uploads
+
+**Document-Focused Add-on (content creation/editing):**
+- Import: Add-on UI SDK + Document APIs + Document Sandbox SDK
+- UI triggers operations → Communication APIs → Document manipulation in sandbox
+
+**Hybrid Add-on (UI + document + external services):**
+- Import: All SDKs
+- Complex workflows involving UI, document operations, and external APIs
 
 ## Quick Reference by Use Case
 
@@ -450,9 +465,6 @@ Understanding which runtime environment your console messages appear in:
 
 ### Common Development Issues
 
-**Communication Bridge Failure**
-When the connection between iframe and document sandbox fails to initialize properly. Often resolved by manual reload.
-
 **Race Condition**
 Timing issue where the communication bridge isn't ready when UI interactions occur. Clicking buttons may appear to do nothing.
 
@@ -604,10 +616,11 @@ A: No, they're the same. **"Add-on UI SDK"** is the full, preferred term for cla
 
 ## Related Documentation
 
-- [Runtime Architecture & Communication Guide](../platform_concepts/runtime-architecture.md) - Comprehensive guide with visual diagrams
+- [Add-on Architecture Guide](../platform_concepts/runtime-architecture.md) - Comprehensive guide with visual diagrams
 - [Add-on UI SDK Reference](../../../references/addonsdk/index.md)
 - [Document Sandbox Overview](../../../references/document-sandbox/index.md)
 - [Communication APIs](../../../references/document-sandbox/communication/index.md)
-- [Platform Concepts](../platform_concepts/context.md)
+- [Document API Concepts Guide](../platform_concepts/document-api.md)
+- [Add-on Iframe Context](../platform_concepts/context.md)
 - [Add-on UI SDK Constants Usage Guide](./ui-sdk-constants.md)
 - [Document Sandbox Constants Usage Guide](./document-sandbox-constants.md)

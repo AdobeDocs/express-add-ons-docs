@@ -73,12 +73,10 @@ Understanding the Adobe Express add-on architecture is crucial for building effe
 
 Adobe Express add-ons run in **two separate JavaScript execution environments** that work together:
 
-1. **UI Runtime** - Your add-on's user interface (iframe)
+1. **UI Runtime** - Your add-on's user interface (aka: iframe runtime)
 2. **Document Sandbox** - Secure environment for document manipulation
 
-## Architecture Diagrams
-
-### **Architecture: Two Runtime Communication**
+## Architecture Diagram
 
 ![Runtime Architecture Diagram](images/runtime-architecture.svg)
 
@@ -93,7 +91,7 @@ The communication bridge can be thought of like a phone line - each side has the
 
 ## The Two Environments Explained
 
-### UI Runtime Environment
+### UI Runtime Environment (Iframe)
 
 **File:** `index.js` or `index.html`  
 **Purpose:** User interface and browser interactions  
@@ -196,7 +194,6 @@ async function processDocument() {
   await uiProxy.updateProgress(50);
   
   // Document manipulation here...
-  
   await uiProxy.updateProgress(100);
 }
 ```
@@ -304,17 +301,21 @@ runtime.exposeApi({
 
 ### Quick Decision Guide
 
-**Do I need `addOnSandboxSdk`?**
+<InlineNestedAlert header="true" variant="success" iconPosition="right">
 
-- ✅ YES if your `code.js` needs to communicate with the UI
-- ✅ YES if UI triggers document operations
-- ❌ NO if `code.js` runs independently
+  **Do I need `addOnSandboxSdk`?**
 
-**Do I need `express-document-sdk`?**
+  - ✅ YES if your `code.js` needs to communicate with the UI
+  - ✅ YES if UI triggers document operations
+  - ❌ NO if `code.js` runs independently
 
-- ✅ YES if creating/modifying document content
-- ✅ YES if accessing document properties
-- ❌ NO if only processing data or communicating
+  **Do I need `express-document-sdk`?**
+
+  - ✅ YES if creating/modifying document content
+  - ✅ YES if accessing document properties
+  - ❌ NO if only processing data or communicating
+
+</InlineNestedAlert>
 
 ### Examples
 
@@ -534,7 +535,7 @@ console.log(`Operation took ${endTime - startTime} milliseconds`);
 
 ### Quick Reference: All SDK Imports
 
-| Feature | UI Runtime<br/>`addOnUISdk` | Document Sandbox<br/>`addOnSandboxSdk` | Document Sandbox<br/>`express-document-sdk` |
+| Feature | UI Runtime | Document Sandbox Runtime| Document APIs |
 |---------|------------|------------------|-----------------|
 | **Import Statement** | `import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js"` | `import addOnSandboxSdk from "add-on-sdk-document-sandbox"` | `import { editor } from "express-document-sdk"` |
 | **File Location** | `index.js/index.html` | `code.js` | `code.js` |
@@ -571,14 +572,14 @@ The sandbox requires proper manifest setup:
 
 ### SDK Import Decision Matrix
 
-| Your Add-on Needs | UI Runtime | Document Sandbox | Required Imports |
-|-------------------|------------|------------------|------------------|
-| **UI only** (no document changes) | ✅ | ❌ | `addOnUISdk` |
-| **Document manipulation only** | ❌ | ✅ | `express-document-sdk` |
-| **UI + Document communication** | ✅ | ✅ | `addOnUISdk` + `addOnSandboxSdk` |
-| **UI + Document creation** | ✅ | ✅ | `addOnUISdk` + `addOnSandboxSdk` + `express-document-sdk` |
-| **Data processing only** | ❌ | ✅ | `addOnSandboxSdk` (for communication) |
-| **Export/Import only** | ✅ | ❌ | `addOnUISdk` |
+| Your Add-on Needs | UI Runtime | Document Sandbox | Required Imports | Notes |
+|-------------------|------------|------------------|------------------|-------|
+| **UI only** (no document changes) | ✅ | ❌ | `addOnUISdk` | Settings panels, external integrations |
+| **Document manipulation** | ✅ | ✅ | `addOnUISdk` + `express-document-sdk` + `addOnSandboxSdk` | UI triggers document operations |
+| **UI + Document communication** | ✅ | ✅ | `addOnUISdk` + `addOnSandboxSdk` | Cross-runtime communication |
+| **Document creation/editing** | ✅ | ✅ | `addOnUISdk` + `addOnSandboxSdk` + `express-document-sdk` | Full document workflow |
+| **Data processing in sandbox** | ✅ | ✅ | `addOnUISdk` + `addOnSandboxSdk` | UI needed to trigger processing |
+| **Export/Import workflows** | ✅ | ❌ | `addOnUISdk` | Document operations via UI SDK |
 
 ### Common Import Patterns
 
