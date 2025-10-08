@@ -643,7 +643,7 @@ module.exports = {
                 path: "guides/learn/how_to/manage_pages.md",
                 pages: [
                   {
-                    title: "Manage Pages",
+                    title: "(NEW) Manage Pages",
                     path: "guides/learn/how_to/manage_pages.md",
                   },
                 ],
@@ -689,7 +689,7 @@ module.exports = {
                     path: "guides/learn/how_to/resize_rescale_elements.md",
                   },
                   {
-                    title: "(NEW)Handle Element Selection",
+                    title: "(NEW) Handle Element Selection",
                     path: "guides/learn/how_to/handle_selection.md",
                   },
                   {
@@ -785,7 +785,7 @@ module.exports = {
             path: "guides/learn/platform_concepts/context.md",
             pages: [
               {
-                title: "(NEW)Add-on Architecture",
+                title: "(NEW) Add-on Architecture",
                 path: "guides/learn/platform_concepts/runtime-architecture.md",
               },
               {
