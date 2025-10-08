@@ -22,6 +22,22 @@ contributors:
 
 # Changelog
 
+## 2025-10-08
+
+### Added
+
+- New [Architecture Guide](../learn/platform_concepts/runtime-architecture.md) with dual-runtime system explanation, SDK imports and usage, and cross-runtime communication patterns.
+- New [Project Anatomy](../getting_started/addon-project-anatomy.md) guide with add-on project structure, file organization, and template selection for efficient Adobe Express add-on development.
+- New [Add-on SDK Terminology](../learn/fundamentals/terminology.md) guide with standardized definitions, decision matrices, and troubleshooting for Adobe Express Add-on development terminology.
+- New [Add-on UI SDK Constants](../learn/fundamentals/ui-sdk-constants.md) practical usage guide focusing on import patterns, common pitfalls, and solutions for UI SDK constants.
+- New [Document Sandbox Constants](../learn/fundamentals/document-sandbox-constants.md) usage guide for constants in the Document Sandbox environment, including `colorUtils` integration and practical examples.
+- New ["SDK Fundamentals"](../learn/fundamentals/terminology.md) section in navigation under "Learn" to group terminology and constants usage guides for better discoverability.
+
+### Updated
+
+- **Major restructure** of the [Add-on UI SDK Constants Reference](../../references/addonsdk/addonsdk-constants.md).
+- Improved content and metadata for SEO and AI assistant optimization.
+
 ## 2025-10-02
 
 ### Added

@@ -25,6 +25,22 @@ contributors:
 
 # Changelog
 
+## 2025-10-08
+
+### Added
+
+- New [Architecture Guide](../guides/learn/platform_concepts/runtime-architecture.md) with dual-runtime system explanation, SDK imports and usage, and cross-runtime communication patterns.
+- New [Project Anatomy](../guides/getting_started/addon-project-anatomy.md) guide with add-on project structure, file organization, and template selection for efficient Adobe Express add-on development.
+- New [Add-on SDK Terminology](../guides/learn/fundamentals/terminology.md) guide with standardized definitions, decision matrices, and troubleshooting for Adobe Express Add-on development terminology.
+- New [Add-on UI SDK Constants](../guides/learn/fundamentals/ui-sdk-constants.md) practical usage guide focusing on import patterns, common pitfalls, and solutions for UI SDK constants.
+- New [Document Sandbox Constants](../guides/learn/fundamentals/document-sandbox-constants.md) usage guide for constants in the Document Sandbox environment, including `colorUtils` integration and practical examples.
+- New ["SDK Fundamentals"](../guides/learn/fundamentals/terminology.md) section in navigation under "Learn" to group terminology and constants usage guides for better discoverability.
+
+### Updated
+
+- **Major restructure** of the [Add-on UI SDK Constants Reference](./addonsdk/addonsdk-constants.md).
+- Improved content and metadata for SEO and AI assistant optimization.
+
 ## 2025-10-02
 
 ### Added
@@ -89,7 +105,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 - [Page Metadata how-to guide](../guides/learn/how_to/page_metadata.md) with documentation and examples for the new experimental `getSelectedPageIds()` method, including usage patterns for getting metadata of only selected pages.
 - [Create Renditions how-to guide](../guides/learn/how_to/create_renditions.md) with comprehensive PPTX export support documentation, including developer guidance about font differences and content limitations when exporting to PowerPoint format.
-- [Add-on Context guide](../guides/learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
+- [Iframe Context guide](../guides/learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
 - [FAQ](../guides/support/faq.md) with a new comprehensive entry about available add-on permissions and their configuration, plus updated supported file formats for imported content organized by category (Image, Design, Video, Audio).
 
 ## 2025-07-27

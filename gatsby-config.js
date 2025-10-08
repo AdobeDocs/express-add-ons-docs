@@ -552,6 +552,10 @@ module.exports = {
             path: "guides/getting_started/hello-world.md",
           },
           {
+            title: "(NEW) Project Anatomy",
+            path: "guides/getting_started/addon-project-anatomy.md",
+          },
+          {
             title: "Code Playground",
             path: "guides/getting_started/code_playground.md",
           },
@@ -639,7 +643,7 @@ module.exports = {
                 path: "guides/learn/how_to/manage_pages.md",
                 pages: [
                   {
-                    title: "Manage Pages",
+                    title: "(NEW) Manage Pages",
                     path: "guides/learn/how_to/manage_pages.md",
                   },
                 ],
@@ -685,7 +689,7 @@ module.exports = {
                     path: "guides/learn/how_to/resize_rescale_elements.md",
                   },
                   {
-                    title: "Handle Element Selection",
+                    title: "(NEW) Handle Element Selection",
                     path: "guides/learn/how_to/handle_selection.md",
                   },
                   {
@@ -781,13 +785,35 @@ module.exports = {
             path: "guides/learn/platform_concepts/context.md",
             pages: [
               {
+                title: "(NEW) Add-on Architecture",
+                path: "guides/learn/platform_concepts/runtime-architecture.md",
+              },
+              {
                 title: "Add-on Iframe Context",
                 path: "guides/learn/platform_concepts/context.md",
-              },
+              },              
               {
                 title: "The Document API",
                 path: "guides/learn/platform_concepts/document-api.md",
               },
+            ],
+          },
+          {
+            title: "(NEW) SDK Fundamentals",
+            path: "guides/learn/fundamentals/ui-sdk-constants.md",
+            pages: [
+              {
+                title: "Terminology",
+                path: "guides/learn/fundamentals/terminology.md",
+              },
+              {
+                title: "Add-on UI SDK Constants",
+                path: "guides/learn/fundamentals/ui-sdk-constants.md",
+              },
+              {
+                title: "Document Sandbox Constants",
+                path: "guides/learn/fundamentals/document-sandbox-constants.md",
+              }              
             ],
           },
           {
