@@ -55,16 +55,16 @@ This reference clarifies the naming conventions and terminology used throughout 
 
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
-**Need a quick answer?** Jump to these common questions:
+  **Need a quick answer?** Jump to these common questions:
 
-- **Building UI?** → [Add-on UI SDK](#add-on-ui-sdk) (iframe environment)
-- **Creating content?** → [Document APIs](#document-apis) (document sandbox)
-- **Connecting UI to content?** → [Communication APIs](#communication--apis)
-- **File organization?** → [File Structure & Bundle](#file-structure--bundle-terminology)
-- **Manifest setup?** → [Manifest & Configuration](#manifest--configuration-terminology)
-- **Debugging issues?** → [Development Workflow & Debugging](#development-workflow--debugging-terminology)
-- **Import errors?** → [Troubleshooting](#troubleshooting-common-issues)
-- **Which SDK when?** → [Decision Matrix](#decision-matrix-which-sdk-to-use)
+  - **Building UI?** → [Add-on UI SDK](#add-on-ui-sdk) (iframe environment)
+  - **Creating content?** → [Document APIs](#document-apis) (document sandbox)
+  - **Connecting UI to content?** → [Communication APIs](#communication--apis)
+  - **File organization?** → [File Structure & Bundle](#file-structure--bundle-terminology)
+  - **Manifest setup?** → [Manifest & Configuration](#manifest--configuration-terminology)
+  - **Debugging issues?** → [Development Workflow & Debugging](#development-workflow--debugging-terminology)
+  - **Import errors?** → [Troubleshooting](#troubleshooting-common-issues)
+  - **Which SDK when?** → [Decision Matrix](#decision-matrix-which-sdk-to-use)
 
 </InlineNestedAlert>
 
@@ -118,7 +118,7 @@ import { editor } from "express-document-sdk"
 
 <InlineAlert slots="text" variant="info"/>
 
-For a comprehensive visual guide to the two-runtime architecture, communication patterns, and practical examples, see the **[Runtime Architecture & Communication Guide](../platform_concepts/runtime-architecture.md)** which includes detailed diagrams showing how these environments interact.
+For a comprehensive visual guide to the two-runtime architecture, communication patterns, and practical examples, see the **[Add-on Architecture Guide](../platform_concepts/runtime-architecture.md)** which includes detailed diagrams showing how these environments interact.
 
 ## Communication & APIs
 

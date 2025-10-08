@@ -150,7 +150,7 @@ const confirmDialog = addOnUISdk.constants.Variant.confirmation;
 
 This section provides the complete technical specification for all Add-on UI SDK constants, organized by functional category. For practical examples and usage patterns, see the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md).
 
-### BitRate {#bitrate}
+### BitRate
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -168,7 +168,7 @@ Bit rate values in bits per second for video renditions.
 | `mbps25` | 25 Mbps | `25000000` |
 | `mbps50` | 50 Mbps | `50000000` |
 
-### BleedUnit {#bleedunit}
+### BleedUnit
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -181,7 +181,7 @@ Units for page bleed measurements.
 | `in` | Inch units |
 | `mm` | Millimeter units |
 
-### ButtonType {#buttontype}
+### ButtonType
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -196,7 +196,7 @@ Types of buttons that can be pressed in modal dialogs.
 | `cancel` | Cancel button pressed |
 | `close` | Dialog closed via ESC or close(X) button |
 
-### AppEvent {#appevent}
+### AppEvent
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -219,7 +219,7 @@ Events dispatched by the Add-on SDK.
 | `documentTitleChange` | `"documentTitleChange"` | Document title changed |
 | `documentExportAllowedChange` | `"documentExportAllowedChange"` | Export permission changed |
 
-### AuthorizationStatus {#authorizationstatus}
+### AuthorizationStatus
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -233,7 +233,7 @@ OAuth authorization status values.
 | `cancelled` | Authorization cancelled by user |
 | `error` | Authorization error occurred |
 
-### ColorPickerEvent {#colorpickerevent}
+### ColorPickerEvent
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -246,7 +246,7 @@ Custom events dispatched by the Color Picker component.
 | `colorChange` | `"colorpicker-color-change"` | Color selection changed |
 | `close` | `"colorpicker-close"` | Color picker closed |
 
-### ColorPickerPlacement {#colorpickerplacement}
+### ColorPickerPlacement
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -261,7 +261,7 @@ Placement options for the color picker popover relative to anchor element.
 | `left` | Position to the left of anchor |
 | `right` | Position to the right of anchor |
 
-### DeviceClass {#deviceclass}
+### DeviceClass
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -275,7 +275,7 @@ Device form factors where the add-on is running.
 | `tablet` | Tablet device |
 | `desktop` | Desktop computer |
 
-### DialogResultType {#dialogresulttype}
+### DialogResultType
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -289,7 +289,7 @@ Types of modal dialog results.
 | `input` | Input dialog result |
 | `custom` | Custom dialog result |
 
-### EditorPanel {#editorpanel}
+### EditorPanel
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -309,7 +309,7 @@ Adobe Express Editor panels that can be opened programmatically.
 | `brands` | Editor Brands panel |
 | `addOns` | Editor Add-ons panel |
 
-### ElementsTabs {#elementstabs}
+### ElementsTabs
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -325,7 +325,7 @@ Tabs within the Editor's Elements panel.
 | `stockIcons` | Icons tab |
 | `charts` | Charts tab |
 
-### EntrypointType {#entrypointtype}
+### EntrypointType
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -337,7 +337,7 @@ Types of add-on entry points (currently only panel is supported).
 |-------|-------------|
 | `panel` | Panel entry point |
 
-### FieldType {#fieldtype}
+### FieldType
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -349,7 +349,7 @@ Input field types supported in Simple Dialog.
 |-------|-------------|
 | `text` | Text input field |
 
-### FileSizeLimitUnit {#filesizelimitunit}
+### FileSizeLimitUnit
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -362,7 +362,7 @@ Units for file size limits.
 | `KB` | Kilobytes |
 | `MB` | Megabytes |
 
-### FrameRate {#framerate}
+### FrameRate
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -379,7 +379,7 @@ Frame rate values in frames per second for video renditions.
 | `fps30` | 30 fps | `30` |
 | `fps60` | 60 fps | `60` |
 
-### LinkOptions {#linkoptions}
+### LinkOptions
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -392,7 +392,7 @@ Types of document links that can be generated.
 | `document` | Link to the current document |
 | `published` | Link to the published document |
 
-### MediaTabs {#mediatabs}
+### MediaTabs
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -406,7 +406,7 @@ Tabs within the Editor's Media panel.
 | `audio` | Audio tab |
 | `photos` | Photos tab |
 
-### PanelActionType {#panelactiontype}
+### PanelActionType
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -419,7 +419,7 @@ Types of actions that can be performed on Editor panels.
 | `search` | Perform search within the Editor panel |
 | `navigate` | Perform navigation within the Editor panel |
 
-### PlatformEnvironment {#platformenvironment}
+### PlatformEnvironment
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -432,7 +432,7 @@ Environment where the add-on is running.
 | `app` | Native app environment |
 | `web` | Web browser environment |
 
-### PlatformType {#platformtype}
+### PlatformType
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -453,7 +453,7 @@ Specific platform/operating system where the add-on is running.
 | `safariBrowser` | Safari browser |
 | `unknown` | Unknown platform |
 
-### Range {#range}
+### Range
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -467,7 +467,7 @@ Page range options for document renditions.
 | `entireDocument` | Generate rendition for all pages |
 | `specificPages` | Generate rendition for specific pages |
 
-### RenditionFormat {#renditionformat}
+### RenditionFormat
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -483,7 +483,7 @@ Output formats for document renditions.
 | `pdf` | `"application/pdf"` | PDF document |
 | `pptx` | `"application/vnd.openxmlformats-officedocument.presentationml.presentation"` | PowerPoint presentation |
 
-### RenditionIntent {#renditionintent}
+### RenditionIntent
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -497,7 +497,7 @@ Intent for creating renditions (affects optimization).
 | `export` | Intent to export/download the content (default) |
 | `print` | Intent to export and print the content (PDF optimized, not supported for MP4) |
 
-### RenditionType {#renditiontype}
+### RenditionType
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -509,7 +509,7 @@ Type of rendition being created.
 |-------|-------------|
 | `page` | Page rendition (currently the only type) |
 
-### RuntimeType {#runtimetype}
+### RuntimeType
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -523,7 +523,7 @@ Runtime type of the entrypoint creating the backend object.
 | `script` | Add-on's document sandbox code (code running in `code.js`) |
 | `dialog` | Currently open dialog code |
 
-### SupportedMimeTypes {#supportedmimetypes}
+### SupportedMimeTypes
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -536,7 +536,7 @@ MIME types for original source assets that can be converted to PDF.
 | `docx` | Microsoft Word document |
 | `gdoc` | Google Docs document |
 
-### Variant {#variant}
+### Variant
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -554,7 +554,7 @@ Dialog variants that determine appearance and behavior.
 | `input` | Ask user to provide input |
 | `custom` | Dialog that can render complex forms and content |
 
-### VideoResolution {#videoresolution}
+### VideoResolution
 
 <InlineAlert slots="text" variant="info"/>
 

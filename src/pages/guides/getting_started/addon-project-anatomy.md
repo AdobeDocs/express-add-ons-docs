@@ -902,7 +902,7 @@ import { editor } from "express-document-sdk"; // Wrong environment!
 
 ## Related Documentation
 
-- [Runtime Architecture Guide](../learn/platform_concepts/runtime-architecture.md) - Deep dive into two-runtime system
+- [Architecture Guide](../learn/platform_concepts/runtime-architecture.md) - Deep dive into two-runtime system
 - [Developer Terminology](../learn/fundamentals/terminology.md) - Understanding Adobe Express add-on concepts
 - [Getting Started Tutorial](../learn/how_to/tutorials/grids-addon.md) - Build your first add-on
 - [Manifest Reference](../../references/manifest/index.md) - Complete manifest configuration guide

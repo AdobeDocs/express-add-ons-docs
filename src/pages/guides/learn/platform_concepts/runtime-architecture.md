@@ -55,7 +55,7 @@ keywords:
   - Import Patterns
   - SDK Imports
   - Development Workflow
-title: Runtime Architecture & Communication
+title: Add-on Architecture
 description: A comprehensive deep-dive guide to Adobe Express add-on architecture, explaining the two-runtime system, communication patterns, SDK imports, debugging techniques, and best practices for building secure and performant add-ons.
 contributors:
   - https://github.com/hollyschinsky
@@ -303,13 +303,13 @@ runtime.exposeApi({
 
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
-**Do I need `addOnSandboxSdk`?**
+  **Do I need `addOnSandboxSdk`?**
 
   - ✅ YES if your `code.js` needs to communicate with the UI
   - ✅ YES if UI triggers document operations
   - ❌ NO if `code.js` runs independently
 
-**Do I need `express-document-sdk`?**
+  **Do I need `express-document-sdk`?**
 
   - ✅ YES if creating/modifying document content
   - ✅ YES if accessing document properties
