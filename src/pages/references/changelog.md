@@ -64,10 +64,6 @@ contributors:
 - [`OrderedListNumbering`](../references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md) enumeration **promoted from experimental to stable** - Numbering types for ordered lists
 - [`ParagraphListType`](../references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md) enumeration **promoted from experimental to stable** - List type enumeration with `none` value added
 
-### Removed
-
-- `BitmapImage` documentation link - File no longer exists in the documentation structure
-
 ## 2025-10-02
 
 ### Added
@@ -110,7 +106,7 @@ The following how-to guides have been updated with `ImportAddOnData` support for
 **IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
 
 - Updated [`maskShape`](../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to readonly.
-- The `BitmapImage` has been converted from an interface to a class.
+- The [`BitmapImage`](../../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
 
 ## 2025-09-01
 
