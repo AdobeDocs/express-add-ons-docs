@@ -154,7 +154,7 @@ This section provides the complete technical specification for all Add-on UI SDK
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { BitRate }` or `addOnUISdk.constants.BitRate` ✅ **Dual Access**
+**Import**: `import { BitRate }` or `addOnUISdk.constants.BitRate`
 
 Bit rate values in bits per second for video renditions.
 
@@ -172,7 +172,7 @@ Bit rate values in bits per second for video renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { BleedUnit }` or `addOnUISdk.constants.BleedUnit` ✅ **Dual Access**
+**Import**: `import { BleedUnit }` or `addOnUISdk.constants.BleedUnit`
 
 Units for page bleed measurements.
 
@@ -185,7 +185,7 @@ Units for page bleed measurements.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { ButtonType }` or `addOnUISdk.constants.ButtonType` ✅ **Dual Access**
+**Import**: `import { ButtonType }` or `addOnUISdk.constants.ButtonType`
 
 Types of buttons that can be pressed in modal dialogs.
 
@@ -200,7 +200,7 @@ Types of buttons that can be pressed in modal dialogs.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**Import**: `import { AppEvent }` ⚠️ **Named Export Only** - Not available in constants object
+**Import**: `import { AppEvent }` - Not available in constants object
 
 Events dispatched by the Add-on SDK.
 
@@ -223,7 +223,7 @@ Events dispatched by the Add-on SDK.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { AuthorizationStatus }` or `addOnUISdk.constants.AuthorizationStatus` ✅ **Dual Access**
+**Import**: `import { AuthorizationStatus }` or `addOnUISdk.constants.AuthorizationStatus`
 
 OAuth authorization status values.
 
@@ -237,7 +237,7 @@ OAuth authorization status values.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**Import**: `import { ColorPickerEvent }` ⚠️ **Named Export Only** - Not available in constants object
+**Import**: `import { ColorPickerEvent }` - Not available in constants object
 
 Custom events dispatched by the Color Picker component.
 
@@ -250,7 +250,7 @@ Custom events dispatched by the Color Picker component.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { ColorPickerPlacement }` or `addOnUISdk.constants.ColorPickerPlacement` ✅ **Dual Access**
+**Import**: `import { ColorPickerPlacement }` or `addOnUISdk.constants.ColorPickerPlacement`
 
 Placement options for the color picker popover relative to anchor element.
 
@@ -265,7 +265,7 @@ Placement options for the color picker popover relative to anchor element.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { DeviceClass }` or `addOnUISdk.constants.DeviceClass` ✅ **Dual Access**
+**Import**: `import { DeviceClass }` or `addOnUISdk.constants.DeviceClass`
 
 Device form factors where the add-on is running.
 
@@ -279,7 +279,7 @@ Device form factors where the add-on is running.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { DialogResultType }` or `addOnUISdk.constants.DialogResultType` ✅ **Dual Access**
+**Import**: `import { DialogResultType }` or `addOnUISdk.constants.DialogResultType`
 
 Types of modal dialog results.
 
@@ -293,7 +293,7 @@ Types of modal dialog results.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { EditorPanel }` or `addOnUISdk.constants.EditorPanel` ✅ **Dual Access**
+**Import**: `import { EditorPanel }` or `addOnUISdk.constants.EditorPanel`
 
 Adobe Express Editor panels that can be opened programmatically.
 
@@ -313,7 +313,7 @@ Adobe Express Editor panels that can be opened programmatically.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { ElementsTabs }` or `addOnUISdk.constants.ElementsTabs` ✅ **Dual Access**
+**Import**: `import { ElementsTabs }` or `addOnUISdk.constants.ElementsTabs`
 
 Tabs within the Editor's Elements panel.
 
@@ -329,7 +329,7 @@ Tabs within the Editor's Elements panel.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**Import**: `import { EntrypointType }` ⚠️ **Named Export Only** - Not available in constants object
+**Import**: `import { EntrypointType }` - Not available in constants object
 
 Types of add-on entry points (currently only panel is supported).
 
@@ -341,7 +341,7 @@ Types of add-on entry points (currently only panel is supported).
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { FieldType }` or `addOnUISdk.constants.FieldType` ✅ **Dual Access**
+**Import**: `import { FieldType }` or `addOnUISdk.constants.FieldType`
 
 Input field types supported in Simple Dialog.
 
@@ -353,7 +353,7 @@ Input field types supported in Simple Dialog.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { FileSizeLimitUnit }` or `addOnUISdk.constants.FileSizeLimitUnit` ✅ **Dual Access**
+**Import**: `import { FileSizeLimitUnit }` or `addOnUISdk.constants.FileSizeLimitUnit`
 
 Units for file size limits.
 
@@ -366,7 +366,7 @@ Units for file size limits.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { FrameRate }` or `addOnUISdk.constants.FrameRate` ✅ **Dual Access**
+**Import**: `import { FrameRate }` or `addOnUISdk.constants.FrameRate`
 
 Frame rate values in frames per second for video renditions.
 
@@ -383,7 +383,7 @@ Frame rate values in frames per second for video renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { LinkOptions }` or `addOnUISdk.constants.LinkOptions` ✅ **Dual Access**
+**Import**: `import { LinkOptions }` or `addOnUISdk.constants.LinkOptions`
 
 Types of document links that can be generated.
 
@@ -396,7 +396,7 @@ Types of document links that can be generated.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { MediaTabs }` or `addOnUISdk.constants.MediaTabs` ✅ **Dual Access**
+**Import**: `import { MediaTabs }` or `addOnUISdk.constants.MediaTabs`
 
 Tabs within the Editor's Media panel.
 
@@ -410,7 +410,7 @@ Tabs within the Editor's Media panel.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { PanelActionType }` or `addOnUISdk.constants.PanelActionType` ✅ **Dual Access**
+**Import**: `import { PanelActionType }` or `addOnUISdk.constants.PanelActionType`
 
 Types of actions that can be performed on Editor panels.
 
@@ -423,7 +423,7 @@ Types of actions that can be performed on Editor panels.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { PlatformEnvironment }` or `addOnUISdk.constants.PlatformEnvironment` ✅ **Dual Access**
+**Import**: `import { PlatformEnvironment }` or `addOnUISdk.constants.PlatformEnvironment`
 
 Environment where the add-on is running.
 
@@ -436,7 +436,7 @@ Environment where the add-on is running.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { PlatformType }` or `addOnUISdk.constants.PlatformType` ✅ **Dual Access**
+**Import**: `import { PlatformType }` or `addOnUISdk.constants.PlatformType`
 
 Specific platform/operating system where the add-on is running.
 
@@ -457,7 +457,7 @@ Specific platform/operating system where the add-on is running.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { Range }` or `addOnUISdk.constants.Range` ✅ **Dual Access**
+**Import**: `import { Range }` or `addOnUISdk.constants.Range`
 
 Page range options for document renditions.
 
@@ -471,7 +471,7 @@ Page range options for document renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RenditionFormat }` or `addOnUISdk.constants.RenditionFormat` ✅ **Dual Access**
+**Import**: `import { RenditionFormat }` or `addOnUISdk.constants.RenditionFormat`
 
 Output formats for document renditions.
 
@@ -487,7 +487,7 @@ Output formats for document renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RenditionIntent }` or `addOnUISdk.constants.RenditionIntent` ✅ **Dual Access**
+**Import**: `import { RenditionIntent }` or `addOnUISdk.constants.RenditionIntent`
 
 Intent for creating renditions (affects optimization).
 
@@ -501,7 +501,7 @@ Intent for creating renditions (affects optimization).
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RenditionType }` or `addOnUISdk.constants.RenditionType` ✅ **Dual Access**
+**Import**: `import { RenditionType }` or `addOnUISdk.constants.RenditionType`
 
 Type of rendition being created.
 
@@ -513,7 +513,7 @@ Type of rendition being created.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RuntimeType }` or `addOnUISdk.constants.RuntimeType` ✅ **Dual Access**
+**Import**: `import { RuntimeType }` or `addOnUISdk.constants.RuntimeType`
 
 Runtime type of the entrypoint creating the backend object.
 
@@ -527,7 +527,7 @@ Runtime type of the entrypoint creating the backend object.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**Import**: `import { SupportedMimeTypes }` ⚠️ **Named Export Only** - Not available in constants object
+**Import**: `import { SupportedMimeTypes }` - Not available in constants object
 
 MIME types for original source assets that can be converted to PDF.
 
@@ -540,7 +540,7 @@ MIME types for original source assets that can be converted to PDF.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { Variant }` or `addOnUISdk.constants.Variant` ✅ **Dual Access**
+**Import**: `import { Variant }` or `addOnUISdk.constants.Variant`
 
 Dialog variants that determine appearance and behavior.
 
@@ -558,7 +558,7 @@ Dialog variants that determine appearance and behavior.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { VideoResolution }` or `addOnUISdk.constants.VideoResolution` ✅ **Dual Access**
+**Import**: `import { VideoResolution }` or `addOnUISdk.constants.VideoResolution`
 
 Video resolution options for MP4 renditions.
 

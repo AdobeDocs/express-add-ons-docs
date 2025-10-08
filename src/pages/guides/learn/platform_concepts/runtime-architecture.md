@@ -303,17 +303,17 @@ runtime.exposeApi({
 
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
-  **Do I need `addOnSandboxSdk`?**
+**Do I need `addOnSandboxSdk`?**
 
-   - ✅ YES if your `code.js` needs to communicate with the UI
-   - ✅ YES if UI triggers document operations
-   - ❌ NO if `code.js` runs independently
+  - ✅ YES if your `code.js` needs to communicate with the UI
+  - ✅ YES if UI triggers document operations
+  - ❌ NO if `code.js` runs independently
 
-  **Do I need `express-document-sdk`?**
+**Do I need `express-document-sdk`?**
 
-   - ✅ YES if creating/modifying document content
-   - ✅ YES if accessing document properties
-   - ❌ NO if only processing data or communicating
+  - ✅ YES if creating/modifying document content
+  - ✅ YES if accessing document properties
+  - ❌ NO if only processing data or communicating
 
 </InlineNestedAlert>
 
@@ -533,7 +533,7 @@ const endTime = performance.now();
 console.log(`Operation took ${endTime - startTime} milliseconds`);
 ```
 
-### Quick Reference: All SDK Imports
+<!-- ### Quick Reference: All SDK Imports
 
 | Feature | UI Runtime | Document Sandbox Runtime| Document APIs |
 |---------|------------|------------------|-----------------|
@@ -551,7 +551,7 @@ console.log(`Operation took ${endTime - startTime} milliseconds`);
 | **Browser APIs** | ✅ All browser APIs | ❌ Limited (console, Blob) | ❌ Limited (console, Blob) |
 | **Platform Detection** | ✅ `app.getCurrentPlatform()` | ❌ No direct access | ❌ No direct access |
 | **Client Storage** | ✅ `instance.clientStorage` | ❌ No direct access | ❌ No direct access |
-| **Constants** | ✅ `constants.*` | ❌ No constants | ✅ Document constants |
+| **Constants** | ✅ `constants.*` | ❌ No constants | ✅ Document constants | -->
 
 ### Manifest Configuration
 

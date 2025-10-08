@@ -97,7 +97,7 @@ module.exports = {
             ],
           },
           {
-            title: "*constants",
+            title: "constants",
             path: "references/addonsdk/addonsdk-constants.md",
           },
         ],
@@ -552,7 +552,7 @@ module.exports = {
             path: "guides/getting_started/hello-world.md",
           },
           {
-            title: "*Project Anatomy",
+            title: "(NEW) Project Anatomy",
             path: "guides/getting_started/addon-project-anatomy.md",
           },
           {
@@ -689,7 +689,7 @@ module.exports = {
                     path: "guides/learn/how_to/resize_rescale_elements.md",
                   },
                   {
-                    title: "*Handle Element Selection",
+                    title: "(NEW)Handle Element Selection",
                     path: "guides/learn/how_to/handle_selection.md",
                   },
                   {
@@ -711,7 +711,7 @@ module.exports = {
                     path: "guides/learn/how_to/page_metadata.md",
                   },
                   {
-                    title: "*Element",
+                    title: "Element",
                     path: "guides/learn/how_to/element_metadata.md",
                   },
                 ],
@@ -785,7 +785,7 @@ module.exports = {
             path: "guides/learn/platform_concepts/context.md",
             pages: [
               {
-                title: "*Add-on Architecture",
+                title: "(NEW)Add-on Architecture",
                 path: "guides/learn/platform_concepts/runtime-architecture.md",
               },
               {
@@ -799,19 +799,19 @@ module.exports = {
             ],
           },
           {
-            title: "SDK Fundamentals",
+            title: "(NEW) SDK Fundamentals",
             path: "guides/learn/fundamentals/ui-sdk-constants.md",
             pages: [
               {
-                title: "*Terminology",
+                title: "Terminology",
                 path: "guides/learn/fundamentals/terminology.md",
               },
               {
-                title: "*Add-on UI SDK Constants",
+                title: "Add-on UI SDK Constants",
                 path: "guides/learn/fundamentals/ui-sdk-constants.md",
               },
               {
-                title: "*Document Sandbox Constants",
+                title: "Document Sandbox Constants",
                 path: "guides/learn/fundamentals/document-sandbox-constants.md",
               }              
             ],
