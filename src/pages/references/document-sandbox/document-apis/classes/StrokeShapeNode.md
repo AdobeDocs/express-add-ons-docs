@@ -381,8 +381,6 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
-`Experimental`
-
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -407,8 +405,6 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
-
-`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -442,8 +438,6 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
-`Experimental`
-
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -476,8 +470,6 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
-
-`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 

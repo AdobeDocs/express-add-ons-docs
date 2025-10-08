@@ -71,6 +71,7 @@ The height of the node.
 All Artboards within a page share the same dimensions, so changing this value will also automatically adjust the
 size of every child [ArtboardNode](ArtboardNode.md).
 
+<InlineAlert slots="text" variant="info"/>
 Note: changing the page's size does not adjust the size or position of any of visual content inside any child
 [ArtboardNode](ArtboardNode.md). Callers should use their own layout logic to update the content for the new bounds as
 desired. For example, making the size smaller could result in content being clipped and hard to access if it is
@@ -159,6 +160,7 @@ The width of the node.
 All Artboards within a page share the same dimensions, so changing this value will also automatically adjust the
 size of every child [ArtboardNode](ArtboardNode.md).
 
+<InlineAlert slots="text" variant="info"/>
 Note: changing the page's size does not adjust the size or position of any of visual content inside any child
 [ArtboardNode](ArtboardNode.md). Callers should use their own layout logic to update the content for the new bounds as
 desired. For example, making the size smaller could result in content being clipped and hard to access if it is

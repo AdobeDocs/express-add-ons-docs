@@ -42,6 +42,8 @@ When *setting* character styles, any style properties that are not provided are 
 do not cover the full length of the text, the last range is extended to cover all the remaining text.
 When *getting* styles, all fields are always provided.
 
+<InlineAlert slots="text" variant="warning"/>
+
 Note: existing fonts used in the document, returned by this getter, are not guaranteed to be ones the current user
 has rights to edit with. The *setter* only accepts the AvailableFont type which has been verified to be usable.
 
@@ -95,7 +97,7 @@ entire paragraph.
 
 #### Throws
 
-if applying an ordered-list style when the text contains fonts that are unavailable to the current user.
+If applying an ordered-list style when the text contains fonts that are unavailable to the current user.
 
 #### Parameters
 
@@ -131,8 +133,6 @@ See [hasUnavailableFonts](TextContentModel.md#hasunavailablefonts).
 ## Methods
 
 ### appendText()
-
-`Experimental`
 
 • **appendText**(`newText`): `void`
 
@@ -226,13 +226,11 @@ If range is not specified, the styles will be applied to the entire text content
 
 #### Throws
 
-if applying an ordered-list style when the text contains fonts that are unavailable to the current user.
+If applying an ordered-list style when the text contains fonts that are unavailable to the current user.
 
 ---
 
 ### deleteText()
-
-`Experimental`
 
 • **deleteText**(`range`): `void`
 
@@ -264,8 +262,6 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 
 ### hasUnavailableFonts()
 
-`Experimental`
-
 • **hasUnavailableFonts**(): `boolean`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -288,8 +284,6 @@ the character styles to use only AvailableFonts.
 ---
 
 ### insertText()
-
-`Experimental`
 
 • **insertText**(`newText`, `index`, `style`?): `void`
 
@@ -329,8 +323,6 @@ if the existing text contains fonts unavailable to the current user. See [hasUna
 ---
 
 ### replaceText()
-
-`Experimental`
 
 • **replaceText**(`newText`, `replaceRange`, `style`?): `void`
 

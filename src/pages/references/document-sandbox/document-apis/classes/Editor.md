@@ -77,7 +77,7 @@ BitmapImage resource (e.g. returned from [loadBitmapImage](Editor.md#loadbitmapi
 
 Additional configuration:
 
--   initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
+-   `initialSize` - Size the image is displayed at. Must have the same aspect ratio as `bitmapData`. Defaults to the
     size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
     if needed to stay below an application-defined size cap).
 
@@ -116,6 +116,8 @@ a string representing any [SVG path element](https://developer.mozilla.org/en-US
 Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input.
 For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...".
 Throws if the input is empty or is not legal SVG path syntax.
+
+<InlineAlert slots="text" variant="info"/>
 
 Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position
 a newly created path using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting [Node.translation](Node.md#translation) directly.
@@ -175,6 +177,8 @@ the initial string to show.
 
 a text node with default styles. Creates auto-width text, so the node's width will automatically adjust
 to accommodate the given text content.
+
+<InlineAlert slots="text" variant="info"/>
 
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.

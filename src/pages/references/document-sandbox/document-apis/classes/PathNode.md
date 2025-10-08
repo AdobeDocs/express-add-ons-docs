@@ -7,6 +7,8 @@ yet, only read.
 
 To create new paths, see [Editor.createPath](Editor.md#createpath).
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position
 a path using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting its [Node.translation](Node.md#translation) directly.
 
@@ -437,8 +439,6 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
-`Experimental`
-
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -463,8 +463,6 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
-
-`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -498,8 +496,6 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
-`Experimental`
-
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -532,8 +528,6 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
-
-`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 

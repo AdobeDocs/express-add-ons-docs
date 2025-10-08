@@ -7,6 +7,8 @@ self-contained [StandaloneTextNode](StandaloneTextNode.md) or one of multiple [T
 APIs on TextNode and its [TextNodeContentModel](TextNodeContentModel.md) allow you to generically work with text without needing to know
 which subtype you are dealing with.
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: the visual top-left corner of text is not located at its local (0,0) origin point, so it's easiest to position
 text using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting its [Node.translation](Node.md#translation) directly.
 
@@ -83,6 +85,8 @@ even for an orphan node with no parent.
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
@@ -103,9 +107,11 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+<InlineAlert slots="text" variant="info"/>
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
+<InlineAlert slots="text" variant="info"/>
 Note: the visual top-left corner of this box is usually not (0,0). Always use `boundsLocal` or [topLeftLocal](TextNode.md#topleftlocal)
 instead of assuming (0,0).
 
@@ -121,6 +127,7 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
+<InlineAlert slots="text" variant="info"/>
 Note: The center of the orphaned TextNode may be different from the center of the node placed on a page. It is
 recommended to use this property only when the node is placed on a page.
 
@@ -134,6 +141,7 @@ The model containing the complete text string and its styles, only part of which
 this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
 fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
 
+<InlineAlert slots="text" variant="info"/>
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
 same single [TextNodeContentModel](TextNodeContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
 not. Use [TextNodeContentModel](TextNodeContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
@@ -329,9 +337,11 @@ boundsInParent.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
+<InlineAlert slots="text" variant="info"/>
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
+<InlineAlert slots="text" variant="info"/>
 Note: this value is usually not (0,0) due to the way text layout is defined.
 
 ---
@@ -425,6 +435,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+<InlineAlert slots="text" variant="info"/>
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this method only when the node is placed on a page.
 
@@ -523,8 +534,6 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
-`Experimental`
-
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -549,8 +558,6 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
-
-`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -584,8 +591,6 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
-`Experimental`
-
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -618,8 +623,6 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
-
-`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 

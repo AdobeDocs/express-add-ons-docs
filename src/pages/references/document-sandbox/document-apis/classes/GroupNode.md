@@ -96,6 +96,8 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+<InlineAlert slots="text" variant="warning"/>
+
 Note: If this group has a maskShape, group's bounds are always identical to the maskShape's, regardless of the
 group's other content.
 
@@ -419,8 +421,6 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
-`Experimental`
-
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -445,8 +445,6 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
-
-`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -480,8 +478,6 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
-`Experimental`
-
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -514,8 +510,6 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
-
-`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 

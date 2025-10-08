@@ -159,7 +159,10 @@ expectations before doing so.
 
 Get [AddOnData](AddOnData.md) reference for managing private metadata attached to the media resource displayed by this node.
 The same media resource may be reused in multiple places in the document, and all share the same AddOnData state.
-Note: This support is not present for PSD/AI assets. An error will be thrown in that case.
+
+<InlineAlert slots="text" variant="warning"/>
+
+Note: This support is not present for PSD (Photoshop Document) / AI (Adobe Illustrator) assets. An error will be thrown in that case.
 
 #### Returns
 
@@ -403,8 +406,6 @@ removal. No-op if node is already an orphan.
 
 ### rescaleProportionalToHeight()
 
-`Experimental`
-
 • **rescaleProportionalToHeight**(`height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -429,8 +430,6 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 ---
 
 ### rescaleProportionalToWidth()
-
-`Experimental`
 
 • **rescaleProportionalToWidth**(`width`): `void`
 
@@ -464,8 +463,6 @@ a separate, persistent scale factor multiplier).
 
 ### resizeToCover()
 
-`Experimental`
-
 • **resizeToCover**(`width`, `height`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
@@ -498,8 +495,6 @@ resizeToFitWithin
 ---
 
 ### resizeToFitWithin()
-
-`Experimental`
 
 • **resizeToFitWithin**(`width`, `height`): `void`
 
