@@ -7,6 +7,11 @@ yet, only read.
 
 To create new paths, see [Editor.createPath](Editor.md#createpath).
 
+<InlineAlert slots="text" variant="info"/>
+
+Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position
+a path using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting its [Node.translation](Node.md#translation) directly.
+
 ## Extends
 
 -   [`FillableNode`](FillableNode.md)
@@ -372,10 +377,6 @@ relative to one another (the target node need not be an ancestor of this node, n
 ### cloneInPlace()
 
 • **cloneInPlace**(): [`PathNode`](PathNode.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Creates a copy of this node and its entire subtree of descendants.
 

@@ -1,7 +1,3 @@
-**@express-document-sdk** • **Docs**
-
----
-
 # @express-document-sdk
 
 ## Namespaces
@@ -31,7 +27,6 @@
 -   [AvailableFont](classes/AvailableFont.md)
 -   [BaseFont](classes/BaseFont.md)
 -   [BaseNode](classes/BaseNode.md)
--   [BitmapImage](classes/BitmapImage.md)
 -   [ColorUtils](classes/ColorUtils.md)
 -   [ComplexShapeNode](classes/ComplexShapeNode.md)
 -   [Context](classes/Context.md)
@@ -99,6 +94,7 @@
 -   [Point](interfaces/Point.md)
 -   [Rect](interfaces/Rect.md)
 -   [RectangleGeometry](interfaces/RectangleGeometry.md)
+-   [RemoveListStyleInput](interfaces/RemoveListStyleInput.md)
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
 -   [StyleRange](interfaces/StyleRange.md)
@@ -111,6 +107,7 @@
 -   [EditorEventHandler](type-aliases/EditorEventHandler.md)
 -   [EventHandlerId](type-aliases/EventHandlerId.md)
 -   [Font](type-aliases/Font.md)
+-   [ListStyleInput](type-aliases/ListStyleInput.md)
 -   [OrderedListStyle](type-aliases/OrderedListStyle.md)
 -   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)
 -   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)

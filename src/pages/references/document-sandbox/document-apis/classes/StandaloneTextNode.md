@@ -2,10 +2,11 @@
 
 # Class: StandaloneTextNode
 
-A StandaloneTextNode represents a text display frame in the scenegraph. It displays an entire piece of text.
+A StandaloneTextNode represents text that is displayed *entirely* within one single frame in the scenegraph (in
+contrast to [ThreadedTextNode](ThreadedTextNode.md), where text may flow across several separate display "frames").
 The StandaloneTextNode does not directly hold the text content and styles – instead it refers to a [TextNodeContentModel](TextNodeContentModel.md).
 
-To create new a single-frame piece of text, see [Editor.createText](Editor.md#createtext).
+To create a new StandaloneTextNode, see [Editor.createText](Editor.md#createtext).
 
 ## Extends
 
@@ -75,6 +76,8 @@ even for an orphan node with no parent.
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
@@ -95,8 +98,15 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
+
+<InlineAlert slots="text" variant="info"/>
+
+Note: the visual top-left corner of this box is usually not (0,0). Always use `boundsLocal` or [topLeftLocal](TextNode.md#topleftlocal)
+instead of assuming (0,0).
 
 ---
 
@@ -110,6 +120,8 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: The center of the orphaned TextNode may be different from the center of the node placed on a page. It is
 recommended to use this property only when the node is placed on a page.
 
@@ -122,6 +134,8 @@ recommended to use this property only when the node is placed on a page.
 The model containing the complete text string and its styles, only part of which may be visible within the bounds of
 this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
 fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
+
+<InlineAlert slots="text" variant="info"/>
 
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
 same single [TextNodeContentModel](TextNodeContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
@@ -151,27 +165,16 @@ moved to a different part of the document.
 
 • `get` **layout**(): `Readonly`<[`AutoWidthTextLayout`](../interfaces/AutoWidthTextLayout.md) \| [`AutoHeightTextLayout`](../interfaces/AutoHeightTextLayout.md) \| [`UnsupportedTextLayout`](../interfaces/UnsupportedTextLayout.md)\>
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 • `set` **layout**(`layout`): `void`
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Sets the layout mode of the TextNode "frame."
-
-[AreaTextLayout](../interfaces/AreaTextLayout.md) is not supported by single-frame text.
+Sets the layout mode of this TextNode "frame" which the text content is displayed within.
+[AreaTextLayout](../interfaces/AreaTextLayout.md) is not supported by standalone text.
 
 #### Throws
 
-if changing text layout to/from [TextLayout.magicFit](../enumerations/TextLayout.md#magicfit) or [TextLayout.circular](../enumerations/TextLayout.md#circular) layout when the text contains font(s) unavailable to the current user.
-
-#### Throws
-
-if [StandaloneTextNode](StandaloneTextNode.md) is not a part of a multi-frame text content flow and the layout is [AreaTextLayout](../interfaces/AreaTextLayout.md).
+if changing text layout to/from [TextLayout.magicFit](../enumerations/TextLayout.md#magicfit) or [TextLayout.circular](../enumerations/TextLayout.md#circular)
+layout when the text contains fonts that are unavailable to the current user, because these layouts change
+capitalization and thus alter which glyphs are displayed.
 
 #### Parameters
 
@@ -344,8 +347,14 @@ boundsInParent.
 
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
+
+<InlineAlert slots="text" variant="info"/>
+
+Note: this value is usually not (0,0) due to the way text layout is defined.
 
 ---
 
@@ -438,6 +447,8 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this method only when the node is placed on a page.
 
@@ -450,10 +461,6 @@ page. It is recommended to use this method only when the node is placed on a pag
 ### cloneInPlace()
 
 • **cloneInPlace**(): [`StandaloneTextNode`](StandaloneTextNode.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Creates a copy of this node and its entire subtree of descendants.
 
