@@ -22,17 +22,13 @@
     "gatsby-sharp": "1.12.0"
   },
   "scripts": {
-    "start": "gatsby build && gatsby serve",
-    "start:prefix": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
-    "dev": "gatsby develop",
-    "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test:links": "remark src/pages --quiet --frail",
-    "test:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src",
-    "fix:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src --fix",
-    "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1"
+    "dev": "node ./dev.mjs",
+    "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
+    "buildRedirections": "npx --yes github:AdobeDocs/adp-devsite-utils buildRedirections -v",
+    "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
+    "normalizeLinks": "npx --yes github:AdobeDocs/adp-devsite-utils normalizeLinks -v",
+    "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v",
+    "lint": "npx --yes github:AdobeDocs/adp-devsite-utils runLint -v"
   },
   "remarkConfig": {
     "plugins": [

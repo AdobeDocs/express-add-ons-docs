@@ -1,6 +1,6 @@
 # addOnUISdk.app.oauth
 
-Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/learn/how_to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../guides/learn/samples.md) as well for more extensive examples of using this workflow.
+Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/learn/how-to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../guides/learn/samples.md) as well for more extensive examples of using this workflow.
 
 ## Methods
 
@@ -88,7 +88,7 @@ Each of the statuses returned below is the exact name as a string (ie: SUCCESS =
 | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------: |
 | SUCCESS       | `string` |                            Successful authorization this is the expected result for the [Authorize](#authorize) method) |
 | POPUP_OPENED  | `string` | The popup was opened (this is the expected result for the [AuthorizeWithOwnRedirect](#authorizewithownredirect) method) |
-| POPUP_BLOCKED | `string` |      The popup was blocked. (Add `allow-popups` permission to your [manifest.json](../manifest/) `sandbox` permissions) |
+| POPUP_BLOCKED | `string` |      The popup was blocked. (Add `allow-popups` permission to your [manifest.json](../manifest/index.md) `sandbox` permissions) |
 | POPUP_TIMEOUT | `string` |                                                                                                    The popup timed out. |
 | FAILED        | `string` |                                                                                       The authorization workflow failed |
 

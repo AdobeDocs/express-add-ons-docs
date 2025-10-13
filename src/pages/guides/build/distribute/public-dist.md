@@ -85,7 +85,7 @@ To distribute your add-on, you must create an add-on listing.
 If you have already performed the listing creation steps, e.g. to create a Private Link as outlined here, feel free to skip to
 [Step 3](#step-3-create-a-new-public-listing).
 
-Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
+Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting-started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 **1.** From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 
@@ -317,4 +317,4 @@ Below is an example of what the insights data might look like:
 
 By leveraging these insights, you can make informed decisions to improve your add-on's performance and user experience.
 
-Once your add-on is [reviewed](./review_process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).
+Once your add-on is [reviewed](./review-process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).

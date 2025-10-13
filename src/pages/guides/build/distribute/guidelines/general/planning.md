@@ -32,4 +32,4 @@ For example:
 
 ## Use of AI
 
-Does your add-on leverage AI to generate content or automate workflows? If so, be sure to check out the [Generative AI requirements](../genai/).
+Does your add-on leverage AI to generate content or automate workflows? If so, be sure to check out the [Generative AI requirements](../genai/index.md).

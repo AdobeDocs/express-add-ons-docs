@@ -130,7 +130,7 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
 ### How do I save the state of my add-on?
 
-The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](../../references/addonsdk/instance-clientStorage.md) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
+The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](../../references/addonsdk/instance-client-storage.md) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
 
 ### How do I use top level `await` while using webpack?
 
@@ -176,7 +176,7 @@ You can call `preventDefault` on the submit event to prevent the browser from tr
 
 ### How do I enable CORS for a service that blocks my add-on requests due to the origin?
 
-To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../learn/platform_concepts/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../learn/platform_concepts/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
+To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../learn/platform-concepts/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../learn/platform-concepts/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
 
 ### How do I prevent my iframe content from being blocked due to cross-origin issues?
 
@@ -291,7 +291,7 @@ Yes, however, there are [technical requirements](https://helpx.adobe.com/express
 
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
 
-This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../learn/platform_concepts/context.md#cors) for more details on handling CORS with your add-on.
+This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../learn/platform-concepts/context.md#cors) for more details on handling CORS with your add-on.
 
 ### What permissions are available for add-ons and how do I configure them?
 
@@ -323,7 +323,7 @@ Adobe Express add-ons support several types of permissions that you configure in
 }
 ```
 
-For complete details on all available permissions and their usage, see the [manifest permissions documentation](../../references/manifest/index.md#entrypointspermissions) and the [add-on context guide](../learn/platform_concepts/context.md#permissions).
+For complete details on all available permissions and their usage, see the [manifest permissions documentation](../../references/manifest/index.md#entrypointspermissions) and the [add-on context guide](../learn/platform-concepts/context.md#permissions).
 
 ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
 

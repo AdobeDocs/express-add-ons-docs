@@ -75,8 +75,8 @@ Due to changes in the testing and reviewing processes, some issues that used to 
 
 ### Relaxed UI Requirements
 
-Using the [Spectrum Design System](../design/implementation_guide.md#spectrum-design-system) is **no longer mandatory**, provided that the add-on's UI follows the best practices outlined in the [UX Guidelines](../design/ux_guidelines/introduction.md) and is well-crafted. Spectrum Web Components and the Spectrum Express theme are still the recommended options, as they reliably provide a native look and feel. Mind you, malfunctioning or poorly designed UIs will always be rejected regardless of the design system used.
+Using the [Spectrum Design System](../design/implementation-guide.md#spectrum-design-system) is **no longer mandatory**, provided that the add-on's UI follows the best practices outlined in the [UX Guidelines](../design/ux-guidelines/introduction.md) and is well-crafted. Spectrum Web Components and the Spectrum Express theme are still the recommended options, as they reliably provide a native look and feel. Mind you, malfunctioning or poorly designed UIs will always be rejected regardless of the design system used.
 
 ### COEP issues
 
-The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../../learn/platform_concepts/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.
+The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../../learn/platform-concepts/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.
