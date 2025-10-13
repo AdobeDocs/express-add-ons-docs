@@ -19,6 +19,16 @@ const PLAYGROUND_CLIENT_SECRET = process.env.PLAYGROUND_CLIENT_SECRET;
 const PLAYGROUND_AUTH_CODE = process.env.PLAYGROUND_AUTH_CODE;
 const PLAYGROUND_API_KEY = process.env.PLAYGROUND_API_KEY;
 
+console.log(
+  "PLAYGROUND_CLIENT_ID: ",
+  PLAYGROUND_CLIENT_ID,
+  "PLAYGROUND_CLIENT_SECRET: ",
+  PLAYGROUND_CLIENT_SECRET,
+  "PLAYGROUND_AUTH_CODE: ",
+  PLAYGROUND_AUTH_CODE,
+  "PLAYGROUND_API_KEY: ",
+  PLAYGROUND_API_KEY
+);
 // looks for code blocks with format: ```language{try id=explicitId}
 const CODE_BLOCK_REGEX =
   /```(\w+)\{try(?:\s+id=([a-zA-Z0-9_-]+))?\}\s*\n([\s\S]*?)\n```/g;

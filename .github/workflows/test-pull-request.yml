@@ -60,7 +60,7 @@ jobs:
       - name: Setup Node v16 for Yarn v3
         uses: actions/setup-node@v3
         with:
-          node-version: '16.15.0' # Current LTS version
+          node-version: "16.15.0" # Current LTS version
 
       - name: Enable Corepack for Yarn v3
         run: corepack enable
@@ -86,6 +86,12 @@ jobs:
         if: ${{ success() }}
         uses: borales/actions-yarn@v3
         with:
-          cmd: build
+          cmd: build:deploy
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
+          IMS_BASE_URL: "https://ims-na1-stg1.adobelogin.com"
+          FFC_BASE_URL: "https://ffc-addon-stage.adobe.io/"
+          PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID_STAGE }}
+          PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
+          PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE_STAGE }}
+          PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
