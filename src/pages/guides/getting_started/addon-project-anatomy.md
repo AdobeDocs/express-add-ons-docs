@@ -52,7 +52,7 @@ faq:
     - question: "Can I upgrade from a basic template to one with document sandbox later?"
       answer: 'Yes! Add "documentSandbox": "sandbox/code.js" to your manifest, create src/sandbox/ folder with code.js, move document operations from UI to sandbox, and set up communication between environments.'
 
-    - question: "Why does my add-on have TypeScript configs if I\'m using JavaScript?"
+    - question: "Why does my add-on have TypeScript configs if I'm using JavaScript?"
       answer: "TypeScript configs (tsconfig.json) provide IDE support and IntelliSense even in JavaScript projects. They enable autocomplete, inline documentation, and error catching without requiring TypeScript compilation."
 # LLM optimization metadata
 canonical: true
