@@ -201,17 +201,17 @@ While our monetization best practices are recommendations for your add-on, imple
 
 Use the plus gradient icon below to indicate when content or features require purchase:
 
-| Badge                                                             | Size(px) |                                                                                 Download link |
-| ----------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-plus-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-plus-badge20.svg" download="../img/addon-plus-badge20.svg">Download</a> |
+| Badge  | Size(px) | Download link |
+|--------|----------|--------------|
+| ![img](../img/addon-plus-badge20.svg) | 20x20 | [Download](https://drive.usercontent.google.com/u/0/uc?id=1m0TV9856MlkhWJoDYUk56Y0Ct6PUpzPN&export=download) |
 
 #### Paid badge
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
-| Badge                                                            | Size(px) |                                                                               Download link |
-| ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-pro-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-pro-badge20.svg" download="../img/addon-pro-badge20.svg">Download</a> |
+| Badge  | Size(px) | Download link |
+|--------|----------|-------------:|
+| ![](../img/addon-pro-badge20.svg) | 20x20 | [Download](https://drive.usercontent.google.com/u/0/uc?id=1gUuice1_EiYijMSKsCEjt1BlLesiI2z1&export=download) |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -225,9 +225,10 @@ The most common size of badges used within Express panels is typically 20x20px, 
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
 - If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.&lt;br/&gt;&lt;br/&gt;
 
-| Sample badge usage                             |                                                  |                                                |
-| ---------------------------------------------- | ------------------------------------------------ | ---------------------------------------------: |
-| <img src="../img/list-placement-example.png"/> | <img src="../img/avatar-placement-example.png"/> | <img src="../img/grid-placement-example.png"/> |
+ | Sample badge usage  |      |       |
+ |----------|------|-------------:|
+ | ![](../img/list-placement-example.png) | ![](../img/avatar-placement-example.png)  | ![](../img/grid-placement-example.png) |
+
 
 <InlineAlert slots="text" variant="success"/>
 

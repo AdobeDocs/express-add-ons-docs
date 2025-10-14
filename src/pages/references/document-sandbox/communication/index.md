@@ -149,29 +149,28 @@ Data type validation is performed for both the arguments and the return types th
 
 ### Supported data types
 
-| &lt;p&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/p&gt; | &lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt; |
-|---|---|
-| &lt;p&gt;&lt;strong&gt;Primitive types:&lt;/strong&gt; &lt;br/&gt; &nbsp;&nbsp;- string &lt;br/&gt;  &nbsp;&nbsp;- boolean &lt;br/&gt; &nbsp;&nbsp;- number &lt;br/&gt; &nbsp;&nbsp;- Undefined&lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;&lt;br/&gt;"hello"&lt;br/&gt;true&lt;br/&gt;1&lt;br/&gt;undefined&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Simple plain objects&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;&#123; data: "world" &#125;, &#123; value : true &#125;&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Arrays of primitive and plain objects&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;[1,2],["hello", true, &#123; data: null &#125;]&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;ArrayBuffer&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new ArrayBuffer(1024)&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Blob&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new Blob()&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Error&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new Error()&lt;/pre&gt;&lt;/p&gt; |
-
+| Type                                                      | Examples                                |
+| --------------------------------------------------------- | --------------------------------------- |
+| Primitive types: - string  , boolean , number , Undefined | "hello" , true , 1 , undefined          |
+| Simple plain objects                                      | `{ data: "world" }, { value : true }`   |
+| Arrays of primitive and plain objects                     | `[1,2],["hello", true, { data: null }]` |
+| ArrayBuffer                                               | `new ArrayBuffer(1024)`                 |
+| Blob                                                      | `new Blob()`                            |
+| Error                                                     | `new Error()`                           |
 Some data types are not supported and may result unintended behavior. To avoid this, the type of argument/return type in the communication layer is checked and an error is thrown if not supported.
 
 ### Unsupported data types
 
-| &lt;p&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/p&gt; | &lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt; |
-|---|---|
-| &lt;p&gt;&lt;strong&gt;Map&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new Map()&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Set&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new Set()&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;DataView() &lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new DataView(new ArrayBuffer(8))&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Boolean&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new Boolean()&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;String&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new String("hello")&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;RegExp&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new RegExp("pattern")&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Symbol&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;Symbol('symbol')&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new Date()&lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;UserDefinedClass&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;new UserDefinedClass() &lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Function&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;() => &#123;&#125; &lt;/pre&gt;&lt;/p&gt; |
-| &lt;p&gt;&lt;strong&gt;Circular objects&lt;/strong&gt; &lt;br/&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;const obj = &#123;&#125; obj.key = obj;&lt;/pre&gt;&lt;/p&gt; |
+| Type             | Examples                           |
+| ---------------- | ---------------------------------- |
+| Map              | `new Map()`                        |
+| Set              | `new Set()`                        |
+| DataView()       | `new DataView(new ArrayBuffer(8))` |
+| Boolean          | `new Boolean() `                   |
+| String           | `new String(“hello”) `             |
+| RegExp           | `new RegExp("pattern")`            |
+| Symbol           | `Symbol('symbol')`                 |
+| Date             | `new Date()`                       |
+| UserDefinedClass | `new UserDefinedClass()`           |
+| Function         | `() => {}`                         |
+| Circular objects | `const obj = {} obj.key = obj;`    |

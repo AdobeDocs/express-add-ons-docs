@@ -6,14 +6,13 @@ Provides access to the Adobe Express host application's objects and methods to p
 
 ## Objects
 
-| &lt;p&gt;&lt;strong&gt;Attribute&lt;/strong&gt;&lt;/p&gt; | &lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; | &lt;p&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/p&gt; | &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt; |
-|---|---|---|---|
-| &lt;p&gt;&lt;pre&gt;readonly&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;&lt;a href="app-currentUser.md"&gt;currentUser&lt;/a&gt;&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;object&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Represents the current user accessing the host application&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;&lt;a href="app-devFlags.md"&gt;devFlags&lt;/a&gt;&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;object&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Represents flags which can be used to simulate certain behavior during development.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;readonly&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;&lt;a href="app-document.md"&gt;document&lt;/a&gt;&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;object&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Represents the active document of the host application.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;readonly&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;&lt;a href="app-oauth.md"&gt;oauth&lt;/a&gt;&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;object&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;readonly&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;&lt;a href="app-ui.md"&gt;ui&lt;/a&gt;&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;&lt;pre&gt;object&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Represents the host UI (Adobe Express UI).&lt;/p&gt; |
-
+| Attribute  | Name                                  | Type     | Description                                                                                |
+| ---------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| `readonly` | [`currentUser`](./app-current-user.md) | `object` | Represents the current user accessing the host application                                 |
+|            | [`devFlags`](./app-dev-flags.md)       | `object` | Represents flags which can be used to simulate certain behavior during development.        |
+| `readonly` | [`document`](./app-document.md)       | `object` | Represents the active document of the host application.                                    |
+| `readonly` | [`oauth`](./app-oauth.md)             | `object` | Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
+| `readonly` | [`ui`](./app-ui.md)                 | `object` | Represents the host UI (Adobe Express UI).                                                 |
 ## Methods
 
 ### on()
@@ -454,14 +453,14 @@ See the [Drag & Drop use case implementation](../../guides/learn/how-to/drag-and
 
 The table below describes the events triggered from the add-on SDK. Use the `addOnUISdk.app.on()` method to subscribe to events, and the `addOnUISdk.app.off()` method to unsubscribe from them. See the [`on()`](#on) method reference for more details.
 
-| &lt;p&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/p&gt; | &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt; |
-|---|---|
-| &lt;p&gt;&lt;pre&gt;localechange&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Triggered when there is a locale change at the host side.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;themechange&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Triggered when there is a theme change at the host side.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;dragstart&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Triggered when the user starts dragging an item for which drag behavior is enabled.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;dragend&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Triggered when the drag operation ends.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;documentIdAvailable&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Triggered when the document id is available in the application.&lt;/p&gt; |
-| &lt;p&gt;&lt;pre&gt;documentTitleChange&lt;/pre&gt;&lt;/p&gt; | &lt;p&gt;Triggered when the document title is changed in the application.&lt;/p&gt; |
+| Type                | Description |                                                                                     |
+| ------------------- | ----------- | ----------------------------------------------------------------------------------- |
+| localechange        | string      | Triggered when there is a locale change at the host side.                           |
+| themechange         | string      | Triggered when there is a theme change at the host side.                            |
+| dragstart           | string      | Triggered when the user starts dragging an item for which drag behavior is enabled. |
+| dragend             | string      | Triggered when the drag operation ends.                                             |
+| documentIdAvailable | string      | Triggered when the document id is available in the application                      |
+| documentTitleChange | string      | Triggered when the document title is changed in the application.                    |
 
 ## Errors
 
