@@ -220,8 +220,8 @@
                 - [Monetization guidelines](guides/build/distribute/guidelines/monetization.md)
                 - [Generative AI guidelines](guides/build/distribute/guidelines/genai/index.md)
                     - [Overview](guides/build/distribute/guidelines/genai/index.md)
-                    - [Requirements](guides/build/distribute/guidelines/genai/requirements)
-                    - [Recommendations](guides/build/distribute/guidelines/genai/recommendations)
+                    - [Requirements](guides/build/distribute/guidelines/genai/requirements.md)
+                    - [Recommendations](guides/build/distribute/guidelines/genai/recommendations.md)
             - [Rejections](guides/build/distribute/rejections.md)
     - [Support](guides/support/faq.md) header
         - [FAQs](guides/support/faq.md)
