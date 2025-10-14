@@ -17,73 +17,73 @@ interacts with other siblings within the same container. See documentation below
 
 • **accumulate**: `18`
 
----
+<HorizontalLine />
 
 ### color
 
 • **color**: `16`
 
----
+<HorizontalLine />
 
 ### colorBurn
 
 • **colorBurn**: `5`
 
----
+<HorizontalLine />
 
 ### colorDodge
 
 • **colorDodge**: `8`
 
----
+<HorizontalLine />
 
 ### darken
 
 • **darken**: `4`
 
----
+<HorizontalLine />
 
 ### difference
 
 • **difference**: `12`
 
----
+<HorizontalLine />
 
 ### exclusion
 
 • **exclusion**: `13`
 
----
+<HorizontalLine />
 
 ### hardLight
 
 • **hardLight**: `11`
 
----
+<HorizontalLine />
 
 ### hue
 
 • **hue**: `14`
 
----
+<HorizontalLine />
 
 ### lighten
 
 • **lighten**: `6`
 
----
+<HorizontalLine />
 
 ### luminosity
 
 • **luminosity**: `17`
 
----
+<HorizontalLine />
 
 ### multiply
 
 • **multiply**: `3`
 
----
+<HorizontalLine />
 
 ### normal
 
@@ -93,13 +93,13 @@ The normal, default blend mode for leaf nodes.
 
 Note: Group nodes default to using `passThrough` blend mode instead. See below.
 
----
+<HorizontalLine />
 
 ### overlay
 
 • **overlay**: `9`
 
----
+<HorizontalLine />
 
 ### passThrough
 
@@ -114,19 +114,19 @@ below it using solely the container's own blend mode.
 
 Group nodes are set to `passThrough` by default.
 
----
+<HorizontalLine />
 
 ### saturation
 
 • **saturation**: `15`
 
----
+<HorizontalLine />
 
 ### screen
 
 • **screen**: `7`
 
----
+<HorizontalLine />
 
 ### softLight
 

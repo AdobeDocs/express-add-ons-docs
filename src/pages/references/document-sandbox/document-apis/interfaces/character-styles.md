@@ -25,7 +25,7 @@ Sets a superscript or subscript style.
 
 `BaseCharacterStyles.baselineShift`
 
----
+<HorizontalLine />
 
 ### color
 
@@ -37,13 +37,13 @@ Text color.
 
 `BaseCharacterStyles.color`
 
----
+<HorizontalLine />
 
 ### font
 
 • **font**: [`Font`](../type-aliases/font.md)
 
----
+<HorizontalLine />
 
 ### fontSize
 
@@ -55,7 +55,7 @@ Size of the text in points.
 
 `BaseCharacterStyles.fontSize`
 
----
+<HorizontalLine />
 
 ### letterSpacing
 
@@ -69,7 +69,7 @@ leaves spacing at its default.
 
 `BaseCharacterStyles.letterSpacing`
 
----
+<HorizontalLine />
 
 ### link?
 
@@ -84,7 +84,7 @@ To remove a link from existing text, explicitly specify `link: ""` in [TextConte
 
 `BaseCharacterStyles.link`
 
----
+<HorizontalLine />
 
 ### underline
 

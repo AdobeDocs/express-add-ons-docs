@@ -27,11 +27,11 @@ import '/src/styles.css'
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
-<div className="hero-image-container">
-  <img src="./getting_started/img/Explore_Image_3.png" alt="Adobe Express add-ons" />
-</div>
+&lt;div className="hero-image-container"&gt;
+  &lt;img src="./getting_started/img/Explore_Image_3.png" alt="Adobe Express add-ons" /&gt;
+&lt;/div&gt;
 
-<br/><br/>
+&lt;br/&gt;&lt;br/&gt;
 
 ## Welcome to Adobe Express Add-ons!
 
@@ -77,28 +77,28 @@ Share your add-on with the world in the Adobe Express Marketplace.
 
 [Launch now →](./getting-started/developer-journey.md#distribute)
 
-<!-- ## Adobe Fund for Design: Bring Your Ideas to Life! -->
+&lt;!-- ## Adobe Fund for Design: Bring Your Ideas to Life! --&gt;
 
-<br/><br/>
+&lt;br/&gt;&lt;br/&gt;
 
-<div style="display: flex; justify-content: center;">
-  <iframe width="779" height="438" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<br/><br/>
+&lt;div style="display: flex; justify-content: center;"&gt;
+  &lt;iframe width="779" height="438" src="https://www.youtube.com/embed/CHBiTTN1neE" title="Introduction to Adobe Express Add-ons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
 
 ## Get paid to build add-ons
 
 Have a creative idea for an Adobe Express add-on? Get **funding**, resources, and support through the [Adobe Fund for Design](https://developer.adobe.com/fund-for-design).
 
-<div style="display:flex; justify-content:center; margin-bottom: 20px; margin-top: 30px;">
-  <iframe width="315" height="560" style="border-radius: 10px;"
+&lt;div style="display:flex; justify-content:center; margin-bottom: 20px; margin-top: 30px;"&gt;
+  &lt;iframe width="315" height="560" style="border-radius: 10px;"
     src="https://www.youtube.com/embed/76hGc6mlSSA"
     title="YouTube Shorts"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
+    allowfullscreen&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
 
 We’re backing innovative solutions that unlock the most popular and [trending](https://developer.adobe.com/fund-for-design/#what-were-looking-for) use cases. [Apply now](https://developer.adobe.com/fund-for-design) and turn your vision into reality!
 
@@ -116,7 +116,7 @@ Continue by reading the [Developer Journey](./getting-started/developer-journey.
 
 <InlineAlert slots="text" />
 
-**Join Us: Office Hours for Adobe Express Developers** <br /><br />
+**Join Us: Office Hours for Adobe Express Developers** &lt;br /&gt;&lt;br /&gt;
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
 
-<br/><br/><br/><br/>
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;

@@ -37,11 +37,11 @@ import {
 } from "@adobe-ccwebext/ccweb-add-on-sdk-types";
 ```
 
-An example of how this works in Visual Studio Code is shown in this short clip below.<br/>
+An example of how this works in Visual Studio Code is shown in this short clip below.&lt;br/&gt;
 
-<div style="display: flex; justify-content: center;">
-<iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
-</div>
+&lt;div style="display: flex; justify-content: center;"&gt;
+&lt;iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
 <InlineAlert slots="text" variant="info"/>
 

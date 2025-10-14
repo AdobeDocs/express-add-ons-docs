@@ -4,37 +4,37 @@ Represents the currently running add-on instance. This object is used to provide
 
 ## Objects
 
-<table columnWidths="20,50,30" class="spectrum-Table spectrum-Table--sizeM" css="
+&lt;table columnWidths="20,50,30" class="spectrum-Table spectrum-Table--sizeM" css="
     background-color:lavender;
     tbody {
       background-color:white;
     }">
-<tr class="spectrum-Table-row">
-    <td><p><strong>Attribute</strong></p></td>
-    <td><p><strong>Object</strong></p></td>
-    <td><p><strong>Description</strong></p></td>
-</tr>
-<tbody>
-<tr class="spectrum-Table-row">
-    <td><p><pre>readonly</pre></p></td>
-    <td width="80%" style="font-size: 8px"><p><pre>addOnUiSdk.instance.clientStorage</pre></p></td>
-    <td>
-        <p>Reference to the client storage object of the add-on.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td><p><pre>readonly</pre></p></td>
-    <td ><p><pre>addOnUISdk.instance.manifest</pre></p></td>
-    <td>
-        <p>Add-ons manifest details. Maps to entries in the add-ons manifest file.</p>
-    </td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td><p><pre>readonly</pre></p></td>
-    <td><p><pre>addOnUISdk.instance.runtime</pre></p></td>
-    <td>
-        <p>Represents the current add-on runtime.</p>
-    </td>
-</tr>
-</tbody>
-</table>
+&lt;tr class="spectrum-Table-row">
+    &lt;td>&lt;p&gt;&lt;strong&gt;Attribute&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td>&lt;p&gt;&lt;strong&gt;Object&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tbody>
+&lt;tr class="spectrum-Table-row">
+    &lt;td>&lt;p&gt;&lt;pre&gt;readonly&lt;/pre&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td width="80%" style="font-size: 8px">&lt;p&gt;&lt;pre&gt;addOnUiSdk.instance.clientStorage&lt;/pre&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td>
+        &lt;p&gt;Reference to the client storage object of the add-on.&lt;/p&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="spectrum-Table-row">
+    &lt;td>&lt;p&gt;&lt;pre&gt;readonly&lt;/pre&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td >&lt;p&gt;&lt;pre&gt;addOnUISdk.instance.manifest&lt;/pre&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td>
+        &lt;p&gt;Add-ons manifest details. Maps to entries in the add-ons manifest file.&lt;/p&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="spectrum-Table-row">
+    &lt;td>&lt;p&gt;&lt;pre&gt;readonly&lt;/pre&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td>&lt;p&gt;&lt;pre&gt;addOnUISdk.instance.runtime&lt;/pre&gt;&lt;/p&gt;&lt;/td&gt;
+    &lt;td>
+        &lt;p&gt;Represents the current add-on runtime.&lt;/p&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;

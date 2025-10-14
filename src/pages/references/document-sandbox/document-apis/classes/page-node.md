@@ -28,7 +28,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
@@ -46,7 +46,7 @@ to guarantee all their children are full-fledged Node instances.
 
 `Readonly`<`Iterable`<[`BaseNode`](base-node.md), `any`, `any`\>\>
 
----
+<HorizontalLine />
 
 ### artboards
 
@@ -59,7 +59,7 @@ To create new artboards, see [ArtboardList.addArtboard](artboard-list.md#addartb
 
 [`ArtboardList`](artboard-list.md)
 
----
+<HorizontalLine />
 
 ### height
 
@@ -87,7 +87,7 @@ Must be at least MIN_PAGE_DIMENSION and no larger than MAX_PAGE_DIMENSION.
 
 `number`
 
----
+<HorizontalLine />
 
 ### id
 
@@ -100,7 +100,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### name
 
@@ -118,7 +118,7 @@ The page's name. Displayed as a user-editable label above the current artboard i
 
 `undefined` \| `string`
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -135,7 +135,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<HorizontalLine />
 
 ### type
 
@@ -147,7 +147,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### width
 
@@ -192,7 +192,7 @@ switches to display this artboard.
 
 the cloned page.
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 

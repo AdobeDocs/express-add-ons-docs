@@ -23,7 +23,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
@@ -40,7 +40,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 `Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
 
----
+<HorizontalLine />
 
 ### blendMode
 
@@ -59,11 +59,11 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 [`BlendMode`](../enumerations/blend-mode.md)
 
----
+<HorizontalLine />
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/rect.md)\>
+• `get` **boundsInParent**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -73,16 +73,16 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/rect.md)\>
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -93,27 +93,27 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Note: The center of the orphaned TextNode may be different from the center of the node placed on a page. It is
 recommended to use this property only when the node is placed on a page.
 
----
+<HorizontalLine />
 
 ### fullContent
 
@@ -132,7 +132,7 @@ encountered before.
 
 [`TextNodeContentModel`](text-node-content-model.md)
 
----
+<HorizontalLine />
 
 ### id
 
@@ -145,7 +145,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### layout
 
@@ -183,7 +183,7 @@ if [StandaloneTextNode](standalone-text-node.md) is not a part of a multi-frame 
 
 The layout mode of the TextNode "frame."
 
----
+<HorizontalLine />
 
 ### locked
 
@@ -204,7 +204,7 @@ expectations before doing so.
 
 `boolean`
 
----
+<HorizontalLine />
 
 ### nextTextNode
 
@@ -219,7 +219,7 @@ To get *all* TextNodes that the text content may be split across, use `TextNode.
 
 `undefined`
 
----
+<HorizontalLine />
 
 ### opacity
 
@@ -237,7 +237,7 @@ The node's opacity, from 0.0 to 1.0
 
 `number`
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -254,7 +254,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<HorizontalLine />
 
 ### rotation
 
@@ -267,7 +267,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<HorizontalLine />
 
 ### rotationInScreen
 
@@ -280,7 +280,7 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<HorizontalLine />
 
 ### text
 
@@ -312,7 +312,7 @@ WARNING: If a piece of text content flows across several TextNodes,
 
 `string`
 
----
+<HorizontalLine />
 
 ### textAlignment
 
@@ -330,11 +330,11 @@ The horizontal text alignment of the TextNode. Alignment is always the same acro
 
 [`TextAlignment`](../enumerations/text-alignment.md)
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -342,12 +342,12 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
----
+<HorizontalLine />
 
 ### transformMatrix
 
@@ -359,11 +359,11 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<HorizontalLine />
 
 ### translation
 
-• `get` **translation**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **translation**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -377,9 +377,9 @@ setting translation directly.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
----
+<HorizontalLine />
 
 ### type
 
@@ -391,7 +391,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### visualEffects
 
@@ -403,7 +403,7 @@ readonly [`VisualEffectType`](../enumerations/visual-effect-type.md)[]
 
 The list of visual effects applied to the TextNode.
 
----
+<HorizontalLine />
 
 ### visualRoot
 
@@ -424,7 +424,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/rect.md)\>
+• **boundsInNode**(`targetNode`): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](standalone-text-node.md#visualroot), but can lie anywhere within that subtree
@@ -436,7 +436,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this method only when the node is placed on a page.
@@ -445,7 +445,7 @@ page. It is recommended to use this method only when the node is placed on a pag
 
 [`TextNode`](text-node.md).[`boundsInNode`](text-node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
@@ -467,7 +467,7 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 [`TextNode`](text-node.md).[`cloneInPlace`](text-node.md#cloneinplace)
 
----
+<HorizontalLine />
 
 ### isStandaloneText()
 
@@ -483,7 +483,7 @@ Helper method to determine if the text is standalone.
 
 [`TextNode`](text-node.md).[`isStandaloneText`](text-node.md#isstandalonetext)
 
----
+<HorizontalLine />
 
 ### isThreadedText()
 
@@ -499,11 +499,11 @@ Helper method to determine if the text is in a flow.
 
 [`TextNode`](text-node.md).[`isThreadedText`](text-node.md#isthreadedtext)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](standalone-text-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -517,13 +517,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 #### Inherited from
 
 [`TextNode`](text-node.md).[`localPointInNode`](text-node.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 
@@ -544,7 +544,7 @@ removal. No-op if node is already an orphan.
 
 [`TextNode`](text-node.md).[`removeFromParent`](text-node.md#removefromparent)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToHeight()
 
@@ -569,7 +569,7 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](node.md#res
 
 [`TextNode`](text-node.md).[`rescaleProportionalToHeight`](text-node.md#rescaleproportionaltoheight)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToWidth()
 
@@ -601,7 +601,7 @@ a separate, persistent scale factor multiplier).
 
 [`TextNode`](text-node.md).[`rescaleProportionalToWidth`](text-node.md#rescaleproportionaltowidth)
 
----
+<HorizontalLine />
 
 ### resizeToCover()
 
@@ -634,7 +634,7 @@ documentation for additional explanation.
 
 resizeToFitWithin
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 
@@ -672,7 +672,7 @@ to fit the box better.
 
 resizeToCover
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 
@@ -710,7 +710,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<HorizontalLine />
 
 ### setRotationInParent()
 

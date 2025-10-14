@@ -573,4 +573,4 @@ The helper automatically converts React event props to native browser events tha
 
 **A:** Yes! swc-react components include TypeScript definitions. You can use them in `.tsx` files with full type safety. The component props and events are properly typed based on the underlying Spectrum Web Components.
 
-<!-- TODO replace with final and more details about customizing -->
+&lt;!-- TODO replace with final and more details about customizing --&gt;

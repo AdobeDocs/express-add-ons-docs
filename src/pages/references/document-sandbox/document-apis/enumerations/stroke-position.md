@@ -14,13 +14,13 @@ A stroke's Stroke.position determines how the thickness of the stroke is aligned
 
 • **center**: `0`
 
----
+<HorizontalLine />
 
 ### inside
 
 • **inside**: `1`
 
----
+<HorizontalLine />
 
 ### outside
 

@@ -29,7 +29,7 @@ A new color value matching the given hex string.
 
 if the hex string cannot be parsed.
 
----
+<HorizontalLine />
 
 ### fromRGB()
 
@@ -89,7 +89,7 @@ Partial color object. Alpha defaults to 1 (opaque).
 
 A new color object with all fields present.
 
----
+<HorizontalLine />
 
 ### toHex()
 

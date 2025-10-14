@@ -20,7 +20,7 @@ always have a default/fallback case to handle any unknown values you may encount
 Area text: both width and height are explicitly set. If text content is too long to fit, the end of the text will be
 clipped. If text content is short, the frame's bounds will occupy extra height that is just blank space.
 
----
+<HorizontalLine />
 
 ### autoHeight
 
@@ -29,7 +29,7 @@ clipped. If text content is short, the frame's bounds will occupy extra height t
 Auto-height text: Width is explicitly set, and text wraps to use as much vertical space as necessary to display the
 full content.
 
----
+<HorizontalLine />
 
 ### autoWidth
 
@@ -38,7 +38,7 @@ full content.
 Auto-width, aka point text: both width and height are automatically determined based on the content. There is no
 automatic line wrapping, so the text will all be on one line unless the text contains explicit newlines.
 
----
+<HorizontalLine />
 
 ### circular
 
@@ -46,7 +46,7 @@ automatic line wrapping, so the text will all be on one line unless the text con
 
 Text is arranged in a circle or arc. The API does not yet support setting or reading the details of this layout style.
 
----
+<HorizontalLine />
 
 ### magicFit
 

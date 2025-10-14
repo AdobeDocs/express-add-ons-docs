@@ -31,7 +31,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
@@ -48,7 +48,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 `Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
 
----
+<HorizontalLine />
 
 ### blendMode
 
@@ -67,11 +67,11 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 [`BlendMode`](../enumerations/blend-mode.md)
 
----
+<HorizontalLine />
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/rect.md)\>
+• `get` **boundsInParent**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -81,13 +81,13 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/rect.md)\>
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -98,21 +98,21 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
----
+<HorizontalLine />
 
 ### fill
 
@@ -130,7 +130,7 @@ The fill applied to the shape, if any.
 
 `undefined` \| `Readonly`<[`Fill`](../interfaces/fill.md)\>
 
----
+<HorizontalLine />
 
 ### id
 
@@ -143,7 +143,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### locked
 
@@ -164,7 +164,7 @@ expectations before doing so.
 
 `boolean`
 
----
+<HorizontalLine />
 
 ### opacity
 
@@ -182,7 +182,7 @@ The node's opacity, from 0.0 to 1.0
 
 `number`
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -199,7 +199,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<HorizontalLine />
 
 ### rotation
 
@@ -212,7 +212,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<HorizontalLine />
 
 ### rotationInScreen
 
@@ -225,7 +225,7 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<HorizontalLine />
 
 ### stroke
 
@@ -245,11 +245,11 @@ for backward compatibility. Throws if another type is provided.
 
 `undefined` \| `Readonly`<[`Stroke`](../interfaces/stroke.md)\>
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -257,9 +257,9 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
----
+<HorizontalLine />
 
 ### transformMatrix
 
@@ -271,11 +271,11 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<HorizontalLine />
 
 ### translation
 
-• `get` **translation**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **translation**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -289,9 +289,9 @@ setting translation directly.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
----
+<HorizontalLine />
 
 ### type
 
@@ -303,7 +303,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### visualRoot
 
@@ -324,7 +324,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/rect.md)\>
+• **boundsInNode**(`targetNode`): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](fillable-node.md#visualroot), but can lie anywhere within that subtree
@@ -336,13 +336,13 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
 
 #### Inherited from
 
 [`StrokableNode`](strokable-node.md).[`boundsInNode`](strokable-node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
@@ -364,11 +364,11 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 [`StrokableNode`](strokable-node.md).[`cloneInPlace`](strokable-node.md#cloneinplace)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](fillable-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -382,13 +382,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
 
 #### Inherited from
 
 [`StrokableNode`](strokable-node.md).[`localPointInNode`](strokable-node.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 
@@ -409,7 +409,7 @@ removal. No-op if node is already an orphan.
 
 [`StrokableNode`](strokable-node.md).[`removeFromParent`](strokable-node.md#removefromparent)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToHeight()
 
@@ -434,7 +434,7 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](node.md#res
 
 [`StrokableNode`](strokable-node.md).[`rescaleProportionalToHeight`](strokable-node.md#rescaleproportionaltoheight)
 
----
+<HorizontalLine />
 
 ### rescaleProportionalToWidth()
 
@@ -466,7 +466,7 @@ a separate, persistent scale factor multiplier).
 
 [`StrokableNode`](strokable-node.md).[`rescaleProportionalToWidth`](strokable-node.md#rescaleproportionaltowidth)
 
----
+<HorizontalLine />
 
 ### resizeToCover()
 
@@ -499,7 +499,7 @@ documentation for additional explanation.
 
 resizeToFitWithin
 
----
+<HorizontalLine />
 
 ### resizeToFitWithin()
 
@@ -537,7 +537,7 @@ to fit the box better.
 
 resizeToCover
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 
@@ -575,7 +575,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<HorizontalLine />
 
 ### setRotationInParent()
 

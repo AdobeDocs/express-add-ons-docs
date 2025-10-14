@@ -84,7 +84,7 @@ You can also use the `cors-anywhere` node package to create and run your own pro
     or optionally pass in a host and port when you run it:
     `HOST=0.0.0.0 PORT=8080 node proxy-server.js`
 
-<!-- <InlineAlert slots="text" variant="info"/> -->
+&lt;!-- <InlineAlert slots="text" variant="info"/> --&gt;
 
 #### HTTPS URL Support
 

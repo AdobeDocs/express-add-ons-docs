@@ -10,7 +10,7 @@ user to edit with.
 
 ## Extends
 
--   `Partial`<`BaseCharacterStyles`\>
+-   `Partial`&lt;`BaseCharacterStyles`\&gt;
 
 ## Extended by
 
@@ -28,7 +28,7 @@ Sets a superscript or subscript style.
 
 `Partial.baselineShift`
 
----
+<HorizontalLine />
 
 ### color?
 
@@ -40,13 +40,13 @@ Text color.
 
 `Partial.color`
 
----
+<HorizontalLine />
 
 ### font?
 
 • `optional` **font**: [`AvailableFont`](../classes/available-font.md)
 
----
+<HorizontalLine />
 
 ### fontSize?
 
@@ -58,7 +58,7 @@ Size of the text in points.
 
 `Partial.fontSize`
 
----
+<HorizontalLine />
 
 ### letterSpacing?
 
@@ -72,7 +72,7 @@ leaves spacing at its default.
 
 `Partial.letterSpacing`
 
----
+<HorizontalLine />
 
 ### link?
 
@@ -87,7 +87,7 @@ To remove a link from existing text, explicitly specify `link: ""` in [TextConte
 
 `Partial.link`
 
----
+<HorizontalLine />
 
 ### underline?
 

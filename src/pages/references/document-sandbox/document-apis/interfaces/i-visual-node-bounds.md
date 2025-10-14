@@ -12,7 +12,7 @@ An interface for the bounds of a [VisualNode](../classes/visual-node.md).
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](rect.md)\>
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](rect.md)\&gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -23,25 +23,25 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](rect.md)\>
+`Readonly`&lt;[`Rect`](rect.md)\&gt;
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](point.md)\&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)\&gt;
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](point.md)\&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -49,13 +49,13 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)\&gt;
 
 ## Methods
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](point.md)\&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same visualRoot, but can lie anywhere within that subtree relative to one
@@ -69,4 +69,4 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)\&gt;

@@ -14,13 +14,13 @@
 
 The height of the text node in pixels.
 
----
+<HorizontalLine />
 
 ### type
 
 • **type**: [`area`](../enumerations/text-layout.md#area)
 
----
+<HorizontalLine />
 
 ### width
 

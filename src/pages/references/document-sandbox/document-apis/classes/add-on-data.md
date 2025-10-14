@@ -9,11 +9,11 @@ This metadata is accessible only to the add-on that has set it.
 
 ### remainingQuota
 
-• `get` **remainingQuota**(): `Readonly`<`object`\>
+• `get` **remainingQuota**(): `Readonly`&lt;`object`\&gt;
 
 #### Returns
 
-`Readonly`<`object`\>
+`Readonly`&lt;`object`\&gt;
 
 an object with the remaining quota for private metadata on the node for this add-on.
 The object contains the following properties:
@@ -33,16 +33,16 @@ The object contains the following properties:
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<[`string`, `string`], `any`, `any`\>
+• **\[iterator\]**(): `Iterator`&lt;[`string`, `string`], `any`, `any`\&gt;
 
 #### Returns
 
-`Iterator`<[`string`, `string`], `any`, `any`\>
+`Iterator`&lt;[`string`, `string`], `any`, `any`\&gt;
 
 an iterator for all the private metadata entries on the node.
 The iterator yields the metadata key-value pairs.
 
----
+<HorizontalLine />
 
 ### clear()
 
@@ -54,7 +54,7 @@ Clears all private metadata entries on the node.
 
 `void`
 
----
+<HorizontalLine />
 
 ### getItem()
 
@@ -74,7 +74,7 @@ The key of the private metadata entry to retrieve.
 
 The value of the private metadata entry.
 
----
+<HorizontalLine />
 
 ### keys()
 
@@ -86,7 +86,7 @@ The value of the private metadata entry.
 
 an array of all keys for the private metadata entries on the node.
 
----
+<HorizontalLine />
 
 ### removeItem()
 
@@ -104,7 +104,7 @@ The key of the private metadata entry to remove.
 
 `void`
 
----
+<HorizontalLine />
 
 ### setItem()
 

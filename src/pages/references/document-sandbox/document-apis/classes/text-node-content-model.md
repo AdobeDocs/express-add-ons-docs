@@ -26,7 +26,7 @@ If there are multiple [ThreadedTextNode](threaded-text-node.md)s, all of them mu
 
 `Readonly`<`Iterable`<[`TextNode`](text-node.md), `any`, `any`\>\>
 
----
+<HorizontalLine />
 
 ### characterStyleRanges
 
@@ -50,7 +50,7 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 
 readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### id
 
@@ -71,7 +71,7 @@ Comparing two models using `===` will always fail.
 
 `string`
 
----
+<HorizontalLine />
 
 ### paragraphStyleRanges
 
@@ -108,7 +108,7 @@ if the text content contains fonts unavailable to the current user and an ordere
 
 readonly [`ParagraphStylesRange`](../interfaces/paragraph-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### text
 
@@ -156,7 +156,7 @@ The text to append.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### applyCharacterStyles()
 
@@ -188,7 +188,7 @@ entire paragraphs, it overlaps.
 
 [`TextContentModel`](text-content-model.md).[`applyCharacterStyles`](text-content-model.md#applycharacterstyles)
 
----
+<HorizontalLine />
 
 ### applyParagraphStyles()
 
@@ -222,7 +222,7 @@ If not specified the styles will be applied to the entire piece of text content 
 
 [`TextContentModel`](text-content-model.md).[`applyParagraphStyles`](text-content-model.md#applyparagraphstyles)
 
----
+<HorizontalLine />
 
 ### deleteText()
 
@@ -252,7 +252,7 @@ The range of text to delete.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### hasUnavailableFonts()
 
@@ -275,7 +275,7 @@ the character styles to use only AvailableFonts.
 
 [`TextContentModel`](text-content-model.md).[`hasUnavailableFonts`](text-content-model.md#hasunavailablefonts)
 
----
+<HorizontalLine />
 
 ### insertText()
 
@@ -314,7 +314,7 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### replaceText()
 

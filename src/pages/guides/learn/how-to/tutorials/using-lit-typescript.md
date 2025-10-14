@@ -26,7 +26,7 @@ contributors:
 
 ## Introduction
 
-<ProductCard slots="icon, text, buttons" theme="light" width="50%" />
+<Product-Card slots="icon, text, buttons" theme="light" width="50%" />
 
 <img src="images/lit-logo.svg" alt="lit-logo" width="70px" height="40px"/>
 
@@ -34,7 +34,7 @@ Lit is a simple library for building fast, lightweight web components. It's buil
 
 - [Learn more](https://lit.dev/)
 
-<ProductCard slots="icon, text, buttons" theme="light" width="50%" />
+<Product-Card slots="icon, text, buttons" theme="light" width="50%" />
 
 ![typescript-logo](images/ts-logo-128.svg)
 

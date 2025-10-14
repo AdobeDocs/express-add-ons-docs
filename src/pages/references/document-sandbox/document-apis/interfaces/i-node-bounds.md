@@ -12,7 +12,7 @@ An interface for the bounds of a [Node](../classes/node.md).
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<[`Rect`](rect.md)\>
+• `get` **boundsInParent**(): `Readonly`&lt;[`Rect`](rect.md)\&gt;
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -22,13 +22,13 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<[`Rect`](rect.md)\>
+`Readonly`&lt;[`Rect`](rect.md)\&gt;
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](rect.md)\>
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](rect.md)\&gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -39,21 +39,21 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](rect.md)\>
+`Readonly`&lt;[`Rect`](rect.md)\&gt;
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](point.md)\&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)\&gt;
 
----
+<HorizontalLine />
 
 ### rotation
 
@@ -66,7 +66,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<HorizontalLine />
 
 ### rotationInScreen
 
@@ -79,11 +79,11 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](point.md)\&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -91,9 +91,9 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)\&gt;
 
----
+<HorizontalLine />
 
 ### transformMatrix
 
@@ -105,11 +105,11 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<HorizontalLine />
 
 ### translation
 
-• `get` **translation**(): `Readonly`<[`Point`](point.md)\>
+• `get` **translation**(): `Readonly`&lt;[`Point`](point.md)\&gt;
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -117,13 +117,13 @@ setting translation directly.
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)\&gt;
 
 ## Methods
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](rect.md)\>
+• **boundsInNode**(`targetNode`): `Readonly`&lt;[`Rect`](rect.md)\&gt;
 
 Convert the node's [boundsLocal](i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same visualRoot, but can lie anywhere within that subtree
@@ -135,13 +135,13 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`<[`Rect`](rect.md)\>
+`Readonly`&lt;[`Rect`](rect.md)\&gt;
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](point.md)\&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same visualRoot, but can lie anywhere within that subtree relative to one
@@ -155,7 +155,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)\&gt;
 
 #### Inherited from
 

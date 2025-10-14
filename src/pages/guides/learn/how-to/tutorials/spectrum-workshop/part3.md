@@ -128,7 +128,7 @@ Some benefits to using Spectrum CSS variables to style your components over abso
 
 - [Layout](https://spectrum.adobe.com/page/design-tokens/#Layout-tokens) - the layout of your add-on can be adjusted by using global variables defined in the `@spectrum-web-components/styles/express/spectrum-core-global.css` folder in the `node_modules` of your add-on.
 
-  **Some general guidelines** <br/>
+  **Some general guidelines** &lt;br/&gt;
 
   - `--spectrum-global-dimension-static-size-*` variables should be used when the dimension needs to be consistent across different elements or components, such as a uniform padding or margin throughout the application. It should also be used when a dimension needs to be adjusted based on a specific context, such as a container element or viewport size.
 

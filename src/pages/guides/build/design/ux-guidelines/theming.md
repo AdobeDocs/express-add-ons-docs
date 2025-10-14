@@ -34,6 +34,6 @@ When customizing your add-on's theme, you're free to incorporate brand-specific 
 
 If you’re developing a custom component, it must adhere to the Spectrum Express style standards, too, in order to ensure visual harmony and usability within the Adobe Express ecosystem. For detailed guidance on these requirements, please refer to [these guidelines](https://opensource.adobe.com/spectrum-web-components/tools/theme/#usage).
 
-<!-- ## Theming Examples
+&lt;!-- ## Theming Examples
 
-**TODO:** Same as above. -->
+**TODO:** Same as above. --&gt;

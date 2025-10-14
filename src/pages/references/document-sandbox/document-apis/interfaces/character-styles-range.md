@@ -23,7 +23,7 @@ Sets a superscript or subscript style.
 
 [`CharacterStyles`](character-styles.md).[`baselineShift`](character-styles.md#baselineshift)
 
----
+<HorizontalLine />
 
 ### color
 
@@ -35,7 +35,7 @@ Text color.
 
 [`CharacterStyles`](character-styles.md).[`color`](character-styles.md#color)
 
----
+<HorizontalLine />
 
 ### font
 
@@ -45,7 +45,7 @@ Text color.
 
 [`CharacterStyles`](character-styles.md).[`font`](character-styles.md#font)
 
----
+<HorizontalLine />
 
 ### fontSize
 
@@ -57,7 +57,7 @@ Size of the text in points.
 
 [`CharacterStyles`](character-styles.md).[`fontSize`](character-styles.md#fontsize)
 
----
+<HorizontalLine />
 
 ### length
 
@@ -71,7 +71,7 @@ such as emojis are considered to have a length of 2.
 
 [`StyleRange`](style-range.md).[`length`](style-range.md#length)
 
----
+<HorizontalLine />
 
 ### letterSpacing
 
@@ -85,7 +85,7 @@ leaves spacing at its default.
 
 [`CharacterStyles`](character-styles.md).[`letterSpacing`](character-styles.md#letterspacing)
 
----
+<HorizontalLine />
 
 ### link?
 
@@ -100,7 +100,7 @@ To remove a link from existing text, explicitly specify `link: ""` in [TextConte
 
 [`CharacterStyles`](character-styles.md).[`link`](character-styles.md#link)
 
----
+<HorizontalLine />
 
 ### underline
 

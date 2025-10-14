@@ -24,7 +24,7 @@ Sets a superscript or subscript style.
 
 [`CharacterStylesInput`](character-styles-input.md).[`baselineShift`](character-styles-input.md#baselineshift)
 
----
+<HorizontalLine />
 
 ### color?
 
@@ -36,7 +36,7 @@ Text color.
 
 [`CharacterStylesInput`](character-styles-input.md).[`color`](character-styles-input.md#color)
 
----
+<HorizontalLine />
 
 ### font?
 
@@ -46,7 +46,7 @@ Text color.
 
 [`CharacterStylesInput`](character-styles-input.md).[`font`](character-styles-input.md#font)
 
----
+<HorizontalLine />
 
 ### fontSize?
 
@@ -58,7 +58,7 @@ Size of the text in points.
 
 [`CharacterStylesInput`](character-styles-input.md).[`fontSize`](character-styles-input.md#fontsize)
 
----
+<HorizontalLine />
 
 ### length
 
@@ -72,7 +72,7 @@ such as emojis are considered to have a length of 2.
 
 [`StyleRange`](style-range.md).[`length`](style-range.md#length)
 
----
+<HorizontalLine />
 
 ### letterSpacing?
 
@@ -86,7 +86,7 @@ leaves spacing at its default.
 
 [`CharacterStylesInput`](character-styles-input.md).[`letterSpacing`](character-styles-input.md#letterspacing)
 
----
+<HorizontalLine />
 
 ### link?
 
@@ -101,7 +101,7 @@ To remove a link from existing text, explicitly specify `link: ""` in [TextConte
 
 [`CharacterStylesInput`](character-styles-input.md).[`link`](character-styles-input.md#link)
 
----
+<HorizontalLine />
 
 ### underline?
 

@@ -30,13 +30,13 @@ It only affects the space *between* lines, not the space above the first line or
 
 [`BaseParagraphStyles`](base-paragraph-styles.md).[`lineSpacing`](base-paragraph-styles.md#linespacing)
 
----
+<HorizontalLine />
 
 ### list?
 
-• `optional` **list**: `Required`<[`OrderedListStyleInput`](ordered-list-style-input.md)\> \| `Required`<[`UnorderedListStyleInput`](unordered-list-style-input.md)\>
+• `optional` **list**: `Required`&lt;[`OrderedListStyleInput`](ordered-list-style-input.md)\&gt; \| `Required`&lt;[`UnorderedListStyleInput`](unordered-list-style-input.md)\&gt;
 
----
+<HorizontalLine />
 
 ### spaceAfter
 
@@ -49,7 +49,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 [`BaseParagraphStyles`](base-paragraph-styles.md).[`spaceAfter`](base-paragraph-styles.md#spaceafter)
 
----
+<HorizontalLine />
 
 ### spaceBefore
 

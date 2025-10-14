@@ -24,15 +24,15 @@ This quickstart guide will help you create and run your first add-on, a simple h
 
 ## Introduction
 
-Check out this short video below for a quick visual introduction to the steps you'll take to create your very first add-on.<br/><br/>
+Check out this short video below for a quick visual introduction to the steps you'll take to create your very first add-on.&lt;br/&gt;&lt;br/&gt;
 
-<div style="display: flex; justify-content: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kSq4ykQGOdo" title="Creating Your First Add-on | How to Create Add-ons in Adobe Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+&lt;div style="display: flex; justify-content: center;"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/kSq4ykQGOdo" title="Creating Your First Add-on | How to Create Add-ons in Adobe Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
-<!-- <iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="775" height="485" allow="autoplay" style="border: 0"></iframe> -->
+&lt;!-- &lt;iframe src="https://drive.google.com/file/d/1NpKsxGJyA2DeH0xPhLyTr17cdy9awhYG/preview" width="775" height="485" allow="autoplay" style="border: 0"&gt;&lt;/iframe&gt; --&gt;
 
-<br/>
+&lt;br/&gt;
 
 ## Prerequisites
 
@@ -63,7 +63,7 @@ The [Templates section](./local-development/dev-tooling.md#templates) on the **D
 
 <InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
 
-#### CLI troubleshooting <!-- 👈 will not render -->
+#### CLI troubleshooting &lt;!-- 👈 will not render --&gt;
 
 `npx` is an `npm` package runner that can execute packages without installing them explicitly.
 
@@ -168,7 +168,7 @@ Go back to your browser where the add-on is running in Adobe Express and notice 
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
-**Manifest updates**<br/>
+**Manifest updates**&lt;br/&gt;
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express. You can try this by updating the `name` field in the `src/manifest.json` file of your running add-on from "Hello World" to, say, **"Draw Rectangle"**.
 

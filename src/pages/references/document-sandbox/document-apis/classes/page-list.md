@@ -11,7 +11,7 @@ remove the last remaining page from the list.
 
 ## Extends
 
--   [`RestrictedItemList`](restricted-item-list.md)<[`PageNode`](page-node.md)\>
+-   [`RestrictedItemList`](restricted-item-list.md)&lt;[`PageNode`](page-node.md)\&gt;
 
 ## Accessors
 
@@ -25,7 +25,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### last
 
@@ -37,7 +37,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### length
 
@@ -53,19 +53,19 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<[`PageNode`](page-node.md), `any`, `any`\>
+• **\[iterator\]**(): `Iterator`&lt;[`PageNode`](page-node.md), `any`, `any`\&gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<[`PageNode`](page-node.md), `any`, `any`\>
+`Iterator`&lt;[`PageNode`](page-node.md), `any`, `any`\&gt;
 
 #### Inherited from
 
 [`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](RestrictedItemList.md#iterator)
 
----
+<HorizontalLine />
 
 ### addPage()
 
@@ -83,7 +83,7 @@ newly inserted content ([Context.insertionParent](context.md#insertionparent)) a
 
 [`PageNode`](page-node.md)
 
----
+<HorizontalLine />
 
 ### indexOf()
 
@@ -105,7 +105,7 @@ index number, or -1 if item isn't in this list.
 
 [`RestrictedItemList`](restricted-item-list.md).[`indexOf`](restricted-item-list.md#indexof)
 
----
+<HorizontalLine />
 
 ### item()
 
@@ -127,7 +127,7 @@ Zero-based index
 
 [`RestrictedItemList`](restricted-item-list.md).[`item`](restricted-item-list.md#item)
 
----
+<HorizontalLine />
 
 ### moveAfter()
 
@@ -155,7 +155,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 An error if either argument is not contained in this list.
 
----
+<HorizontalLine />
 
 ### moveBefore()
 
@@ -183,7 +183,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 An error if either argument is not contained in this list.
 
----
+<HorizontalLine />
 
 ### remove()
 
@@ -207,7 +207,7 @@ Remove the items from the list. The items need not be contiguous.
 
 If any of the items are not in the list, or if it is illegal to remove any of the items from this parent.
 
----
+<HorizontalLine />
 
 ### toArray()
 

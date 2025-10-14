@@ -24,7 +24,7 @@ In the great tradition of programming tutorials, we'll start by building a simpl
 
 This guide is **divided into two tracks**, which you can follow independently of each other, based on your experience and preferences.
 
-<br/>
+&lt;br/&gt;
 
 | Code Playground Track                  | Command Line Interface (CLI) Track |
 | -------------------------------------- | ---------------------------------- |
@@ -34,7 +34,7 @@ This guide is **divided into two tracks**, which you can follow independently of
 | Best for Learning & prototyping        | Best for Production development    |
 | Simple to moderate add-on's complexity | Moderate to complex add-ons        |
 
-<br/>
+&lt;br/&gt;
 
 The [Code Playground](#code-playground) path is based on a browser sandbox that runs instantly, requires no installation, and lets you explore add-on APIs with real-time feedback directly inside Adobe Express. **If you are new to add-on development**, or prefer to tinker-to-learn, then begin in the Playground to familiarise yourself with the environment; you can always try the CLI later.
 
@@ -52,14 +52,11 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
 
 ![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
-<details>
-  <summary>Click to view a list of steps to enable the Development Mode</summary>
-  <ol>
-    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-</details>
+<Details slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
+
+1. Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
+2. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
+3. Close the Settings dialog.
 
 ## Code Playground
 
@@ -71,15 +68,12 @@ To launch the Code Playground, see the following animation or expand the details
 
 ![How to open the Code Playground](./img/playground-open-the-playground.gif)
 
-<details>
-  <summary>Click to view a list of steps to open the Code Playground</summary>
-  <ol>
-    <li>Click the <b>Add-ons icon</b> in the left hand rail.</li>
-    <li>Enable the <b>Add-on Development</b> switch on the top right corner.</li>
-    <li>Click the <b>Launch code playground</b> button.</li>
-    <li>Click the <b>Script</b> tab.</li>
-  </ol>
-</details>
+<Details slots="list"  summary="Click to view a list of steps to open the Code Playground" />
+  
+1. Click the **Add-ons icon** in the left hand rail.
+2. Enable the **Add-on Development** switch on the top right corner.
+3. Click the **Launch code playground** button.
+4. Click the **Script** tab.
 
 ### 2. Run your first script
 
@@ -204,32 +198,26 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
 
 ![How to sideload an add-on](./img/playground-sideload-add-on.gif)
 
-<details>
-  <summary>Click to view a list of steps to sideload an add-on in Adobe Express</summary>
-  <ol>
-    <li>Click the <b>Add-ons icon</b> in the left hand rail.</li>
-    <li>Enable the <b>Add-on Development</b> switch on the top right corner.</li>
-    <li>Click the <b>Test your local add-on</b> text.</li>
-    <li><b>Check the checkbox</b> in the Connect to development server modal.</li>
-    <li>Click the <b>Connect</b> button.</li>
-    <li>Click the <b>Hello World</b> add-on icon on the Add-ons tab on the left.</li>
-  </ol>
-</details>
+<Details slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
+
+  1. Click the **Add-ons icon** in the left hand rail.
+  2. Enable the **Add-on Development** switch on the top right corner.
+  3. Click the **Test your local add-on** text.
+  4. **Check the checkbox** in the Connect to development server modal.
+  5. Click the **Connect** button.
+  6. Click the **Hello World** add-on icon on the Add-ons tab on the left.
 
 <InlineAlert slots="text1, text2" variant="info"/>
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-<details>
-  <summary>Click to see the screenshot</summary>
+<Details slots="image"  summary="Click to see the screenshot" />
 
-![Add-on testing](./img/playground-alt-testing.png)
-
-</details>
+![Add-on testing](../getting_started/img/playground-alt-testing.png)
 
 If you click the **Create Rectangle** button, you'll see the rectangle being added to the document.
 
-![Create Rectangle](./img/playground-run-addon.png)
+![Create Rectangle](../getting_started/img/playground-run-addon.png)
 
 ### 4. Edit your add-on's code
 
@@ -266,12 +254,9 @@ Manifest updates
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
-<details>
-  <summary>Click to see the screenshot</summary>
+<Details slots="image"  summary="Click to see the screenshot" />
 
-![Refresh manifest](./img/playground-refresh-manifest.png)
-
-</details>
+![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
 
 ## Next steps
 

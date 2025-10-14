@@ -55,7 +55,7 @@ The table below shows the list of arguments that can be specified with the CLI c
 | Argument      | Optional | Default Value                                | Description                                                                                                          |
 | ------------- | -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `add-on-name` | No       |                                              | Name of the add-on. A new add-on project with this argument will be created in the user's current working directory. |
-| `template`    | Yes      | none, you will<br/> be prompted from the CLI | The template to use for creating the add-on.                                                                         |
+| `template`    | Yes      | none, you will&lt;br/&gt; be prompted from the CLI | The template to use for creating the add-on.                                                                         |
 | `verbose`     | Yes      | false                                        | Setting this argument enables the verbose flag on the underlying operations.                                         |
 
 For instance, the following command would specify all possible arguments:
@@ -66,7 +66,7 @@ npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 
 <InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
 
-#### CLI troubleshooting <!-- 👈 will not render -->
+#### CLI troubleshooting &lt;!-- 👈 will not render --&gt;
 
 See the [templates](#templates) section for the currently supported template values.
 
@@ -121,7 +121,7 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 ## Templates
 
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
-<br/>
+&lt;br/&gt;
 
 | Template           | Framework                                       |
 | ------------------ | ----------------------------------------------- |

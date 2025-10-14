@@ -1,6 +1,6 @@
 **@express-document-sdk** • **Docs**
 
----
+<HorizontalLine />
 
 # @express-document-sdk
 
@@ -121,13 +121,13 @@
 
 Re-exports [OrderedListNumbering](namespaces/constants/enumerations/ordered-list-numbering.md)
 
----
+<HorizontalLine />
 
 ### ParagraphListType
 
 Re-exports [ParagraphListType](namespaces/constants/enumerations/paragraph-list-type.md)
 
----
+<HorizontalLine />
 
 ### TextStyleSource
 

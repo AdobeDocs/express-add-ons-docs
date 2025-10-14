@@ -36,15 +36,15 @@ For more details on best practices, please refer to this [Color system guide](ht
 
 Spectrum is based on the Adobe Clean and Adobe Clean Han typefaces. The former is used for Latin characters, while the latter is for Simplified Chinese, Traditional Chinese, Japanese, and Korean ones.
 
-<!-- <div className="container">
-  <div className="image-column">
-    <img src="./img/visual_heading.png" alt="headings" className="responsive-image" />
-  </div>
-  <div className="text-column">
-    <h3>Headings</h3>
-    <p>Headings in Spectrum for Adobe Express always use bolder typography. The default and heavy weights both rely on Adobe Clean Black (Sans Serif).</p>
-  </div>
-</div> -->
+&lt;!-- &lt;div className="container"&gt;
+  &lt;div className="image-column"&gt;
+    &lt;img src="./img/visual_heading.png" alt="headings" className="responsive-image" /&gt;
+  &lt;/div&gt;
+  &lt;div className="text-column"&gt;
+    &lt;h3&gt;Headings&lt;/h3&gt;
+    &lt;p&gt;Headings in Spectrum for Adobe Express always use bolder typography. The default and heavy weights both rely on Adobe Clean Black (Sans Serif).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt; --&gt;
 
 ### Headings
 
@@ -157,9 +157,9 @@ This is a [Spectrum theme](https://spectrum.adobe.com/page/theming/) specificall
 
 ![Spectrum for Adobe Express](./img/components_theme.png)
 
-<!-- ### Buttons & Buttons Groups
+&lt;!-- ### Buttons & Buttons Groups
 
-Buttons are essential for enabling user interactions in your add-on. -->
+Buttons are essential for enabling user interactions in your add-on. --&gt;
 
 ### Buttons
 

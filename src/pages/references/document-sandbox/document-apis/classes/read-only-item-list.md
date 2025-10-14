@@ -28,7 +28,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### last
 
@@ -40,7 +40,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### length
 
@@ -56,15 +56,15 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<`T`, `any`, `any`\>
+• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`\&gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<`T`, `any`, `any`\>
+`Iterator`&lt;`T`, `any`, `any`\&gt;
 
----
+<HorizontalLine />
 
 ### indexOf()
 
@@ -82,7 +82,7 @@ Get index of item in list.
 
 index number, or -1 if item isn't in this list.
 
----
+<HorizontalLine />
 
 ### item()
 
@@ -100,7 +100,7 @@ Zero-based index
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### toArray()
 

@@ -16,7 +16,7 @@ User's current selection context
 
 [`Context`](context.md)
 
----
+<HorizontalLine />
 
 ### documentRoot
 
@@ -41,7 +41,7 @@ the root of the document.
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
----
+<HorizontalLine />
 
 ### createGroup()
 
@@ -53,7 +53,7 @@ Transform values default to 0.
 
 a group node.
 
----
+<HorizontalLine />
 
 ### createImageContainer()
 
@@ -87,7 +87,7 @@ if needed to stay below an application-defined size cap).
 
 MediaContainerNode representing the top container node of the multi-node structure.
 
----
+<HorizontalLine />
 
 ### createLine()
 
@@ -100,7 +100,7 @@ MediaContainerNode representing the top container node of the multi-node structu
 a line node with default start point and end point and a default stroke.
 Transform values default to 0.
 
----
+<HorizontalLine />
 
 ### createPath()
 
@@ -121,7 +121,7 @@ Throws if the input is empty or is not legal SVG path syntax.
 
 a path node with a default stroke and no initial fill.
 
----
+<HorizontalLine />
 
 ### createRectangle()
 
@@ -134,7 +134,7 @@ a path node with a default stroke and no initial fill.
 a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
 
----
+<HorizontalLine />
 
 ### createText()
 
@@ -174,7 +174,7 @@ to accommodate the given text content.
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
 
----
+<HorizontalLine />
 
 ### loadBitmapImage()
 
@@ -200,7 +200,7 @@ Encoded image data in PNG or JPEG format.
 
 `Promise`<[`BitmapImage`](bitmap-image.md)\>
 
----
+<HorizontalLine />
 
 ### makeColorFill()
 
@@ -218,7 +218,7 @@ The color to use for the fill.
 
 [`ColorFill`](../interfaces/color-fill.md)
 
----
+<HorizontalLine />
 
 ### makeStroke()
 
@@ -248,7 +248,7 @@ See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on 
 
 a stroke configured with the given options.
 
----
+<HorizontalLine />
 
 ### queueAsyncEdit()
 

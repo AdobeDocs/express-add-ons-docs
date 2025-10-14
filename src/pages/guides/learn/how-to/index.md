@@ -32,7 +32,7 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 
 ## How-to guides
 
-<!-- - Authentication & Authorization
+&lt;!-- - Authentication & Authorization
   - [Use OAuth 2.0](./oauth2.md)
 - Data & Environment
   - [Store Data](./local-data-management.md)
@@ -58,9 +58,9 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
   - [Create Renditions](./create-renditions.md)
   - [Manage with Premium Content](./premium-content.md)
 - User Info
-  - [Identify users](./user-info.md) -->
+  - [Identify users](./user-info.md) --&gt;
 
-<br/><br/>
+&lt;br/&gt;&lt;br/&gt;
 
 | Topics                         | How-to guides                                       |
 | ------------------------------ | --------------------------------------------------- |
@@ -89,7 +89,7 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 
 We've created a set of in-depth tutorials that guide you through the process of building a complete add-on from scratch.
 
-<br/><br/>
+&lt;br/&gt;&lt;br/&gt;
 
 | Topics                        | Tutorials                                                                                      |
 | ----------------------------- | ---------------------------------------------------------------------------------------------- |

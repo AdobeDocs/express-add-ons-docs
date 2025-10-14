@@ -20,7 +20,7 @@ Whether the current user has permission to create / edit content using this font
 
 `true`
 
----
+<HorizontalLine />
 
 ### family
 
@@ -32,7 +32,7 @@ The font family containing the font.
 
 `string`
 
----
+<HorizontalLine />
 
 ### isPremium
 
@@ -44,7 +44,7 @@ Whether the font is a premium Adobe font.
 
 `boolean`
 
----
+<HorizontalLine />
 
 ### postscriptName
 
@@ -56,7 +56,7 @@ The PostScript name of the font.
 
 `string`
 
----
+<HorizontalLine />
 
 ### style
 

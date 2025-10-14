@@ -16,7 +16,7 @@ A read-only view of the mask shape used for cropping/clipping the media.
 
 [`INodeBounds`](i-node-bounds.md)
 
----
+<HorizontalLine />
 
 ### mediaRectangle
 

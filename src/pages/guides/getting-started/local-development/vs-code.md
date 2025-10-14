@@ -22,9 +22,9 @@ contributors:
 
 If you are a Visual Studio Code user, you can easily debug your add-on by following the steps in this guide.
 
-<!-- An example of this workflow is shown in the video below for reference:
+&lt;!-- An example of this workflow is shown in the video below for reference:
 
-<iframe aria-label="Debugging VS Code Demo" src="https://drive.google.com/file/d/1at1jXCTIi9TZWxwFn11su0PeEQZhUGFC/preview" width="640" height="480"></iframe> -->
+&lt;iframe aria-label="Debugging VS Code Demo" src="https://drive.google.com/file/d/1at1jXCTIi9TZWxwFn11su0PeEQZhUGFC/preview" width="640" height="480"&gt;&lt;/iframe&gt; --&gt;
 
 ## 1. Create a launch.json file
 

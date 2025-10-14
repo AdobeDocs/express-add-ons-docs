@@ -44,7 +44,7 @@ npx @adobe/create-ccweb-add-on bingo-card-generator-js --template javascript
 
 <InlineAlert slots="text" variant="warning"/>
 
-If you've used the CLI prior to this, you may want to run this command to ensure you have the most up-to-date version before creating your project --> `npx clear-npx-cache`
+If you've used the CLI prior to this, you may want to run this command to ensure you have the most up-to-date version before creating your project --&gt; `npx clear-npx-cache`
 
 **NOTE:** You could use the CDN URL's (https://jspm.dev/@spectrum-web-components/bundle/elements.js) once again to get started quickly, but since you'll want to ensure your add-on projects are performant, you will learn how to configure your local add-on project to use the specific Spectrum Web Components you'll need, instead.
 

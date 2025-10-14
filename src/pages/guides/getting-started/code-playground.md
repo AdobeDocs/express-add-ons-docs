@@ -45,7 +45,7 @@ The Code Playground is designed for:
 
 ## Features
 
-<br/>
+&lt;br/&gt;
 
 | Feature                      | Description                                                                                               |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -58,12 +58,12 @@ The Code Playground is designed for:
 | **Local Persistence**        | Save your work to your browser's local storage and resume where you left off, preventing accidental loss. |
 | **Keyboard Shortcuts**       | Use keyboard shortcuts to save, run, and reset your code quickly.                                         |
 
-<!-- Check out the video below for a quick introduction to the add-on playground features.
+&lt;!-- Check out the video below for a quick introduction to the add-on playground features.
 
-<br/><br/><div style="display: flex; justify-content: center;">
+&lt;br/&gt;&lt;br/&gt;&lt;div style="display: flex; justify-content: center;"&gt;
 
- <iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div><br/> -->
+ &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;br/&gt; --&gt;
 
 ## Development Workflow Use Cases
 
@@ -103,7 +103,7 @@ The playground offers two distinct development modes:
 - [**Script Mode**](#script-mode): Experiment with the Adobe Express [Document Sandbox](../../references/document-sandbox/index.md). This mode is equivalent to writing code in the `sandbox/code.js` file in an add-on project running locally, but allows you to rapidly test in Express directly.
 - [**Add-on Mode**](#add-on-mode): Test and iterate on your [Add-on UI](../../references/addonsdk/index.md) and functionality with no setup required.
 
-<br/>
+&lt;br/&gt;
 
 | Comparison Factor     | Script Mode                                                               | Add-on Mode                                                                                                                     |
 | --------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -238,17 +238,17 @@ Keyboard Shortcuts, local save and session management are all designed to help y
 
 ### Keyboard Shortcuts
 
-<br/>
+&lt;br/&gt;
 
 | Action                           | Windows/Linux                                                | macOS                                                       |
 | -------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| **Save**                         | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>            | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>            |
-| **Run**                          | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return/Enter</kbd> |
-| **Reset**                        | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>            | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>            |
-| **Increase font size**           | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd>     | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Plus (+)</kbd>     |
-| **Decrease font size**           | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd>    | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Minus (-)</kbd>    |
-| **Switch between tabs**          | <kbd>Ctrl</kbd> + <kbd>1, 2, 3, 4</kbd>                      | <kbd>Cmd</kbd> + <kbd>1, 2, 3, 4</kbd>                      |
-| **View the typings suggestions** | <kbd>Ctrl</kbd> + <kbd>space</kbd>                           | <kbd>Cmd</kbd> + <kbd>space</kbd>                           |
+| **Save**                         | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;            | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;            |
+| **Run**                          | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Return/Enter&lt;/kbd&gt; | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Return/Enter&lt;/kbd&gt; |
+| **Reset**                        | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;X&lt;/kbd&gt;            | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;X&lt;/kbd&gt;            |
+| **Increase font size**           | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Plus (+)&lt;/kbd&gt;     | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Plus (+)&lt;/kbd&gt;     |
+| **Decrease font size**           | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Minus (-)&lt;/kbd&gt;    | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Minus (-)&lt;/kbd&gt;    |
+| **Switch between tabs**          | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;1, 2, 3, 4&lt;/kbd&gt;                      | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;1, 2, 3, 4&lt;/kbd&gt;                      |
+| **View the typings suggestions** | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;space&lt;/kbd&gt;                           | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;space&lt;/kbd&gt;                           |
 
 <InlineAlert slots="header,text1" variant="success"/>
 

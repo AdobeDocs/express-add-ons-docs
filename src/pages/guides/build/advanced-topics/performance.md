@@ -34,7 +34,7 @@ This page covers a list of tips for optimizing your code to help you build high-
 
 Use asynchronous programming techniques like callbacks, promises, and async/await to avoid blocking the main thread and improve performance. An example of each approach is given below:
 
-**1. Asynchronous programming using callbacks**<br/>
+**1. Asynchronous programming using callbacks**&lt;br/&gt;
 Callbacks are the simplest form of asynchronous programming in JavaScript. Instead of waiting for a function to complete, you pass a callback function to the function that will be called when the operation is complete.
 
 #### Example JavaScript
@@ -53,7 +53,7 @@ fetchData(function(result) {
 });  
 ```
 
-**2. Asynchronous programming using promises**<br/>
+**2. Asynchronous programming using promises**&lt;br/&gt;
 Promises are a more powerful form of asynchronous programming that allow you to chain operations and handle errors more easily.
 
 #### Example JavaScript
@@ -78,7 +78,7 @@ fetchData().then(function(result) {
 });  
 ```
 
-**3. Asynchronous programming using async/await**<br/>
+**3. Asynchronous programming using async/await**&lt;br/&gt;
 Async/await is a newer feature in JavaScript that allows you to write asynchronous code that looks like synchronous code. For example:
 
 #### Example JavaScript
