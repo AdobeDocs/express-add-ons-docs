@@ -13,6 +13,7 @@ const IMS_BASE_URL = process.env.IMS_BASE_URL;
 const IMS_TOKEN_ENDPOINT = "/ims/token/v1";
 const FFC_BASE_URL = process.env.FFC_BASE_URL;
 const FFC_PLAYGROUND_ENDPOINT = "/v1/playground/projects";
+const FFC_REQUEST_ID = "x-request-id";
 
 const PLAYGROUND_CLIENT_ID = process.env.PLAYGROUND_CLIENT_ID;
 const PLAYGROUND_CLIENT_SECRET = process.env.PLAYGROUND_CLIENT_SECRET;
@@ -117,6 +118,8 @@ async function uploadCodeBlockToFFC(codeBlock, projectId) {
 
     if (!response.ok) {
       const text = await response.text();
+      const requestId = response.headers.get(FFC_REQUEST_ID);
+      console.log("FFC Request ID:", requestId);
       throw new Error(
         `Failed to upload code block to FFC - HTTP ${response.status}: ${text}`
       );
