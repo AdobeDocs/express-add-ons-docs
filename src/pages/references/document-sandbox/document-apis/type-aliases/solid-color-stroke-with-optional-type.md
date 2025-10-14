@@ -2,6 +2,6 @@
 
 # Type alias: SolidColorStrokeWithOptionalType
 
-• **SolidColorStrokeWithOptionalType**: `Omit`<[`SolidColorStroke`](../interfaces/solid-color-stroke.md), `"type"`\> & `Partial`<`Pick`<[`SolidColorStroke`](../interfaces/solid-color-stroke.md), `"type"`\>\>
+• **SolidColorStrokeWithOptionalType**: `Omit`&lt;[`SolidColorStroke`](../interfaces/solid-color-stroke.md), `"type"`\&gt; & `Partial`&lt;`Pick`&lt;[`SolidColorStroke`](../interfaces/solid-color-stroke.md), `"type"`\&gt;\&gt;
 
 SolidColorStroke with 'type' property as optional.

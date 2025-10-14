@@ -30,7 +30,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\&gt;\&gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -41,7 +41,7 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\&gt;\&gt;
 
 <HorizontalLine />
 
@@ -157,7 +157,7 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 ### fill
 
-• `get` **fill**(): `undefined` \| `Readonly`<[`Fill`](../interfaces/fill.md)\>
+• `get` **fill**(): `undefined` \| `Readonly`&lt;[`Fill`](../interfaces/fill.md)\&gt;
 
 • `set` **fill**(`fill`): `void`
 
@@ -169,7 +169,7 @@ The fill applied to the shape, if any.
 
 #### Returns
 
-`undefined` \| `Readonly`<[`Fill`](../interfaces/fill.md)\>
+`undefined` \| `Readonly`&lt;[`Fill`](../interfaces/fill.md)\&gt;
 
 <HorizontalLine />
 
@@ -289,7 +289,7 @@ cumulative rotation from the node's parent containers.
 
 ### stroke
 
-• `get` **stroke**(): `undefined` \| `Readonly`<[`Stroke`](../interfaces/stroke.md)\>
+• `get` **stroke**(): `undefined` \| `Readonly`&lt;[`Stroke`](../interfaces/stroke.md)\&gt;
 
 • `set` **stroke**(`stroke`): `void`
 
@@ -303,7 +303,7 @@ for backward compatibility. Throws if another type is provided.
 
 #### Returns
 
-`undefined` \| `Readonly`<[`Stroke`](../interfaces/stroke.md)\>
+`undefined` \| `Readonly`&lt;[`Stroke`](../interfaces/stroke.md)\&gt;
 
 <HorizontalLine />
 

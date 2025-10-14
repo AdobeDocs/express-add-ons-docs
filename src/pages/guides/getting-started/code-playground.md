@@ -62,7 +62,7 @@ The Code Playground is designed for:
 
 &lt;br/&gt;&lt;br/&gt;&lt;div style="display: flex; justify-content: center;"&gt;
 
- &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;iframe width="560" height="315" src="<https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz>" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;br/&gt; --&gt;
 
 ## Development Workflow Use Cases
@@ -242,13 +242,13 @@ Keyboard Shortcuts, local save and session management are all designed to help y
 
 | Action                           | Windows/Linux                                                | macOS                                                       |
 | -------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| **Save**                         | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;            | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;            |
-| **Run**                          | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Return/Enter&lt;/kbd&gt; | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Return/Enter&lt;/kbd&gt; |
-| **Reset**                        | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;X&lt;/kbd&gt;            | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;X&lt;/kbd&gt;            |
-| **Increase font size**           | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Plus (+)&lt;/kbd&gt;     | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Plus (+)&lt;/kbd&gt;     |
-| **Decrease font size**           | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Minus (-)&lt;/kbd&gt;    | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;Minus (-)&lt;/kbd&gt;    |
-| **Switch between tabs**          | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;1, 2, 3, 4&lt;/kbd&gt;                      | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;1, 2, 3, 4&lt;/kbd&gt;                      |
-| **View the typings suggestions** | &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;space&lt;/kbd&gt;                           | &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;space&lt;/kbd&gt;                           |
+| **Save**                         | Ctrl + Shift + S            | Cmd + Shift + S            |
+| **Run**                          | Ctrl + Shift + Return/Enter | Cmd + Shift + Return/Enter |
+| **Reset**                        | Ctrl + Shift + X            | Cmd + Shift + X            |
+| **Increase font size**           | Ctrl + Shift + Plus (+)     | Cmd + Shift + Plus (+)     |
+| **Decrease font size**           | Ctrl + Shift + Minus (-)    | Cmd + Shift + Minus (-)    |
+| **Switch between tabs**          | Ctrl + 1, 2, 3, 4                      | Cmd + 1, 2, 3, 4                      |
+| **View the typings suggestions** | Ctrl + space                           | Cmd + space                           |
 
 <InlineAlert slots="header,text1" variant="success"/>
 
