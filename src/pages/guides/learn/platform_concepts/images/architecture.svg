@@ -41,7 +41,6 @@
 
   <!-- Main title -->
   <text x="600" y="50" text-anchor="middle" class="titleDark">Adobe Express Add-on Architecture</text>
-  <text x="600" y="75" text-anchor="middle" class="muted">Two-Runtime System with Secure Communication</text>
 
   <!-- Left Panel: UI Runtime -->
   <g filter="url(#shadow)">
@@ -50,8 +49,8 @@
     <rect x="60" y="80" width="480" height="56" fill="url(#hdrL)" rx="12"/>
     <rect x="60" y="124" width="480" height="12" fill="url(#hdrL)"/>
     
-    <text x="84" y="113" class="hl">UI Runtime Environment</text>
-    <text x="84" y="132" class="hs">Iframe • Add-on UI SDK</text>
+    <text x="84" y="113" class="hl">iframe Runtime Environment</text>
+    <text x="84" y="132" class="hs">Add-on UI SDK</text>
 
     <!-- File indicators -->
     <rect x="84" y="160" width="140" height="24" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
@@ -61,19 +60,18 @@
     <text x="246" y="177" class="api-call">index.js</text>
 
     <!-- Capabilities -->
-    <text x="88" y="215" class="list">• Full browser environment</text>
-    <text x="88" y="240" class="list">• DOM manipulation &amp; events</text>
-    <text x="88" y="265" class="list">• Network requests (fetch, OAuth)</text>
-    <text x="88" y="290" class="list">• File uploads &amp; downloads</text>
-    <text x="88" y="315" class="list">• Modal dialogs &amp; user interactions</text>
-    <text x="88" y="340" class="list">• Document export/import</text>
+    <text x="88" y="215" class="list">• Add-on user interface &amp; interactions</text>
+    <text x="88" y="240" class="list">• Document import/export operations</text>
+    <text x="88" y="265" class="list">• Network requests &amp; external APIs</text>
+    <text x="88" y="290" class="list">• OAuth &amp; authentication flows</text>
+    <text x="88" y="315" class="list">• Modal dialogs &amp; file operations</text>
+    <text x="88" y="340" class="list">• Communication with document sandbox</text>
+    <text x="88" y="365" class="list">• Full browser APIs (DOM, fetch, storage)</text>
 
     <!-- API Example -->
-    <rect x="88" y="360" width="430" height="32" fill="#F0FDF4" stroke="#16A34A" stroke-width="1" rx="4"/>
-    <text x="96" y="381" class="api-call">addOnUISdk.app.document.addImage(blob, attributes)</text>
-
-    <!-- Security note -->
-    <text x="88" y="415" class="security-note">⚠ Cannot directly access document content</text>
+    <rect x="88" y="385" width="430" height="48" fill="#F0FDF4" stroke="#16A34A" stroke-width="1" rx="4"/>
+    <text x="96" y="403" class="api-call">const blob = await getBlob(url);</text>
+    <text x="96" y="421" class="api-call">addOnUISdk.app.document.addImage(blob, attributes)</text>
   </g>
 
   <!-- Right Panel: Document Sandbox -->
@@ -84,29 +82,24 @@
     <rect x="660" y="124" width="480" height="12" fill="url(#hdrR)"/>
     
     <text x="684" y="113" class="hl">Document Sandbox Environment</text>
-    <text x="684" y="132" class="hs">Isolated Runtime • QuickJS</text>
+    <text x="684" y="132" class="hs">Document Sandbox SDK • Express Document SDK</text>
 
     <!-- File indicators -->
     <rect x="684" y="160" width="120" height="24" fill="#DCFCE7" stroke="#16A34A" stroke-width="1" rx="4"/>
     <text x="690" y="177" class="api-call">code.js</text>
-    
-    <rect x="820" y="160" width="200" height="24" fill="#DCFCE7" stroke="#16A34A" stroke-width="1" rx="4"/>
-    <text x="826" y="177" class="api-call">express-document-sdk</text>
 
     <!-- Capabilities -->
     <text x="688" y="215" class="list">• Direct document manipulation</text>
     <text x="688" y="240" class="list">• Create shapes, text, images</text>
     <text x="688" y="265" class="list">• Access scene graph &amp; nodes</text>
-    <text x="688" y="290" class="list">• Limited browser APIs (console, Blob)</text>
-    <text x="688" y="315" class="list">• Secure isolated execution</text>
-    <text x="688" y="340" class="list">• Communication with UI runtime</text>
+    <text x="688" y="290" class="list">• Secure isolated execution</text>
+    <text x="688" y="315" class="list">• Communication with iframe runtime</text>
+    <text x="688" y="340" class="list">• Module imports: add-on-sandbox-sdk, express-document-sdk</text>
 
     <!-- API Example -->
-    <rect x="688" y="360" width="430" height="32" fill="#F0FDF4" stroke="#16A34A" stroke-width="1" rx="4"/>
-    <text x="696" y="381" class="api-call">editor.createRectangle(); insertionParent.append()</text>
-
-    <!-- Security note -->
-    <text x="688" y="415" class="security-note">🔒 No DOM access • No network requests</text>
+    <rect x="688" y="360" width="430" height="48" fill="#F0FDF4" stroke="#16A34A" stroke-width="1" rx="4"/>
+    <text x="696" y="378" class="api-call">const rect = editor.createRectangle();</text>
+    <text x="696" y="396" class="api-call">editor.context.insertionParent.children.append(rect)</text>
   </g>
 
   <!-- Communication arrows -->

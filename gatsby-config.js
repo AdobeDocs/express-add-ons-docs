@@ -782,14 +782,14 @@ module.exports = {
           },
           {
             title: "Platform Concepts",
-            path: "guides/learn/platform_concepts/context.md",
+            path: "guides/learn/platform_concepts/architecture.md",
             pages: [
               {
                 title: "(NEW) Add-on Architecture",
-                path: "guides/learn/platform_concepts/runtime-architecture.md",
+                path: "guides/learn/platform_concepts/architecture.md",
               },
               {
-                title: "Add-on Iframe Context",
+                title: "iframe Runtime Context & Security",
                 path: "guides/learn/platform_concepts/context.md",
               },              
               {
@@ -800,7 +800,7 @@ module.exports = {
           },
           {
             title: "(NEW) SDK Fundamentals",
-            path: "guides/learn/fundamentals/ui-sdk-constants.md",
+            path: "guides/learn/fundamentals/terminology.md",
             pages: [
               {
                 title: "Terminology",

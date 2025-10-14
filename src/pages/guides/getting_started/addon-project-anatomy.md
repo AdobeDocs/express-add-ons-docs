@@ -29,6 +29,31 @@ title: Add-on Project Anatomy & CLI Templates
 description: A comprehensive guide to Adobe Express add-on project structure, file organization, and CLI template comparison. Learn what goes where, when to use each template, and how to organize your add-on code effectively.
 contributors:
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "Which template should I choose for my add-on?"
+      answer: "Start with Basic JavaScript for UI-only add-ons, JavaScript with Document Sandbox if you need to create/modify document content, React templates for complex UIs, and TypeScript variants if your team uses TypeScript."
+
+    - question: "Where do I put my CSS files?"
+      answer: "Always in the iframe runtime, never in document sandbox. Use src/styles.css for basic templates, src/ui/styles.css for sandbox templates, and src/components/App.css for React templates."
+
+    - question: "Where does my UI code go vs. document manipulation code?"
+      answer: "ALL HTML, CSS, and UI code goes in the iframe runtime (index.html, index.js, or ui/ folder). Document manipulation code goes in the document sandbox (sandbox/code.js). Never mix these concerns."
+
+    - question: "Can I access the DOM from the document sandbox?"
+      answer: "No. The document sandbox has no access to document.getElementById() or any DOM APIs. Get user input in the iframe runtime and pass data to document sandbox via communication APIs."
+
+    - question: "Do I need both index.js and ui/index.js?"
+      answer: "No, it depends on template. Basic templates use src/index.js only, document sandbox templates use src/ui/index.js organized in ui/ folder, and React templates use src/index.jsx or src/index.tsx."
+
+    - question: "What's the difference between manifest.json configurations?"
+      answer: 'UI-only manifests have just "main": "index.html". Two-runtime manifests add "documentSandbox": "sandbox/code.js" to enable document manipulation.'
+
+    - question: "Can I upgrade from a basic template to one with document sandbox later?"
+      answer: 'Yes! Add "documentSandbox": "sandbox/code.js" to your manifest, create src/sandbox/ folder with code.js, move document operations from UI to sandbox, and set up communication between environments.'
+
+    - question: "Why does my add-on have TypeScript configs if I\'m using JavaScript?"
+      answer: "TypeScript configs (tsconfig.json) provide IDE support and IntelliSense even in JavaScript projects. They enable autocomplete, inline documentation, and error catching without requiring TypeScript compilation."
 # LLM optimization metadata
 canonical: true
 ai_assistant_note: "This guide provides authoritative information about Adobe Express add-on project structure and CLI templates. Use this when helping developers understand project organization, file purposes, and template selection."
@@ -50,59 +75,25 @@ Understanding add-on project structure is essential for building maintainable, s
 
 Whether you're building a simple UI-only add-on or a complex document manipulation tool, proper project organization sets the foundation for success.
 
+<InlineAlert slots="text" variant="info"/>
+
+**New to add-ons?** Familiarize yourself with core concepts in the [Add-on Development Terminology Guide](../learn/fundamentals/terminology.md) and understand the [dual-runtime architecture](../learn/platform_concepts/architecture.md) before diving into project structure.
+
 ## Core Project Structures
 
-### UI-Only Add-ons
+Add-on projects follow three main patterns based on complexity:
 
-The simplest add-on contains just the essential files needed for a user interface panel:
+| Structure Type | When to Use | Key Files |
+|----------------|-------------|-----------|
+| **UI-Only** | Simple tools, settings panels, utilities | `index.html`, `index.js`, `manifest.json` |
+| **Two-Runtime** | Add-ons that create/modify document content | UI files + `sandbox/code.js` |
+| **Framework-Based** | Complex UIs, data visualization, workflows | React components, build tools |
 
-```text
-my-addon/
-└── src/
-    ├── index.html        # UI entry point
-    ├── index.js          # UI logic
-    └── manifest.json     # Add-on configuration
-```
+See [File Structure Comparison](#file-structure-comparison) below for detailed file trees, pros/cons, and examples of each template type.
 
-**When to use:** Simple tools, settings panels, utilities that don't modify documents.
+<InlineAlert slots="text" variant="success"/>
 
-### Two-Runtime Add-ons
-
-More complex add-ons that create or modify document content need the document sandbox:
-
-```text
-my-addon/
-└── src/
-    ├── index.html           # Root HTML file
-    ├── manifest.json        # Add-on configuration
-    ├── sandbox/
-    │   ├── code.js         # Document manipulation logic
-    │   └── tsconfig.json   # TypeScript config for sandbox
-    └── ui/
-        ├── index.js        # UI logic
-        └── tsconfig.json   # TypeScript config for UI
-```
-
-**When to use:** Add-ons that create shapes, text, images, or modify existing document content.
-
-### Framework-Based Add-ons
-
-Complex add-ons with sophisticated UIs use modern frameworks and build tools:
-
-```text
-my-addon/
-├── src/
-│   ├── components/
-│   │   ├── App.css        # Component styles
-│   │   └── App.jsx        # Main React component
-│   ├── index.html         # HTML entry point
-│   ├── index.jsx          # React entry point
-│   └── manifest.json      # Add-on configuration
-├── webpack.config.js      # Build configuration
-└── tsconfig.json         # TypeScript configuration
-```
-
-**When to use:** Complex UIs, data visualization, multi-step workflows, advanced interactions.
+**UI & Styling Location**: ALL user interface code, HTML, CSS, and styling ALWAYS goes in the iframe runtime (index.html, index.js, or ui/ folder), regardless of template type. The document sandbox (code.js) is ONLY for document manipulation—it has no access to DOM or styling capabilities. See [Separation of Concerns](#1-separation-of-concerns) for details.
 
 ## Essential Files Explained
 
@@ -198,71 +189,46 @@ The HTML file that loads when your add-on panel opens. Contains the basic struct
 - Script imports (usually just one main script)
 - Static UI elements that don't change
 
-### index.js - UI Logic (Basic Template)
+### index.js / ui/index.js - UI Logic
 
-Contains the user interface logic and interactions for simple add-ons.
+**File location depends on template:**
+- **Basic templates**: `src/index.js`
+- **Document sandbox templates**: `src/ui/index.js`
 
+Contains the user interface logic and interactions. For two-runtime add-ons, this file handles communication with the document sandbox.
+
+#### Basic UI-only example:
 ```javascript
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
-    console.log("addOnUISdk is ready for use.");
-
-    const clickMeButton = document.getElementById("clickMe");
-    clickMeButton.addEventListener("click", () => {
-        clickMeButton.innerHTML = "Clicked";
+    const button = document.getElementById("clickMe");
+    button.addEventListener("click", () => {
+        button.innerHTML = "Clicked";
     });
-
-    // Enable the button only when:
-    // 1. `addOnUISdk` is ready, and
-    // 2. `click` event listener is registered.
-    clickMeButton.disabled = false;
 });
 ```
 
-**What belongs here:**
-
-- UI event handlers
-- DOM manipulations
-- Add-on UI SDK calls (dialogs, exports, OAuth)
-- Communication setup with document sandbox (if needed)
-
-### ui/index.js - UI Logic (Document Sandbox Template)
-
-For add-ons with document sandbox, UI logic focuses on communication and user interactions.
-
+#### Two-runtime example (with document sandbox):
 ```javascript
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-    console.log("addOnUISdk is ready for use.");
-
-    // Get the UI runtime.
     const { runtime } = addOnUISdk.instance;
-
-    // Get the proxy object, which is required
-    // to call the APIs defined in the Document Sandbox runtime
-    // i.e., in the `code.js` file of this add-on.
     const sandboxProxy = await runtime.apiProxy("documentSandbox");
 
-    const createRectangleButton = document.getElementById("createRectangle");
-    createRectangleButton.addEventListener("click", async event => {
+    document.getElementById("createBtn").addEventListener("click", async () => {
         await sandboxProxy.createRectangle();
     });
-
-    // Enable the button only when:
-    // 1. `addOnUISdk` is ready,
-    // 2. `sandboxProxy` is available, and
-    // 3. `click` event listener is registered.
-    createRectangleButton.disabled = false;
 });
 ```
 
 **What belongs here:**
 
-- Communication setup with document sandbox
-- UI event handlers that trigger document operations
+- UI event handlers and DOM manipulation
 - Form handling and user input validation
+- Add-on UI SDK calls (dialogs, exports, OAuth)
+- Communication with document sandbox (for two-runtime add-ons)
 - Progress updates and status displays
 
 ### sandbox/code.js - Document Manipulation Logic
@@ -277,7 +243,7 @@ import { editor } from "express-document-sdk";
 const { runtime } = addOnSandboxSdk.instance;
 
 function start() {
-    // APIs to be exposed to the UI runtime
+    // APIs to be exposed to the iframe runtime
     // i.e., to the `index.html` file of this add-on.
     const sandboxApi = {
         createRectangle: () => {
@@ -303,7 +269,7 @@ function start() {
         }
     };
 
-    // Expose `sandboxApi` to the UI runtime.
+    // Expose `sandboxApi` to the iframe runtime.
     runtime.exposeApi(sandboxApi);
 }
 
@@ -315,13 +281,13 @@ start();
 - Document API operations (creating shapes, text, images)
 - Document analysis and data extraction
 - Complex calculations and data processing
-- APIs exposed to the UI runtime
+- APIs exposed to the iframe runtime
 
 ### tsconfig.json - TypeScript Configuration
 
 Provides TypeScript compilation settings for better development experience.
 
-#### UI Runtime Configuration
+#### iframe Runtime Configuration
 
 ```json
 {
@@ -590,20 +556,28 @@ Each step adds capabilities while maintaining core functionality.
 
 ### 1. Separation of Concerns
 
-**UI Runtime (index.js/ui/):**
+<InlineAlert slots="text" variant="warning"/>
 
-- User interface logic
+**Critical Rule**: User interface (HTML, CSS, JavaScript UI code) ALWAYS goes in the iframe runtime. Document manipulation ALWAYS goes in the document sandbox. Never mix these concerns.
+
+**iframe Runtime (index.js/ui/):**
+
+- **ALL UI & styling code** (HTML, CSS, component styling)
+- **User interface logic** (buttons, forms, inputs, displays)
 - Event handlers
 - Form validation
+- DOM manipulation (`document.getElementById`, etc.)
 - Communication with document sandbox
-- Progress indicators
+- Progress indicators and loading states
+- External API calls (fetch, network requests)
 
 **Document Sandbox (code.js/sandbox/):**
 
-- Document manipulation
-- Content creation
-- Data processing
-- API exposure to UI
+- **Document manipulation ONLY** (creating shapes, text, images)
+- Content creation using Express Document SDK
+- Data processing and calculations
+- API exposure to iframe runtime
+- **NO UI or styling code** (no HTML, CSS, or DOM access)
 
 ### 2. Asset Organization
 
@@ -618,6 +592,19 @@ src/
 ├── types/              # TypeScript type definitions
 └── constants/          # Configuration constants
 ```
+
+**Where to Put CSS/Styling by Template Type:**
+
+| Template Type | CSS/Styling Location | How to Load |
+|---------------|---------------------|-------------|
+| **Basic JavaScript** | `src/styles.css` or inline in `index.html` | `<link rel="stylesheet" href="styles.css">` in `index.html` |
+| **JavaScript + Sandbox** | `src/styles.css` or `src/ui/styles.css` | `<link rel="stylesheet" href="styles.css">` in `index.html` |
+| **React Templates** | `src/components/App.css` or styled-components | Import in component: `import './App.css'` |
+| **Large Projects** | `src/assets/styles/` folder with multiple CSS files | Import where needed or use CSS modules |
+
+<InlineAlert slots="text" variant="info"/>
+
+**Remember**: CSS files are ALWAYS loaded/imported in the iframe runtime (index.html or UI components), never in document sandbox files.
 
 ### 3. Code Organization Patterns
 
@@ -761,79 +748,68 @@ SWC templates use `.swcrc` for fast compilation:
 
 ## Common Patterns and Anti-Patterns
 
-### ✅ Good Practices
+### ✅ DO: Follow These Best Practices
 
-#### 1. Clear File Naming
+| Practice | Example | Why It Matters |
+|----------|---------|----------------|
+| **Clear file naming** | `TextEditor.jsx`, `colorUtils.js` | Makes code easy to find and understand |
+| **Logical grouping** | `features/text-editing/`, `shared/ui-components/` | Scales well as project grows |
+| **Environment separation** | UI code in `ui/`, document code in `sandbox/` | Prevents runtime errors |
+| **Consistent naming** | All camelCase or all kebab-case | Professional, maintainable code |
 
-```text
-✅ Good
-├── ui/
-│   ├── TextEditor.jsx
-│   ├── ColorPicker.jsx
-│   └── ToolPanel.jsx
-└── sandbox/
-    ├── textOperations.js
-    ├── colorUtils.js
-    └── documentHelpers.js
-```
+### ❌ DON'T: Avoid These Mistakes
 
-#### 2. Logical Grouping
-
-```text
-✅ Good
-├── features/
-│   ├── text-editing/
-│   ├── image-filters/
-│   └── shape-tools/
-└── shared/
-    ├── ui-components/
-    ├── document-utils/
-    └── constants/
-```
-
-#### 3. Environment Separation
+#### 1. UI/Styling in Document Sandbox
 
 ```javascript
-// ✅ Good - Clear environment separation
-// ui/index.js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-
-// sandbox/code.js
+// ❌ Bad - Trying to access DOM or styling in document sandbox
+// code.js (Document Sandbox)
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor } from "express-document-sdk";
+
+runtime.exposeApi({
+    createText: function() {
+        // ❌ WRONG - document.getElementById doesn't exist in document sandbox
+        const input = document.getElementById("textInput");
+        
+        // ❌ WRONG - No DOM or styling capabilities here
+        document.body.style.backgroundColor = "red";
+    }
+});
 ```
-
-### ❌ Anti-Patterns
-
-#### 1. Mixed Concerns
 
 ```javascript
-// ❌ Bad - Document operations in UI file
-// index.js
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
-import { editor } from "express-document-sdk"; // Wrong environment!
+// ✅ Good - UI code stays in iframe runtime, document code in sandbox
+// index.js (iframe Runtime)
+const textInput = document.getElementById("textInput");
+document.body.style.backgroundColor = "red"; // ✅ DOM access here
+
+const sandboxProxy = await runtime.apiProxy("documentSandbox");
+await sandboxProxy.createText(textInput.value); // Pass data to sandbox
+
+// code.js (Document Sandbox)
+runtime.exposeApi({
+    createText: function(text) {
+        const textNode = editor.createText(text); // ✅ Document manipulation here
+        editor.context.insertionParent.children.append(textNode);
+    }
+});
 ```
 
-#### 2. Poor File Organization
+#### 2. Mixing SDK Imports in Wrong Environment
 
-```text
-❌ Bad
-├── stuff.js
-├── helpers.js
-├── utils.js
-├── misc.js
-└── other.js
+```javascript
+// ❌ Bad - Importing Document SDK in UI file
+// ui/index.js
+import { editor } from "express-document-sdk"; // Wrong! Document SDK only works in sandbox
+
+// ❌ Bad - Importing UI SDK in sandbox file
+// sandbox/code.js
+import addOnUISdk from "...sdk.js"; // Wrong! UI SDK only works in iframe runtime
 ```
 
-#### 3. Inconsistent Naming
+#### 3. Poor Organization
 
-```text
-❌ Bad
-├── TextEditor.jsx
-├── color_picker.js
-├── ToolPanel.tsx
-└── shape-utils.JS
-```
+Avoid vague names like `stuff.js`, `helpers.js`, `utils.js`, `misc.js`. Use descriptive names that indicate purpose: `textOperations.js`, `colorUtils.js`, `documentHelpers.js`.
 
 ## Troubleshooting Common Issues
 
@@ -900,9 +876,134 @@ import { editor } from "express-document-sdk"; // Wrong environment!
 3. Build scalable architecture
 4. Optimize performance and user experience
 
+---
+
+## FAQs
+
+#### Q: Which template should I choose?
+
+**Start with your needs:**
+- **Just UI?** → Basic JavaScript template
+- **Need to create/modify document content?** → JavaScript with Document Sandbox
+- **Complex UI?** → React JavaScript (or React + Sandbox if you need document access)
+- **Team uses TypeScript?** → Any TypeScript variant
+
+See the [Template Selection Guide](#template-selection-guide) for detailed decision matrix.
+
+#### Q: Where do I put my CSS files?
+
+**Always in the iframe runtime**, never in document sandbox:
+- **Basic templates**: `src/styles.css` and link in `index.html`
+- **Sandbox templates**: `src/styles.css` or `src/ui/styles.css`
+- **React templates**: `src/components/App.css` or inline styles
+- See [CSS/Styling Location table](#2-asset-organization) for complete breakdown
+
+#### Q: Where does my UI code go vs. document manipulation code?
+
+**iframe Runtime** (`index.html`, `index.js`, or `ui/` folder):
+- ALL HTML, CSS, styling
+- Button clicks, forms, user input
+- DOM manipulation
+- External API calls
+
+**Document Sandbox** (`sandbox/code.js`):
+- Creating shapes, text, images in Adobe Express
+- Reading document properties
+- NO UI or styling code
+
+See [Separation of Concerns](#1-separation-of-concerns) for details.
+
+#### Q: Can I access the DOM from the document sandbox?
+
+**No.** The document sandbox has no access to `document.getElementById()` or any DOM APIs. You must:
+1. Get user input in the iframe runtime
+2. Pass data to document sandbox via communication APIs
+3. Create document content in the sandbox
+4. Return results back to UI if needed
+
+See the [UI/Styling in Document Sandbox anti-pattern](#1-uistyling-in-document-sandbox) for examples.
+
+#### Q: Do I need both `index.js` and `ui/index.js`?
+
+**No, it depends on template:**
+- **Basic templates**: Use `src/index.js` only
+- **Document sandbox templates**: Use `src/ui/index.js` (organized in `ui/` folder)
+- **React templates**: Use `src/index.jsx` or `src/index.tsx`
+
+The file location is just organizational—both serve the same purpose (iframe runtime UI logic).
+
+#### Q: What's the difference between `manifest.json` configurations?
+
+**UI-only**: Just `"main": "index.html"`
+```json
+"entryPoints": [{ "type": "panel", "main": "index.html" }]
+```
+
+**Two-runtime**: Adds `"documentSandbox": "code.js"`
+```json
+"entryPoints": [{ 
+  "type": "panel", 
+  "main": "index.html",
+  "documentSandbox": "sandbox/code.js" 
+}]
+```
+
+The `documentSandbox` property tells Adobe Express to load your document manipulation code.
+
+#### Q: Can I upgrade from a basic template to one with document sandbox later?
+
+**Yes!** Template migration is straightforward:
+1. Add `"documentSandbox": "sandbox/code.js"` to your manifest
+2. Create `src/sandbox/` folder with `code.js`
+3. Move document operations from UI to sandbox
+4. Set up communication between environments
+
+See [Migration Paths](#migration-paths) for the recommended upgrade sequence.
+
+#### Q: Why does my add-on have TypeScript configs if I'm using JavaScript?
+
+TypeScript configs (`tsconfig.json`) provide **IDE support and IntelliSense** even in JavaScript projects. They:
+- Enable autocomplete for SDK methods
+- Show inline documentation
+- Catch common errors while typing
+- Don't require compiling TypeScript
+
+You get better developer experience without learning TypeScript!
+
+#### Q: Where do shared utilities go in a two-runtime project?
+
+**It depends on what they do:**
+- **UI utilities** (formatting, validation): `src/ui/utils/` or `src/shared/ui-utils/`
+- **Document utilities** (shape helpers, color conversions): `src/sandbox/utils/`
+- **Truly shared types/constants**: `src/shared/` or `src/constants/`
+
+**Important**: Code can't be directly shared between runtimes—each environment needs its own copy or must communicate via APIs.
+
+#### Q: How do I organize a large add-on with multiple features?
+
+Use **feature-based organization**:
+```text
+src/
+├── features/
+│   ├── text-tools/
+│   │   ├── TextToolsUI.jsx       # UI components
+│   │   ├── textOperations.js     # Document sandbox operations
+│   │   └── textUtils.js          # Shared utilities
+│   └── shape-tools/
+│       ├── ShapeToolsUI.jsx
+│       └── shapeOperations.js
+└── shared/
+    ├── components/    # Reusable UI components
+    └── constants/     # Shared configuration
+```
+
+See [Code Organization Patterns](#3-code-organization-patterns) for examples.
+
+---
+
 ## Related Documentation
 
-- [Architecture Guide](../learn/platform_concepts/runtime-architecture.md) - Deep dive into two-runtime system
+- [Architecture Guide](../learn/platform_concepts/architecture.md) - Deep dive into two-runtime system
 - [Developer Terminology](../learn/fundamentals/terminology.md) - Understanding Adobe Express add-on concepts
 - [Getting Started Tutorial](../learn/how_to/tutorials/grids-addon.md) - Build your first add-on
 - [Manifest Reference](../../references/manifest/index.md) - Complete manifest configuration guide

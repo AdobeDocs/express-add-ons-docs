@@ -1,10 +1,69 @@
-# Add-on Iframe Context
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - iframe
+  - iframe Runtime
+  - Sandbox
+  - Security
+  - Permissions
+  - CORS
+  - Cross-Origin Resource Sharing
+  - Subdomain
+  - Manifest
+  - Sandbox Permissions
+  - OAuth
+  - Clipboard
+  - Microphone
+  - Camera
+  - Premium Content
+  - CORS Proxy
+  - Cross-Origin-Embedder-Policy
+  - COEP
+  - CORP
+  - Access Control
+  - Origin
+  - Domain
+  - Add-on Context
+  - Browser Security
+  - Web Security
+title: iframe Runtime Context & Security
+description: Essential guide to Adobe Express add-on iframe context, sandbox permissions, CORS handling, security boundaries, and subdomain management for secure add-on development.
+contributors:
+  - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "Why does my add-on run in an iframe sandbox?"
+      answer: "Add-ons run in a sandboxed iframe for security. This isolates your add-on from the host application and other add-ons, protecting user data while still allowing your add-on to function."
 
-Important details about the context of your add-on; permissions, security, CORS and more.
+    - question: "How do I get my add-on's unique subdomain for CORS?"
+      answer: "Create a private sharing link through the distribution workflow (even during development). Your unique subdomain is assigned and displayed in the Settings panel as the Add-on URL."
 
-## iframe Sandbox
+    - question: "What sandbox permissions can I use in my add-on?"
+      answer: "Currently supported: allow-downloads, allow-popups, allow-popups-to-escape-sandbox, and allow-presentation. The allow-scripts and allow-same-origin permissions are automatically included."
 
-Your add-on is essentially a website running in a [sandboxed](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) iframe. As a result, the content of your add-on runs in a low-privileged environment, has a subset of capabilities, and has an extra set of restrictions by default. It's important to understand how this may affect the add-on you're building, as well as how to learn to mitigate any problems you may run into along the way.
+    - question: "How do I handle CORS errors in my add-on?"
+      answer: "Options: 1) Add your add-on's subdomain to the service's allowed origins list, 2) Set Access-Control-Allow-Origin headers on your server, or 3) Use a CORS proxy server."
+
+    - question: "Can I use camera and microphone in my add-on?"
+      answer: "Yes, you can request camera and microphone permissions in your manifest using the permissions object with camera and microphone fields."
+---
+
+# iframe Runtime Context & Security
+
+Essential information about your add-on's execution context, including iframe sandbox security, permissions, CORS handling, and subdomain management.
+
+## Overview
+
+Adobe Express add-ons run in a secure iframe runtime environment with specific permissions and restrictions. Understanding these security boundaries, sandbox permissions, and CORS requirements is crucial for building robust add-ons that interact with external services while maintaining user security.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Architecture Context**: This guide covers the security aspects of the iframe runtime. For a comprehensive understanding of how the iframe runtime fits into the overall add-on architecture, see the [Add-on Architecture Guide](./architecture.md).
+
+## iframe Runtime Environment
+
+Your add-on's user interface runs in a [sandboxed iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) within Adobe Express. This sandboxed environment provides security isolation, running your add-on in a low-privileged environment with a restricted set of capabilities. Understanding these restrictions and how to work within them is essential for successful add-on development.
 
 ### Restrictions
 
@@ -68,10 +127,11 @@ Be sure to set your browser devtools option to "**Show CORS errors in console**"
 
 ![Show CORS errors in Chrome screenshot](images/show-cors.png)
 
-### Add-on subdomain
+### Add-on Subdomain
 
-To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service.
-Your add-on is given a unique ID when you go through the in-app distribution process for an add-on, to distribute it for private or public sharing. This ID will not change once it's been generated, regardless of [future distributions](../../build/distribute/index.md), so we suggest that you create a private sharing link when you need it, even if you're still in the development phase. Your add-on's [subdomain](#subdomain) is assigned during this distribution process with a prefix of your unique add-on id, followed by the URL where it's hosted: `.wxp.adobe-addons.com`, for example: `src="https://w906hhl6k.wxp.adobe-addons.com/`.
+To help enable a smoother experience for developers dealing with CORS, each add-on receives a unique [subdomain](#subdomain) that can be added to the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) for external services.
+
+Your add-on is assigned a unique ID during the distribution process (for both private and public sharing). This ID is permanent and won't change across [future distributions](../../build/distribute/index.md), so we recommend creating a private sharing link early in development to obtain your subdomain. The subdomain format includes your unique add-on ID as a prefix, followed by `.wxp.adobe-addons.com`, for example: `https://w906hhl6k.wxp.adobe-addons.com/`.
 
 #### Retrieving a subdomain
 
@@ -178,3 +238,13 @@ Subdomains are unique URLs that include an additional part to identify them in f
 ### allowed list of origins
 
 A list of external domains that the server allows to request resources. This is typically enforced with a header defined on servers who enforce CORS, with the [`Access-Control-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) header. This server-side header is returned to a [preflight request](https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request), (dispatched transparently by the browser, before the request from your add-on itself), in order to determine if it's safe to send it when a cross-origin request is allowed.
+
+---
+
+## Related Topics
+
+- [Add-on Architecture Guide](./architecture.md) - Understanding the dual-runtime system and how the iframe runtime fits into the overall architecture
+- [Add-on Development Terminology](../fundamentals/terminology.md) - Key terms and concepts including iframe runtime, sandbox, and security model
+- [Manifest Reference](../../../references/manifest/index.md) - Complete manifest configuration including permissions
+- [Premium Content Guide](../how_to/premium_content.md) - Implementing premium content flows with required permissions
+- [FAQ - CORS Errors](../../support/faq.md#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error) - Common CORS troubleshooting

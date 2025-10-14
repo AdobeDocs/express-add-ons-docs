@@ -200,89 +200,33 @@ newRect.fill = {
 };
 ```
 
-## Working with Colors and Constants
+## Using Colors with Constants
 
-Document constants work hand-in-hand with the `colorUtils` utility for creating and managing colors. Here's how to combine them effectively:
-
-### Creating Colors with colorUtils
+When working with fill and stroke properties, you'll need to provide Color objects. Use the `colorUtils` utility from `express-document-sdk` to create colors:
 
 ```javascript
 import { editor, constants, colorUtils } from "express-document-sdk";
 
-// Create colors using colorUtils
-const redColor = colorUtils.fromRGB(1, 0, 0);           // Bright red
-const blueColor = colorUtils.fromHex("#0066CC");        // Blue from hex
-const greenColor = colorUtils.fromRGB(0, 1, 0, 0.5);   // Semi-transparent green
-
-// Use with fill constants
+// Create colors and use with constants
 const rectangle = editor.createRectangle();
 rectangle.fill = {
-  type: constants.FillType.color,  // Use constant for type safety
-  color: redColor                  // Use colorUtils for color creation
+  type: constants.FillType.color,           // Constant for type safety
+  color: colorUtils.fromHex("#FF0000")      // Color from hex string
+};
+
+rectangle.stroke = {
+  type: constants.StrokeType.color,
+  color: colorUtils.fromRGB(0, 0, 1),       // Color from RGB values
+  width: 2,
+  position: constants.StrokePosition.inside
 };
 ```
 
-### Color Conversion Methods
+<InlineAlert slots="text" variant="success"/>
 
-```javascript
-import { colorUtils } from "express-document-sdk";
+**Working with Colors**: For comprehensive color creation, conversion, and application examples, see the [Use Color Guide](../how_to/use_color.md).
 
-// Multiple ways to create the same color
-const orange = colorUtils.fromRGB(1, 0.5, 0);                    // RGB values (0-1)
-const orange2 = colorUtils.fromRGB({ red: 1, green: 0.5, blue: 0 }); // RGB object
-const orange3 = colorUtils.fromHex("#FF8000");                   // Hex string
-const orange4 = { red: 1, green: 0.5, blue: 0, alpha: 1 };     // Direct object
-
-// Convert color to hex string
-const hexString = colorUtils.toHex(orange); // "#FF8000FF" (includes alpha)
-```
-
-### Practical Color + Constants Examples
-
-```javascript
-import { editor, constants, colorUtils } from "express-document-sdk";
-
-// Example: Create a styled button-like rectangle
-function createStyledButton(text, bgColor, textColor) {
-  // Create background rectangle
-  const button = editor.createRectangle();
-  button.width = 120;
-  button.height = 40;
-  
-  // Apply background color using constants + colorUtils
-  button.fill = {
-    type: constants.FillType.color,
-    color: colorUtils.fromHex(bgColor)
-  };
-  
-  // Add border stroke
-  button.stroke = {
-    type: constants.StrokeType.color,
-    color: colorUtils.fromHex("#CCCCCC"),
-    width: 1,
-    position: constants.StrokePosition.inside
-  };
-  
-  // Create text element
-  const textNode = editor.createText();
-  textNode.text = text;
-  textNode.textAlignment = constants.TextAlignment.center;
-  
-  // Apply text color
-  const textStyles = {
-    fontSize: 14,
-    color: colorUtils.fromHex(textColor)
-  };
-  textNode.setRangeCharacterStyles(0, text.length, textStyles);
-  
-  return { button, textNode };
-}
-
-// Usage
-const { button, textNode } = createStyledButton("Click Me", "#007ACC", "#FFFFFF");
-```
-
-### Communication with UI
+## Communication with UI
 
 ```javascript
 // In code.js - expose constants to UI if needed
@@ -456,11 +400,7 @@ function changeColor(node, color) {
 
 #### Q: How do I create colors for use with constants?
 
-**A:** Use `colorUtils.fromRGB(r, g, b, alpha)` or `colorUtils.fromHex("#RRGGBB")` to create Color objects. Always import: `import { colorUtils } from "express-document-sdk"`.
-
-#### Q: What's the difference between colorUtils and manual color objects?
-
-**A:** `colorUtils` provides validation and conversion methods. Manual objects like `{ red: 1, green: 0, blue: 0, alpha: 1 }` work but lack validation and helper functions.
+**A:** Use `colorUtils.fromRGB(r, g, b, alpha)` or `colorUtils.fromHex("#RRGGBB")` to create Color objects. Import with: `import { colorUtils } from "express-document-sdk"`. See the [Use Color Guide](../how_to/use_color.md) for complete examples.
 
 ## Related Documentation
 

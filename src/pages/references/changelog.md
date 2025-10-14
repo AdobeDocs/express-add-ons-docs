@@ -25,11 +25,11 @@ contributors:
 
 # Changelog
 
-## 2025-10-08
+## 2025-10-14
 
 ### Added
 
-- New [Architecture Guide](../guides/learn/platform_concepts/runtime-architecture.md) with dual-runtime system explanation, SDK imports and usage, and cross-runtime communication patterns.
+- New [Architecture Guide](../guides/learn/platform_concepts/architecture.md) with dual-runtime system explanation, SDK imports and usage, and cross-runtime communication patterns.
 - New [Project Anatomy](../guides/getting_started/addon-project-anatomy.md) guide with add-on project structure, file organization, and template selection for efficient Adobe Express add-on development.
 - New [Add-on SDK Terminology](../guides/learn/fundamentals/terminology.md) guide with standardized definitions, decision matrices, and troubleshooting for Adobe Express Add-on development terminology.
 - New [Add-on UI SDK Constants](../guides/learn/fundamentals/ui-sdk-constants.md) practical usage guide focusing on import patterns, common pitfalls, and solutions for UI SDK constants.
