@@ -180,3 +180,20 @@ section:has(> div > p > span > picture) {
 .developers-live-announcement a:hover span {
   color: #fff !important;
 }
+
+.open-playground-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-family: "adobe-clean" !important;
+}
+
+.playground-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
