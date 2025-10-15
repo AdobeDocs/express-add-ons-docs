@@ -63,6 +63,7 @@ contributors:
 - [`UnorderedListStyle`](../references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md) type **promoted from experimental to stable** - Type definition for unordered list styles
 - [`OrderedListNumbering`](../references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md) enumeration **promoted from experimental to stable** - Numbering types for ordered lists
 - [`ParagraphListType`](../references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md) enumeration **promoted from experimental to stable** - List type enumeration with `none` value added
+- Removed experimental warnings from documentation guides for all APIs promoted to stable, including the [Use Text](../guides/learn/how_to/use_text.md) guide
 
 ## 2025-10-02
 

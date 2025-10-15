@@ -22,6 +22,46 @@ contributors:
 
 # Changelog
 
+## 2025-10-08
+
+### Added
+
+- **Experimental** [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight) method - Proportional height scaling for all node types
+- **Experimental** [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth) method - Proportional width scaling for all node types  
+- **Experimental** [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetocover) method - Resize nodes to cover specified dimensions
+- **Experimental** [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetofitwithin) method - Resize nodes to fit within specified dimensions
+- **Experimental** [`appendText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#appendtext) method - Append text to existing content
+- **Experimental** [`deleteText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#deletetext) method - Delete text ranges from content
+- **Experimental** [`insertText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#inserttext) method - Insert text at specific positions
+- **Experimental** [`replaceText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#replacetext) method - Replace text ranges with new content
+- **Experimental** [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method - Check for unavailable fonts in text content
+- **Experimental** [`id`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#id) property - Unique identifier for text content models
+- **Experimental** [`TextStyleSource`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/TextStyleSource.md) enumeration - Options for text style source matching
+
+### Updated
+
+- [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/Node.md#cloneinplace) method **promoted from experimental to stable** - Available on all node types for creating copies with subtrees
+- [`paragraphStyleRanges`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges) property **promoted from experimental to stable** - Get/set paragraph-level styles with ranges
+- [`applyParagraphStyles()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#applyparagraphstyles) method **promoted from experimental to stable** - Apply styles to specific paragraph ranges
+- [`layout`](../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md#layout) property **promoted from experimental to stable** - Control text layout modes for standalone text
+- [`layout`](../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md#layout) property **promoted from experimental to stable** - Control text layout modes for threaded text
+- [`AreaTextLayout`](../../references/document-sandbox/document-apis/interfaces/AreaTextLayout.md) interface **promoted from experimental to stable** - Fixed width and height text layout configuration
+- [`AutoHeightTextLayout`](../../references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md) interface **promoted from experimental to stable** - Auto-height text layout configuration
+- [`AutoWidthTextLayout`](../../references/document-sandbox/document-apis/interfaces/AutoWidthTextLayout.md) interface **promoted from experimental to stable** - Auto-width text layout configuration
+- [`UnsupportedTextLayout`](../../references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout.md) interface **promoted from experimental to stable** - Representation of unsupported text layouts
+- [`ParagraphStyles`](../../references/document-sandbox/document-apis/interfaces/ParagraphStyles.md) interface **promoted from experimental to stable** - Complete paragraph style definitions
+- [`ParagraphStylesInput`](../../references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md) interface **promoted from experimental to stable** - Input interface for paragraph styles
+- [`ParagraphStylesRange`](../../references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md) interface **promoted from experimental to stable** - Paragraph styles with text ranges
+- [`ParagraphStylesRangeInput`](../../references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput.md) interface **promoted from experimental to stable** - Input interface for paragraph style ranges
+- [`BaseParagraphStyles`](../../references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md) interface **promoted from experimental to stable** - Base paragraph style properties
+- [`OrderedListStyleInput`](../../references/document-sandbox/document-apis/interfaces/OrderedListStyleInput.md) interface **promoted from experimental to stable** - Configuration for ordered lists
+- [`UnorderedListStyleInput`](../../references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md) interface **promoted from experimental to stable** - Configuration for unordered lists
+- [`OrderedListStyle`](../../references/document-sandbox/document-apis/type-aliases/OrderedListStyle.md) type **promoted from experimental to stable** - Type definition for ordered list styles
+- [`UnorderedListStyle`](../../references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md) type **promoted from experimental to stable** - Type definition for unordered list styles
+- [`OrderedListNumbering`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md) enumeration **promoted from experimental to stable** - Numbering types for ordered lists
+- [`ParagraphListType`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md) enumeration **promoted from experimental to stable** - List type enumeration with `none` value added
+- Removed experimental warnings from documentation guides for all APIs promoted to stable, including the [Use Text](../learn/how_to/use_text.md) guide
+
 ## 2025-10-02
 
 ### Added
