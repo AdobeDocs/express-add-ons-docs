@@ -24,7 +24,6 @@ import Prism from "prism-react-renderer/prism";
 
 import "./styles.css";
 
-const EXPRESS_PROD_URL = "https://express.adobe.com/new";
 const CODE_PLAYGROUND_MODE = "playground";
 const CODE_PLAYGROUND_SESSION = "new";
 
@@ -62,7 +61,7 @@ const copyToClipboard = async (codeContent, setIsTooltipOpen) => {
 
 // open code playground
 const openCodePlayground = (codeContent, sampleId) => {
-  const url = new URL(EXPRESS_PROD_URL);
+  const url = new URL(process.env.GATSBY_EXPRESS_URL);
   url.searchParams.set("mode", CODE_PLAYGROUND_MODE);
   url.searchParams.set("session", CODE_PLAYGROUND_SESSION);
   url.searchParams.set("sessionId", sampleId);

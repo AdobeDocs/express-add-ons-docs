@@ -154,6 +154,7 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=8192"
           IMS_BASE_URL: "https://ims-na1-stg1.adobelogin.com"
           FFC_BASE_URL: "https://ffc-addon-stage.adobe.io/"
+          GATSBY_EXPRESS_URL: "https://stage.projectx.corp.adobe.com/new"
           PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID_STAGE }}
           PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
           PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE_STAGE }}
@@ -267,6 +268,7 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=8192"
           IMS_BASE_URL: "https://ims-na1.adobelogin.com"
           FFC_BASE_URL: "https://ffc-addon.adobe.io/"
+          GATSBY_EXPRESS_URL: "https://express.adobe.com/new"
           PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
           PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
           PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
