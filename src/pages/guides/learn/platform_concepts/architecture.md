@@ -48,12 +48,15 @@ keywords:
   - Editor Context
   - Insertion Parent
   - Document Root
-  - Scene Graph
+  - Scenegraph
   - Node Creation
   - File Organization
   - Import Patterns
   - SDK Imports
   - Development Workflow
+  - Singleton Pattern
+  - Three SDKs
+  - Add-on scope vs application scope
 title: Add-on Architecture
 description: A comprehensive deep-dive guide to Adobe Express add-on architecture, explaining the two-runtime system, communication patterns, SDK imports, debugging techniques, and best practices for building secure and performant add-ons.
 contributors:
@@ -95,6 +98,9 @@ faq:
 
     - question: "Why does my add-on feel slower in the document sandbox?"
       answer: "The document sandbox runs in an isolated environment (QuickJS) which is inherently slower than the native browser JavaScript engine. This is by design for security. Minimize complex operations and data transfer between environments."
+
+    - question: "What is the singleton pattern and which SDKs use it?"
+      answer: "All three Adobe Express add-on SDKs use the singleton pattern - Add-on UI SDK (addOnUISdk), Document Sandbox SDK (addOnSandboxSdk), and Express Document SDK (editor, colorUtils, constants, fonts, viewport). They provide pre-instantiated objects you import and use directly. You never create new instances yourself. This ensures consistent state and prevents conflicts."
 ---
 
 # Add-on Architecture Guide
@@ -103,13 +109,15 @@ Learn about the dual-runtime architecture, communication patterns, and developme
 
 ## Overview
 
-Understanding the Adobe Express add-on architecture is crucial for building effective add-ons. This comprehensive deep-dive guide covers the dual-runtime system, cross-runtime communication patterns, SDK imports and usage, debugging techniques, security considerations, performance optimization, and development best practices. Whether you're new to add-on development or looking to master advanced concepts, this guide provides the foundational knowledge needed to build robust, secure, and performant add-ons.
+This guide explains Adobe Express's dual-runtime architecture, cross-runtime communication, SDK usage, and development best practices for building secure and performant add-ons.
 
-**Key Architectural Concept**: Add-ons are bundled and served as iframes within Adobe Express, with isolated runtime environments communicating through a secure proxy layer.
+**Key Concept**: Add-ons run as iframes within Adobe Express, with isolated runtime environments communicating through a secure proxy layer.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert variant="info" slots="header, text1"/>
 
-**New to add-on terminology?** If you're unfamiliar with terms like "iframe runtime," "Document Sandbox SDK," or "Express Document SDK," check out the [Add-on Development Terminology Guide](../fundamentals/terminology.md) for clear definitions and quick reference charts. This architecture guide assumes familiarity with those core concepts.
+**New to add-on terminology?**
+
+If you're unfamiliar with terms like "iframe runtime," "Document Sandbox SDK," or "Express Document SDK," check out the [Add-on Development Terminology Guide](../fundamentals/terminology.md) for clear definitions and quick reference charts. This architecture guide assumes familiarity with those core concepts.
 
 ## Dual-Runtime Architecture
 
@@ -133,45 +141,199 @@ This isolation is fundamental to Adobe Express's security model, allowing third-
 
 ![Runtime Architecture Diagram](images/architecture.svg)
 
-## What is the Runtime Object?
-
-The `runtime` object provides **communication APIs** that enable the two environments to talk to each other. Each environment has its own runtime object:
-
-- **iframe runtime**: `addOnUISdk.instance.runtime` (from Add-on UI SDK)
-- **document sandbox**: `addOnSandboxSdk.instance.runtime` (from Document Sandbox SDK)
-
-Think of the `runtime` object like a **phone** - each side has their own phone with two key methods:
-- **`exposeApi()`** - Makes your functions callable from the other side (like publishing your phone number)
-- **`apiProxy()`** - Gets a proxy to call functions on the other side (like dialing the other phone)
-
-## The Two Environments Explained
+## The Two Environments
 
 ### iframe Runtime
 
-**What it is:** The browser environment where your add-on's user interface runs  
+The browser environment where your add-on's user interface runs. It has full browser access and handles all user interactions.
+
 **File:** `index.js` or `index.html`  
-**SDK Used:** Add-on UI SDK  
-**SDK Import:**
+**SDK Used:** Add-on UI SDK
+
+**Key Capabilities:**
+- **UI components**: Render HTML, CSS, JavaScript frameworks
+- **Full browser access**: DOM manipulation, fetch, localStorage, etc.
+- **Add-on UI SDK features** (via `addOnUISdk`): 
+  - `addOnUISdk.app.document.addImage()` - Import media
+  - `addOnUISdk.app.document.createRenditions()` - Export document
+  - `addOnUISdk.app.showModalDialog()` - Display dialogs
+  - `addOnUISdk.app.oauth` - Authentication flows
+  - `addOnUISdk.instance.clientStorage` - Persistent storage
+- **Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions
+
+**Import Pattern:**
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Always wait for SDK to be ready
+addOnUISdk.ready.then(() => {
+  const { runtime } = addOnUISdk.instance;
+  const { app } = addOnUISdk;
+  
+  // runtime - for communication with document sandbox
+  // app - for UI SDK features (dialogs, OAuth, renditions, etc.)
+});
 ```
 
-**Primary Role:** Handle user interactions, render UI, access browser APIs, import/export media
+<InlineNestedAlert header="true" variant="info" iconPosition="right">
+
+  **When do I need document sandbox communication?**
+  
+  **✅ YES** - You need `runtime.apiProxy("documentSandbox")` if:
+
+  - Creating/modifying document elements (text, shapes, etc.)
+  - Reading document properties not available in UI SDK
+  - Performing complex document operations
+
+  **❌ NO** - You don't need it if:
+  
+  - Only using Add-on UI SDK features (e.g., `app.document.addImage()`, `app.document.createRenditions()`)
+  - Building a pure UI add-on (settings, external integrations)
+  - Only displaying information fetched from external APIs
+
+</InlineNestedAlert>
 
 ### Document Sandbox
 
-**What it is:** The secure isolated environment where document manipulation code runs  
+The secure isolated environment for document manipulation with limited browser APIs but direct document access.
+
 **File:** `code.js`  
-**SDK Used:** Document Sandbox SDK (for communication) + Express Document SDK (for document APIs)  
-**SDK Import:**
+**SDKs Used:** Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs)
+
+**Key Capabilities:**
+- **Direct document manipulation**: Create/modify shapes, text, images using `editor`
+- **Scenegraph access**: Read and traverse the document structure
+- **Express Document SDK features**:
+  - `editor.createRectangle()`, `editor.createText()` - Create content
+  - `editor.context.selection` - Access selected elements
+  - `editor.context.insertionParent` - Add content to document
+  - `colorUtils` - Create and convert colors
+  - `fonts` - Manage and load fonts
+  - `viewport` - Control canvas navigation
+- **Limited Web APIs**: Only `console` and `Blob` (see [Web APIs Reference](../../../references/document-sandbox/web/index.md))
+- **Communication**: Use `runtime.exposeApi()` to expose functions to iframe runtime
+
+**Import Patterns:**
+
+**Option 1: Communication Only**
 
 ```js
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";  // Document Sandbox SDK
-import { editor } from "express-document-sdk";              // Express Document SDK
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+const { runtime } = addOnSandboxSdk.instance;
+
+runtime.exposeApi({ 
+  processData: function(data) {
+    // Process data without touching document
+    return data.map(item => item.toUpperCase());
+  }
+});
 ```
 
-**Primary Role:** Create/modify document elements, read document properties, process data securely
+**Option 2: Communication + Document Manipulation (Most Common)**
+
+```js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+import { editor, colorUtils, constants, fonts, viewport } from "express-document-sdk";
+
+const { runtime } = addOnSandboxSdk.instance;
+
+runtime.exposeApi({
+  createShape: function() {
+    const rectangle = editor.createRectangle();
+    rectangle.width = 100;
+    rectangle.height = 100;
+    editor.context.insertionParent.children.append(rectangle);
+  }
+});
+```
+
+<InlineNestedAlert header="true" variant="success" iconPosition="right">
+
+  **Which SDKs do I need to import?**
+
+  **Document Sandbox SDK (`addOnSandboxSdk`):**
+
+  - ✅ YES if your `code.js` needs to communicate with the iframe runtime
+  - ✅ YES if iframe runtime triggers document operations
+  - ❌ NO if you don't have a `documentSandbox` entry in your manifest
+
+  **Express Document SDK (`express-document-sdk`):**
+
+  - ✅ YES if creating/modifying document content
+  - ✅ YES if accessing document properties
+  - ❌ NO if only processing data or communicating
+
+</InlineNestedAlert>
+
+<InlineAlert variant="info" slots="header, text1"/>
+
+**Code Playground Note**
+
+The Adobe Express [Code Playground](../../getting_started/code_playground.md) has special behavior where `express-document-sdk` is automatically injected in Script mode. In production add-ons, you must always use explicit import statements as shown above.
+
+**What's Available Without Import:**
+
+The document sandbox automatically provides limited Web APIs. For complete details, see [Web APIs Reference](../../../references/document-sandbox/web/index.md).
+
+```js
+// Console APIs - for debugging
+console.log("Debugging output");
+console.error("Error logging");
+console.warn("Warnings");
+console.assert(condition, "Assertion message");
+
+// Blob interface - for binary data handling
+const blob = new Blob(['data'], { type: 'text/plain' });
+blob.text().then(text => console.log(text));
+```
+
+**Environment Characteristics:**
+- **Isolated JavaScript context**: Secure sandbox execution
+- **Limited browser APIs**: Only essential APIs like `console` and `Blob`
+- **Performance**: Slower than iframe runtime but secure
+- **No DOM access**: Must communicate through iframe runtime for UI updates
+
+**Debugging Tips:**
+
+```js
+// View variable values
+console.log("Variable:", myVariable);
+
+// Object inspection - serialize to see structure
+console.log("Object:", JSON.stringify(myObject, null, 2));
+
+// Error tracking
+try {
+    const result = editor.createText("Hello");
+    console.log("Success:", result);
+} catch (error) {
+    console.error("Failed:", error.message);
+}
+
+// Performance debugging
+const start = performance.now();
+// ... your code ...
+console.log(`Took ${performance.now() - start}ms`);
+```
+
+### The Runtime Object
+
+The `runtime` object provides **communication APIs** that enable the two environments to talk to each other. Each environment has its own runtime object for secure message passing.
+
+**Where to Access:**
+- **iframe runtime**: `addOnUISdk.instance.runtime` (from Add-on UI SDK)
+- **document sandbox**: `addOnSandboxSdk.instance.runtime` (from Document Sandbox SDK)
+
+**Think of it like a phone** - each side has their own phone with two key methods:
+- **`exposeApi()`** - Makes your functions callable from the other side (like publishing your phone number)
+- **`apiProxy()`** - Gets a proxy to call functions on the other side (like dialing the other phone)
+
+This abstraction ensures:
+- Type-safe cross-runtime communication
+- Security boundaries are maintained
+- Both environments can initiate communication
+- No direct access between environments
 
 ## Communication Flow
 
@@ -347,209 +509,11 @@ const uiProxy = await runtime.apiProxy(RuntimeType.panel);
 - If `documentSandbox` is omitted, only the iframe runtime runs (UI-only add-on)
 - Use `RuntimeType` constants for type safety and to avoid string typos
 
-## iframe Runtime Overview
+### Common Communication Patterns
 
-The iframe runtime is where your add-on's UI lives. It has full browser access and handles all user interactions.
+Now that you understand the communication flow, here are the most common patterns you'll use:
 
-### What You Need to Import
-
-```js
-/**
- * ENVIRONMENT: iframe Runtime
- * FILE: src/ui/index.js or index.html
- * SDK: Add-on UI SDK
- */
-
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-
-// Always wait for SDK to be ready
-addOnUISdk.ready.then(() => {
-  const { runtime, app } = addOnUISdk.instance;
-  
-  // runtime - for communication with document sandbox
-  // app - for UI SDK features (dialogs, OAuth, renditions, etc.)
-});
-```
-
-### Key Capabilities
-
-- **Full browser access**: DOM manipulation, fetch, localStorage, etc.
-- **UI components**: Render HTML, CSS, JavaScript frameworks
-- **Add-on UI SDK features**: 
-  - `app.document.addImage()` - Import media
-  - `app.document.createRenditions()` - Export document
-  - `app.showModalDialog()` - Display dialogs
-  - `app.oauth` - Authentication flows
-  - `instance.clientStorage` - Persistent storage
-- **Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions
-
-### When Do I Need Document Sandbox Communication?
-
-<InlineNestedAlert header="true" variant="info" iconPosition="right">
-
-  **✅ YES** - You need `runtime.apiProxy("documentSandbox")` if:
-  - Creating/modifying document elements (text, shapes, etc.)
-  - Reading document properties not available in UI SDK
-  - Performing complex document operations
-
-  **❌ NO** - You don't need it if:
-  - Only using `app.document.addImage()` or `app.document.createRenditions()`
-  - Building a pure UI add-on (settings, external integrations)
-  - Only displaying information fetched from external APIs
-
-</InlineNestedAlert>
-
-## Document Sandbox Overview
-
-The document sandbox provides a secure, isolated execution context for document manipulation.
-
-### What You Need to Import
-
-<InlineAlert slots="text" variant="info"/>
-
-**Code Playground Note**: The Adobe Express [Code Playground](../../getting_started/code_playground.md) has special behavior where `express-document-sdk` is automatically injected in Script mode. In production add-ons, you must always use explicit import statements as shown below.
-
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
-
-  **Do I need Document Sandbox SDK (`addOnSandboxSdk`)?**
-
-  - ✅ YES if your `code.js` needs to communicate with the iframe runtime
-  - ✅ YES if iframe runtime triggers document operations
-  - ❌ NO if you don't have a `documentSandbox` entry in your manifest
-
-  **Do I need Express Document SDK (`express-document-sdk`)?**
-
-  - ✅ YES if creating/modifying document content
-  - ✅ YES if accessing document properties
-  - ❌ NO if only processing data or communicating
-
-</InlineNestedAlert>
-
-#### Option 1: Communication Only (Document Sandbox SDK)
-
-Use when you need to communicate with iframe runtime but NOT manipulate the document.
-
-```js
-/**
- * ENVIRONMENT: Document Sandbox
- * USE CASE: Data processing, calculations, transformations
- * SDK: Document Sandbox SDK only
- */
-
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-const { runtime } = addOnSandboxSdk.instance;
-
-runtime.exposeApi({ 
-  processData: function(data) {
-    // Process data without touching document
-    return data.map(item => item.toUpperCase());
-  }
-});
-```
-
-#### Option 2: Communication + Document Manipulation (Both SDKs)
-
-**Most common pattern** - Use when iframe runtime triggers document operations.
-
-```js
-/**
- * ENVIRONMENT: Document Sandbox
- * USE CASE: Create/modify document elements, read document properties
- * SDKs: Document Sandbox SDK (communication) + Express Document SDK (document APIs)
- */
-
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor, colorUtils, constants, fonts } from "express-document-sdk";
-
-const { runtime } = addOnSandboxSdk.instance;
-
-runtime.exposeApi({
-  createShape: function() {
-    // Create and manipulate document elements
-    const rectangle = editor.createRectangle();
-    rectangle.width = 100;
-    rectangle.height = 100;
-    editor.context.insertionParent.children.append(rectangle);
-  },
-  
-  analyzeDocument: function() {
-    // Read document properties
-    return {
-      pageCount: editor.documentRoot.pages.length,
-      selection: editor.context.selection.length
-    };
-  }
-});
-```
-
-### What's Available Without Import
-
-The document sandbox automatically provides limited browser APIs. For complete details, see [Web APIs Reference](../../../references/document-sandbox/web/index.md).
-
-```js
-/**
- * ENVIRONMENT: Document Sandbox
- * AVAILABLE: Global APIs (no import needed)
- * NOTE: These are automatically injected into the sandbox environment
- */
-
-// Console APIs - for debugging
-console.log("Debugging output");
-console.error("Error logging");
-console.warn("Warnings");
-console.assert(condition, "Assertion message");
-
-// Blob interface - for binary data handling
-const blob = new Blob(['data'], { type: 'text/plain' });
-blob.text().then(text => console.log(text));
-
-// Basic timing APIs (limited functionality)
-setTimeout(() => { /* code */ }, 1000);
-clearTimeout(timerId);
-```
-
-### Environment Characteristics
-
-- **Isolated JavaScript context**: Secure sandbox execution
-- **Limited browser APIs**: Only essential APIs like `console` and `Blob`
-- **Performance**: Slower than iframe runtime but secure
-- **No DOM access**: Must communicate through iframe runtime for UI updates
-
-### Debugging Tips
-
-```js
-/**
- * ENVIRONMENT: Document Sandbox
- * PURPOSE: Debug document sandbox code
- * LIMITATION: No browser DevTools - use console for debugging
- */
-
-// Basic debugging - view variable values
-console.log("Variable:", myVariable);
-
-// Object inspection - serialize to see structure
-console.log("Object:", JSON.stringify(myObject, null, 2));
-
-// Error tracking - catch and log errors
-try {
-    const result = editor.createText("Hello");
-    console.log("Success:", result);
-} catch (error) {
-    console.error("Failed:", error.message);
-    console.error("Stack:", error.stack);
-}
-
-// Performance debugging - measure execution time
-const start = performance.now();
-// ... your code ...
-console.log(`Took ${performance.now() - start}ms`);
-```
-
-## Common Patterns
-
-Now that you understand both runtimes, here are the most common patterns you'll use:
-
-### Pattern 1: UI-Triggered Document Operations
+#### Pattern 1: UI-Triggered Document Operations
 
 **Most common** - User clicks button in UI → Create/modify document elements.
 
@@ -586,7 +550,7 @@ runtime.exposeApi({
 });
 ```
 
-### Pattern 2: Document-Driven UI Updates
+#### Pattern 2: Document-Driven UI Updates
 
 Read document properties → Display in UI.
 
@@ -618,7 +582,7 @@ runtime.exposeApi({
 });
 ```
 
-### Pattern 3: Bi-directional Communication
+#### Pattern 3: Bi-directional Communication
 
 Document sandbox calls back to UI to show progress.
 
@@ -656,6 +620,127 @@ runtime.exposeApi({
     await uiProxy.updateProgress(100);
   }
 });
+```
+
+## SDK Singleton Pattern
+
+<InlineAlert variant="warning" slots="header, text1"/>
+
+**Important Concept**
+
+All Adobe Express add-on SDKs use the **singleton pattern** - you work with pre-instantiated objects, never creating new instances yourself. Understanding this pattern is essential for correct usage.
+
+### All Three SDKs Use Singletons
+
+**Add-on UI SDK Singletons:**
+- `addOnUISdk.instance` - Add-on-specific features
+- `addOnUISdk.app` - Adobe Express application interface
+- `addOnUISdk.instance.runtime` - Communication between environments
+- `addOnUISdk.app.document` - Document import/export
+
+**Document Sandbox SDK Singletons:**
+- `addOnSandboxSdk.instance` - Add-on instance in sandbox
+- `addOnSandboxSdk.instance.runtime` - Communication from sandbox
+
+**Express Document SDK Singletons:**
+- `editor` - Document editing and manipulation
+- `colorUtils` - Color creation and conversion
+- `constants` - Document constants for type safety
+- `fonts` - Font management
+- `viewport` - Viewport control
+
+You never call `new` on any of these - they're ready to use when you import them.
+
+### The Complete Runtime Hierarchy
+
+When a user opens your add-on, one running instance is created with all SDK singletons:
+
+```
+Your Add-on Instance (when user opens your panel)
+├── Iframe Runtime Environment
+│   └── addOnUISdk.instance (SDK singleton for this iframe)
+│       ├── runtime (communication APIs)
+│       └── app (UI SDK features)
+└── Document Sandbox Environment (if configured)
+    ├── addOnSandboxSdk.instance (SDK singleton for this sandbox)
+    │   └── runtime (communication APIs)
+    └── Express Document SDK instances
+        ├── editor (document manipulation)
+        ├── colorUtils (color utilities)
+        ├── constants (document constants)
+        ├── fonts (font management)
+        └── viewport (viewport control)
+```
+
+**Key Concept:** One user session = one add-on instance = one complete runtime environment with all its SDK instances. When the user opens your panel, your add-on instance starts. When they close it, the instance ends. Re-opening creates a fresh instance with new state.
+
+### SDK Export Patterns & Naming
+
+The three Adobe Express add-on SDKs use different export patterns:
+
+**Add-on UI SDK & Document Sandbox SDK:**
+- **Default export** of SDK object: `import addOnUISdk from "..."`
+- Access singletons via properties: `addOnUISdk.instance`, `addOnUISdk.app`
+
+**Express Document SDK (Different!):**
+- **Named exports** of singleton instances: `import { editor, colorUtils } from "..."`
+- Lowercase names are the singletons you use
+- Uppercase names (`Editor`, `ColorUtils`) are TypeScript types - not directly usable
+
+This naming difference is important to understand:
+
+| SDK | Import Style | What You Get | Example |
+|-----|-------------|--------------|---------|
+| **Add-on UI SDK** | Default export | SDK object with properties | `addOnUISdk.instance.runtime` |
+| **Document Sandbox SDK** | Default export | SDK object with properties | `addOnSandboxSdk.instance.runtime` |
+| **Express Document SDK** | Named exports | Direct singleton instances | `editor`, `colorUtils`, `fonts` |
+
+### Why Singletons?
+
+Each singleton represents a unique aspect of Adobe Express:
+
+- **`editor`** - The ONE document being edited
+- **`colorUtils`** - The ONE set of color utilities
+- **`constants`** - The ONE set of document constants
+- **`fonts`** - The ONE font management system
+- **`viewport`** - The ONE viewport control
+
+Multiple instances would cause conflicts and inconsistent document state.
+
+### Common Mistakes
+
+```javascript
+// ❌ Mistake 1: Trying to import TypeScript classes
+import { Editor } from "express-document-sdk";
+const myEditor = new Editor();  // Error! Cannot instantiate
+
+// ❌ Mistake 2: Wrong import style for Express Document SDK
+import express from "express-document-sdk";
+const { editor } = express;  // Wrong! Use named imports
+
+// ✅ Correct: Import the singleton instances directly
+import { editor, colorUtils } from "express-document-sdk";
+editor.createRectangle();  // Works!
+colorUtils.fromHex("#FF0000");  // Works!
+```
+
+### Complete Import Pattern
+
+```javascript
+// Document sandbox (code.js) - Import all singletons you need
+import { editor, colorUtils, constants, fonts, viewport } from "express-document-sdk";
+
+// Use the singletons directly
+const rectangle = editor.createRectangle();
+rectangle.fill = {
+  type: constants.FillType.color,
+  color: colorUtils.fromHex("#0066CC")
+};
+
+editor.context.insertionParent.children.append(rectangle);
+
+// Use viewport to navigate to the new content
+viewport.bringIntoView(rectangle);
 ```
 
 ## Best Practices
@@ -808,6 +893,21 @@ runtime.exposeApi({
 #### Q: Why does my add-on feel slower in the document sandbox?
 
 **A:** The document sandbox runs in an isolated environment (QuickJS) which is inherently slower than the native browser JavaScript engine. This is by design for security. Minimize complex operations and data transfer between environments.
+
+#### Q: What is the singleton pattern and which SDKs use it?
+
+**A:** **All three** Adobe Express add-on SDKs use the **singleton pattern**:
+
+1. **Add-on UI SDK** (`addOnUISdk`) - Pre-instantiated SDK with `.instance` and `.app` properties
+2. **Document Sandbox SDK** (`addOnSandboxSdk`) - Pre-instantiated SDK with `.instance` property
+3. **Express Document SDK** - Multiple singleton exports: `editor`, `colorUtils`, `constants`, `fonts`, `viewport`
+
+These are pre-instantiated objects you import and use directly. You **never create new instances yourself** (no `new` keyword). This ensures:
+- All your code works with the same SDK instances
+- Consistent state across your add-on
+- No conflicts from multiple instances
+
+See the [SDK Singleton Pattern](#sdk-singleton-pattern) section for complete details and common mistakes to avoid.
 
 ---
 

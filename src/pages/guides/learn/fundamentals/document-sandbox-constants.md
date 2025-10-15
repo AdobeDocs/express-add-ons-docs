@@ -60,9 +60,11 @@ const blendMode = constants.BlendMode.normal;
 const textAlignment = constants.TextAlignment.center;
 ```
 
-<InlineAlert slots="text" variant="warning"/>
+<InlineAlert variant="info" slots="header, text1" variant="warning"/>
 
-**Important**: Document constants are only available in the document sandbox environment (`code.js`). They cannot be accessed from the iframe UI environment.
+**Important**
+
+Document constants are only available in the document sandbox environment (`code.js`). They cannot be accessed from the iframe UI environment.
 
 ## Most Common Use Cases
 
@@ -222,9 +224,11 @@ rectangle.stroke = {
 };
 ```
 
-<InlineAlert slots="text" variant="success"/>
+<InlineAlert slots="header,text1" variant="success"/>
 
-**Working with Colors**: For comprehensive color creation, conversion, and application examples, see the [Use Color Guide](../how_to/use_color.md).
+**Working with Colors**
+
+For comprehensive color creation, conversion, and application examples, see the [Use Color Guide](../how_to/use_color.md).
 
 ## Communication with UI
 

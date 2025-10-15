@@ -75,9 +75,11 @@ Understanding add-on project structure is essential for building maintainable, s
 
 Whether you're building a simple UI-only add-on or a complex document manipulation tool, proper project organization sets the foundation for success.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert variant="info" slots="header, text1" />
 
-**New to add-ons?** Familiarize yourself with core concepts in the [Add-on Development Terminology Guide](../learn/fundamentals/terminology.md) and understand the [dual-runtime architecture](../learn/platform_concepts/architecture.md) before diving into project structure.
+**New to add-ons?** 
+
+Familiarize yourself with core concepts in the [Add-on Development Terminology Guide](../learn/fundamentals/terminology.md) and understand the [dual-runtime architecture](../learn/platform_concepts/architecture.md) before diving into project structure.
 
 ## Core Project Structures
 
@@ -91,9 +93,11 @@ Add-on projects follow three main patterns based on complexity:
 
 See [File Structure Comparison](#file-structure-comparison) below for detailed file trees, pros/cons, and examples of each template type.
 
-<InlineAlert slots="text" variant="success"/>
+<InlineAlert slots="header,text1" variant="info"/>
 
-**UI & Styling Location**: ALL user interface code, HTML, CSS, and styling ALWAYS goes in the iframe runtime (index.html, index.js, or ui/ folder), regardless of template type. The document sandbox (code.js) is ONLY for document manipulation—it has no access to DOM or styling capabilities. See [Separation of Concerns](#1-separation-of-concerns) for details.
+**UI & Styling Location**
+
+**All user interface code, HTML, CSS, and styling goes in the iframe runtime** (index.html, index.js, or ui/ folder), regardless of template type. The document sandbox (code.js) is **only for document manipulation** and has no access to DOM or styling capabilities. See [Separation of Concerns](#1-separation-of-concerns) for details.
 
 ## Essential Files Explained
 
@@ -556,13 +560,11 @@ Each step adds capabilities while maintaining core functionality.
 
 ### 1. Separation of Concerns
 
-<InlineAlert slots="text" variant="warning"/>
-
-**Critical Rule**: User interface (HTML, CSS, JavaScript UI code) ALWAYS goes in the iframe runtime. Document manipulation ALWAYS goes in the document sandbox. Never mix these concerns.
+Keep UI code and document manipulation code strictly separated between the two runtime environments.
 
 **iframe Runtime (index.js/ui/):**
 
-- **ALL UI & styling code** (HTML, CSS, component styling)
+- **UI & styling code** (HTML, CSS, component styling)
 - **User interface logic** (buttons, forms, inputs, displays)
 - Event handlers
 - Form validation
@@ -573,11 +575,11 @@ Each step adds capabilities while maintaining core functionality.
 
 **Document Sandbox (code.js/sandbox/):**
 
-- **Document manipulation ONLY** (creating shapes, text, images)
+- **Document manipulation** (creating shapes, text, images)
 - Content creation using Express Document SDK
 - Data processing and calculations
 - API exposure to iframe runtime
-- **NO UI or styling code** (no HTML, CSS, or DOM access)
+- **No UI or styling code** (no HTML, CSS, or DOM access)
 
 ### 2. Asset Organization
 
@@ -602,9 +604,11 @@ src/
 | **React Templates** | `src/components/App.css` or styled-components | Import in component: `import './App.css'` |
 | **Large Projects** | `src/assets/styles/` folder with multiple CSS files | Import where needed or use CSS modules |
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="header, text1" variant="info"/>
 
-**Remember**: CSS files are ALWAYS loaded/imported in the iframe runtime (index.html or UI components), never in document sandbox files.
+**Reminder**
+
+CSS files are ALWAYS loaded/imported in the iframe runtime (index.html or UI components), never in document sandbox files.
 
 ### 3. Code Organization Patterns
 
