@@ -126,7 +126,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 ```json
 {
-  "mcpServers": {
+  "servers": {
     "adobe-express-add-on": {
       "command": "npx",
       "args": [
