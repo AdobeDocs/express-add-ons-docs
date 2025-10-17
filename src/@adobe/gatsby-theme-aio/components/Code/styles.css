@@ -47,6 +47,12 @@
   inset-inline-end: var(--spectrum-global-dimension-size-125);
 }
 
+.code-try-button.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .code-tooltip-container {
   position: absolute;
   inset-block-start: var(--spectrum-global-dimension-size-65);
