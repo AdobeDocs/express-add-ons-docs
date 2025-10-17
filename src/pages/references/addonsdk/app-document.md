@@ -860,7 +860,7 @@ Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyo
 | --------- | ---------------------------------------------------------- | -----------------------------------------------: |
 | `amount?` | `number`                                                   |                        The amount for the bleed. |
 | `unit`    | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
-
+****
 #### `PdfPageBoxes`
 
 Represents all of the PDF page boxes (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`).
