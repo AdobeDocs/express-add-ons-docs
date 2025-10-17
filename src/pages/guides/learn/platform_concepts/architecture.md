@@ -126,7 +126,9 @@ Adobe Express add-ons run in **two separate JavaScript execution environments** 
 1. **iframe runtime** - Your add-on's user interface environment (uses Add-on UI SDK)
 2. **document sandbox** - Secure environment for document manipulation (uses Document Sandbox SDK)
 
-### Architectural Implementation
+![Runtime Architecture Diagram](images/architecture.svg)
+
+### How it works
 
 Your add-on is bundled and loaded as an iframe within Adobe Express. Both runtime environments are isolated from each other and from the host application for security. They communicate exclusively through a proxy-based message passing system, which ensures that:
 
@@ -136,10 +138,6 @@ Your add-on is bundled and loaded as an iframe within Adobe Express. Both runtim
 - Security boundaries are maintained while enabling powerful functionality
 
 This isolation is fundamental to Adobe Express's security model, allowing third-party add-ons to extend functionality without compromising user data or application stability.
-
-## Architecture Diagram
-
-![Runtime Architecture Diagram](images/architecture.svg)
 
 ## The Two Environments
 
@@ -176,23 +174,21 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-<InlineNestedAlert header="true" variant="info" iconPosition="right">
+<InlineAlert slots="header, text1, text2, text3, text4" variant="info"/>
 
-  **When do I need document sandbox communication?**
-  
-  **✅ YES** - You need `runtime.apiProxy("documentSandbox")` if:
+When do I need document sandbox communication?
 
-  - Creating/modifying document elements (text, shapes, etc.)
-  - Reading document properties not available in UI SDK
-  - Performing complex document operations
+**✅ YES** - You need `runtime.apiProxy("documentSandbox")` if:
 
-  **❌ NO** - You don't need it if:
-  
-  - Only using Add-on UI SDK features (e.g., `app.document.addImage()`, `app.document.createRenditions()`)
-  - Building a pure UI add-on (settings, external integrations)
-  - Only displaying information fetched from external APIs
+ - Creating/modifying document elements (text, shapes, etc.)
+ - Reading document properties not available in UI SDK
+ - Performing complex document operations
 
-</InlineNestedAlert>
+**❌ NO** - You don't need it if:
+
+ - Only using Add-on UI SDK features (e.g., `app.document.addImage()`, `app.document.createRenditions()`)
+ - Building a pure UI add-on (settings, external integrations)
+ - Only displaying information fetched from external APIs
 
 ### Document Sandbox
 
@@ -248,23 +244,21 @@ runtime.exposeApi({
 });
 ```
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
+<InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
-  **Which SDKs do I need to import?**
+**Which SDKs do I need to import?**
 
-  **Document Sandbox SDK (`addOnSandboxSdk`):**
+**Document Sandbox SDK (`addOnSandboxSdk`):**
 
-  - ✅ YES if your `code.js` needs to communicate with the iframe runtime
-  - ✅ YES if iframe runtime triggers document operations
-  - ❌ NO if you don't have a `documentSandbox` entry in your manifest
+ - ✅ YES if your `code.js` needs to communicate with the iframe runtime
+ - ✅ YES if iframe runtime triggers document operations
+ - ❌ NO if you don't have a `documentSandbox` entry in your manifest
 
-  **Express Document SDK (`express-document-sdk`):**
+**Express Document SDK (`express-document-sdk`):**
 
-  - ✅ YES if creating/modifying document content
-  - ✅ YES if accessing document properties
-  - ❌ NO if only processing data or communicating
-
-</InlineNestedAlert>
+ - ✅ YES if creating/modifying document content
+ - ✅ YES if accessing document properties
+ - ❌ NO if only processing data or communicating
 
 <InlineAlert variant="info" slots="header, text1"/>
 

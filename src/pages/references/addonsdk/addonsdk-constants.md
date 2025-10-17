@@ -1,8 +1,10 @@
 # addOnUISdk.constants
 
+A set of constants used throughout the Add-on UI SDK.
+
 This reference provides the complete technical specification for all constants used throughout the Add-on UI SDK.
 
-- Constants available in `addOnUISdk.constants.*` (dual access)
+- Constants available in `addOnUISdk.constants.*`
 - Constants available only as named exports (import required)
 
 For practical examples and use cases, see the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md).
