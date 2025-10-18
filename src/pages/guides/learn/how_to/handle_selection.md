@@ -1069,27 +1069,25 @@ setupSelectionHandling();
 
 ### Important: Selection Handler Restrictions
 
-<InlineNestedAlert header="true" variant="warning" iconPosition="right">
+<InlineAlert slots="header,text1,text2,text3,text4,text5" variant="warning"/>
 
-  **Document Modification Restrictions**
+  Document Modification Restrictions
 
   **Never modify the document inside selection change handlers!** This can crash the application.
 
   **✅ Safe in selection handlers:**
 
-  - Update UI panels
-  - Log information  
-  - Analyze selection
-  - Enable/disable buttons
-  - Send data to UI panel
+   - Update UI panels
+   - Log information  
+   - Analyze selection
+   - Enable/disable buttons
+   - Send data to UI panel
 
   **❌ Never do in selection handlers:**
 
-  - Create, delete, or modify nodes
-  - Change document structure  
-  - Set properties on selected elements
-
-</InlineNestedAlert>
+   - Create, delete, or modify nodes
+   - Change document structure  
+   - Set properties on selected elements
 
 ### Performance Guidelines
 

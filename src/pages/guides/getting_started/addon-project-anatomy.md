@@ -163,6 +163,12 @@ The `manifest.json` file is the heart of every add-on. It defines metadata, entr
 - `documentSandbox` property points to your document manipulation code
 - Required when your add-on creates or modifies document content
 
+<InlineAlert slots="header,text1" variant="info"/>
+
+IMPORTANT
+
+If your add-on is based on the plain `javascript-with-document-sandbox` template, you set the specific path to `code.js` with: `"documentSandbox": "sandbox/code.js"` since it's a no-build template, whereas the other templates (like `swc-javascript-with-document-sandbox`, `react-javascript-with-document-sandbox`, etc.) only need to set `"documentSandbox": "code.js"` since they are pre-configured with webpack to build the project.
+
 ### index.html - UI Entry Point
 
 The HTML file that loads when your add-on panel opens. Contains the basic structure and loads your JavaScript.
