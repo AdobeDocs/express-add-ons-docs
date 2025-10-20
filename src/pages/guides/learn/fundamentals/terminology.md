@@ -72,7 +72,7 @@ semantic_tags:
 
 # Add-on Development Terminology
 
-**Essential reference** — Your comprehensive guide to Adobe Express add-on terminology, SDKs, runtimes, and development concepts.
+A comprehensive guide to Adobe Express add-on terminology, SDKs, runtimes, and development concepts.
 
 ## Quick Reference: Core Terms
 
@@ -116,7 +116,7 @@ When you encounter these terms in documentation, check the context to determine 
 | **runtime** | General architecture | JavaScript execution environment (iframe runtime or document sandbox) | "The iframe runtime has full browser APIs" |
 | | **`addOnUISdk.instance.runtime`** | Property providing Communication APIs for cross-environment messaging | `runtime.apiProxy("documentSandbox")` |
 | | **`addOnSandboxSdk.instance.runtime`** | Property providing Communication APIs in document sandbox | `runtime.exposeApi({ ... })` |
-| **instance** | General programming | A single occurrence of a class object created by instantiation | "The rectangle is an instance of RectangleNode" |
+| **instance** | General programming | A single occurrence of a class object created by instantiation | "The rectangle is an instance of `RectangleNode`" |
 | | **`addOnUISdk.instance`** | Property accessing add-on-specific SDK features (runtime, clientStorage, manifest) | `addOnUISdk.instance.clientStorage` |
 | | **`addOnSandboxSdk.instance`** | Property accessing document sandbox SDK features | `addOnSandboxSdk.instance.runtime` |
 | | Add-on execution | The running session of your add-on when user opens it | "Each user has their own add-on instance" |
@@ -144,10 +144,10 @@ When you encounter these terms in documentation, check the context to determine 
 | **panel** | UI component | Your add-on's user interface shown in Adobe Express sidebar | "The panel opens on the right running your add-on" |
 | | **RuntimeType** | String constant for communication targeting | `runtime.apiProxy("panel")` targets the iframe runtime |
 | | Manifest | Entry point type in manifest configuration | `"type": "panel"` in `entryPoints` |
-| **node** | Scenegraph | Visual element in the Adobe Express document tree (specific term) | "A RectangleNode is a node in the scenegraph" |
+| **node** | Scenegraph | Visual element in the Adobe Express document tree (specific term) | "A `RectangleNode` is a node in the scenegraph" |
 | | DOM | HTML element in your add-on's UI (specific term) | `document.getElementById()` returns a DOM node |
 | **element** | General term | Generic word for any item or component (use "node" for precision) | "Add elements to the page" (vague, prefer "Add nodes to the artboard") |
-| | Scenegraph | Informal term for scenegraph nodes (prefer "node") | "Rectangle element" (better: "RectangleNode") |
+| | Scenegraph | Informal term for scenegraph nodes (prefer "node") | "Rectangle element" (better: "`RectangleNode`") |
 | | DOM | HTML element in your UI (prefer "DOM node" or "HTML element" for clarity) | `<div>` element in your add-on's HTML |
 | | Design | Visual design component in Adobe Express UI | "Text elements in your design" (user-facing term) |
 | **exports** | **Named exports** | ES Module syntax for exporting multiple values from a module | `export { editor, colorUtils }` or `import { editor } from "..."` |
@@ -194,12 +194,12 @@ When you encounter these terms in documentation, check the context to determine 
 - Document sandbox → Limited Web APIs only (console, Blob, performance)
 
 **"Should I say node or element?"** - It depends!
-- Adobe Express scenegraph → Use "node" (RectangleNode, TextNode, etc.)
+- Adobe Express scenegraph → Use "node" (`RectangleNode`, `TextNode`, etc.) to describe visual elements in the document
 - Your add-on's HTML → Use "DOM node" or "HTML element"
 - User-facing docs → "element" is okay (e.g., "text elements in your design")
 - Developer docs → Prefer "node" for precision and to match API class names
 
-**"Should I use addOnUISdk.instance or addOnUISdk.app?"** - Different scopes!
+**"Should I use `addOnUISdk.instance` or `addOnUISdk.app`?"** - Different scopes
 - **Add-on scope** (`instance`) → Features specific to YOUR add-on
   - `instance.runtime` - YOUR add-on's communication
   - `instance.clientStorage` - YOUR add-on's storage (per-user, per-addon)
@@ -207,7 +207,7 @@ When you encounter these terms in documentation, check the context to determine 
 - **Application scope** (`app`) → Features shared across Adobe Express
   - `app.document` - The Adobe Express document (same for all add-ons)
   - `app.currentUser` - The Express user (not specific to your add-on)
-  - `app.ui` - Adobe Express UI state (theme, locale)
+  - `app.ui` - Adobe Express UI state (`theme`, `locale`)
 
 ## Architecture Overview
 
@@ -230,11 +230,9 @@ Adobe Express add-ons use a **dual-runtime architecture** with two separate Java
 - **Security**: Isolated environment with limited Web APIs but direct document access
 - **Also known as**: "Document Model Sandbox"
 
-<InlineAlert variant="success" slots="header, text1"/>
+#### Key Concept
 
-**Key Concept**
-
-These two runtimes communicate with each other through the Communication APIs, allowing your UI to trigger document changes and vice versa.
+The two runtimes communicate with each other through the [Communication APIs](../../../references/document-sandbox/communication/index.md), allowing your UI to trigger document changes and vice versa.
 
 <InlineAlert variant="info" slots="header, text1"/>
 
@@ -425,23 +423,27 @@ artboard.children.append(rectangle);
 ## Development Environment & Tools
 
 ### **Add-on Marketplace**
-Distribution platform where users discover and install add-ons within Adobe Express via the "Add-ons" button in the left sidebar.
+Distribution platform where users discover and install add-ons within [Adobe Express](https://express.adobe.com/add-ons) via the "Add-ons" button in the left sidebar.
 
 ### **Code Playground**
-Interactive browser-based development environment for experimenting with add-on APIs without local setup.
+Interactive browser-based development environment for experimenting with add-on APIs without local setup. See the [Code Playground](../../getting_started/code_playground.md) guide for more details.
 
 ### **Adobe Express Add-on CLI**
 Command Line Interface tool for creating, building, and packaging add-ons for local development.
 - **Installation**: `npm install -g @adobe/ccweb-add-on-cli`
 - **Key Commands**: `create`, `start`, `build`, `package`
 
+See the [Adobe Express Add-on CLI](../../getting_started/local_development/dev_tooling.md) guide for more details.
+
 ### **MCP Server (Model Context Protocol)**
 AI-assisted development tool that enhances LLM responses with Adobe Express add-on documentation and TypeScript definitions.
 - **Purpose**: Provide semantic documentation search and accurate code suggestions through AI assistants
 - **Requirements**: Node.js 18+ and MCP-compatible IDE (Cursor, VS Code, Claude Desktop)
 
+See the [Adobe Express Add-on MCP Server](../../getting_started/local_development/mcp_server.md) guide for more details.
+
 ### **Add-on Development Mode**
-Special mode in Adobe Express (Settings > Add-on Development toggle) that allows loading and testing local add-ons during development.
+Special mode in Adobe Express (**Settings > Add-on Development** toggle) that allows loading and testing local add-ons during development. See the [Add-on Development Mode](../../getting_started/local_development/dev_tooling.md) guide for more details.
 
 ## Manifest Configuration
 

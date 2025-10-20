@@ -149,7 +149,7 @@ The browser environment where the add-on's user interface runs for users to inte
 | --- | --- |
 | **File** | `index.js` or `index.html` |
 | **SDKs Used** | Add-on UI SDK |
-| **Key Capabilities** | <ul><li>**UI components**: Render HTML, CSS, JavaScript frameworks</li><li>**Browser access**: DOM manipulation, fetch, localStorage, etc.</li><li>**Add-on UI SDK features** (via `addOnUISdk`):<ul><li>`addOnUISdk.app.document.addImage()` - Import media</li><li>`addOnUISdk.app.document.createRenditions()` - Export document</li><li>`addOnUISdk.app.showModalDialog()` - Display dialogs</li><li>`addOnUISdk.app.oauth` - Authentication flows</li><li>`addOnUISdk.instance.clientStorage` - Persistent storage</li></ul></li><li>**Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox</li></ul> |
+| **Key Capabilities** | **UI components**: Render HTML, CSS, JavaScript frameworks<br/>**Browser access**: DOM manipulation, fetch, localStorage, etc.<br/>**Add-on UI SDK features** (via `addOnUISdk`):<br/>• `addOnUISdk.app.document.addImage()` - Import media<br/>• `addOnUISdk.app.document.createRenditions()` - Export document<br/>• `addOnUISdk.app.showModalDialog()` - Display dialogs<br/>• `addOnUISdk.app.oauth` - Authentication flows<br/>• `addOnUISdk.instance.clientStorage` - Persistent storage<br/>**Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox |
 
 **Import Pattern:**
 
@@ -190,7 +190,7 @@ The secure isolated environment for document manipulation with limited browser A
 | --- | --- |
 | **File** | `code.js` |
 | **SDKs Used** | Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs) |
-| **Key Capabilities** | <ul><li>**Direct document manipulation**: Create/modify shapes, text, images using `editor`</li><li>**Scenegraph access**: Read and traverse the document structure</li><li>**Express Document SDK features**:<ul><li>`editor.createRectangle()`, `editor.createText()` - Create content</li><li>`editor.context.selection` - Access selected elements</li><li>`editor.context.insertionParent` - Add content to document</li><li>`colorUtils` - Create and convert colors</li><li>`fonts` - Manage and load fonts</li><li>`viewport` - Control canvas navigation</li></ul></li><li>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))</li><li>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy("panel")` to call UI functions</li></ul> |
+| **Key Capabilities** | **Direct document manipulation**: Create/modify shapes, text, images using `editor`<br/>**Scenegraph access**: Read and traverse the document structure<br/>**Express Document SDK features**:<br/>• `editor.createRectangle()`, `editor.createText()` - Create content<br/>• `editor.context.selection` - Access selected elements<br/>• `editor.context.insertionParent` - Add content to document<br/>• `colorUtils` - Create and convert colors<br/>• `fonts` - Manage and load fonts<br/>• `viewport` - Control canvas navigation<br/>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))<br/>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy("panel")` to call UI functions |
 
 **Import Patterns:**
 
@@ -272,6 +272,8 @@ blob.text().then(text => console.log(text));
 - **No DOM access**: Must communicate through iframe runtime for UI updates
 
 **Debugging Tips:**
+
+The console object is available in the document sandbox to allow you to log messages to the console. You can use it to debug your code by logging variables, objects, and other information to the console.
 
 ```js
 // View variable values
