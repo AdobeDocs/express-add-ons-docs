@@ -77,15 +77,6 @@ jobs:
         with:
           cmd: install
 
-      - name: Clean up disk space
-        run: |
-          echo "Before cleanup:"
-          df -h
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
-          sudo apt-get clean
-          echo "After cleanup:"
-          df -h
-
       - name: Check internal links
         uses: borales/actions-yarn@v3
         with:
