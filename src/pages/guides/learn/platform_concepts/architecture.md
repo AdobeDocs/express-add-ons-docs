@@ -109,9 +109,9 @@ Learn about the dual-runtime architecture, communication patterns, and developme
 
 ## Overview
 
-This guide explains Adobe Express's dual-runtime architecture, cross-runtime communication, SDK usage, and development best practices for building secure and performant add-ons.
+Add-ons run as iframes within Adobe Express, with isolated runtime environments communicating through a secure proxy layer. This guide explains add-on's dual-runtime architecture, cross-runtime communication, SDK usage, and development best practices for building secure and performant add-ons.
 
-**Key Concept**: Add-ons run as iframes within Adobe Express, with isolated runtime environments communicating through a secure proxy layer.
+
 
 <InlineAlert variant="info" slots="header, text1"/>
 
@@ -145,9 +145,11 @@ This isolation is fundamental to Adobe Express's security model, allowing third-
 
 The browser environment where the add-on's user interface runs for users to interact with it. When a user chooses an add-on, the add-on opens in a panel on the right side of the Adobe Express UI in a secure sandboxed iframe, where permissions are controlled by a Permissions Policy and the `sandbox` attribute. See the [iframe Runtime Context & Security Guide](./context.md) for more details on the iframe runtime and its security. The iframe runtime is where the Add-on UI SDK `addOnUISdk` is imported to access the APIs for features like OAuth, media import, rendition creation, and more.
 
-| File | SDKs Used | Key Capabilities |
-| --- | --- | --- |
-| `index.js` or `index.html` | Add-on UI SDK | <ul><li>**UI components**: Render HTML, CSS, JavaScript frameworks</li><li>**Browser access**: DOM manipulation, fetch, localStorage, etc.</li><li>**Add-on UI SDK features** (via `addOnUISdk`):<ul><li>`addOnUISdk.app.document.addImage()` - Import media</li><li>`addOnUISdk.app.document.createRenditions()` - Export document</li><li>`addOnUISdk.app.showModalDialog()` - Display dialogs</li><li>`addOnUISdk.app.oauth` - Authentication flows</li><li>`addOnUISdk.instance.clientStorage` - Persistent storage</li></ul></li><li>**Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox</li></ul> |
+| Attribute | Details |
+| --- | --- |
+| **File** | `index.js` or `index.html` |
+| **SDKs Used** | Add-on UI SDK |
+| **Key Capabilities** | <ul><li>**UI components**: Render HTML, CSS, JavaScript frameworks</li><li>**Browser access**: DOM manipulation, fetch, localStorage, etc.</li><li>**Add-on UI SDK features** (via `addOnUISdk`):<ul><li>`addOnUISdk.app.document.addImage()` - Import media</li><li>`addOnUISdk.app.document.createRenditions()` - Export document</li><li>`addOnUISdk.app.showModalDialog()` - Display dialogs</li><li>`addOnUISdk.app.oauth` - Authentication flows</li><li>`addOnUISdk.instance.clientStorage` - Persistent storage</li></ul></li><li>**Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox</li></ul> |
 
 **Import Pattern:**
 
@@ -164,7 +166,7 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-<InlineAlert slots="header, text1, text2, text3, text4" variant="info"/>
+<InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
 When do I need document sandbox communication?
 
@@ -184,9 +186,11 @@ When do I need document sandbox communication?
 
 The secure isolated environment for document manipulation with limited browser APIs but direct document access. The document sandbox is where the Document Sandbox SDKs are used to access the APIs for features like document manipulation, document properties, and more.
 
-| File | SDKs Used | Key Capabilities |
-| --- | --- | --- |
-| `code.js` | Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs) | <ul><li>**Direct document manipulation**: Create/modify shapes, text, images using `editor`</li><li>**Scenegraph access**: Read and traverse the document structure</li><li>**Express Document SDK features**:<ul><li>`editor.createRectangle()`, `editor.createText()` - Create content</li><li>`editor.context.selection` - Access selected elements</li><li>`editor.context.insertionParent` - Add content to document</li><li>`colorUtils` - Create and convert colors</li><li>`fonts` - Manage and load fonts</li><li>`viewport` - Control canvas navigation</li></ul></li><li>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))</li><li>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy("panel")` to call UI functions</li></ul> |
+| Attribute | Details |
+| --- | --- |
+| **File** | `code.js` |
+| **SDKs Used** | Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs) |
+| **Key Capabilities** | <ul><li>**Direct document manipulation**: Create/modify shapes, text, images using `editor`</li><li>**Scenegraph access**: Read and traverse the document structure</li><li>**Express Document SDK features**:<ul><li>`editor.createRectangle()`, `editor.createText()` - Create content</li><li>`editor.context.selection` - Access selected elements</li><li>`editor.context.insertionParent` - Add content to document</li><li>`colorUtils` - Create and convert colors</li><li>`fonts` - Manage and load fonts</li><li>`viewport` - Control canvas navigation</li></ul></li><li>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))</li><li>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy("panel")` to call UI functions</li></ul> |
 
 **Import Patterns:**
 
@@ -743,9 +747,9 @@ runtime.exposeApi({
 });
 ```
 
-<InlineAlert variant="info" slots="text1"/>
+<InlineAlert variant="info" slots="header,text1"/>
 
-**Key practices:**
+Key practices:
 
 - Always wrap API calls in try-catch blocks
 - Provide meaningful error messages to users
