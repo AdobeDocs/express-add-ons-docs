@@ -77,8 +77,12 @@ const isMobileDevice = () => {
   const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
   // hover:none detects devices without hover capability (touch-only)
   const cannotHover = window.matchMedia("(hover: none)").matches;
+  // max-width helps distinguish true mobile/tablet from devices like touchscreen laptops
+  const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
 
-  return hasCoarsePointer || cannotHover;
+  return (
+    (hasCoarsePointer && cannotHover) || (hasCoarsePointer && isSmallScreen)
+  );
 };
 
 // parse language, try option and id.
@@ -114,9 +118,6 @@ const Code = ({ children, className = "", theme, metastring = "" }) => {
 
   useEffect(() => {
     setIsMobile(isMobileDevice());
-    const handleResize = () => setIsMobile(isMobileDevice());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
