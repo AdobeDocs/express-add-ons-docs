@@ -743,9 +743,10 @@ runtime.exposeApi({
 });
 ```
 
-<InlineAlert
+<InlineAlert variant="info" slots="text1"/>
 
 **Key practices:**
+
 - Always wrap API calls in try-catch blocks
 - Provide meaningful error messages to users
 - Handle communication failures gracefully
