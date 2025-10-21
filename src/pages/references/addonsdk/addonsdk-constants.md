@@ -1,156 +1,134 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on UI SDK
+  - Constants Reference
+  - API Reference
+  - SDK Constants
+  - Named Exports
+  - Import Patterns
+  - Type Safety
+  - JavaScript
+  - TypeScript
+  - AppEvent
+  - ColorPickerEvent
+  - SupportedMimeTypes
+  - EntrypointType
+  - RenditionFormat
+  - Range
+  - Variant
+  - ButtonType
+  - Modal Dialogs
+  - Document Export
+  - Event Handling
+  - Platform Detection
+  - Editor Navigation
+  - OAuth Authorization
+  - Video Rendition
+  - Color Picker
+  - Dialog Types
+  - MIME Types
+  - Technical Specification
+  - API Documentation
+  - Constants Object
+  - Dual Access
+  - Named Only Exports
+title: Add-on UI SDK Constants Reference
+description: Complete technical specification for all Add-on UI SDK constants including import patterns, dual-access vs named-only exports, and detailed reference details.
+contributors:
+  - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "Which constants require imports and which are available through addOnUISdk.constants?"
+      answer: "Four constants are named-only exports and MUST be imported: AppEvent, ColorPickerEvent, SupportedMimeTypes, and EntrypointType. All other constants support dual access - you can either import them OR use addOnUISdk.constants.*"
+
+    - question: "What happens if I try to access AppEvent through addOnUISdk.constants?"
+      answer: "It will return undefined. AppEvent, ColorPickerEvent, SupportedMimeTypes, and EntrypointType are only available as named exports and must be imported directly from the SDK."
+
+    - question: "What are the available rendition formats for document export?"
+      answer: "The RenditionFormat constant provides: jpg (image/jpeg), png (image/png), mp4 (video/mp4), pdf (application/pdf), and pptx (PowerPoint presentation)."
+
+    - question: "How do I import all constants at once?"
+      answer: "Use: import addOnUISdk, { AppEvent, ColorPickerEvent, SupportedMimeTypes, EntrypointType, Range, RenditionFormat, Variant, ButtonType, FieldType, PlatformType, DeviceClass, PlatformEnvironment, EditorPanel, MediaTabs, ElementsTabs, AuthorizationStatus, DialogResultType, RuntimeType, BleedUnit, PanelActionType, ColorPickerPlacement, VideoResolution, FrameRate, BitRate, FileSizeLimitUnit, LinkOptions, RenditionIntent } from 'https://express.adobe.com/static/add-on-sdk/sdk.js';"
+
+    - question: "What dialog variants are available?"
+      answer: "The Variant constant provides: confirmation, information, warning, destructive, error, input, and custom dialog types."
+
+    - question: "What video resolutions are supported for MP4 renditions?"
+      answer: "VideoResolution supports: sd480p, hd720p, fhd1080p, qhd1440p, uhd2160p (4K), and custom resolution options."
+
+    - question: "Which Editor panels can be opened programmatically?"
+      answer: "EditorPanel constant includes: search, yourStuff, templates, media, text, elements, grids, brands, and addOns panels."
+
+    - question: "What are the available page range options for renditions?"
+      answer: "The Range constant provides: currentPage, entireDocument, and specificPages options."
+
+    - question: "What platform types can be detected?"
+      answer: "PlatformType includes: iOS, iPadOS, chromeOS, android, chromeBrowser, firefoxBrowser, edgeBrowser, samsungBrowser, safariBrowser, and unknown."
+
+    - question: "What events can I listen for with AppEvent?"
+      answer: "AppEvent includes: themechange, localechange, formatchange, reset, dragstart, dragend, dragcancel, documentIdAvailable, documentLinkAvailable, documentPublishedLinkAvailable, documentTitleChange, and documentExportAllowedChange."
+---
+
 # addOnUISdk.constants
 
-A set of constants used throughout the Add-on UI SDK.
-
-This reference provides the complete technical specification for all constants used throughout the Add-on UI SDK.
-
-- Constants available in `addOnUISdk.constants.*`
-- Constants available only as named exports (import required)
-
-For practical examples and use cases, see the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md).
+Complete technical specification for all Add-on UI SDK constants.
 
 <InlineAlert slots="text" variant="info"/>
 
-The constants listed in this reference are equal to their variable name as a string value, ie: for the `ButtonType` constant, `primary` has a value of "primary".
+For practical examples, usage patterns, and getting started guide, see the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md).
 
-## Import Patterns
+## Import Quick Reference
 
-Adobe Express Add-on SDK constants are available through different import patterns depending on the constant type. Understanding these patterns is imperative for avoiding runtime errors.
+Most constants support dual access - you can import them OR use `addOnUISdk.constants.*`.
+
+**Exceptions** - these 4 constants are **named exports only** and must be imported:
+
+- [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), [`EntrypointType`](#entrypointtype)
+- Import them with `import { AppEvent, ColorPickerEvent, SupportedMimeTypes, EntrypointType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";`
 
 <InlineAlert slots="text" variant="warning"/>
 
-**Critical:** Attempting to access import-required constants through `addOnUISdk.constants.*` will return `undefined` and cause runtime errors. Always check the patterns below before using any constant.
-
-### Named Exports Only (Import Required)
-
-These constants are **only available as named exports** and must be imported explicitly. They are **not** available through `addOnUISdk.constants.*`:
-
-```javascript
-import addOnUISdk, { 
-  AppEvent,              // Import required
-  ColorPickerEvent,      // Import required
-  SupportedMimeTypes,    // Import required
-  EntrypointType         // Import required
-} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-
-// ✅ Correct usage
-const docxMimeType = SupportedMimeTypes.docx;
-const colorChangeEvent = ColorPickerEvent.colorChange;
-
-// ❌ Will NOT work - these are not in the constants object
-const docxMimeType = addOnUISdk.constants.SupportedMimeTypes.docx; // undefined
-```
-
-### Dual Access Constants (Flexible)
-
-These constants support **both import patterns** for flexibility. You can use either approach:
-
-```javascript
-import addOnUISdk, { Range, RenditionFormat, Variant } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-
-// Option 1: Named import (recommended for cleaner code)
-const currentPage = Range.currentPage;
-const pngFormat = RenditionFormat.png;
-const confirmDialog = Variant.confirmation;
-
-// Option 2: Constants object access (traditional pattern)
-const currentPage = addOnUISdk.constants.Range.currentPage;
-const pngFormat = addOnUISdk.constants.RenditionFormat.png;
-const confirmDialog = addOnUISdk.constants.Variant.confirmation;
-```
-
-**Dual Access Constants List:**
-
-- `Range` / `addOnUISdk.constants.Range`
-- `RenditionFormat` / `addOnUISdk.constants.RenditionFormat`
-- `RenditionType` / `addOnUISdk.constants.RenditionType`
-- `RenditionIntent` / `addOnUISdk.constants.RenditionIntent`
-- `Variant` / `addOnUISdk.constants.Variant`
-- `DialogResultType` / `addOnUISdk.constants.DialogResultType`
-- `ButtonType` / `addOnUISdk.constants.ButtonType`
-- `RuntimeType` / `addOnUISdk.constants.RuntimeType`
-- `BleedUnit` / `addOnUISdk.constants.BleedUnit`
-- `EditorPanel` / `addOnUISdk.constants.EditorPanel`
-- `MediaTabs` / `addOnUISdk.constants.MediaTabs`
-- `ElementsTabs` / `addOnUISdk.constants.ElementsTabs`
-- `PanelActionType` / `addOnUISdk.constants.PanelActionType`
-- `ColorPickerPlacement` / `addOnUISdk.constants.ColorPickerPlacement`
-- `AuthorizationStatus` / `addOnUISdk.constants.AuthorizationStatus`
-- `FieldType` / `addOnUISdk.constants.FieldType`
-- `PlatformEnvironment` / `addOnUISdk.constants.PlatformEnvironment`
-- `DeviceClass` / `addOnUISdk.constants.DeviceClass`
-- `PlatformType` / `addOnUISdk.constants.PlatformType`
-- `VideoResolution` / `addOnUISdk.constants.VideoResolution`
-- `FrameRate` / `addOnUISdk.constants.FrameRate`
-- `BitRate` / `addOnUISdk.constants.BitRate`
-- `FileSizeLimitUnit` / `addOnUISdk.constants.FileSizeLimitUnit`
-- `LinkOptions` / `addOnUISdk.constants.LinkOptions`
-
-### Best Practices
-
-1. **Use named imports for cleaner code** when you know which constants you need:
-
-   ```javascript
-   import addOnUISdk, { Range, RenditionFormat } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-   
-   const options = {
-     range: Range.currentPage,
-     format: RenditionFormat.png
-   };
-   ```
-
-2. **Use constants object for dynamic access** when the constant name is determined at runtime:
-
-   ```javascript
-   const format = addOnUISdk.constants.RenditionFormat[userSelectedFormat];
-   ```
-
-3. **Always import named-only exports** - there's no alternative way to access them:
-
-   ```javascript
-   import addOnUISdk, { SupportedMimeTypes } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-   ```
-
-### Quick Reference Table
+**Important**: Attempting to access named-only exports through `addOnUISdk.constants.*` will return `undefined`. For detailed usage examples and patterns, see the [Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md#import-patterns).
 
 | Constant | Named Export | Constants Object | Import Required |
 |----------|--------------|------------------|-----------------|
-| `AppEvent` | ✅ | ❌ | **Yes** |
-| `ColorPickerEvent` | ✅ | ❌ | **Yes** |
-| `SupportedMimeTypes` | ✅ | ❌ | **Yes** |
-| `EntrypointType` | ✅ | ❌ | **Yes** |
-| `Range` | ✅ | ✅ | Optional |
-| `RenditionFormat` | ✅ | ✅ | Optional |
-| `Variant` | ✅ | ✅ | Optional |
-| `ButtonType` | ✅ | ✅ | Optional |
-| `FieldType` | ✅ | ✅ | Optional |
-| `PlatformEnvironment` | ✅ | ✅ | Optional |
-| `DeviceClass` | ✅ | ✅ | Optional |
-| `PlatformType` | ✅ | ✅ | Optional |
-| `AuthorizationStatus` | ✅ | ✅ | Optional |
-| `RenditionType` | ✅ | ✅ | Optional |
-| `RenditionIntent` | ✅ | ✅ | Optional |
-| `DialogResultType` | ✅ | ✅ | Optional |
-| `RuntimeType` | ✅ | ✅ | Optional |
-| `BleedUnit` | ✅ | ✅ | Optional |
-| `EditorPanel` | ✅ | ✅ | Optional |
-| `MediaTabs` | ✅ | ✅ | Optional |
-| `ElementsTabs` | ✅ | ✅ | Optional |
-| `PanelActionType` | ✅ | ✅ | Optional |
-| `ColorPickerPlacement` | ✅ | ✅ | Optional |
-| `VideoResolution` | ✅ | ✅ | Optional |
-| `FrameRate` | ✅ | ✅ | Optional |
-| `BitRate` | ✅ | ✅ | Optional |
-| `FileSizeLimitUnit` | ✅ | ✅ | Optional |
-| `LinkOptions` | ✅ | ✅ | Optional |
-
-<InlineAlert slots="text" variant="warning"/>
-
-**Important:** Attempting to access named-only exports through `addOnUISdk.constants.*` will return `undefined` and may cause runtime errors. Always check the table above or use TypeScript for compile-time validation.
+| [`AppEvent`](#appevent) | ✅ | ❌ | **Yes** |
+| [`ColorPickerEvent`](#colorpickerevent) | ✅ | ❌ | **Yes** |
+| [`SupportedMimeTypes`](#supportedmimetypes) | ✅ | ❌ | **Yes** |
+| [`EntrypointType`](#entrypointtype) | ✅ | ❌ | **Yes** |
+| [`Range`](#range) | ✅ | ✅ | Optional |
+| [`RenditionFormat`](#renditionformat) | ✅ | ✅ | Optional |
+| [`Variant`](#variant) | ✅ | ✅ | Optional |
+| [`ButtonType`](#buttontype) | ✅ | ✅ | Optional |
+| [`FieldType`](#fieldtype) | ✅ | ✅ | Optional |
+| [`PlatformEnvironment`](#platformenvironment) | ✅ | ✅ | Optional |
+| [`DeviceClass`](#deviceclass) | ✅ | ✅ | Optional |
+| [`PlatformType`](#platformtype) | ✅ | ✅ | Optional |
+| [`AuthorizationStatus`](#authorizationstatus) | ✅ | ✅ | Optional |
+| [`RenditionType`](#renditiontype) | ✅ | ✅ | Optional |
+| [`RenditionIntent`](#renditionintent) | ✅ | ✅ | Optional |
+| [`DialogResultType`](#dialogresulttype) | ✅ | ✅ | Optional |
+| [`RuntimeType`](#runtimetype) | ✅ | ✅ | Optional |
+| [`BleedUnit`](#bleedunit) | ✅ | ✅ | Optional |
+| [`EditorPanel`](#editorpanel) | ✅ | ✅ | Optional |
+| [`MediaTabs`](#mediatabs) | ✅ | ✅ | Optional |
+| [`ElementsTabs`](#elementstabs) | ✅ | ✅ | Optional |
+| [`PanelActionType`](#panelactiontype) | ✅ | ✅ | Optional |
+| [`ColorPickerPlacement`](#colorpickerplacement) | ✅ | ✅ | Optional |
+| [`VideoResolution`](#videoresolution) | ✅ | ✅ | Optional |
+| [`FrameRate`](#framerate) | ✅ | ✅ | Optional |
+| [`BitRate`](#bitrate) | ✅ | ✅ | Optional |
+| [`FileSizeLimitUnit`](#filesizelimitunit) | ✅ | ✅ | Optional |
+| [`LinkOptions`](#linkoptions) | ✅ | ✅ | Optional |
 
 ## Constants Reference
 
-This section provides the complete technical specification for all Add-on UI SDK constants, organized by functional category. For practical examples and usage patterns, see the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md).
+Complete technical specifications organized by functional category.
+
+<InlineAlert slots="text" variant="info"/>
+
+Constants are equal to their variable name as a string (e.g., `ButtonType.primary` equals `"primary"`).
 
 ### BitRate
 
@@ -202,7 +180,7 @@ Types of buttons that can be pressed in modal dialogs.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**Import**: `import { AppEvent }` - Not available in constants object
+**Import**: `import { AppEvent }` - Not available in `addOnUISdk.constants` object
 
 Events dispatched by the Add-on SDK.
 
@@ -617,13 +595,8 @@ import addOnUISdk, { SupportedMimeTypes } from "https://express.adobe.com/static
 import addOnUISdk, { AuthorizationStatus } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
-## Developer Tips
+## Related Resources
 
-<InlineAlert slots="text" variant="success"/>
-
-**Quick Start Tips:**
-
-- **When in doubt, use named imports** - they work for ALL constants
-- **Copy import statements** from the [Import Generator](#import-generator) above
-- **Never guess** - check if constants are import-required before using
-- **Use TypeScript** for compile-time validation and better IDE support
+- [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md) - Practical examples and usage patterns
+- [Import Quick Reference](#import-quick-reference) - Fast lookup for import requirements
+- [Import Generator](#import-generator) - Copy-paste ready import statements

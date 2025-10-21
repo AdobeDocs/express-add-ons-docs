@@ -2,17 +2,89 @@
 keywords:
   - Adobe Express
   - Express Add-on SDK
-  - Express Document API
-  - Express Communication API
-  - Document Model Sandbox
-  - Adobe Express
+  - Express Document SDK
+  - Document APIs
+  - Document Sandbox
+  - Document Object Model
+  - Scenegraph
+  - Node Hierarchy
+  - Classes and Interfaces
+  - Object-Oriented Programming
+  - Inheritance
+  - Constants
+  - TypeScript
   - JavaScript
-  - Extensibility
-  - API
-title: Exploring the Adobe Document API Concepts
-description: In this article, you'll learn about the structures that make up the Adobe Express Document Object Model, their features, and how they're reflected in the Reference documentation.
+  - Express Document API
+  - Document Manipulation
+  - Content Creation
+  - Editor Class
+  - ColorUtils
+  - Node Types
+  - Live Objects
+  - Abstract Classes
+  - Singleton Pattern
+  - Reference Documentation
+  - API Reference
+  - Code.js
+  - Document Sandbox Runtime
+  - Express-document-sdk
+title: Document API Concepts
+description: Learn about the structures that make up the Adobe Express Document Object Model (DOM), including the scenegraph hierarchy, node types, classes, interfaces, and how to use the Document API Reference to build add-ons that create and manipulate document content in the document sandbox.
 contributors:
   - https://github.com/undavide
+faq:
+  questions:
+    - question: "What is the Adobe Express Document Object Model (DOM)?"
+      answer: "The Adobe Express DOM is a hierarchical tree of nodes representing the document structure. It includes containment structures (parent/child relationships) and inheritance hierarchies (shared properties). This is different from the HTML DOM - it's specific to Adobe Express documents and accessed through the Express Document SDK in the document sandbox."
+
+    - question: "Where do Document APIs run?"
+      answer: "Document APIs (Express Document SDK) only run in the document sandbox environment (code.js file). They are not available in the iframe runtime for security reasons. You must use communication APIs to bridge between the iframe UI and document sandbox."
+
+    - question: "How do I import Document APIs?"
+      answer: "Use named imports from express-document-sdk in your code.js file: import { editor, colorUtils, constants, fonts, viewport } from 'express-document-sdk'. These are singleton objects you use directly - never instantiate them with new."
+
+    - question: "What's the difference between Document Model Sandbox and Document Object Model?"
+      answer: "Document Model Sandbox is the sandboxed JavaScript environment where Document APIs run (the runtime environment). Document Object Model (DOM) is the structure representing Adobe Express documents, their hierarchies, and inheritance (the data structure)."
+
+    - question: "Why should I use constants instead of string literals?"
+      answer: "Constants like constants.SceneNodeType.ellipse or constants.FillType.color provide type safety and protect against internal value changes. Using string literals like 'ab:Artboard' can break if Adobe changes internal representations."
+
+    - question: "What's the difference between children and allChildren?"
+      answer: "Both are Iterable<Node> collections. children contains direct child nodes. allChildren includes all children across various discrete slots (like maskShape, mediaRectangle in MediaContainerNode) and reflects overall display z-order."
+
+    - question: "How do I read the Document API Reference?"
+      answer: "For each class, check: the class name (PascalCase), description, inheritance tree (what it extends), accessors/properties (getters/setters), and methods. Use the inheritance chain to understand all available properties and methods."
+
+    - question: "What are helper functions like makeColorFill() and makeStroke()?"
+      answer: "Helper functions (make* prefix) create plain objects with default values. editor.makeColorFill() creates a ColorFill with type automatically set. editor.makeStroke() creates a Stroke with default dashPattern, width, etc. This saves you from manually providing all required interface properties."
+
+    - question: "What's the difference between create*, make*, and add* methods?"
+      answer: "make* creates plain objects and helper utilities (makeColorFill). create* creates live document objects (createEllipse, createText). add* creates complex structures and adds them to parent lists automatically, potentially updating insertion point (addPage, addArtboard)."
+
+    - question: "Why do I need TypeScript declarations in JavaScript projects?"
+      answer: "TypeScript declarations (.d.ts files) provide IntelliSense code completion and type checking in your editor without requiring TypeScript. They help you avoid errors by showing available methods, parameters, and return types as you code."
+canonical: true
+ai_assistant_note: "This is the authoritative guide for understanding Adobe Express Document API concepts 
+  and the Document Object Model (DOM). Use this to explain the scenegraph structure, node hierarchy, 
+  classes vs interfaces, inheritance patterns, and how to navigate the Document API Reference. Essential 
+  for developers learning to create and manipulate document content in the document sandbox using the 
+  Express Document SDK (editor, colorUtils, constants). Always clarify that Document APIs only run in 
+  the document sandbox (code.js), not in the iframe runtime."
+semantic_tags:
+  - canonical-reference
+  - document-api-concepts
+  - document-object-model
+  - scenegraph-structure
+  - node-hierarchy
+  - classes-and-interfaces
+  - inheritance-patterns
+  - document-sandbox-only
+  - express-document-sdk
+  - reference-documentation-guide
+  - oop-concepts
+  - constants-usage
+  - type-safety
+  - practical-examples
 ---
 
 # Adobe Express Document API Concepts
@@ -21,7 +93,15 @@ The structures that make up the Adobe Express Document Object Model, their featu
 
 ## Overview
 
-In this article, you'll dive deep into the architecture and key elements of the Adobe Express Document Object Model (DOM) and why the Reference Documentation is the primary tool to explore it. Understanding the structures at play, hierarchy, and inheritance system will help you develop add-ons that exploit their full potential.
+In this article, you'll dive deep into the architecture and key elements of the Adobe Express Document Object Model (DOM) and why the [Document API Reference Documentation](/references/document-sandbox/document-apis/) is the primary tool to explore it.
+
+<InlineAlert variant="info" slots="header, text1"/>
+
+**Document Sandbox Only**
+
+The Document APIs covered in this guide (accessed via the Express Document SDK) **only run in the document sandbox environment** (`code.js` file). They are not available in the iframe runtime. See the [Architecture Guide](./architecture.md) to understand the dual-runtime system and how to use communication APIs to bridge between your UI and document manipulation code.
+
+Understanding the DOM structures, hierarchy, and inheritance system will help you develop add-ons that create and manipulate document content effectively.
 
 ### Getting started with the DOM
 
@@ -87,9 +167,9 @@ Compared to other Adobe desktop applications, the Adobe Express DOM features a r
 
 ![](images/refs-addon-hierarchy.png)
 
-### How to read the Reference
+### How to read the Document API Reference
 
-With this knowledge, you can use the [Document APIs](/references/document-sandbox/document-apis/) reference as the primary tool to study and learn about the Adobe Express DOM.
+With this knowledge, you can use the [Document API Reference Documentation](/references/document-sandbox/document-apis/) as the primary tool to study and learn about the Adobe Express DOM. This reference documents all the classes, interfaces, and constants available in the Express Document SDK for the document sandbox environment.
 
 ![](images/refs-addon-doc.png)
 

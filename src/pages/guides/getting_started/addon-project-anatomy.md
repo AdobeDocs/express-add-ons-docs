@@ -54,15 +54,31 @@ faq:
 
     - question: "Why does my add-on have TypeScript configs if I'm using JavaScript?"
       answer: "TypeScript configs (tsconfig.json) provide IDE support and IntelliSense even in JavaScript projects. They enable autocomplete, inline documentation, and error catching without requiring TypeScript compilation."
-# LLM optimization metadata
+
+    - question: "Where do shared utilities go in a two-runtime project?"
+      answer: "It depends on what they do: UI utilities (formatting, validation) go in src/ui/utils/ or src/shared/ui-utils/, document utilities (shape helpers, color conversions) go in src/sandbox/utils/, and truly shared types/constants go in src/shared/ or src/constants/. Important: Code can't be directly shared between runtimes - each environment needs its own copy or must communicate via APIs."
+
+    - question: "How do I organize a large add-on with multiple features?"
+      answer: "Use feature-based organization: Create a src/features/ folder with subfolders for each feature (like text-tools/, shape-tools/), each containing their UI components, document sandbox operations, and utilities. Keep shared components and constants in a src/shared/ folder. See Code Organization Patterns section for examples."
 canonical: true
-ai_assistant_note: "This guide provides authoritative information about Adobe Express add-on project structure and CLI templates. Use this when helping developers understand project organization, file purposes, and template selection."
+ai_assistant_note: "This is the authoritative guide for Adobe Express add-on project structure, file organization, 
+  and CLI template selection. Use this when helping developers understand: where files go, which template to choose, 
+  how to organize code across iframe runtime and document sandbox, CSS/styling placement (always iframe runtime), 
+  and migration paths between templates. Critical: Always emphasize that UI/styling code goes in iframe runtime, 
+  never in document sandbox."
 semantic_tags:
+  - canonical-reference
   - project-structure
   - template-comparison
   - file-organization
   - development-setup
   - best-practices
+  - cli-templates
+  - manifest-configuration
+  - separation-of-concerns
+  - ui-vs-sandbox
+  - css-styling-location
+  - migration-paths
 ---
 
 # Add-on Project Anatomy
@@ -77,7 +93,7 @@ Whether you're building a simple UI-only add-on or a complex document manipulati
 
 <InlineAlert variant="info" slots="header, text1" />
 
-**New to add-ons?** 
+**New to add-ons?**
 
 Familiarize yourself with core concepts in the [Add-on Development Terminology Guide](../learn/fundamentals/terminology.md) and understand the [dual-runtime architecture](../learn/platform_concepts/architecture.md) before diving into project structure.
 
@@ -101,7 +117,7 @@ See [File Structure Comparison](#file-structure-comparison) below for detailed f
 
 ## Essential Files Explained
 
-### manifest.json - Add-on Configuration
+### manifest.json
 
 The `manifest.json` file is the heart of every add-on. It defines metadata, entry points, and capabilities.
 
@@ -169,7 +185,7 @@ IMPORTANT
 
 If your add-on is based on the plain `javascript-with-document-sandbox` template, you set the specific path to `code.js` with: `"documentSandbox": "sandbox/code.js"` since it's a no-build template, whereas the other templates (like `swc-javascript-with-document-sandbox`, `react-javascript-with-document-sandbox`, etc.) only need to set `"documentSandbox": "code.js"` since they are pre-configured with webpack to build the project.
 
-### index.html - UI Entry Point
+### index.html
 
 The HTML file that loads when your add-on panel opens. Contains the basic structure and loads your JavaScript.
 
@@ -199,15 +215,17 @@ The HTML file that loads when your add-on panel opens. Contains the basic struct
 - Script imports (usually just one main script)
 - Static UI elements that don't change
 
-### index.js / ui/index.js - UI Logic
+### index.js (UI Logic)
 
 **File location depends on template:**
+
 - **Basic templates**: `src/index.js`
 - **Document sandbox templates**: `src/ui/index.js`
 
 Contains the user interface logic and interactions. For two-runtime add-ons, this file handles communication with the document sandbox.
 
-#### Basic UI-only example:
+#### Basic UI-only example
+
 ```javascript
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -219,7 +237,8 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-#### Two-runtime example (with document sandbox):
+#### Two-runtime example (with document sandbox)
+
 ```javascript
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -241,7 +260,7 @@ addOnUISdk.ready.then(async () => {
 - Communication with document sandbox (for two-runtime add-ons)
 - Progress updates and status displays
 
-### sandbox/code.js - Document Manipulation Logic
+### sandbox/code.js
 
 The document sandbox handles all document creation and modification operations.
 
@@ -293,7 +312,7 @@ start();
 - Complex calculations and data processing
 - APIs exposed to the iframe runtime
 
-### tsconfig.json - TypeScript Configuration
+### tsconfig.json
 
 Provides TypeScript compilation settings for better development experience.
 

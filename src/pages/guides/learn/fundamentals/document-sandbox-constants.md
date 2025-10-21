@@ -21,6 +21,34 @@ description: A comprehensive guide to using constants in the Document Sandbox en
   type-safe document manipulation, covering fill types, text styling, blend modes, and node types.
 contributors:
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "Why can't I access document constants from the UI?"
+      answer: "Document constants are only available in the Document Sandbox (code.js) for security isolation. UI and Document environments are separate - use communication APIs to pass data between them."
+
+    - question: "How do I import document constants?"
+      answer: "Use import { constants } from express-document-sdk in your code.js file. Access them as constants.FillType.color, constants.BlendMode.normal, etc."
+
+    - question: "What's the difference between UI SDK constants and Document Sandbox constants?"
+      answer: "UI SDK constants are for iframe operations (dialogs, exports, events). Document constants are for content creation (fills, strokes, text alignment, node types)."
+
+    - question: "Can I use FillType.gradient or other fill types?"
+      answer: "Currently, only FillType.color is available. Adobe Express may add more fill types in future releases."
+
+    - question: "How do I check if a node supports fills or strokes?"
+      answer: "Check the node type first using constants.SceneNodeType before applying fill or stroke properties."
+
+    - question: "Why does my blend mode not work?"
+      answer: "Ensure you're applying blend modes to visual nodes and using valid constants like constants.BlendMode.multiply. Not all nodes support all blend modes."
+
+    - question: "How do I pass constants from Document Sandbox to UI?"
+      answer: "Document constants are sandbox-only. If you need constant values in the UI, pass the actual string values through communication APIs rather than the constants themselves."
+
+    - question: "What constants should I use for text alignment?"
+      answer: "Use constants.TextAlignment.left, constants.TextAlignment.center, constants.TextAlignment.right, or constants.TextAlignment.justifyLeft."
+
+    - question: "How do I create colors for use with constants?"
+      answer: "Use colorUtils.fromRGB or colorUtils.fromHex to create Color objects. Import with: import { colorUtils } from express-document-sdk."
 # LLM optimization metadata
 canonical: true
 ai_assistant_note: "This guide focuses specifically on Document Sandbox constants used in the 
@@ -37,7 +65,7 @@ semantic_tags:
 
 # Using Document Sandbox Constants
 
-Document Sandbox constants provide type-safe ways to interact with the Document APIs when creating and manipulating content in Adobe Express documents. This guide covers the most common patterns for document-side development.
+Document Sandbox constants provide type-safe ways to interact with the Document APIs when creating and manipulating content in Adobe Express documents. This guide covers the most common patterns for document sandbox development.
 
 ## Why Use Document Constants?
 
@@ -60,7 +88,7 @@ const blendMode = constants.BlendMode.normal;
 const textAlignment = constants.TextAlignment.center;
 ```
 
-<InlineAlert variant="info" slots="header, text1" variant="warning"/>
+<InlineAlert slots="header, text1" variant="warning"/>
 
 **Important**
 
@@ -175,34 +203,22 @@ editor.context.selection.forEach(node => {
 });
 ```
 
-**Available Scene Node Types:**
+**Common Scene Node Types:**
 
 - `SceneNodeType.rectangle` - Rectangle shapes
 - `SceneNodeType.ellipse` - Ellipse/circle shapes
-- `SceneNodeType.text` - Text elements (not available in current types)
-- `SceneNodeType.imageRectangle` - Image elements
-- `SceneNodeType.unknownMediaRectangle` - Unknown media elements
+- `SceneNodeType.text` - Text elements
 - `SceneNodeType.line` - Line elements
 - `SceneNodeType.path` - Custom path shapes
 - `SceneNodeType.group` - Grouped elements
+- `SceneNodeType.imageRectangle` - Image elements
+- `SceneNodeType.unknownMediaRectangle` - Unknown media elements
 
-## Import Patterns
+<InlineAlert slots="text" variant="info"/>
 
-### Document Sandbox Environment
+Additional node types like `artboard`, `complexShape`, `gridLayout`, and others are available. See the [SceneNodeType Reference](../../../references/document-sandbox/document-apis/enumerations/SceneNodeType.md) for the complete list.
 
-```javascript
-// In code.js - import constants from express-document-sdk
-import { editor, constants, colorUtils } from "express-document-sdk";
-
-// Use constants through the constants object
-const newRect = editor.createRectangle();
-newRect.fill = {
-  type: constants.FillType.color,
-  color: { red: 0.5, green: 0.5, blue: 0.5, alpha: 1 }
-};
-```
-
-## Using Colors with Constants
+## Working with Colors
 
 When working with fill and stroke properties, you'll need to provide Color objects. Use the `colorUtils` utility from `express-document-sdk` to create colors:
 
@@ -224,30 +240,9 @@ rectangle.stroke = {
 };
 ```
 
-<InlineAlert slots="header,text1" variant="success"/>
-
-**Working with Colors**
+<InlineAlert slots="text" variant="info"/>
 
 For comprehensive color creation, conversion, and application examples, see the [Use Color Guide](../how_to/use_color.md).
-
-## Communication with UI
-
-```javascript
-// In code.js - expose constants to UI if needed
-import { constants } from "express-document-sdk";
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-
-addOnSandboxSdk.instance.runtime.exposeApi({
-  getAvailableBlendModes() {
-    return {
-      normal: constants.BlendMode.normal,
-      multiply: constants.BlendMode.multiply,
-      screen: constants.BlendMode.screen,
-      overlay: constants.BlendMode.overlay
-    };
-  }
-});
-```
 
 ## Common Patterns
 
@@ -396,7 +391,7 @@ function changeColor(node, color) {
 
 #### Q: How do I pass constants from Document Sandbox to UI?
 
-**A:** Expose them through communication APIs: `runtime.exposeApi({ getBlendModes: () => ({ normal: constants.BlendMode.normal }) })`.
+**A:** Document constants are sandbox-only. If you need constant values in the UI, pass the actual string values through communication APIs rather than the constants themselves.
 
 #### Q: What constants should I use for text alignment?
 
