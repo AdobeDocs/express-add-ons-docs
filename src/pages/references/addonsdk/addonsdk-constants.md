@@ -74,53 +74,19 @@ faq:
 
 Complete technical specification for all Add-on UI SDK constants.
 
-<InlineAlert slots="text" variant="info"/>
-
 For practical examples, usage patterns, and getting started guide, see the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md).
 
 ## Import Quick Reference
 
 Most constants support dual access - you can import them OR use `addOnUISdk.constants.*`.
 
-**Exceptions** - these 4 constants are **named exports only** and must be imported:
+However, these four constants are named exports only and must be imported:
 
 - [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), [`EntrypointType`](#entrypointtype)
 - Import them with `import { AppEvent, ColorPickerEvent, SupportedMimeTypes, EntrypointType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";`
+- Attempting to access these through `addOnUISdk.constants.*` will return `undefined`
 
-<InlineAlert slots="text" variant="warning"/>
-
-**Important**: Attempting to access named-only exports through `addOnUISdk.constants.*` will return `undefined`. For detailed usage examples and patterns, see the [Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md#import-patterns).
-
-| Constant | Named Export | Constants Object | Import Required |
-|----------|--------------|------------------|-----------------|
-| [`AppEvent`](#appevent) | ✅ | ❌ | **Yes** |
-| [`ColorPickerEvent`](#colorpickerevent) | ✅ | ❌ | **Yes** |
-| [`SupportedMimeTypes`](#supportedmimetypes) | ✅ | ❌ | **Yes** |
-| [`EntrypointType`](#entrypointtype) | ✅ | ❌ | **Yes** |
-| [`Range`](#range) | ✅ | ✅ | Optional |
-| [`RenditionFormat`](#renditionformat) | ✅ | ✅ | Optional |
-| [`Variant`](#variant) | ✅ | ✅ | Optional |
-| [`ButtonType`](#buttontype) | ✅ | ✅ | Optional |
-| [`FieldType`](#fieldtype) | ✅ | ✅ | Optional |
-| [`PlatformEnvironment`](#platformenvironment) | ✅ | ✅ | Optional |
-| [`DeviceClass`](#deviceclass) | ✅ | ✅ | Optional |
-| [`PlatformType`](#platformtype) | ✅ | ✅ | Optional |
-| [`AuthorizationStatus`](#authorizationstatus) | ✅ | ✅ | Optional |
-| [`RenditionType`](#renditiontype) | ✅ | ✅ | Optional |
-| [`RenditionIntent`](#renditionintent) | ✅ | ✅ | Optional |
-| [`DialogResultType`](#dialogresulttype) | ✅ | ✅ | Optional |
-| [`RuntimeType`](#runtimetype) | ✅ | ✅ | Optional |
-| [`BleedUnit`](#bleedunit) | ✅ | ✅ | Optional |
-| [`EditorPanel`](#editorpanel) | ✅ | ✅ | Optional |
-| [`MediaTabs`](#mediatabs) | ✅ | ✅ | Optional |
-| [`ElementsTabs`](#elementstabs) | ✅ | ✅ | Optional |
-| [`PanelActionType`](#panelactiontype) | ✅ | ✅ | Optional |
-| [`ColorPickerPlacement`](#colorpickerplacement) | ✅ | ✅ | Optional |
-| [`VideoResolution`](#videoresolution) | ✅ | ✅ | Optional |
-| [`FrameRate`](#framerate) | ✅ | ✅ | Optional |
-| [`BitRate`](#bitrate) | ✅ | ✅ | Optional |
-| [`FileSizeLimitUnit`](#filesizelimitunit) | ✅ | ✅ | Optional |
-| [`LinkOptions`](#linkoptions) | ✅ | ✅ | Optional |
+For detailed usage examples and patterns, see the [Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md#import-patterns).
 
 ## Constants Reference
 
@@ -570,7 +536,7 @@ import addOnUISdk, {
 } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 ```
 
-### By Use Case (Recommended)
+### By Use Case
 
 ```javascript
 // Document Export & Rendering
