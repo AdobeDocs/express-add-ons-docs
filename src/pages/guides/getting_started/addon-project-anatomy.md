@@ -142,7 +142,7 @@ my-addon/
 - ✅ Perfect for learning
 - ✅ Great for simple UI-only add-ons
 - ❌ Cannot create/modify document content
-- ❌ No modern JavaScript features (no JSX, no imports beyond basic ES modules)
+- ❌ No modern JavaScript features (no `JSX`, no imports beyond basic ES modules)
 
 **manifest.json:**
 ```json
@@ -727,7 +727,7 @@ my-addon/
 2. **All other templates use webpack** and output to `dist/`
 3. **UI code always goes in iframe runtime** (never in document sandbox)
 4. **CSS always goes in iframe runtime** (never in document sandbox)
-5. **Document sandbox has limited browser APIs** (no DOM, no setTimeout, no fetch)
+5. **Document sandbox has limited browser APIs** (no DOM, no `setTimeout()`, no `fetch()`)
 6. **Manifest paths differ** between build and no-build templates
 7. **Start simple** and upgrade as your add-on grows in complexity
 
