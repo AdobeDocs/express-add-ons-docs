@@ -100,7 +100,7 @@ Constants are equal to their variable name as a string (e.g., `ButtonType.primar
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { BitRate }` or `addOnUISdk.constants.BitRate`
+**Import**: `import { BitRate }` OR **Access**: `addOnUISdk.constants.BitRate`
 
 Bit rate values in bits per second for video renditions.
 
@@ -118,7 +118,7 @@ Bit rate values in bits per second for video renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { BleedUnit }` or `addOnUISdk.constants.BleedUnit`
+**Import**: `import { BleedUnit }` OR **Access**: `addOnUISdk.constants.BleedUnit`
 
 Units for page bleed measurements.
 
@@ -131,7 +131,7 @@ Units for page bleed measurements.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { ButtonType }` or `addOnUISdk.constants.ButtonType`
+**Import**: `import { ButtonType }` OR **Access**: `addOnUISdk.constants.ButtonType`
 
 Types of buttons that can be pressed in modal dialogs.
 
@@ -169,7 +169,7 @@ Events dispatched by the Add-on SDK.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { AuthorizationStatus }` or `addOnUISdk.constants.AuthorizationStatus`
+**Import**: `import { AuthorizationStatus }` OR **Access**: `addOnUISdk.constants.AuthorizationStatus`
 
 OAuth authorization status values.
 
@@ -196,7 +196,7 @@ Custom events dispatched by the Color Picker component.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { ColorPickerPlacement }` or `addOnUISdk.constants.ColorPickerPlacement`
+**Import**: `import { ColorPickerPlacement }` OR **Access**: `addOnUISdk.constants.ColorPickerPlacement`
 
 Placement options for the color picker popover relative to anchor element.
 
@@ -211,7 +211,7 @@ Placement options for the color picker popover relative to anchor element.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { DeviceClass }` or `addOnUISdk.constants.DeviceClass`
+**Import**: `import { DeviceClass }` OR **Access**: `addOnUISdk.constants.DeviceClass`
 
 Device form factors where the add-on is running.
 
@@ -225,7 +225,7 @@ Device form factors where the add-on is running.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { DialogResultType }` or `addOnUISdk.constants.DialogResultType`
+**Import**: `import { DialogResultType }` OR **Access**: `addOnUISdk.constants.DialogResultType`
 
 Types of modal dialog results.
 
@@ -239,7 +239,7 @@ Types of modal dialog results.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { EditorPanel }` or `addOnUISdk.constants.EditorPanel`
+**Import**: `import { EditorPanel }` OR **Access**: `addOnUISdk.constants.EditorPanel`
 
 Adobe Express Editor panels that can be opened programmatically.
 
@@ -259,7 +259,7 @@ Adobe Express Editor panels that can be opened programmatically.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { ElementsTabs }` or `addOnUISdk.constants.ElementsTabs`
+**Import**: `import { ElementsTabs }` OR **Access**: `addOnUISdk.constants.ElementsTabs`
 
 Tabs within the Editor's Elements panel.
 
@@ -287,7 +287,7 @@ Types of add-on entry points (currently only panel is supported).
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { FieldType }` or `addOnUISdk.constants.FieldType`
+**Import**: `import { FieldType }` OR **Access**: `addOnUISdk.constants.FieldType`
 
 Input field types supported in Simple Dialog.
 
@@ -299,7 +299,7 @@ Input field types supported in Simple Dialog.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { FileSizeLimitUnit }` or `addOnUISdk.constants.FileSizeLimitUnit`
+**Import**: `import { FileSizeLimitUnit }` OR **Access**: `addOnUISdk.constants.FileSizeLimitUnit`
 
 Units for file size limits.
 
@@ -312,7 +312,7 @@ Units for file size limits.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { FrameRate }` or `addOnUISdk.constants.FrameRate`
+**Import**: `import { FrameRate }` OR **Access**: `addOnUISdk.constants.FrameRate`
 
 Frame rate values in frames per second for video renditions.
 
@@ -329,7 +329,7 @@ Frame rate values in frames per second for video renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { LinkOptions }` or `addOnUISdk.constants.LinkOptions`
+**Import**: `import { LinkOptions }` OR **Access**: `addOnUISdk.constants.LinkOptions`
 
 Types of document links that can be generated.
 
@@ -342,7 +342,7 @@ Types of document links that can be generated.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { MediaTabs }` or `addOnUISdk.constants.MediaTabs`
+**Import**: `import { MediaTabs }` OR **Access**: `addOnUISdk.constants.MediaTabs`
 
 Tabs within the Editor's Media panel.
 
@@ -356,7 +356,7 @@ Tabs within the Editor's Media panel.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { PanelActionType }` or `addOnUISdk.constants.PanelActionType`
+**Import**: `import { PanelActionType }` OR **Access**: `addOnUISdk.constants.PanelActionType`
 
 Types of actions that can be performed on Editor panels.
 
@@ -369,7 +369,7 @@ Types of actions that can be performed on Editor panels.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { PlatformEnvironment }` or `addOnUISdk.constants.PlatformEnvironment`
+**Import**: `import { PlatformEnvironment }` OR **Access**: `addOnUISdk.constants.PlatformEnvironment`
 
 Environment where the add-on is running.
 
@@ -382,7 +382,7 @@ Environment where the add-on is running.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { PlatformType }` or `addOnUISdk.constants.PlatformType`
+**Import**: `import { PlatformType }` OR **Access**: `addOnUISdk.constants.PlatformType`
 
 Specific platform/operating system where the add-on is running.
 
@@ -403,7 +403,7 @@ Specific platform/operating system where the add-on is running.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { Range }` or `addOnUISdk.constants.Range`
+**Import**: `import { Range }` OR **Access**: `addOnUISdk.constants.Range`
 
 Page range options for document renditions.
 
@@ -417,7 +417,7 @@ Page range options for document renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RenditionFormat }` or `addOnUISdk.constants.RenditionFormat`
+**Import**: `import { RenditionFormat }` OR **Access**: `addOnUISdk.constants.RenditionFormat`
 
 Output formats for document renditions.
 
@@ -433,7 +433,7 @@ Output formats for document renditions.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RenditionIntent }` or `addOnUISdk.constants.RenditionIntent`
+**Import**: `import { RenditionIntent }` OR **Access**: `addOnUISdk.constants.RenditionIntent`
 
 Intent for creating renditions (affects optimization).
 
@@ -447,7 +447,7 @@ Intent for creating renditions (affects optimization).
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RenditionType }` or `addOnUISdk.constants.RenditionType`
+**Import**: `import { RenditionType }` OR **Access**: `addOnUISdk.constants.RenditionType`
 
 Type of rendition being created.
 
@@ -459,7 +459,7 @@ Type of rendition being created.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { RuntimeType }` or `addOnUISdk.constants.RuntimeType`
+**Import**: `import { RuntimeType }` OR **Access**: `addOnUISdk.constants.RuntimeType`
 
 Runtime type of the entrypoint creating the backend object.
 
@@ -486,7 +486,7 @@ MIME types for original source assets that can be converted to PDF.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { Variant }` or `addOnUISdk.constants.Variant`
+**Import**: `import { Variant }` OR **Access**: `addOnUISdk.constants.Variant`
 
 Dialog variants that determine appearance and behavior.
 
@@ -504,7 +504,7 @@ Dialog variants that determine appearance and behavior.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Import**: `import { VideoResolution }` or `addOnUISdk.constants.VideoResolution`
+**Import**: `import { VideoResolution }` OR **Access**: `addOnUISdk.constants.VideoResolution`
 
 Video resolution options for MP4 renditions.
 
