@@ -115,6 +115,7 @@ Every Adobe Express add-on has these essential files:
 3. **`index.js`** - Your add-on's logic
 
 The complexity grows based on:
+
 - Whether you need to create/modify document content (requires [document sandbox](../learn/platform_concepts/architecture.md#document-sandbox))
 - Whether you use a build tool (webpack)
 - Whether you use a UI framework (React) or TypeScript
@@ -127,7 +128,7 @@ See the [Add-on Architecture Guide](../learn/platform_concepts/architecture.md) 
 
 This is the absolute simplest structure - no build tools, no document manipulation:
 
-```
+```text
 my-addon/
 ├── src/
 │   ├── index.html       # Your UI
@@ -138,6 +139,7 @@ my-addon/
 ```
 
 **Key characteristics:**
+
 - ✅ No build process - files are used directly as-is
 - ✅ Perfect for learning
 - ✅ Great for simple UI-only add-ons
@@ -145,6 +147,7 @@ my-addon/
 - ❌ No modern JavaScript features (no `JSX`, no imports beyond basic ES modules)
 
 **manifest.json:**
+
 ```json
 {
     "entryPoints": [{
@@ -157,6 +160,7 @@ my-addon/
 **When to use:** Simple tools like settings panels, calculators, reference guides, or anything that doesn't need to create shapes/text/images in the document.
 
 **Related guides:**
+
 - [Development Tools](./local_development/dev_tooling.md) - CLI commands and local development setup
 - [Manifest Reference](../../references/manifest/index.md) - Complete manifest configuration guide
 
@@ -167,16 +171,19 @@ Understanding the difference between build and no-build templates is essential f
 ### No-Build Templates
 
 **Only two templates have no build process:**
+
 - `javascript` (UI-only)
 - `javascript-with-document-sandbox` (with document manipulation)
 
 **Characteristics:**
+
 - Files in `src/` are used directly
 - `manifest.json` paths point directly to source files
 - No `webpack.config.js` file
 - No `npm run build` command needed for development
 
 **Document sandbox path in manifest:**
+
 ```json
 "documentSandbox": "sandbox/code.js"  // Full path to source file
 ```
@@ -184,23 +191,27 @@ Understanding the difference between build and no-build templates is essential f
 ### Build Templates (All Others)
 
 **These templates use webpack:**
+
 - `swc-javascript` / `swc-javascript-with-document-sandbox`
 - `swc-typescript` / `swc-typescript-with-document-sandbox`
 - `react-javascript` / `react-javascript-with-document-sandbox`
 - `react-typescript` / `react-typescript-with-document-sandbox`
 
 **Characteristics:**
+
 - Files in `src/` are bundled to `dist/`
 - `manifest.json` paths point to bundled output files
 - Has `webpack.config.js` file
 - Requires `npm run build` to generate `dist/` folder
 
 **Document sandbox path in manifest:**
+
 ```json
 "documentSandbox": "code.js"  // Just filename - webpack outputs to dist/code.js
 ```
 
 **Why the difference?**
+
 - No-build: `"sandbox/code.js"` → Adobe Express loads `src/sandbox/code.js` directly
 - Build: `"code.js"` → Webpack bundles `src/sandbox/code.js` → outputs to `dist/code.js` → Adobe Express loads `dist/code.js`
 
@@ -217,7 +228,8 @@ When your add-on needs to create or modify document content (shapes, text, image
 #### 1. Folder Structure
 
 **Without document sandbox:**
-```
+
+```text
 src/
 ├── index.html
 ├── index.js          # All code here
@@ -225,7 +237,8 @@ src/
 ```
 
 **With document sandbox:**
-```
+
+```text
 src/
 ├── index.html
 ├── manifest.json
@@ -254,6 +267,7 @@ Add the `documentSandbox` property:
 #### 3. Code Split
 
 **UI code (`ui/index.js`):**
+
 ```javascript
 import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -269,6 +283,7 @@ addOnUISdk.ready.then(async () => {
 ```
 
 **Document sandbox code (`sandbox/code.js`):**
+
 ```javascript
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 import { editor } from "express-document-sdk";
@@ -286,6 +301,7 @@ runtime.exposeApi({
 ```
 
 **Learn more about communication:**
+
 - [Add-on Architecture Guide](../learn/platform_concepts/architecture.md#communication-flow) - Complete communication patterns
 - [Communication APIs Reference](../../references/document-sandbox/communication/index.md) - API documentation
 - [Stats Add-on Tutorial](../learn/how_to/tutorials/stats-addon.md) - Build an add-on using communication APIs
@@ -297,11 +313,13 @@ Here's the definitive guide for organizing your add-on code:
 ### UI Code (Always in iframe runtime)
 
 **Goes in:**
+
 - No-build templates: `src/index.js`
 - Build templates without sandbox: `src/index.js` or `src/index.jsx`
 - Templates with sandbox: `src/ui/index.js` or `src/ui/index.jsx`
 
 **Includes:**
+
 - ✅ HTML manipulation (`document.getElementById`, etc.)
 - ✅ CSS and styling
 - ✅ User input handling (forms, buttons, clicks)
@@ -314,9 +332,11 @@ See the [Add-on UI SDK Reference](../../references/addonsdk/index.md) for comple
 ### Document Manipulation Code (Only in document sandbox)
 
 **Goes in:**
+
 - `src/sandbox/code.js` (or `code.ts`)
 
 **Includes:**
+
 - ✅ Creating shapes, text, images
 - ✅ Modifying document content
 - ✅ Reading document properties
@@ -328,6 +348,7 @@ See the [Add-on UI SDK Reference](../../references/addonsdk/index.md) for comple
 See the [Document APIs Reference](../../references/document-sandbox/document-apis/index.md) for complete API documentation and the [Document API Concepts Guide](../learn/platform_concepts/document-api.md) for detailed explanations.
 
 **Available APIs in document sandbox:**
+
 - ✅ Standard JavaScript built-ins (`Date`, `Math`, `JSON`, etc.)
 - ✅ `console` API
 - ✅ `Blob` API (limited implementation)
@@ -354,6 +375,7 @@ For the complete list of available Web APIs, see the [Web APIs Reference](../../
 **Important:** Code cannot be directly shared between iframe runtime and document sandbox. Each environment is isolated.
 
 **Options:**
+
 1. **Duplicate code** - Copy utilities into both `ui/` and `sandbox/` folders
 2. **Pass data** - Send processed data between environments via API proxy
 3. **Types/interfaces** - Can be shared in `src/models/` or `src/types/` (TypeScript only)
@@ -386,15 +408,18 @@ For more on why environments are isolated, see the [iframe Runtime Context & Sec
 
 When choosing a template with a build process, you have two main UI approaches: **SWC templates** (vanilla JavaScript) or **React templates** (React framework).
 
-<InlineAlert slots="text" variant="info" />
+<InlineAlert slots="header, text1" variant="info" />
 
-**Important:** Both template types use Spectrum Web Components by default! The key difference is **how you write your code** (vanilla JavaScript with Lit vs. React with JSX), not which UI components you use.
+**Important**
+
+Both template types use Spectrum Web Components by default. The key difference is **how you write your code** (vanilla JavaScript with Lit vs. React with JSX), not which UI components you use.
 
 ### What are SWC Templates?
 
 **SWC** stands for **Spectrum Web Components** - Adobe's implementation of the Spectrum design system as web components.
 
 **SWC templates are characterized by:**
+
 - **Vanilla JavaScript** (no UI framework like React)
 - **Lit** for creating custom web components
 - **Native Spectrum Web Components** (`<sp-button>`, `<sp-theme>`, etc.)
@@ -402,6 +427,7 @@ When choosing a template with a build process, you have two main UI approaches: 
 - **Webpack** for bundling
 
 **Key characteristics:**
+
 - ✅ Use native web components directly (`<sp-button>`)
 - ✅ Smaller bundle sizes (no React framework)
 - ✅ Standards-based web components
@@ -419,6 +445,7 @@ New to Lit? See the [Using Lit & TypeScript Tutorial](../learn/how_to/tutorials/
 React templates use the React framework for building UI.
 
 **React templates are characterized by:**
+
 - **React framework** for component-based UI
 - **React wrappers for Spectrum Web Components** (`<Button>`, `<Theme>` from `@swc-react`)
 - **JSX syntax** for writing components
@@ -426,6 +453,7 @@ React templates use the React framework for building UI.
 - **Webpack** for bundling
 
 **Key characteristics:**
+
 - ✅ Familiar React patterns (hooks, JSX, component lifecycle)
 - ✅ Use Spectrum Web Components via React wrappers (`@swc-react`)
 - ✅ Huge React ecosystem and community
@@ -439,6 +467,7 @@ React templates use the React framework for building UI.
 Both templates give you Spectrum Web Components, but they differ in **how you use them**:
 
 **SWC Templates (Vanilla JS):**
+
 ```javascript
 // Use native web components directly
 <sp-button size="m" @click=${this._handleClick}>
@@ -447,6 +476,7 @@ Both templates give you Spectrum Web Components, but they differ in **how you us
 ```
 
 **React Templates:**
+
 ```jsx
 // Use React wrappers from @swc-react
 <Button size="m" onClick={handleClick}>
@@ -459,6 +489,7 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 ### When to Choose SWC Templates
 
 **Choose SWC templates if:**
+
 - ✅ You want to use **Adobe's Spectrum design system** out of the box
 - ✅ You prefer **vanilla JavaScript** over frameworks
 - ✅ You're building a **simple to medium complexity** UI
@@ -468,6 +499,7 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 - ✅ You want **smaller bundle sizes**
 
 **Examples of good SWC template use cases:**
+
 - Settings panels with forms
 - Tools that use standard UI components (buttons, inputs, dropdowns)
 - Add-ons that should match Adobe Express's look and feel
@@ -475,12 +507,14 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 - Projects where accessibility is a priority (Spectrum components are accessible by default)
 
 **Getting started with SWC:**
+
 - [Using Lit & TypeScript Tutorial](../learn/how_to/tutorials/using-lit-typescript.md) - Step-by-step guide to building with SWC templates
 - [Using Adobe Spectrum Workshop](../learn/how_to/tutorials/spectrum-workshop/index.md) - Learn Spectrum Web Components
 
 ### When to Choose React Templates
 
 **Choose React templates if:**
+
 - ✅ You or your team **already knows React**
 - ✅ You're building a **complex UI** with lots of state
 - ✅ You need **rich component ecosystems** (many React libraries available)
@@ -488,6 +522,7 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 - ✅ Your add-on has **multiple views or complex workflows**
 
 **Examples of good React template use cases:**
+
 - Multi-step wizards or workflows
 - Data visualization tools
 - Complex forms with validation
@@ -514,15 +549,18 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 ### The Bottom Line
 
 **If you're new to add-on development:**
+
 - Start with **plain JavaScript** template (no build) to learn the basics
 - Move to **SWC JavaScript** when you need a build tool but want simplicity
 - Move to **React JavaScript** if you need complex UI or already know React
 
 **If you're an experienced developer:**
+
 - Use **SWC templates** for performance and simplicity
 - Use **React templates** if React is your comfort zone or you need complex UIs
 
 **Learn more about Spectrum:**
+
 - [Using Adobe Spectrum Tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md) - Complete workshop on Spectrum Web Components
 - [UX Guidelines](../build/design/ux_guidelines/introduction.md) - Design principles for Adobe Express add-ons
 
@@ -530,7 +568,7 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 
 ### Quick Decision Tree
 
-```
+```text
 Do you need to create/modify document content?
 │
 ├─ NO → Do you need a complex UI?
@@ -571,7 +609,7 @@ Do you need to create/modify document content?
 
 You can upgrade templates as your add-on grows:
 
-```
+```text
 javascript
     ↓ (add document manipulation)
 javascript-with-document-sandbox
@@ -609,7 +647,8 @@ react-typescript-with-document-sandbox
 Follow the [Using Lit & TypeScript Tutorial](../learn/how_to/tutorials/using-lit-typescript.md) for a complete walkthrough of building an add-on with the `swc-typescript-with-document-sandbox` template.
 
 #### 1. JavaScript (No Build, No Sandbox)
-```
+
+```text
 my-addon/
 ├── src/
 │   ├── index.html
@@ -619,7 +658,8 @@ my-addon/
 ```
 
 #### 2. JavaScript with Document Sandbox (No Build)
-```
+
+```text
 my-addon/
 ├── src/
 │   ├── index.html
@@ -634,7 +674,8 @@ my-addon/
 ```
 
 #### 3. SWC JavaScript with Document Sandbox (Build)
-```
+
+```text
 my-addon/
 ├── src/
 │   ├── index.html
@@ -655,7 +696,8 @@ my-addon/
 ```
 
 #### 4. React TypeScript with Document Sandbox (Build)
-```
+
+```text
 my-addon/
 ├── src/
 │   ├── index.html
@@ -677,9 +719,12 @@ my-addon/
 
 <InlineAlert slots="text" variant="info" />
 
-**Note:** For complete file structures of all 10 templates, refer to the template-specific documentation or examine the scaffolded project files.
+**Note**
+
+To see thecomplete file structures of all 10 templates, refer to the template-specific documentation or examine the scaffolded project files.
 
 **Hands-on tutorials:**
+
 - [Building Your First Add-on (Grids Tutorial)](../learn/how_to/tutorials/grids-addon.md) - Build a complete add-on with Document APIs
 - [Using Lit & TypeScript](../learn/how_to/tutorials/using-lit-typescript.md) - Build with SWC TypeScript template
 
@@ -732,6 +777,7 @@ my-addon/
 7. **Start simple** and upgrade as your add-on grows in complexity
 
 **When in doubt:**
+
 - UI/styling → iframe runtime
 - Document manipulation → document sandbox
 - Simple add-on → `javascript` template
@@ -742,19 +788,23 @@ my-addon/
 ## Related Documentation
 
 ### Getting Started
+
 - [Hello, World! Tutorial](./hello-world.md) - Create your first add-on
 - [Code Playground](./code_playground.md) - Experiment with add-on APIs in your browser
 - [Development Tools](./local_development/dev_tooling.md) - CLI commands and local development
 - [Adobe Express Add-on MCP Server](./local_development/mcp_server.md) - AI-assisted development with LLMs
 
 ### Core Concepts
+
 - [Developer Terminology](../learn/fundamentals/terminology.md) - Essential terminology reference
 - [Add-on Architecture Guide](../learn/platform_concepts/architecture.md) - Deep dive into dual-runtime system
 
 ### References
+
 - [Manifest Reference](../../references/manifest/index.md) - Complete manifest configuration
 - [Add-on UI SDK Reference](../../references/addonsdk/index.md) - Add-on UI SDK APIs
 - [Document APIs Reference](../../references/document-sandbox/document-apis/index.md) - Document manipulation APIs
 
 ### Examples
+
 - [Sample Add-ons](../learn/samples.md) - Browse example projects

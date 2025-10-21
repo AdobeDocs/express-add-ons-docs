@@ -640,6 +640,7 @@ The Adobe Express add-on SDKs use the **singleton pattern** which means objects 
 ### Examples of SDK Singletons
 
 **Add-on UI SDK Singletons**
+
 - `addOnUISdk.instance` - Add-on-specific features
 - `addOnUISdk.app` - Adobe Express application interface
 - `addOnUISdk.instance.runtime` - Communication between environments

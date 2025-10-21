@@ -162,46 +162,55 @@ When you encounter these terms in documentation, check the context to determine 
 ### Quick Lookup: Common Sources of Confusion
 
 **"I need to access the document"** - Which document?
+
 - Adobe Express user's project → "The document has 3 pages"
 - Manipulate Adobe Express content → `editor.documentRoot`
 - Import/export Adobe Express document → `addOnUISdk.app.document`
 - Your add-on's UI HTML page → `document.getElementById()`
 
 **"What's the DOM?"** - Which DOM?
+
 - Your add-on's HTML structure → `document.querySelector()` (Browser DOM)
 - Adobe Express's document structure → Use "scenegraph" not "DOM"
 
 **"How do I use the runtime?"** - Which runtime?
+
 - Execution environment → "Code runs in iframe runtime or document sandbox"
 - Communication APIs → `addOnUISdk.instance.runtime` or `addOnSandboxSdk.instance.runtime`
 
 **"What is the context?"** - Which context?
+
 - Execution environment → "The iframe context has standard Web APIs"
 - Editor's selection/insertion → `editor.context.selection`
 - Security boundaries → See [iframe Context & Security](../platform_concepts/context.md)
 
 **"What does instance mean?"** - Which instance?
+
 - SDK property → `addOnUISdk.instance` or `addOnSandboxSdk.instance`
 - Class object → "rectangle is an instance of RectangleNode"
 - Running session → "User's add-on instance"
 
 **"How do I import SDKs?"** - Named or default export?
+
 - Add-on UI SDK → Default export: `import addOnUISdk from "..."`
 - Document Sandbox SDK → Default export: `import addOnSandboxSdk from "..."`
 - Express Document SDK → Named exports: `import { editor, colorUtils } from "..."`
 
 **"Are Web APIs and Browser APIs the same?"** - Yes!
+
 - Same thing, different names → "Web APIs" = "Browser APIs"
 - iframe runtime → Standard Web APIs available
 - Document sandbox → Limited Web APIs only (console, Blob)
 
 **"Should I say node or element?"** - It depends!
+
 - Adobe Express scenegraph → Use "node" (`RectangleNode`, `TextNode`, etc.) to describe visual elements in the document
 - Your add-on's HTML → Use "DOM node" or "HTML element"
 - User-facing docs → "element" is okay (e.g., "text elements in your design")
 - Developer docs → Prefer "node" for precision and to match API class names
 
 **"Should I use `addOnUISdk.instance` or `addOnUISdk.app`?"** - Different scopes
+
 - **Add-on scope** (`instance`) → Features specific to YOUR add-on
   - `instance.runtime` - YOUR add-on's communication
   - `instance.clientStorage` - YOUR add-on's storage (per-user, per-addon)
@@ -216,6 +225,7 @@ When you encounter these terms in documentation, check the context to determine 
 Adobe Express add-ons use a **dual-runtime architecture** with two separate JavaScript execution environments:
 
 ### **iframe Runtime**
+
 - **What it is**: A sandboxed iframe environment where your add-on's user interface runs
 - **Purpose**: Hosts your HTML, CSS, and JavaScript UI code
 - **SDK Used**: Add-on UI SDK
@@ -225,6 +235,7 @@ Adobe Express add-ons use a **dual-runtime architecture** with two separate Java
 - **Terminology Note**: While the browser term is "iframe sandbox" (as used in [HTML sandbox attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) and manifest permissions), we use "iframe runtime" throughout the documentation for consistency with "document sandbox runtime" and to distinguish between the two execution environments
 
 ### **Document Sandbox**
+
 - **What it is**: A separate sandboxed JavaScript environment for document manipulation
 - **Purpose**: Provides secure access to Adobe Express document structure and content
 - **SDKs Used**: Document Sandbox SDK (for communication) + Express Document SDK (for document APIs)
@@ -252,6 +263,7 @@ The `addOnUISdk` object provides two distinct scopes of functionality:
 
 **`addOnUISdk.instance` - Add-on Scope**  
 Features specific to your individual add-on:
+
 - `runtime` - Communication between your add-on's iframe and document sandbox
 - `clientStorage` - Data storage for your add-on only (per-user, per-addon)
 - `manifest` - Your add-on's configuration
@@ -262,6 +274,7 @@ Features specific to your individual add-on:
 
 **`addOnUISdk.app` - Application Scope**  
 Features shared across Adobe Express (the host application):
+
 - `document` - The active Adobe Express document (shared across all add-ons)
 - `oauth` - Authentication with external services
 - `currentUser` - The Adobe Express user (not specific to your add-on)
@@ -312,6 +325,7 @@ import addOnUISdk, { Range, RenditionFormat, Variant } from "https://express.ado
 ### Bidirectional Communication Pattern
 
 **iframe runtime → document sandbox**:
+
 ```js
 // iframe runtime (index.js)
 const { runtime } = addOnUISdk.instance;
@@ -329,6 +343,7 @@ runtime.exposeApi({
 ```
 
 **document sandbox → iframe runtime**:
+
 ```js
 // document sandbox (code.js)
 const panelProxy = await runtime.apiProxy("panel");
@@ -343,6 +358,7 @@ runtime.exposeApi({
 ```
 
 ### Runtime Types
+
 - **`panel`**: The main iframe runtime for your add-on UI
 - **`documentSandbox`**: The document manipulation runtime
 - **`dialog`**: Runtime context when code is running within a modal dialog
@@ -350,6 +366,7 @@ runtime.exposeApi({
 ## Key Development Objects
 
 ### **`editor` Object**
+
 Primary interface for document manipulation in the document sandbox.
 
 ```js
@@ -361,6 +378,7 @@ const insertionParent = editor.context.insertionParent;
 ```
 
 ### **`constants`**
+
 Type-safe values for SDK operations that prevent string literal errors.
 
 ```js
@@ -378,6 +396,7 @@ rectangle.fill = {
 ```
 
 ### **ColorUtils**
+
 Utility functions for creating and converting colors in the document sandbox.
 
 ```js
@@ -397,6 +416,7 @@ Adobe Express documents are structured as a **scenegraph** - a hierarchical tree
 **`Node`**: Full-featured visual content that extends `BaseNode` with visual properties and transformations.
 
 **Common Node Types**:
+
 - **Container Nodes**: `ArtboardNode`, `GroupNode`, `PageNode` (hold other elements)
 - **Content Nodes**: `RectangleNode`, `EllipseNode`, `TextNode`, `LineNode`, `PathNode` (visual elements)
 - **Media Nodes**: `MediaContainerNode`, `ImageRectangleNode` (images and media)
@@ -415,26 +435,33 @@ artboard.children.append(rectangle);
 ## Development Environment & Tools
 
 ### **Add-on Marketplace**
+
 Distribution platform where users discover and install add-ons within [Adobe Express](https://express.adobe.com/add-ons) via the "Add-ons" button in the left sidebar.
 
 ### **Code Playground**
+
 Interactive browser-based development environment for experimenting with add-on APIs without local setup. See the [Code Playground](../../getting_started/code_playground.md) guide for more details.
 
 ### **Adobe Express Add-on CLI**
+
 Command Line Interface tool for creating, building, and packaging add-ons for local development.
+
 - **Installation**: `npm install -g @adobe/ccweb-add-on-cli`
 - **Key Commands**: `create`, `start`, `build`, `package`
 
 See the [Adobe Express Add-on CLI](../../getting_started/local_development/dev_tooling.md) guide for more details.
 
 ### **MCP Server (Model Context Protocol)**
+
 AI-assisted development tool that enhances LLM responses with Adobe Express add-on documentation and TypeScript definitions.
+
 - **Purpose**: Provide semantic documentation search and accurate code suggestions through AI assistants
 - **Requirements**: Node.js 18+ and MCP-compatible IDE (Cursor, VS Code, Claude Desktop)
 
 See the [Adobe Express Add-on MCP Server](../../getting_started/local_development/mcp_server.md) guide for more details.
 
 ### **Add-on Development Mode**
+
 Special mode in Adobe Express (**Settings > Add-on Development** toggle) that allows loading and testing local add-ons during development. See [Add-on Development Mode](../../getting_started/local_development/dev_tooling.md) for more details.
 
 ## Manifest Configuration
@@ -473,6 +500,7 @@ Many terms like "document", "context", "runtime", and "instance" have multiple m
 ## Troubleshooting Common Issues
 
 ### Import Errors
+
 ```js
 // ✅ Correct patterns
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -485,12 +513,14 @@ import addOnSandboxSdk from "add-on-ui-sdk"; // Wrong: mixed up the SDKs
 ```
 
 ### Runtime Context
+
 | When you're in... | You have access to... | To communicate with the other side... |
 |-------------------|----------------------|--------------------------------------|
 | **iframe runtime** | Add-on UI SDK, DOM, Web APIs | Use `runtime.exposeApi()` or `runtime.apiProxy()` |
 | **document sandbox** | Express Document SDK, limited Web APIs | Use `runtime.exposeApi()` or `runtime.apiProxy()` (from Document Sandbox SDK) |
 
 ### "undefined" Errors
+
 **Problem**: `addOnUISdk.constants.SomeConstant` returns `undefined`  
 **Solution**: Some constants require explicit imports. Check the [Constants Reference](../../../references/addonsdk/addonsdk-constants.md)
 
@@ -537,6 +567,7 @@ Use `instance` for add-on-specific features; use `app` to interact with Adobe Ex
 #### Q: I'm confused by terms like "document", "context", "runtime", and "instance" - they seem to mean different things in different places?
 
 **A:** Yes! Many terms in add-on development are overloaded with multiple meanings. Check the **[Overloaded Terms Clarification](#overloaded-terms-clarification)** table at the top of this page for complete clarification. For example, "document" can mean:
+
 - The Adobe Express user's project
 - `editor.documentRoot` (scenegraph manipulation)
 - `addOnUISdk.app.document` (import/export operations)

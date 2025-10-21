@@ -224,6 +224,7 @@ const format = addOnUISdk.constants.RenditionFormat[userFormat];
 ```
 
 **Dual Access Constants Include:**
+
 - `Range`, `RenditionFormat`, `RenditionIntent`, `RenditionType`
 - `Variant`, `ButtonType`, `FieldType`, `DialogResultType`
 - `PlatformType`, `DeviceClass`, `PlatformEnvironment`
