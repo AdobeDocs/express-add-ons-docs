@@ -59,6 +59,26 @@ faq:
 
     - question: "What are common selection-based actions?"
       answer: "Typical actions include updating properties panels, enabling/disabling tools, applying formatting to selected text, grouping elements, and showing context-appropriate options."
+canonical: true
+ai_assistant_note: "This is the authoritative guide for working with element selections in Adobe Express add-ons. 
+  Use this when helping developers understand: how to get/set/clear selections, selection change event handling, 
+  selection rules and constraints, locked/non-editable element handling, selection-based UI updates, and communication 
+  between document sandbox and UI panel for selection data. Critical: Always emphasize that document modifications 
+  must NEVER happen inside selection change handlers - this can crash the application. Selection handlers should only 
+  update UI, analyze data, or communicate with the panel."
+semantic_tags:
+  - canonical-reference
+  - selection-handling
+  - event-handling
+  - context-api
+  - selection-change-events
+  - document-sandbox
+  - ui-integration
+  - selection-rules
+  - locked-nodes
+  - properties-panel
+  - real-time-updates
+  - best-practices
 ---
 
 # Handle Element Selection
@@ -77,7 +97,7 @@ All selection operations use the **Document API** and run in the **document sand
 
 Make sure your `manifest.json` includes `"documentSandbox": "code.js"` in the entry points to set up the document sandbox environment.
 
-### Check Current Selection
+### Quick Start Example
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
@@ -89,13 +109,7 @@ import { editor } from "express-document-sdk";
 
 // Check if anything is selected
 if (editor.context.hasSelection) {
-  const selection = editor.context.selection;
-  console.log(`Selected ${selection.length} item(s)`);
-  
-  // Process each selected node
-  selection.forEach((node, index) => {
-    console.log(`Node ${index + 1}: ${node.type}`);
-  });
+  console.log(`Selected ${editor.context.selection.length} item(s)`);
 } else {
   console.log("Nothing is selected");
 }
@@ -105,17 +119,11 @@ if (editor.context.hasSelection) {
 
 ```ts
 // sandbox/code.ts
-import { editor, Node, EditorEvent } from "express-document-sdk";
+import { editor } from "express-document-sdk";
 
 // Check if anything is selected
 if (editor.context.hasSelection) {
-  const selection: readonly Node[] = editor.context.selection;
-  console.log(`Selected ${selection.length} item(s)`);
-  
-  // Process each selected node
-  selection.forEach((node: Node, index: number) => {
-    console.log(`Node ${index + 1}: ${node.type}`);
-  });
+  console.log(`Selected ${editor.context.selection.length} item(s)`);
 } else {
   console.log("Nothing is selected");
 }
@@ -130,14 +138,7 @@ In Adobe Express, the selection system provides:
 - **Selection events** - React to selection changes
 - **Selection filtering** - Handle locked/non-editable content
 
-### Selection Rules
-
-Adobe Express enforces these constraints:
-
-1. **Artboard constraint** - Only nodes within the current artboard can be selected
-2. **Hierarchy filtering** - Cannot select both parent and child nodes simultaneously
-3. **Locked node filtering** - Locked nodes are excluded from the main selection
-4. **Editable-only** - Main selection only includes editable nodes
+The selection system automatically enforces constraints like artboard boundaries and hierarchy rules. See the [Best Practices & Guidelines](#best-practices--guidelines) section for complete details on selection rules and restrictions.
 
 ## Basic Selection Operations
 
@@ -676,13 +677,13 @@ editor.context.on(EditorEvent.selectionChange, () => {
 });
 ```
 
-## UI Integration
+## Practical Selection Patterns
 
-Communicate selection changes between the document sandbox and your UI panel to create responsive interfaces.
+Real-world patterns for building selection-based features in your add-on.
 
-### Selection-Based Actions
+### Performing Actions on Selected Elements
 
-Common patterns for performing actions on selected elements:
+Common patterns for applying changes to selected elements:
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
@@ -831,7 +832,9 @@ editor.context.on(EditorEvent.selectionChange, () => {
 });
 ```
 
-### Selection State Management
+### Advanced: Selection State Management
+
+Track selection history and manage complex selection states:
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
@@ -984,90 +987,7 @@ const selectionManager = new SelectionManager();
 
 ## Best Practices & Guidelines
 
-### Event Handler Cleanup
-
-⚠️ **Important**: Always clean up event handlers to prevent memory leaks.
-
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
-
-#### JavaScript
-
-```js
-// sandbox/code.js
-import { editor, EditorEvent } from "express-document-sdk";
-
-// Store handler IDs for cleanup
-let selectionHandlerId = null;
-
-function setupSelectionHandling() {
-  // Register handler and store ID
-  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
-    console.log("Selection changed");
-    // Handle selection change
-  });
-  
-  console.log("Selection handler registered");
-}
-
-function cleanupSelectionHandling() {
-  // Unregister the handler
-  if (selectionHandlerId) {
-    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
-    selectionHandlerId = null;
-    console.log("Selection handler unregistered");
-  }
-}
-
-// Setup
-setupSelectionHandling();
-
-// Cleanup when add-on is being destroyed or reset
-// cleanupSelectionHandling();
-```
-
-#### TypeScript
-
-```ts
-// code.ts
-import { editor, EditorEvent } from "express-document-sdk";
-
-// Store handler IDs for cleanup
-let selectionHandlerId: string | null = null;
-
-function setupSelectionHandling(): void {
-  // Register handler and store ID
-  selectionHandlerId = editor.context.on(EditorEvent.selectionChange, () => {
-    console.log("Selection changed");
-    // Handle selection change
-  });
-  
-  console.log("Selection handler registered");
-}
-
-function cleanupSelectionHandling(): void {
-  // Unregister the handler
-  if (selectionHandlerId) {
-    editor.context.off(EditorEvent.selectionChange, selectionHandlerId);
-    selectionHandlerId = null;
-    console.log("Selection handler unregistered");
-  }
-}
-
-// Setup
-setupSelectionHandling();
-
-// Cleanup when add-on is being destroyed or reset
-// cleanupSelectionHandling();
-```
-
-### Selection System Rules
-
-1. **Artboard constraint**: Only nodes within the current artboard can be selected
-2. **Hierarchy filtering**: Cannot select both parent and child nodes simultaneously  
-3. **Locked node handling**: Locked nodes are excluded from main selection but available in `selectionIncludingNonEditable`
-4. **Automatic filtering**: System automatically filters out invalid selections
-
-### Important: Selection Handler Restrictions
+### Selection Handler Restrictions
 
 <InlineAlert slots="header,text1,text2,text3,text4,text5" variant="warning"/>
 
@@ -1089,98 +1009,83 @@ Document Modification Restrictions
    - Change document structure  
    - Set properties on selected elements
 
+### Selection System Rules
+
+Adobe Express enforces these constraints:
+
+1. **Artboard constraint**: Only nodes within the current artboard can be selected
+2. **Hierarchy filtering**: Cannot select both parent and child nodes simultaneously  
+3. **Locked node handling**: Locked nodes are excluded from main selection but available in `selectionIncludingNonEditable`
+4. **Automatic filtering**: System automatically filters out invalid selections
+
 ### Performance Guidelines
 
-1. **Keep handlers fast**: Minimize processing time
-2. **Essential work only**: Avoid heavy computations
-3. **Clean Up**: Always unregister handlers when done (`editor.context.off()`)
-4. **Avoid Heavy Work**: Don't do complex calculations in selection callbacks
+1. **Keep handlers fast**: Minimize processing time and avoid heavy computations in selection callbacks
+2. **Essential work only**: Only perform UI updates, logging, or data analysis in selection handlers
+3. **Always clean up**: Unregister event handlers when done using `editor.context.off()` to prevent memory leaks
 
-### Communication Between UI and Document Sandbox
+### Communicating with Your UI Panel
 
-One of the most important real-world patterns is communicating selection changes from the document sandbox to your UI panel, allowing you to update the interface based on what the user has selected.
+To create responsive interfaces, you'll need to communicate selection changes from the document sandbox to your UI panel. This allows you to update buttons, property panels, and other UI elements based on what the user has selected.
 
-For detailed information on the communication APIs, see the [Communication API reference](../../../references/document-sandbox/communication/).
+For complete details on setting up bidirectional communication between your document sandbox and UI panel, see the [Communication API reference](../../../references/document-sandbox/communication/).
 
-#### Complete Communication Example
+## Quick Reference
 
-This example shows how to set up bidirectional communication between your UI panel and document sandbox for selection-based interactions.
-
-## Quick Reference & Common Patterns
-
-Here are some frequently used patterns you can copy and adapt:
-
-### Conditional Actions Based on Selection
+### Common Selection Operations
 
 ```js
-// code.js
-import { editor, EditorEvent } from "express-document-sdk";
+// Get current selection
+const selection = editor.context.selection;
 
-// Enable/disable actions based on selection type
-editor.context.on(EditorEvent.selectionChange, () => {
-  const selection = editor.context.selection;
-  
-  // Communicate with your UI panel
-  const actions = {
-    canGroup: selection.length >= 2,
-    canApplyTextStyle: selection.some(node => node.type === "Text"),
-    canApplyFill: selection.some(node => 
-      ["Rectangle", "Ellipse"].includes(node.type)
-    ),
-    isEmpty: selection.length === 0
-  };
-  
-  // Send to UI panel for enabling/disabling buttons
-  // (Use the communication API to send this data)
-});
+// Check if anything is selected
+if (editor.context.hasSelection) { /* ... */ }
+
+// Select a single element
+editor.context.selection = node;
+
+// Select multiple elements
+editor.context.selection = [node1, node2, node3];
+
+// Clear selection
+editor.context.selection = [];
+
+// Get selection including locked nodes
+const fullSelection = editor.context.selectionIncludingNonEditable;
 ```
 
-### Selection-Based Properties Panel
+### Selection Event Handling
 
 ```js
-// code.js
-import { editor, EditorEvent } from "express-document-sdk";
-
-// Update properties panel based on selection
-editor.context.on(EditorEvent.selectionChange, () => {
+// Register selection change handler
+const handlerId = editor.context.on(EditorEvent.selectionChange, () => {
   const selection = editor.context.selection;
-  
-  if (selection.length === 1) {
-    const node = selection[0]; // Common pattern: access first selected element
-    
-    // Send node properties to UI for editing
-    const properties = {
-      type: node.type,
-      width: node.width || null,
-      height: node.height || null,
-      x: node.translation?.x || null,
-      y: node.translation?.y || null,
-      locked: node.locked || false
-    };
-    
-    // Update UI panel with these properties
-    console.log("Node properties:", properties);
-  }
+  // Handle selection change
 });
+
+// Clean up handler
+editor.context.off(EditorEvent.selectionChange, handlerId);
 ```
 
-### Working with Single Selection
-
-Many add-ons focus on single-element operations. Here's a common pattern used throughout the documentation:
+### Common Selection Patterns
 
 ```js
-// code.js
-import { editor } from "express-document-sdk";
+// Access first selected element
+const node = editor.context.selection[0];
 
-// Safe access to first selected element (used in use_text.md and other guides)
-if (editor.context.hasSelection) {
-  const selectedNode = editor.context.selection[0];
-  
-  // Perform operations on the selected node
-  if (selectedNode.type === "Text") {
-    // Handle text-specific operations
-  }
-}
+// Filter selection by type
+const textNodes = selection.filter(node => node.type === "Text");
+
+// Check selection count
+if (selection.length === 0) { /* nothing selected */ }
+if (selection.length === 1) { /* single selection */ }
+if (selection.length > 1) { /* multiple selection */ }
+
+// Check for specific node types
+const hasText = selection.some(node => node.type === "Text");
+const hasShapes = selection.some(node => 
+  ["Rectangle", "Ellipse"].includes(node.type)
+);
 ```
 
 ## FAQs

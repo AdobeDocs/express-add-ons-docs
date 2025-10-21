@@ -152,10 +152,10 @@ This command will scaffold a new add-on based on "pure" JavaScript with Document
 
 - `npx` is a package runner that can execute packages without installing them explicitly.
 - `@adobe/create-ccweb-add-on` is the CLI maintained by Adobe to scaffold a new add-on.
-- `hello-world` is the name of the add-on projectyou are creating.
+- `hello-world` is the name of the add-on project you are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
-The [Templates section](./local_development/dev_tooling.md#templates) on the **Development Tools** page provides a list of available options.
+The [Templates section](./local_development/dev_tooling.md#templates) on the **Development Tools** page provides a list of available options. For detailed guidance on choosing the right template for your project, see the [Add-on Project Anatomy & CLI Templates](./addon-project-anatomy.md) guide.
 
 <InlineAlert slots="header, text1" variant="info"/>
 

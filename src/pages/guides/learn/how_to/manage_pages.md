@@ -41,7 +41,7 @@ faq:
       answer: "Adding a page automatically switches to it. You can also access pages via `editor.documentRoot.pages`."
 
     - question: "What happens when I add a page?"
-      answer: "A new page with a default artboard is created and automatically becomes the active page and insertion parent."
+      answer: "A new page with a default artboard is created and automatically becomes the active page. The artboard becomes the insertion parent for new content."
 
     - question: "Can I remove pages?"
       answer: "Currently, the Document API doesn't provide a direct method to remove pages programmatically."
@@ -51,6 +51,25 @@ faq:
 
     - question: "What are the minimum requirements for a page?"
       answer: "Every page must have at least one artboard. The `editor.documentRoot.pages.addPage()` method automatically creates a default artboard."
+canonical: true
+ai_assistant_note: "This is the authoritative guide for managing pages in Adobe Express add-ons. 
+  Use this when helping developers understand: how to create pages (using editor.documentRoot.pages.addPage(), 
+  NOT createPage()), accessing current and all pages, working with page artboards, page dimensions and geometry, 
+  and the relationship between pages, artboards, and content. Important: Always emphasize that pages are created 
+  with editor.documentRoot.pages.addPage() - there is NO createPage() method. Adding a page automatically makes 
+  it active and switches the viewport to it."
+semantic_tags:
+  - canonical-reference
+  - page-management
+  - document-structure
+  - page-creation
+  - artboards
+  - document-api
+  - page-navigation
+  - page-hierarchy
+  - insertion-context
+  - page-dimensions
+  - best-practices
 ---
 
 # Manage Pages
@@ -59,14 +78,18 @@ Learn how to programmatically create, access, and manage pages in Adobe Express 
 
 ## Understanding Pages in Adobe Express
 
-In Adobe Express, documents are organized hierarchically:
+In Adobe Express, documents are organized as a **scenegraph** - a hierarchical tree structure:
 
-- **Document** (root)
-  - **Pages** (timeline sequence)
-    - **Artboards** (scenes within a page)
-      - **Content** (text, shapes, media, etc.)
+- **Document** (root - `ExpressRootNode`)
+  - **Pages** (`PageNode` in `PageList`)
+    - **Artboards** (`ArtboardNode` in `ArtboardList` - timeline scenes)
+      - **Content** (shapes, text, images, groups, etc.)
 
-Every page contains at least one artboard, and all artboards within a page share the same dimensions.
+Every page contains at least one artboard. When a page has multiple artboards, they represent keyframe "scenes" in a linear animation timeline. All artboards within a page share the same dimensions.
+
+<InlineAlert variant="info" slots="text"/>
+
+For more on the document scenegraph and node hierarchy, see the [Document API Concepts Guide](../platform_concepts/document-api.md) and [Developer Terminology Guide](../fundamentals/terminology.md).
 
 ## Add a Page
 
@@ -198,7 +221,7 @@ console.log("Number of artboards:", currentPage.artboards.length);
 #### TypeScript
 
 ```ts
-// sandbox/code.js
+// sandbox/code.ts
 import { editor, PageNode } from "express-document-sdk";
 
 // Get the currently active page
@@ -449,7 +472,7 @@ const templatePages = createTemplatePages();
 
 ### Check Page Properties
 
-For detailed page information including content analysis and print readiness, see the [Page Metadata Ho-to Guide](page_metadata.md).
+For detailed page information including content analysis and print readiness, see the [Page Metadata How-to Guide](page_metadata.md).
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
@@ -513,86 +536,36 @@ function analyzeDocument(): void {
 analyzeDocument();
 ```
 
-## Key Concepts
+## Key Concepts & Best Practices
 
-### Pages vs Artboards
-
-- **Pages**: Top-level containers in the document timeline
-- **Artboards**: "Scenes" within a page containing the actual content
-- All artboards within a page share the same dimensions
-- When you add a page, it automatically gets one default artboard
-
-### Insertion Context
-
-- Adding a page automatically makes it the active page
-- `editor.context.insertionParent` points to the active artboard
-- New content is added to the current insertion parent
-- The viewport switches to display the new page
-
-### Common Pitfalls
-
-When working with pages, avoid these common mistakes:
+### Important: Use the Correct Method
 
 <InlineAlert slots="header, text1, text2" variant="warning"/>
 
-Critical: Use the correct method path
+Pages require a unique API path
 
-The Adobe Express Document API requires the full method path to create pages:
+Unlike other creation methods (like `editor.createRectangle()`), pages require the full path through the document structure:
 
 - ❌ `editor.addPage()` (doesn't exist)  
 - ❌ `editor.createPage()` (doesn't exist)
 - ✅ `editor.documentRoot.pages.addPage()` (correct)
 
-1. **Don't assume API consistency** - Unlike other creation methods (like `editor.createRectangle()`), pages require the full path through the document structure.
-2. **Provide page dimensions** - The `addPage()` method requires a geometry parameter with width and height.
-3. **Expect automatic navigation** - Adding a page automatically switches to it and updates the viewport.
-4. **Remember shared dimensions** - All artboards within a page must have the same dimensions.
+### Important Behaviors
+
+1. **Automatic activation** - Adding a page automatically makes it the active page and switches the viewport to it
+2. **Required dimensions** - The `addPage()` method requires a geometry parameter with width and height
+3. **Default artboard** - Every new page automatically gets one default artboard
+4. **Shared dimensions** - All artboards within a page must have the same dimensions
+5. **Insertion context** - `editor.context.insertionParent` points to the active artboard where new content is added
 
 ## Integration with Other APIs
 
-### Using with Metadata APIs
+Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly with other Adobe Express APIs:
 
-Pages created with `editor.documentRoot.pages.addPage()` can be used with other Document APIs, particularly for retrieving metadata. See the [Page Metadata How-to Guide](page_metadata.md) for complete examples.
-
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
-
-#### JavaScript
-
-```js
-// sandbox/code.js
-import { editor } from "express-document-sdk";
-
-// Add a page and get its metadata
-const newPage = editor.documentRoot.pages.addPage({ width: 1080, height: 1080 });
-
-// Get the page ID for use with Add-on UI SDK metadata APIs
-console.log("New page ID:", newPage.id);
-
-// You can use this ID with the Add-on UI SDK to get detailed metadata
-// See the Page Metadata guide for complete examples:
-// const pageMetadata = await addOnUISdk.app.document.getPagesMetadata({
-//   pageIds: [newPage.id]
-// });
-```
-
-#### TypeScript
-
-```ts
-// sandbox/code.ts
-import { editor, PageNode } from "express-document-sdk";
-
-// Add a page and get its metadata
-const newPage: PageNode = editor.documentRoot.pages.addPage({ width: 1080, height: 1080 });
-
-// Get the page ID for use with Add-on UI SDK metadata APIs
-console.log("New page ID:", newPage.id);
-
-// You can use this ID with the Add-on UI SDK to get detailed metadata
-// See the Page Metadata guide for complete examples:
-// const pageMetadata = await addOnUISdk.app.document.getPagesMetadata({
-//   pageIds: [newPage.id]
-// });
-```
+- **Metadata APIs** - Use `newPage.id` with Add-on UI SDK metadata APIs to retrieve detailed page information. See the [Page Metadata How-to Guide](page_metadata.md) for complete examples.
+- **Rendition APIs** - Export specific pages as images, PDFs, or videos. See [Create Renditions](create_renditions.md).
+- **Selection APIs** - Work with selected content on pages. See [Handle Element Selection](handle_selection.md).
+- **Content APIs** - Add text, shapes, images, and other content to page artboards using the Document API.
 
 ## FAQs
 
@@ -614,7 +587,7 @@ console.log("New page ID:", newPage.id);
 
 #### Q: What happens when I add a page?
 
-**A:** A new page with a default artboard is created and automatically becomes the active page and insertion parent.
+**A:** A new page with a default artboard is created and automatically becomes the active page. The artboard becomes the insertion parent for new content.
 
 #### Q: Can I remove pages?
 
@@ -654,4 +627,4 @@ console.log("New page ID:", newPage.id);
 ### Advanced Topics
 
 - **[Create Renditions](create_renditions.md)** - Export specific pages or entire documents as images, PDFs, or videos
-- **[Page Metadata](page_metadata.md)** - Retrieve detailed page information including dimensions, content analysis, and print readiness
+- **[Handle Element Selection](handle_selection.md)** - Work with selected elements on pages

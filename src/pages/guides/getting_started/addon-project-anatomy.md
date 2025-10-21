@@ -106,8 +106,6 @@ A comprehensive guide to understanding Adobe Express add-on project structure, f
 
 Start with the [Hello, World! tutorial](./hello-world.md) to create your first add-on, then return here to understand project structure. For terminology clarification, see the [Developer Terminology Guide](../learn/fundamentals/terminology.md).
 
----
-
 ## Understanding the Basics
 
 Every Adobe Express add-on has these essential files:
@@ -122,8 +120,6 @@ The complexity grows based on:
 - Whether you use a UI framework (React) or TypeScript
 
 See the [Add-on Architecture Guide](../learn/platform_concepts/architecture.md) for a deep dive into how these pieces work together.
-
----
 
 ## The Simplest Add-on
 
@@ -164,9 +160,7 @@ my-addon/
 - [Development Tools](./local_development/dev_tooling.md) - CLI commands and local development setup
 - [Manifest Reference](../../references/manifest/index.md) - Complete manifest configuration guide
 
----
-
-## Key Concept: Build vs. No-Build Templates
+## Build vs. No-Build Templates
 
 Understanding the difference between build and no-build templates is essential for working with add-on projects:
 
@@ -213,8 +207,6 @@ Understanding the difference between build and no-build templates is essential f
 <InlineAlert variant="info" slots="text"/>
 
 For more on webpack configuration and build tools, see [Frameworks, Libraries and Bundling](../build/advanced-topics/frameworks-libraries-bundling.md).
-
----
 
 ## Adding Document Manipulation
 
@@ -298,8 +290,6 @@ runtime.exposeApi({
 - [Communication APIs Reference](../../references/document-sandbox/communication/index.md) - API documentation
 - [Stats Add-on Tutorial](../learn/how_to/tutorials/stats-addon.md) - Build an add-on using communication APIs
 
----
-
 ## Where Things Go
 
 Here's the definitive guide for organizing your add-on code:
@@ -370,8 +360,6 @@ For the complete list of available Web APIs, see the [Web APIs Reference](../../
 
 For more on why environments are isolated, see the [iframe Runtime Context & Security Guide](../learn/platform_concepts/context.md).
 
----
-
 ## Quick Reference
 
 ### File Locations Cheat Sheet
@@ -393,8 +381,6 @@ For more on why environments are isolated, see the [iframe Runtime Context & Sec
 | **No-build, with sandbox** | `"index.html"` | `"sandbox/code.js"` |
 | **Build, no sandbox** | `"index.html"` | N/A |
 | **Build, with sandbox** | `"index.html"` | `"code.js"` |
-
----
 
 ## Understanding UI Options: SWC vs. React
 
@@ -540,8 +526,6 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 - [Using Adobe Spectrum Tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md) - Complete workshop on Spectrum Web Components
 - [UX Guidelines](../build/design/ux_guidelines/introduction.md) - Design principles for Adobe Express add-ons
 
----
-
 ## Template Selection Guide
 
 ### Quick Decision Tree
@@ -598,8 +582,6 @@ react-javascript-with-document-sandbox
     ↓ (add TypeScript)
 react-typescript-with-document-sandbox
 ```
-
----
 
 ## Template Comparison
 
@@ -701,8 +683,6 @@ my-addon/
 - [Building Your First Add-on (Grids Tutorial)](../learn/how_to/tutorials/grids-addon.md) - Build a complete add-on with Document APIs
 - [Using Lit & TypeScript](../learn/how_to/tutorials/using-lit-typescript.md) - Build with SWC TypeScript template
 
----
-
 ## FAQs
 
 #### Q: Why does my manifest say `documentSandbox: 'sandbox/code.js'` but the template has `code.js`?
@@ -739,8 +719,6 @@ my-addon/
 2. **Pass processed data** between environments via the API proxy
 3. **Share TypeScript types/interfaces** only (in `src/models/` or `src/types/`)
 
----
-
 ## Summary
 
 **Key Takeaways:**
@@ -760,8 +738,6 @@ my-addon/
 - Need document access → add `-with-document-sandbox`
 - Complex UI → add `react-`
 - Type safety → add TypeScript variant
-
----
 
 ## Related Documentation
 
