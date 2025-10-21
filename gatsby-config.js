@@ -552,7 +552,7 @@ module.exports = {
             path: "guides/getting_started/hello-world.md",
           },
           {
-            title: "(NEW) Project Anatomy",
+            title: "Project Anatomy",
             path: "guides/getting_started/addon-project-anatomy.md",
           },
           {
@@ -643,7 +643,7 @@ module.exports = {
                 path: "guides/learn/how_to/manage_pages.md",
                 pages: [
                   {
-                    title: "(NEW) Manage Pages",
+                    title: "Manage Pages",
                     path: "guides/learn/how_to/manage_pages.md",
                   },
                 ],
@@ -689,7 +689,7 @@ module.exports = {
                     path: "guides/learn/how_to/resize_rescale_elements.md",
                   },
                   {
-                    title: "(NEW) Handle Element Selection",
+                    title: "Handle Element Selection",
                     path: "guides/learn/how_to/handle_selection.md",
                   },
                   {
@@ -785,7 +785,7 @@ module.exports = {
             path: "guides/learn/platform_concepts/architecture.md",
             pages: [
               {
-                title: "(NEW) Add-on Architecture",
+                title: "Add-on Architecture",
                 path: "guides/learn/platform_concepts/architecture.md",
               },
               {
@@ -799,7 +799,7 @@ module.exports = {
             ],
           },
           {
-            title: "(NEW) SDK Fundamentals",
+            title: "SDK Fundamentals",
             path: "guides/learn/fundamentals/terminology.md",
             pages: [
               {
@@ -807,11 +807,11 @@ module.exports = {
                 path: "guides/learn/fundamentals/terminology.md",
               },
               {
-                title: "Add-on UI SDK Constants",
+                title: "Using Add-on UI SDK Constants",
                 path: "guides/learn/fundamentals/ui-sdk-constants.md",
               },
               {
-                title: "Document Sandbox Constants",
+                title: "Using Document Sandbox Constants",
                 path: "guides/learn/fundamentals/document-sandbox-constants.md",
               }              
             ],
