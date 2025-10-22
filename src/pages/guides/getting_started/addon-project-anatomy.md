@@ -138,7 +138,7 @@ my-addon/
 └── README.md
 ```
 
-**Key characteristics:**
+**Characteristics:**
 
 - ✅ No build process - files are used directly as-is
 - ✅ Perfect for learning
@@ -426,7 +426,7 @@ Both template types use Spectrum Web Components by default. The key difference i
 - **CSS-in-JS** (styles written in `.css.ts` or `.css.js` files)
 - **Webpack** for bundling
 
-**Key characteristics:**
+**Features:**
 
 - ✅ Use native web components directly (`<sp-button>`)
 - ✅ Smaller bundle sizes (no React framework)
@@ -452,7 +452,7 @@ React templates use the React framework for building UI.
 - **Standard CSS** files (`.css`)
 - **Webpack** for bundling
 
-**Key characteristics:**
+**Features:**
 
 - ✅ Familiar React patterns (hooks, JSX, component lifecycle)
 - ✅ Use Spectrum Web Components via React wrappers (`@swc-react`)
@@ -638,7 +638,7 @@ react-typescript-with-document-sandbox
 | **react-typescript** | ✅ Webpack | React | ✅ | ❌ | ⭐⭐⭐⭐ |
 | **react-typescript-with-document-sandbox** | ✅ Webpack | React | ✅ | ✅ | ⭐⭐⭐⭐⭐ Most complex |
 
-### Key Template Examples
+### Template Structure Examples
 
 <InlineAlert variant="info" slots="header, text1"/>
 
@@ -766,7 +766,7 @@ To see thecomplete file structures of all 10 templates, refer to the template-sp
 
 ## Summary
 
-**Key Takeaways:**
+**Essential Takeaways:**
 
 1. **Only two templates have no build process:** `javascript` and `javascript-with-document-sandbox`
 2. **All other templates use webpack** and output to `dist/`

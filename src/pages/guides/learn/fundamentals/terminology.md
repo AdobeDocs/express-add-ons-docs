@@ -76,9 +76,9 @@ semantic_tags:
 
 A comprehensive guide to Adobe Express add-on terminology, SDKs, runtimes, and development concepts.
 
-## Quick Reference: Core Terms
+## Core Terms
 
-| **Term** | **Related Terms** | **Quick Description** | **Where Used** |
+| **Term** | **Related Terms** | **Description** | **Where Used** |
 |----------|-------------------|----------------------|----------------|
 | **[`addOnUISdk`](../../../references/addonsdk/index.md)** | Add-on UI SDK, UI Runtime, [`instance`](../../../references/addonsdk/addonsdk-instance.md) | Main JavaScript module for UI operations, dialogs, add-on interactions. Access via `addOnUISdk.instance` | iframe runtime |
 | **[`instance`](../../../references/addonsdk/addonsdk-instance.md)** | SDK instance, `runtime`, `clientStorage`, `manifest` | Property providing access to SDK features. Use `addOnUISdk.instance` (iframe) or `addOnSandboxSdk.instance` (document sandbox) | Both environments |
@@ -97,12 +97,6 @@ A comprehensive guide to Adobe Express add-on terminology, SDKs, runtimes, and d
 ## Overloaded Terms Clarification
 
 Many terms in Adobe Express add-on development have multiple meanings depending on context. This table clarifies the different uses to prevent confusion.
-
-<InlineAlert variant="info" slots="header, text1"/>
-
-**Quick Tip**
-
-When you encounter these terms in documentation, check the context to determine which meaning applies. Code examples and surrounding text will help clarify the specific usage.
 
 | **Term** | **Usage Context** | **Meaning** | **Example** |
 |----------|------------------|-------------|-------------|
@@ -159,7 +153,7 @@ When you encounter these terms in documentation, check the context to determine 
 | | Limited in sandbox | Document sandbox only has limited Web APIs (console, Blob) | "Document sandbox has restricted Web APIs" |
 | | vs Browser APIs | Same meaning - standard JavaScript APIs built into browsers | "Web APIs" and "Browser APIs" are interchangeable terms |
 
-### Quick Lookup: Common Sources of Confusion
+### Common Sources of Confusion
 
 **"I need to access the document"** - Which document?
 
@@ -243,7 +237,7 @@ Adobe Express add-ons use a **dual-runtime architecture** with two separate Java
 - **Security**: Isolated environment with limited Web APIs but direct document access
 - **Also known as**: "Document Model Sandbox"
 
-#### Key Concept
+#### Understanding Runtime Communication
 
 The two runtimes communicate with each other through the [Communication APIs](../../../references/document-sandbox/communication/index.md), allowing your UI to trigger document changes and vice versa.
 
@@ -270,7 +264,7 @@ Features specific to your individual add-on:
 - `entrypointType` - Your add-on's current entry point
 - `logger` - Logging for your add-on
 
-**Key characteristic**: Isolated to your add-on instance; doesn't interact with other add-ons.
+**Scope**: Isolated to your add-on instance; doesn't interact with other add-ons.
 
 **`addOnUISdk.app` - Application Scope**  
 Features shared across Adobe Express (the host application):
@@ -281,7 +275,7 @@ Features shared across Adobe Express (the host application):
 - `ui` - Adobe Express UI state (theme, locale, etc.)
 - `command` - Commands in the host application
 
-**Key characteristic**: Interacts with Adobe Express itself and its global state.
+**Scope**: Interacts with Adobe Express itself and its global state.
 
 ### Express Document SDK
 
@@ -363,7 +357,7 @@ runtime.exposeApi({
 - **`documentSandbox`**: The document manipulation runtime
 - **`dialog`**: Runtime context when code is running within a modal dialog
 
-## Key Development Objects
+## Core Development Objects
 
 ### **`editor` Object**
 
@@ -447,7 +441,7 @@ Interactive browser-based development environment for experimenting with add-on 
 Command Line Interface tool for creating, building, and packaging add-ons for local development.
 
 - **Installation**: `npm install -g @adobe/ccweb-add-on-cli`
-- **Key Commands**: `create`, `start`, `build`, `package`
+- **Common Commands**: `create`, `start`, `build`, `package`
 
 See the [Adobe Express Add-on CLI](../../getting_started/local_development/dev_tooling.md) guide for more details.
 

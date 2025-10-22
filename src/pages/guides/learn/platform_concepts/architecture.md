@@ -165,7 +165,7 @@ The browser environment where the add-on's user interface runs for users to inte
 | --- | --- |
 | **File** | `index.js` or `index.html` |
 | **SDKs Used** | Add-on UI SDK |
-| **Key Capabilities** | **UI components**: Render HTML, CSS, JavaScript frameworks<br/>**Browser access**: DOM manipulation, fetch, localStorage, etc.<br/>**Add-on UI SDK features** (via `addOnUISdk`):<br/>• `app.document.addImage()` - Import media<br/>• `app.document.createRenditions()` - Export document<br/>• `app.showModalDialog()` - Display dialogs<br/>• `app.oauth` - Auth flows<br/>• `addOnUISdk.instance.clientStorage` - Persistent storage<br/>**Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox |
+| **Capabilities** | **UI components**: Render HTML, CSS, JavaScript frameworks<br/>**Browser access**: DOM manipulation, fetch, localStorage, etc.<br/>**Add-on UI SDK features** (via `addOnUISdk`):<br/>• `app.document.addImage()` - Import media<br/>• `app.document.createRenditions()` - Export document<br/>• `app.showModalDialog()` - Display dialogs<br/>• `app.oauth` - Auth flows<br/>• `addOnUISdk.instance.clientStorage` - Persistent storage<br/>**Communication**: Use `runtime.apiProxy("documentSandbox")` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox |
 
 **Import Pattern:**
 
@@ -206,7 +206,7 @@ The secure isolated environment for document manipulation with limited browser A
 | --- | --- |
 | **File** | `code.js` |
 | **SDKs Used** | Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs) |
-| **Key Capabilities** | **Direct document manipulation**: Create/modify shapes, text, images using `editor`<br/>**Scenegraph access**: Read and traverse the document structure<br/>**Express Document SDK features**:<br/>• `editor.createRectangle()`, `editor.createText()` - Create content<br/>• `editor.context.selection` - Access selected elements<br/>• `editor.context.insertionParent` - Add content to document<br/>• `colorUtils` - Create and convert colors<br/>• `fonts` - Manage and load fonts<br/>• `viewport` - Control canvas navigation<br/>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))<br/>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy("panel")` to call UI functions |
+| **Capabilities** | **Direct document manipulation**: Create/modify shapes, text, images using `editor`<br/>**Scenegraph access**: Read and traverse the document structure<br/>**Express Document SDK features**:<br/>• `editor.createRectangle()`, `editor.createText()` - Create content<br/>• `editor.context.selection` - Access selected elements<br/>• `editor.context.insertionParent` - Add content to document<br/>• `colorUtils` - Create and convert colors<br/>• `fonts` - Manage and load fonts<br/>• `viewport` - Control canvas navigation<br/>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))<br/>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy("panel")` to call UI functions |
 
 **Import Patterns:**
 
@@ -510,7 +510,7 @@ const uiProxy = await runtime.apiProxy(RuntimeType.panel);
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-Key Points
+Important Notes
 
 - `"documentSandbox": "code.js"` in manifest enables the document sandbox runtime
 - If `documentSandbox` is omitted, only the iframe runtime runs (UI-only add-on)
@@ -690,7 +690,7 @@ Your Add-on Instance (when user opens your panel)
 
 <InlineAlert slots="header,text1" variant="info"/>
 
-Key Concept
+Understanding Instance Lifecycle
 
 **One user session = one add-on instance = one complete runtime environment with all its SDK instances.** When the user opens you add-on, your add-on instance starts. When they close it, the instance ends. Re-opening creates a fresh instance with new state.
 
@@ -793,7 +793,7 @@ runtime.exposeApi({
 
 <InlineAlert variant="info" slots="header,text1"/>
 
-Key practices
+Best Practices Summary
 
 - Always wrap API calls in try-catch blocks
 - Provide meaningful error messages to users
