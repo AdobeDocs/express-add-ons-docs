@@ -65,7 +65,7 @@ semantic_tags:
 
 # Using Document Sandbox Constants
 
-Document Sandbox constants provide type-safe ways to interact with the Document APIs when creating and manipulating content in Adobe Express documents. This guide covers the most common patterns for document sandbox development.
+Document Sandbox constants provide type-safe ways to interact with the Document APIs for content creation like fills, strokes, text styling, and node manipulation. This guide covers the most common patterns for document sandbox development.
 
 ## Why Use Constants?
 

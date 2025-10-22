@@ -59,7 +59,7 @@ semantic_tags:
 
 # Using Add-on UI SDK Constants
 
-Constants provide type-safe ways to interact with the Add-on UI SDK and help prevent runtime errors. This guide covers the most common patterns you'll need to get started quickly.
+Add-on UI SDK constants provide type-safe ways to interact with the Add-on UI SDK for UI operations like dialogs, document export, and event handling. This guide covers the most common patterns for iframe environment development.
 
 ## Why Use Constants?
 
