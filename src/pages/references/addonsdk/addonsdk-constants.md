@@ -74,25 +74,25 @@ faq:
 
 A set of constants used throughout the Add-on UI SDK for type-safe development. See the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md) for practical examples and usage patterns.
 
-Most constants support dual access (import OR `addOnUISdk.constants.*`), but four are named exports only: [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), and [`EntrypointType`](#entrypointtype).
+Most constants support dual access ([import statement](../../guides/learn/fundamentals/terminology.md#overloaded-terms-clarification) OR `addOnUISdk.constants.*`), but four constants require an import statement: [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), and [`EntrypointType`](#entrypointtype).
 
 ## Import Quick Reference
 
 ### Dual Access (Most Constants)
 
-You can use either pattern:
+You can access these constants in two ways:
 
 ```javascript
-// Option 1: Named import (recommended)
+// Option 1: Import statement (recommended)
 import { Range, RenditionFormat, Variant } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // Option 2: Constants object
 addOnUISdk.constants.Range.currentPage
 ```
 
-### Named Exports Only (Must Import)
+### Import Required (Four Constants Only)
 
-These four constants are **only available as imports** and will return `undefined` if accessed through `addOnUISdk.constants.*`:
+These four constants **must be imported with an import statement** and will return `undefined` if accessed through `addOnUISdk.constants.*`:
 
 - [`AppEvent`](#appevent) - Events dispatched by the Add-on SDK
 - [`ColorPickerEvent`](#colorpickerevent) - Color picker custom events  

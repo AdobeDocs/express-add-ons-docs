@@ -152,8 +152,8 @@ When you encounter these terms in documentation, check the context to determine 
 | | Scenegraph | Informal term for scenegraph nodes (prefer "node") | "Rectangle element" (better: "`RectangleNode`") |
 | | DOM | HTML element in your UI (prefer "DOM node" or "HTML element" for clarity) | `<div>` element in your add-on's HTML |
 | | Design | Visual design component in Adobe Express UI | "Text elements in your design" (user-facing term) |
-| **exports** | Named exports | ES Module syntax for exporting multiple values from a module | `export { editor, colorUtils }` or `import { editor } from "..."` |
-| | Default export | ES Module syntax for a single main export from a module | `export default addOnUISdk` or `import addOnUISdk from "..."` |
+| **exports** | Named exports | ES Module syntax for exporting multiple values from a module. **Requires curly braces `{ }` in import statement** | `export { editor, colorUtils }` → `import { editor } from "..."` |
+| | Default export | ES Module syntax for a single main export from a module. **No curly braces in import statement** | `export default addOnUISdk` → `import addOnUISdk from "..."` |
 | | Module pattern | How SDKs expose functionality: UI SDK uses default, Document SDK uses named | UI SDK: default export; Express Document SDK: named exports |
 | **Web APIs** | Standard browser APIs | JavaScript APIs available in web browsers (fetch, localStorage, Blob, etc.) | "iframe runtime has standard Web APIs" |
 | | Limited in sandbox | Document sandbox only has limited Web APIs (console, Blob) | "Document sandbox has restricted Web APIs" |
@@ -192,9 +192,9 @@ When you encounter these terms in documentation, check the context to determine 
 
 **"How do I import SDKs?"** - Named or default export?
 
-- Add-on UI SDK → Default export: `import addOnUISdk from "..."`
-- Document Sandbox SDK → Default export: `import addOnSandboxSdk from "..."`
-- Express Document SDK → Named exports: `import { editor, colorUtils } from "..."`
+- Add-on UI SDK → Default export (no curly braces): `import addOnUISdk from "..."`
+- Document Sandbox SDK → Default export (no curly braces): `import addOnSandboxSdk from "..."`
+- Express Document SDK → Named exports (requires curly braces): `import { editor, colorUtils } from "..."`
 
 **"Are Web APIs and Browser APIs the same?"** - Yes!
 
@@ -503,13 +503,14 @@ Many terms like "document", "context", "runtime", and "instance" have multiple m
 
 ```js
 // ✅ Correct patterns
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
-import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-import { editor, colorUtils, constants, fonts, viewport } from "express-document-sdk";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";  // Default export (no curly braces)
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";                     // Default export (no curly braces)
+import { editor, colorUtils, constants, fonts, viewport } from "express-document-sdk";  // Named exports (requires curly braces)
 
 // ❌ Common mistakes
-import { addOnUISdk } from "..."; // Wrong: should be default import
+import { addOnUISdk } from "..."; // Wrong: should be default import (no curly braces)
 import addOnSandboxSdk from "add-on-ui-sdk"; // Wrong: mixed up the SDKs
+import editor from "express-document-sdk"; // Wrong: should be named import (needs curly braces)
 ```
 
 ### Runtime Context
