@@ -3,7 +3,7 @@ keywords:
   - Adobe Express
   - Add-on SDK
   - iframe
-  - iframe Runtime
+  - Iframe Runtime
   - Sandbox
   - Security
   - Permissions
@@ -27,7 +27,7 @@ keywords:
   - Add-on Context
   - Browser Security
   - Web Security
-title: iframe Runtime Context & Security
+title: Iframe Runtime Context & Security
 description: Essential guide to Adobe Express add-on iframe context, sandbox permissions, CORS handling, security boundaries, and subdomain management for secure add-on development.
 contributors:
   - https://github.com/hollyschinsky
@@ -49,7 +49,7 @@ faq:
       answer: "Yes, you can request camera and microphone permissions in your manifest using the permissions object with camera and microphone fields."
 ---
 
-# iframe Runtime Context & Security
+# Iframe Runtime Context & Security
 
 Essential information about your add-on's execution context, including iframe sandbox security, permissions, CORS handling, and subdomain management.
 
@@ -61,7 +61,7 @@ Adobe Express add-ons run in a secure iframe runtime environment with specific p
 
 **Architecture Context**: This guide covers the security aspects of the iframe runtime. For a comprehensive understanding of how the iframe runtime fits into the overall add-on architecture, see the [Add-on Architecture Guide](./architecture.md).
 
-## iframe Runtime Environment
+## Iframe Runtime Environment
 
 Your add-on's user interface runs in a [sandboxed iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) within Adobe Express. This sandboxed environment provides security isolation, running your add-on in a low-privileged environment with a restricted set of capabilities. Understanding these restrictions and how to work within them is essential for successful add-on development.
 

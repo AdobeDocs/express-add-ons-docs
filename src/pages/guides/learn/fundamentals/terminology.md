@@ -85,7 +85,7 @@ A comprehensive guide to Adobe Express add-on terminology, SDKs, runtimes, and d
 | **[`editor`](../../../references/document-sandbox/document-apis/classes/Editor.md)** | Document APIs, [`express-document-sdk`](../../../references/document-sandbox/document-apis/index.md) | Core object for creating and manipulating document content | Document sandbox |
 | **Runtime** | iframe, Document Sandbox, panel | JavaScript execution environments where add-on code runs | Both environments |
 | **Document Sandbox** | `documentSandbox` | Secure environment for document manipulation and content creation | Document operations |
-| **iframe Runtime** | iframe Sandbox, UI Runtime, Panel Runtime | Sandboxed browser environment for add-on UI and user interactions | UI operations |
+| **Iframe Runtime** | iframe Sandbox, UI Runtime, Panel Runtime | Sandboxed browser environment for add-on UI and user interactions | UI operations |
 | **`constants`** | Enums, Configuration values | Type-safe values for SDK operations. See [UI SDK Constants](../../../references/addonsdk/addonsdk-constants.md) and [Document Constants](../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md) | Both environments |
 | **[`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md)** | Color conversion, RGB, Hex colors | Utility functions for creating and converting colors. See [Use Color Guide](../how_to/use_color.md) | Document sandbox |
 | **Communication APIs** | `exposeApi()`, `apiProxy()`, [`runtime`](../../../references/addonsdk/instance-runtime.md) | APIs enabling message passing between iframe and document sandbox. See [Communication APIs Reference](../../../references/document-sandbox/communication/index.md) | Both environments |
@@ -218,7 +218,7 @@ Many terms in Adobe Express add-on development have multiple meanings depending 
 
 Adobe Express add-ons use a **dual-runtime architecture** with two separate JavaScript execution environments:
 
-### **iframe Runtime**
+### **Iframe Runtime**
 
 - **What it is**: A sandboxed iframe environment where your add-on's user interface runs
 - **Purpose**: Hosts your HTML, CSS, and JavaScript UI code

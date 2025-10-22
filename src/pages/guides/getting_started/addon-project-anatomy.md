@@ -27,7 +27,7 @@ keywords:
   - Asset Management
   - Webpack
   - Build vs No-Build
-  - iframe Runtime
+  - Iframe Runtime
   - Spectrum Web Components
   - CSS Location
   - Separation of Concerns
@@ -380,7 +380,7 @@ For the complete list of available Web APIs, see the [Web APIs Reference](../../
 2. **Pass data** - Send processed data between environments via API proxy
 3. **Types/interfaces** - Can be shared in `src/models/` or `src/types/` (TypeScript only)
 
-For more on why environments are isolated, see the [iframe Runtime Context & Security Guide](../learn/platform_concepts/context.md).
+For more on why environments are isolated, see the [Iframe Runtime Context & Security Guide](../learn/platform_concepts/context.md).
 
 ## Quick Reference
 
