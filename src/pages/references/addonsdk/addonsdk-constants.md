@@ -72,35 +72,48 @@ faq:
 
 # addOnUISdk.constants
 
-Complete technical specification for all Add-on UI SDK constants.
+A set of constants used throughout the Add-on UI SDK for type-safe development. See the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md) for practical examples and usage patterns.
 
-For practical examples, usage patterns, and getting started guide, see the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md).
+Most constants support dual access (import OR `addOnUISdk.constants.*`), but four are named exports only: [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), and [`EntrypointType`](#entrypointtype).
 
 ## Import Quick Reference
 
-Most constants support dual access - you can import them OR use `addOnUISdk.constants.*`.
+### Dual Access (Most Constants)
 
-However, these four constants are named exports only and must be imported:
+You can use either pattern:
 
-- [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), [`EntrypointType`](#entrypointtype)
-- Import them with `import { AppEvent, ColorPickerEvent, SupportedMimeTypes, EntrypointType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";`
-- Attempting to access these through `addOnUISdk.constants.*` will return `undefined`
+```javascript
+// Option 1: Named import (recommended)
+import { Range, RenditionFormat, Variant } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
-For detailed usage examples and patterns, see the [Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md#import-patterns).
+// Option 2: Constants object
+addOnUISdk.constants.Range.currentPage
+```
+
+### Named Exports Only (Must Import)
+
+These four constants are **only available as imports** and will return `undefined` if accessed through `addOnUISdk.constants.*`:
+
+- [`AppEvent`](#appevent) - Events dispatched by the Add-on SDK
+- [`ColorPickerEvent`](#colorpickerevent) - Color picker custom events  
+- [`SupportedMimeTypes`](#supportedmimetypes) - MIME types for PDF conversion
+- [`EntrypointType`](#entrypointtype) - Add-on entry point types
+
+```javascript
+import { AppEvent, ColorPickerEvent, SupportedMimeTypes, EntrypointType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+```
 
 ## Constants Reference
 
 Complete technical specifications organized by functional category.
 
-<InlineAlert slots="text" variant="info"/>
-
-Constants are equal to their variable name as a string (e.g., `ButtonType.primary` equals `"primary"`).
-
 ### BitRate
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { BitRate }` OR **Access**: `addOnUISdk.constants.BitRate`
+```javascript
+import { BitRate } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.BitRate
+```
 
 Bit rate values in bits per second for video renditions.
 
@@ -116,9 +129,11 @@ Bit rate values in bits per second for video renditions.
 
 ### BleedUnit
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { BleedUnit }` OR **Access**: `addOnUISdk.constants.BleedUnit`
+```javascript
+import { BleedUnit } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.BleedUnit
+```
 
 Units for page bleed measurements.
 
@@ -129,9 +144,11 @@ Units for page bleed measurements.
 
 ### ButtonType
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { ButtonType }` OR **Access**: `addOnUISdk.constants.ButtonType`
+```javascript
+import { ButtonType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.ButtonType
+```
 
 Types of buttons that can be pressed in modal dialogs.
 
@@ -144,9 +161,10 @@ Types of buttons that can be pressed in modal dialogs.
 
 ### AppEvent
 
-<InlineAlert slots="text" variant="warning"/>
-
-**Import**: `import { AppEvent }` - Not available in `addOnUISdk.constants` object
+```javascript
+import { AppEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// ⚠️ Named export only - NOT available in addOnUISdk.constants
+```
 
 Events dispatched by the Add-on SDK.
 
@@ -167,9 +185,11 @@ Events dispatched by the Add-on SDK.
 
 ### AuthorizationStatus
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { AuthorizationStatus }` OR **Access**: `addOnUISdk.constants.AuthorizationStatus`
+```javascript
+import { AuthorizationStatus } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.AuthorizationStatus
+```
 
 OAuth authorization status values.
 
@@ -181,9 +201,10 @@ OAuth authorization status values.
 
 ### ColorPickerEvent
 
-<InlineAlert slots="text" variant="warning"/>
-
-**Import**: `import { ColorPickerEvent }` - Not available in constants object
+```javascript
+import { ColorPickerEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// ⚠️ Named export only - NOT available in addOnUISdk.constants
+```
 
 Custom events dispatched by the Color Picker component.
 
@@ -194,9 +215,11 @@ Custom events dispatched by the Color Picker component.
 
 ### ColorPickerPlacement
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { ColorPickerPlacement }` OR **Access**: `addOnUISdk.constants.ColorPickerPlacement`
+```javascript
+import { ColorPickerPlacement } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.ColorPickerPlacement
+```
 
 Placement options for the color picker popover relative to anchor element.
 
@@ -209,9 +232,11 @@ Placement options for the color picker popover relative to anchor element.
 
 ### DeviceClass
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { DeviceClass }` OR **Access**: `addOnUISdk.constants.DeviceClass`
+```javascript
+import { DeviceClass } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.DeviceClass
+```
 
 Device form factors where the add-on is running.
 
@@ -223,9 +248,11 @@ Device form factors where the add-on is running.
 
 ### DialogResultType
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { DialogResultType }` OR **Access**: `addOnUISdk.constants.DialogResultType`
+```javascript
+import { DialogResultType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.DialogResultType
+```
 
 Types of modal dialog results.
 
@@ -237,9 +264,11 @@ Types of modal dialog results.
 
 ### EditorPanel
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { EditorPanel }` OR **Access**: `addOnUISdk.constants.EditorPanel`
+```javascript
+import { EditorPanel } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.EditorPanel
+```
 
 Adobe Express Editor panels that can be opened programmatically.
 
@@ -257,9 +286,11 @@ Adobe Express Editor panels that can be opened programmatically.
 
 ### ElementsTabs
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { ElementsTabs }` OR **Access**: `addOnUISdk.constants.ElementsTabs`
+```javascript
+import { ElementsTabs } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.ElementsTabs
+```
 
 Tabs within the Editor's Elements panel.
 
@@ -273,9 +304,10 @@ Tabs within the Editor's Elements panel.
 
 ### EntrypointType
 
-<InlineAlert slots="text" variant="warning"/>
-
-**Import**: `import { EntrypointType }` - Not available in constants object
+```javascript
+import { EntrypointType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// ⚠️ Named export only - NOT available in addOnUISdk.constants
+```
 
 Types of add-on entry points (currently only panel is supported).
 
@@ -285,9 +317,11 @@ Types of add-on entry points (currently only panel is supported).
 
 ### FieldType
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { FieldType }` OR **Access**: `addOnUISdk.constants.FieldType`
+```javascript
+import { FieldType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.FieldType
+```
 
 Input field types supported in Simple Dialog.
 
@@ -297,9 +331,11 @@ Input field types supported in Simple Dialog.
 
 ### FileSizeLimitUnit
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { FileSizeLimitUnit }` OR **Access**: `addOnUISdk.constants.FileSizeLimitUnit`
+```javascript
+import { FileSizeLimitUnit } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.FileSizeLimitUnit
+```
 
 Units for file size limits.
 
@@ -310,9 +346,11 @@ Units for file size limits.
 
 ### FrameRate
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { FrameRate }` OR **Access**: `addOnUISdk.constants.FrameRate`
+```javascript
+import { FrameRate } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.FrameRate
+```
 
 Frame rate values in frames per second for video renditions.
 
@@ -327,9 +365,11 @@ Frame rate values in frames per second for video renditions.
 
 ### LinkOptions
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { LinkOptions }` OR **Access**: `addOnUISdk.constants.LinkOptions`
+```javascript
+import { LinkOptions } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.LinkOptions
+```
 
 Types of document links that can be generated.
 
@@ -340,9 +380,11 @@ Types of document links that can be generated.
 
 ### MediaTabs
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { MediaTabs }` OR **Access**: `addOnUISdk.constants.MediaTabs`
+```javascript
+import { MediaTabs } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.MediaTabs
+```
 
 Tabs within the Editor's Media panel.
 
@@ -354,9 +396,11 @@ Tabs within the Editor's Media panel.
 
 ### PanelActionType
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { PanelActionType }` OR **Access**: `addOnUISdk.constants.PanelActionType`
+```javascript
+import { PanelActionType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.PanelActionType
+```
 
 Types of actions that can be performed on Editor panels.
 
@@ -367,9 +411,11 @@ Types of actions that can be performed on Editor panels.
 
 ### PlatformEnvironment
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { PlatformEnvironment }` OR **Access**: `addOnUISdk.constants.PlatformEnvironment`
+```javascript
+import { PlatformEnvironment } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.PlatformEnvironment
+```
 
 Environment where the add-on is running.
 
@@ -380,9 +426,11 @@ Environment where the add-on is running.
 
 ### PlatformType
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { PlatformType }` OR **Access**: `addOnUISdk.constants.PlatformType`
+```javascript
+import { PlatformType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.PlatformType
+```
 
 Specific platform/operating system where the add-on is running.
 
@@ -401,9 +449,11 @@ Specific platform/operating system where the add-on is running.
 
 ### Range
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { Range }` OR **Access**: `addOnUISdk.constants.Range`
+```javascript
+import { Range } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.Range
+```
 
 Page range options for document renditions.
 
@@ -415,9 +465,11 @@ Page range options for document renditions.
 
 ### RenditionFormat
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { RenditionFormat }` OR **Access**: `addOnUISdk.constants.RenditionFormat`
+```javascript
+import { RenditionFormat } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.RenditionFormat
+```
 
 Output formats for document renditions.
 
@@ -431,9 +483,11 @@ Output formats for document renditions.
 
 ### RenditionIntent
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { RenditionIntent }` OR **Access**: `addOnUISdk.constants.RenditionIntent`
+```javascript
+import { RenditionIntent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.RenditionIntent
+```
 
 Intent for creating renditions (affects optimization).
 
@@ -445,9 +499,11 @@ Intent for creating renditions (affects optimization).
 
 ### RenditionType
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { RenditionType }` OR **Access**: `addOnUISdk.constants.RenditionType`
+```javascript
+import { RenditionType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.RenditionType
+```
 
 Type of rendition being created.
 
@@ -457,9 +513,11 @@ Type of rendition being created.
 
 ### RuntimeType
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { RuntimeType }` OR **Access**: `addOnUISdk.constants.RuntimeType`
+```javascript
+import { RuntimeType } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.RuntimeType
+```
 
 Runtime type of the entrypoint creating the backend object.
 
@@ -471,9 +529,10 @@ Runtime type of the entrypoint creating the backend object.
 
 ### SupportedMimeTypes
 
-<InlineAlert slots="text" variant="warning"/>
-
-**Import**: `import { SupportedMimeTypes }` - Not available in constants object
+```javascript
+import { SupportedMimeTypes } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// ⚠️ Named export only - NOT available in addOnUISdk.constants
+```
 
 MIME types for original source assets that can be converted to PDF.
 
@@ -484,9 +543,11 @@ MIME types for original source assets that can be converted to PDF.
 
 ### Variant
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { Variant }` OR **Access**: `addOnUISdk.constants.Variant`
+```javascript
+import { Variant } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.Variant
+```
 
 Dialog variants that determine appearance and behavior.
 
@@ -502,9 +563,11 @@ Dialog variants that determine appearance and behavior.
 
 ### VideoResolution
 
-<InlineAlert slots="text" variant="info"/>
-
-**Import**: `import { VideoResolution }` OR **Access**: `addOnUISdk.constants.VideoResolution`
+```javascript
+import { VideoResolution } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+// OR
+addOnUISdk.constants.VideoResolution
+```
 
 Video resolution options for MP4 renditions.
 

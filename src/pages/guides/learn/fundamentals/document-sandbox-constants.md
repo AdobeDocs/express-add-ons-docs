@@ -67,9 +67,9 @@ semantic_tags:
 
 Document Sandbox constants provide type-safe ways to interact with the Document APIs when creating and manipulating content in Adobe Express documents. This guide covers the most common patterns for document sandbox development.
 
-## Why Use Document Constants?
+## Why Use Constants?
 
-Document constants ensure consistency when working with document elements, styling, and content creation. They provide type safety, IDE autocomplete, and prevent errors from typos in string values.
+Constants equal their variable name as a string (e.g., `FillType.color` equals `"color"`), but using constants provides type safety, IDE autocomplete, and future-proofing against API changes. They ensure consistency when working with document elements, styling, and content creation.
 
 <InlineAlert slots="text" variant="info"/>
 
