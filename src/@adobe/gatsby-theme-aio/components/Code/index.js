@@ -15,7 +15,7 @@ import "@spectrum-css/tooltip";
 import "@adobe/prism-adobe";
 import { ActionButton } from "@adobe/gatsby-theme-aio/src/components/ActionButton";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import nextId from "react-id-generator";
 import classNames from "classnames";
 import Highlight, { defaultProps } from "prism-react-renderer";
@@ -69,6 +69,22 @@ const openCodePlayground = (codeContent, sampleId) => {
   window.open(url.toString(), "_blank");
 };
 
+// check if device is mobile/tablet
+const isMobileDevice = () => {
+  if (typeof window === "undefined") return false;
+
+  // pointer:coarse detects touchscreen devices (mobile/tablet)
+  const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  // hover:none detects devices without hover capability (touch-only)
+  const cannotHover = window.matchMedia("(hover: none)").matches;
+  // max-width helps distinguish true mobile/tablet from devices like touchscreen laptops
+  const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
+
+  return (
+    (hasCoarsePointer && cannotHover) || (hasCoarsePointer && isSmallScreen)
+  );
+};
+
 // parse language, try option and id.
 // usage: ```js{try id=createRectangle}
 function parseAttributes(className, metastring) {
@@ -93,11 +109,16 @@ function parseAttributes(className, metastring) {
 const Code = ({ children, className = "", theme, metastring = "" }) => {
   const [tooltipId] = useState(nextId);
   const [shouldShowCopyTooltip, setShouldShowCopyTooltip] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { language, shouldShowTry, sampleId } = parseAttributes(
     className,
     metastring
   );
+
+  useEffect(() => {
+    setIsMobile(isMobileDevice());
+  }, []);
 
   return (
     <Highlight
@@ -135,8 +156,13 @@ const Code = ({ children, className = "", theme, metastring = "" }) => {
             {/* Try Button */}
             {shouldShowTry && (
               <ActionButton
-                className="spectrum-ActionButton code-action-button code-try-button"
-                onClick={() => openCodePlayground(children, sampleId)}
+                className={classNames(
+                  "spectrum-ActionButton code-action-button code-try-button",
+                  { "is-disabled": isMobile }
+                )}
+                onClick={() =>
+                  !isMobile && openCodePlayground(children, sampleId)
+                }
               >
                 Try
               </ActionButton>
