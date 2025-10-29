@@ -197,3 +197,10 @@ section:has(> div > p > span > picture) {
   align-items: center;
   margin: 20px 0;
 }
+
+/* Hide playground button on mobile devices */
+@media (max-width: 768px) {
+  .playground-button-container {
+    display: none;
+  }
+}
