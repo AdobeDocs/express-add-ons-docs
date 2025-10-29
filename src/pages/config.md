@@ -74,7 +74,7 @@
                 - [AutoHeightTextLayout](references/document-sandbox/document-apis/interfaces/auto-height-text-layout.md)
                 - [AutoWidthTextLayout](references/document-sandbox/document-apis/interfaces/auto-width-text-layout.md)
                 - [BaseParagraphStyles](references/document-sandbox/document-apis/interfaces/base-paragraph-styles.md)
-                - [BitmapImage](references/document-sandbox/document-apis/interfaces/BitmapImage.md)
+                - [BitmapImage](references/document-sandbox/document-apis/interfaces/bitmap-image.md)
                 - [CharacterStyles](references/document-sandbox/document-apis/interfaces/character-styles.md)
                 - [CharacterStylesInput](references/document-sandbox/document-apis/interfaces/character-styles-input.md)
                 - [CharacterStylesRange](references/document-sandbox/document-apis/interfaces/character-styles-range.md)
@@ -124,7 +124,7 @@
                 - [UnorderedListStyle](references/document-sandbox/document-apis/type-aliases/unordered-list-style.md)
     - [Built-in UI Components](references/ui-components/color-picker.md)
         - [Color Picker](references/ui-components/color-picker.md)
-    - [Manifest Schema](references/manifest)
+    - [Manifest Schema](references/manifest/index.md)
     - [Changelog](references/changelog.md)
     - [Getting Started](guides/index.md) header
         - [Overview](guides/index.md)
@@ -180,7 +180,7 @@
             - [Add-on Iframe Context](guides/learn/platform-concepts/context.md)
             - [The Document API](guides/learn/platform-concepts/document-api.md)
         - [Sample add-ons](guides/learn/samples.md)
-    - [Build](guides/build/advanced-topics/frameworks-libraries-bundling.md) header
+    - [Build](guides/build/advanced-topics/frameworks-libraries-bundling.md)header
         - [Advanced Topics](guides/build/advanced-topics/frameworks-libraries-bundling.md)
             - [Frameworks, Libraries and Bundling](guides/build/advanced-topics/frameworks-libraries-bundling.md)
             - [Cross-origin Isolation Handling](guides/build/advanced-topics/coi.md)
@@ -200,10 +200,10 @@
             - [Best practices](guides/build/design/best-practices.md)
         - [Distribute](guides/build/distribute/index.md)
             - [Overview](guides/build/distribute/index.md)
-            - [Our review process](guides/build/distribute/review_process/index.md)
+            - [Our review process](guides/build/distribute/review-process/index.md)
             - [Creating a private link](guides/build/distribute/private-dist.md)
             - [Creating a public listing](guides/build/distribute/public-dist.md)
-            - [Guidelines and requirements](guides/build/distribute/guidelines)
+            - [Guidelines and requirements](guides/build/distribute/guidelines/index.md)
                 - [General guidelines](guides/build/distribute/guidelines/general/index.md)
                     - [Your listing metadata](guides/build/distribute/guidelines/general/listing.md)
                     - [Content](guides/build/distribute/guidelines/general/content.md)
@@ -223,6 +223,6 @@
                     - [Requirements](guides/build/distribute/guidelines/genai/requirements.md)
                     - [Recommendations](guides/build/distribute/guidelines/genai/recommendations.md)
             - [Rejections](guides/build/distribute/rejections.md)
-    - [Support](guides/support/faq.md) header
+    - [Support](guides/support/faq.md)header
         - [FAQs](guides/support/faq.md)
         - [Community Resources](https://developer.adobe.com/express/community)
