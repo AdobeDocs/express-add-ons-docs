@@ -741,16 +741,16 @@ module.exports = {
                       {
                         title:
                           "Basic JavaScript add-on with Spectrum Web Components",
-                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part1/",
+                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part1",
                       },
                       {
                         title:
                           "React-based add-on with Spectrum Web Components",
-                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part2/",
+                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part2",
                       },
                       {
                         title: "Tips & Troubleshooting",
-                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part3/",
+                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part3",
                       },
                     ],
                   },
