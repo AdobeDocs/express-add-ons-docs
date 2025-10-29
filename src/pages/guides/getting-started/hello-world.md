@@ -50,7 +50,7 @@ The [Command Line Interface (CLI)](#command-line-interface-cli) path will teach 
 
 A pre-requisite for both tracks is to have enabled the **Add-on Development** mode. Open Adobe Express in the browser and see the following animation for instructions, or expand the details below for a step-by-step guide.
 
-![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
+![Enable Add-on Development](../getting_started/img/playground-enable-dev-mode.gif)
 
 <Details slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
@@ -66,7 +66,7 @@ We have a [dedicated page](./code-playground.md) for the Code Playground, which 
 
 To launch the Code Playground, see the following animation or expand the details below for a step-by-step guide.
 
-![How to open the Code Playground](./img/playground-open-the-playground.gif)
+![How to open the Code Playground](../getting_started/img/playground-open-the-playground.gif)
 
 <Details slots="list"  summary="Click to view a list of steps to open the Code Playground" />
   
@@ -84,7 +84,7 @@ The Code Playground allows you to operate in [two modalities](./code-playground.
 
 Make sure you've selected the **Script** tab, which is pre-filled with a sample script:
 
-![Code Playground](./img/playground-script.png)
+![Code Playground](../getting_started/img/playground-script.png)
 
 Click the **Run Code** button on the Playground's toolbar to see the rectangle added to the document. Not much, but it's a start!
 
@@ -122,7 +122,7 @@ Click the **Add-on** tab to switch to the [Add-on mode](./code-playground.md#add
 
 This time, clicking **Run Code** will make a new add-on appear on the right side of the screen. You can see and change its code in the HTML, CSS (UI and styles) and Iframe JS tabs (button click event). The "Create Rectangle" button runs the Document JS code, which does exactly what you would expect!
 
-![Code Playground Add-on](./img/playground-addon.png)
+![Code Playground Add-on](../getting_started/img/playground-addon.png)
 
 <InlineAlert variant="info" slots="header, text" />
 
@@ -153,13 +153,13 @@ The [Templates section](./local-development/dev-tooling.md#templates) on the **D
 
 <InlineAlert slots="header, text1" variant="info"/>
 
-For Windows Users
+### For Windows Users
 
 If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can [download `git`](https://git-scm.com/downloads) and add the directory location to the `path` variable in your Environment Variables.
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="warning"/>
 
-CLI troubleshooting
+### CLI troubleshooting
 
 If you run into problems, run this command to clear the `npx` cache and ensure the latest version of the CLI is invoked.
 
@@ -173,6 +173,7 @@ The above may prove useful when updated versions of the CLI are released. If you
 ```bash
 npx @adobe/ccweb-add-on-scripts start --help
 ```
+
 
 ### 2. Build & start your add-on
 
@@ -196,7 +197,8 @@ The add-on's code is now running on a local server; you must tell Adobe Express 
 
 To _sideload_ your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
 
-![How to sideload an add-on](./img/playground-sideload-add-on.gif)
+![How to sideload an add-on](../getting_started/img/playground-sideload-add-on.gif)
+
 
 <Details slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
@@ -207,7 +209,7 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
   5. Click the **Connect** button.
   6. Click the **Hello World** add-on icon on the Add-ons tab on the left.
 
-<InlineAlert slots="text1, text2" variant="info"/>
+<InlineAlert slots="text1" variant="info"/>
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
@@ -244,17 +246,17 @@ While your add-on is still loaded and running, open the `src/index.html` file an
 
 Note that the terminal where your add-on runs will display messages showing that the `src` has been rebuilt. Adobe Express has also updated the button label automatically, and the add-on will now add a "Hello, World!" text to the document.
 
-![Hello World](./img/playground-hello-world.png)
+![Hello World](../getting_started/img/playground-hello-world.png)
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
-<InlineAlert slots="header, text1, text2" variant="warning"/>
+<InlineAlert slots="header, text1" variant="warning"/>
 
-Manifest updates
+## Manifest updates
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
-<Details slots="image"  summary="Click to see the screenshot" />
+<Details slots="image" summary="Click to see the screenshot" />
 
 ![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
 

@@ -72,11 +72,11 @@ Elements can be moved around by setting their `translation` property, which is a
 rect.translation = { x: 50, y: 100 };
 ```
 
-![Bounding Box](./images/position_bounding-box.png)
+![Bounding Box](../how_to/images/position_bounding-box.png)
 
 <InlineAlert slots="header, text1" variant="info" />
 
-Mind the origin of the axes!
+### Mind the origin of the axes!
 
 The zero point of the coordinate system is at the top-left corner of the parent container, with the x-axis pointing to the right and the y-axis pointing down. So, to move a shape to the right, you increase its `x` value; to move it down, you increase its `y` value.
 
@@ -104,7 +104,7 @@ rect.translation = { x: 50, y: 100 };
 rect.setRotationInParent(15, { x: 0, y: 0 });
 ```
 
-![Bounding Box](./images/position_rotate.png)
+![Bounding Box](../how_to/images/position_rotate.png)
 
 <InlineAlert slots="text1" variant="info" />
 
@@ -139,7 +139,7 @@ console.log("boundsInParent", rect.boundsInParent);
 editor.context.insertionParent.children.append(rect);
 ```
 
-![Rotated Bounding Box](./images/position_rotated-bounding-box.png)
+![Rotated Bounding Box](../how_to/images/position_rotated-bounding-box.png)
 
 <InlineAlert slots="text1" variant="info" />
 
@@ -183,7 +183,7 @@ group.translation = { x: 50, y: 50 };
 editor.context.currentPage.artboards.first.children.append(group);
 ```
 
-![](./images/position_parent.png)
+![](../how_to/images/position_parent.png)
 
 Where does the second rectangle sit in the artboard's coordinate system? To find out, we can use the [`localPointInNode()`](../../../references/document-sandbox/document-apis/classes/fillable-node.md#localpointinnode) method, which converts a point from the local coordinate space of the element to the parent's coordinate space.
 

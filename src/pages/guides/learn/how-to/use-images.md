@@ -59,7 +59,7 @@ It expects a `Blob` object as the first argument, and an optional [`MediaAttribu
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Iframe vs. Document Sandbox
+### Iframe vs. Document Sandbox
 
 The following snippets import the `addOnUISdk` object, and belong to the `ui/index.js` file. This is the **iframe** side of the add-on's house—whereas most of the Design Elements how-tos make use of the **Document Sandbox API** (in the `sandbox/code.js` file).
 
@@ -103,7 +103,7 @@ addOnUISdk.ready.then(async () => {
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Image requirements
+### Image requirements
 
 Please refer to [this section](../../../references/addonsdk/app-document.md#image-requirements) to know more about the file formats support and size requirements for images.
 
@@ -138,7 +138,7 @@ addOnUISdk.ready.then(async () => {
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-GIF Image requirements
+### GIF Image requirements
 
 All image formats are equal, but some formats are more equal than others. Please refer to [this FAQ](../../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) to learn more about specific GIF limitations in terms of size and weight.
 

@@ -26,16 +26,13 @@ This section provides a set of guides to help you in the development stage of yo
 
 A pre-requisite for local development is to have enabled the **Add-on Development** mode in Adobe Express; [open it in the browser](https://express.adobe.com/), see the following animation for instructions, or expand the details below for a step-by-step guide.
 
-![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
+![Enable Add-on Development](../../getting_started/img/playground-enable-dev-mode.gif)
 
-<details>
-  <summary>Click to view a list of steps to enable the Development Mode</summary>
-  <ol>
-    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-</details>
+<Details slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
+
+1. Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
+2. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
+3. Close the Settings dialog.
 
 ## Using the CLI
 
@@ -167,15 +164,15 @@ The template parameter is optional, and the CLI will prompt you to choose from a
 
 you will see the following prompt from the CLI:
 
-![doc sandbox prompt](./img/CLI-template-prompt.png)
+![doc sandbox prompt](../../getting_started/img/CLI-template-prompt.png)
 
 which shows the five base template options to choose from, followed by a prompt to ask if you want to add the Document Sandbox support once you choose the base template.
 
-![cli doc sandbox prompt](./img/CLI-doc-sandbox.png)
+![cli doc sandbox prompt](../../getting_started/img/CLI-doc-sandbox.png)
 
 You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
 
-![template scaffolding message](./img/CLI-scaffold-message.png)
+![template scaffolding message](../../getting_started/img/CLI-scaffold-message.png)
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
@@ -185,7 +182,7 @@ If you don't want to use TypeScript or React, please refer to [this sample add-o
 
 When the scaffolding is complete, you will see the following message, prompting you to navigate to the newly created project directory and start the local development scripts:
 
-![CLI completed message](./img/CLI-completed.png)
+![CLI completed message](../../getting_started/img/CLI-completed.png)
 
 ## Manifest
 
@@ -199,5 +196,5 @@ The **Add-on Development** tools panel provides useful logging details indicatin
 
 The **Refresh** button can be used to reload your add-on's code and resources, and the **Clear Storage** button allows you to clear any data stored by your add-on.
 
-![add-ons tools screenshot](./img/add-on-devtools.png)
-![manifest error screenshot](./img/manifest-error.png)
+![add-ons tools screenshot](../../getting_started/img/add-on-devtools.png)
+![manifest error screenshot](../../getting_started/img/manifest-error.png)

@@ -87,7 +87,7 @@ console.log(`New dimensions: ${rect.width} x ${rect.height}`);
 // New dimensions: 300 x 150
 ```
 
-![Rescale by Width](./images/rescale--rescale-proportional-width.png)
+![Rescale by Width](../how_to/images/rescale--rescale-proportional-width.png)
 
 ### Example: Rescale by Height
 
@@ -113,7 +113,7 @@ console.log(
 // New bounds: 300 x 150
 ```
 
-![Rescale by Height](./images/rescale--rescale-proportional-height.png)
+![Rescale by Height](../how_to/images/rescale--rescale-proportional-height.png)
 
 ### Example: Rescaling with Styled Elements
 
@@ -142,7 +142,7 @@ editor.context.insertionParent.children.append(rect);
 rect.rescaleProportionalToWidth(200);
 ```
 
-![Rescale with Styled Elements](./images/rescale--rescale-proportional-styles.png)
+![Rescale with Styled Elements](../how_to/images/rescale--rescale-proportional-styles.png)
 
 ## Resize Elements to Fit Constraints
 
@@ -169,7 +169,7 @@ console.log(`Resized dimensions: ${rect.width} x ${rect.height}`);
 // Resized dimensions: 150 x 100
 ```
 
-![Resize to Fit Within Shapes](./images/rescale--resize-within-ellipse.png)
+![Resize to Fit Within Shapes](../how_to/images/rescale--resize-within-ellipse.png)
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -206,7 +206,7 @@ console.log(
 // Resized dimensions: 150 x 150
 ```
 
-![Resize to Fit Within Media](./images/rescale--resize-within-media.png)
+![Resize to Fit Within Media](../how_to/images/rescale--resize-within-media.png)
 
 <InlineAlert slots="text, text1" variant="warning"/>
 
@@ -243,7 +243,7 @@ console.log(
 // Resized dimensions: 300 x 150
 ```
 
-![Resize to Fit Within Media](./images/rescale--resize-within-media-crop.png)
+![Resize to Fit Within Media](../how_to/images/rescale--resize-within-media-crop.png)
 
 ### Example: Resize to Cover Area
 
@@ -276,7 +276,7 @@ console.log(
 // Covered dimensions: 120 x 120
 ```
 
-![Resize to Cover](./images/rescale--resize-to-cover.png)
+![Resize to Cover](../how_to/images/rescale--resize-to-cover.png)
 
 In this example, the image is resized to cover a 120x120 area; the image is enlarged maintaining its aspect ratio, while the crop is adjusted to fit within the bounding box.
 
@@ -309,7 +309,7 @@ insertionParent.children.append(textNode);
 textNode.rescaleProportionalToWidth(300);
 ```
 
-![Rescale Text Proportionally](./images/rescale--rescale-proportional-text.png)
+![Rescale Text Proportionally](../how_to/images/rescale--rescale-proportional-text.png)
 
 ### Example: Similarities between Resizing and Rescaling Text
 
@@ -331,7 +331,7 @@ textNode.resizeToCover(200, 100);
 textNode.rescaleProportionalToHeight(100);
 ```
 
-![Resizing and Rescaling Text](./images/rescale--rescale-resize-text.png)
+![Resizing and Rescaling Text](../how_to/images/rescale--rescale-resize-text.png)
 
 In the screenshot above, the original text is top-left; top-right, the result of both `resizeToFitWithin()` and `rescaleProportionalToWidth()`; bottom, `resizeToCover()`
 `rescaleProportionalToHeight()`.

@@ -22,9 +22,9 @@ contributors:
 
 During your development, it's important to be able to debug your code and troubleshoot any issues that may arise. Fortunately, most modern browsers come with built-in developer tools that can help you do just that.
 
-&lt;div style="display: flex; justify-content: center;"&gt;
-    &lt;iframe width="779" height="438" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+<Embed slots="video" />
+
+https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi
 
 ## Browser Developer Tools
 
@@ -41,7 +41,7 @@ To get started with debugging your add-on:
 
 Access the developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect Element** or **Inspect** from the context menu.
 
-![inspect](./img/inspect.png)
+![inspect](../../getting_started/local_development/img/inspect.png)
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -49,13 +49,13 @@ Make sure you right click outside of the document area or you will not see the c
 
 Next, navigate to the **Sources** tab, and from there you can locate and select the JavaScript file that contains the code you want to debug. You can locate it in the filesystem list or by using the **Search** tab. If the Search tab isn't displayed, clicking the 3 vertical dots will reveal it as shown below:
 
-![locate source](./img/find-source.png)
+![locate source](../../getting_started/local_development/img/find-source.png)
 
 Once you've selected your file, you can set breakpoints by clicking on the line number where you want the breakpoint to be set. This will pause the execution of your code at that breakpoint, allowing you to inspect variables and step through your code one line at a time.
 
 By leveraging these tools, you will develop a deeper understanding of how your add-on is working, be able to identify and fix bugs more quickly, and benefit from a high-performing add-on.
 
-&lt;!-- <iframe aria-label="Browser Debugging Demo" src="https://drive.google.com/file/d/13FHUuRpVti9AH4nUwAMcvNcP6OzGpOc1/preview" width="640" height="480"></iframe> --&gt;
+&lt;!-- &lt;iframe aria-label="Browser Debugging Demo" src="https://drive.google.com/file/d/13FHUuRpVti9AH4nUwAMcvNcP6OzGpOc1/preview" width="640" height="480"--&gt; &lt;/iframe--&gt; --&gt;
 
 ### Console
 
@@ -72,7 +72,7 @@ Use the `console.*` methods as shown below to represent the severity level you w
 
 You can specifically filter which levels you want to view in the developer tools with the **Custom levels** drop-down as well to help you find your specific messages more quickly:
 
-![custom levels](./img/log-levels.png)
+![custom levels](../../getting_started/local_development/img/log-levels.png)
 
 To make it easier to filter and identify relevant messages in the console, it's also a good practice to include an obvious identifier as a prefix. This identifier could be a unique string or tag that is specific to your add-on, making it easier to distinguish your messages from other messages in the console. For example: `console.log([MyAddOn] - Initialization complete);`. Then you can filter on `MyAddOn` in the devtools and easily see what is relevant to your add-on.
 
@@ -82,31 +82,31 @@ Using appropriate severity levels and including identifiers in your console mess
 
 Another helpful console method is `.dir()`, which displays a JSON representation of an object. For example, running `console.dir(document.head)` would generate the following output:
 
-![console.dir method](./img/dir-method.png)
+![console.dir method](../../getting_started/local_development/img/dir-method.png)
 
 ## Add-on SDK Developer Tools
 
 The **Add-on Development** tools panel provides useful logging details and action buttons to allow for refreshing and clearing the data associated with your add-on, which are also useful for debugging and troubleshooting your add-on.
 
-![add-ons tools screenshot](./img/add-on-devtools.png)
+![add-ons tools screenshot](../../getting_started/local_development/img/add-on-devtools.png)
 
 ### Status messages
 
 The **Add-on Development** panel also provides useful information via status messages like below to indicate when and where an error is occurring to help you target specific issues in your add-on. For instance, if an invalid value is found in the manifest, you will see something like the following:
 
-![manifest error screenshot](./img/manifest-error.png)
+![manifest error screenshot](../../getting_started/local_development/img/manifest-error.png)
 
 ### Refreshing and clearing data
 
 The **Refresh** and **Clear data** buttons in the add-on developer tools can also be helpful when you want to manually force refresh your code (or when you update the manifest), or clear data you no longer want to persist. For instance, in the case of the ToDo list sample add-on (aka: `use-client-storage`), if you had added some items previously they will still be displayed when you open it again unless you actually clear the data. See the demo workflow video at the bottom of the boilerplate section for an example of this in action.
 
-![add-ons tools clear data screenshot](./img/clear-data.png)
+![add-ons tools clear data screenshot](../../getting_started/local_development/img/clear-data.png)
 
 <InlineAlert slots="text" variant="success"/>
 
 To make use of the add-on SDK's [ClientStorage API](../../../references/addonsdk/instance-client-storage.md) and store data in an underlying IndexedDB store, explore the ToDo list sample. You can view this store in the browser developer tools by navigating to the **Application** tab. Look for the IndexedDB store associated with your add-on ID to locate it. Here's an example:
 
-![application tab indexed db screenshot](./img/application-indexed-db.png)
+![application tab indexed db screenshot](../../getting_started/local_development/img/application-indexed-db.png)
 
 <InlineAlert slots="text" variant="info"/>
 

@@ -22,7 +22,7 @@ contributors:
 
 [Adobe Express](https://www.adobe.com/express/) is an AI-first, all-in-one, web-based app to easily create and share content for free. It's a powerful tool that can be used by everyone, from designers to marketers, to create stunning content in minutes.
 
-![Adobe Express](./img/beginner-express.png)
+![Adobe Express](../getting_started/img/beginner-express.png)
 
 ## Discover
 
@@ -30,7 +30,7 @@ contributors:
 
 [Add-ons](https://express.adobe.com/add-ons) are extensions that enhance the functionality of Adobe Express, allowing users to be more productive and creative.
 
-![Adobe Express add-ons](./img/beginner-addon.png)
+![Adobe Express add-ons](../getting_started/img/beginner-addon.png)
 
 The add-on's use cases are endless, but some real-world examples are:
 
@@ -52,7 +52,7 @@ Add-ons are lightweight programs that run in their own panel within the Adobe Ex
 
 Once you have your add-on ready, you can distribute it through the [Adobe Express Marketplace](https://express.adobe.com/add-ons). With a few clicks, it'll be made available to **millions of Adobe Express users**.
 
-![Adobe Express Marketplace](./img/beginner-marketplace.png)
+![Adobe Express Marketplace](../getting_started/img/beginner-marketplace.png)
 
 ### Monetize add-ons
 
@@ -74,7 +74,7 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 
 ## Learn
 
-The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code_playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
+The best way to learn is by doing! Adobe Express integrates a [Playground](code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
 &lt;br/&gt;&lt;br/&gt;&lt;div style="display: flex; justify-content: center;"&gt;
 
@@ -85,11 +85,11 @@ The best way to learn is by doing! Adobe Express integrates a [Playground](../ge
 
 You need to tick a few boxes in the application in order to enable it, as the animation below shows.
 
-![Enable Developer Settings](./img/enable-playground.gif)
+![Enable Developer Settings](../getting_started/img/enable-playground.gif)
 
 Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code-playground.md#script-mode) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code-playground.md) for more details.
 
-[![Code Playground](./img/playground.png)](./code_playground.md)
+[![Code Playground](../getting_started/img/playground.png)](./code_playground.md)
 
 ### Explore the How-to Guides
 
@@ -109,7 +109,7 @@ When you feel more comfortable, you can tinker with these other use cases:
 
 To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](./local-development/dev-tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
 
-![doc sandbox prompt](./local_development/img/CLI-template-prompt.png)
+![doc sandbox prompt](../getting_started/local_development/img/CLI-template-prompt.png)
 
 <InlineAlert slots="text1" variant="info" />
 
@@ -127,7 +127,7 @@ Now that you feel comfortable with the Adobe Express add-on development's basics
 
 We've created a set of tutorials that guide you through the process of building a full-featured add-on from scratch. We recommend you to start with the [Design Grid creator](../learn/how-to/tutorials/grids-addon.md), which covers the basics of the add-on SDK and how to use the Document API.
 
-[![Grids Tutorial](../learn/how_to/tutorials/images/grids-addon-animation.gif)](../learn/how_to/tutorials/grids-addon.md)
+[![Grids Tutorial](../learn/how_to/tutorials/images/grids-addon-animation.gif)](../learn/how-to/tutorials/grids-addon.md)
 
 Feel free to explore [the other Tutorials](../learn/how-to/tutorials/index.md), or our collection of [Code Samples](../learn/samples.md); there's no better way to learn than by doing!
 

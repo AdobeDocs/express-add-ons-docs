@@ -144,7 +144,7 @@ As mentioned in [Creating Renditions](./create-renditions.md), you can allow use
 
 <InlineAlert slots="header, text, text1, text2" variant="warning"/>
 
-Prevent previews download
+### Prevent previews download
 
 Your add-on must not allow these previewed images to be downloaded or persisted on a backend (for any longer than necessary to serve the result back to the user). To that end, be sure that users cannot:
 

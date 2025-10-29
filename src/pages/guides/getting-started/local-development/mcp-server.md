@@ -142,42 +142,24 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 #### Check Connection Status
 
-&lt;div className="container"&gt;  
-  &lt;div className="text-column"&gt;  
-    &lt;p&gt;Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div className="image-column"&gt;
-    &lt;img src="./img/mcp-server-enabled.png" alt="headings" className="responsive-image" /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:
 
-&lt;!-- <div className="container">
-  <div className="text-column">
-    <h3>Verify with Tool calls</h3>
-    <p>The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.</p>
-  </div> --&gt;
+![img](../../getting_started/local_development/img/mcp-server-enabled.png)
 
 #### Verify with Tool calls
 
 The LLM will automatically invoke tools based on your prompts. Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
 
-&lt;div className="container"&gt;
-  &lt;div className="image-column"&gt;
-    &lt;img src="./img/mcp-server-calling-tools.png" alt="MCP Server calling tools" className="responsive-image" /&gt;
-  &lt;/div&gt;
-  &lt;div className="image-column"&gt;
-    &lt;img src="./img/mcp-tool-call-example.png" alt="MCP Expanded tool calls" className="responsive-image" /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+![img](../../getting_started/local_development/img/mcp-server-calling-tools.png)
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
+![img](../../getting_started/local_development/img/mcp-server-calling-tools.png)
 
-  **Tips:**
+<InlineAlert variant="success" slots="header, text1" />
 
-  - Ask the LLM to "*list MCP tools*".
-  - If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
+### Tips:
 
-</InlineNestedAlert>
+- Ask the LLM to "*list MCP tools*".
+- If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
 
 ## How to use it
 
@@ -290,97 +272,85 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 #### Using **[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
+<InlineAlert variant="success" slots="header, text1, text2, text3" />
 
- **🤖 LLM Guidance:**
+**🤖 LLM Guidance:**
 
- - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
- - **REQUIRED theme imports:**
+- **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
+- **REQUIRED theme imports:**
 
-   `import '@spectrum-web-components/theme/express/theme-light.js';`
-   `import '@spectrum-web-components/theme/express/scale-medium.js';`
-   `import '@spectrum-web-components/theme/sp-theme.js';`
+`import '@spectrum-web-components/theme/express/theme-light.js';`
+`import '@spectrum-web-components/theme/express/scale-medium.js';`
+`import '@spectrum-web-components/theme/sp-theme.js';`
 
- - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
- - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
- - **Use Related References:**
+- Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
+- **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
+- **Use Related References:**
 
-   - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
-   - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
-   - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
-  
-</InlineNestedAlert>
+- [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
+- [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
+- [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
 
 #### Using [swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) (only for add-ons using React)
 
-<InlineNestedAlert header="true" variant="success" iconPosition="right">
+<InlineAlert variant="success" slots="header, text1, text2, text3" />
 
- **🤖 LLM Guidance:**
+**🤖 LLM Guidance:**
 
-  - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
-  - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
-  - **REQUIRED theme setup:**
+- **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
+- **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
+- **REQUIRED theme setup:**
 
-    `import '@spectrum-web-components/theme/express/theme-light.js';`
-    `import '@spectrum-web-components/theme/express/scale-medium.js';`
-    `import { Theme } from '@swc-react/theme';`
+`import '@spectrum-web-components/theme/express/theme-light.js';`
+`import '@spectrum-web-components/theme/express/scale-medium.js';`
+`import { Theme } from '@swc-react/theme';`
   
-  - Wrap app with: `<Theme system="express" scale="medium" color="light">`
-  - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
-  - **Use Related References:**
+- Wrap app with: `<Theme system="express" scale="medium" color="light">`
+- **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
+- **Use Related References:**
 
-    - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-    - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
-    - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
-    - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
-
-</InlineNestedAlert>
+- [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+- [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+- [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
+- [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
 
 ## Troubleshooting
 
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
+<InlineAlert variant="neutral" slots="header, text1" />
 
-  **Server Won't Start**
+**Server Won't Start**
 
-  - ✅ Check Node.js version: `node --version` (needs 18+)
-  - ✅ Verify MCP config JSON syntax and file location
-  - ✅ Ensure firewall allows `npx` downloads
-  - ✅ Restart your IDE after configuration changes
-  - ✅ Check for MCP server status indicators
+- ✅ Check Node.js version: `node --version` (needs 18+)
+- ✅ Verify MCP config JSON syntax and file location
+- ✅ Ensure firewall allows `npx` downloads
+- ✅ Restart your IDE after configuration changes
+- ✅ Check for MCP server status indicators
 
-</InlineNestedAlert>
+<InlineAlert variant="neutral" slots="header, text1" />
 
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
+**No Documentation Results**
 
-  **No Documentation Results**
+- ✅ Use specific technical terms ("text styling" vs "make it pretty")
+- ✅ Try adding "Adobe Express Add-ons" for an additional context cue
+- ✅ Try broader queries first, then narrow down
+- ✅ Ask the agent to "use available tools" explicitly
+- ✅ Include context about what you're building
 
-  - ✅ Use specific technical terms ("text styling" vs "make it pretty")
-  - ✅ Try adding "Adobe Express Add-ons" for an additional context cue
-  - ✅ Try broader queries first, then narrow down
-  - ✅ Ask the agent to "use available tools" explicitly
-  - ✅ Include context about what you're building
+<InlineAlert variant="neutral" slots="header, text1" />
 
-</InlineNestedAlert>
+**Poor Code Generation**
 
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
+- ✅ Be specific about what you want to implement
+- ✅ Mention the programming language and frameworks (TypeScript/JavaScript, React)
+- ✅ Provide context about your add-on's purpose
+- ✅ Ask for complete, working examples
 
-   **Poor Code Generation**
+<InlineAlert variant="neutral" slots="header, text1" />
 
-   - ✅ Be specific about what you want to implement
-   - ✅ Mention the programming language and frameworks (TypeScript/JavaScript, React)
-   - ✅ Provide context about your add-on's purpose
-   - ✅ Ask for complete, working examples
+**Missing Type Definitions**
 
-</InlineNestedAlert>
-
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
-
-  **Missing Type Definitions**
-
-  - ✅ Specify the correct API surface (`iframe-ui`, `express-document-sdk`, `add-on-sdk-document-sandbox`)
-  - ✅ Ask for specific types rather than general requests
-
-</InlineNestedAlert>
+- ✅ Specify the correct API surface (`iframe-ui`, `express-document-sdk`, `add-on-sdk-document-sandbox`)
+- ✅ Ask for specific types rather than general requests
 
 ## Resources & Support
 

@@ -80,7 +80,7 @@ editor.context.insertionParent.children.append(greetingsGroup);
 
 <InlineAlert variant="info" slots="header, text, text1" />
 
-Group append order
+### Group append order
 
 You can append the Group to the page and then append the Text nodes to the Group, or the other way around. The order doesn't matter, as long as the Group hits the page at some point.
 
@@ -172,7 +172,7 @@ group.children.append(s1, s2);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](./images/groups_above.png)
+![Grouping elements](../how_to/images/groups_above.png)
 
 ### Example: re-ordering elements
 
@@ -191,7 +191,7 @@ group.children.moveAfter(s1, s2);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](./images/groups_below.png)
+![Grouping elements](../how_to/images/groups_below.png)
 
 ### Example: addding elements in a specific order
 
@@ -211,7 +211,7 @@ group.children.insertAfter(s3, s1);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](./images/groups_middle.png)
+![Grouping elements](../how_to/images/groups_middle.png)
 
 ## Move elements out of a Group
 

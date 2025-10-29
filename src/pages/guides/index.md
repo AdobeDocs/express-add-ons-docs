@@ -21,15 +21,13 @@ hideBreadcrumbNav: true
 
 import '/src/styles.css'
 
-<Hero slots="heading, text"  className="hero-gradient" />
+<HeroSimple slots="image, heading, text " background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white" />
+
+![Adobe Express add-ons](./getting_started/img/Explore_Image_3.png)
 
 ## Build add-ons for Adobe Express
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
-
-&lt;div className="hero-image-container"&gt;
-  &lt;img src="./getting_started/img/Explore_Image_3.png" alt="Adobe Express add-ons" /&gt;
-&lt;/div&gt;
 
 &lt;br/&gt;&lt;br/&gt;
 
@@ -37,7 +35,7 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting-started/code-playground.md) and start tinkering with the API right away.
 
-<TextBlock slots="image, heading, text, text1" width="50%"/>
+<Columns slots="image, heading, text, links" variant ="vertical" repeat ="2"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
 
@@ -47,8 +45,6 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 [Find inspiration →](./getting-started/developer-journey.md#discover)
 
-<TextBlock slots="image, heading, text, text1" width="50%"/>
-
 ![Learn](./getting_started/img/devjourney-2-learn.png)
 
 ### Learn
@@ -57,7 +53,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 [Dive deeper →](./getting-started/developer-journey.md#learn)
 
-<TextBlock slots="image, heading, text, text1" width="50%" />
+<Columns slots="image, heading, text, links" variant ="vertical" repeat ="2"/>
 
 ![Develop](./getting_started/img/devjourney-3-develop.png)
 
@@ -66,8 +62,6 @@ Familiarize and experiment with powerful features in our Code Playground.
 Transform your ideas into a polished product following our best practices.
 
 [Start building →](./getting-started/developer-journey.md#develop)
-
-<TextBlock slots="image, heading, text, text1" width="50%" />
 
 ![Distribute](./getting_started/img/devjourney-4-distribute.png)
 

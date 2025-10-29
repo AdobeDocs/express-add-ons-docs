@@ -52,9 +52,9 @@ contributors:
 
 ### Added
 
-Introduced a new [guide](../getting_started/local_development/mcp_server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
+Introduced a new [guide](../getting-started/local-development/mcp-server.md) with the release of our public beta **Adobe Express Add-on MCP Server**.
 
-With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](../getting_started/local_development/mcp_server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
+With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [connect to the Adobe Express Add-on MCP Server (Beta)](../getting-started/local-development/mcp-server.md) to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.
 
 ## 2025-08-25
 
@@ -454,7 +454,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - The CLI has been updated to release version `2.0.0`, and includes the following:
 
   - Periodic login and EULA consent are no longer required.
-  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../getting_started/local_development/dev_tooling.md#templates) for details on all the available templates.
+  - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../getting-started/local-development/dev-tooling.md#templates) for details on all the available templates.
   - Typings have been updated to include the latest SDK changes, and other internal packages are now at version `2.0.0`.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the `npx` cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@2.0.0 my-add-on`.
@@ -949,7 +949,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 &lt;del&gt;
 
-- The &lt;a href="../references/document-sandbox/communication/index.md"&gt;Communication API&lt;/a&gt; in the &lt;a href="../references/document-sandbox/"&gt;document sandbox reference section&lt;/a&gt; was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../references/document-sandbox/communication/index.md) in the &lt;a href="../references/document-sandbox/"&gt;document sandbox reference section&lt;/a&gt; was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -977,7 +977,7 @@ Added new **Audio API** documentation. You can now import audio to the current A
 
 Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
 
-&lt;!-- <InlineAlert slots="text" variant="warning"/>
+&lt;!-- &lt;InlineAlert slots="text" variant="warning"/--&gt;
 
 **IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. --&gt;
 

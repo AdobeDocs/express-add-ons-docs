@@ -71,7 +71,7 @@ The developer tools in Chromium-based browsers on the desktop allow you to speci
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Mobile add-ons
+### Mobile add-ons
 
 You cannot test this on mobile devices. You should test your add-on on a desktop web browser powered by Chromium. Any issues you run into would also appear on mobile devices, and any fixes you apply would also apply to mobile users.
 
