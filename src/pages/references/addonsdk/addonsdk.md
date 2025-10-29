@@ -12,7 +12,7 @@ The core add-on UI SDK object which provides access to everything needed for add
 | readonlyre | addOnUISdk.instancere | objectre | The currently running add-on instance. |
 | readonlyre | AddOnSdk.readyre | Promisere | Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with [Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await). |
 
-!-- ## Methods
+&lt;-- ## Methods
 
 ## ready
 

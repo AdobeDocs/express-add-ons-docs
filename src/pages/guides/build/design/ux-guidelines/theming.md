@@ -26,7 +26,7 @@ While Spectrum is the main reference throughout this guide, the Adobe Design tea
 
 The Spectrum design system supports theming, allowing you to customize features like icon sets, font weight and size, and accent colors to suit your brand or use case better. We recommend using the provided [Adobe Express Theme](https://spectrum.adobe.com/page/theming/#Available-themes), specifically designed to accommodate the needs of a mainstream, creative consumer audience. It features a friendlier visual tone, bolder typography, softer rounding on elements, and indigo as the accent color. See the Spectrum for Adobe Express theme in action below on the right, compared to the default on the left:
 
-![Spectrum for Adobe Express](./img/components_theme.png)
+![Spectrum for Adobe Express](../ux_guidelines/img/components_theme.png)
 
 ## Customization Guidelines
 

@@ -875,7 +875,7 @@ module.exports = {
               },
               {
                 title: "Our review process",
-                path: "guides/build/distribute/review_process/",
+                path: "guides/build/distribute/review-process/",
               },
               {
                 title: "Creating a private link",

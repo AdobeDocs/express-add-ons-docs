@@ -178,7 +178,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](bitmap-image.md)\>
+• **loadBitmapImage**(`bitmapData`): `Promise` &lt; [`BitmapImage`](bitmap-image.md)\ &gt;
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -198,7 +198,7 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise`<[`BitmapImage`](bitmap-image.md)\>
+`Promise` &lt;[`BitmapImage`](bitmap-image.md)\ &gt;
 
 <HorizontalLine />
 
@@ -240,7 +240,7 @@ See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on 
 
 #### Parameters
 
-• **options?**: `Partial`<[`SolidColorStroke`](../interfaces/solid-color-stroke.md)\>
+• **options?**: `Partial` &lt; [`SolidColorStroke`](../interfaces/solid-color-stroke.md)\ &gt;
 
 #### Returns
 
@@ -252,7 +252,7 @@ a stroke configured with the given options.
 
 ### queueAsyncEdit()
 
-• **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
+• **queueAsyncEdit**(`lambda`): `Promise` &lt;`void`\ &gt;
 
 Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
 the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
@@ -294,6 +294,6 @@ a function which edits the document model.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise` &lt;`void`\ &gt;
 
 a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.

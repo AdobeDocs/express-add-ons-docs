@@ -16,7 +16,7 @@ Please note that creating and deleting an artboard in a single frame will crash 
 
 ## Implements
 
--   `Readonly`&lt;[`IRectangularNode`](../interfaces/i-rectangular-node.md)\&gt;
+-   `Readonly`&lt;[`IRectangularNode`](../interfaces/i-rectangular-node.md) &gt;
 -   [`ContainerNode`](../interfaces/container-node.md)
 
 ## Accessors
@@ -35,7 +35,7 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\&gt;\&gt;
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -46,13 +46,13 @@ The children of an Artboard are always other Node classes (never the more minima
 
 #### Returns
 
-`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\&gt;\&gt;
+`Readonly` &lt; `Iterable` &lt; [`Node`](node.md), `any`, `any`&gt;&gt;
 
 <HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
+• `get` **boundsLocal**(): `Readonly` &lt; [`Rect`](../interfaces/rect.md)&gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -63,37 +63,37 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
+`Readonly` &lt; [`Rect`](../interfaces/rect.md)&gt;
 
 <HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+• `get` **centerPointLocal**(): `Readonly` &lt; [`Point`](../interfaces/point.md)&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+`Readonly` &lt; [`Point`](../interfaces/point.md)&gt;
 
 <HorizontalLine />
 
 ### children
 
-• `get` **children**(): [`ItemList`](item-list.md)&lt;[`Node`](node.md)\&gt;
+• `get` **children**(): [`ItemList`](item-list.md) &lt; [`Node`](node.md)&gt;
 
 The node's children. Use the methods on this ItemList object to get, add, and remove children.
 
 #### Returns
 
-[`ItemList`](item-list.md)&lt;[`Node`](node.md)\&gt;
+[`ItemList`](item-list.md) &lt; [`Node`](node.md)&gt;
 
 <HorizontalLine />
 
 ### fill
 
-• `get` **fill**(): `Readonly`&lt;[`Fill`](../interfaces/fill.md)\&gt;
+• `get` **fill**(): `Readonly` &lt; [`Fill`](../interfaces/fill.md)&gt;
 
 • `set` **fill**(`fill`): `void`
 
@@ -105,7 +105,7 @@ The background fill of the artboard. Artboards must always have a fill.
 
 #### Returns
 
-`Readonly`&lt;[`Fill`](../interfaces/fill.md)\&gt;
+`Readonly` &lt; [`Fill`](../interfaces/fill.md)&gt;
 
 <HorizontalLine />
 
@@ -150,7 +150,7 @@ The node's parent. Undefined if the node is an orphan.
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+• `get` **topLeftLocal**(): `Readonly` &lt; [`Point`](../interfaces/point.md)&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -158,7 +158,7 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+`Readonly` &lt;[`Point`](../interfaces/point.md)&gt;
 
 <HorizontalLine />
 
@@ -207,7 +207,7 @@ To resize an artboard, resize the parent [PageNode](page-node.md).
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly` &lt; [`Point`](../interfaces/point.md)&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](artboard-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -221,7 +221,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+`Readonly` &lt; [`Point`](../interfaces/point.md)&gt;
 
 #### Implementation of
 

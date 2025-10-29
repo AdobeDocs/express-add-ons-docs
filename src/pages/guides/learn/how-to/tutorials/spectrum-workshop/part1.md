@@ -50,7 +50,7 @@ If you've used the CLI prior to this, you may want to run this command to ensure
 
 If you run the project at this point (`npm run build; npm run start`), you will see a basic button displayed in the UI with custom CSS set to style it for Express, as shown below:
 
-![Basic JS add-on screenshot](../images/basic-js.png)
+![Basic JS add-on screenshot](../../../how_to/tutorials/images/basic-js.png)
 
 However, since you're going to be implementing a whole new UI, go ahead and remove the existing lines related to the button:
 

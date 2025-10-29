@@ -1816,11 +1816,7 @@ const addColumns = (columsNumber, gutter, color) => {
 
 export { addColumns, addRows };
 ```
-
-<details>
-<summary>Click here to see the <b>Changelog</b></summary>
-
-### 5.2 Changelog
+<Details slots="header , list" repeat="6" summary = "Click here to see the Changelog" subText = "5.2 Changelog" />
 
 **July 31st, 2025**
 
@@ -1859,10 +1855,6 @@ export { addColumns, addRows };
 **November 6th, 2023**
 
 - First publication.
-
-</details>
-
-&lt;!-- Footnotes --&gt;
 
 [^1]: Alternatively, you can use this [blank template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template) and start from scratch, but you'd need to manually add the `documentSandbox/shapeUtils.js` file and the various Spectrum imports.
 [^2]: The quotes are from the Documentation Reference of each element.

@@ -29,9 +29,9 @@ This set of guides is meant to provide you with an idea of what types of informa
 
 Check out this short video below on how to share and publish your add-on to help you get started more quickly. &lt;br/&gt;&lt;br/&gt;
 
-&lt;div style="display: flex; justify-content: center;"&gt;
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Xdu7TRSsU3I?si=kUcJ6EMnQeNVQa-X" title="Sharing and Publishing Your Add-on" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+<Embed slots="video" />
+
+https://www.youtube.com/embed/Xdu7TRSsU3I?si=kUcJ6EMnQeNVQa-X
 
 &lt;!-- 
 
@@ -72,9 +72,9 @@ Frequently changing your publisher profile can confuse users and erode trust. Pl
 
 1. **Icon**
 
-    3 sizes required in `.jpg` or `.png` format:
+  3 sizes required in `.jpg` or `.png` format:
 
-    - Size 36x36px
+  - Size 36x36px
 
 ### Public Distribution Requirements
 
@@ -82,23 +82,21 @@ Frequently changing your publisher profile can confuse users and erode trust. Pl
 
 1. **Icons**
 
-    3 sizes required in `.jpg` or `.png` format:
+3 sizes required in `.jpg` or `.png` format:
 
-    - Size 36x36px
-    - Size 64x64px
-    - Size 144x144px
-    
-    <InlineAlert slots="text" variant="warning"/>
-    
-    All three sizes are mandatory.
+- Size 36x36px
+- Size 64x64px
+- Size 144x144px
+
+<InlineAlert slots="text" variant="warning"/>
+
+All three sizes are mandatory.
 
 2. **Screenshots**
-    
-    1-5 screenshots with dimensions of 1360x800px in `.jpg` or `.png` format. 
-    
-    <InlineAlert slots="text" variant="warning"/>
-    
-    At least one screenshot is mandatory.        
+
+<InlineAlert slots="text" variant="warning"/>
+
+At least one screenshot is mandatory.
 
 #### Metadata Requirements:
 

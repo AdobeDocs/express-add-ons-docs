@@ -30,13 +30,13 @@ The add-on's icon should be original, suitable for different devices and browser
 
 Three sizes are required for the add-on's icon: **36x36**, **64x64**, and **144x144** pixels as PNG or JPG files.
 
-![add-on icon](./img/branding_add-on-icon.png)
+![add-on icon](../ux_guidelines/img/branding_add-on-icon.png)
 
 ## Publisher Logo
 
 The publisher's logo is only required the first time you [submit for distribution](../../distribute/public-dist.md#2-prepare-your-assets), in case you've never created a publisher profile before. It should be a square, **250x250** pixels PNG or JPG file.
 
-![publisher logo](./img/branding_publisher-logo.png)
+![publisher logo](../ux_guidelines/img/branding_publisher-logo.png)
 
 ## Imagery
 
@@ -48,4 +48,4 @@ When creating a [public listing](../../distribute/public-dist.md) for the Adobe 
 
 Any image used in your listing must comply with the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf). They should accurately depict the add-on's functionality and features and not contain any misleading information or inappropriate content. The recommended image size is **1360x800** pixels, as PNG or JPG.
 
-![screenshots and illustrations](./img/branding_screenshot.png)
+![screenshots and illustrations](../ux_guidelines/img/branding_screenshot.png)
