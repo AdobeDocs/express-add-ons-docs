@@ -26,17 +26,15 @@ contributors:
 
 ## Introduction
 
-<Product-Card slots="icon, text, buttons" theme="light" width="50%" />
+<Product-Card slots="icon, text, buttons" theme="light" repeat="2" />
 
-<img src="images/lit-logo.svg" alt="lit-logo" width="70px" height="40px"/>
+![typescript-logo](../../how_to/tutorials/images/lit-logo.svg)
 
 Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
 
 - [Learn more](https://lit.dev/)
 
-<Product-Card slots="icon, text, buttons" theme="light" width="50%" />
-
-![typescript-logo](images/ts-logo-128.svg)
+![typescript-logo](../../how_to/tutorials/images/ts-logo-128.svg)
 
 TypeScript is a statically typed superset of JavaScript that adds optional static types to the language.TypeScript aims to improve the development experience by providing a robust type system, which helps catch errors early during development and enhances code quality and maintainability.
 

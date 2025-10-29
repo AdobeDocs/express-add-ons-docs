@@ -728,29 +728,29 @@ module.exports = {
                 pages: [
                   {
                     title: "Document APIs",
-                    path: "guides/learn/how_to/tutorials/grids-addon",
+                    path: "guides/learn/how-to/tutorials/grids-addon",
                   },
                   {
                     title: "Communication APIs",
-                    path: "guides/learn/how_to/tutorials/stats-addon",
+                    path: "guides/learn/how-to/tutorials/stats-addon",
                   },
                   {
                     title: "Using Adobe Spectrum",
-                    path: "guides/learn/how_to/tutorials/spectrum-workshop/",
+                    path: "guides/learn/how-to/tutorials/spectrum-workshop/",
                     pages: [
                       {
                         title:
                           "Basic JavaScript add-on with Spectrum Web Components",
-                        path: "guides/learn/how_to/tutorials/spectrum-workshop/part1/",
+                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part1/",
                       },
                       {
                         title:
                           "React-based add-on with Spectrum Web Components",
-                        path: "guides/learn/how_to/tutorials/spectrum-workshop/part2/",
+                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part2/",
                       },
                       {
                         title: "Tips & Troubleshooting",
-                        path: "guides/learn/how_to/tutorials/spectrum-workshop/part3/",
+                        path: "guides/learn/how-to/tutorials/spectrum-workshop/part3/",
                       },
                     ],
                   },
