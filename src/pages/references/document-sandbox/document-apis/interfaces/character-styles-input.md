@@ -10,7 +10,7 @@ user to edit with.
 
 ## Extends
 
--   `Partial`&lt;`BaseCharacterStyles`\&gt;
+-   `Partial`&lt;`BaseCharacterStyles`\ &gt;
 
 ## Extended by
 

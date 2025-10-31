@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / RestrictedItemList
 
-# Class: RestrictedItemList<T\>
+# Class: RestrictedItemList &lt; T\ &gt;
 
 Base for ItemLists that have restricted behavior on how items are added to the list,
 but allow items to be removed and reordered. Subclasses like ItemList may add more
@@ -8,7 +8,7 @@ capabilities, however.
 
 ## Extends
 
--   [`ReadOnlyItemList`](read-only-item-list.md)&lt;`T`\&gt;
+-   [`ReadOnlyItemList`](read-only-item-list.md)&lt;`T`\ &gt;
 
 ## Extended by
 
@@ -60,17 +60,17 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`\&gt;
+• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`\ &gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`&lt;`T`, `any`, `any`\&gt;
+`Iterator`&lt;`T`, `any`, `any`\ &gt;
 
 #### Inherited from
 
-[`ReadOnlyItemList`](read-only-item-list.md).[`[iterator]`](ReadOnlyItemList.md#iterator)
+[`ReadOnlyItemList`](read-only-item-list.md).[`[iterator]`](read-only-item-list.md#iterator)
 
 <HorizontalLine />
 

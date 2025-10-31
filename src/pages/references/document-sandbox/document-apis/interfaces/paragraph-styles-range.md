@@ -43,7 +43,7 @@ It only affects the space *between* lines, not the space above the first line or
 
 ### list?
 
-• `optional` **list**: `Required`&lt;[`OrderedListStyleInput`](ordered-list-style-input.md)\&gt; \| `Required`&lt;[`UnorderedListStyleInput`](unordered-list-style-input.md)\&gt;
+• `optional` **list**: `Required`&lt;[`OrderedListStyleInput`](ordered-list-style-input.md)\ &gt; \| `Required`&lt;[`UnorderedListStyleInput`](unordered-list-style-input.md)\ &gt;
 
 #### Inherited from
 

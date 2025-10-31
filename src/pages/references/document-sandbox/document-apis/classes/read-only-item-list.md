@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / ReadOnlyItemList
 
-# Class: ReadOnlyItemList<T\>
+# Class: ReadOnlyItemList &lt; T\  &gt;
 
 ReadOnlyItemList represents an ordered list of API objects, representing items that are all children of the
 same parent node. (The reverse is not necessarily true, however: this list might not include all
@@ -56,13 +56,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`\&gt;
+• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`\ &gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`&lt;`T`, `any`, `any`\&gt;
+`Iterator`&lt;`T`, `any`, `any`\ &gt;
 
 <HorizontalLine />
 

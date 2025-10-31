@@ -61,7 +61,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
+• `get` **boundsInParent**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
 [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
@@ -71,7 +71,7 @@ even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
 <HorizontalLine />
 
@@ -326,7 +326,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 #### Returns
 
-`Readonly`&lt;[`Rect`](../interfaces/rect.md)\&gt;
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
 #### Inherited from
 
@@ -358,7 +358,7 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](complex-shape-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -372,7 +372,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`&lt;[`Point`](../interfaces/point.md)\&gt;
+`Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
 #### Inherited from
 
