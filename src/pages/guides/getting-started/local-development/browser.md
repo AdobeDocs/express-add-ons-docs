@@ -55,8 +55,6 @@ Once you've selected your file, you can set breakpoints by clicking on the line 
 
 By leveraging these tools, you will develop a deeper understanding of how your add-on is working, be able to identify and fix bugs more quickly, and benefit from a high-performing add-on.
 
-&lt;!-- &lt;iframe aria-label="Browser Debugging Demo" src="https://drive.google.com/file/d/13FHUuRpVti9AH4nUwAMcvNcP6OzGpOc1/preview" width="640" height="480"--&gt; &lt;/iframe--&gt; --&gt;
-
 ### Console
 
 When logging messages in your code, use the appropriate severity level that best describes the message. For example, an **Info** message might be used to provide general information about the application's state, while a **Warning** message might be used to alert developers about potential issues that could cause problems with the add-on. Similarly, an **Error** message might be used to indicate that an unexpected error has occurred, and a **Verbose** message might be used to see more descriptive information about the internal workings of the processing occurring in your add-on.

@@ -126,7 +126,7 @@ This time, clicking **Run Code** will make a new add-on appear on the right side
 
 <InlineAlert variant="info" slots="header, text" />
 
-Script mode vs. Document JS
+### Script mode vs. Document JS
 
 Even if the result of both the Script and Add-on modes in the Code Playground is the same rectangle being added to the document, you'll see that the code is different. Why? The Script mode is a simplified, prototype-friendly environment that takes care of many things under the hood, while the Add-on code needs to take care of the communication between the UI and the Document Sandbox APIs. More info [here](../learn/platform-concepts/context.md).
 
@@ -223,7 +223,7 @@ If you click the **Create Rectangle** button, you'll see the rectangle being add
 
 ### 4. Edit your add-on's code
 
-While your add-on is still loaded and running, open the `src/index.html` file and update the **"Create Rectangle"** string in the `<button>` to something else, like **Add Text**. In the `src/sandbox/code.js` replace the body of the `createRectangle()` function with the following, borrowed from the [Use Text](../learn/how-to/use-text.md) how-to guide:
+While your add-on is still loaded and running, open the `src/index.html` file and update the **"Create Rectangle"** string in the `<button></button>` to something else, like **Add Text**. In the `src/sandbox/code.js` replace the body of the `createRectangle()` function with the following, borrowed from the [Use Text](../learn/how-to/use-text.md) how-to guide:
 
 ```js
 // ...
