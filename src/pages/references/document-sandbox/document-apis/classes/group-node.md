@@ -96,6 +96,8 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
+<InlineAlert slots="text" variant="warning"/>
+
 Note: If this group has a maskShape, group's bounds are always identical to the maskShape's, regardless of the
 group's other content.
 
@@ -117,8 +119,8 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 • `get` **children**(): [`ItemList`](item-list.md)&lt;[`Node`](node.md)\ &gt;
 
-The Group's regular children. Does not include the maskShape if one is present.
-Use the methods on this ItemList object to get, add, and remove children.
+The Group's regular children. Does not include the [maskShape](GroupNode.md#maskshape) if one is present.
+Use the methods on this ItemList object to get, add, and remove regular children.
 
 #### Returns
 
@@ -349,10 +351,6 @@ relative to one another (the target node need not be an ancestor of this node, n
 ### cloneInPlace()
 
 • **cloneInPlace**(): [`GroupNode`](group-node.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Creates a copy of this node and its entire subtree of descendants.
 

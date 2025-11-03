@@ -2,13 +2,10 @@
 
 # Class: ArtboardNode
 
-An ArtboardNode represents an artboard object in the scenegraph. All user visual content must be contained on an artboard.
-Artboards are always contained on a [PageNode](page-node.md); when a page contains multiple artboards, the artboards represent
-"scenes" in a linear timeline sequence.
+An ArtboardNode represents the topmost container of visual content within a [PageNode](./page-node.md). When a page contains
+multiple artboards, each represents a keyframe "scene" in the page's animation timeline.
 
 To create a new artboard, see [ArtboardList.addArtboard](artboard-list.md#addartboard).
-
-Please note that creating and deleting an artboard in a single frame will crash the editor.
 
 ## Extends
 
@@ -42,7 +39,7 @@ GroupNode also provide a mutable [ContainerNode.children](../interfaces/containe
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
-The children of an Artboard are always other Node classes (never the more minimal BaseNode).
+The children of an Artboard are all subclasses of Node (not just the more minimal BaseNode or VisualNode).
 
 #### Returns
 
@@ -83,7 +80,9 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 • `get` **children**(): [`ItemList`](item-list.md) &lt; [`Node`](node.md)&gt;
 
-The node's children. Use the methods on this ItemList object to get, add, and remove children.
+The artboards's regular children (does not include any "background layer" content if present; use [allChildren](ArtboardNode.md#allchildren)
+for a read-only view that includes background content). Use the methods on this `children` ItemList object to get,
+add, and remove regular children.
 
 #### Returns
 

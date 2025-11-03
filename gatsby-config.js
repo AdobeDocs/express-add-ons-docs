@@ -635,6 +635,16 @@ module.exports = {
                 ],
               },
               {
+                title: "Document Structure",
+                path: "guides/learn/how-to/manage-pages.md",
+                pages: [
+                  {
+                    title: "Manage Pages",
+                    path: "guides/learn/how-to/manage-pages.md",
+                  },
+                ],
+              },
+              {
                 title: "Use Design Elements",
                 path: "guides/learn/how-to/use-text.md", // change this!!
                 pages: [
@@ -673,6 +683,10 @@ module.exports = {
                   {
                     title: "Resize & Rescale Elements",
                     path: "guides/learn/how-to/resize-rescale-elements.md",
+                  },
+                  {
+                    title: "Handle Element Selection",
+                    path: "guides/learn/how-to/handle-selection.md",
                   },
                   {
                     title: "Position Elements",

@@ -2,8 +2,8 @@
 
 # Class: ArtboardList
 
-ArtboardList represents an ordered list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
-All items in the list are children of a single [PageNode](page-node.md).
+ArtboardList represents an ordered list of ArtboardNodes, which are the children of one [PageNode](./page-node.md). If multiple
+artboards are present, each represents a keyframe "scene" in the page's animation timeline.
 
 ArtboardList also provides APIs for adding/removing artboards from the page. ArtboardList is never empty: it is illegal to
 remove the last remaining artboard from the list.

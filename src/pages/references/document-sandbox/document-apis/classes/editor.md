@@ -69,15 +69,17 @@ This local client will act as having unsaved changes until the upload has finish
 
 #### Parameters
 
-• **bitmapData**: [`BitmapImage`](bitmap-image.md)
+• **bitmapData**: `BitmapImage`
 
 BitmapImage resource (e.g. returned from [loadBitmapImage](editor.md#loadbitmapimage)).
 
 • **options**= `{}`
 
-Additional configuration: - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
-size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
-if needed to stay below an application-defined size cap).
+Additional configuration:
+
+-   `initialSize` - Size the image is displayed at. Must have the same aspect ratio as `bitmapData`. Defaults to the
+    size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
+    if needed to stay below an application-defined size cap).
 
 • **options.initialSize?**: [`RectangleGeometry`](../interfaces/rectangle-geometry.md)
 
@@ -114,6 +116,11 @@ a string representing any [SVG path element](https://developer.mozilla.org/en-US
 Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input.
 For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...".
 Throws if the input is empty or is not legal SVG path syntax.
+
+<InlineAlert slots="text" variant="info"/>
+
+Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position
+a newly created path using [Node.setPositionInParent](Node.md#setpositioninparent) rather than setting [Node.translation](node.md#translation) directly.
 
 #### Returns
 
@@ -171,6 +178,8 @@ the initial string to show.
 a text node with default styles. Creates auto-width text, so the node's width will automatically adjust
 to accommodate the given text content.
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
 
@@ -178,7 +187,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise` &lt; [`BitmapImage`](bitmap-image.md)\ &gt;
+• **loadBitmapImage**(`bitmapData`): `Promise` &lt; `BitmapImage`\ &gt;
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -198,7 +207,7 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise` &lt;[`BitmapImage`](bitmap-image.md)\ &gt;
+`Promise` &lt; `BitmapImage`\ gt;
 
 <HorizontalLine />
 

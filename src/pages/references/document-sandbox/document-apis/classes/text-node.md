@@ -3,9 +3,14 @@
 # Class: `abstract` TextNode
 
 TextNode is an abstract base class representing text displayed in the scenegraph, regardless of whether it's a fully
-self-contained [StandaloneTextNode](standalone-text-node.md) or one [ThreadedTextNode](threaded-text-node.md) "frame" of multiple in a larger flow. The
+self-contained [StandaloneTextNode](standalone-text-node.md) or one of multiple [ThreadedTextNode](threaded-text-node.md) "frames" in a larger flow. The
 APIs on TextNode and its [TextNodeContentModel](text-node-content-model.md) allow you to generically work with text without needing to know
-which of those subtypes you are dealing with.
+which subtype you are dealing with.
+
+<InlineAlert slots="text" variant="info"/>
+
+Note: the visual top-left corner of text is not located at its local (0,0) origin point, so it's easiest to position
+text using [Node.setPositionInParent](node.md#setpositioninparent) rather than setting its [Node.translation](node.md#translation) directly.
 
 ## Extends
 
@@ -80,6 +85,8 @@ even for an orphan node with no parent.
 
 `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
@@ -100,10 +107,15 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
+<InlineAlert slots="text" variant="info"/>
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
-<HorizontalLine />
+<InlineAlert slots="text" variant="info"/>
+Note: the visual top-left corner of this box is usually not (0,0). Always use `boundsLocal` or [topLeftLocal](TextNode.md#topleftlocal)
+instead of assuming (0,0).
+
+---
 
 ### centerPointLocal
 
@@ -115,6 +127,7 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 `Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
+<InlineAlert slots="text" variant="info"/>
 Note: The center of the orphaned TextNode may be different from the center of the node placed on a page. It is
 recommended to use this property only when the node is placed on a page.
 
@@ -128,6 +141,7 @@ The model containing the complete text string and its styles, only part of which
 this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
 fixed-size frame using [AreaTextLayout](../interfaces/area-text-layout.md) does not fit all the (remaining) text.
 
+<InlineAlert slots="text" variant="info"/>
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
 same single [TextNodeContentModel](text-node-content-model.md); this can give the impression that the same text is duplicated multiple times when it is
 not. Use [TextNodeContentModel](text-node-content-model.md).id to determine whether a given piece of text content is unique or if it's already been
@@ -155,10 +169,6 @@ moved to a different part of the document.
 ### layout
 
 • `get` **layout**(): `Readonly`&lt;[`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`AreaTextLayout`](../interfaces/area-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)\ &gt;
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Returns
 
@@ -327,8 +337,12 @@ boundsInParent.
 
 `Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
+<InlineAlert slots="text" variant="info"/>
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
+
+<InlineAlert slots="text" variant="info"/>
+Note: this value is usually not (0,0) due to the way text layout is defined.
 
 <HorizontalLine />
 
@@ -421,6 +435,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
+<InlineAlert slots="text" variant="info"/>
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this method only when the node is placed on a page.
 
@@ -433,10 +448,6 @@ page. It is recommended to use this method only when the node is placed on a pag
 ### cloneInPlace()
 
 • **cloneInPlace**(): [`TextNode`](text-node.md)
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Creates a copy of this node and its entire subtree of descendants.
 

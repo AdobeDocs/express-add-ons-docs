@@ -18,8 +18,8 @@ This metadata is accessible only to the add-on that has set it.
 an object with the remaining quota for private metadata on the node for this add-on.
 The object contains the following properties:
 
-- sizeInBytes: The remaining quota size in bytes (maximum 3KB).
-- numKeys: The remaining quota for the number of keys (maximum 20 keys).
+- `sizeInBytes`: The remaining quota size in bytes (maximum 3KB).
+- `numKeys`: The remaining quota for the number of keys (maximum 20 keys).
 
 ##### numKeys
 

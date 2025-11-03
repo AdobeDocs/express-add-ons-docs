@@ -62,7 +62,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Version
 - Author
 - Contact information
-- Trader infromation in the publisher profile if you wish to distribute your add-ons in the EU region.
+- Trader information in the publisher profile if you wish to distribute your add-ons in the EU region.
 
 ### 3. Ensure your add-on meets legal and licensing requirements, including:
 

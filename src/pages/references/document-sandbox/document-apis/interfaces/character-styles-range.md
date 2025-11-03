@@ -64,6 +64,7 @@ Size of the text in points.
 • **length**: `number`
 
 The length or number of characters in which character styles will be applied.
+<InlineAlert slots="text" variant="info"/>
 Note: since characters are represented as UTF-16 code units, some symbols
 such as emojis are considered to have a length of 2.
 

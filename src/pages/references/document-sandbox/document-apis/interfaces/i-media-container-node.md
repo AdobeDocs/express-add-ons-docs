@@ -42,9 +42,9 @@ or top/bottom edges. Currently only supports images as the new media, but previo
 
 #### Parameters
 
-• **media**: [`BitmapImage`](../classes/bitmap-image.md)
+• **media**: `BitmapImage`
 
-New content to display. Currently must be a [BitmapImage](../classes/bitmap-image.md).
+New content to display. Currently must be a BitmapImage.
 
 #### Returns
 

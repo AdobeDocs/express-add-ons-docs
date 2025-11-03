@@ -175,7 +175,7 @@ If the `zip` validation is successful, you will see a green checkmark next to th
 
 The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. Adobe encourages user choice regarding add-ons using Generative AI, but transparency is paramount. Your AI-powered add-on must not generate illegal content, and it must be clear and transparent about how generative AI is used in your add-on.
 
-In this section, you'll have to answer a variety of questions, depending on the type of AI-based content your add-on generates, the input it accepts, whether you test the output, etc. Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe’s requirements and recommendations to try add-ons that employ Generative AI technology.
+In this section, you'll have to answer a variety of questions, depending on the type of AI-based content your add-on generates, the input it accepts, whether you test the output, etc. Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe's requirements and recommendations to try add-ons that employ Generative AI technology.
 
 ### Step 8: Enter the monetization details
 

@@ -13,7 +13,10 @@
   },
   "dependencies": {
     "@adobe/gatsby-theme-aio": "^4.15.1",
+    "dotenv": "17.2.2",
+    "fs-extra": "11.3.2",
     "gatsby": "4.22.0",
+    "jszip": "3.10.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
