@@ -86,10 +86,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node v16 for Yarn v3
+      - name: Setup Node v20 for Yarn v3
         uses: actions/setup-node@v3
         with:
-          node-version: "16.15.0" # Current LTS version
+          node-version: "20.19.5" # Current LTS version
 
       - name: Enable Corepack for Yarn v3
         run: corepack enable
@@ -125,7 +125,7 @@ jobs:
       - name: Build site
         uses: borales/actions-yarn@v3
         with:
-          cmd: build
+          cmd: build:deploy
         env:
           PREFIX_PATHS: true # equivalent to --prefix-paths flag for 'gatsby build'
           PATH_PREFIX: ${{ needs.set-state.outputs.path_prefix }}
@@ -152,6 +152,13 @@ jobs:
           GATSBY_FEDS_PRIVACY_ID: ${{ secrets.AIO_FEDS_PRIVACY_ID }}
           GATSBY_SITE_DOMAIN_URL: https://developer-stage.adobe.com
           NODE_OPTIONS: "--max_old_space_size=8192"
+          IMS_BASE_URL: "https://ims-na1-stg1.adobelogin.com"
+          FFC_BASE_URL: "https://ffc-addon-stage.adobe.io/"
+          GATSBY_EXPRESS_URL: "https://stage.projectx.corp.adobe.com/new"
+          PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID_STAGE }}
+          PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
+          PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE_STAGE }}
+          PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
       - name: Deploy
         uses: AdobeDocs/static-website-deploy@master
         with:
@@ -190,10 +197,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node v16 for Yarn v3
+      - name: Setup Node v20 for Yarn v3
         uses: actions/setup-node@v3
         with:
-          node-version: "16.15.0" # Current LTS version
+          node-version: "20.19.5" # Current LTS version
 
       - name: Enable Corepack for Yarn v3
         run: corepack enable
@@ -229,7 +236,7 @@ jobs:
       - name: Build site
         uses: borales/actions-yarn@v3
         with:
-          cmd: build
+          cmd: build:deploy
         env:
           PREFIX_PATHS: true # equivalent to --prefix-paths flag for 'gatsby build'
           PATH_PREFIX: ${{ needs.set-state.outputs.path_prefix }}
@@ -259,6 +266,13 @@ jobs:
           GATSBY_FEDS_PRIVACY_ID: ${{ secrets.AIO_FEDS_PRIVACY_ID }}
           GATSBY_SITE_DOMAIN_URL: https://developer.adobe.com
           NODE_OPTIONS: "--max_old_space_size=8192"
+          IMS_BASE_URL: "https://ims-na1.adobelogin.com"
+          FFC_BASE_URL: "https://ffc-addon.adobe.io/"
+          GATSBY_EXPRESS_URL: "https://express.adobe.com/new"
+          PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
+          PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
+          PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
+          PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
       - name: Deploy
         uses: AdobeDocs/static-website-deploy@master
         with:

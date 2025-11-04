@@ -62,7 +62,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Version
 - Author
 - Contact information
-- Trader infromation in the publisher profile if you wish to distribute your add-ons in the EU region.
+- Trader information in the publisher profile if you wish to distribute your add-ons in the EU region.
 
 ### 3. Ensure your add-on meets legal and licensing requirements, including:
 
@@ -78,7 +78,3 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Our [Developer Brand Guidelines](../guidelines/brand_guidelines.md)
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)
 - Our [Generative AI Guidelines](../guidelines/genai/) (if you are using Generative AI)
-
-### 6. Sign the GenAI Add-on Agreement (if applicable)
-
-If your add-on uses Generative AI features, you must sign the GenAI Add-on agreement. This agreement will be sent to you via email once you submit your add-on for review. You must complete this step before your add-on can be approved for the marketplace.

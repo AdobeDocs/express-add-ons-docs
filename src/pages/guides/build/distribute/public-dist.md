@@ -177,10 +177,6 @@ The rise of Generative AI offers significant benefits for add-ons and streamline
 
 In this section, you'll have to answer a variety of questions, depending on the type of AI-based content your add-on generates, the input it accepts, whether you test the output, etc. Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe's requirements and recommendations to try add-ons that employ Generative AI technology.
 
-<InlineAlert slots="text" variant="warning"/>
-
-If your add-on uses Generative AI features, you will be required to sign the GenAI Add-on agreement after submitting your add-on for review. This agreement will be sent to you via email and must be completed before your add-on can be approved for the marketplace.
-
 ### Step 8: Enter the monetization details
 
 The **Monetization details** section allows developers to declare the payment options they support for their add-on. A selection is required for any new add-on submitted, and existing add-ons can be updated to include or change the selection. The monetization details entered can be seen in the preview of the listing (on the right) before submission, and in the add-on details once published.

@@ -3,7 +3,6 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
@@ -11,7 +10,12 @@ keywords:
   - Extensibility
   - API
   - Images
+  - Media
   - addImage
+  - ImportAddOnData
+  - Metadata
+  - MediaAttributes
+  - replaceMedia
 title: Use Images
 description: Use Images.
 contributors:
@@ -20,10 +24,10 @@ contributors:
 faq:
   questions:
     - question: "How do I add images to a document?"
-      answer: 'Call `addOnUISdk.app.document.addImage(blob, attributes)` with image blob and optional MediaAttribute.'
+      answer: 'Call `addOnUISdk.app.document.addImage(blob, attributes, importAddOnData)` with image blob and optional MediaAttributes and ImportAddOnData.'
 
     - question: "What parameters does addImage require?"
-      answer: "A Blob object is required, MediaAttribute with title and author is optional."
+      answer: "A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional."
 
     - question: "How do I get an image as a blob?"
       answer: 'Use `fetch(imageUrl).then(r => r.blob())` to convert images to blob format.'
@@ -32,7 +36,7 @@ faq:
       answer: "Yes, use relative paths from add-on root with fetch() to load local images."
 
     - question: "How do I add animated GIFs?"
-      answer: 'Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes)` instead of addImage().'
+      answer: 'Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes, importAddOnData)` instead of addImage().'
 
     - question: "Why doesn't addImage work with GIFs?"
       answer: "addImage() converts animations to static images; use addAnimatedImage() to preserve animation."
@@ -47,6 +51,9 @@ faq:
 
     - question: "Can I replace any media type with `replaceMedia()`?"
       answer: "Currently, `replaceMedia()` only accepts `BitmapImage` objects. The original media can be any type, but replacement must be a static image."
+      
+    - question: "How do I attach custom metadata to imported images?"
+      answer: "Use the optional `importAddOnData` parameter with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs."
 ---
 
 # Use Images
@@ -55,7 +62,7 @@ faq:
 
 Add-ons are hosted in an iframe within the Adobe Express UI, and can load images as `<img>` elements like any other web application. But in order to add images into an Adobe Express document, you need to use the [`addImage()`](../../../references/addonsdk/app-document.md#addimage) method of the `addOnUISdk.app.document` object.
 
-It expects a `Blob` object as the first argument, and an optional [`MediaAttribute`](../../../references/addonsdk/app-document.md#mediaattributes) object with the image's title and author.
+It expects a `Blob` object as the first argument, an optional [`MediaAttribute`](../../../references/addonsdk/app-document.md#mediaattributes) object with the image's title and author, and an optional [`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) object with custom metadata that can be retrieved later via document sandbox APIs.
 
 <InlineAlert slots="header, text" variant="info"/>
 
@@ -80,6 +87,10 @@ addOnUISdk.ready.then(async () => {
       {
         title: "Placeholder image", // 👈 Optional MediaAttributes
         author: "Adobe Developer",
+      },
+      { // 👈 Optional ImportAddOnData - metadata that persists with the image
+        nodeAddOnData: { "imageId": "placeholder_123", "category": "demo" },
+        mediaAddOnData: { "source": "external", "resolution": "600x400" }
       }
     );
   } catch (e) {
@@ -127,8 +138,13 @@ addOnUISdk.ready.then(async () => {
       // 👈
       gifImageBlob, // 👈 Blob object
       {
-        /* ... */
-      } // 👈 Optional MediaAttributes
+        title: "Animated GIF",
+        author: "GIF Creator"
+      }, // 👈 Optional MediaAttributes
+      { // 👈 Optional ImportAddOnData
+        nodeAddOnData: { "gifId": "animated_456", "type": "animation" },
+        mediaAddOnData: { "duration": "3s", "frames": "24" }
+      }
     );
   } catch (e) {
     console.error("Failed to add the image", e);
@@ -367,11 +383,11 @@ MediaContainerNode
 
 #### Q: How do I add images to a document?
 
-**A:** Call `addOnUISdk.app.document.addImage(blob, attributes)` with image blob and optional MediaAttribute.
+**A:** Call `addOnUISdk.app.document.addImage(blob, attributes, importAddOnData)` with image blob and optional MediaAttributes and ImportAddOnData.
 
 #### Q: What parameters does addImage require?
 
-**A:** A Blob object is required, MediaAttribute with title and author is optional.
+**A:** A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional.
 
 #### Q: How do I get an image as a blob?
 
@@ -383,7 +399,7 @@ MediaContainerNode
 
 #### Q: How do I add animated GIFs?
 
-**A:** Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes)` instead of addImage().
+**A:** Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes, importAddOnData)` instead of addImage().
 
 #### Q: Why doesn't addImage work with GIFs?
 
@@ -404,3 +420,7 @@ MediaContainerNode
 #### Q: Can I replace any media type with `replaceMedia()`?
 
 **A:** Currently, `replaceMedia()` only accepts `BitmapImage` objects. The original media can be any type, but replacement must be a static image.
+
+#### Q: How do I attach custom metadata to imported images?
+
+**A:** Use the optional `importAddOnData` parameter with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs.
