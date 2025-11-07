@@ -252,7 +252,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Updated
 
-- The [Code Playground](./code_playground.md) documentation has been updated with details about the new [Script Mode](./code_playground.md#how-to-use-script-mode) and [Local Persistence](./code_playground.md#saving-your-work) features, as well as additional details around existing features. The updates include:
+- The [Code Playground](./code_playground.md) documentation has been updated with details about the new [Script Mode](./code_playground_script_mode.md#how-to-use-script-mode) and [Local Persistence](./code_playground_workflow.md#saving-your-work) features, as well as additional details around existing features. The updates include:
 
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.

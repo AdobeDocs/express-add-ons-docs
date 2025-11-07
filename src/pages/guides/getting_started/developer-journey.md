@@ -87,7 +87,7 @@ You need to tick a few boxes in the application in order to enable it, as the an
 
 ![Enable Developer Settings](./img/enable-playground.gif)
 
-Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code_playground.md#script-mode) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code_playground.md) for more details.
+Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code_playground_script_mode.md) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code_playground.md) for more details.
 
 [![Code Playground](./img/playground.png)](./code_playground.md)
 
