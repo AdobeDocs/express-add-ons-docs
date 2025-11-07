@@ -76,7 +76,7 @@ Before using Code Playground, ensure you have:
 
    ![Adobe Express Code Playground Open](./img/playground-open.png)
 
-#### Step 1: Enable Add-on Development Mode (if needed)
+#### Step 2: Enable Add-on Development Mode (if needed)
 
 If this is your first time using Code Playground or any add-on development features, you'll need to enable Add-on Development mode. See the [Enable Add-on Development Mode](./hello-world.md#enable-add-on-development-mode) section in the Hello, World! guide for detailed instructions.
 
