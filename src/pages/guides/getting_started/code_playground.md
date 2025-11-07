@@ -64,11 +64,7 @@ Before using Code Playground, ensure you have:
 
 ### How to Access Code Playground
 
-#### Step 1: Enable Add-on Development Mode (if needed)
-
-If this is your first time using Code Playground or any add-on development features, you'll need to enable Add-on Development mode. See the [Enable Add-on Development Mode](./hello-world.md#enable-add-on-development-mode) section in the Hello, World! guide for detailed instructions.
-
-#### Step 2: Open Code Playground
+#### Step 1: Open Code Playground
 
 1. With any document open in Adobe Express, click the **Add-ons** button in the left rail
 2. Select the **Your add-ons** tab
@@ -79,6 +75,10 @@ If this is your first time using Code Playground or any add-on development featu
 4. Once enabled, the playground window will open, allowing you to begin coding immediately:
 
    ![Adobe Express Code Playground Open](./img/playground-open.png)
+
+#### Step 1: Enable Add-on Development Mode (if needed)
+
+If this is your first time using Code Playground or any add-on development features, you'll need to enable Add-on Development mode. See the [Enable Add-on Development Mode](./hello-world.md#enable-add-on-development-mode) section in the Hello, World! guide for detailed instructions.
 
 ## Development Modes
 
