@@ -98,6 +98,12 @@ Done. Your add-on 'hello-world' is hosted on: https://localhost:5241/
 You can now sideload your add-on by enabling the Developer Mode in the Add-ons panel.
 ```
 
+<InlineAlert slots="header,text1,text2" variant="success"/>
+
+#### Quick Setup Tip
+
+**Look for the Development Mode activation URL in the terminal output above!** The CLI provides a direct link to enable Developer Mode in Adobe Express. Click this URL to skip manually navigating through Settings. If you don't see it or prefer to enable it manually, follow the steps below.
+
 ## Step 3: Enable add-on development mode (first-time only)
 
 - Navigate to [Adobe Express](https://express.adobe.com/).

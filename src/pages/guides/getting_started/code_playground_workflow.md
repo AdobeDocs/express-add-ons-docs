@@ -92,6 +92,10 @@ There are two ways to resume working on your last saved session:
 
 ![Code Playground Add-on Mode](./img/playground-on.png)
 
+<InlineAlert slots="text1" variant="info"/>
+
+If you haven't enabled Add-on Development mode yet, you'll be prompted to do so. See the [Getting Started section](./code_playground.md#step-2-enable-add-on-development-mode-if-needed) for details on enabling Development Mode.
+
 #### Via the Your add-ons Page
 
 1. The **Your add-ons** page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session or create a new one
