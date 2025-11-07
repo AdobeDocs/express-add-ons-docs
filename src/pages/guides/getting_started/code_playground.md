@@ -64,7 +64,11 @@ Before using Code Playground, ensure you have:
 
 ### How to Access Code Playground
 
-#### Step 1: Open Code Playground
+#### Step 1: Enable Add-on Development Mode (if needed)
+
+If this is your first time using Code Playground or any add-on development features, you'll need to enable Add-on Development mode. See the [Enable Add-on Development Mode](./hello-world.md#enable-add-on-development-mode) section in the Hello, World! guide for detailed instructions.
+
+#### Step 2: Open Code Playground
 
 1. With any document open in Adobe Express, click the **Add-ons** button in the left rail
 2. Select the **Your add-ons** tab
@@ -75,22 +79,6 @@ Before using Code Playground, ensure you have:
 4. Once enabled, the playground window will open, allowing you to begin coding immediately:
 
    ![Adobe Express Code Playground Open](./img/playground-open.png)
-
-#### Step 2: Enable Add-on Development Mode (if needed)
-
-If this is your first time using Code Playground or any add-on development features, you may need to enable Add-on Development mode:
-
-1. Click the avatar icon in the top right corner of Adobe Express, then the gear icon to open the "Settings"
-2. Click the **Developer Terms of Use** link to review the terms (opens in a new tab)
-3. Click **Accept and Enable** to enable **Add-on Development**
-
-![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
-
-<InlineAlert slots="header,text1,text2" variant="info"/>
-
-#### Quick Access to Development Mode
-
-When using the [CLI to build add-ons](./quickstart.md), the terminal output includes a direct URL to activate Development Mode. Look for this URL in the terminal after running `npm run start` to quickly enable development features without manually navigating to Settings.
 
 ## Development Modes
 

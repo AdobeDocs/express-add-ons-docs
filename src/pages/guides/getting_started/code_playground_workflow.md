@@ -94,7 +94,7 @@ There are two ways to resume working on your last saved session:
 
 <InlineAlert slots="text1" variant="info"/>
 
-If you haven't enabled Add-on Development mode yet, you'll be prompted to do so. See the [Getting Started section](./code_playground.md#step-2-enable-add-on-development-mode-if-needed) for details on enabling Development Mode.
+If you haven't enabled Add-on Development mode yet, you'll be prompted to do so. See [Enable Add-on Development Mode](./hello-world.md#enable-add-on-development-mode) for detailed instructions.
 
 #### Via the Your add-ons Page
 

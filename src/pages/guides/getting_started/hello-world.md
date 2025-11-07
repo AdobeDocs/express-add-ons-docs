@@ -46,26 +46,28 @@ The [Command Line Interface (CLI)](#command-line-interface-cli) path will teach 
 - Basic familiarity with JavaScript, HTML and CSS.
 - Node.js version 18 or higher (optional, only for the CLI track).
 
-### Add-on Development mode
+### Enable Add-on Development Mode
 
-A pre-requisite for both tracks is to have enabled the **Add-on Development** mode. Open Adobe Express in the browser and see the following animation for instructions, or expand the details below for a step-by-step guide.
+Before you can build add-ons, you need to enable Add-on Development mode in Adobe Express:
+
+1. Open Adobe Express in your browser and click the **avatar icon** in the top right corner
+2. Click the gear icon to open **Settings**
+3. Click the **Developer Terms of Use** link to review the terms (opens in a new tab)
+4. Click **Accept and Enable** to enable **Add-on Development**
 
 ![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
-<details>
-  <summary>Click to view a list of steps to enable the Development Mode</summary>
-  <ol>
-    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-</details>
+<InlineAlert slots="header,text1" variant="info"/>
+
+#### Quick Access via CLI
+
+When using the CLI (see below), look for the **Development Mode activation URL** in your terminal output after running `npm run start`. Click this link to quickly enable development features without manually navigating to Settings.
 
 ## Code Playground
 
-We have a [dedicated page](./code_playground.md) for the Code Playground, which you can always refer to for more detailed information. Here, we'll focus on the basics to get you started, linking to the relevant sections of the full documentation and including screenshots to help you navigate the interface.
+The [Code Playground](./code_playground.md) is a browser-based editor built right into Adobe Express. No installation required—just open it and start coding.
 
-### 1. Launch it
+### 1. Launch the Playground
 
 To launch the Code Playground, see the following animation or expand the details below for a step-by-step guide.
 
@@ -81,12 +83,12 @@ To launch the Code Playground, see the following animation or expand the details
   </ol>
 </details>
 
-### 2. Run your first script
+### 2. Run Your First Script
 
-The Code Playground allows you to operate in [two modalities](./code_playground.md#choose-your-development-mode):
+The Code Playground allows you to operate in [two modalities](./code_playground.md#development-modes):
 
-- **Script**: directly runs code that operates on the current document.
-- **Add-on**: creates an add-on, with a custom User Interface and logic, that is able to run code on the current document.
+- **Script Mode**: Directly runs code that operates on the current document
+- **Add-on Mode**: Creates an add-on with a custom User Interface and logic that can run code on the current document
 
 Make sure you've selected the **Script** tab, which is pre-filled with a sample script:
 
@@ -94,7 +96,7 @@ Make sure you've selected the **Script** tab, which is pre-filled with a sample 
 
 Click the **Run Code** button on the Playground's toolbar to see the rectangle added to the document. Not much, but it's a start!
 
-### 3. Edit the script
+### 3. Edit the Script
 
 Feel free to tweak the script to change the properties in the `color` object, or the `translation` and Rectangle dimensions; click **Run Code** again to see what happens.
 
@@ -117,9 +119,9 @@ console.log("Text: ", textNode.fullContent.text);
 
 You've been using the Document Sandbox APIs, a very extensive set of APIs that let you create all sorts of objects and manipulate the Adobe Express documents. They are documented in the [SDK References](../../references/document-sandbox/index.md) and explained in detail in the [Platform Concepts](../learn/platform_concepts/document-api.md) section.
 
-### 4. Create an add-on
+### 4. Create an Add-on
 
-Click the **Add-on** tab to switch to the [Add-on mode](./code_playground.md#add-on-mode). You'll see that the Playground now shows four tabs:
+Click the **Add-on** tab to switch to the [Add-on mode](./code_playground.md#development-modes). You'll see that the Playground now shows four tabs:
 
 - `HTML`: controls the add-on's User Interface.
 - `CSS`: adds styles.
@@ -138,9 +140,9 @@ Even if the result of both the Script and Add-on modes in the Code Playground is
 
 ## Command Line Interface (CLI)
 
-The [Adobe Express add-on CLI](./local_development/dev_tooling.md#using-the-cli) allows you to create and host Adobe Express add-ons directly from your local machine. Make sure you have [enabled Add-on Development](#prerequisites) first.
+The [Adobe Express add-on CLI](./local_development/dev_tooling.md#using-the-cli) allows you to create and host Adobe Express add-ons directly from your local machine.
 
-### 1. Scaffold a new project
+### 1. Scaffold a New Project
 
 Open your Terminal and run the following command:
 
@@ -152,7 +154,7 @@ This command will scaffold a new add-on based on "pure" JavaScript with Document
 
 - `npx` is a package runner that can execute packages without installing them explicitly.
 - `@adobe/create-ccweb-add-on` is the CLI maintained by Adobe to scaffold a new add-on.
-- `hello-world` is the name of the add-on projectyou are creating.
+- `hello-world` is the name of the add-on project you are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
 The [Templates section](./local_development/dev_tooling.md#templates) on the **Development Tools** page provides a list of available options.
@@ -180,7 +182,7 @@ The above may prove useful when updated versions of the CLI are released. If you
 npx @adobe/ccweb-add-on-scripts start --help
 ```
 
-### 2. Build & start your add-on
+### 2. Build & Start Your Add-on
 
 Next, execute the following commands to change into the newly created **hello-world** add-on folder, `build` the add-on, and `start` the add-on in a local server:
 
@@ -196,9 +198,11 @@ The `start` script will display messages like the following after it executes:
 Done. Your add-on 'hello-world' is hosted on: https://localhost:5241/
 ```
 
+Look for the **Development Mode activation URL** in the terminal output—click it to quickly enable development features without manually navigating to Settings.
+
 The add-on's code is now running on a local server; you must tell Adobe Express to load it.
 
-### 3. Load & run your add-on
+### 3. Load & Run Your Add-on
 
 To _sideload_ your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
 
@@ -231,7 +235,7 @@ If you click the **Create Rectangle** button, you'll see the rectangle being add
 
 ![Create Rectangle](./img/playground-run-addon.png)
 
-### 4. Edit your add-on's code
+### 4. Edit Your Add-on's Code
 
 While your add-on is still loaded and running, open the `src/index.html` file and update the **"Create Rectangle"** string in the `<button>` to something else, like **Add Text**. In the `src/sandbox/code.js` replace the body of the `createRectangle()` function with the following, borrowed from the [Use Text](../learn/how_to/use_text.md) how-to guide:
 
