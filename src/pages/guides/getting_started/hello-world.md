@@ -61,7 +61,7 @@ Before you can build add-ons, you need to enable Add-on Development mode in Adob
 
 #### Quick Access via CLI
 
-When using the CLI (see below), look for the **Development Mode activation URL** in your terminal output after running `npm run start`. Click this link to quickly enable development features without manually navigating to Settings.
+When using the CLI ([see below](#command-line-interface-cli)), look for the **Development Mode activation URL** in your terminal output after running `npm run start`. Click this link to quickly enable development features without manually navigating to Settings.
 
 ## Code Playground
 
