@@ -57,7 +57,7 @@ Before you can build add-ons, you need to enable Add-on Development mode in Adob
 
 ![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
-<InlineAlert slots="header,text1" variant="info"/>
+<InlineAlert slots="header,text1" variant="success"/>
 
 #### Quick Access via CLI
 
