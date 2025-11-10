@@ -133,9 +133,7 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
 Starting with Chrome version 142 (released in early 2025), Chrome introduced a new [Local Network Access restriction](https://chromestatus.com/feature/5152728072060928) that affects local add-on development. When you load Adobe Express while developing locally (at `https://localhost:5241`), Chrome will display a permission prompt:
 
-```text
-new.express.adobe.com wants to "Look for and connect to any device on your local network"
-```
+***"new.express.adobe.com wants to "Look for and connect to any device on your local network".***
 
 **You must click "Allow" to continue local add-on development.** If you accidentally clicked "Block", you can reset the permission by:
 
@@ -152,9 +150,9 @@ new.express.adobe.com wants to "Look for and connect to any device on your local
 2. Set to **Disabled**
 3. Restart Chrome
 
-Note: Option 2 applies to ALL websites, not just Adobe Express, so it is not recommended for general use.
+**Note:** Option 2 applies to ALL websites, not just Adobe Express, so it is not recommended for general use.
 
-For more details and a video walkthrough, see the [Known Issues & Limitations](../getting_started/local_development/known_issues_limitations.md#chrome-local-network-access-restriction) guide.
+For more details, see the [Known Issues & Limitations](../getting_started/local_development/known_issues_limitations.md#chrome-local-network-access-restriction) guide.
 
 ### How do I save the state of my add-on?
 

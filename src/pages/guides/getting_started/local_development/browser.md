@@ -22,10 +22,6 @@ contributors:
 
 During your development, it's important to be able to debug your code and troubleshoot any issues that may arise. Fortunately, most modern browsers come with built-in developer tools that can help you do just that.
 
-<InlineAlert slots="text" variant="info"/>
-
-**Chrome Users:** If you're using Chrome version 142 or later, you may encounter a "Local Network Access" permission prompt when loading your local add-on. Make sure to click "Allow" to continue development. See the [Known Issues & Limitations](./known_issues_limitations.md#chrome-local-network-access-restriction) guide for more details.
-
 <div style="display: flex; justify-content: center;">
     <iframe width="779" height="438" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
@@ -38,6 +34,10 @@ Some of the key debugging features available in the browser developer tools incl
 - **Debugger** - The debugger allows you to set breakpoints in your code and step through it line by line, so you can see exactly what's happening at each stage of execution.
 - **Network Monitor** - The network monitor allows you to monitor the network requests made by your add-on, so you can see how it's interacting with other resources and services.
 - **Profiler** - The profiler allows you to analyze the performance of your add-on and identify areas where it may be slow or inefficient.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Chrome Users:** If you're using Chrome version 142 or later, you may encounter a "Local Network Access" permission prompt when loading your local add-on. Make sure to click "Allow" to continue development. See the [Known Issues & Limitations](./known_issues_limitations.md#chrome-local-network-access-restriction) guide for more details.
 
 ### Debugging Steps
 
