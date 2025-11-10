@@ -67,7 +67,9 @@ This solution applies to **ALL websites**, not just Adobe Express, so it is not 
 
 For a visual guide on how to reset the permissions, see the video below:
 
-![Allow Local Network Connections](./img/allow-local-network-connections.mov)
+<Media slots="video"/>
+
+</videos/allow-local-network-connections.mov>
 
 ## Supported Browsers
 
