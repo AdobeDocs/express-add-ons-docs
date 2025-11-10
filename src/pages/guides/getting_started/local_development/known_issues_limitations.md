@@ -31,7 +31,7 @@ contributors:
 
 When developing Adobe Express add-ons locally (typically at `https://localhost:5241` with a local SSL certificate), Chrome will now display a permission prompt:
 
-```
+```text
 new.express.adobe.com wants to "Look for and connect to any device on your local network"
 ```
 

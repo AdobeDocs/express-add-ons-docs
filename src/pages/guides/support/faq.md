@@ -133,7 +133,7 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
 Starting with Chrome version 142 (released in early 2025), Chrome introduced a new [Local Network Access restriction](https://chromestatus.com/feature/5152728072060928) that affects local add-on development. When you load Adobe Express while developing locally (at `https://localhost:5241`), Chrome will display a permission prompt:
 
-```
+```text
 new.express.adobe.com wants to "Look for and connect to any device on your local network"
 ```
 
