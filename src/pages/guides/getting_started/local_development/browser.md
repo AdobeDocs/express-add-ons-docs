@@ -22,6 +22,10 @@ contributors:
 
 During your development, it's important to be able to debug your code and troubleshoot any issues that may arise. Fortunately, most modern browsers come with built-in developer tools that can help you do just that.
 
+<InlineAlert slots="text" variant="info"/>
+
+**Chrome Users:** If you're using Chrome version 142 or later, you may encounter a "Local Network Access" permission prompt when loading your local add-on. Make sure to click "Allow" to continue development. See the [Known Issues & Limitations](./known_issues_limitations.md#chrome-local-network-access-restriction) guide for more details.
+
 <div style="display: flex; justify-content: center;">
     <iframe width="779" height="438" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
