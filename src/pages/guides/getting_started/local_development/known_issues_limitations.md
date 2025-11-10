@@ -63,14 +63,6 @@ This solution applies to **ALL websites**, not just Adobe Express, so it is not 
 2. Set **Local Network Access Checks** to **Disabled**
 3. Restart Chrome
 
-### Video Walkthrough
-
-For a visual guide on how to reset the permissions, see the video below:
-
-<Media slots="video"/>
-
-</videos/allow-local-network-connections.mov>
-
 ## Supported Browsers
 
 Adobe Express add-ons support the latest versions of Chrome, Edge, and Safari. See the [Adobe Express System requirements](https://helpx.adobe.com/express/system-requirements.html) for complete details.
