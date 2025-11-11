@@ -25,6 +25,14 @@ contributors:
 
 # Changelog
 
+## 2025-11-10
+
+### Added
+
+- New [Known Issues & Limitations](../guides/getting_started/local_development/known_issues_limitations.md#chrome-local-network-access-restriction) documentation for Chrome Local Network Access restriction (Chrome 142+) that affects local add-on development
+- New [FAQ entry](../guides/support/faq.md#chrome-is-blocking-my-local-add-on-development-with-a-local-network-access-permission-prompt-what-should-i-do) with troubleshooting steps for the Chrome Local Network Access permission prompt
+- Added informational alert in the [Browser debugging guide](../guides/getting_started/local_development/browser.md) to notify Chrome users about the Local Network Access permission requirement
+
 ## 2025-10-08
 
 ### Added
