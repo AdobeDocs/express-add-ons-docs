@@ -31,9 +31,7 @@ contributors:
 
 When developing Adobe Express add-ons locally (typically at `https://localhost:5241` with a local SSL certificate), Chrome will now display a permission prompt:
 
-```text
-new.express.adobe.com wants to "Look for and connect to any device on your local network"
-```
+**new.express.adobe.com wants to "Look for and connect to any device on your local network".**
 
 **If you click "Block" instead of "Allow", you will not be able to side-load your local in-development add-on in Adobe Express.** The Add-on CLI cannot bypass this browser-level restriction.
 
