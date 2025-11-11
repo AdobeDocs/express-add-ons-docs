@@ -22,9 +22,9 @@ contributors:
 
 During your development, it's important to be able to debug your code and troubleshoot any issues that may arise. Fortunately, most modern browsers come with built-in developer tools that can help you do just that.
 
-<!-- <div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center;">
     <iframe width="779" height="438" src="https://www.youtube.com/embed/XefQbfVOqto?si=VSxAEXYo-X2_pXMi" title="Testing and Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div> -->
+</div>
 
 ## Browser Developer Tools
 
