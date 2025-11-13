@@ -170,7 +170,7 @@ Compared to the previous examples, replacing media is a method that belongs to t
 
 Because the Document Sandbox doesn't have access to the `fetch()` function, in the following example the Bitmap data is fetched on the iframe side, and passed to the Document Sandbox to be replaced using the [Communication API](./tutorials/stats-addon.md).
 
-You can copy and paste the following code into a [Code Playground](../../getting_started/code_playground.md) session to try it out.
+You can copy and paste the following code into a [Code Playground](../../getting_started/code-playground.md) session to try it out.
 
 <CodeBlock slots="heading, code" repeat="4" languages="HTML, CSS, iFrame JS, Document JS"/>
 
