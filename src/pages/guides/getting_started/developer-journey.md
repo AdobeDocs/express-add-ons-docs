@@ -74,7 +74,7 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 
 ## Learn
 
-The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code_playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
+The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
 <br/><br/><div style="display: flex; justify-content: center;">
 
@@ -87,9 +87,9 @@ You need to tick a few boxes in the application in order to enable it, as the an
 
 ![Enable Developer Settings](./img/enable-playground.gif)
 
-Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code_playground_script_mode.md) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code_playground.md) for more details.
+Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code-playground-script-mode.md) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code-playground.md) for more details.
 
-[![Code Playground](./img/playground.png)](./code_playground.md)
+[![Code Playground](./img/playground.png)](./code-playground.md)
 
 ### Explore the How-to Guides
 

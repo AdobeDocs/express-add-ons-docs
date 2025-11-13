@@ -553,27 +553,27 @@ module.exports = {
           },
           {
             title: "Code Playground",
-            path: "guides/getting_started/code_playground.md",
+            path: "guides/getting_started/code-playground.md",
             pages: [
               {
                 title: "Overview",
-                path: "guides/getting_started/code_playground.md",
+                path: "guides/getting_started/code-playground.md",
               },
               {
                 title: "Script Mode",
-                path: "guides/getting_started/code_playground_script_mode.md",
+                path: "guides/getting_started/code-playground-script-mode.md",
               },
               {
                 title: "Add-on Mode",
-                path: "guides/getting_started/code_playground_addon_mode.md",
+                path: "guides/getting_started/code-playground-addon-mode.md",
               },
               {
                 title: "Workflow & Productivity",
-                path: "guides/getting_started/code_playground_workflow.md",
+                path: "guides/getting_started/code-playground-workflow.md",
               },
               {
                 title: "Troubleshooting",
-                path: "guides/getting_started/code_playground_troubleshooting.md",
+                path: "guides/getting_started/code-playground-troubleshooting.md",
               },
             ],
           },

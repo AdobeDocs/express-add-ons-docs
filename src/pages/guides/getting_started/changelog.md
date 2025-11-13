@@ -27,7 +27,7 @@ contributors:
 ### Added
 
 - **Experimental** [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight) method - Proportional height scaling for all node types
-- **Experimental** [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth) method - Proportional width scaling for all node types  
+- **Experimental** [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth) method - Proportional width scaling for all node types
 - **Experimental** [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetocover) method - Resize nodes to cover specified dimensions
 - **Experimental** [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetofitwithin) method - Resize nodes to fit within specified dimensions
 - **Experimental** [`appendText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#appendtext) method - Append text to existing content
@@ -133,7 +133,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 ### Added
 
-- The [Code Playground](./code_playground.md) now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.
+- The [Code Playground](./code-playground.md) now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.
 
 ## 2025-07-27
 
@@ -252,7 +252,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Updated
 
-- The [Code Playground](./code_playground.md) documentation has been updated with details about the new [Script Mode](./code_playground_script_mode.md#how-to-use-script-mode) and [Local Persistence](./code_playground_workflow.md#saving-your-work) features, as well as additional details around existing features. The updates include:
+- The [Code Playground](./code-playground.md) documentation has been updated with details about the new [Script Mode](./code-playground-script-mode.md#how-to-use-script-mode) and [Local Persistence](./code-playground-workflow.md#saving-your-work) features, as well as additional details around existing features. The updates include:
 
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.

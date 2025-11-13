@@ -230,7 +230,7 @@ When reporting issues, please include:
 
 ## Next Steps
 
-- **[Script Mode Guide](./code_playground_script_mode.md)**: Learn how to use Script Mode effectively
-- **[Add-on Mode Guide](./code_playground_addon_mode.md)**: Build complete add-ons with UI
-- **[Workflow & Productivity](./code_playground_workflow.md)**: Master keyboard shortcuts and session management
+- **[Script Mode Guide](./code-playground-script-mode.md)**: Learn how to use Script Mode effectively
+- **[Add-on Mode Guide](./code-playground-addon-mode.md)**: Build complete add-ons with UI
+- **[Workflow & Productivity](./code-playground-workflow.md)**: Master keyboard shortcuts and session management
 - **[Local Development](../getting_started/local_development/index.md)**: Set up a full development environment

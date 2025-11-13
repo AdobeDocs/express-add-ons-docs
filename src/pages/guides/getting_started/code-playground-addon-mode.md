@@ -135,11 +135,11 @@ This environment corresponds to the code you would typically write in your `inde
 // Wait for the add-on UI SDK to be ready
 addOnUISdk.ready.then(() => {
   console.log('Add-on UI SDK is ready');
-  
+
   // Get references to DOM elements
   const button = document.getElementById('myButton');
   const input = document.getElementById('myInput');
-  
+
   // Add event listeners
   button.addEventListener('click', () => {
     const text = input.value;
@@ -184,10 +184,10 @@ async function addTextToDocument(textContent) {
       fontSize: 24,
       fontFamily: 'Arial'
     });
-    
+
     // Add it to the document
     editor.context.insertNode(textNode);
-    
+
     console.log('Text added to document');
   } catch (error) {
     console.error('Error adding text:', error);
@@ -197,13 +197,13 @@ async function addTextToDocument(textContent) {
 
 ## Key Differences from Script Mode
 
-| Feature | Script Mode | Add-on Mode |
-|---------|-------------|-------------|
-| **Global Await** | Yes | No - must use async functions |
-| **Automatic Imports** | Yes | No - must import manually |
-| **UI Building** | No | Yes - full HTML/CSS/JS |
-| **Environment** | Document Sandbox only | Both iframe and Document Sandbox |
-| **API Access** | Document APIs only | Document APIs + Add-on UI SDK |
+| Feature               | Script Mode           | Add-on Mode                      |
+| --------------------- | --------------------- | -------------------------------- |
+| **Global Await**      | Yes                   | No - must use async functions    |
+| **Automatic Imports** | Yes                   | No - must import manually        |
+| **UI Building**       | No                    | Yes - full HTML/CSS/JS           |
+| **Environment**       | Document Sandbox only | Both iframe and Document Sandbox |
+| **API Access**        | Document APIs only    | Document APIs + Add-on UI SDK    |
 
 ## Best Practices
 
@@ -239,7 +239,7 @@ If you've already developed functionality in Script Mode:
 
 ## Next Steps
 
-- **[Workflow & Productivity](./code_playground_workflow.md)**: Learn keyboard shortcuts and session management
-- **[Troubleshooting](./code_playground_troubleshooting.md)**: Get help with common issues
+- **[Workflow & Productivity](./code-playground-workflow.md)**: Learn keyboard shortcuts and session management
+- **[Troubleshooting](./code-playground-troubleshooting.md)**: Get help with common issues
 - **[API References](../../references/index.md)**: Learn about the Document APIs and Add-on SDK
 - **[How-To Guides](../learn/how_to/index.md)**: Master specific techniques and best practices

@@ -96,11 +96,11 @@ Script mode automatically imports the `express-document-sdk` modules, so you don
 
 ### No UI Building
 
-Script mode is focused on Document API interactions and does not support building a user interface. If you want to create a UI, switch to [Add-on Mode](./code_playground_addon_mode.md).
+Script mode is focused on Document API interactions and does not support building a user interface. If you want to create a UI, switch to [Add-on Mode](./code-playground-addon-mode.md).
 
 <InlineAlert slots="text" variant="info"/>
 
-Once you switch to the [Add-on Mode](./code_playground_addon_mode.md) or to your local add-on development environment, you will need to make sure to handle your `async` functions and `import` statements manually.
+Once you switch to the [Add-on Mode](./code-playground-addon-mode.md) or to your local add-on development environment, you will need to make sure to handle your `async` functions and `import` statements manually.
 
 ## Learning Resources
 
@@ -119,7 +119,7 @@ Head over to our [How-to guides](../learn/how_to/index.md) to see some examples 
 
 ## Transitioning to Add-on Mode
 
-Once you've tested your code in Script mode, you can easily transition it into [Add-on Mode](./code_playground_addon_mode.md) to build a user interface around your functionality:
+Once you've tested your code in Script mode, you can easily transition it into [Add-on Mode](./code-playground-addon-mode.md) to build a user interface around your functionality:
 
 1. Use the **Copy** button in the right corner to quickly copy your code to the clipboard
 2. Click the **Add-on** button to enter Add-on Mode
@@ -129,6 +129,6 @@ Once you've tested your code in Script mode, you can easily transition it into [
 
 ## Next Steps
 
-- **[Add-on Mode Guide](./code_playground_addon_mode.md)**: Learn how to build complete add-ons with UI
-- **[Workflow & Productivity](./code_playground_workflow.md)**: Master keyboard shortcuts and session management
-- **[Troubleshooting](./code_playground_troubleshooting.md)**: Get help with common issues
+- **[Add-on Mode Guide](./code-playground-addon-mode.md)**: Learn how to build complete add-ons with UI
+- **[Workflow & Productivity](./code-playground-workflow.md)**: Master keyboard shortcuts and session management
+- **[Troubleshooting](./code-playground-troubleshooting.md)**: Get help with common issues

@@ -114,10 +114,10 @@ The playground offers two distinct development modes to suit different needs:
 
 ## Quick Start Guides
 
-- **[Script Mode Guide](./code_playground_script_mode.md)**: Learn how to use Script Mode for quick document manipulation
-- **[Add-on Mode Guide](./code_playground_addon_mode.md)**: Build complete add-ons with UI and functionality
-- **[Workflow & Productivity](./code_playground_workflow.md)**: Master keyboard shortcuts, saving, and session management
-- **[Troubleshooting](./code_playground_troubleshooting.md)**: Get help with common issues and FAQs
+- **[Script Mode Guide](./code-playground-script-mode.md)**: Learn how to use Script Mode for quick document manipulation
+- **[Add-on Mode Guide](./code-playground-addon-mode.md)**: Build complete add-ons with UI and functionality
+- **[Workflow & Productivity](./code-playground-workflow.md)**: Master keyboard shortcuts, saving, and session management
+- **[Troubleshooting](./code-playground-troubleshooting.md)**: Get help with common issues and FAQs
 
 ## Next Steps
 

@@ -65,7 +65,7 @@ When using the CLI ([see below](#command-line-interface-cli)), look for the **De
 
 ## Code Playground
 
-The [Code Playground](./code_playground.md) is a browser-based editor built right into Adobe Express. No installation required—just open it and start coding.
+The [Code Playground](./code-playground.md) is a browser-based editor built right into Adobe Express. No installation required—just open it and start coding.
 
 ### 1. Launch the Playground
 
@@ -85,7 +85,7 @@ To launch the Code Playground, see the following animation or expand the details
 
 ### 2. Run Your First Script
 
-The Code Playground allows you to operate in [two modalities](./code_playground.md#development-modes):
+The Code Playground allows you to operate in [two modalities](./code-playground.md#development-modes):
 
 - **Script Mode**: Directly runs code that operates on the current document
 - **Add-on Mode**: Creates an add-on with a custom User Interface and logic that can run code on the current document
@@ -121,7 +121,7 @@ You've been using the Document Sandbox APIs, a very extensive set of APIs that l
 
 ### 4. Create an Add-on
 
-Click the **Add-on** tab to switch to the [Add-on mode](./code_playground.md#development-modes). You'll see that the Playground now shows four tabs:
+Click the **Add-on** tab to switch to the [Add-on mode](./code-playground.md#development-modes). You'll see that the Playground now shows four tabs:
 
 - `HTML`: controls the add-on's User Interface.
 - `CSS`: adds styles.
@@ -281,6 +281,6 @@ Any changes to the `manifest.json` will _require a manual reload of your add-on_
 
 Congratulations! You've completed this Hello, World! guide and run your first add-on!
 
-Next, check out the [Code Playground](./code_playground.md) page to discover all its features, and read the [How To Guides](../learn/how_to/index.md) to familiarise with the APIs and plug & play with code snippets. If you've liked the CLI track, in the [Local Development](./local_development/index.md) section you can find more details and debugging instructions.
+Next, check out the [Code Playground](./code-playground.md) page to discover all its features, and read the [How To Guides](../learn/how_to/index.md) to familiarise with the APIs and plug & play with code snippets. If you've liked the CLI track, in the [Local Development](./local_development/index.md) section you can find more details and debugging instructions.
 
 When you feel comfortable, you can dive into the [Complete Projects](../learn/how_to/tutorials/index.md), where we'll help you build fully-working add-ons from the ground up—the best way to learn is by doing! We also have an extensive collection of [code samples](../learn/samples.md), that are a great resource to help you get started building your own add-ons.

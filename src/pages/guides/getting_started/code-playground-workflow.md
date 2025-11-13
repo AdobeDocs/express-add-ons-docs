@@ -187,7 +187,7 @@ You can run your add-on folder as a local add-on project in your CLI by followin
 
 ## Next Steps
 
-- **[Script Mode Guide](./code_playground_script_mode.md)**: Learn how to use Script Mode effectively
-- **[Add-on Mode Guide](./code_playground_addon_mode.md)**: Build complete add-ons with UI
-- **[Troubleshooting](./code_playground_troubleshooting.md)**: Get help with common issues
+- **[Script Mode Guide](./code-playground-script-mode.md)**: Learn how to use Script Mode effectively
+- **[Add-on Mode Guide](./code-playground-addon-mode.md)**: Build complete add-ons with UI
+- **[Troubleshooting](./code-playground-troubleshooting.md)**: Get help with common issues
 - **[Local Development](../getting_started/local_development/index.md)**: Set up a full development environment
