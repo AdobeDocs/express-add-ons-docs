@@ -564,6 +564,10 @@ module.exports = {
                 path: "guides/getting_started/local_development/dev_tooling.md",
               },
               {
+                title: "Adobe Express Add-on MCP Server (Beta)",
+                path: "guides/getting_started/local_development/mcp_server.md",
+              },
+              {
                 title: "Browser debugging",
                 path: "guides/getting_started/local_development/browser.md",
               },
@@ -631,6 +635,16 @@ module.exports = {
                 ],
               },
               {
+                title: "Document Structure",
+                path: "guides/learn/how_to/manage_pages.md",
+                pages: [
+                  {
+                    title: "Manage Pages",
+                    path: "guides/learn/how_to/manage_pages.md",
+                  },
+                ],
+              },
+              {
                 title: "Use Design Elements",
                 path: "guides/learn/how_to/use_text.md", // change this!!
                 pages: [
@@ -669,6 +683,10 @@ module.exports = {
                   {
                     title: "Resize & Rescale Elements",
                     path: "guides/learn/how_to/resize_rescale_elements.md",
+                  },
+                  {
+                    title: "Handle Element Selection",
+                    path: "guides/learn/how_to/handle_selection.md",
                   },
                   {
                     title: "Position Elements",
@@ -763,7 +781,7 @@ module.exports = {
             path: "guides/learn/platform_concepts/context.md",
             pages: [
               {
-                title: "Add-on iframe Context",
+                title: "Add-on Iframe Context",
                 path: "guides/learn/platform_concepts/context.md",
               },
               {

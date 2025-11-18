@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Generative AI Requirements
+  - AI Disclosure
+  - Content Generation
+  - AI Compliance
+  - Legal Requirements
+  - Content Filtering
+  - AI Ethics
+  - Terms of Use
+title: Generative AI Requirements
+description: Required standards for Adobe Express add-ons using generative AI technology including disclosure requirements, content filtering, and legal compliance.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 ## Listing requirements
 
 Your add-on's listing must be clear that generative AI is being used. During submission of your add-on, you'll be prompted to select if your add-on uses generative AI. If your add-on does so, in any capacity, you must answer in the affirmative. This will ensure that users are properly informated that your add-on utilized generative AI for some or all of its features.
@@ -10,7 +28,6 @@ Specifically:
 
 - Your add-on must not generate illegal content.
 - Your add-on must leverage filtering technologies and must test your add-on to ensure that illegal content is not generated.
-- Before an add-on leveraging generative AI is approved for publication, you may be asked to certify that you have read these guidelines and agree to abide by them.
 
 If your add-on is found to be generating illegal content, your add-on will be removed.
 

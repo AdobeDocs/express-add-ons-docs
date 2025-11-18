@@ -1,7 +1,3 @@
-**@express-document-sdk** • **Docs**
-
----
-
 # @express-document-sdk
 
 ## Namespaces
@@ -52,6 +48,7 @@
 -   [PageNode](classes/PageNode.md)
 -   [PathNode](classes/PathNode.md)
 -   [ReadOnlyItemList](classes/ReadOnlyItemList.md)
+-   [ReadOnlyMask](classes/ReadOnlyMask.md)
 -   [RectangleNode](classes/RectangleNode.md)
 -   [RestrictedItemList](classes/RestrictedItemList.md)
 -   [SolidColorShapeNode](classes/SolidColorShapeNode.md)
@@ -60,6 +57,7 @@
 -   [StrokeShapeNode](classes/StrokeShapeNode.md)
 -   [TextContentModel](classes/TextContentModel.md)
 -   [TextNode](classes/TextNode.md)
+-   [TextNodeContentModel](classes/TextNodeContentModel.md)
 -   [ThreadedTextNode](classes/ThreadedTextNode.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
 -   [UnknownMediaRectangleNode](classes/UnknownMediaRectangleNode.md)
@@ -73,7 +71,6 @@
 -   [AutoHeightTextLayout](interfaces/AutoHeightTextLayout.md)
 -   [AutoWidthTextLayout](interfaces/AutoWidthTextLayout.md)
 -   [BaseParagraphStyles](interfaces/BaseParagraphStyles.md)
--   [BitmapImage](interfaces/BitmapImage.md)
 -   [CharacterStyles](interfaces/CharacterStyles.md)
 -   [CharacterStylesInput](interfaces/CharacterStylesInput.md)
 -   [CharacterStylesRange](interfaces/CharacterStylesRange.md)
@@ -83,8 +80,11 @@
 -   [ContainerNode](interfaces/ContainerNode.md)
 -   [Fill](interfaces/Fill.md)
 -   [IFillableNode](interfaces/IFillableNode.md)
+-   [IMediaContainerNode](interfaces/IMediaContainerNode.md)
+-   [INodeBounds](interfaces/INodeBounds.md)
 -   [IRectangularNode](interfaces/IRectangularNode.md)
 -   [IStrokableNode](interfaces/IStrokableNode.md)
+-   [IVisualNodeBounds](interfaces/IVisualNodeBounds.md)
 -   [ListItem](interfaces/ListItem.md)
 -   [OrderedListStyleInput](interfaces/OrderedListStyleInput.md)
 -   [ParagraphStyles](interfaces/ParagraphStyles.md)
@@ -94,6 +94,7 @@
 -   [Point](interfaces/Point.md)
 -   [Rect](interfaces/Rect.md)
 -   [RectangleGeometry](interfaces/RectangleGeometry.md)
+-   [RemoveListStyleInput](interfaces/RemoveListStyleInput.md)
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
 -   [StyleRange](interfaces/StyleRange.md)
@@ -106,6 +107,7 @@
 -   [EditorEventHandler](type-aliases/EditorEventHandler.md)
 -   [EventHandlerId](type-aliases/EventHandlerId.md)
 -   [Font](type-aliases/Font.md)
+-   [ListStyleInput](type-aliases/ListStyleInput.md)
 -   [OrderedListStyle](type-aliases/OrderedListStyle.md)
 -   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)
 -   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)
@@ -121,3 +123,9 @@ Re-exports [OrderedListNumbering](namespaces/Constants/enumerations/OrderedListN
 ### ParagraphListType
 
 Re-exports [ParagraphListType](namespaces/Constants/enumerations/ParagraphListType.md)
+
+---
+
+### TextStyleSource
+
+Re-exports [TextStyleSource](namespaces/Constants/enumerations/TextStyleSource.md)

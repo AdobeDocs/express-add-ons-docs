@@ -1,3 +1,29 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Performance
+  - Optimization
+  - JavaScript Performance
+  - Asynchronous Programming
+  - Promises
+  - Async Await
+  - Callbacks
+  - Memory Management
+  - DOM Optimization
+  - Code Optimization
+  - Performance Tips
+  - Best Practices
+  - Efficient Code
+  - Performance Tuning
+  - Web Performance
+  - JavaScript Optimization
+title: Performance Tips and Techniques
+description: Learn how to optimize your Adobe Express add-ons for better performance. This guide covers JavaScript optimization, asynchronous programming, memory management, and performance best practices.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Performance Tips and Techniques
 
 This page covers a list of tips for optimizing your code to help you build high-performance add-ons.
@@ -10,6 +36,8 @@ Use asynchronous programming techniques like callbacks, promises, and async/awai
 
 **1. Asynchronous programming using callbacks**<br/>
 Callbacks are the simplest form of asynchronous programming in JavaScript. Instead of waiting for a function to complete, you pass a callback function to the function that will be called when the operation is complete.
+
+#### Example JavaScript
 
 ```js
 function fetchData(callback) {  
@@ -27,6 +55,8 @@ fetchData(function(result) {
 
 **2. Asynchronous programming using promises**<br/>
 Promises are a more powerful form of asynchronous programming that allow you to chain operations and handle errors more easily.
+
+#### Example JavaScript
 
 ```js
 function fetchData() {  
@@ -50,6 +80,8 @@ fetchData().then(function(result) {
 
 **3. Asynchronous programming using async/await**<br/>
 Async/await is a newer feature in JavaScript that allows you to write asynchronous code that looks like synchronous code. For example:
+
+#### Example JavaScript
 
 ```js
 async function fetchData() {  
@@ -164,6 +196,8 @@ Be sure to test your add-on code and measure its performance to identify areas f
 
 Use the `console.time()` and `console.timeEnd()` methods to measure the time it takes for a block of code to execute.
 
+#### Example JavaScript
+
 ```js
 console.time('myFunction');  
 myFunction();  
@@ -173,6 +207,8 @@ console.timeEnd('myFunction');
 ### `performance.now()`
 
 Use the `performance.now()` method to measure the time it takes for a block of code to execute with high precision.
+
+#### Example JavaScript
 
 ```js
 const t0 = performance.now();  

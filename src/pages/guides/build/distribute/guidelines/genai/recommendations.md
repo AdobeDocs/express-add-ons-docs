@@ -1,3 +1,21 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Generative AI Recommendations
+  - AI Best Practices
+  - User Experience
+  - Performance Optimization
+  - Content Generation
+  - AI UX Guidelines
+  - Response Times
+  - AI Feedback
+title: Generative AI Recommendations
+description: Best practices and recommendations for Adobe Express add-ons using generative AI technology to optimize user experience and performance.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Recommendations
 
 Our best practices for Generative AI add-ons

@@ -1,18 +1,19 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on SDK
-  - Express Document API
-  - Document Model Sandbox
-  - Adobe Express
   - Add-on SDK
+  - Spectrum Design System
+  - Spectrum Web Components
+  - UI Components
+  - Tutorial
   - SDK
   - JavaScript
   - Extend
   - Extensibility
   - API
-title: Great UIs using Adobe's Spectrum Design System
-description: This is an in-depth tutorial that will guide you in using Adobe's Spectrum Design System to help you build great UI's for your add-ons.
+  - Basic JavaScript
+title: Lesson 1 - Use Spectrum Web Components in a basic JavaScript add-on
+description: Learn how to configure and use Spectrum Web Components in a basic JavaScript add-on to build a bingo card generator with custom styling and interactive features.
 contributors:
   - https://github.com/hollyschinsky
 ---
@@ -45,7 +46,7 @@ npx @adobe/create-ccweb-add-on bingo-card-generator-js --template javascript
 
 If you've used the CLI prior to this, you may want to run this command to ensure you have the most up-to-date version before creating your project --> `npx clear-npx-cache`
 
-**NOTE:** You could use the CDN URL's once again to get started quickly, but since you'll want to ensure your add-on projects are performant, you will learn how to configure your local add-on project to use the specific Spectrum Web Components you'll need, instead.
+**NOTE:** You could use the CDN URL's (https://jspm.dev/@spectrum-web-components/bundle/elements.js) once again to get started quickly, but since you'll want to ensure your add-on projects are performant, you will learn how to configure your local add-on project to use the specific Spectrum Web Components you'll need, instead.
 
 If you run the project at this point (`npm run build; npm run start`), you will see a basic button displayed in the UI with custom CSS set to style it for Express, as shown below:
 
@@ -197,9 +198,9 @@ Next, you're going to need to configure your new add-on project to use webpack, 
 
 1. Install and use the [Spectrum Web Components `<sp-theme>` component](https://opensource.adobe.com/spectrum-web-components/tools/theme/), which includes the modules that provide the overall theme for the Spectrum Web Components in your UI.
 
-    `npm install @spectrum-web-components/theme@0.39.4`
+    `npm install @spectrum-web-components/theme@1.7.0`
 
-    **Note:** if you prefer to use `yarn`, you could alternatively use the command: `yarn add @spectrum-web-components/theme@0.39.4`.
+    **Note:** if you prefer to use `yarn`, you could alternatively use the command: `yarn add @spectrum-web-components/theme@1.7.0`.
 
     Notice your new component is now included in the `package.json`.
 
@@ -225,7 +226,7 @@ Next, you're going to need to configure your new add-on project to use webpack, 
 1. You can now add the `<sp-theme>` tag to your UI, but note that **you won't actually see anything visually yet**, since there are no components for it to be applied to. Open your `src/index.html` file, and add the following theme component into the `<body>` tags, configured with a `medium` scale, `light` color and `express` theme:
 
     ```html
-    <sp-theme scale="medium" color="light" theme="express">
+    <sp-theme scale="medium" color="light" system="express">
         <!-- UI content will go here -->
     </sp-theme>
     ```
@@ -256,24 +257,24 @@ Next, you're going to need to configure your new add-on project to use webpack, 
 Now you can start installing all of the Spectrum Web Components that will be used to build the UI of your add-on. These components are installed in a similar fashion to how the `<sp-theme>` component was added, with an `npm install` or `yarn add` command.
 
 ```bash
-npm install @spectrum-web-components/button@0.39.4 @spectrum-web-components/button-group@0.39.4 @spectrum-web-components/field-label@0.39.4 @spectrum-web-components/menu@0.39.4 @spectrum-web-components/picker@0.39.4 @spectrum-web-components/slider@0.39.4 @spectrum-web-components/swatch@0.39.4 @spectrum-web-components/switch@0.39.4
+npm install @spectrum-web-components/button@1.7.0 @spectrum-web-components/button-group@1.7.0 @spectrum-web-components/field-label@1.7.0 @spectrum-web-components/menu@1.7.0 @spectrum-web-components/picker@1.7.0 @spectrum-web-components/slider@1.7.0 @spectrum-web-components/swatch@1.7.0 @spectrum-web-components/switch@1.7.0
 ```
 
-**NOTE:** The above command specifies the `0.39.4` version specifically, due to an issue found with compatibility using the latest default version `0.40.3` as of this writing.
+**NOTE:** The above command specifies the `1.7.0` version specifically, which is the current stable version for Spectrum Web Components.
 
 Alternatively, you could also copy in the following block below to the `dependencies` block of your `package.json` file, and then run `npm install` to install them all at once:
 
 ```json
 "dependencies": {
-    "@spectrum-web-components/button": "0.39.4",
-    "@spectrum-web-components/button-group": "0.39.4",    
-    "@spectrum-web-components/field-label": "0.39.4",
-    "@spectrum-web-components/menu": "0.39.4",
-    "@spectrum-web-components/picker": "0.39.4",
-    "@spectrum-web-components/slider": "0.39.4",
-    "@spectrum-web-components/swatch": "0.39.4",
-    "@spectrum-web-components/switch": "0.39.4",            
-    "@spectrum-web-components/theme": "0.39.4"        
+    "@spectrum-web-components/button": "1.7.0",
+    "@spectrum-web-components/button-group": "1.7.0",    
+    "@spectrum-web-components/field-label": "1.7.0",
+    "@spectrum-web-components/menu": "1.7.0",
+    "@spectrum-web-components/picker": "1.7.0",
+    "@spectrum-web-components/slider": "1.7.0",
+    "@spectrum-web-components/swatch": "1.7.0",
+    "@spectrum-web-components/switch": "1.7.0",            
+    "@spectrum-web-components/theme": "1.7.0"        
 }
 ```
 
@@ -303,7 +304,7 @@ import '@spectrum-web-components/switch/sp-switch.js';
 Next, open the `src/index.html` file and implement the following code for the UI components within the opening and closing `<sp-theme>` block, as provided below:
 
 ```html
-<sp-theme scale="medium" color="light" theme="express">                
+<sp-theme scale="medium" color="light" system="express">                
     <div class="row gap-20"> 
         <div class="column">
             <sp-field-label for="bgColorSwatch" size="m">Background color</sp-field-label>
@@ -669,4 +670,35 @@ Once you've updated your code, your add-on should reload and you can generate a 
 
 ![Bingo add-on screenshot](../images/bingo-v1-addon.png)
 
-If you have any trouble, or don't see what you expect, see the [Troubleshooting section](./part3.md#troubleshooting-faq) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.
+## FAQ
+
+#### Q: Why do I need webpack for Spectrum Web Components?
+
+**A:** Webpack is required to properly bundle Spectrum Web Components and their dependencies. The CLI's default bundler doesn't handle the complex module structure of Spectrum Web Components, so webpack ensures all components are correctly packaged and optimized for your add-on.
+
+#### Q: What if I get version conflicts between Spectrum Web Components?
+
+**A:** All `@spectrum-web-components/*` packages must use identical versions. If you see registry errors or build failures, check your `package.json` and ensure every Spectrum Web Component package uses the same version (like `1.7.0`). Run `npm install` after updating versions.
+
+#### Q: How do I add more Spectrum Web Components to my add-on?
+
+**A:** Follow these steps:
+
+1. Install the component: `npm install @spectrum-web-components/[component-name]@1.7.0`
+2. Import it in your JavaScript: `import "@spectrum-web-components/[component-name]/sp-[component-name].js"`
+3. Use it in your HTML within the `<sp-theme>` tags
+4. Always ensure the version matches your other Spectrum Web Components
+
+#### Q: Can I use this approach with vanilla HTML/CSS instead of the CLI?
+
+**A:** While possible, it's not recommended. The CLI provides essential build tools, hot reloading, and proper bundling. For simple testing, you can use CDN links (as shown in the [quickstart](./index.md#quickstart-try-spectrum-web-components)), but production add-ons should use the CLI setup for performance and reliability.
+
+#### Q: Why do I need the hidden `<input>` elements for color pickers?
+
+**A:** Spectrum Web Components doesn't include a native color picker component. The `<sp-swatch>` displays the selected color, but clicking it triggers a hidden HTML `<input type="color">` element to show the browser's native color picker. This pattern provides the best user experience while maintaining Spectrum's visual design.
+
+#### Q: Can I customize the Spectrum Web Components styling?
+
+**A:** Yes! Use Spectrum CSS variables for layout and spacing, and component modifier variables (prefixed with `--mod-*`) for component-specific customizations. This ensures your styling remains consistent with the Spectrum design system and updates automatically if the design system changes.
+
+If you have any trouble, or don't see what you expect, see the [Troubleshooting section](./part3.md#faq--troubleshooting) of this tutorial for help. In the next lesson, we'll learn how to build the same add-on with a React and [**swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/), Spectrum Web Component wrappers for React.

@@ -62,6 +62,7 @@ contributors:
 
 - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
 - [Is `yarn` supported with the CLI, or only `npm`?](#is-yarn-supported-with-the-cli-or-only-npm)
+- [Chrome is blocking my local add-on development with a "Local Network Access" permission prompt. What should I do?](#chrome-is-blocking-my-local-add-on-development-with-a-local-network-access-permission-prompt-what-should-i-do)
 - [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
 - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
 - [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows)
@@ -83,8 +84,9 @@ contributors:
 - [How do I enable CORS for a service that blocks my add-on requests due to the origin?](#how-do-i-enable-cors-for-a-service-that-blocks-my-add-on-requests-due-to-the-origin)
 - [How do I prevent my iframe content from being blocked due to cross-origin issues?](#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues)
 - [The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?](#the-windowshowopenfilepicker-api-is-not-working-from-within-my-add-on-why-not)
-- [I’m not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
+- [I'm not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.](#im-not-able-to-load-the-add-on-in-the-browser-anymore-when-i-click-on-connect-i-get-an-error-err_cert_authority_invalid)
 - [Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?](#why-do-i-receive-a-no-access-control-allow-origin-header-is-present-on-the-requested-resource-error)
+- [What permissions are available for add-ons and how do I configure them?](#what-permissions-are-available-for-add-ons-and-how-do-i-configure-them)
 - [Is `SharedArrayBuffer` supported?](#is-sharedarraybuffer-supported)
 - [Which browsers and operating systems are currently supported?](#which-browsers-and-operating-systems-are-currently-supported)
 
@@ -126,6 +128,31 @@ npm run start -- --port 8080
 ### Is `yarn` supported with the CLI, or only `npm`?
 
 We recommend using `npm` for running the CLI scripts. Note that while there might be workarounds to get `yarn` working, we do not recommend it, or support any issues that may arise using `yarn`.
+
+### Chrome is blocking my local add-on development with a "Local Network Access" permission prompt. What should I do?
+
+Starting with Chrome version 142 (released in early 2025), Chrome introduced a new [Local Network Access restriction](https://chromestatus.com/feature/5152728072060928) that affects local add-on development. When you load Adobe Express while developing locally (at `https://localhost:5241`), Chrome will display a permission prompt:
+
+**new.express.adobe.com wants to "Look for and connect to any device on your local network".**
+
+**You must click "Allow" to continue local add-on development.** If you accidentally clicked "Block", you can reset the permission by:
+
+**Option 1: Clear site data for Adobe Express (Recommended)**
+
+1. Go to `chrome://settings/content/all`
+2. Search for `new.express.adobe.com`
+3. Click the trash icon to remove the site data
+4. Reload Adobe Express and click "Allow" when prompted
+
+**Option 2: Disable Local Network Access Checks (Not Recommended)**
+
+1. Navigate to `chrome://flags/#local-network-access-check`
+2. Set to **Disabled**
+3. Restart Chrome
+
+**Note:** Option 2 applies to ALL websites, not just Adobe Express, so it is not recommended for general use.
+
+For more details, see the [Known Issues & Limitations](../getting_started/local_development/known_issues_limitations.md#chrome-local-network-access-restriction) guide.
 
 ### How do I save the state of my add-on?
 
@@ -213,11 +240,68 @@ Experimental APIs are those which have not been declared stable yet, and to try 
 
 ### What are the supported mime types/file formats for exported content?
 
-The supported file types for exported content are **"image/jpeg" (jpg format), "image/png" (png format), "video/mp4" (mp4 format)** and **"application/pdf" (pdf format)**.
+The supported file types for exported content are:
+
+- **JPEG**: `"image/jpeg"`
+- **PNG**: `"image/png"`
+- **MP4**: `"video/mp4"`
+- **PDF**: `"application/pdf"`
+- **PPTX**: `"application/vnd.openxmlformats-officedocument.presentationml.presentation"` (PowerPoint presentations)
+
+**Note:** PPTX export is only available for presentation-type documents in Adobe Express.
 
 ### What are the supported file formats for imported content in Adobe Express?
 
-The supported file types for imported audio content are **aac, adts, ai, avi, crm, f4v, gif, jpeg, jpg, m1v, m2p, m2t, m2ts, m4a, m4v, mov, mp3, mp4, mpeg, mpg, msvideo, mts, png, psd, psdt, quicktime, ts, tts, wav, webm, webp, wmv, xm4a, xwav, 264, 3gp**.
+Adobe Express add-ons support importing various file types through the document APIs:
+
+**Image Files:**
+
+- JPEG: `image/jpeg`
+- JPG: `image/jpeg`
+- PNG: `image/png`
+- WebP: `image/webp`
+- GIF: `image/gif` (see [animated GIF requirements](#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document))
+
+**Design Files:**
+
+- Illustrator files (AI): `application/illustrator`
+- Photoshop files (PSD): `image/vnd.adobe.photoshop`
+
+**Video Files:**
+
+- MP4: `video/mp4`
+- MOV: `video/mov`
+- QuickTime: `video/quicktime`
+- 3GP: `video/3gpp`
+- F4V: `video/x-f4v`
+- CRM: `video/crm`
+- 264: `video/264`
+- TS: `video/mp2t`
+- M2TS: `video/mp2t`
+- TTS: `video/vnd.dlna.mpeg-tts`
+- MPEG: `video/mpeg`
+- MPG: `video/mpeg`
+- M1V: `video/mpeg`
+- M2P: `video/mpeg`
+- M2T: `video/mpeg`
+- M2V: `video/mpeg2`
+- M4V: `video/x-m4v`
+- AVI: `video/avi`
+- MS AVI: `video/x-msvideo`
+- WMV: `video/x-ms-wmv`
+- WebM: `video/webm`
+
+**Audio Files:**
+
+- AAC: `audio/aac`
+- ADTS: `audio/aac`
+- M4A: `audio/m4a`
+- MP3: `audio/mpeg`
+- WAV: `audio/wav`
+- XM4A: `audio/x-m4a`
+- XWAV: `audio/x-wav`
+
+Use the appropriate import methods: [`addImage()`](../../references/addonsdk/app-document.md#addimage), [`addVideo()`](../../references/addonsdk/app-document.md#addvideo), or [`addAudio()`](../../references/addonsdk/app-document.md#addaudio) depending on the file type.
 
 ### Are animated GIF's supported when importing or dragging content to the document?
 
@@ -234,6 +318,38 @@ Yes, however, there are [technical requirements](https://helpx.adobe.com/express
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
 
 This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../learn/platform_concepts/context.md#cors) for more details on handling CORS with your add-on.
+
+### What permissions are available for add-ons and how do I configure them?
+
+Adobe Express add-ons support several types of permissions that you configure in your `manifest.json` file:
+
+**Sandbox Permissions** (for iframe behavior):
+
+- `allow-downloads` - Enable file downloads
+- `allow-popups` - Allow opening popups/new windows  
+- `allow-popups-to-escape-sandbox` - Allow popups to escape sandbox restrictions
+- `allow-presentation` - Enable presentation mode
+
+**Additional Permissions**:
+
+- `oauth` - List of domains for OAuth workflows (e.g., `["www.dropbox.com"]`)
+- `clipboard` - Clipboard access (currently supports `["clipboard-write"]`)
+- `microphone` - Microphone access (e.g., `"*"` for all origins)
+- `camera` - Camera access (e.g., `"*"` for all origins)
+
+**Example manifest permissions:**
+
+```json
+"permissions": {
+    "sandbox": ["allow-popups", "allow-downloads"],
+    "oauth": ["www.dropbox.com"],
+    "clipboard": ["clipboard-write"],
+    "microphone": "*",
+    "camera": "*"
+}
+```
+
+For complete details on all available permissions and their usage, see the [manifest permissions documentation](../../references/manifest/index.md#entrypointspermissions) and the [add-on context guide](../learn/platform_concepts/context.md#permissions).
 
 ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
 

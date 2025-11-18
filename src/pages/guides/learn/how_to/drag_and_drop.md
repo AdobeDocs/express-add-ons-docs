@@ -3,7 +3,6 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
@@ -11,11 +10,46 @@ keywords:
   - Extensibility
   - API
   - Drag and Drop
+  - Media
+  - ImportAddOnData
+  - Metadata
+  - enableDragToDocument
 title: Use Drag-and-Drop
 description: Use Drag-and-Drop.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I enable drag-and-drop for an element?"
+      answer: "Call `addOnUISdk.app.enableDragToDocument(element, callbacks)` with preview and completion callbacks."
+
+    - question: "What callbacks are required?"
+      answer: "Provide `previewCallback()` for preview URL and `completionCallback()` to return the blob for insertion."
+
+    - question: "How do I handle drag events?"
+      answer: 'Listen for `"dragstart"` and `"dragend"` events using `addOnUISdk.app.on()`.'
+
+    - question: "What's special about audio content?"
+      answer: "Audio requires an `attributes` object with a `title` property in the completion callback return."
+
+    - question: "Can I drag remote images?"
+      answer: "Yes, fetch the remote URL in the completion callback and return the blob."
+
+    - question: "How do I use sourceMimeType when dragging converted documents?"
+      answer: 'Add `sourceMimeType` to the attributes object in completionCallback to show "Import a document" instead of "Import a PDF" in the consent dialog.'
+
+    - question: "When should I include sourceMimeType in drag operations?"
+      answer: "Use it when dragging PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer user messaging."
+
+    - question: "What sourceMimeType values work for drag and drop?"
+      answer: 'Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.'
+
+    - question: "What event handlers should I avoid?"
+      answer: "Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements."
+      
+    - question: "How do I attach custom metadata to dragged content?"
+      answer: "Use the `importAddOnData` property in completionCallback return with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs."
 ---
 
 # Use Drag-and-Drop
@@ -49,6 +83,15 @@ addOnUISdk.ready.then(async () => {
     completionCallback: async (element) => {
       // return the blob for the image
       return [{ blob: await getBlob(element.src) }];
+      
+      // To attach add-on specific metadata that can be retrieved later:
+      // return [{ 
+      //   blob: await getBlob(element.src),
+      //   importAddOnData: {
+      //     nodeAddOnData: { "imageId": "123", "category": "photo" },
+      //     mediaAddOnData: { "source": "gallery", "tags": "nature,landscape" }
+      //   }
+      // }];
     },
   });
 
@@ -89,9 +132,9 @@ async function getBlob(url) {
 
 To implement drag and drop with remotely hosted images, you similarly invoke `addOnUISdk.app.enableDragToDocument()`, but you fetch the resource from its remote URL. Provide a `previewCallback()` that returns the preview URL and a `completionCallback()` that retrieves the image as a blob. You can then attach the same `"dragstart"` and `"dragend"` event handlers to log or customize interactions as needed.
 
-<InlineAlert slots="text" variant="warning"/>
+<InlineAlert slots="text" variant="info"/>
 
-To drag audio content, you must specify an additional `attributes` object with a `title` property. A note on how to include it is found in the following example.
+For audio content, if you provide the optional [`MediaAttributes`](../../../references/addonsdk/addonsdk-app.md#mediaattributes) object, it must include a `title` property. You can also optionally include [`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) to attach custom metadata to the dragged content. Examples of both are shown below.
 
 ### Example
 
@@ -114,9 +157,17 @@ function makeDraggableUsingUrl(elementId: string, previewUrl: string) {
       );
       return [{ blob: imageBlob }];
 
-      // ⚠️ for audio content, an attributes object
-      // with the title is mandatory. For example:
+      // For audio content, if you provide attributes, title is required:
       // return [{ blob: audioBlob, attributes: { title: "Jazzy beats" } }];
+      
+      // To attach add-on specific metadata that can be retrieved later:
+      // return [{ 
+      //   blob: imageBlob,
+      //   importAddOnData: {
+      //     nodeAddOnData: { "trackId": "456", "genre": "jazz" },
+      //     mediaAddOnData: { "artist": "Cool Cat", "album": "Smooth Sounds" }
+      //   }
+      // }];
     },
   };
 
@@ -156,7 +207,7 @@ function makeDraggableConvertedDoc(elementId: string, convertedPdfBlob: Blob, or
   const dragCallbacks = {
     previewCallback: (element: HTMLElement) => {
       // URL of image to display during drag operation
-      return new URL(element.src); 
+      return new URL(element.src);
     },
     completionCallback: async (element: HTMLElement) => {
       // Return the converted PDF blob with source mime type information
@@ -187,3 +238,45 @@ You should not attach `click` event listeners to drag-enabled elements in the ca
 Use Chrome devTools to check the handlers attached to the element and its ancestors to identify any that may be causing conflicts with drag and drop handlers.
 
 There are several [code samples](../samples.md) that implement drag and drop, including the [import-images-using-oauth](../samples.md#import-images-using-oauth) and [pix](../samples.md#pix) projects that you can reference.
+
+## FAQs
+
+#### Q: How do I enable drag-and-drop for an element?
+
+**A:** Call `addOnUISdk.app.enableDragToDocument(element, callbacks)` with preview and completion callbacks.
+
+#### Q: What callbacks are required?
+
+**A:** Provide `previewCallback()` for preview URL and `completionCallback()` to return the blob for insertion.
+
+#### Q: How do I handle drag events?
+
+**A:** Listen for `"dragstart"` and `"dragend"` events using `addOnUISdk.app.on()`.
+
+#### Q: What's special about audio content?
+
+**A:** Audio requires an `attributes` object with a `title` property in the completion callback return.
+
+#### Q: Can I drag remote images?
+
+**A:** Yes, fetch the remote URL in the completion callback and return the blob.
+
+#### Q: How do I use sourceMimeType when dragging converted documents?
+
+**A:** Add `sourceMimeType` to the attributes object in completionCallback to show "Import a document" instead of "Import a PDF" in the consent dialog.
+
+#### Q: When should I include sourceMimeType in drag operations?
+
+**A:** Use it when dragging PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer user messaging.
+
+#### Q: What sourceMimeType values work for drag and drop?
+
+**A:** Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.
+
+#### Q: What event handlers should I avoid?
+
+**A:** Avoid pointer event handlers that prevent default or stop propagation on drag-enabled elements.
+
+#### Q: How do I attach custom metadata to dragged content?
+
+**A:** Use the `importAddOnData` property in completionCallback return with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs.

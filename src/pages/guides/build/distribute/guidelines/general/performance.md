@@ -1,6 +1,24 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Performance Guidelines
+  - Loading Time
+  - Response Time
+  - System Resources
+  - Performance Optimization
+  - User Experience
+  - Resource Management
+  - Performance Standards
+title: Performance Guidelines
+description: Adobe Express add-on performance requirements covering loading times, response times, system resource usage, and optimization standards for smooth user experience.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Performance
 
-If you want your add-on to become a key part of a user’s workflow, you must make sure it performs smoothly and efficiently.
+If you want your add-on to become a key part of a user's workflow, you must make sure it performs smoothly and efficiently.
 
 ## Overview
 

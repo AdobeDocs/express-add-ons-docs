@@ -3,7 +3,6 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
@@ -14,18 +13,43 @@ keywords:
   - Media
   - mp4
   - addVideo
+  - ImportAddOnData
+  - Metadata
+  - MediaAttributes
 title: Use Videos
 description: Use Videos.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I add video to a page?"
+      answer: 'Call `addOnUISdk.app.document.addVideo(blob, attributes, importAddOnData)` with a video blob and optional metadata.'
+
+    - question: "What parameter does addVideo require?"
+      answer: "A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional."
+
+    - question: "How do I get video as a blob?"
+      answer: 'Use `fetch(videoUrl).then(r => r.blob())` to convert video files to blob format.'
+
+    - question: "Can I use local video files?"
+      answer: "Yes, use relative paths from add-on root with fetch() to load local video files."
+
+    - question: "Can I use remote video URLs?"
+      answer: "Yes, fetch remote video URLs and convert to blob before adding to document."
+
+    - question: "What video formats are supported?"
+      answer: "Refer to Adobe Express file format requirements page for supported video formats and size limits."
+
+    - question: "How do I handle video loading errors?"
+      answer: "Use try/catch blocks around fetch() and addVideo() calls to handle loading failures."
 ---
 
 # Use Videos
 
 ## Import videos into the page
 
-Similarly to Images and Audio, you can add Videos to the page using the [`addVideo()`](../../../references/addonsdk/app-document.md#addvideo) method of the `addOnUISdk.app.document` object, which expects a `Blob` object as an argument.
+Similarly to Images and Audio, you can add Videos to the page using the [`addVideo()`](../../../references/addonsdk/app-document.md#addvideo) method of the `addOnUISdk.app.document` object, which expects a `Blob` object as the first argument, and optionally accepts `MediaAttributes` and `ImportAddOnData` parameters.
 
 ### Example
 
@@ -41,7 +65,15 @@ addOnUISdk.ready.then(async () => {
     const videoBlob = await video.blob();
 
     await addOnUISdk.app.document.addVideo(
-      videoBlob // 👈 Blob object
+      videoBlob, // 👈 Blob object
+      { // Optional MediaAttributes
+        title: "NASA Moon Landing",
+        author: "NASA"
+      },
+      { // 👈 Optional ImportAddOnData - metadata that persists with the video
+        nodeAddOnData: { "videoId": "nasa_moon_landing", "category": "space" },
+        mediaAddOnData: { "duration": "120s", "source": "nasa.gov" }
+      }
     );
   } catch (e) {
     console.error("Failed to add the video", e);
@@ -68,3 +100,33 @@ addOnUISdk.ready.then(async () => {
 Video file requirements
 
 Please refer to [this page](https://helpx.adobe.com/au/express/create-and-edit-videos/change-file-formats/video-quick-actions-requirements.html) to know more about the file formats support and size/length requirements for videos.
+
+## FAQs
+
+#### Q: How do I add video to a page?
+
+**A:** Call `addOnUISdk.app.document.addVideo(blob, attributes, importAddOnData)` with a video blob and optional metadata.
+
+#### Q: What parameter does addVideo require?
+
+**A:** A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional.
+
+#### Q: How do I get video as a blob?
+
+**A:** Use `fetch(videoUrl).then(r => r.blob())` to convert video files to blob format.
+
+#### Q: Can I use local video files?
+
+**A:** Yes, use relative paths from add-on root with fetch() to load local video files.
+
+#### Q: Can I use remote video URLs?
+
+**A:** Yes, fetch remote video URLs and convert to blob before adding to document.
+
+#### Q: What video formats are supported?
+
+**A:** Refer to Adobe Express file format requirements page for supported video formats and size limits.
+
+#### Q: How do I handle video loading errors?
+
+**A:** Use try/catch blocks around fetch() and addVideo() calls to handle loading failures.

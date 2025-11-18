@@ -64,6 +64,7 @@ Size of the text in points.
 • **length**: `number`
 
 The length or number of characters in which character styles will be applied.
+<InlineAlert slots="text" variant="info"/>
 Note: since characters are represented as UTF-16 code units, some symbols
 such as emojis are considered to have a length of 2.
 
@@ -84,6 +85,21 @@ leaves spacing at its default.
 #### Inherited from
 
 [`CharacterStyles`](CharacterStyles.md).[`letterSpacing`](CharacterStyles.md#letterspacing)
+
+---
+
+### link?
+
+• `optional` **link**: `string`
+
+A URL hyperlink. Character ranges with a link are underlined *by default*, unless these styles explicitly specify
+`underline: false`.
+
+To remove a link from existing text, explicitly specify `link: ""` in [TextContentModel.applyCharacterStyles](../classes/TextContentModel.md#applycharacterstyles).
+
+#### Inherited from
+
+[`CharacterStyles`](CharacterStyles.md).[`link`](CharacterStyles.md#link)
 
 ---
 

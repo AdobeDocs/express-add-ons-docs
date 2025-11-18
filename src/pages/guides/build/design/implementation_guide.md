@@ -1,3 +1,32 @@
+---
+keywords:
+  - Adobe Express
+  - Add-on SDK
+  - Spectrum Design System
+  - Spectrum Web Components
+  - swc-react
+  - React Spectrum
+  - Spectrum CSS
+  - UI Components
+  - Express Theme
+  - Implementation
+  - Design System
+  - User Interface
+  - Component Library
+  - Web Components
+  - React
+  - JavaScript
+  - TypeScript
+  - CSS
+  - Theming
+  - Icons
+  - Fonts
+title: Implementation Guide
+description: Learn how to implement Adobe's Spectrum Design System in your Express add-ons. This comprehensive guide covers Spectrum Web Components, swc-react, React Spectrum, and Spectrum CSS with Express theming.
+contributors:
+  - https://github.com/hollyschinsky
+---
+
 # Implementation Guide
 
 This section will help you implement the concepts and best practices outlined in the UX Guidelines.
@@ -87,7 +116,7 @@ Below are the steps for using the Express theme with your Spectrum Web Component
     <sp-theme
       scale="medium"
       color="light"
-      theme="express"
+      system="express"
     >
       /* Everything you want styled with those settings */ /* goes within the
       <sp-theme /> tag */
@@ -113,11 +142,11 @@ The screenshots below are from a Spectrum Web Components sample app showing some
 
 #### Default Theme sample:
 
-![Default theme](./img/swc-default-theme.png)
+![Default Spectrum Web Components theme](./img/swc-default-theme.png)
 
 #### Express Theme sample:
 
-![Express theme](./img/swc-express-theme.png)
+![Express Spectrum Web Components theme](./img/swc-express-theme.png)
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -264,7 +293,7 @@ Use the existing Adobe Express UI as an example of the types of patterns and beh
 <InlineAlert slots="text" variant="success"/>
 
 **Color Picker Component Tip:**
-If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference, or borrow the code used in [this guide](../../learn/how_to/tutorials/grids-addon.md#coding-the-grids-add-on).
+If you're using the native browser color picker, it looks slightly different in every browser and doesn't fit the Express theme by default. You can make this control look more like Spectrum with CSS as [illustrated in this codepen](https://codepen.io/kerrishotts/pen/QWZazJP) for reference, or borrow the code used in [this guide](../../learn/how_to/tutorials/grids-addon.md#3-coding-the-grids-add-on).
 
 ## Using Fonts
 
@@ -359,7 +388,62 @@ body {
 
 <InlineAlert slots="text" variant="warning"/>
 
-Using custom fonts can be great for design, but it’s important to also understand that it can can cause a performance hit because the font must be downloaded before it’s displayed. Note that the `@font-face` `src:` supports a `local` attribute as well which will try to load the font from the users local system first, which can help mitigate the performance hit. See [this link](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) for full details.
+Using custom fonts can be great for design, but it's important to also understand that it can can cause a performance hit because the font must be downloaded before it's displayed. Note that the `@font-face` `src:` supports a `local` attribute as well which will try to load the font from the users local system first, which can help mitigate the performance hit. See [this link](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) for full details.
+
+## FAQ
+
+#### Q: Which Spectrum implementation should I choose for my add-on?
+
+**A:** We recommend this priority order:
+
+1. **Spectrum Web Components** - Best overall choice, framework-agnostic, lightweight, and comprehensive
+2. **swc-react** - If you're using React and want Spectrum Web Components with React patterns
+3. **React Spectrum** - Only if you specifically need React Spectrum features (note: Express theme is in alpha)
+4. **Spectrum CSS** - Only for very simple applications with basic styling needs
+
+#### Q: What's the difference between Spectrum Web Components and swc-react?
+
+**A:** Spectrum Web Components are native web components that work with any framework or vanilla JavaScript. swc-react provides React wrapper components for the same Spectrum Web Components, making them easier to use in React applications with proper event handling and React patterns.
+
+#### Q: Can I mix different Spectrum implementations in the same add-on?
+
+**A:** It's not recommended. Mixing implementations can lead to version conflicts, duplicate code, and inconsistent behavior. Choose one approach and stick with it throughout your add-on.
+
+#### Q: How do I ensure my add-on matches the Adobe Express look and feel?
+
+**A:** Use the Express theme with your chosen Spectrum implementation:
+
+- **Spectrum Web Components**: Import Express theme files and use `system="express"`
+- **swc-react**: Same as Spectrum Web Components but with React syntax
+- **React Spectrum**: Use `@react-spectrum/theme-express` (currently in alpha)
+
+#### Q: Why do I need webpack for Spectrum Web Components?
+
+**A:** Webpack properly bundles Spectrum Web Components and their complex dependencies. The CLI's default bundler doesn't handle the module structure correctly, so webpack ensures optimal performance and correct packaging.
+
+#### Q: What if I get version conflicts with Spectrum components?
+
+**A:** All Spectrum packages in your project must use identical versions. Check your `package.json` and ensure every `@spectrum-web-components/*` or `@swc-react/*` package uses the same version number. Run `npm install` after updating versions.
+
+#### Q: Can I customize Spectrum components while maintaining the Express theme?
+
+**A:** Yes! Use Spectrum CSS variables and component modifier variables (prefixed with `--mod-*`) for customizations. This ensures your styling remains consistent with the design system and updates automatically when the design system changes.
+
+#### Q: How do I handle events with Spectrum Web Components in React?
+
+**A:** Use the `WC.jsx` helper component (as shown in code samples) to wrap Spectrum Web Components. This solves React synthetic event issues by automatically registering native browser events that web components understand.
+
+#### Q: Are there Express-specific icons available?
+
+**A:** Yes! Install `@spectrum-icons/express` for Express-themed icons. You can also use icons from `@spectrum-web-components/icons-workflow` and `@spectrum-web-components/icons-ui` libraries.
+
+#### Q: What fonts are available in Adobe Express add-ons?
+
+**A:** Adobe Clean fonts are automatically injected and available in weights 400, 700, 800, and 900 (including italic for 400). You can also import custom fonts using `@import`, `<link>` tags, or `@font-face` rules, but be aware of performance implications.
+
+#### Q: Can I use Spectrum components without the Express theme?
+
+**A:** Yes, but your add-on won't match the Adobe Express interface. The Express theme ensures visual consistency with the host application and provides the best user experience.
 
 ## Useful Resources
 

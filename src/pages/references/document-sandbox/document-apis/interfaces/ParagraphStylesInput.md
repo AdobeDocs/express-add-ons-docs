@@ -2,11 +2,7 @@
 
 # Interface: ParagraphStylesInput
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-The variant of [ParagraphStyles](ParagraphStyles.md) with all optional style fields is used to apply ParagraphStyles(). When using that API,
+A variant of [ParagraphStyles](ParagraphStyles.md) with all style fields optional, used for applyParagraphStyles(). When using that API,
 any fields not specified are left unchanged, preserving the text's existing styles.
 
 ## Extends
@@ -34,7 +30,7 @@ It only affects the space *between* lines, not the space above the first line or
 
 ### list?
 
-• `optional` **list**: [`OrderedListStyleInput`](OrderedListStyleInput.md) \| [`UnorderedListStyleInput`](UnorderedListStyleInput.md)
+• `optional` **list**: [`ListStyleInput`](../type-aliases/ListStyleInput.md)
 
 ---
 

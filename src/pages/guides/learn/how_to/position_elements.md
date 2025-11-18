@@ -19,6 +19,31 @@ title: Position Elements
 description: Position Elements.
 contributors:
   - https://github.com/undavide
+faq:
+  questions:
+    - question: "How do I move an element?"
+      answer: 'Set the `translation` property with x and y coordinates, or use `setPositionInParent()`.'
+
+    - question: "How do I rotate an element?"
+      answer: 'Call `setRotationInParent(angle, pivotPoint)` with degrees and local pivot coordinates.'
+
+    - question: "What's the difference between boundsLocal and boundsInParent?"
+      answer: "boundsLocal is in element's coordinate space, boundsInParent accounts for parent transformations."
+
+    - question: "How do I center an element in its parent?"
+      answer: 'Use `setPositionInParent()` with parent center as position and element center as reference point.'
+
+    - question: "Are rotation and translation additive?"
+      answer: "No, each new value replaces the previous one, they are not cumulative."
+
+    - question: "How do I convert between coordinate spaces?"
+      answer: 'Use `localPointInNode()` to convert points from element coordinates to parent coordinates.'
+
+    - question: "How do I get the global rotation of an element?"
+      answer: 'Use the `rotationInScreen` property to get cumulative rotation including parent transforms.'
+
+    - question: "Where is the coordinate system origin?"
+      answer: "Top-left corner of the parent container, with x-axis right and y-axis down."
 ---
 
 # Position Elements
@@ -182,3 +207,37 @@ Similarly, you can calculate the global rotation of an element with the `rotatio
 console.log(rect2.rotationInScreen);
 // 10  👈
 ```
+
+## FAQs
+
+#### Q: How do I move an element?
+
+**A:** Set the `translation` property with x and y coordinates, or use `setPositionInParent()`.
+
+#### Q: How do I rotate an element?
+
+**A:** Call `setRotationInParent(angle, pivotPoint)` with degrees and local pivot coordinates.
+
+#### Q: What's the difference between boundsLocal and boundsInParent?
+
+**A:** boundsLocal is in element's coordinate space, boundsInParent accounts for parent transformations.
+
+#### Q: How do I center an element in its parent?
+
+**A:** Use `setPositionInParent()` with parent center as position and element center as reference point.
+
+#### Q: Are rotation and translation additive?
+
+**A:** No, each new value replaces the previous one, they are not cumulative.
+
+#### Q: How do I convert between coordinate spaces?
+
+**A:** Use `localPointInNode()` to convert points from element coordinates to parent coordinates.
+
+#### Q: How do I get the global rotation of an element?
+
+**A:** Use the `rotationInScreen` property to get cumulative rotation including parent transforms.
+
+#### Q: Where is the coordinate system origin?
+
+**A:** Top-left corner of the parent container, with x-axis right and y-axis down.

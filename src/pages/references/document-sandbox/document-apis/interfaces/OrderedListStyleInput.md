@@ -2,10 +2,6 @@
 
 # Interface: OrderedListStyleInput
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Interface for specifying an ordered list style, such as a numbered list.
 
 ## Extends
@@ -31,7 +27,7 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 • `optional` **numbering**: [`OrderedListNumbering`](../namespaces/Constants/enumerations/OrderedListNumbering.md)
 
 The numbering style to use. If undefined, it defaults to a different type depending on the paragraph's indent level.
-The defaults for increasing indent are 1, a, i, I, and then they repeat.
+The defaults for increasing indent are: 1, a, i, I, and then they repeat.
 These markers and the prefix/postfix strings (if any) are displayed using the same font as the start of the
 paragraph's text content.
 
