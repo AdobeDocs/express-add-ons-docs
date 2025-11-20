@@ -1,6 +1,6 @@
-[@express-document-sdk](../overview.md) / Viewport
+[@express-document-sdk](../overview.md) / ExpressViewport
 
-# Class: Viewport
+# Class: ExpressViewport
 
 Represents the area of the canvas that is currently visible on-screen.
 

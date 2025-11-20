@@ -1,25 +1,23 @@
-[@express-document-sdk](../overview.md) / TextNodeContentModel
+[@express-document-sdk](../overview.md) / ThreadedTextContentModel
 
-# Class: `abstract` TextNodeContentModel
+# Class: ThreadedTextContentModel
 
-Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) *or*
-split across multiple [ThreadedTextNode](ThreadedTextNode.md) frames for display.
-Use this model to get or modify the text string and the style ranges applied to it.
+ThreadedTextContentModel represents a complete piece of text content that is split across multiple
+[ThreadedTextNode](ThreadedTextNode.md) frames for display. This subclass provides a mutable allFrames list
+that supports adding, removing, and reordering text frames.
+
+The append and insert operations will automatically parent the new frame to the same parent as the
+reference frame and place it in the correct z-order.
 
 ## Extends
 
--   [`TextContentModel`](TextContentModel.md)
-
-## Extended by
-
--   [`StandaloneTextContentModel`](StandaloneTextContentModel.md)
--   [`ThreadedTextContentModel`](ThreadedTextContentModel.md)
+-   [`TextNodeContentModel`](TextNodeContentModel.md)
 
 ## Accessors
 
 ### allTextNodes
 
-• `get` `abstract` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`ThreadedTextNode`](ThreadedTextNode.md), `any`, `any`\>\>
 
 Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. This might be a single
 [StandaloneTextNode](StandaloneTextNode.md) *or* a list of one or more [ThreadedTextNode](ThreadedTextNode.md)s. In the case of threaded text, the
@@ -31,7 +29,7 @@ All linked ThreadedTextNodes that share a single TextContentModel must remain to
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+`Readonly`<`Iterable`<[`ThreadedTextNode`](ThreadedTextNode.md), `any`, `any`\>\>
 
 ---
 
@@ -102,7 +100,7 @@ entire paragraph.
 
 #### Throws
 
-If applying an ordered-list style when the text contains fonts that are unavailable to the current user.
+if applying an ordered-list style when the text contains fonts that are unavailable to the current user.
 
 #### Parameters
 
@@ -159,7 +157,7 @@ The text to append.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`appendText`](TextContentModel.md#appendtext)
+[`TextNodeContentModel`](TextNodeContentModel.md).[`appendText`](TextNodeContentModel.md#appendtext)
 
 #### Throws
 
@@ -196,7 +194,7 @@ If no range is specified, styles will be applied to the entire text content flow
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`applyCharacterStyles`](TextContentModel.md#applycharacterstyles)
+[`TextNodeContentModel`](TextNodeContentModel.md).[`applyCharacterStyles`](TextNodeContentModel.md#applycharacterstyles)
 
 ---
 
@@ -227,11 +225,11 @@ If range is not specified, the styles will be applied to the entire text content
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`applyParagraphStyles`](TextContentModel.md#applyparagraphstyles)
+[`TextNodeContentModel`](TextNodeContentModel.md).[`applyParagraphStyles`](TextNodeContentModel.md#applyparagraphstyles)
 
 #### Throws
 
-If applying an ordered-list style when the text contains fonts that are unavailable to the current user.
+if applying an ordered-list style when the text contains fonts that are unavailable to the current user.
 
 ---
 
@@ -257,7 +255,7 @@ The range of text to delete.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`deleteText`](TextContentModel.md#deletetext)
+[`TextNodeContentModel`](TextNodeContentModel.md).[`deleteText`](TextNodeContentModel.md#deletetext)
 
 #### Throws
 
@@ -284,7 +282,7 @@ the character styles to use only AvailableFonts.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`hasUnavailableFonts`](TextContentModel.md#hasunavailablefonts)
+[`TextNodeContentModel`](TextNodeContentModel.md).[`hasUnavailableFonts`](TextNodeContentModel.md#hasunavailablefonts)
 
 ---
 
@@ -311,7 +309,7 @@ The index at which to insert the new text.
 • **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
-existing text to match the style of. Default: `beforeInsertionPoint`.
+     existing text to match the style of. Default: `beforeInsertionPoint`.
 
 #### Returns
 
@@ -319,7 +317,7 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`insertText`](TextContentModel.md#inserttext)
+[`TextNodeContentModel`](TextNodeContentModel.md).[`insertText`](TextNodeContentModel.md#inserttext)
 
 #### Throws
 
@@ -350,7 +348,7 @@ The range of text to replace.
 • **style?**: [`CharacterStylesInput`](../interfaces/CharacterStylesInput.md) \| [`beforeInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#beforeinsertionpoint) \| [`afterInsertionPoint`](../namespaces/Constants/enumerations/TextStyleSource.md#afterinsertionpoint) \| [`firstReplacedCharacter`](../namespaces/Constants/enumerations/TextStyleSource.md#firstreplacedcharacter)
 
 Style to use for the new text: either directly provides a style to use, or indicates which
-existing text to match the style of. Default: `firstReplacedCharacter`.
+     existing text to match the style of. Default: `firstReplacedCharacter`.
 
 #### Returns
 
@@ -358,7 +356,7 @@ existing text to match the style of. Default: `firstReplacedCharacter`.
 
 #### Inherited from
 
-[`TextContentModel`](TextContentModel.md).[`replaceText`](TextContentModel.md#replacetext)
+[`TextNodeContentModel`](TextNodeContentModel.md).[`replaceText`](TextNodeContentModel.md#replacetext)
 
 #### Throws
 
