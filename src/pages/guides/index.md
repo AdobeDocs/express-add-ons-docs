@@ -35,8 +35,6 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 ## Welcome to Adobe Express Add-ons!
 
-
-
 <InlineAlert slots="text" />
 
 **Help us improve your developer experience** <br /><br />
