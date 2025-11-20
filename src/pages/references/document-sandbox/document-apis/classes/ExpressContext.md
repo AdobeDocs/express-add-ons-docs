@@ -1,14 +1,27 @@
-[@express-document-sdk](../overview.md) / Context
+[@express-document-sdk](../overview.md) / ExpressContext
 
-# Class: Context
+# Class: ExpressContext
 
-Contains the user's current selection state, indicating the content they are focused on.
+Contains The Express specific APIs related to the current selection state.
 
-## Extended by
+## Extends
 
--   [`ExpressContext`](ExpressContext.md)
+-   [`Context`](Context.md)
 
 ## Accessors
+
+### currentPage
+
+• `get` **currentPage**(): [`PageNode`](PageNode.md)
+
+#### Returns
+
+[`PageNode`](PageNode.md)
+
+The currently viewed page.
+To change the current page, call [ExpressViewport.bringIntoView](ExpressViewport.md#bringintoview) with an artboard or other content on that page.
+
+---
 
 ### hasSelection
 
@@ -73,7 +86,7 @@ selection (see [selectionIncludingNonEditable](Context.md#selectionincludingnone
 
 readonly [`Node`](Node.md)[]
 
-the current selection _and_ any locked nodes the user has attempted to select at the same time. This can
+the current selection *and* any locked nodes the user has attempted to select at the same time. This can
 happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
 locked nodes in addition to regular unlocked nodes.
 
@@ -99,6 +112,10 @@ Callback that was previously registered will be removed and will no more be invo
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`Context`](Context.md).[`off`](Context.md#off)
 
 ---
 
@@ -126,3 +143,7 @@ a callback to be registered for an editor event.
 `string`
 
 a unique ID for the registered event handler.
+
+#### Inherited from
+
+[`Context`](Context.md).[`on`](Context.md#on)

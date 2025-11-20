@@ -1,34 +1,34 @@
-[@express-document-sdk](../overview.md) / Editor
+[@express-document-sdk](../overview.md) / ExpressEditor
 
-# Class: Editor
+# Class: ExpressEditor
 
-Entry point for APIs that read or modify the document's content.
+Entry point for Express specific APIs that read or modify the document's content.
 
-## Extended by
+## Extends
 
--   [`ExpressEditor`](ExpressEditor.md)
+-   [`Editor`](Editor.md)
 
 ## Accessors
 
 ### context
 
-• `get` **context**(): [`Context`](Context.md)
+• `get` **context**(): [`ExpressContext`](ExpressContext.md)
 
 User's current selection context
 
 #### Returns
 
-[`Context`](Context.md)
+[`ExpressContext`](ExpressContext.md)
 
 ---
 
 ### documentRoot
 
-• `get` **documentRoot**(): [`BaseNode`](BaseNode.md)
+• `get` **documentRoot**(): [`ExpressRootNode`](ExpressRootNode.md)
 
 #### Returns
 
-[`BaseNode`](BaseNode.md)
+[`ExpressRootNode`](ExpressRootNode.md)
 
 the root of the document.
 
@@ -45,6 +45,10 @@ the root of the document.
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
+#### Inherited from
+
+[`Editor`](Editor.md).[`createEllipse`](Editor.md#createellipse)
+
 ---
 
 ### createGroup()
@@ -56,6 +60,10 @@ Transform values default to 0.
 [`GroupNode`](GroupNode.md)
 
 a group node.
+
+#### Inherited from
+
+[`Editor`](Editor.md).[`createGroup`](Editor.md#creategroup)
 
 ---
 
@@ -80,10 +88,9 @@ BitmapImage resource (e.g. returned from [loadBitmapImage](Editor.md#loadbitmapi
 • **options**= `{}`
 
 Additional configuration:
-
--   `initialSize` - Size the image is displayed at. Must have the same aspect ratio as `bitmapData`. Defaults to the
-    size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
-    if needed to stay below an application-defined size cap).
+     - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
+       size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
+       if needed to stay below an application-defined size cap).
 
 • **options.initialSize?**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
 
@@ -92,6 +99,10 @@ Additional configuration:
 [`MediaContainerNode`](MediaContainerNode.md)
 
 MediaContainerNode representing the top container node of the multi-node structure.
+
+#### Inherited from
+
+[`Editor`](Editor.md).[`createImageContainer`](Editor.md#createimagecontainer)
 
 ---
 
@@ -105,6 +116,10 @@ MediaContainerNode representing the top container node of the multi-node structu
 
 a line node with default start point and end point and a default stroke.
 Transform values default to 0.
+
+#### Inherited from
+
+[`Editor`](Editor.md).[`createLine`](Editor.md#createline)
 
 ---
 
@@ -132,6 +147,10 @@ a newly created path using [Node.setPositionInParent](Node.md#setpositioninparen
 
 a path node with a default stroke and no initial fill.
 
+#### Inherited from
+
+[`Editor`](Editor.md).[`createPath`](Editor.md#createpath)
+
 ---
 
 ### createRectangle()
@@ -144,6 +163,10 @@ a path node with a default stroke and no initial fill.
 
 a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
+
+#### Inherited from
+
+[`Editor`](Editor.md).[`createRectangle`](Editor.md#createrectangle)
 
 ---
 
@@ -160,6 +183,10 @@ Transform values default to 0.
 a text node with default styles. The text content is initially empty, so the text node will be
 invisible until its `fullContent` property's `text` is set. Creates auto-width text, so the node's width will
 automatically adjust to accommodate whatever text is set.
+
+##### Inherited from
+
+[`Editor`](Editor.md).[`createText`](Editor.md#createtext)
 
 ##### Deprecated
 
@@ -187,6 +214,10 @@ to accommodate the given text content.
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
 
+##### Inherited from
+
+[`Editor`](Editor.md).[`createText`](Editor.md#createtext)
+
 ---
 
 ### loadBitmapImage()
@@ -213,6 +244,10 @@ Encoded image data in PNG or JPEG format.
 
 `Promise`<[`BitmapImage`](BitmapImage.md)\>
 
+#### Inherited from
+
+[`Editor`](Editor.md).[`loadBitmapImage`](Editor.md#loadbitmapimage)
+
 ---
 
 ### makeColorFill()
@@ -230,6 +265,10 @@ The color to use for the fill.
 #### Returns
 
 [`ColorFill`](../interfaces/ColorFill.md)
+
+#### Inherited from
+
+[`Editor`](Editor.md).[`makeColorFill`](Editor.md#makecolorfill)
 
 ---
 
@@ -261,6 +300,10 @@ See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on th
 
 a stroke configured with the given options.
 
+#### Inherited from
+
+[`Editor`](Editor.md).[`makeStroke`](Editor.md#makestroke)
+
 ---
 
 ### queueAsyncEdit()
@@ -273,14 +316,13 @@ asynchronous operation such as [loadBitmapImage](Editor.md#loadbitmapimage), any
 queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
 
 The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
-to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
+to users. However, note that queueAsyncEdit() will return *before* your function has been run.
 If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
 or await the Promise returned by queueAsyncEdit().
 
 Generally, calling any setter or method is treated as an edit; but simple getters may be safely called at any time.
 
 Example of typical usage:
-
 ```js
 // Assume insertImage() is called from your UI code, and given a Blob containing image data
 async function insertImage(blob) {
@@ -310,3 +352,7 @@ a function which edits the document model.
 `Promise`<`void`\>
 
 a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.
+
+#### Inherited from
+
+[`Editor`](Editor.md).[`queueAsyncEdit`](Editor.md#queueasyncedit)
