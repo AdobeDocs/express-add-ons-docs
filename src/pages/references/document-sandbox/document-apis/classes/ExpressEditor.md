@@ -88,9 +88,10 @@ BitmapImage resource (e.g. returned from [loadBitmapImage](Editor.md#loadbitmapi
 • **options**= `{}`
 
 Additional configuration:
-     - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the
-       size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
-       if needed to stay below an application-defined size cap).
+
+-   `initialSize` - Size the image is displayed at. Must have the same aspect ratio as `bitmapData`. Defaults to the
+    size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down
+    if needed to stay below an application-defined size cap).
 
 • **options.initialSize?**: [`RectangleGeometry`](../interfaces/RectangleGeometry.md)
 
@@ -316,13 +317,14 @@ asynchronous operation such as [loadBitmapImage](Editor.md#loadbitmapimage), any
 queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
 
 The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
-to users. However, note that queueAsyncEdit() will return *before* your function has been run.
+to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
 If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
 or await the Promise returned by queueAsyncEdit().
 
 Generally, calling any setter or method is treated as an edit; but simple getters may be safely called at any time.
 
 Example of typical usage:
+
 ```js
 // Assume insertImage() is called from your UI code, and given a Blob containing image data
 async function insertImage(blob) {
