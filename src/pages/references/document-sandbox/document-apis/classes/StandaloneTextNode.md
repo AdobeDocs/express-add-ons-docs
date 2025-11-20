@@ -344,6 +344,8 @@ boundsInParent.
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
+<InlineAlert slots="text" variant="info"/>
+
 Note: this value is usually not (0,0) due to the way text layout is defined.
 
 ---
