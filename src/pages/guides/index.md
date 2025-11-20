@@ -35,6 +35,11 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 ## Welcome to Adobe Express Add-ons!
 
+<InlineAlert slots="text" />
+
+**Help us improve your developer experience** <br /><br />
+Take a few minutes to complete our [developer survey](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Source=documentation) and share your feedback. Your input helps us build better tools and resources for the Adobe Express developer community.
+
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code_playground.md) and start tinkering with the API right away.
 
 <TextBlock slots="image, heading, text, text1" width="50%"/>
