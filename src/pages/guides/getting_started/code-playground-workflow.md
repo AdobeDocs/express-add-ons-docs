@@ -55,30 +55,23 @@ Use these keyboard shortcuts to work more efficiently:
 
 #### TIP
 
-Use the "**...**" button in the top right corner of the playground window to reference the available keyboard shortcuts, start a new session, link to documentation and more.
+Use the "**More**" button in the top right corner of the playground window to reference the available keyboard shortcuts, start a new session, link to documentation and more.
 
 ## Session Management
 
 ### Saving Your Work
 
-The Code Playground features local persistence to help prevent the loss of your work. This functionality ensures that your code is stored in your browser's local storage, providing a safeguard against accidental data loss.
+The Code Playground now backs up your sessions in the cloud, ensuring your work is safely stored and protected from accidental loss.
 
-Code in the playground is **_not saved automatically_**. To ensure it's saved, you need to take one of the following steps:
+Your code is **_not saved automatically_**. The Code Playground saves your session only when you perform the following actions:
 
-1. Save your work using the [keyboard shortcut for Save](#keyboard-shortcuts)
-2. Run the code via the **Run Code** button or with the [keyboard shortcut for Run](#keyboard-shortcuts)
-3. Exit the playground (with the **X** in the upper right corner)
+1. Rename the session.
+2. Run the code via the **Run Code** button or with the [keyboard shortcut for Run](#keyboard-shortcuts).
+3. Save using the [keyboard shortcut for Save](#keyboard-shortcuts).
+4. Exit the Code Playground (with the **X** in the upper right corner).
+5. Switch to a new session.
 
 If you don't want to save your work at any time, use the [keyboard shortcut to Reset](#keyboard-shortcuts).
-
-<InlineAlert slots="header, text1" variant="warning"/>
-
-#### IMPORTANT
-
-- Only your most recent session is saved
-- Storage is browser-specific (not synced across devices)
-- Code is not saved in incognito/private browsing modes
-- Clearing browser data will delete saved code
 
 ### Resuming Sessions
 
@@ -92,14 +85,10 @@ There are two ways to resume working on your last saved session:
 
 ![Code Playground Add-on Mode](./img/playground-on.png)
 
-<InlineAlert slots="text1" variant="info"/>
-
-If you haven't enabled Add-on Development mode yet, you'll be prompted to do so. See [Enable Add-on Development Mode](./hello-world.md#enable-add-on-development-mode) for detailed instructions.
-
 #### Via the Your add-ons Page
 
 1. The **Your add-ons** page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session or create a new one
-2. Find the **Playground Sessions** section in the **Your add-ons** page
+2. Find the **Playground Sessions** tab in the **Your add-ons** page
 3. Access your last session or create a new one with one click
 
 ![Manage Your add-ons page](./img/playground-sessions.png)
@@ -119,7 +108,7 @@ Downloading your code is a great way to save your work and continue working on i
 
 To download your code:
 
-1. Click the **...** button in the top right corner of the playground window
+1. Click the **More** button in the top right corner of the playground window
 2. Click the **Download** button
 3. This will download a zip file containing your code
 
@@ -142,48 +131,27 @@ You can run your add-on folder as a local add-on project in your CLI by followin
 
 ### Development Workflow
 
-1. **Start with Script Mode**: Use Script Mode to prototype and test your core functionality
-2. **Iterate Quickly**: Use keyboard shortcuts to save and run code frequently
-3. **Test Incrementally**: Run your code often to catch issues early
-4. **Transition to Add-on Mode**: Once your logic is working, move to Add-on Mode to build the UI
-5. **Download for Local Development**: Use the download feature to continue development locally
-
-### Code Organization
-
-- **Use Clear Naming**: Choose descriptive names for variables and functions
-- **Comment Your Code**: Add comments to explain complex logic
-- **Modular Approach**: Break down complex functionality into smaller functions
-- **Error Handling**: Always include proper error handling in your code
-
-### Testing Strategy
-
-- **Test with Different Documents**: Try your add-on with various document types and sizes
-- **Edge Cases**: Test with empty documents, single elements, and complex layouts
-- **Performance**: Monitor how your add-on performs with large documents
-- **User Experience**: Test the complete user flow from start to finish
+1. **Start with Script Mode**: Use Script Mode to prototype and test your core functionality.
+2. **Iterate Quickly**: Use keyboard shortcuts to save and run code frequently.
+3. **Test Incrementally**: Run your code often to catch issues early.
+4. **Transition to Add-on Mode**: Once your logic is working, move to Add-on Mode to build the UI.
+5. **Download for Local Development**: Use the download feature to continue development locally.
 
 ## Troubleshooting Common Issues
 
 ### Code Not Running
 
-- Check for syntax errors in your code
+- Check for syntax errors in your code.
 - Ensure you're using the correct mode for your use case
-- Verify that all required APIs are properly imported
-- Check the browser console for error messages
+- Verify that all required APIs are properly imported.
+- Check the browser console for error messages.
 
 ### Session Not Saving
 
-- Make sure you're not in incognito/private browsing mode
-- Check that your browser allows local storage
-- Try saving manually using the keyboard shortcut
-- Clear browser cache and try again
-
-### Performance Issues
-
-- Avoid heavy computations in the iframe context
-- Use async/await properly for document operations
-- Test with different document sizes
-- Consider breaking down large operations into smaller chunks
+- The Code Playground supports up to 2MB of storage per session, and 60 sessions per user. Delete unused sessions to free up space.
+- Code is not saved automatically—read the [Saving Your Work](#saving-your-work) section for more details.
+- Make sure you're not in incognito/private browsing mode.
+- Try saving manually using the keyboard shortcut.
 
 ## Next Steps
 

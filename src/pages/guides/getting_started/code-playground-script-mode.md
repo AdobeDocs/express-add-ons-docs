@@ -22,34 +22,32 @@ contributors:
 
 # Code Playground - Script Mode
 
-Script Mode in Code Playground allows you to quickly experiment with Adobe Express Document APIs without the complexity of building a full user interface.
+Script Mode in Code Playground is the quickest way to try out [Document APIs](../learn/platform_concepts/document-api.md) that interact with Express document directly without the need for a full user interface.
 
 ## What is Script Mode?
 
-Script Mode is designed for rapid prototyping and learning. It provides a simplified environment where you can:
+Script Mode is designed for rapid prototyping and learning. It provides a simplified, code-focused environment where you can:
 
 - Test Document API calls directly
-- Learn how the Document APIs work
+- Explore how the Document APIs work
 - Experiment with document manipulation
-- Debug specific functionality
+- Debug specific pieces of functionality
 
-**Note:** The code you write in this mode is equivalent to the code you would write and use in the `sandbox/code.js` file in an add-on project running locally.
+Script mode is focused on code interactions and does not support building a user interface. If you want to create a UI, switch to [Add-on Mode](./code-playground-addon-mode.md).
 
-## When to Use Script Mode
+<InlineAlert slots="text" variant="info"/>
 
-Use Script Mode when you want to:
+The code you write in this mode is equivalent to the code you would write and use in the `sandbox/code.js` file in an add-on project running locally.
 
-- Learn how the Document APIs work
-- Quickly experiment with Document API calls without UI considerations
-- Test specific API functionality
-- Debug isolated code snippets
-- Prototype document manipulation logic
+### When to Use Script Mode
+
+Use Script Mode when you want to quickly experiment with Document API behavior—whether you’re learning the APIs, testing specific functionality, debugging isolated code snippets, or prototyping document-manipulation logic without UI considerations.
 
 ## How to Use Script Mode
 
 ### Step 1: Select Script Mode
 
-1. Click the **Script** button in the top left corner of the playground window
+1. Click the **Script** toggle in the top left corner of the playground window
 2. You'll see a single code editor where you can write your Document API code
 
 ![Code Playground Script Mode](./img/script-mode.png)
@@ -93,10 +91,6 @@ This is particularly useful for API calls that return promises, where an `await`
 ### Automatic Imports
 
 Script mode automatically imports the `express-document-sdk` modules, so you don't need to add import statements for the [Document APIs](../../references/document-sandbox/document-apis/index.md). However, if you do add import statements, it won't harm anything.
-
-### No UI Building
-
-Script mode is focused on Document API interactions and does not support building a user interface. If you want to create a UI, switch to [Add-on Mode](./code-playground-addon-mode.md).
 
 <InlineAlert slots="text" variant="info"/>
 

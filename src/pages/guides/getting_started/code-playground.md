@@ -40,7 +40,7 @@ Code Playground provides developers with a low-barrier entry point for add-on de
 - **Real-Time Preview**: See your changes as you code, allowing for immediate feedback and faster adjustments
 - **Effortless Prototyping**: Quickly turn ideas into add-ons with minimal setup
 - **Rapid Implementation**: Fast-track your prototype to a product by directly pasting your code into an add-on template
-- **Local Persistence**: Save your work to your browser's local storage and resume where you left off
+- **Persistence**: Save your work and resume where you left off
 - **Programming Assistance**: Typed definitions and auto-completion
 
 ### Who Should Use Code Playground?
@@ -49,7 +49,7 @@ The Code Playground is designed for:
 
 - **Beginners**: New developers who want to experiment with Adobe Express add-on development without setting up a full development environment
 - **Prototypers**: Developers who need to quickly test concepts or ideas before implementing them in a full add-on project
-- **Learners**: Those who are learning the Document APIs and want to see immediate results of their code
+- **Learners**: Those who are learning the add-on APIs and want to see immediate results of their code
 - **Experienced Developers**: Seasoned developers who want to test specific API functionality or debug isolated code snippets
 - **Designers**: UX/UI designers who want to experiment with add-on interfaces without extensive coding setup
 
@@ -88,29 +88,16 @@ The playground offers two distinct development modes to suit different needs:
 
 | Comparison Factor     | Script Mode                                                               | Add-on Mode                                                                                                                     |
 | --------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Purpose**           | Quick document manipulation tests                                         | Complete add-on UI and functionality                                                                                            |
-| **Environment**       | Document Sandbox only                                                     | Both iframe and Document Sandbox                                                                                                |
+| **Intended Use**      | Quick document manipulation tests and API experimentation                 | Building complete add-ons with full UI and functionality                                                                        |
 | **API Access**        | [Document APIs](../../references/document-sandbox/document-apis/index.md) | [Document APIs](../../references/document-sandbox/document-apis/index.md) + [Add-on UI SDK](../../references/addonsdk/index.md) |
 | **Global Await**      | Yes                                                                       | No                                                                                                                              |
 | **Automatic Imports** | Yes                                                                       | No                                                                                                                              |
-| **UI Components**     | No UI building                                                            | Full HTML/CSS/JS interface creation                                                                                             |
-| **Best For**          | Testing document operations                                               | Building complete add-ons                                                                                                       |
+| **UI Components**     | Not applicable                                                            | Full HTML/CSS/JS interface creation                                                                                             |
 
 ### When to Use Each Mode
 
-**Use Script Mode when:**
-
-- Learning how the Document APIs work
-- Quickly experimenting with Document API calls without UI considerations
-- Testing specific API functionality
-- Debugging isolated code snippets
-
-**Use Add-on Mode when:**
-
-- Developing and testing a complete add-on directly in Adobe Express
-- Prototyping an add-on before building a full project
-- Iterating quickly on your add-on's UI and logic
-- Building user interfaces around your functionality
+Use **Script Mode** for learning and experimenting with the Document APIs—ideal for quick tests, isolated debugging, and prototyping document logic without UI considerations.
+Use **Add-on Mode** when developing a full add-on experience, including building UI, testing functionality within Adobe Express, and rapidly iterating on both interface and logic.
 
 ## Quick Start Guides
 

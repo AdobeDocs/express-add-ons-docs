@@ -35,22 +35,16 @@ Add-on Mode provides a complete development environment where you can:
 - Prototype complete add-ons before building full projects
 - Iterate quickly on UI and logic
 
-## When to Use Add-on Mode
+### When to Use Add-on Mode
 
-Use Add-on Mode when you want to:
-
-- Develop and test a complete add-on directly in Adobe Express
-- Prototype an add-on before building a full project
-- Iterate quickly on your add-on's UI and logic
-- Build user interfaces around your functionality
-- Test the complete add-on experience
+Use Add-on Mode when you want to develop, prototype, and test a complete add-on experience—especially when iterating quickly on UI, logic, and overall functionality within Adobe Express.
 
 ## How to Use Add-on Mode
 
 ### Step 1: Select Add-on Mode
 
-1. Click the **Add-on** button (next to the **Script** button in the top left corner of the playground window)
-2. You'll see four tabs for organizing your code: HTML, CSS, Iframe JS, and Document JS
+1. Click the **Add-on** toggle (next to **Script** in the top left corner of the playground window).
+2. You'll see four tabs for organizing your code: HTML, CSS, Iframe JS, and Document JS.
 
 ![Code Playground Add-on Mode](./img/addon-mode.png)
 
@@ -127,7 +121,7 @@ This tab is for writing JavaScript code that runs in the iframe context of your 
 - The DOM elements in your HTML
 - Event handlers for your UI components
 
-This environment corresponds to the code you would typically write in your `index.js` or UI JavaScript files in a full add-on project.
+In case you are familiar with the add-on project structure, this tab corresponds to the code in the `index.js` file.
 
 **Example:**
 
@@ -197,34 +191,12 @@ async function addTextToDocument(textContent) {
 
 ## Key Differences from Script Mode
 
-| Feature               | Script Mode           | Add-on Mode                      |
-| --------------------- | --------------------- | -------------------------------- |
-| **Global Await**      | Yes                   | No - must use async functions    |
-| **Automatic Imports** | Yes                   | No - must import manually        |
-| **UI Building**       | No                    | Yes - full HTML/CSS/JS           |
-| **Environment**       | Document Sandbox only | Both iframe and Document Sandbox |
-| **API Access**        | Document APIs only    | Document APIs + Add-on UI SDK    |
-
-## Best Practices
-
-### Code Organization
-
-- Keep UI logic in the **Iframe JS** tab
-- Keep document manipulation in the **Document JS** tab
-- Use clear, descriptive variable and function names
-- Comment your code for better maintainability
-
-### Communication Between Tabs
-
-- Use the communication APIs to send data between iframe and Document Sandbox
-- Define clear message types and payload structures
-- Handle errors gracefully in both contexts
-
-### Performance
-
-- Avoid heavy computations in the iframe context
-- Use async/await properly for document operations
-- Test your add-on with different document sizes and complexity
+| Feature               | Script Mode        | Add-on Mode                   |
+| --------------------- | ------------------ | ----------------------------- |
+| **Global Await**      | Yes                | No - must use async functions |
+| **Automatic Imports** | Yes                | No - must import manually     |
+| **UI Building**       | No                 | Yes - full HTML/CSS/JS        |
+| **API Access**        | Document APIs only | Document APIs + Add-on UI SDK |
 
 ## Transitioning from Script Mode
 
