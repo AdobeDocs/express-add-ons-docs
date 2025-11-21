@@ -121,7 +121,7 @@ By definition, the bounds of an element (or its _bounding box_) are the smallest
 
 Let's see how to get the bounds of a rotated rectangle in both local and parent coordinates; since the rectangle is rotated, the two bounding boxes will differ.
 
-```js
+```js{try id=createAndRotateRectangle}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 

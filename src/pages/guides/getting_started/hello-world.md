@@ -36,6 +36,14 @@ This guide is **divided into two tracks**, which you can follow independently of
 
 <br/>
 
+<div className="playground-button-container">
+<button className="open-playground-button"
+     onclick="window.open(`https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved`, '_blank');"
+     >
+  Launch Code Playground
+</button>
+</div>
+
 The [Code Playground](#code-playground) path is based on a browser sandbox that runs instantly, requires no installation, and lets you explore add-on APIs with real-time feedback directly inside Adobe Express. **If you are new to add-on development**, or prefer to tinker-to-learn, then begin in the Playground to familiarise yourself with the environment; you can always try the CLI later.
 
 The [Command Line Interface (CLI)](#command-line-interface-cli) path will teach you to set up a local development environment, complete with a build pipeline, that allows you to build more complex add-ons that include external dependencies. This is the preferred path **for developers who want fully control**. You can always prototype rapidly in the Playground and transition to the CLI whenever project complexity calls for it.

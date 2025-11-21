@@ -111,9 +111,9 @@ currentPage.artboards.first.children.append(rect);
 
 ### Example: Style Shapes
 
-Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create a rectangle with a fill and a stroke.
+Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create an ellipse with a fill and a stroke.
 
-```js
+```js{try id=createEllipseWithFillAndStroke}
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 

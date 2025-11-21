@@ -74,12 +74,39 @@ async function getImsServiceToken() {
 }
 
 /**
+ * Comment out express-document-sdk import statements in code.
+ * The Code Playground Script mode automatically imports these modules,
+ * so we comment them out to avoid conflicts while preserving them for educational context.
+ * @param code - The code to process.
+ * @returns the code with import statements commented out.
+ */
+function commentOutExpressDocumentSDKImports(code) {
+  // Comment out import statements for express-document-sdk
+  // Handles various import formats:
+  // - import { editor } from "express-document-sdk";
+  // - import { editor, fonts } from "express-document-sdk";
+  // - import * as expressSDK from "express-document-sdk";
+  // - Single or double quotes
+  const importRegex = /^(import\s+.*\s+from\s+["']express-document-sdk["'];?\s*)$/gm;
+  
+  // Replace with commented version and add helpful note
+  const processedCode = code.replace(
+    importRegex, 
+    "// Note: Uncomment the import below when using in your add-on's code.js\n// $1"
+  );
+  
+  return processedCode;
+}
+
+/**
  * Create a zip file from a code block.
  * @param block - The code block to create a zip file from.
  */
 async function createZipFileFromCodeBlock(block) {
   const zip = new JSZip();
-  zip.file("script.js", block.code);
+  // Comment out express-document-sdk imports before adding to zip
+  const processedCode = commentOutExpressDocumentSDKImports(block.code);
+  zip.file("script.js", processedCode);
   return zip.generateAsync({ type: "nodebuffer" });
 }
 
@@ -91,13 +118,29 @@ async function createZipFileFromCodeBlock(block) {
  */
 async function uploadCodeBlockToFFC(codeBlock, projectId) {
   try {
+    // Process the code and log it for verification
+    const processedCode = commentOutExpressDocumentSDKImports(codeBlock.code);
+    
+    console.log("\n" + "=".repeat(80));
+    console.log(`Uploading code block: ${projectId}`);
+    console.log("File: " + codeBlock.filePath);
+    console.log("-".repeat(80));
+    console.log("Processed code that will be uploaded:");
+    console.log("-".repeat(80));
+    console.log(processedCode);
+    console.log("=".repeat(80) + "\n");
+
     const accessToken = await getImsServiceToken();
     const url = new URL(
       `${FFC_PLAYGROUND_ENDPOINT}/${projectId}`,
       FFC_BASE_URL
     );
 
-    const zipBuffer = await createZipFileFromCodeBlock(codeBlock);
+    // Create zip with the already-processed code
+    const zip = new JSZip();
+    zip.file("script.js", processedCode);
+    const zipBuffer = await zip.generateAsync({ type: "nodebuffer" });
+
     const form = new FormData();
     form.append(
       "file",
@@ -105,7 +148,7 @@ async function uploadCodeBlockToFFC(codeBlock, projectId) {
       `${projectId}.zip`
     );
     form.append("name", projectId);
-
+    
     const response = await fetch(url, {
       method: "PUT",
       headers: {
@@ -124,9 +167,11 @@ async function uploadCodeBlockToFFC(codeBlock, projectId) {
         `Failed to upload code block to FFC - HTTP ${response.status}: ${text}`
       );
     }
+    
+    console.log(`✅ Successfully uploaded: ${projectId}\n`);
     return response.json();
   } catch (error) {
-    console.error("Failed to upload code block to FFC:", error.message);
+    console.error(`❌ Failed to upload code block to FFC (${projectId}):`, error.message);
     throw error;
   }
 }
