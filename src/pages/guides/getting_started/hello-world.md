@@ -61,6 +61,15 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
   </ol>
 </details>
 
+<!-- Replace with URL "https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved before merging -->
+<div className="playground-button-container">
+<button className="open-playground-button"
+     onclick="window.open(`https://205504.prenv.projectx.corp.adobe.com/new?category=add-ons&mode=playground&session=saved`, '_blank');"
+     >
+  Launch Code Playground
+</button>
+</div>
+
 ## Code Playground
 
 We have a [dedicated page](./code_playground.md) for the Code Playground, which you can always refer to for more detailed information. Here, we'll focus on the basics to get you started, linking to the relevant sections of the full documentation and including screenshots to help you navigate the interface.
