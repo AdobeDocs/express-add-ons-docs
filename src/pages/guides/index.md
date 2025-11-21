@@ -117,7 +117,7 @@ Click on an add-on to view more information and install it. That's it!
 
 ## What's next?
 
-Continue by reading the [Developer Journey](./getting_started/developer-journey.md) and explore the [Code Playground](./getting_started/code_playground.md)!
+Continue by reading the [Developer Journey](./getting_started/developer-journey.md) and explore the [Code Playground](./getting_started/code-playground.md)!
 
 <InlineAlert slots="text" />
 
