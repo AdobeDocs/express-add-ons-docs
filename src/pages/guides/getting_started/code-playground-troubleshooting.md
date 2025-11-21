@@ -139,12 +139,12 @@ Check your browser's default download location, you can also review your browser
 
 ### Supported Browsers
 
-Code Playground works best with:
+Code Playground works best with the latest versions of the following browsers:
 
-- Chrome (latest version)
-- Firefox (latest version)
-- Safari (latest version)
-- Edge (latest version)
+- Chrome
+- Firefox
+- Safari
+- Edge
 
 ### Browser-Specific Issues
 
@@ -157,7 +157,6 @@ Code Playground works best with:
 **Firefox:**
 
 - Ensure JavaScript is enabled
-- Check if strict privacy mode is affecting local storage
 - Try disabling enhanced tracking protection
 
 **Safari:**

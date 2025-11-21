@@ -73,25 +73,34 @@ Your code is **_not saved automatically_**. The Code Playground saves your sessi
 
 If you don't want to save your work at any time, use the [keyboard shortcut to Reset](#keyboard-shortcuts).
 
-### Resuming Sessions
+### Managing and Resuming Sessions
 
-There are two ways to resume working on your last saved session:
+There are two ways to resume working on one of your saved sessions:
+
+#### Via the Home Screen
+
+1. Click the **Add-ons** button in the left rail.
+2. Click the **Add-on development** toggle in the top right corner of the playground window.
+3. Click **Create new** to create a new one, or
+4. Select the **Playground Sessions** tab to access your saved sessions.
+5. Click on the session you want to resume to open it in the Code Playground.
+
+![Code Playground Add-on Mode](./img/playground--sessions-from-home.gif)
 
 #### Via the Add-ons Panel
 
-1. With any document open, click the **Add-ons** button in the left rail
-2. Select the **Your add-ons** tab
-3. Toggle on **Code Playground** at the bottom of the panel
+If you have a **document open**, you can:
 
-![Code Playground Add-on Mode](./img/playground-on.png)
+1. Click the **Add-ons** button in the left rail and select the **Your add-ons** tab.
+2. Toggle on **Code Playground** at the bottom of the panel; it will open with the last session you were working on.
 
-#### Via the Your add-ons Page
+To browse your saved sessions:
 
-1. The **Your add-ons** page where you manage your add-ons now features a dedicated section for the playground, allowing you to quickly access your last session or create a new one
-2. Find the **Playground Sessions** tab in the **Your add-ons** page
-3. Access your last session or create a new one with one click
+1. Click the **More** button in the top right corner of the playground window
+2. Select the **Manage Sessions** item in the dropdown menu
+3. You'll see a list of your saved sessions; click on one to **select it** and click the **Open** button to resume working on it.
 
-![Manage Your add-ons page](./img/playground-sessions.png)
+![Code Playground Add-on Mode](./img/playground--sessions.gif)
 
 <InlineAlert slots="header, text1" variant="info"/>
 
@@ -111,6 +120,8 @@ To download your code:
 1. Click the **More** button in the top right corner of the playground window
 2. Click the **Download** button
 3. This will download a zip file containing your code
+
+![Code Playground Download code](./img/playground--download.png)
 
 ### Folder Structure
 

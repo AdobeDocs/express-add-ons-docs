@@ -33,7 +33,7 @@ Script Mode is designed for rapid prototyping and learning. It provides a simpli
 - Experiment with document manipulation
 - Debug specific pieces of functionality
 
-Script mode is focused on code interactions and does not support building a user interface. If you want to create a UI, switch to [Add-on Mode](./code-playground-addon-mode.md).
+Script mode is focused on **code interactions** and **does not support building a user interface**. If you want to create a UI, switch to [Add-on Mode](./code-playground-addon-mode.md).
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -42,6 +42,8 @@ The code you write in this mode is equivalent to the code you would write and us
 ### When to Use Script Mode
 
 Use Script Mode when you want to quickly experiment with Document API behavior—whether you’re learning the APIs, testing specific functionality, debugging isolated code snippets, or prototyping document-manipulation logic without UI considerations.
+
+Script mode is ideal to test code snippets in our [How-to guides](#how-to-guides).
 
 ## How to Use Script Mode
 
