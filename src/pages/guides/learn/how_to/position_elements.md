@@ -52,13 +52,16 @@ faq:
 
 Let's use this simple Rectangle to demonstrate how to move and rotate elements in Adobe Express.
 
-```js
+```js{try id=createAndPositionRectangle}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
 const rect = editor.createRectangle();
 rect.width = 200;
 rect.height = 100;
+
+// Move the rectangle 50px to the right and 100px down
+rect.translation = { x: 50, y: 100 };
 
 editor.context.insertionParent.children.append(rect);
 ```
