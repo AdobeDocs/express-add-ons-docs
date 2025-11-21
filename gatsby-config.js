@@ -665,6 +665,10 @@ module.exports = {
                     path: "guides/learn/how_to/use_images.md",
                   },
                   {
+                    title: "Access Bitmap Image Data",
+                    path: "guides/learn/how_to/access_bitmap_data.md",
+                  },
+                  {
                     title: "Use Videos",
                     path: "guides/learn/how_to/use_videos.md",
                   },

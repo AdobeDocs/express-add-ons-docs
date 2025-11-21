@@ -73,6 +73,7 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 |                                | [Use Geometry](./use_geometry.md)                   |
 |                                | [Use Color](./use_color.md)                         |
 |                                | [Use Images](./use_images.md)                       |
+|                                | [Access Bitmap Image Data](./access_bitmap_data.md) |
 |                                | [Use Videos](./use_videos.md)                       |
 |                                | [Use Audio](./use_audio.md)                         |
 |                                | [Use PDF and PowerPoint](./use_pdf_powerpoint.md)   |
