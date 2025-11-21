@@ -55,17 +55,17 @@ To create a Group, you can use the [`editor.createGroup()`](../../../references/
 
 ### Example
 
-```js
+```js{try id=createBasicGroup}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
 // Create some Text
 const greeting = editor.createText("Hiya!");
-greeting.translation = { x: 100, y: 50 };
+greeting.translation = { x: 0, y: 0 };
 
 // Create some other Text
 const saluto = editor.createText("Ciao!");
-saluto.translation = { x: 100, y: 150 };
+saluto.translation = { x: 0, y: 50 };
 
 // Create a Group 👈
 const greetingsGroup = editor.createGroup();

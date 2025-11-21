@@ -105,15 +105,15 @@ Colors are not directly applied, instead, to shapes; more generally, they are us
 
 If you're confused, worry not! This is the wondrous word of object oriented programming. The following example should clarify things:
 
-```js
+```js{try id=applyFillAndStrokeColors}
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
 // Create the shape
 const ellipse = editor.createEllipse();
-ellipse.width = 100;
-ellipse.height = 50;
-ellipse.translation = { x: 50, y: 50 };
+ellipse.rx = 100;
+ellipse.ry = 50;
+ellipse.translation = { x: 150, y: 150 };
 
 // Generate the needed colors
 const innerColor = colorUtils.fromHex("#A38AF0");
