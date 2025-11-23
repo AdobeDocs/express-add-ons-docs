@@ -213,6 +213,7 @@ The `data()` method returns a `Blob`, not `ImageData`. To process individual pix
 <InlineAlert slots="text" variant="warning"/>
 
 **Document Sandbox Limitations:** The document sandbox has limited Web APIs. To process pixels, you must:
+
 1. Fetch the blob in the document sandbox
 2. Send it to the iframe runtime via your API proxy
 3. Use Canvas APIs (available in iframe) to convert blob → ImageData
@@ -226,6 +227,7 @@ You can process the blob data and display previews in the UI. This example shows
 <InlineAlert slots="text" variant="info"/>
 
 **Architecture**: Bitmap manipulation requires coordination between two runtimes:
+
 - **Document Sandbox**: Has access to document APIs (`fetchBitmapImage`, `data()`) but limited Web APIs
 - **Iframe Runtime**: Has full browser APIs (Canvas, URL, Image) but no direct document access
 
@@ -658,12 +660,14 @@ async function sendToImageProcessingService() {
 The document sandbox has **limited Web APIs**:
 
 ✅ **Available**:
+
 - `console` methods (log, info, warn, error, debug, assert, clear)
 - `Blob` API (size, type, arrayBuffer(), text(), slice())
 - Standard JavaScript (Date, Math, JSON, Array, Object, etc.)
 - Express Document SDK APIs
 
 ❌ **NOT Available**:
+
 - `URL` / `URL.createObjectURL()`
 - `Image` / `HTMLImageElement`
 - `Canvas` / `OffscreenCanvas`
