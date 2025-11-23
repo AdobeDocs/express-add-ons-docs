@@ -97,7 +97,7 @@ The `editor.createText()` method accepts a string as a parameter, and returns a 
 
 ### Example: Create basic Text
 
-```js
+```js{try id=createBasicText}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -271,7 +271,7 @@ The `insertText()` method inserts new text at a specific position within the exi
 
 #### Example: Basic Text Insertion
 
-```js
+```js{try id=insertTextWithColor}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -289,7 +289,7 @@ textNode.setPositionInParent(
 // Add the TextNode to the document
 insertionParent.children.append(textNode);
 
-// Insert text at position 10
+// Insert text at position 6
 contentModel.insertText(
   "Express ",
   6,
@@ -351,7 +351,7 @@ The `appendText()` method adds new text to the end of the existing content. It a
 
 #### Example: Append Text
 
-```js
+```js{try id=appendTextMultiple}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 

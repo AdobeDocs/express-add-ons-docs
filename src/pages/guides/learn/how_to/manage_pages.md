@@ -78,7 +78,7 @@ Use the [`editor.documentRoot.pages.addPage()`](../../../references/document-san
 
 #### JavaScript
 
-```js
+```js{try id=addStandardPage}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -264,7 +264,7 @@ const lastPage: PageNode = allPages[allPages.length - 1];
 
 #### JavaScript
 
-```js
+```js{try id=addContentToNewPage}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
