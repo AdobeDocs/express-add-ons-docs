@@ -164,7 +164,7 @@ editor.context.insertionParent.children.append(p1);
 
 Combining and grouping multiple paths, you can create complex shapes, like in the following example:
 
-```js
+```js{try id=createMultiplePaths}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
