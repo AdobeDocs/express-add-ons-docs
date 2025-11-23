@@ -93,11 +93,11 @@ An ellipse with a radius of 200 on the x-axis and 100 on the y-axis will result 
 import { editor } from "express-document-sdk";
 
 const ellipse = editor.createEllipse();
-ellipse.rx = 200; // radius x 👈
-ellipse.ry = 100; // radius y 👈
+ellipse.rx = 200; // radius x
+ellipse.ry = 100; // radius y
 
 console.log(ellipse.boundsLocal);
-// { x: 0, y: 0, width: 400, height: 200 } 👈 mind the actual bounds!
+// { x: 0, y: 0, width: 400, height: 200 } - mind the actual bounds!
 
 // Add the ellipse to the document
 editor.context.insertionParent.children.append(ellipse);
@@ -107,7 +107,7 @@ editor.context.insertionParent.children.append(ellipse);
 
 Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create an ellipse with a fill and a stroke.
 
-```js{try id=createEllipseWithFillAndStroke}
+```js{try id=createEllipseWithFillStroke}
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -115,11 +115,12 @@ import { editor, colorUtils, constants } from "express-document-sdk";
 const ellipse = editor.createEllipse();
 ellipse.rx = 200;
 ellipse.ry = 100;
+ellipse.translation = { x: 250, y: 150 };
 
-// 👇 Apply the fill color
+// Apply the fill color
 ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F3D988"));
 
-// 👇 Create the stroke
+// Create the stroke
 const stroke = editor.makeStroke({
   color: colorUtils.fromHex("#E29E4E"),
   width: 20,
@@ -127,7 +128,7 @@ const stroke = editor.makeStroke({
   dashPattern: [50, 2],
 });
 
-// 👇 Apply the stroke
+// Apply the stroke
 ellipse.stroke = stroke;
 
 // Add the shape to the document

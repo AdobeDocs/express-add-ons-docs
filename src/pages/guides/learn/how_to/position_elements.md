@@ -136,9 +136,9 @@ rect.translation = { x: 50, y: 100 };
 rect.setRotationInParent(15, { x: 0, y: 0 });
 
 console.log(rect.boundsLocal);
-// {x: 0, y: 0, width: 200, height: 100} 👈
+// {x: 0, y: 0, width: 200, height: 100}
 console.log("boundsInParent", rect.boundsInParent);
-// {x: 24.2, y: 100, width: 219.0, height: 148.3} 👈
+// {x: 24.2, y: 100, width: 219.0, height: 148.3}
 editor.context.insertionParent.children.append(rect);
 ```
 

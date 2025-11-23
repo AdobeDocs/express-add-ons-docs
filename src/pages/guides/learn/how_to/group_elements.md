@@ -67,14 +67,14 @@ greeting.translation = { x: 0, y: 0 };
 const saluto = editor.createText("Ciao!");
 saluto.translation = { x: 0, y: 50 };
 
-// Create a Group 👈
+// Create a Group
 const greetingsGroup = editor.createGroup();
 greetingsGroup.translation = { x: 100, y: 100 };
 
-// Append the Text nodes to the Group 👈
+// Append the Text nodes to the Group
 greetingsGroup.children.append(greeting, saluto);
 
-// Append the Group to the page 👈
+// Append the Group to the page
 editor.context.insertionParent.children.append(greetingsGroup);
 ```
 

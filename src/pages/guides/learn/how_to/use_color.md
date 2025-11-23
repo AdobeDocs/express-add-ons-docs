@@ -126,7 +126,7 @@ const outerColorStroke = editor.makeStroke({
   width: 20,
 });
 
-// 👇 Apply the fill and stroke
+// Apply the fill and stroke
 ellipse.fill = innerColorFill;
 ellipse.stroke = outerColorStroke;
 
