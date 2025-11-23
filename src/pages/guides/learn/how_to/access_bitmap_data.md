@@ -27,7 +27,7 @@ faq:
       answer: 'Use the experimental `fetchBitmapImage()` method on an `ImageRectangleNode` to retrieve the underlying `BitmapImage` resource.'
 
     - question: "How do I access pixel data from a BitmapImage?"
-      answer: 'Use the experimental `data()` method on a `BitmapImage` object to retrieve raw pixel data as an `ImageData` object.'
+      answer: 'Use the experimental `data()` method on a `BitmapImage` object to retrieve the raw image data as a `Blob`.'
 
     - question: "What can I do with bitmap pixel data?"
       answer: "You can perform custom image processing, apply filters, analyze colors, detect edges, or implement computer vision algorithms."
@@ -37,9 +37,12 @@ faq:
 
     - question: "How do I enable experimental APIs?"
       answer: "Set the `experimentalApis` flag to `true` in the `requirements` section of the `manifest.json`."
+    
+    - question: "How do I enable file downloads?"
+      answer: "Add `allow-downloads` to the `permissions.sandbox` array in your entry point configuration in `manifest.json`."
 
     - question: "What format is the pixel data returned in?"
-      answer: "The `data()` method returns an `ImageData` object containing a `Uint8ClampedArray` with RGBA pixel values."
+      answer: "The `data()` method returns a `Blob` containing the image data. You can convert this to `ImageData` using Canvas APIs in the iframe runtime."
 
     - question: "Can I modify the pixel data and update the image?"
       answer: "Yes, you can modify the pixel data and create a new `BitmapImage` using `Editor.loadBitmapImage()` with a canvas blob."
@@ -48,10 +51,7 @@ faq:
       answer: "`ImageRectangleNode` is the visual node in the document; `BitmapImage` is the underlying image resource that can be shared across multiple nodes."
 
     - question: "How do I convert ImageData back to a BitmapImage?"
-      answer: "Use a canvas to convert `ImageData` to a blob, then use `Editor.loadBitmapImage(blob)` to create a new `BitmapImage`."
-
-    - question: "Are there performance considerations?"
-      answer: "Yes, accessing and processing pixel data can be memory-intensive. Consider image dimensions and optimize your processing algorithms."
+      answer: "First convert the `ImageData` to a blob using Canvas APIs (in the iframe runtime), then use `Editor.loadBitmapImage(blob)` to create a new `BitmapImage` in the document sandbox."
 ---
 
 # Access Bitmap Image Data
@@ -75,7 +75,11 @@ Adobe Express Add-ons can now access the underlying bitmap image data from image
 This functionality is provided through two experimental APIs:
 
 1. **`ImageRectangleNode.fetchBitmapImage()`**: Retrieves the `BitmapImage` resource from an image node
-2. **`BitmapImage.data()`**: Accesses the raw pixel data as an `ImageData` object
+2. **`BitmapImage.data()`**: Accesses the raw image data as a `Blob`
+
+<InlineAlert slots="text" variant="info"/>
+
+**Important:** The `data()` method returns a `Blob`. To process pixels, you'll need to convert the blob to `ImageData` using Canvas APIs in the **iframe runtime** (not the document sandbox, which has limited Web APIs).
 
 ## Prerequisites
 
@@ -84,6 +88,51 @@ Before working with bitmap data, ensure you understand:
 - [Document Sandbox APIs](../platform_concepts/document-api.md)
 - [Media node structure](./use_images.md#media-node-structure)
 - [Async edit operations](../../../references/document-sandbox/document-apis/classes/Editor.md#queueasyncedit)
+
+### Required Manifest Configuration
+
+To use the bitmap image APIs, you need to enable experimental APIs in your `manifest.json`:
+
+```json
+{
+    "manifestVersion": 2,
+    "requirements": {
+        "apps": [
+            {
+                "name": "Express",
+                "apiVersion": 1
+            }
+        ],
+        "experimentalApis": true
+    },
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "main": "index.html",
+            "documentSandbox": "code.js"
+        }
+    ]
+}
+```
+
+<InlineAlert slots="text" variant="info"/>
+
+**Optional:** If your add-on includes download functionality, you also need to add the `allow-downloads` permission:
+
+```json
+"entryPoints": [
+    {
+        "type": "panel",
+        "id": "panel1",
+        "main": "index.html",
+        "documentSandbox": "code.js",
+        "permissions": {
+            "sandbox": ["allow-downloads"]
+        }
+    }
+]
+```
 
 ## Retrieve BitmapImage from Document
 
@@ -107,7 +156,7 @@ if (selectedNode.type === constants.SceneNodeType.mediaContainer) {
   const mediaRectangle = mediaContainer.mediaRectangle;
   
   // Check if it's an ImageRectangleNode (not video or other media)
-  if (mediaRectangle instanceof ImageRectangleNode) {
+  if (mediaRectangle.type === constants.SceneNodeType.imageRectangle) {
     // Fetch the underlying BitmapImage (experimental API)
     const bitmapImage = await mediaRectangle.fetchBitmapImage();
     
@@ -133,72 +182,56 @@ To access the `BitmapImage`, you need to:
 2. Access its `mediaRectangle` property
 3. Call `fetchBitmapImage()` on the `ImageRectangleNode`
 
-## Access Pixel Data
+## Access Image Data as Blob
 
-Once you have a `BitmapImage` object, you can access its raw pixel data using the experimental `data()` method. This returns an `ImageData` object similar to the Canvas API.
+Once you have a `BitmapImage` object, you can access its raw image data using the experimental `data()` method. This returns a `Blob` object containing the image data.
 
-### Example: Read Pixel Data
+### Example: Read Image Data
 
 ```js
 import { editor } from "express-document-sdk";
 
-// Assuming you have a BitmapImage from fetchBitmapImage()
-const bitmapImage = await imageRectangle.fetchBitmapImage();
+// Building on the previous example, after fetching the BitmapImage:
+// const bitmapImage = await imageRectangle.fetchBitmapImage();
 
-// Access pixel data (experimental API)
-const imageData = await bitmapImage.data();
+// Access image data (experimental API)
+const blob = await bitmapImage.data();
 
-console.log(`Width: ${imageData.width}`);
-console.log(`Height: ${imageData.height}`);
-console.log(`Pixel data length: ${imageData.data.length}`);
-
-// The data property is a Uint8ClampedArray with RGBA values
-// Format: [R, G, B, A, R, G, B, A, ...]
-// Each pixel uses 4 bytes (Red, Green, Blue, Alpha)
-const pixelCount = imageData.width * imageData.height;
-console.log(`Total pixels: ${pixelCount}`);
+console.log(`Width: ${bitmapImage.width}`);
+console.log(`Height: ${bitmapImage.height}`);
+console.log(`Blob size: ${blob.size} bytes`);
+console.log(`Blob type: ${blob.type}`);
 ```
 
-### ImageData Structure
+### Blob vs ImageData
 
-The `ImageData` object returned by `data()` contains:
+The `data()` method returns a `Blob`, not `ImageData`. To process individual pixels:
 
-- **`width`**: Image width in pixels
-- **`height`**: Image height in pixels  
-- **`data`**: `Uint8ClampedArray` containing pixel data in RGBA format
+1. **In the Document Sandbox**: You can access `blob.size`, `blob.type`, `blob.arrayBuffer()`, `blob.text()`, and `blob.slice()`
+2. **For pixel manipulation**: Send the blob to the iframe runtime where you have access to Canvas APIs to convert it to `ImageData`
 
-Each pixel is represented by 4 consecutive bytes:
+<InlineAlert slots="text" variant="warning"/>
 
-- **R** (Red): 0-255
-- **G** (Green): 0-255
-- **B** (Blue): 0-255
-- **A** (Alpha): 0-255
+**Document Sandbox Limitations:** The document sandbox has limited Web APIs. To process pixels, you must:
+1. Fetch the blob in the document sandbox
+2. Send it to the iframe runtime via your API proxy
+3. Use Canvas APIs (available in iframe) to convert blob → ImageData
+4. Process the pixels
+5. Convert back to blob and optionally send to document sandbox
 
-To access a specific pixel at coordinates (x, y):
+## Process and Display Image Data
 
-```js
-function getPixel(imageData, x, y) {
-  const index = (y * imageData.width + x) * 4;
-  return {
-    r: imageData.data[index],
-    g: imageData.data[index + 1],
-    b: imageData.data[index + 2],
-    a: imageData.data[index + 3]
-  };
-}
+You can process the blob data and display previews in the UI. This example shows a complete workflow using the correct runtime for each operation.
 
-// Get pixel at (10, 20)
-const pixel = getPixel(imageData, 10, 20);
-console.log(`Pixel color: rgba(${pixel.r}, ${pixel.g}, ${pixel.b}, ${pixel.a})`);
-```
+<InlineAlert slots="text" variant="info"/>
 
-## Process and Modify Pixel Data
+**Architecture**: Bitmap manipulation requires coordination between two runtimes:
+- **Document Sandbox**: Has access to document APIs (`fetchBitmapImage`, `data()`) but limited Web APIs
+- **Iframe Runtime**: Has full browser APIs (Canvas, URL, Image) but no direct document access
 
-You can modify the pixel data and create a new image with the changes. This example shows a complete workflow from reading to modifying to creating a new image.
+### Example: Grayscale Filter with Preview
 
-### Example: Apply Grayscale Filter
-
-This example demonstrates reading pixel data, applying a grayscale conversion, and creating a new image with the modified data.
+This example demonstrates fetching image data from the document and processing it in the iframe runtime to show a before/after preview.
 
 <CodeBlock slots="heading, code" repeat="4" languages="HTML, CSS, iFrame JS, Document JS"/>
 
@@ -215,8 +248,9 @@ This example demonstrates reading pixel data, applying a grayscale conversion, a
 <body>
   <div class="container">
     <h3>Image Processing</h3>
-    <button id="grayscale-btn" disabled>Apply Grayscale</button>
+    <button id="grayscale-btn" disabled>Show Grayscale Preview</button>
     <div id="message" class="message"></div>
+    <div id="preview" class="preview"></div>
   </div>
 </body>
 </html>
@@ -277,6 +311,18 @@ button:not([disabled]):hover {
   color: rgb(0, 150, 0);
   border: 1px solid rgb(200, 255, 200);
 }
+
+.preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.preview img {
+  max-width: 100%;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 8px;
+}
 ```
 
 #### iFrame JS
@@ -293,6 +339,7 @@ addOnUISdk.ready.then(async () => {
   // Get UI elements
   const grayscaleButton = document.getElementById("grayscale-btn");
   const messageDiv = document.getElementById("message");
+  const previewDiv = document.getElementById("preview");
 
   // Enable the button once ready
   grayscaleButton.disabled = false;
@@ -310,36 +357,94 @@ addOnUISdk.ready.then(async () => {
     }
   }
 
-  // Apply grayscale filter to selected image
-  async function applyGrayscale() {
+  // Apply grayscale filter and show preview
+  async function showGrayscalePreview() {
     try {
       messageDiv.style.display = "none";
+      previewDiv.innerHTML = "";
       grayscaleButton.disabled = true;
       grayscaleButton.textContent = "Processing...";
 
-      const result = await sandboxProxy.applyGrayscaleFilter();
+      // Step 1: Fetch bitmap from document sandbox
+      console.log("Fetching bitmap from document sandbox...");
+      const result = await sandboxProxy.fetchBitmapFromSelectedImage();
 
-      if (result.success) {
-        grayscaleButton.textContent = "Grayscale Applied!";
-        showMessage("Grayscale filter applied successfully!", "success");
-        setTimeout(() => {
-          grayscaleButton.textContent = "Apply Grayscale";
-          grayscaleButton.disabled = false;
-        }, 2000);
-      } else {
-        grayscaleButton.textContent = "Apply Grayscale";
-        grayscaleButton.disabled = false;
+      if (!result.success) {
         showMessage(result.error);
+        grayscaleButton.textContent = "Show Grayscale Preview";
+        grayscaleButton.disabled = false;
+        return;
       }
+
+      const originalBlob = result.blob;
+
+      // Step 2: Process in iframe runtime (has Canvas APIs)
+      console.log("Processing image in iframe runtime...");
+      
+      // Convert blob to Image using URL API (available in iframe)
+      const objectUrl = URL.createObjectURL(originalBlob);
+      const img = new Image();
+      
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = objectUrl;
+      });
+
+      // Use Canvas to process pixels (available in iframe)
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+
+      // Get ImageData and apply grayscale
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+      URL.revokeObjectURL(objectUrl);
+
+      // Convert to blob for display
+      const grayscaleBlob = await new Promise(resolve => {
+        canvas.toBlob(resolve, "image/png");
+      });
+
+      // Step 3: Display before/after preview
+      const originalDataUrl = URL.createObjectURL(originalBlob);
+      const grayscaleDataUrl = URL.createObjectURL(grayscaleBlob);
+
+      previewDiv.innerHTML = `
+        <div>
+          <h4>Original</h4>
+          <img src="${originalDataUrl}" />
+        </div>
+        <div>
+          <h4>Grayscale</h4>
+          <img src="${grayscaleDataUrl}" />
+        </div>
+      `;
+
+      grayscaleButton.textContent = "Show Grayscale Preview";
+      grayscaleButton.disabled = false;
+      showMessage("Preview generated! (Changes not applied to document)", "success");
+
     } catch (error) {
-      console.error("Failed to apply grayscale:", error);
-      grayscaleButton.textContent = "Apply Grayscale";
+      console.error("Failed to process image:", error);
+      grayscaleButton.textContent = "Show Grayscale Preview";
       grayscaleButton.disabled = false;
       showMessage("An unexpected error occurred. Please try again.");
     }
   }
 
-  grayscaleButton.addEventListener("click", applyGrayscale);
+  grayscaleButton.addEventListener("click", showGrayscalePreview);
 });
 ```
 
@@ -352,7 +457,7 @@ import { editor, constants } from "express-document-sdk";
 const { runtime } = addOnSandboxSdk.instance;
 
 runtime.exposeApi({
-  async applyGrayscaleFilter() {
+  async fetchBitmapFromSelectedImage() {
     try {
       // Validate selection
       if (!editor.context.hasSelection) {
@@ -376,7 +481,7 @@ runtime.exposeApi({
       const mediaRectangle = mediaContainer.mediaRectangle;
 
       // Verify it's an ImageRectangleNode (not video)
-      if (!(mediaRectangle instanceof ImageRectangleNode)) {
+      if (mediaRectangle.type !== constants.SceneNodeType.imageRectangle) {
         return {
           success: false,
           error: "Selected media is not an image."
@@ -386,41 +491,21 @@ runtime.exposeApi({
       // Fetch the BitmapImage (experimental API)
       const bitmapImage = await mediaRectangle.fetchBitmapImage();
 
-      // Get pixel data (experimental API)
-      const imageData = await bitmapImage.data();
+      // Get image data as Blob (experimental API)
+      const blob = await bitmapImage.data();
 
-      // Apply grayscale conversion
-      const data = imageData.data;
-      for (let i = 0; i < data.length; i += 4) {
-        // Calculate grayscale using luminosity method
-        const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
-        data[i] = gray;     // Red
-        data[i + 1] = gray; // Green
-        data[i + 2] = gray; // Blue
-        // Alpha (i + 3) remains unchanged
-      }
-
-      // Convert ImageData back to a Blob using canvas
-      const canvas = new OffscreenCanvas(imageData.width, imageData.height);
-      const ctx = canvas.getContext("2d");
-      ctx.putImageData(imageData, 0, 0);
-      const blob = await canvas.convertToBlob({ type: "image/png" });
-
-      // Load the modified image as a new BitmapImage
-      const newBitmapImage = await editor.loadBitmapImage(blob);
-
-      // Replace the existing image with the grayscale version
-      editor.queueAsyncEdit(() => {
-        mediaContainer.replaceMedia(newBitmapImage);
-      });
-
-      return { success: true };
+      // Return blob to iframe runtime for processing
+      // (Document sandbox lacks Canvas, URL, Image APIs)
+      return { 
+        success: true, 
+        blob: blob
+      };
 
     } catch (error) {
-      console.error("Error applying grayscale:", error);
+      console.error("Error fetching bitmap:", error);
       return {
         success: false,
-        error: "Failed to process image. Please try again."
+        error: "Failed to fetch image. Please try again."
       };
     }
   }
@@ -429,216 +514,135 @@ runtime.exposeApi({
 
 ### How the Grayscale Example Works
 
-1. **Fetch the image**: Use `fetchBitmapImage()` to get the `BitmapImage` from the selected image node
-2. **Access pixel data**: Call `data()` to retrieve the `ImageData` with raw RGBA values
-3. **Process pixels**: Loop through the pixel array and apply the grayscale formula
-4. **Create new image**: Use `OffscreenCanvas` to convert modified `ImageData` to a blob
-5. **Load and replace**: Use `loadBitmapImage()` and `replaceMedia()` to update the document
+1. **Fetch in Document Sandbox**: Use `fetchBitmapImage()` and `data()` to get the image as a `Blob`
+2. **Send to Iframe**: Return the blob via the API proxy to the iframe runtime
+3. **Process in Iframe**: Use Canvas APIs (available in iframe) to convert blob → ImageData and apply grayscale
+4. **Display Preview**: Show before/after comparison in the UI
+5. **Future**: New Document APIs will be available soon to apply processed images back to the document
 
-## Advanced Use Cases
+<InlineAlert slots="text" variant="warning"/>
 
-### Color Palette Extraction
+**Note:** This example shows a **preview-only workflow**. Additional Document APIs are being developed to enable applying processed images back to the document from the document sandbox.
 
-Extract the dominant colors from an image:
+## Additional Use Cases
+
+### Image Metadata Extraction
+
+Extract basic image information in the document sandbox:
 
 ```js
-async function extractColorPalette(imageRectangle, numColors = 5) {
+async function analyzeImage(imageRectangle) {
   const bitmapImage = await imageRectangle.fetchBitmapImage();
-  const imageData = await bitmapImage.data();
+  const blob = await bitmapImage.data();
   
-  // Sample pixels (every 10th pixel for performance)
-  const colors = [];
-  const data = imageData.data;
-  
-  for (let i = 0; i < data.length; i += 40) { // 40 = 4 bytes * 10 pixels
-    colors.push({
-      r: data[i],
-      g: data[i + 1],
-      b: data[i + 2]
-    });
-  }
-  
-  // Use k-means clustering or color quantization to find dominant colors
-  // (Implementation details omitted for brevity)
-  
-  return colors;
+  return {
+    width: bitmapImage.width,
+    height: bitmapImage.height,
+    aspectRatio: (bitmapImage.width / bitmapImage.height).toFixed(3),
+    pixelCount: bitmapImage.width * bitmapImage.height,
+    megapixels: ((bitmapImage.width * bitmapImage.height) / 1000000).toFixed(2),
+    fileSize: blob.size,
+    fileSizeKB: (blob.size / 1024).toFixed(2),
+    mimeType: blob.type
+  };
 }
 ```
 
-### Brightness Analysis
+### Download Processed Image
 
-Calculate the average brightness of an image:
+Allow users to download processed images from the iframe runtime.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**Permission Required:** Add `"sandbox": ["allow-downloads"]` to the `permissions` section of your entry point in `manifest.json`.
 
 ```js
-async function calculateAverageBrightness(imageRectangle) {
-  const bitmapImage = await imageRectangle.fetchBitmapImage();
-  const imageData = await bitmapImage.data();
+// In iframe runtime (has URL and download APIs)
+async function downloadGrayscaleImage() {
+  // Fetch bitmap from document sandbox
+  const result = await sandboxProxy.fetchBitmapFromSelectedImage();
   
-  let totalBrightness = 0;
-  const data = imageData.data;
-  const pixelCount = imageData.width * imageData.height;
-  
-  for (let i = 0; i < data.length; i += 4) {
-    // Calculate perceived brightness
-    const brightness = (0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2]);
-    totalBrightness += brightness;
+  if (!result.success) {
+    console.error(result.error);
+    return;
   }
   
-  return totalBrightness / pixelCount; // Returns 0-255
+  // Process in iframe
+  const grayscaleBlob = await applyGrayscaleToBlob(result.blob);
+  
+  // Trigger download
+  const url = URL.createObjectURL(grayscaleBlob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "grayscale-image.png";
+  a.click();
+  URL.revokeObjectURL(url);
 }
-```
 
-### Custom Filter: Sepia Tone
-
-Apply a sepia tone effect:
-
-```js
-async function applySepiaTone(imageRectangle) {
-  const bitmapImage = await imageRectangle.fetchBitmapImage();
-  const imageData = await bitmapImage.data();
-  const data = imageData.data;
+async function applyGrayscaleToBlob(blob) {
+  const objectUrl = URL.createObjectURL(blob);
+  const img = new Image();
   
-  for (let i = 0; i < data.length; i += 4) {
-    const r = data[i];
-    const g = data[i + 1];
-    const b = data[i + 2];
-    
-    // Sepia tone transformation
-    data[i] = Math.min(255, (r * 0.393) + (g * 0.769) + (b * 0.189));
-    data[i + 1] = Math.min(255, (r * 0.349) + (g * 0.686) + (b * 0.168));
-    data[i + 2] = Math.min(255, (r * 0.272) + (g * 0.534) + (b * 0.131));
-  }
+  await new Promise((resolve, reject) => {
+    img.onload = resolve;
+    img.onerror = reject;
+    img.src = objectUrl;
+  });
   
-  // Convert back to blob and create new BitmapImage
-  const canvas = new OffscreenCanvas(imageData.width, imageData.height);
+  const canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
   const ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imageData.data;
+  
+  for (let i = 0; i < data.length; i += 4) {
+    const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+    data[i] = gray;
+    data[i + 1] = gray;
+    data[i + 2] = gray;
+  }
+  
   ctx.putImageData(imageData, 0, 0);
-  const blob = await canvas.convertToBlob({ type: "image/png" });
+  URL.revokeObjectURL(objectUrl);
   
-  return await editor.loadBitmapImage(blob);
+  return new Promise(resolve => {
+    canvas.toBlob(resolve, "image/png");
+  });
 }
 ```
 
-### Edge Detection
+### Send to External API
 
-Implement a simple edge detection algorithm:
+Send bitmap data to an external image processing service:
 
 ```js
-async function detectEdges(imageRectangle) {
-  const bitmapImage = await imageRectangle.fetchBitmapImage();
-  const imageData = await bitmapImage.data();
-  const width = imageData.width;
-  const height = imageData.height;
-  const data = imageData.data;
+// In iframe runtime (has fetch API)
+async function sendToImageProcessingService() {
+  // Fetch bitmap from document sandbox
+  const result = await sandboxProxy.fetchBitmapFromSelectedImage();
   
-  // Create output array
-  const output = new Uint8ClampedArray(data.length);
-  
-  // Sobel operator kernels
-  const sobelX = [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]];
-  const sobelY = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]];
-  
-  // Apply Sobel operator (simplified)
-  for (let y = 1; y < height - 1; y++) {
-    for (let x = 1; x < width - 1; x++) {
-      let gx = 0, gy = 0;
-      
-      // Convolve with Sobel kernels
-      for (let ky = -1; ky <= 1; ky++) {
-        for (let kx = -1; kx <= 1; kx++) {
-          const idx = ((y + ky) * width + (x + kx)) * 4;
-          const gray = 0.299 * data[idx] + 0.587 * data[idx + 1] + 0.114 * data[idx + 2];
-          gx += gray * sobelX[ky + 1][kx + 1];
-          gy += gray * sobelY[ky + 1][kx + 1];
-        }
-      }
-      
-      const magnitude = Math.sqrt(gx * gx + gy * gy);
-      const idx = (y * width + x) * 4;
-      output[idx] = output[idx + 1] = output[idx + 2] = Math.min(255, magnitude);
-      output[idx + 3] = 255; // Alpha
-    }
+  if (!result.success) {
+    console.error(result.error);
+    return;
   }
   
-  // Create new ImageData with edges
-  const edgeImageData = new ImageData(output, width, height);
+  // Send to external API
+  const formData = new FormData();
+  formData.append("image", result.blob, "image.png");
   
-  // Convert to blob
-  const canvas = new OffscreenCanvas(width, height);
-  const ctx = canvas.getContext("2d");
-  ctx.putImageData(edgeImageData, 0, 0);
-  const blob = await canvas.convertToBlob({ type: "image/png" });
+  const response = await fetch("https://api.example.com/process", {
+    method: "POST",
+    body: formData
+  });
   
-  return await editor.loadBitmapImage(blob);
+  const processedImageBlob = await response.blob();
+  console.log("Processed image received:", processedImageBlob.size, "bytes");
+  
+  // Future: New Document APIs will enable applying processed images back to the document
 }
-```
-
-## Performance Considerations
-
-Working with pixel data can be memory and CPU intensive. Consider these best practices:
-
-### 1. Check Image Dimensions
-
-```js
-const bitmapImage = await imageRectangle.fetchBitmapImage();
-
-// Check size before processing
-const pixelCount = bitmapImage.width * bitmapImage.height;
-const maxPixels = 4000 * 4000; // 16 megapixels
-
-if (pixelCount > maxPixels) {
-  console.warn("Image is very large. Processing may be slow.");
-  // Consider downsampling or showing a warning to the user
-}
-```
-
-### 2. Use Efficient Algorithms
-
-```js
-// BAD: Creating new objects for each pixel
-for (let i = 0; i < data.length; i += 4) {
-  const pixel = { r: data[i], g: data[i + 1], b: data[i + 2] };
-  // Process pixel...
-}
-
-// GOOD: Direct array access
-for (let i = 0; i < data.length; i += 4) {
-  const r = data[i];
-  const g = data[i + 1];
-  const b = data[i + 2];
-  // Process values directly...
-}
-```
-
-### 3. Sample Large Images
-
-For analysis tasks, you don't always need every pixel:
-
-```js
-// Sample every 10th pixel for color analysis
-const sampleRate = 10;
-for (let i = 0; i < data.length; i += 4 * sampleRate) {
-  // Process sampled pixel...
-}
-```
-
-### 4. Use Web Workers
-
-For intensive processing, consider using Web Workers to avoid blocking the UI:
-
-```js
-// In Document Sandbox, you can use Workers
-const worker = new Worker("./image-processor-worker.js");
-
-worker.postMessage({
-  imageData: imageData,
-  operation: "grayscale"
-});
-
-worker.onmessage = (event) => {
-  const processedImageData = event.data;
-  // Convert back to BitmapImage...
-};
 ```
 
 ## Limitations and Considerations
@@ -647,7 +651,30 @@ worker.onmessage = (event) => {
 
 - **Subject to change**: These APIs may be modified or removed in future SDK versions
 - **Limited documentation**: Full API specifications may not be available
-- **Browser compatibility**: Ensure your target browsers support required features (OffscreenCanvas, etc.)
+- **Production readiness**: Not recommended for production add-ons until declared stable
+
+### Document Sandbox Limitations
+
+The document sandbox has **limited Web APIs**:
+
+✅ **Available**:
+- `console` methods (log, info, warn, error, debug, assert, clear)
+- `Blob` API (size, type, arrayBuffer(), text(), slice())
+- Standard JavaScript (Date, Math, JSON, Array, Object, etc.)
+- Express Document SDK APIs
+
+❌ **NOT Available**:
+- `URL` / `URL.createObjectURL()`
+- `Image` / `HTMLImageElement`
+- `Canvas` / `OffscreenCanvas`
+- `fetch()` / `XMLHttpRequest`
+- `setTimeout()` / `setInterval()`
+- Web Workers
+- DOM APIs
+
+<InlineAlert slots="text" variant="warning"/>
+
+**Important**: To process pixels, you MUST use the **iframe runtime** which has full Canvas APIs. Fetch the blob in the document sandbox, send it to the iframe via your API proxy, and process it there.
 
 ### Memory Constraints
 
@@ -660,22 +687,20 @@ worker.onmessage = (event) => {
 Both `fetchBitmapImage()` and `data()` are asynchronous:
 
 ```js
-// Always use await or .then()
+// Always use await
 const bitmapImage = await imageRectangle.fetchBitmapImage();
-const imageData = await bitmapImage.data();
-
-// When creating new images, use queueAsyncEdit
-const newBitmap = await editor.loadBitmapImage(blob);
-editor.queueAsyncEdit(() => {
-  mediaContainer.replaceMedia(newBitmap);
-});
+const blob = await bitmapImage.data();
 ```
 
-### Data Format
+### Applying Changes Back to the Document
 
-- Pixel data is always in RGBA format (4 bytes per pixel)
-- Values are clamped to 0-255
-- Alpha channel is included even for opaque images
+Currently, you can fetch and process image data, but **applying processed images back to the document is not yet available**:
+
+- ✅ You can fetch and process image data
+- ✅ You can show previews, download, or send to external services
+- ❌ You **cannot yet** apply processed images back to the document
+
+**Coming Soon:** New Document APIs are being developed to enable applying modified images back to the document directly from the document sandbox, making it easier to implement image editing workflows.
 
 ## FAQs
 
@@ -685,11 +710,11 @@ editor.queueAsyncEdit(() => {
 
 #### Q: How do I access pixel data from a BitmapImage?
 
-**A:** Use the experimental `data()` method on a `BitmapImage` object to retrieve raw pixel data as an `ImageData` object.
+**A:** Use the experimental `data()` method on a `BitmapImage` object to retrieve the raw image data as a `Blob`. To process individual pixels, send the blob to the iframe runtime and use Canvas APIs to convert it to `ImageData`.
 
 #### Q: What can I do with bitmap pixel data?
 
-**A:** You can perform custom image processing, apply filters, analyze colors, detect edges, or implement computer vision algorithms.
+**A:** You can create image processing previews, apply filters, analyze properties, extract colors, generate thumbnails, or send data to external APIs. Additional Document APIs are being developed to enable applying changes back to the document.
 
 #### Q: Are these APIs production-ready?
 
@@ -699,13 +724,31 @@ editor.queueAsyncEdit(() => {
 
 **A:** Set the `experimentalApis` flag to `true` in the `requirements` section of the `manifest.json`.
 
+#### Q: How do I enable file downloads?
+
+**A:** Add `"allow-downloads"` to the `permissions.sandbox` array in your entry point configuration in `manifest.json`. For example:
+
+```json
+"entryPoints": [
+    {
+        "type": "panel",
+        "id": "panel1",
+        "main": "index.html",
+        "documentSandbox": "code.js",
+        "permissions": {
+            "sandbox": ["allow-downloads"]
+        }
+    }
+]
+```
+
 #### Q: What format is the pixel data returned in?
 
-**A:** The `data()` method returns an `ImageData` object containing a `Uint8ClampedArray` with RGBA pixel values.
+**A:** The `data()` method returns a `Blob` containing the image data. You can convert this to `ImageData` using Canvas APIs in the iframe runtime.
 
 #### Q: Can I modify the pixel data and update the image?
 
-**A:** Yes, you can modify the pixel data and create a new `BitmapImage` using `Editor.loadBitmapImage()` with a canvas blob.
+**A:** You can fetch and modify pixel data for preview, download, or external processing. New Document APIs are being developed to enable applying processed images back to the document.
 
 #### Q: What is the difference between ImageRectangleNode and BitmapImage?
 
@@ -713,8 +756,4 @@ editor.queueAsyncEdit(() => {
 
 #### Q: How do I convert ImageData back to a BitmapImage?
 
-**A:** Use a canvas to convert `ImageData` to a blob, then use `Editor.loadBitmapImage(blob)` to create a new `BitmapImage`.
-
-#### Q: Are there performance considerations?
-
-**A:** Yes, accessing and processing pixel data can be memory-intensive. Consider image dimensions and optimize your processing algorithms.
+**A:** First convert the `ImageData` to a blob using Canvas APIs (in the iframe runtime), then use `Editor.loadBitmapImage(blob)` to create a new `BitmapImage` in the document sandbox.
