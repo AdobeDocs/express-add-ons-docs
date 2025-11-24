@@ -10,11 +10,11 @@
  * governing permissions and limitations under the License.
  */
 
-import React, { Fragment, useRef, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import nextId from 'react-id-generator';
-import { withPrefix } from 'gatsby';
-import { GatsbyLink } from '@adobe/gatsby-theme-aio/src/components/GatsbyLink';
+import React, { Fragment, useRef, useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import nextId from "react-id-generator";
+import { withPrefix } from "gatsby";
+import { GatsbyLink } from "@adobe/gatsby-theme-aio/src/components/GatsbyLink";
 import {
   findSelectedTopPage,
   findSelectedTopPageMenu,
@@ -24,18 +24,31 @@ import {
   DESKTOP_SCREEN_WIDTH,
   MOBILE_SCREEN_WIDTH,
   DEFAULT_HOME,
-} from '@adobe/gatsby-theme-aio/src/utils';
-import { css } from '@emotion/react';
-import { AnchorButton } from '@adobe/gatsby-theme-aio/src/components/AnchorButton';
-import { Button } from '@adobe/gatsby-theme-aio/src/components/Button';
-import { ProgressCircle } from '@adobe/gatsby-theme-aio/src/components/ProgressCircle';
-import { Adobe, ChevronDown, Magnify, Close, TripleGripper, CheckMark } from '@adobe/gatsby-theme-aio/src/components/Icons';
-import { ActionButton, Text as ActionButtonLabel } from '@adobe/gatsby-theme-aio/src/components/ActionButton';
-import { PickerButton } from '@adobe/gatsby-theme-aio/src/components/Picker';
-import { Menu, Item as MenuItem } from '@adobe/gatsby-theme-aio/src/components/Menu';
-import { Popover } from '@adobe/gatsby-theme-aio/src/components/Popover';
-import { Image } from '@adobe/gatsby-theme-aio/src/components/Image';
-import { Link } from '@adobe/gatsby-theme-aio/src/components/Link';
+} from "@adobe/gatsby-theme-aio/src/utils";
+import { css } from "@emotion/react";
+import { AnchorButton } from "@adobe/gatsby-theme-aio/src/components/AnchorButton";
+import { Button } from "@adobe/gatsby-theme-aio/src/components/Button";
+import { ProgressCircle } from "@adobe/gatsby-theme-aio/src/components/ProgressCircle";
+import {
+  Adobe,
+  ChevronDown,
+  Magnify,
+  Close,
+  TripleGripper,
+  CheckMark,
+} from "@adobe/gatsby-theme-aio/src/components/Icons";
+import {
+  ActionButton,
+  Text as ActionButtonLabel,
+} from "@adobe/gatsby-theme-aio/src/components/ActionButton";
+import { PickerButton } from "@adobe/gatsby-theme-aio/src/components/Picker";
+import {
+  Menu,
+  Item as MenuItem,
+} from "@adobe/gatsby-theme-aio/src/components/Menu";
+import { Popover } from "@adobe/gatsby-theme-aio/src/components/Popover";
+import { Image } from "@adobe/gatsby-theme-aio/src/components/Image";
+import { Link } from "@adobe/gatsby-theme-aio/src/components/Link";
 import {
   Tabs,
   HeaderTabItem as TabsItem,
@@ -43,11 +56,11 @@ import {
   TabsIndicator,
   positionIndicator,
   animateIndicator,
-} from '@adobe/gatsby-theme-aio/src/components/Tabs';
-import '@spectrum-css/typography';
-import '@spectrum-css/assetlist';
-import { Divider } from '@adobe/gatsby-theme-aio/src/components/Divider';
-import DEFAULT_AVATAR from './avatar.svg';
+} from "@adobe/gatsby-theme-aio/src/components/Tabs";
+import "@spectrum-css/typography";
+import "@spectrum-css/assetlist";
+import { Divider } from "@adobe/gatsby-theme-aio/src/components/Divider";
+import DEFAULT_AVATAR from "./avatar.svg";
 
 const getSelectedTabIndex = (location, pages) => {
   const pathWithRootFix = rootFix(location.pathname);
@@ -56,16 +69,18 @@ const getSelectedTabIndex = (location, pages) => {
   let selectedIndex = pagesWithRootFix.indexOf(
     findSelectedTopPage(pathWithRootFix, pagesWithRootFix)
   );
-  let tempArr = pathWithRootFix.split('/');
-  let inx = tempArr.indexOf('use-cases');
+  let tempArr = pathWithRootFix.split("/");
+  let inx = tempArr.indexOf("use-cases");
   if (selectedIndex === -1 && inx > -1) {
-    tempArr[inx + 1] = 'agreements-and-contracts';
-    tempArr[inx + 2] = 'sales-proposals-and-contracts';
+    tempArr[inx + 1] = "agreements-and-contracts";
+    tempArr[inx + 2] = "sales-proposals-and-contracts";
     if (tempArr[inx + 3] == undefined) {
-      tempArr.push('');
+      tempArr.push("");
     }
-    let tempPathName = tempArr.join('/');
-    selectedIndex = pagesWithRootFix.indexOf(findSelectedTopPage(tempPathName, pagesWithRootFix));
+    let tempPathName = tempArr.join("/");
+    selectedIndex = pagesWithRootFix.indexOf(
+      findSelectedTopPage(tempPathName, pagesWithRootFix)
+    );
   }
   // Assume first item is selected
   if (selectedIndex === -1) {
@@ -74,11 +89,13 @@ const getSelectedTabIndex = (location, pages) => {
   return selectedIndex;
 };
 
-const getAvatar = async userId => {
+const getAvatar = async (userId) => {
   try {
-    const req = await fetch(`https://cc-api-behance.adobe.io/v2/users/${userId}?api_key=SUSI2`);
+    const req = await fetch(
+      `https://cc-api-behance.adobe.io/v2/users/${userId}?api_key=SUSI2`
+    );
     const res = await req.json();
-    return res?.user?.images?.['138'] ?? DEFAULT_AVATAR;
+    return res?.user?.images?.["138"] ?? DEFAULT_AVATAR;
   } catch (e) {
     console.warn(e);
     return DEFAULT_AVATAR;
@@ -101,7 +118,9 @@ const GlobalHeader = ({
   setShowSearch,
   searchButtonId,
 }) => {
-  const [selectedTabIndex, setSelectedTabIndex] = useState(getSelectedTabIndex(location, pages));
+  const [selectedTabIndex, setSelectedTabIndex] = useState(
+    getSelectedTabIndex(location, pages)
+  );
   const tabsRef = useRef(null);
   const tabsContainerRef = useRef(null);
   const selectedTabIndicatorRef = useRef(null);
@@ -118,11 +137,11 @@ const GlobalHeader = ({
   const [selectedMenuItem, setSelectedMenuItem] = useState({});
 
   const POPOVER_ANIMATION_DELAY = 200;
-  const versionPopoverId = 'version ' + nextId();
-  const profilePopoverId = 'profile ' + nextId();
+  const versionPopoverId = "version " + nextId();
+  const profilePopoverId = "profile " + nextId();
   const hasHome = home?.hidden !== true;
 
-  const positionSelectedTabIndicator = index => {
+  const positionSelectedTabIndicator = (index) => {
     const selectedTab = pages[index].tabRef;
 
     if (selectedTab?.current) {
@@ -158,11 +177,11 @@ const GlobalHeader = ({
         const { left } = versionPopoverRef.current.getBoundingClientRect();
 
         versionPopoverRef.current.style.left = `calc(${left}px + var(--spectrum-global-dimension-size-160))`;
-        versionPopoverRef.current.style.position = 'fixed';
+        versionPopoverRef.current.style.position = "fixed";
       } else {
         // Wait for animation to finish
         setTimeout(() => {
-          versionPopoverRef.current.style = '';
+          versionPopoverRef.current.style = "";
         }, POPOVER_ANIMATION_DELAY);
       }
     }
@@ -175,14 +194,14 @@ const GlobalHeader = ({
       const { left } = menuRef.current.getBoundingClientRect();
 
       menuRef.current.style.left = `${left}px`;
-      menuRef.current.style.position = 'fixed';
+      menuRef.current.style.position = "fixed";
     } else {
-      pages.forEach(page => {
+      pages.forEach((page) => {
         const menuRef = page.menuRef;
         if (menuRef) {
           // Wait for animation to finish
           setTimeout(() => {
-            menuRef.current.style = '';
+            menuRef.current.style = "";
           }, POPOVER_ANIMATION_DELAY);
         }
       });
@@ -191,25 +210,34 @@ const GlobalHeader = ({
 
   useEffect(() => {
     // Clicking outside of menu should close menu
-    const onClick = event => {
-      if (versionPopoverRef.current && !versionPopoverRef.current.contains(event.target)) {
+    const onClick = (event) => {
+      if (
+        versionPopoverRef.current &&
+        !versionPopoverRef.current.contains(event.target)
+      ) {
         setOpenVersion(false);
       }
 
-      if (profilePopoverRef?.current && !profilePopoverRef.current.contains(event.target)) {
+      if (
+        profilePopoverRef?.current &&
+        !profilePopoverRef.current.contains(event.target)
+      ) {
         setOpenProfile(false);
       }
 
-      pages.some(page => {
-        if (page?.menuRef?.current && !page.menuRef.current.contains(event.target)) {
+      pages.some((page) => {
+        if (
+          page?.menuRef?.current &&
+          !page.menuRef.current.contains(event.target)
+        ) {
           setOpenMenuIndex(-1);
         }
       });
     };
 
-    document.addEventListener('click', onClick);
+    document.addEventListener("click", onClick);
 
-    return () => document.removeEventListener('click', onClick);
+    return () => document.removeEventListener("click", onClick);
   }, []);
 
   useEffect(() => {
@@ -218,12 +246,15 @@ const GlobalHeader = ({
       setOpenMenuIndex(-1);
     };
 
-    tabsContainerRef.current.addEventListener('scroll', onScroll, { passive: true });
+    tabsContainerRef.current.addEventListener("scroll", onScroll, {
+      passive: true,
+    });
 
-    return () => tabsContainerRef.current.removeEventListener('scroll', onScroll);
+    return () =>
+      tabsContainerRef.current.removeEventListener("scroll", onScroll);
   }, []);
 
-  const openDropDown = data => {
+  const openDropDown = (data) => {
     if (data.isOpen) {
       setOpenMenuIndex(data.index);
       setOpenVersion(data.isOpen);
@@ -236,18 +267,16 @@ const GlobalHeader = ({
   };
 
   const handleCredential = () => {
-
-    const section = document.getElementById('adobe-get-credential');
+    const section = document.getElementById("adobe-get-credential");
 
     if (section) {
       section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'center',
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
       });
     }
-
-  }
+  };
 
   return (
     <header
@@ -263,13 +292,14 @@ const GlobalHeader = ({
         }
       `}
       daa-lh="header"
-      >
+    >
       <nav
         css={css`
           height: 100%;
         `}
         role="navigation"
-        aria-label="Global">
+        aria-label="Global"
+      >
         <div
           css={css`
             display: grid;
@@ -286,7 +316,8 @@ const GlobalHeader = ({
               height: calc(100% + var(--spectrum-global-dimension-size-10));
               overflow: hidden;
             }
-          `}>
+          `}
+        >
           <div
             css={css`
               display: none;
@@ -296,13 +327,15 @@ const GlobalHeader = ({
                 display: block;
                 margin: 0 var(--spectrum-global-dimension-size-100);
               }
-            `}>
+            `}
+          >
             <ActionButton
               isQuiet
               daa-ll="toggleSideNav"
               onClick={() => {
                 toggleSideNav && toggleSideNav();
-              }}>
+              }}
+            >
               <TripleGripper />
             </ActionButton>
           </div>
@@ -312,32 +345,39 @@ const GlobalHeader = ({
               height: 100%;
               @media screen and (min-width: ${MOBILE_SCREEN_WIDTH}) {
                 grid-area: title;
-                padding-left: ${!hasSideNav ? 'var(--spectrum-global-dimension-size-200)' : '0'};
+                padding-left: ${
+                  !hasSideNav
+                    ? "var(--spectrum-global-dimension-size-200)"
+                    : "0"
+                };
               }
               @media screen and (width: 768px ){
                 margin-left: 40px;
               }
-            `}>
+            `}
+          >
             <div
               css={css`
                 display: flex;
                 height: 100%;
                 align-items: center;
-              `}>
+              `}
+            >
               <div
                 css={css`
                   display: flex;
                   height: 100%;
                   align-items: center;
-                `}>
+                `}
+              >
                 <a
                   href="/"
-                  tabIndex={'0'}
+                  tabIndex={"0"}
                   daa-ll="adobeIcon"
                   id="adobeIcon"
-                  onKeyDown={e => {
-                    if (e.key === 'ArrowRight') {
-                      document.getElementById('product').focus();
+                  onKeyDown={(e) => {
+                    if (e.key === "ArrowRight") {
+                      document.getElementById("product").focus();
                     }
                   }}
                   css={css`
@@ -352,12 +392,14 @@ const GlobalHeader = ({
                       padding-left: 0;
                       padding-right: 0;
                     }
-                  `}>
+                  `}
+                >
                   <div
                     css={css`
                       display: flex;
                       align-items: center;
-                    `}>
+                    `}
+                  >
                     <Adobe
                       css={css`
                         width: calc(
@@ -379,13 +421,15 @@ const GlobalHeader = ({
                         );
                         font-weight: 700;
                         white-space: nowrap;
-                      `}>
+                      `}
+                    >
                       <span
                         css={css`
                           @media screen and (max-width: ${MOBILE_SCREEN_WIDTH}) {
                             display: none;
                           }
-                        `}>
+                        `}
+                      >
                         Adobe&nbsp;
                       </span>
                       Developer
@@ -406,19 +450,23 @@ const GlobalHeader = ({
                     @media screen and (max-width: ${DESKTOP_SCREEN_WIDTH}) {
                       display: none;
                     }
-                  `}>
-                  <Link isQuiet variant="secondary">
+                  `}
+                >
+                  <Link
+                    isQuiet
+                    variant="secondary"
+                  >
                     <a
-                      tabIndex={'0'}
-                      id={'product'}
+                      tabIndex={"0"}
+                      id={"product"}
                       daa-ll="product"
                       // onBlur={()=>setOpenMenuIndex(-1)}
-                      onKeyDown={e => {
-                        if (e.key === 'ArrowLeft') {
-                          document.getElementById('adobeIcon').focus();
+                      onKeyDown={(e) => {
+                        if (e.key === "ArrowLeft") {
+                          document.getElementById("adobeIcon").focus();
                         }
-                        if (e.key === 'ArrowRight') {
-                          document.getElementById('tabindex0').focus();
+                        if (e.key === "ArrowRight") {
+                          document.getElementById("tabindex0").focus();
                         }
                       }}
                       css={css`
@@ -441,7 +489,8 @@ const GlobalHeader = ({
                         }
                       `}
                       href={home?.href || DEFAULT_HOME.href}
-                      {...getExternalLinkProps(home?.href || DEFAULT_HOME.href)}>
+                      {...getExternalLinkProps(home?.href || DEFAULT_HOME.href)}
+                    >
                       {home?.title || DEFAULT_HOME.title}
                     </a>
                   </Link>
@@ -453,10 +502,16 @@ const GlobalHeader = ({
             ref={tabsContainerRef}
             css={css`
               grid-area: navigation;
-              ${hasHome && 'margin-left: var(--spectrum-global-dimension-size-200);'}
+              ${
+                hasHome &&
+                "margin-left: var(--spectrum-global-dimension-size-200);"
+              }
 
               @media screen and (max-width: ${DESKTOP_SCREEN_WIDTH}) {
-                ${!hasHome && 'margin-left: var(--spectrum-global-dimension-size-300);'}
+                ${
+                  !hasHome &&
+                  "margin-left: var(--spectrum-global-dimension-size-300);"
+                }
 
                 overflow-x: auto;
                 overflow-x: overlay;
@@ -487,7 +542,8 @@ const GlobalHeader = ({
                 border-bottom: var(--spectrum-global-dimension-size-10) solid
                   var(--spectrum-global-color-gray-200);
               }
-            `}>
+            `}
+          >
             <div
               css={css`
                 display: none;
@@ -525,7 +581,8 @@ const GlobalHeader = ({
               onFontsReady={() => {
                 positionSelectedTabIndicator(selectedTabIndex);
                 setIsAnimated(true);
-              }}>
+              }}
+            >
               {hasHome && (
                 <div
                   css={css`
@@ -535,24 +592,28 @@ const GlobalHeader = ({
                     @media screen and (max-width: ${DESKTOP_SCREEN_WIDTH}) {
                       display: block;
                     }
-                  `}>
+                  `}
+                >
                   <TabsItem
                     elementType={GatsbyLink}
                     to={home?.href || DEFAULT_HOME.href}
                     daa-ll={home?.title || DEFAULT_HOME.title}
-                    {...getExternalLinkProps(home?.href || DEFAULT_HOME.href)}>
-                    <TabsItemLabel>{home?.title || DEFAULT_HOME.title}</TabsItemLabel>
+                    {...getExternalLinkProps(home?.href || DEFAULT_HOME.href)}
+                  >
+                    <TabsItemLabel>
+                      {home?.title || DEFAULT_HOME.title}
+                    </TabsItemLabel>
                   </TabsItem>
                 </div>
               )}
               {pages.map((page, i) => {
                 const isSelectedTab = selectedTabIndex === i;
-                const menuPopoverId = 'menu ' + nextId();
-                const setTabRef = element => {
+                const menuPopoverId = "menu " + nextId();
+                const setTabRef = (element) => {
                   page.tabRef = { current: element };
                 };
 
-                const setTabMenuRef = element => {
+                const setTabMenuRef = (element) => {
                   page.menuRef = { current: element };
                 };
 
@@ -560,12 +621,14 @@ const GlobalHeader = ({
                   <Fragment key={i}>
                     {page.href ? (
                       <TabsItem
-                        className={isSelectedTab ? 'isSelected' : ''}
+                        className={isSelectedTab ? "isSelected" : ""}
                         css={css`
-                          ${isSelectedTab &&
-                          `
+                          ${
+                            isSelectedTab &&
+                            `
                           color: var(--spectrum-global-color-gray-900);
-                        `}
+                        `
+                          }
                         `}
                         onFocus={() => {
                           setOpenMenuIndex(-1);
@@ -576,21 +639,23 @@ const GlobalHeader = ({
                         id={`tabindex${i}`}
                         to={withPrefix(page.href)}
                         selected={isSelectedTab}
-                        daa-ll={page.title}>
+                        daa-ll={page.title}
+                      >
                         <TabsItemLabel> {page.title} </TabsItemLabel>
                       </TabsItem>
                     ) : (
                       <TabsItem
-                        tabIndex={'0'}
+                        tabIndex={"0"}
                         id={`tabindex${i}`}
-                        className={isSelectedTab ? 'isSelected' : ''}
+                        className={isSelectedTab ? "isSelected" : ""}
                         //  onFocus={()=>{setOpenMenuIndex(-1)}}
                         index={i}
                         hasDropdown
                         openDropDown={openDropDown}
                         css={css`
-                          ${openMenuIndex === i &&
-                          `
+                          ${
+                            openMenuIndex === i &&
+                            `
                           &:after {
                             content: '';
                             position: absolute;
@@ -601,24 +666,28 @@ const GlobalHeader = ({
                             top: calc(-1 * var(--spectrum-global-dimension-size-100));
                             background-color: var(--spectrum-global-color-gray-100);
                           }
-                        `}
-                          ${isSelectedTab &&
-                          `
+                        `
+                          }
+                          ${
+                            isSelectedTab &&
+                            `
                           color: var(--spectrum-global-color-gray-900);
-                        `}
+                        `
+                          }
                         `}
                         ref={setTabRef}
                         selected={isSelectedTab}
                         aria-controls={menuPopoverId}
                         aria-label={page.title}
                         daa-ll={page.title}
-                        onClick={event => {
+                        onClick={(event) => {
                           event.stopImmediatePropagation();
 
                           setOpenVersion(false);
                           setOpenProfile(false);
                           setOpenMenuIndex(openMenuIndex === i ? -1 : i);
-                        }}>
+                        }}
+                      >
                         <TabsItemLabel>{page.title}</TabsItemLabel>
                         <ChevronDown
                           css={css`
@@ -627,11 +696,14 @@ const GlobalHeader = ({
                             margin-left: var(--spectrum-global-dimension-size-100);
                             transition: transform var(--spectrum-global-animation-duration-100)
                               ease-in-out;
-                            ${openMenuIndex === i && `transform: rotate(-90deg);`}
+                            ${
+                              openMenuIndex === i &&
+                              `transform: rotate(-90deg);`
+                            }
                           `}
                         />
                         <div
-                          onClick={event => {
+                          onClick={(event) => {
                             event.stopImmediatePropagation();
 
                             setOpenVersion(false);
@@ -644,7 +716,8 @@ const GlobalHeader = ({
                           aria-label={page.title}
                           onFocus={() => {
                             setOpenMenuIndex(i);
-                          }}>
+                          }}
+                        >
                           <Popover
                             ref={setTabMenuRef}
                             id={menuPopoverId}
@@ -654,18 +727,26 @@ const GlobalHeader = ({
                               border-top-left-radius: 0;
                               border-top-right-radius: 0;
                               top: var(--spectrum-global-dimension-size-700);
-                              ${page.menu.some(menu => menu.description) &&
-                              `width: 230px;`}
+                              ${
+                                page.menu.some((menu) => menu.description) &&
+                                `width: 230px;`
+                              }
 
                               @media screen and (max-width: ${MOBILE_SCREEN_WIDTH}) {
                                 margin-top: calc(-1 * var(--spectrum-global-dimension-size-40));
                               }
                             `}
-                            isOpen={openMenuIndex === i}>
+                            isOpen={openMenuIndex === i}
+                          >
                             <Menu>
                               {page.menu.map((menu, k) => {
-                                const pathWithRootFix = rootFix(location.pathname);
-                                const selectedMenu = findSelectedTopPageMenu(pathWithRootFix, page);
+                                const pathWithRootFix = rootFix(
+                                  location.pathname
+                                );
+                                const selectedMenu = findSelectedTopPageMenu(
+                                  pathWithRootFix,
+                                  page
+                                );
                                 const menuHref = withPrefix(menu.href);
                                 return (
                                   <MenuItem
@@ -677,7 +758,9 @@ const GlobalHeader = ({
                                     {...getExternalLinkProps(menuHref)}
                                     isHighlighted={menu === selectedMenu}
                                     isSelected={menu === selectedMenuItem}
-                                    isHeightUnset={menu.description ? true : false}
+                                    isHeightUnset={
+                                      menu.description ? true : false
+                                    }
                                     daa-ll={menu.title}
                                     css={css`
                                       display: -webkit-box;
@@ -696,8 +779,14 @@ const GlobalHeader = ({
                                       -webkit-justify-content: center;
                                       justify-content: center;
                                       box-sizing: border-box;
-                                      padding: ${selectedMenu !== undefined && "0 var(--spectrum-global-dimension-size-175) !important"};
-                                      margin-right: ${selectedMenu === undefined && "var(--spectrum-global-dimension-size-175) !important; "}
+                                      padding: ${
+                                        selectedMenu !== undefined &&
+                                        "0 var(--spectrum-global-dimension-size-175) !important"
+                                      };
+                                      margin-right: ${
+                                        selectedMenu === undefined &&
+                                        "var(--spectrum-global-dimension-size-175) !important; "
+                                      }
                                       white-space: nowrap;
                                       color: var(--spectrum-global-color-gray-700) !important;
                                       -webkit-transition: background-color
@@ -724,17 +813,25 @@ const GlobalHeader = ({
                                       }
 
                                     `}
-                                    onKeyDown={e => {
-                                      if (e.key === 'ArrowDown') {
+                                    onKeyDown={(e) => {
+                                      if (e.key === "ArrowDown") {
                                         e.preventDefault();
 
                                         if (k + 1 === page.menu.length) {
                                           setTimeout(() => {
                                             setOpenMenuIndex(-1);
                                             if (pages.length === i + 1) {
-                                              document.getElementById('getCredentialID').focus();
+                                              document
+                                                .getElementById(
+                                                  "getCredentialID"
+                                                )
+                                                .focus();
                                             } else {
-                                              document.getElementById(`tabindex${i + 1}`).focus();
+                                              document
+                                                .getElementById(
+                                                  `tabindex${i + 1}`
+                                                )
+                                                .focus();
                                             }
                                           }, 100);
                                         } else {
@@ -743,44 +840,53 @@ const GlobalHeader = ({
                                             e.currentTarget.nextElementSibling.focus();
                                         }
                                       }
-                                      if (e.key === 'ArrowUp') {
+                                      if (e.key === "ArrowUp") {
                                         e.preventDefault();
                                         var event = e;
                                         if (k === 0) {
                                           setOpenMenuIndex(-1);
                                           setTimeout(() => {
-                                            document.getElementById(`tabindex${i}`).focus();
+                                            document
+                                              .getElementById(`tabindex${i}`)
+                                              .focus();
                                           }, 100);
                                         }
-                                        event.currentTarget.previousElementSibling &&
+                                        event.currentTarget
+                                          .previousElementSibling &&
                                           e.currentTarget.previousElementSibling.focus();
                                       }
-                                      if (e.key === 'ArrowRigt') {
+                                      if (e.key === "ArrowRigt") {
                                         e.preventDefault();
                                         e.currentTarget.nextElementSibling &&
                                           e.currentTarget.nextElementSibling.focus();
                                       }
-                                      if (e.key === 'ArrowLeft') {
+                                      if (e.key === "ArrowLeft") {
                                         e.preventDefault();
                                         if (k === 0) {
-                                          document.getElementById(`tabindex${i}`).focus();
+                                          document
+                                            .getElementById(`tabindex${i}`)
+                                            .focus();
                                         }
-                                        e.currentTarget.previousElementSibling &&
+                                        e.currentTarget
+                                          .previousElementSibling &&
                                           e.currentTarget.previousElementSibling.focus();
                                       }
-                                      if (e.key === 'Enter') {
+                                      if (e.key === "Enter") {
                                         e.currentTarget.focus();
                                       }
-                                    }}>
+                                    }}
+                                  >
                                     {menu.description ? (
                                       <div
                                         css={css`
                                           margin: var(--spectrum-global-dimension-size-100) 0;
-                                        `}>
+                                        `}
+                                      >
                                         <div
                                           css={css`
                                             color: var(--spectrum-global-color-gray-900);
-                                          `}>
+                                          `}
+                                        >
                                           {menu.title}
                                         </div>
 
@@ -789,7 +895,8 @@ const GlobalHeader = ({
                                           css={css`
                                             white-space: normal;
                                             margin-top: var(--spectrum-global-dimension-size-50);
-                                          `}>
+                                          `}
+                                        >
                                           {menu.description}
                                         </div>
                                       </div>
@@ -798,7 +905,8 @@ const GlobalHeader = ({
                                         css={css`
                                           margin-top: var(--spectrum-global-dimension-size-50);
                                           margin-bottom: var(--spectrum-global-dimension-size-50);
-                                        `}>
+                                        `}
+                                      >
                                         {menu.title}
                                       </div>
                                     )}
@@ -815,18 +923,20 @@ const GlobalHeader = ({
                         css={css`
                           margin-left: var(--spectrum-global-dimension-size-100) !important;
                           margin-right: var(--spectrum-global-dimension-size-300);
-                        `}>
+                        `}
+                      >
                         <PickerButton
                           isQuiet
                           isOpen={openVersion}
                           aria-controls={versionPopoverId}
-                          onClick={event => {
+                          onClick={(event) => {
                             event.stopImmediatePropagation();
 
                             setOpenMenuIndex(-1);
                             setOpenProfile(false);
-                            setOpenVersion(open => !open);
-                          }}>
+                            setOpenVersion((open) => !open);
+                          }}
+                        >
                           {versions.find(({ selected }) => selected)?.title}
                         </PickerButton>
                         <Popover
@@ -837,7 +947,8 @@ const GlobalHeader = ({
                           isOpen={openVersion}
                           css={css`
                               top: var(--spectrum-global-dimension-size-700);
-                           `}>
+                           `}
+                        >
                           <Menu>
                             {versions.map((version, k) => (
                               <MenuItem
@@ -849,14 +960,16 @@ const GlobalHeader = ({
                                   setOpenVersion(false);
                                 }}
                                 href={version.href}
-                                {...getExternalLinkProps(version.href)}>
-                                  <div
-                                    css={css`
+                                {...getExternalLinkProps(version.href)}
+                              >
+                                <div
+                                  css={css`
                                       margin-top: var(--spectrum-global-dimension-size-50);
                                       margin-bottom: var(--spectrum-global-dimension-size-50);
-                                    `}>
-                                        {version.title}
-                                  </div>
+                                    `}
+                                >
+                                  {version.title}
+                                </div>
                               </MenuItem>
                             ))}
                           </Menu>
@@ -881,22 +994,24 @@ const GlobalHeader = ({
                   css={css`
                     margin-left: var(--spectrum-global-dimension-size-300);
                     white-space: nowrap;
-                  `}>
+                  `}
+                >
                   <AnchorButton
-                    onFocus={e => {
+                    onFocus={(e) => {
                       setOpenMenuIndex(-1);
                     }}
-                    onKeyDown={e => {
-                      if (e.key === 'ArrowLeft') {
-                        document.getElementById('tabindex5').focus();
+                    onKeyDown={(e) => {
+                      if (e.key === "ArrowLeft") {
+                        document.getElementById("tabindex5").focus();
                       }
                     }}
-                    id={'getCredentialID'}
+                    id={"getCredentialID"}
                     onClick={handleCredential}
-                    daa-ll={docs.title ?? 'View Docs'}
+                    daa-ll={docs.title ?? "View Docs"}
                     variant="primary"
-                    href={docs.href && withPrefix(docs.href)}>
-                    {docs.title ?? 'View Docs'}
+                    href={docs.href && withPrefix(docs.href)}
+                  >
+                    {docs.title ?? "View Docs"}
                   </AnchorButton>
                 </div>
               )}
@@ -906,18 +1021,20 @@ const GlobalHeader = ({
             css={css`
               grid-area: optional;
               justify-self: flex-end;
-            `}>
+            `}
+          >
             <div
               css={css`
                 display: flex;
-              `}>
+              `}
+            >
               {hasSearch && (
                 <ActionButton
                   id={searchButtonId}
                   onClick={() => {
-                    setShowSearch(show => !show);
+                    setShowSearch((show) => !show);
                   }}
-                  aria-label={showSearch ? 'Close Search' : 'Search'}
+                  aria-label={showSearch ? "Close Search" : "Search"}
                   isQuiet
                   tabIndex="0"
                   daa-ll="searchButton"
@@ -931,11 +1048,12 @@ const GlobalHeader = ({
                       border: 2px solid #007aff !important;
                       border-radius: 15% !important;
                     }
-                  `}>
+                  `}
+                >
                   {showSearch ? <Close /> : <Magnify />}
                 </ActionButton>
               )}
-              <div              
+              <div
                 css={css`
                   display: flex;
                   gap: var(--spectrum-global-dimension-size-100);
@@ -944,14 +1062,27 @@ const GlobalHeader = ({
                   @media screen and (max-width: ${MOBILE_SCREEN_WIDTH}) {
                     display: none;
                   }
-                `}>
-                
-                {location.pathname.includes('/how_to/') && (
-                  <AnchorButton variant="accent" href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved" target="_blank" id={'playgroundId'} tabIndex="0">
+                `}
+              >
+                {(location.pathname.includes("/how_to/") ||
+                  location.pathname.includes("/code-playground") ||
+                  location.pathname.includes("/hello-world/")) && (
+                  <AnchorButton
+                    variant="accent"
+                    href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved"
+                    target="_blank"
+                    id={"playgroundId"}
+                    tabIndex="0"
+                  >
                     Code Playground
                   </AnchorButton>
                 )}
-                <AnchorButton variant="primary" href="/console" id={'consoleId'} tabIndex="0">
+                <AnchorButton
+                  variant="primary"
+                  href="/console"
+                  id={"consoleId"}
+                  tabIndex="0"
+                >
                   Console
                 </AnchorButton>
               </div>
@@ -965,8 +1096,12 @@ const GlobalHeader = ({
                     margin-left: var(--spectrum-global-dimension-size-200);
                     width: auto;
                     // width: var(--spectrum-global-dimension-size-800);
-                  `}>
-                  <ProgressCircle size="S" hidden={!isLoadingIms} />
+                  `}
+                >
+                  <ProgressCircle
+                    size="S"
+                    hidden={!isLoadingIms}
+                  />
 
                   <ActionButton
                     css={css`
@@ -984,7 +1119,8 @@ const GlobalHeader = ({
                     daa-ll="imsButton"
                     onClick={() => {
                       ims.signIn();
-                    }}>
+                    }}
+                  >
                     <ActionButtonLabel>Sign in</ActionButtonLabel>
                   </ActionButton>
 
@@ -993,12 +1129,12 @@ const GlobalHeader = ({
                       aria-label="Profile"
                       aria-controls={profilePopoverId}
                       aria-expanded={openProfile}
-                      onClick={event => {
+                      onClick={(event) => {
                         event.stopImmediatePropagation();
 
                         setOpenVersion(false);
                         setOpenMenuIndex(-1);
-                        setOpenProfile(open => !open);
+                        setOpenProfile((open) => !open);
                       }}
                       css={css`
                         display: block;
@@ -1010,8 +1146,12 @@ const GlobalHeader = ({
                         background: var(--spectrum-global-color-gray-50);
                         overflow: hidden;
                         cursor: pointer;
-                      `}>
-                      <Image alt="Avatar" src={avatar} />
+                      `}
+                    >
+                      <Image
+                        alt="Avatar"
+                        src={avatar}
+                      />
                     </button>
                     <Popover
                       id={profilePopoverId}
@@ -1021,14 +1161,16 @@ const GlobalHeader = ({
                         width: var(--spectrum-global-dimension-size-3400);
                         max-height: var(--spectrum-global-dimension-size-4600);
                         margin-left: calc(-1 * var(--spectrum-global-dimension-size-3000));
-                      `}>
+                      `}
+                    >
                       <div
                         css={css`
                           display: flex;
                           align-items: center;
                           justify-content: center;
                           flex-direction: column;
-                        `}>
+                        `}
+                      >
                         <div
                           css={css`
                             width: var(--spectrum-global-dimension-size-800);
@@ -1038,8 +1180,12 @@ const GlobalHeader = ({
                             overflow: hidden;
                             margin-top: var(--spectrum-global-dimension-size-400);
                             margin-bottom: var(--spectrum-global-dimension-size-200);
-                          `}>
-                          <Image alt="" src={avatar} />
+                          `}
+                        >
+                          <Image
+                            alt=""
+                            src={avatar}
+                          />
                         </div>
 
                         <div
@@ -1047,7 +1193,8 @@ const GlobalHeader = ({
                           css={css`
                             padding: 0 var(--spectrum-global-dimension-size-200);
                             text-align: center;
-                          `}>
+                          `}
+                        >
                           {profile && profile.displayName}
                         </div>
 
@@ -1057,11 +1204,17 @@ const GlobalHeader = ({
                             padding: 0 var(--spectrum-global-dimension-size-200);
                             box-sizing: border-box;
                             width: 100%;
-                          `}>
+                          `}
+                        >
                           <Divider size="S" />
                         </div>
 
-                        <AnchorButton daa-ll="imsEditProfile" href="https://account.adobe.com/" variant="primary" isQuiet>
+                        <AnchorButton
+                          daa-ll="imsEditProfile"
+                          href="https://account.adobe.com/"
+                          variant="primary"
+                          isQuiet
+                        >
                           Edit Profile
                         </AnchorButton>
 
@@ -1074,7 +1227,8 @@ const GlobalHeader = ({
                           `}
                           onClick={() => {
                             ims.signOut();
-                          }}>
+                          }}
+                        >
                           Sign out
                         </Button>
                       </div>
