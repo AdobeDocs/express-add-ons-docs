@@ -134,7 +134,7 @@ The downloaded zip file will contain a folder with the following structure:
 
 ### Running Downloaded Code
 
-You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](../getting_started/quickstart.md#step-4-load-and-run-your-add-on). There is a readme file in the add-on folder that will guide you through the process as well.
+You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](../getting_started/hello-world.md). There is a readme file in the add-on folder that will guide you through the process as well.
 
 **Note:** You cannot run the `script.js` file alone.
 

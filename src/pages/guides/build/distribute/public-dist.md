@@ -85,7 +85,7 @@ To distribute your add-on, you must create an add-on listing.
 If you have already performed the listing creation steps, e.g. to create a Private Link as outlined here, feel free to skip to
 [Step 3](#step-3-create-a-new-public-listing).
 
-Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
+Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/hello-world.md#enable-add-on-development-mode), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 **1.** From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 
@@ -305,7 +305,7 @@ The downloaded `.csv` files are named based on your add-on name and listing type
 Below is an example of what the insights data might look like:
 
 | Week       | Installs | Uninstalls | Invocations |
-|------------|----------|------------|-------------|
+| ---------- | -------- | ---------- | ----------- |
 | 2025-05-01 | 120      | 10         | 300         |
 | 2025-05-08 | 150      | 15         | 350         |
 

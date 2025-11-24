@@ -508,7 +508,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-05-21
 
-- The [Quickstart](./quickstart.md) and [Distribute](../build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
+- The [Quickstart](./hello-world.md) and [Distribute](../build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
 - A new section on Marketplace [rejections](../build/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
 - The [Manifest Reference](../../references/manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
