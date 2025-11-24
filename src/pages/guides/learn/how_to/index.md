@@ -26,7 +26,7 @@ The following guides contain a set of common use cases and accompanying code sni
 
 Try samples in Code Playground!
 
-Many how-to guides now include a **"Try"** button that opens the code sample directly in the [Code Playground](../../getting_started/code_playground.md). Click the button to instantly test Document API samples in Script mode without setting up a local development environment!
+Many how-to guides now include a **"Try"** button that opens the code sample directly in the [Code Playground](../../getting_started/code-playground.md). Click the button to instantly test Document API samples in Script mode without setting up a local development environment!
 
 We're constantly adding new how-tos, so make sure to check back often. If you're looking for Tutorials that guide you in building add-ons from the ground up, please check the [Complete Projects](#complete-projects) section.
 
