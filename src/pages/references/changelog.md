@@ -25,6 +25,25 @@ contributors:
 
 # Changelog
 
+## 2025-11-24
+
+### Code Playground Updates
+
+The Adobe Express Code Playground has received a major update with the release of a new set of features and improvements, which this site now reflects.
+
+- The Code Playground now supports [Cloud-based session persistence](../guides/getting_started/code-playground-workflow.md#session-management) (instead of the previous local storage) allowing you to save your work and resume where you left off everywhere. The new **More** menu contains items to manage your sessions (rename or delete), or star new ones.
+- Relevant Code Blocks (e.g. in the [How-to guides](../guides/learn/how_to/use_text.md)) now feature a **Try in playground** button that opens a new Playground Script session with the code pre-filled for easier testing.
+- The experience can now be launched directly from the documentation via a new **Code Playground button in the top navigation bar** (present in the How-to guides, Hello World!, Code Playground pages, and in any other sections where it makes sense), or by clicking directly on [this link](https://www.adobe.com/go/addon-playground). You can bookmark links that point to either the [Script](https://www.adobe.com/go/addon-playground?executionMode=script) or [Add-on](https://www.adobe.com/go/addon-playground) Mode.
+- The Playground UI has been revamped with various visual improvements, a new Splash Screen, and a contextual guided tour to help you get started.
+- We have simplified the process of [enabling the Add-on Development Mode](../guides/getting_started/code-playground.md#enable-add-on-development-mode) in Adobe Express; the acceptance of the Developer Terms of Use is now done automatically when you launch the Code Playground [via deep-link](https://www.adobe.com/go/addon-playground).
+- The CLI has been updated to provide a [deep link to the add-on sideloading](https://www.adobe.com/go/addon-cli) process in Adobe Express, which also triggers the Developer Terms of Use acceptance process.
+- The [Code Playground](../guides/getting_started/code-playground.md) documentation has been **updated and split into multiple pages** for better organization.
+  - [Overview](../guides/getting_started/code-playground.md)
+  - [Script Mode](../guides/getting_started/code-playground-script-mode.md)
+  - [Add-on Mode](../guides/getting_started/code-playground-addon-mode.md)
+  - [Workflow & Productivity](../guides/getting_started/code-playground-workflow.md)
+  - [Troubleshooting](../guides/getting_started/code-playground-troubleshooting.md)
+
 ## 2025-11-10
 
 ### Added
