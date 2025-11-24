@@ -85,7 +85,7 @@ editor.context.insertionParent.children.append(rect);
 // Rescale to 300px width - height becomes 150px automatically
 rect.rescaleProportionalToWidth(300);
 
-console.log("New dimensions:", rect.width, "x", rect.height);
+console.log(`New dimensions: ${rect.width} x ${rect.height}`);
 // New dimensions: 300 x 150
 ```
 
@@ -110,7 +110,7 @@ editor.context.insertionParent.children.append(ellipse);
 // Rescale to 150px height - width becomes 300px automatically
 ellipse.rescaleProportionalToHeight(150);
 
-console.log("New bounds:", ellipse.boundsLocal.width, "x", ellipse.boundsLocal.height);
+console.log(`New bounds: ${ellipse.boundsLocal.width} x ${ellipse.boundsLocal.height}`);
 // New bounds: 300 x 150
 ```
 
