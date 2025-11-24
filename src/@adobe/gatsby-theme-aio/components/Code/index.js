@@ -164,7 +164,7 @@ const Code = ({ children, className = "", theme, metastring = "" }) => {
                   !isMobile && openCodePlayground(children, sampleId)
                 }
               >
-                Try
+                Try in playground
               </ActionButton>
             )}
 

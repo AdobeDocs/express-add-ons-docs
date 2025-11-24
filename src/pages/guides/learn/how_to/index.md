@@ -24,9 +24,9 @@ The following guides contain a set of common use cases and accompanying code sni
 
 <InlineAlert slots="header, text1" variant="info" />
 
-Code Playground integration is coming soon!
+Try samples in Code Playground!
 
-The [Code Playground](../../getting_started/code-playground.md) is the perfect tool to test each how-to snippet. We're currently working on a leaner integration between the Playground and our documentation; running the code will be even easier soon!
+Many how-to guides now include a **"Try"** button that opens the code sample directly in the [Code Playground](../../getting_started/code_playground.md). Click the button to instantly test Document API samples in Script mode without setting up a local development environment!
 
 We're constantly adding new how-tos, so make sure to check back often. If you're looking for Tutorials that guide you in building add-ons from the ground up, please check the [Complete Projects](#complete-projects) section.
 
@@ -62,28 +62,31 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 
 <br/><br/>
 
-| Topics                         | How-to guides                                       |
-| ------------------------------ | --------------------------------------------------- |
-| Authentication & Authorization | [Use OAuth 2.0](./oauth2.md)                        |
-| Data & Environment             | [Store Data](./local_data_management.md)            |
-|                                | [Theme & Locale](./theme_locale.md)                 |
-| UI & Interaction               | [Use Drag & Drop](./drag_and_drop.md)               |
-|                                | [Use Modal Dialogs](./modal_dialogs.md)             |
-| Use Design Elements            | [Use Text](./use_text.md)                           |
-|                                | [Use Geometry](./use_geometry.md)                   |
-|                                | [Use Color](./use_color.md)                         |
-|                                | [Use Images](./use_images.md)                       |
-|                                | [Use Videos](./use_videos.md)                       |
-|                                | [Use Audio](./use_audio.md)                         |
-|                                | [Use PDF and PowerPoint](./use_pdf_powerpoint.md)   |
-|                                | [Group Elements](./group_elements.md)               |
-|                                | [Position Elements](./position_elements.md)         |
-| Use Metadata                   | [Document Metadata](./document_metadata.md)         |
-|                                | [Page Metadata](./page_metadata.md)                 |
-|                                | [Element Metadata](./element_metadata.md)           |
-| Exporting & Output             | [Create Renditions](./create_renditions.md)         |
-|                                | [Manage with Premium Content](./premium_content.md) |
-| User Info                      | [Identify users](./user_info.md)                    |
+| Topics                         | How-to guides                                             |
+| ------------------------------ | --------------------------------------------------------- |
+| Authentication & Authorization | [Use OAuth 2.0](./oauth2.md)                              |
+| Data & Environment             | [Store Data](./local_data_management.md)                  |
+|                                | [Theme & Locale](./theme_locale.md)                       |
+| UI & Interaction               | [Use Drag & Drop](./drag_and_drop.md)                     |
+|                                | [Use Modal Dialogs](./modal_dialogs.md)                   |
+| Use Design Elements            | [Use Text](./use_text.md)                                 |
+|                                | [Use Geometry](./use_geometry.md)                         |
+|                                | [Use Color](./use_color.md)                               |
+|                                | [Use Images](./use_images.md)                             |
+|                                | [Use Videos](./use_videos.md)                             |
+|                                | [Use Audio](./use_audio.md)                               |
+|                                | [Use PDF and PowerPoint](./use_pdf_powerpoint.md)         |
+|                                | [Group Elements](./group_elements.md)                     |
+|                                | [Position Elements](./position_elements.md)               |
+|                                | [Resize & Rescale Elements](./resize_rescale_elements.md) |
+|                                | [Handle Selection](./handle_selection.md)                 |
+| Manage Pages                   | [Manage Pages](./manage_pages.md)                         |
+| Use Metadata                   | [Document Metadata](./document_metadata.md)               |
+|                                | [Page Metadata](./page_metadata.md)                       |
+|                                | [Element Metadata](./element_metadata.md)                 |
+| Exporting & Output             | [Create Renditions](./create_renditions.md)               |
+|                                | [Manage with Premium Content](./premium_content.md)       |
+| User Info                      | [Identify users](./user_info.md)                          |
 
 ## Complete Projects
 

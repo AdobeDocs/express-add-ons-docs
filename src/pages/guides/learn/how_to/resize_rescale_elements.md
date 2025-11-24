@@ -68,15 +68,17 @@ Rescaling operations maintain the aspect ratio of elements while changing their 
 
 Use `rescaleProportionalToWidth()` to adjust an element's width while maintaining its aspect ratio. The height will automatically adjust proportionally.
 
-```js
+```js{try id=rescaleByWidth}
 // sandbox/code.js
-import { editor } from "express-document-sdk";
+import { editor, colorUtils } from "express-document-sdk";
 
 // Create a rectangle with specific dimensions
 const rect = editor.createRectangle();
 rect.width = 200;
 rect.height = 100;
+rect.translation = { x: 100, y: 100 };
 rect.fill = editor.makeColorFill(colorUtils.fromHex("#3498db"));
+
 // Add it to the page
 editor.context.insertionParent.children.append(rect);
 
@@ -93,13 +95,14 @@ console.log(`New dimensions: ${rect.width} x ${rect.height}`);
 
 Similarly, use `rescaleProportionalToHeight()` to adjust an element's height while maintaining its aspect ratio. The width will automatically adjust proportionally.
 
-```js
+```js{try id=rescaleByHeight}
 // sandbox/code.js
-// import { editor } from "express-document-sdk";
+import { editor, colorUtils } from "express-document-sdk";
 
 const ellipse = editor.createEllipse();
 ellipse.rx = 100; // radius x = 100 (width = 200)
 ellipse.ry = 50; // radius y = 50 (height = 100)
+ellipse.translation = { x: 150, y: 100 };
 ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F0B76C"));
 
 editor.context.insertionParent.children.append(ellipse);
@@ -107,9 +110,7 @@ editor.context.insertionParent.children.append(ellipse);
 // Rescale to 150px height - width becomes 300px automatically
 ellipse.rescaleProportionalToHeight(150);
 
-console.log(
-  `New bounds: ${ellipse.boundsLocal.width} x ${ellipse.boundsLocal.height}`
-);
+console.log(`New bounds: ${ellipse.boundsLocal.width} x ${ellipse.boundsLocal.height}`);
 // New bounds: 300 x 150
 ```
 

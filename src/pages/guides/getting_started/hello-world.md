@@ -52,7 +52,7 @@ Before you can build add-ons, you need to enable Add-on Development mode in Adob
 
 <InlineAlert slots="text" variant="success"/>
 
-This is **automatically done** when you launch the Code Playground [from this link](https://www.adobe.com/go/addon-playground), when you connect to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli), or when you click the buttons found later in this guide.
+This is **automatically done** when you launch the Code Playground [from this link](https://www.adobe.com/go/addon-playground), when you connect to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli), or when you click the buttons you'll find later in this guide.
 
 <details>
   <summary>Click to view a list of steps to manually enable the Developer Mode</summary>
@@ -75,7 +75,7 @@ The [Code Playground](./code-playground.md) is a browser-based editor built righ
 
 To launch the Code Playground experience, follow [this link](https://www.adobe.com/go/addon-playground) or click the button below.
 
-<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button"/>
+<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
 
 - [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 
@@ -216,7 +216,7 @@ The add-on's code is now running on a local server; you must tell Adobe Express 
 
 To _sideload_ your add-on into Adobe Express, follow [this link](https://www.adobe.com/go/addon-cli) or click the button below.
 
-<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button"/>
+<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
 
 - [Sideload your add-on](https://www.adobe.com/go/addon-cli)
 

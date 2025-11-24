@@ -57,17 +57,23 @@ Colors in Adobe Express are created as instances of the [`Color`](../../../refer
 
 The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#fromhex) methods.
 
-```js
+```js{try id=createColors}
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
-// Alpha is optional, defaults to 1
+// Create colors from RGB (values from 0 to 1)
 const red = colorUtils.fromRGB(1, 0, 0);
+
+// Create colors from HEX
 const green = colorUtils.fromHex("#00FF00");
 
-// With alpha
-const feldgrau = colorUtils.fromRGB(0.28, 0.32, 0.39, 0.5); // 50% opacity
-const heliotrope = colorUtils.fromHex("#C768F780"); // 50% opacity
+// Create a rectangle and apply the red color
+const rect = editor.createRectangle();
+rect.width = 200;
+rect.height = 100;
+rect.translation = { x: 100, y: 100 };
+rect.fill = editor.makeColorFill(red);
+editor.context.insertionParent.children.append(rect);
 ```
 
 In case you need it, you can also convert a color to a HEX string using the [`toHex()`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md#tohex) method. Please note that the alpha value is always included in the output string.
@@ -83,17 +89,20 @@ You can directly set the `color` property of a Text node via [`applyCharacterSty
 
 ### Example: Text color
 
-```js
+```js{try id=applyTextColor}
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
-// Assuming the user has selected a text frame
-const textNode = editor.context.selection[0];
+// Create a text node
+const textNode = editor.createText("Hello, World!");
+const insertionParent = editor.context.insertionParent;
+textNode.translation = { x: 100, y: 100 };
+insertionParent.children.append(textNode);
 
-// Apply character styles to the first three letters
+// Apply character styles to the first five letters
 textNode.fullContent.applyCharacterStyles(
-  { color: colorUtils.fromHex("#E1A141") }, // 👈
-  { start: 0, length: 3 }
+  { color: colorUtils.fromHex("#E1A141") },
+  { start: 0, length: 5 }
 );
 ```
 
@@ -105,15 +114,15 @@ Colors are not directly applied, instead, to shapes; more generally, they are us
 
 If you're confused, worry not! This is the wondrous word of object oriented programming. The following example should clarify things:
 
-```js
+```js{try id=applyFillAndStrokeColors}
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
 // Create the shape
 const ellipse = editor.createEllipse();
-ellipse.width = 100;
-ellipse.height = 50;
-ellipse.translation = { x: 50, y: 50 };
+ellipse.rx = 100;
+ellipse.ry = 50;
+ellipse.translation = { x: 150, y: 150 };
 
 // Generate the needed colors
 const innerColor = colorUtils.fromHex("#A38AF0");
@@ -126,7 +135,7 @@ const outerColorStroke = editor.makeStroke({
   width: 20,
 });
 
-// 👇 Apply the fill and stroke
+// Apply the fill and stroke
 ellipse.fill = innerColorFill;
 ellipse.stroke = outerColorStroke;
 
