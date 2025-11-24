@@ -111,69 +111,89 @@ async function createZipFileFromCodeBlock(block) {
 }
 
 /**
- * Upload a code block to FFC.
+ * Upload a code block to FFC with retry logic.
  * @param block - The code block to store.
  * @param projectId - The project ID corresponding to the code block.
+ * @param maxRetries - Maximum number of retry attempts (default: 3).
  * @returns the response from the FFC API.
  */
-async function uploadCodeBlockToFFC(codeBlock, projectId) {
-  try {
-    // Process the code and log it for verification
-    const processedCode = commentOutExpressDocumentSDKImports(codeBlock.code);
-    
-    console.log("\n" + "=".repeat(80));
-    console.log(`Uploading code block: ${projectId}`);
-    console.log("File: " + codeBlock.filePath);
-    console.log("-".repeat(80));
-    console.log("Processed code that will be uploaded:");
-    console.log("-".repeat(80));
-    console.log(processedCode);
-    console.log("=".repeat(80) + "\n");
+async function uploadCodeBlockToFFC(codeBlock, projectId, maxRetries = 3) {
+  let lastError;
+  
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      // Process the code and log it for verification
+      const processedCode = commentOutExpressDocumentSDKImports(codeBlock.code);
+      
+      if (attempt === 1) {
+        console.log(`\n📤 Uploading: ${projectId} (from ${codeBlock.filePath})`);
+      } else {
+        console.log(`   Retry ${attempt - 1}/${maxRetries - 1}: ${projectId}`);
+      }
 
-    const accessToken = await getImsServiceToken();
-    const url = new URL(
-      `${FFC_PLAYGROUND_ENDPOINT}/${projectId}`,
-      FFC_BASE_URL
-    );
-
-    // Create zip with the already-processed code
-    const zip = new JSZip();
-    zip.file("script.js", processedCode);
-    const zipBuffer = await zip.generateAsync({ type: "nodebuffer" });
-
-    const form = new FormData();
-    form.append(
-      "file",
-      new Blob([zipBuffer], { type: "application/zip" }),
-      `${projectId}.zip`
-    );
-    form.append("name", projectId);
-    
-    const response = await fetch(url, {
-      method: "PUT",
-      headers: {
-        Accept: "application/vnd.adobe-ffcaddon.response+json",
-        Authorization: `Bearer ${accessToken}`,
-        "x-api-key": PLAYGROUND_API_KEY,
-      },
-      body: form,
-    });
-
-    if (!response.ok) {
-      const text = await response.text();
-      const requestId = response.headers.get(FFC_REQUEST_ID);
-      console.log("FFC Request ID:", requestId);
-      throw new Error(
-        `Failed to upload code block to FFC - HTTP ${response.status}: ${text}`
+      const accessToken = await getImsServiceToken();
+      const url = new URL(
+        `${FFC_PLAYGROUND_ENDPOINT}/${projectId}`,
+        FFC_BASE_URL
       );
+
+      // Create zip with the already-processed code
+      const zip = new JSZip();
+      zip.file("script.js", processedCode);
+      const zipBuffer = await zip.generateAsync({ type: "nodebuffer" });
+
+      const form = new FormData();
+      form.append(
+        "file",
+        new Blob([zipBuffer], { type: "application/zip" }),
+        `${projectId}.zip`
+      );
+      form.append("name", projectId);
+      
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+          Accept: "application/vnd.adobe-ffcaddon.response+json",
+          Authorization: `Bearer ${accessToken}`,
+          "x-api-key": PLAYGROUND_API_KEY,
+        },
+        body: form,
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        const requestId = response.headers.get(FFC_REQUEST_ID);
+        
+        // Log request ID for debugging
+        if (requestId) {
+          console.log(`   FFC Request ID: ${requestId}`);
+        }
+        
+        throw new Error(
+          `Failed to upload code block to FFC - HTTP ${response.status}: ${text}`
+        );
+      }
+      
+      console.log(`✅ Successfully uploaded: ${projectId}`);
+      return response.json();
+      
+    } catch (error) {
+      lastError = error;
+      
+      // If this was the last attempt, don't retry
+      if (attempt === maxRetries) {
+        console.error(`❌ Failed to upload (${projectId}) after ${maxRetries} attempts: ${error.message}`);
+        throw error;
+      }
+      
+      // Exponential backoff: wait 2^attempt seconds
+      const waitTime = Math.pow(2, attempt) * 1000;
+      console.log(`   ⏳ Waiting ${waitTime / 1000}s before retry...`);
+      await new Promise(resolve => setTimeout(resolve, waitTime));
     }
-    
-    console.log(`✅ Successfully uploaded: ${projectId}\n`);
-    return response.json();
-  } catch (error) {
-    console.error(`❌ Failed to upload code block to FFC (${projectId}):`, error.message);
-    throw error;
   }
+  
+  throw lastError;
 }
 
 /**
@@ -232,18 +252,42 @@ function extractCodeBlocks(content, filePath) {
  * Main function to run the code block extractor.
  * 1. Find all markdown files in the pages directory.
  * 2. Extract code blocks from each markdown file.
- * 3. Store each code block in the backend API.
+ * 3. Store each code block in the backend API with retry logic.
  */
 async function run() {
   const markdownFiles = await findMarkdownFiles(PAGES_DIRECTORY);
+  let successCount = 0;
+  let failureCount = 0;
 
   for (const filePath of markdownFiles) {
     const content = await fs.readFile(filePath, "utf8");
     const codeBlocks = extractCodeBlocks(content, filePath);
 
     for (const codeBlock of codeBlocks) {
-      await uploadCodeBlockToFFC(codeBlock, codeBlock.id);
+      try {
+        await uploadCodeBlockToFFC(codeBlock, codeBlock.id);
+        successCount++;
+        
+        // Small delay between uploads to avoid overwhelming the backend
+        await new Promise(resolve => setTimeout(resolve, 500));
+      } catch (error) {
+        failureCount++;
+        console.error(`Skipping ${codeBlock.id} due to upload failure.`);
+        // Continue with next upload instead of failing entire script
+      }
     }
+  }
+  
+  console.log(`\n${"=".repeat(80)}`);
+  console.log(`📊 Upload Summary:`);
+  console.log(`   ✅ Successful: ${successCount}`);
+  console.log(`   ❌ Failed: ${failureCount}`);
+  console.log(`   📦 Total: ${successCount + failureCount}`);
+  console.log("=".repeat(80));
+  
+  if (failureCount > 0) {
+    console.log(`\n⚠️  Some uploads failed. You may need to run the script again.`);
+    process.exit(1);
   }
 }
 
