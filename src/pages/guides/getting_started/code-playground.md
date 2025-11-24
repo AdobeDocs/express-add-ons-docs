@@ -89,7 +89,7 @@ In the future, you can always open the Code Playground from Adobe Express.
 
 ### Enable Add-on Development Mode
 
-The Code Playground needs the add-on Development Mode to be enabled in order to work. If you launch it [from this link](https://www.adobe.com/go/addon-playground) (we encourage you to do it now!), the process will be done automatically for you. You'll have to accept the terms of use and the add-on Development Mode will be enabled.
+The Code Playground needs the add-on Development Mode to be enabled in order to work—you only need to do this once. If you launch the Playground [from this link](https://www.adobe.com/go/addon-playground) (we encourage you to do it now!), the process will be done automatically for you. You'll have to accept the terms of use and the add-on Development Mode will be enabled.
 
 [![Playground Terms of Use](./img/playground--DTOU.png)](https://www.adobe.com/go/addon-playground)
 
@@ -97,7 +97,7 @@ You can also enable or disable the add-on Development Mode from the Settings pan
 
 ## Playground modes
 
-The playground offers two distinct development modes to suit different needs:
+The playground offers two distinct development modes (**Script** and **Add-on**), which are designed to suit different needs:
 
 ### Mode Overview
 

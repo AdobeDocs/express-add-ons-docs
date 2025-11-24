@@ -30,10 +30,10 @@ Add-on Mode in Code Playground allows you to develop and test complete add-ons w
 
 Add-on Mode provides a complete development environment where you can:
 
-- Build user interfaces with HTML, CSS, and JavaScript
-- Test add-on functionality in a real Adobe Express environment
-- Prototype complete add-ons before building full projects
-- Iterate quickly on UI and logic
+- Build user interfaces with HTML, CSS, and JavaScript.
+- Test add-on functionality in a real Adobe Express environment.
+- Prototype complete add-ons before building full projects.
+- Iterate quickly on UI and logic.
 
 ### When to Use Add-on Mode
 
@@ -46,7 +46,7 @@ Use Add-on Mode when you want to develop, prototype, and test a complete add-on 
 1. Click the **Add-on** toggle (next to **Script** in the top left corner of the playground window).
 2. You'll see four tabs for organizing your code: HTML, CSS, Iframe JS, and Document JS.
 
-![Code Playground Add-on Mode](./img/addon-mode.png)
+![Code Playground Add-on Mode](./img/addon-mode2.png)
 
 ### Step 2: Write Your Code
 
@@ -60,8 +60,8 @@ Click **Run Code** to execute your add-on. Your add-on should open in an iframe 
 
 If you need to set [manifest properties](../../references/manifest/index.md) for your add-on (e.g., if you want to use APIs that are currently marked experimental, set permissions, OAuth domains etc):
 
-1. Click on the properties icon to open the Manifest JSON editing modal
-2. Configure the necessary properties
+1. Click on the properties icon to open the Manifest JSON editing modal.
+2. Configure the necessary properties.
 
 ![Add-on Mode Manifest Settings](./img/manifest-props-addon.png)
 
@@ -71,7 +71,7 @@ The Add-on mode features four tabs for organizing your code:
 
 ### 1. HTML Tab
 
-This tab is for writing HTML code that defines the structure of your add-on's user interface. You can create elements like buttons, text fields, and layout containers here. Functionally, this tab mirrors the role of the `index.html` file you'd use in a typical add-on project.
+This tab is for writing HTML code that defines the **structure of your add-on's user interface**. You can create elements like buttons, text fields, and layout containers here. Functionally, this tab mirrors the role of the `index.html` file you'd use in a typical add-on project.
 
 **Example:**
 
@@ -85,7 +85,7 @@ This tab is for writing HTML code that defines the structure of your add-on's us
 
 ### 2. CSS Tab
 
-Style your add-on's HTML elements in this tab. Create a visually appealing interface consistent with Adobe Express design patterns. This section corresponds to the `styles.css` file in a standard add-on project.
+**Style** your add-on's HTML elements in this tab. Create a visually appealing interface consistent with Adobe Express design patterns. This section corresponds to the `styles.css` file in a standard add-on project.
 
 **Example:**
 
@@ -115,11 +115,11 @@ Style your add-on's HTML elements in this tab. Create a visually appealing inter
 
 ### 3. Iframe JS Tab
 
-This tab is for writing JavaScript code that runs in the iframe context of your add-on. Here, you can interact with:
+This tab is for writing **JavaScript code that runs in the iframe context** of your add-on. Here, you can interact with:
 
-- The [Add-on UI SDK (`addOnUISdk`)](../../references/addonsdk/index.md)
-- The DOM elements in your HTML
-- Event handlers for your UI components
+- The [Add-on UI SDK (`addOnUISdk`)](../../references/addonsdk/index.md).
+- The DOM elements in your HTML.
+- Event handlers for your UI components.
 
 In case you are familiar with the add-on project structure, this tab corresponds to the code in the `index.js` file.
 
@@ -150,10 +150,10 @@ addOnUISdk.ready.then(() => {
 
 ### 4. Document JS Tab
 
-This tab is where you write JavaScript code that interacts directly with the Adobe Express document. It runs in the [Document Sandbox](../../references/document-sandbox/index.md) environment and gives you access to:
+This tab is where you write **JavaScript code that interacts directly with the Adobe Express document**. It runs in the [Document Sandbox](../../references/document-sandbox/index.md) environment and gives you access to:
 
-- Document manipulation capabilities with the [Document APIs](../../references/document-sandbox/document-apis/index.md)
-- [Communication APIs](../../references/document-sandbox/communication/index.md) to facilitate interaction between the iframe context and the Document Sandbox
+- Document manipulation capabilities with the [Document APIs](../../references/document-sandbox/document-apis/index.md).
+- [Communication APIs](../../references/document-sandbox/communication/index.md) to facilitate interaction between the iframe context and the Document Sandbox.
 
 The Document JS tab corresponds to the code typically found in the `code.js` file of a complete add-on project.
 

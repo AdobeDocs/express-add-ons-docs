@@ -48,20 +48,24 @@ The [Command Line Interface (CLI)](#command-line-interface-cli) path will teach 
 
 ### Enable Add-on Development Mode
 
-Before you can build add-ons, you need to enable Add-on Development mode in Adobe Express:
+Before you can build add-ons, you need to enable Add-on Development mode in Adobe Express—you only need to do this once.
 
-1. Open Adobe Express in your browser and click the **avatar icon** in the top right corner
-2. Click the gear icon to open **Settings**
-3. Click the **Developer Terms of Use** link to review the terms (opens in a new tab)
-4. Click **Accept and Enable** to enable **Add-on Development**
+<InlineAlert slots="text" variant="success"/>
+
+This is **automatically done** when you launch the Code Playground [from this link](https://www.adobe.com/go/addon-playground), when you connect to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli), or when you click the buttons found later in this guide.
+
+<details>
+  <summary>Click to view a list of steps to manually enable the Developer Mode</summary>
+  <ol>
+    <li>Open Adobe Express in your browser and click the <b>avatar icon</b> in the top right corner.</li>
+    <li>Click the <b>gear icon</b> to open <b>Settings</b>.</li>
+    <li>Click the <b>Developer Terms of Use</b> link to review the terms (opens in a new tab).</li>
+    <li>Click <b>Accept and Enable</b> to enable <b>Add-on Development</b>.</li>
+  </ol>
 
 ![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
-<InlineAlert slots="header,text1" variant="success"/>
-
-#### Quick Access via CLI
-
-When using the CLI ([see below](#command-line-interface-cli)), look for the **Development Mode activation URL** in your terminal output after running `npm run start`. Click this link to quickly enable development features without manually navigating to Settings.
+</details>
 
 ## Code Playground
 
@@ -69,7 +73,13 @@ The [Code Playground](./code-playground.md) is a browser-based editor built righ
 
 ### 1. Launch the Playground
 
-To launch the Code Playground, see the following animation or expand the details below for a step-by-step guide.
+To launch the Code Playground experience, follow [this link](https://www.adobe.com/go/addon-playground) or click the button below.
+
+<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button"/>
+
+- [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
+
+Alternatively, see the following animation or expand the details below for a step-by-step guide.
 
 ![How to open the Code Playground](./img/playground-open-the-playground.gif)
 
@@ -85,10 +95,10 @@ To launch the Code Playground, see the following animation or expand the details
 
 ### 2. Run Your First Script
 
-The Code Playground allows you to operate in [two modalities](./code-playground.md#development-modes):
+The Code Playground allows you to operate in [two modalities](./code-playground.md#playground-modes):
 
-- **Script Mode**: Directly runs code that operates on the current document
-- **Add-on Mode**: Creates an add-on with a custom User Interface and logic that can run code on the current document
+- [**Script Mode**](https://www.adobe.com/go/addon-playground?executionMode=script): Directly runs code that operates on the current document
+- [**Add-on Mode**](https://www.adobe.com/go/addon-playground): Creates an add-on with a custom User Interface and logic that can run code on the current document
 
 Make sure you've selected the **Script** tab, which is pre-filled with a sample script:
 
@@ -121,7 +131,7 @@ You've been using the Document Sandbox APIs, a very extensive set of APIs that l
 
 ### 4. Create an Add-on
 
-Click the **Add-on** tab to switch to the [Add-on mode](./code-playground.md#development-modes). You'll see that the Playground now shows four tabs:
+Click the **Add-on** tab to switch to the [Add-on mode](./code-playground.md#playground-modes). You'll see that the Playground now shows four tabs:
 
 - `HTML`: controls the add-on's User Interface.
 - `CSS`: adds styles.
@@ -204,7 +214,13 @@ The add-on's code is now running on a local server; you must tell Adobe Express 
 
 ### 3. Load & Run Your Add-on
 
-To _sideload_ your add-on into Adobe Express, see the following animation or expand the details below for a step-by-step guide.
+To _sideload_ your add-on into Adobe Express, follow [this link](https://www.adobe.com/go/addon-cli) or click the button below.
+
+<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button"/>
+
+- [Sideload your add-on](https://www.adobe.com/go/addon-cli)
+
+You can also do it manually by following the steps below.
 
 ![How to sideload an add-on](./img/playground-sideload-add-on.gif)
 
@@ -218,14 +234,8 @@ To _sideload_ your add-on into Adobe Express, see the following animation or exp
     <li>Click the <b>Connect</b> button.</li>
     <li>Click the <b>Hello World</b> add-on icon on the Add-ons tab on the left.</li>
   </ol>
-</details>
-
-<InlineAlert slots="text1, text2" variant="info"/>
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
-
-<details>
-  <summary>Click to see the screenshot</summary>
 
 ![Add-on testing](./img/playground-alt-testing.png)
 

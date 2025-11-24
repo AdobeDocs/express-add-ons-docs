@@ -47,21 +47,21 @@ Script mode is ideal to test code snippets in our [How-to guides](#how-to-guides
 
 ## How to Use Script Mode
 
+![Code Playground Script Mode](./img/script-mode2.png)
+
 ### Step 1: Select Script Mode
 
 1. Click the **Script** toggle in the top left corner of the playground window
 2. You'll see a single code editor where you can write your Document API code
 
-![Code Playground Script Mode](./img/script-mode.png)
-
 ### Step 2: Write Your Code
 
 Enter your [Document API](../../references/document-sandbox/document-apis/index.md) code in the editor. You can:
 
-- Manipulate the document directly
-- Add shapes or text
-- Change styles and properties
-- Use the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object
+- Manipulate the document directly.
+- Add shapes or text.
+- Change styles and properties.
+- Use the automatically available [`editor`](../../references/document-sandbox/document-apis/classes/Editor.md) object.
 
 ### Step 3: Execute Your Script
 
@@ -92,11 +92,13 @@ This is particularly useful for API calls that return promises, where an `await`
 
 ### Automatic Imports
 
-Script mode automatically imports the `express-document-sdk` modules, so you don't need to add import statements for the [Document APIs](../../references/document-sandbox/document-apis/index.md). However, if you do add import statements, it won't harm anything.
+Script mode automatically imports all the necessary `express-document-sdk` modules like `editor`, `colorUtils`, and `constants` for the [Document APIs](../../references/document-sandbox/document-apis/index.md).
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text, text2" variant="warning"/>
 
-Once you switch to the [Add-on Mode](./code-playground-addon-mode.md) or to your local add-on development environment, you will need to make sure to handle your `async` functions and `import` statements manually.
+You don't need to, and should not, add any `import` statements yourself in the Script Mode of the Code Playground; they are redundant and will **cause errors**.
+
+Once you switch to the [Add-on Mode](./code-playground-addon-mode.md) or to your local add-on development environment, you will need to make sure to handle your `async` functions and add back the necessary `import` statements manually.
 
 ## Learning Resources
 
