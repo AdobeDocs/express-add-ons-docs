@@ -191,16 +191,58 @@ section:has(> div > p > span > picture) {
   color: #fff !important;
 }
 
-.open-playground-button {
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: 700;
-  border: 2px solid #000000;
-  background-color: #ffffff;
-  cursor: pointer;
+/* Base styles for playground button */
+a.open-playground-button,
+.playground-button-container a[href*="express.adobe.com"] {
+  display: inline-block !important;
+  padding: 8px 20px !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  border: 2px solid rgb(34, 34, 34) !important;
+  background-color: transparent !important;
+  color: rgb(34, 34, 34) !important;
+  cursor: pointer !important;
   font-family: "adobe-clean" !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  transition: all 0.2s ease !important;
 }
 
+/* Base transition for playground button */
+a.open-playground-button,
+.playground-button-container a[href*="express.adobe.com"] {
+  transition: all 0.2s ease !important;
+}
+
+/* Hover effect */
+a.open-playground-button:hover,
+.playground-button-container a[href*="express.adobe.com"]:hover {
+  background-color: rgb(213, 213, 213) !important;
+  border-color: rgb(34, 34, 34) !important;
+}
+
+/* Remove default focus outline for mouse clicks */
+a.open-playground-button:focus,
+.playground-button-container a[href*="express.adobe.com"]:focus {
+  outline: none !important;
+}
+
+/* Show focus outline only for keyboard navigation */
+a.open-playground-button:focus-visible,
+.playground-button-container a[href*="express.adobe.com"]:focus-visible {
+  outline: 2px solid #1473E6 !important;
+  outline-offset: 2px !important;
+}
+
+/* Active/pressed state */
+a.open-playground-button:active,
+.playground-button-container a[href*="express.adobe.com"]:active {
+  background-color: rgb(180, 180, 180) !important;
+  transform: translateY(1px) !important;
+}
+
+/* Container styling */
 .playground-button-container {
   display: flex;
   justify-content: center;

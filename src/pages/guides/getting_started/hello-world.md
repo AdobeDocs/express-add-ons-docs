@@ -63,11 +63,14 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
 
 <!-- Replace with URL "https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved before merging -->
 <div className="playground-button-container">
-<button className="open-playground-button"
-     onclick="window.open(`https://205504.prenv.projectx.corp.adobe.com/new?category=add-ons&mode=playground&session=saved`, '_blank');"
-     >
-  Launch Code Playground
-</button>
+  <a
+    className="open-playground-button"
+    href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Launch Code Playground
+  </a>
 </div>
 
 ## Code Playground
