@@ -37,8 +37,8 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 <InlineAlert slots="text" />
 
-**Help us improve your developer experience** <br /><br />
-Take a few minutes to complete our [developer survey](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Source=documentation) and share your feedback. Your input helps us build better tools and resources for the Adobe Express developer community.
+**How likely are you to recommend developing add-ons for Adobe Express to a fellow developer?** <br /><br />
+(Not at all likely) [1](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%221%22%7D&Source=documentation) • [2️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%222%22%7D&Source=documentation) • [3️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%223%22%7D&Source=documentation) • [4️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%224%22%7D&Source=documentation) • [5️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%225%22%7D&Source=documentation) • [6️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%226%22%7D&Source=documentation) • [7️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%227%22%7D&Source=documentation) • [8️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%228%22%7D&Source=documentation) • [9️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%229%22%7D&Source=documentation) • [10](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%2210%22%7D&Source=documentation) (Extremely likely)
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting_started/code-playground.md) and start tinkering with the API right away.
 
