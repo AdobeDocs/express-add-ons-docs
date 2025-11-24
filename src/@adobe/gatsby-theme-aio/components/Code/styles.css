@@ -40,7 +40,7 @@
 }
 
 .code-copy-button.with-try {
-  inset-inline-end: var(--spectrum-global-dimension-size-700);
+  inset-inline-end: calc(var(--spectrum-global-dimension-size-2000) + var(--spectrum-global-dimension-size-100));
 }
 
 .code-try-button {
@@ -67,7 +67,7 @@
 }
 
 .code-tooltip-container.with-try {
-  inset-inline-end: calc(var(--spectrum-global-dimension-size-700) + var(--spectrum-global-dimension-size-600) + var(--spectrum-global-dimension-size-125));
+  inset-inline-end: calc(var(--spectrum-global-dimension-size-2000) + var(--spectrum-global-dimension-size-100) + var(--spectrum-global-dimension-size-600) + var(--spectrum-global-dimension-size-125));
 }
 
 .code-tooltip {

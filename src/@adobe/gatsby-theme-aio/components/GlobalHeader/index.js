@@ -947,8 +947,8 @@ const GlobalHeader = ({
                 `}>
                 
                 {location.pathname.includes('/how_to/') && (
-                  <AnchorButton variant="secondary" href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved" target="_blank" id={'playgroundId'} tabIndex="0">
-                    Launch Playground
+                  <AnchorButton variant="accent" href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved" target="_blank" id={'playgroundId'} tabIndex="0">
+                    Code Playground
                   </AnchorButton>
                 )}
                 <AnchorButton variant="primary" href="/console" id={'consoleId'} tabIndex="0">
