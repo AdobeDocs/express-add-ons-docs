@@ -61,11 +61,10 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
   </ol>
 </details>
 
-<!-- Replace with URL "https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved before merging -->
 <div className="playground-button-container">
   <a
     className="open-playground-button"
-    href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved"
+    href="https://www.adobe.com/go/addon-playground"
     target="_blank"
     rel="noopener noreferrer"
   >
