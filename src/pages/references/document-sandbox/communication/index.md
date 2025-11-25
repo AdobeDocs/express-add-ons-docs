@@ -151,7 +151,7 @@ Data type validation is performed for both the arguments and the return types th
 
 | Type                                                      | Examples                                |
 | --------------------------------------------------------- | --------------------------------------- |
-| Primitive types: - string  , boolean , number , Undefined | "hello" , true , 1 , undefined          |
+| Primitive types: &lt;br/ &gt; - string  &lt;br/ &gt; -  boolean &lt;br/ &gt; - number &lt;br/ &gt; -  Undefined | &lt;br/ &gt; "hello" &lt;br/ &gt; true &lt;br/ &gt; 1 &lt;br/ &gt; undefined          |
 | Simple plain objects                                      | `{ data: "world" }, { value : true }`   |
 | Arrays of primitive and plain objects                     | `[1,2],["hello", true, { data: null }]` |
 | ArrayBuffer                                               | `new ArrayBuffer(1024)`                 |

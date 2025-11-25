@@ -146,14 +146,14 @@ When importing media assets (images, videos, animated images) using the Add-on U
 - Persists with the individual asset container
 - Remains attached even when the asset content is replaced
 - Each container instance has independent metadata
-- Accessed via [`MediaContainerNode.addOnData`](../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md#addondata) in the Document Sandbox
+- Accessed via [`MediaContainerNode.addOnData`](../../../references/document-sandbox/document-apis/classes/media-container-node.md#addondata) in the Document Sandbox
 
 **`mediaAddOnData`** - Content-Level Metadata:
 
 - Tied to the actual asset content
 - Shared across all copies of the same asset in the document
 - Reset if the asset content is replaced with different media
-- Accessed via [`MediaRectangleNode.mediaAddOnData`](../../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md#mediaaddondata) in the Document Sandbox
+- Accessed via [`MediaRectangleNode.mediaAddOnData`](../../../references/document-sandbox/document-apis/classes/media-rectangle-node.md#mediaaddondata) in the Document Sandbox
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -161,7 +161,7 @@ Import-time metadata is **not supported** for PSD/AI assets. An error will be th
 
 ### Example: Set Metadata with Add-on UI SDK `ImportAddOnData`
 
-<CodeBlock slots="heading, code" repeat="4" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="3" languages="JavaScript" />
 
 #### Add Image
 
@@ -248,7 +248,7 @@ await addOnUISdk.app.document.addAnimatedImage(gifBlob, {
 
 <InlineAlert slots="text" variant="info"/>
 
-[`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) is also supported in drag-and-drop operations via the [`enableDragToDocument`](../../../references/addonsdk/addonsdk-app.md#enabledragtodocument) method. See the [Drag and Drop guide](drag_and_drop.md) for more details.
+[`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) is also supported in drag-and-drop operations via the [`enableDragToDocument`](../../../references/addonsdk/addonsdk-app.md#enabledragtodocument) method. See the [Drag and Drop guide](drag-and-drop.md) for more details.
 
 ### Example: Retrieve Imported Metadata in Document Sandbox
 
@@ -403,7 +403,7 @@ Element metadata can be useful in various scenarios:
 - **Asset Relationships**: Maintain connections between related media assets
 - **Quality Assurance**: Store validation flags, approval status, and review notes
 
-Please refer to the SDK Reference section for [`AddOnData`](../../../references/document-sandbox/document-apis/classes/AddOnData.md) for a complete list of methods, and the [`per-element-metadata`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/per-element-metadata) sample add-on for a demonstrative implementation.
+Please refer to the SDK Reference section for [`AddOnData`](../../../references/document-sandbox/document-apis/classes/add-on-data.md) for a complete list of methods, and the [`per-element-metadata`](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/per-element-metadata) sample add-on for a demonstrative implementation.
 
 ## FAQs
 
@@ -449,7 +449,7 @@ Please refer to the SDK Reference section for [`AddOnData`](../../../references/
 
 #### Q: How do I access media-specific metadata?
 
-**A:** Use [`mediaRectangleNode.mediaAddOnData`](../../../references/document-sandbox/document-apis/classes/MediaRectangleNode.md#mediaaddondata) to access metadata tied to the media content itself.
+**A:** Use [`mediaRectangleNode.mediaAddOnData`](../../../references/document-sandbox/document-apis/classes/media-rectangle-node.md#mediaaddondata) to access metadata tied to the media content itself.
 
 #### Q: Can I use ImportAddOnData with all media types?
 

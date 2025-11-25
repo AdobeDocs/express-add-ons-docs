@@ -80,7 +80,7 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 • `get` **children**(): [`ItemList`](item-list.md) &lt; [`Node`](node.md)&gt;
 
-The artboards's regular children (does not include any "background layer" content if present; use [allChildren](ArtboardNode.md#allchildren)
+The artboards's regular children (does not include any "background layer" content if present; use [allChildren](artboard-node.md#allchildren)
 for a read-only view that includes background content). Use the methods on this `children` ItemList object to get,
 add, and remove regular children.
 

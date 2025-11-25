@@ -10,7 +10,7 @@ Access the theme currently set in Adobe Express. This value is accessed via the 
 
 #### Values
 
-A `string` containing the current theme value. Currently **"light"** is the only theme supported.
+A `<string></string>` containing the current theme value. Currently **"light"** is the only theme supported.
 
 #### Example Usage
 
@@ -26,7 +26,7 @@ Access the locale currently set in Adobe Express. This value is accessed via the
 
 #### Values
 
-A `string` containing the current locale value. Current locale could be one of:
+A `<string></string>` containing the current locale value. Current locale could be one of:
 
 ```json
 [
@@ -60,13 +60,11 @@ addOnUISdk.ready.then(async () => {
 
 ### locales
 
-&lt;!-- **`locales: string[]`**&lt;br/&gt; --&gt;
-
 Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `addOnUISdk.ready`).
 
 #### Values
 
-A `string` array containing the supported locales:
+A `<string></string>` array containing the supported locales:
 
 ```json
 locales:

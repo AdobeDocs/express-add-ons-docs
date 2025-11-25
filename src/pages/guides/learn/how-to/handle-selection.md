@@ -1069,7 +1069,7 @@ setupSelectionHandling();
 
 ### Important: Selection Handler Restrictions
 
-<InlineNestedAlert header="true" variant="warning" iconPosition="left">
+<InlineAlert header="true" slots="header , list" repeat="3" variant="warning" iconPosition="left" />
 
 **Document Modification Restrictions**
 
@@ -1089,8 +1089,6 @@ setupSelectionHandling();
 - Change document structure  
 - Set properties on selected elements
 
-</InlineNestedAlert>
-
 ### Performance Guidelines
 
 1. **Keep handlers fast**: Minimize processing time
@@ -1102,7 +1100,7 @@ setupSelectionHandling();
 
 One of the most important real-world patterns is communicating selection changes from the document sandbox to your UI panel, allowing you to update the interface based on what the user has selected.
 
-For detailed information on the communication APIs, see the [Communication API reference](../../../references/document-sandbox/communication/).
+For detailed information on the communication APIs, see the [Communication API reference](../../../references/document-sandbox/communication/index.md).
 
 #### Complete Communication Example
 
@@ -1221,10 +1219,10 @@ if (editor.context.hasSelection) {
 
 ## Related Topics
 
-- **[Context API Reference](../../../references/document-sandbox/document-apis/classes/Context.md)** - Complete API documentation for the Context class
-- **[Communication APIs](../../../references/document-sandbox/communication/)** - Learn how to communicate between document sandbox and UI panel  
-- **[Group Elements](./group_elements.md)** - Working with selections to create and manage groups
-- **[Position Elements](./position_elements.md)** - Positioning and transforming selected elements
-- **[Use Text](./use_text.md)** - Examples of working with text selections using `editor.context.selection[0]`
-- **[EditorEvent Enumeration](../../../references/document-sandbox/document-apis/enumerations/EditorEvent.md)** - All available editor events
-- **[Node API Reference](../../../references/document-sandbox/document-apis/classes/Node.md)** - Understanding the Node class used in selections
+- **[Context API Reference](../../../references/document-sandbox/document-apis/classes/context.md)** - Complete API documentation for the Context class
+- **[Communication APIs](../../../references/document-sandbox/communication/index.md)** - Learn how to communicate between document sandbox and UI panel  
+- **[Group Elements](./group-elements.md)** - Working with selections to create and manage groups
+- **[Position Elements](./position-elements.md)** - Positioning and transforming selected elements
+- **[Use Text](./use-text.md)** - Examples of working with text selections using `editor.context.selection[0]`
+- **[EditorEvent Enumeration](../../../references/document-sandbox/document-apis/enumerations/editor-event.md)** - All available editor events
+- **[Node API Reference](../../../references/document-sandbox/document-apis/classes/node.md)** - Understanding the Node class used in selections

@@ -20,13 +20,13 @@ contributors:
 
 Your listing should provide valuable information about what your add-on does, and why people should use it.
 
-<AnnouncementBlock slots="heading, text, button" />
+<Announcement slots="heading, text, button" variant ="secondary" backgroundColor ="background-color-gray" />
 
-Are you an existing developer?
+### Are you an existing developer?
 
 Action required: Add trader details to continue EU distribution.
 
-[Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
+- [Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
 
 ## Listing metadata
 

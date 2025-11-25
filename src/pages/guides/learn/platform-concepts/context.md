@@ -8,13 +8,13 @@ Your add-on is essentially a website running in a [sandboxed](https://developer.
 
 ### Restrictions
 
-The following set of restrictions are enabled when the `sandbox` attribute is applied to the `<iframe>` tag (ie: `<iframe sandbox=""`):
+The following set of restrictions are enabled when the `sandbox` attribute is applied to the `<iframe></iframe>` tag (ie: `<iframe sandbox=""></iframe>`):
 
 - The add-on bundle is served from a unique subdomain.
 - Form submission is blocked.
 - The Pointer Lock API (capturing mouse movement) is blocked.
 - New windows or tabs cannot be opened from the add-on, unless overridden in the manifest.
-- Add-ons can't use `<embed>`, `<object>`, `<applet>`, or similar.
+- Add-ons can't use `<embed></embed/>`, `<object></object>`, `<applet></applet/>`, or similar.
 - Add-ons cannot change the navigation of the top-level browsing context
   Media can't be autoplayed.
 
@@ -24,7 +24,7 @@ The value of the `sandbox` attribute can either be empty (in which case all rest
 
 | Permission                       |                                                                                       Description |
 | -------------------------------- | ------------------------------------------------------------------------------------------------: |
-| `allow-downloads`                | Allow downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute. |
+| `allow-downloads`                | Allow downloading files through an &lt; a &gt; &lt; /a &gt; or &lt; area&gt;  &lt; /area &gt;  element with the download attribute. |
 | `allow-popups`                   |                                                         Allows the add-on to `window.open` popups |
 | `allow-popups-to-escape-sandbox` |   Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them. |
 | `allow-presentation`             |                                                Allows the add-on to start a presentation session. |
@@ -66,7 +66,7 @@ In order to provide security to the users of your add-on, browsers implement a [
 
 Be sure to set your browser devtools option to "**Show CORS errors in console**". For example, in Chrome it looks like the screenshot shown below.
 
-![Show CORS errors in Chrome screenshot](images/show-cors.png)
+![Show CORS errors in Chrome screenshot](../platform_concepts/images/show-cors.png)
 
 ### Add-on subdomain
 
@@ -97,7 +97,7 @@ Typically, the origin responsible for serving resources is also responsible for 
 
 One of the fastest ways to unblock your requests while testing in the event of CORS issues, is to use a hosted proxy server. For instance, `cors-anywhere` is a [NodeJS pakage](https://www.npmjs.com/package/cors-anywhere) which also has a free hosted demo server with it set up that you can use for quick testing. Open your browser to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and request temporary access to the demo server with the button shown in the screenshot:
 
-![CORS diagram](images/cors-demo.png)
+![CORS diagram](../platform_concepts/images/cors-demo.png)
 
 Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance:
 
@@ -173,7 +173,7 @@ A website's address on the Internet that is used in URLs to identify which serve
 
 ### subdomain
 
-Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives (ie: https://w906hhl6k.wxp.adobe-addons.com).
+Subdomains are unique URLs that include an additional part to identify them in front of the main domain where it lives (ie: [https://w906hhl6k.wxp.adobe-addons.com](https://w906hhl6k.wxp.adobe-addons.com)).
 
 ### allowed list of origins
 

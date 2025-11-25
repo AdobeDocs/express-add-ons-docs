@@ -223,7 +223,7 @@ Use the `createRenditions` method to allow users to download or share your conte
 
 1. **Creating a new rendition** based on specific export configuration options via the [`createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method of the `addOnUISdk.app.document` object.
 2. **Converting** the returned `blob` object into a URL via the `URL.createObjectURL()` method.
-3. **Creating a downloadable link** for the user to download the rendition, e.g., using the URL string from the previous step as the `href` attribute of an `<a>` element.
+3. **Creating a downloadable link** for the user to download the rendition, e.g., using the URL string from the previous step as the `href` attribute of an `<a></a>` element.
 
 ### Example
 

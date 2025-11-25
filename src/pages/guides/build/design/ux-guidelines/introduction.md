@@ -20,7 +20,7 @@ contributors:
 
 A successful add-on provides a seamless and intuitive User Experience (UX) that blends harmoniously with Adobe Express.
 
-![](./img/introduction_cover.png)
+![](../ux_guidelines/img/introduction_cover.png)
 
 These Guidelines are your roadmap to creating add-ons that align with Adobe's design principles and visual language, ensuring a consistent and enjoyable experience. Following them will help you build tools that resonate with users and feel like a natural extension of the application.
 

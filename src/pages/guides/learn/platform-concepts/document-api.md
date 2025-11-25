@@ -70,7 +70,7 @@ Run the add-on, select any object in the UI, and click the "Log selected node" b
 
 An Adobe Express document is internally represented as a hierarchical tree of **nodes**. Some of them may branch: in other words, contain other nodes, host children—like an Artboard or a Group with some shapes or media in them. Other ones are so-called leaf nodes: the tree's endpoints, for example, a text or a line.
 
-![](../platform_concepts/refs-addon-scenegraph.png)
+![](../platform_concepts/images/refs-addon-scenegraph.png)
 
 Such a structure is referred to as the **Scenegraph**, and it allows for efficient rendering, manipulation, and traversal of all scene elements.
 
@@ -85,13 +85,13 @@ Understanding the hierarchical tree of nodes in the Adobe Express DOM requires a
 
 Compared to other Adobe desktop applications, the Adobe Express DOM features a remarkably clean class hierarchy, where every element has a well-defined lineage that traces back to a minimal set of root classes.
 
-![](../platform_concepts/refs-addon-hierarchy.png)
+![](../platform_concepts/images/refs-addon-hierarchy.png)
 
 ### How to read the Reference
 
 With this knowledge, you can use the [Document APIs](../../../references/document-sandbox/document-apis/index.md) reference as the primary tool to study and learn about the Adobe Express DOM.
 
-![](../platform_concepts/refs-addon-doc.png)
+![](../platform_concepts/images/refs-addon-doc.png)
 
 There is a comprehensive list of Classes (_blueprints_), Interfaces (_contracts_), and Constants in the left navigation bar. Familiarize yourself with this content and learn how to read it.
 
@@ -103,11 +103,11 @@ Using the `EllipseNode` as an example, you can find:
 - A list of **accessors** (properties), like `stroke`, `opacity`, etc.
 - A list of **methods**, like `removeFromParent()` and `setPositionInParent()`.
 
-![](../platform_concepts/refs-addon-ref.png)
+![](../platform_concepts/images/refs-addon-ref.png)
 
 Some accessors are read-only, for instance, parent or rotation; some have **getters** and **setters**, like `locked` or `fill`. Properties can support a range of value kinds, from primitive values to objects, class instances, or collections. Let's break down the `translation` property as an example.
 
-![](../platform_concepts/refs-addon-accessor.png)
+![](../platform_concepts/images/refs-addon-accessor.png)
 
 It's split into two parts: `get` (the getter, when you read the property) and `set` (the setter, when you write it). From the description, you see that it's a way to find out about the node's coordinates relative to its parent. The return type for the getter (wrapped with `< >` angle brackets) is `{ x: number, y: number}`, i.e. an object with numeric `x` and `y` properties. You also read that this property is inherited from the `FillableNode` class that `EllipseNode` extends. The setter expects a `value`, which the Parameters table describes as of type `Object`, with the same numeric `x` and `y` properties; it returns `void` (i.e., nothing). Given all this, it's possible to confidently write something along these lines.
 
@@ -120,7 +120,7 @@ ellipse.translation = { x: 100, y: 50 };
 
 Some properties rely on interfaces to define their type. The ellipse's `stroke` happens to be of type `Stroke`, an interface whose _contract_ mandates the implementation of five different properties: `color`, `width`, `position`, `dashPattern`, and `dashOffset`.
 
-![](../platform_concepts/refs-addon-stroke.png)
+![](../platform_concepts/images/refs-addon-stroke.png)
 
 ### The importance of Constants
 
@@ -132,7 +132,7 @@ import { editor, colorUtils, constants } from "express-document-sdk";
 
 They represent a safe, user-friendly way to refer to internal values (subject to change) that developers should not directly manipulate. For example, the stroke's `position` property is of type `StrokePosition`, which happens to be enumerable—a fixed set of pre-defined values.
 
-![](../platform_concepts/refs-addon-strokeposition.png)
+![](../platform_concepts/images/refs-addon-strokeposition.png)
 
 Internally, the center, inside, and outside positions are represented with the integers `0`, `1`, and `2`. You should instead use the `StrokePosition` constant and its available members:
 
@@ -157,7 +157,7 @@ ellipse.stroke = {
 
 The [Document Stats tutorial](../how-to/tutorials/stats-addon.md) features an add-on that goes through all elements in the scenegraph and groups them by `type`, providing a count of each: `ComplexShape`, `Group`, etc.
 
-![](../platform_concepts/stats-addon-animation.gif)
+![](../platform_concepts/images/stats-addon-animation.gif)
 
 To log the `type` property is acceptable in this specific case, although the proper way to check against node types involves constants; the `type` itself is an internal string value mapped to the `SceneNodeType` enumerable.
 
@@ -222,7 +222,7 @@ CLI versions from `"1.1.1"` onwards now scaffold add-ons with **type definitions
 
 The bottom line is that `.d.ts` and `tsconfig.json` files in your JavaScript (and TypeScript) projects give code editors knowledge about the Adobe Express document sandbox APIs: it's used to provide code completion and type checking, which can help you avoid errors and write code faster.
 
-![](../platform_concepts/refs-addon-intellisense.png)
+![](../platform_concepts/images/refs-addon-intellisense.png)
 
 <InlineAlert variant="info" slots="text1, text2, text3" />
 
@@ -248,7 +248,7 @@ for (const node of someIterable) {
 
 In _previous versions_ of Adobe Express, the Console would log `allChildren` as an actual _Array_ of Nodes.
 
-![](../platform_concepts/refs-addon-allchildren.png)
+![](../platform_concepts/images/refs-addon-allchildren.png)
 
 If `allChildren` is an Array, the following code will work just fine, won't it?
 
@@ -280,7 +280,7 @@ To finally unravel the `allChildren` purpose mystery, let's see what the documen
 
 If you inspect a `MediaContainerNode` class, which is instantiated every time you place an image, it has two peculiar properties: `maskShape` and `mediaRectangle`. They hold the shape that masks the bitmap (in UI terms, the Crop—by default, a rectangle with the same image dimensions) and the `ImageRectangleNode` itself. They are the "structures" the documentation refers to; therefore, you'll find them in its `allChildren` property. Other notable examples are `maskShape` in Groups and `artboards` in Pages.
 
-![](../platform_concepts/refs-addon-mediacontainer.png)
+![](../platform_concepts/images/refs-addon-mediacontainer.png)
 
 ## Classes and Interfaces
 
@@ -336,7 +336,7 @@ In summary, the distinction between all the listed categories lies in their _pur
 
 Experimenting with newly acquired knowledge is one of the most effective methods to test it. Let's say you have an idea for an add-on that traces the dimensions of the selected object in the style of technical drawings.
 
-![](../platform_concepts/refs-addon-draw.png)
+![](../platform_concepts/images/refs-addon-draw.png)
 
 The production of such an add-on would require a number of stages, starting from the MVP (Minimum Viable Product) feature set to the UI. Here, you'll focus exclusively on the DOM prototyping; that is to say, you'll try to figure out the code building blocks by navigating the documentation reference alone—it will be an excellent exercise to get accustomed to it. Every step will be carefully described here; for simplicity, the add-on will be restricted to drawing dimensions on `MediaContainer` objects, assuming no crop has been applied.
 
@@ -519,7 +519,7 @@ vText.setRotationInParent(-90, { x: 0, y: 0 }); // 👈
 
 In the final add-on code, there are three buttons: one logs the selected node, one draws the dimensions as you've just seen, and the last one is a refactored version that also draws dashed lines (red and thinner) connecting the dimensions to the object's corners.
 
-![](../platform_concepts/refs-addon-refactor.png)
+![](../platform_concepts/images/refs-addon-refactor.png)
 
 For brevity's sake, only a few relevant additions to the code will be mentioned below—please refer to the [full sample](#final-project) for the complete picture.
 
@@ -603,7 +603,7 @@ const drawDimensionsRefactored = () => {
 
 When the Document Sandbox code detects an unsupported node type, it reaches out to the iframe UI `flashWrongElement()` method (exposed via proxy), sending the button `id` as a parameter. As a result, the button blinks red for a second, as its CSS and `textContent` property are temporarily changed.
 
-![](../platform_concepts/refs-addon-unsupported.png)
+![](../platform_concepts/images/refs-addon-unsupported.png)
 
 ### Next Steps
 

@@ -102,4 +102,4 @@ The table below describes the possible error statuses returned when using the OA
 | ------------: | ------------------------------------------------------------------------------: |
 | POPUP_BLOCKED |                                       The window for authorization was blocked. |
 | POPUP_TIMEOUT |                                     The window for authorization was timed out. |
-|        FAILED | &lt;Failure object returned by the OAuth provider when authorization fails.&gt; |
+|        FAILED | &lt; Failure object returned by the OAuth provider when authorization fails. &gt; |
