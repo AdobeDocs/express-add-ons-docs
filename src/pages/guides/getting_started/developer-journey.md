@@ -111,9 +111,9 @@ To build a more complex add-on, you can use our free [Command Line Interface (CL
 
 ![doc sandbox prompt](./local_development/img/CLI-template-prompt.png)
 
-<InlineAlert slots="text1" variant="info" />
+<InlineAlert slots="text1" variant="success" />
 
-We're actively working on improving the Code Playground so that existing project can be migrated to the CLI seamlessly.
+The Code Playground can [export your project as a zip file](./code-playground-workflow.md#downloading-your-code) so that existing add-ons projects can be migrated to the CLI seamlessly.
 
 ### Next steps
 
