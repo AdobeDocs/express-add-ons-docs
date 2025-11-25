@@ -35,6 +35,10 @@ Some of the key debugging features available in the browser developer tools incl
 - **Network Monitor** - The network monitor allows you to monitor the network requests made by your add-on, so you can see how it's interacting with other resources and services.
 - **Profiler** - The profiler allows you to analyze the performance of your add-on and identify areas where it may be slow or inefficient.
 
+<InlineAlert slots="text" variant="info"/>
+
+**Chrome Users:** If you're using Chrome version 142 or later, you may encounter a "Local Network Access" permission prompt when loading your local add-on. Make sure to click "Allow" to continue development. See the [Known Issues & Limitations](./known_issues_limitations.md#chrome-local-network-access-restriction) guide for more details.
+
 ### Debugging Steps
 
 To get started with debugging your add-on:

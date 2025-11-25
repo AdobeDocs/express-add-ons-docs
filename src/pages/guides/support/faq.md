@@ -62,6 +62,7 @@ contributors:
 
 - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
 - [Is `yarn` supported with the CLI, or only `npm`?](#is-yarn-supported-with-the-cli-or-only-npm)
+- [Chrome is blocking my local add-on development with a "Local Network Access" permission prompt. What should I do?](#chrome-is-blocking-my-local-add-on-development-with-a-local-network-access-permission-prompt-what-should-i-do)
 - [Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?](#why-does-the-cli-return-the-error-login-failed-please-try-again-though-i-didnt-have-a-chance-to-login-because-the-browser-never-opened)
 - [The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.](#the-latest-version-of-the-cli-is-not-automatically-installing-when-i-run-the-npx-command-to-create-a-new-add-on)
 - [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows)
@@ -127,6 +128,31 @@ npm run start -- --port 8080
 ### Is `yarn` supported with the CLI, or only `npm`?
 
 We recommend using `npm` for running the CLI scripts. Note that while there might be workarounds to get `yarn` working, we do not recommend it, or support any issues that may arise using `yarn`.
+
+### Chrome is blocking my local add-on development with a "Local Network Access" permission prompt. What should I do?
+
+Starting with Chrome version 142 (released in early 2025), Chrome introduced a new [Local Network Access restriction](https://chromestatus.com/feature/5152728072060928) that affects local add-on development. When you load Adobe Express while developing locally (at `https://localhost:5241`), Chrome will display a permission prompt:
+
+**new.express.adobe.com wants to "Look for and connect to any device on your local network".**
+
+**You must click "Allow" to continue local add-on development.** If you accidentally clicked "Block", you can reset the permission by:
+
+**Option 1: Clear site data for Adobe Express (Recommended)**
+
+1. Go to `chrome://settings/content/all`
+2. Search for `new.express.adobe.com`
+3. Click the trash icon to remove the site data
+4. Reload Adobe Express and click "Allow" when prompted
+
+**Option 2: Disable Local Network Access Checks (Not Recommended)**
+
+1. Navigate to `chrome://flags/#local-network-access-check`
+2. Set to **Disabled**
+3. Restart Chrome
+
+**Note:** Option 2 applies to ALL websites, not just Adobe Express, so it is not recommended for general use.
+
+For more details, see the [Known Issues & Limitations](../getting_started/local_development/known_issues_limitations.md#chrome-local-network-access-restriction) guide.
 
 ### How do I save the state of my add-on?
 
