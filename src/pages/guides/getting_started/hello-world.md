@@ -61,6 +61,17 @@ A pre-requisite for both tracks is to have enabled the **Add-on Development** mo
   </ol>
 </details>
 
+<div className="playground-button-container">
+  <a
+    className="open-playground-button"
+    href="https://www.adobe.com/go/addon-playground"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Launch Code Playground
+  </a>
+</div>
+
 ## Code Playground
 
 We have a [dedicated page](./code_playground.md) for the Code Playground, which you can always refer to for more detailed information. Here, we'll focus on the basics to get you started, linking to the relevant sections of the full documentation and including screenshots to help you navigate the interface.
