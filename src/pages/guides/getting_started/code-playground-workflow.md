@@ -59,7 +59,7 @@ Use the "**More**" button in the top right corner of the playground window to re
 
 ## Debugging
 
-The Code Playground supports debugging your code with the browser's developer tools. In **Add-on mode**, you can use the full power of the debugger for the add-on's UI and logic (the `HTML` and `IframeJS` tabs). The `Document JS` tab and the code in the **Script mode** editor are running in a sandboxed environment with [limited capabilities](../references/document-sandbox/web/index.md); the best option here is to log messages to the Console.
+The Code Playground supports debugging your code with the browser's developer tools. In **Add-on mode**, you can use the full power of the debugger for the add-on's UI and logic (the `HTML` and `IframeJS` tabs). The `Document JS` tab and the code in the **Script mode** editor are running in a sandboxed environment with [limited capabilities](../../references/document-sandbox/web/index.md); the best option here is to log messages to the Console.
 
 <InlineAlert slots="text, text1, text2" variant="info"/>
 
