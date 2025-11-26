@@ -34,6 +34,7 @@ The Adobe Express Code Playground has received a major update with the release o
 - The Playground UI has been revamped with various visual improvements, a new Splash Screen, and a contextual guided tour to help you get started.
 - We have simplified the process of [enabling the Add-on Development Mode](./code-playground.md#enable-add-on-development-mode) in Adobe Express; the acceptance of the Developer Terms of Use is now done automatically when you launch the Code Playground [via deep-link](https://www.adobe.com/go/addon-playground).
 - The CLI has been updated to provide a [deep link to the add-on sideloading](https://www.adobe.com/go/addon-cli) process in Adobe Express, which also triggers the Developer Terms of Use acceptance process.
+- Both the Code Playground and the CLI now provide [prefixes to the Console messages](./code-playground-workflow.md#debugging) to help you distinguish them from other messages.
 - The [Code Playground](./code-playground.md) documentation has been **updated and split into multiple pages** for better organization.
   - [Overview](./code-playground.md)
   - [Script Mode](./code-playground-script-mode.md)
