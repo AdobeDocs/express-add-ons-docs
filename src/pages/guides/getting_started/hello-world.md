@@ -208,7 +208,7 @@ The `start` script will display messages like the following after it executes:
 Done. Your add-on 'hello-world' is hosted on: https://localhost:5241/
 ```
 
-Look for the **Development Mode activation URL** in the terminal output—click it to quickly enable development features without manually navigating to Settings.
+Look for the **Development Mode activation URL** in the terminal output—click it to quickly enable development features without manually navigating to Settings, or read along.
 
 The add-on's code is now running on a local server; you must tell Adobe Express to load it.
 

@@ -57,6 +57,22 @@ Use these keyboard shortcuts to work more efficiently:
 
 Use the "**More**" button in the top right corner of the playground window to reference the available keyboard shortcuts, start a new session, link to documentation and more.
 
+## Debugging
+
+The Code Playground supports debugging your code with the browser's developer tools. In **Add-on mode**, you can use the full power of the debugger for the add-on's UI and logic (the `HTML` and `IframeJS` tabs). The `Document JS` tab and the code in the **Script mode** editor are running in a sandboxed environment with [limited capabilities](../references/document-sandbox/web/index.md); the best option here is to log messages to the Console.
+
+<InlineAlert slots="text, text1, text2" variant="info"/>
+
+The Code Playground **prefixes the messages in the Console** with descriptive strings to help you distinguish them from other messages.
+
+- `[Playground: Add-on]` for Code Playground in Add-on mode.
+- `[Playground: Script]` for Code Playground in Script mode.
+- `[Add-on: <add-on-name>]` for add-ons from other sources (including the CLI).
+
+Open the browser's developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect** from the context menu. In the **Console**, you can filter out the messages from the Code Playground by typing just `Playground` in the filter input.
+
+![Code Playground Debugging](./img/playground-console-prefix.png)
+
 ## Session Management
 
 ### Saving Your Work
