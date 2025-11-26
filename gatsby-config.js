@@ -597,6 +597,10 @@ module.exports = {
                 title: "VS Code debugging",
                 path: "guides/getting_started/local_development/vs-code.md",
               },
+              {
+                title: "Known Issues & Limitations",
+                path: "guides/getting_started/local_development/known_issues_limitations.md",
+              },
             ],
           },
           {
