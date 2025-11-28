@@ -14,7 +14,7 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly`&lt;`Iterable`&lt;[`TextNode`](text-node.md), `any`, `any`\&gt;\&gt;
+• `get` **allTextNodes**(): `Readonly`&lt;`Iterable`&lt;[`TextNode`](text-node.md), `any`, `any` &gt; &gt;
 
 Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. This might be a single
 [StandaloneTextNode](StandaloneTextNode.md) *or* a list of one or more [ThreadedTextNode](threaded-text-node.md)s. In the case of threaded text, the
@@ -26,7 +26,7 @@ All linked ThreadedTextNodes that share a single TextContentModel must remain to
 
 #### Returns
 
-`Readonly`&lt;`Iterable`&lt;[`TextNode`](text-node.md), `any`, `any`\&gt;\&gt;
+`Readonly`&lt;`Iterable`&lt;[`TextNode`](text-node.md), `any`, `any` &gt; &gt;
 
 <HorizontalLine />
 

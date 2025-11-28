@@ -6,12 +6,12 @@ Interface for nodes with width and height properties.
 
 ## Implemented by
 
--   [`ArtboardNode`](../classes/ArtboardNode.md)
--   [`GridLayoutNode`](../classes/GridLayoutNode.md)
--   [`ImageRectangleNode`](../classes/ImageRectangleNode.md)
--   [`MediaRectangleNode`](../classes/MediaRectangleNode.md)
--   [`PageNode`](../classes/PageNode.md)
--   [`RectangleNode`](../classes/RectangleNode.md)
+-   [`ArtboardNode`](../classes/artboard-node.md)
+-   [`GridLayoutNode`](../classes/grid-layout-node.md)
+-   [`ImageRectangleNode`](../classes/image-rectangle-node.md)
+-   [`MediaRectangleNode`](../classes/media-rectangle-node.md)
+-   [`PageNode`](../classes/page-node.md)
+-   [`RectangleNode`](../classes/rectangle-node.md)
 
 ## Properties
 

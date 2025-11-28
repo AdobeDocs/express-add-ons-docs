@@ -37,7 +37,7 @@ Some of the key debugging features available in the browser developer tools incl
 
 <InlineAlert slots="text" variant="info"/>
 
-**Chrome Users:** If you're using Chrome version 142 or later, you may encounter a "Local Network Access" permission prompt when loading your local add-on. Make sure to click "Allow" to continue development. See the [Known Issues & Limitations](./known_issues_limitations.md#chrome-local-network-access-restriction) guide for more details.
+**Chrome Users:** If you're using Chrome version 142 or later, you may encounter a "Local Network Access" permission prompt when loading your local add-on. Make sure to click "Allow" to continue development. See the [Known Issues & Limitations](./known-issues-limitations.md#chrome-local-network-access-restriction) guide for more details.
 
 ### Debugging Steps
 

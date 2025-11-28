@@ -33,9 +33,7 @@ More formally stated, any scripting environment must expose information about th
 
 Developers with a front-end background may instinctively associate the notion of DOM with HTML and the Browser. Although it has been the most common case for decades, all applications supporting scripting rely on their own Document Object Model—as those working with desktop versions of the Creative Cloud know very well. The Adobe Express add-on system is technically different from CEP extensions in Adobe After Effects or UXP plugins in Adobe Photoshop; still, the concept of the DOM is equally valid.
 
-<InlineAlert variant="warning" slots="heading, text1, text2, text3w" />
-
-**Warning** &lt;!-- 👈 won't be rendered --&gt;
+<InlineAlert variant="warning" slots="text1, text2, text3" />
 
 Some confusion may arise regarding the meaning of the following terms—let me clarify.
 

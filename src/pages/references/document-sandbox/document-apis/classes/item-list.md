@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / ItemList
 
-# Class: ItemList &lt; T\ &gt;
+# Class: ItemList &lt; T &gt;
 
 ItemList represents an ordered list of API objects that are all children of the same parent node. It is most
 frequently encountered as [ArtboardNode.children](artboard-node.md#children) or [GroupNode.children](group-node.md#children).
@@ -12,7 +12,7 @@ Note that some parent nodes may have additional children that are *not* present 
 
 ## Extends
 
--   [`RestrictedItemList`](restricted-item-list.md)&lt;`T`\ &gt;
+-   [`RestrictedItemList`](restricted-item-list.md)&lt;`T` &gt;
 
 ## Type parameters
 
@@ -58,13 +58,13 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`\ &gt;
+• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any` &gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`&lt;`T`, `any`, `any`\ &gt;
+`Iterator`&lt;`T`, `any`, `any` &gt;
 
 #### Inherited from
 
@@ -161,7 +161,7 @@ if any – or if it's already in *this* list, its index is simply changed. No-op
 
 `void`
 
----
+<HorizontalLine />
 
 ### item()
 

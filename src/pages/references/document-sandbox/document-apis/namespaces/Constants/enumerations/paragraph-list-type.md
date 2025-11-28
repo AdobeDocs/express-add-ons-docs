@@ -2,7 +2,7 @@
 
 # Enumeration: ParagraphListType
 
-Indicates list type: see [UnorderedListStyleInput](../../../interfaces/UnorderedListStyleInput.md) and [OrderedListStyleInput](../../../interfaces/OrderedListStyleInput.md).
+Indicates list type: see [UnorderedListStyleInput](../../../interfaces/unordered-list-style-input.md) and [OrderedListStyleInput](../../../interfaces/ordered-list-style-input.md).
 
 ## Enumeration Members
 
@@ -16,7 +16,7 @@ Indicates list type: see [UnorderedListStyleInput](../../../interfaces/Unordered
 
 • **none**: `0`
 
----
+<HorizontalLine />
 
 ### ordered
 

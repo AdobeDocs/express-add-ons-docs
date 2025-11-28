@@ -26,67 +26,67 @@ contributors:
 
 ### Added
 
-- New [Known Issues & Limitations](./local_development/known_issues_limitations.md#chrome-local-network-access-restriction) documentation for Chrome Local Network Access restriction (Chrome 142+) that affects local add-on development
+- New [Known Issues & Limitations](./local-development/known-issues-limitations.md#chrome-local-network-access-restriction) documentation for Chrome Local Network Access restriction (Chrome 142+) that affects local add-on development
 - New [FAQ entry](../support/faq.md#chrome-is-blocking-my-local-add-on-development-with-a-local-network-access-permission-prompt-what-should-i-do) with troubleshooting steps for the Chrome Local Network Access permission prompt
-- Added informational alert in the [Browser debugging guide](./local_development/browser.md) to notify Chrome users about the Local Network Access permission requirement
+- Added informational alert in the [Browser debugging guide](./local-development/browser.md) to notify Chrome users about the Local Network Access permission requirement
 
 ## 2025-10-08
 
 ### Added
 
-- **Experimental** [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight) method - Proportional height scaling for all node types
-- **Experimental** [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth) method - Proportional width scaling for all node types  
-- **Experimental** [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetocover) method - Resize nodes to cover specified dimensions
-- **Experimental** [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetofitwithin) method - Resize nodes to fit within specified dimensions
-- **Experimental** [`appendText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#appendtext) method - Append text to existing content
-- **Experimental** [`deleteText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#deletetext) method - Delete text ranges from content
-- **Experimental** [`insertText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#inserttext) method - Insert text at specific positions
-- **Experimental** [`replaceText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#replacetext) method - Replace text ranges with new content
-- **Experimental** [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method - Check for unavailable fonts in text content
-- **Experimental** [`id`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#id) property - Unique identifier for text content models
-- **Experimental** [`TextStyleSource`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/TextStyleSource.md) enumeration - Options for text style source matching
+- **Experimental** [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/node.md#rescaleproportionaltoheight) method - Proportional height scaling for all node types
+- **Experimental** [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/node.md#rescaleproportionaltowidth) method - Proportional width scaling for all node types  
+- **Experimental** [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/node.md#resizetocover) method - Resize nodes to cover specified dimensions
+- **Experimental** [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/node.md#resizetofitwithin) method - Resize nodes to fit within specified dimensions
+- **Experimental** [`appendText()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#appendtext) method - Append text to existing content
+- **Experimental** [`deleteText()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#deletetext) method - Delete text ranges from content
+- **Experimental** [`insertText()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#inserttext) method - Insert text at specific positions
+- **Experimental** [`replaceText()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#replacetext) method - Replace text ranges with new content
+- **Experimental** [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#hasunavailablefonts) method - Check for unavailable fonts in text content
+- **Experimental** [`id`](../../references/document-sandbox/document-apis/classes/text-content-model.md#id) property - Unique identifier for text content models
+- **Experimental** [`TextStyleSource`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/text-style-source.md) enumeration - Options for text style source matching
 
 ### Updated
 
-- [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/Node.md#cloneinplace) method **promoted from experimental to stable** - Available on all node types for creating copies with subtrees
-- [`paragraphStyleRanges`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges) property **promoted from experimental to stable** - Get/set paragraph-level styles with ranges
-- [`applyParagraphStyles()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#applyparagraphstyles) method **promoted from experimental to stable** - Apply styles to specific paragraph ranges
-- [`layout`](../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md#layout) property **promoted from experimental to stable** - Control text layout modes for standalone text
-- [`layout`](../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md#layout) property **promoted from experimental to stable** - Control text layout modes for threaded text
-- [`AreaTextLayout`](../../references/document-sandbox/document-apis/interfaces/AreaTextLayout.md) interface **promoted from experimental to stable** - Fixed width and height text layout configuration
-- [`AutoHeightTextLayout`](../../references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md) interface **promoted from experimental to stable** - Auto-height text layout configuration
-- [`AutoWidthTextLayout`](../../references/document-sandbox/document-apis/interfaces/AutoWidthTextLayout.md) interface **promoted from experimental to stable** - Auto-width text layout configuration
-- [`UnsupportedTextLayout`](../../references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout.md) interface **promoted from experimental to stable** - Representation of unsupported text layouts
-- [`ParagraphStyles`](../../references/document-sandbox/document-apis/interfaces/ParagraphStyles.md) interface **promoted from experimental to stable** - Complete paragraph style definitions
-- [`ParagraphStylesInput`](../../references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md) interface **promoted from experimental to stable** - Input interface for paragraph styles
-- [`ParagraphStylesRange`](../../references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md) interface **promoted from experimental to stable** - Paragraph styles with text ranges
-- [`ParagraphStylesRangeInput`](../../references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput.md) interface **promoted from experimental to stable** - Input interface for paragraph style ranges
-- [`BaseParagraphStyles`](../../references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md) interface **promoted from experimental to stable** - Base paragraph style properties
-- [`OrderedListStyleInput`](../../references/document-sandbox/document-apis/interfaces/OrderedListStyleInput.md) interface **promoted from experimental to stable** - Configuration for ordered lists
-- [`UnorderedListStyleInput`](../../references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md) interface **promoted from experimental to stable** - Configuration for unordered lists
-- [`OrderedListStyle`](../../references/document-sandbox/document-apis/type-aliases/OrderedListStyle.md) type **promoted from experimental to stable** - Type definition for ordered list styles
-- [`UnorderedListStyle`](../../references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md) type **promoted from experimental to stable** - Type definition for unordered list styles
-- [`OrderedListNumbering`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md) enumeration **promoted from experimental to stable** - Numbering types for ordered lists
-- [`ParagraphListType`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md) enumeration **promoted from experimental to stable** - List type enumeration with `none` value added
-- Removed experimental warnings from documentation guides for all APIs promoted to stable, including the [Use Text](../learn/how_to/use_text.md) guide
+- [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/node.md#cloneinplace) method **promoted from experimental to stable** - Available on all node types for creating copies with subtrees
+- [`paragraphStyleRanges`](../../references/document-sandbox/document-apis/classes/text-content-model.md#paragraphstyleranges) property **promoted from experimental to stable** - Get/set paragraph-level styles with ranges
+- [`applyParagraphStyles()`](../../references/document-sandbox/document-apis/classes/text-content-model.md#applyparagraphstyles) method **promoted from experimental to stable** - Apply styles to specific paragraph ranges
+- [`layout`](../../references/document-sandbox/document-apis/classes/standalone-text-node.md#layout) property **promoted from experimental to stable** - Control text layout modes for standalone text
+- [`layout`](../../references/document-sandbox/document-apis/classes/threaded-text-node.md#layout) property **promoted from experimental to stable** - Control text layout modes for threaded text
+- [`AreaTextLayout`](../../references/document-sandbox/document-apis/interfaces/area-text-layout.md) interface **promoted from experimental to stable** - Fixed width and height text layout configuration
+- [`AutoHeightTextLayout`](../../references/document-sandbox/document-apis/interfaces/auto-height-text-layout.md) interface **promoted from experimental to stable** - Auto-height text layout configuration
+- [`AutoWidthTextLayout`](../../references/document-sandbox/document-apis/interfaces/auto-width-text-layout.md) interface **promoted from experimental to stable** - Auto-width text layout configuration
+- [`UnsupportedTextLayout`](../../references/document-sandbox/document-apis/interfaces/unsupported-text-layout.md) interface **promoted from experimental to stable** - Representation of unsupported text layouts
+- [`ParagraphStyles`](../../references/document-sandbox/document-apis/interfaces/paragraph-styles.md) interface **promoted from experimental to stable** - Complete paragraph style definitions
+- [`ParagraphStylesInput`](../../references/document-sandbox/document-apis/interfaces/paragraph-styles-input.md) interface **promoted from experimental to stable** - Input interface for paragraph styles
+- [`ParagraphStylesRange`](../../references/document-sandbox/document-apis/interfaces/paragraph-styles-range.md) interface **promoted from experimental to stable** - Paragraph styles with text ranges
+- [`ParagraphStylesRangeInput`](../../references/document-sandbox/document-apis/interfaces/paragraph-styles-range-input.md) interface **promoted from experimental to stable** - Input interface for paragraph style ranges
+- [`BaseParagraphStyles`](../../references/document-sandbox/document-apis/interfaces/base-paragraph-styles.md) interface **promoted from experimental to stable** - Base paragraph style properties
+- [`OrderedListStyleInput`](../../references/document-sandbox/document-apis/interfaces/ordered-list-style-input.md) interface **promoted from experimental to stable** - Configuration for ordered lists
+- [`UnorderedListStyleInput`](../../references/document-sandbox/document-apis/interfaces/unordered-list-style-input.md) interface **promoted from experimental to stable** - Configuration for unordered lists
+- [`OrderedListStyle`](../../references/document-sandbox/document-apis/type-aliases/ordered-list-style.md) type **promoted from experimental to stable** - Type definition for ordered list styles
+- [`UnorderedListStyle`](../../references/document-sandbox/document-apis/type-aliases/unordered-list-style.md) type **promoted from experimental to stable** - Type definition for unordered list styles
+- [`OrderedListNumbering`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering.md) enumeration **promoted from experimental to stable** - Numbering types for ordered lists
+- [`ParagraphListType`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type.md) enumeration **promoted from experimental to stable** - List type enumeration with `none` value added
+- Removed experimental warnings from documentation guides for all APIs promoted to stable, including the [Use Text](../learn/how-to/use-text.md) guide
 
 ## 2025-10-02
 
 ### Added
 
 - New [`ImportAddOnData`](../../references/addonsdk/addonsdk-app.md#importaddondata) parameter support for enhanced metadata tracking on imported media in [`addImage()`](../../references/addonsdk/app-document.md#addimage), [`addVideo()`](../../references/addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](../../references/addonsdk/app-document.md#addanimatedimage), and [`enableDragToDocument()`](../../references/addonsdk/addonsdk-app.md#enabledragtodocument) methods.
-- New [Handle Element Selection How-to Guide](../../guides/learn/how_to/handle_selection.md) covering selection operations, real-time selection events, UI integration patterns, selection-based actions, and working with locked elements.
-- New [Manage Pages How-to Guide](../../guides/learn/how_to/manage_pages.md) covering page creation, navigation, and management, positioned in a new **Document Structure** navigation category.
+- New [Handle Element Selection How-to Guide](../../guides/learn/how-to/handle-selection.md) covering selection operations, real-time selection events, UI integration patterns, selection-based actions, and working with locked elements.
+- New [Manage Pages How-to Guide](../../guides/learn/how-to/manage-pages.md) covering page creation, navigation, and management, positioned in a new **Document Structure** navigation category.
 - [`MediaAttributes`](../../references/addonsdk/addonsdk-app.md#mediaattributes) parameter documentation for [`addVideo()`](../../references/addonsdk/app-document.md#addvideo) method.
 
 ### Updated
 
 The following how-to guides have been updated with `ImportAddOnData` support for enhanced metadata tracking on imported media, including examples and implementation patterns:
 
-- [Use Images](../../guides/learn/how_to/use_images.md)
-- [Use Videos](../../guides/learn/how_to/use_videos.md)
-- [Drag and Drop](../../guides/learn/how_to/drag_and_drop.md)
-- [Element Metadata](../../guides/learn/how_to/element_metadata.md)
+- [Use Images](../../guides/learn/how-to/use-images.md)
+- [Use Videos](../../guides/learn/how-to/use-videos.md)
+- [Drag and Drop](../../guides/learn/how-to/drag-and-drop.md)
+- [Element Metadata](../../guides/learn/how-to/element-metadata.md)
 
 ## 2025-09-10
 
@@ -98,10 +98,10 @@ The following how-to guides have been updated with `ImportAddOnData` support for
 
 **IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
-- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
-- New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
-- The [Use Text](../learn/how_to/use_text.md) guide has been updated to include the new Text APIs.
-- The [Use Images](../learn/how_to/use_images.md) guide has been updated to include a `replaceMedia()` example.
+- New [`mediaAddOnData`](../../references/document-sandbox/document-apis/classes/image-rectangle-node.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
+- New `link` property in Character Style ranges [`CharacterStylesInput`](../../references/document-sandbox/document-apis/interfaces/character-styles-input.md#link) to support hyperlinks.
+- The [Use Text](../learn/how-to/use-text.md) guide has been updated to include the new Text APIs.
+- The [Use Images](../learn/how-to/use-images.md) guide has been updated to include a `replaceMedia()` example.
 
 ### Updated
 
@@ -111,8 +111,8 @@ The following how-to guides have been updated with `ImportAddOnData` support for
 
 **IMPORTANT:** The [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
-- Updated [`maskShape`](../../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to readonly.
-- The [`BitmapImage`](../../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
+- Updated [`maskShape`](../../references/document-sandbox/document-apis/classes/grid-cell-node.md#maskShape) in `GridCellNode` to readonly.
+- The [`BitmapImage`](../../references/document-sandbox/document-apis/classes/bitmap-image.md) has been converted from an interface to a class.
 
 ## 2025-09-01
 
@@ -685,12 +685,10 @@ Some items in the following list of changes may have been mentioned in recent up
   For access to the [Express document and content authoring APIs](../../references/document-sandbox/document-apis/index.md):
 
   &lt;del&gt;
-
   ```js
   // Old
   import { editor } from "express";
   ```
-
   &lt;/del&gt;
 
   ```js
@@ -702,12 +700,10 @@ Some items in the following list of changes may have been mentioned in recent up
   For access to the [document sandbox runtime APIs](../../references/document-sandbox/index.md):
 
   &lt;del&gt;
-
   ```js
   // Old
   import AddOnScriptSdk from "AddOnScriptSdk";
   ```
-
   &lt;/del&gt;
 
   ```js
@@ -904,7 +900,7 @@ Updated [Document API references](../../references/document-sandbox/document-api
 
 ## 2023-11-6
 
-- Added a [new tutorial section](../learn/how_to/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how-to/tutorials/grids-addon.md) by Davide Barranca.
+- Added a [new tutorial section](../learn/how-to/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how-to/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnUISDK`) similar to what's generated in the templates for consistency.
 
@@ -1018,8 +1014,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 ### Updates
 
 &lt;del&gt;
-
-- The [Communication API](../references/document-sandbox/communication/index.md) in the &lt;a href="../references/document-sandbox/"&gt;document sandbox reference section&lt;/a&gt; was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../../references/document-sandbox/communication/index.md) in the &lt;a href="../../references/document-sandbox/"&gt;document sandbox reference section&lt;/a&gt; was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -1030,7 +1025,6 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
   `import AddOnScriptSdk from "AddOnScriptSdk";`
 
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, _however_, it will require you to update any existing usage of these APIs in progress**.
-
 &lt;/del&gt;
 
 - A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../../references/document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.

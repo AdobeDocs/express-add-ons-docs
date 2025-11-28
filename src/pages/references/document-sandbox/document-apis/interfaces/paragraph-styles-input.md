@@ -7,7 +7,7 @@ any fields not specified are left unchanged, preserving the text's existing styl
 
 ## Extends
 
--   `Partial`&lt;[`BaseParagraphStyles`](base-paragraph-styles.md)\ &gt;
+-   `Partial`&lt;[`BaseParagraphStyles`](base-paragraph-styles.md) &gt;
 
 ## Extended by
 

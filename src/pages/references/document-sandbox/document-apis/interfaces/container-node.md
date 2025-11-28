@@ -29,7 +29,7 @@ Get [AddOnData](../classes/add-on-data.md) reference for managing the private me
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`BaseNode`](../classes/base-node.md), `any`, `any`\ &gt;\ &gt;
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`BaseNode`](../classes/base-node.md), `any`, `any` &gt; &gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](container-node.md#children) list. Other nodes with a more specific structure can
@@ -41,13 +41,13 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly`&lt;`Iterable`&lt;[`BaseNode`](../classes/base-node.md), `any`, `any`\ &gt;\ &gt;
+`Readonly`&lt;`Iterable`&lt;[`BaseNode`](../classes/base-node.md), `any`, `any` &gt; &gt;
 
 <HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](rect.md)\ &gt;
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](rect.md) &gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -58,31 +58,31 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`&lt;[`Rect`](rect.md)\ &gt;
+`Readonly`&lt;[`Rect`](rect.md) &gt;
 
 <HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](point.md)\ &gt;
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](point.md) &gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`&lt;[`Point`](point.md)\ &gt;
+`Readonly`&lt;[`Point`](point.md) &gt;
 
 <HorizontalLine />
 
 ### children
 
-• `get` **children**(): [`ItemList`](../classes/item-list.md)&lt;[`Node`](../classes/node.md)\ &gt;
+• `get` **children**(): [`ItemList`](../classes/item-list.md)&lt;[`Node`](../classes/node.md) &gt;
 
 The node's children. Use the methods on this ItemList object to get, add, and remove children.
 
 #### Returns
 
-[`ItemList`](../classes/item-list.md)&lt;[`Node`](../classes/node.md)\ &gt;
+[`ItemList`](../classes/item-list.md)&lt;[`Node`](../classes/node.md) &gt;
 
 <HorizontalLine />
 
@@ -118,7 +118,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](point.md)\ &gt;
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](point.md) &gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -126,7 +126,7 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`&lt;[`Point`](point.md)\ &gt;
+`Readonly`&lt;[`Point`](point.md) &gt;
 
 <HorizontalLine />
 
@@ -161,7 +161,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](point.md)\ &gt;
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](point.md) &gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](container-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -175,7 +175,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`&lt;[`Point`](point.md)\ &gt;
+`Readonly`&lt;[`Point`](point.md) &gt;
 
 #### Inherited from
 

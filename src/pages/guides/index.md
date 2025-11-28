@@ -21,7 +21,7 @@ hideBreadcrumbNav: true
 
 import '/src/styles.css'
 
-<HeroSimple slots="image, heading, text " background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white" />
+<SuperHero slots="image, heading, text " background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white" />
 
 ![Adobe Express add-ons](./getting_started/img/Explore_Image_3.png)
 
@@ -35,7 +35,7 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 <InlineAlert slots="text" />
 
-**How likely are you to recommend developing add-ons for Adobe Express to a fellow developer?** <br /><br />
+**How likely are you to recommend developing add-ons for Adobe Express to a fellow developer?** &lt;br/&gt;&lt;br/&gt;
 (Not at all likely) [1](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%221%22%7D&Source=documentation) • [2️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%222%22%7D&Source=documentation) • [3️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%223%22%7D&Source=documentation) • [4️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%224%22%7D&Source=documentation) • [5️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%225%22%7D&Source=documentation) • [6️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%226%22%7D&Source=documentation) • [7️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%227%22%7D&Source=documentation) • [8️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%228%22%7D&Source=documentation) • [9️](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%229%22%7D&Source=documentation) • [10](https://survey.adobe.com/jfe/form/SV_d5WtwiMXNL09tDo?Q_PopulateResponse=%7B%22QID42%22:%2210%22%7D&Source=documentation) (Extremely likely)
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](./getting-started/code-playground.md) and start tinkering with the API right away.
@@ -48,7 +48,7 @@ Ready to build your own add-on? Check out the Developer Journey to get started, 
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-[Find inspiration →](./getting-started/developer-journey.md#discover)
+- [Find inspiration →](./getting-started/developer-journey.md#discover)
 
 ![Learn](./getting_started/img/devjourney-2-learn.png)
 
@@ -56,7 +56,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 Familiarize and experiment with powerful features in our Code Playground.
 
-[Dive deeper →](./getting-started/developer-journey.md#learn)
+- [Dive deeper →](./getting-started/developer-journey.md#learn)
 
 <Columns slots="image, heading, text, links" variant ="vertical" repeat ="2"/>
 
@@ -66,7 +66,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 Transform your ideas into a polished product following our best practices.
 
-[Start building →](./getting-started/developer-journey.md#develop)
+- [Start building →](./getting-started/developer-journey.md#develop)
 
 ![Distribute](./getting_started/img/devjourney-4-distribute.png)
 
@@ -74,7 +74,7 @@ Transform your ideas into a polished product following our best practices.
 
 Share your add-on with the world in the Adobe Express Marketplace.
 
-[Launch now →](./getting-started/developer-journey.md#distribute)
+- [Launch now →](./getting-started/developer-journey.md#distribute)
 
 &lt;!-- ## Adobe Fund for Design: Bring Your Ideas to Life! --&gt;
 

@@ -164,15 +164,15 @@ The template parameter is optional, and the CLI will prompt you to choose from a
 
 you will see the following prompt from the CLI:
 
-![doc sandbox prompt](../../getting_started/img/CLI-template-prompt.png)
+![doc sandbox prompt](../../getting_started/local_development/img/CLI-template-prompt.png)
 
 which shows the five base template options to choose from, followed by a prompt to ask if you want to add the Document Sandbox support once you choose the base template.
 
-![cli doc sandbox prompt](../../getting_started/img/CLI-doc-sandbox.png)
+![cli doc sandbox prompt](../../getting_started/local_development/img/CLI-doc-sandbox.png)
 
 You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
 
-![template scaffolding message](../../getting_started/img/CLI-scaffold-message.png)
+![template scaffolding message](../../getting_started/local_development/img/CLI-scaffold-message.png)
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
@@ -182,7 +182,7 @@ If you don't want to use TypeScript or React, please refer to [this sample add-o
 
 When the scaffolding is complete, you will see the following message, prompting you to navigate to the newly created project directory and start the local development scripts:
 
-![CLI completed message](../../getting_started/img/CLI-completed.png)
+![CLI completed message](../../getting_started/local_development/img/CLI-completed.png)
 
 ## Manifest
 
@@ -196,5 +196,5 @@ The **Add-on Development** tools panel provides useful logging details indicatin
 
 The **Refresh** button can be used to reload your add-on's code and resources, and the **Clear Storage** button allows you to clear any data stored by your add-on.
 
-![add-ons tools screenshot](../../getting_started/img/add-on-devtools.png)
-![manifest error screenshot](../../getting_started/img/manifest-error.png)
+![add-ons tools screenshot](../../getting_started/local_development/img/add-on-devtools.png)
+![manifest error screenshot](../../getting_started/local_development/img/manifest-error.png)
