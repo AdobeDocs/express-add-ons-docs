@@ -22,27 +22,6 @@ contributors:
 
 This section provides a set of guides to help you in the development stage of your add-on.
 
-## Add-on Development mode
-
-Before you can build add-ons, you need to enable Add-on Development mode in Adobe Express—you only need to do this once.
-
-<InlineAlert slots="text" variant="success"/>
-
-This is **automatically done** when you launch the Code Playground [from this link](https://www.adobe.com/go/addon-playground), when you connect to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli).
-
-<details>
-  <summary>Click to view a list of steps to manually enable the Developer Mode</summary>
-  <ol>
-    <li>Open Adobe Express in your browser and click the <b>avatar icon</b> in the top right corner.</li>
-    <li>Click the <b>gear icon</b> to open <b>Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first—click the <b>Accept and Enable</b> button to enable <b>Add-on Development</b></li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-
-![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
-
-</details>
-
 ## Using the CLI
 
 The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
@@ -234,6 +213,27 @@ It's possible to achieve the same result when a document is already open clickin
 If you run into the error below, you can follow the steps in the [Known Issues & Limitations](./known_issues_limitations.md#chrome-local-network-access-restriction) guide to fix it.
 
 ![Local Network Access Error](./img/connect-error.png)
+
+### Add-on Development mode
+
+Before you can build add-ons, Add-on Development mode in Adobe Express needs to be enabled—you only need to do this once.
+
+<InlineAlert slots="text" variant="success"/>
+
+When [launching the Code Playground](https://www.adobe.com/go/addon-playground) or connecting to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli), you'll be prompted to review the Developer Terms of Use and enable the Developer Mode.
+
+<details>
+  <summary>Click to view a list of steps to manually enable the Developer Mode</summary>
+  <ol>
+    <li>Open Adobe Express in your browser and click the <b>avatar icon</b> in the top right corner.</li>
+    <li>Click the <b>gear icon</b> to open <b>Settings</b>.</li>
+    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first—click the <b>Accept and Enable</b> button to enable <b>Add-on Development</b></li>
+    <li>Close the Settings dialog.</li>
+  </ol>
+
+![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
+
+</details>
 
 ## Manifest
 

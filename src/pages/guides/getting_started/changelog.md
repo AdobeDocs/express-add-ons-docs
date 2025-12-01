@@ -26,21 +26,22 @@ contributors:
 
 ### Code Playground Updates
 
-The Adobe Express Code Playground has received a major update with the release of a new set of features and improvements, which this site now reflects.
+The Adobe Express Code Playground has received a major update with the release of a new set of features and improvements.
 
-- The Code Playground now supports [Cloud-based session persistence](./code-playground-workflow.md#session-management) (instead of the previous local storage) allowing you to save your work and resume where you left off everywhere. The new **More** menu contains items to manage your sessions (rename or delete), or star new ones.
-- Relevant Code Blocks (e.g. in the [How-to guides](../learn/how_to/use_text.md)) now feature a **Try in playground** button that opens a new Playground Script session with the code pre-filled for easier testing.
-- The experience can now be launched directly from the documentation via a new **Code Playground button in the top navigation bar** (present in the How-to guides, Hello World!, Code Playground pages, and in any other sections where it makes sense), or by clicking directly on [this link](https://www.adobe.com/go/addon-playground). You can bookmark links that point to either the [Script](https://www.adobe.com/go/addon-playground?executionMode=script) or [Add-on](https://www.adobe.com/go/addon-playground) Mode.
-- The Playground UI has been revamped with various visual improvements, a new Splash Screen, and a contextual guided tour to help you get started.
-- We have simplified the process of [enabling the Add-on Development Mode](./code-playground.md#enable-add-on-development-mode) in Adobe Express; the acceptance of the Developer Terms of Use is now done automatically when you launch the Code Playground [via deep-link](https://www.adobe.com/go/addon-playground).
-- The CLI has been updated to provide a [deep link to the add-on sideloading](https://www.adobe.com/go/addon-cli) process in Adobe Express, which also triggers the Developer Terms of Use acceptance process.
-- Both the Code Playground and the CLI now provide [prefixes to the Console messages](./code-playground-workflow.md#debugging) to help you distinguish them from other messages.
+- Open Code Playground with a single click ([https://www.adobe.com/go/addon-playground](https://www.adobe.com/go/addon-playground)) or find the **Code Playground** button in the top navigation bar of the How-to guides, Hello World!, Code Playground pages, and other sections. You can also bookmark links that point to either the [Script](https://www.adobe.com/go/addon-playground?executionMode=script) or [Add-on](https://www.adobe.com/go/addon-playground) Mode.
+- The Code Playground now supports multiple sessions backed up in the cloud, allowing you to save your work and resume where you left off anywhere. Check out the **More** menu to [manage your sessions](./code-playground-workflow.md#managing-and-resuming-sessions) (find, rename, or delete).
+- Now you can try out the code blocks (e.g. in the [How-to guides](../learn/how_to/use_text.md)) by simply clicking on the **Try in playground** button.
 - The [Code Playground](./code-playground.md) documentation has been **updated and split into multiple pages** for better organization.
   - [Overview](./code-playground.md)
   - [Script Mode](./code-playground-script-mode.md)
   - [Add-on Mode](./code-playground-addon-mode.md)
   - [Workflow & Productivity](./code-playground-workflow.md)
   - [Troubleshooting](./code-playground-troubleshooting.md)
+
+### Updated
+
+- It's now easier to identify Console logs coming from the CLI or Code Playground, because they automatically include [helpful prefixes](./code-playground-workflow.md#debugging) such as `[Playground: Add-on]`, `[Playground: Script]`, and `[Add-on: <add-on-name>]`.
+- Open Add-on testing window with a single click. Bookmark the URL ([https://www.adobe.com/go/addon-cli](https://www.adobe.com/go/addon-cli)) to easily access it later.
 
 ## 2025-11-10
 

@@ -73,9 +73,8 @@ In the future, you can always open the Code Playground from Adobe Express.
 **From the Home Screen:**
 
 1. Click the **Add-ons** button in the left rail.
-2. Click the
-3. Select the **Your add-ons** tab.
-4. Toggle on **Code Playground** at the bottom of the panel:
+2. Switch on the **Add-on development** toggle in the top right corner.
+3. In the **Playground Sessions** tab, either click the **New Session** button to start a new session, or select an existing session to resume working on it.
 
 ![Code Playground from Home Screen](./img/playground--launch-from-home.gif)
 
@@ -89,7 +88,7 @@ In the future, you can always open the Code Playground from Adobe Express.
 
 ### Enable Add-on Development Mode
 
-The Code Playground needs the add-on Development Mode to be enabled in order to work—you only need to do this once. If you launch the Playground [from this link](https://www.adobe.com/go/addon-playground) (we encourage you to do it now!), the process will be done automatically for you. You'll have to accept the terms of use and the add-on Development Mode will be enabled.
+The Code Playground needs the add-on Development Mode to be enabled in order to work—you only need to toggle it once. When launching the Playground (e.g., from [this link](https://www.adobe.com/go/addon-playground)) for the first time, you'll be prompted to review the Developer Terms of Use and enable the Developer Mode.
 
 [![Playground Terms of Use](./img/playground--DTOU.png)](https://www.adobe.com/go/addon-playground)
 

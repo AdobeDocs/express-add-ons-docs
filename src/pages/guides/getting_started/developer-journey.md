@@ -83,9 +83,11 @@ The best way to learn is by doing! Adobe Express integrates a [Playground](../ge
 
 ### Run the Code Playground
 
-You need to tick a few boxes in the application in order to enable it, as the animation below shows.
+To launch the Code Playground experience, follow [this link](https://www.adobe.com/go/addon-playground) or click the button below.
 
-![Enable Developer Settings](./img/enable-playground.gif)
+<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+
+- [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 
 Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code-playground-script-mode.md) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code-playground.md) for more details.
 

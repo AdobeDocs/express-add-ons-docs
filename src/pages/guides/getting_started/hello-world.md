@@ -52,14 +52,14 @@ Before you can build add-ons, you need to enable Add-on Development mode in Adob
 
 <InlineAlert slots="text" variant="success"/>
 
-This is **automatically done** when you launch the Code Playground [from this link](https://www.adobe.com/go/addon-playground), when you connect to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli), or when you click the buttons you'll find later in this guide.
+The first time you launch the [Code Playground](https://www.adobe.com/go/addon-playground) or [connect to your local add-on development environment](https://www.adobe.com/go/addon-cli), you can review the Developer Terms of Use and enable Developer mode.
 
 <details>
-  <summary>Click to view a list of steps to manually enable the Developer Mode</summary>
+  <summary>Click to view a list of steps to manually toggle the Developer Mode</summary>
   <ol>
     <li>Open Adobe Express in your browser and click the <b>avatar icon</b> in the top right corner.</li>
     <li>Click the <b>gear icon</b> to open <b>Settings</b>.</li>
-    <li>Click the <b>Developer Terms of Use</b> link to review the terms (opens in a new tab).</li>
+    <li>Click the <b>Developer Terms of Use</b> link to review the terms (opens in a new tab) if you haven't already.</li>
     <li>Click <b>Accept and Enable</b> to enable <b>Add-on Development</b>.</li>
   </ol>
 

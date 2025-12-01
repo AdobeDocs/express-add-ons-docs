@@ -59,7 +59,7 @@ Use the "**More**" button in the top right corner of the playground window to re
 
 ## Debugging
 
-The Code Playground supports debugging your code with the browser's developer tools. In **Add-on mode**, you can use the full power of the debugger for the add-on's UI and logic (the `HTML` and `IframeJS` tabs). The `Document JS` tab and the code in the **Script mode** editor are running in a sandboxed environment with [limited capabilities](../../references/document-sandbox/web/index.md); the best option here is to log messages to the Console.
+For debugging your code, you can view the logs from Code Playground in the browser's Console.
 
 <InlineAlert slots="text, text1, text2" variant="info"/>
 
@@ -67,7 +67,6 @@ The Code Playground **prefixes the messages in the Console** with descriptive st
 
 - `[Playground: Add-on]` for Code Playground in Add-on mode.
 - `[Playground: Script]` for Code Playground in Script mode.
-- `[Add-on: <add-on-name>]` for add-ons from other sources (including the CLI).
 
 Open the browser's developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect** from the context menu. In the **Console**, you can filter out the messages from the Code Playground by typing just `Playground` in the filter input.
 
@@ -75,21 +74,22 @@ Open the browser's developer tools by right-clicking on the browser window where
 
 ## Session Management
 
-### Saving Your Work
+### Save Your Work
 
-The Code Playground now backs up your sessions in the cloud, ensuring your work is safely stored and protected from accidental loss.
+The Code Playground now backs up your sessions in the cloud, ensuring your work is safely stored and protected from accidental loss. You can know whether your session is looking at the status nest to the session name.
+
+![Code Playground Saved Session](./img/playground--saved-session.png)
+
+If an issue occurs, the status will update accordingly and an error toast will appear.
 
 Your code is **_not saved automatically_**. The Code Playground saves your session only when you perform the following actions:
 
-1. Rename the session.
-2. Run the code via the **Run Code** button or with the [keyboard shortcut for Run](#keyboard-shortcuts).
-3. Save using the [keyboard shortcut for Save](#keyboard-shortcuts).
+1. Run the code.
+2. Save using the [keyboard shortcut for Save](#keyboard-shortcuts).
+3. Switch to a new session.
 4. Exit the Code Playground (with the **X** in the upper right corner).
-5. Switch to a new session.
 
-If you don't want to save your work at any time, use the [keyboard shortcut to Reset](#keyboard-shortcuts).
-
-### Managing and Resuming Sessions
+### Manage and Resume Sessions
 
 There are two ways to resume working on one of your saved sessions:
 
@@ -97,7 +97,7 @@ There are two ways to resume working on one of your saved sessions:
 
 1. Click the **Add-ons** button in the left rail.
 2. Click the **Add-on development** toggle in the top right corner of the playground window.
-3. Click **Create new** to create a new one, or
+3. Click **New sesion** to create a new one, or
 4. Select the **Playground Sessions** tab to access your saved sessions.
 5. Click on the session you want to resume to open it in the Code Playground.
 
@@ -120,12 +120,37 @@ To browse your saved sessions:
 
 <InlineAlert slots="header, text1" variant="info"/>
 
-#### Accessing "Your add-ons" Page
+#### Access "Your add-ons" Page
 
 - **Without a document open:** Click the **Add-ons** button in the left rail, then click the **Add-on development** toggle in the top right
 - **With a document open:** Click the **Add-ons** button in the left rail, select the **Your add-ons** tab, then click the "Manage add-ons" link in the Add-on Testing section
 
-## Downloading Your Code
+### Rename a Session
+
+To rename a session, click on the session name and enter a new name. Click anywhere outside the input or press <kbd>Enter</kbd> to save the new name. A toast will appear to confirm the change.
+
+![Code Playground Rename Session](./img/playground--rename-session.gif)
+
+### Delete a Session
+
+To delete a session, click on the **•••** button next to the session name and click the **Delete Session** button. You'll need to confirm the deletion by clicking the **Delete** button . A toast will appear to confirm the success of the operation.
+
+![Code Playground Delete Session](./img/playground--delete-session.gif)
+
+### Session Limits and Lifecycle
+
+The Code Playground supports a maximum number of sessions per user. To help manage storage and maintain system performance, sessions automatically transition through different states based on activity:
+
+- **Active**: Your session is actively maintained and fully functional for development.
+- **Inactive**: Sessions become inactive after 60 days without any activity. Simply accessing the session and running your code will reactivate it and reset the inactivity timer.
+- **Archived**: After 90 days of inactivity, sessions are automatically archived. While you can no longer run code in an archived session, you can still access and download your code to back it up locally.
+- **Permanently Deleted**: Sessions are permanently deleted after 120 days of inactivity.
+
+<InlineAlert slots="text" variant="info"/>
+
+To preserve your work, regularly access your sessions or download your code for local backup. Running your code in a session resets the inactivity clock.
+
+## Download Your Code
 
 ### How to Download
 
@@ -148,7 +173,7 @@ The downloaded zip file will contain a folder with the following structure:
 
 ![Downloaded Folder Structure](./img/downloaded-folder-structure.png)
 
-### Running Downloaded Code
+### Run Downloaded Code
 
 You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](../getting_started/hello-world.md). There is a readme file in the add-on folder that will guide you through the process as well.
 
@@ -166,19 +191,7 @@ You can run your add-on folder as a local add-on project in your CLI by followin
 
 ## Troubleshooting Common Issues
 
-### Code Not Running
-
-- Check for syntax errors in your code.
-- Ensure you're using the correct mode for your use case
-- Verify that all required APIs are properly imported.
-- Check the browser console for error messages.
-
-### Session Not Saving
-
-- The Code Playground supports up to 2MB of storage per session, and 60 sessions per user. Delete unused sessions to free up space.
-- Code is not saved automatically—read the [Saving Your Work](#saving-your-work) section for more details.
-- Make sure you're not in incognito/private browsing mode.
-- Try saving manually using the keyboard shortcut.
+See the [Troubleshooting](./code-playground-troubleshooting.md#common-issues) page for more details on common issues and solutions.
 
 ## Next Steps
 
