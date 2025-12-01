@@ -3,15 +3,18 @@ keywords:
   - Adobe Express
   - Express Add-on SDK
   - Express Editor
-  - Adobe Express
   - Add-on SDK
   - SDK
   - JavaScript
   - Extend
   - Extensibility
-  - API
+  - Add-ons
+  - Add-on UI SDK
   - Add-on Manifest
-  - AddOnSdk
+  - AddOnUISdk
+  - Document Sandbox
+  - Document API
+  - Changelog
 title: What's New
 description: Contains a running log of changes to the add-on documentation, SDK, CLI, etc.
 contributors:
@@ -22,7 +25,7 @@ contributors:
 
 # Changelog
 
-## 2025-11-24
+## 2025-11-29
 
 ### Code Playground Updates
 
@@ -38,10 +41,19 @@ The Adobe Express Code Playground has received a major update with the release o
   - [Workflow & Productivity](./code-playground-workflow.md)
   - [Troubleshooting](./code-playground-troubleshooting.md)
 
+### Added
+
+- It's now easier to identify Console logs coming from the CLI or Code Playground, because they automatically include new [helpful prefixes](./code-playground-workflow.md#debugging) such as `[Playground: Add-on]`, `[Playground: Script]`, and `[Add-on: <add-on-name>]`.
+- Open Add-on testing window with a single click. Bookmark the URL ([https://www.adobe.com/go/addon-cli](https://www.adobe.com/go/addon-cli)) to easily access it later.
+- New Express-specific Document API classes: [`ExpressContext`](../../references/document-sandbox/document-apis/classes/ExpressContext.md), [`ExpressEditor`](../../references/document-sandbox/document-apis/classes/ExpressEditor.md), and [`ExpressViewport`](../../references/document-sandbox/document-apis/classes/ExpressViewport.md), which inherit from the corresponding non-specific Classes.
+- New Text classes: [`StandaloneTextContentModel`](../../references/document-sandbox/document-apis/classes/StandaloneTextContentModel.md) and [`ThreadedTextContentModel`](../../references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md), representing a complete piece of text content contained within a single [`StandaloneTextNode`](../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md) or split across multiple [`ThreadedTextNode`](../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md)s.
+- **Experimental** [`ImageRectangleNode.fetchBitmapImage()`](../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#fetchbitmapimage) method - Fetch the bitmap image associated with the image rectangle node.
+- **Experimental** [`BitmapImage.data()`](../../references/document-sandbox/document-apis/classes/BitmapImage.md#data) method - Fetch the bitmap image data as a Blob.
+
 ### Updated
 
-- It's now easier to identify Console logs coming from the CLI or Code Playground, because they automatically include [helpful prefixes](./code-playground-workflow.md#debugging) such as `[Playground: Add-on]`, `[Playground: Script]`, and `[Add-on: <add-on-name>]`.
-- Open Add-on testing window with a single click. Bookmark the URL ([https://www.adobe.com/go/addon-cli](https://www.adobe.com/go/addon-cli)) to easily access it later.
+- The `Context.currentPage()` method has moved to the new [`ExpressContext.currentPage()`](../../references/document-sandbox/document-apis/classes/ExpressContext.md#currentpage).
+- The `Viewport` class has been renamed to [`ExpressViewport`](../../references/document-sandbox/document-apis/classes/ExpressViewport.md).
 
 ## 2025-11-10
 
@@ -442,8 +454,8 @@ Stabilized [`importPdf()`](../../references/addonsdk/app-document.md#importpdf) 
 
 ### Added
 
-- A new [`Viewport`](../../references/document-sandbox/document-apis/classes/Viewport.md) class has been added to the Document APIs. [`Viewport`](../../references/document-sandbox/document-apis/classes/Viewport.md) represents the canvas area currently visible on-screen.
-- A new API [`bringIntoView`](../../references/document-sandbox/document-apis/classes/Viewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
+- A new [`Viewport`](../../references/document-sandbox/document-apis/classes/ExpressViewport.md) class has been added to the Document APIs. `Viewport` represents the canvas area currently visible on-screen.
+- A new API [`bringIntoView`](../../references/document-sandbox/document-apis/classes/ExpressViewport.md#bringIntoView) have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.
 
 ## 2025-01-13
 
@@ -538,7 +550,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 - A new [`VisualNode`](../../references/document-sandbox/document-apis/classes/VisualNode.md) class has been added to the Document APIs, and represents any node that can be visually perceived in the content.
 - New Document APIs have been added:
-  - [`currentPage`](../../references/document-sandbox/document-apis/classes/Context.md#currentpage) Context accessor: returns the active page.
+  - [`currentPage`](../../references/document-sandbox/document-apis/classes/ExpressContext.md#currentpage) Context accessor: returns the active page.
   - [`visualRoot`](../../references/document-sandbox/document-apis/classes/VisualNode.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
   - [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/PageNode.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
   - Support to Bounds has been added in several classes: [`boundsInParent`](../../references/document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](../../references/document-sandbox/document-apis/classes/GroupNode.md#boundslocal) and [VisualNode](../../references/document-sandbox/document-apis/classes/VisualNode.md#boundslocal)); [`centerPointLocal`](../../references/document-sandbox/document-apis/classes/VisualNode.md#centerpointlocal); [`topLeftLocal`](../../references/document-sandbox/document-apis/classes/VisualNode.md#topleftlocal); [`boundsInNode()`](../../references/document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](../../references/document-sandbox/document-apis/classes/VisualNode.md#localpointinnode);
