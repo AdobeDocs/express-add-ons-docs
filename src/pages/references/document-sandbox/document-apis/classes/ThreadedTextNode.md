@@ -127,21 +127,21 @@ recommended to use this property only when the node is placed on a page.
 
 ### fullContent
 
-• `get` **fullContent**(): [`TextNodeContentModel`](TextNodeContentModel.md)
+• `get` **fullContent**(): [`ThreadedTextContentModel`](ThreadedTextContentModel.md)
 
 The model containing the complete text string and its styles, only part of which may be visible within the bounds of
-this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
+this specific ThreadedTextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
 fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
 
 <InlineAlert slots="text" variant="info"/>
-Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
-same single [TextNodeContentModel](TextNodeContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
-not. Use [TextNodeContentModel](TextNodeContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
+Note: When traversing the scenegraph in search of text content, bear in mind that multiple ThreadedTextNodes may refer to the
+same single [ThreadedTextContentModel](ThreadedTextContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
+not. Use [ThreadedTextContentModel](ThreadedTextContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
 encountered before.
 
 #### Returns
 
-[`TextNodeContentModel`](TextNodeContentModel.md)
+[`ThreadedTextContentModel`](ThreadedTextContentModel.md)
 
 ---
 
@@ -484,13 +484,13 @@ Helper method to determine if the text is standalone.
 
 • **isThreadedText**(): `this is ThreadedTextNode`
 
-Helper method to determine if the text is in a flow.
+Always returns true for this ThreadedTextNode, indicating that it is part of a multi-frame text flow.
 
 #### Returns
 
 `this is ThreadedTextNode`
 
-#### Inherited from
+#### Overrides
 
 [`TextNode`](TextNode.md).[`isThreadedText`](TextNode.md#isthreadedtext)
 

@@ -135,7 +135,7 @@ recommended to use this property only when the node is placed on a page.
 
 ### fullContent
 
-• `get` **fullContent**(): [`TextNodeContentModel`](TextNodeContentModel.md)
+• `get` `abstract` **fullContent**(): [`TextNodeContentModel`](TextNodeContentModel.md)
 
 The model containing the complete text string and its styles, only part of which may be visible within the bounds of
 this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a

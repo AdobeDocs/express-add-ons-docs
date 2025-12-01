@@ -129,22 +129,14 @@ recommended to use this property only when the node is placed on a page.
 
 ### fullContent
 
-• `get` **fullContent**(): [`TextNodeContentModel`](TextNodeContentModel.md)
+• `get` **fullContent**(): [`StandaloneTextContentModel`](StandaloneTextContentModel.md)
 
-The model containing the complete text string and its styles, only part of which may be visible within the bounds of
-this specific TextNode "frame." The full text content flow may be split across multiple frames, and/or it may be clipped if a
-fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
-
-<InlineAlert slots="text" variant="info"/>
-
-Note: When traversing the scenegraph in search of text content, bear in mind that multiple TextNodes may refer to the
-same single [TextNodeContentModel](TextNodeContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
-not. Use [TextNodeContentModel](TextNodeContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
-encountered before.
+The model containing the complete text string and its styles, all which will be visible within the bounds of
+this specific StandaloneTextNode.
 
 #### Returns
 
-[`TextNodeContentModel`](TextNodeContentModel.md)
+[`StandaloneTextContentModel`](StandaloneTextContentModel.md)
 
 ---
 
@@ -480,13 +472,13 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 • **isStandaloneText**(): `this is StandaloneTextNode`
 
-Helper method to determine if the text is standalone.
+Always returns true for this StandaloneTextNode, indicating that it is not part of a multi-frame text flow.
 
 #### Returns
 
 `this is StandaloneTextNode`
 
-#### Inherited from
+#### Overrides
 
 [`TextNode`](TextNode.md).[`isStandaloneText`](TextNode.md#isstandalonetext)
 
