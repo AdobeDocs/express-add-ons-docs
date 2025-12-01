@@ -82,7 +82,7 @@ Check your browser's default download location, you can also review your browser
 
 **Solutions:**
 
-1. **Check auto-save settings:** Code is not saved automatically. Please read the [Saving Your Work](./code-playground-workflow.md#saving-your-work) section for more details on how to save.
+1. **Check auto-save settings:** Code is not saved automatically. Please read the [Save Your Work](./code-playground-workflow.md#save-your-work) section for more details on how to save.
 2. Make sure you're not in incognito/private browsing mode
 3. Try saving manually using the keyboard shortcut (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>)
 4. Clear browser cache and try again

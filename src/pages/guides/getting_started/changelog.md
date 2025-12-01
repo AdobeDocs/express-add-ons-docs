@@ -29,7 +29,7 @@ contributors:
 The Adobe Express Code Playground has received a major update with the release of a new set of features and improvements.
 
 - Open Code Playground with a single click ([https://www.adobe.com/go/addon-playground](https://www.adobe.com/go/addon-playground)) or find the **Code Playground** button in the top navigation bar of the How-to guides, Hello World!, Code Playground pages, and other sections. You can also bookmark links that point to either the [Script](https://www.adobe.com/go/addon-playground?executionMode=script) or [Add-on](https://www.adobe.com/go/addon-playground) Mode.
-- The Code Playground now supports multiple sessions backed up in the cloud, allowing you to save your work and resume where you left off anywhere. Check out the **More** menu to [manage your sessions](./code-playground-workflow.md#managing-and-resuming-sessions) (find, rename, or delete).
+- The Code Playground now supports multiple sessions backed up in the cloud, allowing you to save your work and resume where you left off anywhere. Check out the **More** menu to [manage your sessions](./code-playground-workflow.md#session-management) (find, rename, or delete).
 - Now you can try out the code blocks (e.g. in the [How-to guides](../learn/how_to/use_text.md)) by simply clicking on the **Try in playground** button.
 - The [Code Playground](./code-playground.md) documentation has been **updated and split into multiple pages** for better organization.
   - [Overview](./code-playground.md)
@@ -281,7 +281,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Updated
 
-- The [Code Playground](./code-playground.md) documentation has been updated with details about the new [Script Mode](./code-playground-script-mode.md#how-to-use-script-mode) and [Local Persistence](./code-playground-workflow.md#saving-your-work) features, as well as additional details around existing features. The updates include:
+- The [Code Playground](./code-playground.md) documentation has been updated with details about the new [Script Mode](./code-playground-script-mode.md#how-to-use-script-mode) and [Local Persistence](./code-playground-workflow.md) features, as well as additional details around existing features. The updates include:
 
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.

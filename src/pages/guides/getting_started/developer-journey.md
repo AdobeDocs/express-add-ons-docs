@@ -115,7 +115,7 @@ To build a more complex add-on, you can use our free [Command Line Interface (CL
 
 <InlineAlert slots="text1" variant="success" />
 
-The Code Playground can [export your project as a zip file](./code-playground-workflow.md#downloading-your-code) so that existing add-ons projects can be migrated to the CLI seamlessly.
+The Code Playground can [export your project as a zip file](./code-playground-workflow.md#download-your-code) so that existing add-ons projects can be migrated to the CLI seamlessly.
 
 ### Next steps
 
