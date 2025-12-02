@@ -1069,7 +1069,7 @@ const GlobalHeader = ({
                   location.pathname.includes("/hello-world/")) && (
                   <AnchorButton
                     variant="accent"
-                    href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved"
+                    href="https://www.adobe.com/go/addon-playground&session=saved"
                     target="_blank"
                     id={"playgroundId"}
                     tabIndex="0"
