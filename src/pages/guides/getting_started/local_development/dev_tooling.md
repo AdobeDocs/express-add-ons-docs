@@ -187,7 +187,11 @@ This will build the add-on and start a local server, which you can then sideload
 
 - [Sideload your add-on](https://www.adobe.com/go/addon-cli)
 
-You can also do it manually by following the steps below.
+The CLI will also display a [https://www.adobe.com/go/addon-cli](https://www.adobe.com/go/addon-cli) URL that you can option-click (if you're using the VSCode/Cursor Terminal) or copy and paste to open the Add-on Development window in Adobe Express.
+
+![Sideload your add-on](./img/CLI-deeplink.png)
+
+You can also sideload it manually by following the steps below.
 
 ![How to sideload an add-on](../img/playground-sideload-add-on.gif)
 
