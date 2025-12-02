@@ -76,7 +76,7 @@ Open the browser's developer tools by right-clicking on the browser window where
 
 ### Save Your Work
 
-The Code Playground now backs up your sessions in the cloud, ensuring your work is safely stored and protected from accidental loss. You can know whether your session is looking at the status nest to the session name.
+The Code Playground now backs up your sessions in the cloud, ensuring your work is safely stored and protected from accidental loss. You can know whether your session is looking at the status next to the session name.
 
 ![Code Playground Saved Session](./img/playground--saved-session.png)
 
