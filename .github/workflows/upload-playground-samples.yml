@@ -1,0 +1,42 @@
+---
+name: Manual Upload Playground Samples
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Deploy to (dev|prod)"
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+        default: "dev"
+jobs:
+  upload-playground-samples:
+    name: Upload Playground Samples
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node v20 for Yarn v3
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.19.5" # Current LTS version
+
+      - name: Enable Corepack for Yarn v3
+        run: corepack enable
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Upload playground samples
+        run: node upload-playground-samples.mjs
+        env:
+          IMS_BASE_URL: ${{ inputs.env == 'prod' && 'https://ims-na1.adobelogin.com' || 'https://ims-na1-stg1.adobelogin.com' }}
+          FFC_BASE_URL: ${{ inputs.env == 'prod' && 'https://ffc-addon.adobe.io/' || 'https://ffc-addon-stage.adobe.io/' }}
+          PLAYGROUND_CLIENT_ID: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_CLIENT_ID || secrets.PLAYGROUND_CLIENT_ID_STAGE }}
+          PLAYGROUND_CLIENT_SECRET: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_CLIENT_SECRET || secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
+          PLAYGROUND_AUTH_CODE: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_AUTH_CODE || secrets.PLAYGROUND_AUTH_CODE_STAGE }}
+          PLAYGROUND_API_KEY: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_API_KEY || secrets.PLAYGROUND_API_KEY_STAGE }}
+
