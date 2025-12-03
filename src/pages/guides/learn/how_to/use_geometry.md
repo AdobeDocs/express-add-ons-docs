@@ -48,7 +48,7 @@ Adobe Express provides a set of geometric shapes that you can create and style p
 
 ### Example: Add a Rectangle
 
-```js
+```js{try id=createBasicRectangle}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -58,11 +58,8 @@ const rect = editor.createRectangle();
 rect.width = 100;
 rect.height = 100;
 
-// The current page, where the rectangle will be placed
-const currentPage = editor.context.currentPage;
-
-// Append the rectangle to the page.
-currentPage.artboards.first.children.append(rect);
+// Add the rectangle to the document
+editor.context.insertionParent.children.append(rect);
 ```
 
 <InlineAlert slots="header, text, text1" variant="warning"/>
@@ -91,29 +88,26 @@ Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../ref
 
 An ellipse with a radius of 200 on the x-axis and 100 on the y-axis will result in a shape with 400 wide (`rx` times two) and a 200 tall (`ry` times two)!
 
-```js
+```js{try id=createBasicEllipse}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
 const ellipse = editor.createEllipse();
-ellipse.rx = 200; // radius x 👈
-ellipse.ry = 100; // radius y 👈
+ellipse.rx = 200; // radius x
+ellipse.ry = 100; // radius y
 
 console.log(ellipse.boundsLocal);
-// { x: 0, y: 0, width: 400, height: 200 } 👈 mind the actual bounds!
+// { x: 0, y: 0, width: 400, height: 200 } - mind the actual bounds!
 
-// The current page, where the rectangle will be placed
-const currentPage = editor.context.currentPage;
-
-// Append the rectangle to the page.
-currentPage.artboards.first.children.append(rect);
+// Add the ellipse to the document
+editor.context.insertionParent.children.append(ellipse);
 ```
 
 ### Example: Style Shapes
 
-Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create a rectangle with a fill and a stroke.
+Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create an ellipse with a fill and a stroke.
 
-```js
+```js{try id=createEllipseWithFillStroke}
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -121,11 +115,12 @@ import { editor, colorUtils, constants } from "express-document-sdk";
 const ellipse = editor.createEllipse();
 ellipse.rx = 200;
 ellipse.ry = 100;
+ellipse.translation = { x: 250, y: 150 };
 
-// 👇 Apply the fill color
+// Apply the fill color
 ellipse.fill = editor.makeColorFill(colorUtils.fromHex("#F3D988"));
 
-// 👇 Create the stroke
+// Create the stroke
 const stroke = editor.makeStroke({
   color: colorUtils.fromHex("#E29E4E"),
   width: 20,
@@ -133,7 +128,7 @@ const stroke = editor.makeStroke({
   dashPattern: [50, 2],
 });
 
-// 👇 Apply the stroke
+// Apply the stroke
 ellipse.stroke = stroke;
 
 // Add the shape to the document
@@ -152,7 +147,7 @@ Paths are a versatile tool to create complex shapes in Adobe Express. The [`edit
 
 ### Example: Single path
 
-```js
+```js{try id=createSinglePath}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -169,7 +164,7 @@ editor.context.insertionParent.children.append(p1);
 
 Combining and grouping multiple paths, you can create complex shapes, like in the following example:
 
-```js
+```js{try id=createMultiplePaths}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 

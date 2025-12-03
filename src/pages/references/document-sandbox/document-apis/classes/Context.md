@@ -4,20 +4,11 @@
 
 Contains the user's current selection state, indicating the content they are focused on.
 
+## Extended by
+
+-   [`ExpressContext`](ExpressContext.md)
+
 ## Accessors
-
-### currentPage
-
-• `get` **currentPage**(): [`PageNode`](PageNode.md)
-
-#### Returns
-
-[`PageNode`](PageNode.md)
-
-The currently viewed page.
-To change the current page, call [Viewport.bringIntoView](Viewport.md#bringintoview) with an artboard or other content on that page.
-
----
 
 ### hasSelection
 

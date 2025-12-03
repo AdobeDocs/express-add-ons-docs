@@ -74,61 +74,126 @@ async function getImsServiceToken() {
 }
 
 /**
+ * Comment out express-document-sdk import statements in code.
+ * The Code Playground Script mode automatically imports these modules,
+ * so we comment them out to avoid conflicts while preserving them for educational context.
+ * @param code - The code to process.
+ * @returns the code with import statements commented out.
+ */
+function commentOutExpressDocumentSDKImports(code) {
+  // Comment out import statements for express-document-sdk
+  // Handles various import formats:
+  // - import { editor } from "express-document-sdk";
+  // - import { editor, fonts } from "express-document-sdk";
+  // - import * as expressSDK from "express-document-sdk";
+  // - Single or double quotes
+  const importRegex = /^(import\s+.*\s+from\s+["']express-document-sdk["'];?\s*)$/gm;
+  
+  // Replace with commented version and add helpful note
+  const processedCode = code.replace(
+    importRegex, 
+    "// Note: Uncomment the import below when using in your add-on's code.js\n// $1"
+  );
+  
+  return processedCode;
+}
+
+/**
  * Create a zip file from a code block.
  * @param block - The code block to create a zip file from.
  */
 async function createZipFileFromCodeBlock(block) {
   const zip = new JSZip();
-  zip.file("script.js", block.code);
+  // Comment out express-document-sdk imports before adding to zip
+  const processedCode = commentOutExpressDocumentSDKImports(block.code);
+  zip.file("script.js", processedCode);
   return zip.generateAsync({ type: "nodebuffer" });
 }
 
 /**
- * Upload a code block to FFC.
+ * Upload a code block to FFC with retry logic.
  * @param block - The code block to store.
  * @param projectId - The project ID corresponding to the code block.
+ * @param maxRetries - Maximum number of retry attempts (default: 3).
  * @returns the response from the FFC API.
  */
-async function uploadCodeBlockToFFC(codeBlock, projectId) {
-  try {
-    const accessToken = await getImsServiceToken();
-    const url = new URL(
-      `${FFC_PLAYGROUND_ENDPOINT}/${projectId}`,
-      FFC_BASE_URL
-    );
+async function uploadCodeBlockToFFC(codeBlock, projectId, maxRetries = 3) {
+  let lastError;
+  
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      // Process the code and log it for verification
+      const processedCode = commentOutExpressDocumentSDKImports(codeBlock.code);
+      
+      if (attempt === 1) {
+        console.log(`\n📤 Uploading: ${projectId} (from ${codeBlock.filePath})`);
+      } else {
+        console.log(`   Retry ${attempt - 1}/${maxRetries - 1}: ${projectId}`);
+      }
 
-    const zipBuffer = await createZipFileFromCodeBlock(codeBlock);
-    const form = new FormData();
-    form.append(
-      "file",
-      new Blob([zipBuffer], { type: "application/zip" }),
-      `${projectId}.zip`
-    );
-    form.append("name", projectId);
-
-    const response = await fetch(url, {
-      method: "PUT",
-      headers: {
-        Accept: "application/vnd.adobe-ffcaddon.response+json",
-        Authorization: `Bearer ${accessToken}`,
-        "x-api-key": PLAYGROUND_API_KEY,
-      },
-      body: form,
-    });
-
-    if (!response.ok) {
-      const text = await response.text();
-      const requestId = response.headers.get(FFC_REQUEST_ID);
-      console.log("FFC Request ID:", requestId);
-      throw new Error(
-        `Failed to upload code block to FFC - HTTP ${response.status}: ${text}`
+      const accessToken = await getImsServiceToken();
+      const url = new URL(
+        `${FFC_PLAYGROUND_ENDPOINT}/${projectId}`,
+        FFC_BASE_URL
       );
+
+      // Create zip with the already-processed code
+      const zip = new JSZip();
+      zip.file("script.js", processedCode);
+      const zipBuffer = await zip.generateAsync({ type: "nodebuffer" });
+
+      const form = new FormData();
+      form.append(
+        "file",
+        new Blob([zipBuffer], { type: "application/zip" }),
+        `${projectId}.zip`
+      );
+      form.append("name", projectId);
+      
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+          Accept: "application/vnd.adobe-ffcaddon.response+json",
+          Authorization: `Bearer ${accessToken}`,
+          "x-api-key": PLAYGROUND_API_KEY,
+        },
+        body: form,
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        const requestId = response.headers.get(FFC_REQUEST_ID);
+        
+        // Log request ID for debugging
+        if (requestId) {
+          console.log(`   FFC Request ID: ${requestId}`);
+        }
+        
+        throw new Error(
+          `Failed to upload code block to FFC - HTTP ${response.status}: ${text}`
+        );
+      }
+      
+      console.log(`✅ Successfully uploaded: ${projectId}`);
+      return response.json();
+      
+    } catch (error) {
+      lastError = error;
+      
+      // If this was the last attempt, don't retry
+      if (attempt === maxRetries) {
+        console.error(`❌ Failed to upload (${projectId}) after ${maxRetries} attempts: ${error.message}`);
+        throw error;
+      }
+      
+      // Exponential backoff: wait 2^attempt seconds
+      const waitTime = Math.pow(2, attempt) * 1000;
+      console.log(`   ⏳ Waiting ${waitTime / 1000}s before retry...`);
+      await new Promise(resolve => setTimeout(resolve, waitTime));
     }
-    return response.json();
-  } catch (error) {
-    console.error("Failed to upload code block to FFC:", error.message);
-    throw error;
   }
+  
+  throw lastError;
 }
 
 /**
@@ -187,18 +252,42 @@ function extractCodeBlocks(content, filePath) {
  * Main function to run the code block extractor.
  * 1. Find all markdown files in the pages directory.
  * 2. Extract code blocks from each markdown file.
- * 3. Store each code block in the backend API.
+ * 3. Store each code block in the backend API with retry logic.
  */
 async function run() {
   const markdownFiles = await findMarkdownFiles(PAGES_DIRECTORY);
+  let successCount = 0;
+  let failureCount = 0;
 
   for (const filePath of markdownFiles) {
     const content = await fs.readFile(filePath, "utf8");
     const codeBlocks = extractCodeBlocks(content, filePath);
 
     for (const codeBlock of codeBlocks) {
-      await uploadCodeBlockToFFC(codeBlock, codeBlock.id);
+      try {
+        await uploadCodeBlockToFFC(codeBlock, codeBlock.id);
+        successCount++;
+        
+        // Small delay between uploads to avoid overwhelming the backend
+        await new Promise(resolve => setTimeout(resolve, 500));
+      } catch (error) {
+        failureCount++;
+        console.error(`Skipping ${codeBlock.id} due to upload failure.`);
+        // Continue with next upload instead of failing entire script
+      }
     }
+  }
+  
+  console.log(`\n${"=".repeat(80)}`);
+  console.log(`📊 Upload Summary:`);
+  console.log(`   ✅ Successful: ${successCount}`);
+  console.log(`   ❌ Failed: ${failureCount}`);
+  console.log(`   📦 Total: ${successCount + failureCount}`);
+  console.log("=".repeat(80));
+  
+  if (failureCount > 0) {
+    console.log(`\n⚠️  Some uploads failed. You may need to run the script again.`);
+    process.exit(1);
   }
 }
 

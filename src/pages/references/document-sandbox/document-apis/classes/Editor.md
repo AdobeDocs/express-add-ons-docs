@@ -4,6 +4,10 @@
 
 Entry point for APIs that read or modify the document's content.
 
+## Extended by
+
+-   [`ExpressEditor`](ExpressEditor.md)
+
 ## Accessors
 
 ### context
@@ -20,11 +24,11 @@ User's current selection context
 
 ### documentRoot
 
-• `get` **documentRoot**(): [`ExpressRootNode`](ExpressRootNode.md)
+• `get` **documentRoot**(): [`BaseNode`](BaseNode.md)
 
 #### Returns
 
-[`ExpressRootNode`](ExpressRootNode.md)
+[`BaseNode`](BaseNode.md)
 
 the root of the document.
 
@@ -69,7 +73,7 @@ This local client will act as having unsaved changes until the upload has finish
 
 #### Parameters
 
-• **bitmapData**: `BitmapImage`
+• **bitmapData**: [`BitmapImage`](BitmapImage.md)
 
 BitmapImage resource (e.g. returned from [loadBitmapImage](Editor.md#loadbitmapimage)).
 
@@ -187,7 +191,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`<`BitmapImage`\>
+• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](BitmapImage.md)\>
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](Editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -207,7 +211,7 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise`<`BitmapImage`\>
+`Promise`<[`BitmapImage`](BitmapImage.md)\>
 
 ---
 

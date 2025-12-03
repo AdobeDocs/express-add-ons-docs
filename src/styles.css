@@ -78,7 +78,7 @@ li + .spectrum-InLineAlert,
 ul + .spectrum-InLineAlert,
 ol + .spectrum-InLineAlert {
   margin-left: 40px !important;
-  min-width: 85% !important;  
+  min-width: 85% !important;
   box-sizing: border-box !important;
   display: block !important;
 }
@@ -189,4 +189,27 @@ section:has(> div > p > span > picture) {
 /* Target span inside anchor on hover */
 .developers-live-announcement a:hover span {
   color: #fff !important;
+}
+
+.open-playground-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-family: "adobe-clean" !important;
+}
+
+.playground-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.code-playground-button-inline {
+  /* margin: 0 auto !important; */
+  padding-top: 20px !important;
+  padding-bottom: 0 !important;
 }

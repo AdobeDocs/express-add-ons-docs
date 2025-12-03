@@ -22,21 +22,6 @@ contributors:
 
 This section provides a set of guides to help you in the development stage of your add-on.
 
-## Add-on Development mode
-
-A pre-requisite for local development is to have enabled the **Add-on Development** mode in Adobe Express; [open it in the browser](https://express.adobe.com/), see the following animation for instructions, or expand the details below for a step-by-step guide.
-
-![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
-
-<details>
-  <summary>Click to view a list of steps to enable the Development Mode</summary>
-  <ol>
-    <li>Click the <b>avatar icon</b> in the top right corner of Adobe Express, then the gear icon to <b>open the Settings</b>.</li>
-    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first.</li>
-    <li>Close the Settings dialog.</li>
-  </ol>
-</details>
-
 ## Using the CLI
 
 The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
@@ -187,6 +172,73 @@ When the scaffolding is complete, you will see the following message, prompting 
 
 ![CLI completed message](./img/CLI-completed.png)
 
+## Sideload your add-on
+
+After the add-on has been scaffolded and—as the screenshot above suggests—you have to run these commands in the newly created project directory:
+
+```bash
+npm run build
+npm run start
+```
+
+This will build the add-on and start a local server, which you can then sideload into Adobe Express by clicking the button below.
+
+<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+
+- [Sideload your add-on](https://www.adobe.com/go/addon-cli)
+
+The CLI will also display a [https://www.adobe.com/go/addon-cli](https://www.adobe.com/go/addon-cli) URL that you can option-click (if you're using the VSCode/Cursor Terminal) or copy and paste to open the Add-on Development window in Adobe Express.
+
+![Sideload your add-on](./img/CLI-deeplink.png)
+
+You can also sideload it manually by following the steps below.
+
+![How to sideload an add-on](../img/playground-sideload-add-on.gif)
+
+<details>
+  <summary>Click to view a list of steps to sideload an add-on in Adobe Express</summary>
+  <ol>
+    <li>Click the <b>Add-ons icon</b> in the left hand rail.</li>
+    <li>Enable the <b>Add-on Development</b> switch on the top right corner.</li>
+    <li>Click the <b>Test your local add-on</b> text.</li>
+    <li><b>Check the checkbox</b> in the Connect to development server modal.</li>
+    <li>Click the <b>Connect</b> button.</li>
+    <li>Click the <b>Hello World</b> add-on icon on the Add-ons tab on the left.</li>
+  </ol>
+
+It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
+
+![Add-on testing](../img/playground-alt-testing.png)
+
+</details>
+
+<InlineAlert slots="text, text2" variant="warning"/>
+
+If you run into the error below, you can follow the steps in the [Known Issues & Limitations](./known_issues_limitations.md#chrome-local-network-access-restriction) guide to fix it.
+
+![Local Network Access Error](./img/connect-error.png)
+
+### Add-on Development mode
+
+Before you can build add-ons, Add-on Development mode in Adobe Express needs to be enabled—you only need to do this once.
+
+<InlineAlert slots="text" variant="success"/>
+
+When [launching the Code Playground](https://www.adobe.com/go/addon-playground) or connecting to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli), you'll be prompted to review the Developer Terms of Use and enable the Developer Mode.
+
+<details>
+  <summary>Click to view a list of steps to manually enable the Developer Mode</summary>
+  <ol>
+    <li>Open Adobe Express in your browser and click the <b>avatar icon</b> in the top right corner.</li>
+    <li>Click the <b>gear icon</b> to open <b>Settings</b>.</li>
+    <li>Enable <b>Add-on Development</b> if it's not already enabled. You might need to read the <b>Developer Terms of Use</b> first—click the <b>Accept and Enable</b> button to enable <b>Add-on Development</b></li>
+    <li>Close the Settings dialog.</li>
+  </ol>
+
+![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
+
+</details>
+
 ## Manifest
 
 A `manifest.json` file is required in every add-on project. The manifest provides details including important metadata about your add-on and how it should behave. Be sure to consult the [manifest schema reference](../../../references/manifest) to ensure that your `manifest.json` file is properly formatted and includes all of the necessary properties and values.
@@ -201,3 +253,24 @@ The **Refresh** button can be used to reload your add-on's code and resources, a
 
 ![add-ons tools screenshot](./img/add-on-devtools.png)
 ![manifest error screenshot](./img/manifest-error.png)
+
+## Debugging
+
+Messages logged in the Console by your add-on will be prefixed with `[Add-on: <add-on-name>]` to help you distinguish them from other messages.
+
+Open the browser's developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect** from the context menu. In the **Console**, you can filter out the messages from the Code Playground by typing just `[Add-on:` in the filter input.
+
+![Debugging](./img/cli-console-log.png)
+
+### Updating old projects
+
+If you have an old project that you're updating, you must add the following script to your `index.html` file:
+
+```html
+<head>
+  <!-- ... -->
+  <script type="module" src="add-on-console-override.js"></script>
+</head>
+```
+
+Newer versions of the CLI, in their `build` command, will automatically provide the `add-on-console-override.js` file. Adding this script tag overrides the Console object and provides appropriately prefixed logs to your add-on project.

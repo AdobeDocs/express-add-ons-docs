@@ -36,7 +36,7 @@ The result will be a distributable zip of your add-on package with the name `dis
 
 ## Step 1: Create a new Add-on Listing
 
-In order to get a private distribution link, you will need to create a new add-on listing first; provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
+In order to get a private distribution link, you will need to create a new add-on listing first; provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/hello-world.md#enable-add-on-development-mode), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 1. From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 

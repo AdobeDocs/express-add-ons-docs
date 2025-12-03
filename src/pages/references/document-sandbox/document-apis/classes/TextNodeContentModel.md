@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / TextNodeContentModel
 
-# Class: TextNodeContentModel
+# Class: `abstract` TextNodeContentModel
 
 Represents a complete piece of text content, which may be contained within a single [StandaloneTextNode](StandaloneTextNode.md) *or*
 split across multiple [ThreadedTextNode](ThreadedTextNode.md) frames for display.
@@ -10,11 +10,16 @@ Use this model to get or modify the text string and the style ranges applied to 
 
 -   [`TextContentModel`](TextContentModel.md)
 
+## Extended by
+
+-   [`StandaloneTextContentModel`](StandaloneTextContentModel.md)
+-   [`ThreadedTextContentModel`](ThreadedTextContentModel.md)
+
 ## Accessors
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
+• `get` `abstract` **allTextNodes**(): `Readonly`<`Iterable`<[`TextNode`](TextNode.md), `any`, `any`\>\>
 
 Get ordered list of all [TextNode](TextNode.md)s that display this text content in the scenegraph. This might be a single
 [StandaloneTextNode](StandaloneTextNode.md) *or* a list of one or more [ThreadedTextNode](ThreadedTextNode.md)s. In the case of threaded text, the
