@@ -77,4 +77,4 @@
             PLAYGROUND_CLIENT_ID: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_CLIENT_ID || secrets.PLAYGROUND_CLIENT_ID_STAGE }}
             PLAYGROUND_CLIENT_SECRET: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_CLIENT_SECRET || secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
             PLAYGROUND_AUTH_CODE: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_AUTH_CODE || secrets.PLAYGROUND_AUTH_CODE_STAGE }}
-            PLAYGROUND_API_KEY: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_API_KEY || secrets.PLAYGROUND_API_KEY }}
+            PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
