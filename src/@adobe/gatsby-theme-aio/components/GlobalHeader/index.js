@@ -1064,9 +1064,7 @@ const GlobalHeader = ({
                   }
                 `}
               >
-                {(location.pathname.includes("/how_to/") ||
-                  location.pathname.includes("/code-playground") ||
-                  location.pathname.includes("/hello-world/")) && (
+                {
                   <AnchorButton
                     variant="accent"
                     // href="https://new.express.adobe.com/new?category=add-ons&mode=playground&session=saved"
@@ -1077,7 +1075,7 @@ const GlobalHeader = ({
                   >
                     Code Playground
                   </AnchorButton>
-                )}
+                }
                 <AnchorButton
                   variant="primary"
                   href="/console"
