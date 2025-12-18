@@ -9,7 +9,7 @@
   - [Fund for Design](https://developer.adobe.com/fund-for-design)
 
 - buttons:
-  - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved)
+  - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) primary 
   - [Console](/console)
 
 - subPages:
