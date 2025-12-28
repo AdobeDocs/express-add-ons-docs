@@ -44,7 +44,7 @@ faq:
       answer: "Determining page size, checking for premium content before export, and identifying temporal content duration."
 
     - question: "How do I get the currently selected page IDs?"
-      answer: "Call `await addOnUISdk.app.document.getSelectedPageIds()` to retrieve an array of selected page IDs. Note: This is an experimental API."
+      answer: "Call `await addOnUISdk.app.document.getSelectedPageIds()` to retrieve an array of selected page IDs."
 ---
 
 # Page Metadata
@@ -127,13 +127,9 @@ addOnUISdk.ready.then(() => {
 });
 ```
 
-## Get Selected Page IDs (Experimental)
+## Get Selected Page IDs
 
-You can also retrieve the currently selected page IDs using the experimental `getSelectedPageIds()` method. This is particularly useful when you want to get metadata for only the pages that the user has selected in the document.
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The `getSelectedPageIds()` method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+You can retrieve the currently selected page IDs using the `getSelectedPageIds()` method. This is particularly useful when you want to get metadata for only the pages that the user has selected in the document.
 
 ### Example: Get Metadata for Selected Pages Only
 
@@ -213,4 +209,4 @@ Page metadata can be used to determine the size of the page, the title, and whet
 
 #### Q: How do I get the currently selected page IDs?
 
-**A:** Call `await addOnUISdk.app.document.getSelectedPageIds()` to retrieve an array of selected page IDs. Note: This is an experimental API that requires setting `experimentalApis: true` in your manifest.json requirements.
+**A:** Call `await addOnUISdk.app.document.getSelectedPageIds()` to retrieve an array of selected page IDs.
