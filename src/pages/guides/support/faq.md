@@ -260,12 +260,22 @@ Adobe Express add-ons support importing various file types through the document 
 - JPG: `image/jpeg`
 - PNG: `image/png`
 - WebP: `image/webp`
+- HEIC: `image/heic`
 - GIF: `image/gif` (see [animated GIF requirements](#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document))
+- SVG: `image/svg+xml`
 
 **Design Files:**
 
 - Illustrator files (AI): `application/illustrator`
 - Photoshop files (PSD): `image/vnd.adobe.photoshop`
+- Photoshop Big files (PSB): `image/vnd.adobe.photoshop`
+- Photoshop templates (PSDT): `image/vnd.adobe.photoshop`
+
+**Image Limits:**
+
+- Maximum dimension: 8192px (width or height)
+- Maximum file size: 80MB (desktop) or 40MB (mobile)
+- Maximum pixel count: 65 million pixels (width × height)
 
 **Video Files:**
 
