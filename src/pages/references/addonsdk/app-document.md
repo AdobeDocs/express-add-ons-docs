@@ -257,10 +257,6 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 Retrieves the currently selected page ids in the document.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `getSelectedPageIds(): Promise<string[]>`

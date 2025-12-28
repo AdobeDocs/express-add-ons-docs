@@ -634,7 +634,7 @@ console.log("New page ID:", newPage.id);
 
 - **[Page Metadata](page_metadata.md)** - Get detailed information about pages, including dimensions, content types, and selected page IDs
 - **[Document Metadata](document_metadata.md)** - Access document-level information and listen for document events
-- **[getSelectedPageIds() API](../../../references/addonsdk/app-document.md#getselectedpageids)** - Retrieve IDs of currently selected pages (experimental)
+- **[getSelectedPageIds() API](../../../references/addonsdk/app-document.md#getselectedpageids)** - Retrieve IDs of currently selected pages
 
 ### Working with Page Content
 

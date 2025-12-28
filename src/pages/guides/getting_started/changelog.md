@@ -25,6 +25,12 @@ contributors:
 
 # Changelog
 
+## 2025-12-28
+
+### Changed
+
+- [`getSelectedPageIds()`](../../references/addonsdk/app-document.md#getselectedpageids) method **promoted from experimental to stable** - Retrieve the currently selected page IDs in the document. The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use this API.
+
 ## 2025-11-29
 
 ### Code Playground Updates
