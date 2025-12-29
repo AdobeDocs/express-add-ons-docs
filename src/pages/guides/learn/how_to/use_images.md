@@ -42,7 +42,7 @@ faq:
       answer: "addImage() converts animations to static images; use addAnimatedImage() to preserve animation."
 
     - question: "What image formats are supported?"
-      answer: "AI, GIF, JPEG, JPG, PNG, PSD, PSDT, and WEBP. 8000px or 80MB."
+      answer: "AI, GIF, HEIC, JPEG, JPG, PNG, PSB, PSD, PSDT, SVG, and WEBP. Max 8192px dimension, 80MB (desktop) or 40MB (mobile), and 65 million pixels."
 
     - question: "Are there GIF size limitations?"
       answer: "Yes, refer to the FAQ section for specific GIF size and weight limitations."
@@ -407,7 +407,13 @@ MediaContainerNode
 
 #### Q: What image formats are supported?
 
-**A:** AI, GIF, JPEG, JPG, PNG, PSD, PSDT, and WEBP. 8000px or 80MB.
+**A:** AI, GIF, HEIC, JPEG, JPG, PNG, PSB, PSD, PSDT, SVG, and WEBP.
+
+**Limits:**
+
+- Maximum dimension: 8192px (width or height)
+- Maximum file size: 80MB (desktop) or 40MB (mobile)
+- Maximum pixel count: 65 million pixels (width × height)
 
 #### Q: Are there GIF size limitations?
 

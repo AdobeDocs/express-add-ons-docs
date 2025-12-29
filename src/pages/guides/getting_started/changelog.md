@@ -27,7 +27,11 @@ contributors:
 
 ## 2025-12-28
 
-### Changed
+### Added
+
+- **SVG image support** in [`addImage()`](../../references/addonsdk/app-document.md#addimage) - You can now import SVG files (`image/svg+xml`) to the document using the `addImage()` method.
+
+### Updated
 
 - [`getSelectedPageIds()`](../../references/addonsdk/app-document.md#getselectedpageids) method **promoted from experimental to stable** - Retrieve the currently selected page IDs in the document. The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is no longer required to use this API.
 
