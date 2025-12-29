@@ -25,19 +25,18 @@
     "gatsby-sharp": "1.12.0"
   },
   "scripts": {
-    "start": "gatsby build && gatsby serve",
-    "start:prefix": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
-    "dev": "gatsby develop",
-    "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
-    "build": "gatsby build",
-    "build:deploy": "gatsby build && yarn run upload:samples",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test:links": "remark src/pages --quiet --frail",
-    "test:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src",
-    "fix:lint": "./node_modules/.bin/markdownlint --config .github/linters/.markdownlint.yml src --fix",
-    "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1",
-    "upload:samples": "node upload-playground-samples.mjs"
+    "dev": "node ./dev.mjs",
+    "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
+    "buildRedirections": "npx --yes github:AdobeDocs/adp-devsite-utils buildRedirections -v",
+    "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
+    "normalizeLinks": "npx --yes github:AdobeDocs/adp-devsite-utils normalizeLinks -v",
+    "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v",
+    "lint": "npx --yes github:AdobeDocs/adp-devsite-utils runLint -v",
+    "lint:errorOnly": "npx --yes github:AdobeDocs/adp-devsite-utils runLint",
+    "lint:deadlinksonly": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --dead-links-only -v",
+    "lint:skipdeadlinks": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --skip-dead-links -v",
+    "redirectCheck:stage": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker stage --verbose",
+    "redirectCheck:prod": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker prod --verbose"
   },
   "remarkConfig": {
     "plugins": [
@@ -46,9 +45,6 @@
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
-    "markdownlint": "^0.35.0",
-    "markdownlint-cli": "^0.41.0",
-    "remark-cli": "^11.0.0",
-    "remark-validate-links": "^12.1.0"
+    "express": "5.1.0"
   }
 }

@@ -1,56 +1,18 @@
 # addOnUISdk.app
 
-Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](./app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](./app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](./app-currentUser.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how_to/modal_dialogs.md), [enable drag and drop](../../guides/learn/how_to/drag_and_drop.md) of content and subscribe and unsubscribe to events.
+Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](app-current-user.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how-to/modal-dialogs.md), [enable drag and drop](../../guides/learn/how-to/drag-and-drop.md) of content and subscribe and unsubscribe to events.
 
-[](../../guides/learn/how_to/)
+[](../../guides/learn/how-to/index.md)
 
 ## Objects
 
-<table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Attribute</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Name</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Description</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-currentUser.md">currentUser</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the current user accessing the host application</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-devFlags.md">devFlags</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents flags which can be used to simulate certain behavior during development.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-document.md">document</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the active document of the host application.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-     <td class="spectrum-Table-cell"><p><pre><a href="app-oauth.md">oauth</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization.</p></td>
-  </tr>
-  <tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><pre>readonly</pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre><a href="app-ui.md">ui</a></pre></p></td>
-    <td class="spectrum-Table-cell"><p><pre>object</pre></p></td>
-    <td class="spectrum-Table-cell"><p>Represents the host UI (Adobe Express UI).</p></td>
-  </tr>  
-  
-</tbody>
-</table>
+| Attribute  | Name                                  | Type     | Description                                                                                |
+| ---------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| `readonly` | [`currentUser`](./app-current-user.md) | `object` | Represents the current user accessing the host application                                 |
+|            | [`devFlags`](./app-dev-flags.md)       | `object` | Represents flags which can be used to simulate certain behavior during development.        |
+| `readonly` | [`document`](./app-document.md)       | `object` | Represents the active document of the host application.                                    |
+| `readonly` | [`oauth`](./app-oauth.md)             | `object` | Provides access to the OAuth methods needed to implement OAuth 2.0 for user authorization. |
+| `readonly` | [`ui`](./app-ui.md)                 | `object` | Represents the host UI (Adobe Express UI).                                                 |
 
 ## Methods
 
@@ -151,7 +113,7 @@ Shows a modal dialog based on specific options passed in.
 
 | Name            |                                        Type |                                      Description |
 | --------------- | ------------------------------------------: | -----------------------------------------------: |
-| `variant`       | `string` [Variant](./addonsdk-constants.md) |                      The type of dialog to show. |
+| `variant`       | `string` [Variant](addonsdk-constants.md) |                      The type of dialog to show. |
 | `title`         |                                    `string` |                                     Dialog title |
 | `description`   |                                    `string` |                      Description for the dialog. |
 | `buttonLabels?` |      `object` [ButtonLabels](#buttonlabels) | The optional button labels to use in the dialog. |
@@ -182,13 +144,13 @@ The input dialog variant accepts an [additional `field`](#input-dialog-additiona
 
 #### Return Value
 
-Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type](../addonsdk/addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
+Returns a `Promise` [`DialogResult`](#dialogresult) object with the [button type](addonsdk-constants.md) that was clicked, or an error. When using the "input" dialog variant, an additional `fieldValue` property will be in the response object and will contain the value of the field the user input text to.
 
 #### `DialogResult`
 
 | Name         | Type                                                                |              Description |
 | ------------ | ------------------------------------------------------------------- | -----------------------: |
-| `buttonType` | `string` [`ButtonType`](../addonsdk/addonsdk-constants.md) constant |  The button type clicked |
+| `buttonType` | `string` [`ButtonType`](addonsdk-constants.md) constant |  The button type clicked |
 | `fieldValue` | `string`                                                            | The input from the user. |
 
 #### Confirmation Dialog Example Usage
@@ -254,7 +216,7 @@ async function showInputDialog() {
 
 <InlineAlert slots="text" variant="info"/>
 
-See the use case implementations for an example of the [custom modal dialog](../../guides/learn/how_to/modal_dialogs.md#custom-dialog).
+See the use case implementations for an example of the [custom modal dialog](../../guides/learn/how-to/modal-dialogs.md#custom-dialog).
 
 ### showColorPicker()
 
@@ -277,7 +239,7 @@ Shows the Adobe Express color picker based on specific options passed in.
 | ------------------------ | -----------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | `title?`                 |                                                           `string` |                                                                                                                                                                                                                                                                      Label header/title for the color picker. Default value: `""` |
 | `initialColor?`          |                                               `number` or `string` | Default/starting color when you open the color picker for the first time on a `anchorElement`, in the format `0xRRGGBB[AA]` or `"#RRGGBB[AA]"`. When you have already changed the color with this picker, then the next time you open the picker, the last selected color will be the starting color. Default: `0xFFFFFF` (white) |
-| `placement?`             | `object` [ColorPickerPlacement](./addonsdk-constants.md#constants) |                                                                                                                                                                                                                                                  Placement of the popover with respect to the anchor element (default: `"left"`). |
+| `placement?`             | `object` [ColorPickerPlacement](addonsdk-constants.md#constants) |                                                                                                                                                                                                                                                  Placement of the popover with respect to the anchor element (default: `"left"`). |
 | `eyedropperHidesPicker?` |                                                          `boolean` |                                                                                                                                                                 Closes the color picker popover while using the EyeDropper. After the color is selected via the EyeDropper, the color picker popup opens again. Default: `false`. |
 | `disableAlphaChannel?`   |                                                          `boolean` |                                                                                                                                                                                                                                   Disables the transparency slider in the "custom" section of the color picker. Default: `false`. |
 
@@ -497,7 +459,7 @@ The payload data sent to the App `dragEnd` event handler.
 
 <InlineAlert slots="text" variant="info"/>
 
-See the [Drag & Drop use case implementation](../../guides/learn/how_to/drag_and_drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
+See the [Drag & Drop use case implementation](../../guides/learn/how-to/drag-and-drop.md) for example usage, and the [code samples](../../guides/learn/samples.md) provided for reference.
 
 ## Events
 
@@ -562,23 +524,11 @@ The table below describes the events triggered from the add-on SDK. Use the `add
 
 The table below describes the possible error messages that may occur when using the core `addOnUISdk.app` methods, with a description of the scenario that will return them.
 
-<br/>
-
-|                                                                              Error Message |                                                                Error Scenario |
-| -----------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------: |
-|                                         Incorrect type: element must of type `HTMLElement` | Element passed to `enableDragToDocument` is not an instance of `HTMLElement`. |
-|               Incorrect return type: `PreviewCallback` must return an object of type `URL` |                                `previewCallback` function doesn't return URL. |
-| Incorrect return type: `CompletionCallback` should return an array of `DragCompletionData` |                   `completionCallback` doesn't return `DragCompletionData[]`. |
-|                                 Dialog already open with instanceID: `${this._instanceId}` |                                                       Dialog is already open. |
-|                                               Dialog options parameter: title is undefined |                                                           Title is undefined. |
-|                                         Dialog options parameter: description is undefined |                                                     Description is undefined. |
-|                                             Dialog options parameter: variant is undefined |                                                         Variant is undefined. |
-|                                                       Invalid dialog variant: `${variant}` |                                                       Invalid dialog variant. |
-|                                                            Input dialog field is undefined |                           Text field property is undefined for input variant. |
-|                                              Field property is valid only for input dialog |               If text field property is present for variant other than input. |
-|                                                      Input dialog field label is undefined |                            Field label is undefined for input dialog variant. |
-|                                            Invalid dialog field type: `${field.fieldType}` |                               Field type is invalid for input dialog variant. |
-|                                  Dialog already open with instanceID:`${this._instanceId}` |                                                If the dialog is already open. |
-|                                               Dialog options parameter: title is undefined |                                                           Title is undefined. |
-|                                                 Dialog options parameter: src is undefined |                                                          Source is undefined. |
-|                                                       Invalid dialog variant: `${variant}` |                                                       Invalid dialog variant. |
+| Type                | Description |                                                                                     |
+| ------------------- | ----------- | ----------------------------------------------------------------------------------- |
+| localechange        | string      | Triggered when there is a locale change at the host side.                           |
+| themechange         | string      | Triggered when there is a theme change at the host side.                            |
+| dragstart           | string      | Triggered when the user starts dragging an item for which drag behavior is enabled. |
+| dragend             | string      | Triggered when the drag operation ends.                                             |
+| documentIdAvailable | string      | Triggered when the document id is available in the application                      |
+| documentTitleChange | string      | Triggered when the document title is changed in the application.                    |

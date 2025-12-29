@@ -38,8 +38,8 @@ We created these guidelines to assist any developers who wish to take advantage 
 
 We have split this section into:
 
-- [Requirements](./requirements.md) (which must be followed)
-- [Recommendations](./recommendations.md) (which are suggestions we encourage for best practice)
+- [Requirements](requirements.md) (which must be followed)
+- [Recommendations](recommendations.md) (which are suggestions we encourage for best practice)
 
 <InlineAlert slots="text" variant="warning"/>
 

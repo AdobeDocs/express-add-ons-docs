@@ -73,7 +73,7 @@ The word "Premium" should only be used in relation to the Adobe Express Premium 
 
 Adobe Express allows users that aren't subscribed to a premium version of Adobe Express to experiment with premium content in their documents. When users download or share their document, they'll be prompted to upgrade to a premium plan.
 
-Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](../../../learn/how_to/premium_content.md) for more information on how to do this.
+Add-ons must not allow users on a free plan to download, share, or export premium content provided by Adobe Express. When a user on a free plan tries to share or export premium content using your add-on, you must notify the user that they need to upgrade, and inform the user how they can do so. See our [documentation](../../../learn/how-to/premium-content.md) for more information on how to do this.
 
 ## Requirements for monetizing your add-ons
 
@@ -129,7 +129,7 @@ The live preview in the public listing allows developers to see how their add-on
 - If **One-time payment** is selected, the preview will display: _"Upgrade is available through a one-time purchase."_
 - A note will also indicate: _"Checkout is managed by the developer outside of Adobe Express. This add-on is sold separately and not included as part of any Adobe plan."_
 
-Carefully review our [monetization guidelines](./monetization.md) to ensure compliance with Adobe’s requirements and recommendations for monetizing your add-ons.
+Carefully review our [monetization guidelines](monetization.md) to ensure compliance with Adobe’s requirements and recommendations for monetizing your add-ons.
 
 ## Recommendations for monetizing your add-ons
 
@@ -201,17 +201,17 @@ While our monetization best practices are recommendations for your add-on, imple
 
 Use the plus gradient icon below to indicate when content or features require purchase:
 
-| Badge                                                             | Size(px) |                                                                                 Download link |
-| ----------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-plus-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-plus-badge20.svg" download="../img/addon-plus-badge20.svg">Download</a> |
+| Badge  | Size(px) | Download link |
+|--------|----------|--------------|
+| ![img](../img/addon-plus-badge20.svg) | 20x20 | [Download](https://drive.usercontent.google.com/u/0/uc?id=1m0TV9856MlkhWJoDYUk56Y0Ct6PUpzPN&export=download) |
 
 #### Paid badge
 
 Use the checkmark badge below to indicate when content or features are paid and unlocked:
 
-| Badge                                                            | Size(px) |                                                                               Download link |
-| ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-pro-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-pro-badge20.svg" download="../img/addon-pro-badge20.svg">Download</a> |
+| Badge  | Size(px) | Download link |
+|--------|----------|-------------:|
+| ![](../img/addon-pro-badge20.svg) | 20x20 | [Download](https://drive.usercontent.google.com/u/0/uc?id=1gUuice1_EiYijMSKsCEjt1BlLesiI2z1&export=download) |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -225,9 +225,9 @@ The most common size of badges used within Express panels is typically 20x20px, 
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
 - If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.<br/><br/>
 
-| Sample badge usage                             |                                                  |                                                |
-| ---------------------------------------------- | ------------------------------------------------ | ---------------------------------------------: |
-| <img src="../img/list-placement-example.png"/> | <img src="../img/avatar-placement-example.png"/> | <img src="../img/grid-placement-example.png"/> |
+ | Sample badge usage  |      |       |
+ |----------|------|-------------:|
+ | ![](../img/list-placement-example.png) | ![](../img/avatar-placement-example.png)  | ![](../img/grid-placement-example.png) |
 
 <InlineAlert slots="text" variant="success"/>
 

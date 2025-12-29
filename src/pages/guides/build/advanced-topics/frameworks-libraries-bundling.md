@@ -39,13 +39,13 @@ import {
 
 An example of how this works in Visual Studio Code is shown in this short clip below.<br/>
 
-<div style="display: flex; justify-content: center;">
-<iframe src="https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview" width="800" height="450" allow="autoplay"></iframe>
-</div>
+<Embed slots="video" />
+
+https://drive.google.com/file/d/1FzUaPZMjPD9k0ANQNibqRMiZRrSAIChg/preview
 
 <InlineAlert slots="text" variant="info"/>
 
-Check out the [Using Lit & Typescript Guide](../../learn/how_to/tutorials/using-lit-typescript.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
+Check out the [Using Lit & Typescript Guide](../../learn/how-to/tutorials/using-lit-typescript.md) for a more detailed explanation of using TypeScript with the Add-on SDK.
 
 ## Webpack & JavaScript bundler
 
@@ -89,11 +89,11 @@ new CopyWebpackPlugin({
 
 ## React
 
-The CLI supports two different [react-based templates](../../getting_started/local_development/dev_tooling.md#templates), and the [code samples](../../learn/samples.md) repository contains various add-ons built with React for you to use as a reference.
+The CLI supports two different [react-based templates](../../getting-started/local-development/dev-tooling.md#templates), and the [code samples](../../learn/samples.md) repository contains various add-ons built with React for you to use as a reference.
 
 ## Lit Framework
 
-Build fast, lightweight web components using the Lit framework. Our CLI offers [starter templates](../../getting_started/local_development/dev_tooling.md#templates) to help you get started:
+Build fast, lightweight web components using the Lit framework. Our CLI offers [starter templates](../../getting-started/local-development/dev-tooling.md#templates) to help you get started:
 
 - `swc-javascript`: For building with Lit and JavaScript
 - `swc-typescript`: For building with Lit and TypeScript
@@ -102,7 +102,7 @@ Build fast, lightweight web components using the Lit framework. Our CLI offers [
 
 All templates come pre-configured with the necessary setup and dependencies.
 
-For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](../../learn/how_to/tutorials/using-lit-typescript.md).
+For detailed guidance on using Lit with TypeScript, you can check out our [Using Lit & TypeScript Guide](../../learn/how-to/tutorials/using-lit-typescript.md).
 
 ## Other JavaScript and CSS libraries
 

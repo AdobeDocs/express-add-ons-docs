@@ -24,7 +24,7 @@ contributors:
 
 ## Overview
 
-This guide is provided to help ensure your add-on distribution process goes as smoothly as possible. We've provided a list of all of the things you can prepare in advance, as well as the steps to follow to actually submit your add-on for public distribution. Please note that public distribution is subject to a quality review by our team according to our [Guidelines](./guidelines/index.md).
+This guide is provided to help ensure your add-on distribution process goes as smoothly as possible. We've provided a list of all of the things you can prepare in advance, as well as the steps to follow to actually submit your add-on for public distribution. Please note that public distribution is subject to a quality review by our team according to our [Guidelines](guidelines/index.md).
 
 ## Preparing for Submission
 
@@ -41,7 +41,7 @@ This section outlines everything you'll need to be prepared for submitting your 
 |              **\* Full Description** | 1000             |                                                                                                                                Full context and description of your add-on and its features |
 |                      **\* Help URL** | 1000             |                                                                                                                               URL for your users to get help (ie: https://www.example.com/) |
 |         **\* Support email address** | 1000             |                                                                                                                          An email address that users of your add-on can contact for support |
-|             **\*Trader information** | NA               | Provide the trader information as per the [listing guidelines](./guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
+|             **\*Trader information** | NA               | Provide the trader information as per the [listing guidelines](guidelines/general/listing.md#trader-details) in the publisher profile if you want to make your addons available in the EU |
 |                   **Privacy Notice** | 1000             |                                                                                                                                   URL of your privacy notice (ie: https://www.example.com/) |
 | **End User License Agreement(EULA)** | 1000             |                                                                                                                               End User License Agreement URL (ie: https://www.example.com/) |
 |                         **Keywords** | 100              |                                                                                                                                   Keywords to help users find your add-on (comma-separated) |
@@ -70,7 +70,7 @@ npm run package
 
 The result will be a distributable zip of your add-on package with the name `dist.zip`, and can be uploaded in step 3 below. This add-on package contains the **production-ready built content** in the _root_ of the zip file, similar to what's built into the `/dist` folder.
 
-### 4. Carefully [review our set of guidelines](./guidelines/index.md)
+### 4. Carefully [review our set of guidelines](guidelines/index.md)
 
 ## Submission Steps
 
@@ -85,7 +85,7 @@ To distribute your add-on, you must create an add-on listing.
 If you have already performed the listing creation steps, e.g. to create a Private Link as outlined here, feel free to skip to
 [Step 3](#step-3-create-a-new-public-listing).
 
-Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/hello-world.md#enable-add-on-development-mode), you can do so in two ways, which will invoke the same in-app distribution experience.
+Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting-started/hello-world.md#enable-add-on-development-mode), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 **1.** From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 
@@ -175,7 +175,7 @@ If the `zip` validation is successful, you will see a green checkmark next to th
 
 The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. Adobe encourages user choice regarding add-ons using Generative AI, but transparency is paramount. Your AI-powered add-on must not generate illegal content, and it must be clear and transparent about how generative AI is used in your add-on.
 
-In this section, you'll have to answer a variety of questions, depending on the type of AI-based content your add-on generates, the input it accepts, whether you test the output, etc. Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe's requirements and recommendations to try add-ons that employ Generative AI technology.
+In this section, you'll have to answer a variety of questions, depending on the type of AI-based content your add-on generates, the input it accepts, whether you test the output, etc. Carefully review our [AI usage guidelines](guidelines/genai/index.md) to get the latest information on Adobe's requirements and recommendations to try add-ons that employ Generative AI technology.
 
 ### Step 8: Enter the monetization details
 
@@ -204,7 +204,7 @@ Once a monetization model is selected, developers can choose from the following 
 
 This information will be visible in the add-on details view in the add-ons marketplace.
 
-Use the [examples](./guidelines/monetization.md#examples-of-monetization-models) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
+Use the [examples](guidelines/monetization.md#examples-of-monetization-models) outlined in the guidelines for monetizing add-ons to help you make informed decisions about which options to choose.
 
 #### Additional Details
 
@@ -222,7 +222,7 @@ The live preview on the right side of the page allows developers to see how thei
 - If **One-time payment** is selected, the preview will display: _"Upgrade is available through a one-time purchase."_
 - A note will also indicate: _"Checkout is managed by the developer outside of Adobe Express. This add-on is sold separately and not included as part of any Adobe plan."_
 
-Carefully review our [monetization guidelines](./guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
+Carefully review our [monetization guidelines](guidelines/monetization.md) to get the latest information on Adobe’s requirements and recommendations for monetizing your add-ons.
 
 ### Step 9: Create a publisher profile
 
@@ -231,7 +231,7 @@ You will only see this step the first time you submit an add-on and if you've ne
 
 - Fill your publisher profile details.
 - Upload a 250x250 logo.
-- Add your trader details: In accordance with the European Union Digital Services Act trader requirements, developers who wish to distribute their listings in the EU must provide additional information in their publisher profile. [Learn more](./guidelines/general/listing.md#trader-details) about adding trader details.
+- Add your trader details: In accordance with the European Union Digital Services Act trader requirements, developers who wish to distribute their listings in the EU must provide additional information in their publisher profile. [Learn more](guidelines/general/listing.md#trader-details) about adding trader details.
 
 #### Edit publisher profile
 
@@ -317,4 +317,4 @@ Below is an example of what the insights data might look like:
 
 By leveraging these insights, you can make informed decisions to improve your add-on's performance and user experience.
 
-Once your add-on is [reviewed](./review_process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).
+Once your add-on is [reviewed](review-process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).

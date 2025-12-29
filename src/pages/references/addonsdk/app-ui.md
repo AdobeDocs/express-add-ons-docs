@@ -1,6 +1,6 @@
 # addOnUISdk.app.ui
 
-Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/learn/how_to/theme_locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/learn/how_to/theme_locale.md#detecting-theme) in use to update your add-on user interface accordingly.
+Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/learn/how-to/theme-locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/learn/how-to/theme-locale.md#detecting-theme) in use to update your add-on user interface accordingly.
 
 ## Properties
 
@@ -59,8 +59,6 @@ addOnUISdk.ready.then(async () => {
 ```
 
 ### locales
-
-<!-- **`locales: string[]`**<br/> -->
 
 Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `addOnUISdk.ready`).
 
@@ -196,14 +194,14 @@ Programmatically open the Editor panel in Adobe Express. When sub-tabs are avail
 
 | Name      | Type     |                                              Description |
 | --------- | -------- | -------------------------------------------------------: |
-| `panel`   | `string` | [`EditorPanel`](./addonsdk-constants.md) constant value. |
+| `panel`   | `string` | [`EditorPanel`](addonsdk-constants.md) constant value. |
 | `action?` | `Object` |                    [`PanelAction`](#panelaction) object. |
 
 #### `PanelAction`
 
 | Name   | Type     |                                                  Description |
 | ------ | -------- | -----------------------------------------------------------: |
-| `type` | `string` | [`PanelActionType`](./addonsdk-constants.md) constant value. |
+| `type` | `string` | [`PanelActionType`](addonsdk-constants.md) constant value. |
 
 #### `SearchAction`
 
@@ -211,7 +209,7 @@ Extends the [`PanelAction`](#panelaction) object and adds the following options 
 
 | Name           | Type     |                                                         Description |
 | -------------- | -------- | ------------------------------------------------------------------: |
-| `type`         | `string` | [`PanelActionType.search`](./addonsdk-constants.md) constant value. |
+| `type`         | `string` | [`PanelActionType.search`](addonsdk-constants.md) constant value. |
 | `searchString` | `string` |                            Query used to perform the Search action. |
 
 #### `NavigateAction`
@@ -220,8 +218,8 @@ Extends the [`PanelAction`](#panelaction) object and adds the following options 
 
 | Name            | Type     |                                                                                         Description |
 | --------------- | -------- | --------------------------------------------------------------------------------------------------: |
-| `type`          | `string` |                               [`PanelActionType.navigate`](./addonsdk-constants.md) constant value. |
-| `tab?`          | `string` | [`ElementsTabs`](./addonsdk-constants.md) or [`MediaTabs`](./addonsdk-constants.md) constant values |
+| `type`          | `string` |                               [`PanelActionType.navigate`](addonsdk-constants.md) constant value. |
+| `tab?`          | `string` | [`ElementsTabs`](addonsdk-constants.md) or [`MediaTabs`](addonsdk-constants.md) constant values |
 | `collectionId?` | `string` |                                                 collectionId of the asset collection to navigate to |
 
 #### Actions Notes
@@ -332,8 +330,8 @@ addOnUISdk.ready.then(() => {
 
 ### themechange
 
-**`themechange: string`**<br/>
-The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+**`themechange: string`**&lt;br /&gt;
+The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
 
@@ -357,8 +355,8 @@ Please see the **swc** sample provided in the [code samples](../../guides/learn/
 
 ### localechange
 
-**`localechange: string`**<br/>
-The "localechange" event is fired when the user changes the UI locale in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+**`localechange: string`**<&lt;br /&gt;
+The "localechange" event is fired when the user changes the UI locale in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
 
@@ -378,8 +376,8 @@ addOnUISdk.app.on("localechange", (data) => {
 
 ### formatchange
 
-**`formatchange: string`**<br/>
-The "formatchange" event is fired when the user changes the UI format in Adobe Express. It's used with the [`addOnUISdk.app.on`](../addonsdk/addonsdk-app.md) function.
+**`formatchange: string`**&lt;br /&gt;
+The "formatchange" event is fired when the user changes the UI format in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
 #### Parameters
 

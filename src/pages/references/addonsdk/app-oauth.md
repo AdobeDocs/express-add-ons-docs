@@ -1,6 +1,6 @@
 # addOnUISdk.app.oauth
 
-Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/learn/how_to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../guides/learn/samples.md) as well for more extensive examples of using this workflow.
+Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/learn/how-to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../guides/learn/samples.md) as well for more extensive examples of using this workflow.
 
 ## Methods
 
@@ -65,7 +65,7 @@ Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in w
 | `scope`                 |                            `string` |                                                                                                                                                                                                                                 Scope to control the application's access. |
 | `codeChallenge`         |                            `string` |                                                                                                                                                                                                                        Code challenge used in Authorization Code Exchange. |
 | `additionalParameters?` |               `Map<string, string>` |                                                                                                                                               Additional parameters, specific to an OAuth provider which are required in the Authorization URL as query string parameters. |
-| `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`. <br/><br/>**NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
+| `windowSize?`           | `{ width: number; height: number }` | The authorization window size in the form of an `object` containing the desired `width` and `height` as a `number`. &lt;br /&gt; &lt;br /&gt; **NOTE:** The **minimum** (and **default**) values for `windowSize` are 480 x 480. The **maximum** allowed values are 800 x (screen height). |
 | `redirectUri`           |                            `string` |                                                                                                                  URL where the user is redirected to after successful or failed authorization. Hosting and handling redirects to this URL should be managed by the caller. |
 | `state`                 |                            `string` |                 A value which is preserved in the request, and replayed back as a query string parameter in the `redirectUri`. Although the primary reason for using the state parameter is to mitigate CSRF attacks, it can also be used to encode any other information. |
 
@@ -88,7 +88,7 @@ Each of the statuses returned below is the exact name as a string (ie: SUCCESS =
 | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------: |
 | SUCCESS       | `string` |                            Successful authorization this is the expected result for the [Authorize](#authorize) method) |
 | POPUP_OPENED  | `string` | The popup was opened (this is the expected result for the [AuthorizeWithOwnRedirect](#authorizewithownredirect) method) |
-| POPUP_BLOCKED | `string` |      The popup was blocked. (Add `allow-popups` permission to your [manifest.json](../manifest/) `sandbox` permissions) |
+| POPUP_BLOCKED | `string` |      The popup was blocked. (Add `allow-popups` permission to your [manifest.json](../manifest/index.md) `sandbox` permissions) |
 | POPUP_TIMEOUT | `string` |                                                                                                    The popup timed out. |
 | FAILED        | `string` |                                                                                       The authorization workflow failed |
 
@@ -96,7 +96,7 @@ Each of the statuses returned below is the exact name as a string (ie: SUCCESS =
 
 The table below describes the possible error statuses returned when using the OAuth API, with a description of the scenario that will return them.
 
-<br/>
+&lt;br /&gt;
 
 |  Error Status |                                                                     Description |
 | ------------: | ------------------------------------------------------------------------------: |

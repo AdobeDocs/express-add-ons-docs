@@ -1,6 +1,6 @@
 [**@express-document-sdk**](../../overview.md) • **Docs**
 
----
+<HorizontalLine />
 
 [@express-document-sdk](../../overview.md) / Constants
 
@@ -10,78 +10,78 @@
 
 ### Enumerations
 
--   [OrderedListNumbering](enumerations/OrderedListNumbering.md)
--   [ParagraphListType](enumerations/ParagraphListType.md)
--   [TextStyleSource](enumerations/TextStyleSource.md)
+-   [OrderedListNumbering](enumerations/ordered-list-numbering.md)
+-   [ParagraphListType](enumerations/paragraph-list-type.md)
+-   [TextStyleSource](enumerations/text-style-source.md)
 
 ## References
 
 ### ArrowHeadType
 
-Re-exports [ArrowHeadType](../../enumerations/ArrowHeadType.md)
+Re-exports [ArrowHeadType](../../enumerations/arrow-head-type.md)
 
----
+<HorizontalLine />
 
 ### BlendMode
 
-Re-exports [BlendMode](../../enumerations/BlendMode.md)
+Re-exports [BlendMode](../../enumerations/blend-mode.md)
 
----
+<HorizontalLine />
 
 ### EditorEvent
 
-Re-exports [EditorEvent](../../enumerations/EditorEvent.md)
+Re-exports [EditorEvent](../../enumerations/editor-event.md)
 
----
+<HorizontalLine />
 
 ### FillRule
 
-Re-exports [FillRule](../../enumerations/FillRule.md)
+Re-exports [FillRule](../../enumerations/fill-rule.md)
 
----
+<HorizontalLine />
 
 ### FillType
 
-Re-exports [FillType](../../enumerations/FillType.md)
+Re-exports [FillType](../../enumerations/fill-type.md)
 
----
+<HorizontalLine />
 
 ### SceneNodeType
 
-Re-exports [SceneNodeType](../../enumerations/SceneNodeType.md)
+Re-exports [SceneNodeType](../../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### StrokePosition
 
-Re-exports [StrokePosition](../../enumerations/StrokePosition.md)
+Re-exports [StrokePosition](../../enumerations/stroke-position.md)
 
----
+<HorizontalLine />
 
 ### StrokeType
 
-Re-exports [StrokeType](../../enumerations/StrokeType.md)
+Re-exports [StrokeType](../../enumerations/stroke-type.md)
 
----
+<HorizontalLine />
 
 ### TextAlignment
 
-Re-exports [TextAlignment](../../enumerations/TextAlignment.md)
+Re-exports [TextAlignment](../../enumerations/text-alignment.md)
 
----
+<HorizontalLine />
 
 ### TextLayout
 
-Re-exports [TextLayout](../../enumerations/TextLayout.md)
+Re-exports [TextLayout](../../enumerations/text-layout.md)
 
----
+<HorizontalLine />
 
 ### TextScriptStyle
 
-Re-exports [TextScriptStyle](../../enumerations/TextScriptStyle.md)
+Re-exports [TextScriptStyle](../../enumerations/text-script-style.md)
 
----
+<HorizontalLine />
 
 ### VisualEffectType
 
-Re-exports [VisualEffectType](../../enumerations/VisualEffectType.md)
+Re-exports [VisualEffectType](../../enumerations/visual-effect-type.md)

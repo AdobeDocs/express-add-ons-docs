@@ -149,102 +149,28 @@ Data type validation is performed for both the arguments and the return types th
 
 ### Supported data types
 
-<br/>
-<table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Primitive types:</strong> <br/> &nbsp;&nbsp;- string <br/>  &nbsp;&nbsp;- boolean <br/> &nbsp;&nbsp;- number <br/> &nbsp;&nbsp;- Undefined<br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre><br/>"hello"<br/>true<br/>1<br/>undefined</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Simple plain objects</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>&#123; data: "world" &#125;, &#123; value : true &#125;</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Arrays of primitive and plain objects</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>[1,2],["hello", true, &#123; data: null &#125;]</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>ArrayBuffer</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new ArrayBuffer(1024)</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Blob</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new Blob()</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Error</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new Error()</pre></p></td>
-</tr>
-</tbody>
-</table>
-
+| Type                                                      | Examples                                |
+| --------------------------------------------------------- | --------------------------------------- |
+| Primitive types: &lt;br/ &gt; - string  &lt;br/ &gt; -  boolean &lt;br/ &gt; - number &lt;br/ &gt; -  Undefined | &lt;br/ &gt; "hello" &lt;br/ &gt; true &lt;br/ &gt; 1 &lt;br/ &gt; undefined          |
+| Simple plain objects                                      | `{ data: "world" }, { value : true }`   |
+| Arrays of primitive and plain objects                     | `[1,2],["hello", true, { data: null }]` |
+| ArrayBuffer                                               | `new ArrayBuffer(1024)`                 |
+| Blob                                                      | `new Blob()`                            |
+| Error                                                     | `new Error()`                           |
 Some data types are not supported and may result unintended behavior. To avoid this, the type of argument/return type in the communication layer is checked and an error is thrown if not supported.
 
 ### Unsupported data types
 
-<br/>
-<table class="spectrum-Table spectrum-Table--sizeM" css="
-    background-color:lavender;
-    tbody {
-      background-color:white;
-    }">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-headCell"><p><strong>Type</strong></p></td>
-    <td class="spectrum-Table-headCell"><p><strong>Examples</strong></p></td>
-</tr>
-<tbody class="spectrum-Table-body">
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Map</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new Map()</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Set</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new Set()</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>DataView() </strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new DataView(new ArrayBuffer(8))</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Boolean</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new Boolean()</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>String</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new String("hello")</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>RegExp</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new RegExp("pattern")</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Symbol</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>Symbol('symbol')</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Date</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new Date()</pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>UserDefinedClass</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>new UserDefinedClass() </pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Function</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>() => &#123;&#125; </pre></p></td>
-</tr>
-<tr class="spectrum-Table-row">
-    <td class="spectrum-Table-cell"><p><strong>Circular objects</strong> <br/></p></td>
-    <td class="spectrum-Table-cell"><p><pre>const obj = &#123;&#125; obj.key = obj;</pre></p></td>
-</tr>
-</tbody>
-</table>
+| Type             | Examples                           |
+| ---------------- | ---------------------------------- |
+| Map              | `new Map()`                        |
+| Set              | `new Set()`                        |
+| DataView()       | `new DataView(new ArrayBuffer(8))` |
+| Boolean          | `new Boolean() `                   |
+| String           | `new String(“hello”) `             |
+| RegExp           | `new RegExp("pattern")`            |
+| Symbol           | `Symbol('symbol')`                 |
+| Date             | `new Date()`                       |
+| UserDefinedClass | `new UserDefinedClass()`           |
+| Function         | `() => {}`                         |
+| Circular objects | `const obj = {} obj.key = obj;`    |

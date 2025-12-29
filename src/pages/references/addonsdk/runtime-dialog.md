@@ -1,12 +1,12 @@
 # addOnUISdk.instance.runtime.dialog
 
-Represents the modal dialog presented to the user. This object can be used to manage the dialog, like closing it and sending results to the caller. Check out the [modal dialogs use case examples](../../guides/learn/how_to/modal_dialogs.md) for more details on using dialogs, as well as the related [`showModalDialog` method](../addonsdk/addonsdk-app.md#showmodaldialog).
+Represents the modal dialog presented to the user. This object can be used to manage the dialog, like closing it and sending results to the caller. Check out the [modal dialogs use case examples](../../guides/learn/how-to/modal-dialogs.md) for more details on using dialogs, as well as the related [`showModalDialog` method](addonsdk-app.md#showmodaldialog).
 
 ## Methods
 
 ### close()
 
-**`close(result?: unknown): void`**<br/>
+**`close(result?: unknown): void`**&lt;br /&gt;
 Closes the modal dialog and posts the result back to the dialog invoker.
 
 #### Parameters

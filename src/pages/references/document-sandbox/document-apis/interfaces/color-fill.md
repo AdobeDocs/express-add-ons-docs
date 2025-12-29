@@ -1,0 +1,31 @@
+[@express-document-sdk](../overview.md) / ColorFill
+
+# Interface: ColorFill
+
+Represents a solid-color fill.
+
+The most convenient way to create a fill is via `Editor.makeColorFill()`.
+
+## Extends
+
+-   [`Fill`](fill.md)
+
+## Properties
+
+### color
+
+• **color**: [`Color`](color.md)
+
+The fill color.
+
+<HorizontalLine />
+
+### type
+
+• `readonly` **type**: [`color`](../enumerations/fill-type.md#color)
+
+The fill type.
+
+#### Overrides
+
+[`Fill`](fill.md).[`type`](fill.md#type)

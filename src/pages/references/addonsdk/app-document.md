@@ -1,6 +1,6 @@
 # addOnUISdk.app.document
 
-Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/learn/how_to/use_images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/learn/how_to/create_renditions.md) from the current document.
+Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/learn/how-to/use-images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/learn/how-to/create-renditions.md) from the current document.
 
 ## General Methods
 
@@ -18,7 +18,7 @@ A resolved `Promise` containing the `id` of the document.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Note:** A `documentIdAvailable` event is triggered when the document id is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
+**Note:** A `documentIdAvailable` event is triggered when the document id is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](addonsdk-app.md#on) method.
 
 #### Example Usage
 
@@ -52,7 +52,7 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 
 <InlineAlert slots="text" variant="info"/>
 
-**Note:** A `documentTitleChange` event is triggered when the document title is changed in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
+**Note:** A `documentTitleChange` event is triggered when the document title is changed in the application. You can listen for this event via the [`addOnUISdk.app.on()`](addonsdk-app.md#on) method.
 
 #### Example Usage
 
@@ -159,7 +159,7 @@ Tells Express to run a print quality check to determine if the document is ready
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -221,7 +221,7 @@ The options to pass into the print quality check..
 
 | Name       | Type                                         | Description                                                           |
 | ---------- | -------------------------------------------- | --------------------------------------------------------------------- |
-| `range`    | [`Range`](../addonsdk/addonsdk-constants.md) | The range of the document to run the print quality check on.          |
+| `range`    | [`Range`](addonsdk-constants.md) | The range of the document to run the print quality check on.          |
 | `pageIds?` | `string[]`                                   | Id's of the pages. (Only required when the range is `specificPages`). |
 
 #### `PageMetadata`
@@ -250,7 +250,7 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 | Name                 | Type                                                   |                                                           Description |
 | -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
-| `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
+| `range`              | [`Range`](addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
 | `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ### getSelectedPageIds()
@@ -259,7 +259,7 @@ Retrieves the currently selected page ids in the document.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -326,7 +326,7 @@ Retrieves the document link.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This method, the LinkOptions parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This method, the LinkOptions parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -338,7 +338,7 @@ A resolved `Promise` containing the `link` of the document.
 
 <InlineAlert slots="text" variant="info"/>
 
-A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](./addonsdk-app.md#on) method.
+A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered when the document link is available in the application. You can listen for this event via the [`addOnUISdk.app.on()`](addonsdk-app.md#on) method.
 
 #### Example Usage
 
@@ -376,7 +376,7 @@ The options to pass into the link method.
 
 | Name          | Type     | Description                                              |
 | ------------- | -------- | -------------------------------------------------------- |
-| `linkOptions` | `string` | [`LinkOptions`](./addonsdk-constants.md) constant value. |
+| `linkOptions` | `string` | [`LinkOptions`](addonsdk-constants.md) constant value. |
 
 ## Import Content Methods
 
@@ -582,9 +582,9 @@ Represents add-on-specific data that can be attached to imported media assets (n
 
 <InlineAlert slots="text" variant="info"/>
 
-**Note:** `ImportAddOnData` is also supported in drag-and-drop operations via the `DragCompletionData` interface when using the [`enableDragToDocument`](./addonsdk-app.md#enabledragtodocument) method.
+**Note:** `ImportAddOnData` is also supported in drag-and-drop operations via the `DragCompletionData` interface when using the [`enableDragToDocument`](addonsdk-app.md#enabledragtodocument) method.
 
-Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](../../guides/learn/samples.md#import-images-from-local) in the code samples for general importing content examples.
+Refer to the [import images how-to](../../guides/learn/how-to/use-images.md#import-images-into-the-page) and the [import-images-from-local](../../guides/learn/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
 ### importPdf()
 
@@ -612,7 +612,7 @@ Mime type details for importing media
 
 | Name              | Type                       |                                                      Description |
 | ----------------- | -------------------------- | ---------------------------------------------------------------: |
-| `sourceMimeType?` | [`SupportedMimeTypes`](./) | Mime type of the original source asset that was converted to PDF |
+| `sourceMimeType?` | [`SupportedMimeTypes`](index.md) | Mime type of the original source asset that was converted to PDF |
 
 ### SupportedMimeTypes
 
@@ -770,9 +770,9 @@ Generate renditions of the current page, specific pages or the entire document i
 | Name               | Type     |                                                  Description |
 | ------------------ | -------- | -----------------------------------------------------------: |
 | `renditionOptions` | `Object` |              [`RenditionOptions`](#renditionoptions) object. |
-| `renditionIntent`  | `string` | [`RenditionIntent`](./addonsdk-constants.md) constant value. |
+| `renditionIntent`  | `string` | [`RenditionIntent`](addonsdk-constants.md) constant value. |
 
-**NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../../references/manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
+**NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
 
 ```json
 "permissions": {
@@ -780,15 +780,15 @@ Generate renditions of the current page, specific pages or the entire document i
 }
 ```
 
-Refer to the [manage premium content how-to](../../guides/learn/how_to/premium_content.md) for more specific details on options for handling the export of premium content.
+Refer to the [manage premium content how-to](../../guides/learn/how-to/premium-content.md) for more specific details on options for handling the export of premium content.
 
 #### `RenditionOptions`
 
 | Name       | Type       |                                                                                  Description |
 | ---------- | ---------- | -------------------------------------------------------------------------------------------: |
-| `range`    | `string`   |                                           [`Range`](./addonsdk-constants.md) constant value. |
-| `format`   | `string`   |                                 [`RenditionFormat`](./addonsdk-constants.md) constant value. |
-| `pageIds?` | `string[]` | Id's of the pages (only required if the range is [`specificPages`](./addonsdk-constants.md)) |
+| `range`    | `string`   |                                           [`Range`](addonsdk-constants.md) constant value. |
+| `format`   | `string`   |                                 [`RenditionFormat`](addonsdk-constants.md) constant value. |
+| `pageIds?` | `string[]` | Id's of the pages (only required if the range is [`specificPages`](addonsdk-constants.md)) |
 
 #### `JpgRenditionOptions`
 
@@ -796,7 +796,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.jpg`](./addonsdk-constants.md) constant value. |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.jpg`](addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
@@ -807,11 +807,11 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.png`](./addonsdk-constants.md) constant value. |
+| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.png`](addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 | `fileSizeLimit?`                          | `number`                            |                                                                                                                                                     File size limit for the rendition. |
-| `fileSizeLimitUnit?`                      | `string`                            |                                                                                                Unit of the file size limit, [`FileSizeLimitUnit`](./addonsdk-constants.md) enumerable. |
+| `fileSizeLimitUnit?`                      | `string`                            |                                                                                                Unit of the file size limit, [`FileSizeLimitUnit`](addonsdk-constants.md) enumerable. |
 
 #### Requested Size Notes
 
@@ -837,7 +837,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object with the specific for
 
 | Name     | Type     |                                                                                     Description |
 | -------- | -------- | -----------------------------------------------------------------------------------------------: |
-| `format` | `string` | [`RenditionFormat.pptx`](./addonsdk-constants.md) constant value for PowerPoint presentation. |
+| `format` | `string` | [`RenditionFormat.pptx`](addonsdk-constants.md) constant value for PowerPoint presentation. |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -859,7 +859,7 @@ Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyo
 | Name      | Type                                                       |                                      Description |
 | --------- | ---------------------------------------------------------- | -----------------------------------------------: |
 | `amount?` | `number`                                                   |                        The amount for the bleed. |
-| `unit`    | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
+| `unit`    | [`BleedUnit`](addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
 
 #### `PdfPageBoxes`
 
@@ -897,11 +897,11 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                | Type     |                                                                         Description |
 | ------------------- | -------- | ----------------------------------------------------------------------------------: |
-| `format`            | `string` |                    [`RenditionFormat.mp4`](./addonsdk-constants.md) constant value. |
-| `resolution?`       | `string` |                        [`VideoResolution`](./addonsdk-constants.md) constant value. |
+| `format`            | `string` |                    [`RenditionFormat.mp4`](addonsdk-constants.md) constant value. |
+| `resolution?`       | `string` |                        [`VideoResolution`](addonsdk-constants.md) constant value. |
 | `customResolution?` | `number` |                  Only required/used if the `resolution` is `VideoResolution.custom` |
-| `frameRate?`        | `number` | Frame rate in frames per second, [`FrameRate`](./addonsdk-constants.md) enumerable. |
-| `bitRate?`          | `number` |       Bit rate in bits per second, [`BitRate`](./addonsdk-constants.md) enumerable. |
+| `frameRate?`        | `number` | Frame rate in frames per second, [`FrameRate`](addonsdk-constants.md) enumerable. |
+| `bitRate?`          | `number` |       Bit rate in bits per second, [`BitRate`](addonsdk-constants.md) enumerable. |
 
 #### Return Value
 
@@ -1045,7 +1045,7 @@ An extension of [`Rendition`](#rendition), returned in the response to [`createR
 
 <InlineAlert slots="text" variant="info"/>
 
-Refer to the [create renditions how-to](../../guides/learn/how_to/create_renditions.md) and the [export-sample](../../guides/learn/samples.md) in the code samples for usage examples.
+Refer to the [create renditions how-to](../../guides/learn/how-to/create-renditions.md) and the [export-sample](../../guides/learn/samples.md) in the code samples for usage examples.
 
 ### exportAllowed()
 
