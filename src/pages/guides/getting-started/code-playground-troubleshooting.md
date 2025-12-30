@@ -84,7 +84,7 @@ Check your browser's default download location, you can also review your browser
 
 1. **Check auto-save settings:** Code is not saved automatically. Please read the [Save Your Work](code-playground-workflow.md#save-your-work) section for more details on how to save.
 2. Make sure you're not in incognito/private browsing mode
-3. Try saving manually using the keyboard shortcut (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>)
+3. Try saving manually using the keyboard shortcut (&lt;kbd &gt; Ctrl &lt;/kbd &gt; + &lt;kbd &gt; Shift &lt;/kbd &gt; + &lt;kbd &gt; S &lt;/kbd &gt; or &lt;kbd &gt; Cmd &lt;/kbd &gt; + &lt;kbd &gt; Shift &lt;/kbd &gt; + &lt;kbd &gt; S &lt;/kbd &gt;)
 4. Clear browser cache and try again
 5. Check if you have sufficient storage space—you might have reached the maximum number of sessions per user. Delete unused sessions to free up space.
 6. Any changes to [Archived](code-playground-workflow.md#session-limits-and-lifecycle) sessions are not saved.

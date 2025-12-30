@@ -35,7 +35,7 @@ The Code Playground is an in-app lightweight code editor for fast and effortless
 
 Code Playground provides developers with a low-barrier entry point for add-on development, allowing you to experiment and iterate on ideas directly without any setup, from within Adobe Express. From learning the basics to rapidly prototyping advanced concepts, Code Playground accommodates all stages of add-on development.
 
-![Code Playground Overview](./img/playground--hero.png)
+![Code Playground Overview](../getting_started/img/playground--hero.png)
 
 ### Key Benefits
 
@@ -66,7 +66,7 @@ To launch the Code Playground experience, follow [this link](https://www.adobe.c
 
 - [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 
-[![Code Playground Launch](./img/playground--splash-screen.png)](https://www.adobe.com/go/addon-playground)
+[![Code Playground Launch](../getting_started/img/playground--splash-screen.png)](https://www.adobe.com/go/addon-playground)
 
 In the future, you can always open the Code Playground from Adobe Express.
 
@@ -76,7 +76,7 @@ In the future, you can always open the Code Playground from Adobe Express.
 2. Switch on the **Add-on development** toggle in the top right corner.
 3. In the **Playground Sessions** tab, either click the **New Session** button to start a new session, or select an existing session to resume working on it.
 
-![Code Playground from Home Screen](./img/playground--launch-from-home.gif)
+![Code Playground from Home Screen](../getting_started/img/playground--launch-from-home.gif)
 
 **If you already have a document open:**
 
@@ -84,13 +84,13 @@ In the future, you can always open the Code Playground from Adobe Express.
 2. Select the **Your add-ons** tab.
 3. Toggle on **Code Playground** at the bottom of the panel.
 
-![Code Playground from Home Screen](./img/playground--launch-from-doc.gif)
+![Code Playground from Home Screen](../getting_started/img/playground--launch-from-doc.gif)
 
 ### Enable Add-on Development Mode
 
 The Code Playground needs the add-on Development Mode to be enabled in order to work—you only need to toggle it once. When launching the Playground (e.g., from [this link](https://www.adobe.com/go/addon-playground)) for the first time, you'll be prompted to review the Developer Terms of Use and enable the Developer Mode.
 
-[![Playground Terms of Use](./img/playground--DTOU.png)](https://www.adobe.com/go/addon-playground)
+[![Playground Terms of Use](../getting_started/img/playground--DTOU.png)](https://www.adobe.com/go/addon-playground)
 
 You can also enable or disable the add-on Development Mode from the Settings panel in Adobe Express. See the [Enable Add-on Development Mode](hello-world.md#enable-add-on-development-mode) section in the Hello, World! guide for detailed instructions.
 

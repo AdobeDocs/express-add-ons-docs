@@ -107,7 +107,7 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
 
-&lt; br /&gt;
+&lt;br /&gt;
 
 | Template           | Framework                                       |
 | ------------------ | ----------------------------------------------- |
@@ -153,15 +153,15 @@ The template parameter is optional, and the CLI will prompt you to choose from a
 
 you will see the following prompt from the CLI:
 
-![doc sandbox prompt](./img/CLI-template-prompt.png)
+![doc sandbox prompt](../../getting_started/local_development/img/CLI-template-prompt.png)
 
 which shows the five base template options to choose from, followed by a prompt to ask if you want to add the Document Sandbox support once you choose the base template.
 
-![cli doc sandbox prompt](./img/CLI-doc-sandbox.png)
+![cli doc sandbox prompt](../../getting_started/local_development/img/CLI-doc-sandbox.png)
 
 You will also see a message in the CLI output notifying you of which template the project was scaffolded with for reference:
 
-![template scaffolding message](./img/CLI-scaffold-message.png)
+![template scaffolding message](../../getting_started/local_development/img/CLI-scaffold-message.png)
 
 <InlineAlert slots="text1, text2" variant="warning"/>
 
@@ -171,7 +171,7 @@ If you don't want to use TypeScript or React, please refer to [this sample add-o
 
 When the scaffolding is complete, you will see the following message, prompting you to navigate to the newly created project directory and start the local development scripts:
 
-![CLI completed message](./img/CLI-completed.png)
+![CLI completed message](../../getting_started/local_development/img/CLI-completed.png)
 
 ## Sideload your add-on
 
@@ -184,17 +184,17 @@ npm run start
 
 This will build the add-on and start a local server, which you can then sideload into Adobe Express by clicking the button below.
 
-<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+<Columns slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
 
-- [Sideload your add-on](https://www.adobe.com/go/addon-cli)
+[Sideload your add-on](https://www.adobe.com/go/addon-cli)
 
 The CLI will also display a [https://www.adobe.com/go/addon-cli](https://www.adobe.com/go/addon-cli) URL that you can option-click (if you're using the VSCode/Cursor Terminal) or copy and paste to open the Add-on Development window in Adobe Express.
 
-![Sideload your add-on](./img/CLI-deeplink.png)
+![Sideload your add-on](../../getting_started/local_development/img/CLI-deeplink.png)
 
 You can also sideload it manually by following the steps below.
 
-![How to sideload an add-on](../img/playground-sideload-add-on.gif)
+![How to sideload an add-on](../../getting_started/img/playground-sideload-add-on.gif)
 
 <Details slots="list,text"  summary="Click to view a list of steps to enable the Development Mode" />
 
@@ -207,13 +207,13 @@ You can also sideload it manually by following the steps below.
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-![Add-on testing](../img/playground-alt-testing.png)
+![Add-on testing](../../getting_started/img/playground-alt-testing.png)
 
 <InlineAlert slots="text, text2" variant="warning"/>
 
 If you run into the error below, you can follow the steps in the [Known Issues & Limitations](known-issues-limitations.md#chrome-local-network-access-restriction) guide to fix it.
 
-![Local Network Access Error](./img/connect-error.png)
+![Local Network Access Error](../../getting_started/local_development/img/connect-error.png)
 
 ### Add-on Development mode
 
@@ -230,7 +230,7 @@ When [launching the Code Playground](https://www.adobe.com/go/addon-playground) 
 3. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first—click the **Accept and Enable** button to enable **Add-on Development**
 4. Close the Settings dialog.
 
-![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
+![Enable Add-on Development](../../getting_started/img/playground-enable-dev-mode.gif)
 
 ## Manifest
 
@@ -244,8 +244,8 @@ The **Add-on Development** tools panel provides useful logging details indicatin
 
 The **Refresh** button can be used to reload your add-on's code and resources, and the **Clear Storage** button allows you to clear any data stored by your add-on.
 
-![add-ons tools screenshot](./img/add-on-devtools.png)
-![manifest error screenshot](./img/manifest-error.png)
+![add-ons tools screenshot](../../getting_started/local_development/img/add-on-devtools.png)
+![manifest error screenshot](../../getting_started/local_development/img/manifest-error.png)
 
 ## Debugging
 
@@ -253,7 +253,7 @@ Messages logged in the Console by your add-on will be prefixed with `[Add-on: <a
 
 Open the browser's developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect** from the context menu. In the **Console**, you can filter out the messages from the Code Playground by typing just `[Add-on:` in the filter input.
 
-![Debugging](./img/cli-console-log.png)
+![Debugging](../../getting_started/local_development/img/cli-console-log.png)
 
 ### Updating old projects
 

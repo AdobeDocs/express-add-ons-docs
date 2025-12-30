@@ -30,7 +30,7 @@ Begin by locating the existing `launch.json` file in the `.vscode` folder in the
 
 If it's a sample add-on that you downloaded, you may need to create one first with the **create a launch.json file**.
 
-![New launch.json file option](img/new-launch-json.png)
+![New launch.json file option](../../getting_started/local_development/img/new-launch-json.png)
 
 Then copy in the JSON configuration included below (or copy one in from an add-on you previously generated).
 
@@ -92,13 +92,13 @@ Start your add-on from your terminal as normal with `npm run start`.
 
 Back in VS Code, click the **Run and Debug** option from the left panel and then select the profile related to where you want to debug (note that Chrome is the first one and selected by default but you can modify your configuration in the `launch.json` to your liking).
 
-![launch.json file](img/vscode-debug-option.png)
+![launch.json file](../../getting_started/local_development/img/vscode-debug-option.png)
 
-![launch profiles](img/launch-profiles.png)
+![launch profiles](../../getting_started/local_development/img/launch-profiles.png)
 
 Once you have your selection set from above, simply hit the green play button outlined below to start debugging.
 
-![start debugging](img/start-debug.png)
+![start debugging](../../getting_started/local_development/img/start-debug.png)
 
 A new browser window will open for your debugging session directly to the Express URL you configured above. Connect to your add-on as you normally would in Express.
 
@@ -106,8 +106,8 @@ A new browser window will open for your debugging session directly to the Expres
 
 You can now set breakpoints as desired, and you will see the code execution stop with the line highlighted. You can also check the **DEBUG CONSOLE** window to see any console output directly in VS Code.
 
-![debugging screenshot](img/debugging.png)
+![debugging screenshot](../../getting_started/local_development/img/debugging.png)
 
 Note the toolbar added to the top of your screen in VS Code when you're in debug mode which allows you to step through your code after it's been stopped on a breakpoint.
 
-![debugging tools](img/debugger-tool.png)
+![debugging tools](../../getting_started/local_development/img/debugger-tool.png)

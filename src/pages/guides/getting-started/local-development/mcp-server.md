@@ -48,17 +48,17 @@ If you are already familiar with the concepts of Model Context Protocol (MCP) an
 
 **Requirements:** Node.js 18+ and an MCP-compatible IDE with LLM integration.
 
-<InlineAlert variant="info" slots="header, text1"/>
+<InlineAlert variant="info" slots="header, text"/>
 
 💬  **Feedback requested:**
 
-We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
+We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts! &lt;br /&gt;
 
 ## What it does
 
 > "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) 
 
-&lt; br /&gt;
+&lt;br /&gt;
 
 The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
@@ -149,12 +149,12 @@ The LLM will automatically invoke tools based on your prompts. Here is an exampl
 
 ![img](../../getting_started/local_development/img/mcp-server-calling-tools.png)
 
-<InlineAlert header="true" variant="success" iconPosition="right">
+<InlineAlert slots="header,text" header="true" variant="success" iconPosition="right" />
 
-  **Tips:**
+**Tips:**
 
-  - Ask the LLM to "*list MCP tools*".
-  - If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
+- Ask the LLM to "*list MCP tools*".
+- If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
 
 ## How to use it
 
@@ -214,7 +214,7 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
    - **Specific components needed**: Modal dialog, color picker, buttons, etc.
    - **Build tools**: Adobe Add-on CLI for setup and development
 
-### 2. Craft Effective Prompts
+   ### 2. Craft Effective Prompts
 
   - **Be Specific**: "*Add a stroke to a rectangle*" vs "*Style shapes*"
   - **Include Context**: "*I'm building a text editor add-on*" helps narrow results
@@ -267,7 +267,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 #### Using **[Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/index.html)** (add-ons NOT using React)
 
-<InlineAlert variant="success" slots="header, text1, text2, text3" />
+<InlineAlert variant="success" slots="header, text1 " />
 
  **🤖 LLM Guidance:**
 
@@ -288,7 +288,8 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 #### Using [swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) (only for add-ons using React)
 
-<InlineAlert variant="success" slots="header, text1, text2, text3" />
+
+<InlineAlert variant="success" slots="header, text1" />
 
  **🤖 LLM Guidance:**
 

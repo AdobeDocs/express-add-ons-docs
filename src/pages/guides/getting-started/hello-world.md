@@ -24,7 +24,7 @@ In the great tradition of programming tutorials, we'll start by building a simpl
 
 This guide is **divided into two tracks**, which you can follow independently of each other, based on your experience and preferences.
 
-&lt;br /&gt;
+&lt;br / &gt;
 
 | Code Playground Track                  | Command Line Interface (CLI) Track |
 | -------------------------------------- | ---------------------------------- |
@@ -60,7 +60,7 @@ The first time you launch the [Code Playground](https://www.adobe.com/go/addon-p
 2. Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
 3. Close the Settings dialog.
 
-![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
+![Enable Add-on Development](../getting_started/img/playground-enable-dev-mode.gif)
 
 ## Code Playground
 
@@ -70,13 +70,13 @@ The [Code Playground](code-playground.md) is a browser-based editor built right 
 
 To launch the Code Playground experience, follow [this link](https://www.adobe.com/go/addon-playground) or click the button below.
 
-<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+<Columns slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
 
-- [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
+[Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 
 Alternatively, see the following animation or expand the details below for a step-by-step guide.
 
-![How to open the Code Playground](./img/playground-open-the-playground.gif)
+![How to open the Code Playground](../getting_started/img/playground-open-the-playground.gif)
 
 <Details slots="list"  summary="Click to view a list of steps to open the Code Playground" />
   
@@ -91,10 +91,9 @@ The Code Playground allows you to operate in [two modalities](code-playground.md
 
 - [**Script Mode**](https://www.adobe.com/go/addon-playground?executionMode=script): Directly runs code that operates on the current document
 - [**Add-on Mode**](https://www.adobe.com/go/addon-playground): Creates an add-on with a custom User Interface and logic that can run code on the current document
-
 Make sure you've selected the **Script** tab, which is pre-filled with a sample script:
 
-![Code Playground](./img/playground-script.png)
+![Code Playground](../getting_started/img/playground-script.png)
 
 Click the **Run Code** button on the Playground's toolbar to see the rectangle added to the document. Not much, but it's a start!
 
@@ -132,11 +131,11 @@ Click the **Add-on** tab to switch to the [Add-on mode](code-playground.md#playg
 
 This time, clicking **Run Code** will make a new add-on appear on the right side of the screen. You can see and change its code in the HTML, CSS (UI and styles) and Iframe JS tabs (button click event). The "Create Rectangle" button runs the Document JS code, which does exactly what you would expect!
 
-![Code Playground Add-on](./img/playground-addon.png)
+![Code Playground Add-on](../getting_started/img/playground-addon.png)
 
 <InlineAlert variant="info" slots="header, text" />
 
-Script mode vs. Document JS
+**Script mode vs. Document JS**
 
 Even if the result of both the Script and Add-on modes in the Code Playground is the same rectangle being added to the document, you'll see that the code is different. Why? The Script mode is a simplified, prototype-friendly environment that takes care of many things under the hood, while the Add-on code needs to take care of the communication between the UI and the Document Sandbox APIs. More info [here](../learn/platform-concepts/context.md).
 
@@ -163,13 +162,13 @@ The [Templates section](local-development/dev-tooling.md#templates) on the **Dev
 
 <InlineAlert slots="header, text1" variant="info"/>
 
-For Windows Users
+**For Windows Users**
 
 If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can [download `git`](https://git-scm.com/downloads) and add the directory location to the `path` variable in your Environment Variables.
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="warning"/>
 
-CLI troubleshooting
+**CLI troubleshooting**
 
 If you run into problems, run this command to clear the `npx` cache and ensure the latest version of the CLI is invoked.
 
@@ -210,11 +209,11 @@ To _sideload_ your add-on into Adobe Express, follow [this link](https://www.ado
 
 <Columns slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
 
-- [Sideload your add-on](https://www.adobe.com/go/addon-cli)
+[Sideload your add-on](https://www.adobe.com/go/addon-cli)
 
 You can also do it manually by following the steps below.
 
-![How to sideload an add-on](./img/playground-sideload-add-on.gif)
+![How to sideload an add-on](../getting_started/img/playground-sideload-add-on.gif)
 
 <Details slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
@@ -225,11 +224,11 @@ You can also do it manually by following the steps below.
   5. Click the **Connect** button.
   6. Click the **Hello World** add-on icon on the Add-ons tab on the left.
 
-![Add-on testing](./img/playground-alt-testing.png)
+  ![Add-on testing](../getting_started/img/playground-alt-testing.png)
 
 If you click the **Create Rectangle** button, you'll see the rectangle being added to the document.
 
-![Create Rectangle](./img/playground-run-addon.png)
+![Create Rectangle](../getting_started/img/playground-run-addon.png)
 
 ### 4. Edit Your Add-on's Code
 
@@ -256,19 +255,19 @@ While your add-on is still loaded and running, open the `src/index.html` file an
 
 Note that the terminal where your add-on runs will display messages showing that the `src` has been rebuilt. Adobe Express has also updated the button label automatically, and the add-on will now add a "Hello, World!" text to the document.
 
-![Hello World](./img/playground-hello-world.png)
+![Hello World](../getting_started/img/playground-hello-world.png)
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
-<InlineAlert slots="header, text1, text2" variant="warning"/>
+<InlineAlert slots="header, text" variant="warning"/>
 
-Manifest updates
+**Manifest updates**
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
 <Details slots="image" summary="Click to see the screenshot" />
 
-![Refresh manifest](./img/playground-refresh-manifest.png)
+![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
 
 ## Next steps
 

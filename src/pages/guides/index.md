@@ -21,21 +21,19 @@ hideBreadcrumbNav: true
 
 import '/src/styles.css'
 
-<Hero slots="heading, text"  className="hero-gradient" />
-
-## Build add-ons for Adobe Express
-
-Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
+<Superhero slots="image, heading, text" background="linear-gradient(180deg, #c946eb, #6372f5)" variant="default" textColor="white"/>
 
 ![Adobe Express add-ons](./getting_started/img/Explore_Image_3.png)
 
-&lt;br /&gt; &lt;br / &gt;
+# Build add-ons for Adobe Express
+
+Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
 ## Welcome to Adobe Express Add-ons!
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](getting-started/code-playground.md) and start tinkering with the API right away.
 
-<Columns slots="image, heading, text, text1" width="50%"/>
+<Columns slots="image, heading, text, text1" repeat="2" width="50%" variant ="vertical"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
 
@@ -45,8 +43,6 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 [Find inspiration →](getting-started/developer-journey.md#discover)
 
-<Columns slots="image, heading, text, text1" width="50%"/>
-
 ![Learn](./getting_started/img/devjourney-2-learn.png)
 
 ### Learn
@@ -55,7 +51,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 [Dive deeper →](getting-started/developer-journey.md#learn)
 
-<Columns slots="image, heading, text, text1" width="50%" />
+<Columns slots="image, heading, text, text1" repeat="2" width="50%" variant ="vertical"/>
 
 ![Develop](./getting_started/img/devjourney-3-develop.png)
 
@@ -64,8 +60,6 @@ Familiarize and experiment with powerful features in our Code Playground.
 Transform your ideas into a polished product following our best practices.
 
 [Start building →](getting-started/developer-journey.md#develop)
-
-<Columns slots="image, heading, text, text1" width="50%" />
 
 ![Distribute](./getting_started/img/devjourney-4-distribute.png)
 
@@ -109,5 +103,3 @@ Continue by reading the [Developer Journey](getting-started/developer-journey.md
 
 **Join Us: Office Hours for Adobe Express Developers** &lt;br /&gt; &lt;br /&gt; 
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
-
-&lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt;

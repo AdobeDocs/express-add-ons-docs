@@ -46,7 +46,7 @@ Use Add-on Mode when you want to develop, prototype, and test a complete add-on 
 1. Click the **Add-on** toggle (next to **Script** in the top left corner of the playground window).
 2. You'll see four tabs for organizing your code: HTML, CSS, Iframe JS, and Document JS.
 
-![Code Playground Add-on Mode](./img/addon-mode2.png)
+![Code Playground Add-on Mode](../getting_started/img/addon-mode2.png)
 
 ### Step 2: Write Your Code
 
@@ -63,7 +63,7 @@ If you need to set [manifest properties](../../references/manifest/index.md) for
 1. Click on the properties icon to open the Manifest JSON editing modal.
 2. Configure the necessary properties.
 
-![Add-on Mode Manifest Settings](./img/manifest-props-addon.png)
+![Add-on Mode Manifest Settings](../getting_started/img/manifest-props-addon.png)
 
 ## Understanding the Tabs
 

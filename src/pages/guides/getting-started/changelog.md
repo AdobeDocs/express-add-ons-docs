@@ -650,17 +650,14 @@ Some items in the following list of changes may have been mentioned in recent up
 
 - Color utilities have moved to [`colorUtils`](../../references/document-sandbox/document-apis/classes/color-utils.md) instead of `utils`.
 
-  **Old**<br/>
-  <del>
+  **Old** &lt;br /&gt;
 
   ```js
   import { utils } from "express-document-sdk";
   const color = utils.createColor(1, 0, 0);
   ```
 
-  </del>
-
-  **New**<br/>
+  **New** &lt;br /&gt;
 
   ```js
   import { colorUtils } from "express-document-sdk";
@@ -687,7 +684,7 @@ Some items in the following list of changes may have been mentioned in recent up
   /* oops, someRect no longer has a green fill, because anotherRect is its parent */
   ```
 
-  versus:
+    versus:
 
   ```js
   // New way
@@ -714,34 +711,27 @@ Some items in the following list of changes may have been mentioned in recent up
 - A new [`BaseNode`](../../references/document-sandbox/document-apis/classes/base-node.md) class has been introduced, and [`ContainerNode`](../../references/document-sandbox/document-apis/interfaces/container-node.md) has been moved from a class to an interface.
 - The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../../references/document-sandbox/index.md). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
-  **Adobe Express Document APIs SDK import**<br/>
+  **Adobe Express Document APIs SDK import** &lt;br /&gt;
+  
   For access to the [Express document and content authoring APIs](../../references/document-sandbox/document-apis/index.md):
-
-  <del>
 
   ```js
   // Old
   import { editor } from "express";
   ```
 
-  </del>
-
   ```js
   // New
   import { editor } from "express-document-sdk";
   ```
 
-  **Document Sandbox SDK import**<br/>
+  **Document Sandbox SDK import** &lt;br /&gt;
   For access to the [document sandbox runtime APIs](../../references/document-sandbox/index.md):
-
-  <del>
 
   ```js
   // Old
   import AddOnScriptSdk from "AddOnScriptSdk";
   ```
-
-  </del>
 
   ```js
   // New
@@ -847,7 +837,7 @@ Some items in the following list of changes may have been mentioned in recent up
 - Adds support to the [Add-on UI SDK](../../references/addonsdk/index.md) for retrieving the [document id](../../references/addonsdk/app-document.md#id) and [title](../../references/addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../../references/addonsdk/addonsdk-app.md#events).
 - Updates the names of the SDK imports for the [Document Sandbox](../../references/document-sandbox/communication/index.md) and the [Document API's SDK](../../references/document-sandbox/document-apis/index.md):
 
-  **Document Sandbox SDK import**<br/>
+  **Document Sandbox SDK import** &lt;br /&gt;
 
   from:
 
@@ -861,7 +851,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   `const { runtime } = addOnSandboxSdk.instance; // runtime object provides direct access to the comm methods`
 
-  **Express Document SDK Import (for accessing the Document APIs**<br/>
+  **Express Document SDK Import (for accessing the Document APIs** &lt;br /&gt;
 
   from:
 
@@ -889,6 +879,7 @@ Some items in the following list of changes may have been mentioned in recent up
 - [`apiProxy()`](../../references/addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
 - The [`RuntimeType`](../../references/addonsdk/addonsdk-constants.md) constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
 
+
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The old import names will continue to be supported for a period of time to allow developers to migrate to the new import names, but we encourage you to update as soon as possible to avoid any future issues.
@@ -900,7 +891,7 @@ Some items in the following list of changes may have been mentioned in recent up
 - The [Web API's in the Document Sandbox Reference](../../references/document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
 - The [Document API References](../../references/document-sandbox/document-apis/index.md) were updated with the following additions and changes:
 
-  **New Classes/Interfaces**<br/>
+  **New Classes/Interfaces** &lt;br /&gt;
 
   - New [RestrictedItemList class](../../references/document-sandbox/document-apis/classes/restricted-item-list.md)
   - New [UnknownNode class](../../references/document-sandbox/document-apis/classes/unknown-node.md)
@@ -909,7 +900,7 @@ Some items in the following list of changes may have been mentioned in recent up
   - New `queueAsyncEdit` method added to the [Editor](../../references/document-sandbox/document-apis/classes/editor.md) class.
   - Renames the [Constants](../../references/document-sandbox/document-apis/enumerations/) to remove the `Value` suffix.
 
-  **Updates to Node Classes**<br/>
+  **Updates to Node Classes** &lt;br /&gt;
 
 The accessors and methods below were removed or replaced with new names in the [`Node` class](../../references/document-sandbox/document-apis/classes/node.md) and classes that extend it. Please refer to the [Document API References](../../references/document-sandbox/document-apis/index.md) specifically to learn more about each.
 
@@ -1027,7 +1018,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Updates
 
-- **New Types Package Versions Released** <br/>
+- **New Types Package Versions Released** &lt;br /&gt;
 
   - A new version `0.1.6` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the [`AddOnSDK` (iframe)](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/), including new experimental APIs, as well as general improvements and bug fixes.
   - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **document sandbox/Editor APIs**.
@@ -1050,9 +1041,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 ### Updates
 
-<del>
-
-- The <a href="../references/document-sandbox/communication/index.md">Communication API</a> in the <a href="../references/document-sandbox/">document sandbox reference section</a> was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../references/document-sandbox/) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -1063,8 +1052,6 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
   `import AddOnScriptSdk from "AddOnScriptSdk";`
 
   Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. **Since these APIs are currently experimental, this change will not impact any in-production add-ons, _however_, it will require you to update any existing usage of these APIs in progress**.
-
-</del>
 
 - A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](../../references/document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 - Updated the [FAQ](../support/faq.md) with details on Experimental APIs and suppported file types for exported content.
@@ -1079,10 +1066,6 @@ Added new **Audio API** documentation. You can now import audio to the current A
 2. Using [drag and drop](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument), and supplying the [`MediaAttributes`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes) object in the [`DragCompletionData`](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata).
 
 Please note, in both cases, the `MediaAttributes` object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the [SDK Reference](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio) and [Implementing Common Use Cases Guide](https://developer.adobe.com/express/add-ons/docs/guides/develop/).
-
-<!-- <InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`. -->
 
 ## 2023-08-31
 
