@@ -582,6 +582,153 @@ Represents add-on-specific data that can be attached to imported media assets (n
 
 Refer to the [import images how-to](../../guides/learn/how_to/use_images.md#import-images-into-the-page) and the [import-images-from-local](../../guides/learn/samples.md#import-images-from-local) in the code samples for general importing content examples.
 
+### addMedia()
+
+Add multiple media assets to the document in a single batch operation.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`addMedia(assets: MediaItem[]): Promise<void>`
+
+#### Parameters
+
+| Name     | Type                          |                                       Description |
+| -------- | ----------------------------- | ------------------------------------------------: |
+| `assets` | [`MediaItem[]`](#mediaitem-1) | An array of media items to add to the document. |
+
+#### Return Value
+
+A resolved `Promise` if all assets were successfully added; otherwise, it will throw an error with the rejected promise.
+
+#### Supported Media Types
+
+The `addMedia` method supports the following media types:
+
+| Category    | Supported MIME Types                                                                                      |
+| ----------- | --------------------------------------------------------------------------------------------------------- |
+| **Images**  | `image/png`, `image/jpeg`, `image/jpg`, `image/gif`, `image/webp`, `image/heic`                          |
+| **Videos**  | `video/mp4`, `video/quicktime`, `video/webm`                                                               |
+| **Documents** | `application/pdf`, `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)  |
+
+#### Batch Import Rules
+
+The `addMedia` method has specific rules for combining different media types:
+
+| Scenario | Supported | Notes |
+| -------- | --------- | ----- |
+| Multiple images | ✅ Yes | Any combination of supported image formats |
+| Multiple videos | ✅ Yes | Any combination of supported video formats |
+| Mixed images and videos | ✅ Yes | Images and videos can be combined in the same batch |
+| Single PDF | ✅ Yes | Triggers document import flow with consent dialog |
+| Single PowerPoint | ✅ Yes | Triggers document import flow with consent dialog |
+| Multiple PDFs | ✅ Yes | Triggers bulk PDF import flow |
+| PDF/PPT mixed with images/videos | ❌ No | Documents cannot be combined with other media types |
+| Multiple different document types | ❌ No | Cannot mix PDFs with PowerPoint files |
+
+#### Example Usage
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+// Wait for the SDK to be ready
+await addOnUISdk.ready;
+
+// Import multiple images at once
+async function importMultipleImages() {
+  try {
+    const imageUrls = [
+      "https://example.com/image1.png",
+      "https://example.com/image2.jpg",
+      "https://example.com/image3.png"
+    ];
+
+    // Fetch all images and convert to blobs
+    const assets = await Promise.all(
+      imageUrls.map(async (url, index) => {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return {
+          blob,
+          attributes: { title: `Image ${index + 1}`, author: "My Add-on" }
+        };
+      })
+    );
+
+    await addOnUISdk.app.document.addMedia(assets);
+    console.log("All images imported successfully!");
+  } catch (error) {
+    console.log("Failed to import images:", error);
+  }
+}
+
+// Import mixed media (images and videos)
+async function importMixedMedia() {
+  try {
+    const imageBlob = await fetch("https://example.com/photo.png").then(r => r.blob());
+    const videoBlob = await fetch("https://example.com/video.mp4").then(r => r.blob());
+
+    await addOnUISdk.app.document.addMedia([
+      { blob: imageBlob, attributes: { title: "Photo" } },
+      { blob: videoBlob, attributes: { title: "Video Clip" } }
+    ]);
+  } catch (error) {
+    console.log("Failed to import mixed media:", error);
+  }
+}
+
+// Import multiple PDFs (triggers bulk PDF import)
+async function importMultiplePdfs() {
+  try {
+    const pdfUrls = [
+      "https://example.com/document1.pdf",
+      "https://example.com/document2.pdf"
+    ];
+
+    const assets = await Promise.all(
+      pdfUrls.map(async (url, index) => {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return {
+          blob,
+          attributes: { title: `Document ${index + 1}` }
+        };
+      })
+    );
+
+    await addOnUISdk.app.document.addMedia(assets);
+    console.log("PDF bulk import initiated!");
+  } catch (error) {
+    console.log("Failed to import PDFs:", error);
+  }
+}
+```
+
+#### `MediaItem`
+
+Represents a media item for batch import operations.
+
+| Name         | Type                                  |                                                    Description |
+| ------------ | ------------------------------------- | -------------------------------------------------------------: |
+| `blob`       | `Blob`                                |                              The blob data of the media item. |
+| `attributes?`| [`MediaAttributes`](#mediaattributes) | Optional media attributes (title, author) for the media item. |
+
+#### Errors
+
+The table below describes the possible error messages that may occur when using the `addMedia` method:
+
+|                                                                      Error Message |                                                                    Error Scenario |
+| ---------------------------------------------------------------------------------: | --------------------------------------------------------------------------------: |
+|                                             Invalid request: no items provided. |                                                      Empty assets array provided. |
+|                               Invalid request: blob data is required for all items. |                                 One or more assets has a missing or null blob. |
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** When importing unsupported MIME types or invalid combinations (like mixing documents with images), the method will display an error notification to the user rather than throwing an exception.
+
 ### importPdf()
 
 Imports a PDF as a new Adobe Express document.

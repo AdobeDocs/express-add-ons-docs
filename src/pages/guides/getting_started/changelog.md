@@ -25,6 +25,25 @@ contributors:
 
 # Changelog
 
+## 2026-01-05
+
+### Added
+
+- **Experimental** [`addMedia()`](../../references/addonsdk/app-document.md#addmedia) method - Batch import multiple media assets to the document in a single operation. This new API supports:
+  - **Images**: `image/png`, `image/jpeg`, `image/jpg`, `image/gif`, `image/webp`, `image/heic`
+  - **Videos**: `video/mp4`, `video/quicktime`, `video/webm`
+  - **Documents**: `application/pdf`, `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
+- New [`MediaItem`](../../references/addonsdk/app-document.md#mediaitem) interface for defining individual media assets with blob data and optional [`MediaAttributes`](../../references/addonsdk/app-document.md#mediaattributes).
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The [`addMedia()`](../../references/addonsdk/app-document.md#addmedia) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+### Updated
+
+- [Use Images](../learn/how_to/use_images.md) guide updated with new **Batch Import Multiple Images** section covering the `addMedia()` API for importing multiple images and mixed image/video content.
+- [Use PDF and PowerPoint](../learn/how_to/use_pdf_powerpoint.md) guide updated with new **Batch Import Multiple PDFs** section covering bulk PDF import using the `addMedia()` API.
+
 ## 2025-12-28
 
 ### Added
