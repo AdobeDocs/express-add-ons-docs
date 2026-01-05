@@ -14,6 +14,9 @@ keywords:
   - PowerPoint Import
   - importPdf
   - importPowerPoint
+  - addMedia
+  - batch import
+  - bulk PDF
 title: Use PDF and PowerPoint
 description: Use PDF and PowerPoint.
 contributors:
@@ -53,6 +56,12 @@ faq:
 
     - question: "How many pages are imported?"
       answer: "All pages from PDF and PowerPoint files are imported into the document."
+
+    - question: "How do I import multiple PDFs at once?"
+      answer: "Use the experimental `addMedia()` method with an array of PDF blobs to trigger bulk PDF import. This imports all PDFs as separate documents."
+
+    - question: "Can I mix PDFs with images in a batch import?"
+      answer: "No, documents (PDF/PPT) cannot be combined with images or videos in the same batch. Import them separately."
 ---
 
 # Use PDF and PowerPoint
@@ -116,6 +125,61 @@ await addOnUISdk.app.document.importPdf(convertedPdfBlob, {
   sourceMimeType: "docx" // Shows "Import a document" in the dialog
 });
 ```
+
+## Batch Import Multiple PDFs
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `addMedia()` method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+When you need to import multiple PDF files at once, use the [`addMedia()`](../../../references/addonsdk/app-document.md#addmedia) method. This triggers a bulk PDF import flow that allows users to import multiple documents efficiently.
+
+### Example
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  try {
+    // Array of PDF URLs to import
+    const pdfUrls = [
+      "https://example.com/document1.pdf",
+      "https://example.com/document2.pdf",
+      "https://example.com/document3.pdf"
+    ];
+
+    // Fetch all PDFs and prepare MediaItem array
+    const assets = await Promise.all(
+      pdfUrls.map(async (url, index) => {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return {
+          blob, // 👈 Required: PDF Blob object
+          attributes: { // 👈 Optional: MediaAttributes
+            title: `Document ${index + 1}`
+          }
+        };
+      })
+    );
+
+    // Import all PDFs in a bulk operation
+    await addOnUISdk.app.document.addMedia(assets);
+    console.log("Bulk PDF import initiated!");
+  } catch (e) {
+    console.error("Failed to import PDFs", e);
+  }
+});
+```
+
+<InlineAlert slots="text" variant="info"/>
+
+**Important Limitations:**
+
+- PDFs cannot be combined with images or videos in the same batch import. If you need to import both, make separate calls.
+- Mixing PDFs with PowerPoint files in the same batch is not supported.
+- When importing a single PDF via `addMedia()`, it behaves the same as `importPdf()` and triggers the standard document import flow with consent dialog.
+
+For more details on batch import rules, see the [`addMedia()` API reference](../../../references/addonsdk/app-document.md#addmedia).
 
 ## Import PowerPoint into the page
 
@@ -191,3 +255,11 @@ addOnUISdk.ready.then(async () => {
 #### Q: How many pages are imported?
 
 **A:** All pages from PDF and PowerPoint files are imported into the document.
+
+#### Q: How do I import multiple PDFs at once?
+
+**A:** Use the experimental `addMedia()` method with an array of PDF blobs to trigger bulk PDF import. This imports all PDFs as separate documents.
+
+#### Q: Can I mix PDFs with images in a batch import?
+
+**A:** No, documents (PDF/PPT) cannot be combined with images or videos in the same batch. Import them separately.

@@ -12,10 +12,12 @@ keywords:
   - Images
   - Media
   - addImage
+  - addMedia
   - ImportAddOnData
   - Metadata
   - MediaAttributes
   - replaceMedia
+  - batch import
 title: Use Images
 description: Use Images.
 contributors:
@@ -46,6 +48,7 @@ faq:
 
     - question: "Are there GIF size limitations?"
       answer: "Yes, refer to the FAQ section for specific GIF size and weight limitations."
+
     - question: "How do I replace media in an existing `MediaContainerNode`?"
       answer: "Use the `replaceMedia()` method on a `MediaContainerNode` with a BitmapImage` object created via `Editor.loadBitmapImage()`."
 
@@ -54,6 +57,12 @@ faq:
       
     - question: "How do I attach custom metadata to imported images?"
       answer: "Use the optional `importAddOnData` parameter with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs."
+
+    - question: "How do I import multiple images at once?"
+      answer: "Use the experimental `addMedia()` method to batch import multiple images in a single call. You can also mix images with videos in the same batch."
+
+    - question: "Can I mix images and videos in a batch import?"
+      answer: "Yes, the `addMedia()` method supports importing images and videos together in the same batch operation."
 ---
 
 # Use Images
@@ -157,6 +166,84 @@ addOnUISdk.ready.then(async () => {
 GIF Image requirements
 
 All image formats are equal, but some formats are more equal than others. Please refer to [this FAQ](../../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) to learn more about specific GIF limitations in terms of size and weight.
+
+## Batch Import Multiple Images
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `addMedia()` method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+When you need to import multiple images at once, use the [`addMedia()`](../../../references/addonsdk/app-document.md#addmedia) method instead of calling `addImage()` multiple times. This method is more efficient for batch operations and supports importing images, videos, and even mixing both types in a single call.
+
+### Example
+
+```js
+// ui/index.js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  try {
+    // Array of image URLs to import
+    const imageUrls = [
+      "https://example.com/photo1.png",
+      "https://example.com/photo2.jpg",
+      "https://example.com/photo3.png"
+    ];
+
+    // Fetch all images and prepare MediaItem array
+    const assets = await Promise.all(
+      imageUrls.map(async (url, index) => {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return {
+          blob, // 👈 Required: Blob object
+          attributes: { // 👈 Optional: MediaAttributes
+            title: `Photo ${index + 1}`,
+            author: "My Add-on"
+          }
+        };
+      })
+    );
+
+    // Import all images in a single batch operation
+    await addOnUISdk.app.document.addMedia(assets);
+    console.log("All images imported successfully!");
+  } catch (e) {
+    console.error("Failed to import images", e);
+  }
+});
+```
+
+### Mixing Images and Videos
+
+The `addMedia()` method also supports importing images and videos together:
+
+```js
+// ui/index.js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  try {
+    // Fetch different media types
+    const imageBlob = await fetch("https://example.com/photo.png").then(r => r.blob());
+    const videoBlob = await fetch("https://example.com/clip.mp4").then(r => r.blob());
+
+    // Import both in a single call
+    await addOnUISdk.app.document.addMedia([
+      { blob: imageBlob, attributes: { title: "Background Image" } },
+      { blob: videoBlob, attributes: { title: "Video Clip" } }
+    ]);
+  } catch (e) {
+    console.error("Failed to import media", e);
+  }
+});
+```
+
+<InlineAlert slots="text" variant="info"/>
+
+**Note:** The `addMedia()` method does not currently support the `importAddOnData` parameter for attaching custom metadata. If you need to attach metadata to imported assets, use the individual `addImage()` or `addVideo()` methods instead.
+
+For more details on supported media types and batch import rules, see the [`addMedia()` API reference](../../../references/addonsdk/app-document.md#addmedia).
 
 ## Replace Media
 
@@ -430,3 +517,11 @@ MediaContainerNode
 #### Q: How do I attach custom metadata to imported images?
 
 **A:** Use the optional `importAddOnData` parameter with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs.
+
+#### Q: How do I import multiple images at once?
+
+**A:** Use the experimental `addMedia()` method to batch import multiple images in a single call. Pass an array of `MediaItem` objects, each containing a `blob` and optional `attributes`.
+
+#### Q: Can I mix images and videos in a batch import?
+
+**A:** Yes, the `addMedia()` method supports importing images and videos together in the same batch operation. Simply include both image and video blobs in the assets array.
