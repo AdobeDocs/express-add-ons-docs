@@ -602,7 +602,7 @@ module.exports = {
             ],
           },
           {
-            title: "Adobe Express Developer MCP Server",
+            title: "Dev MCP Server",
             path: "guides/getting_started/local_development/mcp_server.md",
           },
           {
