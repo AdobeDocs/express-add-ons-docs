@@ -309,7 +309,7 @@ The downloaded `.csv` files are named based on your add-on name and listing type
 Below is an example of what the insights data might look like:
 
 | Week       | Installs | Uninstalls | Invocations |
-|------------|----------|------------|-------------|
+| ---------- | -------- | ---------- | ----------- |
 | 2025-05-01 | 120      | 10         | 300         |
 | 2025-05-08 | 150      | 15         | 350         |
 
@@ -321,4 +321,4 @@ Below is an example of what the insights data might look like:
 
 By leveraging these insights, you can make informed decisions to improve your add-on's performance and user experience.
 
-Once your add-on is [reviewed](./review_process/index.md), it will be available on the [marketplace](https://new.express.adobe.com/add-ons).
+Once your add-on is [reviewed](./review_process/index.md), it will be available on the [marketplace](https://express.adobe.com/add-ons).

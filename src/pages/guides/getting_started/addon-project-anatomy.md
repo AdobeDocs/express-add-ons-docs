@@ -269,12 +269,12 @@ Add the `documentSandbox` property:
 **UI code (`ui/index.js`):**
 
 ```javascript
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
     // Get proxy to communicate with document sandbox
     const sandboxProxy = await addOnUISdk.instance.runtime.apiProxy("documentSandbox");
-    
+
     // UI interactions
     document.getElementById("createBtn").addEventListener("click", async () => {
         await sandboxProxy.createRectangle();  // Call document sandbox
@@ -363,12 +363,12 @@ For the complete list of available Web APIs, see the [Web APIs Reference](../../
 
 **Always goes in iframe runtime, never in document sandbox.**
 
-| Template Type | CSS Location | How to Use |
-|---------------|--------------|------------|
-| **javascript** | `src/styles.css` | `<link rel="stylesheet" href="styles.css">` in `index.html` |
-| **javascript-with-document-sandbox** | `src/styles.css` or `src/ui/styles.css` | `<link rel="stylesheet" href="styles.css">` in `index.html` |
-| **swc-javascript/typescript** | `src/components/App.css.js` or `.css.ts` | CSS-in-JS: imported in component |
-| **react-javascript/typescript** | `src/components/App.css` | `import './App.css'` in component |
+| Template Type                        | CSS Location                             | How to Use                                                  |
+| ------------------------------------ | ---------------------------------------- | ----------------------------------------------------------- |
+| **javascript**                       | `src/styles.css`                         | `<link rel="stylesheet" href="styles.css">` in `index.html` |
+| **javascript-with-document-sandbox** | `src/styles.css` or `src/ui/styles.css`  | `<link rel="stylesheet" href="styles.css">` in `index.html` |
+| **swc-javascript/typescript**        | `src/components/App.css.js` or `.css.ts` | CSS-in-JS: imported in component                            |
+| **react-javascript/typescript**      | `src/components/App.css`                 | `import './App.css'` in component                           |
 
 ### Shared Code
 
@@ -386,23 +386,23 @@ For more on why environments are isolated, see the [Iframe Runtime Context & Sec
 
 ### File Locations Cheat Sheet
 
-| What | No-Build | Build (No Sandbox) | Build (With Sandbox) |
-|------|----------|-------------------|---------------------|
-| **UI Logic** | `src/index.js` | `src/index.js` | `src/ui/index.js` |
-| **HTML** | `src/index.html` | `src/index.html` | `src/index.html` |
-| **CSS** | `src/styles.css` | `src/components/App.css` | `src/ui/components/App.css` |
-| **Document Code** | N/A | N/A | `src/sandbox/code.js` |
-| **Manifest** | `src/manifest.json` | `src/manifest.json` | `src/manifest.json` |
-| **Output** | `src/` (direct) | `dist/` | `dist/` |
+| What              | No-Build            | Build (No Sandbox)       | Build (With Sandbox)        |
+| ----------------- | ------------------- | ------------------------ | --------------------------- |
+| **UI Logic**      | `src/index.js`      | `src/index.js`           | `src/ui/index.js`           |
+| **HTML**          | `src/index.html`    | `src/index.html`         | `src/index.html`            |
+| **CSS**           | `src/styles.css`    | `src/components/App.css` | `src/ui/components/App.css` |
+| **Document Code** | N/A                 | N/A                      | `src/sandbox/code.js`       |
+| **Manifest**      | `src/manifest.json` | `src/manifest.json`      | `src/manifest.json`         |
+| **Output**        | `src/` (direct)     | `dist/`                  | `dist/`                     |
 
 ### Manifest Path Cheat Sheet
 
-| Template Type | `main` | `documentSandbox` |
-|---------------|--------|-------------------|
-| **No-build, no sandbox** | `"index.html"` | N/A |
+| Template Type              | `main`         | `documentSandbox`   |
+| -------------------------- | -------------- | ------------------- |
+| **No-build, no sandbox**   | `"index.html"` | N/A                 |
 | **No-build, with sandbox** | `"index.html"` | `"sandbox/code.js"` |
-| **Build, no sandbox** | `"index.html"` | N/A |
-| **Build, with sandbox** | `"index.html"` | `"code.js"` |
+| **Build, no sandbox**      | `"index.html"` | N/A                 |
+| **Build, with sandbox**    | `"index.html"` | `"code.js"`         |
 
 ## Understanding UI Options: SWC vs. React
 
@@ -531,20 +531,20 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 
 ### Side-by-Side Comparison
 
-| Aspect | SWC Templates | React Templates |
-|--------|---------------|-----------------|
-| **Framework** | Vanilla JS + Lit | React |
-| **Spectrum Components** | Native web components (`<sp-button>`) | React wrappers (`<Button>` from `@swc-react`) |
-| **Design System** | ✅ Spectrum built-in | ✅ Spectrum built-in |
-| **Component Syntax** | `<sp-button @click=${fn}>` | `<Button onClick={fn}>` |
-| **Bundle Size** | Smaller (no framework) | Larger (includes React) |
-| **Learning Curve** | Learn Lit + web components | Learn React (if new) |
-| **UI Complexity** | Simple to Medium | Medium to Complex |
-| **Ecosystem** | Spectrum Web Components | React + Spectrum |
-| **Styling** | CSS-in-JS (`.css.ts` files) | Standard CSS (`.css` files) |
-| **State Management** | Lit reactive properties | React hooks/state |
-| **Accessibility** | ✅ Built-in (Spectrum) | ✅ Built-in (Spectrum) |
-| **Developer Experience** | Standards-based | Familiar React patterns |
+| Aspect                   | SWC Templates                         | React Templates                               |
+| ------------------------ | ------------------------------------- | --------------------------------------------- |
+| **Framework**            | Vanilla JS + Lit                      | React                                         |
+| **Spectrum Components**  | Native web components (`<sp-button>`) | React wrappers (`<Button>` from `@swc-react`) |
+| **Design System**        | ✅ Spectrum built-in                  | ✅ Spectrum built-in                          |
+| **Component Syntax**     | `<sp-button @click=${fn}>`            | `<Button onClick={fn}>`                       |
+| **Bundle Size**          | Smaller (no framework)                | Larger (includes React)                       |
+| **Learning Curve**       | Learn Lit + web components            | Learn React (if new)                          |
+| **UI Complexity**        | Simple to Medium                      | Medium to Complex                             |
+| **Ecosystem**            | Spectrum Web Components               | React + Spectrum                              |
+| **Styling**              | CSS-in-JS (`.css.ts` files)           | Standard CSS (`.css` files)                   |
+| **State Management**     | Lit reactive properties               | React hooks/state                             |
+| **Accessibility**        | ✅ Built-in (Spectrum)                | ✅ Built-in (Spectrum)                        |
+| **Developer Experience** | Standards-based                       | Familiar React patterns                       |
 
 ### The Bottom Line
 
@@ -595,15 +595,15 @@ Do you need to create/modify document content?
 
 ### Recommendations by Use Case
 
-| Use Case | Recommended Template | Why |
-|----------|---------------------|-----|
-| Learning add-on development | `javascript` | Simplest, no build tools |
-| Simple utility (calculator, converter) | `javascript` | No unnecessary complexity |
-| Creating shapes/text in document | `javascript-with-document-sandbox` | Adds document manipulation |
-| Complex UI with forms/visualizations | `react-javascript` | React handles complex UIs well |
-| Enterprise add-on with document manipulation | `react-typescript-with-document-sandbox` | Full type safety and features |
-| Team familiar with TypeScript | Any TypeScript variant | Leverage existing skills |
-| Need fast build times | SWC variants | SWC is faster than Babel |
+| Use Case                                     | Recommended Template                     | Why                            |
+| -------------------------------------------- | ---------------------------------------- | ------------------------------ |
+| Learning add-on development                  | `javascript`                             | Simplest, no build tools       |
+| Simple utility (calculator, converter)       | `javascript`                             | No unnecessary complexity      |
+| Creating shapes/text in document             | `javascript-with-document-sandbox`       | Adds document manipulation     |
+| Complex UI with forms/visualizations         | `react-javascript`                       | React handles complex UIs well |
+| Enterprise add-on with document manipulation | `react-typescript-with-document-sandbox` | Full type safety and features  |
+| Team familiar with TypeScript                | Any TypeScript variant                   | Leverage existing skills       |
+| Need fast build times                        | SWC variants                             | SWC is faster than Babel       |
 
 ### Migration Path
 
@@ -625,18 +625,18 @@ react-typescript-with-document-sandbox
 
 ### Visual Comparison Matrix
 
-| Template | Build Tool | UI Framework | TypeScript | Doc Sandbox | Complexity |
-|----------|-----------|--------------|------------|-------------|------------|
-| **javascript** | ❌ None | Vanilla JS | ❌ | ❌ | ⭐ Simplest |
-| **javascript-with-document-sandbox** | ❌ None | Vanilla JS | ❌ | ✅ | ⭐⭐ |
-| **swc-javascript** | ✅ Webpack | Vanilla JS | ❌ | ❌ | ⭐⭐ |
-| **swc-javascript-with-document-sandbox** | ✅ Webpack | Vanilla JS | ❌ | ✅ | ⭐⭐⭐ |
-| **swc-typescript** | ✅ Webpack | Vanilla JS | ✅ | ❌ | ⭐⭐⭐ |
-| **swc-typescript-with-document-sandbox** | ✅ Webpack | Vanilla JS | ✅ | ✅ | ⭐⭐⭐⭐ |
-| **react-javascript** | ✅ Webpack | React | ❌ | ❌ | ⭐⭐⭐ |
-| **react-javascript-with-document-sandbox** | ✅ Webpack | React | ❌ | ✅ | ⭐⭐⭐⭐ |
-| **react-typescript** | ✅ Webpack | React | ✅ | ❌ | ⭐⭐⭐⭐ |
-| **react-typescript-with-document-sandbox** | ✅ Webpack | React | ✅ | ✅ | ⭐⭐⭐⭐⭐ Most complex |
+| Template                                   | Build Tool | UI Framework | TypeScript | Doc Sandbox | Complexity              |
+| ------------------------------------------ | ---------- | ------------ | ---------- | ----------- | ----------------------- |
+| **javascript**                             | ❌ None    | Vanilla JS   | ❌         | ❌          | ⭐ Simplest             |
+| **javascript-with-document-sandbox**       | ❌ None    | Vanilla JS   | ❌         | ✅          | ⭐⭐                    |
+| **swc-javascript**                         | ✅ Webpack | Vanilla JS   | ❌         | ❌          | ⭐⭐                    |
+| **swc-javascript-with-document-sandbox**   | ✅ Webpack | Vanilla JS   | ❌         | ✅          | ⭐⭐⭐                  |
+| **swc-typescript**                         | ✅ Webpack | Vanilla JS   | ✅         | ❌          | ⭐⭐⭐                  |
+| **swc-typescript-with-document-sandbox**   | ✅ Webpack | Vanilla JS   | ✅         | ✅          | ⭐⭐⭐⭐                |
+| **react-javascript**                       | ✅ Webpack | React        | ❌         | ❌          | ⭐⭐⭐                  |
+| **react-javascript-with-document-sandbox** | ✅ Webpack | React        | ❌         | ✅          | ⭐⭐⭐⭐                |
+| **react-typescript**                       | ✅ Webpack | React        | ✅         | ❌          | ⭐⭐⭐⭐                |
+| **react-typescript-with-document-sandbox** | ✅ Webpack | React        | ✅         | ✅          | ⭐⭐⭐⭐⭐ Most complex |
 
 ### Template Structure Examples
 
