@@ -160,10 +160,10 @@ This isolation is fundamental to Adobe Express's security model, allowing third-
 
 The browser environment where the add-on's user interface runs for users to interact with it. When a user chooses an add-on, the add-on opens in a panel on the right side of the Adobe Express UI in a secure sandboxed iframe, where permissions are controlled by a Permissions Policy and the `sandbox` attribute. See the [Iframe Runtime Context & Security Guide](./context.md) for more details on the iframe runtime and its security. The iframe runtime is where the Add-on UI SDK `addOnUISdk` is imported to access the APIs for features like OAuth, media import, rendition creation, and more.
 
-| Attribute | Details |
-| --- | --- |
-| **File** | `index.js` or `index.html` |
-| **SDKs Used** | Add-on UI SDK |
+| Attribute       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **File**        | `index.js` or `index.html`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **SDKs Used**   | Add-on UI SDK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **Add Content** | **UI components**: Render HTML, CSS, JavaScript frameworks<br/>**Browser access**: DOM manipulation, fetch, localStorage, etc.<br/>**Add-on UI SDK features** (via `addOnUISdk`):<br/>• `app.document.addImage()` - Import media<br/>• `app.document.createRenditions()` - Export document<br/>• `app.showModalDialog()` - Display dialogs<br/>• `app.oauth` - Auth flows<br/>• `addOnUISdk.instance.clientStorage` - Persistent storage<br/>**Communication**: Use `runtime.apiProxy()` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox |
 
 **Import Pattern:**
@@ -175,7 +175,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(() => {
   const { runtime } = addOnUISdk.instance;
   const { app } = addOnUISdk;
-  
+
   // runtime - for communication with document sandbox
   // app - for UI SDK features (dialogs, OAuth, renditions, etc.)
 });
@@ -187,24 +187,24 @@ When do I need document sandbox communication?
 
 **✅ YES** - You need `runtime.apiProxy()` to communicate with the document sandbox if:
 
-   - Creating/modifying document elements (text, shapes, etc.)
-   - Reading document properties not available in UI SDK
-   - Performing complex document operations
+- Creating/modifying document elements (text, shapes, etc.)
+- Reading document properties not available in UI SDK
+- Performing complex document operations
 
 **❌ NO** - You don't need it if:
 
-   - Only using Add-on UI SDK features (e.g., `app.document.addImage()`, `app.document.createRenditions()`)
-   - Building a pure UI add-on (settings, external integrations)
-   - Only displaying information fetched from external APIs
+- Only using Add-on UI SDK features (e.g., `app.document.addImage()`, `app.document.createRenditions()`)
+- Building a pure UI add-on (settings, external integrations)
+- Only displaying information fetched from external APIs
 
 ### Document Sandbox
 
 The secure isolated environment for document manipulation with limited browser APIs but direct document access. The document sandbox is where the Document Sandbox SDKs are used to access the APIs for features like document manipulation, document properties, and more.
 
-| Attribute | Details |
-| --- | --- |
-| **File** | `code.js` |
-| **SDKs Used** | Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs) |
+| Attribute        | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **File**         | `code.js`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **SDKs Used**    | Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Capabilities** | **Direct document manipulation**: Create/modify shapes, text, images using `editor`<br/>**Scenegraph access**: Read and traverse the document structure<br/>**Express Document SDK features**:<br/>• `editor.createRectangle()`, `editor.createText()` - Create content<br/>• `editor.context.selection` - Access selected elements<br/>• `editor.context.insertionParent` - Add content to document<br/>• `colorUtils` - Create and convert colors<br/>• `fonts` - Manage and load fonts<br/>• `viewport` - Control canvas navigation<br/>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))<br/>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy()` to call UI functions |
 
 **Import Patterns:**
@@ -215,7 +215,7 @@ The secure isolated environment for document manipulation with limited browser A
 import addOnSandboxSdk from "add-on-sdk-document-sandbox";
 const { runtime } = addOnSandboxSdk.instance;
 
-runtime.exposeApi({ 
+runtime.exposeApi({
   processData: function(data) {
     // Process data without touching document
     return data.map(item => item.toUpperCase());
@@ -247,21 +247,21 @@ runtime.exposeApi({
 
 **Document Sandbox SDK (`addOnSandboxSdk`):**
 
-   - ✅ YES if your `code.js` needs to communicate with the iframe runtime
-   - ✅ YES if iframe runtime triggers document operations
-   - ❌ NO if you don't have a `documentSandbox` entry in your manifest
+- ✅ YES if your `code.js` needs to communicate with the iframe runtime
+- ✅ YES if iframe runtime triggers document operations
+- ❌ NO if you don't have a `documentSandbox` entry in your manifest
 
 **Express Document SDK (`express-document-sdk`):**
 
-   - ✅ YES if creating/modifying document content
-   - ✅ YES if accessing document properties
-   - ❌ NO if only processing data or communicating
+- ✅ YES if creating/modifying document content
+- ✅ YES if accessing document properties
+- ❌ NO if only processing data or communicating
 
 <InlineAlert variant="info" slots="header, text1"/>
 
 **Code Playground Note**
 
-The Adobe Express [Code Playground](../../getting_started/code_playground.md) has special behavior where the `express-document-sdk` is automatically injected in Script mode. In production add-ons, you must always use explicit import statements as shown above.
+The Adobe Express [Code Playground](../../getting_started/code-playground.md) has special behavior where the `express-document-sdk` is automatically injected in Script mode. In production add-ons, you must always use explicit import statements as shown above.
 
 **What's Available Without Import:**
 
@@ -361,12 +361,12 @@ import addOnUISdk, { RuntimeType } from "https://express.adobe.com/static/add-on
 // Wait for SDK to be ready before accessing runtime
 addOnUISdk.ready.then(async () => {
   const { runtime } = addOnUISdk.instance;
-  
+
   // Button click handler - responds to user action
   document.getElementById("createText").addEventListener("click", async () => {
     // Step 1: Get a proxy to call document sandbox functions
     const sandboxProxy = await runtime.apiProxy(RuntimeType.documentSandbox);
-    
+
     // Step 2: Call the function exposed in code.js
     await sandboxProxy.createTextElement("Hello World!");
   });
@@ -417,12 +417,12 @@ const { runtime } = addOnSandboxSdk.instance;
 async function processDocument() {
   // Step 1: Get a proxy to call UI functions
   const uiProxy = await runtime.apiProxy(RuntimeType.panel);
-  
+
   // Step 2: Update UI with progress
   await uiProxy.updateProgress(50);
-  
+
   // Step 3: Perform document manipulation here...
-  
+
   // Step 4: Notify UI when complete
   await uiProxy.updateProgress(100);
 }
@@ -441,7 +441,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
   const { runtime } = addOnUISdk.instance;
-  
+
   // Expose functions that document sandbox can call
   runtime.exposeApi({
     updateProgress: function(percentage) {
@@ -497,7 +497,6 @@ const uiProxy = await runtime.apiProxy(RuntimeType.panel);
 
 - **From iframe runtime**: Call `runtime.apiProxy(RuntimeType.documentSandbox)` to communicate with the document sandbox
   - Requires `"documentSandbox": "code.js"` in your manifest
-  
 - **From document sandbox**: Call `runtime.apiProxy(RuntimeType.panel)` to communicate with the iframe runtime
   - The panel type matches `"type": "panel"` from your manifest
 
@@ -531,7 +530,7 @@ import addOnUISdk, { RuntimeType } from "https://express.adobe.com/static/add-on
 addOnUISdk.ready.then(async () => {
   const { runtime } = addOnUISdk.instance;
   const sandboxProxy = await runtime.apiProxy(RuntimeType.documentSandbox);
-  
+
   document.getElementById("createBtn").onclick = async () => {
     await sandboxProxy.createTextElement("Hello!");
   };
@@ -568,9 +567,9 @@ import addOnUISdk, { RuntimeType } from "https://express.adobe.com/static/add-on
 addOnUISdk.ready.then(async () => {
   const { runtime } = addOnUISdk.instance;
   const sandboxProxy = await runtime.apiProxy(RuntimeType.documentSandbox);
-  
+
   const stats = await sandboxProxy.getDocumentStats();
-  document.getElementById("stats").textContent = 
+  document.getElementById("stats").textContent =
     `Pages: ${stats.pageCount}, Elements: ${stats.elementCount}`;
 });
 
@@ -606,14 +605,14 @@ import addOnUISdk, { RuntimeType } from "https://express.adobe.com/static/add-on
 
 addOnUISdk.ready.then(async () => {
   const { runtime } = addOnUISdk.instance;
-  
+
   // Expose progress handler
   runtime.exposeApi({
     updateProgress: (percent) => {
       document.getElementById("progress").style.width = percent + "%";
     }
   });
-  
+
   const sandboxProxy = await runtime.apiProxy(RuntimeType.documentSandbox);
   await sandboxProxy.processLargeOperation();
 });
@@ -626,7 +625,7 @@ const { runtime } = addOnSandboxSdk.instance;
 runtime.exposeApi({
   processLargeOperation: async function() {
     const uiProxy = await runtime.apiProxy(RuntimeType.panel);
-    
+
     await uiProxy.updateProgress(25);
     // ... do work ...
     await uiProxy.updateProgress(50);

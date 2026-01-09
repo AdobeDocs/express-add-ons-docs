@@ -796,7 +796,7 @@ To see thecomplete file structures of all 10 templates, refer to the template-sp
 ### Getting Started
 
 - [Hello, World! Tutorial](./hello-world.md) - Create your first add-on
-- [Code Playground](./code_playground.md) - Experiment with add-on APIs in your browser
+- [Code Playground](./code-playground.md) - Experiment with add-on APIs in your browser
 - [Development Tools](./local_development/dev_tooling.md) - CLI commands and local development
 - [Adobe Express Add-on MCP Server](./local_development/mcp_server.md) - AI-assisted development with LLMs
 

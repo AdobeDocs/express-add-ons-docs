@@ -434,7 +434,7 @@ Distribution platform where users discover and install add-ons within [Adobe Exp
 
 ### **Code Playground**
 
-Interactive browser-based development environment for experimenting with add-on APIs without local setup. See the [Code Playground](../../getting_started/code_playground.md) guide for more details.
+Interactive browser-based development environment for experimenting with add-on APIs without local setup. See the [Code Playground](../../getting_started/code-playground.md) guide for more details.
 
 ### **Adobe Express Add-on CLI**
 
