@@ -54,7 +54,7 @@ faq:
       answer: "Because `fromPostscriptName()` is async; wrap the style edit in `editor.queueAsyncEdit()`."
 
     - question: "How do I apply paragraph-level formatting?"
-      answer: 'Use `fullContent.applyParagraphStyles(styles, range)` (requires `"experimentalApis": true` in the `manifest.json`).'
+      answer: 'Use `fullContent.applyParagraphStyles(styles, range)`.'
 
     - question: "Where can I inspect paragraph formats?"
       answer: "Read or modify `fullContent.paragraphStyleRanges`."
@@ -97,7 +97,7 @@ The `editor.createText()` method accepts a string as a parameter, and returns a 
 
 ### Example: Create basic Text
 
-```js
+```js{try id=createBasicText}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -149,7 +149,7 @@ Although possible, it's not recommended to replace the text content of a `TextNo
 
 #### Example: Basic Text Replacement
 
-```js
+```js{try id=replaceTextBasic}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -271,7 +271,7 @@ The `insertText()` method inserts new text at a specific position within the exi
 
 #### Example: Basic Text Insertion
 
-```js
+```js{try id=insertTextWithColor}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -289,7 +289,7 @@ textNode.setPositionInParent(
 // Add the TextNode to the document
 insertionParent.children.append(textNode);
 
-// Insert text at position 10
+// Insert text at position 6
 contentModel.insertText(
   "Express ",
   6,
@@ -351,7 +351,7 @@ The `appendText()` method adds new text to the end of the existing content. It a
 
 #### Example: Append Text
 
-```js
+```js{try id=appendTextMultiple}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -386,9 +386,9 @@ The `deleteText()` method removes a specific range of text from the content. It 
 
 #### Example: Delete Text Range
 
-```js
+```js{try id=deleteTextRange}
 // sandbox/code.js
-import { editor, constants } from "express-document-sdk";
+import { editor } from "express-document-sdk";
 
 // Create a new TextNode
 const textNode = editor.createText("It's Friday, don't deploy to Production!");
@@ -404,7 +404,7 @@ textNode.setPositionInParent(
 // Add the TextNode to the document
 insertionParent.children.append(textNode);
 
-// Delete 13 characters starting at position 6
+// Delete 6 characters starting at position 13
 contentModel.deleteText({ start: 13, length: 6 });
 
 // It's Friday, don't deploy to Production!
@@ -413,7 +413,6 @@ contentModel.deleteText({ start: 13, length: 6 });
 // It's Friday, deploy to Production!
 
 // You can delete multiple ranges calling the method as many times as needed
-
 contentModel.deleteText({ start: 12, length: 22 });
 
 // It's Friday!
@@ -786,10 +785,6 @@ try {
 
 Paragraph styles can be applied to a TextNode using the [`fullContent.applyParagraphStyles()`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#applyparagraphstyles) method. This method applies one or more style properties to entire paragraphs within the specified range, while leaving any style properties that are not provided unchanged. In contrast to directly setting the [`paragraphStyleRanges`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md#paragraphstyleranges) property—which resets any unspecified properties to their defaults—using `applyParagraphStyles()` lets you update only the desired aspects of the style.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
-
 The available properties are defined by the [`ParagraphStylesInput`](../../../references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md) interface and include:
 
 - **lineSpacing**: Specifies the spacing between lines (leading), expressed as a multiple of the font’s default spacing (e.g. 1.5 means 150% of normal).
@@ -958,7 +953,7 @@ for (const textNode of selectedTextNode.fullContent.allTextNodes) {
 
 #### Q: How do I apply paragraph-level formatting?
 
-**A:** Use `fullContent.applyParagraphStyles(styles, range)` (requires `"experimentalApis": true` in the `manifest.json`).
+**A:** Use `fullContent.applyParagraphStyles(styles, range)`.
 
 #### Q: Where can I inspect paragraph formats?
 

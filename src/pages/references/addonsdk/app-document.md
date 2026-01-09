@@ -257,10 +257,6 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 Retrieves the currently selected page ids in the document.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `getSelectedPageIds(): Promise<string[]>`
@@ -382,7 +378,7 @@ The options to pass into the link method.
 
 ### addImage()
 
-Adds an image/gif/Ps/Ai files to the current page.
+Adds an image/gif/PSD/AI/SVG file to the current page.
 
 #### Signature
 
@@ -393,7 +389,7 @@ Adds an image/gif/Ps/Ai files to the current page.
 | Name               | Type                                        |                                                                              Description |
 | ------------------ | ------------------------------------------- | ---------------------------------------------------------------------------------------: |
 | `imageBlob`        | `Blob`                                      |                                                            The image to add to the page. |
-| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding image/Ps/Ai files to the page (i.e., `title`). |
+| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding image/PSD/AI/SVG files to the page (i.e., `title`). |
 | `importAddOnData?` | [`ImportAddOnData`](#importaddondata)       |                                      Add-on specific metadata to attach to the imported asset. |
 
 #### Return Value
@@ -723,7 +719,15 @@ async function importPresentationFrom(url) {
 
 ### Image requirements
 
-When importing images, the size of the images for all types **except `gif`** images should not exceed **8000px** or **80MB**—see the full [image requirements](https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html) for more details.
+When importing images, the following limits apply for all types **except `gif`** images:
+
+- **Maximum dimension:** 8192px (width or height)
+- **Maximum file size:** 80MB (desktop) or 40MB (mobile)
+- **Maximum pixel count:** 65 million pixels (width × height)
+
+**Supported formats:** AI, GIF, HEIC, JPEG, JPG, PNG, PSB, PSD, PSDT, SVG, and WEBP.
+
+See the full [image requirements](https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html) for more details.
 
 For `gif` images, [the technical requirements are listed here](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html) and summarized below for quick reference:
 

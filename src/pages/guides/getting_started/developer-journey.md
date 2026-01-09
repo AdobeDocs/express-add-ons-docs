@@ -74,7 +74,7 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 
 ## Learn
 
-The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code_playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
+The best way to learn is by doing! Adobe Express integrates a [Playground](../getting_started/code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
 <br/><br/><div style="display: flex; justify-content: center;">
 
@@ -83,13 +83,15 @@ The best way to learn is by doing! Adobe Express integrates a [Playground](../ge
 
 ### Run the Code Playground
 
-You need to tick a few boxes in the application in order to enable it, as the animation below shows.
+To launch the Code Playground experience, follow [this link](https://www.adobe.com/go/addon-playground) or click the button below.
 
-![Enable Developer Settings](./img/enable-playground.gif)
+<TextBlock slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
 
-Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code_playground.md#script-mode) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code_playground.md) for more details.
+- [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 
-[![Code Playground](./img/playground.png)](./code_playground.md)
+Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](./code-playground-script-mode.md) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](./code-playground.md) for more details.
+
+[![Code Playground](./img/playground.png)](./code-playground.md)
 
 ### Explore the How-to Guides
 
@@ -111,9 +113,9 @@ To build a more complex add-on, you can use our free [Command Line Interface (CL
 
 ![doc sandbox prompt](./local_development/img/CLI-template-prompt.png)
 
-<InlineAlert slots="text1" variant="info" />
+<InlineAlert slots="text1" variant="success" />
 
-We're actively working on improving the Code Playground so that existing project can be migrated to the CLI seamlessly.
+The Code Playground can [export your project as a zip file](./code-playground-workflow.md#download-your-code) so that existing add-ons projects can be migrated to the CLI seamlessly.
 
 ### Next steps
 

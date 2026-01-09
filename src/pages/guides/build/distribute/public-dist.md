@@ -85,7 +85,7 @@ To distribute your add-on, you must create an add-on listing.
 If you have already performed the listing creation steps, e.g. to create a Private Link as outlined here, feel free to skip to
 [Step 3](#step-3-create-a-new-public-listing).
 
-Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/quickstart.md#step-3-enable-add-on-development-mode-first-time-only), you can do so in two ways, which will invoke the same in-app distribution experience.
+Provided that you've enabled Add-on Development in your user's settings as described [here](../../getting_started/hello-world.md#enable-add-on-development-mode), you can do so in two ways, which will invoke the same in-app distribution experience.
 
 **1.** From the Adobe Express home page, click the Add-ons link in the left-hand navigation.
 
@@ -176,10 +176,6 @@ If the `zip` validation is successful, you will see a green checkmark next to th
 The rise of Generative AI offers significant benefits for add-ons and streamlines content creation and workflows. Adobe encourages user choice regarding add-ons using Generative AI, but transparency is paramount. Your AI-powered add-on must not generate illegal content, and it must be clear and transparent about how generative AI is used in your add-on.
 
 In this section, you'll have to answer a variety of questions, depending on the type of AI-based content your add-on generates, the input it accepts, whether you test the output, etc. Carefully review our [AI usage guidelines](./guidelines/genai/index.md) to get the latest information on Adobe's requirements and recommendations to try add-ons that employ Generative AI technology.
-
-<InlineAlert slots="text" variant="warning"/>
-
-If your add-on uses Generative AI features, you will be required to sign the GenAI Add-on agreement after submitting your add-on for review. This agreement will be sent to you via email and must be completed before your add-on can be approved for the marketplace.
 
 ### Step 8: Enter the monetization details
 

@@ -101,7 +101,7 @@ Use the [`editor.documentRoot.pages.addPage()`](../../../references/document-san
 
 #### JavaScript
 
-```js
+```js{try id=addStandardPage}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -287,7 +287,7 @@ const lastPage: PageNode = allPages[allPages.length - 1];
 
 #### JavaScript
 
-```js
+```js{try id=addContentToNewPage}
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -607,7 +607,7 @@ Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly wi
 
 - **[Page Metadata](page_metadata.md)** - Get detailed information about pages, including dimensions, content types, and selected page IDs
 - **[Document Metadata](document_metadata.md)** - Access document-level information and listen for document events
-- **[getSelectedPageIds() API](../../../references/addonsdk/app-document.md#getselectedpageids)** - Retrieve IDs of currently selected pages (experimental)
+- **[getSelectedPageIds() API](../../../references/addonsdk/app-document.md#getselectedpageids)** - Retrieve IDs of currently selected pages
 
 ### Working with Page Content
 

@@ -91,6 +91,7 @@ interacts with other siblings within the same container. See documentation below
 
 The normal, default blend mode for leaf nodes.
 
+<InlineAlert slots="text" variant="info"/>
 Note: Group nodes default to using `passThrough` blend mode instead. See below.
 
 ---

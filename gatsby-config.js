@@ -147,6 +147,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/BaseNode.md",
                   },
                   {
+                    title: "BitmapImage",
+                    path: "references/document-sandbox/document-apis/classes/BitmapImage.md",
+                  },
+                  {
                     title: "ColorUtils",
                     path: "references/document-sandbox/document-apis/classes/ColorUtils.md",
                   },
@@ -167,8 +171,20 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
                   },
                   {
+                    title: "ExpressContext",
+                    path: "references/document-sandbox/document-apis/classes/ExpressContext.md",
+                  },
+                  {
+                    title: "ExpressEditor",
+                    path: "references/document-sandbox/document-apis/classes/ExpressEditor.md",
+                  },
+                  {
                     title: "ExpressRootNode",
                     path: "references/document-sandbox/document-apis/classes/ExpressRootNode.md",
+                  },
+                  {
+                    title: "ExpressViewport",
+                    path: "references/document-sandbox/document-apis/classes/ExpressViewport.md",
                   },
                   {
                     title: "FillableNode",
@@ -243,6 +259,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/SolidColorShapeNode.md",
                   },
                   {
+                    title: "StandaloneTextContentModel",
+                    path: "references/document-sandbox/document-apis/classes/StandaloneTextContentModel.md",
+                  },
+                  {
                     title: "StandaloneTextNode",
                     path: "references/document-sandbox/document-apis/classes/StandaloneTextNode.md",
                   },
@@ -263,6 +283,14 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/TextNode.md",
                   },
                   {
+                    title: "TextNodeContentModel",
+                    path: "references/document-sandbox/document-apis/classes/TextNodeContentModel.md",
+                  },
+                  {
+                    title: "ThreadedTextContentModel",
+                    path: "references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md",
+                  },
+                  {
                     title: "ThreadedTextNode",
                     path: "references/document-sandbox/document-apis/classes/ThreadedTextNode.md",
                   },
@@ -277,10 +305,6 @@ module.exports = {
                   {
                     title: "UnknownNode",
                     path: "references/document-sandbox/document-apis/classes/UnknownNode.md",
-                  },
-                  {
-                    title: "Viewport",
-                    path: "references/document-sandbox/document-apis/classes/Viewport.md",
                   },
                   {
                     title: "VisualNode",
@@ -557,7 +581,29 @@ module.exports = {
           },
           {
             title: "Code Playground",
-            path: "guides/getting_started/code_playground.md",
+            path: "guides/getting_started/code-playground.md",
+            pages: [
+              {
+                title: "Overview",
+                path: "guides/getting_started/code-playground.md",
+              },
+              {
+                title: "Script Mode",
+                path: "guides/getting_started/code-playground-script-mode.md",
+              },
+              {
+                title: "Add-on Mode",
+                path: "guides/getting_started/code-playground-addon-mode.md",
+              },
+              {
+                title: "Workflow & Productivity",
+                path: "guides/getting_started/code-playground-workflow.md",
+              },
+              {
+                title: "Troubleshooting",
+                path: "guides/getting_started/code-playground-troubleshooting.md",
+              },
+            ],
           },
           {
             title: "Local Development",
@@ -578,6 +624,10 @@ module.exports = {
               {
                 title: "VS Code debugging",
                 path: "guides/getting_started/local_development/vs-code.md",
+              },
+              {
+                title: "Known Issues & Limitations",
+                path: "guides/getting_started/local_development/known_issues_limitations.md",
               },
             ],
           },

@@ -1,7 +1,3 @@
-**@express-document-sdk** • **Docs**
-
----
-
 # @express-document-sdk
 
 ## Namespaces
@@ -37,7 +33,10 @@
 -   [Context](classes/Context.md)
 -   [Editor](classes/Editor.md)
 -   [EllipseNode](classes/EllipseNode.md)
+-   [ExpressContext](classes/ExpressContext.md)
+-   [ExpressEditor](classes/ExpressEditor.md)
 -   [ExpressRootNode](classes/ExpressRootNode.md)
+-   [ExpressViewport](classes/ExpressViewport.md)
 -   [FillableNode](classes/FillableNode.md)
 -   [Fonts](classes/Fonts.md)
 -   [GridCellNode](classes/GridCellNode.md)
@@ -57,17 +56,18 @@
 -   [RectangleNode](classes/RectangleNode.md)
 -   [RestrictedItemList](classes/RestrictedItemList.md)
 -   [SolidColorShapeNode](classes/SolidColorShapeNode.md)
+-   [StandaloneTextContentModel](classes/StandaloneTextContentModel.md)
 -   [StandaloneTextNode](classes/StandaloneTextNode.md)
 -   [StrokableNode](classes/StrokableNode.md)
 -   [StrokeShapeNode](classes/StrokeShapeNode.md)
 -   [TextContentModel](classes/TextContentModel.md)
 -   [TextNode](classes/TextNode.md)
 -   [TextNodeContentModel](classes/TextNodeContentModel.md)
+-   [ThreadedTextContentModel](classes/ThreadedTextContentModel.md)
 -   [ThreadedTextNode](classes/ThreadedTextNode.md)
 -   [UnavailableFont](classes/UnavailableFont.md)
 -   [UnknownMediaRectangleNode](classes/UnknownMediaRectangleNode.md)
 -   [UnknownNode](classes/UnknownNode.md)
--   [Viewport](classes/Viewport.md)
 -   [VisualNode](classes/VisualNode.md)
 
 ## Interfaces
@@ -99,6 +99,7 @@
 -   [Point](interfaces/Point.md)
 -   [Rect](interfaces/Rect.md)
 -   [RectangleGeometry](interfaces/RectangleGeometry.md)
+-   [RemoveListStyleInput](interfaces/RemoveListStyleInput.md)
 -   [SolidColorStroke](interfaces/SolidColorStroke.md)
 -   [Stroke](interfaces/Stroke.md)
 -   [StyleRange](interfaces/StyleRange.md)
@@ -111,6 +112,7 @@
 -   [EditorEventHandler](type-aliases/EditorEventHandler.md)
 -   [EventHandlerId](type-aliases/EventHandlerId.md)
 -   [Font](type-aliases/Font.md)
+-   [ListStyleInput](type-aliases/ListStyleInput.md)
 -   [OrderedListStyle](type-aliases/OrderedListStyle.md)
 -   [SolidColorStrokeWithOptionalType](type-aliases/SolidColorStrokeWithOptionalType.md)
 -   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)

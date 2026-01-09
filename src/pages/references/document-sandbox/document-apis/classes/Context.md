@@ -4,19 +4,11 @@
 
 Contains the user's current selection state, indicating the content they are focused on.
 
+## Extended by
+
+-   [`ExpressContext`](ExpressContext.md)
+
 ## Accessors
-
-### currentPage
-
-• `get` **currentPage**(): [`PageNode`](PageNode.md)
-
-#### Returns
-
-[`PageNode`](PageNode.md)
-
-The currently viewed page.
-
----
 
 ### hasSelection
 
@@ -68,7 +60,8 @@ Only node(s) that meet the following criteria can be selected:
 
 readonly [`Node`](Node.md)[]
 
-the current selection. Nodes that are locked or otherwise non-editable are never included in the selection.
+the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
+selection (see [selectionIncludingNonEditable](Context.md#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
 
 ---
 
@@ -115,6 +108,7 @@ Callback that was previously registered will be removed and will no more be invo
 
 Registers a handler for editor events such as selection change.
 The registered callback will be invoked when the specified event occurs.
+<InlineAlert slots="text" variant="info"/>
 Note: Do not attempt to make changes to the document in response to a selection change callback because it may destabilize the application.
 
 #### Parameters

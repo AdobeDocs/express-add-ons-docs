@@ -2,9 +2,8 @@
 
 # Class: RestrictedItemList<T\>
 
-Base for ItemLists that have restricted behavior on how items are added to the list,
-but allow items to be removed and reordered. Subclasses like ItemList may add more
-capabilities, however.
+Base for ItemLists that restrict how items are added to the list, but freely allow items to be removed and
+reordered. The [ItemList](ItemList.md) subclass adds more capabilities, however.
 
 ## Extends
 
