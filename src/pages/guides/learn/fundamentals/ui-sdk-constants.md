@@ -65,9 +65,11 @@ Add-on UI SDK constants provide type-safe ways to interact with the Add-on UI SD
 
 Constants equal their variable name as a string (e.g., `ButtonType.primary` equals `"primary"`), but using constants provides type safety, IDE autocomplete, and future-proofing against API changes.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="header, text" variant="info"/>
 
-For complete technical specifications of all constants, see the [Constants Reference](../../../references/addonsdk/addonsdk-constants.md).
+Add-on UI vs. Document Sandbox constants
+
+Separate sets of constants are available in both the Add-on UI and the [Document Sandbox](./document-sandbox-constants.md) environments. For the complete technical specification on the constants covered in this guide, see the [Add-on UI Constant Reference](../../../references/addonsdk/addonsdk-constants.md).
 
 ## Quick Start
 
@@ -189,9 +191,9 @@ Understanding import patterns is crucial for avoiding runtime errors. Adobe Expr
 These constants **must be imported** and are **not available** through `addOnUISdk.constants.*`:
 
 ```javascript
-import addOnUISdk, { 
+import addOnUISdk, {
   AppEvent,              // ❌ NOT in constants object
-  ColorPickerEvent,      // ❌ NOT in constants object  
+  ColorPickerEvent,      // ❌ NOT in constants object
   SupportedMimeTypes,    // ❌ NOT in constants object
   EntrypointType         // ❌ NOT in constants object
 } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -259,7 +261,7 @@ const event = AppEvent.themechange;
 // ❌ Fragile - might break if API changes
 await createRenditions({
     range: "currentPage",    // String literal
-    format: "image/png"      // String literal  
+    format: "image/png"      // String literal
 });
 ```
 
@@ -315,6 +317,6 @@ await createRenditions({
 - **Complete Reference**: See [Constants Reference](../../../references/addonsdk/addonsdk-constants.md) for all available constants
 - **Practical Guides**:
   - [Create Renditions](../how_to/create_renditions.md) - Using export constants
-  - [Modal Dialogs](../how_to/modal_dialogs.md) - Using dialog constants  
+  - [Modal Dialogs](../how_to/modal_dialogs.md) - Using dialog constants
   - [Use Color](../how_to/use_color.md) - Using color picker constants
   - [Theme & Locale](../how_to/theme_locale.md) - Using event constants

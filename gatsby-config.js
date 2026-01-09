@@ -791,7 +791,7 @@ module.exports = {
               {
                 title: "iframe Runtime Context & Security",
                 path: "guides/learn/platform_concepts/context.md",
-              },              
+              },
               {
                 title: "The Document API",
                 path: "guides/learn/platform_concepts/document-api.md",
@@ -807,13 +807,13 @@ module.exports = {
                 path: "guides/learn/fundamentals/terminology.md",
               },
               {
-                title: "Using Add-on UI SDK Constants",
+                title: "Use Add-on UI SDK Constants",
                 path: "guides/learn/fundamentals/ui-sdk-constants.md",
               },
               {
-                title: "Using Document Sandbox Constants",
+                title: "Use Document Sandbox Constants",
                 path: "guides/learn/fundamentals/document-sandbox-constants.md",
-              }              
+              },
             ],
           },
           {

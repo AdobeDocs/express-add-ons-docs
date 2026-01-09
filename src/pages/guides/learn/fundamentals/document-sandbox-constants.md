@@ -71,9 +71,11 @@ Document Sandbox constants provide type-safe ways to interact with the Document 
 
 Constants equal their variable name as a string (e.g., `FillType.color` equals `"color"`), but using constants provides type safety, IDE autocomplete, and future-proofing against API changes. They ensure consistency when working with document elements, styling, and content creation.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="header, text" variant="info"/>
 
-For complete technical specifications of all document constants, see the [Document APIs Constants Reference](../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md).
+Add-on UI vs. Document Sandbox constants
+
+Separate sets of constants are available in both the [Add-on UI](ui-sdk-constants.md) and the Document Sandbox environments. For the complete technical specification on the constants covered in this guide, see the [Document APIs Constants Reference](../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md)
 
 ## Quick Start
 
@@ -253,13 +255,13 @@ import { editor, constants } from "express-document-sdk";
 
 function createStyledRectangle(color, strokeColor) {
   const rect = editor.createRectangle();
-  
+
   // Set fill
   rect.fill = {
     type: constants.FillType.color,
     color: color
   };
-  
+
   // Set stroke
   rect.stroke = {
     type: constants.StrokeType.color,
@@ -267,10 +269,10 @@ function createStyledRectangle(color, strokeColor) {
     width: 2,
     position: constants.StrokePosition.inside
   };
-  
+
   // Set blend mode
   rect.blendMode = constants.BlendMode.normal;
-  
+
   return rect;
 }
 ```
@@ -284,16 +286,16 @@ function createFormattedText(content, alignment = constants.TextAlignment.left) 
   const textNode = editor.createText();
   textNode.text = content;
   textNode.textAlignment = alignment;
-  
+
   // Apply character styling
   const characterStyles = {
     fontSize: 24,
     fontFamily: "Arial",
     textScriptStyle: constants.TextScriptStyle.none
   };
-  
+
   textNode.setRangeCharacterStyles(0, content.length, characterStyles);
-  
+
   return textNode;
 }
 ```
@@ -305,7 +307,7 @@ import { editor, constants } from "express-document-sdk";
 
 function processSelectedNodes() {
   const selection = editor.context.selection;
-  
+
   selection.forEach(node => {
     // Type-safe node processing
     if (node.type === constants.SceneNodeType.rectangle || node.type === constants.SceneNodeType.ellipse) {

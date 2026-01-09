@@ -416,12 +416,12 @@ Both template types use Spectrum Web Components by default. The key difference i
 
 ### What are SWC Templates?
 
-**SWC** stands for **Spectrum Web Components** - Adobe's implementation of the Spectrum design system as web components.
+**SWC** stands for [**Spectrum Web Components**](https://opensource.adobe.com/spectrum-web-components/) - Adobe's implementation of the Spectrum design system as web components.
 
 **SWC templates are characterized by:**
 
 - **Vanilla JavaScript** (no UI framework like React)
-- **Lit** for creating custom web components
+- [**Lit**](https://lit.dev/docs/v1/lit-html/introduction/) for creating custom web components
 - **Native Spectrum Web Components** (`<sp-button>`, `<sp-theme>`, etc.)
 - **CSS-in-JS** (styles written in `.css.ts` or `.css.js` files)
 - **Webpack** for bundling
@@ -545,6 +545,12 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 | **State Management**     | Lit reactive properties               | React hooks/state                             |
 | **Accessibility**        | ✅ Built-in (Spectrum)                | ✅ Built-in (Spectrum)                        |
 | **Developer Experience** | Standards-based                       | Familiar React patterns                       |
+
+<InlineAlert variant="info" slots="header, text"/>
+
+SWC and JS Libraries
+
+As a developer, you can use other libraries than Lit. For example, if you are a React developer, you can use [**@swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to implement SWC components in your add-ons.
 
 ### The Bottom Line
 
