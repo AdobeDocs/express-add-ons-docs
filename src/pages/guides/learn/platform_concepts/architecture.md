@@ -347,7 +347,9 @@ This abstraction ensures:
 
 To manipulate the document from your UI, use the following pattern:
 
-**Example: Iframe Runtime (ui/index.js)**
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, JavaScript" />
+
+#### Iframe Runtime (ui/index.js)
 
 ```js
 /**
@@ -373,7 +375,7 @@ addOnUISdk.ready.then(async () => {
 });
 ```
 
-**Example: Document Sandbox (sandbox/code.js)**
+#### Document Sandbox (sandbox/code.js)
 
 ```js
 /**
@@ -400,7 +402,9 @@ runtime.exposeApi({
 
 To update the UI from the document sandbox, use the following pattern:
 
-**Example: Document Sandbox (sandbox/code.js)**
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, JavaScript" />
+
+#### Document Sandbox (sandbox/code.js)
 
 ```js
 /**
@@ -428,7 +432,7 @@ async function processDocument() {
 }
 ```
 
-**Example: Iframe Runtime (ui/index.js)**
+#### Iframe Runtime (ui/index.js)
 
 ```js
 /**

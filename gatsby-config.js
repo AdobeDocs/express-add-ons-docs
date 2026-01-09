@@ -606,16 +606,16 @@ module.exports = {
             ],
           },
           {
+            title: "Dev MCP Server",
+            path: "guides/getting_started/local_development/mcp_server.md",
+          },
+          {
             title: "Local Development",
             path: "guides/getting_started/local_development/dev_tooling.md",
             pages: [
               {
                 title: "Development tools",
                 path: "guides/getting_started/local_development/dev_tooling.md",
-              },
-              {
-                title: "Adobe Express Add-on MCP Server (Beta)",
-                path: "guides/getting_started/local_development/mcp_server.md",
               },
               {
                 title: "Browser debugging",
@@ -731,16 +731,16 @@ module.exports = {
                     path: "guides/learn/how_to/use_pdf_powerpoint.md",
                   },
                   {
+                    title: "Handle Element Selection",
+                    path: "guides/learn/how_to/handle_selection.md",
+                  },
+                  {
                     title: "Group Elements",
                     path: "guides/learn/how_to/group_elements.md",
                   },
                   {
                     title: "Resize & Rescale Elements",
                     path: "guides/learn/how_to/resize_rescale_elements.md",
-                  },
-                  {
-                    title: "Handle Element Selection",
-                    path: "guides/learn/how_to/handle_selection.md",
                   },
                   {
                     title: "Position Elements",
