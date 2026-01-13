@@ -738,10 +738,10 @@ module.exports = {
                     title: "Group Elements",
                     path: "guides/learn/how_to/group_elements.md",
                   },
-                  {
-                    title: "Resize & Rescale Elements",
-                    path: "guides/learn/how_to/resize_rescale_elements.md",
-                  },
+                  // {
+                  //   title: "Resize & Rescale Elements",
+                  //   path: "guides/learn/how_to/resize_rescale_elements.md",
+                  // },
                   {
                     title: "Position Elements",
                     path: "guides/learn/how_to/position_elements.md",
