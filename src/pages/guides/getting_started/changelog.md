@@ -29,7 +29,8 @@ contributors:
 
 ### Adobe Express Developer MCP Server Updates
 
-- The **[Adobe Express Developer MCP Server](./local_development/mcp_server.md) is now generally available**. Formerly known as the Adobe Express Add-on MCP Server (Beta), it has been renamed and released as a stable, production-ready solution. Learn how to set it up and use it to enhance your development workflow in compatible editors such as Cursor.
+- The Adobe Express Add-on MCP Server (Beta) has been replaced by the **[Adobe Express Developer MCP Server](./local_development/mcp_server.md)**, which is now officially supported and production ready.
+- It ships under a new npm package (`@adobe/express-developer-mcp`) and supersedes the beta version (`@adobe/express-add-on-dev-mcp`) now deprecated, in all MCP configurations. Learn how to set it up and use it to enhance your development workflow in compatible editors such as Cursor.
 
 ### Added
 

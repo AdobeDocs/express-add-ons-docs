@@ -16,9 +16,10 @@ keywords:
   - TypeScript Definitions
   - IDE 
 title: Adobe Express Developer MCP Server
-description: Learn how to set up and use the Adobe Express Add-on MCP Server for enhanced development workflow in compatible editors like Cursor.
+description: Learn how to set up and use the Adobe Express Developer MCP Server for enhanced development workflow in compatible editors like Cursor.
 contributors:
   - https://github.com/hollyschinsky
+  - https://github.com/undavide
 ---
 
 # Adobe Express Developer MCP Server
@@ -34,11 +35,19 @@ If you are already familiar with the concepts of Model Context Protocol (MCP) an
   "mcpServers": {
     "adobe-express-add-on": {
       "command": "npx",
-      "args": ["@adobe/express-add-on-dev-mcp@latest", "--yes"]
+      "args": ["@adobe/express-developer-mcp@latest", "--yes"]
     }
   }
 }
 ```
+
+<InlineAlert variant="info" slots="header, text1, text2"/>
+
+New Stable MCP Server
+
+The Adobe Express Add-on MCP Server (Beta) has been replaced by the **Adobe Express Developer MCP Server**, which is now officially supported and production ready.
+
+It ships under a new npm package (`@adobe/express-developer-mcp`) and supersedes the beta version (`@adobe/express-add-on-dev-mcp`) now deprecated, in all MCP configurations.
 
 **Configuration file locations:**
 
@@ -75,7 +84,7 @@ The MCP Server communicates directly with your LLM to enhance its responses by c
 
 ## Prerequisites
 
-- **Node.js 18+** (check with `node --version`) - Required to run the [Adobe Express Add-on MCP Server package](https://www.npmjs.com/package/@adobe/express-add-on-dev-mcp) via `npx`
+- **Node.js 18+** (check with `node --version`) - Required to run the [Adobe Express Add-on MCP Server package](https://www.npmjs.com/package/@adobe/express-developer-mcp) via `npx`
 - **MCP-compatible IDE** - Such as Cursor, Claude Desktop, VS Code or other editors supporting the Model Context Protocol
 
 ## Quick Setup (No Installation Required)
@@ -94,7 +103,7 @@ Add this to `~/.cursor/mcp.json`:
     "adobe-express-add-on": {
       "command": "npx",
       "args": [
-        "@adobe/express-add-on-dev-mcp@latest",
+        "@adobe/express-developer-mcp@latest",
         "--yes"
       ]
     }
@@ -112,7 +121,7 @@ Add this to `claude_desktop_config.json`:
     "adobe-express-add-on": {
       "command": "npx",
       "args": [
-        "@adobe/express-add-on-dev-mcp@latest",
+        "@adobe/express-developer-mcp@latest",
         "--yes"
       ]
     }
@@ -130,7 +139,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
     "adobe-express-add-on": {
       "command": "npx",
       "args": [
-        "@adobe/express-add-on-dev-mcp@latest",
+        "@adobe/express-developer-mcp@latest",
         "--yes"
       ]
     }
