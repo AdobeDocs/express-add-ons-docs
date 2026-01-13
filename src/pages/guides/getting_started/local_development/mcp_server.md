@@ -156,7 +156,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
     <p>Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:</p>
   </div>
   <div className="image-column">
-    <img src="./img/mcp-server-enabled.png" alt="headings" className="responsive-image" />
+    <img src="./img/stable-mcp-server-enabled.png" alt="headings" className="responsive-image" />
   </div>
 </div>
 
