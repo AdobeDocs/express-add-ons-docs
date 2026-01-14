@@ -99,7 +99,7 @@ Your add-on will allow users to create a variable number of rows and columns, co
 
 As part of the [Document Model Sandbox](/references/document-sandbox/index.md), the Adobe Express Document API (from now on, Document API) is a powerful tool that extends the capabilities of Adobe Express add-ons, offering direct interaction with the open document. Let's take a moment to review the difference between the two core components of the architecture of an add-on.
 
-- The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](../../platform_concepts/context.md#iframe-sandbox)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
+- The **iframe** hosts the add-on User Interface and runs its internal logic. You can think about it as a web application operating in a sandboxed environment: it needs to be separate from the rest of the Adobe Express content for security reasons, which is precisely why the add-on is hosted within an `<iframe>` element (a detailed technical description is found [here](../../platform_concepts/context.md#iframe-runtime-context--security)). If you come from a CEP/UXP background, it's akin to developing the panel of an extension or plugin.
 - The **Document Model Sandbox**: allows you to operate on the document. It's a sandboxed JavaScript environment that communicates with the iframe (thanks to the [Communication API](/references/document-sandbox/communication/)), providing access to the [Document API](/references/document-sandbox/document-apis/). Drawing the parallel with CEP and UXP again, it represents scripting; that is, the possibility to drive Adobe Express programmatically and, for example, add pages or artboards, create new shapes, rotate or group them, etc.
 
 This is a high-level overview of the overall structure; while the implementation has more technical nuances, there's no need to dive deeper now.
@@ -569,7 +569,7 @@ The only tricky UI bit worth mentioning here is relative to the **color pickers*
 import addOnUISdk, {
   ColorPickerEvent,
   ColorPickerPlacement,
-} from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+} from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 // ...
 

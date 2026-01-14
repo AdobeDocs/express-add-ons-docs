@@ -250,7 +250,7 @@ This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetada
 
 | Name                 | Type                                                   |                                                           Description |
 | -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
-| `range`              | [`Range`](../addonsdk/addonsdk-constants.md#constants) |                             Range of the document to get the metadata |
+| `range`              | [`Range`](../addonsdk/addonsdk-constants.md) |                             Range of the document to get the metadata |
 | `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ### getSelectedPageIds()
@@ -863,7 +863,7 @@ Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyo
 | Name      | Type                                                       |                                      Description |
 | --------- | ---------------------------------------------------------- | -----------------------------------------------: |
 | `amount?` | `number`                                                   |                        The amount for the bleed. |
-| `unit`    | [`BleedUnit`](../addonsdk/addonsdk-constants.md#constants) | The unit in which the bleed amount is expressed. |
+| `unit`    | [`BleedUnit`](../addonsdk/addonsdk-constants.md) | The unit in which the bleed amount is expressed. |
 
 #### `PdfPageBoxes`
 

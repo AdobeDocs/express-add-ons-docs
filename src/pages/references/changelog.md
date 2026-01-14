@@ -25,6 +25,27 @@ contributors:
 
 # Changelog
 
+## 2026-01-13
+
+### Adobe Express Developer MCP Server Updates
+
+- The Adobe Express Add-on MCP Server (Beta) has been replaced by the **[Adobe Express Developer MCP Server](../guides/getting_started/local_development/mcp_server.md)**, which is now officially supported and production ready.
+- It ships under a new npm package (`@adobe/express-developer-mcp`) and supersedes the beta version (`@adobe/express-add-on-dev-mcp`) now deprecated, in all MCP configurations. Learn how to set it up and use it to enhance your development workflow in compatible editors such as Cursor.
+
+### Added
+
+- New [Add-on Architecture](../guides/learn/platform_concepts/architecture.md) guide with dual-runtime system explanation, SDK imports and usage, and cross-runtime communication patterns.
+- New [Add-on Project Anatomy & CLI Templates](../guides/getting_started/addon-project-anatomy.md) guide with add-on project structure, file organization, and template selection for efficient Adobe Express add-on development.
+- New [Add-on Development Terminology](../guides/learn/fundamentals/terminology.md) guide with standardized definitions, decision matrices, and troubleshooting for Adobe Express Add-on development terminology.
+- New practical usage guide for [Using Add-on UI SDK Constants](../guides/learn/fundamentals/ui-sdk-constants.md), focusing on import patterns, common pitfalls, and solutions for UI SDK constants.
+- New practical usage guide for [Using Document Sandbox Constants](../guides/learn/fundamentals/document-sandbox-constants.md) to guide on the use of constants in the Document Sandbox environment, including `colorUtils` integration and practical examples.
+- New ["SDK Fundamentals"](../guides/learn/fundamentals/terminology.md) section in navigation under "Learn" to group terminology and constants usage guides for better discoverability.
+
+### Updated
+
+- **Major restructure** of the [Add-on UI SDK Constants Reference](./addonsdk/addonsdk-constants.md).
+- Improved content and metadata for SEO and AI assistant optimization.
+
 ## 2025-12-28
 
 ### Added
@@ -177,7 +198,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 - [Page Metadata how-to guide](../guides/learn/how_to/page_metadata.md) with documentation and examples for the new experimental `getSelectedPageIds()` method, including usage patterns for getting metadata of only selected pages.
 - [Create Renditions how-to guide](../guides/learn/how_to/create_renditions.md) with comprehensive PPTX export support documentation, including developer guidance about font differences and content limitations when exporting to PowerPoint format.
-- [Add-on Context guide](../guides/learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
+- [Iframe Context guide](../guides/learn/platform_concepts/context.md) with additional permissions documentation, including details about `oauth`, `clipboard`, `microphone`, and `camera` permissions beyond the existing sandbox permissions.
 - [FAQ](../guides/support/faq.md) with a new comprehensive entry about available add-on permissions and their configuration, plus updated supported file formats for imported content organized by category (Image, Design, Video, Audio).
 
 ## 2025-07-27

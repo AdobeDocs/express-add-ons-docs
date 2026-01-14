@@ -576,6 +576,10 @@ module.exports = {
             path: "guides/getting_started/hello-world.md",
           },
           {
+            title: "Project Anatomy",
+            path: "guides/getting_started/addon-project-anatomy.md",
+          },
+          {
             title: "Code Playground",
             path: "guides/getting_started/code-playground.md",
             pages: [
@@ -602,16 +606,16 @@ module.exports = {
             ],
           },
           {
+            title: "Dev MCP Server",
+            path: "guides/getting_started/local_development/mcp_server.md",
+          },
+          {
             title: "Local Development",
             path: "guides/getting_started/local_development/dev_tooling.md",
             pages: [
               {
                 title: "Development tools",
                 path: "guides/getting_started/local_development/dev_tooling.md",
-              },
-              {
-                title: "Adobe Express Add-on MCP Server (Beta)",
-                path: "guides/getting_started/local_development/mcp_server.md",
               },
               {
                 title: "Browser debugging",
@@ -727,17 +731,17 @@ module.exports = {
                     path: "guides/learn/how_to/use_pdf_powerpoint.md",
                   },
                   {
-                    title: "Group Elements",
-                    path: "guides/learn/how_to/group_elements.md",
-                  },
-                  {
-                    title: "Resize & Rescale Elements",
-                    path: "guides/learn/how_to/resize_rescale_elements.md",
-                  },
-                  {
                     title: "Handle Element Selection",
                     path: "guides/learn/how_to/handle_selection.md",
                   },
+                  {
+                    title: "Group Elements",
+                    path: "guides/learn/how_to/group_elements.md",
+                  },
+                  // {
+                  //   title: "Resize & Rescale Elements",
+                  //   path: "guides/learn/how_to/resize_rescale_elements.md",
+                  // },
                   {
                     title: "Position Elements",
                     path: "guides/learn/how_to/position_elements.md",
@@ -828,15 +832,37 @@ module.exports = {
           },
           {
             title: "Platform Concepts",
-            path: "guides/learn/platform_concepts/context.md",
+            path: "guides/learn/platform_concepts/architecture.md",
             pages: [
               {
-                title: "Add-on Iframe Context",
+                title: "Add-on Architecture",
+                path: "guides/learn/platform_concepts/architecture.md",
+              },
+              {
+                title: "iframe Runtime Context & Security",
                 path: "guides/learn/platform_concepts/context.md",
               },
               {
                 title: "The Document API",
                 path: "guides/learn/platform_concepts/document-api.md",
+              },
+            ],
+          },
+          {
+            title: "SDK Fundamentals",
+            path: "guides/learn/fundamentals/terminology.md",
+            pages: [
+              {
+                title: "Terminology",
+                path: "guides/learn/fundamentals/terminology.md",
+              },
+              {
+                title: "Use Add-on UI SDK Constants",
+                path: "guides/learn/fundamentals/ui-sdk-constants.md",
+              },
+              {
+                title: "Use Document Sandbox Constants",
+                path: "guides/learn/fundamentals/document-sandbox-constants.md",
               },
             ],
           },

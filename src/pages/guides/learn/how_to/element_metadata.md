@@ -168,13 +168,13 @@ Import-time metadata is **not supported** for PSD/AI assets. An error will be th
 ```js
 // Store metadata when importing
 // ui/index.js (iframe runtime)
-import addOnUISdk from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
   try {
     // Create or fetch your image blob
     const imageBlob = await fetch("./sample-image.png").then(r => r.blob());
-    
+
     // Import image with ImportAddOnData
     await addOnUISdk.app.document.addImage(
       imageBlob,
@@ -200,9 +200,9 @@ addOnUISdk.ready.then(async () => {
         }
       }
     );
-    
+
     console.log("✅ Image imported successfully with metadata!");
-    
+
   } catch (error) {
     console.error("❌ Failed to import image:", error);
   }
@@ -262,64 +262,64 @@ import { editor } from "express-document-sdk";
 
 function retrieveAllMediaMetadata() {
   console.log("Starting metadata retrieval...");
-  
+
   const documentRoot = editor.documentRoot;
   let mediaContainerCount = 0;
-  
+
   // Traverse document structure to find media nodes
   for (const page of documentRoot.pages) {
     console.log(`📄 Checking page: ${page.id}`);
-    
+
     for (const artboard of page.artboards) {
       console.log(`🎨 Checking artboard: ${artboard.id}`);
-      
+
       // Use recursive traversal to find all MediaContainer nodes
       traverseNodeForMedia(artboard);
     }
   }
-  
+
   function traverseNodeForMedia(node) {
     // Check if current node is a MediaContainer
     if (node.type === 'MediaContainer') {
       mediaContainerCount++;
       console.log(`\n📦 Found MediaContainer #${mediaContainerCount}: ${node.id}`);
-      
+
       try {
         // Retrieve container metadata (nodeAddOnData)
         const containerMetadata = {};
         const containerKeys = node.addOnData.keys();
-        
+
         for (const key of containerKeys) {
           containerMetadata[key] = node.addOnData.getItem(key);
         }
-        
+
         if (containerKeys.length > 0) {
           console.log('📝 Container metadata (nodeAddOnData):', containerMetadata);
         } else {
           console.log('📝 No container metadata found');
         }
-        
+
         // Access the media rectangle directly via the mediaRectangle property
         const mediaRectangle = node.mediaRectangle;
-        
+
         if (mediaRectangle) {
           console.log(`🖼️  Media rectangle type: ${mediaRectangle.type}`);
-          
+
           try {
             // Retrieve media-specific metadata (mediaAddOnData)
             const mediaMetadata = {};
             const mediaKeys = mediaRectangle.mediaAddOnData.keys();
-            
+
             for (const key of mediaKeys) {
               mediaMetadata[key] = mediaRectangle.mediaAddOnData.getItem(key);
             }
-            
+
             if (mediaKeys.length > 0) {
               console.log('🎯 Media metadata (mediaAddOnData):', mediaMetadata);
             } else {
               console.log('🎯 No media metadata found');
             }
-            
+
           } catch (error) {
             // Handle PSD/AI assets or other errors
             console.log('⚠️  Cannot access mediaAddOnData (likely PSD/AI asset):', error.message);
@@ -327,12 +327,12 @@ function retrieveAllMediaMetadata() {
         } else {
           console.log('⚠️  No media rectangle found');
         }
-        
+
       } catch (error) {
         console.error('❌ Error accessing container metadata:', error);
       }
     }
-    
+
     // Recursively traverse all children
     // MediaContainers can be nested inside groups or other containers
     if (node.allChildren) {
@@ -341,7 +341,7 @@ function retrieveAllMediaMetadata() {
       }
     }
   }
-  
+
   console.log(`\n✅ Metadata retrieval complete! Found ${mediaContainerCount} MediaContainer(s)`);
 }
 ```

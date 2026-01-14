@@ -15,15 +15,16 @@ keywords:
   - Code Generation
   - TypeScript Definitions
   - IDE 
-title: Adobe Express Add-on MCP Server (Beta)
-description: Learn how to set up and use the Adobe Express Add-on MCP Server for enhanced development workflow in compatible editors like Cursor.
+title: Adobe Express Developer MCP Server
+description: Learn how to set up and use the Adobe Express Developer MCP Server for enhanced development workflow in compatible editors like Cursor.
 contributors:
   - https://github.com/hollyschinsky
+  - https://github.com/undavide
 ---
 
-# Adobe Express Add-on MCP Server (Beta)
+# Adobe Express Developer MCP Server
 
-**Status: Public Beta** Get Adobe Express Add-ons documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
+Get Adobe Express Add-ons documentation and TypeScript definitions directly in your AI-assisted IDE through the Model Context Protocol (MCP). Build faster with grounded answers and accurate code suggestions.
 
 ## TL;DR - Quick Setup
 
@@ -34,11 +35,19 @@ If you are already familiar with the concepts of Model Context Protocol (MCP) an
   "mcpServers": {
     "adobe-express-add-on": {
       "command": "npx",
-      "args": ["@adobe/express-add-on-dev-mcp@latest", "--yes"]
+      "args": ["@adobe/express-developer-mcp@latest", "--yes"]
     }
   }
 }
 ```
+
+<InlineAlert variant="info" slots="header, text1, text2"/>
+
+New Stable MCP Server
+
+The Adobe Express Add-on MCP Server (Beta) has been replaced by the **Adobe Express Developer MCP Server**, which is now officially supported and production ready.
+
+It ships under a new npm package (`@adobe/express-developer-mcp`) and supersedes the beta version (`@adobe/express-add-on-dev-mcp`) now deprecated, in all MCP configurations.
 
 **Configuration file locations:**
 
@@ -57,15 +66,15 @@ If you are already familiar with the concepts of Model Context Protocol (MCP) an
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-💬  **Feedback requested:**
+💬 **Feedback requested:**
 
 We're actively collecting input to improve accuracy and coverage. Have feedback? Please join our [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4) for real-time chat with the team and community and share your thoughts!<br/>
 
 ## What it does
 
-> "*Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."* — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
+> "_Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools."_ — [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br/>
 
-The **Adobe Express Add-on MCP Server (Beta)** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
+The **Adobe Express Developer MCP Server** acts as a bridge between your LLM (AI assistant) and Adobe Express add-on developer resources. It requires an MCP-compatible IDE with an LLM of your choice to provide accurate, context-aware answers for coding, debugging, and building full-fledged add-ons, quickly.
 
 The MCP Server communicates directly with your LLM to enhance its responses by connecting your IDE to the Adobe Express Add-on ecosystem, providing capabilities to ask questions and generate code with:
 
@@ -75,7 +84,7 @@ The MCP Server communicates directly with your LLM to enhance its responses by c
 
 ## Prerequisites
 
-- **Node.js 18+** (check with `node --version`) - Required to run the [Adobe Express Add-on MCP Server package](https://www.npmjs.com/package/@adobe/express-add-on-dev-mcp) via `npx`
+- **Node.js 18+** (check with `node --version`) - Required to run the [Adobe Express Add-on MCP Server package](https://www.npmjs.com/package/@adobe/express-developer-mcp) via `npx`
 - **MCP-compatible IDE** - Such as Cursor, Claude Desktop, VS Code or other editors supporting the Model Context Protocol
 
 ## Quick Setup (No Installation Required)
@@ -94,7 +103,7 @@ Add this to `~/.cursor/mcp.json`:
     "adobe-express-add-on": {
       "command": "npx",
       "args": [
-        "@adobe/express-add-on-dev-mcp@latest",
+        "@adobe/express-developer-mcp@latest",
         "--yes"
       ]
     }
@@ -112,7 +121,7 @@ Add this to `claude_desktop_config.json`:
     "adobe-express-add-on": {
       "command": "npx",
       "args": [
-        "@adobe/express-add-on-dev-mcp@latest",
+        "@adobe/express-developer-mcp@latest",
         "--yes"
       ]
     }
@@ -130,7 +139,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
     "adobe-express-add-on": {
       "command": "npx",
       "args": [
-        "@adobe/express-add-on-dev-mcp@latest",
+        "@adobe/express-developer-mcp@latest",
         "--yes"
       ]
     }
@@ -147,19 +156,19 @@ Add this to your workspace in `~/.vscode/mcp.json`:
     <p>Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:</p>
   </div>
   <div className="image-column">
-    <img src="./img/mcp-server-enabled.png" alt="headings" className="responsive-image" />
+    <img src="./img/stable-mcp-server-enabled.png" alt="headings" className="responsive-image" />
   </div>
 </div>
 
 <!-- <div className="container">
   <div className="text-column">
     <h3>Verify with Tool calls</h3>
-    <p>The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.</p>
+    <p>The LLM will automatically invoke tools based on your prompts.Here is an example of Cursor making calls to the Adobe Express Developer MCP Server tools to retrieve the developer documentation and type definitions. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.</p>
   </div> -->
 
 #### Verify with Tool calls
 
-The LLM will automatically invoke tools based on your prompts. Here is an example of Cursor making calls to the Adobe Express Add-on MCP Server (Beta) tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
+The LLM will automatically invoke tools based on your prompts. Here is an example of Cursor making calls to the Adobe Express Developer MCP Server tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
 
 <div className="container">
   <div className="image-column">
@@ -172,10 +181,10 @@ The LLM will automatically invoke tools based on your prompts. Here is an exampl
 
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
-  **Tips:**
+**Tips:**
 
-  - Ask the LLM to "*list MCP tools*".
-  - If you have multiple MCP servers, say: "*Use the MCP server named Adobe Express Add-on*".
+- Ask the LLM to "_list MCP tools_".
+- If you have multiple MCP servers, say: "_Use the MCP server named Adobe Express Add-on_".
 
 </InlineNestedAlert>
 
@@ -187,27 +196,27 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
 
 #### Documentation & Learning
 
-- "*How do I create and style text in Adobe Express*?"
-- "*What are the steps for implementing drag-and-drop functionality*?"
-- "*How does the Document API work for manipulating elements*?"
-- "*Show me examples of using the color picker component*?"
+- "_How do I create and style text in Adobe Express_?"
+- "_What are the steps for implementing drag-and-drop functionality_?"
+- "_How does the Document API work for manipulating elements_?"
+- "_Show me examples of using the color picker component_?"
 
 #### Code Generation & Implementation
 
-- "*Implement a color picker in my add-on*"
-- "*Generate code to create a text element with custom styling*"
-- "*Build a drag-and-drop interface for uploading images*"
-- "*Create a button that adds a rectangle to the canvas*"
-- "*Write TypeScript code to handle user text input and apply it to the document*"
-- "*Implement an image import feature with file validation*"
-- "*Show me a sample code snippet for using a modal dialog*"
+- "_Implement a color picker in my add-on_"
+- "_Generate code to create a text element with custom styling_"
+- "_Build a drag-and-drop interface for uploading images_"
+- "_Create a button that adds a rectangle to the canvas_"
+- "_Write TypeScript code to handle user text input and apply it to the document_"
+- "_Implement an image import feature with file validation_"
+- "_Show me a sample code snippet for using a modal dialog_"
 
 #### Debugging & Troubleshooting
 
-- "*Why isn't my add-on loading in Adobe Express?*"
-- "*Why isn't my text element appearing on the canvas?*"
-- "*Debug this error when trying to add an image to the document (error message: ...)*"
-- "*How do I debug an issue in my `code.js` file?*"
+- "_Why isn't my add-on loading in Adobe Express?_"
+- "_Why isn't my text element appearing on the canvas?_"
+- "_Debug this error when trying to add an image to the document (error message: ...)_"
+- "_How do I debug an issue in my `code.js` file?_"
 
 ## Best Practices for Effective Use
 
@@ -227,28 +236,28 @@ The **Adobe Express Add-on MCP Server** excels at both helping with answering qu
 
   **Example of a well-structured prompt:**
 
-  > "*I'm building an Adobe Express add-on using JavaScript/TypeScript and React with a UI based on Spectrum Web Components using the Express theme. My user interface needs a text field, a button, a modal dialog and a color picker. Please generate the code and show me how to set it up using the Adobe Add-on CLI.*"
+  > "_I'm building an Adobe Express add-on using JavaScript/TypeScript and React with a UI based on Spectrum Web Components using the Express theme. My user interface needs a text field, a button, a modal dialog and a color picker. Please generate the code and show me how to set it up using the Adobe Add-on CLI._"
 
   **Key elements to include:**
 
-   - **Programming languages**: JavaScript, TypeScript
-   - **Framework**: React
-   - **UI components**: Spectrum Web Components with Express theme using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-   - **Specific components needed**: Modal dialog, color picker, buttons, etc.
-   - **Build tools**: Adobe Add-on CLI for setup and development
+  - **Programming languages**: JavaScript, TypeScript
+  - **Framework**: React
+  - **UI components**: Spectrum Web Components with Express theme using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+  - **Specific components needed**: Modal dialog, color picker, buttons, etc.
+  - **Build tools**: Adobe Add-on CLI for setup and development
 
 ### 2. Craft Effective Prompts
 
-  - **Be Specific**: "*Add a stroke to a rectangle*" vs "*Style shapes*"
-  - **Include Context**: "*I'm building a text editor add-on*" helps narrow results
-  - **Use Technical Terms**: "*text styling*" vs "*make it look good*"
-  - **Ask for Examples**: "*Show me code examples for text manipulation*"
-  - **Request Code Generation**: "*Generate TypeScript code to...*" or "*Implement a feature that...*"
+- **Be Specific**: "_Add a stroke to a rectangle_" vs "_Style shapes_"
+- **Include Context**: "_I'm building a text editor add-on_" helps narrow results
+- **Use Technical Terms**: "_text styling_" vs "_make it look good_"
+- **Ask for Examples**: "_Show me code examples for text manipulation_"
+- **Request Code Generation**: "_Generate TypeScript code to..._" or "_Implement a feature that..._"
 
 ### 3. Manage Your Sessions
 
 - **Keep Sessions Focused**: Start new conversations for different features or topics
-- **Be Explicit**: Tell the agent "*For Adobe Express Add-ons questions, prefer the Adobe Express Add-on MCP tools and cite sources.*"
+- **Be Explicit**: Tell the agent "_For Adobe Express Add-ons questions, prefer the Adobe Express Add-on MCP tools and cite sources._"
 - **Provide Context**: Mention what you're building and your current progress
 - **Iterate Gradually**: Build features step-by-step rather than asking for complete applications
 - **Avoid Getting Stuck in Debugging Loops**:
@@ -271,7 +280,7 @@ Custom rules can help guide your LLM's responses, but they require careful desig
 
   - Rules that focus on "never do X" or "cannot do Y" can backfire
   - LLMs may over-prioritize avoiding the restriction and neglect coding fundamentals
-  - Instead of "*Never use inline styles*," try "*Prefer CSS classes and external stylesheets for maintainability*"
+  - Instead of "_Never use inline styles_," try "_Prefer CSS classes and external stylesheets for maintainability_"
 
 #### 4.1 Example Rules for Cursor
 
@@ -279,7 +288,7 @@ Here are some example rules that have proven helpful for Adobe Express add-on de
 
 ```text
   - Use adobe-express-add-on MCP server for questions about Express Add-ons, Express API, CLI, and SDK before web search.
-  - Add-ons are bundled and served in the browser as an iFrame. 
+  - Add-ons are bundled and served in the browser as an iFrame.
   - Both the Add-on UI and "Express document sandbox" are isolated and must communicate through a proxy layer.
   - The term "document" most often refers to terminology related to Express Add-ons since the regular browser DOM isn't available in the sandboxed environment.
 ```
@@ -292,47 +301,47 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
- **🤖 LLM Guidance:**
+**🤖 LLM Guidance:**
 
- - **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
- - **REQUIRED theme imports:**
+- **CRITICAL:** All `@spectrum-web-components/*` packages MUST use identical versions
+- **REQUIRED theme imports:**
 
-   `import '@spectrum-web-components/theme/express/theme-light.js';`
-   `import '@spectrum-web-components/theme/express/scale-medium.js';`
-   `import '@spectrum-web-components/theme/sp-theme.js';`
+  `import '@spectrum-web-components/theme/express/theme-light.js';`
+  `import '@spectrum-web-components/theme/express/scale-medium.js';`
+  `import '@spectrum-web-components/theme/sp-theme.js';`
 
- - Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
- - **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
- - **Use Related References:**
+- Wrap app with: `<sp-theme system="express" scale="medium" color="light">`
+- **ALWAYS** check `package.json` for version consistency across **ALL** `@spectrum-web-components/*` packages
+- **Use Related References:**
 
-   - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
-   - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
-   - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
-  
+  - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
+  - [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
+  - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
+
 </InlineNestedAlert>
 
 #### Using [swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) (only for add-ons using React)
 
 <InlineNestedAlert header="true" variant="success" iconPosition="right">
 
- **🤖 LLM Guidance:**
+**🤖 LLM Guidance:**
 
-  - **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
-  - **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
-  - **REQUIRED theme setup:**
+- **MANDATORY:** Use `@swc-react/*` components (NOT React Spectrum)
+- **CRITICAL:** All `@swc-react/*` packages MUST use identical versions
+- **REQUIRED theme setup:**
 
-    `import '@spectrum-web-components/theme/express/theme-light.js';`
-    `import '@spectrum-web-components/theme/express/scale-medium.js';`
-    `import { Theme } from '@swc-react/theme';`
-  
-  - Wrap app with: `<Theme system="express" scale="medium" color="light">`
-  - **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
-  - **Use Related References:**
+  `import '@spectrum-web-components/theme/express/theme-light.js';`
+  `import '@spectrum-web-components/theme/express/scale-medium.js';`
+  `import { Theme } from '@swc-react/theme';`
 
-    - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-    - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
-    - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
-    - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
+- Wrap app with: `<Theme system="express" scale="medium" color="light">`
+- **ALWAYS** check `package.json` for version consistency across **ALL** `@swc-react/*` packages
+- **Use Related References:**
+
+  - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
+  - [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+  - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
+  - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
 
 </InlineNestedAlert>
 
@@ -340,45 +349,45 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 <InlineNestedAlert header="true" variant="neutral" iconPosition="right">
 
-  **Server Won't Start**
+**Server Won't Start**
 
-  - ✅ Check Node.js version: `node --version` (needs 18+)
-  - ✅ Verify MCP config JSON syntax and file location
-  - ✅ Ensure firewall allows `npx` downloads
-  - ✅ Restart your IDE after configuration changes
-  - ✅ Check for MCP server status indicators
-
-</InlineNestedAlert>
-
-<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
-
-  **No Documentation Results**
-
-  - ✅ Use specific technical terms ("text styling" vs "make it pretty")
-  - ✅ Try adding "Adobe Express Add-ons" for an additional context cue
-  - ✅ Try broader queries first, then narrow down
-  - ✅ Ask the agent to "use available tools" explicitly
-  - ✅ Include context about what you're building
+- ✅ Check Node.js version: `node --version` (needs 18+)
+- ✅ Verify MCP config JSON syntax and file location
+- ✅ Ensure firewall allows `npx` downloads
+- ✅ Restart your IDE after configuration changes
+- ✅ Check for MCP server status indicators
 
 </InlineNestedAlert>
 
 <InlineNestedAlert header="true" variant="neutral" iconPosition="right">
 
-   **Poor Code Generation**
+**No Documentation Results**
 
-   - ✅ Be specific about what you want to implement
-   - ✅ Mention the programming language and frameworks (TypeScript/JavaScript, React)
-   - ✅ Provide context about your add-on's purpose
-   - ✅ Ask for complete, working examples
+- ✅ Use specific technical terms ("text styling" vs "make it pretty")
+- ✅ Try adding "Adobe Express Add-ons" for an additional context cue
+- ✅ Try broader queries first, then narrow down
+- ✅ Ask the agent to "use available tools" explicitly
+- ✅ Include context about what you're building
 
 </InlineNestedAlert>
 
 <InlineNestedAlert header="true" variant="neutral" iconPosition="right">
 
-  **Missing Type Definitions**
+**Poor Code Generation**
 
-  - ✅ Specify the correct API surface (`iframe-ui`, `express-document-sdk`, `add-on-sdk-document-sandbox`)
-  - ✅ Ask for specific types rather than general requests
+- ✅ Be specific about what you want to implement
+- ✅ Mention the programming language and frameworks (TypeScript/JavaScript, React)
+- ✅ Provide context about your add-on's purpose
+- ✅ Ask for complete, working examples
+
+</InlineNestedAlert>
+
+<InlineNestedAlert header="true" variant="neutral" iconPosition="right">
+
+**Missing Type Definitions**
+
+- ✅ Specify the correct API surface (`iframe-ui`, `express-document-sdk`, `add-on-sdk-document-sandbox`)
+- ✅ Ask for specific types rather than general requests
 
 </InlineNestedAlert>
 
@@ -410,7 +419,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 #### Q: Is it free?
 
-**A:** Yes, free during and after beta.
+**A:** Yes.
 
 #### Q: Do I need to install anything locally?
 

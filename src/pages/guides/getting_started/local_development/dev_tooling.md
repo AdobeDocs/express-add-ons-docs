@@ -105,7 +105,11 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 
 ## Templates
 
-The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends. The table below summarizes the templates and their associated frameworks.
+The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends.
+
+For a comprehensive comparison of all templates, detailed file structures, and guidance on choosing the right template for your project, see the [Add-on Project Anatomy & CLI Templates](../addon-project-anatomy.md) guide.
+
+The table below summarizes the templates and their associated frameworks.
 <br/>
 
 | Template           | Framework                                       |

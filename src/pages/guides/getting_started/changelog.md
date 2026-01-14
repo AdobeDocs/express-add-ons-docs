@@ -25,6 +25,27 @@ contributors:
 
 # Changelog
 
+## 2026-01-13
+
+### Adobe Express Developer MCP Server Updates
+
+- The Adobe Express Add-on MCP Server (Beta) has been replaced by the **[Adobe Express Developer MCP Server](./local_development/mcp_server.md)**, which is now officially supported and production ready.
+- It ships under a new npm package (`@adobe/express-developer-mcp`) and supersedes the beta version (`@adobe/express-add-on-dev-mcp`) now deprecated, in all MCP configurations. Learn how to set it up and use it to enhance your development workflow in compatible editors such as Cursor.
+
+### Added
+
+- New [Add-on Architecture](../learn/platform_concepts/architecture.md) guide with dual-runtime system explanation, SDK imports and usage, and cross-runtime communication patterns.
+- New [Add-on Project Anatomy & CLI Templates](../getting_started/addon-project-anatomy.md) guide with add-on project structure, file organization, and template selection for efficient Adobe Express add-on development.
+- New [Add-on Development Terminology](../learn/fundamentals/terminology.md) guide with standardized definitions, decision matrices, and troubleshooting for Adobe Express Add-on development terminology.
+- New practical usage guide for [Using Add-on UI SDK Constants](../learn/fundamentals/ui-sdk-constants.md), focusing on import patterns, common pitfalls, and solutions for UI SDK constants.
+- New practical usage guide for [Using Document Sandbox Constants](../learn/fundamentals/document-sandbox-constants.md) to guide on the use of constants in the Document Sandbox environment, including `colorUtils` integration and practical examples.
+- New ["SDK Fundamentals"](../learn/fundamentals/terminology.md) section in navigation under "Learn" to group terminology and constants usage guides for better discoverability.
+
+### Updated
+
+- **Major restructure** of the [Add-on UI SDK Constants Reference](../../references/addonsdk/addonsdk-constants.md).
+- Improved content and metadata for SEO and AI assistant optimization.
+
 ## 2025-12-28
 
 ### Added
