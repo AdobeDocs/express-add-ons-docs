@@ -46,6 +46,12 @@ Re-exports [FillType](../../enumerations/FillType.md)
 
 ---
 
+### ResizeBehavior
+
+Re-exports [ResizeBehavior](../../enumerations/ResizeBehavior.md)
+
+---
+
 ### SceneNodeType
 
 Re-exports [SceneNodeType](../../enumerations/SceneNodeType.md)

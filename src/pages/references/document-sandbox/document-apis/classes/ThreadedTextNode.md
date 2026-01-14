@@ -541,6 +541,30 @@ removal. No-op if node is already an orphan.
 
 ---
 
+### resize()
+
+• **resize**(`options`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Resizes this node based on the given [ResizeOptions](../type-aliases/ResizeOptions.md).
+
+#### Parameters
+
+• **options**: [`ResizeOptions`](../type-aliases/ResizeOptions.md)
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`TextNode`](TextNode.md).[`resize`](TextNode.md#resize)
+
+---
+
 ### setPositionInParent()
 
 • **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`

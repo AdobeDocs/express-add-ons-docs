@@ -413,6 +413,32 @@ New content to display. Currently must be a [BitmapImage](BitmapImage.md).
 
 ---
 
+### resize()
+
+• **resize**(`options`): `void`
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Proxy resizing of the MediaRectangleNode *inside* this grid cell. The enclosing grid layout keeps
+the crop window (and thus the overall GridCellNode/MediaContainerNode bounds) fixed in position.
+*Warning:* This will not change the bounds reported by this GridCellNode itself.
+
+#### Parameters
+
+• **options**: [`ResizeOptions`](../type-aliases/ResizeOptions.md)
+
+#### Returns
+
+`void`
+
+#### Overrides
+
+[`Node`](Node.md).[`resize`](Node.md#resize)
+
+---
+
 ### setPositionInParent()
 
 • **setPositionInParent**(`parentPoint`, `localRegistrationPoint`): `void`
