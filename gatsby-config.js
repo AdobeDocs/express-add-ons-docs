@@ -799,7 +799,7 @@ module.exports = {
                     path: "guides/learn/how_to/group_elements.md",
                   },
                   {
-                    title: "Resize & Rescale Elements",
+                    title: "Resize Elements",
                     path: "guides/learn/how_to/resize_elements.md",
                   },
                   {
