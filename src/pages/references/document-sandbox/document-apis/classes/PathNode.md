@@ -437,20 +437,19 @@ removal. No-op if node is already an orphan.
 
 ---
 
-### rescaleProportionalToHeight()
+### resize()
 
-• **rescaleProportionalToHeight**(`height`): `void`
+• **resize**(`options`): `void`
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Changes the height to the given value by visually *scaling* the entire content larger or smaller on both axes to
-preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth) documentation for additional explanation.
+Resizes this node based on the given [ResizeOptions](../type-aliases/ResizeOptions.md).
 
 #### Parameters
 
-• **height**: `number`
+• **options**: [`ResizeOptions`](../type-aliases/ResizeOptions.md)
 
 #### Returns
 
@@ -458,110 +457,7 @@ preserve its existing aspect ratio. See [rescaleProportionalToWidth](Node.md#res
 
 #### Inherited from
 
-[`FillableNode`](FillableNode.md).[`rescaleProportionalToHeight`](FillableNode.md#rescaleproportionaltoheight)
-
----
-
-### rescaleProportionalToWidth()
-
-• **rescaleProportionalToWidth**(`width`): `void`
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Changes the width to the given value by visually *scaling* the entire content larger or smaller on both axes to
-preserve its existing aspect ratio, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal)) at a fixed location.
-
-Scaling changes the size of visual styling elements such as stroke width, corner detailing, and font size.
-Contrast this to *resizing* operations (such as [resizeToFitWithin](Node.md#resizetofitwithin)), which adjust the bounding box of an
-element while trying to preserve the existing size of visual detailing such as strokes, corners, and fonts.
-
-Rescaling becomes baked into the updated values of fields such as stroke weight, rectangle width, etc. (it is not
-a separate, persistent scale factor multiplier).
-
-#### Parameters
-
-• **width**: `number`
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`FillableNode`](FillableNode.md).[`rescaleProportionalToWidth`](FillableNode.md#rescaleproportionaltowidth)
-
----
-
-### resizeToCover()
-
-• **resizeToCover**(`width`, `height`): `void`
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Resizes the node to completely *cover* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
-at a fixed location. Nodes with a fixed aspect ratio may extend outside the box on one axis as a result, but
-nodes with flexible aspect ratio will be resized to the exact box size specified. See [resizeToFitWithin](Node.md#resizetofitwithin)
-documentation for additional explanation.
-
-#### Parameters
-
-• **width**: `number`
-
-• **height**: `number`
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`FillableNode`](FillableNode.md).[`resizeToCover`](FillableNode.md#resizetocover)
-
-#### See
-
-resizeToFitWithin
-
----
-
-### resizeToFitWithin()
-
-• **resizeToFitWithin**(`width`, `height`): `void`
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Resizes the node to fit entirely *within* a box of the given dimensions, keeping its top-left corner ([topLeftLocal](VisualNode.md#topleftlocal))
-at a fixed location. Nodes with a fixed aspect ratio may leave unused space on one axis as a result, but nodes
-with flexible aspect ratio will be resized to the exact box size specified.
-
-Resizing attempts to preserve the existing size of visual styling elements such as stroke width, corner detailing,
-and font size as much as possible. Contrast with *rescaling* (such as [rescaleProportionalToWidth](Node.md#rescaleproportionaltowidth)), which
-always changes the size of visual detailing in exact proportion to the change in overall bounding box size. This
-API may still produce *some* degree of rescaling if necessary for certain shapes with fixed corner/edge detailing
-to fit the box better.
-
-#### Parameters
-
-• **width**: `number`
-
-• **height**: `number`
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`FillableNode`](FillableNode.md).[`resizeToFitWithin`](FillableNode.md#resizetofitwithin)
-
-#### See
-
-resizeToCover
+[`FillableNode`](FillableNode.md).[`resize`](FillableNode.md#resize)
 
 ---
 
