@@ -20,7 +20,7 @@ keywords:
   - Visual Details
   - Stroke Width
 title: Resize Elements
-description: Resize Elements with the unified resize API.
+description: Resize Elements with the unified Resize API.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
@@ -47,7 +47,7 @@ faq:
 
 # Resize Elements
 
-Adobe Express provides a powerful unified API for resizing elements. The [`resize()`](../../../references/document-sandbox/document-apis/classes/Node.md#resize) method gives you fine-grained control over how elements change size, whether they maintain aspect ratios, and how visual details like strokes and fonts are affected.
+Adobe Express provides a powerful unified API for resizing elements. The [`resize()`](../../../references/document-sandbox/document-apis/classes/Node.md#resize) method gives you fine-grained control over how elements change size, whether they maintain aspect ratios, and how visual details like strokes and corners are affected.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -57,7 +57,7 @@ Adobe Express provides a powerful unified API for resizing elements. The [`resiz
 
 The `resize()` method accepts a [`ResizeOptions`](../../../references/document-sandbox/document-apis/type-aliases/ResizeOptions.md) object with three mandatory components:
 
-1. **Dimensions**: Specify `width`, `height`, or both.
+1. **Dimensions**: Specify `width`, `height`, or both (depending on the behavior).
 2. **Behavior**: Controls aspect ratio handling via [`ResizeBehavior`](../../../references/document-sandbox/document-apis/enumerations/ResizeBehavior.md) enumeration.
 3. **Visual Details**: Choose whether to scale strokes, corners detailing, etc.
 
@@ -68,6 +68,10 @@ Defined in the [`ResizeBehavior`](../../../references/document-sandbox/document-
 - **`ResizeBehavior.contain`**: Fits the element entirely within the specified dimensions.
 - **`ResizeBehavior.cover`**: Ensures the element completely covers the specified area.
 - **`ResizeBehavior.proportional`**: Maintains the element's aspect ratio.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Dimension requirements:** `ResizeBehavior.proportional` requires only one dimension (never both); `ResizeBehavior.contain` can use one or both dimensions; `ResizeBehavior.cover` typically uses both dimensions.
 
 ### Visual Details Flag
 
@@ -506,10 +510,10 @@ image.resize({
 
 ## Migration from Deprecated APIs
 
-If you're updating code that uses the old resize and rescale methods, here are the conversions:
+If you're updating code that uses the old (experimental) resize/rescale methods, here are the conversions:
 
 ```js
-// OLD: rescaleProportionalToWidth
+// OLD:
 element.rescaleProportionalToWidth(300);
 
 // NEW:
@@ -519,7 +523,7 @@ element.resize({
   avoidScalingVisualDetailsIfPossible: false
 });
 
-// OLD: rescaleProportionalToHeight
+// OLD:
 element.rescaleProportionalToHeight(200);
 
 // NEW:
@@ -529,7 +533,7 @@ element.resize({
   avoidScalingVisualDetailsIfPossible: false
 });
 
-// OLD: resizeToFitWithin
+// OLD:
 element.resizeToFitWithin(300, 200);
 
 // NEW:
@@ -540,7 +544,7 @@ element.resize({
   avoidScalingVisualDetailsIfPossible: true
 });
 
-// OLD: resizeToCover
+// OLD:
 element.resizeToCover(300, 200);
 
 // NEW:
