@@ -247,6 +247,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/ReadOnlyItemList.md",
                   },
                   {
+                    title: "ReadOnlyMask",
+                    path: "references/document-sandbox/document-apis/classes/ReadOnlyMask.md",
+                  },
+                  {
                     title: "RectangleNode",
                     path: "references/document-sandbox/document-apis/classes/RectangleNode.md",
                   },
@@ -332,10 +336,10 @@ module.exports = {
                     title: "BaseParagraphStyles",
                     path: "references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md",
                   },
-                  {
-                    title: "BitmapImage",
-                    path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
-                  },
+                  // {
+                  //   title: "BitmapImage",
+                  //   path: "references/document-sandbox/document-apis/interfaces/BitmapImage.md",
+                  // },
                   {
                     title: "CharacterStyles",
                     path: "references/document-sandbox/document-apis/interfaces/CharacterStyles.md",
@@ -361,6 +365,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/ColorFill.md",
                   },
                   {
+                    title: "CommonResizeOptions",
+                    path: "references/document-sandbox/document-apis/interfaces/CommonResizeOptions.md",
+                  },
+                  {
                     title: "ContainerNode",
                     path: "references/document-sandbox/document-apis/interfaces/ContainerNode.md",
                   },
@@ -377,12 +385,24 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/IFillableNode.md",
                   },
                   {
+                    title: "IMediaContainerNode",
+                    path: "references/document-sandbox/document-apis/interfaces/IMediaContainerNode.md",
+                  },
+                  {
+                    title: "INodeBounds",
+                    path: "references/document-sandbox/document-apis/interfaces/INodeBounds.md",
+                  },
+                  {
                     title: "IRectangularNode",
                     path: "references/document-sandbox/document-apis/interfaces/IRectangularNode.md",
                   },
                   {
                     title: "IStrokableNode",
                     path: "references/document-sandbox/document-apis/interfaces/IStrokableNode.md",
+                  },
+                  {
+                    title: "IVisualNodeBounds",
+                    path: "references/document-sandbox/document-apis/interfaces/IVisualNodeBounds.md",
                   },
                   {
                     title: "ListItem",
@@ -419,6 +439,30 @@ module.exports = {
                   {
                     title: "RectangleGeometry",
                     path: "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md",
+                  },
+                  {
+                    title: "RemoveListStyleInput",
+                    path: "references/document-sandbox/document-apis/interfaces/RemoveListStyleInput.md",
+                  },
+                  {
+                    title: "RescaleProportionalToHeightOptions",
+                    path: "references/document-sandbox/document-apis/interfaces/RescaleProportionalToHeightOptions.md",
+                  },
+                  {
+                    title: "RescaleProportionalToWidthOptions",
+                    path: "references/document-sandbox/document-apis/interfaces/RescaleProportionalToWidthOptions.md",
+                  },
+                  {
+                    title: "ResizeUsingHeightOptions",
+                    path: "references/document-sandbox/document-apis/interfaces/ResizeUsingHeightOptions.md",
+                  },
+                  {
+                    title: "ResizeUsingWidthOptions",
+                    path: "references/document-sandbox/document-apis/interfaces/ResizeUsingWidthOptions.md",
+                  },
+                  {
+                    title: "SolidColorStroke",
+                    path: "references/document-sandbox/document-apis/interfaces/SolidColorStroke.md",
                   },
                   {
                     title: "Stroke",
@@ -467,6 +511,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/enumerations/FillType.md",
                   },
                   {
+                    title: "ResizeBehavior",
+                    path: "references/document-sandbox/document-apis/enumerations/ResizeBehavior.md",
+                  },
+                  {
                     title: "OrderedListNumbering",
                     path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md",
                   },
@@ -499,6 +547,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/enumerations/TextScriptStyle.md",
                   },
                   {
+                    title: "TextStyleSource",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/TextStyleSource.md",
+                  },
+                  {
                     title: "VisualEffectType",
                     path: "references/document-sandbox/document-apis/enumerations/VisualEffectType.md",
                   },
@@ -521,8 +573,16 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/type-aliases/Font.md",
                   },
                   {
+                    title: "ListStyleInput",
+                    path: "references/document-sandbox/document-apis/type-aliases/ListStyleInput.md",
+                  },
+                  {
                     title: "OrderedListStyle",
                     path: "references/document-sandbox/document-apis/type-aliases/OrderedListStyle.md",
+                  },
+                  {
+                    title: "ResizeOptions",
+                    path: "references/document-sandbox/document-apis/type-aliases/ResizeOptions.md",
                   },
                   {
                     title: "SolidColorStrokeWithOptionalType",
@@ -738,10 +798,10 @@ module.exports = {
                     title: "Group Elements",
                     path: "guides/learn/how_to/group_elements.md",
                   },
-                  // {
-                  //   title: "Resize & Rescale Elements",
-                  //   path: "guides/learn/how_to/resize_rescale_elements.md",
-                  // },
+                  {
+                    title: "Resize Elements",
+                    path: "guides/learn/how_to/resize_elements.md",
+                  },
                   {
                     title: "Position Elements",
                     path: "guides/learn/how_to/position_elements.md",

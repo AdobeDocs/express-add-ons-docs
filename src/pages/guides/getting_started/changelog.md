@@ -45,6 +45,7 @@ contributors:
 
 - **Major restructure** of the [Add-on UI SDK Constants Reference](../../references/addonsdk/addonsdk-constants.md).
 - Improved content and metadata for SEO and AI assistant optimization.
+- **Breaking change:** Removed experimental resize/rescale methods (`rescaleProportionalToWidth()`, `rescaleProportionalToHeight()`, `resizeToFitWithin()`, `resizeToCover()`) and replaced with unified **experimental** [`resize()`](../../references/document-sandbox/document-apis/classes/Node.md#resize) method offering more flexible behavior control via [`ResizeBehavior`](../../references/document-sandbox/document-apis/enumerations/ResizeBehavior.md) options. The [`experimentalApis`](../../references/manifest/index.md#requirements) flag is required.
 
 ## 2025-12-28
 
@@ -98,15 +99,6 @@ The Adobe Express Code Playground has received a major update with the release o
 
 ### Added
 
-- **Experimental** [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight) method - Proportional height scaling for all node types
-- **Experimental** [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth) method - Proportional width scaling for all node types
-- **Experimental** [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetocover) method - Resize nodes to cover specified dimensions
-- **Experimental** [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetofitwithin) method - Resize nodes to fit within specified dimensions
-- **Experimental** [`appendText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#appendtext) method - Append text to existing content
-- **Experimental** [`deleteText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#deletetext) method - Delete text ranges from content
-- **Experimental** [`insertText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#inserttext) method - Insert text at specific positions
-- **Experimental** [`replaceText()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#replacetext) method - Replace text ranges with new content
-- **Experimental** [`hasUnavailableFonts()`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) method - Check for unavailable fonts in text content
 - **Experimental** [`id`](../../references/document-sandbox/document-apis/classes/TextContentModel.md#id) property - Unique identifier for text content models
 - **Experimental** [`TextStyleSource`](../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/TextStyleSource.md) enumeration - Options for text style source matching
 
@@ -240,7 +232,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 ### Added
 
 - New [Markdown Parser add-on tutorial](../learn/how_to/tutorials/markdown-parser-text-api.md) covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.
-- New [Resize and Rescale Elements](../learn/how_to/resize_rescale_elements.md) how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.
+- New [Resize and Rescale Elements](../learn/how_to/resize_elements.md) how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.
 
 ## 2025-06-19
 
@@ -259,10 +251,10 @@ The [Page Metadata API](../../references/addonsdk/app-document.md#pagemetadata) 
 ### Added
 
 - Four new Resize/Rescale APIs have been added to the [Node](../../references/document-sandbox/document-apis/classes/Node.md) class as experimental features:
-  - [`rescaleProportionalToHeight()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltoheight)
-  - [`rescaleProportionalToWidth()`](../../references/document-sandbox/document-apis/classes/Node.md#rescaleproportionaltowidth)
-  - [`resizeToCover()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetocover)
-  - [`resizeToFitWithin()`](../../references/document-sandbox/document-apis/classes/Node.md#resizetofitwithin)
+  - `rescaleProportionalToHeight()`
+  - `rescaleProportionalToWidth()`
+  - `resizeToCover()`
+  - `resizeToFitWithin()`
 - [`Editor.createText()`](../../references/document-sandbox/document-apis/classes/Editor.md#createtext) now accepts a String parameter, which sets the text content of the new node. The use without a parameter is deprecated.
 - [`TextNode`](../../references/document-sandbox/document-apis/classes/TextNode.md) is now an abstract base class with two specialized subclasses:
   - [StandaloneTextNode](../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md): displays text in a single frame.
