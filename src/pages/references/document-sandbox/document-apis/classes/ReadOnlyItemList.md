@@ -10,6 +10,7 @@ capabilities, and is most frequently encountered as [ArtboardNode.children](Artb
 ## Extended by
 
 -   [`RestrictedItemList`](RestrictedItemList.md)
+-   [`ThreadedTextList`](ThreadedTextList.md)
 
 ## Type parameters
 

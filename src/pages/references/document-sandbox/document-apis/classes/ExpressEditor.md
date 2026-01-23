@@ -221,6 +221,48 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 ---
 
+### createThreadedText()
+
+• **createThreadedText**(`parentNode`, `textContent`, `geometry`?): [`ThreadedTextNode`](ThreadedTextNode.md)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Parameters
+
+• **parentNode**: [`ContainerNode`](../interfaces/ContainerNode.md)
+
+The parent node that will contain the threaded text node. This must be a container node (e.g., ArtboardNode, GroupNode) that is attached to the document.
+
+• **textContent**: `string`
+
+The initial text content for the threaded text node.
+
+• **geometry?**: [`TextFrameAreaGeometry`](../interfaces/TextFrameAreaGeometry.md)
+
+The geometry of the threaded text node.
+
+#### Returns
+
+[`ThreadedTextNode`](ThreadedTextNode.md)
+
+A new ThreadedTextNode that is part of a threaded text flow.
+
+#### Inherited from
+
+[`Editor`](Editor.md).[`createThreadedText`](Editor.md#createthreadedtext)
+
+#### Throws
+
+if parentNode is not provided or is not a valid container node.
+
+#### Throws
+
+if textContent is empty or invalid.
+
+---
+
 ### loadBitmapImage()
 
 • **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](BitmapImage.md)\>
@@ -317,7 +359,7 @@ asynchronous operation such as [loadBitmapImage](Editor.md#loadbitmapimage), any
 queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
 
 The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
-to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
+to users. However, note that queueAsyncEdit() will return *before* your function has been run.
 If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
 or await the Promise returned by queueAsyncEdit().
 

@@ -295,6 +295,10 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md",
                   },
                   {
+                    title: "ThreadedTextList",
+                    path: "references/document-sandbox/document-apis/classes/ThreadedTextList.md",
+                  },
+                  {
                     title: "ThreadedTextNode",
                     path: "references/document-sandbox/document-apis/classes/ThreadedTextNode.md",
                   },
@@ -471,6 +475,14 @@ module.exports = {
                   {
                     title: "StyleRange",
                     path: "references/document-sandbox/document-apis/interfaces/StyleRange.md",
+                  },
+                  {
+                    title: "TextContent",
+                    path: "references/document-sandbox/document-apis/interfaces/TextContent.md",
+                  },
+                  {
+                    title: "TextFrameAreaGeometry",
+                    path: "references/document-sandbox/document-apis/interfaces/TextFrameAreaGeometry.md",
                   },
                   {
                     title: "TextRange",
