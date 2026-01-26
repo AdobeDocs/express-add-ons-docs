@@ -25,6 +25,23 @@ contributors:
 
 # Changelog
 
+## 2026-01-26
+
+### Added
+
+We have added new APIs for threaded text handling across multiple frames, as well as new accessors for retrieving a flattened list of all descendant nodes and text content within the page and visual node containers.
+
+- **Experimental** [`Editor.createThreadedText()`](../references/document-sandbox/document-apis/classes/Editor.md#createthreadedtext) method - Create a [`ThreadedTextNode`](../references/document-sandbox/document-apis/classes/ThreadedTextNode.md) for threaded text handling across multiple frames.
+- **Experimental** [`ThreadedTextList`](../references/document-sandbox/document-apis/classes/ThreadedTextList.md) class - Represents an ordered list of [`ThreadedTextNode`](../references/document-sandbox/document-apis/classes/ThreadedTextNode.md) objects, creating a single, continuous text story across multiple frames.
+- **Experimental** [`allDescendants`](../references/document-sandbox/document-apis/classes/PageNode.md#alldescendants) accessor on [`PageNode`](../references/document-sandbox/document-apis/classes/PageNode.md) and [`VisualNode`](../references/document-sandbox/document-apis/classes/VisualNode.md) - Returns a flattened, read-only list of all descendant nodes within the container. For text-based nodes, please use the new `allTextContent` accessor instead.
+- **Experimental** [`allTextContent`](../references/document-sandbox/document-apis/classes/PageNode.md#alltextcontent) accessor on [`PageNode`](../references/document-sandbox/document-apis/classes/PageNode.md) and [`VisualNode`](../references/document-sandbox/document-apis/classes/VisualNode.md) - Returns a flattened, read-only list of [`TextContent`](../references/document-sandbox/document-apis/interfaces/TextContent.md) instances from all text-based nodes within the container.
+- **Experimental** [`TextContent`](../references/document-sandbox/document-apis/interfaces/TextContent.md) interface - Represents text content data extracted from text-based nodes.
+- **Experimental** [`TextFrameAreaGeometry`](../references/document-sandbox/document-apis/interfaces/TextFrameAreaGeometry.md) interface - Defines the geometry of a text frame area.
+
+### Updated
+
+- **Experimental** [`ThreadedTextContentModel.frames`](../references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md#frames) property - Updated to properly support the new threaded text implementation with [`ThreadedTextList`](../references/document-sandbox/document-apis/classes/ThreadedTextList.md).
+
 ## 2026-01-13
 
 ### Adobe Express Developer MCP Server Updates
