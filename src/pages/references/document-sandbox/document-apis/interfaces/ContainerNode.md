@@ -29,19 +29,63 @@ Get [AddOnData](../classes/AddOnData.md) reference for managing the private meta
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](../classes/BaseNode.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`<`Iterable`<[`VisualNode`](../classes/VisualNode.md), `any`, `any`\>\>
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](ContainerNode.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes _all_ such children and reflects their
 overall display z-order.
 
-Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
-to guarantee all their children are full-fledged Node instances.
+The children of a VisualNode are always other VisualNode classes (never the more minimal BaseNode).
 
 #### Returns
 
-`Readonly`<`Iterable`<[`BaseNode`](../classes/BaseNode.md), `any`, `any`\>\>
+`Readonly`<`Iterable`<[`VisualNode`](../classes/VisualNode.md), `any`, `any`\>\>
+
+---
+
+### allDescendants
+
+• `get` **allDescendants**(): `Readonly`<`Iterable`<[`VisualNode`](../classes/VisualNode.md), `any`, `any`\>\>
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently _**experimental only**_ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Helper to recursively traverse _all_ the exposed scenegraph content within the subtree of this node.
+Every container node and every leaf node will be visited via a pre-order tree traversal.
+Although once called the list of direct descendants is static, changes to further descendants may appear while
+iterating depending on when the operation occurs relative to the parent being yielded.
+Note that the root node (i.e. what this API was called on) is not visited.
+
+Warning: Processing text content via this API can be error-prone. Use [VisualNode.allTextContent](../classes/VisualNode.md#alltextcontent)
+
+#### Returns
+
+`Readonly`<`Iterable`<[`VisualNode`](../classes/VisualNode.md), `any`, `any`\>\>
+
+---
+
+### allTextContent
+
+• `get` **allTextContent**(): `Readonly`<`Iterable`<[`TextContent`](TextContent.md), `any`, `any`\>\>
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently _**experimental only**_ and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Helper to process all text content that is found as part of or within this node. This can be hard to do correctly
+via manual tree traversal since multiple [ThreadedTextNode](../classes/ThreadedTextNode.md) can share a single [TextContentModel](../classes/TextContentModel.md).
+
+This iterator returns a single result per TextContentModel that is at least partially displayed within this node,
+even if that content is split across several separate TextNode "frames". If this node is or contains some but not
+all of the display frames of an overall TextContentModel, that model is still included as a result.
+
+Note that visibleRanges and visibleText may not be sorted as TextNode "frames" can appear in any order in the scenegraph.
+
+#### Returns
+
+`Readonly`<`Iterable`<[`TextContent`](TextContent.md), `any`, `any`\>\>
 
 ---
 

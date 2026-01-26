@@ -6,9 +6,6 @@ ThreadedTextContentModel represents a complete piece of text content that is spl
 [ThreadedTextNode](ThreadedTextNode.md) frames for display. This subclass provides a mutable allFrames list
 that supports adding, removing, and reordering text frames.
 
-The append and insert operations will automatically parent the new frame to the same parent as the
-reference frame and place it in the correct z-order.
-
 ## Extends
 
 -   [`TextNodeContentModel`](TextNodeContentModel.md)
@@ -59,6 +56,16 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 #### Returns
 
 readonly [`CharacterStylesRange`](../interfaces/CharacterStylesRange.md)[]
+
+---
+
+### frames
+
+• `get` **frames**(): [`ThreadedTextList`](ThreadedTextList.md)
+
+#### Returns
+
+[`ThreadedTextList`](ThreadedTextList.md)
 
 ---
 

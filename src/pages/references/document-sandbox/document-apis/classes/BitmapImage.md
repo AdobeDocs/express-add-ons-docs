@@ -38,7 +38,7 @@ Original width of the bitmap in pixels.
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-Fetches the bitmap data as a Blob. This will wait for the bitmap to be available if necessary.
+Fetches the bitmap data as a Blob. Waits up to 1 minute for the bitmap to be available if necessary.
 
 #### Returns
 
