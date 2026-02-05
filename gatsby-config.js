@@ -377,6 +377,14 @@ module.exports = {
                     path: "references/document-sandbox/document-apis/interfaces/ContainerNode.md",
                   },
                   {
+                    title: "CreateRenditionOptions",
+                    path: "references/document-sandbox/document-apis/interfaces/CreateRenditionOptions.md",
+                  },
+                  {
+                    title: "CreateRenditionResult",
+                    path: "references/document-sandbox/document-apis/interfaces/CreateRenditionResult.md",
+                  },
+                  {
                     title: "Fill",
                     path: "references/document-sandbox/document-apis/interfaces/Fill.md",
                   },
@@ -509,6 +517,10 @@ module.exports = {
                   {
                     title: "BlendMode",
                     path: "references/document-sandbox/document-apis/enumerations/BlendMode.md",
+                  },
+                  {
+                    title: "CreateRenditionFormat",
+                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/CreateRenditionFormat.md",
                   },
                   {
                     title: "EditorEvent",
