@@ -182,7 +182,7 @@ the initial string to show.
 a text node with default styles. Creates auto-width text, so the node's width will automatically adjust
 to accommodate the given text content.
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text" variant="warning"/>
 
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.

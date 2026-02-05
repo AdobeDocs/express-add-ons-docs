@@ -108,7 +108,9 @@ Callback that was previously registered will be removed and will no more be invo
 
 Registers a handler for editor events such as selection change.
 The registered callback will be invoked when the specified event occurs.
-<InlineAlert slots="text" variant="info"/>
+
+<InlineAlert slots="text" variant="warning"/>
+
 Note: Do not attempt to make changes to the document in response to a selection change callback because it may destabilize the application.
 
 #### Parameters

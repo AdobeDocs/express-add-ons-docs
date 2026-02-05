@@ -124,6 +124,7 @@ even for an orphan node with no parent.
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
@@ -145,10 +146,12 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of the orphaned TextNode may be different from the bounding box of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: the visual top-left corner of this box is usually not (0,0). Always use `boundsLocal` or [topLeftLocal](TextNode.md#topleftlocal)
 instead of assuming (0,0).
 
@@ -165,6 +168,7 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: The center of the orphaned TextNode may be different from the center of the node placed on a page. It is
 recommended to use this property only when the node is placed on a page.
 
@@ -179,6 +183,7 @@ this specific ThreadedTextNode "frame." The full text content flow may be split 
 fixed-size frame using [AreaTextLayout](../interfaces/AreaTextLayout.md) does not fit all the (remaining) text.
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: When traversing the scenegraph in search of text content, bear in mind that multiple ThreadedTextNodes may refer to the
 same single [ThreadedTextContentModel](ThreadedTextContentModel.md); this can give the impression that the same text is duplicated multiple times when it is
 not. Use [ThreadedTextContentModel](ThreadedTextContentModel.md).id to determine whether a given piece of text content is unique or if it's already been
@@ -384,10 +389,12 @@ boundsInParent.
 `Readonly`<[`Point`](../interfaces/Point.md)\>
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: The top-left of the orphaned TextNode may be different from the top-left of the node placed on a
 page. It is recommended to use this property only when the node is placed on a page.
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: this value is usually not (0,0) due to the way text layout is defined.
 
 ---
@@ -482,6 +489,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 `Readonly`<[`Rect`](../interfaces/Rect.md)\>
 
 <InlineAlert slots="text" variant="info"/>
+
 Note: The bounding box of an orphaned TextNode may become different after it is placed on a
 page. It is recommended to use this method only when the node is placed on a page.
 
@@ -506,6 +514,33 @@ The node must be attached to a page as the copy will be added as a sibling.
 #### Inherited from
 
 [`TextNode`](TextNode.md).[`cloneInPlace`](TextNode.md#cloneinplace)
+
+---
+
+### createRendition()
+
+• **createRendition**(`options`?): `Promise`<[`CreateRenditionResult`](../interfaces/CreateRenditionResult.md)\>
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Generates a rendition of this node and its descendants.
+
+If this node contains images, it will wait for the best quality to be available before capturing.
+As such, there is a 20s timeout before an error is thrown to prevent indefinite waiting.
+
+#### Parameters
+
+• **options?**: [`CreateRenditionOptions`](../interfaces/CreateRenditionOptions.md)
+
+#### Returns
+
+`Promise`<[`CreateRenditionResult`](../interfaces/CreateRenditionResult.md)\>
+
+#### Inherited from
+
+[`TextNode`](TextNode.md).[`createRendition`](TextNode.md#createrendition)
 
 ---
 

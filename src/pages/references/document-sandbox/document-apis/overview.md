@@ -86,6 +86,8 @@
 -   [ColorFill](interfaces/ColorFill.md)
 -   [CommonResizeOptions](interfaces/CommonResizeOptions.md)
 -   [ContainerNode](interfaces/ContainerNode.md)
+-   [CreateRenditionOptions](interfaces/CreateRenditionOptions.md)
+-   [CreateRenditionResult](interfaces/CreateRenditionResult.md)
 -   [Fill](interfaces/Fill.md)
 -   [IFillableNode](interfaces/IFillableNode.md)
 -   [IMediaContainerNode](interfaces/IMediaContainerNode.md)
@@ -128,6 +130,12 @@
 -   [UnorderedListStyle](type-aliases/UnorderedListStyle.md)
 
 ## References
+
+### CreateRenditionFormat
+
+Re-exports [CreateRenditionFormat](namespaces/Constants/enumerations/CreateRenditionFormat.md)
+
+---
 
 ### OrderedListNumbering
 
