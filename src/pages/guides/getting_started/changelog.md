@@ -25,6 +25,19 @@ contributors:
 
 # Changelog
 
+## 2026-02-06
+
+### Added
+
+We have added new APIs to generate image rendition of visual nodes directly from the document sandbox.
+
+- **Experimental** [`VisualNode.createRendition()`](../../references/document-sandbox/document-apis/classes/VisualNode.md#createrendition) asynchronous method - Generate a rendition of a visual node and its descendants.
+- **Experimental** [`CreateRenditionOptions`](../../references/document-sandbox/document-apis/interfaces/CreateRenditionOptions.md) interface - define configuration options for generating renditions.
+- **Experimental** [`CreateRenditionResult`](../../references/document-sandbox/document-apis/interfaces/CreateRenditionResult.md) interface - define the structure of the returned rendition data (e.g., blob, metadata).
+- **Experimental** [`CreateRenditionFormat`](../../references/addonsdk/addonsdk-constants.md#createrenditionformat) enumeration - specify supported output formats (e.g., PNG, JPEG, PDF) in the `Constants` namespace.
+
+- **Experimental** [`addOnUISdk.app.document.isPresentation()`](../../references/addonsdk/app-document.md#ispresentation) asynchronous method - Returns `true` if the document is a presentation, `false` if not.
+
 ## 2026-01-26
 
 ### Added
