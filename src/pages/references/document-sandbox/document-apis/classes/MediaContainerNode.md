@@ -397,6 +397,33 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 ---
 
+### createRendition()
+
+• **createRendition**(`options`?): `Promise`<[`CreateRenditionResult`](../interfaces/CreateRenditionResult.md)\>
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Generates a rendition of this node and its descendants.
+
+If this node contains images, it will wait for the best quality to be available before capturing.
+As such, there is a 20s timeout before an error is thrown to prevent indefinite waiting.
+
+#### Parameters
+
+• **options?**: [`CreateRenditionOptions`](../interfaces/CreateRenditionOptions.md)
+
+#### Returns
+
+`Promise`<[`CreateRenditionResult`](../interfaces/CreateRenditionResult.md)\>
+
+#### Inherited from
+
+[`Node`](Node.md).[`createRendition`](Node.md#createrendition)
+
+---
+
 ### localPointInNode()
 
 • **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>

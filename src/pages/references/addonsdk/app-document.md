@@ -217,7 +217,7 @@ Retrieve the details about the template used to create the document.
 
 #### `PrintQualityCheckOptions`
 
-The options to pass into the print quality check..
+The options to pass into the print quality check.
 
 | Name       | Type                                         | Description                                                           |
 | ---------- | -------------------------------------------- | --------------------------------------------------------------------- |
@@ -228,30 +228,30 @@ The options to pass into the print quality check..
 
 The metadata of a page.
 
-| Name                 | Type                                |                                                                                                                                                                                                                                                                                                                                                                Description |
-| -------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `id`                 | `string`                            |                                                                                                                                                                                                                                                                                                                                                        The id of the page. |
-| `title`              | `string`                            |                                                                                                                                                                                                                                                                                                                                                     The title of the page. |
-| `size`               | `{ width: number, height: number }` |                                                                                                                                                                                                                                                                                                                                            The size of the page in pixels. |
-| `hasPremiumContent`  | `boolean`                           |                                                                                                                                                                                                                                                                                                                    `true` if the page has premium content, `false` if not. |
-| `hasAudioContent`    | `boolean`                           |                                                                                                                                                                                                                                                                                                                      `true` if the page has audio content, `false` if not. |
-| `hasVideoContent`    | `boolean`                           |                                                                                                                                                                                                                                                                                                                      `true` if the page has video content, `false` if not. |
-| `hasAnimatedContent` | `boolean`                           |                                                                                                                                                                                                                                                                                                                   `true` if the page has animated content, `false` if not. |
-| `hasTemporalContent` | `boolean`                           |                                                                                                                                                                                                                                                                                                                          `true` if the page has timelines, `false` if not. |
-| `temporalContentDuration?` | `number`                      |                                                                                                                                                                                                                                                                                                    The duration of temporal content in milliseconds (only present when `hasTemporalContent` is `true`). |
-| `pixelsPerInch?`     | `number`                            |                                                                                                                                                                                                                                                                                                                                           The pixels per inch of the page. |
-| `isPrintReady?`      | `boolean`                           | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
-| `isBlank?`           | `boolean`                           |                                                                                                                                                                                                                                                                                                                                       Indicates whether the page is blank. |
-| `templateDetails?`   | `TemplateDetails`                   |                                                                                                                                                                                                                                                                                                                                  The details of the template for the page. |
+| Name                       | Type                                |                                                                                                                                                                                                                                                                                                                                                                Description |
+| -------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `id`                       | `string`                            |                                                                                                                                                                                                                                                                                                                                                        The id of the page. |
+| `title`                    | `string`                            |                                                                                                                                                                                                                                                                                                                                                     The title of the page. |
+| `size`                     | `{ width: number, height: number }` |                                                                                                                                                                                                                                                                                                                                            The size of the page in pixels. |
+| `hasPremiumContent`        | `boolean`                           |                                                                                                                                                                                                                                                                                                                    `true` if the page has premium content, `false` if not. |
+| `hasAudioContent`          | `boolean`                           |                                                                                                                                                                                                                                                                                                                      `true` if the page has audio content, `false` if not. |
+| `hasVideoContent`          | `boolean`                           |                                                                                                                                                                                                                                                                                                                      `true` if the page has video content, `false` if not. |
+| `hasAnimatedContent`       | `boolean`                           |                                                                                                                                                                                                                                                                                                                   `true` if the page has animated content, `false` if not. |
+| `hasTemporalContent`       | `boolean`                           |                                                                                                                                                                                                                                                                                                                          `true` if the page has timelines, `false` if not. |
+| `temporalContentDuration?` | `number`                            |                                                                                                                                                                                                                                                                       The duration of temporal content in milliseconds (only present when `hasTemporalContent` is `true`). |
+| `pixelsPerInch?`           | `number`                            |                                                                                                                                                                                                                                                                                                                                           The pixels per inch of the page. |
+| `isPrintReady?`            | `boolean`                           | Indicates whether the page has passed various internal quality checks to ensure high quality output when printed. While the specifics may change over time, Adobe Express checks for sufficient image resolution and sizes to ensure that a print will be of good quality. If this is `false`, the output may be blurry or of poor quality (based on internal heuristics). |
+| `isBlank?`                 | `boolean`                           |                                                                                                                                                                                                                                                                                                                                       Indicates whether the page is blank. |
+| `templateDetails?`         | `TemplateDetails`                   |                                                                                                                                                                                                                                                                                                                                  The details of the template for the page. |
 
 #### `PageMetadataOptions`
 
 This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
-| Name                 | Type                                                   |                                                           Description |
-| -------------------- | ------------------------------------------------------ | --------------------------------------------------------------------: |
+| Name                 | Type                                         |                                                           Description |
+| -------------------- | -------------------------------------------- | --------------------------------------------------------------------: |
 | `range`              | [`Range`](../addonsdk/addonsdk-constants.md) |                             Range of the document to get the metadata |
-| `pageIds?: string[]` | `string`                                               | Id's of the pages. (Only required when the range is `specificPages`). |
+| `pageIds?: string[]` | `string`                                     | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ### getSelectedPageIds()
 
@@ -278,7 +278,7 @@ async function getSelectedPages() {
   try {
     const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
     console.log("Selected page ids:", selectedPageIds);
-    
+
     if (selectedPageIds.length === 0) {
       console.log("No pages are currently selected");
     } else {
@@ -293,13 +293,13 @@ async function getSelectedPages() {
 async function getSelectedPagesMetadata() {
   try {
     const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
-    
+
     if (selectedPageIds.length > 0) {
       const metadata = await addOnUISdk.app.document.getPagesMetadata({
         range: addOnUISdk.constants.Range.specificPages,
         pageIds: selectedPageIds
       });
-      
+
       metadata.forEach((page, index) => {
         console.log(`Selected page ${index + 1}: ${page.title} (${page.id})`);
       });
@@ -338,6 +338,10 @@ A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered
 
 #### Example Usage
 
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### JavaScript
+
 ```javascript
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
@@ -374,6 +378,42 @@ The options to pass into the link method.
 | ------------- | -------- | -------------------------------------------------------- |
 | `linkOptions` | `string` | [`LinkOptions`](./addonsdk-constants.md) constant value. |
 
+### isPresentation()
+
+Returns `true` if the document is a presentation.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+#### Signature
+
+`isPresentation(): Promise<boolean>`
+
+#### Return Value
+
+A resolved `Promise` containing `true` if the document is a presentation, `false` if not.
+
+#### Example Usage
+
+<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+
+#### JavaScript
+
+```javascript
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  try {
+    // Get if the document is a presentation
+    const isPresentation = await addOnUISdk.app.document.isPresentation();
+    console.log("Is presentation:", isPresentation);
+  } catch (error) {
+    console.log("Failed to get is presentation:", error);
+  }
+});
+```
+
 ## Import Content Methods
 
 ### addImage()
@@ -386,11 +426,11 @@ Adds an image/gif/PSD/AI/SVG file to the current page.
 
 #### Parameters
 
-| Name               | Type                                        |                                                                              Description |
-| ------------------ | ------------------------------------------- | ---------------------------------------------------------------------------------------: |
-| `imageBlob`        | `Blob`                                      |                                                            The image to add to the page. |
-| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding image/PSD/AI/SVG files to the page (i.e., `title`). |
-| `importAddOnData?` | [`ImportAddOnData`](#importaddondata)       |                                      Add-on specific metadata to attach to the imported asset. |
+| Name               | Type                                  |                                                                                   Description |
+| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------: |
+| `imageBlob`        | `Blob`                                |                                                                 The image to add to the page. |
+| `attributes?`      | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding image/PSD/AI/SVG files to the page (i.e., `title`). |
+| `importAddOnData?` | [`ImportAddOnData`](#importaddondata) |                                     Add-on specific metadata to attach to the imported asset. |
 
 #### Return Value
 
@@ -455,11 +495,11 @@ Adds an animated image (gif) to the current page.
 
 #### Parameters
 
-| Name               | Type                                        |                                                                          Description |
-| ------------------ | ------------------------------------------- | -----------------------------------------------------------------------------------: |
-| `imageBlob`        | `Blob`                                      |                                                        The image to add to the page. |
-| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
-| `importAddOnData?` | [`ImportAddOnData`](#importaddondata)       |                                      Add-on specific metadata to attach to the imported asset. |
+| Name               | Type                                  |                                                                          Description |
+| ------------------ | ------------------------------------- | -----------------------------------------------------------------------------------: |
+| `imageBlob`        | `Blob`                                |                                                        The image to add to the page. |
+| `attributes?`      | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding animated gifs to the page (i.e., `title`). |
+| `importAddOnData?` | [`ImportAddOnData`](#importaddondata) |                            Add-on specific metadata to attach to the imported asset. |
 
 #### Return Value
 
@@ -492,11 +532,11 @@ Adds a video to the current page.
 
 #### Parameters
 
-| Name               | Type                                        |                                                                          Description |
-| ------------------ | ------------------------------------------- | -----------------------------------------------------------------------------------: |
-| `videoBlob`        | `Blob`                                      |                                                        The video to add to the page. |
-| `attributes?`      | [`MediaAttributes`](#mediaattributes)       | Attributes that can be passed when adding video files to the page (i.e., `title`). |
-| `importAddOnData?` | [`ImportAddOnData`](#importaddondata)       |                                      Add-on specific metadata to attach to the imported asset. |
+| Name               | Type                                  |                                                                        Description |
+| ------------------ | ------------------------------------- | ---------------------------------------------------------------------------------: |
+| `videoBlob`        | `Blob`                                |                                                      The video to add to the page. |
+| `attributes?`      | [`MediaAttributes`](#mediaattributes) | Attributes that can be passed when adding video files to the page (i.e., `title`). |
+| `importAddOnData?` | [`ImportAddOnData`](#importaddondata) |                          Add-on specific metadata to attach to the imported asset. |
 
 #### Example Usage
 
@@ -571,10 +611,10 @@ async function addAudioFromURL(url) {
 
 Represents add-on-specific data that can be attached to imported media assets (nodes). This data provides a way for add-ons to store custom metadata with imported assets across multiple import APIs. Note: This support is not present for PSD/AI assets.
 
-| Name              | Type                       |                                                                                                                                                                                                                                   Description |
-| ----------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `nodeAddOnData?`  | `Record<string, string>`   |    Node-specific add-on data that persists with the individual asset container. This data remains attached to the container node even when the asset content is replaced. This data can be accessed later via document sandbox `MediaContainerNode.addOnData` API. |
-| `mediaAddOnData?` | `Record<string, string>`   | Media-specific add-on data that is tied to the actual asset content. This data is shared across all copies of the same asset throughout the document and will be reset if the asset content is replaced with different media. This data can be accessed later via document sandbox `MediaRectangleNode.mediaAddOnData` API. |
+| Name              | Type                     |                                                                                                                                                                                                                                                                                                                 Description |
+| ----------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `nodeAddOnData?`  | `Record<string, string>` |                                                             Node-specific add-on data that persists with the individual asset container. This data remains attached to the container node even when the asset content is replaced. This data can be accessed later via document sandbox `MediaContainerNode.addOnData` API. |
+| `mediaAddOnData?` | `Record<string, string>` | Media-specific add-on data that is tied to the actual asset content. This data is shared across all copies of the same asset throughout the document and will be reset if the asset content is replaced with different media. This data can be accessed later via document sandbox `MediaRectangleNode.mediaAddOnData` API. |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -839,8 +879,8 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 Extends the [`RenditionOptions`](#renditionoptions) object with the specific format for `pptx` renditions:
 
-| Name     | Type     |                                                                                     Description |
-| -------- | -------- | -----------------------------------------------------------------------------------------------: |
+| Name     | Type     |                                                                                   Description |
+| -------- | -------- | --------------------------------------------------------------------------------------------: |
 | `format` | `string` | [`RenditionFormat.pptx`](./addonsdk-constants.md) constant value for PowerPoint presentation. |
 
 <InlineAlert slots="text" variant="info"/>
@@ -860,9 +900,9 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
 
-| Name      | Type                                                       |                                      Description |
-| --------- | ---------------------------------------------------------- | -----------------------------------------------: |
-| `amount?` | `number`                                                   |                        The amount for the bleed. |
+| Name      | Type                                             |                                      Description |
+| --------- | ------------------------------------------------ | -----------------------------------------------: |
+| `amount?` | `number`                                         |                        The amount for the bleed. |
 | `unit`    | [`BleedUnit`](../addonsdk/addonsdk-constants.md) | The unit in which the bleed amount is expressed. |
 
 #### `PdfPageBoxes`
@@ -956,7 +996,7 @@ async function exportAsPowerPoint() {
       renditionOptions,
       addOnUISdk.constants.RenditionIntent.export
     );
-    
+
     // Download the PPTX file
     const rendition = renditions[0]; // PPTX exports as single file
     const url = URL.createObjectURL(rendition.blob);
@@ -1012,7 +1052,7 @@ async function exportAsPowerPoint() {
       renditionOptions,
       RenditionIntent.export
     );
-    
+
     // Download the PPTX file
     const rendition = renditions[0]; // PPTX exports as single file
     const url = URL.createObjectURL(rendition.blob);

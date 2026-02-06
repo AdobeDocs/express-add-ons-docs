@@ -14,7 +14,7 @@ capabilities, and is most frequently encountered as [ArtboardNode.children](Artb
 
 ## Type parameters
 
-• **T** _extends_ [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
 
 ## Accessors
 

@@ -17,7 +17,7 @@ reordered. The [ItemList](ItemList.md) subclass adds more capabilities, however.
 
 ## Type parameters
 
-• **T** _extends_ [`ListItem`](../interfaces/ListItem.md)
+• **T** *extends* [`ListItem`](../interfaces/ListItem.md)
 
 ## Accessors
 
