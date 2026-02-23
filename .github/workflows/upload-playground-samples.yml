@@ -1,42 +1,33 @@
 ---
-name: Manual Upload Playground Samples
+name: Upload playground samples
+
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
-      env:
-        description: "Deploy to (dev|prod)"
-        required: true
-        type: choice
-        options:
-          - dev
-          - prod
-        default: "dev"
+      target_branch:
+        description: "Target branch to send PR to (e.g., main, stage, etc)"
+        type: string
+        required: false
+        default: "main"
+      folder_path:
+        description: "Folder path to read files from (defaults to src/pages)"
+        type: string
+        required: false
+        default: "src/pages"
+
 jobs:
-  upload-playground-samples:
-    name: Upload Playground Samples
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node v20 for Yarn v3
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20.19.5" # Current LTS version
-
-      - name: Enable Corepack for Yarn v3
-        run: corepack enable
-
-      - name: Install Dependencies
-        run: yarn install
-
-      - name: Upload playground samples
-        run: node upload-playground-samples.mjs
-        env:
-          IMS_BASE_URL: ${{ inputs.env == 'prod' && 'https://ims-na1.adobelogin.com' || 'https://ims-na1-stg1.adobelogin.com' }}
-          FFC_BASE_URL: ${{ inputs.env == 'prod' && 'https://ffc-addon.adobe.io/' || 'https://ffc-addon-stage.adobe.io/' }}
-          PLAYGROUND_CLIENT_ID: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_CLIENT_ID || secrets.PLAYGROUND_CLIENT_ID_STAGE }}
-          PLAYGROUND_CLIENT_SECRET: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_CLIENT_SECRET || secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
-          PLAYGROUND_AUTH_CODE: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_AUTH_CODE || secrets.PLAYGROUND_AUTH_CODE_STAGE }}
-          PLAYGROUND_API_KEY: ${{ inputs.env == 'prod' && secrets.PLAYGROUND_API_KEY || secrets.PLAYGROUND_API_KEY_STAGE }}
-
+  upload-playground:
+    name: Upload playground samples
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/upload-playground.yml@main
+    with:
+      TARGET_BRANCH: ${{ inputs.target_branch || 'main' }}
+      FOLDER_PATH: ${{ inputs.folder_path || 'src/pages' }}
+    secrets:
+      FFC_BASE_URL: ${{ secrets.FFC_BASE_URL }}
+      IMS_BASE_URL: ${{ secrets.IMS_BASE_URL }}
+      PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
+      PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
+      PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
+      PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}

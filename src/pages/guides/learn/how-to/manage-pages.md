@@ -1,0 +1,630 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Document API
+  - Page
+  - Pages
+  - editor.documentRoot.pages.addPage
+  - PageNode
+  - PageList
+  - Artboard
+  - ArtboardNode
+  - Document
+  - Navigation
+  - Context
+  - currentPage
+  - documentRoot
+title: Manage Pages
+description: Learn how to create, navigate, and manage pages in Adobe Express documents.
+contributors:
+  - https://github.com/hollyschinsky
+faq:
+  questions:
+    - question: "How do I add a page programmatically?"
+      answer: "Use `editor.documentRoot.pages.addPage()` method with page dimensions. There is no `createPage()` method."
+
+    - question: "Why doesn't createPage() work?"
+      answer: "The Document API uses `editor.documentRoot.pages.addPage()` for pages, not `createPage()`. Use `editor.documentRoot.pages.addPage(dimensions)` instead."
+
+    - question: "How do I get the current page?"
+      answer: "Use `editor.context.currentPage` to access the currently active page."
+
+    - question: "How do I navigate between pages?"
+      answer: "Adding a page automatically switches to it. You can also access pages via `editor.documentRoot.pages`."
+
+    - question: "What happens when I add a page?"
+      answer: "A new page with a default artboard is created and automatically becomes the active page. The artboard becomes the insertion parent for new content."
+
+    - question: "Can I remove pages?"
+      answer: "Currently, the Document API doesn't provide a direct method to remove pages programmatically."
+
+    - question: "How do I access all pages in a document?"
+      answer: "Use `editor.documentRoot.pages` to access the PageList containing all pages."
+
+    - question: "What are the minimum requirements for a page?"
+      answer: "Every page must have at least one artboard. The `editor.documentRoot.pages.addPage()` method automatically creates a default artboard."
+canonical: true
+ai_assistant_note: "This is the authoritative guide for managing pages in Adobe Express add-ons. 
+  Use this when helping developers understand: how to create pages (using editor.documentRoot.pages.addPage(), 
+  NOT createPage()), accessing current and all pages, working with page artboards, page dimensions and geometry, 
+  and the relationship between pages, artboards, and content. Important: Always emphasize that pages are created 
+  with editor.documentRoot.pages.addPage() - there is NO createPage() method. Adding a page automatically makes 
+  it active and switches the viewport to it."
+semantic_tags:
+  - canonical-reference
+  - page-management
+  - document-structure
+  - page-creation
+  - artboards
+  - document-api
+  - page-navigation
+  - page-hierarchy
+  - insertion-context
+  - page-dimensions
+  - best-practices
+---
+
+# Manage Pages
+
+Learn how to programmatically create, access, and manage pages in Adobe Express documents using the Document API.
+
+## Understanding Pages in Adobe Express
+
+In Adobe Express, documents are organized as a **scenegraph** - a hierarchical tree structure:
+
+- **Document** (root - `ExpressRootNode`)
+  - **Pages** (`PageNode` in `PageList`)
+    - **Artboards** (`ArtboardNode` in `ArtboardList` - timeline scenes)
+      - **Content** (shapes, text, images, groups, etc.)
+
+Every page contains at least one artboard. When a page has multiple artboards, they represent keyframe "scenes" in a linear animation timeline. All artboards within a page share the same dimensions.
+
+<InlineAlert variant="info" slots="text"/>
+
+For more on the document scenegraph and node hierarchy, see the [Document API Concepts Guide](../platform-concepts/document-api.md) and [Developer Terminology Guide](../fundamentals/terminology.md).
+
+## Add a Page
+
+Use the [`editor.documentRoot.pages.addPage()`](../../../references/document-sandbox/document-apis/classes/page-list.md#addpage) method to create a new page with specified dimensions.
+
+### Example: Add a Standard Page
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js{try id=addStandardPage}
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Define page dimensions (width x height in pixels)
+const pageGeometry = {
+  width: 1080,
+  height: 1080
+};
+
+// Add a new page with the specified dimensions
+const newPage = editor.documentRoot.pages.addPage(pageGeometry);
+
+console.log("New page created:", newPage);
+console.log("Page dimensions:", newPage.width, "x", newPage.height);
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageNode, RectangleGeometry } from "express-document-sdk";
+
+// Define page dimensions (width x height in pixels)
+const pageGeometry: RectangleGeometry = {
+  width: 1080,
+  height: 1080
+};
+
+// Add a new page with the specified dimensions
+const newPage: PageNode = editor.documentRoot.pages.addPage(pageGeometry);
+
+console.log("New page created:", newPage);
+console.log("Page dimensions:", newPage.width, "x", newPage.height);
+```
+
+<InlineAlert slots="text" variant="info"/>
+
+When you call `editor.documentRoot.pages.addPage()`, the new page automatically becomes the active page and the default insertion point for new content. The viewport also switches to display the new page's artboard.
+
+### Example: Add Pages with Different Dimensions
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Add an Instagram post page (square)
+const instagramPage = editor.documentRoot.pages.addPage({
+  width: 1080,
+  height: 1080
+});
+
+// Add a story page (vertical)
+const storyPage = editor.documentRoot.pages.addPage({
+  width: 1080,
+  height: 1920
+});
+
+// Add a landscape page
+const landscapePage = editor.documentRoot.pages.addPage({
+  width: 1920,
+  height: 1080
+});
+
+console.log("Created 3 pages with different dimensions");
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageNode, RectangleGeometry } from "express-document-sdk";
+
+// Add an Instagram post page (square)
+const instagramPage: PageNode = editor.documentRoot.pages.addPage({
+  width: 1080,
+  height: 1080
+} as RectangleGeometry);
+
+// Add a story page (vertical)
+const storyPage: PageNode = editor.documentRoot.pages.addPage({
+  width: 1080,
+  height: 1920
+} as RectangleGeometry);
+
+// Add a landscape page
+const landscapePage: PageNode = editor.documentRoot.pages.addPage({
+  width: 1920,
+  height: 1080
+} as RectangleGeometry);
+
+console.log("Created 3 pages with different dimensions");
+```
+
+## Access Pages
+
+### Get the Current Page
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Get the currently active page
+const currentPage = editor.context.currentPage;
+
+console.log("Current page dimensions:", currentPage.width, "x", currentPage.height);
+console.log("Number of artboards:", currentPage.artboards.length);
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageNode } from "express-document-sdk";
+
+// Get the currently active page
+const currentPage: PageNode = editor.context.currentPage;
+
+console.log("Current page dimensions:", currentPage.width, "x", currentPage.height);
+console.log("Number of artboards:", currentPage.artboards.length);
+```
+
+### Access All Pages
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Get all pages in the document
+const allPages = editor.documentRoot.pages;
+
+console.log("Total pages in document:", allPages.length);
+
+// Iterate through all pages
+for (const page of allPages) {
+  console.log(`Page dimensions: ${page.width} x ${page.height}`);
+  console.log(`Artboards in this page: ${page.artboards.length}`);
+}
+
+// Access specific pages by index
+const firstPage = allPages[0];
+const lastPage = allPages[allPages.length - 1];
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageList, PageNode } from "express-document-sdk";
+
+// Get all pages in the document
+const allPages: PageList = editor.documentRoot.pages;
+
+console.log("Total pages in document:", allPages.length);
+
+// Iterate through all pages
+for (const page of allPages) {
+  console.log(`Page dimensions: ${page.width} x ${page.height}`);
+  console.log(`Artboards in this page: ${page.artboards.length}`);
+}
+
+// Access specific pages by index
+const firstPage: PageNode = allPages[0];
+const lastPage: PageNode = allPages[allPages.length - 1];
+```
+
+## Working with Page Content
+
+### Add Content to a Specific Page
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js{try id=addContentToNewPage}
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Create a new page
+const newPage = editor.documentRoot.pages.addPage({
+  width: 1080,
+  height: 1080
+});
+
+// The new page is automatically active, so content will be added to it
+const textNode = editor.createText("Content on the new page!");
+textNode.translation = { x: 100, y: 100 };
+
+// Add to the current insertion parent (the new page's artboard)
+editor.context.insertionParent.children.append(textNode);
+
+console.log("Added text to the new page");
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageNode, StandaloneTextNode, ContainerNode } from "express-document-sdk";
+
+// Create a new page
+const newPage: PageNode = editor.documentRoot.pages.addPage({
+  width: 1080,
+  height: 1080
+});
+
+// The new page is automatically active, so content will be added to it
+const textNode: StandaloneTextNode = editor.createText("Content on the new page!");
+textNode.translation = { x: 100, y: 100 };
+
+// Add to the current insertion parent (the new page's artboard)
+const insertionParent: ContainerNode = editor.context.insertionParent;
+insertionParent.children.append(textNode);
+
+console.log("Added text to the new page");
+```
+
+### Work with Page Artboards
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Get the current page
+const currentPage = editor.context.currentPage;
+
+// Access the page's artboards
+const artboards = currentPage.artboards;
+console.log("Number of artboards:", artboards.length);
+
+// Get the first (and typically only) artboard
+const firstArtboard = artboards.first;
+console.log("First artboard dimensions:", firstArtboard.width, "x", firstArtboard.height);
+
+// Add content directly to a specific artboard
+const rect = editor.createRectangle();
+rect.width = 200;
+rect.height = 200;
+rect.translation = { x: 50, y: 50 };
+
+firstArtboard.children.append(rect);
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageNode, ArtboardList, ArtboardNode, RectangleNode } from "express-document-sdk";
+
+// Get the current page
+const currentPage: PageNode = editor.context.currentPage;
+
+// Access the page's artboards
+const artboards: ArtboardList = currentPage.artboards;
+console.log("Number of artboards:", artboards.length);
+
+// Get the first (and typically only) artboard
+const firstArtboard: ArtboardNode = artboards.first!;
+console.log("First artboard dimensions:", firstArtboard.width, "x", firstArtboard.height);
+
+// Add content directly to a specific artboard
+const rect: RectangleNode = editor.createRectangle();
+rect.width = 200;
+rect.height = 200;
+rect.translation = { x: 50, y: 50 };
+
+firstArtboard.children.append(rect);
+```
+
+## Common Patterns and Best Practices
+
+### Page Creation Workflow
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+function createTemplatePages() {
+  // Define common page sizes
+  const pageSizes = {
+    instagram: { width: 1080, height: 1080 },
+    story: { width: 1080, height: 1920 },
+    landscape: { width: 1920, height: 1080 },
+    a4: { width: 595, height: 842 }
+  };
+
+  // Create pages for each template
+  const pages = {};
+  
+  for (const [name, dimensions] of Object.entries(pageSizes)) {
+    const page = editor.documentRoot.pages.addPage(dimensions);
+    pages[name] = page;
+    
+    // Add a title to each page
+    const title = editor.createText(`${name.toUpperCase()} Template`);
+    title.translation = { x: 50, y: 50 };
+    editor.context.insertionParent.children.append(title);
+    
+    console.log(`Created ${name} page: ${dimensions.width}x${dimensions.height}`);
+  }
+
+  return pages;
+}
+
+// Create template pages
+const templatePages = createTemplatePages();
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageNode, RectangleGeometry, StandaloneTextNode } from "express-document-sdk";
+
+interface PageSizes {
+  [key: string]: RectangleGeometry;
+}
+
+function createTemplatePages(): { [key: string]: PageNode } {
+  // Define common page sizes
+  const pageSizes: PageSizes = {
+    instagram: { width: 1080, height: 1080 },
+    story: { width: 1080, height: 1920 },
+    landscape: { width: 1920, height: 1080 },
+    a4: { width: 595, height: 842 }
+  };
+
+  // Create pages for each template
+  const pages: { [key: string]: PageNode } = {};
+  
+  for (const [name, dimensions] of Object.entries(pageSizes)) {
+    const page: PageNode = editor.documentRoot.pages.addPage(dimensions);
+    pages[name] = page;
+    
+    // Add a title to each page
+    const title: StandaloneTextNode = editor.createText(`${name.toUpperCase()} Template`);
+    title.translation = { x: 50, y: 50 };
+    editor.context.insertionParent.children.append(title);
+    
+    console.log(`Created ${name} page: ${dimensions.width}x${dimensions.height}`);
+  }
+
+  return pages;
+}
+
+// Create template pages
+const templatePages = createTemplatePages();
+```
+
+### Check Page Properties
+
+For detailed page information including content analysis and print readiness, see the [Page Metadata How-to Guide](page-metadata.md).
+
+<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+
+#### JavaScript
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+function analyzeDocument() {
+  const pages = editor.documentRoot.pages;
+  
+  console.log("=== Document Analysis ===");
+  console.log(`Total pages: ${pages.length}`);
+  
+  for (let i = 0; i < pages.length; i++) {
+    const page = pages[i];
+    console.log(`\nPage ${i + 1}:`);
+    console.log(`  Dimensions: ${page.width} x ${page.height}`);
+    console.log(`  Artboards: ${page.artboards.length}`);
+    
+    // Count content in each artboard
+    for (let j = 0; j < page.artboards.length; j++) {
+      const artboard = page.artboards[j];
+      console.log(`  Artboard ${j + 1}: ${artboard.children.length} items`);
+    }
+  }
+}
+
+// Analyze the current document
+analyzeDocument();
+```
+
+#### TypeScript
+
+```ts
+// sandbox/code.ts
+import { editor, PageList, PageNode, ArtboardNode } from "express-document-sdk";
+
+function analyzeDocument(): void {
+  const pages: PageList = editor.documentRoot.pages;
+  
+  console.log("=== Document Analysis ===");
+  console.log(`Total pages: ${pages.length}`);
+  
+  for (let i = 0; i < pages.length; i++) {
+    const page: PageNode = pages[i];
+    console.log(`\nPage ${i + 1}:`);
+    console.log(`  Dimensions: ${page.width} x ${page.height}`);
+    console.log(`  Artboards: ${page.artboards.length}`);
+    
+    // Count content in each artboard
+    for (let j = 0; j < page.artboards.length; j++) {
+      const artboard: ArtboardNode = page.artboards[j];
+      console.log(`  Artboard ${j + 1}: ${artboard.children.length} items`);
+    }
+  }
+}
+
+// Analyze the current document
+analyzeDocument();
+```
+
+## Key Concepts & Best Practices
+
+### Important: Use the Correct Method
+
+<InlineAlert slots="header, text1, text2" variant="warning"/>
+
+Pages require a unique API path
+
+Unlike other creation methods (like `editor.createRectangle()`), pages require the full path through the document structure:
+
+- ❌ `editor.addPage()` (doesn't exist)  
+- ❌ `editor.createPage()` (doesn't exist)
+- ✅ `editor.documentRoot.pages.addPage()` (correct)
+
+### Important Behaviors
+
+1. **Automatic activation** - Adding a page automatically makes it the active page and switches the viewport to it
+2. **Required dimensions** - The `addPage()` method requires a geometry parameter with width and height
+3. **Default artboard** - Every new page automatically gets one default artboard
+4. **Shared dimensions** - All artboards within a page must have the same dimensions
+5. **Insertion context** - `editor.context.insertionParent` points to the active artboard where new content is added
+
+## Integration with Other APIs
+
+Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly with other Adobe Express APIs:
+
+- **Metadata APIs** - Use `newPage.id` with Add-on UI SDK metadata APIs to retrieve detailed page information. See the [Page Metadata How-to Guide](page-metadata.md) for complete examples.
+- **Rendition APIs** - Export specific pages as images, PDFs, or videos. See [Create Renditions](create-renditions.md).
+- **Selection APIs** - Work with selected content on pages. See [Handle Element Selection](handle-selection.md).
+- **Content APIs** - Add text, shapes, images, and other content to page artboards using the Document API.
+
+## FAQs
+
+#### Q: How do I add a page programmatically?
+
+**A:** Use `editor.documentRoot.pages.addPage(dimensions)` with page dimensions. There is no `createPage()` method.
+
+#### Q: Why doesn't createPage() work?
+
+**A:** The Document API uses `editor.documentRoot.pages.addPage()` for pages, not `createPage()`. Use `editor.documentRoot.pages.addPage(dimensions)` instead.
+
+#### Q: How do I get the current page?
+
+**A:** Use `editor.context.currentPage` to access the currently active page.
+
+#### Q: How do I navigate between pages?
+
+**A:** Adding a page automatically switches to it. You can also access pages via `editor.documentRoot.pages`.
+
+#### Q: What happens when I add a page?
+
+**A:** A new page with a default artboard is created and automatically becomes the active page. The artboard becomes the insertion parent for new content.
+
+#### Q: Can I remove pages?
+
+**A:** Currently, the Document API doesn't provide a direct method to remove pages programmatically.
+
+#### Q: How do I access all pages in a document?
+
+**A:** Use `editor.documentRoot.pages` to access the PageList containing all pages.
+
+#### Q: What are the minimum requirements for a page?
+
+**A:** Every page must have at least one artboard. The `editor.documentRoot.pages.addPage()` method automatically creates a default artboard.
+
+## Related Topics
+
+### Page Information and Metadata
+
+- **[Page Metadata](page-metadata.md)** - Get detailed information about pages, including dimensions, content types, and selected page IDs
+- **[Document Metadata](document-metadata.md)** - Access document-level information and listen for document events
+- **[getSelectedPageIds() API](../../../references/addonsdk/app-document.md#getselectedpageids)** - Retrieve IDs of currently selected pages
+
+### Working with Page Content
+
+- **[Position Elements](position-elements.md)** - Position and arrange content within pages and artboards
+- **[Group Elements](group-elements.md)** - Organize page content using groups
+- **[Use Geometry](use-geometry.md)** - Create shapes and geometric elements for your pages
+- **[Use Text](use-text.md)** - Add and style text content on pages
+- **[Use Images](use-images.md)** - Import and work with images on pages
+
+### Document Structure and Context
+
+- **[Document API Concepts](../platform-concepts/document-api.md)** - Understanding the Adobe Express Document Object Model
+- **[Context API Reference](../../../references/document-sandbox/document-apis/classes/context.md)** - Current page, selection, and insertion context
+- **[PageNode API Reference](../../../references/document-sandbox/document-apis/classes/page-node.md)** - Detailed page node documentation
+- **[PageList API Reference](../../../references/document-sandbox/document-apis/classes/page-list.md)** - Page list management methods
+
+### Advanced Topics
+
+- **[Create Renditions](create-renditions.md)** - Export specific pages or entire documents as images, PDFs, or videos
+- **[Handle Element Selection](handle-selection.md)** - Work with selected elements on pages

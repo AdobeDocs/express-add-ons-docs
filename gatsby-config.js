@@ -52,11 +52,11 @@ module.exports = {
             pages: [
               {
                 title: "currentUser",
-                path: "references/addonsdk/app-currentUser.md",
+                path: "references/addonsdk/app-current-user.md",
               },
               {
                 title: "devFlags",
-                path: "references/addonsdk/app-devFlags.md",
+                path: "references/addonsdk/app-dev-flags.md",
               },
               {
                 title: "document",
@@ -78,7 +78,7 @@ module.exports = {
             pages: [
               {
                 title: "clientStorage",
-                path: "references/addonsdk/instance-clientStorage.md",
+                path: "references/addonsdk/instance-client-storage.md",
               },
               {
                 title: "manifest",
@@ -120,225 +120,225 @@ module.exports = {
             pages: [
               {
                 title: "Classes",
-                path: "references/document-sandbox/document-apis/classes/Editor.md",
+                path: "references/document-sandbox/document-apis/classes/editor.md",
                 pages: [
                   {
                     title: "AddOnData",
-                    path: "references/document-sandbox/document-apis/classes/AddOnData.md",
+                    path: "references/document-sandbox/document-apis/classes/add-on-data.md",
                   },
                   {
                     title: "ArtboardList",
-                    path: "references/document-sandbox/document-apis/classes/ArtboardList.md",
+                    path: "references/document-sandbox/document-apis/classes/artboard-list.md",
                   },
                   {
                     title: "ArtboardNode",
-                    path: "references/document-sandbox/document-apis/classes/ArtboardNode.md",
+                    path: "references/document-sandbox/document-apis/classes/artboard-node.md",
                   },
                   {
                     title: "AvailableFont",
-                    path: "references/document-sandbox/document-apis/classes/AvailableFont.md",
+                    path: "references/document-sandbox/document-apis/classes/available-font.md",
                   },
                   {
                     title: "BaseFont",
-                    path: "references/document-sandbox/document-apis/classes/BaseFont.md",
+                    path: "references/document-sandbox/document-apis/classes/base-font.md",
                   },
                   {
                     title: "BaseNode",
-                    path: "references/document-sandbox/document-apis/classes/BaseNode.md",
+                    path: "references/document-sandbox/document-apis/classes/base-node.md",
                   },
                   {
                     title: "BitmapImage",
-                    path: "references/document-sandbox/document-apis/classes/BitmapImage.md",
+                    path: "references/document-sandbox/document-apis/classes/bitmap-image.md",
                   },
                   {
                     title: "ColorUtils",
-                    path: "references/document-sandbox/document-apis/classes/ColorUtils.md",
+                    path: "references/document-sandbox/document-apis/classes/color-utils.md",
                   },
                   {
                     title: "ComplexShapeNode",
-                    path: "references/document-sandbox/document-apis/classes/ComplexShapeNode.md",
+                    path: "references/document-sandbox/document-apis/classes/complex-shape-node.md",
                   },
                   {
                     title: "Context",
-                    path: "references/document-sandbox/document-apis/classes/Context.md",
+                    path: "references/document-sandbox/document-apis/classes/context.md",
                   },
                   {
                     title: "Editor",
-                    path: "references/document-sandbox/document-apis/classes/Editor.md",
+                    path: "references/document-sandbox/document-apis/classes/editor.md",
                   },
                   {
                     title: "EllipseNode",
-                    path: "references/document-sandbox/document-apis/classes/EllipseNode.md",
+                    path: "references/document-sandbox/document-apis/classes/ellipse-node.md",
                   },
                   {
                     title: "ExpressContext",
-                    path: "references/document-sandbox/document-apis/classes/ExpressContext.md",
+                    path: "references/document-sandbox/document-apis/classes/express-context.md",
                   },
                   {
                     title: "ExpressEditor",
-                    path: "references/document-sandbox/document-apis/classes/ExpressEditor.md",
+                    path: "references/document-sandbox/document-apis/classes/express-editor.md",
                   },
                   {
                     title: "ExpressRootNode",
-                    path: "references/document-sandbox/document-apis/classes/ExpressRootNode.md",
+                    path: "references/document-sandbox/document-apis/classes/express-root-node.md",
                   },
                   {
                     title: "ExpressViewport",
-                    path: "references/document-sandbox/document-apis/classes/ExpressViewport.md",
+                    path: "references/document-sandbox/document-apis/classes/express-viewport.md",
                   },
                   {
                     title: "FillableNode",
-                    path: "references/document-sandbox/document-apis/classes/FillableNode.md",
+                    path: "references/document-sandbox/document-apis/classes/fillable-node.md",
                   },
                   {
                     title: "Fonts",
-                    path: "references/document-sandbox/document-apis/classes/Fonts.md",
+                    path: "references/document-sandbox/document-apis/classes/fonts.md",
                   },
                   {
                     title: "GridCellNode",
-                    path: "references/document-sandbox/document-apis/classes/GridCellNode.md",
+                    path: "references/document-sandbox/document-apis/classes/grid-cell-node.md",
                   },
                   {
                     title: "GridLayoutNode",
-                    path: "references/document-sandbox/document-apis/classes/GridLayoutNode.md",
+                    path: "references/document-sandbox/document-apis/classes/grid-layout-node.md",
                   },
                   {
                     title: "GroupNode",
-                    path: "references/document-sandbox/document-apis/classes/GroupNode.md",
+                    path: "references/document-sandbox/document-apis/classes/group-node.md",
                   },
                   {
                     title: "ImageRectangleNode",
-                    path: "references/document-sandbox/document-apis/classes/ImageRectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/image-rectangle-node.md",
                   },
                   {
                     title: "ItemList",
-                    path: "references/document-sandbox/document-apis/classes/ItemList.md",
+                    path: "references/document-sandbox/document-apis/classes/item-list.md",
                   },
                   {
                     title: "LineNode",
-                    path: "references/document-sandbox/document-apis/classes/LineNode.md",
+                    path: "references/document-sandbox/document-apis/classes/line-node.md",
                   },
                   {
                     title: "MediaContainerNode",
-                    path: "references/document-sandbox/document-apis/classes/MediaContainerNode.md",
+                    path: "references/document-sandbox/document-apis/classes/media-container-node.md",
                   },
                   {
                     title: "MediaRectangleNode",
-                    path: "references/document-sandbox/document-apis/classes/MediaRectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/media-rectangle-node.md",
                   },
                   {
                     title: "Node",
-                    path: "references/document-sandbox/document-apis/classes/Node.md",
+                    path: "references/document-sandbox/document-apis/classes/node.md",
                   },
                   {
                     title: "PageList",
-                    path: "references/document-sandbox/document-apis/classes/PageList.md",
+                    path: "references/document-sandbox/document-apis/classes/page-list.md",
                   },
                   {
                     title: "PageNode",
-                    path: "references/document-sandbox/document-apis/classes/PageNode.md",
+                    path: "references/document-sandbox/document-apis/classes/page-node.md",
                   },
                   {
                     title: "PathNode",
-                    path: "references/document-sandbox/document-apis/classes/PathNode.md",
+                    path: "references/document-sandbox/document-apis/classes/path-node.md",
                   },
                   {
                     title: "ReadOnlyItemList",
-                    path: "references/document-sandbox/document-apis/classes/ReadOnlyItemList.md",
+                    path: "references/document-sandbox/document-apis/classes/read-only-item-list.md",
                   },
                   {
                     title: "ReadOnlyMask",
-                    path: "references/document-sandbox/document-apis/classes/ReadOnlyMask.md",
+                    path: "references/document-sandbox/document-apis/classes/read-only-mask.md",
                   },
                   {
                     title: "RectangleNode",
-                    path: "references/document-sandbox/document-apis/classes/RectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/rectangle-node.md",
                   },
                   {
                     title: "RestrictedItemList",
-                    path: "references/document-sandbox/document-apis/classes/RestrictedItemList.md",
+                    path: "references/document-sandbox/document-apis/classes/restricted-item-list.md",
                   },
                   {
                     title: "SolidColorShapeNode",
-                    path: "references/document-sandbox/document-apis/classes/SolidColorShapeNode.md",
+                    path: "references/document-sandbox/document-apis/classes/solid-color-shape-node.md",
                   },
                   {
                     title: "StandaloneTextContentModel",
-                    path: "references/document-sandbox/document-apis/classes/StandaloneTextContentModel.md",
+                    path: "references/document-sandbox/document-apis/classes/standalone-text-content-model.md",
                   },
                   {
                     title: "StandaloneTextNode",
-                    path: "references/document-sandbox/document-apis/classes/StandaloneTextNode.md",
+                    path: "references/document-sandbox/document-apis/classes/standalone-text-node.md",
                   },
                   {
                     title: "StrokableNode",
-                    path: "references/document-sandbox/document-apis/classes/StrokableNode.md",
+                    path: "references/document-sandbox/document-apis/classes/strokable-node.md",
                   },
                   {
                     title: "StrokeShapeNode",
-                    path: "references/document-sandbox/document-apis/classes/StrokeShapeNode.md",
+                    path: "references/document-sandbox/document-apis/classes/stroke-shape-node.md",
                   },
                   {
                     title: "TextContentModel",
-                    path: "references/document-sandbox/document-apis/classes/TextContentModel.md",
+                    path: "references/document-sandbox/document-apis/classes/text-content-model.md",
                   },
                   {
                     title: "TextNode",
-                    path: "references/document-sandbox/document-apis/classes/TextNode.md",
+                    path: "references/document-sandbox/document-apis/classes/text-node.md",
                   },
                   {
                     title: "TextNodeContentModel",
-                    path: "references/document-sandbox/document-apis/classes/TextNodeContentModel.md",
+                    path: "references/document-sandbox/document-apis/classes/text-node-content-model.md",
                   },
                   {
                     title: "ThreadedTextContentModel",
-                    path: "references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md",
+                    path: "references/document-sandbox/document-apis/classes/threaded-text-content-model.md",
                   },
                   {
                     title: "ThreadedTextList",
-                    path: "references/document-sandbox/document-apis/classes/ThreadedTextList.md",
+                    path: "references/document-sandbox/document-apis/classes/threaded-text-list.md",
                   },
                   {
                     title: "ThreadedTextNode",
-                    path: "references/document-sandbox/document-apis/classes/ThreadedTextNode.md",
+                    path: "references/document-sandbox/document-apis/classes/threaded-text-node.md",
                   },
                   {
                     title: "UnavailableFont",
-                    path: "references/document-sandbox/document-apis/classes/UnavailableFont.md",
+                    path: "references/document-sandbox/document-apis/classes/unavailable-font.md",
                   },
                   {
                     title: "UnknownMediaRectangleNode",
-                    path: "references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md",
+                    path: "references/document-sandbox/document-apis/classes/unknown-media-rectangle-node.md",
                   },
                   {
                     title: "UnknownNode",
-                    path: "references/document-sandbox/document-apis/classes/UnknownNode.md",
+                    path: "references/document-sandbox/document-apis/classes/unknown-node.md",
                   },
                   {
                     title: "VisualNode",
-                    path: "references/document-sandbox/document-apis/classes/VisualNode.md",
+                    path: "references/document-sandbox/document-apis/classes/visual-node.md",
                   },
                 ],
               },
               {
                 title: "Interfaces",
-                path: "references/document-sandbox/document-apis/interfaces/AreaTextLayout.md",
+                path: "references/document-sandbox/document-apis/interfaces/area-text-layout.md",
                 pages: [
                   {
                     title: "AreaTextLayout",
-                    path: "references/document-sandbox/document-apis/interfaces/AreaTextLayout.md",
+                    path: "references/document-sandbox/document-apis/interfaces/area-text-layout.md",
                   },
                   {
                     title: "AutoHeightTextLayout",
-                    path: "references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md",
+                    path: "references/document-sandbox/document-apis/interfaces/auto-height-text-layout.md",
                   },
                   {
                     title: "AutoWidthTextLayout",
-                    path: "references/document-sandbox/document-apis/interfaces/AutoWidthTextLayout.md",
+                    path: "references/document-sandbox/document-apis/interfaces/auto-width-text-layout.md",
                   },
                   {
                     title: "BaseParagraphStyles",
-                    path: "references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md",
+                    path: "references/document-sandbox/document-apis/interfaces/base-paragraph-styles.md",
                   },
                   // {
                   //   title: "BitmapImage",
@@ -346,47 +346,47 @@ module.exports = {
                   // },
                   {
                     title: "CharacterStyles",
-                    path: "references/document-sandbox/document-apis/interfaces/CharacterStyles.md",
+                    path: "references/document-sandbox/document-apis/interfaces/character-styles.md",
                   },
                   {
                     title: "CharacterStylesInput",
-                    path: "references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md",
+                    path: "references/document-sandbox/document-apis/interfaces/character-styles-input.md",
                   },
                   {
                     title: "CharacterStylesRange",
-                    path: "references/document-sandbox/document-apis/interfaces/CharacterStylesRange.md",
+                    path: "references/document-sandbox/document-apis/interfaces/character-styles-range.md",
                   },
                   {
                     title: "CharacterStylesRangeInput",
-                    path: "references/document-sandbox/document-apis/interfaces/CharacterStylesRangeInput.md",
+                    path: "references/document-sandbox/document-apis/interfaces/character-styles-range-input.md",
                   },
                   {
                     title: "Color",
-                    path: "references/document-sandbox/document-apis/interfaces/Color.md",
+                    path: "references/document-sandbox/document-apis/interfaces/color.md",
                   },
                   {
                     title: "ColorFill",
-                    path: "references/document-sandbox/document-apis/interfaces/ColorFill.md",
+                    path: "references/document-sandbox/document-apis/interfaces/color-fill.md",
                   },
                   {
                     title: "CommonResizeOptions",
-                    path: "references/document-sandbox/document-apis/interfaces/CommonResizeOptions.md",
+                    path: "references/document-sandbox/document-apis/interfaces/common-resize-options.md",
                   },
                   {
                     title: "ContainerNode",
-                    path: "references/document-sandbox/document-apis/interfaces/ContainerNode.md",
+                    path: "references/document-sandbox/document-apis/interfaces/container-node.md",
                   },
                   {
                     title: "CreateRenditionOptions",
-                    path: "references/document-sandbox/document-apis/interfaces/CreateRenditionOptions.md",
+                    path: "references/document-sandbox/document-apis/interfaces/create-rendition-options.md",
                   },
                   {
                     title: "CreateRenditionResult",
-                    path: "references/document-sandbox/document-apis/interfaces/CreateRenditionResult.md",
+                    path: "references/document-sandbox/document-apis/interfaces/create-rendition-result.md",
                   },
                   {
                     title: "Fill",
-                    path: "references/document-sandbox/document-apis/interfaces/Fill.md",
+                    path: "references/document-sandbox/document-apis/interfaces/fill.md",
                   },
                   // {
                   //   "title": "FillTypeValueExtensibleEnum",
@@ -394,227 +394,227 @@ module.exports = {
                   // },
                   {
                     title: "IFillableNode",
-                    path: "references/document-sandbox/document-apis/interfaces/IFillableNode.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-fillable-node.md",
                   },
                   {
                     title: "IMediaContainerNode",
-                    path: "references/document-sandbox/document-apis/interfaces/IMediaContainerNode.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-media-container-node.md",
                   },
                   {
                     title: "INodeBounds",
-                    path: "references/document-sandbox/document-apis/interfaces/INodeBounds.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-node-bounds.md",
                   },
                   {
                     title: "IRectangularNode",
-                    path: "references/document-sandbox/document-apis/interfaces/IRectangularNode.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-rectangular-node.md",
                   },
                   {
                     title: "IStrokableNode",
-                    path: "references/document-sandbox/document-apis/interfaces/IStrokableNode.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-strokable-node.md",
                   },
                   {
                     title: "IVisualNodeBounds",
-                    path: "references/document-sandbox/document-apis/interfaces/IVisualNodeBounds.md",
+                    path: "references/document-sandbox/document-apis/interfaces/i-visual-node-bounds.md",
                   },
                   {
                     title: "ListItem",
-                    path: "references/document-sandbox/document-apis/interfaces/ListItem.md",
+                    path: "references/document-sandbox/document-apis/interfaces/list-item.md",
                   },
                   {
                     title: "OrderedListStyleInput",
-                    path: "references/document-sandbox/document-apis/interfaces/OrderedListStyleInput.md",
+                    path: "references/document-sandbox/document-apis/interfaces/ordered-list-style-input.md",
                   },
                   {
                     title: "ParagraphStyles",
-                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStyles.md",
+                    path: "references/document-sandbox/document-apis/interfaces/paragraph-styles.md",
                   },
                   {
                     title: "ParagraphStylesInput",
-                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md",
+                    path: "references/document-sandbox/document-apis/interfaces/paragraph-styles-input.md",
                   },
                   {
                     title: "ParagraphStylesRange",
-                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md",
+                    path: "references/document-sandbox/document-apis/interfaces/paragraph-styles-range.md",
                   },
                   {
                     title: "ParagraphStylesRangeInput",
-                    path: "references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput.md",
+                    path: "references/document-sandbox/document-apis/interfaces/paragraph-styles-range-input.md",
                   },
                   {
                     title: "Point",
-                    path: "references/document-sandbox/document-apis/interfaces/Point.md",
+                    path: "references/document-sandbox/document-apis/interfaces/point.md",
                   },
                   {
                     title: "Rect",
-                    path: "references/document-sandbox/document-apis/interfaces/Rect.md",
+                    path: "references/document-sandbox/document-apis/interfaces/rect.md",
                   },
                   {
                     title: "RectangleGeometry",
-                    path: "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md",
+                    path: "references/document-sandbox/document-apis/interfaces/rectangle-geometry.md",
                   },
                   {
                     title: "RemoveListStyleInput",
-                    path: "references/document-sandbox/document-apis/interfaces/RemoveListStyleInput.md",
+                    path: "references/document-sandbox/document-apis/interfaces/remove-list-style-input.md",
                   },
                   {
                     title: "RescaleProportionalToHeightOptions",
-                    path: "references/document-sandbox/document-apis/interfaces/RescaleProportionalToHeightOptions.md",
+                    path: "references/document-sandbox/document-apis/interfaces/rescale-proportional-to-height-options.md",
                   },
                   {
                     title: "RescaleProportionalToWidthOptions",
-                    path: "references/document-sandbox/document-apis/interfaces/RescaleProportionalToWidthOptions.md",
+                    path: "references/document-sandbox/document-apis/interfaces/rescale-proportional-to-width-options.md",
                   },
                   {
                     title: "ResizeUsingHeightOptions",
-                    path: "references/document-sandbox/document-apis/interfaces/ResizeUsingHeightOptions.md",
+                    path: "references/document-sandbox/document-apis/interfaces/resize-using-height-options.md",
                   },
                   {
                     title: "ResizeUsingWidthOptions",
-                    path: "references/document-sandbox/document-apis/interfaces/ResizeUsingWidthOptions.md",
+                    path: "references/document-sandbox/document-apis/interfaces/resize-using-width-options.md",
                   },
                   {
                     title: "SolidColorStroke",
-                    path: "references/document-sandbox/document-apis/interfaces/SolidColorStroke.md",
+                    path: "references/document-sandbox/document-apis/interfaces/solid-color-stroke.md",
                   },
                   {
                     title: "Stroke",
-                    path: "references/document-sandbox/document-apis/interfaces/Stroke.md",
+                    path: "references/document-sandbox/document-apis/interfaces/stroke.md",
                   },
                   {
                     title: "StyleRange",
-                    path: "references/document-sandbox/document-apis/interfaces/StyleRange.md",
+                    path: "references/document-sandbox/document-apis/interfaces/style-range.md",
                   },
                   {
                     title: "TextContent",
-                    path: "references/document-sandbox/document-apis/interfaces/TextContent.md",
+                    path: "references/document-sandbox/document-apis/interfaces/text-content.md",
                   },
                   {
                     title: "TextFrameAreaGeometry",
-                    path: "references/document-sandbox/document-apis/interfaces/TextFrameAreaGeometry.md",
+                    path: "references/document-sandbox/document-apis/interfaces/text-frame-area-geometry.md",
                   },
                   {
                     title: "TextRange",
-                    path: "references/document-sandbox/document-apis/interfaces/TextRange.md",
+                    path: "references/document-sandbox/document-apis/interfaces/text-range.md",
                   },
                   {
                     title: "UnorderedListStyleInput",
-                    path: "references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md",
+                    path: "references/document-sandbox/document-apis/interfaces/unordered-list-style-input.md",
                   },
                   {
                     title: "UnsupportedTextLayout",
-                    path: "references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout.md",
+                    path: "references/document-sandbox/document-apis/interfaces/unsupported-text-layout.md",
                   },
                 ],
               },
               {
                 title: "Constants",
-                path: "references/document-sandbox/document-apis/enumerations/ArrowHeadType.md",
+                path: "references/document-sandbox/document-apis/enumerations/arrow-head-type.md",
                 pages: [
                   {
                     title: "ArrowHeadType",
-                    path: "references/document-sandbox/document-apis/enumerations/ArrowHeadType.md",
+                    path: "references/document-sandbox/document-apis/enumerations/arrow-head-type.md",
                   },
                   {
                     title: "BlendMode",
-                    path: "references/document-sandbox/document-apis/enumerations/BlendMode.md",
+                    path: "references/document-sandbox/document-apis/enumerations/blend-mode.md",
                   },
                   {
                     title: "CreateRenditionFormat",
-                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/CreateRenditionFormat.md",
+                    path: "references/document-sandbox/document-apis/namespaces/constants/enumerations/create-rendition-format.md",
                   },
                   {
                     title: "EditorEvent",
-                    path: "references/document-sandbox/document-apis/enumerations/EditorEvent.md",
+                    path: "references/document-sandbox/document-apis/enumerations/editor-event.md",
                   },
                   {
                     title: "FillRule",
-                    path: "references/document-sandbox/document-apis/enumerations/FillRule.md",
+                    path: "references/document-sandbox/document-apis/enumerations/fill-rule.md",
                   },
                   {
                     title: "FillType",
-                    path: "references/document-sandbox/document-apis/enumerations/FillType.md",
+                    path: "references/document-sandbox/document-apis/enumerations/fill-type.md",
                   },
                   {
                     title: "ResizeBehavior",
-                    path: "references/document-sandbox/document-apis/enumerations/ResizeBehavior.md",
+                    path: "references/document-sandbox/document-apis/enumerations/resize-behavior.md",
                   },
                   {
                     title: "OrderedListNumbering",
-                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/OrderedListNumbering.md",
+                    path: "references/document-sandbox/document-apis/namespaces/constants/enumerations/ordered-list-numbering.md",
                   },
                   {
                     title: "ParagraphListType",
-                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/ParagraphListType.md",
+                    path: "references/document-sandbox/document-apis/namespaces/constants/enumerations/paragraph-list-type.md",
                   },
                   {
                     title: "SceneNodeType",
-                    path: "references/document-sandbox/document-apis/enumerations/SceneNodeType.md",
+                    path: "references/document-sandbox/document-apis/enumerations/scene-node-type.md",
                   },
                   {
                     title: "StrokePosition",
-                    path: "references/document-sandbox/document-apis/enumerations/StrokePosition.md",
+                    path: "references/document-sandbox/document-apis/enumerations/stroke-position.md",
                   },
                   {
                     title: "StrokeType",
-                    path: "references/document-sandbox/document-apis/enumerations/StrokeType.md",
+                    path: "references/document-sandbox/document-apis/enumerations/stroke-type.md",
                   },
                   {
                     title: "TextAlignment",
-                    path: "references/document-sandbox/document-apis/enumerations/TextAlignment.md",
+                    path: "references/document-sandbox/document-apis/enumerations/text-alignment.md",
                   },
                   {
                     title: "TextLayout",
-                    path: "references/document-sandbox/document-apis/enumerations/TextLayout.md",
+                    path: "references/document-sandbox/document-apis/enumerations/text-layout.md",
                   },
                   {
                     title: "TextScriptStyle",
-                    path: "references/document-sandbox/document-apis/enumerations/TextScriptStyle.md",
+                    path: "references/document-sandbox/document-apis/enumerations/text-script-style.md",
                   },
                   {
                     title: "TextStyleSource",
-                    path: "references/document-sandbox/document-apis/namespaces/Constants/enumerations/TextStyleSource.md",
+                    path: "references/document-sandbox/document-apis/namespaces/constants/enumerations/text-style-source.md",
                   },
                   {
                     title: "VisualEffectType",
-                    path: "references/document-sandbox/document-apis/enumerations/VisualEffectType.md",
+                    path: "references/document-sandbox/document-apis/enumerations/visual-effect-type.md",
                   },
                 ],
               },
               {
                 title: "Types",
-                path: "references/document-sandbox/document-apis/type-aliases/EditorEventHandler.md",
+                path: "references/document-sandbox/document-apis/type-aliases/editor-event-handler.md",
                 pages: [
                   {
                     title: "EditorEventHandler",
-                    path: "references/document-sandbox/document-apis/type-aliases/EditorEventHandler.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/editor-event-handler.md",
                   },
                   {
                     title: "EventHandlerId",
-                    path: "references/document-sandbox/document-apis/type-aliases/EventHandlerId.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/event-handler-id.md",
                   },
                   {
                     title: "Font",
-                    path: "references/document-sandbox/document-apis/type-aliases/Font.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/font.md",
                   },
                   {
                     title: "ListStyleInput",
-                    path: "references/document-sandbox/document-apis/type-aliases/ListStyleInput.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/list-style-input.md",
                   },
                   {
                     title: "OrderedListStyle",
-                    path: "references/document-sandbox/document-apis/type-aliases/OrderedListStyle.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/ordered-list-style.md",
                   },
                   {
                     title: "ResizeOptions",
-                    path: "references/document-sandbox/document-apis/type-aliases/ResizeOptions.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/resize-options.md",
                   },
                   {
                     title: "SolidColorStrokeWithOptionalType",
-                    path: "references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/solid-color-stroke-with-optional-type.md",
                   },
                   {
                     title: "UnorderedListStyle",
-                    path: "references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md",
+                    path: "references/document-sandbox/document-apis/type-aliases/unordered-list-style.md",
                   },
                 ],
               },
@@ -653,230 +653,230 @@ module.exports = {
           },
           {
             title: "Developer Journey",
-            path: "guides/getting_started/developer-journey.md",
+            path: "guides/getting-started/developer-journey.md",
           },
           {
             title: "Hello, World!",
-            path: "guides/getting_started/hello-world.md",
+            path: "guides/getting-started/hello-world.md",
           },
           {
             title: "Project Anatomy",
-            path: "guides/getting_started/addon-project-anatomy.md",
+            path: "guides/getting-started/addon-project-anatomy.md",
           },
           {
             title: "Code Playground",
-            path: "guides/getting_started/code-playground.md",
+            path: "guides/getting-started/code-playground.md",
             pages: [
               {
                 title: "Overview",
-                path: "guides/getting_started/code-playground.md",
+                path: "guides/getting-started/code-playground.md",
               },
               {
                 title: "Script Mode",
-                path: "guides/getting_started/code-playground-script-mode.md",
+                path: "guides/getting-started/code-playground-script-mode.md",
               },
               {
                 title: "Add-on Mode",
-                path: "guides/getting_started/code-playground-addon-mode.md",
+                path: "guides/getting-started/code-playground-addon-mode.md",
               },
               {
                 title: "Workflow & Productivity",
-                path: "guides/getting_started/code-playground-workflow.md",
+                path: "guides/getting-started/code-playground-workflow.md",
               },
               {
                 title: "Troubleshooting",
-                path: "guides/getting_started/code-playground-troubleshooting.md",
+                path: "guides/getting-started/code-playground-troubleshooting.md",
               },
             ],
           },
           {
             title: "Dev MCP Server",
-            path: "guides/getting_started/local_development/mcp_server.md",
+            path: "guides/getting-started/local-development/mcp-server.md",
           },
           {
             title: "Local Development",
-            path: "guides/getting_started/local_development/dev_tooling.md",
+            path: "guides/getting-started/local-development/dev-tooling.md",
             pages: [
               {
                 title: "Development tools",
-                path: "guides/getting_started/local_development/dev_tooling.md",
+                path: "guides/getting-started/local-development/dev-tooling.md",
               },
               {
                 title: "Browser debugging",
-                path: "guides/getting_started/local_development/browser.md",
+                path: "guides/getting-started/local-development/browser.md",
               },
               {
                 title: "VS Code debugging",
-                path: "guides/getting_started/local_development/vs-code.md",
+                path: "guides/getting-started/local-development/vs-code.md",
               },
               {
                 title: "Known Issues & Limitations",
-                path: "guides/getting_started/local_development/known_issues_limitations.md",
+                path: "guides/getting-started/local-development/known-issues-limitations.md",
               },
             ],
           },
           {
             title: "What's new",
-            path: "guides/getting_started/changelog.md",
+            path: "guides/getting-started/changelog.md",
           },
         ],
       },
       {
         title: "Learn",
-        path: "guides/learn/how_to/index.md",
+        path: "guides/learn/how-to/index.md",
         header: true,
         pages: [
           {
             title: "How-to",
-            path: "guides/learn/how_to/index.md",
+            path: "guides/learn/how-to/index.md",
             pages: [
               {
                 title: "About",
-                path: "guides/learn/how_to/index.md",
+                path: "guides/learn/how-to/index.md",
               },
               {
                 title: "Authentication & Authorization",
-                path: "guides/learn/how_to/oauth2.md",
+                path: "guides/learn/how-to/oauth2.md",
                 pages: [
                   {
                     title: "Use OAuth 2.0",
-                    path: "guides/learn/how_to/oauth2.md",
+                    path: "guides/learn/how-to/oauth2.md",
                   },
                 ],
               },
               {
                 title: "Data & Environment",
-                path: "guides/learn/how_to/local_data_management.md",
+                path: "guides/learn/how-to/local-data-management.md",
                 pages: [
                   {
                     title: "Store Data",
-                    path: "guides/learn/how_to/local_data_management.md",
+                    path: "guides/learn/how-to/local-data-management.md",
                   },
                   {
                     title: "Theme & Locale",
-                    path: "guides/learn/how_to/theme_locale.md",
+                    path: "guides/learn/how-to/theme-locale.md",
                   },
                 ],
               },
               {
                 title: "UI & Interaction",
-                path: "guides/learn/how_to/drag_and_drop.md",
+                path: "guides/learn/how-to/drag-and-drop.md",
                 pages: [
                   {
                     title: "Use Drag & Drop",
-                    path: "guides/learn/how_to/drag_and_drop.md",
+                    path: "guides/learn/how-to/drag-and-drop.md",
                   },
                   {
                     title: "Use Modal Dialogs",
-                    path: "guides/learn/how_to/modal_dialogs.md",
+                    path: "guides/learn/how-to/modal-dialogs.md",
                   },
                 ],
               },
               {
                 title: "Document Structure",
-                path: "guides/learn/how_to/manage_pages.md",
+                path: "guides/learn/how-to/manage-pages.md",
                 pages: [
                   {
                     title: "Manage Pages",
-                    path: "guides/learn/how_to/manage_pages.md",
+                    path: "guides/learn/how-to/manage-pages.md",
                   },
                 ],
               },
               {
                 title: "Use Design Elements",
-                path: "guides/learn/how_to/use_text.md", // change this!!
+                path: "guides/learn/how-to/use-text.md", // change this!!
                 pages: [
                   {
                     title: "Use Text",
-                    path: "guides/learn/how_to/use_text.md",
+                    path: "guides/learn/how-to/use-text.md",
                   },
                   {
                     title: "Use Geometry",
-                    path: "guides/learn/how_to/use_geometry.md",
+                    path: "guides/learn/how-to/use-geometry.md",
                   },
                   {
                     title: "Use Color",
-                    path: "guides/learn/how_to/use_color.md",
+                    path: "guides/learn/how-to/use-color.md",
                   },
                   {
                     title: "Use Images",
-                    path: "guides/learn/how_to/use_images.md",
+                    path: "guides/learn/how-to/use-images.md",
                   },
                   {
                     title: "Use Videos",
-                    path: "guides/learn/how_to/use_videos.md",
+                    path: "guides/learn/how-to/use-videos.md",
                   },
                   {
                     title: "Use Audio",
-                    path: "guides/learn/how_to/use_audio.md",
+                    path: "guides/learn/how-to/use-audio.md",
                   },
                   {
                     title: "Use PDF and PowerPoint",
-                    path: "guides/learn/how_to/use_pdf_powerpoint.md",
+                    path: "guides/learn/how-to/use-pdf-powerpoint.md",
                   },
                   {
                     title: "Handle Element Selection",
-                    path: "guides/learn/how_to/handle_selection.md",
+                    path: "guides/learn/how-to/handle-selection.md",
                   },
                   {
                     title: "Group Elements",
-                    path: "guides/learn/how_to/group_elements.md",
+                    path: "guides/learn/how-to/group-elements.md",
                   },
                   {
                     title: "Resize Elements",
-                    path: "guides/learn/how_to/resize_elements.md",
+                    path: "guides/learn/how-to/resize-elements.md",
                   },
                   {
                     title: "Position Elements",
-                    path: "guides/learn/how_to/position_elements.md",
+                    path: "guides/learn/how-to/position-elements.md",
                   },
                 ],
               },
               {
                 title: "Use Metadata",
-                path: "guides/learn/how_to/document_metadata.md",
+                path: "guides/learn/how-to/document-metadata.md",
                 pages: [
                   {
                     title: "Document",
-                    path: "guides/learn/how_to/document_metadata.md",
+                    path: "guides/learn/how-to/document-metadata.md",
                   },
                   {
                     title: "Page",
-                    path: "guides/learn/how_to/page_metadata.md",
+                    path: "guides/learn/how-to/page-metadata.md",
                   },
                   {
                     title: "Element",
-                    path: "guides/learn/how_to/element_metadata.md",
+                    path: "guides/learn/how-to/element-metadata.md",
                   },
                 ],
               },
               {
                 title: "Exporting & Output",
-                path: "guides/learn/how_to/create_renditions.md",
+                path: "guides/learn/how-to/create-renditions.md",
                 pages: [
                   {
                     title: "Create Renditions",
-                    path: "guides/learn/how_to/create_renditions.md",
+                    path: "guides/learn/how-to/create-renditions.md",
                   },
                   {
                     title: "Manage Premium Content",
-                    path: "guides/learn/how_to/premium_content.md",
+                    path: "guides/learn/how-to/premium-content.md",
                   },
                 ],
               },
               {
                 title: "User Info",
-                path: "guides/learn/how_to/user_info.md",
+                path: "guides/learn/how-to/user-info.md",
                 pages: [
                   {
                     title: "Identify users",
-                    path: "guides/learn/how_to/user_info.md",
+                    path: "guides/learn/how-to/user-info.md",
                   },
                 ],
               },
               {
                 title: "Complete Projects",
-                path: "guides/learn/how_to/tutorials/index.md",
+                path: "guides/learn/how-to/tutorials/index.md",
                 pages: [
                   {
                     title: "Document APIs",
@@ -908,7 +908,7 @@ module.exports = {
                   },
                   {
                     title: "Using Lit & TypeScript",
-                    path: "guides/learn/how_to/tutorials/using-lit-typescript.md",
+                    path: "guides/learn/how-to/tutorials/using-lit-typescript.md",
                   },
                 ],
               },
@@ -916,19 +916,19 @@ module.exports = {
           },
           {
             title: "Platform Concepts",
-            path: "guides/learn/platform_concepts/architecture.md",
+            path: "guides/learn/platform-concepts/architecture.md",
             pages: [
               {
                 title: "Add-on Architecture",
-                path: "guides/learn/platform_concepts/architecture.md",
+                path: "guides/learn/platform-concepts/architecture.md",
               },
               {
                 title: "iframe Runtime Context & Security",
-                path: "guides/learn/platform_concepts/context.md",
+                path: "guides/learn/platform-concepts/context.md",
               },
               {
                 title: "The Document API",
-                path: "guides/learn/platform_concepts/document-api.md",
+                path: "guides/learn/platform-concepts/document-api.md",
               },
             ],
           },
@@ -989,53 +989,53 @@ module.exports = {
               },
               {
                 title: "UX Guidelines",
-                path: "guides/build/design/ux_guidelines/introduction.md",
+                path: "guides/build/design/ux-guidelines/introduction.md",
                 pages: [
                   {
                     title: "Introduction",
-                    path: "guides/build/design/ux_guidelines/introduction.md",
+                    path: "guides/build/design/ux-guidelines/introduction.md",
                   },
                   {
                     title: "Design Principles",
-                    path: "guides/build/design/ux_guidelines/design_principles.md",
+                    path: "guides/build/design/ux-guidelines/design-principles.md",
                   },
                   {
                     title: "Theming",
-                    path: "guides/build/design/ux_guidelines/theming.md",
+                    path: "guides/build/design/ux-guidelines/theming.md",
                   },
                   {
                     title: "Visual Elements",
-                    path: "guides/build/design/ux_guidelines/visual_elements.md",
+                    path: "guides/build/design/ux-guidelines/visual-elements.md",
                   },
                   {
                     title: "Feedback & Messaging",
-                    path: "guides/build/design/ux_guidelines/feedback_and_messaging.md",
+                    path: "guides/build/design/ux-guidelines/feedback-and-messaging.md",
                   },
                   // {
                   //   title: "Mobile UX",
-                  //   path: "guides/build/design/ux_guidelines/mobile_ux.md",
+                  //   path: "guides/build/design/ux-guidelines/mobile-ux.md",
                   // },
                   {
                     title: "Branding Guidelines & Distribution",
-                    path: "guides/build/design/ux_guidelines/branding_guidelines.md",
+                    path: "guides/build/design/ux-guidelines/branding-guidelines.md",
                   },
                   {
                     title: "Resources & References",
-                    path: "guides/build/design/ux_guidelines/resources_and_references.md",
+                    path: "guides/build/design/ux-guidelines/resources-and-references.md",
                   },
                   {
                     title: "Changelog",
-                    path: "guides/build/design/ux_guidelines/changelog.md",
+                    path: "guides/build/design/ux-guidelines/changelog.md",
                   },
                 ],
               },
               {
                 title: "Implementation guide",
-                path: "guides/build/design/implementation_guide.md",
+                path: "guides/build/design/implementation-guide.md",
               },
               {
                 title: "Best practices",
-                path: "guides/build/design/best_practices.md",
+                path: "guides/build/design/best-practices.md",
               },
             ],
           },
@@ -1077,7 +1077,7 @@ module.exports = {
                       },
                       {
                         title: "User interface",
-                        path: "guides/build/distribute/guidelines/general/user_interface.md",
+                        path: "guides/build/distribute/guidelines/general/user-interface.md",
                       },
                       {
                         title: "Performance",
@@ -1109,13 +1109,13 @@ module.exports = {
                       },
                       {
                         title: "Edge cases",
-                        path: "guides/build/distribute/guidelines/general/edge_case.md",
+                        path: "guides/build/distribute/guidelines/general/edge-case.md",
                       },
                     ],
                   },
                   {
                     title: "Developer brand guidelines",
-                    path: "guides/build/distribute/guidelines/brand_guidelines.md",
+                    path: "guides/build/distribute/guidelines/brand-guidelines.md",
                   },
                   {
                     title: "Monetization guidelines",
