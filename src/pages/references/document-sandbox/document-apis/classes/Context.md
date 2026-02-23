@@ -6,7 +6,7 @@ Contains the user's current selection state, indicating the content they are foc
 
 ## Extended by
 
--   [`ExpressContext`](ExpressContext.md)
+-   [`ExpressContext`](express-context.md)
 
 ## Accessors
 
@@ -24,11 +24,11 @@ false if the current editable selection does not contain any nodes, otherwise tr
 
 ### insertionParent
 
-• `get` **insertionParent**(): [`ContainerNode`](../interfaces/ContainerNode.md)
+• `get` **insertionParent**(): [`ContainerNode`](../interfaces/container-node.md)
 
 #### Returns
 
-[`ContainerNode`](../interfaces/ContainerNode.md)
+[`ContainerNode`](../interfaces/container-node.md)
 
 the preferred parent to insert newly added content into (i.e., the location content would get inserted if a
 user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
@@ -38,11 +38,11 @@ other UI state.
 
 ### selection
 
-• `get` **selection**(): readonly [`Node`](Node.md)[]
+• `get` **selection**(): readonly [`Node`](node.md)[]
 
 • `set` **selection**(`nodes`): `void`
 
-Sets the current selection to an array of [Node](Node.md).
+Sets the current selection to an array of [Node](node.md).
 Accepts a single node as a shortcut for a length-1 array `[node]` or
 `undefined` as a shortcut for `[]`, which clears the selection.
 
@@ -54,24 +54,24 @@ Only node(s) that meet the following criteria can be selected:
 
 #### Parameters
 
-• **nodes**: `undefined` \| [`Node`](Node.md) \| readonly [`Node`](Node.md)[]
+• **nodes**: `undefined` \| [`Node`](node.md) \| readonly [`Node`](node.md)[]
 
 #### Returns
 
-readonly [`Node`](Node.md)[]
+readonly [`Node`](node.md)[]
 
 the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
-selection (see [selectionIncludingNonEditable](Context.md#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
+selection (see [selectionIncludingNonEditable](context.md#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
 
 ---
 
 ### selectionIncludingNonEditable
 
-• `get` **selectionIncludingNonEditable**(): readonly [`Node`](Node.md)[]
+• `get` **selectionIncludingNonEditable**(): readonly [`Node`](node.md)[]
 
 #### Returns
 
-readonly [`Node`](Node.md)[]
+readonly [`Node`](node.md)[]
 
 the current selection _and_ any locked nodes the user has attempted to select at the same time. This can
 happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
@@ -87,7 +87,7 @@ Unregisters handlers for editor events like selection change.
 
 #### Parameters
 
-• **eventName**: [`selectionChange`](../enumerations/EditorEvent.md#selectionchange)
+• **eventName**: [`selectionChange`](../enumerations/editor-event.md#selectionchange)
 
 an editor event name.
 
@@ -115,11 +115,11 @@ Note: Do not attempt to make changes to the document in response to a selection 
 
 #### Parameters
 
-• **eventName**: [`selectionChange`](../enumerations/EditorEvent.md#selectionchange)
+• **eventName**: [`selectionChange`](../enumerations/editor-event.md#selectionchange)
 
 an editor event name.
 
-• **callback**: [`EditorEventHandler`](../type-aliases/EditorEventHandler.md)
+• **callback**: [`EditorEventHandler`](../type-aliases/editor-event-handler.md)
 
 a callback to be registered for an editor event.
 

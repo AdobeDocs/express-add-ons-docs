@@ -2,18 +2,18 @@
 
 # Interface: Fill
 
-Base interface representing any fill in the scenegraph. See [FillableNode](../classes/FillableNode.md).
-Currently, you can only create [ColorFill](ColorFill.md)s, but you might encounter
+Base interface representing any fill in the scenegraph. See [FillableNode](../classes/fillable-node.md).
+Currently, you can only create [ColorFill](color-fill.md)s, but you might encounter
 other fill types when reading scenegraph content.
 
 ## Extended by
 
--   [`ColorFill`](ColorFill.md)
+-   [`ColorFill`](color-fill.md)
 
 ## Properties
 
 ### type
 
-• `readonly` **type**: [`color`](../enumerations/FillType.md#color)
+• `readonly` **type**: [`color`](../enumerations/fill-type.md#color)
 
 The fill type.

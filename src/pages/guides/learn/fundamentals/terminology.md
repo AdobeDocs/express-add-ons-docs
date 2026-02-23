@@ -82,17 +82,17 @@ A comprehensive guide to Adobe Express add-on terminology, SDKs, runtimes, and d
 | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
 | **[`addOnUISdk`](../../../references/addonsdk/index.md)**                                    | Add-on UI SDK, UI Runtime, [`instance`](../../../references/addonsdk/addonsdk-instance.md)                                                                                                 | Main JavaScript module for UI operations, dialogs, add-on interactions. Access via `addOnUISdk.instance`                                                                                                                   | iframe runtime                |
 | **[`instance`](../../../references/addonsdk/addonsdk-instance.md)**                          | SDK instance, `runtime`, `clientStorage`, `manifest`                                                                                                                                       | Property providing access to SDK features. Use `addOnUISdk.instance` (iframe) or `addOnSandboxSdk.instance` (document sandbox)                                                                                             | Both environments             |
-| **[`editor`](../../../references/document-sandbox/document-apis/classes/Editor.md)**         | Document APIs, [`express-document-sdk`](../../../references/document-sandbox/document-apis/index.md)                                                                                       | Core object for creating and manipulating document content                                                                                                                                                                 | Document sandbox              |
+| **[`editor`](../../../references/document-sandbox/document-apis/classes/editor.md)**         | Document APIs, [`express-document-sdk`](../../../references/document-sandbox/document-apis/index.md)                                                                                       | Core object for creating and manipulating document content                                                                                                                                                                 | Document sandbox              |
 | **Runtime**                                                                                  | iframe, Document Sandbox, panel                                                                                                                                                            | JavaScript execution environments where add-on code runs                                                                                                                                                                   | Both environments             |
 | **Document Sandbox**                                                                         | `documentSandbox`                                                                                                                                                                          | Secure environment for document manipulation and content creation                                                                                                                                                          | Document operations           |
 | **Iframe Runtime**                                                                           | iframe Sandbox, UI Runtime, Panel Runtime                                                                                                                                                  | Sandboxed browser environment for add-on UI and user interactions                                                                                                                                                          | UI operations                 |
-| **`constants`**                                                                              | Enums, Configuration values                                                                                                                                                                | Type-safe values for SDK operations. See [UI SDK Constants](../../../references/addonsdk/addonsdk-constants.md) and [Document Constants](../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md) | Both environments             |
-| **[`colorUtils`](../../../references/document-sandbox/document-apis/classes/ColorUtils.md)** | Color conversion, RGB, Hex colors                                                                                                                                                          | Utility functions for creating and converting colors. See [Use Color Guide](../how_to/use_color.md)                                                                                                                        | Document sandbox              |
+| **`constants`**                                                                              | Enums, Configuration values                                                                                                                                                                | Type-safe values for SDK operations. See [UI SDK Constants](../../../references/addonsdk/addonsdk-constants.md) and [Document Constants](../../../references/document-sandbox/document-apis/enumerations/arrow-head-type.md) | Both environments             |
+| **[`colorUtils`](../../../references/document-sandbox/document-apis/classes/color-utils.md)** | Color conversion, RGB, Hex colors                                                                                                                                                          | Utility functions for creating and converting colors. See [Use Color Guide](../how-to/use-color.md)                                                                                                                        | Document sandbox              |
 | **Communication APIs**                                                                       | `exposeApi()`, `apiProxy()`, [`runtime`](../../../references/addonsdk/instance-runtime.md)                                                                                                 | APIs enabling message passing between iframe and document sandbox. See [Communication APIs Reference](../../../references/document-sandbox/communication/index.md)                                                         | Both environments             |
 | **Manifest**                                                                                 | `manifest.json`, `entryPoints`, `permissions`                                                                                                                                              | Configuration file defining add-on structure and capabilities. See [Manifest Reference](../../../references/manifest/index.md)                                                                                             | Development setup             |
 | **Panel**                                                                                    | Entry point, UI interface                                                                                                                                                                  | Main add-on interface type for persistent UI panels                                                                                                                                                                        | `manifest.json`               |
-| **Node**                                                                                     | [`BaseNode`](../../../references/document-sandbox/document-apis/classes/BaseNode.md), [`VisualNode`](../../../references/document-sandbox/document-apis/classes/VisualNode.md), scenegraph | Building blocks of documents - pages, shapes, text, images                                                                                                                                                                 | Document Sandbox              |
-| **CORS**                                                                                     | Cross-Origin Resource Sharing                                                                                                                                                              | Browser security mechanism controlling cross-origin requests. See [iframe Context & Security](../platform_concepts/context.md#cors) for subdomain handling                                                                 | iframe runtime, external APIs |
+| **Node**                                                                                     | [`BaseNode`](../../../references/document-sandbox/document-apis/classes/base-node.md), [`VisualNode`](../../../references/document-sandbox/document-apis/classes/visual-node.md), scenegraph | Building blocks of documents - pages, shapes, text, images                                                                                                                                                                 | Document Sandbox              |
+| **CORS**                                                                                     | Cross-Origin Resource Sharing                                                                                                                                                              | Browser security mechanism controlling cross-origin requests. See [iframe Context & Security](../platform-concepts/context.md#cors) for subdomain handling                                                                 | iframe runtime, external APIs |
 
 ## Overloaded Terms Clarification
 
@@ -108,7 +108,7 @@ Many terms in Adobe Express add-on development have multiple meanings depending 
 |                 | Express DOM                        | Informal term sometimes used for Adobe Express's document structure (prefer "scenegraph")                         | "Navigate the Express DOM" (better: "Navigate the scenegraph")                       |
 | **context**     | General programming                | Execution context or environment where code runs                                                                  | "The code runs in the browser context"                                               |
 |                 | `editor.context`                   | Property of `editor` object providing access to selection, insertion point, and current page                      | `editor.context.selection`                                                           |
-|                 | iframe/security                    | Runtime context where add-on UI executes                                                                          | "iframe runtime context" (see [Context & Security](../platform_concepts/context.md)) |
+|                 | iframe/security                    | Runtime context where add-on UI executes                                                                          | "iframe runtime context" (see [Context & Security](../platform-concepts/context.md)) |
 | **runtime**     | General architecture               | JavaScript execution environment (iframe runtime or document sandbox)                                             | "The iframe runtime has standard Web APIs"                                           |
 |                 | `addOnUISdk.instance.runtime`      | Property providing Communication APIs for cross-environment messaging                                             | `runtime.apiProxy("documentSandbox")`                                                |
 |                 | `addOnSandboxSdk.instance.runtime` | Property providing Communication APIs in document sandbox                                                         | `runtime.exposeApi({ ... })`                                                         |
@@ -176,7 +176,7 @@ Many terms in Adobe Express add-on development have multiple meanings depending 
 
 - Execution environment → "The iframe context has standard Web APIs"
 - Editor's selection/insertion → `editor.context.selection`
-- Security boundaries → See [iframe Context & Security](../platform_concepts/context.md)
+- Security boundaries → See [iframe Context & Security](../platform-concepts/context.md)
 
 **"What does instance mean?"** - Which instance?
 
@@ -245,7 +245,7 @@ The two runtimes communicate with each other through the [Communication APIs](..
 
 <InlineAlert variant="info" slots="text"/>
 
-For a comprehensive deep-dive into the dual-runtime architecture with visual diagrams, communication patterns, and code examples, see the [Add-on Architecture Guide](../platform_concepts/architecture.md) and the [Communication APIs Tutorial](../../learn/how_to/tutorials/stats-addon.md).
+For a comprehensive deep-dive into the dual-runtime architecture with visual diagrams, communication patterns, and code examples, see the [Add-on Architecture Guide](../platform-concepts/architecture.md) and the [Communication APIs Tutorial](../how-to/tutorials/stats-addon.md).
 
 ## SDK Concepts
 
@@ -287,7 +287,7 @@ Features shared across Adobe Express (the host application):
 
 <InlineAlert variant="info" slots="text"/>
 
-**Note**: All Adobe Express add-on SDKs use the singleton pattern - pre-instantiated objects you import and use directly. You never create new instances yourself. See the [FAQ on singleton pattern](#q-what-is-the-singleton-pattern-and-why-do-add-on-sdks-use-it) and [Architecture Guide](../platform_concepts/architecture.md#sdk-structure--import-patterns) for details.
+**Note**: All Adobe Express add-on SDKs use the singleton pattern - pre-instantiated objects you import and use directly. You never create new instances yourself. See the [FAQ on singleton pattern](#q-what-is-the-singleton-pattern-and-why-do-add-on-sdks-use-it) and [Architecture Guide](../platform-concepts/architecture.md#sdk-structure--import-patterns) for details.
 
 ## Import Patterns & Usage
 
@@ -434,7 +434,7 @@ Distribution platform where users discover and install add-ons within [Adobe Exp
 
 ### **Code Playground**
 
-Interactive browser-based development environment for experimenting with add-on APIs without local setup. See the [Code Playground](../../getting_started/code-playground.md) guide for more details.
+Interactive browser-based development environment for experimenting with add-on APIs without local setup. See the [Code Playground](../../getting-started/code-playground.md) guide for more details.
 
 ### **Adobe Express Add-on CLI**
 
@@ -443,7 +443,7 @@ Command Line Interface tool for creating, building, and packaging add-ons for lo
 - **Installation**: `npm install -g @adobe/ccweb-add-on-cli`
 - **Common Commands**: `create`, `start`, `build`, `package`
 
-See the [Adobe Express Add-on CLI](../../getting_started/local_development/dev_tooling.md) guide for more details.
+See the [Adobe Express Add-on CLI](../../getting-started/local-development/dev-tooling.md) guide for more details.
 
 ### **MCP Server (Model Context Protocol)**
 
@@ -452,11 +452,11 @@ AI-assisted development tool that enhances LLM responses with Adobe Express add-
 - **Purpose**: Provide semantic documentation search and accurate code suggestions through AI assistants
 - **Requirements**: Node.js 18+ and MCP-compatible IDE (Cursor, VS Code, Claude Desktop)
 
-See the [Adobe Express Add-on MCP Server](../../getting_started/local_development/mcp_server.md) guide for more details.
+See the [Adobe Express Add-on MCP Server](../../getting-started/local-development/mcp-server.md) guide for more details.
 
 ### **Add-on Development Mode**
 
-Special mode in Adobe Express (**Settings > Add-on Development** toggle) that allows loading and testing local add-ons during development. See [Add-on Development Mode](../../getting_started/local_development/dev_tooling.md) for more details.
+Special mode in Adobe Express (**Settings > Add-on Development** toggle) that allows loading and testing local add-ons during development. See [Add-on Development Mode](../../getting-started/local-development/dev-tooling.md) for more details.
 
 ## Manifest Configuration
 
@@ -577,16 +577,16 @@ This table provides all meanings with examples for 17 commonly overloaded terms.
 
 This ensures all your code works with the same SDK instances, preventing conflicts and maintaining consistent state. For Express Document SDK specifically, you import **lowercase names** (`editor`, `colorUtils`, `constants`, `fonts`, `viewport`) which are singleton objects, NOT the uppercase class names (`Editor`, `ColorUtils`, etc.).
 
-See the [Architecture Guide](../platform_concepts/architecture.md#sdk-structure--import-patterns) for complete details.
+See the [Architecture Guide](../platform-concepts/architecture.md#sdk-structure--import-patterns) for complete details.
 
 ---
 
 ## Related Documentation
 
 - [Adobe Express Add-ons Developer Guide](https://developer-stage.adobe.com/express/add-ons/docs/guides/) - Official documentation and getting started guide
-- [Add-on Architecture Guide](../platform_concepts/architecture.md) - Comprehensive guide with visual diagrams
+- [Add-on Architecture Guide](../platform-concepts/architecture.md) - Comprehensive guide with visual diagrams
 - [Add-on UI SDK Reference](../../../references/addonsdk/index.md)
 - [Document Sandbox Overview](../../../references/document-sandbox/index.md)
 - [Communication APIs](../../../references/document-sandbox/communication/index.md)
-- [Add-on UI SDK Constants Usage Guide](./ui-sdk-constants.md)
-- [Document Sandbox Constants Usage Guide](./document-sandbox-constants.md)
+- [Add-on UI SDK Constants Usage Guide](ui-sdk-constants.md)
+- [Document Sandbox Constants Usage Guide](document-sandbox-constants.md)
