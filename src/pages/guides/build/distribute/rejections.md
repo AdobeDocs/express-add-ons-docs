@@ -21,7 +21,7 @@ contributors:
 
 ## 📋 Overview
 
-When you submit an add-on for distribution, the review team _thoroughly_ examines it to ensure it meets the [guidelines](./guidelines/index.md) and is safe for public distribution. If something goes wrong, you will receive an email with the reasons that led to a rejection. You shouldn't be discouraged, though! Usually, the fixes are relatively straightforward, and the detailed feedback from the reviewers is an opportunity to improve and learn.
+When you submit an add-on for distribution, the review team _thoroughly_ examines it to ensure it meets the [guidelines](guidelines/index.md) and is safe for public distribution. If something goes wrong, you will receive an email with the reasons that led to a rejection. You shouldn't be discouraged, though! Usually, the fixes are relatively straightforward, and the detailed feedback from the reviewers is an opportunity to improve and learn.
 
 That said, being rejected is annoying and, most importantly, time-consuming, as multiple re-submissions will impact the time it takes to get your add-on published. To help you avoid it, we've compiled a list of the most common reasons for review failures and how to address them.
 
@@ -75,8 +75,8 @@ Due to changes in the testing and reviewing processes, some issues that used to 
 
 ### Relaxed UI Requirements
 
-Using the [Spectrum Design System](../design/implementation_guide.md#spectrum-design-system) is **no longer mandatory**, provided that the add-on's UI follows the best practices outlined in the [UX Guidelines](../design/ux_guidelines/introduction.md) and is well-crafted. Spectrum Web Components and the Spectrum Express theme are still the recommended options, as they reliably provide a native look and feel. Mind you, malfunctioning or poorly designed UIs will always be rejected regardless of the design system used.
+Using the [Spectrum Design System](../design/implementation-guide.md#spectrum-design-system) is **no longer mandatory**, provided that the add-on's UI follows the best practices outlined in the [UX Guidelines](../design/ux-guidelines/introduction.md) and is well-crafted. Spectrum Web Components and the Spectrum Express theme are still the recommended options, as they reliably provide a native look and feel. Mind you, malfunctioning or poorly designed UIs will always be rejected regardless of the design system used.
 
 ### COEP issues
 
-The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../../learn/platform_concepts/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.
+The reviewing team **no longer tests** for [COEP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) (Cross-Origin Embedder Policy), which used to cause, e.g., broken images. [CORS](../../learn/platform-concepts/context.md#cors) (Cross-Origin Resource Sharing) policies are still enforced, though, so make sure your add-on doesn't break due to them.

@@ -32,7 +32,7 @@ This section provides a set of guides to help you in the distribution stage of y
 
 ## Introduction
 
-The general guidelines that can be found in this section cover a variety of areas including [acceptable content](./content.md), [user interface guidelines](./user_interface.md), [listing metadata](./listing.md), [feature functionality](./features.md) and testing guidelines (e.g., [compatibility](./compatibility.md), [usability](./usability.md), [accessibility](./accessibility.md), [performance](./performance.md)) and more.
+The general guidelines that can be found in this section cover a variety of areas including [acceptable content](content.md), [user interface guidelines](user-interface.md), [listing metadata](listing.md), [feature functionality](features.md) and testing guidelines (e.g., [compatibility](compatibility.md), [usability](usability.md), [accessibility](accessibility.md), [performance](performance.md)) and more.
 
 ## Testing
 
