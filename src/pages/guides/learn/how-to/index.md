@@ -32,7 +32,7 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 
 ## How-to guides
 
-<br/><br/>
+&lt;br/&gt;&lt;br/&gt;
 
 | Topics                         | How-to guides                                     |
 | ------------------------------ | ------------------------------------------------- |
@@ -59,13 +59,11 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 |                                | [Manage Premium Content](../how-to/premium-content.md)    |
 | User Info                      | [Identify users](../how-to/user-info.md)                  |
 
-<!-- |                                | [Resize & Rescale Elements](./resize_rescale_elements.md) | -->
-
 ## Complete Projects
 
 We've created a set of in-depth tutorials that guide you through the process of building a complete add-on from scratch.
 
-<br/><br/>
+&lt;br/&gt;&lt;br/&gt;
 
 | Topics                        | Tutorials                                                                                      |
 | ----------------------------- | ---------------------------------------------------------------------------------------------- |

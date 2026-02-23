@@ -33,13 +33,13 @@ When developing Adobe Express add-ons locally (typically at `https://localhost:5
 
 **new.express.adobe.com wants to "Look for and connect to any device on your local network".**
 
-![Local Network Access Error](./img/known-issues--allow-connect.png)
+![Local Network Access Error](../../getting_started/local_development/img/known-issues--allow-connect.png)
 
 Please click **"Allow"** to continue local add-on development.
 
 **If you click "Block" instead of "Allow", you will not be able to side-load your local in-development add-on in Adobe Express.** The Add-on CLI cannot bypass this browser-level restriction and will show you this error.
 
-![Local Network Access Error](./img/known-issues--blocked.png)
+![Local Network Access Error](../../getting_started/local_development/img/known-issues--blocked.png)
 
 ### Solution 1: Reset Permissions for Adobe Express (Recommended)
 
@@ -48,11 +48,11 @@ If you accidentally blocked the permission, you can reset it by clearing browser
 1. In Chrome, click on the **Site Information** icon right before the URL in the address bar.
 2. Click on the **Site settings** button.
 
-![Site settings](./img/known-issues--site-info.png)
+![Site settings](../../getting_started/local_development/img/known-issues--site-info.png)
 
 3. In the page that opens, click on both the **Delete data** and **Reset Permissions** buttons.
 
-![Clear data](./img/known-issues--clear-data.png)
+![Clear data](../../getting_started/local_development/img/known-issues--clear-data.png)
 
 4. Alternatively, you can delete browser usage data (cookies, local storage, etc.) for **only** `new.express.adobe.com` by:
    - Going to `chrome://settings/content/all`

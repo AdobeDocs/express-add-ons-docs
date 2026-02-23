@@ -47,7 +47,7 @@ Script mode is ideal to test code snippets in our [How-to guides](#how-to-guides
 
 ## How to Use Script Mode
 
-![Code Playground Script Mode](./img/script-mode2.png)
+![Code Playground Script Mode](../getting_started/img/script-mode2.png)
 
 ### Step 1: Select Script Mode
 
@@ -74,7 +74,7 @@ If you want to use Document APIs that are currently marked experimental:
 1. Click on the properties icon to open the [Manifest JSON](../../references/manifest/index.md#requirements) editing modal
 2. Toggle **experimentalApis** to enable experimental features
 
-![Script Mode Manifest Settings](./img/manifest-props-script.png)
+![Script Mode Manifest Settings](../getting_started/img/manifest-props-script.png)
 
 ## Key Features
 
