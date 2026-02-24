@@ -146,15 +146,15 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:
 
-![headings](../../getting_started/local_development/img/stable-mcp-server-enabled.png)
+![headings](src/pages/guides/getting-started/local-development/img/stable-mcp-server-enabled.png)
 
 #### Verify with Tool calls
 
 The LLM will automatically invoke tools based on your prompts. Here is an example of Cursor making calls to the Adobe Express Developer MCP Server tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
 
-![](../../getting_started/local_development/img/mcp-server-calling-tools.png)
+![](src/pages/guides/getting-started/local-development/img/mcp-server-calling-tools.png)
 
-![](../../getting_started/local_development/img/mcp-tool-call-example.png)
+![](src/pages/guides/getting-started/local-development/img/mcp-tool-call-example.png)
 
 <InlineAlert header="true" slots="header,list" variant="success" iconPosition="right" />
 
@@ -358,7 +358,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 
 - **Documentation**: [Adobe Express Add-on Guides](https://developer.adobe.com/express/add-ons/docs/guides/)
 - **Add-on Samples**: [Samples Repository](https://github.com/AdobeDocs/express-add-on-samples)
-- **Updates**: [Changelog](https://developer.adobe.com/express/add-ons/docs/guides/getting_started/changelog/)
+- **Updates**: [Changelog](https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/)
 - **Community**: [Adobe Express Add-on Developers Discord](https://discord.com/invite/nc3QDyFeb4)
 - **Forum**: [Adobe Express Developers Community](https://community.adobe.com/t5/adobe-express-developers/ct-p/ct-adobe-express-developers?page=1&sort=latest_replies&lang=all&tabid=all)
 

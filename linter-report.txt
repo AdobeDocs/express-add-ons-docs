@@ -1,0 +1,2664 @@
+═══════════════════════════════════════════════════════════════
+                     LINTER REPORT
+═══════════════════════════════════════════════════════════════
+
+Generated: 2026-02-24T04:54:11.905Z
+Mode: Full Linting (all rules + dead links check)
+Target Directory: /Users/louisa/adobe-dev-site/express-add-ons-docs
+
+───────────────────────────────────────────────────────────────
+
+Files to process: 240
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/advanced-topics/coi.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 23:1
+    Message: Description is too long (183 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 197:4
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/distribute/guidelines/general/`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/advanced-topics/frameworks-libraries-bundling.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 22:1
+    Message: Description is too long (183 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/advanced-topics/performance.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 22:1
+    Message: Description is too long (192 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/best-practices.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 21:1
+    Message: Description is too long (164 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/fonts.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/implementation-guide.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 25:1
+    Message: Description is too long (201 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 44:41
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 391:369
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 450:3
+    Message: Unexpected dead URL `https://www.figma.com/community/file/1211274196563394418/Adobe-Spectrum-Design-System`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 157:1
+    Message: Unexpected redirecting URL `https://react-spectrum.adobe.com/react-spectrum/index.html`, expected final URL `https://react-spectrum.adobe.com/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 275:364
+    Message: Unexpected redirecting URL `https://react-spectrum.adobe.com/react-spectrum/index.html`, expected final URL `https://react-spectrum.adobe.com/`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 18:1
+    Message: Description is too long (186 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/ux-guidelines/branding-guidelines.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 25:21
+    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 29:104
+    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 49:53
+    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/ux-guidelines/feedback-and-messaging.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 38:1
+    Message: Image is missing alt text: ./img/feedback_progress-circles-animation-wide.gif
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 44:1
+    Message: Image is missing alt text: ./img/feedback_ghost-loading.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 58:1
+    Message: Image is missing alt text: ./img/feedback_ghost-loading.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 64:1
+    Message: Image is missing alt text: ./img/feedback_toasts.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 68:1
+    Message: Image is missing alt text: ./img/feedback_toast-kinds.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 74:1
+    Message: Image is missing alt text: ./img/feedback_full-panel-messaging.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 78:1
+    Message: Image is missing alt text: ./img/feedback_full-panel-messaging-padding.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 56:1
+    Message: Unexpected dead URL `https://opensource.adobe.com/spectrum-css/inlinealert.html`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 42:52
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/cards/#Ghost-loading`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/ux-guidelines/introduction.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 23:1
+    Message: Image is missing alt text: ./img/introduction_cover.png
+    Rule: no-alt-text-for-image
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/ux-guidelines/theming.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 27:208
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/theming/#Available-themes`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/design/ux-guidelines/visual-elements.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML tag <div> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/brand-guidelines.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 23:5
+    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 31:16
+    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/genai/recommendations.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 87:251
+    Message: Unexpected dead URL `mailto:cc-extensibility-genai-integration-support@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/genai/requirements.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 49:248
+    Message: Unexpected dead URL `mailto:cc-extensibility-genai-integration-support@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 25:126
+    Message: Unexpected redirecting URL `http://www.adobe.com/go/developer-terms`, expected final URL `https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Developer-Terms-en_US-20240618.pdf`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/general/accessibility.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 29:29
+    Message: Unexpected redirecting URL `https://www.adobe.com/accessibility.html`, expected final URL `https://www.adobe.com/trust/accessibility.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/general/compatibility.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 29:35
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/system-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/get-started/web-technical-requirements.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/general/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 47:3
+    Message: Cannot find file `../brand_guidelines.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 24:1
+    Message: Description is too long (166 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/general/listing.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 123:3
+    Message: Cannot find file `http:/www.[Your`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 127:3
+    Message: Cannot find file `http:/www.[Your`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: N/A
+    Message: Invalid URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/general/performance.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 14:1
+    Message: Description is too long (163 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/general/planning.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 14:1
+    Message: Description is too long (173 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/general/usability.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 27:34
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 14:1
+    Message: Description is too long (161 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/guidelines/monetization.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <img/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - Nested block detected: <InlineAlert/> is inside a list item. EDS does not support blocks nested in lists.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/private-dist.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 65:1
+    Message: Image is missing alt text: ./img/subdomain-v2.png
+    Rule: no-alt-text-for-image
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/public-dist.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 114:1
+    Message: Image is missing alt text: ./img/subdomain-v2.png
+    Rule: no-alt-text-for-image
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/rejections.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 36:1
+    Message: Image is missing alt text: ./img/rejections-functional-issues.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 42:1
+    Message: Image is missing alt text: ./img/rejections-404-error.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 48:1
+    Message: Image is missing alt text: ./img/rejections-authentication-failed.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 54:1
+    Message: Image is missing alt text: ./img/rejections-browser-compatibility.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 64:1
+    Message: Image is missing alt text: ./img/rejections-navigation-problems.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 70:1
+    Message: Image is missing alt text: ./img/rejections-error-feedback.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 82:44
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 52:15
+    Message: Unexpected dead URL `https://helpx.adobe.com/express/system-requirements.html#system-requirements-web`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 52:15
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/system-requirements.html#system-requirements-web`, expected final URL `https://helpx.adobe.com/express/web/get-started/web-technical-requirements.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/review-process/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 50:55
+    Message: Unexpected dead URL `mailto:ccintrev@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 74:39
+    Message: Unexpected dead URL `https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 50:123
+    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/build/distribute/review-process/submission-checklist.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 23:55
+    Message: Unexpected dead URL `mailto:ccintrev@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 48:35
+    Message: Unexpected dead URL `https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 23:113
+    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/addon-project-anatomy.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 35:1
+    Message: Description is too long (212 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/changelog.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1108:7
+    Message: Cannot find file `../references/document-sandbox/communication/index.md`; did you mean `../../references/document-sandbox/communication/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1108:89
+    Message: Cannot find file `../references/document-sandbox`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1039:162
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1046:11
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 682:480
+    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1054:54
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1054:54
+    Message: Unexpected redirecting URL `https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth`, expected final URL `https://developer.adobe.com/express/add-ons/docs/guides/learn/samples/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 96:45
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 96:406
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 109:69
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 96:330
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground?executionMode=script`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground&executionMode=script`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1091:263
+    Message: Unexpected dead URL `https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1153:15
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1134:379
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/develop/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1140:137
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1140:137
+    Message: Unexpected redirecting URL `https://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler`, expected final URL `https://developer.adobe.com/express/add-ons/docs/guides/learn/samples/`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/code-playground-addon-mode.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 49:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/addon-mode2.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 66:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/manifest-props-addon.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/code-playground-script-mode.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 50:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/script-mode2.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 77:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/manifest-props-script.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/code-playground-troubleshooting.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 46:1
+    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 180:5
+    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/code-playground-workflow.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 73:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-console-prefix.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 81:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--saved-session.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 104:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--sessions-from-home.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 119:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--sessions.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 132:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--rename-session.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 138:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--delete-session.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 165:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--download.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 174:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/downloaded-folder-structure.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/code-playground.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 38:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--hero.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 69:2
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--splash-screen.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 79:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--launch-from-home.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 87:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--launch-from-doc.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 93:2
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground--DTOU.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 132:57
+    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 63:50
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 67:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 69:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 91:161
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 93:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 132:105
+    Message: Unexpected redirecting URL `https://community.adobe.com/t5/adobe-express-developers/ct-p/ct-adobe-express-developers`, expected final URL `https://community.adobe.com/adobe-express-developers-357`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/developer-journey.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 25:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/beginner-express.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 33:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/beginner-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 53:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/beginner-marketplace.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 93:2
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 113:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-template-prompt.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 131:1
+    Message: Cannot find file `../learn/how_to/tutorials/grids-addon.md`; did you mean `../learn/how-to/tutorials/grids-addon.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 149:1
+    Message: Cannot find file `../learn/how_to/tutorials/spectrum-workshop/index.md`; did you mean `../learn/how-to/tutorials/spectrum-workshop/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 153:1
+    Message: Cannot find file `../learn/how_to/tutorials/spectrum-workshop/index.md`; did you mean `../learn/how-to/tutorials/spectrum-workshop/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 161:1
+    Message: Cannot find file `../learn/platform_concepts/document-api.md`; did you mean `../learn/platform-concepts/document-api.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 165:1
+    Message: Cannot find file `../learn/platform_concepts/document-api.md`; did you mean `../learn/platform-concepts/document-api.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 85:50
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 89:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 195:122
+    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/hello-world.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 64:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-enable-dev-mode.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 80:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-open-the-playground.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 98:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-script.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 136:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 218:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-sideload-add-on.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 231:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-alt-testing.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 235:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-run-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 262:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-hello-world.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 55:95
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 210:54
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 214:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 93:3
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground?executionMode=script`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground&executionMode=script`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 55:31
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 72:50
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 76:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 94:3
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/local-development/browser.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 48:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/inspect.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 56:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/find-source.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 77:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/log-levels.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 87:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/dir-method.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 93:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/add-on-devtools.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 99:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/manifest-error.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 105:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/clear-data.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 111:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/application-indexed-db.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/local-development/dev-tooling.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 159:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-template-prompt.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 163:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-doc-sandbox.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 167:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-scaffold-message.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 177:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-completed.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 196:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-deeplink.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 200:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-sideload-add-on.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 213:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/playground-alt-testing.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 219:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/connect-error.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 235:1
+    Message: Cannot find file `../getting-started/img/playground-enable-dev-mode.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 249:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/add-on-devtools.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 250:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/manifest-error.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 258:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/cli-console-log.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 192:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 194:29
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 227:144
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 227:6
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/local-development/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/local-development/known-issues-limitations.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 36:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--allow-connect.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 42:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--blocked.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 51:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--site-info.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 55:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--clear-data.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 76:88
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/system-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/get-started/web-technical-requirements.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/local-development/mcp-server.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 149:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/stable-mcp-server-enabled.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 155:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/mcp-server-calling-tools.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 157:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/mcp-tool-call-example.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 155:1
+    Message: Image is missing alt text: src/pages/guides/getting-started/local-development/img/mcp-server-calling-tools.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 157:1
+    Message: Image is missing alt text: src/pages/guides/getting-started/local-development/img/mcp-tool-call-example.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 361:16
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 363:14
+    Message: Unexpected redirecting URL `https://community.adobe.com/t5/adobe-express-developers/ct-p/ct-adobe-express-developers?page=1&sort=latest_replies&lang=all&tabid=all`, expected final URL `https://community.adobe.com/adobe-express-developers-357`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/getting-started/local-development/vs-code.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 33:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/new-launch-json.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 95:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/vscode-debug-option.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 97:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/launch-profiles.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 101:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/start-debug.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 109:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/debugging.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 113:1
+    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/debugger-tool.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 26:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/Explore_Image_3.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 40:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-1-discovery.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 48:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-2-learn.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 58:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-3-develop.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 66:1
+    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-4-distribute.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 26:1
+    Message: Image is missing alt text: src/pages/guides/getting-started/img/Explore_Image_3.png
+    Rule: no-alt-text-for-image
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/fundamentals/terminology.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 229:80
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 229:80
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/create-renditions.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 394:1
+    Message: Cannot find file `images/export-ppt-font-disclaimer.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/drag-and-drop.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 230:122
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/group-elements.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 175:1
+    Message: Cannot find file `images/groups_above.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 194:1
+    Message: Cannot find file `images/groups_below.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 214:1
+    Message: Cannot find file `images/groups_middle.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/handle-selection.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 28:1
+    Message: Description is too long (166 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 77:2
+    Message: Cannot find file `tutorials/images/grids-addon-animation.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 15:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/position-elements.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 78:1
+    Message: Cannot find file `images/position_bounding-box.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 110:1
+    Message: Cannot find file `images/position_rotate.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 145:1
+    Message: Cannot find file `images/position_rotated-bounding-box.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 189:1
+    Message: Cannot find file `images/position_parent.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 189:1
+    Message: Image is missing alt text: ./images/position_parent.png
+    Rule: no-alt-text-for-image
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/resize-elements.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 113:1
+    Message: Cannot find file `images/rescale--rescale-proportional-width.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 140:1
+    Message: Cannot find file `images/rescale--rescale-proportional-height.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 178:1
+    Message: Cannot find file `images/resize--proportional-styles.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 209:1
+    Message: Cannot find file `images/rescale--resize-within-ellipse.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 243:1
+    Message: Cannot find file `images/resize--cover-one-dimension.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 279:1
+    Message: Cannot find file `images/resize--contain-media.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 321:1
+    Message: Cannot find file `images/resize--within-media-crop.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 361:1
+    Message: Cannot find file `images/resize-to-cover.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 397:1
+    Message: Cannot find file `images/rescale--rescale-proportional-text.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 435:1
+    Message: Cannot find file `images/rescale--rescale-resize-text.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/grids-addon.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - Link "<https://www.youtube.com/watch?v=SQMYA660gII>" uses angle brackets <>. Please use square brackets [] instead. Example: <http://www.adobe.com> change to [Adobe](http://www.adobe.com) 
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <ResourceCard/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/markdown-parser-text-api.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 21:1
+    Message: Cannot find file `images/markdown--add-on.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 173:1
+    Message: Cannot find file `images/markdown--hello.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 462:1
+    Message: Cannot find file `images/markdown--ui.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 466:1
+    Message: Cannot find file `images/markdown--text.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 667:1
+    Message: Cannot find file `images/markdown--ast.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1168:1
+    Message: Cannot find file `images/markdown--text-api.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 73:67
+    Message: Unexpected dead URL `https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/express-markdown-parser-addon-start`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 61:88
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/getting-started/quickstart/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 1184:54
+    Message: Unexpected dead URL `https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part1.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 53:1
+    Message: Cannot find file `../images/basic-js.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 378:1
+    Message: Cannot find file `../images/lesson1-prestyle.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 469:1
+    Message: Cannot find file `../images/lesson1-poststyle.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 671:1
+    Message: Cannot find file `../images/bingo-v1-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 15:1
+    Message: Title is too long (67 characters). Consider keeping it under 60 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 16:1
+    Message: Description is too long (161 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 234:169
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/develop/use_cases/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 27:99
+    Message: Unexpected redirecting URL `https://opensource.adobe.com/spectrum-web-components`, expected final URL `https://opensource.adobe.com/spectrum-web-components/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 361:43
+    Message: Unexpected redirecting URL `https://opensource.adobe.com/spectrum-web-components`, expected final URL `https://opensource.adobe.com/spectrum-web-components/`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part2.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part3.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/stats-addon.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/tutorials/using-lit-typescript.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <ProductCard/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/use-audio.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 98:17
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/au/express/create-and-edit-videos/change-file-formats/video-quick-actions-requirements.html`, expected final URL `https://helpx.adobe.com/au/express/web/video-creation-and-editing/change-file-formats/video-quick-actions-requirements.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/use-geometry.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 138:1
+    Message: Cannot find file `images/shapes_ellipse.jpg`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 161:1
+    Message: Cannot find file `images/paths_linea.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 205:1
+    Message: Cannot find file `images/paths_complex.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 246:1
+    Message: Cannot find file `images/paths_styled.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 146:323
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/use-pdf-powerpoint.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 66:1
+    Message: Cannot find file `images/pdf_import.png`
+    Rule: missing-file
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/how-to/use-videos.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 102:17
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/au/express/create-and-edit-videos/change-file-formats/video-quick-actions-requirements.html`, expected final URL `https://helpx.adobe.com/au/express/web/video-creation-and-editing/change-file-formats/video-quick-actions-requirements.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/platform-concepts/architecture.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br> tag found in table row. Use \<br/\> within the table to be escaped.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/platform-concepts/context.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 128:1
+    Message: Cannot find file `images/show-cors.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 160:1
+    Message: Cannot find file `images/cors-demo.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 31:1
+    Message: Description is too long (168 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 91:118
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 101:64
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 101:64
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 102:56
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 102:56
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 66:40
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 66:40
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 222:189
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 218:18
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 220:133
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cross-Origin_Resource_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 132:159
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 240:160
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 158:335
+    Message: Unexpected dead URL `https://cors-anywhere.herokuapp.com/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 162:90
+    Message: Unexpected dead URL `https://cors-anywhere.herokuapp.com/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 122:80
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 236:125
+    Message: Unexpected dead URL `https://w906hhl6k.wxp.adobe-addons.com/`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/platform-concepts/document-api.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/samples.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/support/faq.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/addonsdk-app.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML tag <table> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/addonsdk-instance.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML tag <table> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/addonsdk.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/app-current-user.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/app-dev-flags.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/app-document.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 772:19
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 770:14
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/image-creation-and-editing/change-file-formats/image-requirements.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/app-oauth.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br> tag found in table row. Use \<br/\> within the table to be escaped.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/app-ui.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/instance-client-storage.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/instance-manifest.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/instance-runtime.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/addonsdk/runtime-dialog.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/changelog.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/communication/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/add-on-data.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/artboard-list.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 65:49
+    Message: Cannot find file `RestrictedItemList.md`; did you mean `restricted-item-list.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/artboard-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/available-font.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/base-font.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/base-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/bitmap-image.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/color-utils.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/complex-shape-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 303:32
+    Message: Unexpected dead URL `https://glmatrix.net/docs/module-mat2d.html`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 309:1
+    Message: Unexpected dead URL `https://glmatrix.net/docs/module-mat2d.html`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/context.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/editor.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 119:27
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/ellipse-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/express-context.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/express-editor.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 135:27
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/express-root-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/express-viewport.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/fillable-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/fonts.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/grid-cell-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/grid-layout-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/group-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/image-rectangle-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/item-list.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 71:49
+    Message: Cannot find file `RestrictedItemList.md`; did you mean `restricted-item-list.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/line-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/media-container-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/media-rectangle-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/page-list.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 66:49
+    Message: Cannot find file `RestrictedItemList.md`; did you mean `restricted-item-list.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/page-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/path-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/read-only-item-list.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/read-only-mask.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/rectangle-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/restricted-item-list.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 72:46
+    Message: Cannot find file `ReadOnlyItemList.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/solid-color-shape-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/standalone-text-content-model.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/standalone-text-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/strokable-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/stroke-shape-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/text-content-model.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/text-node-content-model.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/text-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/threaded-text-content-model.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/threaded-text-list.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 64:46
+    Message: Cannot find file `ReadOnlyItemList.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/threaded-text-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/unavailable-font.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/unknown-media-rectangle-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/unknown-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/classes/visual-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/arrow-head-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/blend-mode.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/editor-event.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/fill-rule.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/fill-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/resize-behavior.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/scene-node-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/stroke-position.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/stroke-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/text-alignment.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/text-layout.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/text-script-style.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/visual-effect-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/area-text-layout.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/auto-height-text-layout.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/auto-width-text-layout.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/base-paragraph-styles.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/character-styles-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/character-styles-range-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/character-styles-range.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/character-styles.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/color-fill.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/color.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/common-resize-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/container-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/create-rendition-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/create-rendition-result.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/fill.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/i-fillable-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/i-media-container-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/i-node-bounds.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/i-rectangular-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/i-strokable-node.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/i-visual-node-bounds.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/list-item.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/ordered-list-style-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/paragraph-styles-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/paragraph-styles-range-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/paragraph-styles-range.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/paragraph-styles.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/point.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/rect.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/rectangle-geometry.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/remove-list-style-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/rescale-proportional-to-height-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/rescale-proportional-to-width-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/resize-using-height-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/resize-using-width-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/solid-color-stroke.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/stroke.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/style-range.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/text-content.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/text-frame-area-geometry.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/text-range.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/unordered-list-style-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/unsupported-text-layout.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/create-rendition-format.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/text-style-source.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/overview.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/overview.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/editor-event-handler.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/event-handler-id.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/font.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/list-style-input.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/ordered-list-style.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/resize-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/solid-color-stroke-with-optional-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/unordered-list-style.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/manifest/index.md
+───────────────────────────────────────────────────────────────
+  ❌ ERROR
+    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+
+
+═══════════════════════════════════════════════════════════════
+                        SUMMARY
+═══════════════════════════════════════════════════════════════
+
+  📁 Files processed:    240
+  📄 Files with issues:  182
+  ❌ Total errors:       27
+  ⚠️  Total warnings:     386
+  📋 Total issues:       413
+
+Result: ❌ FAILED - Fatal errors found
+
+═══════════════════════════════════════════════════════════════

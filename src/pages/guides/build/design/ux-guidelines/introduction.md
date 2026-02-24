@@ -36,7 +36,7 @@ Next, the [Theming](../ux-guidelines/theming.md) section shows you how to implem
 
 [Feedback & Messaging](../ux-guidelines/feedback-and-messaging.md) provides best practices for communicating feedback or alert errors to users.
 
-<!-- The [Mobile UX](../ux-guidelines/mobile-ux.md) section offers guidance on how to format content for mobile devices so that the user experience is consistent across all platforms. -->
+\<!-- The [Mobile UX](../ux-guidelines/mobile-ux.md) section offers guidance on how to format content for mobile devices so that the user experience is consistent across all platforms. --\>
 
 Explore the [Branding Guidelines](../ux-guidelines/branding-guidelines.md) to ensure your add-on is legally & visually aligned with Adobe Express. They cover key aspects of branding, as well as best practices for incorporating promotional images for the Adobe Express add-on Marketplace.
 

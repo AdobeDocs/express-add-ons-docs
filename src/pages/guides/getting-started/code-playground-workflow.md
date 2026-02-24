@@ -70,7 +70,7 @@ The Code Playground **prefixes the messages in the Console** with descriptive st
 
 Open the browser's developer tools by right-clicking on the browser window where Adobe Express is running, and selecting **Inspect** from the context menu. In the **Console**, you can filter out the messages from the Code Playground by typing just `Playground` in the filter input.
 
-![Code Playground Debugging](../getting_started/img/playground-console-prefix.png)
+![Code Playground Debugging](src/pages/guides/getting-started/img/playground-console-prefix.png)
 
 ## Session Management
 
@@ -78,7 +78,7 @@ Open the browser's developer tools by right-clicking on the browser window where
 
 The Code Playground now backs up your sessions in the cloud, ensuring your work is safely stored and protected from accidental loss. You can know whether your session is looking at the status next to the session name.
 
-![Code Playground Saved Session](../getting_started/img/playground--saved-session.png)
+![Code Playground Saved Session](src/pages/guides/getting-started/img/playground--saved-session.png)
 
 If an issue occurs, the status will update accordingly and an error toast will appear.
 
@@ -101,7 +101,7 @@ There are two ways to resume working on one of your saved sessions:
 4. Select the **Playground Sessions** tab to access your saved sessions.
 5. Click on the session you want to resume to open it in the Code Playground.
 
-![Code Playground Add-on Mode](../getting_started/img/playground--sessions-from-home.gif)
+![Code Playground Add-on Mode](src/pages/guides/getting-started/img/playground--sessions-from-home.gif)
 
 #### Via the Add-ons Panel
 
@@ -116,7 +116,7 @@ To browse your saved sessions:
 2. Select the **Manage Sessions** item in the dropdown menu
 3. You'll see a list of your saved sessions; click on one to **select it** and click the **Open** button to resume working on it.
 
-![Code Playground Add-on Mode](../getting_started/img/playground--sessions.gif)
+![Code Playground Add-on Mode](src/pages/guides/getting-started/img/playground--sessions.gif)
 
 <InlineAlert slots="header, text1" variant="info"/>
 
@@ -129,13 +129,13 @@ To browse your saved sessions:
 
 To rename a session, click on the session name and enter a new name. Click anywhere outside the input or press &lt;kbd&gt;Enter&lt;/kbd&gt; to save the new name. A toast will appear to confirm the change.
 
-![Code Playground Rename Session](../getting_started/img/playground--rename-session.gif)
+![Code Playground Rename Session](src/pages/guides/getting-started/img/playground--rename-session.gif)
 
 ### Delete a Session
 
 To delete a session, click on the **•••** button next to the session name and click the **Delete Session** button. You'll need to confirm the deletion by clicking the **Delete** button . A toast will appear to confirm the success of the operation.
 
-![Code Playground Delete Session](../getting_started/img/playground--delete-session.gif)
+![Code Playground Delete Session](src/pages/guides/getting-started/img/playground--delete-session.gif)
 
 ### Session Limits and Lifecycle
 
@@ -162,7 +162,7 @@ To download your code:
 2. Click the **Download** button
 3. This will download a zip file containing your code
 
-![Code Playground Download code](../getting_started/img/playground--download.png)
+![Code Playground Download code](src/pages/guides/getting-started/img/playground--download.png)
 
 ### Folder Structure
 
@@ -171,7 +171,7 @@ The downloaded zip file will contain a folder with the following structure:
 - add-on folder
 - `script.js` file
 
-![Downloaded Folder Structure](../getting_started/img/downloaded-folder-structure.png)
+![Downloaded Folder Structure](src/pages/guides/getting-started/img/downloaded-folder-structure.png)
 
 ### Run Downloaded Code
 

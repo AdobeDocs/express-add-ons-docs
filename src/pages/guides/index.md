@@ -23,7 +23,7 @@ import '/src/styles.css'
 
 <Superhero slots="image, heading, text, buttons" variant="halfWidth" textColor="white" background="linear-gradient(180deg, #c946eb 0%, #6372f5 100%)" overGradient />
 
-![](./getting_started/img/Explore_Image_3.png)
+![](src/pages/guides/getting-started/img/Explore_Image_3.png)
 
 ## Build add-ons for Adobe Express
 
@@ -37,7 +37,7 @@ Ready to build your own add-on? Check out the Developer Journey to get started, 
 
 <Columns slots="image, heading, text, text1" repeat="2" />
 
-![Discover](./getting_started/img/devjourney-1-discovery.png)
+![Discover](src/pages/guides/getting-started/img/devjourney-1-discovery.png)
 
 ### Discover
 
@@ -45,7 +45,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 [Find inspiration →](getting-started/developer-journey.md#discover)
 
-![Learn](./getting_started/img/devjourney-2-learn.png)
+![Learn](src/pages/guides/getting-started/img/devjourney-2-learn.png)
 
 ### Learn
 
@@ -55,7 +55,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 <Columns slots="image, heading, text, text1" repeat="2" />
 
-![Develop](./getting_started/img/devjourney-3-develop.png)
+![Develop](src/pages/guides/getting-started/img/devjourney-3-develop.png)
 
 ### Develop
 
@@ -63,7 +63,7 @@ Transform your ideas into a polished product following our best practices.
 
 [Start building →](getting-started/developer-journey.md#develop)
 
-![Distribute](./getting_started/img/devjourney-4-distribute.png)
+![Distribute](src/pages/guides/getting-started/img/devjourney-4-distribute.png)
 
 ### Distribute
 
