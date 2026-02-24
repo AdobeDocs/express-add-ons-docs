@@ -31,7 +31,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### last
 
@@ -43,7 +43,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### length
 
@@ -59,19 +59,19 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<`T`, `any`, `any`\>
+• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`&gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<`T`, `any`, `any`\>
+`Iterator`&lt;`T`, `any`, `any`&gt;
 
 #### Inherited from
 
 [`ReadOnlyItemList`](read-only-item-list.md).[`[iterator]`](ReadOnlyItemList.md#iterator)
 
----
+<HorizontalLine />
 
 ### indexOf()
 
@@ -93,7 +93,7 @@ index number, or -1 if item isn't in this list.
 
 [`ReadOnlyItemList`](read-only-item-list.md).[`indexOf`](read-only-item-list.md#indexof)
 
----
+<HorizontalLine />
 
 ### item()
 
@@ -115,7 +115,7 @@ Zero-based index
 
 [`ReadOnlyItemList`](read-only-item-list.md).[`item`](read-only-item-list.md#item)
 
----
+<HorizontalLine />
 
 ### moveAfter()
 
@@ -139,7 +139,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 An error if either argument is not contained in this list.
 
----
+<HorizontalLine />
 
 ### moveBefore()
 
@@ -163,7 +163,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 An error if either argument is not contained in this list.
 
----
+<HorizontalLine />
 
 ### remove()
 
@@ -183,7 +183,7 @@ Remove the items from the list. The items need not be contiguous.
 
 If any of the items are not in the list, or if it is illegal to remove any of the items from this parent.
 
----
+<HorizontalLine />
 
 ### toArray()
 

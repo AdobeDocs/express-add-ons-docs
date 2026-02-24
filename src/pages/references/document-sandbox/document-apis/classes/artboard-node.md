@@ -13,7 +13,7 @@ To create a new artboard, see [ArtboardList.addArtboard](artboard-list.md#addart
 
 ## Implements
 
--   `Readonly`<[`IRectangularNode`](../interfaces/i-rectangular-node.md)\>
+-   `Readonly`&lt;[`IRectangularNode`](../interfaces/i-rectangular-node.md)&gt;
 -   [`ContainerNode`](../interfaces/container-node.md)
 
 ## Accessors
@@ -28,11 +28,11 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -43,13 +43,13 @@ The children of an Artboard are all subclasses of Node (not just the more minima
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allDescendants
 
-• `get` **allDescendants**(): `Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+• `get` **allDescendants**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -67,13 +67,13 @@ Warning: Processing text content via this API can be error-prone. Use [VisualNod
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allTextContent
 
-• `get` **allTextContent**(): `Readonly`<`Iterable`<[`TextContent`](../interfaces/text-content.md), `any`, `any`\>\>
+• `get` **allTextContent**(): `Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -90,13 +90,13 @@ Note that visibleRanges and visibleText may not be sorted as TextNode "frames" c
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextContent`](../interfaces/text-content.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/rect.md)\>
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)&gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -107,25 +107,25 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)&gt;
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
----
+<HorizontalLine />
 
 ### children
 
-• `get` **children**(): [`ItemList`](item-list.md)<[`Node`](node.md)\>
+• `get` **children**(): [`ItemList`](item-list.md)&lt;[`Node`](node.md)&gt;
 
 The artboards's regular children (does not include any "background layer" content if present; use [allChildren](artboard-node.md#allchildren)
 for a read-only view that includes background content). Use the methods on this `children` ItemList object to get,
@@ -133,13 +133,13 @@ add, and remove regular children.
 
 #### Returns
 
-[`ItemList`](item-list.md)<[`Node`](node.md)\>
+[`ItemList`](item-list.md)&lt;[`Node`](node.md)&gt;
 
----
+<HorizontalLine />
 
 ### fill
 
-• `get` **fill**(): `Readonly`<[`Fill`](../interfaces/fill.md)\>
+• `get` **fill**(): `Readonly`&lt;[`Fill`](../interfaces/fill.md)&gt;
 
 • `set` **fill**(`fill`): `void`
 
@@ -151,9 +151,9 @@ The background fill of the artboard. Artboards must always have a fill.
 
 #### Returns
 
-`Readonly`<[`Fill`](../interfaces/fill.md)\>
+`Readonly`&lt;[`Fill`](../interfaces/fill.md)&gt;
 
----
+<HorizontalLine />
 
 ### height
 
@@ -167,7 +167,7 @@ To resize an artboard, resize the parent [PageNode](page-node.md).
 
 `number`
 
----
+<HorizontalLine />
 
 ### id
 
@@ -180,7 +180,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -192,11 +192,11 @@ The node's parent. Undefined if the node is an orphan.
 
 `undefined` \| [`PageNode`](page-node.md)
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -204,9 +204,9 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
----
+<HorizontalLine />
 
 ### type
 
@@ -218,7 +218,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### visualRoot
 
@@ -235,7 +235,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 [`VisualNode`](visual-node.md)
 
----
+<HorizontalLine />
 
 ### width
 
@@ -253,7 +253,7 @@ To resize an artboard, resize the parent [PageNode](page-node.md).
 
 ### createRendition()
 
-• **createRendition**(`options`?): `Promise`<[`CreateRenditionResult`](../interfaces/create-rendition-result.md)\>
+• **createRendition**(`options`?): `Promise`&lt;[`CreateRenditionResult`](../interfaces/create-rendition-result.md)&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -270,7 +270,7 @@ As such, there is a 20s timeout before an error is thrown to prevent indefinite 
 
 #### Returns
 
-`Promise`<[`CreateRenditionResult`](../interfaces/create-rendition-result.md)\>
+`Promise`&lt;[`CreateRenditionResult`](../interfaces/create-rendition-result.md)&gt;
 
 #### Implementation of
 
@@ -280,11 +280,11 @@ As such, there is a 20s timeout before an error is thrown to prevent indefinite 
 
 [`VisualNode`](visual-node.md).[`createRendition`](visual-node.md#createrendition)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](artboard-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -298,7 +298,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 #### Implementation of
 
@@ -308,7 +308,7 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 [`VisualNode`](visual-node.md).[`localPointInNode`](visual-node.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 

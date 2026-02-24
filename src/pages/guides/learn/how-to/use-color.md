@@ -57,7 +57,7 @@ Colors in Adobe Express are created as instances of the [`Color`](../../../refer
 
 The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/color-utils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromhex) methods.
 
-```js{try id=createColors}
+```js-data-playground-session-id="createColors"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
@@ -89,7 +89,7 @@ You can directly set the `color` property of a Text node via [`applyCharacterSty
 
 ### Example: Text color
 
-```js{try id=applyTextColor}
+```js-data-playground-session-id="applyTextColor"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
@@ -114,7 +114,7 @@ Colors are not directly applied, instead, to shapes; more generally, they are us
 
 If you're confused, worry not! This is the wondrous word of object oriented programming. The following example should clarify things:
 
-```js{try id=applyFillAndStrokeColors}
+```js-data-playground-session-id="applyFillAndStrokeColors"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
@@ -159,7 +159,7 @@ ellipse.stroke = editor.makeStroke({
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Naming conventions
+#### Naming conventions
 
 Please note that Adobe Express uses the terms **make** and **create** to distinguish between plain objects and live document objects. You `makeColorFill()`, but `createEllipse()`.
 
@@ -191,7 +191,7 @@ The `showColorPicker()` method requires an HTML element as its anchor point. Her
 
 ### Example: Show the Color Picker
 
-<CodeBlock slots="heading, code" repeat="2" languages="js, html"/>
+<CodeBlock slots="heading, code" repeat="2"/>
 
 #### ui/index.js
 
@@ -263,7 +263,7 @@ colorPickerButton.addEventListener("click", () => {
 
 You can use any HTML element as the color picker's anchor element; in the example below, we're using a `<div>` element to display a color swatch.
 
-<CodeBlock slots="heading, code" repeat="2" languages="html, js"/>
+<CodeBlock slots="heading, code" repeat="2"/>
 
 #### index.html
 

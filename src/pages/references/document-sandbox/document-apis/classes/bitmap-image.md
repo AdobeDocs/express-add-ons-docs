@@ -16,7 +16,7 @@ Original height of the bitmap in pixels.
 
 `number`
 
----
+<HorizontalLine />
 
 ### width
 
@@ -32,7 +32,7 @@ Original width of the bitmap in pixels.
 
 ### data()
 
-• **data**(): `Promise`<`Blob`\>
+• **data**(): `Promise`&lt;`Blob`&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -42,4 +42,4 @@ Fetches the bitmap data as a Blob. Waits up to 1 minute for the bitmap to be ava
 
 #### Returns
 
-`Promise`<`Blob`\>
+`Promise`&lt;`Blob`&gt;

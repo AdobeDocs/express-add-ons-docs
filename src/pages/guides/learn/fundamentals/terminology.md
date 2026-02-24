@@ -519,7 +519,7 @@ import editor from "express-document-sdk"; // Wrong: should be named import (nee
 **Problem**: `addOnUISdk.constants.SomeConstant` returns `undefined`  
 **Solution**: Some constants require explicit imports. Check the [Constants Reference](../../../references/addonsdk/addonsdk-constants.md)
 
----
+<HorizontalLine />
 
 ## FAQs
 
@@ -579,7 +579,7 @@ This ensures all your code works with the same SDK instances, preventing conflic
 
 See the [Architecture Guide](../platform-concepts/architecture.md#sdk-structure--import-patterns) for complete details.
 
----
+<HorizontalLine />
 
 ## Related Documentation
 

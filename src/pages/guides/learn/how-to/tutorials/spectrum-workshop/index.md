@@ -39,7 +39,7 @@ The two different add-on's you will create are:
 
 An example of what you will build is shown below:
 
-![Bingo add-on screenshot](../images/bingo-v1-addon.png)
+![Bingo add-on screenshot](../../../how_to/tutorials/images/bingo-v1-addon.png)
 
 This add-on allows users to select settings to customize a bingo card; including background, foreground, title color, gridline size and whether to include a "FREE" space. The card is generated with random numbers, and ensures no numbers are used twice. The user can drag the customized card to the page, or click the "Add to page" button to use it in their document.
 
@@ -64,13 +64,11 @@ This add-on allows users to select settings to customize a bingo card; including
 
 - [Lesson 1 project](https://github.com/hollyschinsky/bingo-card-generator-js) - Bingo Card Generator add-on using Spectrum Web Components and JavaScript
 
-<!-- - The [lesson 2 starter project](https://github.com/hollyschinsky/bingo-card-generator-starter/blob/master/webpack.config.js)  -->
-
 - [Lesson 2 project](https://github.com/hollyschinsky/bingo-card-generator-react-js) - Bingo Card Generator add-on using [swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) and ReactJS
 
 ### Topics Covered
 
-<ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [Configuring your add-on to use Spectrum Web Components](../../../how-to/tutorials/spectrum-workshop/part1.md#create-and-configure-your-add-on)
 
@@ -90,7 +88,7 @@ Check out [the codepen](https://codepen.io/hollyschinsky/pen/xxBweyV0), then try
 
 Before moving on, check out [this codepen](https://codepen.io/hollyschinsky/pen/bGZrdoy) which implements the UI for the bingo card generator add-on and gives you a glimpse of what you're going to be building. You can change the layout to represent how it might look running in Express, by clicking the layout icon button outlined below, and dragging the width of the frame to 320px:
 
-![Bingo codepen screenshot](../images/bingo-codepen.png)
+![Bingo codepen screenshot](../../../how_to/tutorials/images/bingo-codepen.png)
 
 <InlineAlert slots="text" variant="warning"/>
 

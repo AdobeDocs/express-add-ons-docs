@@ -20,11 +20,11 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -35,13 +35,13 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allDescendants
 
-• `get` **allDescendants**(): `Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+• `get` **allDescendants**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -59,13 +59,13 @@ Warning: Processing text content via this API can be error-prone. Use [VisualNod
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allTextContent
 
-• `get` **allTextContent**(): `Readonly`<`Iterable`<[`TextContent`](../interfaces/text-content.md), `any`, `any`\>\>
+• `get` **allTextContent**(): `Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -82,9 +82,9 @@ Note that visibleRanges and visibleText may not be sorted as TextNode "frames" c
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextContent`](../interfaces/text-content.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### blendMode
 
@@ -103,7 +103,7 @@ Blend mode determines how a node is composited onto the content below it. The de
 
 [`BlendMode`](../enumerations/blend-mode.md)
 
----
+<HorizontalLine />
 
 ### boundsInParent
 
@@ -119,7 +119,7 @@ even for an orphan node with no parent.
 
 `Readonly`<[`Rect`](../interfaces/rect.md)\>
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
@@ -136,19 +136,19 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 `Readonly`<[`Rect`](../interfaces/rect.md)\>
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
----
+<HorizontalLine />
 
 ### id
 
@@ -161,7 +161,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### locked
 
@@ -182,7 +182,7 @@ expectations before doing so.
 
 `boolean`
 
----
+<HorizontalLine />
 
 ### opacity
 
@@ -200,7 +200,7 @@ The node's opacity, from 0.0 to 1.0
 
 `number`
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -217,7 +217,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<HorizontalLine />
 
 ### rotation
 
@@ -230,7 +230,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<HorizontalLine />
 
 ### rotationInScreen
 
@@ -243,11 +243,11 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -255,9 +255,9 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
----
+<HorizontalLine />
 
 ### transformMatrix
 
@@ -269,11 +269,11 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<HorizontalLine />
 
 ### translation
 
-• `get` **translation**(): `Readonly`<[`Point`](../interfaces/point.md)\>
+• `get` **translation**(): `Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -287,9 +287,9 @@ setting translation directly.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
----
+<HorizontalLine />
 
 ### type
 
@@ -301,7 +301,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### visualRoot
 
@@ -340,7 +340,7 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 [`Node`](node.md).[`boundsInNode`](node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
@@ -358,11 +358,11 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 [`Node`](node.md).[`cloneInPlace`](node.md#cloneinplace)
 
----
+<HorizontalLine />
 
 ### createRendition()
 
-• **createRendition**(`options`?): `Promise`<[`CreateRenditionResult`](../interfaces/create-rendition-result.md)\>
+• **createRendition**(`options`?): `Promise`&lt;[`CreateRenditionResult`](../interfaces/create-rendition-result.md)&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -379,17 +379,17 @@ As such, there is a 20s timeout before an error is thrown to prevent indefinite 
 
 #### Returns
 
-`Promise`<[`CreateRenditionResult`](../interfaces/create-rendition-result.md)\>
+`Promise`&lt;[`CreateRenditionResult`](../interfaces/create-rendition-result.md)&gt;
 
 #### Inherited from
 
 [`Node`](node.md).[`createRendition`](node.md#createrendition)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](unknown-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -403,13 +403,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 #### Inherited from
 
 [`Node`](node.md).[`localPointInNode`](node.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 
@@ -430,7 +430,7 @@ removal. No-op if node is already an orphan.
 
 [`Node`](node.md).[`removeFromParent`](node.md#removefromparent)
 
----
+<HorizontalLine />
 
 ### resize()
 
@@ -454,7 +454,7 @@ Resizes this node based on the given [ResizeOptions](../type-aliases/resize-opti
 
 [`Node`](node.md).[`resize`](node.md#resize)
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 
@@ -492,7 +492,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<HorizontalLine />
 
 ### setRotationInParent()
 

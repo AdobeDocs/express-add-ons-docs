@@ -14,7 +14,7 @@ that supports adding, removing, and reordering text frames.
 
 ### allTextNodes
 
-• `get` **allTextNodes**(): `Readonly`<`Iterable`<[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`\>\>
+• `get` **allTextNodes**(): `Readonly`&lt;`Iterable`&lt;[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`&gt;&gt;
 
 Get ordered list of all [TextNode](text-node.md)s that display this text content in the scenegraph. This might be a single
 [StandaloneTextNode](standalone-text-node.md) *or* a list of one or more [ThreadedTextNode](threaded-text-node.md)s. In the case of threaded text, the
@@ -26,9 +26,9 @@ All linked ThreadedTextNodes that share a single TextContentModel must remain to
 
 #### Returns
 
-`Readonly`<`Iterable`<[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### characterStyleRanges
 
@@ -57,7 +57,7 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 
 readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### frames
 
@@ -67,7 +67,7 @@ readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
 [`ThreadedTextList`](threaded-text-list.md)
 
----
+<HorizontalLine />
 
 ### id
 
@@ -88,7 +88,7 @@ Comparing two models using `===` will always fail.
 
 `string`
 
----
+<HorizontalLine />
 
 ### paragraphStyleRanges
 
@@ -117,7 +117,7 @@ if applying an ordered-list style when the text contains fonts that are unavaila
 
 readonly [`ParagraphStylesRange`](../interfaces/paragraph-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### text
 
@@ -170,7 +170,7 @@ The text to append.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### applyCharacterStyles()
 
@@ -203,7 +203,7 @@ If no range is specified, styles will be applied to the entire text content flow
 
 [`TextNodeContentModel`](text-node-content-model.md).[`applyCharacterStyles`](text-node-content-model.md#applycharacterstyles)
 
----
+<HorizontalLine />
 
 ### applyParagraphStyles()
 
@@ -238,7 +238,7 @@ If range is not specified, the styles will be applied to the entire text content
 
 if applying an ordered-list style when the text contains fonts that are unavailable to the current user.
 
----
+<HorizontalLine />
 
 ### deleteText()
 
@@ -268,7 +268,7 @@ The range of text to delete.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### hasUnavailableFonts()
 
@@ -291,7 +291,7 @@ the character styles to use only AvailableFonts.
 
 [`TextNodeContentModel`](text-node-content-model.md).[`hasUnavailableFonts`](text-node-content-model.md#hasunavailablefonts)
 
----
+<HorizontalLine />
 
 ### insertText()
 
@@ -330,7 +330,7 @@ Style to use for the new text: either directly provides a style to use, or indic
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### replaceText()
 

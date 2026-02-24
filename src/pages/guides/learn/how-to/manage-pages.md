@@ -97,7 +97,7 @@ Use the [`editor.documentRoot.pages.addPage()`](../../../references/document-san
 
 ### Example: Add a Standard Page
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -143,7 +143,7 @@ When you call `editor.documentRoot.pages.addPage()`, the new page automatically 
 
 ### Example: Add Pages with Different Dimensions
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -203,7 +203,7 @@ console.log("Created 3 pages with different dimensions");
 
 ### Get the Current Page
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -233,7 +233,7 @@ console.log("Number of artboards:", currentPage.artboards.length);
 
 ### Access All Pages
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -283,7 +283,7 @@ const lastPage: PageNode = allPages[allPages.length - 1];
 
 ### Add Content to a Specific Page
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -332,7 +332,7 @@ console.log("Added text to the new page");
 
 ### Work with Page Artboards
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -390,7 +390,7 @@ firstArtboard.children.append(rect);
 
 ### Page Creation Workflow
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -474,7 +474,7 @@ const templatePages = createTemplatePages();
 
 For detailed page information including content analysis and print readiness, see the [Page Metadata How-to Guide](../how-to/page-metadata.md).
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 

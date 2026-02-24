@@ -93,13 +93,13 @@ All selection operations use the **Document API** and run in the **document sand
 
 <InlineAlert slots="header,text" variant="info"/>
 
-### Document Sandbox Setup
+#### Document Sandbox Setup
 
 Make sure your `manifest.json` includes `"documentSandbox": "code.js"` in the entry points to set up the document sandbox environment.
 
 ### Quick Start Example
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -146,7 +146,7 @@ Core operations for working with selections.
 
 ### Getting the Current Selection
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -192,7 +192,7 @@ selection.forEach((node: Node, index: number) => {
 
 ### Programmatic Selection
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -241,7 +241,7 @@ console.log("Rectangle is now selected");
 
 ### Multiple Selection
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -299,7 +299,7 @@ console.log("Multiple elements selected:", editor.context.selection.length);
 
 ### Clearing the Selection
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -335,7 +335,7 @@ Respond to selection changes to create dynamic UIs that update based on what's s
 
 ### Basic Selection Change Handler
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -393,7 +393,7 @@ console.log("Selection handler registered:", handlerId);
 
 Dynamic properties panel based on selection:
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -491,7 +491,7 @@ updatePropertiesPanel();
 
 ⚠️ **Important**: Always clean up event handlers to prevent memory leaks.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -571,7 +571,7 @@ Advanced patterns for complex add-ons.
 
 Handle selections that include locked or non-editable content:
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -685,7 +685,7 @@ Real-world patterns for building selection-based features in your add-on.
 
 Common patterns for applying changes to selected elements:
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -836,7 +836,7 @@ editor.context.on(EditorEvent.selectionChange, () => {
 
 Track selection history and manage complex selection states:
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 

@@ -21,7 +21,7 @@ Contains The Express specific APIs related to the current selection state.
 The currently viewed page.
 To change the current page, call [ExpressViewport.bringIntoView](express-viewport.md#bringintoview) with an artboard or other content on that page.
 
----
+<HorizontalLine />
 
 ### hasSelection
 
@@ -33,7 +33,7 @@ To change the current page, call [ExpressViewport.bringIntoView](express-viewpor
 
 false if the current editable selection does not contain any nodes, otherwise true.
 
----
+<HorizontalLine />
 
 ### insertionParent
 
@@ -47,7 +47,7 @@ the preferred parent to insert newly added content into (i.e., the location cont
 user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
 other UI state.
 
----
+<HorizontalLine />
 
 ### selection
 
@@ -76,7 +76,7 @@ readonly [`Node`](node.md)[]
 the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
 selection (see [selectionIncludingNonEditable](context.md#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
 
----
+<HorizontalLine />
 
 ### selectionIncludingNonEditable
 
@@ -117,7 +117,7 @@ Callback that was previously registered will be removed and will no more be invo
 
 [`Context`](context.md).[`off`](context.md#off)
 
----
+<HorizontalLine />
 
 ### on()
 

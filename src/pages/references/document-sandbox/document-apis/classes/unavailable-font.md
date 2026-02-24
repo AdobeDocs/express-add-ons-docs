@@ -20,7 +20,7 @@ Whether the current user has permission to create / edit content using this font
 
 `false`
 
----
+<HorizontalLine />
 
 ### family
 
@@ -32,7 +32,7 @@ The font family containing the font.
 
 `string`
 
----
+<HorizontalLine />
 
 ### postscriptName
 
@@ -44,7 +44,7 @@ The PostScript name of the font.
 
 `string`
 
----
+<HorizontalLine />
 
 ### style
 

@@ -161,7 +161,7 @@ Import-time metadata is **not supported** for PSD/AI assets. An error will be th
 
 ### Example: Set Metadata with Add-on UI SDK `ImportAddOnData`
 
-<CodeBlock slots="heading, code" repeat="4" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="3" />
 
 #### Add Image
 
@@ -252,7 +252,7 @@ await addOnUISdk.app.document.addAnimatedImage(gifBlob, {
 
 ### Example: Retrieve Imported Metadata in Document Sandbox
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### All Media Metadata
 

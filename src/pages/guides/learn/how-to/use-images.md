@@ -66,7 +66,7 @@ It expects a `Blob` object as the first argument, an optional [`MediaAttribute`]
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Iframe vs. Document Sandbox
+#### Iframe vs. Document Sandbox
 
 The following snippets import the `addOnUISdk` object, and belong to the `ui/index.js` file. This is the **iframe** side of the add-on's house—whereas most of the Design Elements how-tos make use of the **Document Sandbox API** (in the `sandbox/code.js` file).
 
@@ -114,7 +114,7 @@ addOnUISdk.ready.then(async () => {
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Image requirements
+#### Image requirements
 
 Please refer to [this section](../../../references/addonsdk/app-document.md#image-requirements) to know more about the file formats support and size requirements for images.
 
@@ -154,7 +154,7 @@ addOnUISdk.ready.then(async () => {
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-GIF Image requirements
+#### GIF Image requirements
 
 All image formats are equal, but some formats are more equal than others. Please refer to [this FAQ](../../support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) to learn more about specific GIF limitations in terms of size and weight.
 
@@ -172,7 +172,7 @@ Because the Document Sandbox doesn't have access to the `fetch()` function, in t
 
 You can copy and paste the following code into a [Code Playground](../../getting-started/code-playground.md) session to try it out.
 
-<CodeBlock slots="heading, code" repeat="4" languages="HTML, CSS, iFrame JS, Document JS"/>
+<CodeBlock slots="heading, code" repeat="4"/>
 
 #### HTML
 

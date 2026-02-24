@@ -6,7 +6,7 @@ Represents the modal dialog presented to the user. This object can be used to ma
 
 ### close()
 
-**`close(result?: unknown): void`**<br/>
+**`close(result?: unknown): void`**&lt;br/&gt;
 Closes the modal dialog and posts the result back to the dialog invoker.
 
 #### Parameters

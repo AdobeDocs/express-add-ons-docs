@@ -26,7 +26,7 @@ In this tutorial, we'll build an Adobe Express add-on that gathers statistics on
 
 Hello, and welcome to this Adobe Express Communication API tutorial, where we'll build together a **fully functional Stats add-on** from scratch. This add-on will retrieve metadata from the currently open Adobe Express document, such as pages and their size, plus information about the kind and number of any element used.
 
-![](images/stats-addon.png)
+![](../../how_to/tutorials/images/stats-addon.png)
 
 ### Timestamp
 
@@ -42,8 +42,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 ### Topics Covered
 
-<!-- List block here -->
-<ListBlock slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
+<List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
 [Invoking Document Model Sandbox methods from the UI iframe](#proxy-api)
 
@@ -53,7 +52,7 @@ This tutorial has been written by Davide Barranca, software developer and author
 
 [Context Closures](#functions)
 
-![](images/stats-addon-animation.gif)
+![](../../how_to/tutorials/images/stats-addon-animation.gif)
 
 ## Getting Started with the Communication API
 
@@ -96,7 +95,7 @@ const panelUIProxy = await runtime.apiProxy("panel");
 
 At this point, `sandboxProxy` and `panelUIProxy` represent their counterparts from the original contexts. It all may be easier to understand when the entire process is written down; for example, in the following code, we expose a custom method called `ready()` defined in the UI iframe to the Document API.
 
-<CodeBlock slots="heading, code" repeat="2" languages="UI iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -127,7 +126,7 @@ await panelUIProxy.ready("Document Sandbox");
 
 As the name implies, the `panelUIProxy` constant in the Document Sandbox is a _proxy_ for the object exposed by the iframe's runtime. The other way around works the same: exposing a Document API method to the iframe.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2"/>
 
 #### UI iframe
 
@@ -158,7 +157,7 @@ runtime.exposeApi({
 
 The following diagram helps visualize the process.
 
-![Proxy objects](images/stats-addon-proxy.png)
+![Proxy objects](../../how_to/tutorials/images/stats-addon-proxy.png)
 
 ### Proxy API
 
@@ -226,7 +225,7 @@ runtime.exposeApi({
 
 Here, `drawRect()` and `drawEllipse()` exist within the closure of the `drawShape()` function exposed to the iframe and will work just fine when the iframe invokes it. This notion of "private" variables defined in one context can be exploited in various ways, for instance, with a counter as follows.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -286,7 +285,7 @@ The following returns won't work as expected and must be avoided.
 
 Nothing prevents you from using something else besides functions in your proxy. For instance, you can refactor the `drawShape()` example by exposing a `counter` property alongside its setter and getter.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2"/>
 
 #### UI iframe
 
@@ -362,7 +361,7 @@ You are now equipped with all the theory and reference snippets needed to start 
 1. The add-on shows two **status lights** that indicate whether the SDKs are ready for use.
 1. At the press of a button, the add-on (via Document API) collects the document's metadata[^0], which is used to compile and show a **table of Nodes** (elements).
 
-![](images/stats-addon-vscode.png)
+![](../../how_to/tutorials/images/stats-addon-vscode.png)
 
 Like in the [Grids add-on tutorial](../../how-to/tutorials/grids-addon.md), the starting point will be [this template](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-addon-document-api-template), which provides a Webpack-managed JavaScript—hence, able to easily import Spectrum Web Components to build the User Interface. Everything's in the `src` folder:
 
@@ -376,7 +375,7 @@ Like in the [Grids add-on tutorial](../../how-to/tutorials/grids-addon.md), the 
 
 To keep a consistent look & feel with the rest of the application, we'll use Spectrum Web Component as much as possible, styling them with the `express` theme provided by the `<sp-theme>` wrapper.
 
-![](images/stats-addon-doc.png)
+![](../../how_to/tutorials/images/stats-addon-doc.png)
 
 For the "Framework Status", the [Status Light](https://opensource.adobe.com/spectrum-web-components/components/status-light/) component is spot-on: it comes in many variants, which set different light colors—`positive` and `negative` (green 🟢 and red 🔴) will be enough for us. The "Document Statistics" section is going to show a list of key/value pairs (the element type and the number of items found on each page). The most obvious choice is a [Table](https://opensource.adobe.com/spectrum-web-components/components/table/) component, which in SWC is constructed with several tags.
 
@@ -386,7 +385,7 @@ For the "Framework Status", the [Status Light](https://opensource.adobe.com/spec
 
 We'll start with a placeholder row with a friendly message, which is going to be removed at the first launch. A regular `<sp-button>` is placed at the bottom to initiate the metadata-collecting process.
 
-<CodeBlock slots="heading, code" repeat="1" languages="index.html"/>
+<CodeBlock slots="heading, code" repeat="1"/>
 
 #### index.html
 
@@ -441,7 +440,7 @@ We'll start with a placeholder row with a friendly message, which is going to be
 
 The diagram below illustrates the communication flow between the two contexts.
 
-![](images/stats-addon-flow.png)
+![](../../how_to/tutorials/images/stats-addon-flow.png)
 
 The iframe exposes two methods:
 
@@ -454,7 +453,7 @@ When the iframe has loaded its SDK, it will call `toggleStatus()`, passing the `
 
 When the "Analyze Document" button is clicked, the iframe—via the Document Sandbox proxy—invokes `getDocumentData()`. Instead of returning an object with the metadata to the iframe for further processing (which would be OK), **the Document API uses the iframe proxy to run directly** `createTable()` and initiate the table subroutine in an _iframe-to-Document-Sandbox-to-iframe_ roundtrip. Let's have a look at the overall structure in `index.js` implementing the logic I've just described.
 
-<CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
+<CodeBlock slots="heading, code" repeat="1"/>
 
 #### ui/index.js
 
@@ -532,7 +531,7 @@ Let me remind you again of the need to `await` when invoking `getDocumentData()`
 
 In `documentSandbox/code.js`, we bring the iframe proxy in, toggle the status light, and expose the `getDocumentData()` function. Please note that it must be declared asynchronous (line 7) because of the need to `await` when invoking the `panelUIProxy` method `createTable()` (line 12).
 
-<CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/code.js
 
@@ -579,7 +578,7 @@ runtime.exposeApi({
 
 Let's start filling in the missing parts in our code; we'll begin with the Framework Status, the easiest bit. The `toggleStatus()` method is immediately invoked in the `addOnUISdk.ready` callback, as well as the Document Sandbox `code.js`, where it is also exposed. It updates the `variant` attribute of the `<sp-status-light>` element based on the `sdk` parameter passed in.
 
-<CodeBlock slots="heading, code" repeat="2" languages="iframe, Document Sandbox"/>
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### UI iframe
 
@@ -618,7 +617,7 @@ start();
 
 When refreshing the add-on, the UI updates almost instantly, but a frame-by-frame analysis would reveal a progression in the rendering process: first, the HTML is loaded, then the CSS with the `<sp-status-light>` components in their original, "red" variant; finally, when the two SDK are fully loaded, we get the green lights.[^1]
 
-![Status lights](images/stats-addon-lights.png)
+![Status lights](../../how_to/tutorials/images/stats-addon-lights.png)
 
 Let's tackle the metadata collection in the Document Sandbox, especially the data structure we want to create[^2]. There are many ways to go about this business: I've decided to keep track of elements on a Page basis and store page dimensions, too. Eventually, the iframe will receive `documentData`, an array of objects, one for each page, with `dimensions` and `nodes` properties. If you've got a taste for TypeScript, the type definition would be as follows.
 
@@ -658,9 +657,9 @@ The above would transpose into something along these lines.
 
 The various `"ab:Artboard"`, `"MediaContainer"` and others, are the Node type strings as Adobe Express exposes them. Let's create the `getDocumentData()` function that outputs such a structure.
 
-![](images/stats-addon-type.png)
+![](../../how_to/tutorials/images/stats-addon-type.png)
 
-<CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/code.js
 
@@ -690,7 +689,7 @@ runtime.exposeApi({
 
 The code comments will guide you through the process of getting the document, loop through pages extracting dimensions, and retrieving nodes metadata, but up to a point. What's `getNodeData`? As I mentioned before, I've split the Document API code into two parts: the main Document Sandbox entrypoint (`code.js`, where methods are exposed to and imported from the iframe) and `table-utils.js`, which is kept private to the context and exports just what `code.js` needs—the `getNodeData()` method, which makes use of `increaseCount()`.
 
-<CodeBlock slots="heading, code" repeat="1" languages="utils.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/table-utils.js
 
@@ -744,7 +743,7 @@ Given the nature of Adobe Express documents (which will be covered in detail in 
 
 When the whole process is repeated for each `page`, we can finally invoke the iframe `createTable()` method, passing the `documentData`.
 
-<CodeBlock slots="heading, code" repeat="1" languages="code.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/code.js
 
@@ -759,7 +758,7 @@ runtime.exposeApi({
 
 Now, it's up to the iframe to manage such data (the array of objects collecting page dimensions and node counts) and transform it into a Spectrum Table.
 
-<CodeBlock slots="heading, code" repeat="1" languages="index.js"/>
+<CodeBlock slots="heading, code" repeat="1"/>
 
 #### ui/index.js
 
@@ -780,7 +779,7 @@ const iframeApi = {
 
 The process is not difficult per se, but it may be slightly tedious. The `rebuildTable()` method is declared in the `table-utils.js` module alongside a private `addRowToTable()`.
 
-<CodeBlock slots="heading, code" repeat="1" languages="table-utils.js"/>
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### documentSandbox/table-utils.js
 
@@ -836,7 +835,7 @@ As follows, the `rebuildTable()` metacode.
 - Loop through each node in the `pageData.nodes` object, adding a row with the node type and the number of instances found on that page.
 - `addRowToTable()` is a utility function that takes a table and an array of strings as arguments. It creates a new `<sp-table-row>`, then loops through the array, creating a `<sp-table-cell>` for each string and appending it to the row. If the array contains only one element, the cell is given a `page-row` class, which makes it bold.
 
-![](images/stats-addon-stats.png)
+![](../../how_to/tutorials/images/stats-addon-stats.png)
 
 ## Next Steps
 
@@ -863,7 +862,6 @@ The code for this project can be downloaded [here](https://github.com/AdobeDocs/
 
 Please use the UI iframe and Document Sandbox tabs to switch between the two domains and find a dropdown in the top-right corner to select which file to show.
 
-<!-- Code below -->
 <CodeBlock slots="heading, code" repeat="6" languages="index.html, styles.css, ui/index.js, ui/table-utils.js, documentSandbox/code.js, documentSandbox/utils.js" />
 
 #### UI iframe

@@ -1,6 +1,6 @@
 [@express-document-sdk](../overview.md) / ItemList
 
-# Class: ItemList<T\>
+# Class: ItemList &lt; T &gt;
 
 ItemList represents an ordered list of API objects that are all children of the same parent node. It is most
 frequently encountered as [ArtboardNode.children](artboard-node.md#children) or [GroupNode.children](group-node.md#children).
@@ -12,7 +12,7 @@ Note that some parent nodes may have additional children that are *not* present 
 
 ## Extends
 
--   [`RestrictedItemList`](restricted-item-list.md)<`T`\>
+-   [`RestrictedItemList`](restricted-item-list.md)&lt;`T`&gt;
 
 ## Type parameters
 
@@ -30,7 +30,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### last
 
@@ -42,7 +42,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### length
 
@@ -58,19 +58,19 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<`T`, `any`, `any`\>
+• **\[iterator\]**(): `Iterator`&lt;`T`, `any`, `any`&gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<`T`, `any`, `any`\>
+`Iterator`&lt;`T`, `any`, `any`&gt;
 
 #### Inherited from
 
 [`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](RestrictedItemList.md#iterator)
 
----
+<HorizontalLine />
 
 ### append()
 
@@ -87,7 +87,7 @@ removed from their previous parent, if any – or if an item is already in *this
 
 `void`
 
----
+<HorizontalLine />
 
 ### clear()
 
@@ -99,7 +99,7 @@ Remove all items from this list. No-op if list is already empty.
 
 `void`
 
----
+<HorizontalLine />
 
 ### indexOf()
 
@@ -121,7 +121,7 @@ index number, or -1 if item isn't in this list.
 
 [`RestrictedItemList`](restricted-item-list.md).[`indexOf`](restricted-item-list.md#indexof)
 
----
+<HorizontalLine />
 
 ### insertAfter()
 
@@ -141,7 +141,7 @@ if any – or if it's already in *this* list, its index is simply changed. No-op
 
 `void`
 
----
+<HorizontalLine />
 
 ### insertBefore()
 
@@ -161,7 +161,7 @@ if any – or if it's already in *this* list, its index is simply changed. No-op
 
 `void`
 
----
+<HorizontalLine />
 
 ### item()
 
@@ -183,7 +183,7 @@ Zero-based index
 
 [`RestrictedItemList`](restricted-item-list.md).[`item`](restricted-item-list.md#item)
 
----
+<HorizontalLine />
 
 ### moveAfter()
 
@@ -211,7 +211,7 @@ or lower indices as a result. No-op if both arguments are the same item.
 
 An error if either argument is not contained in this list.
 
----
+<HorizontalLine />
 
 ### moveBefore()
 
@@ -239,7 +239,7 @@ shift to higher or lower indices as a result. No-op if both arguments are the sa
 
 An error if either argument is not contained in this list.
 
----
+<HorizontalLine />
 
 ### remove()
 
@@ -263,7 +263,7 @@ Remove the items from the list. The items need not be contiguous.
 
 If any of the items are not in the list, or if it is illegal to remove any of the items from this parent.
 
----
+<HorizontalLine />
 
 ### replace()
 
@@ -283,7 +283,7 @@ changed. No-op if both arguments are the same item.
 
 `void`
 
----
+<HorizontalLine />
 
 ### toArray()
 

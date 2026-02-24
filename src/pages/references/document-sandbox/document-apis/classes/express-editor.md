@@ -20,7 +20,7 @@ User's current selection context
 
 [`ExpressContext`](express-context.md)
 
----
+<HorizontalLine />
 
 ### documentRoot
 
@@ -49,7 +49,7 @@ Transform values default to 0.
 
 [`Editor`](editor.md).[`createEllipse`](editor.md#createellipse)
 
----
+<HorizontalLine />
 
 ### createGroup()
 
@@ -65,7 +65,7 @@ a group node.
 
 [`Editor`](editor.md).[`createGroup`](editor.md#creategroup)
 
----
+<HorizontalLine />
 
 ### createImageContainer()
 
@@ -105,7 +105,7 @@ MediaContainerNode representing the top container node of the multi-node structu
 
 [`Editor`](editor.md).[`createImageContainer`](editor.md#createimagecontainer)
 
----
+<HorizontalLine />
 
 ### createLine()
 
@@ -122,7 +122,7 @@ Transform values default to 0.
 
 [`Editor`](editor.md).[`createLine`](editor.md#createline)
 
----
+<HorizontalLine />
 
 ### createPath()
 
@@ -152,7 +152,7 @@ a path node with a default stroke and no initial fill.
 
 [`Editor`](editor.md).[`createPath`](editor.md#createpath)
 
----
+<HorizontalLine />
 
 ### createRectangle()
 
@@ -169,7 +169,7 @@ Transform values default to 0.
 
 [`Editor`](editor.md).[`createRectangle`](editor.md#createrectangle)
 
----
+<HorizontalLine />
 
 ### createText()
 
@@ -219,7 +219,7 @@ insertion parent. Recommend using `setPositionInParent` over `translation` to se
 
 [`Editor`](editor.md).[`createText`](editor.md#createtext)
 
----
+<HorizontalLine />
 
 ### createThreadedText()
 
@@ -261,11 +261,11 @@ if parentNode is not provided or is not a valid container node.
 
 if textContent is empty or invalid.
 
----
+<HorizontalLine />
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](bitmap-image.md)\>
+• **loadBitmapImage**(`bitmapData`): `Promise`&lt;[`BitmapImage`](bitmap-image.md)&gt;
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -285,13 +285,13 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise`<[`BitmapImage`](bitmap-image.md)\>
+`Promise`&lt;[`BitmapImage`](bitmap-image.md)&gt;
 
 #### Inherited from
 
 [`Editor`](editor.md).[`loadBitmapImage`](editor.md#loadbitmapimage)
 
----
+<HorizontalLine />
 
 ### makeColorFill()
 
@@ -313,7 +313,7 @@ The color to use for the fill.
 
 [`Editor`](editor.md).[`makeColorFill`](editor.md#makecolorfill)
 
----
+<HorizontalLine />
 
 ### makeStroke()
 
@@ -335,7 +335,7 @@ See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on 
 
 #### Parameters
 
-• **options?**: `Partial`<[`SolidColorStroke`](../interfaces/solid-color-stroke.md)\>
+• **options?**: `Partial`&lt;[`SolidColorStroke`](../interfaces/solid-color-stroke.md)&gt;
 
 #### Returns
 
@@ -347,11 +347,11 @@ a stroke configured with the given options.
 
 [`Editor`](editor.md).[`makeStroke`](editor.md#makestroke)
 
----
+<HorizontalLine />
 
 ### queueAsyncEdit()
 
-• **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
+• **queueAsyncEdit**(`lambda`): `Promise`&lt;`void`&gt;
 
 Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
 the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
@@ -393,7 +393,7 @@ a function which edits the document model.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`&lt;`void`&gt;
 
 a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.
 

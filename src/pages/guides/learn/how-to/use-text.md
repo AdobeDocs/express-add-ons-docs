@@ -97,7 +97,8 @@ The `editor.createText()` method accepts a string as a parameter, and returns a 
 
 ### Example: Create basic Text
 
-```js{try id=createBasicText}
+```js-data-playground-session-id="createBasicText"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://express.adobe.com/"
+
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -663,7 +664,7 @@ editor.queueAsyncEdit(() => {
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-Asynchronous operations
+#### Asynchronous operations
 
 Queuing the `applyCharacterStyles()` method is necessary because `fromPostscriptName()` is asynchronous. This ensures the edit is properly tracked for saving and undo. You can read more about this in the [queueAsyncEdit()](../../../references/document-sandbox/document-apis/classes/editor.md#queueasyncedit) reference.
 
@@ -796,7 +797,7 @@ Paragraphs are defined by newline characters (`\n`), so the style ranges should 
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-Style Ranges and Text Edits
+#### Style Ranges and Text Edits
 
 For the moment, replacing the `fullContent.text` will result in applying the style from the first range to the whole text. This behavior is subject to change in future releases.
 

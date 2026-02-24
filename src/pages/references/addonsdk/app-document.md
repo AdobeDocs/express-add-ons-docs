@@ -22,7 +22,7 @@ A resolved `Promise` containing the `id` of the document.
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### JavaScript
 
@@ -56,7 +56,7 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### JavaScript
 
@@ -92,7 +92,7 @@ A resolved `Promise` containing a [`PageMetadata`](#pagemetadata) array containi
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, bash" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -177,7 +177,7 @@ Tells Express to run a print quality check to determine if the document is ready
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 
@@ -338,7 +338,7 @@ A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### JavaScript
 
@@ -396,7 +396,7 @@ A resolved `Promise` containing `true` if the document is a presentation, `false
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="1" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="1" />
 
 #### JavaScript
 
@@ -777,7 +777,7 @@ For `gif` images, [the technical requirements are listed here](https://helpx.ado
 
 <InlineAlert slots="header, text1, text2" variant="info"/>
 
-IMPORTANT: Animated GIFs
+#### IMPORTANT: Animated GIFs
 
 Both `addImage()` and `addAnimatedImage()` support `gif` file types, however, you should use the `addAnimatedImage()` method when you want to add an _animated GIF_ specifically but note that it is subject to the size criteria listed above. When the criteria aren't met, only the first frame will be added.
 
@@ -953,7 +953,7 @@ A `Promise` with an array of page `Rendition` objects (see [`PageRendition`](#pa
 
 #### Example Usage
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### JavaScript
 

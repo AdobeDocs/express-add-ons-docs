@@ -23,7 +23,7 @@ First item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### last
 
@@ -35,7 +35,7 @@ Last item in this list, or undefined if list is empty.
 
 `undefined` \| `T`
 
----
+<HorizontalLine />
 
 ### length
 
@@ -51,19 +51,19 @@ Number of items in this list.
 
 ### `[iterator]`()
 
-• **\[iterator\]**(): `Iterator`<[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`\>
+• **\[iterator\]**(): `Iterator`&lt;[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`&gt;
 
 Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
 
 #### Returns
 
-`Iterator`<[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`\>
+`Iterator`&lt;[`ThreadedTextNode`](threaded-text-node.md), `any`, `any`&gt;
 
 #### Inherited from
 
 [`ReadOnlyItemList`](read-only-item-list.md).[`[iterator]`](ReadOnlyItemList.md#iterator)
 
----
+<HorizontalLine />
 
 ### addFrame()
 
@@ -85,7 +85,7 @@ The geometry of the threaded text node in pixels (width and height).
 
 A new ThreadedTextNode that is part of a threaded text flow.
 
----
+<HorizontalLine />
 
 ### indexOf()
 
@@ -107,7 +107,7 @@ index number, or -1 if item isn't in this list.
 
 [`ReadOnlyItemList`](read-only-item-list.md).[`indexOf`](read-only-item-list.md#indexof)
 
----
+<HorizontalLine />
 
 ### item()
 
@@ -129,7 +129,7 @@ Zero-based index
 
 [`ReadOnlyItemList`](read-only-item-list.md).[`item`](read-only-item-list.md#item)
 
----
+<HorizontalLine />
 
 ### toArray()
 

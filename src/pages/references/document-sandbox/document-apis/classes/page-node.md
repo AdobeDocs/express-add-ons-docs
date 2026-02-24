@@ -28,11 +28,11 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](base-node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`BaseNode`](base-node.md), `any`, `any`&gt;&gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -44,13 +44,13 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly`<`Iterable`<[`BaseNode`](base-node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`BaseNode`](base-node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allDescendants
 
-• `get` **allDescendants**(): `Readonly`<`Iterable`<[`VisualNode`](visual-node.md), `any`, `any`\>\>
+• `get` **allDescendants**(): `Readonly`&lt;`Iterable`&lt;[`VisualNode`](visual-node.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -66,13 +66,13 @@ Warning: Processing text content via this API can be error-prone. Use [VisualNod
 
 #### Returns
 
-`Readonly`<`Iterable`<[`VisualNode`](visual-node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`VisualNode`](visual-node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allTextContent
 
-• `get` **allTextContent**(): `Readonly`<`Iterable`<[`TextContent`](../interfaces/text-content.md), `any`, `any`\>\>
+• `get` **allTextContent**(): `Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -89,9 +89,9 @@ Note that visibleRanges and visibleText may not be sorted as TextNode "frames" c
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextContent`](../interfaces/text-content.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### artboards
 
@@ -105,7 +105,7 @@ To create new artboards, see [ArtboardList.addArtboard](artboard-list.md#addartb
 
 [`ArtboardList`](artboard-list.md)
 
----
+<HorizontalLine />
 
 ### height
 
@@ -135,7 +135,7 @@ Must be at least MIN_PAGE_DIMENSION and no larger than MAX_PAGE_DIMENSION.
 
 `number`
 
----
+<HorizontalLine />
 
 ### id
 
@@ -148,7 +148,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### name
 
@@ -166,7 +166,7 @@ The page's name. Displayed as a user-editable label above the current artboard i
 
 `undefined` \| `string`
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -183,7 +183,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<HorizontalLine />
 
 ### type
 
@@ -195,7 +195,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### width
 
@@ -242,7 +242,7 @@ switches to display this artboard.
 
 the cloned page.
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 

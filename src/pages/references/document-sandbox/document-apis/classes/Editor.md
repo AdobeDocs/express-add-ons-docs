@@ -20,7 +20,7 @@ User's current selection context
 
 [`Context`](context.md)
 
----
+<HorizontalLine />
 
 ### documentRoot
 
@@ -45,7 +45,7 @@ the root of the document.
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
----
+<HorizontalLine />
 
 ### createGroup()
 
@@ -57,7 +57,7 @@ Transform values default to 0.
 
 a group node.
 
----
+<HorizontalLine />
 
 ### createImageContainer()
 
@@ -93,7 +93,7 @@ Additional configuration:
 
 MediaContainerNode representing the top container node of the multi-node structure.
 
----
+<HorizontalLine />
 
 ### createLine()
 
@@ -106,7 +106,7 @@ MediaContainerNode representing the top container node of the multi-node structu
 a line node with default start point and end point and a default stroke.
 Transform values default to 0.
 
----
+<HorizontalLine />
 
 ### createPath()
 
@@ -132,7 +132,7 @@ a newly created path using [Node.setPositionInParent](node.md#setpositioninparen
 
 a path node with a default stroke and no initial fill.
 
----
+<HorizontalLine />
 
 ### createRectangle()
 
@@ -145,7 +145,7 @@ a path node with a default stroke and no initial fill.
 a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
 
----
+<HorizontalLine />
 
 ### createText()
 
@@ -187,7 +187,7 @@ to accommodate the given text content.
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
 
----
+<HorizontalLine />
 
 ### createThreadedText()
 
@@ -225,11 +225,11 @@ if parentNode is not provided or is not a valid container node.
 
 if textContent is empty or invalid.
 
----
+<HorizontalLine />
 
 ### loadBitmapImage()
 
-• **loadBitmapImage**(`bitmapData`): `Promise`<[`BitmapImage`](bitmap-image.md)\>
+• **loadBitmapImage**(`bitmapData`): `Promise`&lt;[`BitmapImage`](bitmap-image.md)&gt;
 
 Creates a bitmap image resource in the document, which can be displayed in the scenegraph by passing it to [createImageContainer](editor.md#createimagecontainer)
 to create a MediaContainerNode. The same BitmapImage can be used to create multiple MediaContainerNodes.
@@ -249,9 +249,9 @@ Encoded image data in PNG or JPEG format.
 
 #### Returns
 
-`Promise`<[`BitmapImage`](bitmap-image.md)\>
+`Promise`&lt;[`BitmapImage`](bitmap-image.md)&gt;
 
----
+<HorizontalLine />
 
 ### makeColorFill()
 
@@ -269,7 +269,7 @@ The color to use for the fill.
 
 [`ColorFill`](../interfaces/color-fill.md)
 
----
+<HorizontalLine />
 
 ### makeStroke()
 
@@ -291,7 +291,7 @@ See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on 
 
 #### Parameters
 
-• **options?**: `Partial`<[`SolidColorStroke`](../interfaces/solid-color-stroke.md)\>
+• **options?**: `Partial`&lt;[`SolidColorStroke`](../interfaces/solid-color-stroke.md)&gt;
 
 #### Returns
 
@@ -299,11 +299,11 @@ See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on 
 
 a stroke configured with the given options.
 
----
+<HorizontalLine />
 
 ### queueAsyncEdit()
 
-• **queueAsyncEdit**(`lambda`): `Promise`<`void`\>
+• **queueAsyncEdit**(`lambda`): `Promise`&lt;`void`&gt;
 
 Enqueues a function to be run at a later time when edits to the user's document may be performed. You can always edit
 the document immediately when invoked in response to your add-on's UI code. However, if you delay to await an
@@ -345,6 +345,6 @@ a function which edits the document model.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`&lt;`void`&gt;
 
 a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.

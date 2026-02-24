@@ -38,7 +38,7 @@ has rights to edit with. The *setter* only accepts the AvailableFont type which 
 
 readonly [`CharacterStylesRange`](../interfaces/character-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### id
 
@@ -59,7 +59,7 @@ Comparing two models using `===` will always fail.
 
 `string`
 
----
+<HorizontalLine />
 
 ### paragraphStyleRanges
 
@@ -88,7 +88,7 @@ If applying an ordered-list style when the text contains fonts that are unavaila
 
 readonly [`ParagraphStylesRange`](../interfaces/paragraph-styles-range.md)[]
 
----
+<HorizontalLine />
 
 ### text
 
@@ -137,7 +137,7 @@ The text to append.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### applyCharacterStyles()
 
@@ -166,7 +166,7 @@ If no range is specified, styles will be applied to the entire text content flow
 
 `void`
 
----
+<HorizontalLine />
 
 ### applyParagraphStyles()
 
@@ -197,7 +197,7 @@ If range is not specified, the styles will be applied to the entire text content
 
 If applying an ordered-list style when the text contains fonts that are unavailable to the current user.
 
----
+<HorizontalLine />
 
 ### deleteText()
 
@@ -223,7 +223,7 @@ The range of text to delete.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### hasUnavailableFonts()
 
@@ -242,7 +242,7 @@ the character styles to use only AvailableFonts.
 
 `boolean`
 
----
+<HorizontalLine />
 
 ### insertText()
 
@@ -277,7 +277,7 @@ existing text to match the style of. Default: `beforeInsertionPoint`.
 
 if the existing text contains fonts unavailable to the current user. See [hasUnavailableFonts](text-content-model.md#hasunavailablefonts).
 
----
+<HorizontalLine />
 
 ### replaceText()
 

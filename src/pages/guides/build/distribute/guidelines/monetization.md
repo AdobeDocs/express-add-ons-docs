@@ -203,7 +203,7 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 | Badge                                                             | Size(px) |                                                                                 Download link |
 | ----------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-plus-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-plus-badge20.svg" download="../img/addon-plus-badge20.svg">Download</a> |
+| ![Plus badge](../img/addon-plus-badge20.svg) | 20x20    | [Download](../img/addon-plus-badge20.svg) |
 
 #### Paid badge
 
@@ -211,7 +211,7 @@ Use the checkmark badge below to indicate when content or features are paid and 
 
 | Badge                                                            | Size(px) |                                                                               Download link |
 | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------: |
-| <img src="../img/addon-pro-badge20.svg" width="20" height="20"/> | 20x20    | <a href="../img/addon-pro-badge20.svg" download="../img/addon-pro-badge20.svg">Download</a> |
+| ![Paid badge](../img/addon-pro-badge20.svg) | 20x20    | [Download](../img/addon-pro-badge20.svg) |
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -223,11 +223,11 @@ The most common size of badges used within Express panels is typically 20x20px, 
 - The badge size should typically be 18px or 20px, but can be adjusted depending on the size of the content it is paired with.
 - We highly recommend adding a tooltip to let your users know what the badge indicates, i.e. _This content is available when you upgrade the add-on_.
 - Using the "paid" badge is optional. The paid badge makes the most sense in situations where you want to highlight specific content is now unlocked, in particular "micro-transactions".
-- If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.<br/><br/>
+- If a user has paid for full access to an add-on through a one-time payment or subscription, then the "paid" badge is not really necessary.&lt;br/&gt;&lt;br/&gt;
 
 | Sample badge usage                             |                                                  |                                                |
 | ---------------------------------------------- | ------------------------------------------------ | ---------------------------------------------: |
-| <img src="../img/list-placement-example.png"/> | <img src="../img/avatar-placement-example.png"/> | <img src="../img/grid-placement-example.png"/> |
+| ![](../img/list-placement-example.png) | ![](../img/avatar-placement-example.png) | ![](../img/grid-placement-example.png) |
 
 <InlineAlert slots="text" variant="success"/>
 

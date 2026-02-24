@@ -142,7 +142,7 @@ Adobe Express add-ons run in **two separate JavaScript execution environments** 
 1. **iframe runtime** - Your add-on's user interface environment (uses the Add-on UI SDK)
 2. **document sandbox** - Secure environment for document manipulation (uses the Document Sandbox SDK)
 
-![Runtime Architecture Diagram](images/architecture.svg)
+![Runtime Architecture Diagram](../platform_concepts/images/architecture.svg)
 
 ### How it works
 
@@ -164,7 +164,7 @@ The browser environment where the add-on's user interface runs for users to inte
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **File**        | `index.js` or `index.html`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **SDKs Used**   | Add-on UI SDK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Add Content** | **UI components**: Render HTML, CSS, JavaScript frameworks<br/>**Browser access**: DOM manipulation, fetch, localStorage, etc.<br/>**Add-on UI SDK features** (via `addOnUISdk`):<br/>• `app.document.addImage()` - Import media<br/>• `app.document.createRenditions()` - Export document<br/>• `app.showModalDialog()` - Display dialogs<br/>• `app.oauth` - Auth flows<br/>• `addOnUISdk.instance.clientStorage` - Persistent storage<br/>**Communication**: Use `runtime.apiProxy()` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox |
+| **Add Content** | **UI components**: Render HTML, CSS, JavaScript frameworks&lt;br/&gt;**Browser access**: DOM manipulation, fetch, localStorage, etc.&lt;br/&gt;**Add-on UI SDK features** (via `addOnUISdk`):&lt;br/&gt;• `app.document.addImage()` - Import media&lt;br/&gt;• `app.document.createRenditions()` - Export document&lt;br/&gt;• `app.showModalDialog()` - Display dialogs&lt;br/&gt;• `app.oauth` - Auth flows&lt;br/&gt;• `addOnUISdk.instance.clientStorage` - Persistent storage&lt;br/&gt;**Communication**: Use `runtime.apiProxy()` to call sandbox functions or `runtime.exposeApi()` to expose functions to the document sandbox |
 
 **Import Pattern:**
 
@@ -205,7 +205,7 @@ The secure isolated environment for document manipulation with limited browser A
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **File**         | `code.js`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | **SDKs Used**    | Document Sandbox SDK (for communication) + Express Document SDK (for Document APIs)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Capabilities** | **Direct document manipulation**: Create/modify shapes, text, images using `editor`<br/>**Scenegraph access**: Read and traverse the document structure<br/>**Express Document SDK features**:<br/>• `editor.createRectangle()`, `editor.createText()` - Create content<br/>• `editor.context.selection` - Access selected elements<br/>• `editor.context.insertionParent` - Add content to document<br/>• `colorUtils` - Create and convert colors<br/>• `fonts` - Manage and load fonts<br/>• `viewport` - Control canvas navigation<br/>**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))<br/>**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy()` to call UI functions |
+| **Capabilities** | **Direct document manipulation**: Create/modify shapes, text, images using `editor`&lt;br/&gt;**Scenegraph access**: Read and traverse the document structure&lt;br/&gt;**Express Document SDK features**:&lt;br/&gt;• `editor.createRectangle()`, `editor.createText()` - Create content&lt;br/&gt;• `editor.context.selection` - Access selected elements&lt;br/&gt;• `editor.context.insertionParent` - Add content to document&lt;br/&gt;• `colorUtils` - Create and convert colors&lt;br/&gt;• `fonts` - Manage and load fonts&lt;br/&gt;• `viewport` - Control canvas navigation&lt;br/&gt;**Limited Web APIs**: Only `console` and `Blob` (see the [Web APIs Reference](../../../references/document-sandbox/web/index.md))&lt;br/&gt;**Communication**: Use `runtime.exposeApi()` to expose functions to the iframe runtime or `runtime.apiProxy()` to call UI functions |
 
 **Import Patterns:**
 
@@ -347,7 +347,7 @@ This abstraction ensures:
 
 To manipulate the document from your UI, use the following pattern:
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, JavaScript" />
+<CodeBlock slots="heading, code" repeat="2" />
 
 #### Iframe Runtime (ui/index.js)
 
@@ -402,7 +402,7 @@ runtime.exposeApi({
 
 To update the UI from the document sandbox, use the following pattern:
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript, JavaScript" />
+<CodeBlock slots="heading, code" repeat="2"  />
 
 #### Document Sandbox (sandbox/code.js)
 
@@ -506,7 +506,7 @@ const uiProxy = await runtime.apiProxy(RuntimeType.panel);
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-Important Notes
+#### Important Notes
 
 - `"documentSandbox": "code.js"` in manifest enables the document sandbox runtime
 - If `documentSandbox` is omitted, only the iframe runtime runs (UI-only add-on)
@@ -797,7 +797,7 @@ runtime.exposeApi({
 
 <InlineAlert variant="info" slots="header,text1"/>
 
-Best Practices Summary
+#### Best Practices Summary
 
 - Always wrap API calls in try-catch blocks
 - Provide meaningful error messages to users
@@ -916,7 +916,7 @@ These are pre-instantiated objects you import and use directly. You **never crea
 
 See the [SDK Structure & Import Patterns](#sdk-structure--import-patterns) section for complete details and common mistakes to avoid.
 
----
+<HorizontalLine />
 
 ## Related Topics
 

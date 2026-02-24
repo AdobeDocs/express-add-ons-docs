@@ -26,7 +26,7 @@ contributors:
 
 ## Questions
 
-<!-- - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
+&lt;!-- - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
 - [Is `yarn` supported with the CLI, or only `npm`?](#is-yarn-supported-with-the-cli-or-only-npm)
 - [How do I save the state of my add-on?](#how-do-i-save-the-state-of-my-add-on)
 - [How do I use top level `await` while using webpack?](#how-do-i-use-top-level-await-while-using-webpack)
@@ -56,7 +56,7 @@ contributors:
 - [How can I update my trader details in the publisher profile after submission?](#how-can-i-update-my-trader-details-in-the-publisher-profile-after-submission)
 - [What happens if an EU user has a deep link to my add-on and I am not compliant with the European Union Digital Services Act (DSA) trader requirements?](#what-happens-if-an-eu-user-has-a-deep-link-to-my-add-on-and-i-am-not-compliant-with-the-european-union-digital-services-act-dsa-trader-requirements)
 - [Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?](#can-an-eu-user-still-use-my-add-on-if-they-have-already-installed-it-but-i-am-not-compliant-with-the-dsa-trader-requirements)
-- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) -->
+- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) --&gt;
 
 ### 🛠️ Development Environment & Tooling
 

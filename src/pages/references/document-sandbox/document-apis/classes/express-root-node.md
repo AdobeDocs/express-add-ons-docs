@@ -23,11 +23,11 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 [`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`BaseNode`](base-node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`BaseNode`](base-node.md), `any`, `any`&gt;&gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
@@ -39,9 +39,9 @@ to guarantee all their children are full-fledged Node instances.
 
 #### Returns
 
-`Readonly`<`Iterable`<[`BaseNode`](base-node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`BaseNode`](base-node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### id
 
@@ -54,7 +54,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### pages
 
@@ -67,7 +67,7 @@ To create a new page, see [PageList.addPage](page-list.md#addpage).
 
 [`PageList`](page-list.md)
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -84,7 +84,7 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](base-node.md)
 
----
+<HorizontalLine />
 
 ### type
 

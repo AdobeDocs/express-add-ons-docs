@@ -48,7 +48,7 @@ Adobe Express provides a set of geometric shapes that you can create and style p
 
 ### Example: Add a Rectangle
 
-```js{try id=createBasicRectangle}
+```js-data-playground-session-id="createBasicRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -64,7 +64,7 @@ editor.context.insertionParent.children.append(rect);
 
 <InlineAlert slots="header, text, text1" variant="warning"/>
 
-Create vs. Add to the page
+#### Create vs. Add to the page
 
 Factory methods such as `createRectangle()` and `createEllipse()` don't automatically add the shape to the page; while is exists and you can manipulate its properties, it won't be visible until you append it to **a container** like an [Artboard](../../../references/document-sandbox/document-apis/classes/artboard-node.md), a [Group](../how-to/group-elements.md), or any other instance of a class that implements the [`ContainerNode`](../../../references/document-sandbox/document-apis/interfaces/container-node.md) interface.
 
@@ -88,7 +88,7 @@ Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../ref
 
 An ellipse with a radius of 200 on the x-axis and 100 on the y-axis will result in a shape with 400 wide (`rx` times two) and a 200 tall (`ry` times two)!
 
-```js{try id=createBasicEllipse}
+```js-data-playground-session-id="createBasicEllipse"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -107,7 +107,7 @@ editor.context.insertionParent.children.append(ellipse);
 
 Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create an ellipse with a fill and a stroke.
 
-```js{try id=createEllipseWithFillStroke}
+```js-data-playground-session-id="createEllipseWithFillStroke"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -135,7 +135,7 @@ ellipse.stroke = stroke;
 editor.context.insertionParent.children.append(ellipse);
 ```
 
-![Ellipse with fill and stroke](./images/shapes_ellipse.jpg)
+![Ellipse with fill and stroke](../how_to/images/shapes_ellipse.jpg)
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -147,7 +147,7 @@ Paths are a versatile tool to create complex shapes in Adobe Express. The [`edit
 
 ### Example: Single path
 
-```js{try id=createSinglePath}
+```js-data-playground-session-id="createSinglePath"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -158,13 +158,13 @@ const p1 = editor.createPath(
 editor.context.insertionParent.children.append(p1);
 ```
 
-![Google "Osvaldo Cavandoli". You're welcome](./images/paths_linea.png)
+![Google "Osvaldo Cavandoli". You're welcome](../how_to/images/paths_linea.png)
 
 ### Example: Multiple paths
 
 Combining and grouping multiple paths, you can create complex shapes, like in the following example:
 
-```js{try id=createMultiplePaths}
+```js-data-playground-session-id="createMultiplePaths"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -202,7 +202,7 @@ g.children.append(p1, p2, p3, p4, p5, p6, p7, p8);
 editor.context.insertionParent.children.append(g);
 ```
 
-![Path](./images/paths_complex.png)
+![Path](../how_to/images/paths_complex.png)
 
 ### Example: Add Fills and Strokes
 
@@ -243,7 +243,7 @@ p3.fill = editor.makeColorFill(colorUtils.fromHex("#ffffff"));
 editor.context.insertionParent.children.append(g);
 ```
 
-![Path](./images/paths_styled.png)
+![Path](../how_to/images/paths_styled.png)
 
 ## FAQs
 

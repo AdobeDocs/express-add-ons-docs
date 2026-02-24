@@ -125,7 +125,7 @@ In order to provide security to the users of your add-on, browsers implement a [
 
 Be sure to set your browser devtools option to "**Show CORS errors in console**". For example, in Chrome it looks like the screenshot shown below.
 
-![Show CORS errors in Chrome screenshot](images/show-cors.png)
+![Show CORS errors in Chrome screenshot](../platform_concepts/images//show-cors.png)
 
 ### Add-on Subdomain
 
@@ -157,7 +157,7 @@ Typically, the origin responsible for serving resources is also responsible for 
 
 One of the fastest ways to unblock your requests while testing in the event of CORS issues, is to use a hosted proxy server. For instance, `cors-anywhere` is a [NodeJS pakage](https://www.npmjs.com/package/cors-anywhere) which also has a free hosted demo server with it set up that you can use for quick testing. Open your browser to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and request temporary access to the demo server with the button shown in the screenshot:
 
-![CORS diagram](images/cors-demo.png)
+![CORS diagram](../platform_concepts/images//cors-demo.png)
 
 Then, simply prefix the URLs you're fetching with the `cors-anywhere` demo server URL of [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/). For instance:
 
@@ -239,7 +239,7 @@ Subdomains are unique URLs that include an additional part to identify them in f
 
 A list of external domains that the server allows to request resources. This is typically enforced with a header defined on servers who enforce CORS, with the [`Access-Control-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) header. This server-side header is returned to a [preflight request](https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request), (dispatched transparently by the browser, before the request from your add-on itself), in order to determine if it's safe to send it when a cross-origin request is allowed.
 
----
+<HorizontalLine />
 
 ## Related Topics
 
