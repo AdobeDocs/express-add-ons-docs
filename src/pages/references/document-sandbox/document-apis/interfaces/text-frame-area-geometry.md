@@ -10,7 +10,7 @@ Geometry for an area text frame in pixels.
 
 • **height**: `number`
 
----
+<HorizontalLine />
 
 ### width
 

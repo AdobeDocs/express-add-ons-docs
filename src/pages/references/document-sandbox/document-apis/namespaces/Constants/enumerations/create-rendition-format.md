@@ -14,7 +14,7 @@ The format of the rendition output.
 
 • **jpeg**: `"jpeg"`
 
----
+<HorizontalLine />
 
 ### png
 

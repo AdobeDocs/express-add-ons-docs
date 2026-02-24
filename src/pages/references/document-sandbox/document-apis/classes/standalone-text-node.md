@@ -202,7 +202,7 @@ moved to a different part of the document.
 
 ### layout
 
-• `get` **layout**(): `Readonly`<[`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)\>
+• `get` **layout**(): `Readonly`&lt;[`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)&gt;
 
 • `set` **layout**(`layout`): `void`
 
@@ -221,7 +221,7 @@ capitalization and thus alter which glyphs are displayed.
 
 #### Returns
 
-`Readonly`<[`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)\>
+`Readonly`&lt;[`AutoWidthTextLayout`](../interfaces/auto-width-text-layout.md) \| [`AutoHeightTextLayout`](../interfaces/auto-height-text-layout.md) \| [`UnsupportedTextLayout`](../interfaces/unsupported-text-layout.md)&gt;
 
 The layout mode of the TextNode "frame."
 

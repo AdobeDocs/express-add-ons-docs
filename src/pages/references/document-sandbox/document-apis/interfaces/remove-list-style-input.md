@@ -20,7 +20,7 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 
 `BaseParagraphListStyle.indentLevel`
 
----
+<HorizontalLine />
 
 ### type
 

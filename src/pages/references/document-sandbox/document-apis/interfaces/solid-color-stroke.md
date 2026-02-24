@@ -19,7 +19,7 @@ your code in case any other required fields are added to the Stroke descriptor i
 
 The color of a stroke.
 
----
+<HorizontalLine />
 
 ### dashOffset
 
@@ -27,7 +27,7 @@ The color of a stroke.
 
 Number of pixels the beginning of dash pattern should be offset along the stroke.
 
----
+<HorizontalLine />
 
 ### dashPattern
 
@@ -38,7 +38,7 @@ If non-empty, the values alternate between length of a rendered and blank segmen
 repeated along the length of the stroke. The first value represents the first solid segment.
 Array must be of even length. Values cannot be negative.
 
----
+<HorizontalLine />
 
 ### position
 
@@ -46,7 +46,7 @@ Array must be of even length. Values cannot be negative.
 
 The position of the stroke relative to the outline of the shape.
 
----
+<HorizontalLine />
 
 ### type
 
@@ -58,7 +58,7 @@ The stroke type.
 
 [`Stroke`](stroke.md).[`type`](stroke.md#type)
 
----
+<HorizontalLine />
 
 ### width
 

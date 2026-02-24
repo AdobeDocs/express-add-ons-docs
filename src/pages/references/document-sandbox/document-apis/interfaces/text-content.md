@@ -14,7 +14,7 @@ The values yielded by [VisualNode.allTextContent](../classes/visual-node.md#allt
 
 • **textContentModel**: [`TextContentModel`](../classes/text-content-model.md)
 
----
+<HorizontalLine />
 
 ### visibleRanges
 
@@ -25,7 +25,7 @@ An unsorted list of the subranges of the related text content model that are vis
 Since a single text content model can be displayed across multiple TextNode "frames", any of which could be
 outside of the node, the union of all the subranges in this value may still be a subset of the total range.
 
----
+<HorizontalLine />
 
 ### visibleText
 

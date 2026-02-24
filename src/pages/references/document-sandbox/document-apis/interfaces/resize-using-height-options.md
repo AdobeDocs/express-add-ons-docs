@@ -25,19 +25,19 @@ Note that some kinds of content may not be able to avoid rescaling in some scena
 
 [`CommonResizeOptions`](common-resize-options.md).[`avoidScalingVisualDetailsIfPossible`](common-resize-options.md#avoidscalingvisualdetailsifpossible)
 
----
+<HorizontalLine />
 
 ### behavior
 
 • **behavior**: [`contain`](../enumerations/resize-behavior.md#contain) \| [`cover`](../enumerations/resize-behavior.md#cover)
 
----
+<HorizontalLine />
 
 ### height
 
 • **height**: `number`
 
----
+<HorizontalLine />
 
 ### width?
 

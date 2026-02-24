@@ -13,13 +13,13 @@ clipped. If text content is short, the frame's bounds will occupy extra height t
 
 The height of the text node in pixels.
 
----
+<HorizontalLine />
 
 ### type
 
 • **type**: [`area`](../enumerations/text-layout.md#area)
 
----
+<HorizontalLine />
 
 ### width
 

@@ -19,7 +19,7 @@ Interface for nodes with width and height properties.
 
 • **height**: `number`
 
----
+<HorizontalLine />
 
 ### width
 

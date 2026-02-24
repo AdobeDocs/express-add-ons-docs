@@ -17,43 +17,43 @@ always have a default/fallback case to handle any unknown values you may encount
 
 • **circleFilled**: `21`
 
----
+<HorizontalLine />
 
 ### circleHollow
 
 • **circleHollow**: `24`
 
----
+<HorizontalLine />
 
 ### none
 
 • **none**: `0`
 
----
+<HorizontalLine />
 
 ### openTriangular
 
 • **openTriangular**: `11`
 
----
+<HorizontalLine />
 
 ### squareFilled
 
 • **squareFilled**: `22`
 
----
+<HorizontalLine />
 
 ### squareHollow
 
 • **squareHollow**: `25`
 
----
+<HorizontalLine />
 
 ### triangularFilled
 
 • **triangularFilled**: `7`
 
----
+<HorizontalLine />
 
 ### verticalLine
 

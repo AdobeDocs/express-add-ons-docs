@@ -18,7 +18,7 @@ The most convenient way to create a fill is via `Editor.makeColorFill()`.
 
 The fill color.
 
----
+<HorizontalLine />
 
 ### type
 

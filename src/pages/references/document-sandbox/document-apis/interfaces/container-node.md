@@ -25,11 +25,11 @@ Get [AddOnData](../classes/add-on-data.md) reference for managing the private me
 
 [`AddOnData`](../classes/add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`VisualNode`](../classes/visual-node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`VisualNode`](../classes/visual-node.md), `any`, `any`&gt;&gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
 GroupNode also provide a mutable [ContainerNode.children](container-node.md#children) list. Other nodes with a more specific structure can
@@ -40,13 +40,13 @@ The children of a VisualNode are always other VisualNode classes (never the more
 
 #### Returns
 
-`Readonly`<`Iterable`<[`VisualNode`](../classes/visual-node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`VisualNode`](../classes/visual-node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allDescendants
 
-• `get` **allDescendants**(): `Readonly`<`Iterable`<[`VisualNode`](../classes/visual-node.md), `any`, `any`\>\>
+• `get` **allDescendants**(): `Readonly`&lt;`Iterable`&lt;[`VisualNode`](../classes/visual-node.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -62,13 +62,13 @@ Warning: Processing text content via this API can be error-prone. Use [VisualNod
 
 #### Returns
 
-`Readonly`<`Iterable`<[`VisualNode`](../classes/visual-node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`VisualNode`](../classes/visual-node.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### allTextContent
 
-• `get` **allTextContent**(): `Readonly`<`Iterable`<[`TextContent`](text-content.md), `any`, `any`\>\>
+• `get` **allTextContent**(): `Readonly`&lt;`Iterable`&lt;[`TextContent`](text-content.md), `any`, `any`&gt;&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -85,13 +85,13 @@ Note that visibleRanges and visibleText may not be sorted as TextNode "frames" c
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextContent`](text-content.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`TextContent`](text-content.md), `any`, `any`&gt;&gt;
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](rect.md)\>
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](rect.md)&gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -102,33 +102,33 @@ _not_ necessarily (0,0) – this is especially true for Text and Path nodes.
 
 #### Returns
 
-`Readonly`<[`Rect`](rect.md)\>
+`Readonly`&lt;[`Rect`](rect.md)&gt;
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](point.md)&gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)&gt;
 
----
+<HorizontalLine />
 
 ### children
 
-• `get` **children**(): [`ItemList`](../classes/item-list.md)<[`Node`](../classes/node.md)\>
+• `get` **children**(): [`ItemList`](../classes/item-list.md)&lt;[`Node`](../classes/node.md)&gt;
 
 The node's children. Use the methods on this ItemList object to get, add, and remove children.
 
 #### Returns
 
-[`ItemList`](../classes/item-list.md)<[`Node`](../classes/node.md)\>
+[`ItemList`](../classes/item-list.md)&lt;[`Node`](../classes/node.md)&gt;
 
----
+<HorizontalLine />
 
 ### id
 
@@ -141,7 +141,7 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -158,11 +158,11 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 `undefined` \| [`BaseNode`](../classes/base-node.md)
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](point.md)&gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -170,9 +170,9 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)&gt;
 
----
+<HorizontalLine />
 
 ### type
 
@@ -184,7 +184,7 @@ The node's type.
 
 [`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### visualRoot
 
@@ -205,7 +205,7 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ### createRendition()
 
-• **createRendition**(`options`?): `Promise`<[`CreateRenditionResult`](create-rendition-result.md)\>
+• **createRendition**(`options`?): `Promise`&lt;[`CreateRenditionResult`](create-rendition-result.md)&gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -222,17 +222,17 @@ As such, there is a 20s timeout before an error is thrown to prevent indefinite 
 
 #### Returns
 
-`Promise`<[`CreateRenditionResult`](create-rendition-result.md)\>
+`Promise`&lt;[`CreateRenditionResult`](create-rendition-result.md)&gt;
 
 #### Inherited from
 
 [`VisualNode`](../classes/visual-node.md).[`createRendition`](../classes/visual-node.md#createrendition)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](point.md)&gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
 Both nodes must share the same [visualRoot](container-node.md#visualroot), but can lie anywhere within that subtree relative to one
@@ -246,13 +246,13 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Returns
 
-`Readonly`<[`Point`](point.md)\>
+`Readonly`&lt;[`Point`](point.md)&gt;
 
 #### Inherited from
 
 [`VisualNode`](../classes/visual-node.md).[`localPointInNode`](../classes/visual-node.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 

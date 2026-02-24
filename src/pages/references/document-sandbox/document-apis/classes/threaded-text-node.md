@@ -210,7 +210,7 @@ moved to a different part of the document.
 
 ### layout
 
-• `get` **layout**(): `Readonly`<[`AreaTextLayout`](../interfaces/area-text-layout.md)\>
+• `get` **layout**(): `Readonly`&lt;[`AreaTextLayout`](../interfaces/area-text-layout.md)&gt;
 
 • `set` **layout**(`layout`): `void`
 
@@ -223,7 +223,7 @@ Only [AreaTextLayout](../interfaces/area-text-layout.md), with fully fixed bound
 
 #### Returns
 
-`Readonly`<[`AreaTextLayout`](../interfaces/area-text-layout.md)\>
+`Readonly`&lt;[`AreaTextLayout`](../interfaces/area-text-layout.md)&gt;
 
 The layout mode of the TextNode "frame."
 

@@ -7,7 +7,7 @@ any fields not specified are left unchanged, preserving the text's existing styl
 
 ## Extends
 
--   `Partial`<[`BaseParagraphStyles`](base-paragraph-styles.md)\>
+-   `Partial`&lt;[`BaseParagraphStyles`](base-paragraph-styles.md)&gt;
 
 ## Extended by
 
@@ -26,13 +26,13 @@ It only affects the space *between* lines, not the space above the first line or
 
 `Partial.lineSpacing`
 
----
+<HorizontalLine />
 
 ### list?
 
 • `optional` **list**: [`ListStyleInput`](../type-aliases/list-style-input.md)
 
----
+<HorizontalLine />
 
 ### spaceAfter?
 
@@ -45,7 +45,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 `Partial.spaceAfter`
 
----
+<HorizontalLine />
 
 ### spaceBefore?
 

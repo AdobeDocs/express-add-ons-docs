@@ -16,7 +16,7 @@ An interface for configuring [VisualNode.createRendition](../classes/visual-node
 
 Whether to output in PNG or JPEG format.  Defaults to PNG.
 
----
+<HorizontalLine />
 
 ### scale?
 

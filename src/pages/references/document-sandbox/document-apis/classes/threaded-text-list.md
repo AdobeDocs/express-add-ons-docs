@@ -9,7 +9,7 @@ capabilities, and is most frequently encountered as [ArtboardNode.children](artb
 
 ## Extends
 
--   [`ReadOnlyItemList`](read-only-item-list.md)<[`ThreadedTextNode`](threaded-text-node.md)\>
+-   [`ReadOnlyItemList`](read-only-item-list.md)&lt;[`ThreadedTextNode`](threaded-text-node.md)&gt;
 
 ## Accessors
 

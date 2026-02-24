@@ -19,7 +19,7 @@ with a `\n` character; an insertion point past this is inserting on the next lin
 insertion point, the insertion point is at the end of the text (appending) and the style of the previous character is
 used instead. This option is useful when *pre*pending to an existing block of text.
 
----
+<HorizontalLine />
 
 ### beforeInsertionPoint
 
@@ -29,7 +29,7 @@ Use style of the character just before the insertion point, *unless* that charac
 paragraph) in which case falls back to afterInsertionPoint behavior. This generally matches the style a user would
 get in the UI if they place their cursor at this insertion point.
 
----
+<HorizontalLine />
 
 ### firstReplacedCharacter
 

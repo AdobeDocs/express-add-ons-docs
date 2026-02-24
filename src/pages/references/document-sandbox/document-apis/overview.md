@@ -135,19 +135,19 @@
 
 Re-exports [CreateRenditionFormat](namespaces/constants/enumerations/create-rendition-format.md)
 
----
+<HorizontalLine />
 
 ### OrderedListNumbering
 
 Re-exports [OrderedListNumbering](namespaces/constants/enumerations/ordered-list-numbering.md)
 
----
+<HorizontalLine />
 
 ### ParagraphListType
 
 Re-exports [ParagraphListType](namespaces/constants/enumerations/paragraph-list-type.md)
 
----
+<HorizontalLine />
 
 ### TextStyleSource
 

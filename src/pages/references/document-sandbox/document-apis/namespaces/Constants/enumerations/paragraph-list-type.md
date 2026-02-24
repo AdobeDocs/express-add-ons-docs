@@ -10,13 +10,13 @@ Indicates list type: see [UnorderedListStyleInput](../../../interfaces/unordered
 
 • **none**: `0`
 
----
+<HorizontalLine />
 
 ### ordered
 
 • **ordered**: `2`
 
----
+<HorizontalLine />
 
 ### unordered
 

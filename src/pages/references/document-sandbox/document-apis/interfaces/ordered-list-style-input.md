@@ -20,7 +20,7 @@ A value from 0-8 that specifies indent/nesting level. Default is 0 if not provid
 
 `BaseParagraphListStyle.indentLevel`
 
----
+<HorizontalLine />
 
 ### numbering?
 
@@ -31,7 +31,7 @@ The defaults for increasing indent are: 1, a, i, I, and then they repeat.
 These markers and the prefix/postfix strings (if any) are displayed using the same font as the start of the
 paragraph's text content.
 
----
+<HorizontalLine />
 
 ### postfix?
 
@@ -39,7 +39,7 @@ paragraph's text content.
 
 Additional string to display after each sequence number/letter, e.g. ")" or "."
 
----
+<HorizontalLine />
 
 ### prefix?
 
@@ -47,7 +47,7 @@ Additional string to display after each sequence number/letter, e.g. ")" or "."
 
 Additional string to display before each sequence number/letter, e.g. "("
 
----
+<HorizontalLine />
 
 ### type
 

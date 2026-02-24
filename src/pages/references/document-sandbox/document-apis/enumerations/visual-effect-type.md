@@ -10,19 +10,19 @@ Visual effects that can be applied to a text node.
 
 • **generativeTextEffects**: `"GenerativeTextEffects"`
 
----
+<HorizontalLine />
 
 ### outline
 
 • **outline**: `"Outline"`
 
----
+<HorizontalLine />
 
 ### shadow
 
 • **shadow**: `"Shadow"`
 
----
+<HorizontalLine />
 
 ### shapeDecoration
 

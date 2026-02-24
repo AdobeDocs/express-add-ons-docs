@@ -17,13 +17,13 @@ always have a default/fallback case to handle any unknown values you may encount
 
 • **artboard**: `"ab:Artboard"`
 
----
+<HorizontalLine />
 
 ### artworkRoot
 
 • **artworkRoot**: `"ArtworkRoot"`
 
----
+<HorizontalLine />
 
 ### complexShape
 
@@ -31,13 +31,13 @@ always have a default/fallback case to handle any unknown values you may encount
 
 Type of ComplexShapeNode, representing a complex prepackaged shape with fill and stroke, that appears as a leaf node in the UI
 
----
+<HorizontalLine />
 
 ### ellipse
 
 • **ellipse**: `"Ellipse"`
 
----
+<HorizontalLine />
 
 ### gridCell
 
@@ -45,7 +45,7 @@ Type of ComplexShapeNode, representing a complex prepackaged shape with fill and
 
 Type of MediaContainerNode which is a child of a GridLayout, representing one of the Grid's cells
 
----
+<HorizontalLine />
 
 ### gridLayout
 
@@ -53,13 +53,13 @@ Type of MediaContainerNode which is a child of a GridLayout, representing one of
 
 Type of GridLayoutNode represents a grid layout in the scenegraph used to create a layout grid that other content can be placed into
 
----
+<HorizontalLine />
 
 ### group
 
 • **group**: `"Group"`
 
----
+<HorizontalLine />
 
 ### imageRectangle
 
@@ -67,19 +67,19 @@ Type of GridLayoutNode represents a grid layout in the scenegraph used to create
 
 Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
----
+<HorizontalLine />
 
 ### line
 
 • **line**: `"Line"`
 
----
+<HorizontalLine />
 
 ### linkedAsset
 
 • **linkedAsset**: `"LinkedAsset"`
 
----
+<HorizontalLine />
 
 ### mediaContainer
 
@@ -87,7 +87,7 @@ Type of MediaContainerNode's "media rectangle" child when it is holding an image
 
 Type of MediaContainerNode, representing the top-level container of the multi-node construct used to display images or video.
 
----
+<HorizontalLine />
 
 ### page
 
@@ -95,25 +95,25 @@ Type of MediaContainerNode, representing the top-level container of the multi-no
 
 Type of PageNode
 
----
+<HorizontalLine />
 
 ### path
 
 • **path**: `"Path"`
 
----
+<HorizontalLine />
 
 ### polygon
 
 • **polygon**: `"artgr:Polygon"`
 
----
+<HorizontalLine />
 
 ### rectangle
 
 • **rectangle**: `"Rectangle"`
 
----
+<HorizontalLine />
 
 ### solidColorShape
 
@@ -121,7 +121,7 @@ Type of PageNode
 
 Type of SolidColorShapeNode, representing a solid-color prepackaged shape that appears as a leaf node in the UI
 
----
+<HorizontalLine />
 
 ### strokeShape
 
@@ -129,7 +129,7 @@ Type of SolidColorShapeNode, representing a solid-color prepackaged shape that a
 
 Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appears as a leaf node in the UI
 
----
+<HorizontalLine />
 
 ### text
 
@@ -137,7 +137,7 @@ Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appea
 
 Type of TextNode, representing a non-threaded text or a threaded text frame
 
----
+<HorizontalLine />
 
 ### unknownMediaRectangle
 

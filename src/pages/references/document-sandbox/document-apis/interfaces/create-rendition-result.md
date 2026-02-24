@@ -16,7 +16,7 @@ An interface for the result of [VisualNode.createRendition](../classes/visual-no
 
 The PNG or JPEG data for the rendition.
 
----
+<HorizontalLine />
 
 ### drawBoundsGlobal?
 

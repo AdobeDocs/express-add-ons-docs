@@ -28,7 +28,7 @@ such as emojis are considered to have a length of 2.
 
 [`StyleRange`](style-range.md).[`length`](style-range.md#length)
 
----
+<HorizontalLine />
 
 ### lineSpacing?
 
@@ -41,7 +41,7 @@ It only affects the space *between* lines, not the space above the first line or
 
 [`ParagraphStylesInput`](paragraph-styles-input.md).[`lineSpacing`](paragraph-styles-input.md#linespacing)
 
----
+<HorizontalLine />
 
 ### list?
 
@@ -51,7 +51,7 @@ It only affects the space *between* lines, not the space above the first line or
 
 [`ParagraphStylesInput`](paragraph-styles-input.md).[`list`](paragraph-styles-input.md#list)
 
----
+<HorizontalLine />
 
 ### spaceAfter?
 
@@ -64,7 +64,7 @@ Space after paragraph (in points). It does not affect the last paragraph. It is 
 
 [`ParagraphStylesInput`](paragraph-styles-input.md).[`spaceAfter`](paragraph-styles-input.md#spaceafter)
 
----
+<HorizontalLine />
 
 ### spaceBefore?
 

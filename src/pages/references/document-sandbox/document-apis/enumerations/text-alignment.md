@@ -17,19 +17,19 @@ always have a default/fallback case to handle any unknown values you may encount
 
 • **center**: `3`
 
----
+<HorizontalLine />
 
 ### justifyLeft
 
 • **justifyLeft**: `4`
 
----
+<HorizontalLine />
 
 ### left
 
 • **left**: `1`
 
----
+<HorizontalLine />
 
 ### right
 
