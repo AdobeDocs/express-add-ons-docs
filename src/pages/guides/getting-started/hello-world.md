@@ -61,7 +61,7 @@ The first time you launch the [Code Playground](https://www.adobe.com/go/addon-p
 - Click the **Developer Terms of Use** link to review the terms (opens in a new tab) if you haven't already.
 - Click **Accept and Enable** to enable **Add-on Development**.
 
-![Enable Add-on Development](src/pages/guides/getting-started/img/playground-enable-dev-mode.gif)
+![Enable Add-on Development](./img/playground-enable-dev-mode.gif)
 
 ## Code Playground
 
@@ -77,7 +77,7 @@ To launch the Code Playground experience, follow [this link](https://www.adobe.c
 
 Alternatively, see the following animation or expand the details below for a step-by-step guide.
 
-![How to open the Code Playground](src/pages/guides/getting-started/img/playground-open-the-playground.gif)
+![How to open the Code Playground](./img/playground-open-the-playground.gif)
 
 <Details slots="list" repeat="4" summary="Click to view a list of steps to open the Code Playground" />
 
@@ -95,7 +95,7 @@ The Code Playground allows you to operate in [two modalities](../getting-started
 
 Make sure you've selected the **Script** tab, which is pre-filled with a sample script:
 
-![Code Playground](src/pages/guides/getting-started/img/playground-script.png)
+![Code Playground](./img/playground-script.png)
 
 Click the **Run Code** button on the Playground's toolbar to see the rectangle added to the document. Not much, but it's a start!
 
@@ -133,7 +133,7 @@ Click the **Add-on** tab to switch to the [Add-on mode](../getting-started/code-
 
 This time, clicking **Run Code** will make a new add-on appear on the right side of the screen. You can see and change its code in the HTML, CSS (UI and styles) and Iframe JS tabs (button click event). The "Create Rectangle" button runs the Document JS code, which does exactly what you would expect!
 
-![Code Playground Add-on](src/pages/guides/getting-started/img/playground-addon.png)
+![Code Playground Add-on](./img/playground-addon.png)
 
 <InlineAlert variant="info" slots="header, text" />
 
@@ -215,7 +215,7 @@ To _sideload_ your add-on into Adobe Express, follow [this link](https://www.ado
 
 You can also do it manually by following the steps below.
 
-![How to sideload an add-on](src/pages/guides/getting-started/img/playground-sideload-add-on.gif)
+![How to sideload an add-on](./img/playground-sideload-add-on.gif)
 
 <Details slots="list" repeat="6" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
@@ -228,11 +228,11 @@ You can also do it manually by following the steps below.
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-![Add-on testing](src/pages/guides/getting-started/img/playground-alt-testing.png)
+![Add-on testing](./img/playground-alt-testing.png)
 
 If you click the **Create Rectangle** button, you'll see the rectangle being added to the document.
 
-![Create Rectangle](src/pages/guides/getting-started/img/playground-run-addon.png)
+![Create Rectangle](./img/playground-run-addon.png)
 
 ### 4. Edit Your Add-on's Code
 
@@ -259,7 +259,7 @@ While your add-on is still loaded and running, open the `src/index.html` file an
 
 Note that the terminal where your add-on runs will display messages showing that the `src` has been rebuilt. Adobe Express has also updated the button label automatically, and the add-on will now add a "Hello, World!" text to the document.
 
-![Hello World](src/pages/guides/getting-started/img/playground-hello-world.png)
+![Hello World](./img/playground-hello-world.png)
 
 You can continue to update your code while your add-on is running, and the add-on will automatically be rebuilt on save.
 
