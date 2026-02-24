@@ -8,6 +8,10 @@
     - [Community](https://developer.adobe.com/express/community)
     - [Fund for Design](https://developer.adobe.com/fund-for-design)
 
+- buttons:
+  - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) playgroundId primary
+  - [Console](https://developer.adobe.com/console/) consoleId
+
 - subPages:
     - [Overview](references/index.md)
     - [Add-on UI SDK](references/addonsdk/index.md)
