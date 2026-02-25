@@ -75,7 +75,7 @@ Elements can be moved around by setting their `translation` property, which is a
 rect.translation = { x: 50, y: 100 };
 ```
 
-![Bounding Box](../how_to/images/position_bounding-box.png)
+![Bounding Box](src/pages/guides/learn/how-to/images/position_bounding-box.png)
 
 <InlineAlert slots="header, text1" variant="info" />
 
@@ -107,7 +107,7 @@ rect.translation = { x: 50, y: 100 };
 rect.setRotationInParent(15, { x: 0, y: 0 });
 ```
 
-![Bounding Box](../how_to/images/position_rotate.png)
+![Bounding Box](src/pages/guides/learn/how-to/images/position_rotate.png)
 
 <InlineAlert slots="text1" variant="info" />
 
@@ -142,7 +142,7 @@ console.log("boundsInParent", rect.boundsInParent);
 editor.context.insertionParent.children.append(rect);
 ```
 
-![Rotated Bounding Box](../how_to/images/position_rotated-bounding-box.png)
+![Rotated Bounding Box](src/pages/guides/learn/how-to/images/position_rotated-bounding-box.png)
 
 <InlineAlert slots="text1" variant="info" />
 
@@ -186,7 +186,7 @@ group.translation = { x: 50, y: 50 };
 editor.context.currentPage.artboards.first.children.append(group);
 ```
 
-![](../how_to/images/position_parent.png)
+![](src/pages/guides/learn/how-to/images/position_parent.png)
 
 Where does the second rectangle sit in the artboard's coordinate system? To find out, we can use the [`localPointInNode()`](../../../references/document-sandbox/document-apis/classes/fillable-node.md#localpointinnode) method, which converts a point from the local coordinate space of the element to the parent's coordinate space.
 

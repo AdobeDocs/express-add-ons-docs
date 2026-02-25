@@ -290,7 +290,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 - **Use Related References:**
 
 - [Spectrum Web Components Documentation](https://opensource.adobe.com/spectrum-web-components/index.html)
-- [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part1)
+- [Using Spectrum Web Components in a basic JavaScript add-on](https://developer.adobe.com/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/part1)
 - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
 
 #### Using [swc-react: React Wrappers for SWC](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) (only for add-ons using React)
@@ -312,7 +312,7 @@ Consider using the following tips in your prompts/rules for LLM guidance when us
 - **Use Related References:**
 
 - [Using swc-react](https://opensource.adobe.com/spectrum-web-components/using-swc-react/)
-- [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how_to/tutorials/spectrum-workshop/part2)
+- [Using Spectrum Web Components in a React-based add-on with swc-react](https://developer.adobe.com/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/part2)
 - [Adobe Express Add-on UI Implementation Guide](https://developer.adobe.com/express/add-ons/docs/guides/build/design/implementation_guide/)
 - [React Synthetic Events Issue](https://github.com/facebook/react/issues/19846)
 

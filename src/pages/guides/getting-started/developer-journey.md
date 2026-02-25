@@ -128,7 +128,7 @@ Now that you feel comfortable with the Adobe Express add-on development's basics
 
 We've created a set of tutorials that guide you through the process of building a full-featured add-on from scratch. We recommend you to start with the [Design Grid creator](../learn/how-to/tutorials/grids-addon.md), which covers the basics of the add-on SDK and how to use the Document API.
 
-[![Grids Tutorial](../learn/how_to/tutorials/images/grids-addon-animation.gif)](../learn/how_to/tutorials/grids-addon.md)
+[![Grids Tutorial](src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif)](../learn/how-to/tutorials/grids-addon.md)
 
 Feel free to explore [the other Tutorials](../learn/how-to/tutorials/index.md), or our collection of [Code Samples](../learn/samples.md); there's no better way to learn than by doing!
 
@@ -146,11 +146,11 @@ We've created a set of [UX Guidelines](../build/design/index.md) to help you get
 
 You should use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), a library of pre-built components that you can use to create a consistent UI for your add-on. You can test them in a sandboxed environment like Codepen.
 
-[![Spectrum Web Components Codepen](../learn/how_to/tutorials/images/bingo-codepen.png)](../learn/how_to/tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
+[![Spectrum Web Components Codepen](src/pages/guides/learn/how-to/tutorials/images/bingo-codepen.png)](../learn/how-to/tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
 
 Read our [Implementation Guide](../build/design/implementation-guide.md) or follow our two-part [Bingo Card Generator add-on tutorial](../learn/how-to/tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
 
-[![Bingo Card Generator add-on](../learn/how_to/tutorials/images/bingo-v1-addon.png)](../learn/how_to/tutorials/spectrum-workshop/index.md)
+[![Bingo Card Generator add-on](src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png)](../learn/how-to/tutorials/spectrum-workshop/index.md)
 
 ### Master the Document API
 
@@ -158,11 +158,11 @@ To become an expert add-on developer, you must confidently orient yourself aroun
 
 Read the [Adobe Express Document API Concepts](../learn/platform-concepts/document-api.md) guide to learn about Object Oriented Programming concepts and the various [Classes and Interfaces](../learn/platform-concepts/document-api.md#classes-and-interfaces) available to you.
 
-[![Document API Concepts](../learn/platform_concepts/images/refs-addon-scenegraph.png)](../learn/platform_concepts/document-api.md)
+[![Document API Concepts](src/pages/guides/learn/platform-concepts/images/refs-addon-scenegraph.png)](../learn/platform-concepts/document-api.md)
 
 Complete the [Dimension annotation sample add-on exercise](../learn/platform-concepts/document-api.md#from-theory-to-practice) to practice your new knowledge.
 
-[![Dimension annotation sample add-on](../learn/platform_concepts/images/refs-addon-refactor.png)](../learn/platform_concepts/document-api.md#from-theory-to-practice)
+[![Dimension annotation sample add-on](src/pages/guides/learn/platform-concepts/images/refs-addon-refactor.png)](../learn/platform-concepts/document-api.md#from-theory-to-practice)
 
 ## Distribute
 

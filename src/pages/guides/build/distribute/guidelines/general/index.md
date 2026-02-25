@@ -44,6 +44,6 @@ We strongly recommend that you test your add-on rigorously before submitting it 
 
 The following list of guidelines should also be carefully reviewed as they provide important information you'll need to know before submitting your add-on to our marketplace.
 
-- [Developer Brand Guidelines](../brand_guidelines.md/)
+- [Developer Brand Guidelines](../brand-guidelines.md)
 - [Generative AI Guidelines](../genai/index.md)
 - [Monetization Guidelines](../monetization.md)

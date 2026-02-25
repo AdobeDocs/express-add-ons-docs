@@ -2,7 +2,7 @@
                      LINTER REPORT
 ═══════════════════════════════════════════════════════════════
 
-Generated: 2026-02-24T04:54:11.905Z
+Generated: 2026-02-25T23:25:36.450Z
 Mode: Full Linting (all rules + dead links check)
 Target Directory: /Users/louisa/adobe-dev-site/express-add-ons-docs
 
@@ -181,8 +181,45 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/design/ux-guidelines/visual-elements.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML tag <div> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 49:1
+    Message: Image is missing alt text: ./img/visual_heading.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 55:1
+    Message: Image is missing alt text: ./img/visual_body.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 61:1
+    Message: Image is missing alt text: ./img/visual_example.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 33:58
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/color-system/#Colors`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 168:130
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/button-group/#Usage-guidelines`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 160:1
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/button/#Usage-guidelines`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 174:5
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/button/#Usage-guidelines`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 178:129
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/button/#Options`, expected live URL
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/distribute/guidelines/brand-guidelines.md
@@ -237,11 +274,6 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/distribute/guidelines/general/index.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 47:3
-    Message: Cannot find file `../brand_guidelines.md`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 24:1
     Message: Description is too long (166 characters). Consider keeping it under 160 characters.
@@ -300,14 +332,38 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/distribute/guidelines/monetization.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <img/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 230:3
+    Message: Image is missing alt text: ../img/list-placement-example.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 230:44
+    Message: Image is missing alt text: ../img/avatar-placement-example.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 230:87
+    Message: Image is missing alt text: ../img/grid-placement-example.png
+    Rule: no-alt-text-for-image
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/distribute/index.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - Nested block detected: <InlineAlert/> is inside a list item. EDS does not support blocks nested in lists.
+  ⚠️  WARNING
+    Location: Line 38:3
+    Message: Cannot find file `review_guidelines.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 41:3
+    Message: Cannot find file `submit-private-dist.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 42:3
+    Message: Cannot find file `submit-public-dist.md`
+    Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/distribute/private-dist.md
@@ -420,111 +476,8 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/changelog.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 1108:7
-    Message: Cannot find file `../references/document-sandbox/communication/index.md`; did you mean `../../references/document-sandbox/communication/index.md`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 1108:89
-    Message: Cannot find file `../references/document-sandbox`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 1039:162
-    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1046:11
-    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 682:480
-    Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1054:54
-    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1054:54
-    Message: Unexpected redirecting URL `https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth`, expected final URL `https://developer.adobe.com/express/add-ons/docs/guides/learn/samples/`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 96:45
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 96:406
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 109:69
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 96:330
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground?executionMode=script`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground&executionMode=script`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1091:263
-    Message: Unexpected dead URL `https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1153:15
-    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/samples.md#licensed-addon`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1134:379
-    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/develop/`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1140:137
-    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 1140:137
-    Message: Unexpected redirecting URL `https://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler`, expected final URL `https://developer.adobe.com/express/add-ons/docs/guides/learn/samples/`
-    Rule: no-dead-urls
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/getting-started/code-playground-addon-mode.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 49:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/addon-mode2.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 66:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/manifest-props-addon.png`
-    Rule: missing-file
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/getting-started/code-playground-script-mode.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 50:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/script-mode2.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 77:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/manifest-props-script.png`
-    Rule: missing-file
+  ❌ ERROR
+    Message: Failed to process file - Internal link "../../references/document-sandbox/document-apis/enumerations/" must end with .md. Run "npm run normalizeLinks" to fix automatically, or manually change to "../../references/document-sandbox/document-apis/enumerations/index.md" or "../../references/document-sandbox/document-apis/enumerations.md".
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/code-playground-troubleshooting.md
@@ -540,76 +493,8 @@ Files to process: 240
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/getting-started/code-playground-workflow.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 73:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-console-prefix.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 81:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--saved-session.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 104:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--sessions-from-home.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 119:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--sessions.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 132:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--rename-session.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 138:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--delete-session.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 165:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--download.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 174:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/downloaded-folder-structure.png`
-    Rule: missing-file
-
-───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/code-playground.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 38:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--hero.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 69:2
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--splash-screen.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 79:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--launch-from-home.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 87:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--launch-from-doc.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 93:2
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground--DTOU.png`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 132:57
     Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
@@ -649,53 +534,28 @@ Files to process: 240
 📄 FILE: src/pages/guides/getting-started/developer-journey.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 25:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/beginner-express.png`
+    Location: Line 131:2
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 33:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/beginner-addon.png`
+    Location: Line 149:2
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-codepen.png`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 53:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/beginner-marketplace.png`
+    Location: Line 153:2
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 93:2
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground.png`
+    Location: Line 161:2
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-scenegraph.png`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 113:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-template-prompt.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 131:1
-    Message: Cannot find file `../learn/how_to/tutorials/grids-addon.md`; did you mean `../learn/how-to/tutorials/grids-addon.md`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 149:1
-    Message: Cannot find file `../learn/how_to/tutorials/spectrum-workshop/index.md`; did you mean `../learn/how-to/tutorials/spectrum-workshop/index.md`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 153:1
-    Message: Cannot find file `../learn/how_to/tutorials/spectrum-workshop/index.md`; did you mean `../learn/how-to/tutorials/spectrum-workshop/index.md`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 161:1
-    Message: Cannot find file `../learn/platform_concepts/document-api.md`; did you mean `../learn/platform-concepts/document-api.md`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 165:1
-    Message: Cannot find file `../learn/platform_concepts/document-api.md`; did you mean `../learn/platform-concepts/document-api.md`
+    Location: Line 165:2
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-refactor.png`
     Rule: missing-file
 
   ⚠️  WARNING
@@ -717,44 +577,24 @@ Files to process: 240
 📄 FILE: src/pages/guides/getting-started/hello-world.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 64:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-enable-dev-mode.gif`
-    Rule: missing-file
+    Location: Line 55:31
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 80:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-open-the-playground.gif`
-    Rule: missing-file
+    Location: Line 72:50
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 98:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-script.png`
-    Rule: missing-file
+    Location: Line 76:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 136:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 218:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-sideload-add-on.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 231:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-alt-testing.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 235:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-run-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 262:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-hello-world.png`
-    Rule: missing-file
+    Location: Line 94:3
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
 
   ⚠️  WARNING
     Location: Line 55:95
@@ -776,130 +616,12 @@ Files to process: 240
     Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground?executionMode=script`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground&executionMode=script`
     Rule: no-dead-urls
 
-  ⚠️  WARNING
-    Location: Line 55:31
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 72:50
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 76:1
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 94:3
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/getting-started/local-development/browser.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 48:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/inspect.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 56:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/find-source.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 77:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/log-levels.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 87:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/dir-method.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 93:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/add-on-devtools.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 99:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/manifest-error.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 105:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/clear-data.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 111:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/application-indexed-db.png`
-    Rule: missing-file
-
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/local-development/dev-tooling.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 159:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-template-prompt.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 163:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-doc-sandbox.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 167:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-scaffold-message.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 177:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-completed.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 196:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/CLI-deeplink.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 200:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-sideload-add-on.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 213:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/playground-alt-testing.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 219:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/connect-error.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 235:1
     Message: Cannot find file `../getting-started/img/playground-enable-dev-mode.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 249:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/add-on-devtools.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 250:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/manifest-error.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 258:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/cli-console-log.png`
     Rule: missing-file
 
   ⚠️  WARNING
@@ -925,32 +647,14 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/local-development/index.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/local-development/known-issues-limitations.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 36:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--allow-connect.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 42:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--blocked.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 51:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--site-info.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 55:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/known-issues--clear-data.png`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 76:88
     Message: Unexpected redirecting URL `https://helpx.adobe.com/express/system-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/get-started/web-technical-requirements.html`
@@ -960,29 +664,24 @@ Files to process: 240
 📄 FILE: src/pages/guides/getting-started/local-development/mcp-server.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 149:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/stable-mcp-server-enabled.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 155:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/mcp-server-calling-tools.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 157:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/mcp-tool-call-example.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 155:1
-    Message: Image is missing alt text: src/pages/guides/getting-started/local-development/img/mcp-server-calling-tools.png
+    Message: Image is missing alt text: ./img/mcp-server-calling-tools.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 157:1
-    Message: Image is missing alt text: src/pages/guides/getting-started/local-development/img/mcp-tool-call-example.png
+    Message: Image is missing alt text: ./img/mcp-tool-call-example.png
     Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 293:3
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/part1`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 315:3
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/learn/how-to/tutorials/spectrum-workshop/part2`, expected live URL
+    Rule: no-dead-urls
 
   ⚠️  WARNING
     Location: Line 361:16
@@ -995,69 +694,11 @@ Files to process: 240
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/getting-started/local-development/vs-code.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 33:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/new-launch-json.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 95:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/vscode-debug-option.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 97:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/launch-profiles.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 101:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/start-debug.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 109:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/debugging.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 113:1
-    Message: Cannot find file `src/pages/guides/getting-started/local-development/img/debugger-tool.png`
-    Rule: missing-file
-
-───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/index.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 26:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/Explore_Image_3.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 40:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-1-discovery.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 48:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-2-learn.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 58:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-3-develop.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 66:1
-    Message: Cannot find file `src/pages/guides/getting-started/img/devjourney-4-distribute.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 26:1
-    Message: Image is missing alt text: src/pages/guides/getting-started/img/Explore_Image_3.png
+    Message: Image is missing alt text: ./getting-started/img/Explore_Image_3.png
     Rule: no-alt-text-for-image
 
 ───────────────────────────────────────────────────────────────
@@ -1078,7 +719,7 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 394:1
-    Message: Cannot find file `images/export-ppt-font-disclaimer.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/export-ppt-font-disclaimer.png`
     Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
@@ -1094,17 +735,17 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 175:1
-    Message: Cannot find file `images/groups_above.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/groups_above.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 194:1
-    Message: Cannot find file `images/groups_below.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/groups_below.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 214:1
-    Message: Cannot find file `images/groups_middle.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/groups_middle.png`
     Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
@@ -1120,7 +761,7 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 77:2
-    Message: Cannot find file `tutorials/images/grids-addon-animation.gif`
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif`
     Rule: missing-file
 
   ⚠️  WARNING
@@ -1133,27 +774,27 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 78:1
-    Message: Cannot find file `images/position_bounding-box.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_bounding-box.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 110:1
-    Message: Cannot find file `images/position_rotate.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_rotate.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 145:1
-    Message: Cannot find file `images/position_rotated-bounding-box.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_rotated-bounding-box.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 189:1
-    Message: Cannot find file `images/position_parent.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_parent.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 189:1
-    Message: Image is missing alt text: ./images/position_parent.png
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/images/position_parent.png
     Rule: no-alt-text-for-image
 
 ───────────────────────────────────────────────────────────────
@@ -1161,99 +802,198 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 113:1
-    Message: Cannot find file `images/rescale--rescale-proportional-width.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-proportional-width.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 140:1
-    Message: Cannot find file `images/rescale--rescale-proportional-height.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-proportional-height.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 178:1
-    Message: Cannot find file `images/resize--proportional-styles.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--proportional-styles.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 209:1
-    Message: Cannot find file `images/rescale--resize-within-ellipse.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--resize-within-ellipse.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 243:1
-    Message: Cannot find file `images/resize--cover-one-dimension.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--cover-one-dimension.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 279:1
-    Message: Cannot find file `images/resize--contain-media.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--contain-media.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 321:1
-    Message: Cannot find file `images/resize--within-media-crop.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--within-media-crop.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 361:1
-    Message: Cannot find file `images/resize-to-cover.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize-to-cover.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 397:1
-    Message: Cannot find file `images/rescale--rescale-proportional-text.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-proportional-text.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 435:1
-    Message: Cannot find file `images/rescale--rescale-resize-text.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-resize-text.png`
     Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/grids-addon.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - Link "<https://www.youtube.com/watch?v=SQMYA660gII>" uses angle brackets <>. Please use square brackets [] instead. Example: <http://www.adobe.com> change to [Adobe](http://www.adobe.com) 
+  ⚠️  WARNING
+    Location: Line 64:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 95:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 106:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-communication.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 120:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-git.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 136:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-folder-structure.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 271:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-communicationapi.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 319:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-reference.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 465:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-shape.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 498:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-swc.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 821:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-console.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 831:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-rowheight.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1018:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-groups.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 64:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 95:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 106:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-communication.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 120:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-git.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 136:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-folder-structure.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 465:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-shape.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 498:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-swc.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 821:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-console.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 831:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-rowheight.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 1018:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-groups.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 787:149
+    Message: Unexpected redirecting URL `https://twitter.com/brenankeller/status/1068615953989087232`, expected final URL `https://x.com/brenankeller/status/1068615953989087232`
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/index.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <ResourceCard/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 26:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/thumbs-grids-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 36:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/thumbs-stats-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 46:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 56:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/thumbs-markdown-addon.png`
+    Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/markdown-parser-text-api.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 21:1
-    Message: Cannot find file `images/markdown--add-on.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 173:1
-    Message: Cannot find file `images/markdown--hello.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 462:1
-    Message: Cannot find file `images/markdown--ui.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 466:1
-    Message: Cannot find file `images/markdown--text.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 667:1
-    Message: Cannot find file `images/markdown--ast.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 1168:1
-    Message: Cannot find file `images/markdown--text-api.png`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 73:67
     Message: Unexpected dead URL `https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/express-markdown-parser-addon-start`, expected live URL
@@ -1272,30 +1012,52 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/index.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 42:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 91:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-codepen.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 17:1
+    Message: Description is too long (181 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 85:11
+    Message: Unexpected dead URL `https://codepen.io/hollyschinsky/pen/xxBweyV0`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 38:38
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#spectrum-web-components-with-react`, expected live URL
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part1.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 53:1
-    Message: Cannot find file `../images/basic-js.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/basic-js.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 378:1
-    Message: Cannot find file `../images/lesson1-prestyle.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lesson1-prestyle.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 469:1
-    Message: Cannot find file `../images/lesson1-poststyle.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lesson1-poststyle.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 671:1
-    Message: Cannot find file `../images/bingo-v1-addon.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
     Rule: missing-file
 
   ⚠️  WARNING
@@ -1309,11 +1071,6 @@ Files to process: 240
     Rule: check-frontmatter
 
   ⚠️  WARNING
-    Location: Line 234:169
-    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/develop/use_cases/`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
     Location: Line 27:99
     Message: Unexpected redirecting URL `https://opensource.adobe.com/spectrum-web-components`, expected final URL `https://opensource.adobe.com/spectrum-web-components/`
     Rule: no-dead-urls
@@ -1323,29 +1080,217 @@ Files to process: 240
     Message: Unexpected redirecting URL `https://opensource.adobe.com/spectrum-web-components`, expected final URL `https://opensource.adobe.com/spectrum-web-components/`
     Rule: no-dead-urls
 
+  ⚠️  WARNING
+    Location: Line 234:169
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/develop/use_cases/`, expected live URL
+    Rule: no-dead-urls
+
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part2.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 44:5
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/react-starter.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 88:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/swc-button-group-import.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 454:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lesson2-prestyle.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 16:1
+    Message: Title is too long (62 characters). Consider keeping it under 60 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 17:1
+    Message: Description is too long (173 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 32:39
+    Message: Unexpected redirecting URL `https://react-spectrum.adobe.com/react-spectrum/index.html`, expected final URL `https://react-spectrum.adobe.com/`
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part3.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 109:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/fonts.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 147:3
+    Message: Unexpected dead URL `https://opensource.adobe.com/spectrum-css/typography.html`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 158:96
+    Message: Unexpected dead URL `https://opensource.adobe.com/spectrum-css/typography.html#:~:text=Applying%20margins,will%20have%20the%20correct%20margins`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 116:128
+    Message: Unexpected redirecting URL `https://opensource.adobe.com/spectrum-web-components/storybook`, expected final URL `https://opensource.adobe.com/spectrum-web-components/storybook/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 60:31
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/design-tokens/#Size-tokens`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 103:3
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/design-tokens/#Size-tokens`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 107:299
+    Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 129:3
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/design-tokens/#Layout-tokens`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 174:152
+    Message: Unexpected dead URL `https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 292:3
+    Message: Unexpected redirecting URL `https://developer.adobe.com/express/add-ons/docs/samples/`, expected final URL `https://developer.adobe.com/express/add-ons/docs/guides/learn/samples/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 287:3
+    Message: Unexpected dead URL `https://www.figma.com/community/file/1211274196563394418/adobe-spectrum-design-system`, expected live URL
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/stats-addon.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 29:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 55:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-animation.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 160:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-proxy.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 364:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-vscode.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 378:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-doc.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 443:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-flow.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 620:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-lights.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 660:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-type.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 838:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-stats.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 15:1
+    Message: Title is too long (64 characters). Consider keeping it under 60 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 29:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 55:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-animation.gif
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 364:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-vscode.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 378:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-doc.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 443:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-flow.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 660:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-type.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 838:1
+    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-stats.png
+    Rule: no-alt-text-for-image
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/using-lit-typescript.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <ProductCard/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 31:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lit-logo.svg`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 37:1
+    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/ts-logo-128.svg`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 20:1
+    Message: Description is too long (181 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 41:3
+    Message: Unexpected dead URL `https://https//www.typescriptlang.org/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 43:76
+    Message: Unexpected dead URL `https://https//www.typescriptlang.org/`, expected live URL
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/use-audio.md
@@ -1360,22 +1305,22 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 138:1
-    Message: Cannot find file `images/shapes_ellipse.jpg`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/shapes_ellipse.jpg`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 161:1
-    Message: Cannot find file `images/paths_linea.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/paths_linea.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 205:1
-    Message: Cannot find file `images/paths_complex.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/paths_complex.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 246:1
-    Message: Cannot find file `images/paths_styled.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/paths_styled.png`
     Rule: missing-file
 
   ⚠️  WARNING
@@ -1388,7 +1333,7 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 66:1
-    Message: Cannot find file `images/pdf_import.png`
+    Message: Cannot find file `src/pages/guides/learn/how-to/images/pdf_import.png`
     Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
@@ -1402,20 +1347,27 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/platform-concepts/architecture.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br> tag found in table row. Use \<br/\> within the table to be escaped.
+  ⚠️  WARNING
+    Location: Line 145:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/architecture.svg`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 61:1
+    Message: Description is too long (226 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/platform-concepts/context.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 128:1
-    Message: Cannot find file `images/show-cors.png`
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/show-cors.png`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 160:1
-    Message: Cannot find file `images/cors-demo.png`
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/cors-demo.png`
     Rule: missing-file
 
   ⚠️  WARNING
@@ -1429,23 +1381,13 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 101:64
-    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Location: Line 132:159
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 101:64
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 102:56
-    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 102:56
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Location: Line 240:160
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -1464,23 +1406,43 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 218:18
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
     Location: Line 220:133
     Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cross-Origin_Resource_Policy`
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 132:159
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
+    Location: Line 218:18
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy`
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 240:160
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
+    Location: Line 101:64
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 101:64
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 102:56
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 102:56
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 236:125
+    Message: Unexpected dead URL `https://w906hhl6k.wxp.adobe-addons.com/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 122:80
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS`
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -1493,51 +1455,320 @@ Files to process: 240
     Message: Unexpected dead URL `https://cors-anywhere.herokuapp.com/`, expected live URL
     Rule: no-dead-urls
 
-  ⚠️  WARNING
-    Location: Line 122:80
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 236:125
-    Message: Unexpected dead URL `https://w906hhl6k.wxp.adobe-addons.com/`, expected live URL
-    Rule: no-dead-urls
-
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/platform-concepts/document-api.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 147:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-log.png`
+    Rule: missing-file
 
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/learn/samples.md
-───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 153:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-scenegraph.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 168:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-hierarchy.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 174:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-doc.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 186:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-ref.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 190:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-accessor.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 203:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-stroke.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 215:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-strokeposition.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 240:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/stats-addon-animation.gif`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 305:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-intellisense.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 331:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-allchildren.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 363:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-mediacontainer.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 371:23
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/RectangleNode.md"`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 371:115
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/GroupNode.md"`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 407:172
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/interfaces/ColorFill.md`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Color.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 411:31
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/interfaces/IFillableNode.md"`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Stroke.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 419:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-draw.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 500:28
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/enumerations/SceneNodeType.md`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Stroke.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 504:254
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 504:368
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 504:642
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 504:795
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/editor.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 519:240
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 519:535
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 544:110
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 544:220
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 544:379
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Stroke.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 574:323
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/GroupNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 585:190
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/TextNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Editor.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 602:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-refactor.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 686:1
+    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-unsupported.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 32:1
+    Message: Description is too long (283 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 147:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-log.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 153:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-scenegraph.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 168:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-hierarchy.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 174:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-doc.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 186:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-ref.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 190:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-accessor.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 203:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-stroke.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 215:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-strokeposition.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 240:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//stats-addon-animation.gif
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 305:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-intellisense.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 331:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-allchildren.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 363:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-mediacontainer.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 419:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-draw.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 602:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-refactor.png
+    Rule: no-alt-text-for-image
+
+  ⚠️  WARNING
+    Location: Line 686:1
+    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-unsupported.png
+    Rule: no-alt-text-for-image
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/support/faq.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 404:106
+    Message: Unexpected dead URL `mailto:ccintrev@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 205:207
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 209:246
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 318:25
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 324:253
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 326:141
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 370:16
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/system-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/get-started/web-technical-requirements.html`
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/addonsdk-app.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML tag <table> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 11:16
+    Message: Cannot find file `app-currentUser.md`; did you mean `app-current-user.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 12:5
+    Message: Cannot find file `app-devFlags.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 356:137
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/addonsdk-instance.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML tag <table> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/addonsdk.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/app-current-user.md
@@ -1564,38 +1795,46 @@ Files to process: 240
     Rule: check-frontmatter
 
   ⚠️  WARNING
-    Location: Line 772:19
-    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Location: Line 770:14
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/image-creation-and-editing/change-file-formats/image-requirements.html`
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 770:14
-    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/image-creation-and-editing/change-file-formats/image-requirements.html`
+    Location: Line 772:19
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/app-oauth.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br> tag found in table row. Use \<br/\> within the table to be escaped.
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/app-ui.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/index.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 46:1
+    Message: Unexpected duplicate toplevel heading, exected a single heading with rank `1`
+    Rule: no-multiple-toplevel-headings
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/instance-client-storage.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/instance-manifest.md
@@ -1616,20 +1855,16 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/runtime-dialog.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/changelog.md
 ───────────────────────────────────────────────────────────────
   ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/references/document-sandbox/communication/index.md
-───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
+    Message: Failed to process file - Internal link "./document-sandbox/document-apis/enumerations/" must end with .md. Run "npm run normalizeLinks" to fix automatically, or manually change to "./document-sandbox/document-apis/enumerations/index.md" or "./document-sandbox/document-apis/enumerations.md".
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/classes/add-on-data.md
@@ -1707,16 +1942,6 @@ Files to process: 240
     Location: Line 1:1
     Message: Missing frontmatter section - add --- at the beginning with title and description
     Rule: check-frontmatter
-
-  ⚠️  WARNING
-    Location: Line 303:32
-    Message: Unexpected dead URL `https://glmatrix.net/docs/module-mat2d.html`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 309:1
-    Message: Unexpected dead URL `https://glmatrix.net/docs/module-mat2d.html`, expected live URL
-    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/classes/context.md
@@ -2629,12 +2854,6 @@ Files to process: 240
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/references/document-sandbox/index.md
-───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - <br/> is not allowed. Only custom components are permitted.
-
-───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/index.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
@@ -2645,8 +2864,25 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/manifest/index.md
 ───────────────────────────────────────────────────────────────
-  ❌ ERROR
-    Message: Failed to process file - HTML comments are not allowed. Use markdown comments instead or remove the comment.
+  ⚠️  WARNING
+    Location: Line 158:34
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 158:34
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 159:30
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 159:30
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
 
 
 ═══════════════════════════════════════════════════════════════
@@ -2654,10 +2890,10 @@ Files to process: 240
 ═══════════════════════════════════════════════════════════════
 
   📁 Files processed:    240
-  📄 Files with issues:  182
-  ❌ Total errors:       27
-  ⚠️  Total warnings:     386
-  📋 Total issues:       413
+  📄 Files with issues:  199
+  ❌ Total errors:       2
+  ⚠️  Total warnings:     453
+  📋 Total issues:       455
 
 Result: ❌ FAILED - Fatal errors found
 
