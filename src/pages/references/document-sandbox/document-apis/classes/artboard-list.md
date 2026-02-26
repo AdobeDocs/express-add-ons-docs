@@ -62,7 +62,7 @@ Iterates over all the items in this list. Mutations that occur mid-iteration are
 
 #### Inherited from
 
-[`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](RestrictedItemList.md#iterator)
+[`RestrictedItemList`](restricted-item-list.md).[`[iterator]`](restricted-item-list.md#iterator)
 
 <HorizontalLine />
 

@@ -55,7 +55,7 @@ To create a Group, you can use the [`editor.createGroup()`](../../../references/
 
 ### Example
 
-```js-data-playground-session-id="createBasicGroup"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
+```js-data-playground-session-id="createBasicGroup"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -172,7 +172,7 @@ group.children.append(s1, s2);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](src/pages/guides/learn/how-to/images/groups_above.png)
+![Grouping elements](../how-to/images/groups_above.png)
 
 ### Example: re-ordering elements
 
@@ -191,7 +191,7 @@ group.children.moveAfter(s1, s2);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](src/pages/guides/learn/how-to/images/groups_below.png)
+![Grouping elements](../how-to/images/groups_below.png)
 
 ### Example: addding elements in a specific order
 
@@ -211,7 +211,7 @@ group.children.insertAfter(s3, s1);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](src/pages/guides/learn/how-to/images/groups_middle.png)
+![Grouping elements](../how-to/images/groups_middle.png)
 
 ## Move elements out of a Group
 

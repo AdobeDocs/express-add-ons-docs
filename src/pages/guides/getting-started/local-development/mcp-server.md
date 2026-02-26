@@ -43,7 +43,7 @@ If you are already familiar with the concepts of Model Context Protocol (MCP) an
 
 <InlineAlert variant="info" slots="header, text1, text2"/>
 
-New Stable MCP Server
+#### New Stable MCP Server
 
 The Adobe Express Add-on MCP Server (Beta) has been replaced by the **Adobe Express Developer MCP Server**, which is now officially supported and production ready.
 

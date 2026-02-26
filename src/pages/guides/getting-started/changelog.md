@@ -246,7 +246,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 - [Create Renditions guide](../learn/how-to/create-renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
 - [PDF and PowerPoint guide](../learn/how-to/use-pdf-powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
 - [Drag-and-Drop guide](../learn/how-to/drag-and-drop.md) with examples of using `sourceMimeType` when dragging converted documents.
-- The [Grids add-on tutorial](../learn/how-to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `&lt;input&gt;` element workaround.
+- The [Grids add-on tutorial](../learn/how-to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
 
 ## 2025-07-25
 
@@ -1069,7 +1069,7 @@ The [Editor API references](https://developer.adobe.com/express-add-on-apis/docs
 
 <InlineAlert slots="text" variant="info"/>
 
-If you're using the experimental Document Sandbox APIs in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/editor) to discover anything new or changed.
+If you're using the experimental Document Sandbox APIs in any add-ons currently, we encourage you to check the specific methods and objects you're using in these [updated references](https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/) to discover anything new or changed.
 
 ## 2023-09-19
 
@@ -1105,7 +1105,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 &lt;del&gt;
 
-- The [Communication API](../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../references/document-sandbox/) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../../references/document-sandbox/index.md) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 

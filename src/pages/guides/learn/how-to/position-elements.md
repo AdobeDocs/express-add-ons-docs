@@ -52,7 +52,7 @@ faq:
 
 Let's use this simple Rectangle to demonstrate how to move and rotate elements in Adobe Express.
 
-```js-data-playground-session-id="createAndPositionRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://new.express.adobe.com/"
+```js-data-playground-session-id="createAndPositionRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -75,7 +75,7 @@ Elements can be moved around by setting their `translation` property, which is a
 rect.translation = { x: 50, y: 100 };
 ```
 
-![Bounding Box](src/pages/guides/learn/how-to/images/position_bounding-box.png)
+![Bounding Box](../how-to/images/position_bounding-box.png)
 
 <InlineAlert slots="header, text1" variant="info" />
 
@@ -107,7 +107,7 @@ rect.translation = { x: 50, y: 100 };
 rect.setRotationInParent(15, { x: 0, y: 0 });
 ```
 
-![Bounding Box](src/pages/guides/learn/how-to/images/position_rotate.png)
+![Bounding Box](../how-to/images/position_rotate.png)
 
 <InlineAlert slots="text1" variant="info" />
 
@@ -124,7 +124,7 @@ By definition, the bounds of an element (or its _bounding box_) are the smallest
 
 Let's see how to get the bounds of a rotated rectangle in both local and parent coordinates; since the rectangle is rotated, the two bounding boxes will differ.
 
-```js{try id=createAndRotateRectangle}
+```js-data-playground-session-id="createAndRotateRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -142,7 +142,7 @@ console.log("boundsInParent", rect.boundsInParent);
 editor.context.insertionParent.children.append(rect);
 ```
 
-![Rotated Bounding Box](src/pages/guides/learn/how-to/images/position_rotated-bounding-box.png)
+![Rotated Bounding Box](../how-to/images/position_rotated-bounding-box.png)
 
 <InlineAlert slots="text1" variant="info" />
 
@@ -186,7 +186,7 @@ group.translation = { x: 50, y: 50 };
 editor.context.currentPage.artboards.first.children.append(group);
 ```
 
-![](src/pages/guides/learn/how-to/images/position_parent.png)
+![](../how-to/images/position_parent.png)
 
 Where does the second rectangle sit in the artboard's coordinate system? To find out, we can use the [`localPointInNode()`](../../../references/document-sandbox/document-apis/classes/fillable-node.md#localpointinnode) method, which converts a point from the local coordinate space of the element to the parent's coordinate space.
 

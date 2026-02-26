@@ -40,7 +40,7 @@ See the example below for further usage details.
 
 The following code snippet illustrates how to use the [Express Document APIs](classes/editor.md) from the document sandbox code running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
 
-```js{try id=createAndFillRectangle}
+```js-data-playground-session-id="createAndFillRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new
 const insertionParent = editor.context.insertionParent; // get node to insert content into
 
 const rectangle = editor.createRectangle();

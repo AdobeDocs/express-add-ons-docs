@@ -23,7 +23,7 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 [Express Document API](../../how-to/tutorials/grids-addon.md)
 
-![Grids add-on](src/pages/guides/learn/how-to/tutorials/images/thumbs-grids-addon.png)
+![Grids add-on](./images/thumbs-grids-addon.png)
 
 ### Creating a Grid System add-on with the Adobe Express Document API
 
@@ -33,7 +33,7 @@ Davide Barranca - November 6th, 2023
 
 [Stats add-on](../../how-to/tutorials/stats-addon.md)
 
-![Stats add-on](src/pages/guides/learn/how-to/tutorials/images/thumbs-stats-addon.png)
+![Stats add-on](./images/thumbs-stats-addon.png)
 
 ### Creating a Stats add-on with the Adobe Express Communication API
 
@@ -43,7 +43,7 @@ Davide Barranca - December 14th, 2023
 
 [Express Document API](../../how-to/tutorials/spectrum-workshop/index.md)
 
-![Grids add-on](src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png)
+![Grids add-on](./images/bingo-v1-addon.png)
 
 ### Building UIs using Adobe's Spectrum Design System
 
@@ -53,7 +53,7 @@ Holly Schinsky - January 25th, 2024
 
 [Markdown Parser add-on](../../how-to/tutorials/markdown-parser-text-api.md)
 
-![Markdown Parser add-on](src/pages/guides/learn/how-to/tutorials/images/thumbs-markdown-addon.png)
+![Markdown Parser add-on](./images/thumbs-markdown-addon.png)
 
 ### Create a Markdown Parser Add-on with the Text API
 
