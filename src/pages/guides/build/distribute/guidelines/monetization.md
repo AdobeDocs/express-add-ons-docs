@@ -203,7 +203,7 @@ Use the plus gradient icon below to indicate when content or features require pu
 
 | Badge                                                             | Size(px) |                                                                                 Download link |
 | ----------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------: |
-| ![Plus badge](../img/addon-plus-badge20.svg) | 20x20    | [Download](../img/addon-plus-badge20.svg) |
+| ![Plus badge](../img/addon-plus-badge20.svg) | 20x20    | &lt;a href="https://main--adp-devsite--adobedocs.aem.page/express/add-ons/addon-plus-badge20.svg" download target="_blank" &gt; Download &lt;/a &gt; |
 
 #### Paid badge
 
@@ -211,7 +211,7 @@ Use the checkmark badge below to indicate when content or features are paid and 
 
 | Badge                                                            | Size(px) |                                                                               Download link |
 | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------: |
-| ![Paid badge](../img/addon-pro-badge20.svg) | 20x20    | [Download](../img/addon-pro-badge20.svg) |
+| ![Paid badge](../img/addon-pro-badge20.svg) | 20x20    | &lt;a href="https://main--adp-devsite--adobedocs.aem.page/express/add-ons/addon-pro-badge20.svg" download target="_blank" &gt; Download &lt;/a&gt; |
 
 <InlineAlert slots="text" variant="info"/>
 

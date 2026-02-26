@@ -45,7 +45,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Intellectual property rights
 - Share testing credentials with the review team so they can validate functionality
 
-## Make sure the add-on meets the [Developer Brand Guidelines](https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf)
+## Make sure the add-on meets the [Developer Brand Guidelines](https://main--adp-devsite--adobedocs.aem.page/express/add-ons/adobe-express-partner-program-brand-guide.pdf)
 
 ## Check your add-on and resources to make sure it is NOT described as a "plugin" anywhere
 
