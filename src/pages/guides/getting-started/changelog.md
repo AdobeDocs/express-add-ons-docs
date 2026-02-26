@@ -960,7 +960,6 @@ Some items in the following list of changes may have been mentioned in recent up
   - New [SolidColorShapeNode class](../../references/document-sandbox/document-apis/classes/solid-color-shape-node.md)
   - New [Point interface](../../references/document-sandbox/document-apis/interfaces/point.md)
   - New `queueAsyncEdit` method added to the [Editor](../../references/document-sandbox/document-apis/classes/editor.md) class.
-  - Renames the [Constants](../../references/document-sandbox/document-apis/enumerations/) to remove the `Value` suffix.
 
   **Updates to Node Classes**&lt;br/&gt;
 
@@ -1044,7 +1043,7 @@ which include:
 #### Documentation updates
 
 - Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
-- Updated [Getting Started guides](./) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
+- Updated [Getting Started guides](../guides/getting-started/index.m) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
 
