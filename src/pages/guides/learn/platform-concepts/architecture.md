@@ -142,7 +142,7 @@ Adobe Express add-ons run in **two separate JavaScript execution environments** 
 1. **iframe runtime** - Your add-on's user interface environment (uses the Add-on UI SDK)
 2. **document sandbox** - Secure environment for document manipulation (uses the Document Sandbox SDK)
 
-![Runtime Architecture Diagram](./images/architecture.svg)
+![Runtime Architecture Diagram](images/architecture.svg)
 
 ### How it works
 

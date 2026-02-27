@@ -110,7 +110,7 @@ console.log(`New dimensions: ${rect.width} x ${rect.height}`);
 // New dimensions: 300 x 150
 ```
 
-![Resize by Width](../how-to/images/rescale--rescale-proportional-width.png)
+![Resize by Width](./images/rescale--rescale-proportional-width.png)
 
 ### Example: Resize by Height
 
@@ -137,7 +137,7 @@ console.log(`New bounds: ${ellipse.boundsLocal.width} x ${ellipse.boundsLocal.he
 // New bounds: 300 x 150
 ```
 
-![Resize by Height](../how-to/images/rescale--rescale-proportional-height.png)
+![Resize by Height](./images/rescale--rescale-proportional-height.png)
 
 ### Example: Preserve Visual Details
 
@@ -175,7 +175,7 @@ console.log(`Stroke width after resize: ${rect.stroke.width}px`);
 // Stroke width after resize: 5px (unchanged)
 ```
 
-![Preserve Visual Details](../how-to/images/resize--proportional-styles.png)
+![Preserve Visual Details](./images/resize--proportional-styles.png)
 
 ## Contain Behavior
 
@@ -206,7 +206,7 @@ console.log(`Resized dimensions: ${ellipse.width} x ${ellipse.height}`);
 // Resized dimensions: 150 x 150
 ```
 
-![Resize to Fit Within Bounds (Shapes)](../how-to/images/rescale--resize-within-ellipse.png)
+![Resize to Fit Within Bounds (Shapes)](./images/rescale--resize-within-ellipse.png)
 
 <InlineAlert slots="header, text" variant="warning"/>
 
@@ -240,7 +240,7 @@ ellipse.resize({
 console.log(`New bounds: ${ellipse.boundsLocal.width} x ${ellipse.boundsLocal.height}`);
 ```
 
-![Resize to Fit Within Bounds (Shapes) with One Dimension](../how-to/images/resize--cover-one-dimension.png)
+![Resize to Fit Within Bounds (Shapes) with One Dimension](./images/resize--cover-one-dimension.png)
 
 ### Example: Contain Within Bounds (Media)
 
@@ -276,7 +276,7 @@ console.log(
 // Resized dimensions: 150 x 150
 ```
 
-![Resize to Fit Within Bounds (Media)](../how-to/images/resize--contain-media.png)
+![Resize to Fit Within Bounds (Media)](./images/resize--contain-media.png)
 
 <InlineAlert slots="text, text1" variant="warning"/>
 
@@ -318,7 +318,7 @@ console.log(
 // Resized dimensions: 300 x 150
 ```
 
-![Resize to Fit Within Bounds (Media) reverse transformation](../how-to/images/resize--within-media-crop.png)
+![Resize to Fit Within Bounds (Media) reverse transformation](./images/resize--within-media-crop.png)
 
 ## Cover Behavior
 
@@ -358,7 +358,7 @@ console.log(
 // Covered dimensions: 120 x 120
 ```
 
-![Resize to Cover](../how-to/images/resize-to-cover.png)
+![Resize to Cover](./images/resize-to-cover.png)
 
 In this example, the image is resized to cover a 120x120 area; the image is enlarged maintaining its aspect ratio, while the crop is adjusted to fit within the bounding box.
 
@@ -394,7 +394,7 @@ textNode.resize({
 });
 ```
 
-![Rescale Text Proportionally](../how-to/images/rescale--rescale-proportional-text.png)
+![Rescale Text Proportionally](./images/rescale--rescale-proportional-text.png)
 
 ### Example: Equivalent Resize Behaviors for Text
 
@@ -432,7 +432,7 @@ textNode.resize({
 })
 ```
 
-![Resizing and Rescaling Text](../how-to/images/rescale--rescale-resize-text.png)
+![Resizing and Rescaling Text](./images/rescale--rescale-resize-text.png)
 
 In the screenshot above, the original text is top-left; top-right, the result of both `resize()` with `contain` and `proportional` behavior (width-only); bottom, the result of both `resize()` with `cover` and `proportional` behavior (height-only).
 

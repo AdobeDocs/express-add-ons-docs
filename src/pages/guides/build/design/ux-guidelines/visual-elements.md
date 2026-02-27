@@ -153,7 +153,7 @@ This is a [Spectrum theme](https://spectrum.adobe.com/page/theming/) specificall
 
 ![Spectrum for Adobe Express](./img/components_theme.png)
 
-Buttons are essential for enabling user interactions in your add-on. --\>
+Buttons are essential for enabling user interactions in your add-on.
 
 ### Buttons
 

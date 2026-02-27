@@ -172,7 +172,7 @@ group.children.append(s1, s2);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](../how-to/images/groups_above.png)
+![Grouping elements](./images/groups_above.png)
 
 ### Example: re-ordering elements
 
@@ -191,7 +191,7 @@ group.children.moveAfter(s1, s2);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](../how-to/images/groups_below.png)
+![Grouping elements](./images/groups_below.png)
 
 ### Example: addding elements in a specific order
 
@@ -211,7 +211,7 @@ group.children.insertAfter(s3, s1);
 editor.context.insertionParent.children.append(group);
 ```
 
-![Grouping elements](../how-to/images/groups_middle.png)
+![Grouping elements](./images/groups_middle.png)
 
 ## Move elements out of a Group
 
