@@ -35,7 +35,7 @@ import '/src/styles.css'
 
 Ready to build your own add-on? Check out the Developer Journey to get started, or browse the sidebar to learn more about the [Code Playground](getting-started/code-playground.md) and start tinkering with the API right away.
 
-<Columns slots="image, heading, text, links" variant ="vertical" repeat ="2"/>
+<Columns slots="image, heading, text, links" variant="vertical" repeat ="2"/>
 
 ![Discover](getting-started/img/devjourney-1-discovery.png)
 
