@@ -146,7 +146,7 @@ We've created a set of [UX Guidelines](../build/design/index.md) to help you get
 
 You should use [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), a library of pre-built components that you can use to create a consistent UI for your add-on. You can test them in a sandboxed environment like Codepen.
 
-[![Spectrum Web Components Codepen](../learn/how-to/tutorials/images/bingo-codepen.png)](https://developer.adobe.com/express/embed-sdk/developer-journey-v2.pdf)
+[![Spectrum Web Components Codepen](../learn/how-to/tutorials/images/bingo-codepen.png)](../learn/how-to/tutorials/spectrum-workshop/index.md#quickstart-try-spectrum-web-components)
 
 Read our [Implementation Guide](../build/design/implementation-guide.md) or follow our two-part [Bingo Card Generator add-on tutorial](../learn/how-to/tutorials/spectrum-workshop/index.md), which covers both basic JavaScript and React.
 
