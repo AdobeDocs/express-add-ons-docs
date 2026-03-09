@@ -21,6 +21,10 @@ keywords:
   - Text Content
   - Text Styles
   - fullContent
+  - ThreadedTextNode
+  - createThreadedText
+  - allTextContent
+  - allDescendants
   - applyCharacterStyles
   - applyParagraphStyles
   - fromPostscriptName
@@ -63,10 +67,13 @@ faq:
       answer: "They reset; save style ranges first and reassign them afterward to preserve formatting. This is a temporary limitation until automatic preservation of paragraph styles is implemented."
 
     - question: "Can I create a threaded text frame with createText()?"
-      answer: "No, it only returns `StandaloneTextNode`; threaded nodes aren't creatable yet."
+      answer: "No. Use `editor.createThreadedText(parent, text, geometry)` to create threaded text. Requires `experimentalApis` in manifest."
 
     - question: "How do I find all frames sharing the same story?"
-      answer: "Iterate over `textNode.fullContent.allTextNodes`."
+      answer: "Iterate over `textNode.fullContent.allTextNodes`. For threaded text, iterate over `textNode.fullContent.frames` to access the ThreadedTextList."
+
+    - question: "How do I get all text content within a container (e.g., a group or page)?"
+      answer: "Use the `allTextContent` accessor on PageNode or VisualNode. It returns a flattened list of TextContent instances from all text-based nodes within the container."
 
     - question: "How do I add or remove hyperlinks from text?"
       answer: "Use `applyCharacterStyles()` with a `link` property. Set to a URL string to add a hyperlink, or to an empty string to remove it."
@@ -120,6 +127,49 @@ console.log("Text: ", textNode.fullContent.text);
 
 The text is created with the default styles (Source Sans 3, 100pt, black). Use `\n` or `\r` to add a line break.
 
+## Create Threaded Text
+
+The [`editor.createThreadedText()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createthreadedtext) method creates a [`ThreadedTextNode`](../../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md) for text that flows across multiple frames. Threaded text is suited for magazine-style layouts, articles, and multi-column designs where content automatically overflows from one frame to the next.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The threaded text APIs are currently **_experimental only_** and require the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
+
+### Example: Create Threaded Text with Multiple Frames
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+const insertionParent = editor.context.insertionParent;
+
+// Create threaded text with initial content and frame geometry
+const threadedTextNode = editor.createThreadedText(
+  insertionParent,
+  "This is threaded text that can flow across multiple frames. Content automatically overflows into additional frames.",
+  { width: 250, height: 150 }
+);
+
+// Position the first frame
+threadedTextNode.translation = { x: 50, y: 50 };
+
+// Access the frames list (ThreadedTextList) and add more frames
+const frames = threadedTextNode.fullContent.frames;
+const secondFrame = frames.addFrame({ width: 250, height: 150 });
+secondFrame.translation = { x: 350, y: 50 };
+
+// Add another frame with default geometry from the last frame
+const thirdFrame = frames.addFrame();
+thirdFrame.translation = { x: 650, y: 50 };
+
+// Iterate over all frames in the flow
+for (const frame of frames) {
+  console.log("Frame dimensions:", frame.layout.width, frame.layout.height);
+}
+```
+
+The example creates a threaded text flow with three frames. The [`fullContent.frames`](../../../references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md#frames) property returns a [`ThreadedTextList`](../../../references/document-sandbox/document-apis/classes/ThreadedTextList.md) representing an ordered list of frames that share a single continuous text story. Use [`addFrame()`](../../../references/document-sandbox/document-apis/classes/ThreadedTextList.md#addframe) to add frames; the optional geometry parameter uses the last frame's dimensions when omitted.
+
 <InlineAlert slots="header, text1, text2, text3" variant="info"/>
 
 Text Classes
@@ -129,7 +179,7 @@ Adobe Express supports two types of text nodes, both extending the Abstract [`Te
 - [`StandaloneTextNode`](../../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md): A self-contained text node.
 - [`ThreadedTextNode`](../../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md): A text node that is part of a text flow, whose content may span multiple frames.
 
-The `editor.createText()` method returns a `StandaloneTextNode` by default; for the time being, it's not possible to create a `ThreadedTextNode` using this method.
+The `editor.createText()` method returns a `StandaloneTextNode`. To create threaded text that flows across multiple frames, use [`editor.createThreadedText()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createthreadedtext) instead.
 
 ## Replace Text APIs
 
@@ -899,13 +949,43 @@ contentModel.paragraphStyleRanges = savedParagraphStyles;
 
 If the updated text does not match the original paragraph boundaries, some styles may not be reapplied as expected. This is a temporary limitation until automatic preservation of paragraph styles is implemented.
 
+## Iterate Over Text in Containers
+
+[`PageNode`](../../../references/document-sandbox/document-apis/classes/PageNode.md) and [`VisualNode`](../../../references/document-sandbox/document-apis/classes/VisualNode.md) expose accessors for retrieving text content and descendants within a container. Use [`allTextContent`](../../../references/document-sandbox/document-apis/classes/PageNode.md#alltextcontent) to obtain a flattened list of [`TextContent`](../../../references/document-sandbox/document-apis/interfaces/TextContent.md) instances from all text-based nodes in the container. Use [`allDescendants`](../../../references/document-sandbox/document-apis/classes/PageNode.md#alldescendants) when a flattened list of all descendant nodes is needed; for text-specific iteration, prefer `allTextContent`.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `allTextContent` and `allDescendants` accessors are currently **_experimental only_** and require the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
+
+### Example: Iterate Over All Text in a Container
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Assuming the user has selected a group or page containing text nodes
+const container = editor.context.selection[0];
+
+// Iterate over all text content within the container
+for (const textContent of container.allTextContent) {
+  // textContent exposes textContentModel, visibleRanges, and visibleText
+  const model = textContent.textContentModel;
+  for (const visibleRange of textContent.visibleRanges) {
+    // Apply styles to visible text ranges
+    model.applyCharacterStyles({ fontSize: 24 }, visibleRange);
+  }
+}
+```
+
+Each [`TextContent`](../../../references/document-sandbox/document-apis/interfaces/TextContent.md) instance provides `textContentModel` (the shared content model), `visibleRanges` (subranges visible within the node), and `visibleText` (the visible text strings). This pattern works for both directly selected text nodes and text nodes nested inside groups or other containers.
+
 ## Deal with Text Flow
 
 With the introduction of "Text Flow" in Adobe Express (allowing content to move freely between multiple text frames), the concept of a text node had to be separated from text content.
 
-The `fullContent` property _points to_ a [`TextContentModel`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md) object, which contains the actual text content that multiple `TextNode` instances can share.
+The `fullContent` property _points to_ a [`TextContentModel`](../../../references/document-sandbox/document-apis/classes/TextContentModel.md) object, which contains the actual text content that multiple `TextNode` instances can share. For threaded text, `fullContent.frames` returns a [`ThreadedTextList`](../../../references/document-sandbox/document-apis/classes/ThreadedTextList.md) of [`ThreadedTextNode`](../../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md) objects forming a single continuous story.
 
-### Example
+### Example: Find All Frames Sharing the Same Story
 
 ```js
 // sandbox/code.js
@@ -918,6 +998,22 @@ const selectedTextNode = editor.context.selection[0];
 // Log all the text nodes that share the same TextContentModel
 for (const textNode of selectedTextNode.fullContent.allTextNodes) {
   console.log(textNode);
+}
+```
+
+### Example: Iterate Over Threaded Text Frames
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+const selectedTextNode = editor.context.selection[0];
+
+// For threaded text, access frames via fullContent.frames
+if (selectedTextNode.fullContent.frames) {
+  for (const frame of selectedTextNode.fullContent.frames) {
+    console.log("Frame:", frame.layout.width, "x", frame.layout.height);
+  }
 }
 ```
 
@@ -965,11 +1061,15 @@ for (const textNode of selectedTextNode.fullContent.allTextNodes) {
 
 #### Q: Can I create a threaded text frame with createText()?
 
-**A:** No, it only returns `StandaloneTextNode`; threaded nodes aren’t creatable yet.
+**A:** No. Use `editor.createThreadedText(parent, text, geometry)` to create threaded text. The `experimentalApis` flag is required in the manifest.
 
 #### Q: How do I find all frames sharing the same story?
 
-**A:** Iterate over `textNode.fullContent.allTextNodes`.
+**A:** Iterate over `textNode.fullContent.allTextNodes`. For threaded text, iterate over `textNode.fullContent.frames` to access the ThreadedTextList of frames.
+
+#### Q: How do I get all text content within a container (e.g., a group or page)?
+
+**A:** Use the `allTextContent` accessor on PageNode or VisualNode. It returns a flattened list of TextContent instances from all text-based nodes within the container.
 
 #### Q: What's the difference between `replaceText()` and setting `fullContent.text`?
 

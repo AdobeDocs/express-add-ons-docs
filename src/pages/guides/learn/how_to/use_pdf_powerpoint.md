@@ -13,7 +13,7 @@ keywords:
   - PDF Import
   - PowerPoint Import
   - importPdf
-  - importPowerPoint
+  - importPresentation
 title: Use PDF and PowerPoint
 description: Use PDF and PowerPoint.
 contributors:
@@ -25,10 +25,10 @@ faq:
       answer: 'Call `addOnUISdk.app.document.importPdf(blob, attributes)` with PDF blob and MediaAttribute object.'
 
     - question: "How do I import PowerPoint files?"
-      answer: 'Call `addOnUISdk.app.document.importPowerPoint(blob, attributes)` with PowerPoint blob and MediaAttribute.'
+      answer: 'Call `addOnUISdk.app.document.importPresentation(blob, attributes)` with PowerPoint blob and MediaAttribute.'
 
     - question: "What PowerPoint formats are supported?"
-      answer: "Both .pptx and .ppt file formats are supported."
+      answer: "Only the .pptx format is supported. The legacy .ppt format is not supported."
 
     - question: "Are MediaAttributes required for PDF/PowerPoint?"
       answer: "Yes, title is mandatory and author is optional in the MediaAttribute object."
@@ -119,7 +119,7 @@ await addOnUISdk.app.document.importPdf(convertedPdfBlob, {
 
 ## Import PowerPoint into the page
 
-For PowerPoint files, the process is similar to the one for PDFs, but you need to use the [`importPowerPoint()`](../../../references/addonsdk/app-document.md#importpresentation) method instead. The method supports both `.pptx` and `.ppt` files, and shows the same consent and progress dialogues as seen above.
+For PowerPoint files, the process is similar to the one for PDFs, but use the [`importPresentation()`](../../../references/addonsdk/app-document.md#importpresentation) method instead. Express supports only the `.pptx` format; the legacy `.ppt` format is not supported. The method shows the same consent and progress dialogues as for PDF import.
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -127,13 +127,13 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(async () => {
   try {
     const powerPointUrl = "https://url/to/your/file.pptx";
-    // Or
-    // const powerPointUrl = "./OfficialLaunchParty.pptx";
+    // Or for local files: const powerPointUrl = "./OfficialLaunchParty.pptx";
+    // Note: Only .pptx is supported; .ppt is not supported.
 
     const powerPoint = await fetch(powerPointUrl);
     const powerPointBlob = await powerPoint.blob();
 
-    await addOnUISdk.app.document.importPowerPoint(
+    await addOnUISdk.app.document.importPresentation(
       powerPointBlob, // 👈 Blob object
       {
         title: "Official Launch Party",
@@ -141,7 +141,7 @@ addOnUISdk.ready.then(async () => {
       }
     );
   } catch (e) {
-    console.error("Failed to add the PDF", e);
+    console.error("Failed to add the presentation", e);
   }
 });
 ```
@@ -154,11 +154,11 @@ addOnUISdk.ready.then(async () => {
 
 #### Q: How do I import PowerPoint files?
 
-**A:** Call `addOnUISdk.app.document.importPowerPoint(blob, attributes)` with PowerPoint blob and MediaAttribute.
+**A:** Call `addOnUISdk.app.document.importPresentation(blob, attributes)` with PowerPoint blob and MediaAttribute.
 
 #### Q: What PowerPoint formats are supported?
 
-**A:** Both .pptx and .ppt file formats are supported.
+**A:** Only the .pptx format is supported. The legacy .ppt format is not supported.
 
 #### Q: Are MediaAttributes required for PDF/PowerPoint?
 
