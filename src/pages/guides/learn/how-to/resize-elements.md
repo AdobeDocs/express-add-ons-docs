@@ -210,7 +210,7 @@ console.log(`Resized dimensions: ${ellipse.width} x ${ellipse.height}`);
 
 <InlineAlert slots="header, text" variant="warning"/>
 
-Shapes and Aspect Ratio
+**Shapes and Aspect Ratio**
 
 Please note that shapes are resized to fit within a bounding box **disregarding their aspect ratio**; they are free to extend or shrink on both axes.
 

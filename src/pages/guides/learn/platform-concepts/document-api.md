@@ -302,7 +302,7 @@ CLI versions from `"1.1.1"` onwards now scaffold add-ons with **type definitions
 
 The bottom line is that `.d.ts` and `tsconfig.json` files in your JavaScript (and TypeScript) projects give code editors knowledge about the Adobe Express document sandbox APIs: it's used to provide code completion and type checking, which can help you avoid errors and write code faster.
 
-![](./images/refs-addon-intellisense.png)
+![](../platform-concepts/images/refs-addon-intellisense.png)
 
 <InlineAlert variant="info" slots="text1, text2, text3" />
 
@@ -328,7 +328,7 @@ for (const node of someIterable) {
 
 In _previous versions_ of Adobe Express, the Console would log `allChildren` as an actual _Array_ of Nodes.
 
-![](./images/refs-addon-allchildren.png)
+![](../platform-concepts/images/refs-addon-allchildren.png)
 
 If `allChildren` is an Array, the following code will work just fine, won't it?
 
@@ -360,7 +360,7 @@ To finally unravel the `allChildren` purpose mystery, let's see what the documen
 
 If you inspect a `MediaContainerNode` class, which is instantiated every time you place an image, it has two peculiar properties: `maskShape` and `mediaRectangle`. They hold the shape that masks the bitmap (in UI terms, the Crop—by default, a rectangle with the same image dimensions) and the `ImageRectangleNode` itself. They are the "structures" the documentation refers to; therefore, you'll find them in its `allChildren` property. Other notable examples are `maskShape` in Groups and `artboards` in Pages.
 
-![](./images/refs-addon-mediacontainer.png)
+![](../platform-concepts/images/refs-addon-mediacontainer.png)
 
 ## Classes and Interfaces
 
@@ -416,7 +416,7 @@ In summary, the distinction between all the listed categories lies in their _pur
 
 Experimenting with newly acquired knowledge is one of the most effective methods to test it. Let's say you have an idea for an add-on that traces the dimensions of the selected object in the style of technical drawings.
 
-![](./images/refs-addon-draw.png)
+![](../platform-concepts/images/refs-addon-draw.png)
 
 The production of such an add-on would require a number of stages, starting from the MVP (Minimum Viable Product) feature set to the UI. Here, you'll focus exclusively on the DOM prototyping; that is to say, you'll try to figure out the code building blocks by navigating the documentation reference alone—it will be an excellent exercise to get accustomed to it. Every step will be carefully described here; for simplicity, the add-on will be restricted to drawing dimensions on `MediaContainer` objects, assuming no crop has been applied.
 
@@ -599,7 +599,7 @@ vText.setRotationInParent(-90, { x: 0, y: 0 }); // 👈
 
 In the final add-on code, there are three buttons: one logs the selected node, one draws the dimensions as you've just seen, and the last one is a refactored version that also draws dashed lines (red and thinner) connecting the dimensions to the object's corners.
 
-![](./images/refs-addon-refactor.png)
+![](../platform-concepts/images/refs-addon-refactor.png)
 
 For brevity's sake, only a few relevant additions to the code will be mentioned below—please refer to the [full sample](#final-project) for the complete picture.
 
@@ -683,7 +683,7 @@ const drawDimensionsRefactored = () => {
 
 When the Document Sandbox code detects an unsupported node type, it reaches out to the iframe UI `flashWrongElement()` method (exposed via proxy), sending the button `id` as a parameter. As a result, the button blinks red for a second, as its CSS and `textContent` property are temporarily changed.
 
-![](./images/refs-addon-unsupported.png)
+![](../platform-concepts/images/refs-addon-unsupported.png)
 
 ### Next Steps
 

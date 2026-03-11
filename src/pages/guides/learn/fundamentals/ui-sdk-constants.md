@@ -67,7 +67,7 @@ Constants equal their variable name as a string (e.g., `ButtonType.primary` equa
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Add-on UI vs. Document Sandbox constants
+**Add-on UI vs. Document Sandbox constants**
 
 Separate sets of constants are available in both the Add-on UI and the [Document Sandbox](document-sandbox-constants.md) environments. For the complete technical specification on the constants covered in this guide, see the [Add-on UI Constant Reference](../../../references/addonsdk/addonsdk-constants.md).
 
@@ -85,7 +85,7 @@ const format = addOnUISdk.constants.RenditionFormat.png;
 
 <InlineAlert slots="header,text1" variant="warning"/>
 
-#### Important
+**Important**
 
 Some constants (like `AppEvent`, `ColorPickerEvent`) are **only available as named exports** and cannot be accessed through `addOnUISdk.constants.*`. See [Import Patterns](#import-patterns) below.
 

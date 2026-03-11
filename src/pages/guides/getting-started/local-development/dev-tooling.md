@@ -199,7 +199,7 @@ You can also sideload it manually by following the steps below.
 
 ![How to sideload an add-on](../img/playground-sideload-add-on.gif)
 
-<Details slots="list" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
+<Details slots="list" repeat="3" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
 - Click the **Add-ons icon** in the left hand rail.
 - Enable the **Add-on Development** switch on the top right corner.
@@ -226,13 +226,14 @@ Before you can build add-ons, Add-on Development mode in Adobe Express needs to 
 
 When [launching the Code Playground](https://www.adobe.com/go/addon-playground) or connecting to your local add-on development environment via [this link](https://www.adobe.com/go/addon-cli), you'll be prompted to review the Developer Terms of Use and enable the Developer Mode.
 
-<Details slots="list" repeat="4" summary="Click to view a list of steps to manually enable the Developer Mode" />
+<Details slots="list" repeat="2" summary="Click to view a list of steps to manually enable the Developer Mode" />
 
 - Open Adobe Express in your browser and click the **avatar icon** in the top right corner.
 - Click the **gear icon** to open **Settings**.
 - Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first—click the **Accept and Enable** button to enable **Add-on Development**
 - Close the Settings dialog.
-![Enable Add-on Development](../getting-started/img/playground-enable-dev-mode.gif)
+
+![Enable Add-on Development](../img/playground-enable-dev-mode.gif)
 
 ## Manifest
 

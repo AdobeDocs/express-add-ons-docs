@@ -548,7 +548,7 @@ The choice is really about: **Do you prefer vanilla JavaScript/Lit or React?**
 
 <InlineAlert variant="info" slots="header, text"/>
 
-SWC and JS Libraries
+**SWC and JS Libraries**
 
 As a developer, you can use other libraries than Lit. For example, if you are a React developer, you can use [**@swc-react**](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) to implement SWC components in your add-ons.
 

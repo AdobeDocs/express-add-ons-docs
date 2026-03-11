@@ -24,7 +24,7 @@ The following guides contain a set of common use cases and accompanying code sni
 
 <InlineAlert slots="header, text1" variant="info" />
 
-Try samples in Code Playground!
+**Try samples in Code Playground!**
 
 Many how-to guides now include a **"Try"** button that opens the code sample directly in the [Code Playground](../../getting-started/code-playground-script-mode.md). Click the button to instantly test Document API samples in Script mode without setting up a local development environment!
 

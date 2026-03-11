@@ -544,7 +544,7 @@ analyzeDocument();
 
 <InlineAlert slots="header, text1, text2" variant="warning"/>
 
-Pages require a unique API path
+**Pages require a unique API path**
 
 Unlike other creation methods (like `editor.createRectangle()`), pages require the full path through the document structure:
 

@@ -183,7 +183,7 @@ addOnUISdk.ready.then(() => {
 
 <InlineAlert slots="header, text1, text2, text3, text4" variant="success"/>
 
-When do I need document sandbox communication?
+**When do I need document sandbox communication?**
 
 **✅ YES** - You need `runtime.apiProxy()` to communicate with the document sandbox if:
 
@@ -506,7 +506,7 @@ const uiProxy = await runtime.apiProxy(RuntimeType.panel);
 
 <InlineAlert variant="info" slots="header, text1"/>
 
-#### Important Notes
+**Important Notes**
 
 - `"documentSandbox": "code.js"` in manifest enables the document sandbox runtime
 - If `documentSandbox` is omitted, only the iframe runtime runs (UI-only add-on)
@@ -797,7 +797,7 @@ runtime.exposeApi({
 
 <InlineAlert variant="info" slots="header,text1"/>
 
-#### Best Practices Summary
+**Best Practices Summary**
 
 - Always wrap API calls in try-catch blocks
 - Provide meaningful error messages to users

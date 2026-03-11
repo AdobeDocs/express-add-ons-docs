@@ -83,7 +83,7 @@ The value of the `sandbox` attribute can either be empty (in which case all rest
 
 | Permission                       |                                                                                       Description |
 | -------------------------------- | ------------------------------------------------------------------------------------------------: |
-| `allow-downloads`                | Allow downloading files through an &lt;a&gt; or &lt;area&gt; element with the download attribute. |
+| `allow-downloads`                | Allow downloading files through an `<a>` or `<area>` element with the download attribute. |
 | `allow-popups`                   |                                                         Allows the add-on to `window.open` popups |
 | `allow-popups-to-escape-sandbox` |   Allows a sandboxed document to open new windows without forcing the sandboxing flags upon them. |
 | `allow-presentation`             |                                                Allows the add-on to start a presentation session. |

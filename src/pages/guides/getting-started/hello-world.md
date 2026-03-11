@@ -54,7 +54,7 @@ Before you can build add-ons, you need to enable Add-on Development mode in Adob
 
 The first time you launch the [Code Playground](https://www.adobe.com/go/addon-playground) or [connect to your local add-on development environment](https://www.adobe.com/go/addon-cli), you can review the Developer Terms of Use and enable Developer mode.
 
-<Details slots="list" repeat="4" summary="Click to view a list of steps to manually toggle the Developer Mode" />
+<Details slots="list" repeat="2" summary="Click to view a list of steps to manually toggle the Developer Mode" />
 
 - Open Adobe Express in your browser and click the **avatar icon** in the top right corner.
 - Click the **gear icon** to open **Settings**.
@@ -217,7 +217,7 @@ You can also do it manually by following the steps below.
 
 ![How to sideload an add-on](./img/playground-sideload-add-on.gif)
 
-<Details slots="list" repeat="6" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
+<Details slots="list" repeat="3" summary="Click to view a list of steps to sideload an add-on in Adobe Express" />
 
 - Click the **Add-ons icon** in the left hand rail.
 - Enable the **Add-on Development** switch on the top right corner.
@@ -268,6 +268,10 @@ You can continue to update your code while your add-on is running, and the add-o
 #### Manifest updates
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
+
+<Details summary="Click to see the screenshot" />
+
+![Refresh manifest](./img/playground-refresh-manifest.png)
 
 ## Next steps
 

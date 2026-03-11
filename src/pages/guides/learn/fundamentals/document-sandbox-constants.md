@@ -73,7 +73,7 @@ Constants equal their variable name as a string (e.g., `FillType.color` equals `
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Add-on UI vs. Document Sandbox constants
+**Add-on UI vs. Document Sandbox constants**
 
 Separate sets of constants are available in both the [Add-on UI](ui-sdk-constants.md) and the Document Sandbox environments. For the complete technical specification on the constants covered in this guide, see the [Document APIs Constants Reference](../../../references/document-sandbox/document-apis/enumerations/arrow-head-type.md)
 
