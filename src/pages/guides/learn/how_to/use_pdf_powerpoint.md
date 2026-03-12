@@ -69,6 +69,10 @@ You can add PDFs to the page using the [`importPdf()`](../../../references/addon
 
 PDF and PowerPoint imports will trigger a consent dialog that asks the user to confirm the process; it's not possible to bypass it. As soon as the process starts, another dialog will preview the PDF and track the operation progress.
 
+<InlineAlert slots="text" variant="info"/>
+
+The SDK shows a built-in progress dialog; there is no progress callback exposed.
+
 ![PDF Import dialog](./images/pdf_import.png)
 
 Supported vector elements will be kept editable (e.g., shapes with rounded corners, text, etc.), and all pages will be imported.

@@ -96,7 +96,7 @@ Renditions are different output versions of a document or element made for speci
 - Cross-platform compatibility
 - Element thumbnails and snapshots
 
-## Two Approaches for Creating Renditions 
+## Two Approaches for Creating Renditions
 
 Adobe Express add-ons support two approaches for creating renditions:
 
