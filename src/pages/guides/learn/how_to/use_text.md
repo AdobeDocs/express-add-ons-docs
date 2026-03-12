@@ -131,6 +131,8 @@ The text is created with the default styles (Source Sans 3, 100pt, black). Use `
 
 The [`editor.createThreadedText()`](../../../references/document-sandbox/document-apis/classes/Editor.md#createthreadedtext) method creates a [`ThreadedTextNode`](../../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md) for text that flows across multiple frames. Threaded text is suited for magazine-style layouts, articles, and multi-column designs where content automatically overflows from one frame to the next.
 
+Unlike `createText()`, which returns a node that must be appended to a parent via `parent.children.append(textNode)`, `createThreadedText()` accepts a `parentNode` as its first argument and automatically adds the node to that parent during creation. No explicit `append` call is required.
+
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** The threaded text APIs are currently **_experimental only_** and require the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
@@ -681,7 +683,7 @@ The only caveat is that you cannot set the font as an Object literal, like, e.g.
 }
 ```
 
-You can get PostScript names by setting different text fonts in the Adobe Express UI; then, log and inspec the `font` property of `characterStyleRange`, as seen [here](#example-get-all-styles).
+You can get PostScript names by setting different text fonts in the Adobe Express UI; then, log and inspect the `font` property of `characterStyleRange`, as seen [here](#example-get-all-styles).
 
 <InlineAlert slots="text" variant="info"/>
 
@@ -818,7 +820,7 @@ try {
   // Proceed with the text operation
     contentModel.insertText(
       ", ",             // inserted text
-      15                // insertion index
+      15,               // insertion index
       {
         font: safeFont, // font to use (surely available)
       }

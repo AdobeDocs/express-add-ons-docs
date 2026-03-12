@@ -80,17 +80,12 @@ faq:
       answer: "`createRenditions` (Add-on UI SDK) exports entire pages or documents. `VisualNode.createRendition()` (Document Sandbox) captures individual elements like shapes, groups, or text nodes."
 
     - question: "When should I use isPresentation()?"
-      answer: "Use `isPresentation()` before offering PPTX export. PPTX is only available for presentation-type documents; when it returns false, hide or disable the PPTX option. Requires experimentalApis in manifest."
+      answer: "Use `isPresentation()` before offering PPTX export. PPTX is only available for presentation-type documents; when it returns false, hide or disable the PPTX option. Requires `experimentalApis` in manifest."
 ---
 
 # Create Renditions
 
-Renditions are different output versions of a document or element made for specific purposes; for example, a high-quality PDF for printing, a smaller JPG for sharing online, or a PNG snapshot of a specific design element.
-
-Adobe Express add-ons support two approaches for creating renditions:
-
-1. **Page/Document Renditions** (Add-on UI SDK): Export entire pages or documents in various formats (JPG, PNG, MP4, PDF, PPTX) using [`addOnUISdk.app.document.createRenditions()`](#basic-usage).
-2. **Element-Level Renditions** (Document Sandbox): Capture individual visual elements and their descendants as PNG or JPEG using [`VisualNode.createRendition()`](#element-level-renditions-document-sandbox) *(experimental)*.
+Renditions are different output versions of a document or element made for specific purposes; for example, a high-quality PDF for printing, a smaller JPG for sharing online, a PNG snapshot of a specific design element, or a PPTX export for presenting in meetings or editing in PowerPoint or Google Slides.
 
 ## What Are Renditions Used For?
 
@@ -100,6 +95,13 @@ Adobe Express add-ons support two approaches for creating renditions:
 - Document publishing
 - Cross-platform compatibility
 - Element thumbnails and snapshots
+
+## Two Approaches for Creating Renditions 
+
+Adobe Express add-ons support two approaches for creating renditions:
+
+1. **Page/Document Renditions** (Add-on UI SDK): Export entire pages or documents in various formats (JPG, PNG, MP4, PDF, PPTX) using [`addOnUISdk.app.document.createRenditions()`](#basic-usage).
+2. **Element-Level Renditions** (Document Sandbox): Capture individual visual elements and their descendants as PNG or JPEG using [`VisualNode.createRendition()`](#element-level-renditions-document-sandbox) *(experimental)*.
 
 ## Quick Start
 
