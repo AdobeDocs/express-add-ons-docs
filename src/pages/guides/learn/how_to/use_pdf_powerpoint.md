@@ -40,7 +40,7 @@ faq:
       answer: "Use it when importing PDFs that were converted from other document types like Word (`.docx`) or Google Docs (`.gdoc`) to provide clearer messaging to users."
 
     - question: "What values does sourceMimeType accept?"
-    answer: 'Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.'
+      answer: 'Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.'
 
     - question: "Will users see a consent dialog?"
       answer: "Yes, PDF and PowerPoint imports trigger consent dialogs that users must confirm."
