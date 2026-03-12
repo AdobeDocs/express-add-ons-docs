@@ -28,7 +28,7 @@ faq:
       answer: 'Call `addOnUISdk.app.document.importPresentation(blob, attributes)` with PowerPoint blob and MediaAttribute.'
 
     - question: "What PowerPoint formats are supported?"
-      answer: "Only the .pptx format is supported. The legacy .ppt format is not supported."
+      answer: "Only the `.pptx` format is supported. The legacy `.ppt` format is not supported."
 
     - question: "Are MediaAttributes required for PDF/PowerPoint?"
       answer: "Yes, title is mandatory and author is optional in the MediaAttribute object."
@@ -37,10 +37,10 @@ faq:
       answer: 'Use `sourceMimeType` in MediaAttributes to improve UX when importing converted documents. It shows "Import a document" instead of "Import a PDF" in the consent dialog.'
 
     - question: "When should I use sourceMimeType?"
-      answer: "Use it when importing PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer messaging to users."
+      answer: "Use it when importing PDFs that were converted from other document types like Word (`.docx`) or Google Docs (`.gdoc`) to provide clearer messaging to users."
 
     - question: "What values does sourceMimeType accept?"
-      answer: 'Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.'
+    answer: 'Common values include "docx" for Word documents and "gdoc" for Google Docs. Use the original document format before PDF conversion.'
 
     - question: "Will users see a consent dialog?"
       answer: "Yes, PDF and PowerPoint imports trigger consent dialogs that users must confirm."
@@ -187,7 +187,7 @@ If import fails entirely, check file size and unsupported elements. For current 
 
 #### Q: What PowerPoint formats are supported?
 
-**A:** Only the .pptx format is supported. The legacy .ppt format is not supported.
+**A:** Only the `.pptx` format is supported. The legacy `.ppt` format is not supported.
 
 #### Q: Are MediaAttributes required for PDF/PowerPoint?
 
@@ -199,7 +199,7 @@ If import fails entirely, check file size and unsupported elements. For current 
 
 #### Q: When should I use sourceMimeType?
 
-**A:** Use it when importing PDFs that were converted from other document types like Word (.docx) or Google Docs (.gdoc) to provide clearer messaging to users.
+**A:** Use it when importing PDFs that were converted from other document types like Word (`.docx`) or Google Docs (`.gdoc`) to provide clearer messaging to users.
 
 #### Q: What values does sourceMimeType accept?
 
