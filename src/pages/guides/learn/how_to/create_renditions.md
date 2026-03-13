@@ -3,10 +3,15 @@ keywords:
   - Adobe Express Add-on SDK
   - JavaScript
   - createRenditions
+  - createRendition
   - RenditionFormat
   - RenditionIntent
   - RenditionOptions
+  - CreateRenditionOptions
+  - CreateRenditionResult
+  - CreateRenditionFormat
   - exportAllowed
+  - isPresentation
   - file download
   - export
   - preview
@@ -19,19 +24,24 @@ keywords:
   - PDF
   - PPTX
   - MP4
+  - JPEG
   - document publishing
+  - VisualNode
+  - document sandbox
+  - element rendition
+  - node rendition
 title: Create Renditions
-description: Learn how to export Adobe Express documents in different formats like JPG, PNG, PDF, and PPTX using the createRenditions API.
+description: Learn how to export Adobe Express documents and individual elements in different formats like JPG, PNG, PDF, and PPTX using the createRenditions API and VisualNode.createRendition().
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 faq:
   questions:
     - question: "How do I create a rendition?"
-      answer: "Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats."
+      answer: "Call `addOnUISdk.app.document.createRenditions(options, intent)` to export pages in different formats, or use `VisualNode.createRendition()` in the Document Sandbox to capture individual elements."
 
     - question: "What file formats are supported?"
-      answer: "JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`. See the [RenditionFormat constants](../../../references/addonsdk/addonsdk-constants.md) for more details."
+      answer: "JPG, PNG, MP4, PDF, and PPTX formats via `addOnUISdk.constants.RenditionFormat`. For element-level renditions in the Document Sandbox, PNG and JPEG are supported via `CreateRenditionFormat`. See the [RenditionFormat constants](../../../references/addonsdk/addonsdk-constants.md) for more details."
 
     - question: "How do I export content for download?"
       answer: "Create rendition, convert blob to URL with `URL.createObjectURL()`, then use anchor element to trigger download."
@@ -62,11 +72,20 @@ faq:
 
     - question: "How do I export the current page only?"
       answer: "Use `range: addOnUISdk.constants.Range.currentPage` in rendition options."
+
+    - question: "How do I create a rendition of a specific element?"
+      answer: "Use the experimental `VisualNode.createRendition()` method in the Document Sandbox to generate PNG or JPEG renditions of individual nodes and their descendants."
+
+    - question: "What's the difference between createRenditions and VisualNode.createRendition?"
+      answer: "`createRenditions` (Add-on UI SDK) exports entire pages or documents. `VisualNode.createRendition()` (Document Sandbox) captures individual elements like shapes, groups, or text nodes."
+
+    - question: "When should I use isPresentation()?"
+      answer: "Use `isPresentation()` before offering PPTX export. PPTX is only available for presentation-type documents; when it returns false, hide or disable the PPTX option. Requires `experimentalApis` in manifest."
 ---
 
 # Create Renditions
 
-Renditions are different output versions of a document made for specific purposes; for example, a high-quality PDF for printing or a smaller JPG for sharing online.
+Renditions are different output versions of a document or element made for specific purposes; for example, a high-quality PDF for printing, a smaller JPG for sharing online, a PNG snapshot of a specific design element, or a PPTX export for presenting in meetings or editing in PowerPoint or Google Slides.
 
 ## What Are Renditions Used For?
 
@@ -75,6 +94,14 @@ Renditions are different output versions of a document made for specific purpose
 - Print preparation
 - Document publishing
 - Cross-platform compatibility
+- Element thumbnails and snapshots
+
+## Two Approaches for Creating Renditions
+
+Adobe Express add-ons support two approaches for creating renditions:
+
+1. **Page/Document Renditions** (Add-on UI SDK): Export entire pages or documents in various formats (JPG, PNG, MP4, PDF, PPTX) using [`addOnUISdk.app.document.createRenditions()`](#basic-usage).
+2. **Element-Level Renditions** (Document Sandbox): Capture individual visual elements and their descendants as PNG or JPEG using [`VisualNode.createRendition()`](#element-level-renditions-document-sandbox) *(experimental)*.
 
 ## Quick Start
 
@@ -114,6 +141,33 @@ Export your designs as:
 - PPTX - "application/vnd.openxmlformats-officedocument.presentationml.presentation" - PowerPoint presentations
 
 The [RenditionFormat constants](../../../references/addonsdk/addonsdk-constants.md) can be used to set the format of the rendition over the MIME types specifically (e.g. `RenditionFormat.jpg`).
+
+### PPTX Export and Document Type
+
+PPTX export is only available for presentation-type documents. Call [`isPresentation()`](../../../references/addonsdk/app-document.md#ispresentation) before offering the PPTX format to users. When it returns `false`, hide or disable the PPTX export option.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `isPresentation()` method is currently *experimental only* and requires the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
+
+```js
+// Only offer PPTX export when the document is a presentation
+const isPresentation = await addOnUISdk.app.document.isPresentation();
+
+if (isPresentation) {
+  // Show PPTX option and create rendition when selected
+  const rendition = await addOnUISdk.app.document.createRenditions(
+    {
+      range: addOnUISdk.constants.Range.entireDocument,
+      format: addOnUISdk.constants.RenditionFormat.pptx,
+    },
+    addOnUISdk.constants.RenditionIntent.export
+  );
+  // ... trigger download
+} else {
+  // Hide PPTX option or show message that PPTX is only available for presentations
+}
+```
 
 ### Page Ranges
 
@@ -221,7 +275,7 @@ When the `renditionIntent` is set to `RenditionIntent.preview`, you must add to 
 
 Use the `createRenditions` method to allow users to download or share your content in different formats. This is a multi-step process that involves:
 
-1. **Creating a new rendition** based on specific export configuration options via the [`createRendition()`](../../../references/addonsdk/app-document.md#createrenditions) method of the `addOnUISdk.app.document` object.
+1. **Creating a new rendition** based on specific export configuration options via the [`createRenditions()`](../../../references/addonsdk/app-document.md#createrenditions) method of the `addOnUISdk.app.document` object.
 2. **Converting** the returned `blob` object into a URL via the `URL.createObjectURL()` method.
 3. **Creating a downloadable link** for the user to download the rendition, e.g., using the URL string from the previous step as the `href` attribute of an `<a>` element.
 
@@ -393,7 +447,142 @@ const pptxRenditions = await addOnUISdk.app.document.createRenditions(
 
 ![PPTX export disclaimer in Adobe Express](images/export-ppt-font-disclaimer.png)
 
-Please also check out the [export-sample add-on](../samples.md#export-sample) for a comple add-on sample using `createRenditions()`.
+Please also check out the [export-sample add-on](../samples.md#export-sample) for a complete add-on sample using `createRenditions()`.
+
+## Element-Level Renditions (Document Sandbox)
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `VisualNode.createRendition()` method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
+
+In addition to exporting entire pages or documents, you can generate renditions of **individual visual elements** directly from the Document Sandbox using [`VisualNode.createRendition()`](../../../references/document-sandbox/document-apis/classes/VisualNode.md#createrendition).
+
+### When to Use Element-Level Renditions
+
+- Capture a specific shape, group, or text element without surrounding content
+- Generate thumbnails of individual design components
+- Export selected elements for processing or analysis
+
+### Key Differences from Page Renditions
+
+| Feature | `addOnUISdk.app.document.createRenditions()` | `VisualNode.createRendition()` |
+|---------|---------------------------------------------|-------------------------------|
+| **Runtime** | Add-on UI SDK (iframe) | Document Sandbox |
+| **Scope** | Entire pages or documents | Individual nodes and descendants |
+| **Formats** | JPG, PNG, MP4, PDF, PPTX | PNG, JPEG only |
+| **Background** | Includes page background | Transparent (node content only) |
+
+### Basic Usage
+
+```js
+import { editor, CreateRenditionFormat } from "express-document-sdk";
+
+const rectangle = editor.createRectangle();
+rectangle.width = 200;
+rectangle.height = 100;
+editor.context.insertionParent.children.append(rectangle);
+
+// Generate a PNG rendition of the node
+const result = await rectangle.createRendition({
+  format: CreateRenditionFormat.png,
+  scale: 2  // 2x scale for higher resolution
+});
+
+if (result.blob) {
+  console.log("Rendition type:", result.blob.type);  // "image/png"
+  console.log("Rendition size:", result.blob.size);
+}
+```
+
+### Options and Result
+
+**[`CreateRenditionOptions`](../../../references/document-sandbox/document-apis/interfaces/CreateRenditionOptions.md):**
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `format` | [`CreateRenditionFormat`](../../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/CreateRenditionFormat.md) | Output format: `png` (default) or `jpeg` |
+| `scale` | `number` | Scale factor applied before rendering (e.g., `2` for 2x resolution) |
+
+**[`CreateRenditionResult`](../../../references/document-sandbox/document-apis/interfaces/CreateRenditionResult.md):**
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `blob` | `Blob` | The PNG or JPEG image data |
+| `drawBoundsGlobal` | [`Rect`](../../../references/document-sandbox/document-apis/interfaces/Rect.md) | Global bounds accounting for rotations, borders, and effects. Only provided if node is attached to the document. |
+
+### Example: Capture Selected Elements
+
+```js
+import { editor, CreateRenditionFormat } from "express-document-sdk";
+
+const selection = editor.context.selection;
+if (selection.length === 0) {
+  console.log("No elements selected");
+  return;
+}
+
+for (const node of selection) {
+  const result = await node.createRendition({
+    format: CreateRenditionFormat.png,
+    scale: 1
+  });
+  
+  if (result.blob) {
+    console.log(`Captured ${node.type}: ${result.blob.size} bytes`);
+  }
+}
+```
+
+### Important Considerations
+
+- **Image loading timeout**: The method waits up to 20 seconds for images to load before throwing an error.
+- **Transparent background**: Element renditions capture only the node content with a transparent background.
+- **Descendants included**: The rendition includes the node and all its descendants.
+
+### Sending Renditions to the UI
+
+Pass blob data through the [Communication APIs](../../../references/document-sandbox/communication/index.md) to use renditions in your UI:
+
+**Document Sandbox (`code.js`):**
+
+```js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+import { editor, CreateRenditionFormat } from "express-document-sdk";
+
+const { runtime } = addOnSandboxSdk.instance;
+
+runtime.exposeApi({
+  async captureCurrentSelection() {
+    const selection = editor.context.selection;
+    if (selection.length === 0) return null;
+    
+    const result = await selection[0].createRendition({
+      format: CreateRenditionFormat.png,
+      scale: 1
+    });
+    return result.blob;
+  }
+});
+```
+
+**UI Code:**
+
+```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  const sandboxApi = await addOnUISdk.instance.runtime.apiProxy("documentSandbox");
+  
+  document.querySelector("#capture-btn").addEventListener("click", async () => {
+    const blob = await sandboxApi.captureCurrentSelection();
+    if (blob) {
+      const img = document.createElement("img");
+      img.src = URL.createObjectURL(blob);
+      document.body.appendChild(img);
+    }
+  });
+});
+```
 
 ## FAQs
 
@@ -444,6 +633,10 @@ Please also check out the [export-sample add-on](../samples.md#export-sample) fo
 #### Q: How do I export the current page only?
 
 **A:** Use `range: addOnUISdk.constants.Range.currentPage` in rendition options.
+
+#### Q: When should I use isPresentation()?
+
+**A:** Use `isPresentation()` before offering PPTX export. PPTX is only available for presentation-type documents; when it returns `false`, hide or disable the PPTX option. Requires `experimentalApis` in manifest.
 
 #### Q: What is the default rendition intent if I don't specify one?
 

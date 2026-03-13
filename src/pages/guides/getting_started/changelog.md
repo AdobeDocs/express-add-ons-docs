@@ -25,6 +25,14 @@ contributors:
 
 # Changelog
 
+## 2026-03-13
+
+### Updated
+
+- [Create Renditions](../learn/how_to/create_renditions.md) - Guide now covers [`VisualNode.createRendition()`](../../references/document-sandbox/document-apis/classes/VisualNode.md#createrendition), which captures individual elements (shapes, groups, text) as PNG or JPEG from the Document Sandbox. Also documents [`isPresentation()`](../../references/addonsdk/app-document.md#ispresentation) for checking document type before offering PPTX export, which is only available for presentation-type documents.
+- [Use Text](../learn/how_to/use_text.md) - Guide now covers threaded text APIs (`createThreadedText`, [`ThreadedTextList`](../../references/document-sandbox/document-apis/classes/ThreadedTextList.md)) for multi-frame text flows, and the [`allTextContent`](../../references/document-sandbox/document-apis/classes/PageNode.md#alltextcontent) and [`allDescendants`](../../references/document-sandbox/document-apis/classes/PageNode.md#alldescendants) accessors for iterating over text within page or visual node containers.
+- [Use PDF and PowerPoint](../learn/how_to/use_pdf_powerpoint.md) - Guide corrected to use [`importPresentation()`](../../references/addonsdk/app-document.md#importpresentation) method, and clarified that only `.pptx` format is supported (legacy `.ppt` not supported).
+
 ## 2026-02-06
 
 ### Added
