@@ -74,8 +74,6 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 
 The best way to learn is by doing! Adobe Express integrates a [Playground](../getting-started/code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
-&lt;br /&gt; &lt;br /&gt;
-
 <Embed slots="video" />
 
 https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz
@@ -136,8 +134,6 @@ Feel free to explore [the other Tutorials](../learn/how-to/tutorials/index.md), 
 
 Adobe Express is based on the [Adobe Spectrum design system](https://s2.spectrum.adobe.com/), and your add-ons should follow the same design language.
 
-&lt;br /&gt; &lt;br /&gt;
-
 <Embed slots="vedio" />
 
 https://www.youtube.com/embed/E9atPm5djco?si=QbafmhPAKJa6R4rI
@@ -181,8 +177,6 @@ Familiarize yourself with the details of our [Review Process](../build/distribut
 Add-ons can be monetized according to a variety of models (free, free & paid, free trial, or paid); Adobe does not take any commission on the sales, **you keep 100% of your earnings!**
 
 If you want to learn more about it, please read the [Monetization Guidelines](../build/distribute/guidelines/monetization.md), or watch the [Marketing and monetizing Adobe Express add-ons](https://www.youtube.com/watch?v=gF6FU_d6QoY) video below, recorded at one of the monthly [Adobe Express Office Hours](https://developer.adobe.com/developers-live) community events.
-
-&lt;br /&gt; &lt;br /&gt;
 
 <Embed slots="video" />
 

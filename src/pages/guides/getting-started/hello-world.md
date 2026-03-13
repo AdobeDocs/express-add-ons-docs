@@ -79,7 +79,7 @@ Alternatively, see the following animation or expand the details below for a ste
 
 ![How to open the Code Playground](./img/playground-open-the-playground.gif)
 
-<Details slots="list" repeat="4" summary="Click to view a list of steps to open the Code Playground" />
+<Details slots="list" repeat="1" summary="Click to view a list of steps to open the Code Playground" />
 
 - Click the **Add-ons icon** in the left hand rail.
 - Enable the **Add-on Development** switch on the top right corner.
@@ -149,7 +149,7 @@ The [Adobe Express add-on CLI](../getting-started/local-development/dev-tooling.
 
 Open your Terminal and run the following command:
 
-```bash
+```bash-disableLineNumbers
 npx @adobe/create-ccweb-add-on hello-world --template javascript-with-document-sandbox
 ```
 
@@ -197,7 +197,7 @@ npm run start;
 
 The `start` script will display messages like the following after it executes:
 
-```text
+```text-disableLineNumbers
 Done. Your add-on 'hello-world' is hosted on: https://localhost:5241/
 ```
 

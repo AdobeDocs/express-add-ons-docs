@@ -723,9 +723,9 @@ my-addon/
 └── webpack.config.js
 ```
 
-<InlineAlert slots="text" variant="info" />
-
 **Note**
+
+<InlineAlert slots="text" variant="info" />
 
 To see thecomplete file structures of all 10 templates, refer to the template-specific documentation or examine the scaffolded project files.
 
