@@ -43,7 +43,7 @@ Ready to build your own add-on? Check out the Developer Journey to get started, 
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-[Find inspiration](getting-started/developer-journey.md#discover)
+- [Find inspiration →](getting-started/developer-journey.md#discover)
 
 ![Learn](getting-started/img/devjourney-2-learn.png)
 
@@ -51,7 +51,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 Familiarize and experiment with powerful features in our Code Playground.
 
-[Dive deeper](getting-started/developer-journey.md#learn)
+- [Dive deeper →](getting-started/developer-journey.md#learn)
 
 <Columns slots="image, heading, text, links" variant ="vertical" repeat ="2"/>
 
@@ -61,7 +61,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 Transform your ideas into a polished product following our best practices.
 
-[Start building](getting-started/developer-journey.md#develop)
+- [Start building →](getting-started/developer-journey.md#develop)
 
 ![Distribute](getting-started/img/devjourney-4-distribute.png)
 
@@ -69,7 +69,7 @@ Transform your ideas into a polished product following our best practices.
 
 Share your add-on with the world in the Adobe Express Marketplace.
 
-[Launch now](getting-started/developer-journey.md#distribute)
+- [Launch now →](getting-started/developer-journey.md#distribute)
 
 <Embed slots="video" />
 

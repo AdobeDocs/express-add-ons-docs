@@ -144,17 +144,17 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 #### Check Connection Status
 
-Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:
+<Columns slots="image, text" />
 
 ![headings](./img/stable-mcp-server-enabled.png)
+
+Many IDEs show a green indicator when the MCP server connects successfully, for example in Cursor:
 
 #### Verify with Tool calls
 
 The LLM will automatically invoke tools based on your prompts. Here is an example of Cursor making calls to the Adobe Express Developer MCP Server tools to retrieve the developer documentation and type definitions based on the query. The expanded tool calls reveal the results of either the documentation source that matched the query, or the typescript definitions for the specific API in the parameters.
 
-![](./img/mcp-server-calling-tools.png)
-
-![](./img/mcp-tool-call-example.png)
+&lt;div style="display:flex;gap:100px;" &gt;  ![](./img/mcp-server-calling-tools.png) ![](./img/mcp-tool-call-example.png) &lt;/div &gt;
 
 <InlineAlert header="true" slots="header,list" variant="success" iconPosition="right" />
 
