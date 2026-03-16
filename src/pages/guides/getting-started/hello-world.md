@@ -269,7 +269,7 @@ You can continue to update your code while your add-on is running, and the add-o
 
 Any changes to the `manifest.json` will _require a manual reload of your add-on_. The **Add-on Development** panel will indicate this in the log messages, and the **Refresh** button can be used to reload the add-on directly within Adobe Express.
 
-<Details summary="Click to see the screenshot" />
+<Details slots="header" summary="Click to see the screenshot" />
 
 ![Refresh manifest](./img/playground-refresh-manifest.png)
 
