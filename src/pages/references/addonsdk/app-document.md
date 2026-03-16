@@ -710,7 +710,7 @@ async function importConvertedGoogleDoc(convertedPdfBlob) {
 
 ### importPresentation()
 
-Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations.
+Imports a presentation as a new Adobe Express document. **Note:** Currently Express only supports PowerPoint presentations with a `pptx` extension.
 
 #### Signature
 
