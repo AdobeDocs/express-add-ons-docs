@@ -455,7 +455,7 @@ Please also check out the [export-sample add-on](../samples.md#export-sample) fo
 
 **IMPORTANT:** The `VisualNode.createRendition()` method is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of the `manifest.json`.
 
-In addition to exporting entire pages or documents, you can generate renditions of **individual visual elements** directly from the Document Sandbox using [`VisualNode.createRendition()`](../../../references/document-sandbox/document-apis/classes/VisualNode.md#createrendition).
+In addition to exporting entire pages or documents, you can generate renditions of **individual visual elements** directly from the Document Sandbox using [`VisualNode.createRendition()`](../../../references/document-sandbox/document-apis/classes/visual-node.md#createrendition).
 
 ### When to Use Element-Level Renditions
 
@@ -496,19 +496,19 @@ if (result.blob) {
 
 ### Options and Result
 
-**[`CreateRenditionOptions`](../../../references/document-sandbox/document-apis/interfaces/CreateRenditionOptions.md):**
+**[`CreateRenditionOptions`](../../../references/document-sandbox/document-apis/interfaces/create-rendition-options.md):**
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `format` | [`CreateRenditionFormat`](../../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/CreateRenditionFormat.md) | Output format: `png` (default) or `jpeg` |
+| `format` | [`CreateRenditionFormat`](../../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/create-rendition-format.md) | Output format: `png` (default) or `jpeg` |
 | `scale` | `number` | Scale factor applied before rendering (e.g., `2` for 2x resolution) |
 
-**[`CreateRenditionResult`](../../../references/document-sandbox/document-apis/interfaces/CreateRenditionResult.md):**
+**[`CreateRenditionResult`](../../../references/document-sandbox/document-apis/interfaces/create-rendition-result.md):**
 
 | Property | Type | Description |
 |----------|------|-------------|
 | `blob` | `Blob` | The PNG or JPEG image data |
-| `drawBoundsGlobal` | [`Rect`](../../../references/document-sandbox/document-apis/interfaces/Rect.md) | Global bounds accounting for rotations, borders, and effects. Only provided if node is attached to the document. |
+| `drawBoundsGlobal` | [`Rect`](../../../references/document-sandbox/document-apis/interfaces/rect.md) | Global bounds accounting for rotations, borders, and effects. Only provided if node is attached to the document. |
 
 ### Example: Capture Selected Elements
 
