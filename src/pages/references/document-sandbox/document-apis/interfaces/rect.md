@@ -1,27 +1,14 @@
-[@express-document-sdk](../overview.md) / Rect
+[**@express-document-sdk**](../overview.md)
+
+---
 
 # Interface: Rect
 
 ## Properties
 
-### height
-
-• **height**: `number`
-
-<HorizontalLine />
-
-### width
-
-• **width**: `number`
-
-<HorizontalLine />
-
-### x
-
-• **x**: `number`
-
-<HorizontalLine />
-
-### y
-
-• **y**: `number`
+| Property | Type |
+| ------ | ------ |
+| `x` | `number` |
+| `y` | `number` |
+| `width` | `number` |
+| `height` | `number` |

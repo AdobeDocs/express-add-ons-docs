@@ -1,48 +1,61 @@
-[@express-document-sdk](../overview.md) / Context
+[**@express-document-sdk**](../overview.md)
+
+---
 
 # Class: Context
 
 Contains the user's current selection state, indicating the content they are focused on.
 
+## Extends
+
+- `unknown`
+
 ## Extended by
 
--   [`ExpressContext`](express-context.md)
+- [`ExpressContext`](ExpressContext.md)
+
+## Constructors
+
+### Constructor
+
+```ts
+new Context(): Context;
+```
+
+#### Returns
+
+`Context`
+
+#### Inherited from
+
+```ts
+ProxyLiveObject.constructor
+```
 
 ## Accessors
 
-### hasSelection
-
-• `get` **hasSelection**(): `boolean`
-
-#### Returns
-
-`boolean`
-
-false if the current editable selection does not contain any nodes, otherwise true.
-
-<HorizontalLine />
-
-### insertionParent
-
-• `get` **insertionParent**(): [`ContainerNode`](../interfaces/container-node.md)
-
-#### Returns
-
-[`ContainerNode`](../interfaces/container-node.md)
-
-the preferred parent to insert newly added content into (i.e., the location content would get inserted if a
-user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
-other UI state.
-
-<HorizontalLine />
-
 ### selection
 
-• `get` **selection**(): readonly [`Node`](node.md)[]
+#### Get Signature
 
-• `set` **selection**(`nodes`): `void`
+```ts
+get selection(): readonly Node[];
+```
 
-Sets the current selection to an array of [Node](node.md).
+##### Returns
+
+readonly [`Node`](Node.md)[]
+
+the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
+selection (see [selectionIncludingNonEditable](#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
+
+#### Set Signature
+
+```ts
+set selection(nodes): void;
+```
+
+Sets the current selection to an array of [Node](Node.md).
 Accepts a single node as a shortcut for a length-1 array `[node]` or
 `undefined` as a shortcut for `[]`, which clears the selection.
 
@@ -52,79 +65,110 @@ Only node(s) that meet the following criteria can be selected:
 - A node cannot be selected if its ancestor is also selected (descendants are filtered out).
 - Locked nodes are filtered out (but will still be included in selectionIncludingNonEditable).
 
-#### Parameters
+##### Parameters
 
-• **nodes**: `undefined` \| [`Node`](node.md) \| readonly [`Node`](node.md)[]
+| Parameter | Type |
+| ------ | ------ |
+| `nodes` | [`Node`](Node.md) \| readonly [`Node`](Node.md)[] \| `undefined` |
 
-#### Returns
-
-readonly [`Node`](node.md)[]
-
-the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
-selection (see [selectionIncludingNonEditable](context.md#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
-
-<HorizontalLine />
-
-### selectionIncludingNonEditable
-
-• `get` **selectionIncludingNonEditable**(): readonly [`Node`](node.md)[]
-
-#### Returns
-
-readonly [`Node`](node.md)[]
-
-the current selection _and_ any locked nodes the user has attempted to select at the same time. This can
-happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
-locked nodes in addition to regular unlocked nodes.
-
-## Methods
-
-### off()
-
-• **off**(`eventName`, `handlerId`): `void`
-
-Unregisters handlers for editor events like selection change.
-
-#### Parameters
-
-• **eventName**: [`selectionChange`](../enumerations/editor-event.md#selectionchange)
-
-an editor event name.
-
-• **handlerId**: `string`
-
-a unique ID returned by `editor.context.on` API.
-Callback that was previously registered will be removed and will no more be invoked when the event occurs.
-
-#### Returns
+##### Returns
 
 `void`
 
-<HorizontalLine />
+---
+
+### selectionIncludingNonEditable
+
+#### Get Signature
+
+```ts
+get selectionIncludingNonEditable(): readonly Node[];
+```
+
+##### Returns
+
+readonly [`Node`](Node.md)[]
+
+the current selection *and* any locked nodes the user has attempted to select at the same time. This can
+happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
+locked nodes in addition to regular unlocked nodes.
+
+---
+
+### hasSelection
+
+#### Get Signature
+
+```ts
+get hasSelection(): boolean;
+```
+
+##### Returns
+
+`boolean`
+
+false if the current editable selection does not contain any nodes, otherwise true.
+
+---
+
+### insertionParent
+
+#### Get Signature
+
+```ts
+get insertionParent(): ContainerNode;
+```
+
+##### Returns
+
+[`ContainerNode`](../interfaces/ContainerNode.md)
+
+the preferred parent to insert newly added content into (i.e., the location content would get inserted if a
+user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
+other UI state.
+
+## Methods
 
 ### on()
 
-• **on**(`eventName`, `callback`): `string`
+```ts
+on(eventName, callback): string;
+```
 
 Registers a handler for editor events such as selection change.
 The registered callback will be invoked when the specified event occurs.
-
-<InlineAlert slots="text" variant="warning"/>
-
 Note: Do not attempt to make changes to the document in response to a selection change callback because it may destabilize the application.
 
 #### Parameters
 
-• **eventName**: [`selectionChange`](../enumerations/editor-event.md#selectionchange)
-
-an editor event name.
-
-• **callback**: [`EditorEventHandler`](../type-aliases/editor-event-handler.md)
-
-a callback to be registered for an editor event.
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `eventName` | [`selectionChange`](../enumerations/EditorEvent.md#selectionchange) | an editor event name. |
+| `callback` | [`EditorEventHandler`](../type-aliases/EditorEventHandler.md) | a callback to be registered for an editor event. |
 
 #### Returns
 
 `string`
 
 a unique ID for the registered event handler.
+
+---
+
+### off()
+
+```ts
+off(eventName, handlerId): void;
+```
+
+Unregisters handlers for editor events like selection change.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `eventName` | [`selectionChange`](../enumerations/EditorEvent.md#selectionchange) | an editor event name. |
+| `handlerId` | `string` | a unique ID returned by `editor.context.on` API. Callback that was previously registered will be removed and will no more be invoked when the event occurs. |
+
+#### Returns
+
+`void`

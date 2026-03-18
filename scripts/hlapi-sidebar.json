@@ -1,0 +1,498 @@
+[
+  {
+    "title": "Classes",
+    "path": "references/document-sandbox/document-apis/classes/Editor.md",
+    "pages": [
+      {
+        "title": "AddOnData",
+        "path": "references/document-sandbox/document-apis/classes/AddOnData.md"
+      },
+      {
+        "title": "ArtboardList",
+        "path": "references/document-sandbox/document-apis/classes/ArtboardList.md"
+      },
+      {
+        "title": "ArtboardNode",
+        "path": "references/document-sandbox/document-apis/classes/ArtboardNode.md"
+      },
+      {
+        "title": "AvailableFont",
+        "path": "references/document-sandbox/document-apis/classes/AvailableFont.md"
+      },
+      {
+        "title": "BaseFont",
+        "path": "references/document-sandbox/document-apis/classes/BaseFont.md"
+      },
+      {
+        "title": "BaseNode",
+        "path": "references/document-sandbox/document-apis/classes/BaseNode.md"
+      },
+      {
+        "title": "BitmapImage",
+        "path": "references/document-sandbox/document-apis/classes/BitmapImage.md"
+      },
+      {
+        "title": "ColorUtils",
+        "path": "references/document-sandbox/document-apis/classes/ColorUtils.md"
+      },
+      {
+        "title": "ComplexShapeNode",
+        "path": "references/document-sandbox/document-apis/classes/ComplexShapeNode.md"
+      },
+      {
+        "title": "Context",
+        "path": "references/document-sandbox/document-apis/classes/Context.md"
+      },
+      {
+        "title": "Editor",
+        "path": "references/document-sandbox/document-apis/classes/Editor.md"
+      },
+      {
+        "title": "EllipseNode",
+        "path": "references/document-sandbox/document-apis/classes/EllipseNode.md"
+      },
+      {
+        "title": "ExpressContext",
+        "path": "references/document-sandbox/document-apis/classes/ExpressContext.md"
+      },
+      {
+        "title": "ExpressEditor",
+        "path": "references/document-sandbox/document-apis/classes/ExpressEditor.md"
+      },
+      {
+        "title": "ExpressRootNode",
+        "path": "references/document-sandbox/document-apis/classes/ExpressRootNode.md"
+      },
+      {
+        "title": "ExpressViewport",
+        "path": "references/document-sandbox/document-apis/classes/ExpressViewport.md"
+      },
+      {
+        "title": "FillableNode",
+        "path": "references/document-sandbox/document-apis/classes/FillableNode.md"
+      },
+      {
+        "title": "Fonts",
+        "path": "references/document-sandbox/document-apis/classes/Fonts.md"
+      },
+      {
+        "title": "GridCellNode",
+        "path": "references/document-sandbox/document-apis/classes/GridCellNode.md"
+      },
+      {
+        "title": "GridLayoutNode",
+        "path": "references/document-sandbox/document-apis/classes/GridLayoutNode.md"
+      },
+      {
+        "title": "GroupNode",
+        "path": "references/document-sandbox/document-apis/classes/GroupNode.md"
+      },
+      {
+        "title": "ImageRectangleNode",
+        "path": "references/document-sandbox/document-apis/classes/ImageRectangleNode.md"
+      },
+      {
+        "title": "ItemList",
+        "path": "references/document-sandbox/document-apis/classes/ItemList.md"
+      },
+      {
+        "title": "LineNode",
+        "path": "references/document-sandbox/document-apis/classes/LineNode.md"
+      },
+      {
+        "title": "MediaContainerNode",
+        "path": "references/document-sandbox/document-apis/classes/MediaContainerNode.md"
+      },
+      {
+        "title": "MediaRectangleNode",
+        "path": "references/document-sandbox/document-apis/classes/MediaRectangleNode.md"
+      },
+      {
+        "title": "Node",
+        "path": "references/document-sandbox/document-apis/classes/Node.md"
+      },
+      {
+        "title": "PageList",
+        "path": "references/document-sandbox/document-apis/classes/PageList.md"
+      },
+      {
+        "title": "PageNode",
+        "path": "references/document-sandbox/document-apis/classes/PageNode.md"
+      },
+      {
+        "title": "PathNode",
+        "path": "references/document-sandbox/document-apis/classes/PathNode.md"
+      },
+      {
+        "title": "ReadOnlyItemList",
+        "path": "references/document-sandbox/document-apis/classes/ReadOnlyItemList.md"
+      },
+      {
+        "title": "ReadOnlyMask",
+        "path": "references/document-sandbox/document-apis/classes/ReadOnlyMask.md"
+      },
+      {
+        "title": "RectangleNode",
+        "path": "references/document-sandbox/document-apis/classes/RectangleNode.md"
+      },
+      {
+        "title": "RestrictedItemList",
+        "path": "references/document-sandbox/document-apis/classes/RestrictedItemList.md"
+      },
+      {
+        "title": "SolidColorShapeNode",
+        "path": "references/document-sandbox/document-apis/classes/SolidColorShapeNode.md"
+      },
+      {
+        "title": "StandaloneTextContentModel",
+        "path": "references/document-sandbox/document-apis/classes/StandaloneTextContentModel.md"
+      },
+      {
+        "title": "StandaloneTextNode",
+        "path": "references/document-sandbox/document-apis/classes/StandaloneTextNode.md"
+      },
+      {
+        "title": "StrokableNode",
+        "path": "references/document-sandbox/document-apis/classes/StrokableNode.md"
+      },
+      {
+        "title": "StrokeShapeNode",
+        "path": "references/document-sandbox/document-apis/classes/StrokeShapeNode.md"
+      },
+      {
+        "title": "TextContentModel",
+        "path": "references/document-sandbox/document-apis/classes/TextContentModel.md"
+      },
+      {
+        "title": "TextNode",
+        "path": "references/document-sandbox/document-apis/classes/TextNode.md"
+      },
+      {
+        "title": "TextNodeContentModel",
+        "path": "references/document-sandbox/document-apis/classes/TextNodeContentModel.md"
+      },
+      {
+        "title": "ThreadedTextContentModel",
+        "path": "references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md"
+      },
+      {
+        "title": "ThreadedTextList",
+        "path": "references/document-sandbox/document-apis/classes/ThreadedTextList.md"
+      },
+      {
+        "title": "ThreadedTextNode",
+        "path": "references/document-sandbox/document-apis/classes/ThreadedTextNode.md"
+      },
+      {
+        "title": "UnavailableFont",
+        "path": "references/document-sandbox/document-apis/classes/UnavailableFont.md"
+      },
+      {
+        "title": "UnknownMediaRectangleNode",
+        "path": "references/document-sandbox/document-apis/classes/UnknownMediaRectangleNode.md"
+      },
+      {
+        "title": "UnknownNode",
+        "path": "references/document-sandbox/document-apis/classes/UnknownNode.md"
+      },
+      {
+        "title": "VisualNode",
+        "path": "references/document-sandbox/document-apis/classes/VisualNode.md"
+      }
+    ]
+  },
+  {
+    "title": "Interfaces",
+    "path": "references/document-sandbox/document-apis/interfaces/AreaTextLayout.md",
+    "pages": [
+      {
+        "title": "AreaTextLayout",
+        "path": "references/document-sandbox/document-apis/interfaces/AreaTextLayout.md"
+      },
+      {
+        "title": "AutoHeightTextLayout",
+        "path": "references/document-sandbox/document-apis/interfaces/AutoHeightTextLayout.md"
+      },
+      {
+        "title": "AutoWidthTextLayout",
+        "path": "references/document-sandbox/document-apis/interfaces/AutoWidthTextLayout.md"
+      },
+      {
+        "title": "BaseParagraphStyles",
+        "path": "references/document-sandbox/document-apis/interfaces/BaseParagraphStyles.md"
+      },
+      {
+        "title": "CharacterStyles",
+        "path": "references/document-sandbox/document-apis/interfaces/CharacterStyles.md"
+      },
+      {
+        "title": "CharacterStylesInput",
+        "path": "references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md"
+      },
+      {
+        "title": "CharacterStylesRange",
+        "path": "references/document-sandbox/document-apis/interfaces/CharacterStylesRange.md"
+      },
+      {
+        "title": "CharacterStylesRangeInput",
+        "path": "references/document-sandbox/document-apis/interfaces/CharacterStylesRangeInput.md"
+      },
+      {
+        "title": "Color",
+        "path": "references/document-sandbox/document-apis/interfaces/Color.md"
+      },
+      {
+        "title": "ColorFill",
+        "path": "references/document-sandbox/document-apis/interfaces/ColorFill.md"
+      },
+      {
+        "title": "CommonResizeOptions",
+        "path": "references/document-sandbox/document-apis/interfaces/CommonResizeOptions.md"
+      },
+      {
+        "title": "ContainerNode",
+        "path": "references/document-sandbox/document-apis/interfaces/ContainerNode.md"
+      },
+      {
+        "title": "CreateRenditionOptions",
+        "path": "references/document-sandbox/document-apis/interfaces/CreateRenditionOptions.md"
+      },
+      {
+        "title": "CreateRenditionResult",
+        "path": "references/document-sandbox/document-apis/interfaces/CreateRenditionResult.md"
+      },
+      {
+        "title": "Fill",
+        "path": "references/document-sandbox/document-apis/interfaces/Fill.md"
+      },
+      {
+        "title": "IFillableNode",
+        "path": "references/document-sandbox/document-apis/interfaces/IFillableNode.md"
+      },
+      {
+        "title": "IMediaContainerNode",
+        "path": "references/document-sandbox/document-apis/interfaces/IMediaContainerNode.md"
+      },
+      {
+        "title": "INodeBounds",
+        "path": "references/document-sandbox/document-apis/interfaces/INodeBounds.md"
+      },
+      {
+        "title": "IRectangularNode",
+        "path": "references/document-sandbox/document-apis/interfaces/IRectangularNode.md"
+      },
+      {
+        "title": "IStrokableNode",
+        "path": "references/document-sandbox/document-apis/interfaces/IStrokableNode.md"
+      },
+      {
+        "title": "IVisualNodeBounds",
+        "path": "references/document-sandbox/document-apis/interfaces/IVisualNodeBounds.md"
+      },
+      {
+        "title": "ListItem",
+        "path": "references/document-sandbox/document-apis/interfaces/ListItem.md"
+      },
+      {
+        "title": "OrderedListStyleInput",
+        "path": "references/document-sandbox/document-apis/interfaces/OrderedListStyleInput.md"
+      },
+      {
+        "title": "ParagraphStyles",
+        "path": "references/document-sandbox/document-apis/interfaces/ParagraphStyles.md"
+      },
+      {
+        "title": "ParagraphStylesInput",
+        "path": "references/document-sandbox/document-apis/interfaces/ParagraphStylesInput.md"
+      },
+      {
+        "title": "ParagraphStylesRange",
+        "path": "references/document-sandbox/document-apis/interfaces/ParagraphStylesRange.md"
+      },
+      {
+        "title": "ParagraphStylesRangeInput",
+        "path": "references/document-sandbox/document-apis/interfaces/ParagraphStylesRangeInput.md"
+      },
+      {
+        "title": "Point",
+        "path": "references/document-sandbox/document-apis/interfaces/Point.md"
+      },
+      {
+        "title": "Rect",
+        "path": "references/document-sandbox/document-apis/interfaces/Rect.md"
+      },
+      {
+        "title": "RectangleGeometry",
+        "path": "references/document-sandbox/document-apis/interfaces/RectangleGeometry.md"
+      },
+      {
+        "title": "RemoveListStyleInput",
+        "path": "references/document-sandbox/document-apis/interfaces/RemoveListStyleInput.md"
+      },
+      {
+        "title": "ReplaceMediaWithEditedImageOptions",
+        "path": "references/document-sandbox/document-apis/interfaces/ReplaceMediaWithEditedImageOptions.md"
+      },
+      {
+        "title": "RescaleProportionalToHeightOptions",
+        "path": "references/document-sandbox/document-apis/interfaces/RescaleProportionalToHeightOptions.md"
+      },
+      {
+        "title": "RescaleProportionalToWidthOptions",
+        "path": "references/document-sandbox/document-apis/interfaces/RescaleProportionalToWidthOptions.md"
+      },
+      {
+        "title": "ResizeUsingHeightOptions",
+        "path": "references/document-sandbox/document-apis/interfaces/ResizeUsingHeightOptions.md"
+      },
+      {
+        "title": "ResizeUsingWidthOptions",
+        "path": "references/document-sandbox/document-apis/interfaces/ResizeUsingWidthOptions.md"
+      },
+      {
+        "title": "SolidColorStroke",
+        "path": "references/document-sandbox/document-apis/interfaces/SolidColorStroke.md"
+      },
+      {
+        "title": "Stroke",
+        "path": "references/document-sandbox/document-apis/interfaces/Stroke.md"
+      },
+      {
+        "title": "StyleRange",
+        "path": "references/document-sandbox/document-apis/interfaces/StyleRange.md"
+      },
+      {
+        "title": "TextContent",
+        "path": "references/document-sandbox/document-apis/interfaces/TextContent.md"
+      },
+      {
+        "title": "TextFrameAreaGeometry",
+        "path": "references/document-sandbox/document-apis/interfaces/TextFrameAreaGeometry.md"
+      },
+      {
+        "title": "TextRange",
+        "path": "references/document-sandbox/document-apis/interfaces/TextRange.md"
+      },
+      {
+        "title": "UnorderedListStyleInput",
+        "path": "references/document-sandbox/document-apis/interfaces/UnorderedListStyleInput.md"
+      },
+      {
+        "title": "UnsupportedTextLayout",
+        "path": "references/document-sandbox/document-apis/interfaces/UnsupportedTextLayout.md"
+      }
+    ]
+  },
+  {
+    "title": "Constants",
+    "path": "references/document-sandbox/document-apis/enumerations/ArrowHeadType.md",
+    "pages": [
+      {
+        "title": "ArrowHeadType",
+        "path": "references/document-sandbox/document-apis/enumerations/ArrowHeadType.md"
+      },
+      {
+        "title": "BlendMode",
+        "path": "references/document-sandbox/document-apis/enumerations/BlendMode.md"
+      },
+      {
+        "title": "CreateRenditionFormat",
+        "path": "references/document-sandbox/document-apis/enumerations/CreateRenditionFormat.md"
+      },
+      {
+        "title": "EditorEvent",
+        "path": "references/document-sandbox/document-apis/enumerations/EditorEvent.md"
+      },
+      {
+        "title": "FillRule",
+        "path": "references/document-sandbox/document-apis/enumerations/FillRule.md"
+      },
+      {
+        "title": "FillType",
+        "path": "references/document-sandbox/document-apis/enumerations/FillType.md"
+      },
+      {
+        "title": "OrderedListNumbering",
+        "path": "references/document-sandbox/document-apis/enumerations/OrderedListNumbering.md"
+      },
+      {
+        "title": "ParagraphListType",
+        "path": "references/document-sandbox/document-apis/enumerations/ParagraphListType.md"
+      },
+      {
+        "title": "ResizeBehavior",
+        "path": "references/document-sandbox/document-apis/enumerations/ResizeBehavior.md"
+      },
+      {
+        "title": "SceneNodeType",
+        "path": "references/document-sandbox/document-apis/enumerations/SceneNodeType.md"
+      },
+      {
+        "title": "StrokePosition",
+        "path": "references/document-sandbox/document-apis/enumerations/StrokePosition.md"
+      },
+      {
+        "title": "StrokeType",
+        "path": "references/document-sandbox/document-apis/enumerations/StrokeType.md"
+      },
+      {
+        "title": "TextAlignment",
+        "path": "references/document-sandbox/document-apis/enumerations/TextAlignment.md"
+      },
+      {
+        "title": "TextLayout",
+        "path": "references/document-sandbox/document-apis/enumerations/TextLayout.md"
+      },
+      {
+        "title": "TextScriptStyle",
+        "path": "references/document-sandbox/document-apis/enumerations/TextScriptStyle.md"
+      },
+      {
+        "title": "TextStyleSource",
+        "path": "references/document-sandbox/document-apis/enumerations/TextStyleSource.md"
+      },
+      {
+        "title": "VisualEffectType",
+        "path": "references/document-sandbox/document-apis/enumerations/VisualEffectType.md"
+      }
+    ]
+  },
+  {
+    "title": "Types",
+    "path": "references/document-sandbox/document-apis/type-aliases/EditorEventHandler.md",
+    "pages": [
+      {
+        "title": "EditorEventHandler",
+        "path": "references/document-sandbox/document-apis/type-aliases/EditorEventHandler.md"
+      },
+      {
+        "title": "EventHandlerId",
+        "path": "references/document-sandbox/document-apis/type-aliases/EventHandlerId.md"
+      },
+      {
+        "title": "Font",
+        "path": "references/document-sandbox/document-apis/type-aliases/Font.md"
+      },
+      {
+        "title": "ListStyleInput",
+        "path": "references/document-sandbox/document-apis/type-aliases/ListStyleInput.md"
+      },
+      {
+        "title": "OrderedListStyle",
+        "path": "references/document-sandbox/document-apis/type-aliases/OrderedListStyle.md"
+      },
+      {
+        "title": "ResizeOptions",
+        "path": "references/document-sandbox/document-apis/type-aliases/ResizeOptions.md"
+      },
+      {
+        "title": "SolidColorStrokeWithOptionalType",
+        "path": "references/document-sandbox/document-apis/type-aliases/SolidColorStrokeWithOptionalType.md"
+      },
+      {
+        "title": "UnorderedListStyle",
+        "path": "references/document-sandbox/document-apis/type-aliases/UnorderedListStyle.md"
+      }
+    ]
+  }
+]

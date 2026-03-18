@@ -1,4 +1,6 @@
-[@express-document-sdk](../overview.md) / Point
+[**@express-document-sdk**](../overview.md)
+
+---
 
 # Interface: Point
 
@@ -6,12 +8,7 @@ Represents a 2D position.
 
 ## Properties
 
-### x
-
-• **x**: `number`
-
-<HorizontalLine />
-
-### y
-
-• **y**: `number`
+| Property | Type |
+| ------ | ------ |
+| `x` | `number` |
+| `y` | `number` |

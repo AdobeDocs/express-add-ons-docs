@@ -1,0 +1,28 @@
+[**@express-document-sdk**](../overview.md)
+
+---
+
+# Interface: CharacterStyles
+
+Text styles that can be applied to any range of characters, even a short span like a single word. (Contrast with
+ParagraphStyles, which must be applied to an entire paragraph atomically).
+
+## Extends
+
+- `BaseCharacterStyles`
+
+## Extended by
+
+- [`CharacterStylesRange`](CharacterStylesRange.md)
+
+## Properties
+
+| Property | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ |
+| `fontSize` | `number` | Size of the text in points. | `BaseCharacterStyles.fontSize` |
+| `color` | [`Color`](Color.md) | Text color. | `BaseCharacterStyles.color` |
+| `letterSpacing` | `number` | Uniformly adjusts the letter spacing, aka character spacing. Specified as a delta relative to the font's default spacing, in units of 1/1000 em: positive values increase the spacing, negative values tighten the spacing, and 0 leaves spacing at its default. | `BaseCharacterStyles.letterSpacing` |
+| `underline` | `boolean` | Adds an underline to text. | `BaseCharacterStyles.underline` |
+| `link?` | `string` | A URL hyperlink. Character ranges with a link are underlined *by default*, unless these styles explicitly specify `underline: false`. To remove a link from existing text, explicitly specify `link: ""` in [TextContentModel.applyCharacterStyles](../classes/TextContentModel.md#applycharacterstyles). | `BaseCharacterStyles.link` |
+| `baselineShift` | [`TextScriptStyle`](../enumerations/TextScriptStyle.md) | Sets a superscript or subscript style. | `BaseCharacterStyles.baselineShift` |
+| `font` | [`Font`](../type-aliases/Font.md) | - | - |
