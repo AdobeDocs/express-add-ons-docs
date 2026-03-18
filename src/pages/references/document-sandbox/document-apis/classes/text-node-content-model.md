@@ -51,7 +51,7 @@ get id(): string;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
 moved to a different part of the document.
@@ -235,7 +235,7 @@ appendText(newText): void;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Appends a new text string to the end of the text content.
 
@@ -272,7 +272,7 @@ replaceText(
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Replaces a range of text with a new text string.
 
@@ -339,7 +339,7 @@ hasUnavailableFonts(): boolean;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Returns true if this text contains any fonts unavailable to the current user.
 Currently, if any unavailable fonts are present, the text content cannot be modified and
@@ -369,7 +369,7 @@ insertText(
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Inserts a new text string into the text content at the specified index.
 
@@ -405,7 +405,7 @@ deleteText(range): void;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Deletes a range of text from the content.
 

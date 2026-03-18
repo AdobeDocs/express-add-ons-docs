@@ -211,7 +211,7 @@ get allDescendants(): Readonly<Iterable<Node>>;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Helper to recursively traverse *all* the exposed scenegraph content within the subtree of this node.
 Every container node and every leaf node will be visited via a pre-order tree traversal.
@@ -510,7 +510,7 @@ get allTextContent(): Readonly<Iterable<TextContent>>;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Helper to process all text content that is found as part of or within this node. This can be hard to do correctly
 via manual tree traversal since multiple [ThreadedTextNode](threaded-text-node.md) can share a single [TextContentModel](text-content-model.md).
@@ -656,7 +656,7 @@ replaceMediaWithEditedImage(blob, options): Promise<void>;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Replace the current media with an edited version of the same media while preserving existing filter effects,
 per-element metadata, and asset provenance.
@@ -867,7 +867,7 @@ createRendition(options?): Promise<CreateRenditionResult>;
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Generates a rendition of this node and its descendants.
 

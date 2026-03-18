@@ -66,14 +66,13 @@ asynchronous operation such as [loadBitmapImage](#loadbitmapimage), any edits fo
 queueAsyncEdit(). This ensures the edit is properly tracked for saving and undo.
 
 The delay before your edit function is executed is typically just a few milliseconds, so it will appear instantaneous
-to users. However, note that queueAsyncEdit() will return _before_ your function has been run.
+to users. However, note that queueAsyncEdit() will return *before* your function has been run.
 If you need to trigger any code after the edit has been performed, either include this in the lambda you are enqueuing
 or await the Promise returned by queueAsyncEdit().
 
 Generally, calling any setter or method is treated as an edit; but simple getters may be safely called at any time.
 
 Example of typical usage:
-
 ```js
 // Assume insertImage() is called from your UI code, and given a Blob containing image data
 async function insertImage(blob) {
@@ -94,9 +93,9 @@ async function insertImage(blob) {
 
 #### Parameters
 
-| Parameter | Type            | Description                                |
-| --------- | --------------- | ------------------------------------------ |
-| `lambda`  | () =&gt; `void` | a function which edits the document model. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `lambda` | () =&gt; `void` | a function which edits the document model. |
 
 #### Returns
 
@@ -134,8 +133,8 @@ createText(textContent): StandaloneTextNode;
 
 ##### Parameters
 
-| Parameter     | Type     | Description                 |
-| ------------- | -------- | --------------------------- |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
 | `textContent` | `string` | the initial string to show. |
 
 ##### Returns
@@ -219,9 +218,9 @@ Convenience helper to create a complete ColorFill value given just its color.
 
 #### Parameters
 
-| Parameter | Type                              | Description                    |
-| --------- | --------------------------------- | ------------------------------ |
-| `color`   | [`Color`](../interfaces/color.md) | The color to use for the fill. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `color` | [`Color`](../interfaces/color.md) | The color to use for the fill. |
 
 #### Returns
 
@@ -245,11 +244,11 @@ This local client will act as having unsaved changes until the upload has finish
 
 #### Parameters
 
-| Parameter              | Type                                                                              | Description                                                                                                                                                                                                                                                                                                       |
-| ---------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bitmapData`           | [`BitmapImage`](bitmap-image.md)                                                  | BitmapImage resource (e.g. returned from [loadBitmapImage](#loadbitmapimage)).                                                                                                                                                                                                                                    |
-| `options`              | \{ `initialSize?`: [`RectangleGeometry`](../interfaces/rectangle-geometry.md); \} | Additional configuration: - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down if needed to stay below an application-defined size cap). |
-| `options.initialSize?` | [`RectangleGeometry`](../interfaces/rectangle-geometry.md)                        | -                                                                                                                                                                                                                                                                                                                 |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `bitmapData` | [`BitmapImage`](bitmap-image.md) | BitmapImage resource (e.g. returned from [loadBitmapImage](#loadbitmapimage)). |
+| `options` | \{ `initialSize?`: [`RectangleGeometry`](../interfaces/rectangle-geometry.md); \} | Additional configuration: - initialSize - Size the image is displayed at. Must have the same aspect ratio as bitmapData. Defaults to the size the image would be created at by a UI drag-drop gesture (typically the image's full size, but scaled down if needed to stay below an application-defined size cap). |
+| `options.initialSize?` | [`RectangleGeometry`](../interfaces/rectangle-geometry.md) | - |
 
 #### Returns
 
@@ -277,8 +276,8 @@ having unsaved changes until all the upload steps have finished.
 
 #### Parameters
 
-| Parameter    | Type   | Description                               |
-| ------------ | ------ | ----------------------------------------- |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
 | `bitmapData` | `Blob` | Encoded image data in PNG or JPEG format. |
 
 #### Returns
@@ -298,19 +297,19 @@ subset of its fields. All other fields are populated with default values.
 
 See [SolidColorStroke](../interfaces/solid-color-stroke.md) for more details on the `options` fields. Defaults:
 
-- `color` has default value DEFAULT_STROKE_COLOR if none is provided.
-- `width` has default value DEFAULT_STROKE_WIDTH if none is provided.
+- `color` has default value DEFAULT\_STROKE\_COLOR if none is provided.
+- `width` has default value DEFAULT\_STROKE\_WIDTH if none is provided.
 - `position` has default value `center` if none is provided.
 - `dashPattern` has default value [] if none is provided.
 - `dashOffset` has default value 0 if none is provided. This field is ignored
   if no `dashPattern` was provided.
 - `type` has default value SolidColorStroke.type if none is provided. This field
-  shouldn't be set to any other value.
+   shouldn't be set to any other value.
 
 #### Parameters
 
-| Parameter  | Type                                                                       |
-| ---------- | -------------------------------------------------------------------------- |
+| Parameter | Type |
+| ------ | ------ |
 | `options?` | `Partial`&lt;[`SolidColorStroke`](../interfaces/solid-color-stroke.md)&gt; |
 
 #### Returns
@@ -325,8 +324,8 @@ a stroke configured with the given options.
 
 ```ts
 createThreadedText(
-   parentNode,
-   textContent,
+   parentNode, 
+   textContent, 
    geometry?): ThreadedTextNode;
 ```
 
@@ -334,15 +333,15 @@ createThreadedText(
 
 &lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Parameters
 
-| Parameter     | Type                                                                 | Description                                                                                                                                               |
-| ------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `parentNode`  | [`ContainerNode`](../interfaces/container-node.md)                   | The parent node that will contain the threaded text node. This must be a container node (e.g., ArtboardNode, GroupNode) that is attached to the document. |
-| `textContent` | `string`                                                             | The initial text content for the threaded text node.                                                                                                      |
-| `geometry?`   | [`TextFrameAreaGeometry`](../interfaces/text-frame-area-geometry.md) | The geometry of the threaded text node.                                                                                                                   |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `parentNode` | [`ContainerNode`](../interfaces/container-node.md) | The parent node that will contain the threaded text node. This must be a container node (e.g., ArtboardNode, GroupNode) that is attached to the document. |
+| `textContent` | `string` | The initial text content for the threaded text node. |
+| `geometry?` | [`TextFrameAreaGeometry`](../interfaces/text-frame-area-geometry.md) | The geometry of the threaded text node. |
 
 #### Returns
 
@@ -368,9 +367,9 @@ createPath(path): PathNode;
 
 #### Parameters
 
-| Parameter | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `path`    | `string` | a string representing any [SVG path element](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths). Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input. For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...". Throws if the input is empty or is not legal SVG path syntax. Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position a newly created path using [Node.setPositionInParent](node.md#setpositioninparent) rather than setting [Node.translation](node.md#translation) directly. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `path` | `string` | a string representing any [SVG path element](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths). Note that the path data will be normalized, and therefore the `path` getter may return a different SVG string from the path creation input. For example, "M 10 80 Q 52.5 10, 95 80 T 180 80" becomes "M 10 80 C 38.33 33.33 66.67 33.33 95 80...". Throws if the input is empty or is not legal SVG path syntax. Note: the visual top-left corner of a path may not be its local (0,0) origin point, so it's easiest to position a newly created path using [Node.setPositionInParent](node.md#setpositioninparent) rather than setting [Node.translation](node.md#translation) directly. |
 
 #### Returns
 
