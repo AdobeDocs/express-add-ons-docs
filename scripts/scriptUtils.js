@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("node:fs");
-const { globSync } = require("glob");
+const glob = require("glob");
+const globSync = glob.globSync || glob.sync;
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 

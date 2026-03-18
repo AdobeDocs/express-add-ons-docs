@@ -1,6 +1,10 @@
+---
+hideEditInGitHub: true
+---
+
 [**@express-document-sdk**](../overview.md)
 
----
+<HorizontalLine />
 
 # Class: Context
 
@@ -12,7 +16,7 @@ Contains the user's current selection state, indicating the content they are foc
 
 ## Extended by
 
-- [`ExpressContext`](ExpressContext.md)
+- [`ExpressContext`](express-context.md)
 
 ## Constructors
 
@@ -44,7 +48,7 @@ get selection(): readonly Node[];
 
 ##### Returns
 
-readonly [`Node`](Node.md)[]
+readonly [`Node`](node.md)[]
 
 the current selection. Nodes that are locked or otherwise non-editable are never included in the regular
 selection (see [selectionIncludingNonEditable](#selectionincludingnoneditable) to get any locked nodes the user may have clicked).
@@ -55,7 +59,7 @@ selection (see [selectionIncludingNonEditable](#selectionincludingnoneditable) t
 set selection(nodes): void;
 ```
 
-Sets the current selection to an array of [Node](Node.md).
+Sets the current selection to an array of [Node](node.md).
 Accepts a single node as a shortcut for a length-1 array `[node]` or
 `undefined` as a shortcut for `[]`, which clears the selection.
 
@@ -69,13 +73,13 @@ Only node(s) that meet the following criteria can be selected:
 
 | Parameter | Type |
 | ------ | ------ |
-| `nodes` | [`Node`](Node.md) \| readonly [`Node`](Node.md)[] \| `undefined` |
+| `nodes` | [`Node`](node.md) \| readonly [`Node`](node.md)[] \| `undefined` |
 
 ##### Returns
 
 `void`
 
----
+<HorizontalLine />
 
 ### selectionIncludingNonEditable
 
@@ -87,13 +91,13 @@ get selectionIncludingNonEditable(): readonly Node[];
 
 ##### Returns
 
-readonly [`Node`](Node.md)[]
+readonly [`Node`](node.md)[]
 
 the current selection *and* any locked nodes the user has attempted to select at the same time. This can
 happen for example if the user clicks on a locked node or if the user drags a selection marquee that overlaps
 locked nodes in addition to regular unlocked nodes.
 
----
+<HorizontalLine />
 
 ### hasSelection
 
@@ -109,7 +113,7 @@ get hasSelection(): boolean;
 
 false if the current editable selection does not contain any nodes, otherwise true.
 
----
+<HorizontalLine />
 
 ### insertionParent
 
@@ -121,7 +125,7 @@ get insertionParent(): ContainerNode;
 
 ##### Returns
 
-[`ContainerNode`](../interfaces/ContainerNode.md)
+[`ContainerNode`](../interfaces/container-node.md)
 
 the preferred parent to insert newly added content into (i.e., the location content would get inserted if a
 user were to Paste or use the Shapes panel in the UI). This will vary depending on the user's current selection and
@@ -143,8 +147,8 @@ Note: Do not attempt to make changes to the document in response to a selection 
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `eventName` | [`selectionChange`](../enumerations/EditorEvent.md#selectionchange) | an editor event name. |
-| `callback` | [`EditorEventHandler`](../type-aliases/EditorEventHandler.md) | a callback to be registered for an editor event. |
+| `eventName` | [`selectionChange`](../enumerations/editor-event.md#selectionchange) | an editor event name. |
+| `callback` | [`EditorEventHandler`](../type-aliases/editor-event-handler.md) | a callback to be registered for an editor event. |
 
 #### Returns
 
@@ -152,7 +156,7 @@ Note: Do not attempt to make changes to the document in response to a selection 
 
 a unique ID for the registered event handler.
 
----
+<HorizontalLine />
 
 ### off()
 
@@ -166,7 +170,7 @@ Unregisters handlers for editor events like selection change.
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `eventName` | [`selectionChange`](../enumerations/EditorEvent.md#selectionchange) | an editor event name. |
+| `eventName` | [`selectionChange`](../enumerations/editor-event.md#selectionchange) | an editor event name. |
 | `handlerId` | `string` | a unique ID returned by `editor.context.on` API. Callback that was previously registered will be removed and will no more be invoked when the event occurs. |
 
 #### Returns

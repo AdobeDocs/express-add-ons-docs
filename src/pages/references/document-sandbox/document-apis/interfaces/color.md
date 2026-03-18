@@ -1,6 +1,10 @@
+---
+hideEditInGitHub: true
+---
+
 [**@express-document-sdk**](../overview.md)
 
----
+<HorizontalLine />
 
 # Interface: Color
 

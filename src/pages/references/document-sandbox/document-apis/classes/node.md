@@ -1,6 +1,10 @@
+---
+hideEditInGitHub: true
+---
+
 [**@express-document-sdk**](../overview.md)
 
----
+<HorizontalLine />
 
 # Class: Node
 
@@ -9,27 +13,27 @@ subclass of Node, but note that some abstract top-level structural nodes (such a
 minimal VisualNode or BaseNode. As a general rule, if you can click or drag an object with the select/move
 tool in the UI, then it extends from Node.
 
-A Node’s parent is always a [VisualNode](VisualNode.md), but it might not be another Node (e.g. if the parent is an ArtboardNode).
+A Node’s parent is always a [VisualNode](visual-node.md), but it might not be another Node (e.g. if the parent is an ArtboardNode).
 
 ## Extends
 
-- [`VisualNode`](VisualNode.md)
+- [`VisualNode`](visual-node.md)
 
 ## Extended by
 
-- [`GridCellNode`](GridCellNode.md)
-- [`GridLayoutNode`](GridLayoutNode.md)
-- [`GroupNode`](GroupNode.md)
-- [`MediaContainerNode`](MediaContainerNode.md)
-- [`MediaRectangleNode`](MediaRectangleNode.md)
-- [`SolidColorShapeNode`](SolidColorShapeNode.md)
-- [`StrokableNode`](StrokableNode.md)
-- [`TextNode`](TextNode.md)
-- [`UnknownNode`](UnknownNode.md)
+- [`GridCellNode`](grid-cell-node.md)
+- [`GridLayoutNode`](grid-layout-node.md)
+- [`GroupNode`](group-node.md)
+- [`MediaContainerNode`](media-container-node.md)
+- [`MediaRectangleNode`](media-rectangle-node.md)
+- [`SolidColorShapeNode`](solid-color-shape-node.md)
+- [`StrokableNode`](strokable-node.md)
+- [`TextNode`](text-node.md)
+- [`UnknownNode`](unknown-node.md)
 
 ## Implements
 
-- [`INodeBounds`](../interfaces/INodeBounds.md)
+- [`INodeBounds`](../interfaces/i-node-bounds.md)
 
 ## Constructors
 
@@ -45,7 +49,7 @@ new Node(): Node;
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`constructor`](VisualNode.md#constructor)
+[`VisualNode`](visual-node.md).[`constructor`](visual-node.md#constructor)
 
 ## Accessors
 
@@ -57,17 +61,17 @@ new Node(): Node;
 get addOnData(): AddOnData;
 ```
 
-Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+Get [AddOnData](add-on-data.md) reference for managing the private metadata on this node for this add-on.
 
 ##### Returns
 
-[`AddOnData`](AddOnData.md)
+[`AddOnData`](add-on-data.md)
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`addOnData`](VisualNode.md#addondata)
+[`VisualNode`](visual-node.md).[`addOnData`](visual-node.md#addondata)
 
----
+<HorizontalLine />
 
 ### id
 
@@ -86,9 +90,9 @@ moved to a different part of the document.
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`id`](VisualNode.md#id)
+[`VisualNode`](visual-node.md).[`id`](visual-node.md#id)
 
----
+<HorizontalLine />
 
 ### allChildren
 
@@ -99,7 +103,7 @@ get allChildren(): Readonly<Iterable<Node>>;
 ```
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -107,13 +111,13 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 ##### Returns
 
-`Readonly`<`Iterable`<`Node`\>\>
+`Readonly`&lt;`Iterable`&lt;`Node`&gt;&gt;
 
 #### Overrides
 
-[`VisualNode`](VisualNode.md).[`allChildren`](VisualNode.md#allchildren)
+[`VisualNode`](visual-node.md).[`allChildren`](visual-node.md#allchildren)
 
----
+<HorizontalLine />
 
 ### allDescendants
 
@@ -125,9 +129,9 @@ get allDescendants(): Readonly<Iterable<Node>>;
 
 **`Experimental`**
 
-<InlineAlert slots="text" variant="warning"/>
+&lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Helper to recursively traverse *all* the exposed scenegraph content within the subtree of this node.
 Every container node and every leaf node will be visited via a pre-order tree traversal.
@@ -137,17 +141,17 @@ Note that the root node (i.e. what this API was called on) is not visited.
 
 The descendants of a Node are always other Node classes (never the more minimal BaseNode).
 
-Warning: Processing text content via this API can be error-prone. Use [VisualNode.allTextContent](VisualNode.md#alltextcontent)
+Warning: Processing text content via this API can be error-prone. Use [VisualNode.allTextContent](visual-node.md#alltextcontent)
 
 ##### Returns
 
-`Readonly`<`Iterable`<`Node`\>\>
+`Readonly`&lt;`Iterable`&lt;`Node`&gt;&gt;
 
 #### Overrides
 
-[`VisualNode`](VisualNode.md).[`allDescendants`](VisualNode.md#alldescendants)
+[`VisualNode`](visual-node.md).[`allDescendants`](visual-node.md#alldescendants)
 
----
+<HorizontalLine />
 
 ### boundsInParent
 
@@ -158,20 +162,20 @@ get boundsInParent(): Readonly<Rect>;
 ```
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
 
 ##### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)&gt;
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`boundsInParent`](../interfaces/INodeBounds.md#boundsinparent)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`boundsInParent`](../interfaces/i-node-bounds.md#boundsinparent)
 
----
+<HorizontalLine />
 
 ### type
 
@@ -185,13 +189,13 @@ The node's type.
 
 ##### Returns
 
-[`SceneNodeType`](../enumerations/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/scene-node-type.md)
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`type`](VisualNode.md#type)
+[`VisualNode`](visual-node.md).[`type`](visual-node.md#type)
 
----
+<HorizontalLine />
 
 ### parent
 
@@ -210,13 +214,13 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 ##### Returns
 
-[`BaseNode`](BaseNode.md) \| `undefined`
+[`BaseNode`](base-node.md) \| `undefined`
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`parent`](VisualNode.md#parent)
+[`VisualNode`](visual-node.md).[`parent`](visual-node.md#parent)
 
----
+<HorizontalLine />
 
 ### translation
 
@@ -232,7 +236,7 @@ setting translation directly.
 
 ##### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 #### Set Signature
 
@@ -248,7 +252,7 @@ setting translation directly.
 
 | Parameter | Type |
 | ------ | ------ |
-| `value` | [`Point`](../interfaces/Point.md) |
+| `value` | [`Point`](../interfaces/point.md) |
 
 ##### Returns
 
@@ -256,9 +260,9 @@ setting translation directly.
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`translation`](../interfaces/INodeBounds.md#translation)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`translation`](../interfaces/i-node-bounds.md#translation)
 
----
+<HorizontalLine />
 
 ### rotation
 
@@ -277,9 +281,9 @@ change rotation by rotating around a defined centerpoint.
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`rotation`](../interfaces/INodeBounds.md#rotation)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`rotation`](../interfaces/i-node-bounds.md#rotation)
 
----
+<HorizontalLine />
 
 ### rotationInScreen
 
@@ -298,9 +302,9 @@ cumulative rotation from the node's parent containers.
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`rotationInScreen`](../interfaces/INodeBounds.md#rotationinscreen)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`rotationInScreen`](../interfaces/i-node-bounds.md#rotationinscreen)
 
----
+<HorizontalLine />
 
 ### opacity
 
@@ -332,7 +336,7 @@ set opacity(opacity): void;
 
 `void`
 
----
+<HorizontalLine />
 
 ### transformMatrix
 
@@ -350,9 +354,9 @@ The node's transform matrix relative to its parent.
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`transformMatrix`](../interfaces/INodeBounds.md#transformmatrix)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`transformMatrix`](../interfaces/i-node-bounds.md#transformmatrix)
 
----
+<HorizontalLine />
 
 ### locked
 
@@ -362,7 +366,7 @@ The node's transform matrix relative to its parent.
 get locked(): boolean;
 ```
 
-The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](context.md#selection)), and
 cannot be edited by the user in the UI unless they are unlocked first. It is still possible to mutate locked nodes
 at the model level using these APIs. However, please consider if modifying a locked node would align with user
 expectations before doing so.
@@ -387,7 +391,7 @@ set locked(locked): void;
 
 `void`
 
----
+<HorizontalLine />
 
 ### blendMode
 
@@ -398,11 +402,11 @@ get blendMode(): BlendMode;
 ```
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[BlendMode.normal](../enumerations/BlendMode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/BlendMode.md#passthrough) for GroupNodes.
+[BlendMode.normal](../enumerations/blend-mode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/blend-mode.md#passthrough) for GroupNodes.
 
 ##### Returns
 
-[`BlendMode`](../enumerations/BlendMode.md)
+[`BlendMode`](../enumerations/blend-mode.md)
 
 #### Set Signature
 
@@ -414,13 +418,13 @@ set blendMode(value): void;
 
 | Parameter | Type |
 | ------ | ------ |
-| `value` | [`BlendMode`](../enumerations/BlendMode.md) |
+| `value` | [`BlendMode`](../enumerations/blend-mode.md) |
 
 ##### Returns
 
 `void`
 
----
+<HorizontalLine />
 
 ### visualRoot
 
@@ -439,13 +443,13 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 ##### Returns
 
-[`VisualNode`](VisualNode.md)
+[`VisualNode`](visual-node.md)
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`visualRoot`](VisualNode.md#visualroot)
+[`VisualNode`](visual-node.md).[`visualRoot`](visual-node.md#visualroot)
 
----
+<HorizontalLine />
 
 ### allTextContent
 
@@ -457,12 +461,12 @@ get allTextContent(): Readonly<Iterable<TextContent>>;
 
 **`Experimental`**
 
-<InlineAlert slots="text" variant="warning"/>
+&lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Helper to process all text content that is found as part of or within this node. This can be hard to do correctly
-via manual tree traversal since multiple [ThreadedTextNode](ThreadedTextNode.md) can share a single [TextContentModel](TextContentModel.md).
+via manual tree traversal since multiple [ThreadedTextNode](threaded-text-node.md) can share a single [TextContentModel](text-content-model.md).
 
 This iterator returns a single result per TextContentModel that is at least partially displayed within this node,
 even if that content is split across several separate TextNode "frames". If this node is or contains some but not
@@ -472,13 +476,13 @@ Note that visibleRanges and visibleText may not be sorted as TextNode "frames" c
 
 ##### Returns
 
-`Readonly`<`Iterable`<[`TextContent`](../interfaces/TextContent.md)\>\>
+`Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md)&gt;&gt;
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`allTextContent`](VisualNode.md#alltextcontent)
+[`VisualNode`](visual-node.md).[`allTextContent`](visual-node.md#alltextcontent)
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
@@ -497,17 +501,17 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 ##### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)&gt;
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`boundsLocal`](../interfaces/INodeBounds.md#boundslocal)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`boundsLocal`](../interfaces/i-node-bounds.md#boundslocal)
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`boundsLocal`](VisualNode.md#boundslocal)
+[`VisualNode`](visual-node.md).[`boundsLocal`](visual-node.md#boundslocal)
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
@@ -521,17 +525,17 @@ Position of the node's centerpoint in its own local coordinate space, i.e. the c
 
 ##### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`centerPointLocal`](../interfaces/INodeBounds.md#centerpointlocal)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`centerPointLocal`](../interfaces/i-node-bounds.md#centerpointlocal)
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`centerPointLocal`](VisualNode.md#centerpointlocal)
+[`VisualNode`](visual-node.md).[`centerPointLocal`](visual-node.md#centerpointlocal)
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
@@ -547,15 +551,15 @@ boundsInParent.
 
 ##### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`topLeftLocal`](../interfaces/INodeBounds.md#topleftlocal)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`topLeftLocal`](../interfaces/i-node-bounds.md#topleftlocal)
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`topLeftLocal`](VisualNode.md#topleftlocal)
+[`VisualNode`](visual-node.md).[`topLeftLocal`](visual-node.md#topleftlocal)
 
 ## Methods
 
@@ -565,7 +569,7 @@ boundsInParent.
 boundsInNode(targetNode): Readonly<Rect>;
 ```
 
-Convert the node's [boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
 node. Both nodes must share the same [visualRoot](#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
@@ -573,17 +577,17 @@ relative to one another (the target node need not be an ancestor of this node, n
 
 | Parameter | Type |
 | ------ | ------ |
-| `targetNode` | [`VisualNode`](VisualNode.md) |
+| `targetNode` | [`VisualNode`](visual-node.md) |
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)&gt;
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`boundsInNode`](../interfaces/INodeBounds.md#boundsinnode)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`boundsInNode`](../interfaces/i-node-bounds.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 
@@ -604,9 +608,9 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`removeFromParent`](VisualNode.md#removefromparent)
+[`VisualNode`](visual-node.md).[`removeFromParent`](visual-node.md#removefromparent)
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 
@@ -621,8 +625,8 @@ Move the node so the given `localRegistrationPoint` in its local coordinates is 
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `parentPoint` | [`Point`](../interfaces/Point.md) | Point in this node's parent's coordinate space to move `localRegistrationPoint` to |
-| `localRegistrationPoint` | [`Point`](../interfaces/Point.md) | Point in this node's local coordinate space to align with `parentPoint` |
+| `parentPoint` | [`Point`](../interfaces/point.md) | Point in this node's parent's coordinate space to move `localRegistrationPoint` to |
+| `localRegistrationPoint` | [`Point`](../interfaces/point.md) | Point in this node's local coordinate space to align with `parentPoint` |
 
 #### Returns
 
@@ -639,7 +643,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<HorizontalLine />
 
 ### setRotationInParent()
 
@@ -657,7 +661,7 @@ ancestors also have rotation of their own.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `angleInDegrees` | `number` | Angle in degrees. |
-| `localRotationPoint` | [`Point`](../interfaces/Point.md) | Point to rotate around, in node's local coordinates. |
+| `localRotationPoint` | [`Point`](../interfaces/point.md) | Point to rotate around, in node's local coordinates. |
 
 #### Returns
 
@@ -671,7 +675,7 @@ Rotate the rectangle 45 degrees clockwise around its centerpoint:
 rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 ```
 
----
+<HorizontalLine />
 
 ### resize()
 
@@ -679,19 +683,19 @@ rectangle.setRotationInParent(45, rectangle.centerPointLocal);
 resize(options): void;
 ```
 
-Resizes this node based on the given [ResizeOptions](../type-aliases/ResizeOptions.md).
+Resizes this node based on the given [ResizeOptions](../type-aliases/resize-options.md).
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `options` | [`ResizeOptions`](../type-aliases/ResizeOptions.md) |
+| `options` | [`ResizeOptions`](../type-aliases/resize-options.md) |
 
 #### Returns
 
 `void`
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
@@ -707,7 +711,7 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 `Node`
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
@@ -723,22 +727,22 @@ another (the target node need not be an ancestor of this node, nor vice versa).
 
 | Parameter | Type |
 | ------ | ------ |
-| `localPoint` | [`Point`](../interfaces/Point.md) |
-| `targetNode` | [`VisualNode`](VisualNode.md) |
+| `localPoint` | [`Point`](../interfaces/point.md) |
+| `targetNode` | [`VisualNode`](visual-node.md) |
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 #### Implementation of
 
-[`INodeBounds`](../interfaces/INodeBounds.md).[`localPointInNode`](../interfaces/INodeBounds.md#localpointinnode)
+[`INodeBounds`](../interfaces/i-node-bounds.md).[`localPointInNode`](../interfaces/i-node-bounds.md#localpointinnode)
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`localPointInNode`](VisualNode.md#localpointinnode)
+[`VisualNode`](visual-node.md).[`localPointInNode`](visual-node.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### createRendition()
 
@@ -748,9 +752,9 @@ createRendition(options?): Promise<CreateRenditionResult>;
 
 **`Experimental`**
 
-<InlineAlert slots="text" variant="warning"/>
+&lt;InlineAlert slots="text" variant="warning"/&gt;
 
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This is currently <HorizontalLine />experimental only<HorizontalLine /> and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Generates a rendition of this node and its descendants.
 
@@ -761,12 +765,12 @@ As such, there is a 20s timeout before an error is thrown to prevent indefinite 
 
 | Parameter | Type |
 | ------ | ------ |
-| `options?` | [`CreateRenditionOptions`](../interfaces/CreateRenditionOptions.md) |
+| `options?` | [`CreateRenditionOptions`](../interfaces/create-rendition-options.md) |
 
 #### Returns
 
-`Promise`<[`CreateRenditionResult`](../interfaces/CreateRenditionResult.md)\>
+`Promise`&lt;[`CreateRenditionResult`](../interfaces/create-rendition-result.md)&gt;
 
 #### Inherited from
 
-[`VisualNode`](VisualNode.md).[`createRendition`](VisualNode.md#createrendition)
+[`VisualNode`](visual-node.md).[`createRendition`](visual-node.md#createrendition)
