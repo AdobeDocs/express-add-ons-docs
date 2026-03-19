@@ -39,7 +39,7 @@ import {
 
 An example of how this works in Visual Studio Code is shown in this short clip below.\<br/\>
 
-<iframe src="https://main--adp-devsite--adobedocs.aem.page/express/add-ons/intellisense.mp4" width="800" height="450" allow="autoplay"></iframe>
+<iframe src="https://main--adp-devsite--adobedocs.aem.page/express/add-ons/intellisense.mp4" width="100%" height="690px" allow="autoplay"></iframe>
 
 <InlineAlert slots="text" variant="info"/>
 

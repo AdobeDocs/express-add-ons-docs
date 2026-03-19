@@ -22,7 +22,7 @@ Your listing should provide valuable information about what your add-on does, an
 
 <Announcement slots="heading, text, button" variant="secondary" backgroundColor="background-color-gray" />
 
-Are you an existing developer?
+#### Are you an existing developer?
 
 Action required: Add trader details to continue EU distribution.
 

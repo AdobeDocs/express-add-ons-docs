@@ -79,7 +79,7 @@ https://www.youtube.com/embed/CHBiTTN1neE
 
 Have a creative idea for an Adobe Express add-on? Get **funding**, resources, and support through the [Adobe Fund for Design](https://developer.adobe.com/fund-for-design).
 
-<Embed slots="video" />
+<Embed slots="video" short="true"/>
 
 https://www.youtube.com/embed/76hGc6mlSSA
 
