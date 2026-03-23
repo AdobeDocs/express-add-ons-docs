@@ -473,9 +473,8 @@ removal. No-op if node is already an orphan.
 
 • **replaceMedia**(`media`): `void`
 
-Replace existing media inline. The new media is sized to completely fill the bounds of the existing maskShape; if the
-media's aspect ratio differs from the maskShape's, the media will be cropped by the maskShape on either the left/right
-or top/bottom edges. Currently only supports images as the new media, but previous media can be of any type.
+Replace original media while preserving the existing filter effects. Any generative fill modifications will be removed.
+Crop settings are not preserved.
 
 #### Parameters
 
@@ -493,13 +492,47 @@ New content to display. Currently must be a [BitmapImage](BitmapImage.md).
 
 ---
 
-### resize()
+### replaceMediaWithEditedImage()
 
-• **resize**(`options`): `void`
+• **replaceMediaWithEditedImage**(`blob`, `options`): `Promise`<`void`\>
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Replace the current media with an edited version of the same media while preserving existing filter effects,
+per-element metadata, and asset provenance.
+
+Use this when the new blob is a modified version of the current image (e.g., an edited,
+recolored, or upscaled variant) rather than a completely unrelated image.
+
+The original per-element metadata (i.e., node.addOnData) and provenance (including attribution IDs, author
+information, source information such as Adobe Stock) are preserved.
+
+If the new image has the same aspect ratio as the original, the previous image’s crop settings
+remain unchanged.
+
+#### Parameters
+
+• **blob**: `Blob`
+
+A blob containing the transformed bitmap derived from the current media.
+
+• **options**: [`ReplaceMediaWithEditedImageOptions`](../interfaces/ReplaceMediaWithEditedImageOptions.md)
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Throws
+
+If the current media has been generated or modified by generative AI.
+
+---
+
+### resize()
+
+• **resize**(`options`): `void`
 
 Resizes this node based on the given [ResizeOptions](../type-aliases/ResizeOptions.md).
 
