@@ -144,7 +144,7 @@ Add this to your workspace in `~/.vscode/mcp.json`:
 
 #### Check Connection Status
 
-<Columns slots="image, text" />
+<Columns slots="image, text" isReversed="true" />
 
 ![headings](./img/stable-mcp-server-enabled.png)
 
@@ -158,7 +158,7 @@ The LLM will automatically invoke tools based on your prompts. Here is an exampl
 
 <InlineAlert header="true" slots="header,list" variant="success" iconPosition="right" />
 
-**Tips:**
+**Tips**
 
 - Ask the LLM to "_list MCP tools_".
 - If you have multiple MCP servers, say: "_Use the MCP server named Adobe Express Developer_".

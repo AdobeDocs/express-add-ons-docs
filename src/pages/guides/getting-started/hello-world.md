@@ -71,7 +71,7 @@ The [Code Playground](../getting-started/code-playground.md) is a browser-based 
 
 To launch the Code Playground experience, follow [this link](https://www.adobe.com/go/addon-playground) or click the button below.
 
-<Columns slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+<Columns slots=" buttons" btnVariantType="dark"/>
 
 [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 
@@ -209,7 +209,7 @@ The add-on's code is now running on a local server; you must tell Adobe Express 
 
 To _sideload_ your add-on into Adobe Express, follow [this link](https://www.adobe.com/go/addon-cli) or click the button below.
 
-<Columns slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+<Columns slots=" buttons" btnVariantType="dark"/>
 
 [Sideload your add-on](https://www.adobe.com/go/addon-cli)
 

@@ -82,7 +82,7 @@ https://www.youtube.com/embed/j6KS6CXZmKo?si=j4kX8gItWbm1ZDVz
 
 To launch the Code Playground experience, follow [this link](https://www.adobe.com/go/addon-playground) or click the button below.
 
-<Columns slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+<Columns slots=" buttons" btnVariantType="dark"/>
 
 [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 

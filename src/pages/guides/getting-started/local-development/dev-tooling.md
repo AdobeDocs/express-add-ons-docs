@@ -187,7 +187,7 @@ npm run start
 
 This will build the add-on and start a local server, which you can then sideload into Adobe Express by clicking the button below.
 
-<Columns slots=" buttons" width="100%" isCentered variantsTypePrimary="primary" variantStyleFill="outline" className="code-playground-button-inline"/>
+<Columns slots=" buttons" btnVariantType="dark" />
 
 [Sideload your add-on](https://www.adobe.com/go/addon-cli)
 
