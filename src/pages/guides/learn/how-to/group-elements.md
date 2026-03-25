@@ -55,7 +55,7 @@ To create a Group, you can use the [`editor.createGroup()`](../../../references/
 
 ### Example
 
-```js-data-playground-session-id="createBasicGroup"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
+```js-data-playground-session-id="createBasicGroup"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 

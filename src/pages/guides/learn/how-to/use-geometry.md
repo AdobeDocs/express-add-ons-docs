@@ -48,7 +48,7 @@ Adobe Express provides a set of geometric shapes that you can create and style p
 
 ### Example: Add a Rectangle
 
-```js-data-playground-session-id="createBasicRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
+```js-data-playground-session-id="createBasicRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -88,7 +88,7 @@ Ellipses don't have a `width` and `height` properties, but a [`rx`](../../../ref
 
 An ellipse with a radius of 200 on the x-axis and 100 on the y-axis will result in a shape with 400 wide (`rx` times two) and a 200 tall (`ry` times two)!
 
-```js-data-playground-session-id="createBasicEllipse"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
+```js-data-playground-session-id="createBasicEllipse"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -107,7 +107,7 @@ editor.context.insertionParent.children.append(ellipse);
 
 Shapes have `fill` and `stroke` properties that you can use to style them. The following example demonstrates how to create an ellipse with a fill and a stroke.
 
-```js-data-playground-session-id="createEllipseWithFillStroke"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
+```js-data-playground-session-id="createEllipseWithFillStroke"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -147,7 +147,7 @@ Paths are a versatile tool to create complex shapes in Adobe Express. The [`edit
 
 ### Example: Single path
 
-```js-data-playground-session-id="createSinglePath"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
+```js-data-playground-session-id="createSinglePath"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -164,7 +164,7 @@ editor.context.insertionParent.children.append(p1);
 
 Combining and grouping multiple paths, you can create complex shapes, like in the following example:
 
-```js-data-playground-session-id="createMultiplePaths"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url="https://stage.projectx.corp.adobe.com/new"
+```js-data-playground-session-id="createMultiplePaths"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
