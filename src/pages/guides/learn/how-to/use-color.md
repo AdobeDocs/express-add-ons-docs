@@ -57,7 +57,7 @@ Colors in Adobe Express are created as instances of the [`Color`](../../../refer
 
 The entrypoint for creating colors is the [`colorUtils`](../../../references/document-sandbox/document-apis/classes/color-utils.md) class, imported from the `"express-document-sdk"`, so we're talking about [Document APIs](../../../references/document-sandbox/document-apis/index.md) here. Especially the static [`fromRGB()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromrgb) and [`fromHex()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromhex) methods.
 
-```js-data-playground-session-id="createColors"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="createColors"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
@@ -89,7 +89,7 @@ You can directly set the `color` property of a Text node via [`applyCharacterSty
 
 ### Example: Text color
 
-```js-data-playground-session-id="applyTextColor"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="applyTextColor"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 
@@ -114,7 +114,7 @@ Colors are not directly applied, instead, to shapes; more generally, they are us
 
 If you're confused, worry not! This is the wondrous word of object oriented programming. The following example should clarify things:
 
-```js-data-playground-session-id="applyFillAndStrokeColors"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="applyFillAndStrokeColors"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, colorUtils } from "express-document-sdk";
 

@@ -52,7 +52,7 @@ faq:
 
 Let's use this simple Rectangle to demonstrate how to move and rotate elements in Adobe Express.
 
-```js-data-playground-session-id="createAndPositionRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="createAndPositionRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -124,7 +124,7 @@ By definition, the bounds of an element (or its _bounding box_) are the smallest
 
 Let's see how to get the bounds of a rotated rectangle in both local and parent coordinates; since the rectangle is rotated, the two bounding boxes will differ.
 
-```js-data-playground-session-id="createAndRotateRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="createAndRotateRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 

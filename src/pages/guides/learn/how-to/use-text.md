@@ -104,7 +104,7 @@ The `editor.createText()` method accepts a string as a parameter, and returns a 
 
 ### Example: Create basic Text
 
-```js-data-playground-session-id="createBasicText"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="createBasicText"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 
 // sandbox/code.js
 import { editor } from "express-document-sdk";
@@ -202,7 +202,7 @@ Although possible, it's not recommended to replace the text content of a `TextNo
 
 #### Example: Basic Text Replacement
 
-```js-data-playground-session-id="replaceTextBasic"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="replaceTextBasic"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -324,7 +324,7 @@ The `insertText()` method inserts new text at a specific position within the exi
 
 #### Example: Basic Text Insertion
 
-```js-data-playground-session-id="insertTextWithColor"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="insertTextWithColor"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -404,7 +404,7 @@ The `appendText()` method adds new text to the end of the existing content. It a
 
 #### Example: Append Text
 
-```js-data-playground-session-id="appendTextMultiple"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="appendTextMultiple"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -439,7 +439,7 @@ The `deleteText()` method removes a specific range of text from the content. It 
 
 #### Example: Delete Text Range
 
-```js-data-playground-session-id="deleteTextRange"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
+```js-data-playground-session-id="deleteTextRange"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
